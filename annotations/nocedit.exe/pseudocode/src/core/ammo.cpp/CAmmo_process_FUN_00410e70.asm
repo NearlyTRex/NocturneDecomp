@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_ammo_cpp_CAmmo_process_FUN_00410e70(CAmmo *this_ptr,float delta_time)
+; void __cdecl core_ammo_cpp_CAmmo_process_FUN_00410e70(CAmmo *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CAmmo *          Stack[0x4]:4   this_ptr

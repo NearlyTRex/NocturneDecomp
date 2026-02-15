@@ -19,7 +19,7 @@ void __cdecl core_lightgun_cpp_CLightGun_FUN_00505ac0(CLightGun *this_ptr)
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
             ((CDemonActor *)this_ptr,(CVector3f *)&fStack_10,input_local_point);
   g_CDemonLightInstance.light_enabled_flag = 1;
-  g_CDemonLightInstance.unk2 = 0;
+  g_CDemonLightInstance.volumetric_enabled = 0;
   if ((int *)&stack0x00000000 != &g_CDemonLightInstance.base.base.rotation_matrix.m[0].y) {
     g_CDemonLightInstance.base.base.position.x = (int)fStack_10;
     g_CDemonLightInstance.base.base.position.y = (int)fStack_c;

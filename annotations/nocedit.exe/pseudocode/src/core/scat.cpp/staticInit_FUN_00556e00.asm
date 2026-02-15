@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_scat_cpp_staticInit_FUN_00556e00(void)
+; void __cdecl core_scat_cpp_staticInit_FUN_00556e00(void)
 ;
 ;
 ; Referenced Globals:

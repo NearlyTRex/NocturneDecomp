@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_icepick_cpp_CIcePick_FUN_004f9490(CIcePick *this_ptr)
+; void __cdecl core_icepick_cpp_CIcePick_FUN_004f9490(CIcePick *this_ptr)
 ;
 ; Parameters:
 ; CIcePick *       Stack[0x4]:4   this_ptr
@@ -23,8 +23,8 @@
 ;   TerminatedCString s_icepick_punch_wav_0062f7e3
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.damage_listener_count
-;   undefined4 g_CDemonSetInstance.damage_listeners
+;   undefined4 g_CDemonSetInstance.character_count
+;   undefined4 g_CDemonSetInstance.characters[0]
 ;   undefined4 DAT_03263318
 ;
 ; Called Functions:
@@ -66,10 +66,10 @@ section .text
     MOV dword ptr [ESP + 0x54],ECX      ; 004f94c9
     MOV EAX,[0x006810c8]                ; 004f94cd | g_CDemonSetPtr | g_CDemonSetInstance
         ;   Label: LAB_004f94cd
-    CMP EDI,dword ptr [EAX + 0x14f098]  ; 004f94d2 | g_CDemonSetInstance.damage_listener_count
+    CMP EDI,dword ptr [EAX + 0x14f098]  ; 004f94d2 | g_CDemonSetInstance.character_count
     JGE 0x004f9564                      ; 004f94d8
         ;   XREF to: 004f9564 (CONDITIONAL_JUMP)  ; LAB_004f9564
-    MOV EBX,dword ptr [EAX + EBP*0x1 + 0x14f09c] ; 004f94de | g_CDemonSetInstance.damage_listeners | DAT_03263318
+    MOV EBX,dword ptr [EAX + EBP*0x1 + 0x14f09c] ; 004f94de | g_CDemonSetInstance.characters[0] | DAT_03263318
     CMP EBX,ESI                         ; 004f94e5
     JNZ 0x004f94ef                      ; 004f94e7
         ;   XREF to: 004f94ef (CONDITIONAL_JUMP)  ; LAB_004f94ef

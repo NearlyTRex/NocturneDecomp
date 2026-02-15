@@ -6,15 +6,13 @@
   },
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 57,
+    "complexity_score": 12,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 8,
     "pseudocode_lines": 12,
-    "suspect_count": 4,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 46
   },
   "cross_references": [],
@@ -55,25 +53,25 @@
   "globals": [
     {
       "addr": "00680d10",
-      "name": "DAT_00680d10",
+      "name": "WatcomStaticDestructorNode_00680d10",
       "type": "WatcomStaticDestructorNode",
       "value": null
     },
     {
       "addr": "00680d20",
-      "name": "DAT_00680d20",
+      "name": "WatcomStaticDestructorNode_00680d20",
       "type": "WatcomStaticDestructorNode",
       "value": null
     },
     {
       "addr": "00680d30",
-      "name": "DAT_00680d30",
+      "name": "WatcomStaticDestructorNode_00680d30",
       "type": "WatcomStaticDestructorNode",
       "value": null
     },
     {
       "addr": "00680d40",
-      "name": "DAT_00680d40",
+      "name": "WatcomStaticDestructorNode_00680d40",
       "type": "WatcomStaticDestructorNode",
       "value": null
     },
@@ -137,34 +135,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 6,
-      "match": "DAT_00680d10",
-      "text": "_atexit(&DAT_00680d10);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 8,
-      "match": "DAT_00680d20",
-      "text": "_atexit(&DAT_00680d20);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_00680d30",
-      "text": "_atexit(&DAT_00680d30);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_00680d40",
-      "text": "_atexit(&DAT_00680d40);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

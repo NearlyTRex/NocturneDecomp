@@ -136,7 +136,7 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_00505c70(CLightGun *this_ptr)
   iStack_1c = 0;
   iStack_20 = 0;
   do {
-    if (g_CDemonSetPtr->damage_listener_count <= iStack_1c) {
+    if (g_CDemonSetPtr->character_count <= iStack_1c) {
       core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
       core_sound_cpp_CSound_playActorSound_FUN_005b3a40
                 (g_CSoundPtr,(CDemonActor *)this_ptr,"cre-fire.wav",
@@ -152,7 +152,7 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_00505c70(CLightGun *this_ptr)
       this_ptr->unk[0x13] = '\0';
       return 1;
     }
-    this_ptr_00 = *(CCharacter **)(g_CDemonSetPtr->unk4 + iStack_20 + -4);
+    this_ptr_00 = *(CCharacter **)((int)g_CDemonSetPtr->characters + iStack_20);
     iVar5 = (*(((this_ptr_00->base).vtable._uc)->_uc).canWalk)(this_ptr_00);
     if (((iVar5 == 0) &&
         ((((iVar5 = core_actor_cpp_isOfClass_FUN_0040c6d0(&this_ptr_00->base,"CGhoul"),

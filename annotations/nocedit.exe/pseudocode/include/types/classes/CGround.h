@@ -22,8 +22,8 @@ typedef struct CGround {
     struct CTextureList* texture_list; // 0x28
     int camera_x; // 0x2c
     int camera_y; // 0x30
-    int unk1; // 0x34
-    int unk2; // 0x38
+    int reserved1; // 0x34
+    int reserved2; // 0x38
     int visible_min_x; // 0x3c
     int visible_max_x; // 0x40
     int visible_min_y; // 0x44

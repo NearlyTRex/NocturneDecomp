@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_script_cpp_CScript_loadScript_FUN_00559f80(CScript *this_ptr,char *filename,int skip_validation)
+; int __cdecl core_script_cpp_CScript_loadScript_FUN_00559f80(CScript *this_ptr,char *filename,int skip_validation)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr

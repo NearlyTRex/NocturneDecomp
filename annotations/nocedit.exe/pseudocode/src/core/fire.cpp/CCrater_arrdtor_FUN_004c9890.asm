@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CCrater * __cdecl core_fire_cpp_CCrater_arrdtor_FUN_004c9890(CCrater *objs,uint flags)
+; CCrater * __cdecl core_fire_cpp_CCrater_arrdtor_FUN_004c9890(CCrater *objs,uint flags)
 ;
 ; Parameters:
 ; CCrater *        Stack[0x4]:4   objs

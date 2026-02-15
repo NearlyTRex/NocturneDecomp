@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_curtain_cpp_CCurtain_process_FUN_0044a920(CCurtain *this_ptr,float delta_time)
+; void __cdecl core_curtain_cpp_CCurtain_process_FUN_0044a920(CCurtain *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CCurtain *       Stack[0x4]:4   this_ptr
@@ -190,13 +190,13 @@ section .text
     MOV EDX,dword ptr [0x006810c8]      ; 0044aabd | g_CDemonSetPtr
         ;   Label: LAB_0044aabd
     MOV EAX,dword ptr [ESP + 0xc0]      ; 0044aac3
-    CMP EAX,dword ptr [EDX + 0x14f098]  ; 0044aaca | g_CDemonSetInstance.damage_listener_count
+    CMP EAX,dword ptr [EDX + 0x14f098]  ; 0044aaca | g_CDemonSetInstance.character_count
     JGE 0x0044abb1                      ; 0044aad0
         ;   XREF to: 0044abb1 (CONDITIONAL_JUMP)  ; LAB_0044abb1
     MOV EAX,[0x008879bc]                ; 0044aad6 | DAT_008879bc
     IMUL ESI,EAX,0x28                   ; 0044aadb
     ADD EDX,dword ptr [ESP + 0xb8]      ; 0044aade
-    MOV EBX,dword ptr [EDX + 0x14f09c]  ; 0044aae5 | g_CDemonSetInstance.damage_listeners | DAT_03263318
+    MOV EBX,dword ptr [EDX + 0x14f09c]  ; 0044aae5 | g_CDemonSetInstance.characters[0] | DAT_03263318
     IMUL EDX,EAX,0xc                    ; 0044aaeb
     ADD EDX,0x8879c0                    ; 0044aaee | DAT_008879c0
     LEA EAX,[EBX + 0x20]                ; 0044aaf4

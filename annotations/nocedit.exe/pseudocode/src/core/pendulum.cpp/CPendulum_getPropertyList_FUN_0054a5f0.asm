@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_pendulum_cpp_CPendulum_getPropertyList_FUN_0054a5f0(CPendulum *this_ptr,CActorPropertyList *property_list)
+; void __cdecl core_pendulum_cpp_CPendulum_getPropertyList_FUN_0054a5f0(CPendulum *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CPendulum *      Stack[0x4]:4   this_ptr

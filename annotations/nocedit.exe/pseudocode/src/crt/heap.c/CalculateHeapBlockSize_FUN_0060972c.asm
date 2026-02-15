@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_heap_c_CalculateHeapBlockSize_FUN_0060972c(uint *pSize)
+; int __cdecl crt_heap_c_CalculateHeapBlockSize_FUN_0060972c(uint *pSize)
 ;
 ; Parameters:
 ; uint *           Stack[0x4]:4   pSize

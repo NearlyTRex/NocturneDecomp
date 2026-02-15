@@ -25,7 +25,7 @@ CDemonLight * __cdecl core_dlight_cpp_CDemonLight_ctor_FUN_004726a0(CDemonLight 
   pCVar1->precomputed_lighting_textures = (uchar *)0x0;
   pCVar1->transform_scale_factor = 0x10000;
   pCVar1->volumetric_intensity = 1.0;
-  pCVar1->unk2 = 0;
+  pCVar1->volumetric_enabled = 0;
   pCVar1->antialiasing_enabled = 1;
   pCVar1->shadow_map_width = shadow_map_width;
   pCVar1->shadow_map_height = shadow_map_height;

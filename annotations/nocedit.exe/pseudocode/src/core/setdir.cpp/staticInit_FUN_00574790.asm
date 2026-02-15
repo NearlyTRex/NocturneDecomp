@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_setdir_cpp_staticInit_FUN_00574790(void)
+; void __cdecl core_setdir_cpp_staticInit_FUN_00574790(void)
 ;
 ;
 ; Referenced Globals:

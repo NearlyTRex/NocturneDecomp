@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_dosio_c_getFileSize_FUN_00481880(char *directory,char *filename)
+; int __cdecl engine_dosio_c_getFileSize_FUN_00481880(char *directory,char *filename)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   directory

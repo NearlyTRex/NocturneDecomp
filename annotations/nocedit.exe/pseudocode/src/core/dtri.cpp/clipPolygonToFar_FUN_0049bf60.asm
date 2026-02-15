@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dtri_cpp_clipPolygonToFar_FUN_0049bf60(float z_far)
+; void __cdecl core_dtri_cpp_clipPolygonToFar_FUN_0049bf60(float z_far)
 ;
 ; Parameters:
 ; float            Stack[0x4]:4   z_far

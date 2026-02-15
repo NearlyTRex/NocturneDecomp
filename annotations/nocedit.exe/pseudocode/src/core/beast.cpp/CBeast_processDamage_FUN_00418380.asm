@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_beast_cpp_CBeast_processDamage_FUN_00418380(CBeast *this_ptr,SDamageInfo *damage_info)
+; void __cdecl core_beast_cpp_CBeast_processDamage_FUN_00418380(CBeast *this_ptr,SDamageInfo *damage_info)
 ;
 ; Parameters:
 ; CBeast *         Stack[0x4]:4   this_ptr

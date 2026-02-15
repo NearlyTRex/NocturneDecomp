@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_watcom_c_FUN_004b19c1(int *param_1)
+; void __cdecl crt_watcom_c_FUN_004b19c1(int *param_1)
 ;
 ; Parameters:
 ; int *            Stack[0x4]:4   param_1

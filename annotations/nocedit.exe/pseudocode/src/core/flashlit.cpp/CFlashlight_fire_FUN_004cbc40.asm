@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_flashlit_cpp_CFlashlight_fire_FUN_004cbc40(CFlashlight *this_ptr)
+; int __cdecl core_flashlit_cpp_CFlashlight_fire_FUN_004cbc40(CFlashlight *this_ptr)
 ;
 ; Parameters:
 ; CFlashlight *    Stack[0x4]:4   this_ptr

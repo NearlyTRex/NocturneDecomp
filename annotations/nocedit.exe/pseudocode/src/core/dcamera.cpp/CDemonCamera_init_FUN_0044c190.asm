@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dcamera_cpp_CDemonCamera_init_FUN_0044c190(CDemonCamera *this_ptr,int screen_height)
+; void __cdecl core_dcamera_cpp_CDemonCamera_init_FUN_0044c190(CDemonCamera *this_ptr,int screen_height)
 ;
 ; Parameters:
 ; CDemonCamera *   Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CSvetlana * __cdecl core_svetlana_cpp_factoryFunc_FUN_005d8810(void)
+; CSvetlana * __cdecl core_svetlana_cpp_factoryFunc_FUN_005d8810(void)
 ;
 ;
 ; XREF[1]:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_msnedit_cpp_FUN_00536e20(void)
+; void __cdecl core_msnedit_cpp_FUN_00536e20(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x100]:8  local_100

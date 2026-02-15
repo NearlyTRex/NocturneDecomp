@@ -154,12 +154,9 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004f0350(CGun *this_ptr)
            (*(((this_ptr->base).base.vtable._uc)->_uc).getGrabbed)
                      ((CCharacter *)this_ptr,pCVar4,in_stack_fffffebc);
       auStack_130._4_4_ = 0.4;
-      CStack_bc.y = (g_CDemonSetPtr->collision_result_vec2).x -
-                    (g_CDemonSetPtr->collision_result_vec1).x;
-      CStack_bc.z = (g_CDemonSetPtr->collision_result_vec2).y -
-                    (g_CDemonSetPtr->collision_result_vec1).y;
-      CStack_b0.x = (g_CDemonSetPtr->collision_result_vec2).z -
-                    (g_CDemonSetPtr->collision_result_vec1).z;
+      CStack_bc.y = (g_CDemonSetPtr->ray_target).x - (g_CDemonSetPtr->ray_origin).x;
+      CStack_bc.z = (g_CDemonSetPtr->ray_target).y - (g_CDemonSetPtr->ray_origin).y;
+      CStack_b0.x = (g_CDemonSetPtr->ray_target).z - (g_CDemonSetPtr->ray_origin).z;
       CStack_80.x = (float)10 /
                     SQRT(CStack_b0.x * CStack_b0.x +
                          CStack_bc.y * CStack_bc.y + CStack_bc.z * CStack_bc.z);

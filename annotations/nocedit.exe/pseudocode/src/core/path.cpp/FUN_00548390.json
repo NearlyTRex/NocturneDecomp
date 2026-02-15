@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 42,
-        "line": 45,
+        "line": 44,
         "message": "use of undeclared identifier 'stack0xffffffd0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 18,
-        "line": 47,
+        "line": 46,
         "message": "use of undeclared identifier 'stack0xffffffd4'"
       }
     ],
@@ -19,20 +19,19 @@
   },
   "complexity": {
     "assembly_lines": 132,
-    "complexity_score": 462,
+    "complexity_score": 328,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 13,
-    "pseudocode_lines": 67,
-    "suspect_count": 37,
+    "pseudocode_lines": 68,
+    "suspect_count": 24,
     "suspect_types": [
-      "param_count_too_few",
       "pointer_cast",
       "stack_param",
       "stack_ref",
       "undefined_data"
     ],
-    "total_lines": 199
+    "total_lines": 200
   },
   "cross_references": [
     {
@@ -52,7 +51,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_path.cpp_FUN_00548390",
-    "signature": "CPathMap * __cdecl core_path_cpp_FUN_00548390(void)"
+    "signature": "CPathMap * __cdecl core_path_cpp_FUN_00548390(CLocation *location)"
   },
   "function_calls": [
     {
@@ -85,7 +84,7 @@
     },
     {
       "addr": "00680bc8",
-      "name": "DAT_00680bc8",
+      "name": "WatcomStaticDestructorNode_00680bc8",
       "type": "WatcomStaticDestructorNode",
       "value": null
     },
@@ -103,7 +102,7 @@
     },
     {
       "addr": "02fd9060",
-      "name": "DAT_02fd9060",
+      "name": "CPathMap_ARRAY_02fd9060",
       "type": "CPathMap[12]",
       "value": null
     },
@@ -169,8 +168,8 @@
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
+    "confidence": "medium",
+    "declared_params": 1,
     "estimated_params": 1
   },
   "pcode_summary": {
@@ -207,10 +206,10 @@
     "pcode_op_count": 515
   },
   "stack_frame": {
-    "frame_size": 56,
+    "frame_size": 60,
     "local_size": 56,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -261,272 +260,184 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "location",
+        "offset": 4,
+        "size": 4,
+        "type": "CLocation *"
       }
     ]
   },
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000004",
-      "text": "CVector3f *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 12,
       "match": "in_stack_ffffffcc",
       "text": "CVector3i *in_stack_ffffffcc;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 19,
+      "line": 18,
       "match": "DAT_030c3ab0",
       "text": "if ((DAT_030c3ab0 & 1) == 0) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 20,
+      "line": 19,
       "match": "DAT_030c3ab0",
       "text": "DAT_030c3ab0 = DAT_030c3ab0 | 1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 20,
+      "line": 19,
       "match": "DAT_030c3ab0",
       "text": "DAT_030c3ab0 = DAT_030c3ab0 | 1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_02fd9060",
-      "text": "__arrinit(DAT_02fd9060,0xc,&g_CPathMapTypeInfo);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_00680bc8",
-      "text": "_atexit(&DAT_00680bc8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
+      "line": 23,
       "match": "DAT_00680bd8",
       "text": "if (DAT_00680bd8 < 0) {",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 28,
+      "line": 27,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&DAT_00680bd8 + iVar2) = iVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 28,
+      "line": 27,
       "match": "DAT_00680bd8",
       "text": "*(int *)((int)&DAT_00680bd8 + iVar2) = iVar1;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 35,
-      "match": "in_stack_00000004",
-      "text": "(&g_CDemonRaytraceInstance,in_stack_00000004,in_stack_ffffffcc);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 35,
+      "line": 34,
       "match": "in_stack_ffffffcc",
-      "text": "(&g_CDemonRaytraceInstance,in_stack_00000004,in_stack_ffffffcc);",
+      "text": "(&g_CDemonRaytraceInstance,&location->position,in_stack_ffffffcc);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 37,
+      "line": 36,
       "match": "in_stack_ffffffcc",
       "text": "local_1c = in_stack_ffffffcc;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 38,
+      "line": 37,
       "match": "&stack0xffffffd0",
       "text": "local_18[(uint)bVar6 * -2] = *(int *)(&stack0xffffffd0 + (uint)bVar6 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 40,
+      "line": 39,
       "match": "&stack0xffffffd4",
       "text": "*(int *)(&stack0xffffffd4 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
       "type": "stack_ref"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_02fd9060",
-      "text": "if (((local_1c == *(CVector3i **)((int)&DAT_02fd9060[0].cached_voxel_coords.x + iVar3)) &&",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 45,
       "match": "(int *)((int)",
-      "text": "(local_18[0] == *(int *)((int)&DAT_02fd9060[0].cached_voxel_coords.y + iVar3))) &&",
+      "text": "(local_18[0] == *(int *)((int)&CPathMap_ARRAY_02fd9060[0].cached_voxel_coords.y + iVar3)))",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 45,
-      "match": "DAT_02fd9060",
-      "text": "(local_18[0] == *(int *)((int)&DAT_02fd9060[0].cached_voxel_coords.y + iVar3))) &&",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 46,
+      "line": 47,
       "match": "(int *)((int)",
-      "text": "(iVar5 = iVar2, local_18[1] == *(int *)((int)&DAT_02fd9060[0].cached_voxel_coords.z + iVar3))",
+      "text": "local_18[1] == *(int *)((int)&CPathMap_ARRAY_02fd9060[0].cached_voxel_coords.z + iVar3)))",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 46,
-      "match": "DAT_02fd9060",
-      "text": "(iVar5 = iVar2, local_18[1] == *(int *)((int)&DAT_02fd9060[0].cached_voxel_coords.z + iVar3))",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 50,
       "match": "(int *)((int)",
       "text": "if ((&DAT_00680bd8)[iVar1] < *(int *)((int)&DAT_00680bd8 + iVar4)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 50,
       "match": "DAT_00680bd8",
       "text": "if ((&DAT_00680bd8)[iVar1] < *(int *)((int)&DAT_00680bd8 + iVar4)) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 50,
       "match": "DAT_00680bd8",
       "text": "if ((&DAT_00680bd8)[iVar1] < *(int *)((int)&DAT_00680bd8 + iVar4)) {",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 59,
+      "line": 60,
       "match": "(int *)((int)",
       "text": "if (*(int *)((int)&DAT_00680bd8 + iVar1) < (&DAT_00680bd8)[iVar5]) {",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 59,
+      "line": 60,
       "match": "DAT_00680bd8",
       "text": "if (*(int *)((int)&DAT_00680bd8 + iVar1) < (&DAT_00680bd8)[iVar5]) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 59,
+      "line": 60,
       "match": "DAT_00680bd8",
       "text": "if (*(int *)((int)&DAT_00680bd8 + iVar1) < (&DAT_00680bd8)[iVar5]) {",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 61,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&DAT_00680bd8 + iVar1) = *(int *)((int)&DAT_00680bd8 + iVar1) + 1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 61,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&DAT_00680bd8 + iVar1) = *(int *)((int)&DAT_00680bd8 + iVar1) + 1;",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 60,
+      "line": 61,
       "match": "DAT_00680bd8",
       "text": "*(int *)((int)&DAT_00680bd8 + iVar1) = *(int *)((int)&DAT_00680bd8 + iVar1) + 1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 60,
+      "line": 61,
       "match": "DAT_00680bd8",
       "text": "*(int *)((int)&DAT_00680bd8 + iVar1) = *(int *)((int)&DAT_00680bd8 + iVar1) + 1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 65,
       "match": "DAT_00680bd8",
       "text": "(&DAT_00680bd8)[iVar5] = 0;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 65,
-      "match": "in_stack_00000004",
-      "text": "local_28.x = in_stack_00000004->x;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 66,
-      "match": "in_stack_00000004",
-      "text": "local_28.y = in_stack_00000004->y;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 67,
-      "match": "in_stack_00000004",
-      "text": "local_28.z = in_stack_00000004->z;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 68,
-      "match": "DAT_02fd9060",
-      "text": "core_path_cpp_CPathMap_updateIfNeeded_FUN_00546a60(DAT_02fd9060 + iVar5,&local_28,1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 69,
-      "match": "DAT_02fd9060",
-      "text": "return DAT_02fd9060 + iVar5;",
-      "type": "undefined_data"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

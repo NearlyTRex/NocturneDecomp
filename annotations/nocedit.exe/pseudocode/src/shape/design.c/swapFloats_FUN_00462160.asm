@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_swapFloats_FUN_00462160(float *value1_ptr,float *value2_ptr)
+; void __cdecl shape_design_c_swapFloats_FUN_00462160(float *value1_ptr,float *value2_ptr)
 ;
 ; Parameters:
 ; float *          Stack[0x4]:4   value1_ptr

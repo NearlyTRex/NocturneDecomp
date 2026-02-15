@@ -124,16 +124,16 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053e220(CDemonMission *this_ptr
     if (this_ptr->full_light_in_editor == 0) {
       g_CDemonCameraInstance.corona_blend_factor = iStack_24;
       g_CDemonSetPtr->lighting_quality_mode = 0;
-      pCVar2->unk_lighting_param1 = 0;
+      pCVar2->disable_spotlight_shadows = 0;
     }
     else {
       g_CDemonCameraInstance.corona_blend_factor = 0xffff;
       g_CDemonSetPtr->lighting_quality_mode = 1;
-      pCVar2->unk_lighting_param1 = 1;
+      pCVar2->disable_spotlight_shadows = 1;
     }
     pCVar2 = g_CDemonSetPtr;
-    g_CDemonSetPtr->unk_lighting_param3 = (uint)(this_ptr->render_sky_in_editor == 0);
-    pCVar2->unk_lighting_param4 = (uint)(this_ptr->render_water_in_editor == 0);
+    g_CDemonSetPtr->disable_water_rendering = (uint)(this_ptr->render_sky_in_editor == 0);
+    pCVar2->disable_sky_rendering = (uint)(this_ptr->render_water_in_editor == 0);
     core_set_cpp_CDemonSet_FUN_0056c1a0(pCVar2);
     core_fire_cpp_CFireEffect_process_FUN_004c6ec0(g_CFireEffectPtr);
     core_gore_cpp_CGore_process_FUN_004ed9e0(g_CGorePtr);
@@ -241,8 +241,8 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053e220(CDemonMission *this_ptr
   core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0(g_CGamePtr);
   pCVar2 = g_CDemonSetPtr;
   g_CDemonSetPtr->lighting_quality_mode = 0;
-  pCVar2->unk_lighting_param1 = 0;
-  pCVar2->unk_lighting_param3 = 0;
-  pCVar2->unk_lighting_param4 = 0;
+  pCVar2->disable_spotlight_shadows = 0;
+  pCVar2->disable_water_rendering = 0;
+  pCVar2->disable_sky_rendering = 0;
   return;
 }

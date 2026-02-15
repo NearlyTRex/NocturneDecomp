@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_gun_cpp_CGun_fire_FUN_004f0350(CGun *this_ptr)
+; int __cdecl core_gun_cpp_CGun_fire_FUN_004f0350(CGun *this_ptr)
 ;
 ; Parameters:
 ; CGun *           Stack[0x4]:4   this_ptr

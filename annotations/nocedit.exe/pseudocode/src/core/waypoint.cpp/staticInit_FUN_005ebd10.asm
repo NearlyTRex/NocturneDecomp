@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_waypoint_cpp_staticInit_FUN_005ebd10(void)
+; void __cdecl core_waypoint_cpp_staticInit_FUN_005ebd10(void)
 ;
 ;
 ; Referenced Globals:

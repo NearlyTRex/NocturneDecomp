@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_actor_cpp_matchesClassName_FUN_0040c740(CDemonActorType *type_ptr,char *class_name)
+; int __cdecl core_actor_cpp_matchesClassName_FUN_0040c740(CDemonActorType *type_ptr,char *class_name)
 ;
 ; Parameters:
 ; CDemonActorType * Stack[0x4]:4   type_ptr

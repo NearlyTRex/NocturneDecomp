@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_heap_c_VirtualFreeBlock_FUN_0060c95c(HeapBlock *block)
+; int __cdecl crt_heap_c_VirtualFreeBlock_FUN_0060c95c(HeapBlock *block)
 ;
 ; Parameters:
 ; HeapBlock *      Stack[0x4]:4   block

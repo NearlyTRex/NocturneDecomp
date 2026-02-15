@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_boneguy_cpp_CBoneGuy_getTargetPoints_FUN_0041d550(CBoneGuy *this_ptr,CVector3f *out_points_array)
+; int __cdecl core_boneguy_cpp_CBoneGuy_getTargetPoints_FUN_0041d550(CBoneGuy *this_ptr,CVector3f *out_points_array)
 ;
 ; Parameters:
 ; CBoneGuy *       Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_anvil_cpp_CAnvil_hasCollision_FUN_00411fd0(CAnvil *this_ptr,SCollisionInfo *collision_info)
+; int __cdecl core_anvil_cpp_CAnvil_hasCollision_FUN_00411fd0(CAnvil *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CAnvil *         Stack[0x4]:4   this_ptr

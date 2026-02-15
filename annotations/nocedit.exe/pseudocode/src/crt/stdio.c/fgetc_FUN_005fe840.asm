@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_stdio_c_fgetc_FUN_005fe840(_FILE *file)
+; int __cdecl crt_stdio_c_fgetc_FUN_005fe840(_FILE *file)
 ;
 ; Parameters:
 ; _FILE *          Stack[0x4]:4   file

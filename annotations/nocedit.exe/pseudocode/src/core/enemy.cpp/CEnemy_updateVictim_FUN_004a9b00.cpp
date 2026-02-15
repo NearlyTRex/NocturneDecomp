@@ -60,9 +60,8 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00(CEnemy *this_ptr,fl
       local_28 = &(this_ptr->base).base.location;
       local_2c = 0;
       local_20 = 0;
-      for (local_24 = 0; local_24 < g_CDemonSetPtr->damage_listener_count; local_24 = local_24 + 1)
-      {
-        iVar9 = *(int *)(g_CDemonSetPtr->unk4 + local_2c + -4);
+      for (local_24 = 0; local_24 < g_CDemonSetPtr->character_count; local_24 = local_24 + 1) {
+        iVar9 = *(int *)((int)g_CDemonSetPtr->characters + local_2c);
         iVar8 = (**(code **)(*(int *)(iVar9 + 0x154) + 0xf8))(iVar9,this_ptr);
         if (((iVar8 != 0) &&
             (iVar8 = (**(code **)(*(int *)(iVar9 + 0x154) + 0x120))(iVar9), iVar8 == 0)) &&

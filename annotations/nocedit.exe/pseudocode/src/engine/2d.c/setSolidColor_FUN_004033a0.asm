@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_2d_c_setSolidColor_FUN_004033a0(int red_component,int green_component,int blue_component)
+; void __cdecl engine_2d_c_setSolidColor_FUN_004033a0(int red_component,int green_component,int blue_component)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   red_component

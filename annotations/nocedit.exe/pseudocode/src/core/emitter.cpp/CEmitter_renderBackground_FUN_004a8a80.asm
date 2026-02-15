@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_emitter_cpp_CEmitter_renderBackground_FUN_004a8a80(CEmitter *this_ptr,int layer_flag)
+; void __cdecl core_emitter_cpp_CEmitter_renderBackground_FUN_004a8a80(CEmitter *this_ptr,int layer_flag)
 ;
 ; Parameters:
 ; CEmitter *       Stack[0x4]:4   this_ptr

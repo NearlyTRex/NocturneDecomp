@@ -121,11 +121,11 @@
   },
   "complexity": {
     "assembly_lines": 1372,
-    "complexity_score": 769,
+    "complexity_score": 770,
     "cross_reference_count": 0,
     "function_call_count": 36,
     "global_count": 58,
-    "pseudocode_lines": 449,
+    "pseudocode_lines": 450,
     "suspect_count": 30,
     "suspect_types": [
       "pointer_cast",
@@ -133,7 +133,7 @@
       "undefined_data",
       "unknown_field"
     ],
-    "total_lines": 1821
+    "total_lines": 1822
   },
   "cross_references": [],
   "function": {
@@ -1308,7 +1308,7 @@
       "description": "Undefined global data reference",
       "line": 380,
       "match": "DAT_03365cbc",
-      "text": "local_18->unk = DAT_03365cbc;",
+      "text": "local_18->reverb_preset = DAT_03365cbc;",
       "type": "undefined_data"
     },
     {
@@ -1357,12 +1357,12 @@
       "description": "Direct stack address reference",
       "line": 421,
       "match": "&stack0xfffff374",
-      "text": "((CPickList *)&stack0xfffff374,\"Choose room size\",pSVar2->unk,0);",
+      "text": "((CPickList *)&stack0xfffff374,\"Choose room size\",",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 425,
+      "line": 426,
       "match": "&stack0xfffff374",
       "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff374,0);",
       "type": "stack_ref"

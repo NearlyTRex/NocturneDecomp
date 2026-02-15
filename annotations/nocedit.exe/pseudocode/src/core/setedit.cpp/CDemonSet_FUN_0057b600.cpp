@@ -61,17 +61,17 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_0057b600(CDemonSet *this_ptr)
       pcVar11 = pcVar11 + 4;
     }
     *(ushort *)pcVar11 = *(ushort *)pcVar5;
-    *(uint *)(pCVar3->unk1 + 6) = *(uint *)(pCVar1->unk1 + 6);
-    *(uint *)(pCVar3->unk1 + 10) = *(uint *)(pCVar1->unk1 + 10);
-    *(uint *)(pCVar3->unk1 + 0xe) = *(uint *)(pCVar1->unk1 + 0xe);
-    *(uint *)(pCVar3->unk1 + 0x12) = *(uint *)(pCVar1->unk1 + 0x12);
+    pCVar3->camera_light_bounds[0].left = pCVar1->camera_light_bounds[0].left;
+    pCVar3->camera_light_bounds[0].top = pCVar1->camera_light_bounds[0].top;
+    pCVar3->camera_light_bounds[0].right = pCVar1->camera_light_bounds[0].right;
+    pCVar3->camera_light_bounds[0].bottom = pCVar1->camera_light_bounds[0].bottom;
     (pCVar3->color).r = (pCVar1->color).r;
     (pCVar3->color).g = (pCVar1->color).g;
     (pCVar3->color).b = (pCVar1->color).b;
     pCVar3->atten_start = pCVar1->atten_start;
     pCVar3->atten_end = pCVar1->atten_end;
-    *(uint *)pCVar3->unk2 = *(uint *)pCVar1->unk2;
-    *(uint *)(pCVar3->unk2 + 4) = *(uint *)(pCVar1->unk2 + 4);
+    pCVar3->atten_end_squared = pCVar1->atten_end_squared;
+    pCVar3->atten_end_reciprocal = pCVar1->atten_end_reciprocal;
     pCVar3->on_time = pCVar1->on_time;
     pCVar3->cycle_time = pCVar1->cycle_time;
     pCVar3->cycle_elapsed = pCVar1->cycle_elapsed;

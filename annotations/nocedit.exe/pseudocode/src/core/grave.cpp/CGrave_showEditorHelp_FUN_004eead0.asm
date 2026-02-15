@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_grave_cpp_CGrave_showEditorHelp_FUN_004eead0(CGrave *this_ptr,int *y_pos)
+; void __cdecl core_grave_cpp_CGrave_showEditorHelp_FUN_004eead0(CGrave *this_ptr,int *y_pos)
 ;
 ; Parameters:
 ; CGrave *         Stack[0x4]:4   this_ptr

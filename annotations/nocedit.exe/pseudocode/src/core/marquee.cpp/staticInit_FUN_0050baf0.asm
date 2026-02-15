@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_marquee_cpp_staticInit_FUN_0050baf0(void)
+; void __cdecl core_marquee_cpp_staticInit_FUN_0050baf0(void)
 ;
 ;
 ; Referenced Globals:

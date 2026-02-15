@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_charactr_cpp_CCharacter_spawnBloodAtBone_FUN_0042b810(CCharacter *this_ptr,int part_index,int bone_index,float chance)
+; void __cdecl core_charactr_cpp_CCharacter_spawnBloodAtBone_FUN_0042b810(CCharacter *this_ptr,int part_index,int bone_index,float chance)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr

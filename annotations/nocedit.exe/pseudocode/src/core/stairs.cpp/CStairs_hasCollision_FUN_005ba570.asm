@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_stairs_cpp_CStairs_hasCollision_FUN_005ba570(CStairs *this_ptr,SCollisionInfo *collision_info)
+; int __cdecl core_stairs_cpp_CStairs_hasCollision_FUN_005ba570(CStairs *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CStairs *        Stack[0x4]:4   this_ptr

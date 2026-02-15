@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_005134e0(int key_code)
+; char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_005134e0(int key_code)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   key_code

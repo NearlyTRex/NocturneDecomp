@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_skeledit_cpp_FUN_00592520(void *ptr)
+; int __cdecl core_skeledit_cpp_FUN_00592520(void *ptr)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   ptr

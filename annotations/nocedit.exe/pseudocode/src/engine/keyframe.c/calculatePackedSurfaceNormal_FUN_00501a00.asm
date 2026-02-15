@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_keyframe_c_calculatePackedSurfaceNormal_FUN_00501a00(CVector3i *vertex_data,SSurfacePackedNormal *data)
+; void __cdecl engine_keyframe_c_calculatePackedSurfaceNormal_FUN_00501a00(CVector3i *vertex_data,SSurfacePackedNormal *data)
 ;
 ; Parameters:
 ; CVector3i *      Stack[0x4]:4   vertex_data

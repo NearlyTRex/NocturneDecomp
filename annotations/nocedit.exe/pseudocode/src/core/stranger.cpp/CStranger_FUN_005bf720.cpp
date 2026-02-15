@@ -30,8 +30,8 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005bf720(CStranger *this_ptr)
   core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510(this_ptr_00,&SStack_1ad8)
   ;
   core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
-            (this_ptr_00,*(int *)(this_ptr->unk9 + 0x40),
-             *(float *)(this_ptr->unk9 + 0x10) * (float)40,-1);
+            (this_ptr_00,*(int *)(this_ptr->unk8 + 0x40),
+             *(float *)(this_ptr->unk8 + 0x10) * (float)40,-1);
   pCVar1 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0
                      (&local_1c,
                       (CVector3f *)

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CCrate * __cdecl core_crate_cpp_CCrate_ctor_FUN_004484d0(CCrate *this_ptr)
+; CCrate * __cdecl core_crate_cpp_CCrate_ctor_FUN_004484d0(CCrate *this_ptr)
 ;
 ; Parameters:
 ; CCrate *         Stack[0x4]:4   this_ptr

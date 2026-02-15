@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * __cdecl core_script_cpp_parseConditionExpr_FUN_005594a0(char **cursor,char *out_buffer)
+; char * __cdecl core_script_cpp_parseConditionExpr_FUN_005594a0(char **cursor,char *out_buffer)
 ;
 ; Parameters:
 ; char * *         Stack[0x4]:4   cursor

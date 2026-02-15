@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack void __watcallStack crt_stdio_c_storeErrorState_FUN_0060b78e(uint *destination,uint error_state)
+; void __watcallStack crt_stdio_c_storeErrorState_FUN_0060b78e(uint *destination,uint error_state)
 ;
 ; Parameters:
 ; uint *           Stack[0x4]:4   destination

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_path_cpp_CPathMap_updateIfNeeded_FUN_00546a60(CPathMap *this_ptr,CVector3f *source_position,int force_update)
+; void __cdecl core_path_cpp_CPathMap_updateIfNeeded_FUN_00546a60(CPathMap *this_ptr,CVector3f *source_position,int force_update)
 ;
 ; Parameters:
 ; CPathMap *       Stack[0x4]:4   this_ptr

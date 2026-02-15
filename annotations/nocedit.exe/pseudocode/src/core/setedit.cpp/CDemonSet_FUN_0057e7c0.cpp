@@ -378,11 +378,11 @@ LAB_0057eb3b:
             (pCVar11->rotation_matrix).m[2].x = (pCVar7->rotation_matrix).m[2].x;
             (pCVar11->rotation_matrix).m[2].y = (pCVar7->rotation_matrix).m[2].y;
             (pCVar11->rotation_matrix).m[2].z = (pCVar7->rotation_matrix).m[2].z;
-            pCVar11->unk1 = pCVar7->unk1;
+            pCVar11->padding = pCVar7->padding;
             pCVar11->is_panning = pCVar7->is_panning;
             pCVar11->projection_scale = pCVar7->projection_scale;
             pCVar11->ambient_value = pCVar7->ambient_value;
-            pCVar11->unk2 = pCVar7->unk2;
+            pCVar11->camera_group = pCVar7->camera_group;
             pCVar11->fog_enabled = pCVar7->fog_enabled;
             (pCVar11->fog).color_index.r = (pCVar7->fog).color_index.r;
             (pCVar11->fog).color_index.g = (pCVar7->fog).color_index.g;
@@ -410,8 +410,8 @@ LAB_0057eb3b:
             }
             pCVar11->pvs_count = pCVar7->pvs_count;
             pCVar11->pvs_list = pCVar7->pvs_list;
-            pCVar11->unk3 = pCVar7->unk3;
-            pCVar11->unk4 = pCVar7->unk4;
+            pCVar11->vdir_zone = pCVar7->vdir_zone;
+            pCVar11->enabled = pCVar7->enabled;
             this_ptr->cameras[this_ptr->camera_count].pvs_count = 0;
             this_ptr->cameras[this_ptr->camera_count].pvs_list = (int *)0x0;
             pbVar17 = abStack_4be;
@@ -488,10 +488,10 @@ LAB_0057eb3b:
       break;
     case 0x38:
       core_set_cpp_CDemonSet_initScene_FUN_0056aa10(this_ptr);
-      this_ptr->unk_lighting_param3 = 1;
+      this_ptr->disable_water_rendering = 1;
       this_ptr_00 = g_CEditorToolsPtr;
-      this_ptr->unk_lighting_param4 = 1;
-      this_ptr->unk_lighting_param1 = 1;
+      this_ptr->disable_sky_rendering = 1;
+      this_ptr->disable_spotlight_shadows = 1;
       shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
                 (this_ptr_00,"Recomputing all PVS");
       iVar9 = 0;
@@ -512,14 +512,14 @@ LAB_0057eb3b:
           local_14 = iVar9;
           shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
                     (g_CEditorToolsPtr,(float)iVar9,(float)this_ptr->camera_count);
-          pCVar12 = (CDemonSet *)&pCVar12->cameras[0].unk4;
+          pCVar12 = (CDemonSet *)&pCVar12->cameras[0].enabled;
           local_2c = local_2c + 1;
         } while (iVar9 < this_ptr->camera_count);
       }
       shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
-      this_ptr->unk_lighting_param1 = 0;
-      this_ptr->unk_lighting_param3 = 0;
-      this_ptr->unk_lighting_param4 = 0;
+      this_ptr->disable_spotlight_shadows = 0;
+      this_ptr->disable_water_rendering = 0;
+      this_ptr->disable_sky_rendering = 0;
       core_set_cpp_CDemonSet_FUN_0056d2d0(this_ptr);
       break;
     case 0x39:

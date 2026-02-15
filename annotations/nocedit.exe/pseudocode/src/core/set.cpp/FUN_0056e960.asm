@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_set_cpp_FUN_0056e960(void)
+; void __cdecl core_set_cpp_FUN_0056e960(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20

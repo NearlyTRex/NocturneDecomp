@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CAmmoBox * __cdecl core_ammobox_cpp_factoryFunc_FUN_00411560(void)
+; CAmmoBox * __cdecl core_ammobox_cpp_factoryFunc_FUN_00411560(void)
 ;
 ;
 ; XREF[1]:

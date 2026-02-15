@@ -22,8 +22,8 @@ void __cdecl core_set_cpp_CDemonSet_SetStateVersionCameraCountInStrings_FUN_0057
   if (0 < this_ptr->camera_count) {
     do {
       iVar1 = iVar1 + 1;
-      _fprintf(in_stack_00000008,"%d\n",pCVar2->cameras[0].unk4);
-      pCVar2 = (CDemonSet *)&pCVar2->cameras[0].unk4;
+      _fprintf(in_stack_00000008,"%d\n",pCVar2->cameras[0].enabled);
+      pCVar2 = (CDemonSet *)&pCVar2->cameras[0].enabled;
     } while (iVar1 < this_ptr->camera_count);
   }
   return;

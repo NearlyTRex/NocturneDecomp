@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_renderMaximumQualityVariant_FUN_0048bba0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)
+; void __cdecl engine_drender_cpp_CDemonRenderer_renderMaximumQualityVariant_FUN_0048bba0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
@@ -12,7 +12,7 @@
 ; XREF[4]:
 ;   core_fire.cpp_CLaserBeam_render_FUN_004c25c0 at 004c337e
 ;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_00509d50 at 0050a184
-;   core_path.cpp_FUN_00547fc0 at 0054837e
+;   core_path.cpp_CPathMap_FUN_00547fc0 at 0054837e
 ;   core_path.cpp_debugRenderGridQuad_FUN_00547dd0 at 00547fab
 ;
 ; Referenced Globals:

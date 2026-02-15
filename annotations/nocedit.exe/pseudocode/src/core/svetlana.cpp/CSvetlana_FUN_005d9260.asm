@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9260(CSvetlana *this_ptr)
+; void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9260(CSvetlana *this_ptr)
 ;
 ; Parameters:
 ; CSvetlana *      Stack[0x4]:4   this_ptr
@@ -482,7 +482,7 @@ section .text
     LEA EAX,[EDI + 0x20]                ; 005d97f3
     PUSH EAX                            ; 005d97f6
     CALL core_path.cpp_FUN_00548500     ; 005d97f7
-        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_FUN_00548500()
+        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_FUN_00548500(CLocation * location)
     ADD ESP,0x4                         ; 005d97fc
     MOV dword ptr [ESP + 0x98],EAX      ; 005d97ff
     MOV ECX,dword ptr [EBX + 0x6c]      ; 005d9806

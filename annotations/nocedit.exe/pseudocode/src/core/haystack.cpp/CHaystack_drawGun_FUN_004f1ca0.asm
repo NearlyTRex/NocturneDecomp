@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_haystack_cpp_CHaystack_drawGun_FUN_004f1ca0(CHaystack *this_ptr,int drawn)
+; void __cdecl core_haystack_cpp_CHaystack_drawGun_FUN_004f1ca0(CHaystack *this_ptr,int drawn)
 ;
 ; Parameters:
 ; CHaystack *      Stack[0x4]:4   this_ptr

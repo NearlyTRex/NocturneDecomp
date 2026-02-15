@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_font_cpp_CBitFont_setCharXAdvanceRange_FUN_004d0230(CBitFont *this_ptr,int advance_value,int start_char,int end_char)
+; void __cdecl engine_font_cpp_CBitFont_setCharXAdvanceRange_FUN_004d0230(CBitFont *this_ptr,int advance_value,int start_char,int end_char)
 ;
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_icepick_cpp_CIcePick_getPropertyList_FUN_004f97a0(CIcePick *this_ptr,CActorPropertyList *property_list)
+; void __cdecl core_icepick_cpp_CIcePick_getPropertyList_FUN_004f97a0(CIcePick *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CIcePick *       Stack[0x4]:4   this_ptr

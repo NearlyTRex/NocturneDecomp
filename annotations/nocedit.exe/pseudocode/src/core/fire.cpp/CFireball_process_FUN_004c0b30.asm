@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_fire_cpp_CFireball_process_FUN_004c0b30(CFireball *this_ptr)
+; void __cdecl core_fire_cpp_CFireball_process_FUN_004c0b30(CFireball *this_ptr)
 ;
 ; Parameters:
 ; CFireball *      Stack[0x4]:4   this_ptr
@@ -16,8 +16,8 @@
 ;   int g_GlobalDeltaTimeInt
 ;   CFireEffect g_CFireEffectInstance
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.damage_listener_count
-;   undefined4 g_CDemonSetInstance.damage_listeners
+;   undefined4 g_CDemonSetInstance.character_count
+;   undefined4 g_CDemonSetInstance.characters[0]
 ;
 ; Called Functions:
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
@@ -178,7 +178,7 @@ section .text
     XOR EBX,EBX                         ; 004c0ccd
     MOV EDI,dword ptr [0x006810c8]      ; 004c0ccf | g_CDemonSetPtr
         ;   Label: LAB_004c0ccf
-    CMP EBX,dword ptr [EDI + 0x14f098]  ; 004c0cd5 | g_CDemonSetInstance.damage_listener_count
+    CMP EBX,dword ptr [EDI + 0x14f098]  ; 004c0cd5 | g_CDemonSetInstance.character_count
     JL 0x004c0d44                       ; 004c0cdb
         ;   XREF to: 004c0d44 (CONDITIONAL_JUMP)  ; LAB_004c0d44
     ADD ESP,0x44                        ; 004c0cdd
@@ -222,7 +222,7 @@ section .text
     MOV EAX,ESP                         ; 004c0d44
         ;   Label: LAB_004c0d44
     PUSH EAX                            ; 004c0d46
-    MOV EDI,dword ptr [EDI + ESI*0x1 + 0x14f09c] ; 004c0d47 | g_CDemonSetInstance.damage_listeners
+    MOV EDI,dword ptr [EDI + ESI*0x1 + 0x14f09c] ; 004c0d47 | g_CDemonSetInstance.characters[0]
     CALL core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0 ; 004c0d4e
         ;   XREF to: 00427db0 (UNCONDITIONAL_CALL)  ; SDamageInfo * core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0(SDamageInfo * this_ptr)
     ADD ESP,0x4                         ; 004c0d53

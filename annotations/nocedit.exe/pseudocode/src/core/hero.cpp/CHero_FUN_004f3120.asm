@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_hero_cpp_CHero_FUN_004f3120(CHero *this_ptr)
+; int __cdecl core_hero_cpp_CHero_FUN_004f3120(CHero *this_ptr)
 ;
 ; Parameters:
 ; CHero *          Stack[0x4]:4   this_ptr
@@ -20,8 +20,8 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   undefined4 g_CBoxActorClassInfo.name_hash
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.actor_list_ptr
-;   undefined4 g_CDemonSetInstance.actor_list_data[0]
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
@@ -59,7 +59,7 @@ section .text
     XOR ESI,ESI                         ; 004f314e
     MOV EBX,dword ptr [0x006810c8]      ; 004f3150 | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_004f3150
-    CMP EDI,dword ptr [EBX + 0x14d154]  ; 004f3156 | g_CDemonSetInstance.actor_list_ptr
+    CMP EDI,dword ptr [EBX + 0x14d154]  ; 004f3156 | g_CDemonSetInstance.actor_count
     JL 0x004f31ba                       ; 004f315c
         ;   XREF to: 004f31ba (CONDITIONAL_JUMP)  ; LAB_004f31ba
     MOV EAX,dword ptr [EBP + 0x14]      ; 004f315e
@@ -108,7 +108,7 @@ section .text
     MOV EDX,dword ptr [0x008229e8]      ; 004f31ba | g_CBoxActorClassInfo.name_hash
         ;   Label: LAB_004f31ba
     PUSH EDX                            ; 004f31c0
-    MOV ECX,dword ptr [ESI + EBX*0x1 + 0x14d158] ; 004f31c1 | g_CDemonSetInstance.actor_list_data[0]
+    MOV ECX,dword ptr [ESI + EBX*0x1 + 0x14d158] ; 004f31c1 | g_CDemonSetInstance.actors[0]
     PUSH ECX                            ; 004f31c8
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 004f31c9
         ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)

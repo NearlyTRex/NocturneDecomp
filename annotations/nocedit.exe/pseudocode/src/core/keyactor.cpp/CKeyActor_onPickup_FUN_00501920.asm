@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_keyactor_cpp_CKeyActor_onPickup_FUN_00501920(CKeyActor *this_ptr,CDemonActor *owner)
+; void __cdecl core_keyactor_cpp_CKeyActor_onPickup_FUN_00501920(CKeyActor *this_ptr,CDemonActor *owner)
 ;
 ; Parameters:
 ; CKeyActor *      Stack[0x4]:4   this_ptr

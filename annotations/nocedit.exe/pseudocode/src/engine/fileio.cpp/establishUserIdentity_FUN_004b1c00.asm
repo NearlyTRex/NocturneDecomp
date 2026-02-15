@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_fileio_cpp_establishUserIdentity_FUN_004b1c00(void)
+; int __cdecl engine_fileio_cpp_establishUserIdentity_FUN_004b1c00(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x204]:1  local_204

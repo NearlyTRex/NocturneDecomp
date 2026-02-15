@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl _FILE * __cdecl crt_stdio_c_get_standard_file_handle_FUN_0060b7a0(int fd)
+; _FILE * __cdecl crt_stdio_c_get_standard_file_handle_FUN_0060b7a0(int fd)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   fd

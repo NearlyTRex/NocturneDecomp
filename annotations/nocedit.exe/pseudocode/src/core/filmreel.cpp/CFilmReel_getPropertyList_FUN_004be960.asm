@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_filmreel_cpp_CFilmReel_getPropertyList_FUN_004be960(CFilmReel *this_ptr,CActorPropertyList *property_list)
+; void __cdecl core_filmreel_cpp_CFilmReel_getPropertyList_FUN_004be960(CFilmReel *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CFilmReel *      Stack[0x4]:4   this_ptr

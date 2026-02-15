@@ -120,12 +120,9 @@ int __cdecl core_turret_cpp_CTurret_fire_FUN_005e3750(CTurret *this_ptr)
            (*(((this_ptr->base).base.vtable._uc)->_uc).getGrabbed)
                      ((CCharacter *)this_ptr,SUB84(dVar4,0),(int)((ulonglong)dVar4 >> 0x20));
       auStack_cc._4_4_ = 0.4;
-      fStack_7c = (g_CDemonSetPtr->collision_result_vec2).x -
-                  (g_CDemonSetPtr->collision_result_vec1).x;
-      fStack_78 = (g_CDemonSetPtr->collision_result_vec2).y -
-                  (g_CDemonSetPtr->collision_result_vec1).y;
-      fStack_74 = (g_CDemonSetPtr->collision_result_vec2).z -
-                  (g_CDemonSetPtr->collision_result_vec1).z;
+      fStack_7c = (g_CDemonSetPtr->ray_target).x - (g_CDemonSetPtr->ray_origin).x;
+      fStack_78 = (g_CDemonSetPtr->ray_target).y - (g_CDemonSetPtr->ray_origin).y;
+      fStack_74 = (g_CDemonSetPtr->ray_target).z - (g_CDemonSetPtr->ray_origin).z;
       fVar1 = (float)10 /
               SQRT(fStack_74 * fStack_74 + fStack_7c * fStack_7c + fStack_78 * fStack_78);
       fStack_40 = fStack_7c * fVar1;

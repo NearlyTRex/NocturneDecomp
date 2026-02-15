@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl wincore_windll_cpp_drawFullScreenQuad_FUN_005b7a50(int color)
+; int __cdecl wincore_windll_cpp_drawFullScreenQuad_FUN_005b7a50(int color)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   color

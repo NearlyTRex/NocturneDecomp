@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_cramtex_cpp_maxInt_FUN_00448440(int a,int b)
+; int __cdecl shape_cramtex_cpp_maxInt_FUN_00448440(int a,int b)
 ;
 ; Parameters:
 ; int              Stack[0xc]:4   a

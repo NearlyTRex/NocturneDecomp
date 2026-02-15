@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_tvbat_cpp_CTVBat_archive_FUN_005e40c0(CTVBat *this_ptr)
+; void __cdecl core_tvbat_cpp_CTVBat_archive_FUN_005e40c0(CTVBat *this_ptr)
 ;
 ; Parameters:
 ; CTVBat *         Stack[0x4]:4   this_ptr

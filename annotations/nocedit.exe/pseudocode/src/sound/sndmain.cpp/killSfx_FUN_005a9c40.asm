@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl sound_sndmain_cpp_killSfx_FUN_005a9c40(uint sfx_handle)
+; int __cdecl sound_sndmain_cpp_killSfx_FUN_005a9c40(uint sfx_handle)
 ;
 ; Parameters:
 ; uint             Stack[0x4]:4   sfx_handle

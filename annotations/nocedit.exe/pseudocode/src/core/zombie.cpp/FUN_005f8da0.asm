@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVector3f * __cdecl core_zombie_cpp_FUN_005f8da0(void)
+; CVector3f * __cdecl core_zombie_cpp_FUN_005f8da0(void)
 ;
 ;
 ; Referenced Globals:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_gasmask_cpp_CGasMask_process_FUN_004e5d90(CGasMask *this_ptr,float delta_time)
+; void __cdecl core_gasmask_cpp_CGasMask_process_FUN_004e5d90(CGasMask *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CGasMask *       Stack[0x4]:4   this_ptr

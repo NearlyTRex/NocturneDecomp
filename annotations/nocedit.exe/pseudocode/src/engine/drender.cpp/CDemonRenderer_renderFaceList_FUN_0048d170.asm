@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0048d170(CDemonRenderer *this_ptr,SInputFace *face_array,int face_count,int render_flags)
+; void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0048d170(CDemonRenderer *this_ptr,SInputFace *face_array,int face_count,int render_flags)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr

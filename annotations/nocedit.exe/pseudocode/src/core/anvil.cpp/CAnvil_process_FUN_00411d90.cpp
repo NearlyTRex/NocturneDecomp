@@ -44,7 +44,7 @@ void __cdecl core_anvil_cpp_CAnvil_process_FUN_00411d90(CAnvil *this_ptr,float d
         (g_HeroActors[g_LocalHeroIndex]->base).base.location.position.y + (float)6) {
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_48);
       local_48.damage_amount = 9999.9;
-      local_48.damage_type = 8;
+      local_48.gore_multiplier = 1.12104e-44;
       local_48.attacker = &this_ptr->base;
       local_48.wielder = &this_ptr->base;
       (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).processDamage)

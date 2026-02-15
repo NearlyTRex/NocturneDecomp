@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_design_c_checkNonFFBytes_FUN_0046ac70(char *buffer_ptr,int buffer_length)
+; int __cdecl shape_design_c_checkNonFFBytes_FUN_0046ac70(char *buffer_ptr,int buffer_length)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   buffer_ptr

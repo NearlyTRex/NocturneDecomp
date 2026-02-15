@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_boxactor_cpp_CBoxActor_canPickup_FUN_004224b0(CBoxActor *this_ptr,CDemonActor *picker)
+; int __cdecl core_boxactor_cpp_CBoxActor_canPickup_FUN_004224b0(CBoxActor *this_ptr,CDemonActor *picker)
 ;
 ; Parameters:
 ; CBoxActor *      Stack[0x4]:4   this_ptr

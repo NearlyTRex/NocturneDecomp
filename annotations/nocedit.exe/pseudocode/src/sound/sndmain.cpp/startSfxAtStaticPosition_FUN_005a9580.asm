@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl uint __cdecl sound_sndmain_cpp_startSfxAtStaticPosition_FUN_005a9580(char *filename,double pos_x,double pos_y,double pos_z)
+; uint __cdecl sound_sndmain_cpp_startSfxAtStaticPosition_FUN_005a9580(char *filename,double pos_x,double pos_y,double pos_z)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

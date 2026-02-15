@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_pendulum_cpp_CPendulum_addFilesToExtract_FUN_0054a7b0(CPendulum *this_ptr,_FILE *file_handle)
+; void __cdecl core_pendulum_cpp_CPendulum_addFilesToExtract_FUN_0054a7b0(CPendulum *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CPendulum *      Stack[0x4]:4   this_ptr

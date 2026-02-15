@@ -114,7 +114,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9260(CSvetlana *this_ptr)
         }
       }
       if (pCStack_20 == (CPathMap *)0x0) {
-        pCStack_20 = core_path_cpp_FUN_00548500();
+        pCStack_20 = core_path_cpp_FUN_00548500(&(pCVar9->base).base.location);
       }
       iVar4 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
                         (pCStack_20,&(this_ptr->base).base.base.location.position,&CStack_48,

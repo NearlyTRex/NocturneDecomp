@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_script_cpp_trimString_FUN_00559360(char *str)
+; void __cdecl core_script_cpp_trimString_FUN_00559360(char *str)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   str

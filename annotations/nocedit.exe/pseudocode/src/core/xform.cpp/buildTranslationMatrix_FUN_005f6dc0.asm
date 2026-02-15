@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __stack_esi CMatrix3x4f * __stack_esi core_xform_cpp_buildTranslationMatrix_FUN_005f6dc0(CVector3f *translation,CMatrix3x4f *matrix_out)
+; CMatrix3x4f * __stack_esi core_xform_cpp_buildTranslationMatrix_FUN_005f6dc0(CVector3f *translation,CMatrix3x4f *matrix_out)
 ;
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   translation

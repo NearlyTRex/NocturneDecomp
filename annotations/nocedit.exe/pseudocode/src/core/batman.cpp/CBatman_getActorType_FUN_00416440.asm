@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * __cdecl core_batman_cpp_CBatman_getActorType_FUN_00416440(CBatman *this_ptr)
+; CDemonActorType * __cdecl core_batman_cpp_CBatman_getActorType_FUN_00416440(CBatman *this_ptr)
 ;
 ; Parameters:
 ; CBatman *        Stack[0x4]:4   this_ptr

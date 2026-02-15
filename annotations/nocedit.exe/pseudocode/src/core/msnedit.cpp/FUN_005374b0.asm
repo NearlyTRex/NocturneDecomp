@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_msnedit_cpp_FUN_005374b0(int unk)
+; void __cdecl core_msnedit_cpp_FUN_005374b0(int unk)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   unk

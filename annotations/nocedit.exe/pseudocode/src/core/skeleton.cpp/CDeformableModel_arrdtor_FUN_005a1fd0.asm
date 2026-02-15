@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDeformableModel * __cdecl core_skeleton_cpp_CDeformableModel_arrdtor_FUN_005a1fd0(CDeformableModel *objs,uint flags)
+; CDeformableModel * __cdecl core_skeleton_cpp_CDeformableModel_arrdtor_FUN_005a1fd0(CDeformableModel *objs,uint flags)
 ;
 ; Parameters:
 ; CDeformableModel * Stack[0x4]:4   objs

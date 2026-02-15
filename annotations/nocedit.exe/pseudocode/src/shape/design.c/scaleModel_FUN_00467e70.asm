@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_scaleModel_FUN_00467e70(void)
+; void __cdecl shape_design_c_scaleModel_FUN_00467e70(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x70]:8  local_70

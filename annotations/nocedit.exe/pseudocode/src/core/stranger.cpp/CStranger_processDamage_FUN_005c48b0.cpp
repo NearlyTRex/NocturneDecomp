@@ -15,8 +15,7 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_005c48b0(CStranger *t
   CGame *pCVar2;
   int iVar3;
   SMotion *pSVar4;
-  uint uVar5;
-  CDemonActor *pCVar6;
+  CDemonActor *pCVar5;
   float force_immediate;
   
   if (g_CGamePtr->debug_flag_1 != 0) {
@@ -26,7 +25,8 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_005c48b0(CStranger *t
     damage_info->damage_amount = 0.0;
   }
   core_hero_cpp_CHero_FUN_004f3580(&this_ptr->base);
-  if ((0.0 < (float)(this_ptr->base).no_collision_flag) && (0xb < damage_info->damage_type)) {
+  if ((0.0 < (float)(this_ptr->base).no_collision_flag) && (0xb < (int)damage_info->gore_multiplier)
+     ) {
     damage_info->damage_amount = 0.0;
     return;
   }
@@ -38,7 +38,7 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_005c48b0(CStranger *t
   pCVar2 = g_CGamePtr;
   (this_ptr->base).base.hit_points = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   this_ptr_01 = g_CConsolePtr;
-  if (((pCVar2->auto_use_health != 0) && (0xb < damage_info->damage_type)) &&
+  if (((pCVar2->auto_use_health != 0) && (0xb < (int)damage_info->gore_multiplier)) &&
      ((this_ptr->base).base.hit_points <= 0.0)) {
     (this_ptr->base).base.hit_points = 0.0;
     engine_console_cpp_CConsole_printf_FUN_00441890(this_ptr_01,"Using auto health\n");
@@ -59,7 +59,7 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_005c48b0(CStranger *t
       if (pSVar4->state_index != 0x28) {
         if (((this_ptr->base).ladder_to_climb == (CDemonActor *)0x0) &&
            (this_ptr->ladder_to_descend == (CDemonActor *)0x0)) {
-          if (damage_info->damage_type == 1) {
+          if (damage_info->gore_multiplier == 1.4013e-45) {
             iVar3 = 0x27;
             force_immediate = 1.4013e-45;
           }
@@ -76,11 +76,11 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_005c48b0(CStranger *t
         }
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&(this_ptr->base).base.model.motion_controller,iVar3,(int)force_immediate);
-        sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk11 + 0x14));
-        if (damage_info->damage_type != 1) {
-          uVar5 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
+        sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->unk14);
+        if (damage_info->gore_multiplier != 1.4013e-45) {
+          iVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                             ((CDemonActor *)this_ptr,"stranger_die??.wav");
-          *(uint *)(this_ptr->unk11 + 0x14) = uVar5;
+          this_ptr->unk14 = iVar3;
         }
         core_gore_cpp_CGore_FUN_004ee030(g_CGorePtr,(CDemonActor *)this_ptr);
       }
@@ -98,12 +98,12 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_005c48b0(CStranger *t
     goto LAB_005c4ae0;
   }
   if (damage_info->damage_amount <= 0.0) goto LAB_005c4ae0;
-  if (((damage_info->damage_type != 0x69) &&
+  if (((damage_info->gore_multiplier != 1.47136e-43) &&
       ((this_ptr->base).ladder_to_climb == (CDemonActor *)0x0)) &&
      ((this_ptr->ladder_to_descend == (CDemonActor *)0x0 && (this_ptr->action_pending == 0)))) {
-    pCVar6 = core_actor_cpp_castToClassHash_FUN_0040c790
+    pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c790
                        (damage_info->attacker,g_CTommyGunClassInfo.name_hash);
-    if (pCVar6 != (CDemonActor *)0x0) {
+    if (pCVar5 != (CDemonActor *)0x0) {
       iVar3 = core_actor_cpp_randomChance_FUN_0040cd10(0.333);
       if (iVar3 == 0) goto LAB_005c4be2;
     }
@@ -111,11 +111,11 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_005c48b0(CStranger *t
               (&this_ptr_00->motion_controller,0x24,1);
   }
 LAB_005c4be2:
-  iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk11 + 0x14));
+  iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->unk14);
   if (iVar3 == 0) {
-    uVar5 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
+    iVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                       ((CDemonActor *)this_ptr,"stranger_hit??.wav");
-    *(uint *)(this_ptr->unk11 + 0x14) = uVar5;
+    this_ptr->unk14 = iVar3;
   }
 LAB_005c4ae0:
   if (0.0 < damage_info->damage_amount) {

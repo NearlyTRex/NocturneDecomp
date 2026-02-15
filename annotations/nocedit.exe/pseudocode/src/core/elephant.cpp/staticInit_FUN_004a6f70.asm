@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_elephant_cpp_staticInit_FUN_004a6f70(void)
+; void __cdecl core_elephant_cpp_staticInit_FUN_004a6f70(void)
 ;
 ;
 ; Referenced Globals:

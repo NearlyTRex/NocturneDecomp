@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __fastcall void __fastcall crt_watcom_c__memset_FUN_004b19d0(void *dest,int fill_byte,uint size)
+; void __fastcall crt_watcom_c__memset_FUN_004b19d0(void *dest,int fill_byte,uint size)
 ;
 ; Parameters:
 ; uint             Stack[0x4]:4   size

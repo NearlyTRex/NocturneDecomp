@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_displayHeapStatus_FUN_0046e760(int line_number)
+; void __cdecl shape_design_c_displayHeapStatus_FUN_0046e760(int line_number)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   line_number

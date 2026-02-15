@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addFloatRange_FUN_0040e1a0(CActorPropertyList *this_ptr,char *property_name,float *data_ptr,float min_value,float max_value,CActorPropertyValidatorFunc *callback)
+; CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addFloatRange_FUN_0040e1a0(CActorPropertyList *this_ptr,char *property_name,float *data_ptr,float min_value,float max_value,CActorPropertyValidatorFunc *callback)
 ;
 ; Parameters:
 ; CActorPropertyList * Stack[0x4]:4   this_ptr

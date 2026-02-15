@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_crate_cpp_CCrate_getTargetPoints_FUN_004489d0(CCrate *this_ptr,CVector3f *out_points_array)
+; int __cdecl core_crate_cpp_CCrate_getTargetPoints_FUN_004489d0(CCrate *this_ptr,CVector3f *out_points_array)
 ;
 ; Parameters:
 ; CCrate *         Stack[0x4]:4   this_ptr

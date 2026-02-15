@@ -58,9 +58,8 @@ LAB_0042e0ee:
     local_1c = &(this_ptr->base).location;
     local_24 = 0;
     iVar5 = 0;
-    for (local_20 = 0; local_20 < *(int *)(g_CDemonSetPtr->unk4 + 0x5dc4); local_20 = local_20 + 1)
-    {
-      target_string = *(char **)(g_CDemonSetPtr->unk4 + local_24 + 0x5dc8);
+    for (local_20 = 0; local_20 < g_CDemonSetPtr->waypoint_count; local_20 = local_20 + 1) {
+      target_string = *(char **)((int)g_CDemonSetPtr->waypoints + local_24);
       iVar2 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20(pattern,target_string,0);
       iVar4 = iVar5;
       if ((iVar2 != 0) &&

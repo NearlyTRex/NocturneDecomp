@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_errno_c_SetWindowsError_FUN_006027c8(DWORD windows_error_code)
+; void __cdecl crt_errno_c_SetWindowsError_FUN_006027c8(DWORD windows_error_code)
 ;
 ; Parameters:
 ; DWORD            Stack[0x4]:4   windows_error_code

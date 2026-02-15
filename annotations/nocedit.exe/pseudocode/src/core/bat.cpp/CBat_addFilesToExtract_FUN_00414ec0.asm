@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_bat_cpp_CBat_addFilesToExtract_FUN_00414ec0(CBat *this_ptr,_FILE *file_handle)
+; void __cdecl core_bat_cpp_CBat_addFilesToExtract_FUN_00414ec0(CBat *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CBat *           Stack[0x4]:4   this_ptr

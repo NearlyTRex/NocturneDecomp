@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * __cdecl core_gun_cpp_CGun_getActorType_FUN_004f02e0(CGun *this_ptr)
+; CDemonActorType * __cdecl core_gun_cpp_CGun_getActorType_FUN_004f02e0(CGun *this_ptr)
 ;
 ; Parameters:
 ; CGun *           Stack[0x4]:4   this_ptr

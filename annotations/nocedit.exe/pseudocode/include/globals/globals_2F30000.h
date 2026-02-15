@@ -9,7 +9,7 @@
 #include "types/classes/CKeyFramedModel.h"
 #include "types/classes/CVector3f.h"
 #include "types/structs/SBat.h"
-#include "types/structs/SMRGLHeaderPrimitive.h"
+#include "types/structs/SMRGLPrimitiveQuadIndex.h"
 #include "types/structs/SMRGLTextureBasic.h"
 
 // =============================================================================
@@ -47,8 +47,8 @@ extern CVector3f g_SamplePointArray[400];
 // SBat[30]
 extern SBat g_MoonBats[30];
 
-// SMRGLHeaderPrimitive
-extern SMRGLHeaderPrimitive g_MirrorTempPrimitive;
+// SMRGLPrimitiveQuadIndex
+extern SMRGLPrimitiveQuadIndex g_MirrorTempPrimitive;
 
 // SMRGLTextureBasic
 extern SMRGLTextureBasic g_TempTextureDescriptor;
@@ -92,10 +92,6 @@ extern int INT_02f333c0;
 extern int INT_02f333c4;
 extern int g_MirrorInputVertexCount;
 extern int g_MirrorOutputVertexCount;
-extern int INT_02f33724;
-extern int INT_02f33728;
-extern int INT_02f3372c;
-extern int INT_02f33730;
 extern int INT_02f37ec8;
 extern int INT_02f37ecc;
 extern int INT_02f37ed0;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_script_cpp_CScript_parseCommand_FUN_00567080(CScript *this_ptr,char *text,SScriptXRef *xref_data)
+; void __cdecl core_script_cpp_CScript_parseCommand_FUN_00567080(CScript *this_ptr,char *text,SScriptXRef *xref_data)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr

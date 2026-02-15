@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl uint __cdecl sound_sndmain_cpp_startSfx_FUN_005a8e90(char *filename)
+; uint __cdecl sound_sndmain_cpp_startSfx_FUN_005a8e90(char *filename)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

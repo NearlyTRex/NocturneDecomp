@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_unknown_c_CondCallDoNothing_FUN_00603ccc(void)
+; void __cdecl crt_unknown_c_CondCallDoNothing_FUN_00603ccc(void)
 ;
 ; Local Variables:
 ; undefined2       Stack[-0x20]:2  local_20

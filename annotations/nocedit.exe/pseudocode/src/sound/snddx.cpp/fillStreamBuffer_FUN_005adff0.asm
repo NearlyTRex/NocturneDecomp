@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl sound_snddx_cpp_fillStreamBuffer_FUN_005adff0(void)
+; int __cdecl sound_snddx_cpp_fillStreamBuffer_FUN_005adff0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x20]:1  local_20

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_fileio_cpp_CFileManager_compareLocalVsPod_FUN_004b82a0(CFileManager *this_ptr,char *pod_filename)
+; void __cdecl engine_fileio_cpp_CFileManager_compareLocalVsPod_FUN_004b82a0(CFileManager *this_ptr,char *pod_filename)
 ;
 ; Parameters:
 ; CFileManager *   Stack[0x4]:4   this_ptr

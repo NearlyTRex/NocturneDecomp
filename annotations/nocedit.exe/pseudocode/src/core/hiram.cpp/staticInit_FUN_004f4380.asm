@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_hiram_cpp_staticInit_FUN_004f4380(void)
+; void __cdecl core_hiram_cpp_staticInit_FUN_004f4380(void)
 ;
 ;
 ; Referenced Globals:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_grave_cpp_CGrave_processInEditor_FUN_004eea70(CGrave *this_ptr)
+; void __cdecl core_grave_cpp_CGrave_processInEditor_FUN_004eea70(CGrave *this_ptr)
 ;
 ; Parameters:
 ; CGrave *         Stack[0x4]:4   this_ptr

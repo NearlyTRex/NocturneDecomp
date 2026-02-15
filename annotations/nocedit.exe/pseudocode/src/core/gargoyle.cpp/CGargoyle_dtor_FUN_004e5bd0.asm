@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CGargoyle * __cdecl core_gargoyle_cpp_CGargoyle_dtor_FUN_004e5bd0(CGargoyle *this_ptr,uint flags)
+; CGargoyle * __cdecl core_gargoyle_cpp_CGargoyle_dtor_FUN_004e5bd0(CGargoyle *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CGargoyle *      Stack[0x4]:4   this_ptr

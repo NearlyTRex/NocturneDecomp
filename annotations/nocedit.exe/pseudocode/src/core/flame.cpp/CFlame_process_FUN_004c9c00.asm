@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_flame_cpp_CFlame_process_FUN_004c9c00(CFlame *this_ptr,float delta_time)
+; void __cdecl core_flame_cpp_CFlame_process_FUN_004c9c00(CFlame *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CFlame *         Stack[0x4]:4   this_ptr
@@ -33,7 +33,7 @@
 ;   CHero*[4] g_HeroActors
 ;   int g_LocalHeroIndex
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.unk4[7996]
+;   undefined4 g_CDemonSetInstance.enemy_count
 ;   ... and 2 more
 ;
 ; Called Functions:
@@ -271,12 +271,12 @@ section .text
     MOV EBX,dword ptr [0x006810c8]      ; 004c9edb | g_CDemonSetPtr
         ;   Label: LAB_004c9edb
     MOV EAX,dword ptr [ESI + 0x29c]     ; 004c9ee1
-    CMP EAX,dword ptr [EBX + 0x150fdc]  ; 004c9ee7 | g_CDemonSetInstance.unk4[7996]
+    CMP EAX,dword ptr [EBX + 0x150fdc]  ; 004c9ee7 | g_CDemonSetInstance.enemy_count
     JGE 0x004c9fd3                      ; 004c9eed
         ;   XREF to: 004c9fd3 (CONDITIONAL_JUMP)  ; LAB_004c9fd3
     MOV EAX,[0x006810c8]                ; 004c9ef3 | g_CDemonSetPtr | g_CDemonSetInstance
         ;   Label: LAB_004c9ef3
-    CMP dword ptr [EAX + 0x150fdc],0x0  ; 004c9ef8 | g_CDemonSetInstance.unk4[7996]
+    CMP dword ptr [EAX + 0x150fdc],0x0  ; 004c9ef8 | g_CDemonSetInstance.enemy_count
     JG 0x004c9fe2                       ; 004c9eff
         ;   XREF to: 004c9fe2 (CONDITIONAL_JUMP)  ; LAB_004c9fe2
     MOV ESP,EBP                         ; 004c9f05

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_bugs_cpp_FUN_00427a60(void)
+; void __cdecl core_bugs_cpp_FUN_00427a60(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_door_cpp_FUN_0047fcf0(int event_id)
+; void __cdecl core_door_cpp_FUN_0047fcf0(int event_id)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   event_id

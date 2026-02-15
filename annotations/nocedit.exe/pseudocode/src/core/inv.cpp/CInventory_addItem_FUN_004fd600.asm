@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_inv_cpp_CInventory_addItem_FUN_004fd600(CInventory *this_ptr,CDemonActor *item_actor,int show_tutorial_message)
+; int __cdecl core_inv_cpp_CInventory_addItem_FUN_004fd600(CInventory *this_ptr,CDemonActor *item_actor,int show_tutorial_message)
 ;
 ; Parameters:
 ; CInventory *     Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_crate_cpp_CCrate_canPickup_FUN_00448600(CCrate *this_ptr,CDemonActor *picker)
+; int __cdecl core_crate_cpp_CCrate_canPickup_FUN_00448600(CCrate *this_ptr,CDemonActor *picker)
 ;
 ; Parameters:
 ; CCrate *         Stack[0x4]:4   this_ptr

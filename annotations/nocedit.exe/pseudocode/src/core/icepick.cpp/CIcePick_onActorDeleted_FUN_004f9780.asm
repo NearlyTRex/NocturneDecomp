@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_icepick_cpp_CIcePick_onActorDeleted_FUN_004f9780(CIcePick *this_ptr,CDemonActor *deleted_actor)
+; void __cdecl core_icepick_cpp_CIcePick_onActorDeleted_FUN_004f9780(CIcePick *this_ptr,CDemonActor *deleted_actor)
 ;
 ; Parameters:
 ; CIcePick *       Stack[0x4]:4   this_ptr

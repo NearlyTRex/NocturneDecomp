@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int __watcallStack crt_stdio_c_flushFileBuffers_FUN_0060af00(int file_handle_index)
+; int __watcallStack crt_stdio_c_flushFileBuffers_FUN_0060af00(int file_handle_index)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   file_handle_index

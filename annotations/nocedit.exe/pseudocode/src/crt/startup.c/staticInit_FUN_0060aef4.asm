@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_startup_c_staticInit_FUN_0060aef4(void)
+; void __cdecl crt_startup_c_staticInit_FUN_0060aef4(void)
 ;
 ;
 ; Called Functions:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_skeledit_cpp_FUN_0058bd00(void)
+; void __cdecl core_skeledit_cpp_FUN_0058bd00(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x110]:1  local_110

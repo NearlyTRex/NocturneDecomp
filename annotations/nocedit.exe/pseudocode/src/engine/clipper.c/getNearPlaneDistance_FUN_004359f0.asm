@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_clipper_c_getNearPlaneDistance_FUN_004359f0(void)
+; int __cdecl engine_clipper_c_getNearPlaneDistance_FUN_004359f0(void)
 ;
 ;
 ; Referenced Globals:

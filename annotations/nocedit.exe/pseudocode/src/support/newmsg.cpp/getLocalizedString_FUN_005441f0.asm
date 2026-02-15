@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * __cdecl support_newmsg_cpp_getLocalizedString_FUN_005441f0(char *key)
+; char * __cdecl support_newmsg_cpp_getLocalizedString_FUN_005441f0(char *key)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   key

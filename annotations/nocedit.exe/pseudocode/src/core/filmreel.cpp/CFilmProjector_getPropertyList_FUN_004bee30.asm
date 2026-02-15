@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_filmreel_cpp_CFilmProjector_getPropertyList_FUN_004bee30(CFilmProjector *this_ptr,CActorPropertyList *property_list)
+; void __cdecl core_filmreel_cpp_CFilmProjector_getPropertyList_FUN_004bee30(CFilmProjector *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CFilmProjector * Stack[0x4]:4   this_ptr

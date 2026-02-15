@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack void __watcallStack crt_stdio_c_OutputCallback_FUN_00604830(FORMAT_OUTPUT_CONTEXT *context,int character)
+; void __watcallStack crt_stdio_c_OutputCallback_FUN_00604830(FORMAT_OUTPUT_CONTEXT *context,int character)
 ;
 ; Parameters:
 ; FORMAT_OUTPUT_CONTEXT * Stack[0x4]:4   context

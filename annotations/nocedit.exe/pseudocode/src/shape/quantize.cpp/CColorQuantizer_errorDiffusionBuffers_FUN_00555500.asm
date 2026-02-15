@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_quantize_cpp_CColorQuantizer_errorDiffusionBuffers_FUN_00555500(CColorQuantizer *this_ptr,int num_entries)
+; int __cdecl shape_quantize_cpp_CColorQuantizer_errorDiffusionBuffers_FUN_00555500(CColorQuantizer *this_ptr,int num_entries)
 ;
 ; Parameters:
 ; CColorQuantizer * Stack[0x4]:4   this_ptr

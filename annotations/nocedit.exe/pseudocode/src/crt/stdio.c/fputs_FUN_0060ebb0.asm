@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_stdio_c_fputs_FUN_0060ebb0(char *str,_FILE *file)
+; int __cdecl crt_stdio_c_fputs_FUN_0060ebb0(char *str,_FILE *file)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   str

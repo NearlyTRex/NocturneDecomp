@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * __cdecl crt_io_c_getTempDirectory_FUN_00609afc(void)
+; char * __cdecl crt_io_c_getTempDirectory_FUN_00609afc(void)
 ;
 ;
 ; XREF[1]:

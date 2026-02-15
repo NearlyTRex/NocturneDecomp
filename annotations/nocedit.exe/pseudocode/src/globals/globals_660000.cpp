@@ -6503,7 +6503,7 @@ WatcomDestructorCall WatcomDestructorCall_00661d20 = {
 WatcomDestructorCall WatcomDestructorCall_006620e0 = {
     .delete_flags = 0x00000004,
     .destructor_func = (void *)core_path_cpp_CPathMap_arrdtor_FUN_00548c30,
-    .object_instance = (void *)0x02FD9060
+    .object_instance = (void *)&CPathMap_ARRAY_02fd9060
 };
 WatcomDestructorCall g_CDemonPodDestructorNode = {
     .delete_flags = 0x00000004,
@@ -6617,7 +6617,7 @@ WatcomDestructorCall WatcomDestructorCall_006652c0 = {
 };
 
 // WatcomStaticDestructorNode
-WatcomStaticDestructorNode DAT_0066e5cc = {
+WatcomStaticDestructorNode WatcomStaticDestructorNode_0066e5cc = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&WatcomDestructorCall_0065b180,
     .registration_type = 0x00000001,
@@ -6641,13 +6641,13 @@ WatcomStaticDestructorNode g_CLZWDecompressDestructorNode = {
     .registration_type = 0x00000001,
     .object_instance = (void *)&g_CLZWDecompressInstance
 };
-WatcomStaticDestructorNode DAT_0066ef5c = {
+WatcomStaticDestructorNode WatcomStaticDestructorNode_0066ef5c = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&WatcomDestructorCall_0065c830,
     .registration_type = 0x00000001,
     .object_instance = (void *)&CDemonFilter_ARRAY_020a4878
 };
-WatcomStaticDestructorNode DAT_0066ef6c = {
+WatcomStaticDestructorNode WatcomStaticDestructorNode_0066ef6c = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&WatcomDestructorCall_0065c83c,
     .registration_type = 0x00000001,

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0(CDemonRenderer *this_ptr,int vertex_index1,int vertex_index2)
+; void __cdecl engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0(CDemonRenderer *this_ptr,int vertex_index1,int vertex_index2)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr

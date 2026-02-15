@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl _tm * __cdecl crt_time_c__localtime_FUN_00600288(time_t *timer)
+; _tm * __cdecl crt_time_c__localtime_FUN_00600288(time_t *timer)
 ;
 ; Parameters:
 ; time_t *         Stack[0x4]:4   timer

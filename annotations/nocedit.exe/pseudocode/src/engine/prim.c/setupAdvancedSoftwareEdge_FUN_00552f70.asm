@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_prim_c_setupAdvancedSoftwareEdge_FUN_00552f70(SRenderVertex *start_vertex,SRenderVertex *end_vertex)
+; void __cdecl engine_prim_c_setupAdvancedSoftwareEdge_FUN_00552f70(SRenderVertex *start_vertex,SRenderVertex *end_vertex)
 ;
 ; Parameters:
 ; SRenderVertex *  Stack[0x4]:4   start_vertex

@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 43,
-        "line": 125,
+        "line": 126,
         "message": "incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from 'void *'"
       }
     ],
@@ -13,18 +13,18 @@
   },
   "complexity": {
     "assembly_lines": 801,
-    "complexity_score": 498,
+    "complexity_score": 499,
     "cross_reference_count": 6,
     "function_call_count": 35,
     "global_count": 47,
-    "pseudocode_lines": 293,
+    "pseudocode_lines": 294,
     "suspect_count": 19,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
       "undefined_data"
     ],
-    "total_lines": 1094
+    "total_lines": 1095
   },
   "cross_references": [
     {
@@ -726,126 +726,126 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 14,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 33,
+      "line": 34,
       "match": "in_stack_00000008",
       "text": "if ((in_stack_00000008 != 0) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 37,
+      "line": 38,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 == 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 38,
+      "line": 39,
       "match": "in_stack_00000008",
       "text": "g_DynamicLightCount = in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 39,
+      "line": 40,
       "match": "in_stack_00000008",
       "text": "g_CoronaGlobeCount = in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 110,
+      "line": 111,
       "match": "DAT_03277b80",
       "text": "DAT_03277b80 = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 111,
+      "line": 112,
       "match": "DAT_0327785c",
       "text": "if (0 < DAT_0327785c) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 114,
+      "line": 115,
       "match": "DAT_03277860",
-      "text": "p1 = *(void **)((int)&DAT_03277860 + iVar5);",
+      "text": "p1 = *(void **)((int)&DAT_03277860 + iVar7);",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 115,
+      "line": 116,
       "match": "(int *)((int)",
-      "text": "if (*(int *)((int)&DAT_032779f0 + iVar5) == 0) {",
+      "text": "if (*(int *)((int)&DAT_032779f0 + iVar7) == 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 115,
+      "line": 116,
       "match": "DAT_032779f0",
-      "text": "if (*(int *)((int)&DAT_032779f0 + iVar5) == 0) {",
+      "text": "if (*(int *)((int)&DAT_032779f0 + iVar7) == 0) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 118,
+      "line": 119,
       "match": "DAT_03277b84",
       "text": "(&DAT_03277b84)[DAT_03277b80] = p1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 118,
+      "line": 119,
       "match": "DAT_03277b80",
       "text": "(&DAT_03277b84)[DAT_03277b80] = p1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 119,
+      "line": 120,
       "match": "DAT_03277b80",
       "text": "DAT_03277b80 = DAT_03277b80 + 1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 119,
+      "line": 120,
       "match": "DAT_03277b80",
       "text": "DAT_03277b80 = DAT_03277b80 + 1;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 123,
+      "line": 124,
       "match": "(int *)((int)",
-      "text": "(this_ptr,*(int *)((int)&DAT_032779f0 + iVar5) + -1,0);",
+      "text": "(this_ptr,*(int *)((int)&DAT_032779f0 + iVar7) + -1,0);",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 123,
+      "line": 124,
       "match": "DAT_032779f0",
-      "text": "(this_ptr,*(int *)((int)&DAT_032779f0 + iVar5) + -1,0);",
+      "text": "(this_ptr,*(int *)((int)&DAT_032779f0 + iVar7) + -1,0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 130,
+      "line": 131,
       "match": "DAT_0327785c",
       "text": "} while (local_24 < DAT_0327785c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 132,
+      "line": 133,
       "match": "DAT_0327785c",
       "text": "DAT_0327785c = 0;",
       "type": "undefined_data"
@@ -854,7 +854,7 @@
       "description": "Complex pointer cast",
       "line": 255,
       "match": "(uint *)((int)",
-      "text": "puVar1 = (uint *)((int)g_ActiveLightList + iVar6);",
+      "text": "puVar1 = (uint *)((int)g_ActiveLightList + iVar8);",
       "type": "pointer_cast"
     }
   ]

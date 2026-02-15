@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_lever_cpp_CLever_process_FUN_00504920(CLever *this_ptr,float delta_time)
+; void __cdecl core_lever_cpp_CLever_process_FUN_00504920(CLever *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CLever *         Stack[0x4]:4   this_ptr
@@ -16,8 +16,8 @@
 ;   CEventList g_CEventListInstance
 ;   undefined4 g_CLeverClassInfo.name_hash
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.actor_list_ptr
-;   undefined4 g_CDemonSetInstance.actor_list_data[0]
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;   undefined4 DAT_032613d4
 ;
 ; Called Functions:
@@ -85,12 +85,12 @@ section .text
     XOR EDI,EDI                         ; 005049c5
     MOV EAX,[0x006810c8]                ; 005049c7 | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_005049c7
-    CMP EDI,dword ptr [EAX + 0x14d154]  ; 005049cc | g_CDemonSetInstance.actor_list_ptr
+    CMP EDI,dword ptr [EAX + 0x14d154]  ; 005049cc | g_CDemonSetInstance.actor_count
     JGE 0x00504aa4                      ; 005049d2
         ;   XREF to: 00504aa4 (CONDITIONAL_JUMP)  ; LAB_00504aa4
     MOV EBP,dword ptr [0x02dd3090]      ; 005049d8 | g_CLeverClassInfo.name_hash
     PUSH EBP                            ; 005049de
-    MOV EDX,dword ptr [ESI + EAX*0x1 + 0x14d158] ; 005049df | g_CDemonSetInstance.actor_list_data[0] | DAT_032613d4
+    MOV EDX,dword ptr [ESI + EAX*0x1 + 0x14d158] ; 005049df | g_CDemonSetInstance.actors[0] | DAT_032613d4
     PUSH EDX                            ; 005049e6
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 005049e7
         ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)

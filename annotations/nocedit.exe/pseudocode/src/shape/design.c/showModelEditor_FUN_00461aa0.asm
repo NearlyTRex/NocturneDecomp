@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_showModelEditor_FUN_00461aa0(void)
+; void __cdecl shape_design_c_showModelEditor_FUN_00461aa0(void)
 ;
 ;
 ; XREF[1]:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallRegister int __watcallRegister crt_operation_c_always_zero_FUN_0060fa8b(void)
+; int __watcallRegister crt_operation_c_always_zero_FUN_0060fa8b(void)
 ;
 ;
 ; XREF[1]:

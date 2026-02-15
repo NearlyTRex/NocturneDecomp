@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl wincore_winvideo_cpp_openMovie_FUN_005f4700(HWND parent_window,char *movie_filename)
+; void __cdecl wincore_winvideo_cpp_openMovie_FUN_005f4700(HWND parent_window,char *movie_filename)
 ;
 ; Parameters:
 ; HWND             Stack[0x4]:4   parent_window

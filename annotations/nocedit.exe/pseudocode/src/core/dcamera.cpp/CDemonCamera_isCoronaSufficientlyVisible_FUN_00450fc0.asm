@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_dcamera_cpp_CDemonCamera_isCoronaSufficientlyVisible_FUN_00450fc0(CDemonCamera *this_ptr,CDemonLight *light_source)
+; int __cdecl core_dcamera_cpp_CDemonCamera_isCoronaSufficientlyVisible_FUN_00450fc0(CDemonCamera *this_ptr,CDemonLight *light_source)
 ;
 ; Parameters:
 ; CDemonCamera *   Stack[0x4]:4   this_ptr

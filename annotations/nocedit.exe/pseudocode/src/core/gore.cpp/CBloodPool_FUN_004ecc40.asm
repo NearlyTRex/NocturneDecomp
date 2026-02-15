@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_gore_cpp_CBloodPool_FUN_004ecc40(CBloodPool *this_ptr)
+; void __cdecl core_gore_cpp_CBloodPool_FUN_004ecc40(CBloodPool *this_ptr)
 ;
 ; Parameters:
 ; CBloodPool *     Stack[0x4]:4   this_ptr
@@ -22,10 +22,10 @@
 ;   undefined4 g_RenderVertexBuffer[3].v
 ;   undefined4 DAT_00f80000
 ;   CDemonRenderer g_CDemonRendererInstance
-;   undefined4 SMRGLHeaderPrimitive_02d83368.base.count
-;   undefined4 SMRGLHeaderPrimitive_02d83368.surface_normal.A
-;   undefined4 SMRGLHeaderPrimitive_02d83368.surface_normal.B
-;   undefined4 SMRGLHeaderPrimitive_02d83368.surface_normal.C
+;   undefined4 SMRGLPrimitiveQuadIndex_02d83368.base.base.count
+;   undefined4 SMRGLPrimitiveQuadIndex_02d83368.base.surface_normal.A
+;   undefined4 SMRGLPrimitiveQuadIndex_02d83368.base.surface_normal.B
+;   undefined4 SMRGLPrimitiveQuadIndex_02d83368.base.surface_normal.C
 ;   ... and 5 more
 ;
 ; Called Functions:
@@ -47,11 +47,11 @@ section .text
     MOV EBP,0x80000                     ; 004ecc58
     MOV EAX,0xf80000                    ; 004ecc5d | DAT_00f80000
     XOR ECX,ECX                         ; 004ecc62
-    MOV dword ptr [0x02d8336c],EDX      ; 004ecc64 | SMRGLHeaderPrimitive_02d83368.base.count
-    MOV dword ptr [0x02d83380],ECX      ; 004ecc6a | INT_02d83380
-    MOV dword ptr [0x02d83384],EBX      ; 004ecc70 | INT_02d83384
-    MOV dword ptr [0x02d83388],ESI      ; 004ecc76 | INT_02d83388
-    MOV dword ptr [0x02d8338c],EDI      ; 004ecc7c | INT_02d8338c
+    MOV dword ptr [0x02d8336c],EDX      ; 004ecc64 | SMRGLPrimitiveQuadIndex_02d83368.base.base.count
+    MOV dword ptr [0x02d83380],ECX      ; 004ecc6a | SMRGLPrimitiveQuadIndex_02d83368.vertices[0]
+    MOV dword ptr [0x02d83384],EBX      ; 004ecc70 | SMRGLPrimitiveQuadIndex_02d83368.vertices[1]
+    MOV dword ptr [0x02d83388],ESI      ; 004ecc76 | SMRGLPrimitiveQuadIndex_02d83368.vertices[2]
+    MOV dword ptr [0x02d8338c],EDI      ; 004ecc7c | SMRGLPrimitiveQuadIndex_02d83368.vertices[3]
     MOV dword ptr [0x0068802c],EBP      ; 004ecc82 | g_RenderVertexBuffer[0].u
     MOV [0x00688030],EAX                ; 004ecc88 | g_RenderVertexBuffer[0].v
     MOV [0x0068805c],EAX                ; 004ecc8d | g_RenderVertexBuffer[1].u
@@ -61,13 +61,13 @@ section .text
     MOV dword ptr [0x006880bc],EBP      ; 004ecca2 | g_RenderVertexBuffer[3].u
     MOV dword ptr [0x006880c0],EBP      ; 004ecca8 | g_RenderVertexBuffer[3].v
     MOV EDX,0xffff                      ; 004eccae
-    MOV dword ptr [0x02d83370],ECX      ; 004eccb3 | SMRGLHeaderPrimitive_02d83368.surface_normal.A
+    MOV dword ptr [0x02d83370],ECX      ; 004eccb3 | SMRGLPrimitiveQuadIndex_02d83368.base.surface_normal.A
     PUSH EDX                            ; 004eccb9
     MOV ESI,dword ptr [0x006703ec]      ; 004eccba | g_CDemonRendererPtr2
-    MOV dword ptr [0x02d83378],ECX      ; 004eccc0 | SMRGLHeaderPrimitive_02d83368.surface_normal.C
+    MOV dword ptr [0x02d83378],ECX      ; 004eccc0 | SMRGLPrimitiveQuadIndex_02d83368.base.surface_normal.C
     PUSH ESI                            ; 004eccc6 | g_CDemonRendererInstance
-    MOV dword ptr [0x02d8337c],ECX      ; 004eccc7 | SMRGLHeaderPrimitive_02d83368.surface_normal.D
-    MOV dword ptr [0x02d83374],EDX      ; 004ecccd | SMRGLHeaderPrimitive_02d83368.surface_normal.B
+    MOV dword ptr [0x02d8337c],ECX      ; 004eccc7 | SMRGLPrimitiveQuadIndex_02d83368.base.surface_normal.D
+    MOV dword ptr [0x02d83374],EDX      ; 004ecccd | SMRGLPrimitiveQuadIndex_02d83368.base.surface_normal.B
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 004eccd3
         ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 004eccd8

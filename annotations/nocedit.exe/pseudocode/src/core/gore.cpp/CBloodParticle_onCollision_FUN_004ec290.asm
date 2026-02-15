@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_gore_cpp_CBloodParticle_onCollision_FUN_004ec290(CBloodParticle *this_ptr,CVector3f *collision_normal)
+; int __cdecl core_gore_cpp_CBloodParticle_onCollision_FUN_004ec290(CBloodParticle *this_ptr,CVector3f *collision_normal)
 ;
 ; Parameters:
 ; CBloodParticle * Stack[0x4]:4   this_ptr

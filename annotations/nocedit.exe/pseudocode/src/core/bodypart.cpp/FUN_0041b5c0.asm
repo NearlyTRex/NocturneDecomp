@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float * __cdecl core_bodypart_cpp_FUN_0041b5c0(void)
+; float * __cdecl core_bodypart_cpp_FUN_0041b5c0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c

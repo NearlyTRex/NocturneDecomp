@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_setutil_cpp_C3DSLight_scalePosition_FUN_00587950(C3DSLight *this_ptr,float scale)
+; void __cdecl core_setutil_cpp_C3DSLight_scalePosition_FUN_00587950(C3DSLight *this_ptr,float scale)
 ;
 ; Parameters:
 ; C3DSLight *      Stack[0x4]:4   this_ptr

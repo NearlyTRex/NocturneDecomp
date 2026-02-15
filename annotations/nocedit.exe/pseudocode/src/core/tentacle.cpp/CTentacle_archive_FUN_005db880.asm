@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_tentacle_cpp_CTentacle_archive_FUN_005db880(CTentacle *this_ptr)
+; void __cdecl core_tentacle_cpp_CTentacle_archive_FUN_005db880(CTentacle *this_ptr)
 ;
 ; Parameters:
 ; CTentacle *      Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_matrix_c_pushViewport_FUN_0050e320(int x,int y,int width,int height)
+; void __cdecl engine_matrix_c_pushViewport_FUN_0050e320(int x,int y,int width,int height)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   x

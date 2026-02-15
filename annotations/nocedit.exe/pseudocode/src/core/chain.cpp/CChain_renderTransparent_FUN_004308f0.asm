@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_chain_cpp_CChain_renderTransparent_FUN_004308f0(CChain *this_ptr)
+; int __cdecl core_chain_cpp_CChain_renderTransparent_FUN_004308f0(CChain *this_ptr)
 ;
 ; Parameters:
 ; CChain *         Stack[0x4]:4   this_ptr

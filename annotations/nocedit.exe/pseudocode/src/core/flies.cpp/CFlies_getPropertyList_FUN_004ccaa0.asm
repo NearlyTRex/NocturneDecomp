@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_flies_cpp_CFlies_getPropertyList_FUN_004ccaa0(CFlies *this_ptr,CActorPropertyList *property_list)
+; void __cdecl core_flies_cpp_CFlies_getPropertyList_FUN_004ccaa0(CFlies *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CFlies *         Stack[0x4]:4   this_ptr

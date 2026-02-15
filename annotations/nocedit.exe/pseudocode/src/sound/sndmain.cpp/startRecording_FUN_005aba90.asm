@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl sound_sndmain_cpp_startRecording_FUN_005aba90(void)
+; int __cdecl sound_sndmain_cpp_startRecording_FUN_005aba90(void)
 ;
 ;
 ; Referenced Globals:

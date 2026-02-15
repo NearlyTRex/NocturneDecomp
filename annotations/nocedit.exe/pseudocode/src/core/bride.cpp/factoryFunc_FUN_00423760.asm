@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBride * __cdecl core_bride_cpp_factoryFunc_FUN_00423760(void)
+; CBride * __cdecl core_bride_cpp_factoryFunc_FUN_00423760(void)
 ;
 ;
 ; XREF[1]:

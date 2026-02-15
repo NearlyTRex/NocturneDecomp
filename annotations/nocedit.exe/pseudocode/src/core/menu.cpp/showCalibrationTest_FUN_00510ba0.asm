@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_menu_cpp_showCalibrationTest_FUN_00510ba0(void)
+; void __cdecl core_menu_cpp_showCalibrationTest_FUN_00510ba0(void)
 ;
 ;
 ; XREF[2]:

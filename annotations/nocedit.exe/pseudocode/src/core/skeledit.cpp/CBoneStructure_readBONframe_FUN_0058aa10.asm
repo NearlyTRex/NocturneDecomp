@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_skeledit_cpp_CBoneStructure_readBONframe_FUN_0058aa10(CBoneStructure *this_ptr,_FILE *file,int mirror_flag)
+; void __cdecl core_skeledit_cpp_CBoneStructure_readBONframe_FUN_0058aa10(CBoneStructure *this_ptr,_FILE *file,int mirror_flag)
 ;
 ; Parameters:
 ; CBoneStructure * Stack[0x8]:4   this_ptr

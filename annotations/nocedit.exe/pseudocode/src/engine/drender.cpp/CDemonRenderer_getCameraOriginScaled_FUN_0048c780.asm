@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float * __cdecl engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780(CDemonRenderer *this_ptr,float *output)
+; float * __cdecl engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780(CDemonRenderer *this_ptr,float *output)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr

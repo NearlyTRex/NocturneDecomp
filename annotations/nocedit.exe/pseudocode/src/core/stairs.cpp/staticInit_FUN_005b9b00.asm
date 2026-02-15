@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_stairs_cpp_staticInit_FUN_005b9b00(void)
+; void __cdecl core_stairs_cpp_staticInit_FUN_005b9b00(void)
 ;
 ;
 ; Referenced Globals:

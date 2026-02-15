@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CWerewolf * __cdecl core_werewolf_cpp_factoryFunc_FUN_005efbd0(void)
+; CWerewolf * __cdecl core_werewolf_cpp_factoryFunc_FUN_005efbd0(void)
 ;
 ;
 ; XREF[1]:

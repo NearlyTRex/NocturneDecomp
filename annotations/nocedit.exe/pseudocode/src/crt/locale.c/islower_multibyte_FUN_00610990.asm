@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int __watcallStack crt_locale_c_islower_multibyte_FUN_00610990(wchar_t character)
+; int __watcallStack crt_locale_c_islower_multibyte_FUN_00610990(wchar_t character)
 ;
 ; Parameters:
 ; wchar_t          Stack[0x4]:2   character

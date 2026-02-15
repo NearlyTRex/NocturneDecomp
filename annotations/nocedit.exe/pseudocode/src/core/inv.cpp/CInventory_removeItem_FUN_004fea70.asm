@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_inv_cpp_CInventory_removeItem_FUN_004fea70(CInventory *this_ptr,CDemonActor *item_to_remove,int should_delete_actor)
+; void __cdecl core_inv_cpp_CInventory_removeItem_FUN_004fea70(CInventory *this_ptr,CDemonActor *item_to_remove,int should_delete_actor)
 ;
 ; Parameters:
 ; CInventory *     Stack[0x4]:4   this_ptr

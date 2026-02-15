@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_stranger_cpp_FUN_005bafa0(void)
+; int __cdecl core_stranger_cpp_FUN_005bafa0(void)
 ;
 ;
 ; Referenced Globals:

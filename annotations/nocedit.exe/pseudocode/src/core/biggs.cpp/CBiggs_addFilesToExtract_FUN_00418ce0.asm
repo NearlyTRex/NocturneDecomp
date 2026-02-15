@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_biggs_cpp_CBiggs_addFilesToExtract_FUN_00418ce0(CBiggs *this_ptr,_FILE *file_handle)
+; void __cdecl core_biggs_cpp_CBiggs_addFilesToExtract_FUN_00418ce0(CBiggs *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CBiggs *         Stack[0x4]:4   this_ptr

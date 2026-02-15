@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_zombie_cpp_CZombie_addFilesToExtract_FUN_005fcc20(CZombie *this_ptr,_FILE *file_handle)
+; void __cdecl core_zombie_cpp_CZombie_addFilesToExtract_FUN_005fcc20(CZombie *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CZombie *        Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_mirror_cpp_CMirror_renderMirroredPrimitive_FUN_005225e0(CMirror *this_ptr,SMRGLHeaderPrimitive *prim)
+; void __cdecl core_mirror_cpp_CMirror_renderMirroredPrimitive_FUN_005225e0(CMirror *this_ptr,SMRGLHeaderPrimitive *prim)
 ;
 ; Parameters:
 ; CMirror *        Stack[0x4]:4   this_ptr
@@ -10,16 +10,16 @@
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
-;   SMRGLHeaderPrimitive g_MirrorTempPrimitive
-;   undefined4 g_MirrorTempPrimitive.base.count
-;   undefined4 g_MirrorTempPrimitive.surface_normal.A
-;   undefined4 g_MirrorTempPrimitive.surface_normal.B
-;   undefined4 g_MirrorTempPrimitive.surface_normal.C
-;   undefined4 g_MirrorTempPrimitive.surface_normal.D
-;   int INT_02f33724
-;   int INT_02f33728
-;   int INT_02f3372c
-;   int INT_02f33730
+;   SMRGLPrimitiveQuadIndex g_MirrorTempPrimitive
+;   undefined4 g_MirrorTempPrimitive.base.base.count
+;   undefined4 g_MirrorTempPrimitive.base.surface_normal.A
+;   undefined4 g_MirrorTempPrimitive.base.surface_normal.B
+;   undefined4 g_MirrorTempPrimitive.base.surface_normal.C
+;   undefined4 g_MirrorTempPrimitive.base.surface_normal.D
+;   undefined4 g_MirrorTempPrimitive.vertices[0]
+;   undefined4 g_MirrorTempPrimitive.vertices[1]
+;   undefined4 g_MirrorTempPrimitive.vertices[2]
+;   undefined4 g_MirrorTempPrimitive.vertices[3]
 ;
 ; Called Functions:
 ;   core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00522310
@@ -32,26 +32,26 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 005225e0
         ;   Label: core_mirror.cpp_CMirror_renderMirroredPrimitive_FUN_005225e0
     MOV EDX,dword ptr [EAX + 0x4]       ; 005225e4
-    MOV dword ptr [0x02f33710],EDX      ; 005225e7 | g_MirrorTempPrimitive.base.count
+    MOV dword ptr [0x02f33710],EDX      ; 005225e7 | g_MirrorTempPrimitive.base.base.count
     MOV EDX,dword ptr [EAX + 0x8]       ; 005225ed
-    MOV dword ptr [0x02f33714],EDX      ; 005225f0 | g_MirrorTempPrimitive.surface_normal.A
+    MOV dword ptr [0x02f33714],EDX      ; 005225f0 | g_MirrorTempPrimitive.base.surface_normal.A
     MOV EDX,dword ptr [EAX + 0xc]       ; 005225f6
-    MOV dword ptr [0x02f33718],EDX      ; 005225f9 | g_MirrorTempPrimitive.surface_normal.B
+    MOV dword ptr [0x02f33718],EDX      ; 005225f9 | g_MirrorTempPrimitive.base.surface_normal.B
     MOV EDX,dword ptr [EAX + 0x10]      ; 005225ff
-    MOV dword ptr [0x02f3371c],EDX      ; 00522602 | g_MirrorTempPrimitive.surface_normal.C
+    MOV dword ptr [0x02f3371c],EDX      ; 00522602 | g_MirrorTempPrimitive.base.surface_normal.C
     MOV EDX,dword ptr [EAX + 0x14]      ; 00522608
-    MOV dword ptr [0x02f33720],EDX      ; 0052260b | g_MirrorTempPrimitive.surface_normal.D
+    MOV dword ptr [0x02f33720],EDX      ; 0052260b | g_MirrorTempPrimitive.base.surface_normal.D
     MOV EDX,dword ptr [EAX + 0x18]      ; 00522611
-    MOV dword ptr [0x02f33724],EDX      ; 00522614 | INT_02f33724
+    MOV dword ptr [0x02f33724],EDX      ; 00522614 | g_MirrorTempPrimitive.vertices[0]
     MOV EDX,dword ptr [EAX + 0x24]      ; 0052261a
-    MOV dword ptr [0x02f33728],EDX      ; 0052261d | INT_02f33728
+    MOV dword ptr [0x02f33728],EDX      ; 0052261d | g_MirrorTempPrimitive.vertices[1]
     MOV EDX,dword ptr [EAX + 0x30]      ; 00522623
     PUSH 0x2f3370c                      ; 00522626 | g_MirrorTempPrimitive
-    MOV dword ptr [0x02f3372c],EDX      ; 0052262b | INT_02f3372c
+    MOV dword ptr [0x02f3372c],EDX      ; 0052262b | g_MirrorTempPrimitive.vertices[2]
     MOV EDX,dword ptr [ESP + 0x8]       ; 00522631
     MOV EAX,dword ptr [EAX + 0x3c]      ; 00522635
     PUSH EDX                            ; 00522638
-    MOV [0x02f33730],EAX                ; 00522639 | INT_02f33730
+    MOV [0x02f33730],EAX                ; 00522639 | g_MirrorTempPrimitive.vertices[3]
     CALL core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00522310 ; 0052263e
         ;   XREF to: 00522310 (UNCONDITIONAL_CALL)  ; uint core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00522310(CMirror * this_ptr, SMRGLHeaderPrimitive * primitive)
     ADD ESP,0x8                         ; 00522643

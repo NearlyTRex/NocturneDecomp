@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_gore_cpp_CBloodPool_FUN_004ecce0(CBloodPool *this_ptr)
+; void __cdecl core_gore_cpp_CBloodPool_FUN_004ecce0(CBloodPool *this_ptr)
 ;
 ; Parameters:
 ; CBloodPool *     Stack[0x4]:4   this_ptr
@@ -255,7 +255,7 @@ section .text
     MOV dword ptr [0x006880c8],EBX      ; 004ecf71 | g_RenderVertexBuffer[3].color
     MOV dword ptr [0x006880cc],EBX      ; 004ecf77 | g_RenderVertexBuffer[3].fog
     MOV dword ptr [0x006880c4],EBX      ; 004ecf7d | g_RenderVertexBuffer[3].light
-    PUSH 0x2d83368                      ; 004ecf83 | SMRGLHeaderPrimitive_02d83368
+    PUSH 0x2d83368                      ; 004ecf83 | SMRGLPrimitiveQuadIndex_02d83368
         ;   Label: LAB_004ecf83
     MOV ECX,dword ptr [0x006703ec]      ; 004ecf88 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 004ecf8e | g_CDemonRendererInstance

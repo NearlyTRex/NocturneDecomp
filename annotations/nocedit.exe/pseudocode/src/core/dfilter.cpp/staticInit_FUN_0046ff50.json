@@ -6,15 +6,13 @@
   },
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 37,
+    "complexity_score": 12,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 9,
     "pseudocode_lines": 12,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 50
   },
   "cross_references": [],
@@ -61,13 +59,13 @@
     },
     {
       "addr": "0066ef5c",
-      "name": "DAT_0066ef5c",
+      "name": "WatcomStaticDestructorNode_0066ef5c",
       "type": "WatcomStaticDestructorNode",
       "value": null
     },
     {
       "addr": "0066ef6c",
-      "name": "DAT_0066ef6c",
+      "name": "WatcomStaticDestructorNode_0066ef6c",
       "type": "WatcomStaticDestructorNode",
       "value": null
     },
@@ -143,20 +141,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 6,
-      "match": "DAT_0066ef5c",
-      "text": "_atexit(&DAT_0066ef5c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 8,
-      "match": "DAT_0066ef6c",
-      "text": "_atexit(&DAT_0066ef6c);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

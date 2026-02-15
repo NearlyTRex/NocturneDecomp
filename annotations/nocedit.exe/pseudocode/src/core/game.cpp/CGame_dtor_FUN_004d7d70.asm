@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CGame * __cdecl core_game_cpp_CGame_dtor_FUN_004d7d70(CGame *this_ptr,uint flags)
+; CGame * __cdecl core_game_cpp_CGame_dtor_FUN_004d7d70(CGame *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CGame *          Stack[0x4]:4   this_ptr

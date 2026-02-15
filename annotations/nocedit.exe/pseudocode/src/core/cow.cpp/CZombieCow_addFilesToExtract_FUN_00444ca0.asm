@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_cow_cpp_CZombieCow_addFilesToExtract_FUN_00444ca0(CZombieCow *this_ptr,_FILE *file_handle)
+; void __cdecl core_cow_cpp_CZombieCow_addFilesToExtract_FUN_00444ca0(CZombieCow *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CZombieCow *     Stack[0x4]:4   this_ptr

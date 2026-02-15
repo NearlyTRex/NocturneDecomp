@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_filmreel_cpp_CFilmReel_renderOpaque_FUN_004be810(CFilmReel *this_ptr)
+; int __cdecl core_filmreel_cpp_CFilmReel_renderOpaque_FUN_004be810(CFilmReel *this_ptr)
 ;
 ; Parameters:
 ; CFilmReel *      Stack[0x4]:4   this_ptr

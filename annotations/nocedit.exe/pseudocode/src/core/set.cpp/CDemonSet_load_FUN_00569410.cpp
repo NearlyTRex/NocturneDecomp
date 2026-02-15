@@ -63,21 +63,18 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *
   }
   if (this_ptr->set_file_version < 0x11) {
     _fgets(local_228,0xff,p_Var4);
-    _fscanf(p_Var4,"%d,%d,%d,%d\n",local_48,(SFog *)(this_ptr->unk4 + 0xbb90),
-               this_ptr->unk4 + 0xbb94,this_ptr->unk4 + 0xbb98);
+    _fscanf(p_Var4,"%d,%d,%d,%d\n",local_48,&this_ptr->scene_fog,
+               &(this_ptr->scene_fog).color_index.g,&(this_ptr->scene_fog).color_index.b);
     _fgets(local_228,0xff,p_Var4);
-    _fscanf(p_Var4,"%f,%f,%f\n",this_ptr->unk4 + 0xbb9c,this_ptr->unk4 + 0xbba0,
-               this_ptr->unk4 + 0xbba4);
-    _fscanf(p_Var4,"%f,%f,%f,%f\n",this_ptr->unk4 + 0xbba8,this_ptr->unk4 + 0xbbac,local_48,
-               local_48);
-    this_ptr->unk4[0xbbb0] = '\0';
-    this_ptr->unk4[0xbbb1] = '\0';
-    this_ptr->unk4[0xbbb2] = 'H';
-    this_ptr->unk4[0xbbb3] = 'B';
+    _fscanf(p_Var4,"%f,%f,%f\n",&(this_ptr->scene_fog).scroll,&(this_ptr->scene_fog).scroll.y
+               ,&(this_ptr->scene_fog).scroll.z);
+    _fscanf(p_Var4,"%f,%f,%f,%f\n",&(this_ptr->scene_fog).height_threshold,
+               &(this_ptr->scene_fog).density_multiplier,local_48,local_48);
+    (this_ptr->scene_fog).reserved = 50.0;
   }
   else {
     core_dcamera_cpp_loadCameraFog_FUN_00453e50
-              ((SFog *)(this_ptr->unk4 + 0xbb90),p_Var4,this_ptr->set_file_version);
+              (&this_ptr->scene_fog,p_Var4,this_ptr->set_file_version);
   }
   _fgets(local_228,0xff,p_Var4);
   _fscanf(p_Var4,"%f,%f\n",&g_CWaterPtr->water_level_y,&g_CWaterPtr->tile_size);
@@ -213,7 +210,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *
     _fscanf(p_Var4,"%d\n",&this_ptr->room_count);
     if (0 < this_ptr->room_count) {
       local_38 = this_ptr->rooms;
-      local_40 = &this_ptr->rooms[0].unk;
+      local_40 = &this_ptr->rooms[0].reverb_preset;
       pCVar8 = &this_ptr->rooms[0].rotation_matrix;
       local_18 = &this_ptr->rooms[0].extents;
       local_2c = &this_ptr->rooms[0].extents.y;
@@ -421,11 +418,11 @@ LAB_00569dd5:
   if (0 < this_ptr->camera_count) {
     do {
       fVar1 = this_ptr->min_ambient_value;
-      pCVar5->cameras[0].unk2 = 0;
-      pCVar5->cameras[0].unk4 = 1;
+      pCVar5->cameras[0].camera_group = 0;
+      pCVar5->cameras[0].enabled = 1;
       iVar10 = iVar10 + 1;
       pCVar5->cameras[0].ambient_value = fVar1;
-      pCVar5 = (CDemonSet *)&pCVar5->cameras[0].unk4;
+      pCVar5 = (CDemonSet *)&pCVar5->cameras[0].enabled;
     } while (iVar10 < this_ptr->camera_count);
   }
   return;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SFly * __cdecl core_flies_cpp_SFly_arrdtor_FUN_004ccd60(SFly *objs,uint flags)
+; SFly * __cdecl core_flies_cpp_SFly_arrdtor_FUN_004ccd60(SFly *objs,uint flags)
 ;
 ; Parameters:
 ; SFly *           Stack[0x4]:4   objs

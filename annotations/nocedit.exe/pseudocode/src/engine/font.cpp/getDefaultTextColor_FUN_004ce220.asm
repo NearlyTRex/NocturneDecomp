@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_font_cpp_getDefaultTextColor_FUN_004ce220(void)
+; int __cdecl engine_font_cpp_getDefaultTextColor_FUN_004ce220(void)
 ;
 ;
 ; XREF[2]:

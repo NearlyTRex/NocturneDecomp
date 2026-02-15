@@ -121,15 +121,16 @@
   },
   "complexity": {
     "assembly_lines": 3947,
-    "complexity_score": 2624,
+    "complexity_score": 2649,
     "cross_reference_count": 1,
     "function_call_count": 39,
     "global_count": 200,
     "pseudocode_lines": 2004,
-    "suspect_count": 59,
+    "suspect_count": 61,
     "suspect_types": [
       "decompiler_intrinsic",
       "nonstandard_int",
+      "pointer_cast",
       "undefined_data",
       "unknown_field",
       "unresolved_funcptr",
@@ -1498,13 +1499,13 @@
     },
     {
       "addr": "03263310",
-      "name": "g_CDemonSetInstance.damage_listener_count",
+      "name": "g_CDemonSetInstance.character_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "03263314",
-      "name": "g_CDemonSetInstance.damage_listeners",
+      "name": "g_CDemonSetInstance.characters[0]",
       "type": "undefined4",
       "value": null
     },
@@ -1516,7 +1517,7 @@
     },
     {
       "addr": "03265254",
-      "name": "g_CDemonSetInstance.unk4[7996]",
+      "name": "g_CDemonSetInstance.enemy_count",
       "type": "undefined4",
       "value": null
     },
@@ -2173,6 +2174,13 @@
       "type": "undefined_data"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 1231,
+      "match": "(int *)((int)",
+      "text": "iVar18 = *(int *)((int)g_CDemonSetPtr->enemies + iStack_74);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 1236,
       "match": "SQRT",
@@ -2269,6 +2277,13 @@
       "match": "DAT_0062c68b",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c68b);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1666,
+      "match": "(int *)((int)",
+      "text": "iVar9 = *(int *)((int)g_CDemonSetPtr->characters + iStack_40);",
+      "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",

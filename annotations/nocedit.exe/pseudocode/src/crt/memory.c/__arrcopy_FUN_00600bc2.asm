@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void * __cdecl crt_memory_c___arrcopy_FUN_00600bc2(void *dest,void *source,int count,WatcomTypeInfo *type_info)
+; void * __cdecl crt_memory_c___arrcopy_FUN_00600bc2(void *dest,void *source,int count,WatcomTypeInfo *type_info)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   dest

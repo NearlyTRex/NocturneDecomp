@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CWeather * __cdecl core_weather_cpp_CWeather_ctor_FUN_005eead0(CWeather *this_ptr)
+; CWeather * __cdecl core_weather_cpp_CWeather_ctor_FUN_005eead0(CWeather *this_ptr)
 ;
 ; Parameters:
 ; CWeather *       Stack[0x4]:4   this_ptr

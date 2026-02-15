@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CConveyor * __cdecl core_conveyor_cpp_CConveyor_ctor_FUN_00441ca0(CConveyor *this_ptr)
+; CConveyor * __cdecl core_conveyor_cpp_CConveyor_ctor_FUN_00441ca0(CConveyor *this_ptr)
 ;
 ; Parameters:
 ; CConveyor *      Stack[0x4]:4   this_ptr

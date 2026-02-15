@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_hero_cpp_CHero_FUN_004f35b0(CHero *this_ptr)
+; int __cdecl core_hero_cpp_CHero_FUN_004f35b0(CHero *this_ptr)
 ;
 ; Parameters:
 ; CHero *          Stack[0x4]:4   this_ptr
@@ -29,8 +29,8 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   undefined4 g_CActorDestinationClassInfo.name_hash
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.actor_list_ptr
-;   undefined4 g_CDemonSetInstance.actor_list_data[0]
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
@@ -60,7 +60,7 @@ section .text
     MOV EAX,[0x006810c8]                ; 004f35d6 | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_004f35d6
     MOV EBX,dword ptr [EBP + -0x8]      ; 004f35db
-    CMP EBX,dword ptr [EAX + 0x14d154]  ; 004f35de | g_CDemonSetInstance.actor_list_ptr
+    CMP EBX,dword ptr [EAX + 0x14d154]  ; 004f35de | g_CDemonSetInstance.actor_count
     JL 0x004f3625                       ; 004f35e4
         ;   XREF to: 004f3625 (CONDITIONAL_JUMP)  ; LAB_004f3625
     MOV EAX,dword ptr [EBP + -0x10]     ; 004f35e6
@@ -94,7 +94,7 @@ section .text
     MOV EBX,dword ptr [0x020a4874]      ; 004f3625 | g_CActorDestinationClassInfo.name_hash
         ;   Label: LAB_004f3625
     PUSH EBX                            ; 004f362b
-    MOV EDX,dword ptr [EDI + EAX*0x1 + 0x14d158] ; 004f362c | g_CDemonSetInstance.actor_list_data[0]
+    MOV EDX,dword ptr [EDI + EAX*0x1 + 0x14d158] ; 004f362c | g_CDemonSetInstance.actors[0]
     PUSH EDX                            ; 004f3633
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 004f3634
         ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_skeleton_cpp_CDeformableModel_captureTextures_FUN_0059a780(CDeformableModel *this_ptr)
+; void __cdecl core_skeleton_cpp_CDeformableModel_captureTextures_FUN_0059a780(CDeformableModel *this_ptr)
 ;
 ; Parameters:
 ; CDeformableModel * Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_actor_cpp_CDemonActor_testLineIntersection_FUN_00409150(CDemonActor *this_ptr,CVector3f *line_start,CVector3f *line_end,CVector3f *out_intersection_point)
+; int __cdecl core_actor_cpp_CDemonActor_testLineIntersection_FUN_00409150(CDemonActor *this_ptr,CVector3f *line_start,CVector3f *line_end,CVector3f *out_intersection_point)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr

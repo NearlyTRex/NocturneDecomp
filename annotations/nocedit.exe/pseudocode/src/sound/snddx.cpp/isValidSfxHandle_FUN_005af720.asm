@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl sound_snddx_cpp_isValidSfxHandle_FUN_005af720(int sfx_handle)
+; int __cdecl sound_snddx_cpp_isValidSfxHandle_FUN_005af720(int sfx_handle)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   sfx_handle

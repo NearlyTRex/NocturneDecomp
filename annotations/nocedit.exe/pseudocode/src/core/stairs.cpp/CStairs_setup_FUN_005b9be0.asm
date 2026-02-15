@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_stairs_cpp_CStairs_setup_FUN_005b9be0(CStairs *this_ptr)
+; void __cdecl core_stairs_cpp_CStairs_setup_FUN_005b9be0(CStairs *this_ptr)
 ;
 ; Parameters:
 ; CStairs *        Stack[0x4]:4   this_ptr

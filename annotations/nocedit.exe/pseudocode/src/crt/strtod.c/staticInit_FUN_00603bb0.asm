@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_strtod_c_staticInit_FUN_00603bb0(void)
+; void __cdecl crt_strtod_c_staticInit_FUN_00603bb0(void)
 ;
 ;
 ; Referenced Globals:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_0054c480(CPackedBitmapSet *this_ptr,char *pbg_filename,char *palette_filename,int param3,int param4,int additional_param)
+; void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_0054c480(CPackedBitmapSet *this_ptr,char *pbg_filename,char *palette_filename,int param3,int param4,int additional_param)
 ;
 ; Parameters:
 ; CPackedBitmapSet * Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_actor_cpp_CDemonActor_getInteractionInfo_FUN_0040a030(CDemonActor *this_ptr,SInteractionInfo *out_info)
+; void __cdecl core_actor_cpp_CDemonActor_getInteractionInfo_FUN_0040a030(CDemonActor *this_ptr,SInteractionInfo *out_info)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_main_c_showPromoScreen_FUN_00508340(void)
+; void __cdecl core_main_c_showPromoScreen_FUN_00508340(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x110]:1  local_110

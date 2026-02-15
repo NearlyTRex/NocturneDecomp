@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_health_cpp_CHealthItem_onPickup_FUN_004f2020(CHealthItem *this_ptr,CDemonActor *owner)
+; void __cdecl core_health_cpp_CHealthItem_onPickup_FUN_004f2020(CHealthItem *this_ptr,CDemonActor *owner)
 ;
 ; Parameters:
 ; CHealthItem *    Stack[0x4]:4   this_ptr

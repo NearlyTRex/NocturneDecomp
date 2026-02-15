@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CSlew * __cdecl core_actor_cpp_CSlew_ctor_FUN_00410400(CSlew *this_ptr)
+; CSlew * __cdecl core_actor_cpp_CSlew_ctor_FUN_00410400(CSlew *this_ptr)
 ;
 ; Parameters:
 ; CSlew *          Stack[0x4]:4   this_ptr

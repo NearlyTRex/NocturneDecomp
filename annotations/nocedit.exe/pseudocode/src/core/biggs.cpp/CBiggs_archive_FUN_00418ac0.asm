@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_biggs_cpp_CBiggs_archive_FUN_00418ac0(CBiggs *this_ptr)
+; void __cdecl core_biggs_cpp_CBiggs_archive_FUN_00418ac0(CBiggs *this_ptr)
 ;
 ; Parameters:
 ; CBiggs *         Stack[0x4]:4   this_ptr

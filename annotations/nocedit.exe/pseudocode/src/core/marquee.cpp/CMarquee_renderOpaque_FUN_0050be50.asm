@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_marquee_cpp_CMarquee_renderOpaque_FUN_0050be50(CMarquee *this_ptr)
+; int __cdecl core_marquee_cpp_CMarquee_renderOpaque_FUN_0050be50(CMarquee *this_ptr)
 ;
 ; Parameters:
 ; CMarquee *       Stack[0x4]:4   this_ptr

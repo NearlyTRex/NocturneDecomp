@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_stairs_cpp_CStairs_getPropertyList_FUN_005ba840(CStairs *this_ptr,CActorPropertyList *property_list)
+; void __cdecl core_stairs_cpp_CStairs_getPropertyList_FUN_005ba840(CStairs *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CStairs *        Stack[0x4]:4   this_ptr

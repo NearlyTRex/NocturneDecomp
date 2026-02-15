@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_design_c_detectMouseButtonClick_FUN_00464870(int mouse_button_mask)
+; int __cdecl shape_design_c_detectMouseButtonClick_FUN_00464870(int mouse_button_mask)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   mouse_button_mask

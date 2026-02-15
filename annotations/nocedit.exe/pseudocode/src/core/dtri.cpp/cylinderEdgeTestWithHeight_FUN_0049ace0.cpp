@@ -10,22 +10,28 @@ void __cdecl core_dtri_cpp_cylinderEdgeTestWithHeight_FUN_0049ace0(SIntersectXZC
 
 {
   float fVar1;
-  int iVar2;
+  float fVar2;
+  float fVar3;
+  float fVar4;
+  int iVar5;
   
   cylinder->edge_x1 = vertex1->x;
   cylinder->edge_z1 = vertex1->z;
   cylinder->edge_x2 = vertex2->x;
   cylinder->edge_z2 = vertex2->z;
-  iVar2 = core_dtri_cpp_cylinderEdgeIntersection_FUN_0049aa00(cylinder);
-  if (((iVar2 != 0) &&
+  iVar5 = core_dtri_cpp_cylinderEdgeIntersection_FUN_0049aa00(cylinder);
+  if (((iVar5 != 0) &&
       (fVar1 = (vertex2->y - vertex1->y) * cylinder->param_clamped + vertex1->y,
       cylinder->top_y < fVar1)) && (fVar1 < cylinder->bottom_y)) {
-    cylinder->flags = 0;
-    cylinder->max_distance = cylinder->param_t;
-    cylinder->push_x =
-         (cylinder->normal_z * cylinder->param_t + cylinder->center_z) - cylinder->intersect_z;
-    cylinder->push_z =
-         (cylinder->normal_x * cylinder->param_t + cylinder->center_x) - cylinder->intersect_x;
+    (cylinder->push_normal).y = 0.0;
+    fVar1 = cylinder->dir_x;
+    fVar2 = cylinder->param_t;
+    cylinder->closest_t = cylinder->param_t;
+    fVar3 = cylinder->center_x;
+    fVar4 = cylinder->intersect_x;
+    (cylinder->push_normal).z =
+         (cylinder->dir_z * cylinder->param_t + cylinder->center_z) - cylinder->intersect_z;
+    (cylinder->push_normal).x = (fVar1 * fVar2 + fVar3) - fVar4;
     return;
   }
   return;

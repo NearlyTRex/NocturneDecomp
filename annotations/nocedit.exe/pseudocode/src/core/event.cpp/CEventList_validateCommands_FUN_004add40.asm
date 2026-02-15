@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * __cdecl core_event_cpp_CEventList_validateCommands_FUN_004add40(CEventList *this_ptr,char *commands)
+; char * __cdecl core_event_cpp_CEventList_validateCommands_FUN_004add40(CEventList *this_ptr,char *commands)
 ;
 ; Parameters:
 ; CEventList *     Stack[0x4]:4   this_ptr

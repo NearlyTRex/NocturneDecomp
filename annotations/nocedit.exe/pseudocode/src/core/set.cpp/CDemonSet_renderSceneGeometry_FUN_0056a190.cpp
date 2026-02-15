@@ -58,11 +58,11 @@ LAB_0056a1fb:
         core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
                   (&g_CKeyFramedModelInstance,(CKeyFramedModelInstance *)0x0,0,-1);
       }
-      if ((this_ptr->unk_lighting_param4 == 0) && (this_ptr->has_sky != 0)) {
+      if ((this_ptr->disable_sky_rendering == 0) && (this_ptr->has_sky != 0)) {
         core_dskybox_cpp_renderSkyDome_FUN_004901f0
                   (g_SkyDomeTexturePtr,this_ptr->sky_texture_name,(float)this_ptr->sky_type);
       }
-      if ((this_ptr->unk_lighting_param3 == 0) &&
+      if ((this_ptr->disable_water_rendering == 0) &&
          (core_water_cpp_CWater_calculateVisibleTiles_FUN_005e9e70(g_CWaterPtr),
          g_CWaterPtr->wave_animation_enabled == 0)) {
         core_water_cpp_CWater_render_FUN_005ea320(g_CWaterPtr,1);
@@ -73,7 +73,7 @@ LAB_0056a1fb:
     }
     iVar1 = 0;
     pCVar2 = this_ptr;
-    if (0 < this_ptr->mirror_glass_count) {
+    if (0 < this_ptr->mirror_glass_actor_count) {
       do {
         core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_00522800
                   (&pCVar2->mirror_glass_actors[0]->mirror);
@@ -86,11 +86,11 @@ LAB_0056a1fb:
         iVar1 = iVar1 + 1;
         core_set_cpp_FUN_00570af0();
         pCVar2 = (CDemonSet *)pCVar2->cameras;
-      } while (iVar1 < this_ptr->mirror_glass_count);
+      } while (iVar1 < this_ptr->mirror_glass_actor_count);
     }
   }
   else if ((g_RenderMirrorsFlag != 0) &&
-          (iVar1 = 0, pCVar2 = this_ptr, 0 < this_ptr->mirror_glass_count)) {
+          (iVar1 = 0, pCVar2 = this_ptr, 0 < this_ptr->mirror_glass_actor_count)) {
     do {
       core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_00522800
                 (&pCVar2->mirror_glass_actors[0]->mirror);
@@ -103,7 +103,7 @@ LAB_0056a1fb:
       pCVar2 = (CDemonSet *)pCVar2->cameras;
       iVar1 = iVar1 + 1;
       core_set_cpp_FUN_00570af0();
-    } while (iVar1 < this_ptr->mirror_glass_count);
+    } while (iVar1 < this_ptr->mirror_glass_actor_count);
   }
   return;
 }

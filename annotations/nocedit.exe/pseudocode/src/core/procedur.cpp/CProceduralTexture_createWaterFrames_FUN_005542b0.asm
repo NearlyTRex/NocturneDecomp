@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_procedur_cpp_CProceduralTexture_createWaterFrames_FUN_005542b0(CProceduralTexture *this_ptr)
+; void __cdecl core_procedur_cpp_CProceduralTexture_createWaterFrames_FUN_005542b0(CProceduralTexture *this_ptr)
 ;
 ; Parameters:
 ; CProceduralTexture * Stack[0x4]:4   this_ptr

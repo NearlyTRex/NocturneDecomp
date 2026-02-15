@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_enemy_cpp_staticInit_FUN_004a94d0(void)
+; void __cdecl core_enemy_cpp_staticInit_FUN_004a94d0(void)
 ;
 ;
 ; Referenced Globals:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_setutil_cpp_readAndParseLine_FUN_00585290(_FILE *file_handle,char *output_buffer,int max_length)
+; void __cdecl core_setutil_cpp_readAndParseLine_FUN_00585290(_FILE *file_handle,char *output_buffer,int max_length)
 ;
 ; Parameters:
 ; _FILE *          Stack[0x4]:4   file_handle

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_actor_cpp_CActorPropertyList_render_FUN_0040e850(CActorPropertyList *this_ptr,int selected_index)
+; void __cdecl core_actor_cpp_CActorPropertyList_render_FUN_0040e850(CActorPropertyList *this_ptr,int selected_index)
 ;
 ; Parameters:
 ; CActorPropertyList * Stack[0x4]:4   this_ptr

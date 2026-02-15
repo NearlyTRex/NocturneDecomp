@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_fire_cpp_CFireEffect_FUN_004c93d0(CFireEffect *this_ptr)
+; int __cdecl core_fire_cpp_CFireEffect_FUN_004c93d0(CFireEffect *this_ptr)
 ;
 ; Parameters:
 ; CFireEffect *    Stack[0x4]:4   this_ptr

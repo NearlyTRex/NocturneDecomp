@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CRock * __cdecl core_fire_cpp_CRock_arrdtor_FUN_004c9910(CRock *objs,uint flags)
+; CRock * __cdecl core_fire_cpp_CRock_arrdtor_FUN_004c9910(CRock *objs,uint flags)
 ;
 ; Parameters:
 ; CRock *          Stack[0x4]:4   objs

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
+; int __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr

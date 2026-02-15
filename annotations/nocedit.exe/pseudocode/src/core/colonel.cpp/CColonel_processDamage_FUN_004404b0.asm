@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_colonel_cpp_CColonel_processDamage_FUN_004404b0(CColonel *this_ptr,SDamageInfo *damage_info)
+; void __cdecl core_colonel_cpp_CColonel_processDamage_FUN_004404b0(CColonel *this_ptr,SDamageInfo *damage_info)
 ;
 ; Parameters:
 ; CColonel *       Stack[0x4]:4   this_ptr

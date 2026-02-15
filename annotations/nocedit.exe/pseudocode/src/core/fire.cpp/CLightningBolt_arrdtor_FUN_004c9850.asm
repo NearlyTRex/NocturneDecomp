@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CLightningBolt * __cdecl core_fire_cpp_CLightningBolt_arrdtor_FUN_004c9850(CLightningBolt *objs,uint flags)
+; CLightningBolt * __cdecl core_fire_cpp_CLightningBolt_arrdtor_FUN_004c9850(CLightningBolt *objs,uint flags)
 ;
 ; Parameters:
 ; CLightningBolt * Stack[0x4]:4   objs

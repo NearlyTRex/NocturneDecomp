@@ -116,7 +116,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0(CDemonSet *thi
   }
   uVar5 = (uint)((longlong)iVar8 * (longlong)iVar10) >> 0x10 |
           (int)((ulonglong)((longlong)iVar8 * (longlong)iVar10) >> 0x20) << 0x10;
-  if ((this_ptr->rendering_flags_ptr != (int *)0x0) && (skip_lighting_calculation == 0)) {
+  if ((this_ptr->directional_light_ratio_enabled != 0) && (skip_lighting_calculation == 0)) {
     iVar8 = core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80
                       (this_ptr,world_position,(CVector3i *)0x0);
     uVar9 = local_14 + iVar8;

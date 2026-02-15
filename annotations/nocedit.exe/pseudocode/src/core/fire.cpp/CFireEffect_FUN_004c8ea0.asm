@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_fire_cpp_CFireEffect_FUN_004c8ea0(CFireEffect *this_ptr)
+; void __cdecl core_fire_cpp_CFireEffect_FUN_004c8ea0(CFireEffect *this_ptr)
 ;
 ; Parameters:
 ; CFireEffect *    Stack[0x4]:4   this_ptr
@@ -11,7 +11,7 @@
 ;   core_fire.cpp_CFireEffect_createExplosion_FUN_004c8c10 at 004c8c79
 ;
 ; Referenced Globals:
-;   CToss* g_TossActiveListHead
+;   int INT_02d6c6a0
 ;   CCrater[20] g_CraterPool
 ;
 ; Called Functions:
@@ -23,7 +23,7 @@ section .text
 
     PUSH dword ptr [ESP + 0xc]          ; 004c8ea0
         ;   Label: core_fire.cpp_CFireEffect_FUN_004c8ea0
-    MOV EAX,[0x02d6c6a0]                ; 004c8ea4 | g_TossActiveListHead
+    MOV EAX,[0x02d6c6a0]                ; 004c8ea4 | INT_02d6c6a0
     MOV EDX,dword ptr [ESP + 0xc]       ; 004c8ea9
     SHL EAX,0x4                         ; 004c8ead
     PUSH EDX                            ; 004c8eb0
@@ -34,10 +34,10 @@ section .text
     PUSH EAX                            ; 004c8ebd
     CALL core_fire.cpp_CCrater_FUN_004c4200 ; 004c8ebe
         ;   XREF to: 004c4200 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CCrater_FUN_004c4200(CCrater * this_ptr)
-    MOV ECX,dword ptr [0x02d6c6a0]      ; 004c8ec3 | g_TossActiveListHead
+    MOV ECX,dword ptr [0x02d6c6a0]      ; 004c8ec3 | INT_02d6c6a0
     INC ECX                             ; 004c8ec9
     ADD ESP,0xc                         ; 004c8eca
-    MOV dword ptr [0x02d6c6a0],ECX      ; 004c8ecd | g_TossActiveListHead
+    MOV dword ptr [0x02d6c6a0],ECX      ; 004c8ecd | INT_02d6c6a0
     CMP ECX,0x14                        ; 004c8ed3
     JGE 0x004c8ed9                      ; 004c8ed6
         ;   XREF to: 004c8ed9 (CONDITIONAL_JUMP)  ; LAB_004c8ed9
@@ -45,7 +45,7 @@ section .text
     PUSH ESI                            ; 004c8ed9
         ;   Label: LAB_004c8ed9
     XOR ESI,ESI                         ; 004c8eda
-    MOV dword ptr [0x02d6c6a0],ESI      ; 004c8edc | g_TossActiveListHead
+    MOV dword ptr [0x02d6c6a0],ESI      ; 004c8edc | INT_02d6c6a0
     POP ESI                             ; 004c8ee2
     RET                                 ; 004c8ee3
 

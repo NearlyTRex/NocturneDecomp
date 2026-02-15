@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 108,
-    "complexity_score": 66,
+    "complexity_score": 49,
     "cross_reference_count": 3,
     "function_call_count": 7,
     "global_count": 12,
-    "pseudocode_lines": 51,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
-    "total_lines": 159
+    "pseudocode_lines": 49,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 157
   },
   "cross_references": [
     {
@@ -149,13 +147,13 @@
     },
     {
       "addr": "032613cc",
-      "name": "g_CDemonSetInstance.actor_list_ptr",
+      "name": "g_CDemonSetInstance.actor_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "032613d0",
-      "name": "g_CDemonSetInstance.actor_list_data[0]",
+      "name": "g_CDemonSetInstance.actors[0]",
       "type": "undefined4",
       "value": null
     }
@@ -203,13 +201,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 44,
-      "match": "(void *)((int)",
-      "text": "pCVar1->actor_list_ptr = (void *)((int)pCVar1->actor_list_ptr + 1);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

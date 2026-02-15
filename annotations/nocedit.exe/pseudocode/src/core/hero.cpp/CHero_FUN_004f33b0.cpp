@@ -32,8 +32,8 @@ int __cdecl core_hero_cpp_CHero_FUN_004f33b0(CHero *this_ptr)
     }
     input_world_point = &(this_ptr->base).base.location;
     local_1c = 0;
-    for (local_20 = 0; local_20 < (int)g_CDemonSetPtr->actor_list_ptr; local_20 = local_20 + 1) {
-      this_ptr_00 = *(CHero **)(g_CDemonSetPtr->actor_list_data + local_1c);
+    for (local_20 = 0; local_20 < g_CDemonSetPtr->actor_count; local_20 = local_20 + 1) {
+      this_ptr_00 = *(CHero **)((int)g_CDemonSetPtr->actors + local_1c);
       local_60.x = (this_ptr_00->base).base.location.position.x - (input_world_point->position).x;
       local_60.z = (this_ptr_00->base).base.location.position.z -
                    (this_ptr->base).base.location.position.z;

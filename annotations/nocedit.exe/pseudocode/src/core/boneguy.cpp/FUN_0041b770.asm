@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVector3f * __cdecl core_boneguy_cpp_FUN_0041b770(void)
+; CVector3f * __cdecl core_boneguy_cpp_FUN_0041b770(void)
 ;
 ;
 ; Referenced Globals:

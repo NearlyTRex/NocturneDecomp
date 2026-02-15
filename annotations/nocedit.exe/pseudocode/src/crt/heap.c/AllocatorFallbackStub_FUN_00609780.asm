@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_heap_c_AllocatorFallbackStub_FUN_00609780(uint size)
+; int __cdecl crt_heap_c_AllocatorFallbackStub_FUN_00609780(uint size)
 ;
 ; Parameters:
 ; uint             Stack[0x4]:4   size

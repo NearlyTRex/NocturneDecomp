@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl sound_sndmain_cpp_initializeRecordingDevice_FUN_005ab8d0(void)
+; int __cdecl sound_sndmain_cpp_initializeRecordingDevice_FUN_005ab8d0(void)
 ;
 ;
 ; Referenced Globals:

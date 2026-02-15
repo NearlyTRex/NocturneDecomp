@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dmodel_cpp_CKeyFramedModel_reducePolygons_FUN_0047aa00(CKeyFramedModel *this_ptr,float weld_tolerance,float angle_threshold_radians)
+; void __cdecl core_dmodel_cpp_CKeyFramedModel_reducePolygons_FUN_0047aa00(CKeyFramedModel *this_ptr,float weld_tolerance,float angle_threshold_radians)
 ;
 ; Parameters:
 ; CKeyFramedModel * Stack[0x4]:4   this_ptr

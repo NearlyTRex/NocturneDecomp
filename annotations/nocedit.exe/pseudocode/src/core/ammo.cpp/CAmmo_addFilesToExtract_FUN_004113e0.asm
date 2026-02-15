@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_ammo_cpp_CAmmo_addFilesToExtract_FUN_004113e0(CAmmo *this_ptr,_FILE *file_handle)
+; void __cdecl core_ammo_cpp_CAmmo_addFilesToExtract_FUN_004113e0(CAmmo *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CAmmo *          Stack[0x4]:4   this_ptr

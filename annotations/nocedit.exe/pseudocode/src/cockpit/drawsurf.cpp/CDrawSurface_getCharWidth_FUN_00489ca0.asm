@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl cockpit_drawsurf_cpp_CDrawSurface_getCharWidth_FUN_00489ca0(CDrawSurface *this_ptr,int char_code)
+; int __cdecl cockpit_drawsurf_cpp_CDrawSurface_getCharWidth_FUN_00489ca0(CDrawSurface *this_ptr,int char_code)
 ;
 ; Parameters:
 ; CDrawSurface *   Stack[0x4]:4   this_ptr

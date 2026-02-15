@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dcube_cpp_CDemonCubeTriangle_init_FUN_00455430(CDemonCubeTriangle *this_ptr,CVector3f *vertex0,CVector3f *vertex1,CVector3f *vertex2)
+; void __cdecl core_dcube_cpp_CDemonCubeTriangle_init_FUN_00455430(CDemonCubeTriangle *this_ptr,CVector3f *vertex0,CVector3f *vertex1,CVector3f *vertex2)
 ;
 ; Parameters:
 ; CDemonCubeTriangle * Stack[0x4]:4   this_ptr

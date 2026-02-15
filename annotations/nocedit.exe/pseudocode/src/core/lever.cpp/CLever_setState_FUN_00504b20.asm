@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_lever_cpp_CLever_setState_FUN_00504b20(CLever *this_ptr,float param_2)
+; void __cdecl core_lever_cpp_CLever_setState_FUN_00504b20(CLever *this_ptr,float param_2)
 ;
 ; Parameters:
 ; CLever *         Stack[0x4]:4   this_ptr
@@ -20,8 +20,8 @@
 ;   undefined4 g_CLeverClassInfo.name_hash
 ;   undefined4 DAT_02f33744
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.actor_list_ptr
-;   undefined4 g_CDemonSetInstance.actor_list_data[0]
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
@@ -80,7 +80,7 @@ section .text
     XOR ESI,ESI                         ; 00504b92
     MOV EAX,[0x006810c8]                ; 00504b94 | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_00504b94
-    CMP ESI,dword ptr [EAX + 0x14d154]  ; 00504b99 | g_CDemonSetInstance.actor_list_ptr
+    CMP ESI,dword ptr [EAX + 0x14d154]  ; 00504b99 | g_CDemonSetInstance.actor_count
     JL 0x00504c50                       ; 00504b9f
         ;   XREF to: 00504c50 (CONDITIONAL_JUMP)  ; LAB_00504c50
     POP EBP                             ; 00504ba5
@@ -159,7 +159,7 @@ section .text
     MOV ECX,dword ptr [0x02dd3090]      ; 00504c50 | g_CLeverClassInfo.name_hash
         ;   Label: LAB_00504c50
     PUSH ECX                            ; 00504c56
-    MOV EBP,dword ptr [EBX + EAX*0x1 + 0x14d158] ; 00504c57 | g_CDemonSetInstance.actor_list_data[0]
+    MOV EBP,dword ptr [EBX + EAX*0x1 + 0x14d158] ; 00504c57 | g_CDemonSetInstance.actors[0]
     PUSH EBP                            ; 00504c5e
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 00504c5f
         ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActor * __cdecl core_boxactor_cpp_CBoxActor_getCarrier_FUN_00422550(CBoxActor *this_ptr)
+; CDemonActor * __cdecl core_boxactor_cpp_CBoxActor_getCarrier_FUN_00422550(CBoxActor *this_ptr)
 ;
 ; Parameters:
 ; CBoxActor *      Stack[0x4]:4   this_ptr

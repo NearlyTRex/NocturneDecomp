@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVehicle * __cdecl core_vehicle_cpp_factoryFunc_FUN_005e7900(void)
+; CVehicle * __cdecl core_vehicle_cpp_factoryFunc_FUN_005e7900(void)
 ;
 ;
 ; XREF[1]:

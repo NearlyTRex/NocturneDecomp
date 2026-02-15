@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_005ee4a0(CWeapon *this_ptr)
+; void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_005ee4a0(CWeapon *this_ptr)
 ;
 ; Parameters:
 ; CWeapon *        Stack[0x4]:4   this_ptr
@@ -20,7 +20,7 @@
 ;   undefined4 g_CDemonLightInstance.base.base.projection_scale
 ;   undefined4 g_CDemonLightInstance.base.max_distance
 ;   undefined4 g_CDemonLightInstance.light_enabled_flag
-;   undefined4 g_CDemonLightInstance.unk2
+;   undefined4 g_CDemonLightInstance.volumetric_enabled
 ;   undefined4 g_CDemonLightInstance.antialiasing_enabled
 ;   ... and 8 more
 ;
@@ -59,7 +59,7 @@ section .text
     LEA EAX,[ESP + 0x24]                ; 005ee4ce
     ADD ESP,0xc                         ; 005ee4d2
     MOV dword ptr [0x02d807a4],EDX      ; 005ee4d5 | g_CDemonLightInstance.light_enabled_flag
-    MOV dword ptr [0x02d807ac],EDX      ; 005ee4db | g_CDemonLightInstance.unk2
+    MOV dword ptr [0x02d807ac],EDX      ; 005ee4db | g_CDemonLightInstance.volumetric_enabled
     CMP EAX,0x2d7eaf4                   ; 005ee4e1 | g_CDemonLightInstance.base.base.position.x
     JZ 0x005ee503                       ; 005ee4e6
         ;   XREF to: 005ee503 (CONDITIONAL_JUMP)  ; LAB_005ee503

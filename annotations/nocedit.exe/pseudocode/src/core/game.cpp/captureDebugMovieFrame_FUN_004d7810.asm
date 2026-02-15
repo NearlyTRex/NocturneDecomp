@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_game_cpp_captureDebugMovieFrame_FUN_004d7810(void)
+; void __cdecl core_game_cpp_captureDebugMovieFrame_FUN_004d7810(void)
 ;
 ;
 ; Referenced Globals:

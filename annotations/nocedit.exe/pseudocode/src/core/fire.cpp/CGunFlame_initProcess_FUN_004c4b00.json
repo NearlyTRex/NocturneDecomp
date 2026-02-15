@@ -25,13 +25,14 @@
   },
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 180,
+    "complexity_score": 195,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 15,
     "pseudocode_lines": 40,
-    "suspect_count": 13,
+    "suspect_count": 14,
     "suspect_types": [
+      "pointer_cast",
       "undefined_data",
       "unresolved_funcptr"
     ],
@@ -143,25 +144,25 @@
     },
     {
       "addr": "032613cc",
-      "name": "g_CDemonSetInstance.actor_list_ptr",
+      "name": "g_CDemonSetInstance.actor_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "032613d0",
-      "name": "g_CDemonSetInstance.actor_list_data[0]",
+      "name": "g_CDemonSetInstance.actors[0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "03263310",
-      "name": "g_CDemonSetInstance.damage_listener_count",
+      "name": "g_CDemonSetInstance.character_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "03263314",
-      "name": "g_CDemonSetInstance.damage_listeners",
+      "name": "g_CDemonSetInstance.characters[0]",
       "type": "undefined4",
       "value": null
     }
@@ -218,6 +219,13 @@
       "match": "DAT_02d13eb4",
       "text": "DAT_02d13eb4 = 0;",
       "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(int *)((int)",
+      "text": "iVar1 = *(int *)((int)g_CDemonSetPtr->characters + iVar4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",

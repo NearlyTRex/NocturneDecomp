@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void * __cdecl crt_memory_c___arr_op_FUN_006020c2(void *dest,void *source,int count,int element_size,void *copy_func)
+; void * __cdecl crt_memory_c___arr_op_FUN_006020c2(void *dest,void *source,int count,int element_size,void *copy_func)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   dest

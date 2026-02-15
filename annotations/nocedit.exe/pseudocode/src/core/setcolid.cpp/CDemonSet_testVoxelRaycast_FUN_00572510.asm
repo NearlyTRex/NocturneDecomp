@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_setcolid_cpp_CDemonSet_testVoxelRaycast_FUN_00572510(CDemonSet *this_ptr,CVector3f *start_pos,CVector3f *end_pos)
+; int __cdecl core_setcolid_cpp_CDemonSet_testVoxelRaycast_FUN_00572510(CDemonSet *this_ptr,CVector3f *start_pos,CVector3f *end_pos)
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr

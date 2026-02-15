@@ -9,11 +9,11 @@
 void __cdecl core_fire_cpp_CFireEffect_FUN_004c8ea0(CFireEffect *this_ptr)
 
 {
-  core_fire_cpp_CCrater_FUN_004c4200(g_CraterPool + (int)g_TossActiveListHead);
-  g_TossActiveListHead = (CToss *)((int)&g_TossActiveListHead->unk1 + 1);
-  if ((int)g_TossActiveListHead < 0x14) {
+  core_fire_cpp_CCrater_FUN_004c4200(g_CraterPool + INT_02d6c6a0);
+  INT_02d6c6a0 = INT_02d6c6a0 + 1;
+  if (INT_02d6c6a0 < 0x14) {
     return;
   }
-  g_TossActiveListHead = (CToss *)0x0;
+  INT_02d6c6a0 = 0;
   return;
 }

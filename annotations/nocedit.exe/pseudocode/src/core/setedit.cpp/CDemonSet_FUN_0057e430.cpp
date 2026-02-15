@@ -61,11 +61,11 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_0057e430(CDemonSet *this_ptr)
         (local_20->rotation_matrix).m[2].x = (local_c->rotation_matrix).m[2].x;
         (local_20->rotation_matrix).m[2].y = (local_c->rotation_matrix).m[2].y;
         (local_20->rotation_matrix).m[2].z = (local_c->rotation_matrix).m[2].z;
-        local_20->unk1 = local_c->unk1;
+        local_20->padding = local_c->padding;
         local_20->is_panning = local_c->is_panning;
         local_20->projection_scale = local_c->projection_scale;
         local_20->ambient_value = local_c->ambient_value;
-        local_20->unk2 = local_c->unk2;
+        local_20->camera_group = local_c->camera_group;
         local_20->fog_enabled = local_c->fog_enabled;
         (local_20->fog).color_index.r = (local_c->fog).color_index.r;
         (local_20->fog).color_index.g = (local_c->fog).color_index.g;
@@ -93,18 +93,18 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_0057e430(CDemonSet *this_ptr)
         }
         local_20->pvs_count = local_c->pvs_count;
         local_20->pvs_list = local_c->pvs_list;
-        local_20->unk3 = local_c->unk3;
-        local_20->unk4 = local_c->unk4;
+        local_20->vdir_zone = local_c->vdir_zone;
+        local_20->enabled = local_c->enabled;
         iVar4 = 0;
         if (0 < this_ptr->light_count) {
           pcVar5 = this_ptr->lights[0].name + local_8 + -4;
           pcVar3 = this_ptr->lights[0].name + local_10 + -4;
           do {
             pcVar5[0x128] = pcVar5[0x129];
-            *(uint *)(pcVar3 + 0x224) = *(uint *)(pcVar3 + 0x234);
-            *(uint *)(pcVar3 + 0x228) = *(uint *)(pcVar3 + 0x238);
-            *(uint *)(pcVar3 + 0x22c) = *(uint *)(pcVar3 + 0x23c);
-            *(uint *)(pcVar3 + 0x230) = *(uint *)(pcVar3 + 0x240);
+            *(int *)(pcVar3 + 0x224) = *(int *)(pcVar3 + 0x234);
+            *(int *)(pcVar3 + 0x228) = *(int *)(pcVar3 + 0x238);
+            *(int *)(pcVar3 + 0x22c) = *(int *)(pcVar3 + 0x23c);
+            ((CRect *)(pcVar3 + 0x230))->left = ((CRect *)(pcVar3 + 0x240))->left;
             iVar4 = iVar4 + 1;
             pcVar5 = pcVar5 + 0x1898;
             pcVar3 = pcVar3 + 0x1898;

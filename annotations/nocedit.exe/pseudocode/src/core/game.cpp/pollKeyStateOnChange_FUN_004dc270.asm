@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_game_cpp_pollKeyStateOnChange_FUN_004dc270(void)
+; void __cdecl core_game_cpp_pollKeyStateOnChange_FUN_004dc270(void)
 ;
 ;
 ; Referenced Globals:

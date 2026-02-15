@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dcamera_cpp_saveCameraFog_FUN_00453f10(SFog *fog,_FILE *file_handle)
+; void __cdecl core_dcamera_cpp_saveCameraFog_FUN_00453f10(SFog *fog,_FILE *file_handle)
 ;
 ; Parameters:
 ; SFog *           Stack[0x4]:4   fog

@@ -6,13 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 287,
-    "complexity_score": 100,
+    "complexity_score": 125,
     "cross_reference_count": 0,
     "function_call_count": 11,
     "global_count": 6,
     "pseudocode_lines": 100,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "suspect_float"
+    ],
     "total_lines": 387
   },
   "cross_references": [],
@@ -213,7 +215,22 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 27,
+      "match": "1.45735e-43",
+      "text": "if (damage_info->gore_multiplier == 1.45735e-43) {",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 30,
+      "match": "1.5134e-43",
+      "text": "if (damage_info->gore_multiplier == 1.5134e-43) {",
+      "type": "suspect_float"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

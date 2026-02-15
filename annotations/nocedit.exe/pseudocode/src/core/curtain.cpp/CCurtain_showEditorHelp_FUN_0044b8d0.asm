@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_curtain_cpp_CCurtain_showEditorHelp_FUN_0044b8d0(CCurtain *this_ptr,int *y_pos)
+; void __cdecl core_curtain_cpp_CCurtain_showEditorHelp_FUN_0044b8d0(CCurtain *this_ptr,int *y_pos)
 ;
 ; Parameters:
 ; CCurtain *       Stack[0x4]:4   this_ptr

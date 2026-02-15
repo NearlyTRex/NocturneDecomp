@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_set_cpp_CDemonSet_setCameraAmbientValueById_FUN_00570e60(CDemonSet *this_ptr,int id,float value)
+; void __cdecl core_set_cpp_CDemonSet_setCameraAmbientValueById_FUN_00570e60(CDemonSet *this_ptr,int id,float value)
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr

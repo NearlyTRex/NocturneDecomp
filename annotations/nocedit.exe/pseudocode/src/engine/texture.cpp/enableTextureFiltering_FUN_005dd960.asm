@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_texture_cpp_enableTextureFiltering_FUN_005dd960(int enabled)
+; void __cdecl engine_texture_cpp_enableTextureFiltering_FUN_005dd960(int enabled)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   enabled

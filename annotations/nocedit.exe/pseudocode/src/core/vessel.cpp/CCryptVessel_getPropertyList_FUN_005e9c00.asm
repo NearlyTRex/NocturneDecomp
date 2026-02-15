@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_vessel_cpp_CCryptVessel_getPropertyList_FUN_005e9c00(CCryptVessel *this_ptr,CActorPropertyList *property_list)
+; void __cdecl core_vessel_cpp_CCryptVessel_getPropertyList_FUN_005e9c00(CCryptVessel *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CCryptVessel *   Stack[0x4]:4   this_ptr

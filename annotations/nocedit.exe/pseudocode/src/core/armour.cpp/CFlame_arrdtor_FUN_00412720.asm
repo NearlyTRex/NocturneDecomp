@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CFlame * __cdecl core_armour_cpp_CFlame_arrdtor_FUN_00412720(CFlame *objs,uint flags)
+; CFlame * __cdecl core_armour_cpp_CFlame_arrdtor_FUN_00412720(CFlame *objs,uint flags)
 ;
 ; Parameters:
 ; CFlame *         Stack[0x4]:4   objs

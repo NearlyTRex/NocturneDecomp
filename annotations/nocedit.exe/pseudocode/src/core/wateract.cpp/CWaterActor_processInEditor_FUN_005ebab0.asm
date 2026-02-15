@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_wateract_cpp_CWaterActor_processInEditor_FUN_005ebab0(CWaterActor *this_ptr)
+; void __cdecl core_wateract_cpp_CWaterActor_processInEditor_FUN_005ebab0(CWaterActor *this_ptr)
 ;
 ; Parameters:
 ; CWaterActor *    Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a05e0(CDeformableModelInstance *this_ptr)
+; void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a05e0(CDeformableModelInstance *this_ptr)
 ;
 ; Parameters:
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr

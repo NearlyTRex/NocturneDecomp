@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_meshlod_cpp_copyVector_FUN_0051ee50(CVector3f *destination,CVector3f *source)
+; void __cdecl shape_meshlod_cpp_copyVector_FUN_0051ee50(CVector3f *destination,CVector3f *source)
 ;
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   destination

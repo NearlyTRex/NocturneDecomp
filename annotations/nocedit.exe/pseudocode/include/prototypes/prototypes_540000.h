@@ -9,6 +9,7 @@
 #include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CFont.h"
+#include "types/classes/CLocation.h"
 #include "types/classes/CMouse.h"
 #include "types/classes/CNPC.h"
 #include "types/classes/CNetGame.h"
@@ -137,7 +138,7 @@ void __cdecl core_passngr_cpp_CPassenger_archive_FUN_00546190(CPassenger *this_p
 void __cdecl core_passngr_cpp_CPassenger_getPropertyList_FUN_00546270(CPassenger *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_passngr_cpp_CPassenger_addFilesToExtract_FUN_005462f0(CPassenger *this_ptr,_FILE *file_handle);
 void __cdecl core_path_cpp_FUN_00546310(void);
-bool __cdecl core_path_cpp_FUN_00546330(void);
+int __cdecl core_path_cpp_FUN_00546330(void);
 void __cdecl core_path_cpp_FUN_00546350(void);
 void __cdecl core_path_cpp_FUN_005463d0(void);
 CPathMap * __cdecl core_path_cpp_CPathMap_ctor_FUN_00546450(CPathMap *this_ptr);
@@ -151,9 +152,9 @@ int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_00547320(CPathMap *
 void __cdecl core_path_cpp_CPathMap_previewPathfinding_FUN_00547c00(CPathMap *this_ptr);
 int __cdecl core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00(CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles, int direction_hint);
 void __cdecl core_path_cpp_debugRenderGridQuad_FUN_00547dd0(int grid_x,int grid_y,int grid_z,int color,int fog,float w_recip);
-void __cdecl core_path_cpp_FUN_00547fc0(void);
-CPathMap * __cdecl core_path_cpp_FUN_00548390(void);
-CPathMap * __cdecl core_path_cpp_FUN_00548500(void);
+void __cdecl core_path_cpp_CPathMap_FUN_00547fc0(CPathMap *this_ptr);
+CPathMap * __cdecl core_path_cpp_FUN_00548390(CLocation *location);
+CPathMap * __cdecl core_path_cpp_FUN_00548500(CLocation *location);
 void __cdecl core_path_cpp_CPathMap_reset_FUN_00548510(CPathMap *this_ptr);
 void __cdecl core_path_cpp_FUN_00548590(void);
 void __cdecl core_path_cpp_FUN_005485f0(void);

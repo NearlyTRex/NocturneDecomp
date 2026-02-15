@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_mp3_cpp_CFileBitStream_readFrameHeader_FUN_0052f5b0(CFileBitStream *this_ptr,SMpegFrameHeader *header_out)
+; void __cdecl sound_mp3_cpp_CFileBitStream_readFrameHeader_FUN_0052f5b0(CFileBitStream *this_ptr,SMpegFrameHeader *header_out)
 ;
 ; Parameters:
 ; CFileBitStream * Stack[0x4]:4   this_ptr

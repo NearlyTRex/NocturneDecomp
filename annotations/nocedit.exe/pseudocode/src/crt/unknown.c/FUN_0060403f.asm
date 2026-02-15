@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_unknown_c_FUN_0060403f(undefined4 param_1,float10 *param_2,undefined4 param_3,char *param_4,uint param_5,char *param_6,char *param_7,char *param_8,uint param_9,undefined4 param_10,char *param_11)
+; void __cdecl crt_unknown_c_FUN_0060403f(undefined4 param_1,float10 *param_2,undefined4 param_3,char *param_4,uint param_5,char *param_6,char *param_7,char *param_8,uint param_9,undefined4 param_10,char *param_11)
 ;
 ; Parameters:
 ; undefined4       Stack[0x4]:4   param_1

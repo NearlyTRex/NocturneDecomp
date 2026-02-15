@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl wincore_wddvmem_cpp_setupColorPalette_FUN_005ed8f0(void)
+; void __cdecl wincore_wddvmem_cpp_setupColorPalette_FUN_005ed8f0(void)
 ;
 ;
 ; XREF[4]:

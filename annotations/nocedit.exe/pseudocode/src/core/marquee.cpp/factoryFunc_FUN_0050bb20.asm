@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CMarquee * __cdecl core_marquee_cpp_factoryFunc_FUN_0050bb20(void)
+; CMarquee * __cdecl core_marquee_cpp_factoryFunc_FUN_0050bb20(void)
 ;
 ;
 ; XREF[1]:

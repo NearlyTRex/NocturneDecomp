@@ -13,9 +13,9 @@ void __cdecl core_sound_cpp_resetTrainSounds_FUN_005b26f0(void)
     g_TrainLastCameraIndex = -1;
     return;
   }
-  g_TrainVelocityVector.x = -*(float *)(g_CDemonSetPtr->unk4 + 0xbbc0);
-  g_TrainVelocityVector.y = -*(float *)(g_CDemonSetPtr->unk4 + 0xbbc4);
-  g_TrainVelocityVector.z = -*(float *)(g_CDemonSetPtr->unk4 + 0xbbc8);
+  g_TrainVelocityVector.x = -(g_CDemonSetPtr->active_fog).scroll.x;
+  g_TrainVelocityVector.y = -(g_CDemonSetPtr->active_fog).scroll.y;
+  g_TrainVelocityVector.z = -(g_CDemonSetPtr->active_fog).scroll.z;
   g_TrainLastCameraIndex = -1;
   return;
 }

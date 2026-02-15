@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_configureFullPassPolygonReduction_FUN_00465810(int ui_mode)
+; void __cdecl shape_design_c_configureFullPassPolygonReduction_FUN_00465810(int ui_mode)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   ui_mode

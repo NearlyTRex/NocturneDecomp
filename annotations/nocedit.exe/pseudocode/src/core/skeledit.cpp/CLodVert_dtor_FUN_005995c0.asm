@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CLodVert * __cdecl core_skeledit_cpp_CLodVert_dtor_FUN_005995c0(CLodVert *this_ptr,uint flags)
+; CLodVert * __cdecl core_skeledit_cpp_CLodVert_dtor_FUN_005995c0(CLodVert *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CLodVert *       Stack[0x4]:4   this_ptr

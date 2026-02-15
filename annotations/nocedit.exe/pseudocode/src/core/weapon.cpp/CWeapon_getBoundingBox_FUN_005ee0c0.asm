@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBoundingBox3D * __cdecl core_weapon_cpp_CWeapon_getBoundingBox_FUN_005ee0c0(CWeapon *this_ptr,CBoundingBox3D *out_box)
+; CBoundingBox3D * __cdecl core_weapon_cpp_CWeapon_getBoundingBox_FUN_005ee0c0(CWeapon *this_ptr,CBoundingBox3D *out_box)
 ;
 ; Parameters:
 ; CWeapon *        Stack[0x4]:4   this_ptr

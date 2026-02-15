@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_scat_cpp_CScat_FUN_00558010(CScat *this_ptr)
+; int __cdecl core_scat_cpp_CScat_FUN_00558010(CScat *this_ptr)
 ;
 ; Parameters:
 ; CScat *          Stack[0x4]:4   this_ptr

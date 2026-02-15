@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_tvbat_cpp_CTVBat_getTargetPoints_FUN_005e50f0(CTVBat *this_ptr,CVector3f *out_points_array)
+; int __cdecl core_tvbat_cpp_CTVBat_getTargetPoints_FUN_005e50f0(CTVBat *this_ptr,CVector3f *out_points_array)
 ;
 ; Parameters:
 ; CTVBat *         Stack[0x4]:4   this_ptr

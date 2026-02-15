@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_stairs_cpp_CStairs_customGetFloorHeight_FUN_005ba6a0(CStairs *this_ptr,float x_pos,float z_pos,float *out_floor_height)
+; int __cdecl core_stairs_cpp_CStairs_customGetFloorHeight_FUN_005ba6a0(CStairs *this_ptr,float x_pos,float z_pos,float *out_floor_height)
 ;
 ; Parameters:
 ; CStairs *        Stack[0x4]:4   this_ptr

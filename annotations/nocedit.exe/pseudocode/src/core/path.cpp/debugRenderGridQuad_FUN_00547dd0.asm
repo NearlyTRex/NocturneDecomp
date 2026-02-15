@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_path_cpp_debugRenderGridQuad_FUN_00547dd0(int grid_x,int grid_y,int grid_z,int color,int fog,float w_recip)
+; void __cdecl core_path_cpp_debugRenderGridQuad_FUN_00547dd0(int grid_x,int grid_y,int grid_z,int color,int fog,float w_recip)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   grid_x
@@ -24,7 +24,7 @@
 ;   double DOUBLE_0063ea30 = 256
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
-;   SMRGLHeaderPrimitive DAT_030d4fd0
+;   SMRGLPrimitiveQuad SMRGLPrimitiveQuad_030d4fd0
 ;   undefined4 g_CDemonRaytraceInstance.bbox_min.y
 ;   undefined4 g_CDemonRaytraceInstance.adjusted_size.x
 ;   undefined4 g_CDemonRaytraceInstance.adjusted_size.y
@@ -189,7 +189,7 @@ section .text
     MOV dword ptr [EDX + 0xb4],ESI      ; 00547f8f
     MOV EDX,dword ptr [EAX]             ; 00547f95 | g_CDemonRendererInstance
     MOV dword ptr [EDX + 0xb8],EDI      ; 00547f97
-    PUSH 0x30d4fd0                      ; 00547f9d | DAT_030d4fd0
+    PUSH 0x30d4fd0                      ; 00547f9d | SMRGLPrimitiveQuad_030d4fd0
     MOV EDX,dword ptr [EAX]             ; 00547fa2 | g_CDemonRendererInstance
     PUSH EAX                            ; 00547fa4 | g_CDemonRendererInstance
     MOV dword ptr [EDX + 0xbc],ECX      ; 00547fa5

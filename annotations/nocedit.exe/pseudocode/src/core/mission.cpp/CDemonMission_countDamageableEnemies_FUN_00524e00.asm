@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_mission_cpp_CDemonMission_countDamageableEnemies_FUN_00524e00(CDemonMission *this_ptr)
+; int __cdecl core_mission_cpp_CDemonMission_countDamageableEnemies_FUN_00524e00(CDemonMission *this_ptr)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr

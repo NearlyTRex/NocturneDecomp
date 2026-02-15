@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_2d_c_getTextWrapEnabled_FUN_004027f0(void)
+; int __cdecl engine_2d_c_getTextWrapEnabled_FUN_004027f0(void)
 ;
 ;
 ; XREF[2]:

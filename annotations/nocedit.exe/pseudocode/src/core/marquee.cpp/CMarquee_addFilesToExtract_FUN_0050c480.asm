@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_marquee_cpp_CMarquee_addFilesToExtract_FUN_0050c480(CMarquee *this_ptr,_FILE *file_handle)
+; void __cdecl core_marquee_cpp_CMarquee_addFilesToExtract_FUN_0050c480(CMarquee *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CMarquee *       Stack[0x4]:4   this_ptr

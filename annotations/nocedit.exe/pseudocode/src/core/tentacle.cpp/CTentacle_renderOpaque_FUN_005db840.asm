@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_tentacle_cpp_CTentacle_renderOpaque_FUN_005db840(CTentacle *this_ptr)
+; int __cdecl core_tentacle_cpp_CTentacle_renderOpaque_FUN_005db840(CTentacle *this_ptr)
 ;
 ; Parameters:
 ; CTentacle *      Stack[0x4]:4   this_ptr

@@ -9,7 +9,7 @@ void __cdecl FUN_00546310(void);
 
 // Original: core_path.cpp_FUN_00546330
 // Address: 00546330
-bool __cdecl FUN_00546330(void);
+int __cdecl FUN_00546330(void);
 
 // Original: core_path.cpp_FUN_00546350
 // Address: 00546350
@@ -63,17 +63,17 @@ int __cdecl CPathMap::findPathWithRetry(CPathMap *this_ptr,CVector3f *dest_posit
 // Address: 00547dd0
 void __cdecl debugRenderGridQuad(int grid_x,int grid_y,int grid_z,int color,int fog,float w_recip);
 
-// Original: core_path.cpp_FUN_00547fc0
+// Original: core_path.cpp_CPathMap_FUN_00547fc0
 // Address: 00547fc0
-void __cdecl FUN_00547fc0(void);
+void __cdecl CPathMap(CPathMap *this_ptr);
 
 // Original: core_path.cpp_FUN_00548390
 // Address: 00548390
-CPathMap * __cdecl FUN_00548390(void);
+CPathMap * __cdecl FUN_00548390(CLocation *location);
 
 // Original: core_path.cpp_FUN_00548500
 // Address: 00548500
-CPathMap * __cdecl FUN_00548500(void);
+CPathMap * __cdecl FUN_00548500(CLocation *location);
 
 // Original: core_path.cpp_CPathMap_reset_FUN_00548510
 // Address: 00548510

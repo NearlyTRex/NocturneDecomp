@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CCryptVessel * __cdecl core_vessel_cpp_factoryFunc_FUN_005e8e20(void)
+; CCryptVessel * __cdecl core_vessel_cpp_factoryFunc_FUN_005e8e20(void)
 ;
 ;
 ; XREF[1]:

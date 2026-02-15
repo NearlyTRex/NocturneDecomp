@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_wateract_cpp_staticInit_FUN_005ea810(void)
+; void __cdecl core_wateract_cpp_staticInit_FUN_005ea810(void)
 ;
 ;
 ; Referenced Globals:

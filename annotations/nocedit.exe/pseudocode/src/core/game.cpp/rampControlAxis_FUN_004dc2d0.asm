@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_game_cpp_rampControlAxis_FUN_004dc2d0(void)
+; void __cdecl core_game_cpp_rampControlAxis_FUN_004dc2d0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x4]:4  local_4

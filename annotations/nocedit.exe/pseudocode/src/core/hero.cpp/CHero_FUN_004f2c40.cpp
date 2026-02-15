@@ -27,10 +27,10 @@ int __cdecl core_hero_cpp_CHero_FUN_004f2c40(CHero *this_ptr)
             ((CDemonActor *)this_ptr,&local_38,&local_50);
   local_14 = 0;
   do {
-    if (g_CDemonSetPtr->damage_listener_count <= iVar3) {
+    if (g_CDemonSetPtr->character_count <= iVar3) {
       return 0;
     }
-    pCVar1 = *(CHero **)(g_CDemonSetPtr->unk4 + local_14 + -4);
+    pCVar1 = *(CHero **)((int)g_CDemonSetPtr->characters + local_14);
     if (((pCVar1->base).talk_to_me_event[0] != '\0') && (pCVar1 != this_ptr)) {
       local_20.x = (pCVar1->base).base.location.position.x -
                    (this_ptr->base).base.location.position.x;

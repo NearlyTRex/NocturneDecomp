@@ -26,15 +26,15 @@ void __cdecl core_gore_cpp_CBloodParticle_FUN_004eb9d0(CBloodParticle *this_ptr)
   CVector3i local_18;
   
   bVar5 = 0;
-  SMRGLHeaderPrimitive_02d83368.base.count = 4;
-  SMRGLHeaderPrimitive_02d83368.surface_normal.A = 0;
-  SMRGLHeaderPrimitive_02d83368.surface_normal.B = 0;
-  SMRGLHeaderPrimitive_02d83368.surface_normal.C = 0;
-  SMRGLHeaderPrimitive_02d83368.surface_normal.D = 0;
-  INT_02d83380 = 0;
-  INT_02d83384 = 1;
-  INT_02d83388 = 2;
-  INT_02d8338c = 3;
+  SMRGLPrimitiveQuadIndex_02d83368.base.base.count = 4;
+  SMRGLPrimitiveQuadIndex_02d83368.base.surface_normal.A = 0;
+  SMRGLPrimitiveQuadIndex_02d83368.base.surface_normal.B = 0;
+  SMRGLPrimitiveQuadIndex_02d83368.base.surface_normal.C = 0;
+  SMRGLPrimitiveQuadIndex_02d83368.base.surface_normal.D = 0;
+  SMRGLPrimitiveQuadIndex_02d83368.vertices[0] = 0;
+  SMRGLPrimitiveQuadIndex_02d83368.vertices[1] = 1;
+  SMRGLPrimitiveQuadIndex_02d83368.vertices[2] = 2;
+  SMRGLPrimitiveQuadIndex_02d83368.vertices[3] = 3;
   engine_drender_cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0
             (g_CDemonRendererPtr2,&local_18);
   INT_02d83390 = local_18.x;

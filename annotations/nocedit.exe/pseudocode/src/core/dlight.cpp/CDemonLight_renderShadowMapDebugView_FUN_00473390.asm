@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dlight_cpp_CDemonLight_renderShadowMapDebugView_FUN_00473390(CDemonLight *this_ptr,int screen_x,int screen_y,int display_size)
+; void __cdecl core_dlight_cpp_CDemonLight_renderShadowMapDebugView_FUN_00473390(CDemonLight *this_ptr,int screen_x,int screen_y,int display_size)
 ;
 ; Parameters:
 ; CDemonLight *    Stack[0x4]:4   this_ptr

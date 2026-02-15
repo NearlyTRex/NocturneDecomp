@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_script_cpp_CScript_saveState_FUN_00560b50(CScript *this_ptr,_FILE *file_handle)
+; void __cdecl core_script_cpp_CScript_saveState_FUN_00560b50(CScript *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr

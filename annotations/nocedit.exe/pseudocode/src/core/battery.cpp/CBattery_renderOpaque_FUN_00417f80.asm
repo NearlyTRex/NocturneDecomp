@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_battery_cpp_CBattery_renderOpaque_FUN_00417f80(CBattery *this_ptr)
+; int __cdecl core_battery_cpp_CBattery_renderOpaque_FUN_00417f80(CBattery *this_ptr)
 ;
 ; Parameters:
 ; CBattery *       Stack[0x4]:4   this_ptr

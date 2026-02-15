@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * __cdecl core_hotdemon_cpp_CHotDemon_getActorType_FUN_004f6c90(CHotDemon *this_ptr)
+; CDemonActorType * __cdecl core_hotdemon_cpp_CHotDemon_getActorType_FUN_004f6c90(CHotDemon *this_ptr)
 ;
 ; Parameters:
 ; CHotDemon *      Stack[0x4]:4   this_ptr

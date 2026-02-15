@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_setedit_cpp_FUN_00582f30(void)
+; void __cdecl core_setedit_cpp_FUN_00582f30(void)
 ;
 ;
 ; Referenced Globals:

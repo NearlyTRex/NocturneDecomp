@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_sound_cpp_CSound_playActorSound_FUN_005b3a40(CSound *this_ptr,CDemonActor *actor,char *sound_name,CVector3f *position)
+; void __cdecl core_sound_cpp_CSound_playActorSound_FUN_005b3a40(CSound *this_ptr,CDemonActor *actor,char *sound_name,CVector3f *position)
 ;
 ; Parameters:
 ; CSound *         Stack[0x4]:4   this_ptr

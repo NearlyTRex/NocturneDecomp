@@ -16,7 +16,7 @@ float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470(CDemonActor *
   CKeyFramedModel *this_ptr_01;
   CDeformableModel *this_ptr_02;
   float fVar4;
-  void *frame_index;
+  CDeformableModelInstance *frame_index;
   CVector3f *ray_origin_00;
   CVector3f *output_normal;
   int triangle_index;
@@ -99,15 +99,15 @@ LAB_004095c9:
   out_hit_normal[2].x = -NAN;
   pCVar1 = g_CDemonSetPtr;
   out_hit_normal[1].x = -NAN;
-  if (pCVar1->unk12 == 0) {
-    frame_index = collision_info->result_ptr;
-    if (frame_index == (void *)0x0) {
-      if (collision_info->model != (CKeyFramedModelInstance *)0x0) {
+  if (pCVar1->skip_exact_collisions == 0) {
+    frame_index = collision_info->deformable_model;
+    if (frame_index == (CDeformableModelInstance *)0x0) {
+      if (collision_info->keyframed_model != (CKeyFramedModelInstance *)0x0) {
         output_normal = &local_30;
         pCVar3 = &local_54;
         ray_origin_00 = &local_3c;
         this_ptr_01 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                                (collision_info->model);
+                                (collision_info->keyframed_model);
         local_a0 = core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_004781d0
                              (this_ptr_01,(int)frame_index,ray_origin_00,pCVar3,output_normal);
         if (local_a0 < 0.0) {
@@ -121,7 +121,7 @@ LAB_004095c9:
     }
     else {
       local_a0 = core_skeleton_cpp_CDeformableModelInstance_rayIntersect_FUN_005a10e0
-                           (collision_info->result_ptr,&local_3c,&local_54);
+                           (collision_info->deformable_model,&local_3c,&local_54);
       if (local_a0 < 0.0) {
         return 2.0;
       }
@@ -135,7 +135,7 @@ LAB_004095c9:
       out_hit_normal[1].z = (float)g_DeformableModelRayHitTriangleIndex;
       local_14 = local_a0;
       this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
-                              (collision_info->result_ptr);
+                              (collision_info->deformable_model);
       fVar4 = (float)core_skeleton_cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0
                                (this_ptr_02,iVar2,triangle_index);
       out_hit_normal[2].x = fVar4;

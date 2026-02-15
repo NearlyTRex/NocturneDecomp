@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl wincore_winrun_cpp_enqueueInput_FUN_005f2f30(int input_value)
+; void __cdecl wincore_winrun_cpp_enqueueInput_FUN_005f2f30(int input_value)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   input_value

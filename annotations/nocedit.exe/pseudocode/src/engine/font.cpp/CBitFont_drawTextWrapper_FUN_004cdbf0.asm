@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_font_cpp_CBitFont_drawTextWrapper_FUN_004cdbf0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text)
+; int __cdecl engine_font_cpp_CBitFont_drawTextWrapper_FUN_004cdbf0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text)
 ;
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   this_ptr
@@ -17,7 +17,7 @@
 ;   engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0 at 004cdf1f
 ;   engine_font.cpp_CBitFont_drawTextCenterInClip_FUN_004cdff0 at 004ce034
 ;   engine_font.cpp_CBitFont_drawTextCenter_FUN_004cdde0 at 004cde15
-;   engine_font.cpp_CBitFont_drawTextF_FUN_004cdc70 at 004cdcc2
+;   engine_font.cpp_CBitFont_drawTextFV_FUN_004cdc70 at 004cdcc2
 ;   engine_font.cpp_CBitFont_drawTextRight_FUN_004cdce0 at 004cdd0f
 ;
 ; Called Functions:

@@ -33,7 +33,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_005805a0(CDemonSet *this_ptr)
         shape_memdbg_cpp_debugFree_FUN_0050f460(ptr,"..\\core\\setedit.cpp",0x1059);
         pCVar2->cameras[0].pvs_list = (int *)0x0;
       }
-      pCVar2 = (CDemonSet *)&pCVar2->cameras[0].unk4;
+      pCVar2 = (CDemonSet *)&pCVar2->cameras[0].enabled;
       iVar3 = iVar3 + 1;
       pCVar4 = pCVar4 + 1;
     } while (iVar3 < this_ptr->camera_count);

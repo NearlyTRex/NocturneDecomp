@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_sync_c_leave_global_runtime_critical_section_FUN_0060a1ec(void)
+; void __cdecl crt_sync_c_leave_global_runtime_critical_section_FUN_0060a1ec(void)
 ;
 ;
 ; XREF[1]:

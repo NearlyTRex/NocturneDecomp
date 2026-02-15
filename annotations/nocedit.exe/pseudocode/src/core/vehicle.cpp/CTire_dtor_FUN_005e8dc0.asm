@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CTire * __cdecl core_vehicle_cpp_CTire_dtor_FUN_005e8dc0(CTire *this_ptr,uint flags)
+; CTire * __cdecl core_vehicle_cpp_CTire_dtor_FUN_005e8dc0(CTire *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CTire *          Stack[0x4]:4   this_ptr

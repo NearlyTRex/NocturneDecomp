@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_crate_cpp_CCrate_hasCollision_FUN_00448960(CCrate *this_ptr,SCollisionInfo *collision_info)
+; int __cdecl core_crate_cpp_CCrate_hasCollision_FUN_00448960(CCrate *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CCrate *         Stack[0x4]:4   this_ptr

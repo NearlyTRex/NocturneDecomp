@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_edittool_cpp_CPickList_enableItem_FUN_004a5410(CPickList *this_ptr,int item_index,int enable_flag)
+; void __cdecl shape_edittool_cpp_CPickList_enableItem_FUN_004a5410(CPickList *this_ptr,int item_index,int enable_flag)
 ;
 ; Parameters:
 ; CPickList *      Stack[0x4]:4   this_ptr

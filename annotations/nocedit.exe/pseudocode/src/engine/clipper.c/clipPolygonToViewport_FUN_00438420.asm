@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_clipper_c_clipPolygonToViewport_FUN_00438420(int vertex_count,int *vertex_indices)
+; void __cdecl engine_clipper_c_clipPolygonToViewport_FUN_00438420(int vertex_count,int *vertex_indices)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   vertex_count

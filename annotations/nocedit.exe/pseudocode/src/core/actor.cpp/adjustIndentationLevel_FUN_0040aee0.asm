@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_actor_cpp_adjustIndentationLevel_FUN_0040aee0(int indent_delta)
+; int __cdecl core_actor_cpp_adjustIndentationLevel_FUN_0040aee0(int indent_delta)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   indent_delta

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_matrix_c_initializeTrigTables_FUN_0050c530(void)
+; void __cdecl engine_matrix_c_initializeTrigTables_FUN_0050c530(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8

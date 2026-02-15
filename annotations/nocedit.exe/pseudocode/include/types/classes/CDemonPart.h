@@ -19,8 +19,7 @@ typedef struct CDemonPart {
     struct CVector3i* vertex_normals; // 0x30
     struct SSurfacePlane* face_data; // 0x34
     int mystery_array_size; // 0x38
-    char unk[8]; // 0x3c
-    char mystery_array[760]; // 0x44
+    char mystery_array[768]; // 0x3c
     CVector3i bbox1; // 0x33c
     CVector3i bbox2; // 0x348
     CVector3i bbox3; // 0x354

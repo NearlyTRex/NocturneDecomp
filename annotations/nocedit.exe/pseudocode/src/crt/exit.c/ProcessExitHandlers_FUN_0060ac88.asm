@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_exit_c_ProcessExitHandlers_FUN_0060ac88(uchar min_priority,uchar max_priority)
+; void __cdecl crt_exit_c_ProcessExitHandlers_FUN_0060ac88(uchar min_priority,uchar max_priority)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x14]:1  local_14

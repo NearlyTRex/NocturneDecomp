@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_exit_c_FinalExitHandler_FUN_0060b560(int exit_code)
+; void __cdecl crt_exit_c_FinalExitHandler_FUN_0060b560(int exit_code)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   exit_code

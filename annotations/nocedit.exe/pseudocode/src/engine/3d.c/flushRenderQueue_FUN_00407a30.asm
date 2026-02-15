@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_3d_c_flushRenderQueue_FUN_00407a30(void)
+; void __cdecl engine_3d_c_flushRenderQueue_FUN_00407a30(void)
 ;
 ;
 ; Referenced Globals:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBloodSplat * __cdecl core_gore_cpp_CBloodSplat_arrdtor_FUN_004ee460(CBloodSplat *objs,uint flags)
+; CBloodSplat * __cdecl core_gore_cpp_CBloodSplat_arrdtor_FUN_004ee460(CBloodSplat *objs,uint flags)
 ;
 ; Parameters:
 ; CBloodSplat *    Stack[0x4]:4   objs

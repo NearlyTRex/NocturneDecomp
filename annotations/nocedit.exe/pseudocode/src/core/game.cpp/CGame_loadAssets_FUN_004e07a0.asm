@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_game_cpp_CGame_loadAssets_FUN_004e07a0(CGame *this_ptr)
+; void __cdecl core_game_cpp_CGame_loadAssets_FUN_004e07a0(CGame *this_ptr)
 ;
 ; Parameters:
 ; CGame *          Stack[0x4]:4   this_ptr

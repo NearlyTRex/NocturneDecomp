@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl wincore_winrun_cpp_releaseMutex_FUN_005f4050(HANDLE mutex_handle)
+; void __cdecl wincore_winrun_cpp_releaseMutex_FUN_005f4050(HANDLE mutex_handle)
 ;
 ; Parameters:
 ; HANDLE           Stack[0x4]:4   mutex_handle

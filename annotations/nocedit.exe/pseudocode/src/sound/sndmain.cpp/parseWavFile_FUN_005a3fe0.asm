@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl sound_sndmain_cpp_parseWavFile_FUN_005a3fe0(_FILE *file_handle,long *file_offset_ptr,CSfxSample *sfx_sample)
+; int __cdecl sound_sndmain_cpp_parseWavFile_FUN_005a3fe0(_FILE *file_handle,long *file_offset_ptr,CSfxSample *sfx_sample)
 ;
 ; Parameters:
 ; _FILE *          Stack[0x4]:4   file_handle

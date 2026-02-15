@@ -52,11 +52,11 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_testCapsuleCollision_FUN_00496c60(CD
   round((double)(fVar6 * (1.0 / fVar1)));
   round((double)(((fVar5 - fVar2) + fVar3) * (1.0 / fVar1)));
   fVar5 = 1.0 / *(float *)(unaff_EBX + 0x2c);
-  pvVar4 = capsule_data->user_data1;
+  pvVar4 = capsule_data->top_y;
   fVar1 = *(float *)(unaff_EBX + 0x14);
   fVar7 = (float10)0;
   round
-            ((double)(((float)capsule_data->user_data2 - *(float *)(unaff_EBX + 0x14)) * fVar5));
+            ((double)(((float)capsule_data->bottom_y - *(float *)(unaff_EBX + 0x14)) * fVar5));
   round((double)(((float)pvVar4 - fVar1) * fVar5));
   if ((float10)capsule_data->dir_z <= fVar7) {
     fVar6 = ((capsule_data->start_z + capsule_data->dir_z) - *(float *)(unaff_EDI + 0x18)) -

@@ -16,9 +16,9 @@ CDemonSet * __cdecl core_set_cpp_CDemonSet_dtor_FUN_00569350(CDemonSet *this_ptr
   
   core_set_cpp_CDemonSet_clear_FUN_005693c0(this_ptr);
   pSVar1 = core_set_cpp_SVDBox_arrdtor_FUN_00571590(this_ptr->vdir_boxes,0);
-  pSVar2 = core_set_cpp_SRoom_arrdtor_FUN_00571570((SRoom *)(pSVar1[-0x15].unk + 4),0);
+  pSVar2 = core_set_cpp_SRoom_arrdtor_FUN_00571570((SRoom *)&pSVar1[-0x15].parent_index,0);
   pCVar3 = core_set_cpp_C3DSLight_arrdtor_FUN_00571550((C3DSLight *)&pSVar2[-0x4b99].extents.z,0);
   pCVar4 = core_set_cpp_C3DSCamera_arrdtor_FUN_00571530
-                     ((C3DSCamera *)(pCVar3[-0x11].unk1 + 0x5ce),0);
-  return (CDemonSet *)&pCVar4[-1].unk4;
+                     ((C3DSCamera *)&pCVar3[-0x11].camera_light_bounds[0x5c].right,0);
+  return (CDemonSet *)&pCVar4[-1].enabled;
 }

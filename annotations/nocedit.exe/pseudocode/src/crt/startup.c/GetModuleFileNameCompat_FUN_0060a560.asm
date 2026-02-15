@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl DWORD __cdecl crt_startup_c_GetModuleFileNameCompat_FUN_0060a560(HMODULE hModule,LPWSTR lpFilename,DWORD nSize)
+; DWORD __cdecl crt_startup_c_GetModuleFileNameCompat_FUN_0060a560(HMODULE hModule,LPWSTR lpFilename,DWORD nSize)
 ;
 ; Parameters:
 ; HMODULE          Stack[0x4]:4   hModule

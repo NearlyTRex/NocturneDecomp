@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0(CDemonMission *this_ptr,CDemonActor *actor,uint flags)
+; void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0(CDemonMission *this_ptr,CDemonActor *actor,uint flags)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_ncursfx_cpp_staticInit_FUN_00544360(void)
+; void __cdecl engine_ncursfx_cpp_staticInit_FUN_00544360(void)
 ;
 ;
 ; Referenced Globals:

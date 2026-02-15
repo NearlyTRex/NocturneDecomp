@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_script_cpp_expandTemplateText_FUN_005643d0(char *buffer,char *template_text)
+; void __cdecl core_script_cpp_expandTemplateText_FUN_005643d0(char *buffer,char *template_text)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   buffer

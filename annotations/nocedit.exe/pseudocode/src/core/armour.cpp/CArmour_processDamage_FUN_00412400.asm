@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_armour_cpp_CArmour_processDamage_FUN_00412400(CArmour *this_ptr,SDamageInfo *damage_info)
+; void __cdecl core_armour_cpp_CArmour_processDamage_FUN_00412400(CArmour *this_ptr,SDamageInfo *damage_info)
 ;
 ; Parameters:
 ; CArmour *        Stack[0x4]:4   this_ptr

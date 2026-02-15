@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_handle)
+; int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_handle)
 ;
 ; Parameters:
 ; HWND             Stack[0x4]:4   window_handle

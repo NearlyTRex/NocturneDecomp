@@ -78,8 +78,8 @@ void __cdecl core_fire_cpp_CFireEffect_init_FUN_004c6c80(CFireEffect *this_ptr)
     pCVar9 = pCVar8 + 1;
     (pCVar8->base).lifetime_remaining = 0.0;
     pCVar8 = pCVar9;
-  } while (pCVar9 != (CFireball *)&g_CFireEffectFireballsEnd);
-  g_CFireEffectFireballsEnd = (CFireball *)0x0;
+  } while (pCVar9 != (CFireball *)&INT_02d655a8);
+  INT_02d655a8 = 0;
   pCVar10 = g_RockPool;
   do {
     pCVar11 = pCVar10 + 1;
@@ -97,9 +97,9 @@ void __cdecl core_fire_cpp_CFireEffect_init_FUN_004c6c80(CFireEffect *this_ptr)
   do {
     core_fire_cpp_CToss_reset_FUN_004c3ed0(this_ptr_02);
     this_ptr_02 = this_ptr_02 + 1;
-  } while (this_ptr_02 != (CToss *)&g_TossActiveListHead);
+  } while (this_ptr_02 != (CToss *)&INT_02d6c6a0);
   this_ptr_03 = g_CraterPool;
-  g_TossActiveListHead = (CToss *)0x0;
+  INT_02d6c6a0 = 0;
   do {
     core_fire_cpp_CCrater_reset_FUN_004c41e0(this_ptr_03);
     this_ptr_03 = this_ptr_03 + 1;

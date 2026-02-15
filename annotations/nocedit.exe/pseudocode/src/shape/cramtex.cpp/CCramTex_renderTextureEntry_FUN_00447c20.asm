@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_cramtex_cpp_CCramTex_renderTextureEntry_FUN_00447c20(CCramTex *this_ptr,int visualization_mode,int draw_x,int draw_y,int draw_width,int draw_height)
+; void __cdecl shape_cramtex_cpp_CCramTex_renderTextureEntry_FUN_00447c20(CCramTex *this_ptr,int visualization_mode,int draw_x,int draw_y,int draw_width,int draw_height)
 ;
 ; Parameters:
 ; CCramTex *       Stack[0x8]:4   this_ptr

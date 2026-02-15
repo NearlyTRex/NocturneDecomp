@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_flattn_cpp_staticInit_FUN_004cbcb0(void)
+; void __cdecl core_flattn_cpp_staticInit_FUN_004cbcb0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x4]:4  local_4

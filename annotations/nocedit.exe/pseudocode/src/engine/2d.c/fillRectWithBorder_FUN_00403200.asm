@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_2d_c_fillRectWithBorder_FUN_00403200(int x1,int y1,int x2,int y2,int fill_color,int border_color)
+; void __cdecl engine_2d_c_fillRectWithBorder_FUN_00403200(int x1,int y1,int x2,int y2,int fill_color,int border_color)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   x1

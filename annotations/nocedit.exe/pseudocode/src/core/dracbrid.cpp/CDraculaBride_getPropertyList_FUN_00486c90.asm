@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dracbrid_cpp_CDraculaBride_getPropertyList_FUN_00486c90(CDraculaBride *this_ptr,CActorPropertyList *property_list)
+; void __cdecl core_dracbrid_cpp_CDraculaBride_getPropertyList_FUN_00486c90(CDraculaBride *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CDraculaBride *  Stack[0x4]:4   this_ptr

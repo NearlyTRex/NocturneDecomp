@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_litecone_cpp_CLightCone_renderTransparent_FUN_00506c20(CLightCone *this_ptr)
+; int __cdecl core_litecone_cpp_CLightCone_renderTransparent_FUN_00506c20(CLightCone *this_ptr)
 ;
 ; Parameters:
 ; CLightCone *     Stack[0x4]:4   this_ptr

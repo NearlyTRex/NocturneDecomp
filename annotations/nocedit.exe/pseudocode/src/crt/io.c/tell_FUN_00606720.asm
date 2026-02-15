@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack long __watcallStack crt_io_c_tell_FUN_00606720(int file_handle_index)
+; long __watcallStack crt_io_c_tell_FUN_00606720(int file_handle_index)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   file_handle_index

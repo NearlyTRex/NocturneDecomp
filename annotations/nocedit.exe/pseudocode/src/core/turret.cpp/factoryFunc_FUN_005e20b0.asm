@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CTurret * __cdecl core_turret_cpp_factoryFunc_FUN_005e20b0(void)
+; CTurret * __cdecl core_turret_cpp_factoryFunc_FUN_005e20b0(void)
 ;
 ;
 ; XREF[1]:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_alphabit_cpp_copyBytes_FUN_00410d20(void *src,void *dest,int width,int height)
+; void __cdecl engine_alphabit_cpp_copyBytes_FUN_00410d20(void *src,void *dest,int width,int height)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   src

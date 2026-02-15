@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int __watcallStack crt_iostream_cpp_doallocate_FUN_0060d677(streambuf *this_ptr)
+; int __watcallStack crt_iostream_cpp_doallocate_FUN_0060d677(streambuf *this_ptr)
 ;
 ; Parameters:
 ; streambuf *      Stack[0x4]:4   this_ptr

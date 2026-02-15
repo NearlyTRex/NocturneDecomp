@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_init_c_ProcessInitTermHandlers_FUN_0060ac30(int max_priority)
+; void __cdecl crt_init_c_ProcessInitTermHandlers_FUN_0060ac30(int max_priority)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x10]:1  local_10

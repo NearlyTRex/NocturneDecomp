@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_memdbg_cpp_debugMemdump_FUN_0050f6c0(_FILE *output_file)
+; void __cdecl shape_memdbg_cpp_debugMemdump_FUN_0050f6c0(_FILE *output_file)
 ;
 ; Parameters:
 ; _FILE *          Stack[0x4]:4   output_file

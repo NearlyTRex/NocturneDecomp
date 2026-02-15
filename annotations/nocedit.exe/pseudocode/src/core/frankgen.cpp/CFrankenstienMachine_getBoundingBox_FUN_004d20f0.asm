@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBoundingBox3D * __cdecl core_frankgen_cpp_CFrankenstienMachine_getBoundingBox_FUN_004d20f0(CFrankenstienMachine *this_ptr,CBoundingBox3D *out_box)
+; CBoundingBox3D * __cdecl core_frankgen_cpp_CFrankenstienMachine_getBoundingBox_FUN_004d20f0(CFrankenstienMachine *this_ptr,CBoundingBox3D *out_box)
 ;
 ; Parameters:
 ; CFrankenstienMachine * Stack[0x4]:4   this_ptr

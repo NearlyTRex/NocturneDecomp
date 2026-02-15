@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_event_cpp_CEventList_resolveVariable_FUN_004adc10(CEventList *this_ptr,char *identifier)
+; int __cdecl core_event_cpp_CEventList_resolveVariable_FUN_004adc10(CEventList *this_ptr,char *identifier)
 ;
 ; Parameters:
 ; CEventList *     Stack[0x4]:4   this_ptr

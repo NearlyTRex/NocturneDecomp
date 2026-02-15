@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_melee_cpp_CMelee_playAttackHitEffects_FUN_0050eb50(CMelee *this_ptr,int attack_flags,SDamageInfo *damage_info,CDemonActor *victim)
+; void __cdecl core_melee_cpp_CMelee_playAttackHitEffects_FUN_0050eb50(CMelee *this_ptr,int attack_flags,SDamageInfo *damage_info,CDemonActor *victim)
 ;
 ; Parameters:
 ; CMelee *         Stack[0x4]:4   this_ptr

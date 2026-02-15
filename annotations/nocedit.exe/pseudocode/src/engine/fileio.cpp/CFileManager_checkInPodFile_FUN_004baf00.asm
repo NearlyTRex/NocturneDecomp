@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00(CFileManager *this_ptr,char *checkout_item_name,char *timestamp_file,char *pod_filename)
+; int __cdecl engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00(CFileManager *this_ptr,char *checkout_item_name,char *timestamp_file,char *pod_filename)
 ;
 ; Parameters:
 ; CFileManager *   Stack[0x4]:4   this_ptr

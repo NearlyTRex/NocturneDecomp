@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_matrix_c_invertTransformMatrix_FUN_0050c640(void)
+; void __cdecl engine_matrix_c_invertTransformMatrix_FUN_0050c640(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x58]:4  local_58

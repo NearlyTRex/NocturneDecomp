@@ -149,8 +149,8 @@ LAB_005dfb52:
     iVar8 = core_hero_cpp_FUN_004f2220();
     if (iVar8 != 0) {
       local_28 = 0;
-      for (iVar8 = 0; iVar8 < (int)g_CDemonSetPtr->actor_list_ptr; iVar8 = iVar8 + 1) {
-        pCVar5 = *(CDemonActor **)(g_CDemonSetPtr->actor_list_data + local_28);
+      for (iVar8 = 0; iVar8 < g_CDemonSetPtr->actor_count; iVar8 = iVar8 + 1) {
+        pCVar5 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + local_28);
         iVar9 = (*((pCVar5->vtable)._ub)->canLookAt)(pCVar5);
         if ((iVar9 != 0) &&
            (iVar9 = core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(this_ptr,pCVar5),
@@ -170,8 +170,8 @@ LAB_005dfb52:
       local_2c = this_ptr->actor_type;
       local_24 = 0;
       local_20 = &(this_ptr->base).location;
-      for (iVar8 = 0; iVar8 < (int)g_CDemonSetPtr->actor_list_ptr; iVar8 = iVar8 + 1) {
-        actor_ptr = *(CTrigger **)(g_CDemonSetPtr->actor_list_data + local_24);
+      for (iVar8 = 0; iVar8 < g_CDemonSetPtr->actor_count; iVar8 = iVar8 + 1) {
+        actor_ptr = *(CTrigger **)((int)g_CDemonSetPtr->actors + local_24);
         fVar4 = (actor_ptr->base).location.position.x - (local_20->position).x;
         fVar2 = (actor_ptr->base).location.position.y - (local_20->position).y;
         fVar1 = (actor_ptr->base).location.position.z - (local_20->position).z;

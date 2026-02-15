@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_boneguy_cpp_CBoneGuy_reset_FUN_0041d4c0(CBoneGuy *this_ptr)
+; void __cdecl core_boneguy_cpp_CBoneGuy_reset_FUN_0041d4c0(CBoneGuy *this_ptr)
 ;
 ; Parameters:
 ; CBoneGuy *       Stack[0x4]:4   this_ptr

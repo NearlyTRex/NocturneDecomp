@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_script_cpp_CScript_addEventXRef_FUN_00567510(CScript *this_ptr,SScriptXRef *xref_data)
+; void __cdecl core_script_cpp_CScript_addEventXRef_FUN_00567510(CScript *this_ptr,SScriptXRef *xref_data)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr

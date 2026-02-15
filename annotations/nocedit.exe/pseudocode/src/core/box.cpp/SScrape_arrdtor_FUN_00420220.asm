@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SScrape * __cdecl core_box_cpp_SScrape_arrdtor_FUN_00420220(SScrape *objs,uint flags)
+; SScrape * __cdecl core_box_cpp_SScrape_arrdtor_FUN_00420220(SScrape *objs,uint flags)
 ;
 ; Parameters:
 ; SScrape *        Stack[0x4]:4   objs

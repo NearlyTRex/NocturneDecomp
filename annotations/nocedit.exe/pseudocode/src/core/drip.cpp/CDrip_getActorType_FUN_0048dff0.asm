@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * __cdecl core_drip_cpp_CDrip_getActorType_FUN_0048dff0(CDrip *this_ptr)
+; CDemonActorType * __cdecl core_drip_cpp_CDrip_getActorType_FUN_0048dff0(CDrip *this_ptr)
 ;
 ; Parameters:
 ; CDrip *          Stack[0x4]:4   this_ptr

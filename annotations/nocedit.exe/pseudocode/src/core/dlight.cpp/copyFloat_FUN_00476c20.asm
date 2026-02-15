@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float * __cdecl core_dlight_cpp_copyFloat_FUN_00476c20(float *dst,float *src)
+; float * __cdecl core_dlight_cpp_copyFloat_FUN_00476c20(float *dst,float *src)
 ;
 ; Parameters:
 ; float *          Stack[0x4]:4   dst

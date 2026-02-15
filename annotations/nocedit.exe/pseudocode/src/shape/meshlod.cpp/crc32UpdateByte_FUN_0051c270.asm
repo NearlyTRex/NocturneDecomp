@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_meshlod_cpp_crc32UpdateByte_FUN_0051c270(uint *crc_ptr,uchar data_byte)
+; void __cdecl shape_meshlod_cpp_crc32UpdateByte_FUN_0051c270(uint *crc_ptr,uchar data_byte)
 ;
 ; Parameters:
 ; uint *           Stack[0x4]:4   crc_ptr

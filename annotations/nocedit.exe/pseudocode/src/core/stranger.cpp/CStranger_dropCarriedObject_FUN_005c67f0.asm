@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_stranger_cpp_CStranger_dropCarriedObject_FUN_005c67f0(CStranger *this_ptr,int hand_index,CVector3f *drop_direction)
+; void __cdecl core_stranger_cpp_CStranger_dropCarriedObject_FUN_005c67f0(CStranger *this_ptr,int hand_index,CVector3f *drop_direction)
 ;
 ; Parameters:
 ; CStranger *      Stack[0x4]:4   this_ptr

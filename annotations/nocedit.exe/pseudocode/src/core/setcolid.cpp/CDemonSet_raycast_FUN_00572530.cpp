@@ -22,15 +22,15 @@ float __cdecl core_setcolid_cpp_CDemonSet_raycast_FUN_00572530(CDemonSet *this_p
   float local_20 [3];
   float local_14;
   
-  if (&this_ptr->collision_result_vec1 != ray_origin) {
-    (this_ptr->collision_result_vec1).x = ray_origin->x;
-    (this_ptr->collision_result_vec1).y = ray_origin->y;
-    (this_ptr->collision_result_vec1).z = ray_origin->z;
+  if (&this_ptr->ray_origin != ray_origin) {
+    (this_ptr->ray_origin).x = ray_origin->x;
+    (this_ptr->ray_origin).y = ray_origin->y;
+    (this_ptr->ray_origin).z = ray_origin->z;
   }
-  if (&this_ptr->collision_result_vec2 != ray_target) {
-    (this_ptr->collision_result_vec2).x = ray_target->x;
-    (this_ptr->collision_result_vec2).y = ray_target->y;
-    (this_ptr->collision_result_vec2).z = ray_target->z;
+  if (&this_ptr->ray_target != ray_target) {
+    (this_ptr->ray_target).x = ray_target->x;
+    (this_ptr->ray_target).y = ray_target->y;
+    (this_ptr->ray_target).z = ray_target->z;
   }
   out_intersection_point = &this_ptr->voxel_hit_point;
   local_14 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70

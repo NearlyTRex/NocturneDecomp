@@ -116,16 +116,16 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
            iVar8 != 0)) {
           iVar10 = 0;
           iVar8 = 0;
-          while ((iVar8 < *(int *)(g_CDemonSetPtr->unk4 + 0x1f3c) &&
+          while ((iVar8 < g_CDemonSetPtr->enemy_count &&
                  ((pCVar13 = (CBatman *)
                              core_actor_cpp_castToClassHash_FUN_0040c790
-                                       (*(CDemonActor **)(g_CDemonSetPtr->unk4 + iVar10 + 8000),
+                                       (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar10),
                                         g_CBatmanClassInfo.name_hash), pCVar13 == (CBatman *)0x0 ||
                   (pCVar13->mist_state == 0))))) {
             iVar8 = iVar8 + 1;
             iVar10 = iVar10 + 4;
           }
-          if (iVar8 == *(int *)(g_CDemonSetPtr->unk4 + 0x1f3c)) {
+          if (iVar8 == g_CDemonSetPtr->enemy_count) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&(this_ptr->base).base.model.motion_controller,0xd,1);
             pCVar7 = (this_ptr->base).victim;
@@ -315,9 +315,9 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
       case 2:
         local_30 = 1;
         local_1c = 0;
-        for (local_18 = 0; fVar5 = 1.0f, local_18 < g_CDemonSetPtr->damage_listener_count;
+        for (local_18 = 0; fVar5 = 1.0f, local_18 < g_CDemonSetPtr->character_count;
             local_18 = local_18 + 1) {
-          this_ptr_00 = *(CBatman **)(g_CDemonSetPtr->unk4 + local_1c + -4);
+          this_ptr_00 = *(CBatman **)((int)g_CDemonSetPtr->characters + local_1c);
           if (((this_ptr_00 != (CBatman *)0x0) && (this_ptr_00 != this_ptr)) &&
              (iVar8 = (*(((this_ptr_00->base).base.base.vtable._uc)->_uc).getDeathState)
                                 ((CCharacter *)this_ptr_00), iVar8 < 1)) {

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_trap_cpp_staticInit_FUN_005de620(void)
+; void __cdecl core_trap_cpp_staticInit_FUN_005de620(void)
 ;
 ;
 ; Referenced Globals:

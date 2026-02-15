@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(char *filename)
+; void __cdecl engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(char *filename)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

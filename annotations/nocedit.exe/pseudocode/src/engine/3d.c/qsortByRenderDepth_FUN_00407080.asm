@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_3d_c_qsortByRenderDepth_FUN_00407080(SRenderBufferEntry **entry1_ptr,SRenderBufferEntry **entry2_ptr)
+; int __cdecl engine_3d_c_qsortByRenderDepth_FUN_00407080(SRenderBufferEntry **entry1_ptr,SRenderBufferEntry **entry2_ptr)
 ;
 ; Parameters:
 ; SRenderBufferEntry * * Stack[0x4]:4   entry1_ptr

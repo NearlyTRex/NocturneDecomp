@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_moloch_cpp_CMoloch_getPropertyList_FUN_00529950(CMoloch *this_ptr,CActorPropertyList *property_list)
+; void __cdecl core_moloch_cpp_CMoloch_getPropertyList_FUN_00529950(CMoloch *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CMoloch *        Stack[0x4]:4   this_ptr

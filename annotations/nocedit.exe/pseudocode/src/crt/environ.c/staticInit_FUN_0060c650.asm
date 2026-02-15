@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_environ_c_staticInit_FUN_0060c650(void)
+; void __cdecl crt_environ_c_staticInit_FUN_0060c650(void)
 ;
 ;
 ; Referenced Globals:

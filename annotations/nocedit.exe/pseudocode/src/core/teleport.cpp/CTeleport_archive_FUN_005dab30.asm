@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_teleport_cpp_CTeleport_archive_FUN_005dab30(CTeleport *this_ptr)
+; void __cdecl core_teleport_cpp_CTeleport_archive_FUN_005dab30(CTeleport *this_ptr)
 ;
 ; Parameters:
 ; CTeleport *      Stack[0x4]:4   this_ptr

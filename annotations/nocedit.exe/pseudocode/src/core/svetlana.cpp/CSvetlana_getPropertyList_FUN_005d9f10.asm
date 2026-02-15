@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_svetlana_cpp_CSvetlana_getPropertyList_FUN_005d9f10(CSvetlana *this_ptr,CActorPropertyList *property_list)
+; void __cdecl core_svetlana_cpp_CSvetlana_getPropertyList_FUN_005d9f10(CSvetlana *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CSvetlana *      Stack[0x4]:4   this_ptr

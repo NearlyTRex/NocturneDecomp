@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawClippedDashedLine_FUN_00487a30(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2)
+; void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawClippedDashedLine_FUN_00487a30(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2)
 ;
 ; Parameters:
 ; CDrawSurface *   Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00484410(CDraculaBride *this_ptr,float delta_time)
+; void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00484410(CDraculaBride *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CDraculaBride *  Stack[0x4]:4   this_ptr
@@ -680,11 +680,11 @@ section .text
     MOV EAX,[0x006810c8]                ; 00484a80 | g_CDemonSetPtr
         ;   Label: LAB_00484a80
     MOV ESI,dword ptr [EBP + 0x72]      ; 00484a85
-    CMP ESI,dword ptr [EAX + 0x14f098]  ; 00484a88 | g_CDemonSetInstance.damage_listener_count
+    CMP ESI,dword ptr [EAX + 0x14f098]  ; 00484a88 | g_CDemonSetInstance.character_count
     JGE 0x00484b1a                      ; 00484a8e
         ;   XREF to: 00484b1a (CONDITIONAL_JUMP)  ; LAB_00484b1a
     ADD EAX,dword ptr [EBP + 0x6e]      ; 00484a94
-    MOV ESI,dword ptr [EAX + 0x14f09c]  ; 00484a97 | g_CDemonSetInstance.damage_listeners | DAT_03263318
+    MOV ESI,dword ptr [EAX + 0x14f09c]  ; 00484a97 | g_CDemonSetInstance.characters[0] | DAT_03263318
     TEST ESI,ESI                        ; 00484a9d
     JNZ 0x00484ab3                      ; 00484a9f
         ;   XREF to: 00484ab3 (CONDITIONAL_JUMP)  ; LAB_00484ab3
@@ -1682,7 +1682,7 @@ section .text
     LEA EDI,[ESI*0x4 + 0x0]             ; 004855ff
     MOV EAX,[0x006810c8]                ; 00485606 | g_CDemonSetPtr | g_CDemonSetInstance
         ;   Label: LAB_00485606
-    CMP ESI,dword ptr [EAX + 0x150fdc]  ; 0048560b | g_CDemonSetInstance.unk4[7996]
+    CMP ESI,dword ptr [EAX + 0x150fdc]  ; 0048560b | g_CDemonSetInstance.enemy_count
     JGE 0x0048563d                      ; 00485611
         ;   XREF to: 0048563d (CONDITIONAL_JUMP)  ; LAB_0048563d
     MOV ECX,dword ptr [0x02c6d09c]      ; 00485613 | g_CDraculaBrideClassInfo.name_hash
@@ -1706,7 +1706,7 @@ section .text
         ;   XREF to: 0048562e (CONDITIONAL_JUMP)  ; LAB_0048562e
     MOV EAX,[0x006810c8]                ; 0048563d | g_CDemonSetPtr
         ;   Label: LAB_0048563d
-    CMP ESI,dword ptr [EAX + 0x150fdc]  ; 00485642 | g_CDemonSetInstance.unk4[7996]
+    CMP ESI,dword ptr [EAX + 0x150fdc]  ; 00485642 | g_CDemonSetInstance.enemy_count
     JNZ 0x0048559b                      ; 00485648
         ;   XREF to: 0048559b (CONDITIONAL_JUMP)  ; LAB_0048559b
     MOV EAX,dword ptr [EBX + 0xbf44]    ; 0048564e

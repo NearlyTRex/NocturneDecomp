@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallRegister ulonglong __watcallRegister crt_math_c_udivmod64_FUN_0060d3ed(ulonglong dividend,ulonglong divisor)
+; ulonglong __watcallRegister crt_math_c_udivmod64_FUN_0060d3ed(ulonglong dividend,ulonglong divisor)
 ;
 ;
 ; XREF[1]:

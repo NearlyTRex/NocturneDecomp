@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_script_cpp_CScript_initEditorLayout_FUN_00566660(CScript *this_ptr,int x,int y,int width,int height)
+; void __cdecl core_script_cpp_CScript_initEditorLayout_FUN_00566660(CScript *this_ptr,int x,int y,int width,int height)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr

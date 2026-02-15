@@ -72,7 +72,7 @@ void __cdecl core_turret_cpp_CTurret_FUN_005e2d50(CTurret *this_ptr)
   iVar5 = 0;
   do {
     while( true ) {
-      if ((int)g_CDemonSetPtr->actor_list_ptr <= iVar6) {
+      if (g_CDemonSetPtr->actor_count <= iVar6) {
         if ((int)CStack_90.y < 0x42c60001) {
           core_turret_cpp_CTurret_FUN_005e3280(this_ptr);
           if ((this_ptr->base).fire_cooldown_timer <= 0.0) {
@@ -87,7 +87,7 @@ void __cdecl core_turret_cpp_CTurret_FUN_005e2d50(CTurret *this_ptr)
         core_turret_cpp_CTurret_FUN_005e3560(this_ptr);
         return;
       }
-      pCVar1 = *(CDemonActor **)(g_CDemonSetPtr->actor_list_data + iVar5);
+      pCVar1 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar5);
       iVar3 = core_actor_cpp_isOfClass_FUN_0040c6d0(pCVar1,pcStack_14);
       if ((((iVar3 != 0) && (CStack_cc.min.x <= (pCVar1->location).position.x)) &&
           (CStack_cc.min.y <= (pCVar1->location).position.y)) &&

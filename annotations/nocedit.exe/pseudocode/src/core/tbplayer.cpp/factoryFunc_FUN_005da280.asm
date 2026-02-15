@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDrummer * __cdecl core_tbplayer_cpp_factoryFunc_FUN_005da280(void)
+; CDrummer * __cdecl core_tbplayer_cpp_factoryFunc_FUN_005da280(void)
 ;
 ;
 ; XREF[1]:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void * __cdecl crt_heap_c_InternalHeapAlloc_FUN_00601bc0(ulong size)
+; void * __cdecl crt_heap_c_InternalHeapAlloc_FUN_00601bc0(ulong size)
 ;
 ; Parameters:
 ; ulong            Stack[0x4]:4   size

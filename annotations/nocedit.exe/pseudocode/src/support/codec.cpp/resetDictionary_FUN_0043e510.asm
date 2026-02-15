@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl support_codec_cpp_resetDictionary_FUN_0043e510(CLZWDictionary *dict)
+; void __cdecl support_codec_cpp_resetDictionary_FUN_0043e510(CLZWDictionary *dict)
 ;
 ; Parameters:
 ; CLZWDictionary * Stack[0x4]:4   dict

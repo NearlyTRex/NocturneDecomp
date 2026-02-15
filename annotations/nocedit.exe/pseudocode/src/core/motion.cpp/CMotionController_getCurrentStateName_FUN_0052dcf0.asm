@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * __cdecl core_motion_cpp_CMotionController_getCurrentStateName_FUN_0052dcf0(CMotionController *this_ptr)
+; char * __cdecl core_motion_cpp_CMotionController_getCurrentStateName_FUN_0052dcf0(CMotionController *this_ptr)
 ;
 ; Parameters:
 ; CMotionController * Stack[0x4]:4   this_ptr

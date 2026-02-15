@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * __cdecl core_script_cpp_getDeformableModelFilename_FUN_00567d30(CDeformableModel *model_ptr)
+; char * __cdecl core_script_cpp_getDeformableModelFilename_FUN_00567d30(CDeformableModel *model_ptr)
 ;
 ; Parameters:
 ; CDeformableModel * Stack[0x4]:4   model_ptr

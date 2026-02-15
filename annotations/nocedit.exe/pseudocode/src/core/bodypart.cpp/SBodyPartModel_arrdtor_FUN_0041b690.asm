@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SBodyPartModel * __cdecl core_bodypart_cpp_SBodyPartModel_arrdtor_FUN_0041b690(SBodyPartModel *objs,uint flags)
+; SBodyPartModel * __cdecl core_bodypart_cpp_SBodyPartModel_arrdtor_FUN_0041b690(SBodyPartModel *objs,uint flags)
 ;
 ; Parameters:
 ; SBodyPartModel * Stack[0x4]:4   objs

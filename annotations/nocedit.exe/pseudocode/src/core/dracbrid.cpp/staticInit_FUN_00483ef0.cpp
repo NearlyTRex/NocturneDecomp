@@ -23,6 +23,6 @@ void __cdecl core_dracbrid_cpp_staticInit_FUN_00483ef0(void)
              core_dracbrid_cpp_factoryFunc_FUN_00483f80,&g_CDraculaBrideClassVersion,9,
              &g_CEnemyClassInfo);
   __arrinit(SFreaky_ARRAY_02c6d0c0,6,&g_SFreakyTypeInfo);
-  _atexit(&DAT_006703a0);
+  _atexit(&WatcomStaticDestructorNode_006703a0);
   return;
 }

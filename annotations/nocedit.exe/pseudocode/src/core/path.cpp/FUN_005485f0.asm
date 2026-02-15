@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_path_cpp_FUN_005485f0(void)
+; void __cdecl core_path_cpp_FUN_005485f0(void)
 ;
 ;
 ; Referenced Globals:
@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_path.cpp_FUN_00547fc0
+;   core_path.cpp_CPathMap_FUN_00547fc0
 ;
 ; *****************************************************************************
 
@@ -75,8 +75,8 @@ section .text
     PUSH ECX                            ; 00548667
     PUSH EBP                            ; 00548668
     PUSH EDX                            ; 00548669
-    CALL core_path.cpp_FUN_00547fc0     ; 0054866a
-        ;   XREF to: 00547fc0 (UNCONDITIONAL_CALL)  ; void core_path.cpp_FUN_00547fc0()
+    CALL core_path.cpp_CPathMap_FUN_00547fc0 ; 0054866a
+        ;   XREF to: 00547fc0 (UNCONDITIONAL_CALL)  ; void core_path.cpp_CPathMap_FUN_00547fc0(CPathMap * this_ptr)
     ADD ESP,0x14                        ; 0054866f
     JMP 0x00548625                      ; 00548672
         ;   XREF to: 00548625 (UNCONDITIONAL_JUMP)  ; LAB_00548625

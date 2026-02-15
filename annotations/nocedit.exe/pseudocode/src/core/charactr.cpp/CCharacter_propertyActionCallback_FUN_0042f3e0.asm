@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_charactr_cpp_CCharacter_propertyActionCallback_FUN_0042f3e0(CCharacter *this_ptr,CActorProperty *property)
+; int __cdecl core_charactr_cpp_CCharacter_propertyActionCallback_FUN_0042f3e0(CCharacter *this_ptr,CActorProperty *property)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr
@@ -35,8 +35,8 @@
 ;   undefined4 g_CCharacterClassInfo.name_hash
 ;   CEditorTools g_CEditorToolsInstance
 ;   CDemonMission g_CDemonMissionInstance
-;   undefined4 g_CDemonSetInstance.actor_list_ptr
-;   undefined4 g_CDemonSetInstance.actor_list_data[0]
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;   undefined4 DAT_032613d4
 ;   ... and 1 more
 ;
@@ -174,10 +174,10 @@ section .text
     MOV dword ptr [ESP + 0x91c],ESI     ; 0042f54e
     MOV EAX,[0x006810c8]                ; 0042f555 | g_CDemonSetPtr
         ;   Label: LAB_0042f555
-    CMP ESI,dword ptr [EAX + 0x14d154]  ; 0042f55a | g_CDemonSetInstance.actor_list_ptr
+    CMP ESI,dword ptr [EAX + 0x14d154]  ; 0042f55a | g_CDemonSetInstance.actor_count
     JGE 0x0042f5eb                      ; 0042f560
         ;   XREF to: 0042f5eb (CONDITIONAL_JUMP)  ; LAB_0042f5eb
-    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14d158] ; 0042f566 | g_CDemonSetInstance.actor_list_data[0] | DAT_032613d4 | DAT_032613d8
+    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14d158] ; 0042f566 | g_CDemonSetInstance.actors[0] | DAT_032613d4 | DAT_032613d8
     CMP EBX,EBP                         ; 0042f56d
     JNZ 0x0042f5ab                      ; 0042f56f
         ;   XREF to: 0042f5ab (CONDITIONAL_JUMP)  ; LAB_0042f5ab

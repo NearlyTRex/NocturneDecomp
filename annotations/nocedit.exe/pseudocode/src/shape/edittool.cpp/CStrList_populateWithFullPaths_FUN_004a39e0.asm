@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_edittool_cpp_CStrList_populateWithFullPaths_FUN_004a39e0(CStrList *this_ptr,char *base_path,char *search_path)
+; void __cdecl shape_edittool_cpp_CStrList_populateWithFullPaths_FUN_004a39e0(CStrList *this_ptr,char *base_path,char *search_path)
 ;
 ; Parameters:
 ; CStrList *       Stack[0x4]:4   this_ptr

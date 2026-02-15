@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CGlassParticle * __cdecl core_fire_cpp_CGlassParticle_arrdtor_FUN_004c9970(CGlassParticle *objs,uint flags)
+; CGlassParticle * __cdecl core_fire_cpp_CGlassParticle_arrdtor_FUN_004c9970(CGlassParticle *objs,uint flags)
 ;
 ; Parameters:
 ; CGlassParticle * Stack[0x4]:4   objs

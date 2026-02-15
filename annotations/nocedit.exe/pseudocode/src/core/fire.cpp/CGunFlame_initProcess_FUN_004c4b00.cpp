@@ -17,8 +17,8 @@ void __cdecl core_fire_cpp_CGunFlame_initProcess_FUN_004c4b00(CGunFlame *this_pt
   
   iVar4 = 0;
   DAT_02d13eb4 = 0;
-  for (iVar5 = 0; iVar5 < g_CDemonSetPtr->damage_listener_count; iVar5 = iVar5 + 1) {
-    iVar1 = *(int *)(g_CDemonSetPtr->unk4 + iVar4 + -4);
+  for (iVar5 = 0; iVar5 < g_CDemonSetPtr->character_count; iVar5 = iVar5 + 1) {
+    iVar1 = *(int *)((int)g_CDemonSetPtr->characters + iVar4);
     iVar2 = (**(code **)(*(int *)(iVar1 + 0x154) + 0x120))(iVar1);
     if (iVar2 == 0) {
       iVar2 = core_hero_cpp_FUN_004f2220();
@@ -36,9 +36,9 @@ void __cdecl core_fire_cpp_CGunFlame_initProcess_FUN_004c4b00(CGunFlame *this_pt
   }
   iVar5 = 0;
   DAT_02d13f80 = 0;
-  for (iVar4 = 0; iVar4 < (int)g_CDemonSetPtr->actor_list_ptr; iVar4 = iVar4 + 1) {
+  for (iVar4 = 0; iVar4 < g_CDemonSetPtr->actor_count; iVar4 = iVar4 + 1) {
     pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
-                       (*(CDemonActor **)(g_CDemonSetPtr->actor_list_data + iVar5),
+                       (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar5),
                         g_CFlameCanClassInfo.name_hash);
     if ((pCVar3 != (CDemonActor *)0x0) && (DAT_02d13f80 < 0x96)) {
       (&DAT_02d13f84)[DAT_02d13f80] = pCVar3;

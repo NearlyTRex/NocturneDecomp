@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * __cdecl core_ground_cpp_getGroundTypeName_FUN_004eed80(int type)
+; char * __cdecl core_ground_cpp_getGroundTypeName_FUN_004eed80(int type)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   type

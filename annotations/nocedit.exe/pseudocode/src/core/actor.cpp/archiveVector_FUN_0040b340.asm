@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_actor_cpp_archiveVector_FUN_0040b340(CVector3f *vector_ptr,char *property_name)
+; void __cdecl core_actor_cpp_archiveVector_FUN_0040b340(CVector3f *vector_ptr,char *property_name)
 ;
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   vector_ptr

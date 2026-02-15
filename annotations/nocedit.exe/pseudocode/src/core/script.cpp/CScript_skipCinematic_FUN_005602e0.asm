@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_script_cpp_CScript_skipCinematic_FUN_005602e0(CScript *this_ptr)
+; int __cdecl core_script_cpp_CScript_skipCinematic_FUN_005602e0(CScript *this_ptr)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr

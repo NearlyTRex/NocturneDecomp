@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_tentacle_cpp_CTentacle_FUN_005db900(CTentacle *this_ptr)
+; int __cdecl core_tentacle_cpp_CTentacle_FUN_005db900(CTentacle *this_ptr)
 ;
 ; Parameters:
 ; CTentacle *      Stack[0x4]:4   this_ptr
@@ -18,8 +18,8 @@
 ;   double DOUBLE_00654e8c = 3
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.damage_listener_count
-;   undefined4 g_CDemonSetInstance.damage_listeners
+;   undefined4 g_CDemonSetInstance.character_count
+;   undefined4 g_CDemonSetInstance.characters[0]
 ;   undefined4 DAT_03263318
 ;
 ; Called Functions:
@@ -45,10 +45,10 @@ section .text
     MOV EAX,[0x006810c8]                ; 005db91a | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_005db91a
     MOV EBX,dword ptr [ESP + 0x14]      ; 005db91f
-    CMP EBX,dword ptr [EAX + 0x14f098]  ; 005db923 | g_CDemonSetInstance.damage_listener_count
+    CMP EBX,dword ptr [EAX + 0x14f098]  ; 005db923 | g_CDemonSetInstance.character_count
     JGE 0x005db9c2                      ; 005db929
         ;   XREF to: 005db9c2 (CONDITIONAL_JUMP)  ; LAB_005db9c2
-    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14f09c] ; 005db92f | g_CDemonSetInstance.damage_listeners | DAT_03263318
+    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14f09c] ; 005db92f | g_CDemonSetInstance.characters[0] | DAT_03263318
     CMP EBX,dword ptr [EBP + 0x14]      ; 005db936
     JNZ 0x005db949                      ; 005db939
         ;   XREF to: 005db949 (CONDITIONAL_JUMP)  ; LAB_005db949

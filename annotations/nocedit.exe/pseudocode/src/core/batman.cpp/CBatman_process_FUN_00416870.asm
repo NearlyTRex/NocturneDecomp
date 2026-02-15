@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,float delta_time)
+; void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CBatman *        Stack[0x4]:4   this_ptr
@@ -413,11 +413,11 @@ section .text
     MOV EAX,[0x006810c8]                ; 00416bde | g_CDemonSetPtr
         ;   Label: LAB_00416bde
     MOV ESI,dword ptr [EBP + 0x72]      ; 00416be3
-    CMP ESI,dword ptr [EAX + 0x14f098]  ; 00416be6 | g_CDemonSetInstance.damage_listener_count
+    CMP ESI,dword ptr [EAX + 0x14f098]  ; 00416be6 | g_CDemonSetInstance.character_count
     JGE 0x00416c66                      ; 00416bec
         ;   XREF to: 00416c66 (CONDITIONAL_JUMP)  ; LAB_00416c66
     ADD EAX,dword ptr [EBP + 0x6e]      ; 00416bf2
-    MOV ESI,dword ptr [EAX + 0x14f09c]  ; 00416bf5 | g_CDemonSetInstance.damage_listeners | DAT_03263318
+    MOV ESI,dword ptr [EAX + 0x14f09c]  ; 00416bf5 | g_CDemonSetInstance.characters[0] | DAT_03263318
     TEST ESI,ESI                        ; 00416bfb
     JNZ 0x00416c11                      ; 00416bfd
         ;   XREF to: 00416c11 (CONDITIONAL_JUMP)  ; LAB_00416c11
@@ -874,7 +874,7 @@ section .text
     XOR ESI,ESI                         ; 004170d8
     MOV EAX,[0x006810c8]                ; 004170da | g_CDemonSetPtr | g_CDemonSetInstance
         ;   Label: LAB_004170da
-    CMP ESI,dword ptr [EAX + 0x150fdc]  ; 004170df | g_CDemonSetInstance.unk4[7996]
+    CMP ESI,dword ptr [EAX + 0x150fdc]  ; 004170df | g_CDemonSetInstance.enemy_count
     JGE 0x00417111                      ; 004170e5
         ;   XREF to: 00417111 (CONDITIONAL_JUMP)  ; LAB_00417111
     MOV EDX,dword ptr [0x00822820]      ; 004170e7 | g_CBatmanClassInfo.name_hash
@@ -898,7 +898,7 @@ section .text
         ;   XREF to: 00417102 (CONDITIONAL_JUMP)  ; LAB_00417102
     MOV EAX,[0x006810c8]                ; 00417111 | g_CDemonSetPtr
         ;   Label: LAB_00417111
-    CMP ESI,dword ptr [EAX + 0x150fdc]  ; 00417116 | g_CDemonSetInstance.unk4[7996]
+    CMP ESI,dword ptr [EAX + 0x150fdc]  ; 00417116 | g_CDemonSetInstance.enemy_count
     JNZ 0x00417021                      ; 0041711c
         ;   XREF to: 00417021 (CONDITIONAL_JUMP)  ; LAB_00417021
     PUSH 0x1                            ; 00417122

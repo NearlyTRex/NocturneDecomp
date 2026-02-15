@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int __watcallStack crt_io_c_access_FUN_0060c9f0(char *filename,int access_mode)
+; int __watcallStack crt_io_c_access_FUN_0060c9f0(char *filename,int access_mode)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

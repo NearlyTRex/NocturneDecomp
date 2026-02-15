@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dlight_cpp_resetRestoreMemoryAllocator_FUN_004729c0(void)
+; void __cdecl core_dlight_cpp_resetRestoreMemoryAllocator_FUN_004729c0(void)
 ;
 ;
 ; XREF[3]:

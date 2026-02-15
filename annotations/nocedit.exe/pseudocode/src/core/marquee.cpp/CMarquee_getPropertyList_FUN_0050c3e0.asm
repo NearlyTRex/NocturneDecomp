@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_marquee_cpp_CMarquee_getPropertyList_FUN_0050c3e0(CMarquee *this_ptr,CActorPropertyList *property_list)
+; void __cdecl core_marquee_cpp_CMarquee_getPropertyList_FUN_0050c3e0(CMarquee *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CMarquee *       Stack[0x4]:4   this_ptr

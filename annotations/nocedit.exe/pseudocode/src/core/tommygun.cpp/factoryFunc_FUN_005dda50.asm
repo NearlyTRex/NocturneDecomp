@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CTommyGun * __cdecl core_tommygun_cpp_factoryFunc_FUN_005dda50(void)
+; CTommyGun * __cdecl core_tommygun_cpp_factoryFunc_FUN_005dda50(void)
 ;
 ;
 ; XREF[1]:

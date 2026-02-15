@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * __cdecl core_dest_cpp_CActorDestination_getActorType_FUN_0046f8f0(CActorDestination *this_ptr)
+; CDemonActorType * __cdecl core_dest_cpp_CActorDestination_getActorType_FUN_0046f8f0(CActorDestination *this_ptr)
 ;
 ; Parameters:
 ; CActorDestination * Stack[0x4]:4   this_ptr

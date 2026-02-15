@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown uint crt_unknown_c_ReadFileBytesMaybe_FUN_0060e930(uint param_1,char *param_2,DWORD param_3,undefined4 param_4,undefined4 param_5,int param_6)
+; uint crt_unknown_c_ReadFileBytesMaybe_FUN_0060e930(uint param_1,char *param_2,DWORD param_3,undefined4 param_4,undefined4 param_5,int param_6)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18

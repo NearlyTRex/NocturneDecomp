@@ -103,8 +103,8 @@ int __cdecl core_boneguy_cpp_CBoneGuy_FUN_0041cc40(CBoneGuy *this_ptr)
       iVar6 = 0;
       local_2c = 0;
       local_20 = 0;
-      for (local_24 = 0; local_24 < (int)g_CDemonSetPtr->actor_list_ptr; local_24 = local_24 + 1) {
-        pCVar3 = *(CDemonActor **)(g_CDemonSetPtr->actor_list_data + local_20);
+      for (local_24 = 0; local_24 < g_CDemonSetPtr->actor_count; local_24 = local_24 + 1) {
+        pCVar3 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + local_20);
         pCVar2 = (*((pCVar3->vtable)._ub)->getCarrier)(pCVar3);
         if (pCVar2 == (CDemonActor *)0x0) {
           iVar4 = (*((pCVar3->vtable)._ub)->canPickup)(pCVar3,(CDemonActor *)this_ptr);

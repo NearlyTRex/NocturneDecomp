@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_spotview_cpp_CSpotView_FUN_005b9a20(CSpotView *this_ptr)
+; void __cdecl shape_spotview_cpp_CSpotView_FUN_005b9a20(CSpotView *this_ptr)
 ;
 ; Parameters:
 ; CSpotView *      Stack[0x4]:4   this_ptr

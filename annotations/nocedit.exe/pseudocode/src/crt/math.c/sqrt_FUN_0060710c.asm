@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __fpureg double __fpureg crt_math_c_sqrt_FUN_0060710c(double value)
+; double __fpureg crt_math_c_sqrt_FUN_0060710c(double value)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x1c]:8  local_1c

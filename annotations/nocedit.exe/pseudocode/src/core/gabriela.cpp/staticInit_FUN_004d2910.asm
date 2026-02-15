@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_gabriela_cpp_staticInit_FUN_004d2910(void)
+; void __cdecl core_gabriela_cpp_staticInit_FUN_004d2910(void)
 ;
 ;
 ; Referenced Globals:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * __cdecl core_battery_cpp_CBattery_getActorType_FUN_00417e80(CBattery *this_ptr)
+; CDemonActorType * __cdecl core_battery_cpp_CBattery_getActorType_FUN_00417e80(CBattery *this_ptr)
 ;
 ; Parameters:
 ; CBattery *       Stack[0x4]:4   this_ptr

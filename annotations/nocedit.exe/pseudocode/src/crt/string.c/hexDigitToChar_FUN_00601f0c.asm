@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack char __watcallStack crt_string_c_hexDigitToChar_FUN_00601f0c(int digit)
+; char __watcallStack crt_string_c_hexDigitToChar_FUN_00601f0c(int digit)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   digit

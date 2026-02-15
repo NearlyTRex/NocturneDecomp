@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_chain_cpp_CChain_hasCollision_FUN_00431110(CChain *this_ptr,SCollisionInfo *collision_info)
+; int __cdecl core_chain_cpp_CChain_hasCollision_FUN_00431110(CChain *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CChain *         Stack[0x4]:4   this_ptr

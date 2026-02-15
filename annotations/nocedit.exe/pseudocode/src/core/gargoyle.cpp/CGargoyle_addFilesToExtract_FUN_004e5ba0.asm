@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_gargoyle_cpp_CGargoyle_addFilesToExtract_FUN_004e5ba0(CGargoyle *this_ptr,_FILE *file_handle)
+; void __cdecl core_gargoyle_cpp_CGargoyle_addFilesToExtract_FUN_004e5ba0(CGargoyle *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CGargoyle *      Stack[0x4]:4   this_ptr

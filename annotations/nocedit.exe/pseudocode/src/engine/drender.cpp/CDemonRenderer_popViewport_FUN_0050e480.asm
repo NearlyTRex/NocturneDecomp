@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480(void)
+; void __cdecl engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480(void)
 ;
 ;
 ; XREF[8]:

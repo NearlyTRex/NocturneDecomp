@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_chain_cpp_CChain_FUN_0042fed0(CChain *this_ptr)
+; void __cdecl core_chain_cpp_CChain_FUN_0042fed0(CChain *this_ptr)
 ;
 ; Parameters:
 ; CChain *         Stack[0x4]:4   this_ptr

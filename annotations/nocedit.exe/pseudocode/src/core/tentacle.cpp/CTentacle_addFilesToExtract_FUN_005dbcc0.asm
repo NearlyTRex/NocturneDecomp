@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_tentacle_cpp_CTentacle_addFilesToExtract_FUN_005dbcc0(CTentacle *this_ptr,_FILE *file_handle)
+; void __cdecl core_tentacle_cpp_CTentacle_addFilesToExtract_FUN_005dbcc0(CTentacle *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CTentacle *      Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CDeformableModel *this_ptr,char *output_filename,int lod_level,CMatrix3x4f *bone_matrices)
+; void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CDeformableModel *this_ptr,char *output_filename,int lod_level,CMatrix3x4f *bone_matrices)
 ;
 ; Parameters:
 ; CDeformableModel * Stack[0x8]:4   this_ptr

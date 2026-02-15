@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CGrave * __cdecl core_grave_cpp_factoryFunc_FUN_004ee4d0(void)
+; CGrave * __cdecl core_grave_cpp_factoryFunc_FUN_004ee4d0(void)
 ;
 ;
 ; XREF[1]:

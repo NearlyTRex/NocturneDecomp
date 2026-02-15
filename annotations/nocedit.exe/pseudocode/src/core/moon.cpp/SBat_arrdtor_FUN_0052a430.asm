@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SBat * __cdecl core_moon_cpp_SBat_arrdtor_FUN_0052a430(SBat *objs,uint flags)
+; SBat * __cdecl core_moon_cpp_SBat_arrdtor_FUN_0052a430(SBat *objs,uint flags)
 ;
 ; Parameters:
 ; SBat *           Stack[0x4]:4   objs

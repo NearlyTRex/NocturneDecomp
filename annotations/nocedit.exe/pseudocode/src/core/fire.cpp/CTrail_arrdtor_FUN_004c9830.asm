@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CTrail * __cdecl core_fire_cpp_CTrail_arrdtor_FUN_004c9830(CTrail *objs,uint flags)
+; CTrail * __cdecl core_fire_cpp_CTrail_arrdtor_FUN_004c9830(CTrail *objs,uint flags)
 ;
 ; Parameters:
 ; CTrail *         Stack[0x4]:4   objs

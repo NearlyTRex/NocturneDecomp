@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_actor_cpp_CDemonActor_startInteraction_FUN_0040a090(CDemonActor *this_ptr,CDemonActor *user)
+; int __cdecl core_actor_cpp_CDemonActor_startInteraction_FUN_0040a090(CDemonActor *this_ptr,CDemonActor *user)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr

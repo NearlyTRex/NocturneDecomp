@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_processVerticesAndRenderPolygons_FUN_0045d5d0(void)
+; void __cdecl shape_design_c_processVerticesAndRenderPolygons_FUN_0045d5d0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x8c]:4  local_8c

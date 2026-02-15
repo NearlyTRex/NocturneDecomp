@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CRainDrop * __cdecl core_fire_cpp_CRainDrop_arrdtor_FUN_004c97d0(CRainDrop *objs,uint flags)
+; CRainDrop * __cdecl core_fire_cpp_CRainDrop_arrdtor_FUN_004c97d0(CRainDrop *objs,uint flags)
 ;
 ; Parameters:
 ; CRainDrop *      Stack[0x4]:4   objs

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance *this_ptr,char *filename)
+; void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance *this_ptr,char *filename)
 ;
 ; Parameters:
 ; CKeyFramedModelInstance * Stack[0x4]:4   this_ptr

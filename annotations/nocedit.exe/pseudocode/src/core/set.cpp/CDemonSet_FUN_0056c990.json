@@ -12,18 +12,6 @@
         "column": 15,
         "line": 61,
         "message": "use of undeclared identifier 'stack0x00000000'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 80,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 20,
-        "line": 80,
-        "message": "expected expression"
       }
     ],
     "success": false,
@@ -31,16 +19,15 @@
   },
   "complexity": {
     "assembly_lines": 352,
-    "complexity_score": 205,
+    "complexity_score": 190,
     "cross_reference_count": 1,
     "function_call_count": 25,
     "global_count": 36,
     "pseudocode_lines": 115,
-    "suspect_count": 7,
+    "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_ref",
-      "unresolved_funcptr",
       "warning_type_propagation"
     ],
     "total_lines": 467
@@ -328,7 +315,7 @@
     },
     {
       "addr": "02d807ac",
-      "name": "g_CDemonLightInstance.unk2",
+      "name": "g_CDemonLightInstance.volumetric_enabled",
       "type": "undefined4",
       "value": null
     },
@@ -604,13 +591,6 @@
       "match": "&stack0x00000000",
       "text": "if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.base.rotation_matrix.m[2].z) {",
       "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 73,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(*(int *)(pCVar5->unk13 + 4) + 0x154) + 8))",
-      "type": "unresolved_funcptr"
     },
     {
       "description": "Decompiler intrinsic (not real C)",

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_haystack_cpp_staticInit_FUN_004f0ba0(void)
+; void __cdecl core_haystack_cpp_staticInit_FUN_004f0ba0(void)
 ;
 ;
 ; Referenced Globals:

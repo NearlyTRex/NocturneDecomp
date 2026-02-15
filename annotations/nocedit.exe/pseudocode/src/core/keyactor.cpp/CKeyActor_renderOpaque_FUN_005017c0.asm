@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_keyactor_cpp_CKeyActor_renderOpaque_FUN_005017c0(CKeyActor *this_ptr)
+; int __cdecl core_keyactor_cpp_CKeyActor_renderOpaque_FUN_005017c0(CKeyActor *this_ptr)
 ;
 ; Parameters:
 ; CKeyActor *      Stack[0x4]:4   this_ptr

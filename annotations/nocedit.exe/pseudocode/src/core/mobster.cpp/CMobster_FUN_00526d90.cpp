@@ -67,9 +67,8 @@ int __cdecl core_mobster_cpp_CMobster_FUN_00526d90(CMobster *this_ptr)
           iVar9 = 0;
           local_24 = 0;
           local_20 = pCVar1;
-          for (local_1c = 0; local_1c < (int)g_CDemonSetPtr->actor_list_ptr; local_1c = local_1c + 1
-              ) {
-            pCVar2 = *(CDemonActor **)(g_CDemonSetPtr->actor_list_data + iVar9);
+          for (local_1c = 0; local_1c < g_CDemonSetPtr->actor_count; local_1c = local_1c + 1) {
+            pCVar2 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar9);
             pCVar6 = (*((pCVar2->vtable)._ub)->getCarrier)(pCVar2);
             if ((pCVar6 == (CDemonActor *)0x0) &&
                (iVar7 = core_actor_cpp_isOfClass_FUN_0040c6d0(pCVar2,"CTommyGun"),

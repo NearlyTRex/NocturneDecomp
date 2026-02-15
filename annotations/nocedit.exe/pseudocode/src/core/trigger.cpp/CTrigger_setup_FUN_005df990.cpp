@@ -18,17 +18,17 @@ void __cdecl core_trigger_cpp_CTrigger_setup_FUN_005df990(CTrigger *this_ptr)
   pCVar3 = g_CDemonMissionPtr;
   (this_ptr->base).is_renderable = 0;
   iVar4 = pCVar3->is_in_editor;
-  (this_ptr->base).unk6 = 1;
+  (this_ptr->base).collision_disabled = 1;
   iVar2 = this_ptr->hero_triggers_me;
   (this_ptr->base).is_transparent = iVar4;
   if (iVar2 == 5) {
-    (this_ptr->base).unk6 = 0;
+    (this_ptr->base).collision_disabled = 0;
   }
   if (this_ptr->hero_triggers_me == 4) {
-    (this_ptr->base).unk6 = 0;
+    (this_ptr->base).collision_disabled = 0;
   }
   if (this_ptr->hero_triggers_me == 7) {
-    (this_ptr->base).unk6 = 0;
+    (this_ptr->base).collision_disabled = 0;
   }
   this_ptr->unk2[4] = '\0';
   this_ptr->unk2[5] = '\0';
@@ -44,9 +44,9 @@ void __cdecl core_trigger_cpp_CTrigger_setup_FUN_005df990(CTrigger *this_ptr)
     this_ptr->off_event[0] = '\0';
   }
   cVar1 = this_ptr->on_event[0];
-  (this_ptr->base).unk7 = 0.0;
+  (this_ptr->base).process_disabled = 0;
   if ((cVar1 == '\0') && (this_ptr->off_event[0] == '\0')) {
-    (this_ptr->base).unk7 = 1.4013e-45;
+    (this_ptr->base).process_disabled = 1;
     return;
   }
   return;

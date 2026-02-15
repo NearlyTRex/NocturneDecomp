@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_skipLines_FUN_00459360(_FILE *file,int line_count)
+; void __cdecl shape_design_c_skipLines_FUN_00459360(_FILE *file,int line_count)
 ;
 ; Parameters:
 ; _FILE *          Stack[0x4]:4   file

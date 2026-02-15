@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * __cdecl core_colonel_cpp_CColonel_getActorType_FUN_0043f7d0(CColonel *this_ptr)
+; CDemonActorType * __cdecl core_colonel_cpp_CColonel_getActorType_FUN_0043f7d0(CColonel *this_ptr)
 ;
 ; Parameters:
 ; CColonel *       Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_vessel_cpp_CCryptVessel_addFilesToExtract_FUN_005e9d10(CCryptVessel *this_ptr,_FILE *file_handle)
+; void __cdecl core_vessel_cpp_CCryptVessel_addFilesToExtract_FUN_005e9d10(CCryptVessel *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CCryptVessel *   Stack[0x4]:4   this_ptr

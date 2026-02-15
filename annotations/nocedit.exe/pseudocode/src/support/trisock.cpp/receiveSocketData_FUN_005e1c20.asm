@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl support_trisock_cpp_receiveSocketData_FUN_005e1c20(SSocketContext *socket_ctx,char *buffer,int length,SNetworkAddr *source_addr)
+; int __cdecl support_trisock_cpp_receiveSocketData_FUN_005e1c20(SSocketContext *socket_ctx,char *buffer,int length,SNetworkAddr *source_addr)
 ;
 ; Parameters:
 ; SSocketContext * Stack[0x4]:4   socket_ctx

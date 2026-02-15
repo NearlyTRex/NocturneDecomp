@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl wincore_winrun_cpp_sleep_FUN_005f40e0(double seconds)
+; void __cdecl wincore_winrun_cpp_sleep_FUN_005f40e0(double seconds)
 ;
 ; Parameters:
 ; double           Stack[0x4]:8   seconds

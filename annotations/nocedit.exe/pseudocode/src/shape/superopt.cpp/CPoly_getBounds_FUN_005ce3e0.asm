@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_superopt_cpp_CPoly_getBounds_FUN_005ce3e0(CPoly *this_ptr,CVector3d *out_min,CVector3d *out_max)
+; void __cdecl shape_superopt_cpp_CPoly_getBounds_FUN_005ce3e0(CPoly *this_ptr,CVector3d *out_min,CVector3d *out_max)
 ;
 ; Parameters:
 ; CPoly *          Stack[0x4]:4   this_ptr

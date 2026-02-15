@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_quantize_cpp_copyString_FUN_00556d70(char *dest,char *src)
+; void __cdecl shape_quantize_cpp_copyString_FUN_00556d70(char *dest,char *src)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   dest

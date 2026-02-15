@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SClothBone * __cdecl core_cloth_cpp_SClothBone_arrdtor_FUN_0043e4a0(SClothBone *objs,uint flags)
+; SClothBone * __cdecl core_cloth_cpp_SClothBone_arrdtor_FUN_0043e4a0(SClothBone *objs,uint flags)
 ;
 ; Parameters:
 ; SClothBone *     Stack[0x4]:4   objs

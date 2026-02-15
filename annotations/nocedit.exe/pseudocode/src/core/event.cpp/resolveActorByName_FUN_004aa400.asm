@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActor * __cdecl core_event_cpp_resolveActorByName_FUN_004aa400(char *name,uint class_hash,char *class_name)
+; CDemonActor * __cdecl core_event_cpp_resolveActorByName_FUN_004aa400(char *name,uint class_hash,char *class_name)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   name

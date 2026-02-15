@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CMirrorHack * __cdecl core_manpuz_cpp_CMirrorHack_ctor_FUN_0050b110(CMirrorHack *this_ptr)
+; CMirrorHack * __cdecl core_manpuz_cpp_CMirrorHack_ctor_FUN_0050b110(CMirrorHack *this_ptr)
 ;
 ; Parameters:
 ; CMirrorHack *    Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl cockpit_drawsurf_cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_00489ce0(CDrawSurface *this_ptr)
+; int __cdecl cockpit_drawsurf_cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_00489ce0(CDrawSurface *this_ptr)
 ;
 ; Parameters:
 ; CDrawSurface *   Stack[0x4]:4   this_ptr

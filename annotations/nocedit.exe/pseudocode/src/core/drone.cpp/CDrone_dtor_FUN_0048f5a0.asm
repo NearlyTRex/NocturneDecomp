@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDrone * __cdecl core_drone_cpp_CDrone_dtor_FUN_0048f5a0(CDrone *this_ptr,uint flags)
+; CDrone * __cdecl core_drone_cpp_CDrone_dtor_FUN_0048f5a0(CDrone *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CDrone *         Stack[0x4]:4   this_ptr

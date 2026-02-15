@@ -13,7 +13,7 @@ void __cdecl core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_00524120
   CDemonSet *pCVar1;
   int iVar2;
   
-  g_CDemonSetPtr->actor_list_ptr = (void *)0x0;
+  g_CDemonSetPtr->actor_count = 0;
   this_ptr_00 = this_ptr->first_actor;
   do {
     if (this_ptr_00 == (CDemonActor *)0x0) {
@@ -39,16 +39,14 @@ void __cdecl core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_00524120
         else {
           this_ptr_00->was_created = 1;
 LAB_005241b1:
-          if (1999 < (int)g_CDemonSetPtr->actor_list_ptr) {
+          if (1999 < g_CDemonSetPtr->actor_count) {
             g_CurrentFilename = "..\\core\\mission.cpp";
             g_CurrentLineNumber = 0x44e;
             core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonMission::buildActiveSetActorList - Too many actors in current set!");
           }
           pCVar1 = g_CDemonSetPtr;
-          *(CDemonActor **)
-           (g_CDemonSetPtr->actor_list_data + (int)g_CDemonSetPtr->actor_list_ptr * 4) = this_ptr_00
-          ;
-          pCVar1->actor_list_ptr = (void *)((int)pCVar1->actor_list_ptr + 1);
+          g_CDemonSetPtr->actors[g_CDemonSetPtr->actor_count] = this_ptr_00;
+          pCVar1->actor_count = pCVar1->actor_count + 1;
         }
       }
       else {

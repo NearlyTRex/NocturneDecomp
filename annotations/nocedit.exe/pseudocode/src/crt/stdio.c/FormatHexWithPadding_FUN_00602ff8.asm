@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_stdio_c_FormatHexWithPadding_FUN_00602ff8(int value,char *buffer,int width)
+; void __cdecl crt_stdio_c_FormatHexWithPadding_FUN_00602ff8(int value,char *buffer,int width)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   value

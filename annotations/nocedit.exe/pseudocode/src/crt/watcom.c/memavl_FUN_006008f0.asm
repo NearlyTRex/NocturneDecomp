@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallRegister uint __watcallRegister crt_watcom_c_memavl_FUN_006008f0(void)
+; uint __watcallRegister crt_watcom_c_memavl_FUN_006008f0(void)
 ;
 ;
 ; XREF[1]:

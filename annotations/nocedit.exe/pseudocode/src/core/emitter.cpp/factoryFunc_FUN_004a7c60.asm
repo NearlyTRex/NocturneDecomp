@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CEmitter * __cdecl core_emitter_cpp_factoryFunc_FUN_004a7c60(void)
+; CEmitter * __cdecl core_emitter_cpp_factoryFunc_FUN_004a7c60(void)
 ;
 ;
 ; XREF[1]:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_tvbat_cpp_CTVBat_processDamage_FUN_005e5130(CTVBat *this_ptr,SDamageInfo *damage_info)
+; void __cdecl core_tvbat_cpp_CTVBat_processDamage_FUN_005e5130(CTVBat *this_ptr,SDamageInfo *damage_info)
 ;
 ; Parameters:
 ; CTVBat *         Stack[0x4]:4   this_ptr

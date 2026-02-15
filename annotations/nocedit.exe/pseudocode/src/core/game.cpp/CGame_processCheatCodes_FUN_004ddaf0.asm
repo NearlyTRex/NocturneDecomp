@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
+; void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
 ;
 ; Parameters:
 ; CGame *          Stack[0x4]:4   this_ptr
@@ -2368,7 +2368,7 @@ section .text
     MOV dword ptr [ESP + 0x3ec],EDI     ; 004df4a8
     MOV EAX,[0x006810c8]                ; 004df4af | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_004df4af
-    CMP EDI,dword ptr [EAX + 0x150fdc]  ; 004df4b4 | g_CDemonSetInstance.unk4[7996]
+    CMP EDI,dword ptr [EAX + 0x150fdc]  ; 004df4b4 | g_CDemonSetInstance.enemy_count
     JGE 0x004df592                      ; 004df4ba
         ;   XREF to: 004df592 (CONDITIONAL_JUMP)  ; LAB_004df592
     ADD EAX,dword ptr [ESP + 0x3ec]     ; 004df4c0
@@ -3252,11 +3252,11 @@ section .text
     MOV EAX,[0x006810c8]                ; 004dfe99 | g_CDemonSetPtr
         ;   Label: LAB_004dfe99
     MOV EBX,dword ptr [ESP + 0x444]     ; 004dfe9e
-    CMP EBX,dword ptr [EAX + 0x14f098]  ; 004dfea5 | g_CDemonSetInstance.damage_listener_count
+    CMP EBX,dword ptr [EAX + 0x14f098]  ; 004dfea5 | g_CDemonSetInstance.character_count
     JGE 0x004e0193                      ; 004dfeab
         ;   XREF to: 004e0193 (CONDITIONAL_JUMP)  ; LAB_004e0193
     ADD EAX,dword ptr [ESP + 0x420]     ; 004dfeb1
-    MOV EAX,dword ptr [EAX + 0x14f09c]  ; 004dfeb8 | g_CDemonSetInstance.damage_listeners | DAT_03263318
+    MOV EAX,dword ptr [EAX + 0x14f09c]  ; 004dfeb8 | g_CDemonSetInstance.characters[0] | DAT_03263318
     LEA ECX,[EAX + 0x158]               ; 004dfebe
     MOV DL,byte ptr [EAX + 0x23b8]      ; 004dfec4
     MOV dword ptr [ESP + 0x320],ECX     ; 004dfeca

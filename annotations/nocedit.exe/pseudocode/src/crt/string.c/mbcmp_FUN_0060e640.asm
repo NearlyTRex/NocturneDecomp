@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_string_c_mbcmp_FUN_0060e640(char *str1,char *str2)
+; int __cdecl crt_string_c_mbcmp_FUN_0060e640(char *str1,char *str2)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   str1

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_io_c_findNextWithAttributes_FUN_00609d5c(HANDLE hFindFile,DWORD dwAttributeMask,LPWIN32_FIND_DATAA lpFindFileData)
+; int __cdecl crt_io_c_findNextWithAttributes_FUN_00609d5c(HANDLE hFindFile,DWORD dwAttributeMask,LPWIN32_FIND_DATAA lpFindFileData)
 ;
 ; Parameters:
 ; HANDLE           Stack[0x4]:4   hFindFile

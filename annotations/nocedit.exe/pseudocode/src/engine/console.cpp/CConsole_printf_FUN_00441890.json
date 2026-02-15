@@ -2,8 +2,14 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "incompatible_types",
+        "column": 23,
+        "line": 22,
+        "message": "assigning to 'char *' from incompatible type 'char *[1]'"
+      },
+      {
         "category": "undeclared_identifier",
-        "column": 15,
+        "column": 36,
         "line": 22,
         "message": "use of undeclared identifier 'stack0x0000000c'"
       },
@@ -11,7 +17,13 @@
         "category": "other",
         "column": 31,
         "line": 23,
-        "message": "no matching conversion for C-style cast from 'byte **' (aka 'unsigned char **') to 'va_list_t'"
+        "message": "no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'"
+      },
+      {
+        "category": "other",
+        "column": 23,
+        "line": 25,
+        "message": "C-style cast from 'char *' to 'char *[1]' is not allowed"
       }
     ],
     "success": false,
@@ -618,15 +630,15 @@
         "is_param": false,
         "name": "local_1014",
         "offset": -4116,
-        "size": 1,
-        "type": "undefined1"
+        "size": 4096,
+        "type": "char[4096]"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "va_list_t"
       },
       {
         "is_param": true,
@@ -649,7 +661,7 @@
       "description": "Direct stack address reference",
       "line": 15,
       "match": "&stack0x0000000c",
-      "text": "local_14 = &stack0x0000000c;",
+      "text": "local_14.value[0] = (char * [1])&stack0x0000000c;",
       "type": "stack_ref"
     }
   ]

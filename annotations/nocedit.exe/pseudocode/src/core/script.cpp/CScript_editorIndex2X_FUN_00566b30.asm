@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl uint __cdecl core_script_cpp_CScript_editorIndex2X_FUN_00566b30(CScript *this_ptr,int line_number,uint buffer_index)
+; uint __cdecl core_script_cpp_CScript_editorIndex2X_FUN_00566b30(CScript *this_ptr,int line_number,uint buffer_index)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr

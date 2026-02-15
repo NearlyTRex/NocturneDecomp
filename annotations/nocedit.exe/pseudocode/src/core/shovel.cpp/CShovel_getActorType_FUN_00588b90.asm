@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * __cdecl core_shovel_cpp_CShovel_getActorType_FUN_00588b90(CShovel *this_ptr)
+; CDemonActorType * __cdecl core_shovel_cpp_CShovel_getActorType_FUN_00588b90(CShovel *this_ptr)
 ;
 ; Parameters:
 ; CShovel *        Stack[0x4]:4   this_ptr

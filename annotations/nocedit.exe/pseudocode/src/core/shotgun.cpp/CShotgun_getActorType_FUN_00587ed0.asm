@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * __cdecl core_shotgun_cpp_CShotgun_getActorType_FUN_00587ed0(CShotgun *this_ptr)
+; CDemonActorType * __cdecl core_shotgun_cpp_CShotgun_getActorType_FUN_00587ed0(CShotgun *this_ptr)
 ;
 ; Parameters:
 ; CShotgun *       Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl sound_sndmain_cpp_setRecordingFormat_FUN_005ab9a0(int bits_per_sample,int channels,int sample_rate,int signed_samples)
+; int __cdecl sound_sndmain_cpp_setRecordingFormat_FUN_005ab9a0(int bits_per_sample,int channels,int sample_rate,int signed_samples)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   bits_per_sample

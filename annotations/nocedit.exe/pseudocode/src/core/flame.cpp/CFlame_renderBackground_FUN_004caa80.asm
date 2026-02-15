@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_flame_cpp_CFlame_renderBackground_FUN_004caa80(CFlame *this_ptr,int layer_flag)
+; void __cdecl core_flame_cpp_CFlame_renderBackground_FUN_004caa80(CFlame *this_ptr,int layer_flag)
 ;
 ; Parameters:
 ; CFlame *         Stack[0x4]:4   this_ptr
@@ -14,8 +14,8 @@
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   undefined4 g_CFlameClassInfo.name_hash
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.actor_list_ptr
-;   undefined4 g_CDemonSetInstance.actor_list_data[0]
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
@@ -115,7 +115,7 @@ section .text
     ADD ESI,0x20                        ; 004cab50
     MOV EAX,[0x006810c8]                ; 004cab53 | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_004cab53
-    CMP EDI,dword ptr [EAX + 0x14d154]  ; 004cab58 | g_CDemonSetInstance.actor_list_ptr
+    CMP EDI,dword ptr [EAX + 0x14d154]  ; 004cab58 | g_CDemonSetInstance.actor_count
     JL 0x004cab85                       ; 004cab5e
         ;   XREF to: 004cab85 (CONDITIONAL_JUMP)  ; LAB_004cab85
     CMP dword ptr [ESP + 0x24],0x0      ; 004cab60
@@ -137,7 +137,7 @@ section .text
     MOV EDX,dword ptr [0x02d7a6fc]      ; 004cab85 | g_CFlameClassInfo.name_hash
         ;   Label: LAB_004cab85
     PUSH EDX                            ; 004cab8b
-    MOV ECX,dword ptr [EBX + EAX*0x1 + 0x14d158] ; 004cab8c | g_CDemonSetInstance.actor_list_data[0]
+    MOV ECX,dword ptr [EBX + EAX*0x1 + 0x14d158] ; 004cab8c | g_CDemonSetInstance.actors[0]
     PUSH ECX                            ; 004cab93
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 004cab94
         ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)

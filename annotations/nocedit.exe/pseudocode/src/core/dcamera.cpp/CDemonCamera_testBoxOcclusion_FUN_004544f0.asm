@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_dcamera_cpp_CDemonCamera_testBoxOcclusion_FUN_004544f0(CDemonCamera *this_ptr,CVector3i *corners)
+; int __cdecl core_dcamera_cpp_CDemonCamera_testBoxOcclusion_FUN_004544f0(CDemonCamera *this_ptr,CVector3i *corners)
 ;
 ; Parameters:
 ; CDemonCamera *   Stack[0x4]:4   this_ptr

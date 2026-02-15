@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SVDBox * __cdecl core_set_cpp_SVDBox_arrdtor_FUN_00571590(SVDBox *objs,uint flags)
+; SVDBox * __cdecl core_set_cpp_SVDBox_arrdtor_FUN_00571590(SVDBox *objs,uint flags)
 ;
 ; Parameters:
 ; SVDBox *         Stack[0x4]:4   objs

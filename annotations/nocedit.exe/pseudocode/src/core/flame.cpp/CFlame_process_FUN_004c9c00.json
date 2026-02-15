@@ -4,25 +4,25 @@
       {
         "category": "incompatible_types",
         "column": 46,
-        "line": 75,
+        "line": 77,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "format_error",
         "column": 46,
-        "line": 75,
+        "line": 77,
         "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 76,
+        "line": 78,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
         "category": "incompatible_types",
         "column": 17,
-        "line": 81,
+        "line": 83,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       }
     ],
@@ -31,16 +31,17 @@
   },
   "complexity": {
     "assembly_lines": 346,
-    "complexity_score": 217,
+    "complexity_score": 234,
     "cross_reference_count": 4,
     "function_call_count": 10,
     "global_count": 17,
-    "pseudocode_lines": 142,
-    "suspect_count": 7,
+    "pseudocode_lines": 144,
+    "suspect_count": 8,
     "suspect_types": [
-      "decompiler_intrinsic"
+      "decompiler_intrinsic",
+      "warning_type_propagation"
     ],
-    "total_lines": 488
+    "total_lines": 490
   },
   "cross_references": [
     {
@@ -224,7 +225,7 @@
     },
     {
       "addr": "03265254",
-      "name": "g_CDemonSetInstance.unk4[7996]",
+      "name": "g_CDemonSetInstance.enemy_count",
       "type": "undefined4",
       "value": null
     },
@@ -356,50 +357,57 @@
   },
   "suspects": [
     {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 68,
+      "line": 70,
       "match": "SUB84",
       "text": "(local_f8,\"torch.wav * %f\",SUB84((double)local_14,0),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 95,
+      "line": 97,
       "match": "ROUND",
       "text": "fStack_18 = (float)(int)ROUND(dVar5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 98,
+      "line": 100,
       "match": "ABS",
       "text": "if ((ABS(fStack_44) < local_94.cylinder_radius + fStack_1c) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 99,
+      "line": 101,
       "match": "ABS",
       "text": "(ABS(fStack_3c) < local_94.cylinder_radius + fStack_1c)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 128,
+      "line": 131,
       "match": "ROUND",
       "text": "iStack_24 = (int)ROUND(dVar5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 131,
+      "line": 134,
       "match": "ABS",
       "text": "if ((ABS(fStack_3c) < SStack_6c.cylinder_top_y + fStack_28) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 132,
+      "line": 135,
       "match": "ABS",
       "text": "(ABS(fStack_34) < SStack_6c.cylinder_top_y + fStack_28)) {",
       "type": "decompiler_intrinsic"

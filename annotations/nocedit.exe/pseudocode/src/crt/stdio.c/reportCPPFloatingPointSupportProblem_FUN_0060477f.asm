@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void crt_stdio_c_reportCPPFloatingPointSupportProblem_FUN_0060477f(void)
+; void crt_stdio_c_reportCPPFloatingPointSupportProblem_FUN_0060477f(void)
 ;
 ;
 ; Referenced Globals:

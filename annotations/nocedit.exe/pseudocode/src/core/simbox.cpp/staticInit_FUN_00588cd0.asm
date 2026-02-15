@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_simbox_cpp_staticInit_FUN_00588cd0(void)
+; void __cdecl core_simbox_cpp_staticInit_FUN_00588cd0(void)
 ;
 ;
 ; Referenced Globals:

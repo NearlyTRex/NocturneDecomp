@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_sndmain_cpp_pollAllStreams_FUN_005ace90(int paused_mode)
+; void __cdecl sound_sndmain_cpp_pollAllStreams_FUN_005ace90(int paused_mode)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   paused_mode

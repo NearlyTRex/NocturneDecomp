@@ -18,9 +18,9 @@ void __cdecl core_emitter_cpp_CEmitter_archive_FUN_004a8b30(CEmitter *this_ptr)
     core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->emitter_state,"emitterState");
   }
   if (this_ptr->emitter_type == 3) {
-    core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->laser_r,"laserR");
-    core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->laser_g,"laserG");
-    core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->laser_b,"laserB");
+    core_actor_cpp_archiveInteger_FUN_0040b7f0(&(this_ptr->laser_color).r,"laserR");
+    core_actor_cpp_archiveInteger_FUN_0040b7f0(&(this_ptr->laser_color).g,"laserG");
+    core_actor_cpp_archiveInteger_FUN_0040b7f0(&(this_ptr->laser_color).b,"laserB");
     if (2 < g_CEmitterClassVersion) {
       core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->laser_type,"laserType");
     }

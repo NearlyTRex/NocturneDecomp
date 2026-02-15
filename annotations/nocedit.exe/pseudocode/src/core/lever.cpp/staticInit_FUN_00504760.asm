@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_lever_cpp_staticInit_FUN_00504760(void)
+; void __cdecl core_lever_cpp_staticInit_FUN_00504760(void)
 ;
 ;
 ; Referenced Globals:

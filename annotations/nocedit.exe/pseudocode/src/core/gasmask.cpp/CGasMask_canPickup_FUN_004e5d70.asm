@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_gasmask_cpp_CGasMask_canPickup_FUN_004e5d70(CGasMask *this_ptr,CDemonActor *picker)
+; int __cdecl core_gasmask_cpp_CGasMask_canPickup_FUN_004e5d70(CGasMask *this_ptr,CDemonActor *picker)
 ;
 ; Parameters:
 ; CGasMask *       Stack[0x4]:4   this_ptr

@@ -21,7 +21,7 @@ float __cdecl core_setdir_cpp_CZThumb_testCameraVisibility_FUN_005750a0(CZThumb 
   float in_stack_00000018;
   float local_20;
   
-  if ((in_stack_00000014->unk4 != 0) &&
+  if ((in_stack_00000014->enabled != 0) &&
      (fVar4 = (in_stack_00000014->position).x - (float)this_ptr->projection_scale,
      fVar2 = (in_stack_00000014->position).y - (float)this_ptr->zbuffer_data,
      fVar1 = (in_stack_00000014->position).z - (float)this_ptr[1].width,

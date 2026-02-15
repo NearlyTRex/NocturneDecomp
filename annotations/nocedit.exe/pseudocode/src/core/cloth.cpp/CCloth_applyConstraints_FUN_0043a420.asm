@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_0043a420(CCloth *this_ptr,SClothVertex *vertex)
+; void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_0043a420(CCloth *this_ptr,SClothVertex *vertex)
 ;
 ; Parameters:
 ; CCloth *         Stack[0x4]:4   this_ptr

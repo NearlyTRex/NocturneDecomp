@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_hpriest_cpp_CHighPriestOfGardath_archive_FUN_004f7bd0(CHighPriestOfGardath *this_ptr)
+; void __cdecl core_hpriest_cpp_CHighPriestOfGardath_archive_FUN_004f7bd0(CHighPriestOfGardath *this_ptr)
 ;
 ; Parameters:
 ; CHighPriestOfGardath * Stack[0x4]:4   this_ptr

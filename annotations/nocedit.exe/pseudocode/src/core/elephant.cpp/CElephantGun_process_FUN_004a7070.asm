@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_elephant_cpp_CElephantGun_process_FUN_004a7070(CElephantGun *this_ptr,float delta_time)
+; void __cdecl core_elephant_cpp_CElephantGun_process_FUN_004a7070(CElephantGun *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CElephantGun *   Stack[0x4]:4   this_ptr
@@ -19,7 +19,7 @@
 ;   undefined4 g_CDemonLightInstance.base.base.projection_scale
 ;   undefined4 g_CDemonLightInstance.base.max_distance
 ;   undefined4 g_CDemonLightInstance.light_enabled_flag
-;   undefined4 g_CDemonLightInstance.unk2
+;   undefined4 g_CDemonLightInstance.volumetric_enabled
 ;   undefined4 g_CDemonLightInstance.antialiasing_enabled
 ;   CDemonSet g_CDemonSetInstance
 ;
@@ -73,7 +73,7 @@ section .text
         ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     LEA EAX,[ESP + 0x14]                ; 004a70cf
     ADD ESP,0xc                         ; 004a70d3
-    MOV dword ptr [0x02d807ac],ESI      ; 004a70d6 | g_CDemonLightInstance.unk2
+    MOV dword ptr [0x02d807ac],ESI      ; 004a70d6 | g_CDemonLightInstance.volumetric_enabled
     CMP EAX,0x2d7eaf4                   ; 004a70dc | g_CDemonLightInstance.base.base.position.x
     JZ 0x004a70fe                       ; 004a70e1
         ;   XREF to: 004a70fe (CONDITIONAL_JUMP)  ; LAB_004a70fe

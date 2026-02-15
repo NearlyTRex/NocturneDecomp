@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_mobster_cpp_CMobster_addFilesToExtract_FUN_00527c40(CMobster *this_ptr,_FILE *file_handle)
+; void __cdecl core_mobster_cpp_CMobster_addFilesToExtract_FUN_00527c40(CMobster *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CMobster *       Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410(CDemonRenderer *this_ptr,int *vertex_indices,int face_count,int vertices_per_face,int render_mode)
+; void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410(CDemonRenderer *this_ptr,int *vertex_indices,int face_count,int vertices_per_face,int render_mode)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr

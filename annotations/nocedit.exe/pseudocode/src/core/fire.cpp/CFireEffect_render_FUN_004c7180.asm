@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_fire_cpp_CFireEffect_render_FUN_004c7180(CFireEffect *this_ptr)
+; void __cdecl core_fire_cpp_CFireEffect_render_FUN_004c7180(CFireEffect *this_ptr)
 ;
 ; Parameters:
 ; CFireEffect *    Stack[0x4]:4   this_ptr
@@ -101,7 +101,7 @@ section .text
     CALL core_fire.cpp_CFireball_initRender_FUN_004c0d80 ; 004c71e7
         ;   XREF to: 004c0d80 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CFireball_initRender_FUN_004c0d80(CFireball * this_ptr)
     ADD ESP,0x4                         ; 004c71ec
-    LEA ESI,[EBX + 0x2700]              ; 004c71ef | g_CFireEffectFireballsEnd
+    LEA ESI,[EBX + 0x2700]              ; 004c71ef | INT_02d655a8
     FLD float ptr [EBX + 0x18]          ; 004c71f5 | DAT_02d62ec0 | DAT_02d62f5c
         ;   Label: LAB_004c71f5
     FLDZ                                ; 004c71f8
@@ -302,7 +302,7 @@ section .text
     JNZ 0x004c73ad                      ; 004c73bb
         ;   XREF to: 004c73ad (CONDITIONAL_JUMP)  ; LAB_004c73ad
     MOV EBX,0x2d678d0                   ; 004c73bd | g_TossPool
-    LEA ESI,[EBX + 0x4dd0]              ; 004c73c2 | g_TossActiveListHead
+    LEA ESI,[EBX + 0x4dd0]              ; 004c73c2 | INT_02d6c6a0
     PUSH EBX                            ; 004c73c8 | g_TossPool | DAT_02d67cb4
         ;   Label: LAB_004c73c8
     CALL core_fire.cpp_CToss_render_FUN_004c4160 ; 004c73c9

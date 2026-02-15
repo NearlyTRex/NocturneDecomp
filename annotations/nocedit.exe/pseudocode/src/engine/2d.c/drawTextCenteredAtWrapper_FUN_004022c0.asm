@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_2d_c_drawTextCenteredAtWrapper_FUN_004022c0(int x,int y,char *text)
+; void __cdecl engine_2d_c_drawTextCenteredAtWrapper_FUN_004022c0(int x,int y,char *text)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   x

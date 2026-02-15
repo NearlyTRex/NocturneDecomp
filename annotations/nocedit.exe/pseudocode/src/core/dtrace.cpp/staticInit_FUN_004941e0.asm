@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dtrace_cpp_staticInit_FUN_004941e0(void)
+; void __cdecl core_dtrace_cpp_staticInit_FUN_004941e0(void)
 ;
 ;
 ; Referenced Globals:

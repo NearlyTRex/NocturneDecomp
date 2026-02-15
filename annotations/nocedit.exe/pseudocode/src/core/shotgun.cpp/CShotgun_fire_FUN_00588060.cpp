@@ -27,7 +27,7 @@ int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_00588060(CShotgun *this_ptr)
   CVector3f CStack_108;
   int iStack_fc;
   float fStack_f8;
-  int iStack_f4;
+  float fStack_f4;
   CShotgun *pCStack_f0;
   CDemonActor *pCStack_e8;
   float fStack_e4;
@@ -187,14 +187,11 @@ int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_00588060(CShotgun *this_ptr)
           if (iVar2 != 0) break;
           core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)auStack_124);
           auStack_124._4_4_ = uStack_30;
-          auStack_124._0_4_ = g_CDemonSetPtr->unk1;
+          auStack_124._0_4_ = g_CDemonSetPtr->collision_part_index;
           fStack_11c = 0.4;
-          fStack_a0 = (g_CDemonSetPtr->collision_result_vec2).x -
-                      (g_CDemonSetPtr->collision_result_vec1).x;
-          fStack_9c = (g_CDemonSetPtr->collision_result_vec2).y -
-                      (g_CDemonSetPtr->collision_result_vec1).y;
-          fStack_98 = (g_CDemonSetPtr->collision_result_vec2).z -
-                      (g_CDemonSetPtr->collision_result_vec1).z;
+          fStack_a0 = (g_CDemonSetPtr->ray_target).x - (g_CDemonSetPtr->ray_origin).x;
+          fStack_9c = (g_CDemonSetPtr->ray_target).y - (g_CDemonSetPtr->ray_origin).y;
+          fStack_98 = (g_CDemonSetPtr->ray_target).z - (g_CDemonSetPtr->ray_origin).z;
           pCStack_24 = (CDemonActor *)
                        ((float)10 /
                        SQRT(fStack_98 * fStack_98 + fStack_a0 * fStack_a0 + fStack_9c * fStack_9c));
@@ -217,7 +214,7 @@ int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_00588060(CShotgun *this_ptr)
             CStack_108.z = pCVar1->z;
           }
           iStack_fc = (this_ptr->base).ammo_type;
-          iStack_f4 = 0x65;
+          fStack_f4 = 1.41531e-43;
           fStack_f8 = 0.15;
           pCStack_f0 = this_ptr;
           pCStack_e8 = (*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);

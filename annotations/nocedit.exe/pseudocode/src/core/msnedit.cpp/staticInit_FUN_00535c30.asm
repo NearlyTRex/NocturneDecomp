@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_msnedit_cpp_staticInit_FUN_00535c30(void)
+; void __cdecl core_msnedit_cpp_staticInit_FUN_00535c30(void)
 ;
 ;
 ; Referenced Globals:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SBug * __cdecl core_bugs_cpp_SBug_dtor_FUN_00427cb0(SBug *this_ptr,uint flags)
+; SBug * __cdecl core_bugs_cpp_SBug_dtor_FUN_00427cb0(SBug *this_ptr,uint flags)
 ;
 ; Parameters:
 ; SBug *           Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_gore_cpp_staticInit_FUN_004eb8c0(void)
+; void __cdecl core_gore_cpp_staticInit_FUN_004eb8c0(void)
 ;
 ;
 ; Referenced Globals:
@@ -10,13 +10,13 @@
 ;   WatcomTypeInfo g_CBloodPoolTypeInfo
 ;   WatcomTypeInfo g_CFootstepTypeInfo
 ;   WatcomStaticDestructorNode g_CGoreDestructorNode
-;   WatcomStaticDestructorNode DAT_0067b980
-;   WatcomStaticDestructorNode DAT_0067b990
+;   WatcomStaticDestructorNode WatcomStaticDestructorNode_0067b980
+;   WatcomStaticDestructorNode WatcomStaticDestructorNode_0067b990
 ;   CGore g_CGoreInstance
-;   CBloodParticle[256] DAT_02d833d4
+;   CBloodParticle[256] CBloodParticle_ARRAY_02d833d4
 ;   CBloodSplat[2000] DAT_02d873dc
 ;   CBloodPool[32] DAT_02da8724
-;   CFootstep[1000] DAT_02da8c2c
+;   CFootstep[1000] CFootstep_ARRAY_02da8c2c
 ;
 ; Called Functions:
 ;   core_gore.cpp_CGore_ctor_FUN_004ed730
@@ -38,11 +38,11 @@ section .text
     ADD ESP,0x4                         ; 004eb8d7
     PUSH 0x65f080                       ; 004eb8da | g_CBloodParticleTypeInfo
     PUSH 0x100                          ; 004eb8df
-    PUSH 0x2d833d4                      ; 004eb8e4 | DAT_02d833d4
+    PUSH 0x2d833d4                      ; 004eb8e4 | CBloodParticle_ARRAY_02d833d4
     CALL crt_memory.c___arrinit_FUN_005fe667 ; 004eb8e9
         ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004eb8ee
-    PUSH 0x67b980                       ; 004eb8f1 | DAT_0067b980
+    PUSH 0x67b980                       ; 004eb8f1 | WatcomStaticDestructorNode_0067b980
     CALL crt_stdlib.c__atexit_FUN_005ff060 ; 004eb8f6
         ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 004eb8fb
@@ -60,11 +60,11 @@ section .text
     ADD ESP,0xc                         ; 004eb926
     PUSH 0x65f0e0                       ; 004eb929 | g_CFootstepTypeInfo
     PUSH 0x3e8                          ; 004eb92e
-    PUSH 0x2da8c2c                      ; 004eb933 | DAT_02da8c2c
+    PUSH 0x2da8c2c                      ; 004eb933 | CFootstep_ARRAY_02da8c2c
     CALL crt_memory.c___arrinit_FUN_005fe667 ; 004eb938
         ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004eb93d
-    PUSH 0x67b990                       ; 004eb940 | DAT_0067b990
+    PUSH 0x67b990                       ; 004eb940 | WatcomStaticDestructorNode_0067b990
     CALL crt_stdlib.c__atexit_FUN_005ff060 ; 004eb945
         ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 004eb94a

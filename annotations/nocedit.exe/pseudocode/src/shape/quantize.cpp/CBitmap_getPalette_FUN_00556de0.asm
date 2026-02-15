@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void * __cdecl shape_quantize_cpp_CBitmap_getPalette_FUN_00556de0(CBitmap *this_ptr)
+; void * __cdecl shape_quantize_cpp_CBitmap_getPalette_FUN_00556de0(CBitmap *this_ptr)
 ;
 ; Parameters:
 ; CBitmap *        Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_game_cpp_disableUnavailableChapters_FUN_004e1c30(void)
+; void __cdecl core_game_cpp_disableUnavailableChapters_FUN_004e1c30(void)
 ;
 ;
 ; Referenced Globals:

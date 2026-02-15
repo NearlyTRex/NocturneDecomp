@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CTeleportDest * __cdecl core_teleport_cpp_factoryFunc_FUN_005da730(void)
+; CTeleportDest * __cdecl core_teleport_cpp_factoryFunc_FUN_005da730(void)
 ;
 ;
 ; XREF[1]:

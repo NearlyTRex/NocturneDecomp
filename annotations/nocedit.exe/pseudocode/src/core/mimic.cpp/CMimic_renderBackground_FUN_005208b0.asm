@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_mimic_cpp_CMimic_renderBackground_FUN_005208b0(CMimic *this_ptr,int layer_flag)
+; void __cdecl core_mimic_cpp_CMimic_renderBackground_FUN_005208b0(CMimic *this_ptr,int layer_flag)
 ;
 ; Parameters:
 ; CMimic *         Stack[0x4]:4   this_ptr

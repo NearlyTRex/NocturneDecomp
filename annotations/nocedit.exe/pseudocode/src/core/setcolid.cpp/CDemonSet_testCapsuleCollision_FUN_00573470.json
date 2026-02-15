@@ -4,116 +4,56 @@
       {
         "category": "other",
         "column": 22,
-        "line": 76,
+        "line": 63,
         "message": "C-style cast from 'void *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 79,
+        "line": 66,
         "message": "C-style cast from 'void *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 133,
+        "line": 122,
         "message": "C-style cast from 'void *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 134,
+        "line": 123,
         "message": "C-style cast from 'void *' to 'float' is not allowed"
       },
       {
         "category": "other",
-        "column": 57,
-        "line": 158,
-        "message": "C-style cast from 'byte *' (aka 'unsigned char *') to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 39,
-        "line": 163,
-        "message": "C-style cast from 'float' to 'byte[4]' (aka 'unsigned char[4]') is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 45,
-        "line": 173,
-        "message": "C-style cast from 'byte *' (aka 'unsigned char *') to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 178,
-        "message": "C-style cast from 'float' to 'byte[4]' (aka 'unsigned char[4]') is not allowed"
-      },
-      {
-        "category": "other",
         "column": 31,
-        "line": 187,
+        "line": 176,
         "message": "C-style cast from 'struct CKeyFramedModelInstance *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 37,
-        "line": 198,
+        "line": 187,
         "message": "C-style cast from 'void *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 37,
-        "line": 199,
-        "message": "C-style cast from 'void *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 28,
-        "line": 200,
-        "message": "member reference base type 'byte[92]' (aka 'unsigned char[92]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 39,
-        "line": 203,
-        "message": "member reference base type 'byte[92]' (aka 'unsigned char[92]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 203,
-        "message": "C-style cast from 'byte *' (aka 'unsigned char *') to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 53,
-        "line": 204,
-        "message": "member reference base type 'byte[92]' (aka 'unsigned char[92]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 29,
-        "line": 204,
-        "message": "array type 'byte[4]' (aka 'unsigned char[4]') is not assignable"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 228,
+        "line": 188,
         "message": "C-style cast from 'void *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 229,
+        "line": 218,
         "message": "C-style cast from 'void *' to 'float' is not allowed"
       },
       {
         "category": "other",
-        "column": 26,
-        "line": 230,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
+        "column": 35,
+        "line": 219,
+        "message": "C-style cast from 'void *' to 'float' is not allowed"
       }
     ],
     "success": false,
@@ -121,17 +61,16 @@
   },
   "complexity": {
     "assembly_lines": 670,
-    "complexity_score": 411,
+    "complexity_score": 328,
     "cross_reference_count": 4,
     "function_call_count": 13,
     "global_count": 8,
-    "pseudocode_lines": 261,
-    "suspect_count": 14,
+    "pseudocode_lines": 253,
+    "suspect_count": 7,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "unknown_field"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 931
+    "total_lines": 923
   },
   "cross_references": [
     {
@@ -607,100 +546,51 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
+      "line": 39,
       "match": "ABS",
       "text": "if ((ABS(dir_x) != 0.0) || (ABS(dir_z) != 0.0)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
+      "line": 39,
       "match": "ABS",
       "text": "if ((ABS(dir_x) != 0.0) || (ABS(dir_z) != 0.0)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 142,
+      "line": 131,
       "match": "SQRT",
       "text": "fVar3 = SQRT(fVar7 - fVar3);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 145,
+      "line": 134,
       "match": "ABS",
-      "text": "if (ABS(local_134) <= ABS(local_130)) {",
+      "text": "if (ABS(local_14c.dir_x) <= ABS(local_14c.dir_z)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 145,
+      "line": 134,
       "match": "ABS",
-      "text": "if (ABS(local_134) <= ABS(local_130)) {",
+      "text": "if (ABS(local_14c.dir_x) <= ABS(local_14c.dir_z)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 162,
+      "line": 151,
       "match": "SQRT",
       "text": "dStack_278 = SQRT((double)fVar4) - (double)fVar6;",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 193,
-      "match": "._0_4_",
-      "text": "auStack_1a8._0_4_ = local_14c;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 196,
-      "match": "._0_4_",
-      "text": "if ((float)auStack_1a8._0_4_ < (float)local_14c) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 197,
-      "match": "._0_4_",
-      "text": "local_14c = (byte  [4])auStack_1a8._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 223,
-      "match": "._0_4_",
-      "text": "auStack_204._0_4_ = local_14c;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 226,
-      "match": "._0_4_",
-      "text": "if ((float)auStack_204._0_4_ < (float)local_14c) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 228,
-      "match": "._4_4_",
-      "text": "local_148.x = (float)auStack_204._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 233,
-      "match": "._0_4_",
-      "text": "local_14c = (byte  [4])(float)auStack_204._0_4_;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 244,
+      "line": 234,
       "match": "SQRT",
-      "text": "fVar1 = SQRT(local_148.z * local_148.z + local_148.y * local_148.y + local_148.x * local_148.x);",
+      "text": "fVar1 = SQRT(local_14c.push_normal.z * local_14c.push_normal.z +",
       "type": "decompiler_intrinsic"
     }
   ]

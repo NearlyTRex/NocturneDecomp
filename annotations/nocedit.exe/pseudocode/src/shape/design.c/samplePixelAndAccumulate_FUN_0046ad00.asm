@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_samplePixelAndAccumulate_FUN_0046ad00(void *rgb_buffer,void *alpha_buffer,int atlas_width,int atlas_height,int pixel_x,int pixel_y,double weight,double *red_accumulator,double *green_accumulator,double *blue_accumulator,double *alpha_accumulator)
+; void __cdecl shape_design_c_samplePixelAndAccumulate_FUN_0046ad00(void *rgb_buffer,void *alpha_buffer,int atlas_width,int atlas_height,int pixel_x,int pixel_y,double weight,double *red_accumulator,double *green_accumulator,double *blue_accumulator,double *alpha_accumulator)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   rgb_buffer

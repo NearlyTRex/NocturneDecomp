@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_sndmain_cpp_testSoundFiles_FUN_005ad5c0(void)
+; void __cdecl sound_sndmain_cpp_testSoundFiles_FUN_005ad5c0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x34]:4  local_34

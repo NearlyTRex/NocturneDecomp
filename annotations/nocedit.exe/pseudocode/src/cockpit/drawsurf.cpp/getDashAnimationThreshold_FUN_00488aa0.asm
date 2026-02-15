@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl cockpit_drawsurf_cpp_getDashAnimationThreshold_FUN_00488aa0(void)
+; float __cdecl cockpit_drawsurf_cpp_getDashAnimationThreshold_FUN_00488aa0(void)
 ;
 ;
 ; Referenced Globals:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CWater * __cdecl core_water_cpp_CWater_ctor_FUN_005e9e10(CWater *this_ptr)
+; CWater * __cdecl core_water_cpp_CWater_ctor_FUN_005e9e10(CWater *this_ptr)
 ;
 ; Parameters:
 ; CWater *         Stack[0x4]:4   this_ptr

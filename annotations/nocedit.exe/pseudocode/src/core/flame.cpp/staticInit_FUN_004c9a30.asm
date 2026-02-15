@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_flame_cpp_staticInit_FUN_004c9a30(void)
+; void __cdecl core_flame_cpp_staticInit_FUN_004c9a30(void)
 ;
 ;
 ; Referenced Globals:

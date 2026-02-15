@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_unknown_c_FUN_00600c80(int param_1,int param_2,SIZE_T param_3)
+; void __cdecl crt_unknown_c_FUN_00600c80(int param_1,int param_2,SIZE_T param_3)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   param_1

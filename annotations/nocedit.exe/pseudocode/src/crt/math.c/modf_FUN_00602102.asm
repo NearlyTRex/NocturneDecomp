@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __softfp_double double __softfp_double crt_math_c_modf_FUN_00602102(double value,double *integer_part)
+; double __softfp_double crt_math_c_modf_FUN_00602102(double value,double *integer_part)
 ;
 ; Parameters:
 ; double           Stack[0x4]:8   value

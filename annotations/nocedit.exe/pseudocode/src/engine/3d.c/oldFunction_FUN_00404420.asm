@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallRegister SMRGLHeaderExtended * __watcallRegister engine_3d_c_oldFunction_FUN_00404420(SMRGLHeaderExtended *primitive)
+; SMRGLHeaderExtended * __watcallRegister engine_3d_c_oldFunction_FUN_00404420(SMRGLHeaderExtended *primitive)
 ;
 ;
 ; Referenced Globals:

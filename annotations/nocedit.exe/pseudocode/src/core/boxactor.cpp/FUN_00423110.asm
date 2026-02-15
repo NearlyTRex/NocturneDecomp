@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_boxactor_cpp_FUN_00423110(void)
+; int __cdecl core_boxactor_cpp_FUN_00423110(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x3b0]:1  local_3b0

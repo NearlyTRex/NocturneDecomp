@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CLZWDictionary * __cdecl support_codec_cpp_CLZWDictionary_ctor_FUN_0043edd0(CLZWDictionary *this_ptr)
+; CLZWDictionary * __cdecl support_codec_cpp_CLZWDictionary_ctor_FUN_0043edd0(CLZWDictionary *this_ptr)
 ;
 ; Parameters:
 ; CLZWDictionary * Stack[0x4]:4   this_ptr

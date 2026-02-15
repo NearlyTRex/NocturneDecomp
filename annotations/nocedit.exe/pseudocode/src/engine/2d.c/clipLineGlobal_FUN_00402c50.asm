@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_2d_c_clipLineGlobal_FUN_00402c50(int x1,int y1,int x2,int y2)
+; void __cdecl engine_2d_c_clipLineGlobal_FUN_00402c50(int x1,int y1,int x2,int y2)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   x1

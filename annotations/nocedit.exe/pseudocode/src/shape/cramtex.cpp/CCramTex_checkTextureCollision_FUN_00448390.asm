@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_cramtex_cpp_CCramTex_checkTextureCollision_FUN_00448390(CCramTex *this_ptr,CCramTex *other)
+; int __cdecl shape_cramtex_cpp_CCramTex_checkTextureCollision_FUN_00448390(CCramTex *this_ptr,CCramTex *other)
 ;
 ; Parameters:
 ; CCramTex *       Stack[0x4]:4   this_ptr

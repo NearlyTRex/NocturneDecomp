@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl cockpit_ckptutil_c_isLineBlendingDisabled_FUN_00434650(void)
+; int __cdecl cockpit_ckptutil_c_isLineBlendingDisabled_FUN_00434650(void)
 ;
 ;
 ; Referenced Globals:

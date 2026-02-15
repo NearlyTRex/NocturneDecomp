@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl uint __cdecl core_sound_cpp_CSound_playTrackedActorSoundWithDelay_FUN_005b3b30(CSound *this_ptr,CDemonActor *actor,char *sound_name,CVector3f *position_tracker,float delay)
+; uint __cdecl core_sound_cpp_CSound_playTrackedActorSoundWithDelay_FUN_005b3b30(CSound *this_ptr,CDemonActor *actor,char *sound_name,CVector3f *position_tracker,float delay)
 ;
 ; Parameters:
 ; CSound *         Stack[0x4]:4   this_ptr

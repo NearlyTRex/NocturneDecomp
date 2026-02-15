@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl support_codec_cpp_CLZWDecompress_process_FUN_0043f510(CLZWDecompress *this_ptr,_FILE *input_file,int byte_count,_FILE *output_file)
+; int __cdecl support_codec_cpp_CLZWDecompress_process_FUN_0043f510(CLZWDecompress *this_ptr,_FILE *input_file,int byte_count,_FILE *output_file)
 ;
 ; Parameters:
 ; CLZWDecompress * Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_game_cpp_pollKeyEdgeTrigger_FUN_004dc2a0(void)
+; void __cdecl core_game_cpp_pollKeyEdgeTrigger_FUN_004dc2a0(void)
 ;
 ;
 ; Referenced Globals:

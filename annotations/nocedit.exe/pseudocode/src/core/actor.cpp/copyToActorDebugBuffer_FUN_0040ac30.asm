@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * __cdecl core_actor_cpp_copyToActorDebugBuffer_FUN_0040ac30(char *source_string)
+; char * __cdecl core_actor_cpp_copyToActorDebugBuffer_FUN_0040ac30(char *source_string)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   source_string

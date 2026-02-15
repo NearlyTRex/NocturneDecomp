@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_baron_cpp_CBaron_drawGun_FUN_00413cf0(CBaron *this_ptr,int drawn)
+; void __cdecl core_baron_cpp_CBaron_drawGun_FUN_00413cf0(CBaron *this_ptr,int drawn)
 ;
 ; Parameters:
 ; CBaron *         Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_actor_cpp_CActorPropertyList_resetSelection_FUN_0040e150(CActorPropertyList *this_ptr)
+; void __cdecl core_actor_cpp_CActorPropertyList_resetSelection_FUN_0040e150(CActorPropertyList *this_ptr)
 ;
 ; Parameters:
 ; CActorPropertyList * Stack[0x4]:4   this_ptr

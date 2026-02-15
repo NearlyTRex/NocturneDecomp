@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_battery_cpp_CBattery_setup_FUN_00417ef0(CBattery *this_ptr)
+; void __cdecl core_battery_cpp_CBattery_setup_FUN_00417ef0(CBattery *this_ptr)
 ;
 ; Parameters:
 ; CBattery *       Stack[0x4]:4   this_ptr

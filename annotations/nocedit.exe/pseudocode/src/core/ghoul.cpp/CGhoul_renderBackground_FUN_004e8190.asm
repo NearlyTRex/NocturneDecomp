@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_ghoul_cpp_CGhoul_renderBackground_FUN_004e8190(CGhoul *this_ptr,int layer_flag)
+; void __cdecl core_ghoul_cpp_CGhoul_renderBackground_FUN_004e8190(CGhoul *this_ptr,int layer_flag)
 ;
 ; Parameters:
 ; CGhoul *         Stack[0x4]:4   this_ptr

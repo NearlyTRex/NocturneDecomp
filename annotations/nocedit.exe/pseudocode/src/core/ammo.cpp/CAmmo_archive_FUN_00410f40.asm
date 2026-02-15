@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_ammo_cpp_CAmmo_archive_FUN_00410f40(CAmmo *this_ptr)
+; void __cdecl core_ammo_cpp_CAmmo_archive_FUN_00410f40(CAmmo *this_ptr)
 ;
 ; Parameters:
 ; CAmmo *          Stack[0x4]:4   this_ptr

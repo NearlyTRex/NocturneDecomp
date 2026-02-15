@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl core_gabriela_cpp_FUN_004d2a80(int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance,CDeformableModelInstance *model_ptr)
+; float __cdecl core_gabriela_cpp_FUN_004d2a80(int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance,CDeformableModelInstance *model_ptr)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   current_bone_index

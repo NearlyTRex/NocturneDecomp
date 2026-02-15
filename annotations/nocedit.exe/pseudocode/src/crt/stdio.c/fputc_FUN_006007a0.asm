@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_stdio_c_fputc_FUN_006007a0(int character,_FILE *file)
+; int __cdecl crt_stdio_c_fputc_FUN_006007a0(int character,_FILE *file)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   character

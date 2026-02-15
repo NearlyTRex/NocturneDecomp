@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl wincore_windll_cpp_getTextureInfo_FUN_005b7e70(int texture_size)
+; int __cdecl wincore_windll_cpp_getTextureInfo_FUN_005b7e70(int texture_size)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   texture_size

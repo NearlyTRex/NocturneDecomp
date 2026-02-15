@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_script_cpp_CScript_skipCommands_FUN_005601c0(CScript *this_ptr,int direction,int count)
+; int __cdecl core_script_cpp_CScript_skipCommands_FUN_005601c0(CScript *this_ptr,int direction,int count)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_flies_cpp_staticInit_FUN_004cbcf0(void)
+; void __cdecl core_flies_cpp_staticInit_FUN_004cbcf0(void)
 ;
 ;
 ; Referenced Globals:

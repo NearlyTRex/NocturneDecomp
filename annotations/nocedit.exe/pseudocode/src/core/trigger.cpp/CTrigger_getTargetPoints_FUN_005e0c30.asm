@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_trigger_cpp_CTrigger_getTargetPoints_FUN_005e0c30(CTrigger *this_ptr,CVector3f *out_points_array)
+; int __cdecl core_trigger_cpp_CTrigger_getTargetPoints_FUN_005e0c30(CTrigger *this_ptr,CVector3f *out_points_array)
 ;
 ; Parameters:
 ; CTrigger *       Stack[0x4]:4   this_ptr

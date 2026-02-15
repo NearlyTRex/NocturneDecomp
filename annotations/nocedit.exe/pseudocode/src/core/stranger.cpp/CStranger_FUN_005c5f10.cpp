@@ -10,7 +10,6 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c5f10(CStranger *this_ptr)
 
 {
   float fVar1;
-  CCharacter *this_ptr_00;
   char *pcVar2;
   CDemonActor *pCVar3;
   uint uVar4;
@@ -22,10 +21,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c5f10(CStranger *this_ptr)
   int unaff_EDI;
   
   iVar6 = (this_ptr->base).player_control.action_states[3];
-  this_ptr->unk6[4] = '\0';
-  this_ptr->unk6[5] = '\0';
-  this_ptr->unk6[6] = '\0';
-  this_ptr->unk6[7] = '\0';
+  this_ptr->unk7 = 0;
   if (iVar6 == 0) {
     return;
   }
@@ -84,12 +80,12 @@ LAB_005c5f6e:
   if (((this_ptr->base).aim_mode == 0) && (fVar1 == 0.0)) {
     pcVar7 = this_ptr->unk1 + 0x10;
     pcVar2 = this_ptr->unk3 + 4;
-    if (*(int *)this_ptr->unk6 != 0) {
+    if (this_ptr->unk6 != 0) {
       pcVar2 = pcVar7;
       pcVar7 = this_ptr->unk3 + 4;
     }
     if ((*(int *)(pcVar2 + 0x1c) == 2) && (*(int *)(pcVar7 + 0x1c) != 2)) {
-      *(uint *)this_ptr->unk6 = (uint)(*(int *)this_ptr->unk6 == 0);
+      this_ptr->unk6 = (uint)(this_ptr->unk6 == 0);
     }
   }
   if (this_ptr->weapon == (CDemonActor *)0x0) {
@@ -122,7 +118,7 @@ switchD_005c5ffd_caseD_8:
                      ((CCharacter *)this_ptr,iVar6);
   if ((float)0.98999999999999999 <= (float)pCVar3) {
     pcVar7 = this_ptr->unk1 + 0x10;
-    if ((*(int *)this_ptr->unk6 != 0) && (this_ptr->weapon[2].orient.vec.x == 0.0)) {
+    if ((this_ptr->unk6 != 0) && (this_ptr->weapon[2].orient.vec.x == 0.0)) {
       pcVar7 = this_ptr->unk3 + 4;
     }
     if (((1.0 <= *(float *)(pcVar7 + 0x14)) && (*(float *)(pcVar7 + 0x10) <= 0.0)) &&
@@ -130,19 +126,13 @@ switchD_005c5ffd_caseD_8:
                           ((CCharacter *)this_ptr->weapon,pCVar3,unaff_EDI), iVar6 != 0)) {
       if (this_ptr->weapon[2].orient.vec.x == 0.0) {
         core_stranger_cpp_CStranger_FUN_005c06b0(this_ptr);
-        *(uint *)this_ptr->unk6 = (uint)(*(int *)this_ptr->unk6 == 0);
+        this_ptr->unk6 = (uint)(this_ptr->unk6 == 0);
       }
-      this_ptr_00 = (CCharacter *)this_ptr->weapon;
-      this_ptr->unk6[4] = '\0';
-      this_ptr->unk6[5] = '\0';
-      this_ptr->unk6[6] = '\0';
-      this_ptr->unk6[7] = '\0';
-      iVar6 = (*(((this_ptr_00->base).vtable._uc)->_uc).isGrabbable)(this_ptr_00);
+      this_ptr->unk7 = 0;
+      iVar6 = (*(((((CCharacter *)this_ptr->weapon)->base).vtable._uc)->_uc).isGrabbable)
+                        ((CCharacter *)this_ptr->weapon);
       if (iVar6 != 0) {
-        this_ptr->unk6[4] = '\x01';
-        this_ptr->unk6[5] = '\0';
-        this_ptr->unk6[6] = '\0';
-        this_ptr->unk6[7] = '\0';
+        this_ptr->unk7 = 1;
       }
       core_stranger_cpp_CStranger_FUN_005c06b0(this_ptr);
       if (this_ptr->weapon[2].location.area_id == 2) {

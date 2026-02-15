@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_manpuz_cpp_FUN_0050a4f0(void *ptr)
+; int __cdecl core_manpuz_cpp_FUN_0050a4f0(void *ptr)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   ptr

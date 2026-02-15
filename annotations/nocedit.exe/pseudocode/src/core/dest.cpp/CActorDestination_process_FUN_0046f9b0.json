@@ -6,14 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 163,
-    "complexity_score": 98,
+    "complexity_score": 113,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 9,
     "pseudocode_lines": 53,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
-      "decompiler_intrinsic"
+      "decompiler_intrinsic",
+      "pointer_cast"
     ],
     "total_lines": 216
   },
@@ -89,13 +90,13 @@
     },
     {
       "addr": "032613cc",
-      "name": "g_CDemonSetInstance.actor_list_ptr",
+      "name": "g_CDemonSetInstance.actor_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "032613d0",
-      "name": "g_CDemonSetInstance.actor_list_data[0]",
+      "name": "g_CDemonSetInstance.actors[0]",
       "type": "undefined4",
       "value": null
     },
@@ -250,6 +251,13 @@
     "severity": "medium"
   },
   "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 22,
+      "match": "(int *)((int)",
+      "text": "iVar2 = *(int *)((int)g_CDemonSetPtr->actors + iVar3);",
+      "type": "pointer_cast"
+    },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 26,

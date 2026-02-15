@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_setupViewMatrix_FUN_0045ba60(void)
+; void __cdecl shape_design_c_setupViewMatrix_FUN_0045ba60(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20

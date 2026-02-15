@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float * __cdecl core_flies_cpp_CFlies_FUN_004cc820(CFlies *this_ptr)
+; float * __cdecl core_flies_cpp_CFlies_FUN_004cc820(CFlies *this_ptr)
 ;
 ; Parameters:
 ; CFlies *         Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_event_cpp_CEventList_findSfxEntry_FUN_004b0d60(CEventList *this_ptr,char *name)
+; int __cdecl core_event_cpp_CEventList_findSfxEntry_FUN_004b0d60(CEventList *this_ptr,char *name)
 ;
 ; Parameters:
 ; CEventList *     Stack[0x4]:4   this_ptr

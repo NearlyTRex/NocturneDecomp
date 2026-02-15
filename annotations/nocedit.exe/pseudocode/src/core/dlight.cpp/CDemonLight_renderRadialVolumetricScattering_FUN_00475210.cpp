@@ -53,7 +53,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
   int local_1c;
   int local_18;
   
-  if (this_ptr->unk2 == 0) {
+  if (this_ptr->volumetric_enabled == 0) {
     return;
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450

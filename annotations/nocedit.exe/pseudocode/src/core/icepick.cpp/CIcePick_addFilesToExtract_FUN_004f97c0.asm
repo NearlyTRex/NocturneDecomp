@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_icepick_cpp_CIcePick_addFilesToExtract_FUN_004f97c0(CIcePick *this_ptr,_FILE *file_handle)
+; void __cdecl core_icepick_cpp_CIcePick_addFilesToExtract_FUN_004f97c0(CIcePick *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CIcePick *       Stack[0x4]:4   this_ptr

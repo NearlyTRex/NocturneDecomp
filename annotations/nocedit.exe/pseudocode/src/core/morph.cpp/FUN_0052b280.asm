@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_morph_cpp_FUN_0052b280(void)
+; int __cdecl core_morph_cpp_FUN_0052b280(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24

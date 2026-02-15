@@ -31,14 +31,15 @@
   },
   "complexity": {
     "assembly_lines": 415,
-    "complexity_score": 313,
+    "complexity_score": 328,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 12,
     "pseudocode_lines": 158,
-    "suspect_count": 14,
+    "suspect_count": 15,
     "suspect_types": [
       "decompiler_intrinsic",
+      "pointer_cast",
       "stack_param",
       "unresolved_funcptr"
     ],
@@ -164,13 +165,13 @@
     },
     {
       "addr": "032613cc",
-      "name": "g_CDemonSetInstance.actor_list_ptr",
+      "name": "g_CDemonSetInstance.actor_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "032613d0",
-      "name": "g_CDemonSetInstance.actor_list_data[0]",
+      "name": "g_CDemonSetInstance.actors[0]",
       "type": "undefined4",
       "value": null
     },
@@ -416,8 +417,15 @@
       "description": "Unresolved stack parameter",
       "line": 68,
       "match": "in_stack_0000000c",
-      "text": "for (local_20 = in_stack_0000000c; local_20 < (int)g_CDemonSetPtr->actor_list_ptr;",
+      "text": "for (local_20 = in_stack_0000000c; local_20 < g_CDemonSetPtr->actor_count;",
       "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 70,
+      "match": "(int *)((int)",
+      "text": "iVar1 = *(int *)((int)g_CDemonSetPtr->actors + iVar4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",

@@ -9,6 +9,6 @@
 void __cdecl core_set_cpp_CDemonSet_FUN_00570c60(CDemonSet *this_ptr)
 
 {
-  this_ptr->mirror_render_flag = 1;
+  this_ptr->mirror_camera_dirty = 1;
   return;
 }

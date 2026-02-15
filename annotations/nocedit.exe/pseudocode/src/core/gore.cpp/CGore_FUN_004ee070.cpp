@@ -13,7 +13,7 @@ void __cdecl core_gore_cpp_CGore_FUN_004ee070(CGore *this_ptr)
   CFootstep *this_ptr_00;
   
   iVar1 = DAT_02da8c24 + 1;
-  this_ptr_00 = DAT_02da8c2c + DAT_02da8c24;
+  this_ptr_00 = CFootstep_ARRAY_02da8c2c + DAT_02da8c24;
   DAT_02da8c24 = iVar1;
   if (999 < iVar1) {
     DAT_02da8c24 = 0;

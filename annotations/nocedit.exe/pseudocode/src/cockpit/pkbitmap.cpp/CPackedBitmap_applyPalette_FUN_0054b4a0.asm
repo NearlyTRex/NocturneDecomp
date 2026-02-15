@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyPalette_FUN_0054b4a0(CPackedBitmap *this_ptr)
+; void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyPalette_FUN_0054b4a0(CPackedBitmap *this_ptr)
 ;
 ; Parameters:
 ; CPackedBitmap *  Stack[0x4]:4   this_ptr

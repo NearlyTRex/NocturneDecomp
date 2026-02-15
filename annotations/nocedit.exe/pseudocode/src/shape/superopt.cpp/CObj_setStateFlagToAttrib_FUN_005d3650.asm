@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_superopt_cpp_CObj_setStateFlagToAttrib_FUN_005d3650(CObj *this_ptr,uint set_mask,uint attrib_test)
+; void __cdecl shape_superopt_cpp_CObj_setStateFlagToAttrib_FUN_005d3650(CObj *this_ptr,uint set_mask,uint attrib_test)
 ;
 ; Parameters:
 ; CObj *           Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CTrash * __cdecl core_trash_cpp_factoryFunc_FUN_005deb30(void)
+; CTrash * __cdecl core_trash_cpp_factoryFunc_FUN_005deb30(void)
 ;
 ;
 ; XREF[1]:

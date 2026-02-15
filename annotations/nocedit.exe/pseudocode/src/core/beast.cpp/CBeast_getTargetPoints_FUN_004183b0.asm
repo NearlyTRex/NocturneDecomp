@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_beast_cpp_CBeast_getTargetPoints_FUN_004183b0(CBeast *this_ptr,CVector3f *out_points_array)
+; int __cdecl core_beast_cpp_CBeast_getTargetPoints_FUN_004183b0(CBeast *this_ptr,CVector3f *out_points_array)
 ;
 ; Parameters:
 ; CBeast *         Stack[0x4]:4   this_ptr

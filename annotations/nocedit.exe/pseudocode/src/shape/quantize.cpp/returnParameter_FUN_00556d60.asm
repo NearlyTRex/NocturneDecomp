@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_quantize_cpp_returnParameter_FUN_00556d60(int parameter)
+; int __cdecl shape_quantize_cpp_returnParameter_FUN_00556d60(int parameter)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   parameter

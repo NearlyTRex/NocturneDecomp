@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_0054b5c0(CPackedBitmap *this_ptr,_FILE *file_handle)
+; void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_0054b5c0(CPackedBitmap *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CPackedBitmap *  Stack[0x4]:4   this_ptr

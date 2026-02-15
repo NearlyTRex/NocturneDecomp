@@ -10,9 +10,9 @@ void __cdecl core_setcolid_cpp_CDemonSet_setRayTypeLaser_FUN_00574270(CDemonSet 
 
 {
   this_ptr->ray_type = 3;
-  this_ptr->unk8 = f1;
-  this_ptr->unk9 = f2;
-  this_ptr->unk10 = f3;
-  this_ptr->unk11 = f4;
+  this_ptr->laser_type = (int)f1;
+  (this_ptr->laser_color).r = f2;
+  (this_ptr->laser_color).g = f3;
+  (this_ptr->laser_color).b = f4;
   return;
 }

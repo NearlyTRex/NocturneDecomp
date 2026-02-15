@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_skeledit_cpp_CSkeleton_FUN_00592690(CSkeleton *this_ptr,char *filename)
+; int __cdecl core_skeledit_cpp_CSkeleton_FUN_00592690(CSkeleton *this_ptr,char *filename)
 ;
 ; Parameters:
 ; CSkeleton *      Stack[0x4]:4   this_ptr

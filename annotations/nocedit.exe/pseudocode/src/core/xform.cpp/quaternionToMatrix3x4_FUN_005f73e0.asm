@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __stack_esi CMatrix3x4f * __stack_esi core_xform_cpp_quaternionToMatrix3x4_FUN_005f73e0(CQuaternion4f *quat_in,CMatrix3x4f *matrix_out)
+; CMatrix3x4f * __stack_esi core_xform_cpp_quaternionToMatrix3x4_FUN_005f73e0(CQuaternion4f *quat_in,CMatrix3x4f *matrix_out)
 ;
 ; Parameters:
 ; CQuaternion4f *  Stack[0x4]:4   quat_in

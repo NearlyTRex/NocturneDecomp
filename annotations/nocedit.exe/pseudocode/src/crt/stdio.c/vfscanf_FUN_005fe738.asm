@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_stdio_c_vfscanf_FUN_005fe738(_FILE *file,char *format,va_list_t args)
+; int __cdecl crt_stdio_c_vfscanf_FUN_005fe738(_FILE *file,char *format,va_list_t args)
 ;
 ; Parameters:
 ; _FILE *          Stack[0x4]:4   file

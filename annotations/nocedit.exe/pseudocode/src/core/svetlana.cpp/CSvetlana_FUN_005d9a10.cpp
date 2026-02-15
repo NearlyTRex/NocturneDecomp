@@ -62,7 +62,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9a10(CSvetlana *this_ptr)
   local_14 = 0;
   do {
     while( true ) {
-      if (g_CDemonSetPtr->damage_listener_count <= iVar4) {
+      if (g_CDemonSetPtr->character_count <= iVar4) {
         if (local_14 == 0) {
           sound_name = "svetlana-miss?.wav";
         }
@@ -72,7 +72,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9a10(CSvetlana *this_ptr)
         (*((this_ptr->base).base.base.vtable._ub)->playSound)((CDemonActor *)this_ptr,sound_name);
         return;
       }
-      this_ptr_01 = *(CSvetlana **)(g_CDemonSetPtr->unk4 + iVar6 + -4);
+      this_ptr_01 = *(CSvetlana **)((int)g_CDemonSetPtr->characters + iVar6);
       if (this_ptr_01 != this_ptr) break;
 LAB_005d9adc:
       iVar4 = iVar4 + 1;
@@ -82,7 +82,7 @@ LAB_005d9adc:
     local_84.damage_amount = 15.0;
     local_84.ammo_type = 3;
     local_84.weapon_damage_modifier = 0.7;
-    local_84.damage_type = 0x67;
+    local_84.gore_multiplier = 1.44334e-43;
     iVar3 = (*(((this_ptr_01->base).base.base.vtable._uc)->_uc).testDamageLine)
                       ((CCharacter *)this_ptr_01,&local_24,&local_3c,&local_84,(CVector3f *)0x0);
     if (iVar3 == 0) goto LAB_005d9adc;

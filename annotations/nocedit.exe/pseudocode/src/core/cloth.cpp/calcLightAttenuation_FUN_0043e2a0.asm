@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_cloth_cpp_calcLightAttenuation_FUN_0043e2a0(float dist_sq)
+; int __cdecl core_cloth_cpp_calcLightAttenuation_FUN_0043e2a0(float dist_sq)
 ;
 ; Parameters:
 ; float            Stack[0x4]:4   dist_sq

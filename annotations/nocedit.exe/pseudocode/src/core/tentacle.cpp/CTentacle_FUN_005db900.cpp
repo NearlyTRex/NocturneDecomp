@@ -23,10 +23,10 @@ int __cdecl core_tentacle_cpp_CTentacle_FUN_005db900(CTentacle *this_ptr)
   iVar5 = 0;
   local_14 = 0;
   do {
-    if (g_CDemonSetPtr->damage_listener_count <= local_14) {
+    if (g_CDemonSetPtr->character_count <= local_14) {
       return 0;
     }
-    actor_ptr = *(CTentacle **)(g_CDemonSetPtr->unk4 + iVar5 + -4);
+    actor_ptr = *(CTentacle **)((int)g_CDemonSetPtr->characters + iVar5);
     if (actor_ptr != this_ptr) {
       iVar4 = core_actor_cpp_isOfClass_FUN_0040c6d0((CDemonActor *)actor_ptr,in_stack_00000008);
       if (iVar4 != 0) {

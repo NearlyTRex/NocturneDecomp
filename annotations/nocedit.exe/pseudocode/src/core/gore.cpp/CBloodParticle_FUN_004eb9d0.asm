@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_gore_cpp_CBloodParticle_FUN_004eb9d0(CBloodParticle *this_ptr)
+; void __cdecl core_gore_cpp_CBloodParticle_FUN_004eb9d0(CBloodParticle *this_ptr)
 ;
 ; Parameters:
 ; CBloodParticle * Stack[0x4]:4   this_ptr
@@ -20,15 +20,15 @@
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonCamera* g_CurrentSceneCamera
 ;   CDemonRenderer g_CDemonRendererInstance
-;   undefined4 SMRGLHeaderPrimitive_02d83368.base.count
-;   undefined4 SMRGLHeaderPrimitive_02d83368.surface_normal.A
-;   undefined4 SMRGLHeaderPrimitive_02d83368.surface_normal.B
-;   undefined4 SMRGLHeaderPrimitive_02d83368.surface_normal.C
-;   undefined4 SMRGLHeaderPrimitive_02d83368.surface_normal.D
-;   int INT_02d83380
-;   int INT_02d83384
-;   int INT_02d83388
-;   int INT_02d8338c
+;   undefined4 SMRGLPrimitiveQuadIndex_02d83368.base.base.count
+;   undefined4 SMRGLPrimitiveQuadIndex_02d83368.base.surface_normal.A
+;   undefined4 SMRGLPrimitiveQuadIndex_02d83368.base.surface_normal.B
+;   undefined4 SMRGLPrimitiveQuadIndex_02d83368.base.surface_normal.C
+;   undefined4 SMRGLPrimitiveQuadIndex_02d83368.base.surface_normal.D
+;   undefined4 SMRGLPrimitiveQuadIndex_02d83368.vertices[0]
+;   undefined4 SMRGLPrimitiveQuadIndex_02d83368.vertices[1]
+;   undefined4 SMRGLPrimitiveQuadIndex_02d83368.vertices[2]
+;   undefined4 SMRGLPrimitiveQuadIndex_02d83368.vertices[3]
 ;   int INT_02d83390
 ;   int INT_02d83394
 ;   ... and 4 more
@@ -52,18 +52,18 @@ section .text
     MOV EBX,dword ptr [0x006703ec]      ; 004eb9e4 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     MOV EDI,0x2d83390                   ; 004eb9ea | INT_02d83390
     XOR ECX,ECX                         ; 004eb9ef
-    MOV dword ptr [0x02d8336c],EDX      ; 004eb9f1 | SMRGLHeaderPrimitive_02d83368.base.count
-    MOV dword ptr [0x02d83370],ECX      ; 004eb9f7 | SMRGLHeaderPrimitive_02d83368.surface_normal.A
-    MOV dword ptr [0x02d83374],ECX      ; 004eb9fd | SMRGLHeaderPrimitive_02d83368.surface_normal.B
-    MOV dword ptr [0x02d83378],ECX      ; 004eba03 | SMRGLHeaderPrimitive_02d83368.surface_normal.C
-    MOV dword ptr [0x02d8337c],ECX      ; 004eba09 | SMRGLHeaderPrimitive_02d83368.surface_normal.D
-    MOV dword ptr [0x02d83380],ECX      ; 004eba0f | INT_02d83380
-    MOV [0x02d83384],EAX                ; 004eba15 | INT_02d83384
+    MOV dword ptr [0x02d8336c],EDX      ; 004eb9f1 | SMRGLPrimitiveQuadIndex_02d83368.base.base.count
+    MOV dword ptr [0x02d83370],ECX      ; 004eb9f7 | SMRGLPrimitiveQuadIndex_02d83368.base.surface_normal.A
+    MOV dword ptr [0x02d83374],ECX      ; 004eb9fd | SMRGLPrimitiveQuadIndex_02d83368.base.surface_normal.B
+    MOV dword ptr [0x02d83378],ECX      ; 004eba03 | SMRGLPrimitiveQuadIndex_02d83368.base.surface_normal.C
+    MOV dword ptr [0x02d8337c],ECX      ; 004eba09 | SMRGLPrimitiveQuadIndex_02d83368.base.surface_normal.D
+    MOV dword ptr [0x02d83380],ECX      ; 004eba0f | SMRGLPrimitiveQuadIndex_02d83368.vertices[0]
+    MOV [0x02d83384],EAX                ; 004eba15 | SMRGLPrimitiveQuadIndex_02d83368.vertices[1]
     PUSH EBX                            ; 004eba1a | g_CDemonRendererInstance
     MOV EDX,0x2                         ; 004eba1b
     MOV ECX,0x3                         ; 004eba20
-    MOV dword ptr [0x02d83388],EDX      ; 004eba25 | INT_02d83388
-    MOV dword ptr [0x02d8338c],ECX      ; 004eba2b | INT_02d8338c
+    MOV dword ptr [0x02d83388],EDX      ; 004eba25 | SMRGLPrimitiveQuadIndex_02d83368.vertices[2]
+    MOV dword ptr [0x02d8338c],ECX      ; 004eba2b | SMRGLPrimitiveQuadIndex_02d83368.vertices[3]
     CALL engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0 ; 004eba31
         ;   XREF to: 0048c7e0 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0(CDemonRenderer * this_ptr, CVector3i * output)
     LEA ESI,[ESP + 0x54]                ; 004eba36

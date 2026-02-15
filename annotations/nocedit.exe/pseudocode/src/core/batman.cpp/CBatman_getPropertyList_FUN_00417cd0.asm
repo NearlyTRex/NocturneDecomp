@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_batman_cpp_CBatman_getPropertyList_FUN_00417cd0(CBatman *this_ptr,CActorPropertyList *property_list)
+; void __cdecl core_batman_cpp_CBatman_getPropertyList_FUN_00417cd0(CBatman *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CBatman *        Stack[0x4]:4   this_ptr

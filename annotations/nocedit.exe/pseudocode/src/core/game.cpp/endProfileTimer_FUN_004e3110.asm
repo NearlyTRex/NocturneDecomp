@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_game_cpp_endProfileTimer_FUN_004e3110(void)
+; void __cdecl core_game_cpp_endProfileTimer_FUN_004e3110(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x1c]:8  local_1c

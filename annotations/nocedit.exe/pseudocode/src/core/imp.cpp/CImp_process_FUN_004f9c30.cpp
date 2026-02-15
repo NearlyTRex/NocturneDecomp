@@ -397,9 +397,9 @@ LAB_004f9c99:
       if (iVar7 != 0) {
         iVar12 = 0;
         iVar7 = 0;
-        while (iVar7 < *(int *)(g_CDemonSetPtr->unk4 + 0x1f3c)) {
+        while (iVar7 < g_CDemonSetPtr->enemy_count) {
           pCVar13 = (CImp *)core_actor_cpp_castToClassHash_FUN_0040c790
-                                      (*(CDemonActor **)(g_CDemonSetPtr->unk4 + iVar12 + 8000),
+                                      (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar12),
                                        g_CImpClassInfo.name_hash);
           if (((pCVar13 == (CImp *)0x0) || (pCVar13 == this_ptr)) ||
              ((this_ptr->base).victim != (pCVar13->base).victim)) {

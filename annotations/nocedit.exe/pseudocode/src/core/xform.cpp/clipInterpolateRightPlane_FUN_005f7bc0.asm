@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_xform_cpp_clipInterpolateRightPlane_FUN_005f7bc0(SRenderVertex *vertex_a,SRenderVertex *vertex_b,SRenderVertex *vertex_out)
+; void __cdecl core_xform_cpp_clipInterpolateRightPlane_FUN_005f7bc0(SRenderVertex *vertex_a,SRenderVertex *vertex_b,SRenderVertex *vertex_out)
 ;
 ; Parameters:
 ; SRenderVertex *  Stack[0x4]:4   vertex_a

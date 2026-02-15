@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dtri_cpp_clipPolygonToNear_FUN_0049bdf0(float z_near)
+; void __cdecl core_dtri_cpp_clipPolygonToNear_FUN_0049bdf0(float z_near)
 ;
 ; Parameters:
 ; float            Stack[0x4]:4   z_near

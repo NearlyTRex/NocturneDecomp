@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_health_cpp_CHealthItem_canPickup_FUN_004f1fb0(CHealthItem *this_ptr,CDemonActor *picker)
+; int __cdecl core_health_cpp_CHealthItem_canPickup_FUN_004f1fb0(CHealthItem *this_ptr,CDemonActor *picker)
 ;
 ; Parameters:
 ; CHealthItem *    Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_backgnd_cpp_CBackgroundActor_getPropertyList_FUN_00412a40(CBackgroundActor *this_ptr,CActorPropertyList *property_list)
+; void __cdecl core_backgnd_cpp_CBackgroundActor_getPropertyList_FUN_00412a40(CBackgroundActor *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CBackgroundActor * Stack[0x4]:4   this_ptr

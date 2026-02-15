@@ -30,10 +30,10 @@ void __cdecl core_trap_cpp_CTrap_process_FUN_005de770(CTrap *this_ptr,float delt
     }
     iVar3 = 0;
     (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_34);
-    for (iVar2 = 0; iVar2 < *(int *)(g_CDemonSetPtr->unk4 + 0x1f3c); iVar2 = iVar2 + 1) {
+    for (iVar2 = 0; iVar2 < g_CDemonSetPtr->enemy_count; iVar2 = iVar2 + 1) {
       this_ptr_00 = (CCharacter *)
                     core_actor_cpp_castToClassHash_FUN_0040c790
-                              (*(CDemonActor **)(g_CDemonSetPtr->unk4 + iVar3 + 8000),
+                              (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar3),
                                g_CWerewolfClassInfo.name_hash);
       if ((this_ptr_00 != (CCharacter *)0x0) &&
          (*(int *)(this_ptr_00[1].base.create_event + 0x4c) == 0)) {

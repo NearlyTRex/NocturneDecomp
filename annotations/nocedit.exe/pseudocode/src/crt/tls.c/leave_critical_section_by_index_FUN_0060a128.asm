@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_tls_c_leave_critical_section_by_index_FUN_0060a128(int sectionIndex)
+; void __cdecl crt_tls_c_leave_critical_section_by_index_FUN_0060a128(int sectionIndex)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   sectionIndex

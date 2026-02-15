@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_stone_cpp_CTempleStone_canPickup_FUN_005bad70(CTempleStone *this_ptr,CDemonActor *picker)
+; int __cdecl core_stone_cpp_CTempleStone_canPickup_FUN_005bad70(CTempleStone *this_ptr,CDemonActor *picker)
 ;
 ; Parameters:
 ; CTempleStone *   Stack[0x4]:4   this_ptr

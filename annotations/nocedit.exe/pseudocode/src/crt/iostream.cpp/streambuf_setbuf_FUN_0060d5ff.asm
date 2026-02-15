@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack streambuf * __watcallStack crt_iostream_cpp_streambuf_setbuf_FUN_0060d5ff(streambuf *this_ptr,void *buffer_start,int buffer_size)
+; streambuf * __watcallStack crt_iostream_cpp_streambuf_setbuf_FUN_0060d5ff(streambuf *this_ptr,void *buffer_start,int buffer_size)
 ;
 ; Parameters:
 ; streambuf *      Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_mp3_cpp_CFileBitStream_init_FUN_0052ecf0(CFileBitStream *this_ptr,_FILE *file_handle,int buffer_size,int stream_length)
+; void __cdecl sound_mp3_cpp_CFileBitStream_init_FUN_0052ecf0(CFileBitStream *this_ptr,_FILE *file_handle,int buffer_size,int stream_length)
 ;
 ; Parameters:
 ; CFileBitStream * Stack[0x4]:4   this_ptr

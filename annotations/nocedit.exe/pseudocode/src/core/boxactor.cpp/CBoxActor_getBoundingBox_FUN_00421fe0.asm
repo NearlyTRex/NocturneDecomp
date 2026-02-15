@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBoundingBox3D * __cdecl core_boxactor_cpp_CBoxActor_getBoundingBox_FUN_00421fe0(CBoxActor *this_ptr,CBoundingBox3D *out_box)
+; CBoundingBox3D * __cdecl core_boxactor_cpp_CBoxActor_getBoundingBox_FUN_00421fe0(CBoxActor *this_ptr,CBoundingBox3D *out_box)
 ;
 ; Parameters:
 ; CBoxActor *      Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLastPixelMode_FUN_00403ad0(SMRGLHeaderPrimitive *primitive)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLastPixelMode_FUN_00403ad0(SMRGLHeaderPrimitive *primitive)
 ;
 ; Parameters:
 ; SMRGLHeaderPrimitive * Stack[0x4]:4   primitive

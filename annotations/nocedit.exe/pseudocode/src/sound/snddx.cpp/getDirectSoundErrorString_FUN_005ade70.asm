@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * __cdecl sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uint error_code)
+; char * __cdecl sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uint error_code)
 ;
 ; Parameters:
 ; uint             Stack[0x4]:4   error_code

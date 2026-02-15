@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * __cdecl crt_io_c_getcwd_wrapper_FUN_00608d20(char *buffer,SIZE_T size)
+; char * __cdecl crt_io_c_getcwd_wrapper_FUN_00608d20(char *buffer,SIZE_T size)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   buffer

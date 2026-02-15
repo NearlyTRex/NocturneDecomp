@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_cow_cpp_CZombieCow_processDamage_FUN_00444b40(CZombieCow *this_ptr,SDamageInfo *damage_info)
+; void __cdecl core_cow_cpp_CZombieCow_processDamage_FUN_00444b40(CZombieCow *this_ptr,SDamageInfo *damage_info)
 ;
 ; Parameters:
 ; CZombieCow *     Stack[0x4]:4   this_ptr

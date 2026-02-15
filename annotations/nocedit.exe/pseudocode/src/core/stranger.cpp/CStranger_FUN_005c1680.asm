@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_stranger_cpp_CStranger_FUN_005c1680(CStranger *this_ptr)
+; int __cdecl core_stranger_cpp_CStranger_FUN_005c1680(CStranger *this_ptr)
 ;
 ; Parameters:
 ; CStranger *      Stack[0x4]:4   this_ptr
@@ -121,11 +121,11 @@ section .text
     MOV EAX,[0x006810c8]                ; 005c1736 | g_CDemonSetPtr
         ;   Label: LAB_005c1736
     MOV EDX,dword ptr [ESP + 0x154]     ; 005c173b
-    CMP EDX,dword ptr [EAX + 0x14d154]  ; 005c1742 | g_CDemonSetInstance.actor_list_ptr
+    CMP EDX,dword ptr [EAX + 0x14d154]  ; 005c1742 | g_CDemonSetInstance.actor_count
     JGE 0x005c1af5                      ; 005c1748
         ;   XREF to: 005c1af5 (CONDITIONAL_JUMP)  ; LAB_005c1af5
     ADD EAX,dword ptr [ESP + 0x158]     ; 005c174e
-    MOV EBX,dword ptr [EAX + 0x14d158]  ; 005c1755 | g_CDemonSetInstance.actor_list_data[0] | DAT_032613d4
+    MOV EBX,dword ptr [EAX + 0x14d158]  ; 005c1755 | g_CDemonSetInstance.actors[0] | DAT_032613d4
     PUSH EBX                            ; 005c175b
     MOV EAX,dword ptr [EBX + 0x154]     ; 005c175c
     CALL dword ptr [EAX + 0x8c]         ; 005c1762

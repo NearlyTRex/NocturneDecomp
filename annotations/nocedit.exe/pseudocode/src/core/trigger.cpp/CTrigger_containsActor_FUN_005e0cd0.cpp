@@ -36,7 +36,7 @@ int __cdecl core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(CTrigger *this_
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(actor,&CStack_40,&CStack_4c);
     if (this_ptr->pressure_plate != 0) {
       pCVar6 = (CCharacter *)core_actor_cpp_castToClassHash_FUN_0040c790(actor,g_CCharacterClassInfo.name_hash);
-      if ((pCVar6 != (CDemonActor *)0x0) && (pCVar6[0x1a].unk11 == 0)) {
+      if ((pCVar6 != (CDemonActor *)0x0) && (pCVar6[0x1a].reserved1 == 0)) {
         return 0;
       }
       CStack_40.y = (actor->location).position.y;

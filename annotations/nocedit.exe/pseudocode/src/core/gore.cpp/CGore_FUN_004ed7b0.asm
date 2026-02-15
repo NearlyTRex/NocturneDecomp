@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_gore_cpp_CGore_FUN_004ed7b0(CGore *this_ptr)
+; void __cdecl core_gore_cpp_CGore_FUN_004ed7b0(CGore *this_ptr)
 ;
 ; Parameters:
 ; CGore *          Stack[0x4]:4   this_ptr
@@ -19,7 +19,7 @@
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.blood_flag
-;   CBloodParticle[256] DAT_02d833d4
+;   CBloodParticle[256] CBloodParticle_ARRAY_02d833d4
 ;   undefined4 DAT_02d833ec
 ;   undefined4 DAT_02d83408
 ;   undefined4 DAT_02d83414
@@ -72,8 +72,8 @@ section .text
     CALL core_set.cpp_CDemonSet_FUN_0056d380 ; 004ed7e8
         ;   XREF to: 0056d380 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d380(CDemonSet * this_ptr)
     ADD ESP,0x18                        ; 004ed7ed
-    PUSH 0x2d833d4                      ; 004ed7f0 | DAT_02d833d4
-    MOV EBX,0x2d833d4                   ; 004ed7f5 | DAT_02d833d4
+    PUSH 0x2d833d4                      ; 004ed7f0 | CBloodParticle_ARRAY_02d833d4
+    MOV EBX,0x2d833d4                   ; 004ed7f5 | CBloodParticle_ARRAY_02d833d4
     CALL core_gore.cpp_CBloodParticle_FUN_004eb9d0 ; 004ed7fa
         ;   XREF to: 004eb9d0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodParticle_FUN_004eb9d0(CBloodParticle * this_ptr)
     LEA ESI,[EBX + 0x4000]              ; 004ed7ff | DAT_02d873d4
@@ -86,7 +86,7 @@ section .text
     SAHF                                ; 004ed811
     JNC 0x004ed81e                      ; 004ed812
         ;   XREF to: 004ed81e (CONDITIONAL_JUMP)  ; LAB_004ed81e
-    PUSH EBX                            ; 004ed814 | DAT_02d833d4 | DAT_02d83414
+    PUSH EBX                            ; 004ed814 | CBloodParticle_ARRAY_02d833d4 | DAT_02d83414
     MOV EAX,dword ptr [EBX + 0x34]      ; 004ed815 | DAT_02d83408 | DAT_02d83448
     CALL dword ptr [EAX + 0x8]          ; 004ed818
     ADD ESP,0x4                         ; 004ed81b

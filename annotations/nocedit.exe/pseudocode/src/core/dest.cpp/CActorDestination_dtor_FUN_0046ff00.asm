@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CActorDestination * __cdecl core_dest_cpp_CActorDestination_dtor_FUN_0046ff00(CActorDestination *this_ptr,uint flags)
+; CActorDestination * __cdecl core_dest_cpp_CActorDestination_dtor_FUN_0046ff00(CActorDestination *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CActorDestination * Stack[0x4]:4   this_ptr

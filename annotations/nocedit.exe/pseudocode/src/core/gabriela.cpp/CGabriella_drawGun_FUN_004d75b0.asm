@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_gabriela_cpp_CGabriella_drawGun_FUN_004d75b0(CGabriella *this_ptr,int drawn)
+; void __cdecl core_gabriela_cpp_CGabriella_drawGun_FUN_004d75b0(CGabriella *this_ptr,int drawn)
 ;
 ; Parameters:
 ; CGabriella *     Stack[0x4]:4   this_ptr

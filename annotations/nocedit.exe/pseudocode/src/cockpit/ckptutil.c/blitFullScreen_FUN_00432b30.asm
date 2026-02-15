@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl cockpit_ckptutil_c_blitFullScreen_FUN_00432b30(void *sprite_data,void *span_data)
+; void __cdecl cockpit_ckptutil_c_blitFullScreen_FUN_00432b30(void *sprite_data,void *span_data)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   sprite_data

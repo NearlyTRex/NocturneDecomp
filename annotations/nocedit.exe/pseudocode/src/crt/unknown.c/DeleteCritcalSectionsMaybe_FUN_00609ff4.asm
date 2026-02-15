@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown void crt_unknown_c_DeleteCritcalSectionsMaybe_FUN_00609ff4(void)
+; void crt_unknown_c_DeleteCritcalSectionsMaybe_FUN_00609ff4(void)
 ;
 ;
 ; XREF[1]:

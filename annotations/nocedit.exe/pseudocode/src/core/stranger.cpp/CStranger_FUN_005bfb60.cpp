@@ -123,7 +123,7 @@ LAB_005bfd3a:
                        (&pCVar12->motion_controller,local_20,(this_ptr->base).base.layer_action_t);
   local_18 = local_24;
   if ((((this_ptr->base).base.layer_action_index == 9) &&
-      (1.0 <= (this_ptr->base).base.layer_action_t)) && (*(int *)(this_ptr->unk6 + 4) != 0)) {
+      (1.0 <= (this_ptr->base).base.layer_action_t)) && (this_ptr->unk7 != 0)) {
     pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(pCVar12);
     iVar5 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(&pCVar4->motion_list);
     local_20 = iVar5;
@@ -259,7 +259,7 @@ LAB_005bfd3a:
   else if ((this_ptr->base).base.layer_action_index != 0xe) {
     return;
   }
-  fVar11 = (float10)fpatan((float10)*(float *)(this_ptr->unk9 + 0x6c) / (float10)2.7f,
+  fVar11 = (float10)fpatan((float10)*(float *)(this_ptr->unk8 + 0x6c) / (float10)2.7f,
                            (float10)1);
   local_34 = (float)fVar11;
   core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(local_34,&local_d0);

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CGabriella * __cdecl core_gabriela_cpp_factoryFunc_FUN_004d2ae0(void)
+; CGabriella * __cdecl core_gabriela_cpp_factoryFunc_FUN_004d2ae0(void)
 ;
 ;
 ; XREF[1]:

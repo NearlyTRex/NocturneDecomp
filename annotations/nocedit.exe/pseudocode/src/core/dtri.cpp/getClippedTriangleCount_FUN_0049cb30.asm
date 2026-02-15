@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_dtri_cpp_getClippedTriangleCount_FUN_0049cb30(void)
+; int __cdecl core_dtri_cpp_getClippedTriangleCount_FUN_0049cb30(void)
 ;
 ;
 ; XREF[1]:

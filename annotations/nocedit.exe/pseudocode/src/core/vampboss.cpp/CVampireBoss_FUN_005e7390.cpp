@@ -17,9 +17,9 @@ void __cdecl core_vampboss_cpp_CVampireBoss_FUN_005e7390(CVampireBoss *this_ptr)
   iVar3 = 0;
   (*((this_ptr->base).base.base.vtable._ub)->playSound)
             ((CDemonActor *)this_ptr,"voicusummon.wav");
-  for (iVar2 = 0; iVar2 < (int)g_CDemonSetPtr->actor_list_ptr; iVar2 = iVar2 + 1) {
+  for (iVar2 = 0; iVar2 < g_CDemonSetPtr->actor_count; iVar2 = iVar2 + 1) {
     this_ptr_00 = (CDrip *)core_actor_cpp_castToClassHash_FUN_0040c790
-                                     (*(CDemonActor **)(g_CDemonSetPtr->actor_list_data + iVar3),
+                                     (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar3),
                                       g_CDripClassInfo.name_hash);
     if ((this_ptr_00 != (CDrip *)0x0) && (this_ptr_00->type == DRIP_TYPE_STALAG)) {
       iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);

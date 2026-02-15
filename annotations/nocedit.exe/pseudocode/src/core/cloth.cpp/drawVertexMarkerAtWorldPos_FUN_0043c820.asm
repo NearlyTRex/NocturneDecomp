@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_cloth_cpp_drawVertexMarkerAtWorldPos_FUN_0043c820(CVector3f *world_pos)
+; void __cdecl core_cloth_cpp_drawVertexMarkerAtWorldPos_FUN_0043c820(CVector3f *world_pos)
 ;
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   world_pos

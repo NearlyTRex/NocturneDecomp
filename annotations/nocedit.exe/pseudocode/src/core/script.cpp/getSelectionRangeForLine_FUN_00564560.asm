@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_script_cpp_getSelectionRangeForLine_FUN_00564560(int line,int *sel_start_col_out,int *sel_end_col_out)
+; void __cdecl core_script_cpp_getSelectionRangeForLine_FUN_00564560(int line,int *sel_start_col_out,int *sel_end_col_out)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   line

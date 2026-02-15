@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9a10(CSvetlana *this_ptr)
+; void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9a10(CSvetlana *this_ptr)
 ;
 ; Parameters:
 ; CSvetlana *      Stack[0x4]:4   this_ptr
@@ -29,8 +29,8 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 g_CDemonSetInstance.damage_listener_count
-;   undefined4 g_CDemonSetInstance.damage_listeners
+;   undefined4 g_CDemonSetInstance.character_count
+;   undefined4 g_CDemonSetInstance.characters[0]
 ;   undefined4 DAT_03263318
 ;   undefined4 DAT_0326331c
 ;
@@ -117,10 +117,10 @@ section .text
     MOV dword ptr [ESP + 0x70],ECX      ; 005d9abc
     MOV EAX,[0x006810c8]                ; 005d9ac0 | g_CDemonSetPtr
         ;   Label: LAB_005d9ac0
-    CMP EDI,dword ptr [EAX + 0x14f098]  ; 005d9ac5 | g_CDemonSetInstance.damage_listener_count
+    CMP EDI,dword ptr [EAX + 0x14f098]  ; 005d9ac5 | g_CDemonSetInstance.character_count
     JGE 0x005d9b7b                      ; 005d9acb
         ;   XREF to: 005d9b7b (CONDITIONAL_JUMP)  ; LAB_005d9b7b
-    MOV EBX,dword ptr [ESI + EAX*0x1 + 0x14f09c] ; 005d9ad1 | g_CDemonSetInstance.damage_listeners | DAT_03263318 | DAT_0326331c
+    MOV EBX,dword ptr [ESI + EAX*0x1 + 0x14f09c] ; 005d9ad1 | g_CDemonSetInstance.characters[0] | DAT_03263318 | DAT_0326331c
     CMP EBX,EBP                         ; 005d9ad8
     JNZ 0x005d9b12                      ; 005d9ada
         ;   XREF to: 005d9b12 (CONDITIONAL_JUMP)  ; LAB_005d9b12

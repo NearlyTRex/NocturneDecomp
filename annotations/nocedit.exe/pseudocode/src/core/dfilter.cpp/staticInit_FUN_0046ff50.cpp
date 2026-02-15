@@ -10,9 +10,9 @@ void __cdecl core_dfilter_cpp_staticInit_FUN_0046ff50(void)
 
 {
   __arrinit(CDemonFilter_ARRAY_020a4878,8,&g_CDemonFilterTypeInfo);
-  _atexit(&DAT_0066ef5c);
+  _atexit(&WatcomStaticDestructorNode_0066ef5c);
   __arrinit(CDemonFilter_ARRAY_020a4ad8,4,&g_CDemonFilterTypeInfo);
-  _atexit(&DAT_0066ef6c);
+  _atexit(&WatcomStaticDestructorNode_0066ef6c);
   core_dfilter_cpp_CFilterCache_ctor_FUN_0046ffd0(&g_CFilterCacheInstance);
   _atexit(&g_CFilterCacheDestructorNode);
   core_dfilter_cpp_CFilterFX_ctor_FUN_004706c0(&g_CFilterFXInstance);

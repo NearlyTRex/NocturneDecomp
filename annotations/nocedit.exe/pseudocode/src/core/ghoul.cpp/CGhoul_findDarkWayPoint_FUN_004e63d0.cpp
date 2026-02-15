@@ -31,9 +31,9 @@ void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(CGhoul *this_pt
     local_18 = 0;
     local_1c = 0;
     *(float *)(this_ptr->unk3 + 0x40) = local_14 + *(float *)(this_ptr->unk3 + 0x40);
-    for (; local_18 < (int)g_CDemonSetPtr->actor_list_ptr; local_18 = local_18 + 1) {
+    for (; local_18 < g_CDemonSetPtr->actor_count; local_18 = local_18 + 1) {
       this_ptr_00 = core_actor_cpp_castToClassHash_FUN_0040c790
-                              (*(CDemonActor **)(g_CDemonSetPtr->actor_list_data + local_1c),
+                              (*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_1c),
                                g_CWayPointClassInfo.name_hash);
       if ((this_ptr_00 != (CDemonActor *)0x0) &&
          (iVar2 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20
@@ -41,10 +41,10 @@ void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(CGhoul *this_pt
          iVar2 != 0)) {
         iVar2 = 0;
         local_20 = 1;
-        for (iVar4 = 0; iVar4 < *(int *)(g_CDemonSetPtr->unk4 + 0x1f3c); iVar4 = iVar4 + 1) {
+        for (iVar4 = 0; iVar4 < g_CDemonSetPtr->enemy_count; iVar4 = iVar4 + 1) {
           pCVar3 = (CGhoul *)
                    core_actor_cpp_castToClassHash_FUN_0040c790
-                             (*(CDemonActor **)(g_CDemonSetPtr->unk4 + iVar2 + 8000),
+                             (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar2),
                               g_CGhoulClassInfo.name_hash);
           if (((pCVar3 != (CGhoul *)0x0) && (pCVar3 != this_ptr)) &&
              (this_ptr_00 == *(CDemonActor **)(pCVar3->unk3 + 0x3c))) goto LAB_004e646f;
@@ -53,7 +53,7 @@ void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(CGhoul *this_pt
         if (local_20 != 0) {
           this_ptr_01 = (*((this_ptr_00->vtable)._ub)->getPathMap)(this_ptr_00);
           if (this_ptr_01 == (CPathMap *)0x0) {
-            this_ptr_01 = core_path_cpp_FUN_00548500();
+            this_ptr_01 = core_path_cpp_FUN_00548500(&this_ptr_00->location);
           }
           if (this_ptr_01 == (CPathMap *)0x0) {
             g_CurrentFilename = "..\\core\\ghoul.cpp";

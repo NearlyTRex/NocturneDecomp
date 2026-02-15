@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_design_c_qsortCompareByField4_FUN_004661d0(void *element_a,void *element_b)
+; int __cdecl shape_design_c_qsortCompareByField4_FUN_004661d0(void *element_a,void *element_b)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   element_a

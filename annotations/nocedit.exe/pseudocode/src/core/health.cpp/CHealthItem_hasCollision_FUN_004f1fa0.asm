@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_health_cpp_CHealthItem_hasCollision_FUN_004f1fa0(CHealthItem *this_ptr,SCollisionInfo *collision_info)
+; int __cdecl core_health_cpp_CHealthItem_hasCollision_FUN_004f1fa0(CHealthItem *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CHealthItem *    Stack[0x4]:4   this_ptr

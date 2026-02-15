@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_memdbg_cpp_releaseDebugMutex_FUN_0050ee90(void)
+; void __cdecl shape_memdbg_cpp_releaseDebugMutex_FUN_0050ee90(void)
 ;
 ;
 ; Referenced Globals:

@@ -8,14 +8,14 @@
 #include "types/classes/CGame.h"
 #include "types/classes/CGore.h"
 #include "types/classes/CPickList.h"
-#include "types/structs/SMRGLHeaderPrimitive.h"
+#include "types/structs/SMRGLPrimitiveQuadIndex.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x2D80000
 // =============================================================================
 
 // CBloodParticle[256]
-extern CBloodParticle DAT_02d833d4[256];
+extern CBloodParticle CBloodParticle_ARRAY_02d833d4[256];
 
 // CBloodSplat[2000]
 extern CBloodSplat DAT_02d873dc[2000];
@@ -35,8 +35,8 @@ extern CGore g_CGoreInstance;
 // CPickList
 extern CPickList g_CPickList;
 
-// SMRGLHeaderPrimitive
-extern SMRGLHeaderPrimitive SMRGLHeaderPrimitive_02d83368;
+// SMRGLPrimitiveQuadIndex
+extern SMRGLPrimitiveQuadIndex SMRGLPrimitiveQuadIndex_02d83368;
 
 // char
 extern char g_CurrentSaveFile;
@@ -96,10 +96,6 @@ extern int INT_02d83318;
 extern int INT_02d8331c;
 extern int INT_02d83320;
 extern int INT_02d83324;
-extern int INT_02d83380;
-extern int INT_02d83384;
-extern int INT_02d83388;
-extern int INT_02d8338c;
 extern int INT_02d83390;
 extern int INT_02d83394;
 extern int INT_02d83398;

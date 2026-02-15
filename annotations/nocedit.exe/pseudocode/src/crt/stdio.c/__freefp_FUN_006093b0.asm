@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_stdio_c___freefp_FUN_006093b0(_FILE *file_handle)
+; void __cdecl crt_stdio_c___freefp_FUN_006093b0(_FILE *file_handle)
 ;
 ; Parameters:
 ; _FILE *          Stack[0x4]:4   file_handle

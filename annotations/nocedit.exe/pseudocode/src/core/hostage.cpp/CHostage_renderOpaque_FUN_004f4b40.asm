@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_hostage_cpp_CHostage_renderOpaque_FUN_004f4b40(CHostage *this_ptr)
+; int __cdecl core_hostage_cpp_CHostage_renderOpaque_FUN_004f4b40(CHostage *this_ptr)
 ;
 ; Parameters:
 ; CHostage *       Stack[0x4]:4   this_ptr

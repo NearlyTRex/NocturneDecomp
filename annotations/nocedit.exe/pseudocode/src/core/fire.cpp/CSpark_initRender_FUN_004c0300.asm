@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_fire_cpp_CSpark_initRender_FUN_004c0300(CSpark *this_ptr)
+; int __cdecl core_fire_cpp_CSpark_initRender_FUN_004c0300(CSpark *this_ptr)
 ;
 ; Parameters:
 ; CSpark *         Stack[0x4]:4   this_ptr

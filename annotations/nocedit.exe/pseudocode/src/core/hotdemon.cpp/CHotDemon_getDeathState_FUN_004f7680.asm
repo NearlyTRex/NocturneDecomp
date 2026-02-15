@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_hotdemon_cpp_CHotDemon_getDeathState_FUN_004f7680(CHotDemon *this_ptr)
+; int __cdecl core_hotdemon_cpp_CHotDemon_getDeathState_FUN_004f7680(CHotDemon *this_ptr)
 ;
 ; Parameters:
 ; CHotDemon *      Stack[0x4]:4   this_ptr

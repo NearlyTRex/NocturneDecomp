@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_gabriela_cpp_CGabriella_FUN_004d5870(CGabriella *this_ptr)
+; int __cdecl core_gabriela_cpp_CGabriella_FUN_004d5870(CGabriella *this_ptr)
 ;
 ; Parameters:
 ; CGabriella *     Stack[0x4]:4   this_ptr
@@ -45,8 +45,8 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 g_CDemonSetInstance.actor_list_ptr
-;   undefined4 g_CDemonSetInstance.actor_list_data[0]
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;   undefined4 DAT_032613d4
 ;
 ; Called Functions:
@@ -158,10 +158,10 @@ section .text
     MOV EAX,[0x006810c8]                ; 004d598c | g_CDemonSetPtr
         ;   Label: LAB_004d598c
     MOV EDX,dword ptr [ESP + 0xa8]      ; 004d5991
-    CMP EDX,dword ptr [EAX + 0x14d154]  ; 004d5998 | g_CDemonSetInstance.actor_list_ptr
+    CMP EDX,dword ptr [EAX + 0x14d154]  ; 004d5998 | g_CDemonSetInstance.actor_count
     JGE 0x004d5b60                      ; 004d599e
         ;   XREF to: 004d5b60 (CONDITIONAL_JUMP)  ; LAB_004d5b60
-    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14d158] ; 004d59a4 | g_CDemonSetInstance.actor_list_data[0] | DAT_032613d4
+    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14d158] ; 004d59a4 | g_CDemonSetInstance.actors[0] | DAT_032613d4
     PUSH EBX                            ; 004d59ab
     MOV EAX,dword ptr [EBX + 0x154]     ; 004d59ac
     CALL dword ptr [EAX + 0x8c]         ; 004d59b2

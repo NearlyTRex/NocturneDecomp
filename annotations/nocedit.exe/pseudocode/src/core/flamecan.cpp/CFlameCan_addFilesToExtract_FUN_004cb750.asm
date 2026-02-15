@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_flamecan_cpp_CFlameCan_addFilesToExtract_FUN_004cb750(CFlameCan *this_ptr,_FILE *file_handle)
+; void __cdecl core_flamecan_cpp_CFlameCan_addFilesToExtract_FUN_004cb750(CFlameCan *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CFlameCan *      Stack[0x4]:4   this_ptr

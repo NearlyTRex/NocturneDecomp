@@ -13562,23 +13562,11 @@
               }
             ]
           },
-          "type":"undefined4"
+          "type":"va_list_t"
         },
         {
           "name":"local_1014",
-          "storage":{
-            "offset":-4116,
-            "size":1,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x1014]",
-                "offset":-4116,
-                "size":1
-              }
-            ]
-          },
-          "type":"undefined1"
+          "type":"char[4096]"
         }
       ],
       "params":[
@@ -13614,6 +13602,9 @@
           },
           "type":"char*"
         }
+      ],
+      "storage_conflicts_resolved":[
+        "local_1014"
       ]
     }
   },
@@ -38856,7 +38847,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_font.cpp_CBitFont_drawTextCenterInClipF_FUN_004ce090",
+    "name":"engine_font.cpp_CBitFont_printCenterFV_FUN_004ce090",
     "ret":"int",
     "vars":{
       "locals":[
@@ -55002,6 +54993,24 @@
             ]
           },
           "type":"undefined1"
+        }
+      ],
+      "params":[
+        {
+          "name":"location",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CLocation*"
         }
       ],
       "ret_storage":{

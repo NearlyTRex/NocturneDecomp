@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CExplosion * __cdecl core_fire_cpp_CExplosion_arrdtor_FUN_004c98d0(CExplosion *objs,uint flags)
+; CExplosion * __cdecl core_fire_cpp_CExplosion_arrdtor_FUN_004c98d0(CExplosion *objs,uint flags)
 ;
 ; Parameters:
 ; CExplosion *     Stack[0x4]:4   objs

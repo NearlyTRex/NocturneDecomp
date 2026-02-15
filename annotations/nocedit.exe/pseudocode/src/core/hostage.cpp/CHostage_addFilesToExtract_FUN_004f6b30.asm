@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_hostage_cpp_CHostage_addFilesToExtract_FUN_004f6b30(CHostage *this_ptr,_FILE *file_handle)
+; void __cdecl core_hostage_cpp_CHostage_addFilesToExtract_FUN_004f6b30(CHostage *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CHostage *       Stack[0x4]:4   this_ptr

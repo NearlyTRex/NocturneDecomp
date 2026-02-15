@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_mirror_cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_00522560(CMirror *this_ptr,SMRGLHeaderPrimitive *prim)
+; void __cdecl core_mirror_cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_00522560(CMirror *this_ptr,SMRGLHeaderPrimitive *prim)
 ;
 ; Parameters:
 ; CMirror *        Stack[0x4]:4   this_ptr

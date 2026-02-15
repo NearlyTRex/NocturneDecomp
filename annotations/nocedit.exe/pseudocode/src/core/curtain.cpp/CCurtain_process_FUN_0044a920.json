@@ -19,14 +19,15 @@
   },
   "complexity": {
     "assembly_lines": 651,
-    "complexity_score": 508,
+    "complexity_score": 523,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 19,
     "pseudocode_lines": 293,
-    "suspect_count": 20,
+    "suspect_count": 21,
     "suspect_types": [
       "decompiler_intrinsic",
+      "pointer_cast",
       "undefined_data",
       "unresolved_funcptr"
     ],
@@ -167,13 +168,13 @@
     },
     {
       "addr": "03263310",
-      "name": "g_CDemonSetInstance.damage_listener_count",
+      "name": "g_CDemonSetInstance.character_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "03263314",
-      "name": "g_CDemonSetInstance.damage_listeners",
+      "name": "g_CDemonSetInstance.characters[0]",
       "type": "undefined4",
       "value": null
     },
@@ -331,8 +332,15 @@
       "description": "Undefined global data reference",
       "line": 105,
       "match": "DAT_008879bc",
-      "text": "for (iStack_20 = 0; iVar5 = DAT_008879bc, iStack_20 < g_CDemonSetPtr->damage_listener_count;",
+      "text": "for (iStack_20 = 0; iVar5 = DAT_008879bc, iStack_20 < g_CDemonSetPtr->character_count;",
       "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 107,
+      "match": "(int *)((int)",
+      "text": "iVar9 = *(int *)((int)g_CDemonSetPtr->characters + iStack_28);",
+      "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",

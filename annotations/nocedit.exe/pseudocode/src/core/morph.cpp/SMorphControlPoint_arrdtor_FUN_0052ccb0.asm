@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SMorphControlPoint * __cdecl core_morph_cpp_SMorphControlPoint_arrdtor_FUN_0052ccb0(SMorphControlPoint *objs,uint flags)
+; SMorphControlPoint * __cdecl core_morph_cpp_SMorphControlPoint_arrdtor_FUN_0052ccb0(SMorphControlPoint *objs,uint flags)
 ;
 ; Parameters:
 ; SMorphControlPoint * Stack[0x4]:4   objs

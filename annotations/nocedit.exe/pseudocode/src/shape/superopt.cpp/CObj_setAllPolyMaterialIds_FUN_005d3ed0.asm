@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_superopt_cpp_CObj_setAllPolyMaterialIds_FUN_005d3ed0(CObj *this_ptr,int material_id)
+; void __cdecl shape_superopt_cpp_CObj_setAllPolyMaterialIds_FUN_005d3ed0(CObj *this_ptr,int material_id)
 ;
 ; Parameters:
 ; CObj *           Stack[0x4]:4   this_ptr

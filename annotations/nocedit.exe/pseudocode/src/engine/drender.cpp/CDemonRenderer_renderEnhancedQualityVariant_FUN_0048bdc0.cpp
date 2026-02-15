@@ -41,7 +41,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_
         }
         g_RenderStateFlag2 = PREPROCESS_W_DEPTH_REPLACEMENT;
         g_RenderStateFlags.dword = RENDER_ENGINE_ULTRA_QUALITY;
-        if ((this_ptr->unk == 0) && (iVar4 = 0, 0 < (polygon_info->base).count)) {
+        if ((this_ptr->skip_uv_extraction == 0) && (iVar4 = 0, 0 < (polygon_info->base).count)) {
           iVar3 = 0;
           pSVar2 = polygon_info;
           do {

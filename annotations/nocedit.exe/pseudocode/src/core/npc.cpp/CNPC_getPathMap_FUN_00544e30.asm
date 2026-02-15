@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CPathMap * __cdecl core_npc_cpp_CNPC_getPathMap_FUN_00544e30(CNPC *this_ptr)
+; CPathMap * __cdecl core_npc_cpp_CNPC_getPathMap_FUN_00544e30(CNPC *this_ptr)
 ;
 ; Parameters:
 ; CNPC *           Stack[0x4]:4   this_ptr

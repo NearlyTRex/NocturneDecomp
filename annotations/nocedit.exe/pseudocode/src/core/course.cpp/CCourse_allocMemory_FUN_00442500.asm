@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_course_cpp_CCourse_allocMemory_FUN_00442500(CCourse *this_ptr)
+; void __cdecl core_course_cpp_CCourse_allocMemory_FUN_00442500(CCourse *this_ptr)
 ;
 ; Parameters:
 ; CCourse *        Stack[0x4]:4   this_ptr

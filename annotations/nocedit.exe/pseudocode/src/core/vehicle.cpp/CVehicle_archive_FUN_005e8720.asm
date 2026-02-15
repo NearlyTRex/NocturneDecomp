@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_vehicle_cpp_CVehicle_archive_FUN_005e8720(CVehicle *this_ptr)
+; void __cdecl core_vehicle_cpp_CVehicle_archive_FUN_005e8720(CVehicle *this_ptr)
 ;
 ; Parameters:
 ; CVehicle *       Stack[0x4]:4   this_ptr

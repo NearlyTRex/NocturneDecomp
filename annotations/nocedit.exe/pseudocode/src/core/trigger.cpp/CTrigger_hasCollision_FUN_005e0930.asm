@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_trigger_cpp_CTrigger_hasCollision_FUN_005e0930(CTrigger *this_ptr,SCollisionInfo *collision_info)
+; int __cdecl core_trigger_cpp_CTrigger_hasCollision_FUN_005e0930(CTrigger *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CTrigger *       Stack[0x4]:4   this_ptr

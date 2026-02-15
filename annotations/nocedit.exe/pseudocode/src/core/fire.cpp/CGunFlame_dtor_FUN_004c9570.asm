@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CGunFlame * __cdecl core_fire_cpp_CGunFlame_dtor_FUN_004c9570(CGunFlame *this_ptr,uint flags)
+; CGunFlame * __cdecl core_fire_cpp_CGunFlame_dtor_FUN_004c9570(CGunFlame *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CGunFlame *      Stack[0x4]:4   this_ptr

@@ -40,7 +40,7 @@ int __cdecl engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf
           if ((primitive_array->base).count == 4) {
             local_1c = primitive_array[2].surface_normal.B;
           }
-          if (this_ptr->unk == 0) {
+          if (this_ptr->skip_uv_extraction == 0) {
             this_ptr->vertex_buffer_ptr[local_28.x].u = primitive_array[1].base.count;
             this_ptr->vertex_buffer_ptr[local_28.x].v = primitive_array[1].surface_normal.A;
             this_ptr->vertex_buffer_ptr[local_28.y].u = primitive_array[1].surface_normal.C;

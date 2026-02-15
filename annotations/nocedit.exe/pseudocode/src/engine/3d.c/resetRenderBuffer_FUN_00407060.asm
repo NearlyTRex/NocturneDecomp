@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_3d_c_resetRenderBuffer_FUN_00407060(void)
+; void __cdecl engine_3d_c_resetRenderBuffer_FUN_00407060(void)
 ;
 ;
 ; Referenced Globals:

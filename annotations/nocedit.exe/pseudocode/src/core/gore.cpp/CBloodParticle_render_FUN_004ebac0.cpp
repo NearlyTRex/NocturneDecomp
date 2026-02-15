@@ -137,7 +137,7 @@ LAB_004ebdb7:
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
             (g_CDemonRendererPtr2,0xffff - (int)g_PerspectiveReciprocal);
   engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
-            (g_CDemonRendererPtr2,&SMRGLHeaderPrimitive_02d83368);
+            (g_CDemonRendererPtr2,&SMRGLPrimitiveQuadIndex_02d83368.base);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
   CStack_e8.x = (this_ptr->base).position.x;
   CStack_e8.y = (this_ptr->base).position.y;
@@ -220,7 +220,7 @@ LAB_004ebdb7:
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
               (g_CDemonRendererPtr2,0xffff - (int)g_PerspectiveReciprocal);
     engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
-              (g_CDemonRendererPtr2,&SMRGLHeaderPrimitive_02d83368);
+              (g_CDemonRendererPtr2,&SMRGLPrimitiveQuadIndex_02d83368.base);
     iVar3 = iVar3 + 1;
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
   } while (iVar3 < 3);

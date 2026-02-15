@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_stranger_cpp_CStranger_FUN_005c4c20(CStranger *this_ptr)
+; void __cdecl core_stranger_cpp_CStranger_FUN_005c4c20(CStranger *this_ptr)
 ;
 ; Parameters:
 ; CStranger *      Stack[0x4]:4   this_ptr
@@ -58,8 +58,8 @@
 ;   float FLOAT_00663740 = 0.5
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.damage_listener_count
-;   undefined4 g_CDemonSetInstance.damage_listeners
+;   undefined4 g_CDemonSetInstance.character_count
+;   undefined4 g_CDemonSetInstance.characters[0]
 ;   undefined4 DAT_03263318
 ;   int INT_03f6bad0
 ;   int INT_03f6bad4
@@ -103,10 +103,10 @@ section .text
     XOR EDI,EDI                         ; 005c4c4f
     MOV EAX,[0x006810c8]                ; 005c4c51 | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_005c4c51
-    CMP ESI,dword ptr [EAX + 0x14f098]  ; 005c4c56 | g_CDemonSetInstance.damage_listener_count
+    CMP ESI,dword ptr [EAX + 0x14f098]  ; 005c4c56 | g_CDemonSetInstance.character_count
     JGE 0x005c4d62                      ; 005c4c5c
         ;   XREF to: 005c4d62 (CONDITIONAL_JUMP)  ; LAB_005c4d62
-    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14f09c] ; 005c4c62 | g_CDemonSetInstance.damage_listeners | DAT_03263318
+    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14f09c] ; 005c4c62 | g_CDemonSetInstance.characters[0] | DAT_03263318
     LEA EAX,[EBX + 0x20]                ; 005c4c69
     PUSH EAX                            ; 005c4c6c
     LEA EAX,[ESP + 0xac]                ; 005c4c6d

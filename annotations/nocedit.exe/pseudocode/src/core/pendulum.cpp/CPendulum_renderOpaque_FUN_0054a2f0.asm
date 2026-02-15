@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_pendulum_cpp_CPendulum_renderOpaque_FUN_0054a2f0(CPendulum *this_ptr)
+; int __cdecl core_pendulum_cpp_CPendulum_renderOpaque_FUN_0054a2f0(CPendulum *this_ptr)
 ;
 ; Parameters:
 ; CPendulum *      Stack[0x4]:4   this_ptr

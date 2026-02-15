@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70(CDemonMission *this_ptr,CDemonActor *actor)
+; void __cdecl core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70(CDemonMission *this_ptr,CDemonActor *actor)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr

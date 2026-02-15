@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_drip_cpp_CDrip_addFilesToExtract_FUN_0048ea60(CDrip *this_ptr,_FILE *file_handle)
+; void __cdecl core_drip_cpp_CDrip_addFilesToExtract_FUN_0048ea60(CDrip *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CDrip *          Stack[0x4]:4   this_ptr

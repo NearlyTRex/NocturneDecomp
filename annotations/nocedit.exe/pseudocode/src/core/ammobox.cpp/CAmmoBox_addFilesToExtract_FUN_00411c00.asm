@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_ammobox_cpp_CAmmoBox_addFilesToExtract_FUN_00411c00(CAmmoBox *this_ptr,_FILE *file_handle)
+; void __cdecl core_ammobox_cpp_CAmmoBox_addFilesToExtract_FUN_00411c00(CAmmoBox *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CAmmoBox *       Stack[0x4]:4   this_ptr

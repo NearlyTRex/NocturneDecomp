@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CMobster * __cdecl core_mobster_cpp_CMobster_dtor_FUN_00527c70(CMobster *this_ptr,uint flags)
+; CMobster * __cdecl core_mobster_cpp_CMobster_dtor_FUN_00527c70(CMobster *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CMobster *       Stack[0x4]:4   this_ptr

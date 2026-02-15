@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_glass_cpp_staticInit_FUN_004e8fd0(void)
+; void __cdecl core_glass_cpp_staticInit_FUN_004e8fd0(void)
 ;
 ;
 ; Referenced Globals:

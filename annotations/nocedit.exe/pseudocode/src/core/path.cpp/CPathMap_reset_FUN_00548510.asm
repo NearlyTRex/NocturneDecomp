@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_path_cpp_CPathMap_reset_FUN_00548510(CPathMap *this_ptr)
+; void __cdecl core_path_cpp_CPathMap_reset_FUN_00548510(CPathMap *this_ptr)
 ;
 ; Parameters:
 ; CPathMap *       Stack[0x4]:4   this_ptr

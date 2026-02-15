@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_edittool_cpp_CStrList_findString_FUN_004a3030(CStrList *this_ptr,char *search_string)
+; int __cdecl shape_edittool_cpp_CStrList_findString_FUN_004a3030(CStrList *this_ptr,char *search_string)
 ;
 ; Parameters:
 ; CStrList *       Stack[0x4]:4   this_ptr

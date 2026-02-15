@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBarrier * __cdecl core_barrier_cpp_factoryFunc_FUN_00414180(void)
+; CBarrier * __cdecl core_barrier_cpp_factoryFunc_FUN_00414180(void)
 ;
 ;
 ; XREF[1]:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_gore_cpp_CBloodParticle_FUN_004eb9a0(CBloodParticle *this_ptr)
+; void __cdecl core_gore_cpp_CBloodParticle_FUN_004eb9a0(CBloodParticle *this_ptr)
 ;
 ; Parameters:
 ; CBloodParticle * Stack[0x4]:4   this_ptr

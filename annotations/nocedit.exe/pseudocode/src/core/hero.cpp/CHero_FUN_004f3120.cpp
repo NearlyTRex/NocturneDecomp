@@ -34,9 +34,9 @@ int __cdecl core_hero_cpp_CHero_FUN_004f3120(CHero *this_ptr)
   if (iVar1 == 0) {
     if (this_ptr->pushed_object == (CDemonActor *)0x0) {
       iVar1 = 0;
-      for (iVar5 = 0; iVar5 < (int)g_CDemonSetPtr->actor_list_ptr; iVar5 = iVar5 + 1) {
+      for (iVar5 = 0; iVar5 < g_CDemonSetPtr->actor_count; iVar5 = iVar5 + 1) {
         pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790
-                           (*(CDemonActor **)(g_CDemonSetPtr->actor_list_data + iVar1),
+                           (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar1),
                             g_CBoxActorClassInfo.name_hash);
         if (((pCVar2 != (CDemonActor *)0x0) && (pCVar2[2].direction_hint != 0)) &&
            (pCVar2[2].was_created == 0)) {

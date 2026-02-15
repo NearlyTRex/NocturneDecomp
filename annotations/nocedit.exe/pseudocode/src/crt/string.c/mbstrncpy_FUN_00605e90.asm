@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack char * __watcallStack crt_string_c_mbstrncpy_FUN_00605e90(char *dest,char *src,int char_count)
+; char * __watcallStack crt_string_c_mbstrncpy_FUN_00605e90(char *dest,char *src,int char_count)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   dest

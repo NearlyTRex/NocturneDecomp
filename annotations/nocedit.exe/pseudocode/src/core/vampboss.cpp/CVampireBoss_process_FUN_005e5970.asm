@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *this_ptr,float delta_time)
+; void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CVampireBoss *   Stack[0x4]:4   this_ptr
@@ -1247,7 +1247,7 @@ section .text
     MOV EAX,[0x006810c8]                ; 005e670a | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_005e670a
     MOV EDX,dword ptr [ESP + 0x224]     ; 005e670f
-    CMP EDX,dword ptr [EAX + 0x150fdc]  ; 005e6716 | g_CDemonSetInstance.unk4[7996]
+    CMP EDX,dword ptr [EAX + 0x150fdc]  ; 005e6716 | g_CDemonSetInstance.enemy_count
     JGE 0x005e649b                      ; 005e671c
         ;   XREF to: 005e649b (CONDITIONAL_JUMP)  ; LAB_005e649b
     MOV ESI,dword ptr [0x03f87518]      ; 005e6722 | g_CTVBatClassInfo.name_hash

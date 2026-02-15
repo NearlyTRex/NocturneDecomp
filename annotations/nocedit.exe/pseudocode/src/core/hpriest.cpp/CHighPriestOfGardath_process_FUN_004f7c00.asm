@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_hpriest_cpp_CHighPriestOfGardath_process_FUN_004f7c00(CHighPriestOfGardath *this_ptr,float delta_time)
+; void __cdecl core_hpriest_cpp_CHighPriestOfGardath_process_FUN_004f7c00(CHighPriestOfGardath *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CHighPriestOfGardath * Stack[0x4]:4   this_ptr

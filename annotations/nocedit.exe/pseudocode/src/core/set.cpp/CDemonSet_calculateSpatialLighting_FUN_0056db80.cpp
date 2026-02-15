@@ -79,7 +79,7 @@ int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80(CDemonS
     } while (iVar4 < g_GlobeLightCount);
   }
   local_18 = 0;
-  if (0 < this_ptr->mirror_glass_count) {
+  if (0 < this_ptr->mirror_glass_actor_count) {
     local_14 = this_ptr;
     do {
       core_mirror_cpp_CMirrorReflection_transformMirrorVertex_FUN_005229b0
@@ -122,7 +122,7 @@ int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80(CDemonS
       }
       local_14 = (CDemonSet *)local_14->cameras;
       local_18 = local_18 + 1;
-    } while (local_18 < this_ptr->mirror_glass_count);
+    } while (local_18 < this_ptr->mirror_glass_actor_count);
   }
   return iVar3;
 }

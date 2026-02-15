@@ -57,7 +57,7 @@ void __cdecl core_bugs_cpp_CBugs_FUN_00425cc0(CBugs *this_ptr)
      (pCVar3 = (this_ptr->base).victim, pCVar3 != (CDemonActor *)0x0)) {
     this_ptr_00 = (*((pCVar3->vtable)._ub)->getPathMap)(pCVar3);
     if (this_ptr_00 == (CPathMap *)0x0) {
-      this_ptr_00 = core_path_cpp_FUN_00548500();
+      this_ptr_00 = core_path_cpp_FUN_00548500(&((this_ptr->base).victim)->location);
     }
     dest_position = &(this_ptr->base).base.base.location;
     iVar4 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00

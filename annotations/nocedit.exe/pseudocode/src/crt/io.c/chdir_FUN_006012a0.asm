@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_io_c_chdir_FUN_006012a0(char *path)
+; int __cdecl crt_io_c_chdir_FUN_006012a0(char *path)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   path

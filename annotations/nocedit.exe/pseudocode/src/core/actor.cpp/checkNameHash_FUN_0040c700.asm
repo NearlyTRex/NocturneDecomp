@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_actor_cpp_checkNameHash_FUN_0040c700(CDemonActorType *type_ptr,uint name_hash)
+; int __cdecl core_actor_cpp_checkNameHash_FUN_0040c700(CDemonActorType *type_ptr,uint name_hash)
 ;
 ; Parameters:
 ; CDemonActorType * Stack[0x4]:4   type_ptr

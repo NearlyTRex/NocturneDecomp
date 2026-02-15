@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CP2D * __cdecl shape_superopt_cpp_CP2D_ctor_FUN_005d8130(CP2D *this_ptr)
+; CP2D * __cdecl shape_superopt_cpp_CP2D_ctor_FUN_005d8130(CP2D *this_ptr)
 ;
 ; Parameters:
 ; CP2D *           Stack[0x4]:4   this_ptr

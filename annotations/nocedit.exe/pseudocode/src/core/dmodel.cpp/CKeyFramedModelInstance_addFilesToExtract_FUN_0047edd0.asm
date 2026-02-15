@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_addFilesToExtract_FUN_0047edd0(CKeyFramedModelInstance *this_ptr,_FILE *file_handle)
+; void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_addFilesToExtract_FUN_0047edd0(CKeyFramedModelInstance *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CKeyFramedModelInstance * Stack[0x4]:4   this_ptr

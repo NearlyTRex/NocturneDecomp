@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_health_cpp_staticInit_FUN_004f1d60(void)
+; void __cdecl core_health_cpp_staticInit_FUN_004f1d60(void)
 ;
 ;
 ; Referenced Globals:

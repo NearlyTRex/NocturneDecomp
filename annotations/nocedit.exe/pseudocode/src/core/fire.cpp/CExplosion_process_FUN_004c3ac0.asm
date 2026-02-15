@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_fire_cpp_CExplosion_process_FUN_004c3ac0(CExplosion *this_ptr)
+; void __cdecl core_fire_cpp_CExplosion_process_FUN_004c3ac0(CExplosion *this_ptr)
 ;
 ; Parameters:
 ; CExplosion *     Stack[0x4]:4   this_ptr

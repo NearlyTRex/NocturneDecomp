@@ -85,7 +85,7 @@ void __cdecl core_fire_cpp_CFireEffect_process_FUN_004c6ec0(CFireEffect *this_pt
       (*((this_ptr_06->base).vtable)->process)(&this_ptr_06->base);
     }
     this_ptr_06 = this_ptr_06 + 1;
-  } while (this_ptr_06 != (CFireball *)&g_CFireEffectFireballsEnd);
+  } while (this_ptr_06 != (CFireball *)&INT_02d655a8);
   this_ptr_07 = g_RockPool;
   do {
     if (0.0 < (this_ptr_07->base).lifetime_remaining) {
@@ -111,7 +111,7 @@ void __cdecl core_fire_cpp_CFireEffect_process_FUN_004c6ec0(CFireEffect *this_pt
   do {
     core_fire_cpp_CToss_process_FUN_004c4000(this_ptr_09);
     this_ptr_09 = this_ptr_09 + 1;
-  } while (this_ptr_09 != (CToss *)&g_TossActiveListHead);
+  } while (this_ptr_09 != (CToss *)&INT_02d6c6a0);
   this_ptr_10 = g_CraterPool;
   do {
     core_fire_cpp_CCrater_process_FUN_004c4550(this_ptr_10);

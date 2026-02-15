@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_flattn_cpp_doNothing_FUN_004cbce0(void)
+; void __cdecl core_flattn_cpp_doNothing_FUN_004cbce0(void)
 ;
 ;
 ; XREF[1]:

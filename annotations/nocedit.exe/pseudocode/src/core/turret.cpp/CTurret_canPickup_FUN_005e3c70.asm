@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_turret_cpp_CTurret_canPickup_FUN_005e3c70(CTurret *this_ptr,CDemonActor *picker)
+; int __cdecl core_turret_cpp_CTurret_canPickup_FUN_005e3c70(CTurret *this_ptr,CDemonActor *picker)
 ;
 ; Parameters:
 ; CTurret *        Stack[0x4]:4   this_ptr

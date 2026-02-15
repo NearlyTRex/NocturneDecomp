@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CMouse * __cdecl engine_ncursfx_cpp_CMouse_ctor_FUN_00544380(CMouse *ptr)
+; CMouse * __cdecl engine_ncursfx_cpp_CMouse_ctor_FUN_00544380(CMouse *ptr)
 ;
 ; Parameters:
 ; CMouse *         Stack[0x4]:4   ptr

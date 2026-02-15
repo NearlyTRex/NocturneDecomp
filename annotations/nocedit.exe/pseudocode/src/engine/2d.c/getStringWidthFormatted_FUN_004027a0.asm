@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_2d_c_getStringWidthFormatted_FUN_004027a0(char *format_string,...)
+; int __cdecl engine_2d_c_getStringWidthFormatted_FUN_004027a0(char *format_string,...)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   format_string

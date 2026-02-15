@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CAnvil * __cdecl core_anvil_cpp_factoryFunc_FUN_00411ca0(void)
+; CAnvil * __cdecl core_anvil_cpp_factoryFunc_FUN_00411ca0(void)
 ;
 ;
 ; XREF[1]:

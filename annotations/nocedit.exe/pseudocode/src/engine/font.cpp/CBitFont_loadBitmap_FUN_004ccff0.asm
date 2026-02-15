@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_004ccff0(CBitFont *this_ptr,char *filename,int width,int height,int first_char)
+; void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_004ccff0(CBitFont *this_ptr,char *filename,int width,int height,int first_char)
 ;
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   this_ptr

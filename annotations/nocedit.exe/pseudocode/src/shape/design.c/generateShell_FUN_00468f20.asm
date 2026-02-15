@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_generateShell_FUN_00468f20(void)
+; void __cdecl shape_design_c_generateShell_FUN_00468f20(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x9c]:4  local_9c

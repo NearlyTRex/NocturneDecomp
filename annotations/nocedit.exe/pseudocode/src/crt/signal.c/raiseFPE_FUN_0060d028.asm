@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_signal_c_raiseFPE_FUN_0060d028(int fpe_code)
+; int __cdecl crt_signal_c_raiseFPE_FUN_0060d028(int fpe_code)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   fpe_code

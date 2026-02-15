@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_procedur_cpp_CProceduralTexture_showMenu_FUN_00554880(CProceduralTexture *this_ptr)
+; void __cdecl core_procedur_cpp_CProceduralTexture_showMenu_FUN_00554880(CProceduralTexture *this_ptr)
 ;
 ; Parameters:
 ; CProceduralTexture * Stack[0x4]:4   this_ptr

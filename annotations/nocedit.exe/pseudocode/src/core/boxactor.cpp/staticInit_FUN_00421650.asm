@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_boxactor_cpp_staticInit_FUN_00421650(void)
+; void __cdecl core_boxactor_cpp_staticInit_FUN_00421650(void)
 ;
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CBoxActor_006165ff
 ;   TerminatedCString s_CLightActor_00616609
 ;   WatcomTypeInfo g_CDemonFilterTypeInfo
-;   WatcomStaticDestructorNode DAT_0066e5cc
+;   WatcomStaticDestructorNode WatcomStaticDestructorNode_0066e5cc
 ;   int g_CBoxActorClassVersion = 0xf
 ;   int g_CLightActorClassVersion = 0x2
 ;   CDemonActorType g_CDemonActorClassInfo
@@ -41,7 +41,7 @@ section .text
     CALL crt_memory.c___arrinit_FUN_005fe667 ; 0042167f
         ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00421684
-    PUSH 0x66e5cc                       ; 00421687 | DAT_0066e5cc
+    PUSH 0x66e5cc                       ; 00421687 | WatcomStaticDestructorNode_0066e5cc
     CALL crt_stdlib.c__atexit_FUN_005ff060 ; 0042168c
         ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 00421691

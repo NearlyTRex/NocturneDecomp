@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_pendulum_cpp_CPendulum_process_FUN_0054a180(CPendulum *this_ptr,float delta_time)
+; void __cdecl core_pendulum_cpp_CPendulum_process_FUN_0054a180(CPendulum *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CPendulum *      Stack[0x4]:4   this_ptr
@@ -16,8 +16,8 @@
 ;   CEventList g_CEventListInstance
 ;   undefined4 g_CHeroClassInfo.name_hash
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.damage_listener_count
-;   undefined4 g_CDemonSetInstance.damage_listeners
+;   undefined4 g_CDemonSetInstance.character_count
+;   undefined4 g_CDemonSetInstance.characters[0]
 ;   undefined4 DAT_03263318
 ;   undefined4 DAT_0326331c
 ;
@@ -89,11 +89,11 @@ section .text
     XOR EBP,EBP                         ; 0054a225
     MOV EAX,[0x006810c8]                ; 0054a227 | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_0054a227
-    CMP EBP,dword ptr [EAX + 0x14f098]  ; 0054a22c | g_CDemonSetInstance.damage_listener_count
+    CMP EBP,dword ptr [EAX + 0x14f098]  ; 0054a22c | g_CDemonSetInstance.character_count
     JGE 0x0054a286                      ; 0054a232
         ;   XREF to: 0054a286 (CONDITIONAL_JUMP)  ; LAB_0054a286
     MOV ECX,dword ptr [ESI + 0x428]     ; 0054a234
-    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14f09c] ; 0054a23a | g_CDemonSetInstance.damage_listeners | DAT_03263318 | DAT_0326331c
+    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14f09c] ; 0054a23a | g_CDemonSetInstance.characters[0] | DAT_03263318 | DAT_0326331c
     TEST ECX,ECX                        ; 0054a241
     JNZ 0x0054a28b                      ; 0054a243
         ;   XREF to: 0054a28b (CONDITIONAL_JUMP)  ; LAB_0054a28b

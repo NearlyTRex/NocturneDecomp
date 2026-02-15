@@ -104,9 +104,9 @@ int __cdecl core_waypoint_cpp_CWaypoint_renderOpaque_FUN_005ebf70(CWayPoint *thi
         uStack_1c = 0;
         uStack_18 = 0;
       }
-      this_ptr_01 = core_path_cpp_FUN_00548500();
+      this_ptr_01 = core_path_cpp_FUN_00548500(&(this_ptr->base).base.location);
       core_path_cpp_CPathMap_FUN_00548750(this_ptr_01);
-      core_path_cpp_FUN_00547fc0();
+      core_path_cpp_CPathMap_FUN_00547fc0(this_ptr_01);
       return 0;
     }
   }

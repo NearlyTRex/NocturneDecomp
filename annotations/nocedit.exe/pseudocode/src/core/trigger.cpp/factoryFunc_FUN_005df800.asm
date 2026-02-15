@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CTrigger * __cdecl core_trigger_cpp_factoryFunc_FUN_005df800(void)
+; CTrigger * __cdecl core_trigger_cpp_factoryFunc_FUN_005df800(void)
 ;
 ;
 ; XREF[1]:

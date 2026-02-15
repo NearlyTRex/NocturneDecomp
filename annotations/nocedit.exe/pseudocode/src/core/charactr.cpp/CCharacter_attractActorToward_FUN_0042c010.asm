@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_charactr_cpp_CCharacter_attractActorToward_FUN_0042c010(CCharacter *this_ptr,CDemonActor *actor,CVector3f *target_local_point)
+; int __cdecl core_charactr_cpp_CCharacter_attractActorToward_FUN_0042c010(CCharacter *this_ptr,CDemonActor *actor,CVector3f *target_local_point)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __stack_esi CQuaternion4f * __stack_esi core_xform_cpp_negateFirstComponent_FUN_005f75e0(CQuaternion4f *vector_in,CQuaternion4f *vector_out)
+; CQuaternion4f * __stack_esi core_xform_cpp_negateFirstComponent_FUN_005f75e0(CQuaternion4f *vector_in,CQuaternion4f *vector_out)
 ;
 ; Parameters:
 ; CQuaternion4f *  Stack[0x4]:4   vector_in

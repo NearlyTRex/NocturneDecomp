@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_msnedit_cpp_CDemonMission_showOptionsMenu_FUN_00537680(CDemonMission *this_ptr)
+; void __cdecl core_msnedit_cpp_CDemonMission_showOptionsMenu_FUN_00537680(CDemonMission *this_ptr)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr

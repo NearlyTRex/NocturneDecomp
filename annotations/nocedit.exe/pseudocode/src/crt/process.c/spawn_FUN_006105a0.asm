@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_process_c_spawn_FUN_006105a0(int mode,char *cmdline,char *envblock,void *reserved)
+; int __cdecl crt_process_c_spawn_FUN_006105a0(int mode,char *cmdline,char *envblock,void *reserved)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   mode

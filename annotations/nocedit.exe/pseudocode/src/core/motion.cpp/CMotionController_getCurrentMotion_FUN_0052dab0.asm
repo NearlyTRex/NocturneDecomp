@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SMotion * __cdecl core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(CMotionController *this_ptr)
+; SMotion * __cdecl core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(CMotionController *this_ptr)
 ;
 ; Parameters:
 ; CMotionController * Stack[0x4]:4   this_ptr

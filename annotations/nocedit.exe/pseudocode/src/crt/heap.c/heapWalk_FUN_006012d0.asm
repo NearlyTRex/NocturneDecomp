@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_heap_c_heapWalk_FUN_006012d0(HeapState *heap_state_ptr,Heap *heap_ptr)
+; int __cdecl crt_heap_c_heapWalk_FUN_006012d0(HeapState *heap_state_ptr,Heap *heap_ptr)
 ;
 ; Parameters:
 ; HeapState *      Stack[0x4]:4   heap_state_ptr

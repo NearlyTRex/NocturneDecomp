@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CKeyFramedModel * __cdecl core_dmodel_cpp_loadModel_FUN_00478c00(char *filename)
+; CKeyFramedModel * __cdecl core_dmodel_cpp_loadModel_FUN_00478c00(char *filename)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_actor_cpp_CDemonActor_getSurfaceProperties_FUN_00409840(CDemonActor *this_ptr,SSurfaceInfo *surface_info)
+; void __cdecl core_actor_cpp_CDemonActor_getSurfaceProperties_FUN_00409840(CDemonActor *this_ptr,SSurfaceInfo *surface_info)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr

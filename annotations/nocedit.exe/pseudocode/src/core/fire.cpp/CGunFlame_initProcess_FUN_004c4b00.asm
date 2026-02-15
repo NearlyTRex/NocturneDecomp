@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_fire_cpp_CGunFlame_initProcess_FUN_004c4b00(CGunFlame *this_ptr)
+; void __cdecl core_fire_cpp_CGunFlame_initProcess_FUN_004c4b00(CGunFlame *this_ptr)
 ;
 ; Parameters:
 ; CGunFlame *      Stack[0x4]:4   this_ptr
@@ -21,10 +21,10 @@
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.actor_list_ptr
-;   undefined4 g_CDemonSetInstance.actor_list_data[0]
-;   undefined4 g_CDemonSetInstance.damage_listener_count
-;   undefined4 g_CDemonSetInstance.damage_listeners
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
+;   undefined4 g_CDemonSetInstance.character_count
+;   undefined4 g_CDemonSetInstance.characters[0]
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
@@ -46,7 +46,7 @@ section .text
     MOV dword ptr [0x02d13eb4],EDX      ; 004c4b0a | DAT_02d13eb4
     MOV EBX,dword ptr [0x006810c8]      ; 004c4b10 | g_CDemonSetPtr
         ;   Label: LAB_004c4b10
-    CMP EDI,dword ptr [EBX + 0x14f098]  ; 004c4b16 | g_CDemonSetInstance.damage_listener_count
+    CMP EDI,dword ptr [EBX + 0x14f098]  ; 004c4b16 | g_CDemonSetInstance.character_count
     JL 0x004c4b3e                       ; 004c4b1c
         ;   XREF to: 004c4b3e (CONDITIONAL_JUMP)  ; LAB_004c4b3e
     XOR EBX,EBX                         ; 004c4b1e
@@ -54,7 +54,7 @@ section .text
     MOV dword ptr [0x02d13f80],EBX      ; 004c4b22 | DAT_02d13f80
     MOV EAX,[0x006810c8]                ; 004c4b28 | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_004c4b28
-    CMP EBX,dword ptr [EAX + 0x14d154]  ; 004c4b2d | g_CDemonSetInstance.actor_list_ptr
+    CMP EBX,dword ptr [EAX + 0x14d154]  ; 004c4b2d | g_CDemonSetInstance.actor_count
     JL 0x004c4bb9                       ; 004c4b33
         ;   XREF to: 004c4bb9 (CONDITIONAL_JUMP)  ; LAB_004c4bb9
     POP EBP                             ; 004c4b39
@@ -62,7 +62,7 @@ section .text
     POP ESI                             ; 004c4b3b
     POP EBX                             ; 004c4b3c
     RET                                 ; 004c4b3d
-    MOV EBX,dword ptr [ESI + EBX*0x1 + 0x14f09c] ; 004c4b3e | g_CDemonSetInstance.damage_listeners
+    MOV EBX,dword ptr [ESI + EBX*0x1 + 0x14f09c] ; 004c4b3e | g_CDemonSetInstance.characters[0]
         ;   Label: LAB_004c4b3e
     PUSH EBX                            ; 004c4b45
     MOV EAX,dword ptr [EBX + 0x154]     ; 004c4b46
@@ -107,7 +107,7 @@ section .text
     MOV EBP,dword ptr [0x02d7a738]      ; 004c4bb9 | g_CFlameCanClassInfo.name_hash
         ;   Label: LAB_004c4bb9
     PUSH EBP                            ; 004c4bbf
-    MOV EDX,dword ptr [ESI + EAX*0x1 + 0x14d158] ; 004c4bc0 | g_CDemonSetInstance.actor_list_data[0]
+    MOV EDX,dword ptr [ESI + EAX*0x1 + 0x14d158] ; 004c4bc0 | g_CDemonSetInstance.actors[0]
     PUSH EDX                            ; 004c4bc7
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 004c4bc8
         ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)

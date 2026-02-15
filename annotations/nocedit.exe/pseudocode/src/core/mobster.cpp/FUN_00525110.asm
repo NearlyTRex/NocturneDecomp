@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVector3f * __cdecl core_mobster_cpp_FUN_00525110(void)
+; CVector3f * __cdecl core_mobster_cpp_FUN_00525110(void)
 ;
 ;
 ; Referenced Globals:

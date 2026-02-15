@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void * __cdecl shape_memdbg_cpp_malloc_FUN_006021da(SIZE_T size)
+; void * __cdecl shape_memdbg_cpp_malloc_FUN_006021da(SIZE_T size)
 ;
 ; Parameters:
 ; SIZE_T           Stack[0x4]:4   size

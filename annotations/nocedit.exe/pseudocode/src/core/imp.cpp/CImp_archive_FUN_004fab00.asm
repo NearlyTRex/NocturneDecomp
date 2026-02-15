@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_imp_cpp_CImp_archive_FUN_004fab00(CImp *this_ptr)
+; void __cdecl core_imp_cpp_CImp_archive_FUN_004fab00(CImp *this_ptr)
 ;
 ; Parameters:
 ; CImp *           Stack[0x4]:4   this_ptr

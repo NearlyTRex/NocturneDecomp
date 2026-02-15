@@ -4,13 +4,25 @@
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 66,
+        "line": 65,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 28,
-        "line": 66,
+        "line": 65,
+        "message": "expected expression"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 26,
+        "line": 67,
+        "message": "use of undeclared identifier 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 33,
+        "line": 67,
         "message": "expected expression"
       },
       {
@@ -23,24 +35,12 @@
         "category": "syntax_error",
         "column": 33,
         "line": 68,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 26,
-        "line": 69,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 33,
-        "line": 69,
         "message": "expected expression"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 142,
+        "line": 141,
         "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
       }
     ],
@@ -49,19 +49,19 @@
   },
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 312,
+    "complexity_score": 321,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 8,
-    "pseudocode_lines": 142,
-    "suspect_count": 15,
+    "pseudocode_lines": 141,
+    "suspect_count": 16,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "undefined_data",
       "unresolved_funcptr"
     ],
-    "total_lines": 238
+    "total_lines": 237
   },
   "cross_references": [],
   "function": {
@@ -302,106 +302,113 @@
   },
   "suspects": [
     {
+      "description": "Complex pointer cast",
+      "line": 57,
+      "match": "(int *)((int)",
+      "text": "iVar9 = *(int *)((int)g_CDemonSetPtr->characters + local_2c);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 59,
+      "line": 58,
       "match": "code *",
       "text": "iVar8 = (**(code **)(*(int *)(iVar9 + 0x154) + 0xf8))(iVar9,this_ptr);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 61,
+      "line": 60,
       "match": "code *",
       "text": "(iVar8 = (**(code **)(*(int *)(iVar9 + 0x154) + 0x120))(iVar9), iVar8 == 0)) &&",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 62,
+      "line": 61,
       "match": "code *",
       "text": "((iVar8 = (**(code **)(*(int *)(iVar9 + 0x154) + 0x68))(iVar9), iVar8 == 0 &&",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 67,
+      "line": 66,
       "match": "ABS",
       "text": "if ((ABS(fVar4) <= fVar1) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 70,
+      "line": 69,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&DAT_02cf2bf4 + local_20) = iVar9;",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 70,
+      "line": 69,
       "match": "DAT_02cf2bf4",
       "text": "*(int *)((int)&DAT_02cf2bf4 + local_20) = iVar9;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 71,
+      "line": 70,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&DAT_02cf4b34 + local_20) = fStack_30;",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 71,
+      "line": 70,
       "match": "DAT_02cf4b34",
       "text": "*(float *)((int)&DAT_02cf4b34 + local_20) = fStack_30;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 88,
+      "line": 87,
       "match": "(float *)((int)",
       "text": "if (*(float *)((int)&DAT_02cf4b34 + iVar7) < local_18) {",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 88,
+      "line": 87,
       "match": "DAT_02cf4b34",
       "text": "if (*(float *)((int)&DAT_02cf4b34 + iVar7) < local_18) {",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 89,
+      "line": 88,
       "match": "(float *)((int)",
       "text": "local_18 = *(float *)((int)&DAT_02cf4b34 + iVar7);",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 89,
+      "line": 88,
       "match": "DAT_02cf4b34",
       "text": "local_18 = *(float *)((int)&DAT_02cf4b34 + iVar7);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 97,
+      "line": 96,
       "match": "DAT_02cf2bf4",
       "text": "local_1c = (CDemonActor *)(&DAT_02cf2bf4)[iVar9];",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 116,
+      "line": 115,
       "match": "DAT_02cf4b34",
       "text": "(&DAT_02cf4b34)[iVar9] = 0x7149f2ca;",
       "type": "undefined_data"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 135,
+      "line": 134,
       "match": "NAN",
       "text": "if (pCVar2 == (CDemonActor *)NAN) {",
       "type": "decompiler_intrinsic"

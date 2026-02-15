@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void * __cdecl cockpit_ckptutil_c_readBitmapFile_FUN_00431870(char *filename,void *buffer,int size)
+; void * __cdecl cockpit_ckptutil_c_readBitmapFile_FUN_00431870(char *filename,void *buffer,int size)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

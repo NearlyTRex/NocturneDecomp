@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_cloth_cpp_drawVertexMarker_FUN_0043c6e0(int vert_index)
+; void __cdecl core_cloth_cpp_drawVertexMarker_FUN_0043c6e0(int vert_index)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   vert_index

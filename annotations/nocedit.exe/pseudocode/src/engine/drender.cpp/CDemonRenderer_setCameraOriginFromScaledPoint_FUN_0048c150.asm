@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150(CDemonRenderer *this_ptr,CVector3i *point_ptr)
+; void __cdecl engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150(CDemonRenderer *this_ptr,CVector3i *point_ptr)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr

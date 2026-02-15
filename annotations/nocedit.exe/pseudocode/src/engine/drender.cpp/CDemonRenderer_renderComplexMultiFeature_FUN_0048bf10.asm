@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_renderComplexMultiFeature_FUN_0048bf10(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)
+; void __cdecl engine_drender_cpp_CDemonRenderer_renderComplexMultiFeature_FUN_0048bf10(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr

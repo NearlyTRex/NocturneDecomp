@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack void __watcallStack crt_io_c__tempnam_FUN_00601f1c(char *buffer,int file_handle)
+; void __watcallStack crt_io_c__tempnam_FUN_00601f1c(char *buffer,int file_handle)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   buffer

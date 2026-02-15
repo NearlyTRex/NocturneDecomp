@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_conveyor_cpp_CConveyor_renderTransparent_FUN_00441f60(CConveyor *this_ptr)
+; int __cdecl core_conveyor_cpp_CConveyor_renderTransparent_FUN_00441f60(CConveyor *this_ptr)
 ;
 ; Parameters:
 ; CConveyor *      Stack[0x4]:4   this_ptr

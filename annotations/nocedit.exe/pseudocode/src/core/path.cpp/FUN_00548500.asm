@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CPathMap * __cdecl core_path_cpp_FUN_00548500(void)
+; CPathMap * __cdecl core_path_cpp_FUN_00548500(CLocation *location)
 ;
+; Parameters:
+; CLocation *      Stack[0x4]:4   location
 ;
 ; XREF[10]:
 ;   core_bugs.cpp_CBugs_FUN_00425cc0 at 00425e0f
@@ -27,7 +29,7 @@ section .text
         ;   Label: core_path.cpp_FUN_00548500
     PUSH EDX                            ; 00548504
     CALL core_path.cpp_FUN_00548390     ; 00548505
-        ;   XREF to: 00548390 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_FUN_00548390()
+        ;   XREF to: 00548390 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_FUN_00548390(CLocation * location)
     ADD ESP,0x4                         ; 0054850a
     RET                                 ; 0054850d
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_barrier_cpp_staticInit_FUN_00414150(void)
+; void __cdecl core_barrier_cpp_staticInit_FUN_00414150(void)
 ;
 ;
 ; Referenced Globals:

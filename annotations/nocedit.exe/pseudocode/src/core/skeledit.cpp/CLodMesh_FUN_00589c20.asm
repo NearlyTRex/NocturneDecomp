@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_skeledit_cpp_CLodMesh_FUN_00589c20(CLodMesh *this_ptr)
+; int __cdecl core_skeledit_cpp_CLodMesh_FUN_00589c20(CLodMesh *this_ptr)
 ;
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr

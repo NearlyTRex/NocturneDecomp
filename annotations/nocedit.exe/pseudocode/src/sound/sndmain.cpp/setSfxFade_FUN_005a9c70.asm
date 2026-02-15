@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl sound_sndmain_cpp_setSfxFade_FUN_005a9c70(uint sfx_handle,float target_volume,float fade_duration,int stop_after_fade)
+; int __cdecl sound_sndmain_cpp_setSfxFade_FUN_005a9c70(uint sfx_handle,float target_volume,float fade_duration,int stop_after_fade)
 ;
 ; Parameters:
 ; uint             Stack[0x4]:4   sfx_handle

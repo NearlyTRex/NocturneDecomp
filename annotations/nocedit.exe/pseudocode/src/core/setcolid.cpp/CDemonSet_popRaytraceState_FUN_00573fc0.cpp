@@ -24,10 +24,10 @@ void __cdecl core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00573fc0(CDemonSet
   pSVar2 = g_RaytraceStateStack + iVar5;
   g_RaytraceStateStackDepth = iVar5;
   this_ptr->ray_type = pSVar2->ray_type;
-  this_ptr->unk8 = g_RaytraceStateStack[iVar5].color_r;
-  this_ptr->unk9 = g_RaytraceStateStack[iVar5].color_g;
-  this_ptr->unk10 = g_RaytraceStateStack[iVar5].color_b;
-  this_ptr->unk11 = g_RaytraceStateStack[iVar5].color_a;
+  this_ptr->laser_type = g_RaytraceStateStack[iVar5].laser_type;
+  (this_ptr->laser_color).r = g_RaytraceStateStack[iVar5].laser_color.r;
+  (this_ptr->laser_color).g = g_RaytraceStateStack[iVar5].laser_color.g;
+  (this_ptr->laser_color).b = g_RaytraceStateStack[iVar5].laser_color.b;
   iVar1 = g_RaytraceStateStack[iVar5].ignore_list_count;
   iVar3 = 0;
   this_ptr->ignore_list_count = iVar1;
@@ -36,20 +36,20 @@ void __cdecl core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00573fc0(CDemonSet
     do {
       pCVar4->ignore_list[0] = pSVar2->ignore_list[0];
       iVar3 = iVar3 + 1;
-      pSVar2 = (SRaytraceState *)&pSVar2->color_r;
+      pSVar2 = (SRaytraceState *)&pSVar2->laser_type;
       pCVar4 = (CDemonSet *)pCVar4->cameras;
     } while (iVar3 < this_ptr->ignore_list_count);
   }
   this_ptr->collision_flag = g_RaytraceStateStack[iVar5].collision_flag;
-  if (&this_ptr->collision_result_vec1 != &g_RaytraceStateStack[iVar5].saved_ray_origin) {
-    (this_ptr->collision_result_vec1).x = g_RaytraceStateStack[iVar5].saved_ray_origin.x;
-    (this_ptr->collision_result_vec1).y = g_RaytraceStateStack[iVar5].saved_ray_origin.y;
-    (this_ptr->collision_result_vec1).z = g_RaytraceStateStack[iVar5].saved_ray_origin.z;
+  if (&this_ptr->ray_origin != &g_RaytraceStateStack[iVar5].saved_ray_origin) {
+    (this_ptr->ray_origin).x = g_RaytraceStateStack[iVar5].saved_ray_origin.x;
+    (this_ptr->ray_origin).y = g_RaytraceStateStack[iVar5].saved_ray_origin.y;
+    (this_ptr->ray_origin).z = g_RaytraceStateStack[iVar5].saved_ray_origin.z;
   }
-  if (&this_ptr->collision_result_vec2 != &g_RaytraceStateStack[iVar5].saved_ray_target) {
-    (this_ptr->collision_result_vec2).x = g_RaytraceStateStack[iVar5].saved_ray_target.x;
-    (this_ptr->collision_result_vec2).y = g_RaytraceStateStack[iVar5].saved_ray_target.y;
-    (this_ptr->collision_result_vec2).z = g_RaytraceStateStack[iVar5].saved_ray_target.z;
+  if (&this_ptr->ray_target != &g_RaytraceStateStack[iVar5].saved_ray_target) {
+    (this_ptr->ray_target).x = g_RaytraceStateStack[iVar5].saved_ray_target.x;
+    (this_ptr->ray_target).y = g_RaytraceStateStack[iVar5].saved_ray_target.y;
+    (this_ptr->ray_target).z = g_RaytraceStateStack[iVar5].saved_ray_target.z;
   }
   this_ptr->raycast_distance = g_RaytraceStateStack[iVar5].raycast_distance;
   this_ptr->voxel_distance = g_RaytraceStateStack[iVar5].voxel_distance;
@@ -71,8 +71,8 @@ void __cdecl core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00573fc0(CDemonSet
     (this_ptr->collision_impact_position).z = g_RaytraceStateStack[iVar5].saved_collision_point.z;
   }
   this_ptr->collision_actor = g_RaytraceStateStack[iVar5].saved_collision_actor;
-  this_ptr->unk1 = g_RaytraceStateStack[iVar5].unk2;
-  this_ptr->unk2 = g_RaytraceStateStack[iVar5].unk3;
-  this_ptr->unk12 = g_RaytraceStateStack[iVar5].unk1;
+  this_ptr->collision_part_index = g_RaytraceStateStack[iVar5].saved_collision_part_index;
+  this_ptr->collision_triangle_index = g_RaytraceStateStack[iVar5].saved_collision_triangle_index;
+  this_ptr->skip_exact_collisions = g_RaytraceStateStack[iVar5].saved_skip_exact_collision;
   return;
 }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBoundingBox3D * __cdecl core_health_cpp_CHealthItem_getBoundingBox_FUN_004f1ed0(CHealthItem *this_ptr,CBoundingBox3D *out_box)
+; CBoundingBox3D * __cdecl core_health_cpp_CHealthItem_getBoundingBox_FUN_004f1ed0(CHealthItem *this_ptr,CBoundingBox3D *out_box)
 ;
 ; Parameters:
 ; CHealthItem *    Stack[0x4]:4   this_ptr

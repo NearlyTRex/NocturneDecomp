@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_keyactor_cpp_CKeyActor_addFilesToExtract_FUN_00501990(CKeyActor *this_ptr,_FILE *file_handle)
+; void __cdecl core_keyactor_cpp_CKeyActor_addFilesToExtract_FUN_00501990(CKeyActor *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CKeyActor *      Stack[0x4]:4   this_ptr

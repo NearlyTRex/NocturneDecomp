@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl support_codec_cpp_CLZWDictionary_writeCodeBits_FUN_0043f170(CLZWDictionary *this_ptr,int code_value,SBitBuffer *bit_buffer,_FILE *output_stream)
+; void __cdecl support_codec_cpp_CLZWDictionary_writeCodeBits_FUN_0043f170(CLZWDictionary *this_ptr,int code_value,SBitBuffer *bit_buffer,_FILE *output_stream)
 ;
 ; Parameters:
 ; CLZWDictionary * Stack[0x4]:4   this_ptr

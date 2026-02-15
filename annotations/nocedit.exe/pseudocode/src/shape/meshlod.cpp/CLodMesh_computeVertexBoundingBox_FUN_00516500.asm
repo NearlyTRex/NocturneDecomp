@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBoundingBox3D * __cdecl shape_meshlod_cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500(CLodMesh *this_ptr,CBoundingBox3D *out_bbox)
+; CBoundingBox3D * __cdecl shape_meshlod_cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500(CLodMesh *this_ptr,CBoundingBox3D *out_bbox)
 ;
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr

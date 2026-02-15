@@ -33,14 +33,14 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00580730(CDemonSet *this_ptr)
   SFog *local_24;
   SFog *local_20;
   SFog *local_1c;
-  char *local_18;
+  CVector3f *local_18;
   
   bVar11 = 0;
   core_setedit_cpp_CDemonSet_FUN_00576da0(this_ptr);
   local_30 = this_ptr->cameras;
   this_ptr->selected_camera_index = 0;
-  local_24 = (SFog *)(this_ptr->unk4 + 0xbb90);
-  local_18 = this_ptr->unk4 + 0xbb9c;
+  local_24 = &this_ptr->scene_fog;
+  local_18 = &(this_ptr->scene_fog).scroll;
   local_38 = &this_ptr->default_master_reverb;
   local_34 = this_ptr->geometry_filename;
   local_28 = local_30;
@@ -103,7 +103,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00580730(CDemonSet *this_ptr)
           *(int *)((int)&DAT_03659388 + iVar6) = pCVar3->cameras[0].fog_enabled;
           iVar6 = iVar6 + 4;
           iVar9 = iVar9 + 1;
-          pCVar3 = (CDemonSet *)&pCVar3->cameras[0].unk4;
+          pCVar3 = (CDemonSet *)&pCVar3->cameras[0].enabled;
         } while (iVar9 < this_ptr->camera_count);
       }
       iVar9 = core_setedit_cpp_CDemonSet_FUN_00577af0(this_ptr);
@@ -116,10 +116,10 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00580730(CDemonSet *this_ptr)
           local_28[iVar9].fog.color_index.g = (local_24->color_index).g;
           pCVar5 = &local_28[iVar9].fog.scroll;
           local_28[iVar9].fog.color_index.b = (local_24->color_index).b;
-          if (pCVar5 != (CVector3f *)local_18) {
-            pCVar5->x = *(float *)local_18;
-            local_28[iVar9].fog.scroll.y = *(float *)(local_18 + 4);
-            local_28[iVar9].fog.scroll.z = *(float *)(local_18 + 8);
+          if (pCVar5 != local_18) {
+            pCVar5->x = local_18->x;
+            local_28[iVar9].fog.scroll.y = local_18->y;
+            local_28[iVar9].fog.scroll.z = local_18->z;
           }
           local_28[iVar9].fog.height_threshold = local_24->height_threshold;
           local_28[iVar9].fog.density_multiplier = local_24->density_multiplier;
@@ -146,10 +146,10 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00580730(CDemonSet *this_ptr)
             local_28[iVar9].fog.color_index.g = (local_24->color_index).g;
             pCVar5 = &local_28[iVar9].fog.scroll;
             local_28[iVar9].fog.color_index.b = (local_24->color_index).b;
-            if (pCVar5 != (CVector3f *)local_18) {
-              pCVar5->x = *(float *)local_18;
-              local_28[iVar9].fog.scroll.y = *(float *)(local_18 + 4);
-              local_28[iVar9].fog.scroll.z = *(float *)(local_18 + 8);
+            if (pCVar5 != local_18) {
+              pCVar5->x = local_18->x;
+              local_28[iVar9].fog.scroll.y = local_18->y;
+              local_28[iVar9].fog.scroll.z = local_18->z;
             }
             local_28[iVar9].fog.height_threshold = local_24->height_threshold;
             local_28[iVar9].fog.density_multiplier = local_24->density_multiplier;
@@ -236,18 +236,18 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00580730(CDemonSet *this_ptr)
             (pSVar7->color_index).r = (local_1c->color_index).r;
             (pSVar7->color_index).g = (local_1c->color_index).g;
             (pSVar7->color_index).b = (local_1c->color_index).b;
-            if (pCVar5 != (CVector3f *)local_18) {
-              pCVar5->x = *(float *)local_18;
-              pCVar5->y = *(float *)(local_18 + 4);
-              pCVar5->z = *(float *)(local_18 + 8);
+            if (pCVar5 != local_18) {
+              pCVar5->x = local_18->x;
+              pCVar5->y = local_18->y;
+              pCVar5->z = local_18->z;
             }
             pCVar5 = pCVar5 + 0x23;
-            pCVar3 = (CDemonSet *)&pCVar3->cameras[0].unk4;
+            pCVar3 = (CDemonSet *)&pCVar3->cameras[0].enabled;
             pSVar7->height_threshold = local_1c->height_threshold;
             pSVar7->density_multiplier = local_1c->density_multiplier;
             pSVar7->reserved = local_1c->reserved;
             pSVar7 = (SFog *)((int)(pSVar7 + 0xb) + 0x18);
-          } while (pCVar3 != (CDemonSet *)&this_ptr->cameras[0xf9].unk4);
+          } while (pCVar3 != (CDemonSet *)&this_ptr->cameras[0xf9].enabled);
         }
       }
     }

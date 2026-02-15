@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_game_cpp_hostNetworkGame_FUN_004e2f10(void)
+; void __cdecl core_game_cpp_hostNetworkGame_FUN_004e2f10(void)
 ;
 ;
 ; Referenced Globals:

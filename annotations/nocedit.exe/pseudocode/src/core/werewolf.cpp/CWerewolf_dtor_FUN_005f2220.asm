@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CWerewolf * __cdecl core_werewolf_cpp_CWerewolf_dtor_FUN_005f2220(CWerewolf *this_ptr,uint flags)
+; CWerewolf * __cdecl core_werewolf_cpp_CWerewolf_dtor_FUN_005f2220(CWerewolf *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CWerewolf *      Stack[0x4]:4   this_ptr

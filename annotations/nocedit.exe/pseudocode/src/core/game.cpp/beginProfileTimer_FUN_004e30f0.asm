@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_game_cpp_beginProfileTimer_FUN_004e30f0(void)
+; void __cdecl core_game_cpp_beginProfileTimer_FUN_004e30f0(void)
 ;
 ;
 ; Referenced Globals:

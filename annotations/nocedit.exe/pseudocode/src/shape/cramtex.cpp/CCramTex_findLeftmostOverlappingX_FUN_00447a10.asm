@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_cramtex_cpp_CCramTex_findLeftmostOverlappingX_FUN_00447a10(CCramTex *this_ptr)
+; int __cdecl shape_cramtex_cpp_CCramTex_findLeftmostOverlappingX_FUN_00447a10(CCramTex *this_ptr)
 ;
 ; Parameters:
 ; CCramTex *       Stack[0xc]:4   this_ptr

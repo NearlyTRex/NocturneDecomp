@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_design_c_loadModelFile_FUN_00458ac0(char *filename)
+; int __cdecl shape_design_c_loadModelFile_FUN_00458ac0(char *filename)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

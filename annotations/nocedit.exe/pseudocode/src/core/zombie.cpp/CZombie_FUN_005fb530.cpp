@@ -87,8 +87,8 @@ int __cdecl core_zombie_cpp_CZombie_FUN_005fb530(CZombie *this_ptr)
     local_20 = 0;
     iVar8 = 0;
     local_1c = pCVar1;
-    for (local_18 = 0; local_18 < (int)g_CDemonSetPtr->actor_list_ptr; local_18 = local_18 + 1) {
-      pCVar2 = *(CDemonActor **)(g_CDemonSetPtr->actor_list_data + local_20);
+    for (local_18 = 0; local_18 < g_CDemonSetPtr->actor_count; local_18 = local_18 + 1) {
+      pCVar2 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + local_20);
       pCVar7 = (*((pCVar2->vtable)._ub)->getCarrier)(pCVar2);
       iVar11 = iVar8;
       if ((pCVar7 == (CDemonActor *)0x0) &&

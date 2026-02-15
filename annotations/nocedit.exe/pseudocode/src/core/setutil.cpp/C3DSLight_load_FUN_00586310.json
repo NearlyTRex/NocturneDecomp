@@ -4,92 +4,92 @@
       {
         "category": "format_error",
         "column": 36,
-        "line": 39,
+        "line": 40,
         "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 36,
-        "line": 43,
+        "line": 44,
         "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 30,
-        "line": 66,
+        "line": 67,
         "message": "format specifies type 'int *' but the argument has type 'C3DSLight *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 42,
-        "line": 70,
+        "line": 71,
         "message": "format specifies type 'float *' but the argument has type 'CColor3f *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 33,
-        "line": 75,
+        "line": 76,
         "message": "format specifies type 'int *' but the argument has type 'CVector2i *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 46,
-        "line": 98,
+        "line": 99,
         "message": "format specifies type 'char *' but the argument has type 'char (*)[40]' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 66,
-        "line": 102,
+        "line": 103,
         "message": "format specifies type 'char *' but the argument has type 'char (*)[40]' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 67,
-        "line": 125,
-        "message": "format specifies type 'int *' but the argument has type 'CVector2i *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 42,
         "line": 126,
         "message": "format specifies type 'int *' but the argument has type 'CVector2i *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
+        "column": 42,
+        "line": 127,
+        "message": "format specifies type 'int *' but the argument has type 'CVector2i *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
         "column": 38,
-        "line": 150,
+        "line": 151,
         "message": "format specifies type 'int *' but the argument has type 'char *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 50,
-        "line": 175,
+        "line": 160,
         "message": "format specifies type 'int *' but the argument has type 'char *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 59,
-        "line": 175,
-        "message": "format specifies type 'int *' but the argument has type 'char *' [-Werror,-Wformat]"
+        "line": 160,
+        "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 66,
-        "line": 175,
-        "message": "format specifies type 'int *' but the argument has type 'char *' [-Werror,-Wformat]"
+        "column": 65,
+        "line": 160,
+        "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 77,
-        "line": 175,
-        "message": "format specifies type 'int *' but the argument has type 'char *' [-Werror,-Wformat]"
+        "column": 75,
+        "line": 160,
+        "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 22,
-        "line": 176,
-        "message": "format specifies type 'int *' but the argument has type 'char *' [-Werror,-Wformat]"
+        "column": 85,
+        "line": 160,
+        "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -97,16 +97,16 @@
   },
   "complexity": {
     "assembly_lines": 577,
-    "complexity_score": 225,
+    "complexity_score": 250,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 27,
-    "pseudocode_lines": 200,
-    "suspect_count": 2,
+    "pseudocode_lines": 185,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 777
+    "total_lines": 762
   },
   "cross_references": [
     {
@@ -480,16 +480,44 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 92,
+      "line": 93,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)this_ptr->filter_indices + local_1c) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 173,
+      "line": 146,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].left + iVar5) = 1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 147,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].top + iVar5) = 0x13e;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 148,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].right + iVar5) = 1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 149,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].bottom + iVar5) = 0xee;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 158,
       "match": "(C3DSLight *)((int)",
-      "text": "pCVar3 = (C3DSLight *)((int)&pCVar3->light_type + 1);",
+      "text": "pCVar4 = (C3DSLight *)((int)&pCVar4->light_type + 1);",
       "type": "pointer_cast"
     }
   ]

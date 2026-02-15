@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CAmmo * __cdecl core_ammo_cpp_factoryFunc_FUN_00410d80(void)
+; CAmmo * __cdecl core_ammo_cpp_factoryFunc_FUN_00410d80(void)
 ;
 ;
 ; XREF[1]:

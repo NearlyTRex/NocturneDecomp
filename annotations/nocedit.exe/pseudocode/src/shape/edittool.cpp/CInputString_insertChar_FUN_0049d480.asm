@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_edittool_cpp_CInputString_insertChar_FUN_0049d480(CInputString *this_ptr,char character,int advance_cursor)
+; void __cdecl shape_edittool_cpp_CInputString_insertChar_FUN_0049d480(CInputString *this_ptr,char character,int advance_cursor)
 ;
 ; Parameters:
 ; CInputString *   Stack[0x4]:4   this_ptr

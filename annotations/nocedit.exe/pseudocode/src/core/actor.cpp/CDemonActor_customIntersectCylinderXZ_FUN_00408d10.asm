@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_actor_cpp_CDemonActor_customIntersectCylinderXZ_FUN_00408d10(CDemonActor *this_ptr,SIntersectXZCylinder *cylinder)
+; void __cdecl core_actor_cpp_CDemonActor_customIntersectCylinderXZ_FUN_00408d10(CDemonActor *this_ptr,SIntersectXZCylinder *cylinder)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr

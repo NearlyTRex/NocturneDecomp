@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_setcolid_cpp_CDemonSet_FUN_00574580(CDemonSet *this_ptr)
+; int __cdecl core_setcolid_cpp_CDemonSet_FUN_00574580(CDemonSet *this_ptr)
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr

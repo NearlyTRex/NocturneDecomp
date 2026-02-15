@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_platfrm_cpp_CPlatform_propertyActionTypeCallback_FUN_0054e530(CPlatform *this_ptr,CActorProperty *property)
+; int __cdecl core_platfrm_cpp_CPlatform_propertyActionTypeCallback_FUN_0054e530(CPlatform *this_ptr,CActorProperty *property)
 ;
 ; Parameters:
 ; CPlatform *      Stack[0x4]:4   this_ptr

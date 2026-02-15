@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_boxactor_cpp_CBoxActor_FUN_00422390(CBoxActor *this_ptr)
+; void __cdecl core_boxactor_cpp_CBoxActor_FUN_00422390(CBoxActor *this_ptr)
 ;
 ; Parameters:
 ; CBoxActor *      Stack[0x4]:4   this_ptr

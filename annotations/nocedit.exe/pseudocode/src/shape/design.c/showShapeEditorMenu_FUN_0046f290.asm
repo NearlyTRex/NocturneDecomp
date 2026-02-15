@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_showShapeEditorMenu_FUN_0046f290(void)
+; void __cdecl shape_design_c_showShapeEditorMenu_FUN_0046f290(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x6c]:4  local_6c

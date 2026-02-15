@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_zombie_cpp_CZombie_process_FUN_005f9470(CZombie *this_ptr,float delta_time)
+; void __cdecl core_zombie_cpp_CZombie_process_FUN_005f9470(CZombie *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CZombie *        Stack[0x4]:4   this_ptr
@@ -1534,11 +1534,11 @@ section .text
     MOV EAX,[0x006810c8]                ; 005fa500 | g_CDemonSetPtr
         ;   Label: LAB_005fa500
     MOV EDX,dword ptr [EBP + 0x62]      ; 005fa505
-    CMP EDX,dword ptr [EAX + 0x14f098]  ; 005fa508 | g_CDemonSetInstance.damage_listener_count
+    CMP EDX,dword ptr [EAX + 0x14f098]  ; 005fa508 | g_CDemonSetInstance.character_count
     JGE 0x005fa18b                      ; 005fa50e
         ;   XREF to: 005fa18b (CONDITIONAL_JUMP)  ; LAB_005fa18b
     PUSH EBX                            ; 005fa514
-    MOV ESI,dword ptr [EDI + EAX*0x1 + 0x14f09c] ; 005fa515 | g_CDemonSetInstance.damage_listeners | DAT_03263318
+    MOV ESI,dword ptr [EDI + EAX*0x1 + 0x14f09c] ; 005fa515 | g_CDemonSetInstance.characters[0] | DAT_03263318
     PUSH ESI                            ; 005fa51c
     MOV EAX,dword ptr [ESI + 0x154]     ; 005fa51d
     CALL dword ptr [EAX + 0xf8]         ; 005fa523

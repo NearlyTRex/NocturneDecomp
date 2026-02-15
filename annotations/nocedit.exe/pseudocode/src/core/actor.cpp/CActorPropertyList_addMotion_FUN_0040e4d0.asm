@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addMotion_FUN_0040e4d0(CActorPropertyList *this_ptr,char *property_name,CDeformableModelInstance *data_ptr)
+; CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addMotion_FUN_0040e4d0(CActorPropertyList *this_ptr,char *property_name,CDeformableModelInstance *data_ptr)
 ;
 ; Parameters:
 ; CActorPropertyList * Stack[0x4]:4   this_ptr

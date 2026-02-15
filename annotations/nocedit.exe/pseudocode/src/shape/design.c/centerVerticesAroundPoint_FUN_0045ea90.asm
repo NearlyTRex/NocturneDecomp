@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_centerVerticesAroundPoint_FUN_0045ea90(void)
+; void __cdecl shape_design_c_centerVerticesAroundPoint_FUN_0045ea90(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x60]:4  local_60

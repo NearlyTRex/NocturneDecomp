@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActor * __cdecl core_frankgen_cpp_CFrankenstienMachine_findLeader_FUN_004d2330(CFrankenstienMachine *this_ptr)
+; CDemonActor * __cdecl core_frankgen_cpp_CFrankenstienMachine_findLeader_FUN_004d2330(CFrankenstienMachine *this_ptr)
 ;
 ; Parameters:
 ; CFrankenstienMachine * Stack[0x4]:4   this_ptr
@@ -20,8 +20,8 @@
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.actor_list_ptr
-;   undefined4 g_CDemonSetInstance.actor_list_data[0]
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;   undefined4 DAT_032613d4
 ;
 ; Called Functions:
@@ -41,12 +41,12 @@ section .text
     XOR EBX,EBX                         ; 004d2336
     MOV EAX,[0x006810c8]                ; 004d2338 | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_004d2338
-    CMP EBX,dword ptr [EAX + 0x14d154]  ; 004d233d | g_CDemonSetInstance.actor_list_ptr
+    CMP EBX,dword ptr [EAX + 0x14d154]  ; 004d233d | g_CDemonSetInstance.actor_count
     JGE 0x004d236a                      ; 004d2343
         ;   XREF to: 004d236a (CONDITIONAL_JUMP)  ; LAB_004d236a
     MOV EDI,dword ptr [0x02d7b7ec]      ; 004d2345 | g_CFrankenstienMachineClassInfo.name_hash
     PUSH EDI                            ; 004d234b
-    MOV EBP,dword ptr [ESI + EAX*0x1 + 0x14d158] ; 004d234c | g_CDemonSetInstance.actor_list_data[0] | DAT_032613d4
+    MOV EBP,dword ptr [ESI + EAX*0x1 + 0x14d158] ; 004d234c | g_CDemonSetInstance.actors[0] | DAT_032613d4
     PUSH EBP                            ; 004d2353
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 004d2354
         ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_charactr_cpp_CCharacter_isWalkComplete_FUN_0042ca30(CCharacter *this_ptr)
+; int __cdecl core_charactr_cpp_CCharacter_isWalkComplete_FUN_0042ca30(CCharacter *this_ptr)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_normalizeUVCoordinates_FUN_0046e340(void)
+; void __cdecl shape_design_c_normalizeUVCoordinates_FUN_0046e340(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x34]:8  local_34

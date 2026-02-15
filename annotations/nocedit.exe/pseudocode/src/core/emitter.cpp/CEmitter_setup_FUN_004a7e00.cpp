@@ -9,22 +9,16 @@
 void __cdecl core_emitter_cpp_CEmitter_setup_FUN_004a7e00(CEmitter *this_ptr)
 
 {
-  int iVar1;
-  
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
-  *(float *)this_ptr->unk6 = this_ptr->max_emit_time;
+  this_ptr->state_timer = this_ptr->max_emit_time;
   if (this_ptr->emitter_type == 4) {
     core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&this_ptr->model);
   }
-  if (this_ptr->dest_actor == 0) {
-    this_ptr->dest_actor = (int)g_HeroActors[g_LocalHeroIndex];
+  if (this_ptr->dest_actor == (CDemonActor *)0x0) {
+    this_ptr->dest_actor = (CDemonActor *)g_HeroActors[g_LocalHeroIndex];
   }
   this_ptr->sfx_handle = 0;
-  iVar1 = this_ptr->emitter_state;
-  this_ptr->unk6[0x44] = '\0';
-  this_ptr->unk6[0x45] = '\0';
-  this_ptr->unk6[0x46] = '\0';
-  this_ptr->unk6[0x47] = '\0';
-  *(int *)(this_ptr->unk6 + 0x48) = iVar1;
+  this_ptr->was_active = 0;
+  this_ptr->prev_emitter_state = this_ptr->emitter_state;
   return;
 }

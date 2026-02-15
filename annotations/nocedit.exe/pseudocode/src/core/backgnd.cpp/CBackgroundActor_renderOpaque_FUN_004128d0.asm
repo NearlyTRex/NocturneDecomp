@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_backgnd_cpp_CBackgroundActor_renderOpaque_FUN_004128d0(CBackgroundActor *this_ptr)
+; int __cdecl core_backgnd_cpp_CBackgroundActor_renderOpaque_FUN_004128d0(CBackgroundActor *this_ptr)
 ;
 ; Parameters:
 ; CBackgroundActor * Stack[0x4]:4   this_ptr

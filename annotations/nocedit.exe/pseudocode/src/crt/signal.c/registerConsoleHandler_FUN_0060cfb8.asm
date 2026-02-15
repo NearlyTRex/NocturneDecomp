@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallRegister BOOL __watcallRegister crt_signal_c_registerConsoleHandler_FUN_0060cfb8(void)
+; BOOL __watcallRegister crt_signal_c_registerConsoleHandler_FUN_0060cfb8(void)
 ;
 ;
 ; XREF[1]:

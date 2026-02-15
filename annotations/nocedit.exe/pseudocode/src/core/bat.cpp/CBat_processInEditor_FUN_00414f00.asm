@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_bat_cpp_CBat_processInEditor_FUN_00414f00(CBat *this_ptr)
+; void __cdecl core_bat_cpp_CBat_processInEditor_FUN_00414f00(CBat *this_ptr)
 ;
 ; Parameters:
 ; CBat *           Stack[0x4]:4   this_ptr

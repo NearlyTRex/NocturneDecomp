@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl support_trisock_cpp_staticInit_FUN_005e16b0(void)
+; void __cdecl support_trisock_cpp_staticInit_FUN_005e16b0(void)
 ;
 ;
 ; Referenced Globals:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_sndmain_cpp_nextMixingBuffer_FUN_005a59c0(void)
+; void __cdecl sound_sndmain_cpp_nextMixingBuffer_FUN_005a59c0(void)
 ;
 ;
 ; Referenced Globals:

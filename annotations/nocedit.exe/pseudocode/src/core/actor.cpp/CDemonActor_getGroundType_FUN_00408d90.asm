@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_actor_cpp_CDemonActor_getGroundType_FUN_00408d90(CDemonActor *this_ptr)
+; int __cdecl core_actor_cpp_CDemonActor_getGroundType_FUN_00408d90(CDemonActor *this_ptr)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr

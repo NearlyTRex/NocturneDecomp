@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl wincore_windll_cpp_unlockTexture_FUN_005b7e4b(void)
+; int __cdecl wincore_windll_cpp_unlockTexture_FUN_005b7e4b(void)
 ;
 ;
 ; Referenced Globals:

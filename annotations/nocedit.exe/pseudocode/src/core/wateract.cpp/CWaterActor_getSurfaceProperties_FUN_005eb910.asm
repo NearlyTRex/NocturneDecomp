@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_wateract_cpp_CWaterActor_getSurfaceProperties_FUN_005eb910(CWaterActor *this_ptr,SSurfaceInfo *surface_info)
+; void __cdecl core_wateract_cpp_CWaterActor_getSurfaceProperties_FUN_005eb910(CWaterActor *this_ptr,SSurfaceInfo *surface_info)
 ;
 ; Parameters:
 ; CWaterActor *    Stack[0x4]:4   this_ptr

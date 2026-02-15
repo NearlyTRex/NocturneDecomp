@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_baron_cpp_CBaron_addFilesToExtract_FUN_00414070(CBaron *this_ptr,_FILE *file_handle)
+; void __cdecl core_baron_cpp_CBaron_addFilesToExtract_FUN_00414070(CBaron *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CBaron *         Stack[0x4]:4   this_ptr

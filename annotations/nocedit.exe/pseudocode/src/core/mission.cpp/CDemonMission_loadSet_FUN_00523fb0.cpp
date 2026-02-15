@@ -9,7 +9,7 @@
 void __cdecl core_mission_cpp_CDemonMission_loadSet_FUN_00523fb0(CDemonMission *this_ptr,int set_index)
 
 {
-  char *pcVar1;
+  int iVar1;
   int iVar2;
   int iVar3;
   
@@ -21,10 +21,10 @@ void __cdecl core_mission_cpp_CDemonMission_loadSet_FUN_00523fb0(CDemonMission *
       core_mission_cpp_CDemonMission_prepareAllActors_FUN_00523cf0(this_ptr);
     }
     iVar3 = 0;
-    for (iVar2 = 0; iVar2 < (int)g_CDemonSetPtr->actor_list_ptr; iVar2 = iVar2 + 1) {
-      pcVar1 = g_CDemonSetPtr->actor_list_data + iVar3;
+    for (iVar2 = 0; iVar2 < g_CDemonSetPtr->actor_count; iVar2 = iVar2 + 1) {
+      iVar1 = *(int *)((int)g_CDemonSetPtr->actors + iVar3);
       iVar3 = iVar3 + 4;
-      (**(code **)(*(int *)(*(int *)pcVar1 + 0x154) + 0x48))(*(int *)pcVar1);
+      (**(code **)(*(int *)(iVar1 + 0x154) + 0x48))(iVar1);
     }
   }
   return;

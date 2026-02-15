@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SFreaky * __cdecl core_dracbrid_cpp_SFreaky_arrdtor_FUN_00486e50(SFreaky *objs,uint flags)
+; SFreaky * __cdecl core_dracbrid_cpp_SFreaky_arrdtor_FUN_00486e50(SFreaky *objs,uint flags)
 ;
 ; Parameters:
 ; SFreaky *        Stack[0x4]:4   objs

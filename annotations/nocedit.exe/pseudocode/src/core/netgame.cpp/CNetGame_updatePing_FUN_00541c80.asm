@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_netgame_cpp_CNetGame_updatePing_FUN_00541c80(CNetGame *this_ptr,int player_index,float max_ping)
+; void __cdecl core_netgame_cpp_CNetGame_updatePing_FUN_00541c80(CNetGame *this_ptr,int player_index,float max_ping)
 ;
 ; Parameters:
 ; CNetGame *       Stack[0x4]:4   this_ptr

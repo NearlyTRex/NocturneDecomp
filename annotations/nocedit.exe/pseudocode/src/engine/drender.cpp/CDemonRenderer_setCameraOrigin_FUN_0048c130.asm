@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_setCameraOrigin_FUN_0048c130(CDemonRenderer *this_ptr,CVector3i *origin)
+; void __cdecl engine_drender_cpp_CDemonRenderer_setCameraOrigin_FUN_0048c130(CDemonRenderer *this_ptr,CVector3i *origin)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr

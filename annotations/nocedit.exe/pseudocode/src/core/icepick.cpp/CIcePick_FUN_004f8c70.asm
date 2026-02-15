@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_icepick_cpp_CIcePick_FUN_004f8c70(CIcePick *this_ptr)
+; void __cdecl core_icepick_cpp_CIcePick_FUN_004f8c70(CIcePick *this_ptr)
 ;
 ; Parameters:
 ; CIcePick *       Stack[0x4]:4   this_ptr
@@ -482,7 +482,7 @@ section .text
     LEA EAX,[EDI + 0x20]                ; 004f9203
     PUSH EAX                            ; 004f9206
     CALL core_path.cpp_FUN_00548500     ; 004f9207
-        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_FUN_00548500()
+        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_FUN_00548500(CLocation * location)
     ADD ESP,0x4                         ; 004f920c
     MOV dword ptr [ESP + 0x98],EAX      ; 004f920f
     MOV ECX,dword ptr [EBX + 0x6c]      ; 004f9216

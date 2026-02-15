@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_stranger_cpp_CStranger_drawGuns_FUN_005c6660(CStranger *this_ptr,int drawn)
+; void __cdecl core_stranger_cpp_CStranger_drawGuns_FUN_005c6660(CStranger *this_ptr,int drawn)
 ;
 ; Parameters:
 ; CStranger *      Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_vehicle_cpp_CVehicle_hasCollision_FUN_005e88b0(CVehicle *this_ptr,SCollisionInfo *collision_info)
+; int __cdecl core_vehicle_cpp_CVehicle_hasCollision_FUN_005e88b0(CVehicle *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CVehicle *       Stack[0x4]:4   this_ptr

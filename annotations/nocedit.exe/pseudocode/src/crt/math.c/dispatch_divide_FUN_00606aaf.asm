@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallRegister float10 __watcallRegister crt_math_c_dispatch_divide_FUN_00606aaf(void)
+; float10 __watcallRegister crt_math_c_dispatch_divide_FUN_00606aaf(void)
 ;
 ; Parameters:
 ; undefined1[10]   Stack[0x0]:10   local_res0

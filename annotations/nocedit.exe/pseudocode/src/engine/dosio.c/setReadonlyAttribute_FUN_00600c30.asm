@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl DWORD __cdecl engine_dosio_c_setReadonlyAttribute_FUN_00600c30(char *filename,DWORD file_attributes)
+; DWORD __cdecl engine_dosio_c_setReadonlyAttribute_FUN_00600c30(char *filename,DWORD file_attributes)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVector3f * __cdecl core_emitter_cpp_CEmitter_FUN_004a8d20(CEmitter *this_ptr)
+; CVector3f * __cdecl core_emitter_cpp_CEmitter_FUN_004a8d20(CEmitter *this_ptr)
 ;
 ; Parameters:
 ; CEmitter *       Stack[0x4]:4   this_ptr

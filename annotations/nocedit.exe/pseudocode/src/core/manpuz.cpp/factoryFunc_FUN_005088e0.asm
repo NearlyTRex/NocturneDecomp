@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CMansionPuzzleCircle * __cdecl core_manpuz_cpp_factoryFunc_FUN_005088e0(void)
+; CMansionPuzzleCircle * __cdecl core_manpuz_cpp_factoryFunc_FUN_005088e0(void)
 ;
 ;
 ; XREF[1]:

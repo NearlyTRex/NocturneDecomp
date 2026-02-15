@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_boxactor_cpp_CBoxActor_onDropped_FUN_004224f0(CBoxActor *this_ptr,CVector3f *drop_position)
+; void __cdecl core_boxactor_cpp_CBoxActor_onDropped_FUN_004224f0(CBoxActor *this_ptr,CVector3f *drop_position)
 ;
 ; Parameters:
 ; CBoxActor *      Stack[0x4]:4   this_ptr

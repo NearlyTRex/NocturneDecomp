@@ -25,11 +25,11 @@ int __cdecl core_hero_cpp_CHero_FUN_004f2d70(CHero *this_ptr)
   local_14 = 0;
   this_ptr->door_to_open = (CDemonActor *)0x0;
   do {
-    if ((int)g_CDemonSetPtr->actor_list_ptr <= iVar7) {
+    if (g_CDemonSetPtr->actor_count <= iVar7) {
       return 0;
     }
     this_ptr_00 = (CDoor *)core_actor_cpp_castToClassHash_FUN_0040c790
-                                     (*(CDemonActor **)(g_CDemonSetPtr->actor_list_data + local_14),
+                                     (*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_14),
                                       g_CDoorClassInfo.name_hash);
     if ((this_ptr_00 != (CDoor *)0x0) && (this_ptr_00->door_state == 0)) {
       fVar3 = (this_ptr->base).base.location.position.x - *(float *)this_ptr_00->unk3;

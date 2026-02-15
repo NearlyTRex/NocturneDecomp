@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_sentinel_cpp_CSentinel_processDamage_FUN_00568cd0(CSentinel *this_ptr,SDamageInfo *damage_info)
+; void __cdecl core_sentinel_cpp_CSentinel_processDamage_FUN_00568cd0(CSentinel *this_ptr,SDamageInfo *damage_info)
 ;
 ; Parameters:
 ; CSentinel *      Stack[0x4]:4   this_ptr

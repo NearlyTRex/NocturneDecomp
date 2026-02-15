@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_mimic_cpp_CMimic_FUN_0051f930(CMimic *this_ptr)
+; void __cdecl core_mimic_cpp_CMimic_FUN_0051f930(CMimic *this_ptr)
 ;
 ; Parameters:
 ; CMimic *         Stack[0x4]:4   this_ptr

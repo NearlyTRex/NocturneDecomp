@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActor * __cdecl core_mission_cpp_CDemonMission_findActorByName_FUN_00524030(CDemonMission *this_ptr,char *name)
+; CDemonActor * __cdecl core_mission_cpp_CDemonMission_findActorByName_FUN_00524030(CDemonMission *this_ptr,char *name)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr

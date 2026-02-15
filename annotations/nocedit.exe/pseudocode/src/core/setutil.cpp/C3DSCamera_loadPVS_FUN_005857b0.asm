@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_setutil_cpp_C3DSCamera_loadPVS_FUN_005857b0(C3DSCamera *this_ptr,_FILE *file_handle)
+; void __cdecl core_setutil_cpp_C3DSCamera_loadPVS_FUN_005857b0(C3DSCamera *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; C3DSCamera *     Stack[0x4]:4   this_ptr

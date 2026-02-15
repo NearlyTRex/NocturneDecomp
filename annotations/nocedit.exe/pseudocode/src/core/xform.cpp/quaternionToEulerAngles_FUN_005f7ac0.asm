@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVector3f * __cdecl core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0(CQuaternion4f *quat_in,CVector3f *vector_out)
+; CVector3f * __cdecl core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0(CQuaternion4f *quat_in,CVector3f *vector_out)
 ;
 ; Parameters:
 ; CQuaternion4f *  Stack[0x4]:4   quat_in

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_trap_cpp_CTrap_hasCollision_FUN_005de720(CTrap *this_ptr,SCollisionInfo *collision_info)
+; int __cdecl core_trap_cpp_CTrap_hasCollision_FUN_005de720(CTrap *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CTrap *          Stack[0x4]:4   this_ptr

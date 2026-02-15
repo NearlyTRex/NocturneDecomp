@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl wincore_windll_cpp_CExternalRenderer_switchRenderer_FUN_005b8117(CExternalRenderer *this_ptr,int renderer_handle)
+; int __cdecl wincore_windll_cpp_CExternalRenderer_switchRenderer_FUN_005b8117(CExternalRenderer *this_ptr,int renderer_handle)
 ;
 ; Parameters:
 ; CExternalRenderer * Stack[0x4]:4   this_ptr

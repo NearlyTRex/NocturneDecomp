@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl cockpit_ckptutil_c_isLineClippingDisabled_FUN_00434660(void)
+; int __cdecl cockpit_ckptutil_c_isLineClippingDisabled_FUN_00434660(void)
 ;
 ;
 ; XREF[1]:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dfilter_cpp_CFilterCache_free_FUN_00470000(CFilterCache *this_ptr)
+; void __cdecl core_dfilter_cpp_CFilterCache_free_FUN_00470000(CFilterCache *this_ptr)
 ;
 ; Parameters:
 ; CFilterCache *   Stack[0x4]:4   this_ptr

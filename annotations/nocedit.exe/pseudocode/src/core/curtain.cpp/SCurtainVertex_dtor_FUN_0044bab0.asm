@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SCurtainVertex * __cdecl core_curtain_cpp_SCurtainVertex_dtor_FUN_0044bab0(SCurtainVertex *this_ptr,uint flags)
+; SCurtainVertex * __cdecl core_curtain_cpp_SCurtainVertex_dtor_FUN_0044bab0(SCurtainVertex *this_ptr,uint flags)
 ;
 ; Parameters:
 ; SCurtainVertex * Stack[0x4]:4   this_ptr

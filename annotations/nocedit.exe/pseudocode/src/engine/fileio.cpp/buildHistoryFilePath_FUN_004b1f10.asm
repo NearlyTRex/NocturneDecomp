@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_fileio_cpp_buildHistoryFilePath_FUN_004b1f10(char *filename,char *extension,char *dest_buffer)
+; void __cdecl engine_fileio_cpp_buildHistoryFilePath_FUN_004b1f10(char *filename,char *extension,char *dest_buffer)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

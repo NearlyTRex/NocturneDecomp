@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dpart_cpp_CDemonPart_load_FUN_00482490(CDemonPart *this_ptr)
+; void __cdecl core_dpart_cpp_CDemonPart_load_FUN_00482490(CDemonPart *this_ptr)
 ;
 ; Parameters:
 ; CDemonPart *     Stack[0x4]:4   this_ptr

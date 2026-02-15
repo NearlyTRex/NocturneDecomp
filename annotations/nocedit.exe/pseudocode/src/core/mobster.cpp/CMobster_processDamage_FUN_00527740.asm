@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_mobster_cpp_CMobster_processDamage_FUN_00527740(CMobster *this_ptr,SDamageInfo *damage_info)
+; void __cdecl core_mobster_cpp_CMobster_processDamage_FUN_00527740(CMobster *this_ptr,SDamageInfo *damage_info)
 ;
 ; Parameters:
 ; CMobster *       Stack[0x4]:4   this_ptr

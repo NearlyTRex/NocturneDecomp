@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl wincore_wddvmem_cpp_stubFunction_FUN_005edd80(void)
+; void __cdecl wincore_wddvmem_cpp_stubFunction_FUN_005edd80(void)
 ;
 ;
 ; XREF[1]:

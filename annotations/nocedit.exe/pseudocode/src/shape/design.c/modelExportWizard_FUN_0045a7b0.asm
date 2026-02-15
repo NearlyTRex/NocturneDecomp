@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_modelExportWizard_FUN_0045a7b0(int export_format_type)
+; void __cdecl shape_design_c_modelExportWizard_FUN_0045a7b0(int export_format_type)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   export_format_type

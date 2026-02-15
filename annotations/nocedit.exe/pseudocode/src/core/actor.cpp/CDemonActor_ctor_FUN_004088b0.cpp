@@ -55,8 +55,8 @@ CDemonActor * __cdecl core_actor_cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor *
   ADJ(pCVar2)->is_renderable = 1;
   ADJ(pCVar2)->is_transparent = 0;
   ADJ(pCVar2)->blood_effect_timer = 0;
-  ADJ(pCVar2)->unk6 = 0;
-  ADJ(pCVar2)->unk7 = 0.0;
+  ADJ(pCVar2)->collision_disabled = 0;
+  ADJ(pCVar2)->process_disabled = 0;
   ADJ(pCVar2)->health = 100;
   pcVar2 = "str";
   ADJ(pCVar2)->is_editor_hidden = 0;

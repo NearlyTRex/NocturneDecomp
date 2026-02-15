@@ -19,14 +19,15 @@
   },
   "complexity": {
     "assembly_lines": 166,
-    "complexity_score": 195,
+    "complexity_score": 210,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 9,
     "pseudocode_lines": 120,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
+      "pointer_cast",
       "undefined_data",
       "unresolved_funcptr"
     ],
@@ -108,13 +109,13 @@
     },
     {
       "addr": "03263310",
-      "name": "g_CDemonSetInstance.damage_listener_count",
+      "name": "g_CDemonSetInstance.character_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "03263314",
-      "name": "g_CDemonSetInstance.damage_listeners",
+      "name": "g_CDemonSetInstance.characters[0]",
       "type": "undefined4",
       "value": null
     },
@@ -279,6 +280,13 @@
       "match": "DAT_02c9b170",
       "text": "core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&DAT_02c9b170);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 103,
+      "match": "(int *)((int)",
+      "text": "iVar2 = *(int *)((int)g_CDemonSetPtr->characters + iVar4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",

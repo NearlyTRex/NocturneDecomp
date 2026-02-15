@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_waypoint_cpp_CWayPoint_removeAdj_FUN_005ec7b0(CWayPoint *this_ptr,int index)
+; void __cdecl core_waypoint_cpp_CWayPoint_removeAdj_FUN_005ec7b0(CWayPoint *this_ptr,int index)
 ;
 ; Parameters:
 ; CWayPoint *      Stack[0x4]:4   this_ptr

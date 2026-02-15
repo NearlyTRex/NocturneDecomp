@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_netgame_cpp_CNetGame_processChatOut_FUN_00541e40(void)
+; void __cdecl core_netgame_cpp_CNetGame_processChatOut_FUN_00541e40(void)
 ;
 ;
 ; XREF[1]:

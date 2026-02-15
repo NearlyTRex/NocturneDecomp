@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CCrossbow * __cdecl core_crossbow_cpp_factoryFunc_FUN_00448c30(void)
+; CCrossbow * __cdecl core_crossbow_cpp_factoryFunc_FUN_00448c30(void)
 ;
 ;
 ; XREF[1]:

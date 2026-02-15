@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_event_cpp_CEventList_getCounterValue_FUN_004b0830(CEventList *this_ptr,char *str)
+; int __cdecl core_event_cpp_CEventList_getCounterValue_FUN_004b0830(CEventList *this_ptr,char *str)
 ;
 ; Parameters:
 ; CEventList *     Stack[0x4]:4   this_ptr

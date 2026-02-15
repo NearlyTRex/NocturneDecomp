@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_mmx_c_detectCPUFeatures_FUN_00524f10(void)
+; void __cdecl core_mmx_c_detectCPUFeatures_FUN_00524f10(void)
 ;
 ;
 ; XREF[1]:

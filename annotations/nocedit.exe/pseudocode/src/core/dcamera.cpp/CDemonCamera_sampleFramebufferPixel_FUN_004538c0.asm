@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dcamera_cpp_CDemonCamera_sampleFramebufferPixel_FUN_004538c0(CDemonCamera *this_ptr,SRenderVertex *vertex)
+; void __cdecl core_dcamera_cpp_CDemonCamera_sampleFramebufferPixel_FUN_004538c0(CDemonCamera *this_ptr,SRenderVertex *vertex)
 ;
 ; Parameters:
 ; CDemonCamera *   Stack[0x4]:4   this_ptr

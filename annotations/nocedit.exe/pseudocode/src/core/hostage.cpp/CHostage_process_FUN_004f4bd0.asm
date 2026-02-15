@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_hostage_cpp_CHostage_process_FUN_004f4bd0(CHostage *this_ptr,float delta_time)
+; void __cdecl core_hostage_cpp_CHostage_process_FUN_004f4bd0(CHostage *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CHostage *       Stack[0x4]:4   this_ptr
@@ -260,12 +260,12 @@ section .text
     ADD ESP,0xc                         ; 004f4da1
     MOV EAX,[0x006810c8]                ; 004f4da4 | g_CDemonSetPtr | g_CDemonSetInstance
         ;   Label: LAB_004f4da4
-    CMP ESI,dword ptr [EAX + 0x14d154]  ; 004f4da9 | g_CDemonSetInstance.actor_list_ptr
+    CMP ESI,dword ptr [EAX + 0x14d154]  ; 004f4da9 | g_CDemonSetInstance.actor_count
     JGE 0x004f4e6f                      ; 004f4daf
         ;   XREF to: 004f4e6f (CONDITIONAL_JUMP)  ; LAB_004f4e6f
     MOV EDX,dword ptr [0x02c14d14]      ; 004f4db5 | g_CDoorClassInfo.name_hash
     PUSH EDX                            ; 004f4dbb
-    MOV ECX,dword ptr [EDI + EAX*0x1 + 0x14d158] ; 004f4dbc | g_CDemonSetInstance.actor_list_data[0] | DAT_032613d4
+    MOV ECX,dword ptr [EDI + EAX*0x1 + 0x14d158] ; 004f4dbc | g_CDemonSetInstance.actors[0] | DAT_032613d4
     PUSH ECX                            ; 004f4dc3
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 004f4dc4
         ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_baron_cpp_FUN_00413470(int param_1,CDemonActor *param_2)
+; void __cdecl core_baron_cpp_FUN_00413470(int param_1,CDemonActor *param_2)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   param_1

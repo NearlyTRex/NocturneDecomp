@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack void __watcallStack crt_string_c_strncpy_safe_FUN_005ff130(char *dest,char *src,int length,int maxlen)
+; void __watcallStack crt_string_c_strncpy_safe_FUN_005ff130(char *dest,char *src,int length,int maxlen)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   dest

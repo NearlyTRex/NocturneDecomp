@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_colonel_cpp_CColonel_FUN_0043ff20(CColonel *this_ptr)
+; void __cdecl core_colonel_cpp_CColonel_FUN_0043ff20(CColonel *this_ptr)
 ;
 ; Parameters:
 ; CColonel *       Stack[0x4]:4   this_ptr
@@ -420,7 +420,7 @@ section .text
     LEA EAX,[EDI + 0x20]                ; 0044033f
     PUSH EAX                            ; 00440342
     CALL core_path.cpp_FUN_00548500     ; 00440343
-        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_FUN_00548500()
+        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_FUN_00548500(CLocation * location)
     ADD ESP,0x4                         ; 00440348
     MOV EDX,dword ptr [EBX + 0x6c]      ; 0044034b
         ;   Label: LAB_0044034b

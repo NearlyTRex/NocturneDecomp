@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_sound_cpp_populateSoundFiles_FUN_005b17a0(void)
+; void __cdecl core_sound_cpp_populateSoundFiles_FUN_005b17a0(void)
 ;
 ;
 ; Referenced Globals:

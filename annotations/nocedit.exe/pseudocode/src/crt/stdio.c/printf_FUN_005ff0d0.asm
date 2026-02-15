@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_stdio_c_printf_FUN_005ff0d0(char *format,...)
+; int __cdecl crt_stdio_c_printf_FUN_005ff0d0(char *format,...)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   format

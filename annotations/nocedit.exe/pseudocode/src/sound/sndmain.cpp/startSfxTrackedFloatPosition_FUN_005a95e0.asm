@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl uint __cdecl sound_sndmain_cpp_startSfxTrackedFloatPosition_FUN_005a95e0(char *filename,CVector3f *position_source_ptr)
+; uint __cdecl sound_sndmain_cpp_startSfxTrackedFloatPosition_FUN_005a95e0(char *filename,CVector3f *position_source_ptr)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

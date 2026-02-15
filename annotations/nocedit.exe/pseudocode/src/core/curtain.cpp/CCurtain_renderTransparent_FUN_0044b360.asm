@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_curtain_cpp_CCurtain_renderTransparent_FUN_0044b360(CCurtain *this_ptr)
+; int __cdecl core_curtain_cpp_CCurtain_renderTransparent_FUN_0044b360(CCurtain *this_ptr)
 ;
 ; Parameters:
 ; CCurtain *       Stack[0x4]:4   this_ptr

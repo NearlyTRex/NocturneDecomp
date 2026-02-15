@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_0042c5f0(CCharacter *this_ptr,CDemonActor *actor,float min_dist,float max_dist,int *out_state )
+; void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_0042c5f0(CCharacter *this_ptr,CDemonActor *actor,float min_dist,float max_dist,int *out_state )
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr

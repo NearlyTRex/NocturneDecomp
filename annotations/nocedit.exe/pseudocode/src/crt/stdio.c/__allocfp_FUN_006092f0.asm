@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl _FILE * __cdecl crt_stdio_c___allocfp_FUN_006092f0(int unused_param)
+; _FILE * __cdecl crt_stdio_c___allocfp_FUN_006092f0(int unused_param)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   unused_param

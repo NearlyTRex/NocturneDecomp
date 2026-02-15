@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_mission_cpp_FUN_00522c60(_FILE *file_handle)
+; void __cdecl core_mission_cpp_FUN_00522c60(_FILE *file_handle)
 ;
 ; Parameters:
 ; _FILE *          Stack[0x4]:4   file_handle

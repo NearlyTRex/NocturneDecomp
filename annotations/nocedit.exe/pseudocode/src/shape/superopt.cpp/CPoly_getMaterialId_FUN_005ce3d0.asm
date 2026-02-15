@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_superopt_cpp_CPoly_getMaterialId_FUN_005ce3d0(CPoly *this_ptr)
+; int __cdecl shape_superopt_cpp_CPoly_getMaterialId_FUN_005ce3d0(CPoly *this_ptr)
 ;
 ; Parameters:
 ; CPoly *          Stack[0x4]:4   this_ptr

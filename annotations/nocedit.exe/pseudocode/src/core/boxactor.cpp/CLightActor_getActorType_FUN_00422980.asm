@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * __cdecl core_boxactor_cpp_CLightActor_getActorType_FUN_00422980(CLightActor *this_ptr)
+; CDemonActorType * __cdecl core_boxactor_cpp_CLightActor_getActorType_FUN_00422980(CLightActor *this_ptr)
 ;
 ; Parameters:
 ; CLightActor *    Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dtrace_cpp_CDemonRaytrace_saveBinary_FUN_00494f50(CDemonRaytrace *this_ptr,_FILE *file_handle)
+; void __cdecl core_dtrace_cpp_CDemonRaytrace_saveBinary_FUN_00494f50(CDemonRaytrace *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CDemonRaytrace * Stack[0x4]:4   this_ptr

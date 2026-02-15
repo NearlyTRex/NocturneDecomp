@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CZombie * __cdecl core_zombie_cpp_factoryFunc_FUN_005f8fa0(void)
+; CZombie * __cdecl core_zombie_cpp_factoryFunc_FUN_005f8fa0(void)
 ;
 ;
 ; XREF[1]:

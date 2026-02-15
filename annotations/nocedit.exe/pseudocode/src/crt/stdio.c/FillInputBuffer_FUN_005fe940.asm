@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int __watcallStack crt_stdio_c_FillInputBuffer_FUN_005fe940(_FILE *file)
+; int __watcallStack crt_stdio_c_FillInputBuffer_FUN_005fe940(_FILE *file)
 ;
 ; Parameters:
 ; _FILE *          Stack[0x4]:4   file

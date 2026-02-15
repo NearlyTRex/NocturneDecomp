@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_edittool_cpp_CInputString_deleteRange_FUN_0049d510(CInputString *this_ptr,int start_pos,int end_pos)
+; void __cdecl shape_edittool_cpp_CInputString_deleteRange_FUN_0049d510(CInputString *this_ptr,int start_pos,int end_pos)
 ;
 ; Parameters:
 ; CInputString *   Stack[0x4]:4   this_ptr

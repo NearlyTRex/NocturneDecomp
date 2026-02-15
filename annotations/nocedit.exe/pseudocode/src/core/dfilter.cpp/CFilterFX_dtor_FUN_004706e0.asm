@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CFilterFx * __cdecl core_dfilter_cpp_CFilterFX_dtor_FUN_004706e0(CFilterFx *this_ptr,uint flags)
+; CFilterFx * __cdecl core_dfilter_cpp_CFilterFX_dtor_FUN_004706e0(CFilterFx *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CFilterFx *      Stack[0x4]:4   this_ptr

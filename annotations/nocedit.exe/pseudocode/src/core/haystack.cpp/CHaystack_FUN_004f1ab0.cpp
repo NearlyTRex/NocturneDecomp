@@ -26,8 +26,8 @@ void __cdecl core_haystack_cpp_CHaystack_FUN_004f1ab0(CHaystack *this_ptr)
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
             ((CDemonActor *)this_ptr,&local_1c,input_local_point);
   while( true ) {
-    if (g_CDemonSetPtr->damage_listener_count <= iVar2) break;
-    this_ptr_00 = *(CHaystack **)(g_CDemonSetPtr->unk4 + iVar1 + -4);
+    if (g_CDemonSetPtr->character_count <= iVar2) break;
+    this_ptr_00 = *(CHaystack **)((int)g_CDemonSetPtr->characters + iVar1);
     if (this_ptr_00 != this_ptr) {
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&SStack_64);
       SStack_64.damage_amount = 10.0;

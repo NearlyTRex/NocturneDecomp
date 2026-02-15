@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_meshlod_cpp_CLodFace_computeNormalAndPlane_FUN_00519870(CLodFace *this_ptr,CVector3f *vertex0_pos,CVector3f *vertex1_pos,CVector3f *vertex2_pos)
+; int __cdecl shape_meshlod_cpp_CLodFace_computeNormalAndPlane_FUN_00519870(CLodFace *this_ptr,CVector3f *vertex0_pos,CVector3f *vertex1_pos,CVector3f *vertex2_pos)
 ;
 ; Parameters:
 ; CLodFace *       Stack[0x4]:4   this_ptr

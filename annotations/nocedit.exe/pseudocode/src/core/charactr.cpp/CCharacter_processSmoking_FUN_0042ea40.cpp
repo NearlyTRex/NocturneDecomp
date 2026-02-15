@@ -24,7 +24,7 @@ void __cdecl core_charactr_cpp_CCharacter_processSmoking_FUN_0042ea40(CCharacter
   CVector3f local_1c;
   
   if ((this_ptr->was_rendered_opaque != 0) &&
-     (*(float *)(g_CDemonSetPtr->unk4 + 0xbbd4) < (float)32)) {
+     ((g_CDemonSetPtr->active_fog).reserved < (float)32)) {
     pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&(this_ptr->model).motion_controller);
     if (pSVar2->state_index == 0) {

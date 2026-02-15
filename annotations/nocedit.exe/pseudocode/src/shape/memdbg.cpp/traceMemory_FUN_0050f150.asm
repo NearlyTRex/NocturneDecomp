@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_memdbg_cpp_traceMemory_FUN_0050f150(char *format,...)
+; void __cdecl shape_memdbg_cpp_traceMemory_FUN_0050f150(char *format,...)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   format

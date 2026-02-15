@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_menu_cpp_showOptionsScreen_FUN_00512d30(int initialize_systems)
+; void __cdecl core_menu_cpp_showOptionsScreen_FUN_00512d30(int initialize_systems)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   initialize_systems

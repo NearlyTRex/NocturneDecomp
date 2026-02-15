@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVec * __cdecl shape_superopt_cpp_CVec_ctor_FUN_005d8140(CVec *this_ptr)
+; CVec * __cdecl shape_superopt_cpp_CVec_ctor_FUN_005d8140(CVec *this_ptr)
 ;
 ; Parameters:
 ; CVec *           Stack[0x4]:4   this_ptr

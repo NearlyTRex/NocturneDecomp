@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(CDeformableModelInstance *this_ptr)
+; void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(CDeformableModelInstance *this_ptr)
 ;
 ; Parameters:
 ; CDeformableModelInstance * Stack[0x8]:4   this_ptr
@@ -536,7 +536,7 @@ section .text
     CALL core_dmodel.cpp_CKeyFramedModel_ctor_FUN_00476cf0 ; 00596cd3
         ;   XREF to: 00476cf0 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModel_ctor_FUN_00476cf0(CKeyFramedModel * this_ptr)
     ADD ESP,0x4                         ; 00596cd8
-    PUSH 0x681850                       ; 00596cdb | DAT_00681850
+    PUSH 0x681850                       ; 00596cdb | WatcomStaticDestructorNode_00681850
     CALL crt_stdlib.c__atexit_FUN_005ff060 ; 00596ce0
         ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 00596ce5

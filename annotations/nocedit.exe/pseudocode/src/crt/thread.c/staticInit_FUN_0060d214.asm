@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_thread_c_staticInit_FUN_0060d214(void)
+; void __cdecl crt_thread_c_staticInit_FUN_0060d214(void)
 ;
 ;
 ; Referenced Globals:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVector3f * __cdecl core_skeleton_cpp_CDeformableModelInstance_skinSingleVertex_FUN_005a0210(CDeformableModelInstance *this_ptr,CVector3f *output_pos,int lod_index,int vertex_index)
+; CVector3f * __cdecl core_skeleton_cpp_CDeformableModelInstance_skinSingleVertex_FUN_005a0210(CDeformableModelInstance *this_ptr,CVector3f *output_pos,int lod_index,int vertex_index)
 ;
 ; Parameters:
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr

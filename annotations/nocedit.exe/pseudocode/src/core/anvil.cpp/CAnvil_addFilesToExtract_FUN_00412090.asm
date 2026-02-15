@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_anvil_cpp_CAnvil_addFilesToExtract_FUN_00412090(CAnvil *this_ptr,_FILE *file_handle)
+; void __cdecl core_anvil_cpp_CAnvil_addFilesToExtract_FUN_00412090(CAnvil *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CAnvil *         Stack[0x4]:4   this_ptr

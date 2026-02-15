@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_mission_cpp_CDemonMission_loadSet_FUN_00523fb0(CDemonMission *this_ptr,int set_index)
+; void __cdecl core_mission_cpp_CDemonMission_loadSet_FUN_00523fb0(CDemonMission *this_ptr,int set_index)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr
@@ -20,8 +20,8 @@
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.actor_list_ptr
-;   undefined4 g_CDemonSetInstance.actor_list_data[0]
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;   undefined4 DAT_032613d4
 ;
 ; Called Functions:
@@ -70,10 +70,10 @@ section .text
     XOR EBX,EBX                         ; 00523ff5
     MOV EAX,[0x006810c8]                ; 00523ff7 | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_00523ff7
-    CMP EBX,dword ptr [EAX + 0x14d154]  ; 00523ffc | g_CDemonSetInstance.actor_list_ptr
+    CMP EBX,dword ptr [EAX + 0x14d154]  ; 00523ffc | g_CDemonSetInstance.actor_count
     JGE 0x00523fbe                      ; 00524002
         ;   XREF to: 00523fbe (CONDITIONAL_JUMP)  ; LAB_00523fbe
-    MOV EAX,dword ptr [ESI + EAX*0x1 + 0x14d158] ; 00524004 | g_CDemonSetInstance.actor_list_data[0] | DAT_032613d4
+    MOV EAX,dword ptr [ESI + EAX*0x1 + 0x14d158] ; 00524004 | g_CDemonSetInstance.actors[0] | DAT_032613d4
     PUSH EAX                            ; 0052400b
     MOV EDX,dword ptr [EAX + 0x154]     ; 0052400c
     ADD ESI,0x4                         ; 00524012

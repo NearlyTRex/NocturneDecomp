@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_meshlod_cpp_crc32UpdateVector3f_FUN_0051c600(uint *crc_ptr,CVector3f *vector_ptr)
+; void __cdecl shape_meshlod_cpp_crc32UpdateVector3f_FUN_0051c600(uint *crc_ptr,CVector3f *vector_ptr)
 ;
 ; Parameters:
 ; uint *           Stack[0x4]:4   crc_ptr

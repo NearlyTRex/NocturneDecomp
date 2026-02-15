@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SMRGLHeaderExtended * __cdecl engine_model_c_loadModelChunk_FUN_00528970(char *filename,int model_size)
+; SMRGLHeaderExtended * __cdecl engine_model_c_loadModelChunk_FUN_00528970(char *filename,int model_size)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

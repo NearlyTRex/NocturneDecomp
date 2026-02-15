@@ -33,7 +33,7 @@ void __cdecl core_dpart_cpp_CDemonPart_loadFromFile_FUN_004825c0(CDemonPart *thi
   iVar7 = 0;
   _fread(&this_ptr->mystery_array_size,4,1,file_handle);
   if (0 < this_ptr->mystery_array_size) {
-    buffer = this_ptr->mystery_array;
+    buffer = this_ptr->mystery_array + 8;
     do {
       iVar7 = iVar7 + 1;
       _fread(buffer,0x10,1,file_handle);

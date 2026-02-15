@@ -458,11 +458,11 @@ LAB_005e648e:
         core_charactr_cpp_CCharacter_dismember_FUN_0042b9e0((CCharacter *)this_ptr,&CStack_10c,-1.0)
         ;
         iVar7 = 0;
-        for (local_2c = 0.0; (int)local_2c < *(int *)(g_CDemonSetPtr->unk4 + 0x1f3c);
+        for (local_2c = 0.0; (int)local_2c < g_CDemonSetPtr->enemy_count;
             local_2c = (float)((int)local_2c + 1)) {
           this_ptr_00 = (CCharacter *)
                         core_actor_cpp_castToClassHash_FUN_0040c790
-                                  (*(CDemonActor **)(g_CDemonSetPtr->unk4 + iVar7 + 8000),
+                                  (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar7),
                                    g_CTVBatClassInfo.name_hash);
           if ((this_ptr_00 != (CCharacter *)0x0) &&
              (this_ptr_00[1].model.transformed_vertices[0xc].x != 0.0)) {

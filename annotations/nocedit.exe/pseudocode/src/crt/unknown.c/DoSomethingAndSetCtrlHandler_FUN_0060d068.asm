@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown SIGNAL_HANDLER_TYPE crt_unknown_c_DoSomethingAndSetCtrlHandler_FUN_0060d068(int param_1,int param_2)
+; SIGNAL_HANDLER_TYPE crt_unknown_c_DoSomethingAndSetCtrlHandler_FUN_0060d068(int param_1,int param_2)
 ;
 ;
 ; Referenced Globals:

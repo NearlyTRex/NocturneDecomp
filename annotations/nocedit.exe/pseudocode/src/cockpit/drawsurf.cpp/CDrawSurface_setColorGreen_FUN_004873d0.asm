@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl cockpit_drawsurf_cpp_CDrawSurface_setColorGreen_FUN_004873d0(void)
+; void __cdecl cockpit_drawsurf_cpp_CDrawSurface_setColorGreen_FUN_004873d0(void)
 ;
 ;
 ; Called Functions:

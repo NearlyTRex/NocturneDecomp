@@ -25,7 +25,7 @@ int __cdecl core_charactr_cpp_CCharacter_hasCollision_FUN_0042bc20(CCharacter *t
         ;
         return 2;
       }
-      collision_info->result_ptr = &this_ptr->model;
+      collision_info->deformable_model = &this_ptr->model;
       return 1;
     }
   }

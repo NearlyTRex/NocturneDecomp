@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_melee_cpp_CMelee_FUN_0050ebe0(CMelee *this_ptr)
+; void __cdecl core_melee_cpp_CMelee_FUN_0050ebe0(CMelee *this_ptr)
 ;
 ; Parameters:
 ; CMelee *         Stack[0x4]:4   this_ptr

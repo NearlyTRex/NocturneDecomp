@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl wincore_wddvmem_cpp_openScreenDevice_FUN_005ed580(void)
+; void __cdecl wincore_wddvmem_cpp_openScreenDevice_FUN_005ed580(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x74]:4  local_74

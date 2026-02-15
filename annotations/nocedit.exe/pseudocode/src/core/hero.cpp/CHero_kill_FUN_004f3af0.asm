@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_hero_cpp_CHero_kill_FUN_004f3af0(CHero *this_ptr,int damage_type,CVector3f *damage_direction,float impact_force)
+; void __cdecl core_hero_cpp_CHero_kill_FUN_004f3af0(CHero *this_ptr,int damage_type,CVector3f *damage_direction,float impact_force)
 ;
 ; Parameters:
 ; CHero *          Stack[0x4]:4   this_ptr

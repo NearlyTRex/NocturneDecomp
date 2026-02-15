@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_trash_cpp_CTrash_hasCollision_FUN_005df6d0(CTrash *this_ptr,SCollisionInfo *collision_info)
+; int __cdecl core_trash_cpp_CTrash_hasCollision_FUN_005df6d0(CTrash *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CTrash *         Stack[0x4]:4   this_ptr

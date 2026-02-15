@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_enableAdvancedCulling_FUN_0048ce10(CDemonRenderer *this_ptr,int enabled)
+; void __cdecl engine_drender_cpp_CDemonRenderer_enableAdvancedCulling_FUN_0048ce10(CDemonRenderer *this_ptr,int enabled)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr

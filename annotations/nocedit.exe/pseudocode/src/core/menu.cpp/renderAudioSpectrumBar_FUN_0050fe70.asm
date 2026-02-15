@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_menu_cpp_renderAudioSpectrumBar_FUN_0050fe70(int x_center,int y_top,int height_half)
+; void __cdecl core_menu_cpp_renderAudioSpectrumBar_FUN_0050fe70(int x_center,int y_top,int height_half)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   x_center

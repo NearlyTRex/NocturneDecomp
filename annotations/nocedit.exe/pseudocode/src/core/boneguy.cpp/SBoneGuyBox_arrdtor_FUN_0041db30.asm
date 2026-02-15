@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SBoneGuyBox * __cdecl core_boneguy_cpp_SBoneGuyBox_arrdtor_FUN_0041db30(SBoneGuyBox *objs,uint flags)
+; SBoneGuyBox * __cdecl core_boneguy_cpp_SBoneGuyBox_arrdtor_FUN_0041db30(SBoneGuyBox *objs,uint flags)
 ;
 ; Parameters:
 ; SBoneGuyBox *    Stack[0x4]:4   objs

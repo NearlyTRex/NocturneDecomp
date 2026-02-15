@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_main_c_waitWithSkip_FUN_005082a0(int duration_ms)
+; void __cdecl core_main_c_waitWithSkip_FUN_005082a0(int duration_ms)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   duration_ms

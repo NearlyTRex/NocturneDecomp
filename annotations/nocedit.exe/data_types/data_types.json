@@ -413,6 +413,10 @@
       "type":"struct"
     },
     {
+      "name":"CColor4f",
+      "type":"struct"
+    },
+    {
       "name":"CColorQuantizer_ProgressCallback",
       "type":"function_definition"
     },
@@ -713,10 +717,6 @@
       "type":"struct"
     },
     {
-      "name":"CEditorMode",
-      "type":"struct"
-    },
-    {
       "name":"CEditorTools",
       "type":"struct"
     },
@@ -742,10 +742,6 @@
     },
     {
       "name":"CEnemy_full_vtable",
-      "type":"struct"
-    },
-    {
-      "name":"CEvent",
       "type":"struct"
     },
     {
@@ -3493,10 +3489,6 @@
       "type":"struct"
     },
     {
-      "name":"CMirror",
-      "type":"struct"
-    },
-    {
       "name":"SClothBone",
       "type":"struct"
     },
@@ -3849,6 +3841,14 @@
       "type":"struct"
     },
     {
+      "name":"SMRGLPrimitiveClippedIndex",
+      "type":"struct"
+    },
+    {
+      "name":"CMirror",
+      "type":"struct"
+    },
+    {
       "name":"SMRGLPrimitiveQuadIndex",
       "type":"struct"
     },
@@ -3999,10 +3999,6 @@
     {
       "name":"SBodyPartModel_ptr_24",
       "type":"typedef"
-    },
-    {
-      "name":"SCollisionInfo",
-      "type":"struct"
     },
     {
       "name":"SMRGLPrimitiveTriangle",
@@ -4570,6 +4566,10 @@
     },
     {
       "name":"CPassenger",
+      "type":"struct"
+    },
+    {
+      "name":"SCollisionInfo",
       "type":"struct"
     },
     {
@@ -6089,10 +6089,6 @@
       "type":"struct"
     },
     {
-      "name":"CDemonSet",
-      "type":"struct"
-    },
-    {
       "name":"CGrave",
       "type":"struct"
     },
@@ -6241,6 +6237,10 @@
       "type":"struct"
     },
     {
+      "name":"CDemonSet",
+      "type":"struct"
+    },
+    {
       "name":"CWeapon",
       "type":"struct"
     },
@@ -6311,6 +6311,10 @@
     {
       "name":"CStranger",
       "type":"struct"
+    },
+    {
+      "name":"CStranger_ptr_130264",
+      "type":"typedef"
     },
     {
       "name":"CSvetlana",
@@ -21824,7 +21828,7 @@
         },
         {
           "len":4,
-          "name":"unk1",
+          "name":"padding",
           "offset":316,
           "type":"int"
         },
@@ -21848,7 +21852,7 @@
         },
         {
           "len":4,
-          "name":"unk2",
+          "name":"camera_group",
           "offset":332,
           "type":"int"
         },
@@ -21896,13 +21900,13 @@
         },
         {
           "len":4,
-          "name":"unk3",
+          "name":"vdir_zone",
           "offset":412,
           "type":"int"
         },
         {
           "len":4,
-          "name":"unk4",
+          "name":"enabled",
           "offset":416,
           "type":"int"
         }
@@ -21961,16 +21965,22 @@
           "type":"float"
         },
         {
-          "len":246,
+          "len":250,
           "name":"visible_flags",
           "offset":296,
-          "type":"char[246]"
+          "type":"char[250]"
         },
         {
-          "len":4006,
-          "name":"unk1",
-          "offset":542,
-          "type":"char[4006]"
+          "len":2,
+          "name":"padding",
+          "offset":546,
+          "type":"char[2]"
+        },
+        {
+          "len":4000,
+          "name":"camera_light_bounds",
+          "offset":548,
+          "type":"CRect[250]"
         },
         {
           "len":12,
@@ -21991,10 +22001,16 @@
           "type":"float"
         },
         {
-          "len":8,
-          "name":"unk2",
+          "len":4,
+          "name":"atten_end_squared",
           "offset":4568,
-          "type":"char[8]"
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"atten_end_reciprocal",
+          "offset":4572,
+          "type":"float"
         },
         {
           "len":4,
@@ -25671,6 +25687,42 @@
       "fields":[
         {
           "len":4,
+          "name":"r",
+          "offset":0,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"g",
+          "offset":4,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"b",
+          "offset":8,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"a",
+          "offset":12,
+          "type":"float"
+        }
+      ],
+      "importable":true,
+      "len":16,
+      "name":"CColor4f",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
           "name":"progress_callback",
           "offset":0,
           "type":"CColorQuantizer_ProgressCallback*"
@@ -26877,15 +26929,15 @@
         },
         {
           "len":4,
-          "name":"unk6",
+          "name":"collision_disabled",
           "offset":256,
           "type":"int"
         },
         {
           "len":4,
-          "name":"unk7",
+          "name":"process_disabled",
           "offset":260,
-          "type":"float"
+          "type":"int"
         },
         {
           "len":12,
@@ -26913,13 +26965,13 @@
         },
         {
           "len":4,
-          "name":"unk11",
+          "name":"reserved1",
           "offset":288,
           "type":"int"
         },
         {
           "len":4,
-          "name":"unk12",
+          "name":"reserved2",
           "offset":292,
           "type":"int"
         },
@@ -27975,7 +28027,7 @@
         },
         {
           "len":4,
-          "name":"unk1",
+          "name":"unused",
           "offset":7280,
           "type":"int"
         },
@@ -28000,7 +28052,7 @@
         },
         {
           "len":4,
-          "name":"unk2",
+          "name":"volumetric_enabled",
           "offset":7356,
           "type":"int"
         },
@@ -28120,28 +28172,10 @@
           "type":"int"
         },
         {
-          "len":4,
-          "name":"unk1",
+          "len":16,
+          "name":"viewport",
           "offset":20,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"unk2",
-          "offset":24,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"unk3",
-          "offset":28,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"unk4",
-          "offset":32,
-          "type":"int"
+          "type":"CRect"
         },
         {
           "len":4,
@@ -28330,16 +28364,10 @@
           "type":"int"
         },
         {
-          "len":8,
-          "name":"unk",
-          "offset":60,
-          "type":"char[8]"
-        },
-        {
-          "len":760,
+          "len":768,
           "name":"mystery_array",
-          "offset":68,
-          "type":"char[760]"
+          "offset":60,
+          "type":"char[768]"
         },
         {
           "len":12,
@@ -28613,7 +28641,7 @@
         },
         {
           "len":4,
-          "name":"unk",
+          "name":"skip_uv_extraction",
           "offset":32,
           "type":"int"
         }
@@ -28661,13 +28689,13 @@
         },
         {
           "len":12,
-          "name":"collision_result_vec1",
+          "name":"ray_origin",
           "offset":1364240,
           "type":"CVector3f"
         },
         {
           "len":12,
-          "name":"collision_result_vec2",
+          "name":"ray_target",
           "offset":1364252,
           "type":"CVector3f"
         },
@@ -28697,13 +28725,13 @@
         },
         {
           "len":4,
-          "name":"unk1",
+          "name":"collision_part_index",
           "offset":1364296,
           "type":"int"
         },
         {
           "len":4,
-          "name":"unk2",
+          "name":"collision_triangle_index",
           "offset":1364300,
           "type":"int"
         },
@@ -28715,39 +28743,99 @@
         },
         {
           "len":4,
-          "name":"actor_list_ptr",
+          "name":"actor_count",
           "offset":1364308,
-          "type":"void*"
+          "type":"int"
         },
         {
-          "len":96,
-          "name":"actor_list_data",
+          "len":8000,
+          "name":"actors",
           "offset":1364312,
-          "type":"char[96]"
-        },
-        {
-          "len":7904,
-          "name":"unk3",
-          "offset":1364408,
-          "type":"char[7904]"
+          "type":"CDemonActor*[2000]"
         },
         {
           "len":4,
-          "name":"damage_listener_count",
+          "name":"character_count",
           "offset":1372312,
           "type":"int"
         },
         {
-          "len":4,
-          "name":"damage_listeners",
+          "len":8000,
+          "name":"characters",
           "offset":1372316,
-          "type":"void**"
+          "type":"CCharacter*[2000]"
         },
         {
-          "len":48088,
-          "name":"unk4",
-          "offset":1372320,
-          "type":"char[48088]"
+          "len":4,
+          "name":"enemy_count",
+          "offset":1380316,
+          "type":"int"
+        },
+        {
+          "len":8000,
+          "name":"enemies",
+          "offset":1380320,
+          "type":"CEnemy*[2000]"
+        },
+        {
+          "len":4,
+          "name":"threat_count",
+          "offset":1388320,
+          "type":"int"
+        },
+        {
+          "len":8000,
+          "name":"threats",
+          "offset":1388324,
+          "type":"CDemonActor*[2000]"
+        },
+        {
+          "len":4,
+          "name":"waypoint_count",
+          "offset":1396324,
+          "type":"int"
+        },
+        {
+          "len":8000,
+          "name":"waypoints",
+          "offset":1396328,
+          "type":"CWayPoint*[2000]"
+        },
+        {
+          "len":4,
+          "name":"collidable_actor_count",
+          "offset":1404328,
+          "type":"int"
+        },
+        {
+          "len":8000,
+          "name":"collidable_actors",
+          "offset":1404332,
+          "type":"CDemonActor*[2000]"
+        },
+        {
+          "len":4,
+          "name":"renderable_actor_count",
+          "offset":1412332,
+          "type":"int"
+        },
+        {
+          "len":8000,
+          "name":"renderable_actors",
+          "offset":1412336,
+          "type":"CDemonActor*[2000]"
+        },
+        {
+          "len":36,
+          "name":"scene_fog",
+          "offset":1420336,
+          "type":"SFog"
+        },
+        {
+          "len":36,
+          "name":"active_fog",
+          "offset":1420372,
+          "type":"SFog"
         },
         {
           "len":4,
@@ -28769,25 +28857,25 @@
         },
         {
           "len":4,
-          "name":"unk_lighting_param1",
+          "name":"disable_spotlight_shadows",
           "offset":1420420,
           "type":"int"
         },
         {
           "len":4,
-          "name":"unk_lighting_param2",
+          "name":"disable_directional_lighting",
           "offset":1420424,
           "type":"int"
         },
         {
           "len":4,
-          "name":"unk_lighting_param3",
+          "name":"disable_water_rendering",
           "offset":1420428,
           "type":"int"
         },
         {
           "len":4,
-          "name":"unk_lighting_param4",
+          "name":"disable_sky_rendering",
           "offset":1420432,
           "type":"int"
         },
@@ -28823,7 +28911,7 @@
         },
         {
           "len":4,
-          "name":"mirror_glass_count",
+          "name":"mirror_glass_actor_count",
           "offset":1420468,
           "type":"int"
         },
@@ -28871,7 +28959,7 @@
         },
         {
           "len":4,
-          "name":"unk5",
+          "name":"skip_normal_normalization",
           "offset":1420932,
           "type":"int"
         },
@@ -28901,13 +28989,13 @@
         },
         {
           "len":4,
-          "name":"unk6",
+          "name":"reserved1",
           "offset":1420952,
           "type":"int"
         },
         {
           "len":4,
-          "name":"unk7",
+          "name":"reserved2",
           "offset":1420956,
           "type":"int"
         },
@@ -28991,27 +29079,15 @@
         },
         {
           "len":4,
-          "name":"unk8",
+          "name":"laser_type",
           "offset":1439364,
-          "type":"float"
+          "type":"int"
         },
         {
-          "len":4,
-          "name":"unk9",
+          "len":12,
+          "name":"laser_color",
           "offset":1439368,
-          "type":"float"
-        },
-        {
-          "len":4,
-          "name":"unk10",
-          "offset":1439372,
-          "type":"float"
-        },
-        {
-          "len":4,
-          "name":"unk11",
-          "offset":1439376,
-          "type":"float"
+          "type":"CColor3f"
         },
         {
           "len":4,
@@ -29057,21 +29133,27 @@
         },
         {
           "len":4,
-          "name":"unk12",
+          "name":"skip_exact_collisions",
           "offset":1439452,
           "type":"int"
         },
         {
           "len":4,
-          "name":"rendering_flags_ptr",
+          "name":"directional_light_ratio_enabled",
           "offset":1439456,
-          "type":"int*"
+          "type":"int"
         },
         {
-          "len":8004,
-          "name":"unk13",
+          "len":4,
+          "name":"sorted_render_actor_count",
           "offset":1439460,
-          "type":"char[8004]"
+          "type":"int"
+        },
+        {
+          "len":8000,
+          "name":"sorted_render_actors",
+          "offset":1439464,
+          "type":"CDemonActor*[2000]"
         },
         {
           "len":4,
@@ -29099,31 +29181,31 @@
         },
         {
           "len":4,
-          "name":"mirror_render_flag",
+          "name":"mirror_camera_dirty",
           "offset":1447508,
           "type":"int"
         },
         {
           "len":4,
-          "name":"mirror_render_param1",
+          "name":"mirror_lighting_cached",
           "offset":1447512,
           "type":"int"
         },
         {
           "len":4,
-          "name":"mirror_render_param2",
+          "name":"mirror_cached_light",
           "offset":1447516,
           "type":"int"
         },
         {
           "len":4,
-          "name":"mirror_render_param3",
+          "name":"mirror_cached_color",
           "offset":1447520,
           "type":"int"
         },
         {
           "len":4,
-          "name":"mirror_render_param4",
+          "name":"mirror_cached_fog",
           "offset":1447524,
           "type":"int"
         },
@@ -29830,10 +29912,11 @@
       "desc":"",
       "fields":[
         {
+          "comment":"0=binary,1=tri-state",
           "len":4,
-          "name":"vtable",
+          "name":"checkbox_mode",
           "offset":0,
-          "type":"void**"
+          "type":"int"
         },
         {
           "len":4,
@@ -29849,7 +29932,7 @@
         },
         {
           "len":4,
-          "name":"coord_unk",
+          "name":"text_color_mode",
           "offset":12,
           "type":"int"
         },
@@ -29902,44 +29985,8 @@
       "desc":"",
       "fields":[
         {
-          "len":48,
-          "name":"unk",
-          "offset":0,
-          "type":"char[48]"
-        },
-        {
-          "len":4,
-          "name":"render_sky_in_editor",
-          "offset":48,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"render_water_in_editor",
-          "offset":52,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"full_light_in_editor",
-          "offset":56,
-          "type":"int"
-        }
-      ],
-      "importable":true,
-      "len":60,
-      "name":"CEditorMode",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":1,
-      "cat":"/Nocturne/Class/Game",
-      "desc":"",
-      "fields":[
-        {
           "len":1,
-          "name":"unk",
+          "name":"unused",
           "offset":0,
           "type":"char"
         }
@@ -30130,22 +30177,10 @@
           "type":"int"
         },
         {
-          "len":4,
-          "name":"laser_r",
+          "len":12,
+          "name":"laser_color",
           "offset":572,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"laser_g",
-          "offset":576,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"laser_b",
-          "offset":580,
-          "type":"int"
+          "type":"CColor3i"
         },
         {
           "len":380,
@@ -30175,7 +30210,7 @@
           "len":4,
           "name":"dest_actor",
           "offset":976,
-          "type":"int"
+          "type":"CDemonActor*"
         },
         {
           "len":100,
@@ -30197,9 +30232,9 @@
         },
         {
           "len":4,
-          "name":"unk5",
+          "name":"emit_timer",
           "offset":1088,
-          "type":"char[4]"
+          "type":"float"
         },
         {
           "len":4,
@@ -30208,10 +30243,28 @@
           "type":"float"
         },
         {
-          "len":76,
-          "name":"unk6",
+          "len":4,
+          "name":"state_timer",
           "offset":1096,
-          "type":"char[76]"
+          "type":"float"
+        },
+        {
+          "len":64,
+          "name":"globe",
+          "offset":1100,
+          "type":"CDemonGlobe"
+        },
+        {
+          "len":4,
+          "name":"was_active",
+          "offset":1164,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"prev_emitter_state",
+          "offset":1168,
+          "type":"int"
         }
       ],
       "importable":true,
@@ -30385,24 +30438,6 @@
       "importable":true,
       "len":16,
       "name":"CEnemy_vtable",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":1,
-      "cat":"/Nocturne/Class/Game",
-      "desc":"",
-      "fields":[
-        {
-          "len":4,
-          "name":"unk",
-          "offset":0,
-          "type":"int"
-        }
-      ],
-      "importable":true,
-      "len":4,
-      "name":"CEvent",
       "pack":false,
       "type":"struct"
     },
@@ -32722,10 +32757,22 @@
           "type":"CVector3f[25]"
         },
         {
-          "len":500,
-          "name":"unk1",
+          "len":300,
+          "name":"render_vertices",
           "offset":1208,
-          "type":"char[500]"
+          "type":"CVector3i[25]"
+        },
+        {
+          "len":100,
+          "name":"texture_u",
+          "offset":1508,
+          "type":"int[25]"
+        },
+        {
+          "len":100,
+          "name":"texture_v",
+          "offset":1608,
+          "type":"int[25]"
         },
         {
           "len":1152,
@@ -32735,13 +32782,13 @@
         },
         {
           "len":4,
-          "name":"unk2",
+          "name":"grid_cols",
           "offset":2860,
           "type":"int"
         },
         {
           "len":4,
-          "name":"unk3",
+          "name":"grid_rows",
           "offset":2864,
           "type":"int"
         },
@@ -32759,7 +32806,7 @@
         },
         {
           "len":4,
-          "name":"unk4",
+          "name":"pending_background_render",
           "offset":2876,
           "type":"int"
         }
@@ -32993,13 +33040,13 @@
         },
         {
           "len":4,
-          "name":"unk1",
+          "name":"reserved1",
           "offset":52,
           "type":"int"
         },
         {
           "len":4,
-          "name":"unk2",
+          "name":"reserved2",
           "offset":56,
           "type":"int"
         },
@@ -35715,9 +35762,9 @@
         },
         {
           "len":4,
-          "name":"unk",
+          "name":"reserved",
           "offset":148,
-          "type":"char[4]"
+          "type":"int"
         },
         {
           "len":80,
@@ -35727,9 +35774,9 @@
         },
         {
           "len":56,
-          "name":"additional_data",
+          "name":"clip_primitive",
           "offset":232,
-          "type":"char[56]"
+          "type":"SMRGLPrimitiveClippedIndex"
         }
       ],
       "importable":true,
@@ -37478,22 +37525,10 @@
           "type":"CVector3i"
         },
         {
-          "len":4,
-          "name":"unk1",
+          "len":12,
+          "name":"dest_voxel_coords",
           "offset":24,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"unk2",
-          "offset":28,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"unk3",
-          "offset":32,
-          "type":"int"
+          "type":"CVector3i"
         },
         {
           "len":12,
@@ -40793,7 +40828,7 @@
           "len":4,
           "name":"unk5",
           "offset":130084,
-          "type":"char[4]"
+          "type":"int"
         },
         {
           "len":4,
@@ -40808,10 +40843,16 @@
           "type":"CDemonActor*"
         },
         {
-          "len":8,
+          "len":4,
           "name":"unk6",
           "offset":130096,
-          "type":"char[8]"
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"unk7",
+          "offset":130100,
+          "type":"int"
         },
         {
           "len":4,
@@ -40833,7 +40874,7 @@
         },
         {
           "len":144,
-          "name":"unk9",
+          "name":"unk8",
           "offset":130116,
           "type":"char[144]"
         },
@@ -40850,10 +40891,46 @@
           "type":"CKeyFramedModelInstance"
         },
         {
-          "len":28,
-          "name":"unk11",
+          "len":4,
+          "name":"unk9",
           "offset":130644,
-          "type":"char[28]"
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"unk10",
+          "offset":130648,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"unk11",
+          "offset":130652,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"unk12",
+          "offset":130656,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"unk13",
+          "offset":130660,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"unk14",
+          "offset":130664,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"unk15",
+          "offset":130668,
+          "type":"int"
         }
       ],
       "importable":true,
@@ -48552,15 +48629,15 @@
       "fields":[
         {
           "len":4,
-          "name":"constant",
+          "name":"closest_t",
           "offset":0,
           "type":"float"
         },
         {
           "len":12,
-          "name":"unk",
+          "name":"push_normal",
           "offset":4,
-          "type":"char[12]"
+          "type":"CVector3f"
         },
         {
           "len":4,
@@ -48594,25 +48671,25 @@
         },
         {
           "len":4,
-          "name":"user_data1",
+          "name":"top_y",
           "offset":36,
           "type":"void*"
         },
         {
           "len":4,
-          "name":"user_data2",
+          "name":"bottom_y",
           "offset":40,
           "type":"void*"
         },
         {
           "len":4,
-          "name":"dot_product",
+          "name":"sweep_slab_near",
           "offset":44,
           "type":"float"
         },
         {
           "len":4,
-          "name":"expanded_term",
+          "name":"sweep_slab_far",
           "offset":48,
           "type":"float"
         },
@@ -49044,27 +49121,15 @@
         },
         {
           "len":4,
-          "name":"unk1",
+          "name":"laser_type",
           "offset":4,
-          "type":"float"
+          "type":"int"
         },
         {
-          "len":4,
-          "name":"unk2",
+          "len":12,
+          "name":"laser_color",
           "offset":8,
-          "type":"float"
-        },
-        {
-          "len":4,
-          "name":"unk3",
-          "offset":12,
-          "type":"float"
-        },
-        {
-          "len":4,
-          "name":"unk4",
-          "offset":16,
-          "type":"float"
+          "type":"CColor3f"
         },
         {
           "len":4,
@@ -49086,13 +49151,13 @@
         },
         {
           "len":4,
-          "name":"result_ptr",
+          "name":"deformable_model",
           "offset":32,
-          "type":"void*"
+          "type":"CDeformableModelInstance*"
         },
         {
           "len":4,
-          "name":"model",
+          "name":"keyframed_model",
           "offset":36,
           "type":"CKeyFramedModelInstance*"
         }
@@ -49116,7 +49181,7 @@
         },
         {
           "len":16,
-          "name":"unk",
+          "name":"reserved",
           "offset":12,
           "type":"char[16]"
         }
@@ -49608,7 +49673,7 @@
       "fields":[
         {
           "len":4,
-          "name":"unknown",
+          "name":"fire_type",
           "offset":0,
           "type":"int"
         },
@@ -49656,9 +49721,9 @@
         },
         {
           "len":4,
-          "name":"damage_type",
+          "name":"gore_multiplier",
           "offset":48,
-          "type":"int"
+          "type":"float"
         },
         {
           "len":4,
@@ -50886,27 +50951,15 @@
       "fields":[
         {
           "len":4,
-          "name":"max_distance",
+          "name":"closest_t",
           "offset":0,
           "type":"float"
         },
         {
-          "len":4,
-          "name":"push_z",
+          "len":12,
+          "name":"push_normal",
           "offset":4,
-          "type":"float"
-        },
-        {
-          "len":4,
-          "name":"flags",
-          "offset":8,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"push_x",
-          "offset":12,
-          "type":"float"
+          "type":"CVector3f"
         },
         {
           "len":4,
@@ -50922,13 +50975,13 @@
         },
         {
           "len":4,
-          "name":"normal_x",
+          "name":"dir_x",
           "offset":24,
           "type":"float"
         },
         {
           "len":4,
-          "name":"normal_z",
+          "name":"dir_z",
           "offset":28,
           "type":"float"
         },
@@ -50952,25 +51005,25 @@
         },
         {
           "len":4,
-          "name":"inner_radius",
+          "name":"sweep_slab_near",
           "offset":44,
           "type":"float"
         },
         {
           "len":4,
-          "name":"outer_radius",
+          "name":"sweep_slab_far",
           "offset":48,
           "type":"float"
         },
         {
           "len":4,
-          "name":"axis_direction_x",
+          "name":"normal_x",
           "offset":52,
           "type":"float"
         },
         {
           "len":4,
-          "name":"axis_direction_z",
+          "name":"normal_z",
           "offset":56,
           "type":"float"
         },
@@ -52541,6 +52594,30 @@
           "type":"SMRGLHeaderPrimitive"
         },
         {
+          "len":32,
+          "name":"vertices",
+          "offset":24,
+          "type":"int[8]"
+        }
+      ],
+      "importable":true,
+      "len":56,
+      "name":"SMRGLPrimitiveClippedIndex",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":24,
+          "name":"base",
+          "offset":0,
+          "type":"SMRGLHeaderPrimitive"
+        },
+        {
           "len":48,
           "name":"vertices",
           "offset":24,
@@ -53292,27 +53369,15 @@
         },
         {
           "len":4,
-          "name":"color_r",
+          "name":"laser_type",
           "offset":4,
-          "type":"float"
+          "type":"int"
         },
         {
-          "len":4,
-          "name":"color_g",
+          "len":12,
+          "name":"laser_color",
           "offset":8,
-          "type":"float"
-        },
-        {
-          "len":4,
-          "name":"color_b",
-          "offset":12,
-          "type":"float"
-        },
-        {
-          "len":4,
-          "name":"color_a",
-          "offset":16,
-          "type":"float"
+          "type":"CColor3f"
         },
         {
           "len":4,
@@ -53370,7 +53435,7 @@
         },
         {
           "len":4,
-          "name":"unk1",
+          "name":"saved_skip_exact_collision",
           "offset":116,
           "type":"int"
         },
@@ -53400,13 +53465,13 @@
         },
         {
           "len":4,
-          "name":"unk2",
+          "name":"saved_collision_part_index",
           "offset":152,
           "type":"int"
         },
         {
           "len":4,
-          "name":"unk3",
+          "name":"saved_collision_triangle_index",
           "offset":156,
           "type":"int"
         }
@@ -53664,13 +53729,13 @@
         },
         {
           "len":4,
-          "name":"reverb_preset",
+          "name":"reserved",
           "offset":60,
           "type":"int"
         },
         {
           "len":4,
-          "name":"unk",
+          "name":"reverb_preset",
           "offset":64,
           "type":"int"
         }
@@ -56010,10 +56075,16 @@
           "type":"CMatrix3x3f"
         },
         {
-          "len":8,
-          "name":"unk",
+          "len":4,
+          "name":"reserved",
           "offset":60,
-          "type":"char[8]"
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"parent_index",
+          "offset":64,
+          "type":"int"
         }
       ],
       "importable":true,
@@ -58349,6 +58420,14 @@
       "component_offset":56,
       "importable":true,
       "name":"CScript_ptr_56",
+      "type":"typedef"
+    },
+    {
+      "base":"CStranger*",
+      "cat":"/Nocturne/Class/Game",
+      "component_offset":130264,
+      "importable":true,
+      "name":"CStranger_ptr_130264",
       "type":"typedef"
     },
     {

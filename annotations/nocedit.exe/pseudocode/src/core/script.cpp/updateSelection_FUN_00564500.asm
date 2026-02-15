@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_script_cpp_updateSelection_FUN_00564500(void)
+; void __cdecl core_script_cpp_updateSelection_FUN_00564500(void)
 ;
 ;
 ; XREF[3]:

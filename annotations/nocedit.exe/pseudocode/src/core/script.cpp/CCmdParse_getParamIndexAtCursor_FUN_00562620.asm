@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_script_cpp_CCmdParse_getParamIndexAtCursor_FUN_00562620(CCmdParse *this_ptr,int cursor_position)
+; int __cdecl core_script_cpp_CCmdParse_getParamIndexAtCursor_FUN_00562620(CCmdParse *this_ptr,int cursor_position)
 ;
 ; Parameters:
 ; CCmdParse *      Stack[0x4]:4   this_ptr

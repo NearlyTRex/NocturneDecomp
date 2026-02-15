@@ -10,7 +10,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005bb960(CStranger *this_ptr)
 
 {
   CLocation *pCVar1;
-  char *pcVar2;
+  int *piVar2;
   CDeformableModelInstance *pCVar3;
   CVector3f *pCVar4;
   float fVar5;
@@ -115,23 +115,23 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005bb960(CStranger *this_ptr)
   local_1c = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                        (g_CEventListPtr,"DebugActionPending");
   pCVar11 = (this_ptr->base).base.carry_hands[1].carry_actor;
-  if ((pCVar11 != (CDemonActor *)0x0) && (*(float *)(this_ptr->unk9 + 0x6c) < -999999.0f)) {
+  if ((pCVar11 != (CDemonActor *)0x0) && (*(float *)(this_ptr->unk8 + 0x6c) < -999999.0f)) {
     pCVar17 = (*((pCVar11->vtable)._ub)->getBoundingBox)
                         (pCVar11,(CBoundingBox3D *)(auStack_280 + 0x18));
-    if ((CBoundingBox3D *)(this_ptr->unk9 + 0x60) != pCVar17) {
-      (((CBoundingBox3D *)(this_ptr->unk9 + 0x60))->min).x = (pCVar17->min).x;
-      *(float *)(this_ptr->unk9 + 100) = (pCVar17->min).y;
-      *(float *)(this_ptr->unk9 + 0x68) = (pCVar17->min).z;
+    if ((CBoundingBox3D *)(this_ptr->unk8 + 0x60) != pCVar17) {
+      (((CBoundingBox3D *)(this_ptr->unk8 + 0x60))->min).x = (pCVar17->min).x;
+      *(float *)(this_ptr->unk8 + 100) = (pCVar17->min).y;
+      *(float *)(this_ptr->unk8 + 0x68) = (pCVar17->min).z;
     }
-    if ((CVector3f *)(this_ptr->unk9 + 0x6c) != &pCVar17->max) {
-      *(float *)(this_ptr->unk9 + 0x6c) = (pCVar17->max).x;
-      *(float *)(this_ptr->unk9 + 0x70) = (pCVar17->max).y;
-      *(float *)(this_ptr->unk9 + 0x74) = (pCVar17->max).z;
+    if ((CVector3f *)(this_ptr->unk8 + 0x6c) != &pCVar17->max) {
+      *(float *)(this_ptr->unk8 + 0x6c) = (pCVar17->max).x;
+      *(float *)(this_ptr->unk8 + 0x70) = (pCVar17->max).y;
+      *(float *)(this_ptr->unk8 + 0x74) = (pCVar17->max).z;
     }
-    CStack_fc.y = *(float *)(this_ptr->unk9 + 0x60) + *(float *)(this_ptr->unk9 + 0x6c);
-    CStack_fc.z = *(float *)(this_ptr->unk9 + 100) + *(float *)(this_ptr->unk9 + 0x70);
+    CStack_fc.y = *(float *)(this_ptr->unk8 + 0x60) + *(float *)(this_ptr->unk8 + 0x6c);
+    CStack_fc.z = *(float *)(this_ptr->unk8 + 100) + *(float *)(this_ptr->unk8 + 0x70);
     auStack_c0._4_4_ = CStack_fc.y * 0.5f;
-    fStack_f0 = *(float *)(this_ptr->unk9 + 0x68) + *(float *)(this_ptr->unk9 + 0x74);
+    fStack_f0 = *(float *)(this_ptr->unk8 + 0x68) + *(float *)(this_ptr->unk8 + 0x74);
     fStack_b8 = CStack_fc.z * 0.5f;
     fStack_b4 = fStack_f0 * 0.5f;
     pCVar18 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -139,10 +139,10 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005bb960(CStranger *this_ptr)
                          (CVector3f *)(auStack_c0 + 4));
     pCVar18 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                         ((CDemonActor *)this_ptr,(CVector3f *)auStack_134,pCVar18);
-    if ((CVector3f *)(this_ptr->unk9 + 0x54) != pCVar18) {
-      ((CVector3f *)(this_ptr->unk9 + 0x54))->x = pCVar18->x;
-      *(float *)(this_ptr->unk9 + 0x58) = pCVar18->y;
-      *(float *)(this_ptr->unk9 + 0x5c) = pCVar18->z;
+    if ((CVector3f *)(this_ptr->unk8 + 0x54) != pCVar18) {
+      ((CVector3f *)(this_ptr->unk8 + 0x54))->x = pCVar18->x;
+      *(float *)(this_ptr->unk8 + 0x58) = pCVar18->y;
+      *(float *)(this_ptr->unk8 + 0x5c) = pCVar18->z;
     }
   }
   core_charactr_cpp_CCharacter_processSmoking_FUN_0042ea40((CCharacter *)this_ptr,in_stack_00000008)
@@ -282,23 +282,23 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005bb960(CStranger *this_ptr)
          (this_ptr->base).base.model.accumulated_root_motion.x * (float)2;
   }
   if ((this_ptr->base).nearby_interactive_actor == (CDemonActor *)0x0) {
-    fVar19 = *(float *)this_ptr->unk9 - in_stack_00000008 * (float)2;
-    *(float *)this_ptr->unk9 = fVar19;
+    fVar19 = *(float *)this_ptr->unk8 - in_stack_00000008 * (float)2;
+    *(float *)this_ptr->unk8 = fVar19;
     if (fVar19 < 0.0) {
-      this_ptr->unk9[0] = '\0';
-      this_ptr->unk9[1] = '\0';
-      this_ptr->unk9[2] = '\0';
-      this_ptr->unk9[3] = '\0';
+      this_ptr->unk8[0] = '\0';
+      this_ptr->unk8[1] = '\0';
+      this_ptr->unk8[2] = '\0';
+      this_ptr->unk8[3] = '\0';
     }
   }
   else {
-    fVar19 = in_stack_00000008 * (float)2 + *(float *)this_ptr->unk9;
-    *(float *)this_ptr->unk9 = fVar19;
+    fVar19 = in_stack_00000008 * (float)2 + *(float *)this_ptr->unk8;
+    *(float *)this_ptr->unk8 = fVar19;
     if (1.0 < fVar19) {
-      this_ptr->unk9[0] = '\0';
-      this_ptr->unk9[1] = '\0';
-      this_ptr->unk9[2] = -0x80;
-      this_ptr->unk9[3] = '?';
+      this_ptr->unk8[0] = '\0';
+      this_ptr->unk8[1] = '\0';
+      this_ptr->unk8[2] = -0x80;
+      this_ptr->unk8[3] = '?';
     }
   }
   iStack_60 = 1;
@@ -372,7 +372,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005bb960(CStranger *this_ptr)
                     fVar8 = *(float *)(this_ptr->unk3 + 8);
                     fVar9 = *(float *)(this_ptr->unk1 + 0x1c);
                     fVar10 = *(float *)(this_ptr->unk3 + 0x10);
-                    *(float *)(this_ptr->unk9 + 0xc) = *(float *)(this_ptr->unk9 + 0xc) - fVar14;
+                    *(float *)(this_ptr->unk8 + 0xc) = *(float *)(this_ptr->unk8 + 0xc) - fVar14;
                     *(float *)(this_ptr->unk1 + 0x14) = fVar7 - fVar14;
                     *(float *)(this_ptr->unk3 + 8) = fVar8 - fVar5;
                     *(float *)(this_ptr->unk1 + 0x1c) = fVar9 - fVar5;
@@ -645,7 +645,7 @@ LAB_005bd19f:
             UStack_84.vec.x = (this_ptr->base).base.base.orient.vec.x;
             UStack_84.vec.z = (this_ptr->base).base.base.orient.vec.z;
             UStack_84.vec.y =
-                 (float)SStack_2bc.damage_flags * *(float *)this_ptr->unk9 +
+                 (float)SStack_2bc.damage_flags * *(float *)this_ptr->unk8 +
                  (this_ptr->base).base.base.orient.vec.y;
             core_charactr_cpp_CCharacter_setOrientation_FUN_0042ded0
                       ((CCharacter *)this_ptr,&UStack_84);
@@ -659,7 +659,7 @@ LAB_005bd19f:
             auStack_134._8_4_ = CStack_fc.x - (this_ptr->base).base.base.location.position.x;
             CStack_128.x = CStack_fc.y - (this_ptr->base).base.base.location.position.y;
             CStack_128.y = CStack_fc.z - (this_ptr->base).base.base.location.position.z;
-            pcStack_2c = this_ptr->unk9;
+            pcStack_2c = this_ptr->unk8;
             in_stack_fffffd14 = (UOrientationVector *)0x5bcdfe;
             pCVar18 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
                                 ((CDemonActor *)this_ptr,(CVector3f *)auStack_c0,
@@ -691,23 +691,19 @@ LAB_005bd19f:
       else {
         this_ptr->ladder_to_descend = (CDemonActor *)0x0;
       }
-      if (0.0 < *(float *)(this_ptr->unk11 + 0x10)) {
-        if (*(float *)(this_ptr->unk11 + 0x10) <= in_stack_00000008) {
-          this_ptr->unk11[0x10] = '\0';
-          this_ptr->unk11[0x11] = '\0';
-          this_ptr->unk11[0x12] = '\0';
-          this_ptr->unk11[0x13] = '\0';
+      if (0.0 < (float)this_ptr->unk13) {
+        if ((float)this_ptr->unk13 <= in_stack_00000008) {
+          this_ptr->unk13 = 0;
           fStack_2c0 = 1.0;
         }
         else {
-          fStack_2c0 = in_stack_00000008 / *(float *)(this_ptr->unk11 + 0x10);
-          *(float *)(this_ptr->unk11 + 0x10) =
-               *(float *)(this_ptr->unk11 + 0x10) - in_stack_00000008;
+          fStack_2c0 = in_stack_00000008 / (float)this_ptr->unk13;
+          this_ptr->unk13 = (int)((float)this_ptr->unk13 - in_stack_00000008);
         }
-        pcVar2 = this_ptr->unk11;
-        fStack_c8 = *(float *)pcVar2 * fStack_2c0;
-        fStack_c4 = *(float *)(this_ptr->unk11 + 4) * fStack_2c0;
-        auStack_c0._0_4_ = *(float *)(this_ptr->unk11 + 8) * fStack_2c0;
+        piVar2 = &this_ptr->unk9;
+        fStack_c8 = (float)*piVar2 * fStack_2c0;
+        fStack_c4 = (float)this_ptr->unk10 * fStack_2c0;
+        auStack_c0._0_4_ = (float)this_ptr->unk11 * fStack_2c0;
         pCVar1 = &(this_ptr->base).base.base.location;
         fStack_4c = 1.0 - fStack_2c0;
         fVar19 = (this_ptr->base).base.base.location.position.y;
@@ -715,14 +711,11 @@ LAB_005bd19f:
         fVar5 = (this_ptr->base).base.base.location.position.z;
         (this_ptr->base).base.base.location.position.y = fVar19 + fStack_c4;
         (this_ptr->base).base.base.location.position.z = fVar5 + (float)auStack_c0._0_4_;
-        fVar19 = *(float *)(this_ptr->unk11 + 4);
-        fVar5 = *(float *)(this_ptr->unk11 + 8);
-        *(float *)pcVar2 = *(float *)pcVar2 * fStack_4c;
-        *(float *)(this_ptr->unk11 + 4) = fVar19 * fStack_4c;
-        *(float *)(this_ptr->unk11 + 8) = fVar5 * fStack_4c;
+        *piVar2 = (int)((float)*piVar2 * fStack_4c);
+        this_ptr->unk10 = (int)((float)this_ptr->unk10 * fStack_4c);
+        this_ptr->unk11 = (int)((float)this_ptr->unk11 * fStack_4c);
         fVar19 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                           (*(float *)(this_ptr->unk11 + 0xc) -
-                            (this_ptr->base).base.base.orient.vec.y);
+                           ((float)this_ptr->unk12 - (this_ptr->base).base.base.orient.vec.y);
         (this_ptr->base).base.turn_angle_accumulator = fVar19 * fStack_2c0;
       }
       fVar19 = (*((this_ptr->base).base.base.vtable._ub)->cylinderGroundCheck)
@@ -746,22 +739,19 @@ LAB_005bd19f:
     else {
       (this_ptr->base).ladder_to_climb = (CDemonActor *)0x0;
     }
-    if (0.0 < *(float *)(this_ptr->unk11 + 0x10)) {
-      if (*(float *)(this_ptr->unk11 + 0x10) <= in_stack_00000008) {
-        this_ptr->unk11[0x10] = '\0';
-        this_ptr->unk11[0x11] = '\0';
-        this_ptr->unk11[0x12] = '\0';
-        this_ptr->unk11[0x13] = '\0';
+    if (0.0 < (float)this_ptr->unk13) {
+      if ((float)this_ptr->unk13 <= in_stack_00000008) {
+        this_ptr->unk13 = 0;
         fStack_2d8 = 1.0;
       }
       else {
-        fStack_2d8 = in_stack_00000008 / *(float *)(this_ptr->unk11 + 0x10);
-        *(float *)(this_ptr->unk11 + 0x10) = *(float *)(this_ptr->unk11 + 0x10) - in_stack_00000008;
+        fStack_2d8 = in_stack_00000008 / (float)this_ptr->unk13;
+        this_ptr->unk13 = (int)((float)this_ptr->unk13 - in_stack_00000008);
       }
-      pcVar2 = this_ptr->unk11;
-      fStack_1a0 = *(float *)pcVar2 * fStack_2d8;
-      fStack_19c = *(float *)(this_ptr->unk11 + 4) * fStack_2d8;
-      fStack_198 = *(float *)(this_ptr->unk11 + 8) * fStack_2d8;
+      piVar2 = &this_ptr->unk9;
+      fStack_1a0 = (float)*piVar2 * fStack_2d8;
+      fStack_19c = (float)this_ptr->unk10 * fStack_2d8;
+      fStack_198 = (float)this_ptr->unk11 * fStack_2d8;
       pCVar1 = &(this_ptr->base).base.base.location;
       fStack_3c = 1.0 - fStack_2d8;
       fVar19 = (this_ptr->base).base.base.location.position.y;
@@ -769,14 +759,11 @@ LAB_005bd19f:
       fVar5 = (this_ptr->base).base.base.location.position.z;
       (this_ptr->base).base.base.location.position.y = fVar19 + fStack_19c;
       (this_ptr->base).base.base.location.position.z = fVar5 + fStack_198;
-      fVar19 = *(float *)(this_ptr->unk11 + 4);
-      fVar5 = *(float *)(this_ptr->unk11 + 8);
-      *(float *)pcVar2 = *(float *)pcVar2 * fStack_3c;
-      *(float *)(this_ptr->unk11 + 4) = fVar19 * fStack_3c;
-      *(float *)(this_ptr->unk11 + 8) = fVar5 * fStack_3c;
+      *piVar2 = (int)((float)*piVar2 * fStack_3c);
+      this_ptr->unk10 = (int)((float)this_ptr->unk10 * fStack_3c);
+      this_ptr->unk11 = (int)((float)this_ptr->unk11 * fStack_3c);
       fVar19 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                         (*(float *)(this_ptr->unk11 + 0xc) -
-                          (this_ptr->base).base.base.orient.vec.y);
+                         ((float)this_ptr->unk12 - (this_ptr->base).base.base.orient.vec.y);
       (this_ptr->base).base.turn_angle_accumulator = fVar19 * fStack_2d8;
     }
   }
@@ -794,12 +781,12 @@ switchD_005bd22e_caseD_6:
   core_charactr_cpp_CCharacter_preProcess_FUN_00429820((CCharacter *)this_ptr);
   core_stranger_cpp_CStranger_FUN_005bf800(this_ptr);
   if (iStack_60 != 0) {
-    this_ptr->unk9[0x3c] = '\0';
-    this_ptr->unk9[0x3d] = '\0';
-    this_ptr->unk9[0x3e] = '\0';
-    this_ptr->unk9[0x3f] = '\0';
-    *(uint *)(this_ptr->unk9 + 0x38) = *(uint *)(this_ptr->unk9 + 0x3c);
-    *(uint *)(this_ptr->unk9 + 0x34) = *(uint *)(this_ptr->unk9 + 0x38);
+    this_ptr->unk8[0x3c] = '\0';
+    this_ptr->unk8[0x3d] = '\0';
+    this_ptr->unk8[0x3e] = '\0';
+    this_ptr->unk8[0x3f] = '\0';
+    *(uint *)(this_ptr->unk8 + 0x38) = *(uint *)(this_ptr->unk8 + 0x3c);
+    *(uint *)(this_ptr->unk8 + 0x34) = *(uint *)(this_ptr->unk8 + 0x38);
   }
   if (((this_ptr->base).ladder_to_climb == (CDemonActor *)0x0) &&
      (this_ptr->ladder_to_descend == (CDemonActor *)0x0)) {
@@ -825,23 +812,23 @@ switchD_005bd22e_caseD_6:
     if (fStack_20 == 9.80909e-45) {
       CStack_218.x = 0.0;
       CStack_218.y = 0.0;
-      *(float *)(this_ptr->unk9 + 0x50) = 18.0f;
-      this_ptr->unk9[0x4c] = '\0';
-      this_ptr->unk9[0x4d] = '\0';
-      this_ptr->unk9[0x4e] = '\0';
-      this_ptr->unk9[0x4f] = '\0';
+      *(float *)(this_ptr->unk8 + 0x50) = 18.0f;
+      this_ptr->unk8[0x4c] = '\0';
+      this_ptr->unk8[0x4d] = '\0';
+      this_ptr->unk8[0x4e] = '\0';
+      this_ptr->unk8[0x4f] = '\0';
       CStack_218.z = fStack_44;
     }
     else {
       if (fStack_20 == 1.12104e-44) {
         fVar5 = (float)32;
         fVar19 = (this_ptr->base).base.velocity.y;
-        *(float *)(this_ptr->unk9 + 0x50) = 18.0f;
+        *(float *)(this_ptr->unk8 + 0x50) = 18.0f;
         fVar19 = fVar19 - in_stack_00000008 * fVar5;
-        this_ptr->unk9[0x4c] = '\0';
-        this_ptr->unk9[0x4d] = '\0';
-        this_ptr->unk9[0x4e] = '\0';
-        this_ptr->unk9[0x4f] = '\0';
+        this_ptr->unk8[0x4c] = '\0';
+        this_ptr->unk8[0x4d] = '\0';
+        this_ptr->unk8[0x4e] = '\0';
+        this_ptr->unk8[0x4f] = '\0';
         CStack_218.z = fStack_44;
         goto LAB_005bd5e4;
       }
@@ -850,21 +837,21 @@ switchD_005bd22e_caseD_6:
         CStack_218.x = 0.0;
         CStack_218.y = 0.0;
         fVar5 = 0.5f * 18.0f;
-        CStack_218.z = *(float *)(this_ptr->unk9 + 0x50) * in_stack_00000008;
-        this_ptr->unk9[0x4c] = '\0';
-        this_ptr->unk9[0x4d] = '\0';
-        this_ptr->unk9[0x4e] = '\0';
-        this_ptr->unk9[0x4f] = '\0';
+        CStack_218.z = *(float *)(this_ptr->unk8 + 0x50) * in_stack_00000008;
+        this_ptr->unk8[0x4c] = '\0';
+        this_ptr->unk8[0x4d] = '\0';
+        this_ptr->unk8[0x4e] = '\0';
+        this_ptr->unk8[0x4f] = '\0';
         fVar19 = (this_ptr->base).base.velocity.y;
-        *(float *)(this_ptr->unk9 + 0x50) =
-             *(float *)(this_ptr->unk9 + 0x50) - fVar5 * in_stack_00000008;
-        fVar5 = *(float *)(this_ptr->unk9 + 0x50);
+        *(float *)(this_ptr->unk8 + 0x50) =
+             *(float *)(this_ptr->unk8 + 0x50) - fVar5 * in_stack_00000008;
+        fVar5 = *(float *)(this_ptr->unk8 + 0x50);
         (this_ptr->base).base.velocity.y = fVar19 - in_stack_00000008 * fVar6;
         if (fVar5 < 0.0) {
-          this_ptr->unk9[0x50] = '\0';
-          this_ptr->unk9[0x51] = '\0';
-          this_ptr->unk9[0x52] = '\0';
-          this_ptr->unk9[0x53] = '\0';
+          this_ptr->unk8[0x50] = '\0';
+          this_ptr->unk8[0x51] = '\0';
+          this_ptr->unk8[0x52] = '\0';
+          this_ptr->unk8[0x53] = '\0';
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(pCStack_5c,0xf,1);
         }
       }
@@ -874,22 +861,22 @@ switchD_005bd22e_caseD_6:
         CStack_218.z = fStack_44;
       }
       else if (fStack_20 == 1.54143e-44) {
-        this_ptr->unk9[0x4c] = '\0';
-        this_ptr->unk9[0x4d] = '\0';
-        this_ptr->unk9[0x4e] = '\0';
-        this_ptr->unk9[0x4f] = '\0';
-        *(float *)(this_ptr->unk9 + 0x50) = 10.0f;
+        this_ptr->unk8[0x4c] = '\0';
+        this_ptr->unk8[0x4d] = '\0';
+        this_ptr->unk8[0x4e] = '\0';
+        this_ptr->unk8[0x4f] = '\0';
+        *(float *)(this_ptr->unk8 + 0x50) = 10.0f;
       }
       else if (fStack_20 == 1.68156e-44) {
         CStack_218.z = 10.0f * in_stack_00000008;
         fVar5 = (float)32;
         fVar19 = (this_ptr->base).base.velocity.y;
-        *(float *)(this_ptr->unk9 + 0x50) = 10.0f;
+        *(float *)(this_ptr->unk8 + 0x50) = 10.0f;
         fVar19 = fVar19 - in_stack_00000008 * fVar5;
-        this_ptr->unk9[0x4c] = '\0';
-        this_ptr->unk9[0x4d] = '\0';
-        this_ptr->unk9[0x4e] = '\0';
-        this_ptr->unk9[0x4f] = '\0';
+        this_ptr->unk8[0x4c] = '\0';
+        this_ptr->unk8[0x4d] = '\0';
+        this_ptr->unk8[0x4e] = '\0';
+        this_ptr->unk8[0x4f] = '\0';
 LAB_005bd5e4:
         CStack_218.y = 0.0;
         CStack_218.x = 0.0;
@@ -901,21 +888,21 @@ LAB_005bd5e6:
         CStack_218.x = 0.0;
         CStack_218.y = 0.0;
         fVar5 = 0.5f * 10.0f;
-        CStack_218.z = *(float *)(this_ptr->unk9 + 0x50) * in_stack_00000008;
-        this_ptr->unk9[0x4c] = '\0';
-        this_ptr->unk9[0x4d] = '\0';
-        this_ptr->unk9[0x4e] = '\0';
-        this_ptr->unk9[0x4f] = '\0';
+        CStack_218.z = *(float *)(this_ptr->unk8 + 0x50) * in_stack_00000008;
+        this_ptr->unk8[0x4c] = '\0';
+        this_ptr->unk8[0x4d] = '\0';
+        this_ptr->unk8[0x4e] = '\0';
+        this_ptr->unk8[0x4f] = '\0';
         fVar19 = (this_ptr->base).base.velocity.y;
-        *(float *)(this_ptr->unk9 + 0x50) =
-             *(float *)(this_ptr->unk9 + 0x50) - fVar5 * in_stack_00000008;
-        fVar5 = *(float *)(this_ptr->unk9 + 0x50);
+        *(float *)(this_ptr->unk8 + 0x50) =
+             *(float *)(this_ptr->unk8 + 0x50) - fVar5 * in_stack_00000008;
+        fVar5 = *(float *)(this_ptr->unk8 + 0x50);
         (this_ptr->base).base.velocity.y = fVar19 - in_stack_00000008 * fVar6;
         if (fVar5 < 0.0) {
-          this_ptr->unk9[0x50] = '\0';
-          this_ptr->unk9[0x51] = '\0';
-          this_ptr->unk9[0x52] = '\0';
-          this_ptr->unk9[0x53] = '\0';
+          this_ptr->unk8[0x50] = '\0';
+          this_ptr->unk8[0x51] = '\0';
+          this_ptr->unk8[0x52] = '\0';
+          this_ptr->unk8[0x53] = '\0';
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(pCStack_5c,0xf,1);
         }
       }
@@ -924,10 +911,10 @@ LAB_005bd5e6:
           if (fStack_20 == 2.10195e-44) {
             CStack_218.z = 0.0;
             fVar19 = (this_ptr->base).base.velocity.y - in_stack_00000008 * (float)32;
-            this_ptr->unk9[0x4c] = -0x66;
-            this_ptr->unk9[0x4d] = '?';
-            this_ptr->unk9[0x4e] = '\x1c';
-            this_ptr->unk9[0x4f] = 'F';
+            this_ptr->unk8[0x4c] = -0x66;
+            this_ptr->unk8[0x4d] = '?';
+            this_ptr->unk8[0x4e] = '\x1c';
+            this_ptr->unk8[0x4f] = 'F';
             goto LAB_005bd5e4;
           }
           if (fStack_20 == 2.24208e-44) {
@@ -945,7 +932,7 @@ LAB_005bd5e6:
       }
     }
     pCVar18 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
-                        ((CDemonActor *)this_ptr,&CStack_224,(CVector3f *)(this_ptr->unk9 + 0x34));
+                        ((CDemonActor *)this_ptr,&CStack_224,(CVector3f *)(this_ptr->unk8 + 0x34));
     fStack_158 = (this_ptr->base).base.velocity.x * in_stack_00000008;
     fStack_154 = (this_ptr->base).base.velocity.y * in_stack_00000008;
     fStack_150 = in_stack_00000008 * (this_ptr->base).base.velocity.z;
@@ -955,7 +942,7 @@ LAB_005bd5e6:
     fStack_1bc = fStack_150 + pCVar18->z;
     CStack_218.y = CStack_218.y + UStack_1c8.vec.z;
     CStack_218.z = CStack_218.z + fStack_1bc;
-    *(float *)(this_ptr->unk11 + 0x18) = (this_ptr->base).base.velocity.y;
+    this_ptr->unk15 = (int)(this_ptr->base).base.velocity.y;
     core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40((CCharacter *)this_ptr,&CStack_218);
     if ((this_ptr->base).base.base.location.position.y <
         (this_ptr->base).base.closest_distance_threshold + (float)0.10000000000000001) {
@@ -966,7 +953,7 @@ LAB_005bd5e6:
         engine_console_cpp_CConsole_printf_FUN_00441890
                   (g_CConsolePtr,"Splat at %3.2f fps\n",
                    (double)(this_ptr->base).base.velocity.y);
-        fVar19 = -*(float *)(this_ptr->unk11 + 0x18);
+        fVar19 = -(float)this_ptr->unk15;
         uVar24 = SUB84((double)fVar19,0);
         uStack_2dc = (uint)((ulonglong)(double)fVar19 >> 0x20);
         if (fVar19 < (float)20) {
@@ -1016,12 +1003,12 @@ LAB_005bd763:
 joined_r0x005bdb44:
     0.5f = (float)pcStack_2c4;
     if (iVar21 == 0) {
-      *(float *)(this_ptr->unk9 + 0x4c) = *(float *)(this_ptr->unk9 + 0x4c) + in_stack_00000008;
+      *(float *)(this_ptr->unk8 + 0x4c) = *(float *)(this_ptr->unk8 + 0x4c) + in_stack_00000008;
       if (fStack_20 == 4.2039e-45) {
         pcStack_2c4 = (char *)((float)pcStack_2c4 * (float)2);
       }
-      if (((float)pcStack_2c4 < *(float *)(this_ptr->unk9 + 0x4c)) ||
-         (*(float *)(this_ptr->unk11 + 0x18) < (float)-20)) {
+      if (((float)pcStack_2c4 < *(float *)(this_ptr->unk8 + 0x4c)) ||
+         ((float)this_ptr->unk15 < (float)-20)) {
         if (fStack_20 != 2.10195e-44) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&(this_ptr->base).base.model.motion_controller,0xf,1);
@@ -1045,17 +1032,17 @@ joined_r0x005bdb44:
     *(float *)((int)UStack_84.vec.z + 4) = *(float *)((int)UStack_84.vec.z + 8);
     *(float *)UStack_84.vec.z = *(float *)((int)UStack_84.vec.z + 4);
   }
-  this_ptr->unk9[0x4c] = '\0';
-  this_ptr->unk9[0x4d] = '\0';
-  this_ptr->unk9[0x4e] = '\0';
-  this_ptr->unk9[0x4f] = '\0';
+  this_ptr->unk8[0x4c] = '\0';
+  this_ptr->unk8[0x4d] = '\0';
+  this_ptr->unk8[0x4e] = '\0';
+  this_ptr->unk8[0x4f] = '\0';
 LAB_005bc1a6:
-  this_ptr->unk9[0x3c] = '\0';
-  this_ptr->unk9[0x3d] = '\0';
-  this_ptr->unk9[0x3e] = '\0';
-  this_ptr->unk9[0x3f] = '\0';
-  *(uint *)(this_ptr->unk9 + 0x38) = *(uint *)(this_ptr->unk9 + 0x3c);
-  *(uint *)(this_ptr->unk9 + 0x34) = *(uint *)(this_ptr->unk9 + 0x38);
+  this_ptr->unk8[0x3c] = '\0';
+  this_ptr->unk8[0x3d] = '\0';
+  this_ptr->unk8[0x3e] = '\0';
+  this_ptr->unk8[0x3f] = '\0';
+  *(uint *)(this_ptr->unk8 + 0x38) = *(uint *)(this_ptr->unk8 + 0x3c);
+  *(uint *)(this_ptr->unk8 + 0x34) = *(uint *)(this_ptr->unk8 + 0x38);
   pCVar16 = g_CGamePtr;
   if (local_1c != 0) {
     if ((this_ptr->base).player_control.action_states[6] != 0) {
@@ -1185,25 +1172,25 @@ LAB_005bc1a6:
   if ((this_ptr->weapon != (CDemonActor *)0x0) && (this_ptr->weapon->is_transparent != 0)) {
     (this_ptr->base).base.base.is_transparent = 1;
   }
-  iVar21 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk9 + 4));
+  iVar21 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk8 + 4));
   if (iVar21 == 0) {
     if (g_CGamePtr->block_auto_save != 0) {
-      sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk9 + 8));
+      sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk8 + 8));
       sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
       sound_sndmain_cpp_setNextSfxFlagBits_FUN_005a8b90(1);
       uVar23 = sound_sndmain_cpp_startSfx_FUN_005a8e90("goggle-on.wav");
-      *(uint *)(this_ptr->unk9 + 8) = uVar23;
+      *(uint *)(this_ptr->unk8 + 8) = uVar23;
       sound_sndmain_cpp_setNextSfxVolume_FUN_005a8a60(0.0);
       uVar23 = sound_sndmain_cpp_startSfx_FUN_005a8e90("goggle-loop.wav");
-      *(uint *)(this_ptr->unk9 + 4) = uVar23;
+      *(uint *)(this_ptr->unk8 + 4) = uVar23;
       sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
-      sound_sndmain_cpp_setSfxFade_FUN_005a9c70(*(uint *)(this_ptr->unk9 + 4),1.0,1.0,0);
+      sound_sndmain_cpp_setSfxFade_FUN_005a9c70(*(uint *)(this_ptr->unk8 + 4),1.0,1.0,0);
       return;
     }
   }
   else if (g_CGamePtr->block_auto_save == 0) {
-    sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk9 + 8));
-    sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk9 + 4));
+    sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk8 + 8));
+    sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk8 + 4));
     sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
     sound_sndmain_cpp_setNextSfxFlagBits_FUN_005a8b90(1);
     sound_sndmain_cpp_startSfx_FUN_005a8e90("goggle-off.wav");

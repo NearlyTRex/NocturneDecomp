@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_drip_cpp_CDrip_propertyActionCallback_FUN_0048e8d0(CDrip *this_ptr,CActorProperty *property)
+; int __cdecl core_drip_cpp_CDrip_propertyActionCallback_FUN_0048e8d0(CDrip *this_ptr,CActorProperty *property)
 ;
 ; Parameters:
 ; CDrip *          Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack char * __watcallStack crt_time_c_asctimeFormat_FUN_00601678(_tm *timeptr,char *buffer)
+; char * __watcallStack crt_time_c_asctimeFormat_FUN_00601678(_tm *timeptr,char *buffer)
 ;
 ; Parameters:
 ; _tm *            Stack[0x4]:4   timeptr

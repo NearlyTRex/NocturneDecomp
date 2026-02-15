@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl wincore_windll_cpp_addParticle_FUN_005b7985(void *particle_data,int particle_type)
+; int __cdecl wincore_windll_cpp_addParticle_FUN_005b7985(void *particle_data,int particle_type)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   particle_data

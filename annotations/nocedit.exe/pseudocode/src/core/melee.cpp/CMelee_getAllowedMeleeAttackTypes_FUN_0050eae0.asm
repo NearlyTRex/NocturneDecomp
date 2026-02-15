@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_melee_cpp_CMelee_getAllowedMeleeAttackTypes_FUN_0050eae0(CMelee *this_ptr)
+; int __cdecl core_melee_cpp_CMelee_getAllowedMeleeAttackTypes_FUN_0050eae0(CMelee *this_ptr)
 ;
 ; Parameters:
 ; CMelee *         Stack[0x4]:4   this_ptr

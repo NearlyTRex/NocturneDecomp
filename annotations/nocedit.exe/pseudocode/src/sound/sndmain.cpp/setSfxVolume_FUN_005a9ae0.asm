@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl sound_sndmain_cpp_setSfxVolume_FUN_005a9ae0(uint sfx_handle,float volume)
+; int __cdecl sound_sndmain_cpp_setSfxVolume_FUN_005a9ae0(uint sfx_handle,float volume)
 ;
 ; Parameters:
 ; uint             Stack[0x4]:4   sfx_handle

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_weapon_cpp_staticInit_FUN_005ede40(void)
+; void __cdecl core_weapon_cpp_staticInit_FUN_005ede40(void)
 ;
 ;
 ; Referenced Globals:

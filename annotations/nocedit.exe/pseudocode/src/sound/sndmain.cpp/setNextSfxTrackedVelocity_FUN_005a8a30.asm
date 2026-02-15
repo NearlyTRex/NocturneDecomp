@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_sndmain_cpp_setNextSfxTrackedVelocity_FUN_005a8a30(CVector3d *velocity_source_ptr)
+; void __cdecl sound_sndmain_cpp_setNextSfxTrackedVelocity_FUN_005a8a30(CVector3d *velocity_source_ptr)
 ;
 ; Parameters:
 ; CVector3d *      Stack[0x4]:4   velocity_source_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_sound_cpp_CSound_dtor_FUN_005aaeb0(void)
+; void __cdecl core_sound_cpp_CSound_dtor_FUN_005aaeb0(void)
 ;
 ;
 ; XREF[2]:

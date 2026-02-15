@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_drender_cpp_calculateVertexLight_FUN_0048c740(int vertex_index,CVector3i *vertex_position)
+; void __cdecl engine_drender_cpp_calculateVertexLight_FUN_0048c740(int vertex_index,CVector3i *vertex_position)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   vertex_index

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dmodel_cpp_CKeyFramedModel_scaleUniform_FUN_0047c4a0(CKeyFramedModel *this_ptr,float uniform_scale)
+; void __cdecl core_dmodel_cpp_CKeyFramedModel_scaleUniform_FUN_0047c4a0(CKeyFramedModel *this_ptr,float uniform_scale)
 ;
 ; Parameters:
 ; CKeyFramedModel * Stack[0x4]:4   this_ptr

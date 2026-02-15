@@ -4,37 +4,37 @@
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 87,
+        "line": 86,
         "message": "use of undeclared identifier 'stack0xfffffe8c'; did you mean 'in_stack_fffffe8c'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 44,
-        "line": 91,
+        "line": 90,
         "message": "use of undeclared identifier 'stack0xfffffe8c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 27,
-        "line": 145,
+        "line": 144,
         "message": "use of undeclared identifier 'stack0xfffffe8c'; did you mean 'in_stack_fffffe8c'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 52,
-        "line": 147,
+        "line": 146,
         "message": "use of undeclared identifier 'stack0xfffffe8c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 187,
+        "line": 174,
         "message": "use of undeclared identifier 'stack0xfffffe8c'; did you mean 'in_stack_fffffe8c'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 42,
-        "line": 188,
+        "line": 175,
         "message": "use of undeclared identifier 'stack0xfffffe8c'"
       }
     ],
@@ -43,19 +43,19 @@
   },
   "complexity": {
     "assembly_lines": 398,
-    "complexity_score": 373,
+    "complexity_score": 400,
     "cross_reference_count": 6,
     "function_call_count": 17,
     "global_count": 15,
-    "pseudocode_lines": 193,
-    "suspect_count": 16,
+    "pseudocode_lines": 180,
+    "suspect_count": 20,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
       "stack_ref",
       "undefined_data"
     ],
-    "total_lines": 591
+    "total_lines": 578
   },
   "cross_references": [
     {
@@ -506,112 +506,140 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 18,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 20,
       "match": "in_stack_fffffe8c",
       "text": "CBoundingBox3D *in_stack_fffffe8c;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 48,
+      "line": 47,
       "match": "DAT_03277d80",
       "text": "DAT_03277d80 = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 53,
+      "line": 52,
       "match": "in_stack_00000008",
       "text": "local_48 = in_stack_00000008 + 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 68,
+      "line": 67,
       "match": "in_stack_fffffe8c",
       "text": "(&g_CDemonCameraInstance,local_74,in_stack_fffffe8c);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 80,
+      "line": 79,
       "match": "&stack0xfffffe8c",
       "text": "(&stack0xfffffe8c,\"Camera box (%7.2f, %7.2f, %7.2f) - (%7.2f, %7.2f, %7.2f)\",",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 84,
+      "line": 83,
       "match": "&stack0xfffffe8c",
       "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe8c,0,0x16);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 89,
+      "line": 88,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 != -1) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 91,
+      "line": 90,
       "match": "in_stack_00000008",
       "text": "local_14 = in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 109,
+      "line": 108,
       "match": "(int *)((int)",
-      "text": "((char *)(*(int *)((int)g_MasterLightList + iVar7) + 0x40),",
+      "text": "((char *)(*(int *)((int)g_MasterLightList + iVar6) + 0x40),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 132,
+      "match": "(uint *)((int)",
+      "text": "puVar7 = (uint *)((int)&local_5c + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 133,
       "match": "(uint *)((int)",
-      "text": "puVar8 = (uint *)((int)&local_5c + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 134,
-      "match": "(uint *)((int)",
-      "text": "*puVar9 = *(uint *)((int)&local_5c + (uint)bVar12 * -8 + 4);",
+      "text": "*puVar8 = *(uint *)((int)&local_5c + (uint)bVar11 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 138,
+      "line": 137,
       "match": "&stack0xfffffe8c",
       "text": "_sprintf(&stack0xfffffe8c,\"Light %d, Box : %d,%d,%d,%d\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 140,
+      "line": 139,
       "match": "&stack0xfffffe8c",
       "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe8c,0,local_1c);",
       "type": "stack_ref"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 149,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&this_ptr->lights[iVar6].camera_light_bounds[0].left + local_2c) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 151,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&this_ptr->lights[iVar6].camera_light_bounds[0].top + local_2c) = 0",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 153,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&this_ptr->lights[iVar6].camera_light_bounds[0].right + local_2c) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 155,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&this_ptr->lights[iVar6].camera_light_bounds[0].bottom + local_2c)",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Direct stack address reference",
-      "line": 180,
+      "line": 167,
       "match": "&stack0xfffffe8c",
       "text": "_sprintf(&stack0xfffffe8c,\"Precomputing lights from camera : %d\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 181,
+      "line": 168,
       "match": "&stack0xfffffe8c",
       "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe8c,0,0);",
       "type": "stack_ref"

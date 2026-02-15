@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_moon_cpp_CMoon_update_FUN_00529d60(CMoon *this_ptr,float delta_time)
+; void __cdecl core_moon_cpp_CMoon_update_FUN_00529d60(CMoon *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CMoon *          Stack[0x4]:4   this_ptr

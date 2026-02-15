@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_stranger_cpp_CStranger_FUN_005be430(CStranger *this_ptr)
+; int __cdecl core_stranger_cpp_CStranger_FUN_005be430(CStranger *this_ptr)
 ;
 ; Parameters:
 ; CStranger *      Stack[0x4]:4   this_ptr

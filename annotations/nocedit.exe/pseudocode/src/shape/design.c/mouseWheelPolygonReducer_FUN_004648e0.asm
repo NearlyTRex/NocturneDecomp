@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_design_c_mouseWheelPolygonReducer_FUN_004648e0(int selected_polygon_index)
+; int __cdecl shape_design_c_mouseWheelPolygonReducer_FUN_004648e0(int selected_polygon_index)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   selected_polygon_index

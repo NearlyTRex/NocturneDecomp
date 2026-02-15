@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_005e7030(CVampireBoss *this_ptr,SDamageInfo *damage_info)
+; void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_005e7030(CVampireBoss *this_ptr,SDamageInfo *damage_info)
 ;
 ; Parameters:
 ; CVampireBoss *   Stack[0x4]:4   this_ptr

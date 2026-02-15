@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_mp3_cpp_testMP3DecoderBenchmark_FUN_00534210(void)
+; void __cdecl sound_mp3_cpp_testMP3DecoderBenchmark_FUN_00534210(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x40]:8  local_40

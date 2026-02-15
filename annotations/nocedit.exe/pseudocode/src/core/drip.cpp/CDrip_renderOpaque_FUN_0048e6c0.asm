@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_drip_cpp_CDrip_renderOpaque_FUN_0048e6c0(CDrip *this_ptr)
+; int __cdecl core_drip_cpp_CDrip_renderOpaque_FUN_0048e6c0(CDrip *this_ptr)
 ;
 ; Parameters:
 ; CDrip *          Stack[0x4]:4   this_ptr

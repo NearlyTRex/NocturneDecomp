@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * __cdecl crt_string_c_strupr_FUN_0060389c(char *string)
+; char * __cdecl crt_string_c_strupr_FUN_0060389c(char *string)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   string

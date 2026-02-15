@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,int param_type,CCmdParm *param_info,char *param_name)
+; int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,int param_type,CCmdParm *param_info,char *param_name)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   value_buffer
@@ -250,7 +250,7 @@ section .text
     MOV dword ptr [ESP + 0x3740],EAX    ; 00562aa5
     MOV EAX,[0x006810c8]                ; 00562aac | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_00562aac
-    CMP EDI,dword ptr [EAX + 0x14d154]  ; 00562ab1 | g_CDemonSetInstance.actor_list_ptr
+    CMP EDI,dword ptr [EAX + 0x14d154]  ; 00562ab1 | g_CDemonSetInstance.actor_count
     JGE 0x00562b21                      ; 00562ab7
         ;   XREF to: 00562b21 (CONDITIONAL_JUMP)  ; LAB_00562b21
     CMP byte ptr [EBX + 0x25c],0x0      ; 00562ab9
@@ -258,7 +258,7 @@ section .text
         ;   XREF to: 00562ae4 (CONDITIONAL_JUMP)  ; LAB_00562ae4
     MOV EDX,dword ptr [ESP + 0x3740]    ; 00562ac2
     PUSH EDX                            ; 00562ac9
-    MOV ECX,dword ptr [ESI + EAX*0x1 + 0x14d158] ; 00562aca | g_CDemonSetInstance.actor_list_data[0] | DAT_032613d4
+    MOV ECX,dword ptr [ESI + EAX*0x1 + 0x14d158] ; 00562aca | g_CDemonSetInstance.actors[0] | DAT_032613d4
     PUSH ECX                            ; 00562ad1
     CALL core_actor.cpp_isOfClass_FUN_0040c6d0 ; 00562ad2
         ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c6d0(CDemonActor * actor_ptr, char * class_name)
@@ -274,7 +274,7 @@ section .text
     MOV EAX,[0x006810c8]                ; 00562ae4 | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_00562ae4
     PUSH 0x643ba7                       ; 00562ae9 | = "CHeroPlaceHolder"
-    MOV EDX,dword ptr [ESI + EAX*0x1 + 0x14d158] ; 00562aee | g_CDemonSetInstance.actor_list_data[0] | DAT_032613d4
+    MOV EDX,dword ptr [ESI + EAX*0x1 + 0x14d158] ; 00562aee | g_CDemonSetInstance.actors[0] | DAT_032613d4
     PUSH EDX                            ; 00562af5
     CALL core_actor.cpp_isOfClass_FUN_0040c6d0 ; 00562af6
         ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c6d0(CDemonActor * actor_ptr, char * class_name)

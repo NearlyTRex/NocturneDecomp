@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_superopt_cpp_CObj_reset_FUN_005d2280(CObj *this_ptr)
+; void __cdecl shape_superopt_cpp_CObj_reset_FUN_005d2280(CObj *this_ptr)
 ;
 ; Parameters:
 ; CObj *           Stack[0x4]:4   this_ptr

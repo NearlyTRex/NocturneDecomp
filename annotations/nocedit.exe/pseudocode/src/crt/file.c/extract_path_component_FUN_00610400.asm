@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * __cdecl crt_file_c_extract_path_component_FUN_00610400(char **component_ptr,char *buffer,char *source,char *buffer_end)
+; char * __cdecl crt_file_c_extract_path_component_FUN_00610400(char **component_ptr,char *buffer,char *source,char *buffer_end)
 ;
 ; Parameters:
 ; char * *         Stack[0x4]:4   component_ptr

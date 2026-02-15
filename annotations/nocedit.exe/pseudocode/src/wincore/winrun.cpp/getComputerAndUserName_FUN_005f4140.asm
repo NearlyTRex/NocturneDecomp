@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl wincore_winrun_cpp_getComputerAndUserName_FUN_005f4140(char *buffer)
+; void __cdecl wincore_winrun_cpp_getComputerAndUserName_FUN_005f4140(char *buffer)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   buffer

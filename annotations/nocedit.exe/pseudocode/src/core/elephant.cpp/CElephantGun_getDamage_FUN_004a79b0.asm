@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl core_elephant_cpp_CElephantGun_getDamage_FUN_004a79b0(CElephantGun *this_ptr)
+; float __cdecl core_elephant_cpp_CElephantGun_getDamage_FUN_004a79b0(CElephantGun *this_ptr)
 ;
 ; Parameters:
 ; CElephantGun *   Stack[0x4]:4   this_ptr

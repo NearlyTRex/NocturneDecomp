@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SGem * __cdecl core_manpuz_cpp_SGem_arrdtor_FUN_0050bab0(SGem *objs,uint flags)
+; SGem * __cdecl core_manpuz_cpp_SGem_arrdtor_FUN_0050bab0(SGem *objs,uint flags)
 ;
 ; Parameters:
 ; SGem *           Stack[0x4]:4   objs

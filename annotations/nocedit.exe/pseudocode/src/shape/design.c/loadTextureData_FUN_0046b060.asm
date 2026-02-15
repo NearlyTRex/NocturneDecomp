@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_loadTextureData_FUN_0046b060(STextureLoadConfig *config_ptr,void *rgb_buffer,void *alpha_buffer,int atlas_width,int atlas_height)
+; void __cdecl shape_design_c_loadTextureData_FUN_0046b060(STextureLoadConfig *config_ptr,void *rgb_buffer,void *alpha_buffer,int atlas_width,int atlas_height)
 ;
 ; Parameters:
 ; STextureLoadConfig * Stack[0x4]:4   config_ptr

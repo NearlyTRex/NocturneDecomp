@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_00510c80(void)
+; void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_00510c80(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x144]:4  local_144

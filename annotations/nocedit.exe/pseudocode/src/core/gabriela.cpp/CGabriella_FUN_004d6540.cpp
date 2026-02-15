@@ -55,8 +55,8 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d6540(CGabriella *this_ptr)
       iVar5 = 0;
       local_24 = 1e+30;
       local_28 = 0;
-      for (local_20 = 0; local_20 < (int)g_CDemonSetPtr->actor_list_ptr; local_20 = local_20 + 1) {
-        uVar1 = *(uint *)(g_CDemonSetPtr->actor_list_data + iVar5);
+      for (local_20 = 0; local_20 < g_CDemonSetPtr->actor_count; local_20 = local_20 + 1) {
+        uVar1 = *(uint *)((int)g_CDemonSetPtr->actors + iVar5);
         local_18 = (float)core_gabriela_cpp_CGabriella_FUN_004d6260(this_ptr);
         if ((0.0 <= local_18) && (local_18 < local_24)) {
           local_28 = uVar1;

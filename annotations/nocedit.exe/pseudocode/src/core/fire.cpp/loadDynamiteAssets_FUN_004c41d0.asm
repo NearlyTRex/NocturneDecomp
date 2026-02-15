@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_fire_cpp_loadDynamiteAssets_FUN_004c41d0(void)
+; void __cdecl core_fire_cpp_loadDynamiteAssets_FUN_004c41d0(void)
 ;
 ;
 ; XREF[1]:

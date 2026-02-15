@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info,int render_flags)
+; void __cdecl engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info,int render_flags)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_dcamera_cpp_testCoronaVisibility_FUN_00451250(int start_x,int start_y,int depth_reciprocal)
+; int __cdecl core_dcamera_cpp_testCoronaVisibility_FUN_00451250(int start_x,int start_y,int depth_reciprocal)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   start_x

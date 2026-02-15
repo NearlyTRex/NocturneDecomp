@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_vehicle_cpp_CVehicle_renderTransparent_FUN_005e8b30(CVehicle *this_ptr)
+; int __cdecl core_vehicle_cpp_CVehicle_renderTransparent_FUN_005e8b30(CVehicle *this_ptr)
 ;
 ; Parameters:
 ; CVehicle *       Stack[0x4]:4   this_ptr

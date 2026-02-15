@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_script_cpp_CCmdParm_setTemplateText_FUN_00560de0(CCmdParm *this_ptr,char *template_text,int *parse_cursor)
+; int __cdecl core_script_cpp_CCmdParm_setTemplateText_FUN_00560de0(CCmdParm *this_ptr,char *template_text,int *parse_cursor)
 ;
 ; Parameters:
 ; CCmdParm *       Stack[0x4]:4   this_ptr

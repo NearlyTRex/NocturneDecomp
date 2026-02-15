@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_frankgen_cpp_CFrankenstienMachine_hasCollision_FUN_004d24f0(CFrankenstienMachine *this_ptr,SCollisionInfo *collision_info)
+; int __cdecl core_frankgen_cpp_CFrankenstienMachine_hasCollision_FUN_004d24f0(CFrankenstienMachine *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CFrankenstienMachine * Stack[0x4]:4   this_ptr

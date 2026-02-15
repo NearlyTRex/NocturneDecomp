@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_script_cpp_CScript_editorX2Index_FUN_00566a90(CScript *this_ptr,int line_number,int visual_column)
+; int __cdecl core_script_cpp_CScript_editorX2Index_FUN_00566a90(CScript *this_ptr,int line_number,int visual_column)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl sound_sndmain_cpp_stopRecordingDevice_FUN_005abb60(void)
+; int __cdecl sound_sndmain_cpp_stopRecordingDevice_FUN_005abb60(void)
 ;
 ;
 ; XREF[2]:

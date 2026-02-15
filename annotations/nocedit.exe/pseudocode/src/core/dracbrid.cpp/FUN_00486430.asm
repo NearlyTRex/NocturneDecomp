@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float * __cdecl core_dracbrid_cpp_FUN_00486430(void)
+; float * __cdecl core_dracbrid_cpp_FUN_00486430(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c

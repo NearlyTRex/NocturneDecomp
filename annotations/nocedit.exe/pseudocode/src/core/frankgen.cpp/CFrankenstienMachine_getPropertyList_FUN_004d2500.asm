@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_frankgen_cpp_CFrankenstienMachine_getPropertyList_FUN_004d2500(CFrankenstienMachine *this_ptr,CActorPropertyList *property_list)
+; void __cdecl core_frankgen_cpp_CFrankenstienMachine_getPropertyList_FUN_004d2500(CFrankenstienMachine *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CFrankenstienMachine * Stack[0x4]:4   this_ptr

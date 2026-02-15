@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_setProjectionScaleSimple_FUN_0048c670(CDemonRenderer *this_ptr,float scale_factor)
+; void __cdecl engine_drender_cpp_CDemonRenderer_setProjectionScaleSimple_FUN_0048c670(CDemonRenderer *this_ptr,float scale_factor)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CLaserBeam * __cdecl core_fire_cpp_CLaserBeam_arrdtor_FUN_004c98f0(CLaserBeam *objs,uint flags)
+; CLaserBeam * __cdecl core_fire_cpp_CLaserBeam_arrdtor_FUN_004c98f0(CLaserBeam *objs,uint flags)
 ;
 ; Parameters:
 ; CLaserBeam *     Stack[0x4]:4   objs

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVector3f * __cdecl core_enemy_cpp_CEnemy_getTargetPoint_FUN_004a99d0(CEnemy *this_ptr,CVector3f *out_point)
+; CVector3f * __cdecl core_enemy_cpp_CEnemy_getTargetPoint_FUN_004a99d0(CEnemy *this_ptr,CVector3f *out_point)
 ;
 ; Parameters:
 ; CEnemy *         Stack[0x4]:4   this_ptr

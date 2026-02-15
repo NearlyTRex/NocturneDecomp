@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SChainVertex * __cdecl core_chain_cpp_SChainVertex_dtor_FUN_004313e0(SChainVertex *this_ptr,uint flags)
+; SChainVertex * __cdecl core_chain_cpp_SChainVertex_dtor_FUN_004313e0(SChainVertex *this_ptr,uint flags)
 ;
 ; Parameters:
 ; SChainVertex *   Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_glass_cpp_CGlass_addFilesToExtract_FUN_004eb690(CGlass *this_ptr,_FILE *file_handle)
+; void __cdecl core_glass_cpp_CGlass_addFilesToExtract_FUN_004eb690(CGlass *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CGlass *         Stack[0x4]:4   this_ptr

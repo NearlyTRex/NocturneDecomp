@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl wincore_windll_cpp_clearScreen_FUN_005b3e70(void)
+; void __cdecl wincore_windll_cpp_clearScreen_FUN_005b3e70(void)
 ;
 ;
 ; XREF[116]:

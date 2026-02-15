@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_fileio_cpp_parseTimestampRecord_FUN_004b2270(char *input_string,STimestampRecord *output_record)
+; int __cdecl engine_fileio_cpp_parseTimestampRecord_FUN_004b2270(char *input_string,STimestampRecord *output_record)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   input_string

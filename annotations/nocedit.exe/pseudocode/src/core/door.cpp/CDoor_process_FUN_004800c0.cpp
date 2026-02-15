@@ -127,8 +127,8 @@ LAB_004801a8:
     pCStack_4c = &(this_ptr->base).orient_matrix;
     iStack_18 = 0;
     while( true ) {
-      if (g_CDemonSetPtr->damage_listener_count <= iStack_18) break;
-      iVar1 = *(int *)(g_CDemonSetPtr->unk4 + iVar4 + -4);
+      if (g_CDemonSetPtr->character_count <= iStack_18) break;
+      iVar1 = *(int *)((int)g_CDemonSetPtr->characters + iVar4);
       core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&SStack_d0);
       iVar2 = (**(code **)(*(int *)(iVar1 + 0x154) + 0x34))(iVar1,&SStack_d0);
       if (((iVar2 == 2) &&

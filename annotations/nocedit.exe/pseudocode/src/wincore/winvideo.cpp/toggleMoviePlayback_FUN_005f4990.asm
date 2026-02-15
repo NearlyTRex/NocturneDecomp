@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl wincore_winvideo_cpp_toggleMoviePlayback_FUN_005f4990(HWND notify_window,int play_state)
+; void __cdecl wincore_winvideo_cpp_toggleMoviePlayback_FUN_005f4990(HWND notify_window,int play_state)
 ;
 ; Parameters:
 ; HWND             Stack[0x4]:4   notify_window

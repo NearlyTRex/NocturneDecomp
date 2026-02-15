@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_battery_cpp_CBattery_onDropped_FUN_00417f50(CBattery *this_ptr,CVector3f *drop_position)
+; void __cdecl core_battery_cpp_CBattery_onDropped_FUN_00417f50(CBattery *this_ptr,CVector3f *drop_position)
 ;
 ; Parameters:
 ; CBattery *       Stack[0x4]:4   this_ptr

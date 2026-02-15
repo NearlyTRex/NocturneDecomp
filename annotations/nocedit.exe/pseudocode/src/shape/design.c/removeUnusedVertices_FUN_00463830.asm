@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_removeUnusedVertices_FUN_00463830(void)
+; void __cdecl shape_design_c_removeUnusedVertices_FUN_00463830(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x2c]:4  local_2c

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CZombieDog * __cdecl core_dog_cpp_factoryFunc_FUN_0047f010(void)
+; CZombieDog * __cdecl core_dog_cpp_factoryFunc_FUN_0047f010(void)
 ;
 ;
 ; XREF[1]:

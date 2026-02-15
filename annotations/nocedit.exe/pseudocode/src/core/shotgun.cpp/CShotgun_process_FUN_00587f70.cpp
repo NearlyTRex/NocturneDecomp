@@ -19,7 +19,7 @@ void __cdecl core_shotgun_cpp_CShotgun_process_FUN_00587f70(CShotgun *this_ptr,f
          (CVector3f *)(*(((this_ptr->base).base.vtable._uc)->_uc).canWalk)((CCharacter *)this_ptr);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               ((CDemonActor *)this_ptr,&CStack_1c,input_local_point);
-    g_CDemonLightInstance.unk2 = 0;
+    g_CDemonLightInstance.volumetric_enabled = 0;
     if ((int *)&stack0x00000000 != &g_CDemonLightInstance.base.base.rotation_matrix.m[1].y) {
       g_CDemonLightInstance.base.base.position.x = (int)CStack_1c.x;
       g_CDemonLightInstance.base.base.position.y = (int)CStack_1c.y;

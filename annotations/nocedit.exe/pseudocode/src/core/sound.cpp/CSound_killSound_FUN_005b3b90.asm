@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_sound_cpp_CSound_killSound_FUN_005b3b90(CSound *this_ptr,uint sfx_handle)
+; void __cdecl core_sound_cpp_CSound_killSound_FUN_005b3b90(CSound *this_ptr,uint sfx_handle)
 ;
 ; Parameters:
 ; CSound *         Stack[0x4]:4   this_ptr

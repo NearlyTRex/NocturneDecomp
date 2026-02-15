@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_ladder_cpp_CLadder_process_FUN_00502610(CLadder *this_ptr,float delta_time)
+; void __cdecl core_ladder_cpp_CLadder_process_FUN_00502610(CLadder *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CLadder *        Stack[0x4]:4   this_ptr

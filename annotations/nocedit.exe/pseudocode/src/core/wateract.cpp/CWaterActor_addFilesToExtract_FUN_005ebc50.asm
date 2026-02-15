@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_wateract_cpp_CWaterActor_addFilesToExtract_FUN_005ebc50(CWaterActor *this_ptr,_FILE *file_handle)
+; void __cdecl core_wateract_cpp_CWaterActor_addFilesToExtract_FUN_005ebc50(CWaterActor *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CWaterActor *    Stack[0x4]:4   this_ptr

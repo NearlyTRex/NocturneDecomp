@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBloodSplat * __cdecl core_gore_cpp_CGore_FUN_004edaf0(CGore *this_ptr)
+; CBloodSplat * __cdecl core_gore_cpp_CGore_FUN_004edaf0(CGore *this_ptr)
 ;
 ; Parameters:
 ; CGore *          Stack[0x4]:4   this_ptr

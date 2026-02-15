@@ -15,7 +15,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_00570cd0(CDemonSet *this_ptr)
   CVector3i local_10;
   
   if (in_stack_00000008 == (float *)0x0) {
-    this_ptr->mirror_render_param1 = 0;
+    this_ptr->mirror_lighting_cached = 0;
     return;
   }
   local_10.x = (int)ROUND(*in_stack_00000008 * 256.0f);
@@ -23,10 +23,10 @@ void __cdecl core_set_cpp_CDemonSet_FUN_00570cd0(CDemonSet *this_ptr)
   local_10.z = (int)ROUND(in_stack_00000008[2] * 256.0f);
   core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0(this_ptr,&local_10,(CVector3i *)0x0,0,0);
   iVar1 = g_RenderVertexBuffer[0].light;
-  this_ptr->mirror_render_param1 = 1;
+  this_ptr->mirror_lighting_cached = 1;
   iVar2 = g_RenderVertexBuffer[0].fog;
-  this_ptr->mirror_render_param2 = iVar1;
-  this_ptr->mirror_render_param4 = iVar2;
-  this_ptr->mirror_render_param3 = g_RenderVertexBuffer[0].color;
+  this_ptr->mirror_cached_light = iVar1;
+  this_ptr->mirror_cached_fog = iVar2;
+  this_ptr->mirror_cached_color = g_RenderVertexBuffer[0].color;
   return;
 }

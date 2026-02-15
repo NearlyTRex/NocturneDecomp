@@ -181,8 +181,8 @@ LAB_0057523f:
   fStack_30 = 100.0f * 100.0f;
   g_VDNearbyActorCount = 0;
   iStack_20 = 0;
-  for (iVar12 = 0; iVar12 < (int)g_CDemonSetPtr->actor_list_ptr; iVar12 = iVar12 + 1) {
-    this_ptr_00 = *(CDemonActor **)(g_CDemonSetPtr->actor_list_data + iStack_20);
+  for (iVar12 = 0; iVar12 < g_CDemonSetPtr->actor_count; iVar12 = iVar12 + 1) {
+    this_ptr_00 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iStack_20);
     iVar10 = (*((this_ptr_00->vtable)._ub)->getBlockVirtualDirectorFlag)(this_ptr_00);
     if (((iVar10 != 0) && (this_ptr_00 != actor)) &&
        (fVar6 = (this_ptr_00->location).position.x - (actor->location).position.x,
@@ -212,11 +212,11 @@ LAB_0057523f:
   pCStack_24 = this_ptr->cameras;
   while ((iVar10 = g_VDCameraIndex, iVar12 = g_WindowHeight, 0 < iStack_58 &&
          (g_VDCameraIndex < this_ptr->camera_count))) {
-    uVar11 = this_ptr->cameras[g_VDCameraIndex].unk3;
+    uVar11 = this_ptr->cameras[g_VDCameraIndex].vdir_zone;
     if (uStack_28 == uVar11) {
       this_ptr_02 = pCStack_24 + g_VDCameraIndex;
       pCStack_14 = actor;
-      if (this_ptr_02->unk4 == 0) {
+      if (this_ptr_02->enabled == 0) {
         fVar14 = (float)(uStack_28 ^ uVar11);
         fVar9 = fVar14;
       }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_simbox_cpp_CSimBox_hasCollision_FUN_00589260(CSimBox *this_ptr,SCollisionInfo *collision_info)
+; int __cdecl core_simbox_cpp_CSimBox_hasCollision_FUN_00589260(CSimBox *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CSimBox *        Stack[0x4]:4   this_ptr

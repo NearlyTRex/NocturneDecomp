@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl core_charactr_cpp_clampNormalizedAngle_FUN_00428670(float angle,float limit)
+; float __cdecl core_charactr_cpp_clampNormalizedAngle_FUN_00428670(float angle,float limit)
 ;
 ; Parameters:
 ; float            Stack[0x4]:4   angle

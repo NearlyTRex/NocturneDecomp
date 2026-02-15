@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_actor_cpp_setRandomSeed_FUN_0040cb90(uint seed_value)
+; void __cdecl core_actor_cpp_setRandomSeed_FUN_0040cb90(uint seed_value)
 ;
 ; Parameters:
 ; uint             Stack[0x4]:4   seed_value

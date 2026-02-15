@@ -72,8 +72,9 @@ void __cdecl core_gore_cpp_CGore_FUN_004ed830(CGore *this_ptr)
       if (0 < DAT_02da8c28) {
         iVar1 = 0;
         do {
-          if (*(int *)(DAT_02da8c2c[0].unk1 + iVar1) == 0) {
-            core_gore_cpp_CFootstep_FUN_004ed3c0((CFootstep *)(DAT_02da8c2c[0].unk1 + iVar1));
+          if (*(int *)(CFootstep_ARRAY_02da8c2c[0].unk1 + iVar1) == 0) {
+            core_gore_cpp_CFootstep_FUN_004ed3c0
+                      ((CFootstep *)(CFootstep_ARRAY_02da8c2c[0].unk1 + iVar1));
           }
           iVar2 = iVar2 + 1;
           iVar1 = iVar1 + 0x40;
@@ -83,7 +84,7 @@ void __cdecl core_gore_cpp_CGore_FUN_004ed830(CGore *this_ptr)
     else {
       iVar2 = 0;
       if (0 < DAT_02da8c28) {
-        this_ptr_02 = DAT_02da8c2c;
+        this_ptr_02 = CFootstep_ARRAY_02da8c2c;
         do {
           iVar2 = iVar2 + 1;
           core_gore_cpp_CFootstep_FUN_004ed3c0(this_ptr_02);

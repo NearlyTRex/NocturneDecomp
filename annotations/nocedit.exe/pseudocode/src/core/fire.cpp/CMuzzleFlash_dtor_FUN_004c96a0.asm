@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CMuzzleFlash * __cdecl core_fire_cpp_CMuzzleFlash_dtor_FUN_004c96a0(CMuzzleFlash *this_ptr,uint flags)
+; CMuzzleFlash * __cdecl core_fire_cpp_CMuzzleFlash_dtor_FUN_004c96a0(CMuzzleFlash *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CMuzzleFlash *   Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_script_cpp_CScript_screenToScriptPosition_FUN_00566c20(CScript *this_ptr,int pixel_x,int pixel_y,int *column_out,int *line_out)
+; int __cdecl core_script_cpp_CScript_screenToScriptPosition_FUN_00566c20(CScript *this_ptr,int pixel_x,int pixel_y,int *column_out,int *line_out)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr

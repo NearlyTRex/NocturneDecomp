@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CFlameCan * __cdecl core_flamecan_cpp_factoryFunc_FUN_004cb120(void)
+; CFlameCan * __cdecl core_flamecan_cpp_factoryFunc_FUN_004cb120(void)
 ;
 ;
 ; XREF[1]:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl wincore_windll_cpp_sync_FUN_005b7bc0(void)
+; int __cdecl wincore_windll_cpp_sync_FUN_005b7bc0(void)
 ;
 ;
 ; XREF[1]:

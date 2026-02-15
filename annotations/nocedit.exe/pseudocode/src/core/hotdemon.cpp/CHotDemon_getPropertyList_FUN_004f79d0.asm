@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_hotdemon_cpp_CHotDemon_getPropertyList_FUN_004f79d0(CHotDemon *this_ptr,CActorPropertyList *property_list)
+; void __cdecl core_hotdemon_cpp_CHotDemon_getPropertyList_FUN_004f79d0(CHotDemon *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CHotDemon *      Stack[0x4]:4   this_ptr

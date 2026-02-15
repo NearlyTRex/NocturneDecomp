@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_actor_cpp_archiveString_FUN_0040b5c0(char *string_buffer,char *property_type)
+; void __cdecl core_actor_cpp_archiveString_FUN_0040b5c0(char *string_buffer,char *property_type)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   string_buffer

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addSound_FUN_0040e2d0(CActorPropertyList *this_ptr,char *property_name,void *data_ptr)
+; CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addSound_FUN_0040e2d0(CActorPropertyList *this_ptr,char *property_name,void *data_ptr)
 ;
 ; Parameters:
 ; CActorPropertyList * Stack[0x4]:4   this_ptr

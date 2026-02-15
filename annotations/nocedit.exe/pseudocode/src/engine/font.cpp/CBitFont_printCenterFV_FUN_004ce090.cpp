@@ -1,0 +1,19 @@
+// Name: engine_font.cpp_CBitFont_printCenterFV_FUN_004ce090
+// Address: 004ce090
+// Address Range: [[004ce090, 004ce0ec]]
+// Convention: __cdecl
+// Signature: int __cdecl engine_font_cpp_CBitFont_printCenterFV_FUN_004ce090(CBitFont *this_ptr,int y,int color_mode,int color_value,char *format_string,va_list_t args)
+
+#include "nocturne.h"
+
+int __cdecl engine_font_cpp_CBitFont_printCenterFV_FUN_004ce090(CBitFont *this_ptr,int y,int color_mode,int color_value,char *format_string,va_list_t args)
+
+{
+  int iVar1;
+  char local_1010 [4096];
+  
+  _vsprintf(local_1010,format_string,args);
+  iVar1 = engine_font_cpp_CBitFont_drawTextCenterInClip_FUN_004cdff0
+                    (this_ptr,y,color_mode,color_value,local_1010);
+  return iVar1;
+}

@@ -8,6 +8,6 @@
 // Ghidra size: 0x1c (28 bytes)
 typedef struct SCollisionReturnInfo {
     CVector3f position; // 0x0
-    char unk[16]; // 0xc
+    char reserved[16]; // 0xc
 } SCollisionReturnInfo;
 

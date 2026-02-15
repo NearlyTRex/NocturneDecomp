@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_mimic_cpp_CMimic_getPropertyList_FUN_00520d10(CMimic *this_ptr,CActorPropertyList *property_list)
+; void __cdecl core_mimic_cpp_CMimic_getPropertyList_FUN_00520d10(CMimic *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CMimic *         Stack[0x4]:4   this_ptr

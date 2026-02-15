@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredBothWrapper_FUN_00489760(CDrawSurface *this_ptr,int x,int y,char *text)
+; void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredBothWrapper_FUN_00489760(CDrawSurface *this_ptr,int x,int y,char *text)
 ;
 ; Parameters:
 ; CDrawSurface *   Stack[0x4]:4   this_ptr

@@ -28,7 +28,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048ae
           pSVar2 = polygon_info;
           do {
             iVar1 = pSVar2[1].base.type;
-            if (this_ptr->unk == 0) {
+            if (this_ptr->skip_uv_extraction == 0) {
               this_ptr->vertex_buffer_ptr[iVar1].u = pSVar2[1].base.count;
               this_ptr->vertex_buffer_ptr[iVar1].v = pSVar2[1].surface_normal.A;
             }

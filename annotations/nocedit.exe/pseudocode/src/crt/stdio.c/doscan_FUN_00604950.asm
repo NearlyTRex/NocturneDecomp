@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_stdio_c_doscan_FUN_00604950(scanf_state_t *state,char **format_ptr,va_list_t *args)
+; int __cdecl crt_stdio_c_doscan_FUN_00604950(scanf_state_t *state,char **format_ptr,va_list_t *args)
 ;
 ; Parameters:
 ; scanf_state_t *  Stack[0x4]:4   state

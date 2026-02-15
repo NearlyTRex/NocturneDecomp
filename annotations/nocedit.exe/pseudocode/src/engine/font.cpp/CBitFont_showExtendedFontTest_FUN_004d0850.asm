@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_font_cpp_CBitFont_showExtendedFontTest_FUN_004d0850(CBitFont *this_ptr,int screen_width,int screen_height)
+; void __cdecl engine_font_cpp_CBitFont_showExtendedFontTest_FUN_004d0850(CBitFont *this_ptr,int screen_width,int screen_height)
 ;
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   this_ptr
@@ -38,7 +38,7 @@
 ;   engine_2d.c_fillRectColor_FUN_00403170
 ;   engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a0
 ;   engine_font.cpp_CBitFont_drawText_FUN_004cda80
-;   engine_font.cpp_CBitFont_drawTextFV_FUN_004cdc20
+;   engine_font.cpp_CBitFont_drawTextF_FUN_004cdc20
 ;   engine_font.cpp_CBitFont_getCharWidth_FUN_004d01a0
 ;   engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0
 ;   engine_font.cpp_CBitFont_getCharXAdvance_FUN_004d0200
@@ -397,8 +397,8 @@ section .text
     SHR EAX,0x1                         ; 004d0bb5
     PUSH EAX                            ; 004d0bb7
     PUSH ESI                            ; 004d0bb8
-    CALL engine_font.cpp_CBitFont_drawTextFV_FUN_004cdc20 ; 004d0bb9
-        ;   XREF to: 004cdc20 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextFV_FUN_004cdc20(CBitFont * this_ptr, int x, int y, int color_mode, ...)
+    CALL engine_font.cpp_CBitFont_drawTextF_FUN_004cdc20 ; 004d0bb9
+        ;   XREF to: 004cdc20 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextF_FUN_004cdc20(CBitFont * this_ptr, int x, int y, int color_mode, ...)
     MOV EAX,dword ptr [ESI + 0x316c]    ; 004d0bbe
     MOV EDX,dword ptr [EBP + 0x1c]      ; 004d0bc4
     ADD EAX,EBX                         ; 004d0bc7
@@ -551,8 +551,8 @@ section .text
     SHR EAX,0x1                         ; 004d0d25
     PUSH EAX                            ; 004d0d27
     PUSH ESI                            ; 004d0d28
-    CALL engine_font.cpp_CBitFont_drawTextFV_FUN_004cdc20 ; 004d0d29
-        ;   XREF to: 004cdc20 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextFV_FUN_004cdc20(CBitFont * this_ptr, int x, int y, int color_mode, ...)
+    CALL engine_font.cpp_CBitFont_drawTextF_FUN_004cdc20 ; 004d0d29
+        ;   XREF to: 004cdc20 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextF_FUN_004cdc20(CBitFont * this_ptr, int x, int y, int color_mode, ...)
     ADD ESP,0x24                        ; 004d0d2e
     MOV ESP,EBP                         ; 004d0d31
     POP EBP                             ; 004d0d33

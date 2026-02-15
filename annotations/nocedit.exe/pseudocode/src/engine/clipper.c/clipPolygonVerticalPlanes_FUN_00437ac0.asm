@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_clipper_c_clipPolygonVerticalPlanes_FUN_00437ac0(void)
+; void __cdecl engine_clipper_c_clipPolygonVerticalPlanes_FUN_00437ac0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14

@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_script_cpp_staticInit_FUN_005591b0(void)
+; void __cdecl core_script_cpp_staticInit_FUN_005591b0(void)
 ;
 ;
 ; Referenced Globals:
-;   WatcomStaticDestructorNode DAT_00680d10
-;   WatcomStaticDestructorNode DAT_00680d20
-;   WatcomStaticDestructorNode DAT_00680d30
-;   WatcomStaticDestructorNode DAT_00680d40
+;   WatcomStaticDestructorNode WatcomStaticDestructorNode_00680d10
+;   WatcomStaticDestructorNode WatcomStaticDestructorNode_00680d20
+;   WatcomStaticDestructorNode WatcomStaticDestructorNode_00680d30
+;   WatcomStaticDestructorNode WatcomStaticDestructorNode_00680d40
 ;   CPickList g_ScriptPickList
 ;   CScript g_CScriptInstance
 ;   CEdScrollBar g_ScriptEditorVScrollBar
@@ -29,7 +29,7 @@ section .text
     CALL shape_edittool.cpp_CPickList_ctor_FUN_004a3b90 ; 005591b5
         ;   XREF to: 004a3b90 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_ctor_FUN_004a3b90(CPickList * this_ptr)
     ADD ESP,0x4                         ; 005591ba
-    PUSH 0x680d10                       ; 005591bd | DAT_00680d10
+    PUSH 0x680d10                       ; 005591bd | WatcomStaticDestructorNode_00680d10
     CALL crt_stdlib.c__atexit_FUN_005ff060 ; 005591c2
         ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 005591c7
@@ -37,7 +37,7 @@ section .text
     CALL core_script.cpp_CScript_ctor_FUN_005597f0 ; 005591cf
         ;   XREF to: 005597f0 (UNCONDITIONAL_CALL)  ; CScript * core_script.cpp_CScript_ctor_FUN_005597f0(CScript * this_ptr)
     ADD ESP,0x4                         ; 005591d4
-    PUSH 0x680d20                       ; 005591d7 | DAT_00680d20
+    PUSH 0x680d20                       ; 005591d7 | WatcomStaticDestructorNode_00680d20
     CALL crt_stdlib.c__atexit_FUN_005ff060 ; 005591dc
         ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 005591e1
@@ -45,7 +45,7 @@ section .text
     CALL shape_edittool.cpp_CEdScrollBar_ctor_FUN_004a5ae0 ; 005591e9
         ;   XREF to: 004a5ae0 (UNCONDITIONAL_CALL)  ; CEdScrollBar * shape_edittool.cpp_CEdScrollBar_ctor_FUN_004a5ae0(CEdScrollBar * this_ptr)
     ADD ESP,0x4                         ; 005591ee
-    PUSH 0x680d30                       ; 005591f1 | DAT_00680d30
+    PUSH 0x680d30                       ; 005591f1 | WatcomStaticDestructorNode_00680d30
     CALL crt_stdlib.c__atexit_FUN_005ff060 ; 005591f6
         ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 005591fb
@@ -53,7 +53,7 @@ section .text
     CALL shape_edittool.cpp_CEdScrollBar_ctor_FUN_004a5ae0 ; 00559203
         ;   XREF to: 004a5ae0 (UNCONDITIONAL_CALL)  ; CEdScrollBar * shape_edittool.cpp_CEdScrollBar_ctor_FUN_004a5ae0(CEdScrollBar * this_ptr)
     ADD ESP,0x4                         ; 00559208
-    PUSH 0x680d40                       ; 0055920b | DAT_00680d40
+    PUSH 0x680d40                       ; 0055920b | WatcomStaticDestructorNode_00680d40
     CALL crt_stdlib.c__atexit_FUN_005ff060 ; 00559210
         ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 00559215

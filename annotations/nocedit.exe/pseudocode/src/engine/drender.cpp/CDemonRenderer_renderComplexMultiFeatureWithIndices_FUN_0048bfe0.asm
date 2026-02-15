@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_renderComplexMultiFeatureWithIndices_FUN_0048bfe0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
+; void __cdecl engine_drender_cpp_CDemonRenderer_renderComplexMultiFeatureWithIndices_FUN_0048bfe0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr

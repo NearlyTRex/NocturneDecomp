@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_matrix_c_setCameraOrigin_FUN_0050e270(int x,int y,int z)
+; void __cdecl engine_matrix_c_setCameraOrigin_FUN_0050e270(int x,int y,int z)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   x

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_quantizePaletteColors_FUN_0046b770(byte *image_data,int pixel_count,int stride,byte *palette_data,int mode_flag,char *bit_mask)
+; void __cdecl shape_design_c_quantizePaletteColors_FUN_0046b770(byte *image_data,int pixel_count,int stride,byte *palette_data,int mode_flag,char *bit_mask)
 ;
 ; Parameters:
 ; byte *           Stack[0x4]:4   image_data

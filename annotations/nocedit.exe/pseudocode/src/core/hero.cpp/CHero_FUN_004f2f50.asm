@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_hero_cpp_CHero_FUN_004f2f50(CHero *this_ptr)
+; int __cdecl core_hero_cpp_CHero_FUN_004f2f50(CHero *this_ptr)
 ;
 ; Parameters:
 ; CHero *          Stack[0x4]:4   this_ptr
@@ -35,8 +35,8 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   undefined4 g_CLeverClassInfo.name_hash
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.actor_list_ptr
-;   undefined4 g_CDemonSetInstance.actor_list_data[0]
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
@@ -67,7 +67,7 @@ section .text
     MOV dword ptr [ESP + 0x34],EAX      ; 004f2f79
     MOV EAX,[0x006810c8]                ; 004f2f7d | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_004f2f7d
-    CMP EDI,dword ptr [EAX + 0x14d154]  ; 004f2f82 | g_CDemonSetInstance.actor_list_ptr
+    CMP EDI,dword ptr [EAX + 0x14d154]  ; 004f2f82 | g_CDemonSetInstance.actor_count
     JL 0x004f2fa4                       ; 004f2f88
         ;   XREF to: 004f2fa4 (CONDITIONAL_JUMP)  ; LAB_004f2fa4
     MOV EAX,dword ptr [EBP + 0x14]      ; 004f2f8a
@@ -86,7 +86,7 @@ section .text
     MOV EDX,dword ptr [0x02dd3090]      ; 004f2fa4 | g_CLeverClassInfo.name_hash
         ;   Label: LAB_004f2fa4
     PUSH EDX                            ; 004f2faa
-    MOV ECX,dword ptr [ESI + EAX*0x1 + 0x14d158] ; 004f2fab | g_CDemonSetInstance.actor_list_data[0]
+    MOV ECX,dword ptr [ESI + EAX*0x1 + 0x14d158] ; 004f2fab | g_CDemonSetInstance.actors[0]
     PUSH ECX                            ; 004f2fb2
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 004f2fb3
         ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)

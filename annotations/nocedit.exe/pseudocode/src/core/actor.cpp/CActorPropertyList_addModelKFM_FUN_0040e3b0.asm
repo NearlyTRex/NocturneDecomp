@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0(CActorPropertyList *this_ptr,char *property_name,CKeyFramedModelInstance *data_ptr,int allow_none)
+; CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0(CActorPropertyList *this_ptr,char *property_name,CKeyFramedModelInstance *data_ptr,int allow_none)
 ;
 ; Parameters:
 ; CActorPropertyList * Stack[0x4]:4   this_ptr

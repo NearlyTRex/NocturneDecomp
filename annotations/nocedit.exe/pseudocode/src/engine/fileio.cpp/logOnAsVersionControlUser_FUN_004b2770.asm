@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_fileio_cpp_logOnAsVersionControlUser_FUN_004b2770(void)
+; int __cdecl engine_fileio_cpp_logOnAsVersionControlUser_FUN_004b2770(void)
 ;
 ;
 ; *****************************************************************************

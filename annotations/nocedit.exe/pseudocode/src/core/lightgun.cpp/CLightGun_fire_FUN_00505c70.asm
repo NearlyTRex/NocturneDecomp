@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_00505c70(CLightGun *this_ptr)
+; int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_00505c70(CLightGun *this_ptr)
 ;
 ; Parameters:
 ; CLightGun *      Stack[0x4]:4   this_ptr
@@ -219,11 +219,11 @@ section .text
     MOV EAX,[0x006810c8]                ; 00505ed0 | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_00505ed0
     MOV EBX,dword ptr [ESP + 0x100]     ; 00505ed5
-    CMP EBX,dword ptr [EAX + 0x14f098]  ; 00505edc | g_CDemonSetInstance.damage_listener_count
+    CMP EBX,dword ptr [EAX + 0x14f098]  ; 00505edc | g_CDemonSetInstance.character_count
     JGE 0x005063e6                      ; 00505ee2
         ;   XREF to: 005063e6 (CONDITIONAL_JUMP)  ; LAB_005063e6
     ADD EAX,dword ptr [ESP + 0xfc]      ; 00505ee8
-    MOV ESI,dword ptr [EAX + 0x14f09c]  ; 00505eef | g_CDemonSetInstance.damage_listeners | DAT_03263318
+    MOV ESI,dword ptr [EAX + 0x14f09c]  ; 00505eef | g_CDemonSetInstance.characters[0] | DAT_03263318
     PUSH ESI                            ; 00505ef5
     MOV EAX,dword ptr [ESI + 0x154]     ; 00505ef6
     CALL dword ptr [EAX + 0xf4]         ; 00505efc

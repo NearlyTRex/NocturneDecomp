@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_script_cpp_validateActorVariableName_FUN_00559220(char *variable_name)
+; int __cdecl core_script_cpp_validateActorVariableName_FUN_00559220(char *variable_name)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   variable_name

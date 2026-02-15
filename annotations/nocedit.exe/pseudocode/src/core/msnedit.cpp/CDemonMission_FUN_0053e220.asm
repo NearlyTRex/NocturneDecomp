@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053e220(CDemonMission *this_ptr)
+; void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053e220(CDemonMission *this_ptr)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr
@@ -268,7 +268,7 @@ section .text
     MOV EAX,[0x006810c8]                ; 0053e4b6 | g_CDemonSetPtr
     MOV dword ptr [0x03276acc],EBX      ; 0053e4bb | g_CDemonCameraInstance.corona_blend_factor
     MOV dword ptr [EAX + 0x15ac80],0x1  ; 0053e4c1 | g_CDemonSetInstance.lighting_quality_mode
-    MOV dword ptr [EAX + 0x15ac84],0x1  ; 0053e4cb | g_CDemonSetInstance.unk_lighting_param1
+    MOV dword ptr [EAX + 0x15ac84],0x1  ; 0053e4cb | g_CDemonSetInstance.disable_spotlight_shadows
     MOV EAX,dword ptr [EBP + 0x14]      ; 0053e4d5
         ;   Label: LAB_0053e4d5
     MOV ESI,dword ptr [EAX + 0x30]      ; 0053e4d8
@@ -277,14 +277,14 @@ section .text
     SETZ AL                             ; 0053e4df
     MOV BL,AL                           ; 0053e4e2
     MOV EAX,[0x006810c8]                ; 0053e4e4 | g_CDemonSetInstance | g_CDemonSetPtr
-    MOV dword ptr [EAX + 0x15ac8c],EBX  ; 0053e4e9 | g_CDemonSetInstance.unk_lighting_param3
+    MOV dword ptr [EAX + 0x15ac8c],EBX  ; 0053e4e9 | g_CDemonSetInstance.disable_water_rendering
     MOV EBX,dword ptr [EBP + 0x14]      ; 0053e4ef
     CMP dword ptr [EBX + 0x34],0x0      ; 0053e4f2
     SETZ BL                             ; 0053e4f6
     PUSH 0x0                            ; 0053e4f9
     AND EBX,0xff                        ; 0053e4fb
     PUSH EAX                            ; 0053e501 | g_CDemonSetInstance
-    MOV dword ptr [EAX + 0x15ac90],EBX  ; 0053e502 | g_CDemonSetInstance.unk_lighting_param4
+    MOV dword ptr [EAX + 0x15ac90],EBX  ; 0053e502 | g_CDemonSetInstance.disable_sky_rendering
     CALL core_set.cpp_CDemonSet_FUN_0056c1a0 ; 0053e508
         ;   XREF to: 0056c1a0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056c1a0(CDemonSet * this_ptr)
     ADD ESP,0x8                         ; 0053e50d
@@ -631,7 +631,7 @@ section .text
     MOV [0x03276acc],EAX                ; 0053e938 | g_CDemonCameraInstance.corona_blend_factor
     MOV EAX,[0x006810c8]                ; 0053e93d | g_CDemonSetPtr
     MOV dword ptr [EAX + 0x15ac80],ECX  ; 0053e942 | g_CDemonSetInstance.lighting_quality_mode
-    MOV dword ptr [EAX + 0x15ac84],ECX  ; 0053e948 | g_CDemonSetInstance.unk_lighting_param1
+    MOV dword ptr [EAX + 0x15ac84],ECX  ; 0053e948 | g_CDemonSetInstance.disable_spotlight_shadows
     JMP 0x0053e4d5                      ; 0053e94e
         ;   XREF to: 0053e4d5 (UNCONDITIONAL_JUMP)  ; LAB_0053e4d5
     MOV dword ptr [ESP + 0x8],EAX       ; 0053e953
@@ -668,10 +668,10 @@ section .text
         ;   XREF to: 004daed0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0(CGame * this_ptr)
     MOV EAX,[0x006810c8]                ; 0053e9a3 | g_CDemonSetInstance | g_CDemonSetPtr
     MOV dword ptr [EAX + 0x15ac80],0x0  ; 0053e9a8 | g_CDemonSetInstance.lighting_quality_mode
-    MOV dword ptr [EAX + 0x15ac84],0x0  ; 0053e9b2 | g_CDemonSetInstance.unk_lighting_param1
-    MOV dword ptr [EAX + 0x15ac8c],0x0  ; 0053e9bc | g_CDemonSetInstance.unk_lighting_param3
+    MOV dword ptr [EAX + 0x15ac84],0x0  ; 0053e9b2 | g_CDemonSetInstance.disable_spotlight_shadows
+    MOV dword ptr [EAX + 0x15ac8c],0x0  ; 0053e9bc | g_CDemonSetInstance.disable_water_rendering
     ADD ESP,0x4                         ; 0053e9c6
-    MOV dword ptr [EAX + 0x15ac90],0x0  ; 0053e9c9 | g_CDemonSetInstance.unk_lighting_param4
+    MOV dword ptr [EAX + 0x15ac90],0x0  ; 0053e9c9 | g_CDemonSetInstance.disable_sky_rendering
     MOV ESP,EBP                         ; 0053e9d3
     POP EBP                             ; 0053e9d5
     POP EDI                             ; 0053e9d6

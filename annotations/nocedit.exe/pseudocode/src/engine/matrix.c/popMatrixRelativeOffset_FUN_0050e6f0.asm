@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_matrix_c_popMatrixRelativeOffset_FUN_0050e6f0(void)
+; void __cdecl engine_matrix_c_popMatrixRelativeOffset_FUN_0050e6f0(void)
 ;
 ;
 ; Referenced Globals:

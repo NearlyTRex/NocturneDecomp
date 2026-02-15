@@ -28,13 +28,13 @@ void __cdecl core_emitter_cpp_CEmitter_getPropertyList_FUN_004a8db0(CEmitter *th
             (property_list,"Off event",this_ptr->event_off);
   if (this_ptr->emitter_type == 3) {
     core_actor_cpp_CActorPropertyList_addInt_FUN_0040e1e0
-              (property_list,"Laser R",&this_ptr->laser_r,
+              (property_list,"Laser R",&(this_ptr->laser_color).r,
                (CActorPropertyValidatorFunc *)0x0);
     core_actor_cpp_CActorPropertyList_addInt_FUN_0040e1e0
-              (property_list,"Laser G",&this_ptr->laser_g,
+              (property_list,"Laser G",&(this_ptr->laser_color).g,
                (CActorPropertyValidatorFunc *)0x0);
     core_actor_cpp_CActorPropertyList_addInt_FUN_0040e1e0
-              (property_list,"Laser B",&this_ptr->laser_b,
+              (property_list,"Laser B",&(this_ptr->laser_color).b,
                (CActorPropertyValidatorFunc *)0x0);
     core_actor_cpp_CActorPropertyList_addInt_FUN_0040e1e0
               (property_list,"Laser Type",&this_ptr->laser_type,
@@ -63,8 +63,8 @@ void __cdecl core_emitter_cpp_CEmitter_getPropertyList_FUN_004a8db0(CEmitter *th
   }
   if (this_ptr->emitter_type == 9) {
     core_actor_cpp_CActorPropertyList_addChoice_FUN_0040e350
-              (property_list,"Actor to fry",(CDemonActor **)&this_ptr->dest_actor,1,
-               "CDemonActor",(CActorPropertyValidatorFunc *)0x0);
+              (property_list,"Actor to fry",&this_ptr->dest_actor,1,"CDemonActor",
+               (CActorPropertyValidatorFunc *)0x0);
   }
   core_actor_cpp_CActorPropertyList_addSound_FUN_0040e2d0
             (property_list,"Sound",this_ptr->wav_name);

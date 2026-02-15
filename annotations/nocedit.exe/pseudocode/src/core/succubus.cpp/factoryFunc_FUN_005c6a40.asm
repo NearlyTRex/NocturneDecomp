@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CSuccubus * __cdecl core_succubus_cpp_factoryFunc_FUN_005c6a40(void)
+; CSuccubus * __cdecl core_succubus_cpp_factoryFunc_FUN_005c6a40(void)
 ;
 ;
 ; XREF[1]:

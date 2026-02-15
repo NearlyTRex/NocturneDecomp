@@ -57,13 +57,13 @@ int __cdecl core_setedit_cpp_CDemonSet_FUN_00577af0(CDemonSet *this_ptr)
           iVar6 = iVar6 + 1;
         }
         iVar7 = iVar7 + 1;
-        pCVar2 = (CDemonSet *)&pCVar2->cameras[0].unk4;
+        pCVar2 = (CDemonSet *)&pCVar2->cameras[0].enabled;
       } while (iVar7 < this_ptr->camera_count);
     }
     if ((DAT_03364d14 & 1) == 0) {
       DAT_03364d14 = DAT_03364d14 | 1;
       shape_edittool_cpp_CEdScrollBar_ctor_FUN_004a5ae0(&CEdScrollBar_03364ce0);
-      _atexit(&DAT_006816b0);
+      _atexit(&WatcomStaticDestructorNode_006816b0);
     }
     shape_edittool_cpp_CEdScrollBar_setPosition_FUN_004a5b60
               (&CEdScrollBar_03364ce0,0,g_WindowHeight + -10,g_WindowWidth + -1,g_WindowHeight + -1)
@@ -195,7 +195,7 @@ LAB_00577d41:
               }
             }
           }
-          local_88 = (CDemonSet *)&local_88->cameras[0].unk4;
+          local_88 = (CDemonSet *)&local_88->cameras[0].enabled;
           local_8c = local_8c + 1;
           local_84 = local_84 + 1;
           local_70 = local_70 + 1;

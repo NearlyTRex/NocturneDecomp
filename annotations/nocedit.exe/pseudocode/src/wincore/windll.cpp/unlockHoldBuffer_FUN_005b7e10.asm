@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl wincore_windll_cpp_unlockHoldBuffer_FUN_005b7e10(void)
+; int __cdecl wincore_windll_cpp_unlockHoldBuffer_FUN_005b7e10(void)
 ;
 ;
 ; XREF[1]:

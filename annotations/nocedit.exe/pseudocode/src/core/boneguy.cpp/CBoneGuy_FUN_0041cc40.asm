@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_boneguy_cpp_CBoneGuy_FUN_0041cc40(CBoneGuy *this_ptr)
+; int __cdecl core_boneguy_cpp_CBoneGuy_FUN_0041cc40(CBoneGuy *this_ptr)
 ;
 ; Parameters:
 ; CBoneGuy *       Stack[0x4]:4   this_ptr
@@ -28,8 +28,8 @@
 ;   CConsole* g_CConsolePtr = 0083b1a4
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CConsole g_CConsoleInstance
-;   undefined4 g_CDemonSetInstance.actor_list_ptr
-;   undefined4 g_CDemonSetInstance.actor_list_data[0]
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -122,11 +122,11 @@ section .text
     MOV EAX,[0x006810c8]                ; 0041cd1b | g_CDemonSetPtr
         ;   Label: LAB_0041cd1b
     MOV EDX,dword ptr [ESP + 0xbc]      ; 0041cd20
-    CMP EDX,dword ptr [EAX + 0x14d154]  ; 0041cd27 | g_CDemonSetInstance.actor_list_ptr
+    CMP EDX,dword ptr [EAX + 0x14d154]  ; 0041cd27 | g_CDemonSetInstance.actor_count
     JGE 0x0041d105                      ; 0041cd2d
         ;   XREF to: 0041d105 (CONDITIONAL_JUMP)  ; LAB_0041d105
     ADD EAX,dword ptr [ESP + 0xc0]      ; 0041cd33
-    MOV EBX,dword ptr [EAX + 0x14d158]  ; 0041cd3a | g_CDemonSetInstance.actor_list_data[0] | DAT_032613d4
+    MOV EBX,dword ptr [EAX + 0x14d158]  ; 0041cd3a | g_CDemonSetInstance.actors[0] | DAT_032613d4
     PUSH EBX                            ; 0041cd40
     MOV EAX,dword ptr [EBX + 0x154]     ; 0041cd41
     CALL dword ptr [EAX + 0x8c]         ; 0041cd47

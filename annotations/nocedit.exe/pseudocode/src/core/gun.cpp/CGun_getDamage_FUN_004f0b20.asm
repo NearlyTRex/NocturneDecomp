@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl core_gun_cpp_CGun_getDamage_FUN_004f0b20(CGun *this_ptr)
+; float __cdecl core_gun_cpp_CGun_getDamage_FUN_004f0b20(CGun *this_ptr)
 ;
 ; Parameters:
 ; CGun *           Stack[0x4]:4   this_ptr

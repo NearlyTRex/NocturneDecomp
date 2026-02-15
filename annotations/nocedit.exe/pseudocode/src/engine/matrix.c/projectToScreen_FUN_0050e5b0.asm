@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_matrix_c_projectToScreen_FUN_0050e5b0(int input_value)
+; int __cdecl engine_matrix_c_projectToScreen_FUN_0050e5b0(int input_value)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   input_value

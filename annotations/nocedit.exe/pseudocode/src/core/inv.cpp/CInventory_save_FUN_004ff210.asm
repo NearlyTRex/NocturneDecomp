@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_inv_cpp_CInventory_save_FUN_004ff210(CInventory *this_ptr,_FILE *file_handle)
+; void __cdecl core_inv_cpp_CInventory_save_FUN_004ff210(CInventory *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CInventory *     Stack[0x4]:4   this_ptr

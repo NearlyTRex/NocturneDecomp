@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl core_xform_cpp_atan2Approximation_FUN_005f55c0(double sin_value,double cos_value)
+; float __cdecl core_xform_cpp_atan2Approximation_FUN_005f55c0(double sin_value,double cos_value)
 ;
 ; Parameters:
 ; double           Stack[0x4]:8   sin_value

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_cloth_cpp_CCloth_createFromKFM_FUN_0043dcc0(CCloth *this_ptr,char *filename)
+; void __cdecl core_cloth_cpp_CCloth_createFromKFM_FUN_0043dcc0(CCloth *this_ptr,char *filename)
 ;
 ; Parameters:
 ; CCloth *         Stack[0x4]:4   this_ptr

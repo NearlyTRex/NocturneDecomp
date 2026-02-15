@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_script_cpp_parseBodyPartMask_FUN_00559730(CCharacter *character,char *part_names,int *part_mask)
+; int __cdecl core_script_cpp_parseBodyPartMask_FUN_00559730(CCharacter *character,char *part_names,int *part_mask)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   character

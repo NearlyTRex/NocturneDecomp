@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_ammo_cpp_CAmmo_propertyDisplayCallback_FUN_00411200(CAmmo *this_ptr,CActorProperty *property,char *output_buffer)
+; void __cdecl core_ammo_cpp_CAmmo_propertyDisplayCallback_FUN_00411200(CAmmo *this_ptr,CActorProperty *property,char *output_buffer)
 ;
 ; Parameters:
 ; CAmmo *          Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_ghoul_cpp_CGhoul_addFilesToExtract_FUN_004e8ee0(CGhoul *this_ptr,_FILE *file_handle)
+; void __cdecl core_ghoul_cpp_CGhoul_addFilesToExtract_FUN_004e8ee0(CGhoul *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CGhoul *         Stack[0x4]:4   this_ptr

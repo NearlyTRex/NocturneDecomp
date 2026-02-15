@@ -22,9 +22,6 @@ CExplosion* g_ExplosionActiveListHead = {};
 // CExplosion[10]
 CExplosion g_ExplosionPool[10] = {};
 
-// CFireball*
-CFireball* g_CFireEffectFireballsEnd = {};
-
 // CFireball[64]
 CFireball g_FireballPool[64] = {};
 
@@ -43,12 +40,11 @@ CRock* g_CFireEffectRocksEnd = {};
 // CRock[64]
 CRock g_RockPool[64] = {};
 
-// CToss*
-CToss* g_TossActiveListHead = {};
-
 // CToss[20]
 CToss g_TossPool[20] = {};
 
 // int
+int INT_02d655a8 = {};
 int g_ExplosionPoolIndex = {};
+int INT_02d6c6a0 = {};
 

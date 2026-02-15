@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_process_c_set_shell_execute_flag_FUN_00609c80(char *buffer)
+; void __cdecl crt_process_c_set_shell_execute_flag_FUN_00609c80(char *buffer)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   buffer

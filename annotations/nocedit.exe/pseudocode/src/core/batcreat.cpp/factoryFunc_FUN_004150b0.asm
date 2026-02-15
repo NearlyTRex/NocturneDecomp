@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBatCreature * __cdecl core_batcreat_cpp_factoryFunc_FUN_004150b0(void)
+; CBatCreature * __cdecl core_batcreat_cpp_factoryFunc_FUN_004150b0(void)
 ;
 ;
 ; XREF[1]:

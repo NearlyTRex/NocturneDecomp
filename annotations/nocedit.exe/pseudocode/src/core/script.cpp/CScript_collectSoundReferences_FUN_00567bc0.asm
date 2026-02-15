@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_script_cpp_CScript_collectSoundReferences_FUN_00567bc0(CScript *this_ptr,CStrList *sounds_out)
+; void __cdecl core_script_cpp_CScript_collectSoundReferences_FUN_00567bc0(CScript *this_ptr,CStrList *sounds_out)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr

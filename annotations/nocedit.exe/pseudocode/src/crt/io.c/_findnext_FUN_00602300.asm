@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_io_c__findnext_FUN_00602300(HANDLE find_handle,LPWIN32_FIND_DATAA find_data)
+; int __cdecl crt_io_c__findnext_FUN_00602300(HANDLE find_handle,LPWIN32_FIND_DATAA find_data)
 ;
 ; Parameters:
 ; HANDLE           Stack[0x4]:4   find_handle

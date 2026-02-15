@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_sentinel_cpp_CSentinel_addFilesToExtract_FUN_00568f50(CSentinel *this_ptr,_FILE *file_handle)
+; void __cdecl core_sentinel_cpp_CSentinel_addFilesToExtract_FUN_00568f50(CSentinel *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CSentinel *      Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dstrender_cpp_renderScreenDepthTestInterlacedProfiled_FUN_00490cb5(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
+; void __cdecl core_dstrender_cpp_renderScreenDepthTestInterlacedProfiled_FUN_00490cb5(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
 ;
 ;
 ; XREF[1]:

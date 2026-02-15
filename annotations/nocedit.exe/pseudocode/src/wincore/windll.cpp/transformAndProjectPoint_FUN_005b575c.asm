@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex *output,CVector3i *input)
+; void __cdecl wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex *output,CVector3i *input)
 ;
 ; Parameters:
 ; SProjectedVertex * Stack[0x4]:4   output

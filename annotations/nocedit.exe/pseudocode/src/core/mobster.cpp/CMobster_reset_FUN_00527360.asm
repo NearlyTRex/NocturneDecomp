@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_mobster_cpp_CMobster_reset_FUN_00527360(CMobster *this_ptr)
+; void __cdecl core_mobster_cpp_CMobster_reset_FUN_00527360(CMobster *this_ptr)
 ;
 ; Parameters:
 ; CMobster *       Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CSpike * __cdecl core_spike_cpp_factoryFunc_FUN_005b81e0(void)
+; CSpike * __cdecl core_spike_cpp_factoryFunc_FUN_005b81e0(void)
 ;
 ;
 ; XREF[1]:

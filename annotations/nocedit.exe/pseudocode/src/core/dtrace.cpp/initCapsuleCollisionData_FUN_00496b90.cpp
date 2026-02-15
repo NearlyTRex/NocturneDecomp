@@ -17,13 +17,14 @@ void __cdecl core_dtrace_cpp_initCapsuleCollisionData_FUN_00496b90(SCapsuleColli
   out_data->dir_x = dir_x;
   out_data->dir_z = dir_z;
   out_data->radius = radius;
-  out_data->user_data1 = user_data2;
-  out_data->user_data2 = user_data1;
+  out_data->top_y = user_data2;
+  out_data->bottom_y = user_data1;
   fVar1 = SQRT(dir_z * dir_z + dir_x * dir_x);
   fVar2 = radius / fVar1 + 1.0;
-  out_data->dot_product = start_z * dir_z + start_x * dir_x;
-  out_data->constant = 1.01;
-  out_data->expanded_term = fVar2 * dir_z * dir_z + fVar2 * dir_x * dir_x + out_data->dot_product;
+  out_data->sweep_slab_near = start_z * dir_z + start_x * dir_x;
+  out_data->closest_t = 1.01;
+  out_data->sweep_slab_far =
+       fVar2 * dir_z * dir_z + fVar2 * dir_x * dir_x + out_data->sweep_slab_near;
   if (0.0 < fVar1) {
     out_data->normal_x = dir_x * (1.0 / fVar1);
     out_data->normal_z = dir_z * (1.0 / fVar1);

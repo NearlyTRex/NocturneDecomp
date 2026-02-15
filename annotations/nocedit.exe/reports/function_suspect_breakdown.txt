@@ -4,44 +4,44 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 3926 functions
-  1 suspects: 806 functions
-  2 suspects: 484 functions
-  3 suspects: 271 functions
+  0 suspects: 3932 functions
+  1 suspects: 804 functions
+  2 suspects: 482 functions
+  3 suspects: 268 functions
   4 suspects: 215 functions
-  5 suspects: 201 functions
-  6 suspects: 145 functions
+  5 suspects: 203 functions
+  6 suspects: 147 functions
   7 suspects: 115 functions
-  8 suspects: 106 functions
-  9 suspects: 77 functions
-  10 suspects: 71 functions
+  8 suspects: 107 functions
+  9 suspects: 76 functions
+  10 suspects: 70 functions
   11 suspects: 60 functions
-  12 suspects: 56 functions
-  13 suspects: 60 functions
-  14 suspects: 63 functions
+  12 suspects: 57 functions
+  13 suspects: 58 functions
+  14 suspects: 60 functions
   15 suspects: 36 functions
   16 suspects: 36 functions
-  17 suspects: 24 functions
+  17 suspects: 26 functions
   18 suspects: 29 functions
   19 suspects: 26 functions
-  20 suspects: 31 functions
+  20 suspects: 30 functions
   21 suspects: 27 functions
-  22 suspects: 16 functions
-  23 suspects: 30 functions
-  24 suspects: 13 functions
-  25 suspects: 14 functions
-  26 suspects: 16 functions
+  22 suspects: 17 functions
+  23 suspects: 28 functions
+  24 suspects: 15 functions
+  25 suspects: 12 functions
+  26 suspects: 18 functions
   27 suspects: 12 functions
   28 suspects: 11 functions
-  29 suspects: 11 functions
-  30 suspects: 8 functions
-  31 suspects: 8 functions
+  29 suspects: 10 functions
+  30 suspects: 9 functions
+  31 suspects: 9 functions
   32 suspects: 8 functions
   33 suspects: 7 functions
   34 suspects: 6 functions
   35 suspects: 10 functions
   36 suspects: 5 functions
-  37 suspects: 3 functions
+  37 suspects: 2 functions
   38 suspects: 4 functions
   39 suspects: 4 functions
   40 suspects: 5 functions
@@ -49,10 +49,10 @@ SUSPECT COUNT DISTRIBUTION
   42 suspects: 2 functions
   43 suspects: 4 functions
   44 suspects: 3 functions
-  45 suspects: 1 functions
+  45 suspects: 2 functions
   46 suspects: 6 functions
   47 suspects: 2 functions
-  48 suspects: 5 functions
+  48 suspects: 4 functions
   50 suspects: 1 functions
   51 suspects: 1 functions
   52 suspects: 2 functions
@@ -61,8 +61,9 @@ SUSPECT COUNT DISTRIBUTION
   56 suspects: 2 functions
   57 suspects: 1 functions
   58 suspects: 3 functions
-  59 suspects: 5 functions
+  59 suspects: 4 functions
   60 suspects: 1 functions
+  61 suspects: 1 functions
   62 suspects: 2 functions
   63 suspects: 1 functions
   64 suspects: 2 functions
@@ -90,7 +91,7 @@ SUSPECT COUNT DISTRIBUTION
   114 suspects: 1 functions
   116 suspects: 1 functions
   121 suspects: 1 functions
-  142 suspects: 1 functions
+  141 suspects: 1 functions
   157 suspects: 1 functions
   159 suspects: 1 functions
   174 suspects: 1 functions
@@ -148,7 +149,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       CRT function (runtime support) at 00600790...
     ... and 259 more
 
-  [param_count_too_few] (136 functions)
+  [param_count_too_few] (138 functions)
   ------------------------------------------------------------
     cockpit_ckptutil.c_isLineClippingDisabled_FUN_0043 (  4 lines)
       Function declares 0 params but call sites push 4 (4 missing)...
@@ -190,7 +191,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       Function declares 4 params but call sites push 6 (2 missing)...
     cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered (  6 lines)
       Function declares 3 params but call sites push 4 (1 missing)...
-    ... and 116 more
+    ... and 118 more
 
   [pointer_cast] (108 functions)
   ------------------------------------------------------------
@@ -319,10 +320,54 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     support_codec.cpp_CLZWDecompress_ctor_FUN_0043f490 ( 13 lines)
       piVar3 = &pCVar2[-1].bit_state.accumulated_bits;...
     core_set.cpp_CDemonSet_dtor_FUN_00569350           ( 14 lines)
-      return (CDemonSet *)&pCVar4[-1].unk4;...
+      return (CDemonSet *)&pCVar4[-1].enabled;...
     core_course.cpp_CCourse_free_FUN_004426c0          ( 14 lines)
       shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->frame_list[-1]...
     ... and 20 more
+
+  [stack_ref] (32 functions)
+  ------------------------------------------------------------
+    core_event.cpp_formatEventError_FUN_004aa2a0       (  7 lines)
+      local_4 = &stack0x00000008;...
+    engine_font.cpp_CBitFont_printCenterF_FUN_004ce050 (  8 lines)
+      local_14.value[0] = (char * [1])&stack0x00000018;...
+    engine_font.cpp_CBitFont_printF_FUN_004cdd20       (  8 lines)
+      local_14.value[0] = (char * [1])&stack0x0000001c;...
+    engine_font.cpp_CBitFont_drawTextCenterF_FUN_004cd (  9 lines)
+      local_14.value[0] = (char * [1])&stack0x0000001c;...
+    engine_font.cpp_CBitFont_drawTextF_FUN_004cdc20    (  9 lines)
+      local_14.value[0] = (char * [1])&stack0x0000001c;...
+    cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered ( 10 lines)
+      local_c.value[0] = (char * [1])&stack0x00000010;...
+    engine_2d.c_drawTextCenteredFormatted_FUN_004023c0 ( 10 lines)
+      local_10.value[0] = (char * [1])&stack0x00000014;...
+    engine_2d.c_drawTextCenteredColorFormatted_FUN_004 ( 10 lines)
+      local_10.value[0] = (char * [1])&stack0x00000014;...
+    engine_2d.c_drawTextRightAlignedFormatted_FUN_0040 ( 10 lines)
+      local_c.value[0] = (char * [1])&stack0x00000010;...
+    engine_2d.c_drawTextColorFormatted_FUN_004024c0    ( 10 lines)
+      local_c.value[0] = (char * [1])&stack0x00000010;...
+    engine_2d.c_drawTextRightAlignedColorFormatted_FUN ( 10 lines)
+      local_c.value[0] = (char * [1])&stack0x00000010;...
+    engine_2d.c_drawTextCenteredAtFormatted_FUN_004022 ( 10 lines)
+      local_c.value[0] = (char * [1])&stack0x00000010;...
+    engine_2d.c_drawTextFormatted_FUN_00402150         ( 10 lines)
+      local_c.value[0] = (char * [1])&stack0x00000010;...
+    engine_2d.c_drawTextCenteredAtColorFormatted_FUN_0 ( 10 lines)
+      local_c.value[0] = (char * [1])&stack0x00000010;...
+    shape_edittool.cpp_CEditorTools_showMessage_FUN_00 ( 10 lines)
+      local_8.value[0] = (char * [1])&stack0x0000000c;...
+    shape_edittool.cpp_CEditorTools_showWarning_FUN_00 ( 10 lines)
+      local_8.value[0] = (char * [1])&stack0x0000000c;...
+    shape_edittool.cpp_CEditorTools_showError_FUN_0049 ( 10 lines)
+      local_8.value[0] = (char * [1])&stack0x0000000c;...
+    engine_2d.c_getStringWidthFormatted_FUN_004027a0   ( 11 lines)
+      local_4 = &stack0x00000008;...
+    core_sound.cpp_resetTrainSounds_FUN_005b26f0       ( 12 lines)
+      if ((float *)&stack0x00000000 == &g_TrainNoiseCooldown) {...
+    shape_edittool.cpp_CEditorTools_showYesNoDialog_FU ( 16 lines)
+      local_8.value[0] = (char * [1])&stack0x0000000c;...
+    ... and 12 more
 
   [param_count_too_many] (31 functions)
   ------------------------------------------------------------
@@ -368,51 +413,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       Function declares 2 params but call sites push 1 (1 extra)...
     ... and 11 more
 
-  [stack_ref] (31 functions)
-  ------------------------------------------------------------
-    core_event.cpp_formatEventError_FUN_004aa2a0       (  7 lines)
-      local_4 = &stack0x00000008;...
-    engine_font.cpp_CBitFont_printfCenterInClip_FUN_00 (  8 lines)
-      local_14.value[0] = (char * [1])&stack0x00000018;...
-    engine_font.cpp_CBitFont_drawTextCenterFV_FUN_004c (  9 lines)
-      local_14 = &stack0x0000001c;...
-    engine_font.cpp_CBitFont_drawTextFV_FUN_004cdc20   (  9 lines)
-      local_14.value[0] = (char * [1])&stack0x0000001c;...
-    cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered ( 10 lines)
-      local_c.value[0] = (char * [1])&stack0x00000010;...
-    engine_2d.c_drawTextCenteredFormatted_FUN_004023c0 ( 10 lines)
-      local_10.value[0] = (char * [1])&stack0x00000014;...
-    engine_2d.c_drawTextCenteredColorFormatted_FUN_004 ( 10 lines)
-      local_10.value[0] = (char * [1])&stack0x00000014;...
-    engine_2d.c_drawTextRightAlignedFormatted_FUN_0040 ( 10 lines)
-      local_c.value[0] = (char * [1])&stack0x00000010;...
-    engine_2d.c_drawTextColorFormatted_FUN_004024c0    ( 10 lines)
-      local_c.value[0] = (char * [1])&stack0x00000010;...
-    engine_2d.c_drawTextRightAlignedColorFormatted_FUN ( 10 lines)
-      local_c.value[0] = (char * [1])&stack0x00000010;...
-    engine_2d.c_drawTextCenteredAtFormatted_FUN_004022 ( 10 lines)
-      local_c.value[0] = (char * [1])&stack0x00000010;...
-    engine_2d.c_drawTextFormatted_FUN_00402150         ( 10 lines)
-      local_c.value[0] = (char * [1])&stack0x00000010;...
-    engine_2d.c_drawTextCenteredAtColorFormatted_FUN_0 ( 10 lines)
-      local_c.value[0] = (char * [1])&stack0x00000010;...
-    shape_edittool.cpp_CEditorTools_showMessage_FUN_00 ( 10 lines)
-      local_8.value[0] = (char * [1])&stack0x0000000c;...
-    shape_edittool.cpp_CEditorTools_showWarning_FUN_00 ( 10 lines)
-      local_8.value[0] = (char * [1])&stack0x0000000c;...
-    shape_edittool.cpp_CEditorTools_showError_FUN_0049 ( 10 lines)
-      local_8.value[0] = (char * [1])&stack0x0000000c;...
-    engine_2d.c_getStringWidthFormatted_FUN_004027a0   ( 11 lines)
-      local_4 = &stack0x00000008;...
-    core_sound.cpp_resetTrainSounds_FUN_005b26f0       ( 12 lines)
-      if ((float *)&stack0x00000000 == &g_TrainNoiseCooldown) {...
-    shape_edittool.cpp_CEditorTools_showYesNoDialog_FU ( 16 lines)
-      local_8.value[0] = (char * [1])&stack0x0000000c;...
-    shape_edittool.cpp_CEditorTools_showConfirmationDi ( 17 lines)
-      local_8.value[0] = (char * [1])&stack0x0000000c;...
-    ... and 11 more
-
-  [warning_type_propagation] (29 functions)
+  [warning_type_propagation] (26 functions)
   ------------------------------------------------------------
     core_zombie.cpp_CZombie_FUN_005fbda0               ( 11 lines)
       /* WARNING: Type propagation algorithm not settling */...
@@ -438,8 +439,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       /* WARNING: Type propagation algorithm not settling */...
     core_batman.cpp_CBatman_getTargetPoints_FUN_00417b ( 42 lines)
       /* WARNING: Type propagation algorithm not settling */...
-    core_anvil.cpp_CAnvil_process_FUN_00411d90         ( 45 lines)
-      /* WARNING: Type propagation algorithm not settling */...
     core_mission.cpp_CDemonMission_process_FUN_0052425 ( 46 lines)
       /* WARNING: Type propagation algorithm not settling */...
     core_vampboss.cpp_CVampireBoss_chooseDestWayPoint_ ( 46 lines)
@@ -452,30 +451,26 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       /* WARNING: Type propagation algorithm not settling */...
     core_gargoyle.cpp_CGargoyle_getTargetPoints_FUN_00 ( 64 lines)
       /* WARNING: Type propagation algorithm not settling */...
-    core_bride.cpp_CBride_processDamage_FUN_00424830   ( 67 lines)
+    core_mobster.cpp_CMobster_processDamage_FUN_005277 ( 68 lines)
       /* WARNING: Type propagation algorithm not settling */...
-    ... and 9 more
+    core_imp.cpp_CImp_getTargetPoints_FUN_004faf40     ( 68 lines)
+      /* WARNING: Type propagation algorithm not settling */...
+    ... and 6 more
 
-  [undefined_data] (27 functions)
+  [undefined_data] (24 functions)
   ------------------------------------------------------------
     core_msnedit.cpp_FUN_0053d3a0                      (  4 lines)
       return (int *)&DAT_0063cbe7;...
-    core_setedit.cpp_staticInit_FUN_00576930           (  6 lines)
-      _atexit(&DAT_006816a0);...
     core_weather.cpp_staticInit_FUN_005eeaa0           (  6 lines)
       __arrinit(DAT_03f95df8,200,&g_CVectorTypeInfo);...
     core_msnedit.cpp_staticInit_FUN_00535c30           (  7 lines)
       core_actor_cpp_CActorPropertyList_init_FUN_0040e130((CActorP...
     core_drip.cpp_staticInit_FUN_0048df80              (  8 lines)
       core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&D...
-    core_sound.cpp_staticInit_FUN_005b1760             (  8 lines)
-      _atexit(&DAT_00681ed0);...
     sound_snddx.cpp_CDirectSoundDevice_commitDeferredS ( 11 lines)
       (g_DirectSoundPropertySet,&DAT_00681df0,0,(LPVOID)0x0,0,loca...
-    core_boxactor.cpp_staticInit_FUN_00421650          ( 13 lines)
-      _atexit(&DAT_0066e5cc);...
-    core_dracbrid.cpp_staticInit_FUN_00483ef0          ( 19 lines)
-      _atexit(&DAT_006703a0);...
+    core_gore.cpp_CGore_FUN_004ed7b0                   ( 19 lines)
+      } while (this_ptr_00 != (CBloodParticle *)&DAT_02d873d4);...
     core_actor.cpp_adjustIndentationLevel_FUN_0040aee0 ( 24 lines)
       (&DAT_0066e177)[iVar2] = 9;...
     wincore_winrun.cpp_setRegistryStringValue_FUN_005f ( 28 lines)
@@ -498,9 +493,44 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       pcVar5 = &DAT_00643f94;...
     core_netgame.cpp_CNetGame_sendMyStateChanged_FUN_0 ( 45 lines)
       DAT_00680a04 = 1;...
-    ... and 7 more
+    core_succubus.cpp_CSuccubus_renderOpaque_FUN_005c7 ( 51 lines)
+      if ((DAT_02f43978 != 0) &&...
+    core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_00 ( 58 lines)
+      if (DAT_02f43978 != 0) {...
+    core_batman.cpp_CBatman_renderOpaque_FUN_004173b0  ( 66 lines)
+      if ((DAT_02f43978 != 0) &&...
+    ... and 4 more
 
-  [unresolved_funcptr] (15 functions)
+  [suspect_float] (13 functions)
+  ------------------------------------------------------------
+    core_hpriest.cpp_CHighPriestOfGardath_processDamag (  6 lines)
+      damage_info->gore_multiplier = 1.4013e-43;...
+    core_actor.cpp_CDemonActor_fillAttackDamageInfo_FU ( 14 lines)
+      out_damage_info->gore_multiplier = 1.44334e-43;...
+    core_stranger.cpp_CStranger_FUN_005c5e80           ( 18 lines)
+      ((this_ptr->weapon == (CDemonActor *)0x0 || (this_ptr->weapo...
+    core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0    ( 18 lines)
+      this_ptr->gore_multiplier = 1.4013e-43;...
+    core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90      ( 21 lines)
+      (pCVar2->base).fire_cooldown = 1.4013e-45;...
+    core_flamegun.cpp_CFlameThrower_ctor_FUN_004cb880  ( 34 lines)
+      (pCVar2->base).fire_cooldown = 1.4013e-45;...
+    core_lightgun.cpp_CLightGun_ctor_FUN_00505900      ( 38 lines)
+      (pCVar3->base).fire_cooldown = 1.4013e-45;...
+    core_dtri.cpp_rayTriangleIntersection_FUN_0049a800 ( 68 lines)
+      if (fVar2 == 2.8026e-45) {...
+    core_batcreat.cpp_CBatCreature_processDamage_FUN_0 ( 77 lines)
+      if (damage_info->gore_multiplier == 1.5134e-43) {...
+    core_batman.cpp_CBatman_processDamage_FUN_004179a0 ( 77 lines)
+      if (damage_info->gore_multiplier == 1.5134e-43) {...
+    core_inv.cpp_CInventory_updateInventory_FUN_004ffa (103 lines)
+      if ((pCVar3 != (CDemonActor *)0x0) && (pCVar3[2].location.po...
+    core_charactr.cpp_CCharacter_setup_FUN_00428140    (105 lines)
+      this_ptr->fire_spread_rate = 5.60519e-45;...
+    core_werewolf.cpp_CWerewolf_processDamage_FUN_005f (106 lines)
+      if (damage_info->gore_multiplier == 1.5134e-43) {...
+
+  [unresolved_funcptr] (13 functions)
   ------------------------------------------------------------
     shape_superopt.cpp_CObj_projectAllPlanarUVs_FUN_00 ( 17 lines)
       (**(code **)(*(int *)(iVar1 + 100) + 0x4c))(iVar1,uv_scale);...
@@ -512,8 +542,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       iVar1 = (**(code **)(*(int *)(iVar1 + 100) + 0x54))(iVar1);...
     engine_3d.c_dispatchMRGLBlockChain_FUN_00407890    ( 21 lines)
       core_main_c_displayErrorAndQuit_FUN_00506f10("Bad code!");...
-    core_mission.cpp_CDemonMission_loadSet_FUN_00523fb ( 21 lines)
-      (**(code **)(*(int *)(*(int *)pcVar1 + 0x154) + 0x48))(*(int...
     engine_dosio.c_findFile_FUN_00481760               ( 23 lines)
       iVar1 = (**(code **)((int)g_SearchHandlers + iVar2))(context...
     core_boxactor.cpp_CBoxActor_FUN_00422590           ( 33 lines)
@@ -526,35 +554,10 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       uVar2 = (**(code **)(*piVar1 + 0x48))(piVar1);...
     engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_004 ( 75 lines)
       code *pcVar2;...
-    core_fire.cpp_CFireball_process_FUN_004c0b30       ( 81 lines)
-      (**(code **)(*(int *)(iVar1 + 0x154) + 0x114))(iVar1,this_pt...
     sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_0052f3 ( 84 lines)
       ("Illegal Huffman code in data.  File: %s",g_CurrentMp3Filen...
     wincore_winrun.cpp_mainWindowProc_FUN_005f3150     (172 lines)
       iVar1 = (**(code **)((int)g_WindowMessageHandlers + iVar5))(...
-
-  [suspect_float] (10 functions)
-  ------------------------------------------------------------
-    core_glass.cpp_CGlass_process_FUN_004e98e0         ( 16 lines)
-      (this_ptr->base).unk7 = 1.4013e-45;...
-    core_stranger.cpp_CStranger_FUN_005c5e80           ( 18 lines)
-      ((this_ptr->weapon == (CDemonActor *)0x0 || (this_ptr->weapo...
-    core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90      ( 21 lines)
-      (pCVar2->base).fire_cooldown = 1.4013e-45;...
-    core_grave.cpp_CGrave_process_FUN_004ee5c0         ( 31 lines)
-      (this_ptr->base).unk7 = 1.4013e-45;...
-    core_flamegun.cpp_CFlameThrower_ctor_FUN_004cb880  ( 34 lines)
-      (pCVar2->base).fire_cooldown = 1.4013e-45;...
-    core_lightgun.cpp_CLightGun_ctor_FUN_00505900      ( 38 lines)
-      (pCVar3->base).fire_cooldown = 1.4013e-45;...
-    core_trigger.cpp_CTrigger_setup_FUN_005df990       ( 43 lines)
-      (this_ptr->base).unk7 = 1.4013e-45;...
-    core_dtri.cpp_rayTriangleIntersection_FUN_0049a800 ( 68 lines)
-      if (fVar2 == 2.8026e-45) {...
-    core_inv.cpp_CInventory_updateInventory_FUN_004ffa (103 lines)
-      if ((pCVar3 != (CDemonActor *)0x0) && (pCVar3[2].location.po...
-    core_charactr.cpp_CCharacter_setup_FUN_00428140    (105 lines)
-      this_ptr->fire_spread_rate = 5.60519e-45;...
 
   [warning_unreachable] (10 functions)
   ------------------------------------------------------------
@@ -747,4 +750,4 @@ FUNCTIONS WITH 2-3 SUSPECTS
   core_tvbat.cpp_FUN_005e3ec0
     File: core/tvbat.cpp, Lines: 6, Types: ['unnamed_param']
 
-  ... and 705 more
+  ... and 700 more

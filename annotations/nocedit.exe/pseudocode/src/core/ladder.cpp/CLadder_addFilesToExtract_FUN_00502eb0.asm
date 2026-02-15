@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_ladder_cpp_CLadder_addFilesToExtract_FUN_00502eb0(CLadder *this_ptr,_FILE *file_handle)
+; void __cdecl core_ladder_cpp_CLadder_addFilesToExtract_FUN_00502eb0(CLadder *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CLadder *        Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void * __cdecl cockpit_ckptutil_c_traceConnectedEdges_FUN_00434af0(SEdgeList *edge_lists,void *output_buffer,int *output_count,int max_x,int max_y,int gap_tolerance_x,int gap_tolerance_y)
+; void * __cdecl cockpit_ckptutil_c_traceConnectedEdges_FUN_00434af0(SEdgeList *edge_lists,void *output_buffer,int *output_count,int max_x,int max_y,int gap_tolerance_x,int gap_tolerance_y)
 ;
 ; Parameters:
 ; SEdgeList *      Stack[0x4]:4   edge_lists

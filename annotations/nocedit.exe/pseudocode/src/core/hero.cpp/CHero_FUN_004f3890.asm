@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_hero_cpp_CHero_FUN_004f3890(CHero *this_ptr,int hand_index)
+; void __cdecl core_hero_cpp_CHero_FUN_004f3890(CHero *this_ptr,int hand_index)
 ;
 ; Parameters:
 ; CHero *          Stack[0x4]:4   this_ptr

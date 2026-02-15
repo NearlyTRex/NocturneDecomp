@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_xform_cpp_setIdentityQuaternion_FUN_005f7620(CQuaternion4f *quaternion)
+; void __cdecl core_xform_cpp_setIdentityQuaternion_FUN_005f7620(CQuaternion4f *quaternion)
 ;
 ; Parameters:
 ; CQuaternion4f *  Stack[0x4]:4   quaternion

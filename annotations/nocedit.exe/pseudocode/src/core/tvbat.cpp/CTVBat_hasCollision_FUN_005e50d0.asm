@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_tvbat_cpp_CTVBat_hasCollision_FUN_005e50d0(CTVBat *this_ptr,SCollisionInfo *collision_info)
+; int __cdecl core_tvbat_cpp_CTVBat_hasCollision_FUN_005e50d0(CTVBat *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CTVBat *         Stack[0x4]:4   this_ptr

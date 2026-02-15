@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl core_lightgun_cpp_CLightGun_getDamage_FUN_00506670(CLightGun *this_ptr)
+; float __cdecl core_lightgun_cpp_CLightGun_getDamage_FUN_00506670(CLightGun *this_ptr)
 ;
 ; Parameters:
 ; CLightGun *      Stack[0x4]:4   this_ptr

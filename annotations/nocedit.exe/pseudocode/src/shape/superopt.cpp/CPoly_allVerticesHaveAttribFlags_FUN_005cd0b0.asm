@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_superopt_cpp_CPoly_allVerticesHaveAttribFlags_FUN_005cd0b0(CPoly *this_ptr,uint flag_mask)
+; int __cdecl shape_superopt_cpp_CPoly_allVerticesHaveAttribFlags_FUN_005cd0b0(CPoly *this_ptr,uint flag_mask)
 ;
 ; Parameters:
 ; CPoly *          Stack[0x4]:4   this_ptr

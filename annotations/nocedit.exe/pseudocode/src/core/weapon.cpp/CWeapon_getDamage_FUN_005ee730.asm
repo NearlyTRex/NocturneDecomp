@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl core_weapon_cpp_CWeapon_getDamage_FUN_005ee730(CWeapon *this_ptr)
+; float __cdecl core_weapon_cpp_CWeapon_getDamage_FUN_005ee730(CWeapon *this_ptr)
 ;
 ; Parameters:
 ; CWeapon *        Stack[0x4]:4   this_ptr

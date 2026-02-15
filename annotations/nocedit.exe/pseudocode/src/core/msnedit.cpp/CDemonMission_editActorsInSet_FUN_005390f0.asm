@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_ptr,int param_2)
+; int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_ptr,int param_2)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr
@@ -243,17 +243,17 @@ section .text
     MOV EAX,dword ptr [EAX + 0x548]     ; 00539268
     MOV dword ptr [EBP + 0x3e],EAX      ; 0053926e
     MOV EAX,[0x006810c8]                ; 00539271 | g_CDemonSetInstance | g_CDemonSetPtr
-    CMP dword ptr [EAX + 0x14d154],0x0  ; 00539276 | g_CDemonSetInstance.actor_list_ptr
+    CMP dword ptr [EAX + 0x14d154],0x0  ; 00539276 | g_CDemonSetInstance.actor_count
     JLE 0x005392a2                      ; 0053927d
         ;   XREF to: 005392a2 (CONDITIONAL_JUMP)  ; LAB_005392a2
     MOV EDI,0xf423f                     ; 0053927f
-    MOV EAX,dword ptr [EAX + 0x14d158]  ; 00539284 | g_CDemonSetInstance.actor_list_data[0]
+    MOV EAX,dword ptr [EAX + 0x14d158]  ; 00539284 | g_CDemonSetInstance.actors[0]
     XOR EBX,EBX                         ; 0053928a
     XOR ESI,ESI                         ; 0053928c
     MOV dword ptr [EBP + 0x3e],EAX      ; 0053928e
     MOV EAX,[0x006810c8]                ; 00539291 | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_00539291
-    CMP EBX,dword ptr [EAX + 0x14d154]  ; 00539296 | g_CDemonSetInstance.actor_list_ptr
+    CMP EBX,dword ptr [EAX + 0x14d154]  ; 00539296 | g_CDemonSetInstance.actor_count
     JL 0x00539e75                       ; 0053929c
         ;   XREF to: 00539e75 (CONDITIONAL_JUMP)  ; LAB_00539e75
     MOV EBX,dword ptr [EBP + 0x3e]      ; 005392a2
@@ -429,7 +429,7 @@ section .text
     MOV dword ptr [0x03276acc],0xffff   ; 005394c9 | g_CDemonCameraInstance.corona_blend_factor
     MOV EAX,[0x006810c8]                ; 005394d3 | g_CDemonSetPtr
     MOV dword ptr [EAX + 0x15ac80],0x1  ; 005394d8 | g_CDemonSetInstance.lighting_quality_mode
-    MOV dword ptr [EAX + 0x15ac84],0x1  ; 005394e2 | g_CDemonSetInstance.unk_lighting_param1
+    MOV dword ptr [EAX + 0x15ac84],0x1  ; 005394e2 | g_CDemonSetInstance.disable_spotlight_shadows
     MOV EAX,dword ptr [EBP + 0x92]      ; 005394ec
         ;   Label: LAB_005394ec
     MOV EDX,dword ptr [EAX + 0x30]      ; 005394f2
@@ -438,14 +438,14 @@ section .text
     SETZ AL                             ; 005394f9
     MOV BL,AL                           ; 005394fc
     MOV EAX,[0x006810c8]                ; 005394fe | g_CDemonSetInstance | g_CDemonSetPtr
-    MOV dword ptr [EAX + 0x15ac8c],EBX  ; 00539503 | g_CDemonSetInstance.unk_lighting_param3
+    MOV dword ptr [EAX + 0x15ac8c],EBX  ; 00539503 | g_CDemonSetInstance.disable_water_rendering
     MOV EBX,dword ptr [EBP + 0x92]      ; 00539509
     CMP dword ptr [EBX + 0x34],0x0      ; 0053950f
     SETZ BL                             ; 00539513
     PUSH 0x1                            ; 00539516
     AND EBX,0xff                        ; 00539518
     PUSH EAX                            ; 0053951e | g_CDemonSetInstance
-    MOV dword ptr [EAX + 0x15ac90],EBX  ; 0053951f | g_CDemonSetInstance.unk_lighting_param4
+    MOV dword ptr [EAX + 0x15ac90],EBX  ; 0053951f | g_CDemonSetInstance.disable_sky_rendering
     CALL core_set.cpp_CDemonSet_FUN_0056c1a0 ; 00539525
         ;   XREF to: 0056c1a0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056c1a0(CDemonSet * this_ptr)
     ADD ESP,0x8                         ; 0053952a
@@ -790,7 +790,7 @@ section .text
     PUSH EAX                            ; 005398ec
     MOV EDI,0xff                        ; 005398ed
     PUSH 0x2f7c544                      ; 005398f2 | g_CEdCheckInstance
-    MOV dword ptr [0x02f7c550],EDI      ; 005398f7 | g_CEdCheckInstance.coord_unk
+    MOV dword ptr [0x02f7c550],EDI      ; 005398f7 | g_CEdCheckInstance.text_color_mode
     CALL shape_edittool.cpp_CEdCheck_setupWithText_FUN_004a6a60 ; 005398fd
         ;   XREF to: 004a6a60 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdCheck_setupWithText_FUN_004a6a60(CEdCheck * this_ptr, int x_pos, int y_pos, char * checkbox_text)
     ADD ESP,0x10                        ; 00539902
@@ -1324,11 +1324,11 @@ section .text
     MOV EAX,[0x006810c8]                ; 00539e20 | g_CDemonSetInstance | g_CDemonSetPtr
     MOV dword ptr [EAX + 0x15ac80],0x0  ; 00539e25 | g_CDemonSetInstance.lighting_quality_mode
     ADD ESP,0x4                         ; 00539e2f
-    MOV dword ptr [EAX + 0x15ac84],0x0  ; 00539e32 | g_CDemonSetInstance.unk_lighting_param1
+    MOV dword ptr [EAX + 0x15ac84],0x0  ; 00539e32 | g_CDemonSetInstance.disable_spotlight_shadows
     PUSH 0x680800                       ; 00539e3c | = "$$UNDO$$.TMP"
-    MOV dword ptr [EAX + 0x15ac8c],0x0  ; 00539e41 | g_CDemonSetInstance.unk_lighting_param3
+    MOV dword ptr [EAX + 0x15ac8c],0x0  ; 00539e41 | g_CDemonSetInstance.disable_water_rendering
     MOV EBX,dword ptr [EBP + 0x2e]      ; 00539e4b
-    MOV dword ptr [EAX + 0x15ac90],0x0  ; 00539e4e | g_CDemonSetInstance.unk_lighting_param4
+    MOV dword ptr [EAX + 0x15ac90],0x0  ; 00539e4e | g_CDemonSetInstance.disable_sky_rendering
     CALL crt_stdio.c_remove_FUN_005ff9d0 ; 00539e58
         ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_remove_FUN_005ff9d0(char * filename)
     ADD ESP,0x4                         ; 00539e5d
@@ -1345,7 +1345,7 @@ section .text
     MOV ECX,dword ptr [0x02db8848]      ; 00539e75 | g_CHeroPlaceholderClassInfo.name_hash
         ;   Label: LAB_00539e75
     PUSH ECX                            ; 00539e7b
-    MOV EDX,dword ptr [ESI + EAX*0x1 + 0x14d158] ; 00539e7c | g_CDemonSetInstance.actor_list_data[0]
+    MOV EDX,dword ptr [ESI + EAX*0x1 + 0x14d158] ; 00539e7c | g_CDemonSetInstance.actors[0]
     PUSH EDX                            ; 00539e83
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 00539e84
         ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)
@@ -1682,14 +1682,14 @@ section .text
     MOV [0x03276acc],EAX                ; 0053a2bd | g_CDemonCameraInstance.corona_blend_factor
     MOV EAX,[0x006810c8]                ; 0053a2c2 | g_CDemonSetPtr
     MOV dword ptr [EAX + 0x15ac80],ECX  ; 0053a2c7 | g_CDemonSetInstance.lighting_quality_mode
-    MOV dword ptr [EAX + 0x15ac84],ECX  ; 0053a2cd | g_CDemonSetInstance.unk_lighting_param1
+    MOV dword ptr [EAX + 0x15ac84],ECX  ; 0053a2cd | g_CDemonSetInstance.disable_spotlight_shadows
     JMP 0x005394ec                      ; 0053a2d3
         ;   XREF to: 005394ec (UNCONDITIONAL_JUMP)  ; LAB_005394ec
     MOV EAX,[0x006810c8]                ; 0053a2d8 | g_CDemonSetPtr
         ;   Label: LAB_0053a2d8
     MOV dword ptr [EAX + 0x15ac80],0x1  ; 0053a2dd | g_CDemonSetInstance.lighting_quality_mode
-    MOV dword ptr [EAX + 0x15ac8c],0x0  ; 0053a2e7 | g_CDemonSetInstance.unk_lighting_param3
-    MOV dword ptr [EAX + 0x15ac90],0x0  ; 0053a2f1 | g_CDemonSetInstance.unk_lighting_param4
+    MOV dword ptr [EAX + 0x15ac8c],0x0  ; 0053a2e7 | g_CDemonSetInstance.disable_water_rendering
+    MOV dword ptr [EAX + 0x15ac90],0x0  ; 0053a2f1 | g_CDemonSetInstance.disable_sky_rendering
     MOV EAX,[0x00680810]                ; 0053a2fb | g_DynamicRenderMode
     MOV [0x03277d14],EAX                ; 0053a300 | g_CDemonRaytraceInstance
     MOV EAX,dword ptr [EBP + 0x92]      ; 0053a305

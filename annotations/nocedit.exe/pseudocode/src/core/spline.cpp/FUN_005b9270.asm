@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_spline_cpp_FUN_005b9270(void)
+; int __cdecl core_spline_cpp_FUN_005b9270(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c

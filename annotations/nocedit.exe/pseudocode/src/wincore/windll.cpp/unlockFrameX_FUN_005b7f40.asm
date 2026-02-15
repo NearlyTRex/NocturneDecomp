@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl wincore_windll_cpp_unlockFrameX_FUN_005b7f40(void)
+; int __cdecl wincore_windll_cpp_unlockFrameX_FUN_005b7f40(void)
 ;
 ;
 ; Referenced Globals:

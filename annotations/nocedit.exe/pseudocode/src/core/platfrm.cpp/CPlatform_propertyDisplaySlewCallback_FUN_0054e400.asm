@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_platfrm_cpp_CPlatform_propertyDisplaySlewCallback_FUN_0054e400(CPlatform *this_ptr,CActorProperty *property,char *output_buffer)
+; void __cdecl core_platfrm_cpp_CPlatform_propertyDisplaySlewCallback_FUN_0054e400(CPlatform *this_ptr,CActorProperty *property,char *output_buffer)
 ;
 ; Parameters:
 ; CPlatform *      Stack[0x4]:4   this_ptr

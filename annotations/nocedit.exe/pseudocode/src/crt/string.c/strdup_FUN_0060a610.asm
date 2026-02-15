@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * __cdecl crt_string_c_strdup_FUN_0060a610(char *str)
+; char * __cdecl crt_string_c_strdup_FUN_0060a610(char *str)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   str

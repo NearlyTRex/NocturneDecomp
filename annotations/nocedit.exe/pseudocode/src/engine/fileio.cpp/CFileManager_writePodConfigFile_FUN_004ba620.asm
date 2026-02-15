@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_fileio_cpp_CFileManager_writePodConfigFile_FUN_004ba620(CFileManager *this_ptr,CStrList *pod_list)
+; void __cdecl engine_fileio_cpp_CFileManager_writePodConfigFile_FUN_004ba620(CFileManager *this_ptr,CStrList *pod_list)
 ;
 ; Parameters:
 ; CFileManager *   Stack[0x4]:4   this_ptr

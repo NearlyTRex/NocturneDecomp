@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_font_cpp_CBitFont_wrapText_FUN_004d0010(CBitFont *this_ptr,char *source_text,char *dest_buffer,int max_lines,int line_width,int max_pixel_width)
+; int __cdecl engine_font_cpp_CBitFont_wrapText_FUN_004d0010(CBitFont *this_ptr,char *source_text,char *dest_buffer,int max_lines,int line_width,int max_pixel_width)
 ;
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   this_ptr

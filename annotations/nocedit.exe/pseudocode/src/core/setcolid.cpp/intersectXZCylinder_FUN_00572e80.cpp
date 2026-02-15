@@ -25,8 +25,8 @@ int __cdecl core_setcolid_cpp_intersectXZCylinder_FUN_00572e80(SIntersectXZCylin
     fVar5 = fVar2 * fVar2;
     fVar1 = fVar4 * fVar4 + fVar3 * fVar3;
     if (fVar5 <= fVar1) {
-      fVar1 = cylinder->axis_direction_x;
-      fVar2 = cylinder->axis_direction_z;
+      fVar1 = cylinder->normal_x;
+      fVar2 = cylinder->normal_z;
       fVar3 = fVar4 * fVar2 + fVar3 * fVar1;
       if (0.0 < fVar3) {
         fVar7 = fVar1 * fVar3 + cylinder->center_x;
@@ -38,20 +38,20 @@ int __cdecl core_setcolid_cpp_intersectXZCylinder_FUN_00572e80(SIntersectXZCylin
           fVar3 = SQRT(fVar5 - fVar3);
           fVar7 = fVar7 - fVar1 * fVar3;
           fVar6 = fVar6 - fVar2 * fVar3;
-          if (ABS(cylinder->normal_x) <= ABS(cylinder->normal_z)) {
-            fVar3 = (fVar6 - cylinder->center_z) / cylinder->normal_z;
+          if (ABS(cylinder->dir_x) <= ABS(cylinder->dir_z)) {
+            fVar3 = (fVar6 - cylinder->center_z) / cylinder->dir_z;
           }
           else {
-            fVar3 = (fVar7 - cylinder->center_x) / cylinder->normal_x;
+            fVar3 = (fVar7 - cylinder->center_x) / cylinder->dir_x;
           }
-          if ((0.0 <= fVar3) && (fVar3 < cylinder->max_distance)) {
+          if ((0.0 <= fVar3) && (fVar3 < cylinder->closest_t)) {
             if (1.0 < fVar3) {
               return 0;
             }
-            cylinder->flags = 0;
-            cylinder->max_distance = fVar3;
-            cylinder->push_z = fVar7 - ray_x;
-            cylinder->push_x = fVar6 - ray_z;
+            (cylinder->push_normal).y = 0.0;
+            cylinder->closest_t = fVar3;
+            (cylinder->push_normal).x = fVar7 - ray_x;
+            (cylinder->push_normal).z = fVar6 - ray_z;
             return 1;
           }
         }
@@ -62,11 +62,11 @@ int __cdecl core_setcolid_cpp_intersectXZCylinder_FUN_00572e80(SIntersectXZCylin
       if ((float)-0.001 < fVar2) {
         fVar2 = -0.001;
       }
-      if (fVar2 < cylinder->max_distance) {
-        cylinder->flags = 0;
-        cylinder->max_distance = fVar2;
-        cylinder->push_z = -fVar3;
-        cylinder->push_x = -fVar4;
+      if (fVar2 < cylinder->closest_t) {
+        (cylinder->push_normal).y = 0.0;
+        cylinder->closest_t = fVar2;
+        (cylinder->push_normal).x = -fVar3;
+        (cylinder->push_normal).z = -fVar4;
         return 1;
       }
     }

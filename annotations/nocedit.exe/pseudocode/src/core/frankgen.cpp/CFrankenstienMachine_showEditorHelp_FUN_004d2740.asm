@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_frankgen_cpp_CFrankenstienMachine_showEditorHelp_FUN_004d2740(CFrankenstienMachine *this_ptr,int *y_pos)
+; void __cdecl core_frankgen_cpp_CFrankenstienMachine_showEditorHelp_FUN_004d2740(CFrankenstienMachine *this_ptr,int *y_pos)
 ;
 ; Parameters:
 ; CFrankenstienMachine * Stack[0x4]:4   this_ptr

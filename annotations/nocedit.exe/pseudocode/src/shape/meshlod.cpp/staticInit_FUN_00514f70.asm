@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_meshlod_cpp_staticInit_FUN_00514f70(void)
+; void __cdecl shape_meshlod_cpp_staticInit_FUN_00514f70(void)
 ;
 ;
 ; Referenced Globals:

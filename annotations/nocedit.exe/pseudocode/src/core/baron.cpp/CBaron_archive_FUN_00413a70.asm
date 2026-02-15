@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_baron_cpp_CBaron_archive_FUN_00413a70(CBaron *this_ptr)
+; void __cdecl core_baron_cpp_CBaron_archive_FUN_00413a70(CBaron *this_ptr)
 ;
 ; Parameters:
 ; CBaron *         Stack[0x4]:4   this_ptr

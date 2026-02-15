@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * __cdecl core_trap_cpp_CTrap_getActorType_FUN_005de680(CTrap *this_ptr)
+; CDemonActorType * __cdecl core_trap_cpp_CTrap_getActorType_FUN_005de680(CTrap *this_ptr)
 ;
 ; Parameters:
 ; CTrap *          Stack[0x4]:4   this_ptr

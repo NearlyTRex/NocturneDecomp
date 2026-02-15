@@ -46,10 +46,10 @@ void __cdecl core_gore_cpp_CBloodSplat_FUN_004ec500(CBloodSplat *this_ptr)
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
             (g_CDemonRendererPtr2,(CVector3f *)(this_ptr->unk + 4));
   if (*(int *)(this_ptr->unk + 0x10) == 1) {
-    SMRGLHeaderPrimitive_02d83368.surface_normal.A = 0;
-    SMRGLHeaderPrimitive_02d83368.surface_normal.C = 0xffff;
-    SMRGLHeaderPrimitive_02d83368.surface_normal.B = 0;
-    SMRGLHeaderPrimitive_02d83368.surface_normal.D = 0;
+    SMRGLPrimitiveQuadIndex_02d83368.base.surface_normal.A = 0;
+    SMRGLPrimitiveQuadIndex_02d83368.base.surface_normal.C = 0xffff;
+    SMRGLPrimitiveQuadIndex_02d83368.base.surface_normal.B = 0;
+    SMRGLPrimitiveQuadIndex_02d83368.base.surface_normal.D = 0;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
               (g_CDemonRendererPtr2,
                &SMRGLTextureBasic_0067ba28 + *(int *)(this_ptr->unk + 0x28) * 0x10 + local_18);
@@ -94,10 +94,10 @@ void __cdecl core_gore_cpp_CBloodSplat_FUN_004ec500(CBloodSplat *this_ptr)
       this_ptr->unk[2] = '\0';
       this_ptr->unk[3] = '\0';
     }
-    SMRGLHeaderPrimitive_02d83368.surface_normal.B = 0xffff;
-    SMRGLHeaderPrimitive_02d83368.surface_normal.A = 0;
-    SMRGLHeaderPrimitive_02d83368.surface_normal.C = 0;
-    SMRGLHeaderPrimitive_02d83368.surface_normal.D = 0;
+    SMRGLPrimitiveQuadIndex_02d83368.base.surface_normal.B = 0xffff;
+    SMRGLPrimitiveQuadIndex_02d83368.base.surface_normal.A = 0;
+    SMRGLPrimitiveQuadIndex_02d83368.base.surface_normal.C = 0;
+    SMRGLPrimitiveQuadIndex_02d83368.base.surface_normal.D = 0;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
               (g_CDemonRendererPtr2,
                SMRGLTextureBasic_ARRAY_0067b9c8 + *(int *)(this_ptr->unk + 0x28));
@@ -201,7 +201,7 @@ LAB_004ec7a1:
 LAB_004ec7e0:
   g_RenderVertexBuffer[3].fog = 0;
   engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
-            (g_CDemonRendererPtr2,&SMRGLHeaderPrimitive_02d83368);
+            (g_CDemonRendererPtr2,&SMRGLPrimitiveQuadIndex_02d83368.base);
   if (*(int *)(this_ptr->unk + 0x10) == 1) {
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
     return;

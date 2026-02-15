@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl wincore_windll_cpp_flushParticleList_FUN_005b79b2(void)
+; int __cdecl wincore_windll_cpp_flushParticleList_FUN_005b79b2(void)
 ;
 ;
 ; Referenced Globals:

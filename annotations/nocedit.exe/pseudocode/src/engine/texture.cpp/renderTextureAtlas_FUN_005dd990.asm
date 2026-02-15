@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_texture_cpp_renderTextureAtlas_FUN_005dd990(void)
+; void __cdecl engine_texture_cpp_renderTextureAtlas_FUN_005dd990(void)
 ;
 ;
 ; Referenced Globals:

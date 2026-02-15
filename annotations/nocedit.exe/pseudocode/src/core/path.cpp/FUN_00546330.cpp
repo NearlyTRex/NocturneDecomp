@@ -2,12 +2,12 @@
 // Address: 00546330
 // Address Range: [[00546330, 00546345]]
 // Convention: __cdecl
-// Signature: bool __cdecl core_path_cpp_FUN_00546330(void)
+// Signature: int __cdecl core_path_cpp_FUN_00546330(void)
 
 #include "nocturne.h"
 
-bool __cdecl core_path_cpp_FUN_00546330(void)
+int __cdecl core_path_cpp_FUN_00546330(void)
 
 {
-  return g_PathfindingQueueHead == g_PathfindingQueueTail;
+  return (uint)(g_PathfindingQueueHead == g_PathfindingQueueTail);
 }

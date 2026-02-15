@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter *this_ptr,CVector3f *target_pos,CPathMap *path_map,CVector3f *direction,float min_distance,float max_distance)
+; int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter *this_ptr,CVector3f *target_pos,CPathMap *path_map,CVector3f *direction,float min_distance,float max_distance)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr
@@ -233,7 +233,7 @@ section .text
         ;   XREF to: 00428854 (CONDITIONAL_JUMP)  ; LAB_00428854
     PUSH EDI                            ; 00428848
     CALL core_path.cpp_FUN_00548500     ; 00428849
-        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_FUN_00548500()
+        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_FUN_00548500(CLocation * location)
     ADD ESP,0x4                         ; 0042884e
     MOV dword ptr [EBP + 0x1c],EAX      ; 00428851
     MOV ESI,dword ptr [EBX + 0x6c]      ; 00428854

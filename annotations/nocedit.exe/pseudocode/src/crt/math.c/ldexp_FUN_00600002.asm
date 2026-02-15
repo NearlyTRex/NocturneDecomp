@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl double __cdecl crt_math_c_ldexp_FUN_00600002(double x,int exp)
+; double __cdecl crt_math_c_ldexp_FUN_00600002(double x,int exp)
 ;
 ; Parameters:
 ; double           Stack[0x8]:8   x

@@ -374,9 +374,8 @@ LAB_005f0ae7:
                   core_werewolf_cpp_CWerewolf_FUN_005f11e0(this_ptr);
                 }
                 iVar8 = 0;
-                for (iVar16 = 0; iVar16 < *(int *)(g_CDemonSetPtr->unk4 + 0x1f3c);
-                    iVar16 = iVar16 + 1) {
-                  actor_ptr = *(CWerewolf **)(g_CDemonSetPtr->unk4 + iVar8 + 8000);
+                for (iVar16 = 0; iVar16 < g_CDemonSetPtr->enemy_count; iVar16 = iVar16 + 1) {
+                  actor_ptr = *(CWerewolf **)((int)g_CDemonSetPtr->enemies + iVar8);
                   pCVar12 = (CWerewolf *)
                             core_actor_cpp_castToClassHash_FUN_0040c790
                                       ((CDemonActor *)actor_ptr,g_CWerewolfClassInfo.name_hash);

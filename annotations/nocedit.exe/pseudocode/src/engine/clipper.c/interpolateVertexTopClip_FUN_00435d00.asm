@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_clipper_c_interpolateVertexTopClip_FUN_00435d00(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output)
+; void __cdecl engine_clipper_c_interpolateVertexTopClip_FUN_00435d00(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output)
 ;
 ; Parameters:
 ; SRenderVertex *  Stack[0x4]:4   v1

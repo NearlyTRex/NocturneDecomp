@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBeast * __cdecl core_beast_cpp_factoryFunc_FUN_004181e0(void)
+; CBeast * __cdecl core_beast_cpp_factoryFunc_FUN_004181e0(void)
 ;
 ;
 ; XREF[1]:

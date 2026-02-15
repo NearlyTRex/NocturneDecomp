@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_scat_cpp_CScat_drawGun_FUN_00558000(CScat *this_ptr,int drawn)
+; void __cdecl core_scat_cpp_CScat_drawGun_FUN_00558000(CScat *this_ptr,int drawn)
 ;
 ; Parameters:
 ; CScat *          Stack[0x4]:4   this_ptr

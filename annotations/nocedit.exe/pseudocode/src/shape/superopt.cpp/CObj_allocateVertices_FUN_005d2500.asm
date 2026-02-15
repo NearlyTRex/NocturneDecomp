@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_superopt_cpp_CObj_allocateVertices_FUN_005d2500(CObj *this_ptr,int vertex_count)
+; int __cdecl shape_superopt_cpp_CObj_allocateVertices_FUN_005d2500(CObj *this_ptr,int vertex_count)
 ;
 ; Parameters:
 ; CObj *           Stack[0x4]:4   this_ptr

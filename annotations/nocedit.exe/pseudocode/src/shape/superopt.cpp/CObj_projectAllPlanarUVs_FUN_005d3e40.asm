@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_superopt_cpp_CObj_projectAllPlanarUVs_FUN_005d3e40(CObj *this_ptr,CVector2d *uv_scale)
+; void __cdecl shape_superopt_cpp_CObj_projectAllPlanarUVs_FUN_005d3e40(CObj *this_ptr,CVector2d *uv_scale)
 ;
 ; Parameters:
 ; CObj *           Stack[0x4]:4   this_ptr

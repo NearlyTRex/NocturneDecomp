@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_cow_cpp_staticInit_FUN_004440d0(void)
+; void __cdecl core_cow_cpp_staticInit_FUN_004440d0(void)
 ;
 ;
 ; Referenced Globals:

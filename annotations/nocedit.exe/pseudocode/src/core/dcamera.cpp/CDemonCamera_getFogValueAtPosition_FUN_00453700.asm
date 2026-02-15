@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_dcamera_cpp_CDemonCamera_getFogValueAtPosition_FUN_00453700(CDemonCamera *this_ptr,CVector3i *world_position)
+; int __cdecl core_dcamera_cpp_CDemonCamera_getFogValueAtPosition_FUN_00453700(CDemonCamera *this_ptr,CVector3i *world_position)
 ;
 ; Parameters:
 ; CDemonCamera *   Stack[0x4]:4   this_ptr

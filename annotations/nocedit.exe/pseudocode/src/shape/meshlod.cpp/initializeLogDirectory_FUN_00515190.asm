@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_meshlod_cpp_initializeLogDirectory_FUN_00515190(void)
+; int __cdecl shape_meshlod_cpp_initializeLogDirectory_FUN_00515190(void)
 ;
 ;
 ; Referenced Globals:

@@ -22,7 +22,7 @@ void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_005ee4a0(CWeapon *this_p
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
             (&this_ptr->base,&CStack_18,input_local_point);
   g_CDemonLightInstance.light_enabled_flag = 1;
-  g_CDemonLightInstance.unk2 = 1;
+  g_CDemonLightInstance.volumetric_enabled = 1;
   if ((CVector3i *)&stack0x00000000 != g_CDemonLightInstance.base.base.rotation_matrix.m + 1) {
     g_CDemonLightInstance.base.base.position.x = (int)CStack_18.x;
     g_CDemonLightInstance.base.base.position.y = (int)CStack_18.y;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_io_c_register_handle_wrapper_FUN_0060a144(HANDLE handle)
+; int __cdecl crt_io_c_register_handle_wrapper_FUN_0060a144(HANDLE handle)
 ;
 ; Parameters:
 ; HANDLE           Stack[0x4]:4   handle

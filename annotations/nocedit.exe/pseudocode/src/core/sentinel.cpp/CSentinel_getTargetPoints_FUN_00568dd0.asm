@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_sentinel_cpp_CSentinel_getTargetPoints_FUN_00568dd0(CSentinel *this_ptr,CVector3f *out_points_array)
+; int __cdecl core_sentinel_cpp_CSentinel_getTargetPoints_FUN_00568dd0(CSentinel *this_ptr,CVector3f *out_points_array)
 ;
 ; Parameters:
 ; CSentinel *      Stack[0x4]:4   this_ptr

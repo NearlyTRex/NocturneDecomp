@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_script_cpp_CCmdParse_bestParse_FUN_00561db0(CCmdParse *this_ptr,char *input_text,int cursor_position,char **templates,int template_count)
+; int __cdecl core_script_cpp_CCmdParse_bestParse_FUN_00561db0(CCmdParse *this_ptr,char *input_text,int cursor_position,char **templates,int template_count)
 ;
 ; Parameters:
 ; CCmdParse *      Stack[0x4]:4   this_ptr

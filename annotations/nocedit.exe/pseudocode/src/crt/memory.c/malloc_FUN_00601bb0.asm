@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void * __cdecl crt_memory_c_malloc_FUN_00601bb0(ulong size)
+; void * __cdecl crt_memory_c_malloc_FUN_00601bb0(ulong size)
 ;
 ; Parameters:
 ; ulong            Stack[0x4]:4   size

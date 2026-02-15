@@ -12,7 +12,7 @@ void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004e9e90(CGlass *this_pt
   CDemonRenderer *this_ptr_00;
   CBoundingBox3D *this_ptr_01;
   CVector3f *pCVar1;
-  char *pcVar2;
+  CVector3i *pCVar2;
   CGlass *pCVar3;
   int iVar4;
   SMRGLHeaderPrimitive *polygon_info;
@@ -25,8 +25,8 @@ void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004e9e90(CGlass *this_pt
       return;
     }
   }
-  else if ((layer_flag != 0) || (this_ptr->unk4 != 0)) {
-    this_ptr->unk4 = 0;
+  else if ((layer_flag != 0) || (this_ptr->pending_background_render != 0)) {
+    this_ptr->pending_background_render = 0;
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
     this_ptr_01 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_20);
     core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_01);
@@ -39,20 +39,20 @@ void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004e9e90(CGlass *this_pt
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,texture);
     pCVar1 = this_ptr->broken_vertices;
     iVar4 = 0;
-    pcVar2 = this_ptr->unk1;
+    pCVar2 = this_ptr->render_vertices;
     if (0 < this_ptr->broken_vertex_count) {
       do {
-        *(int *)pcVar2 = (int)ROUND(pCVar1->x * 256.0f);
-        *(int *)(pcVar2 + 4) = (int)ROUND(pCVar1->y * 256.0f);
-        *(int *)(pcVar2 + 8) = (int)ROUND(pCVar1->z * 256.0f);
+        pCVar2->x = (int)ROUND(pCVar1->x * 256.0f);
+        pCVar2->y = (int)ROUND(pCVar1->y * 256.0f);
+        pCVar2->z = (int)ROUND(pCVar1->z * 256.0f);
         iVar4 = iVar4 + 1;
         pCVar1 = pCVar1 + 1;
-        pcVar2 = pcVar2 + 0xc;
+        pCVar2 = pCVar2 + 1;
       } while (iVar4 < this_ptr->broken_vertex_count);
     }
     iVar4 = 0;
     core_set_cpp_CDemonSet_rotateVertices_FUN_0056e7c0
-              (g_CDemonSetPtr,this_ptr->broken_vertex_count,(int *)this_ptr->unk1);
+              (g_CDemonSetPtr,this_ptr->broken_vertex_count,&this_ptr->render_vertices[0].x);
     if (0 < this_ptr->broken_polygon_count) {
       polygon_info = &this_ptr->broken_quads[0].base;
       pCVar3 = this_ptr;

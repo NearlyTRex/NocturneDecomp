@@ -26,14 +26,14 @@ int __cdecl core_boxactor_cpp_CBoxActor_renderTransparent_FUN_00421ef0(CBoxActor
   iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xffff);
   if (this_ptr->dont_use_normals != 0) {
-    g_CDemonSetPtr->unk_lighting_param2 = 1;
+    g_CDemonSetPtr->disable_directional_lighting = 1;
   }
   if (iVar2 != 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
               (&this_ptr->model,(float)this_ptr->unk2,-1);
   }
   if (this_ptr->dont_use_normals != 0) {
-    g_CDemonSetPtr->unk_lighting_param2 = 0;
+    g_CDemonSetPtr->disable_directional_lighting = 0;
   }
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
   return iVar2;

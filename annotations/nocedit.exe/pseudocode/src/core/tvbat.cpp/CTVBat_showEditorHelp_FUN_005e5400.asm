@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_tvbat_cpp_CTVBat_showEditorHelp_FUN_005e5400(CTVBat *this_ptr,int *y_pos)
+; void __cdecl core_tvbat_cpp_CTVBat_showEditorHelp_FUN_005e5400(CTVBat *this_ptr,int *y_pos)
 ;
 ; Parameters:
 ; CTVBat *         Stack[0x4]:4   this_ptr

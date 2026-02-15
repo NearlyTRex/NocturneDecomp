@@ -20,11 +20,11 @@ typedef struct CDemonLight {
     int texture_col_shift; // 0x1c64
     uint teture_coord_mask; // 0x1c68
     uchar* filter_buffer; // 0x1c6c
-    int unk1; // 0x1c70
+    int unused; // 0x1c70
     char filter_name[64]; // 0x1c74
     int light_enabled_flag; // 0x1cb4
     int shadow_bounds_mode; // 0x1cb8, 0=rectangular, 1=circular
-    int unk2; // 0x1cbc
+    int volumetric_enabled; // 0x1cbc
     int shadow_map_width; // 0x1cc0
     int shadow_map_height; // 0x1cc4
     int shadow_x_shift; // 0x1cc8

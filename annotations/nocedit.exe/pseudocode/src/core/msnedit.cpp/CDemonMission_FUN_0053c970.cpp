@@ -13,8 +13,8 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053c970(CDemonMission *this_ptr
   float local_14 [3];
   
   if ((((param_2 != 0) && (DAT_02f7c53c != 3)) && (DAT_02f7c53c != 4)) &&
-     (((this_ptr->unk1 < param_3 && (param_3 < this_ptr->unk3)) &&
-      ((this_ptr->unk2 < param_4 && (param_4 < this_ptr->unk4)))))) {
+     ((((this_ptr->viewport).left < param_3 && (param_3 < (this_ptr->viewport).right)) &&
+      (((this_ptr->viewport).top < param_4 && (param_4 < (this_ptr->viewport).bottom)))))) {
     core_dcamera_cpp_CDemonCamera_beginScene_FUN_0044c430(&g_CDemonCameraInstance,1);
     pfVar1 = core_msnedit_cpp_FUN_00535c60(local_14,param_3,param_4);
     *(float *)(param_2 + 0x20) = *pfVar1;

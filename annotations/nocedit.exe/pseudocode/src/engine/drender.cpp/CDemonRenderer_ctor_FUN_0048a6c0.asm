@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonRenderer * __cdecl engine_drender_cpp_CDemonRenderer_ctor_FUN_0048a6c0(CDemonRenderer *this_ptr)
+; CDemonRenderer * __cdecl engine_drender_cpp_CDemonRenderer_ctor_FUN_0048a6c0(CDemonRenderer *this_ptr)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_bugs_cpp_CBugs_process_FUN_004250f0(CBugs *this_ptr,float delta_time)
+; void __cdecl core_bugs_cpp_CBugs_process_FUN_004250f0(CBugs *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CBugs *          Stack[0x4]:4   this_ptr

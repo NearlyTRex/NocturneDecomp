@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_bride_cpp_staticInit_FUN_00423700(void)
+; void __cdecl core_bride_cpp_staticInit_FUN_00423700(void)
 ;
 ;
 ; Referenced Globals:

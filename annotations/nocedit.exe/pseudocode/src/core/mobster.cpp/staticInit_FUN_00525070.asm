@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_mobster_cpp_staticInit_FUN_00525070(void)
+; void __cdecl core_mobster_cpp_staticInit_FUN_00525070(void)
 ;
 ;
 ; Referenced Globals:

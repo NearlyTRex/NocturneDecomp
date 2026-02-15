@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_stdio_c_fclose_FUN_00601ea0(_FILE *file_handle)
+; int __cdecl crt_stdio_c_fclose_FUN_00601ea0(_FILE *file_handle)
 ;
 ; Parameters:
 ; _FILE *          Stack[0x4]:4   file_handle

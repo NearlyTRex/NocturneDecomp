@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_zombie_cpp_FUN_005fcd20(void)
+; void __cdecl core_zombie_cpp_FUN_005fcd20(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10

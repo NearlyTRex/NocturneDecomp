@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_event_cpp_CRuleList_findFirst_FUN_004b1890(CRuleList *this_ptr)
+; int __cdecl core_event_cpp_CRuleList_findFirst_FUN_004b1890(CRuleList *this_ptr)
 ;
 ; Parameters:
 ; CRuleList *      Stack[0x4]:4   this_ptr

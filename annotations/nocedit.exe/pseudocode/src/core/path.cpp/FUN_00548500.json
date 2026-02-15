@@ -87,7 +87,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_path.cpp_FUN_00548500",
-    "signature": "CPathMap * __cdecl core_path_cpp_FUN_00548500(void)"
+    "signature": "CPathMap * __cdecl core_path_cpp_FUN_00548500(CLocation *location)"
   },
   "function_calls": [
     {
@@ -118,12 +118,20 @@
     "pcode_op_count": 21
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "location",
+        "offset": 4,
+        "size": 4,
+        "type": "CLocation *"
+      }
+    ]
   },
   "suspects": []
 }

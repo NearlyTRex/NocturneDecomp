@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl uint __cdecl support_trisock_cpp_getIPAddress_FUN_005e1930(SNetworkAddr *net_addr)
+; uint __cdecl support_trisock_cpp_getIPAddress_FUN_005e1930(SNetworkAddr *net_addr)
 ;
 ; Parameters:
 ; SNetworkAddr *   Stack[0x4]:4   net_addr

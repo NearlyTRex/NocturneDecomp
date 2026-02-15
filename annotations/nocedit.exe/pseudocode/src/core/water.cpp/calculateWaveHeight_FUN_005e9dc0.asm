@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl core_water_cpp_calculateWaveHeight_FUN_005e9dc0(int x,int y)
+; float __cdecl core_water_cpp_calculateWaveHeight_FUN_005e9dc0(int x,int y)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   x

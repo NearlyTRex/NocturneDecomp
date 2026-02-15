@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * __cdecl crt_stdio_c_ConvertFormatSpec_FUN_00603238(char *output_buffer,va_list_t *args,FormatSpec *spec_info)
+; char * __cdecl crt_stdio_c_ConvertFormatSpec_FUN_00603238(char *output_buffer,va_list_t *args,FormatSpec *spec_info)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   output_buffer

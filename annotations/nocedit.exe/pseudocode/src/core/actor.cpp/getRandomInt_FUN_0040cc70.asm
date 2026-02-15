@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_actor_cpp_getRandomInt_FUN_0040cc70(int min_value,int max_value)
+; int __cdecl core_actor_cpp_getRandomInt_FUN_0040cc70(int min_value,int max_value)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   min_value

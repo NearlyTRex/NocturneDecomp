@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_colonel_cpp_CColonel_areGunsDrawn_FUN_004405d0(CColonel *this_ptr)
+; int __cdecl core_colonel_cpp_CColonel_areGunsDrawn_FUN_004405d0(CColonel *this_ptr)
 ;
 ; Parameters:
 ; CColonel *       Stack[0x4]:4   this_ptr

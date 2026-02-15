@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_hotdemon_cpp_CHotDemon_addFilesToExtract_FUN_004f7a10(CHotDemon *this_ptr,_FILE *file_handle)
+; void __cdecl core_hotdemon_cpp_CHotDemon_addFilesToExtract_FUN_004f7a10(CHotDemon *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CHotDemon *      Stack[0x4]:4   this_ptr

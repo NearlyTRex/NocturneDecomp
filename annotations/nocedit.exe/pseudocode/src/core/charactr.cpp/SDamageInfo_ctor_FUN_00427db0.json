@@ -6,13 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 18,
+    "complexity_score": 33,
     "cross_reference_count": 46,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 18,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "suspect_float"
+    ],
     "total_lines": 41
   },
   "cross_references": [
@@ -335,5 +337,13 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 16,
+      "match": "1.4013e-43",
+      "text": "this_ptr->gore_multiplier = 1.4013e-43;",
+      "type": "suspect_float"
+    }
+  ]
 }

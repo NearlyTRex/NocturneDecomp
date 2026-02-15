@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_vehicle_cpp_CVehicle_addFilesToExtract_FUN_005e8d00(CVehicle *this_ptr,_FILE *file_handle)
+; void __cdecl core_vehicle_cpp_CVehicle_addFilesToExtract_FUN_005e8d00(CVehicle *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CVehicle *       Stack[0x4]:4   this_ptr

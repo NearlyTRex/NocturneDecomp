@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_enemy_cpp_CEnemy_FUN_004aa0f0(CEnemy *this_ptr)
+; int __cdecl core_enemy_cpp_CEnemy_FUN_004aa0f0(CEnemy *this_ptr)
 ;
 ; Parameters:
 ; CEnemy *         Stack[0x4]:4   this_ptr
@@ -12,7 +12,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CHero*[4] g_HeroActors
 ;   int g_LocalHeroIndex
-;   undefined4 g_CDemonSetInstance.unk4[7996]
+;   undefined4 g_CDemonSetInstance.enemy_count
 ;   undefined4 DAT_03265258
 ;
 ; Called Functions:
@@ -40,7 +40,7 @@ section .text
     MOV dword ptr [ESP],EAX             ; 004aa10a
     MOV EAX,[0x006810c8]                ; 004aa10d | g_CDemonSetPtr
         ;   Label: LAB_004aa10d
-    CMP EDI,dword ptr [EAX + 0x150fdc]  ; 004aa112 | g_CDemonSetInstance.unk4[7996]
+    CMP EDI,dword ptr [EAX + 0x150fdc]  ; 004aa112 | g_CDemonSetInstance.enemy_count
     JL 0x004aa124                       ; 004aa118
         ;   XREF to: 004aa124 (CONDITIONAL_JUMP)  ; LAB_004aa124
     MOV EAX,EBP                         ; 004aa11a

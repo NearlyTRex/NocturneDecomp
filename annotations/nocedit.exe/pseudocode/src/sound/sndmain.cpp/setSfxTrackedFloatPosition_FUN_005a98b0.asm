@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl sound_sndmain_cpp_setSfxTrackedFloatPosition_FUN_005a98b0(uint sfx_handle,CVector3f *position_source_ptr)
+; int __cdecl sound_sndmain_cpp_setSfxTrackedFloatPosition_FUN_005a98b0(uint sfx_handle,CVector3f *position_source_ptr)
 ;
 ; Parameters:
 ; uint             Stack[0x4]:4   sfx_handle

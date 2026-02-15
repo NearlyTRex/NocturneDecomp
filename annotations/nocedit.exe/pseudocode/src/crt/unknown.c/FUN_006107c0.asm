@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown short * crt_unknown_c_FUN_006107c0(short *param_1,short param_2)
+; short * crt_unknown_c_FUN_006107c0(short *param_1,short param_2)
 ;
 ;
 ; XREF[1]:

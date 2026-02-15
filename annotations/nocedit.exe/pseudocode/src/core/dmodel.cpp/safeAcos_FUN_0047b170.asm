@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl double __cdecl core_dmodel_cpp_safeAcos_FUN_0047b170(float value)
+; double __cdecl core_dmodel_cpp_safeAcos_FUN_0047b170(float value)
 ;
 ; Parameters:
 ; float            Stack[0x8]:4   value

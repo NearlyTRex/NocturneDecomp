@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl ulong __cdecl crt_stdlib_c_strtoul_FUN_0060ede0(char *str,char **endptr,int base)
+; ulong __cdecl crt_stdlib_c_strtoul_FUN_0060ede0(char *str,char **endptr,int base)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   str

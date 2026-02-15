@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl core_actor_cpp_getRandomFloat_FUN_0040cc10(float min_value,float max_value)
+; float __cdecl core_actor_cpp_getRandomFloat_FUN_0040cc10(float min_value,float max_value)
 ;
 ; Parameters:
 ; float            Stack[0x4]:4   min_value

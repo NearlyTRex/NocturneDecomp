@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl uint __cdecl engine_pod_cpp_crc32ComputeFileRange_FUN_0054f490(char *filename,int start_offset)
+; uint __cdecl engine_pod_cpp_crc32ComputeFileRange_FUN_0054f490(char *filename,int start_offset)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

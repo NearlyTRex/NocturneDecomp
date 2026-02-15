@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_turret_cpp_CTurret_updateInteraction_FUN_005e34d0(CTurret *this_ptr,COrientation *user_orientation,SInteractionState *interaction_state )
+; int __cdecl core_turret_cpp_CTurret_updateInteraction_FUN_005e34d0(CTurret *this_ptr,COrientation *user_orientation,SInteractionState *interaction_state )
 ;
 ; Parameters:
 ; CTurret *        Stack[0x4]:4   this_ptr

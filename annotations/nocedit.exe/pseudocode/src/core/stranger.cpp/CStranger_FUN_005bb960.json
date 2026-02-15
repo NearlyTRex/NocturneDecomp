@@ -121,11 +121,11 @@
   },
   "complexity": {
     "assembly_lines": 2746,
-    "complexity_score": 2394,
+    "complexity_score": 2381,
     "cross_reference_count": 1,
     "function_call_count": 50,
     "global_count": 68,
-    "pseudocode_lines": 1204,
+    "pseudocode_lines": 1191,
     "suspect_count": 116,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -135,7 +135,7 @@
       "suspect_float",
       "unknown_field"
     ],
-    "total_lines": 3950
+    "total_lines": 3937
   },
   "cross_references": [
     {
@@ -1002,14 +1002,14 @@
       "description": "Unresolved stack parameter",
       "line": 278,
       "match": "in_stack_00000008",
-      "text": "fVar19 = *(float *)this_ptr->unk9 - in_stack_00000008 * (float)2;",
+      "text": "fVar19 = *(float *)this_ptr->unk8 - in_stack_00000008 * (float)2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 288,
       "match": "in_stack_00000008",
-      "text": "fVar19 = in_stack_00000008 * (float)2 + *(float *)this_ptr->unk9;",
+      "text": "fVar19 = in_stack_00000008 * (float)2 + *(float *)this_ptr->unk8;",
       "type": "stack_param"
     },
     {
@@ -1296,418 +1296,418 @@
       "description": "Unresolved stack parameter",
       "line": 688,
       "match": "in_stack_00000008",
-      "text": "if (*(float *)(this_ptr->unk11 + 0x10) <= in_stack_00000008) {",
+      "text": "if ((float)this_ptr->unk13 <= in_stack_00000008) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 696,
+      "line": 693,
       "match": "in_stack_00000008",
-      "text": "fStack_2c0 = in_stack_00000008 / *(float *)(this_ptr->unk11 + 0x10);",
+      "text": "fStack_2c0 = in_stack_00000008 / (float)this_ptr->unk13;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 698,
+      "line": 694,
       "match": "in_stack_00000008",
-      "text": "*(float *)(this_ptr->unk11 + 0x10) - in_stack_00000008;",
+      "text": "this_ptr->unk13 = (int)((float)this_ptr->unk13 - in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 703,
+      "line": 699,
       "match": "._0_4_",
-      "text": "auStack_c0._0_4_ = *(float *)(this_ptr->unk11 + 8) * fStack_2c0;",
+      "text": "auStack_c0._0_4_ = (float)this_ptr->unk11 * fStack_2c0;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 710,
+      "line": 706,
       "match": "._0_4_",
       "text": "(this_ptr->base).base.base.location.position.z = fVar5 + (float)auStack_c0._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 743,
+      "line": 736,
       "match": "in_stack_00000008",
-      "text": "if (*(float *)(this_ptr->unk11 + 0x10) <= in_stack_00000008) {",
+      "text": "if ((float)this_ptr->unk13 <= in_stack_00000008) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 751,
+      "line": 741,
       "match": "in_stack_00000008",
-      "text": "fStack_2d8 = in_stack_00000008 / *(float *)(this_ptr->unk11 + 0x10);",
+      "text": "fStack_2d8 = in_stack_00000008 / (float)this_ptr->unk13;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 752,
+      "line": 742,
       "match": "in_stack_00000008",
-      "text": "*(float *)(this_ptr->unk11 + 0x10) = *(float *)(this_ptr->unk11 + 0x10) - in_stack_00000008;",
+      "text": "this_ptr->unk13 = (int)((float)this_ptr->unk13 - in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 810,
+      "line": 797,
       "match": "in_stack_00000008",
       "text": "fStack_44 = 18.0f * in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 818,
+      "line": 805,
       "match": "9.80909e-45",
       "text": "if (fStack_20 == 9.80909e-45) {",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 829,
+      "line": 816,
       "match": "1.12104e-44",
       "text": "if (fStack_20 == 1.12104e-44) {",
       "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 833,
+      "line": 820,
       "match": "in_stack_00000008",
       "text": "fVar19 = fVar19 - in_stack_00000008 * fVar5;",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 841,
+      "line": 828,
       "match": "1.26117e-44",
       "text": "if (fStack_20 == 1.26117e-44) {",
       "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 846,
+      "line": 833,
       "match": "in_stack_00000008",
-      "text": "CStack_218.z = *(float *)(this_ptr->unk9 + 0x50) * in_stack_00000008;",
+      "text": "CStack_218.z = *(float *)(this_ptr->unk8 + 0x50) * in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 853,
+      "line": 840,
       "match": "in_stack_00000008",
-      "text": "*(float *)(this_ptr->unk9 + 0x50) - fVar5 * in_stack_00000008;",
+      "text": "*(float *)(this_ptr->unk8 + 0x50) - fVar5 * in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 855,
+      "line": 842,
       "match": "in_stack_00000008",
       "text": "(this_ptr->base).base.velocity.y = fVar19 - in_stack_00000008 * fVar6;",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 864,
+      "line": 851,
       "match": "1.4013e-44",
       "text": "else if (fStack_20 == 1.4013e-44) {",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 869,
+      "line": 856,
       "match": "1.54143e-44",
       "text": "else if (fStack_20 == 1.54143e-44) {",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 876,
+      "line": 863,
       "match": "1.68156e-44",
       "text": "else if (fStack_20 == 1.68156e-44) {",
       "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 877,
+      "line": 864,
       "match": "in_stack_00000008",
       "text": "CStack_218.z = 10.0f * in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 881,
+      "line": 868,
       "match": "in_stack_00000008",
       "text": "fVar19 = fVar19 - in_stack_00000008 * fVar5;",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 892,
+      "line": 879,
       "match": "1.82169e-44",
       "text": "else if (fStack_20 == 1.82169e-44) {",
       "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 897,
+      "line": 884,
       "match": "in_stack_00000008",
-      "text": "CStack_218.z = *(float *)(this_ptr->unk9 + 0x50) * in_stack_00000008;",
+      "text": "CStack_218.z = *(float *)(this_ptr->unk8 + 0x50) * in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 904,
+      "line": 891,
       "match": "in_stack_00000008",
-      "text": "*(float *)(this_ptr->unk9 + 0x50) - fVar5 * in_stack_00000008;",
+      "text": "*(float *)(this_ptr->unk8 + 0x50) - fVar5 * in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 906,
+      "line": 893,
       "match": "in_stack_00000008",
       "text": "(this_ptr->base).base.velocity.y = fVar19 - in_stack_00000008 * fVar6;",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 916,
+      "line": 903,
       "match": "1.96182e-44",
       "text": "if (fStack_20 != 1.96182e-44) {",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 917,
+      "line": 904,
       "match": "2.10195e-44",
       "text": "if (fStack_20 == 2.10195e-44) {",
       "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 919,
+      "line": 906,
       "match": "in_stack_00000008",
       "text": "fVar19 = (this_ptr->base).base.velocity.y - in_stack_00000008 * (float)32;",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 926,
+      "line": 913,
       "match": "2.24208e-44",
       "text": "if (fStack_20 == 2.24208e-44) {",
       "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 930,
+      "line": 917,
       "match": "in_stack_00000008",
       "text": "fVar19 = (this_ptr->base).base.velocity.y - in_stack_00000008 * (float)32;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 933,
+      "line": 920,
       "match": "in_stack_00000008",
       "text": "fVar19 = (this_ptr->base).base.velocity.y - in_stack_00000008 * (float)32;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 942,
+      "line": 929,
       "match": "in_stack_00000008",
       "text": "fStack_158 = (this_ptr->base).base.velocity.x * in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 943,
+      "line": 930,
       "match": "in_stack_00000008",
       "text": "fStack_154 = (this_ptr->base).base.velocity.y * in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 944,
+      "line": 931,
       "match": "in_stack_00000008",
       "text": "fStack_150 = in_stack_00000008 * (this_ptr->base).base.velocity.z;",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 957,
+      "line": 944,
       "match": "2.10195e-44",
       "text": "if (((fStack_20 == 2.10195e-44) || (fStack_20 == 1.26117e-44)) || (fStack_20 == 1.82169e-44)) {",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 957,
+      "line": 944,
       "match": "1.26117e-44",
       "text": "if (((fStack_20 == 2.10195e-44) || (fStack_20 == 1.26117e-44)) || (fStack_20 == 1.82169e-44)) {",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 957,
+      "line": 944,
       "match": "1.82169e-44",
       "text": "if (((fStack_20 == 2.10195e-44) || (fStack_20 == 1.26117e-44)) || (fStack_20 == 1.82169e-44)) {",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 963,
+      "line": 950,
       "match": "SUB84",
       "text": "uVar24 = SUB84((double)fVar19,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 966,
+      "line": 953,
       "match": "1.82169e-44",
       "text": "if (((fStack_20 == 1.82169e-44) || (fStack_20 == 1.26117e-44)) ||",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 966,
+      "line": 953,
       "match": "1.26117e-44",
       "text": "if (((fStack_20 == 1.82169e-44) || (fStack_20 == 1.26117e-44)) ||",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 967,
+      "line": 954,
       "match": "2.10195e-44",
       "text": "(fStack_20 == 2.10195e-44)) goto LAB_005bd763;",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 973,
+      "line": 960,
       "match": "CONCAT44",
       "text": "(float)(((float10)(double)CONCAT44(uStack_2dc,uVar24) + (float10)-20) *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 985,
+      "line": 972,
       "match": "in_stack_fffffd10",
       "text": "in_stack_fffffd10 = (UOrientationVector *)this_ptr;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 992,
+      "line": 979,
       "match": "in_stack_fffffd14",
       "text": "in_stack_fffffd14 = (UOrientationVector *)0x1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 993,
+      "line": 980,
       "match": "in_stack_fffffd10",
       "text": "in_stack_fffffd10 = (UOrientationVector *)0x11;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 996,
+      "line": 983,
       "match": "in_stack_fffffd10",
       "text": "(&(this_ptr->base).base.model.motion_controller,(int)in_stack_fffffd10,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 997,
+      "line": 984,
       "match": "in_stack_fffffd14",
       "text": "(int)in_stack_fffffd14);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1012,
+      "line": 999,
       "match": "in_stack_00000008",
-      "text": "*(float *)(this_ptr->unk9 + 0x4c) = *(float *)(this_ptr->unk9 + 0x4c) + in_stack_00000008;",
+      "text": "*(float *)(this_ptr->unk8 + 0x4c) = *(float *)(this_ptr->unk8 + 0x4c) + in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 1013,
+      "line": 1000,
       "match": "4.2039e-45",
       "text": "if (fStack_20 == 4.2039e-45) {",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 1018,
+      "line": 1005,
       "match": "2.10195e-44",
       "text": "if (fStack_20 != 2.10195e-44) {",
       "type": "suspect_float"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1037,
+      "line": 1024,
       "match": "(float *)((int)",
       "text": "*(float *)((int)UStack_84.vec.z + 8) = 0.0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1038,
+      "line": 1025,
       "match": "(float *)((int)",
       "text": "*(float *)((int)UStack_84.vec.z + 4) = *(float *)((int)UStack_84.vec.z + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1038,
+      "line": 1025,
       "match": "(float *)((int)",
       "text": "*(float *)((int)UStack_84.vec.z + 4) = *(float *)((int)UStack_84.vec.z + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1039,
+      "line": 1026,
       "match": "(float *)((int)",
       "text": "*(float *)UStack_84.vec.z = *(float *)((int)UStack_84.vec.z + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1090,
+      "line": 1077,
       "match": "in_stack_00000008",
       "text": "fVar19 = *(float *)this_ptr->unk1 - in_stack_00000008 / 1.2f;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1100,
+      "line": 1087,
       "match": "in_stack_00000008",
       "text": "fVar19 = in_stack_00000008 / 1.1f + *(float *)this_ptr->unk1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1109,
+      "line": 1096,
       "match": "in_stack_00000008",
       "text": "fVar19 = *(float *)(this_ptr->unk1 + 0x20) - in_stack_00000008 / 0.2f;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1121,
+      "line": 1108,
       "match": "in_stack_00000008",
       "text": "fVar19 = *(float *)(this_ptr->unk3 + 0x14) - in_stack_00000008 / 0.2f;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1144,
+      "line": 1131,
       "match": "in_stack_00000008",
       "text": "((CCharacter *)this_ptr,in_stack_00000008,(float)in_stack_fffffd10);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1144,
+      "line": 1131,
       "match": "in_stack_fffffd10",
       "text": "((CCharacter *)this_ptr,in_stack_00000008,(float)in_stack_fffffd10);",
       "type": "stack_param"

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_deletePolygonRange_FUN_0045dd70(void)
+; void __cdecl shape_design_c_deletePolygonRange_FUN_0045dd70(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x70]:1  local_70

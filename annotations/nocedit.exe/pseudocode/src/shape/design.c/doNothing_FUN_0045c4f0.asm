@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_doNothing_FUN_0045c4f0(void)
+; void __cdecl shape_design_c_doNothing_FUN_0045c4f0(void)
 ;
 ;
 ; XREF[1]:

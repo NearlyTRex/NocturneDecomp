@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_2d_c_clearInputAndWait_FUN_00403260(void)
+; void __cdecl engine_2d_c_clearInputAndWait_FUN_00403260(void)
 ;
 ;
 ; XREF[98]:

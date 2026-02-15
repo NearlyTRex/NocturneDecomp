@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_gore_cpp_CGore_FUN_004ee070(CGore *this_ptr)
+; void __cdecl core_gore_cpp_CGore_FUN_004ee070(CGore *this_ptr)
 ;
 ; Parameters:
 ; CGore *          Stack[0x4]:4   this_ptr
@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   undefined4 DAT_02da8c24
 ;   undefined4 DAT_02da8c28
-;   CFootstep[1000] DAT_02da8c2c
+;   CFootstep[1000] CFootstep_ARRAY_02da8c2c
 ;
 ; Called Functions:
 ;   core_gore.cpp_CFootstep_FUN_004ed240
@@ -27,7 +27,7 @@ section .text
     PUSH EDI                            ; 004ee072
     PUSH EBP                            ; 004ee073
     MOV EBP,ESP                         ; 004ee074
-    MOV EDX,0x2da8c2c                   ; 004ee076 | DAT_02da8c2c
+    MOV EDX,0x2da8c2c                   ; 004ee076 | CFootstep_ARRAY_02da8c2c
     MOV ECX,dword ptr [0x02da8c24]      ; 004ee07b | DAT_02da8c24
     MOV EAX,[0x02da8c24]                ; 004ee081 | DAT_02da8c24
     INC ECX                             ; 004ee086

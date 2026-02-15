@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_sndmain_cpp_selectSoundDevice_FUN_005ab4c0(int device_id)
+; void __cdecl sound_sndmain_cpp_selectSoundDevice_FUN_005ab4c0(int device_id)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   device_id

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_fire_cpp_CLightningBolt_FUN_004c5640(CLightningBolt *this_ptr)
+; void __cdecl core_fire_cpp_CLightningBolt_FUN_004c5640(CLightningBolt *this_ptr)
 ;
 ; Parameters:
 ; CLightningBolt * Stack[0x4]:4   this_ptr

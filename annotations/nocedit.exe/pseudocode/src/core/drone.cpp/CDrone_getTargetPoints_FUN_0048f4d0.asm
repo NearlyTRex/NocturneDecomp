@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_drone_cpp_CDrone_getTargetPoints_FUN_0048f4d0(CDrone *this_ptr,CVector3f *out_points_array)
+; int __cdecl core_drone_cpp_CDrone_getTargetPoints_FUN_0048f4d0(CDrone *this_ptr,CVector3f *out_points_array)
 ;
 ; Parameters:
 ; CDrone *         Stack[0x4]:4   this_ptr

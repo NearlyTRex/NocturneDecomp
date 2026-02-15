@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_barrier_cpp_CBarrier_showEditorHelp_FUN_00414610(CBarrier *this_ptr,int *y_pos)
+; void __cdecl core_barrier_cpp_CBarrier_showEditorHelp_FUN_00414610(CBarrier *this_ptr,int *y_pos)
 ;
 ; Parameters:
 ; CBarrier *       Stack[0x4]:4   this_ptr

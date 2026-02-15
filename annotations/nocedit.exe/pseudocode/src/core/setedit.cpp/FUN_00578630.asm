@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_setedit_cpp_FUN_00578630(void)
+; void __cdecl core_setedit_cpp_FUN_00578630(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0xbdc]:1  local_bdc

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_platfrm_cpp_CPlatform_getPropertyList_FUN_0054e7d0(CPlatform *this_ptr,CActorPropertyList *property_list)
+; void __cdecl core_platfrm_cpp_CPlatform_getPropertyList_FUN_0054e7d0(CPlatform *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CPlatform *      Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl filebuf * __cdecl crt_fstream_cpp_filebuf_ctor_FUN_0060bddd(filebuf *this_ptr)
+; filebuf * __cdecl crt_fstream_cpp_filebuf_ctor_FUN_0060bddd(filebuf *this_ptr)
 ;
 ; Parameters:
 ; filebuf *        Stack[0x4]:4   this_ptr

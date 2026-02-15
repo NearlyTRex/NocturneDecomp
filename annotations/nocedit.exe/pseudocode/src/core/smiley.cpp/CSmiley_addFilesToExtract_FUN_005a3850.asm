@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_smiley_cpp_CSmiley_addFilesToExtract_FUN_005a3850(CSmiley *this_ptr,_FILE *file_handle)
+; void __cdecl core_smiley_cpp_CSmiley_addFilesToExtract_FUN_005a3850(CSmiley *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CSmiley *        Stack[0x4]:4   this_ptr

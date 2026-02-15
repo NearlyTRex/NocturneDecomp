@@ -36,11 +36,11 @@ int __cdecl core_gabriela_cpp_CGabriella_FUN_004d5c60(CGabriella *this_ptr)
   local_1c = 0;
   (this_ptr->base).ladder_to_climb = (CDemonActor *)0x0;
   do {
-    if ((int)g_CDemonSetPtr->actor_list_ptr <= iVar2) {
+    if (g_CDemonSetPtr->actor_count <= iVar2) {
       return 0;
     }
     this_ptr_00 = core_actor_cpp_castToClassHash_FUN_0040c790
-                            (*(CDemonActor **)(g_CDemonSetPtr->actor_list_data + local_1c),
+                            (*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_1c),
                              g_CLadderClassInfo.name_hash);
     local_24 = this_ptr_00;
     if (this_ptr_00 != (CDemonActor *)0x0) {

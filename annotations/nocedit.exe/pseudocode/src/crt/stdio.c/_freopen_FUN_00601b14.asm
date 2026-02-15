@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl _FILE * __cdecl crt_stdio_c__freopen_FUN_00601b14(char *filename,char *mode,_FILE *stream)
+; _FILE * __cdecl crt_stdio_c__freopen_FUN_00601b14(char *filename,char *mode,_FILE *stream)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

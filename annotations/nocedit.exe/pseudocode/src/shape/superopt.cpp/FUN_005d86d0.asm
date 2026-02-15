@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl double __cdecl shape_superopt_cpp_FUN_005d86d0(double *param_1,double *param_2)
+; double __cdecl shape_superopt_cpp_FUN_005d86d0(double *param_1,double *param_2)
 ;
 ; Parameters:
 ; double *         Stack[0x4]:4   param_1

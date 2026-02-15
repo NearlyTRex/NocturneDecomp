@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_stranger_cpp_CStranger_drop_FUN_005c6850(CStranger *this_ptr,CDemonActor *carrier,CVector3f *drop_position)
+; void __cdecl core_stranger_cpp_CStranger_drop_FUN_005c6850(CStranger *this_ptr,CDemonActor *carrier,CVector3f *drop_position)
 ;
 ; Parameters:
 ; CStranger *      Stack[0x4]:4   this_ptr

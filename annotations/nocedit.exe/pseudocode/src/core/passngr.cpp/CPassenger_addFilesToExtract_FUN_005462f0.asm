@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_passngr_cpp_CPassenger_addFilesToExtract_FUN_005462f0(CPassenger *this_ptr,_FILE *file_handle)
+; void __cdecl core_passngr_cpp_CPassenger_addFilesToExtract_FUN_005462f0(CPassenger *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CPassenger *     Stack[0x4]:4   this_ptr

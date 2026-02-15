@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CFilmProjector * __cdecl core_filmreel_cpp_factoryFunc_FUN_004bea00(void)
+; CFilmProjector * __cdecl core_filmreel_cpp_factoryFunc_FUN_004bea00(void)
 ;
 ;
 ; XREF[1]:

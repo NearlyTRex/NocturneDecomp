@@ -228,15 +228,15 @@ LAB_004848f9:
        iVar6 != 0)) {
       iVar9 = 0;
       iVar6 = 0;
-      while ((iVar9 < *(int *)(g_CDemonSetPtr->unk4 + 0x1f3c) &&
+      while ((iVar9 < g_CDemonSetPtr->enemy_count &&
              ((pCVar13 = core_actor_cpp_castToClassHash_FUN_0040c790
-                                   (*(CDemonActor **)(g_CDemonSetPtr->unk4 + iVar6 + 8000),
+                                   (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar6),
                                     g_CDraculaBrideClassInfo.name_hash),
               pCVar13 == (CDemonActor *)0x0 || (*(int *)pCVar13[0x8e].create_event == 0))))) {
         iVar9 = iVar9 + 1;
         iVar6 = iVar6 + 4;
       }
-      if (iVar9 == *(int *)(g_CDemonSetPtr->unk4 + 0x1f3c)) {
+      if (iVar9 == g_CDemonSetPtr->enemy_count) {
         _sprintf
                   (local_430,"bride-%d?.wav",this_ptr->freaky_voice_number);
         core_dracbrid_cpp_CDraculaBride_FUN_004864c0(this_ptr);
@@ -617,9 +617,9 @@ LAB_004852f8:
     case 2:
       local_30 = 1;
       local_1c = 0;
-      for (local_18 = 0; fVar18 = 1.0f, local_18 < g_CDemonSetPtr->damage_listener_count;
+      for (local_18 = 0; fVar18 = 1.0f, local_18 < g_CDemonSetPtr->character_count;
           local_18 = local_18 + 1) {
-        pCVar10 = *(CDraculaBride **)(g_CDemonSetPtr->unk4 + local_1c + -4);
+        pCVar10 = *(CDraculaBride **)((int)g_CDemonSetPtr->characters + local_1c);
         if (((pCVar10 != (CDraculaBride *)0x0) && (pCVar10 != this_ptr)) &&
            (iVar6 = (*(((pCVar10->base).base.base.vtable._uc)->_uc).getDeathState)
                               ((CCharacter *)pCVar10), iVar6 < 1)) {

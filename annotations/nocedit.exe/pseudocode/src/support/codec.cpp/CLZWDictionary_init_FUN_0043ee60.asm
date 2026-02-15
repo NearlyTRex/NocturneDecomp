@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl support_codec_cpp_CLZWDictionary_init_FUN_0043ee60(CLZWDictionary *this_ptr,int new_dict_size,int new_num_bits,int normal_code_width,int fallback_code_width)
+; void __cdecl support_codec_cpp_CLZWDictionary_init_FUN_0043ee60(CLZWDictionary *this_ptr,int new_dict_size,int new_num_bits,int normal_code_width,int fallback_code_width)
 ;
 ; Parameters:
 ; CLZWDictionary * Stack[0x4]:4   this_ptr

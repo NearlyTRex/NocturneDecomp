@@ -81,6 +81,7 @@ void __cdecl core_path_cpp_debugRenderGridQuad_FUN_00547dd0(int grid_x,int grid_
   pCVar1->vertex_buffer_ptr[3].color = iVar3;
   pCVar1->vertex_buffer_ptr[3].fog = iVar4;
   pCVar1->vertex_buffer_ptr[3].w_recip = (float)grid_x;
-  engine_drender_cpp_CDemonRenderer_renderMaximumQualityVariant_FUN_0048bba0(pCVar1,&DAT_030d4fd0);
+  engine_drender_cpp_CDemonRenderer_renderMaximumQualityVariant_FUN_0048bba0
+            (pCVar1,&SMRGLPrimitiveQuad_030d4fd0.base);
   return;
 }

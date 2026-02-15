@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_io_c_extend_file_for_append_FUN_00608410(int fd)
+; int __cdecl crt_io_c_extend_file_for_append_FUN_00608410(int fd)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   fd

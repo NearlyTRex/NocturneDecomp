@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_design_c_getAtlasMapIndex_FUN_0046e030(int texture_entry_index)
+; int __cdecl shape_design_c_getAtlasMapIndex_FUN_0046e030(int texture_entry_index)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   texture_entry_index

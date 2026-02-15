@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVector3f * __cdecl core_cloth_cpp_scaleVector_FUN_0043e3d0(CVector3f *out,float *scale,CVector3f *v)
+; CVector3f * __cdecl core_cloth_cpp_scaleVector_FUN_0043e3d0(CVector3f *out,float *scale,CVector3f *v)
 ;
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   out

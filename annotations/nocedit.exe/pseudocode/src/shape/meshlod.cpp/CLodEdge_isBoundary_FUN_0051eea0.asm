@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_meshlod_cpp_CLodEdge_isBoundary_FUN_0051eea0(CLodEdge *this_ptr)
+; int __cdecl shape_meshlod_cpp_CLodEdge_isBoundary_FUN_0051eea0(CLodEdge *this_ptr)
 ;
 ; Parameters:
 ; CLodEdge *       Stack[0x4]:4   this_ptr

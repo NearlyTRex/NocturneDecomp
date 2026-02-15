@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_cramtex_cpp_placementCollisionCheck_FUN_00448260(int layer_id,int start_x,int start_y,int width,int height)
+; void __cdecl shape_cramtex_cpp_placementCollisionCheck_FUN_00448260(int layer_id,int start_x,int start_y,int width,int height)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   layer_id

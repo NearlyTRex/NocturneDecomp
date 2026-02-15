@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack uint __watcallStack crt_io_c_analyze_file_type_FUN_00607d50(uint open_flags,char *filename)
+; uint __watcallStack crt_io_c_analyze_file_type_FUN_00607d50(uint open_flags,char *filename)
 ;
 ; Parameters:
 ; uint             Stack[0x4]:4   open_flags

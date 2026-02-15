@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl _FILE * __cdecl crt_stdio_c_stream_write_internal_FUN_005ffcb3(_FILE *stream,void *buffer,SIZE_T count)
+; _FILE * __cdecl crt_stdio_c_stream_write_internal_FUN_005ffcb3(_FILE *stream,void *buffer,SIZE_T count)
 ;
 ; Parameters:
 ; _FILE *          Stack[0x4]:4   stream

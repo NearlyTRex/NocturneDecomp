@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_2d_c_loadOrBuildColorMap_FUN_00402930(char *palette_filename)
+; void __cdecl engine_2d_c_loadOrBuildColorMap_FUN_00402930(char *palette_filename)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   palette_filename

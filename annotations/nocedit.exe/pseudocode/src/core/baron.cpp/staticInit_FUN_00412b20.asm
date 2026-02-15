@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_baron_cpp_staticInit_FUN_00412b20(void)
+; void __cdecl core_baron_cpp_staticInit_FUN_00412b20(void)
 ;
 ;
 ; Referenced Globals:

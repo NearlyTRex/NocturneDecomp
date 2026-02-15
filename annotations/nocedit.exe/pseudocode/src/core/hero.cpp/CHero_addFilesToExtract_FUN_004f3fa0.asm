@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_hero_cpp_CHero_addFilesToExtract_FUN_004f3fa0(CHero *this_ptr,_FILE *file_handle)
+; void __cdecl core_hero_cpp_CHero_addFilesToExtract_FUN_004f3fa0(CHero *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CHero *          Stack[0x4]:4   this_ptr

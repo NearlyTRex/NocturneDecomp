@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0(CBitFont *this_ptr,int left_x,int right_x,int y,int color_mode,int color_value,char *text)
+; int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0(CBitFont *this_ptr,int left_x,int right_x,int y,int color_mode,int color_value,char *text)
 ;
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   this_ptr
@@ -18,7 +18,7 @@
 ;   core_game.cpp_CGame_finishAct_FUN_004e3b90 at 004e3c2a
 ;   core_game.cpp_CGame_processFrame_FUN_004da100 at 004daa9a
 ;   core_game.cpp_CGame_rollCredits_FUN_004e4010 at 004e4217
-;   engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004cdf80 at 004cdfda
+;   engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf80 at 004cdfda
 ;
 ; Called Functions:
 ;   engine_font.cpp_CBitFont_drawTextWrapper_FUN_004cdbf0

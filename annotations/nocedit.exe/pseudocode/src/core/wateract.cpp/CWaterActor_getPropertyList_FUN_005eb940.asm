@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_wateract_cpp_CWaterActor_getPropertyList_FUN_005eb940(CWaterActor *this_ptr,CActorPropertyList *property_list)
+; void __cdecl core_wateract_cpp_CWaterActor_getPropertyList_FUN_005eb940(CWaterActor *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CWaterActor *    Stack[0x4]:4   this_ptr

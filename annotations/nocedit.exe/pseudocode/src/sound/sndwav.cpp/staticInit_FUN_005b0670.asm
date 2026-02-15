@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_sndwav_cpp_staticInit_FUN_005b0670(void)
+; void __cdecl sound_sndwav_cpp_staticInit_FUN_005b0670(void)
 ;
 ;
 ; Referenced Globals:

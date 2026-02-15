@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_tileTextureMaps_FUN_0046a180(char *model_name,int prompt_for_model)
+; void __cdecl shape_design_c_tileTextureMaps_FUN_0046a180(char *model_name,int prompt_for_model)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   model_name

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_charactr_cpp_CCharacter_getPartDominantBone_FUN_0042a3f0(CCharacter *this_ptr,int part_index)
+; int __cdecl core_charactr_cpp_CCharacter_getPartDominantBone_FUN_0042a3f0(CCharacter *this_ptr,int part_index)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr

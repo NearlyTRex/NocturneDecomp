@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_bride_cpp_CBride_archive_FUN_00424560(CBride *this_ptr)
+; void __cdecl core_bride_cpp_CBride_archive_FUN_00424560(CBride *this_ptr)
 ;
 ; Parameters:
 ; CBride *         Stack[0x4]:4   this_ptr

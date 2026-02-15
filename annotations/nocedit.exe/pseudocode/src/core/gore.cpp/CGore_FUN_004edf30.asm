@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CFlies * __cdecl core_gore_cpp_CGore_FUN_004edf30(CGore *this_ptr)
+; CFlies * __cdecl core_gore_cpp_CGore_FUN_004edf30(CGore *this_ptr)
 ;
 ; Parameters:
 ; CGore *          Stack[0x4]:4   this_ptr

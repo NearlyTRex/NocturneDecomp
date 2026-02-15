@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallRegister void __watcallRegister wincore_winrun_cpp_endPeriod_FUN_005f2db0(void)
+; void __watcallRegister wincore_winrun_cpp_endPeriod_FUN_005f2db0(void)
 ;
 ;
 ; XREF[2]:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * __cdecl core_hostage_cpp_CHostage_getActorType_FUN_004f4830(CHostage *this_ptr)
+; CDemonActorType * __cdecl core_hostage_cpp_CHostage_getActorType_FUN_004f4830(CHostage *this_ptr)
 ;
 ; Parameters:
 ; CHostage *       Stack[0x4]:4   this_ptr

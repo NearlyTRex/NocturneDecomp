@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_hiram_cpp_CHiram_addFilesToExtract_FUN_004f46e0(CHiram *this_ptr,_FILE *file_handle)
+; void __cdecl core_hiram_cpp_CHiram_addFilesToExtract_FUN_004f46e0(CHiram *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CHiram *         Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_ladder_cpp_CLadder_hasCollision_FUN_00502a40(CLadder *this_ptr,SCollisionInfo *collision_info)
+; int __cdecl core_ladder_cpp_CLadder_hasCollision_FUN_00502a40(CLadder *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CLadder *        Stack[0x4]:4   this_ptr

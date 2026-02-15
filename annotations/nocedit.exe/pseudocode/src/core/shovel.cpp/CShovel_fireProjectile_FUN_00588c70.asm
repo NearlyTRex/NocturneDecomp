@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_shovel_cpp_CShovel_fireProjectile_FUN_00588c70(CShovel *this_ptr)
+; void __cdecl core_shovel_cpp_CShovel_fireProjectile_FUN_00588c70(CShovel *this_ptr)
 ;
 ; Parameters:
 ; CShovel *        Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_setedit_cpp_CDemonSet_FUN_00577af0(CDemonSet *this_ptr)
+; int __cdecl core_setedit_cpp_CDemonSet_FUN_00577af0(CDemonSet *this_ptr)
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr
@@ -53,7 +53,7 @@
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
 ;   int g_BitsPerPixel = 0x8
-;   WatcomStaticDestructorNode DAT_006816b0
+;   WatcomStaticDestructorNode WatcomStaticDestructorNode_006816b0
 ;   int g_MouseX
 ;   int g_MouseY
 ;   _BIT_INTEGER g_MouseButtonFlags
@@ -266,7 +266,7 @@ section .text
     CALL shape_edittool.cpp_CEdScrollBar_ctor_FUN_004a5ae0 ; 00577d12
         ;   XREF to: 004a5ae0 (UNCONDITIONAL_CALL)  ; CEdScrollBar * shape_edittool.cpp_CEdScrollBar_ctor_FUN_004a5ae0(CEdScrollBar * this_ptr)
     ADD ESP,0x4                         ; 00577d17
-    PUSH 0x6816b0                       ; 00577d1a | DAT_006816b0
+    PUSH 0x6816b0                       ; 00577d1a | WatcomStaticDestructorNode_006816b0
     CALL crt_stdlib.c__atexit_FUN_005ff060 ; 00577d1f
         ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 00577d24

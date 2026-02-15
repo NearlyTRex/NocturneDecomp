@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBackgroundActor * __cdecl core_backgnd_cpp_factoryFunc_FUN_00412770(void)
+; CBackgroundActor * __cdecl core_backgnd_cpp_factoryFunc_FUN_00412770(void)
 ;
 ;
 ; XREF[1]:

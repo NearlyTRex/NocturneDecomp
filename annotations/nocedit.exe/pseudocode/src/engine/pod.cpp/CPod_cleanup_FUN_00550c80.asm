@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_pod_cpp_CPod_cleanup_FUN_00550c80(CPod *this_ptr)
+; void __cdecl engine_pod_cpp_CPod_cleanup_FUN_00550c80(CPod *this_ptr)
 ;
 ; Parameters:
 ; CPod *           Stack[0x4]:4   this_ptr

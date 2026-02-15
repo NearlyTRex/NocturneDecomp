@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CSimBox * __cdecl core_simbox_cpp_factoryFunc_FUN_00588d00(void)
+; CSimBox * __cdecl core_simbox_cpp_factoryFunc_FUN_00588d00(void)
 ;
 ;
 ; XREF[1]:

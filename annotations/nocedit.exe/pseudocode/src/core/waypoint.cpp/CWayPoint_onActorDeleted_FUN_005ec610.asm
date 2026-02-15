@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_waypoint_cpp_CWayPoint_onActorDeleted_FUN_005ec610(CWayPoint *this_ptr,CDemonActor *deleted_actor)
+; void __cdecl core_waypoint_cpp_CWayPoint_onActorDeleted_FUN_005ec610(CWayPoint *this_ptr,CDemonActor *deleted_actor)
 ;
 ; Parameters:
 ; CWayPoint *      Stack[0x4]:4   this_ptr

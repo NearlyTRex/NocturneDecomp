@@ -98,19 +98,19 @@ void __cdecl core_glass_cpp_CGlass_setup_FUN_004e9180(CGlass *this_ptr)
   dVar10 = round
                      ((double)((this_ptr->glass_size).x * (float)0.5));
   local_18 = (int)ROUND(dVar10);
-  this_ptr->unk2 = local_18 + 1;
+  this_ptr->grid_cols = local_18 + 1;
   if (4 < local_18 + 1) {
-    this_ptr->unk2 = 4;
+    this_ptr->grid_cols = 4;
   }
   dVar10 = round
                      ((double)((this_ptr->glass_size).y * (float)0.5));
   local_1c = (int)ROUND(dVar10);
-  this_ptr->unk3 = local_1c + 1;
+  this_ptr->grid_rows = local_1c + 1;
   if (4 < local_1c + 1) {
-    this_ptr->unk3 = 4;
+    this_ptr->grid_rows = 4;
   }
-  iVar2 = this_ptr->unk2 * this_ptr->unk3;
-  this_ptr->broken_vertex_count = (this_ptr->unk2 + 1) * (this_ptr->unk3 + 1);
+  iVar2 = this_ptr->grid_cols * this_ptr->grid_rows;
+  this_ptr->broken_vertex_count = (this_ptr->grid_cols + 1) * (this_ptr->grid_rows + 1);
   this_ptr->broken_polygon_count = iVar2;
   if ((0x19 < this_ptr->broken_vertex_count) || (0x10 < iVar2)) {
     g_CurrentFilename = "..\\core\\glass.cpp";
@@ -119,16 +119,16 @@ void __cdecl core_glass_cpp_CGlass_setup_FUN_004e9180(CGlass *this_ptr)
               ("CGlass::setup - Too many verticies(%d) or faces(%d)!",this_ptr->broken_vertex_count,
                this_ptr->broken_polygon_count);
   }
-  local_2c = (this_ptr->glass_size).x / (float)this_ptr->unk2;
-  local_3c.y = (this_ptr->glass_size).y / (float)this_ptr->unk3;
+  local_2c = (this_ptr->glass_size).x / (float)this_ptr->grid_cols;
+  local_3c.y = (this_ptr->glass_size).y / (float)this_ptr->grid_rows;
   iVar2 = 0;
   fVar12 = 0.0;
   local_30 = this_ptr->broken_vertices;
-  for (local_28 = 0; local_28 < this_ptr->unk3 + 1; local_28 = local_28 + 1) {
+  for (local_28 = 0; local_28 < this_ptr->grid_rows + 1; local_28 = local_28 + 1) {
     fVar11 = -(this_ptr->glass_size).x * (float)0.5;
     pCVar3 = local_30 + iVar2;
     pcVar7 = (this_ptr->base).actor_name + iVar2 * 4;
-    for (iVar5 = 0; iVar5 < this_ptr->unk2 + 1; iVar5 = iVar5 + 1) {
+    for (iVar5 = 0; iVar5 < this_ptr->grid_cols + 1; iVar5 = iVar5 + 1) {
       if (pCVar3 != (CVector3f *)&stack0xffffff20) {
         pCVar3->x = fVar11;
         pCVar3->y = fVar12;
@@ -138,12 +138,14 @@ void __cdecl core_glass_cpp_CGlass_setup_FUN_004e9180(CGlass *this_ptr)
       fVar9 = (float10)131072;
       local_1c = iVar5;
       dVar10 = round
-                         ((double)(((float10)iVar5 / (float10)this_ptr->unk2) * fVar8 + fVar9));
+                         ((double)(((float10)iVar5 / (float10)this_ptr->grid_cols) * fVar8 + fVar9))
+      ;
       *(int *)(pcVar7 + 0x5e4) = (int)ROUND(dVar10);
-      local_20 = this_ptr->unk3 - (int)local_2c;
+      local_20 = this_ptr->grid_rows - (int)local_2c;
       fVar11 = 7.216921e-39;
       dVar10 = round
-                         ((double)(fVar9 + ((float10)local_20 / (float10)this_ptr->unk3) * fVar8));
+                         ((double)(fVar9 + ((float10)local_20 / (float10)this_ptr->grid_rows) *
+                                           fVar8));
       local_24 = (int)ROUND(dVar10);
       pCVar3 = pCVar3 + 1;
       *(int *)(pcVar7 + 0x648) = local_24;
@@ -155,11 +157,11 @@ void __cdecl core_glass_cpp_CGlass_setup_FUN_004e9180(CGlass *this_ptr)
   }
   local_24 = 0;
   local_20 = 0;
-  if (0 < this_ptr->unk3) {
+  if (0 < this_ptr->grid_rows) {
     local_3c.z = (float)this_ptr->broken_quads;
     do {
       iVar2 = 0;
-      if (0 < this_ptr->unk2) {
+      if (0 < this_ptr->grid_cols) {
         pSVar4 = (SMRGLPrimitiveQuad *)((int)local_3c.z + local_20 * 0x48);
         do {
           (pSVar4->base).base.count = 4;
@@ -168,34 +170,26 @@ void __cdecl core_glass_cpp_CGlass_setup_FUN_004e9180(CGlass *this_ptr)
           (pSVar4->base).surface_normal.C = iVar5;
           (pSVar4->base).surface_normal.B = iVar5;
           (pSVar4->base).surface_normal.A = iVar5;
-          iVar5 = (this_ptr->unk2 + 1) * local_24 + iVar2;
+          iVar5 = (this_ptr->grid_cols + 1) * local_24 + iVar2;
           pSVar4->vertices[0].vertex_index = iVar5;
-          pSVar4->vertices[0].texture_u = *(int *)(this_ptr->unk1 + iVar5 * 4 + 300);
-          pSVar4->vertices[0].texture_v =
-               *(int *)((int)this_ptr->broken_quads[0].vertices + iVar5 * 4 + -0x7c);
+          pSVar4->vertices[0].texture_u = this_ptr->texture_u[iVar5];
+          pSVar4->vertices[0].texture_v = this_ptr->texture_v[iVar5];
           pSVar4->vertices[1].vertex_index = iVar5 + 1;
-          pSVar4->vertices[1].texture_u = *(int *)(this_ptr->unk1 + iVar5 * 4 + 0x130);
-          pSVar4->vertices[1].texture_v =
-               *(int *)((int)(this_ptr->broken_quads[0].vertices + -10) + iVar5 * 4);
-          pSVar4->vertices[2].vertex_index = this_ptr->unk2 + iVar5 + 2;
-          pSVar4->vertices[2].texture_u =
-               *(int *)(this_ptr->unk1 + (this_ptr->unk2 + iVar5) * 4 + 0x134);
-          pSVar4->vertices[2].texture_v =
-               *(int *)((int)this_ptr->broken_quads[0].vertices +
-                       (this_ptr->unk2 + iVar5) * 4 + -0x74);
-          pSVar4->vertices[3].vertex_index = this_ptr->unk2 + iVar5 + 1;
-          pSVar4->vertices[3].texture_u =
-               *(int *)(this_ptr->unk1 + (this_ptr->unk2 + iVar5) * 4 + 0x130);
-          pSVar4->vertices[3].texture_v =
-               *(int *)((int)(this_ptr->broken_quads[0].vertices + -10) +
-                       (iVar5 + this_ptr->unk2) * 4);
+          pSVar4->vertices[1].texture_u = this_ptr->texture_u[iVar5 + 1];
+          pSVar4->vertices[1].texture_v = this_ptr->texture_v[iVar5 + 1];
+          pSVar4->vertices[2].vertex_index = this_ptr->grid_cols + iVar5 + 2;
+          pSVar4->vertices[2].texture_u = this_ptr->texture_u[this_ptr->grid_cols + iVar5 + 2];
+          pSVar4->vertices[2].texture_v = this_ptr->texture_v[this_ptr->grid_cols + iVar5 + 2];
+          pSVar4->vertices[3].vertex_index = this_ptr->grid_cols + iVar5 + 1;
+          pSVar4->vertices[3].texture_u = this_ptr->texture_u[this_ptr->grid_cols + iVar5 + 1];
+          pSVar4->vertices[3].texture_v = this_ptr->texture_v[iVar5 + this_ptr->grid_cols + 1];
           iVar2 = iVar2 + 1;
           local_20 = local_20 + 1;
           pSVar4 = pSVar4 + 1;
-        } while (iVar2 < this_ptr->unk2);
+        } while (iVar2 < this_ptr->grid_cols);
       }
       local_24 = local_24 + 1;
-    } while (local_24 < this_ptr->unk3);
+    } while (local_24 < this_ptr->grid_rows);
   }
   (this_ptr->base).is_transparent = (uint)(this_ptr->opacity < 0xfde9);
   iVar2 = stricmp(this_ptr->break_event,"none");
@@ -203,11 +197,11 @@ void __cdecl core_glass_cpp_CGlass_setup_FUN_004e9180(CGlass *this_ptr)
     this_ptr->break_event[0] = '\0';
   }
   cVar1 = this_ptr->break_event[0];
-  (this_ptr->base).unk7 = 0.0;
+  (this_ptr->base).process_disabled = 0;
   if (cVar1 == '\0') {
-    (this_ptr->base).unk7 = 1.4013e-45;
+    (this_ptr->base).process_disabled = 1;
   }
-  this_ptr->unk4 = 0;
+  this_ptr->pending_background_render = 0;
   if (this_ptr->background_flag != 0) {
     pcVar7 = (this_ptr->broken_texture).texture_name;
     iVar2 = strcmp(pcVar7,"7YEARS.RAW");

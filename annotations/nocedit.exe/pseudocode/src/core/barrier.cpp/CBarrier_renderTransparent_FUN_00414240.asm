@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_barrier_cpp_CBarrier_renderTransparent_FUN_00414240(CBarrier *this_ptr)
+; int __cdecl core_barrier_cpp_CBarrier_renderTransparent_FUN_00414240(CBarrier *this_ptr)
 ;
 ; Parameters:
 ; CBarrier *       Stack[0x4]:4   this_ptr

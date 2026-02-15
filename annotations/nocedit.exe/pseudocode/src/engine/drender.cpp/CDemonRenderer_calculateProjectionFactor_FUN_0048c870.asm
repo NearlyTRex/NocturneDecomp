@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl engine_drender_cpp_CDemonRenderer_calculateProjectionFactor_FUN_0048c870(CDemonRenderer *this_ptr)
+; float __cdecl engine_drender_cpp_CDemonRenderer_calculateProjectionFactor_FUN_0048c870(CDemonRenderer *this_ptr)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr

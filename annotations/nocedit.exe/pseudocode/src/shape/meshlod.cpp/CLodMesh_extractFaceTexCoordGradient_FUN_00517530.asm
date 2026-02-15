@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_meshlod_cpp_CLodMesh_extractFaceTexCoordGradient_FUN_00517530(CLodMesh *this_ptr,int tri_index,int corner_idx,CVector3f *out_gradient,float *out_offset)
+; void __cdecl shape_meshlod_cpp_CLodMesh_extractFaceTexCoordGradient_FUN_00517530(CLodMesh *this_ptr,int tri_index,int corner_idx,CVector3f *out_gradient,float *out_offset)
 ;
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr

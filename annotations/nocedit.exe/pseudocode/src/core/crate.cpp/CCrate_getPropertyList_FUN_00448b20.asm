@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_crate_cpp_CCrate_getPropertyList_FUN_00448b20(CCrate *this_ptr,CActorPropertyList *property_list)
+; void __cdecl core_crate_cpp_CCrate_getPropertyList_FUN_00448b20(CCrate *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CCrate *         Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_flashlit_cpp_staticInit_FUN_004cbb50(void)
+; void __cdecl core_flashlit_cpp_staticInit_FUN_004cbb50(void)
 ;
 ;
 ; Referenced Globals:

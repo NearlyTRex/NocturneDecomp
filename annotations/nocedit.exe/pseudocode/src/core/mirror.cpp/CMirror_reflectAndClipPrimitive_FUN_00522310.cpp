@@ -49,12 +49,12 @@ uint __cdecl core_mirror_cpp_CMirror_reflectAndClipPrimitive_FUN_00522310(CMirro
                  (this_ptr->clip_planes + 4,g_MirrorInputVertices,g_MirrorInputVertexCount,
                   g_MirrorOutputVertices,&g_MirrorOutputVertexCount),
       iVar5 = g_MirrorOutputVertexCount, 2 < g_MirrorOutputVertexCount)))) {
-    *(int *)(this_ptr->additional_data + 4) = g_MirrorOutputVertexCount;
-    *(int *)(this_ptr->additional_data + 8) = (primitive->surface_normal).A;
-    *(int *)(this_ptr->additional_data + 0xc) = (primitive->surface_normal).B;
-    *(int *)(this_ptr->additional_data + 0x10) = (primitive->surface_normal).C;
+    (this_ptr->clip_primitive).base.base.count = g_MirrorOutputVertexCount;
+    (this_ptr->clip_primitive).base.surface_normal.A = (primitive->surface_normal).A;
+    (this_ptr->clip_primitive).base.surface_normal.B = (primitive->surface_normal).B;
+    (this_ptr->clip_primitive).base.surface_normal.C = (primitive->surface_normal).C;
     local_14 = 0;
-    *(int *)(this_ptr->additional_data + 0x14) = (primitive->surface_normal).D;
+    (this_ptr->clip_primitive).base.surface_normal.D = (primitive->surface_normal).D;
     if (0 < iVar5) {
       pCVar4 = g_MirrorOutputVertices;
       iVar5 = 0xea000;
@@ -67,7 +67,7 @@ uint __cdecl core_mirror_cpp_CMirror_reflectAndClipPrimitive_FUN_00522310(CMirro
         *(uint *)
          ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).screen_x + iVar5) =
              0xffffffff;
-        *(int *)(this_ptr->additional_data + 0x18) = local_14 + 0x4e00;
+        (this_ptr->clip_primitive).vertices[0] = local_14 + 0x4e00;
         engine_matrix_c_projectCachedPoint_FUN_0050cda0(local_14 + 0x4e00);
         pCVar4 = pCVar4 + 1;
         iVar5 = iVar5 + 0x30;

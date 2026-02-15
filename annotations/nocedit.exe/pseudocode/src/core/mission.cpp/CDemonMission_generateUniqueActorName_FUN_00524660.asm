@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_mission_cpp_CDemonMission_generateUniqueActorName_FUN_00524660(CDemonMission *this_ptr,char *out_buf,char *base_name)
+; void __cdecl core_mission_cpp_CDemonMission_generateUniqueActorName_FUN_00524660(CDemonMission *this_ptr,char *out_buf,char *base_name)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr

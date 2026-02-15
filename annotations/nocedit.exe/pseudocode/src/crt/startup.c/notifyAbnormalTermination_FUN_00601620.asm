@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallRegister void __watcallRegister crt_startup_c_notifyAbnormalTermination_FUN_00601620(void)
+; void __watcallRegister crt_startup_c_notifyAbnormalTermination_FUN_00601620(void)
 ;
 ;
 ; XREF[1]:

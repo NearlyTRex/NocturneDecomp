@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_baron_cpp_CBaron_hasCollision_FUN_004140a0(CBaron *this_ptr,SCollisionInfo *collision_info)
+; int __cdecl core_baron_cpp_CBaron_hasCollision_FUN_004140a0(CBaron *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CBaron *         Stack[0x4]:4   this_ptr

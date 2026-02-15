@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_crate_cpp_CCrate_renderBackground_FUN_004488f0(CCrate *this_ptr,int layer_flag)
+; void __cdecl core_crate_cpp_CCrate_renderBackground_FUN_004488f0(CCrate *this_ptr,int layer_flag)
 ;
 ; Parameters:
 ; CCrate *         Stack[0x4]:4   this_ptr

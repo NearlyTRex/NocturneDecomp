@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_0054d9b0(CPlatform *this_ptr,int layer_flag)
+; void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_0054d9b0(CPlatform *this_ptr,int layer_flag)
 ;
 ; Parameters:
 ; CPlatform *      Stack[0x4]:4   this_ptr

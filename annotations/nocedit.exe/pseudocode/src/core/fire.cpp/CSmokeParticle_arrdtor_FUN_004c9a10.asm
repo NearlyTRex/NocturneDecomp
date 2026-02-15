@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CSmokeParticle * __cdecl core_fire_cpp_CSmokeParticle_arrdtor_FUN_004c9a10(CSmokeParticle *objs,uint flags)
+; CSmokeParticle * __cdecl core_fire_cpp_CSmokeParticle_arrdtor_FUN_004c9a10(CSmokeParticle *objs,uint flags)
 ;
 ; Parameters:
 ; CSmokeParticle * Stack[0x4]:4   objs

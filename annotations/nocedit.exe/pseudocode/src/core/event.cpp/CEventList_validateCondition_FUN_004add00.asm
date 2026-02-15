@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * __cdecl core_event_cpp_CEventList_validateCondition_FUN_004add00(CEventList *this_ptr,char *expression)
+; char * __cdecl core_event_cpp_CEventList_validateCondition_FUN_004add00(CEventList *this_ptr,char *expression)
 ;
 ; Parameters:
 ; CEventList *     Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890(CDemonRenderer *this_ptr,int x,int y,int width,int height)
+; void __cdecl engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890(CDemonRenderer *this_ptr,int x,int y,int width,int height)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr

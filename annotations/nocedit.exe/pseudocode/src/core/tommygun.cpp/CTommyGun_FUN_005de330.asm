@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl core_tommygun_cpp_CTommyGun_FUN_005de330(CTommyGun *this_ptr)
+; float __cdecl core_tommygun_cpp_CTommyGun_FUN_005de330(CTommyGun *this_ptr)
 ;
 ; Parameters:
 ; CTommyGun *      Stack[0x4]:4   this_ptr

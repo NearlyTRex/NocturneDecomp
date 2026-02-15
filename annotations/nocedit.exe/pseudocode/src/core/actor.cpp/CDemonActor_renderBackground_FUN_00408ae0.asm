@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_actor_cpp_CDemonActor_renderBackground_FUN_00408ae0(CDemonActor *this_ptr,int layer_flag)
+; void __cdecl core_actor_cpp_CDemonActor_renderBackground_FUN_00408ae0(CDemonActor *this_ptr,int layer_flag)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr

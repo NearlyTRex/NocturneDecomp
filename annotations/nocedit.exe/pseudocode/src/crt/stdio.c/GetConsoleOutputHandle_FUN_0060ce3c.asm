@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl HANDLE __cdecl crt_stdio_c_GetConsoleOutputHandle_FUN_0060ce3c(void)
+; HANDLE __cdecl crt_stdio_c_GetConsoleOutputHandle_FUN_0060ce3c(void)
 ;
 ;
 ; XREF[2]:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_barrier_cpp_CBarrier_getPropertyList_FUN_00414400(CBarrier *this_ptr,CActorPropertyList *property_list)
+; void __cdecl core_barrier_cpp_CBarrier_getPropertyList_FUN_00414400(CBarrier *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CBarrier *       Stack[0x4]:4   this_ptr

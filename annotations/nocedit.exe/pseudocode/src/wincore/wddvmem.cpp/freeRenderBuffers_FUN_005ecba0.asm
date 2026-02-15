@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl wincore_wddvmem_cpp_freeRenderBuffers_FUN_005ecba0(void)
+; void __cdecl wincore_wddvmem_cpp_freeRenderBuffers_FUN_005ecba0(void)
 ;
 ;
 ; Referenced Globals:

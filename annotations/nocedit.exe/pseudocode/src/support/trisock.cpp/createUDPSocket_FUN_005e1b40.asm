@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl support_trisock_cpp_createUDPSocket_FUN_005e1b40(SSocketContext *socket_ctx)
+; int __cdecl support_trisock_cpp_createUDPSocket_FUN_005e1b40(SSocketContext *socket_ctx)
 ;
 ; Parameters:
 ; SSocketContext * Stack[0x4]:4   socket_ctx

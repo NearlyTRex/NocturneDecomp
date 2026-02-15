@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_succubus_cpp_CSuccubus_hasCollision_FUN_005c7790(CSuccubus *this_ptr,SCollisionInfo *collision_info)
+; void __cdecl core_succubus_cpp_CSuccubus_hasCollision_FUN_005c7790(CSuccubus *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CSuccubus *      Stack[0x4]:4   this_ptr

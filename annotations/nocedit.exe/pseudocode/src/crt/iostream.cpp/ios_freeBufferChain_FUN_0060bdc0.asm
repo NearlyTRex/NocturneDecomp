@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_iostream_cpp_ios_freeBufferChain_FUN_0060bdc0(ios *stream_ptr)
+; void __cdecl crt_iostream_cpp_ios_freeBufferChain_FUN_0060bdc0(ios *stream_ptr)
 ;
 ; Parameters:
 ; ios *            Stack[0x4]:4   stream_ptr

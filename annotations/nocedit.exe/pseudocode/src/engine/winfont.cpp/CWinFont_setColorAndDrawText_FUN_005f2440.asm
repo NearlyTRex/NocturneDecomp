@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFont *this_ptr,HDC device_context,int x_position,int y_position,char *text_string,int foreground_color,int background_color)
+; void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFont *this_ptr,HDC device_context,int x_position,int y_position,char *text_string,int foreground_color,int background_color)
 ;
 ; Parameters:
 ; CWinFont *       Stack[0x4]:4   this_ptr

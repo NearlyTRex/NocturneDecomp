@@ -23,7 +23,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderPremium_FUN_0048b1e0(CDemon
         pSVar3 = polygon_info;
         do {
           iVar1 = pSVar3[1].base.type;
-          if (this_ptr->unk == 0) {
+          if (this_ptr->skip_uv_extraction == 0) {
             this_ptr->vertex_buffer_ptr[iVar1].u = pSVar3[1].base.count;
             this_ptr->vertex_buffer_ptr[iVar1].v = pSVar3[1].surface_normal.A;
           }

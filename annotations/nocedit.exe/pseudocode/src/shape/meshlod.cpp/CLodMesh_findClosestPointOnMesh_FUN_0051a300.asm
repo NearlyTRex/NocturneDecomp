@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVector3f * __cdecl shape_meshlod_cpp_CLodMesh_findClosestPointOnMesh_FUN_0051a300(CLodMesh *this_ptr,CVector3f *output_closest_point,CVector3f *target_point)
+; CVector3f * __cdecl shape_meshlod_cpp_CLodMesh_findClosestPointOnMesh_FUN_0051a300(CLodMesh *this_ptr,CVector3f *output_closest_point,CVector3f *target_point)
 ;
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr

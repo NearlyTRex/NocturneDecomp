@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_marquee_cpp_CMarquee_process_FUN_0050bda0(CMarquee *this_ptr,float delta_time)
+; void __cdecl core_marquee_cpp_CMarquee_process_FUN_0050bda0(CMarquee *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CMarquee *       Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_svetlana_cpp_CSvetlana_onActorDeleted_FUN_005d9ef0(CSvetlana *this_ptr,CDemonActor *deleted_actor)
+; void __cdecl core_svetlana_cpp_CSvetlana_onActorDeleted_FUN_005d9ef0(CSvetlana *this_ptr,CDemonActor *deleted_actor)
 ;
 ; Parameters:
 ; CSvetlana *      Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SClipPlane * __cdecl core_mirror_cpp_SClipPlane_arrdtor_FUN_00522c10(SClipPlane *objs,uint flags)
+; SClipPlane * __cdecl core_mirror_cpp_SClipPlane_arrdtor_FUN_00522c10(SClipPlane *objs,uint flags)
 ;
 ; Parameters:
 ; SClipPlane *     Stack[0x4]:4   objs

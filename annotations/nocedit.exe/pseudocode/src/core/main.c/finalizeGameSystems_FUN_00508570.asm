@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_main_c_finalizeGameSystems_FUN_00508570(void)
+; void __cdecl core_main_c_finalizeGameSystems_FUN_00508570(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x110]:1  local_110

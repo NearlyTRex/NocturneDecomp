@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_filmreel_cpp_CFilmReel_canPickup_FUN_004be7b0(CFilmReel *this_ptr,CDemonActor *picker)
+; int __cdecl core_filmreel_cpp_CFilmReel_canPickup_FUN_004be7b0(CFilmReel *this_ptr,CDemonActor *picker)
 ;
 ; Parameters:
 ; CFilmReel *      Stack[0x4]:4   this_ptr

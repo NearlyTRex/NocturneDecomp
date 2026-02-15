@@ -4,25 +4,25 @@
       {
         "category": "undeclared_identifier",
         "column": 23,
-        "line": 108,
+        "line": 107,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 30,
-        "line": 108,
+        "line": 107,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 27,
-        "line": 134,
+        "line": 133,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 34,
-        "line": 134,
+        "line": 133,
         "message": "expected expression"
       }
     ],
@@ -31,11 +31,11 @@
   },
   "complexity": {
     "assembly_lines": 348,
-    "complexity_score": 288,
+    "complexity_score": 287,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 8,
-    "pseudocode_lines": 163,
+    "pseudocode_lines": 162,
     "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -44,7 +44,7 @@
       "unresolved_funcptr",
       "warning_type_propagation"
     ],
-    "total_lines": 511
+    "total_lines": 510
   },
   "cross_references": [
     {
@@ -146,13 +146,13 @@
     },
     {
       "addr": "032613cc",
-      "name": "g_CDemonSetInstance.actor_list_ptr",
+      "name": "g_CDemonSetInstance.actor_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "032613d0",
-      "name": "g_CDemonSetInstance.actor_list_data[0]",
+      "name": "g_CDemonSetInstance.actors[0]",
       "type": "undefined4",
       "value": null
     },
@@ -315,35 +315,35 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 75,
+      "line": 74,
       "match": "SQRT",
       "text": "fVar4 = SQRT(fStack_54 * fStack_54 + fStack_5c * fStack_5c + fStack_58 * fStack_58);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 101,
+      "line": 100,
       "match": "code *",
       "text": "iVar9 = (**(code **)(*(int *)(iVar9 + 0x154) + 0x8c))(iVar9);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 119,
+      "line": 118,
       "match": "SQRT",
       "text": "SQRT(fVar5 * fVar5 + fVar4 * fVar4) * (float)0.33333333333333298;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 123,
+      "line": 122,
       "match": "in_stack_00000008",
       "text": "fVar4 = in_stack_00000008 * fStack_b0 + *(float *)(this_ptr->unk1 + 8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 127,
+      "line": 126,
       "match": "code *",
       "text": "(iVar8 = (**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 0xc) + 0x154) + 0x7c))",
       "type": "unresolved_funcptr"

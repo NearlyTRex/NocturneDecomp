@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_addVertexFromSphericalCoords_FUN_004686e0(float latitude_degrees,float longitude_degrees,float radius)
+; void __cdecl shape_design_c_addVertexFromSphericalCoords_FUN_004686e0(float latitude_degrees,float longitude_degrees,float radius)
 ;
 ; Parameters:
 ; float            Stack[0x4]:4   latitude_degrees

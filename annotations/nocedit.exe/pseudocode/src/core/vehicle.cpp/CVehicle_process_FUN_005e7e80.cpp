@@ -125,8 +125,8 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,f
   (this_ptr->base).orient.vec.y = fVar4;
   (*pCVar5->getBoundingBox)(&this_ptr->base,&local_a0);
   iStack_18 = 0;
-  for (iVar13 = 0; iVar13 < g_CDemonSetPtr->damage_listener_count; iVar13 = iVar13 + 1) {
-    pCVar6 = *(CCharacter **)(g_CDemonSetPtr->unk4 + iStack_18 + -4);
+  for (iVar13 = 0; iVar13 < g_CDemonSetPtr->character_count; iVar13 = iVar13 + 1) {
+    pCVar6 = *(CCharacter **)((int)g_CDemonSetPtr->characters + iStack_18);
     pCVar10 = core_actor_cpp_castToClassHash_FUN_0040c790
                         (&pCVar6->base,g_CMobsterClassInfo.name_hash);
     if ((pCVar10 == (CDemonActor *)0x0) ||
@@ -145,7 +145,7 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,f
            (local_a0.min.z <= CStack_64.z + SStack_c8.cylinder_radius)))))) {
         if (CStack_64.z - SStack_c8.cylinder_radius <= local_a0.max.z) {
           core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&SStack_104);
-          SStack_104.damage_type = 4;
+          SStack_104.gore_multiplier = 5.60519e-45;
           SStack_104.damage_amount = 999.0;
           (*(((pCVar6->base).vtable._uc)->_uc).processDamage)(pCVar6,&SStack_104);
         }
@@ -165,13 +165,13 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,f
   fStack_3c = (this_ptr->base).location.position.y - (pCVar7->base).base.location.position.y;
   fStack_38 = (this_ptr->base).location.position.z - (pCVar7->base).base.location.position.z;
   if ((SQRT(fStack_38 * fStack_38 + fStack_40 * fStack_40 + fStack_3c * fStack_3c) <=
-       (float)200) || (0x671 < (int)g_CDemonSetPtr->actor_list_ptr)) goto LAB_005e82f4;
+       (float)200) || (0x671 < g_CDemonSetPtr->actor_count)) goto LAB_005e82f4;
   iVar13 = 0;
   iStack_20 = 0;
   iStack_1c = 0;
-  for (iVar11 = 0; iVar11 < *(int *)(g_CDemonSetPtr->unk4 + 0x1f3c); iVar11 = iVar11 + 1) {
+  for (iVar11 = 0; iVar11 < g_CDemonSetPtr->enemy_count; iVar11 = iVar11 + 1) {
     pCVar10 = core_actor_cpp_castToClassHash_FUN_0040c790
-                        (*(CDemonActor **)(g_CDemonSetPtr->unk4 + iVar13 + 8000),
+                        (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar13),
                          g_CMobsterClassInfo.name_hash);
     if ((pCVar10 != (CDemonActor *)0x0) &&
        (pCVar9 = *(CVehicle **)(pCVar10[0x8e].actor_name + 0x10), this_ptr == pCVar9)) {

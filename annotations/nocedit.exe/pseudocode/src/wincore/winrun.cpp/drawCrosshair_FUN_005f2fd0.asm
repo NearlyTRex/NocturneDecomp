@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl wincore_winrun_cpp_drawCrosshair_FUN_005f2fd0(void)
+; void __cdecl wincore_winrun_cpp_drawCrosshair_FUN_005f2fd0(void)
 ;
 ;
 ; XREF[5]:

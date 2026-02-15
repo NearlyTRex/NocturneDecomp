@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_setutil_cpp_C3DSCamera_exportS3D_FUN_00586190(C3DSCamera *this_ptr,_FILE *file_handle)
+; int __cdecl core_setutil_cpp_C3DSCamera_exportS3D_FUN_00586190(C3DSCamera *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; C3DSCamera *     Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float * __cdecl core_mobster_cpp_FUN_005250a0(void)
+; float * __cdecl core_mobster_cpp_FUN_005250a0(void)
 ;
 ;
 ; Referenced Globals:

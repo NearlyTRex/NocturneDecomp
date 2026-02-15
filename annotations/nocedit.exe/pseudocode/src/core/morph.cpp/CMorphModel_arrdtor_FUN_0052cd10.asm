@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CMorphModel * __cdecl core_morph_cpp_CMorphModel_arrdtor_FUN_0052cd10(CMorphModel *objs,uint flags)
+; CMorphModel * __cdecl core_morph_cpp_CMorphModel_arrdtor_FUN_0052cd10(CMorphModel *objs,uint flags)
 ;
 ; Parameters:
 ; CMorphModel *    Stack[0x4]:4   objs

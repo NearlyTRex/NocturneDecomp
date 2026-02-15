@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActor * __cdecl core_trap_cpp_CTrap_getCarrier_FUN_005de760(CTrap *this_ptr)
+; CDemonActor * __cdecl core_trap_cpp_CTrap_getCarrier_FUN_005de760(CTrap *this_ptr)
 ;
 ; Parameters:
 ; CTrap *          Stack[0x4]:4   this_ptr

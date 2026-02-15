@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_skeleton_cpp_CDeformableModelInstance_findClosestBone_FUN_005a1160(CDeformableModelInstance *this_ptr,CVector3f *point)
+; int __cdecl core_skeleton_cpp_CDeformableModelInstance_findClosestBone_FUN_005a1160(CDeformableModelInstance *this_ptr,CVector3f *point)
 ;
 ; Parameters:
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr

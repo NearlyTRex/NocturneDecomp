@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_turret_cpp_CTurret_startInteraction_FUN_005e34b0(CTurret *this_ptr,CDemonActor *user)
+; int __cdecl core_turret_cpp_CTurret_startInteraction_FUN_005e34b0(CTurret *this_ptr,CDemonActor *user)
 ;
 ; Parameters:
 ; CTurret *        Stack[0x4]:4   this_ptr

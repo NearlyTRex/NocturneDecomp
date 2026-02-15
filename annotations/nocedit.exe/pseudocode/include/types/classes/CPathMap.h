@@ -10,9 +10,7 @@
 typedef struct CPathMap {
     CVector3f current_position; // 0x0
     CVector3i voxel_coords; // 0xc
-    int unk1; // 0x18
-    int unk2; // 0x1c
-    int unk3; // 0x20
+    CVector3i dest_voxel_coords; // 0x18
     CVector3i grid_origin; // 0x24
     int height_cache[100][100]; // 0x30
     int height_cache_tags[100][100]; // 0x9c70

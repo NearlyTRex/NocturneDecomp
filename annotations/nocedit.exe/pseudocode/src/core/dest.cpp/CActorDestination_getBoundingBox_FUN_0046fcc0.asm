@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBoundingBox3D * __cdecl core_dest_cpp_CActorDestination_getBoundingBox_FUN_0046fcc0(CActorDestination *this_ptr,CBoundingBox3D *out_box)
+; CBoundingBox3D * __cdecl core_dest_cpp_CActorDestination_getBoundingBox_FUN_0046fcc0(CActorDestination *this_ptr,CBoundingBox3D *out_box)
 ;
 ; Parameters:
 ; CActorDestination * Stack[0x4]:4   this_ptr

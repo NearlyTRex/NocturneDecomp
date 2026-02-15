@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack streambuf * __watcallStack crt_fstream_cpp_filebuf_setbuf_FUN_0060db8c(filebuf *this_ptr,char *buffer_ptr,int buffer_size)
+; streambuf * __watcallStack crt_fstream_cpp_filebuf_setbuf_FUN_0060db8c(filebuf *this_ptr,char *buffer_ptr,int buffer_size)
 ;
 ; Parameters:
 ; filebuf *        Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_pendulum_cpp_staticInit_FUN_00549320(void)
+; void __cdecl core_pendulum_cpp_staticInit_FUN_00549320(void)
 ;
 ;
 ; Referenced Globals:

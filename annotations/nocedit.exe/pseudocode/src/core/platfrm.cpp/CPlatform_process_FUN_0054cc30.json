@@ -10,67 +10,67 @@
       {
         "category": "other",
         "column": 26,
-        "line": 272,
+        "line": 271,
         "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 283,
+        "line": 282,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 26,
-        "line": 283,
+        "line": 282,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 39,
-        "line": 284,
+        "line": 283,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 46,
-        "line": 284,
+        "line": 283,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 293,
+        "line": 292,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 20,
-        "line": 293,
+        "line": 292,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 310,
+        "line": 309,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 24,
-        "line": 310,
+        "line": 309,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 328,
+        "line": 327,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 16,
-        "line": 328,
+        "line": 327,
         "message": "expected expression"
       }
     ],
@@ -79,19 +79,19 @@
   },
   "complexity": {
     "assembly_lines": 790,
-    "complexity_score": 471,
+    "complexity_score": 490,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 16,
-    "pseudocode_lines": 321,
-    "suspect_count": 13,
+    "pseudocode_lines": 320,
+    "suspect_count": 15,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "unresolved_funcptr",
       "warning_type_propagation"
     ],
-    "total_lines": 1111
+    "total_lines": 1110
   },
   "cross_references": [
     {
@@ -268,13 +268,13 @@
     },
     {
       "addr": "032613cc",
-      "name": "g_CDemonSetInstance.actor_list_ptr",
+      "name": "g_CDemonSetInstance.actor_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "032613d0",
-      "name": "g_CDemonSetInstance.actor_list_data[0]",
+      "name": "g_CDemonSetInstance.actors[0]",
       "type": "undefined4",
       "value": null
     },
@@ -286,13 +286,13 @@
     },
     {
       "addr": "03263310",
-      "name": "g_CDemonSetInstance.damage_listener_count",
+      "name": "g_CDemonSetInstance.character_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "03263314",
-      "name": "g_CDemonSetInstance.damage_listeners",
+      "name": "g_CDemonSetInstance.characters[0]",
       "type": "undefined4",
       "value": null
     },
@@ -499,84 +499,98 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 240,
+      "line": 229,
+      "match": "(int *)((int)",
+      "text": "iVar3 = *(int *)((int)g_CDemonSetPtr->actors + iStack_24);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 239,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar14 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 241,
+      "line": 240,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar11 = (CMatrix3x4f *)((int)pCVar11 + ((uint)bVar14 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 248,
+      "line": 247,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar14 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 249,
+      "line": 248,
       "match": "(CMatrix3x3f *)((int)",
       "text": "pCVar12 = (CMatrix3x3f *)((int)pCVar12 + ((uint)bVar14 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 274,
+      "match": "(int *)((int)",
+      "text": "iVar2 = *(int *)((int)g_CDemonSetPtr->characters + iVar3);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 276,
+      "line": 275,
       "match": "code *",
       "text": "iVar5 = (**(code **)(*(int *)(iVar2 + 0x154) + 0x120))(iVar2);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 277,
+      "line": 276,
       "match": "code *",
       "text": "if ((iVar5 < 1) && (iVar5 = (**(code **)(*(int *)(iVar2 + 0x154) + 0x68))(iVar2), iVar5 == 0))",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 286,
+      "line": 285,
       "match": "code *",
       "text": "(**(code **)(*(int *)(iVar2 + 0x154) + 0xf0))(iVar2,8,0,0xbf800000);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 298,
+      "line": 297,
       "match": "ABS",
       "text": "if (((float)10 < ABS(fStack_40)) || ((float)10 < ABS(fStack_38)))",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 298,
+      "line": 297,
       "match": "ABS",
       "text": "if (((float)10 < ABS(fStack_40)) || ((float)10 < ABS(fStack_38)))",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 303,
+      "line": 302,
       "match": "code *",
       "text": "iVar5 = (**(code **)(*(int *)(iVar2 + 0x154) + 0x34))(iVar2,&SStack_d4);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 308,
+      "line": 307,
       "match": "SQRT",
       "text": "fVar16 = SQRT(fVar16);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 321,
+      "line": 320,
       "match": "code *",
       "text": "(**(code **)(*(int *)(iVar2 + 0x154) + 0x60))(iVar2,&CStack_64,iVar2 + 0x30,dVar15,fVar16);",
       "type": "unresolved_funcptr"

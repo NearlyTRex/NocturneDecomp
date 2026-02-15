@@ -3557,7 +3557,7 @@ WatcomStaticDestructorNode g_CEdCheckDestructorNode = {
     .registration_type = 0x00000001,
     .object_instance = (void *)&g_CEdCheckInstance
 };
-WatcomStaticDestructorNode DAT_0068064c = {
+WatcomStaticDestructorNode WatcomStaticDestructorNode_0068064c = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&WatcomDestructorCall_00661c1c,
     .registration_type = 0x00000001,
@@ -3575,11 +3575,11 @@ WatcomStaticDestructorNode g_CMouseDestructorNode = {
     .registration_type = 0x00000001,
     .object_instance = (void *)&g_CMouseInstance
 };
-WatcomStaticDestructorNode DAT_00680bc8 = {
+WatcomStaticDestructorNode WatcomStaticDestructorNode_00680bc8 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&WatcomDestructorCall_006620e0,
     .registration_type = 0x00000001,
-    .object_instance = (void *)0x02FD9060
+    .object_instance = (void *)&CPathMap_ARRAY_02fd9060
 };
 WatcomStaticDestructorNode g_CDemonPodMainDestructorNode = {
     .next = nullptr,
@@ -3587,25 +3587,25 @@ WatcomStaticDestructorNode g_CDemonPodMainDestructorNode = {
     .registration_type = 0x00000001,
     .object_instance = (void *)&g_CDemonPodInstance
 };
-WatcomStaticDestructorNode DAT_00680d10 = {
+WatcomStaticDestructorNode WatcomStaticDestructorNode_00680d10 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&WatcomDestructorCall_006625f0,
     .registration_type = 0x00000001,
     .object_instance = (void *)&g_ScriptPickList
 };
-WatcomStaticDestructorNode DAT_00680d20 = {
+WatcomStaticDestructorNode WatcomStaticDestructorNode_00680d20 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&WatcomDestructorCall_006625fc,
     .registration_type = 0x00000001,
     .object_instance = (void *)&g_CScriptInstance
 };
-WatcomStaticDestructorNode DAT_00680d30 = {
+WatcomStaticDestructorNode WatcomStaticDestructorNode_00680d30 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&WatcomDestructorCall_00662608,
     .registration_type = 0x00000001,
     .object_instance = (void *)&g_ScriptEditorVScrollBar
 };
-WatcomStaticDestructorNode DAT_00680d40 = {
+WatcomStaticDestructorNode WatcomStaticDestructorNode_00680d40 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&WatcomDestructorCall_00662614,
     .registration_type = 0x00000001,
@@ -3641,19 +3641,19 @@ WatcomStaticDestructorNode g_CZThumbPoolDestructorNode = {
     .registration_type = 0x00000001,
     .object_instance = (void *)&g_CZThumbPool
 };
-WatcomStaticDestructorNode DAT_006816a0 = {
+WatcomStaticDestructorNode WatcomStaticDestructorNode_006816a0 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&WatcomDestructorCall_00662a10,
     .registration_type = 0x00000001,
     .object_instance = (void *)&CPickList_03653fc0
 };
-WatcomStaticDestructorNode DAT_006816b0 = {
+WatcomStaticDestructorNode WatcomStaticDestructorNode_006816b0 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&WatcomDestructorCall_00662a1c,
     .registration_type = 0x00000001,
     .object_instance = (void *)&CEdScrollBar_03364ce0
 };
-WatcomStaticDestructorNode DAT_00681850 = {
+WatcomStaticDestructorNode WatcomStaticDestructorNode_00681850 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&WatcomDestructorCall_00662e30,
     .registration_type = 0x00000001,
@@ -3689,7 +3689,7 @@ WatcomStaticDestructorNode g_CMP3DecoderDestructorNode2 = {
     .registration_type = 0x00000001,
     .object_instance = (void *)&g_CMP3DecoderInstance
 };
-WatcomStaticDestructorNode DAT_00681ed0 = {
+WatcomStaticDestructorNode WatcomStaticDestructorNode_00681ed0 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&WatcomDestructorCall_006632e0,
     .registration_type = 0x00000001,

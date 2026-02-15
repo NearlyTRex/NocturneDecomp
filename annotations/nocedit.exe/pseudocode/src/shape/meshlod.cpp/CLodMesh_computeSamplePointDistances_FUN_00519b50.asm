@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50(CLodMesh *this_ptr,double max_search_radius)
+; void __cdecl shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50(CLodMesh *this_ptr,double max_search_radius)
 ;
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr

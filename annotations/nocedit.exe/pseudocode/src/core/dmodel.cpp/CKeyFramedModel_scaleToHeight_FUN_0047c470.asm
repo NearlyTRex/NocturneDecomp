@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dmodel_cpp_CKeyFramedModel_scaleToHeight_FUN_0047c470(CKeyFramedModel *this_ptr,float desired_height)
+; void __cdecl core_dmodel_cpp_CKeyFramedModel_scaleToHeight_FUN_0047c470(CKeyFramedModel *this_ptr,float desired_height)
 ;
 ; Parameters:
 ; CKeyFramedModel * Stack[0x4]:4   this_ptr

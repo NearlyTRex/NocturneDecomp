@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallRegister float __watcallRegister crt_math_c_doubleToFloat_FUN_0060b26c(double val)
+; float __watcallRegister crt_math_c_doubleToFloat_FUN_0060b26c(double val)
 ;
 ;
 ; XREF[1]:

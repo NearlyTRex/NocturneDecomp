@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_actor_cpp_trimActorName_FUN_004087b0(CDemonActor *actor_ptr)
+; void __cdecl core_actor_cpp_trimActorName_FUN_004087b0(CDemonActor *actor_ptr)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   actor_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_memdbg_cpp_acquireDebugMutex_FUN_0050ee5e(void)
+; void __cdecl shape_memdbg_cpp_acquireDebugMutex_FUN_0050ee5e(void)
 ;
 ;
 ; Referenced Globals:

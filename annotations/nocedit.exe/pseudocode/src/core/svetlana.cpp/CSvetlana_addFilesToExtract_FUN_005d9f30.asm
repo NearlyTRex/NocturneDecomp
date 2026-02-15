@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_svetlana_cpp_CSvetlana_addFilesToExtract_FUN_005d9f30(CSvetlana *this_ptr,_FILE *file_handle)
+; void __cdecl core_svetlana_cpp_CSvetlana_addFilesToExtract_FUN_005d9f30(CSvetlana *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CSvetlana *      Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CPendulum * __cdecl core_pendulum_cpp_factoryFunc_FUN_00549350(void)
+; CPendulum * __cdecl core_pendulum_cpp_factoryFunc_FUN_00549350(void)
 ;
 ;
 ; XREF[1]:

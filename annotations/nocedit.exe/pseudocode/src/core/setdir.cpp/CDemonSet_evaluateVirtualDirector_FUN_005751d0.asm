@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0(CDemonSet *this_ptr,CDemonActor *actor,int force_evaluation_mode)
+; int __cdecl core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0(CDemonSet *this_ptr,CDemonActor *actor,int force_evaluation_mode)
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr
@@ -336,7 +336,7 @@ section .text
     FSTP float ptr [ESP + 0x134]        ; 0057556d
     MOV EAX,[0x006810c8]                ; 00575574 | g_CDemonSetPtr
         ;   Label: LAB_00575574
-    CMP EDI,dword ptr [EAX + 0x14d154]  ; 00575579 | g_CDemonSetInstance.actor_list_ptr
+    CMP EDI,dword ptr [EAX + 0x14d154]  ; 00575579 | g_CDemonSetInstance.actor_count
     JL 0x0057582e                       ; 0057557f
         ;   XREF to: 0057582e (CONDITIONAL_JUMP)  ; LAB_0057582e
     MOV EAX,dword ptr [EBP + 0x18]      ; 00575585
@@ -578,7 +578,7 @@ section .text
         ;   XREF to: 005753fe (UNCONDITIONAL_JUMP)  ; LAB_005753fe
     ADD EAX,dword ptr [ESP + 0x144]     ; 0057582e
         ;   Label: LAB_0057582e
-    MOV EBX,dword ptr [EAX + 0x14d158]  ; 00575835 | g_CDemonSetInstance.actor_list_data[0]
+    MOV EBX,dword ptr [EAX + 0x14d158]  ; 00575835 | g_CDemonSetInstance.actors[0]
     PUSH EBX                            ; 0057583b
     MOV EAX,dword ptr [EBX + 0x154]     ; 0057583c
     CALL dword ptr [EAX + 0x40]         ; 00575842

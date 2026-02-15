@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_game_cpp_checkCheatCode_FUN_004dd7f0(char *cheat_string)
+; int __cdecl core_game_cpp_checkCheatCode_FUN_004dd7f0(char *cheat_string)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   cheat_string

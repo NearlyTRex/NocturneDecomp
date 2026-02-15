@@ -29,7 +29,7 @@ void __cdecl shape_edittool_cpp_CEdCheck_render_FUN_004a6c00(CEdCheck *this_ptr)
   local_14 = iVar1 + local_14;
   iVar3 = engine_font_cpp_CBitFont_getCharWidth_FUN_004cff40(g_EditorFont,this_ptr->checkbox_text);
   color_value = -1;
-  iVar5 = this_ptr->coord_unk;
+  iVar5 = this_ptr->text_color_mode;
   iVar3 = ((this_ptr->y_position + this_ptr->right_boundary) - iVar3) / 2;
   iVar4 = shape_edittool_cpp_CEdCheck_calculateSpacing_FUN_004a6be0(this_ptr);
   engine_font_cpp_CBitFont_drawText_FUN_004cda80

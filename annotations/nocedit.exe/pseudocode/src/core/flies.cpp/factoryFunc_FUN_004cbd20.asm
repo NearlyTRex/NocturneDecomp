@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CFlies * __cdecl core_flies_cpp_factoryFunc_FUN_004cbd20(void)
+; CFlies * __cdecl core_flies_cpp_factoryFunc_FUN_004cbd20(void)
 ;
 ;
 ; XREF[1]:

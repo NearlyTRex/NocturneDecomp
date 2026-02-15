@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_game_cpp_joinNetworkGame_FUN_004e2fc0(void)
+; void __cdecl core_game_cpp_joinNetworkGame_FUN_004e2fc0(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x74]:1  local_74

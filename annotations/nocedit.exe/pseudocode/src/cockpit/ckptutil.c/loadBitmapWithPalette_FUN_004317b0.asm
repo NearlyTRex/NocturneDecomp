@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void * __cdecl cockpit_ckptutil_c_loadBitmapWithPalette_FUN_004317b0(char *filename,int width,int height,void *span_data_buffer,void *buffer,int transparent_color_index)
+; void * __cdecl cockpit_ckptutil_c_loadBitmapWithPalette_FUN_004317b0(char *filename,int width,int height,void *span_data_buffer,void *buffer,int transparent_color_index)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

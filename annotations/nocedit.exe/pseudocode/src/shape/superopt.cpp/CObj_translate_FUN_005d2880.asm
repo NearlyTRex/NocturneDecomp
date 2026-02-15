@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_superopt_cpp_CObj_translate_FUN_005d2880(CObj *this_ptr,CVector3d *offset)
+; void __cdecl shape_superopt_cpp_CObj_translate_FUN_005d2880(CObj *this_ptr,CVector3d *offset)
 ;
 ; Parameters:
 ; CObj *           Stack[0x4]:4   this_ptr

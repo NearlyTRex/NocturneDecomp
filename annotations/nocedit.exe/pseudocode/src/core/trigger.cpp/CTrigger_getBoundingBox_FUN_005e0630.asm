@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBoundingBox3D * __cdecl core_trigger_cpp_CTrigger_getBoundingBox_FUN_005e0630(CTrigger *this_ptr,CBoundingBox3D *out_box)
+; CBoundingBox3D * __cdecl core_trigger_cpp_CTrigger_getBoundingBox_FUN_005e0630(CTrigger *this_ptr,CBoundingBox3D *out_box)
 ;
 ; Parameters:
 ; CTrigger *       Stack[0x4]:4   this_ptr

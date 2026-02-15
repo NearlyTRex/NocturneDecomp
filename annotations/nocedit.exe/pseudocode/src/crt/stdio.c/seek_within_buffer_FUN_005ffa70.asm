@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_stdio_c_seek_within_buffer_FUN_005ffa70(int offset,_FILE *file)
+; int __cdecl crt_stdio_c_seek_within_buffer_FUN_005ffa70(int offset,_FILE *file)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   offset

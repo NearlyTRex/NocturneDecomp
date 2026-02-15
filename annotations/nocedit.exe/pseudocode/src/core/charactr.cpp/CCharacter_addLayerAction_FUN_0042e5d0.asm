@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0(CCharacter *this_ptr,int from_bone_index,int to_bone_index,char *motion_name,int direction)
+; void __cdecl core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0(CCharacter *this_ptr,int from_bone_index,int to_bone_index,char *motion_name,int direction)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr

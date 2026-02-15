@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl core_setcolid_cpp_CDemonSet_raycast_FUN_00572530(CDemonSet *this_ptr,CVector3f *ray_origin,CVector3f *ray_target)
+; float __cdecl core_setcolid_cpp_CDemonSet_raycast_FUN_00572530(CDemonSet *this_ptr,CVector3f *ray_origin,CVector3f *ray_target)
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr

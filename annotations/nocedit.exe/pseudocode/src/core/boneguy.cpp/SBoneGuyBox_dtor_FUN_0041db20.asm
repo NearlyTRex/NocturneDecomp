@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SBoneGuyBox * __cdecl core_boneguy_cpp_SBoneGuyBox_dtor_FUN_0041db20(SBoneGuyBox *this_ptr,uint flags)
+; SBoneGuyBox * __cdecl core_boneguy_cpp_SBoneGuyBox_dtor_FUN_0041db20(SBoneGuyBox *this_ptr,uint flags)
 ;
 ; Parameters:
 ; SBoneGuyBox *    Stack[0x4]:4   this_ptr

@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_console_cpp_CConsole_printf_FUN_00441890(CConsole *this_ptr,char *format,...)
+; void __cdecl engine_console_cpp_CConsole_printf_FUN_00441890(CConsole *this_ptr,char *format,...)
 ;
 ; Parameters:
 ; CConsole *       Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   format
 ; Local Variables:
-; undefined1       Stack[-0x1014]:1  local_1014
-; undefined4       Stack[-0x14]:4  local_14
+; char[4096]       Stack[-0x1014]:4096  local_1014
+; va_list_t        Stack[-0x14]:4  local_14
 ;
 ; XREF[79]:
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210 at 0040a5e1

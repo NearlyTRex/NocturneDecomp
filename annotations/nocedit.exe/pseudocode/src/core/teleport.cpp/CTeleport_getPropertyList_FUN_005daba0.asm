@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_teleport_cpp_CTeleport_getPropertyList_FUN_005daba0(CTeleport *this_ptr,CActorPropertyList *property_list)
+; void __cdecl core_teleport_cpp_CTeleport_getPropertyList_FUN_005daba0(CTeleport *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CTeleport *      Stack[0x4]:4   this_ptr

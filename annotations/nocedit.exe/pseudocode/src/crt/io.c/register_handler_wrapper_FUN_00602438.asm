@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_io_c_register_handler_wrapper_FUN_00602438(HANDLE file_handle)
+; int __cdecl crt_io_c_register_handler_wrapper_FUN_00602438(HANDLE file_handle)
 ;
 ; Parameters:
 ; HANDLE           Stack[0x4]:4   file_handle

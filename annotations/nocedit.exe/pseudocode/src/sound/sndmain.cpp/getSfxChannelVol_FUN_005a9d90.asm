@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90(int channel_index)
+; float __cdecl sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90(int channel_index)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   channel_index

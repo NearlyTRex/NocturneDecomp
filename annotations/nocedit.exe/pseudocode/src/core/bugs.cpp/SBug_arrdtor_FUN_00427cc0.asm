@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SBug * __cdecl core_bugs_cpp_SBug_arrdtor_FUN_00427cc0(SBug *objs,uint flags)
+; SBug * __cdecl core_bugs_cpp_SBug_arrdtor_FUN_00427cc0(SBug *objs,uint flags)
 ;
 ; Parameters:
 ; SBug *           Stack[0x4]:4   objs

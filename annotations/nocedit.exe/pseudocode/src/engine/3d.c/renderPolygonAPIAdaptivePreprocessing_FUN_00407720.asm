@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407720(SMRGLHeaderPrimitive *polygon_info)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407720(SMRGLHeaderPrimitive *polygon_info)
 ;
 ; Parameters:
 ; SMRGLHeaderPrimitive * Stack[0x4]:4   polygon_info

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * __cdecl core_script_cpp_parseArgument_FUN_005593f0(char **cursor,char *out_buffer,int max_length)
+; char * __cdecl core_script_cpp_parseArgument_FUN_005593f0(char **cursor,char *out_buffer,int max_length)
 ;
 ; Parameters:
 ; char * *         Stack[0x4]:4   cursor

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * __cdecl core_gasmask_cpp_CGasMask_getActorType_FUN_004e5cf0(CGasMask *this_ptr)
+; CDemonActorType * __cdecl core_gasmask_cpp_CGasMask_getActorType_FUN_004e5cf0(CGasMask *this_ptr)
 ;
 ; Parameters:
 ; CGasMask *       Stack[0x4]:4   this_ptr

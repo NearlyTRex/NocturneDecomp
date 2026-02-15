@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * __cdecl core_svetlana_cpp_CSvetlana_getActorType_FUN_005d8840(CSvetlana *this_ptr)
+; CDemonActorType * __cdecl core_svetlana_cpp_CSvetlana_getActorType_FUN_005d8840(CSvetlana *this_ptr)
 ;
 ; Parameters:
 ; CSvetlana *      Stack[0x4]:4   this_ptr

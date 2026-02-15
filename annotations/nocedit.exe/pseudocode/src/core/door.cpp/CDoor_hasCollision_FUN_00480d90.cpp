@@ -15,6 +15,6 @@ int __cdecl core_door_cpp_CDoor_hasCollision_FUN_00480d90(CDoor *this_ptr,SColli
   if (pCVar1->collision_triangle_list == (CDemonTriangle *)0x0) {
     return 1;
   }
-  collision_info->model = &this_ptr->model;
+  collision_info->keyframed_model = &this_ptr->model;
   return 1;
 }

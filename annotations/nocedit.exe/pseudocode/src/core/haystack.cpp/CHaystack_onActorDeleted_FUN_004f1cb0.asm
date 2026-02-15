@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_haystack_cpp_CHaystack_onActorDeleted_FUN_004f1cb0(CHaystack *this_ptr,CDemonActor *deleted_actor)
+; void __cdecl core_haystack_cpp_CHaystack_onActorDeleted_FUN_004f1cb0(CHaystack *this_ptr,CDemonActor *deleted_actor)
 ;
 ; Parameters:
 ; CHaystack *      Stack[0x4]:4   this_ptr

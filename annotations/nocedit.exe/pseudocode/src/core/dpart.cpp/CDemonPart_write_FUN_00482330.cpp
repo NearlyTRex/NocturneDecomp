@@ -35,7 +35,7 @@ void __cdecl core_dpart_cpp_CDemonPart_write_FUN_00482330(CDemonPart *this_ptr,_
   iVar3 = 0;
   _fwrite(&this_ptr->mystery_array_size,4,1,file_handle);
   if (0 < this_ptr->mystery_array_size) {
-    pcVar2 = this_ptr->mystery_array;
+    pcVar2 = this_ptr->mystery_array + 8;
     do {
       iVar3 = iVar3 + 1;
       _fwrite(pcVar2,0x10,1,file_handle);

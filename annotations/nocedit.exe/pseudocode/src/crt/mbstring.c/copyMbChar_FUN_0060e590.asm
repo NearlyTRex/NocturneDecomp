@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_mbstring_c_copyMbChar_FUN_0060e590(char *dest,char *src)
+; void __cdecl crt_mbstring_c_copyMbChar_FUN_0060e590(char *dest,char *src)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   dest

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_00407aa0(SVertexBatch *cmd)
+; void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_00407aa0(SVertexBatch *cmd)
 ;
 ; Parameters:
 ; SVertexBatch *   Stack[0x4]:4   cmd

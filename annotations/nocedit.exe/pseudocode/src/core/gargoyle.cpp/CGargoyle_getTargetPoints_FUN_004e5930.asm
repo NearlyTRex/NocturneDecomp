@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_gargoyle_cpp_CGargoyle_getTargetPoints_FUN_004e5930(CGargoyle *this_ptr,CVector3f *out_points_array)
+; int __cdecl core_gargoyle_cpp_CGargoyle_getTargetPoints_FUN_004e5930(CGargoyle *this_ptr,CVector3f *out_points_array)
 ;
 ; Parameters:
 ; CGargoyle *      Stack[0x4]:4   this_ptr

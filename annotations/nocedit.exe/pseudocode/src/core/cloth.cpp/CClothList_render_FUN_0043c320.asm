@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_cloth_cpp_CClothList_render_FUN_0043c320(CClothList *this_ptr,CDeformableModelInstance *model_ptr)
+; void __cdecl core_cloth_cpp_CClothList_render_FUN_0043c320(CClothList *this_ptr,CDeformableModelInstance *model_ptr)
 ;
 ; Parameters:
 ; CClothList *     Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_scat_cpp_CScat_FUN_005578e0(CScat *this_ptr)
+; void __cdecl core_scat_cpp_CScat_FUN_005578e0(CScat *this_ptr)
 ;
 ; Parameters:
 ; CScat *          Stack[0x4]:4   this_ptr
@@ -215,7 +215,7 @@ section .text
     LEA EAX,[ESI + 0x20]                ; 00557ab5
     PUSH EAX                            ; 00557ab8
     CALL core_path.cpp_FUN_00548500     ; 00557ab9
-        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_FUN_00548500()
+        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_FUN_00548500(CLocation * location)
     ADD ESP,0x4                         ; 00557abe
     MOV EDX,EAX                         ; 00557ac1
     MOV ECX,dword ptr [EBX + 0x6c]      ; 00557ac3

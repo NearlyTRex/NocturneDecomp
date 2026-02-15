@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_actor_cpp_CDemonActor_setPositionAndOrientation_FUN_00409fb0(CDemonActor *this_ptr,CVector3f *new_position,CVector3f *new_orientation)
+; void __cdecl core_actor_cpp_CDemonActor_setPositionAndOrientation_FUN_00409fb0(CDemonActor *this_ptr,CVector3f *new_position,CVector3f *new_orientation)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr

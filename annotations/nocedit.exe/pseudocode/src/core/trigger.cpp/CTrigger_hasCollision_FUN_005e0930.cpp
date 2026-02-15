@@ -14,7 +14,7 @@ int __cdecl core_trigger_cpp_CTrigger_hasCollision_FUN_005e0930(CTrigger *this_p
     return 1;
   }
   if (((collision_info->ray_type == 3) && (this_ptr->hero_triggers_me == 5)) &&
-     ((float)this_ptr->laser_type == collision_info->unk1)) {
+     (this_ptr->laser_type == collision_info->laser_type)) {
     return 1;
   }
   return 0;

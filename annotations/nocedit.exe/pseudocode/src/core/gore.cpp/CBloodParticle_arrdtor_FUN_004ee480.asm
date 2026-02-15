@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBloodParticle * __cdecl core_gore_cpp_CBloodParticle_arrdtor_FUN_004ee480(CBloodParticle *objs,uint flags)
+; CBloodParticle * __cdecl core_gore_cpp_CBloodParticle_arrdtor_FUN_004ee480(CBloodParticle *objs,uint flags)
 ;
 ; Parameters:
 ; CBloodParticle * Stack[0x4]:4   objs

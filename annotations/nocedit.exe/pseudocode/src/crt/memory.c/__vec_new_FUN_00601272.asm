@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void * __cdecl crt_memory_c___vec_new_FUN_00601272(void *array_memory,int element_count,WatcomTypeInfo *type_info)
+; void * __cdecl crt_memory_c___vec_new_FUN_00601272(void *array_memory,int element_count,WatcomTypeInfo *type_info)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   array_memory

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActor * __cdecl core_flies_cpp_CFlies_FUN_004cca50(CFlies *this_ptr)
+; CDemonActor * __cdecl core_flies_cpp_CFlies_FUN_004cca50(CFlies *this_ptr)
 ;
 ; Parameters:
 ; CFlies *         Stack[0x4]:4   this_ptr
@@ -13,8 +13,8 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   undefined4 g_CFliesClassInfo.name_hash
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.actor_list_ptr
-;   undefined4 g_CDemonSetInstance.actor_list_data[0]
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
@@ -33,7 +33,7 @@ section .text
     XOR EBX,EBX                         ; 004cca5a
     MOV EAX,[0x006810c8]                ; 004cca5c | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_004cca5c
-    CMP EBX,dword ptr [EAX + 0x14d154]  ; 004cca61 | g_CDemonSetInstance.actor_list_ptr
+    CMP EBX,dword ptr [EAX + 0x14d154]  ; 004cca61 | g_CDemonSetInstance.actor_count
     JL 0x004cca76                       ; 004cca67
         ;   XREF to: 004cca76 (CONDITIONAL_JUMP)  ; LAB_004cca76
     XOR EAX,EAX                         ; 004cca69
@@ -50,7 +50,7 @@ section .text
     MOV ECX,dword ptr [0x02d7a7fc]      ; 004cca76 | g_CFliesClassInfo.name_hash
         ;   Label: LAB_004cca76
     PUSH ECX                            ; 004cca7c
-    MOV EBP,dword ptr [ESI + EAX*0x1 + 0x14d158] ; 004cca7d | g_CDemonSetInstance.actor_list_data[0]
+    MOV EBP,dword ptr [ESI + EAX*0x1 + 0x14d158] ; 004cca7d | g_CDemonSetInstance.actors[0]
     PUSH EBP                            ; 004cca84
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 004cca85
         ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)

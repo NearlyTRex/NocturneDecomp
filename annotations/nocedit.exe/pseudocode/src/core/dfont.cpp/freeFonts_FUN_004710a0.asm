@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dfont_cpp_freeFonts_FUN_004710a0(void)
+; void __cdecl core_dfont_cpp_freeFonts_FUN_004710a0(void)
 ;
 ;
 ; XREF[1]:

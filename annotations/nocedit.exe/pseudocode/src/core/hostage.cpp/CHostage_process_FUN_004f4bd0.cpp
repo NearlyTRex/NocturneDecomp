@@ -148,9 +148,9 @@ void __cdecl core_hostage_cpp_CHostage_process_FUN_004f4bd0(CHostage *this_ptr,f
       iVar21 = 0;
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)this_ptr,&local_ec,&local_140);
-      while (iVar13 < (int)g_CDemonSetPtr->actor_list_ptr) {
+      while (iVar13 < g_CDemonSetPtr->actor_count) {
         pCVar15 = (CDoor *)core_actor_cpp_castToClassHash_FUN_0040c790
-                                     (*(CDemonActor **)(g_CDemonSetPtr->actor_list_data + iVar21),
+                                     (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar21),
                                       g_CDoorClassInfo.name_hash);
         if (pCVar15 == (CDoor *)0x0) {
 LAB_004f4dd2:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_lever_cpp_CLever_addFilesToExtract_FUN_00505370(CLever *this_ptr,_FILE *file_handle)
+; void __cdecl core_lever_cpp_CLever_addFilesToExtract_FUN_00505370(CLever *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CLever *         Stack[0x4]:4   this_ptr

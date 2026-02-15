@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __fpureg float10 __fpureg crt_math_c_exp_FUN_006068e2(float10 x)
+; float10 __fpureg crt_math_c_exp_FUN_006068e2(float10 x)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x1c]:8  local_1c

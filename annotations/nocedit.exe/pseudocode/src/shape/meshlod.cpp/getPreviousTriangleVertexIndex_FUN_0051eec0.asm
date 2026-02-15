@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_meshlod_cpp_getPreviousTriangleVertexIndex_FUN_0051eec0(int vertex_index)
+; int __cdecl shape_meshlod_cpp_getPreviousTriangleVertexIndex_FUN_0051eec0(int vertex_index)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   vertex_index

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_mmx_c_getCPUInfo_FUN_0052500f(SCPUInfo *cpu_info)
+; int __cdecl core_mmx_c_getCPUInfo_FUN_0052500f(SCPUInfo *cpu_info)
 ;
 ; Parameters:
 ; SCPUInfo *       Stack[0x4]:4   cpu_info

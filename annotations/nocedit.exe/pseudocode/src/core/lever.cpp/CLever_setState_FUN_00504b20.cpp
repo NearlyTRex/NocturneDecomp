@@ -31,10 +31,10 @@ void __cdecl core_lever_cpp_CLever_setState_FUN_00504b20(CLever *this_ptr,float 
       core_lever_cpp_CLever_setState_FUN_00504b20((CLever *)this_ptr->linked_lever,param_2);
     }
     iVar1 = 0;
-    for (iVar2 = 0; iVar2 < (int)g_CDemonSetPtr->actor_list_ptr; iVar2 = iVar2 + 1) {
+    for (iVar2 = 0; iVar2 < g_CDemonSetPtr->actor_count; iVar2 = iVar2 + 1) {
       this_ptr_00 = (CLever *)
                     core_actor_cpp_castToClassHash_FUN_0040c790
-                              (*(CDemonActor **)(g_CDemonSetPtr->actor_list_data + iVar1),
+                              (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar1),
                                g_CLeverClassInfo.name_hash);
       if ((this_ptr_00 != (CLever *)0x0) && (this_ptr == (CLever *)this_ptr_00->linked_lever)) {
         core_lever_cpp_CLever_setState_FUN_00504b20(this_ptr_00,param_2);

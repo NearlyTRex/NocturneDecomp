@@ -31,7 +31,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_0057a940(CDemonSet *this_ptr)
   local_1c = (void *)0x0;
   core_set_cpp_CDemonSet_initScene_FUN_0056aa10(this_ptr);
   this_ptr_00 = PTR_DAT_00681ab8;
-  this_ptr->actor_list_ptr = (void *)0x0;
+  this_ptr->actor_count = 0;
   core_slew_cpp_CSlew_init_FUN_005a2060(this_ptr_00);
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   core_setedit_cpp_CDemonSet_FUN_00580560(this_ptr);

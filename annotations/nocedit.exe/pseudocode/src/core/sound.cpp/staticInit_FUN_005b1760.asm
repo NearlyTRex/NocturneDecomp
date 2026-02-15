@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_sound_cpp_staticInit_FUN_005b1760(void)
+; void __cdecl core_sound_cpp_staticInit_FUN_005b1760(void)
 ;
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_STrainNoiseTypeInfo
-;   WatcomStaticDestructorNode DAT_00681ed0
+;   WatcomStaticDestructorNode WatcomStaticDestructorNode_00681ed0
 ;   CSound g_CSoundInstance
 ;   CStrList g_SoundFileList
 ;   STrainNoise[10] g_TrainNoiseArray
@@ -30,7 +30,7 @@ section .text
     CALL shape_edittool.cpp_CStrList_ctor_FUN_004a2a20 ; 005b1772
         ;   XREF to: 004a2a20 (UNCONDITIONAL_CALL)  ; CStrList * shape_edittool.cpp_CStrList_ctor_FUN_004a2a20(CStrList * this_ptr)
     ADD ESP,0x4                         ; 005b1777
-    PUSH 0x681ed0                       ; 005b177a | DAT_00681ed0
+    PUSH 0x681ed0                       ; 005b177a | WatcomStaticDestructorNode_00681ed0
     CALL crt_stdlib.c__atexit_FUN_005ff060 ; 005b177f
         ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 005b1784

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_lever_cpp_CLever_showEditorHelp_FUN_00505390(CLever *this_ptr,int *y_pos)
+; void __cdecl core_lever_cpp_CLever_showEditorHelp_FUN_00505390(CLever *this_ptr,int *y_pos)
 ;
 ; Parameters:
 ; CLever *         Stack[0x4]:4   this_ptr

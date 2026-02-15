@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_beast_cpp_staticInit_FUN_004181b0(void)
+; void __cdecl core_beast_cpp_staticInit_FUN_004181b0(void)
 ;
 ;
 ; Referenced Globals:

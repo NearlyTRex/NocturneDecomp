@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_setAlphaMask_FUN_0048cdf0(CDemonRenderer *this_ptr,int alpha_mask)
+; void __cdecl engine_drender_cpp_CDemonRenderer_setAlphaMask_FUN_0048cdf0(CDemonRenderer *this_ptr,int alpha_mask)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr

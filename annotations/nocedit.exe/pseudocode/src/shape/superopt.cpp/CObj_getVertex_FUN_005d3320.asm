@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVert * __cdecl shape_superopt_cpp_CObj_getVertex_FUN_005d3320(CObj *this_ptr,uint index)
+; CVert * __cdecl shape_superopt_cpp_CObj_getVertex_FUN_005d3320(CObj *this_ptr,uint index)
 ;
 ; Parameters:
 ; CObj *           Stack[0x4]:4   this_ptr

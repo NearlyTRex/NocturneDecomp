@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CLightActor * __cdecl core_boxactor_cpp_factoryFunc_FUN_00422950(void)
+; CLightActor * __cdecl core_boxactor_cpp_factoryFunc_FUN_00422950(void)
 ;
 ;
 ; XREF[1]:

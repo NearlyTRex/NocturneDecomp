@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActor * __cdecl core_hotdemon_cpp_CHotDemon_dtor_FUN_004f7a40(CHotDemon *this_ptr,uint flags)
+; CDemonActor * __cdecl core_hotdemon_cpp_CHotDemon_dtor_FUN_004f7a40(CHotDemon *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CHotDemon *      Stack[0x4]:4   this_ptr

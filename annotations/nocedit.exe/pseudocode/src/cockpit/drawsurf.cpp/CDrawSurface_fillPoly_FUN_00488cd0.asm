@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillPoly_FUN_00488cd0(CDrawSurface *this_ptr,int vertex_count,SPoint2i *vertices)
+; void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillPoly_FUN_00488cd0(CDrawSurface *this_ptr,int vertex_count,SPoint2i *vertices)
 ;
 ; Parameters:
 ; CDrawSurface *   Stack[0x4]:4   this_ptr

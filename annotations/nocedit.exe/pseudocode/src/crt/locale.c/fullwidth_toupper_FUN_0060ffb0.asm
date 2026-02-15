@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack wchar_t __watcallStack crt_locale_c_fullwidth_toupper_FUN_0060ffb0(wchar_t character)
+; wchar_t __watcallStack crt_locale_c_fullwidth_toupper_FUN_0060ffb0(wchar_t character)
 ;
 ; Parameters:
 ; wchar_t          Stack[0x4]:2   character

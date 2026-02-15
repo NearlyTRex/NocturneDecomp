@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_hero_cpp_CHero_FUN_004f2af0(CHero *this_ptr)
+; int __cdecl core_hero_cpp_CHero_FUN_004f2af0(CHero *this_ptr)
 ;
 ; Parameters:
 ; CHero *          Stack[0x4]:4   this_ptr
@@ -19,8 +19,8 @@
 ; Referenced Globals:
 ;   float FLOAT_0062ec0a = 0.5
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   undefined4 g_CDemonSetInstance.actor_list_ptr
-;   undefined4 g_CDemonSetInstance.actor_list_data[0]
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -90,7 +90,7 @@ section .text
     XOR EDI,EDI                         ; 004f2b91
     MOV EAX,[0x006810c8]                ; 004f2b93 | g_CDemonSetPtr
         ;   Label: LAB_004f2b93
-    CMP ESI,dword ptr [EAX + 0x14d154]  ; 004f2b98 | g_CDemonSetInstance.actor_list_ptr
+    CMP ESI,dword ptr [EAX + 0x14d154]  ; 004f2b98 | g_CDemonSetInstance.actor_count
     JL 0x004f2bd2                       ; 004f2b9e
         ;   XREF to: 004f2bd2 (CONDITIONAL_JUMP)  ; LAB_004f2bd2
     TEST EDI,EDI                        ; 004f2ba0
@@ -117,7 +117,7 @@ section .text
         ;   Label: LAB_004f2bd2
     PUSH EDX                            ; 004f2bd6
     MOV EDX,dword ptr [EBP + 0x14]      ; 004f2bd7
-    MOV EAX,dword ptr [EBX + EAX*0x1 + 0x14d158] ; 004f2bda | g_CDemonSetInstance.actor_list_data[0]
+    MOV EAX,dword ptr [EBX + EAX*0x1 + 0x14d158] ; 004f2bda | g_CDemonSetInstance.actors[0]
     PUSH EDX                            ; 004f2be1
     MOV ECX,dword ptr [EAX + 0x154]     ; 004f2be2
     PUSH EAX                            ; 004f2be8
@@ -141,7 +141,7 @@ section .text
     MOV EAX,dword ptr [ESP]             ; 004f2c0f
     MOV dword ptr [ESP + 0x4c],EAX      ; 004f2c12
     MOV EAX,[0x006810c8]                ; 004f2c16 | g_CDemonSetPtr
-    MOV EDI,dword ptr [EBX + EAX*0x1 + 0x14d158] ; 004f2c1b | g_CDemonSetInstance.actor_list_data[0]
+    MOV EDI,dword ptr [EBX + EAX*0x1 + 0x14d158] ; 004f2c1b | g_CDemonSetInstance.actors[0]
     INC ESI                             ; 004f2c22
         ;   Label: LAB_004f2c22
     ADD EBX,0x4                         ; 004f2c23

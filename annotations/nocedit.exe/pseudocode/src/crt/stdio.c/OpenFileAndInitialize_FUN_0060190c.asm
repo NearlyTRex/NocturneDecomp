@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl _FILE * __cdecl crt_stdio_c_OpenFileAndInitialize_FUN_0060190c(char *filename,char mode_char,int parsed_mode_flags,int stage1_result,int additional_flags,_FILE *file_struct)
+; _FILE * __cdecl crt_stdio_c_OpenFileAndInitialize_FUN_0060190c(char *filename,char mode_char,int parsed_mode_flags,int stage1_result,int additional_flags,_FILE *file_struct)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_turret_cpp_CTurret_FUN_005e2d50(CTurret *this_ptr)
+; void __cdecl core_turret_cpp_CTurret_FUN_005e2d50(CTurret *this_ptr)
 ;
 ; Parameters:
 ; CTurret *        Stack[0x4]:4   this_ptr
@@ -23,8 +23,8 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CConsole g_CConsoleInstance
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.actor_list_ptr
-;   undefined4 g_CDemonSetInstance.actor_list_data[0]
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;   undefined4 DAT_032613d4
 ;
 ; Called Functions:
@@ -141,10 +141,10 @@ section .text
     XOR EBP,EBP                         ; 005e2ea7
     MOV EAX,[0x006810c8]                ; 005e2ea9 | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_005e2ea9
-    CMP EDI,dword ptr [EAX + 0x14d154]  ; 005e2eae | g_CDemonSetInstance.actor_list_ptr
+    CMP EDI,dword ptr [EAX + 0x14d154]  ; 005e2eae | g_CDemonSetInstance.actor_count
     JGE 0x005e3200                      ; 005e2eb4
         ;   XREF to: 005e3200 (CONDITIONAL_JUMP)  ; LAB_005e3200
-    MOV EBX,dword ptr [EAX + EBP*0x1 + 0x14d158] ; 005e2eba | g_CDemonSetInstance.actor_list_data[0] | DAT_032613d4
+    MOV EBX,dword ptr [EAX + EBP*0x1 + 0x14d158] ; 005e2eba | g_CDemonSetInstance.actors[0] | DAT_032613d4
     MOV EAX,dword ptr [ESP + 0x148]     ; 005e2ec1
     PUSH EAX                            ; 005e2ec8
     PUSH EBX                            ; 005e2ec9

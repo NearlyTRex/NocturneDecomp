@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float * __cdecl core_dmodel_cpp_copyFloat_FUN_0047efa0(float *dst,float *src)
+; float * __cdecl core_dmodel_cpp_copyFloat_FUN_0047efa0(float *dst,float *src)
 ;
 ; Parameters:
 ; float *          Stack[0x4]:4   dst

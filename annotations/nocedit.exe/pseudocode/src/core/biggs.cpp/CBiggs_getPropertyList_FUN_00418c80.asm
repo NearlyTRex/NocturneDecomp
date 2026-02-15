@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_biggs_cpp_CBiggs_getPropertyList_FUN_00418c80(CBiggs *this_ptr,CActorPropertyList *property_list)
+; void __cdecl core_biggs_cpp_CBiggs_getPropertyList_FUN_00418c80(CBiggs *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CBiggs *         Stack[0x4]:4   this_ptr

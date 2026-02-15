@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_io_c_close_handle_safe_FUN_0060c2e0(int handle_index)
+; int __cdecl crt_io_c_close_handle_safe_FUN_0060c2e0(int handle_index)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   handle_index

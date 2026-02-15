@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * __cdecl core_event_cpp_extractParenArg_FUN_004aa6c0(char **cursor,char *out_buf,int max_len)
+; char * __cdecl core_event_cpp_extractParenArg_FUN_004aa6c0(char **cursor,char *out_buf,int max_len)
 ;
 ; Parameters:
 ; char * *         Stack[0x4]:4   cursor

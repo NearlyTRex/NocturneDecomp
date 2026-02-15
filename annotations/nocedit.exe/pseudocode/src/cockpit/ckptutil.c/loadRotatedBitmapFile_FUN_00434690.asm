@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * __cdecl cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_00434690(char *filename,char *buffer,int width,int height,void *optional_param)
+; char * __cdecl cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_00434690(char *filename,char *buffer,int width,int height,void *optional_param)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

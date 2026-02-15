@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_hero_cpp_CHeroPlaceholder_archive_FUN_004f3ef0(CHeroPlaceholder *this_ptr)
+; void __cdecl core_hero_cpp_CHeroPlaceholder_archive_FUN_004f3ef0(CHeroPlaceholder *this_ptr)
 ;
 ; Parameters:
 ; CHeroPlaceholder * Stack[0x4]:4   this_ptr

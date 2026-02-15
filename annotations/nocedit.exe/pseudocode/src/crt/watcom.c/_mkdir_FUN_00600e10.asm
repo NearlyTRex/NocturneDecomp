@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_watcom_c__mkdir_FUN_00600e10(char *path)
+; int __cdecl crt_watcom_c__mkdir_FUN_00600e10(char *path)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   path

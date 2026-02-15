@@ -5,24 +5,24 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6494
-Successful: 5403 (83.2%)
-Failed: 1091
+Successful: 5406 (83.2%)
+Failed: 1088
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           1990
-  undeclared_identifier            983
+  other                           1985
+  undeclared_identifier            975
   incompatible_types               713
-  format_error                     635
-  syntax_error                     122
-  missing_member                    30
+  format_error                     629
+  syntax_error                     114
+  missing_member                    32
   lvalue_required                   26
   type_error                        20
   pointer_precision                  2
   overload_error                     1
 
 ====================================================================================================
-CATEGORY: other (1990 errors)
+CATEGORY: other (1985 errors)
 ====================================================================================================
 
   core_setutil.cpp_C3DSCamera_import3DS_FUN_00585c90
@@ -68,7 +68,7 @@ CATEGORY: other (1990 errors)
   core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0
     Line 19: C-style cast from 'CVector3f *' to 'float' is not allowed...
   core_dcube.cpp_intersectTriangleWithXZCapsule_FUN_00455a30
-    Line 39: C-style cast from 'CVector3f *' to 'float' is not allowed...
+    Line 43: C-style cast from 'CVector3f *' to 'float' is not allowed...
   core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010
     Line 20: C-style cast from 'CVector3f *' to 'float' is not allowed...
   core_fire.cpp_CFireEffect_createStake_FUN_004c7bb0
@@ -86,10 +86,10 @@ CATEGORY: other (1990 errors)
   core_wateract.cpp_CWaterActor_process_FUN_005eb100
     Line 35: C-style cast from 'CWaterActor *' to 'float' is not allowed...
 
-  ... and 389 more errors
+  ... and 388 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (983 errors)
+CATEGORY: undeclared_identifier (975 errors)
 ====================================================================================================
 
   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40
@@ -109,9 +109,9 @@ CATEGORY: undeclared_identifier (983 errors)
   sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0
     Line 138: use of undeclared identifier 'DAT_0067e6c8'...
   sound_mp3.cpp_reorderShortBlockSamples_FUN_00532200
-    Line 71: use of undeclared identifier 'DAT_0067e728'; did you mean 'DAT_0067d728'?...
+    Line 71: use of undeclared identifier 'DAT_0067e728'...
   sound_mp3.cpp_requantizeLayer3Samples_FUN_00531d50
-    Line 46: use of undeclared identifier 'DAT_0067e728'; did you mean 'DAT_0067d728'?...
+    Line 46: use of undeclared identifier 'DAT_0067e728'...
   core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0
     Line 72: use of undeclared identifier 'DAT_00680580'...
   core_msnedit.cpp_CDemonMission_FUN_0053dcf0
@@ -153,7 +153,7 @@ CATEGORY: undeclared_identifier (983 errors)
   core_netgame.cpp_CNetGame_processChatOut_FUN_00541e40
     Line 62: use of undeclared identifier 'DAT_02f98ae0'...
 
-  ... and 345 more errors
+  ... and 341 more errors
 
 ====================================================================================================
 CATEGORY: incompatible_types (713 errors)
@@ -220,10 +220,10 @@ CATEGORY: incompatible_types (713 errors)
   shape_superopt.cpp_CObj_removePolygon_FUN_005d2f50
     Line 26: assigning to 'CPoly *' from incompatible type 'void *'...
 
-  ... and 425 more errors
+  ... and 426 more errors
 
 ====================================================================================================
-CATEGORY: format_error (635 errors)
+CATEGORY: format_error (629 errors)
 ====================================================================================================
 
   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
@@ -247,7 +247,7 @@ CATEGORY: format_error (635 errors)
   core_setutil.cpp_C3DSCamera_importS3D_FUN_00585ff0
     Line 19: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror...
   core_setutil.cpp_C3DSCamera_load_FUN_00585420
-    Line 21: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror...
+    Line 22: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror...
   core_script.cpp_parseBodyPartMask_FUN_00559730
     Line 40: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror...
   engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60
@@ -290,7 +290,7 @@ CATEGORY: format_error (635 errors)
   ... and 143 more errors
 
 ====================================================================================================
-CATEGORY: syntax_error (122 errors)
+CATEGORY: syntax_error (114 errors)
 ====================================================================================================
 
   core_dskybox.cpp_renderSkyDome_FUN_004901f0
@@ -313,10 +313,8 @@ CATEGORY: syntax_error (122 errors)
     Line 117: expected expression...
   core_elephant.cpp_CElephantGun_fire_FUN_004a7160
     Line 120: expected expression...
-  core_emitter.cpp_CEmitter_process_FUN_004a8070
-    Line 197: expected expression...
   core_enemy.cpp_CEnemy_updateVictim_FUN_004a9b00
-    Line 66: expected expression...
+    Line 65: expected expression...
   core_event.cpp_CEventList_evaluateAtom_FUN_004ae140
     Line 1183: expected expression...
   core_fire.cpp_CFireball_process_FUN_004c0b30
@@ -328,7 +326,7 @@ CATEGORY: syntax_error (122 errors)
   core_ghoul.cpp_CGhoul_process_FUN_004e6600
     Line 150: expected expression...
   core_hero.cpp_CHero_FUN_004f2af0
-    Line 44: expected expression...
+    Line 46: expected expression...
   core_inv.cpp_CInventory_addItem_FUN_004fd600
     Line 53: expected expression...
   core_lightgun.cpp_CLightGun_fire_FUN_00505c70
@@ -342,7 +340,7 @@ CATEGORY: syntax_error (122 errors)
   core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0
     Line 27: expected expression...
   core_mobster.cpp_CMobster_FUN_00526d90
-    Line 108: expected expression...
+    Line 107: expected expression...
   core_mobster.cpp_FUN_005250a0
     Line 21: expected expression...
   core_msnedit.cpp_CDemonMission_FUN_0053cc30
@@ -353,11 +351,13 @@ CATEGORY: syntax_error (122 errors)
     Line 53: expected expression...
   core_pendulum.cpp_CPendulum_FUN_005495c0
     Line 51: expected expression...
+  core_platfrm.cpp_CPlatform_FUN_0054df80
+    Line 30: expected expression...
 
-  ... and 47 more errors
+  ... and 42 more errors
 
 ====================================================================================================
-CATEGORY: missing_member (30 errors)
+CATEGORY: missing_member (32 errors)
 ====================================================================================================
 
   wincore_winrun.cpp_calibrateCPUSpeed_FUN_005f2b80
@@ -474,7 +474,7 @@ COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
 Average suspects in successfully compiled functions: 2.13
-Average suspects in failed compilations: 12.07
+Average suspects in failed compilations: 12.09
 
-Functions that compile but have suspect patterns: 1727
+Functions that compile but have suspect patterns: 1721
 (These may have runtime issues even though syntax is valid)

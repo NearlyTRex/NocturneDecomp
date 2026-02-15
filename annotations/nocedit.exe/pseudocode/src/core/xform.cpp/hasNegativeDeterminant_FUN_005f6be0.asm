@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_xform_cpp_hasNegativeDeterminant_FUN_005f6be0(CMatrix3x4f *matrix)
+; int __cdecl core_xform_cpp_hasNegativeDeterminant_FUN_005f6be0(CMatrix3x4f *matrix)
 ;
 ; Parameters:
 ; CMatrix3x4f *    Stack[0x4]:4   matrix

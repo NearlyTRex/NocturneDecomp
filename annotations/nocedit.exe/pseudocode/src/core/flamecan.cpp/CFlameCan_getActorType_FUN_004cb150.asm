@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * __cdecl core_flamecan_cpp_CFlameCan_getActorType_FUN_004cb150(CFlameCan *this_ptr)
+; CDemonActorType * __cdecl core_flamecan_cpp_CFlameCan_getActorType_FUN_004cb150(CFlameCan *this_ptr)
 ;
 ; Parameters:
 ; CFlameCan *      Stack[0x4]:4   this_ptr

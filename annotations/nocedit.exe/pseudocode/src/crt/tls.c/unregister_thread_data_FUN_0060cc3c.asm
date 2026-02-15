@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_tls_c_unregister_thread_data_FUN_0060cc3c(void *threadDataKey)
+; void __cdecl crt_tls_c_unregister_thread_data_FUN_0060cc3c(void *threadDataKey)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   threadDataKey

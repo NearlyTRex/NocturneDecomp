@@ -1,94 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 14,
-        "line": 47,
-        "message": "type 'CEmitter_ptr_584' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 48,
-        "message": "type 'CEmitter_ptr_584' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 49,
-        "message": "type 'CEmitter_ptr_584' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 50,
-        "message": "type 'CEmitter_ptr_584' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 58,
-        "message": "type 'CEmitter_ptr_584' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 59,
-        "message": "type 'CEmitter_ptr_584' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 60,
-        "message": "type 'CEmitter_ptr_584' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 61,
-        "message": "type 'CEmitter_ptr_584' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 70,
-        "message": "type 'CEmitter_ptr_584' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 71,
-        "message": "type 'CEmitter_ptr_584' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 72,
-        "message": "type 'CEmitter_ptr_584' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 73,
-        "message": "type 'CEmitter_ptr_584' does not provide a subscript operator"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 280,
+    "complexity_score": 301,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 10,
-    "pseudocode_lines": 65,
-    "suspect_count": 21,
+    "pseudocode_lines": 56,
+    "suspect_count": 24,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 148
+    "total_lines": 139
   },
   "cross_references": [
     {
@@ -298,98 +225,119 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 44,
+      "line": 40,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->emit_timer = 0.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 41,
       "match": "ADJ",
       "text": "ADJ(this_ptr_00)->emit_period = 0.1;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 45,
+      "line": 42,
       "match": "ADJ",
       "text": "ADJ(this_ptr_00)->emitter_state = 1;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
+      "line": 43,
+      "match": "ADJ",
+      "text": "(ADJ(this_ptr_00)->laser_color).r = 0xff;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 44,
+      "match": "ADJ",
+      "text": "(ADJ(this_ptr_00)->laser_color).g = 0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 45,
+      "match": "ADJ",
+      "text": "(ADJ(this_ptr_00)->laser_color).b = 0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 46,
-      "match": "ADJ",
-      "text": "ADJ(this_ptr_00)->laser_r = 0xff;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 47,
-      "match": "ADJ",
-      "text": "ADJ(this_ptr_00)->laser_g = 0;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 48,
-      "match": "ADJ",
-      "text": "ADJ(this_ptr_00)->laser_b = 0;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 49,
       "match": "ADJ",
       "text": "ADJ(this_ptr_00)->laser_type = 1;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 50,
+      "line": 47,
       "match": "ADJ",
       "text": "ADJ(this_ptr_00)->max_emit_time = 0.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 57,
+      "line": 48,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->state_timer = 0.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 51,
       "match": "ADJ",
       "text": "ADJ(this_ptr_00)->rock_speed = 20.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 58,
+      "line": 52,
       "match": "ADJ",
       "text": "ADJ(this_ptr_00)->periodic_flag = 0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 59,
+      "line": 53,
       "match": "ADJ",
       "text": "ADJ(this_ptr_00)->max_wait_time = 0.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 60,
+      "line": 54,
       "match": "ADJ",
-      "text": "ADJ(this_ptr_00)->dest_actor = 0;",
+      "text": "ADJ(this_ptr_00)->dest_actor = (CDemonActor *)0x0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
+      "line": 55,
       "match": "ADJ",
       "text": "ADJ(this_ptr_00)->wav_name[0] = '\\0';",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 62,
+      "line": 56,
       "match": "ADJ",
       "text": "ADJ(this_ptr_00)->sfx_type = 1;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 67,
+      "line": 57,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->was_active = 0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 58,
       "match": "ADJ",
       "text": "return ADJ(this_ptr_00);",
       "type": "decompiler_intrinsic"

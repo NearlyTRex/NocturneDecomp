@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack void __watcallStack crt_locale_c_wchar_to_bytes_FUN_00605a20(wchar_t character,char *output_buffer)
+; void __watcallStack crt_locale_c_wchar_to_bytes_FUN_00605a20(wchar_t character,char *output_buffer)
 ;
 ; Parameters:
 ; wchar_t          Stack[0x4]:2   character

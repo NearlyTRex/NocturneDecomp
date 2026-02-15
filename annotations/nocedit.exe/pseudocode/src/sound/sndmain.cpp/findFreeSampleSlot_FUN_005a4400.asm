@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CSfxSample * __cdecl sound_sndmain_cpp_findFreeSampleSlot_FUN_005a4400(void)
+; CSfxSample * __cdecl sound_sndmain_cpp_findFreeSampleSlot_FUN_005a4400(void)
 ;
 ;
 ; Referenced Globals:

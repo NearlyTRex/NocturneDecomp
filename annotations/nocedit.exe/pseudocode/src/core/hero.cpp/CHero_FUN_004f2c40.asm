@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_hero_cpp_CHero_FUN_004f2c40(CHero *this_ptr)
+; int __cdecl core_hero_cpp_CHero_FUN_004f2c40(CHero *this_ptr)
 ;
 ; Parameters:
 ; CHero *          Stack[0x4]:4   this_ptr
@@ -32,8 +32,8 @@
 ;   CEventList* g_CEventListPtr = 02d05310
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CEventList g_CEventListInstance
-;   undefined4 g_CDemonSetInstance.damage_listener_count
-;   undefined4 g_CDemonSetInstance.damage_listeners
+;   undefined4 g_CDemonSetInstance.character_count
+;   undefined4 g_CDemonSetInstance.characters[0]
 ;   undefined4 DAT_03263318
 ;
 ; Called Functions:
@@ -73,11 +73,11 @@ section .text
     MOV dword ptr [ESP + 0x3c],EDI      ; 004f2c78
     MOV EAX,[0x006810c8]                ; 004f2c7c | g_CDemonSetPtr
         ;   Label: LAB_004f2c7c
-    CMP EDI,dword ptr [EAX + 0x14f098]  ; 004f2c81 | g_CDemonSetInstance.damage_listener_count
+    CMP EDI,dword ptr [EAX + 0x14f098]  ; 004f2c81 | g_CDemonSetInstance.character_count
     JGE 0x004f2d5e                      ; 004f2c87
         ;   XREF to: 004f2d5e (CONDITIONAL_JUMP)  ; LAB_004f2d5e
     ADD EAX,dword ptr [ESP + 0x3c]      ; 004f2c8d
-    MOV EBX,dword ptr [EAX + 0x14f09c]  ; 004f2c91 | g_CDemonSetInstance.damage_listeners | DAT_03263318
+    MOV EBX,dword ptr [EAX + 0x14f09c]  ; 004f2c91 | g_CDemonSetInstance.characters[0] | DAT_03263318
     CMP byte ptr [EBX + 0x2534],0x0     ; 004f2c97
     JZ 0x004f2ca5                       ; 004f2c9e
         ;   XREF to: 004f2ca5 (CONDITIONAL_JUMP)  ; LAB_004f2ca5

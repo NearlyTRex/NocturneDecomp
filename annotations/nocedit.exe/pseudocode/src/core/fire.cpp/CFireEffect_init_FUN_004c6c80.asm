@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_fire_cpp_CFireEffect_init_FUN_004c6c80(CFireEffect *this_ptr)
+; void __cdecl core_fire_cpp_CFireEffect_init_FUN_004c6c80(CFireEffect *this_ptr)
 ;
 ; Parameters:
 ; CFireEffect *    Stack[0x4]:4   this_ptr
@@ -108,7 +108,7 @@ section .text
     XOR EDX,EDX                         ; 004c6d3a
     MOV EAX,0x2d62ea8                   ; 004c6d3c | g_FireballPool
     MOV dword ptr [0x02d62ea4],EDX      ; 004c6d41 | g_BulletTrailActiveListHead
-    LEA EBX,[EAX + 0x2700]              ; 004c6d47 | g_CFireEffectFireballsEnd
+    LEA EBX,[EAX + 0x2700]              ; 004c6d47 | INT_02d655a8
     ADD EAX,0x9c                        ; 004c6d4d
         ;   Label: LAB_004c6d4d
     MOV dword ptr [EAX + 0xffffff7c],0x0 ; 004c6d52 | DAT_02d62ec0 | DAT_02d62f5c
@@ -117,7 +117,7 @@ section .text
         ;   XREF to: 004c6d4d (CONDITIONAL_JUMP)  ; LAB_004c6d4d
     XOR ECX,ECX                         ; 004c6d60
     MOV EAX,0x2d655ac                   ; 004c6d62 | g_RockPool
-    MOV dword ptr [0x02d655a8],ECX      ; 004c6d67 | g_CFireEffectFireballsEnd
+    MOV dword ptr [0x02d655a8],ECX      ; 004c6d67 | INT_02d655a8
     LEA EBX,[EAX + 0x1200]              ; 004c6d6d | g_CFireEffectRocksEnd
     ADD EAX,0x48                        ; 004c6d73 | DAT_02d6563c
         ;   Label: LAB_004c6d73
@@ -141,7 +141,7 @@ section .text
     XOR ESI,ESI                         ; 004c6da4
     MOV EBX,0x2d678d0                   ; 004c6da6 | g_TossPool
     MOV dword ptr [0x02d678cc],ESI      ; 004c6dab | g_ExplosionActiveListHead
-    LEA ESI,[EBX + 0x4dd0]              ; 004c6db1 | g_TossActiveListHead
+    LEA ESI,[EBX + 0x4dd0]              ; 004c6db1 | INT_02d6c6a0
     PUSH EBX                            ; 004c6db7 | g_TossPool | DAT_02d67cb4
         ;   Label: LAB_004c6db7
     CALL core_fire.cpp_CToss_reset_FUN_004c3ed0 ; 004c6db8
@@ -154,7 +154,7 @@ section .text
     MOV EBX,0x2d6c6a4                   ; 004c6dca | g_CraterPool
     XOR EDI,EDI                         ; 004c6dcf
     LEA ESI,[EBX + 0x8c0]               ; 004c6dd1 | g_CraterActiveListHead
-    MOV dword ptr [0x02d6c6a0],EDI      ; 004c6dd7 | g_TossActiveListHead
+    MOV dword ptr [0x02d6c6a0],EDI      ; 004c6dd7 | INT_02d6c6a0
     POP EDI                             ; 004c6ddd
     PUSH EBX                            ; 004c6dde | g_CraterPool | DAT_02d6c714
         ;   Label: LAB_004c6dde

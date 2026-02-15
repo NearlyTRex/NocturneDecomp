@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActor * __cdecl core_event_cpp_CEventList_getActorByVarName_FUN_004b0b80(CEventList *this_ptr,char *name)
+; CDemonActor * __cdecl core_event_cpp_CEventList_getActorByVarName_FUN_004b0b80(CEventList *this_ptr,char *name)
 ;
 ; Parameters:
 ; CEventList *     Stack[0x4]:4   this_ptr
@@ -14,8 +14,8 @@
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.actor_list_ptr
-;   undefined4 g_CDemonSetInstance.actor_list_data[0]
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_findActorVariable_FUN_004b0bf0
@@ -50,7 +50,7 @@ section .text
     XOR EBX,EBX                         ; 004b0bad
     MOV EAX,[0x006810c8]                ; 004b0baf | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_004b0baf
-    CMP ESI,dword ptr [EAX + 0x14d154]  ; 004b0bb4 | g_CDemonSetInstance.actor_list_ptr
+    CMP ESI,dword ptr [EAX + 0x14d154]  ; 004b0bb4 | g_CDemonSetInstance.actor_count
     JL 0x004b0bc9                       ; 004b0bba
         ;   XREF to: 004b0bc9 (CONDITIONAL_JUMP)  ; LAB_004b0bc9
     XOR EAX,EAX                         ; 004b0bbc
@@ -67,7 +67,7 @@ section .text
         ;   XREF to: 004b0baf (UNCONDITIONAL_JUMP)  ; LAB_004b0baf
     PUSH EDI                            ; 004b0bc9
         ;   Label: LAB_004b0bc9
-    MOV EBP,dword ptr [EBX + EAX*0x1 + 0x14d158] ; 004b0bca | g_CDemonSetInstance.actor_list_data[0]
+    MOV EBP,dword ptr [EBX + EAX*0x1 + 0x14d158] ; 004b0bca | g_CDemonSetInstance.actors[0]
     PUSH EBP                            ; 004b0bd1
     CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004b0bd2
         ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
@@ -76,7 +76,7 @@ section .text
     JNZ 0x004b0bc3                      ; 004b0bdc
         ;   XREF to: 004b0bc3 (CONDITIONAL_JUMP)  ; LAB_004b0bc3
     MOV EAX,[0x006810c8]                ; 004b0bde | g_CDemonSetPtr
-    MOV EAX,dword ptr [EBX + EAX*0x1 + 0x14d158] ; 004b0be3 | g_CDemonSetInstance.actor_list_data[0]
+    MOV EAX,dword ptr [EBX + EAX*0x1 + 0x14d158] ; 004b0be3 | g_CDemonSetInstance.actors[0]
     POP EBP                             ; 004b0bea
     POP EDI                             ; 004b0beb
     POP ESI                             ; 004b0bec

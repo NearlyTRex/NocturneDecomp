@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_slew_cpp_CSlew_free_FUN_005a20a0(void)
+; void __cdecl core_slew_cpp_CSlew_free_FUN_005a20a0(void)
 ;
 ;
 ; XREF[3]:

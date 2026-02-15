@@ -49,7 +49,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemo
   int local_14;
   
   bVar4 = 0;
-  if (this_ptr->unk2 == 0) {
+  if (this_ptr->volumetric_enabled == 0) {
     return;
   }
   world_position = &(this_ptr->base).base.position;

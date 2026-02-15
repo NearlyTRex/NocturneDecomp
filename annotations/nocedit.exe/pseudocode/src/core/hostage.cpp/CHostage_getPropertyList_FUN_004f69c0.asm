@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_hostage_cpp_CHostage_getPropertyList_FUN_004f69c0(CHostage *this_ptr,CActorPropertyList *property_list)
+; void __cdecl core_hostage_cpp_CHostage_getPropertyList_FUN_004f69c0(CHostage *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CHostage *       Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_armour_cpp_staticInit_FUN_00412130(void)
+; void __cdecl core_armour_cpp_staticInit_FUN_00412130(void)
 ;
 ;
 ; Referenced Globals:

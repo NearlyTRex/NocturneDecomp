@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_dmodel_cpp_copyFile_FUN_0047c930(char *source_filename,char *destination_filename,int show_error_if_missing)
+; int __cdecl core_dmodel_cpp_copyFile_FUN_0047c930(char *source_filename,char *destination_filename,int show_error_if_missing)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   source_filename

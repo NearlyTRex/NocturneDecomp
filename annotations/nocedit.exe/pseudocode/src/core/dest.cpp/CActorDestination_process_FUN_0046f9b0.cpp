@@ -25,8 +25,8 @@ void __cdecl core_dest_cpp_CActorDestination_process_FUN_0046f9b0(CActorDestinat
   
   if ((this_ptr->unk4 != 0) && (this_ptr->dest_actor == (CDemonActor *)0x0)) {
     iVar3 = 0;
-    for (iVar4 = 0; iVar4 < (int)g_CDemonSetPtr->actor_list_ptr; iVar4 = iVar4 + 1) {
-      iVar2 = *(int *)(g_CDemonSetPtr->actor_list_data + iVar3);
+    for (iVar4 = 0; iVar4 < g_CDemonSetPtr->actor_count; iVar4 = iVar4 + 1) {
+      iVar2 = *(int *)((int)g_CDemonSetPtr->actors + iVar3);
       local_2c = (this_ptr->base).location.position.x - *(float *)(iVar2 + 0x20);
       local_28 = (this_ptr->base).location.position.y - *(float *)(iVar2 + 0x24);
       local_24 = (this_ptr->base).location.position.z - *(float *)(iVar2 + 0x28);

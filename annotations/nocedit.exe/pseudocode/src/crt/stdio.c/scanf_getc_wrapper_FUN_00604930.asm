@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_stdio_c_scanf_getc_wrapper_FUN_00604930(scanf_state_t *state)
+; int __cdecl crt_stdio_c_scanf_getc_wrapper_FUN_00604930(scanf_state_t *state)
 ;
 ; Parameters:
 ; scanf_state_t *  Stack[0x4]:4   state

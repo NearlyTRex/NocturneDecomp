@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_emitter_cpp_CEmitter_getPropertyList_FUN_004a8db0(CEmitter *this_ptr,CActorPropertyList *property_list)
+; void __cdecl core_emitter_cpp_CEmitter_getPropertyList_FUN_004a8db0(CEmitter *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CEmitter *       Stack[0x4]:4   this_ptr

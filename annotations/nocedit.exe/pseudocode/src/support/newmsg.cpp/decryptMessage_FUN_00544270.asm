@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * __cdecl support_newmsg_cpp_decryptMessage_FUN_00544270(char *encrypted_msg)
+; char * __cdecl support_newmsg_cpp_decryptMessage_FUN_00544270(char *encrypted_msg)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   encrypted_msg

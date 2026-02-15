@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_bugs_cpp_CBugs_hasCollision_FUN_00425610(CBugs *this_ptr,SCollisionInfo *collision_info)
+; int __cdecl core_bugs_cpp_CBugs_hasCollision_FUN_00425610(CBugs *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CBugs *          Stack[0x4]:4   this_ptr

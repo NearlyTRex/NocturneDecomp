@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CMotionList * __cdecl core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0(CMotionController *this_ptr)
+; CMotionList * __cdecl core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0(CMotionController *this_ptr)
 ;
 ; Parameters:
 ; CMotionController * Stack[0x4]:4   this_ptr

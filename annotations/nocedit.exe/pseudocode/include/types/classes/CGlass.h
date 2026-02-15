@@ -5,6 +5,7 @@
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CMirror.h"
 #include "types/classes/CVector3f.h"
+#include "types/classes/CVector3i.h"
 #include "types/structs/SMRGLPrimitiveQuad.h"
 #include "types/structs/SMRGLTextureBasic.h"
 
@@ -23,12 +24,14 @@ typedef struct CGlass {
     int background_flag; // 0x370
     SMRGLTextureBasic broken_texture; // 0x374
     CVector3f broken_vertices[25]; // 0x38c
-    char unk1[500]; // 0x4b8
+    CVector3i render_vertices[25]; // 0x4b8
+    int texture_u[25]; // 0x5e4
+    int texture_v[25]; // 0x648
     SMRGLPrimitiveQuad broken_quads[16]; // 0x6ac
-    int unk2; // 0xb2c
-    int unk3; // 0xb30
+    int grid_cols; // 0xb2c
+    int grid_rows; // 0xb30
     int broken_vertex_count; // 0xb34
     int broken_polygon_count; // 0xb38
-    int unk4; // 0xb3c
+    int pending_background_render; // 0xb3c
 } CGlass;
 

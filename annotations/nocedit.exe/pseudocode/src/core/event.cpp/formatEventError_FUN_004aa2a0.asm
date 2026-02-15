@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_event_cpp_formatEventError_FUN_004aa2a0(char *format,...)
+; int __cdecl core_event_cpp_formatEventError_FUN_004aa2a0(char *format,...)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   format

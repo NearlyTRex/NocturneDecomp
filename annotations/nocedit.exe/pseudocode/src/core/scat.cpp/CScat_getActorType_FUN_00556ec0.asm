@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * __cdecl core_scat_cpp_CScat_getActorType_FUN_00556ec0(CScat *this_ptr)
+; CDemonActorType * __cdecl core_scat_cpp_CScat_getActorType_FUN_00556ec0(CScat *this_ptr)
 ;
 ; Parameters:
 ; CScat *          Stack[0x4]:4   this_ptr

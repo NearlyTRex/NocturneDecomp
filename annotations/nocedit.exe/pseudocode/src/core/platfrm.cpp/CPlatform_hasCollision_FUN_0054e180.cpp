@@ -15,6 +15,6 @@ int __cdecl core_platfrm_cpp_CPlatform_hasCollision_FUN_0054e180(CPlatform *this
   if (pCVar1->collision_triangle_list == (CDemonTriangle *)0x0) {
     return 1;
   }
-  collision_info->model = &this_ptr->model;
+  collision_info->keyframed_model = &this_ptr->model;
   return 1;
 }

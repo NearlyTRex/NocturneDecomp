@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack void __watcallStack crt_time_c_formatTwoDigits_FUN_00601640(int number,int position,char *buffer)
+; void __watcallStack crt_time_c_formatTwoDigits_FUN_00601640(int number,int position,char *buffer)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   number

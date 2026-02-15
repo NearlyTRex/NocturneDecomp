@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_mimic_cpp_CMimic_onActorDeleted_FUN_00520da0(CMimic *this_ptr,CDemonActor *deleted_actor)
+; void __cdecl core_mimic_cpp_CMimic_onActorDeleted_FUN_00520da0(CMimic *this_ptr,CDemonActor *deleted_actor)
 ;
 ; Parameters:
 ; CMimic *         Stack[0x4]:4   this_ptr

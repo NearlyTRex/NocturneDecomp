@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_getWidth_FUN_0054c7a0(CPackedBitmap *this_ptr)
+; int __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_getWidth_FUN_0054c7a0(CPackedBitmap *this_ptr)
 ;
 ; Parameters:
 ; CPackedBitmap *  Stack[0x4]:4   this_ptr

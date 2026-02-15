@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dlight_cpp_drawGrayscalePixel_FUN_00473360(int x,int y,int grayscale_value)
+; void __cdecl core_dlight_cpp_drawGrayscalePixel_FUN_00473360(int x,int y,int grayscale_value)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   x

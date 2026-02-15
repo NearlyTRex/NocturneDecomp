@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBoneGuy * __cdecl core_boneguy_cpp_factoryFunc_FUN_0041b820(void)
+; CBoneGuy * __cdecl core_boneguy_cpp_factoryFunc_FUN_0041b820(void)
 ;
 ;
 ; XREF[1]:

@@ -17,11 +17,11 @@ void __cdecl core_set_cpp_CDemonSet_FUN_00570ec0(CDemonSet *this_ptr)
   pCVar2 = this_ptr;
   if (0 < this_ptr->camera_count) {
     do {
-      if (in_stack_00000008 == pCVar2->cameras[0].unk2) {
+      if (in_stack_00000008 == pCVar2->cameras[0].camera_group) {
         core_set_cpp_CDemonSet_FUN_00570ea0(this_ptr);
       }
       iVar1 = iVar1 + 1;
-      pCVar2 = (CDemonSet *)&pCVar2->cameras[0].unk4;
+      pCVar2 = (CDemonSet *)&pCVar2->cameras[0].enabled;
     } while (iVar1 < this_ptr->camera_count);
   }
   return;

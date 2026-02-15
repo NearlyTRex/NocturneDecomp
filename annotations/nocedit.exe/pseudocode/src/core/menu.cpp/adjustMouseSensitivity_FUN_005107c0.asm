@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_menu_cpp_adjustMouseSensitivity_FUN_005107c0(int *sensitivity_value_ptr,char *window_title)
+; void __cdecl core_menu_cpp_adjustMouseSensitivity_FUN_005107c0(int *sensitivity_value_ptr,char *window_title)
 ;
 ; Parameters:
 ; int *            Stack[0x4]:4   sensitivity_value_ptr
@@ -32,7 +32,7 @@
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_fillRectColor_FUN_00403170
 ;   engine_2d.c_fillRectWithBorder_FUN_00403200
-;   engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30
+;   engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004cdf30
 ;   engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0
 ;   shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_004a0890
 ;   shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80
@@ -213,8 +213,8 @@ section .text
     PUSH EDX                            ; 00510996
     MOV ECX,dword ptr [0x02cf1cd0]      ; 00510997 | g_EditorFont
     PUSH ECX                            ; 0051099d
-    CALL engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30 ; 0051099e
-        ;   XREF to: 004cdf30 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30(CBitFont * this_ptr, int left_x, int right_x, int y, ...)
+    CALL engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004cdf30 ; 0051099e
+        ;   XREF to: 004cdf30 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004cdf30(CBitFont * this_ptr, int left_x, int right_x, int y, ...)
     ADD ESP,0x24                        ; 005109a3
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 005109a6
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

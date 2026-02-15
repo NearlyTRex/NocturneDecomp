@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_io_c_write_FUN_006084ec(int fd,void *buffer,SIZE_T count)
+; int __cdecl crt_io_c_write_FUN_006084ec(int fd,void *buffer,SIZE_T count)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   fd

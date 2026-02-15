@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_batman_cpp_CBatman_addFilesToExtract_FUN_00417d30(CBatman *this_ptr,_FILE *file_handle)
+; void __cdecl core_batman_cpp_CBatman_addFilesToExtract_FUN_00417d30(CBatman *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CBatman *        Stack[0x4]:4   this_ptr

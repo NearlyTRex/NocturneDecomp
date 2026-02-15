@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_3d_c_setBlendMode_FUN_00406dd0(int blend_mode)
+; void __cdecl engine_3d_c_setBlendMode_FUN_00406dd0(int blend_mode)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   blend_mode

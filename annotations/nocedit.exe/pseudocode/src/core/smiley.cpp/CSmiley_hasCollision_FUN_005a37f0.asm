@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_smiley_cpp_CSmiley_hasCollision_FUN_005a37f0(CSmiley *this_ptr,SCollisionInfo *collision_info)
+; void __cdecl core_smiley_cpp_CSmiley_hasCollision_FUN_005a37f0(CSmiley *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CSmiley *        Stack[0x4]:4   this_ptr

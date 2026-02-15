@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_ammobox_cpp_CAmmoBox_propertyActionFunc_FUN_00411ab0(CAmmoBox *this_ptr,CActorProperty *property)
+; int __cdecl core_ammobox_cpp_CAmmoBox_propertyActionFunc_FUN_00411ab0(CAmmoBox *this_ptr,CActorProperty *property)
 ;
 ; Parameters:
 ; CAmmoBox *       Stack[0x4]:4   this_ptr

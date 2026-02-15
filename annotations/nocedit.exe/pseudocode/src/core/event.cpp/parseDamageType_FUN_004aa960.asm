@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_event_cpp_parseDamageType_FUN_004aa960(char *type_name,int *out_type_id)
+; int __cdecl core_event_cpp_parseDamageType_FUN_004aa960(char *type_name,int *out_type_id)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   type_name

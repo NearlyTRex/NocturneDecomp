@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_stone_cpp_staticInit_FUN_005baca0(void)
+; void __cdecl core_stone_cpp_staticInit_FUN_005baca0(void)
 ;
 ;
 ; Referenced Globals:

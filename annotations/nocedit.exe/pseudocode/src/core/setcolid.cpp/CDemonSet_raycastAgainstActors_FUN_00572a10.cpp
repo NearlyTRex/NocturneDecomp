@@ -11,7 +11,7 @@ float __cdecl core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00572a10(CDem
 {
   CDemonActor *pCVar1;
   float fVar2;
-  CKeyFramedModelInstance *pCVar3;
+  CDeformableModelInstance *pCVar3;
   int iVar4;
   SCollisionInfo local_cc;
   CVector3f CStack_a4;
@@ -34,8 +34,8 @@ float __cdecl core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00572a10(CDem
   CVector3f *local_18;
   float fStack_14;
   
-  this_ptr->unk1 = -1;
-  this_ptr->unk2 = -1;
+  this_ptr->collision_part_index = -1;
+  this_ptr->collision_triangle_index = -1;
   this_ptr->collision_actor = (CDemonActor *)0x0;
   if (-1 < this_ptr->ignore_list_count) {
     if (max_t <= 0.0) {
@@ -70,21 +70,21 @@ float __cdecl core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00572a10(CDem
     core_box_cpp_CBoundingBox3D_expand_FUN_00420240(&local_88,&local_4c);
     core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&local_cc);
     local_cc.ray_type = this_ptr->ray_type;
-    local_cc.unk1 = this_ptr->unk8;
-    local_cc.unk2 = this_ptr->unk9;
-    local_cc.unk3 = this_ptr->unk10;
-    local_cc.unk4 = this_ptr->unk11;
+    local_cc.laser_type = this_ptr->laser_type;
+    local_cc.laser_color.r = (this_ptr->laser_color).r;
+    local_cc.laser_color.g = (this_ptr->laser_color).g;
+    local_cc.laser_color.b = (this_ptr->laser_color).b;
     local_1c = 0;
-    if (0 < *(int *)(this_ptr->unk4 + 0x7d08)) {
+    if (0 < this_ptr->collidable_actor_count) {
       local_18 = &this_ptr->collision_normal;
       local_20 = this_ptr;
       do {
-        pCVar1 = *(CDemonActor **)(local_20->unk4 + 0x7d0c);
-        pCVar3 = (CKeyFramedModelInstance *)
+        pCVar1 = local_20->collidable_actors[0];
+        pCVar3 = (CDeformableModelInstance *)
                  core_setcolid_cpp_CDemonSet_isActorIgnored_FUN_00572e20(this_ptr,pCVar1);
-        if (pCVar3 == (CKeyFramedModelInstance *)0x0) {
-          local_cc.result_ptr = pCVar3;
-          local_cc.model = pCVar3;
+        if (pCVar3 == (CDeformableModelInstance *)0x0) {
+          local_cc.deformable_model = pCVar3;
+          local_cc.keyframed_model = (CKeyFramedModelInstance *)pCVar3;
           iVar4 = (*((pCVar1->vtable)._ub)->hasCollision)(pCVar1,&local_cc);
           if (iVar4 != 0) {
             fStack_14 = core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470
@@ -98,8 +98,8 @@ float __cdecl core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00572a10(CDem
                 local_18->z = CStack_a4.z;
               }
               this_ptr->collision_actor = pCVar1;
-              this_ptr->unk1 = iStack_98;
-              this_ptr->unk2 = iStack_8c;
+              this_ptr->collision_part_index = iStack_98;
+              this_ptr->collision_triangle_index = iStack_8c;
               fStack_40 = ray_target->x - ray_origin->x;
               fStack_3c = ray_target->y - ray_origin->y;
               CStack_58.x = fStack_40 * fVar2;
@@ -132,7 +132,7 @@ float __cdecl core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00572a10(CDem
         }
         local_20 = (CDemonSet *)local_20->cameras;
         local_1c = local_1c + 1;
-      } while (local_1c < *(int *)(this_ptr->unk4 + 0x7d08));
+      } while (local_1c < this_ptr->collidable_actor_count);
     }
     pCVar1 = this_ptr->collision_actor;
     if (pCVar1 != (CDemonActor *)0x0) {

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_texture_cpp_CTextureCache_reset_FUN_005dcb20(CTextureCache *this_ptr)
+; void __cdecl engine_texture_cpp_CTextureCache_reset_FUN_005dcb20(CTextureCache *this_ptr)
 ;
 ; Parameters:
 ; CTextureCache *  Stack[0x4]:4   this_ptr

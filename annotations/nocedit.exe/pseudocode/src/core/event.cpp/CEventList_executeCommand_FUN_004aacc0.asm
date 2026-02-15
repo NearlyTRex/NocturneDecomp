@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_event_cpp_CEventList_executeCommand_FUN_004aacc0(CEventList *this_ptr,char *command_buffer)
+; int __cdecl core_event_cpp_CEventList_executeCommand_FUN_004aacc0(CEventList *this_ptr,char *command_buffer)
 ;
 ; Parameters:
 ; CEventList *     Stack[0x4]:4   this_ptr

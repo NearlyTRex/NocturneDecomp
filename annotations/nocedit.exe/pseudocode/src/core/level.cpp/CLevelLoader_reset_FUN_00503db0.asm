@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_level_cpp_CLevelLoader_reset_FUN_00503db0(CLevelLoader *this_ptr)
+; void __cdecl core_level_cpp_CLevelLoader_reset_FUN_00503db0(CLevelLoader *this_ptr)
 ;
 ; Parameters:
 ; CLevelLoader *   Stack[0x4]:4   this_ptr

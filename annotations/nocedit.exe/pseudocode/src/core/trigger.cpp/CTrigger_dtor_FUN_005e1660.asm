@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CTrigger * __cdecl core_trigger_cpp_CTrigger_dtor_FUN_005e1660(CTrigger *this_ptr,uint flags)
+; CTrigger * __cdecl core_trigger_cpp_CTrigger_dtor_FUN_005e1660(CTrigger *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CTrigger *       Stack[0x4]:4   this_ptr

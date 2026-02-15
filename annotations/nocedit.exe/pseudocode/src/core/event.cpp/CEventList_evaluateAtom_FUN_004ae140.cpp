@@ -1176,9 +1176,9 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
                               if (local_b4 != g_ActorNameSentinel) {
                                 local_30 = &local_b4->location;
                                 local_c0 = 0;
-                                for (iVar7 = 0; iVar7 < *(int *)(g_CDemonSetPtr->unk4 + 0x1f3c);
+                                for (iVar7 = 0; iVar7 < g_CDemonSetPtr->enemy_count;
                                     iVar7 = iVar7 + 1) {
-                                  iVar8 = *(int *)(g_CDemonSetPtr->unk4 + local_c0 + 8000);
+                                  iVar8 = *(int *)((int)g_CDemonSetPtr->enemies + local_c0);
                                   if ((((local_b4 == *(CDemonActor **)(iVar8 + 0xbe3c)) &&
                                        (iVar9 = (**(code **)(*(int *)(iVar8 + 0x154) + 0x120))
                                                           (iVar8), iVar9 < 1)) &&
@@ -1274,7 +1274,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
                               *parse_position = *parse_position + local_1c;
                             }
                             else {
-                              local_e0 = (uint)(pCVar10[0x179].unk6 == 2);
+                              local_e0 = (uint)(pCVar10[0x179].collision_disabled == 2);
                               *parse_position = *parse_position + local_1c;
                             }
                           }

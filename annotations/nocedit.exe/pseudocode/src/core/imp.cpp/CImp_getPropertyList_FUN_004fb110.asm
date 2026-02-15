@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_imp_cpp_CImp_getPropertyList_FUN_004fb110(CImp *this_ptr,CActorPropertyList *property_list)
+; void __cdecl core_imp_cpp_CImp_getPropertyList_FUN_004fb110(CImp *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CImp *           Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * __cdecl core_ladder_cpp_CLadder_getActorType_FUN_00502530(CLadder *this_ptr)
+; CDemonActorType * __cdecl core_ladder_cpp_CLadder_getActorType_FUN_00502530(CLadder *this_ptr)
 ;
 ; Parameters:
 ; CLadder *        Stack[0x4]:4   this_ptr

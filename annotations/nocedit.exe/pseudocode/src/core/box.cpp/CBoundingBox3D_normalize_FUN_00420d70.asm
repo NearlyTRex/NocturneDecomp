@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_box_cpp_CBoundingBox3D_normalize_FUN_00420d70(CBoundingBox3D *this_ptr)
+; void __cdecl core_box_cpp_CBoundingBox3D_normalize_FUN_00420d70(CBoundingBox3D *this_ptr)
 ;
 ; Parameters:
 ; CBoundingBox3D * Stack[0x4]:4   this_ptr

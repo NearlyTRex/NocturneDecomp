@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_ini_cpp_CIniFile_init_FUN_004fbaa0(char *dest,char *source)
+; void __cdecl engine_ini_cpp_CIniFile_init_FUN_004fbaa0(char *dest,char *source)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   dest

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl uint __cdecl core_script_cpp_CScript_computeChecksum_FUN_00560d80(CScript *this_ptr)
+; uint __cdecl core_script_cpp_CScript_computeChecksum_FUN_00560d80(CScript *this_ptr)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr

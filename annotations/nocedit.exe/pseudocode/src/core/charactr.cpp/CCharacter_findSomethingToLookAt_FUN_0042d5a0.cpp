@@ -56,8 +56,8 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 (&this_ptr->base,&CStack_5c,&CStack_a4);
       iStack_18 = 0;
-      for (iVar1 = 0; iVar1 < g_CDemonSetPtr->damage_listener_count; iVar1 = iVar1 + 1) {
-        pCVar4 = *(CCharacter **)(g_CDemonSetPtr->unk4 + iStack_18 + -4);
+      for (iVar1 = 0; iVar1 < g_CDemonSetPtr->character_count; iVar1 = iVar1 + 1) {
+        pCVar4 = *(CCharacter **)((int)g_CDemonSetPtr->characters + iStack_18);
         if ((pCVar4 != this_ptr) &&
            (iVar2 = (*((pCVar4->base).vtable._ub)->shouldIgnoreForTargeting)(&pCVar4->base),
            iVar2 == 0)) {

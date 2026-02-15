@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_platfrm_cpp_CPlatform_addFilesToExtract_FUN_0054f2a0(CPlatform *this_ptr,_FILE *file_handle)
+; void __cdecl core_platfrm_cpp_CPlatform_addFilesToExtract_FUN_0054f2a0(CPlatform *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CPlatform *      Stack[0x4]:4   this_ptr

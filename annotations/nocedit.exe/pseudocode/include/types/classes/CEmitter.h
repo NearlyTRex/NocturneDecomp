@@ -2,7 +2,9 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CColor3i.h"
 #include "types/classes/CDemonActor.h"
+#include "types/classes/CDemonGlobe.h"
 #include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CVector3f.h"
 
@@ -17,19 +19,20 @@ typedef struct CEmitter {
     char event_off[100]; // 0x1d0
     float max_emit_time; // 0x234
     int laser_type; // 0x238
-    int laser_r; // 0x23c
-    int laser_g; // 0x240
-    int laser_b; // 0x244
+    CColor3i laser_color; // 0x23c
     CKeyFramedModelInstance model; // 0x248
     float rock_speed; // 0x3c4
     int periodic_flag; // 0x3c8
     float max_wait_time; // 0x3cc
-    int dest_actor; // 0x3d0
+    struct CDemonActor* dest_actor; // 0x3d0
     char wav_name[100]; // 0x3d4
     uint sfx_handle; // 0x438
     int sfx_type; // 0x43c
-    char unk5[4]; // 0x440
+    float emit_timer; // 0x440
     float emit_period; // 0x444
-    char unk6[76]; // 0x448
+    float state_timer; // 0x448
+    CDemonGlobe globe; // 0x44c
+    int was_active; // 0x48c
+    int prev_emitter_state; // 0x490
 } CEmitter;
 

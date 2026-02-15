@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_2d_c_buildColorLookupTable_FUN_00402870(void)
+; void __cdecl engine_2d_c_buildColorLookupTable_FUN_00402870(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CLever * __cdecl core_lever_cpp_CLever_ctor_FUN_005047d0(CLever *this_ptr)
+; CLever * __cdecl core_lever_cpp_CLever_ctor_FUN_005047d0(CLever *this_ptr)
 ;
 ; Parameters:
 ; CLever *         Stack[0x4]:4   this_ptr

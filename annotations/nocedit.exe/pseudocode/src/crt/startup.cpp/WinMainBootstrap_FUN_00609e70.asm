@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallRegister void __watcallRegister crt_startup_cpp_WinMainBootstrap_FUN_00609e70(void)
+; void __watcallRegister crt_startup_cpp_WinMainBootstrap_FUN_00609e70(void)
 ;
 ; Local Variables:
 ; BYTE[8]          Stack[-0x10]:8  runtimeInitParams

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl uint __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680(CMP3Decoder *this_ptr,float *spectral_dest,SMpegLayer3Granule *granule_info,int channel,int granule,SMpegFrame *frame,int bit_budget)
+; uint __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680(CMP3Decoder *this_ptr,float *spectral_dest,SMpegLayer3Granule *granule_info,int channel,int granule,SMpegFrame *frame,int bit_budget)
 ;
 ; Parameters:
 ; CMP3Decoder *    Stack[0x4]:4   this_ptr

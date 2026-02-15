@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_tvbat_cpp_CTVBat_process_FUN_005e4210(CTVBat *this_ptr,float delta_time)
+; void __cdecl core_tvbat_cpp_CTVBat_process_FUN_005e4210(CTVBat *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CTVBat *         Stack[0x4]:4   this_ptr
@@ -114,7 +114,7 @@ section .text
     XOR EDI,EDI                         ; 005e4236
     MOV EAX,[0x006810c8]                ; 005e4238 | g_CDemonSetPtr
         ;   Label: LAB_005e4238
-    CMP EDI,dword ptr [EAX + 0x150fdc]  ; 005e423d | g_CDemonSetInstance.unk4[7996]
+    CMP EDI,dword ptr [EAX + 0x150fdc]  ; 005e423d | g_CDemonSetInstance.enemy_count
     JGE 0x005e4276                      ; 005e4243
         ;   XREF to: 005e4276 (CONDITIONAL_JUMP)  ; LAB_005e4276
     PUSH 0x65692e                       ; 005e4245 | = "CVampireBoss"

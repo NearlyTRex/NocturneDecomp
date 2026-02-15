@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_imp_cpp_CImp_process_FUN_004f9c30(CImp *this_ptr,float delta_time)
+; void __cdecl core_imp_cpp_CImp_process_FUN_004f9c30(CImp *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CImp *           Stack[0x4]:4   this_ptr
@@ -717,7 +717,7 @@ section .text
     XOR ESI,ESI                         ; 004fa2c9
     MOV EAX,[0x006810c8]                ; 004fa2cb | g_CDemonSetPtr | g_CDemonSetInstance
         ;   Label: LAB_004fa2cb
-    CMP ESI,dword ptr [EAX + 0x150fdc]  ; 004fa2d0 | g_CDemonSetInstance.unk4[7996]
+    CMP ESI,dword ptr [EAX + 0x150fdc]  ; 004fa2d0 | g_CDemonSetInstance.enemy_count
     JGE 0x004f9fef                      ; 004fa2d6
         ;   XREF to: 004f9fef (CONDITIONAL_JUMP)  ; caseD_6
     MOV ECX,dword ptr [0x02db8a5c]      ; 004fa2dc | g_CImpClassInfo.name_hash

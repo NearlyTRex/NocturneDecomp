@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_fire_cpp_staticInit_FUN_004bef20(void)
+; void __cdecl core_fire_cpp_staticInit_FUN_004bef20(void)
 ;
 ;
 ; Referenced Globals:

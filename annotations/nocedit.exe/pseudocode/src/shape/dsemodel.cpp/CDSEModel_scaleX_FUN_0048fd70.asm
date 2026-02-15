@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_dsemodel_cpp_CDSEModel_scaleX_FUN_0048fd70(CDSEModel *this_ptr,float scale_factor)
+; void __cdecl shape_dsemodel_cpp_CDSEModel_scaleX_FUN_0048fd70(CDSEModel *this_ptr,float scale_factor)
 ;
 ; Parameters:
 ; CDSEModel *      Stack[0x4]:4   this_ptr

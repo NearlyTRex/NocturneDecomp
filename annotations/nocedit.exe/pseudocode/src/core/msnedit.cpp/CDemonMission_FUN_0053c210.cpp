@@ -9,47 +9,48 @@
 char * __cdecl core_msnedit_cpp_CDemonMission_FUN_0053c210(CDemonMission *this_ptr,char *param_2,char *param_3)
 
 {
-  char *pcVar1;
-  int iVar2;
-  CDemonActor *pCVar3;
-  int iVar4;
-  int index;
+  uint *puVar1;
+  char *pcVar2;
+  int iVar3;
+  CDemonActor *pCVar4;
   int iVar5;
+  int index;
+  int iVar6;
   CPickList local_3b4;
   
-  if ((int)g_CDemonSetPtr->actor_list_ptr < 1) {
+  if (g_CDemonSetPtr->actor_count < 1) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"No actors in set.");
     return (char *)0x0;
   }
-  iVar5 = 0;
+  iVar6 = 0;
   shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_3b4);
-  for (iVar4 = 0; iVar4 < (int)g_CDemonSetPtr->actor_list_ptr; iVar4 = iVar4 + 1) {
-    pcVar1 = g_CDemonSetPtr->actor_list_data + iVar5;
-    iVar5 = iVar5 + 4;
-    shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_3b4.base,*(char **)pcVar1);
+  for (iVar5 = 0; iVar5 < g_CDemonSetPtr->actor_count; iVar5 = iVar5 + 1) {
+    puVar1 = (uint *)((int)g_CDemonSetPtr->actors + iVar6);
+    iVar6 = iVar6 + 4;
+    shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_3b4.base,(char *)*puVar1);
   }
-  iVar5 = -1;
+  iVar6 = -1;
   shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&local_3b4.base);
-  iVar4 = iVar5;
+  iVar5 = iVar6;
   if ((param_3 != (char *)0x0) && (index = 0, 0 < local_3b4.base.item_count)) {
     do {
-      pcVar1 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_3b4.base,index);
-      iVar2 = stricmp(param_3,pcVar1);
-      iVar4 = index;
-      if (iVar2 == 0) break;
+      pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_3b4.base,index);
+      iVar3 = stricmp(param_3,pcVar2);
+      iVar5 = index;
+      if (iVar3 == 0) break;
       index = index + 1;
-      iVar4 = iVar5;
+      iVar5 = iVar6;
     } while (index < local_3b4.base.item_count);
   }
-  iVar4 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                    (&local_3b4,param_2,iVar4,0);
-  if (iVar4 < 0) {
+  iVar5 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+                    (&local_3b4,param_2,iVar5,0);
+  if (iVar5 < 0) {
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_3b4,0);
     return (char *)0x0;
   }
-  pcVar1 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_3b4.base,iVar4);
-  pCVar3 = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030(this_ptr,pcVar1);
+  pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_3b4.base,iVar5);
+  pCVar4 = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030(this_ptr,pcVar2);
   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_3b4,0);
-  return pCVar3->actor_name;
+  return pCVar4->actor_name;
 }

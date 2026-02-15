@@ -46,8 +46,8 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c4c20(CStranger *this_ptr)
     iVar5 = 0;
 LAB_005c4c51:
     do {
-      if (g_CDemonSetPtr->damage_listener_count <= iVar4) goto LAB_005c4d62;
-      this_ptr_00 = *(CStranger **)(g_CDemonSetPtr->unk4 + iVar5 + -4);
+      if (g_CDemonSetPtr->character_count <= iVar4) goto LAB_005c4d62;
+      this_ptr_00 = *(CStranger **)((int)g_CDemonSetPtr->characters + iVar5);
       core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                 ((CDemonActor *)this_ptr,&local_68,&(this_ptr_00->base).base.base.location.position)
       ;
@@ -80,7 +80,7 @@ LAB_005c50a7:
   if (1.0 < local_f8) {
     local_f8 = 1.0;
   }
-  local_f4 = local_f8 - *(float *)(this_ptr->unk9 + 0x48);
+  local_f4 = local_f8 - *(float *)(this_ptr->unk8 + 0x48);
   if (0.0 <= local_f4) {
     if ((0.0 < local_f4) && (in_stack_00000008 / 0.05f < local_f4)) {
       local_f4 = in_stack_00000008 / 0.05f;
@@ -92,7 +92,7 @@ LAB_005c50a7:
       local_f4 = fVar1;
     }
   }
-  *(float *)(this_ptr->unk9 + 0x48) = *(float *)(this_ptr->unk9 + 0x48) + local_f4;
+  *(float *)(this_ptr->unk8 + 0x48) = *(float *)(this_ptr->unk8 + 0x48) + local_f4;
   return;
 LAB_005c4d62:
   core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);

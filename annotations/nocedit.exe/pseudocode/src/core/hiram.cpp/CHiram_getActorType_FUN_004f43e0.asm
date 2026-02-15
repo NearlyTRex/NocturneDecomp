@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * __cdecl core_hiram_cpp_CHiram_getActorType_FUN_004f43e0(CHiram *this_ptr)
+; CDemonActorType * __cdecl core_hiram_cpp_CHiram_getActorType_FUN_004f43e0(CHiram *this_ptr)
 ;
 ; Parameters:
 ; CHiram *         Stack[0x4]:4   this_ptr

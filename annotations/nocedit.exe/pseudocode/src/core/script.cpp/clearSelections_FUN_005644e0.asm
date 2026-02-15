@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_script_cpp_clearSelections_FUN_005644e0(void)
+; void __cdecl core_script_cpp_clearSelections_FUN_005644e0(void)
 ;
 ;
 ; XREF[8]:

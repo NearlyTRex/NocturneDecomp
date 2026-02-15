@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl wincore_winvideo_cpp_positionMovieWindow_FUN_005f4500(HWND parent_window)
+; void __cdecl wincore_winvideo_cpp_positionMovieWindow_FUN_005f4500(HWND parent_window)
 ;
 ; Parameters:
 ; HWND             Stack[0x4]:4   parent_window

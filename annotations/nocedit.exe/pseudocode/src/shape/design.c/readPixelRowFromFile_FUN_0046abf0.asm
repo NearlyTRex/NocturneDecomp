@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_readPixelRowFromFile_FUN_0046abf0(_FILE *file_handle,byte *rgb_buffer,byte *alpha_buffer,int pixel_count,int file_flags)
+; void __cdecl shape_design_c_readPixelRowFromFile_FUN_0046abf0(_FILE *file_handle,byte *rgb_buffer,byte *alpha_buffer,int pixel_count,int file_flags)
 ;
 ; Parameters:
 ; _FILE *          Stack[0x4]:4   file_handle

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_mimic_cpp_CMimic_process_FUN_0051f780(CMimic *this_ptr,float delta_time)
+; void __cdecl core_mimic_cpp_CMimic_process_FUN_0051f780(CMimic *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CMimic *         Stack[0x4]:4   this_ptr

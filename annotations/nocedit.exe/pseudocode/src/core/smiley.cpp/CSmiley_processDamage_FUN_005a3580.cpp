@@ -10,33 +10,32 @@ void __cdecl core_smiley_cpp_CSmiley_processDamage_FUN_005a3580(CSmiley *this_pt
 
 {
   CDeformableModelInstance *this_ptr_00;
-  int iVar1;
-  float fVar2;
-  SMotion *pSVar3;
+  float fVar1;
+  SMotion *pSVar2;
   
   if (*(int *)(this_ptr->unk2 + 0x38) != 1) {
-    damage_info->damage_type = 100;
+    damage_info->gore_multiplier = 1.4013e-43;
     damage_info->damage_amount = 0.0;
     return;
   }
-  iVar1 = damage_info->damage_type;
-  if (iVar1 == 4) {
-    damage_info->damage_type = 100;
+  fVar1 = damage_info->gore_multiplier;
+  if (fVar1 == 5.60519e-45) {
+    damage_info->gore_multiplier = 1.4013e-43;
   }
-  else if ((iVar1 < 0xc) || (iVar1 == 0x6b)) goto LAB_005a35b4;
+  else if (((int)fVar1 < 0xc) || (fVar1 == 1.49939e-43)) goto LAB_005a35b4;
   damage_info->damage_amount = 0.0;
 LAB_005a35b4:
   if (0.0 < damage_info->damage_amount) {
     core_smiley_cpp_CSmiley_FUN_005a32a0(this_ptr);
   }
-  fVar2 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
+  fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   this_ptr_00 = &(this_ptr->base).base.model;
-  (this_ptr->base).base.hit_points = fVar2;
-  if (fVar2 <= 0.0) {
+  (this_ptr->base).base.hit_points = fVar1;
+  if (fVar1 <= 0.0) {
     (this_ptr->base).base.hit_points = 0.0;
-    pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&this_ptr_00->motion_controller);
-    if ((pSVar3->state_index != 8) && (pSVar3->state_index != 7)) {
+    if ((pSVar2->state_index != 8) && (pSVar2->state_index != 7)) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&this_ptr_00->motion_controller,7,1);
       (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)

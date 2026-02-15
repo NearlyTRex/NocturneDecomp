@@ -21,8 +21,8 @@ int __cdecl core_enemy_cpp_CEnemy_FUN_004aa0f0(CEnemy *this_ptr)
   class_name = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90((CDemonActor *)this_ptr);
   iVar2 = 0;
   while( true ) {
-    if (*(int *)(g_CDemonSetPtr->unk4 + 0x1f3c) <= iVar4) break;
-    this_ptr_00 = *(CCharacter **)(g_CDemonSetPtr->unk4 + iVar3 + 8000);
+    if (g_CDemonSetPtr->enemy_count <= iVar4) break;
+    this_ptr_00 = *(CCharacter **)((int)g_CDemonSetPtr->enemies + iVar3);
     iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(&this_ptr_00->base,class_name);
     if (iVar1 != 0) {
       iVar1 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00);

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_sndmain_cpp_resetCurrentSfxOptions_FUN_005a8c10(void)
+; void __cdecl sound_sndmain_cpp_resetCurrentSfxOptions_FUN_005a8c10(void)
 ;
 ;
 ; Referenced Globals:

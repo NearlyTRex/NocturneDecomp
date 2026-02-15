@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_emitter_cpp_CEmitter_addFilesToExtract_FUN_004a9390(CEmitter *this_ptr,_FILE *file_handle)
+; void __cdecl core_emitter_cpp_CEmitter_addFilesToExtract_FUN_004a9390(CEmitter *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CEmitter *       Stack[0x4]:4   this_ptr

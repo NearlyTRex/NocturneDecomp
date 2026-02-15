@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_fire_cpp_loadRockAssets_FUN_004c17e0(void)
+; void __cdecl core_fire_cpp_loadRockAssets_FUN_004c17e0(void)
 ;
 ;
 ; XREF[1]:

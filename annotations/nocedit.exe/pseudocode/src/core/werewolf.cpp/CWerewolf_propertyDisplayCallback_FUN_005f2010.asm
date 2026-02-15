@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_werewolf_cpp_CWerewolf_propertyDisplayCallback_FUN_005f2010(CWerewolf *this_ptr,CActorProperty *property,char *output_buffer)
+; void __cdecl core_werewolf_cpp_CWerewolf_propertyDisplayCallback_FUN_005f2010(CWerewolf *this_ptr,CActorProperty *property,char *output_buffer)
 ;
 ; Parameters:
 ; CWerewolf *      Stack[0x4]:4   this_ptr

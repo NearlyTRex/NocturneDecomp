@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_design_c_checkVertexCountLimit_FUN_00460a10(void)
+; int __cdecl shape_design_c_checkVertexCountLimit_FUN_00460a10(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x68]:1  local_68

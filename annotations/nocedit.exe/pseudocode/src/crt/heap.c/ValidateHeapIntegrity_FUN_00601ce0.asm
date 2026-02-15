@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_heap_c_ValidateHeapIntegrity_FUN_00601ce0(void *ptr)
+; void __cdecl crt_heap_c_ValidateHeapIntegrity_FUN_00601ce0(void *ptr)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   ptr

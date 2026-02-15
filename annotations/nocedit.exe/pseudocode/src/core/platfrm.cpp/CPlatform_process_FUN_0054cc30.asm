@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_platfrm_cpp_CPlatform_process_FUN_0054cc30(CPlatform *this_ptr,float delta_time)
+; void __cdecl core_platfrm_cpp_CPlatform_process_FUN_0054cc30(CPlatform *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CPlatform *      Stack[0x4]:4   this_ptr
@@ -32,11 +32,11 @@
 ;   CSound* g_CSoundPtr = 03f6af64
 ;   CEventList g_CEventListInstance
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.actor_list_ptr
-;   undefined4 g_CDemonSetInstance.actor_list_data[0]
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;   undefined4 DAT_032613d4
-;   undefined4 g_CDemonSetInstance.damage_listener_count
-;   undefined4 g_CDemonSetInstance.damage_listeners
+;   undefined4 g_CDemonSetInstance.character_count
+;   undefined4 g_CDemonSetInstance.characters[0]
 ;   undefined4 g_CDemonSetInstance.selected_camera_index
 ;   ... and 1 more
 ;
@@ -266,7 +266,7 @@ section .text
     XOR EDI,EDI                         ; 0054ce7e
     MOV EAX,[0x006810c8]                ; 0054ce80 | g_CDemonSetPtr
         ;   Label: LAB_0054ce80
-    CMP EDI,dword ptr [EAX + 0x14f098]  ; 0054ce85 | g_CDemonSetInstance.damage_listener_count
+    CMP EDI,dword ptr [EAX + 0x14f098]  ; 0054ce85 | g_CDemonSetInstance.character_count
     JL 0x0054d1df                       ; 0054ce8b
         ;   XREF to: 0054d1df (CONDITIONAL_JUMP)  ; LAB_0054d1df
     XOR EBX,EBX                         ; 0054ce91
@@ -275,11 +275,11 @@ section .text
     MOV EAX,[0x006810c8]                ; 0054cea1 | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_0054cea1
     MOV EDX,dword ptr [ESP + 0x310]     ; 0054cea6
-    CMP EDX,dword ptr [EAX + 0x14d154]  ; 0054cead | g_CDemonSetInstance.actor_list_ptr
+    CMP EDX,dword ptr [EAX + 0x14d154]  ; 0054cead | g_CDemonSetInstance.actor_count
     JGE 0x0054d675                      ; 0054ceb3
         ;   XREF to: 0054d675 (CONDITIONAL_JUMP)  ; LAB_0054d675
     ADD EAX,dword ptr [ESP + 0x30c]     ; 0054ceb9
-    MOV EBX,dword ptr [EAX + 0x14d158]  ; 0054cec0 | g_CDemonSetInstance.actor_list_data[0] | DAT_032613d4
+    MOV EBX,dword ptr [EAX + 0x14d158]  ; 0054cec0 | g_CDemonSetInstance.actors[0] | DAT_032613d4
     MOV EDI,dword ptr [EBP + 0x14]      ; 0054cec6
     CMP EDI,dword ptr [EBX + 0xdc]      ; 0054cec9
     JZ 0x0054d4fc                       ; 0054cecf
@@ -538,7 +538,7 @@ section .text
     ADD ESP,0x8                         ; 0054d1d7
     JMP 0x0054ce1e                      ; 0054d1da
         ;   XREF to: 0054ce1e (UNCONDITIONAL_JUMP)  ; LAB_0054ce1e
-    MOV EBX,dword ptr [ESI + EAX*0x1 + 0x14f09c] ; 0054d1df | g_CDemonSetInstance.damage_listeners
+    MOV EBX,dword ptr [ESI + EAX*0x1 + 0x14f09c] ; 0054d1df | g_CDemonSetInstance.characters[0]
         ;   Label: LAB_0054d1df
     PUSH EBX                            ; 0054d1e6
     MOV EAX,dword ptr [EBX + 0x154]     ; 0054d1e7

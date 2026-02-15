@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_weapon_cpp_CWeapon_addFilesToExtract_FUN_005eea60(CWeapon *this_ptr,_FILE *file_handle)
+; void __cdecl core_weapon_cpp_CWeapon_addFilesToExtract_FUN_005eea60(CWeapon *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CWeapon *        Stack[0x4]:4   this_ptr

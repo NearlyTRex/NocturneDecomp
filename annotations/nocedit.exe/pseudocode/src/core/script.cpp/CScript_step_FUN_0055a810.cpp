@@ -593,14 +593,13 @@ LAB_0055bb9d:
                                 if (iVar6 == 0) {
                                   if (g_ScriptEventsEnabled == 0) {
                                     iVar18 = 0;
-                                    for (iVar6 = 0; iVar6 < (int)g_CDemonSetPtr->actor_list_ptr;
+                                    for (iVar6 = 0; iVar6 < g_CDemonSetPtr->actor_count;
                                         iVar6 = iVar6 + 1) {
                                       pCVar13 = (CCharacter *)
                                                 core_actor_cpp_castToClassHash_FUN_0040c790
                                                           (*(CDemonActor **)
-                                                            (g_CDemonSetPtr->actor_list_data +
-                                                            iVar18),g_CCharacterClassInfo.name_hash)
-                                      ;
+                                                            ((int)g_CDemonSetPtr->actors + iVar18),
+                                                           g_CCharacterClassInfo.name_hash);
                                       if (pCVar13 != (CCharacter *)0x0) {
                                         (*(((pCVar13->base).vtable._uc)->_uc).setWalkTarget)
                                                   (pCVar13,(CDemonActor *)0x0,0.0,0.0);
@@ -2431,7 +2430,8 @@ LAB_0055e656:
                                                     return -1;
                                                   }
                                                   if (g_ScriptEventsEnabled == 0) {
-                                                    g_CDemonSetPtr->cameras[iVar6].unk2 = local_74;
+                                                    g_CDemonSetPtr->cameras[iVar6].camera_group =
+                                                         local_74;
                                                   }
                                                   }
                                                   else {

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int __watcallStack crt_stdio_c_ReadFileWithDeviceAbstraction_FUN_00602880(int file_handle_index,void *buffer,int bytes_to_read)
+; int __watcallStack crt_stdio_c_ReadFileWithDeviceAbstraction_FUN_00602880(int file_handle_index,void *buffer,int bytes_to_read)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   file_handle_index

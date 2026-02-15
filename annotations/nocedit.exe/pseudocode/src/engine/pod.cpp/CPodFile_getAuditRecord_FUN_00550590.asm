@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __stack2_esi void * __stack2_esi engine_pod_cpp_CPodFile_getAuditRecord_FUN_00550590(CPodFile *this_ptr,int record_index,void *output_buffer)
+; void * __stack2_esi engine_pod_cpp_CPodFile_getAuditRecord_FUN_00550590(CPodFile *this_ptr,int record_index,void *output_buffer)
 ;
 ; Parameters:
 ; CPodFile *       Stack[0x4]:4   this_ptr

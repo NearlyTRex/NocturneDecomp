@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_vampboss_cpp_CVampireBoss_hasCollision_FUN_005e75f0(CVampireBoss *this_ptr,SCollisionInfo *collision_info)
+; int __cdecl core_vampboss_cpp_CVampireBoss_hasCollision_FUN_005e75f0(CVampireBoss *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CVampireBoss *   Stack[0x4]:4   this_ptr

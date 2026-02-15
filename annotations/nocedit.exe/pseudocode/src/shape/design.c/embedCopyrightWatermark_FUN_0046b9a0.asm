@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_embedCopyrightWatermark_FUN_0046b9a0(void *image_buffer,char *output_filename,int texture_size)
+; void __cdecl shape_design_c_embedCopyrightWatermark_FUN_0046b9a0(void *image_buffer,char *output_filename,int texture_size)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   image_buffer

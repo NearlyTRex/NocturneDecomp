@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,float delta_time)
+; void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CVehicle *       Stack[0x4]:4   this_ptr
@@ -262,14 +262,14 @@ section .text
     MOV dword ptr [ESP + 0xf0],EDI      ; 005e812a
     MOV ESI,dword ptr [0x006810c8]      ; 005e8131 | g_CDemonSetPtr
         ;   Label: LAB_005e8131
-    CMP EDI,dword ptr [ESI + 0x14f098]  ; 005e8137 | g_CDemonSetInstance.damage_listener_count
+    CMP EDI,dword ptr [ESI + 0x14f098]  ; 005e8137 | g_CDemonSetInstance.character_count
     JGE 0x005e82ea                      ; 005e813d
         ;   XREF to: 005e82ea (CONDITIONAL_JUMP)  ; LAB_005e82ea
     MOV ECX,dword ptr [ESP + 0xf0]      ; 005e8143
     MOV EAX,[0x02f37f30]                ; 005e814a | g_CMobsterClassInfo.name_hash
     ADD ESI,ECX                         ; 005e814f
     PUSH EAX                            ; 005e8151
-    MOV ESI,dword ptr [ESI + 0x14f09c]  ; 005e8152 | g_CDemonSetInstance.damage_listeners | DAT_03263318
+    MOV ESI,dword ptr [ESI + 0x14f09c]  ; 005e8152 | g_CDemonSetInstance.characters[0] | DAT_03263318
     PUSH ESI                            ; 005e8158
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 005e8159
         ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)
@@ -477,7 +477,7 @@ section .text
     SAHF                                ; 005e83ad
     JBE 0x005e82f4                      ; 005e83ae
         ;   XREF to: 005e82f4 (CONDITIONAL_JUMP)  ; LAB_005e82f4
-    CMP dword ptr [ESI + 0x14d154],0x672 ; 005e83b4 | g_CDemonSetInstance.actor_list_ptr
+    CMP dword ptr [ESI + 0x14d154],0x672 ; 005e83b4 | g_CDemonSetInstance.actor_count
     JGE 0x005e82f4                      ; 005e83be
         ;   XREF to: 005e82f4 (CONDITIONAL_JUMP)  ; LAB_005e82f4
     MOV dword ptr [ESP + 0xe8],ECX      ; 005e83c4
@@ -486,7 +486,7 @@ section .text
     XOR ESI,ESI                         ; 005e83d4
     MOV EAX,[0x006810c8]                ; 005e83d6 | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_005e83d6
-    CMP EDI,dword ptr [EAX + 0x150fdc]  ; 005e83db | g_CDemonSetInstance.unk4[7996]
+    CMP EDI,dword ptr [EAX + 0x150fdc]  ; 005e83db | g_CDemonSetInstance.enemy_count
     JL 0x005e85a9                       ; 005e83e1
         ;   XREF to: 005e85a9 (CONDITIONAL_JUMP)  ; LAB_005e85a9
     CMP dword ptr [ESP + 0xec],0x0      ; 005e83e7

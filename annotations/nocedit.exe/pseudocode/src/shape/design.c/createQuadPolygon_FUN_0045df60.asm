@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_createQuadPolygon_FUN_0045df60(void)
+; void __cdecl shape_design_c_createQuadPolygon_FUN_0045df60(void)
 ;
 ;
 ; XREF[3]:

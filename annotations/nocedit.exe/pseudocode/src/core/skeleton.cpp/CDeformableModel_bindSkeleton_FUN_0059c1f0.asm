@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_skeleton_cpp_CDeformableModel_bindSkeleton_FUN_0059c1f0(CDeformableModel *this_ptr,CSkeleton *skeleton_ptr)
+; void __cdecl core_skeleton_cpp_CDeformableModel_bindSkeleton_FUN_0059c1f0(CDeformableModel *this_ptr,CSkeleton *skeleton_ptr)
 ;
 ; Parameters:
 ; CDeformableModel * Stack[0x4]:4   this_ptr

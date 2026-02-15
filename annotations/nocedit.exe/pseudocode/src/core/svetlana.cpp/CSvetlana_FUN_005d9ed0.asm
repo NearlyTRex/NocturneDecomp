@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9ed0(CSvetlana *this_ptr)
+; int __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9ed0(CSvetlana *this_ptr)
 ;
 ; Parameters:
 ; CSvetlana *      Stack[0x4]:4   this_ptr

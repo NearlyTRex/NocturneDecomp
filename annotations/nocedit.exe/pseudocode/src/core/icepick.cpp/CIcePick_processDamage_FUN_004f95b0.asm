@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_icepick_cpp_CIcePick_processDamage_FUN_004f95b0(CIcePick *this_ptr,SDamageInfo *damage_info)
+; void __cdecl core_icepick_cpp_CIcePick_processDamage_FUN_004f95b0(CIcePick *this_ptr,SDamageInfo *damage_info)
 ;
 ; Parameters:
 ; CIcePick *       Stack[0x4]:4   this_ptr

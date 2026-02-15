@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_colonel_cpp_CColonel_onActorDeleted_FUN_004405f0(CColonel *this_ptr,CDemonActor *deleted_actor)
+; void __cdecl core_colonel_cpp_CColonel_onActorDeleted_FUN_004405f0(CColonel *this_ptr,CDemonActor *deleted_actor)
 ;
 ; Parameters:
 ; CColonel *       Stack[0x4]:4   this_ptr

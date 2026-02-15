@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int __watcallStack crt_stdio_c_rename_FUN_006015d0(char *old_filename,char *new_filename)
+; int __watcallStack crt_stdio_c_rename_FUN_006015d0(char *old_filename,char *new_filename)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   old_filename

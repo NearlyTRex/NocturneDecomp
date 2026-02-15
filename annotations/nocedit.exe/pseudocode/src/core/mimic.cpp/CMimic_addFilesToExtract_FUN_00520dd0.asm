@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_mimic_cpp_CMimic_addFilesToExtract_FUN_00520dd0(CMimic *this_ptr,_FILE *file_handle)
+; void __cdecl core_mimic_cpp_CMimic_addFilesToExtract_FUN_00520dd0(CMimic *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CMimic *         Stack[0x4]:4   this_ptr

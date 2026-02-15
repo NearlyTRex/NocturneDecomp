@@ -17,7 +17,7 @@ void __cdecl core_gore_cpp_CGore_FUN_004ed760(CGore *this_ptr)
   INT_02d873d8 = 0;
   DAT_02da871c = 0;
   INT_02da8720 = 0;
-  pCVar1 = DAT_02d833d4;
+  pCVar1 = CBloodParticle_ARRAY_02d833d4;
   do {
     pCVar2 = pCVar1 + 1;
     (pCVar1->base).lifetime_remaining = 0.0;

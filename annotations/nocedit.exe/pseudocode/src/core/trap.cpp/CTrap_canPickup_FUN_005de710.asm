@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_trap_cpp_CTrap_canPickup_FUN_005de710(CTrap *this_ptr,CDemonActor *picker)
+; int __cdecl core_trap_cpp_CTrap_canPickup_FUN_005de710(CTrap *this_ptr,CDemonActor *picker)
 ;
 ; Parameters:
 ; CTrap *          Stack[0x4]:4   this_ptr

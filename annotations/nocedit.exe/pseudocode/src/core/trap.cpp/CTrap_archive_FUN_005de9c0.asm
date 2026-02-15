@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_trap_cpp_CTrap_archive_FUN_005de9c0(CTrap *this_ptr)
+; void __cdecl core_trap_cpp_CTrap_archive_FUN_005de9c0(CTrap *this_ptr)
 ;
 ; Parameters:
 ; CTrap *          Stack[0x4]:4   this_ptr

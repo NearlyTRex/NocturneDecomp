@@ -17,6 +17,6 @@ typedef struct CDemonRenderer {
     int alpha_mask; // 0x14
     int advanced_culling_enabled; // 0x18
     int texture_capture_enabled; // 0x1c
-    int unk; // 0x20
+    int skip_uv_extraction; // 0x20
 } CDemonRenderer;
 

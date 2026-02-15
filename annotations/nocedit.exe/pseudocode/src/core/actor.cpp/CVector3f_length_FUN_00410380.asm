@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl core_actor_cpp_CVector3f_length_FUN_00410380(CVector3f *this_ptr)
+; float __cdecl core_actor_cpp_CVector3f_length_FUN_00410380(CVector3f *this_ptr)
 ;
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   this_ptr

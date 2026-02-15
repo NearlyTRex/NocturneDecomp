@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CSentinel * __cdecl core_sentinel_cpp_factoryFunc_FUN_00567d70(void)
+; CSentinel * __cdecl core_sentinel_cpp_factoryFunc_FUN_00567d70(void)
 ;
 ;
 ; XREF[1]:

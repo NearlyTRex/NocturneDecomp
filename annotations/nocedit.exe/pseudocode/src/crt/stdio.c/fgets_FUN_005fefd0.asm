@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * __cdecl crt_stdio_c_fgets_FUN_005fefd0(char *str,int num,_FILE *stream)
+; char * __cdecl crt_stdio_c_fgets_FUN_005fefd0(char *str,int num,_FILE *stream)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   str

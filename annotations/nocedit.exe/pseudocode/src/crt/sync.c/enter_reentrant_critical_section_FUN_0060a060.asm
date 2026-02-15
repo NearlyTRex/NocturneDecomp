@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_sync_c_enter_reentrant_critical_section_FUN_0060a060(ReentrantCriticalSection *rcs)
+; void __cdecl crt_sync_c_enter_reentrant_critical_section_FUN_0060a060(ReentrantCriticalSection *rcs)
 ;
 ; Parameters:
 ; ReentrantCriticalSection * Stack[0x4]:4   rcs

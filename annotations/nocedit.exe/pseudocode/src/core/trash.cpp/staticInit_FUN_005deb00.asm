@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_trash_cpp_staticInit_FUN_005deb00(void)
+; void __cdecl core_trash_cpp_staticInit_FUN_005deb00(void)
 ;
 ;
 ; Referenced Globals:

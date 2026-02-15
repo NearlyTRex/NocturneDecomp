@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_litecone_cpp_CLightCone_getPropertyList_FUN_00506da0(CLightCone *this_ptr,CActorPropertyList *property_list)
+; void __cdecl core_litecone_cpp_CLightCone_getPropertyList_FUN_00506da0(CLightCone *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CLightCone *     Stack[0x4]:4   this_ptr

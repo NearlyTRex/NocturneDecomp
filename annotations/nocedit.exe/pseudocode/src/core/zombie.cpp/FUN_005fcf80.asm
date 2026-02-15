@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SEdgeData * __cdecl core_zombie_cpp_FUN_005fcf80(void)
+; SEdgeData * __cdecl core_zombie_cpp_FUN_005fcf80(void)
 ;
 ;
 ; Referenced Globals:

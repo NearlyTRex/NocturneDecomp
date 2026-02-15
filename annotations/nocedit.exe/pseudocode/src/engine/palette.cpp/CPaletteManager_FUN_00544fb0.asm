@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_palette_cpp_CPaletteManager_FUN_00544fb0(CPaletteManager *this_ptr)
+; void __cdecl engine_palette_cpp_CPaletteManager_FUN_00544fb0(CPaletteManager *this_ptr)
 ;
 ; Parameters:
 ; CPaletteManager * Stack[0x4]:4   this_ptr

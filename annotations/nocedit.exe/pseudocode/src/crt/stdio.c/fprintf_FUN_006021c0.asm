@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_stdio_c_fprintf_FUN_006021c0(_FILE *stream,char *format,...)
+; void __cdecl crt_stdio_c_fprintf_FUN_006021c0(_FILE *stream,char *format,...)
 ;
 ; Parameters:
 ; _FILE *          Stack[0x4]:4   stream

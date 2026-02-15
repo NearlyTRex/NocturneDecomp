@@ -59,9 +59,9 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c1fe0(CStranger *this_ptr)
     local_1c = 0;
     local_18 = 0;
     while( true ) {
-      if ((int)g_CDemonSetPtr->actor_list_ptr <= local_1c) break;
+      if (g_CDemonSetPtr->actor_count <= local_1c) break;
       this_ptr_01 = core_actor_cpp_castToClassHash_FUN_0040c790
-                              (*(CDemonActor **)(g_CDemonSetPtr->actor_list_data + local_18),
+                              (*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_18),
                                g_CLadderClassInfo.name_hash);
       if ((this_ptr_01 != (CDemonActor *)0x0) &&
          (ABS((this_ptr->base).base.base.location.position.y - (this_ptr_01->location).position.y)
@@ -123,10 +123,10 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c1fe0(CStranger *this_ptr)
               fStack_68 = pCVar1->x - (this_ptr->base).base.base.location.position.x;
               fStack_64 = pCVar1->y - (this_ptr->base).base.base.location.position.y;
               fStack_60 = pCVar1->z - (this_ptr->base).base.base.location.position.z;
-              if ((float *)this_ptr->unk11 != &fStack_68) {
-                *(float *)this_ptr->unk11 = fStack_68;
-                *(float *)(this_ptr->unk11 + 4) = fStack_64;
-                *(float *)(this_ptr->unk11 + 8) = fStack_60;
+              if ((float *)&this_ptr->unk9 != &fStack_68) {
+                this_ptr->unk9 = (int)fStack_68;
+                this_ptr->unk10 = (int)fStack_64;
+                this_ptr->unk11 = (int)fStack_60;
               }
               CStack_74.x = local_a4.x - (this_ptr->base).base.base.location.position.x;
               CStack_74.y = local_a4.y - (this_ptr->base).base.base.location.position.y;
@@ -134,11 +134,8 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c1fe0(CStranger *this_ptr)
               pCVar1 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                                  (&CStack_80,&CStack_74);
               this_ptr_00 = g_CConsolePtr;
-              *(float *)(this_ptr->unk11 + 0xc) = pCVar1->y;
-              this_ptr->unk11[0x10] = '\0';
-              this_ptr->unk11[0x11] = '\0';
-              this_ptr->unk11[0x12] = -0x80;
-              this_ptr->unk11[0x13] = '?';
+              this_ptr->unk12 = (int)pCVar1->y;
+              this_ptr->unk13 = 0x3f800000;
               engine_console_cpp_CConsole_printf_FUN_00441890
                         (this_ptr_00,"Climbing ladder %s\n",this_ptr_01);
               return 1;

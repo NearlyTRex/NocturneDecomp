@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SWaterVertex * __cdecl core_wateract_cpp_SWaterVertex_arrdtor_FUN_005ebcf0(SWaterVertex *objs,uint flags)
+; SWaterVertex * __cdecl core_wateract_cpp_SWaterVertex_arrdtor_FUN_005ebcf0(SWaterVertex *objs,uint flags)
 ;
 ; Parameters:
 ; SWaterVertex *   Stack[0x4]:4   objs

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl cockpit_ckptutil_c_loadACTPaletteFile_FUN_00431ac0(char *base_filename,char *output_buffer)
+; void __cdecl cockpit_ckptutil_c_loadACTPaletteFile_FUN_00431ac0(char *base_filename,char *output_buffer)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   base_filename

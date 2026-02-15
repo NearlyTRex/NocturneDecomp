@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_pod_cpp_CPod_initSearch_FUN_00550ea0(CPod *this_ptr,char *search_pattern,CPodSearchContext *search_context)
+; void __cdecl engine_pod_cpp_CPod_initSearch_FUN_00550ea0(CPod *this_ptr,char *search_pattern,CPodSearchContext *search_context)
 ;
 ; Parameters:
 ; CPod *           Stack[0x4]:4   this_ptr

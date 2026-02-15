@@ -17,7 +17,7 @@ int __cdecl core_gore_cpp_CGore_process_FUN_004ed9e0(CGore *this_ptr)
   CBloodSplat *this_ptr_02;
   int iVar2;
   
-  this_ptr_00 = DAT_02d833d4;
+  this_ptr_00 = CBloodParticle_ARRAY_02d833d4;
   do {
     if (0.0 < (this_ptr_00->base).lifetime_remaining) {
       (*((this_ptr_00->base).vtable)->process)(&this_ptr_00->base);

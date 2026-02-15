@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl uint __cdecl core_actor_cpp_hashClassName_FUN_0040c290(char *class_name)
+; uint __cdecl core_actor_cpp_hashClassName_FUN_0040c290(char *class_name)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   class_name

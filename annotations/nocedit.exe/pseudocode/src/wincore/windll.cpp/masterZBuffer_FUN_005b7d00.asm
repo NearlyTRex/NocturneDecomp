@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl wincore_windll_cpp_masterZBuffer_FUN_005b7d00(int z_buffer_mode)
+; int __cdecl wincore_windll_cpp_masterZBuffer_FUN_005b7d00(int z_buffer_mode)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   z_buffer_mode

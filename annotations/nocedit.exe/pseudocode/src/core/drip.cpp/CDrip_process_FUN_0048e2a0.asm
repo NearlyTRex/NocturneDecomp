@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_drip_cpp_CDrip_process_FUN_0048e2a0(CDrip *this_ptr,float delta_time)
+; void __cdecl core_drip_cpp_CDrip_process_FUN_0048e2a0(CDrip *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CDrip *          Stack[0x4]:4   this_ptr
@@ -20,8 +20,8 @@
 ;   double DOUBLE_006222af = 0.850000000000000
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.damage_listener_count
-;   undefined4 g_CDemonSetInstance.damage_listeners
+;   undefined4 g_CDemonSetInstance.character_count
+;   undefined4 g_CDemonSetInstance.characters[0]
 ;   undefined4 DAT_03263318
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
@@ -127,10 +127,10 @@ section .text
     MOV dword ptr [ESP + 0x94],EAX      ; 0048e3b8
     MOV EAX,[0x006810c8]                ; 0048e3bf | g_CDemonSetPtr | g_CDemonSetInstance
         ;   Label: LAB_0048e3bf
-    CMP EDI,dword ptr [EAX + 0x14f098]  ; 0048e3c4 | g_CDemonSetInstance.damage_listener_count
+    CMP EDI,dword ptr [EAX + 0x14f098]  ; 0048e3c4 | g_CDemonSetInstance.character_count
     JGE 0x0048e2f3                      ; 0048e3ca
         ;   XREF to: 0048e2f3 (CONDITIONAL_JUMP)  ; LAB_0048e2f3
-    MOV EBP,dword ptr [ESI + EAX*0x1 + 0x14f09c] ; 0048e3d0 | g_CDemonSetInstance.damage_listeners | DAT_03263318
+    MOV EBP,dword ptr [ESI + EAX*0x1 + 0x14f09c] ; 0048e3d0 | g_CDemonSetInstance.characters[0] | DAT_03263318
     MOV EAX,ESP                         ; 0048e3d7
     PUSH EAX                            ; 0048e3d9
     CALL core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0 ; 0048e3da

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int __watcallStack crt_stdio_c_stream_valid_FUN_00608cd1(_FILE *stream,int operation_type)
+; int __watcallStack crt_stdio_c_stream_valid_FUN_00608cd1(_FILE *stream,int operation_type)
 ;
 ; Parameters:
 ; _FILE *          Stack[0x4]:4   stream

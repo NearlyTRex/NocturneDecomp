@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_batcreat_cpp_CBatCreature_processDamage_FUN_00416030(CBatCreature *this_ptr,SDamageInfo *damage_info)
+; void __cdecl core_batcreat_cpp_CBatCreature_processDamage_FUN_00416030(CBatCreature *this_ptr,SDamageInfo *damage_info)
 ;
 ; Parameters:
 ; CBatCreature *   Stack[0x4]:4   this_ptr

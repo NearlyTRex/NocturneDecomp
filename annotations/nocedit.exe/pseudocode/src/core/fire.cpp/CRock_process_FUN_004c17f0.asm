@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_fire_cpp_CRock_process_FUN_004c17f0(CRock *this_ptr)
+; void __cdecl core_fire_cpp_CRock_process_FUN_004c17f0(CRock *this_ptr)
 ;
 ; Parameters:
 ; CRock *          Stack[0x4]:4   this_ptr

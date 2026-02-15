@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl double __cdecl shape_design_c_clampedArccos_FUN_00461c50(double dot_product)
+; double __cdecl shape_design_c_clampedArccos_FUN_00461c50(double dot_product)
 ;
 ; Parameters:
 ; double           Stack[0x8]:8   dot_product

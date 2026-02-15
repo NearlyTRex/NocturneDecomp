@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * __cdecl core_event_cpp_skipWhitespace_FUN_004aa2d0(char *str)
+; char * __cdecl core_event_cpp_skipWhitespace_FUN_004aa2d0(char *str)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   str

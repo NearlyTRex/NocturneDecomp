@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CChain * __cdecl core_chain_cpp_factoryFunc_FUN_0042fb40(void)
+; CChain * __cdecl core_chain_cpp_factoryFunc_FUN_0042fb40(void)
 ;
 ;
 ; XREF[1]:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_light_cpp_setDirectionalLightVector_FUN_005054d0(int dir_x,int dir_y,int dir_z)
+; void __cdecl engine_light_cpp_setDirectionalLightVector_FUN_005054d0(int dir_x,int dir_y,int dir_z)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   dir_x

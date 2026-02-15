@@ -34,9 +34,6 @@ extern CExplosion* g_ExplosionActiveListHead;
 // CExplosion[10]
 extern CExplosion g_ExplosionPool[10];
 
-// CFireball*
-extern CFireball* g_CFireEffectFireballsEnd;
-
 // CFireball[64]
 extern CFireball g_FireballPool[64];
 
@@ -55,12 +52,11 @@ extern CRock* g_CFireEffectRocksEnd;
 // CRock[64]
 extern CRock g_RockPool[64];
 
-// CToss*
-extern CToss* g_TossActiveListHead;
-
 // CToss[20]
 extern CToss g_TossPool[20];
 
 // int
+extern int INT_02d655a8;
 extern int g_ExplosionPoolIndex;
+extern int INT_02d6c6a0;
 

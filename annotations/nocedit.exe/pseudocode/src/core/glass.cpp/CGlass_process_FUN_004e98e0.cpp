@@ -20,7 +20,7 @@ void __cdecl core_glass_cpp_CGlass_process_FUN_004e98e0(CGlass *this_ptr,float d
     }
   }
   else {
-    (this_ptr->base).unk7 = 1.4013e-45;
+    (this_ptr->base).process_disabled = 1;
   }
   return;
 }

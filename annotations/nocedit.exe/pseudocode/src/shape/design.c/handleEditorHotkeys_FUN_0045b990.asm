@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_handleEditorHotkeys_FUN_0045b990(void)
+; void __cdecl shape_design_c_handleEditorHotkeys_FUN_0045b990(void)
 ;
 ;
 ; XREF[2]:

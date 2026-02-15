@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_superopt_cpp_segmentsIntersect2D_FUN_005d5bb0(CVector2d *point_a,CVector2d *point_b,CVector2d *point_c,CVector2d *point_d)
+; int __cdecl shape_superopt_cpp_segmentsIntersect2D_FUN_005d5bb0(CVector2d *point_a,CVector2d *point_b,CVector2d *point_c,CVector2d *point_d)
 ;
 ; Parameters:
 ; CVector2d *      Stack[0x4]:4   point_a

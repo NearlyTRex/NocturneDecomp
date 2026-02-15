@@ -35,7 +35,7 @@ void __cdecl core_grave_cpp_CGrave_process_FUN_004ee5c0(CGrave *this_ptr,float d
     }
   }
   else {
-    (this_ptr->base).unk7 = 1.4013e-45;
+    (this_ptr->base).process_disabled = 1;
   }
   return;
 }

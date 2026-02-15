@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_passngr_cpp_CPassenger_archive_FUN_00546190(CPassenger *this_ptr)
+; void __cdecl core_passngr_cpp_CPassenger_archive_FUN_00546190(CPassenger *this_ptr)
 ;
 ; Parameters:
 ; CPassenger *     Stack[0x4]:4   this_ptr

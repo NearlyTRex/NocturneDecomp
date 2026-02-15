@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitDetailed_FUN_00406a20(SMRGLHeaderPrimitive *polygon_info)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitDetailed_FUN_00406a20(SMRGLHeaderPrimitive *polygon_info)
 ;
 ; Parameters:
 ; SMRGLHeaderPrimitive * Stack[0x4]:4   polygon_info

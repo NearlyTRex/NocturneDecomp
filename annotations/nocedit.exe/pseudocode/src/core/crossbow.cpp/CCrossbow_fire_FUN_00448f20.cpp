@@ -135,12 +135,9 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00448f20(CCrossbow *this_ptr)
            (*(((this_ptr->base).base.vtable._uc)->_uc).getGrabbed)
                      ((CCharacter *)this_ptr,pCVar4,(int)grab_type);
       auStack_dc._4_4_ = 0.4;
-      CStack_9c.y = (g_CDemonSetPtr->collision_result_vec2).x -
-                    (g_CDemonSetPtr->collision_result_vec1).x;
-      CStack_9c.z = (g_CDemonSetPtr->collision_result_vec2).y -
-                    (g_CDemonSetPtr->collision_result_vec1).y;
-      CStack_90.x = (g_CDemonSetPtr->collision_result_vec2).z -
-                    (g_CDemonSetPtr->collision_result_vec1).z;
+      CStack_9c.y = (g_CDemonSetPtr->ray_target).x - (g_CDemonSetPtr->ray_origin).x;
+      CStack_9c.z = (g_CDemonSetPtr->ray_target).y - (g_CDemonSetPtr->ray_origin).y;
+      CStack_90.x = (g_CDemonSetPtr->ray_target).z - (g_CDemonSetPtr->ray_origin).z;
       fStack_24 = (float)10 /
                   SQRT(CStack_90.x * CStack_90.x +
                        CStack_9c.y * CStack_9c.y + CStack_9c.z * CStack_9c.z);

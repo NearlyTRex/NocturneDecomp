@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_lever_cpp_CLever_hasCollision_FUN_00505060(CLever *this_ptr,SCollisionInfo *collision_info)
+; int __cdecl core_lever_cpp_CLever_hasCollision_FUN_00505060(CLever *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CLever *         Stack[0x4]:4   this_ptr

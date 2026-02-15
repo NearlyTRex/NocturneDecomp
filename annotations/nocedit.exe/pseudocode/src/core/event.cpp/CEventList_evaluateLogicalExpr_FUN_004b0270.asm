@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_event_cpp_CEventList_evaluateLogicalExpr_FUN_004b0270(CEventList *this_ptr,char *expression,int *parse_position)
+; int __cdecl core_event_cpp_CEventList_evaluateLogicalExpr_FUN_004b0270(CEventList *this_ptr,char *expression,int *parse_position)
 ;
 ; Parameters:
 ; CEventList *     Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CScript * __cdecl core_script_cpp_CScript_dtor_FUN_00559840(CScript *this_ptr,uint flags)
+; CScript * __cdecl core_script_cpp_CScript_dtor_FUN_00559840(CScript *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr

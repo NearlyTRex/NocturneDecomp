@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CMineCar * __cdecl core_minecar_cpp_factoryFunc_FUN_00520e50(void)
+; CMineCar * __cdecl core_minecar_cpp_factoryFunc_FUN_00520e50(void)
 ;
 ;
 ; XREF[1]:

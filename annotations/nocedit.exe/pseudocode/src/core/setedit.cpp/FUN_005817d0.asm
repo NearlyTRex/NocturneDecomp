@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_setedit_cpp_FUN_005817d0(void *unk)
+; void __cdecl core_setedit_cpp_FUN_005817d0(void *unk)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   unk

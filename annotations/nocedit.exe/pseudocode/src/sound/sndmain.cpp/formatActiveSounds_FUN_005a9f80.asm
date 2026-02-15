@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_sndmain_cpp_formatActiveSounds_FUN_005a9f80(char *output_buffer)
+; void __cdecl sound_sndmain_cpp_formatActiveSounds_FUN_005a9f80(char *output_buffer)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   output_buffer

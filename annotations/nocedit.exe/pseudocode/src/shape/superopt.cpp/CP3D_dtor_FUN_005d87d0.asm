@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CP3D * __cdecl shape_superopt_cpp_CP3D_dtor_FUN_005d87d0(CP3D *this_ptr,uint flags)
+; CP3D * __cdecl shape_superopt_cpp_CP3D_dtor_FUN_005d87d0(CP3D *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CP3D *           Stack[0x4]:4   this_ptr

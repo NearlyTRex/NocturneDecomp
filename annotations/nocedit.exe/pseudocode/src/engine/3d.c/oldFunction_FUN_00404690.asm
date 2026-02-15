@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SMRGLHeaderExtended * __cdecl engine_3d_c_oldFunction_FUN_00404690(SMRGLHeaderExtended *primitive)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_oldFunction_FUN_00404690(SMRGLHeaderExtended *primitive)
 ;
 ; Parameters:
 ; SMRGLHeaderExtended * Stack[0x4]:4   primitive

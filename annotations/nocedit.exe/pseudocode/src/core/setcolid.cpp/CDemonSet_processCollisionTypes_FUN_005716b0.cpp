@@ -14,7 +14,7 @@ float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0(CDe
   CVector3f *pCVar1;
   CDemonActor *pCVar2;
   int iVar3;
-  CKeyFramedModelInstance *pCVar4;
+  CDeformableModelInstance *pCVar4;
   uint uVar5;
   CBoundingBox3D *other;
   CVector3f *pCVar6;
@@ -93,8 +93,8 @@ float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0(CDe
   }
   local_e8.y = local_e8.y + 2.0f;
   this_ptr->collision_actor = (CDemonActor *)0x0;
-  this_ptr->unk1 = -1;
-  this_ptr->unk2 = -1;
+  this_ptr->collision_part_index = -1;
+  this_ptr->collision_triangle_index = -1;
   local_28 = local_14;
   if (-1 < this_ptr->ignore_list_count) {
     if (&local_100.max != &local_e8) {
@@ -115,27 +115,29 @@ float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0(CDe
     core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&local_158);
     local_158.ray_type = 0;
     local_1c = 0;
-    if (0 < *(int *)(this_ptr->unk4 + 0x7d08)) {
+    if (0 < this_ptr->collidable_actor_count) {
       pCVar1 = &this_ptr->collision_normal;
       local_18 = this_ptr;
       do {
-        pCVar2 = *(CDemonActor **)(local_18->unk4 + 0x7d0c);
+        pCVar2 = local_18->collidable_actors[0];
         iVar3 = core_setcolid_cpp_CDemonSet_isActorIgnored_FUN_00572e20(this_ptr,pCVar2);
         if (iVar3 == 0) {
-          pCVar4 = (CKeyFramedModelInstance *)
+          pCVar4 = (CDeformableModelInstance *)
                    core_actor_cpp_castToClassHash_FUN_0040c790(pCVar2,g_CSpikeClassInfo.name_hash);
-          if (pCVar4 == (CKeyFramedModelInstance *)0x0) {
-            local_158.result_ptr = pCVar4;
-            local_158.model = pCVar4;
+          if (pCVar4 == (CDeformableModelInstance *)0x0) {
+            local_158.deformable_model = pCVar4;
+            local_158.keyframed_model = (CKeyFramedModelInstance *)pCVar4;
             uVar5 = (*((pCVar2->vtable)._ub)->hasCollision)(pCVar2,&local_158);
             if (uVar5 != 0) {
               other = core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_00409270
                                 (pCVar2,&CStack_118,&local_158,uVar5);
               iVar3 = core_box_cpp_CBoundingBox3D_doesBoxIntersect_FUN_00421010(&local_100,other);
               if (iVar3 != 0) {
-                if ((this_ptr->unk12 == 0) && (local_158.model != (CKeyFramedModelInstance *)0x0)) {
+                if ((this_ptr->skip_exact_collisions == 0) &&
+                   ((CDeformableModelInstance *)local_158.keyframed_model !=
+                    (CDeformableModelInstance *)0x0)) {
                   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                                          (local_158.model);
+                                          (local_158.keyframed_model);
                   if (this_ptr_00->collision_triangle_list == (CDemonTriangle *)0x0) {
                     g_CurrentFilename = "..\\core\\setcolid.cpp";
                     g_CurrentLineNumber = 0xcb;
@@ -335,7 +337,7 @@ LAB_005722ec:
         }
         local_18 = (CDemonSet *)local_18->cameras;
         local_1c = local_1c + 1;
-      } while (local_1c < *(int *)(this_ptr->unk4 + 0x7d08));
+      } while (local_1c < this_ptr->collidable_actor_count);
     }
     pCVar2 = this_ptr->collision_actor;
     if (pCVar2 != (CDemonActor *)0x0) {

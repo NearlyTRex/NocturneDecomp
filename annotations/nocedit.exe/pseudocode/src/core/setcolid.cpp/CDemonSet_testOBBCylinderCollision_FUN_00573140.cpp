@@ -39,9 +39,9 @@ int __cdecl core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140(CD
                        ((CBoundingBox3D *)orientation_matrix,&local_38,corner_index);
     pCVar1 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                        ((CMatrix3x3f *)cylinder2,&local_2c,pCVar1);
-    local_20.x = pCVar1->x + cylinder1->max_distance;
-    local_20.y = pCVar1->y + cylinder1->push_z;
-    local_20.z = pCVar1->z + (float)cylinder1->flags;
+    local_20.x = pCVar1->x + cylinder1->closest_t;
+    local_20.y = pCVar1->y + (cylinder1->push_normal).x;
+    local_20.z = pCVar1->z + (cylinder1->push_normal).y;
     if (pCVar2 != &local_20) {
       pCVar2->x = local_20.x;
       pCVar2->y = local_20.y;

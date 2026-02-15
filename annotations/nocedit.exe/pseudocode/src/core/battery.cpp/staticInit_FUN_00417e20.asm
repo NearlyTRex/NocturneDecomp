@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_battery_cpp_staticInit_FUN_00417e20(void)
+; void __cdecl core_battery_cpp_staticInit_FUN_00417e20(void)
 ;
 ;
 ; Referenced Globals:

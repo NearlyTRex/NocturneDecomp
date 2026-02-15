@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_mobster_cpp_CMobster_FUN_00526d90(CMobster *this_ptr)
+; int __cdecl core_mobster_cpp_CMobster_FUN_00526d90(CMobster *this_ptr)
 ;
 ; Parameters:
 ; CMobster *       Stack[0x4]:4   this_ptr
@@ -20,8 +20,8 @@
 ;   double DOUBLE_0063991e = 5
 ;   double DOUBLE_00639926 = 0.400000000000000
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   undefined4 g_CDemonSetInstance.actor_list_ptr
-;   undefined4 g_CDemonSetInstance.actor_list_data[0]
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;   undefined4 DAT_032613d4
 ;
 ; Called Functions:
@@ -91,10 +91,10 @@ section .text
     MOV EAX,[0x006810c8]                ; 00526e32 | g_CDemonSetPtr
         ;   Label: LAB_00526e32
     MOV EBX,dword ptr [ESP + 0x94]      ; 00526e37
-    CMP EBX,dword ptr [EAX + 0x14d154]  ; 00526e3e | g_CDemonSetInstance.actor_list_ptr
+    CMP EBX,dword ptr [EAX + 0x14d154]  ; 00526e3e | g_CDemonSetInstance.actor_count
     JGE 0x00527157                      ; 00526e44
         ;   XREF to: 00527157 (CONDITIONAL_JUMP)  ; LAB_00527157
-    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14d158] ; 00526e4a | g_CDemonSetInstance.actor_list_data[0] | DAT_032613d4
+    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14d158] ; 00526e4a | g_CDemonSetInstance.actors[0] | DAT_032613d4
     PUSH EBX                            ; 00526e51
     MOV EAX,dword ptr [EBX + 0x154]     ; 00526e52
     CALL dword ptr [EAX + 0x8c]         ; 00526e58

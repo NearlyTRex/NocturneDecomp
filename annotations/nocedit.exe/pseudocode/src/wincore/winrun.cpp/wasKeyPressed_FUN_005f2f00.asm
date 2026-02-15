@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl wincore_winrun_cpp_wasKeyPressed_FUN_005f2f00(void)
+; int __cdecl wincore_winrun_cpp_wasKeyPressed_FUN_005f2f00(void)
 ;
 ;
 ; XREF[16]:

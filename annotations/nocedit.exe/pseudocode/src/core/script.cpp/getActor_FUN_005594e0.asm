@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActor * __cdecl core_script_cpp_getActor_FUN_005594e0(char *actor_specifier,uint expected_class_hash,CDemonActorType *expected_class)
+; CDemonActor * __cdecl core_script_cpp_getActor_FUN_005594e0(char *actor_specifier,uint expected_class_hash,CDemonActorType *expected_class)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   actor_specifier

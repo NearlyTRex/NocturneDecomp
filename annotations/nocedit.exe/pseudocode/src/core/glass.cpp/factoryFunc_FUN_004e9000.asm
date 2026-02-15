@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CGlass * __cdecl core_glass_cpp_factoryFunc_FUN_004e9000(void)
+; CGlass * __cdecl core_glass_cpp_factoryFunc_FUN_004e9000(void)
 ;
 ;
 ; XREF[1]:

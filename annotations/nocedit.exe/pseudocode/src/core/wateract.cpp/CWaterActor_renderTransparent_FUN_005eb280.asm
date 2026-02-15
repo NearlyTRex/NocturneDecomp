@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_005eb280(CWaterActor *this_ptr)
+; int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_005eb280(CWaterActor *this_ptr)
 ;
 ; Parameters:
 ; CWaterActor *    Stack[0x4]:4   this_ptr

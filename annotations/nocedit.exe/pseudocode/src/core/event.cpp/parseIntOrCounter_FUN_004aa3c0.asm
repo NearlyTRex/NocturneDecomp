@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_event_cpp_parseIntOrCounter_FUN_004aa3c0(char *str)
+; int __cdecl core_event_cpp_parseIntOrCounter_FUN_004aa3c0(char *str)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   str

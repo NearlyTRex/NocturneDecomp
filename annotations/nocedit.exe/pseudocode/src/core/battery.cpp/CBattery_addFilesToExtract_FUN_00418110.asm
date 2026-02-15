@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_battery_cpp_CBattery_addFilesToExtract_FUN_00418110(CBattery *this_ptr,_FILE *file_handle)
+; void __cdecl core_battery_cpp_CBattery_addFilesToExtract_FUN_00418110(CBattery *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CBattery *       Stack[0x4]:4   this_ptr

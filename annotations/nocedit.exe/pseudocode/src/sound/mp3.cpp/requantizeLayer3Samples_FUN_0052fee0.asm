@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_0052fee0(int *scalefactor_indices,uint *quantized_samples,float *dequantized_output,SMpegFrame *frame_info)
+; void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_0052fee0(int *scalefactor_indices,uint *quantized_samples,float *dequantized_output,SMpegFrame *frame_info)
 ;
 ; Parameters:
 ; int *            Stack[0x4]:4   scalefactor_indices

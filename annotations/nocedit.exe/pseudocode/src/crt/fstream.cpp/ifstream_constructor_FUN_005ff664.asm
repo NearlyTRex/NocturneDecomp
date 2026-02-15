@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_fstream_cpp_ifstream_constructor_FUN_005ff664(ifstream *this_ptr,int ctor_flags,int fd,char *buffer,int buffer_len)
+; void __cdecl crt_fstream_cpp_ifstream_constructor_FUN_005ff664(ifstream *this_ptr,int ctor_flags,int fd,char *buffer,int buffer_len)
 ;
 ; Parameters:
 ; ifstream *       Stack[0x4]:4   this_ptr

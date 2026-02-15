@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_setCameraRotationFromPoint_FUN_0048c1b0(CDemonRenderer *this_ptr,CVector3i *rotation)
+; void __cdecl engine_drender_cpp_CDemonRenderer_setCameraRotationFromPoint_FUN_0048c1b0(CDemonRenderer *this_ptr,CVector3i *rotation)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr

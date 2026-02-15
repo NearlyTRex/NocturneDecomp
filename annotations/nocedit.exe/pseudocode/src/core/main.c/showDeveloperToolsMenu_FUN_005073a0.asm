@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_main_c_showDeveloperToolsMenu_FUN_005073a0(void)
+; void __cdecl core_main_c_showDeveloperToolsMenu_FUN_005073a0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x528]:1  local_528

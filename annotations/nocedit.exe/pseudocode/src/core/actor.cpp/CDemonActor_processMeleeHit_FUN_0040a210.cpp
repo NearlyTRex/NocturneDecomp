@@ -85,7 +85,7 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor 
   local_1c = (CGlass *)(*((this_ptr->vtable)._ub)->getCarrier)(this_ptr);
   if (local_38 == 0) {
     local_24 = (CDemonActor *)local_38;
-    for (local_2c = (float)local_38; (int)local_2c < (int)g_CDemonSetPtr->actor_list_ptr;
+    for (local_2c = (float)local_38; (int)local_2c < g_CDemonSetPtr->actor_count;
         local_2c = (float)((int)local_2c + 1)) {
       pCStack_18 = *(CGlass **)
                     (local_24[0xf7e].actor_name + (int)(g_CDemonSetPtr->cameras[0].name + 4));
@@ -167,7 +167,7 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor 
           (*(((pCVar3->base).vtable._uc)->_uc).checkCylinderCollisionWorld)
                     (pCVar3,(CVector3f *)in_stack_fffffd70,2.0,
                      (SDamageInfo *)&local_1a0.impact_direction);
-          uStack_26c = (double)(float)local_1a0.damage_type;
+          uStack_26c = (double)local_1a0.gore_multiplier;
           if (0.0 < uStack_26c) {
             round(uStack_26c * 0.5 + 1.0);
             in_stack_fffffd70 = (float *)0x40a511;
@@ -266,15 +266,12 @@ LAB_0040a3e0:
               (iVar4 = core_actor_cpp_isOfClass_FUN_0040c6d0(&pCStack_18->base,"CHero"),
               iVar4 == 0)) {
         core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&local_218.impact_point);
-        local_218.impact_point.x = (float)g_CDemonSetPtr->unk1;
+        local_218.impact_point.x = (float)g_CDemonSetPtr->collision_part_index;
         (*((this_ptr->vtable)._ub)->fillAttackDamageInfo)
                   (this_ptr,hit_type,(SDamageInfo *)&local_218.impact_point,&pCVar3->base);
-        local_74.y = (g_CDemonSetPtr->collision_result_vec2).x -
-                     (g_CDemonSetPtr->collision_result_vec1).x;
-        local_74.z = (g_CDemonSetPtr->collision_result_vec2).y -
-                     (g_CDemonSetPtr->collision_result_vec1).y;
-        local_68.x = (g_CDemonSetPtr->collision_result_vec2).z -
-                     (g_CDemonSetPtr->collision_result_vec1).z;
+        local_74.y = (g_CDemonSetPtr->ray_target).x - (g_CDemonSetPtr->ray_origin).x;
+        local_74.z = (g_CDemonSetPtr->ray_target).y - (g_CDemonSetPtr->ray_origin).y;
+        local_68.x = (g_CDemonSetPtr->ray_target).z - (g_CDemonSetPtr->ray_origin).z;
         fVar7 = (float)10 /
                 SQRT(local_68.x * local_68.x + local_74.y * local_74.y + local_74.z * local_74.z);
         local_40 = (CTrigger *)(local_74.y * fVar7);
@@ -283,14 +280,14 @@ LAB_0040a3e0:
         if ((CTrigger **)&local_218.ammo_type != &local_40) {
           local_218.ammo_type = (int)local_40;
           local_218.weapon_damage_modifier = (float)local_3c;
-          local_218.damage_type = local_38;
+          local_218.gore_multiplier = (float)local_38;
         }
         pCVar2 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                            (&pCVar3->base,(CVector3f *)&local_34,
                             &g_CDemonSetPtr->collision_impact_position);
         if ((CVector3f *)&local_218.wielder != pCVar2) {
           local_218.wielder = (CDemonActor *)pCVar2->x;
-          local_1dc.unknown = (int)pCVar2->y;
+          local_1dc.fire_type = (int)pCVar2->y;
           local_1dc.damage_amount = pCVar2->z;
         }
         (*(((pCVar3->base).vtable._uc)->_uc).processDamage)

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_spotview_cpp_staticInit_FUN_005b95b0(void)
+; void __cdecl shape_spotview_cpp_staticInit_FUN_005b95b0(void)
 ;
 ;
 ; Referenced Globals:

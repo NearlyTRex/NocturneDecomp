@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVector3f * __cdecl core_weapon_cpp_CWeapon_getMuzzlePoint_FUN_005ee670(CWeapon *this_ptr,CVector3f *out_point)
+; CVector3f * __cdecl core_weapon_cpp_CWeapon_getMuzzlePoint_FUN_005ee670(CWeapon *this_ptr,CVector3f *out_point)
 ;
 ; Parameters:
 ; CWeapon *        Stack[0x4]:4   this_ptr

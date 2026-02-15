@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_script_cpp_CScript_findText_FUN_00566cc0(CScript *this_ptr,char *search_str,int start_col,int start_line,uint *found_col,int *found_line,uint *found_end_col,int direction)
+; int __cdecl core_script_cpp_CScript_findText_FUN_00566cc0(CScript *this_ptr,char *search_str,int start_col,int start_line,uint *found_col,int *found_line,uint *found_end_col,int direction)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr

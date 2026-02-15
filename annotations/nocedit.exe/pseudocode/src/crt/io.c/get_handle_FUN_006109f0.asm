@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl HANDLE __cdecl crt_io_c_get_handle_FUN_006109f0(int fd)
+; HANDLE __cdecl crt_io_c_get_handle_FUN_006109f0(int fd)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   fd

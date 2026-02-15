@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_unknown_c_FUN_0060b586(byte *param_1,undefined8 *param_2)
+; void __cdecl crt_unknown_c_FUN_0060b586(byte *param_1,undefined8 *param_2)
 ;
 ; Parameters:
 ; byte *           Stack[0x4]:4   param_1

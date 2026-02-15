@@ -72,9 +72,9 @@ void __cdecl core_scat_cpp_CScat_FUN_00558720(CScat *this_ptr)
     local_28 = in_stack_0000000c;
     local_24 = 1e+30;
     iVar4 = 0;
-    for (local_20 = in_stack_0000000c; local_20 < (int)g_CDemonSetPtr->actor_list_ptr;
+    for (local_20 = in_stack_0000000c; local_20 < g_CDemonSetPtr->actor_count;
         local_20 = local_20 + 1) {
-      iVar1 = *(int *)(g_CDemonSetPtr->actor_list_data + iVar4);
+      iVar1 = *(int *)((int)g_CDemonSetPtr->actors + iVar4);
       local_18 = (float)core_scat_cpp_CScat_FUN_00558cf0(this_ptr);
       if ((0.0 <= local_18) && (local_18 < local_24)) {
         local_28 = iVar1;

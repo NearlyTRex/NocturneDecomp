@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBoundingBox3D * __cdecl core_teleport_cpp_CTeleportDest_getBoundingBox_FUN_005da790(CTeleportDest *this_ptr,CBoundingBox3D *out_box)
+; CBoundingBox3D * __cdecl core_teleport_cpp_CTeleportDest_getBoundingBox_FUN_005da790(CTeleportDest *this_ptr,CBoundingBox3D *out_box)
 ;
 ; Parameters:
 ; CTeleportDest *  Stack[0x4]:4   this_ptr

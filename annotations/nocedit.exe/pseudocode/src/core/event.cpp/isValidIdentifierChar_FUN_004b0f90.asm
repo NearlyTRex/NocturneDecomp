@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_event_cpp_isValidIdentifierChar_FUN_004b0f90(int ch)
+; int __cdecl core_event_cpp_isValidIdentifierChar_FUN_004b0f90(int ch)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   ch

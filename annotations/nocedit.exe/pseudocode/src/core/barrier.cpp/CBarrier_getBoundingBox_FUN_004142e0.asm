@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBoundingBox3D * __cdecl core_barrier_cpp_CBarrier_getBoundingBox_FUN_004142e0(CBarrier *this_ptr,CBoundingBox3D *out_box)
+; CBoundingBox3D * __cdecl core_barrier_cpp_CBarrier_getBoundingBox_FUN_004142e0(CBarrier *this_ptr,CBoundingBox3D *out_box)
 ;
 ; Parameters:
 ; CBarrier *       Stack[0x4]:4   this_ptr

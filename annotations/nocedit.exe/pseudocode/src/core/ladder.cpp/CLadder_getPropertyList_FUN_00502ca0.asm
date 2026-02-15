@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_ladder_cpp_CLadder_getPropertyList_FUN_00502ca0(CLadder *this_ptr,CActorPropertyList *property_list)
+; void __cdecl core_ladder_cpp_CLadder_getPropertyList_FUN_00502ca0(CLadder *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CLadder *        Stack[0x4]:4   this_ptr

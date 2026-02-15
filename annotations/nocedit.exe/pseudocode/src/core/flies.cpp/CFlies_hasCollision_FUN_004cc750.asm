@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_flies_cpp_CFlies_hasCollision_FUN_004cc750(CFlies *this_ptr,SCollisionInfo *collision_info)
+; int __cdecl core_flies_cpp_CFlies_hasCollision_FUN_004cc750(CFlies *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CFlies *         Stack[0x4]:4   this_ptr

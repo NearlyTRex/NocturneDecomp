@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_vessel_cpp_CCryptVessel_canPickup_FUN_005e9100(CCryptVessel *this_ptr,CDemonActor *picker)
+; int __cdecl core_vessel_cpp_CCryptVessel_canPickup_FUN_005e9100(CCryptVessel *this_ptr,CDemonActor *picker)
 ;
 ; Parameters:
 ; CCryptVessel *   Stack[0x4]:4   this_ptr

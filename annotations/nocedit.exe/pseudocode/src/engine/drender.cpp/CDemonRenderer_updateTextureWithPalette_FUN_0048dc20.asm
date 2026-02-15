@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_updateTextureWithPalette_FUN_0048dc20(CDemonRenderer *this_ptr,SMRGLTextureBasic *texture_to_load,SMRGLTextureBasic *texture_to_update)
+; void __cdecl engine_drender_cpp_CDemonRenderer_updateTextureWithPalette_FUN_0048dc20(CDemonRenderer *this_ptr,SMRGLTextureBasic *texture_to_load,SMRGLTextureBasic *texture_to_update)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr

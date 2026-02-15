@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_io_c_ConvertAccessMode_FUN_0060c850(int access_mode,DWORD *desired_access,DWORD *share_mode)
+; void __cdecl crt_io_c_ConvertAccessMode_FUN_0060c850(int access_mode,DWORD *desired_access,DWORD *share_mode)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   access_mode

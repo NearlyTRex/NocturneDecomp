@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_setdir_cpp_CDemonSet_freeThumbs_FUN_00575df0(CDemonSet *this_ptr)
+; void __cdecl core_setdir_cpp_CDemonSet_freeThumbs_FUN_00575df0(CDemonSet *this_ptr)
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr

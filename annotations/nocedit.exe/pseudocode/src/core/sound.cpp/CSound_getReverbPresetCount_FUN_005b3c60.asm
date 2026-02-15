@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_sound_cpp_CSound_getReverbPresetCount_FUN_005b3c60(CSound *this_ptr)
+; int __cdecl core_sound_cpp_CSound_getReverbPresetCount_FUN_005b3c60(CSound *this_ptr)
 ;
 ; Parameters:
 ; CSound *         Stack[0x4]:4   this_ptr

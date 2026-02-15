@@ -19,18 +19,18 @@
   },
   "complexity": {
     "assembly_lines": 724,
-    "complexity_score": 474,
+    "complexity_score": 483,
     "cross_reference_count": 13,
     "function_call_count": 36,
     "global_count": 47,
-    "pseudocode_lines": 299,
-    "suspect_count": 16,
+    "pseudocode_lines": 298,
+    "suspect_count": 17,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "undefined_data"
     ],
-    "total_lines": 1023
+    "total_lines": 1022
   },
   "cross_references": [
     {
@@ -809,35 +809,35 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 53,
       "match": "(uint *)((int)",
-      "text": "puVar15 = (uint *)((int)g_DynamicLights + iVar7);",
+      "text": "puVar1 = (uint *)((int)g_DynamicLights + iVar7);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 64,
+      "line": 63,
       "match": "(uint *)((int)",
-      "text": "puVar15 = (uint *)((int)g_ActiveLightList + iVar7);",
+      "text": "puVar1 = (uint *)((int)g_ActiveLightList + iVar7);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 74,
+      "line": 73,
       "match": "(uint *)((int)",
-      "text": "puVar15 = (uint *)((int)g_ActiveLightList + iVar7);",
+      "text": "puVar1 = (uint *)((int)g_ActiveLightList + iVar7);",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 87,
+      "line": 86,
       "match": "DAT_03277d80",
       "text": "DAT_03277d80 = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 90,
+      "line": 89,
       "match": "DAT_0327785c",
       "text": "DAT_0327785c = 0;",
       "type": "undefined_data"
@@ -871,50 +871,57 @@
       "type": "undefined_data"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 171,
+      "match": "(int *)((int)",
+      "text": "piVar14 = (int *)((int)&pCVar6->lights[0].camera_light_bounds[0].left + local_20);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Undefined global data reference",
       "line": 174,
       "match": "DAT_032770b4",
-      "text": "(&DAT_032770b4)[iVar3].left = *(int *)pcVar1;",
+      "text": "(&DAT_032770b4)[iVar3].left = *piVar14;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 190,
+      "line": 189,
       "match": "DAT_032770b4",
       "text": "rect = &DAT_032770b4;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 252,
+      "line": 251,
       "match": "(CMatrix3x3i *)((int)",
-      "text": "pCVar8 = (CMatrix3x3i *)((int)pCVar8 + ((uint)bVar17 * -2 + 1) * 4);",
+      "text": "pCVar8 = (CMatrix3x3i *)((int)pCVar8 + ((uint)bVar16 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 260,
+      "line": 259,
       "match": "(CMatrix3x3f *)((int)",
-      "text": "pCVar13 = (CMatrix3x3f *)((int)pCVar13 + ((uint)bVar17 * -2 + 1) * 4);",
+      "text": "pCVar13 = (CMatrix3x3f *)((int)pCVar13 + ((uint)bVar16 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 290,
+      "line": 289,
       "match": "ROUND",
       "text": "*piVar14 = (int)ROUND(CStack_54.x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 291,
+      "line": 290,
       "match": "ROUND",
       "text": "piVar14[1] = (int)ROUND(CStack_54.y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 292,
+      "line": 291,
       "match": "ROUND",
       "text": "piVar14[2] = (int)ROUND(CStack_54.z * 256.0f);",
       "type": "decompiler_intrinsic"

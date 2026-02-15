@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058e600(CDeformableModel *this_ptr)
+; void __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058e600(CDeformableModel *this_ptr)
 ;
 ; Parameters:
 ; CDeformableModel * Stack[0x4]:4   this_ptr

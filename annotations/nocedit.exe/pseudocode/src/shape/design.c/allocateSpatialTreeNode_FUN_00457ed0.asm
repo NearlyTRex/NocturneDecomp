@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl STreeNode * __cdecl shape_design_c_allocateSpatialTreeNode_FUN_00457ed0(void)
+; STreeNode * __cdecl shape_design_c_allocateSpatialTreeNode_FUN_00457ed0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl sound_sndwav_cpp_CWavOutDevice_allocateSfx_FUN_005b16f0(CWavOutDevice *this_ptr,int sample_buffer_id)
+; int __cdecl sound_sndwav_cpp_CWavOutDevice_allocateSfx_FUN_005b16f0(CWavOutDevice *this_ptr,int sample_buffer_id)
 ;
 ; Parameters:
 ; CWavOutDevice *  Stack[0x4]:4   this_ptr

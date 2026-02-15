@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl core_dtri_cpp_rayTriangleIntersection_FUN_0049a800(CDemonTriangle *triangle,CVector3f *rayOrigin,CVector3f *rayDirection)
+; float __cdecl core_dtri_cpp_rayTriangleIntersection_FUN_0049a800(CDemonTriangle *triangle,CVector3f *rayOrigin,CVector3f *rayDirection)
 ;
 ; Parameters:
 ; CDemonTriangle * Stack[0x4]:4   triangle

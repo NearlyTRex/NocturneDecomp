@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_hostage_cpp_staticInit_FUN_004f47d0(void)
+; void __cdecl core_hostage_cpp_staticInit_FUN_004f47d0(void)
 ;
 ;
 ; Referenced Globals:

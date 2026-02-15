@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl DWORD __cdecl crt_file_c___getfileattr_FUN_006082e0(char *filename)
+; DWORD __cdecl crt_file_c___getfileattr_FUN_006082e0(char *filename)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

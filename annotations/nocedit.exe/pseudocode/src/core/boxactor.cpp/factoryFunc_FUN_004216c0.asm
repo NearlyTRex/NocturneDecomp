@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBoxActor * __cdecl core_boxactor_cpp_factoryFunc_FUN_004216c0(void)
+; CBoxActor * __cdecl core_boxactor_cpp_factoryFunc_FUN_004216c0(void)
 ;
 ;
 ; XREF[1]:

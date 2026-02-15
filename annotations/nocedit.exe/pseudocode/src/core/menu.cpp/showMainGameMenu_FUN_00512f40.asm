@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_menu_cpp_showMainGameMenu_FUN_00512f40(void)
+; int __cdecl core_menu_cpp_showMainGameMenu_FUN_00512f40(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c

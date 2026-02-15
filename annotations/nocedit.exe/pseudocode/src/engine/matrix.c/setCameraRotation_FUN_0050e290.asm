@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_matrix_c_setCameraRotation_FUN_0050e290(int pitch,int yaw,int roll)
+; void __cdecl engine_matrix_c_setCameraRotation_FUN_0050e290(int pitch,int yaw,int roll)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   pitch

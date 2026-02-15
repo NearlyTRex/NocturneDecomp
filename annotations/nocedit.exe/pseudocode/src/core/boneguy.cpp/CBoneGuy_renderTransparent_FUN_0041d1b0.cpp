@@ -24,11 +24,11 @@ int __cdecl core_boneguy_cpp_CBoneGuy_renderTransparent_FUN_0041d1b0(CBoneGuy *t
   if (iVar2 != 0) {
     engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0(g_CDemonRendererPtr2,0);
     pCVar1 = g_CDemonRendererPtr2;
-    g_CDemonSetPtr->unk_lighting_param2 = 1;
+    g_CDemonSetPtr->disable_directional_lighting = 1;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(pCVar1,0xffff);
     core_charactr_cpp_CCharacter_renderCharacter_FUN_00429aa0((CCharacter *)this_ptr);
     pCVar1 = g_CDemonRendererPtr2;
-    g_CDemonSetPtr->unk_lighting_param2 = 0;
+    g_CDemonSetPtr->disable_directional_lighting = 0;
     engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80(pCVar1);
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);

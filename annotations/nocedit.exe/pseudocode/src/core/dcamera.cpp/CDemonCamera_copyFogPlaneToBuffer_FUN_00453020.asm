@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00453020(CDemonCamera *this_ptr,int plane_index)
+; void __cdecl core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00453020(CDemonCamera *this_ptr,int plane_index)
 ;
 ; Parameters:
 ; CDemonCamera *   Stack[0x4]:4   this_ptr

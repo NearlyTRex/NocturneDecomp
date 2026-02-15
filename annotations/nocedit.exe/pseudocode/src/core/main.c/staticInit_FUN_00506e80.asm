@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_main_c_staticInit_FUN_00506e80(void)
+; void __cdecl core_main_c_staticInit_FUN_00506e80(void)
 ;
 ;
 ; Referenced Globals:

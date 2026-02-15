@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_heap_c__heapwalk_FUN_006012c0(_heapinfo *heap_info)
+; int __cdecl crt_heap_c__heapwalk_FUN_006012c0(_heapinfo *heap_info)
 ;
 ; Parameters:
 ; _heapinfo *      Stack[0x4]:4   heap_info

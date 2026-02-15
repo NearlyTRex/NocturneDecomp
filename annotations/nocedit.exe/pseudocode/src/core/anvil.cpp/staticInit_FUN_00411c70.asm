@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_anvil_cpp_staticInit_FUN_00411c70(void)
+; void __cdecl core_anvil_cpp_staticInit_FUN_00411c70(void)
 ;
 ;
 ; Referenced Globals:

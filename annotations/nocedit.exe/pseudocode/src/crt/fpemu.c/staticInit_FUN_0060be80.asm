@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_fpemu_c_staticInit_FUN_0060be80(void)
+; void __cdecl crt_fpemu_c_staticInit_FUN_0060be80(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14

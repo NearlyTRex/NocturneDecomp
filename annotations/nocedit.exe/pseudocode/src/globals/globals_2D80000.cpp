@@ -5,7 +5,7 @@
 // =============================================================================
 
 // CBloodParticle[256]
-CBloodParticle DAT_02d833d4[256] = {};
+CBloodParticle CBloodParticle_ARRAY_02d833d4[256] = {};
 
 // CBloodSplat[2000]
 CBloodSplat DAT_02d873dc[2000] = {};
@@ -25,8 +25,8 @@ CGore g_CGoreInstance = {};
 // CPickList
 CPickList g_CPickList = {};
 
-// SMRGLHeaderPrimitive
-SMRGLHeaderPrimitive SMRGLHeaderPrimitive_02d83368 = {};
+// SMRGLPrimitiveQuadIndex
+SMRGLPrimitiveQuadIndex SMRGLPrimitiveQuadIndex_02d83368 = {};
 
 // char
 char g_CurrentSaveFile = {};
@@ -86,10 +86,6 @@ int INT_02d83318 = {};
 int INT_02d8331c = {};
 int INT_02d83320 = {};
 int INT_02d83324 = {};
-int INT_02d83380 = {};
-int INT_02d83384 = {};
-int INT_02d83388 = {};
-int INT_02d8338c = {};
 int INT_02d83390 = {};
 int INT_02d83394 = {};
 int INT_02d83398 = {};

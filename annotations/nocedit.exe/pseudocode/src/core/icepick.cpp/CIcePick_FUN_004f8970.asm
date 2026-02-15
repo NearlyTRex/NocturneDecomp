@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_icepick_cpp_CIcePick_FUN_004f8970(CIcePick *this_ptr)
+; int __cdecl core_icepick_cpp_CIcePick_FUN_004f8970(CIcePick *this_ptr)
 ;
 ; Parameters:
 ; CIcePick *       Stack[0x4]:4   this_ptr
@@ -19,8 +19,8 @@
 ; Referenced Globals:
 ;   double DOUBLE_0062f753 = 2
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   undefined4 g_CDemonSetInstance.actor_list_ptr
-;   undefined4 g_CDemonSetInstance.actor_list_data[0]
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;   undefined4 g_CTommyGunClassInfo.name_hash
 ;
 ; Called Functions:
@@ -63,7 +63,7 @@ section .text
     XOR EDI,EDI                         ; 004f89c2
     MOV EAX,[0x006810c8]                ; 004f89c4 | g_CDemonSetPtr
         ;   Label: LAB_004f89c4
-    CMP ESI,dword ptr [EAX + 0x14d154]  ; 004f89c9 | g_CDemonSetInstance.actor_list_ptr
+    CMP ESI,dword ptr [EAX + 0x14d154]  ; 004f89c9 | g_CDemonSetInstance.actor_count
     JL 0x004f89eb                       ; 004f89cf
         ;   XREF to: 004f89eb (CONDITIONAL_JUMP)  ; LAB_004f89eb
     MOV EAX,dword ptr [EBP + 0x14]      ; 004f89d1
@@ -78,7 +78,7 @@ section .text
     POP ESI                             ; 004f89e8
     POP EBX                             ; 004f89e9
     RET                                 ; 004f89ea
-    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14d158] ; 004f89eb | g_CDemonSetInstance.actor_list_data[0]
+    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14d158] ; 004f89eb | g_CDemonSetInstance.actors[0]
         ;   Label: LAB_004f89eb
     PUSH EBX                            ; 004f89f2
     MOV EAX,dword ptr [EBX + 0x154]     ; 004f89f3

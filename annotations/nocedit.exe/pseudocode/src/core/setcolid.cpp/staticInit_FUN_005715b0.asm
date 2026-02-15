@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_setcolid_cpp_staticInit_FUN_005715b0(void)
+; void __cdecl core_setcolid_cpp_staticInit_FUN_005715b0(void)
 ;
 ;
 ; Referenced Globals:

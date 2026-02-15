@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_actor_cpp_matchClassExpression_FUN_0040c610(CDemonActorType *type_ptr,char **parse_pos)
+; int __cdecl core_actor_cpp_matchClassExpression_FUN_0040c610(CDemonActorType *type_ptr,char **parse_pos)
 ;
 ; Parameters:
 ; CDemonActorType * Stack[0x4]:4   type_ptr

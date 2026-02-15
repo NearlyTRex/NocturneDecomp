@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_beast_cpp_CBeast_addFilesToExtract_FUN_00418460(CBeast *this_ptr,_FILE *file_handle)
+; void __cdecl core_beast_cpp_CBeast_addFilesToExtract_FUN_00418460(CBeast *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CBeast *         Stack[0x4]:4   this_ptr

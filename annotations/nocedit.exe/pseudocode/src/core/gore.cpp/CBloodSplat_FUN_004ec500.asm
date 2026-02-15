@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_gore_cpp_CBloodSplat_FUN_004ec500(CBloodSplat *this_ptr)
+; void __cdecl core_gore_cpp_CBloodSplat_FUN_004ec500(CBloodSplat *this_ptr)
 ;
 ; Parameters:
 ; CBloodSplat *    Stack[0x4]:4   this_ptr
@@ -112,12 +112,12 @@ section .text
         ;   XREF to: 004ec813 (CONDITIONAL_JUMP)  ; LAB_004ec813
     XOR EDX,EDX                         ; 004ec56e
     MOV EBX,0xffff                      ; 004ec570
-    MOV dword ptr [0x02d83370],EDX      ; 004ec575 | SMRGLHeaderPrimitive_02d83368.surface_normal.A
-    MOV dword ptr [0x02d83378],EBX      ; 004ec57b | SMRGLHeaderPrimitive_02d83368.surface_normal.C
+    MOV dword ptr [0x02d83370],EDX      ; 004ec575 | SMRGLPrimitiveQuadIndex_02d83368.base.surface_normal.A
+    MOV dword ptr [0x02d83378],EBX      ; 004ec57b | SMRGLPrimitiveQuadIndex_02d83368.base.surface_normal.C
     MOV EBX,dword ptr [ESI + 0x28]      ; 004ec581
-    MOV dword ptr [0x02d83374],EDX      ; 004ec584 | SMRGLHeaderPrimitive_02d83368.surface_normal.B
+    MOV dword ptr [0x02d83374],EDX      ; 004ec584 | SMRGLPrimitiveQuadIndex_02d83368.base.surface_normal.B
     LEA EAX,[EBX*0x4 + 0x0]             ; 004ec58a
-    MOV dword ptr [0x02d8337c],EDX      ; 004ec591 | SMRGLHeaderPrimitive_02d83368.surface_normal.D
+    MOV dword ptr [0x02d8337c],EDX      ; 004ec591 | SMRGLPrimitiveQuadIndex_02d83368.base.surface_normal.D
     SUB EAX,EBX                         ; 004ec597
     MOV EDX,0x67ba28                    ; 004ec599 | SMRGLTextureBasic_0067ba28
     SHL EAX,0x7                         ; 004ec59e
@@ -288,7 +288,7 @@ section .text
         ;   Label: LAB_004ec7ce
     MOV dword ptr [ECX],0x0             ; 004ec7d4 | g_RenderVertexBuffer[3].color
     MOV dword ptr [EDX],0x0             ; 004ec7da | g_RenderVertexBuffer[3].fog
-    PUSH 0x2d83368                      ; 004ec7e0 | SMRGLHeaderPrimitive_02d83368
+    PUSH 0x2d83368                      ; 004ec7e0 | SMRGLPrimitiveQuadIndex_02d83368
         ;   Label: LAB_004ec7e0
     MOV EDX,dword ptr [0x006703ec]      ; 004ec7e5 | g_CDemonRendererPtr2
     PUSH EDX                            ; 004ec7eb | g_CDemonRendererInstance
@@ -315,7 +315,7 @@ section .text
     JZ 0x004ec81d                       ; 004ec815
         ;   XREF to: 004ec81d (CONDITIONAL_JUMP)  ; LAB_004ec81d
     MOV dword ptr [ESI],0x1             ; 004ec817
-    MOV dword ptr [0x02d83374],0xffff   ; 004ec81d | SMRGLHeaderPrimitive_02d83368.surface_normal.B
+    MOV dword ptr [0x02d83374],0xffff   ; 004ec81d | SMRGLPrimitiveQuadIndex_02d83368.base.surface_normal.B
         ;   Label: LAB_004ec81d
     MOV EBX,dword ptr [ESI + 0x28]      ; 004ec827
     LEA EAX,[EBX*0x4 + 0x0]             ; 004ec82a
@@ -324,12 +324,12 @@ section .text
     SHL EAX,0x3                         ; 004ec835
     XOR EDI,EDI                         ; 004ec838
     ADD EAX,0x67b9c8                    ; 004ec83a | SMRGLTextureBasic_ARRAY_0067b9c8
-    MOV dword ptr [0x02d83370],ECX      ; 004ec83f | SMRGLHeaderPrimitive_02d83368.surface_normal.A
+    MOV dword ptr [0x02d83370],ECX      ; 004ec83f | SMRGLPrimitiveQuadIndex_02d83368.base.surface_normal.A
     PUSH EAX                            ; 004ec845
     MOV EAX,[0x006703ec]                ; 004ec846 | g_CDemonRendererPtr2
-    MOV dword ptr [0x02d83378],ECX      ; 004ec84b | SMRGLHeaderPrimitive_02d83368.surface_normal.C
+    MOV dword ptr [0x02d83378],ECX      ; 004ec84b | SMRGLPrimitiveQuadIndex_02d83368.base.surface_normal.C
     PUSH EAX                            ; 004ec851 | g_CDemonRendererInstance
-    MOV dword ptr [0x02d8337c],ECX      ; 004ec852 | SMRGLHeaderPrimitive_02d83368.surface_normal.D
+    MOV dword ptr [0x02d8337c],ECX      ; 004ec852 | SMRGLPrimitiveQuadIndex_02d83368.base.surface_normal.D
     LEA EBX,[ESP + 0x74]                ; 004ec858
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 004ec85c
         ;   XREF to: 0048db80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_waypoint_cpp_CWaypoint_renderOpaque_FUN_005ebf70(CWayPoint *this_ptr)
+; int __cdecl core_waypoint_cpp_CWaypoint_renderOpaque_FUN_005ebf70(CWayPoint *this_ptr)
 ;
 ; Parameters:
 ; CWayPoint *      Stack[0x4]:4   this_ptr
@@ -29,8 +29,8 @@
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+;   core_path.cpp_CPathMap_FUN_00547fc0
 ;   core_path.cpp_CPathMap_FUN_00548750
-;   core_path.cpp_FUN_00547fc0
 ;   core_path.cpp_FUN_00548500
 ;   engine_3d.c_drawLine2DFromIndices_FUN_00407cf0
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
@@ -192,7 +192,7 @@ section .text
         ;   Label: LAB_005ec10e
     PUSH ESI                            ; 005ec111
     CALL core_path.cpp_FUN_00548500     ; 005ec112
-        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_FUN_00548500()
+        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_FUN_00548500(CLocation * location)
     ADD ESP,0x4                         ; 005ec117
     PUSH EAX                            ; 005ec11a
     MOV EBX,EAX                         ; 005ec11b
@@ -206,8 +206,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0xa0]      ; 005ec12f
     PUSH EDI                            ; 005ec136
     PUSH EBX                            ; 005ec137
-    CALL core_path.cpp_FUN_00547fc0     ; 005ec138
-        ;   XREF to: 00547fc0 (UNCONDITIONAL_CALL)  ; void core_path.cpp_FUN_00547fc0()
+    CALL core_path.cpp_CPathMap_FUN_00547fc0 ; 005ec138
+        ;   XREF to: 00547fc0 (UNCONDITIONAL_CALL)  ; void core_path.cpp_CPathMap_FUN_00547fc0(CPathMap * this_ptr)
     ADD ESP,0x14                        ; 005ec13d
     XOR EAX,EAX                         ; 005ec140
     ADD ESP,0x9c                        ; 005ec142

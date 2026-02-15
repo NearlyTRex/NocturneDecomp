@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl core_inv_cpp_CInventory_calculateTotalBatteryCharge_FUN_004ffda0(CInventory *inventory_ptr,float max_charge)
+; float __cdecl core_inv_cpp_CInventory_calculateTotalBatteryCharge_FUN_004ffda0(CInventory *inventory_ptr,float max_charge)
 ;
 ; Parameters:
 ; CInventory *     Stack[0x4]:4   inventory_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_sentinel_cpp_CSentinel_archive_FUN_00568c70(CSentinel *this_ptr)
+; void __cdecl core_sentinel_cpp_CSentinel_archive_FUN_00568c70(CSentinel *this_ptr)
 ;
 ; Parameters:
 ; CSentinel *      Stack[0x4]:4   this_ptr

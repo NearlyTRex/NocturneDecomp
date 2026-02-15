@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CAlphaBitmap * __cdecl core_moon_cpp_CAlphaBitmap_arrdtor_FUN_0052a470(CAlphaBitmap *objs,uint flags)
+; CAlphaBitmap * __cdecl core_moon_cpp_CAlphaBitmap_arrdtor_FUN_0052a470(CAlphaBitmap *objs,uint flags)
 ;
 ; Parameters:
 ; CAlphaBitmap *   Stack[0x4]:4   objs

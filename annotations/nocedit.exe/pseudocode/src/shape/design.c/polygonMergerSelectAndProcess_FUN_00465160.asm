@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_polygonMergerSelectAndProcess_FUN_00465160(int polygon_index,float tolerance)
+; void __cdecl shape_design_c_polygonMergerSelectAndProcess_FUN_00465160(int polygon_index,float tolerance)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   polygon_index

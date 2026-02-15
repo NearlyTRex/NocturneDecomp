@@ -19,14 +19,15 @@
   },
   "complexity": {
     "assembly_lines": 686,
-    "complexity_score": 338,
+    "complexity_score": 353,
     "cross_reference_count": 0,
     "function_call_count": 18,
     "global_count": 33,
     "pseudocode_lines": 273,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
+      "suspect_float",
       "unresolved_funcptr",
       "warning_type_propagation"
     ],
@@ -285,19 +286,19 @@
     },
     {
       "addr": "032613cc",
-      "name": "g_CDemonSetInstance.actor_list_ptr",
+      "name": "g_CDemonSetInstance.actor_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "03263310",
-      "name": "g_CDemonSetInstance.damage_listener_count",
+      "name": "g_CDemonSetInstance.character_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "03263314",
-      "name": "g_CDemonSetInstance.damage_listeners",
+      "name": "g_CDemonSetInstance.characters[0]",
       "type": "undefined4",
       "value": null
     },
@@ -309,7 +310,7 @@
     },
     {
       "addr": "03265254",
-      "name": "g_CDemonSetInstance.unk4[7996]",
+      "name": "g_CDemonSetInstance.enemy_count",
       "type": "undefined4",
       "value": null
     },
@@ -569,6 +570,13 @@
       "match": "SQRT",
       "text": "local_24 = SQRT(*(float *)(this_ptr->unk1 + 0x5f8) * *(float *)(this_ptr->unk1 + 0x5f8) +",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 141,
+      "match": "5.60519e-45",
+      "text": "SStack_104.gore_multiplier = 5.60519e-45;",
+      "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",

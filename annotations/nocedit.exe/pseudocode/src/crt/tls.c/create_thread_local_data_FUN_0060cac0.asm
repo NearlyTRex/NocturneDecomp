@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallRegister LPVOID __watcallRegister crt_tls_c_create_thread_local_data_FUN_0060cac0(void)
+; LPVOID __watcallRegister crt_tls_c_create_thread_local_data_FUN_0060cac0(void)
 ;
 ;
 ; XREF[1]:

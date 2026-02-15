@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dtri_cpp_clipPolygonToRight_FUN_0049bb30(float x_max)
+; void __cdecl core_dtri_cpp_clipPolygonToRight_FUN_0049bb30(float x_max)
 ;
 ; Parameters:
 ; float            Stack[0x4]:4   x_max

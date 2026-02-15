@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * __cdecl core_simbox_cpp_CSimBox_getActorType_FUN_00588d30(CSimBox *this_ptr)
+; CDemonActorType * __cdecl core_simbox_cpp_CSimBox_getActorType_FUN_00588d30(CSimBox *this_ptr)
 ;
 ; Parameters:
 ; CSimBox *        Stack[0x4]:4   this_ptr

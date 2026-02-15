@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_bodypart_cpp_CBodyPart_FUN_00419340(CBodyPart *this_ptr,int render_flags)
+; void __cdecl core_bodypart_cpp_CBodyPart_FUN_00419340(CBodyPart *this_ptr,int render_flags)
 ;
 ; Parameters:
 ; CBodyPart *      Stack[0x4]:4   this_ptr

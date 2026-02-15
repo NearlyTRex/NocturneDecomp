@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer *this_ptr,SMRGLTextureBasic *texture)
+; void __cdecl engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer *this_ptr,SMRGLTextureBasic *texture)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr

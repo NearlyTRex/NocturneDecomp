@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_heap_c_UnlinkAndFreeBlock_FUN_0060c9bc(HeapBlock *block)
+; void __cdecl crt_heap_c_UnlinkAndFreeBlock_FUN_0060c9bc(HeapBlock *block)
 ;
 ; Parameters:
 ; HeapBlock *      Stack[0x4]:4   block

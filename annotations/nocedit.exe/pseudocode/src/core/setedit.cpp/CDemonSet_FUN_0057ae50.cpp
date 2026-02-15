@@ -43,7 +43,7 @@ int __cdecl core_setedit_cpp_CDemonSet_FUN_0057ae50(CDemonSet *this_ptr)
   g_CDemonLightInstance.base.max_distance = 255.0;
   core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(this_ptr,0);
   pvVar2 = PTR_DAT_00681ab8;
-  this_ptr->actor_list_ptr = (void *)0x0;
+  this_ptr->actor_count = 0;
   core_slew_cpp_CSlew_init_FUN_005a2060(pvVar2);
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   pvVar2 = PTR_DAT_00681ab8;

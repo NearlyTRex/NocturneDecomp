@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_litecone_cpp_CLightCone_hasCollision_FUN_00506d90(CLightCone *this_ptr,SCollisionInfo *collision_info)
+; int __cdecl core_litecone_cpp_CLightCone_hasCollision_FUN_00506d90(CLightCone *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CLightCone *     Stack[0x4]:4   this_ptr

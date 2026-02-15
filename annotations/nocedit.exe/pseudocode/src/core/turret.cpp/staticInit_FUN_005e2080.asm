@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_turret_cpp_staticInit_FUN_005e2080(void)
+; void __cdecl core_turret_cpp_staticInit_FUN_005e2080(void)
 ;
 ;
 ; Referenced Globals:

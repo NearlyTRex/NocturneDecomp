@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl istrstream * __cdecl crt_strstream_cpp_istrstream_dtor_FUN_005ff5ca(istrstream *this_ptr,uint flags)
+; istrstream * __cdecl crt_strstream_cpp_istrstream_dtor_FUN_005ff5ca(istrstream *this_ptr,uint flags)
 ;
 ; Parameters:
 ; istrstream *     Stack[0x4]:4   this_ptr

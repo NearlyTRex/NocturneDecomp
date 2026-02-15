@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_icepick_cpp_CIcePick_FUN_004f8ad0(CIcePick *this_ptr)
+; int __cdecl core_icepick_cpp_CIcePick_FUN_004f8ad0(CIcePick *this_ptr)
 ;
 ; Parameters:
 ; CIcePick *       Stack[0x4]:4   this_ptr

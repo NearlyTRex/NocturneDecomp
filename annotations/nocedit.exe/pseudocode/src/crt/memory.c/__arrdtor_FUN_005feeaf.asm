@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void * __cdecl crt_memory_c___arrdtor_FUN_005feeaf(WatcomTypeArrayInfo *destroy_info)
+; void * __cdecl crt_memory_c___arrdtor_FUN_005feeaf(WatcomTypeArrayInfo *destroy_info)
 ;
 ; Parameters:
 ; WatcomTypeArrayInfo * Stack[0x4]:4   destroy_info

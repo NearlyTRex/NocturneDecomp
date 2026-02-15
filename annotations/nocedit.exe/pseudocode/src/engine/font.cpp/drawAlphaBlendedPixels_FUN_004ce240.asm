@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_font_cpp_drawAlphaBlendedPixels_FUN_004ce240(uint *dest_buffer,uchar *src_indices,uint *color_table,int pixel_count,uint blend_color)
+; void __cdecl engine_font_cpp_drawAlphaBlendedPixels_FUN_004ce240(uint *dest_buffer,uchar *src_indices,uint *color_table,int pixel_count,uint blend_color)
 ;
 ; Parameters:
 ; uint *           Stack[0x4]:4   dest_buffer

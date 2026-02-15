@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_meshlod_cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0(CLodMesh *this_ptr,int vertex_idx_1,int vertex_idx_2,int create_if_missing)
+; int __cdecl shape_meshlod_cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0(CLodMesh *this_ptr,int vertex_idx_1,int vertex_idx_2,int create_if_missing)
 ;
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr

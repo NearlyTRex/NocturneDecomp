@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_cloth_cpp_plotPixelSafe_FUN_0043c6b0(int x,int y)
+; void __cdecl core_cloth_cpp_plotPixelSafe_FUN_0043c6b0(int x,int y)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   x

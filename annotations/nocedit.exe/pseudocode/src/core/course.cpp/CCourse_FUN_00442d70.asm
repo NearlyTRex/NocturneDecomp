@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_course_cpp_CCourse_FUN_00442d70(CCourse *this_ptr,char *filename)
+; int __cdecl core_course_cpp_CCourse_FUN_00442d70(CCourse *this_ptr,char *filename)
 ;
 ; Parameters:
 ; CCourse *        Stack[0x4]:4   this_ptr

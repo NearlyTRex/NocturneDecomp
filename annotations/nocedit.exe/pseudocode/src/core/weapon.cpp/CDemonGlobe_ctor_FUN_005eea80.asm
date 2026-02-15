@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonGlobe * __cdecl core_weapon_cpp_CDemonGlobe_ctor_FUN_005eea80(CDemonGlobe *this_ptr)
+; CDemonGlobe * __cdecl core_weapon_cpp_CDemonGlobe_ctor_FUN_005eea80(CDemonGlobe *this_ptr)
 ;
 ; Parameters:
 ; CDemonGlobe *    Stack[0x4]:4   this_ptr

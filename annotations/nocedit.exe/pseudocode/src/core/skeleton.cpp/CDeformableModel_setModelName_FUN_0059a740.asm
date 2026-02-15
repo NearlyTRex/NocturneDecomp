@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_skeleton_cpp_CDeformableModel_setModelName_FUN_0059a740(CDeformableModel *this_ptr,char *model_name)
+; void __cdecl core_skeleton_cpp_CDeformableModel_setModelName_FUN_0059a740(CDeformableModel *this_ptr,char *model_name)
 ;
 ; Parameters:
 ; CDeformableModel * Stack[0x4]:4   this_ptr

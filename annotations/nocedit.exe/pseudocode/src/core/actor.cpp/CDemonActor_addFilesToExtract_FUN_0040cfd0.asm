@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_actor_cpp_CDemonActor_addFilesToExtract_FUN_0040cfd0(CDemonActor *this_ptr,_FILE *file_handle)
+; void __cdecl core_actor_cpp_CDemonActor_addFilesToExtract_FUN_0040cfd0(CDemonActor *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr

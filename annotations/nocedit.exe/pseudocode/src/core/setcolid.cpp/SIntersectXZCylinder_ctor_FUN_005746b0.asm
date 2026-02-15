@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SIntersectXZCylinder * __cdecl core_setcolid_cpp_SIntersectXZCylinder_ctor_FUN_005746b0(SIntersectXZCylinder *this_ptr)
+; SIntersectXZCylinder * __cdecl core_setcolid_cpp_SIntersectXZCylinder_ctor_FUN_005746b0(SIntersectXZCylinder *this_ptr)
 ;
 ; Parameters:
 ; SIntersectXZCylinder * Stack[0x4]:4   this_ptr

@@ -1234,8 +1234,8 @@ LAB_004df408:
         core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
         ;
         iStack_74 = 0;
-        for (iVar9 = 0; iVar9 < *(int *)(g_CDemonSetPtr->unk4 + 0x1f3c); iVar9 = iVar9 + 1) {
-          iVar18 = *(int *)(g_CDemonSetPtr->unk4 + iStack_74 + 8000);
+        for (iVar9 = 0; iVar9 < g_CDemonSetPtr->enemy_count; iVar9 = iVar9 + 1) {
+          iVar18 = *(int *)((int)g_CDemonSetPtr->enemies + iStack_74);
           pCVar5 = g_HeroActors[g_LocalHeroIndex];
           fStack_2c0 = (pCVar5->base).base.location.position.x - *(float *)(iVar18 + 0x20);
           fStack_2bc = (pCVar5->base).base.location.position.y - *(float *)(iVar18 + 0x24);
@@ -1668,11 +1668,11 @@ LAB_004df408:
         }
         core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,pcVar10);
         iStack_40 = 0;
-        for (iStack_1c = 0; iStack_1c < g_CDemonSetPtr->damage_listener_count;
-            iStack_1c = iStack_1c + 1) {
-          pCStack_140 = (CDeformableModelInstance *)
-                        (*(int *)(g_CDemonSetPtr->unk4 + iStack_40 + -4) + 0x158);
-          if (*(char *)(*(int *)(g_CDemonSetPtr->unk4 + iStack_40 + -4) + 0x23b8) != '\0') {
+        for (iStack_1c = 0; iStack_1c < g_CDemonSetPtr->character_count; iStack_1c = iStack_1c + 1)
+        {
+          iVar9 = *(int *)((int)g_CDemonSetPtr->characters + iStack_40);
+          pCStack_140 = (CDeformableModelInstance *)(iVar9 + 0x158);
+          if (*(char *)(iVar9 + 0x23b8) != '\0') {
             pCVar17 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
                                 (pCStack_140);
             pCStack_13c = pCVar17;

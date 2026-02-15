@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBulletHole * __cdecl core_fire_cpp_CBulletHole_dtor_FUN_004c9790(CBulletHole *this_ptr,uint flags)
+; CBulletHole * __cdecl core_fire_cpp_CBulletHole_dtor_FUN_004c9790(CBulletHole *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CBulletHole *    Stack[0x4]:4   this_ptr

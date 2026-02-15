@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_actor_cpp_archiveRules_FUN_0040c000(CRuleList *rules,char *property_name)
+; void __cdecl core_actor_cpp_archiveRules_FUN_0040c000(CRuleList *rules,char *property_name)
 ;
 ; Parameters:
 ; CRuleList *      Stack[0x4]:4   rules

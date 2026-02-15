@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_door_cpp_CDoor_propertyActionCallback_FUN_004812b0(CDoor *this_ptr,CActorProperty *property)
+; int __cdecl core_door_cpp_CDoor_propertyActionCallback_FUN_004812b0(CDoor *this_ptr,CActorProperty *property)
 ;
 ; Parameters:
 ; CDoor *          Stack[0x4]:4   this_ptr

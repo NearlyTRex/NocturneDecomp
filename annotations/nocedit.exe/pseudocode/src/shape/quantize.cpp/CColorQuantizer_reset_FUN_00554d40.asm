@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CColorQuantizer * __cdecl shape_quantize_cpp_CColorQuantizer_reset_FUN_00554d40(CColorQuantizer *this_ptr)
+; CColorQuantizer * __cdecl shape_quantize_cpp_CColorQuantizer_reset_FUN_00554d40(CColorQuantizer *this_ptr)
 ;
 ; Parameters:
 ; CColorQuantizer * Stack[0x4]:4   this_ptr

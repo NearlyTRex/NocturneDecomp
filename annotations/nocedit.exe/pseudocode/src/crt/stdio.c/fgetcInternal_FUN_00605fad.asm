@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack _FILE * __watcallStack crt_stdio_c_fgetcInternal_FUN_00605fad(_FILE *stream,byte *output_byte)
+; _FILE * __watcallStack crt_stdio_c_fgetcInternal_FUN_00605fad(_FILE *stream,byte *output_byte)
 ;
 ; Parameters:
 ; _FILE *          Stack[0x4]:4   stream

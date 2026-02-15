@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CPathMap * __cdecl core_path_cpp_FUN_00548390(void)
+; CPathMap * __cdecl core_path_cpp_FUN_00548390(CLocation *location)
 ;
+; Parameters:
+; CLocation *      Stack[0x4]:4   location
 ; Local Variables:
 ; undefined1       Stack[-0x34]:1  local_34
 ; undefined4       Stack[-0x28]:4  local_28
@@ -17,10 +19,10 @@
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CPathMapTypeInfo
-;   WatcomStaticDestructorNode DAT_00680bc8
+;   WatcomStaticDestructorNode WatcomStaticDestructorNode_00680bc8
 ;   undefined4 DAT_00680bd8
 ;   undefined4 DAT_00680bdc
-;   CPathMap[12] DAT_02fd9060
+;   CPathMap[12] CPathMap_ARRAY_02fd9060
 ;   undefined4 DAT_02fec910
 ;   undefined4 DAT_02fec914
 ;   undefined4 DAT_02fec918
@@ -117,12 +119,12 @@ section .text
     MOV dword ptr [ESP + 0x18],EAX      ; 00548467
     LEA EAX,[ESP + 0x10]                ; 0054846b
     PUSH EAX                            ; 0054846f
-    ADD EBX,0x2fd9060                   ; 00548470 | DAT_02fd9060
-    PUSH EBX                            ; 00548476 | DAT_02fd9060
+    ADD EBX,0x2fd9060                   ; 00548470 | CPathMap_ARRAY_02fd9060
+    PUSH EBX                            ; 00548476 | CPathMap_ARRAY_02fd9060
     CALL core_path.cpp_CPathMap_updateIfNeeded_FUN_00546a60 ; 00548477
         ;   XREF to: 00546a60 (UNCONDITIONAL_CALL)  ; void core_path.cpp_CPathMap_updateIfNeeded_FUN_00546a60(CPathMap * this_ptr, CVector3f * source_position, int force_update)
     ADD ESP,0xc                         ; 0054847c
-    MOV EAX,EBX                         ; 0054847f | DAT_02fd9060
+    MOV EAX,EBX                         ; 0054847f | CPathMap_ARRAY_02fd9060
     ADD ESP,0x24                        ; 00548481
     POP EBP                             ; 00548484
     POP EDI                             ; 00548485
@@ -134,12 +136,12 @@ section .text
     MOV DL,AH                           ; 0054848e
     PUSH 0xc                            ; 00548490
     OR DL,0x1                           ; 00548492
-    PUSH 0x2fd9060                      ; 00548495 | DAT_02fd9060
+    PUSH 0x2fd9060                      ; 00548495 | CPathMap_ARRAY_02fd9060
     MOV byte ptr [0x030c3ab0],DL        ; 0054849a | DAT_030c3ab0
     CALL crt_memory.c___arrinit_FUN_005fe667 ; 005484a0
         ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 005484a5
-    PUSH 0x680bc8                       ; 005484a8 | DAT_00680bc8
+    PUSH 0x680bc8                       ; 005484a8 | WatcomStaticDestructorNode_00680bc8
     CALL crt_stdlib.c__atexit_FUN_005ff060 ; 005484ad
         ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 005484b2

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_004a0890(CEditorTools *this_ptr,int min_width,int min_height,char *text_content,int modal_flags)
+; void __cdecl shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_004a0890(CEditorTools *this_ptr,int min_width,int min_height,char *text_content,int modal_flags)
 ;
 ; Parameters:
 ; CEditorTools *   Stack[0x4]:4   this_ptr

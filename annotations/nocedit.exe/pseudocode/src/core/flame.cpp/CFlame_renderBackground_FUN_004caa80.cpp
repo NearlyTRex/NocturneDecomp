@@ -39,9 +39,9 @@ void __cdecl core_flame_cpp_CFlame_renderBackground_FUN_004caa80(CFlame *this_pt
          && (0.0 < this_ptr->globe_scalar)) && (this_ptr->which_flame == 0)))) {
       iVar4 = 0;
       iStack_14 = 0;
-      for (iVar6 = 0; iVar6 < (int)g_CDemonSetPtr->actor_list_ptr; iVar6 = iVar6 + 1) {
+      for (iVar6 = 0; iVar6 < g_CDemonSetPtr->actor_count; iVar6 = iVar6 + 1) {
         pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c790
-                           (*(CDemonActor **)(g_CDemonSetPtr->actor_list_data + iVar4),
+                           (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar4),
                             g_CFlameClassInfo.name_hash);
         if (pCVar5 != (CDemonActor *)0x0) {
           fStack_20 = (this_ptr->base).location.position.x - (pCVar5->location).position.x;

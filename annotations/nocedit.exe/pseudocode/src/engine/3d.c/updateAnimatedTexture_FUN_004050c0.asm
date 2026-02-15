@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SMRGLHeaderExtended * __cdecl engine_3d_c_updateAnimatedTexture_FUN_004050c0(SAnimatedTexture *anim_texture)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_updateAnimatedTexture_FUN_004050c0(SAnimatedTexture *anim_texture)
 ;
 ; Parameters:
 ; SAnimatedTexture * Stack[0x4]:4   anim_texture

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl uint __cdecl engine_font_cpp_packPixelNative_FUN_004d1170(int red,int green,int blue)
+; uint __cdecl engine_font_cpp_packPixelNative_FUN_004d1170(int red,int green,int blue)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   red

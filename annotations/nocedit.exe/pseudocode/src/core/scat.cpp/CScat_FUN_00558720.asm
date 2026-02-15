@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_scat_cpp_CScat_FUN_00558720(CScat *this_ptr)
+; void __cdecl core_scat_cpp_CScat_FUN_00558720(CScat *this_ptr)
 ;
 ; Parameters:
 ; CScat *          Stack[0x4]:4   this_ptr
@@ -35,8 +35,8 @@
 ;   WatcomTypeInfo g_CVectorTypeInfo
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   int INT_03106174
-;   undefined4 g_CDemonSetInstance.actor_list_ptr
-;   undefined4 g_CDemonSetInstance.actor_list_data[0]
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;   undefined4 DAT_032613d4
 ;
 ; Called Functions:
@@ -249,10 +249,10 @@ section .text
     MOV EAX,[0x006810c8]                ; 005589e7 | g_CDemonSetPtr
         ;   Label: LAB_005589e7
     MOV EBX,dword ptr [ESP + 0x120]     ; 005589ec
-    CMP EBX,dword ptr [EAX + 0x14d154]  ; 005589f3 | g_CDemonSetInstance.actor_list_ptr
+    CMP EBX,dword ptr [EAX + 0x14d154]  ; 005589f3 | g_CDemonSetInstance.actor_count
     JGE 0x00558a6f                      ; 005589f9
         ;   XREF to: 00558a6f (CONDITIONAL_JUMP)  ; LAB_00558a6f
-    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14d158] ; 005589ff | g_CDemonSetInstance.actor_list_data[0] | DAT_032613d4
+    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14d158] ; 005589ff | g_CDemonSetInstance.actors[0] | DAT_032613d4
     CMP EBX,dword ptr [ESI + 0x1fbf8]   ; 00558a06
     SETZ AL                             ; 00558a0c
     AND EAX,0xff                        ; 00558a0f

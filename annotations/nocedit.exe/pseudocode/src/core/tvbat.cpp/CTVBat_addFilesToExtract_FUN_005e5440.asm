@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_tvbat_cpp_CTVBat_addFilesToExtract_FUN_005e5440(CTVBat *this_ptr,_FILE *file_handle)
+; void __cdecl core_tvbat_cpp_CTVBat_addFilesToExtract_FUN_005e5440(CTVBat *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CTVBat *         Stack[0x4]:4   this_ptr

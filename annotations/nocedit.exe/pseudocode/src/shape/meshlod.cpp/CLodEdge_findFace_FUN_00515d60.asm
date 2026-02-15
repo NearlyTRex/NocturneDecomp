@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_meshlod_cpp_CLodEdge_findFace_FUN_00515d60(CLodEdge *this_ptr,int tri_index)
+; int __cdecl shape_meshlod_cpp_CLodEdge_findFace_FUN_00515d60(CLodEdge *this_ptr,int tri_index)
 ;
 ; Parameters:
 ; CLodEdge *       Stack[0x4]:4   this_ptr

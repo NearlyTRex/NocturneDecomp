@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl sound_sndmain_cpp_resetSoundDevice_FUN_005ab130(void)
+; int __cdecl sound_sndmain_cpp_resetSoundDevice_FUN_005ab130(void)
 ;
 ;
 ; XREF[13]:

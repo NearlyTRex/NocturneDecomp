@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_fire_cpp_loadGunFlameAssets_FUN_004c4d50(void)
+; void __cdecl core_fire_cpp_loadGunFlameAssets_FUN_004c4d50(void)
 ;
 ;
 ; XREF[1]:

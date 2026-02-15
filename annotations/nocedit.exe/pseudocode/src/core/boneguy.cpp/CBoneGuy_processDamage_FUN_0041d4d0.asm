@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_boneguy_cpp_CBoneGuy_processDamage_FUN_0041d4d0(CBoneGuy *this_ptr,SDamageInfo *damage_info)
+; void __cdecl core_boneguy_cpp_CBoneGuy_processDamage_FUN_0041d4d0(CBoneGuy *this_ptr,SDamageInfo *damage_info)
 ;
 ; Parameters:
 ; CBoneGuy *       Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_drip_cpp_CDrip_getPropertyList_FUN_0048e930(CDrip *this_ptr,CActorPropertyList *property_list)
+; void __cdecl core_drip_cpp_CDrip_getPropertyList_FUN_0048e930(CDrip *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CDrip *          Stack[0x4]:4   this_ptr

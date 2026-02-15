@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_stdio_c_StringBufferCallback_FUN_005fdb90(StringOutputContext *context,char character)
+; void __cdecl crt_stdio_c_StringBufferCallback_FUN_005fdb90(StringOutputContext *context,char character)
 ;
 ; Parameters:
 ; StringOutputContext * Stack[0x4]:4   context

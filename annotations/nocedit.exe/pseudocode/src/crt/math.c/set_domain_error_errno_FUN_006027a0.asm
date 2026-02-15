@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_math_c_set_domain_error_errno_FUN_006027a0(void)
+; void __cdecl crt_math_c_set_domain_error_errno_FUN_006027a0(void)
 ;
 ;
 ; XREF[1]:

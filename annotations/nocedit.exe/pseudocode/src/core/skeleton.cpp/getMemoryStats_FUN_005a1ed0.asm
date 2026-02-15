@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_skeleton_cpp_getMemoryStats_FUN_005a1ed0(char *output_buffer)
+; void __cdecl core_skeleton_cpp_getMemoryStats_FUN_005a1ed0(char *output_buffer)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   output_buffer

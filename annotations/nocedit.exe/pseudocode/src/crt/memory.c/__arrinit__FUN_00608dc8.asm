@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void * __cdecl crt_memory_c___arrinit__FUN_00608dc8(void *array_start,int element_count,WatcomTypeInfo *type_info)
+; void * __cdecl crt_memory_c___arrinit__FUN_00608dc8(void *array_start,int element_count,WatcomTypeInfo *type_info)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   array_start

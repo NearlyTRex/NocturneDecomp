@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_flies_cpp_CFlies_showEditorHelp_FUN_004ccc70(CFlies *this_ptr,int *y_pos)
+; void __cdecl core_flies_cpp_CFlies_showEditorHelp_FUN_004ccc70(CFlies *this_ptr,int *y_pos)
 ;
 ; Parameters:
 ; CFlies *         Stack[0x4]:4   this_ptr

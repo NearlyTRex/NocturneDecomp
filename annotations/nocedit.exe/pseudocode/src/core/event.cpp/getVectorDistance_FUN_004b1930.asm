@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl core_event_cpp_getVectorDistance_FUN_004b1930(CVector3f *a,CVector3f *b)
+; float __cdecl core_event_cpp_getVectorDistance_FUN_004b1930(CVector3f *a,CVector3f *b)
 ;
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   a

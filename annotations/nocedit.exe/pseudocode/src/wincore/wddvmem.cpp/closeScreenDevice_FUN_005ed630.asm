@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl wincore_wddvmem_cpp_closeScreenDevice_FUN_005ed630(void)
+; void __cdecl wincore_wddvmem_cpp_closeScreenDevice_FUN_005ed630(void)
 ;
 ;
 ; XREF[8]:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_backgnd_cpp_CBackgroundActor_process_FUN_00412850(CBackgroundActor *this_ptr,float delta_time)
+; void __cdecl core_backgnd_cpp_CBackgroundActor_process_FUN_00412850(CBackgroundActor *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CBackgroundActor * Stack[0x4]:4   this_ptr

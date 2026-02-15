@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __stack2_esi CPodDependencyRecord * __stack2_esi engine_pod_cpp_CPodFile_getDependencyRecord_FUN_005506c0(CPodFile *this_ptr,int dependency_index,CPodDependencyRecord *output_record)
+; CPodDependencyRecord * __stack2_esi engine_pod_cpp_CPodFile_getDependencyRecord_FUN_005506c0(CPodFile *this_ptr,int dependency_index,CPodDependencyRecord *output_record)
 ;
 ; Parameters:
 ; CPodFile *       Stack[0x4]:4   this_ptr

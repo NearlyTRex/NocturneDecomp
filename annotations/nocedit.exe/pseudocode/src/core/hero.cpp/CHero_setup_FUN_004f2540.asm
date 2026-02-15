@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_hero_cpp_CHero_setup_FUN_004f2540(CHero *this_ptr)
+; void __cdecl core_hero_cpp_CHero_setup_FUN_004f2540(CHero *this_ptr)
 ;
 ; Parameters:
 ; CHero *          Stack[0x4]:4   this_ptr

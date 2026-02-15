@@ -106,8 +106,8 @@ void __cdecl core_drip_cpp_CDrip_process_FUN_0048e2a0(CDrip *this_ptr,float delt
     iVar5 = 0;
     iVar4 = 0;
     while( true ) {
-      if (g_CDemonSetPtr->damage_listener_count <= iVar5) break;
-      iVar2 = *(int *)(g_CDemonSetPtr->unk4 + iVar4 + -4);
+      if (g_CDemonSetPtr->character_count <= iVar5) break;
+      iVar2 = *(int *)((int)g_CDemonSetPtr->characters + iVar4);
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&SStack_b4);
       SStack_b4.damage_amount = this_ptr->damage;
       SStack_b4.attacker = &this_ptr->base;

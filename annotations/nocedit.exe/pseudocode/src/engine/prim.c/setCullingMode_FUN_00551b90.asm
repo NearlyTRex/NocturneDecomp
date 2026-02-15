@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_prim_c_setCullingMode_FUN_00551b90(int culling_mode)
+; void __cdecl engine_prim_c_setCullingMode_FUN_00551b90(int culling_mode)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   culling_mode

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_teleport_cpp_CTeleportDest_showEditorHelp_FUN_005da970(CTeleportDest *this_ptr,int *y_pos)
+; void __cdecl core_teleport_cpp_CTeleportDest_showEditorHelp_FUN_005da970(CTeleportDest *this_ptr,int *y_pos)
 ;
 ; Parameters:
 ; CTeleportDest *  Stack[0x4]:4   this_ptr

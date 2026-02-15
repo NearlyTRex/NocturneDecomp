@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBoundingBox3D * __cdecl core_filmreel_cpp_CFilmProjector_getBoundingBox_FUN_004becd0(CFilmProjector *this_ptr,CBoundingBox3D *out_box)
+; CBoundingBox3D * __cdecl core_filmreel_cpp_CFilmProjector_getBoundingBox_FUN_004becd0(CFilmProjector *this_ptr,CBoundingBox3D *out_box)
 ;
 ; Parameters:
 ; CFilmProjector * Stack[0x4]:4   this_ptr

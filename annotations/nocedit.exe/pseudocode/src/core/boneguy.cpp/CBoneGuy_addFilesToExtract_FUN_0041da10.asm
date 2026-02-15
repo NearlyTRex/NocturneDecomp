@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_boneguy_cpp_CBoneGuy_addFilesToExtract_FUN_0041da10(CBoneGuy *this_ptr,_FILE *file_handle)
+; void __cdecl core_boneguy_cpp_CBoneGuy_addFilesToExtract_FUN_0041da10(CBoneGuy *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CBoneGuy *       Stack[0x4]:4   this_ptr

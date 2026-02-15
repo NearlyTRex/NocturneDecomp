@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_hiram_cpp_CHiram_setup_FUN_004f4530(CHiram *this_ptr)
+; void __cdecl core_hiram_cpp_CHiram_setup_FUN_004f4530(CHiram *this_ptr)
 ;
 ; Parameters:
 ; CHiram *         Stack[0x4]:4   this_ptr

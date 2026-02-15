@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int __watcallStack crt_fstream_cpp_filebuf_underflow_FUN_0060da87(filebuf *this_ptr)
+; int __watcallStack crt_fstream_cpp_filebuf_underflow_FUN_0060da87(filebuf *this_ptr)
 ;
 ; Parameters:
 ; filebuf *        Stack[0x4]:4   this_ptr

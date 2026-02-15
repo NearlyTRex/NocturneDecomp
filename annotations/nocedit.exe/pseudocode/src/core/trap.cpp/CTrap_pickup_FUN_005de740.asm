@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_trap_cpp_CTrap_pickup_FUN_005de740(CTrap *this_ptr,CDemonActor *carrier)
+; void __cdecl core_trap_cpp_CTrap_pickup_FUN_005de740(CTrap *this_ptr,CDemonActor *carrier)
 ;
 ; Parameters:
 ; CTrap *          Stack[0x4]:4   this_ptr

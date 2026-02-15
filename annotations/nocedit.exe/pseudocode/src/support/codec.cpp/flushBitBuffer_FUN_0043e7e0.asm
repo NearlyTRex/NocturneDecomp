@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl support_codec_cpp_flushBitBuffer_FUN_0043e7e0(SBitBuffer *bit_buffer,_FILE *output_stream)
+; void __cdecl support_codec_cpp_flushBitBuffer_FUN_0043e7e0(SBitBuffer *bit_buffer,_FILE *output_stream)
 ;
 ; Parameters:
 ; SBitBuffer *     Stack[0x4]:4   bit_buffer

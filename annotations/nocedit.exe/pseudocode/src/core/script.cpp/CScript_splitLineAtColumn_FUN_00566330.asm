@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_script_cpp_CScript_splitLineAtColumn_FUN_00566330(CScript *this_ptr,int column,int line)
+; void __cdecl core_script_cpp_CScript_splitLineAtColumn_FUN_00566330(CScript *this_ptr,int column,int line)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr

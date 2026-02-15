@@ -36,9 +36,9 @@ void __cdecl core_msnedit_cpp_FUN_00536e20(void)
       (this_ptr = *(CDeformableModelInstance **)(&DAT_02f7a094 + INT_02f7c52c * 0xec),
       this_ptr != (CDeformableModelInstance *)0x0)))) {
     local_14 = 0x9b;
-    iVar3 = g_CDemonMissionPtr->unk4 + -0x38;
-    iVar1 = g_CDemonMissionPtr->unk4 + -1;
-    local_20 = g_CDemonMissionPtr->unk4 + -0x33;
+    iVar3 = (g_CDemonMissionPtr->viewport).bottom + -0x38;
+    iVar1 = (g_CDemonMissionPtr->viewport).bottom + -1;
+    local_20 = (g_CDemonMissionPtr->viewport).bottom + -0x33;
     local_24 = 4;
     if (((0 < g_MouseX) && ((g_MouseX < 0x9c && (iVar3 <= g_MouseY)))) && (g_MouseY <= iVar1)) {
       DAT_02f7c538 = 1;

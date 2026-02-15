@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl wincore_winrun_cpp_addWindowsMessageHook_FUN_005f3100(void)
+; void __cdecl wincore_winrun_cpp_addWindowsMessageHook_FUN_005f3100(void)
 ;
 ;
 ; Referenced Globals:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this_ptr,char *expression,int *parse_position)
+; int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this_ptr,char *expression,int *parse_position)
 ;
 ; Parameters:
 ; CEventList *     Stack[0x4]:4   this_ptr
@@ -3084,7 +3084,7 @@ section .text
     MOV dword ptr [ESP + 0x9d0],EAX     ; 004afdce
     MOV EAX,[0x006810c8]                ; 004afdd5 | g_CDemonSetPtr
         ;   Label: LAB_004afdd5
-    CMP EDI,dword ptr [EAX + 0x150fdc]  ; 004afdda | g_CDemonSetInstance.unk4[7996]
+    CMP EDI,dword ptr [EAX + 0x150fdc]  ; 004afdda | g_CDemonSetInstance.enemy_count
     JGE 0x004afeab                      ; 004afde0
         ;   XREF to: 004afeab (CONDITIONAL_JUMP)  ; LAB_004afeab
     ADD EAX,dword ptr [ESP + 0x9d0]     ; 004afde6

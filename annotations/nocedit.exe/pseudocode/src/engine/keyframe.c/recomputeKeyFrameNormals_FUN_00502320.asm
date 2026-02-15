@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_keyframe_c_recomputeKeyFrameNormals_FUN_00502320(void)
+; void __cdecl engine_keyframe_c_recomputeKeyFrameNormals_FUN_00502320(void)
 ;
 ;
 ; Referenced Globals:

@@ -89,9 +89,8 @@ void __cdecl core_spike_cpp_CSpike_FUN_005b8950(CSpike *this_ptr)
   core_actor_cpp_CDemonActor_transformVector_FUN_00408e80(&this_ptr->base,&CStack_98,&CStack_bc);
   pCStack_20 = &(this_ptr->base).location;
   iStack_24 = 0;
-  for (iStack_1c = 0; iStack_1c < g_CDemonSetPtr->damage_listener_count; iStack_1c = iStack_1c + 1)
-  {
-    this_ptr_00 = *(CCharacter **)(g_CDemonSetPtr->unk4 + iStack_24 + -4);
+  for (iStack_1c = 0; iStack_1c < g_CDemonSetPtr->character_count; iStack_1c = iStack_1c + 1) {
+    this_ptr_00 = *(CCharacter **)((int)g_CDemonSetPtr->characters + iStack_24);
     input_world_point = &(this_ptr_00->base).location;
     fVar1 = (pCStack_20->position).x - (input_world_point->position).x;
     fVar3 = (pCStack_20->position).y - (this_ptr_00->base).location.position.y;
@@ -133,7 +132,7 @@ void __cdecl core_spike_cpp_CSpike_FUN_005b8950(CSpike *this_ptr)
                     (&this_ptr_00->base,&CStack_a4,&CStack_b0);
           core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&SStack_16c);
           SStack_16c.damage_amount = this_ptr->damage_strength;
-          SStack_16c.damage_type = 0x67;
+          SStack_16c.gore_multiplier = 1.44334e-43;
           if (&SStack_16c.impact_direction != &CStack_a4) {
             SStack_16c.impact_direction.x = CStack_a4.x;
             SStack_16c.impact_direction.y = CStack_a4.y;

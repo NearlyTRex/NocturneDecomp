@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_werewolf_cpp_CWerewolf_getTargetPoints_FUN_005f1df0(CWerewolf *this_ptr,CVector3f *out_points_array)
+; int __cdecl core_werewolf_cpp_CWerewolf_getTargetPoints_FUN_005f1df0(CWerewolf *this_ptr,CVector3f *out_points_array)
 ;
 ; Parameters:
 ; CWerewolf *      Stack[0x4]:4   this_ptr

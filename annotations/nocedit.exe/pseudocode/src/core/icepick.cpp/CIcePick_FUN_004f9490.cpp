@@ -31,7 +31,7 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004f9490(CIcePick *this_ptr)
   local_18 = 0;
   do {
     while( true ) {
-      if (g_CDemonSetPtr->damage_listener_count <= iVar3) {
+      if (g_CDemonSetPtr->character_count <= iVar3) {
         if (local_18 == 0) {
           return;
         }
@@ -39,7 +39,7 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004f9490(CIcePick *this_ptr)
                   ((CDemonActor *)this_ptr,"icepick-punch?.wav");
         return;
       }
-      this_ptr_00 = *(CIcePick **)(g_CDemonSetPtr->unk4 + iVar2 + -4);
+      this_ptr_00 = *(CIcePick **)((int)g_CDemonSetPtr->characters + iVar2);
       if (this_ptr_00 != this_ptr) break;
 LAB_004f94e9:
       iVar3 = iVar3 + 1;
@@ -48,7 +48,7 @@ LAB_004f94e9:
     core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_6c);
     local_6c.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(90.0,130.0);
     local_6c.weapon_damage_modifier = 0.5;
-    local_6c.unknown = -1;
+    local_6c.fire_type = -1;
     local_6c.attacker = (CDemonActor *)this_ptr;
     local_6c.wielder = (CDemonActor *)this_ptr;
     local_14 = local_6c.damage_amount;

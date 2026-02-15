@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_005eeeb0(CWeather *this_ptr,float param_2,int param_3)
+; void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_005eeeb0(CWeather *this_ptr,float param_2,int param_3)
 ;
 ; Parameters:
 ; CWeather *       Stack[0x4]:4   this_ptr

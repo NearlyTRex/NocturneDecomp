@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl wincore_wddvmem_cpp_reinitializeDirectDraw_FUN_005ec980(void)
+; int __cdecl wincore_wddvmem_cpp_reinitializeDirectDraw_FUN_005ec980(void)
 ;
 ;
 ; Referenced Globals:

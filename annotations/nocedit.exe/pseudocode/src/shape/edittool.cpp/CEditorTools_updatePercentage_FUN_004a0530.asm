@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools *this_ptr,float progress_min,float progress_max)
+; void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools *this_ptr,float progress_min,float progress_max)
 ;
 ; Parameters:
 ; CEditorTools *   Stack[0x4]:4   this_ptr
@@ -59,7 +59,7 @@
 ;   engine_2d.c_fillRectColor_FUN_00403170
 ;   engine_2d.c_fillRectWithBorder_FUN_00403200
 ;   engine_3d.c_setRenderAlpha_FUN_00406d80
-;   engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30
+;   engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004cdf30
 ;   shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
 ;   wincore_winrun.cpp_getTime_FUN_005f2dc0
@@ -161,8 +161,8 @@ section .text
     PUSH ECX                            ; 004a061c
     MOV EBX,dword ptr [0x02cf1cd0]      ; 004a061d | g_EditorFont
     PUSH EBX                            ; 004a0623
-    CALL engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30 ; 004a0624
-        ;   XREF to: 004cdf30 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30(CBitFont * this_ptr, int left_x, int right_x, int y, ...)
+    CALL engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004cdf30 ; 004a0624
+        ;   XREF to: 004cdf30 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004cdf30(CBitFont * this_ptr, int left_x, int right_x, int y, ...)
     MOV EAX,[0x02cf266c]                ; 004a0629 | g_FontCharacterWidth
     MOV EDI,dword ptr [0x02d0255c]      ; 004a062e | g_ClipTop
     ADD EAX,EAX                         ; 004a0634
@@ -335,8 +335,8 @@ section .text
     PUSH EDI                            ; 004a081f
     MOV EAX,[0x02cf1cd0]                ; 004a0820 | g_EditorFont
     PUSH EAX                            ; 004a0825
-    CALL engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30 ; 004a0826
-        ;   XREF to: 004cdf30 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30(CBitFont * this_ptr, int left_x, int right_x, int y, ...)
+    CALL engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004cdf30 ; 004a0826
+        ;   XREF to: 004cdf30 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004cdf30(CBitFont * this_ptr, int left_x, int right_x, int y, ...)
     ADD ESP,0x2c                        ; 004a082b
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 004a082e
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

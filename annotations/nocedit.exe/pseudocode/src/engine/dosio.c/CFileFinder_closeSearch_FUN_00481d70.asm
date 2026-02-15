@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_dosio_c_CFileFinder_closeSearch_FUN_00481d70(CFileFinder *this_ptr)
+; void __cdecl engine_dosio_c_CFileFinder_closeSearch_FUN_00481d70(CFileFinder *this_ptr)
 ;
 ; Parameters:
 ; CFileFinder *    Stack[0x4]:4   this_ptr

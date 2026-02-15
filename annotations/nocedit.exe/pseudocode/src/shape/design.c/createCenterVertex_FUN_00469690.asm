@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_createCenterVertex_FUN_00469690(void)
+; void __cdecl shape_design_c_createCenterVertex_FUN_00469690(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x9c]:1  local_9c

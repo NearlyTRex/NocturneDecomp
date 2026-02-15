@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBugs * __cdecl core_bugs_cpp_factoryFunc_FUN_00424c70(void)
+; CBugs * __cdecl core_bugs_cpp_factoryFunc_FUN_00424c70(void)
 ;
 ;
 ; XREF[1]:

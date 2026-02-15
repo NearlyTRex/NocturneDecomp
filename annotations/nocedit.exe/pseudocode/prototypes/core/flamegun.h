@@ -35,9 +35,9 @@ float __cdecl CFlameThrower::getDamage(CFlameThrower *this_ptr);
 // Address: 004cbad0
 void __cdecl CFlameThrower::fireProjectile(CFlameThrower *this_ptr);
 
-// Original: core_flamegun.cpp_CFlameThrower_FUN_004cbad1
+// Original: core_flamegun.cpp_CFlameThrower_getDamageAlt_FUN_004cbad1
 // Address: 004cbad1
-float __cdecl CFlameThrower(CFlameThrower *this_ptr);
+float __cdecl CFlameThrower::getDamageAlt(CFlameThrower *this_ptr);
 
 // Original: core_flamegun.cpp_CFlameThrower_dtor_FUN_004cbb00
 // Address: 004cbb00

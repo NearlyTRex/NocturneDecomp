@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_gore_cpp_CGore_FUN_004ed760(CGore *this_ptr)
+; void __cdecl core_gore_cpp_CGore_FUN_004ed760(CGore *this_ptr)
 ;
 ; Parameters:
 ; CGore *          Stack[0x4]:4   this_ptr
@@ -14,7 +14,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02d833d0
-;   CBloodParticle[256] DAT_02d833d4
+;   CBloodParticle[256] CBloodParticle_ARRAY_02d833d4
 ;   undefined4 DAT_02d833ec
 ;   undefined4 DAT_02d8342c
 ;   undefined4 DAT_02d873d4
@@ -31,7 +31,7 @@ section .text
     PUSH EBP                            ; 004ed760
         ;   Label: core_gore.cpp_CGore_FUN_004ed760
     XOR EDX,EDX                         ; 004ed761
-    MOV EAX,0x2d833d4                   ; 004ed763 | DAT_02d833d4
+    MOV EAX,0x2d833d4                   ; 004ed763 | CBloodParticle_ARRAY_02d833d4
     MOV dword ptr [0x02d833d0],EDX      ; 004ed768 | DAT_02d833d0
     MOV dword ptr [0x02d873d4],EDX      ; 004ed76e | DAT_02d873d4
     MOV dword ptr [0x02d873d8],EDX      ; 004ed774 | INT_02d873d8

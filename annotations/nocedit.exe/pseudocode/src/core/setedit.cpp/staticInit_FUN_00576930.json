@@ -6,15 +6,13 @@
   },
   "complexity": {
     "assembly_lines": 10,
-    "complexity_score": 21,
+    "complexity_score": 6,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
     "pseudocode_lines": 6,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 16
   },
   "cross_references": [],
@@ -45,7 +43,7 @@
   "globals": [
     {
       "addr": "006816a0",
-      "name": "DAT_006816a0",
+      "name": "WatcomStaticDestructorNode_006816a0",
       "type": "WatcomStaticDestructorNode",
       "value": null
     },
@@ -91,13 +89,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 6,
-      "match": "DAT_006816a0",
-      "text": "_atexit(&DAT_006816a0);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

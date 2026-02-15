@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_startup_c_HandleRuntimeError_FUN_00606660(char *error_message,int error_level)
+; void __cdecl crt_startup_c_HandleRuntimeError_FUN_00606660(char *error_message,int error_level)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   error_message

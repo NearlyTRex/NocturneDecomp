@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90(CEditorTools *this_ptr,int param2,CQuaternion4f *world_position,CQuaternion4f *label_offset,void *param5)
+; void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90(CEditorTools *this_ptr,int param2,CQuaternion4f *world_position,CQuaternion4f *label_offset,void *param5)
 ;
 ; Parameters:
 ; CEditorTools *   Stack[0x4]:4   this_ptr

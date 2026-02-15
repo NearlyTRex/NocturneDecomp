@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_fixupCramUV_FUN_0046e090(int atlas_texture_index,float *u_coord,float *v_coord)
+; void __cdecl shape_design_c_fixupCramUV_FUN_0046e090(int atlas_texture_index,float *u_coord,float *v_coord)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   atlas_texture_index

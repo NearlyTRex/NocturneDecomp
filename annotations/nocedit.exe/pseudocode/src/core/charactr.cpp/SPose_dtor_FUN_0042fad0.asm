@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SPose * __cdecl core_charactr_cpp_SPose_dtor_FUN_0042fad0(SPose *this_ptr,uint flags)
+; SPose * __cdecl core_charactr_cpp_SPose_dtor_FUN_0042fad0(SPose *this_ptr,uint flags)
 ;
 ; Parameters:
 ; SPose *          Stack[0x4]:4   this_ptr

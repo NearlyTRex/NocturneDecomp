@@ -33,8 +33,8 @@ int __cdecl core_icepick_cpp_CIcePick_FUN_004f8970(CIcePick *this_ptr)
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
             ((CDemonActor *)this_ptr,&local_34,&local_28);
   iVar5 = 0;
-  for (iVar4 = 0; iVar4 < (int)g_CDemonSetPtr->actor_list_ptr; iVar4 = iVar4 + 1) {
-    this_ptr_00 = *(CDemonActor **)(g_CDemonSetPtr->actor_list_data + iVar5);
+  for (iVar4 = 0; iVar4 < g_CDemonSetPtr->actor_count; iVar4 = iVar4 + 1) {
+    this_ptr_00 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar5);
     pCVar3 = (*((this_ptr_00->vtable)._ub)->getCarrier)(this_ptr_00);
     if (pCVar3 == (CDemonActor *)0x0) {
       pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790

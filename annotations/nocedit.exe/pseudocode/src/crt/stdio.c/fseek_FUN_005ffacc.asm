@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_stdio_c_fseek_FUN_005ffacc(_FILE *file,long offset,int whence)
+; int __cdecl crt_stdio_c_fseek_FUN_005ffacc(_FILE *file,long offset,int whence)
 ;
 ; Parameters:
 ; _FILE *          Stack[0x4]:4   file

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl cockpit_ckptutil_c_blitDualModeSprite_FUN_004326a0(void *sprite_data,void *span_data,int dest_x,int dest_y,int width,int height)
+; void __cdecl cockpit_ckptutil_c_blitDualModeSprite_FUN_004326a0(void *sprite_data,void *span_data,int dest_x,int dest_y,int width,int height)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   sprite_data

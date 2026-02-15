@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_fire_cpp_loadFireBallAssets_FUN_004c0ad0(void)
+; void __cdecl core_fire_cpp_loadFireBallAssets_FUN_004c0ad0(void)
 ;
 ;
 ; XREF[1]:

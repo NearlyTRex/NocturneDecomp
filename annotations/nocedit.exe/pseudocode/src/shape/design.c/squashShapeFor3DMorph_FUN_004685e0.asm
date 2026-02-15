@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_squashShapeFor3DMorph_FUN_004685e0(void)
+; void __cdecl shape_design_c_squashShapeFor3DMorph_FUN_004685e0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_zombie_cpp_CZombie_canBeGrabbed_FUN_005fc960(CZombie *this_ptr,CDemonActor *grabber,int grab_type)
+; int __cdecl core_zombie_cpp_CZombie_canBeGrabbed_FUN_005fc960(CZombie *this_ptr,CDemonActor *grabber,int grab_type)
 ;
 ; Parameters:
 ; CZombie *        Stack[0x4]:4   this_ptr

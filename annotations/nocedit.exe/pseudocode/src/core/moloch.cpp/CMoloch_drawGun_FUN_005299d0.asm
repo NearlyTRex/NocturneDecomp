@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_moloch_cpp_CMoloch_drawGun_FUN_005299d0(CMoloch *this_ptr,int drawn)
+; void __cdecl core_moloch_cpp_CMoloch_drawGun_FUN_005299d0(CMoloch *this_ptr,int drawn)
 ;
 ; Parameters:
 ; CMoloch *        Stack[0x4]:4   this_ptr

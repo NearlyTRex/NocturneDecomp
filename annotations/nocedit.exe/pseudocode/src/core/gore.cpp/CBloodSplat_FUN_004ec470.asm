@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_gore_cpp_CBloodSplat_FUN_004ec470(CBloodSplat *this_ptr)
+; void __cdecl core_gore_cpp_CBloodSplat_FUN_004ec470(CBloodSplat *this_ptr)
 ;
 ; Parameters:
 ; CBloodSplat *    Stack[0x4]:4   this_ptr
@@ -21,10 +21,10 @@
 ;   undefined4 g_RenderVertexBuffer[3].v
 ;   undefined4 DAT_00f80000
 ;   CDemonRenderer g_CDemonRendererInstance
-;   undefined4 SMRGLHeaderPrimitive_02d83368.base.count
-;   int INT_02d83380
-;   int INT_02d83384
-;   int INT_02d83388
+;   undefined4 SMRGLPrimitiveQuadIndex_02d83368.base.base.count
+;   undefined4 SMRGLPrimitiveQuadIndex_02d83368.vertices[0]
+;   undefined4 SMRGLPrimitiveQuadIndex_02d83368.vertices[1]
+;   undefined4 SMRGLPrimitiveQuadIndex_02d83368.vertices[2]
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -47,11 +47,11 @@ section .text
     MOV EAX,0xf80000                    ; 004ec48d | DAT_00f80000
     PUSH 0xffff                         ; 004ec492
     XOR ECX,ECX                         ; 004ec497
-    MOV dword ptr [0x02d8336c],EDX      ; 004ec499 | SMRGLHeaderPrimitive_02d83368.base.count
-    MOV dword ptr [0x02d83380],ECX      ; 004ec49f | INT_02d83380
-    MOV dword ptr [0x02d83384],EBX      ; 004ec4a5 | INT_02d83384
-    MOV dword ptr [0x02d83388],ESI      ; 004ec4ab | INT_02d83388
-    MOV dword ptr [0x02d8338c],EDI      ; 004ec4b1 | INT_02d8338c
+    MOV dword ptr [0x02d8336c],EDX      ; 004ec499 | SMRGLPrimitiveQuadIndex_02d83368.base.base.count
+    MOV dword ptr [0x02d83380],ECX      ; 004ec49f | SMRGLPrimitiveQuadIndex_02d83368.vertices[0]
+    MOV dword ptr [0x02d83384],EBX      ; 004ec4a5 | SMRGLPrimitiveQuadIndex_02d83368.vertices[1]
+    MOV dword ptr [0x02d83388],ESI      ; 004ec4ab | SMRGLPrimitiveQuadIndex_02d83368.vertices[2]
+    MOV dword ptr [0x02d8338c],EDI      ; 004ec4b1 | SMRGLPrimitiveQuadIndex_02d83368.vertices[3]
     MOV dword ptr [0x0068802c],EBP      ; 004ec4b7 | g_RenderVertexBuffer[0].u
     MOV [0x00688030],EAX                ; 004ec4bd | g_RenderVertexBuffer[0].v
     MOV [0x0068805c],EAX                ; 004ec4c2 | g_RenderVertexBuffer[1].u

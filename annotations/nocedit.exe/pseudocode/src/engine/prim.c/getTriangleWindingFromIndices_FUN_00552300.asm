@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_prim_c_getTriangleWindingFromIndices_FUN_00552300(STriangleIndices *triangle_indices)
+; int __cdecl engine_prim_c_getTriangleWindingFromIndices_FUN_00552300(STriangleIndices *triangle_indices)
 ;
 ; Parameters:
 ; STriangleIndices * Stack[0x4]:4   triangle_indices

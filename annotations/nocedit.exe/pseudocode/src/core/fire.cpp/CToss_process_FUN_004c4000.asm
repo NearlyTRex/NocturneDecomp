@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_fire_cpp_CToss_process_FUN_004c4000(CToss *this_ptr)
+; void __cdecl core_fire_cpp_CToss_process_FUN_004c4000(CToss *this_ptr)
 ;
 ; Parameters:
 ; CToss *          Stack[0x4]:4   this_ptr

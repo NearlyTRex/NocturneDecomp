@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl double __cdecl crt_math_c_math_domain_error_FUN_00606832(double x,double y,uchar error_type)
+; double __cdecl crt_math_c_math_domain_error_FUN_00606832(double x,double y,uchar error_type)
 ;
 ; Parameters:
 ; double           Stack[0x8]:8   x

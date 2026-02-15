@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_drender_cpp_CDemonRenderer_renderStandardTextured_FUN_0048aa50(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)
+; int __cdecl engine_drender_cpp_CDemonRenderer_renderStandardTextured_FUN_0048aa50(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr

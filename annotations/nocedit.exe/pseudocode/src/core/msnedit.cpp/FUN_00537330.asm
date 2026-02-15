@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_msnedit_cpp_FUN_00537330(CStrList *param_1,int param_2,int param_3)
+; void __cdecl core_msnedit_cpp_FUN_00537330(CStrList *param_1,int param_2,int param_3)
 ;
 ; Parameters:
 ; CStrList *       Stack[0x4]:4   param_1

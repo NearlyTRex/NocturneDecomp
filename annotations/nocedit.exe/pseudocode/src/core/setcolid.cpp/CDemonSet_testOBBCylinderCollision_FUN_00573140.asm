@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140(CDemonSet *this_ptr,CBoundingBox3D *bounding_box,CMatrix3x3f *orientation_matrix,SIntersectXZCylinder *cylinder1,SIntersectXZCylinder *cylinder2)
+; int __cdecl core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140(CDemonSet *this_ptr,CBoundingBox3D *bounding_box,CMatrix3x3f *orientation_matrix,SIntersectXZCylinder *cylinder1,SIntersectXZCylinder *cylinder2)
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr

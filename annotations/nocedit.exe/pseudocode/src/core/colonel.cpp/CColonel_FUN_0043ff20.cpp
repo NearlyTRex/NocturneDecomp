@@ -80,7 +80,7 @@ void __cdecl core_colonel_cpp_CColonel_FUN_0043ff20(CColonel *this_ptr)
                                 ((CDemonActor *)g_HeroActors[g_LocalHeroIndex]);
       }
       if (this_ptr_01 == (CPathMap *)0x0) {
-        this_ptr_01 = core_path_cpp_FUN_00548500();
+        this_ptr_01 = core_path_cpp_FUN_00548500(&(pCVar8->base).base.location);
       }
       iVar7 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
                         (this_ptr_01,&(this_ptr->base).base.base.location.position,&local_84,

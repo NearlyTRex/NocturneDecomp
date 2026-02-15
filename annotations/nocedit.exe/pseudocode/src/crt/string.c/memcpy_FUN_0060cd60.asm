@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void * __cdecl crt_string_c_memcpy_FUN_0060cd60(void *dest,void *src,SIZE_T count)
+; void * __cdecl crt_string_c_memcpy_FUN_0060cd60(void *dest,void *src,SIZE_T count)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   dest

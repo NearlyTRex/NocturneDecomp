@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl HANDLE __cdecl crt_thread_c_create_thread_with_sync_FUN_0060f960(LPVOID thread_param,SIZE_T stack_size_hint,LPVOID sync_param,HANDLE *out_thread_handle)
+; HANDLE __cdecl crt_thread_c_create_thread_with_sync_FUN_0060f960(LPVOID thread_param,SIZE_T stack_size_hint,LPVOID sync_param,HANDLE *out_thread_handle)
 ;
 ; Parameters:
 ; LPVOID           Stack[0x4]:4   thread_param

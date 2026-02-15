@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_sound_cpp_CSound_configure_FUN_005b3830(CSound *this_ptr)
+; void __cdecl core_sound_cpp_CSound_configure_FUN_005b3830(CSound *this_ptr)
 ;
 ; Parameters:
 ; CSound *         Stack[0x4]:4   this_ptr

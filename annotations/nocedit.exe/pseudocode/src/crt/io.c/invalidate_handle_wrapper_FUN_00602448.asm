@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_io_c_invalidate_handle_wrapper_FUN_00602448(int handle_index)
+; void __cdecl crt_io_c_invalidate_handle_wrapper_FUN_00602448(int handle_index)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   handle_index

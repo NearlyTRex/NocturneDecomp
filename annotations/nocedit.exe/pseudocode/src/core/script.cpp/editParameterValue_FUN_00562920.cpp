@@ -86,16 +86,16 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_3004);
     local_18 = param_info->modifier_string;
     iVar7 = 0;
-    for (iVar8 = 0; iVar8 < (int)g_CDemonSetPtr->actor_list_ptr; iVar8 = iVar8 + 1) {
+    for (iVar8 = 0; iVar8 < g_CDemonSetPtr->actor_count; iVar8 = iVar8 + 1) {
       if (((param_info->modifier_string[0] == '\0') ||
           (iVar5 = core_actor_cpp_isOfClass_FUN_0040c6d0
-                             (*(CDemonActor **)(g_CDemonSetPtr->actor_list_data + iVar7),local_18),
+                             (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar7),local_18),
           iVar5 != 0)) &&
          (iVar5 = core_actor_cpp_isOfClass_FUN_0040c6d0
-                            (*(CDemonActor **)(g_CDemonSetPtr->actor_list_data + iVar7),
+                            (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar7),
                              "CHeroPlaceHolder"), iVar5 == 0)) {
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  (&local_3004.base,*(char **)(g_CDemonSetPtr->actor_list_data + iVar7));
+                  (&local_3004.base,*(char **)((int)g_CDemonSetPtr->actors + iVar7));
       }
       iVar7 = iVar7 + 4;
     }

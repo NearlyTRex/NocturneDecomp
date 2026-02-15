@@ -50,7 +50,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530(CEdit
      (0x47ffff < iVar3 - g_WindowStack[g_WindowStackCount + -1].progress_timestamp)) {
     shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(this_ptr);
     engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
-    engine_font_cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30
+    engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_004cdf30
               (g_EditorFont,g_ClipLeft,g_ClipRight,g_ClipTop,g_WindowStatusTextColor,-1,
                "%d%% complete",(int)ROUND(dVar5),uVar8);
     iVar2 = g_ClipRight;
@@ -91,7 +91,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530(CEdit
           dVar6 = round
                             ((double)CONCAT44(SUB84(dVar5,0),uVar8) + 0.5);
           engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
-          engine_font_cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30
+          engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_004cdf30
                     (g_EditorFont,g_ClipLeft,g_ClipRight,g_ClipBottom - g_FontCharacterWidth,
                      g_WindowStatusTextColor,-1,"%d:%02d elapsed, approximately %d:%02d remaining",
                      (int)ROUND(dVar6) / 0x3c,(int)ROUND(dVar6) % 0x3c,iVar3 / 0x3c,iVar3 % 0x3c,

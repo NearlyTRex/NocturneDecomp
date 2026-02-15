@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_matrix_c_matrixPushAndTransform_FUN_0050cee0(int rot_x,int rot_y,int rot_z,int translate_x,int translate_y,int translate_z)
+; void __cdecl engine_matrix_c_matrixPushAndTransform_FUN_0050cee0(int rot_x,int rot_y,int rot_z,int translate_x,int translate_y,int translate_z)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   rot_x

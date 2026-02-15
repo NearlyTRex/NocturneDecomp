@@ -124,7 +124,7 @@ void __cdecl core_glass_cpp_CGlass_shatter_FUN_004eaef0(CGlass *this_ptr,CVector
               (this_ptr,&local_cc,&local_9c,&local_8c,0);
     (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,"glass-1.wav@2.0");
     if (this_ptr->background_flag != 0) {
-      this_ptr->unk4 = 1;
+      this_ptr->pending_background_render = 1;
       return;
     }
   }

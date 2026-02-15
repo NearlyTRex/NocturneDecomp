@@ -188,21 +188,21 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 31,
       "match": "ROUND",
-      "text": "*(int *)pcVar3 = (int)ROUND(pCVar4->x * 256.0f);",
+      "text": "pCVar3->x = (int)ROUND(pCVar4->x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 32,
       "match": "ROUND",
-      "text": "*(int *)(pcVar3 + 4) = (int)ROUND(pCVar4->y * 256.0f);",
+      "text": "pCVar3->y = (int)ROUND(pCVar4->y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 33,
       "match": "ROUND",
-      "text": "*(int *)(pcVar3 + 8) = (int)ROUND(pCVar4->z * 256.0f);",
+      "text": "pCVar3->z = (int)ROUND(pCVar4->z * 256.0f);",
       "type": "decompiler_intrinsic"
     }
   ],

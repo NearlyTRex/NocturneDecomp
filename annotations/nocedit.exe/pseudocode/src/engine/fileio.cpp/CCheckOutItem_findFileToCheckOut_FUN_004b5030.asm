@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_fileio_cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030(CCheckOutItem *this_ptr,char *file_pattern,char *output_filename_buffer)
+; int __cdecl engine_fileio_cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030(CCheckOutItem *this_ptr,char *file_pattern,char *output_filename_buffer)
 ;
 ; Parameters:
 ; CCheckOutItem *  Stack[0x4]:4   this_ptr

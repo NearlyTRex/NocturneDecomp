@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_stdio_c_store_count_FUN_00604fb0(scanf_state_t *state,va_list_t *args,int chars_consumed)
+; void __cdecl crt_stdio_c_store_count_FUN_00604fb0(scanf_state_t *state,va_list_t *args,int chars_consumed)
 ;
 ; Parameters:
 ; scanf_state_t *  Stack[0x4]:4   state

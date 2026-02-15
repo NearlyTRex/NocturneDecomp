@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dlight_cpp_captureLightTextures_FUN_00474a90(void)
+; void __cdecl core_dlight_cpp_captureLightTextures_FUN_00474a90(void)
 ;
 ;
 ; XREF[1]:

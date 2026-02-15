@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_game_cpp_checkCheatAndGiveWeapon_FUN_004dd9d0(void)
+; void __cdecl core_game_cpp_checkCheatAndGiveWeapon_FUN_004dd9d0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18

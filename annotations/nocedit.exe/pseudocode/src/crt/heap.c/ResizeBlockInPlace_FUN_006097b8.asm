@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallRegister int __watcallRegister crt_heap_c_ResizeBlockInPlace_FUN_006097b8(ushort segment,void *ptr,ulong new_size,ulong *pExtraNeeded)
+; int __watcallRegister crt_heap_c_ResizeBlockInPlace_FUN_006097b8(ushort segment,void *ptr,ulong new_size,ulong *pExtraNeeded)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c

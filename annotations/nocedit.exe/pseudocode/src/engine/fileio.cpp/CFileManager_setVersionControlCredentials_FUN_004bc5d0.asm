@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_fileio_cpp_CFileManager_setVersionControlCredentials_FUN_004bc5d0(CFileManager *this_ptr,char *network_username,char *password,char *domain)
+; void __cdecl engine_fileio_cpp_CFileManager_setVersionControlCredentials_FUN_004bc5d0(CFileManager *this_ptr,char *network_username,char *password,char *domain)
 ;
 ; Parameters:
 ; CFileManager *   Stack[0x4]:4   this_ptr

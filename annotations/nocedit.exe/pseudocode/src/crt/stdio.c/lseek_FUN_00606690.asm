@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int __watcallStack crt_stdio_c_lseek_FUN_00606690(int file_handle_index,long distance_to_move,int move_method)
+; int __watcallStack crt_stdio_c_lseek_FUN_00606690(int file_handle_index,long distance_to_move,int move_method)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   file_handle_index

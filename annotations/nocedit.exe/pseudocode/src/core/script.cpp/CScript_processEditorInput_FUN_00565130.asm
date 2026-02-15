@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_script_cpp_CScript_processEditorInput_FUN_00565130(CScript *this_ptr)
+; void __cdecl core_script_cpp_CScript_processEditorInput_FUN_00565130(CScript *this_ptr)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr

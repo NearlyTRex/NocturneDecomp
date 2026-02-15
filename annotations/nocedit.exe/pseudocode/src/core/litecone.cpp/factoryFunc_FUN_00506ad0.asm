@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CLightCone * __cdecl core_litecone_cpp_factoryFunc_FUN_00506ad0(void)
+; CLightCone * __cdecl core_litecone_cpp_factoryFunc_FUN_00506ad0(void)
 ;
 ;
 ; XREF[1]:

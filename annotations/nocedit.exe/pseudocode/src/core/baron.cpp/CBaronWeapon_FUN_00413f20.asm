@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_baron_cpp_CBaronWeapon_FUN_00413f20(CBaronWeapon *this_ptr)
+; void __cdecl core_baron_cpp_CBaronWeapon_FUN_00413f20(CBaronWeapon *this_ptr)
 ;
 ; Parameters:
 ; CBaronWeapon *   Stack[0x4]:4   this_ptr
@@ -19,8 +19,8 @@
 ;   undefined4 g_CBaronClassInfo.name_hash
 ;   CDemonMission g_CDemonMissionInstance
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.actor_list_ptr
-;   undefined4 g_CDemonSetInstance.actor_list_data[0]
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
@@ -45,7 +45,7 @@ section .text
     XOR EBX,EBX                         ; 00413f33
     MOV EAX,[0x006810c8]                ; 00413f35 | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_00413f35
-    CMP EBX,dword ptr [EAX + 0x14d154]  ; 00413f3a | g_CDemonSetInstance.actor_list_ptr
+    CMP EBX,dword ptr [EAX + 0x14d154]  ; 00413f3a | g_CDemonSetInstance.actor_count
     JL 0x00413f50                       ; 00413f40
         ;   XREF to: 00413f50 (CONDITIONAL_JUMP)  ; LAB_00413f50
     CMP dword ptr [EDI + 0x578],0x0     ; 00413f42
@@ -61,7 +61,7 @@ section .text
     MOV EBP,dword ptr [0x00822518]      ; 00413f50 | g_CBaronClassInfo.name_hash
         ;   Label: LAB_00413f50
     PUSH EBP                            ; 00413f56
-    MOV EDX,dword ptr [ESI + EAX*0x1 + 0x14d158] ; 00413f57 | g_CDemonSetInstance.actor_list_data[0]
+    MOV EDX,dword ptr [ESI + EAX*0x1 + 0x14d158] ; 00413f57 | g_CDemonSetInstance.actors[0]
     PUSH EDX                            ; 00413f5e
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 00413f5f
         ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)

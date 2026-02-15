@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBoundingBox3D * __cdecl core_conveyor_cpp_CConveyor_getBoundingBox_FUN_004420d0(CConveyor *this_ptr,CBoundingBox3D *out_box)
+; CBoundingBox3D * __cdecl core_conveyor_cpp_CConveyor_getBoundingBox_FUN_004420d0(CConveyor *this_ptr,CBoundingBox3D *out_box)
 ;
 ; Parameters:
 ; CConveyor *      Stack[0x4]:4   this_ptr

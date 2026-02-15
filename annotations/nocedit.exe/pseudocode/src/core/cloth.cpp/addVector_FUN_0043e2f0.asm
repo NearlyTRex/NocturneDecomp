@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_cloth_cpp_addVector_FUN_0043e2f0(CVector3f *a,CVector3f *b)
+; void __cdecl core_cloth_cpp_addVector_FUN_0043e2f0(CVector3f *a,CVector3f *b)
 ;
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   a

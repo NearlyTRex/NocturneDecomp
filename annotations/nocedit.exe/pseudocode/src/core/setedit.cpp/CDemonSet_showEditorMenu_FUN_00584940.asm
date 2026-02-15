@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(CDemonSet *this_ptr)
+; void __cdecl core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(CDemonSet *this_ptr)
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr
@@ -70,7 +70,7 @@ section .text
     LEA EAX,[EBP + 0x14d0f0]            ; 00584956
     XOR ECX,ECX                         ; 0058495c
     MOV dword ptr [EBP + 0x14d154],0x0  ; 0058495e
-    MOV dword ptr [0x02d807ac],ECX      ; 00584968 | g_CDemonLightInstance.unk2
+    MOV dword ptr [0x02d807ac],ECX      ; 00584968 | g_CDemonLightInstance.volumetric_enabled
     MOV dword ptr [ESP + 0x6fc],EAX     ; 0058496e
     MOV dword ptr [0x03277d14],EDX      ; 00584975 | g_CDemonRaytraceInstance
     CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0058497b

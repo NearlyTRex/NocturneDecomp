@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBoundingBox3D * __cdecl core_morph_cpp_CBoundingBox3D_arrdtor_FUN_0052ccf0(CBoundingBox3D *objs,uint flags)
+; CBoundingBox3D * __cdecl core_morph_cpp_CBoundingBox3D_arrdtor_FUN_0052ccf0(CBoundingBox3D *objs,uint flags)
 ;
 ; Parameters:
 ; CBoundingBox3D * Stack[0x4]:4   objs

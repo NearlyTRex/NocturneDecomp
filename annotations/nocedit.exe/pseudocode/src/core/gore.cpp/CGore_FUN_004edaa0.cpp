@@ -15,7 +15,7 @@ void __cdecl core_gore_cpp_CGore_FUN_004edaa0(CGore *this_ptr)
   
   if (in_stack_00000010 != 2) {
     iVar1 = DAT_02d833d0 + 1;
-    this_ptr_00 = DAT_02d833d4 + DAT_02d833d0;
+    this_ptr_00 = CBloodParticle_ARRAY_02d833d4 + DAT_02d833d0;
     DAT_02d833d0 = iVar1;
     if (0xff < iVar1) {
       DAT_02d833d0 = 0;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void * __cdecl crt_memory_c___arrinit_dispatch_FUN_00601200(void *array_ptr,int element_count,WatcomTypeInfo *type_info)
+; void * __cdecl crt_memory_c___arrinit_dispatch_FUN_00601200(void *array_ptr,int element_count,WatcomTypeInfo *type_info)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   array_ptr

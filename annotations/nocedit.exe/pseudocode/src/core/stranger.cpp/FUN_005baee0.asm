@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl core_stranger_cpp_FUN_005baee0(int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance,CDeformableModelInstance *instance)
+; float __cdecl core_stranger_cpp_FUN_005baee0(int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance,CDeformableModelInstance *instance)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   current_bone_index

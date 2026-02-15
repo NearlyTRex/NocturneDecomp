@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CCurtain * __cdecl core_curtain_cpp_CCurtain_ctor_FUN_004496a0(CCurtain *this_ptr)
+; CCurtain * __cdecl core_curtain_cpp_CCurtain_ctor_FUN_004496a0(CCurtain *this_ptr)
 ;
 ; Parameters:
 ; CCurtain *       Stack[0x4]:4   this_ptr

@@ -169,12 +169,9 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_005ddb30(CTommyGun *this_ptr)
            (*(((this_ptr->base).base.vtable._uc)->_uc).getGrabbed)
                      ((CCharacter *)this_ptr,pCVar7,in_stack_fffffebc);
       auStack_130._4_4_ = 0.4;
-      fStack_40 = (g_CDemonSetPtr->collision_result_vec2).x -
-                  (g_CDemonSetPtr->collision_result_vec1).x;
-      fStack_3c = (g_CDemonSetPtr->collision_result_vec2).y -
-                  (g_CDemonSetPtr->collision_result_vec1).y;
-      fStack_38 = (g_CDemonSetPtr->collision_result_vec2).z -
-                  (g_CDemonSetPtr->collision_result_vec1).z;
+      fStack_40 = (g_CDemonSetPtr->ray_target).x - (g_CDemonSetPtr->ray_origin).x;
+      fStack_3c = (g_CDemonSetPtr->ray_target).y - (g_CDemonSetPtr->ray_origin).y;
+      fStack_38 = (g_CDemonSetPtr->ray_target).z - (g_CDemonSetPtr->ray_origin).z;
       fStack_1c = (float)10 /
                   SQRT(fStack_38 * fStack_38 + fStack_40 * fStack_40 + fStack_3c * fStack_3c);
       fStack_58 = fStack_40 * fStack_1c;

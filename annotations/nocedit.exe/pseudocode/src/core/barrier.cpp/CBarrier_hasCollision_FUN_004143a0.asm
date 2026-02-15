@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_barrier_cpp_CBarrier_hasCollision_FUN_004143a0(CBarrier *this_ptr,SCollisionInfo *collision_info)
+; int __cdecl core_barrier_cpp_CBarrier_hasCollision_FUN_004143a0(CBarrier *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CBarrier *       Stack[0x4]:4   this_ptr

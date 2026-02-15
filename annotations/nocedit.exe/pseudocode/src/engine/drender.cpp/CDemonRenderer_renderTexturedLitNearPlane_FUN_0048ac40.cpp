@@ -32,7 +32,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedLitNearPlane_FUN_00
       } while (iVar3 < (polygon_info->base).count);
     }
     if (((local_14 & 0x80000000) == 0) || ((local_14 & 0x1f) == 0)) {
-      if ((this_ptr->face_count == 0) && (this_ptr->unk == 0)) {
+      if ((this_ptr->face_count == 0) && (this_ptr->skip_uv_extraction == 0)) {
         iVar4 = 0;
         iVar3 = 0;
         pSVar2 = polygon_info;

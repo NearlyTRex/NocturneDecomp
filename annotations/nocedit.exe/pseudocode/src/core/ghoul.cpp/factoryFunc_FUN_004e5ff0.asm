@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CGhoul * __cdecl core_ghoul_cpp_factoryFunc_FUN_004e5ff0(void)
+; CGhoul * __cdecl core_ghoul_cpp_factoryFunc_FUN_004e5ff0(void)
 ;
 ;
 ; XREF[1]:

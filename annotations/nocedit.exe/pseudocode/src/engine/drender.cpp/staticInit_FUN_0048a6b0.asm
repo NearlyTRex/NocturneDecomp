@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_drender_cpp_staticInit_FUN_0048a6b0(void)
+; void __cdecl engine_drender_cpp_staticInit_FUN_0048a6b0(void)
 ;
 ;
 ; Referenced Globals:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_fileio_cpp_CFileManager_registerFiles_FUN_004b5640(CFileManager *this_ptr,char *filename_list)
+; void __cdecl engine_fileio_cpp_CFileManager_registerFiles_FUN_004b5640(CFileManager *this_ptr,char *filename_list)
 ;
 ; Parameters:
 ; CFileManager *   Stack[0x4]:4   this_ptr

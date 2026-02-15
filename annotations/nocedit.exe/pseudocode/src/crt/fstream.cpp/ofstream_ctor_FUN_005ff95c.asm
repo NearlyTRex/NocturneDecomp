@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl ofstream * __cdecl crt_fstream_cpp_ofstream_ctor_FUN_005ff95c(ofstream *this_ptr,int c1)
+; ofstream * __cdecl crt_fstream_cpp_ofstream_ctor_FUN_005ff95c(ofstream *this_ptr,int c1)
 ;
 ; Parameters:
 ; ofstream *       Stack[0x4]:4   this_ptr

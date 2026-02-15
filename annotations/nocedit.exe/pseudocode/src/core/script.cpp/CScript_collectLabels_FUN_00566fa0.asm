@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_script_cpp_CScript_collectLabels_FUN_00566fa0(CScript *this_ptr,CStrList *labels_out)
+; void __cdecl core_script_cpp_CScript_collectLabels_FUN_00566fa0(CScript *this_ptr,CStrList *labels_out)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr

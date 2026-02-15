@@ -49,8 +49,8 @@ void __cdecl core_msnedit_cpp_CDemonMission_importActorsFrom_FUN_0053b9f0(CDemon
     core_dcamera_cpp_CDemonCamera_beginScene_FUN_0044c430(&g_CDemonCameraInstance,1);
     (actor->location).area_id = this_ptr->current_set_index;
     pfVar3 = core_msnedit_cpp_FUN_00535c60
-                       (local_1c,(this_ptr->unk1 + this_ptr->unk3) / 2,
-                        (this_ptr->unk2 + this_ptr->unk4) / 2);
+                       (local_1c,((this_ptr->viewport).left + (this_ptr->viewport).right) / 2,
+                        ((this_ptr->viewport).top + (this_ptr->viewport).bottom) / 2);
     (actor->location).position.x = *pfVar3;
     (actor->location).position.y = pfVar3[1];
     (actor->location).position.z = pfVar3[2];

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_tls_c_initialize_tls_infrastructure_FUN_0060a3b4(void)
+; void __cdecl crt_tls_c_initialize_tls_infrastructure_FUN_0060a3b4(void)
 ;
 ;
 ; XREF[1]:

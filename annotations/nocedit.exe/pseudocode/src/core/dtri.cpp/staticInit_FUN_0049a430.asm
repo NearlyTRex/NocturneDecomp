@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dtri_cpp_staticInit_FUN_0049a430(void)
+; void __cdecl core_dtri_cpp_staticInit_FUN_0049a430(void)
 ;
 ;
 ; Referenced Globals:

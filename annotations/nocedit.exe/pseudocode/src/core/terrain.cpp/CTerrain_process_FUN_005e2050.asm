@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_terrain_cpp_CTerrain_process_FUN_005e2050(CTerrain *this_ptr)
+; void __cdecl core_terrain_cpp_CTerrain_process_FUN_005e2050(CTerrain *this_ptr)
 ;
 ; Parameters:
 ; CTerrain *       Stack[0x4]:4   this_ptr

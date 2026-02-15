@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_script_cpp_trimLine_FUN_005592c0(char *input_line,char *output_buffer)
+; void __cdecl core_script_cpp_trimLine_FUN_005592c0(char *input_line,char *output_buffer)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   input_line

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(CDemonActor *this_ptr)
+; void __cdecl core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(CDemonActor *this_ptr)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr

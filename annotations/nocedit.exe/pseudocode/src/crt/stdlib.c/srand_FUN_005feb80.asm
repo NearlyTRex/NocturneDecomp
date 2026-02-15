@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_stdlib_c_srand_FUN_005feb80(uint seed)
+; void __cdecl crt_stdlib_c_srand_FUN_005feb80(uint seed)
 ;
 ; Parameters:
 ; uint             Stack[0x4]:4   seed

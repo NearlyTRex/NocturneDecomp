@@ -40,25 +40,25 @@
       {
         "category": "other",
         "column": 20,
-        "line": 280,
+        "line": 277,
         "message": "cannot cast from type 'float' to pointer type 'CTrigger *'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 281,
+        "line": 278,
         "message": "cannot cast from type 'float' to pointer type 'CCrate *'"
       },
       {
         "category": "other",
         "column": 46,
-        "line": 285,
+        "line": 282,
         "message": "C-style cast from 'CCrate *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 31,
-        "line": 292,
+        "line": 289,
         "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
       }
     ],
@@ -67,11 +67,11 @@
   },
   "complexity": {
     "assembly_lines": 767,
-    "complexity_score": 530,
+    "complexity_score": 527,
     "cross_reference_count": 0,
     "function_call_count": 21,
     "global_count": 30,
-    "pseudocode_lines": 300,
+    "pseudocode_lines": 297,
     "suspect_count": 21,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -79,7 +79,7 @@
       "stack_ref",
       "unknown_field"
     ],
-    "total_lines": 1067
+    "total_lines": 1064
   },
   "cross_references": [],
   "function": {
@@ -361,13 +361,13 @@
     },
     {
       "addr": "032613cc",
-      "name": "g_CDemonSetInstance.actor_list_ptr",
+      "name": "g_CDemonSetInstance.actor_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "032613d0",
-      "name": "g_CDemonSetInstance.actor_list_data[0]",
+      "name": "g_CDemonSetInstance.actors[0]",
       "type": "undefined4",
       "value": null
     },
@@ -842,7 +842,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 272,
+      "line": 269,
       "match": "SQRT",
       "text": "SQRT(local_68.x * local_68.x + local_74.y * local_74.y + local_74.z * local_74.z);",
       "type": "decompiler_intrinsic"

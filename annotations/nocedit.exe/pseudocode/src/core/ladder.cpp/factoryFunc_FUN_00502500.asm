@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CLadder * __cdecl core_ladder_cpp_factoryFunc_FUN_00502500(void)
+; CLadder * __cdecl core_ladder_cpp_factoryFunc_FUN_00502500(void)
 ;
 ;
 ; XREF[1]:

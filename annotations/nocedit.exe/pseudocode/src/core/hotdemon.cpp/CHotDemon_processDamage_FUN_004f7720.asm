@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_hotdemon_cpp_CHotDemon_processDamage_FUN_004f7720(CHotDemon *this_ptr,SDamageInfo *damage_info)
+; void __cdecl core_hotdemon_cpp_CHotDemon_processDamage_FUN_004f7720(CHotDemon *this_ptr,SDamageInfo *damage_info)
 ;
 ; Parameters:
 ; CHotDemon *      Stack[0x4]:4   this_ptr

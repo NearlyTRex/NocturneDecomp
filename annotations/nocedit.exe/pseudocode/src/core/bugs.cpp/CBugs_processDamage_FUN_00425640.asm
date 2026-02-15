@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_bugs_cpp_CBugs_processDamage_FUN_00425640(CBugs *this_ptr,SDamageInfo *damage_info)
+; void __cdecl core_bugs_cpp_CBugs_processDamage_FUN_00425640(CBugs *this_ptr,SDamageInfo *damage_info)
 ;
 ; Parameters:
 ; CBugs *          Stack[0x4]:4   this_ptr

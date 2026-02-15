@@ -6,10 +6,10 @@
 // Structure: CEdCheck
 // Ghidra size: 0xec (236 bytes)
 typedef struct CEdCheck {
-    void** vtable; // 0x0
+    int checkbox_mode; // 0x0, 0=binary,1=tri-state
     int checked_state; // 0x4
     int interactive_flag; // 0x8
-    int coord_unk; // 0xc
+    int text_color_mode; // 0xc
     int x_position; // 0x10
     int y_position; // 0x14
     int total_width; // 0x18

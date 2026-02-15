@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_2d_c_drawTextRightAlignedColorWrapper_FUN_00402560(int x,int y,char *text)
+; void __cdecl engine_2d_c_drawTextRightAlignedColorWrapper_FUN_00402560(int x,int y,char *text)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   x

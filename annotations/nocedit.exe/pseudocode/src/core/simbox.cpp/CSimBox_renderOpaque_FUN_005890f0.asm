@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_simbox_cpp_CSimBox_renderOpaque_FUN_005890f0(CSimBox *this_ptr)
+; int __cdecl core_simbox_cpp_CSimBox_renderOpaque_FUN_005890f0(CSimBox *this_ptr)
 ;
 ; Parameters:
 ; CSimBox *        Stack[0x4]:4   this_ptr

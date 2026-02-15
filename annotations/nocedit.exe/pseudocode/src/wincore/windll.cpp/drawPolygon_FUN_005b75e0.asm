@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl wincore_windll_cpp_drawPolygon_FUN_005b75e0(SRenderVertex *vertices,int vertex_count,int render_flags)
+; int __cdecl wincore_windll_cpp_drawPolygon_FUN_005b75e0(SRenderVertex *vertices,int vertex_count,int render_flags)
 ;
 ; Parameters:
 ; SRenderVertex *  Stack[0x4]:4   vertices

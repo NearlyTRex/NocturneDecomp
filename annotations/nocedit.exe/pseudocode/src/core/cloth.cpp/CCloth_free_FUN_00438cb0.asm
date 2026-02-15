@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_cloth_cpp_CCloth_free_FUN_00438cb0(CCloth *this_ptr)
+; void __cdecl core_cloth_cpp_CCloth_free_FUN_00438cb0(CCloth *this_ptr)
 ;
 ; Parameters:
 ; CCloth *         Stack[0x4]:4   this_ptr

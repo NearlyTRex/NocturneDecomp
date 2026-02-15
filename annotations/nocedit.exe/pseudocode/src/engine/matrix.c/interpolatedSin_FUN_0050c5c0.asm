@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_matrix_c_interpolatedSin_FUN_0050c5c0(int angle)
+; int __cdecl engine_matrix_c_interpolatedSin_FUN_0050c5c0(int angle)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   angle

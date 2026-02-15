@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl wincore_winrun_cpp_setValue_FUN_005f2f70(int val)
+; void __cdecl wincore_winrun_cpp_setValue_FUN_005f2f70(int val)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   val

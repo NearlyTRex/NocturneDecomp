@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_io_c_register_handle_FUN_00608990(HANDLE handle)
+; int __cdecl crt_io_c_register_handle_FUN_00608990(HANDLE handle)
 ;
 ; Parameters:
 ; HANDLE           Stack[0x4]:4   handle

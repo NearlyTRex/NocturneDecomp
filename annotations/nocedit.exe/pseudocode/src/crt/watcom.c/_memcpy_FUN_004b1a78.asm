@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __fastcall void __fastcall crt_watcom_c__memcpy_FUN_004b1a78(void *dest,void *src,uint size)
+; void __fastcall crt_watcom_c__memcpy_FUN_004b1a78(void *dest,void *src,uint size)
 ;
 ; Parameters:
 ; uint             Stack[0x4]:4   size

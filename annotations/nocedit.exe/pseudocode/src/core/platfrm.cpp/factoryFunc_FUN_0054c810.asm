@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CPlatform * __cdecl core_platfrm_cpp_factoryFunc_FUN_0054c810(void)
+; CPlatform * __cdecl core_platfrm_cpp_factoryFunc_FUN_0054c810(void)
 ;
 ;
 ; XREF[1]:

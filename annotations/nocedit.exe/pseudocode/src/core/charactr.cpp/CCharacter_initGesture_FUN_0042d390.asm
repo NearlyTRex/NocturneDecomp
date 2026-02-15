@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_charactr_cpp_CCharacter_initGesture_FUN_0042d390(CCharacter *this_ptr,char *motion_name)
+; int __cdecl core_charactr_cpp_CCharacter_initGesture_FUN_0042d390(CCharacter *this_ptr,char *motion_name)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr

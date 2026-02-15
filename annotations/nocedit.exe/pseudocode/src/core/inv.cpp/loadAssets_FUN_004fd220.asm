@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_inv_cpp_loadAssets_FUN_004fd220(void)
+; void __cdecl core_inv_cpp_loadAssets_FUN_004fd220(void)
 ;
 ;
 ; XREF[3]:

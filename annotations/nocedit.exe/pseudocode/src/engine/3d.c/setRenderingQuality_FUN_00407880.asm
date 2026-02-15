@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_3d_c_setRenderingQuality_FUN_00407880(int quality)
+; void __cdecl engine_3d_c_setRenderingQuality_FUN_00407880(int quality)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   quality

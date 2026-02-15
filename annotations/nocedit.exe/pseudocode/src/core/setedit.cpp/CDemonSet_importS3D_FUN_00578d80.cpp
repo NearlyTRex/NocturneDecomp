@@ -420,7 +420,7 @@ LAB_00579173:
           dest = dest + 1;
           pCVar9 = pCVar9 + 1;
           iVar1 = iVar1 + 1;
-          pCVar7 = (CDemonSet *)&pCVar7->cameras[0xe].unk3;
+          pCVar7 = (CDemonSet *)&pCVar7->cameras[0xe].vdir_zone;
         }
         else {
           iVar2 = this_ptr->light_count + -1;
@@ -488,7 +488,7 @@ LAB_00579173:
           }
           *(ushort *)pcVar10 = *(ushort *)pcVar11;
           puVar16 = (uint *)((int)pCVar9 + (uint)bVar22 * -8 + 0x228);
-          *(uint *)(pCVar9->unk1 + 6) = local_2478.unk1._6_4_;
+          pCVar9->camera_light_bounds[0].left = local_2478.camera_light_bounds[0].left;
           puVar17 = puVar16 + (uint)bVar22 * -2 + 1;
           puVar12 = (uint *)((int)&local_2478 + (uint)bVar22 * -8 + (uint)bVar22 * -8 + 0x22c)
           ;
@@ -500,8 +500,8 @@ LAB_00579173:
           (pCVar9->color).b = local_2478.color.b;
           pCVar9->atten_start = local_2478.atten_start;
           pCVar9->atten_end = local_2478.atten_end;
-          *(uint *)pCVar9->unk2 = local_2478.unk2._0_4_;
-          *(uint *)(pCVar9->unk2 + 4) = local_2478.unk2._4_4_;
+          pCVar9->atten_end_squared = local_2478.atten_end_squared;
+          pCVar9->atten_end_reciprocal = local_2478.atten_end_reciprocal;
           pCVar9->on_time = local_2478.on_time;
           pCVar9->cycle_time = local_2478.cycle_time;
           pCVar9->cycle_elapsed = local_2478.cycle_elapsed;
@@ -649,7 +649,7 @@ LAB_0057a07e:
           shape_memdbg_cpp_debugFree_FUN_0050f460(piVar5,"..\\core\\setedit.cpp",0x634);
           pCVar7->cameras[0].pvs_list = (int *)0x0;
         }
-        pCVar7 = (CDemonSet *)&pCVar7->cameras[0].unk4;
+        pCVar7 = (CDemonSet *)&pCVar7->cameras[0].enabled;
         iVar1 = iVar1 + 1;
         pCVar6 = pCVar6 + 1;
       } while (iVar1 < this_ptr->camera_count);

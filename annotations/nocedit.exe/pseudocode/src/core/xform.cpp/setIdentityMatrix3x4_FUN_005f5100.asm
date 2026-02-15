@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_xform_cpp_setIdentityMatrix3x4_FUN_005f5100(CMatrix3x4f *matrix)
+; void __cdecl core_xform_cpp_setIdentityMatrix3x4_FUN_005f5100(CMatrix3x4f *matrix)
 ;
 ; Parameters:
 ; CMatrix3x4f *    Stack[0x4]:4   matrix

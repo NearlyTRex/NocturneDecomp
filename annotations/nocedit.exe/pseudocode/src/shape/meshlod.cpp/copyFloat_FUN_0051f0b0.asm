@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float * __cdecl shape_meshlod_cpp_copyFloat_FUN_0051f0b0(float *dest_ptr,float *src_ptr)
+; float * __cdecl shape_meshlod_cpp_copyFloat_FUN_0051f0b0(float *dest_ptr,float *src_ptr)
 ;
 ; Parameters:
 ; float *          Stack[0x4]:4   dest_ptr

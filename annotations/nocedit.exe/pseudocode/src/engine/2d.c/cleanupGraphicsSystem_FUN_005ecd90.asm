@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_2d_c_cleanupGraphicsSystem_FUN_005ecd90(void)
+; void __cdecl engine_2d_c_cleanupGraphicsSystem_FUN_005ecd90(void)
 ;
 ;
 ; XREF[2]:

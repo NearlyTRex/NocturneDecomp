@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl sound_sndmain_cpp_countActiveSfx_FUN_005a9ff0(void)
+; int __cdecl sound_sndmain_cpp_countActiveSfx_FUN_005a9ff0(void)
 ;
 ;
 ; XREF[1]:

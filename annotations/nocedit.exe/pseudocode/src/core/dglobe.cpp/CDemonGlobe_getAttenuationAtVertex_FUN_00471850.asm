@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_dglobe_cpp_CDemonGlobe_getAttenuationAtVertex_FUN_00471850(CDemonGlobe *this_ptr,CVector3i *vertex_position,CVector3i *surface_normal)
+; int __cdecl core_dglobe_cpp_CDemonGlobe_getAttenuationAtVertex_FUN_00471850(CDemonGlobe *this_ptr,CVector3i *vertex_position,CVector3i *surface_normal)
 ;
 ; Parameters:
 ; CDemonGlobe *    Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_fileman_cpp_trimWhitespace_FUN_004bd9b0(char *str)
+; void __cdecl core_fileman_cpp_trimWhitespace_FUN_004bd9b0(char *str)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   str

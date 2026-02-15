@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_keyactor_cpp_staticInit_FUN_00501620(void)
+; void __cdecl core_keyactor_cpp_staticInit_FUN_00501620(void)
 ;
 ;
 ; Referenced Globals:

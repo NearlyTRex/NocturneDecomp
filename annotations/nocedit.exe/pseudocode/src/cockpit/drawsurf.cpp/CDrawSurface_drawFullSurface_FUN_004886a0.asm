@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawFullSurface_FUN_004886a0(CDrawSurface *this_ptr)
+; void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawFullSurface_FUN_004886a0(CDrawSurface *this_ptr)
 ;
 ; Parameters:
 ; CDrawSurface *   Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_flame_cpp_CFlame_showEditorHelp_FUN_004cb0a0(CFlame *this_ptr,int *y_pos)
+; void __cdecl core_flame_cpp_CFlame_showEditorHelp_FUN_004cb0a0(CFlame *this_ptr,int *y_pos)
 ;
 ; Parameters:
 ; CFlame *         Stack[0x4]:4   this_ptr

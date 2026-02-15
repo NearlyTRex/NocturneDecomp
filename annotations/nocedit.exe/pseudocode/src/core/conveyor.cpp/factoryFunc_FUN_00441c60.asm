@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CConveyor * __cdecl core_conveyor_cpp_factoryFunc_FUN_00441c60(void)
+; CConveyor * __cdecl core_conveyor_cpp_factoryFunc_FUN_00441c60(void)
 ;
 ;
 ; XREF[1]:

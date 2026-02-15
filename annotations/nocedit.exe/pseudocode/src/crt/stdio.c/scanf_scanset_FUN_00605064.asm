@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_stdio_c_scanf_scanset_FUN_00605064(scanf_state_t *state,va_list_t *args,char **format_ptr)
+; int __cdecl crt_stdio_c_scanf_scanset_FUN_00605064(scanf_state_t *state,va_list_t *args,char **format_ptr)
 ;
 ; Parameters:
 ; scanf_state_t *  Stack[0x4]:4   state

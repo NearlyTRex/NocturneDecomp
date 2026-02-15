@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_armour_cpp_CArmour_setup_FUN_00412240(CArmour *this_ptr)
+; void __cdecl core_armour_cpp_CArmour_setup_FUN_00412240(CArmour *this_ptr)
 ;
 ; Parameters:
 ; CArmour *        Stack[0x4]:4   this_ptr

@@ -136,6 +136,6 @@ LAB_004ecf33:
 LAB_004ecf83:
   g_RenderVertexBuffer[3].fog = 0;
   engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
-            (g_CDemonRendererPtr2,&SMRGLHeaderPrimitive_02d83368);
+            (g_CDemonRendererPtr2,&SMRGLPrimitiveQuadIndex_02d83368.base);
   return;
 }

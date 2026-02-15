@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dtri_cpp_CDemonTriangle_writeDataBinary_FUN_0049a5f0(CDemonTriangle *this_ptr,_FILE *file_handle)
+; void __cdecl core_dtri_cpp_CDemonTriangle_writeDataBinary_FUN_0049a5f0(CDemonTriangle *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CDemonTriangle * Stack[0x4]:4   this_ptr

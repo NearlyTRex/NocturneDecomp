@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_stdio_c_fflush_FUN_00601540(_FILE *stream)
+; int __cdecl crt_stdio_c_fflush_FUN_00601540(_FILE *stream)
 ;
 ; Parameters:
 ; _FILE *          Stack[0x4]:4   stream

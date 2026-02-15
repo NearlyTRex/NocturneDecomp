@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_unknown_c_staticFinal_FUN_0060a4cc(void)
+; void __cdecl crt_unknown_c_staticFinal_FUN_0060a4cc(void)
 ;
 ;
 ; Referenced Globals:

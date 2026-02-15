@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_stdio_c_scanf_integer_FUN_0060547c(scanf_state_t *state,va_list_t *args,int base,int is_signed)
+; int __cdecl crt_stdio_c_scanf_integer_FUN_0060547c(scanf_state_t *state,va_list_t *args,int base,int is_signed)
 ;
 ; Parameters:
 ; scanf_state_t *  Stack[0x4]:4   state

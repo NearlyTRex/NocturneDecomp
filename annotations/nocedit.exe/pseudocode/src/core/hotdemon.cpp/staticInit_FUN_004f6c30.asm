@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_hotdemon_cpp_staticInit_FUN_004f6c30(void)
+; void __cdecl core_hotdemon_cpp_staticInit_FUN_004f6c30(void)
 ;
 ;
 ; Referenced Globals:

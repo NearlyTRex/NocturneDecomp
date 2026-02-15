@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_spike_cpp_CSpike_hasCollision_FUN_005b8940(CSpike *this_ptr,SCollisionInfo *collision_info)
+; int __cdecl core_spike_cpp_CSpike_hasCollision_FUN_005b8940(CSpike *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CSpike *         Stack[0x4]:4   this_ptr

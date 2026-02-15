@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __stack_esi CMatrix3x4f * __stack_esi core_xform_cpp_buildUniformScaleMatrix_FUN_005f6e20(float scale_factor,CMatrix3x4f *matrix_out)
+; CMatrix3x4f * __stack_esi core_xform_cpp_buildUniformScaleMatrix_FUN_005f6e20(float scale_factor,CMatrix3x4f *matrix_out)
 ;
 ; Parameters:
 ; float            Stack[0x4]:4   scale_factor

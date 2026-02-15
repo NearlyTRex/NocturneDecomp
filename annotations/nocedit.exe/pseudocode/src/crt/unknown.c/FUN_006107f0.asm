@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown BOOL crt_unknown_c_FUN_006107f0(LPCWSTR param_1,LPWSTR param_2)
+; BOOL crt_unknown_c_FUN_006107f0(LPCWSTR param_1,LPWSTR param_2)
 ;
 ;
 ; XREF[1]:

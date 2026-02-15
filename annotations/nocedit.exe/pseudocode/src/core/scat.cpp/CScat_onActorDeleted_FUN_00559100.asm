@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_scat_cpp_CScat_onActorDeleted_FUN_00559100(CScat *this_ptr,CDemonActor *deleted_actor)
+; void __cdecl core_scat_cpp_CScat_onActorDeleted_FUN_00559100(CScat *this_ptr,CDemonActor *deleted_actor)
 ;
 ; Parameters:
 ; CScat *          Stack[0x4]:4   this_ptr

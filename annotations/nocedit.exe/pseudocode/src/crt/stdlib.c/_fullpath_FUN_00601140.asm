@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * __cdecl crt_stdlib_c__fullpath_FUN_00601140(char *buffer,char *path,SIZE_T buffer_size)
+; char * __cdecl crt_stdlib_c__fullpath_FUN_00601140(char *buffer,char *path,SIZE_T buffer_size)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   buffer

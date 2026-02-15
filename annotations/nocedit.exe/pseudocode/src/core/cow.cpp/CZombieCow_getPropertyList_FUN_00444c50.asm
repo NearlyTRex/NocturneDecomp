@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_cow_cpp_CZombieCow_getPropertyList_FUN_00444c50(CZombieCow *this_ptr,CActorPropertyList *property_list)
+; void __cdecl core_cow_cpp_CZombieCow_getPropertyList_FUN_00444c50(CZombieCow *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CZombieCow *     Stack[0x4]:4   this_ptr

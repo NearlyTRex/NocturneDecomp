@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl ios * __cdecl crt_iostream_cpp_ios_ctor_FUN_006061fc(ios *this_ptr)
+; ios * __cdecl crt_iostream_cpp_ios_ctor_FUN_006061fc(ios *this_ptr)
 ;
 ; Parameters:
 ; ios *            Stack[0x4]:4   this_ptr

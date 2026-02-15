@@ -1,0 +1,163 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 34,
+    "complexity_score": 24,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 9,
+    "suspect_count": 1,
+    "suspect_types": [
+      "param_count_too_few"
+    ],
+    "total_lines": 43
+  },
+  "cross_references": [
+    {
+      "addr": "004ce050",
+      "from_addr": "004ce07c",
+      "name": "engine_font.cpp_CBitFont_printCenterF_FUN_004ce050",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004ce090",
+    "address_range": [
+      [
+        "004ce090",
+        "004ce0ec"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_font.cpp_CBitFont_printCenterFV_FUN_004ce090",
+    "signature": "int __cdecl engine_font_cpp_CBitFont_printCenterFV_FUN_004ce090(CBitFont *this_ptr,int y,int color_mode,int color_value,char *format_string,va_list_t args)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fdba8",
+      "is_variadic": false,
+      "name": "crt_stdio.c__vsprintf_FUN_005fdba8"
+    },
+    {
+      "addr": "004cdff0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_drawTextCenterInClip_FUN_004cdff0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004ce07c",
+        "call_type": "direct",
+        "caller": "engine_font.cpp_CBitFont_printCenterF_FUN_004ce050",
+        "estimated_params": 10,
+        "instructions_analyzed": 20,
+        "reg_params": [],
+        "stack_params": 10
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 6,
+    "estimated_params": 10
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.806451612903226,
+    "instruction_count": 31,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 28,
+      "INT_ADD": 15,
+      "INT_AND": 8,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 8,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 4,
+      "INT_SUB": 15,
+      "LOAD": 11,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 14
+    },
+    "pcode_op_count": 118
+  },
+  "stack_frame": {
+    "frame_size": 4140,
+    "local_size": 4116,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1010",
+        "offset": -4112,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBitFont *"
+      },
+      {
+        "is_param": true,
+        "name": "y",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "color_mode",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "color_value",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "format_string",
+        "offset": 20,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "args",
+        "offset": 24,
+        "size": 4,
+        "type": "va_list_t"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "call_site_count": 1,
+      "declared_params": 6,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 10,
+      "fix_type": "add_params",
+      "match": "declared:6 vs estimated:10",
+      "param_delta": 4,
+      "text": "Function declares 6 params but call sites push 10 (4 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

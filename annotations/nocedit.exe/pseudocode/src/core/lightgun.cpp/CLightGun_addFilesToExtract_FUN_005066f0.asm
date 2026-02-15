@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_lightgun_cpp_CLightGun_addFilesToExtract_FUN_005066f0(CLightGun *this_ptr,_FILE *file_handle)
+; void __cdecl core_lightgun_cpp_CLightGun_addFilesToExtract_FUN_005066f0(CLightGun *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CLightGun *      Stack[0x4]:4   this_ptr

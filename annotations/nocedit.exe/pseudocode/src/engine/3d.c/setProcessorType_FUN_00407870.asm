@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_3d_c_setProcessorType_FUN_00407870(int processor_type)
+; void __cdecl engine_3d_c_setProcessorType_FUN_00407870(int processor_type)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   processor_type

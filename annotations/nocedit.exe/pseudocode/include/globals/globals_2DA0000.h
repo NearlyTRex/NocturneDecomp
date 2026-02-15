@@ -13,7 +13,7 @@
 extern CBloodPool DAT_02da8724[32];
 
 // CFootstep[1000]
-extern CFootstep DAT_02da8c2c[1000];
+extern CFootstep CFootstep_ARRAY_02da8c2c[1000];
 
 // int
 extern int INT_02da8720;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_ground_cpp_CGround_renderTerrainPrimitive_FUN_004ef970(CGround *this_ptr,SMRGLHeaderPrimitive *primitive)
+; void __cdecl core_ground_cpp_CGround_renderTerrainPrimitive_FUN_004ef970(CGround *this_ptr,SMRGLHeaderPrimitive *primitive)
 ;
 ; Parameters:
 ; CGround *        Stack[0x4]:4   this_ptr

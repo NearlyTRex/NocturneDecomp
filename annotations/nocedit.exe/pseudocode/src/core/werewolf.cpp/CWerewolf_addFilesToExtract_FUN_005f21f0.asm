@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_werewolf_cpp_CWerewolf_addFilesToExtract_FUN_005f21f0(CWerewolf *this_ptr,_FILE *file_handle)
+; void __cdecl core_werewolf_cpp_CWerewolf_addFilesToExtract_FUN_005f21f0(CWerewolf *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CWerewolf *      Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CMobster * __cdecl core_mobster_cpp_factoryFunc_FUN_005251c0(void)
+; CMobster * __cdecl core_mobster_cpp_factoryFunc_FUN_005251c0(void)
 ;
 ;
 ; XREF[1]:

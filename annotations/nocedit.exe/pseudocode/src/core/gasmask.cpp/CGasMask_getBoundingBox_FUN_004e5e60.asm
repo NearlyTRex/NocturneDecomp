@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBoundingBox3D * __cdecl core_gasmask_cpp_CGasMask_getBoundingBox_FUN_004e5e60(CGasMask *this_ptr,CBoundingBox3D *out_box)
+; CBoundingBox3D * __cdecl core_gasmask_cpp_CGasMask_getBoundingBox_FUN_004e5e60(CGasMask *this_ptr,CBoundingBox3D *out_box)
 ;
 ; Parameters:
 ; CGasMask *       Stack[0x4]:4   this_ptr

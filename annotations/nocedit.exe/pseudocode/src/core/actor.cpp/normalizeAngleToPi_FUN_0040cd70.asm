@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(float angle_radians)
+; float __cdecl core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(float angle_radians)
 ;
 ; Parameters:
 ; float            Stack[0x4]:4   angle_radians

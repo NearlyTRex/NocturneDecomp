@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_startup_c_WriteErrorAndExit_FUN_00606620(char *error_message,int exit_code)
+; void __cdecl crt_startup_c_WriteErrorAndExit_FUN_00606620(char *error_message,int exit_code)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   error_message

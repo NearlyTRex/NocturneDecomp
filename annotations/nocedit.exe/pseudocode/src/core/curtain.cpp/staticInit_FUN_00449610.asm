@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_curtain_cpp_staticInit_FUN_00449610(void)
+; void __cdecl core_curtain_cpp_staticInit_FUN_00449610(void)
 ;
 ;
 ; Referenced Globals:

@@ -20,11 +20,10 @@ int __cdecl core_setcolid_cpp_CDemonSet_FUN_00574580(CDemonSet *this_ptr)
      (g_CWaterPtr->water_level_y <= in_stack_00000008->y)) {
     iVar1 = 0;
     pCVar2 = this_ptr;
-    if (0 < (int)this_ptr->actor_list_ptr) {
+    if (0 < this_ptr->actor_count) {
       do {
         this_ptr_00 = core_actor_cpp_castToClassHash_FUN_0040c790
-                                (*(CDemonActor **)pCVar2->actor_list_data,
-                                 g_CWaterActorClassInfo.name_hash);
+                                (pCVar2->actors[0],g_CWaterActorClassInfo.name_hash);
         if (this_ptr_00 != (CDemonActor *)0x0) {
           core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                     (this_ptr_00,&local_1c,in_stack_00000008);
@@ -39,7 +38,7 @@ int __cdecl core_setcolid_cpp_CDemonSet_FUN_00574580(CDemonSet *this_ptr)
         }
         iVar1 = iVar1 + 1;
         pCVar2 = (CDemonSet *)pCVar2->cameras;
-      } while (iVar1 < (int)this_ptr->actor_list_ptr);
+      } while (iVar1 < this_ptr->actor_count);
     }
     iVar1 = 0;
   }

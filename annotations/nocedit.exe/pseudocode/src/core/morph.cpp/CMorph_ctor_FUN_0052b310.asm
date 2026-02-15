@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CMorph * __cdecl core_morph_cpp_CMorph_ctor_FUN_0052b310(CMorph *this_ptr)
+; CMorph * __cdecl core_morph_cpp_CMorph_ctor_FUN_0052b310(CMorph *this_ptr)
 ;
 ; Parameters:
 ; CMorph *         Stack[0x4]:4   this_ptr

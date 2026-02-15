@@ -19,12 +19,12 @@
   },
   "complexity": {
     "assembly_lines": 331,
-    "complexity_score": 221,
+    "complexity_score": 231,
     "cross_reference_count": 0,
     "function_call_count": 14,
     "global_count": 6,
     "pseudocode_lines": 161,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
@@ -251,6 +251,13 @@
       "match": "WARNING: Type propagation algorithm not settling",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 52,
+      "match": "1.5134e-43",
+      "text": "if (damage_info->gore_multiplier == 1.5134e-43) {",
+      "type": "suspect_float"
     },
     {
       "description": "Complex pointer cast",

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_0052de70(CMotionController *this_ptr,int *inout_motion_index,float *inout_frame_number,float delta_time,float scale_factor)
+; int __cdecl core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_0052de70(CMotionController *this_ptr,int *inout_motion_index,float *inout_frame_number,float delta_time,float scale_factor)
 ;
 ; Parameters:
 ; CMotionController * Stack[0x4]:4   this_ptr

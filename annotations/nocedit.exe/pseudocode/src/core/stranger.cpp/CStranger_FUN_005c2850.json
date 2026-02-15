@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 626,
-    "complexity_score": 347,
+    "complexity_score": 346,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 17,
-    "pseudocode_lines": 247,
+    "pseudocode_lines": 246,
     "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param"
     ],
-    "total_lines": 873
+    "total_lines": 872
   },
   "cross_references": [
     {
@@ -198,13 +198,13 @@
     },
     {
       "addr": "032613cc",
-      "name": "g_CDemonSetInstance.actor_list_ptr",
+      "name": "g_CDemonSetInstance.actor_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "032613d0",
-      "name": "g_CDemonSetInstance.actor_list_data[0]",
+      "name": "g_CDemonSetInstance.actors[0]",
       "type": "undefined4",
       "value": null
     },
@@ -549,21 +549,28 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 91,
+      "line": 90,
       "match": "ABS",
       "text": "((fVar3 < (float)3 && (ABS(fVar9) < (float)2)))) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 136,
+      "line": 135,
       "match": "ABS",
       "text": "((((fStack_88 < (float)3 && (ABS(fStack_90) < (float)2)) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 137,
+      "line": 136,
+      "match": "in_stack_ffffff18",
+      "text": "(in_stack_ffffff18 = (double)local_8c, 0.0 < in_stack_ffffff18)) &&",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 136,
       "match": "in_stack_ffffff18",
       "text": "(in_stack_ffffff18 = (double)local_8c, 0.0 < in_stack_ffffff18)) &&",
       "type": "stack_param"
@@ -571,34 +578,27 @@
     {
       "description": "Unresolved stack parameter",
       "line": 137,
-      "match": "in_stack_ffffff18",
-      "text": "(in_stack_ffffff18 = (double)local_8c, 0.0 < in_stack_ffffff18)) &&",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 138,
       "match": "in_stack_ffffff18",
       "text": "(in_stack_ffffff18 < 4)))) {",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 211,
+      "line": 210,
       "match": "ABS",
       "text": "if (ABS(local_28 - (this_ptr->base).base.base.location.position.y) <= 1.0) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 215,
+      "line": 214,
       "match": "in_stack_ffffff18",
       "text": "force_immediate = (int)((ulonglong)in_stack_ffffff18 >> 0x20);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 240,
+      "line": 239,
       "match": "SQRT",
       "text": "if (SQRT(fStack_40 * fStack_40 + local_48 * local_48 + fStack_44 * fStack_44) <",
       "type": "decompiler_intrinsic"

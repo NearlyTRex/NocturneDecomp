@@ -9,6 +9,6 @@
 void __cdecl core_setcolid_cpp_CDemonSet_FUN_00574170(CDemonSet *this_ptr)
 
 {
-  this_ptr->unk12 = 1;
+  this_ptr->skip_exact_collisions = 1;
   return;
 }

@@ -29,7 +29,7 @@ int __cdecl core_hero_cpp_CHero_FUN_004f35b0(CHero *this_ptr)
   iVar5 = 0;
   local_18 = 0;
   do {
-    if ((int)g_CDemonSetPtr->actor_list_ptr <= local_18) {
+    if (g_CDemonSetPtr->actor_count <= local_18) {
       iVar5 = core_actor_cpp_isOfClass_FUN_0040c6d0(local_20->selected_item,"CTrap");
       if (iVar5 != 0) {
         this_ptr->target_actor = local_20->selected_item;
@@ -38,7 +38,7 @@ int __cdecl core_hero_cpp_CHero_FUN_004f35b0(CHero *this_ptr)
     }
     this_ptr_00 = (CActorDestination *)
                   core_actor_cpp_castToClassHash_FUN_0040c790
-                            (*(CDemonActor **)(g_CDemonSetPtr->actor_list_data + iVar5),
+                            (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar5),
                              g_CActorDestinationClassInfo.name_hash);
     local_14 = this_ptr_00;
     if (this_ptr_00 != (CActorDestination *)0x0) {

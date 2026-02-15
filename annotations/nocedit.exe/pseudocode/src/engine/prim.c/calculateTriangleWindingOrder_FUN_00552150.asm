@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_prim_c_calculateTriangleWindingOrder_FUN_00552150(SRenderVertex *v0,SRenderVertex *v1,SRenderVertex *v2)
+; int __cdecl engine_prim_c_calculateTriangleWindingOrder_FUN_00552150(SRenderVertex *v0,SRenderVertex *v1,SRenderVertex *v2)
 ;
 ; Parameters:
 ; SRenderVertex *  Stack[0x4]:4   v0

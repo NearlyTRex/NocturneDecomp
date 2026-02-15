@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_fpu_c_ClearFPUExceptions_FUN_0060ce50(void)
+; void __cdecl crt_fpu_c_ClearFPUExceptions_FUN_0060ce50(void)
 ;
 ;
 ; XREF[1]:

@@ -13,11 +13,11 @@ typedef struct C3DSCamera {
     CVector3f position; // 0x100
     CVector3f orientation; // 0x10c
     CMatrix3x3f rotation_matrix; // 0x118
-    int unk1; // 0x13c
+    int padding; // 0x13c
     int is_panning; // 0x140
     float projection_scale; // 0x144
     float ambient_value; // 0x148
-    int unk2; // 0x14c
+    int camera_group; // 0x14c
     int fog_enabled; // 0x150
     SFog fog; // 0x154
     int reverb_preset; // 0x178
@@ -25,7 +25,7 @@ typedef struct C3DSCamera {
     CVector3f box_max; // 0x188
     int pvs_count; // 0x194
     int* pvs_list; // 0x198
-    int unk3; // 0x19c
-    int unk4; // 0x1a0
+    int vdir_zone; // 0x19c
+    int enabled; // 0x1a0
 } C3DSCamera;
 

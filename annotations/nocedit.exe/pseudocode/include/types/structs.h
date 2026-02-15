@@ -88,6 +88,7 @@
 #include "types/structs/SMRGLKeyframeModel.h"
 #include "types/structs/SMRGLLightPrimitive.h"
 #include "types/structs/SMRGLModelBounds.h"
+#include "types/structs/SMRGLPrimitiveClippedIndex.h"
 #include "types/structs/SMRGLPrimitiveQuad.h"
 #include "types/structs/SMRGLPrimitiveQuadIndex.h"
 #include "types/structs/SMRGLPrimitiveTriangle.h"

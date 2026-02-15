@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl sound_sndmain_cpp_getAudioBitDepth_FUN_005ab250(void)
+; int __cdecl sound_sndmain_cpp_getAudioBitDepth_FUN_005ab250(void)
 ;
 ;
 ; XREF[4]:

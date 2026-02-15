@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CToss * __cdecl core_fire_cpp_CToss_arrdtor_FUN_004c98b0(CToss *objs,uint flags)
+; CToss * __cdecl core_fire_cpp_CToss_arrdtor_FUN_004c98b0(CToss *objs,uint flags)
 ;
 ; Parameters:
 ; CToss *          Stack[0x4]:4   objs

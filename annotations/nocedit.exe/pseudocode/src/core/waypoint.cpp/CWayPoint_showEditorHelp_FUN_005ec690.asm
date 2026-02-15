@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_waypoint_cpp_CWayPoint_showEditorHelp_FUN_005ec690(CWayPoint *this_ptr,int *y_pos)
+; void __cdecl core_waypoint_cpp_CWayPoint_showEditorHelp_FUN_005ec690(CWayPoint *this_ptr,int *y_pos)
 ;
 ; Parameters:
 ; CWayPoint *      Stack[0x4]:4   this_ptr

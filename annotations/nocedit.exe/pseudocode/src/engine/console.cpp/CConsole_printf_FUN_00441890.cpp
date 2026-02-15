@@ -16,13 +16,13 @@ void __cdecl engine_console_cpp_CConsole_printf_FUN_00441890(CConsole *this_ptr,
   char *pcVar4;
   byte bVar5;
   char local_1014 [4096];
-  byte *local_14;
+  va_list_t local_14;
   
   bVar5 = 0;
-  local_14 = &stack0x0000000c;
+  local_14.value[0] = (char * [1])&stack0x0000000c;
   _vsprintf(local_1014,format,(va_list_t)&local_14);
   iVar3 = 0;
-  local_14 = (byte *)0x0;
+  local_14.value[0] = (char * [1])(char *)0x0;
   uVar2 = 0xffffffff;
   pcVar4 = local_1014;
   do {

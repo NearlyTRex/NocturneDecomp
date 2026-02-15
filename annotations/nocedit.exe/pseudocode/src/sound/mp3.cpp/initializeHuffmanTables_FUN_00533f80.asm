@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_mp3_cpp_initializeHuffmanTables_FUN_00533f80(void)
+; void __cdecl sound_mp3_cpp_initializeHuffmanTables_FUN_00533f80(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10

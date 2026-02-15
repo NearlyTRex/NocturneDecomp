@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_trigger_cpp_CTrigger_showEditorHelp_FUN_005e1350(CTrigger *this_ptr,int *y_pos)
+; void __cdecl core_trigger_cpp_CTrigger_showEditorHelp_FUN_005e1350(CTrigger *this_ptr,int *y_pos)
 ;
 ; Parameters:
 ; CTrigger *       Stack[0x4]:4   this_ptr

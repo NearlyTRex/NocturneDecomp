@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_selectVertexToMove_FUN_0045c530(void)
+; void __cdecl shape_design_c_selectVertexToMove_FUN_0045c530(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x28]:1  local_28

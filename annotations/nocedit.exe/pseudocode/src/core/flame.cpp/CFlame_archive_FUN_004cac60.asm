@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_flame_cpp_CFlame_archive_FUN_004cac60(CFlame *this_ptr)
+; void __cdecl core_flame_cpp_CFlame_archive_FUN_004cac60(CFlame *this_ptr)
 ;
 ; Parameters:
 ; CFlame *         Stack[0x4]:4   this_ptr

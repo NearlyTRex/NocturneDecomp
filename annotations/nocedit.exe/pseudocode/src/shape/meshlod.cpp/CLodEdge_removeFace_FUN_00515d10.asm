@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_meshlod_cpp_CLodEdge_removeFace_FUN_00515d10(CLodEdge *this_ptr,int tri_index)
+; void __cdecl shape_meshlod_cpp_CLodEdge_removeFace_FUN_00515d10(CLodEdge *this_ptr,int tri_index)
 ;
 ; Parameters:
 ; CLodEdge *       Stack[0x4]:4   this_ptr

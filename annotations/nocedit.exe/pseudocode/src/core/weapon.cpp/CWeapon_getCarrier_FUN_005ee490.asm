@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActor * __cdecl core_weapon_cpp_CWeapon_getCarrier_FUN_005ee490(CWeapon *this_ptr)
+; CDemonActor * __cdecl core_weapon_cpp_CWeapon_getCarrier_FUN_005ee490(CWeapon *this_ptr)
 ;
 ; Parameters:
 ; CWeapon *        Stack[0x4]:4   this_ptr

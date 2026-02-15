@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SMRGLHeaderExtended * __cdecl engine_3d_c_processVertexLighting_FUN_00403a20(SVertexBatch *vertex_batch)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_processVertexLighting_FUN_00403a20(SVertexBatch *vertex_batch)
 ;
 ; Parameters:
 ; SVertexBatch *   Stack[0x4]:4   vertex_batch

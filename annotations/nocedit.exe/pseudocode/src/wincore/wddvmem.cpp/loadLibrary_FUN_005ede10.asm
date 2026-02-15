@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl HMODULE __cdecl wincore_wddvmem_cpp_loadLibrary_FUN_005ede10(LPCSTR lpLibFileName)
+; HMODULE __cdecl wincore_wddvmem_cpp_loadLibrary_FUN_005ede10(LPCSTR lpLibFileName)
 ;
 ; Parameters:
 ; LPCSTR           Stack[0x4]:4   lpLibFileName

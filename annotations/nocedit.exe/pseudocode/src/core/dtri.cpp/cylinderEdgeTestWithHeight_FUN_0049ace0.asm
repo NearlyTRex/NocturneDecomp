@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dtri_cpp_cylinderEdgeTestWithHeight_FUN_0049ace0(SIntersectXZCylinder *cylinder,CVector3f *vertex1,CVector3f *vertex2)
+; void __cdecl core_dtri_cpp_cylinderEdgeTestWithHeight_FUN_0049ace0(SIntersectXZCylinder *cylinder,CVector3f *vertex1,CVector3f *vertex2)
 ;
 ; Parameters:
 ; SIntersectXZCylinder * Stack[0x4]:4   cylinder

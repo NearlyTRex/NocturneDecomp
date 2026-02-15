@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_sizeForStadium_FUN_00469c70(void)
+; void __cdecl shape_design_c_sizeForStadium_FUN_00469c70(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0xf0]:8  local_f0

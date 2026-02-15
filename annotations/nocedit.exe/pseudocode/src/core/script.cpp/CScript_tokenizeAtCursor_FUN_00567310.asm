@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_script_cpp_CScript_tokenizeAtCursor_FUN_00567310(CScript *this_ptr,char *input_text,CStrList *tokens_out,int *cursor_pos)
+; int __cdecl core_script_cpp_CScript_tokenizeAtCursor_FUN_00567310(CScript *this_ptr,char *input_text,CStrList *tokens_out,int *cursor_pos)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr

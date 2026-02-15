@@ -127,7 +127,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Preparing set.");
   core_set_cpp_CDemonSet_initScene_FUN_0056aa10(this_ptr);
-  this_ptr->actor_list_ptr = (void *)0x0;
+  this_ptr->actor_count = 0;
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_clearInputAndWait_FUN_00403260();
   core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)&stack0xfffffdbc);
@@ -137,9 +137,9 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
   local_4c = 40.0;
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   local_44 = this_ptr->vdir_boxes;
-  this_ptr->unk_lighting_param3 = 1;
-  this_ptr->unk_lighting_param4 = 1;
-  this_ptr->unk_lighting_param1 = 1;
+  this_ptr->disable_water_rendering = 1;
+  this_ptr->disable_sky_rendering = 1;
+  this_ptr->disable_spotlight_shadows = 1;
   local_64 = this_ptr->cameras;
   local_6c = &g_CDemonCameraInstance.base.position.y;
   local_18 = 0;
@@ -199,7 +199,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
     if ((-1 < iVar7) && (iVar7 < this_ptr->vdir_box_count)) {
       do {
         local_28 = iVar7;
-        iVar7 = *(int *)(this_ptr->vdir_boxes[local_28].unk + 4);
+        iVar7 = this_ptr->vdir_boxes[local_28].parent_index;
       } while (-1 < iVar7);
     }
     iVar7 = 0;
@@ -235,7 +235,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
         else {
           do {
             iVar5 = iVar4;
-            iVar4 = *(int *)(this_ptr->vdir_boxes[iVar5].unk + 4);
+            iVar4 = this_ptr->vdir_boxes[iVar5].parent_index;
           } while (-1 < iVar4);
           in_stack_fffffd84 = pCVar3 + 1;
           if (iVar5 == local_28) {
@@ -724,9 +724,9 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
     if (iVar7 != 0) {
       core_set_cpp_CDemonSet_FUN_0056d2d0(this_ptr);
       engine_2d_c_clearInputAndWait_FUN_00403260();
-      this_ptr->unk_lighting_param3 = 0;
-      this_ptr->unk_lighting_param4 = 0;
-      this_ptr->unk_lighting_param1 = 0;
+      this_ptr->disable_water_rendering = 0;
+      this_ptr->disable_sky_rendering = 0;
+      this_ptr->disable_spotlight_shadows = 0;
       return;
     }
     if (local_3c == (SVDBox *)0x0) {
@@ -923,8 +923,8 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
           (pSVar6->rotation_matrix).m[2].x = (pSVar10->rotation_matrix).m[2].x;
           (pSVar6->rotation_matrix).m[2].y = (pSVar10->rotation_matrix).m[2].y;
           (pSVar6->rotation_matrix).m[2].z = (pSVar10->rotation_matrix).m[2].z;
-          *(uint *)pSVar6->unk = *(uint *)pSVar10->unk;
-          *(uint *)(pSVar6->unk + 4) = *(uint *)(pSVar10->unk + 4);
+          pSVar6->reserved = pSVar10->reserved;
+          pSVar6->parent_index = pSVar10->parent_index;
           local_18 = this_ptr->vdir_box_count;
           pSVar6 = local_40 + local_18;
           this_ptr->vdir_box_count = local_18 + 1;

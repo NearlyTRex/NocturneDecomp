@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_env_c_updateEnvironTable_FUN_0060f04c(char *envstr)
+; int __cdecl crt_env_c_updateEnvironTable_FUN_0060f04c(char *envstr)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   envstr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_conveyor_cpp_CConveyor_renderBackground_FUN_00441f50(CConveyor *this_ptr,int layer_flag)
+; void __cdecl core_conveyor_cpp_CConveyor_renderBackground_FUN_00441f50(CConveyor *this_ptr,int layer_flag)
 ;
 ; Parameters:
 ; CConveyor *      Stack[0x4]:4   this_ptr

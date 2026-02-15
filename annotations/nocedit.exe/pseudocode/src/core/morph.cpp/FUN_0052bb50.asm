@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_morph_cpp_FUN_0052bb50(void)
+; void __cdecl core_morph_cpp_FUN_0052bb50(void)
 ;
 ;
 ; Referenced Globals:

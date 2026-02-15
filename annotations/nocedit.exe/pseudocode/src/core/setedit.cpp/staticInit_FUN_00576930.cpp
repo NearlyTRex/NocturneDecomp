@@ -10,6 +10,6 @@ void __cdecl core_setedit_cpp_staticInit_FUN_00576930(void)
 
 {
   shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&CPickList_03653fc0);
-  _atexit(&DAT_006816a0);
+  _atexit(&WatcomStaticDestructorNode_006816a0);
   return;
 }

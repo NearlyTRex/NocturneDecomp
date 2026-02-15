@@ -48,9 +48,9 @@ void __cdecl core_sound_cpp_CSound_init_FUN_005b2dd0(CSound *this_ptr)
   sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
   if (g_CDemonSetPtr->player_on_train != 0) {
     if ((uint *)&stack0x00000000 != &g_TrainRailNoiseHandle) {
-      g_TrainVelocityVector.x = -*(float *)(g_CDemonSetPtr->unk4 + 0xbbc0);
-      g_TrainVelocityVector.y = -*(float *)(g_CDemonSetPtr->unk4 + 0xbbc4);
-      g_TrainVelocityVector.z = -*(float *)(g_CDemonSetPtr->unk4 + 0xbbc8);
+      g_TrainVelocityVector.x = -(g_CDemonSetPtr->active_fog).scroll.x;
+      g_TrainVelocityVector.y = -(g_CDemonSetPtr->active_fog).scroll.y;
+      g_TrainVelocityVector.z = -(g_CDemonSetPtr->active_fog).scroll.z;
     }
     g_TrainLastCameraIndex = -1;
   }

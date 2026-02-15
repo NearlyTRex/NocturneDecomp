@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CTire * __cdecl core_vehicle_cpp_CTire_arrdtor_FUN_005e8dd0(CTire *objs,uint flags)
+; CTire * __cdecl core_vehicle_cpp_CTire_arrdtor_FUN_005e8dd0(CTire *objs,uint flags)
 ;
 ; Parameters:
 ; CTire *          Stack[0x4]:4   objs

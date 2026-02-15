@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl core_melee_cpp_CMelee_getDamage_FUN_0050ea70(CMelee *this_ptr)
+; float __cdecl core_melee_cpp_CMelee_getDamage_FUN_0050ea70(CMelee *this_ptr)
 ;
 ; Parameters:
 ; CMelee *         Stack[0x4]:4   this_ptr

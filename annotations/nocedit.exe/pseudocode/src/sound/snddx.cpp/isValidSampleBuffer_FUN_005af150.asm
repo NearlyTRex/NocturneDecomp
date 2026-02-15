@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl sound_snddx_cpp_isValidSampleBuffer_FUN_005af150(int buffer_id)
+; int __cdecl sound_snddx_cpp_isValidSampleBuffer_FUN_005af150(int buffer_id)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   buffer_id

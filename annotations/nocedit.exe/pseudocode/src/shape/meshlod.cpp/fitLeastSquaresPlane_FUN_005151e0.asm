@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_meshlod_cpp_fitLeastSquaresPlane_FUN_005151e0(int point_count,CVector3f *positions,float *values,CVector3f *normal,CVector3f *out_gradient,float *out_offset)
+; void __cdecl shape_meshlod_cpp_fitLeastSquaresPlane_FUN_005151e0(int point_count,CVector3f *positions,float *values,CVector3f *normal,CVector3f *out_gradient,float *out_offset)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   point_count

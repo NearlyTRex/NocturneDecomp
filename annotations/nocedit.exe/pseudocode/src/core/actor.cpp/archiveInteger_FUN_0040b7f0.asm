@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_actor_cpp_archiveInteger_FUN_0040b7f0(int *int_ptr,char *property_name)
+; void __cdecl core_actor_cpp_archiveInteger_FUN_0040b7f0(int *int_ptr,char *property_name)
 ;
 ; Parameters:
 ; int *            Stack[0x4]:4   int_ptr

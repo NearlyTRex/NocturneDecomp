@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_npc_cpp_CNPC_renderBackground_FUN_00544b70(CNPC *this_ptr,int layer_flag)
+; void __cdecl core_npc_cpp_CNPC_renderBackground_FUN_00544b70(CNPC *this_ptr,int layer_flag)
 ;
 ; Parameters:
 ; CNPC *           Stack[0x4]:4   this_ptr

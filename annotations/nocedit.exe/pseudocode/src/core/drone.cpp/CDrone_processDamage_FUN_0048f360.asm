@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_drone_cpp_CDrone_processDamage_FUN_0048f360(CDrone *this_ptr,SDamageInfo *damage_info)
+; void __cdecl core_drone_cpp_CDrone_processDamage_FUN_0048f360(CDrone *this_ptr,SDamageInfo *damage_info)
 ;
 ; Parameters:
 ; CDrone *         Stack[0x4]:4   this_ptr

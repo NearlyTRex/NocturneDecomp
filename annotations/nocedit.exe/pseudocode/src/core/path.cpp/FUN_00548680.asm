@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_path_cpp_FUN_00548680(void)
+; void __cdecl core_path_cpp_FUN_00548680(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
@@ -22,7 +22,7 @@
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_path.cpp_FUN_00547fc0
+;   core_path.cpp_CPathMap_FUN_00547fc0
 ;
 ; *****************************************************************************
 
@@ -108,8 +108,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x3c]      ; 00548735
     PUSH ECX                            ; 00548739
     PUSH EDX                            ; 0054873a
-    CALL core_path.cpp_FUN_00547fc0     ; 0054873b
-        ;   XREF to: 00547fc0 (UNCONDITIONAL_CALL)  ; void core_path.cpp_FUN_00547fc0()
+    CALL core_path.cpp_CPathMap_FUN_00547fc0 ; 0054873b
+        ;   XREF to: 00547fc0 (UNCONDITIONAL_CALL)  ; void core_path.cpp_CPathMap_FUN_00547fc0(CPathMap * this_ptr)
     ADD ESP,0x14                        ; 00548740
     JMP 0x005486d5                      ; 00548743
         ;   XREF to: 005486d5 (UNCONDITIONAL_JUMP)  ; LAB_005486d5

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_simpleTexture_FUN_00467350(void)
+; void __cdecl shape_design_c_simpleTexture_FUN_00467350(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x84]:4  local_84

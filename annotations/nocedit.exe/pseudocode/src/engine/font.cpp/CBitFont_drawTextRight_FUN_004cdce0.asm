@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_font_cpp_CBitFont_drawTextRight_FUN_004cdce0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text)
+; int __cdecl engine_font_cpp_CBitFont_drawTextRight_FUN_004cdce0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text)
 ;
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   this_ptr
@@ -15,7 +15,7 @@
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120 at 00489239
 ;   core_mission.cpp_CDemonMission_run_FUN_00524420 at 005245db
 ;   core_script.cpp_CScript_drawEditor_FUN_005645d0 at 00564768
-;   engine_font.cpp_CBitFont_printfRightF_FUN_004cdd70 at 004cddc2
+;   engine_font.cpp_CBitFont_printFV_FUN_004cdd70 at 004cddc2
 ;
 ; Called Functions:
 ;   engine_font.cpp_CBitFont_drawTextWrapper_FUN_004cdbf0

@@ -4,24 +4,24 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  stack_param                     7937 ( 28.1%)
-  pointer_cast                    5836 ( 20.6%)
-  decompiler_intrinsic            5366 ( 19.0%)
-  unknown_field                   1734 (  6.1%)
+  stack_param                     7929 ( 28.1%)
+  pointer_cast                    5854 ( 20.7%)
+  decompiler_intrinsic            5400 ( 19.1%)
+  unknown_field                   1724 (  6.1%)
   unnamed_param                   1111 (  3.9%)
-  undefined_data                  1067 (  3.8%)
+  undefined_data                  1003 (  3.6%)
   stack_ref                        698 (  2.5%)
   unaffected_reg                   639 (  2.3%)
   special_crt_function             637 (  2.3%)
-  param_count_too_few              441 (  1.6%)
-  negative_offset                  388 (  1.4%)
+  param_count_too_few              440 (  1.6%)
+  negative_offset                  374 (  1.3%)
   extra_output                     372 (  1.3%)
   register_param                   364 (  1.3%)
   fpu_register_input               332 (  1.2%)
   nonstandard_int                  272 (  1.0%)
-  unresolved_funcptr               248 (  0.9%)
-  suspect_float                    236 (  0.8%)
-  warning_type_propagation         139 (  0.5%)
+  suspect_float                    261 (  0.9%)
+  unresolved_funcptr               240 (  0.8%)
+  warning_type_propagation         140 (  0.5%)
   warning_unreachable               99 (  0.4%)
   param_count_too_many              88 (  0.3%)
   unknown_type                      54 (  0.2%)
@@ -47,16 +47,16 @@ SUSPECT TYPE COUNTS
   special_entry_point                1 (  0.0%)
 
 ====================================================================================================
-TYPE: stack_param (7937 occurrences)
+TYPE: stack_param (7929 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  2819x  in_stack_00000008
-  2200x  in_stack_00000004
-   920x  in_stack_0000000c
+  2820x  in_stack_00000008
+  2191x  in_stack_00000004
+   922x  in_stack_0000000c
    425x  in_stack_00000010
    197x  in_stack_00000014
-   112x  in_stack_00000018
+   110x  in_stack_00000018
     91x  in_stack_0000001c
     61x  in_stack_fffffd68
     47x  in_stack_fffffc88
@@ -97,17 +97,17 @@ Example functions:
     CPackedBitmap *in_stack_00000004;...
 
 ====================================================================================================
-TYPE: pointer_cast (5836 occurrences)
+TYPE: pointer_cast (5854 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  2206x  (uint *)((int)
-  1169x  (int *)((int)
-   387x  (float *)((int)
+  2201x  (uint *)((int)
+  1186x  (int *)((int)
+   397x  (float *)((int)
    355x  (SRenderVertex *)((int)
    273x  (CMatrix3x4f *)((int)
    220x  (double *)((int)
-   216x  (void *)((int)
+   214x  (void *)((int)
    204x  (byte *)((int)
    137x  (char *)((int)
     84x  (ushort *)((int)
@@ -135,13 +135,13 @@ Example functions:
     piVar1 = (int *)((int)g_ScreenBufferArray + iVar4);...
 
 ====================================================================================================
-TYPE: decompiler_intrinsic (5366 occurrences)
+TYPE: decompiler_intrinsic (5400 occurrences)
 ====================================================================================================
 
 Unique patterns:
   1875x  ROUND
    577x  CONCAT44
-   455x  ADJ
+   489x  ADJ
    422x  SQRT
    299x  ABS
    170x  SUB84
@@ -191,12 +191,12 @@ Example functions:
     uVar14 = SUB84(b,0);...
 
 ====================================================================================================
-TYPE: unknown_field (1734 occurrences)
+TYPE: unknown_field (1724 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   642x  ._0_4_
-   572x  ._4_4_
+   635x  ._0_4_
+   570x  ._4_4_
    114x  ._8_4_
     78x  ._12_4_
     66x  ._16_4_
@@ -212,9 +212,9 @@ Unique patterns:
     11x  ._1_1_
     11x  ._30_2_
      5x  ._44_4_
-     4x  ._6_4_
      3x  ._12_8_
      3x  ._8_8_
+     3x  ._6_4_
 
 Example functions:
   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70
@@ -272,7 +272,7 @@ Example functions:
     void *param0;...
 
 ====================================================================================================
-TYPE: undefined_data (1067 occurrences)
+TYPE: undefined_data (1003 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -482,7 +482,7 @@ Example functions:
     CRT function (runtime support) at 00607e64...
 
 ====================================================================================================
-TYPE: param_count_too_few (441 occurrences)
+TYPE: param_count_too_few (440 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -491,7 +491,7 @@ Unique patterns:
     28x  declared:1 vs estimated:5
     24x  declared:3 vs estimated:4
     22x  declared:0 vs estimated:2
-    19x  declared:0 vs estimated:1
+    18x  declared:0 vs estimated:1
     17x  declared:0 vs estimated:3
     17x  declared:1 vs estimated:4
     16x  declared:2 vs estimated:3
@@ -570,7 +570,7 @@ Example functions:
     Function declares 0 params but call sites push 4 (4 missing)...
 
 ====================================================================================================
-TYPE: negative_offset (388 occurrences)
+TYPE: negative_offset (374 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -579,11 +579,11 @@ Unique patterns:
     24x  pCVar1[-1].
     24x  pCVar4[-1].
     23x  pCVar5[-1].
-    23x  pCVar6[-1].
     22x  this_ptr_00[-1].
     16x  pCVar3[-2].
     15x  pCVar2[-2].
     11x  pCVar2[-1].
+    10x  pCVar6[-1].
      8x  this_ptr[-1].
      8x  pSVar6[-1].
      8x  pCVar7[-1].
@@ -773,11 +773,77 @@ Example functions:
     uint5 uVar12;...
 
 ====================================================================================================
-TYPE: unresolved_funcptr (248 occurrences)
+TYPE: suspect_float (261 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   215x  code *
+    33x  1.4013e-45
+    13x  1.12104e-44
+    13x  5.60519e-45
+    11x  2.8026e-45
+     8x  2.29589e-41
+     7x  1.5134e-43
+     7x  9.18341e-41
+     7x  4.2039e-45
+     7x  9.80909e-45
+     6x  1.4013e-43
+     5x  3.57331e-43
+     4x  1.41531e-43
+     4x  4.59177e-41
+     4x  7.00649e-45
+     4x  2.10195e-44
+     3x  1.44334e-43
+     3x  1.26117e-44
+     3x  1.82169e-44
+     2x  1.4013e-44
+     2x  1.45735e-43
+
+Example functions:
+  crt_stdio.c_scanf_float_FUN_00605178
+    local_20 = 1.4013e-44;...
+  engine_matrix.c_invertTransformMatrix_FUN_0050c640
+    fVar19 = (float10)uStack_54 * (float10)7.418788e-39;...
+  engine_3d.c_drawLineStrip3D_FUN_00404600
+    local_a0.w_recip = 5.9026e-39;...
+  engine_3d.c_drawLineStrip2D_FUN_00404570
+    local_a0.w_recip = 5.902398e-39;...
+  engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
+    CStack_18.x = 6.68261e-39;...
+  core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0
+    local_1c = 1.4013e-45;...
+  core_anvil.cpp_CAnvil_process_FUN_00411d90
+    local_48.gore_multiplier = 1.12104e-44;...
+  core_dcamera.cpp_CDemonCamera_calculateInverseTransform_FUN_0044cf20
+    fVar19 = (float10)fVar1 * (float10)6.319857e-39;...
+  core_batcreat.cpp_CBatCreature_processDamage_FUN_00416030
+    if (damage_info->gore_multiplier == 1.5134e-43) {...
+  core_dracbrid.cpp_CDraculaBride_processDamage_FUN_00486070
+    if (damage_info->gore_multiplier == 1.45735e-43) {...
+  core_dracbrid.cpp_CDraculaBride_process_FUN_00484410
+    in_stack_fffffb6c = 6.637242e-39;...
+  core_cloth.cpp_CCloth_boneEditor_FUN_0043c880
+    local_2c = 1.4013e-45;...
+  core_inv.cpp_CInventory_updateInventory_FUN_004ffad0
+    if ((pCVar3 != (CDemonActor *)0x0) && (pCVar3[2].location.position.y != 2.8026e-...
+  core_gore.cpp_CGore_FUN_004edbb0
+    local_7c.m[0].x = 7.242299e-39;...
+  core_baron.cpp_CBaron_FUN_004136b0
+    local_d0.gore_multiplier = 8.40779e-45;...
+  core_vehicle.cpp_CVehicle_process_FUN_005e7e80
+    SStack_104.gore_multiplier = 5.60519e-45;...
+  core_shotgun.cpp_CShotgun_fire_FUN_00588060
+    fStack_f4 = 1.41531e-43;...
+  core_manpuz.cpp_CMansionPuzzleCircle_FUN_00509d50
+    this_ptr_00->vertex_buffer_ptr->w_recip = 9.18341e-41;...
+  core_setedit.cpp_CDemonSet_FUN_00583170
+    in_stack_fffffdbc = 8.10605e-39;...
+
+====================================================================================================
+TYPE: unresolved_funcptr (240 occurrences)
+====================================================================================================
+
+Unique patterns:
+   207x  code *
     33x  code
 
 Example functions:
@@ -813,73 +879,11 @@ Example functions:
     code *pcVar1;...
 
 ====================================================================================================
-TYPE: suspect_float (236 occurrences)
+TYPE: warning_type_propagation (140 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    35x  1.4013e-45
-    12x  1.12104e-44
-    11x  2.8026e-45
-     9x  5.60519e-45
-     8x  2.29589e-41
-     7x  9.18341e-41
-     6x  4.2039e-45
-     6x  9.80909e-45
-     5x  3.57331e-43
-     4x  4.59177e-41
-     4x  7.00649e-45
-     4x  2.10195e-44
-     3x  1.41531e-43
-     3x  1.26117e-44
-     3x  1.82169e-44
-     2x  1.4013e-44
-     2x  1.4013e-43
-     2x  2.24208e-44
-     2x  6.737663e-39
-     2x  6.737684e-39
-
-Example functions:
-  crt_stdio.c_scanf_float_FUN_00605178
-    local_20 = 1.4013e-44;...
-  engine_matrix.c_invertTransformMatrix_FUN_0050c640
-    fVar19 = (float10)uStack_54 * (float10)7.418788e-39;...
-  engine_3d.c_drawLineStrip3D_FUN_00404600
-    local_a0.w_recip = 5.9026e-39;...
-  engine_3d.c_drawLineStrip2D_FUN_00404570
-    local_a0.w_recip = 5.902398e-39;...
-  engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-    CStack_18.x = 6.68261e-39;...
-  core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0
-    local_1c = 1.4013e-45;...
-  core_dcamera.cpp_CDemonCamera_calculateInverseTransform_FUN_0044cf20
-    fVar19 = (float10)fVar1 * (float10)6.319857e-39;...
-  core_dracbrid.cpp_CDraculaBride_process_FUN_00484410
-    in_stack_fffffb6c = 6.637242e-39;...
-  core_cloth.cpp_CCloth_boneEditor_FUN_0043c880
-    local_2c = 1.4013e-45;...
-  core_inv.cpp_CInventory_updateInventory_FUN_004ffad0
-    if ((pCVar3 != (CDemonActor *)0x0) && (pCVar3[2].location.position.y != 2.8026e-...
-  core_gore.cpp_CGore_FUN_004edbb0
-    local_7c.m[0].x = 7.242299e-39;...
-  core_manpuz.cpp_CMansionPuzzleCircle_FUN_00509d50
-    this_ptr_00->vertex_buffer_ptr->w_recip = 9.18341e-41;...
-  core_setedit.cpp_CDemonSet_FUN_00583170
-    in_stack_fffffdbc = 8.10605e-39;...
-  core_setutil.cpp_C3DSCamera_import3DS_FUN_00585c90
-    fVar9 = 8.115118e-39;...
-  core_gun.cpp_CGun_fire_FUN_004f0350
-    CStack_108.m[0].y = 1.41531e-43;...
-  core_hero.cpp_CHero_ctor_FUN_004f2340
-    pCVar3[-0x48].item_angles[0x15] = 2.8026e-45;...
-  core_mobster.cpp_CMobster_process_FUN_00525840
-    (pCVar10->base).base.model.transformed_vertices[0x4f].y = 1.4013e-43;...
-
-====================================================================================================
-TYPE: warning_type_propagation (139 occurrences)
-====================================================================================================
-
-Unique patterns:
-   139x  WARNING: Type propagation algorithm not settling
+   140x  WARNING: Type propagation algorithm not settling
 
 Example functions:
   crt_stdio.c_FormatEngine_FUN_00602950

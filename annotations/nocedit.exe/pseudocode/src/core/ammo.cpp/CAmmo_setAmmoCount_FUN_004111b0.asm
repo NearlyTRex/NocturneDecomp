@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_ammo_cpp_CAmmo_setAmmoCount_FUN_004111b0(CAmmo *this_ptr,int ammo_count)
+; void __cdecl core_ammo_cpp_CAmmo_setAmmoCount_FUN_004111b0(CAmmo *this_ptr,int ammo_count)
 ;
 ; Parameters:
 ; CAmmo *          Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_edittool_cpp_plotPixelWithClipping_FUN_0049d190(int x_coord,int y_coord,int use_clipping)
+; void __cdecl shape_edittool_cpp_plotPixelWithClipping_FUN_0049d190(int x_coord,int y_coord,int use_clipping)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   x_coord

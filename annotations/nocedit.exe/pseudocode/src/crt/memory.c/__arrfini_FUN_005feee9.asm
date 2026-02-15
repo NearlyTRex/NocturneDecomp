@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void * __cdecl crt_memory_c___arrfini_FUN_005feee9(void *obj_array,int obj_count,WatcomTypeInfo *type_info)
+; void * __cdecl crt_memory_c___arrfini_FUN_005feee9(void *obj_array,int obj_count,WatcomTypeInfo *type_info)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   obj_array

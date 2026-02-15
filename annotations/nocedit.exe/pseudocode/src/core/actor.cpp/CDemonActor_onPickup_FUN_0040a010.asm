@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_actor_cpp_CDemonActor_onPickup_FUN_0040a010(CDemonActor *this_ptr,CDemonActor *owner)
+; void __cdecl core_actor_cpp_CDemonActor_onPickup_FUN_0040a010(CDemonActor *this_ptr,CDemonActor *owner)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr

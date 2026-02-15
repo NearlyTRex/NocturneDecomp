@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_teleport_cpp_CTeleportDest_hasCollision_FUN_005da7c0(CTeleportDest *this_ptr,SCollisionInfo *collision_info)
+; int __cdecl core_teleport_cpp_CTeleportDest_hasCollision_FUN_005da7c0(CTeleportDest *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CTeleportDest *  Stack[0x4]:4   this_ptr

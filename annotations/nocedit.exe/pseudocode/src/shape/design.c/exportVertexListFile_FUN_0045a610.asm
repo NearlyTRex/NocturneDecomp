@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_exportVertexListFile_FUN_0045a610(void)
+; void __cdecl shape_design_c_exportVertexListFile_FUN_0045a610(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x34]:8  local_34

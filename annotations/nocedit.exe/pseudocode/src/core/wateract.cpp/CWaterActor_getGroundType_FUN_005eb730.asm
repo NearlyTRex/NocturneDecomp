@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_wateract_cpp_CWaterActor_getGroundType_FUN_005eb730(CWaterActor *this_ptr)
+; int __cdecl core_wateract_cpp_CWaterActor_getGroundType_FUN_005eb730(CWaterActor *this_ptr)
 ;
 ; Parameters:
 ; CWaterActor *    Stack[0x4]:4   this_ptr

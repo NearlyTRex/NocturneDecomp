@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl HANDLE __cdecl wincore_winrun_cpp_createThread_FUN_005f4070(LPTHREAD_START_ROUTINE thread_func,LPVOID thread_param)
+; HANDLE __cdecl wincore_winrun_cpp_createThread_FUN_005f4070(LPTHREAD_START_ROUTINE thread_func,LPVOID thread_param)
 ;
 ; Parameters:
 ; LPTHREAD_START_ROUTINE Stack[0x4]:4   thread_func

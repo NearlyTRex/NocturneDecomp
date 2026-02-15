@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_debug_c_TriggerDebuggerBreak_FUN_0060b500(char *error_message,ushort flags)
+; int __cdecl crt_debug_c_TriggerDebuggerBreak_FUN_0060b500(char *error_message,ushort flags)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   error_message

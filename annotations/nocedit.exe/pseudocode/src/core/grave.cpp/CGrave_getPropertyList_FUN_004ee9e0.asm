@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_grave_cpp_CGrave_getPropertyList_FUN_004ee9e0(CGrave *this_ptr,CActorPropertyList *property_list)
+; void __cdecl core_grave_cpp_CGrave_getPropertyList_FUN_004ee9e0(CGrave *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CGrave *         Stack[0x4]:4   this_ptr

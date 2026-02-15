@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBloodPool * __cdecl core_gore_cpp_CGore_FUN_004edde0(CGore *ptr)
+; CBloodPool * __cdecl core_gore_cpp_CGore_FUN_004edde0(CGore *ptr)
 ;
 ; Parameters:
 ; CGore *          Stack[0x4]:4   ptr

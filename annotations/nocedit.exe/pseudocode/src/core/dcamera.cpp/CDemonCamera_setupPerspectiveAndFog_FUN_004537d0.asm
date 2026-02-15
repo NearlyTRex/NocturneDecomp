@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0(CDemonCamera *this_ptr,CVector3f *position,float max_distance)
+; void __cdecl core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0(CDemonCamera *this_ptr,CVector3f *position,float max_distance)
 ;
 ; Parameters:
 ; CDemonCamera *   Stack[0x4]:4   this_ptr

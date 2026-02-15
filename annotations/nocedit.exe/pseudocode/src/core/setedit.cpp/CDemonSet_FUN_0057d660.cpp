@@ -170,7 +170,7 @@ LAB_0057d6df:
   local_54 = 0.0;
   pbStack_14 = (byte *)0x0;
   core_dcamera_cpp_CDemonCamera_init_FUN_0044c190(&g_CDemonCameraInstance,0x1e0);
-  piStack_2c = &this_ptr->cameras[in_stack_00000008 + -1].unk4;
+  piStack_2c = &this_ptr->cameras[in_stack_00000008 + -1].enabled;
   pCStack_30 = this_ptr->cameras;
   do {
     (*g_CKeysPtr->vtable->clearKeyPresses)(g_CKeysPtr);

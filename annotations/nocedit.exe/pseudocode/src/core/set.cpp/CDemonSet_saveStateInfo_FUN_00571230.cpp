@@ -35,10 +35,10 @@ void __cdecl core_set_cpp_CDemonSet_saveStateInfo_FUN_00571230(CDemonSet *this_p
     do {
       _fscanf(in_stack_00000008,"%d\n",&local_14);
       if (iVar1 < this_ptr->camera_count) {
-        pCVar2->cameras[0].unk4 = local_14;
+        pCVar2->cameras[0].enabled = local_14;
       }
       iVar1 = iVar1 + 1;
-      pCVar2 = (CDemonSet *)&pCVar2->cameras[0].unk4;
+      pCVar2 = (CDemonSet *)&pCVar2->cameras[0].enabled;
     } while (iVar1 < local_18);
   }
   return;

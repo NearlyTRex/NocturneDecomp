@@ -98,7 +98,7 @@ LAB_00576e23:
       local_14 = iVar3;
       shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
                 (g_CEditorToolsPtr,(float)iVar3,(float)this_ptr->camera_count);
-      local_18 = (CDemonSet *)&local_18->cameras[0].unk4;
+      local_18 = (CDemonSet *)&local_18->cameras[0].enabled;
       iVar3 = iVar3 + 1;
       this_ptr_00 = this_ptr_00 + 1;
     } while (iVar3 < this_ptr->camera_count);

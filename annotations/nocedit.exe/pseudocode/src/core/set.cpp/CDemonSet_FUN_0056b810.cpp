@@ -28,7 +28,7 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
   float fStack_94;
   float fStack_90;
   CPathMap *pCStack_8c;
-  int iStack_70;
+  float fStack_70;
   CDemonActor *local_68;
   float local_64;
   float local_60;
@@ -52,13 +52,13 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
   
   iVar9 = 0;
   pCVar6 = this_ptr;
-  if (0 < (int)this_ptr->actor_list_ptr) {
+  if (0 < this_ptr->actor_count) {
     do {
       core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-                (*(CDemonActor **)pCVar6->actor_list_data,"..\\core\\set.cpp",0x593);
+                (pCVar6->actors[0],"..\\core\\set.cpp",0x593);
       iVar9 = iVar9 + 1;
       pCVar6 = (CDemonSet *)pCVar6->cameras;
-    } while (iVar9 < (int)this_ptr->actor_list_ptr);
+    } while (iVar9 < this_ptr->actor_count);
   }
   if (g_CGamePtr->profile_mode != 0) {
     local_40 = (float)wincore_winrun_cpp_getTime_FUN_005f2dc0();
@@ -76,12 +76,12 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
     core_setcolid_cpp_CDemonSet_FUN_005743e0(this_ptr);
     iVar9 = 0;
     pCVar6 = this_ptr;
-    if (0 < (int)this_ptr->actor_list_ptr) {
+    if (0 < this_ptr->actor_count) {
       do {
-        *(int *)(*(int *)pCVar6->actor_list_data + 0x6c) = iVar9;
+        pCVar6->actors[0]->direction_hint = iVar9;
         iVar9 = iVar9 + 1;
         pCVar6 = (CDemonSet *)pCVar6->cameras;
-      } while (iVar9 < (int)this_ptr->actor_list_ptr);
+      } while (iVar9 < this_ptr->actor_count);
     }
     if (0.0 < (float)damage_info) {
       local_24 = -999999;
@@ -90,12 +90,12 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
         local_24 = iVar9;
         local_1c = 999999;
         iVar9 = 0;
-        if (0 < (int)this_ptr->actor_list_ptr) {
+        if (0 < this_ptr->actor_count) {
           iVar7 = local_20 << 2;
           pCVar6 = this_ptr;
           do {
-            pCVar3 = *(CDemonActor **)pCVar6->actor_list_data;
-            if (pCVar3->unk7 == 0.0) {
+            pCVar3 = pCVar6->actors[0];
+            if (pCVar3->process_disabled == 0) {
               iVar8 = pCVar3->health;
               if (iVar8 == local_24) {
                 local_68 = (CDemonActor *)(pCVar3->orient).vec.x;
@@ -138,19 +138,18 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
             }
             iVar9 = iVar9 + 1;
             pCVar6 = (CDemonSet *)pCVar6->cameras;
-          } while (iVar9 < (int)this_ptr->actor_list_ptr);
+          } while (iVar9 < this_ptr->actor_count);
         }
         iVar9 = local_1c;
       } while (local_1c < 999999);
     }
     iVar9 = 0;
     pCVar6 = this_ptr;
-    if (0 < (int)this_ptr->actor_list_ptr) {
+    if (0 < this_ptr->actor_count) {
       do {
         local_34 = (CCharacter *)
                    core_actor_cpp_castToClassHash_FUN_0040c790
-                             (*(CDemonActor **)pCVar6->actor_list_data,
-                              g_CCharacterClassInfo.name_hash);
+                             (pCVar6->actors[0],g_CCharacterClassInfo.name_hash);
         if ((local_34 != (CCharacter *)0x0) &&
            (fVar5 = (float)(*(((local_34->base).vtable._uc)->_uc).getDeathState)(local_34),
            fVar5 == 0.0)) {
@@ -159,7 +158,7 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
           iVar7 = core_fire_cpp_CFireEffect_FUN_004c8c90(g_CFireEffectPtr);
           if (iVar7 != 0) {
             core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff60);
-            iStack_70 = 4;
+            fStack_70 = 5.60519e-45;
             if (&fStack_94 != &fStack_58) {
               fStack_94 = fStack_58;
               fStack_90 = fStack_54;
@@ -172,8 +171,7 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
         }
         this_ptr_01 = (CGlass *)
                       core_actor_cpp_castToClassHash_FUN_0040c790
-                                (*(CDemonActor **)pCVar6->actor_list_data,
-                                 g_CGlassClassInfo.name_hash);
+                                (pCVar6->actors[0],g_CGlassClassInfo.name_hash);
         if (this_ptr_01 != (CGlass *)0x0) {
           pCStack_30 = (CCharacter *)&(this_ptr_01->base).location;
           iVar7 = core_fire_cpp_CFireEffect_FUN_004c8c90(g_CFireEffectPtr);
@@ -185,8 +183,7 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
         }
         this_ptr_02 = (CTrigger *)
                       core_actor_cpp_castToClassHash_FUN_0040c790
-                                (*(CDemonActor **)pCVar6->actor_list_data,
-                                 g_CTriggerClassInfo.name_hash);
+                                (pCVar6->actors[0],g_CTriggerClassInfo.name_hash);
         if (((this_ptr_02 != (CTrigger *)0x0) && (this_ptr_02->hero_triggers_me == 7)) &&
            (this_ptr_02->damage_actor_name_wildcard_name[0] == '\0')) {
           fStack_48 = 0.0;
@@ -197,15 +194,14 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
         }
         this_ptr_03 = (CFlameCan *)
                       core_actor_cpp_castToClassHash_FUN_0040c790
-                                (*(CDemonActor **)pCVar6->actor_list_data,
-                                 g_CFlameCanClassInfo.name_hash);
+                                (pCVar6->actors[0],g_CFlameCanClassInfo.name_hash);
         if ((this_ptr_03 != (CFlameCan *)0x0) &&
            (iVar7 = core_fire_cpp_CFireEffect_FUN_004c8c90(g_CFireEffectPtr), iVar7 != 0)) {
           core_flamecan_cpp_CFlameCan_FUN_004cb340(this_ptr_03);
         }
         iVar9 = iVar9 + 1;
         pCVar6 = (CDemonSet *)pCVar6->cameras;
-      } while (iVar9 < (int)this_ptr->actor_list_ptr);
+      } while (iVar9 < this_ptr->actor_count);
     }
     if (g_CGamePtr->profile_mode != 0) {
       if (g_CGamePtr->profile_mode == 2) {
@@ -265,13 +261,13 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
     iVar9 = 0;
     pCVar6 = this_ptr;
     pCVar11 = this_ptr;
-    if (0 < (int)this_ptr->actor_list_ptr) {
+    if (0 < this_ptr->actor_count) {
       do {
         core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-                  (*(CDemonActor **)pCVar11->actor_list_data,"..\\core\\set.cpp",0x654);
+                  (pCVar11->actors[0],"..\\core\\set.cpp",0x654);
         iVar9 = iVar9 + 1;
         pCVar11 = (CDemonSet *)pCVar11->cameras;
-      } while (iVar9 < (int)this_ptr->actor_list_ptr);
+      } while (iVar9 < this_ptr->actor_count);
     }
   }
   return (int)pCVar6;

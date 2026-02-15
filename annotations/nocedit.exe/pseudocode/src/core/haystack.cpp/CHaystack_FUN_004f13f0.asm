@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_haystack_cpp_CHaystack_FUN_004f13f0(CHaystack *this_ptr)
+; void __cdecl core_haystack_cpp_CHaystack_FUN_004f13f0(CHaystack *this_ptr)
 ;
 ; Parameters:
 ; CHaystack *      Stack[0x4]:4   this_ptr
@@ -437,7 +437,7 @@ section .text
     LEA EAX,[EDI + 0x20]                ; 004f185f
     PUSH EAX                            ; 004f1862
     CALL core_path.cpp_FUN_00548500     ; 004f1863
-        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_FUN_00548500()
+        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_FUN_00548500(CLocation * location)
     ADD ESP,0x4                         ; 004f1868
     MOV EDX,dword ptr [EBX + 0x6c]      ; 004f186b
         ;   Label: LAB_004f186b

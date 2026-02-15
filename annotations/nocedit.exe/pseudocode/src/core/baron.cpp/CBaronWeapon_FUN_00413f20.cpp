@@ -17,10 +17,10 @@ void __cdecl core_baron_cpp_CBaronWeapon_FUN_00413f20(CBaronWeapon *this_ptr)
   
   if (this_ptr->unk == 0) {
     iVar2 = 0;
-    for (iVar1 = 0; iVar1 < (int)g_CDemonSetPtr->actor_list_ptr; iVar1 = iVar1 + 1) {
+    for (iVar1 = 0; iVar1 < g_CDemonSetPtr->actor_count; iVar1 = iVar1 + 1) {
       pCVar1 = (CBaron *)
                core_actor_cpp_castToClassHash_FUN_0040c790
-                         (*(CDemonActor **)(g_CDemonSetPtr->actor_list_data + iVar2),
+                         (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar2),
                           g_CBaronClassInfo.name_hash);
       this_ptr->unk = (int)pCVar1;
       if (pCVar1 != (CBaron *)0x0) break;

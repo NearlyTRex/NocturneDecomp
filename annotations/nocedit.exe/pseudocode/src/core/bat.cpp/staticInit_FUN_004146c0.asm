@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_bat_cpp_staticInit_FUN_004146c0(void)
+; void __cdecl core_bat_cpp_staticInit_FUN_004146c0(void)
 ;
 ;
 ; Referenced Globals:

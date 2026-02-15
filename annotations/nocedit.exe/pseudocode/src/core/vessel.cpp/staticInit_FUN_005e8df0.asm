@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_vessel_cpp_staticInit_FUN_005e8df0(void)
+; void __cdecl core_vessel_cpp_staticInit_FUN_005e8df0(void)
 ;
 ;
 ; Referenced Globals:

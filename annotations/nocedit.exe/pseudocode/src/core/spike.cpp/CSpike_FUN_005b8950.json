@@ -6,16 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 369,
-    "complexity_score": 166,
+    "complexity_score": 180,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 10,
-    "pseudocode_lines": 141,
-    "suspect_count": 2,
+    "pseudocode_lines": 140,
+    "suspect_count": 3,
     "suspect_types": [
-      "decompiler_intrinsic"
+      "decompiler_intrinsic",
+      "suspect_float"
     ],
-    "total_lines": 510
+    "total_lines": 509
   },
   "cross_references": [
     {
@@ -135,13 +136,13 @@
     },
     {
       "addr": "03263310",
-      "name": "g_CDemonSetInstance.damage_listener_count",
+      "name": "g_CDemonSetInstance.character_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "03263314",
-      "name": "g_CDemonSetInstance.damage_listeners",
+      "name": "g_CDemonSetInstance.characters[0]",
       "type": "undefined4",
       "value": null
     },
@@ -264,6 +265,13 @@
       "match": "SQRT",
       "text": "fStack_34 = SQRT(local_ec.max.y * local_ec.max.y + local_ec.max.x * local_ec.max.x +",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 128,
+      "match": "1.44334e-43",
+      "text": "SStack_16c.gore_multiplier = 1.44334e-43;",
+      "type": "suspect_float"
     }
   ]
 }

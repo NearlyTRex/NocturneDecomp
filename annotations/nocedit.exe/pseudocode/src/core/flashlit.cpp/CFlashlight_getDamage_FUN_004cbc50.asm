@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl core_flashlit_cpp_CFlashlight_getDamage_FUN_004cbc50(CFlashlight *this_ptr)
+; float __cdecl core_flashlit_cpp_CFlashlight_getDamage_FUN_004cbc50(CFlashlight *this_ptr)
 ;
 ; Parameters:
 ; CFlashlight *    Stack[0x4]:4   this_ptr

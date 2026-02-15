@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * __cdecl crt_string_c_strstr_FUN_005fedd0(char *haystack_str,char *needle_str)
+; char * __cdecl crt_string_c_strstr_FUN_005fedd0(char *haystack_str,char *needle_str)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   haystack_str

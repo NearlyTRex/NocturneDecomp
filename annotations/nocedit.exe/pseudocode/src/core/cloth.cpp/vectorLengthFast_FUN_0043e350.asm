@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_cloth_cpp_vectorLengthFast_FUN_0043e350(CVector3f *v)
+; int __cdecl core_cloth_cpp_vectorLengthFast_FUN_0043e350(CVector3f *v)
 ;
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   v

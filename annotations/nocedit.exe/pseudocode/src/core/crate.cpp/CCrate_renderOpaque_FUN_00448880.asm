@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_crate_cpp_CCrate_renderOpaque_FUN_00448880(CCrate *this_ptr)
+; int __cdecl core_crate_cpp_CCrate_renderOpaque_FUN_00448880(CCrate *this_ptr)
 ;
 ; Parameters:
 ; CCrate *         Stack[0x4]:4   this_ptr

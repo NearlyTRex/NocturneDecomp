@@ -79,8 +79,8 @@ void __cdecl core_fire_cpp_CFireball_process_FUN_004c0b30(CFireball *this_ptr)
   iVar4 = 0;
   iVar3 = 0;
   while( true ) {
-    if (g_CDemonSetPtr->damage_listener_count <= iVar3) break;
-    iVar1 = *(int *)(g_CDemonSetPtr->unk4 + iVar4 + -4);
+    if (g_CDemonSetPtr->character_count <= iVar3) break;
+    iVar1 = *(int *)((int)g_CDemonSetPtr->characters + iVar4);
     core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&SStack_54);
     SStack_54.damage_amount = local_18;
     iVar4 = iVar4 + 4;

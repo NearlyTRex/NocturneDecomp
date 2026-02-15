@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SPose * __cdecl core_charactr_cpp_SPose_ctor_FUN_0042fac0(SPose *this_ptr)
+; SPose * __cdecl core_charactr_cpp_SPose_ctor_FUN_0042fac0(SPose *this_ptr)
 ;
 ; Parameters:
 ; SPose *          Stack[0x4]:4   this_ptr

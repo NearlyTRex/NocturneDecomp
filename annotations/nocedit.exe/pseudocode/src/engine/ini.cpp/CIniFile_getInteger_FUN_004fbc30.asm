@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30(CIniFile *this_ptr,char *key_name,int *value_ptr)
+; void __cdecl engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30(CIniFile *this_ptr,char *key_name,int *value_ptr)
 ;
 ; Parameters:
 ; CIniFile *       Stack[0x4]:4   this_ptr

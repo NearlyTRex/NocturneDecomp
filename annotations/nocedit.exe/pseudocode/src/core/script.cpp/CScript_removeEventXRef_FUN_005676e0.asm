@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_script_cpp_CScript_removeEventXRef_FUN_005676e0(CScript *this_ptr,int index)
+; void __cdecl core_script_cpp_CScript_removeEventXRef_FUN_005676e0(CScript *this_ptr,int index)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr

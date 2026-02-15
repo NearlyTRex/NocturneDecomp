@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_colquant_c_FUN_00441260(void)
+; void __cdecl engine_colquant_c_FUN_00441260(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x90]:8  local_90

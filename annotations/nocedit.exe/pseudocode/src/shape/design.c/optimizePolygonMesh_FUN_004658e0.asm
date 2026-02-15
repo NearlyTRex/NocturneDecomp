@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_optimizePolygonMesh_FUN_004658e0(float angle_tolerance,int strict_mode,int display_progress)
+; void __cdecl shape_design_c_optimizePolygonMesh_FUN_004658e0(float angle_tolerance,int strict_mode,int display_progress)
 ;
 ; Parameters:
 ; float            Stack[0x4]:4   angle_tolerance

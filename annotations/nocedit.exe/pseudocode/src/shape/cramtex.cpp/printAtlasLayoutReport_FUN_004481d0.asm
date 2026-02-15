@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_cramtex_cpp_printAtlasLayoutReport_FUN_004481d0(_FILE *output_file)
+; void __cdecl shape_cramtex_cpp_printAtlasLayoutReport_FUN_004481d0(_FILE *output_file)
 ;
 ; Parameters:
 ; _FILE *          Stack[0xc]:4   output_file

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl wincore_windll_cpp_restoreVideoMode_FUN_005b75b0(void)
+; int __cdecl wincore_windll_cpp_restoreVideoMode_FUN_005b75b0(void)
 ;
 ;
 ; XREF[2]:

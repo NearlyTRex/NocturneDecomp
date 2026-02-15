@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_weapon_cpp_CWeapon_fire_FUN_005ee6e0(CWeapon *this_ptr)
+; int __cdecl core_weapon_cpp_CWeapon_fire_FUN_005ee6e0(CWeapon *this_ptr)
 ;
 ; Parameters:
 ; CWeapon *        Stack[0x4]:4   this_ptr

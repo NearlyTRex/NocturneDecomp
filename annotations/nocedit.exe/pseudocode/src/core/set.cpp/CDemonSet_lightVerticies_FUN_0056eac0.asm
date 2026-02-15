@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_ptr,int vertex_count,int tri_count,SInputFace *tri_data_ptr,int render_flags,int lighting_mode,int flags)
+; float __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_ptr,int vertex_count,int tri_count,SInputFace *tri_data_ptr,int render_flags,int lighting_mode,int flags)
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr

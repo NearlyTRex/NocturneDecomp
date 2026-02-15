@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CSpotView * __cdecl shape_meshlod_cpp_CSpotView_dtor_FUN_0051f080(CSpotView *this_ptr,uint flags)
+; CSpotView * __cdecl shape_meshlod_cpp_CSpotView_dtor_FUN_0051f080(CSpotView *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CSpotView *      Stack[0x4]:4   this_ptr

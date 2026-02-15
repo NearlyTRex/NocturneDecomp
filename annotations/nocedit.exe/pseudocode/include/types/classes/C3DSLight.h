@@ -4,6 +4,7 @@
 #include "system/basetypes.h"
 #include "types/classes/CColor3f.h"
 #include "types/classes/CDemonFilter.h"
+#include "types/classes/CRect.h"
 #include "types/classes/CVector2i.h"
 #include "types/classes/CVector3f.h"
 
@@ -17,12 +18,14 @@ typedef struct C3DSLight {
     float fov; // 0x11c
     float aspect; // 0x120
     float intensity; // 0x124
-    char visible_flags[246]; // 0x128
-    char unk1[4006]; // 0x21e
+    char visible_flags[250]; // 0x128
+    char padding[2]; // 0x222
+    CRect camera_light_bounds[250]; // 0x224
     CColor3f color; // 0x11c4
     float atten_start; // 0x11d0
     float atten_end; // 0x11d4
-    char unk2[8]; // 0x11d8
+    float atten_end_squared; // 0x11d8
+    float atten_end_reciprocal; // 0x11dc
     float on_time; // 0x11e0
     float cycle_time; // 0x11e4
     float cycle_elapsed; // 0x11e8

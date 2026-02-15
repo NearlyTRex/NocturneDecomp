@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_sndmain_cpp_writeIni_FUN_005ac220(CIniFile *ini_file)
+; void __cdecl sound_sndmain_cpp_writeIni_FUN_005ac220(CIniFile *ini_file)
 ;
 ; Parameters:
 ; CIniFile *       Stack[0x4]:4   ini_file

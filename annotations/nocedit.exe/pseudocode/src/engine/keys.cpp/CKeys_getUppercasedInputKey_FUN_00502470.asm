@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_00502470(CKeys *this_ptr)
+; int __cdecl engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_00502470(CKeys *this_ptr)
 ;
 ; Parameters:
 ; CKeys *          Stack[0x4]:4   this_ptr

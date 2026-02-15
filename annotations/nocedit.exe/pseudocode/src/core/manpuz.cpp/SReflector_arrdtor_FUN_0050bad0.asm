@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SReflector * __cdecl core_manpuz_cpp_SReflector_arrdtor_FUN_0050bad0(SReflector *objs,uint flags)
+; SReflector * __cdecl core_manpuz_cpp_SReflector_arrdtor_FUN_0050bad0(SReflector *objs,uint flags)
 ;
 ; Parameters:
 ; SReflector *     Stack[0x4]:4   objs

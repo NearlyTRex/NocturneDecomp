@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl wincore_windll_cpp_shutdownExternalRenderer_FUN_005b5d20(void)
+; void __cdecl wincore_windll_cpp_shutdownExternalRenderer_FUN_005b5d20(void)
 ;
 ;
 ; XREF[3]:

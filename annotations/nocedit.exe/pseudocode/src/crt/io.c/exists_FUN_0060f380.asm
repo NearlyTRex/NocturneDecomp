@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack BOOL __watcallStack crt_io_c_exists_FUN_0060f380(char *filename)
+; BOOL __watcallStack crt_io_c_exists_FUN_0060f380(char *filename)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

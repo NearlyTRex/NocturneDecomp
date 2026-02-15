@@ -10,7 +10,7 @@ int __cdecl core_glass_cpp_CGlass_hasCollision_FUN_004ea190(CGlass *this_ptr,SCo
 
 {
   if ((this_ptr->shattered != 0) && (this_ptr->mirror_flag == 0)) {
-    (this_ptr->base).unk6 = 1;
+    (this_ptr->base).collision_disabled = 1;
     return 0;
   }
   return 1;

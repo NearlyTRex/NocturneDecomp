@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_charactr_cpp_CCharacter_turnTowardPoint_FUN_00428d80(CCharacter *this_ptr,CVector3f *target)
+; void __cdecl core_charactr_cpp_CCharacter_turnTowardPoint_FUN_00428d80(CCharacter *this_ptr,CVector3f *target)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr

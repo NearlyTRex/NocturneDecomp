@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CGunFlame * __cdecl core_fire_cpp_CGunFlame_arrdtor_FUN_004c9870(CGunFlame *objs,uint flags)
+; CGunFlame * __cdecl core_fire_cpp_CGunFlame_arrdtor_FUN_004c9870(CGunFlame *objs,uint flags)
 ;
 ; Parameters:
 ; CGunFlame *      Stack[0x4]:4   objs

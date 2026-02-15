@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_event_cpp_getSelectedCameraIndex_FUN_004b1970(CDemonSet *set_ptr)
+; int __cdecl core_event_cpp_getSelectedCameraIndex_FUN_004b1970(CDemonSet *set_ptr)
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   set_ptr

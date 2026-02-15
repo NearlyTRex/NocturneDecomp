@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CTempleStone * __cdecl core_stone_cpp_factoryFunc_FUN_005bacd0(void)
+; CTempleStone * __cdecl core_stone_cpp_factoryFunc_FUN_005bacd0(void)
 ;
 ;
 ; XREF[1]:

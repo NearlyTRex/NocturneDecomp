@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl sound_snddx_cpp_CDirectSoundDevice_close_FUN_005ae270(CDirectSoundDevice *this_ptr)
+; int __cdecl sound_snddx_cpp_CDirectSoundDevice_close_FUN_005ae270(CDirectSoundDevice *this_ptr)
 ;
 ; Parameters:
 ; CDirectSoundDevice * Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CClothList * __cdecl core_cloth_cpp_CClothList_dtor_FUN_0043bf80(CClothList *this_ptr,uint flags)
+; CClothList * __cdecl core_cloth_cpp_CClothList_dtor_FUN_0043bf80(CClothList *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CClothList *     Stack[0x4]:4   this_ptr

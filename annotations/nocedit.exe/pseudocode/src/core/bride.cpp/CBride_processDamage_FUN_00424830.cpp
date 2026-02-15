@@ -33,7 +33,7 @@ void __cdecl core_bride_cpp_CBride_processDamage_FUN_00424830(CBride *this_ptr,S
       core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);
     } while (iVar2 < 5);
   }
-  if (damage_info->damage_type == 0x6c) {
+  if (damage_info->gore_multiplier == 1.5134e-43) {
     input_local_point =
          core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                    (&(this_ptr->base).base.model,&local_24,0);

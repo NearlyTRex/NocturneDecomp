@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActor * __cdecl core_vessel_cpp_CCryptVessel_getCarrier_FUN_005e9170(CCryptVessel *this_ptr)
+; CDemonActor * __cdecl core_vessel_cpp_CCryptVessel_getCarrier_FUN_005e9170(CCryptVessel *this_ptr)
 ;
 ; Parameters:
 ; CCryptVessel *   Stack[0x4]:4   this_ptr

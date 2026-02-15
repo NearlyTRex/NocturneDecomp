@@ -72,11 +72,10 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c2850(CStranger *this_ptr)
   if ((pCVar10 == (CDemonActor *)0x0) ||
      (iVar6 = (*((pCVar10->vtable)._ub)->canPickup)(pCVar10,(CDemonActor *)this_ptr), iVar6 != 4)) {
     iStack_1c = 0;
-    for (iStack_20 = 0; iStack_20 < (int)g_CDemonSetPtr->actor_list_ptr; iStack_20 = iStack_20 + 1)
-    {
+    for (iStack_20 = 0; iStack_20 < g_CDemonSetPtr->actor_count; iStack_20 = iStack_20 + 1) {
       pCVar4 = (CActorDestination *)
                core_actor_cpp_castToClassHash_FUN_0040c790
-                         (*(CDemonActor **)(g_CDemonSetPtr->actor_list_data + iStack_1c),
+                         (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iStack_1c),
                           g_CActorDestinationClassInfo.name_hash);
       local_30 = pCVar4;
       if ((pCVar4 != (CActorDestination *)0x0) &&
@@ -121,10 +120,10 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c2850(CStranger *this_ptr)
   }
   else {
     local_18 = 0.0;
-    for (local_24 = 0; local_24 < (int)g_CDemonSetPtr->actor_list_ptr; local_24 = local_24 + 1) {
+    for (local_24 = 0; local_24 < g_CDemonSetPtr->actor_count; local_24 = local_24 + 1) {
       pCVar4 = (CActorDestination *)
                core_actor_cpp_castToClassHash_FUN_0040c790
-                         (*(CDemonActor **)(g_CDemonSetPtr->actor_list_data + (int)local_18),
+                         (*(CDemonActor **)((int)g_CDemonSetPtr->actors + (int)local_18),
                           g_CActorDestinationClassInfo.name_hash);
       pCStack_2c = pCVar4;
       if ((pCVar4 != (CActorDestination *)0x0) &&
@@ -147,16 +146,16 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c2850(CStranger *this_ptr)
                     (&(this_ptr->base).base.model.motion_controller,0x1a,1);
           pCVar7 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                              ((CDemonActor *)this_ptr,&CStack_60,&pCVar12->position);
-          if ((CVector3f *)(this_ptr->unk9 + 0x54) != pCVar7) {
-            ((CVector3f *)(this_ptr->unk9 + 0x54))->x = pCVar7->x;
-            *(float *)(this_ptr->unk9 + 0x58) = pCVar7->y;
-            *(float *)(this_ptr->unk9 + 0x5c) = pCVar7->z;
+          if ((CVector3f *)(this_ptr->unk8 + 0x54) != pCVar7) {
+            ((CVector3f *)(this_ptr->unk8 + 0x54))->x = pCVar7->x;
+            *(float *)(this_ptr->unk8 + 0x58) = pCVar7->y;
+            *(float *)(this_ptr->unk8 + 0x5c) = pCVar7->z;
           }
-          fStack_14 = *(float *)(this_ptr->unk9 + 0x70) - *(float *)(this_ptr->unk9 + 100);
+          fStack_14 = *(float *)(this_ptr->unk8 + 0x70) - *(float *)(this_ptr->unk8 + 100);
           fVar9 = core_stranger_cpp_FUN_005bb010();
           iVar6 = this_ptr->action_pending;
-          *(float *)(this_ptr->unk9 + 0x58) =
-               (fStack_14 - fVar9) + *(float *)(this_ptr->unk9 + 0x58);
+          *(float *)(this_ptr->unk8 + 0x58) =
+               (fStack_14 - fVar9) + *(float *)(this_ptr->unk8 + 0x58);
           if (iVar6 != 0) {
             shape_edittool_cpp_CEditorTools_showWarning_FUN_0049e6f0
                       (g_CEditorToolsPtr,"actionPending = %d\nstranger.cpp line %d",iVar6,0xe78);
@@ -220,7 +219,7 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c2850(CStranger *this_ptr)
     iVar13 = 0;
     do {
       force_immediate = (int)((ulonglong)in_stack_ffffff18 >> 0x20);
-      if ((int)g_CDemonSetPtr->actor_list_ptr <= iVar6) {
+      if (g_CDemonSetPtr->actor_count <= iVar6) {
         pCVar10 = (this_ptr->base).base.carry_hands[1].carry_actor;
         this_ptr->action_pending = 6;
         if ((pCVar10 == (CDemonActor *)0x0) ||
@@ -238,7 +237,7 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c2850(CStranger *this_ptr)
         return 1;
       }
       pCVar10 = core_actor_cpp_castToClassHash_FUN_0040c790
-                          (*(CDemonActor **)(g_CDemonSetPtr->actor_list_data + iVar13),
+                          (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar13),
                            g_CCrateClassInfo.name_hash);
       if (pCVar10 != (CDemonActor *)0x0) {
         local_48 = (pCVar10->location).position.x - local_6c;

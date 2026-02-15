@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_motion_cpp_CMotionController_advanceFrameToExitPoint_FUN_0052e020(CMotionController *this_ptr,int motion_index,float current_frame,float *inout_delta_time,SMotionTransition *out_transition)
+; int __cdecl core_motion_cpp_CMotionController_advanceFrameToExitPoint_FUN_0052e020(CMotionController *this_ptr,int motion_index,float current_frame,float *inout_delta_time,SMotionTransition *out_transition)
 ;
 ; Parameters:
 ; CMotionController * Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_emitter_cpp_staticInit_FUN_004a7c30(void)
+; void __cdecl core_emitter_cpp_staticInit_FUN_004a7c30(void)
 ;
 ;
 ; Referenced Globals:

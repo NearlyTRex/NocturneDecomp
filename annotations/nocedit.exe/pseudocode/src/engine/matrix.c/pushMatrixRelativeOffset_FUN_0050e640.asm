@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_matrix_c_pushMatrixRelativeOffset_FUN_0050e640(int offset_x,int offset_y,int offset_z)
+; void __cdecl engine_matrix_c_pushMatrixRelativeOffset_FUN_0050e640(int offset_x,int offset_y,int offset_z)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   offset_x

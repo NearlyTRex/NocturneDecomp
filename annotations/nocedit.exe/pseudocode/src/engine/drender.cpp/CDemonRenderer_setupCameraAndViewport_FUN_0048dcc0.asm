@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_setupCameraAndViewport_FUN_0048dcc0(CDemonRenderer *this_ptr,SCameraViewportState *camera_state)
+; void __cdecl engine_drender_cpp_CDemonRenderer_setupCameraAndViewport_FUN_0048dcc0(CDemonRenderer *this_ptr,SCameraViewportState *camera_state)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr

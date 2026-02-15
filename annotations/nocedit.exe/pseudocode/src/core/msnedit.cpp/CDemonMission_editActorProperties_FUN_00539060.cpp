@@ -9,19 +9,22 @@
 void __cdecl core_msnedit_cpp_CDemonMission_editActorProperties_FUN_00539060(CDemonMission *this_ptr,int param_2)
 
 {
+  int iVar1;
+  
   if (param_2 != this_ptr->show_3d_viewport) {
-    this_ptr->unk1 = 0;
+    (this_ptr->viewport).left = 0;
     this_ptr->show_3d_viewport = param_2;
-    this_ptr->unk2 = 0;
-    if (this_ptr->show_3d_viewport == 0) {
-      this_ptr->unk3 = g_WindowWidth;
-      this_ptr->unk4 = g_WindowHeight;
+    iVar1 = this_ptr->show_3d_viewport;
+    (this_ptr->viewport).top = 0;
+    if (iVar1 == 0) {
+      (this_ptr->viewport).right = g_WindowWidth;
+      (this_ptr->viewport).bottom = g_WindowHeight;
     }
     else {
-      this_ptr->unk4 = 0xf0;
-      this_ptr->unk3 = 0x140;
+      (this_ptr->viewport).bottom = 0xf0;
+      (this_ptr->viewport).right = 0x140;
     }
-    core_set_cpp_CDemonSet_FUN_0056b7e0(g_CDemonSetPtr,0,0,this_ptr->unk4);
+    core_set_cpp_CDemonSet_FUN_0056b7e0(g_CDemonSetPtr,0,0,(this_ptr->viewport).bottom);
   }
   return;
 }

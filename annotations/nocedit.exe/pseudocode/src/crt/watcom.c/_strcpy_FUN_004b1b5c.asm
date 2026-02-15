@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_watcom_c__strcpy_FUN_004b1b5c(char *dest,char *src)
+; void __cdecl crt_watcom_c__strcpy_FUN_004b1b5c(char *dest,char *src)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   dest

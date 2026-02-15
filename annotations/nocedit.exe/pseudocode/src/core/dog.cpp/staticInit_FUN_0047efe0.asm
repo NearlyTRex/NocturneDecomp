@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dog_cpp_staticInit_FUN_0047efe0(void)
+; void __cdecl core_dog_cpp_staticInit_FUN_0047efe0(void)
 ;
 ;
 ; Referenced Globals:

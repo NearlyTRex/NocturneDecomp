@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown int crt_stdio_c_DrainConsoleInputAndSetup_FUN_0060b3f8(void)
+; int crt_stdio_c_DrainConsoleInputAndSetup_FUN_0060b3f8(void)
 ;
 ;
 ; XREF[1]:

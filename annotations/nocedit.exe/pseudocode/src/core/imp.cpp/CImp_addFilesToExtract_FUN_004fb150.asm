@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_imp_cpp_CImp_addFilesToExtract_FUN_004fb150(CImp *this_ptr,_FILE *file_handle)
+; void __cdecl core_imp_cpp_CImp_addFilesToExtract_FUN_004fb150(CImp *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CImp *           Stack[0x4]:4   this_ptr

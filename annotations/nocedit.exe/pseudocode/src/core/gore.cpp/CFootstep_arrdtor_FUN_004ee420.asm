@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CFootstep * __cdecl core_gore_cpp_CFootstep_arrdtor_FUN_004ee420(CFootstep *objs,uint flags)
+; CFootstep * __cdecl core_gore_cpp_CFootstep_arrdtor_FUN_004ee420(CFootstep *objs,uint flags)
 ;
 ; Parameters:
 ; CFootstep *      Stack[0x4]:4   objs

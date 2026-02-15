@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_renderVertexPointsWithLabels_FUN_0045bff0(void)
+; void __cdecl shape_design_c_renderVertexPointsWithLabels_FUN_0045bff0(void)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x88]:1  local_88

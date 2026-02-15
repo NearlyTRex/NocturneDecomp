@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_io_c_utime_00600c1e(char *filename,utimbuf *timestamps)
+; int __cdecl crt_io_c_utime_00600c1e(char *filename,utimbuf *timestamps)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

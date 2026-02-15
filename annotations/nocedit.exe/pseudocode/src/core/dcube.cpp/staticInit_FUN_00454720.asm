@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dcube_cpp_staticInit_FUN_00454720(void)
+; void __cdecl core_dcube_cpp_staticInit_FUN_00454720(void)
 ;
 ;
 ; Referenced Globals:

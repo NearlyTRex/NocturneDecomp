@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_fileio_cpp_CFileManager_processMRGLNode_FUN_004b54e0(CFileManager *this_ptr,SMRGLHeaderExtended *mrgl_node)
+; void __cdecl engine_fileio_cpp_CFileManager_processMRGLNode_FUN_004b54e0(CFileManager *this_ptr,SMRGLHeaderExtended *mrgl_node)
 ;
 ; Parameters:
 ; CFileManager *   Stack[0x4]:4   this_ptr

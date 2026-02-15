@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_game_cpp_drawCreditsLine_FUN_004d8890(char *text_string)
+; void __cdecl core_game_cpp_drawCreditsLine_FUN_004d8890(char *text_string)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   text_string

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_charactr_cpp_CCharacter_propertyDisplayCallback_FUN_0042f340(CCharacter *this_ptr,CActorProperty *property,char *output_buffer)
+; void __cdecl core_charactr_cpp_CCharacter_propertyDisplayCallback_FUN_0042f340(CCharacter *this_ptr,CActorProperty *property,char *output_buffer)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr

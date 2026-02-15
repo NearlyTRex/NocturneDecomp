@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_dosio_c_findFile_FUN_00481760(SFoundFileInfo *context)
+; int __cdecl engine_dosio_c_findFile_FUN_00481760(SFoundFileInfo *context)
 ;
 ; Parameters:
 ; SFoundFileInfo * Stack[0x4]:4   context

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_memdbg_cpp_staticInit_FUN_0050ee40(void)
+; void __cdecl shape_memdbg_cpp_staticInit_FUN_0050ee40(void)
 ;
 ;
 ; Referenced Globals:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int __watcallStack crt_locale_c_mblen_FUN_00605a40(char *mb_string)
+; int __watcallStack crt_locale_c_mblen_FUN_00605a40(char *mb_string)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   mb_string

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_xform_cpp_clampClippedVertices_FUN_005f84a0(void)
+; void __cdecl core_xform_cpp_clampClippedVertices_FUN_005f84a0(void)
 ;
 ;
 ; Referenced Globals:

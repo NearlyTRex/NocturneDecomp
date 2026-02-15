@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDrone * __cdecl core_drone_cpp_factoryFunc_FUN_0048eb10(void)
+; CDrone * __cdecl core_drone_cpp_factoryFunc_FUN_0048eb10(void)
 ;
 ;
 ; XREF[1]:

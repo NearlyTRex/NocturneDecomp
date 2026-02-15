@@ -11,7 +11,7 @@ int __cdecl core_waypoint_cpp_CWayPoint_FUN_005ebd40(CWayPoint *this_ptr)
 {
   CPathMap *this_ptr_00;
   int iVar1;
-  float *in_stack_00000008;
+  CLocation *in_stack_00000008;
   int in_stack_0000000c;
   CVector3f local_30;
   float local_24;
@@ -19,9 +19,9 @@ int __cdecl core_waypoint_cpp_CWayPoint_FUN_005ebd40(CWayPoint *this_ptr)
   float local_1c;
   CVector3f local_18;
   
-  local_24 = *(float *)(this_ptr->base).base.actor_name - *in_stack_00000008;
-  local_20 = *(float *)((this_ptr->base).base.actor_name + 4) - in_stack_00000008[1];
-  local_1c = *(float *)((this_ptr->base).base.actor_name + 8) - in_stack_00000008[2];
+  local_24 = *(float *)(this_ptr->base).base.actor_name - (in_stack_00000008->position).x;
+  local_20 = *(float *)((this_ptr->base).base.actor_name + 4) - (in_stack_00000008->position).y;
+  local_1c = *(float *)((this_ptr->base).base.actor_name + 8) - (in_stack_00000008->position).z;
   if (in_stack_0000000c == 0) {
     if ((ABS(local_20) <= (float)10) && (ABS(local_24) <= (float)30)) {
       if ((float)30 < ABS(local_1c)) {
@@ -36,7 +36,7 @@ LAB_005ebde7:
     local_18.x = *(float *)(this_ptr->base).base.actor_name;
     local_18.y = *(float *)((this_ptr->base).base.actor_name + 4);
     local_18.z = *(float *)((this_ptr->base).base.actor_name + 8);
-    this_ptr_00 = core_path_cpp_FUN_00548500();
+    this_ptr_00 = core_path_cpp_FUN_00548500(in_stack_00000008);
     iVar1 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00(this_ptr_00,&local_18,&local_30,0)
     ;
     return (uint)(iVar1 == 1);

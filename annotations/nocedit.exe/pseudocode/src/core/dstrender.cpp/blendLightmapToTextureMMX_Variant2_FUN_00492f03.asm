@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dstrender_cpp_blendLightmapToTextureMMX_Variant2_FUN_00492f03(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)
+; void __cdecl core_dstrender_cpp_blendLightmapToTextureMMX_Variant2_FUN_00492f03(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)
 ;
 ; Parameters:
 ; uint *           Stack[0x4]:4   output_buffer

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_vampboss_cpp_CVampireBoss_FUN_005e7390(CVampireBoss *this_ptr)
+; void __cdecl core_vampboss_cpp_CVampireBoss_FUN_005e7390(CVampireBoss *this_ptr)
 ;
 ; Parameters:
 ; CVampireBoss *   Stack[0x4]:4   this_ptr
@@ -14,8 +14,8 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   undefined4 g_CDripClassInfo.name_hash
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.actor_list_ptr
-;   undefined4 g_CDemonSetInstance.actor_list_data[0]
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
@@ -41,7 +41,7 @@ section .text
     ADD ESP,0x8                         ; 005e73ab
     MOV EBX,dword ptr [0x006810c8]      ; 005e73ae | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_005e73ae
-    CMP ESI,dword ptr [EBX + 0x14d154]  ; 005e73b4 | g_CDemonSetInstance.actor_list_ptr
+    CMP ESI,dword ptr [EBX + 0x14d154]  ; 005e73b4 | g_CDemonSetInstance.actor_count
     JL 0x005e73c1                       ; 005e73ba
         ;   XREF to: 005e73c1 (CONDITIONAL_JUMP)  ; LAB_005e73c1
     POP EBP                             ; 005e73bc
@@ -52,7 +52,7 @@ section .text
     MOV ECX,dword ptr [0x02c9b16c]      ; 005e73c1 | g_CDripClassInfo.name_hash
         ;   Label: LAB_005e73c1
     PUSH ECX                            ; 005e73c7
-    MOV EBP,dword ptr [EDI + EBX*0x1 + 0x14d158] ; 005e73c8 | g_CDemonSetInstance.actor_list_data[0]
+    MOV EBP,dword ptr [EDI + EBX*0x1 + 0x14d158] ; 005e73c8 | g_CDemonSetInstance.actors[0]
     PUSH EBP                            ; 005e73cf
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 005e73d0
         ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)

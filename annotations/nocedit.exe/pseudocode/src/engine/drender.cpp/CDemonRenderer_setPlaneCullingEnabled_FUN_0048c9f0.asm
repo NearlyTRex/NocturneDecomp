@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(CDemonRenderer *this_ptr,int enabled)
+; void __cdecl engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(CDemonRenderer *this_ptr,int enabled)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
@@ -12,7 +12,7 @@
 ;   core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_00477980 at 00477a99
 ;   core_dpart.cpp_CDemonPart_renderFaces_FUN_004828b0 at 004828d5
 ;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_00509d50 at 0050a161
-;   core_path.cpp_FUN_00547fc0 at 005480c1
+;   core_path.cpp_CPathMap_FUN_00547fc0 at 005480c1
 ;   core_trigger.cpp_CTrigger_renderTransparent_FUN_005e00d0 at 005e0569
 ;   engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00 at 0048ca30
 ;

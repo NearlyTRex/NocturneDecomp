@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_bugs_cpp_CBugs_FUN_00425fe0(CBugs *this_ptr)
+; void __cdecl core_bugs_cpp_CBugs_FUN_00425fe0(CBugs *this_ptr)
 ;
 ; Parameters:
 ; CBugs *          Stack[0x4]:4   this_ptr
@@ -281,7 +281,7 @@ section .text
     ADD EAX,0x20                        ; 00426289
     PUSH EAX                            ; 0042628c
     CALL core_path.cpp_FUN_00548500     ; 0042628d
-        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_FUN_00548500()
+        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_FUN_00548500(CLocation * location)
     ADD ESP,0x4                         ; 00426292
     MOV EDX,EAX                         ; 00426295
     MOV ESI,dword ptr [EBX + 0x6c]      ; 00426297

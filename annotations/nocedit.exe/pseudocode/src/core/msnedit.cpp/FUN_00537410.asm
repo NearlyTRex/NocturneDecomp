@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_msnedit_cpp_FUN_00537410(char *param_1)
+; int __cdecl core_msnedit_cpp_FUN_00537410(char *param_1)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   param_1

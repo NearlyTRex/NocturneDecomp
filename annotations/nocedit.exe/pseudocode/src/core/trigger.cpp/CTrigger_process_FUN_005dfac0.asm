@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_trigger_cpp_CTrigger_process_FUN_005dfac0(CTrigger *this_ptr,float delta_time)
+; void __cdecl core_trigger_cpp_CTrigger_process_FUN_005dfac0(CTrigger *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CTrigger *       Stack[0x4]:4   this_ptr
@@ -393,11 +393,11 @@ section .text
     MOV dword ptr [ESP + 0x98],EDI      ; 005dfead
     MOV EAX,[0x006810c8]                ; 005dfeb4 | g_CDemonSetPtr
         ;   Label: LAB_005dfeb4
-    CMP EDI,dword ptr [EAX + 0x14d154]  ; 005dfeb9 | g_CDemonSetInstance.actor_list_ptr
+    CMP EDI,dword ptr [EAX + 0x14d154]  ; 005dfeb9 | g_CDemonSetInstance.actor_count
     JGE 0x005dfb58                      ; 005dfebf
         ;   XREF to: 005dfb58 (CONDITIONAL_JUMP)  ; default
     ADD EAX,dword ptr [ESP + 0x98]      ; 005dfec5
-    MOV EBX,dword ptr [EAX + 0x14d158]  ; 005dfecc | g_CDemonSetInstance.actor_list_data[0] | DAT_032613d4
+    MOV EBX,dword ptr [EAX + 0x14d158]  ; 005dfecc | g_CDemonSetInstance.actors[0] | DAT_032613d4
     PUSH EBX                            ; 005dfed2
     MOV EAX,dword ptr [EBX + 0x154]     ; 005dfed3
     CALL dword ptr [EAX + 0x54]         ; 005dfed9
@@ -445,11 +445,11 @@ section .text
     MOV dword ptr [ESP + 0x94],EAX      ; 005dff59
     MOV EAX,[0x006810c8]                ; 005dff60 | g_CDemonSetPtr
         ;   Label: LAB_005dff60
-    CMP EDI,dword ptr [EAX + 0x14d154]  ; 005dff65 | g_CDemonSetInstance.actor_list_ptr
+    CMP EDI,dword ptr [EAX + 0x14d154]  ; 005dff65 | g_CDemonSetInstance.actor_count
     JGE 0x005dfb58                      ; 005dff6b
         ;   XREF to: 005dfb58 (CONDITIONAL_JUMP)  ; default
     ADD EAX,dword ptr [ESP + 0x9c]      ; 005dff71
-    MOV EBX,dword ptr [EAX + 0x14d158]  ; 005dff78 | g_CDemonSetInstance.actor_list_data[0] | DAT_032613d4
+    MOV EBX,dword ptr [EAX + 0x14d158]  ; 005dff78 | g_CDemonSetInstance.actors[0] | DAT_032613d4
     LEA EAX,[EBX + 0x20]                ; 005dff7e
     MOV EDX,dword ptr [ESP + 0xa0]      ; 005dff81
     FLD float ptr [EAX]                 ; 005dff88

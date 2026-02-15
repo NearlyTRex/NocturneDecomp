@@ -54,7 +54,7 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_004c7180(CFireEffect *this_ptr
       (*((this_ptr_01->base).vtable)->render)(&this_ptr_01->base);
     }
     this_ptr_01 = this_ptr_01 + 1;
-  } while (this_ptr_01 != (CFireball *)&g_CFireEffectFireballsEnd);
+  } while (this_ptr_01 != (CFireball *)&INT_02d655a8);
   this_ptr_02 = g_ShellPool;
   do {
     (*((this_ptr_02->base).vtable)->render)(&this_ptr_02->base);
@@ -131,7 +131,7 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_004c7180(CFireEffect *this_ptr
     do {
       core_fire_cpp_CToss_render_FUN_004c4160(this_ptr_09);
       this_ptr_09 = this_ptr_09 + 1;
-    } while (this_ptr_09 != (CToss *)&g_TossActiveListHead);
+    } while (this_ptr_09 != (CToss *)&INT_02d6c6a0);
     this_ptr_10 = g_GunFlamePool;
     do {
       core_fire_cpp_CGunFlame_render_FUN_004c50b0(this_ptr_10);

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl uint __cdecl sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_0052f160(CMP3Decoder *this_ptr)
+; uint __cdecl sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_0052f160(CMP3Decoder *this_ptr)
 ;
 ; Parameters:
 ; CMP3Decoder *    Stack[0x4]:4   this_ptr

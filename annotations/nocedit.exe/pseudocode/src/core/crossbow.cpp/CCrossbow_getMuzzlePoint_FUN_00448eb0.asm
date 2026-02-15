@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVector3f * __cdecl core_crossbow_cpp_CCrossbow_getMuzzlePoint_FUN_00448eb0(CCrossbow *this_ptr,CVector3f *out_point)
+; CVector3f * __cdecl core_crossbow_cpp_CCrossbow_getMuzzlePoint_FUN_00448eb0(CCrossbow *this_ptr,CVector3f *out_point)
 ;
 ; Parameters:
 ; CCrossbow *      Stack[0x4]:4   this_ptr

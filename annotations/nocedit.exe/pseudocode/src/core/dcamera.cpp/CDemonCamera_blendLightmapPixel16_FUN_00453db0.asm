@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dcamera_cpp_CDemonCamera_blendLightmapPixel16_FUN_00453db0(CDemonCamera *this_ptr,int screen_x,int screen_y,int offset)
+; void __cdecl core_dcamera_cpp_CDemonCamera_blendLightmapPixel16_FUN_00453db0(CDemonCamera *this_ptr,int screen_x,int screen_y,int offset)
 ;
 ; Parameters:
 ; CDemonCamera *   Stack[0x4]:4   this_ptr

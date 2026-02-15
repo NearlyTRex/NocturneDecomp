@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl undefined4 * __cdecl crt_time_c_gmtime_r_FUN_00607690(int days,uint seconds,int timezone_offset,undefined4 *param_4)
+; undefined4 * __cdecl crt_time_c_gmtime_r_FUN_00607690(int days,uint seconds,int timezone_offset,undefined4 *param_4)
 ;
 ; Parameters:
 ; time_t           Stack[0x4]:4   days

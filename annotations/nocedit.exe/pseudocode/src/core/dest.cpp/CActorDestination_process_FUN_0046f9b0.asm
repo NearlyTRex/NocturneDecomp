@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dest_cpp_CActorDestination_process_FUN_0046f9b0(CActorDestination *this_ptr,float delta_time)
+; void __cdecl core_dest_cpp_CActorDestination_process_FUN_0046f9b0(CActorDestination *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CActorDestination * Stack[0x4]:4   this_ptr
@@ -27,8 +27,8 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CEventList g_CEventListInstance
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.actor_list_ptr
-;   undefined4 g_CDemonSetInstance.actor_list_data[0]
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;   undefined4 DAT_032613d4
 ;
 ; Called Functions:
@@ -59,11 +59,11 @@ section .text
     XOR EBX,EBX                         ; 0046f9de
     MOV EDX,dword ptr [0x006810c8]      ; 0046f9e0 | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_0046f9e0
-    CMP EDI,dword ptr [EDX + 0x14d154]  ; 0046f9e6 | g_CDemonSetInstance.actor_list_ptr
+    CMP EDI,dword ptr [EDX + 0x14d154]  ; 0046f9e6 | g_CDemonSetInstance.actor_count
     JGE 0x0046fa51                      ; 0046f9ec
         ;   XREF to: 0046fa51 (CONDITIONAL_JUMP)  ; LAB_0046fa51
     ADD EDX,EBX                         ; 0046f9ee | g_CDemonSetInstance
-    MOV EAX,dword ptr [EDX + 0x14d158]  ; 0046f9f0 | g_CDemonSetInstance.actor_list_data[0] | DAT_032613d4
+    MOV EAX,dword ptr [EDX + 0x14d158]  ; 0046f9f0 | g_CDemonSetInstance.actors[0] | DAT_032613d4
     FLD float ptr [ESI]                 ; 0046f9f6
     FSUB float ptr [EAX + 0x20]         ; 0046f9f8
     FSTP float ptr [ESP + 0xc]          ; 0046f9fb
@@ -91,7 +91,7 @@ section .text
     ADD EBX,0x4                         ; 0046fa35
     JMP 0x0046f9e0                      ; 0046fa38
         ;   XREF to: 0046f9e0 (UNCONDITIONAL_JUMP)  ; LAB_0046f9e0
-    MOV ECX,dword ptr [EDX + 0x14d158]  ; 0046fa3a | g_CDemonSetInstance.actor_list_data[0]
+    MOV ECX,dword ptr [EDX + 0x14d158]  ; 0046fa3a | g_CDemonSetInstance.actors[0]
         ;   Label: LAB_0046fa3a
     PUSH ECX                            ; 0046fa40
     MOV EAX,dword ptr [EBP + 0x14]      ; 0046fa41

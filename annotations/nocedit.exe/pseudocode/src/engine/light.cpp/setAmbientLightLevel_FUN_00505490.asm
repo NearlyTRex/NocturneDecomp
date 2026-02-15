@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_light_cpp_setAmbientLightLevel_FUN_00505490(int light_level)
+; void __cdecl engine_light_cpp_setAmbientLightLevel_FUN_00505490(int light_level)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   light_level

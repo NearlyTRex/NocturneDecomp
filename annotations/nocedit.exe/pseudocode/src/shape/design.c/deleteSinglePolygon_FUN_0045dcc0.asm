@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_deleteSinglePolygon_FUN_0045dcc0(void)
+; void __cdecl shape_design_c_deleteSinglePolygon_FUN_0045dcc0(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x6c]:1  local_6c

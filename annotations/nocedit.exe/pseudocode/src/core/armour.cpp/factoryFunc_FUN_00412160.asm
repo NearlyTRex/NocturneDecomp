@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CArmour * __cdecl core_armour_cpp_factoryFunc_FUN_00412160(void)
+; CArmour * __cdecl core_armour_cpp_factoryFunc_FUN_00412160(void)
 ;
 ;
 ; XREF[1]:

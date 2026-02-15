@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_tentacle_cpp_staticInit_FUN_005daef0(void)
+; void __cdecl core_tentacle_cpp_staticInit_FUN_005daef0(void)
 ;
 ;
 ; Referenced Globals:

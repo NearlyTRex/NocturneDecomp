@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CMuzzleFlash * __cdecl core_fire_cpp_CMuzzleFlash_arrdtor_FUN_004c9990(CMuzzleFlash *objs,uint flags)
+; CMuzzleFlash * __cdecl core_fire_cpp_CMuzzleFlash_arrdtor_FUN_004c9990(CMuzzleFlash *objs,uint flags)
 ;
 ; Parameters:
 ; CMuzzleFlash *   Stack[0x4]:4   objs

@@ -56,7 +56,7 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,S
     }
     engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"go berzerk\n");
   }
-  if (damage_info->damage_type == 0x6c) {
+  if (damage_info->gore_multiplier == 1.5134e-43) {
     this_ptr->unk3[0x38] = '\0';
     this_ptr->unk3[0x39] = '\0';
     this_ptr->unk3[0x3a] = -0x80;

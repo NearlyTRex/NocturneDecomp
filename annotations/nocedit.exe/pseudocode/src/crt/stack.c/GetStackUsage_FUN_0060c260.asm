@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_stack_c_GetStackUsage_FUN_0060c260(void)
+; int __cdecl crt_stack_c_GetStackUsage_FUN_0060c260(void)
 ;
 ;
 ; XREF[3]:

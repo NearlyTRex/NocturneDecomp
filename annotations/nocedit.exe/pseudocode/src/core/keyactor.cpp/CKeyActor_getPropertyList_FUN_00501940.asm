@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_keyactor_cpp_CKeyActor_getPropertyList_FUN_00501940(CKeyActor *this_ptr,CActorPropertyList *property_list)
+; void __cdecl core_keyactor_cpp_CKeyActor_getPropertyList_FUN_00501940(CKeyActor *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CKeyActor *      Stack[0x4]:4   this_ptr

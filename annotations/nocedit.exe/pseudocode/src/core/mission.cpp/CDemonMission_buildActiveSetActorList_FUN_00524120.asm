@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_00524120(CDemonMission *this_ptr)
+; void __cdecl core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_00524120(CDemonMission *this_ptr)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr
@@ -22,8 +22,8 @@
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.actor_list_ptr
-;   undefined4 g_CDemonSetInstance.actor_list_data[0]
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
@@ -44,7 +44,7 @@ section .text
     PUSH EDI                            ; 00524122
     MOV EDI,dword ptr [ESP + 0x10]      ; 00524123
     MOV EAX,[0x006810c8]                ; 00524127 | g_CDemonSetInstance | g_CDemonSetPtr
-    MOV dword ptr [EAX + 0x14d154],0x0  ; 0052412c | g_CDemonSetInstance.actor_list_ptr
+    MOV dword ptr [EAX + 0x14d154],0x0  ; 0052412c | g_CDemonSetInstance.actor_count
     MOV EBX,dword ptr [EDI + 0x548]     ; 00524136
     TEST EBX,EBX                        ; 0052413c
     JZ 0x00524166                       ; 0052413e
@@ -99,7 +99,7 @@ section .text
     MOV dword ptr [EBX + 0x70],0x1      ; 005241aa
     MOV EAX,[0x006810c8]                ; 005241b1 | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_005241b1
-    CMP dword ptr [EAX + 0x14d154],0x7d0 ; 005241b6 | g_CDemonSetInstance.actor_list_ptr
+    CMP dword ptr [EAX + 0x14d154],0x7d0 ; 005241b6 | g_CDemonSetInstance.actor_count
     JL 0x005241e5                       ; 005241c0
         ;   XREF to: 005241e5 (CONDITIONAL_JUMP)  ; LAB_005241e5
     MOV ECX,0x639214                    ; 005241c2 | = "..\\core\\mission.cpp"
@@ -112,9 +112,9 @@ section .text
     ADD ESP,0x4                         ; 005241e2
     MOV EAX,[0x006810c8]                ; 005241e5 | g_CDemonSetPtr
         ;   Label: LAB_005241e5
-    MOV ESI,dword ptr [EAX + 0x14d154]  ; 005241ea | g_CDemonSetInstance.actor_list_ptr
-    MOV dword ptr [EAX + ESI*0x4 + 0x14d158],EBX ; 005241f0 | g_CDemonSetInstance.actor_list_data[0]
-    INC dword ptr [EAX + 0x14d154]      ; 005241f7 | g_CDemonSetInstance.actor_list_ptr
+    MOV ESI,dword ptr [EAX + 0x14d154]  ; 005241ea | g_CDemonSetInstance.actor_count
+    MOV dword ptr [EAX + ESI*0x4 + 0x14d158],EBX ; 005241f0 | g_CDemonSetInstance.actors[0]
+    INC dword ptr [EAX + 0x14d154]      ; 005241f7 | g_CDemonSetInstance.actor_count
     JMP 0x0052415c                      ; 005241fd
         ;   XREF to: 0052415c (UNCONDITIONAL_JUMP)  ; LAB_0052415c
     PUSH 0x63920f                       ; 00524202 | = "none"

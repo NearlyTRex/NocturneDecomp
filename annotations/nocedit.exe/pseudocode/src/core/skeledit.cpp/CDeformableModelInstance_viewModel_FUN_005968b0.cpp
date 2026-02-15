@@ -225,7 +225,7 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
   if ((DAT_0366b64c & 2) == 0) {
     DAT_0366b64c = DAT_0366b64c | 2;
     core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00476cf0(&DAT_03665f74);
-    _atexit(&DAT_00681850);
+    _atexit(&WatcomStaticDestructorNode_00681850);
   }
   core_dmodel_cpp_CKeyFramedModel_free_FUN_00477690(&DAT_03665f74);
   local_184.x = g_ZeroVector.x;

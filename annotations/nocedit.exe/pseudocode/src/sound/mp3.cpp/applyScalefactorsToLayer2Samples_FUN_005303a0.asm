@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_mp3_cpp_applyScalefactorsToLayer2Samples_FUN_005303a0(float *sample_array,int *scalefactor_indices,SMpegFrame *frame_info)
+; void __cdecl sound_mp3_cpp_applyScalefactorsToLayer2Samples_FUN_005303a0(float *sample_array,int *scalefactor_indices,SMpegFrame *frame_info)
 ;
 ; Parameters:
 ; float *          Stack[0x4]:4   sample_array

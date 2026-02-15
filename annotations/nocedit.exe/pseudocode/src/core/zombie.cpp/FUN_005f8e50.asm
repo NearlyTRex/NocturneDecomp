@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_zombie_cpp_FUN_005f8e50(void)
+; int __cdecl core_zombie_cpp_FUN_005f8e50(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x30]:8  local_30

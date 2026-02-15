@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_edittool_cpp_initEditorFontMetrics_FUN_0049d1f0(void)
+; void __cdecl shape_edittool_cpp_initEditorFontMetrics_FUN_0049d1f0(void)
 ;
 ;
 ; Referenced Globals:

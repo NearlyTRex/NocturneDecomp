@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_msnedit_cpp_CDemonMission_saveMissionAndScript_FUN_0053d190(CDemonMission *this_ptr,char *filename)
+; void __cdecl core_msnedit_cpp_CDemonMission_saveMissionAndScript_FUN_0053d190(CDemonMission *this_ptr,char *filename)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr

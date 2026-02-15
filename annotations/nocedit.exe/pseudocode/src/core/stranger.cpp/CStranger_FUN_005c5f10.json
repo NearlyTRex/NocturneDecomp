@@ -4,8 +4,20 @@
       {
         "category": "other",
         "column": 5,
-        "line": 100,
+        "line": 96,
         "message": "statement requires expression of integer type ('float' invalid)"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 97,
+        "message": "conversion from 'double' to 'int' is not allowed in a converted constant expression"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 98,
+        "message": "conversion from 'double' to 'int' is not allowed in a converted constant expression"
       },
       {
         "category": "other",
@@ -16,43 +28,31 @@
       {
         "category": "other",
         "column": 10,
-        "line": 102,
+        "line": 104,
         "message": "conversion from 'double' to 'int' is not allowed in a converted constant expression"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 105,
+        "line": 109,
         "message": "conversion from 'double' to 'int' is not allowed in a converted constant expression"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 108,
-        "message": "conversion from 'double' to 'int' is not allowed in a converted constant expression"
-      },
-      {
-        "category": "other",
-        "column": 10,
-        "line": 113,
-        "message": "conversion from 'double' to 'int' is not allowed in a converted constant expression"
-      },
-      {
-        "category": "other",
-        "column": 10,
-        "line": 116,
+        "line": 112,
         "message": "conversion from 'double' to 'int' is not allowed in a converted constant expression"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 120,
+        "line": 116,
         "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
       },
       {
         "category": "other",
         "column": 37,
-        "line": 123,
+        "line": 119,
         "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
       }
     ],
@@ -61,18 +61,18 @@
   },
   "complexity": {
     "assembly_lines": 285,
-    "complexity_score": 261,
+    "complexity_score": 251,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
-    "pseudocode_lines": 146,
+    "pseudocode_lines": 136,
     "suspect_count": 10,
     "suspect_types": [
       "param_count_too_few",
       "suspect_float",
       "unaffected_reg"
     ],
-    "total_lines": 431
+    "total_lines": 421
   },
   "cross_references": [
     {
@@ -202,63 +202,63 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 15,
+      "line": 14,
       "match": "unaff_EDI",
       "text": "int unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 69,
+      "line": 65,
       "match": "9.80909e-45",
       "text": "else if (pCVar3[2].orient.vec.x == 9.80909e-45) goto LAB_005c5f6e;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 74,
+      "line": 70,
       "match": "4.2039e-45",
       "text": "if (fVar1 == 4.2039e-45) {",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 95,
+      "line": 91,
       "match": "7.00649e-45",
       "text": "case 7.00649e-45:",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 98,
+      "line": 94,
       "match": "1.4013e-45",
       "text": "case 1.4013e-45:",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 101,
+      "line": 97,
       "match": "2.8026e-45",
       "text": "case 2.8026e-45:",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 106,
+      "line": 102,
       "match": "5.60519e-45",
       "text": "case 5.60519e-45:",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 109,
+      "line": 105,
       "match": "9.80909e-45",
       "text": "case 9.80909e-45:",
       "type": "suspect_float"
     },
     {
       "description": "Unaffected register variable",
-      "line": 123,
+      "line": 119,
       "match": "unaff_EDI",
       "text": "((CCharacter *)this_ptr->weapon,pCVar3,unaff_EDI), iVar6 != 0)) {",
       "type": "unaffected_reg"

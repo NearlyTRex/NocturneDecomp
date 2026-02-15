@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_0042ce80(CCharacter *this_ptr,int hand_index,float blend_time)
+; void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_0042ce80(CCharacter *this_ptr,int hand_index,float blend_time)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr

@@ -727,8 +727,8 @@ LAB_005fac96:
               local_28 = 0;
               *(float *)(this_ptr->unk4 + 0x5c) = *(float *)(this_ptr->unk4 + 0x5c) + 1.0;
               local_24 = pCVar1;
-              for (; local_28 < g_CDemonSetPtr->damage_listener_count; local_28 = local_28 + 1) {
-                iVar9 = *(int *)(g_CDemonSetPtr->unk4 + iVar6 + -4);
+              for (; local_28 < g_CDemonSetPtr->character_count; local_28 = local_28 + 1) {
+                iVar9 = *(int *)((int)g_CDemonSetPtr->characters + iVar6);
                 iVar19 = (**(code **)(*(int *)(iVar9 + 0x154) + 0xf8))(iVar9,this_ptr);
                 if (iVar19 != 0) {
                   local_1b8 = *(float *)(iVar9 + 0x20) - (local_24->position).x;

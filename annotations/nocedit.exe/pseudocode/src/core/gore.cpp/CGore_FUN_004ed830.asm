@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_gore_cpp_CGore_FUN_004ed830(CGore *this_ptr)
+; void __cdecl core_gore_cpp_CGore_FUN_004ed830(CGore *this_ptr)
 ;
 ; Parameters:
 ; CGore *          Stack[0x4]:4   this_ptr
@@ -23,7 +23,7 @@
 ;   CBloodPool[32] DAT_02da8724
 ;   undefined4 DAT_02da874c
 ;   undefined4 DAT_02da8c28
-;   CFootstep[1000] DAT_02da8c2c
+;   CFootstep[1000] CFootstep_ARRAY_02da8c2c
 ;   undefined4 DAT_02da8c6c
 ;
 ; Called Functions:
@@ -120,10 +120,10 @@ section .text
     TEST ESI,ESI                        ; 004ed8f0
     JLE 0x004ed850                      ; 004ed8f2
         ;   XREF to: 004ed850 (CONDITIONAL_JUMP)  ; LAB_004ed850
-    MOV ESI,0x2da8c2c                   ; 004ed8f8 | DAT_02da8c2c
+    MOV ESI,0x2da8c2c                   ; 004ed8f8 | CFootstep_ARRAY_02da8c2c
     PUSH 0x0                            ; 004ed8fd
         ;   Label: LAB_004ed8fd
-    PUSH ESI                            ; 004ed8ff | DAT_02da8c2c | DAT_02da8c6c
+    PUSH ESI                            ; 004ed8ff | CFootstep_ARRAY_02da8c2c | DAT_02da8c6c
     INC EBX                             ; 004ed900
     CALL core_gore.cpp_CFootstep_FUN_004ed3c0 ; 004ed901
         ;   XREF to: 004ed3c0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CFootstep_FUN_004ed3c0(CFootstep * this_ptr)
@@ -205,7 +205,7 @@ section .text
     JLE 0x004ed850                      ; 004ed9a7
         ;   XREF to: 004ed850 (CONDITIONAL_JUMP)  ; LAB_004ed850
     XOR EBX,EBX                         ; 004ed9ad
-    CMP dword ptr [EBX + 0x2da8c2c],0x0 ; 004ed9af | DAT_02da8c2c | DAT_02da8c6c
+    CMP dword ptr [EBX + 0x2da8c2c],0x0 ; 004ed9af | CFootstep_ARRAY_02da8c2c | DAT_02da8c6c
         ;   Label: LAB_004ed9af
     JZ 0x004ed9cc                       ; 004ed9b6
         ;   XREF to: 004ed9cc (CONDITIONAL_JUMP)  ; LAB_004ed9cc
@@ -218,7 +218,7 @@ section .text
         ;   XREF to: 004ed850 (CONDITIONAL_JUMP)  ; LAB_004ed850
     JMP 0x004ed9af                      ; 004ed9ca
         ;   XREF to: 004ed9af (UNCONDITIONAL_JUMP)  ; LAB_004ed9af
-    MOV EAX,0x2da8c2c                   ; 004ed9cc | DAT_02da8c2c
+    MOV EAX,0x2da8c2c                   ; 004ed9cc | CFootstep_ARRAY_02da8c2c
         ;   Label: LAB_004ed9cc
     PUSH EDI                            ; 004ed9d1
     ADD EAX,EBX                         ; 004ed9d2 | DAT_02da8c6c

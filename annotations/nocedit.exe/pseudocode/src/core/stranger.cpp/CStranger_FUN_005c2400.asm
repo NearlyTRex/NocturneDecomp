@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_stranger_cpp_CStranger_FUN_005c2400(CStranger *this_ptr)
+; int __cdecl core_stranger_cpp_CStranger_FUN_005c2400(CStranger *this_ptr)
 ;
 ; Parameters:
 ; CStranger *      Stack[0x4]:4   this_ptr
@@ -30,8 +30,8 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CConsole g_CConsoleInstance
 ;   undefined4 g_CLadderClassInfo.name_hash
-;   undefined4 g_CDemonSetInstance.actor_list_ptr
-;   undefined4 g_CDemonSetInstance.actor_list_data[0]
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
@@ -82,7 +82,7 @@ section .text
     MOV EAX,[0x006810c8]                ; 005c246b | g_CDemonSetPtr
         ;   Label: LAB_005c246b
     MOV EDX,dword ptr [ESP + 0xdc]      ; 005c2470
-    CMP EDX,dword ptr [EAX + 0x14d154]  ; 005c2477 | g_CDemonSetInstance.actor_list_ptr
+    CMP EDX,dword ptr [EAX + 0x14d154]  ; 005c2477 | g_CDemonSetInstance.actor_count
     JL 0x005c24aa                       ; 005c247d
         ;   XREF to: 005c24aa (CONDITIONAL_JUMP)  ; LAB_005c24aa
     XOR EAX,EAX                         ; 005c247f
@@ -107,7 +107,7 @@ section .text
     MOV ESI,dword ptr [0x02dcd810]      ; 005c24b1 | g_CLadderClassInfo.name_hash
     ADD EAX,EBX                         ; 005c24b7
     PUSH ESI                            ; 005c24b9
-    MOV EAX,dword ptr [EAX + 0x14d158]  ; 005c24ba | g_CDemonSetInstance.actor_list_data[0]
+    MOV EAX,dword ptr [EAX + 0x14d158]  ; 005c24ba | g_CDemonSetInstance.actors[0]
     PUSH EAX                            ; 005c24c0
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 005c24c1
         ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)

@@ -6,12 +6,14 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 void __cdecl core_flame_cpp_CFlame_process_FUN_004c9c00(CFlame *this_ptr,float delta_time)
 
 {
   CLocation *pCVar1;
   CHero *this_ptr_00;
-  CCharacter *this_ptr_01;
+  CEnemy *this_ptr_01;
   float fVar2;
   int iVar3;
   uint uVar4;
@@ -114,20 +116,21 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_004c9c00(CFlame *this_ptr,float d
       if (this_ptr->enemy_burn_index < 0) {
         this_ptr->enemy_burn_index = 0;
       }
-      if (*(int *)(g_CDemonSetPtr->unk4 + 0x1f3c) <= this_ptr->enemy_burn_index) {
+      if (g_CDemonSetPtr->enemy_count <= this_ptr->enemy_burn_index) {
         this_ptr->enemy_burn_index = 0;
       }
-      if (0 < *(int *)(g_CDemonSetPtr->unk4 + 0x1f3c)) {
-        this_ptr_01 = *(CCharacter **)(g_CDemonSetPtr->unk4 + this_ptr->enemy_burn_index * 4 + 8000)
-        ;
+      if (0 < g_CDemonSetPtr->enemy_count) {
+        this_ptr_01 = g_CDemonSetPtr->enemies[this_ptr->enemy_burn_index];
         core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&SStack_6c);
-        iVar3 = (*((this_ptr_01->base).vtable._ub)->hasCollision)(&this_ptr_01->base,&SStack_6c);
+        iVar3 = (*((this_ptr_01->base).base.vtable._ub)->hasCollision)
+                          ((CDemonActor *)this_ptr_01,&SStack_6c);
         if (iVar3 == 2) {
           pCVar1 = &(this_ptr->base).location;
-          fStack_38 = (this_ptr_01->base).location.position.x - (pCVar1->position).x;
-          fVar2 = (this_ptr_01->base).location.position.y - (this_ptr->base).location.position.y;
-          fStack_30 = (this_ptr_01->base).location.position.z - (this_ptr->base).location.position.z
-          ;
+          fStack_38 = (this_ptr_01->base).base.location.position.x - (pCVar1->position).x;
+          fVar2 = (this_ptr_01->base).base.location.position.y -
+                  (this_ptr->base).location.position.y;
+          fStack_30 = (this_ptr_01->base).base.location.position.z -
+                      (this_ptr->base).location.position.z;
           fStack_34 = fVar2;
           dVar5 = round
                             ((double)(((this_ptr->flame_size).x + (this_ptr->flame_size).z) *
@@ -139,7 +142,7 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_004c9c00(CFlame *this_ptr,float d
                (ABS(fStack_34) < SStack_6c.cylinder_top_y + fStack_28)) {
               fStack_18 = (float)iStack_24;
               core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0
-                        (this_ptr_01,&pCVar1->position,0,0.0,0x40000000,0);
+                        (&this_ptr_01->base,&pCVar1->position,0,0.0,0x40000000,0);
             }
           }
         }

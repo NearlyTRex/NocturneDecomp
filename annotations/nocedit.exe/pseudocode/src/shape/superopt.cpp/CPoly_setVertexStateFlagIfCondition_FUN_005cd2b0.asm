@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_superopt_cpp_CPoly_setVertexStateFlagIfCondition_FUN_005cd2b0(CPoly *this_ptr,uint flag_to_set,uint condition_mask)
+; void __cdecl shape_superopt_cpp_CPoly_setVertexStateFlagIfCondition_FUN_005cd2b0(CPoly *this_ptr,uint flag_to_set,uint condition_mask)
 ;
 ; Parameters:
 ; CPoly *          Stack[0x4]:4   this_ptr

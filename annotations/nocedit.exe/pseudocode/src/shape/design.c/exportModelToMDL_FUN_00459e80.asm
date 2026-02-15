@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_exportModelToMDL_FUN_00459e80(char *mdl_filename)
+; void __cdecl shape_design_c_exportModelToMDL_FUN_00459e80(char *mdl_filename)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   mdl_filename

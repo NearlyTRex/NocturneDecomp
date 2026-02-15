@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CGhoul * __cdecl core_ghoul_cpp_CGhoul_dtor_FUN_004e8f10(CGhoul *this_ptr,uint flags)
+; CGhoul * __cdecl core_ghoul_cpp_CGhoul_dtor_FUN_004e8f10(CGhoul *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CGhoul *         Stack[0x4]:4   this_ptr

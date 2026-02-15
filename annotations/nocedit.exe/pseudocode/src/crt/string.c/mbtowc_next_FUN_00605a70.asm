@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack char * __watcallStack crt_string_c_mbtowc_next_FUN_00605a70(char *str)
+; char * __watcallStack crt_string_c_mbtowc_next_FUN_00605a70(char *str)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   str

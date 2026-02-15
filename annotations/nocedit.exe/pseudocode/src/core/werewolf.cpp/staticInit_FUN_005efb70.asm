@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_werewolf_cpp_staticInit_FUN_005efb70(void)
+; void __cdecl core_werewolf_cpp_staticInit_FUN_005efb70(void)
 ;
 ;
 ; Referenced Globals:

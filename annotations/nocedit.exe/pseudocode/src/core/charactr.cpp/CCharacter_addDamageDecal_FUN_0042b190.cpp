@@ -44,23 +44,20 @@ void __cdecl core_charactr_cpp_CCharacter_addDamageDecal_FUN_0042b190(CCharacter
   pCVar1 = g_CDemonSetPtr;
   bVar7 = 0;
   iVar2 = this_ptr->damage_decal_count;
-  if ((iVar2 < 5) && (-1 < g_CDemonSetPtr->unk1)) {
+  if ((iVar2 < 5) && (-1 < g_CDemonSetPtr->collision_part_index)) {
     this_ptr->damage_decal_count = this_ptr->damage_decal_count + 1;
     local_18 = this_ptr->damage_decals + iVar2;
-    local_18->part_index = pCVar1->unk1;
-    iVar2 = pCVar1->unk2;
+    local_18->part_index = pCVar1->collision_part_index;
+    iVar2 = pCVar1->collision_triangle_index;
     local_18->bone_index = iVar2;
     if (iVar2 < 0) {
       iVar2 = (*(((this_ptr->base).vtable._uc)->_uc).getPartDominantBone)
                         (this_ptr,local_18->part_index);
       local_18->bone_index = iVar2;
     }
-    local_4c.x = (g_CDemonSetPtr->collision_result_vec2).x -
-                 (g_CDemonSetPtr->collision_result_vec1).x;
-    local_4c.y = (g_CDemonSetPtr->collision_result_vec2).y -
-                 (g_CDemonSetPtr->collision_result_vec1).y;
-    local_4c.z = (g_CDemonSetPtr->collision_result_vec2).z -
-                 (g_CDemonSetPtr->collision_result_vec1).z;
+    local_4c.x = (g_CDemonSetPtr->ray_target).x - (g_CDemonSetPtr->ray_origin).x;
+    local_4c.y = (g_CDemonSetPtr->ray_target).y - (g_CDemonSetPtr->ray_origin).y;
+    local_4c.z = (g_CDemonSetPtr->ray_target).z - (g_CDemonSetPtr->ray_origin).z;
     local_2c = SQRT(local_4c.z * local_4c.z + local_4c.y * local_4c.y + local_4c.x * local_4c.x);
     if (local_2c <= 0.0) {
       local_30 = 0.0;

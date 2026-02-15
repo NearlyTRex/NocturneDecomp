@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_flamegun_cpp_staticInit_FUN_004cb810(void)
+; void __cdecl core_flamegun_cpp_staticInit_FUN_004cb810(void)
 ;
 ;
 ; Referenced Globals:

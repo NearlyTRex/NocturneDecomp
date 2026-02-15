@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_00418e10(void)
+; CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_00418e10(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28

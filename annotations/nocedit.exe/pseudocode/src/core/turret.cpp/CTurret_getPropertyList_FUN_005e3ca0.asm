@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_turret_cpp_CTurret_getPropertyList_FUN_005e3ca0(CTurret *this_ptr,CActorPropertyList *property_list)
+; void __cdecl core_turret_cpp_CTurret_getPropertyList_FUN_005e3ca0(CTurret *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CTurret *        Stack[0x4]:4   this_ptr

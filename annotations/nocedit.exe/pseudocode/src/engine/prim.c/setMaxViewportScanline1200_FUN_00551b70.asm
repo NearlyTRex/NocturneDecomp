@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_prim_c_setMaxViewportScanline1200_FUN_00551b70(void)
+; void __cdecl engine_prim_c_setMaxViewportScanline1200_FUN_00551b70(void)
 ;
 ;
 ; Referenced Globals:

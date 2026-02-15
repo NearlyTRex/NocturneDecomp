@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_batman_cpp_CBatman_getTargetPoints_FUN_00417bb0(CBatman *this_ptr,CVector3f *out_points_array)
+; int __cdecl core_batman_cpp_CBatman_getTargetPoints_FUN_00417bb0(CBatman *this_ptr,CVector3f *out_points_array)
 ;
 ; Parameters:
 ; CBatman *        Stack[0x4]:4   this_ptr

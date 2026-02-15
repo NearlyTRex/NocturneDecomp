@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl cockpit_ckptutil_c_setLineClippingDisabled_FUN_00434680(int disabled)
+; void __cdecl cockpit_ckptutil_c_setLineClippingDisabled_FUN_00434680(int disabled)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   disabled

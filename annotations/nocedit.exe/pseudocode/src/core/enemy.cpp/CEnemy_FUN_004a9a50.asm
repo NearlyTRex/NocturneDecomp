@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_enemy_cpp_CEnemy_FUN_004a9a50(CEnemy *this_ptr)
+; int __cdecl core_enemy_cpp_CEnemy_FUN_004a9a50(CEnemy *this_ptr)
 ;
 ; Parameters:
 ; CEnemy *         Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_stdlib_c__atexit_FUN_005ff060(WatcomStaticDestructorNode *exit_node)
+; void __cdecl crt_stdlib_c__atexit_FUN_005ff060(WatcomStaticDestructorNode *exit_node)
 ;
 ; Parameters:
 ; WatcomStaticDestructorNode * Stack[0x4]:4   exit_node

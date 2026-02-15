@@ -33,14 +33,14 @@ typedef struct CDemonActor {
     CVector3f platform_orientation_delta; // 0xec
     int is_renderable; // 0xf8
     int is_transparent; // 0xfc
-    int unk6; // 0x100
-    float unk7; // 0x104
+    int collision_disabled; // 0x100
+    int process_disabled; // 0x104
     CVector3i scale; // 0x108
     int blood_effect_timer; // 0x114
     uint blood_effect_color; // 0x118
     char footstep_sound_code[4]; // 0x11c
-    int unk11; // 0x120
-    int unk12; // 0x124
+    int reserved1; // 0x120
+    int reserved2; // 0x124
     CDemonActorTransformState previous_transform_state; // 0x128
     int render_needs_update; // 0x144
     int is_editor_hidden; // 0x148

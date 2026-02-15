@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_script_cpp_CScript_saveToFile_FUN_00566180(CScript *this_ptr,char *filename)
+; void __cdecl core_script_cpp_CScript_saveToFile_FUN_00566180(CScript *this_ptr,char *filename)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr

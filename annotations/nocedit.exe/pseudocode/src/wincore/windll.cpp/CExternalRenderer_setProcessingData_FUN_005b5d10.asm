@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl wincore_windll_cpp_CExternalRenderer_setProcessingData_FUN_005b5d10(CExternalRenderer *this_ptr,char *other)
+; void __cdecl wincore_windll_cpp_CExternalRenderer_setProcessingData_FUN_005b5d10(CExternalRenderer *this_ptr,char *other)
 ;
 ; Parameters:
 ; CExternalRenderer * Stack[0x4]:4   this_ptr

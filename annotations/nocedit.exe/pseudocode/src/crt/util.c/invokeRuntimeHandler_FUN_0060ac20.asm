@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_util_c_invokeRuntimeHandler_FUN_0060ac20(RUNTIME_HANDLER_FUNC **ppHandler)
+; void __cdecl crt_util_c_invokeRuntimeHandler_FUN_0060ac20(RUNTIME_HANDLER_FUNC **ppHandler)
 ;
 ; Parameters:
 ; RUNTIME_HANDLER_FUNC * * Stack[0x4]:4   ppHandler

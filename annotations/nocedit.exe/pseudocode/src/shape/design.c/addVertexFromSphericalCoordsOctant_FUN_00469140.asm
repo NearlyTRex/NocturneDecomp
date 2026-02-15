@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_addVertexFromSphericalCoordsOctant_FUN_00469140(float heading_angle,float pitch_angle,float radius)
+; void __cdecl shape_design_c_addVertexFromSphericalCoordsOctant_FUN_00469140(float heading_angle,float pitch_angle,float radius)
 ;
 ; Parameters:
 ; float            Stack[0x4]:4   heading_angle

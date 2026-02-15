@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_exit_c_ExitProcess_FUN_00602700(int exit_code)
+; void __cdecl crt_exit_c_ExitProcess_FUN_00602700(int exit_code)
 ;
 ; Parameters:
 ; undefined4       Stack[0x0]:4   local_res0

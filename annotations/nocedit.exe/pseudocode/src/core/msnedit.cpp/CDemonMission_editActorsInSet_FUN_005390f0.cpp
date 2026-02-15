@@ -146,13 +146,13 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_clearInputAndWait_FUN_00403260();
   local_50 = this_ptr->first_actor;
-  if (0 < (int)g_CDemonSetPtr->actor_list_ptr) {
+  if (0 < g_CDemonSetPtr->actor_count) {
     iVar11 = 999999;
-    local_50 = *(CDemonActor **)g_CDemonSetPtr->actor_list_data;
+    local_50 = g_CDemonSetPtr->actors[0];
     iVar7 = 0;
-    for (iVar6 = 0; iVar6 < (int)g_CDemonSetPtr->actor_list_ptr; iVar6 = iVar6 + 1) {
+    for (iVar6 = 0; iVar6 < g_CDemonSetPtr->actor_count; iVar6 = iVar6 + 1) {
       pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c790
-                         (*(CDemonActor **)(g_CDemonSetPtr->actor_list_data + iVar7),
+                         (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar7),
                           g_CHeroPlaceholderClassInfo.name_hash);
       if ((pCVar5 != (CDemonActor *)0x0) && (*(int *)pCVar5[1].actor_name < iVar11)) {
         iVar11 = *(int *)pCVar5[1].actor_name;
@@ -355,24 +355,24 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
         if (this_ptr->full_light_in_editor == 0) {
           g_CDemonCameraInstance.corona_blend_factor = local_5c;
           g_CDemonSetPtr->lighting_quality_mode = 0;
-          pCVar16->unk_lighting_param1 = 0;
+          pCVar16->disable_spotlight_shadows = 0;
         }
         else {
           g_CDemonCameraInstance.corona_blend_factor = 0xffff;
           g_CDemonSetPtr->lighting_quality_mode = 1;
-          pCVar16->unk_lighting_param1 = 1;
+          pCVar16->disable_spotlight_shadows = 1;
         }
         pCVar16 = g_CDemonSetPtr;
-        g_CDemonSetPtr->unk_lighting_param3 = (uint)(this_ptr->render_sky_in_editor == 0);
-        pCVar16->unk_lighting_param4 = (uint)(this_ptr->render_water_in_editor == 0);
+        g_CDemonSetPtr->disable_water_rendering = (uint)(this_ptr->render_sky_in_editor == 0);
+        pCVar16->disable_sky_rendering = (uint)(this_ptr->render_water_in_editor == 0);
         core_set_cpp_CDemonSet_FUN_0056c1a0(pCVar16);
         core_set_cpp_CDemonSet_FUN_0056be80(g_CDemonSetPtr);
         core_dcamera_cpp_CDemonCamera_restoreZBufferRectArray_FUN_0044c860(&g_CDemonCameraInstance);
       }
       else {
         g_CDemonSetPtr->lighting_quality_mode = 1;
-        pCVar16->unk_lighting_param3 = 0;
-        pCVar16->unk_lighting_param4 = 0;
+        pCVar16->disable_water_rendering = 0;
+        pCVar16->disable_sky_rendering = 0;
         g_CDemonRaytraceInstance.rendering_mode = g_DynamicRenderMode;
         if (this_ptr->show_3d_viewport == 0) {
           wincore_windll_cpp_clearScreen_FUN_005b3e70();
@@ -491,7 +491,7 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
           local_14 = 4;
         }
         if (DAT_02f7c53c == 0) {
-          g_CEdCheckInstance.coord_unk = 0xff;
+          g_CEdCheckInstance.text_color_mode = 0xff;
           shape_edittool_cpp_CEdCheck_setupWithText_FUN_004a6a60
                     (&g_CEdCheckInstance,g_WindowWidth + -0x8c,0xf3,"Virtual Director");
           shape_edittool_cpp_CEdCheck_handleInput_FUN_004a6d20(&g_CEdCheckInstance);
@@ -729,9 +729,9 @@ LAB_00539e00:
       iVar11 = local_60;
       pCVar16 = g_CDemonSetPtr;
       g_CDemonSetPtr->lighting_quality_mode = 0;
-      pCVar16->unk_lighting_param1 = 0;
-      pCVar16->unk_lighting_param3 = 0;
-      pCVar16->unk_lighting_param4 = 0;
+      pCVar16->disable_spotlight_shadows = 0;
+      pCVar16->disable_water_rendering = 0;
+      pCVar16->disable_sky_rendering = 0;
       remove("$$UNDO$$.TMP");
       if (iVar11 == 0) {
         return 0;

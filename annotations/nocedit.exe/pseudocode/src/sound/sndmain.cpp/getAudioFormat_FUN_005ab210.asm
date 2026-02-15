@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_sndmain_cpp_getAudioFormat_FUN_005ab210(int *bits_per_sample,int *channels,int *sample_rate)
+; void __cdecl sound_sndmain_cpp_getAudioFormat_FUN_005ab210(int *bits_per_sample,int *channels,int *sample_rate)
 ;
 ; Parameters:
 ; int *            Stack[0x4]:4   bits_per_sample

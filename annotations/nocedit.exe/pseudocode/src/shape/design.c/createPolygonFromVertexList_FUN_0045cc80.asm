@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_createPolygonFromVertexList_FUN_0045cc80(void)
+; void __cdecl shape_design_c_createPolygonFromVertexList_FUN_0045cc80(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0xa8]:1  local_a8

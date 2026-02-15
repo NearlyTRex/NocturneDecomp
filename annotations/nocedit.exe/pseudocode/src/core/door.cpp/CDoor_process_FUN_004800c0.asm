@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr,float delta_time)
+; void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CDoor *          Stack[0x4]:4   this_ptr
@@ -19,8 +19,8 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CEventList g_CEventListInstance
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.damage_listener_count
-;   undefined4 g_CDemonSetInstance.damage_listeners
+;   undefined4 g_CDemonSetInstance.character_count
+;   undefined4 g_CDemonSetInstance.characters[0]
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
@@ -143,7 +143,7 @@ section .text
     MOV EAX,[0x006810c8]                ; 004801fa | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_004801fa
     MOV EDX,dword ptr [ESP + 0xb8]      ; 004801ff
-    CMP EDX,dword ptr [EAX + 0x14f098]  ; 00480206 | g_CDemonSetInstance.damage_listener_count
+    CMP EDX,dword ptr [EAX + 0x14f098]  ; 00480206 | g_CDemonSetInstance.character_count
     JL 0x00480446                       ; 0048020c
         ;   XREF to: 00480446 (CONDITIONAL_JUMP)  ; LAB_00480446
     CMP dword ptr [ESP + 0x7c],0x0      ; 00480212
@@ -310,7 +310,7 @@ section .text
     MOV dword ptr [ESP + 0xb8],EDX      ; 0048043a
     JMP 0x004801fa                      ; 00480441
         ;   XREF to: 004801fa (UNCONDITIONAL_JUMP)  ; LAB_004801fa
-    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14f09c] ; 00480446 | g_CDemonSetInstance.damage_listeners
+    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14f09c] ; 00480446 | g_CDemonSetInstance.characters[0]
         ;   Label: LAB_00480446
     MOV EAX,ESP                         ; 0048044d
     PUSH EAX                            ; 0048044f

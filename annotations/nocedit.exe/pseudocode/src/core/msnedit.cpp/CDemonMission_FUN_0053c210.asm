@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl char * __cdecl core_msnedit_cpp_CDemonMission_FUN_0053c210(CDemonMission *this_ptr,char *param_2,char *param_3)
+; char * __cdecl core_msnedit_cpp_CDemonMission_FUN_0053c210(CDemonMission *this_ptr,char *param_2,char *param_3)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr
@@ -19,8 +19,8 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CEditorTools g_CEditorToolsInstance
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.actor_list_ptr
-;   undefined4 g_CDemonSetInstance.actor_list_data[0]
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;   undefined4 DAT_032613d4
 ;
 ; Called Functions:
@@ -45,7 +45,7 @@ section .text
     SUB ESP,0x3a8                       ; 0053c213
     MOV EDI,dword ptr [ESP + 0x3c0]     ; 0053c219
     MOV EAX,[0x006810c8]                ; 0053c220 | g_CDemonSetInstance | g_CDemonSetPtr
-    CMP dword ptr [EAX + 0x14d154],0x1  ; 0053c225 | g_CDemonSetInstance.actor_list_ptr
+    CMP dword ptr [EAX + 0x14d154],0x1  ; 0053c225 | g_CDemonSetInstance.actor_count
     JL 0x0053c265                       ; 0053c22c
         ;   XREF to: 0053c265 (CONDITIONAL_JUMP)  ; LAB_0053c265
     MOV EAX,ESP                         ; 0053c22e
@@ -57,10 +57,10 @@ section .text
     ADD ESP,0x4                         ; 0053c23a
     MOV EAX,[0x006810c8]                ; 0053c23d | g_CDemonSetPtr
         ;   Label: LAB_0053c23d
-    CMP EBX,dword ptr [EAX + 0x14d154]  ; 0053c242 | g_CDemonSetInstance.actor_list_ptr
+    CMP EBX,dword ptr [EAX + 0x14d154]  ; 0053c242 | g_CDemonSetInstance.actor_count
     JGE 0x0053c287                      ; 0053c248
         ;   XREF to: 0053c287 (CONDITIONAL_JUMP)  ; LAB_0053c287
-    MOV EDX,dword ptr [ESI + EAX*0x1 + 0x14d158] ; 0053c24a | g_CDemonSetInstance.actor_list_data[0] | DAT_032613d4
+    MOV EDX,dword ptr [ESI + EAX*0x1 + 0x14d158] ; 0053c24a | g_CDemonSetInstance.actors[0] | DAT_032613d4
     PUSH EDX                            ; 0053c251
     LEA EAX,[ESP + 0x4]                 ; 0053c252
     PUSH EAX                            ; 0053c256

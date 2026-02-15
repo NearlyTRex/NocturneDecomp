@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_actor_cpp_randomChance_FUN_0040cd10(float probability_threshold)
+; int __cdecl core_actor_cpp_randomChance_FUN_0040cd10(float probability_threshold)
 ;
 ; Parameters:
 ; float            Stack[0x4]:4   probability_threshold

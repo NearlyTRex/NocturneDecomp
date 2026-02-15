@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallRegister double __watcallRegister crt_math_c_dmul_FUN_0060e0b9(double a,double b)
+; double __watcallRegister crt_math_c_dmul_FUN_0060e0b9(double a,double b)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x10]:8  local_10

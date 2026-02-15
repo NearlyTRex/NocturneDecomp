@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(CDemonRenderer *this_ptr,int state_flag)
+; void __cdecl engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(CDemonRenderer *this_ptr,int state_flag)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr

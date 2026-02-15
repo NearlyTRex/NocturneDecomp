@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl sound_sndmain_cpp_isRecordingSystemActive_FUN_005ab970(void)
+; int __cdecl sound_sndmain_cpp_isRecordingSystemActive_FUN_005ab970(void)
 ;
 ;
 ; XREF[3]:

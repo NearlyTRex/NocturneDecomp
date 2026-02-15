@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl double __cdecl shape_cramtex_cpp_calculateAtlasEfficiency_FUN_00447e80(void)
+; double __cdecl shape_cramtex_cpp_calculateAtlasEfficiency_FUN_00447e80(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20

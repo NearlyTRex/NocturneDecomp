@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __stk_probe void __stk_probe crt_stack_c_check_stack_target_FUN_005ffa03(void)
+; void __stk_probe crt_stack_c_check_stack_target_FUN_005ffa03(void)
 ;
 ;
 ; XREF[1]:

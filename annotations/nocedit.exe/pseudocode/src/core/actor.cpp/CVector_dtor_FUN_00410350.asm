@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVector3f * __cdecl core_actor_cpp_CVector_dtor_FUN_00410350(CVector3f *this_ptr,uint flags)
+; CVector3f * __cdecl core_actor_cpp_CVector_dtor_FUN_00410350(CVector3f *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   this_ptr

@@ -117,7 +117,7 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_004219e0(CBoxActor *this_pt
     fVar6 = this_ptr_00[2].previous_transform_state.position.x;
     fVar2 = this_ptr_00[2].previous_transform_state.position.y;
     fVar6 = SQRT(fVar2 * fVar2 +
-                 (float)this_ptr_00[2].unk12 * (float)this_ptr_00[2].unk12 + fVar6 * fVar6);
+                 (float)this_ptr_00[2].reserved2 * (float)this_ptr_00[2].reserved2 + fVar6 * fVar6);
     if ((float)3 < fVar6) {
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)auStack_d4);
       auStack_d4._4_4_ = fVar6 * this_ptr_00[2].platform_position_delta.x * 0.2f;

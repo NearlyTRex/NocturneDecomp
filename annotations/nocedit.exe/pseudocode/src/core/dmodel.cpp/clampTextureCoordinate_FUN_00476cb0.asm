@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dmodel_cpp_clampTextureCoordinate_FUN_00476cb0(float *value)
+; void __cdecl core_dmodel_cpp_clampTextureCoordinate_FUN_00476cb0(float *value)
 ;
 ; Parameters:
 ; float *          Stack[0x4]:4   value

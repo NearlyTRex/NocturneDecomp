@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_matrix_c_projectCachedPointUnchecked_FUN_0050ce60(int cache_index)
+; void __cdecl engine_matrix_c_projectCachedPointUnchecked_FUN_0050ce60(int cache_index)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   cache_index

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl shape_meshlod_cpp_calculateDistanceSquared_FUN_0051edf0(CVector3f *point1,CVector3f *point2)
+; float __cdecl shape_meshlod_cpp_calculateDistanceSquared_FUN_0051edf0(CVector3f *point1,CVector3f *point2)
 ;
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   point1

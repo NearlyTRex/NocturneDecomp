@@ -65,7 +65,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Preparing set.");
   core_set_cpp_CDemonSet_initScene_FUN_0056aa10(this_ptr);
-  this_ptr->actor_list_ptr = (void *)0x0;
+  this_ptr->actor_count = 0;
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_clearInputAndWait_FUN_00403260();
   core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)local_108);
@@ -75,9 +75,9 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
   local_28 = 40.0;
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   local_20 = this_ptr->rooms;
-  this_ptr->unk_lighting_param3 = 1;
-  this_ptr->unk_lighting_param4 = 1;
-  this_ptr->unk_lighting_param1 = 1;
+  this_ptr->disable_water_rendering = 1;
+  this_ptr->disable_sky_rendering = 1;
+  this_ptr->disable_spotlight_shadows = 1;
   local_1c = 0;
   local_40 = &this_ptr->room_reverb_type;
   do {
@@ -189,9 +189,9 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
     if (iVar6 != 0) {
       core_set_cpp_CDemonSet_FUN_0056d2d0(this_ptr);
       engine_2d_c_clearInputAndWait_FUN_00403260();
-      this_ptr->unk_lighting_param3 = 0;
-      this_ptr->unk_lighting_param4 = 0;
-      this_ptr->unk_lighting_param1 = 0;
+      this_ptr->disable_water_rendering = 0;
+      this_ptr->disable_sky_rendering = 0;
+      this_ptr->disable_spotlight_shadows = 0;
       return;
     }
     if (local_18 == (SRoom *)0x0) {
@@ -384,7 +384,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
           (local_18->extents).x = 10.0;
           (local_18->extents).y = 10.0;
           (local_18->extents).z = 10.0;
-          local_18->unk = DAT_03365cbc;
+          local_18->reverb_preset = DAT_03365cbc;
           this_ptr->room_count = this_ptr->room_count + 1;
         }
       }
@@ -425,9 +425,10 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
       shape_edittool_cpp_CStrList_add_FUN_004a2b80
                 ((CStrList *)&stack0xfffff374,"Humongous");
       iVar6 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                        ((CPickList *)&stack0xfffff374,"Choose room size",pSVar2->unk,0);
+                        ((CPickList *)&stack0xfffff374,"Choose room size",
+                         pSVar2->reverb_preset,0);
       if (-1 < iVar6) {
-        pSVar2->unk = iVar6;
+        pSVar2->reverb_preset = iVar6;
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff374,0);
     }

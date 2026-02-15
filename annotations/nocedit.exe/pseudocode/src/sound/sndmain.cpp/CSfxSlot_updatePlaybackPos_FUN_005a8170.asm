@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170(CSfxSlot *this_ptr,double hardware_playback_pos)
+; void __cdecl sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170(CSfxSlot *this_ptr,double hardware_playback_pos)
 ;
 ; Parameters:
 ; CSfxSlot *       Stack[0x4]:4   this_ptr

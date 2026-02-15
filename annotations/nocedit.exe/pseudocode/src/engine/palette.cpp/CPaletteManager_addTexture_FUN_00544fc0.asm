@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_palette_cpp_CPaletteManager_addTexture_FUN_00544fc0(void)
+; void __cdecl engine_palette_cpp_CPaletteManager_addTexture_FUN_00544fc0(void)
 ;
 ;
 ; XREF[1]:

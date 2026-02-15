@@ -12,6 +12,6 @@ int __cdecl core_beast_cpp_CBeast_hasCollision_FUN_00418400(CBeast *this_ptr,SCo
   if (collision_info->ray_type != 1) {
     return 0;
   }
-  collision_info->result_ptr = &(this_ptr->base).base.model;
+  collision_info->deformable_model = &(this_ptr->base).base.model;
   return 1;
 }

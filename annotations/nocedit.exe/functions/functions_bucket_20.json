@@ -37674,7 +37674,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_font.cpp_CBitFont_drawTextFV_FUN_004cdc20",
+    "name":"engine_font.cpp_CBitFont_drawTextF_FUN_004cdc20",
     "ret":"int",
     "variadic":true,
     "vars":{
@@ -37817,7 +37817,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_font.cpp_CBitFont_printfRight_FUN_004cdd20",
+    "name":"engine_font.cpp_CBitFont_printF_FUN_004cdd20",
     "ret":"void",
     "variadic":true,
     "vars":{
@@ -37889,7 +37889,7 @@
           "type":"int"
         },
         {
-          "name":"color",
+          "name":"color_mode",
           "storage":{
             "offset":16,
             "size":4,
@@ -37905,7 +37905,7 @@
           "type":"int"
         },
         {
-          "name":"format",
+          "name":"color_value",
           "storage":{
             "offset":20,
             "size":4,
@@ -37914,6 +37914,22 @@
               {
                 "addr":"Stack[0x14]",
                 "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"format",
+          "storage":{
+            "offset":24,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x18]",
+                "offset":24,
                 "size":4
               }
             ]
@@ -37934,7 +37950,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_font.cpp_CBitFont_drawTextCenterFV_FUN_004cde20",
+    "name":"engine_font.cpp_CBitFont_drawTextCenterF_FUN_004cde20",
     "ret":"int",
     "variadic":true,
     "vars":{
@@ -37953,7 +37969,7 @@
               }
             ]
           },
-          "type":"undefined4"
+          "type":"va_list_t"
         }
       ],
       "params":[
@@ -77419,6 +77435,38 @@
     "name":"core_stranger.cpp_CStranger_ctor_FUN_005bb120",
     "ret":"CStranger*",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar5",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CStranger*",
+          "use":8
+        },
+        {
+          "name":"pCVar6",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CStranger_ptr_130264",
+          "use":22
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dtrace_cpp_CDemonRaytrace_renderGridCube_FUN_00496e70(CDemonRaytrace *this_ptr,CVector3f *world_pos)
+; void __cdecl core_dtrace_cpp_CDemonRaytrace_renderGridCube_FUN_00496e70(CDemonRaytrace *this_ptr,CVector3f *world_pos)
 ;
 ; Parameters:
 ; CDemonRaytrace * Stack[0x4]:4   this_ptr

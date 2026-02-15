@@ -29,10 +29,10 @@ void __cdecl core_waypoint_cpp_CWayPoint_FUN_005ec4f0(CWayPoint *this_ptr)
   core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(g_CDemonMissionPtr);
   this_ptr->num_adjacent_waypoints = 0;
   do {
-    if (*(int *)(g_CDemonSetPtr->unk4 + 0x5dc4) <= iVar4) {
+    if (g_CDemonSetPtr->waypoint_count <= iVar4) {
       return;
     }
-    pCVar3 = *(CWayPoint **)(g_CDemonSetPtr->unk4 + iVar2 + 0x5dc8);
+    pCVar3 = *(CWayPoint **)((int)g_CDemonSetPtr->waypoints + iVar2);
     if ((pCVar3 != this_ptr) && (pCVar3->num_adjacent_waypoints < 0x3c)) {
       iVar1 = core_waypoint_cpp_CWayPoint_FUN_005ebd40((CWayPoint *)&(this_ptr->base).base.location)
       ;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_createRotationalSweepGeometry_FUN_0045e070(void)
+; void __cdecl shape_design_c_createRotationalSweepGeometry_FUN_0045e070(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0xc4]:1  local_c4

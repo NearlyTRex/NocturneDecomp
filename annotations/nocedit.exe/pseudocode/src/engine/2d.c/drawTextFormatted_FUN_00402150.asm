@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_2d_c_drawTextFormatted_FUN_00402150(int x,int y,char *format_string,...)
+; void __cdecl engine_2d_c_drawTextFormatted_FUN_00402150(int x,int y,char *format_string,...)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   x

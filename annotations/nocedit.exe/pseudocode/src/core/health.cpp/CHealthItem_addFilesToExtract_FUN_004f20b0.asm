@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_health_cpp_CHealthItem_addFilesToExtract_FUN_004f20b0(CHealthItem *this_ptr,_FILE *file_handle)
+; void __cdecl core_health_cpp_CHealthItem_addFilesToExtract_FUN_004f20b0(CHealthItem *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CHealthItem *    Stack[0x4]:4   this_ptr

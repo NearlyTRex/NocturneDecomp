@@ -42,7 +42,7 @@ void __cdecl core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(CDemonSet *this_ptr,ch
   _fprintf(file,"unused.act\n");
   _fprintf(file,"%s\n");
   _fprintf(file,"%f\n",(double)this_ptr->min_ambient_value);
-  core_dcamera_cpp_saveCameraFog_FUN_00453f10((SFog *)(this_ptr->unk4 + 0xbb90),file);
+  core_dcamera_cpp_saveCameraFog_FUN_00453f10(&this_ptr->scene_fog,file);
   _fprintf(file,"waterHeight,waterTileSize\n");
   _fprintf(file,"%f,%f\n",(double)g_CWaterPtr->water_level_y,(double)g_CWaterPtr->tile_size);
   _fprintf(file,"useEnviroModel,enviroModelName\n");

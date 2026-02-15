@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_stdlib_c_charToDigit_FUN_0060ee18(char ch)
+; int __cdecl crt_stdlib_c_charToDigit_FUN_0060ee18(char ch)
 ;
 ; Parameters:
 ; char             Stack[0x4]:1   ch

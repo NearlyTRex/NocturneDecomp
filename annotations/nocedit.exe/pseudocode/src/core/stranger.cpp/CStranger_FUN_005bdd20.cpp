@@ -138,7 +138,7 @@ LAB_005be41a:
               }
               if (iVar2 == 2) {
                 if (this_ptr->action_pending != 0) {
-                  in_stack_ffffff48 = &g_CEditorToolsPtr->unk;
+                  in_stack_ffffff48 = &g_CEditorToolsPtr->unused;
                   shape_edittool_cpp_CEditorTools_showWarning_FUN_0049e6f0
                             (g_CEditorToolsPtr,"actionPending = %d\nstranger.cpp line %d");
                 }

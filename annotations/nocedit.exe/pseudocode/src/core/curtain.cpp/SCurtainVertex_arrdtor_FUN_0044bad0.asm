@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SCurtainVertex * __cdecl core_curtain_cpp_SCurtainVertex_arrdtor_FUN_0044bad0(SCurtainVertex *objs,uint flags)
+; SCurtainVertex * __cdecl core_curtain_cpp_SCurtainVertex_arrdtor_FUN_0044bad0(SCurtainVertex *objs,uint flags)
 ;
 ; Parameters:
 ; SCurtainVertex * Stack[0x4]:4   objs

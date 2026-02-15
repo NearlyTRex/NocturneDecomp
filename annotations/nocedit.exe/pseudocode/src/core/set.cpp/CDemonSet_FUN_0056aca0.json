@@ -1,48 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 28,
-        "line": 33,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 35,
-        "line": 33,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 47,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 18,
-        "line": 47,
-        "message": "expected expression"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 121,
-    "complexity_score": 120,
+    "complexity_score": 90,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 5,
-    "pseudocode_lines": 45,
-    "suspect_count": 6,
+    "pseudocode_lines": 40,
+    "suspect_count": 4,
     "suspect_types": [
       "param_count_too_few",
-      "stack_param",
-      "unresolved_funcptr"
+      "stack_param"
     ],
-    "total_lines": 166
+    "total_lines": 161
   },
   "cross_references": [
     {
@@ -266,36 +240,22 @@
       "description": "Unresolved stack parameter",
       "line": 9,
       "match": "in_stack_00000008",
-      "text": "uint in_stack_00000008;",
+      "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 14,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008 = 0;",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 26,
-      "match": "code *",
-      "text": "puVar2 = (uint *)(**(code **)(*(int *)(iVar1 + 0x154) + 0x14))(iVar1,auStack_40);",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 40,
+      "line": 35,
       "match": "in_stack_00000008",
-      "text": "(**(code **)(*(int *)(iVar1 + 0x154) + 0x10))(iVar1,in_stack_00000008);",
+      "text": "(*((this_ptr_00->vtable)._ub)->renderBackground)(this_ptr_00,in_stack_00000008);",
       "type": "stack_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 40,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(iVar1 + 0x154) + 0x10))(iVar1,in_stack_00000008);",
-      "type": "unresolved_funcptr"
     },
     {
       "call_site_count": 8,

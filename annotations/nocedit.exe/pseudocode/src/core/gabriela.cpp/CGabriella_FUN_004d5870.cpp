@@ -72,8 +72,8 @@ int __cdecl core_gabriela_cpp_CGabriella_FUN_004d5870(CGabriella *this_ptr)
   iVar5 = 0;
   local_24 = 4.0;
   local_2c = &(this_ptr->base).base.base.location.position;
-  for (local_18 = 0; local_18 < (int)g_CDemonSetPtr->actor_list_ptr; local_18 = local_18 + 1) {
-    pCVar1 = *(CDemonActor **)(g_CDemonSetPtr->actor_list_data + iVar5);
+  for (local_18 = 0; local_18 < g_CDemonSetPtr->actor_count; local_18 = local_18 + 1) {
+    pCVar1 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar5);
     pCVar4 = (*((pCVar1->vtable)._ub)->getCarrier)(pCVar1);
     if (pCVar4 == (CDemonActor *)0x0) {
       uStack_20 = (*((pCVar1->vtable)._ub)->canPickup)(pCVar1,(CDemonActor *)this_ptr);

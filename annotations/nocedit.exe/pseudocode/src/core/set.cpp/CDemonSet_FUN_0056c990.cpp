@@ -44,7 +44,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c990(CDemonSet *this_ptr)
   core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CMatrix3x3f *)matrix,&local_38);
   local_20.z = 0.0;
   local_20.x = local_38.x + (float)0.261799387791667;
-  g_CDemonLightInstance.unk2 = 0;
+  g_CDemonLightInstance.volumetric_enabled = 0;
   local_20.y = local_38.y + (this_ptr_00->base).base.orient.vec.y;
   if ((int *)&stack0x00000000 != &g_CDemonLightInstance.base.base.rotation_matrix.m[2].z) {
     g_CDemonLightInstance.base.base.position.x = (int)local_2c.x;
@@ -75,14 +75,14 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c990(CDemonSet *this_ptr)
     iVar3 = 0;
     core_set_cpp_CDemonSet_FUN_0056fbd0(this_ptr);
     pCVar5 = this_ptr;
-    if (0 < *(int *)this_ptr->unk13) {
+    if (0 < this_ptr->sorted_render_actor_count) {
       do {
-        (**(code **)(*(int *)(*(int *)(pCVar5->unk13 + 4) + 0x154) + 8))
-                  (*(int *)(pCVar5->unk13 + 4));
+        (*((pCVar5->sorted_render_actors[0]->vtable)._ub)->renderOpaque)
+                  (pCVar5->sorted_render_actors[0]);
         iVar3 = iVar3 + 1;
         engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr2,1);
         pCVar5 = (CDemonSet *)pCVar5->cameras;
-      } while (iVar3 < *(int *)this_ptr->unk13);
+      } while (iVar3 < this_ptr->sorted_render_actor_count);
     }
     core_gore_cpp_CGore_FUN_004ed7b0(g_CGorePtr);
     core_fire_cpp_CFireEffect_render_FUN_004c7180(g_CFireEffectPtr);

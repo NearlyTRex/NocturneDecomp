@@ -20,7 +20,7 @@ int __cdecl core_svetlana_cpp_CSvetlana_renderOpaque_FUN_005d9bc0(CSvetlana *thi
   int local_84 [30];
   CSvetlana *pCVar6;
   
-  g_CDemonSetPtr->unk5 = 1;
+  g_CDemonSetPtr->skip_normal_normalization = 1;
   iVar4 = 0;
   pCVar5 = this_ptr;
   do {
@@ -59,7 +59,7 @@ int __cdecl core_svetlana_cpp_CSvetlana_renderOpaque_FUN_005d9bc0(CSvetlana *thi
       pCVar5 = (CSvetlana *)((pCVar5->base).base.base.actor_name + 4);
     } while (iVar3 < 0x1e);
   }
-  g_CDemonSetPtr->unk5 = 0;
+  g_CDemonSetPtr->skip_normal_normalization = 0;
   if (iVar4 != 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
     core_cloth_cpp_CCloth_render_FUN_0043bae0(&this_ptr->cape_cloth,0);

@@ -31,13 +31,14 @@
   },
   "complexity": {
     "assembly_lines": 420,
-    "complexity_score": 316,
+    "complexity_score": 331,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 13,
     "pseudocode_lines": 176,
-    "suspect_count": 13,
+    "suspect_count": 14,
     "suspect_types": [
+      "pointer_cast",
       "stack_param",
       "unresolved_funcptr"
     ],
@@ -169,13 +170,13 @@
     },
     {
       "addr": "032613cc",
-      "name": "g_CDemonSetInstance.actor_list_ptr",
+      "name": "g_CDemonSetInstance.actor_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "032613d0",
-      "name": "g_CDemonSetInstance.actor_list_data[0]",
+      "name": "g_CDemonSetInstance.actors[0]",
       "type": "undefined4",
       "value": null
     },
@@ -388,6 +389,13 @@
       "match": "in_stack_0000000c",
       "text": "if ((this_ptr->weapon_state_flags == 0) || (in_stack_0000000c != 0)) {",
       "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 52,
+      "match": "(uint *)((int)",
+      "text": "uVar1 = *(uint *)((int)g_CDemonSetPtr->actors + iVar5);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",

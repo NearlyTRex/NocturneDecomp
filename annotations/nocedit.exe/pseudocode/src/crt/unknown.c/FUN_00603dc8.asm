@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_unknown_c_FUN_00603dc8(void)
+; void __cdecl crt_unknown_c_FUN_00603dc8(void)
 ;
 ; Local Variables:
 ; undefined2       Stack[-0xa4]:2  local_a4

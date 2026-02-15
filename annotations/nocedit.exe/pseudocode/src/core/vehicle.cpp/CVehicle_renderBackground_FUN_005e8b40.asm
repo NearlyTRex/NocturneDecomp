@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_vehicle_cpp_CVehicle_renderBackground_FUN_005e8b40(CVehicle *this_ptr,int layer_flag)
+; void __cdecl core_vehicle_cpp_CVehicle_renderBackground_FUN_005e8b40(CVehicle *this_ptr,int layer_flag)
 ;
 ; Parameters:
 ; CVehicle *       Stack[0x4]:4   this_ptr

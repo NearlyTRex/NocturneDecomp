@@ -16,7 +16,7 @@ int __cdecl core_vampboss_cpp_CVampireBoss_hasCollision_FUN_005e75f0(CVampireBos
     if (iVar1 < 2) {
       if (((collision_info->ray_type == 1) || (collision_info->ray_type == 3)) &&
          (this_ptr->form == 2)) {
-        collision_info->result_ptr = &this_ptr->model;
+        collision_info->deformable_model = &this_ptr->model;
         return 1;
       }
       iVar1 = core_charactr_cpp_CCharacter_hasCollision_FUN_0042bc20

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_flamecan_cpp_CFlameCan_getPropertyList_FUN_004cb6e0(CFlameCan *this_ptr,CActorPropertyList *property_list)
+; void __cdecl core_flamecan_cpp_CFlameCan_getPropertyList_FUN_004cb6e0(CFlameCan *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CFlameCan *      Stack[0x4]:4   this_ptr

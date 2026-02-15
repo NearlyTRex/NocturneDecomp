@@ -84,8 +84,8 @@ int __cdecl core_charactr_cpp_CCharacter_propertyActionCallback_FUN_0042f3e0(CCh
     iVar8 = 0;
     local_14 = 0;
     while( true ) {
-      if ((int)g_CDemonSetPtr->actor_list_ptr <= iVar7) break;
-      pCVar6 = *(CCharacter **)(g_CDemonSetPtr->actor_list_data + iVar8);
+      if (g_CDemonSetPtr->actor_count <= iVar7) break;
+      pCVar6 = *(CCharacter **)((int)g_CDemonSetPtr->actors + iVar8);
       if (pCVar6 == this_ptr_00) {
 LAB_0042f571:
         iVar7 = iVar7 + 1;

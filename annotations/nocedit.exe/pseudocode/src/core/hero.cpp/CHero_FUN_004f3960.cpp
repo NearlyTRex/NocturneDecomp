@@ -27,8 +27,8 @@ float __cdecl core_hero_cpp_CHero_FUN_004f3960(CHero *this_ptr)
   iVar3 = 0;
   local_14 = &(this_ptr->base).base.location;
   local_1c = (CCharacter *)0x0;
-  for (iVar4 = 0; iVar4 < *(int *)(g_CDemonSetPtr->unk4 + 0x1f3c); iVar4 = iVar4 + 1) {
-    this_ptr_00 = *(CCharacter **)(g_CDemonSetPtr->unk4 + iVar3 + 8000);
+  for (iVar4 = 0; iVar4 < g_CDemonSetPtr->enemy_count; iVar4 = iVar4 + 1) {
+    this_ptr_00 = *(CCharacter **)((int)g_CDemonSetPtr->enemies + iVar3);
     pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790
                        (&this_ptr_00->base,g_CVehicleClassInfo.name_hash);
     if (pCVar1 == (CDemonActor *)0x0) {

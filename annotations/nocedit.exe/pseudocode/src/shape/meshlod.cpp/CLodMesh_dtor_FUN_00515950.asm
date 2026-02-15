@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CLodMesh * __cdecl shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(CLodMesh *this_ptr,uint flags)
+; CLodMesh * __cdecl shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(CLodMesh *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr

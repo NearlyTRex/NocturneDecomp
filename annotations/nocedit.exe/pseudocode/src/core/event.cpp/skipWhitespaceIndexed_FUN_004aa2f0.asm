@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int * __cdecl core_event_cpp_skipWhitespaceIndexed_FUN_004aa2f0(char *expression,int *parse_position)
+; int * __cdecl core_event_cpp_skipWhitespaceIndexed_FUN_004aa2f0(char *expression,int *parse_position)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   expression

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void * __cdecl crt_memory_c_memset_FUN_005fde40(void *dest,int value,ulong count)
+; void * __cdecl crt_memory_c_memset_FUN_005fde40(void *dest,int value,ulong count)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   dest

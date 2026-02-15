@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl support_codec_cpp_readByteWithCount_FUN_0043e4c0(_FILE *file,int *remaining_count)
+; int __cdecl support_codec_cpp_readByteWithCount_FUN_0043e4c0(_FILE *file,int *remaining_count)
 ;
 ; Parameters:
 ; _FILE *          Stack[0x4]:4   file

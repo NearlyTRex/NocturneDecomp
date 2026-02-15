@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_chain_cpp_CChain_addFilesToExtract_FUN_00431250(CChain *this_ptr,_FILE *file_handle)
+; void __cdecl core_chain_cpp_CChain_addFilesToExtract_FUN_00431250(CChain *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CChain *         Stack[0x4]:4   this_ptr

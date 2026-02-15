@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_00572800(CDemonSet *this_ptr,CVector3f *start_pos,CVector3f *direction)
+; float __cdecl core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_00572800(CDemonSet *this_ptr,CVector3f *start_pos,CVector3f *direction)
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr

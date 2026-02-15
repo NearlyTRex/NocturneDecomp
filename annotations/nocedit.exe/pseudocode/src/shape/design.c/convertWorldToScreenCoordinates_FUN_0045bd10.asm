@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __stack_esi SVertexData * __stack_esi shape_design_c_convertWorldToScreenCoordinates_FUN_0045bd10(SScreenCoord *input_coords,SVertexData *output_vertex)
+; SVertexData * __stack_esi shape_design_c_convertWorldToScreenCoordinates_FUN_0045bd10(SScreenCoord *input_coords,SVertexData *output_vertex)
 ;
 ; Parameters:
 ; SScreenCoord *   Stack[0x4]:4   input_coords

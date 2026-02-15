@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SPanel * __cdecl core_manpuz_cpp_SPanel_arrdtor_FUN_0050ba90(SPanel *objs,uint flags)
+; SPanel * __cdecl core_manpuz_cpp_SPanel_arrdtor_FUN_0050ba90(SPanel *objs,uint flags)
 ;
 ; Parameters:
 ; SPanel *         Stack[0x4]:4   objs

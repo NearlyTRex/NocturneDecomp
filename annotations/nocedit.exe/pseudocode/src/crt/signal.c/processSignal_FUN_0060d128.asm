@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int __watcallStack crt_signal_c_processSignal_FUN_0060d128(int signal_number)
+; int __watcallStack crt_signal_c_processSignal_FUN_0060d128(int signal_number)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   signal_number

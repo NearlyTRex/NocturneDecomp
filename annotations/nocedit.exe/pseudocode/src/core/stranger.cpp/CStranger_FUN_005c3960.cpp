@@ -172,17 +172,16 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c3960(CStranger *this_ptr)
     core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0(&CStack_128,&CStack_d0,&CStack_ac);
     fStack_20 = 1e+30;
     iStack_3c = 0;
-    for (iStack_40 = 0; iStack_40 < *(int *)(g_CDemonSetPtr->unk4 + 16000);
-        iStack_40 = iStack_40 + 1) {
+    for (iStack_40 = 0; iStack_40 < g_CDemonSetPtr->threat_count; iStack_40 = iStack_40 + 1) {
       pCVar7 = (CCharacter *)
                core_actor_cpp_castToClassHash_FUN_0040c790
-                         (*(CDemonActor **)(g_CDemonSetPtr->unk4 + iStack_3c + 0x3e84),
+                         (*(CDemonActor **)((int)g_CDemonSetPtr->threats + iStack_3c),
                           g_CCharacterClassInfo.name_hash);
       if ((pCVar7 == (CCharacter *)0x0) ||
          ((iVar8 = (*(((pCVar7->base).vtable._uc)->_uc).getDeathState)(pCVar7), iVar8 == 0 &&
           (iVar8 = (*((pCVar7->base).vtable._ub)->shouldIgnoreForTargeting)((CDemonActor *)pCVar7),
           iVar8 == 0)))) {
-        pCStack_1c = *(CDemonActor **)(g_CDemonSetPtr->unk4 + iStack_3c + 0x3e84);
+        pCStack_1c = *(CDemonActor **)((int)g_CDemonSetPtr->threats + iStack_3c);
         __arrinit(aCStack_1a0,10,&g_CVectorTypeInfo);
         iStack_28 = (*((pCStack_1c->vtable)._ub)->getTargetPoints)(pCStack_1c,aCStack_1a0);
         if ((0 < iStack_28) && (iVar8 = 0, 0 < iStack_28)) {

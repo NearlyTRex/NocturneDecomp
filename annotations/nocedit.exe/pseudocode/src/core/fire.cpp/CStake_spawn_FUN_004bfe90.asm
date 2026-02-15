@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_fire_cpp_CStake_spawn_FUN_004bfe90(CStake *this_ptr,float spawn_scale,CVector3f *orientation_angles,CVector3f *launch_direction,CVector3f *spawn_position,CVector3f *spawn_velocity)
+; void __cdecl core_fire_cpp_CStake_spawn_FUN_004bfe90(CStake *this_ptr,float spawn_scale,CVector3f *orientation_angles,CVector3f *launch_direction,CVector3f *spawn_position,CVector3f *spawn_velocity)
 ;
 ; Parameters:
 ; CStake *         Stack[0x4]:4   this_ptr

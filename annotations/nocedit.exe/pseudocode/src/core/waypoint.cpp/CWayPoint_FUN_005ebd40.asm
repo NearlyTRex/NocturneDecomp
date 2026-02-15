@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_waypoint_cpp_CWayPoint_FUN_005ebd40(CWayPoint *this_ptr)
+; int __cdecl core_waypoint_cpp_CWayPoint_FUN_005ebd40(CWayPoint *this_ptr)
 ;
 ; Parameters:
 ; CWayPoint *      Stack[0x4]:4   this_ptr
@@ -118,7 +118,7 @@ section .text
     PUSH ECX                            ; 005ebdfb
     MOV dword ptr [ESP + 0x24],EAX      ; 005ebdfc
     CALL core_path.cpp_FUN_00548500     ; 005ebe00
-        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_FUN_00548500()
+        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_FUN_00548500(CLocation * location)
     ADD ESP,0x4                         ; 005ebe05
     PUSH 0x0                            ; 005ebe08
     LEA EDX,[ESP + 0x4]                 ; 005ebe0a

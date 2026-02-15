@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SRenderVertex * __cdecl engine_clipper_c_allocateClipVertex_FUN_00435980(void)
+; SRenderVertex * __cdecl engine_clipper_c_allocateClipVertex_FUN_00435980(void)
 ;
 ;
 ; Referenced Globals:

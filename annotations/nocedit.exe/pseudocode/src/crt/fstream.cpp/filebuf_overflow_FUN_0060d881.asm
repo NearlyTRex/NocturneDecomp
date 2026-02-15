@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int __watcallStack crt_fstream_cpp_filebuf_overflow_FUN_0060d881(filebuf *this_ptr,int character)
+; int __watcallStack crt_fstream_cpp_filebuf_overflow_FUN_0060d881(filebuf *this_ptr,int character)
 ;
 ; Parameters:
 ; filebuf *        Stack[0x4]:4   this_ptr

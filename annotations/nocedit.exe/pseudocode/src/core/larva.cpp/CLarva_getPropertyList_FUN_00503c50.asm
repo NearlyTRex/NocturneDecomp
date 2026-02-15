@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_larva_cpp_CLarva_getPropertyList_FUN_00503c50(CLarva *this_ptr,CActorPropertyList *property_list)
+; void __cdecl core_larva_cpp_CLarva_getPropertyList_FUN_00503c50(CLarva *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CLarva *         Stack[0x4]:4   this_ptr

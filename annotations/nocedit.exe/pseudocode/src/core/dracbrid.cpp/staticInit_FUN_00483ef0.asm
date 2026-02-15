@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dracbrid_cpp_staticInit_FUN_00483ef0(void)
+; void __cdecl core_dracbrid_cpp_staticInit_FUN_00483ef0(void)
 ;
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CDraculaBride_00621846
 ;   WatcomTypeInfo g_SFreakyTypeInfo
-;   WatcomStaticDestructorNode DAT_006703a0
+;   WatcomStaticDestructorNode WatcomStaticDestructorNode_006703a0
 ;   int g_CDraculaBrideClassVersion = 0x9
 ;   float FLOAT_02c6d040
 ;   float FLOAT_02c6d044
@@ -61,7 +61,7 @@ section .text
     CALL crt_memory.c___arrinit_FUN_005fe667 ; 00483f66
         ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00483f6b
-    PUSH 0x6703a0                       ; 00483f6e | DAT_006703a0
+    PUSH 0x6703a0                       ; 00483f6e | WatcomStaticDestructorNode_006703a0
     CALL crt_stdlib.c__atexit_FUN_005ff060 ; 00483f73
         ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 00483f78

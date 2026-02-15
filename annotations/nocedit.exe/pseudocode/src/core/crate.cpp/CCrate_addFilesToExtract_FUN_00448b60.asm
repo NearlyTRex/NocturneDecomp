@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_crate_cpp_CCrate_addFilesToExtract_FUN_00448b60(CCrate *this_ptr,_FILE *file_handle)
+; void __cdecl core_crate_cpp_CCrate_addFilesToExtract_FUN_00448b60(CCrate *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CCrate *         Stack[0x4]:4   this_ptr

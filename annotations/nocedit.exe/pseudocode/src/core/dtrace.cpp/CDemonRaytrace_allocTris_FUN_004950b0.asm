@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dtrace_cpp_CDemonRaytrace_allocTris_FUN_004950b0(CDemonRaytrace *this_ptr)
+; void __cdecl core_dtrace_cpp_CDemonRaytrace_allocTris_FUN_004950b0(CDemonRaytrace *this_ptr)
 ;
 ; Parameters:
 ; CDemonRaytrace * Stack[0x4]:4   this_ptr

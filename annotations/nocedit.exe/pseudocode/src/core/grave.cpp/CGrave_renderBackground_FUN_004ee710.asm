@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_grave_cpp_CGrave_renderBackground_FUN_004ee710(CGrave *this_ptr,int layer_flag)
+; void __cdecl core_grave_cpp_CGrave_renderBackground_FUN_004ee710(CGrave *this_ptr,int layer_flag)
 ;
 ; Parameters:
 ; CGrave *         Stack[0x4]:4   this_ptr

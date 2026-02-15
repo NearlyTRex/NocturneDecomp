@@ -27,7 +27,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053c4f0(CDemonMission *this_ptr
   if ((DAT_02f79818 & 1) == 0) {
     DAT_02f79818 = DAT_02f79818 | 1;
     shape_edittool_cpp_CEdScrollBar_ctor_FUN_004a5ae0(&DAT_02f797e4);
-    _atexit(&DAT_0068064c);
+    _atexit(&WatcomStaticDestructorNode_0068064c);
   }
   iVar1 = g_WindowWidth;
   if (this_ptr->show_3d_viewport != 0) {

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CDemonActorType * __cdecl core_crate_cpp_CCrate_getActorType_FUN_004484c0(CCrate *this_ptr)
+; CDemonActorType * __cdecl core_crate_cpp_CCrate_getActorType_FUN_004484c0(CCrate *this_ptr)
 ;
 ; Parameters:
 ; CCrate *         Stack[0x4]:4   this_ptr

@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 42,
-    "complexity_score": 77,
+    "complexity_score": 38,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 12,
-    "pseudocode_lines": 12,
-    "suspect_count": 6,
+    "pseudocode_lines": 13,
+    "suspect_count": 2,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 54
+    "total_lines": 55
   },
   "cross_references": [],
   "function": {
@@ -80,13 +80,13 @@
     },
     {
       "addr": "0067b980",
-      "name": "DAT_0067b980",
+      "name": "WatcomStaticDestructorNode_0067b980",
       "type": "WatcomStaticDestructorNode",
       "value": null
     },
     {
       "addr": "0067b990",
-      "name": "DAT_0067b990",
+      "name": "WatcomStaticDestructorNode_0067b990",
       "type": "WatcomStaticDestructorNode",
       "value": null
     },
@@ -98,7 +98,7 @@
     },
     {
       "addr": "02d833d4",
-      "name": "DAT_02d833d4",
+      "name": "CBloodParticle_ARRAY_02d833d4",
       "type": "CBloodParticle[256]",
       "value": null
     },
@@ -116,7 +116,7 @@
     },
     {
       "addr": "02da8c2c",
-      "name": "DAT_02da8c2c",
+      "name": "CFootstep_ARRAY_02da8c2c",
       "type": "CFootstep[1000]",
       "value": null
     }
@@ -159,44 +159,16 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_02d833d4",
-      "text": "__arrinit(DAT_02d833d4,0x100,&g_CBloodParticleTypeInfo);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 8,
-      "match": "DAT_0067b980",
-      "text": "_atexit(&DAT_0067b980);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
+      "line": 10,
       "match": "DAT_02d873dc",
       "text": "__arrinit(DAT_02d873dc,2000,&g_CBloodSplatTypeInfo);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 10,
+      "line": 11,
       "match": "DAT_02da8724",
       "text": "__arrinit(DAT_02da8724,0x20,&g_CBloodPoolTypeInfo);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_02da8c2c",
-      "text": "__arrinit(DAT_02da8c2c,1000,&g_CFootstepTypeInfo);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_0067b990",
-      "text": "_atexit(&DAT_0067b990);",
       "type": "undefined_data"
     }
   ]

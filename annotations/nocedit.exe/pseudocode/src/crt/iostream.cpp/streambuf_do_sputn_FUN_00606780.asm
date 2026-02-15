@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int __watcallStack crt_iostream_cpp_streambuf_do_sputn_FUN_00606780(streambuf *buffer,void *input_buffer,SIZE_T bytes_to_write)
+; int __watcallStack crt_iostream_cpp_streambuf_do_sputn_FUN_00606780(streambuf *buffer,void *input_buffer,SIZE_T bytes_to_write)
 ;
 ; Parameters:
 ; streambuf *      Stack[0x4]:4   buffer

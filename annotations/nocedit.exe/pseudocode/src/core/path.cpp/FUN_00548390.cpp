@@ -2,11 +2,11 @@
 // Address: 00548390
 // Address Range: [[00548390, 005484fa]]
 // Convention: __cdecl
-// Signature: CPathMap * __cdecl core_path_cpp_FUN_00548390(void)
+// Signature: CPathMap * __cdecl core_path_cpp_FUN_00548390(CLocation *location)
 
 #include "nocturne.h"
 
-CPathMap * __cdecl core_path_cpp_FUN_00548390(void)
+CPathMap * __cdecl core_path_cpp_FUN_00548390(CLocation *location)
 
 {
   int iVar1;
@@ -15,7 +15,6 @@ CPathMap * __cdecl core_path_cpp_FUN_00548390(void)
   int iVar4;
   int iVar5;
   byte bVar6;
-  CVector3f *in_stack_00000004;
   int aiStackY_101c [1015];
   CVector3i *in_stack_ffffffcc;
   CVector3f local_28;
@@ -25,8 +24,8 @@ CPathMap * __cdecl core_path_cpp_FUN_00548390(void)
   bVar6 = 0;
   if ((DAT_030c3ab0 & 1) == 0) {
     DAT_030c3ab0 = DAT_030c3ab0 | 1;
-    __arrinit(DAT_02fd9060,0xc,&g_CPathMapTypeInfo);
-    _atexit(&DAT_00680bc8);
+    __arrinit(CPathMap_ARRAY_02fd9060,0xc,&g_CPathMapTypeInfo);
+    _atexit(&WatcomStaticDestructorNode_00680bc8);
   }
   if (DAT_00680bd8 < 0) {
     iVar2 = 0;
@@ -39,7 +38,7 @@ CPathMap * __cdecl core_path_cpp_FUN_00548390(void)
   }
   iVar4 = 0;
   core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880
-            (&g_CDemonRaytraceInstance,in_stack_00000004,in_stack_ffffffcc);
+            (&g_CDemonRaytraceInstance,&location->position,in_stack_ffffffcc);
   iVar2 = 0;
   local_1c = in_stack_ffffffcc;
   local_18[(uint)bVar6 * -2] = *(int *)(&stack0xffffffd0 + (uint)bVar6 * -8);
@@ -48,10 +47,12 @@ CPathMap * __cdecl core_path_cpp_FUN_00548390(void)
   iVar3 = 0;
   iVar1 = 0;
   do {
-    if (((local_1c == *(CVector3i **)((int)&DAT_02fd9060[0].cached_voxel_coords.x + iVar3)) &&
-        (local_18[0] == *(int *)((int)&DAT_02fd9060[0].cached_voxel_coords.y + iVar3))) &&
-       (iVar5 = iVar2, local_18[1] == *(int *)((int)&DAT_02fd9060[0].cached_voxel_coords.z + iVar3))
-       ) break;
+    if (((local_1c ==
+          *(CVector3i **)((int)&CPathMap_ARRAY_02fd9060[0].cached_voxel_coords.x + iVar3)) &&
+        (local_18[0] == *(int *)((int)&CPathMap_ARRAY_02fd9060[0].cached_voxel_coords.y + iVar3)))
+       && (iVar5 = iVar2,
+          local_18[1] == *(int *)((int)&CPathMap_ARRAY_02fd9060[0].cached_voxel_coords.z + iVar3)))
+    break;
     iVar5 = iVar1;
     if ((&DAT_00680bd8)[iVar1] < *(int *)((int)&DAT_00680bd8 + iVar4)) {
       iVar5 = iVar2;
@@ -69,9 +70,9 @@ CPathMap * __cdecl core_path_cpp_FUN_00548390(void)
     iVar1 = iVar1 + 4;
   } while (iVar1 != 0x30);
   (&DAT_00680bd8)[iVar5] = 0;
-  local_28.x = in_stack_00000004->x;
-  local_28.y = in_stack_00000004->y;
-  local_28.z = in_stack_00000004->z;
-  core_path_cpp_CPathMap_updateIfNeeded_FUN_00546a60(DAT_02fd9060 + iVar5,&local_28,1);
-  return DAT_02fd9060 + iVar5;
+  local_28.x = (location->position).x;
+  local_28.y = (location->position).y;
+  local_28.z = (location->position).z;
+  core_path_cpp_CPathMap_updateIfNeeded_FUN_00546a60(CPathMap_ARRAY_02fd9060 + iVar5,&local_28,1);
+  return CPathMap_ARRAY_02fd9060 + iVar5;
 }

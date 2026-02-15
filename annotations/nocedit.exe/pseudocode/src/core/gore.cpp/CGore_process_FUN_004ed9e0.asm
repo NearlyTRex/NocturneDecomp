@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_gore_cpp_CGore_process_FUN_004ed9e0(CGore *this_ptr)
+; int __cdecl core_gore_cpp_CGore_process_FUN_004ed9e0(CGore *this_ptr)
 ;
 ; Parameters:
 ; CGore *          Stack[0x4]:4   this_ptr
@@ -12,7 +12,7 @@
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 00539934
 ;
 ; Referenced Globals:
-;   CBloodParticle[256] DAT_02d833d4
+;   CBloodParticle[256] CBloodParticle_ARRAY_02d833d4
 ;   undefined4 DAT_02d833ec
 ;   undefined4 DAT_02d83408
 ;   undefined4 DAT_02d83414
@@ -42,7 +42,7 @@ section .text
     PUSH EBP                            ; 004ed9e3
     MOV EBP,ESP                         ; 004ed9e4
     AND ESP,0xfffffff8                  ; 004ed9e6
-    MOV EBX,0x2d833d4                   ; 004ed9e9 | DAT_02d833d4
+    MOV EBX,0x2d833d4                   ; 004ed9e9 | CBloodParticle_ARRAY_02d833d4
     LEA ESI,[EBX + 0x4000]              ; 004ed9ee | DAT_02d873d4
     FLD float ptr [EBX + 0x18]          ; 004ed9f4 | DAT_02d833ec | DAT_02d8342c
         ;   Label: LAB_004ed9f4

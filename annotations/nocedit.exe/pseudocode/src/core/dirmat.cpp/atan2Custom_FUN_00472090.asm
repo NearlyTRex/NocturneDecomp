@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl core_dirmat_cpp_atan2Custom_FUN_00472090(double y,double x)
+; float __cdecl core_dirmat_cpp_atan2Custom_FUN_00472090(double y,double x)
 ;
 ; Parameters:
 ; double           Stack[0x4]:8   y

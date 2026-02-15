@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_actor_cpp_handleActorPropertyParseError_FUN_0040b210(char *property_description,char *property_type)
+; void __cdecl core_actor_cpp_handleActorPropertyParseError_FUN_0040b210(char *property_description,char *property_type)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   property_description

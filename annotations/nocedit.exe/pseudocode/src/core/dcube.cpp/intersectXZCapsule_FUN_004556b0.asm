@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_dcube_cpp_intersectXZCapsule_FUN_004556b0(SIntersectXZCylinder *cylinder)
+; int __cdecl core_dcube_cpp_intersectXZCapsule_FUN_004556b0(SIntersectXZCylinder *cylinder)
 ;
 ; Parameters:
 ; SIntersectXZCylinder * Stack[0x4]:4   cylinder

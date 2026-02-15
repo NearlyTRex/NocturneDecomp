@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_meshlod_cpp_CLodMesh_markDegenerateFaces_FUN_00516b40(CLodMesh *this_ptr)
+; void __cdecl shape_meshlod_cpp_CLodMesh_markDegenerateFaces_FUN_00516b40(CLodMesh *this_ptr)
 ;
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr

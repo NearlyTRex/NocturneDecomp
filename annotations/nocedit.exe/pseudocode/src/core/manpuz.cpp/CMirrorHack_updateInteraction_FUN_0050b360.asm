@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_manpuz_cpp_CMirrorHack_updateInteraction_FUN_0050b360(CMirrorHack *this_ptr,COrientation *user_orientation,SInteractionState *interaction_state)
+; int __cdecl core_manpuz_cpp_CMirrorHack_updateInteraction_FUN_0050b360(CMirrorHack *this_ptr,COrientation *user_orientation,SInteractionState *interaction_state)
 ;
 ; Parameters:
 ; CMirrorHack *    Stack[0x4]:4   this_ptr

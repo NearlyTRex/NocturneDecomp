@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_script_cpp_CScript_setParameterValue_FUN_00565f70(CScript *this_ptr,char *value)
+; void __cdecl core_script_cpp_CScript_setParameterValue_FUN_00565f70(CScript *this_ptr,char *value)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr

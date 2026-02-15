@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl cockpit_drawsurf_cpp_getFontMaxWidth_FUN_0048a6a0(CBitFont *font_ptr)
+; int __cdecl cockpit_drawsurf_cpp_getFontMaxWidth_FUN_0048a6a0(CBitFont *font_ptr)
 ;
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   font_ptr

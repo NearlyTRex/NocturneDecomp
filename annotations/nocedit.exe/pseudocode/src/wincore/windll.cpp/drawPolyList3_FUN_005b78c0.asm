@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl wincore_windll_cpp_drawPolyList3_FUN_005b78c0(void *vertex_buffer,void *polygons,int polygon_count,int render_flags)
+; int __cdecl wincore_windll_cpp_drawPolyList3_FUN_005b78c0(void *vertex_buffer,void *polygons,int polygon_count,int render_flags)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   vertex_buffer

@@ -15,104 +15,68 @@
       },
       {
         "category": "format_error",
-        "column": 16,
-        "line": 67,
-        "message": "format specifies type 'int *' but the argument has type 'char *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 40,
-        "line": 67,
-        "message": "format specifies type 'int *' but the argument has type 'char *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
         "column": 33,
         "line": 69,
-        "message": "format specifies type 'float *' but the argument has type 'char *' [-Werror,-Wformat]"
+        "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 57,
-        "line": 69,
-        "message": "format specifies type 'float *' but the argument has type 'char *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 16,
-        "line": 70,
-        "message": "format specifies type 'float *' but the argument has type 'char *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 36,
-        "line": 71,
-        "message": "format specifies type 'float *' but the argument has type 'char *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 60,
-        "line": 71,
-        "message": "format specifies type 'float *' but the argument has type 'char *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 84,
-        "line": 71,
+        "column": 58,
+        "line": 72,
         "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 16,
+        "column": 67,
         "line": 72,
         "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 27,
-        "line": 97,
+        "line": 94,
         "message": "format specifies type 'int *' but the argument has type 'CWater *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 25,
-        "line": 176,
+        "line": 173,
         "message": "format specifies type 'int *' but the argument has type 'CDemonSet *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 37,
-        "line": 224,
+        "line": 221,
         "message": "format specifies type 'float *' but the argument has type 'SRoom *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 37,
-        "line": 226,
+        "line": 223,
         "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 37,
-        "line": 227,
+        "line": 224,
+        "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 37,
+        "line": 295,
+        "message": "format specifies type 'float *' but the argument has type 'SVDBox *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 37,
+        "line": 297,
         "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 37,
         "line": 298,
-        "message": "format specifies type 'float *' but the argument has type 'SVDBox *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 37,
-        "line": 300,
-        "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 37,
-        "line": 301,
         "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
       }
     ],
@@ -121,16 +85,16 @@
   },
   "complexity": {
     "assembly_lines": 1172,
-    "complexity_score": 467,
+    "complexity_score": 464,
     "cross_reference_count": 3,
     "function_call_count": 29,
     "global_count": 78,
-    "pseudocode_lines": 422,
+    "pseudocode_lines": 419,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 1594
+    "total_lines": 1591
   },
   "cross_references": [
     {
@@ -1029,28 +993,28 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 224,
+      "line": 221,
       "match": "(CMatrix3x3f *)((int)",
       "text": "pCVar8 = (CMatrix3x3f *)((int)(pCVar8 + 1) + 0x20);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 226,
+      "line": 223,
       "match": "(CVector3f *)((int)",
       "text": "local_18 = (CVector3f *)((int)(local_18 + 5) + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 297,
+      "line": 294,
       "match": "(CMatrix3x3f *)((int)",
       "text": "pCVar8 = (CMatrix3x3f *)((int)(pCVar8 + 1) + 0x20);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 298,
+      "line": 295,
       "match": "(CVector3f *)((int)",
       "text": "local_1c = (CVector3f *)((int)(local_1c + 5) + 8);",
       "type": "pointer_cast"

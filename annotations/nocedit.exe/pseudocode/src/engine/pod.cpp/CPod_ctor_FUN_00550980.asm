@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CPod * __cdecl engine_pod_cpp_CPod_ctor_FUN_00550980(CPod *this_ptr)
+; CPod * __cdecl engine_pod_cpp_CPod_ctor_FUN_00550980(CPod *this_ptr)
 ;
 ; Parameters:
 ; CPod *           Stack[0x4]:4   this_ptr

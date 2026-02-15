@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void * __cdecl crt_memory_c___vec_new__FUN_00601232(void *dest,int element_count,WatcomTypeInfo *type_info)
+; void * __cdecl crt_memory_c___vec_new__FUN_00601232(void *dest,int element_count,WatcomTypeInfo *type_info)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   dest

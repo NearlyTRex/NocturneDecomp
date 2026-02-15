@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dmodel_cpp_writeModelDependencies_FUN_0047ee30(_FILE *dependency_file,char *model_filename)
+; void __cdecl core_dmodel_cpp_writeModelDependencies_FUN_0047ee30(_FILE *dependency_file,char *model_filename)
 ;
 ; Parameters:
 ; _FILE *          Stack[0x4]:4   dependency_file

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CZombieCow * __cdecl core_cow_cpp_CZombieCow_dtor_FUN_00444cd0(CZombieCow *this_ptr,uint flags)
+; CZombieCow * __cdecl core_cow_cpp_CZombieCow_dtor_FUN_00444cd0(CZombieCow *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CZombieCow *     Stack[0x4]:4   this_ptr

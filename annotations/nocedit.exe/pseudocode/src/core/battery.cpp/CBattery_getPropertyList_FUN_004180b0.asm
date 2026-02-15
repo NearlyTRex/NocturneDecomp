@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_battery_cpp_CBattery_getPropertyList_FUN_004180b0(CBattery *this_ptr,CActorPropertyList *property_list)
+; void __cdecl core_battery_cpp_CBattery_getPropertyList_FUN_004180b0(CBattery *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CBattery *       Stack[0x4]:4   this_ptr

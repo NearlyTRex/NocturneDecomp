@@ -211,7 +211,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showLightEditor_FUN_0057c5d0(CDemonSet *
             do {
               iVar5 = iVar5 + 1;
               pCVar4->cameras[0].ambient_value = this_ptr->min_ambient_value;
-              pCVar4 = (CDemonSet *)&pCVar4->cameras[0].unk4;
+              pCVar4 = (CDemonSet *)&pCVar4->cameras[0].enabled;
             } while (iVar5 < this_ptr->camera_count);
           }
         }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl uint __cdecl shape_cramtex_cpp_performGapFillingOptimization_FUN_00447590(void)
+; uint __cdecl shape_cramtex_cpp_performGapFillingOptimization_FUN_00447590(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24

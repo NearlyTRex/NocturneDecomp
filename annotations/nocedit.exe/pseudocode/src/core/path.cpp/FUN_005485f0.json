@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 47,
+    "complexity_score": 38,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 7,
-    "pseudocode_lines": 22,
-    "suspect_count": 2,
+    "pseudocode_lines": 23,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 81
+    "total_lines": 82
   },
   "cross_references": [],
   "function": {
@@ -39,7 +39,7 @@
     {
       "addr": "00547fc0",
       "is_variadic": false,
-      "name": "core_path.cpp_FUN_00547fc0"
+      "name": "core_path.cpp_CPathMap_FUN_00547fc0"
     }
   ],
   "globals": [
@@ -134,13 +134,6 @@
       "line": 12,
       "match": "(int *)((int)",
       "text": "if (*(int *)((int)g_PathMapList + iVar1) == 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 17,
-      "match": "(int *)((int)",
-      "text": "if (*(int *)(*(int *)((int)g_PathMapList + iVar1) + 0x138c0) < 0x461c3c01) {",
       "type": "pointer_cast"
     }
   ]

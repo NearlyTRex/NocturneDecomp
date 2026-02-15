@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_particle_cpp_CParticle_onCollision_FUN_00545ab0(CParticle *this_ptr,CVector3f *collision_normal)
+; int __cdecl core_particle_cpp_CParticle_onCollision_FUN_00545ab0(CParticle *this_ptr,CVector3f *collision_normal)
 ;
 ; Parameters:
 ; CParticle *      Stack[0x4]:4   this_ptr

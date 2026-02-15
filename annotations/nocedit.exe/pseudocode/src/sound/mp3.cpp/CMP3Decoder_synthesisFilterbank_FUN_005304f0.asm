@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisFilterbank_FUN_005304f0(CMP3Decoder *this_ptr,float *subband_samples,int channel_index,short *pcm_output)
+; void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisFilterbank_FUN_005304f0(CMP3Decoder *this_ptr,float *subband_samples,int channel_index,short *pcm_output)
 ;
 ; Parameters:
 ; CMP3Decoder *    Stack[0x4]:4   this_ptr

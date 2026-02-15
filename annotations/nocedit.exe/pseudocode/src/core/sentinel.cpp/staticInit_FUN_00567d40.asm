@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_sentinel_cpp_staticInit_FUN_00567d40(void)
+; void __cdecl core_sentinel_cpp_staticInit_FUN_00567d40(void)
 ;
 ;
 ; Referenced Globals:

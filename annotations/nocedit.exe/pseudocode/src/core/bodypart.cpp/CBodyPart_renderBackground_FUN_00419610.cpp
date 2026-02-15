@@ -31,7 +31,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_renderBackground_FUN_00419610(CBodyPart
   if ((this_ptr->render_in_background != 1) || ((this_ptr->sim_box).is_valid == 0)) {
     this_ptr->render_in_background = 2;
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
-    g_CDemonSetPtr->unk_lighting_param2 = this_ptr->dont_use_normals;
+    g_CDemonSetPtr->disable_directional_lighting = this_ptr->dont_use_normals;
     this_ptr_01 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_20);
     iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_01);
     if ((iVar1 != 0) &&
@@ -41,7 +41,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_renderBackground_FUN_00419610(CBodyPart
       core_bodypart_cpp_CBodyPart_FUN_00419340(this_ptr,-1);
     }
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
-    g_CDemonSetPtr->unk_lighting_param2 = 0;
+    g_CDemonSetPtr->disable_directional_lighting = 0;
     this_ptr->is_visible = iVar1;
   }
   return;

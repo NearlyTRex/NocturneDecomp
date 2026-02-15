@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_superopt_cpp_CPoly_translate_FUN_005cc720(CPoly *this_ptr,CVector3d *offset)
+; void __cdecl shape_superopt_cpp_CPoly_translate_FUN_005cc720(CPoly *this_ptr,CVector3d *offset)
 ;
 ; Parameters:
 ; CPoly *          Stack[0x4]:4   this_ptr

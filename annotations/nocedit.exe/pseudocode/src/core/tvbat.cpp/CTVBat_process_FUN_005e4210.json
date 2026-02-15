@@ -13,15 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 791,
-    "complexity_score": 447,
+    "complexity_score": 462,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 29,
     "pseudocode_lines": 322,
-    "suspect_count": 11,
+    "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
+      "pointer_cast",
       "warning_type_propagation"
     ],
     "total_lines": 1113
@@ -255,7 +256,7 @@
     },
     {
       "addr": "03265254",
-      "name": "g_CDemonSetInstance.unk4[7996]",
+      "name": "g_CDemonSetInstance.enemy_count",
       "type": "undefined4",
       "value": null
     },
@@ -747,6 +748,13 @@
       "match": "extraout_ST1",
       "text": "float10 extraout_ST1;",
       "type": "extra_output"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 75,
+      "match": "(int *)((int)",
+      "text": "this_ptr->unk11 = *(int *)((int)g_CDemonSetPtr->enemies + iVar14);",
+      "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",

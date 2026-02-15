@@ -42,7 +42,7 @@ void __cdecl core_setdir_cpp_CDemonSet_writeThumbs_FUN_00575e40(CDemonSet *this_
         } while (iVar1 < iVar2);
       }
       local_1c = local_1c + 6;
-      local_18 = (CDemonSet *)&local_18->cameras[0].unk4;
+      local_18 = (CDemonSet *)&local_18->cameras[0].enabled;
       local_14 = local_14 + 1;
     } while (local_14 < this_ptr->camera_count);
   }

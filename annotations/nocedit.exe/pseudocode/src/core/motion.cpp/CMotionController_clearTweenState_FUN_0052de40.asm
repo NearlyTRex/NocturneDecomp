@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_motion_cpp_CMotionController_clearTweenState_FUN_0052de40(CMotionController *this_ptr)
+; void __cdecl core_motion_cpp_CMotionController_clearTweenState_FUN_0052de40(CMotionController *this_ptr)
 ;
 ; Parameters:
 ; CMotionController * Stack[0x4]:4   this_ptr

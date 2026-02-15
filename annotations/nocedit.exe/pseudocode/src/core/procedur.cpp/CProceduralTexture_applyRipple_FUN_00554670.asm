@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_procedur_cpp_CProceduralTexture_applyRipple_FUN_00554670(CProceduralTexture *this_ptr,float wave_x,float wave_y,float wave_offset)
+; void __cdecl core_procedur_cpp_CProceduralTexture_applyRipple_FUN_00554670(CProceduralTexture *this_ptr,float wave_x,float wave_y,float wave_offset)
 ;
 ; Parameters:
 ; CProceduralTexture * Stack[0x4]:4   this_ptr

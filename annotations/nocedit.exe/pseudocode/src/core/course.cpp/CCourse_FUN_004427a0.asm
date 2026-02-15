@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_course_cpp_CCourse_FUN_004427a0(CCourse *this_ptr)
+; void __cdecl core_course_cpp_CCourse_FUN_004427a0(CCourse *this_ptr)
 ;
 ; Parameters:
 ; CCourse *        Stack[0x4]:4   this_ptr

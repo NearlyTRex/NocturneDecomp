@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CBulletHole * __cdecl core_fire_cpp_allocateBulletHole_FUN_004c6c10(void)
+; CBulletHole * __cdecl core_fire_cpp_allocateBulletHole_FUN_004c6c10(void)
 ;
 ;
 ; XREF[1]:

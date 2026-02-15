@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_meshlod_cpp_CLodMesh_validateFace_FUN_00519830(CLodMesh *this_ptr,CLodFace *face)
+; int __cdecl shape_meshlod_cpp_CLodMesh_validateFace_FUN_00519830(CLodMesh *this_ptr,CLodFace *face)
 ;
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr

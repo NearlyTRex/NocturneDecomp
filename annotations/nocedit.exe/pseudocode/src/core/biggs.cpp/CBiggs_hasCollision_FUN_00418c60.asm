@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_biggs_cpp_CBiggs_hasCollision_FUN_00418c60(CBiggs *this_ptr,SCollisionInfo *collision_info)
+; void __cdecl core_biggs_cpp_CBiggs_hasCollision_FUN_00418c60(CBiggs *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CBiggs *         Stack[0x4]:4   this_ptr

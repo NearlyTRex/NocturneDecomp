@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_gore_cpp_CBloodParticle_render_FUN_004ebac0(CBloodParticle *this_ptr)
+; void __cdecl core_gore_cpp_CBloodParticle_render_FUN_004ebac0(CBloodParticle *this_ptr)
 ;
 ; Parameters:
 ; CBloodParticle * Stack[0x4]:4   this_ptr
@@ -313,7 +313,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 004ebe36
         ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 004ebe3b
-    PUSH 0x2d83368                      ; 004ebe3e | SMRGLHeaderPrimitive_02d83368
+    PUSH 0x2d83368                      ; 004ebe3e | SMRGLPrimitiveQuadIndex_02d83368
     MOV EAX,[0x006703ec]                ; 004ebe43 | g_CDemonRendererPtr2
     PUSH EAX                            ; 004ebe48 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0 ; 004ebe49

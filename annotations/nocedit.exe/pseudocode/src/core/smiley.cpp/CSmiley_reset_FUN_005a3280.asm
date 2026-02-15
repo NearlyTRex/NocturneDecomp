@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_smiley_cpp_CSmiley_reset_FUN_005a3280(CSmiley *this_ptr)
+; void __cdecl core_smiley_cpp_CSmiley_reset_FUN_005a3280(CSmiley *this_ptr)
 ;
 ; Parameters:
 ; CSmiley *        Stack[0x4]:4   this_ptr

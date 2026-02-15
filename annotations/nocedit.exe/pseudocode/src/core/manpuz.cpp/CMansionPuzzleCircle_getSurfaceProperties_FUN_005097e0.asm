@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getSurfaceProperties_FUN_005097e0(CMansionPuzzleCircle *this_ptr,SSurfaceInfo *surface_info)
+; void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getSurfaceProperties_FUN_005097e0(CMansionPuzzleCircle *this_ptr,SSurfaceInfo *surface_info)
 ;
 ; Parameters:
 ; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr

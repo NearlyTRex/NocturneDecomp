@@ -5,13 +5,13 @@
         "category": "incompatible_types",
         "column": 19,
         "line": 81,
-        "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
+        "message": "assigning to 'int' from incompatible type 'void'"
       },
       {
         "category": "incompatible_types",
         "column": 13,
         "line": 116,
-        "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
+        "message": "assigning to 'int' from incompatible type 'void'"
       }
     ],
     "success": false,
@@ -19,12 +19,12 @@
   },
   "complexity": {
     "assembly_lines": 299,
-    "complexity_score": 141,
+    "complexity_score": 171,
     "cross_reference_count": 0,
     "function_call_count": 14,
     "global_count": 16,
     "pseudocode_lines": 116,
-    "suspect_count": 2,
+    "suspect_count": 5,
     "suspect_types": [
       "suspect_float"
     ],
@@ -303,6 +303,13 @@
   "suspects": [
     {
       "description": "Likely misinterpreted integer as float",
+      "line": 55,
+      "match": "1.4013e-45",
+      "text": "if (damage_info->gore_multiplier == 1.4013e-45) {",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
       "line": 57,
       "match": "1.4013e-45",
       "text": "force_immediate = 1.4013e-45;",
@@ -313,6 +320,20 @@
       "line": 65,
       "match": "1.4013e-45",
       "text": "force_immediate = 1.4013e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 73,
+      "match": "1.4013e-45",
+      "text": "if (damage_info->gore_multiplier != 1.4013e-45) {",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 94,
+      "match": "1.47136e-43",
+      "text": "if (((damage_info->gore_multiplier != 1.47136e-43) &&",
       "type": "suspect_float"
     }
   ],

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CHiram * __cdecl core_hiram_cpp_getFactoryFunc_FUN_004f43b0(void)
+; CHiram * __cdecl core_hiram_cpp_getFactoryFunc_FUN_004f43b0(void)
 ;
 ;
 ; XREF[1]:

@@ -74,12 +74,12 @@ void __cdecl core_tvbat_cpp_CTVBat_process_FUN_005e4210(CTVBat *this_ptr,float d
   
   if ((this_ptr->follow_orders != 0) && (this_ptr->unk11 == 0)) {
     iVar14 = 0;
-    for (iVar16 = 0; iVar16 < *(int *)(g_CDemonSetPtr->unk4 + 0x1f3c); iVar16 = iVar16 + 1) {
+    for (iVar16 = 0; iVar16 < g_CDemonSetPtr->enemy_count; iVar16 = iVar16 + 1) {
       iVar11 = core_actor_cpp_isOfClass_FUN_0040c6d0
-                         (*(CDemonActor **)(g_CDemonSetPtr->unk4 + iVar14 + 8000),
+                         (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar14),
                           "CVampireBoss");
       if (iVar11 != 0) {
-        this_ptr->unk11 = *(int *)(g_CDemonSetPtr->unk4 + iVar14 + 8000);
+        this_ptr->unk11 = *(int *)((int)g_CDemonSetPtr->enemies + iVar14);
         break;
       }
       iVar14 = iVar14 + 4;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_motion_cpp_CMotionController_findPatchToFrame_FUN_0052dc80(CMotionController *this_ptr)
+; int __cdecl core_motion_cpp_CMotionController_findPatchToFrame_FUN_0052dc80(CMotionController *this_ptr)
 ;
 ; Parameters:
 ; CMotionController * Stack[0x4]:4   this_ptr

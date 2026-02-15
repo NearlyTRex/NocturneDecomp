@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl crt_fstream_cpp_ofstream_constructor_FUN_005ff710(ofstream *this_ptr,int ctor_flags,int fd,int mode,char *buffer,SIZE_T buffer_size)
+; void __cdecl crt_fstream_cpp_ofstream_constructor_FUN_005ff710(ofstream *this_ptr,int ctor_flags,int fd,int mode,char *buffer,SIZE_T buffer_size)
 ;
 ; Parameters:
 ; ofstream *       Stack[0x4]:4   this_ptr

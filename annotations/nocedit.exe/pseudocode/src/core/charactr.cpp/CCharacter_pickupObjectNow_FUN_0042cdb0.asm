@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_charactr_cpp_CCharacter_pickupObjectNow_FUN_0042cdb0(CCharacter *this_ptr,int hand_index,CDemonActor *object,float blend_time)
+; void __cdecl core_charactr_cpp_CCharacter_pickupObjectNow_FUN_0042cdb0(CCharacter *this_ptr,int hand_index,CDemonActor *object,float blend_time)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_io_c_stat_FUN_00607e64(char *filename,_stat *file_info)
+; int __cdecl crt_io_c_stat_FUN_00607e64(char *filename,_stat *file_info)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename

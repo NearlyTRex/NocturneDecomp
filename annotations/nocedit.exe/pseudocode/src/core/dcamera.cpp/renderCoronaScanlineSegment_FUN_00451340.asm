@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_dcamera_cpp_renderCoronaScanlineSegment_FUN_00451340(int row_index,int column_start,int column_end)
+; void __cdecl core_dcamera_cpp_renderCoronaScanlineSegment_FUN_00451340(int row_index,int column_start,int column_end)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   row_index

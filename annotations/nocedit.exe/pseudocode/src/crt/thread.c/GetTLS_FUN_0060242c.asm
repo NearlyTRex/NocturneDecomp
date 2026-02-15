@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl ThreadData * __cdecl crt_thread_c_GetTLS_FUN_0060242c(void)
+; ThreadData * __cdecl crt_thread_c_GetTLS_FUN_0060242c(void)
 ;
 ;
 ; XREF[22]:

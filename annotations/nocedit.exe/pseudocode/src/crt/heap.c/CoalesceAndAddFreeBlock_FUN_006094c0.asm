@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallRegister void __watcallRegister crt_heap_c_CoalesceAndAddFreeBlock_FUN_006094c0(void *ptr,HeapBlock *heap_block,ushort segment)
+; void __watcallRegister crt_heap_c_CoalesceAndAddFreeBlock_FUN_006094c0(void *ptr,HeapBlock *heap_block,ushort segment)
 ;
 ;
 ; XREF[1]:

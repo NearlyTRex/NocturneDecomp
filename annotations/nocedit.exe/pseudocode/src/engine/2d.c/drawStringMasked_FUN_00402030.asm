@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_2d_c_drawStringMasked_FUN_00402030(char *text,int x_pos,int y_pos)
+; void __cdecl engine_2d_c_drawStringMasked_FUN_00402030(char *text,int x_pos,int y_pos)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   text

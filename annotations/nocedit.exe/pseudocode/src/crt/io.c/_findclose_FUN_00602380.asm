@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_io_c__findclose_FUN_00602380(HANDLE find_handle)
+; int __cdecl crt_io_c__findclose_FUN_00602380(HANDLE find_handle)
 ;
 ; Parameters:
 ; HANDLE           Stack[0x4]:4   find_handle

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_pendulum_cpp_CPendulum_getGroundType_FUN_0054a590(CPendulum *this_ptr)
+; int __cdecl core_pendulum_cpp_CPendulum_getGroundType_FUN_0054a590(CPendulum *this_ptr)
 ;
 ; Parameters:
 ; CPendulum *      Stack[0x4]:4   this_ptr

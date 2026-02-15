@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl wincore_winvideo_cpp_playMovie_FUN_005f4a00(char *directory_path,char *movie_filename)
+; int __cdecl wincore_winvideo_cpp_playMovie_FUN_005f4a00(char *directory_path,char *movie_filename)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   directory_path

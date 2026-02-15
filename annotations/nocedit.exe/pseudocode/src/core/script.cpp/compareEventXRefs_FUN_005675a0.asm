@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_script_cpp_compareEventXRefs_FUN_005675a0(SScriptXRef *a,SScriptXRef *b)
+; int __cdecl core_script_cpp_compareEventXRefs_FUN_005675a0(SScriptXRef *a,SScriptXRef *b)
 ;
 ; Parameters:
 ; SScriptXRef *    Stack[0x4]:4   a

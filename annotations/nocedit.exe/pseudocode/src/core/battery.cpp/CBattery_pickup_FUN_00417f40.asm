@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_battery_cpp_CBattery_pickup_FUN_00417f40(CBattery *this_ptr,CDemonActor *carrier)
+; void __cdecl core_battery_cpp_CBattery_pickup_FUN_00417f40(CBattery *this_ptr,CDemonActor *carrier)
 ;
 ; Parameters:
 ; CBattery *       Stack[0x4]:4   this_ptr

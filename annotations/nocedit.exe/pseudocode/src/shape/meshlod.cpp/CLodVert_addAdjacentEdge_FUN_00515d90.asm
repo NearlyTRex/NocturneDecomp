@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_meshlod_cpp_CLodVert_addAdjacentEdge_FUN_00515d90(CLodVert *this_ptr,int edge_index)
+; void __cdecl shape_meshlod_cpp_CLodVert_addAdjacentEdge_FUN_00515d90(CLodVert *this_ptr,int edge_index)
 ;
 ; Parameters:
 ; CLodVert *       Stack[0x4]:4   this_ptr

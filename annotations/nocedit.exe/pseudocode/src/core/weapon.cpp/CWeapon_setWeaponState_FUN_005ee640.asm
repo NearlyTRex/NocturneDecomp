@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_weapon_cpp_CWeapon_setWeaponState_FUN_005ee640(CWeapon *this_ptr,int weapon_state)
+; void __cdecl core_weapon_cpp_CWeapon_setWeaponState_FUN_005ee640(CWeapon *this_ptr,int weapon_state)
 ;
 ; Parameters:
 ; CWeapon *        Stack[0x4]:4   this_ptr

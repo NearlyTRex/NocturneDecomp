@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_design_c_bisectMesh_FUN_0046ed50(void)
+; void __cdecl shape_design_c_bisectMesh_FUN_0046ed50(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x74]:4  local_74

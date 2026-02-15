@@ -21,8 +21,9 @@ void __cdecl core_path_cpp_FUN_005485f0(void)
         g_CurrentLineNumber = 0x6a8;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Global pathmap list corruption");
       }
-      if (*(int *)(*(int *)((int)g_PathMapList + iVar1) + 0x138c0) < 0x461c3c01) {
-        core_path_cpp_FUN_00547fc0();
+      if ((int)((*(CPathMap **)((int)g_PathMapList + iVar1))->cached_world_position).x < 0x461c3c01)
+      {
+        core_path_cpp_CPathMap_FUN_00547fc0(*(CPathMap **)((int)g_PathMapList + iVar1));
       }
       iVar2 = iVar2 + 1;
       iVar1 = iVar1 + 4;

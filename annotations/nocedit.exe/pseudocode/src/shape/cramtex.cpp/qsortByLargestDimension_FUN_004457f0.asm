@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl shape_cramtex_cpp_qsortByLargestDimension_FUN_004457f0(CCramTex *entry_a,CCramTex *entry_b)
+; int __cdecl shape_cramtex_cpp_qsortByLargestDimension_FUN_004457f0(CCramTex *entry_a,CCramTex *entry_b)
 ;
 ; Parameters:
 ; CCramTex *       Stack[0x4]:4   entry_a

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_crate_cpp_CCrate_pickup_FUN_00448620(CCrate *this_ptr,CDemonActor *carrier)
+; void __cdecl core_crate_cpp_CCrate_pickup_FUN_00448620(CCrate *this_ptr,CDemonActor *carrier)
 ;
 ; Parameters:
 ; CCrate *         Stack[0x4]:4   this_ptr

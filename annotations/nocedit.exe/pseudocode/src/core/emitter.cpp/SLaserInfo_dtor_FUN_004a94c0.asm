@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SLaserInfo * __cdecl core_emitter_cpp_SLaserInfo_dtor_FUN_004a94c0(SLaserInfo *this_ptr,uint flags)
+; SLaserInfo * __cdecl core_emitter_cpp_SLaserInfo_dtor_FUN_004a94c0(SLaserInfo *this_ptr,uint flags)
 ;
 ; Parameters:
 ; SLaserInfo *     Stack[0x4]:4   this_ptr

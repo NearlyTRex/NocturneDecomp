@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_fire_cpp_loadDebrisAssets_FUN_004c38d0(void)
+; void __cdecl core_fire_cpp_loadDebrisAssets_FUN_004c38d0(void)
 ;
 ;
 ; XREF[1]:

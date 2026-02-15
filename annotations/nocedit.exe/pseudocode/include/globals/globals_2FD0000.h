@@ -18,7 +18,7 @@ extern CDemonActorType g_CPassengerClassInfo;
 extern CMouse g_CMouseInstance;
 
 // CPathMap[12]
-extern CPathMap DAT_02fd9060[12];
+extern CPathMap CPathMap_ARRAY_02fd9060[12];
 
 // undefined1
 extern undefined1 DAT_02fd8d24;

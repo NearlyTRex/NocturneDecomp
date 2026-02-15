@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl core_charactr_cpp_getGameDeltaTime_FUN_0042f9e0(CGame *game_ptr)
+; float __cdecl core_charactr_cpp_getGameDeltaTime_FUN_0042f9e0(CGame *game_ptr)
 ;
 ; Parameters:
 ; CGame *          Stack[0x4]:4   game_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_font_cpp_CBitFont_drawTextCenter_FUN_004cdde0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text)
+; int __cdecl engine_font_cpp_CBitFont_drawTextCenter_FUN_004cdde0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text)
 ;
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   this_ptr
@@ -13,7 +13,7 @@
 ;
 ; XREF[3]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120 at 0048924e
-;   engine_font.cpp_CBitFont_drawTextCenterF_FUN_004cde70 at 004cdec2
+;   engine_font.cpp_CBitFont_drawTextCenterFV_FUN_004cde70 at 004cdec2
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 at 0049e82a
 ;
 ; Called Functions:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor *this_ptr,int hit_type)
+; int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor *this_ptr,int hit_type)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr
@@ -186,11 +186,11 @@ section .text
     MOV EAX,[0x006810c8]                ; 0040a3b0 | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_0040a3b0
     MOV EDX,dword ptr [ESP + 0x268]     ; 0040a3b5
-    CMP EDX,dword ptr [EAX + 0x14d154]  ; 0040a3bc | g_CDemonSetInstance.actor_list_ptr
+    CMP EDX,dword ptr [EAX + 0x14d154]  ; 0040a3bc | g_CDemonSetInstance.actor_count
     JGE 0x0040a6d0                      ; 0040a3c2
         ;   XREF to: 0040a6d0 (CONDITIONAL_JUMP)  ; LAB_0040a6d0
     ADD EAX,dword ptr [ESP + 0x270]     ; 0040a3c8
-    MOV EAX,dword ptr [EAX + 0x14d158]  ; 0040a3cf | g_CDemonSetInstance.actor_list_data[0] | DAT_032613d4
+    MOV EAX,dword ptr [EAX + 0x14d158]  ; 0040a3cf | g_CDemonSetInstance.actors[0] | DAT_032613d4
     MOV dword ptr [ESP + 0x27c],EAX     ; 0040a3d5
     CMP EBX,EAX                         ; 0040a3dc
     JNZ 0x0040a402                      ; 0040a3de

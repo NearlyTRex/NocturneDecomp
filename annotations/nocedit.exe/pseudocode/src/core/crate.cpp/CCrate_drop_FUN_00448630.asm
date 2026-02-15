@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_crate_cpp_CCrate_drop_FUN_00448630(CCrate *this_ptr,CVector3f *drop_position)
+; void __cdecl core_crate_cpp_CCrate_drop_FUN_00448630(CCrate *this_ptr,CVector3f *drop_position)
 ;
 ; Parameters:
 ; CCrate *         Stack[0x4]:4   this_ptr

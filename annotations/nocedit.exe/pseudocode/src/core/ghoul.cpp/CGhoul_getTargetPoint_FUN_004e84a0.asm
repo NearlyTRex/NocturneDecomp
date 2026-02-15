@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVector3f * __cdecl core_ghoul_cpp_CGhoul_getTargetPoint_FUN_004e84a0(CGhoul *this_ptr,CVector3f *out_point)
+; CVector3f * __cdecl core_ghoul_cpp_CGhoul_getTargetPoint_FUN_004e84a0(CGhoul *this_ptr,CVector3f *out_point)
 ;
 ; Parameters:
 ; CGhoul *         Stack[0x4]:4   this_ptr

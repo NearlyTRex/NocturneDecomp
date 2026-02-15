@@ -6,16 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 202,
-    "complexity_score": 104,
+    "complexity_score": 138,
     "cross_reference_count": 10,
     "function_call_count": 10,
     "global_count": 6,
-    "pseudocode_lines": 79,
-    "suspect_count": 2,
+    "pseudocode_lines": 78,
+    "suspect_count": 5,
     "suspect_types": [
-      "decompiler_intrinsic"
+      "decompiler_intrinsic",
+      "suspect_float"
     ],
-    "total_lines": 281
+    "total_lines": 280
   },
   "cross_references": [
     {
@@ -278,16 +279,37 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 22,
+      "line": 21,
       "match": "SQRT",
       "text": "if (0.0 < SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1)) {",
       "type": "decompiler_intrinsic"
     },
     {
+      "description": "Likely misinterpreted integer as float",
+      "line": 27,
+      "match": "4.2039e-45",
+      "text": "if (fVar1 == 4.2039e-45) {",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 43,
+      "match": "9.80909e-45",
+      "text": "if (fVar1 != 9.80909e-45) goto LAB_0042c429;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 50,
+      "match": "1.48538e-43",
+      "text": "if (fVar1 != 1.48538e-43) goto LAB_0042c429;",
+      "type": "suspect_float"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 67,
+      "line": 66,
       "match": "ROUND",
-      "text": "local_1c.z = (float)(int)ROUND(dVar6);",
+      "text": "local_1c.z = (float)(int)ROUND(dVar5);",
       "type": "decompiler_intrinsic"
     }
   ]

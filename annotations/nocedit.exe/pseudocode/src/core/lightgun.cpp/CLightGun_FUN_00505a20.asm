@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_lightgun_cpp_CLightGun_FUN_00505a20(CLightGun *this_ptr)
+; int __cdecl core_lightgun_cpp_CLightGun_FUN_00505a20(CLightGun *this_ptr)
 ;
 ; Parameters:
 ; CLightGun *      Stack[0x4]:4   this_ptr

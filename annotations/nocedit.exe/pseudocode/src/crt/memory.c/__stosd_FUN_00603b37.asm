@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallRegister void __watcallRegister crt_memory_c___stosd_FUN_00603b37(void *dest,uint replicated_value,uint dword_count)
+; void __watcallRegister crt_memory_c___stosd_FUN_00603b37(void *dest,uint replicated_value,uint dword_count)
 ;
 ;
 ; XREF[1]:

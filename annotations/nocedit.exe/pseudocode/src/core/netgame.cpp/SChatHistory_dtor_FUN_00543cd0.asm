@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl SChatHistory * __cdecl core_netgame_cpp_SChatHistory_dtor_FUN_00543cd0(SChatHistory *this_ptr,uint flags)
+; SChatHistory * __cdecl core_netgame_cpp_SChatHistory_dtor_FUN_00543cd0(SChatHistory *this_ptr,uint flags)
 ;
 ; Parameters:
 ; SChatHistory *   Stack[0x4]:4   this_ptr

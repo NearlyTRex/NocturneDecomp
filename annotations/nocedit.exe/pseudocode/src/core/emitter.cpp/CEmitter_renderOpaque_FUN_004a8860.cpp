@@ -24,9 +24,9 @@ int __cdecl core_emitter_cpp_CEmitter_renderOpaque_FUN_004a8860(CEmitter *this_p
       core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,&this_ptr->base);
       core_fire_cpp_SLaserInfo_ctor_FUN_004c81f0(&local_7c);
       local_7c.laser_type = this_ptr->laser_type;
-      local_7c.color.r = this_ptr->laser_r;
-      local_7c.color.g = this_ptr->laser_g;
-      local_7c.color.b = this_ptr->laser_b;
+      local_7c.color.r = (this_ptr->laser_color).r;
+      local_7c.color.g = (this_ptr->laser_color).g;
+      local_7c.color.b = (this_ptr->laser_color).b;
       local_7c.is_hero_weapon = 0;
       local_7c.is_damaging = 0;
       local_7c.intensity = 1.0;

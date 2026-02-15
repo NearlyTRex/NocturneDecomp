@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_haystack_cpp_CHaystack_FUN_004f1ab0(CHaystack *this_ptr)
+; void __cdecl core_haystack_cpp_CHaystack_FUN_004f1ab0(CHaystack *this_ptr)
 ;
 ; Parameters:
 ; CHaystack *      Stack[0x4]:4   this_ptr
@@ -17,8 +17,8 @@
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   undefined4 g_CDemonSetInstance.damage_listener_count
-;   undefined4 g_CDemonSetInstance.damage_listeners
+;   undefined4 g_CDemonSetInstance.character_count
+;   undefined4 g_CDemonSetInstance.characters[0]
 ;   undefined4 DAT_03263318
 ;
 ; Called Functions:
@@ -57,10 +57,10 @@ section .text
     ADD ESP,0xc                         ; 004f1ae4
     MOV EBX,dword ptr [0x006810c8]      ; 004f1ae7 | g_CDemonSetPtr
         ;   Label: LAB_004f1ae7
-    CMP EDI,dword ptr [EBX + 0x14f098]  ; 004f1aed | g_CDemonSetInstance.damage_listener_count
+    CMP EDI,dword ptr [EBX + 0x14f098]  ; 004f1aed | g_CDemonSetInstance.character_count
     JGE 0x004f1b41                      ; 004f1af3
         ;   XREF to: 004f1b41 (CONDITIONAL_JUMP)  ; LAB_004f1b41
-    MOV EBX,dword ptr [ESI + EBX*0x1 + 0x14f09c] ; 004f1af5 | g_CDemonSetInstance.damage_listeners | DAT_03263318
+    MOV EBX,dword ptr [ESI + EBX*0x1 + 0x14f09c] ; 004f1af5 | g_CDemonSetInstance.characters[0] | DAT_03263318
     CMP EBX,EBP                         ; 004f1afc
     JNZ 0x004f1b06                      ; 004f1afe
         ;   XREF to: 004f1b06 (CONDITIONAL_JUMP)  ; LAB_004f1b06

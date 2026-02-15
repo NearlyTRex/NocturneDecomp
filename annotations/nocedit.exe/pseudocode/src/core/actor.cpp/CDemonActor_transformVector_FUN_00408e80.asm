@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVector3f * __cdecl core_actor_cpp_CDemonActor_transformVector_FUN_00408e80(CDemonActor *this_ptr,CVector3f *output,CVector3f *input)
+; CVector3f * __cdecl core_actor_cpp_CDemonActor_transformVector_FUN_00408e80(CDemonActor *this_ptr,CVector3f *output,CVector3f *input)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr

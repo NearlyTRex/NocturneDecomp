@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void * __cdecl crt_string_c_memmove_FUN_005fe5e0(void *dest,void *src,SIZE_T n)
+; void * __cdecl crt_string_c_memmove_FUN_005fe5e0(void *dest,void *src,SIZE_T n)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   dest

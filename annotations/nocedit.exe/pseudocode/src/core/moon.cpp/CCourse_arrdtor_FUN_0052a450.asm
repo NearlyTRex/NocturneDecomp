@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CCourse * __cdecl core_moon_cpp_CCourse_arrdtor_FUN_0052a450(CCourse *objs,uint flags)
+; CCourse * __cdecl core_moon_cpp_CCourse_arrdtor_FUN_0052a450(CCourse *objs,uint flags)
 ;
 ; Parameters:
 ; CCourse *        Stack[0x4]:4   objs

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_sndmain_cpp_killAllSfx_FUN_005a9cc0(void)
+; void __cdecl sound_sndmain_cpp_killAllSfx_FUN_005a9cc0(void)
 ;
 ;
 ; XREF[2]:

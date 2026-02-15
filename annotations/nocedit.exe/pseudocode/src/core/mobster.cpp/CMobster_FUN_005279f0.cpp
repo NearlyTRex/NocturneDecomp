@@ -50,14 +50,14 @@ void __cdecl core_mobster_cpp_CMobster_FUN_005279f0(CMobster *this_ptr)
         iVar5 = 0;
         local_18 = 0;
         while( true ) {
-          if (*(int *)(g_CDemonSetPtr->unk4 + 0x1f3c) <= iVar6) {
+          if (g_CDemonSetPtr->enemy_count <= iVar6) {
             uVar4 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                               ((CDemonActor *)this_ptr,local_80);
             *(uint *)(this_ptr->unk2 + 4) = uVar4;
             return;
           }
           pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790
-                             (*(CDemonActor **)(g_CDemonSetPtr->unk4 + local_18 + 8000),
+                             (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + local_18),
                               g_CMobsterClassInfo.name_hash);
           if (((pCVar2 != (CDemonActor *)0x0) &&
               (iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660

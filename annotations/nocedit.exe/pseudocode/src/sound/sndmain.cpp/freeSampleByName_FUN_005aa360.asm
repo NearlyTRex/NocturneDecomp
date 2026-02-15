@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_sndmain_cpp_freeSampleByName_FUN_005aa360(char *sample_name,int kill_active_slots)
+; void __cdecl sound_sndmain_cpp_freeSampleByName_FUN_005aa360(char *sample_name,int kill_active_slots)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   sample_name

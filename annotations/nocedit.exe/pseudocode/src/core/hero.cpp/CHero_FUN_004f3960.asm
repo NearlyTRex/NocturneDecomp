@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl core_hero_cpp_CHero_FUN_004f3960(CHero *this_ptr)
+; float __cdecl core_hero_cpp_CHero_FUN_004f3960(CHero *this_ptr)
 ;
 ; Parameters:
 ; CHero *          Stack[0x4]:4   this_ptr
@@ -23,7 +23,7 @@
 ;   WatcomTypeInfo g_CVectorTypeInfo
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   undefined4 g_CMobsterClassInfo.name_hash
-;   undefined4 g_CDemonSetInstance.unk4[7996]
+;   undefined4 g_CDemonSetInstance.enemy_count
 ;   undefined4 DAT_03265258
 ;   undefined4 g_CVehicleClassInfo.name_hash
 ;
@@ -54,7 +54,7 @@ section .text
     MOV dword ptr [ESP + 0x94],EAX      ; 004f398b
     MOV EAX,[0x006810c8]                ; 004f3992 | g_CDemonSetPtr
         ;   Label: LAB_004f3992
-    CMP EDI,dword ptr [EAX + 0x150fdc]  ; 004f3997 | g_CDemonSetInstance.unk4[7996]
+    CMP EDI,dword ptr [EAX + 0x150fdc]  ; 004f3997 | g_CDemonSetInstance.enemy_count
     JL 0x004f39bb                       ; 004f399d
         ;   XREF to: 004f39bb (CONDITIONAL_JUMP)  ; LAB_004f39bb
     CMP dword ptr [ESP + 0x8c],0x0      ; 004f399f

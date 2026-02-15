@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CVector3f * __cdecl core_boneguy_cpp_hsvToRgb_FUN_0041ba10(CVector3f *out_rgb,CVector3f *in_hsv)
+; CVector3f * __cdecl core_boneguy_cpp_hsvToRgb_FUN_0041ba10(CVector3f *out_rgb,CVector3f *in_hsv)
 ;
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   out_rgb

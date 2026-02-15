@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_superopt_cpp_logToFile_FUN_005c7910(char *format,...)
+; void __cdecl shape_superopt_cpp_logToFile_FUN_005c7910(char *format,...)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   format

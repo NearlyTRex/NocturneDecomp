@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_conveyor_cpp_CConveyor_process_FUN_00441df0(CConveyor *this_ptr,float delta_time)
+; void __cdecl core_conveyor_cpp_CConveyor_process_FUN_00441df0(CConveyor *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CConveyor *      Stack[0x4]:4   this_ptr
@@ -21,8 +21,8 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CEventList g_CEventListInstance
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.actor_list_ptr
-;   undefined4 g_CDemonSetInstance.actor_list_data[0]
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;   undefined4 DAT_032613d4
 ;   undefined4 DAT_032613d8
 ;
@@ -75,10 +75,10 @@ section .text
     MOV dword ptr [ESP + 0x1c],EAX      ; 00441e56
     MOV EAX,[0x006810c8]                ; 00441e5a | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_00441e5a
-    CMP EDI,dword ptr [EAX + 0x14d154]  ; 00441e5f | g_CDemonSetInstance.actor_list_ptr
+    CMP EDI,dword ptr [EAX + 0x14d154]  ; 00441e5f | g_CDemonSetInstance.actor_count
     JGE 0x00441e88                      ; 00441e65
         ;   XREF to: 00441e88 (CONDITIONAL_JUMP)  ; LAB_00441e88
-    MOV EBX,dword ptr [EAX + EBP*0x1 + 0x14d158] ; 00441e67 | g_CDemonSetInstance.actor_list_data[0] | DAT_032613d4 | DAT_032613d8
+    MOV EBX,dword ptr [EAX + EBP*0x1 + 0x14d158] ; 00441e67 | g_CDemonSetInstance.actors[0] | DAT_032613d4 | DAT_032613d8
     MOV ECX,dword ptr [EBX + 0xdc]      ; 00441e6e
     CMP ESI,ECX                         ; 00441e74
     JZ 0x00441e90                       ; 00441e76

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CHealthItem * __cdecl core_health_cpp_factoryFunc_FUN_004f1d90(void)
+; CHealthItem * __cdecl core_health_cpp_factoryFunc_FUN_004f1d90(void)
 ;
 ;
 ; XREF[1]:

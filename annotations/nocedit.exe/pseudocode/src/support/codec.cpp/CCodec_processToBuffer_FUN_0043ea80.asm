@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl support_codec_cpp_CCodec_processToBuffer_FUN_0043ea80(CCodec *this_ptr,void *input_param,void *context_param,char *output_buffer,int *output_size,int enable_finalize)
+; int __cdecl support_codec_cpp_CCodec_processToBuffer_FUN_0043ea80(CCodec *this_ptr,void *input_param,void *context_param,char *output_buffer,int *output_size,int enable_finalize)
 ;
 ; Parameters:
 ; CCodec *         Stack[0x4]:4   this_ptr

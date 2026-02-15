@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl crt_string_c_strlen_far_FUN_00602f4c(char *string_offset,ushort segment,int max_length)
+; int __cdecl crt_string_c_strlen_far_FUN_00602f4c(char *string_offset,ushort segment,int max_length)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   string_offset

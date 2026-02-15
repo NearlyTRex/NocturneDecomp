@@ -76,7 +76,7 @@ LAB_00510823:
     iVar4 = 0xff;
     iVar2 = g_ClipBottom + g_ClipTop;
     iVar1 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(g_EditorFont,0x41);
-    engine_font_cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30
+    engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_004cdf30
               (g_EditorFont,g_ClipLeft,g_ClipRight,(iVar2 - iVar1) / 2,iVar4,iVar5,format_string,
                dVar7);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

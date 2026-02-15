@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_charactr_cpp_CCharacter_hasCollision_FUN_0042bc20(CCharacter *this_ptr,SCollisionInfo *collision_info)
+; int __cdecl core_charactr_cpp_CCharacter_hasCollision_FUN_0042bc20(CCharacter *this_ptr,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr

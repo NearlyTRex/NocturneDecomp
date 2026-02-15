@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_larva_cpp_CLarva_archive_FUN_00503960(CLarva *this_ptr)
+; void __cdecl core_larva_cpp_CLarva_archive_FUN_00503960(CLarva *this_ptr)
 ;
 ; Parameters:
 ; CLarva *         Stack[0x4]:4   this_ptr

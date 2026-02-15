@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl shape_meshlod_cpp_divideVectorByScalar_FUN_0051edd0(CVector3f *vector,float *divisor)
+; void __cdecl shape_meshlod_cpp_divideVectorByScalar_FUN_0051edd0(CVector3f *vector,float *divisor)
 ;
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   vector

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_conveyor_cpp_CConveyor_archive_FUN_00442020(CConveyor *this_ptr)
+; void __cdecl core_conveyor_cpp_CConveyor_archive_FUN_00442020(CConveyor *this_ptr)
 ;
 ; Parameters:
 ; CConveyor *      Stack[0x4]:4   this_ptr

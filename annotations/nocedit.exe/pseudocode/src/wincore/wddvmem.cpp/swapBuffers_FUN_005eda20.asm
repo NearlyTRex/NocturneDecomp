@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_005eda20(void)
+; void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_005eda20(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x8c]:4  local_8c

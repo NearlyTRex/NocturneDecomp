@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,float *time_remaining)
+; int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,float *time_remaining)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr
@@ -2620,12 +2620,12 @@ section .text
     XOR EDI,EDI                         ; 0055c204
     MOV EAX,[0x006810c8]                ; 0055c206 | g_CDemonSetPtr | g_CDemonSetInstance
         ;   Label: LAB_0055c206
-    CMP ESI,dword ptr [EAX + 0x14d154]  ; 0055c20b | g_CDemonSetInstance.actor_list_ptr
+    CMP ESI,dword ptr [EAX + 0x14d154]  ; 0055c20b | g_CDemonSetInstance.actor_count
     JGE 0x0055a8bb                      ; 0055c211
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
     MOV ECX,dword ptr [0x00823c4c]      ; 0055c217 | g_CCharacterClassInfo.name_hash
     PUSH ECX                            ; 0055c21d
-    MOV EDX,dword ptr [EDI + EAX*0x1 + 0x14d158] ; 0055c21e | g_CDemonSetInstance.actor_list_data[0] | DAT_032613d4
+    MOV EDX,dword ptr [EDI + EAX*0x1 + 0x14d158] ; 0055c21e | g_CDemonSetInstance.actors[0] | DAT_032613d4
     PUSH EDX                            ; 0055c225
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 0055c226
         ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)

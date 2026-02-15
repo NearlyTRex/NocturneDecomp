@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl wincore_windll_cpp_setMipMapLevel_FUN_005b7436(int mipmap_level)
+; int __cdecl wincore_windll_cpp_setMipMapLevel_FUN_005b7436(int mipmap_level)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   mipmap_level

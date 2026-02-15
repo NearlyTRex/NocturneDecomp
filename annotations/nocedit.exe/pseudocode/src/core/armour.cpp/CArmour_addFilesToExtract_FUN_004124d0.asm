@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_armour_cpp_CArmour_addFilesToExtract_FUN_004124d0(CArmour *this_ptr,_FILE *file_handle)
+; void __cdecl core_armour_cpp_CArmour_addFilesToExtract_FUN_004124d0(CArmour *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CArmour *        Stack[0x4]:4   this_ptr

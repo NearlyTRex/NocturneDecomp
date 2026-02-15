@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl sound_mp3_cpp_calculateIntensityStereoRatio_FUN_00532540(int intensity_position,double ratio,int unused_param3,int sample_index,float *output_buffer)
+; void __cdecl sound_mp3_cpp_calculateIntensityStereoRatio_FUN_00532540(int intensity_position,double ratio,int unused_param3,int sample_index,float *output_buffer)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   intensity_position

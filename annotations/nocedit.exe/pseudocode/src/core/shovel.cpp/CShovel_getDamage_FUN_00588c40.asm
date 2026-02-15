@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl core_shovel_cpp_CShovel_getDamage_FUN_00588c40(CShovel *this_ptr)
+; float __cdecl core_shovel_cpp_CShovel_getDamage_FUN_00588c40(CShovel *this_ptr)
 ;
 ; Parameters:
 ; CShovel *        Stack[0x4]:4   this_ptr

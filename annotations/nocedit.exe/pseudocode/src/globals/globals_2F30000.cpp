@@ -35,8 +35,8 @@ CVector3f g_SamplePointArray[400] = {};
 // SBat[30]
 SBat g_MoonBats[30] = {};
 
-// SMRGLHeaderPrimitive
-SMRGLHeaderPrimitive g_MirrorTempPrimitive = {};
+// SMRGLPrimitiveQuadIndex
+SMRGLPrimitiveQuadIndex g_MirrorTempPrimitive = {};
 
 // SMRGLTextureBasic
 SMRGLTextureBasic g_TempTextureDescriptor = {};
@@ -80,10 +80,6 @@ int INT_02f333c0 = {};
 int INT_02f333c4 = {};
 int g_MirrorInputVertexCount = {};
 int g_MirrorOutputVertexCount = {};
-int INT_02f33724 = {};
-int INT_02f33728 = {};
-int INT_02f3372c = {};
-int INT_02f33730 = {};
 int INT_02f37ec8 = {};
 int INT_02f37ecc = {};
 int INT_02f37ed0 = {};

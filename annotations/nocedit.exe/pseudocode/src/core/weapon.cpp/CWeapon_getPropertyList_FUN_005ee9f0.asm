@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_weapon_cpp_CWeapon_getPropertyList_FUN_005ee9f0(CWeapon *this_ptr,CActorPropertyList *property_list)
+; void __cdecl core_weapon_cpp_CWeapon_getPropertyList_FUN_005ee9f0(CWeapon *this_ptr,CActorPropertyList *property_list)
 ;
 ; Parameters:
 ; CWeapon *        Stack[0x4]:4   this_ptr

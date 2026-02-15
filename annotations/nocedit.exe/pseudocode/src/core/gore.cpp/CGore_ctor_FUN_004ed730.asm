@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CGore * __cdecl core_gore_cpp_CGore_ctor_FUN_004ed730(CGore *this_ptr)
+; CGore * __cdecl core_gore_cpp_CGore_ctor_FUN_004ed730(CGore *this_ptr)
 ;
 ; Parameters:
 ; CGore *          Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl engine_matrix_c_matrixPush_FUN_0050d620(void)
+; void __cdecl engine_matrix_c_matrixPush_FUN_0050d620(void)
 ;
 ;
 ; XREF[3]:

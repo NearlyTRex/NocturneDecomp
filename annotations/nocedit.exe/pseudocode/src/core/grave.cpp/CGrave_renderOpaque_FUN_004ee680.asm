@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl core_grave_cpp_CGrave_renderOpaque_FUN_004ee680(CGrave *this_ptr)
+; int __cdecl core_grave_cpp_CGrave_renderOpaque_FUN_004ee680(CGrave *this_ptr)
 ;
 ; Parameters:
 ; CGrave *         Stack[0x4]:4   this_ptr

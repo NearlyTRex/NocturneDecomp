@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CZThumb * __cdecl core_setdir_cpp_CZThumb_dtor_FUN_005748f0(CZThumb *this_ptr,uint flags)
+; CZThumb * __cdecl core_setdir_cpp_CZThumb_dtor_FUN_005748f0(CZThumb *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CZThumb *        Stack[0x4]:4   this_ptr

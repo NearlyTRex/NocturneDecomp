@@ -230,11 +230,10 @@ LAB_0054cd70:
   iVar10 = 0;
   do {
     while( true ) {
-      if (g_CDemonSetPtr->damage_listener_count <= iVar10) {
+      if (g_CDemonSetPtr->character_count <= iVar10) {
         iStack_24 = 0;
-        for (iStack_20 = 0; iStack_20 < (int)g_CDemonSetPtr->actor_list_ptr;
-            iStack_20 = iStack_20 + 1) {
-          iVar3 = *(int *)(g_CDemonSetPtr->actor_list_data + iStack_24);
+        for (iStack_20 = 0; iStack_20 < g_CDemonSetPtr->actor_count; iStack_20 = iStack_20 + 1) {
+          iVar3 = *(int *)((int)g_CDemonSetPtr->actors + iStack_24);
           if (this_ptr == *(CPlatform **)(iVar3 + 0xdc)) {
             pCStack_18 = (CVector3f *)(iVar3 + 0x20);
             core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
@@ -279,7 +278,7 @@ LAB_0054cd70:
         core_platfrm_cpp_CPlatform_FUN_0054e320(this_ptr);
         return;
       }
-      iVar2 = *(int *)(g_CDemonSetPtr->unk4 + iVar3 + -4);
+      iVar2 = *(int *)((int)g_CDemonSetPtr->characters + iVar3);
       iVar5 = (**(code **)(*(int *)(iVar2 + 0x154) + 0x120))(iVar2);
       if ((iVar5 < 1) && (iVar5 = (**(code **)(*(int *)(iVar2 + 0x154) + 0x68))(iVar2), iVar5 == 0))
       break;

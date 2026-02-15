@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_script_cpp_CScript_setSpeaker_FUN_00560140(CScript *this_ptr,CDemonActor *actor)
+; void __cdecl core_script_cpp_CScript_setSpeaker_FUN_00560140(CScript *this_ptr,CDemonActor *actor)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr

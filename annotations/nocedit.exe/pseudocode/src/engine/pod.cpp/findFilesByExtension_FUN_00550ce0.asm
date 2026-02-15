@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_pod_cpp_findFilesByExtension_FUN_00550ce0(CPod **pod_array,char *extension,char *output_buffer,int max_results,int result_string_length)
+; int __cdecl engine_pod_cpp_findFilesByExtension_FUN_00550ce0(CPod **pod_array,char *extension,char *output_buffer,int max_results,int result_string_length)
 ;
 ; Parameters:
 ; CPod * *         Stack[0x4]:4   pod_array

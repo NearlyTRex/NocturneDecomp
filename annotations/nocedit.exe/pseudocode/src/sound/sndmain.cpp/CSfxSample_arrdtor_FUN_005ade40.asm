@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl CSfxSample * __cdecl sound_sndmain_cpp_CSfxSample_arrdtor_FUN_005ade40(CSfxSample *objs,uint flags)
+; CSfxSample * __cdecl sound_sndmain_cpp_CSfxSample_arrdtor_FUN_005ade40(CSfxSample *objs,uint flags)
 ;
 ; Parameters:
 ; CSfxSample *     Stack[0x4]:4   objs

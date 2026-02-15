@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void __cdecl core_manpuz_cpp_staticInit_FUN_00508890(void)
+; void __cdecl core_manpuz_cpp_staticInit_FUN_00508890(void)
 ;
 ;
 ; Referenced Globals:

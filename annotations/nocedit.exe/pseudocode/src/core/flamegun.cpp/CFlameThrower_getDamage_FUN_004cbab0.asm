@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float __cdecl core_flamegun_cpp_CFlameThrower_getDamage_FUN_004cbab0(CFlameThrower *this_ptr)
+; float __cdecl core_flamegun_cpp_CFlameThrower_getDamage_FUN_004cbab0(CFlameThrower *this_ptr)
 ;
 ; Parameters:
 ; CFlameThrower *  Stack[0x4]:4   this_ptr

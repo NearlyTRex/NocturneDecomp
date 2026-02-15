@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int __cdecl engine_fileio_cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50(CCheckOutItem *this_ptr,char *filename_out,char *out_buffer,char *wildcard_pattern,char *dialog_title)
+; int __cdecl engine_fileio_cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50(CCheckOutItem *this_ptr,char *filename_out,char *out_buffer,char *wildcard_pattern,char *dialog_title)
 ;
 ; Parameters:
 ; CCheckOutItem *  Stack[0x4]:4   this_ptr

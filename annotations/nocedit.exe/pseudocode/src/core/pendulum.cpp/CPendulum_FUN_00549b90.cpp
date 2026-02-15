@@ -93,7 +93,7 @@ void __cdecl core_pendulum_cpp_CPendulum_FUN_00549b90(CPendulum *this_ptr)
         local_48 = local_48 + -1.0f;
       }
       if (0.0 < local_48) {
-        (*((this_ptr_00->vtable)._ub)->playSound)(this_ptr_00,(char *)&this_ptr_00[2].unk11);
+        (*((this_ptr_00->vtable)._ub)->playSound)(this_ptr_00,(char *)&this_ptr_00[2].reserved1);
       }
     }
     local_1c = *(float *)this_ptr_00[2].footstep_sound_code + (float)0.25;

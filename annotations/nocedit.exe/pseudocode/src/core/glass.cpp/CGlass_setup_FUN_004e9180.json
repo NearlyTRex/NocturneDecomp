@@ -10,7 +10,7 @@
       {
         "category": "other",
         "column": 18,
-        "line": 159,
+        "line": 161,
         "message": "C-style cast from 'SMRGLPrimitiveQuad *' to 'float' is not allowed"
       }
     ],
@@ -19,19 +19,19 @@
   },
   "complexity": {
     "assembly_lines": 12,
-    "complexity_score": 410,
+    "complexity_score": 354,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 270,
-    "suspect_count": 12,
+    "pseudocode_lines": 264,
+    "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_ref",
       "suspect_float"
     ],
-    "total_lines": 282
+    "total_lines": 276
   },
   "cross_references": [],
   "function": {
@@ -432,66 +432,31 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 135,
+      "line": 136,
       "match": "ROUND",
       "text": "*(int *)(pcVar7 + 0x5e4) = (int)ROUND(dVar10);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 137,
+      "line": 138,
       "match": "7.216921e-39",
       "text": "fVar11 = 7.216921e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 140,
+      "line": 142,
       "match": "ROUND",
       "text": "local_24 = (int)ROUND(dVar10);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 156,
+      "line": 158,
       "match": "(SMRGLPrimitiveQuad *)((int)",
       "text": "pSVar4 = (SMRGLPrimitiveQuad *)((int)local_3c.z + local_20 * 0x48);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 168,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)this_ptr->broken_quads[0].vertices + iVar5 * 4 + -0x7c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 172,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)(this_ptr->broken_quads[0].vertices + -10) + iVar5 * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 177,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)this_ptr->broken_quads[0].vertices +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 183,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)(this_ptr->broken_quads[0].vertices + -10) +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 201,
-      "match": "1.4013e-45",
-      "text": "(this_ptr->base).unk7 = 1.4013e-45;",
-      "type": "suspect_float"
     }
   ],
   "vtable_info": {
