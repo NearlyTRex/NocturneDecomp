@@ -13,7 +13,7 @@ void __cdecl core_grave_cpp_CGrave_processInEditor_FUN_004eea70(CGrave *this_ptr
   CKeyFramedModel *pCVar2;
   
   core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base);
-  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
   if (iVar1 == 0) {
     this_ptr->cur_frame = 0.0;
     return;

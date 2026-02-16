@@ -10,16 +10,16 @@ CDemonActorType g_CCrossbowClassInfo = {};
 CDemonActorType g_CCurtainClassInfo = {};
 
 // CVector3f[100]
-CVector3f DAT_008879c0[100] = {};
+CVector3f CVector3f_ARRAY_008879c0[100] = {};
 
 // SCollisionInfo[100]
-SCollisionInfo DAT_00887e70[100] = {};
+SCollisionInfo SCollisionInfo_ARRAY_00887e70[100] = {};
 
 // char[500000]
 char g_CameraLoadImageReadBuffer[500000] = {};
 
-// undefined4
-undefined4 DAT_008879bc = {};
+// int
+int INT_008879bc = {};
 
 // void*
 void* g_CramAlgorithmState = {};

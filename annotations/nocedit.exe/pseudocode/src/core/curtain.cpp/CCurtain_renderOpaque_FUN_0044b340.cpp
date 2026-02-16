@@ -14,6 +14,6 @@ int __cdecl core_curtain_cpp_CCurtain_renderOpaque_FUN_0044b340(CCurtain *this_p
   if (this_ptr->opacity < 0xfde9) {
     return 0;
   }
-  iVar1 = core_curtain_cpp_CCurtain_FUN_0044b060(this_ptr);
+  iVar1 = core_curtain_cpp_CCurtain_renderMesh_FUN_0044b060(this_ptr);
   return iVar1;
 }

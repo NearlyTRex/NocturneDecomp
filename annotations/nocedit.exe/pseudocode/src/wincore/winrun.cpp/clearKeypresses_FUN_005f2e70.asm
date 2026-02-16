@@ -16,7 +16,7 @@
 ; Referenced Globals:
 ;   int g_InputReadIndex
 ;   int g_InputWriteIndex
-;   int g_InputCountMaybe
+;   int g_InputCountOld
 ;
 ; *****************************************************************************
 
@@ -27,6 +27,6 @@ section .text
     XOR EAX,EAX                         ; 005f2e72
     MOV dword ptr [0x03f96c1c],EDX      ; 005f2e74 | g_InputWriteIndex
     MOV dword ptr [0x03f96c18],EDX      ; 005f2e7a | g_InputReadIndex
-    MOV dword ptr [0x03f96c20],EDX      ; 005f2e80 | g_InputCountMaybe
+    MOV dword ptr [0x03f96c20],EDX      ; 005f2e80 | g_InputCountOld
     RET                                 ; 005f2e86
 

@@ -3,14 +3,14 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 19,
-        "line": 127,
+        "column": 20,
+        "line": 128,
         "message": "use of undeclared identifier 'stack0xffffff80'"
       },
       {
         "category": "undeclared_identifier",
         "column": 81,
-        "line": 138,
+        "line": 139,
         "message": "use of undeclared identifier 'stack0xffffff7c'"
       }
     ],
@@ -19,18 +19,18 @@
   },
   "complexity": {
     "assembly_lines": 308,
-    "complexity_score": 293,
+    "complexity_score": 294,
     "cross_reference_count": 3,
     "function_call_count": 7,
     "global_count": 30,
-    "pseudocode_lines": 158,
+    "pseudocode_lines": 159,
     "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 466
+    "total_lines": 467
   },
   "cross_references": [
     {
@@ -513,86 +513,86 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 15,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 16,
       "match": "in_stack_0000000c",
       "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 17,
       "match": "in_stack_00000010",
       "text": "int in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 18,
       "match": "in_stack_00000014",
       "text": "int in_stack_00000014;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 75,
+      "line": 77,
       "match": "in_stack_00000008",
       "text": "local_20 = in_stack_00000008 << 8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 76,
+      "line": 78,
       "match": "in_stack_0000000c",
       "text": "local_28 = (byte *)(in_stack_0000000c << 8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 77,
+      "line": 79,
       "match": "in_stack_00000010",
       "text": "local_24 = in_stack_00000010 << 8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 80,
+      "line": 82,
       "match": "in_stack_00000014",
       "text": "local_1c = in_stack_00000014 << 8;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 110,
+      "line": 111,
       "match": "ROUND",
-      "text": "iVar2 = (int)ROUND(dVar8);",
+      "text": "iVar8 = (int)ROUND(dVar10);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Direct stack address reference",
-      "line": 120,
+      "line": 121,
       "match": "&stack0xffffff80",
-      "text": "puVar9 = &stack0xffffff80;",
+      "text": "puVar11 = &stack0xffffff80;",
       "type": "stack_ref"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 124,
+      "line": 125,
       "match": "ROUND",
-      "text": "iStack_7c = (int)ROUND(dVar8);",
+      "text": "iStack_7c = (int)ROUND(dVar10);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Direct stack address reference",
-      "line": 131,
+      "line": 132,
       "match": "&stack0xffffff7c",
-      "text": "(&pCVar1->vertex_buffer_ptr[3].projected_vertex,(CVector3i *)&stack0xffffff7c);",
+      "text": "(&pCVar7->vertex_buffer_ptr[3].projected_vertex,(CVector3i *)&stack0xffffff7c);",
       "type": "stack_ref"
     }
   ]

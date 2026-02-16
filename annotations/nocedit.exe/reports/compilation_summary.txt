@@ -5,16 +5,16 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6494
-Successful: 5406 (83.2%)
-Failed: 1088
+Successful: 5416 (83.4%)
+Failed: 1078
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           1985
-  undeclared_identifier            975
-  incompatible_types               713
-  format_error                     629
-  syntax_error                     114
+  other                           1935
+  undeclared_identifier            971
+  incompatible_types               712
+  format_error                     630
+  syntax_error                     113
   missing_member                    32
   lvalue_required                   26
   type_error                        20
@@ -22,13 +22,15 @@ ERROR CATEGORIES
   overload_error                     1
 
 ====================================================================================================
-CATEGORY: other (1985 errors)
+CATEGORY: other (1935 errors)
 ====================================================================================================
 
   core_setutil.cpp_C3DSCamera_import3DS_FUN_00585c90
     Line 154: C-style cast from 'C3DSCamera *' to 'float' is not allowed...
   core_hero.cpp_CHero_FUN_004f3960
     Line 66: C-style cast from 'CCharacter *' to 'float' is not allowed...
+  core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10
+    Line 56: C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed...
   core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
     Line 60: C-style cast from 'CDemonActor *' to 'float' is not allowed...
   core_imp.cpp_CImp_process_FUN_004f9c30
@@ -73,8 +75,6 @@ CATEGORY: other (1985 errors)
     Line 20: C-style cast from 'CVector3f *' to 'float' is not allowed...
   core_fire.cpp_CFireEffect_createStake_FUN_004c7bb0
     Line 51: C-style cast from 'CVector3f *' to 'float' is not allowed...
-  core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10
-    Line 42: C-style cast from 'CVector3f *' to 'float' is not allowed...
   core_stranger.cpp_CStranger_FUN_005bdd20
     Line 40: C-style cast from 'CVector3f *' to 'float' is not allowed...
   core_actor.cpp_draw3DLineSegment_FUN_0040d330
@@ -86,10 +86,10 @@ CATEGORY: other (1985 errors)
   core_wateract.cpp_CWaterActor_process_FUN_005eb100
     Line 35: C-style cast from 'CWaterActor *' to 'float' is not allowed...
 
-  ... and 388 more errors
+  ... and 381 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (975 errors)
+CATEGORY: undeclared_identifier (971 errors)
 ====================================================================================================
 
   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40
@@ -147,16 +147,16 @@ CATEGORY: undeclared_identifier (975 errors)
   core_msnedit.cpp_staticInit_FUN_00535c30
     Line 12: use of undeclared identifier 'DAT_02f7a024'...
   core_msnedit.cpp_FUN_00536e20
-    Line 35: use of undeclared identifier 'DAT_02f7a02c'...
+    Line 28: use of undeclared identifier 'DAT_02f7a02c'...
   core_netgame.cpp_CNetGame_FUN_00541390
     Line 289: use of undeclared identifier 'DAT_02f7c640'...
   core_netgame.cpp_CNetGame_processChatOut_FUN_00541e40
     Line 62: use of undeclared identifier 'DAT_02f98ae0'...
 
-  ... and 341 more errors
+  ... and 338 more errors
 
 ====================================================================================================
-CATEGORY: incompatible_types (713 errors)
+CATEGORY: incompatible_types (712 errors)
 ====================================================================================================
 
   engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00
@@ -220,10 +220,10 @@ CATEGORY: incompatible_types (713 errors)
   shape_superopt.cpp_CObj_removePolygon_FUN_005d2f50
     Line 26: assigning to 'CPoly *' from incompatible type 'void *'...
 
-  ... and 426 more errors
+  ... and 421 more errors
 
 ====================================================================================================
-CATEGORY: format_error (629 errors)
+CATEGORY: format_error (630 errors)
 ====================================================================================================
 
   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
@@ -287,10 +287,10 @@ CATEGORY: format_error (629 errors)
   core_filmreel.cpp_CFilmReel_addFilesToExtract_FUN_004be9b0
     Line 17: format specifies type 'char *' but the argument has type 'CKeyFramedModel *' [-W...
 
-  ... and 143 more errors
+  ... and 144 more errors
 
 ====================================================================================================
-CATEGORY: syntax_error (114 errors)
+CATEGORY: syntax_error (113 errors)
 ====================================================================================================
 
   core_dskybox.cpp_renderSkyDome_FUN_004901f0
@@ -354,7 +354,7 @@ CATEGORY: syntax_error (114 errors)
   core_platfrm.cpp_CPlatform_FUN_0054df80
     Line 30: expected expression...
 
-  ... and 42 more errors
+  ... and 41 more errors
 
 ====================================================================================================
 CATEGORY: missing_member (32 errors)
@@ -473,8 +473,8 @@ CATEGORY: overload_error (1 errors)
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in successfully compiled functions: 2.13
-Average suspects in failed compilations: 12.09
+Average suspects in successfully compiled functions: 2.11
+Average suspects in failed compilations: 11.93
 
-Functions that compile but have suspect patterns: 1721
+Functions that compile but have suspect patterns: 1725
 (These may have runtime issues even though syntax is valid)

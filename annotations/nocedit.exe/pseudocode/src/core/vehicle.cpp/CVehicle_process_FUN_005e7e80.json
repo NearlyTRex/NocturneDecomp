@@ -19,15 +19,14 @@
   },
   "complexity": {
     "assembly_lines": 686,
-    "complexity_score": 353,
+    "complexity_score": 338,
     "cross_reference_count": 0,
     "function_call_count": 18,
     "global_count": 33,
     "pseudocode_lines": 273,
-    "suspect_count": 6,
+    "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
-      "suspect_float",
       "unresolved_funcptr",
       "warning_type_propagation"
     ],
@@ -570,13 +569,6 @@
       "match": "SQRT",
       "text": "local_24 = SQRT(*(float *)(this_ptr->unk1 + 0x5f8) * *(float *)(this_ptr->unk1 + 0x5f8) +",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 141,
-      "match": "5.60519e-45",
-      "text": "SStack_104.gore_multiplier = 5.60519e-45;",
-      "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",

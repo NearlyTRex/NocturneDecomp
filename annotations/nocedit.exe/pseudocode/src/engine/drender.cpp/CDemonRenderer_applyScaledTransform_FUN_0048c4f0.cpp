@@ -9,59 +9,47 @@
 void __cdecl engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer *this_ptr,CVector3i *position,CVector3i *rotation)
 
 {
-  float fVar1;
-  float10 fVar2;
-  float10 fVar3;
-  float10 fVar4;
-  float10 fVar5;
-  float10 fVar6;
-  float10 fVar7;
-  float10 fVar8;
-  double dVar9;
-  double dVar10;
-  int iVar11;
-  int iVar12;
-  int iVar13;
-  int iVar14;
+  double value;
+  double value_00;
+  double dVar1;
+  double dVar2;
+  double dVar3;
+  int iVar4;
+  int iVar5;
+  int iVar6;
+  int iVar7;
   
   if (rotation == (CVector3i *)0x0) {
-    fVar2 = (float10)0.31830988619288902;
-    fVar1 = (float)position->x;
-    fVar3 = (float10)32768;
-    fVar4 = (float10)(float)position->z * fVar2 * fVar3;
-    iVar14 = 0x48c533;
-    dVar9 = round((double)((float10)(float)position->y * fVar2 * fVar3));
-    fVar5 = (float10)dVar9;
-    iVar13 = 0x48c53a;
-    dVar9 = round((double)fVar4);
-    iVar11 = (int)ROUND(fVar5);
-    iVar12 = 0x48c554;
-    dVar10 = round((double)((float10)fVar1 * fVar2 * fVar3));
+    dVar2 = (double)(float)position->z * 0.31830988619288902 * 32768;
+    dVar3 = (double)(float)position->x * 0.31830988619288902 * 32768;
+    iVar7 = 0x48c533;
+    dVar1 = round
+                      ((double)(float)position->y * 0.31830988619288902 * 32768);
+    iVar6 = 0x48c53a;
+    dVar2 = round(dVar2);
+    iVar4 = (int)ROUND(dVar1);
+    iVar5 = 0x48c554;
+    dVar3 = round(dVar3);
     engine_matrix_c_matrixPushAndTransform_FUN_0050cee0
-              ((int)ROUND(dVar10),(int)ROUND(dVar9),iVar12,iVar11,iVar13,iVar14);
+              ((int)ROUND(dVar3),(int)ROUND(dVar2),iVar5,iVar4,iVar6,iVar7);
     return;
   }
-  fVar2 = (float10)256;
-  fVar3 = (float10)(float)rotation->y * fVar2;
-  fVar8 = (float10)(float)rotation->x * fVar2;
-  fVar4 = (float10)0.31830988619288902;
-  fVar1 = (float)position->y;
-  fVar5 = (float10)32768;
-  fVar6 = (float10)(float)position->z * fVar4 * fVar5;
-  fVar7 = (float10)(float)position->x * fVar4 * fVar5;
-  round((double)((float10)(float)rotation->z * fVar2));
-  dVar9 = round((double)fVar3);
-  fVar2 = (float10)dVar9;
-  dVar9 = round((double)fVar8);
-  iVar11 = (int)ROUND(fVar2);
-  iVar12 = (int)ROUND(dVar9);
-  dVar9 = round((double)((float10)fVar1 * fVar4 * fVar5));
-  fVar2 = (float10)dVar9;
-  dVar9 = round((double)fVar6);
-  iVar13 = (int)ROUND(fVar2);
-  iVar14 = 0x48c608;
-  dVar10 = round((double)fVar7);
+  dVar3 = (double)(float)rotation->y * 256;
+  dVar2 = (double)(float)rotation->x * 256;
+  value = (double)(float)position->y * 0.31830988619288902 * 32768;
+  value_00 = (double)(float)position->z * 0.31830988619288902 * 32768;
+  dVar1 = (double)(float)position->x * 0.31830988619288902 * 32768;
+  round((double)(float)rotation->z * 256);
+  dVar3 = round(dVar3);
+  dVar2 = round(dVar2);
+  iVar4 = (int)ROUND(dVar3);
+  iVar5 = (int)ROUND(dVar2);
+  dVar3 = round(value);
+  dVar2 = round(value_00);
+  iVar6 = (int)ROUND(dVar3);
+  iVar7 = 0x48c608;
+  dVar3 = round(dVar1);
   engine_matrix_c_matrixPushAndTransform_FUN_0050cee0
-            ((int)ROUND(dVar10),(int)ROUND(dVar9),iVar14,iVar13,iVar12,iVar11);
+            ((int)ROUND(dVar3),(int)ROUND(dVar2),iVar7,iVar6,iVar5,iVar4);
   return;
 }

@@ -15,7 +15,7 @@ void __cdecl core_teleport_cpp_CTeleportDest_processInEditor_FUN_005da870(CTelep
   CPickList CStack_474;
   char acStack_cc [200];
   
-  iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x14);
+  iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_T);
   if (iVar1 != 0) {
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&CStack_474);
     core_msnedit_cpp_CDemonMission_FUN_0053cc30

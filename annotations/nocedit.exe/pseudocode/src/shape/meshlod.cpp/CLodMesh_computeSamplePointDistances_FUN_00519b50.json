@@ -4,25 +4,25 @@
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 52,
+        "line": 50,
         "message": "use of undeclared identifier 'stack0x00000000'"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 57,
+        "line": 55,
         "message": "use of undeclared identifier 'stack0x00000000'"
       },
       {
         "category": "undeclared_identifier",
         "column": 23,
-        "line": 144,
+        "line": 139,
         "message": "use of undeclared identifier 'stack0x00000000'"
       },
       {
         "category": "undeclared_identifier",
         "column": 23,
-        "line": 147,
+        "line": 142,
         "message": "use of undeclared identifier 'stack0x00000000'"
       }
     ],
@@ -31,11 +31,11 @@
   },
   "complexity": {
     "assembly_lines": 446,
-    "complexity_score": 443,
+    "complexity_score": 438,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 18,
-    "pseudocode_lines": 223,
+    "pseudocode_lines": 218,
     "suspect_count": 20,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -43,7 +43,7 @@
       "stack_ref",
       "suspect_float"
     ],
-    "total_lines": 669
+    "total_lines": 664
   },
   "cross_references": [
     {
@@ -495,142 +495,142 @@
   "suspects": [
     {
       "description": "Direct stack address reference",
-      "line": 45,
+      "line": 43,
       "match": "&stack0x00000000",
       "text": "if ((CVector3f *)&stack0x00000000 != g_SamplePointArray + 0xc) {",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 50,
+      "line": 48,
       "match": "&stack0x00000000",
       "text": "if ((CVector3f *)&stack0x00000000 != g_SamplePointArray + 0xb) {",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 58,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)g_SampleDistances + iVar6) = 0;",
+      "text": "*(uint *)((int)g_SampleDistances + iVar8) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 62,
+      "line": 60,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)g_SampleDistances + iVar6 + 4) = 0x3ff00000;",
+      "text": "*(uint *)((int)g_SampleDistances + iVar8 + 4) = 0x3ff00000;",
       "type": "pointer_cast"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 63,
+      "line": 61,
       "match": "7.494611e-39",
       "text": "fStack_9c = 7.494611e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 85,
+      "line": 80,
       "match": "7.494835e-39",
       "text": "fStack_9c = 7.494835e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 87,
+      "line": 82,
       "match": "ROUND",
-      "text": "local_40 = (int)ROUND(fVar11);",
+      "text": "local_40 = (int)ROUND(dVar10);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 88,
+      "line": 83,
       "match": "ROUND",
-      "text": "local_44 = (int)ROUND(dVar13);",
+      "text": "local_44 = (int)ROUND(dVar11);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 89,
+      "line": 84,
       "match": "ROUND",
-      "text": "local_3c = (int)ROUND(dVar14);",
+      "text": "local_3c = (int)ROUND(dVar12);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Direct stack address reference",
-      "line": 137,
+      "line": 132,
       "match": "&stack0x00000000",
       "text": "if ((CVector3f *)&stack0x00000000 != g_SamplePointArray + 0xd) {",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 140,
+      "line": 135,
       "match": "&stack0x00000000",
       "text": "if ((CVector3f *)&stack0x00000000 != g_SamplePointArray + 0xc) {",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 150,
+      "line": 145,
       "match": "(double *)((int)",
-      "text": "local_78 = SQRT((float)*(double *)((int)g_SampleDistances + iVar6));",
+      "text": "local_78 = SQRT((float)*(double *)((int)g_SampleDistances + iVar8));",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 150,
+      "line": 145,
       "match": "SQRT",
-      "text": "local_78 = SQRT((float)*(double *)((int)g_SampleDistances + iVar6));",
+      "text": "local_78 = SQRT((float)*(double *)((int)g_SampleDistances + iVar8));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 170,
+      "line": 165,
       "match": "ROUND",
-      "text": "local_54.z = (float)(int)ROUND(dVar13);",
+      "text": "local_54.z = (float)(int)ROUND(dVar10);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 180,
+      "line": 175,
       "match": "ROUND",
-      "text": "local_54.y = (float)(int)ROUND(dVar13);",
+      "text": "local_54.y = (float)(int)ROUND(dVar10);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 189,
+      "line": 184,
       "match": "ROUND",
-      "text": "local_54.x = (float)(int)ROUND(dVar13);",
+      "text": "local_54.x = (float)(int)ROUND(dVar10);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 198,
+      "line": 193,
       "match": "ROUND",
-      "text": "local_58 = (int)ROUND(dVar13);",
+      "text": "local_58 = (int)ROUND(dVar10);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 207,
+      "line": 202,
       "match": "ROUND",
-      "text": "local_5c = (int)ROUND(dVar13);",
+      "text": "local_5c = (int)ROUND(dVar10);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 214,
+      "line": 209,
       "match": "7.495882e-39",
       "text": "fStack_9c = 7.495882e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 216,
+      "line": 211,
       "match": "ROUND",
-      "text": "local_60 = (int)ROUND(dVar13);",
+      "text": "local_60 = (int)ROUND(dVar10);",
       "type": "decompiler_intrinsic"
     }
   ]

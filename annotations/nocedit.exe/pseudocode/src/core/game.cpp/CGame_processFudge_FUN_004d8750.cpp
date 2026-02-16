@@ -14,34 +14,34 @@ int __cdecl core_game_cpp_CGame_processFudge_FUN_004d8750(CGame *this_ptr,float 
   int iVar3;
   float fStack_18;
   
-  iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+  iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
   if ((iVar2 != 0) && (this_ptr->debug_fudge_target != (CVector3f *)0x0)) {
     fStack_18 = this_ptr->debug_fudge_step;
-    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU);
     if (iVar2 != 0) {
       fStack_18 = fStack_18 * (float)0.10000000000000001;
     }
-    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4b);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD4);
     if (iVar2 != 0) {
       this_ptr->debug_fudge_target->x = this_ptr->debug_fudge_target->x - fStack_18;
     }
-    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4d);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD6);
     if (iVar2 != 0) {
       this_ptr->debug_fudge_target->x = this_ptr->debug_fudge_target->x + fStack_18;
     }
-    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x48);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD8);
     if (iVar2 != 0) {
       this_ptr->debug_fudge_target->z = this_ptr->debug_fudge_target->z - fStack_18;
     }
-    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x50);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD2);
     if (iVar2 != 0) {
       this_ptr->debug_fudge_target->z = this_ptr->debug_fudge_target->z + fStack_18;
     }
-    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1e);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_A);
     if (iVar2 != 0) {
       this_ptr->debug_fudge_target->y = this_ptr->debug_fudge_target->y - fStack_18;
     }
-    iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x10);
+    iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_Q);
     iVar2 = 0;
     if (iVar3 != 0) {
       pCVar1 = this_ptr->debug_fudge_target;

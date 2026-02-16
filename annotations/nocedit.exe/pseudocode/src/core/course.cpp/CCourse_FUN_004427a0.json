@@ -2,63 +2,57 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "incompatible_types",
-        "column": 16,
-        "line": 74,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 14,
-        "line": 133,
+        "line": 124,
         "message": "use of undeclared identifier 'stack0xffffff8c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 14,
-        "line": 134,
+        "line": 125,
         "message": "use of undeclared identifier 'stack0xffffff90'"
       },
       {
         "category": "undeclared_identifier",
         "column": 12,
-        "line": 136,
+        "line": 127,
         "message": "use of undeclared identifier 'stack0xffffff90'"
       },
       {
         "category": "undeclared_identifier",
         "column": 27,
-        "line": 144,
+        "line": 135,
         "message": "use of undeclared identifier 'stack0xffffff8c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 22,
-        "line": 146,
+        "line": 137,
         "message": "use of undeclared identifier 'stack0xffffff90'"
       },
       {
         "category": "undeclared_identifier",
         "column": 28,
-        "line": 148,
+        "line": 139,
         "message": "use of undeclared identifier 'stack0xffffff90'"
       },
       {
         "category": "undeclared_identifier",
         "column": 25,
-        "line": 154,
+        "line": 145,
         "message": "use of undeclared identifier 'stack0xffffff8c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 46,
-        "line": 155,
+        "line": 146,
         "message": "use of undeclared identifier 'stack0xffffff90'"
       },
       {
         "category": "undeclared_identifier",
         "column": 26,
-        "line": 157,
+        "line": 148,
         "message": "use of undeclared identifier 'stack0xffffff90'"
       }
     ],
@@ -67,20 +61,19 @@
   },
   "complexity": {
     "assembly_lines": 277,
-    "complexity_score": 585,
+    "complexity_score": 511,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 1,
-    "pseudocode_lines": 150,
-    "suspect_count": 41,
+    "pseudocode_lines": 141,
+    "suspect_count": 35,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "pointer_cast",
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 427
+    "total_lines": 418
   },
   "cross_references": [
     {
@@ -381,225 +374,225 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
-      "match": "extraout_EBX",
-      "text": "float *extraout_EBX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
-      "match": "extraout_EBX_00",
-      "text": "float *extraout_EBX_00;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 14,
       "match": "in_stack_00000008",
       "text": "float in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 15,
       "match": "in_stack_0000000c",
       "text": "float *in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 16,
       "match": "in_stack_00000010",
       "text": "float *in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 48,
+      "line": 41,
       "match": "in_stack_00000008",
       "text": "if (0.0 < in_stack_00000008) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 51,
+      "line": 44,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 < (float)iVar7) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 52,
+      "line": 45,
       "match": "in_stack_00000008",
       "text": "dVar10 = round((double)in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 53,
+      "line": 46,
       "match": "ROUND",
       "text": "local_1c = (int)ROUND(dVar10);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 55,
+      "line": 48,
       "match": "in_stack_00000008",
       "text": "local_7c = in_stack_00000008 - (float)local_1c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
+      "line": 60,
+      "match": "in_stack_00000008",
+      "text": "if (0.0 <= in_stack_00000008) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 61,
+      "match": "in_stack_00000008",
+      "text": "local_24 = floor((double)(in_stack_00000008 / fVar1));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 62,
+      "match": "in_stack_00000008",
+      "text": "local_7c = in_stack_00000008 - (float)local_24 * fVar1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 65,
+      "match": "in_stack_00000008",
+      "text": "local_24 = floor((double)(-in_stack_00000008 / fVar1));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 66,
       "match": "in_stack_00000008",
-      "text": "dVar10 = (double)in_stack_00000008;",
+      "text": "local_7c = (float)local_24 * fVar1 + in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 67,
-      "match": "SUB84",
-      "text": "local_88 = SUB84(dVar10,0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 70,
-      "match": "in_stack_00000008",
-      "text": "local_28 = floor((double)(in_stack_00000008 / (float)this_ptr->len));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 71,
-      "match": "CONCAT44",
-      "text": "local_80 = (float)(double)CONCAT44(local_88,uStack_8c) - (float)local_28 * fStack_84;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 72,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c = extraout_EBX_00;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 72,
-      "match": "extraout_EBX_00",
-      "text": "in_stack_0000000c = extraout_EBX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 75,
-      "match": "in_stack_00000008",
-      "text": "local_28 = floor((double)(-in_stack_00000008 / (float)this_ptr->len));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 76,
-      "match": "CONCAT44",
-      "text": "local_80 = (float)local_28 * fStack_84 + (float)(double)CONCAT44(local_88,uStack_8c);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 77,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c = extraout_EBX;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 77,
-      "match": "extraout_EBX",
-      "text": "in_stack_0000000c = extraout_EBX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 83,
       "match": "ROUND",
-      "text": "fStack_20 = (float)(int)ROUND(dVar10);",
+      "text": "local_1c = (int)ROUND(dVar10);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 97,
+      "match": "CONCAT44",
+      "text": "local_24 = (double)CONCAT44(local_50,(uint)local_24);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 123,
+      "line": 114,
       "match": "(uint *)((int)",
       "text": "puVar5 = (uint *)((int)pCVar4 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 126,
+      "line": 117,
       "match": "&stack0xffffff8c",
       "text": "*(uint *)(&stack0xffffff8c + (uint)bVar9 * -8) = *puVar5;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 127,
+      "line": 118,
       "match": "&stack0xffffff90",
       "text": "*(uint *)(&stack0xffffff90 + (uint)bVar9 * -8 + (uint)bVar9 * -8) = *puVar6;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 129,
+      "line": 120,
       "match": "&stack0xffffff90",
       "text": "((int)(&stack0xffffff90 + (uint)bVar9 * -8 + (uint)bVar9 * -8) + ((uint)bVar9 * -2 + 1) * 4) =",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 131,
+      "line": 122,
       "match": "in_stack_0000000c",
       "text": "if (in_stack_0000000c != &local_40) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 132,
+      "line": 123,
       "match": "in_stack_0000000c",
       "text": "*in_stack_0000000c = local_40;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 133,
+      "line": 124,
       "match": "in_stack_0000000c",
       "text": "in_stack_0000000c[1] = local_3c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 134,
+      "line": 125,
       "match": "in_stack_0000000c",
       "text": "in_stack_0000000c[2] = local_38;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 135,
+      "line": 126,
       "match": "in_stack_00000010",
       "text": "pfVar8 = in_stack_00000010 + (uint)bVar9 * -2 + 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 136,
+      "line": 127,
       "match": "in_stack_00000010",
       "text": "*in_stack_00000010 = fVar1;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
+      "line": 128,
+      "match": "&stack0xffffff8c",
+      "text": "*pfVar8 = *(float *)(&stack0xffffff8c + (uint)bVar9 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 130,
+      "match": "&stack0xffffff90",
+      "text": "*(float *)(&stack0xffffff90 + (uint)bVar9 * -8 + (uint)bVar9 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 132,
+      "match": "&stack0xffffff90",
+      "text": "*(float *)((int)(&stack0xffffff90 + (uint)bVar9 * -8 + (uint)bVar9 * -8) +",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 132,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)(&stack0xffffff90 + (uint)bVar9 * -8 + (uint)bVar9 * -8) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 136,
+      "match": "in_stack_00000010",
+      "text": "pfVar8 = in_stack_00000010 + (uint)bVar9 * -2 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 137,
+      "match": "in_stack_00000010",
+      "text": "*in_stack_00000010 = fVar1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 138,
       "match": "&stack0xffffff8c",
       "text": "*pfVar8 = *(float *)(&stack0xffffff8c + (uint)bVar9 * -8);",
       "type": "stack_ref"
@@ -608,61 +601,19 @@
       "description": "Direct stack address reference",
       "line": 139,
       "match": "&stack0xffffff90",
-      "text": "*(float *)(&stack0xffffff90 + (uint)bVar9 * -8 + (uint)bVar9 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 141,
-      "match": "&stack0xffffff90",
-      "text": "*(float *)((int)(&stack0xffffff90 + (uint)bVar9 * -8 + (uint)bVar9 * -8) +",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 141,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)(&stack0xffffff90 + (uint)bVar9 * -8 + (uint)bVar9 * -8) +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 145,
-      "match": "in_stack_00000010",
-      "text": "pfVar8 = in_stack_00000010 + (uint)bVar9 * -2 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 146,
-      "match": "in_stack_00000010",
-      "text": "*in_stack_00000010 = fVar1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 147,
-      "match": "&stack0xffffff8c",
-      "text": "*pfVar8 = *(float *)(&stack0xffffff8c + (uint)bVar9 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 148,
-      "match": "&stack0xffffff90",
       "text": "pfVar8[(uint)bVar9 * -2 + 1] = *(float *)(&stack0xffffff90 + (uint)bVar9 * -8 + (uint)bVar9 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 150,
+      "line": 141,
       "match": "&stack0xffffff90",
       "text": "*(float *)((int)(&stack0xffffff90 + (uint)bVar9 * -8 + (uint)bVar9 * -8) +",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 150,
+      "line": 141,
       "match": "(float *)((int)",
       "text": "*(float *)((int)(&stack0xffffff90 + (uint)bVar9 * -8 + (uint)bVar9 * -8) +",
       "type": "pointer_cast"

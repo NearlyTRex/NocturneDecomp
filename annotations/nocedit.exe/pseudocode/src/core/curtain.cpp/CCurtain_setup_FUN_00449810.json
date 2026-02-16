@@ -6,16 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 12,
-    "complexity_score": 346,
+    "complexity_score": 454,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 291,
-    "suspect_count": 5,
+    "pseudocode_lines": 264,
+    "suspect_count": 18,
     "suspect_types": [
-      "decompiler_intrinsic"
+      "decompiler_intrinsic",
+      "pointer_cast"
     ],
-    "total_lines": 303
+    "total_lines": 276
   },
   "cross_references": [],
   "function": {
@@ -297,38 +298,129 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 43,
-      "match": "ROUND",
-      "text": "fVar1 = (float)(int)ROUND(dVar18);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
       "line": 45,
       "match": "ROUND",
-      "text": "fVar2 = (float)(int)ROUND(dVar18);",
+      "text": "fVar1 = (float)(int)ROUND(dVar20);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 107,
+      "line": 47,
       "match": "ROUND",
-      "text": "iVar6 = (int)ROUND(dVar18);",
+      "text": "fVar2 = (float)(int)ROUND(dVar20);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 108,
+      "match": "ROUND",
+      "text": "iVar8 = (int)ROUND(dVar20);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 115,
       "match": "ROUND",
-      "text": "local_18 = (int)ROUND(dVar18);",
+      "text": "local_18 = (int)ROUND(dVar20);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 138,
       "match": "SQRT",
-      "text": "*(float *)(pSVar9->unk + 0x58) = SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2);",
+      "text": "pSVar12->rest_distances[0] = SQRT(fVar4 * fVar4 + fVar1 * fVar1 + fVar2 * fVar2);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 160,
+      "match": "(CVector3f *)((int)",
+      "text": "pCVar9 = (CVector3f *)((int)(pCVar9 + 9) + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 197,
+      "match": "(uint *)((int)",
+      "text": "puVar18 = (uint *)((int)pSVar14 + (uint)bVar19 * -8 + 0x1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 198,
+      "match": "(uint *)((int)",
+      "text": "puVar17 = (uint *)((int)pSVar10 + (uint)bVar19 * -8 + 0x34);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 202,
+      "match": "(uint *)((int)",
+      "text": "puVar18 = (uint *)((int)pSVar14 + (uint)bVar19 * -8 + 0x28);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 203,
+      "match": "(uint *)((int)",
+      "text": "puVar17 = (uint *)((int)pSVar10 + (uint)bVar19 * -8 + 0x28);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 207,
+      "match": "(uint *)((int)",
+      "text": "puVar18 = (uint *)((int)pSVar14 + (uint)bVar19 * -8 + 0x34);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 208,
+      "match": "(uint *)((int)",
+      "text": "puVar17 = (uint *)((int)pSVar10 + (uint)bVar19 * -8 + 0x1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 241,
+      "match": "(uint *)((int)",
+      "text": "puVar18 = (uint *)((int)pSVar14 + (uint)bVar19 * -8 + 100);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 242,
+      "match": "(uint *)((int)",
+      "text": "puVar17 = (uint *)((int)pSVar10 + (uint)bVar19 * -8 + 0x7c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 246,
+      "match": "(uint *)((int)",
+      "text": "puVar18 = (uint *)((int)pSVar14 + (uint)bVar19 * -8 + 0x70);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 247,
+      "match": "(uint *)((int)",
+      "text": "puVar17 = (uint *)((int)pSVar10 + (uint)bVar19 * -8 + 0x70);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 251,
+      "match": "(uint *)((int)",
+      "text": "puVar18 = (uint *)((int)pSVar14 + (uint)bVar19 * -8 + 0x7c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 252,
+      "match": "(uint *)((int)",
+      "text": "puVar17 = (uint *)((int)pSVar10 + (uint)bVar19 * -8 + 100);",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

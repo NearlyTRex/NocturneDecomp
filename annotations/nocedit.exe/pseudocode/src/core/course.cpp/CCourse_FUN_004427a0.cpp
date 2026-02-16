@@ -12,8 +12,6 @@ void __cdecl core_course_cpp_CCourse_FUN_004427a0(CCourse *this_ptr)
   float fVar1;
   CCourseFrameList *pCVar2;
   CCourseFrame *pCVar3;
-  float *extraout_EBX;
-  float *extraout_EBX_00;
   CQuaternion4f *pCVar4;
   uint *puVar6;
   int iVar7;
@@ -25,10 +23,6 @@ void __cdecl core_course_cpp_CCourse_FUN_004427a0(CCourse *this_ptr)
   float *in_stack_00000010;
   float afStackY_1854 [1517];
   uint local_90;
-  uint uStack_8c;
-  uint local_88;
-  float fStack_84;
-  float local_80;
   float local_7c;
   CQuaternion4f CStack_68;
   float fStack_58;
@@ -43,8 +37,7 @@ void __cdecl core_course_cpp_CCourse_FUN_004427a0(CCourse *this_ptr)
   float local_34;
   float local_30;
   float local_2c;
-  double local_28;
-  float fStack_20;
+  ulonglong local_24;
   int local_1c;
   int local_18;
   int local_14;
@@ -70,26 +63,23 @@ void __cdecl core_course_cpp_CCourse_FUN_004427a0(CCourse *this_ptr)
     local_18 = this_ptr->loop;
   }
   else {
-    dVar10 = (double)in_stack_00000008;
-    local_88 = SUB84(dVar10,0);
-    fStack_84 = (float)((ulonglong)dVar10 >> 0x20);
-    if (0.0 <= dVar10) {
-      local_28 = floor((double)(in_stack_00000008 / (float)this_ptr->len));
-      local_80 = (float)(double)CONCAT44(local_88,uStack_8c) - (float)local_28 * fStack_84;
-      in_stack_0000000c = extraout_EBX_00;
+    fVar1 = (float)this_ptr->len;
+    if (0.0 <= in_stack_00000008) {
+      local_24 = floor((double)(in_stack_00000008 / fVar1));
+      local_7c = in_stack_00000008 - (float)local_24 * fVar1;
     }
     else {
-      local_28 = floor((double)(-in_stack_00000008 / (float)this_ptr->len));
-      local_80 = (float)local_28 * fStack_84 + (float)(double)CONCAT44(local_88,uStack_8c);
-      in_stack_0000000c = extraout_EBX;
-      if (local_80 < 0.0) {
-        local_80 = local_80 + fStack_84;
+      local_24 = floor((double)(-in_stack_00000008 / fVar1));
+      local_7c = (float)local_24 * fVar1 + in_stack_00000008;
+      if (local_7c < 0.0) {
+        local_7c = local_7c + fVar1;
       }
     }
-    dVar10 = round((double)local_80);
-    fStack_20 = (float)(int)ROUND(dVar10);
-    local_1c = (int)fStack_20;
-    iVar7 = (int)fStack_20 + 1;
+    dVar10 = round((double)local_7c);
+    local_1c = (int)ROUND(dVar10);
+    local_18 = local_1c;
+    local_7c = local_7c - (float)local_1c;
+    iVar7 = local_1c + 1;
     if (iVar7 < this_ptr->len) goto LAB_004427da;
   }
   iVar7 = 0;
@@ -109,11 +99,12 @@ LAB_004427da:
     local_4c = (pCVar3->pos).x * local_7c;
     local_48 = (pCVar3->pos).y * local_7c;
     local_44 = local_7c * (pCVar3->pos).z;
-    fStack_20 = 1.0 - local_7c;
+    local_50 = 1.0 - local_7c;
     pCVar2 = this_ptr->frame_list;
-    fStack_58 = (&pCVar2->frame1)[local_1c].pos.x * fStack_20;
-    local_54 = (&pCVar2->frame1)[local_1c].pos.y * fStack_20;
-    local_50 = (&pCVar2->frame1)[local_1c].pos.z * fStack_20;
+    local_24 = (double)CONCAT44(local_50,(uint)local_24);
+    fStack_58 = (&pCVar2->frame1)[local_1c].pos.x * local_50;
+    local_54 = (&pCVar2->frame1)[local_1c].pos.y * local_50;
+    local_50 = (&pCVar2->frame1)[local_1c].pos.z * local_50;
     local_34 = fStack_58 + local_4c;
     local_30 = local_54 + local_48;
     local_2c = local_50 + local_44;

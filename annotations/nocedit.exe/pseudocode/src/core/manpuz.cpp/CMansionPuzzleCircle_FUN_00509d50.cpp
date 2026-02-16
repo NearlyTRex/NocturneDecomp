@@ -9,15 +9,14 @@
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_00509d50(CMansionPuzzleCircle *this_ptr)
 
 {
-  float fVar1;
-  SRenderVertex *pSVar2;
+  SRenderVertex *pSVar1;
+  float fVar2;
+  float fVar3;
   CDemonRenderer *this_ptr_00;
-  int iVar3;
-  char *pcVar4;
-  float10 fVar5;
-  float10 fVar6;
+  int iVar4;
+  char *pcVar5;
+  double dVar6;
   double dVar7;
-  double dVar8;
   int in_stack_00000008;
   CVector3i local_6c;
   CVector3i local_60;
@@ -31,35 +30,34 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_00509d50(CMansionPuzzleCir
   int local_20;
   int local_1c;
   
-  pcVar4 = this_ptr->unk3 + in_stack_00000008 * 0xb8 + 0x458;
+  pcVar5 = this_ptr->unk3 + in_stack_00000008 * 0xb8 + 0x458;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr2,(CVector3i *)(pcVar4 + 0x30),(CVector3i *)(pcVar4 + 0x24));
+            (g_CDemonRendererPtr2,(CVector3i *)(pcVar5 + 0x30),(CVector3i *)(pcVar5 + 0x24));
   if ((g_CDemonMissionPtr->is_in_editor != 0) &&
-     (iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
-     iVar3 == 0)) {
+     (iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
+     iVar4 == 0)) {
     if (g_MansionPuzzleSlewType == 2) {
       shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(g_CEditorToolsPtr);
     }
     shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0(g_CEditorToolsPtr,1.0,0xfb);
   }
-  fVar5 = (float10)256.0f;
-  fVar1 = *(float *)(pcVar4 + 4);
-  fVar6 = (float10)*(float *)pcVar4 * fVar5;
-  dVar7 = round((double)((float10)*(float *)(pcVar4 + 8) * fVar5));
-  dVar8 = round((double)((float10)fVar1 * fVar5));
-  local_2c = (int)ROUND(dVar7);
-  local_1c = (int)ROUND(dVar8);
-  dVar7 = round((double)fVar6);
-  local_20 = (int)ROUND(dVar7);
+  fVar2 = *(float *)(pcVar5 + 4) * 256.0f;
+  fVar3 = *(float *)pcVar5 * 256.0f;
+  dVar6 = round((double)(*(float *)(pcVar5 + 8) * 256.0f));
+  dVar7 = round((double)fVar2);
+  local_2c = (int)ROUND(dVar6);
+  local_1c = (int)ROUND(dVar7);
+  dVar6 = round((double)fVar3);
+  local_20 = (int)ROUND(dVar6);
   core_set_cpp_CDemonSet_FUN_00570ca0(g_CDemonSetPtr);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
             (&this_ptr->gem_model,0.0,-1);
   core_set_cpp_CDemonSet_FUN_00570ca0(g_CDemonSetPtr);
-  iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
-  if ((iVar3 == 0) &&
-     ((((float)0.01 < *(float *)(pcVar4 + 0xc) ||
-       ((float)0.01 < *(float *)(pcVar4 + 0x10))) ||
-      ((float)0.01 < *(float *)(pcVar4 + 0x14))))) {
+  iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
+  if ((iVar4 == 0) &&
+     ((((float)0.01 < *(float *)(pcVar5 + 0xc) ||
+       ((float)0.01 < *(float *)(pcVar5 + 0x10))) ||
+      ((float)0.01 < *(float *)(pcVar5 + 0x14))))) {
     local_54 = -1.4;
     local_4c = -1.4;
     local_50 = 0.2;
@@ -87,18 +85,17 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_00509d50(CMansionPuzzleCir
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_3c);
     this_ptr_00 = g_CDemonRendererPtr2;
-    fVar5 = (float10)256.0f;
-    fVar1 = *(float *)(pcVar4 + 0x10);
-    fVar6 = (float10)*(float *)(pcVar4 + 0x14) * fVar5;
-    pSVar2 = g_CDemonRendererPtr2->vertex_buffer_ptr;
-    dVar7 = round((double)((float10)*(float *)(pcVar4 + 0xc) * fVar5));
-    local_30 = (int)ROUND(dVar7);
-    pSVar2->light = local_30;
-    dVar7 = round((double)((float10)fVar1 * fVar5));
-    local_30 = (int)ROUND(dVar7);
+    fVar2 = *(float *)(pcVar5 + 0x10) * 256.0f;
+    fVar3 = *(float *)(pcVar5 + 0x14) * 256.0f;
+    pSVar1 = g_CDemonRendererPtr2->vertex_buffer_ptr;
+    dVar6 = round((double)(*(float *)(pcVar5 + 0xc) * 256.0f));
+    local_30 = (int)ROUND(dVar6);
+    pSVar1->light = local_30;
+    dVar6 = round((double)fVar2);
+    local_30 = (int)ROUND(dVar6);
     this_ptr_00->vertex_buffer_ptr->color = local_30;
-    dVar7 = round((double)fVar6);
-    local_30 = (int)ROUND(dVar7);
+    dVar6 = round((double)fVar3);
+    local_30 = (int)ROUND(dVar6);
     this_ptr_00->vertex_buffer_ptr->fog = local_30;
     this_ptr_00->vertex_buffer_ptr->w_recip = 9.18341e-41;
     this_ptr_00->vertex_buffer_ptr[1].light = local_3c.y;

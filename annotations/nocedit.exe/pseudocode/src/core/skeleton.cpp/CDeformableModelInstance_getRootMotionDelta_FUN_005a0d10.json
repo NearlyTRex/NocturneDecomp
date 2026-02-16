@@ -3,8 +3,14 @@
     "errors": [
       {
         "category": "other",
-        "column": 25,
-        "line": 42,
+        "column": 12,
+        "line": 56,
+        "message": "C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 27,
+        "line": 61,
         "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
       }
     ],
@@ -13,18 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 178,
-    "complexity_score": 151,
+    "complexity_score": 113,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 3,
-    "pseudocode_lines": 66,
-    "suspect_count": 7,
+    "pseudocode_lines": 63,
+    "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
-      "unaffected_reg"
+      "pointer_cast"
     ],
-    "total_lines": 244
+    "total_lines": 241
   },
   "cross_references": [
     {
@@ -286,53 +291,32 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 17,
-      "match": "extraout_EBX",
-      "text": "int extraout_EBX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 18,
-      "match": "unaff_ESI",
-      "text": "float unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 37,
+      "line": 35,
       "match": "ROUND",
-      "text": "iVar1 = (int)ROUND(dVar13);",
+      "text": "iVar1 = (int)ROUND(dVar14);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Complex pointer cast",
+      "line": 43,
+      "match": "(float *)((int)",
+      "text": "local_38 = local_38 + *(float *)((int)&pCVar8->x + iVar13);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 44,
-      "match": "extraout_EBX",
-      "text": "iVar8 = *(int *)(extraout_EBX + 0x29378);",
-      "type": "extra_output"
+      "match": "(float *)((int)",
+      "text": "local_34 = local_34 + *(float *)((int)&pCVar8->y + iVar13);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 52,
-      "match": "unaff_ESI",
-      "text": "fVar10 = unaff_ESI - (float)iStack_20;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 53,
-      "match": "extraout_EBX",
-      "text": "iVar9 = *(int *)(extraout_EBX + 0x29378);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 58,
-      "match": "extraout_EBX",
-      "text": "iVar1 = *(int *)(extraout_EBX + 0x29378);",
-      "type": "extra_output"
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(float *)((int)",
+      "text": "local_30 = local_30 + *(float *)((int)&pCVar8->z + iVar13);",
+      "type": "pointer_cast"
     }
   ]
 }

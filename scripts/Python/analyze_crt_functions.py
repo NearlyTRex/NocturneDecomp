@@ -52,28 +52,31 @@ KNOWN_CRT_SIGNATURES = {
         'notes': 'Pure FPU: FRNDINT on ST0, returns ST0'
     },
 
-    # Math functions - Software FP (stack params, EDX:EAX return)
+    # Math functions - CRT math (stack params, EDX:EAX return, preserves EBX)
     # These take double on stack (starting at 0x4 after return addr), return double in EDX:EAX
+    # NOTE: These must use __crtmath, NOT __softfp_double! __softfp_double kills EBX
+    # (designed for Watcom software FP intrinsics that pass doubles in register pairs).
+    # These functions take stack params and preserve EBX.
     'floor': {
         'return': 'double',
         'return_storage': 'EDX:EAX',
         'params': [('double', 'Stack[0x4]:8')],
-        'convention': '__softfp_double',
-        'notes': 'Stack param at 0x4 (8 bytes), returns EDX:EAX'
+        'convention': '__crtmath',
+        'notes': 'Stack param at 0x4 (8 bytes), returns EDX:EAX. Preserves EBX.'
     },
     'ceil': {
         'return': 'double',
         'return_storage': 'EDX:EAX',
         'params': [('double', 'Stack[0x4]:8')],
-        'convention': '__softfp_double',
-        'notes': 'Stack param at 0x4 (8 bytes), returns EDX:EAX'
+        'convention': '__crtmath',
+        'notes': 'Stack param at 0x4 (8 bytes), returns EDX:EAX. Calls floor() internally. Preserves EBX.'
     },
     'modf': {
         'return': 'double',
         'return_storage': 'EDX:EAX',
         'params': [('double', 'Stack[0x4]:8'), ('double *', 'Stack[0xc]:4')],
-        'convention': '__softfp_double',
-        'notes': 'Verified: value at Stack[0x4]:8, integer_part ptr at Stack[0xc]:4. POPs result to EAX then EDX before RET. __softfp_double is correct.'
+        'convention': '__crtmath',
+        'notes': 'Stack params, POPs result to EAX then EDX before RET. Preserves EBX.'
     },
     'exp': {
         'return': 'float10',
@@ -841,8 +844,8 @@ def get_function_info(program, func, decompiler):
         # Likely returns via EAX or EDX:EAX
         if 'double' in info['return_type'].lower() or 'float10' in info['return_type'].lower():
             if info['calling_convention'] in ['__fpureg', '__fpureg_safe']:
-                info['suggested_convention'] = '__softfp_double'
-                info['issues'].append('Returns double but modifies EAX/EDX before RET - likely __softfp_double')
+                info['suggested_convention'] = '__crtmath'
+                info['issues'].append('Returns double but modifies EAX/EDX before RET - likely __crtmath (stack params, EDX:EAX return, preserves EBX)')
 
     # Check against known signatures
     base_name = info['base_name']

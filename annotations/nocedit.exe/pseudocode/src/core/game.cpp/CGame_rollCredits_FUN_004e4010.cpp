@@ -161,7 +161,7 @@ LAB_004e43c1:
       engine_2d_c_fillRectColor_FUN_00403170(0x19e,0x1b7,0x27f,0x1df,0);
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,1);
+    iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if (iVar3 != 0) goto LAB_004e43c1;
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(unaff_retaddr);
     local_1c = local_1c - unaff_retaddr->delta_time_float * 32.0f;

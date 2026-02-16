@@ -12,7 +12,7 @@ int __cdecl core_emitter_cpp_CEmitter_renderOpaque_FUN_004a8860(CEmitter *this_p
   int iVar1;
   CQuaternion4f *world_position;
   CVector3f *label_offset;
-  uint *param5;
+  UOrientationVector *param5;
   SLaserInfo local_7c;
   CVector3f local_28;
   CVector3f local_1c;
@@ -45,7 +45,7 @@ int __cdecl core_emitter_cpp_CEmitter_renderOpaque_FUN_004a8860(CEmitter *this_p
         if ((((this_ptr->emitter_type == 3) && (g_SlewTargetMode != 0)) &&
             (this_ptr == PTR_02cf2b78)) &&
            (PTR_02cf2b78 == (CEmitter *)g_CDemonMissionPtr->selected_actor)) {
-          param5 = &DAT_02cf2b6c;
+          param5 = &UNION_UOrientationVector_02cf2b6c;
           label_offset = &g_EmitterTarget;
           world_position =
                (CQuaternion4f *)

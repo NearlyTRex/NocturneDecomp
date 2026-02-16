@@ -4,7 +4,7 @@
       {
         "category": "undeclared_identifier",
         "column": 49,
-        "line": 49,
+        "line": 47,
         "message": "use of undeclared identifier 'stack0xffffffc4'"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 97,
-    "complexity_score": 101,
+    "complexity_score": 99,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 6,
-    "pseudocode_lines": 41,
+    "pseudocode_lines": 39,
     "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_ref"
     ],
-    "total_lines": 138
+    "total_lines": 136
   },
   "cross_references": [
     {
@@ -236,35 +236,35 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
+      "line": 31,
       "match": "ROUND",
-      "text": "local_20 = (int)ROUND(dVar7);",
+      "text": "local_20 = (int)ROUND(dVar5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 35,
+      "line": 33,
       "match": "ROUND",
-      "text": "local_30.y = (int)ROUND(dVar7) + iVar3;",
+      "text": "local_30.y = (int)ROUND(dVar5) + iVar3;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 34,
+      "match": "ROUND",
+      "text": "local_24 = (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 36,
       "match": "ROUND",
-      "text": "local_24 = (int)ROUND(dVar8);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 38,
-      "match": "ROUND",
-      "text": "local_30.x = iVar1 + (int)ROUND(dVar6);",
+      "text": "local_30.x = iVar1 + (int)ROUND(dVar4);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Direct stack address reference",
-      "line": 42,
+      "line": 40,
       "match": "&stack0xffffffc4",
       "text": "(g_CDemonRendererPtr2,(CVector3i *)&stack0xffffffc4);",
       "type": "stack_ref"

@@ -17,7 +17,7 @@
 ;   core_box.cpp_CBox_setupVelocities_FUN_00420180 at 004201b9
 ;   core_cloth.cpp_CCloth_applyRotation_FUN_0043e1a0 at 0043e230
 ;   core_cloth.cpp_CCloth_step_FUN_0043abb0 at 0043b02f
-;   core_curtain.cpp_CCurtain_FUN_00449f10 at 00449f7e
+;   core_curtain.cpp_CCurtain_updateLocalPositions_FUN_00449f10 at 00449f7e
 ;   core_dcamera.cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454060 at 004542b1
 ;   ... and 20 more
 ;

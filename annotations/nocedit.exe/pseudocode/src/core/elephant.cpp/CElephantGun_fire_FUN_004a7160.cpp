@@ -25,7 +25,7 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_004a7160(CElephantGun *this_
   CVector3f CStack_108;
   int iStack_fc;
   float fStack_f8;
-  float fStack_f4;
+  int iStack_f4;
   CElephantGun *pCStack_f0;
   CVector3f aCStack_e8 [2];
   CVector3f CStack_d0;
@@ -212,7 +212,7 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_004a7160(CElephantGun *this_
             CStack_108.z = pCVar1->z;
           }
           iStack_fc = (this_ptr->base).ammo_type;
-          fStack_f4 = 1.49939e-43;
+          iStack_f4 = 0x6b;
           fStack_f8 = 1.0;
           pCStack_f0 = this_ptr;
           aCStack_e8[0].x =

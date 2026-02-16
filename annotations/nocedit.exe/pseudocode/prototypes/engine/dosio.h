@@ -9,7 +9,7 @@ void __cdecl getRelativeFilePath(char *dest_path,char *directory,char *filename)
 
 // Original: engine_dosio.c_addGetFileInfoHook_FUN_00481710
 // Address: 00481710
-void __cdecl addGetFileInfoHook(FileSearchHandler *handler);
+void __cdecl addGetFileInfoHook(FileSearchHandlerFunc *handler);
 
 // Original: engine_dosio.c_findFile_FUN_00481760
 // Address: 00481760

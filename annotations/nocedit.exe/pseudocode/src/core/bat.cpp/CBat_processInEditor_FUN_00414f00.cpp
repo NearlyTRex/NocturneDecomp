@@ -13,19 +13,19 @@ void __cdecl core_bat_cpp_CBat_processInEditor_FUN_00414f00(CBat *this_ptr)
   float local_10;
   
   local_10 = 1.0;
-  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
   if (iVar1 != 0) {
     local_10 = 4.0;
   }
-  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
+  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU);
   if (iVar1 != 0) {
     local_10 = local_10 * (float)0.25;
   }
-  iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x34);
+  iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_PERIOD);
   if (iVar1 != 0) {
     this_ptr->param = this_ptr->param + local_10;
   }
-  iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x33);
+  iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_COMMA);
   if (iVar1 != 0) {
     this_ptr->param = this_ptr->param - local_10;
   }

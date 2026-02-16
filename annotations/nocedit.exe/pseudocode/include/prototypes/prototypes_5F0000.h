@@ -235,7 +235,7 @@ int __cdecl crt_ctype_c_tolower_FUN_005feb30(int character);
 uint * __watcallRegister crt_stdlib_c_GetRandomSeedPointer_FUN_005feb50(void);
 int __cdecl crt_stdlib_c_rand_FUN_005feb5c(void);
 void __cdecl crt_stdlib_c_srand_FUN_005feb80(uint seed);
-double __softfp_double crt_math_c_floor_FUN_005feb90(double input_value);
+double __crtmath crt_math_c_floor_FUN_005feb90(double input_value);
 wchar_t __cdecl crt_file_c_normalize_path_separator_FUN_005febe0(wchar_t ch,wchar_t *preferred_separator);
 void __cdecl crt_file_c_makepath_FUN_005febfc(char *path_buffer,char *drive,char *directory,char *filename,char *extension);
 char * __cdecl crt_string_c_strstr_FUN_005fedd0(char *haystack_str,char *needle_str);

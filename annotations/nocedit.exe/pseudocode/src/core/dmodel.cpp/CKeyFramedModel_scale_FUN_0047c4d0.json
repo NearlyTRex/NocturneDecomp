@@ -6,18 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 195,
+    "complexity_score": 97,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 1,
-    "pseudocode_lines": 30,
-    "suspect_count": 15,
+    "pseudocode_lines": 27,
+    "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "pointer_cast"
     ],
-    "total_lines": 122
+    "total_lines": 119
   },
   "cross_references": [
     {
@@ -195,108 +194,45 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 6,
-      "match": "extraout_EBX",
-      "text": "int extraout_EBX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 7,
-      "match": "extraout_EBX_00",
-      "text": "int extraout_EBX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
-      "match": "extraout_EBX_01",
-      "text": "int extraout_EBX_01;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 18,
-      "match": "extraout_EBX",
-      "text": "*(int *)((int)this_ptr->vertex_list + extraout_EBX) = (int)ROUND(dVar3);",
-      "type": "extra_output"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 18,
+      "line": 15,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)this_ptr->vertex_list + extraout_EBX) = (int)ROUND(dVar3);",
+      "text": "*(int *)((int)this_ptr->vertex_list + iVar1) = (int)ROUND(dVar3);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 18,
+      "line": 15,
       "match": "ROUND",
-      "text": "*(int *)((int)this_ptr->vertex_list + extraout_EBX) = (int)ROUND(dVar3);",
+      "text": "*(int *)((int)this_ptr->vertex_list + iVar1) = (int)ROUND(dVar3);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Complex pointer cast",
       "line": 20,
-      "match": "extraout_EBX",
-      "text": "((double)((float)*(int *)(extraout_EBX + 4 + (int)this_ptr->vertex_list) *",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 23,
-      "match": "extraout_EBX_00",
-      "text": "*(int *)((int)this_ptr->vertex_list + extraout_EBX_00 + 4) = (int)ROUND(dVar3);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 23,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)this_ptr->vertex_list + extraout_EBX_00 + 4) = (int)ROUND(dVar3);",
+      "text": "*(int *)((int)this_ptr->vertex_list + iVar1 + 4) = (int)ROUND(dVar3);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
+      "line": 20,
       "match": "ROUND",
-      "text": "*(int *)((int)this_ptr->vertex_list + extraout_EBX_00 + 4) = (int)ROUND(dVar3);",
+      "text": "*(int *)((int)this_ptr->vertex_list + iVar1 + 4) = (int)ROUND(dVar3);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 25,
-      "match": "extraout_EBX_00",
-      "text": "((double)((float)*(int *)(extraout_EBX_00 + 8 + (int)this_ptr->vertex_list) *",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 28,
-      "match": "extraout_EBX_01",
-      "text": "iVar1 = extraout_EBX_01 + 0xc;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 29,
-      "match": "extraout_EBX_01",
-      "text": "*(int *)((int)this_ptr->vertex_list + extraout_EBX_01 + 8) = (int)ROUND(dVar3);",
-      "type": "extra_output"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 29,
+      "line": 25,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)this_ptr->vertex_list + extraout_EBX_01 + 8) = (int)ROUND(dVar3);",
+      "text": "*(int *)((int)this_ptr->vertex_list + iVar1 + 8) = (int)ROUND(dVar3);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 29,
+      "line": 25,
       "match": "ROUND",
-      "text": "*(int *)((int)this_ptr->vertex_list + extraout_EBX_01 + 8) = (int)ROUND(dVar3);",
+      "text": "*(int *)((int)this_ptr->vertex_list + iVar1 + 8) = (int)ROUND(dVar3);",
       "type": "decompiler_intrinsic"
     }
   ]

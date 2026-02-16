@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 37,
+        "line": 34,
         "message": "no matching function for call to 'core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30'"
       }
     ],
@@ -13,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 199,
-    "complexity_score": 121,
+    "complexity_score": 115,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 2,
-    "pseudocode_lines": 86,
+    "pseudocode_lines": 80,
     "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 285
+    "total_lines": 279
   },
   "cross_references": [
     {
@@ -340,23 +340,23 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
+      "line": 37,
+      "match": "ROUND",
+      "text": "iStack_2c = (int)ROUND(dVar5);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 41,
       "match": "ROUND",
-      "text": "iStack_2c = (int)ROUND(dVar8);",
+      "text": "iStack_2c = (int)ROUND(dVar5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 45,
       "match": "ROUND",
-      "text": "iStack_2c = (int)ROUND(dVar8);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 49,
-      "match": "ROUND",
-      "text": "local_28 = (int)ROUND(dVar8);",
+      "text": "local_28 = (int)ROUND(dVar5);",
       "type": "decompiler_intrinsic"
     }
   ]

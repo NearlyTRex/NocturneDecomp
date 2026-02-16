@@ -181,18 +181,18 @@ LAB_0049eae7:
   local_28 = iVar2 + -1;
   iVar9 = -2;
   do {
-    iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1c);
+    iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_RETURN);
     if (iVar5 != 0) {
       iVar9 = local_14;
     }
-    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
     if ((iVar5 == 0) &&
-       (iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0xf), iVar5 != 0)) {
+       (iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_TAB), iVar5 != 0)) {
       local_14 = local_14 + 1;
     }
-    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
     if ((iVar5 != 0) &&
-       (iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0xf), iVar5 != 0)) {
+       (iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_TAB), iVar5 != 0)) {
       local_14 = local_14 + -1;
     }
     if (local_14 < iVar2) {

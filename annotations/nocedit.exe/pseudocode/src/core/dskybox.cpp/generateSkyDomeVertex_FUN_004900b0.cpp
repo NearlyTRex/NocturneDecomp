@@ -36,9 +36,8 @@ void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_004900b0(float *light_co
   fVar4 = (float10)fcos(fVar4);
   fVar7 = (float10)g_SkyDomeVertexScale;
   fVar8 = (float10)256;
-  fVar5 = fVar5 * fVar7 * (float10)(double)fVar6 * fVar8;
   round((double)(fVar3 * fVar7 * fVar8));
-  round((double)fVar5);
+  round((double)(fVar5 * fVar7 * (float10)(double)fVar6 * fVar8));
   input = (CVector3i *)0x49018a;
   round((double)(fVar4 * fVar7 * (float10)(double)fVar6 * fVar8));
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c

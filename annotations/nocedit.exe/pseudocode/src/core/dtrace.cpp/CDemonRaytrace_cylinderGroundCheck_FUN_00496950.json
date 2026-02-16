@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 221,
-    "complexity_score": 431,
+    "complexity_score": 430,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
-    "pseudocode_lines": 116,
+    "pseudocode_lines": 115,
     "suspect_count": 30,
     "suspect_types": [
       "decompiler_intrinsic",
       "suspect_float",
       "unaffected_reg"
     ],
-    "total_lines": 337
+    "total_lines": 336
   },
   "cross_references": [
     {
@@ -310,112 +310,119 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 9,
+      "line": 14,
       "match": "unaff_EBX",
       "text": "CVector3f *unaff_EBX;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 11,
+      "line": 16,
       "match": "unaff_ESI",
       "text": "float *unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 13,
+      "line": 18,
       "match": "unaff_EDI",
       "text": "float unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 53,
+      "line": 55,
       "match": "6.742069e-39",
       "text": "CStack_70.z = 6.742069e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 56,
+      "line": 57,
       "match": "6.742079e-39",
       "text": "CStack_70.y = 6.742079e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 59,
+      "line": 60,
       "match": "6.742122e-39",
       "text": "CStack_70.x = 6.742122e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 60,
+      "line": 61,
       "match": "ROUND",
-      "text": "local_2c = (float)(int)ROUND(dVar10);",
+      "text": "local_2c = (float)(int)ROUND(dVar11);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
+      "line": 62,
       "match": "ROUND",
-      "text": "local_20 = (int)ROUND(fVar9);",
+      "text": "local_20 = (int)ROUND(dVar10);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 67,
+      "match": "ROUND",
+      "text": "iStack_58 = (int)ROUND(dVar12);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 68,
       "match": "ROUND",
-      "text": "iStack_58 = (int)ROUND(dVar11);",
+      "text": "local_34 = (float)(int)ROUND(dVar13);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 69,
       "match": "ROUND",
-      "text": "local_34 = (float)(int)ROUND(fVar5);",
+      "text": "local_38 = (float)(int)ROUND(dVar14);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 70,
       "match": "ROUND",
-      "text": "local_38 = (float)(int)ROUND(fVar6);",
+      "text": "local_2c = (float)(int)ROUND(dVar15);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 71,
       "match": "ROUND",
-      "text": "local_2c = (float)(int)ROUND(dVar12);",
+      "text": "if ((int)ROUND(dVar11) <= (int)ROUND(dVar10)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 72,
+      "line": 71,
       "match": "ROUND",
-      "text": "if ((int)ROUND(dVar10) <= (int)ROUND(fVar9)) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 72,
-      "match": "ROUND",
-      "text": "if ((int)ROUND(dVar10) <= (int)ROUND(fVar9)) {",
+      "text": "if ((int)ROUND(dVar11) <= (int)ROUND(dVar10)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unaffected register variable",
-      "line": 84,
+      "line": 83,
       "match": "unaff_EDI",
       "text": "(this_ptr_00,&local_64,unaff_EDI,&local_54,&CStack_70,",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 97,
+      "line": 96,
+      "match": "unaff_EBX",
+      "text": "if ((unaff_EBX != (CVector3f *)0x0) && (&CStack_70 != unaff_EBX)) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 96,
       "match": "unaff_EBX",
       "text": "if ((unaff_EBX != (CVector3f *)0x0) && (&CStack_70 != unaff_EBX)) {",
       "type": "unaffected_reg"
@@ -423,97 +430,90 @@
     {
       "description": "Unaffected register variable",
       "line": 97,
-      "match": "unaff_EBX",
-      "text": "if ((unaff_EBX != (CVector3f *)0x0) && (&CStack_70 != unaff_EBX)) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 98,
       "match": "unaff_EBX",
       "text": "unaff_EBX->x = CStack_70.x;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 99,
+      "line": 98,
       "match": "unaff_EBX",
       "text": "unaff_EBX->y = CStack_70.y;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 100,
+      "line": 99,
       "match": "unaff_EBX",
       "text": "unaff_EBX->z = CStack_70.z;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 102,
+      "line": 101,
       "match": "unaff_ESI",
       "text": "if (unaff_ESI != (float *)0x0) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 103,
+      "line": 102,
       "match": "unaff_ESI",
       "text": "*unaff_ESI = local_48;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 110,
+      "line": 109,
       "match": "unaff_ESI",
       "text": "if (unaff_ESI != (float *)0x0) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 111,
+      "line": 110,
       "match": "unaff_ESI",
       "text": "*unaff_ESI = 1.4013e-45;",
       "type": "unaffected_reg"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 111,
+      "line": 110,
       "match": "1.4013e-45",
       "text": "*unaff_ESI = 1.4013e-45;",
       "type": "suspect_float"
     },
     {
       "description": "Unaffected register variable",
-      "line": 113,
+      "line": 112,
       "match": "unaff_EBX",
       "text": "if (unaff_EBX != (CVector3f *)0x0) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 114,
+      "line": 113,
       "match": "unaff_EBX",
       "text": "unaff_EBX->y = 1.0;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 115,
+      "line": 114,
       "match": "unaff_EBX",
       "text": "unaff_EBX->z = 0.0;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 116,
+      "line": 115,
       "match": "unaff_EBX",
       "text": "unaff_EBX->x = 0.0;",
       "type": "unaffected_reg"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 118,
+      "line": 117,
       "match": "6.742142e-39",
       "text": "return 6.742142e-39;",
       "type": "suspect_float"

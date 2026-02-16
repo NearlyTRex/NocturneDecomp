@@ -13,12 +13,10 @@ int __cdecl core_frankgen_cpp_CFrankenstienMachine_renderOpaque_FUN_004d1f70(CFr
   CDemonActor *pCVar2;
   CBoundingBox3D *this_ptr_00;
   int iVar3;
-  CFrankenstienMachine *extraout_EBX;
   float10 fVar4;
   double dVar5;
   CFrankenstienMachine *in_stack_ffffffc8;
-  float fVar6;
-  double input_value;
+  float fStack_30;
   
   if (g_CDemonMissionPtr->is_in_editor != 0) {
     pCVar2 = core_frankgen_cpp_CFrankenstienMachine_findLeader_FUN_004d2330(in_stack_ffffffc8);
@@ -30,27 +28,34 @@ int __cdecl core_frankgen_cpp_CFrankenstienMachine_renderOpaque_FUN_004d1f70(CFr
                           (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffcc);
   iVar3 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
   if (iVar3 != 0) {
-    fVar6 = -NAN;
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
               (&this_ptr->bed_model,this_ptr->unk1,-1);
     if ((this_ptr->body_model).model_name[0] != '\0') {
       fVar1 = this_ptr->master_frame;
-      if ((((0x4400bfff < (int)fVar1) && (0x44e0ffff < (int)fVar1)) && (0x44ed7fff < (int)fVar1)) &&
-         (0x44f9ffff < (int)fVar1)) {
-        input_value = (double)((this_ptr->master_frame + -2000.0f) * (float)3 *
-                              0.005f);
-        dVar5 = floor(input_value);
-        fVar4 = (float10)(float)((ulonglong)input_value >> 0x20) -
-                (float10)dVar5 * (float10)200;
-        fVar6 = (float)fVar4;
+      if ((int)fVar1 < 0x4400c000) {
+        fStack_30 = 201.0;
+      }
+      else if ((int)fVar1 < 0x44e10000) {
+        fStack_30 = 0.0;
+      }
+      else if ((int)fVar1 < 0x44ed8000) {
+        fStack_30 = this_ptr->master_frame + -1800.0f;
+      }
+      else if ((int)fVar1 < 0x44fa0000) {
+        fStack_30 = 100.0;
+      }
+      else {
+        fVar1 = (this_ptr->master_frame + -2000.0f) * (float)3;
+        dVar5 = floor((double)(fVar1 * 0.005f));
+        fVar4 = (float10)fVar1 - (float10)dVar5 * (float10)200;
+        fStack_30 = (float)fVar4;
         if ((float10)100.0f < fVar4) {
-          fVar6 = 200.0f - fVar6;
+          fStack_30 = 200.0f - fStack_30;
         }
-        fVar6 = fVar6 + 99.0f;
-        this_ptr = extraout_EBX;
+        fStack_30 = fStack_30 + 99.0f;
       }
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
-                (&this_ptr->body_model,fVar6,-1);
+                (&this_ptr->body_model,fStack_30,-1);
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base);
       return iVar3;
     }

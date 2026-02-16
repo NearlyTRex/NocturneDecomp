@@ -118,13 +118,13 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_0057a940(CDemonSet *this_ptr)
     wincore_wddvmem_cpp_closeScreenDevice_FUN_005ed630();
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
-    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,1);
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if (iVar2 != 0) break;
-    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x13);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_R);
     if (iVar2 != 0) {
       g_CDemonRaytraceInstance.rendering_mode = g_CDemonRaytraceInstance.rendering_mode + 1;
     }
-    (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2e);
+    (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_C);
   }
   g_CurrentDebugFilename = "..\\core\\setedit.cpp";
   g_CurrentDebugLine = 0x7f0;

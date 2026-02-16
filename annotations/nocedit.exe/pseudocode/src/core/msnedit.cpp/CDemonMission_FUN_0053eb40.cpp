@@ -40,7 +40,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053eb40(CDemonMission *this_ptr
         if (in_stack_fffffeb8 < 0.0) break;
         shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
                   (g_CEditorToolsPtr,in_stack_fffffeb8,1.0);
-        iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,1);
+        iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_ESCAPE);
       } while (iVar1 == 0);
       shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
     }

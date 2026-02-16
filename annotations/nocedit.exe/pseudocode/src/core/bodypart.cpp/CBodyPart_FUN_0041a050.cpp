@@ -23,10 +23,9 @@ void __cdecl core_bodypart_cpp_CBodyPart_FUN_0041a050(CBodyPart *this_ptr)
   CLocation *pCVar12;
   SSurfaceNormal *output;
   int iVar13;
-  float10 fVar14;
-  float10 fVar15;
+  double dVar14;
+  double dVar15;
   double dVar16;
-  double dVar17;
   CVector3f local_78;
   CVector3f local_6c;
   int local_60;
@@ -145,26 +144,23 @@ void __cdecl core_bodypart_cpp_CBodyPart_FUN_0041a050(CBodyPart *this_ptr)
       iVar11 = 0;
       do {
         piVar10 = (int *)((int)&this_ptr->normals->x + iVar11);
-        dVar16 = (double)*piVar10;
-        iVar13 = piVar10[1];
-        dVar1 = (double)iVar13;
-        dVar17 = (double)piVar10[2];
-        dVar16 = SQRT(dVar17 * dVar17 + dVar1 * dVar1 + dVar16 * dVar16);
+        dVar14 = (double)*piVar10;
+        dVar15 = (double)piVar10[1];
+        dVar1 = (double)piVar10[2];
+        dVar16 = SQRT(dVar1 * dVar1 + dVar15 * dVar15 + dVar14 * dVar14);
         if (dVar16 <= 0.0) {
           piVar10[2] = 0;
           piVar10[1] = piVar10[2];
           *piVar10 = piVar10[2];
         }
         else {
-          fVar14 = (float10)65535 / (float10)dVar16;
-          fVar15 = (float10)piVar10[2] * fVar14;
-          dVar16 = round((double)((float10)*piVar10 * fVar14));
-          dVar17 = round((double)((float10)iVar13 * fVar14));
-          fVar14 = (float10)dVar17;
-          dVar17 = round((double)fVar15);
-          *piVar10 = (int)ROUND(dVar16);
-          piVar10[1] = (int)ROUND(fVar14);
-          piVar10[2] = (int)ROUND(dVar17);
+          dVar16 = 65535 / dVar16;
+          dVar14 = round(dVar14 * dVar16);
+          dVar15 = round(dVar15 * dVar16);
+          dVar16 = round(dVar1 * dVar16);
+          *piVar10 = (int)ROUND(dVar14);
+          piVar10[1] = (int)ROUND(dVar15);
+          piVar10[2] = (int)ROUND(dVar16);
         }
         iVar7 = iVar7 + 1;
         iVar11 = iVar11 + 0xc;

@@ -21,10 +21,9 @@ void __cdecl cockpit_ckptutil_c_blendPixelWithHardwarePalette_FUN_00433f50(int x
   uint uVar10;
   uint *puVar11;
   uint uVar12;
-  float10 fVar13;
-  float10 fVar14;
+  double dVar13;
+  double dVar14;
   double dVar15;
-  double dVar16;
   uint local_3c;
   uint local_38;
   uint local_34;
@@ -63,27 +62,23 @@ void __cdecl cockpit_ckptutil_c_blendPixelWithHardwarePalette_FUN_00433f50(int x
     fVar3 = (float)(uVar12 & 0xff) * fVar2 + (float)(uVar8 & 0xff) * alpha;
     fVar2 = (float)(uVar10 & 0xff) * fVar2 + (float)(uVar9 & 0xff) * alpha;
     if (g_BitsPerPixel != 0x10) {
-      fVar13 = (float10)fVar2;
-      dVar15 = round((double)fVar4);
-      dVar16 = round((double)fVar3);
-      fVar14 = (float10)dVar16;
-      dVar16 = round((double)fVar13);
-      local_34 = (uint)(longlong)ROUND(dVar15);
-      uStack_2c = (uint)(longlong)ROUND(dVar16);
-      local_3c = (uint)(longlong)ROUND(fVar14);
+      dVar13 = round((double)fVar4);
+      dVar14 = round((double)fVar3);
+      dVar15 = round((double)fVar2);
+      local_34 = (uint)(longlong)ROUND(dVar13);
+      uStack_2c = (uint)(longlong)ROUND(dVar15);
+      local_3c = (uint)(longlong)ROUND(dVar14);
       *(uint *)((int)g_ScreenBufferArray[y] + x * 4) =
            local_3c << ((byte)g_GreenBitPosition & 0x1f) | local_34 << (bVar5 & 0x1f) |
            uStack_2c << ((byte)g_BlueBitPosition & 0x1f);
       return;
     }
-    fVar13 = (float10)fVar2;
-    dVar15 = round((double)fVar4);
-    dVar16 = round((double)fVar3);
-    fVar14 = (float10)dVar16;
-    dVar16 = round((double)fVar13);
-    uStack_2c = (uint)(longlong)ROUND(fVar14);
-    local_34 = (uint)(longlong)ROUND(dVar16);
-    local_3c = (uint)(longlong)ROUND(dVar15);
+    dVar13 = round((double)fVar4);
+    dVar14 = round((double)fVar3);
+    dVar15 = round((double)fVar2);
+    uStack_2c = (uint)(longlong)ROUND(dVar14);
+    local_34 = (uint)(longlong)ROUND(dVar15);
+    local_3c = (uint)(longlong)ROUND(dVar13);
     *(ushort *)((int)g_ScreenBufferArray[y] + x * 2) =
          (ushort)((uStack_2c >> ((byte)g_GreenBitCount & 0x1f)) << ((byte)g_GreenBitPosition & 0x1f)
                  ) | (ushort)((local_3c >> (bVar6 & 0x1f)) << ((byte)g_RedBitPosition & 0x1f)) |

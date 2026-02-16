@@ -17,8 +17,8 @@ void __cdecl core_dtrace_cpp_initCapsuleCollisionData_FUN_00496b90(SCapsuleColli
   out_data->dir_x = dir_x;
   out_data->dir_z = dir_z;
   out_data->radius = radius;
-  out_data->top_y = user_data2;
-  out_data->bottom_y = user_data1;
+  out_data->top_y = (float)user_data2;
+  out_data->bottom_y = (float)user_data1;
   fVar1 = SQRT(dir_z * dir_z + dir_x * dir_x);
   fVar2 = radius / fVar1 + 1.0;
   out_data->sweep_slab_near = start_z * dir_z + start_x * dir_x;

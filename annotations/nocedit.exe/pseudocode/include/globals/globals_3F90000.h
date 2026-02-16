@@ -168,7 +168,7 @@ extern int g_UseSoftwareRendering;
 extern int g_AccumulatedGameTime;
 extern int g_InputReadIndex;
 extern int g_InputWriteIndex;
-extern int g_InputCountMaybe;
+extern int g_InputCountOld;
 extern int g_UnknownInputValue;
 extern int g_CrosshairBrightness;
 extern int g_InputDisabled;

@@ -15,10 +15,9 @@ int __cdecl core_fire_cpp_CFireball_initRender_FUN_004c0d80(CFireball *this_ptr)
   int *piVar4;
   int *piVar5;
   byte bVar6;
-  float10 fVar7;
-  float10 fVar8;
+  double dVar7;
+  double dVar8;
   double dVar9;
-  double dVar10;
   int aiStackY_1000 [997];
   float local_60;
   float local_54;
@@ -58,14 +57,13 @@ int __cdecl core_fire_cpp_CFireball_initRender_FUN_004c0d80(CFireball *this_ptr)
     piVar4 = piVar4 + (uint)bVar6 * -2 + 1;
     piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
   }
-  fVar7 = (float10)-65536;
-  fVar8 = (float10)local_48 * fVar7;
-  dVar9 = round((double)((float10)local_60 * fVar7));
-  dVar10 = round((double)((float10)local_54 * fVar7));
-  fVar7 = (float10)dVar10;
-  dVar10 = round((double)fVar8);
-  g_BillboardCameraUp.x = (int)ROUND(dVar9);
-  g_BillboardCameraUp.y = (int)ROUND(fVar7);
-  g_BillboardCameraUp.z = (int)ROUND(dVar10);
+  dVar8 = (double)local_54 * -65536;
+  dVar9 = (double)local_48 * -65536;
+  dVar7 = round((double)local_60 * -65536);
+  dVar8 = round(dVar8);
+  dVar9 = round(dVar9);
+  g_BillboardCameraUp.x = (int)ROUND(dVar7);
+  g_BillboardCameraUp.y = (int)ROUND(dVar8);
+  g_BillboardCameraUp.z = (int)ROUND(dVar9);
   return (int)pCVar1;
 }

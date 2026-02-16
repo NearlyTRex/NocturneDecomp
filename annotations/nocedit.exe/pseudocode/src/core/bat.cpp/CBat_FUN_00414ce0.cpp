@@ -10,36 +10,23 @@ void __cdecl core_bat_cpp_CBat_FUN_00414ce0(CBat *this_ptr)
 
 {
   float fVar1;
-  float fVar2;
-  int extraout_EBX;
-  int iVar3;
-  int extraout_EBX_00;
-  double dVar4;
-  uint uVar5;
-  uint local_28;
-  float fStack_24;
+  double dVar2;
+  float local_20;
   
-  fVar1 = this_ptr->param;
-  fVar2 = (float)(this_ptr->course).len;
-  local_28 = SUB84((double)fVar1,0);
-  if (0.0 <= (double)fVar1) {
-    dVar4 = (double)(fVar1 / fVar2);
-    uVar5 = (uint)((ulonglong)dVar4 >> 0x20);
-    dVar4 = floor(dVar4);
-    fStack_24 = (float)(double)CONCAT44(local_28,uVar5) - (float)dVar4 * fVar1;
-    iVar3 = extraout_EBX_00;
+  local_20 = this_ptr->param;
+  fVar1 = (float)(this_ptr->course).len;
+  if (0.0 <= local_20) {
+    dVar2 = floor((double)(local_20 / fVar1));
+    local_20 = local_20 - (float)dVar2 * fVar1;
   }
   else {
-    dVar4 = (double)(-fVar1 / fVar2);
-    uVar5 = (uint)((ulonglong)dVar4 >> 0x20);
-    dVar4 = floor(dVar4);
-    fStack_24 = (float)dVar4 * fVar1 + (float)(double)CONCAT44(local_28,uVar5);
-    iVar3 = extraout_EBX;
-    if (fStack_24 < 0.0) {
-      fStack_24 = fStack_24 + fVar1;
+    dVar2 = floor((double)(-local_20 / fVar1));
+    local_20 = (float)dVar2 * fVar1 + local_20;
+    if (local_20 < 0.0) {
+      local_20 = local_20 + fVar1;
     }
   }
-  *(float *)(iVar3 + 0x304) = fStack_24;
-  core_course_cpp_CCourse_FUN_00442710((CCourse *)(iVar3 + 0x178));
+  this_ptr->param = local_20;
+  core_course_cpp_CCourse_FUN_00442710(&this_ptr->course);
   return;
 }

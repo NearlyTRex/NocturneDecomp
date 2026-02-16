@@ -101,7 +101,7 @@ LAB_0051d5ec:
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
     shape_spotview_cpp_CSpotView_FUN_005b9670(g_CSpotViewPtr);
-    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
+    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if (iVar1 != 0) {
       shape_edittool_cpp_CEditorTools_createCenteredDialog_FUN_0049e940
                 (g_CEditorToolsPtr,(char *)0x0);
@@ -109,7 +109,7 @@ LAB_0051d5ec:
         shape_edittool_cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870
                   (g_CEditorToolsPtr,"OK - let go of ESC...");
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-        iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,1);
+        iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_ESCAPE);
       } while (iVar1 != 0);
       shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
       engine_2d_c_clearInputAndWait_FUN_00403260();
@@ -125,28 +125,28 @@ LAB_0051d915:
       }
     }
     in_stack_ffffff44 = 0x51d861;
-    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x19);
+    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_P);
     if (iVar1 == 0) {
       if (pause_flag == 0) goto LAB_0051d915;
     }
     else {
       pause_flag = 1;
     }
-    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2f);
+    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_V);
     if (iVar1 != 0) {
       INT_02f31234 = (int)(INT_02f31234 == 0);
     }
-    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x18);
+    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_O);
     if (iVar1 != 0) {
       INT_02f31238 = (int)(INT_02f31238 == 0);
     }
-    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x12);
+    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_E);
     if (iVar1 != 0) {
       INT_02f3123c = (int)(INT_02f3123c == 0);
     }
-    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x39);
+    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_SPACE);
     if ((iVar1 != 0) ||
-       (iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1c), iVar1 != 0))
+       (iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_RETURN), iVar1 != 0))
     goto LAB_0051d915;
   } while( true );
 }

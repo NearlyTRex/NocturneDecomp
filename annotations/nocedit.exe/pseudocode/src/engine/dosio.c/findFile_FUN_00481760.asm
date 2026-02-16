@@ -17,7 +17,7 @@
 ;
 ; Referenced Globals:
 ;   int g_NumSearchHandlers
-;   FileSearchHandler*[5] g_SearchHandlers
+;   FileSearchHandlerFunc*[5] g_SearchHandlers
 ;   undefined4 g_SearchHandlers[1]
 ;
 ; Called Functions:

@@ -11,28 +11,28 @@ void __cdecl core_ladder_cpp_CLadder_processInEditor_FUN_00502d00(CLadder *this_
 {
   float fVar1;
   int iVar2;
-  int extraout_EBX;
   double dVar3;
+  float in_stack_00000008;
+  float in_stack_00000010;
   
-  iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+  iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
   if (iVar2 == 0) {
     core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base);
   }
   else {
-    fVar1 = g_CGamePtr->delta_time_float * (float)4;
-    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD4);
     if (iVar2 != 0) {
-      (this_ptr->ladder_size).x = (this_ptr->ladder_size).x - fVar1;
+      (this_ptr->ladder_size).x = (this_ptr->ladder_size).x - in_stack_00000008;
     }
-    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD6);
     if (iVar2 != 0) {
-      (this_ptr->ladder_size).x = (this_ptr->ladder_size).x + fVar1;
+      (this_ptr->ladder_size).x = (this_ptr->ladder_size).x + in_stack_00000010;
     }
-    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1e);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_A);
     if (iVar2 != 0) {
       (this_ptr->ladder_size).y = (this_ptr->ladder_size).y - 1.0f;
     }
-    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x10);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_Q);
     if (iVar2 != 0) {
       (this_ptr->ladder_size).y = 1.0f + (this_ptr->ladder_size).y;
     }
@@ -46,7 +46,7 @@ void __cdecl core_ladder_cpp_CLadder_processInEditor_FUN_00502d00(CLadder *this_
   dVar3 = floor
                     ((double)((this_ptr->ladder_size).y / 1.0f + (float)0.5));
   fVar1 = (float)dVar3 * 1.0f;
-  *(uint *)(extraout_EBX + 0x2dc) = 0;
-  *(float *)(extraout_EBX + 0x2d8) = fVar1;
+  (this_ptr->ladder_size).z = 0.0;
+  (this_ptr->ladder_size).y = fVar1;
   return;
 }

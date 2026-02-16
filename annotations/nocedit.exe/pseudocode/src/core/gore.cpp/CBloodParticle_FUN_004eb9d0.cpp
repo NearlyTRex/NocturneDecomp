@@ -14,10 +14,9 @@ void __cdecl core_gore_cpp_CBloodParticle_FUN_004eb9d0(CBloodParticle *this_ptr)
   int *piVar3;
   int *piVar4;
   byte bVar5;
-  float10 fVar6;
-  float10 fVar7;
+  double dVar6;
+  double dVar7;
   double dVar8;
-  double dVar9;
   int aiStackY_1000 [997];
   float local_60;
   float local_54;
@@ -56,14 +55,13 @@ void __cdecl core_gore_cpp_CBloodParticle_FUN_004eb9d0(CBloodParticle *this_ptr)
     piVar3 = piVar3 + (uint)bVar5 * -2 + 1;
     piVar4 = piVar4 + (uint)bVar5 * -2 + 1;
   }
-  fVar6 = (float10)-65536;
-  fVar7 = (float10)local_48 * fVar6;
-  dVar8 = round((double)((float10)local_60 * fVar6));
-  dVar9 = round((double)((float10)local_54 * fVar6));
-  fVar6 = (float10)dVar9;
-  dVar9 = round((double)fVar7);
-  INT_02d8339c = (int)ROUND(dVar8);
-  INT_02d833a0 = (int)ROUND(fVar6);
-  INT_02d833a4 = (int)ROUND(dVar9);
+  dVar7 = (double)local_54 * -65536;
+  dVar8 = (double)local_48 * -65536;
+  dVar6 = round((double)local_60 * -65536);
+  dVar7 = round(dVar7);
+  dVar8 = round(dVar8);
+  INT_02d8339c = (int)ROUND(dVar6);
+  INT_02d833a0 = (int)ROUND(dVar7);
+  INT_02d833a4 = (int)ROUND(dVar8);
   return;
 }

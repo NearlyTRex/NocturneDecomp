@@ -17,7 +17,7 @@ void __cdecl core_charactr_cpp_CCharacter_applyDamage_FUN_00428ee0(CCharacter *t
     return;
   }
   core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&SStack_40);
-  SStack_40.gore_multiplier = (float)damage_type;
+  SStack_40.damage_type = damage_type;
   SStack_40.damage_amount = damage_amount;
   (*(((this_ptr->base).vtable._uc)->_uc).processDamage)(this_ptr,&SStack_40);
   return;

@@ -2,28 +2,16 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 22,
-        "line": 57,
-        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
+        "category": "incompatible_types",
+        "column": 14,
+        "line": 54,
+        "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
-        "category": "other",
-        "column": 26,
-        "line": 58,
-        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 13,
-        "line": 90,
-        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 95,
-        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
+        "category": "incompatible_types",
+        "column": 14,
+        "line": 60,
+        "message": "invalid operands to binary expression ('double' and 'int')"
       }
     ],
     "success": false,
@@ -31,20 +19,19 @@
   },
   "complexity": {
     "assembly_lines": 257,
-    "complexity_score": 458,
+    "complexity_score": 346,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 7,
-    "pseudocode_lines": 113,
-    "suspect_count": 32,
+    "pseudocode_lines": 116,
+    "suspect_count": 21,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "pointer_cast",
-      "unknown_field",
+      "unaffected_reg",
       "warning_type_propagation"
     ],
-    "total_lines": 370
+    "total_lines": 373
   },
   "cross_references": [
     {
@@ -409,221 +396,144 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
-      "match": "extraout_EBX",
-      "text": "int extraout_EBX;",
-      "type": "extra_output"
+      "description": "Unaffected register variable",
+      "line": 11,
+      "match": "unaff_EBX",
+      "text": "int unaff_EBX;",
+      "type": "unaffected_reg"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 48,
-      "match": "ROUND",
-      "text": "iStack_3c = (int)ROUND(dVar9);",
+      "line": 47,
+      "match": "SUB84",
+      "text": "local_40 = SUB84(dVar11,0);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 50,
-      "match": "._4_4_",
-      "text": "local_18 = local_44._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 51,
-      "match": "._4_4_",
-      "text": "fVar5 = (float)local_44._4_4_ * 0.5f;",
-      "type": "unknown_field"
+      "match": "ROUND",
+      "text": "local_38 = (int)ROUND(dVar11);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 53,
-      "match": "ROUND",
-      "text": "local_20 = (int)ROUND(dVar9);",
+      "match": "SUB84",
+      "text": "local_44 = SUB84(dVar11,0);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 56,
-      "match": "extraout_EBX",
-      "text": "*(float *)(extraout_EBX + 0x199ec) = (fVar5 - *(float *)(extraout_EBX + 0x20)) - fVar7;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 56,
-      "match": "extraout_EBX",
-      "text": "*(float *)(extraout_EBX + 0x199ec) = (fVar5 - *(float *)(extraout_EBX + 0x20)) - fVar7;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 57,
-      "match": "extraout_EBX",
-      "text": "*(float *)(extraout_EBX + 0x199f0) = (fVar1 - *(float *)(extraout_EBX + 0x28)) - fVar7;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 57,
-      "match": "extraout_EBX",
-      "text": "*(float *)(extraout_EBX + 0x199f0) = (fVar1 - *(float *)(extraout_EBX + 0x28)) - fVar7;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 58,
-      "match": "extraout_EBX",
-      "text": "if (((int)local_44 != *(int *)(extraout_EBX + 0x199e4)) ||",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 59,
-      "match": "extraout_EBX",
-      "text": "(local_20 != *(int *)(extraout_EBX + 0x199e8))) {",
-      "type": "extra_output"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 60,
-      "match": "(int *)((int)",
-      "text": "local_28 = *(int *)((int)local_c + 0x199e4) - (int)local_44;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 61,
-      "match": "(int *)((int)",
-      "text": "local_2c = *(int *)((int)local_c + 0x199e8) - local_20;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 64,
-      "match": "(int *)((int)",
-      "text": "piVar4 = (int *)((int)local_c + 0x128b8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 73,
-      "match": "(int *)((int)",
-      "text": "piVar4 = (int *)((int)piVar4 + (uint)bVar8 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 74,
-      "match": "(int *)((int)",
-      "text": "piVar6 = (int *)((int)piVar6 + (uint)bVar8 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 76,
-      "match": "(float *)((int)",
-      "text": "local_5c.y = *(float *)((int)local_c + 0x24);",
-      "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 77,
-      "match": "CONCAT44",
-      "text": "uVar10 = CONCAT44(local_5c.y,",
+      "line": 58,
+      "match": "ROUND",
+      "text": "local_18 = (int)ROUND(dVar11);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 78,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)local_c + 0x20) + *(float *)((int)local_c + 0x199ec));",
-      "type": "pointer_cast"
+      "description": "Unaffected register variable",
+      "line": 65,
+      "match": "unaff_EBX",
+      "text": "local_20 = *(int *)(unaff_EBX + 0x199e4) - iStack_3c;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 66,
+      "match": "unaff_EBX",
+      "text": "local_24 = *(int *)(unaff_EBX + 0x199e8) - local_18;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 69,
+      "match": "unaff_EBX",
+      "text": "piVar7 = (int *)(unaff_EBX + 0x128b8);",
+      "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
       "line": 78,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)local_c + 0x20) + *(float *)((int)local_c + 0x199ec));",
+      "match": "(int *)((int)",
+      "text": "piVar7 = (int *)((int)piVar7 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 79,
-      "match": "(float *)((int)",
-      "text": "uVar11 = (ulonglong)(uint)(*(float *)((int)local_c + 0x28) + *(float *)((int)local_c + 0x199f0))",
+      "match": "(int *)((int)",
+      "text": "piVar8 = (int *)((int)piVar8 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 79,
-      "match": "(float *)((int)",
-      "text": "uVar11 = (ulonglong)(uint)(*(float *)((int)local_c + 0x28) + *(float *)((int)local_c + 0x199f0))",
-      "type": "pointer_cast"
+      "description": "Unaffected register variable",
+      "line": 81,
+      "match": "unaff_EBX",
+      "text": "local_54.y = *(float *)(unaff_EBX + 0x24);",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unknown/mangled field access",
+      "description": "Unaffected register variable",
+      "line": 82,
+      "match": "unaff_EBX",
+      "text": "fVar2 = *(float *)(unaff_EBX + 0x28);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
       "line": 83,
-      "match": "._4_4_",
-      "text": "local_44._4_4_ = local_2c * 4;",
-      "type": "unknown_field"
+      "match": "unaff_EBX",
+      "text": "fVar12 = *(float *)(unaff_EBX + 0x20) + *(float *)(unaff_EBX + 0x199ec);",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unknown/mangled field access",
+      "description": "Unaffected register variable",
+      "line": 83,
+      "match": "unaff_EBX",
+      "text": "fVar12 = *(float *)(unaff_EBX + 0x20) + *(float *)(unaff_EBX + 0x199ec);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 84,
+      "match": "unaff_EBX",
+      "text": "fVar1 = *(float *)(unaff_EBX + 0x199f0);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
       "line": 88,
-      "match": "._4_4_",
-      "text": "iVar3 = iStack_3c - local_44._4_4_;",
-      "type": "unknown_field"
+      "match": "unaff_EBX",
+      "text": "local_30 = unaff_EBX;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 97,
-      "match": "(int *)((int)",
-      "text": "(&g_CDemonRaytraceInstance,&local_5c,(int *)((int)&local_4c + 4),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 99,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)fVar7 + 0x128b8) = fVar1 - *(float *)((int)local_c + 0x24);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 99,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)fVar7 + 0x128b8) = fVar1 - *(float *)((int)local_c + 0x24);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
+      "description": "Unaffected register variable",
       "line": 102,
+      "match": "unaff_EBX",
+      "text": "*(float *)(iVar9 + 0x128b8) = fVar3 - *(float *)(unaff_EBX + 0x24);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 105,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)fVar5 + 0x128b8) = *(uint *)((int)&INT_00822d08 + iVar3);",
+      "text": "*(uint *)(iVar4 + 0x128b8) = *(uint *)((int)&INT_00822d08 + iVar6);",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 102,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)fVar5 + 0x128b8) = *(uint *)((int)&INT_00822d08 + iVar3);",
-      "type": "pointer_cast"
+      "description": "Unaffected register variable",
+      "line": 116,
+      "match": "unaff_EBX",
+      "text": "*(int *)(unaff_EBX + 0x199e4) = iStack_3c;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 113,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)local_c + 0x199e4) = (int)local_44;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 114,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)local_c + 0x199e8) = local_20;",
-      "type": "pointer_cast"
+      "description": "Unaffected register variable",
+      "line": 117,
+      "match": "unaff_EBX",
+      "text": "*(int *)(unaff_EBX + 0x199e8) = local_18;",
+      "type": "unaffected_reg"
     }
   ]
 }

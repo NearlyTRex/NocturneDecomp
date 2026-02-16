@@ -31,10 +31,10 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_processDamage_FUN_00486070(CDracula
     } while (iVar4 < 5);
     bVar2 = true;
   }
-  if (damage_info->gore_multiplier == 1.45735e-43) {
+  if (damage_info->damage_type == 0x68) {
     bVar2 = true;
   }
-  if (damage_info->gore_multiplier == 1.5134e-43) {
+  if (damage_info->damage_type == 0x6c) {
     input_local_point =
          core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                    (&(this_ptr->base).base.model,&local_3c,0);

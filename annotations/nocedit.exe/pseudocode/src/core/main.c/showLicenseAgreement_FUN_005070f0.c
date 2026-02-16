@@ -69,7 +69,7 @@ int __cdecl core_main_c_showLicenseAgreement_FUN_005070f0(void)
     shape_edittool_cpp_CEdButton_paint_FUN_004a65e0(&local_210,0);
     shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
+    iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
   } while (iVar3 == 0);
   shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(&local_210,0);
   shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(&local_12c,0);

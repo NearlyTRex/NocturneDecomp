@@ -12,22 +12,22 @@ void __cdecl core_flame_cpp_CFlame_processInEditor_FUN_004caf60(CFlame *this_ptr
   float fVar1;
   int iVar2;
   
-  iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+  iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
   if (iVar2 != 0) {
     fVar1 = g_CGamePtr->delta_time_float * (float)4;
-    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD4);
     if (iVar2 != 0) {
       (this_ptr->flame_size).x = (this_ptr->flame_size).x - fVar1;
     }
-    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD6);
     if (iVar2 != 0) {
       (this_ptr->flame_size).x = (this_ptr->flame_size).x + fVar1;
     }
-    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_A);
     if (iVar2 != 0) {
       (this_ptr->flame_size).y = (this_ptr->flame_size).y - fVar1;
     }
-    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_Q);
     if (iVar2 != 0) {
       (this_ptr->flame_size).y = (this_ptr->flame_size).y + fVar1;
     }

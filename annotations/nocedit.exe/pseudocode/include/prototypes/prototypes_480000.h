@@ -26,7 +26,7 @@
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/enums/ETextAlignment.h"
-#include "types/funcdefs/FileSearchHandler.h"
+#include "types/funcdefs/FileSearchHandlerFunc.h"
 #include "types/funcdefs/RenderScanlineFunc.h"
 #include "types/structs/SCameraViewportState.h"
 #include "types/structs/SCollisionInfo.h"

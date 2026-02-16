@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; double __softfp_double crt_math_c_floor_FUN_005feb90(double input_value)
+; double __crtmath crt_math_c_floor_FUN_005feb90(double input_value)
 ;
 ; Parameters:
 ; double           Stack[0x4]:8   input_value

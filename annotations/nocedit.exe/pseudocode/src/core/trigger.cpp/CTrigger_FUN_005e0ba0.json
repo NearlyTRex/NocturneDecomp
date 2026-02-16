@@ -1,29 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 29,
-        "message": "use of undeclared identifier '_fStack_10'; did you mean 'fStack_10'?"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 76,
+    "complexity_score": 38,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 2,
-    "pseudocode_lines": 26,
-    "suspect_count": 4,
+    "pseudocode_lines": 23,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "extra_output"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 75
+    "total_lines": 72
   },
   "cross_references": [
     {
@@ -123,32 +115,11 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 7,
-      "match": "extraout_EBX",
-      "text": "int extraout_EBX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 22,
-      "match": "CONCAT44",
-      "text": "_fStack_10 = CONCAT44(uStack_c,fVar1);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
+      "line": 20,
       "match": "SQRT",
-      "text": "((double)(SQRT(fVar1 * fVar1 + fStack_18 * fStack_18 + fStack_14 * fStack_14)",
+      "text": "((double)(SQRT(fStack_10 * fStack_10 +",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 26,
-      "match": "extraout_EBX",
-      "text": "*(float *)(extraout_EBX + 0x158) = (float)dVar3;",
-      "type": "extra_output"
     }
   ]
 }

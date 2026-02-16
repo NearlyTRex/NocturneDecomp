@@ -19,9 +19,9 @@ void __cdecl shape_spotview_cpp_CSpotView_FUN_005b9670(CSpotView *this_ptr)
   float fStack_c;
   
   local_20 = 1.0;
-  iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
+  iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU);
   if (iVar4 == 0) {
-    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
     if (iVar4 != 0) {
       local_20 = 4.0;
     }
@@ -42,72 +42,72 @@ void __cdecl shape_spotview_cpp_CSpotView_FUN_005b9670(CSpotView *this_ptr)
   }
   fStack_c = fStack_c * fVar1;
   if ((in_stack_00000008 & 2) != 0) {
-    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x52);
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD0);
     if (iVar4 != 0) {
       *(float *)(this_ptr->unk + 0x28) = *(float *)(this_ptr->unk + 0x28) + fVar2;
     }
-    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x53);
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_DECIMAL);
     if (iVar4 != 0) {
       *(float *)(this_ptr->unk + 0x28) = *(float *)(this_ptr->unk + 0x28) - fVar2;
     }
-    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x35);
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_SLASH);
     if (iVar4 != 0) {
       *(float *)(this_ptr->unk + 0x28) = *(float *)(this_ptr->unk + 0x28) + fVar2;
     }
-    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x37);
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_MULTIPLY);
     if (iVar4 != 0) {
       *(float *)(this_ptr->unk + 0x28) = *(float *)(this_ptr->unk + 0x28) - fVar2;
     }
   }
   if ((in_stack_00000008 & 1) != 0) {
-    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4a);
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_SUBTRACT);
     if (iVar4 != 0) {
       *(float *)(this_ptr->unk + 0x24) = *(float *)(this_ptr->unk + 0x24) + fVar2;
     }
-    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4e);
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_ADD);
     if (iVar4 != 0) {
       *(float *)(this_ptr->unk + 0x24) = *(float *)(this_ptr->unk + 0x24) - fVar2;
     }
   }
   if ((in_stack_00000008 & 8) != 0) {
-    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD4);
     if (iVar4 != 0) {
       *(float *)(this_ptr->unk + 0x30) = *(float *)(this_ptr->unk + 0x30) - fStack_c;
     }
-    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD6);
     if (iVar4 != 0) {
       *(float *)(this_ptr->unk + 0x30) = *(float *)(this_ptr->unk + 0x30) + fStack_c;
     }
-    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_Q);
     if (iVar4 != 0) {
       *(float *)(this_ptr->unk + 0x34) = *(float *)(this_ptr->unk + 0x34) + fStack_c;
     }
-    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_A);
     if (iVar4 != 0) {
       *(float *)(this_ptr->unk + 0x34) = *(float *)(this_ptr->unk + 0x34) - fStack_c;
     }
   }
   if ((in_stack_00000008 & 4) != 0) {
-    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD8);
     if (iVar4 != 0) {
       *(float *)(this_ptr->unk + 0x2c) = *(float *)(this_ptr->unk + 0x2c) - fStack_1c * fVar1;
     }
-    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD2);
     if (iVar4 != 0) {
       *(float *)(this_ptr->unk + 0x2c) = *(float *)(this_ptr->unk + 0x2c) + fStack_1c * fVar1;
     }
   }
   if ((in_stack_00000008 & 0x10) != 0) {
-    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0xd);
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_EQUALS);
     if (iVar4 != 0) {
       *(float *)(this_ptr->unk + 0x38) = *(float *)(this_ptr->unk + 0x38) / (local_20 * fVar3);
     }
-    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0xc);
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_MINUS);
     if (iVar4 != 0) {
       *(float *)(this_ptr->unk + 0x38) = *(float *)(this_ptr->unk + 0x38) * local_20 * fVar3;
     }
   }
-  iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4c);
+  iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD5);
   if (iVar4 == 0) {
     shape_spotview_cpp_CSpotView_FUN_005b9950(this_ptr);
     return;

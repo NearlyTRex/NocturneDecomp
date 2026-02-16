@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 152,
-    "complexity_score": 121,
+    "complexity_score": 118,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 1,
-    "pseudocode_lines": 56,
+    "pseudocode_lines": 53,
     "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 208
+    "total_lines": 205
   },
   "cross_references": [
     {
@@ -226,44 +226,44 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 35,
+      "line": 33,
       "match": "SQRT",
-      "text": "local_30 = SQRT(fVar4 * fVar4 + fVar5 * fVar5 + fVar7 * fVar7);",
+      "text": "local_30 = SQRT(fVar5 * fVar5 + fVar6 * fVar6 + fVar8 * fVar8);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 36,
+      "line": 34,
       "match": "ABS",
       "text": "if (ABS(local_30) == 0.0) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 53,
+      "line": 49,
       "match": "ROUND",
-      "text": "data->normal_x = (int)ROUND(dVar15);",
+      "text": "data->normal_x = (int)ROUND(dVar12);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 50,
+      "match": "ROUND",
+      "text": "data->normal_y = (int)ROUND(dVar13);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 51,
+      "match": "ROUND",
+      "text": "data->normal_z = (int)ROUND(dVar14);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 54,
       "match": "ROUND",
-      "text": "data->normal_y = (int)ROUND(fVar13);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 55,
-      "match": "ROUND",
-      "text": "data->normal_z = (int)ROUND(dVar16);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 57,
-      "match": "ROUND",
-      "text": "data->dot_product = (int)ROUND(dVar15);",
+      "text": "data->dot_product = (int)ROUND(dVar12);",
       "type": "decompiler_intrinsic"
     }
   ]

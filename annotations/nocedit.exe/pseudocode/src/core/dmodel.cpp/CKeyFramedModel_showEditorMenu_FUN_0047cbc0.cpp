@@ -278,33 +278,33 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
     local_5c = g_CGamePtr->delta_time_float;
     local_48 = local_5c;
-    iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
+    iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU);
     if (iVar8 != 0) {
       local_5c = local_48 * 0.1f;
     }
-    iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+    iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
     if (iVar8 != 0) {
       local_5c = local_5c * 3.0f;
     }
     local_58 = local_5c * (float)3.1415926535000001;
     local_54 = local_5c * 10.0f;
     local_50 = 1;
-    iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x52);
+    iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD0);
     if (iVar8 != 0) {
       local_d8.y = local_d8.y + local_58;
       local_50 = 0;
     }
-    iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x53);
+    iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_DECIMAL);
     if (iVar8 != 0) {
       local_d8.y = local_d8.y - local_58;
       local_50 = 0;
     }
-    iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4a);
+    iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_SUBTRACT);
     if (iVar8 != 0) {
       local_d8.x = local_d8.x + local_58;
       local_50 = 0;
     }
-    iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4e);
+    iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_ADD);
     if (iVar8 != 0) {
       local_d8.x = local_d8.x - local_58;
       local_50 = 0;
@@ -315,11 +315,11 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
     if ((float)1.57079632675 < local_d8.x) {
       local_d8.x = 1.5707964;
     }
-    iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0xd);
+    iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_EQUALS);
     if (iVar8 != 0) {
       local_80 = local_80 + 1.0;
     }
-    iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0xc);
+    iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_MINUS);
     if (iVar8 != 0) {
       local_80 = local_80 + -1.0f;
     }
@@ -330,37 +330,37 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
       local_80 = 1.0;
     }
     if (local_6c == 0) {
-      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
+      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD8);
       if (iVar8 != 0) {
         local_7c = local_7c - local_54;
         local_50 = 0;
       }
-      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
+      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD2);
       if (iVar8 != 0) {
         local_7c = local_7c + local_54;
         local_50 = 0;
       }
-      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
+      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD4);
       if (iVar8 != 0) {
         local_78 = local_78 - local_54;
         local_50 = 0;
       }
-      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
+      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD6);
       if (iVar8 != 0) {
         local_78 = local_78 + local_54;
         local_50 = 0;
       }
-      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
+      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_A);
       if (iVar8 != 0) {
         local_74 = local_74 - local_54;
         local_50 = 0;
       }
-      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
+      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_Q);
       if (iVar8 != 0) {
         local_74 = local_74 + local_54;
         local_50 = 0;
       }
-      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4c);
+      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD5);
       if (iVar8 != 0) {
         local_78 = 0.0;
         local_50 = 0;
@@ -371,32 +371,32 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
       local_18c = 0.0;
       local_188 = 0.0;
       local_184 = 0.0;
-      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
+      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD8);
       if (iVar8 != 0) {
         local_184 = local_184 - local_54;
         local_50 = 0;
       }
-      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
+      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD2);
       if (iVar8 != 0) {
         local_184 = local_184 + local_54;
         local_50 = 0;
       }
-      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
+      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD4);
       if (iVar8 != 0) {
         local_18c = local_18c - local_54;
         local_50 = 0;
       }
-      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
+      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD6);
       if (iVar8 != 0) {
         local_18c = local_18c + local_54;
         local_50 = 0;
       }
-      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
+      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_A);
       if (iVar8 != 0) {
         local_188 = local_188 - local_54;
         local_50 = 0;
       }
-      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
+      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_Q);
       if (iVar8 != 0) {
         local_188 = local_188 + local_54;
         local_50 = 0;
@@ -417,28 +417,28 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
         core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(this_ptr);
       }
     }
-    iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3e);
+    iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F4);
     if (iVar8 != 0) {
       g_KeyFrameModelPoolEnd = (CKeyFramedModel *)(g_KeyFrameModelPoolEnd->model_filename + 1);
       _sprintf(&DAT_02c14c88,"noc%d.pcx");
       engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(&DAT_02c14c88);
     }
-    iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4c);
+    iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD5);
     if (iVar8 != 0) {
       local_d8.y = 0.0;
       local_d8.x = 0.0;
       local_7c = 15.0;
       local_d8.z = 0.0;
     }
-    iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3b);
+    iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F1);
     if (iVar8 != 0) {
       local_60 = (uint)(local_60 == 0);
     }
-    iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x34);
+    iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_PERIOD);
     if (iVar8 != 0) {
       local_70 = local_70 + 1.0;
     }
-    iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x33);
+    iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_COMMA);
     if (iVar8 != 0) {
       local_70 = local_70 + -1.0f;
     }

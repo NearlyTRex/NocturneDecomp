@@ -19,19 +19,18 @@
   },
   "complexity": {
     "assembly_lines": 651,
-    "complexity_score": 523,
+    "complexity_score": 335,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 19,
-    "pseudocode_lines": 293,
-    "suspect_count": 21,
+    "pseudocode_lines": 280,
+    "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
-      "undefined_data",
       "unresolved_funcptr"
     ],
-    "total_lines": 944
+    "total_lines": 931
   },
   "cross_references": [],
   "function": {
@@ -49,14 +48,14 @@
   },
   "function_calls": [
     {
-      "addr": "00449f10",
-      "is_variadic": false,
-      "name": "core_curtain.cpp_CCurtain_FUN_00449f10"
-    },
-    {
       "addr": "00449fc0",
       "is_variadic": false,
-      "name": "core_curtain.cpp_CCurtain_FUN_00449fc0"
+      "name": "core_curtain.cpp_CCurtain_solveConstraints_FUN_00449fc0"
+    },
+    {
+      "addr": "00449f10",
+      "is_variadic": false,
+      "name": "core_curtain.cpp_CCurtain_updateLocalPositions_FUN_00449f10"
     },
     {
       "addr": "004adca0",
@@ -120,13 +119,13 @@
     },
     {
       "addr": "008879bc",
-      "name": "DAT_008879bc",
-      "type": "undefined4",
+      "name": "INT_008879bc",
+      "type": "int",
       "value": null
     },
     {
       "addr": "008879c0",
-      "name": "DAT_008879c0",
+      "name": "CVector3f_ARRAY_008879c0",
       "type": "CVector3f[100]",
       "value": null
     },
@@ -144,7 +143,7 @@
     },
     {
       "addr": "00887e70",
-      "name": "DAT_00887e70",
+      "name": "SCollisionInfo_ARRAY_00887e70",
       "type": "SCollisionInfo[100]",
       "value": null
     },
@@ -322,148 +321,29 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 104,
-      "match": "DAT_008879bc",
-      "text": "DAT_008879bc = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 105,
-      "match": "DAT_008879bc",
-      "text": "for (iStack_20 = 0; iVar5 = DAT_008879bc, iStack_20 < g_CDemonSetPtr->character_count;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 107,
       "match": "(int *)((int)",
-      "text": "iVar9 = *(int *)((int)g_CDemonSetPtr->characters + iStack_28);",
+      "text": "iVar10 = *(int *)((int)g_CDemonSetPtr->characters + iStack_28);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 108,
-      "match": "DAT_00887e70",
-      "text": "pSVar10 = DAT_00887e70 + DAT_008879bc;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 108,
-      "match": "DAT_008879bc",
-      "text": "pSVar10 = DAT_00887e70 + DAT_008879bc;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 109,
-      "match": "DAT_008879c0",
-      "text": "if (DAT_008879c0 + DAT_008879bc != (CVector3f *)(iVar9 + 0x20)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 109,
-      "match": "DAT_008879bc",
-      "text": "if (DAT_008879c0 + DAT_008879bc != (CVector3f *)(iVar9 + 0x20)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 110,
-      "match": "DAT_008879c0",
-      "text": "DAT_008879c0[DAT_008879bc].x = ((CVector3f *)(iVar9 + 0x20))->x;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 110,
-      "match": "DAT_008879bc",
-      "text": "DAT_008879c0[DAT_008879bc].x = ((CVector3f *)(iVar9 + 0x20))->x;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 111,
-      "match": "DAT_008879c0",
-      "text": "DAT_008879c0[iVar5].y = *(float *)(iVar9 + 0x24);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 112,
-      "match": "DAT_008879c0",
-      "text": "DAT_008879c0[iVar5].z = *(float *)(iVar9 + 0x28);",
-      "type": "undefined_data"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 115,
       "match": "code *",
-      "text": "iVar6 = (**(code **)(*(int *)(iVar9 + 0x154) + 0x34))(iVar9,pSVar10);",
+      "text": "iVar7 = (**(code **)(*(int *)(iVar10 + 0x154) + 0x34))(iVar10,pSVar11);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 117,
-      "match": "DAT_00887e70",
-      "text": "((local_a8 <= *(float *)(iVar9 + 0x24) + DAT_00887e70[iVar5].cylinder_top_y &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 118,
-      "match": "DAT_00887e70",
-      "text": "((((local_ac <= *(float *)(iVar9 + 0x20) + DAT_00887e70[iVar5].cylinder_radius &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 119,
-      "match": "DAT_00887e70",
-      "text": "(*(float *)(iVar9 + 0x20) - DAT_00887e70[iVar5].cylinder_radius <= local_7c)) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 120,
-      "match": "DAT_00887e70",
-      "text": "(local_a4 <= *(float *)(iVar9 + 0x28) + DAT_00887e70[iVar5].cylinder_radius)) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 121,
-      "match": "DAT_00887e70",
-      "text": "(*(float *)(iVar9 + 0x28) - DAT_00887e70[iVar5].cylinder_radius <= local_74)))))) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 122,
-      "match": "DAT_008879bc",
-      "text": "DAT_008879bc = DAT_008879bc + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 122,
-      "match": "DAT_008879bc",
-      "text": "DAT_008879bc = DAT_008879bc + 1;",
-      "type": "undefined_data"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 142,
       "match": "SQRT",
-      "text": "SQRT(*(float *)(pSVar8->unk + 0x34) * *(float *)(pSVar8->unk + 0x34) +",
+      "text": "if ((float)0.10000000000000001 < SQRT(fVar4 * fVar4 + fVar3 * fVar3 + fVar5 * fVar5)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 155,
+      "line": 150,
       "match": "SQRT",
       "text": "SQRT(fStack_b0 * fStack_b0 + fStack_b8 * fStack_b8 + fStack_b4 * fStack_b4)) {",
       "type": "decompiler_intrinsic"

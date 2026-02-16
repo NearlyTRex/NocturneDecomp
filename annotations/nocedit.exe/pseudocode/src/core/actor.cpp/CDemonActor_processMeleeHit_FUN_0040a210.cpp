@@ -167,7 +167,7 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor 
           (*(((pCVar3->base).vtable._uc)->_uc).checkCylinderCollisionWorld)
                     (pCVar3,(CVector3f *)in_stack_fffffd70,2.0,
                      (SDamageInfo *)&local_1a0.impact_direction);
-          uStack_26c = (double)local_1a0.gore_multiplier;
+          uStack_26c = (double)(float)local_1a0.damage_type;
           if (0.0 < uStack_26c) {
             round(uStack_26c * 0.5 + 1.0);
             in_stack_fffffd70 = (float *)0x40a511;
@@ -280,7 +280,7 @@ LAB_0040a3e0:
         if ((CTrigger **)&local_218.ammo_type != &local_40) {
           local_218.ammo_type = (int)local_40;
           local_218.weapon_damage_modifier = (float)local_3c;
-          local_218.gore_multiplier = (float)local_38;
+          local_218.damage_type = local_38;
         }
         pCVar2 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                            (&pCVar3->base,(CVector3f *)&local_34,

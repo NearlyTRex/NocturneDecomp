@@ -60,10 +60,10 @@ float __cdecl core_setcolid_cpp_CDemonSet_testCapsuleCollision_FUN_00573470(CDem
     else {
       local_98.max.x = local_98.max.x + local_14c.dir_x;
     }
-    local_98.min.y = (float)local_14c.bottom_y;
+    local_98.min.y = local_14c.bottom_y;
     local_98.min.z = local_14c.start_z - local_14c.radius;
     local_98.max.z = local_14c.start_z + local_14c.radius;
-    local_98.max.y = (float)local_14c.top_y;
+    local_98.max.y = local_14c.top_y;
     if (local_14c.dir_z <= 0.0) {
       local_98.min.z = local_98.min.z + local_14c.dir_z;
     }
@@ -119,8 +119,8 @@ LAB_00573d6f:
                 local_f0.cylinder_top_y = local_f0.cylinder_top_y + (actor->location).position.y;
                 fVar1 = (actor->location).position.x;
                 fVar2 = (actor->location).position.z;
-                if ((local_f0.cylinder_bottom_y < (float)local_14c.top_y) &&
-                   ((float)local_14c.bottom_y < local_f0.cylinder_top_y)) {
+                if ((local_f0.cylinder_bottom_y < local_14c.top_y) &&
+                   (local_14c.bottom_y < local_f0.cylinder_top_y)) {
                   fVar3 = fVar1 - local_14c.start_x;
                   fVar5 = fVar2 - local_14c.start_z;
                   fVar6 = local_f0.cylinder_radius + local_14c.radius;

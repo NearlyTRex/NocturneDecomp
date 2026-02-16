@@ -25,15 +25,14 @@
   },
   "complexity": {
     "assembly_lines": 366,
-    "complexity_score": 239,
+    "complexity_score": 204,
     "cross_reference_count": 13,
     "function_call_count": 2,
     "global_count": 7,
     "pseudocode_lines": 129,
-    "suspect_count": 10,
+    "suspect_count": 7,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "extra_output"
+      "decompiler_intrinsic"
     ],
     "total_lines": 495
   },
@@ -394,31 +393,10 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
-      "match": "extraout_ST1",
-      "text": "float10 extraout_ST1;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 28,
-      "match": "extraout_ST1",
-      "text": "fVar5 = SQRT((float10)1 - extraout_ST1 * extraout_ST1);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 28,
-      "match": "extraout_ST1",
-      "text": "fVar5 = SQRT((float10)1 - extraout_ST1 * extraout_ST1);",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 28,
       "match": "SQRT",
-      "text": "fVar5 = SQRT((float10)1 - extraout_ST1 * extraout_ST1);",
+      "text": "fVar4 = SQRT((float10)1 - fVar4 * fVar4);",
       "type": "decompiler_intrinsic"
     },
     {

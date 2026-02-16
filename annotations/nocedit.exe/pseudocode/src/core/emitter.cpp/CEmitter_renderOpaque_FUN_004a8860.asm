@@ -64,7 +64,7 @@
 ;   CEditorTools g_CEditorToolsInstance
 ;   int g_SlewTargetMode
 ;   CVector3f g_EmitterTarget
-;   undefined4 DAT_02cf2b6c
+;   UOrientationVector UNION_UOrientationVector_02cf2b6c
 ;   CEmitter* PTR_02cf2b78
 ;   CFireEffect g_CFireEffectInstance
 ;   undefined4 DAT_02f33744
@@ -257,7 +257,7 @@ section .text
     CMP ESI,dword ptr [EAX + 0x28]      ; 004a8a32 | DAT_02f33768
     JNZ 0x004a88a9                      ; 004a8a35
         ;   XREF to: 004a88a9 (CONDITIONAL_JUMP)  ; LAB_004a88a9
-    PUSH 0x2cf2b6c                      ; 004a8a3b | DAT_02cf2b6c
+    PUSH 0x2cf2b6c                      ; 004a8a3b | UNION_UOrientationVector_02cf2b6c
     PUSH 0x2cf2b60                      ; 004a8a40 | g_EmitterTarget
     MOV EAX,[0x00678a60]                ; 004a8a45 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EAX                            ; 004a8a4a | g_CEditorToolsInstance

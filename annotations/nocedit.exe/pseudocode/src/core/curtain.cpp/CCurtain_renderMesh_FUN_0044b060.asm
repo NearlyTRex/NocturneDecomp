@@ -1,10 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_curtain_cpp_CCurtain_FUN_0044b060(CCurtain *this_ptr)
+; int __cdecl core_curtain_cpp_CCurtain_renderMesh_FUN_0044b060(CCurtain *this_ptr)
 ;
 ; Parameters:
 ; CCurtain *       Stack[0x4]:4   this_ptr
+; Local Variables:
+; CBoundingBox3D   Stack[-0x3c]:24  local_3c
+; CBoundingBox3D   Stack[-0x24]:24  local_24
 ;
 ; XREF[1]:
 ;   core_curtain.cpp_CCurtain_renderOpaque_FUN_0044b340 at 0044b354
@@ -36,7 +39,7 @@
 section .text
 
     PUSH ESI                            ; 0044b060
-        ;   Label: core_curtain.cpp_CCurtain_FUN_0044b060
+        ;   Label: core_curtain.cpp_CCurtain_renderMesh_FUN_0044b060
     PUSH EBP                            ; 0044b061
     SUB ESP,0x34                        ; 0044b062
     MOV ESI,dword ptr [ESP + 0x40]      ; 0044b065

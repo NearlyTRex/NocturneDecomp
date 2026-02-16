@@ -11,8 +11,8 @@ CDemonActorType g_CDoorClassInfo = {};
 // CKeyFramedModel*
 CKeyFramedModel* g_KeyFrameModelPoolEnd = {};
 
-// FileSearchHandler*[5]
-FileSearchHandler* g_SearchHandlers[5] = {};
+// FileSearchHandlerFunc*[5]
+FileSearchHandlerFunc* g_SearchHandlers[5] = {};
 
 // char[72]
 char g_PolyDataConversionBuffer[72] = {};

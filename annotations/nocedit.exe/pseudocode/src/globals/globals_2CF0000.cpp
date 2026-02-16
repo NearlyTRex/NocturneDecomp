@@ -24,6 +24,9 @@ HWND g_DialogParentWindow = {};
 // SWindow[5]
 SWindow g_WindowStack[5] = {};
 
+// UOrientationVector
+UOrientationVector UNION_UOrientationVector_02cf2b6c = {};
+
 // _BIT_INTEGER
 _BIT_INTEGER g_MouseButtonFlags = {};
 
@@ -96,9 +99,6 @@ uchar g_ColorCubeLookup[32768] = {};
 uint* g_ZBufferScanlineArray[1200] = {};
 
 // undefined4
-undefined4 DAT_02cf2b6c = {};
-undefined4 DAT_02cf2b70 = {};
-undefined4 DAT_02cf2b74 = {};
 undefined4 DAT_02cf2bf4 = {};
 undefined4 DAT_02cf2bf8 = {};
 undefined4 DAT_02cf4b30 = {};

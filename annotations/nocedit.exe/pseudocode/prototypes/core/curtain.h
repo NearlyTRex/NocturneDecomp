@@ -23,25 +23,25 @@ CCurtain * __cdecl CCurtain::ctor(CCurtain *this_ptr);
 // Address: 00449810
 void __cdecl CCurtain::setup(CCurtain *this_ptr);
 
-// Original: core_curtain.cpp_CCurtain_FUN_00449e40
+// Original: core_curtain.cpp_CCurtain_updateWorldPositions_FUN_00449e40
 // Address: 00449e40
-void __cdecl CCurtain(CCurtain *this_ptr);
+void __cdecl CCurtain::updateWorldPositions(CCurtain *this_ptr);
 
-// Original: core_curtain.cpp_CCurtain_FUN_00449f10
+// Original: core_curtain.cpp_CCurtain_updateLocalPositions_FUN_00449f10
 // Address: 00449f10
-void __cdecl CCurtain(CCurtain *this_ptr);
+void __cdecl CCurtain::updateLocalPositions(CCurtain *this_ptr);
 
-// Original: core_curtain.cpp_CCurtain_FUN_00449fc0
+// Original: core_curtain.cpp_CCurtain_solveConstraints_FUN_00449fc0
 // Address: 00449fc0
-void __cdecl CCurtain(CCurtain *this_ptr);
+void __cdecl CCurtain::solveConstraints(CCurtain *this_ptr,SCurtainVertex *vertex);
 
 // Original: core_curtain.cpp_CCurtain_process_FUN_0044a920
 // Address: 0044a920
 void __cdecl CCurtain::process(CCurtain *this_ptr,float delta_time);
 
-// Original: core_curtain.cpp_CCurtain_FUN_0044b060
+// Original: core_curtain.cpp_CCurtain_renderMesh_FUN_0044b060
 // Address: 0044b060
-int __cdecl CCurtain(CCurtain *this_ptr);
+int __cdecl CCurtain::renderMesh(CCurtain *this_ptr);
 
 // Original: core_curtain.cpp_CCurtain_renderOpaque_FUN_0044b340
 // Address: 0044b340

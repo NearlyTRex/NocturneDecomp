@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_curtain_cpp_CCurtain_FUN_00449fc0(CCurtain *this_ptr)
+; void __cdecl core_curtain_cpp_CCurtain_solveConstraints_FUN_00449fc0(CCurtain *this_ptr,SCurtainVertex *vertex)
 ;
 ; Parameters:
 ; CCurtain *       Stack[0x4]:4   this_ptr
+; SCurtainVertex * Stack[0x8]:4   vertex
 ; Local Variables:
 ; undefined4       Stack[-0x158]:4  local_158
 ; undefined4       Stack[-0x154]:4  local_154
@@ -95,11 +96,11 @@
 ; Referenced Globals:
 ;   double DOUBLE_00619c0a = -0.5
 ;   double DOUBLE_00619c12 = 0.0100000000000000
-;   undefined4 DAT_008879bc
-;   CVector3f[100] DAT_008879c0
+;   int INT_008879bc
+;   CVector3f[100] CVector3f_ARRAY_008879c0
 ;   undefined4 DAT_008879c4
 ;   undefined4 DAT_008879c8
-;   SCollisionInfo[100] DAT_00887e70
+;   SCollisionInfo[100] SCollisionInfo_ARRAY_00887e70
 ;   undefined4 DAT_00887e88
 ;   undefined4 DAT_00887e8c
 ;   undefined4 DAT_00887eb4
@@ -109,7 +110,7 @@
 section .text
 
     PUSH EBX                            ; 00449fc0
-        ;   Label: core_curtain.cpp_CCurtain_FUN_00449fc0
+        ;   Label: core_curtain.cpp_CCurtain_solveConstraints_FUN_00449fc0
     PUSH ESI                            ; 00449fc1
     PUSH EDI                            ; 00449fc2
     PUSH EBP                            ; 00449fc3
@@ -139,7 +140,7 @@ section .text
     MOV dword ptr [EBX + 0x6c],0x1      ; 0044a00d
     XOR ECX,ECX                         ; 0044a014
         ;   Label: LAB_0044a014
-    MOV ESI,dword ptr [0x008879bc]      ; 0044a016 | DAT_008879bc
+    MOV ESI,dword ptr [0x008879bc]      ; 0044a016 | INT_008879bc
     MOV dword ptr [ESP + 0x140],ECX     ; 0044a01c
     TEST ESI,ESI                        ; 0044a023
     JLE 0x0044a1e7                      ; 0044a025
@@ -155,7 +156,7 @@ section .text
     LEA EAX,[EBX + 0x34]                ; 0044a04f
     MOV EDI,dword ptr [EBP + 0x14]      ; 0044a052
     MOV dword ptr [ESP + 0x108],EAX     ; 0044a055
-    MOV EAX,0x887e70                    ; 0044a05c | DAT_00887e70
+    MOV EAX,0x887e70                    ; 0044a05c | SCollisionInfo_ARRAY_00887e70
     XOR ESI,ESI                         ; 0044a061
     ADD EAX,0x1c                        ; 0044a063
     ADD EDI,0x1c728                     ; 0044a066
@@ -224,7 +225,7 @@ section .text
     JBE 0x0044a517                      ; 0044a15d
         ;   XREF to: 0044a517 (CONDITIONAL_JUMP)  ; LAB_0044a517
     FLD float ptr [EBX + 0x20]          ; 0044a163
-    FSUB float ptr [ESI + 0x8879c0]     ; 0044a166 | DAT_008879c0
+    FSUB float ptr [ESI + 0x8879c0]     ; 0044a166 | CVector3f_ARRAY_008879c0
     FST float ptr [ESP + 0x30]          ; 0044a16c
     FLD float ptr [EBX + 0x28]          ; 0044a170
     FSUB float ptr [ESI + 0x8879c8]     ; 0044a173 | DAT_008879c8
@@ -253,7 +254,7 @@ section .text
     INC EAX                             ; 0044a1d0
     ADD ESI,0xc                         ; 0044a1d1
     MOV dword ptr [ESP + 0x140],EAX     ; 0044a1d4
-    CMP EAX,dword ptr [0x008879bc]      ; 0044a1db | DAT_008879bc
+    CMP EAX,dword ptr [0x008879bc]      ; 0044a1db | INT_008879bc
     JL 0x0044a073                       ; 0044a1e1
         ;   XREF to: 0044a073 (CONDITIONAL_JUMP)  ; LAB_0044a073
     XOR EDX,EDX                         ; 0044a1e7
@@ -502,7 +503,7 @@ section .text
     JA 0x0044a1c1                       ; 0044a558
         ;   XREF to: 0044a1c1 (CONDITIONAL_JUMP)  ; LAB_0044a1c1
     FLD float ptr [EBX + 0x20]          ; 0044a55e
-    FSUB float ptr [ESI + 0x8879c0]     ; 0044a561 | DAT_008879c0
+    FSUB float ptr [ESI + 0x8879c0]     ; 0044a561 | CVector3f_ARRAY_008879c0
     FST float ptr [ESP + 0x54]          ; 0044a567
     FLD float ptr [EBX + 0x28]          ; 0044a56b
     FSUB float ptr [ESI + 0x8879c8]     ; 0044a56e | DAT_008879c8
@@ -685,7 +686,7 @@ section .text
     FSTP float ptr [ESP + 0x58]         ; 0044a80d
     FMUL float ptr [EAX]                ; 0044a811 | DAT_00887e8c
     FLD float ptr [ESP + 0x54]          ; 0044a813
-    FADD float ptr [ESI + 0x8879c0]     ; 0044a817 | DAT_008879c0
+    FADD float ptr [ESI + 0x8879c0]     ; 0044a817 | CVector3f_ARRAY_008879c0
     FXCH                                ; 0044a81d
     FSTP float ptr [ESP + 0x5c]         ; 0044a81f
     FSTP float ptr [ESP + 0x54]         ; 0044a823

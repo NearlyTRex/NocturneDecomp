@@ -370,9 +370,9 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
         core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
         shape_spotview_cpp_CSpotView_FUN_005b9670(g_CSpotViewPtr);
-        iVar15 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
+        iVar15 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
         if (iVar15 != 0) break;
-        iVar15 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x14);
+        iVar15 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_T);
         if (iVar15 != 0) {
           core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(local_4db8);
           core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(local_4db8 + 1);
@@ -385,7 +385,7 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
           core_morph_cpp_CMorph_FUN_0052ca90(in_stack_00000004);
           core_morph_cpp_CMorph_FUN_0052b350(in_stack_00000004);
         }
-        iVar15 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x32);
+        iVar15 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_M);
         if (iVar15 != 0) {
           shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&CStack_850);
           iVar15 = 0;
@@ -410,7 +410,7 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
           }
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&CStack_850,0);
         }
-        iVar15 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x18);
+        iVar15 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_O);
         if (iVar15 != 0) {
           local_5c = (uint)(local_5c == 0);
         }

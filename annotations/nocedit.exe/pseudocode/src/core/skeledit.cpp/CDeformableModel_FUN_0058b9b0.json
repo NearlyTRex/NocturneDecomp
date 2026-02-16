@@ -4,44 +4,32 @@
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 41,
+        "line": 40,
         "message": "no matching function for call to '__STK'"
       },
       {
         "category": "format_error",
-        "column": 75,
-        "line": 52,
-        "message": "format specifies type 'int *' but the argument has type 'float *' [-Werror,-Wformat]"
+        "column": 85,
+        "line": 51,
+        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 85,
+        "column": 48,
         "line": 52,
         "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 58,
-        "line": 53,
+        "column": 57,
+        "line": 52,
         "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
-        "category": "incompatible_types",
-        "column": 18,
-        "line": 72,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 18,
-        "line": 77,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 21,
-        "line": 113,
-        "message": "invalid operands to binary expression ('float' and 'int')"
+        "category": "format_error",
+        "column": 79,
+        "line": 52,
+        "message": "format specifies type 'int *' but the argument has type 'ushort *' (aka 'unsigned short *') [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -49,22 +37,21 @@
   },
   "complexity": {
     "assembly_lines": 243,
-    "complexity_score": 410,
+    "complexity_score": 299,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 3,
-    "pseudocode_lines": 115,
-    "suspect_count": 26,
+    "pseudocode_lines": 109,
+    "suspect_count": 16,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "pointer_cast",
       "stack_param",
       "suspect_float",
       "unaffected_reg",
       "warning_type_propagation"
     ],
-    "total_lines": 358
+    "total_lines": 352
   },
   "cross_references": [
     {
@@ -330,179 +317,109 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 13,
-      "match": "extraout_EBX",
-      "text": "CDeformableModel *extraout_EBX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 14,
+      "line": 13,
       "match": "unaff_EBP",
       "text": "float unaff_EBP;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 18,
       "match": "in_stack_00000008",
       "text": "_FILE *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 37,
+      "line": 36,
       "match": "in_stack_00000008",
       "text": "iVar4 = _fgetc(in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 45,
+      "line": 44,
       "match": "in_stack_00000008",
       "text": "iVar5 = _fscanf(in_stack_00000008,\"%d,%d,%f,%f,%d,%f,%f,%d,%f,%f\\n\",&local_28,local_3c,",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 59,
+      "line": 58,
       "match": "(float *)((int)",
       "text": "if (*(float *)((int)local_54 + iVar5) < local_18) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 59,
       "match": "(float *)((int)",
       "text": "local_18 = *(float *)((int)local_54 + iVar5);",
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 65,
-      "match": "SUB84",
-      "text": "local_34 = SUB84(dVar9,0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 70,
-      "match": "SUB84",
-      "text": "local_38 = SUB84(dVar9,0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 76,
-      "match": "extraout_EBX",
-      "text": "if (extraout_EBX->num_textures <= local_30) {",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 79,
-      "match": "extraout_EBX",
-      "text": "pSVar2 = extraout_EBX->tri_data_ptr[0];",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 80,
-      "match": "extraout_EBX",
-      "text": "*(int *)((int)extraout_EBX->index_data_ptr[0] + iVar4) = local_30;",
-      "type": "extra_output"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 80,
+      "line": 75,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)extraout_EBX->index_data_ptr[0] + iVar4) = local_30;",
+      "text": "*(int *)((int)this_ptr->index_data_ptr[0] + iVar4) = local_28;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 82,
+      "line": 77,
       "match": "(ushort *)((int)",
       "text": "puVar6 = (ushort *)((int)&(pSVar2->vertex_indices).vertex_index_0 + iVar8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 84,
+      "line": 79,
       "match": "(ushort *)((int)",
-      "text": "*puVar6 = *(ushort *)((int)&local_34 + iVar5);",
+      "text": "*puVar6 = *(ushort *)((int)local_34 + iVar5);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 85,
+      "line": 80,
       "match": "(float *)((int)",
       "text": "fVar1 = *(float *)((int)local_54 + iVar5 + 8U);",
       "type": "pointer_cast"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 87,
+      "line": 82,
       "match": "8.148736e-39",
       "text": "local_54[1] = 8.148736e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 90,
+      "line": 85,
       "match": "8.148745e-39",
       "text": "local_54[0] = 8.148745e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Unaffected register variable",
-      "line": 91,
+      "line": 86,
       "match": "unaff_EBP",
       "text": "dVar10 = round((double)((fVar1 - unaff_EBP) * fVar3));",
       "type": "unaffected_reg"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 92,
+      "line": 87,
       "match": "ROUND",
-      "text": "local_20 = (float)(int)ROUND(dVar9);",
+      "text": "local_20 = (int)ROUND(dVar9);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 93,
+      "line": 88,
       "match": "ROUND",
       "text": "local_14 = (int)ROUND(dVar10);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 98,
-      "match": "9.18341e-41",
-      "text": "local_20 = 9.18341e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 106,
-      "match": "SUB42",
-      "text": "puVar6[3] = SUB42(local_20,0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 114,
-      "match": "extraout_EBX",
-      "text": "this_ptr = extraout_EBX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 115,
-      "match": "extraout_EBX",
-      "text": "} while (iVar7 < extraout_EBX->tri_count[0]);",
-      "type": "extra_output"
     }
   ]
 }

@@ -55,17 +55,16 @@
   },
   "complexity": {
     "assembly_lines": 847,
-    "complexity_score": 517,
+    "complexity_score": 502,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 19,
     "pseudocode_lines": 377,
-    "suspect_count": 11,
+    "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param",
       "stack_ref",
-      "suspect_float",
       "unresolved_funcptr",
       "warning_type_propagation"
     ],
@@ -780,13 +779,6 @@
       "match": "code *",
       "text": "(**(code **)(iRam00000154 + 0x104))(0);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 117,
-      "match": "5.60519e-45",
-      "text": "local_118.gore_multiplier = 5.60519e-45;",
-      "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",

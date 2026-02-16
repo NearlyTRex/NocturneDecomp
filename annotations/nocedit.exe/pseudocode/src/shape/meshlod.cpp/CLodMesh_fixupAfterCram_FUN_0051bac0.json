@@ -6,16 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 195,
-    "complexity_score": 95,
+    "complexity_score": 106,
     "cross_reference_count": 2,
     "function_call_count": 9,
     "global_count": 6,
-    "pseudocode_lines": 80,
-    "suspect_count": 1,
+    "pseudocode_lines": 76,
+    "suspect_count": 2,
     "suspect_types": [
+      "format_string_mismatch",
       "pointer_cast"
     ],
-    "total_lines": 275
+    "total_lines": 271
   },
   "cross_references": [
     {
@@ -251,10 +252,21 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 24,
       "match": "(int *)((int)",
-      "text": "piVar5 = (int *)((int)this_ptr->tri_data->attribute_indices + (int)local_20);",
+      "text": "piVar5 = (int *)((int)this_ptr->tri_data->attribute_indices + local_20);",
       "type": "pointer_cast"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"LodMesh::fixupAfterCram - texture %s not found in ...\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "LodMesh::fixupAfterCram - texture %s not found in cram list.",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 31,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"LodMesh::fixupAfterCram - texture %s not found in cram",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

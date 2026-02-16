@@ -307,7 +307,7 @@
 #include "types/funcdefs/CWeapon_setWeaponState.h"
 #include "types/funcdefs/CWeapon_updateLighting.h"
 #include "types/funcdefs/ColorConversionFunc.h"
-#include "types/funcdefs/FileSearchHandler.h"
+#include "types/funcdefs/FileSearchHandlerFunc.h"
 #include "types/funcdefs/MRGLBlockHandlerFunc.h"
 #include "types/funcdefs/MessageHandlerFunc.h"
 #include "types/funcdefs/OptimizedMemcpyFunc.h"

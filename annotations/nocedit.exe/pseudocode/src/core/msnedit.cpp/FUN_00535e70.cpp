@@ -188,25 +188,25 @@ void __cdecl core_msnedit_cpp_FUN_00535e70(void)
     shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0(&local_48);
     shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if (iVar4 != 0) break;
-    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x50);
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD2);
     if (iVar4 != 0) {
       local_48.scroll_position = local_48.scroll_position + 0xb;
     }
-    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x48);
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD8);
     if (iVar4 != 0) {
       local_48.scroll_position = local_48.scroll_position - 0xb;
     }
-    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x51);
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD3);
     if (iVar4 != 0) {
       local_48.scroll_position = local_48.scroll_position + local_48.max_value;
     }
-    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x49);
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD9);
     if (iVar4 != 0) {
       local_48.scroll_position = local_48.scroll_position - local_48.max_value;
     }
-    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x47);
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD7);
     if (iVar4 != 0) {
       local_48.scroll_position = 0;
     }

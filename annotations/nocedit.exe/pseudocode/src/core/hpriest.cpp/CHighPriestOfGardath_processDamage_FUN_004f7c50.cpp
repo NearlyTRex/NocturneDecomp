@@ -9,7 +9,7 @@
 void __cdecl core_hpriest_cpp_CHighPriestOfGardath_processDamage_FUN_004f7c50(CHighPriestOfGardath *this_ptr,SDamageInfo *damage_info)
 
 {
-  damage_info->gore_multiplier = 1.4013e-43;
+  damage_info->damage_type = 100;
   damage_info->damage_amount = 0.0;
   return;
 }

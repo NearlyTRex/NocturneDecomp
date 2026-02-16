@@ -10,14 +10,16 @@ float __cdecl core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_004966f0(CDemon
 
 {
   float fVar1;
+  float fVar2;
+  float fVar3;
+  float fVar4;
+  float fVar5;
+  float fVar6;
+  float fVar7;
+  float fVar8;
   CDemonCube *this_ptr_00;
-  float10 fVar2;
-  float10 fVar3;
-  float10 fVar4;
-  float10 fVar5;
-  float10 fVar6;
-  double dVar7;
-  double dVar8;
+  double dVar9;
+  double dVar10;
   CVector3f CStack_6c;
   float local_5c;
   float local_58;
@@ -36,32 +38,32 @@ float __cdecl core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_004966f0(CDemon
   local_54.x = pos->z;
   local_54.y = pos->x;
   local_58 = *local_18 + 2.0f;
-  local_48.x = pos->z;
+  fVar2 = pos->z;
   local_54.z = *local_18 + -10.0f;
-  fVar2 = (float10)1 / (float10)(this_ptr->cell_size).y;
-  fVar3 = ((float10)local_54.x - (float10)(this_ptr->bbox_min).z) / (float10)(this_ptr->cell_size).z
-  ;
-  fVar4 = ((float10)local_58 - (float10)(this_ptr->bbox_min).y) * fVar2;
-  fVar2 = ((float10)local_54.z - (float10)(this_ptr->bbox_min).y) * fVar2;
-  fVar1 = local_54.y - local_5c;
-  fVar5 = (float10)local_48.x;
+  fVar3 = local_58 - (this_ptr->bbox_min).y;
+  fVar5 = 1.0 / (this_ptr->cell_size).y;
+  fVar6 = local_54.x - (this_ptr->bbox_min).z;
+  fVar1 = (this_ptr->cell_size).z;
+  fVar4 = local_54.z - (this_ptr->bbox_min).y;
+  fVar7 = local_54.y - local_5c;
   CStack_6c.z = 6.741156e-39;
-  dVar7 = round
+  local_48.x = fVar2;
+  dVar9 = round
                     ((double)((local_5c - (this_ptr->bbox_min).x) / (this_ptr->cell_size).x));
-  local_24 = (int)ROUND(dVar7);
-  fVar5 = fVar5 - (float10)local_58;
-  fVar6 = (float10)local_54.y - (float10)local_5c;
+  local_24 = (int)ROUND(dVar9);
+  fVar2 = fVar2 - local_58;
+  fVar8 = local_54.y - local_5c;
   CStack_6c.y = 6.741194e-39;
-  dVar7 = round((double)fVar3);
-  local_2c = (int)ROUND(dVar7);
-  local_3c = (float)fVar6;
+  dVar9 = round((double)(fVar6 / fVar1));
+  local_2c = (int)ROUND(dVar9);
   CStack_6c.x = 6.741221e-39;
-  local_48.z = fVar1;
-  dVar7 = round((double)fVar4);
-  dVar8 = round((double)fVar2);
-  local_3c = (float)(int)ROUND(dVar7);
-  local_2c = (int)ROUND(dVar8);
-  local_48.z = (float)fVar5;
+  local_48.z = fVar7;
+  local_3c = fVar8;
+  dVar9 = round((double)(fVar3 * fVar5));
+  dVar10 = round((double)(fVar4 * fVar5));
+  local_3c = (float)(int)ROUND(dVar9);
+  local_2c = (int)ROUND(dVar10);
+  local_48.z = fVar2;
   if (local_2c <= (int)local_3c) {
     do {
       this_ptr_00 = core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004952b0

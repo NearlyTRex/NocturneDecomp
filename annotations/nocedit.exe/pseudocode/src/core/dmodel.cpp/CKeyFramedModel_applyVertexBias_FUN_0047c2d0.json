@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 35,
+    "complexity_score": 34,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
-    "pseudocode_lines": 20,
+    "pseudocode_lines": 19,
     "suspect_count": 1,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 77
+    "total_lines": 76
   },
   "cross_references": [
     {
@@ -167,9 +167,9 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 18,
+      "line": 17,
       "match": "ROUND",
-      "text": "*(int *)(iVar2 + 4 + (int)model_ptr->vertex_list) + (int)ROUND(dVar3);",
+      "text": "*(int *)(iVar2 + 4 + (int)this_ptr->vertex_list) + (int)ROUND(dVar3);",
       "type": "decompiler_intrinsic"
     }
   ]

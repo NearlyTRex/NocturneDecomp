@@ -10,8 +10,8 @@
 ;   WatcomTypeInfo g_SCollisionInfoTypeInfo
 ;   int g_CCurtainClassVersion = 0x6
 ;   CDemonActorType g_CDemonActorClassInfo
-;   CVector3f[100] DAT_008879c0
-;   SCollisionInfo[100] DAT_00887e70
+;   CVector3f[100] CVector3f_ARRAY_008879c0
+;   SCollisionInfo[100] SCollisionInfo_ARRAY_00887e70
 ;   CDemonActorType g_CCurtainClassInfo
 ;
 ; Called Functions:
@@ -25,13 +25,13 @@ section .text
     PUSH 0x6598c0                       ; 00449610 | g_CVectorTypeInfo
         ;   Label: core_curtain.cpp_staticInit_FUN_00449610
     PUSH 0x64                           ; 00449615
-    PUSH 0x8879c0                       ; 00449617 | DAT_008879c0
+    PUSH 0x8879c0                       ; 00449617 | CVector3f_ARRAY_008879c0
     CALL crt_memory.c___arrinit_FUN_005fe667 ; 0044961c
         ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00449621
     PUSH 0x65c5d0                       ; 00449624 | g_SCollisionInfoTypeInfo
     PUSH 0x64                           ; 00449629
-    PUSH 0x887e70                       ; 0044962b | DAT_00887e70
+    PUSH 0x887e70                       ; 0044962b | SCollisionInfo_ARRAY_00887e70
     CALL crt_memory.c___arrinit_FUN_005fe667 ; 00449630
         ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00449635

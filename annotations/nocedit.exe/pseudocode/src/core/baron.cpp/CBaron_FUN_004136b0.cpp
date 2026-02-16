@@ -87,7 +87,7 @@ void __cdecl core_baron_cpp_CBaron_FUN_004136b0(CBaron *this_ptr)
               ((CDemonActor *)this_ptr,"baron-attack.wav");
   }
   core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_d0);
-  local_d0.gore_multiplier = 8.40779e-45;
+  local_d0.damage_type = 6;
   local_d0.damage_amount = 100.0;
   local_d0.attacker = (CDemonActor *)this_ptr;
   local_d0.wielder = (CDemonActor *)this_ptr->unk5;

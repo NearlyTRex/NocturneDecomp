@@ -31,9 +31,9 @@ void __cdecl core_game_cpp_captureDebugMovieFrame_FUN_004d7810(void)
   int iStack_14;
   
   if (g_CheatFlags != 0) {
-    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
     if (iVar2 != 0) {
-      iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2f);
+      iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_V);
       if (iVar2 != 0) {
         fVar4 = (float)g_DebugRecording;
         if (g_DebugRecording == 0) {

@@ -392,8 +392,8 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
       if ((((this_ptr->show_3d_viewport != 0) && (iVar6 = INT_02f7c634, INT_02f7c634 == 0)) &&
           (iVar7 = core_setedit_cpp_CDemonSet_FUN_00577af0(g_CDemonSetPtr), local_38 = iVar7,
           iVar11 = local_14, -1 < iVar7)) &&
-         (iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38), iVar11 = iVar6, iVar1 != 0))
-      {
+         (iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU), iVar11 = iVar6,
+         iVar1 != 0)) {
         core_script_cpp_CScript_initEditorLayout_FUN_00566660
                   (g_CScriptPtr,0,0x101,g_WindowWidth + -1,g_WindowHeight + -1);
         INT_02f7c634 = 1;
@@ -513,7 +513,7 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
     core_setcolid_cpp_CDemonSet_FUN_005743e0(g_CDemonSetPtr);
-    iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
+    iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if ((iVar11 != 0) &&
        (iVar11 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
                            (g_CEditorToolsPtr,"Exit editor?"), iVar11 != 0))
@@ -522,9 +522,9 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
       if (DAT_02f7c53c == 4) {
         local_3c = g_CGamePtr->delta_time_float;
         local_2c = local_3c;
-        iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
+        iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU);
         if (iVar11 == 0) {
-          iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+          iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
           if (iVar11 != 0) {
             local_2c = local_3c * (float)10;
           }
@@ -543,59 +543,59 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
           local_20 = 1.0;
         }
         local_20 = local_20 * local_2c;
-        iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4a);
+        iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_SUBTRACT);
         if (iVar11 != 0) {
           local_7c = local_7c + local_34;
         }
-        iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4e);
+        iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_ADD);
         if (iVar11 != 0) {
           local_7c = local_7c - local_34;
         }
-        iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x52);
+        iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD0);
         if (iVar11 != 0) {
           local_78 = local_78 + local_34;
         }
-        iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x53);
+        iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_DECIMAL);
         if (iVar11 != 0) {
           local_78 = local_78 - local_34;
         }
-        iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0xd);
+        iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_EQUALS);
         if (iVar11 != 0) {
           local_18 = local_18 - local_1c;
         }
-        iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0xc);
+        iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_MINUS);
         if (iVar11 != 0) {
           local_18 = local_18 + local_1c;
         }
-        iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x29);
+        iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_GRAVE);
         if (iVar11 != 0) {
-          iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
+          iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD4);
           if (iVar11 != 0) {
             local_28 = local_28 - local_20;
           }
-          iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
+          iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD6);
           if (iVar11 != 0) {
             local_28 = local_28 + local_20;
           }
           in_stack_fffff620 = g_CKeysPtr;
-          iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
+          iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_Q);
           if (iVar11 != 0) {
             local_24 = local_24 + local_20;
           }
           in_stack_fffff624 = 0x539bc1;
           in_stack_fffff628 = (CDemonMission *)g_CKeysPtr;
-          iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
+          iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_A);
           if (iVar11 != 0) {
             local_24 = local_24 - local_20;
           }
           in_stack_fffff630 = g_CKeysPtr;
-          iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
+          iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD8);
           if (iVar11 != 0) {
             local_18 = local_18 - local_1c;
           }
           in_stack_fffff634 = (CDemonMission *)0x539bf9;
           in_stack_fffff638 = g_CKeysPtr;
-          iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
+          iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD2);
           if (iVar11 != 0) {
             local_18 = local_18 + local_1c;
           }
@@ -626,13 +626,13 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
           core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(this_ptr->selected_actor);
         }
       }
-      iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0xe);
+      iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_BACK);
       if (iVar11 != 0) {
         core_msnedit_cpp_CDemonMission_FUN_0053c0b0(this_ptr);
       }
-      iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0xf);
+      iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_TAB);
       if (iVar11 != 0) {
-        iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+        iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
         if (iVar11 == 0) {
           core_msnedit_cpp_CDemonMission_FUN_0053ca30(this_ptr,(int)this_ptr->selected_actor);
           iVar11 = extraout_EAX_00;
@@ -643,9 +643,9 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
         }
         core_msnedit_cpp_CDemonMission_FUN_0053c140(this_ptr,iVar11);
       }
-      iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3c);
+      iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F2);
       if (iVar11 != 0) {
-        iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+        iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
         if (iVar11 == 0) {
           iVar11 = 0x101;
           core_script_cpp_CScript_initEditorLayout_FUN_00566660
@@ -665,10 +665,10 @@ LAB_00539d68:
     }
     else {
       core_script_cpp_CScript_processEditorInput_FUN_00565130(g_CScriptPtr);
-      iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3c);
+      iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F2);
       if (iVar11 != 0) {
         if (INT_02f7c634 == 1) {
-          iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+          iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
           if (iVar11 == 0) {
             core_script_cpp_CScript_initEditorLayout_FUN_00566660
                       (g_CScriptPtr,0,0,g_WindowWidth + -1,g_WindowHeight + -1);
@@ -683,7 +683,7 @@ LAB_00539d68:
           }
         }
         else {
-          iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+          iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
           if (iVar11 == 0) {
             core_script_cpp_CScript_initEditorLayout_FUN_00566660
                       (g_CScriptPtr,0,0x101,g_WindowWidth + -1,g_WindowHeight + -1);
@@ -700,9 +700,9 @@ LAB_00539d68:
         goto LAB_00539d68;
       }
     }
-    iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+    iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
     if ((iVar11 != 0) &&
-       (iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1f), iVar11 != 0)) {
+       (iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_S), iVar11 != 0)) {
       engine_2d_c_clearInputAndWait_FUN_00403260();
       if (this_ptr->mission_name[0] == '\0') {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
@@ -718,9 +718,9 @@ LAB_00539d68:
       }
       engine_2d_c_clearInputAndWait_FUN_00403260();
     }
-    iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+    iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
     if ((iVar11 != 0) &&
-       (iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x19), iVar11 != 0)) {
+       (iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_P), iVar11 != 0)) {
       local_60 = 1;
 LAB_00539e00:
       core_set_cpp_CDemonSet_FUN_0056d2d0(g_CDemonSetPtr);
@@ -739,8 +739,8 @@ LAB_00539e00:
       return 2;
     }
     if ((INT_02f7c634 == 0) ||
-       (iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38), iVar11 != 0)) {
-      iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x12);
+       (iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU), iVar11 != 0)) {
+      iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_E);
       if (iVar11 != 0) {
         bVar13 = g_CEdCheckInstance.checked_state == 0;
         g_CEdCheckInstance.checked_state = (int)bVar13;
@@ -750,15 +750,15 @@ LAB_00539e00:
         }
         FLOAT_02f7c540 = 5.0f;
       }
-      iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x17);
+      iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_I);
       if (iVar11 != 0) {
         core_msnedit_cpp_CDemonMission_importActorsFrom_FUN_0053b9f0
                   (this_ptr,(CDemonMission *)in_stack_fffff698);
       }
-      iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x20);
+      iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_D);
       if (iVar11 != 0) {
         in_stack_fffff698 = (CDemonSet *)g_CKeysPtr;
-        iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+        iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
         if (iVar11 == 0) {
           in_stack_fffff698 = (CDemonSet *)0x53ab69;
           core_msnedit_cpp_CDemonMission_FUN_0053bc80(this_ptr,(int)this_ptr->selected_actor,0);
@@ -767,28 +767,28 @@ LAB_00539e00:
           core_msnedit_cpp_CDemonMission_FUN_0053df90(this_ptr);
         }
       }
-      iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x13);
+      iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_R);
       if (iVar11 != 0) {
         core_msnedit_cpp_CDemonMission_FUN_0053bd80
                   (this_ptr,(int)in_stack_fffff620,in_stack_fffff624,in_stack_fffff628);
       }
-      iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x18);
+      iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_O);
       if (iVar11 != 0) {
         core_msnedit_cpp_CDemonMission_showOptionsMenu_FUN_00537680(this_ptr);
       }
       in_stack_fffff620 = g_CKeysPtr;
-      iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x14);
+      iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_T);
       if (iVar11 != 0) {
         core_msnedit_cpp_CDemonMission_FUN_0053d8b0
                   (this_ptr,(int)in_stack_fffff630,in_stack_fffff634,(int)in_stack_fffff638);
       }
       in_stack_fffff624 = 0x53a76b;
       in_stack_fffff628 = (CDemonMission *)g_CKeysPtr;
-      iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2e);
+      iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_C);
       if (iVar11 != 0) {
         g_CEdCheckInstance.checked_state = 0;
         in_stack_fffff630 = g_CKeysPtr;
-        iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+        iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
         pCVar16 = g_CDemonSetPtr;
         if (iVar11 == 0) {
           iVar11 = this_ptr->current_camera_index + 1;
@@ -811,9 +811,9 @@ LAB_00539e00:
       }
       in_stack_fffff634 = (CDemonMission *)0x53a7d3;
       in_stack_fffff638 = g_CKeysPtr;
-      iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x23);
+      iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_H);
       if (iVar11 != 0) {
-        iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+        iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
         if (iVar11 == 0) {
           if (this_ptr->selected_actor != (CDemonActor *)0x0) {
             this_ptr->selected_actor->is_editor_hidden = 1;
@@ -824,10 +824,10 @@ LAB_00539e00:
           core_msnedit_cpp_CDemonMission_FUN_0053dcf0(this_ptr);
         }
       }
-      iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x16);
+      iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_U);
       if (iVar11 != 0) {
         iVar11 = 0x53a824;
-        iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+        iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
         if (iVar6 == 0) {
           iVar6 = -1;
           while( true ) {
@@ -871,9 +871,9 @@ LAB_0053a88c:
           }
         }
       }
-      iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2f);
+      iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_V);
       if (iVar11 != 0) {
-        iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+        iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
         if (iVar11 == 0) {
           local_14 = DAT_02f7c53c + 1;
           if (4 < local_14) {
@@ -888,23 +888,23 @@ LAB_0053a88c:
         }
         local_64 = 1;
       }
-      iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x31);
+      iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_N);
       if ((iVar11 != 0) &&
          (pcVar15 = core_msnedit_cpp_CDemonMission_FUN_0053c210
                               (this_ptr,"Select actor by name",
                                this_ptr->selected_actor->actor_name), pcVar15 != (char *)0x0)) {
         core_msnedit_cpp_CDemonMission_FUN_0053c140(this_ptr,(int)pcVar15);
       }
-      iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x11);
+      iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_W);
       if (iVar11 != 0) {
         core_msnedit_cpp_CDemonMission_editActorProperties_FUN_00539060
                   (this_ptr,(uint)(this_ptr->show_3d_viewport == 0));
       }
-      iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1c);
+      iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_RETURN);
       if (iVar11 != 0) {
         core_msnedit_cpp_CDemonMission_FUN_0053c730(this_ptr);
       }
-      iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x19);
+      iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_P);
       if (iVar11 != 0) {
         this_ptr->current_camera_index = local_48;
         local_64 = 0;
@@ -913,11 +913,11 @@ LAB_0053a88c:
         g_CEdCheckInstance.checked_state = 0;
       }
     }
-    iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3b);
+    iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F1);
     if (iVar11 != 0) {
       core_msnedit_cpp_FUN_00535e70();
     }
-    iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x41);
+    iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F7);
     if (iVar11 != 0) {
       if (INT_02f7c634 == 0) {
         core_script_cpp_CScript_initEditorLayout_FUN_00566660
@@ -970,7 +970,7 @@ LAB_0053a88c:
       if ((this_ptr->selected_actor == (CDemonActor *)0x0) || (DAT_02f7c528 < 0)) {
         if (this_ptr->hovered_actor != (CDemonActor *)0x0) {
           in_stack_fffff698 = (CDemonSet *)g_CKeysPtr;
-          iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
+          iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU);
           if (iVar11 == 0) {
             if (this_ptr->hovered_actor == this_ptr->selected_actor) {
               if ((local_30.dword != 0) || (0x3e999999 < INT_00680818)) goto LAB_0053aea7;
@@ -997,11 +997,11 @@ LAB_0053aea7:
         iVar6 = DAT_02f7c528 * 0xec;
         this_ptr_01 = (CActorProperty *)(&DAT_02f7a02c + iVar6);
         in_stack_fffff698 = (CDemonSet *)g_CKeysPtr;
-        iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+        iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
         if (iVar11 == 0) {
-          iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
+          iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU);
           if (iVar11 == 0) {
-            iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+            iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
             if (iVar11 == 0) {
               if (*(int *)(&DAT_02f7a080 + iVar6) == 0) goto LAB_0053ad72;
               core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0

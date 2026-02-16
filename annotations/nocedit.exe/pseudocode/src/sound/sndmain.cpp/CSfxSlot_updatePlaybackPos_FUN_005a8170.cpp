@@ -10,13 +10,10 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170(CSfxSlot 
 
 {
   CSfxSample *this_ptr_00;
-  int iVar1;
-  CSfxSlot *extraout_EBX;
-  double dVar2;
-  uint local_28;
-  uint uStack_24;
-  uint uStack_1c;
-  uint local_18;
+  double dVar1;
+  int iVar2;
+  double dVar3;
+  ulonglong local_28;
   
   if (this_ptr->sample == (CSfxSample *)0x0) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
@@ -29,25 +26,23 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170(CSfxSlot 
     g_CurrentLineNumber = 0xbc2;
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSlot::updatePlaybackPos - invalid buffer position");
   }
-  dVar2 = hardware_playback_pos - this_ptr->prev_hardware_playback_pos;
-  if (dVar2 < 0.0) {
-    dVar2 = (double)this_ptr->sample->streaming_buffer_size + dVar2;
+  local_28 = hardware_playback_pos - this_ptr->prev_hardware_playback_pos;
+  if (local_28 < 0.0) {
+    local_28 = (double)this_ptr->sample->streaming_buffer_size + local_28;
   }
-  uStack_24 = (uint)((ulonglong)dVar2 >> 0x20);
-  local_28 = SUB84(dVar2,0);
-  if ((dVar2 < 0.0) || ((double)this_ptr->sample->streaming_buffer_size + 0.001 < dVar2))
-  {
+  if ((local_28 < 0.0) ||
+     ((double)this_ptr->sample->streaming_buffer_size + 0.001 < local_28)) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 0xbd0;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("SfxSlot::updatePlaybackPos - stepped too much: %f-%f=%f, sample=%d (%s)",hardware_playback_pos._0_4_,
                hardware_playback_pos._4_4_,*(uint *)&this_ptr->prev_hardware_playback_pos,
-               *(uint *)((int)&this_ptr->prev_hardware_playback_pos + 4),local_28,uStack_24,
-               this_ptr->sample->streaming_buffer_size);
+               *(uint *)((int)&this_ptr->prev_hardware_playback_pos + 4),(uint)local_28,
+               local_28._4_4_,this_ptr->sample->streaming_buffer_size);
   }
   if (((this_ptr->options).trigger_time != this_ptr->prev_hardware_playback_pos) ||
      (hardware_playback_pos < (this_ptr->options).trigger_time)) {
-    (this_ptr->options).trigger_time = (this_ptr->options).trigger_time + dVar2;
+    (this_ptr->options).trigger_time = (this_ptr->options).trigger_time + local_28;
   }
   else {
     (this_ptr->options).trigger_time = hardware_playback_pos;
@@ -59,17 +54,14 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170(CSfxSlot 
   this_ptr_00 = this_ptr->sample;
   if ((-1 < (this_ptr_00->sample_info).sample_count) &&
      ((double)(this_ptr_00->sample_info).sample_count <= (this_ptr->options).trigger_time)) {
-    iVar1 = sound_sndmain_cpp_CSfxSample_getLoopMode_FUN_005a87d0(this_ptr_00);
-    if (iVar1 == 0) {
+    iVar2 = sound_sndmain_cpp_CSfxSample_getLoopMode_FUN_005a87d0(this_ptr_00);
+    if (iVar2 == 0) {
       (this_ptr->options).trigger_time = (double)(this_ptr->sample->sample_info).sample_count;
     }
     else {
-      dVar2 = (double)(this_ptr->sample->sample_info).sample_count;
-      local_18 = SUB84(dVar2,0);
-      dVar2 = floor((this_ptr->options).trigger_time / dVar2);
-      (extraout_EBX->options).trigger_time =
-           (extraout_EBX->options).trigger_time - dVar2 * (double)CONCAT44(local_18,uStack_1c);
-      this_ptr = extraout_EBX;
+      dVar1 = (double)(this_ptr->sample->sample_info).sample_count;
+      dVar3 = floor((this_ptr->options).trigger_time / dVar1);
+      (this_ptr->options).trigger_time = (this_ptr->options).trigger_time - dVar3 * dVar1;
     }
   }
   this_ptr->prev_hardware_playback_pos = hardware_playback_pos;

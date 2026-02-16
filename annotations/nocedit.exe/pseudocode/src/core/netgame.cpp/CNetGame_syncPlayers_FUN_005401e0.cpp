@@ -104,7 +104,7 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(CNetGame *this_pt
           } while (iVar2 < this_ptr->player_count);
         }
       }
-      iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
+      iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
       if (iVar2 != 0) {
         engine_2d_c_clearInputAndWait_FUN_00403260();
         return 0;
@@ -121,7 +121,7 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(CNetGame *this_pt
       engine_2d_c_drawText_FUN_00401fd0(local_94,0,0xb);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       core_netgame_cpp_CNetGame_receivePackets_FUN_005405b0(this_ptr);
-      iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
+      iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
       if (iVar2 != 0) {
         engine_2d_c_clearInputAndWait_FUN_00403260();
         return 0;

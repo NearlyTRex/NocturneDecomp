@@ -16,7 +16,7 @@ void __cdecl core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(CDemonActor
   this_ptr->was_created = 0;
   pCVar1 = (*((this_ptr->vtable)._ub)->getCarrier)(this_ptr);
   if (pCVar1 == (CDemonActor *)0x0) {
-    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x29);
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_GRAVE);
     if (iVar2 == 0) {
       if (&CStack_20 != (CSlew *)&this_ptr->location) {
         CStack_20.position.x = (this_ptr->location).position.x;
@@ -38,7 +38,7 @@ void __cdecl core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(CDemonActor
         (this_ptr->orient).vec.z = CStack_20.roll;
       }
     }
-    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x22);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_G);
     if (iVar2 != 0) {
       core_msnedit_cpp_CDemonMission_FUN_0053c8d0(g_CDemonMissionPtr);
     }

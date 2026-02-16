@@ -19,7 +19,7 @@ void __cdecl core_charactr_cpp_CCharacter_kill_FUN_00428e30(CCharacter *this_ptr
   sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handle);
   core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&SStack_44);
   SStack_44.damage_amount = 9999.0;
-  SStack_44.gore_multiplier = (float)damage_type;
+  SStack_44.damage_type = damage_type;
   if ((damage_direction != (CVector3f *)0x0) && (&SStack_44.impact_point != damage_direction)) {
     SStack_44.impact_point.x = damage_direction->x;
     SStack_44.impact_point.y = damage_direction->y;

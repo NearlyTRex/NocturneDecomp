@@ -1,12 +1,12 @@
 // Name: crt_math.c_acos_FUN_00600162
 // Address: 00600162
 // Address Range: [[00600162, 0060019e]]
-// Convention: __fpustack
-// Signature: double __fpustack crt_math_c_acos_FUN_00600162(double x)
+// Convention: __fpustack_safe
+// Signature: double __fpustack_safe crt_math_c_acos_FUN_00600162(double x)
 
 #include "nocturne.h"
 
-double __fpustack acos(double x)
+double __fpustack_safe acos(double x)
 
 {
   char extraout_AL;

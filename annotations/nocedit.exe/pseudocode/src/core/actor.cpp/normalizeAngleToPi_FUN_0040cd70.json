@@ -1,28 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 14,
-        "line": 18,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 58,
+    "complexity_score": 18,
     "cross_reference_count": 58,
     "function_call_count": 1,
     "global_count": 6,
-    "pseudocode_lines": 23,
-    "suspect_count": 3,
-    "suspect_types": [
-      "decompiler_intrinsic"
-    ],
-    "total_lines": 88
+    "pseudocode_lines": 18,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 83
   },
   "cross_references": [
     {
@@ -530,27 +521,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 11,
-      "match": "SUB84",
-      "text": "local_18 = SUB84(dVar1,0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 17,
-      "match": "CONCAT44",
-      "text": "(float)(double)CONCAT44(local_18,uVar2);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
-      "match": "CONCAT44",
-      "text": "return ((float)dVar1 + 1.0) * (float)-6.2831853070000001 + (float)(double)CONCAT44(local_18,uVar2);",
-      "type": "decompiler_intrinsic"
-    }
-  ]
+  "suspects": []
 }

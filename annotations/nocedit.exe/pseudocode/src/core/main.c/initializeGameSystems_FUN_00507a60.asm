@@ -131,11 +131,11 @@ section .text
     ADD ESP,0x4                         ; 00507b5d
     PUSH 0x551960                       ; 00507b60
     CALL engine_dosio.c_addGetFileInfoHook_FUN_00481710 ; 00507b65
-        ;   XREF to: 00481710 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_addGetFileInfoHook_FUN_00481710(FileSearchHandler * handler)
+        ;   XREF to: 00481710 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_addGetFileInfoHook_FUN_00481710(FileSearchHandlerFunc * handler)
     ADD ESP,0x4                         ; 00507b6a
     PUSH 0x4817c0                       ; 00507b6d
     CALL engine_dosio.c_addGetFileInfoHook_FUN_00481710 ; 00507b72
-        ;   XREF to: 00481710 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_addGetFileInfoHook_FUN_00481710(FileSearchHandler * handler)
+        ;   XREF to: 00481710 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_addGetFileInfoHook_FUN_00481710(FileSearchHandlerFunc * handler)
     ADD ESP,0x4                         ; 00507b77
     PUSH 0x63531c                       ; 00507b7a | = "msglist.txt"
     CALL support_newmsg.cpp_readMessageFile_FUN_00543e40 ; 00507b7f

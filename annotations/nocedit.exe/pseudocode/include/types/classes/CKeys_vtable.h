@@ -5,6 +5,7 @@ struct CKeys;
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/enums/EInputCodeType.h"
 #include "types/funcdefs/CKeys_clearKeypresses.h"
 #include "types/funcdefs/CKeys_getAndClearKeyState.h"
 #include "types/funcdefs/CKeys_getKeyState.h"

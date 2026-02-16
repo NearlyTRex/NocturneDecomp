@@ -18,37 +18,37 @@ void __cdecl core_stairs_cpp_CStairs_processInEditor_FUN_005ba900(CStairs *this_
   
   fVar3 = this_ptr->run;
   fVar4 = this_ptr->rise;
-  iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+  iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
   if (iVar5 == 0) {
     core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base);
   }
   else {
     fStack_18 = g_CGamePtr->delta_time_float * (float)0.5;
-    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
+    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU);
     if (iVar5 != 0) {
       fStack_18 = fStack_18 * (float)0.10000000000000001;
     }
-    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
+    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD4);
     if (iVar5 != 0) {
       this_ptr->width = this_ptr->width - fStack_18;
     }
-    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
+    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD6);
     if (iVar5 != 0) {
       this_ptr->width = this_ptr->width + fStack_18;
     }
-    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
+    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_A);
     if (iVar5 != 0) {
       this_ptr->rise = this_ptr->rise - fStack_18;
     }
-    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
+    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_Q);
     if (iVar5 != 0) {
       this_ptr->rise = this_ptr->rise + fStack_18;
     }
-    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
+    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD2);
     if (iVar5 != 0) {
       this_ptr->run = this_ptr->run - fStack_18;
     }
-    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
+    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD8);
     if (iVar5 != 0) {
       this_ptr->run = this_ptr->run + fStack_18;
     }

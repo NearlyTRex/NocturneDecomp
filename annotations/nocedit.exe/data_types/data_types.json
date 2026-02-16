@@ -873,22 +873,6 @@
       "type":"function_definition"
     },
     {
-      "name":"CKeys_getAndClearKeyState",
-      "type":"function_definition"
-    },
-    {
-      "name":"CKeys_getKeyState",
-      "type":"function_definition"
-    },
-    {
-      "name":"CKeys_vtable",
-      "type":"struct"
-    },
-    {
-      "name":"CKeys",
-      "type":"struct"
-    },
-    {
       "name":"CLOSE_CLIPBOARD_FUNC",
       "type":"function_definition"
     },
@@ -2041,6 +2025,26 @@
       "type":"enum"
     },
     {
+      "name":"EInputCodeType",
+      "type":"enum"
+    },
+    {
+      "name":"CKeys_getAndClearKeyState",
+      "type":"function_definition"
+    },
+    {
+      "name":"CKeys_getKeyState",
+      "type":"function_definition"
+    },
+    {
+      "name":"CKeys_vtable",
+      "type":"struct"
+    },
+    {
+      "name":"CKeys",
+      "type":"struct"
+    },
+    {
       "name":"ELeverType",
       "type":"enum"
     },
@@ -2141,7 +2145,7 @@
       "type":"struct"
     },
     {
-      "name":"FileSearchHandler",
+      "name":"FileSearchHandlerFunc",
       "type":"function_definition"
     },
     {
@@ -3537,10 +3541,6 @@
       "type":"struct"
     },
     {
-      "name":"CCurtain",
-      "type":"struct"
-    },
-    {
       "name":"SDamageDecal",
       "type":"struct"
     },
@@ -3999,6 +3999,14 @@
     {
       "name":"SBodyPartModel_ptr_24",
       "type":"typedef"
+    },
+    {
+      "name":"SCurtainMeshData",
+      "type":"struct"
+    },
+    {
+      "name":"CCurtain",
+      "type":"struct"
     },
     {
       "name":"SMRGLPrimitiveTriangle",
@@ -6871,6 +6879,486 @@
         {
           "name":"ACTION_TYPE_ENTER",
           "val":18
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"EInputCodeType",
+      "type":"enum",
+      "values":[
+        {
+          "name":"DIK_ESCAPE",
+          "val":1
+        },
+        {
+          "name":"DIK_1",
+          "val":2
+        },
+        {
+          "name":"DIK_2",
+          "val":3
+        },
+        {
+          "name":"DIK_3",
+          "val":4
+        },
+        {
+          "name":"DIK_4",
+          "val":5
+        },
+        {
+          "name":"DIK_5",
+          "val":6
+        },
+        {
+          "name":"DIK_6",
+          "val":7
+        },
+        {
+          "name":"DIK_7",
+          "val":8
+        },
+        {
+          "name":"DIK_8",
+          "val":9
+        },
+        {
+          "name":"DIK_9",
+          "val":10
+        },
+        {
+          "name":"DIK_0",
+          "val":11
+        },
+        {
+          "name":"DIK_MINUS",
+          "val":12
+        },
+        {
+          "name":"DIK_EQUALS",
+          "val":13
+        },
+        {
+          "name":"DIK_BACK",
+          "val":14
+        },
+        {
+          "name":"DIK_TAB",
+          "val":15
+        },
+        {
+          "name":"DIK_Q",
+          "val":16
+        },
+        {
+          "name":"DIK_W",
+          "val":17
+        },
+        {
+          "name":"DIK_E",
+          "val":18
+        },
+        {
+          "name":"DIK_R",
+          "val":19
+        },
+        {
+          "name":"DIK_T",
+          "val":20
+        },
+        {
+          "name":"DIK_Y",
+          "val":21
+        },
+        {
+          "name":"DIK_U",
+          "val":22
+        },
+        {
+          "name":"DIK_I",
+          "val":23
+        },
+        {
+          "name":"DIK_O",
+          "val":24
+        },
+        {
+          "name":"DIK_P",
+          "val":25
+        },
+        {
+          "name":"DIK_LBRACKET",
+          "val":26
+        },
+        {
+          "name":"DIK_RBRACKET",
+          "val":27
+        },
+        {
+          "name":"DIK_RETURN",
+          "val":28
+        },
+        {
+          "name":"DIK_LCONTROL",
+          "val":29
+        },
+        {
+          "name":"DIK_A",
+          "val":30
+        },
+        {
+          "name":"DIK_S",
+          "val":31
+        },
+        {
+          "name":"DIK_D",
+          "val":32
+        },
+        {
+          "name":"DIK_F",
+          "val":33
+        },
+        {
+          "name":"DIK_G",
+          "val":34
+        },
+        {
+          "name":"DIK_H",
+          "val":35
+        },
+        {
+          "name":"DIK_J",
+          "val":36
+        },
+        {
+          "name":"DIK_K",
+          "val":37
+        },
+        {
+          "name":"DIK_L",
+          "val":38
+        },
+        {
+          "name":"DIK_SEMICOLON",
+          "val":39
+        },
+        {
+          "name":"DIK_APOSTROPHE",
+          "val":40
+        },
+        {
+          "name":"DIK_GRAVE",
+          "val":41
+        },
+        {
+          "name":"DIK_LSHIFT",
+          "val":42
+        },
+        {
+          "name":"DIK_BACKSLASH",
+          "val":43
+        },
+        {
+          "name":"DIK_Z",
+          "val":44
+        },
+        {
+          "name":"DIK_X",
+          "val":45
+        },
+        {
+          "name":"DIK_C",
+          "val":46
+        },
+        {
+          "name":"DIK_V",
+          "val":47
+        },
+        {
+          "name":"DIK_B",
+          "val":48
+        },
+        {
+          "name":"DIK_N",
+          "val":49
+        },
+        {
+          "name":"DIK_M",
+          "val":50
+        },
+        {
+          "name":"DIK_COMMA",
+          "val":51
+        },
+        {
+          "name":"DIK_PERIOD",
+          "val":52
+        },
+        {
+          "name":"DIK_SLASH",
+          "val":53
+        },
+        {
+          "name":"DIK_RSHIFT",
+          "val":54
+        },
+        {
+          "name":"DIK_MULTIPLY",
+          "val":55
+        },
+        {
+          "name":"DIK_LMENU",
+          "val":56
+        },
+        {
+          "name":"DIK_SPACE",
+          "val":57
+        },
+        {
+          "name":"DIK_CAPITAL",
+          "val":58
+        },
+        {
+          "name":"DIK_F1",
+          "val":59
+        },
+        {
+          "name":"DIK_F2",
+          "val":60
+        },
+        {
+          "name":"DIK_F3",
+          "val":61
+        },
+        {
+          "name":"DIK_F4",
+          "val":62
+        },
+        {
+          "name":"DIK_F5",
+          "val":63
+        },
+        {
+          "name":"DIK_F6",
+          "val":64
+        },
+        {
+          "name":"DIK_F7",
+          "val":65
+        },
+        {
+          "name":"DIK_F8",
+          "val":66
+        },
+        {
+          "name":"DIK_F9",
+          "val":67
+        },
+        {
+          "name":"DIK_F10",
+          "val":68
+        },
+        {
+          "name":"DIK_NUMLOCK",
+          "val":69
+        },
+        {
+          "name":"DIK_SCROLL",
+          "val":70
+        },
+        {
+          "name":"DIK_NUMPAD7",
+          "val":71
+        },
+        {
+          "name":"DIK_NUMPAD8",
+          "val":72
+        },
+        {
+          "name":"DIK_NUMPAD9",
+          "val":73
+        },
+        {
+          "name":"DIK_SUBTRACT",
+          "val":74
+        },
+        {
+          "name":"DIK_NUMPAD4",
+          "val":75
+        },
+        {
+          "name":"DIK_NUMPAD5",
+          "val":76
+        },
+        {
+          "name":"DIK_NUMPAD6",
+          "val":77
+        },
+        {
+          "name":"DIK_ADD",
+          "val":78
+        },
+        {
+          "name":"DIK_NUMPAD1",
+          "val":79
+        },
+        {
+          "name":"DIK_NUMPAD2",
+          "val":80
+        },
+        {
+          "name":"DIK_NUMPAD3",
+          "val":81
+        },
+        {
+          "name":"DIK_NUMPAD0",
+          "val":82
+        },
+        {
+          "name":"DIK_DECIMAL",
+          "val":83
+        },
+        {
+          "name":"DIK_F11",
+          "val":87
+        },
+        {
+          "name":"DIK_F12",
+          "val":88
+        },
+        {
+          "name":"DIK_NUMPADCENTER",
+          "val":156
+        },
+        {
+          "name":"DIK_RCONTROL",
+          "val":157
+        },
+        {
+          "name":"DIK_DIVIDE",
+          "val":181
+        },
+        {
+          "name":"DIK_SYSRQ",
+          "val":183
+        },
+        {
+          "name":"DIK_RMENU",
+          "val":184
+        },
+        {
+          "name":"DIK_PAUSE",
+          "val":197
+        },
+        {
+          "name":"DIK_HOME",
+          "val":199
+        },
+        {
+          "name":"DIK_UP",
+          "val":200
+        },
+        {
+          "name":"DIK_PRIOR",
+          "val":201
+        },
+        {
+          "name":"DIK_LEFT",
+          "val":203
+        },
+        {
+          "name":"DIK_RIGHT",
+          "val":205
+        },
+        {
+          "name":"DIK_END",
+          "val":207
+        },
+        {
+          "name":"DIK_DOWN",
+          "val":208
+        },
+        {
+          "name":"DIK_NEXT",
+          "val":209
+        },
+        {
+          "name":"DIK_INSERT",
+          "val":210
+        },
+        {
+          "name":"DIK_DELETE",
+          "val":211
+        },
+        {
+          "name":"DIK_LWIN",
+          "val":219
+        },
+        {
+          "name":"DIK_RWIN",
+          "val":220
+        },
+        {
+          "name":"DIK_APPS",
+          "val":221
+        },
+        {
+          "name":"DIJ_BUTTON1",
+          "val":514
+        },
+        {
+          "name":"DIJ_BUTTON2",
+          "val":515
+        },
+        {
+          "name":"DIJ_BUTTON3",
+          "val":516
+        },
+        {
+          "name":"DIJ_BUTTON4",
+          "val":517
+        },
+        {
+          "name":"DIJ_BUTTON5",
+          "val":518
+        },
+        {
+          "name":"DIJ_BUTTON6",
+          "val":519
+        },
+        {
+          "name":"DIJ_BUTTON7",
+          "val":520
+        },
+        {
+          "name":"DIJ_BUTTON8",
+          "val":521
+        },
+        {
+          "name":"DIJ_BUTTON9",
+          "val":522
+        },
+        {
+          "name":"DIJ_BUTTON10",
+          "val":523
+        },
+        {
+          "name":"DIJ_LEFT",
+          "val":593
+        },
+        {
+          "name":"DIJ_RIGHT",
+          "val":594
+        },
+        {
+          "name":"DIJ_UP",
+          "val":595
+        },
+        {
+          "name":"DIJ_DOWN",
+          "val":596
         }
       ]
     },
@@ -10245,7 +10733,7 @@
         },
         {
           "name":"key_code",
-          "type":"int"
+          "type":"EInputCodeType"
         }
       ],
       "return_type":"int",
@@ -10263,7 +10751,7 @@
         },
         {
           "name":"key_code",
-          "type":"int"
+          "type":"EInputCodeType"
         }
       ],
       "return_type":"int",
@@ -14021,7 +14509,7 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
-      "name":"FileSearchHandler",
+      "name":"FileSearchHandlerFunc",
       "parameters":[
         {
           "name":"param0",
@@ -26430,16 +26918,10 @@
           "type":"CVector3f"
         },
         {
-          "len":8,
-          "name":"unk1",
-          "offset":356,
-          "type":"char[8]"
-        },
-        {
-          "len":16,
+          "len":24,
           "name":"curtain_texture",
-          "offset":364,
-          "type":"char[16]"
+          "offset":356,
+          "type":"SMRGLTextureBasic"
         },
         {
           "len":4,
@@ -26503,21 +26985,21 @@
         },
         {
           "len":4,
-          "name":"unk2",
+          "name":"vertex_count",
           "offset":516,
           "type":"int"
         },
         {
           "len":116000,
-          "name":"unk3",
+          "name":"vertices",
           "offset":520,
           "type":"SCurtainVertex[1000]"
         },
         {
           "len":300012,
-          "name":"unk4",
+          "name":"mesh",
           "offset":116520,
-          "type":"char[300012]"
+          "type":"SCurtainMeshData"
         },
         {
           "len":4,
@@ -26551,9 +27033,9 @@
         },
         {
           "len":4,
-          "name":"unk5",
+          "name":"floor_height",
           "offset":416552,
-          "type":"char[4]"
+          "type":"float"
         },
         {
           "len":4,
@@ -26562,10 +27044,16 @@
           "type":"int"
         },
         {
-          "len":8,
-          "name":"unk6",
+          "len":4,
+          "name":"is_visible",
           "offset":416560,
-          "type":"char[8]"
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"needs_update",
+          "offset":416564,
+          "type":"int"
         }
       ],
       "importable":true,
@@ -48673,13 +49161,13 @@
           "len":4,
           "name":"top_y",
           "offset":36,
-          "type":"void*"
+          "type":"float"
         },
         {
           "len":4,
           "name":"bottom_y",
           "offset":40,
-          "type":"void*"
+          "type":"float"
         },
         {
           "len":4,
@@ -49624,10 +50112,130 @@
       "desc":"",
       "fields":[
         {
-          "len":116,
-          "name":"unk",
+          "len":4,
+          "name":"inv_delta_time",
           "offset":0,
-          "type":"char[116]"
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"grid_cols",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"grid_rows",
+          "offset":8,
+          "type":"int"
+        },
+        {
+          "len":12000,
+          "name":"vertex_positions_fixed",
+          "offset":12,
+          "type":"int[3000]"
+        },
+        {
+          "len":144000,
+          "name":"front_faces",
+          "offset":12012,
+          "type":"SMRGLPrimitiveQuad[2000]"
+        },
+        {
+          "len":144000,
+          "name":"back_faces",
+          "offset":156012,
+          "type":"SMRGLPrimitiveQuad[2000]"
+        }
+      ],
+      "importable":true,
+      "len":300012,
+      "name":"SCurtainMeshData",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":12,
+          "name":"local_position",
+          "offset":0,
+          "type":"CVector3f"
+        },
+        {
+          "len":12,
+          "name":"initial_position",
+          "offset":12,
+          "type":"CVector3f"
+        },
+        {
+          "len":4,
+          "name":"texture_u",
+          "offset":24,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"texture_v",
+          "offset":28,
+          "type":"int"
+        },
+        {
+          "len":12,
+          "name":"world_position",
+          "offset":32,
+          "type":"CVector3f"
+        },
+        {
+          "len":12,
+          "name":"velocity",
+          "offset":44,
+          "type":"CVector3f"
+        },
+        {
+          "len":12,
+          "name":"last_world_position",
+          "offset":56,
+          "type":"CVector3f"
+        },
+        {
+          "len":4,
+          "name":"neighbor_count",
+          "offset":68,
+          "type":"int"
+        },
+        {
+          "len":16,
+          "name":"neighbor_indices",
+          "offset":72,
+          "type":"int[4]"
+        },
+        {
+          "len":16,
+          "name":"rest_distances",
+          "offset":88,
+          "type":"float[4]"
+        },
+        {
+          "len":4,
+          "name":"is_pinned",
+          "offset":104,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"has_collision",
+          "offset":108,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"is_corner",
+          "offset":112,
+          "type":"int"
         }
       ],
       "importable":true,
@@ -49721,9 +50329,9 @@
         },
         {
           "len":4,
-          "name":"gore_multiplier",
+          "name":"damage_type",
           "offset":48,
-          "type":"float"
+          "type":"int"
         },
         {
           "len":4,

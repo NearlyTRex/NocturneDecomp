@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 89,
+    "complexity_score": 88,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 5,
-    "pseudocode_lines": 29,
+    "pseudocode_lines": 28,
     "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 75
+    "total_lines": 74
   },
   "cross_references": [
     {
@@ -175,21 +175,21 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 26,
+      "line": 25,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_SinTable + iVar2) = 0x50c57e;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 28,
+      "line": 27,
       "match": "(int *)((int)",
       "text": "*(int *)((int)g_CosTable + iVar2) = (int)ROUND(dVar8);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 28,
+      "line": 27,
       "match": "ROUND",
       "text": "*(int *)((int)g_CosTable + iVar2) = (int)ROUND(dVar8);",
       "type": "decompiler_intrinsic"

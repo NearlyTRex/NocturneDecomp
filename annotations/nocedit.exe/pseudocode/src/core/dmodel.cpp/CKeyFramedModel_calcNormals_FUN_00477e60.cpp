@@ -9,18 +9,16 @@
 void __cdecl core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00477e60(CKeyFramedModel *this_ptr)
 
 {
-  int iVar1;
-  double dVar2;
-  CVector3i **ppCVar3;
-  SSurfaceNormal *pSVar4;
+  double dVar1;
+  CVector3i **ppCVar2;
+  SSurfaceNormal *pSVar3;
+  int iVar4;
   int iVar5;
-  int iVar6;
-  int *piVar7;
+  int *piVar6;
   SSurfaceNormal *output;
-  float10 fVar8;
-  float10 fVar9;
-  double dVar10;
-  double dVar11;
+  double dVar7;
+  double dVar8;
+  double dVar9;
   int local_18;
   int local_14;
   
@@ -38,51 +36,48 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00477e60(CKeyFramed
         output = (SSurfaceNormal *)((int)this_ptr->poly_vert_list + local_18);
         engine_keyframe_c_calculateSurfaceNormal_FUN_00501bc0
                   ((CVector3i *)this_ptr->vertex_list,output);
-        iVar6 = 0;
-        pSVar4 = output;
+        iVar5 = 0;
+        pSVar3 = output;
         if (0 < output->vertex_count) {
           do {
-            ppCVar3 = this_ptr->vertex_normal_list + pSVar4->vertex_index_1 * 3;
-            *ppCVar3 = (CVector3i *)((int)&(*ppCVar3)->x + output->normal_x);
-            ppCVar3[1] = (CVector3i *)((int)&ppCVar3[1]->x + output->normal_y);
-            ppCVar3[2] = (CVector3i *)((int)&ppCVar3[2]->x + output->normal_z);
-            iVar6 = iVar6 + 1;
-            pSVar4 = (SSurfaceNormal *)&pSVar4->normal_y;
-          } while (iVar6 < output->vertex_count);
+            ppCVar2 = this_ptr->vertex_normal_list + pSVar3->vertex_index_1 * 3;
+            *ppCVar2 = (CVector3i *)((int)&(*ppCVar2)->x + output->normal_x);
+            ppCVar2[1] = (CVector3i *)((int)&ppCVar2[1]->x + output->normal_y);
+            ppCVar2[2] = (CVector3i *)((int)&ppCVar2[2]->x + output->normal_z);
+            iVar5 = iVar5 + 1;
+            pSVar3 = (SSurfaceNormal *)&pSVar3->normal_y;
+          } while (iVar5 < output->vertex_count);
         }
         local_18 = local_18 + 0x48;
         local_14 = local_14 + 1;
       } while (local_14 < this_ptr->poly_count);
     }
-    iVar6 = 0;
+    iVar5 = 0;
     if (0 < this_ptr->vertex_count) {
-      iVar5 = 0;
+      iVar4 = 0;
       do {
-        piVar7 = (int *)((int)this_ptr->vertex_normal_list + iVar5);
-        dVar10 = (double)*piVar7;
-        iVar1 = piVar7[1];
-        dVar2 = (double)iVar1;
-        dVar11 = (double)piVar7[2];
-        dVar10 = SQRT(dVar11 * dVar11 + dVar2 * dVar2 + dVar10 * dVar10);
-        if (0.0 < dVar10) {
-          fVar8 = (float10)65535 / (float10)dVar10;
-          fVar9 = (float10)piVar7[2] * fVar8;
-          dVar10 = round((double)((float10)*piVar7 * fVar8));
-          dVar11 = round((double)((float10)iVar1 * fVar8));
-          fVar8 = (float10)dVar11;
-          dVar11 = round((double)fVar9);
-          *piVar7 = (int)ROUND(dVar10);
-          piVar7[1] = (int)ROUND(fVar8);
-          piVar7[2] = (int)ROUND(dVar11);
+        piVar6 = (int *)((int)this_ptr->vertex_normal_list + iVar4);
+        dVar7 = (double)*piVar6;
+        dVar8 = (double)piVar6[1];
+        dVar1 = (double)piVar6[2];
+        dVar9 = SQRT(dVar1 * dVar1 + dVar8 * dVar8 + dVar7 * dVar7);
+        if (0.0 < dVar9) {
+          dVar9 = 65535 / dVar9;
+          dVar7 = round(dVar7 * dVar9);
+          dVar8 = round(dVar8 * dVar9);
+          dVar9 = round(dVar1 * dVar9);
+          *piVar6 = (int)ROUND(dVar7);
+          piVar6[1] = (int)ROUND(dVar8);
+          piVar6[2] = (int)ROUND(dVar9);
         }
         else {
-          piVar7[2] = 0;
-          piVar7[1] = piVar7[2];
-          *piVar7 = piVar7[2];
+          piVar6[2] = 0;
+          piVar6[1] = piVar6[2];
+          *piVar6 = piVar6[2];
         }
-        iVar6 = iVar6 + 1;
-        iVar5 = iVar5 + 0xc;
-      } while (iVar6 < this_ptr->vertex_count);
+        iVar5 = iVar5 + 1;
+        iVar4 = iVar4 + 0xc;
+      } while (iVar5 < this_ptr->vertex_count);
     }
   }
   return;

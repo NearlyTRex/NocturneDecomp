@@ -4,7 +4,7 @@
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 579,
+        "line": 577,
         "message": "use of undeclared identifier 'stack0xfffffb6c'; did you mean 'in_stack_fffffb6c'?"
       }
     ],
@@ -13,11 +13,11 @@
   },
   "complexity": {
     "assembly_lines": 1793,
-    "complexity_score": 869,
+    "complexity_score": 867,
     "cross_reference_count": 0,
     "function_call_count": 38,
     "global_count": 54,
-    "pseudocode_lines": 744,
+    "pseudocode_lines": 742,
     "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -26,7 +26,7 @@
       "suspect_float",
       "warning_type_propagation"
     ],
-    "total_lines": 2537
+    "total_lines": 2535
   },
   "cross_references": [],
   "function": {
@@ -1320,63 +1320,63 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 25,
       "match": "in_stack_fffffb6c",
       "text": "float in_stack_fffffb6c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 103,
+      "line": 101,
       "match": "in_stack_fffffb6c",
       "text": "in_stack_fffffb6c = 6.637242e-39;",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 103,
+      "line": 101,
       "match": "6.637242e-39",
       "text": "in_stack_fffffb6c = 6.637242e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 106,
+      "line": 104,
       "match": "ROUND",
-      "text": "*(int *)(iVar9 + 0xcc0) = (int)ROUND(dVar17);",
+      "text": "*(int *)(iVar9 + 0xcc0) = (int)ROUND(dVar15);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 381,
+      "line": 379,
       "match": "SQRT",
       "text": "SQRT(local_7c.z * local_7c.z + local_7c.x * local_7c.x + local_7c.y * local_7c.y)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 385,
+      "line": 383,
       "match": "ABS",
       "text": "if (ABS(local_14) < (float)0.39269908168750001) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Direct stack address reference",
-      "line": 572,
+      "line": 570,
       "match": "&stack0xfffffb6c",
       "text": "(&stack0xfffffb6c,\"bride-%d?.wav\",this_ptr->freaky_voice_number);",
       "type": "stack_ref"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 622,
+      "line": 620,
       "match": "SQRT",
       "text": "if (SQRT(local_194 * local_194 + local_19c * local_19c + local_198 * local_198) <",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 743,
+      "line": 741,
       "match": "in_stack_fffffb6c",
       "text": "((CCharacter *)this_ptr,delta_time,in_stack_fffffb6c);",
       "type": "stack_param"

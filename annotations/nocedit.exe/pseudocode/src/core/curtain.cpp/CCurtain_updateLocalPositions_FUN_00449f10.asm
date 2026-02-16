@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_curtain_cpp_CCurtain_FUN_00449f10(CCurtain *this_ptr)
+; void __cdecl core_curtain_cpp_CCurtain_updateLocalPositions_FUN_00449f10(CCurtain *this_ptr)
 ;
 ; Parameters:
 ; CCurtain *       Stack[0x4]:4   this_ptr
@@ -24,7 +24,7 @@
 section .text
 
     PUSH EBX                            ; 00449f10
-        ;   Label: core_curtain.cpp_CCurtain_FUN_00449f10
+        ;   Label: core_curtain.cpp_CCurtain_updateLocalPositions_FUN_00449f10
     PUSH ESI                            ; 00449f11
     PUSH EDI                            ; 00449f12
     PUSH EBP                            ; 00449f13

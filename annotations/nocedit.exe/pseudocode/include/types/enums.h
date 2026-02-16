@@ -11,6 +11,7 @@
 #include "types/enums/ECmdParmType.h"
 #include "types/enums/EDripType.h"
 #include "types/enums/EEditorActionType.h"
+#include "types/enums/EInputCodeType.h"
 #include "types/enums/ELeverType.h"
 #include "types/enums/ELightActorType.h"
 #include "types/enums/EPlatformStateType.h"

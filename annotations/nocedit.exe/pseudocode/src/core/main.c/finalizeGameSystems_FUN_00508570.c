@@ -52,9 +52,9 @@ void __cdecl core_main_c_finalizeGameSystems_FUN_00508570(void)
         g_GlobalDeltaTimeInt = 0x4000;
       }
       iVar5 = iVar5 - g_GlobalDeltaTimeInt;
-      iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+      iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
       if (iVar3 != 0) {
-        iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,1);
+        iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_ESCAPE);
         if (iVar3 != 0) break;
       }
       iVar3 = iVar4;

@@ -15,7 +15,7 @@ void __cdecl core_curtain_cpp_CCurtain_addFilesToExtract_FUN_0044b960(CCurtain *
   char *pcVar4;
   char local_108 [256];
   
-  pcVar2 = this_ptr->curtain_texture;
+  pcVar2 = (this_ptr->curtain_texture).texture_name;
   _fprintf(file_handle,"ART\\%s\n",pcVar2);
   pcVar4 = local_108;
   do {

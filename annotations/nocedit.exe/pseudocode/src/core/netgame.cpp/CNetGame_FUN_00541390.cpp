@@ -270,9 +270,9 @@ LAB_005415cb:
           core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_00542ff0(this_ptr);
         }
       }
-      iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
+      iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
       if (iVar4 != 0) goto LAB_005416d1;
-      iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1c);
+      iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_RETURN);
       if (iVar4 != 0) {
         *(uint *)(this_ptr->players[this_ptr->local_player_index].unk1 + 0xc) =
              (uint)(*(int *)(this_ptr->players[this_ptr->local_player_index].unk1 + 0xc) == 0);
@@ -283,7 +283,7 @@ LAB_005415cb:
           core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_00542ff0(this_ptr);
         }
       }
-      iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1f);
+      iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_S);
       if ((iVar4 != 0) &&
          (iVar4 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                             (g_CEditorToolsPtr,"Send chat",&DAT_02f7c640,0x100,1),

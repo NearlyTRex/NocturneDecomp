@@ -178,7 +178,7 @@ LAB_0057d6df:
     uStack_34 = (uint)bVar17;
     if ((p_Stack_1c == (_FILE *)0x0) ||
        (((local_54 == 0.0 || (bVar17 == 0)) &&
-        (iVar16 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x18), iVar16 == 0)))) {
+        (iVar16 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_O), iVar16 == 0)))) {
       uStack_90 = *(uint *)PTR_DAT_00681ab8;
       uStack_8c = *(uint *)((int)PTR_DAT_00681ab8 + 4);
       fStack_88 = *(float *)((int)PTR_DAT_00681ab8 + 8);
@@ -207,7 +207,7 @@ LAB_0057d6df:
       }
       core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(this_ptr,9999.9,0);
       core_dcamera_cpp_CDemonCamera_endScene_FUN_0044cb80(&g_CDemonCameraInstance,0);
-      iVar16 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x39);
+      iVar16 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_SPACE);
       pvVar3 = PTR_DAT_00681ab8;
       if (iVar16 != 0) {
         pCVar7 = &this_ptr->cameras[in_stack_00000008].position;
@@ -365,9 +365,9 @@ LAB_0057db4e:
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
-    iVar16 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
+    iVar16 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if (iVar16 != 0) goto LAB_0057db4e;
-    iVar16 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3b);
+    iVar16 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F1);
     if (iVar16 != 0) {
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&CStack_570);
       shape_edittool_cpp_CStrList_add_FUN_004a2b80

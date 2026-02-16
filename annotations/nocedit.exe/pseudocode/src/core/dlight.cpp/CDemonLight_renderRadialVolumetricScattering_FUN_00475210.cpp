@@ -14,16 +14,17 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
   float fVar1;
   float fVar2;
   float fVar3;
+  float fVar4;
   CDemonRenderer *this_ptr_00;
-  int iVar4;
-  float10 fVar5;
+  int iVar5;
   float10 fVar6;
   float10 fVar7;
   float10 fVar8;
-  unkbyte10 Var9;
-  float10 fVar10;
-  double dVar11;
+  float10 fVar9;
+  unkbyte10 Var10;
+  float10 fVar11;
   double dVar12;
+  double dVar13;
   float local_e4;
   CVector3i local_c8;
   CVector3i local_bc;
@@ -66,57 +67,56 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
             (g_CDemonRendererPtr2,g_LightTextures);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
   do {
-    fVar5 = (float10)1 *
+    fVar6 = (float10)1 *
             ((float10)18 / (float10)(this_ptr->base).base.projection_scale) *
             (float10)0.0625;
-    local_e4 = (float)fVar5;
-    Var9 = fpatan(fVar5,(float10)1);
-    fVar5 = (float10)fcos(Var9);
+    local_e4 = (float)fVar6;
+    Var10 = fpatan(fVar6,(float10)1);
+    fVar6 = (float10)fcos(Var10);
     local_4c = 0.0;
-    local_48 = (float)fVar5;
+    local_48 = (float)fVar6;
     do {
-      fVar5 = (float10)(int)local_4c * (float10)0.0625f * (float10)3.1415926535000001 *
+      fVar6 = (float10)(int)local_4c * (float10)0.0625f * (float10)3.1415926535000001 *
               (float10)2;
-      fVar6 = (float10)fsin(fVar5);
-      fVar10 = (float10)((int)local_4c + 1) * (float10)0.0625f * (float10)3.1415926535000001 *
+      fVar7 = (float10)fsin(fVar6);
+      fVar11 = (float10)((int)local_4c + 1) * (float10)0.0625f * (float10)3.1415926535000001 *
                (float10)2;
-      fVar7 = (float10)fsin(fVar10);
-      fVar5 = (float10)fcos(fVar5);
-      fVar10 = (float10)fcos(fVar10);
+      fVar8 = (float10)fsin(fVar11);
+      fVar6 = (float10)fcos(fVar6);
+      fVar11 = (float10)fcos(fVar11);
       local_1c = this_ptr->shadow_map_width / 2;
       local_18 = this_ptr->shadow_map_height / 2;
-      fVar8 = (float10)local_e4;
-      local_38 = (float)(fVar5 * fVar8);
-      iVar4 = this_ptr->shadow_map_width;
-      dVar11 = round((double)((float)local_18 - (float)local_18 * local_38))
+      fVar9 = (float10)local_e4;
+      local_38 = (float)(fVar6 * fVar9);
+      iVar5 = this_ptr->shadow_map_width;
+      dVar12 = round((double)((float)local_18 - (float)local_18 * local_38))
       ;
-      iStack_64 = (int)ROUND(dVar11);
-      iVar4 = iStack_64 * iVar4;
-      local_40 = (float)(fVar6 * fVar8);
-      fVar10 = fVar10 * fVar8;
-      dVar11 = round((double)((float)local_20 * local_40 + (float)local_20))
+      iStack_64 = (int)ROUND(dVar12);
+      iVar5 = iStack_64 * iVar5;
+      local_40 = (float)(fVar7 * fVar9);
+      dVar12 = round((double)((float)local_20 * local_40 + (float)local_20))
       ;
-      local_60 = (int)ROUND(dVar11);
-      local_34 = (float)this_ptr->shadow_depth_buffer[iVar4 + local_60] * (float)0.00390625;
-      local_4c = (float)(fVar7 * fVar8);
-      local_48 = (float)fVar10;
-      iVar4 = 0;
+      local_60 = (int)ROUND(dVar12);
+      local_34 = (float)this_ptr->shadow_depth_buffer[iVar5 + local_60] * (float)0.00390625;
+      local_4c = (float)(fVar8 * fVar9);
+      local_48 = (float)(fVar11 * fVar9);
+      iVar5 = 0;
       local_30 = local_34;
       do {
         local_58 = (this_ptr->base).max_distance;
-        local_28 = (float)iVar4 * local_50 * local_58 * 0.25f;
-        fVar3 = 1.0 / local_58;
-        local_20 = iVar4 + 1;
+        fVar1 = (float)iVar5 * local_50 * local_58 * 0.25f;
+        fVar4 = 1.0 / local_58;
+        local_20 = iVar5 + 1;
         local_2c = (float)local_20 * local_50 * local_58 * 0.25f;
-        fVar2 = local_58 - local_2c;
-        fVar1 = (float)1024;
-        fVar5 = (float10)local_28;
-        dVar11 = round((double)((local_58 - local_28) * fVar3 * fVar1));
-        dVar12 = round((double)(fVar2 * fVar3 * fVar1));
-        local_44 = (float)(int)ROUND(dVar11);
-        local_40 = (float)(int)ROUND(dVar12);
+        fVar3 = local_58 - local_2c;
+        fVar2 = (float)1024;
+        local_28 = fVar1;
+        dVar12 = round((double)((local_58 - fVar1) * fVar4 * fVar2));
+        dVar13 = round((double)(fVar3 * fVar4 * fVar2));
+        local_44 = (float)(int)ROUND(dVar12);
+        local_40 = (float)(int)ROUND(dVar13);
         local_a8 = local_38;
-        if (fVar5 < (float10)local_38) {
+        if (fVar1 < local_38) {
           local_a8 = local_30;
         }
         local_b0 = local_a8 * local_4c;
@@ -184,12 +184,12 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
         this_ptr_00->vertex_buffer_ptr[3].color = 0xffff;
         this_ptr_00->vertex_buffer_ptr[3].light = 0xffff;
         this_ptr_00->vertex_buffer_ptr[3].u = 0xf80000;
-        iVar4 = iVar4 + 1;
+        iVar5 = iVar5 + 1;
         this_ptr_00->vertex_buffer_ptr[3].v = 0x80000;
         local_e4 = 0.0;
         engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
                   (this_ptr_00,(SMRGLHeaderPrimitive *)&stack0xffffff10);
-      } while (iVar4 < 4);
+      } while (iVar5 < 4);
       iStack_5c = iStack_5c + 1;
     } while (iStack_5c < 0x10);
   } while( true );

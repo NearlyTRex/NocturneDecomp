@@ -12,9 +12,9 @@ void __cdecl core_teleport_cpp_CTeleport_processInEditor_FUN_005dabe0(CTeleport 
   float fVar1;
   int iVar2;
   
-  iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+  iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
   if (iVar2 == 0) {
-    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x14);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_T);
     if (iVar2 == 0) {
       core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base);
       return;
@@ -33,27 +33,27 @@ void __cdecl core_teleport_cpp_CTeleport_processInEditor_FUN_005dabe0(CTeleport 
   }
   else {
     fVar1 = g_CGamePtr->delta_time_float * (float)4;
-    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD4);
     if (iVar2 != 0) {
       this_ptr->unk1 = (int)((float)this_ptr->unk1 - fVar1);
     }
-    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD6);
     if (iVar2 != 0) {
       this_ptr->unk1 = (int)((float)this_ptr->unk1 + fVar1);
     }
-    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_A);
     if (iVar2 != 0) {
       this_ptr->unk2 = (int)((float)this_ptr->unk2 - fVar1);
     }
-    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_Q);
     if (iVar2 != 0) {
       this_ptr->unk2 = (int)((float)this_ptr->unk2 + fVar1);
     }
-    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD2);
     if (iVar2 != 0) {
       this_ptr->unk3 = (int)((float)this_ptr->unk3 - fVar1);
     }
-    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD8);
     if (iVar2 != 0) {
       this_ptr->unk3 = (int)((float)this_ptr->unk3 + fVar1);
     }

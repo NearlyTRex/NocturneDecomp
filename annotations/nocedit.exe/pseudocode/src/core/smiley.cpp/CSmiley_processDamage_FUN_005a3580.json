@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 88,
+    "complexity_score": 44,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 1,
-    "pseudocode_lines": 43,
-    "suspect_count": 4,
-    "suspect_types": [
-      "suspect_float"
-    ],
-    "total_lines": 153
+    "pseudocode_lines": 44,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 154
   },
   "cross_references": [],
   "function": {
@@ -127,36 +125,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 10,
-      "match": "1.4013e-43",
-      "text": "damage_info->gore_multiplier = 1.4013e-43;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 15,
-      "match": "5.60519e-45",
-      "text": "if (fVar1 == 5.60519e-45) {",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 16,
-      "match": "1.4013e-43",
-      "text": "damage_info->gore_multiplier = 1.4013e-43;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 18,
-      "match": "1.49939e-43",
-      "text": "else if (((int)fVar1 < 0xc) || (fVar1 == 1.49939e-43)) goto LAB_005a35b4;",
-      "type": "suspect_float"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

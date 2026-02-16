@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 162,
-    "complexity_score": 137,
+    "complexity_score": 135,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 9,
-    "pseudocode_lines": 77,
+    "pseudocode_lines": 75,
     "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
       "suspect_float"
     ],
-    "total_lines": 239
+    "total_lines": 237
   },
   "cross_references": [],
   "function": {
@@ -248,35 +248,35 @@
   "suspects": [
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 27,
+      "line": 26,
       "match": "7.759508e-39",
       "text": "fStack_38 = 7.759508e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 34,
+      "line": 32,
       "match": "ROUND",
-      "text": "fStack_38 = (float)(int)ROUND(fVar9);",
+      "text": "fStack_38 = (float)(int)ROUND(dVar8);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 37,
+      "line": 35,
       "match": "ROUND",
-      "text": "fStack_38 = (float)(int)ROUND(dVar11);",
+      "text": "fStack_38 = (float)(int)ROUND(dVar10);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 43,
+      "line": 41,
       "match": "ROUND",
-      "text": "round((double)((float)iStack_3c + (float)(int)ROUND(dVar10)));",
+      "text": "round((double)((float)iStack_3c + (float)(int)ROUND(dVar9)));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 49,
+      "line": 47,
       "match": "ROUND",
       "text": "iStack_3c = (int)ROUND(dVar10);",
       "type": "decompiler_intrinsic"

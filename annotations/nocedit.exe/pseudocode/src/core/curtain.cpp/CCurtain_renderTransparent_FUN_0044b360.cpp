@@ -14,6 +14,6 @@ int __cdecl core_curtain_cpp_CCurtain_renderTransparent_FUN_0044b360(CCurtain *t
   if (65000 < this_ptr->opacity) {
     return 0;
   }
-  iVar1 = core_curtain_cpp_CCurtain_FUN_0044b060(this_ptr);
+  iVar1 = core_curtain_cpp_CCurtain_renderMesh_FUN_0044b060(this_ptr);
   return iVar1;
 }

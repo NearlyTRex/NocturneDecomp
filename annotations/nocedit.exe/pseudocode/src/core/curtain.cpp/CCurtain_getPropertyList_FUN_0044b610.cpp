@@ -11,7 +11,7 @@ void __cdecl core_curtain_cpp_CCurtain_getPropertyList_FUN_0044b610(CCurtain *th
 {
   core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(&this_ptr->base,property_list);
   core_actor_cpp_CActorPropertyList_addString_FUN_0040e290
-            (property_list,"Texture",this_ptr->curtain_texture,0x10,
+            (property_list,"Texture",(this_ptr->curtain_texture).texture_name,0x10,
              (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addInt_FUN_0040e1e0
             (property_list,"Opacity",&this_ptr->opacity,(CActorPropertyValidatorFunc *)0x0)

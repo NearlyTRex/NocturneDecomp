@@ -33,7 +33,7 @@ void __cdecl core_emitter_cpp_CEmitter_processInEditor_FUN_004a8fe0(CEmitter *th
   }
   PTR_02cf2b78 = (CEmitter *)0x0;
 LAB_004a9009:
-  iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+  iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
   if (iVar3 == 0) {
     if (g_SlewTargetMode != 0) {
       if (this_ptr != PTR_02cf2b78) {
@@ -49,10 +49,10 @@ LAB_004a9009:
           g_EmitterTarget.y = pCVar4->y;
         }
         pUVar2 = &(this_ptr->base).orient;
-        if (pUVar2 != (UOrientationVector *)&DAT_02cf2b6c) {
-          DAT_02cf2b6c = (pUVar2->vec).x;
-          DAT_02cf2b74 = (this_ptr->base).orient.vec.z;
-          DAT_02cf2b70 = (this_ptr->base).orient.vec.y;
+        if (pUVar2 != &UNION_UOrientationVector_02cf2b6c) {
+          UNION_UOrientationVector_02cf2b6c.vec.x = (pUVar2->vec).x;
+          UNION_UOrientationVector_02cf2b6c.vec.z = (this_ptr->base).orient.vec.z;
+          UNION_UOrientationVector_02cf2b6c.vec.y = (this_ptr->base).orient.vec.y;
         }
       }
       pCVar1 = &(this_ptr->base).location;
@@ -66,10 +66,10 @@ LAB_004a9009:
       (pCVar1->position).x = g_EmitterTarget.x;
       (this_ptr->base).location.position.y = g_EmitterTarget.y;
       (this_ptr->base).location.position.z = g_EmitterTarget.z;
-      if (pUVar2 != (UOrientationVector *)&DAT_02cf2b6c) {
-        (pUVar2->vec).x = DAT_02cf2b6c;
-        (this_ptr->base).orient.vec.y = DAT_02cf2b70;
-        (this_ptr->base).orient.vec.z = DAT_02cf2b74;
+      if (pUVar2 != &UNION_UOrientationVector_02cf2b6c) {
+        (pUVar2->vec).x = UNION_UOrientationVector_02cf2b6c.vec.x;
+        (this_ptr->base).orient.vec.y = UNION_UOrientationVector_02cf2b6c.vec.y;
+        (this_ptr->base).orient.vec.z = UNION_UOrientationVector_02cf2b6c.vec.z;
       }
       core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
       core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base);
@@ -80,10 +80,10 @@ LAB_004a9009:
         g_EmitterTarget.y = (this_ptr->base).location.position.y;
       }
       pUVar2 = &(this_ptr->base).orient;
-      if (pUVar2 != (UOrientationVector *)&DAT_02cf2b6c) {
-        DAT_02cf2b6c = (pUVar2->vec).x;
-        DAT_02cf2b74 = (this_ptr->base).orient.vec.z;
-        DAT_02cf2b70 = (this_ptr->base).orient.vec.y;
+      if (pUVar2 != &UNION_UOrientationVector_02cf2b6c) {
+        UNION_UOrientationVector_02cf2b6c.vec.x = (pUVar2->vec).x;
+        UNION_UOrientationVector_02cf2b6c.vec.z = (this_ptr->base).orient.vec.z;
+        UNION_UOrientationVector_02cf2b6c.vec.y = (this_ptr->base).orient.vec.y;
       }
       pCVar1 = &(this_ptr->base).location;
       (pCVar1->position).x = fStack_54;
@@ -107,27 +107,27 @@ LAB_004a9009:
     return;
   }
   fStack_14 = g_CGamePtr->delta_time_float * (float)4;
-  iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
+  iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD4);
   if (iVar3 != 0) {
     (this_ptr->emitter_size).x = (this_ptr->emitter_size).x - fStack_14;
   }
-  iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
+  iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD6);
   if (iVar3 != 0) {
     (this_ptr->emitter_size).x = (this_ptr->emitter_size).x + fStack_14;
   }
-  iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
+  iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_A);
   if (iVar3 != 0) {
     (this_ptr->emitter_size).y = (this_ptr->emitter_size).y - fStack_14;
   }
-  iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
+  iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_Q);
   if (iVar3 != 0) {
     (this_ptr->emitter_size).y = (this_ptr->emitter_size).y + fStack_14;
   }
-  iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
+  iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD2);
   if (iVar3 != 0) {
     (this_ptr->emitter_size).z = (this_ptr->emitter_size).z - fStack_14;
   }
-  iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
+  iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD8);
   if (iVar3 != 0) {
     (this_ptr->emitter_size).z = (this_ptr->emitter_size).z + fStack_14;
   }

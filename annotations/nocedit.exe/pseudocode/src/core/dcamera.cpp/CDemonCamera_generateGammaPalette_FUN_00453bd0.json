@@ -243,36 +243,36 @@
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 21,
-      "match": "extraout_ST2",
-      "text": "exp = extraout_ST2;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 22,
       "match": "extraout_ST3",
       "text": "dVar5 = round((double)(fVar4 * extraout_ST3));",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
+      "line": 22,
       "match": "ROUND",
       "text": "uVar1 = (uint)ROUND(dVar5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 24,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_LightmapTexturePalette + iVar2) =",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 28,
+      "line": 27,
       "match": "extraout_ST1",
       "text": "fVar4 = extraout_ST1;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 28,
+      "match": "extraout_ST2",
+      "text": "exp = extraout_ST2;",
       "type": "extra_output"
     },
     {

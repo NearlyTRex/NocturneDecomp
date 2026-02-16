@@ -11,6 +11,6 @@ void __cdecl engine_keys_cpp_CKeys_clearKeypresses_FUN_00502450(void)
 {
   g_InputWriteIndex = 0;
   g_InputReadIndex = 0;
-  g_InputCountMaybe = 0;
+  g_InputCountOld = 0;
   return;
 }

@@ -4,7 +4,7 @@
       {
         "category": "undeclared_identifier",
         "column": 20,
-        "line": 55,
+        "line": 54,
         "message": "use of undeclared identifier 'stack0xffffff98'"
       }
     ],
@@ -13,18 +13,18 @@
   },
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 156,
+    "complexity_score": 154,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 19,
-    "pseudocode_lines": 61,
+    "pseudocode_lines": 59,
     "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_ref"
     ],
-    "total_lines": 128
+    "total_lines": 126
   },
   "cross_references": [
     {
@@ -276,58 +276,58 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 35,
+      "line": 34,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_BillboardCameraRight + (uint)bVar6 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 35,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_18 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 37,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&local_18 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 43,
       "match": "(CMatrix3x3i *)((int)",
       "text": "pCVar3 = (CMatrix3x3i *)((int)pCVar3 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 48,
+      "line": 47,
       "match": "&stack0xffffff98",
       "text": "piVar5 = (int *)&stack0xffffff98;",
       "type": "stack_ref"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
+      "line": 58,
+      "match": "ROUND",
+      "text": "g_BillboardCameraUp.x = (int)ROUND(dVar7);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 59,
+      "match": "ROUND",
+      "text": "g_BillboardCameraUp.y = (int)ROUND(dVar8);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 60,
       "match": "ROUND",
-      "text": "g_BillboardCameraUp.x = (int)ROUND(dVar9);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
-      "match": "ROUND",
-      "text": "g_BillboardCameraUp.y = (int)ROUND(fVar7);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 62,
-      "match": "ROUND",
-      "text": "g_BillboardCameraUp.z = (int)ROUND(dVar10);",
+      "text": "g_BillboardCameraUp.z = (int)ROUND(dVar9);",
       "type": "decompiler_intrinsic"
     }
   ]

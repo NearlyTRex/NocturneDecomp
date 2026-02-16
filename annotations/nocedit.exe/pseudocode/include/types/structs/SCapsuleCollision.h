@@ -14,8 +14,8 @@ typedef struct SCapsuleCollision {
     float dir_x; // 0x18
     float dir_z; // 0x1c
     float radius; // 0x20
-    void* top_y; // 0x24
-    void* bottom_y; // 0x28
+    float top_y; // 0x24
+    float bottom_y; // 0x28
     float sweep_slab_near; // 0x2c
     float sweep_slab_far; // 0x30
     float normal_x; // 0x34

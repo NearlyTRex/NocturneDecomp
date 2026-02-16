@@ -7,7 +7,7 @@
 ; CCurtain *       Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   core_curtain.cpp_CCurtain_FUN_0044b060
+;   core_curtain.cpp_CCurtain_renderMesh_FUN_0044b060
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
     RET                                 ; 0044b352
     PUSH EAX                            ; 0044b353
         ;   Label: LAB_0044b353
-    CALL core_curtain.cpp_CCurtain_FUN_0044b060 ; 0044b354
-        ;   XREF to: 0044b060 (UNCONDITIONAL_CALL)  ; int core_curtain.cpp_CCurtain_FUN_0044b060(CCurtain * this_ptr)
+    CALL core_curtain.cpp_CCurtain_renderMesh_FUN_0044b060 ; 0044b354
+        ;   XREF to: 0044b060 (UNCONDITIONAL_CALL)  ; int core_curtain.cpp_CCurtain_renderMesh_FUN_0044b060(CCurtain * this_ptr)
     ADD ESP,0x4                         ; 0044b359
     RET                                 ; 0044b35c
 

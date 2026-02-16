@@ -104,7 +104,7 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(char **menu_text_a
   pcVar6 = (char *)0x0;
 LAB_00510279:
   g_MenuInputHappened = 0;
-  iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x48);
+  iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD8);
   if (iVar1 != 0) {
     iVar1 = *selected_index_ptr;
     g_MenuInputHappened = 1;
@@ -113,7 +113,7 @@ LAB_00510279:
       *selected_index_ptr = menu_count + -1;
     }
   }
-  iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x50);
+  iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD2);
   if (iVar1 != 0) {
     g_MenuInputHappened = 1;
     iVar1 = *selected_index_ptr;
@@ -124,15 +124,15 @@ LAB_00510279:
   }
   if (pcVar6 != (char *)0x0) {
     g_MenuLeftRightPressed = 0;
-    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4b);
+    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD4);
     if (iVar1 != 0) {
       g_MenuLeftRightPressed = 1;
       return *selected_index_ptr;
     }
-    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4d);
+    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD6);
     if (iVar1 != 0) goto LAB_00510340;
   }
-  iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1c);
+  iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_RETURN);
   if (iVar1 == 0) {
     return -1;
   }

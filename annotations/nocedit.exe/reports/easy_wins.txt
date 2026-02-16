@@ -117,6 +117,10 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_battery.cpp_CBattery_ctor_FUN_00417e90
       Suspects: decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic
 
+  core/hpriest.cpp (1 remaining of 9)
+    - core_hpriest.cpp_CHighPriestOfGardath_dtor_FUN_004f7cb0
+      Suspects: negative_offset, negative_offset, negative_offset
+
   core/slew.cpp (1 remaining of 4)
     - core_slew.cpp_CSlew_processInput_FUN_005a20b0
       Suspects: decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic
@@ -183,7 +187,7 @@ PRIORITY 1: Files with 1-2 functions remaining
 
   core/anvil.cpp (2 remaining of 13)
     - core_anvil.cpp_CAnvil_process_FUN_00411d90
-      Suspects: warning_type_propagation, suspect_float
+      Suspects: warning_type_propagation
     - core_anvil.cpp_CAnvil_ctor_FUN_00411ce0
       Suspects: decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic
 
@@ -213,7 +217,7 @@ PRIORITY 1: Files with 1-2 functions remaining
 
   core/spike.cpp (2 remaining of 15)
     - core_spike.cpp_CSpike_FUN_005b8950
-      Suspects: decompiler_intrinsic, decompiler_intrinsic, suspect_float
+      Suspects: decompiler_intrinsic, decompiler_intrinsic
     - core_spike.cpp_CSpike_ctor_FUN_005b8220
       Suspects: negative_offset, pointer_cast, pointer_cast, negative_offset
 
@@ -271,12 +275,6 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_dest.cpp_CActorDestination_process_FUN_0046f9b0
       Suspects: pointer_cast, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic
 
-  core/hpriest.cpp (2 remaining of 9)
-    - core_hpriest.cpp_CHighPriestOfGardath_dtor_FUN_004f7cb0
-      Suspects: negative_offset, negative_offset, negative_offset
-    - core_hpriest.cpp_CHighPriestOfGardath_processDamage_FUN_004f7c50
-      Suspects: suspect_float
-
   core/hotdemon.cpp (2 remaining of 14)
     - core_hotdemon.cpp_CHotDemon_process_FUN_004f6f20
       Suspects: warning_type_propagation, stack_param, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, stack_ref, stack_param
@@ -331,7 +329,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     engine_palette.cpp_CFont_ctor_FUN_00544eb0              (  5 lines)
     ... and 115 more
 
-  [pointer_cast] - 75 functions
+  [pointer_cast] - 77 functions
     core_dlight.cpp_drawGrayscalePixel_FUN_00473360         (  5 lines)
     core_setdir.cpp_setPixelGrayscale_FUN_005748a0          (  5 lines)
     core_dracbrid.cpp_SFreaky_ctor_FUN_00486d30             (  6 lines)
@@ -342,9 +340,9 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_fire.cpp_CCrater_ctor_FUN_004c9580                 (  6 lines)
     core_morph.cpp_SMorphControlPoint_ctor_FUN_0052cc50     (  6 lines)
     core_skeleton.cpp_SVert_ctor_FUN_005a1f70               (  6 lines)
-    ... and 65 more
+    ... and 67 more
 
-  [decompiler_intrinsic] - 52 functions
+  [decompiler_intrinsic] - 54 functions
     core_actor.cpp_CVector3f_length_FUN_00410380            (  4 lines)
     core_weapon.cpp_CWeapon_isReadyToFire_FUN_005ee710      (  4 lines)
     core_bodypart.cpp_SBodyPartFire_ctor_FUN_0041b620       (  6 lines)
@@ -355,7 +353,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_water.cpp_calculateWaveHeight_FUN_005e9dc0         (  7 lines)
     engine_drender.cpp_CDemonRenderer_setProjectionScaleSim (  8 lines)
     core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00 (  8 lines)
-    ... and 42 more
+    ... and 44 more
 
   [negative_offset] - 39 functions
     core_dracbrid.cpp_SFreaky_dtor_FUN_00486d50             (  6 lines)
@@ -409,7 +407,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_netgame.cpp_CNetGame_FUN_0053f780                  ( 33 lines)
     ... and 7 more
 
-  [warning_type_propagation] - 14 functions
+  [warning_type_propagation] - 15 functions
     core_zombie.cpp_CZombie_FUN_005fbda0                    ( 11 lines)
     core_mimic.cpp_CMimic_hasCollision_FUN_00520a00         ( 23 lines)
     core_smiley.cpp_CSmiley_attractActorToward_FUN_005a3160 ( 25 lines)
@@ -420,7 +418,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_hostage.cpp_CHostage_FUN_004f5ff0                  ( 39 lines)
     core_mimic.cpp_CMimic_beginMorph_FUN_00520a80           ( 40 lines)
     core_mobster.cpp_CMobster_getTargetPoints_FUN_005278d0  ( 42 lines)
-    ... and 4 more
+    ... and 5 more
 
   [unnamed_param] - 9 functions
     core_actor.cpp_CActorPropertyList_addVector_FUN_0040e26 (  8 lines)
@@ -443,15 +441,6 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_boxactor.cpp_CBoxActor_FUN_00422590                ( 33 lines)
     shape_superopt.cpp_CObj_isClosedManifold_FUN_005d4070   ( 35 lines)
 
-  [suspect_float] - 7 functions
-    core_hpriest.cpp_CHighPriestOfGardath_processDamage_FUN (  6 lines)
-    core_actor.cpp_CDemonActor_fillAttackDamageInfo_FUN_004 ( 14 lines)
-    core_stranger.cpp_CStranger_FUN_005c5e80                ( 18 lines)
-    core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0         ( 18 lines)
-    core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90           ( 21 lines)
-    core_flamegun.cpp_CFlameThrower_ctor_FUN_004cb880       ( 34 lines)
-    core_lightgun.cpp_CLightGun_ctor_FUN_00505900           ( 38 lines)
-
   [warning_unreachable] - 5 functions
     core_procedur.cpp_CProceduralTexture_showMenu_FUN_00554 ( 20 lines)
     engine_font.cpp_setShadowColor_FUN_004ce0f0             ( 26 lines)
@@ -464,6 +453,12 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     engine_drender.cpp_CDemonRenderer_renderPerspectiveText ( 20 lines)
     cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFrom ( 24 lines)
     wincore_winrun.cpp_calibrateCPUSpeed_FUN_005f2b80       ( 43 lines)
+
+  [suspect_float] - 4 functions
+    core_stranger.cpp_CStranger_FUN_005c5e80                ( 18 lines)
+    core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90           ( 21 lines)
+    core_flamegun.cpp_CFlameThrower_ctor_FUN_004cb880       ( 34 lines)
+    core_lightgun.cpp_CLightGun_ctor_FUN_00505900           ( 38 lines)
 
   [special_math_intrinsic] - 3 functions
     crt_math.c_pentiumFdivpWorkaround_FUN_00606f13          (  6 lines)

@@ -4,13 +4,13 @@
       {
         "category": "other",
         "column": 41,
-        "line": 108,
+        "line": 104,
         "message": "assigning to 'float *' from 'const float *' discards qualifiers"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 110,
+        "line": 106,
         "message": "assigning to 'float *' from 'const float *' discards qualifiers"
       }
     ],
@@ -19,17 +19,16 @@
   },
   "complexity": {
     "assembly_lines": 239,
-    "complexity_score": 201,
+    "complexity_score": 152,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 13,
-    "pseudocode_lines": 121,
-    "suspect_count": 7,
+    "pseudocode_lines": 117,
+    "suspect_count": 3,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "extra_output"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 360
+    "total_lines": 356
   },
   "cross_references": [
     {
@@ -347,50 +346,22 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
-      "match": "extraout_EBX",
-      "text": "float *extraout_EBX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 14,
-      "match": "extraout_EBX_00",
-      "text": "float *extraout_EBX_00;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 39,
+      "line": 37,
       "match": "fcos",
       "text": "fVar10 = (float10)fcos((float10)iVar7 *",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 47,
-      "match": "extraout_EBX_00",
-      "text": "pfVar8 = extraout_EBX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 53,
-      "match": "extraout_EBX",
-      "text": "pfVar8 = extraout_EBX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 73,
+      "line": 69,
       "match": "ABS",
       "text": "if ((float)1.0000000000000001e-05 < ABS(subband_samples[iVar7])) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 111,
+      "line": 107,
       "match": "ROUND",
       "text": "local_30 = (int)ROUND(fVar2 * 32768.0);",
       "type": "decompiler_intrinsic"

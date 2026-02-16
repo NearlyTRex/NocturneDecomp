@@ -16,9 +16,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisFilterbank_FUN_005304f0(CMP3Deco
   uint uVar5;
   uint uVar6;
   int iVar7;
-  float *extraout_EBX;
   float *pfVar8;
-  float *extraout_EBX_00;
   float *pfVar9;
   float10 fVar10;
   int aiStack_e4 [32];
@@ -51,13 +49,11 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisFilterbank_FUN_005304f0(CMP3Deco
         if (*pfVar8 < 0.0) {
           local_5c[0] = (double)*pfVar8;
           modf((double)(*pfVar8 + (float)-0.5),local_5c);
-          pfVar8 = extraout_EBX_00;
           dVar1 = local_5c[0];
         }
         else {
           local_64 = (double)*pfVar8;
           modf((double)(*pfVar8 + (float)0.5),&local_64);
-          pfVar8 = extraout_EBX;
           dVar1 = local_64;
         }
         *pfVar8 = (float)dVar1;

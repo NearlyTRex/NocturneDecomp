@@ -12,22 +12,22 @@ void __cdecl core_wateract_cpp_CWaterActor_processInEditor_FUN_005ebab0(CWaterAc
   float fVar1;
   int iVar2;
   
-  iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+  iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
   if (iVar2 != 0) {
     fVar1 = g_CGamePtr->delta_time_float * (float)4;
-    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD4);
     if (iVar2 != 0) {
       (this_ptr->size).x = (this_ptr->size).x - fVar1;
     }
-    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD6);
     if (iVar2 != 0) {
       (this_ptr->size).x = (this_ptr->size).x + fVar1;
     }
-    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD2);
     if (iVar2 != 0) {
       (this_ptr->size).z = (this_ptr->size).z - fVar1;
     }
-    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD8);
     if (iVar2 != 0) {
       (this_ptr->size).z = (this_ptr->size).z + fVar1;
     }

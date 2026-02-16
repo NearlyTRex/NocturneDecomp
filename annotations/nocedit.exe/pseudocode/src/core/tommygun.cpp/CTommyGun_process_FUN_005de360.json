@@ -3,38 +3,32 @@
     "errors": [
       {
         "category": "incompatible_types",
-        "column": 16,
-        "line": 32,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 40,
-        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
+        "column": 17,
+        "line": 47,
+        "message": "assigning to 'int' from incompatible type 'void'"
       },
       {
         "category": "incompatible_types",
-        "column": 24,
-        "line": 40,
+        "column": 63,
+        "line": 68,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 57,
-        "message": "use of undeclared identifier 'code'"
+        "category": "format_error",
+        "column": 63,
+        "line": 68,
+        "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
-        "category": "syntax_error",
-        "column": 28,
-        "line": 57,
-        "message": "expected expression"
+        "category": "other",
+        "column": 14,
+        "line": 69,
+        "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
         "category": "incompatible_types",
         "column": 11,
-        "line": 79,
+        "line": 71,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       }
     ],
@@ -43,20 +37,17 @@
   },
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 237,
+    "complexity_score": 135,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 3,
-    "pseudocode_lines": 72,
-    "suspect_count": 14,
+    "pseudocode_lines": 65,
+    "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
-      "stack_param",
-      "unknown_field",
-      "unresolved_funcptr"
+      "stack_param"
     ],
-    "total_lines": 209
+    "total_lines": 202
   },
   "cross_references": [],
   "function": {
@@ -328,102 +319,46 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
-      "match": "extraout_EBX",
-      "text": "int extraout_EBX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 11,
       "match": "in_stack_fffffe10",
       "text": "uint in_stack_fffffe10;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 19,
       "match": "in_stack_fffffe10",
-      "text": "dVar4 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,in_stack_fffffe10);",
+      "text": "local_20 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,in_stack_fffffe10);",
       "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 25,
-      "match": "SUB84",
-      "text": "local_20 = SUB84(dVar4,0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 33,
-      "match": "._4_4_",
-      "text": "local_28._4_4_ = SUB84(dVar5,0);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
-      "match": "SUB84",
-      "text": "local_28._4_4_ = SUB84(dVar5,0);",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 35,
       "match": "CONCAT44",
-      "text": "dVar4 = (double)CONCAT44((uint)local_28,uStack_2c);",
+      "text": "local_20 = (double)CONCAT44((int)ROUND(dVar6),(uint)local_20);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 38,
-      "match": "extraout_EBX",
-      "text": "(*(uint *)(extraout_EBX + 0x57c),(CSfxSample *)local_1e0);",
-      "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 44,
+      "line": 35,
       "match": "ROUND",
-      "text": "iVar1 = (int)ROUND(dVar4);",
+      "text": "local_20 = (double)CONCAT44((int)ROUND(dVar6),(uint)local_20);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 50,
-      "match": "extraout_EBX",
-      "text": "uVar3 = (**(code **)(*(int *)(extraout_EBX + 0x154) + 0x24))",
-      "type": "extra_output"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 36,
+      "match": "ROUND",
+      "text": "dVar6 = (double)(int)ROUND(dVar6);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 50,
-      "match": "code *",
-      "text": "uVar3 = (**(code **)(*(int *)(extraout_EBX + 0x154) + 0x24))",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 51,
-      "match": "extraout_EBX",
-      "text": "(extraout_EBX,\"m-gun-t.wav\");",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 52,
-      "match": "extraout_EBX",
-      "text": "*(uint *)(extraout_EBX + 0x580) = uVar3;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 55,
-      "match": "extraout_EBX",
-      "text": "sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(extraout_EBX + 0x57c));",
-      "type": "extra_output"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 61,
+      "match": "SUB84",
+      "text": "((char *)&local_1dc.taken,\"m-gun1.wav @ 2.3 * %f\",SUB84((double)fVar2,0),",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

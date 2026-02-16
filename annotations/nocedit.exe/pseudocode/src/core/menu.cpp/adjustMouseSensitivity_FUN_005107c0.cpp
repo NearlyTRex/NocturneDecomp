@@ -47,11 +47,11 @@ LAB_00510823:
     if ((CKeys *)g_MouseX != pCVar6) {
       iVar3 = (int)(((longlong)g_MouseX * 0x3c000) / (longlong)(g_WindowWidth + -1)) + 0x4000;
     }
-    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4b);
+    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD4);
     if (iVar1 != 0) {
       iVar3 = iVar3 + -700;
     }
-    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4d);
+    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD6);
     if (iVar1 != 0) {
       iVar3 = iVar3 + 700;
     }
@@ -81,9 +81,9 @@ LAB_00510823:
                dVar7);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     pCVar6 = g_CKeysPtr;
-    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
+    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if (iVar1 != 0) goto LAB_005109f5;
-    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1c);
+    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_RETURN);
   } while ((iVar1 == 0) &&
           (iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x200), iVar1 == 0));
   *sensitivity_value_ptr = iVar3;

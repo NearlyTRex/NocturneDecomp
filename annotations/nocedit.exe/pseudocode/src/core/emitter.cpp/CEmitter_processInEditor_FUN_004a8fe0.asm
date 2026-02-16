@@ -14,9 +14,9 @@
 ;   CVector3f g_EmitterTarget
 ;   undefined4 g_EmitterTarget.y
 ;   undefined4 g_EmitterTarget.z
-;   undefined4 DAT_02cf2b6c
-;   undefined4 DAT_02cf2b70
-;   undefined4 DAT_02cf2b74
+;   UOrientationVector UNION_UOrientationVector_02cf2b6c
+;   undefined4 UNION_UOrientationVector_02cf2b6c+4
+;   undefined4 UNION_UOrientationVector_02cf2b6c+8
 ;   CEmitter* PTR_02cf2b78
 ;   undefined4 g_CGameInstance.delta_time_float
 ;   CKeys g_CKeysInstance
@@ -214,14 +214,14 @@ section .text
     MOV dword ptr [ECX + 0x4],EAX       ; 004a91ca
     MOV EAX,[0x02cf2b68]                ; 004a91cd | g_EmitterTarget.z
     MOV dword ptr [ECX + 0x8],EAX       ; 004a91d2
-    CMP EDX,0x2cf2b6c                   ; 004a91d5 | DAT_02cf2b6c
+    CMP EDX,0x2cf2b6c                   ; 004a91d5 | UNION_UOrientationVector_02cf2b6c
     JZ 0x004a91f4                       ; 004a91db
         ;   XREF to: 004a91f4 (CONDITIONAL_JUMP)  ; LAB_004a91f4
-    MOV EAX,[0x02cf2b6c]                ; 004a91dd | DAT_02cf2b6c
+    MOV EAX,[0x02cf2b6c]                ; 004a91dd | UNION_UOrientationVector_02cf2b6c
     MOV dword ptr [EDX],EAX             ; 004a91e2
-    MOV EAX,[0x02cf2b70]                ; 004a91e4 | DAT_02cf2b70
+    MOV EAX,[0x02cf2b70]                ; 004a91e4 | UNION_UOrientationVector_02cf2b6c+4
     MOV dword ptr [EDX + 0x4],EAX       ; 004a91e9
-    MOV EAX,[0x02cf2b74]                ; 004a91ec | DAT_02cf2b74
+    MOV EAX,[0x02cf2b74]                ; 004a91ec | UNION_UOrientationVector_02cf2b6c+8
     MOV dword ptr [EDX + 0x8],EAX       ; 004a91f1
     PUSH EBX                            ; 004a91f4
         ;   Label: LAB_004a91f4
@@ -244,15 +244,15 @@ section .text
     FSTP float ptr [0x02cf2b60]         ; 004a9224 | g_EmitterTarget
     LEA EAX,[EBX + 0x30]                ; 004a922a
         ;   Label: LAB_004a922a
-    CMP EAX,0x2cf2b6c                   ; 004a922d | DAT_02cf2b6c
+    CMP EAX,0x2cf2b6c                   ; 004a922d | UNION_UOrientationVector_02cf2b6c
     JZ 0x004a924e                       ; 004a9232
         ;   XREF to: 004a924e (CONDITIONAL_JUMP)  ; LAB_004a924e
     FLD float ptr [EAX]                 ; 004a9234
     FLD float ptr [EAX + 0x8]           ; 004a9236
     MOV EDX,dword ptr [EAX + 0x4]       ; 004a9239
-    MOV dword ptr [0x02cf2b70],EDX      ; 004a923c | DAT_02cf2b70
-    FSTP float ptr [0x02cf2b74]         ; 004a9242 | DAT_02cf2b74
-    FSTP float ptr [0x02cf2b6c]         ; 004a9248 | DAT_02cf2b6c
+    MOV dword ptr [0x02cf2b70],EDX      ; 004a923c | UNION_UOrientationVector_02cf2b6c+4
+    FSTP float ptr [0x02cf2b74]         ; 004a9242 | UNION_UOrientationVector_02cf2b6c+8
+    FSTP float ptr [0x02cf2b6c]         ; 004a9248 | UNION_UOrientationVector_02cf2b6c
     LEA EDX,[EBX + 0x20]                ; 004a924e
         ;   Label: LAB_004a924e
     MOV EAX,dword ptr [ESP + 0xc]       ; 004a9251
@@ -325,15 +325,15 @@ section .text
     FSTP float ptr [0x02cf2b60]         ; 004a930c | g_EmitterTarget
     LEA EAX,[EBX + 0x30]                ; 004a9312
         ;   Label: LAB_004a9312
-    CMP EAX,0x2cf2b6c                   ; 004a9315 | DAT_02cf2b6c
+    CMP EAX,0x2cf2b6c                   ; 004a9315 | UNION_UOrientationVector_02cf2b6c
     JZ 0x004a9188                       ; 004a931a
         ;   XREF to: 004a9188 (CONDITIONAL_JUMP)  ; LAB_004a9188
     FLD float ptr [EAX]                 ; 004a9320
     FLD float ptr [EAX + 0x8]           ; 004a9322
     MOV EDX,dword ptr [EAX + 0x4]       ; 004a9325
-    MOV dword ptr [0x02cf2b70],EDX      ; 004a9328 | DAT_02cf2b70
-    FSTP float ptr [0x02cf2b74]         ; 004a932e | DAT_02cf2b74
-    FSTP float ptr [0x02cf2b6c]         ; 004a9334 | DAT_02cf2b6c
+    MOV dword ptr [0x02cf2b70],EDX      ; 004a9328 | UNION_UOrientationVector_02cf2b6c+4
+    FSTP float ptr [0x02cf2b74]         ; 004a932e | UNION_UOrientationVector_02cf2b6c+8
+    FSTP float ptr [0x02cf2b6c]         ; 004a9334 | UNION_UOrientationVector_02cf2b6c
     JMP 0x004a9188                      ; 004a933a
         ;   XREF to: 004a9188 (UNCONDITIONAL_JUMP)  ; LAB_004a9188
     PUSH EBX                            ; 004a933f

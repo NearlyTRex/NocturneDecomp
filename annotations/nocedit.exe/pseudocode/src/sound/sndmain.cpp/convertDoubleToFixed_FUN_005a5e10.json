@@ -3,14 +3,14 @@
     "errors": [
       {
         "category": "other",
-        "column": 9,
-        "line": 22,
+        "column": 34,
+        "line": 18,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
         "column": 9,
-        "line": 25,
+        "line": 20,
         "message": "member reference base type 'double' is not a structure or union"
       }
     ],
@@ -19,18 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 112,
+    "complexity_score": 84,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
-    "pseudocode_lines": 17,
-    "suspect_count": 8,
+    "pseudocode_lines": 14,
+    "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
-      "unaffected_reg",
       "unknown_field"
     ],
-    "total_lines": 51
+    "total_lines": 48
   },
   "cross_references": [],
   "function": {
@@ -140,60 +139,46 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 5,
-      "match": "unaff_EBX",
-      "text": "uint unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 13,
-      "match": "unaff_EBX",
-      "text": "dVar1 = ((double)CONCAT44(unaff_retaddr,unaff_EBX) - (double)((longlong)ROUND(dVar2) & 0xffffffff)",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 13,
-      "match": "CONCAT44",
-      "text": "dVar1 = ((double)CONCAT44(unaff_retaddr,unaff_EBX) - (double)((longlong)ROUND(dVar2) & 0xffffffff)",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 13,
-      "match": "ROUND",
-      "text": "dVar1 = ((double)CONCAT44(unaff_retaddr,unaff_EBX) - (double)((longlong)ROUND(dVar2) & 0xffffffff)",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 15,
+      "line": 11,
       "match": "._0_4_",
-      "text": "*input._0_4_ = (int)(longlong)ROUND(dVar2);",
+      "text": "dVar1 = ((double)CONCAT44(input._0_4_,unaff_retaddr) -",
       "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 11,
+      "match": "CONCAT44",
+      "text": "dVar1 = ((double)CONCAT44(input._0_4_,unaff_retaddr) -",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 12,
+      "match": "ROUND",
+      "text": "(double)((longlong)ROUND(dVar2) & 0xffffffff)) * 4294967296;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 13,
+      "match": "._4_4_",
+      "text": "*input._4_4_ = (int)(longlong)ROUND(dVar2);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 13,
+      "match": "ROUND",
+      "text": "*input._4_4_ = (int)(longlong)ROUND(dVar2);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 15,
       "match": "ROUND",
-      "text": "*input._0_4_ = (int)(longlong)ROUND(dVar2);",
+      "text": "*out_integer_part = (int)(longlong)ROUND(dVar1);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 17,
-      "match": "ROUND",
-      "text": "uStackY_18 = (uint)(longlong)ROUND(dVar1);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 18,
-      "match": "._4_4_",
-      "text": "*input._4_4_ = uStackY_18;",
-      "type": "unknown_field"
     }
   ]
 }

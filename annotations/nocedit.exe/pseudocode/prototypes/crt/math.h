@@ -9,7 +9,7 @@ double __fpureg_safe round(double value);
 
 // Original: crt_math.c_floor_FUN_005feb90
 // Address: 005feb90
-double __softfp_double floor(double input_value);
+double __crtmath floor(double input_value);
 
 // Original: crt_math.c_pow_FUN_005ffd76
 // Address: 005ffd76
@@ -25,15 +25,15 @@ double __cdecl ldexp(double x,int exp);
 
 // Original: crt_math.c_acos_FUN_00600162
 // Address: 00600162
-double __fpustack acos(double x);
+double __fpustack_safe acos(double x);
 
 // Original: crt_math.c_ceil_FUN_006001b2
 // Address: 006001b2
-double __softfp_double ceil(double value);
+double __crtmath ceil(double value);
 
 // Original: crt_math.c_asin_FUN_00600b94
 // Address: 00600b94
-float10 __fpustack asin(float10 sine_value);
+float10 __fpustack_safe asin(float10 sine_value);
 
 // Original: crt_math.c_atan2_FUN_006013b1
 // Address: 006013b1
@@ -41,7 +41,7 @@ float10 __fpustack atan2(float10 y,float10 x);
 
 // Original: crt_math.c_modf_FUN_00602102
 // Address: 00602102
-double __softfp_double modf(double value,double *integer_part);
+double __crtmath modf(double value,double *integer_part);
 
 // Original: crt_math.c_set_domain_error_errno_FUN_006027a0
 // Address: 006027a0

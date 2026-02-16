@@ -4,55 +4,43 @@
       {
         "category": "other",
         "column": 16,
-        "line": 56,
+        "line": 54,
         "message": "cannot cast from type 'float' to pointer type 'int *'"
       },
       {
         "category": "other",
-        "column": 16,
-        "line": 57,
-        "message": "cannot cast from type 'float' to pointer type 'LPDIRECTSOUNDBUFFER' (aka 'IDirectSoundBuffer *')"
-      },
-      {
-        "category": "other",
         "column": 26,
-        "line": 62,
+        "line": 60,
         "message": "C-style cast from 'int *' to 'float' is not allowed"
       },
       {
         "category": "other",
-        "column": 40,
-        "line": 63,
-        "message": "C-style cast from 'LPDIRECTSOUNDBUFFER' (aka 'IDirectSoundBuffer *') to 'float' is not allowed"
-      },
-      {
-        "category": "other",
         "column": 59,
-        "line": 73,
+        "line": 70,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 87,
+        "line": 84,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 134,
+        "line": 129,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 24,
-        "line": 134,
+        "line": 129,
         "message": "expected expression"
       },
       {
         "category": "other",
         "column": 73,
-        "line": 164,
+        "line": 159,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       }
     ],
@@ -61,20 +49,18 @@
   },
   "complexity": {
     "assembly_lines": 482,
-    "complexity_score": 299,
+    "complexity_score": 244,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 20,
-    "pseudocode_lines": 194,
-    "suspect_count": 8,
+    "pseudocode_lines": 189,
+    "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
-      "pointer_cast",
       "unknown_field",
       "unresolved_funcptr"
     ],
-    "total_lines": 676
+    "total_lines": 671
   },
   "cross_references": [],
   "function": {
@@ -410,60 +396,32 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
-      "match": "extraout_EBX",
-      "text": "CSfxSlot *extraout_EBX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 94,
+      "line": 90,
       "match": "ROUND",
-      "text": "local_24 = (long)ROUND(dVar5);",
+      "text": "local_20 = (IDirectSoundBuffer *)(int)ROUND(dVar5);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 95,
-      "match": "extraout_EBX",
-      "text": "slot = extraout_EBX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 126,
+      "line": 121,
       "match": "ROUND",
-      "text": "lStack_40 = (longlong)ROUND(dVar5);",
+      "text": "lStack_3c = (longlong)ROUND(dVar5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 127,
+      "line": 122,
       "match": "code *",
-      "text": "uVar2 = (**(code **)(*local_2c + 0x44))(local_2c,(uint)lStack_40,uVar6);",
+      "text": "uVar2 = (**(code **)(*local_28 + 0x44))(local_28,(uint)lStack_3c,uVar6);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 157,
+      "line": 152,
       "match": "._4_4_",
-      "text": "uVar2 = (*this_ptr_00->vtable->SetMinDistance)(this_ptr_00,uStack_38._4_4_,1);",
+      "text": "uVar2 = (*this_ptr_00->vtable->SetMinDistance)(this_ptr_00,uStack_34._4_4_,1);",
       "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 170,
-      "match": "(char *)((int)",
-      "text": "((char *)((int)&uStack_cc0 + 4),\"DirectSux: Unable to %s.  (%s)\",",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 173,
-      "match": "(char *)((int)",
-      "text": "sound_sndmain_cpp_logSoundError_FUN_005adba0((char *)((int)&uStack_cc0 + 4));",
-      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 80,
+    "complexity_score": 77,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 9,
-    "pseudocode_lines": 35,
+    "pseudocode_lines": 32,
     "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 87
+    "total_lines": 84
   },
   "cross_references": [
     {
@@ -189,30 +189,30 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
+      "line": 20,
+      "match": "ROUND",
+      "text": "g_CameraShakeSustainValue = (int)ROUND(dVar3);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 21,
+      "match": "ROUND",
+      "text": "g_CameraShakeAttackTime = (int)ROUND(dVar4);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 22,
+      "match": "ROUND",
+      "text": "g_CameraShakeDecayDuration = (int)ROUND(dVar5);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 23,
       "match": "ROUND",
-      "text": "g_CameraShakeSustainValue = (int)ROUND(fVar2);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
-      "match": "ROUND",
-      "text": "g_CameraShakeAttackTime = (int)ROUND(fVar3);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 25,
-      "match": "ROUND",
-      "text": "g_CameraShakeDecayDuration = (int)ROUND(dVar6);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 26,
-      "match": "ROUND",
-      "text": "g_CameraShakePeakValue = (int)ROUND(dVar5);",
+      "text": "g_CameraShakePeakValue = (int)ROUND(dVar2);",
       "type": "decompiler_intrinsic"
     }
   ]

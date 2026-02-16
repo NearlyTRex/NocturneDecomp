@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_curtain_cpp_CCurtain_FUN_00449e40(CCurtain *this_ptr)
+; void __cdecl core_curtain_cpp_CCurtain_updateWorldPositions_FUN_00449e40(CCurtain *this_ptr)
 ;
 ; Parameters:
 ; CCurtain *       Stack[0x4]:4   this_ptr
@@ -21,7 +21,7 @@
 section .text
 
     PUSH EBX                            ; 00449e40
-        ;   Label: core_curtain.cpp_CCurtain_FUN_00449e40
+        ;   Label: core_curtain.cpp_CCurtain_updateWorldPositions_FUN_00449e40
     PUSH ESI                            ; 00449e41
     PUSH EDI                            ; 00449e42
     PUSH EBP                            ; 00449e43

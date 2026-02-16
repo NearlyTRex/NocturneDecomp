@@ -10,7 +10,6 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_FUN_004d1ec0(CFrankenstienMa
 
 {
   float fVar1;
-  int extraout_EBX;
   double dVar2;
   float in_stack_00000008;
   float in_stack_0000000c;
@@ -19,6 +18,6 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_FUN_004d1ec0(CFrankenstienMa
   this_ptr->unk3 = (int)fVar1;
   dVar2 = floor((double)fVar1);
   dVar2 = round(dVar2);
-  *(float *)(extraout_EBX + 0x48c) = *(float *)(extraout_EBX + 0x48c) - (float)(int)ROUND(dVar2);
+  this_ptr->unk3 = (int)((float)this_ptr->unk3 - (float)(int)ROUND(dVar2));
   return;
 }

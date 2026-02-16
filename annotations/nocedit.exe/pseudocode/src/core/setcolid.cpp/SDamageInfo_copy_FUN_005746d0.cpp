@@ -21,7 +21,7 @@ void __cdecl core_setcolid_cpp_SDamageInfo_copy_FUN_005746d0(SDamageInfo *this_p
   (this_ptr->impact_direction).z = (other->impact_direction).z;
   this_ptr->ammo_type = other->ammo_type;
   this_ptr->weapon_damage_modifier = other->weapon_damage_modifier;
-  this_ptr->gore_multiplier = other->gore_multiplier;
+  this_ptr->damage_type = other->damage_type;
   this_ptr->attacker = other->attacker;
   this_ptr->wielder = other->wielder;
   return;

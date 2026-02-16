@@ -720,7 +720,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
     shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
-    iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
+    iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if (iVar7 != 0) {
       core_set_cpp_CDemonSet_FUN_0056d2d0(this_ptr);
       engine_2d_c_clearInputAndWait_FUN_00403260();
@@ -735,9 +735,9 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
     else {
       local_5c = g_CGamePtr->delta_time_float;
       local_58 = local_5c;
-      iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
+      iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU);
       if (iVar7 == 0) {
-        iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+        iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
         if (iVar7 != 0) {
           local_5c = local_58 * (float)10;
         }
@@ -747,31 +747,31 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
       }
       local_50 = local_5c * (float)1.57079632675;
       local_60 = local_4c * (float)0.5 * local_5c;
-      iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4a);
+      iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_SUBTRACT);
       if (iVar7 != 0) {
         local_c8 = local_c8 + local_50;
       }
-      iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4e);
+      iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_ADD);
       if (iVar7 != 0) {
         local_c8 = local_c8 - local_50;
       }
-      iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x52);
+      iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD0);
       if (iVar7 != 0) {
         local_c4 = local_c4 + local_50;
       }
       in_stack_fffffdbc = 8.10605e-39;
       in_stack_fffffdc0 = g_CKeysPtr;
-      iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x53);
+      iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_DECIMAL);
       if (iVar7 != 0) {
         local_c4 = local_c4 - local_50;
       }
       in_stack_fffffdc4 = 8.106091e-39;
-      iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0xd);
+      iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_EQUALS);
       if (iVar7 != 0) {
         local_4c = local_4c - local_60;
       }
       in_stack_fffffdcc = 8.106132e-39;
-      iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0xc);
+      iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_MINUS);
       if (iVar7 != 0) {
         local_4c = local_4c + local_60;
       }
@@ -792,7 +792,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
       }
       fVar17 = 4.06377e-44;
       pCVar16 = g_CKeysPtr;
-      iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+      iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
       pSVar6 = local_3c;
       if (iVar7 == 0) {
         core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)&stack0xfffffdd8);
@@ -815,31 +815,31 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
       }
       else {
         local_48 = g_CGamePtr->delta_time_float * (float)4;
-        iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
+        iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU);
         if (iVar7 != 0) {
           local_48 = local_48 * (float)0.10000000000000001;
         }
-        iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
+        iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD4);
         if (iVar7 != 0) {
           (local_3c->extents).x = (local_3c->extents).x - local_48;
         }
-        iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
+        iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD6);
         if (iVar7 != 0) {
           (local_3c->extents).x = (local_3c->extents).x + local_48;
         }
-        iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
+        iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_A);
         if (iVar7 != 0) {
           (local_3c->extents).y = (local_3c->extents).y - local_48;
         }
-        iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
+        iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_Q);
         if (iVar7 != 0) {
           (local_3c->extents).y = (local_3c->extents).y + local_48;
         }
-        iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
+        iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD2);
         if (iVar7 != 0) {
           (local_3c->extents).z = (local_3c->extents).z - local_48;
         }
-        iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
+        iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD8);
         if (iVar7 != 0) {
           (local_3c->extents).z = (local_3c->extents).z + local_48;
         }
@@ -855,9 +855,9 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
         }
       }
     }
-    iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0xf);
+    iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_TAB);
     if (iVar7 != 0) {
-      iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+      iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
       if (iVar7 == 0) {
         local_18 = local_18 + 1;
         if (this_ptr->vdir_box_count <= local_18) {
@@ -871,7 +871,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
         }
       }
     }
-    iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x17);
+    iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_I);
     if (iVar7 != 0) {
       iVar7 = this_ptr->vdir_box_count;
       if (iVar7 < 0xfa) {
@@ -897,7 +897,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
                   (g_CEditorToolsPtr,"Max number of boxes has been reached, can't add any more boxes.");
       }
     }
-    iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x13);
+    iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_R);
     if (iVar7 != 0) {
       iVar7 = this_ptr->vdir_box_count;
       if (iVar7 < 0xfa) {
@@ -946,7 +946,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,format);
     }
 LAB_00583c6f:
-    iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x20);
+    iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_D);
     if ((((iVar7 != 0) && (-1 < local_18)) && (local_18 < this_ptr->vdir_box_count)) &&
        (iVar4 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
                           (g_CEditorToolsPtr,"Delete the selected box?"), iVar7 = local_18,
@@ -959,11 +959,11 @@ LAB_00583c6f:
         local_18 = 0;
       }
     }
-    iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x31);
+    iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_N);
     if (iVar7 != 0) {
       local_18 = -1;
     }
-    iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3b);
+    iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F1);
     if (iVar7 != 0) {
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
       engine_2d_c_drawText_FUN_00401fd0("F1",0,0);

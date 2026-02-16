@@ -15,12 +15,12 @@ SUMMARY
 --------------------------------------------------
 Functions with parameter estimates: 5101
 Functions with no callers: 3241
-Parameter mismatches detected: 576
-Signature accuracy rate: 69.0%
+Parameter mismatches detected: 575
+Signature accuracy rate: 69.1%
 
 Mismatches by confidence:
   High confidence:   35 (multiple call sites agree)
-  Medium confidence: 83 (some agreement)
+  Medium confidence: 82 (some agreement)
   Low confidence:    458 (limited data)
 
 ====================================================================================================
@@ -93,7 +93,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     File: core/box.cpp
     Signature: void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D *this_ptr,int param1,int param2,int param3)
     Sample call sites:
-      core_curtain.cpp_CCurtain_FUN_ at 0044b22a: 0 reg [], 1 stack
+      core_curtain.cpp_CCurtain_rend at 0044b22a: 0 reg [], 1 stack
       core_door.cpp_CDoor_renderOpaq at 00480852: 0 reg [], 1 stack
       core_platfrm.cpp_CPlatform_ren at 0054d7fa: 0 reg [], 1 stack
 
@@ -430,9 +430,9 @@ MEDIUM CONFIDENCE MISMATCHES
   core_bugs.cpp_CBugs_FUN_00425fe0                   declared:1 est:2 (+1) [2 calls]
   core_charactr.cpp_CCharacter_dismember_FUN_0042b9e declared:3 est:4 (+1) [9 calls]
   core_cloth.cpp_CCloth_free_FUN_00438cb0            declared:1 est:2 (+1) [2 calls]
-  core_curtain.cpp_CCurtain_FUN_00449fc0             declared:1 est:2 (+1) [2 calls]
+  core_dfilter.cpp_CDemonFilter_freeMemory_FUN_00470 declared:1 est:2 (+1) [2 calls]
 
-  ... and 33 more
+  ... and 32 more
 
 ====================================================================================================
 LOW CONFIDENCE MISMATCHES (limited data)
@@ -458,7 +458,7 @@ MISMATCH DIRECTION ANALYSIS
 Functions where declaration has MORE params than estimated: 88
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 488
+Functions where declaration has FEWER params than estimated: 487
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
@@ -471,7 +471,7 @@ Distribution of differences (estimated - declared):
   -3 params: 9 functions
   -2 params: 16 functions
   -1 params: 53 functions
-  +1 params: 212 functions
+  +1 params: 211 functions
   +2 params: 103 functions
   +3 params: 59 functions
   +4 params: 77 functions

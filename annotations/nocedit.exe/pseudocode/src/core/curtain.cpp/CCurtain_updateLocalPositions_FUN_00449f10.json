@@ -6,13 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 33,
+    "complexity_score": 48,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 33,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
     "total_lines": 103
   },
   "cross_references": [
@@ -32,8 +34,8 @@
       ]
     ],
     "convention": "__cdecl",
-    "name": "core_curtain.cpp_CCurtain_FUN_00449f10",
-    "signature": "void __cdecl core_curtain_cpp_CCurtain_FUN_00449f10(CCurtain *this_ptr)"
+    "name": "core_curtain.cpp_CCurtain_updateLocalPositions_FUN_00449f10",
+    "signature": "void __cdecl core_curtain_cpp_CCurtain_updateLocalPositions_FUN_00449f10(CCurtain *this_ptr)"
   },
   "function_calls": [
     {
@@ -134,5 +136,13 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(CVector3f *)((int)",
+      "text": "pCVar2 = (CVector3f *)((int)(pCVar2 + 9) + 8);",
+      "type": "pointer_cast"
+    }
+  ]
 }

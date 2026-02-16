@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 12,
-    "complexity_score": 358,
+    "complexity_score": 355,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 253,
+    "pseudocode_lines": 250,
     "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 265
+    "total_lines": 262
   },
   "cross_references": [],
   "function": {
@@ -192,72 +192,72 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
+      "line": 40,
+      "match": "ROUND",
+      "text": "*(int *)(this_ptr->unk5 + 0x7d08) = (int)ROUND(dVar18);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 41,
       "match": "ROUND",
-      "text": "*(int *)(this_ptr->unk5 + 0x7d08) = (int)ROUND(dVar20);",
+      "text": "iVar12 = (int)ROUND(dVar18) + 1;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
+      "line": 43,
       "match": "ROUND",
-      "text": "iVar11 = (int)ROUND(dVar20) + 1;",
+      "text": "iVar6 = ((int)ROUND(dVar17) + 1) * iVar12;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 44,
+      "line": 51,
       "match": "ROUND",
-      "text": "iVar5 = ((int)ROUND(dVar19) + 1) * iVar11;",
+      "text": "if (0 < (int)ROUND(dVar17) + 1) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
+      "line": 66,
       "match": "ROUND",
-      "text": "if (0 < (int)ROUND(dVar19) + 1) {",
+      "text": "pfVar7[6] = (float)((int)ROUND(dVar19) + 0x20000);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 68,
+      "line": 72,
       "match": "ROUND",
-      "text": "pfVar6[6] = (float)((int)ROUND(dVar19) + 0x20000);",
+      "text": "pfVar7[7] = (float)((int)ROUND(dVar19) + 0x20000);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 75,
-      "match": "ROUND",
-      "text": "pfVar6[7] = (float)((int)ROUND(dVar19) + 0x20000);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 168,
+      "line": 165,
       "match": "fcos",
-      "text": "fVar14 = (float10)fcos(fVar18);",
+      "text": "fVar16 = (float10)fcos(fVar15);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 169,
+      "line": 166,
       "match": "fsin",
-      "text": "fVar18 = (float10)fsin(fVar18);",
+      "text": "fVar15 = (float10)fsin(fVar15);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 183,
+      "line": 180,
       "match": "ROUND",
-      "text": "*(int *)(this_ptr->unk5 + iVar11 + 0x1c) = (int)ROUND(dVar19);",
+      "text": "*(int *)(this_ptr->unk5 + iVar12 + 0x1c) = (int)ROUND(dVar19);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 188,
+      "line": 185,
       "match": "ROUND",
-      "text": "*(int *)(this_ptr->unk5 + iVar11 + 0x20) = (int)ROUND(dVar19);",
+      "text": "*(int *)(this_ptr->unk5 + iVar12 + 0x20) = (int)ROUND(dVar19);",
       "type": "decompiler_intrinsic"
     }
   ],

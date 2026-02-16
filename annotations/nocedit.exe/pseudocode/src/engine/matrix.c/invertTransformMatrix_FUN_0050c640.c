@@ -22,14 +22,13 @@ void __cdecl engine_matrix_c_invertTransformMatrix_FUN_0050c640(void)
   float fVar11;
   float fVar12;
   float fVar13;
-  float10 fVar14;
-  float10 fVar15;
-  float10 fVar16;
-  float10 fVar17;
-  float10 fVar18;
-  float10 fVar19;
+  double dVar14;
+  double dVar15;
+  double dVar16;
+  double dVar17;
+  double dVar18;
+  double dVar19;
   double dVar20;
-  double dVar21;
   uint uStack_54;
   
   fVar3 = (float)g_TransformMatrix.m[0].x * (float)1.52587890625e-05;
@@ -54,38 +53,24 @@ void __cdecl engine_matrix_c_invertTransformMatrix_FUN_0050c640(void)
   g_TransformMatrixCopy.m[2].y = g_TransformMatrix.m[2].y;
   g_TransformMatrixCopy.m[2].z = g_TransformMatrix.m[2].z;
   fVar13 = (float)65536 / ((fVar3 * fVar1 - fVar8 * fVar10) + fVar9 * fVar2);
-  fVar14 = (float10)-(fVar8 * fVar6 - fVar9 * fVar7) * (float10)fVar13;
-  fVar15 = ((float10)fVar8 * (float10)fVar5 - (float10)fVar9 * (float10)fVar4) * (float10)fVar13;
-  fVar16 = (float10)-fVar10 * (float10)fVar13;
-  fVar17 = (float10)(fVar3 * fVar6 - fVar9 * fVar12) * (float10)fVar13;
-  fVar18 = (float10)fVar2 * (float10)fVar13;
-  dVar20 = round((double)(fVar1 * fVar13));
-  g_InverseMatrix.m[0].x = (int)ROUND(dVar20);
-  fVar19 = (float10)uStack_54 * (float10)7.418788e-39;
-  dVar20 = round((double)fVar14);
-  g_InverseMatrix.m[0].y = (int)ROUND(dVar20);
-  fVar14 = (float10)(float)-((float10)fVar3 * (float10)fVar7 - (float10)fVar8 * (float10)fVar12) *
-           (float10)7.418816e-39;
-  dVar20 = round((double)fVar15);
-  fVar15 = (float10)dVar20;
-  dVar20 = round((double)fVar16);
-  fVar16 = (float10)dVar20;
-  dVar20 = round((double)fVar17);
-  dVar21 = round
-                     ((double)(-((float10)fVar3 * (float10)fVar5 - (float10)fVar9 * (float10)fVar11)
-                              * (float10)fVar13));
-  fVar17 = (float10)dVar21;
-  dVar21 = round((double)fVar18);
-  fVar18 = (float10)dVar21;
-  dVar21 = round((double)fVar19);
-  fVar19 = (float10)dVar21;
-  dVar21 = round((double)fVar14);
-  g_InverseMatrix.m[0].z = (int)ROUND(fVar15);
-  g_InverseMatrix.m[1].x = (int)ROUND(fVar16);
-  g_InverseMatrix.m[1].y = (int)ROUND(dVar20);
-  g_InverseMatrix.m[1].z = (int)ROUND(fVar17);
-  g_InverseMatrix.m[2].x = (int)ROUND(fVar18);
-  g_InverseMatrix.m[2].y = (int)ROUND(fVar19);
-  g_InverseMatrix.m[2].z = (int)ROUND(dVar21);
+  dVar14 = round((double)(fVar1 * fVar13));
+  g_InverseMatrix.m[0].x = (int)ROUND(dVar14);
+  dVar14 = round((double)(-(fVar8 * fVar6 - fVar9 * fVar7) * fVar13));
+  g_InverseMatrix.m[0].y = (int)ROUND(dVar14);
+  dVar14 = round((double)((fVar8 * fVar5 - fVar9 * fVar4) * fVar13));
+  dVar15 = round((double)(-fVar10 * fVar13));
+  dVar16 = round((double)((fVar3 * fVar6 - fVar9 * fVar12) * fVar13));
+  dVar17 = round((double)(-(fVar3 * fVar5 - fVar9 * fVar11) * fVar13));
+  dVar18 = round((double)(fVar2 * fVar13));
+  dVar19 = round((double)(uStack_54 * 7.418788e-39));
+  dVar20 = round((double)(-(fVar3 * fVar7 - fVar8 * fVar12) * 7.418816e-39))
+  ;
+  g_InverseMatrix.m[0].z = (int)ROUND(dVar14);
+  g_InverseMatrix.m[1].x = (int)ROUND(dVar15);
+  g_InverseMatrix.m[1].y = (int)ROUND(dVar16);
+  g_InverseMatrix.m[1].z = (int)ROUND(dVar17);
+  g_InverseMatrix.m[2].x = (int)ROUND(dVar18);
+  g_InverseMatrix.m[2].y = (int)ROUND(dVar19);
+  g_InverseMatrix.m[2].z = (int)ROUND(dVar20);
   return;
 }

@@ -600,7 +600,7 @@ LAB_005116c3:
     }
     g_GraphicsCardCount = iVar3;
     g_GraphicsCardHandle = iVar5;
-    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if (iVar4 != 0) {
       return;
     }

@@ -46,7 +46,7 @@ void __cdecl core_simbox_cpp_CSimBox_process_FUN_00588f20(CSimBox *this_ptr,floa
     }
   }
   if (this_ptr->type == 0) {
-    iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x13);
+    iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_R);
     if (iVar3 != 0) {
       (this_ptr->base).location.position.x = *(float *)(this_ptr->unk + 4);
       (this_ptr->base).location.position.y = *(float *)(this_ptr->unk + 8);

@@ -641,9 +641,9 @@
         </killedbycall>
     </prototype>
     <prototype name="__fpureg_safe" extrapop="0" stackshift="0">
-        <!-- FPU register convention preserving EAX and ST1: for round/floor/ceil called in loops -->
-        <!-- Input: ST0 (value to process), ST1 preserved across call -->
-        <!-- Output: ST0 (result), EAX/ECX/EDX preserved -->
+        <!-- FPU register convention for round (FRNDINT wrapper): only modifies ST0.
+             All GPRs and ST1-ST7 are preserved. Used when callers park values on FPU stack
+             across the call (e.g., FXCH STn after return). -->
         <input>
             <pentry minsize="4" maxsize="10" metatype="float"><register name="ST0" /></pentry>
         </input>
@@ -660,10 +660,19 @@
             <register name="EDI" />
             <register name="EBP" />
             <register name="ST1" />
+            <register name="ST2" />
+            <register name="ST3" />
+            <register name="ST4" />
+            <register name="ST5" />
+            <register name="ST6" />
+            <register name="ST7" />
         </unaffected>
     </prototype>
     <prototype name="__softfp_double" extrapop="0" stackshift="0">
-        <!-- Software FP: Two doubles as split uints in EAX:EDX and EBX:ECX, returns EDX:EAX -->
+        <!-- Software FP: Two doubles as split uints in EAX:EDX and EBX:ECX, returns EDX:EAX.
+             WARNING: This kills EBX! Only use for Watcom software FP intrinsics (__FDA, __FDS, etc.)
+             that pass doubles in register pairs. Do NOT use for CRT functions like floor/ceil/modf
+             that take stack params - use __crtmath instead. -->
         <input>
             <pentry minsize="4" maxsize="4"><register name="EAX" /></pentry>
             <pentry minsize="4" maxsize="4"><register name="EDX" /></pentry>

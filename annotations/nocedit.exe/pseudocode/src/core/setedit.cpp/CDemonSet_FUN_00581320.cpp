@@ -28,16 +28,16 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581320(CDemonSet *this_ptr)
       core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(this_ptr,in_stack_00000008);
       core_set_cpp_CDemonSet_FUN_0056c1a0(this_ptr);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-      iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
+      iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
       if (iVar1 != 0) {
         engine_2d_c_clearInputAndWait_FUN_00403260();
         core_set_cpp_CDemonSet_FUN_0056d2d0(this_ptr);
         core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0(g_CGamePtr);
         return;
       }
-      iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2e);
+      iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_C);
     } while (iVar1 == 0);
-    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
     if (iVar1 == 0) {
       in_stack_00000008 = in_stack_00000008 + 1;
       if (this_ptr->camera_count <= in_stack_00000008) {

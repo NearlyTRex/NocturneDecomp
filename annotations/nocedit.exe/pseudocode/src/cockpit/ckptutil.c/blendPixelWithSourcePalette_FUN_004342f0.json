@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 221,
-    "complexity_score": 125,
+    "complexity_score": 123,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 15,
-    "pseudocode_lines": 65,
+    "pseudocode_lines": 63,
     "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 286
+    "total_lines": 284
   },
   "cross_references": [
     {
@@ -283,35 +283,35 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 26,
+      "line": 25,
       "match": "(ushort *)((int)",
-      "text": "uVar2 = *(ushort *)((int)g_ScreenBufferArray[y] + x * 2);",
+      "text": "uVar3 = *(ushort *)((int)g_ScreenBufferArray[y] + x * 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 48,
+      "line": 45,
       "match": "ROUND",
-      "text": "local_3c = (uint)(longlong)ROUND(dVar12);",
+      "text": "local_3c = (uint)(longlong)ROUND(dVar11);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 49,
+      "line": 46,
       "match": "ROUND",
-      "text": "local_34 = (uint)(longlong)ROUND(dVar13);",
+      "text": "local_34 = (uint)(longlong)ROUND(dVar12);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
+      "line": 50,
       "match": "ROUND",
-      "text": "local_38 = (uint)(longlong)ROUND(dVar12);",
+      "text": "local_38 = (uint)(longlong)ROUND(dVar11);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 62,
+      "line": 60,
       "match": "(ushort *)((int)",
       "text": "*(ushort *)((int)g_ScreenBufferArray[y] + x * 2) =",
       "type": "pointer_cast"

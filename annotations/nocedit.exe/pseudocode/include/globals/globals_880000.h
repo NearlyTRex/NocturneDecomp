@@ -16,16 +16,16 @@ extern CDemonActorType g_CCrossbowClassInfo;
 extern CDemonActorType g_CCurtainClassInfo;
 
 // CVector3f[100]
-extern CVector3f DAT_008879c0[100];
+extern CVector3f CVector3f_ARRAY_008879c0[100];
 
 // SCollisionInfo[100]
-extern SCollisionInfo DAT_00887e70[100];
+extern SCollisionInfo SCollisionInfo_ARRAY_00887e70[100];
 
 // char[500000]
 extern char g_CameraLoadImageReadBuffer[500000];
 
-// undefined4
-extern undefined4 DAT_008879bc;
+// int
+extern int INT_008879bc;
 
 // void*
 extern void* g_CramAlgorithmState;

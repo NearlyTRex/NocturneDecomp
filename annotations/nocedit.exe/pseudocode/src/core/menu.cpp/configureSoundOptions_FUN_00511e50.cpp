@@ -797,7 +797,7 @@ LAB_005126f5:
       core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
     }
     uVar22 = CONCAT44(uVar24,1);
-    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if (iVar4 != 0) {
       return;
     }

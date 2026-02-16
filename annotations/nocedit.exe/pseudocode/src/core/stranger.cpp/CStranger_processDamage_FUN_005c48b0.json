@@ -4,13 +4,13 @@
       {
         "category": "incompatible_types",
         "column": 19,
-        "line": 81,
+        "line": 80,
         "message": "assigning to 'int' from incompatible type 'void'"
       },
       {
         "category": "incompatible_types",
         "column": 13,
-        "line": 116,
+        "line": 115,
         "message": "assigning to 'int' from incompatible type 'void'"
       }
     ],
@@ -19,16 +19,16 @@
   },
   "complexity": {
     "assembly_lines": 299,
-    "complexity_score": 171,
+    "complexity_score": 140,
     "cross_reference_count": 0,
     "function_call_count": 14,
     "global_count": 16,
-    "pseudocode_lines": 116,
-    "suspect_count": 5,
+    "pseudocode_lines": 115,
+    "suspect_count": 2,
     "suspect_types": [
       "suspect_float"
     ],
-    "total_lines": 415
+    "total_lines": 414
   },
   "cross_references": [],
   "function": {
@@ -303,37 +303,16 @@
   "suspects": [
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 55,
-      "match": "1.4013e-45",
-      "text": "if (damage_info->gore_multiplier == 1.4013e-45) {",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 57,
+      "line": 56,
       "match": "1.4013e-45",
       "text": "force_immediate = 1.4013e-45;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 65,
+      "line": 64,
       "match": "1.4013e-45",
       "text": "force_immediate = 1.4013e-45;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 73,
-      "match": "1.4013e-45",
-      "text": "if (damage_info->gore_multiplier != 1.4013e-45) {",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 94,
-      "match": "1.47136e-43",
-      "text": "if (((damage_info->gore_multiplier != 1.47136e-43) &&",
       "type": "suspect_float"
     }
   ],

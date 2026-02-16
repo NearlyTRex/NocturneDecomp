@@ -1,12 +1,12 @@
 // Name: crt_math.c_floor_FUN_005feb90
 // Address: 005feb90
 // Address Range: [[005feb90, 005febd4]]
-// Convention: __softfp_double
-// Signature: double __softfp_double crt_math_c_floor_FUN_005feb90(double input_value)
+// Convention: __crtmath
+// Signature: double __crtmath crt_math_c_floor_FUN_005feb90(double input_value)
 
 #include "nocturne.h"
 
-double __softfp_double floor(double input_value)
+double __crtmath floor(double input_value)
 
 {
   double dVar1;

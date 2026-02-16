@@ -4,7 +4,7 @@
 #include "system/basetypes.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CKeyFramedModel.h"
-#include "types/funcdefs/FileSearchHandler.h"
+#include "types/funcdefs/FileSearchHandlerFunc.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x2C10000
@@ -17,8 +17,8 @@ extern CDemonActorType g_CDoorClassInfo;
 // CKeyFramedModel*
 extern CKeyFramedModel* g_KeyFrameModelPoolEnd;
 
-// FileSearchHandler*[5]
-extern FileSearchHandler* g_SearchHandlers[5];
+// FileSearchHandlerFunc*[5]
+extern FileSearchHandlerFunc* g_SearchHandlers[5];
 
 // char[72]
 extern char g_PolyDataConversionBuffer[72];

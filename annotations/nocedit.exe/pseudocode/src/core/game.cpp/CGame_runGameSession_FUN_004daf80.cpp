@@ -155,7 +155,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
       iVar3 = 0;
       core_game_cpp_CGame_processFrame_FUN_004da100(this_ptr);
       if (g_CheatSystemEnabled == 0) {
-        iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
+        iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
         if (iVar4 != 0) {
           shape_edittool_cpp_CPickList_clear_FUN_004a5770(&g_CPickList);
           this_ptr->wait_for_keypress = 0;
@@ -299,7 +299,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
       iVar3 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
                         (&g_HeroActors[g_LocalHeroIndex]->base);
       if (iVar3 == 2) {
-        iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1c);
+        iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_RETURN);
         if (iVar3 != 0) goto LAB_004db434;
         if (local_14 < 0.0) {
           uVar6 = core_game_cpp_CGame_fadeIn_FUN_004e0b90(this_ptr);

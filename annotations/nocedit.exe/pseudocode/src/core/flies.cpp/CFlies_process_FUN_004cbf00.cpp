@@ -18,10 +18,10 @@ void __cdecl core_flies_cpp_CFlies_process_FUN_004cbf00(CFlies *this_ptr,float d
   float *pfVar6;
   char *pcVar7;
   int iVar8;
-  char *extraout_EBX;
   CVector3f local_44;
   CVector3f local_38;
-  byte local_2c [20];
+  CVector3f local_2c;
+  double local_20;
   int local_18;
   
   if (*(int *)(this_ptr->unk3 + 4) != 0) {
@@ -32,7 +32,7 @@ void __cdecl core_flies_cpp_CFlies_process_FUN_004cbf00(CFlies *this_ptr,float d
       local_38.z = (pCVar1->location).position.z - (this_ptr->base).location.position.z;
       if (0.0 < SQRT(local_38.z * local_38.z + local_38.x * local_38.x + local_38.y * local_38.y)) {
         pCVar4 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
-                           (&this_ptr->base,(CVector3f *)local_2c,&local_38);
+                           (&this_ptr->base,&local_2c,&local_38);
         local_44.x = pCVar4->x * 0.5f;
         local_44.y = pCVar4->y * 0.5f;
         local_44.z = 0.5f * pCVar4->z;
@@ -90,14 +90,13 @@ void __cdecl core_flies_cpp_CFlies_process_FUN_004cbf00(CFlies *this_ptr,float d
         fVar3 = *(float *)pcVar7 + delta_time * fVar2;
         *(float *)pcVar7 = fVar3;
         input_value = (double)fVar3;
-        pcVar5 = pcVar7;
         if (1.0 <= input_value) {
-          local_2c._8_8_ = floor(input_value);
-          *(float *)extraout_EBX = *(float *)extraout_EBX - (float)(double)local_2c._8_8_;
-          if (extraout_EBX + 4 != extraout_EBX + 0x10) {
-            *(float *)(extraout_EBX + 4) = *(float *)(extraout_EBX + 0x10);
-            *(float *)(extraout_EBX + 8) = *(float *)(extraout_EBX + 0x14);
-            *(float *)(extraout_EBX + 0xc) = *(float *)(extraout_EBX + 0x18);
+          local_20 = floor(input_value);
+          *(float *)pcVar7 = *(float *)pcVar7 - (float)local_20;
+          if (pcVar7 + 4 != pcVar7 + 0x10) {
+            *(float *)(pcVar7 + 4) = *(float *)(pcVar7 + 0x10);
+            *(float *)(pcVar7 + 8) = *(float *)(pcVar7 + 0x14);
+            *(float *)(pcVar7 + 0xc) = *(float *)(pcVar7 + 0x18);
           }
           if (pcVar7 + 0x10 != pcVar7 + 0x1c) {
             *(float *)(pcVar7 + 0x10) = *(float *)(pcVar7 + 0x1c);
@@ -110,14 +109,13 @@ void __cdecl core_flies_cpp_CFlies_process_FUN_004cbf00(CFlies *this_ptr,float d
             *(float *)(pcVar7 + 0x24) = *(float *)(pcVar7 + 0x30);
           }
           pfVar6 = core_flies_cpp_CFlies_FUN_004cc820(this_ptr);
-          pcVar5 = extraout_EBX;
           if ((float *)(pcVar7 + 0x28) != pfVar6) {
             *(float *)(pcVar7 + 0x28) = *pfVar6;
             *(float *)(pcVar7 + 0x2c) = pfVar6[1];
             *(float *)(pcVar7 + 0x30) = pfVar6[2];
           }
         }
-        pcVar7 = pcVar5 + 0x34;
+        pcVar7 = pcVar7 + 0x34;
         local_18 = local_18 + 1;
       } while (local_18 < this_ptr->count);
     }

@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 199,
-    "complexity_score": 144,
+    "complexity_score": 139,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 2,
-    "pseudocode_lines": 84,
+    "pseudocode_lines": 79,
     "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 283
+    "total_lines": 278
   },
   "cross_references": [
     {
@@ -334,37 +334,37 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 30,
       "match": "(float *)((int)",
       "text": "local_58.y = *(float *)((int)light_data + 4) - end_position->y;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 31,
       "match": "(float *)((int)",
       "text": "local_58.z = *(float *)((int)light_data + 8) - end_position->z;",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
+      "line": 37,
+      "match": "ROUND",
+      "text": "iStack_2c = (int)ROUND(dVar5);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 41,
       "match": "ROUND",
-      "text": "iStack_2c = (int)ROUND(dVar8);",
+      "text": "iStack_2c = (int)ROUND(dVar5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 45,
       "match": "ROUND",
-      "text": "iStack_2c = (int)ROUND(dVar8);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 49,
-      "match": "ROUND",
-      "text": "local_28 = (int)ROUND(dVar8);",
+      "text": "local_28 = (int)ROUND(dVar5);",
       "type": "decompiler_intrinsic"
     }
   ]

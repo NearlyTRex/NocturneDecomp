@@ -4,91 +4,67 @@
       {
         "category": "undeclared_identifier",
         "column": 18,
-        "line": 35,
+        "line": 28,
         "message": "use of undeclared identifier 'DAT_02f7a02c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 51,
-        "line": 36,
+        "line": 29,
         "message": "use of undeclared identifier 'DAT_02f7a094'"
       },
       {
         "category": "format_error",
         "column": 33,
-        "line": 52,
+        "line": 45,
         "message": "format specifies type 'char *' but the argument has type 'SMotion *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "other",
+        "column": 29,
+        "line": 45,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "undeclared_identifier",
         "column": 38,
-        "line": 56,
+        "line": 49,
         "message": "use of undeclared identifier 'DAT_02f7a02c'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 33,
-        "line": 64,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
-        "category": "format_error",
-        "column": 33,
-        "line": 64,
-        "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 65,
-        "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
         "category": "undeclared_identifier",
         "column": 44,
-        "line": 74,
+        "line": 65,
         "message": "use of undeclared identifier 'DAT_0063b719'"
       },
       {
         "category": "undeclared_identifier",
         "column": 44,
-        "line": 81,
+        "line": 70,
         "message": "use of undeclared identifier 'DAT_0063b71e'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 19,
-        "line": 84,
-        "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "undeclared_identifier",
         "column": 46,
-        "line": 95,
+        "line": 81,
         "message": "use of undeclared identifier 'DAT_0063b727'"
       },
       {
         "category": "undeclared_identifier",
         "column": 46,
-        "line": 101,
+        "line": 87,
         "message": "use of undeclared identifier 'DAT_0063b722'"
       },
       {
         "category": "undeclared_identifier",
         "column": 44,
-        "line": 107,
+        "line": 92,
         "message": "use of undeclared identifier 'DAT_0063b72c'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 19,
-        "line": 110,
-        "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "undeclared_identifier",
         "column": 44,
-        "line": 115,
+        "line": 98,
         "message": "use of undeclared identifier 'DAT_0063b730'"
       }
     ],
@@ -97,18 +73,16 @@
   },
   "complexity": {
     "assembly_lines": 359,
-    "complexity_score": 316,
+    "complexity_score": 219,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 26,
-    "pseudocode_lines": 121,
-    "suspect_count": 18,
+    "pseudocode_lines": 104,
+    "suspect_count": 11,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "extra_output",
       "undefined_data"
     ],
-    "total_lines": 480
+    "total_lines": 463
   },
   "cross_references": [
     {
@@ -502,129 +476,80 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
-      "match": "extraout_EBX",
-      "text": "int extraout_EBX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
-      "match": "extraout_EBX_00",
-      "text": "int extraout_EBX_00;",
-      "type": "extra_output"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 25,
+      "line": 18,
       "match": "DAT_02f7c538",
       "text": "DAT_02f7c538 = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 28,
+      "line": 21,
       "match": "DAT_02f7a02c",
       "text": "((*(int *)(&DAT_02f7a02c + INT_02f7c52c * 0xec) == 0xd &&",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 29,
+      "line": 22,
       "match": "DAT_02f7a094",
       "text": "(this_ptr = *(CDeformableModelInstance **)(&DAT_02f7a094 + INT_02f7c52c * 0xec),",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 37,
+      "line": 30,
       "match": "DAT_02f7c538",
       "text": "DAT_02f7c538 = 1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 42,
       "match": "DAT_02f7a02c",
       "text": "((CActorProperty *)(&DAT_02f7a02c + INT_02f7c52c * 0xec),",
       "type": "undefined_data"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 57,
-      "match": "SUB84",
-      "text": "(local_f4,\"%6.2f\",SUB84((double)local_f8,0),",
-      "type": "decompiler_intrinsic"
+      "description": "Undefined global data reference",
+      "line": 58,
+      "match": "DAT_0063b719",
+      "text": "iVar2 = core_msnedit_cpp_FUN_00536cd0(&DAT_0063b719,local_24 + 7,local_1c,1,0);",
+      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 67,
-      "match": "DAT_0063b719",
-      "text": "iVar3 = core_msnedit_cpp_FUN_00536cd0(&DAT_0063b719,local_24 + 7,local_1c,1,0);",
+      "line": 63,
+      "match": "DAT_0063b71e",
+      "text": "iVar2 = core_msnedit_cpp_FUN_00536cd0(&DAT_0063b71e,iVar1 + 0x23,local_1c,0,0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 74,
-      "match": "DAT_0063b71e",
-      "text": "iVar3 = core_msnedit_cpp_FUN_00536cd0(&DAT_0063b71e,iVar1,local_1c,0,0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 77,
-      "match": "SUB84",
-      "text": "uStack_30 = SUB84(dVar4,0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 85,
-      "match": "extraout_EBX",
-      "text": "iVar1 = extraout_EBX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 88,
       "match": "DAT_0063b727",
-      "text": "iVar3 = core_msnedit_cpp_FUN_00536cd0(&DAT_0063b727,iVar1 + 0x15,local_20,1,0);",
+      "text": "iVar2 = core_msnedit_cpp_FUN_00536cd0(&DAT_0063b727,iVar1 + 0x38,local_1c,1,0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 94,
+      "line": 80,
       "match": "DAT_0063b722",
-      "text": "iVar3 = core_msnedit_cpp_FUN_00536cd0(&DAT_0063b722,iVar1 + 0x15,local_20,1,0);",
+      "text": "iVar2 = core_msnedit_cpp_FUN_00536cd0(&DAT_0063b722,iVar1 + 0x38,local_1c,1,0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 100,
+      "line": 85,
       "match": "DAT_0063b72c",
-      "text": "iVar3 = core_msnedit_cpp_FUN_00536cd0(&DAT_0063b72c,iVar1,local_20,0,0);",
+      "text": "iVar2 = core_msnedit_cpp_FUN_00536cd0(&DAT_0063b72c,iVar1 + 0x54,local_1c,0,0);",
       "type": "undefined_data"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 103,
-      "match": "SUB84",
-      "text": "uStack_34 = SUB84(dVar4,0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 106,
-      "match": "extraout_EBX_00",
-      "text": "iVar1 = extraout_EBX_00;",
-      "type": "extra_output"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 108,
+      "line": 91,
       "match": "DAT_0063b730",
-      "text": "iVar1 = core_msnedit_cpp_FUN_00536cd0(&DAT_0063b730,iVar1 + 0x15,local_20,1,0);",
+      "text": "iVar1 = core_msnedit_cpp_FUN_00536cd0(&DAT_0063b730,iVar1 + 0x69,local_1c,1,0);",
       "type": "undefined_data"
     }
   ]

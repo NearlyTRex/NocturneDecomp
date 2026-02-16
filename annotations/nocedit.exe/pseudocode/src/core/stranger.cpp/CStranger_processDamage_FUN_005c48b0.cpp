@@ -25,8 +25,7 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_005c48b0(CStranger *t
     damage_info->damage_amount = 0.0;
   }
   core_hero_cpp_CHero_FUN_004f3580(&this_ptr->base);
-  if ((0.0 < (float)(this_ptr->base).no_collision_flag) && (0xb < (int)damage_info->gore_multiplier)
-     ) {
+  if ((0.0 < (float)(this_ptr->base).no_collision_flag) && (0xb < damage_info->damage_type)) {
     damage_info->damage_amount = 0.0;
     return;
   }
@@ -38,7 +37,7 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_005c48b0(CStranger *t
   pCVar2 = g_CGamePtr;
   (this_ptr->base).base.hit_points = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   this_ptr_01 = g_CConsolePtr;
-  if (((pCVar2->auto_use_health != 0) && (0xb < (int)damage_info->gore_multiplier)) &&
+  if (((pCVar2->auto_use_health != 0) && (0xb < damage_info->damage_type)) &&
      ((this_ptr->base).base.hit_points <= 0.0)) {
     (this_ptr->base).base.hit_points = 0.0;
     engine_console_cpp_CConsole_printf_FUN_00441890(this_ptr_01,"Using auto health\n");
@@ -59,7 +58,7 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_005c48b0(CStranger *t
       if (pSVar4->state_index != 0x28) {
         if (((this_ptr->base).ladder_to_climb == (CDemonActor *)0x0) &&
            (this_ptr->ladder_to_descend == (CDemonActor *)0x0)) {
-          if (damage_info->gore_multiplier == 1.4013e-45) {
+          if (damage_info->damage_type == 1) {
             iVar3 = 0x27;
             force_immediate = 1.4013e-45;
           }
@@ -77,7 +76,7 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_005c48b0(CStranger *t
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&(this_ptr->base).base.model.motion_controller,iVar3,(int)force_immediate);
         sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->unk14);
-        if (damage_info->gore_multiplier != 1.4013e-45) {
+        if (damage_info->damage_type != 1) {
           iVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                             ((CDemonActor *)this_ptr,"stranger_die??.wav");
           this_ptr->unk14 = iVar3;
@@ -98,7 +97,7 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_005c48b0(CStranger *t
     goto LAB_005c4ae0;
   }
   if (damage_info->damage_amount <= 0.0) goto LAB_005c4ae0;
-  if (((damage_info->gore_multiplier != 1.47136e-43) &&
+  if (((damage_info->damage_type != 0x69) &&
       ((this_ptr->base).ladder_to_climb == (CDemonActor *)0x0)) &&
      ((this_ptr->ladder_to_descend == (CDemonActor *)0x0 && (this_ptr->action_pending == 0)))) {
     pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c790

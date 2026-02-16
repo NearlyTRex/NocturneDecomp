@@ -13,7 +13,8 @@ void __cdecl core_curtain_cpp_CCurtain_archive_FUN_0044b3e0(CCurtain *this_ptr)
   
   core_actor_cpp_CDemonActor_archive_FUN_0040c1c0(&this_ptr->base);
   core_actor_cpp_archiveVector_FUN_0040b340(&this_ptr->curtain_size,"curtainSize");
-  core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->curtain_texture,"curtainTexture");
+  core_actor_cpp_archiveString_FUN_0040b5c0
+            ((this_ptr->curtain_texture).texture_name,"curtainTexture");
   core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->opacity,"opacity");
   local_8 = 0;
   if (1 < g_CCurtainClassVersion) {

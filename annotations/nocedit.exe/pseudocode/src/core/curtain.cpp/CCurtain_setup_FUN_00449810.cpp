@@ -12,21 +12,23 @@ void __cdecl core_curtain_cpp_CCurtain_setup_FUN_00449810(CCurtain *this_ptr)
   float fVar1;
   float fVar2;
   float fVar3;
-  uint uVar4;
-  int iVar5;
-  int iVar6;
-  char *pcVar7;
-  float fVar8;
-  SCurtainVertex *pSVar9;
-  SCurtainVertex *pSVar10;
-  char *pcVar11;
-  float fVar12;
-  int iVar13;
-  byte bVar14;
-  float10 fVar15;
-  float10 fVar16;
-  float10 fVar17;
-  double dVar18;
+  float fVar4;
+  float fVar5;
+  float fVar6;
+  int iVar7;
+  int iVar8;
+  CVector3f *pCVar9;
+  SMRGLPrimitiveQuad *pSVar10;
+  float fVar11;
+  SCurtainVertex *pSVar12;
+  SCurtainVertex *pSVar13;
+  SMRGLPrimitiveQuad *pSVar14;
+  float fVar15;
+  int iVar16;
+  uint *puVar17;
+  uint *puVar18;
+  byte bVar19;
+  double dVar20;
   int local_6c;
   SCurtainVertex *local_64;
   float local_48;
@@ -39,263 +41,234 @@ void __cdecl core_curtain_cpp_CCurtain_setup_FUN_00449810(CCurtain *this_ptr)
   int local_18;
   int local_14;
   
-  bVar14 = 0;
+  bVar19 = 0;
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-            (g_CDemonRendererPtr2,(SMRGLTextureBasic *)this_ptr->unk1);
+            (g_CDemonRendererPtr2,&this_ptr->curtain_texture);
   while( true ) {
-    fVar3 = 1.0 / this_ptr->patch_size;
+    fVar4 = 1.0 / this_ptr->patch_size;
     fVar2 = (this_ptr->curtain_size).y;
-    dVar18 = round((double)((this_ptr->curtain_size).x * fVar3));
-    fVar1 = (float)(int)ROUND(dVar18);
-    dVar18 = round((double)(fVar2 * fVar3));
-    fVar2 = (float)(int)ROUND(dVar18);
-    iVar5 = (int)fVar2 + 1;
-    *(int *)(this_ptr->unk4 + 4) = local_20;
-    *(float *)(this_ptr->unk4 + 8) = fVar2;
-    iVar6 = ((int)fVar1 + 1) * iVar5;
-    this_ptr->unk2 = iVar6;
-    if (iVar6 < 0x3e9) break;
+    dVar20 = round((double)((this_ptr->curtain_size).x * fVar4));
+    fVar1 = (float)(int)ROUND(dVar20);
+    dVar20 = round((double)(fVar2 * fVar4));
+    fVar2 = (float)(int)ROUND(dVar20);
+    iVar7 = (int)fVar2 + 1;
+    (this_ptr->mesh).grid_cols = local_20;
+    (this_ptr->mesh).grid_rows = (int)fVar2;
+    iVar8 = ((int)fVar1 + 1) * iVar7;
+    this_ptr->vertex_count = iVar8;
+    if (iVar8 < 0x3e9) break;
     this_ptr->patch_size = this_ptr->patch_size * (float)2;
   }
-  fVar12 = 0.0;
-  fVar3 = (this_ptr->curtain_size).y;
-  if (0 < iVar5) {
+  fVar15 = 0.0;
+  fVar4 = (this_ptr->curtain_size).y;
+  if (0 < iVar7) {
     do {
-      fVar8 = 0.0;
+      fVar11 = 0.0;
       if (0 < local_34) {
-        local_1c = local_24 * 0x74 + iVar5;
+        local_1c = local_24 * 0x74 + iVar7;
         do {
           *(uint *)(local_14 + 0x14) = 0;
           *(int *)(local_14 + 0xc) = local_24;
           *(int *)(local_14 + 0x10) = local_30;
-          if (((((fVar12 == 0.0) && (this_ptr->cinched_top != 0)) ||
-               ((fVar12 == fVar1 && (this_ptr->cinched_bottom != 0)))) ||
-              ((fVar8 == 0.0 && (this_ptr->cinched_left != 0)))) ||
-             ((fVar8 == fVar1 && (this_ptr->cinched_right != 0)))) {
+          if (((((fVar15 == 0.0) && (this_ptr->cinched_top != 0)) ||
+               ((fVar15 == fVar1 && (this_ptr->cinched_bottom != 0)))) ||
+              ((fVar11 == 0.0 && (this_ptr->cinched_left != 0)))) ||
+             ((fVar11 == fVar1 && (this_ptr->cinched_right != 0)))) {
             *(uint *)(local_14 + 0x68) = 1;
           }
           else {
             *(uint *)(local_14 + 0x68) = 0;
           }
           *(uint *)(local_14 + 0x70) = 0;
-          if ((fVar8 == 0.0) && (fVar12 == 0.0)) {
+          if ((fVar11 == 0.0) && (fVar15 == 0.0)) {
             *(uint *)(local_14 + 0x70) = 1;
           }
-          if ((fVar8 == 0.0) && (fVar12 == fVar3)) {
+          if ((fVar11 == 0.0) && (fVar15 == fVar4)) {
             *(uint *)(local_14 + 0x70) = 1;
           }
-          if ((fVar8 == fVar2) && (fVar12 == 0.0)) {
+          if ((fVar11 == fVar2) && (fVar15 == 0.0)) {
             *(uint *)(local_14 + 0x70) = 1;
           }
-          if ((fVar8 == local_48) && (fVar12 == local_44)) {
+          if ((fVar11 == local_48) && (fVar15 == local_44)) {
             *(uint *)(local_14 + 0x70) = 1;
           }
           *(uint *)(local_14 + 0x44) = 0;
-          if (0 < (int)fVar12) {
+          if (0 < (int)fVar15) {
             *(int *)(local_14 + 0x48 + *(int *)(local_14 + 0x44) * 4) = local_20;
             *(int *)(local_14 + 0x44) = *(int *)(local_14 + 0x44) + 1;
           }
-          if (0 < (int)fVar8) {
+          if (0 < (int)fVar11) {
             *(int *)(local_14 + 0x48 + *(int *)(local_14 + 0x44) * 4) = local_1c + -1;
             *(int *)(local_14 + 0x44) = *(int *)(local_14 + 0x44) + 1;
           }
-          if ((int)fVar8 < (int)fVar1 + 1) {
+          if ((int)fVar11 < (int)fVar1 + 1) {
             *(int *)(local_14 + 0x48 + *(int *)(local_14 + 0x44) * 4) = local_1c + 1;
             *(int *)(local_14 + 0x44) = *(int *)(local_14 + 0x44) + 1;
           }
-          fVar15 = (float10)(this_ptr->curtain_size).x;
-          fVar16 = (float10)252;
-          fVar17 = (float10)65536;
-          dVar18 = round
-                             ((double)(((fVar15 * (float10)0.5 +
-                                        (float10)*(float *)(local_14 + 0xc)) / fVar15) * fVar16 *
-                                      fVar17));
-          iVar6 = (int)ROUND(dVar18);
-          *(int *)(local_14 + 0x18) = iVar6 + 0x20000;
-          fVar8 = (float)((int)fVar8 + 1);
+          fVar3 = (this_ptr->curtain_size).x;
+          fVar6 = (float)252;
+          fVar5 = (float)65536;
+          dVar20 = round
+                             ((double)(((fVar3 * (float)0.5 + *(float *)(local_14 + 0xc)
+                                        ) / fVar3) * fVar6 * fVar5));
+          iVar8 = (int)ROUND(dVar20);
+          *(int *)(local_14 + 0x18) = iVar8 + 0x20000;
+          fVar11 = (float)((int)fVar11 + 1);
           local_1c = local_18 + 0x74;
-          dVar18 = round
-                             ((double)(fVar17 * ((float10)1 -
-                                                (float10)*(float *)(local_14 + 0x10) /
-                                                (float10)(this_ptr->curtain_size).y) * fVar16));
-          local_18 = (int)ROUND(dVar18);
+          dVar20 = round
+                             ((double)(fVar5 * (1.0 - *(float *)(local_14 + 0x10) /
+                                                      (this_ptr->curtain_size).y) * fVar6));
+          local_18 = (int)ROUND(dVar20);
           *(int *)(local_14 + 0x1c) = local_18 + 0x20000;
           local_24 = local_24 + 1;
-          local_14 = iVar6;
-        } while ((int)fVar8 < local_34);
+          local_14 = iVar8;
+        } while ((int)fVar11 < local_34);
       }
-      fVar12 = (float)((int)fVar12 + 1);
-    } while ((int)fVar12 < (int)fVar1);
+      fVar15 = (float)((int)fVar15 + 1);
+    } while ((int)fVar15 < (int)fVar1);
   }
   local_6c = 0;
-  if (0 < this_ptr->unk2) {
-    pSVar10 = this_ptr->unk3;
-    local_64 = pSVar10;
+  if (0 < this_ptr->vertex_count) {
+    pSVar13 = this_ptr->vertices;
+    local_64 = pSVar13;
     do {
-      iVar5 = 0;
-      if (0 < *(int *)(local_64->unk + 0x44)) {
-        pSVar9 = local_64;
+      iVar7 = 0;
+      if (0 < local_64->neighbor_count) {
+        pSVar12 = local_64;
         do {
-          iVar6 = *(int *)(pSVar9->unk + 0x48);
-          fVar1 = *(float *)(local_64->unk + 0xc) - *(float *)(pSVar10[iVar6].unk + 0xc);
-          fVar2 = *(float *)(local_64->unk + 0x10) - *(float *)(pSVar10[iVar6].unk + 0x10);
-          fVar3 = *(float *)(local_64->unk + 0x14) - *(float *)(pSVar10[iVar6].unk + 0x14);
-          iVar5 = iVar5 + 1;
-          *(float *)(pSVar9->unk + 0x58) = SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2);
-          pSVar9 = (SCurtainVertex *)(pSVar9->unk + 4);
-        } while (iVar5 < *(int *)(local_64->unk + 0x44));
+          iVar8 = pSVar12->neighbor_indices[0];
+          fVar1 = (local_64->initial_position).x - pSVar13[iVar8].initial_position.x;
+          fVar2 = (local_64->initial_position).y - pSVar13[iVar8].initial_position.y;
+          fVar4 = (local_64->initial_position).z - pSVar13[iVar8].initial_position.z;
+          iVar7 = iVar7 + 1;
+          pSVar12->rest_distances[0] = SQRT(fVar4 * fVar4 + fVar1 * fVar1 + fVar2 * fVar2);
+          pSVar12 = (SCurtainVertex *)&(pSVar12->local_position).y;
+        } while (iVar7 < local_64->neighbor_count);
       }
       local_64 = local_64 + 1;
       local_6c = local_6c + 1;
-    } while (local_6c < this_ptr->unk2);
+    } while (local_6c < this_ptr->vertex_count);
   }
-  iVar5 = 0;
-  if (0 < this_ptr->unk2) {
-    pcVar7 = this_ptr->unk3[0].unk + 0xc;
+  iVar7 = 0;
+  if (0 < this_ptr->vertex_count) {
+    pCVar9 = &this_ptr->vertices[0].initial_position;
     do {
-      pSVar10 = this_ptr->unk3 + iVar5;
-      if (pSVar10 != (SCurtainVertex *)pcVar7) {
-        *(uint *)pSVar10->unk = *(uint *)pcVar7;
-        *(uint *)(pSVar10->unk + 4) = *(uint *)(pcVar7 + 4);
-        *(uint *)(pSVar10->unk + 8) = *(uint *)(pcVar7 + 8);
+      pSVar13 = this_ptr->vertices + iVar7;
+      if (pSVar13 != (SCurtainVertex *)pCVar9) {
+        (pSVar13->local_position).x = pCVar9->x;
+        (pSVar13->local_position).y = pCVar9->y;
+        (pSVar13->local_position).z = pCVar9->z;
       }
-      pSVar10->unk[0x34] = '\0';
-      pSVar10->unk[0x35] = '\0';
-      pSVar10->unk[0x36] = '\0';
-      pSVar10->unk[0x37] = '\0';
-      iVar5 = iVar5 + 1;
-      *(uint *)(pSVar10->unk + 0x30) = *(uint *)(pSVar10->unk + 0x34);
-      *(uint *)(pSVar10->unk + 0x2c) = *(uint *)(pSVar10->unk + 0x30);
-      pcVar7 = pcVar7 + 0x74;
-    } while (iVar5 < this_ptr->unk2);
+      (pSVar13->velocity).z = 0.0;
+      iVar7 = iVar7 + 1;
+      (pSVar13->velocity).y = (pSVar13->velocity).z;
+      (pSVar13->velocity).x = (pSVar13->velocity).y;
+      pCVar9 = (CVector3f *)((int)(pCVar9 + 9) + 8);
+    } while (iVar7 < this_ptr->vertex_count);
   }
-  pcVar7 = this_ptr->unk4 + 0x2eec;
-  pcVar11 = this_ptr->unk4 + 0x2616c;
+  pSVar10 = (this_ptr->mesh).front_faces;
+  pSVar14 = (this_ptr->mesh).back_faces;
   local_30 = 0;
-  if (0 < *(int *)(this_ptr->unk4 + 8)) {
+  if (0 < (this_ptr->mesh).grid_rows) {
     do {
       local_20 = 0;
-      if (0 < *(int *)(this_ptr->unk4 + 4)) {
+      if (0 < (this_ptr->mesh).grid_cols) {
         do {
-          pcVar7[0x14] = '\0';
-          pcVar7[0x15] = '\0';
-          pcVar7[0x16] = '\0';
-          pcVar7[0x17] = '\0';
-          pcVar7[4] = '\x03';
-          pcVar7[5] = '\0';
-          pcVar7[6] = '\0';
-          pcVar7[7] = '\0';
-          uVar4 = *(uint *)(pcVar7 + 0x14);
-          *(uint *)(pcVar7 + 0x10) = uVar4;
-          *(uint *)(pcVar7 + 0xc) = uVar4;
-          *(uint *)(pcVar7 + 8) = uVar4;
-          pcVar11[4] = '\x03';
-          pcVar11[5] = '\0';
-          pcVar11[6] = '\0';
-          pcVar11[7] = '\0';
-          pcVar11[0x14] = '\0';
-          pcVar11[0x15] = '\0';
-          pcVar11[0x16] = '\0';
-          pcVar11[0x17] = '\0';
-          uVar4 = *(uint *)(pcVar11 + 0x14);
-          *(uint *)(pcVar11 + 0x10) = uVar4;
-          *(uint *)(pcVar11 + 0xc) = uVar4;
-          *(uint *)(pcVar11 + 8) = uVar4;
-          iVar6 = (*(int *)(this_ptr->unk4 + 4) + 1) * local_30;
-          iVar13 = local_20 + iVar6;
-          *(int *)(pcVar7 + 0x18) = iVar13;
-          *(uint *)(pcVar7 + 0x1c) = *(uint *)(this_ptr->unk3[iVar13].unk + 0x18);
-          *(uint *)(pcVar7 + 0x20) = *(uint *)(this_ptr->unk3[iVar13].unk + 0x1c);
-          *(int *)(pcVar7 + 0x24) = iVar13 + 1;
-          *(uint *)(pcVar7 + 0x28) = *(uint *)(this_ptr->unk3[iVar13 + 1].unk + 0x18);
-          *(uint *)(pcVar7 + 0x2c) = *(uint *)(this_ptr->unk3[iVar13 + 1].unk + 0x1c);
-          iVar5 = *(int *)(this_ptr->unk4 + 4);
-          *(int *)(pcVar7 + 0x30) = iVar13 + 1 + iVar5 + 1;
-          *(uint *)(pcVar7 + 0x34) =
-               *(uint *)(this_ptr->unk3[iVar5 + iVar6 + local_20 + 2].unk + 0x18);
-          *(uint *)(pcVar7 + 0x38) =
-               *(uint *)(this_ptr->unk3[iVar5 + iVar6 + local_20 + 2].unk + 0x1c);
-          *(uint *)(pcVar11 + 0x18) = *(uint *)(pcVar7 + 0x30);
-          *(uint *)(pcVar11 + (uint)bVar14 * -8 + 0x1c) =
-               *(uint *)(pcVar7 + (uint)bVar14 * -8 + 0x34);
-          *(uint *)(pcVar11 + (uint)bVar14 * -8 + 0x1c + (uint)bVar14 * -8 + 4) =
-               *(uint *)(pcVar7 + (uint)bVar14 * -8 + 0x34 + (uint)bVar14 * -8 + 4);
-          *(uint *)(pcVar11 + 0x24) = *(uint *)(pcVar7 + 0x24);
-          *(uint *)(pcVar11 + (uint)bVar14 * -8 + 0x28) =
-               *(uint *)(pcVar7 + (uint)bVar14 * -8 + 0x28);
-          *(uint *)(pcVar11 + (uint)bVar14 * -8 + 0x28 + (uint)bVar14 * -8 + 4) =
-               *(uint *)(pcVar7 + (uint)bVar14 * -8 + 0x28 + (uint)bVar14 * -8 + 4);
-          *(uint *)(pcVar11 + 0x30) = *(uint *)(pcVar7 + 0x18);
-          *(uint *)(pcVar11 + (uint)bVar14 * -8 + 0x34) =
-               *(uint *)(pcVar7 + (uint)bVar14 * -8 + 0x1c);
-          *(uint *)(pcVar11 + (uint)bVar14 * -8 + 0x34 + (uint)bVar14 * -8 + 4) =
-               *(uint *)(pcVar7 + (uint)bVar14 * -8 + 0x1c + (uint)bVar14 * -8 + 4);
-          pcVar7[0x4c] = '\x03';
-          pcVar7[0x4d] = '\0';
-          pcVar7[0x4e] = '\0';
-          pcVar7[0x4f] = '\0';
-          pcVar7[0x5c] = '\0';
-          pcVar7[0x5d] = '\0';
-          pcVar7[0x5e] = '\0';
-          pcVar7[0x5f] = '\0';
-          uVar4 = *(uint *)(pcVar7 + 0x5c);
-          *(uint *)(pcVar7 + 0x58) = uVar4;
-          *(uint *)(pcVar7 + 0x54) = uVar4;
-          *(uint *)(pcVar7 + 0x50) = uVar4;
-          pcVar11[0x4c] = '\x03';
-          pcVar11[0x4d] = '\0';
-          pcVar11[0x4e] = '\0';
-          pcVar11[0x4f] = '\0';
-          pcVar11[0x5c] = '\0';
-          pcVar11[0x5d] = '\0';
-          pcVar11[0x5e] = '\0';
-          pcVar11[0x5f] = '\0';
-          uVar4 = *(uint *)(pcVar11 + 0x5c);
-          *(uint *)(pcVar11 + 0x58) = uVar4;
-          *(uint *)(pcVar11 + 0x54) = uVar4;
-          *(uint *)(pcVar11 + 0x50) = uVar4;
-          iVar6 = (*(int *)(this_ptr->unk4 + 4) + 1) * local_30;
-          iVar13 = iVar6 + local_20;
-          *(int *)(pcVar7 + 0x60) = iVar13;
-          *(uint *)(pcVar7 + 100) = *(uint *)(this_ptr->unk3[iVar13].unk + 0x18);
-          *(uint *)(pcVar7 + 0x68) = *(uint *)(this_ptr->unk3[iVar13].unk + 0x1c);
-          iVar5 = *(int *)(this_ptr->unk4 + 4);
-          iVar13 = iVar13 + iVar5 + 2;
-          *(int *)(pcVar7 + 0x6c) = iVar13;
-          *(uint *)(pcVar7 + 0x70) =
-               *(uint *)(this_ptr->unk3[iVar5 + local_20 + iVar6 + 2].unk + 0x18);
-          *(uint *)(pcVar7 + 0x74) =
-               *(uint *)(this_ptr->unk3[iVar5 + local_20 + iVar6 + 2].unk + 0x1c);
-          *(int *)(pcVar7 + 0x78) = iVar13 + -1;
-          *(uint *)(pcVar7 + 0x7c) =
-               *(uint *)(this_ptr->unk3[iVar5 + local_20 + iVar6 + 1].unk + 0x18);
-          *(uint *)(pcVar7 + 0x80) =
-               *(uint *)(this_ptr->unk3[iVar5 + local_20 + iVar6 + 1].unk + 0x1c);
-          *(uint *)(pcVar11 + 0x60) = *(uint *)(pcVar7 + 0x78);
-          *(uint *)(pcVar11 + (uint)bVar14 * -8 + 100) =
-               *(uint *)(pcVar7 + (uint)bVar14 * -8 + 0x7c);
-          *(uint *)(pcVar11 + (uint)bVar14 * -8 + 100 + (uint)bVar14 * -8 + 4) =
-               *(uint *)(pcVar7 + (uint)bVar14 * -8 + 0x7c + (uint)bVar14 * -8 + 4);
-          *(uint *)(pcVar11 + 0x6c) = *(uint *)(pcVar7 + 0x6c);
-          *(uint *)(pcVar11 + (uint)bVar14 * -8 + 0x70) =
-               *(uint *)(pcVar7 + (uint)bVar14 * -8 + 0x70);
-          *(uint *)(pcVar11 + (uint)bVar14 * -8 + 0x70 + (uint)bVar14 * -8 + 4) =
-               *(uint *)(pcVar7 + (uint)bVar14 * -8 + 0x70 + (uint)bVar14 * -8 + 4);
-          *(uint *)(pcVar11 + 0x78) = *(uint *)(pcVar7 + 0x60);
-          *(uint *)(pcVar11 + (uint)bVar14 * -8 + 0x7c) =
-               *(uint *)(pcVar7 + (uint)bVar14 * -8 + 100);
-          *(uint *)(pcVar11 + (uint)bVar14 * -8 + 0x7c + (uint)bVar14 * -8 + 4) =
-               *(uint *)(pcVar7 + (uint)bVar14 * -8 + 100 + (uint)bVar14 * -8 + 4);
-          pcVar7 = pcVar7 + 0x90;
-          pcVar11 = pcVar11 + 0x90;
+          (pSVar10->base).surface_normal.D = 0;
+          (pSVar10->base).base.count = 3;
+          iVar7 = (pSVar10->base).surface_normal.D;
+          (pSVar10->base).surface_normal.C = iVar7;
+          (pSVar10->base).surface_normal.B = iVar7;
+          (pSVar10->base).surface_normal.A = iVar7;
+          (pSVar14->base).base.count = 3;
+          (pSVar14->base).surface_normal.D = 0;
+          iVar7 = (pSVar14->base).surface_normal.D;
+          (pSVar14->base).surface_normal.C = iVar7;
+          (pSVar14->base).surface_normal.B = iVar7;
+          (pSVar14->base).surface_normal.A = iVar7;
+          iVar8 = ((this_ptr->mesh).grid_cols + 1) * local_30;
+          iVar16 = local_20 + iVar8;
+          pSVar10->vertices[0].vertex_index = iVar16;
+          pSVar10->vertices[0].texture_u = this_ptr->vertices[iVar16].texture_u;
+          pSVar10->vertices[0].texture_v = this_ptr->vertices[iVar16].texture_v;
+          pSVar10->vertices[1].vertex_index = iVar16 + 1;
+          pSVar10->vertices[1].texture_u = this_ptr->vertices[iVar16 + 1].texture_u;
+          pSVar10->vertices[1].texture_v = this_ptr->vertices[iVar16 + 1].texture_v;
+          iVar7 = (this_ptr->mesh).grid_cols;
+          pSVar10->vertices[2].vertex_index = iVar16 + 1 + iVar7 + 1;
+          pSVar10->vertices[2].texture_u =
+               this_ptr->vertices[iVar7 + iVar8 + local_20 + 2].texture_u;
+          pSVar10->vertices[2].texture_v =
+               this_ptr->vertices[iVar7 + iVar8 + local_20 + 2].texture_v;
+          puVar18 = (uint *)((int)pSVar14 + (uint)bVar19 * -8 + 0x1c);
+          puVar17 = (uint *)((int)pSVar10 + (uint)bVar19 * -8 + 0x34);
+          pSVar14->vertices[0].vertex_index = pSVar10->vertices[2].vertex_index;
+          *puVar18 = *puVar17;
+          puVar18[(uint)bVar19 * -2 + 1] = puVar17[(uint)bVar19 * -2 + 1];
+          puVar18 = (uint *)((int)pSVar14 + (uint)bVar19 * -8 + 0x28);
+          puVar17 = (uint *)((int)pSVar10 + (uint)bVar19 * -8 + 0x28);
+          pSVar14->vertices[1].vertex_index = pSVar10->vertices[1].vertex_index;
+          *puVar18 = *puVar17;
+          puVar18[(uint)bVar19 * -2 + 1] = puVar17[(uint)bVar19 * -2 + 1];
+          puVar18 = (uint *)((int)pSVar14 + (uint)bVar19 * -8 + 0x34);
+          puVar17 = (uint *)((int)pSVar10 + (uint)bVar19 * -8 + 0x1c);
+          pSVar14->vertices[2].vertex_index = pSVar10->vertices[0].vertex_index;
+          *puVar18 = *puVar17;
+          puVar18[(uint)bVar19 * -2 + 1] = puVar17[(uint)bVar19 * -2 + 1];
+          pSVar10[1].base.base.count = 3;
+          pSVar10[1].base.surface_normal.D = 0;
+          iVar7 = pSVar10[1].base.surface_normal.D;
+          pSVar10[1].base.surface_normal.C = iVar7;
+          pSVar10[1].base.surface_normal.B = iVar7;
+          pSVar10[1].base.surface_normal.A = iVar7;
+          pSVar14[1].base.base.count = 3;
+          pSVar14[1].base.surface_normal.D = 0;
+          iVar7 = pSVar14[1].base.surface_normal.D;
+          pSVar14[1].base.surface_normal.C = iVar7;
+          pSVar14[1].base.surface_normal.B = iVar7;
+          pSVar14[1].base.surface_normal.A = iVar7;
+          iVar8 = ((this_ptr->mesh).grid_cols + 1) * local_30;
+          iVar16 = iVar8 + local_20;
+          pSVar10[1].vertices[0].vertex_index = iVar16;
+          pSVar10[1].vertices[0].texture_u = this_ptr->vertices[iVar16].texture_u;
+          pSVar10[1].vertices[0].texture_v = this_ptr->vertices[iVar16].texture_v;
+          iVar7 = (this_ptr->mesh).grid_cols;
+          iVar16 = iVar16 + iVar7 + 2;
+          pSVar10[1].vertices[1].vertex_index = iVar16;
+          pSVar10[1].vertices[1].texture_u =
+               this_ptr->vertices[iVar7 + local_20 + iVar8 + 2].texture_u;
+          pSVar10[1].vertices[1].texture_v =
+               this_ptr->vertices[iVar7 + local_20 + iVar8 + 2].texture_v;
+          pSVar10[1].vertices[2].vertex_index = iVar16 + -1;
+          pSVar10[1].vertices[2].texture_u =
+               this_ptr->vertices[iVar7 + local_20 + iVar8 + 1].texture_u;
+          pSVar10[1].vertices[2].texture_v =
+               this_ptr->vertices[iVar7 + local_20 + iVar8 + 1].texture_v;
+          puVar18 = (uint *)((int)pSVar14 + (uint)bVar19 * -8 + 100);
+          puVar17 = (uint *)((int)pSVar10 + (uint)bVar19 * -8 + 0x7c);
+          pSVar14[1].vertices[0].vertex_index = pSVar10[1].vertices[2].vertex_index;
+          *puVar18 = *puVar17;
+          puVar18[(uint)bVar19 * -2 + 1] = puVar17[(uint)bVar19 * -2 + 1];
+          puVar18 = (uint *)((int)pSVar14 + (uint)bVar19 * -8 + 0x70);
+          puVar17 = (uint *)((int)pSVar10 + (uint)bVar19 * -8 + 0x70);
+          pSVar14[1].vertices[1].vertex_index = pSVar10[1].vertices[1].vertex_index;
+          *puVar18 = *puVar17;
+          puVar18[(uint)bVar19 * -2 + 1] = puVar17[(uint)bVar19 * -2 + 1];
+          puVar18 = (uint *)((int)pSVar14 + (uint)bVar19 * -8 + 0x7c);
+          puVar17 = (uint *)((int)pSVar10 + (uint)bVar19 * -8 + 100);
+          pSVar14[1].vertices[2].vertex_index = pSVar10[1].vertices[0].vertex_index;
+          *puVar18 = *puVar17;
+          puVar18[(uint)bVar19 * -2 + 1] = puVar17[(uint)bVar19 * -2 + 1];
+          pSVar10 = pSVar10 + 2;
+          pSVar14 = pSVar14 + 2;
           local_20 = local_20 + 1;
-        } while (local_20 < *(int *)(this_ptr->unk4 + 4));
+        } while (local_20 < (this_ptr->mesh).grid_cols);
       }
       local_30 = local_30 + 1;
-    } while (local_30 < *(int *)(this_ptr->unk4 + 8));
+    } while (local_30 < (this_ptr->mesh).grid_rows);
   }
-  core_curtain_cpp_CCurtain_FUN_00449e40(this_ptr);
+  core_curtain_cpp_CCurtain_updateWorldPositions_FUN_00449e40(this_ptr);
   (this_ptr->base).is_transparent = (uint)(this_ptr->opacity < 0xfde9);
   return;
 }

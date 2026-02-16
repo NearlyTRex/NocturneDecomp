@@ -158,7 +158,6 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0047
             local_78 = (int)ROUND(dVar12);
             iVar4 = local_78 * iVar4;
             local_34 = (float)(fVar7 * fVar9);
-            fVar8 = fVar8 * fVar9;
             local_160.base.type = 0x475c38;
             dVar12 = round
                                ((double)((float)local_18 * local_34 + (float)local_18));
@@ -166,7 +165,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0047
             local_2c = (float)this_ptr->shadow_depth_buffer[iVar4 + local_70] *
                        (float)0.00390625;
             local_24 = 0;
-            local_3c = (float)fVar8;
+            local_3c = (float)(fVar8 * fVar9);
             local_38 = (float)(fVar9 * fVar11);
             local_28 = local_2c;
             do {

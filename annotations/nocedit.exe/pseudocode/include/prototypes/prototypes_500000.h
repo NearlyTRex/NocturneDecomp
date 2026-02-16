@@ -27,6 +27,7 @@
 #include "types/classes/COrientation.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
+#include "types/enums/EInputCodeType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SGem.h"
@@ -77,13 +78,13 @@ void __cdecl engine_keyframe_c_loadAndInterpolateKeyframes_FUN_00501d40(SMRGLKey
 SMRGLHeaderExtended * __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_00501f30(SMRGLHeaderExtended *header);
 void __cdecl engine_keyframe_c_recomputeKeyFrameNormals_FUN_00502320(void);
 void __cdecl engine_keys_cpp_staticInit_FUN_00502410(void);
-int __cdecl engine_keys_cpp_CKeys_getKeyState_FUN_00502420(CKeys *this_ptr,int key_code);
-int __cdecl engine_keys_cpp_CKeys_getAndClearKeyState_FUN_00502430(CKeys *this_ptr,int key_code);
+int __cdecl engine_keys_cpp_CKeys_getKeyState_FUN_00502420(CKeys *this_ptr,EInputCodeType key_code);
+int __cdecl engine_keys_cpp_CKeys_getAndClearKeyState_FUN_00502430(CKeys *this_ptr,EInputCodeType key_code);
 void __cdecl engine_keys_cpp_CKeys_clearKeypresses_FUN_00502450(void);
 int __cdecl engine_keys_cpp_CKeys_getInputKey_FUN_00502460(CKeys *this_ptr);
 int __cdecl engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_00502470(CKeys *this_ptr);
-void __cdecl engine_keys_cpp_CKeys_setKeyAsPressed_FUN_00502490(CKeys *this_ptr,int key_code);
-void __cdecl engine_keys_cpp_CKeys_clearKeyPressState_FUN_005024a0(CKeys *this_ptr,int key_code);
+void __cdecl engine_keys_cpp_CKeys_setKeyAsPressed_FUN_00502490(CKeys *this_ptr,EInputCodeType key_code);
+void __cdecl engine_keys_cpp_CKeys_clearKeyPressState_FUN_005024a0(CKeys *this_ptr,EInputCodeType key_code);
 void __cdecl engine_keys_cpp_CKeys_toggleInputMask_FUN_005024b0(CKeys *this_ptr,int enable_extended);
 void __cdecl core_ladder_cpp_staticInit_FUN_005024d0(void);
 CLadder * __cdecl core_ladder_cpp_factoryFunc_FUN_00502500(void);

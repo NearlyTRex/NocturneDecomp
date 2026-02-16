@@ -3,111 +3,57 @@
     "errors": [
       {
         "category": "incompatible_types",
-        "column": 25,
-        "line": 148,
+        "column": 18,
+        "line": 114,
+        "message": "invalid operands to binary expression ('double' and 'int')"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 18,
+        "line": 117,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "incompatible_types",
         "column": 25,
-        "line": 156,
+        "line": 124,
         "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 157,
-        "message": "member reference base type 'double' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 36,
-        "line": 162,
-        "message": "member reference base type 'double' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 26,
-        "line": 167,
-        "message": "member reference base type 'double' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 34,
-        "line": 170,
-        "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "incompatible_types",
-        "column": 77,
-        "line": 196,
+        "column": 16,
+        "line": 137,
         "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 201,
-        "message": "member reference base type 'double' is not a structure or union"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 75,
-        "line": 221,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
-        "category": "other",
-        "column": 76,
-        "line": 230,
-        "message": "member reference base type 'double' is not a structure or union"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 25,
-        "line": 232,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 235,
-        "message": "member reference base type 'double' is not a structure or union"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 75,
-        "line": 260,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
-        "category": "other",
-        "column": 74,
-        "line": 268,
-        "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "incompatible_types",
         "column": 23,
-        "line": 270,
+        "line": 139,
         "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 273,
-        "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "incompatible_types",
-        "column": 73,
-        "line": 294,
+        "column": 25,
+        "line": 153,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
-        "category": "other",
-        "column": 28,
-        "line": 300,
-        "message": "member reference base type 'double' is not a structure or union"
+        "category": "incompatible_types",
+        "column": 21,
+        "line": 161,
+        "message": "invalid operands to binary expression ('double' and 'int')"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 25,
+        "line": 246,
+        "message": "invalid operands to binary expression ('double' and 'int')"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 23,
+        "line": 287,
+        "message": "invalid operands to binary expression ('double' and 'int')"
       }
     ],
     "success": false,
@@ -115,19 +61,17 @@
   },
   "complexity": {
     "assembly_lines": 705,
-    "complexity_score": 1127,
+    "complexity_score": 1010,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 7,
-    "pseudocode_lines": 357,
-    "suspect_count": 75,
+    "pseudocode_lines": 380,
+    "suspect_count": 62,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
-      "stack_param",
-      "unknown_field"
+      "pointer_cast"
     ],
-    "total_lines": 1062
+    "total_lines": 1085
   },
   "cross_references": [
     {
@@ -557,526 +501,435 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_ffffff30",
-      "text": "uint in_stack_ffffff30;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 93,
-      "match": "in_stack_ffffff30",
-      "text": "in_stack_ffffff30 = 0x5a76e1;",
-      "type": "stack_param"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 107,
+      "match": "SUB84",
+      "text": "local_b8 = SUB84(dVar13,0);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 116,
+      "line": 110,
+      "match": "SUB84",
+      "text": "local_b0 = SUB84((double)pCVar4->streaming_buffer_size,0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 117,
+      "match": "SUB84",
+      "text": "afStack_88[1] = SUB84(dVar12,0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 120,
       "match": "ROUND",
-      "text": "local_68 = (float *)(int)ROUND(dVar12);",
+      "text": "local_64 = (int)ROUND(dVar12);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 119,
+      "line": 127,
       "match": "CONCAT44",
-      "text": "local_b0 = (double)CONCAT44((int)uVar5,local_68);",
+      "text": "dVar13 = ((double)CONCAT44(iStack_ac,local_b0) - this_ptr->prev_hardware_playback_pos) /",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 131,
-      "match": "CONCAT44",
-      "text": "dVar12 = (double)CONCAT44(uVar15,uVar14);",
+      "line": 130,
+      "match": "SUB84",
+      "text": "uVar14 = SUB84(dVar13,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 132,
-      "match": "ROUND",
-      "text": "local_50 = (int)ROUND(dVar13);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 134,
-      "match": "CONCAT44",
-      "text": "dVar12 = (double)CONCAT44(uVar15,uVar14) - local_b8;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 141,
       "match": "SUB84",
-      "text": "afStack_90[0] = SUB84(dVar13,0);",
+      "text": "afStack_88[1] = SUB84(dVar13,0);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 143,
-      "match": "in_stack_ffffff30",
-      "text": "in_stack_ffffff30 = 0x5a78f1;",
-      "type": "stack_param"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 136,
+      "match": "CONCAT44",
+      "text": "dVar13 = (double)CONCAT44(uVar16,uVar15);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 137,
+      "match": "ROUND",
+      "text": "local_4c = (int)ROUND(dVar12);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 139,
+      "match": "CONCAT44",
+      "text": "dVar13 = (double)CONCAT44(uVar16,uVar15) - (double)CONCAT44(local_b0,uStack_b4);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 139,
+      "match": "CONCAT44",
+      "text": "dVar13 = (double)CONCAT44(uVar16,uVar15) - (double)CONCAT44(local_b0,uStack_b4);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 144,
+      "match": "CONCAT44",
+      "text": "(((double)CONCAT44(local_b0,uStack_b4) - dVar13) /",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 145,
-      "match": "ROUND",
-      "text": "local_58 = (uint)ROUND(dVar13);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 147,
-      "match": "in_stack_ffffff30",
-      "text": "dVar13 = (double)CONCAT44(sample_data,in_stack_ffffff30);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 147,
       "match": "CONCAT44",
-      "text": "dVar13 = (double)CONCAT44(sample_data,in_stack_ffffff30);",
+      "text": "(double)CONCAT44(local_b8,channel_gains));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 149,
+      "line": 146,
       "match": "SUB84",
-      "text": "channel_buffers = SUB84(dVar12,0);",
+      "text": "afStack_88[0] = SUB84(dVar12,0);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unknown/mangled field access",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 150,
-      "match": "._0_4_",
-      "text": "if ((int)local_58 < (int)local_b8._0_4_) {",
-      "type": "unknown_field"
+      "match": "ROUND",
+      "text": "local_50 = (int)ROUND(dVar12);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unknown/mangled field access",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 154,
+      "match": "SUB84",
+      "text": "sample_data = SUB84(dVar13,0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 155,
-      "match": "._0_4_",
-      "text": "else if (local_58 == local_b8._0_4_) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 160,
-      "match": "._0_4_",
-      "text": "iVar10 = local_b8._0_4_ << 2;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 163,
-      "match": "._0_4_",
-      "text": "if (0 < (int)local_b8._0_4_) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 171,
-      "match": "(byte *)((int)",
-      "text": "local_28 = *(byte *)((int)this_ptr->sample->sample_data + (int)ROUND(dVar13) * 2 + 1",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 171,
-      "match": "ROUND",
-      "text": "local_28 = *(byte *)((int)this_ptr->sample->sample_data + (int)ROUND(dVar13) * 2 + 1",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 173,
       "match": "CONCAT44",
-      "text": "uStack_88 = (double)CONCAT44((float)local_28,",
+      "text": "dVar12 = (double)CONCAT44(sample_data,uVar14);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 174,
+      "line": 179,
       "match": "(byte *)((int)",
-      "text": "(float)(int)(*(byte *)((int)pCVar4->sample_data +",
+      "text": "(float)(int)(*(byte *)((int)pCVar4->sample_data + (int)ROUND(dVar13) * 2) -",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 175,
+      "line": 179,
       "match": "ROUND",
-      "text": "(int)ROUND(dVar13) * 2) - 0x80));",
+      "text": "(float)(int)(*(byte *)((int)pCVar4->sample_data + (int)ROUND(dVar13) * 2) -",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 183,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)*ppfVar3 + local_34) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 184,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)&uStack_88 + uVar9 * 4) * pCVar7->channel_volumes[0] +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 185,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)*ppfVar3 + local_34);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 189,
-      "match": "CONCAT44",
-      "text": "dVar13 = (double)CONCAT44(uVar15,uVar14) + (double)CONCAT44(SUB84(dVar12,0),uVar15);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 189,
-      "match": "CONCAT44",
-      "text": "dVar13 = (double)CONCAT44(uVar15,uVar14) + (double)CONCAT44(SUB84(dVar12,0),uVar15);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 189,
-      "match": "SUB84",
-      "text": "dVar13 = (double)CONCAT44(uVar15,uVar14) + (double)CONCAT44(SUB84(dVar12,0),uVar15);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 194,
-      "match": "._0_4_",
-      "text": "else if (0 < (int)local_b8._0_4_) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 201,
+      "line": 181,
       "match": "(byte *)((int)",
-      "text": "local_28 = *(byte *)((int)this_ptr->sample->sample_data + (int)ROUND(dVar13)) - 0x80;",
+      "text": "local_20 = *(byte *)((int)this_ptr->sample->sample_data + (int)ROUND(dVar13) * 2 + 1",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 201,
+      "line": 181,
       "match": "ROUND",
-      "text": "local_28 = *(byte *)((int)this_ptr->sample->sample_data + (int)ROUND(dVar13)) - 0x80;",
+      "text": "local_20 = *(byte *)((int)this_ptr->sample->sample_data + (int)ROUND(dVar13) * 2 + 1",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 209,
+      "line": 191,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)*ppfVar3 + local_2c) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 193,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)*ppfVar3 + local_2c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 197,
+      "match": "CONCAT44",
+      "text": "dVar12 = (double)CONCAT44(uVar14,uVar16) + (double)CONCAT44(channel_buffers,uVar14);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 197,
+      "match": "CONCAT44",
+      "text": "dVar12 = (double)CONCAT44(uVar14,uVar16) + (double)CONCAT44(channel_buffers,uVar14);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 212,
+      "match": "(byte *)((int)",
+      "text": "local_20 = *(byte *)((int)this_ptr->sample->sample_data + (int)ROUND(dVar13)) - 0x80",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 212,
+      "match": "ROUND",
+      "text": "local_20 = *(byte *)((int)this_ptr->sample->sample_data + (int)ROUND(dVar13)) - 0x80",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 221,
       "match": "(float *)((int)",
       "text": "*(float *)((int)*ppfVar3 + iVar11) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 210,
+      "line": 222,
       "match": "(float *)((int)",
-      "text": "local_2c * pCVar7->channel_volumes[0] + *(float *)((int)*ppfVar3 + iVar11);",
+      "text": "local_24 * pCVar7->channel_volumes[0] + *(float *)((int)*ppfVar3 + iVar11);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 214,
+      "line": 226,
       "match": "CONCAT44",
-      "text": "dVar13 = (double)CONCAT44(uVar15,uVar14) + (double)CONCAT44(SUB84(dVar12,0),uVar15);",
+      "text": "dVar12 = (double)CONCAT44(uVar14,uVar16) + (double)CONCAT44(channel_buffers,uVar14);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 214,
+      "line": 226,
       "match": "CONCAT44",
-      "text": "dVar13 = (double)CONCAT44(uVar15,uVar14) + (double)CONCAT44(SUB84(dVar12,0),uVar15);",
+      "text": "dVar12 = (double)CONCAT44(uVar14,uVar16) + (double)CONCAT44(channel_buffers,uVar14);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 214,
-      "match": "SUB84",
-      "text": "dVar13 = (double)CONCAT44(uVar15,uVar14) + (double)CONCAT44(SUB84(dVar12,0),uVar15);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 223,
-      "match": "in_stack_ffffff30",
-      "text": "(double)CONCAT44(in_stack_ffffff30,local_b8._0_4_),",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 223,
-      "match": "._0_4_",
-      "text": "(double)CONCAT44(in_stack_ffffff30,local_b8._0_4_),",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 223,
-      "match": "CONCAT44",
-      "text": "(double)CONCAT44(in_stack_ffffff30,local_b8._0_4_),",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 224,
-      "match": "CONCAT44",
-      "text": "(double)CONCAT44(channel_buffers,sample_data),(int)channel_gains);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 225,
-      "match": "SUB84",
-      "text": "uStack_94 = SUB84(dVar12,0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 228,
-      "match": "._0_4_",
-      "text": "else if (0 < (int)local_b8._0_4_) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 236,
-      "match": "ROUND",
-      "text": "local_28 = (int)ROUND(dVar13);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 237,
-      "match": "(short *)((int)",
-      "text": "afStack_90[0] = (float)*(short *)((int)pCVar4->sample_data + local_28 * 4);",
-      "type": "pointer_cast"
+      "match": "CONCAT44",
+      "text": "(double)CONCAT44(uVar14,local_b0),dVar13,(int)channel_gains);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 239,
-      "match": "(short *)((int)",
-      "text": "(float)*(short *)((int)this_ptr->sample->sample_data + local_28 * 4 + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 247,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)*ppfVar3 + local_38) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 249,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)*ppfVar3 + local_38);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 253,
-      "match": "CONCAT44",
-      "text": "dVar13 = (double)CONCAT44(uVar15,uVar14) + (double)CONCAT44(SUB84(dVar12,0),uVar15);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 253,
-      "match": "CONCAT44",
-      "text": "dVar13 = (double)CONCAT44(uVar15,uVar14) + (double)CONCAT44(SUB84(dVar12,0),uVar15);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 253,
       "match": "SUB84",
-      "text": "dVar13 = (double)CONCAT44(uVar15,uVar14) + (double)CONCAT44(SUB84(dVar12,0),uVar15);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 261,
-      "match": "in_stack_ffffff30",
-      "text": "(double)CONCAT44(in_stack_ffffff30,local_b8._0_4_),",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 261,
-      "match": "._0_4_",
-      "text": "(double)CONCAT44(in_stack_ffffff30,local_b8._0_4_),",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 261,
-      "match": "CONCAT44",
-      "text": "(double)CONCAT44(in_stack_ffffff30,local_b8._0_4_),",
+      "text": "uStack_8c = SUB84(dVar12,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 262,
-      "match": "CONCAT44",
-      "text": "(double)CONCAT44(channel_buffers,sample_data),(int)channel_gains);",
+      "line": 252,
+      "match": "ROUND",
+      "text": "local_20 = (int)ROUND(dVar13);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
+      "description": "Complex pointer cast",
+      "line": 253,
+      "match": "(short *)((int)",
+      "text": "afStack_88[0] = (float)*(short *)((int)pCVar4->sample_data + local_20 * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 255,
+      "match": "(short *)((int)",
+      "text": "(float)*(short *)((int)this_ptr->sample->sample_data + local_20 * 4 + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 263,
-      "match": "SUB84",
-      "text": "uStack_94 = SUB84(dVar12,0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 266,
-      "match": "._0_4_",
-      "text": "else if (0 < (int)local_b8._0_4_) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 274,
-      "match": "ROUND",
-      "text": "local_28 = (int)ROUND(dVar13);",
-      "type": "decompiler_intrinsic"
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)*ppfVar3 + local_30) =",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 275,
-      "match": "(short *)((int)",
-      "text": "local_30 = (float)*(short *)((int)pCVar4->sample_data + (int)ROUND(dVar13) * 2);",
+      "line": 265,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)*ppfVar3 + local_30);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 275,
+      "line": 269,
+      "match": "CONCAT44",
+      "text": "dVar12 = (double)CONCAT44(uVar14,uVar16) + (double)CONCAT44(channel_buffers,uVar14);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 269,
+      "match": "CONCAT44",
+      "text": "dVar12 = (double)CONCAT44(uVar14,uVar16) + (double)CONCAT44(channel_buffers,uVar14);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 279,
+      "match": "CONCAT44",
+      "text": "(double)CONCAT44(uVar14,local_b0),dVar13,(int)channel_gains);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 280,
+      "match": "SUB84",
+      "text": "uStack_8c = SUB84(dVar12,0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 293,
       "match": "ROUND",
-      "text": "local_30 = (float)*(short *)((int)pCVar4->sample_data + (int)ROUND(dVar13) * 2);",
+      "text": "local_20 = (int)ROUND(dVar13);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 282,
+      "line": 294,
+      "match": "(short *)((int)",
+      "text": "local_28 = (float)*(short *)((int)pCVar4->sample_data + (int)ROUND(dVar13) * 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 294,
+      "match": "ROUND",
+      "text": "local_28 = (float)*(short *)((int)pCVar4->sample_data + (int)ROUND(dVar13) * 2);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 301,
       "match": "(float *)((int)",
       "text": "*(float *)((int)*ppfVar3 + iVar11) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 283,
+      "line": 302,
       "match": "(float *)((int)",
-      "text": "local_30 * pCVar7->channel_volumes[0] + *(float *)((int)*ppfVar3 + iVar11);",
+      "text": "local_28 * pCVar7->channel_volumes[0] + *(float *)((int)*ppfVar3 + iVar11);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 287,
+      "line": 306,
       "match": "CONCAT44",
-      "text": "dVar13 = (double)CONCAT44(uVar15,uVar14) + (double)CONCAT44(SUB84(dVar12,0),uVar15);",
+      "text": "dVar12 = (double)CONCAT44(uVar14,uVar16) + (double)CONCAT44(channel_buffers,uVar14);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 287,
+      "line": 306,
       "match": "CONCAT44",
-      "text": "dVar13 = (double)CONCAT44(uVar15,uVar14) + (double)CONCAT44(SUB84(dVar12,0),uVar15);",
+      "text": "dVar12 = (double)CONCAT44(uVar14,uVar16) + (double)CONCAT44(channel_buffers,uVar14);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 287,
-      "match": "SUB84",
-      "text": "dVar13 = (double)CONCAT44(uVar15,uVar14) + (double)CONCAT44(SUB84(dVar12,0),uVar15);",
+      "line": 322,
+      "match": "CONCAT44",
+      "text": "dVar13 = (double)CONCAT44(channel_gains,uVar16);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 293,
-      "match": "._0_4_",
-      "text": "local_24 = local_b8._0_4_;",
-      "type": "unknown_field"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 323,
+      "match": "CONCAT44",
+      "text": "if ((double)CONCAT44(iStack_ac,local_b0) <= dVar13) {",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 301,
-      "match": "in_stack_ffffff30",
-      "text": "in_stack_ffffff30 = 0x5a7975;",
-      "type": "stack_param"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 324,
+      "match": "CONCAT44",
+      "text": "dVar13 = (double)CONCAT44(channel_gains,uVar16) - (double)CONCAT44(iStack_ac,local_b0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 324,
+      "match": "CONCAT44",
+      "text": "dVar13 = (double)CONCAT44(channel_gains,uVar16) - (double)CONCAT44(iStack_ac,local_b0);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 318,
+      "line": 342,
       "match": "(int *)((int)",
       "text": "piVar2 = (int *)((int)mix_buffer.channel_buffers + iVar11);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 331,
+      "line": 355,
       "match": "(int *)((int)",
       "text": "if (*(int *)((int)aiStack_a4 + local_4c) != 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 336,
+      "line": 359,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)this_ptr->channel_target_buffer_offsets + local_4c)) -",
+      "text": "local_30 = (local_5c + *(int *)((int)this_ptr->channel_target_buffer_offsets + local_4c))",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 337,
+      "line": 360,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)this_ptr->channel_current_buffer_offsets + local_4c));",
+      "text": "- *(int *)((int)this_ptr->channel_current_buffer_offsets + local_4c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 343,
+      "line": 366,
       "match": "(int *)((int)",
       "text": "pfVar1 = (float *)(*(int *)((int)aiStack_a4 + local_4c) + iVar10);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 345,
+      "line": 368,
       "match": "(int *)((int)",
       "text": "*(float *)(*(int *)((int)aiStack_a4 + local_4c) + -4 + iVar10) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 346,
+      "line": 369,
       "match": "(int *)((int)",
       "text": "*(float *)(*(int *)((int)g_ChannelTertiaryBuffers + local_4c) + local_14) +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 351,
+      "line": 374,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)this_ptr->channel_current_buffer_offsets + local_4c) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 352,
+      "line": 375,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)this_ptr->channel_target_buffer_offsets + local_4c);",
       "type": "pointer_cast"

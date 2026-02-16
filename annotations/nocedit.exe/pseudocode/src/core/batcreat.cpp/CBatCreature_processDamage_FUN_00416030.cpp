@@ -31,7 +31,7 @@ void __cdecl core_batcreat_cpp_CBatCreature_processDamage_FUN_00416030(CBatCreat
       core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);
     } while (iVar2 < 5);
   }
-  if (damage_info->gore_multiplier == 1.5134e-43) {
+  if (damage_info->damage_type == 0x6c) {
     input_local_point =
          core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                    (&(this_ptr->base).base.model,&local_3c,0);

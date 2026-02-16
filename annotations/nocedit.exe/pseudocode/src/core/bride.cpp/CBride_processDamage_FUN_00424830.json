@@ -13,14 +13,13 @@
   },
   "complexity": {
     "assembly_lines": 185,
-    "complexity_score": 97,
+    "complexity_score": 82,
     "cross_reference_count": 0,
     "function_call_count": 11,
     "global_count": 5,
     "pseudocode_lines": 67,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "suspect_float",
       "warning_type_propagation"
     ],
     "total_lines": 252
@@ -226,13 +225,6 @@
       "match": "WARNING: Type propagation algorithm not settling",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 29,
-      "match": "1.5134e-43",
-      "text": "if (damage_info->gore_multiplier == 1.5134e-43) {",
-      "type": "suspect_float"
     }
   ],
   "vtable_info": {

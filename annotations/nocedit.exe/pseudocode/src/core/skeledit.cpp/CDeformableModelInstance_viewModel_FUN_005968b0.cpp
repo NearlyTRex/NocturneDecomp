@@ -254,15 +254,15 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
     engine_2d_c_fillRectColor_FUN_00403170(0,0,g_WindowWidth,g_WindowHeight,0xf8);
     wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
     shape_spotview_cpp_CSpotView_FUN_005b9a20((CSpotView *)local_35c);
-    iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+    iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
     if (iVar6 == 0) {
-      iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+      iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
       if (iVar6 == 0) {
-        iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x47);
+        iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD7);
         if (iVar6 != 0) {
           (in_stack_00000004->motion_controller).current_frame_number = 0;
         }
-        iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4f);
+        iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD1);
         if (iVar6 != 0) {
           pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                              (&in_stack_00000004->motion_controller);
@@ -271,12 +271,12 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
         }
       }
       else {
-        iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x34);
+        iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_PERIOD);
         if (iVar6 != 0) {
           piVar1 = &(in_stack_00000004->motion_controller).current_motion_index;
           *piVar1 = *piVar1 + 1;
         }
-        iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x33);
+        iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_COMMA);
         pCVar15 = in_stack_00000004;
         if (iVar6 != 0) {
           piVar1 = &(in_stack_00000004->motion_controller).current_motion_index;
@@ -298,7 +298,7 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
     local_6c->y = local_6c->z;
     local_6c->x = local_6c->y;
     local_8c = 1.0;
-    iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
+    iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU);
     if (iVar6 != 0) {
       local_8c = 0.33333334;
     }
@@ -346,7 +346,7 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
         pCVar15 = in_stack_00000004;
       }
       else {
-        iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x34);
+        iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_PERIOD);
         if (iVar6 != 0) {
           (in_stack_00000004->motion_controller).current_frame_number =
                (int)((float)(in_stack_00000004->motion_controller).current_frame_number + local_8c);
@@ -359,7 +359,7 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
                     (&in_stack_00000004->motion_controller,(float)(int)fVar8 + local_80,
                      (float)(int)fVar8 + local_78,1.0);
         }
-        iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x33);
+        iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_COMMA);
         pCVar15 = in_stack_00000004;
         if (iVar6 != 0) {
           (in_stack_00000004->motion_controller).current_frame_number =
@@ -542,7 +542,7 @@ LAB_0059722b:
       core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0
                 (pCVar15,(SBoneTransformData *)&stack0xffffcc64);
     }
-    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3e);
+    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F4);
     if (iVar6 != 0) {
       DAT_036712e0 = DAT_036712e0 + 1;
       _sprintf(&DAT_036712e8,"noc%d.pcx");
@@ -655,7 +655,7 @@ LAB_005975b4:
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
-    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
+    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if (iVar6 != 0) break;
     iVar6 = 0;
     pCVar11 = local_5c;
@@ -673,7 +673,7 @@ LAB_005975b4:
       } while (iVar6 < local_bc->bone_count);
     }
     if (((DAT_03665f74.poly_count < 1) ||
-        (iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d), iVar6 == 0)) ||
+        (iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL), iVar6 == 0)) ||
        (local_a0 == 0)) {
       if (local_98 == 0) {
         shape_spotview_cpp_CSpotView_FUN_005b9670((CSpotView *)local_35c);
@@ -681,38 +681,38 @@ LAB_005975b4:
       else {
         shape_spotview_cpp_CSpotView_FUN_005b9670((CSpotView *)local_35c);
         local_50 = g_CGamePtr->delta_time_float * (float)2;
-        iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+        iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
         if (iVar6 != 0) {
           local_50 = local_50 * 3.0f;
         }
-        iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
+        iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU);
         if (iVar6 != 0) {
           local_50 = local_50 * 0.05f;
         }
         local_118 = 0.0;
         local_114 = 0.0;
         local_110 = 0.0;
-        iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
+        iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_A);
         if (iVar6 != 0) {
           local_114 = local_114 - local_50;
         }
-        iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
+        iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_Q);
         if (iVar6 != 0) {
           local_114 = local_114 + local_50;
         }
-        iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
+        iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD4);
         if (iVar6 != 0) {
           local_118 = local_118 - local_50;
         }
-        iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
+        iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD6);
         if (iVar6 != 0) {
           local_118 = local_118 + local_50;
         }
-        iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
+        iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD2);
         if (iVar6 != 0) {
           local_110 = local_110 - local_50;
         }
-        iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
+        iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD8);
         if (iVar6 != 0) {
           local_110 = local_110 + local_50;
         }
@@ -750,12 +750,12 @@ LAB_005975b4:
     }
     in_stack_ffffccb0 = (char *)0x30;
     in_stack_ffffccac = (CDeformableModel *)g_CKeysPtr;
-    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x30);
+    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_B);
     if (iVar6 != 0) {
       in_stack_ffffccb0 = (char *)0x597c43;
-      iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+      iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
       if (iVar6 == 0) {
-        iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+        iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
         if (iVar6 == 0) {
           local_a4 = local_a4 + 1;
           if (4 < local_a4) {
@@ -778,39 +778,39 @@ LAB_005975b4:
         }
       }
     }
-    iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x18);
+    iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_O);
     if (iVar6 != 0) {
       local_100.y = 0.0;
       local_100.x = 0.0;
       local_100.z = 0.0;
     }
-    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x19);
+    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_P);
     if (iVar6 != 0) {
       local_a0 = (uint)(local_a0 == 0);
     }
-    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x26);
+    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_L);
     if (iVar6 != 0) {
       local_b8 = (uint)(local_b8 == 0);
     }
-    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x22);
+    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_G);
     if (iVar6 != 0) {
       local_4c = (uint)(local_4c == 0);
     }
-    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2e);
+    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_C);
     if (iVar6 != 0) {
       local_48 = (uint)(local_48 == 0);
     }
-    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,2);
+    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_1);
     if (iVar6 != 0) {
       local_9c = (uint)(local_9c == 0);
     }
-    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2f);
+    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_V);
     if (iVar6 != 0) {
       local_84 = (uint)(local_84 == 0);
     }
-    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1f);
+    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_S);
     if (iVar6 != 0) {
-      iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+      iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
       pCVar7 = local_c0;
       pCVar15 = in_stack_00000004;
       if (iVar6 == 0) {
@@ -840,7 +840,7 @@ LAB_005975b4:
         }
       }
     }
-    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x21);
+    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F);
     if (iVar6 != 0) {
       fVar8 = 0.0;
       pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
@@ -849,7 +849,7 @@ LAB_005975b4:
                 (g_CEditorToolsPtr,"Enter frame number",(float *)local_c4,1,0.0,
                  (float)pSVar9->frame_count,(int)fVar8);
     }
-    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x32);
+    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_M);
     pCVar15 = in_stack_00000004;
     if (iVar6 != 0) {
       iVar6 = 0;
@@ -872,7 +872,7 @@ LAB_005975b4:
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_1900,0);
     }
-    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x14);
+    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_T);
     if (iVar6 != 0) {
       pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&in_stack_00000004->motion_controller);
@@ -889,12 +889,12 @@ LAB_005975b4:
         pSVar9->exit_forward_to_frame = (float)(int)local_38;
       }
     }
-    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2d);
+    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_X);
     if (iVar6 != 0) {
       shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
                 (g_CEditorToolsPtr,"Select texture set",&local_ac,1,0,4,1);
     }
-    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x20);
+    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_D);
     if (iVar6 != 0) {
       pCVar7 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
                          (in_stack_00000004);
@@ -903,11 +903,11 @@ LAB_005975b4:
       shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
                 (g_CEditorToolsPtr,local_534,&local_b0,1,-1,iVar6 + -1,1);
     }
-    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x23);
+    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_H);
     if (iVar6 != 0) {
       local_a8 = (uint)(local_a8 == 0);
     }
-    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2c);
+    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_Z);
     if (iVar6 != 0) {
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_1558);
       pCVar7 = local_c0;
@@ -924,9 +924,9 @@ LAB_005975b4:
                 (&local_1558,"Part for bone info",-1,0);
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_1558,0);
     }
-    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0xf);
+    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_TAB);
     if (iVar6 != 0) {
-      iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+      iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
       if (iVar6 == 0) {
         local_44 = local_44 + 1;
       }
@@ -934,7 +934,7 @@ LAB_005975b4:
         local_44 = local_44 + -1;
       }
     }
-    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x17);
+    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_I);
     if (iVar6 != 0) {
       while( true ) {
         local_2c = 0;
@@ -1047,7 +1047,7 @@ LAB_005975b4:
         }
       }
     }
-    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x12);
+    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_E);
     if ((iVar6 != 0) &&
        (iVar6 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                           (g_CEditorToolsPtr,"Enter .S3D filename to save model",local_4d0,100,0),
@@ -1059,9 +1059,9 @@ LAB_005975b4:
       core_skeledit_cpp_CDeformableModelInstance_exportModelToS3D_FUN_00598ee0
                 (in_stack_00000004,local_4d0);
     }
-    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x13);
+    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_R);
     if (iVar6 != 0) {
-      iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+      iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
       if (iVar6 == 0) {
         if (local_88 < 0) {
           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
@@ -1077,7 +1077,7 @@ LAB_005975b4:
         local_88 = 1;
       }
     }
-    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3b);
+    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F1);
     if (iVar6 != 0) {
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
       engine_2d_c_drawText_FUN_00401fd0("P",7,0xb);

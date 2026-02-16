@@ -1,12 +1,12 @@
 // Name: crt_math.c_modf_FUN_00602102
 // Address: 00602102
 // Address Range: [[00602102, 00602121]]
-// Convention: __softfp_double
-// Signature: double __softfp_double crt_math_c_modf_FUN_00602102(double value,double *integer_part)
+// Convention: __crtmath
+// Signature: double __crtmath crt_math_c_modf_FUN_00602102(double value,double *integer_part)
 
 #include "nocturne.h"
 
-double __softfp_double modf(double value,double *integer_part)
+double __crtmath modf(double value,double *integer_part)
 
 {
   double dVar1;

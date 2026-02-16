@@ -10,38 +10,29 @@ double __cdecl sound_sndmain_cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0(C
 
 {
   int iVar1;
-  double input_value;
   double dVar2;
+  double dVar3;
   CSfxSample *in_stack_00000004;
-  CSfxSample *this_ptr_00;
   uint in_stack_ffffffe0;
   
-  this_ptr_00 = in_stack_00000004;
-  input_value = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
-                          (this_ptr,position,2,in_stack_ffffffe0);
-  this_ptr = SUB84(input_value,0);
-  position._0_4_ = (CSfxSample *)((ulonglong)input_value >> 0x20);
-  iVar1 = sound_sndmain_cpp_CSfxSample_getLoopMode_FUN_005a87d0(this_ptr_00);
-  dVar2 = (double)CONCAT44(this_ptr,in_stack_00000004);
+  dVar2 = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
+                    (this_ptr,position,2,in_stack_ffffffe0);
+  iVar1 = sound_sndmain_cpp_CSfxSample_getLoopMode_FUN_005a87d0(in_stack_00000004);
   if (iVar1 == 0) {
-    if (input_value < 0.0) {
-      dVar2 = (double)ZEXT48(in_stack_00000004);
-      position._0_4_ = (CSfxSample *)0x0;
+    if (dVar2 < 0.0) {
+      dVar2 = 0.0;
     }
-    else if (1.0 < input_value) {
-      dVar2 = (double)ZEXT48(in_stack_00000004);
-      position._0_4_ = (CSfxSample *)0x3ff00000;
+    else if (1.0 < dVar2) {
+      dVar2 = 1.0;
     }
   }
   else {
-    this_ptr_00 = position._0_4_;
-    dVar2 = floor(input_value);
-    dVar2 = (double)CONCAT44(this_ptr,in_stack_00000004) - dVar2;
+    dVar3 = floor(dVar2);
+    dVar2 = dVar2 - dVar3;
   }
-  this_ptr = (CSampleInfo *)((ulonglong)dVar2 >> 0x20);
-  in_stack_00000004 = SUB84(dVar2,0);
+  position._0_4_ = (uint)((ulonglong)dVar2 >> 0x20);
+  this_ptr = SUB84(dVar2,0);
   dVar2 = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
-                    (&in_stack_00000004->sample_info,(double)CONCAT44(2,this_ptr),
-                     (uint)position._0_4_,(uint)this_ptr_00);
+                    (this_ptr,(double)CONCAT44(2,position._0_4_),position._4_4_,in_stack_ffffffe0);
   return dVar2;
 }

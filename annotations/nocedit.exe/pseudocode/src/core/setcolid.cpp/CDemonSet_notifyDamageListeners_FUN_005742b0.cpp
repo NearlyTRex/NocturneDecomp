@@ -39,7 +39,7 @@ void __cdecl core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_005742b0(CDem
       local_5c.impact_direction.z = *local_20;
       local_5c.ammo_type = *(int *)((int)unknown_param + 0x28);
       local_5c.weapon_damage_modifier = *(float *)((int)unknown_param + 0x2c);
-      local_5c.gore_multiplier = *(float *)((int)unknown_param + 0x30);
+      local_5c.damage_type = *(int *)((int)unknown_param + 0x30);
       local_5c.attacker = *(CDemonActor **)((int)unknown_param + 0x34);
       local_5c.wielder = *(CDemonActor **)((int)unknown_param + 0x38);
       (*(((pCVar2->characters[0]->base).vtable._uc)->_uc).testDamageLine)

@@ -60,7 +60,7 @@ char * __cdecl sound_sndmain_cpp_testSoundFile_FUN_005ad3b0(char *sample_name)
       local_18 = (float)dVar5;
       if (0.0 <= local_18) {
         while (iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(sfx_handle), iVar2 != 0) {
-          iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,1);
+          iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_ESCAPE);
           if (iVar2 != 0) {
             return "Canceled";
           }

@@ -32,18 +32,18 @@ void __cdecl core_morph_cpp_CMorph_FUN_0052ca90(CMorph *this_ptr)
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
     shape_spotview_cpp_CSpotView_FUN_005b9670(g_CSpotViewPtr);
-    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
+    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if (iVar1 != 0) break;
     fStack_18 = g_CGamePtr->delta_time_float * (float)2;
-    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
+    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU);
     if (iVar1 != 0) {
       fStack_18 = fStack_18 * (float)0.33333333333333298;
     }
-    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x33);
+    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_COMMA);
     if (iVar1 != 0) {
       local_14 = local_14 - fStack_18;
     }
-    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x34);
+    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_PERIOD);
     if (iVar1 != 0) {
       local_14 = local_14 + fStack_18;
     }

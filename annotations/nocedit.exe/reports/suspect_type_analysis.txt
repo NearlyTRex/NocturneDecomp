@@ -4,29 +4,29 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  stack_param                     7929 ( 28.1%)
-  pointer_cast                    5854 ( 20.7%)
-  decompiler_intrinsic            5400 ( 19.1%)
-  unknown_field                   1724 (  6.1%)
-  unnamed_param                   1111 (  3.9%)
-  undefined_data                  1003 (  3.6%)
-  stack_ref                        698 (  2.5%)
-  unaffected_reg                   639 (  2.3%)
+  stack_param                     7832 ( 28.1%)
+  pointer_cast                    5855 ( 21.0%)
+  decompiler_intrinsic            5379 ( 19.3%)
+  unknown_field                   1680 (  6.0%)
+  unnamed_param                   1111 (  4.0%)
+  undefined_data                   952 (  3.4%)
+  stack_ref                        696 (  2.5%)
+  unaffected_reg                   656 (  2.4%)
   special_crt_function             637 (  2.3%)
-  param_count_too_few              440 (  1.6%)
+  param_count_too_few              439 (  1.6%)
   negative_offset                  374 (  1.3%)
-  extra_output                     372 (  1.3%)
   register_param                   364 (  1.3%)
   fpu_register_input               332 (  1.2%)
   nonstandard_int                  272 (  1.0%)
-  suspect_float                    261 (  0.9%)
-  unresolved_funcptr               240 (  0.8%)
+  extra_output                     251 (  0.9%)
+  unresolved_funcptr               239 (  0.9%)
+  suspect_float                    233 (  0.8%)
   warning_type_propagation         140 (  0.5%)
   warning_unreachable               99 (  0.4%)
   param_count_too_many              88 (  0.3%)
   unknown_type                      54 (  0.2%)
+  format_string_mismatch            35 (  0.1%)
   mmx_assembly                      34 (  0.1%)
-  format_string_mismatch            34 (  0.1%)
   eflags_input                      26 (  0.1%)
   undefined_ram                     24 (  0.1%)
   special_math_intrinsic            23 (  0.1%)
@@ -47,14 +47,14 @@ SUSPECT TYPE COUNTS
   special_entry_point                1 (  0.0%)
 
 ====================================================================================================
-TYPE: stack_param (7929 occurrences)
+TYPE: stack_param (7832 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  2820x  in_stack_00000008
-  2191x  in_stack_00000004
-   922x  in_stack_0000000c
-   425x  in_stack_00000010
+  2743x  in_stack_00000008
+  2183x  in_stack_00000004
+   920x  in_stack_0000000c
+   427x  in_stack_00000010
    197x  in_stack_00000014
    110x  in_stack_00000018
     91x  in_stack_0000001c
@@ -62,9 +62,9 @@ Unique patterns:
     47x  in_stack_fffffc88
     46x  in_stack_ffffff68
     39x  in_stack_ffffff54
-    36x  in_stack_fffffe70
+    33x  in_stack_fffffe70
+    24x  in_stack_ffffffe0
     23x  in_stack_00000020
-    23x  in_stack_ffffffe0
     22x  in_stack_fffffec4
     22x  in_stack_fffffd80
     20x  in_stack_ffffff70
@@ -97,22 +97,22 @@ Example functions:
     CPackedBitmap *in_stack_00000004;...
 
 ====================================================================================================
-TYPE: pointer_cast (5854 occurrences)
+TYPE: pointer_cast (5855 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  2201x  (uint *)((int)
-  1186x  (int *)((int)
-   397x  (float *)((int)
+  2212x  (uint *)((int)
+  1182x  (int *)((int)
+   390x  (float *)((int)
    355x  (SRenderVertex *)((int)
    273x  (CMatrix3x4f *)((int)
    220x  (double *)((int)
    214x  (void *)((int)
    204x  (byte *)((int)
-   137x  (char *)((int)
+   135x  (char *)((int)
     84x  (ushort *)((int)
     58x  (short *)((int)
-    45x  (CVector3f *)((int)
+    48x  (CVector3f *)((int)
     34x  (SShapeEditorPolygon *)((int)
     23x  (CMatrix3x3f *)((int)
     21x  (SMRGLHeaderExtended *)((int)
@@ -135,16 +135,16 @@ Example functions:
     piVar1 = (int *)((int)g_ScreenBufferArray + iVar4);...
 
 ====================================================================================================
-TYPE: decompiler_intrinsic (5400 occurrences)
+TYPE: decompiler_intrinsic (5379 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  1875x  ROUND
-   577x  CONCAT44
+  1883x  ROUND
+   551x  CONCAT44
    489x  ADJ
    422x  SQRT
    299x  ABS
-   170x  SUB84
+   168x  SUB84
    158x  CARRY4
    152x  CONCAT11
    106x  fcos
@@ -172,9 +172,9 @@ Example functions:
   cockpit_ckptutil.c_optimizedMemcpy_FUN_00431528
     (longlong)ROUND((float10)*(longlong *)(iVar7 + -0x18 + (int)src_buffer));...
   cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50
-    local_34 = (uint)(longlong)ROUND(dVar15);...
+    local_34 = (uint)(longlong)ROUND(dVar13);...
   cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004342f0
-    local_3c = (uint)(longlong)ROUND(dVar12);...
+    local_3c = (uint)(longlong)ROUND(dVar11);...
   crt_fpemu.c_staticInit_FUN_0060be80
     cVar4 = SBORROW1(BYTE_00684acd,'\x03');...
   crt_stdlib.c_i64toa_FUN_0060ad40
@@ -191,12 +191,12 @@ Example functions:
     uVar14 = SUB84(b,0);...
 
 ====================================================================================================
-TYPE: unknown_field (1724 occurrences)
+TYPE: unknown_field (1680 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   635x  ._0_4_
-   570x  ._4_4_
+   617x  ._0_4_
+   545x  ._4_4_
    114x  ._8_4_
     78x  ._12_4_
     66x  ._16_4_
@@ -213,8 +213,8 @@ Unique patterns:
     11x  ._30_2_
      5x  ._44_4_
      3x  ._12_8_
-     3x  ._8_8_
      3x  ._6_4_
+     2x  ._4_1_
 
 Example functions:
   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70
@@ -272,7 +272,7 @@ Example functions:
     void *param0;...
 
 ====================================================================================================
-TYPE: undefined_data (1003 occurrences)
+TYPE: undefined_data (952 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -280,14 +280,12 @@ Unique patterns:
     22x  DAT_03654368
     18x  DAT_02f7c53c
     17x  DAT_03365cc0
-    17x  DAT_008879c0
     16x  DAT_03277d80
     16x  DAT_02d831ec
     13x  DAT_03342b4c
     12x  DAT_02f7c8c4
     12x  DAT_02f43978
     12x  DAT_02f43974
-    12x  DAT_00887e70
     12x  DAT_03670b5c
     12x  DAT_02d831f0
     11x  DAT_03f9b210
@@ -296,6 +294,8 @@ Unique patterns:
     11x  DAT_02f7a024
     11x  DAT_03670650
     10x  DAT_02d873dc
+    10x  DAT_0327785c
+    10x  DAT_03665f74
 
 Example functions:
   crt_io.c_getTempDirectory_FUN_00609afc
@@ -336,7 +336,7 @@ Example functions:
     if (((DAT_03f9b210 == (Heap *)0x0) ||...
 
 ====================================================================================================
-TYPE: stack_ref (698 occurrences)
+TYPE: stack_ref (696 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -345,14 +345,14 @@ Unique patterns:
     22x  &stack0x00000000
     19x  &stack0xfffffa18
     17x  &stack0xfffffff0
-    16x  &stack0xffffffd4
     16x  &stack0xffffff98
     16x  &stack0xffffff54
     14x  &stack0x0000000c
-    14x  &stack0xffffffd8
+    14x  &stack0xffffffd4
     13x  &stack0xffffffec
     13x  &stack0xfffffce0
     13x  &stack0xfffff790
+    12x  &stack0xffffffd8
     12x  &stack0xfffffd68
     12x  &stack0xfffffd38
     11x  &stack0xfffffff4
@@ -390,12 +390,12 @@ Example functions:
     *(int *)(&stack0xfffffff4 + iVar3) = iVar3;...
 
 ====================================================================================================
-TYPE: unaffected_reg (639 occurrences)
+TYPE: unaffected_reg (656 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   217x  unaff_ESI
-   150x  unaff_EBX
+   223x  unaff_ESI
+   161x  unaff_EBX
    147x  unaff_EDI
    121x  unaff_EBP
      4x  unaff_EAX
@@ -482,11 +482,11 @@ Example functions:
     CRT function (runtime support) at 00607e64...
 
 ====================================================================================================
-TYPE: param_count_too_few (440 occurrences)
+TYPE: param_count_too_few (439 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   115x  declared:1 vs estimated:2
+   114x  declared:1 vs estimated:2
     33x  declared:1 vs estimated:3
     28x  declared:1 vs estimated:5
     24x  declared:3 vs estimated:4
@@ -632,52 +632,6 @@ Example functions:
     ((istream *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags);...
 
 ====================================================================================================
-TYPE: extra_output (372 occurrences)
-====================================================================================================
-
-Unique patterns:
-    91x  extraout_EBX
-    87x  extraout_EAX
-    28x  extraout_ST1
-    25x  extraout_EDX
-    20x  extraout_EAX_00
-    18x  extraout_EDX_00
-    15x  extraout_EBX_00
-    11x  extraout_EDI
-    10x  extraout_var
-     8x  extraout_ST2
-     6x  extraout_EDX_01
-     6x  extraout_AL
-     6x  extraout_ST3
-     6x  extraout_EBX_01
-     5x  extraout_ST0_00
-     4x  extraout_ST0
-     4x  extraout_EDX_02
-     2x  extraout_EDX_03
-     2x  extraout_EDX_04
-     2x  extraout_EDX_05
-
-Example functions:
-  crt_fpemu.c_staticInit_FUN_0060be80
-    uint extraout_EDX;...
-  crt_process.c_spawnvp_FUN_0060f39c
-    char *extraout_EAX;...
-  crt_stdlib.c__qsort_FUN_005fdf38
-    void *extraout_EAX;...
-  crt_fstream.cpp_ofstream_constructor_FUN_005ff710
-    int extraout_EAX;...
-  crt_fstream.cpp_ifstream_constructor_FUN_005ff664
-    int extraout_EAX;...
-  crt_memory.c___memfill_FUN_00603b00
-    byte *extraout_EAX;...
-  crt_math.c_dadd_FUN_0060defc
-    uint extraout_EDX;...
-  crt_math.c_dmul_FUN_0060e0b9
-    uint extraout_EDX;...
-  crt_math.c_atan2_FUN_0060c440
-    float10 extraout_ST0;...
-
-====================================================================================================
 TYPE: register_param (364 occurrences)
 ====================================================================================================
 
@@ -773,77 +727,57 @@ Example functions:
     uint5 uVar12;...
 
 ====================================================================================================
-TYPE: suspect_float (261 occurrences)
+TYPE: extra_output (251 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    33x  1.4013e-45
-    13x  1.12104e-44
-    13x  5.60519e-45
-    11x  2.8026e-45
-     8x  2.29589e-41
-     7x  1.5134e-43
-     7x  9.18341e-41
-     7x  4.2039e-45
-     7x  9.80909e-45
-     6x  1.4013e-43
-     5x  3.57331e-43
-     4x  1.41531e-43
-     4x  4.59177e-41
-     4x  7.00649e-45
-     4x  2.10195e-44
-     3x  1.44334e-43
-     3x  1.26117e-44
-     3x  1.82169e-44
-     2x  1.4013e-44
-     2x  1.45735e-43
+    87x  extraout_EAX
+    25x  extraout_EDX
+    20x  extraout_EAX_00
+    19x  extraout_ST1
+    18x  extraout_EDX_00
+    11x  extraout_EDI
+    10x  extraout_var
+     8x  extraout_ST2
+     6x  extraout_EDX_01
+     6x  extraout_AL
+     6x  extraout_ST3
+     5x  extraout_ST0_00
+     4x  extraout_ST0
+     4x  extraout_EDX_02
+     2x  extraout_EDX_03
+     2x  extraout_EDX_04
+     2x  extraout_EDX_05
+     2x  extraout_ESI
+     2x  extraout_ST1_00
+     2x  extraout_EAX_01
 
 Example functions:
-  crt_stdio.c_scanf_float_FUN_00605178
-    local_20 = 1.4013e-44;...
-  engine_matrix.c_invertTransformMatrix_FUN_0050c640
-    fVar19 = (float10)uStack_54 * (float10)7.418788e-39;...
-  engine_3d.c_drawLineStrip3D_FUN_00404600
-    local_a0.w_recip = 5.9026e-39;...
-  engine_3d.c_drawLineStrip2D_FUN_00404570
-    local_a0.w_recip = 5.902398e-39;...
-  engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-    CStack_18.x = 6.68261e-39;...
-  core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0
-    local_1c = 1.4013e-45;...
-  core_anvil.cpp_CAnvil_process_FUN_00411d90
-    local_48.gore_multiplier = 1.12104e-44;...
-  core_dcamera.cpp_CDemonCamera_calculateInverseTransform_FUN_0044cf20
-    fVar19 = (float10)fVar1 * (float10)6.319857e-39;...
-  core_batcreat.cpp_CBatCreature_processDamage_FUN_00416030
-    if (damage_info->gore_multiplier == 1.5134e-43) {...
-  core_dracbrid.cpp_CDraculaBride_processDamage_FUN_00486070
-    if (damage_info->gore_multiplier == 1.45735e-43) {...
-  core_dracbrid.cpp_CDraculaBride_process_FUN_00484410
-    in_stack_fffffb6c = 6.637242e-39;...
-  core_cloth.cpp_CCloth_boneEditor_FUN_0043c880
-    local_2c = 1.4013e-45;...
-  core_inv.cpp_CInventory_updateInventory_FUN_004ffad0
-    if ((pCVar3 != (CDemonActor *)0x0) && (pCVar3[2].location.position.y != 2.8026e-...
-  core_gore.cpp_CGore_FUN_004edbb0
-    local_7c.m[0].x = 7.242299e-39;...
-  core_baron.cpp_CBaron_FUN_004136b0
-    local_d0.gore_multiplier = 8.40779e-45;...
-  core_vehicle.cpp_CVehicle_process_FUN_005e7e80
-    SStack_104.gore_multiplier = 5.60519e-45;...
-  core_shotgun.cpp_CShotgun_fire_FUN_00588060
-    fStack_f4 = 1.41531e-43;...
-  core_manpuz.cpp_CMansionPuzzleCircle_FUN_00509d50
-    this_ptr_00->vertex_buffer_ptr->w_recip = 9.18341e-41;...
-  core_setedit.cpp_CDemonSet_FUN_00583170
-    in_stack_fffffdbc = 8.10605e-39;...
+  crt_fpemu.c_staticInit_FUN_0060be80
+    uint extraout_EDX;...
+  crt_process.c_spawnvp_FUN_0060f39c
+    char *extraout_EAX;...
+  crt_stdlib.c__qsort_FUN_005fdf38
+    void *extraout_EAX;...
+  crt_fstream.cpp_ofstream_constructor_FUN_005ff710
+    int extraout_EAX;...
+  crt_fstream.cpp_ifstream_constructor_FUN_005ff664
+    int extraout_EAX;...
+  crt_memory.c___memfill_FUN_00603b00
+    byte *extraout_EAX;...
+  crt_math.c_dadd_FUN_0060defc
+    uint extraout_EDX;...
+  crt_math.c_dmul_FUN_0060e0b9
+    uint extraout_EDX;...
+  crt_math.c_atan2_FUN_0060c440
+    float10 extraout_ST0;...
 
 ====================================================================================================
-TYPE: unresolved_funcptr (240 occurrences)
+TYPE: unresolved_funcptr (239 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   207x  code *
+   206x  code *
     33x  code
 
 Example functions:
@@ -877,6 +811,68 @@ Example functions:
     code *pcVar1;...
   crt_math.c_FUN_00606b5b
     code *pcVar1;...
+
+====================================================================================================
+TYPE: suspect_float (233 occurrences)
+====================================================================================================
+
+Unique patterns:
+    32x  1.4013e-45
+    12x  1.12104e-44
+    11x  2.8026e-45
+     9x  5.60519e-45
+     8x  2.29589e-41
+     6x  9.18341e-41
+     6x  4.2039e-45
+     6x  9.80909e-45
+     5x  3.57331e-43
+     4x  4.59177e-41
+     4x  7.00649e-45
+     4x  2.10195e-44
+     3x  1.41531e-43
+     3x  1.26117e-44
+     3x  1.82169e-44
+     2x  1.4013e-44
+     2x  1.4013e-43
+     2x  2.24208e-44
+     2x  6.737684e-39
+     1x  7.418788e-39
+
+Example functions:
+  crt_stdio.c_scanf_float_FUN_00605178
+    local_20 = 1.4013e-44;...
+  engine_matrix.c_invertTransformMatrix_FUN_0050c640
+    dVar19 = round((double)(uStack_54 * 7.418788e-39));...
+  engine_3d.c_drawLineStrip3D_FUN_00404600
+    local_a0.w_recip = 5.9026e-39;...
+  engine_3d.c_drawLineStrip2D_FUN_00404570
+    local_a0.w_recip = 5.902398e-39;...
+  engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
+    CStack_18.x = 6.68261e-39;...
+  core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0
+    local_1c = 1.4013e-45;...
+  core_dcamera.cpp_CDemonCamera_calculateInverseTransform_FUN_0044cf20
+    dVar19 = round((double)(fVar1 * 6.319857e-39));...
+  core_dracbrid.cpp_CDraculaBride_process_FUN_00484410
+    in_stack_fffffb6c = 6.637242e-39;...
+  core_cloth.cpp_CCloth_boneEditor_FUN_0043c880
+    local_2c = 1.4013e-45;...
+  core_inv.cpp_CInventory_updateInventory_FUN_004ffad0
+    if ((pCVar3 != (CDemonActor *)0x0) && (pCVar3[2].location.position.y != 2.8026e-...
+  core_gore.cpp_CGore_FUN_004edbb0
+    local_7c.m[0].x = 7.242299e-39;...
+  core_manpuz.cpp_CMansionPuzzleCircle_FUN_00509d50
+    this_ptr_00->vertex_buffer_ptr->w_recip = 9.18341e-41;...
+  core_setedit.cpp_CDemonSet_FUN_00583170
+    in_stack_fffffdbc = 8.10605e-39;...
+  core_setutil.cpp_C3DSCamera_import3DS_FUN_00585c90
+    fVar9 = 8.115118e-39;...
+  core_gun.cpp_CGun_fire_FUN_004f0350
+    CStack_108.m[0].y = 1.41531e-43;...
+  core_hero.cpp_CHero_ctor_FUN_004f2340
+    pCVar3[-0x48].item_angles[0x15] = 2.8026e-45;...
+  core_mobster.cpp_CMobster_process_FUN_00525840
+    (pCVar10->base).base.model.transformed_vertices[0x4f].y = 1.4013e-43;...
 
 ====================================================================================================
 TYPE: warning_type_propagation (140 occurrences)
@@ -1125,6 +1121,68 @@ Example functions:
     unkbyte10 in_ST0;...
 
 ====================================================================================================
+TYPE: format_string_mismatch (35 occurrences)
+====================================================================================================
+
+Unique patterns:
+     4x  core_main_c_displayErrorAndQuit_FUN_00506f10("Invalid sfx string: %s");
+     2x  core_main_c_displayErrorAndQuit_FUN_00506f10("SampleInfo::cvtPlaybackPos - can't use relative sample
+     1x  core_main_c_displayErrorAndQuit_FUN_00506f10("MPEG Layer 2 - pick_table - can't load tables!  File: 
+     1x  core_main_c_displayErrorAndQuit_FUN_00506f10("js_bound bad layer/modext (%d/%d)  File: %s");
+     1x  core_main_c_displayErrorAndQuit_FUN_00506f10("Not enough main data to decode frame %d.");
+     1x  engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"SFXDBG: sample = %s\n");
+     1x  engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"Killing %s in compute()\n");
+     1x  core_main_c_displayErrorAndQuit_FUN_00506f10("CMansionPuzzleCircle::panelOccupied - invalid index: %
+     1x  core_main_c_displayErrorAndQuit_FUN_00506f10("Tried to define texture %s as ground type %d, but it w
+     1x  core_main_c_displayErrorAndQuit_FUN_00506f10("Texture filename %s is too long to add to CGroundTypeL
+     1x  core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create %s");
+     1x  core_main_c_displayErrorAndQuit_FUN_00506f10("CScript::editorAction - unknown action: %d parm %d",ac
+     1x  core_main_c_displayErrorAndQuit_FUN_00506f10("NULL actor pointer detected, %s line %d",context_file)
+     1x  core_main_c_displayErrorAndQuit_FUN_00506f10("Invalid actor pointer %08X detected at %s, line %d");
+     1x  core_main_c_displayErrorAndQuit_FUN_00506f10("Dangling/corrupt actor pointer detected at %s line %d:
+     1x  core_main_c_displayErrorAndQuit_FUN_00506f10("Unknown CActorProperty type: %d");
+     1x  engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"Can't find wav: %s\n");
+     1x  core_main_c_displayErrorAndQuit_FUN_00506f10("Can't find motion \"%s\" in motion list");
+     1x  core_main_c_displayErrorAndQuit_FUN_00506f10("Can't find state \"%s\" in motion list");
+     1x  engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"Phase: %d, Timer: %f\n");
+
+Example functions:
+  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40
+    Format string expects 1 args but got 0...
+  sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
+    Format string expects 1 args but got 0...
+  sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100
+    Format string expects 1 args but got 0...
+  core_manpuz.cpp_CMansionPuzzleCircle_panelOccupied_FUN_0050b040
+    Format string expects 1 args but got 0...
+  core_setedit.cpp_FUN_00578290
+    Format string expects 3 args but got 0...
+  core_setedit.cpp_FUN_00578630
+    Format string expects 1 args but got 0...
+  core_script.cpp_CScript_editorAction_FUN_00564820
+    Format string expects 2 args but got 1...
+  core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
+    Format string expects 2 args but got 1...
+  core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50
+    Format string expects 1 args but got 0...
+  core_sound.cpp_playSfxInternal_FUN_005b1fd0
+    Format string expects 1 args but got 0...
+  core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460
+    Format string expects 1 args but got 0...
+  core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0
+    Format string expects 1 args but got 0...
+  core_werewolf.cpp_CWerewolf_process_FUN_005efde0
+    Format string expects 2 args but got 0...
+  core_stranger.cpp_CStranger_FUN_005bb960
+    Format string expects 1 args but got 0...
+  core_skeledit.cpp_CSkeleton_FUN_00592690
+    Format string expects 1 args but got 0...
+  core_event.cpp_CEventList_setActorVariable_FUN_004b09a0
+    Format string expects 2 args but got 0...
+  core_event.cpp_CEventList_executeCommand_FUN_004aacc0
+    Format string expects 1 args but got 0...
+
+====================================================================================================
 TYPE: mmx_assembly (34 occurrences)
 ====================================================================================================
 
@@ -1204,68 +1262,6 @@ Example functions:
     Function uses MMX instructions...
   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
     Function uses MMX instructions...
-
-====================================================================================================
-TYPE: format_string_mismatch (34 occurrences)
-====================================================================================================
-
-Unique patterns:
-     4x  core_main_c_displayErrorAndQuit_FUN_00506f10("Invalid sfx string: %s");
-     2x  core_main_c_displayErrorAndQuit_FUN_00506f10("SampleInfo::cvtPlaybackPos - can't use relative sample
-     1x  core_main_c_displayErrorAndQuit_FUN_00506f10("MPEG Layer 2 - pick_table - can't load tables!  File: 
-     1x  core_main_c_displayErrorAndQuit_FUN_00506f10("js_bound bad layer/modext (%d/%d)  File: %s");
-     1x  core_main_c_displayErrorAndQuit_FUN_00506f10("Not enough main data to decode frame %d.");
-     1x  engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"SFXDBG: sample = %s\n");
-     1x  engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"Killing %s in compute()\n");
-     1x  core_main_c_displayErrorAndQuit_FUN_00506f10("CMansionPuzzleCircle::panelOccupied - invalid index: %
-     1x  core_main_c_displayErrorAndQuit_FUN_00506f10("Tried to define texture %s as ground type %d, but it w
-     1x  core_main_c_displayErrorAndQuit_FUN_00506f10("Texture filename %s is too long to add to CGroundTypeL
-     1x  core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create %s");
-     1x  core_main_c_displayErrorAndQuit_FUN_00506f10("CScript::editorAction - unknown action: %d parm %d",ac
-     1x  core_main_c_displayErrorAndQuit_FUN_00506f10("NULL actor pointer detected, %s line %d",context_file)
-     1x  core_main_c_displayErrorAndQuit_FUN_00506f10("Invalid actor pointer %08X detected at %s, line %d");
-     1x  core_main_c_displayErrorAndQuit_FUN_00506f10("Dangling/corrupt actor pointer detected at %s line %d:
-     1x  core_main_c_displayErrorAndQuit_FUN_00506f10("Unknown CActorProperty type: %d");
-     1x  engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"Can't find wav: %s\n");
-     1x  core_main_c_displayErrorAndQuit_FUN_00506f10("Can't find motion \"%s\" in motion list");
-     1x  core_main_c_displayErrorAndQuit_FUN_00506f10("Can't find state \"%s\" in motion list");
-     1x  engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"Phase: %d, Timer: %f\n");
-
-Example functions:
-  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40
-    Format string expects 1 args but got 0...
-  sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
-    Format string expects 1 args but got 0...
-  sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100
-    Format string expects 1 args but got 0...
-  core_manpuz.cpp_CMansionPuzzleCircle_panelOccupied_FUN_0050b040
-    Format string expects 1 args but got 0...
-  core_setedit.cpp_FUN_00578290
-    Format string expects 3 args but got 0...
-  core_setedit.cpp_FUN_00578630
-    Format string expects 1 args but got 0...
-  core_script.cpp_CScript_editorAction_FUN_00564820
-    Format string expects 2 args but got 1...
-  core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-    Format string expects 2 args but got 1...
-  core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50
-    Format string expects 1 args but got 0...
-  core_sound.cpp_playSfxInternal_FUN_005b1fd0
-    Format string expects 1 args but got 0...
-  core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460
-    Format string expects 1 args but got 0...
-  core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0
-    Format string expects 1 args but got 0...
-  core_werewolf.cpp_CWerewolf_process_FUN_005efde0
-    Format string expects 2 args but got 0...
-  core_stranger.cpp_CStranger_FUN_005bb960
-    Format string expects 1 args but got 0...
-  core_skeledit.cpp_CSkeleton_FUN_00592690
-    Format string expects 1 args but got 0...
-  core_event.cpp_CEventList_setActorVariable_FUN_004b09a0
-    Format string expects 2 args but got 0...
-  core_event.cpp_CEventList_executeCommand_FUN_004aacc0
-    Format string expects 1 args but got 0...
 
 ====================================================================================================
 TYPE: eflags_input (26 occurrences)

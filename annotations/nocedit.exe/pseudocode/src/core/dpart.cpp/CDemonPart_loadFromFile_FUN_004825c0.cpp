@@ -17,10 +17,9 @@ void __cdecl core_dpart_cpp_CDemonPart_loadFromFile_FUN_004825c0(CDemonPart *thi
   int iVar6;
   int iVar7;
   char *buffer;
-  float10 fVar8;
-  float10 fVar9;
+  double dVar8;
+  double dVar9;
   double dVar10;
-  double dVar11;
   
   _fread(this_ptr,0x20,1,file_handle);
   _fread(&this_ptr->vertex_count,4,1,file_handle);
@@ -83,24 +82,22 @@ void __cdecl core_dpart_cpp_CDemonPart_loadFromFile_FUN_004825c0(CDemonPart *thi
     }
   }
   if (offset_position != (CVector3f *)0x0) {
-    fVar8 = (float10)256;
-    fVar4 = offset_position->y;
-    fVar9 = (float10)offset_position->z * fVar8;
+    dVar9 = (double)offset_position->y * 256;
+    dVar10 = (double)offset_position->z * 256;
     iVar7 = this_ptr->vertex_count;
     iVar5 = 0;
-    dVar10 = round((double)((float10)offset_position->x * fVar8));
-    dVar11 = round((double)((float10)fVar4 * fVar8));
-    fVar8 = (float10)dVar11;
-    dVar11 = round((double)fVar9);
+    dVar8 = round((double)offset_position->x * 256);
+    dVar9 = round(dVar9);
+    dVar10 = round(dVar10);
     if (0 < iVar7) {
       iVar7 = 0;
       do {
         piVar1 = (int *)((int)&this_ptr->vertex_positions->x + iVar7);
-        *piVar1 = *piVar1 - (int)ROUND(dVar10);
+        *piVar1 = *piVar1 - (int)ROUND(dVar8);
         piVar1 = (int *)((int)&this_ptr->vertex_positions->y + iVar7);
-        *piVar1 = *piVar1 - (int)ROUND(fVar8);
+        *piVar1 = *piVar1 - (int)ROUND(dVar9);
         piVar1 = (int *)((int)&this_ptr->vertex_positions->z + iVar7);
-        *piVar1 = *piVar1 - (int)ROUND(dVar11);
+        *piVar1 = *piVar1 - (int)ROUND(dVar10);
         iVar5 = iVar5 + 1;
         iVar7 = iVar7 + 0xc;
       } while (iVar5 < this_ptr->vertex_count);

@@ -27,21 +27,21 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_processInEditor_FUN_004d25f0
     core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base);
   }
   this_ptr_00 = (CFrankenstienMachine *)0x3f800000;
-  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
   if (iVar1 != 0) {
     this_ptr_00 = (CFrankenstienMachine *)0x40800000;
   }
-  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
+  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU);
   if (iVar1 != 0) {
     this_ptr_00 = (CFrankenstienMachine *)((float)this_ptr_00 * (float)0.25);
   }
   pCVar2 = core_frankgen_cpp_CFrankenstienMachine_findLeader_FUN_004d2330(this_ptr_00);
-  iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x34);
+  iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_PERIOD);
   if (iVar1 != 0) {
     *(float *)(pCVar2[1].actor_name + 4) = *(float *)(pCVar2[1].actor_name + 4) + (float)this_ptr_00
     ;
   }
-  iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x33);
+  iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_COMMA);
   if (iVar1 != 0) {
     *(float *)(pCVar2[1].actor_name + 4) = *(float *)(pCVar2[1].actor_name + 4) - (float)this_ptr_00
     ;

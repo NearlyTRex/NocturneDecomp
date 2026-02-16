@@ -28,7 +28,7 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
   float fStack_94;
   float fStack_90;
   CPathMap *pCStack_8c;
-  float fStack_70;
+  int iStack_70;
   CDemonActor *local_68;
   float local_64;
   float local_60;
@@ -158,7 +158,7 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
           iVar7 = core_fire_cpp_CFireEffect_FUN_004c8c90(g_CFireEffectPtr);
           if (iVar7 != 0) {
             core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff60);
-            fStack_70 = 5.60519e-45;
+            iStack_70 = 4;
             if (&fStack_94 != &fStack_58) {
               fStack_94 = fStack_58;
               fStack_90 = fStack_54;

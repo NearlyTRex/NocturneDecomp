@@ -12,41 +12,41 @@ void __cdecl core_barrier_cpp_CBarrier_processInEditor_FUN_00414460(CBarrier *th
   int iVar1;
   float fStack_18;
   
-  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
   if (iVar1 == 0) {
     core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base);
     return;
   }
   fStack_18 = g_CGamePtr->delta_time_float * (float)5;
-  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
   if (iVar1 != 0) {
     fStack_18 = fStack_18 * (float)5;
   }
-  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
+  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU);
   if (iVar1 != 0) {
     fStack_18 = fStack_18 * (float)0.20000000000000001;
   }
-  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
+  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD4);
   if (iVar1 != 0) {
     (this_ptr->size).x = (this_ptr->size).x - fStack_18;
   }
-  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
+  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD6);
   if (iVar1 != 0) {
     (this_ptr->size).x = (this_ptr->size).x + fStack_18;
   }
-  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
+  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_A);
   if (iVar1 != 0) {
     (this_ptr->size).y = (this_ptr->size).y - fStack_18;
   }
-  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
+  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_Q);
   if (iVar1 != 0) {
     (this_ptr->size).y = (this_ptr->size).y + fStack_18;
   }
-  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
+  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD2);
   if (iVar1 != 0) {
     (this_ptr->size).z = (this_ptr->size).z - fStack_18;
   }
-  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
+  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD8);
   if (iVar1 != 0) {
     (this_ptr->size).z = (this_ptr->size).z + fStack_18;
   }

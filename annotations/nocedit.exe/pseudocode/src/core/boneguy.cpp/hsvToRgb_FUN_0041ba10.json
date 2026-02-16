@@ -6,17 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 149,
-    "complexity_score": 118,
+    "complexity_score": 86,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 3,
-    "pseudocode_lines": 68,
-    "suspect_count": 4,
+    "pseudocode_lines": 61,
+    "suspect_count": 2,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "extra_output"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 217
+    "total_lines": 210
   },
   "cross_references": [],
   "function": {
@@ -264,31 +263,17 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
-      "match": "extraout_EBX",
-      "text": "CVector3f *extraout_EBX;",
-      "type": "extra_output"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 23,
+      "match": "ROUND",
+      "text": "fVar1 = fVar1 - (float)(int)ROUND(dVar6);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 27,
       "match": "ROUND",
-      "text": "fStack_4c = fStack_4c - (float)(int)ROUND(dVar7);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 30,
-      "match": "extraout_EBX",
-      "text": "out_rgb = extraout_EBX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
-      "match": "ROUND",
-      "text": "switch(((int)ROUND(dVar7) + 600) % 6) {",
+      "text": "switch(((int)ROUND(dVar6) + 600) % 6) {",
       "type": "decompiler_intrinsic"
     }
   ]

@@ -43,10 +43,10 @@ int __cdecl core_menu_cpp_checkAndCalibrateGamepad_FUN_00511840(void)
     engine_2d_c_drawText_FUN_00401fd0(acStack_224,0,0);
     core_game_cpp_CGame_resetKeyState_FUN_004dbe60(g_CGamePtr);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1c);
+    iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_RETURN);
     DVar6 = 0;
     if (iVar3 != 0) break;
-    iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
+    iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if (iVar3 != 0) goto LAB_00510743;
     DStack_1c = g_JoyXPos;
     DStack_18 = g_JoyYPos;
@@ -65,7 +65,7 @@ int __cdecl core_menu_cpp_checkAndCalibrateGamepad_FUN_00511840(void)
     engine_2d_c_drawText_FUN_00401fd0(acStack_124,0,0);
     core_game_cpp_CGame_resetKeyState_FUN_004dbe60(g_CGamePtr);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1c);
+    iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_RETURN);
     pCVar1 = g_CGamePtr;
     if (iVar3 != 0) {
       g_CGamePtr->x_center = DStack_1c;
@@ -76,7 +76,7 @@ int __cdecl core_menu_cpp_checkAndCalibrateGamepad_FUN_00511840(void)
       pCVar1->y_stick_min = DStack_14;
       return 1;
     }
-    iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
+    iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if (iVar3 != 0) break;
     if ((int)g_JoyXPos < (int)DVar5) {
       DVar5 = g_JoyXPos;

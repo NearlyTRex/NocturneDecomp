@@ -141,7 +141,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053e220(CDemonMission *this_ptr
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
     core_setcolid_cpp_CDemonSet_FUN_005743e0(g_CDemonSetPtr);
-    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if (iVar4 != 0) break;
     core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)(local_bc + 4));
     if ((g_MouseButtonFlags.bytes[0] & 1) != 0) {
@@ -173,7 +173,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053e220(CDemonMission *this_ptr
       }
       g_MouseButtonFlags.bytes[0] = g_MouseButtonFlags.bytes[0] & 0xfe;
     }
-    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x39);
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_SPACE);
     if (iVar4 == 0) {
       fStack_c4 = 0.0;
     }
@@ -184,7 +184,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053e220(CDemonMission *this_ptr
         core_gore_cpp_CGore_FUN_004edaa0(g_CGorePtr);
       }
     }
-    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1c);
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_RETURN);
     if (iVar4 == 0) {
       local_bc._0_4_ = 0.0;
     }
@@ -199,7 +199,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053e220(CDemonMission *this_ptr
         core_gore_cpp_CGore_FUN_004edaa0(g_CGorePtr);
       }
     }
-    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x19);
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_P);
     if (iVar4 != 0) {
       CStack_78.x = (float)local_bc._4_4_;
       CStack_78.y = fStack_b4;
@@ -223,7 +223,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053e220(CDemonMission *this_ptr
         core_gore_cpp_CGore_FUN_004ede30(g_CGorePtr);
       }
     }
-    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x13);
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_R);
     if (iVar4 != 0) {
       iVar4 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                         (g_CEditorToolsPtr,"Reset gore?");

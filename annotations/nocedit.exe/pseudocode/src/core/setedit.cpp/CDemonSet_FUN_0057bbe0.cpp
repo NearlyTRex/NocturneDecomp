@@ -25,8 +25,8 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_0057bbe0(CDemonSet *this_ptr)
   float local_8a8;
   CPickList local_8a4;
   CPickList local_4fc;
-  char local_154 [252];
-  double dStack_58;
+  char local_154 [256];
+  double local_54;
   char (*local_4c) [40];
   float *local_48;
   float *local_44;
@@ -230,12 +230,12 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_0057bbe0(CDemonSet *this_ptr)
                         (g_CEditorToolsPtr,"Enter light X velocity",&local_8a8,0,0.0,0.0,1)
       ;
       if (iVar7 != 0) {
-        dStack_58 = floor
-                              ((double)(local_8a8 * (float)256 + (float)0.5)
-                              );
-        iVar7 = local_1c;
-        dVar9 = round(dStack_58);
-        *(int *)(iVar7 + 0x17f8) = (int)ROUND(dVar9);
+        local_54 = floor
+                             ((double)(local_8a8 * (float)256 + (float)0.5))
+        ;
+        pCVar4 = local_18;
+        dVar9 = round(local_54);
+        (pCVar4->filter_vel).x = (int)ROUND(dVar9);
       }
       break;
     case 0x49:
@@ -244,12 +244,12 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_0057bbe0(CDemonSet *this_ptr)
                         (g_CEditorToolsPtr,"Enter light Y velocity",&local_8a8,0,0.0,0.0,1)
       ;
       if (iVar7 != 0) {
-        dStack_58 = floor
-                              ((double)(local_8a8 * (float)256 + (float)0.5)
-                              );
-        iVar7 = local_1c;
-        dVar9 = round(dStack_58);
-        *(int *)(iVar7 + 0x17fc) = (int)ROUND(dVar9);
+        local_54 = floor
+                             ((double)(local_8a8 * (float)256 + (float)0.5))
+        ;
+        pCVar4 = local_18;
+        dVar9 = round(local_54);
+        (pCVar4->filter_vel).y = (int)ROUND(dVar9);
       }
       break;
     case 0x4a:

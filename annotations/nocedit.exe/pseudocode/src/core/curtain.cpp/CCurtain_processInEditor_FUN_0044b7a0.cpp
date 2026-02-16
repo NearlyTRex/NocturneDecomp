@@ -12,22 +12,22 @@ void __cdecl core_curtain_cpp_CCurtain_processInEditor_FUN_0044b7a0(CCurtain *th
   float fVar1;
   int iVar2;
   
-  iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+  iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
   if (iVar2 != 0) {
     fVar1 = g_CGamePtr->delta_time_float * (float)4;
-    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD4);
     if (iVar2 != 0) {
       (this_ptr->curtain_size).x = (this_ptr->curtain_size).x - fVar1;
     }
-    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD6);
     if (iVar2 != 0) {
       (this_ptr->curtain_size).x = (this_ptr->curtain_size).x + fVar1;
     }
-    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD2);
     if (iVar2 != 0) {
       (this_ptr->curtain_size).y = (this_ptr->curtain_size).y - fVar1;
     }
-    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD8);
     if (iVar2 != 0) {
       (this_ptr->curtain_size).y = (this_ptr->curtain_size).y + fVar1;
     }

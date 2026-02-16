@@ -67,14 +67,14 @@ LAB_0049dcd6:
   shape_edittool_cpp_CEdButton_paint_FUN_004a65e0(&local_1e0,(uint)(iVar2 == 1));
   shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,0);
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-  iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+  iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
   if ((iVar3 == 0) &&
-     (iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0xf), iVar3 != 0)) {
+     (iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_TAB), iVar3 != 0)) {
     iVar2 = iVar2 + 1;
   }
-  iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+  iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
   if ((iVar3 != 0) &&
-     (iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0xf), iVar3 != 0)) {
+     (iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_TAB), iVar3 != 0)) {
     iVar2 = iVar2 + -1;
   }
   pcVar6 = &stack0xfffffce0;

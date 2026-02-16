@@ -26,33 +26,33 @@ void __cdecl core_tvbat_cpp_CTVBat_processInEditor_FUN_005e5260(CTVBat *this_ptr
   }
   this_ptr_00 = g_CKeysPtr;
   (this_ptr->base).base.hit_points = 10.0;
-  iVar3 = (*this_ptr_00->vtable->getKeyState)(this_ptr_00,0x1d);
+  iVar3 = (*this_ptr_00->vtable->getKeyState)(this_ptr_00,DIK_LCONTROL);
   if (iVar3 == 0) {
     core_charactr_cpp_CCharacter_processInEditor_FUN_0042f800((CCharacter *)this_ptr);
     return;
   }
   fVar2 = g_CGamePtr->delta_time_float * (float)4;
-  iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
+  iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD4);
   if (iVar3 != 0) {
     this_ptr->max_distance = this_ptr->max_distance - fVar2;
   }
-  iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
+  iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD6);
   if (iVar3 != 0) {
     this_ptr->max_distance = this_ptr->max_distance + fVar2;
   }
-  iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
+  iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_A);
   if (iVar3 != 0) {
     this_ptr->max_height = this_ptr->max_height - fVar2;
   }
-  iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
+  iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_Q);
   if (iVar3 != 0) {
     this_ptr->max_height = this_ptr->max_height + fVar2;
   }
-  iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
+  iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD2);
   if (iVar3 != 0) {
     this_ptr->max_distance = this_ptr->max_distance - fVar2;
   }
-  iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
+  iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD8);
   if (iVar3 != 0) {
     this_ptr->max_distance = this_ptr->max_distance + fVar2;
   }

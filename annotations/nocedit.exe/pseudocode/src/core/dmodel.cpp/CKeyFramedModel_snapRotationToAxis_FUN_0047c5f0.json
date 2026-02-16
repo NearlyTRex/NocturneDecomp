@@ -2,22 +2,28 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "incompatible_types",
-        "column": 14,
-        "line": 83,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 89,
+        "line": 82,
         "message": "use of undeclared identifier 'stack0xffffff70'"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 90,
+        "line": 83,
         "message": "use of undeclared identifier 'stack0xffffff74'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 16,
+        "line": 90,
+        "message": "invalid operands to binary expression ('double' and 'int')"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 14,
+        "line": 107,
+        "message": "invalid operands to binary expression ('double' and 'int')"
       }
     ],
     "success": false,
@@ -25,19 +31,19 @@
   },
   "complexity": {
     "assembly_lines": 265,
-    "complexity_score": 403,
+    "complexity_score": 325,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 6,
-    "pseudocode_lines": 113,
-    "suspect_count": 27,
+    "pseudocode_lines": 105,
+    "suspect_count": 20,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "pointer_cast",
-      "stack_ref"
+      "stack_ref",
+      "suspect_float"
     ],
-    "total_lines": 378
+    "total_lines": 370
   },
   "cross_references": [
     {
@@ -435,193 +441,144 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 13,
-      "match": "extraout_EBX",
-      "text": "int extraout_EBX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 14,
-      "match": "extraout_EBX_00",
-      "text": "int extraout_EBX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 15,
-      "match": "extraout_EBX_01",
-      "text": "int extraout_EBX_01;",
-      "type": "extra_output"
+      "description": "Likely misinterpreted integer as float",
+      "line": 41,
+      "match": "6.591452e-39",
+      "text": "fVar23 = 6.591452e-39;",
+      "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 50,
-      "match": "CONCAT44",
-      "text": "uVar20 = CONCAT44(uVar21,0x47c678);",
+      "line": 46,
+      "match": "ROUND",
+      "text": "fVar7 = (float)((int)ROUND(dVar20) + 0x2000U & 0xc000);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
-      "match": "ROUND",
-      "text": "fVar6 = (float)((int)ROUND(dVar18) + 0x2000U & 0xc000);",
+      "line": 50,
+      "match": "fsin",
+      "text": "fVar16 = (float10)fsin(fVar15);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 51,
+      "match": "fcos",
+      "text": "fVar15 = (float10)fcos(fVar15);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 53,
+      "match": "fsin",
+      "text": "fVar18 = (float10)fsin(fVar17);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 54,
+      "match": "fcos",
+      "text": "fVar17 = (float10)fcos(fVar17);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 55,
       "match": "ROUND",
-      "text": "fVar7 = (float)((int)ROUND(dVar19) + 0x2000U & 0xc000);",
+      "text": "fVar14 = (float10)((int)ROUND(dVar21) + 0x2000U & 0xc000) * fVar13 * fVar14;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 56,
+      "match": "fsin",
+      "text": "fVar19 = (float10)fsin(fVar14);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 57,
-      "match": "fsin",
-      "text": "fVar15 = (float10)fsin(fVar14);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 58,
       "match": "fcos",
-      "text": "fVar14 = (float10)fcos(fVar14);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 60,
-      "match": "fsin",
-      "text": "fVar17 = (float10)fsin(fVar16);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
-      "match": "fcos",
-      "text": "fVar16 = (float10)fcos(fVar16);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 63,
-      "match": "fsin",
-      "text": "fVar12 = (float10)fsin(fVar13);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 64,
-      "match": "fcos",
-      "text": "fVar13 = (float10)fcos(fVar13);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 76,
-      "match": "SUB84",
-      "text": "fVar23 = SUB84(value,0);",
+      "text": "fVar13 = (float10)fcos(fVar14);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 78,
+      "line": 72,
       "match": "(int *)((int)",
-      "text": "piVar9 = (int *)((int)this_ptr->vertex_list + iVar8);",
+      "text": "piVar10 = (int *)((int)this_ptr->vertex_list + iVar9);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 82,
+      "line": 75,
       "match": "&stack0xffffff70",
-      "text": "*(int *)(&stack0xffffff70 + (uint)bVar11 * -8) = *piVar10;",
+      "text": "*(int *)(&stack0xffffff70 + (uint)bVar12 * -8) = *piVar11;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 83,
+      "line": 76,
       "match": "&stack0xffffff74",
-      "text": "*(int *)(&stack0xffffff74 + (uint)bVar11 * -8 + (uint)bVar11 * -8) =",
+      "text": "*(int *)(&stack0xffffff74 + (uint)bVar12 * -8 + (uint)bVar12 * -8) =",
       "type": "stack_ref"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 92,
-      "match": "ROUND",
-      "text": "local_34 = (float)(int)ROUND(dVar18);",
+      "line": 83,
+      "match": "SUB84",
+      "text": "local_88 = SUB84(dVar21,0);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 93,
-      "match": "extraout_EBX",
-      "text": "*(float *)((int)this_ptr->vertex_list + extraout_EBX) = local_34;",
-      "type": "extra_output"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 85,
+      "match": "ROUND",
+      "text": "local_30 = (int)ROUND(dVar21);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 93,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)this_ptr->vertex_list + extraout_EBX) = local_34;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 102,
-      "match": "extraout_EBX_00",
-      "text": "*(int *)((int)ppCVar5 + extraout_EBX_00 + 4) = (int)ROUND(dVar19);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 102,
+      "line": 86,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)ppCVar5 + extraout_EBX_00 + 4) = (int)ROUND(dVar19);",
+      "text": "*(int *)((int)this_ptr->vertex_list + iVar9) = local_30;",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 102,
+      "line": 95,
       "match": "ROUND",
-      "text": "*(int *)((int)ppCVar5 + extraout_EBX_00 + 4) = (int)ROUND(dVar19);",
+      "text": "local_34 = (float)(int)ROUND(dVar21);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 108,
-      "match": "extraout_EBX_01",
-      "text": "iVar8 = extraout_EBX_01 + 0xc;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 109,
-      "match": "CONCAT44",
-      "text": "uVar20 = CONCAT44(uVar21,0x47c90a);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 111,
-      "match": "ROUND",
-      "text": "local_44 = (float)(int)ROUND(dVar18);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 113,
-      "match": "extraout_EBX_01",
-      "text": "*(float *)((int)this_ptr->vertex_list + extraout_EBX_01 + 8) = local_44;",
-      "type": "extra_output"
     },
     {
       "description": "Complex pointer cast",
-      "line": 113,
+      "line": 96,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)this_ptr->vertex_list + extraout_EBX_01 + 8) = local_44;",
+      "text": "*(float *)((int)ppCVar6 + iVar9 + 4) = local_34;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 100,
+      "match": "SUB84",
+      "text": "iVar22 = SUB84(dVar21,0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 104,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)this_ptr->vertex_list + iVar9 + 8) = (int)ROUND(dVar21);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 104,
+      "match": "ROUND",
+      "text": "*(int *)((int)this_ptr->vertex_list + iVar9 + 8) = (int)ROUND(dVar21);",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

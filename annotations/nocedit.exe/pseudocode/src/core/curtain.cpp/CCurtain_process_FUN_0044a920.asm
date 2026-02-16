@@ -23,18 +23,18 @@
 ;   double DOUBLE_00619c42 = 0.100000000000000
 ;   CEventList* g_CEventListPtr = 02d05310
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   undefined4 DAT_008879bc
-;   CVector3f[100] DAT_008879c0
+;   int INT_008879bc
+;   CVector3f[100] CVector3f_ARRAY_008879c0
 ;   undefined4 DAT_008879c4
 ;   undefined4 DAT_008879c8
-;   SCollisionInfo[100] DAT_00887e70
+;   SCollisionInfo[100] SCollisionInfo_ARRAY_00887e70
 ;   undefined4 DAT_00887e88
 ;   undefined4 DAT_00887e8c
 ;   ... and 4 more
 ;
 ; Called Functions:
-;   core_curtain.cpp_CCurtain_FUN_00449f10
-;   core_curtain.cpp_CCurtain_FUN_00449fc0
+;   core_curtain.cpp_CCurtain_solveConstraints_FUN_00449fc0
+;   core_curtain.cpp_CCurtain_updateLocalPositions_FUN_00449f10
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 ;   crt_string.c_strcmp_FUN_005fef20
 ;
@@ -186,33 +186,33 @@ section .text
         ;   Label: LAB_0044aaa7
     MOV dword ptr [ESP + 0xc0],EDX      ; 0044aaa9
     MOV dword ptr [ESP + 0xb8],EDX      ; 0044aab0
-    MOV dword ptr [0x008879bc],EDX      ; 0044aab7 | DAT_008879bc
+    MOV dword ptr [0x008879bc],EDX      ; 0044aab7 | INT_008879bc
     MOV EDX,dword ptr [0x006810c8]      ; 0044aabd | g_CDemonSetPtr
         ;   Label: LAB_0044aabd
     MOV EAX,dword ptr [ESP + 0xc0]      ; 0044aac3
     CMP EAX,dword ptr [EDX + 0x14f098]  ; 0044aaca | g_CDemonSetInstance.character_count
     JGE 0x0044abb1                      ; 0044aad0
         ;   XREF to: 0044abb1 (CONDITIONAL_JUMP)  ; LAB_0044abb1
-    MOV EAX,[0x008879bc]                ; 0044aad6 | DAT_008879bc
+    MOV EAX,[0x008879bc]                ; 0044aad6 | INT_008879bc
     IMUL ESI,EAX,0x28                   ; 0044aadb
     ADD EDX,dword ptr [ESP + 0xb8]      ; 0044aade
     MOV EBX,dword ptr [EDX + 0x14f09c]  ; 0044aae5 | g_CDemonSetInstance.characters[0] | DAT_03263318
     IMUL EDX,EAX,0xc                    ; 0044aaeb
-    ADD EDX,0x8879c0                    ; 0044aaee | DAT_008879c0
+    ADD EDX,0x8879c0                    ; 0044aaee | CVector3f_ARRAY_008879c0
     LEA EAX,[EBX + 0x20]                ; 0044aaf4
-    ADD ESI,0x887e70                    ; 0044aaf7 | DAT_00887e70
+    ADD ESI,0x887e70                    ; 0044aaf7 | SCollisionInfo_ARRAY_00887e70
     CMP EDX,EAX                         ; 0044aafd
     JZ 0x0044ab11                       ; 0044aaff
         ;   XREF to: 0044ab11 (CONDITIONAL_JUMP)  ; LAB_0044ab11
     MOV ECX,dword ptr [EAX]             ; 0044ab01
-    MOV dword ptr [EDX],ECX             ; 0044ab03 | DAT_008879c0
+    MOV dword ptr [EDX],ECX             ; 0044ab03 | CVector3f_ARRAY_008879c0
     MOV ECX,dword ptr [EAX + 0x4]       ; 0044ab05
     MOV dword ptr [EDX + 0x4],ECX       ; 0044ab08 | DAT_008879c4
     MOV ECX,dword ptr [EAX + 0x8]       ; 0044ab0b
     MOV dword ptr [EDX + 0x8],ECX       ; 0044ab0e | DAT_008879c8
-    PUSH ESI                            ; 0044ab11 | DAT_00887e70
+    PUSH ESI                            ; 0044ab11 | SCollisionInfo_ARRAY_00887e70
         ;   Label: LAB_0044ab11
-    MOV dword ptr [ESI],0x0             ; 0044ab12 | DAT_00887e70
+    MOV dword ptr [ESI],0x0             ; 0044ab12 | SCollisionInfo_ARRAY_00887e70
     PUSH EBX                            ; 0044ab18
     MOV EAX,dword ptr [EBX + 0x154]     ; 0044ab19
     CALL dword ptr [EAX + 0x34]         ; 0044ab1f
@@ -271,10 +271,10 @@ section .text
     SAHF                                ; 0044aba3
     JA 0x0044ab2a                       ; 0044aba4
         ;   XREF to: 0044ab2a (CONDITIONAL_JUMP)  ; LAB_0044ab2a
-    INC dword ptr [0x008879bc]          ; 0044aba6 | DAT_008879bc
+    INC dword ptr [0x008879bc]          ; 0044aba6 | INT_008879bc
     JMP 0x0044ab2a                      ; 0044abac
         ;   XREF to: 0044ab2a (UNCONDITIONAL_JUMP)  ; LAB_0044ab2a
-    MOV EAX,[0x008879bc]                ; 0044abb1 | DAT_008879bc
+    MOV EAX,[0x008879bc]                ; 0044abb1 | INT_008879bc
         ;   Label: LAB_0044abb1
     MOV dword ptr [EDI + 0x65b34],0x1   ; 0044abb6
     TEST EAX,EAX                        ; 0044abc0
@@ -451,8 +451,8 @@ section .text
     MOV dword ptr [EDI + 0x1f8],0x0     ; 0044ad7e
     PUSH EDI                            ; 0044ad88
         ;   Label: LAB_0044ad88
-    CALL core_curtain.cpp_CCurtain_FUN_00449f10 ; 0044ad89
-        ;   XREF to: 00449f10 (UNCONDITIONAL_CALL)  ; void core_curtain.cpp_CCurtain_FUN_00449f10(CCurtain * this_ptr)
+    CALL core_curtain.cpp_CCurtain_updateLocalPositions_FUN_00449f10 ; 0044ad89
+        ;   XREF to: 00449f10 (UNCONDITIONAL_CALL)  ; void core_curtain.cpp_CCurtain_updateLocalPositions_FUN_00449f10(CCurtain * this_ptr)
     ADD ESP,0x4                         ; 0044ad8e
     MOV ESP,EBP                         ; 0044ad91
         ;   Label: LAB_0044ad91
@@ -680,16 +680,16 @@ section .text
     FADD float ptr [ESP + 0x4c]         ; 0044b03b
     PUSH EDI                            ; 0044b03f
     FSTP float ptr [EAX + 0x8]          ; 0044b040
-    CALL core_curtain.cpp_CCurtain_FUN_00449fc0 ; 0044b043
-        ;   XREF to: 00449fc0 (UNCONDITIONAL_CALL)  ; void core_curtain.cpp_CCurtain_FUN_00449fc0(CCurtain * this_ptr)
+    CALL core_curtain.cpp_CCurtain_solveConstraints_FUN_00449fc0 ; 0044b043
+        ;   XREF to: 00449fc0 (UNCONDITIONAL_CALL)  ; void core_curtain.cpp_CCurtain_solveConstraints_FUN_00449fc0(CCurtain * this_ptr, SCurtainVertex * vertex)
     ADD ESP,0x8                         ; 0044b048
     JMP 0x0044ac56                      ; 0044b04b
         ;   XREF to: 0044ac56 (UNCONDITIONAL_JUMP)  ; LAB_0044ac56
     PUSH EBX                            ; 0044b050
         ;   Label: LAB_0044b050
     PUSH EDI                            ; 0044b051
-    CALL core_curtain.cpp_CCurtain_FUN_00449fc0 ; 0044b052
-        ;   XREF to: 00449fc0 (UNCONDITIONAL_CALL)  ; void core_curtain.cpp_CCurtain_FUN_00449fc0(CCurtain * this_ptr)
+    CALL core_curtain.cpp_CCurtain_solveConstraints_FUN_00449fc0 ; 0044b052
+        ;   XREF to: 00449fc0 (UNCONDITIONAL_CALL)  ; void core_curtain.cpp_CCurtain_solveConstraints_FUN_00449fc0(CCurtain * this_ptr, SCurtainVertex * vertex)
     ADD ESP,0x8                         ; 0044b057
     JMP 0x0044aca5                      ; 0044b05a
         ;   XREF to: 0044aca5 (UNCONDITIONAL_JUMP)  ; LAB_0044aca5

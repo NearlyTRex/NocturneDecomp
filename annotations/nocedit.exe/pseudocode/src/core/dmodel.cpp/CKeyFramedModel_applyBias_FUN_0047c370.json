@@ -1,28 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 29,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 62,
+    "complexity_score": 60,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 2,
-    "pseudocode_lines": 37,
+    "pseudocode_lines": 35,
     "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 120
+    "total_lines": 118
   },
   "cross_references": [
     {
@@ -176,16 +169,16 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 22,
-      "match": "SUB84",
-      "text": "iVar8 = SUB84(dVar6,0);",
+      "line": 29,
+      "match": "ROUND",
+      "text": "*piVar1 = *piVar1 + (int)ROUND(dVar7);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 35,
+      "line": 33,
       "match": "ROUND",
-      "text": "*(int *)(iVar5 + 8 + (int)model_ptr->vertex_list) + (int)ROUND(dVar6);",
+      "text": "*(int *)(iVar5 + 8 + (int)this_ptr->vertex_list) + (int)ROUND(dVar6);",
       "type": "decompiler_intrinsic"
     }
   ]

@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 206,
-    "complexity_score": 172,
+    "complexity_score": 174,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 14,
-    "pseudocode_lines": 92,
+    "pseudocode_lines": 94,
     "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
       "suspect_float"
     ],
-    "total_lines": 298
+    "total_lines": 300
   },
   "cross_references": [
     {
@@ -377,51 +377,51 @@
   "suspects": [
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 41,
+      "line": 42,
       "match": "6.741156e-39",
       "text": "CStack_6c.z = 6.741156e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 44,
+      "line": 46,
       "match": "ROUND",
-      "text": "local_24 = (int)ROUND(dVar7);",
+      "text": "local_24 = (int)ROUND(dVar9);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 47,
+      "line": 49,
       "match": "6.741194e-39",
       "text": "CStack_6c.y = 6.741194e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 49,
+      "line": 51,
       "match": "ROUND",
-      "text": "local_2c = (int)ROUND(dVar7);",
+      "text": "local_2c = (int)ROUND(dVar9);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 51,
+      "line": 52,
       "match": "6.741221e-39",
       "text": "CStack_6c.x = 6.741221e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 55,
+      "line": 57,
       "match": "ROUND",
-      "text": "local_3c = (float)(int)ROUND(dVar7);",
+      "text": "local_3c = (float)(int)ROUND(dVar9);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 56,
+      "line": 58,
       "match": "ROUND",
-      "text": "local_2c = (int)ROUND(dVar8);",
+      "text": "local_2c = (int)ROUND(dVar10);",
       "type": "decompiler_intrinsic"
     }
   ]

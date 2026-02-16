@@ -2,16 +2,34 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "incompatible_types",
+        "column": 14,
+        "line": 32,
+        "message": "invalid operands to binary expression ('double' and 'int')"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 14,
+        "line": 39,
+        "message": "invalid operands to binary expression ('double' and 'int')"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 14,
+        "line": 44,
+        "message": "invalid operands to binary expression ('double' and 'int')"
+      },
+      {
         "category": "undeclared_identifier",
-        "column": 51,
-        "line": 40,
-        "message": "use of undeclared identifier 'stack0xffffffd4'"
+        "column": 48,
+        "line": 48,
+        "message": "use of undeclared identifier 'stack0xffffffe0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 42,
-        "message": "use of undeclared identifier 'stack0xffffffd8'"
+        "line": 50,
+        "message": "use of undeclared identifier 'stack0xffffffe4'"
       }
     ],
     "success": false,
@@ -19,17 +37,18 @@
   },
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 104,
+    "complexity_score": 147,
     "cross_reference_count": 7,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 34,
-    "suspect_count": 6,
+    "pseudocode_lines": 42,
+    "suspect_count": 9,
     "suspect_types": [
-      "extra_output",
-      "stack_ref"
+      "decompiler_intrinsic",
+      "stack_ref",
+      "unaffected_reg"
     ],
-    "total_lines": 93
+    "total_lines": 101
   },
   "cross_references": [
     {
@@ -196,45 +215,66 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Unaffected register variable",
       "line": 8,
-      "match": "extraout_EBX",
-      "text": "uint *extraout_EBX;",
-      "type": "extra_output"
+      "match": "unaff_ESI",
+      "text": "uint *unaff_ESI;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 25,
+      "match": "SUB84",
+      "text": "local_10 = SUB84(dVar5,0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 32,
-      "match": "extraout_EBX",
-      "text": "*extraout_EBX = uVar6;",
-      "type": "extra_output"
+      "match": "SUB84",
+      "text": "local_14 = SUB84(dVar5,0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 37,
+      "match": "SUB84",
+      "text": "local_18 = SUB84(dVar5,0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 40,
+      "match": "unaff_ESI",
+      "text": "*unaff_ESI = uVar6;",
+      "type": "unaffected_reg"
     },
     {
       "description": "Direct stack address reference",
-      "line": 33,
-      "match": "&stack0xffffffd4",
-      "text": "extraout_EBX[(uint)bVar4 * -2 + 1] = *(uint *)(&stack0xffffffd4 + (uint)bVar4 * -8);",
+      "line": 41,
+      "match": "&stack0xffffffe0",
+      "text": "unaff_ESI[(uint)bVar4 * -2 + 1] = *(uint *)(&stack0xffffffe0 + (uint)bVar4 * -8);",
       "type": "stack_ref"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 33,
-      "match": "extraout_EBX",
-      "text": "extraout_EBX[(uint)bVar4 * -2 + 1] = *(uint *)(&stack0xffffffd4 + (uint)bVar4 * -8);",
-      "type": "extra_output"
+      "description": "Unaffected register variable",
+      "line": 41,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI[(uint)bVar4 * -2 + 1] = *(uint *)(&stack0xffffffe0 + (uint)bVar4 * -8);",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 34,
-      "match": "extraout_EBX",
-      "text": "(extraout_EBX + (uint)bVar4 * -2 + 1)[(uint)bVar4 * -2 + 1] =",
-      "type": "extra_output"
+      "description": "Unaffected register variable",
+      "line": 42,
+      "match": "unaff_ESI",
+      "text": "(unaff_ESI + (uint)bVar4 * -2 + 1)[(uint)bVar4 * -2 + 1] =",
+      "type": "unaffected_reg"
     },
     {
       "description": "Direct stack address reference",
-      "line": 35,
-      "match": "&stack0xffffffd8",
-      "text": "*(uint *)(&stack0xffffffd8 + (uint)bVar4 * -8 + (uint)bVar4 * -8);",
+      "line": 43,
+      "match": "&stack0xffffffe4",
+      "text": "*(uint *)(&stack0xffffffe4 + (uint)bVar4 * -8 + (uint)bVar4 * -8);",
       "type": "stack_ref"
     }
   ]

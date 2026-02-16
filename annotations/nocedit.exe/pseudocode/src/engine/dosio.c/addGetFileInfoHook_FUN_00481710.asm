@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_dosio_c_addGetFileInfoHook_FUN_00481710(FileSearchHandler *handler)
+; void __cdecl engine_dosio_c_addGetFileInfoHook_FUN_00481710(FileSearchHandlerFunc *handler)
 ;
 ; Parameters:
-; FileSearchHandler * Stack[0x4]:4   handler
+; FileSearchHandlerFunc * Stack[0x4]:4   handler
 ;
 ; XREF[1]:
 ;   core_main.c_initializeGameSystems_FUN_00507a60 at 00507b65
@@ -13,7 +13,7 @@
 ;   TerminatedCString s_engine_dosio_c_00621577
 ;   TerminatedCString s_addGetFileInfoHook_too_m_00621589
 ;   int g_NumSearchHandlers
-;   FileSearchHandler*[5] g_SearchHandlers
+;   FileSearchHandlerFunc*[5] g_SearchHandlers
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;

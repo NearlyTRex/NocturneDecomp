@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 452,
-    "complexity_score": 290,
+    "complexity_score": 286,
     "cross_reference_count": 16,
     "function_call_count": 10,
     "global_count": 5,
-    "pseudocode_lines": 200,
+    "pseudocode_lines": 196,
     "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 652
+    "total_lines": 648
   },
   "cross_references": [
     {
@@ -462,58 +462,58 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 48,
       "match": "(int *)((int)",
       "text": "piVar10 = (int *)((int)&pCVar4->x + iVar9);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 50,
       "match": "(int *)((int)",
       "text": "piVar10 = (int *)((int)&pCVar4->y + iVar9);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 52,
       "match": "(int *)((int)",
       "text": "piVar10 = (int *)((int)&pCVar4->z + iVar9);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 140,
+      "line": 139,
       "match": "(int *)((int)",
       "text": "piVar10 = (int *)((int)&this_ptr->normals->x + iVar11);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 145,
+      "line": 143,
       "match": "SQRT",
-      "text": "dVar16 = SQRT(dVar17 * dVar17 + dVar1 * dVar1 + dVar16 * dVar16);",
+      "text": "dVar16 = SQRT(dVar1 * dVar1 + dVar15 * dVar15 + dVar14 * dVar14);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 158,
+      "line": 154,
       "match": "ROUND",
-      "text": "*piVar10 = (int)ROUND(dVar16);",
+      "text": "*piVar10 = (int)ROUND(dVar14);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 159,
+      "line": 155,
       "match": "ROUND",
-      "text": "piVar10[1] = (int)ROUND(fVar14);",
+      "text": "piVar10[1] = (int)ROUND(dVar15);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 160,
+      "line": 156,
       "match": "ROUND",
-      "text": "piVar10[2] = (int)ROUND(dVar17);",
+      "text": "piVar10[2] = (int)ROUND(dVar16);",
       "type": "decompiler_intrinsic"
     }
   ]

@@ -9,6 +9,7 @@
 #include "types/classes/CEditorTools.h"
 #include "types/classes/CVector3f.h"
 #include "types/structs/SWindow.h"
+#include "types/unions/UOrientationVector.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x2CF0000
@@ -33,6 +34,9 @@ extern HWND g_DialogParentWindow;
 
 // SWindow[5]
 extern SWindow g_WindowStack[5];
+
+// UOrientationVector
+extern UOrientationVector UNION_UOrientationVector_02cf2b6c;
 
 // _BIT_INTEGER
 extern _BIT_INTEGER g_MouseButtonFlags;
@@ -106,9 +110,6 @@ extern uchar g_ColorCubeLookup[32768];
 extern uint* g_ZBufferScanlineArray[1200];
 
 // undefined4
-extern undefined4 DAT_02cf2b6c;
-extern undefined4 DAT_02cf2b70;
-extern undefined4 DAT_02cf2b74;
 extern undefined4 DAT_02cf2bf4;
 extern undefined4 DAT_02cf2bf8;
 extern undefined4 DAT_02cf4b30;

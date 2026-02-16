@@ -40,6 +40,7 @@
 #include "types/structs/SCounterBlock.h"
 #include "types/structs/SCramConfig.h"
 #include "types/structs/SCramRectangle.h"
+#include "types/structs/SCurtainMeshData.h"
 #include "types/structs/SCurtainVertex.h"
 #include "types/structs/SDamageDecal.h"
 #include "types/structs/SDamageInfo.h"

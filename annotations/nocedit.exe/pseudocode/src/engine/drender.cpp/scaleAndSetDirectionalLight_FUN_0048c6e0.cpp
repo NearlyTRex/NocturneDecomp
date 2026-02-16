@@ -9,22 +9,18 @@
 void __cdecl engine_drender_cpp_scaleAndSetDirectionalLight_FUN_0048c6e0(CVector3f *light_direction)
 
 {
-  float fVar1;
-  float10 fVar2;
-  float10 fVar3;
-  double dVar4;
-  double dVar5;
+  double dVar1;
+  double dVar2;
   float *in_stack_00000008;
   int dir_z;
   
-  fVar2 = (float10)65536;
-  fVar1 = in_stack_00000008[1];
-  fVar3 = (float10)*in_stack_00000008 * fVar2;
-  round((double)((float10)in_stack_00000008[2] * fVar2));
-  dVar4 = round((double)((float10)fVar1 * fVar2));
+  dVar1 = (double)in_stack_00000008[1] * 65536;
+  dVar2 = (double)*in_stack_00000008 * 65536;
+  round((double)in_stack_00000008[2] * 65536);
+  dVar1 = round(dVar1);
   dir_z = 0x48c720;
-  dVar5 = round((double)fVar3);
-  engine_light_cpp_setDirectionalLightVector_FUN_005054d0((int)ROUND(dVar5),(int)ROUND(dVar4),dir_z)
+  dVar2 = round(dVar2);
+  engine_light_cpp_setDirectionalLightVector_FUN_005054d0((int)ROUND(dVar2),(int)ROUND(dVar1),dir_z)
   ;
   return;
 }

@@ -98,7 +98,7 @@ LAB_0057af67:
     g_CDemonLightInstance.base.max_distance = 255.0;
     g_CDemonLightInstance.light_enabled_flag = 1;
     core_set_cpp_CDemonSet_FUN_0056c1a0(this_ptr);
-    iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2e);
+    iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_C);
     if (iVar3 != 0) {
       unaff_ESI = unaff_ESI + 1;
       if (this_ptr->camera_count <= unaff_ESI) {
@@ -115,7 +115,7 @@ LAB_0057af67:
   if (iVar3 != -1) {
     core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(this_ptr,iVar3);
   }
-  iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x32);
+  iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_M);
   if ((iVar3 != 0) && (unaff_EBX = 1 - unaff_EBX, unaff_EBX != 0)) {
     core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(this_ptr,unaff_retaddr);
   }
@@ -136,11 +136,11 @@ LAB_0057af67:
   wincore_winrun_cpp_drawCrosshair_FUN_005f2fd0();
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
   core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
-  iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,1);
+  iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_ESCAPE);
   if (iVar3 != 0) goto LAB_0057b3c9;
-  iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x39);
+  iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_SPACE);
   if ((iVar3 != 0) ||
-     (iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1c), iVar3 != 0)) {
+     (iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_RETURN), iVar3 != 0)) {
     pvVar2 = PTR_DAT_00681ab8;
     if (g_ActiveLightCount != 0x5f) goto LAB_0057b341;
     engine_2d_c_drawText_FUN_00401fd0("Too many visible lights in view!",0,0);
@@ -148,13 +148,13 @@ LAB_0057af67:
     engine_2d_c_clearInputAndWait_FUN_00403260();
     engine_keys_cpp_CKeys_getInputKey_FUN_00502460(g_CKeysPtr);
   }
-  iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x21);
+  iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F);
   if (iVar3 != 0) {
     shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
               (g_CEditorToolsPtr,"Edit FOV",(float *)((int)PTR_DAT_00681ab8 + 0x18),1,0.0,
                100.0,1);
   }
-  iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x31);
+  iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_N);
   if (iVar3 != 0) {
     shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
               (g_CEditorToolsPtr,"Edit light name",acStack_48,100,1);

@@ -4,7 +4,7 @@
       {
         "category": "undeclared_identifier",
         "column": 63,
-        "line": 30,
+        "line": 28,
         "message": "use of undeclared identifier 'stack0xffffffcc'"
       }
     ],
@@ -13,19 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 146,
-    "complexity_score": 130,
+    "complexity_score": 95,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 11,
-    "pseudocode_lines": 50,
-    "suspect_count": 6,
+    "pseudocode_lines": 55,
+    "suspect_count": 3,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "extra_output",
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 196
+    "total_lines": 201
   },
   "cross_references": [],
   "function": {
@@ -234,46 +232,25 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
-      "match": "extraout_EBX",
-      "text": "CFrankenstienMachine *extraout_EBX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 11,
       "match": "in_stack_ffffffc8",
       "text": "CFrankenstienMachine *in_stack_ffffffc8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 15,
       "match": "in_stack_ffffffc8",
       "text": "pCVar2 = core_frankgen_cpp_CFrankenstienMachine_findLeader_FUN_004d2330(in_stack_ffffffc8);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 23,
+      "line": 21,
       "match": "&stack0xffffffcc",
       "text": "(&this_ptr->base,(CBoundingBox3D *)&stack0xffffffcc);",
       "type": "stack_ref"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 26,
-      "match": "NAN",
-      "text": "fVar6 = -NAN;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 43,
-      "match": "extraout_EBX",
-      "text": "this_ptr = extraout_EBX;",
-      "type": "extra_output"
     }
   ],
   "vtable_info": {

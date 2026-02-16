@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 285,
-    "complexity_score": 273,
+    "complexity_score": 270,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 18,
-    "pseudocode_lines": 113,
+    "pseudocode_lines": 110,
     "suspect_count": 15,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 398
+    "total_lines": 395
   },
   "cross_references": [
     {
@@ -280,107 +280,107 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 50,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&(this_ptr->face_data->plane).A + iVar5) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 52,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&(this_ptr->face_data->plane).B + iVar5) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 54,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&(this_ptr->face_data->plane).C + iVar5) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 57,
+      "line": 56,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&(this_ptr->face_data->plane).D + iVar5) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 59,
+      "line": 58,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&this_ptr->face_data->vertex_index_1 + iVar5) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 60,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&this_ptr->face_data->vertex_index_2 + iVar5) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 63,
+      "line": 62,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&this_ptr->face_data->vertex_index_3 + iVar5) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 66,
+      "line": 65,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&this_ptr->face_data->material + iVar5) = 0xffffffff;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 69,
+      "line": 68,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&this_ptr->face_data->material + iVar5) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 91,
+      "line": 88,
       "match": "(int *)((int)",
       "text": "piVar1 = (int *)((int)&this_ptr->vertex_positions->x + iVar7);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 92,
+      "line": 89,
       "match": "ROUND",
-      "text": "*piVar1 = *piVar1 - (int)ROUND(dVar10);",
+      "text": "*piVar1 = *piVar1 - (int)ROUND(dVar8);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 93,
+      "line": 90,
       "match": "(int *)((int)",
       "text": "piVar1 = (int *)((int)&this_ptr->vertex_positions->y + iVar7);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 94,
+      "line": 91,
       "match": "ROUND",
-      "text": "*piVar1 = *piVar1 - (int)ROUND(fVar8);",
+      "text": "*piVar1 = *piVar1 - (int)ROUND(dVar9);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 95,
+      "line": 92,
       "match": "(int *)((int)",
       "text": "piVar1 = (int *)((int)&this_ptr->vertex_positions->z + iVar7);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 96,
+      "line": 93,
       "match": "ROUND",
-      "text": "*piVar1 = *piVar1 - (int)ROUND(dVar11);",
+      "text": "*piVar1 = *piVar1 - (int)ROUND(dVar10);",
       "type": "decompiler_intrinsic"
     }
   ]

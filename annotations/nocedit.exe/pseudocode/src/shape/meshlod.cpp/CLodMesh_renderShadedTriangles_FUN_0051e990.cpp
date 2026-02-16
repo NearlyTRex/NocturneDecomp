@@ -9,14 +9,13 @@
 void __cdecl shape_meshlod_cpp_CLodMesh_renderShadedTriangles_FUN_0051e990(CLodMesh *this_ptr,int use_palette_coloring)
 
 {
-  float fVar1;
-  CLodFace *pCVar2;
-  uint uVar3;
-  int iVar4;
-  float10 fVar5;
-  float10 fVar6;
+  CLodFace *pCVar1;
+  float fVar2;
+  float fVar3;
+  uint uVar4;
+  int iVar5;
+  double dVar6;
   double dVar7;
-  double dVar8;
   int blue_component;
   SMRGLHeaderPrimitive SStack_60;
   uint local_48;
@@ -31,43 +30,43 @@ void __cdecl shape_meshlod_cpp_CLodMesh_renderShadedTriangles_FUN_0051e990(CLodM
   SStack_60.surface_normal.B = 0;
   SStack_60.surface_normal.A = 0;
   engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960(g_CDemonRendererPtr2,0xff);
-  uVar3 = 0;
+  uVar4 = 0;
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,1);
   if (0 < this_ptr->tri_count) {
-    iVar4 = 0;
+    iVar5 = 0;
     do {
-      pCVar2 = this_ptr->tri_data;
-      if (*(int *)((int)pCVar2->edge_perpendiculars + iVar4 + -0x14) == 0) {
-        local_48 = *(uint *)((int)(pCVar2->uv_coords + -2) + iVar4 + 4);
-        local_3c = *(uint *)((int)(pCVar2->uv_coords + -1) + iVar4);
-        local_30 = *(uint *)((int)(pCVar2->uv_coords + -1) + iVar4 + 4);
+      pCVar1 = this_ptr->tri_data;
+      if (*(int *)((int)pCVar1->edge_perpendiculars + iVar5 + -0x14) == 0) {
+        local_48 = *(uint *)((int)(pCVar1->uv_coords + -2) + iVar5 + 4);
+        local_3c = *(uint *)((int)(pCVar1->uv_coords + -1) + iVar5);
+        local_30 = *(uint *)((int)(pCVar1->uv_coords + -1) + iVar5 + 4);
         if (use_palette_coloring == 0) {
-          fVar5 = (float10)127.0f;
-          fVar1 = *(float *)((int)(pCVar2->edge_perpendiculars + -1) + iVar4);
-          fVar6 = (float10)*(float *)((int)pCVar2->edge_perpendiculars + iVar4 + -0x10) * fVar5 +
-                  fVar5;
-          dVar7 = round
-                            ((double)((float10)*(float *)((int)pCVar2->edge_perpendiculars +
-                                                         iVar4 + -8) * fVar5 + fVar5));
-          dVar8 = round((double)((float10)fVar1 * fVar5 + fVar5));
-          iStack_20 = (int)ROUND(dVar7);
+          fVar2 = *(float *)((int)(pCVar1->edge_perpendiculars + -1) + iVar5) * 127.0f +
+                  127.0f;
+          fVar3 = *(float *)((int)pCVar1->edge_perpendiculars + iVar5 + -0x10) * 127.0f +
+                  127.0f;
+          dVar6 = round
+                            ((double)(*(float *)((int)pCVar1->edge_perpendiculars + iVar5 + -8) *
+                                      127.0f + 127.0f));
+          dVar7 = round((double)fVar2);
+          iStack_20 = (int)ROUND(dVar6);
           blue_component = 0x51eaa9;
-          iStack_1c = (int)ROUND(dVar8);
-          dVar7 = round((double)fVar6);
-          iStack_20 = (int)ROUND(dVar7);
+          iStack_1c = (int)ROUND(dVar7);
+          dVar6 = round((double)fVar3);
+          iStack_20 = (int)ROUND(dVar6);
           engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0048c970
-                    (g_CDemonRendererPtr2,iStack_20,(int)ROUND(dVar8),blue_component);
+                    (g_CDemonRendererPtr2,iStack_20,(int)ROUND(dVar7),blue_component);
         }
         else {
           engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960
-                    (g_CDemonRendererPtr2,-((uVar3 & 0x7f) + 0x80));
+                    (g_CDemonRendererPtr2,-((uVar4 & 0x7f) + 0x80));
         }
         engine_drender_cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0
                   (g_CDemonRendererPtr2,&SStack_60);
       }
-      uVar3 = uVar3 + 1;
-      iVar4 = iVar4 + 0x8c;
-    } while ((int)uVar3 < this_ptr->tri_count);
+      uVar4 = uVar4 + 1;
+      iVar5 = iVar5 + 0x8c;
+    } while ((int)uVar4 < this_ptr->tri_count);
   }
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,0);
   return;

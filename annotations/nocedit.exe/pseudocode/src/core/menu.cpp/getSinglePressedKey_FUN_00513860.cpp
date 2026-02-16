@@ -9,29 +9,30 @@
 int __cdecl core_menu_cpp_getSinglePressedKey_FUN_00513860(void)
 
 {
-  int iVar1;
-  int key_code;
+  EInputCodeType EVar1;
   int iVar2;
+  EInputCodeType key_code;
+  EInputCodeType EVar3;
   
   if (g_CGamePtr->game_control == CONTROL_MODE_GAMEPAD) {
     core_game_cpp_CGame_resetKeyState_FUN_004dbe60(g_CGamePtr);
   }
-  iVar1 = 0;
-  iVar2 = -1;
+  EVar1 = 0;
+  EVar3 = 0xffffffff;
   while( true ) {
     while( true ) {
-      key_code = iVar1;
-      iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,key_code);
-      if (iVar1 != 0) break;
-      iVar1 = key_code + 1;
-      if (599 < key_code + 1) {
-        return iVar2;
+      key_code = EVar1;
+      iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,key_code);
+      if (iVar2 != 0) break;
+      EVar1 = key_code + DIK_ESCAPE;
+      if (599 < (int)(key_code + DIK_ESCAPE)) {
+        return EVar3;
       }
     }
-    if (-1 < iVar2) break;
-    iVar1 = key_code + 1;
-    iVar2 = key_code;
-    if (599 < key_code + 1) {
+    if (-1 < (int)EVar3) break;
+    EVar1 = key_code + DIK_ESCAPE;
+    EVar3 = key_code;
+    if (599 < (int)(key_code + DIK_ESCAPE)) {
       return key_code;
     }
   }

@@ -16,20 +16,23 @@ void __cdecl core_bodypart_cpp_CBodyPart_FUN_0041aa40(CBodyPart *this_ptr)
   longlong lVar1;
   longlong lVar2;
   float fVar3;
-  int iVar4;
-  int *piVar5;
+  float fVar4;
+  float fVar5;
   float fVar6;
   float fVar7;
   int iVar8;
-  byte bVar9;
-  float10 fVar10;
-  float10 fVar11;
-  float10 fVar12;
-  float10 fVar13;
-  float10 fVar14;
-  float10 fVar15;
+  int *piVar9;
+  float fVar10;
+  float fVar11;
+  int iVar12;
+  byte bVar13;
+  double dVar14;
+  double dVar15;
   double dVar16;
   double dVar17;
+  double dVar18;
+  double dVar19;
+  double dVar20;
   float afStackY_1090 [1001];
   int local_c0;
   CMatrix3x3f local_b8;
@@ -55,7 +58,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_FUN_0041aa40(CBodyPart *this_ptr)
   
   local_44 = 0x7fffffff;
   local_48 = 0;
-  bVar9 = 0;
+  bVar13 = 0;
   local_c0 = 0;
   do {
     local_18 = 0;
@@ -63,103 +66,98 @@ void __cdecl core_bodypart_cpp_CBodyPart_FUN_0041aa40(CBodyPart *this_ptr)
     local_54.y = (float)3.1415926535000001 * 0.0 * (float)0.083333333333333301;
     local_54.z = 0.0;
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&local_b8,&local_54);
-    fVar10 = (float10)local_b8.m[0].y * (float10)65536.0f;
-    fVar11 = (float10)local_b8.m[0].z * (float10)65536.0f;
-    fVar12 = (float10)local_b8.m[1].x * (float10)65536.0f;
-    fVar13 = (float10)local_b8.m[1].y * (float10)65536.0f;
-    fVar3 = local_b8.m[1].z * 65536.0f;
-    fVar14 = (float10)local_b8.m[2].x * (float10)65536.0f;
-    dVar16 = round((double)(local_b8.m[0].x * 65536.0f));
-    local_2c = (int)ROUND(dVar16);
-    fVar15 = (float10)local_b8.m[2].x * (float10)65536.0f;
-    dVar16 = round((double)fVar10);
-    local_2c = (int)ROUND(dVar16);
-    fVar10 = (float10)local_b8.m[2].x * (float10)65536.0f;
+    fVar7 = local_b8.m[0].y * 65536.0f;
+    fVar10 = local_b8.m[0].z * 65536.0f;
+    fVar11 = local_b8.m[1].x * 65536.0f;
+    fVar3 = local_b8.m[1].y * 65536.0f;
+    fVar4 = local_b8.m[1].z * 65536.0f;
+    fVar5 = local_b8.m[2].x * 65536.0f;
+    dVar14 = round((double)(local_b8.m[0].x * 65536.0f));
+    local_2c = (int)ROUND(dVar14);
+    fVar6 = local_b8.m[2].x * 65536.0f;
+    dVar14 = round((double)fVar7);
+    local_2c = (int)ROUND(dVar14);
+    fVar7 = local_b8.m[2].x * 65536.0f;
     local_60 = 0x7fffffff;
     iStack_64 = 0x7fffffff;
     iStack_68 = 0x7fffffff;
     local_78 = -1.4013e-45;
     fStack_7c = -1.4013e-45;
     fStack_80 = -1.4013e-45;
-    iVar4 = this_ptr->vertex_count;
-    iVar8 = 0;
-    dVar16 = round((double)fVar11);
-    fVar11 = (float10)dVar16;
-    dVar16 = round((double)fVar12);
-    fVar12 = (float10)dVar16;
-    dVar16 = round((double)fVar13);
-    dVar17 = round((double)fVar3);
-    fVar13 = (float10)dVar17;
-    dVar17 = round((double)fVar14);
-    fVar14 = (float10)dVar17;
-    dVar17 = round((double)fVar15);
-    fVar15 = (float10)dVar17;
-    dVar17 = round((double)fVar10);
-    local_60 = (int)ROUND(fVar11);
-    local_44 = (int)ROUND(fVar12);
+    iVar8 = this_ptr->vertex_count;
+    iVar12 = 0;
+    dVar14 = round((double)fVar10);
+    dVar15 = round((double)fVar11);
+    dVar16 = round((double)fVar3);
+    dVar17 = round((double)fVar4);
+    dVar18 = round((double)fVar5);
+    dVar19 = round((double)fVar6);
+    dVar20 = round((double)fVar7);
+    local_60 = (int)ROUND(dVar14);
+    local_44 = (int)ROUND(dVar15);
     local_58 = (int)ROUND(dVar16);
-    local_54.y = (float)(int)ROUND(fVar13);
-    local_54.x = (float)(int)ROUND(fVar14);
-    local_5c = (int)ROUND(fVar15);
-    iStack_64 = (int)ROUND(dVar17);
-    if (0 < iVar4) {
+    local_54.y = (float)(int)ROUND(dVar17);
+    local_54.x = (float)(int)ROUND(dVar18);
+    local_5c = (int)ROUND(dVar19);
+    iStack_64 = (int)ROUND(dVar20);
+    if (0 < iVar8) {
       local_40 = 0;
       do {
-        piVar5 = (int *)((int)&this_ptr->vertices->x + local_40);
-        lVar1 = (longlong)(int)ROUND(fVar12) * (longlong)piVar5[1];
-        lVar2 = (longlong)(int)ROUND(fVar14) * (longlong)piVar5[2];
-        fVar6 = (float)(((uint)((longlong)(int)local_54.z * (longlong)*piVar5) >> 0x10 |
-                        (int)((ulonglong)((longlong)(int)local_54.z * (longlong)*piVar5) >> 0x20) <<
-                        0x10) + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
-                       ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10));
-        lVar1 = (longlong)(int)ROUND(dVar16) * (longlong)piVar5[1];
-        lVar2 = (longlong)(int)ROUND(fVar15) * (longlong)piVar5[2];
-        fVar7 = (float)(((uint)((longlong)local_48 * (longlong)*piVar5) >> 0x10 |
-                        (int)((ulonglong)((longlong)local_48 * (longlong)*piVar5) >> 0x20) << 0x10)
-                        + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
-                       ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10));
-        lVar1 = (longlong)(int)ROUND(fVar11) * (longlong)*piVar5;
-        lVar2 = (longlong)(int)ROUND(fVar13) * (longlong)piVar5[1];
+        piVar9 = (int *)((int)&this_ptr->vertices->x + local_40);
+        lVar1 = (longlong)(int)ROUND(dVar15) * (longlong)piVar9[1];
+        lVar2 = (longlong)(int)ROUND(dVar18) * (longlong)piVar9[2];
+        fVar10 = (float)(((uint)((longlong)(int)local_54.z * (longlong)*piVar9) >> 0x10 |
+                         (int)((ulonglong)((longlong)(int)local_54.z * (longlong)*piVar9) >> 0x20)
+                         << 0x10) + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10)
+                        + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10));
+        lVar1 = (longlong)(int)ROUND(dVar16) * (longlong)piVar9[1];
+        lVar2 = (longlong)(int)ROUND(dVar19) * (longlong)piVar9[2];
+        fVar11 = (float)(((uint)((longlong)local_48 * (longlong)*piVar9) >> 0x10 |
+                         (int)((ulonglong)((longlong)local_48 * (longlong)*piVar9) >> 0x20) << 0x10)
+                         + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
+                        ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10));
+        lVar1 = (longlong)(int)ROUND(dVar14) * (longlong)*piVar9;
+        lVar2 = (longlong)(int)ROUND(dVar17) * (longlong)piVar9[1];
         local_3c = ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
                    ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
-        lVar1 = (longlong)(int)ROUND(dVar17) * (longlong)piVar5[2];
-        fVar3 = (float)(((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) + local_3c);
-        if ((int)fVar6 < (int)local_84) {
-          local_84 = fVar6;
+        lVar1 = (longlong)(int)ROUND(dVar20) * (longlong)piVar9[2];
+        fVar7 = (float)(((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) + local_3c);
+        if ((int)fVar10 < (int)local_84) {
+          local_84 = fVar10;
         }
-        if ((int)local_b8.m[2].y < (int)fVar6) {
-          local_b8.m[2].y = fVar6;
+        if ((int)local_b8.m[2].y < (int)fVar10) {
+          local_b8.m[2].y = fVar10;
         }
-        if ((int)fVar7 < (int)fStack_80) {
-          fStack_80 = fVar7;
+        if ((int)fVar11 < (int)fStack_80) {
+          fStack_80 = fVar11;
         }
-        if ((int)local_b8.m[2].z < (int)fVar7) {
-          local_b8.m[2].z = fVar7;
+        if ((int)local_b8.m[2].z < (int)fVar11) {
+          local_b8.m[2].z = fVar11;
         }
-        if ((int)fVar3 < (int)fStack_7c) {
-          fStack_7c = fVar3;
+        if ((int)fVar7 < (int)fStack_7c) {
+          fStack_7c = fVar7;
         }
-        if ((int)afStack_94[0] < (int)fVar3) {
-          afStack_94[0] = fVar3;
+        if ((int)afStack_94[0] < (int)fVar7) {
+          afStack_94[0] = fVar7;
         }
-        iVar8 = iVar8 + 1;
+        iVar12 = iVar12 + 1;
         local_40 = local_40 + 0xc;
-      } while (iVar8 < this_ptr->vertex_count);
+      } while (iVar12 < this_ptr->vertex_count);
     }
-    iVar4 = (int)local_b8.m[2].y - (int)local_84;
+    iVar8 = (int)local_b8.m[2].y - (int)local_84;
     if ((int)local_b8.m[2].y - (int)local_84 < (int)local_b8.m[2].z - (int)fStack_80) {
-      iVar4 = (int)local_b8.m[2].z - (int)fStack_80;
+      iVar8 = (int)local_b8.m[2].z - (int)fStack_80;
     }
-    if (iVar4 < iStack_68) {
+    if (iVar8 < iStack_68) {
       local_b8.m[1].y = local_84;
-      *(float *)((int)&local_b8 + (uint)bVar9 * -8 + 0x14) = afStack_94[(uint)bVar9 * -2 + 5];
-      *(float *)((int)&local_b8 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 0x18) =
-           (&fStack_7c)[(uint)bVar9 * -2 + (uint)bVar9 * -2];
-      iStack_68 = iVar4;
+      *(float *)((int)&local_b8 + (uint)bVar13 * -8 + 0x14) = afStack_94[(uint)bVar13 * -2 + 5];
+      *(float *)((int)&local_b8 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 0x18) =
+           (&fStack_7c)[(uint)bVar13 * -2 + (uint)bVar13 * -2];
+      iStack_68 = iVar8;
       afStack_94[1] = local_b8.m[2].y;
-      afStack_94[(uint)bVar9 * -2 + 2] = *(float *)((int)&local_b8 + (uint)bVar9 * -8 + 0x20);
-      afStack_94[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 3] =
-           afStack_94[(uint)bVar9 * -2 + (uint)bVar9 * -2];
+      afStack_94[(uint)bVar13 * -2 + 2] = *(float *)((int)&local_b8 + (uint)bVar13 * -8 + 0x20);
+      afStack_94[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 3] =
+           afStack_94[(uint)bVar13 * -2 + (uint)bVar13 * -2];
       if (&local_b8.m[0].y != &local_78) {
         local_b8.m[0].y = local_78;
         local_b8.m[0].z = local_74;

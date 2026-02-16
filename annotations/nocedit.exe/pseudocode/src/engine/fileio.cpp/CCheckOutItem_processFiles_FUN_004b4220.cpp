@@ -347,7 +347,7 @@ LAB_004b4980:
           local_30 = iVar6;
           shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
                     (g_CEditorToolsPtr,(float)iVar6,40.0);
-          iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
+          iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
           if (iVar3 != 0) {
             iVar6 = 0x28;
           }

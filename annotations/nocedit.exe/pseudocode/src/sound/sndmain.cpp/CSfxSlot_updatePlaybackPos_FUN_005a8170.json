@@ -2,28 +2,22 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "incompatible_types",
-        "column": 14,
-        "line": 37,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
         "category": "other",
         "column": 111,
-        "line": 43,
+        "line": 38,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
         "column": 37,
-        "line": 44,
+        "line": 39,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
-        "category": "incompatible_types",
-        "column": 18,
-        "line": 68,
-        "message": "invalid operands to binary expression ('double' and 'int')"
+        "category": "other",
+        "column": 24,
+        "line": 41,
+        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       }
     ],
     "success": false,
@@ -31,19 +25,17 @@
   },
   "complexity": {
     "assembly_lines": 194,
-    "complexity_score": 197,
+    "complexity_score": 119,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 9,
-    "pseudocode_lines": 67,
-    "suspect_count": 11,
+    "pseudocode_lines": 59,
+    "suspect_count": 5,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "extra_output",
       "pointer_cast",
       "unknown_field"
     ],
-    "total_lines": 261
+    "total_lines": 253
   },
   "cross_references": [
     {
@@ -254,81 +246,39 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 7,
-      "match": "extraout_EBX",
-      "text": "CSfxSlot *extraout_EBX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
-      "match": "SUB84",
-      "text": "local_28 = SUB84(dVar2,0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 36,
+      "line": 31,
       "match": "._0_4_",
       "text": "(\"SfxSlot::updatePlaybackPos - stepped too much: %f-%f=%f, sample=%d (%s)\",hardware_playback_pos._0_4_,",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 37,
+      "line": 32,
       "match": "._4_4_",
       "text": "hardware_playback_pos._4_4_,*(uint *)&this_ptr->prev_hardware_playback_pos,",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 33,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&this_ptr->prev_hardware_playback_pos + 4),local_28,uStack_24,",
+      "text": "*(uint *)((int)&this_ptr->prev_hardware_playback_pos + 4),(uint)local_28,",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 34,
+      "match": "._4_4_",
+      "text": "local_28._4_4_,this_ptr->sample->streaming_buffer_size);",
+      "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 45,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&(this_ptr->options).trigger_time + 4) = 0;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
-      "match": "SUB84",
-      "text": "local_18 = SUB84(dVar2,0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 63,
-      "match": "extraout_EBX",
-      "text": "(extraout_EBX->options).trigger_time =",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 64,
-      "match": "extraout_EBX",
-      "text": "(extraout_EBX->options).trigger_time - dVar2 * (double)CONCAT44(local_18,uStack_1c);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 64,
-      "match": "CONCAT44",
-      "text": "(extraout_EBX->options).trigger_time - dVar2 * (double)CONCAT44(local_18,uStack_1c);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 65,
-      "match": "extraout_EBX",
-      "text": "this_ptr = extraout_EBX;",
-      "type": "extra_output"
     }
   ]
 }
