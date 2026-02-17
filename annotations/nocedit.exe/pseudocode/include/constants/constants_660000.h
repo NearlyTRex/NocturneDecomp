@@ -258,7 +258,6 @@ const uchar g_VoxelGridBitmasks[8] = {0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 
 const uchar g_LightBitMaskLookup[8] = {0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80};
 
 // undefined4 constants
-const undefined4 DAT_00662638 = 0xFFFFFFFF;
 const undefined4 DAT_00665f3a = 0x003B001F;
 const undefined4 DAT_0066e30c = 0x00000001;
 const undefined4 DAT_0066e314 = 0x00000002;

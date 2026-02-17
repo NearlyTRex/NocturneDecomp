@@ -4,91 +4,91 @@
       {
         "category": "other",
         "column": 17,
-        "line": 40,
+        "line": 42,
         "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 59,
+        "line": 61,
         "message": "no matching conversion for C-style cast from 'float' to 'UActorVTable'"
       },
       {
         "category": "incompatible_types",
         "column": 52,
-        "line": 62,
+        "line": 64,
         "message": "cannot convert 'UActorVTable' to 'float' without a conversion operator"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 67,
+        "line": 69,
         "message": "no matching conversion for C-style cast from 'float' to 'UActorVTable'"
       },
       {
         "category": "incompatible_types",
         "column": 25,
-        "line": 70,
+        "line": 72,
         "message": "cannot convert 'UActorVTable' to 'float' without a conversion operator"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 71,
+        "line": 73,
         "message": "no matching conversion for C-style cast from 'float' to 'UActorVTable'"
       },
       {
         "category": "incompatible_types",
         "column": 56,
-        "line": 74,
+        "line": 76,
         "message": "cannot convert 'UActorVTable' to 'float' without a conversion operator"
       },
       {
         "category": "other",
         "column": 65,
-        "line": 93,
-        "message": "C-style cast from 'char *' to 'float' is not allowed"
+        "line": 95,
+        "message": "C-style cast from 'CStranger *' to 'float' is not allowed"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 102,
+        "line": 104,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 26,
-        "line": 102,
+        "line": 104,
         "message": "expected expression"
       },
       {
         "category": "other",
         "column": 63,
-        "line": 103,
-        "message": "C-style cast from 'char *' to 'float' is not allowed"
+        "line": 105,
+        "message": "C-style cast from 'CStranger *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 159,
+        "line": 162,
         "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
       },
       {
         "category": "undeclared_identifier",
         "column": 75,
-        "line": 190,
+        "line": 193,
         "message": "use of undeclared identifier 'stack0xffffff50'"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 191,
+        "line": 194,
         "message": "no matching conversion for C-style cast from 'float' to 'UActorVTable'"
       },
       {
         "category": "undeclared_identifier",
         "column": 47,
-        "line": 202,
+        "line": 206,
         "message": "use of undeclared identifier 'stack0xffffff50'"
       }
     ],
@@ -97,11 +97,11 @@
   },
   "complexity": {
     "assembly_lines": 579,
-    "complexity_score": 474,
+    "complexity_score": 477,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 18,
-    "pseudocode_lines": 284,
+    "pseudocode_lines": 287,
     "suspect_count": 16,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -111,7 +111,7 @@
       "unaffected_reg",
       "unresolved_funcptr"
     ],
-    "total_lines": 863
+    "total_lines": 866
   },
   "cross_references": [
     {
@@ -536,105 +536,105 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 12,
+      "line": 15,
       "match": "unaff_EBP",
       "text": "int unaff_EBP;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 16,
       "match": "in_stack_00000008",
       "text": "float in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 17,
       "match": "in_stack_ffffff48",
-      "text": "char *in_stack_ffffff48;",
+      "text": "CStranger *in_stack_ffffff48;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 86,
+      "line": 88,
       "match": "in_stack_ffffff48",
-      "text": "((CDemonActor *)this_ptr,pCVar3,iVar2,(float)in_stack_ffffff48);",
+      "text": "((CDemonActor *)this_ptr,pCVar4,iVar3,(float)in_stack_ffffff48);",
       "type": "stack_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 95,
+      "line": 97,
       "match": "unaff_EBP",
       "text": "(**(code **)(unaff_EBP + 0x20))",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 95,
+      "line": 97,
       "match": "code *",
       "text": "(**(code **)(unaff_EBP + 0x20))",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 96,
+      "line": 98,
       "match": "in_stack_ffffff48",
-      "text": "((CDemonActor *)this_ptr,pCVar3,iVar2,(float)in_stack_ffffff48);",
+      "text": "((CDemonActor *)this_ptr,pCVar4,iVar3,(float)in_stack_ffffff48);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 128,
+      "line": 131,
       "match": "in_stack_ffffff48",
-      "text": "in_stack_ffffff48 = pCVar6->actor_name, iVar4 == 4)) {",
+      "text": "in_stack_ffffff48 = this_ptr_02, iVar5 == 4)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 134,
+      "line": 137,
       "match": "in_stack_ffffff48",
-      "text": "in_stack_ffffff48 = &g_CEditorToolsPtr->unused;",
+      "text": "in_stack_ffffff48 = (CStranger *)g_CEditorToolsPtr;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 183,
+      "line": 186,
       "match": "&stack0xffffff50",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff50);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 195,
+      "line": 199,
       "match": "&stack0xffffff50",
       "text": "(local_18,(SDamageInfo *)&stack0xffffff50);",
       "type": "stack_ref"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 198,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP = (int)ROUND(dVar5);",
-      "type": "unaffected_reg"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 203,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND((double)fStack_a4 * 0.20000000000000001)) + 1,0);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 198,
+      "line": 203,
       "match": "ROUND",
-      "text": "unaff_EBP = (int)ROUND(dVar5);",
+      "text": "(int)ROUND(ROUND((double)fStack_a4 * 0.20000000000000001)) + 1,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 200,
+      "line": 204,
       "match": "in_stack_ffffff48",
-      "text": "in_stack_ffffff48 = \"kick1.wav\";",
+      "text": "in_stack_ffffff48 = this_ptr;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 283,
+      "line": 287,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 <= 0.0) {",
       "type": "stack_param"

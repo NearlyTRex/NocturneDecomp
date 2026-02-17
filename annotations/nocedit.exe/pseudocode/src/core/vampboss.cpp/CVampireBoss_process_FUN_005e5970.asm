@@ -391,8 +391,9 @@ section .text
     FADDP                               ; 005e5d18
     FSQRT                               ; 005e5d1a
     FLD float ptr [ESP + 0x16c]         ; 005e5d1c
-    CALL crt_math.c_atan2_FUN_006013b1  ; 005e5d23
-        ;   XREF to: 006013b1 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_006013b1(float10 y, float10 x)
+    FXCH                                ; 005e5d23
+    FPATAN                              ; 005e5d25
+    NOP                                 ; 005e5d27
     MOV ESI,0x3f99999a                  ; 005e5d28
     MOV EDI,0x41a00000                  ; 005e5d2d
     MOV dword ptr [ESP + 0x1e8],ESI     ; 005e5d32

@@ -104,8 +104,9 @@ section .text
     FSTP float ptr [EBX + 0x14]         ; 004bf8b8
     FLD float ptr [EBP + 0x8]           ; 004bf8bb
     FLD float ptr [EBP]                 ; 004bf8be
-    CALL crt_math.c_atan2_FUN_006013b1  ; 004bf8c1
-        ;   XREF to: 006013b1 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_006013b1(float10 y, float10 x)
+    FXCH                                ; 004bf8c1
+    FPATAN                              ; 004bf8c3
+    NOP                                 ; 004bf8c5
     PUSH 0x3                            ; 004bf8c6
     PUSH 0x0                            ; 004bf8c8
     FSTP float ptr [EBX + 0x18]         ; 004bf8ca

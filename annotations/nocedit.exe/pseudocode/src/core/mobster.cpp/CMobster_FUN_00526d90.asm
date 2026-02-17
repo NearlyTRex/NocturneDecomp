@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_mobster_cpp_CMobster_FUN_00526d90(CMobster *this_ptr)
+; int __cdecl core_mobster_cpp_CMobster_FUN_00526d90(CMobster *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CMobster *       Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20
@@ -29,8 +30,8 @@
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
 ;   core_actor.cpp_getRandomInt_FUN_0040cc70
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0
-;   core_bodypart.cpp_FUN_0041b4e0
-;   core_bodypart.cpp_FUN_0041b540
+;   core_bodypart.cpp_addVector_FUN_0041b540
+;   core_bodypart.cpp_scaleVector_FUN_0041b4e0
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 ;
@@ -207,12 +208,12 @@ section .text
     PUSH EAX                            ; 00526fc0
     LEA EAX,[ESP + 0x40]                ; 00526fc1
     PUSH EAX                            ; 00526fc5
-    CALL core_bodypart.cpp_FUN_0041b540 ; 00526fc6
-        ;   XREF to: 0041b540 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_0041b540()
+    CALL core_bodypart.cpp_addVector_FUN_0041b540 ; 00526fc6
+        ;   XREF to: 0041b540 (UNCONDITIONAL_CALL)  ; CVector3f * core_bodypart.cpp_addVector_FUN_0041b540(CVector3f * a, CVector3f * dst, CVector3f * b)
     ADD ESP,0xc                         ; 00526fcb
     PUSH EAX                            ; 00526fce
-    CALL core_bodypart.cpp_FUN_0041b4e0 ; 00526fcf
-        ;   XREF to: 0041b4e0 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_0041b4e0()
+    CALL core_bodypart.cpp_scaleVector_FUN_0041b4e0 ; 00526fcf
+        ;   XREF to: 0041b4e0 (UNCONDITIONAL_CALL)  ; CVector3f * core_bodypart.cpp_scaleVector_FUN_0041b4e0(CVector3f * src, CVector3f * dst, float * scalar)
     ADD ESP,0xc                         ; 00526fd4
     LEA EAX,[ESP + 0x6c]                ; 00526fd7
     PUSH EAX                            ; 00526fdb

@@ -6,16 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 294,
-    "complexity_score": 129,
+    "complexity_score": 149,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 2,
-    "pseudocode_lines": 114,
-    "suspect_count": 1,
+    "pseudocode_lines": 119,
+    "suspect_count": 2,
     "suspect_types": [
-      "decompiler_intrinsic"
+      "decompiler_intrinsic",
+      "pointer_cast"
     ],
-    "total_lines": 408
+    "total_lines": 413
   },
   "cross_references": [],
   "function": {
@@ -38,14 +39,14 @@
       "name": "core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0"
     },
     {
-      "addr": "004cc760",
-      "is_variadic": false,
-      "name": "core_flies.cpp_CFlies_FUN_004cc760"
-    },
-    {
       "addr": "004cc820",
       "is_variadic": false,
-      "name": "core_flies.cpp_CFlies_FUN_004cc820"
+      "name": "core_flies.cpp_CFlies_generateRandomPoint_FUN_004cc820"
+    },
+    {
+      "addr": "004cc760",
+      "is_variadic": false,
+      "name": "core_flies.cpp_CFlies_initFly_FUN_004cc760"
     },
     {
       "addr": "005feb90",
@@ -238,6 +239,13 @@
       "match": "SQRT",
       "text": "if (0.0 < SQRT(local_38.z * local_38.z + local_38.x * local_38.x + local_38.y * local_38.y)) {",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 59,
+      "match": "(CVector3f *)((int)",
+      "text": "pCVar4 = (CVector3f *)((int)(pCVar4 + 4) + 4);",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

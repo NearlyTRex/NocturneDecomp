@@ -51,13 +51,13 @@ void __cdecl core_dstrender_cpp_blendLightmapToTextureMMX_FUN_00493dc4(ulonglong
     uVar13 = pmulhw(uVar14,*(ulonglong *)
                             (g_LightmapData +
                             ((uint)*lightmap_indices + (uint)(*texture_indices >> 1)) * 4));
-    uVar5 = (ushort)((short)uVar6 + (short)uVar13 + (short)g_AmbientLightMMX1) >> 4;
+    uVar5 = (ushort)((short)uVar6 + (short)uVar13 + (short)g_AmbientLightMMX1.mm) >> 4;
     uVar9 = (ushort)((short)((ulonglong)uVar6 >> 0x10) + (short)((ulonglong)uVar13 >> 0x10) +
-                    (short)(g_AmbientLightMMX1 >> 0x10)) >> 4;
+                    (short)(g_AmbientLightMMX1.mm >> 0x10)) >> 4;
     uVar10 = (ushort)((short)((ulonglong)uVar6 >> 0x20) + (short)((ulonglong)uVar13 >> 0x20) +
-                     (short)(g_AmbientLightMMX1 >> 0x20)) >> 4;
+                     (short)(g_AmbientLightMMX1.mm >> 0x20)) >> 4;
     uVar11 = (ushort)((short)((ulonglong)uVar6 >> 0x30) + (short)((ulonglong)uVar13 >> 0x30) +
-                     (short)(g_AmbientLightMMX1 >> 0x30)) >> 4;
+                     (short)(g_AmbientLightMMX1.mm >> 0x30)) >> 4;
     uVar7 = (ulonglong)
             CONCAT13((uVar11 != 0) * (uVar11 < 0x100) * (char)uVar11 - (0xff < uVar11),
                      CONCAT12((uVar10 != 0) * (uVar10 < 0x100) * (char)uVar10 - (0xff < uVar10),
@@ -82,13 +82,13 @@ void __cdecl core_dstrender_cpp_blendLightmapToTextureMMX_FUN_00493dc4(ulonglong
     uVar13 = pmulhw(uVar14,*(ulonglong *)
                             (g_LightmapData +
                             ((uint)lightmap_indices[1] + (uint)(texture_indices[1] >> 1)) * 4));
-    uVar5 = (ushort)((short)uVar6 + (short)uVar13 + (short)g_AmbientLightMMX2) >> 4;
+    uVar5 = (ushort)((short)uVar6 + (short)uVar13 + (short)g_AmbientLightMMX2.mm) >> 4;
     uVar9 = (ushort)((short)((ulonglong)uVar6 >> 0x10) + (short)((ulonglong)uVar13 >> 0x10) +
-                    (short)(g_AmbientLightMMX2 >> 0x10)) >> 4;
+                    (short)(g_AmbientLightMMX2.mm >> 0x10)) >> 4;
     uVar10 = (ushort)((short)((ulonglong)uVar6 >> 0x20) + (short)((ulonglong)uVar13 >> 0x20) +
-                     (short)(g_AmbientLightMMX2 >> 0x20)) >> 4;
+                     (short)(g_AmbientLightMMX2.mm >> 0x20)) >> 4;
     uVar11 = (ushort)((short)((ulonglong)uVar6 >> 0x30) + (short)((ulonglong)uVar13 >> 0x30) +
-                     (short)(g_AmbientLightMMX2 >> 0x30)) >> 4;
+                     (short)(g_AmbientLightMMX2.mm >> 0x30)) >> 4;
     uVar8 = (ulonglong)
             CONCAT13((uVar11 != 0) * (uVar11 < 0x100) * (char)uVar11 - (0xff < uVar11),
                      CONCAT12((uVar10 != 0) * (uVar10 < 0x100) * (char)uVar10 - (0xff < uVar10),
@@ -96,12 +96,12 @@ void __cdecl core_dstrender_cpp_blendLightmapToTextureMMX_FUN_00493dc4(ulonglong
                                        ,(uVar5 != 0) * (uVar5 < 0x100) * (char)uVar5 -
                                         (0xff < uVar5))));
     *(uint *)output_buffer =
-         (uint)(((uVar8 & g_BlueMask32) >> g_BlueBitShift |
-                 (uVar8 & g_GreenMask32) >> g_GreenBlueBits |
-                (uVar8 & g_RedMask32) >> g_TotalColorBits) << 0x10) |
-         (uint)((uVar7 & g_BlueMask32) >> g_BlueBitShift) |
-         (uint)((uVar7 & g_GreenMask32) >> g_GreenBlueBits) |
-         (uint)((uVar7 & g_RedMask32) >> g_TotalColorBits);
+         (uint)(((uVar8 & g_BlueMask32.mm) >> g_BlueBitShift.mm |
+                 (uVar8 & g_GreenMask32.mm) >> g_GreenBlueBits.mm |
+                (uVar8 & g_RedMask32.mm) >> g_TotalColorBits.mm) << 0x10) |
+         (uint)((uVar7 & g_BlueMask32.mm) >> g_BlueBitShift.mm) |
+         (uint)((uVar7 & g_GreenMask32.mm) >> g_GreenBlueBits.mm) |
+         (uint)((uVar7 & g_RedMask32.mm) >> g_TotalColorBits.mm);
     texture_buffer = texture_buffer + 1;
     texture_indices = texture_indices + 2;
     lightmap_indices = lightmap_indices + 2;

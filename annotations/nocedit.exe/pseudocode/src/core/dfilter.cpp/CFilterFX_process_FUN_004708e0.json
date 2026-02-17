@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 94,
+    "complexity_score": 95,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 6,
-    "pseudocode_lines": 34,
+    "pseudocode_lines": 35,
     "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 92
+    "total_lines": 93
   },
   "cross_references": [
     {
@@ -172,36 +172,36 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 23,
-      "match": "(uint *)((int)",
-      "text": "puVar3 = (uint *)((int)this_ptr->movie_data + (int)ROUND(dVar6) * 0x2000);",
-      "type": "pointer_cast"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 24,
+      "match": "ROUND",
+      "text": "((int)this_ptr->movie_data + (int)ROUND(ROUND((float)this_ptr->current_frame)) * 0x2000",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
+      "line": 24,
       "match": "ROUND",
-      "text": "puVar3 = (uint *)((int)this_ptr->movie_data + (int)ROUND(dVar6) * 0x2000);",
+      "text": "((int)this_ptr->movie_data + (int)ROUND(ROUND((float)this_ptr->current_frame)) * 0x2000",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 24,
+      "line": 26,
       "match": "(uint *)((int)",
       "text": "puVar4 = (uint *)((int)pCVar1->data_buffer + 0x1000);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 34,
       "match": "(uint *)((int)",
       "text": "puVar3 = (uint *)((int)puVar3 + (uint)bVar5 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 35,
       "match": "(uint *)((int)",
       "text": "puVar4 = (uint *)((int)puVar4 + (uint)bVar5 * -2 + 1);",
       "type": "pointer_cast"

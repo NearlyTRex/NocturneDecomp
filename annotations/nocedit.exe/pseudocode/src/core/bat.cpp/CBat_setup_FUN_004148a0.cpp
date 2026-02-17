@@ -15,9 +15,9 @@ void __cdecl core_bat_cpp_CBat_setup_FUN_004148a0(CBat *this_ptr)
   core_course_cpp_CCourse_load_FUN_00442580(&this_ptr->course,this_ptr->course_filename);
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
   core_bat_cpp_CBat_FUN_00414ce0(this_ptr);
-  this_ptr->unk3 = 0;
+  this_ptr->sfx_handle = 0;
   fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10
                     (this_ptr->periodic_sound_timer_min,this_ptr->periodic_sound_timer_max);
-  this_ptr->unk4 = (int)fVar1;
+  this_ptr->sound_timer = fVar1;
   return;
 }

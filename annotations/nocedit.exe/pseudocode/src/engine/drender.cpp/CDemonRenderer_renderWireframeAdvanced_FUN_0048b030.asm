@@ -18,7 +18,7 @@
 ;   undefined4 g_VertexIndexBuffer[1]
 ;   undefined4 g_VertexIndexBuffer[2]
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
-;   _BIT_INTEGER g_RenderStateFlags
+;   _BIT_INTEGER32 g_RenderStateFlags
 ;   int g_RenderStateFlag2
 ;
 ; Called Functions:

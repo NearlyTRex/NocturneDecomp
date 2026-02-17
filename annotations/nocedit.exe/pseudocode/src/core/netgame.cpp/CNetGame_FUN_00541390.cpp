@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 int __cdecl core_netgame_cpp_CNetGame_FUN_00541390(CNetGame *this_ptr)
 
 {
@@ -17,8 +19,6 @@ int __cdecl core_netgame_cpp_CNetGame_FUN_00541390(CNetGame *this_ptr)
   char *pcVar6;
   int iVar7;
   uchar *puVar8;
-  double dVar9;
-  uint uVar10;
   float local_138;
   float local_134;
   uchar local_130 [256];
@@ -109,11 +109,8 @@ LAB_005415cb:
             pcVar6 = "?";
             goto LAB_005415cb;
           }
-          uVar10 = 0x541739;
-          dVar9 = round
-                            ((double)(*(float *)(local_1c + 0x28) * 1000.0f));
-          local_1c = (char *)(int)ROUND(dVar9);
-          _sprintf((char *)&local_134,"%dms",local_1c,uVar10);
+          local_18 = (int)ROUND(ROUND(*(float *)(local_1c + 0x28) * 1000.0f));
+          _sprintf((char *)local_130,"%dms",local_18);
         }
         engine_2d_c_drawText_FUN_00401fd0((char *)local_130,200,iVar4);
         if (*(int *)(local_1c + 0x44) == 0) {

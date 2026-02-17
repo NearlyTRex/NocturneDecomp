@@ -36,7 +36,7 @@ section .text
     PUSH EBX                            ; 00419140
     MOV dword ptr [EBX + 0x154],0x65add4 ; 00419141 | g_CBodyPartVTable
     CALL core_bodypart.cpp_CBodyPart_setCounts_FUN_004191d0 ; 0041914b
-        ;   XREF to: 004191d0 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_setCounts_FUN_004191d0(CBodyPart * this_ptr)
+        ;   XREF to: 004191d0 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_setCounts_FUN_004191d0(CBodyPart * this_ptr, int vertex_count, int tri_count)
     ADD ESP,0xc                         ; 00419150
     PUSH 0x0                            ; 00419153
     ADD EBX,0xccc                       ; 00419155

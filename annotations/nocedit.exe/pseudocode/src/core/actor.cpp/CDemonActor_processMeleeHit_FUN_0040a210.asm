@@ -71,7 +71,7 @@
 ;   core_flamecan.cpp_CFlameCan_FUN_004cb340
 ;   core_glass.cpp_CGlass_checkBreakableCondition_FUN_004eb3a0
 ;   core_glass.cpp_CGlass_shatter_FUN_004eaef0
-;   core_gore.cpp_CGore_FUN_004edbb0
+;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0
 ;   core_setcolid.cpp_CDemonSet_FUN_00574170
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0
 ;   ... and 6 more
@@ -286,8 +286,8 @@ section .text
     PUSH EAX                            ; 0040a504
     MOV ECX,dword ptr [0x0067b9a0]      ; 0040a505 | g_CGoreInstance | g_CGorePtr
     PUSH ECX                            ; 0040a50b | g_CGoreInstance
-    CALL core_gore.cpp_CGore_FUN_004edbb0 ; 0040a50c
-        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004edbb0(CGore * this_ptr)
+    CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0 ; 0040a50c
+        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)
     ADD ESP,0x14                        ; 0040a511
     PUSH EDI                            ; 0040a514
     LEA EAX,[ESP + 0x104]               ; 0040a515

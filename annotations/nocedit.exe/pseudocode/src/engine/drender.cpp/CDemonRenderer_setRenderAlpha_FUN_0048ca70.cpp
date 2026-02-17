@@ -6,12 +6,12 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca70(CDemonRenderer *this_ptr,float render_alpha)
 
 {
-  double dVar1;
-  
-  dVar1 = round((double)(render_alpha * (float)65535));
-  engine_3d_c_setRenderAlpha_FUN_00406d80((int)ROUND(dVar1));
+  engine_3d_c_setRenderAlpha_FUN_00406d80
+            ((int)ROUND(ROUND(render_alpha * (float)65535)));
   return;
 }

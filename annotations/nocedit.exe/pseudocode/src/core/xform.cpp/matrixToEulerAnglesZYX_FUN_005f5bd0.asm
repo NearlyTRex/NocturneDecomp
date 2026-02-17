@@ -31,7 +31,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[3]:
-;   core_bodypart.cpp_CBodyPart_FUN_0041a630 at 0041a8c4
+;   core_bodypart.cpp_CBodyPart_applyRotation_FUN_0041a630 at 0041a8c4
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 005980d5
 ;   core_xform.cpp_quaternionToEulerAnglesZYX_FUN_005f7af0 at 005f7b10
 ;

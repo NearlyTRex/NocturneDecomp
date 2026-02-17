@@ -6,12 +6,13 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl sound_sndmain_cpp_CSfxSlot_seek_FUN_005a8390(CSfxSlot *this_ptr)
 
 {
   CSfxSample *this_ptr_00;
   double dVar1;
-  int dest_buffer_offset;
   uint in_stack_ffffffe4;
   
   if (this_ptr->sample == (CSfxSample *)0x0) {
@@ -38,9 +39,8 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_seek_FUN_005a8390(CSfxSlot *this_ptr)
          *(uint *)((int)&(this_ptr->options).trigger_time + 4);
     return;
   }
-  dest_buffer_offset = 0x5a844c;
-  dVar1 = round((this_ptr->options).trigger_time);
-  sound_sndmain_cpp_CSfxSample_seek_FUN_005a65a0(this_ptr_00,(int)ROUND(dVar1),dest_buffer_offset);
+  sound_sndmain_cpp_CSfxSample_seek_FUN_005a65a0
+            (this_ptr_00,(int)ROUND(ROUND((this_ptr->options).trigger_time)),0);
   this_ptr->prev_hardware_playback_pos = (double)this_ptr->sample->stream_write_position;
   return;
 }

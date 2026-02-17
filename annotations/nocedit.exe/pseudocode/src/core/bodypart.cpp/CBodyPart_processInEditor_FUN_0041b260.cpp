@@ -10,6 +10,6 @@ void __cdecl core_bodypart_cpp_CBodyPart_processInEditor_FUN_0041b260(CBodyPart 
 
 {
   core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base);
-  core_bodypart_cpp_CBodyPart_FUN_0041b070(this_ptr);
+  core_bodypart_cpp_CBodyPart_setupPhysicsBox_FUN_0041b070(this_ptr);
   return;
 }

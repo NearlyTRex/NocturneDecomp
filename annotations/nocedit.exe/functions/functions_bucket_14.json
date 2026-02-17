@@ -181,9 +181,10 @@
         "start":"00608e14"
       }
     ],
+    "conv":"__fpustack",
     "importable":true,
-    "name":"crt_unknown.c_FUN_00608e14",
-    "ret":"undefined1",
+    "name":"crt_math.c_atan2_FUN_00608e14",
+    "ret":"float10",
     "vars":{
       "locals":[
         {
@@ -235,8 +236,48 @@
           "type":"undefined1[10]"
         }
       ],
+      "params":[
+        {
+          "name":"y",
+          "storage":{
+            "reg":"ST0",
+            "size":10,
+            "varnodes":[
+              {
+                "addr":"register:00001100",
+                "offset":4352,
+                "size":10
+              }
+            ]
+          },
+          "type":"float10"
+        },
+        {
+          "name":"x",
+          "storage":{
+            "reg":"ST1",
+            "size":10,
+            "varnodes":[
+              {
+                "addr":"register:00001110",
+                "offset":4368,
+                "size":10
+              }
+            ]
+          },
+          "type":"float10"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"ST0",
+        "size":10,
+        "varnodes":[
+          {
+            "addr":"register:00001100",
+            "offset":4352,
+            "size":10
+          }
+        ]
       }
     }
   },

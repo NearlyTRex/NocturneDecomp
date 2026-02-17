@@ -14,16 +14,16 @@
 ;   core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453270 at 00453488
 ;
 ; Referenced Globals:
-;   ulonglong g_LightmapBlendBias3 = 0x20002000200020
-;   ulonglong g_LightmapBlendBias4 = 0x60006000600060
+;   _MMX_INTEGER g_LightmapBlendBias3
+;   _MMX_INTEGER g_LightmapBlendBias4
 ;   ushort[384] g_LightmapData
 ;   double g_LightmapXorMask = 0.126945525291829
-;   ulonglong g_RedMask32 = 0xf80000
-;   ulonglong g_GreenMask32 = 0xfc00
-;   ulonglong g_BlueMask32 = 0xf8
-;   ulonglong g_TotalColorBits = 0x8
-;   ulonglong g_GreenBlueBits = 0x5
-;   ulonglong g_BlueBitShift = 0x3
+;   _MMX_INTEGER g_RedMask32
+;   _MMX_INTEGER g_GreenMask32
+;   _MMX_INTEGER g_BlueMask32
+;   _MMX_INTEGER g_TotalColorBits
+;   _MMX_INTEGER g_GreenBlueBits
+;   _MMX_INTEGER g_BlueBitShift
 ;   uint[256] g_LightmapTexturePalette
 ;   ulong g_SolidColorMode
 ;

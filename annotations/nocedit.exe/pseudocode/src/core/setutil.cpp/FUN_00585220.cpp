@@ -6,14 +6,15 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl core_setutil_cpp_FUN_00585220(void)
 
 {
-  double dVar1;
   int in_stack_00000004;
   float in_stack_00000008;
   
-  dVar1 = round((double)(in_stack_00000008 * (float)65536));
-  *(int *)(in_stack_00000004 + 0x2fa4) = (int)ROUND(dVar1);
+  *(int *)(in_stack_00000004 + 0x2fa4) =
+       (int)ROUND(ROUND(in_stack_00000008 * (float)65536));
   return;
 }

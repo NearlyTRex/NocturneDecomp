@@ -42,7 +42,7 @@
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
 ;   core_charactr.cpp_CCharacter_detachBodyPart_FUN_0042bcc0
-;   core_gore.cpp_CGore_FUN_004edbb0
+;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
 ;   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 ;   sound_sndmain.cpp_killSfx_FUN_005a9c40
@@ -195,8 +195,8 @@ section .text
     PUSH EAX                            ; 0042bc02
     MOV EDX,dword ptr [0x0067b9a0]      ; 0042bc03 | g_CGorePtr | g_CGoreInstance
     PUSH EDX                            ; 0042bc09 | g_CGoreInstance
-    CALL core_gore.cpp_CGore_FUN_004edbb0 ; 0042bc0a
-        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004edbb0(CGore * this_ptr)
+    CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0 ; 0042bc0a
+        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)
     ADD ESP,0x14                        ; 0042bc0f
     MOV dword ptr [EDI + 0x70],0x2      ; 0042bc12
     MOV ESP,EBP                         ; 0042bc19

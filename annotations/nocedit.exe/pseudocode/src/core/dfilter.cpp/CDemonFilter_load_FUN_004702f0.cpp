@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl core_dfilter_cpp_CDemonFilter_load_FUN_004702f0(CDemonFilter *this_ptr,char *filename)
 
 {
@@ -13,8 +15,6 @@ void __cdecl core_dfilter_cpp_CDemonFilter_load_FUN_004702f0(CDemonFilter *this_
   _FILE *p_Var2;
   int iVar3;
   char *pcVar4;
-  double dVar5;
-  uint uVar6;
   
   p_Var2 = engine_dosio_c_getFile_FUN_00481a50("art",filename,"rb");
   if (p_Var2 == (_FILE *)0x0) {
@@ -24,15 +24,13 @@ void __cdecl core_dfilter_cpp_CDemonFilter_load_FUN_004702f0(CDemonFilter *this_
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\dfilter.cpp",0xad);
   iVar3 = engine_dosio_c_getFileSize_FUN_00481880("art",filename);
-  uVar6 = 0x47034c;
-  dVar5 = round(SQRT((double)iVar3));
-  this_ptr->size = (int)ROUND(dVar5);
+  this_ptr->size = (int)ROUND(ROUND(SQRT((float10)iVar3)));
   this_ptr->count = iVar3 / this_ptr->size;
   if (this_ptr->size != this_ptr->count) {
     g_CurrentFilename = "..\\core\\dfilter.cpp";
     g_CurrentLineNumber = 0xb7;
     core_main_c_displayErrorAndQuit_FUN_00506f10
-              ("CDemonFilter::load - Non-square filter %dx%d",this_ptr->size,this_ptr->count,uVar6);
+              ("CDemonFilter::load - Non-square filter %dx%d",this_ptr->size,this_ptr->count);
   }
   if ((this_ptr->size < 0x40) || (0x100 < this_ptr->size)) {
     g_CurrentFilename = "..\\core\\dfilter.cpp";

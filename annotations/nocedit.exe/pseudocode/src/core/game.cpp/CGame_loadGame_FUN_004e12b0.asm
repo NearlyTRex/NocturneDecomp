@@ -64,8 +64,8 @@
 ;   core_event.cpp_CEventList_resetGameFlags_FUN_004b0460
 ;   core_fire.cpp_CFireEffect_init_FUN_004c6c80
 ;   core_fire.cpp_CFireEffect_load_FUN_004c9300
-;   core_gore.cpp_CGore_FUN_004ed760
-;   core_gore.cpp_CGore_FUN_004ee1e0
+;   core_gore.cpp_CGore_load_FUN_004ee1e0
+;   core_gore.cpp_CGore_reset_FUN_004ed760
 ;   core_level.cpp_CLevelLoader_show_FUN_00503dc0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_00524030
@@ -741,8 +741,8 @@ section .text
     PUSH EBX                            ; 004e1a50
     MOV EDI,dword ptr [0x0067b9a0]      ; 004e1a51 | g_CGorePtr
     PUSH EDI                            ; 004e1a57 | g_CGoreInstance
-    CALL core_gore.cpp_CGore_FUN_004ee1e0 ; 004e1a58
-        ;   XREF to: 004ee1e0 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_CGore_FUN_004ee1e0(CGore * this_ptr, _FILE * file_handle)
+    CALL core_gore.cpp_CGore_load_FUN_004ee1e0 ; 004e1a58
+        ;   XREF to: 004ee1e0 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_CGore_load_FUN_004ee1e0(CGore * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 004e1a5d
     CMP dword ptr [ESP + 0x604],0x7     ; 004e1a60
         ;   Label: LAB_004e1a60
@@ -871,8 +871,8 @@ section .text
     MOV EBP,dword ptr [0x0067b9a0]      ; 004e1bef | g_CGorePtr
         ;   Label: LAB_004e1bef
     PUSH EBP                            ; 004e1bf5 | g_CGoreInstance
-    CALL core_gore.cpp_CGore_FUN_004ed760 ; 004e1bf6
-        ;   XREF to: 004ed760 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004ed760(CGore * this_ptr)
+    CALL core_gore.cpp_CGore_reset_FUN_004ed760 ; 004e1bf6
+        ;   XREF to: 004ed760 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_reset_FUN_004ed760(CGore * this_ptr)
     ADD ESP,0x4                         ; 004e1bfb
     JMP 0x004e1a60                      ; 004e1bfe
         ;   XREF to: 004e1a60 (UNCONDITIONAL_JUMP)  ; LAB_004e1a60

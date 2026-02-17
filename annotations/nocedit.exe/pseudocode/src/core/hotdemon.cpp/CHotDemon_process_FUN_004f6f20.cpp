@@ -142,17 +142,17 @@ LAB_004f7178:
         if (10.0f <= local_24) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&pCVar1->motion_controller,7,1);
-          (this_ptr->base).unk2 = 0;
+          (this_ptr->base).attack_cooldown = 0.0;
         }
         else {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&pCVar1->motion_controller,1,1);
-          (this_ptr->base).unk2 = 0;
+          (this_ptr->base).attack_cooldown = 0.0;
         }
       }
       break;
     }
-    iVar5 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+    iVar5 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
     if (iVar5 == 0) break;
     goto LAB_004f73d5;
   case 1:
@@ -187,11 +187,11 @@ LAB_004f7178:
         local_20 = SQRT(local_8c * local_8c + local_94 * local_94);
         local_18 = local_20;
         if ((10.0f < local_20) && (iVar5 != 7)) {
-          (this_ptr->base).unk2 = 0;
+          (this_ptr->base).attack_cooldown = 0.0;
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&pCVar1->motion_controller,7,1);
         }
-        if ((local_20 <= local_1c) && ((float)(this_ptr->base).unk2 <= 0.0)) {
+        if ((local_20 <= local_1c) && ((this_ptr->base).attack_cooldown <= 0.0)) {
           pCVar4 = (this_ptr->base).victim;
           local_70.x = (pCVar4->location).position.x -
                        (this_ptr->base).base.base.location.position.x;
@@ -217,7 +217,7 @@ LAB_004f7178:
                                  ((CDemonActor *)this_ptr,"hotdemon-attack.wav");
               *(uint *)this_ptr->field1_0xbebc = uVar10;
             }
-            (this_ptr->base).unk2 = 0x40000000;
+            (this_ptr->base).attack_cooldown = 2.0;
           }
         }
         if ((this_ptr->base).guard_distance < local_20) {
@@ -225,18 +225,18 @@ LAB_004f7178:
           if (iVar5 == 7) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&pCVar1->motion_controller,6,1);
-            (this_ptr->base).unk2 = 0;
+            (this_ptr->base).attack_cooldown = 0.0;
           }
           else {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&pCVar1->motion_controller,0,1);
-            (this_ptr->base).unk2 = 0;
+            (this_ptr->base).attack_cooldown = 0.0;
           }
         }
       }
       break;
     }
-    iVar7 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+    iVar7 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
     if (iVar7 == 0) {
       if (iVar5 == 1) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -272,13 +272,13 @@ LAB_004f73d5:
                          (&(this_ptr->base).base.model,&local_ac,0);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)this_ptr,&local_b8,pCVar9);
-      core_gore_cpp_CGore_FUN_004ede30(g_CGorePtr);
+      core_gore_cpp_CGore_createBloodPool_FUN_004ede30(g_CGorePtr,&local_b8,0);
       (this_ptr->base).pool_me = 1;
     }
   }
 switchD_004f7654_caseD_e:
-  if (0.0 < (float)(this_ptr->base).unk2) {
-    (this_ptr->base).unk2 = (int)((float)(this_ptr->base).unk2 - delta_time);
+  if (0.0 < (this_ptr->base).attack_cooldown) {
+    (this_ptr->base).attack_cooldown = (this_ptr->base).attack_cooldown - delta_time;
   }
   iVar5 = core_charactr_cpp_CCharacter_isOnGround_FUN_004297e0((CCharacter *)this_ptr);
   if (iVar5 != 0) {

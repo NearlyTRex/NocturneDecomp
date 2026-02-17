@@ -6,40 +6,34 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50(CDemonRaytrace *this_ptr,float fov_or_radius,int render_mode)
 
 {
-  int iVar1;
-  float fVar2;
-  longlong lVar3;
-  double dVar4;
-  double dVar5;
-  float fVar6;
-  int iVar7;
-  int iVar8;
-  int iVar9;
-  int iVar10;
-  float fVar11;
-  byte bVar12;
-  bool bVar13;
-  double dVar14;
-  double dVar15;
-  double dVar16;
-  double dVar17;
-  int aiStackY_1138 [982];
-  uint uStack_1c8;
-  uint uStack_1c4;
-  double dStack_1c0;
-  int local_1a8 [6];
+  float fVar1;
+  int iVar2;
+  int iVar3;
+  int iVar4;
+  int iVar5;
+  byte bVar6;
+  bool bVar7;
+  int aiStackY_1138 [989];
+  int local_198;
+  int local_194;
   int local_190;
   int local_18c;
   int local_188;
   int local_184;
   int local_180;
   int local_17c;
-  uint local_178;
-  uint local_174;
-  uint local_170;
+  int local_178;
+  int local_174;
+  int local_170;
+  int local_16c;
+  uint local_168;
+  uint local_164;
+  uint local_160;
   float local_15c;
   float local_158;
   float local_154;
@@ -48,11 +42,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50(CDem
   int local_140;
   int local_13c;
   int local_138;
-  int local_134 [4];
-  int iStack_124;
-  int iStack_120;
-  int iStack_11c;
-  int iStack_118;
+  int local_134 [8];
   int local_114;
   int local_110;
   int local_10c;
@@ -96,23 +86,29 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50(CDem
   int local_74;
   int local_70;
   int local_6c;
-  float local_68;
+  int local_68;
   int local_64;
-  float local_60;
+  int local_60;
   int local_5c;
-  float local_58;
+  int local_58;
   int local_54;
-  float local_50;
+  int local_50;
   int local_4c;
   int local_48;
   int local_44;
   int local_40;
+  int local_3c;
+  int local_38;
+  int local_34;
   int local_30;
   int local_2c;
   int local_28;
+  int local_24;
   int local_20;
+  int local_1c;
+  int local_18;
   
-  bVar12 = 0;
+  bVar6 = 0;
   if ((g_PVSReadyFlag != 0) && (render_mode != 0)) {
     core_dtrace_cpp_CDemonRaytrace_renderPVSCubes_FUN_004990f0(this_ptr);
     return;
@@ -125,192 +121,169 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50(CDem
   engine_drender_cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
             (g_CDemonRendererPtr1,&local_150);
   local_138 = local_150.x;
-  local_134[(uint)bVar12 * -2] = *(int *)((int)&local_150 + (uint)bVar12 * -8 + 4);
-  local_134[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1] =
-       *(int *)((int)&local_150 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
-  fVar11 = (float)0.00390625;
-  local_15c = (float)local_138 * fVar11;
+  local_134[(uint)bVar6 * -2] = *(int *)((int)&local_150 + (uint)bVar6 * -8 + 4);
+  local_134[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
+       *(int *)((int)&local_150 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
+  fVar1 = (float)0.00390625;
   local_20 = local_134[1];
-  local_154 = (float)local_134[1] * fVar11;
-  local_158 = (float)local_134[0] * fVar11;
-  dVar14 = round
-                     ((double)((local_15c - (this_ptr->bbox_min).x) / (this_ptr->cell_size).x));
-  fVar6 = local_158;
-  local_13c = (int)ROUND(dVar14);
-  dVar14 = round
-                     ((double)(((float)local_134[0] * fVar11 - (this_ptr->bbox_min).y) /
-                              (this_ptr->cell_size).y));
-  local_13c = (int)ROUND(dVar14);
-  fVar11 = (this_ptr->bbox_min).z;
-  fVar2 = (this_ptr->cell_size).z;
-  dVar14 = round((double)(fov_or_radius * 256.0f));
-  iVar7 = g_InverseMatrix.m[0].x;
-  iVar9 = (int)ROUND(dVar14);
-  local_150.x = iVar9;
-  local_150.y = iVar9;
-  local_150.z = iVar9;
-  dVar14 = round((double)((fVar6 - fVar11) / fVar2));
-  local_140 = (int)ROUND(dVar14);
-  local_1a8[0] = ((uint)((longlong)iVar7 * (longlong)iVar9) >> 0x10 |
-                 (int)((ulonglong)((longlong)iVar7 * (longlong)iVar9) >> 0x20) << 0x10) +
-                 ((uint)((longlong)g_InverseMatrix.m[1].x * (longlong)(int)local_154) >> 0x10 |
-                 (int)((ulonglong)((longlong)g_InverseMatrix.m[1].x * (longlong)(int)local_154) >>
-                      0x20) << 0x10) +
-                 ((uint)((longlong)g_InverseMatrix.m[2].x * (longlong)(int)local_154) >> 0x10 |
-                 (int)((ulonglong)((longlong)g_InverseMatrix.m[2].x * (longlong)(int)local_154) >>
-                      0x20) << 0x10);
-  local_1a8[1] = ((uint)((longlong)g_InverseMatrix.m[0].y * (longlong)(int)local_154) >> 0x10 |
-                 (int)((ulonglong)((longlong)g_InverseMatrix.m[0].y * (longlong)(int)local_154) >>
-                      0x20) << 0x10) +
-                 ((uint)((longlong)g_InverseMatrix.m[1].y * (longlong)(int)local_154) >> 0x10 |
-                 (int)((ulonglong)((longlong)g_InverseMatrix.m[1].y * (longlong)(int)local_154) >>
-                      0x20) << 0x10) +
-                 ((uint)((longlong)g_InverseMatrix.m[2].y * (longlong)(int)local_154) >> 0x10 |
-                 (int)((ulonglong)((longlong)g_InverseMatrix.m[2].y * (longlong)(int)local_154) >>
-                      0x20) << 0x10);
-  local_1a8[2] = ((uint)((longlong)g_InverseMatrix.m[0].z * (longlong)(int)local_154) >> 0x10 |
-                 (int)((ulonglong)((longlong)g_InverseMatrix.m[0].z * (longlong)(int)local_154) >>
-                      0x20) << 0x10) +
-                 ((uint)((longlong)g_InverseMatrix.m[1].z * (longlong)(int)local_154) >> 0x10 |
-                 (int)((ulonglong)((longlong)g_InverseMatrix.m[1].z * (longlong)(int)local_154) >>
-                      0x20) << 0x10) +
-                 ((uint)((longlong)g_InverseMatrix.m[2].z * (longlong)(int)local_154) >> 0x10 |
-                 (int)((ulonglong)((longlong)g_InverseMatrix.m[2].z * (longlong)(int)local_154) >>
-                      0x20) << 0x10);
-  iVar9 = -(int)local_154;
-  local_1a8[3] = ((uint)((longlong)g_InverseMatrix.m[0].x * (longlong)iVar9) >> 0x10 |
-                 (int)((ulonglong)((longlong)g_InverseMatrix.m[0].x * (longlong)iVar9) >> 0x20) <<
-                 0x10) + ((uint)((longlong)g_InverseMatrix.m[1].x * (longlong)local_150.x) >> 0x10 |
-                         (int)((ulonglong)((longlong)g_InverseMatrix.m[1].x * (longlong)local_150.x)
-                              >> 0x20) << 0x10) +
-                 ((uint)((longlong)g_InverseMatrix.m[2].x * (longlong)local_150.y) >> 0x10 |
-                 (int)((ulonglong)((longlong)g_InverseMatrix.m[2].x * (longlong)local_150.y) >> 0x20
-                      ) << 0x10);
-  local_1a8[4] = ((uint)((longlong)g_InverseMatrix.m[0].y * (longlong)iVar9) >> 0x10 |
-                 (int)((ulonglong)((longlong)g_InverseMatrix.m[0].y * (longlong)iVar9) >> 0x20) <<
-                 0x10) + ((uint)((longlong)g_InverseMatrix.m[1].y * (longlong)local_150.x) >> 0x10 |
-                         (int)((ulonglong)((longlong)g_InverseMatrix.m[1].y * (longlong)local_150.x)
-                              >> 0x20) << 0x10) +
-                 ((uint)((longlong)g_InverseMatrix.m[2].y * (longlong)local_150.y) >> 0x10 |
-                 (int)((ulonglong)((longlong)g_InverseMatrix.m[2].y * (longlong)local_150.y) >> 0x20
-                      ) << 0x10);
-  lVar3 = (longlong)local_150.x;
-  local_150.x = -local_150.x;
-  local_1a8[5] = ((uint)((longlong)g_InverseMatrix.m[0].z * (longlong)iVar9) >> 0x10 |
-                 (int)((ulonglong)((longlong)g_InverseMatrix.m[0].z * (longlong)iVar9) >> 0x20) <<
-                 0x10) + ((uint)(g_InverseMatrix.m[1].z * lVar3) >> 0x10 |
-                         (int)((ulonglong)(g_InverseMatrix.m[1].z * lVar3) >> 0x20) << 0x10) +
-                 ((uint)((longlong)g_InverseMatrix.m[2].z * (longlong)local_150.y) >> 0x10 |
-                 (int)((ulonglong)((longlong)g_InverseMatrix.m[2].z * (longlong)local_150.y) >> 0x20
-                      ) << 0x10);
-  local_190 = ((uint)((longlong)g_InverseMatrix.m[0].x * (longlong)iVar9) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[0].x * (longlong)iVar9) >> 0x20) << 0x10
-              ) + ((uint)((longlong)g_InverseMatrix.m[1].x * (longlong)local_150.x) >> 0x10 |
-                  (int)((ulonglong)((longlong)g_InverseMatrix.m[1].x * (longlong)local_150.x) >>
-                       0x20) << 0x10) +
-              ((uint)((longlong)g_InverseMatrix.m[2].x * (longlong)local_150.y) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].x * (longlong)local_150.y) >> 0x20)
-              << 0x10);
-  local_18c = ((uint)((longlong)g_InverseMatrix.m[0].y * (longlong)iVar9) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[0].y * (longlong)iVar9) >> 0x20) << 0x10
-              ) + ((uint)((longlong)g_InverseMatrix.m[1].y * (longlong)local_150.x) >> 0x10 |
-                  (int)((ulonglong)((longlong)g_InverseMatrix.m[1].y * (longlong)local_150.x) >>
-                       0x20) << 0x10) +
-              ((uint)((longlong)g_InverseMatrix.m[2].y * (longlong)local_150.y) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].y * (longlong)local_150.y) >> 0x20)
-              << 0x10);
-  local_188 = ((uint)((longlong)g_InverseMatrix.m[0].z * (longlong)iVar9) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[0].z * (longlong)iVar9) >> 0x20) << 0x10
-              ) + ((uint)((longlong)g_InverseMatrix.m[1].z * (longlong)local_150.x) >> 0x10 |
-                  (int)((ulonglong)((longlong)g_InverseMatrix.m[1].z * (longlong)local_150.x) >>
-                       0x20) << 0x10) +
-              ((uint)((longlong)g_InverseMatrix.m[2].z * (longlong)local_150.y) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].z * (longlong)local_150.y) >> 0x20)
-              << 0x10);
-  local_184 = ((uint)((longlong)g_InverseMatrix.m[0].x * (longlong)(int)local_154) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[0].x * (longlong)(int)local_154) >> 0x20
-                   ) << 0x10) +
-              ((uint)((longlong)g_InverseMatrix.m[1].x * (longlong)local_150.x) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[1].x * (longlong)local_150.x) >> 0x20)
-              << 0x10) +
-              ((uint)((longlong)g_InverseMatrix.m[2].x * (longlong)local_150.y) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].x * (longlong)local_150.y) >> 0x20)
-              << 0x10);
-  local_180 = ((uint)((longlong)g_InverseMatrix.m[0].y * (longlong)(int)local_154) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[0].y * (longlong)(int)local_154) >> 0x20
-                   ) << 0x10) +
-              ((uint)((longlong)g_InverseMatrix.m[1].y * (longlong)local_150.x) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[1].y * (longlong)local_150.x) >> 0x20)
-              << 0x10) +
-              ((uint)((longlong)g_InverseMatrix.m[2].y * (longlong)local_150.y) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].y * (longlong)local_150.y) >> 0x20)
-              << 0x10);
-  local_17c = ((uint)((longlong)g_InverseMatrix.m[0].z * (longlong)(int)local_154) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[0].z * (longlong)(int)local_154) >> 0x20
-                   ) << 0x10) +
-              ((uint)((longlong)g_InverseMatrix.m[1].z * (longlong)local_150.x) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[1].z * (longlong)local_150.x) >> 0x20)
-              << 0x10) +
-              ((uint)((longlong)g_InverseMatrix.m[2].z * (longlong)local_150.y) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].z * (longlong)local_150.y) >> 0x20)
-              << 0x10);
-  local_178 = 0;
-  local_174 = 0;
-  local_170 = 0;
-  dVar14 = (double)(this_ptr->cell_size).x * 256;
-  dVar5 = (double)(this_ptr->cell_size).y * 256;
-  dStack_1c0 = (double)(this_ptr->cell_size).z * 256;
-  iStack_118 = 999;
-  local_114 = 999;
-  local_110 = 999;
-  iVar9 = -999;
-  iVar8 = 0;
-  iVar7 = -999;
-  iVar10 = -999;
+  local_15c = (float)local_138 * fVar1;
+  local_158 = (float)local_134[0] * fVar1;
+  local_154 = (float)local_134[1] * fVar1;
+  local_138 = (int)ROUND(ROUND(((float)local_138 * fVar1 - (this_ptr->bbox_min).x) /
+                               (this_ptr->cell_size).x));
+  local_134[0] = (int)ROUND(ROUND(((float)local_134[0] * fVar1 - (this_ptr->bbox_min).y) /
+                                  (this_ptr->cell_size).y));
+  local_13c = (int)ROUND(ROUND(fov_or_radius * 256.0f));
+  local_134[1] = (int)ROUND(ROUND(((float)local_134[1] * fVar1 - (this_ptr->bbox_min).z) /
+                                  (this_ptr->cell_size).z));
+  local_198 = ((uint)((longlong)g_InverseMatrix.m[0].x * (longlong)local_13c) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[0].x * (longlong)local_13c) >> 0x20) <<
+              0x10) + ((uint)((longlong)g_InverseMatrix.m[1].x * (longlong)local_13c) >> 0x10 |
+                      (int)((ulonglong)((longlong)g_InverseMatrix.m[1].x * (longlong)local_13c) >>
+                           0x20) << 0x10) +
+              ((uint)((longlong)g_InverseMatrix.m[2].x * (longlong)local_13c) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].x * (longlong)local_13c) >> 0x20) <<
+              0x10);
+  local_194 = ((uint)((longlong)g_InverseMatrix.m[0].y * (longlong)local_13c) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[0].y * (longlong)local_13c) >> 0x20) <<
+              0x10) + ((uint)((longlong)g_InverseMatrix.m[1].y * (longlong)local_13c) >> 0x10 |
+                      (int)((ulonglong)((longlong)g_InverseMatrix.m[1].y * (longlong)local_13c) >>
+                           0x20) << 0x10) +
+              ((uint)((longlong)g_InverseMatrix.m[2].y * (longlong)local_13c) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].y * (longlong)local_13c) >> 0x20) <<
+              0x10);
+  local_190 = ((uint)((longlong)g_InverseMatrix.m[0].z * (longlong)local_13c) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[0].z * (longlong)local_13c) >> 0x20) <<
+              0x10) + ((uint)((longlong)g_InverseMatrix.m[1].z * (longlong)local_13c) >> 0x10 |
+                      (int)((ulonglong)((longlong)g_InverseMatrix.m[1].z * (longlong)local_13c) >>
+                           0x20) << 0x10) +
+              ((uint)((longlong)g_InverseMatrix.m[2].z * (longlong)local_13c) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].z * (longlong)local_13c) >> 0x20) <<
+              0x10);
+  iVar4 = -local_13c;
+  local_18c = ((uint)((longlong)g_InverseMatrix.m[0].x * (longlong)iVar4) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[0].x * (longlong)iVar4) >> 0x20) << 0x10
+              ) + ((uint)((longlong)g_InverseMatrix.m[1].x * (longlong)local_13c) >> 0x10 |
+                  (int)((ulonglong)((longlong)g_InverseMatrix.m[1].x * (longlong)local_13c) >> 0x20)
+                  << 0x10) +
+              ((uint)((longlong)g_InverseMatrix.m[2].x * (longlong)local_13c) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].x * (longlong)local_13c) >> 0x20) <<
+              0x10);
+  local_188 = ((uint)((longlong)g_InverseMatrix.m[0].y * (longlong)iVar4) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[0].y * (longlong)iVar4) >> 0x20) << 0x10
+              ) + ((uint)((longlong)g_InverseMatrix.m[1].y * (longlong)local_13c) >> 0x10 |
+                  (int)((ulonglong)((longlong)g_InverseMatrix.m[1].y * (longlong)local_13c) >> 0x20)
+                  << 0x10) +
+              ((uint)((longlong)g_InverseMatrix.m[2].y * (longlong)local_13c) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].y * (longlong)local_13c) >> 0x20) <<
+              0x10);
+  local_140 = -local_13c;
+  local_184 = ((uint)((longlong)g_InverseMatrix.m[0].z * (longlong)iVar4) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[0].z * (longlong)iVar4) >> 0x20) << 0x10
+              ) + ((uint)((longlong)g_InverseMatrix.m[1].z * (longlong)local_13c) >> 0x10 |
+                  (int)((ulonglong)((longlong)g_InverseMatrix.m[1].z * (longlong)local_13c) >> 0x20)
+                  << 0x10) +
+              ((uint)((longlong)g_InverseMatrix.m[2].z * (longlong)local_13c) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].z * (longlong)local_13c) >> 0x20) <<
+              0x10);
+  local_180 = ((uint)((longlong)g_InverseMatrix.m[0].x * (longlong)iVar4) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[0].x * (longlong)iVar4) >> 0x20) << 0x10
+              ) + ((uint)((longlong)g_InverseMatrix.m[1].x * (longlong)local_140) >> 0x10 |
+                  (int)((ulonglong)((longlong)g_InverseMatrix.m[1].x * (longlong)local_140) >> 0x20)
+                  << 0x10) +
+              ((uint)((longlong)g_InverseMatrix.m[2].x * (longlong)local_13c) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].x * (longlong)local_13c) >> 0x20) <<
+              0x10);
+  local_17c = ((uint)((longlong)g_InverseMatrix.m[0].y * (longlong)iVar4) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[0].y * (longlong)iVar4) >> 0x20) << 0x10
+              ) + ((uint)((longlong)g_InverseMatrix.m[1].y * (longlong)local_140) >> 0x10 |
+                  (int)((ulonglong)((longlong)g_InverseMatrix.m[1].y * (longlong)local_140) >> 0x20)
+                  << 0x10) +
+              ((uint)((longlong)g_InverseMatrix.m[2].y * (longlong)local_13c) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].y * (longlong)local_13c) >> 0x20) <<
+              0x10);
+  local_178 = ((uint)((longlong)g_InverseMatrix.m[0].z * (longlong)iVar4) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[0].z * (longlong)iVar4) >> 0x20) << 0x10
+              ) + ((uint)((longlong)g_InverseMatrix.m[1].z * (longlong)local_140) >> 0x10 |
+                  (int)((ulonglong)((longlong)g_InverseMatrix.m[1].z * (longlong)local_140) >> 0x20)
+                  << 0x10) +
+              ((uint)((longlong)g_InverseMatrix.m[2].z * (longlong)local_13c) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].z * (longlong)local_13c) >> 0x20) <<
+              0x10);
+  local_144 = local_13c;
+  local_174 = ((uint)((longlong)g_InverseMatrix.m[0].x * (longlong)local_13c) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[0].x * (longlong)local_13c) >> 0x20) <<
+              0x10) + ((uint)((longlong)g_InverseMatrix.m[1].x * (longlong)local_140) >> 0x10 |
+                      (int)((ulonglong)((longlong)g_InverseMatrix.m[1].x * (longlong)local_140) >>
+                           0x20) << 0x10) +
+              ((uint)((longlong)g_InverseMatrix.m[2].x * (longlong)local_13c) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].x * (longlong)local_13c) >> 0x20) <<
+              0x10);
+  local_170 = ((uint)((longlong)g_InverseMatrix.m[0].y * (longlong)local_13c) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[0].y * (longlong)local_13c) >> 0x20) <<
+              0x10) + ((uint)((longlong)g_InverseMatrix.m[1].y * (longlong)local_140) >> 0x10 |
+                      (int)((ulonglong)((longlong)g_InverseMatrix.m[1].y * (longlong)local_140) >>
+                           0x20) << 0x10) +
+              ((uint)((longlong)g_InverseMatrix.m[2].y * (longlong)local_13c) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].y * (longlong)local_13c) >> 0x20) <<
+              0x10);
+  local_16c = ((uint)((longlong)g_InverseMatrix.m[0].z * (longlong)local_13c) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[0].z * (longlong)local_13c) >> 0x20) <<
+              0x10) + ((uint)((longlong)g_InverseMatrix.m[1].z * (longlong)local_140) >> 0x10 |
+                      (int)((ulonglong)((longlong)g_InverseMatrix.m[1].z * (longlong)local_140) >>
+                           0x20) << 0x10) +
+              ((uint)((longlong)g_InverseMatrix.m[2].z * (longlong)local_13c) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].z * (longlong)local_13c) >> 0x20) <<
+              0x10);
+  local_168 = 0;
+  local_164 = 0;
+  local_160 = 0;
+  local_108 = 999;
+  local_104 = 999;
+  local_100 = 999;
+  iVar4 = -999;
+  iVar3 = 0;
+  iVar2 = -999;
+  iVar5 = -999;
   do {
-    iVar1 = *(int *)((int)local_1a8 + iVar8 + 4);
-    dVar17 = (double)*(int *)((int)local_1a8 + iVar8 + 8) / dStack_1c0;
-    local_30 = local_150.z;
-    local_2c = local_144;
-    local_28 = local_140;
-    dVar16 = (double)local_144;
-    dVar4 = (double)local_140;
-    uStack_1c4 = 0x4982bc;
-    dVar15 = round
-                       ((double)local_150.z + (double)*(int *)((int)local_1a8 + iVar8) / dVar14);
-    uStack_1c8 = 0x4982c3;
-    dVar16 = round(dVar16 + (double)iVar1 / dVar5);
-    dStack_1c0 = (double)CONCAT44(dStack_1c0._4_4_,0x4982ca);
-    dVar17 = round(dVar4 + dVar17);
-    local_134[1] = (int)ROUND(dVar15);
-    local_134[2] = (int)ROUND(dVar16);
-    local_134[3] = (int)ROUND(dVar17);
-    if (local_134[1] < iStack_124) {
-      iStack_124 = local_134[1];
+    local_20 = local_138;
+    local_1c = local_134[0];
+    local_18 = local_134[1];
+    local_114 = (int)ROUND(ROUND((double)local_138 +
+                                 (double)*(int *)((int)&stack0xfffffe68 + iVar3) /
+                                 ((double)(this_ptr->cell_size).x * 256)));
+    local_110 = (int)ROUND(ROUND((double)local_134[0] +
+                                 (double)*(int *)((int)&stack0xfffffe6c + iVar3) /
+                                 ((double)(this_ptr->cell_size).y * 256)));
+    local_10c = (int)ROUND(ROUND((double)local_134[1] +
+                                 (double)*(int *)((int)&stack0xfffffe70 + iVar3) /
+                                 ((double)(this_ptr->cell_size).z * 256)));
+    if (local_114 < local_108) {
+      local_108 = local_114;
     }
-    if (local_134[2] < iStack_120) {
-      iStack_120 = local_134[2];
+    if (local_110 < local_104) {
+      local_104 = local_110;
     }
-    if (local_134[3] < iStack_11c) {
-      iStack_11c = local_134[3];
+    if (local_10c < local_100) {
+      local_100 = local_10c;
     }
-    if (iVar9 < local_134[1]) {
-      iVar9 = local_134[1];
+    if (iVar4 < local_114) {
+      iVar4 = local_114;
     }
-    if (iVar7 < local_134[2]) {
-      iVar7 = local_134[2];
+    if (iVar2 < local_110) {
+      iVar2 = local_110;
     }
-    if (iVar10 < local_134[3]) {
-      iVar10 = local_134[3];
+    if (iVar5 < local_10c) {
+      iVar5 = local_10c;
     }
-    iVar8 = iVar8 + 0xc;
-  } while (iVar8 != 0x3c);
-  (this_ptr->grid_bounds_min).x = iStack_124;
-  (this_ptr->grid_bounds_max).x = iVar9 + 1;
-  (this_ptr->grid_bounds_max).y = iVar7 + 1;
-  (this_ptr->grid_bounds_max).z = iVar10 + 1;
-  (this_ptr->grid_bounds_min).y = iStack_120;
-  (this_ptr->grid_bounds_min).z = iStack_11c;
+    iVar3 = iVar3 + 0xc;
+  } while (iVar3 != 0x3c);
+  (this_ptr->grid_bounds_min).x = local_108;
+  (this_ptr->grid_bounds_max).x = iVar4 + 1;
+  (this_ptr->grid_bounds_max).y = iVar2 + 1;
+  (this_ptr->grid_bounds_max).z = iVar5 + 1;
+  (this_ptr->grid_bounds_min).y = local_104;
+  (this_ptr->grid_bounds_min).z = local_100;
   if ((this_ptr->grid_bounds_min).x < 0) {
     (this_ptr->grid_bounds_min).x = 0;
   }
@@ -320,17 +293,17 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50(CDem
   if ((this_ptr->grid_bounds_min).z < 0) {
     (this_ptr->grid_bounds_min).z = 0;
   }
-  iVar9 = (this_ptr->grid_coord).x;
-  if (iVar9 <= (this_ptr->grid_bounds_max).x) {
-    (this_ptr->grid_bounds_max).x = iVar9 + -1;
+  iVar4 = (this_ptr->grid_coord).x;
+  if (iVar4 <= (this_ptr->grid_bounds_max).x) {
+    (this_ptr->grid_bounds_max).x = iVar4 + -1;
   }
-  iVar9 = (this_ptr->grid_coord).y;
-  if (iVar9 <= (this_ptr->grid_bounds_max).y) {
-    (this_ptr->grid_bounds_max).y = iVar9 + -1;
+  iVar4 = (this_ptr->grid_coord).y;
+  if (iVar4 <= (this_ptr->grid_bounds_max).y) {
+    (this_ptr->grid_bounds_max).y = iVar4 + -1;
   }
-  iVar9 = (this_ptr->grid_coord).z;
-  if (iVar9 <= (this_ptr->grid_bounds_max).z) {
-    (this_ptr->grid_bounds_max).z = iVar9 + -1;
+  iVar4 = (this_ptr->grid_coord).z;
+  if (iVar4 <= (this_ptr->grid_bounds_max).z) {
+    (this_ptr->grid_bounds_max).z = iVar4 + -1;
   }
   g_RenderedTriangleCount = 0;
   engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0048c420
@@ -339,398 +312,398 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50(CDem
   if ((4 < this_ptr->rendering_mode) || (this_ptr->rendering_mode < 0)) {
     this_ptr->rendering_mode = 1;
   }
-  iStack_118 = (g_InverseMatrix.m[2].x ^ g_InverseMatrix.m[2].x >> 0x1f) -
-               (g_InverseMatrix.m[2].x >> 0x1f);
-  iVar9 = (g_InverseMatrix.m[2].y ^ g_InverseMatrix.m[2].y >> 0x1f) -
+  local_fc = (g_InverseMatrix.m[2].x ^ g_InverseMatrix.m[2].x >> 0x1f) -
+             (g_InverseMatrix.m[2].x >> 0x1f);
+  iVar4 = (g_InverseMatrix.m[2].y ^ g_InverseMatrix.m[2].y >> 0x1f) -
           (g_InverseMatrix.m[2].y >> 0x1f);
-  iVar7 = (g_InverseMatrix.m[2].z ^ g_InverseMatrix.m[2].z >> 0x1f) -
+  iVar2 = (g_InverseMatrix.m[2].z ^ g_InverseMatrix.m[2].z >> 0x1f) -
           (g_InverseMatrix.m[2].z >> 0x1f);
-  if ((iStack_118 < iVar9) || (iStack_118 < iVar7)) {
-    if ((iVar9 < iStack_118) || (iVar9 < iVar7)) {
-      if (local_150.y <= (this_ptr->grid_bounds_max).z) {
-        local_b4 = local_150.x + -1;
-        local_b0 = (int)local_154 + -1;
-        local_84 = 0;
-        iVar9 = local_150.y;
+  if ((local_fc < iVar4) || (local_fc < iVar2)) {
+    if ((iVar4 < local_fc) || (iVar4 < iVar2)) {
+      if (local_134[1] <= (this_ptr->grid_bounds_max).z) {
+        local_98 = local_134[0] + -1;
+        local_94 = local_138 + -1;
+        local_68 = 0;
+        iVar4 = local_134[1];
         do {
-          local_50 = local_154;
-          if ((int)local_154 <= (this_ptr->grid_bounds_max).x) {
-            local_d4 = local_84;
-            local_d0 = local_84;
+          local_34 = local_138;
+          if (local_138 <= (this_ptr->grid_bounds_max).x) {
+            local_b8 = local_68;
+            local_b4 = local_68;
             do {
-              iVar7 = local_150.x;
-              if (local_150.x <= (this_ptr->grid_bounds_max).y) {
+              iVar2 = local_134[0];
+              if (local_134[0] <= (this_ptr->grid_bounds_max).y) {
                 do {
-                  iVar10 = iVar7 + 1;
+                  iVar5 = iVar2 + 1;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
-                            (this_ptr,(int)local_50,iVar7,iVar9,local_d4);
-                  iVar7 = iVar10;
-                } while (iVar10 <= (this_ptr->grid_bounds_max).y);
+                            (this_ptr,local_34,iVar2,iVar4,local_b8);
+                  iVar2 = iVar5;
+                } while (iVar5 <= (this_ptr->grid_bounds_max).y);
               }
-              iVar7 = local_b4;
-              if ((this_ptr->grid_bounds_min).y <= local_b4) {
+              iVar2 = local_98;
+              if ((this_ptr->grid_bounds_min).y <= local_98) {
                 do {
-                  iVar10 = iVar7 + -1;
+                  iVar5 = iVar2 + -1;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
-                            (this_ptr,(int)local_50,iVar7,iVar9,local_d0);
-                  iVar7 = iVar10;
-                } while ((this_ptr->grid_bounds_min).y <= iVar10);
+                            (this_ptr,local_34,iVar2,iVar4,local_b4);
+                  iVar2 = iVar5;
+                } while ((this_ptr->grid_bounds_min).y <= iVar5);
               }
-              local_50 = (float)((int)local_50 + 1);
-            } while ((int)local_50 <= (this_ptr->grid_bounds_max).x);
+              local_34 = local_34 + 1;
+            } while (local_34 <= (this_ptr->grid_bounds_max).x);
           }
-          local_54 = local_b0;
-          if ((this_ptr->grid_bounds_min).x <= local_b0) {
-            local_cc = local_84;
-            local_c8 = local_84;
+          local_38 = local_94;
+          if ((this_ptr->grid_bounds_min).x <= local_94) {
+            local_b0 = local_68;
+            local_ac = local_68;
             do {
-              iVar7 = local_150.x;
-              if (local_150.x <= (this_ptr->grid_bounds_max).y) {
+              iVar2 = local_134[0];
+              if (local_134[0] <= (this_ptr->grid_bounds_max).y) {
                 do {
-                  iVar10 = iVar7 + 1;
+                  iVar5 = iVar2 + 1;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
-                            (this_ptr,local_54,iVar7,iVar9,local_cc);
-                  iVar7 = iVar10;
-                } while (iVar10 <= (this_ptr->grid_bounds_max).y);
+                            (this_ptr,local_38,iVar2,iVar4,local_b0);
+                  iVar2 = iVar5;
+                } while (iVar5 <= (this_ptr->grid_bounds_max).y);
               }
-              iVar7 = local_b4;
-              if ((this_ptr->grid_bounds_min).y <= local_b4) {
+              iVar2 = local_98;
+              if ((this_ptr->grid_bounds_min).y <= local_98) {
                 do {
-                  iVar10 = iVar7 + -1;
+                  iVar5 = iVar2 + -1;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
-                            (this_ptr,local_54,iVar7,iVar9,local_c8);
-                  iVar7 = iVar10;
-                } while ((this_ptr->grid_bounds_min).y <= iVar10);
+                            (this_ptr,local_38,iVar2,iVar4,local_ac);
+                  iVar2 = iVar5;
+                } while ((this_ptr->grid_bounds_min).y <= iVar5);
               }
-              local_54 = local_54 + -1;
-            } while ((this_ptr->grid_bounds_min).x <= local_54);
+              local_38 = local_38 + -1;
+            } while ((this_ptr->grid_bounds_min).x <= local_38);
           }
-          iVar9 = iVar9 + 1;
-          local_84 = local_84 + 1;
-        } while (iVar9 <= (this_ptr->grid_bounds_max).z);
+          iVar4 = iVar4 + 1;
+          local_68 = local_68 + 1;
+        } while (iVar4 <= (this_ptr->grid_bounds_max).z);
       }
-      iVar9 = local_150.y + -1;
-      if ((this_ptr->grid_bounds_min).z <= iVar9) {
-        local_ac = local_150.x + -1;
-        local_a8 = (int)local_154 + -1;
-        local_80 = local_150.y - iVar9;
+      iVar4 = local_134[1] + -1;
+      if ((this_ptr->grid_bounds_min).z <= iVar4) {
+        local_90 = local_134[0] + -1;
+        local_8c = local_138 + -1;
+        local_64 = local_134[1] - iVar4;
         do {
-          local_58 = local_154;
-          if ((int)local_154 <= (this_ptr->grid_bounds_max).x) {
-            local_c4 = local_80;
-            local_c0 = local_c4;
+          local_3c = local_138;
+          if (local_138 <= (this_ptr->grid_bounds_max).x) {
+            local_a8 = local_64;
+            local_a4 = local_a8;
             do {
-              iVar7 = local_150.x;
-              if (local_150.x <= (this_ptr->grid_bounds_max).y) {
+              iVar2 = local_134[0];
+              if (local_134[0] <= (this_ptr->grid_bounds_max).y) {
                 do {
-                  iVar10 = iVar7 + 1;
+                  iVar5 = iVar2 + 1;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
-                            (this_ptr,(int)local_58,iVar7,iVar9,local_c4);
-                  iVar7 = iVar10;
-                } while (iVar10 <= (this_ptr->grid_bounds_max).y);
+                            (this_ptr,local_3c,iVar2,iVar4,local_a8);
+                  iVar2 = iVar5;
+                } while (iVar5 <= (this_ptr->grid_bounds_max).y);
               }
-              iVar7 = (this_ptr->grid_bounds_min).y;
-              iVar10 = local_ac - iVar7;
-              bVar13 = SBORROW4(local_ac,iVar7);
-              iVar7 = local_ac;
-              while (bVar13 == iVar10 < 0) {
-                iVar8 = iVar7 + -1;
+              iVar2 = (this_ptr->grid_bounds_min).y;
+              iVar5 = local_90 - iVar2;
+              bVar7 = SBORROW4(local_90,iVar2);
+              iVar2 = local_90;
+              while (bVar7 == iVar5 < 0) {
+                iVar3 = iVar2 + -1;
                 core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
-                          (this_ptr,(int)local_58,iVar7,iVar9,local_c0);
-                iVar7 = (this_ptr->grid_bounds_min).y;
-                iVar10 = iVar8 - iVar7;
-                bVar13 = SBORROW4(iVar8,iVar7);
-                iVar7 = iVar8;
+                          (this_ptr,local_3c,iVar2,iVar4,local_a4);
+                iVar2 = (this_ptr->grid_bounds_min).y;
+                iVar5 = iVar3 - iVar2;
+                bVar7 = SBORROW4(iVar3,iVar2);
+                iVar2 = iVar3;
               }
-              local_58 = (float)((int)local_58 + 1);
-            } while ((int)local_58 <= (this_ptr->grid_bounds_max).x);
+              local_3c = local_3c + 1;
+            } while (local_3c <= (this_ptr->grid_bounds_max).x);
           }
-          local_5c = local_a8;
-          if ((this_ptr->grid_bounds_min).x <= local_a8) {
-            local_bc = local_80;
-            local_b8 = local_80;
+          local_40 = local_8c;
+          if ((this_ptr->grid_bounds_min).x <= local_8c) {
+            local_a0 = local_64;
+            local_9c = local_64;
             do {
-              iVar7 = local_150.x;
-              if (local_150.x <= (this_ptr->grid_bounds_max).y) {
+              iVar2 = local_134[0];
+              if (local_134[0] <= (this_ptr->grid_bounds_max).y) {
                 do {
-                  iVar10 = iVar7 + 1;
+                  iVar5 = iVar2 + 1;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
-                            (this_ptr,local_5c,iVar7,iVar9,local_bc);
-                  iVar7 = iVar10;
-                } while (iVar10 <= (this_ptr->grid_bounds_max).y);
+                            (this_ptr,local_40,iVar2,iVar4,local_a0);
+                  iVar2 = iVar5;
+                } while (iVar5 <= (this_ptr->grid_bounds_max).y);
               }
-              iVar7 = local_ac;
-              if ((this_ptr->grid_bounds_min).y <= local_ac) {
+              iVar2 = local_90;
+              if ((this_ptr->grid_bounds_min).y <= local_90) {
                 do {
-                  iVar10 = iVar7 + -1;
+                  iVar5 = iVar2 + -1;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
-                            (this_ptr,local_5c,iVar7,iVar9,local_b8);
-                  iVar7 = iVar10;
-                } while ((this_ptr->grid_bounds_min).y <= iVar10);
+                            (this_ptr,local_40,iVar2,iVar4,local_9c);
+                  iVar2 = iVar5;
+                } while ((this_ptr->grid_bounds_min).y <= iVar5);
               }
-              local_5c = local_5c + -1;
-            } while ((this_ptr->grid_bounds_min).x <= local_5c);
+              local_40 = local_40 + -1;
+            } while ((this_ptr->grid_bounds_min).x <= local_40);
           }
-          iVar9 = iVar9 + -1;
-          local_80 = local_80 + 1;
-        } while ((this_ptr->grid_bounds_min).z <= iVar9);
+          iVar4 = iVar4 + -1;
+          local_64 = local_64 + 1;
+        } while ((this_ptr->grid_bounds_min).z <= iVar4);
       }
     }
     else {
-      if (local_150.x <= (this_ptr->grid_bounds_max).y) {
-        local_a4 = local_150.y + -1;
-        local_a0 = (int)local_154 + -1;
-        local_7c = 0;
-        iVar9 = local_150.x;
+      if (local_134[0] <= (this_ptr->grid_bounds_max).y) {
+        local_88 = local_134[1] + -1;
+        local_84 = local_138 + -1;
+        local_60 = 0;
+        iVar4 = local_134[0];
         do {
-          local_60 = local_154;
-          if ((int)local_154 <= (this_ptr->grid_bounds_max).x) {
-            local_f4 = local_7c;
-            local_f0 = local_7c;
+          local_44 = local_138;
+          if (local_138 <= (this_ptr->grid_bounds_max).x) {
+            local_d8 = local_60;
+            local_d4 = local_60;
             do {
-              iVar7 = local_150.y;
-              if (local_150.y <= (this_ptr->grid_bounds_max).z) {
+              iVar2 = local_134[1];
+              if (local_134[1] <= (this_ptr->grid_bounds_max).z) {
                 do {
-                  iVar10 = iVar7 + 1;
+                  iVar5 = iVar2 + 1;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
-                            (this_ptr,(int)local_60,iVar9,iVar7,local_f4);
-                  iVar7 = iVar10;
-                } while (iVar10 <= (this_ptr->grid_bounds_max).z);
+                            (this_ptr,local_44,iVar4,iVar2,local_d8);
+                  iVar2 = iVar5;
+                } while (iVar5 <= (this_ptr->grid_bounds_max).z);
               }
-              iVar7 = local_a4;
-              if ((this_ptr->grid_bounds_min).z <= local_a4) {
+              iVar2 = local_88;
+              if ((this_ptr->grid_bounds_min).z <= local_88) {
                 do {
-                  iVar10 = iVar7 + -1;
+                  iVar5 = iVar2 + -1;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
-                            (this_ptr,(int)local_60,iVar9,iVar7,local_f0);
-                  iVar7 = iVar10;
-                } while ((this_ptr->grid_bounds_min).z <= iVar10);
+                            (this_ptr,local_44,iVar4,iVar2,local_d4);
+                  iVar2 = iVar5;
+                } while ((this_ptr->grid_bounds_min).z <= iVar5);
               }
-              local_60 = (float)((int)local_60 + 1);
-            } while ((int)local_60 <= (this_ptr->grid_bounds_max).x);
+              local_44 = local_44 + 1;
+            } while (local_44 <= (this_ptr->grid_bounds_max).x);
           }
-          local_64 = local_a0;
-          if ((this_ptr->grid_bounds_min).x <= local_a0) {
-            local_ec = local_7c;
-            local_e8 = local_7c;
+          local_48 = local_84;
+          if ((this_ptr->grid_bounds_min).x <= local_84) {
+            local_d0 = local_60;
+            local_cc = local_60;
             do {
-              iVar7 = local_150.y;
-              if (local_150.y <= (this_ptr->grid_bounds_max).z) {
+              iVar2 = local_134[1];
+              if (local_134[1] <= (this_ptr->grid_bounds_max).z) {
                 do {
-                  iVar10 = iVar7 + 1;
+                  iVar5 = iVar2 + 1;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
-                            (this_ptr,local_64,iVar9,iVar7,local_ec);
-                  iVar7 = iVar10;
-                } while (iVar10 <= (this_ptr->grid_bounds_max).z);
+                            (this_ptr,local_48,iVar4,iVar2,local_d0);
+                  iVar2 = iVar5;
+                } while (iVar5 <= (this_ptr->grid_bounds_max).z);
               }
-              iVar7 = local_a4;
-              if ((this_ptr->grid_bounds_min).z <= local_a4) {
+              iVar2 = local_88;
+              if ((this_ptr->grid_bounds_min).z <= local_88) {
                 do {
-                  iVar10 = iVar7 + -1;
+                  iVar5 = iVar2 + -1;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
-                            (this_ptr,local_64,iVar9,iVar7,local_e8);
-                  iVar7 = iVar10;
-                } while ((this_ptr->grid_bounds_min).z <= iVar10);
+                            (this_ptr,local_48,iVar4,iVar2,local_cc);
+                  iVar2 = iVar5;
+                } while ((this_ptr->grid_bounds_min).z <= iVar5);
               }
-              local_64 = local_64 + -1;
-            } while ((this_ptr->grid_bounds_min).x <= local_64);
+              local_48 = local_48 + -1;
+            } while ((this_ptr->grid_bounds_min).x <= local_48);
           }
-          iVar9 = iVar9 + 1;
-          local_7c = local_7c + 1;
-        } while (iVar9 <= (this_ptr->grid_bounds_max).y);
+          iVar4 = iVar4 + 1;
+          local_60 = local_60 + 1;
+        } while (iVar4 <= (this_ptr->grid_bounds_max).y);
       }
-      iVar9 = local_150.x + -1;
-      if ((this_ptr->grid_bounds_min).y <= iVar9) {
-        local_9c = local_150.y + -1;
-        local_98 = (int)local_154 + -1;
-        local_78 = local_150.x - iVar9;
+      iVar4 = local_134[0] + -1;
+      if ((this_ptr->grid_bounds_min).y <= iVar4) {
+        local_80 = local_134[1] + -1;
+        local_7c = local_138 + -1;
+        local_5c = local_134[0] - iVar4;
         do {
-          local_68 = local_154;
-          if ((int)local_154 <= (this_ptr->grid_bounds_max).x) {
-            local_e4 = local_78;
-            local_e0 = local_e4;
+          local_4c = local_138;
+          if (local_138 <= (this_ptr->grid_bounds_max).x) {
+            local_c8 = local_5c;
+            local_c4 = local_c8;
             do {
-              iVar7 = local_150.y;
-              if (local_150.y <= (this_ptr->grid_bounds_max).z) {
+              iVar2 = local_134[1];
+              if (local_134[1] <= (this_ptr->grid_bounds_max).z) {
                 do {
-                  iVar10 = iVar7 + 1;
+                  iVar5 = iVar2 + 1;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
-                            (this_ptr,(int)local_68,iVar9,iVar7,local_e4);
-                  iVar7 = iVar10;
-                } while (iVar10 <= (this_ptr->grid_bounds_max).z);
+                            (this_ptr,local_4c,iVar4,iVar2,local_c8);
+                  iVar2 = iVar5;
+                } while (iVar5 <= (this_ptr->grid_bounds_max).z);
               }
-              iVar7 = (this_ptr->grid_bounds_min).z;
-              iVar10 = local_9c - iVar7;
-              bVar13 = SBORROW4(local_9c,iVar7);
-              iVar7 = local_9c;
-              while (bVar13 == iVar10 < 0) {
-                iVar8 = iVar7 + -1;
+              iVar2 = (this_ptr->grid_bounds_min).z;
+              iVar5 = local_80 - iVar2;
+              bVar7 = SBORROW4(local_80,iVar2);
+              iVar2 = local_80;
+              while (bVar7 == iVar5 < 0) {
+                iVar3 = iVar2 + -1;
                 core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
-                          (this_ptr,(int)local_68,iVar9,iVar7,local_e0);
-                iVar7 = (this_ptr->grid_bounds_min).z;
-                iVar10 = iVar8 - iVar7;
-                bVar13 = SBORROW4(iVar8,iVar7);
-                iVar7 = iVar8;
+                          (this_ptr,local_4c,iVar4,iVar2,local_c4);
+                iVar2 = (this_ptr->grid_bounds_min).z;
+                iVar5 = iVar3 - iVar2;
+                bVar7 = SBORROW4(iVar3,iVar2);
+                iVar2 = iVar3;
               }
-              local_68 = (float)((int)local_68 + 1);
-            } while ((int)local_68 <= (this_ptr->grid_bounds_max).x);
+              local_4c = local_4c + 1;
+            } while (local_4c <= (this_ptr->grid_bounds_max).x);
           }
-          local_6c = local_98;
-          if ((this_ptr->grid_bounds_min).x <= local_98) {
-            local_dc = local_78;
-            local_d8 = local_78;
+          local_50 = local_7c;
+          if ((this_ptr->grid_bounds_min).x <= local_7c) {
+            local_c0 = local_5c;
+            local_bc = local_5c;
             do {
-              iVar7 = local_150.y;
-              if (local_150.y <= (this_ptr->grid_bounds_max).z) {
+              iVar2 = local_134[1];
+              if (local_134[1] <= (this_ptr->grid_bounds_max).z) {
                 do {
-                  iVar10 = iVar7 + 1;
+                  iVar5 = iVar2 + 1;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
-                            (this_ptr,local_6c,iVar9,iVar7,local_dc);
-                  iVar7 = iVar10;
-                } while (iVar10 <= (this_ptr->grid_bounds_max).z);
+                            (this_ptr,local_50,iVar4,iVar2,local_c0);
+                  iVar2 = iVar5;
+                } while (iVar5 <= (this_ptr->grid_bounds_max).z);
               }
-              iVar7 = local_9c;
-              if ((this_ptr->grid_bounds_min).z <= local_9c) {
+              iVar2 = local_80;
+              if ((this_ptr->grid_bounds_min).z <= local_80) {
                 do {
-                  iVar10 = iVar7 + -1;
+                  iVar5 = iVar2 + -1;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
-                            (this_ptr,local_6c,iVar9,iVar7,local_d8);
-                  iVar7 = iVar10;
-                } while ((this_ptr->grid_bounds_min).z <= iVar10);
+                            (this_ptr,local_50,iVar4,iVar2,local_bc);
+                  iVar2 = iVar5;
+                } while ((this_ptr->grid_bounds_min).z <= iVar5);
               }
-              local_6c = local_6c + -1;
-            } while ((this_ptr->grid_bounds_min).x <= local_6c);
+              local_50 = local_50 + -1;
+            } while ((this_ptr->grid_bounds_min).x <= local_50);
           }
-          iVar9 = iVar9 + -1;
-          local_78 = local_78 + 1;
-        } while ((this_ptr->grid_bounds_min).y <= iVar9);
+          iVar4 = iVar4 + -1;
+          local_5c = local_5c + 1;
+        } while ((this_ptr->grid_bounds_min).y <= iVar4);
       }
     }
   }
   else {
-    if ((int)local_154 <= (this_ptr->grid_bounds_max).x) {
-      local_94 = local_150.y + -1;
-      local_90 = local_150.x + -1;
-      local_74 = 0;
-      fVar11 = local_154;
+    if (local_138 <= (this_ptr->grid_bounds_max).x) {
+      local_78 = local_134[1] + -1;
+      local_74 = local_134[0] + -1;
+      local_58 = 0;
+      iVar4 = local_138;
       do {
-        local_40 = local_150.x;
-        if (local_150.x <= (this_ptr->grid_bounds_max).y) {
-          local_114 = local_74;
-          local_110 = local_74;
+        local_24 = local_134[0];
+        if (local_134[0] <= (this_ptr->grid_bounds_max).y) {
+          local_f8 = local_58;
+          local_f4 = local_58;
           do {
-            iVar9 = local_150.y;
-            if (local_150.y <= (this_ptr->grid_bounds_max).z) {
+            iVar2 = local_134[1];
+            if (local_134[1] <= (this_ptr->grid_bounds_max).z) {
               do {
-                iVar7 = iVar9 + 1;
+                iVar5 = iVar2 + 1;
                 core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
-                          (this_ptr,(int)fVar11,local_40,iVar9,local_114);
-                iVar9 = iVar7;
-              } while (iVar7 <= (this_ptr->grid_bounds_max).z);
+                          (this_ptr,iVar4,local_24,iVar2,local_f8);
+                iVar2 = iVar5;
+              } while (iVar5 <= (this_ptr->grid_bounds_max).z);
             }
-            iVar9 = local_94;
-            if ((this_ptr->grid_bounds_min).z <= local_94) {
+            iVar2 = local_78;
+            if ((this_ptr->grid_bounds_min).z <= local_78) {
               do {
-                iVar7 = iVar9 + -1;
+                iVar5 = iVar2 + -1;
                 core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
-                          (this_ptr,(int)fVar11,local_40,iVar9,local_110);
-                iVar9 = iVar7;
-              } while ((this_ptr->grid_bounds_min).z <= iVar7);
+                          (this_ptr,iVar4,local_24,iVar2,local_f4);
+                iVar2 = iVar5;
+              } while ((this_ptr->grid_bounds_min).z <= iVar5);
             }
-            local_40 = local_40 + 1;
-          } while (local_40 <= (this_ptr->grid_bounds_max).y);
+            local_24 = local_24 + 1;
+          } while (local_24 <= (this_ptr->grid_bounds_max).y);
         }
-        local_44 = local_90;
-        if ((this_ptr->grid_bounds_min).y <= local_90) {
-          local_10c = local_74;
-          local_108 = local_74;
+        local_28 = local_74;
+        if ((this_ptr->grid_bounds_min).y <= local_74) {
+          local_f0 = local_58;
+          local_ec = local_58;
           do {
-            iVar9 = local_150.y;
-            if (local_150.y <= (this_ptr->grid_bounds_max).z) {
+            iVar2 = local_134[1];
+            if (local_134[1] <= (this_ptr->grid_bounds_max).z) {
               do {
-                iVar7 = iVar9 + 1;
+                iVar5 = iVar2 + 1;
                 core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
-                          (this_ptr,(int)fVar11,local_44,iVar9,local_10c);
-                iVar9 = iVar7;
-              } while (iVar7 <= (this_ptr->grid_bounds_max).z);
+                          (this_ptr,iVar4,local_28,iVar2,local_f0);
+                iVar2 = iVar5;
+              } while (iVar5 <= (this_ptr->grid_bounds_max).z);
             }
-            iVar9 = local_94;
-            if ((this_ptr->grid_bounds_min).z <= local_94) {
+            iVar2 = local_78;
+            if ((this_ptr->grid_bounds_min).z <= local_78) {
               do {
-                iVar7 = iVar9 + -1;
+                iVar5 = iVar2 + -1;
                 core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
-                          (this_ptr,(int)fVar11,local_44,iVar9,local_108);
-                iVar9 = iVar7;
-              } while ((this_ptr->grid_bounds_min).z <= iVar7);
+                          (this_ptr,iVar4,local_28,iVar2,local_ec);
+                iVar2 = iVar5;
+              } while ((this_ptr->grid_bounds_min).z <= iVar5);
             }
-            local_44 = local_44 + -1;
-          } while ((this_ptr->grid_bounds_min).y <= local_44);
+            local_28 = local_28 + -1;
+          } while ((this_ptr->grid_bounds_min).y <= local_28);
         }
-        fVar11 = (float)((int)fVar11 + 1);
-        local_74 = local_74 + 1;
-      } while ((int)fVar11 <= (this_ptr->grid_bounds_max).x);
+        iVar4 = iVar4 + 1;
+        local_58 = local_58 + 1;
+      } while (iVar4 <= (this_ptr->grid_bounds_max).x);
     }
-    iVar9 = (int)local_154 + -1;
-    if ((this_ptr->grid_bounds_min).x <= iVar9) {
-      local_8c = local_150.y + -1;
-      local_88 = local_150.x + -1;
-      local_70 = (int)local_154 - iVar9;
+    iVar4 = local_138 + -1;
+    if ((this_ptr->grid_bounds_min).x <= iVar4) {
+      local_70 = local_134[1] + -1;
+      local_6c = local_134[0] + -1;
+      local_54 = local_138 - iVar4;
       do {
-        local_48 = local_150.x;
-        if (local_150.x <= (this_ptr->grid_bounds_max).y) {
-          local_104 = local_70;
-          local_100 = local_70;
+        local_2c = local_134[0];
+        if (local_134[0] <= (this_ptr->grid_bounds_max).y) {
+          local_e8 = local_54;
+          local_e4 = local_54;
           do {
-            iVar7 = local_150.y;
-            if (local_150.y <= (this_ptr->grid_bounds_max).z) {
+            iVar2 = local_134[1];
+            if (local_134[1] <= (this_ptr->grid_bounds_max).z) {
               do {
-                iVar10 = iVar7 + 1;
+                iVar5 = iVar2 + 1;
                 core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
-                          (this_ptr,iVar9,local_48,iVar7,local_104);
-                iVar7 = iVar10;
-              } while (iVar10 <= (this_ptr->grid_bounds_max).z);
+                          (this_ptr,iVar4,local_2c,iVar2,local_e8);
+                iVar2 = iVar5;
+              } while (iVar5 <= (this_ptr->grid_bounds_max).z);
             }
-            iVar7 = local_8c;
-            if ((this_ptr->grid_bounds_min).z <= local_8c) {
+            iVar2 = local_70;
+            if ((this_ptr->grid_bounds_min).z <= local_70) {
               do {
-                iVar10 = iVar7 + -1;
+                iVar5 = iVar2 + -1;
                 core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
-                          (this_ptr,iVar9,local_48,iVar7,local_100);
-                iVar7 = iVar10;
-              } while ((this_ptr->grid_bounds_min).z <= iVar10);
+                          (this_ptr,iVar4,local_2c,iVar2,local_e4);
+                iVar2 = iVar5;
+              } while ((this_ptr->grid_bounds_min).z <= iVar5);
             }
-            local_48 = local_48 + 1;
-          } while (local_48 <= (this_ptr->grid_bounds_max).y);
+            local_2c = local_2c + 1;
+          } while (local_2c <= (this_ptr->grid_bounds_max).y);
         }
-        local_4c = local_88;
-        if ((this_ptr->grid_bounds_min).y <= local_88) {
-          local_fc = local_70;
-          local_f8 = local_70;
+        local_30 = local_6c;
+        if ((this_ptr->grid_bounds_min).y <= local_6c) {
+          local_e0 = local_54;
+          local_dc = local_54;
           do {
-            iVar7 = local_150.y;
-            if (local_150.y <= (this_ptr->grid_bounds_max).z) {
+            iVar2 = local_134[1];
+            if (local_134[1] <= (this_ptr->grid_bounds_max).z) {
               do {
-                iVar10 = iVar7 + 1;
+                iVar5 = iVar2 + 1;
                 core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
-                          (this_ptr,iVar9,local_4c,iVar7,local_fc);
-                iVar7 = iVar10;
-              } while (iVar10 <= (this_ptr->grid_bounds_max).z);
+                          (this_ptr,iVar4,local_30,iVar2,local_e0);
+                iVar2 = iVar5;
+              } while (iVar5 <= (this_ptr->grid_bounds_max).z);
             }
-            iVar7 = local_8c;
-            if ((this_ptr->grid_bounds_min).z <= local_8c) {
+            iVar2 = local_70;
+            if ((this_ptr->grid_bounds_min).z <= local_70) {
               do {
-                iVar10 = iVar7 + -1;
+                iVar5 = iVar2 + -1;
                 core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
-                          (this_ptr,iVar9,local_4c,iVar7,local_f8);
-                iVar7 = iVar10;
-              } while ((this_ptr->grid_bounds_min).z <= iVar10);
+                          (this_ptr,iVar4,local_30,iVar2,local_dc);
+                iVar2 = iVar5;
+              } while ((this_ptr->grid_bounds_min).z <= iVar5);
             }
-            local_4c = local_4c + -1;
-          } while ((this_ptr->grid_bounds_min).y <= local_4c);
+            local_30 = local_30 + -1;
+          } while ((this_ptr->grid_bounds_min).y <= local_30);
         }
-        iVar9 = iVar9 + -1;
-        local_70 = local_70 + 1;
-      } while ((this_ptr->grid_bounds_min).x <= iVar9);
+        iVar4 = iVar4 + -1;
+        local_54 = local_54 + 1;
+      } while ((this_ptr->grid_bounds_min).x <= iVar4);
     }
   }
   g_PVSReadyFlag = 1;

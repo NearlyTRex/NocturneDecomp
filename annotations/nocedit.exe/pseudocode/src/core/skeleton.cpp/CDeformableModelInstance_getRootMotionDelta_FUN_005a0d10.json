@@ -1,30 +1,17 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 12,
-        "line": 56,
-        "message": "C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 27,
-        "line": 61,
-        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 178,
-    "complexity_score": 113,
+    "complexity_score": 143,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 3,
     "pseudocode_lines": 63,
-    "suspect_count": 4,
+    "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
@@ -292,30 +279,51 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 35,
+      "line": 34,
       "match": "ROUND",
-      "text": "iVar1 = (int)ROUND(dVar14);",
+      "text": "iVar1 = (int)ROUND(ROUND(dVar15));",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 43,
-      "match": "(float *)((int)",
-      "text": "local_38 = local_38 + *(float *)((int)&pCVar8->x + iVar13);",
-      "type": "pointer_cast"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 34,
+      "match": "ROUND",
+      "text": "iVar1 = (int)ROUND(ROUND(dVar15));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 36,
+      "match": "ROUND",
+      "text": "iVar2 = (int)ROUND(ROUND(dVar15));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 36,
+      "match": "ROUND",
+      "text": "iVar2 = (int)ROUND(ROUND(dVar15));",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
       "line": 44,
       "match": "(float *)((int)",
-      "text": "local_34 = local_34 + *(float *)((int)&pCVar8->y + iVar13);",
+      "text": "local_30 = local_30 + *(float *)((int)&pCVar9->x + iVar14);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 45,
       "match": "(float *)((int)",
-      "text": "local_30 = local_30 + *(float *)((int)&pCVar8->z + iVar13);",
+      "text": "local_2c = local_2c + *(float *)((int)&pCVar9->y + iVar14);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(float *)((int)",
+      "text": "local_28 = local_28 + *(float *)((int)&pCVar9->z + iVar14);",
       "type": "pointer_cast"
     }
   ]

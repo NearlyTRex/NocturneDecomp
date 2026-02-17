@@ -6,12 +6,12 @@
   },
   "complexity": {
     "assembly_lines": 84,
-    "complexity_score": 1171,
+    "complexity_score": 1211,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
     "pseudocode_lines": 156,
-    "suspect_count": 100,
+    "suspect_count": 104,
     "suspect_types": [
       "decompiler_intrinsic",
       "mmx_assembly",
@@ -38,8 +38,8 @@
     {
       "addr": "00676438",
       "name": "g_FilterBlendConstant",
-      "type": "ulonglong",
-      "value": "0x0"
+      "type": "_MMX_INTEGER",
+      "value": null
     }
   ],
   "param_estimates": {
@@ -110,6 +110,27 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 32,
+      "match": "._0_4_",
+      "text": "uVar7 = (byte)((uint)g_FilterBlendConstant._0_4_ >> 0x18);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 33,
+      "match": "._0_4_",
+      "text": "uVar6 = (byte)((uint)g_FilterBlendConstant._0_4_ >> 0x10);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 34,
+      "match": "._0_4_",
+      "text": "uVar5 = (byte)((uint)g_FilterBlendConstant._0_4_ >> 8);",
+      "type": "unknown_field"
+    },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 36,
@@ -256,13 +277,6 @@
       "match": "CONCAT11",
       "text": "(char)(uVar2 >> 8)),CONCAT11(uVar4,(char)uVar2)));",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 50,
-      "match": "._4_4_",
-      "text": "uVar4 = (byte)g_FilterBlendConstant._4_4_;",
-      "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
@@ -434,13 +448,6 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 77,
-      "match": "._4_4_",
-      "text": "uVar4 = (byte)g_FilterBlendConstant._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
       "line": 78,
       "match": "._4_4_",
       "text": "uVar5 = (byte)((uint)g_FilterBlendConstant._4_4_ >> 8);",
@@ -606,6 +613,27 @@
       "match": "CONCAT11",
       "text": "CONCAT11(uVar4,(char)(uVar2 >> 0x20)))))))));",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 107,
+      "match": "._0_4_",
+      "text": "uVar7 = (byte)((uint)g_FilterBlendConstant._0_4_ >> 0x18);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 108,
+      "match": "._0_4_",
+      "text": "uVar6 = (byte)((uint)g_FilterBlendConstant._0_4_ >> 0x10);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 109,
+      "match": "._0_4_",
+      "text": "uVar5 = (byte)((uint)g_FilterBlendConstant._0_4_ >> 8);",
+      "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",

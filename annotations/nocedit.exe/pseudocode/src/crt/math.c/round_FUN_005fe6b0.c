@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: This is an inlined function */
+
 double __fpureg_safe round(double value)
 
 {

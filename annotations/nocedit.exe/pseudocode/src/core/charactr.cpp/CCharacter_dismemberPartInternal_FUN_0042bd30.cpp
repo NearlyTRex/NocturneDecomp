@@ -9,6 +9,7 @@
 void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30(CCharacter *this_ptr,CBodyPart *body_part,int part_index,int render_in_background)
 
 {
+  CVector3f *position;
   SDamageDecal *pSVar1;
   SFire *pSVar2;
   int iVar3;
@@ -17,11 +18,9 @@ void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30(CCh
   CMatrix3x3f *pCVar6;
   byte bVar7;
   CMatrix3x3f local_9c;
-  uint local_70;
+  int local_70;
   CMatrix3x4f local_6c;
-  float local_3c;
-  float local_38;
-  uint local_34;
+  CVector3i local_3c;
   CVector3f local_30;
   CVector3f local_24;
   CMatrix3x4f *local_18;
@@ -47,11 +46,13 @@ void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30(CCh
             pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);
             pCVar6 = (CMatrix3x3f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);
           }
-          core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_9c,&local_24);
-          local_3c = local_9c.m[1].x;
-          local_38 = local_9c.m[2].y;
-          local_34 = local_70;
-          core_bodypart_cpp_CBodyPart_FUN_0041add0(body_part);
+          position = core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_9c,&local_24);
+          local_3c.x = (int)local_9c.m[1].x;
+          local_3c.y = (int)local_9c.m[2].y;
+          local_3c.z = local_70;
+          core_bodypart_cpp_CBodyPart_addAttachedModel_FUN_0041add0
+                    (body_part,CKeyFramedModelInstance_00823a98.model_name,&local_3c,
+                     (CVector3i *)position);
         }
         pSVar1 = pSVar1 + 1;
         local_14 = local_14 + 1;
@@ -61,12 +62,11 @@ void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30(CCh
     if (0 < this_ptr->fire_count) {
       pSVar2 = this_ptr->fire_effects;
       do {
-        if ((part_index == *(int *)pSVar2->unk) && (-1 < *(int *)(pSVar2->unk + 4))) {
+        if ((part_index == pSVar2->bone_part) && (-1 < pSVar2->bone_index)) {
           core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                    (&local_30,(CVector3f *)(pSVar2->unk + 8),
-                     (this_ptr->model).bone_transform.bone_world_matrices +
-                     *(int *)(pSVar2->unk + 4));
-          core_bodypart_cpp_CBodyPart_FUN_0041ae50(body_part);
+                    (&local_30,&pSVar2->offset,
+                     (this_ptr->model).bone_transform.bone_world_matrices + pSVar2->bone_index);
+          core_bodypart_cpp_CBodyPart_addFire_FUN_0041ae50(body_part,&local_30);
         }
         iVar3 = iVar3 + 1;
         pSVar2 = pSVar2 + 1;

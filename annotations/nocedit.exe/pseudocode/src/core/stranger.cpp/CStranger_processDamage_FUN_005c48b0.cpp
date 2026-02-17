@@ -81,7 +81,8 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_005c48b0(CStranger *t
                             ((CDemonActor *)this_ptr,"stranger_die??.wav");
           this_ptr->unk14 = iVar3;
         }
-        core_gore_cpp_CGore_FUN_004ee030(g_CGorePtr,(CDemonActor *)this_ptr);
+        core_gore_cpp_CGore_spawnFliesOnActor_FUN_004ee030
+                  (g_CGorePtr,(CDemonActor *)this_ptr,0x32,50.0,(CVector3f *)0x0);
       }
     }
     if (this_ptr->weapon == (this_ptr->base).base.carry_hands[0].carry_actor) {

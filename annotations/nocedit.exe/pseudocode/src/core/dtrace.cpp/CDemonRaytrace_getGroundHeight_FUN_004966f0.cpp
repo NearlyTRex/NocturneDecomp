@@ -6,82 +6,58 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 float __cdecl core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_004966f0(CDemonRaytrace *this_ptr,CVector3f *pos,int *hit_flag,CVector3f *normal_out)
 
 {
   float fVar1;
-  float fVar2;
-  float fVar3;
-  float fVar4;
-  float fVar5;
-  float fVar6;
-  float fVar7;
-  float fVar8;
   CDemonCube *this_ptr_00;
-  double dVar9;
-  double dVar10;
-  CVector3f CStack_6c;
-  float local_5c;
-  float local_58;
-  CVector3f local_54;
-  CVector3f local_48;
-  float local_3c;
-  int local_34;
-  int local_30;
+  CVector3f local_5c;
+  float local_50;
+  float local_4c;
+  float local_48;
+  CVector3f local_44;
+  CVector3f local_38;
   int local_2c;
-  float local_28;
   int local_24;
+  int local_20;
+  int local_1c;
   float *local_18;
   
-  local_5c = pos->x;
+  local_5c.x = pos->x;
   local_18 = &pos->y;
-  local_54.x = pos->z;
-  local_54.y = pos->x;
-  local_58 = *local_18 + 2.0f;
-  fVar2 = pos->z;
-  local_54.z = *local_18 + -10.0f;
-  fVar3 = local_58 - (this_ptr->bbox_min).y;
-  fVar5 = 1.0 / (this_ptr->cell_size).y;
-  fVar6 = local_54.x - (this_ptr->bbox_min).z;
-  fVar1 = (this_ptr->cell_size).z;
-  fVar4 = local_54.z - (this_ptr->bbox_min).y;
-  fVar7 = local_54.y - local_5c;
-  CStack_6c.z = 6.741156e-39;
-  local_48.x = fVar2;
-  dVar9 = round
-                    ((double)((local_5c - (this_ptr->bbox_min).x) / (this_ptr->cell_size).x));
-  local_24 = (int)ROUND(dVar9);
-  fVar2 = fVar2 - local_58;
-  fVar8 = local_54.y - local_5c;
-  CStack_6c.y = 6.741194e-39;
-  dVar9 = round((double)(fVar6 / fVar1));
-  local_2c = (int)ROUND(dVar9);
-  CStack_6c.x = 6.741221e-39;
-  local_48.z = fVar7;
-  local_3c = fVar8;
-  dVar9 = round((double)(fVar3 * fVar5));
-  dVar10 = round((double)(fVar4 * fVar5));
-  local_3c = (float)(int)ROUND(dVar9);
-  local_2c = (int)ROUND(dVar10);
-  local_48.z = fVar2;
-  if (local_2c <= (int)local_3c) {
+  local_5c.z = pos->z;
+  local_50 = pos->x;
+  local_5c.y = *local_18 + 2.0f;
+  local_48 = pos->z;
+  local_4c = *local_18 + -10.0f;
+  fVar1 = 1.0 / (this_ptr->cell_size).y;
+  local_38.x = local_50 - local_5c.x;
+  local_20 = (int)ROUND(ROUND((local_5c.x - (this_ptr->bbox_min).x) / (this_ptr->cell_size).x));
+  local_38.z = local_48 - local_5c.z;
+  local_38.y = local_4c - local_5c.y;
+  local_24 = (int)ROUND(ROUND((local_5c.z - (this_ptr->bbox_min).z) / (this_ptr->cell_size).z));
+  local_2c = (int)ROUND(ROUND((local_5c.y - (this_ptr->bbox_min).y) * fVar1));
+  local_1c = (int)ROUND(ROUND((local_4c - (this_ptr->bbox_min).y) * fVar1));
+  if (local_1c <= local_2c) {
     do {
       this_ptr_00 = core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004952b0
-                              (this_ptr,local_30,(int)local_3c,local_34);
+                              (this_ptr,local_20,local_2c,local_24);
       if (this_ptr_00 != (CDemonCube *)0x0) {
-        local_28 = core_dcube_cpp_CDemonCube_rayIntersectTriangles_FUN_004578f0
-                             (this_ptr_00,&CStack_6c,&local_48,&local_54,(uint *)hit_flag);
-        if (local_28 <= 1.0) {
-          if ((normal_out != (CVector3f *)0x0) && (normal_out != &local_54)) {
-            normal_out->x = local_54.x;
-            normal_out->y = local_54.y;
-            normal_out->z = local_54.z;
+        local_18 = (float *)core_dcube_cpp_CDemonCube_rayIntersectTriangles_FUN_004578f0
+                                      (this_ptr_00,&local_5c,&local_38,&local_44,(uint *)hit_flag);
+        if ((float)local_18 <= 1.0) {
+          if ((normal_out != (CVector3f *)0x0) && (normal_out != &local_44)) {
+            normal_out->x = local_44.x;
+            normal_out->y = local_44.y;
+            normal_out->z = local_44.z;
           }
-          return local_28 * local_48.y + CStack_6c.y;
+          return (float)local_18 * local_38.y + local_5c.y;
         }
       }
-      local_3c = (float)((int)local_3c + -1);
-    } while (local_2c <= (int)local_3c);
+      local_2c = local_2c + -1;
+    } while (local_1c <= local_2c);
   }
   if (hit_flag != (int *)0x0) {
     *hit_flag = 1;
@@ -100,5 +76,5 @@ float __cdecl core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_004966f0(CDemon
   g_TempNormal0.y = g_ZeroVector.y;
   g_TempNormal0.z = g_ZeroVector.z;
   g_TempNormal0.x = g_ZeroVector.x;
-  return local_5c;
+  return local_4c;
 }

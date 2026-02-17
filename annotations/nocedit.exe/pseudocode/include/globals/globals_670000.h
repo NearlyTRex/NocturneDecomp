@@ -4,6 +4,7 @@
 #include "system/basetypes.h"
 #include "system/misc.h"
 #include "system/watcom.h"
+#include "system/winnt.h"
 #include "types/classes/CDemonMission.h"
 #include "types/classes/CDemonRenderer.h"
 #include "types/classes/CEditorTools.h"
@@ -97,10 +98,8 @@ extern SMRGLTextureBasic SMRGLTextureBasic_0067b0c8;
 extern SMRGLTextureBasic SMRGLTextureBasic_0067b514;
 extern SMRGLTextureBasic g_FontTextureInfo;
 extern SMRGLTextureBasic DAT_0067B948;
-extern SMRGLTextureBasic SMRGLTextureBasic_0067b9b0;
-extern SMRGLTextureBasic SMRGLTextureBasic_0067ba28;
-extern SMRGLTextureBasic SMRGLTextureBasic_0067c028;
-extern SMRGLTextureBasic SMRGLTextureBasic_0067cb28;
+extern SMRGLTextureBasic g_BloodParticleTexture;
+extern SMRGLTextureBasic g_FootstepTexture;
 extern SMRGLTextureBasic g_Inventory3DTextureAtlas;
 extern SMRGLTextureBasic g_LoadingMoonGlowTexture;
 extern SMRGLTextureBasic SMRGLTextureBasic_0067d150;
@@ -109,30 +108,24 @@ extern SMRGLTextureBasic SMRGLTextureBasic_0067d150;
 extern SMRGLTextureBasic* g_LightTexturesEnd;
 extern SMRGLTextureBasic* g_SkyDomeTexturePtr;
 
-// SMRGLTextureBasic[15]
-extern SMRGLTextureBasic SMRGLTextureBasic_ARRAY_0067ba40[15];
-
-// SMRGLTextureBasic[28]
-extern SMRGLTextureBasic SMRGLTextureBasic_ARRAY_0067c040[28];
+// SMRGLTextureBasic[116]
+extern SMRGLTextureBasic g_BloodPoolAnimTextures[116];
 
 // SMRGLTextureBasic[40]
 extern SMRGLTextureBasic g_FireEffectSmokeParticleTextures[40];
 extern SMRGLTextureBasic SMRGLTextureBasic_ARRAY_0067b100[40];
 
-// SMRGLTextureBasic[48]
-extern SMRGLTextureBasic SMRGLTextureBasic_ARRAY_0067bba8[48];
-
 // SMRGLTextureBasic[4]
-extern SMRGLTextureBasic SMRGLTextureBasic_ARRAY_0067b9c8[4];
+extern SMRGLTextureBasic g_BloodSplatTextures[4];
 
 // SMRGLTextureBasic[54]
 extern SMRGLTextureBasic g_FireEffectExplosionTextures[54];
 
+// SMRGLTextureBasic[64]
+extern SMRGLTextureBasic g_BloodSplatAnimTextures[64];
+
 // SMRGLTextureBasic[6]
 extern SMRGLTextureBasic g_FireEffectLightningBoltTextures[6];
-
-// SMRGLTextureBasic[87]
-extern SMRGLTextureBasic SMRGLTextureBasic_ARRAY_0067c2e0[87];
 
 // SMRGLTextureBasic[8]
 extern SMRGLTextureBasic g_AudioSpectrumTextures[8];
@@ -193,6 +186,17 @@ extern WatcomStaticDestructorNode WatcomStaticDestructorNode_0067d718;
 extern WatcomStaticDestructorNode WatcomStaticDestructorNode_0067d728;
 extern WatcomStaticDestructorNode WatcomStaticDestructorNode_0067d738;
 extern WatcomStaticDestructorNode WatcomStaticDestructorNode_0067d748;
+
+// _MMX_INTEGER
+extern _MMX_INTEGER g_FilterBlendConstant;
+extern _MMX_INTEGER g_LightmapBlendBias1;
+extern _MMX_INTEGER g_LightmapBlendBias2;
+extern _MMX_INTEGER g_AmbientLightMMX1;
+extern _MMX_INTEGER g_AmbientLightMMX2;
+extern _MMX_INTEGER g_LightmapBlendBias5;
+extern _MMX_INTEGER g_LightmapBlendBias6;
+extern _MMX_INTEGER g_LightmapBlendBias3;
+extern _MMX_INTEGER g_LightmapBlendBias4;
 
 // byte
 extern byte g_CPUInfoFamily;
@@ -363,17 +367,6 @@ extern uint g_MpegBitMaskTableMultiBit[18];
 
 // uint[8]
 extern uint g_MpegBitMaskTableSingleBit[8];
-
-// ulonglong
-extern ulonglong g_FilterBlendConstant;
-extern ulonglong g_LightmapBlendBias1;
-extern ulonglong g_LightmapBlendBias2;
-extern ulonglong g_AmbientLightMMX1;
-extern ulonglong g_AmbientLightMMX2;
-extern ulonglong g_LightmapBlendBias5;
-extern ulonglong g_LightmapBlendBias6;
-extern ulonglong g_LightmapBlendBias3;
-extern ulonglong g_LightmapBlendBias4;
 
 // undefined1
 extern undefined1 g_MagicNumEFD;

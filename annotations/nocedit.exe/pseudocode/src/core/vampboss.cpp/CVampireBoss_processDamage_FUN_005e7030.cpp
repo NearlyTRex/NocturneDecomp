@@ -54,7 +54,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_005e7030(CVampireB
                 ((CCharacter *)this_ptr,0,this_ptr_00,0.2);
       core_event_cpp_CEventList_executeCommands_FUN_004aabe0
                 (g_CEventListPtr,"VampireBossBitesIt");
-      sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk4 + 0xc));
+      sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handle);
       core_sound_cpp_CSound_playSound_FUN_005b3a20
                 (g_CSoundPtr,this_ptr,"voicudeath.wav @ 2.5");
       (this_ptr->base).base.hit_points = 0.0;
@@ -83,11 +83,11 @@ void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_005e7030(CVampireB
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               (&(this_ptr->model).motion_controller,iVar2,1);
-    iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk4 + 0xc));
+    iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handle);
     if (iVar2 == 0) {
       uVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                         ((CDemonActor *)this_ptr,"voicuhurt.wav");
-      *(uint *)(this_ptr->unk4 + 0xc) = uVar3;
+      this_ptr->sfx_handle = uVar3;
       return;
     }
   }

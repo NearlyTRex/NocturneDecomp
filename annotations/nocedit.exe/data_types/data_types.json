@@ -213,14 +213,6 @@
       "type":"struct"
     },
     {
-      "name":"CBaron",
-      "type":"struct"
-    },
-    {
-      "name":"CBaronWeapon",
-      "type":"struct"
-    },
-    {
       "name":"CBassPlayer",
       "type":"struct"
     },
@@ -234,14 +226,6 @@
     },
     {
       "name":"CBitmap",
-      "type":"struct"
-    },
-    {
-      "name":"CBloodPool",
-      "type":"struct"
-    },
-    {
-      "name":"CBloodSplat",
       "type":"struct"
     },
     {
@@ -746,10 +730,6 @@
     },
     {
       "name":"CExplosion",
-      "type":"struct"
-    },
-    {
-      "name":"CExternalRenderer",
       "type":"struct"
     },
     {
@@ -1677,6 +1657,14 @@
       "type":"struct"
     },
     {
+      "name":"CBaron",
+      "type":"struct"
+    },
+    {
+      "name":"CBaronWeapon",
+      "type":"struct"
+    },
+    {
       "name":"CBarrier",
       "type":"struct"
     },
@@ -1786,6 +1774,14 @@
     },
     {
       "name":"CVector3i",
+      "type":"struct"
+    },
+    {
+      "name":"CBloodPool",
+      "type":"struct"
+    },
+    {
+      "name":"CBloodSplat",
       "type":"struct"
     },
     {
@@ -3677,6 +3673,10 @@
       "type":"struct"
     },
     {
+      "name":"SFly_ptr_4",
+      "type":"typedef"
+    },
+    {
       "name":"SFog",
       "type":"struct"
     },
@@ -3946,30 +3946,6 @@
     },
     {
       "name":"CBattery_ptr_344",
-      "type":"typedef"
-    },
-    {
-      "name":"CBoxActor",
-      "type":"struct"
-    },
-    {
-      "name":"CBoxActor_ptr_344",
-      "type":"typedef"
-    },
-    {
-      "name":"CBoxActor_ptr_394",
-      "type":"typedef"
-    },
-    {
-      "name":"CBoxActor_ptr_916",
-      "type":"typedef"
-    },
-    {
-      "name":"CCrate",
-      "type":"struct"
-    },
-    {
-      "name":"CCrate_ptr_344",
       "type":"typedef"
     },
     {
@@ -4295,6 +4271,22 @@
     {
       "name":"CBox",
       "type":"struct"
+    },
+    {
+      "name":"CBoxActor",
+      "type":"struct"
+    },
+    {
+      "name":"CBoxActor_ptr_344",
+      "type":"typedef"
+    },
+    {
+      "name":"CBoxActor_ptr_394",
+      "type":"typedef"
+    },
+    {
+      "name":"CBoxActor_ptr_916",
+      "type":"typedef"
     },
     {
       "name":"CBox_ptr_180",
@@ -4821,6 +4813,14 @@
       "type":"union"
     },
     {
+      "name":"CCrate",
+      "type":"struct"
+    },
+    {
+      "name":"CCrate_ptr_344",
+      "type":"typedef"
+    },
+    {
       "name":"UPDATE_WINDOW_FUNC",
       "type":"function_definition"
     },
@@ -5009,11 +5009,19 @@
       "type":"struct"
     },
     {
-      "name":"_BIT_INTEGER",
+      "name":"_BIT_INTEGER16",
+      "type":"union"
+    },
+    {
+      "name":"_BIT_INTEGER32",
       "type":"union"
     },
     {
       "name":"CDemonGlobe",
+      "type":"struct"
+    },
+    {
+      "name":"CExternalRenderer",
       "type":"struct"
     },
     {
@@ -5275,6 +5283,10 @@
     {
       "name":"MENU_EVENT_RECORD",
       "type":"typedef"
+    },
+    {
+      "name":"_MMX_INTEGER",
+      "type":"union"
     },
     {
       "name":"_MOUSE_EVENT_RECORD",
@@ -22934,7 +22946,7 @@
         },
         {
           "len":4,
-          "name":"unk1",
+          "name":"open_pct",
           "offset":796,
           "type":"float"
         },
@@ -22942,7 +22954,7 @@
           "len":4,
           "name":"item",
           "offset":800,
-          "type":"char*"
+          "type":"CDemonActor*"
         },
         {
           "len":4,
@@ -22958,7 +22970,7 @@
         },
         {
           "len":4,
-          "name":"unk2",
+          "name":"is_sound_playing",
           "offset":840,
           "type":"int"
         }
@@ -23030,7 +23042,7 @@
         },
         {
           "len":100,
-          "name":"unk",
+          "name":"fall_apart_event",
           "offset":48828,
           "type":"char[100]"
         }
@@ -23101,76 +23113,40 @@
           "type":"char[100]"
         },
         {
-          "len":4,
-          "name":"unk1",
+          "len":12,
+          "name":"head_rotation",
           "offset":130204,
-          "type":"int"
+          "type":"CVector3f"
         },
         {
           "len":4,
-          "name":"unk2",
-          "offset":130208,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"unk3",
-          "offset":130212,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"unk4",
+          "name":"head_blend_weight",
           "offset":130216,
           "type":"float"
         },
         {
           "len":4,
-          "name":"unk5",
+          "name":"target_actor",
           "offset":130220,
-          "type":"int"
+          "type":"CDemonActor*"
         },
         {
           "len":4,
-          "name":"unk6",
+          "name":"new_attack",
           "offset":130224,
           "type":"int"
         },
         {
-          "len":4,
-          "name":"unk7",
+          "len":12,
+          "name":"left_hand_pos",
           "offset":130228,
-          "type":"int"
+          "type":"CVector3f"
         },
         {
-          "len":4,
-          "name":"unk8",
-          "offset":130232,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"unk9",
-          "offset":130236,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"unk10",
+          "len":12,
+          "name":"right_hand_pos",
           "offset":130240,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"unk11",
-          "offset":130244,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"unk12",
-          "offset":130248,
-          "type":"int"
+          "type":"CVector3f"
         },
         {
           "len":4,
@@ -23180,7 +23156,7 @@
         },
         {
           "len":4,
-          "name":"unk13",
+          "name":"shell_visible",
           "offset":130256,
           "type":"int"
         }
@@ -23204,9 +23180,9 @@
         },
         {
           "len":4,
-          "name":"unk",
+          "name":"baron",
           "offset":1400,
-          "type":"int"
+          "type":"CBaron*"
         }
       ],
       "importable":true,
@@ -23306,9 +23282,9 @@
         },
         {
           "len":4,
-          "name":"unk1",
+          "name":"anim_frame",
           "offset":388,
-          "type":"int"
+          "type":"float"
         },
         {
           "len":380,
@@ -23336,13 +23312,13 @@
         },
         {
           "len":4,
-          "name":"unk2",
+          "name":"flap_speed",
           "offset":784,
           "type":"float"
         },
         {
           "len":100,
-          "name":"unused",
+          "name":"periodic_sound",
           "offset":788,
           "type":"char[100]"
         },
@@ -23360,15 +23336,15 @@
         },
         {
           "len":4,
-          "name":"unk3",
+          "name":"sfx_handle",
           "offset":896,
-          "type":"int"
+          "type":"uint"
         },
         {
           "len":4,
-          "name":"unk4",
+          "name":"sound_timer",
           "offset":900,
-          "type":"int"
+          "type":"float"
         }
       ],
       "importable":true,
@@ -23389,10 +23365,112 @@
           "type":"CEnemy"
         },
         {
-          "len":72,
-          "name":"unk",
+          "len":4,
+          "name":"part_head",
           "offset":48828,
-          "type":"char[72]"
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"part_torso",
+          "offset":48832,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"part_pelvis",
+          "offset":48836,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"part_tail",
+          "offset":48840,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"part_lthigh",
+          "offset":48844,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"part_lshin",
+          "offset":48848,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"part_rthigh",
+          "offset":48852,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"part_rshin",
+          "offset":48856,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"part_larm",
+          "offset":48860,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"part_lforearm",
+          "offset":48864,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"part_rarm",
+          "offset":48868,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"part_rforearm",
+          "offset":48872,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"part_lwing",
+          "offset":48876,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"part_rwing",
+          "offset":48880,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"alert_sound_handle",
+          "offset":48884,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"voice_sound_handle",
+          "offset":48888,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"attack_sound_handle",
+          "offset":48892,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"alert_played",
+          "offset":48896,
+          "type":"int"
         }
       ],
       "importable":true,
@@ -23413,10 +23491,94 @@
           "type":"CEnemy"
         },
         {
-          "len":156,
-          "name":"unk1",
+          "len":100,
+          "name":"fall_event",
           "offset":48828,
-          "type":"char[156]"
+          "type":"char[100]"
+        },
+        {
+          "len":4,
+          "name":"part_head",
+          "offset":48928,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"part_torso",
+          "offset":48932,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"part_larm",
+          "offset":48936,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"part_lforearm",
+          "offset":48940,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"part_rarm",
+          "offset":48944,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"part_rforearm",
+          "offset":48948,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"part_pelvis",
+          "offset":48952,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"part_tail",
+          "offset":48956,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"part_lthigh",
+          "offset":48960,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"part_lshin",
+          "offset":48964,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"part_rthigh",
+          "offset":48968,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"part_rshin",
+          "offset":48972,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"part_lfoot",
+          "offset":48976,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"part_rfoot",
+          "offset":48980,
+          "type":"int"
         },
         {
           "len":4,
@@ -23437,10 +23599,22 @@
           "type":"CVector3f"
         },
         {
-          "len":12,
-          "name":"unk2",
+          "len":4,
+          "name":"alert_sound_handle",
           "offset":49004,
-          "type":"char[12]"
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"voice_sound_handle",
+          "offset":49008,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"attack_sound_handle",
+          "offset":49012,
+          "type":"uint"
         }
       ],
       "importable":true,
@@ -23690,7 +23864,7 @@
         },
         {
           "len":4,
-          "name":"unk",
+          "name":"use_3d_rendering",
           "offset":12684,
           "type":"int"
         },
@@ -23791,10 +23965,16 @@
           "type":"CParticle"
         },
         {
-          "len":8,
-          "name":"field_56",
+          "len":4,
+          "name":"blood_type",
           "offset":56,
-          "type":"char[8]"
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"texture_index",
+          "offset":60,
+          "type":"int"
         }
       ],
       "importable":true,
@@ -23809,10 +23989,40 @@
       "desc":"",
       "fields":[
         {
-          "len":40,
-          "name":"unk",
+          "len":4,
+          "name":"expired",
           "offset":0,
-          "type":"char[40]"
+          "type":"int"
+        },
+        {
+          "len":12,
+          "name":"position",
+          "offset":4,
+          "type":"CVector3f"
+        },
+        {
+          "len":4,
+          "name":"blood_type",
+          "offset":16,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"texture_variant",
+          "offset":20,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"age",
+          "offset":24,
+          "type":"float"
+        },
+        {
+          "len":12,
+          "name":"position_fixed",
+          "offset":28,
+          "type":"CVector3i"
         }
       ],
       "importable":true,
@@ -23827,10 +24037,58 @@
       "desc":"",
       "fields":[
         {
-          "len":68,
-          "name":"unk",
+          "len":4,
+          "name":"expired",
           "offset":0,
-          "type":"char[68]"
+          "type":"int"
+        },
+        {
+          "len":12,
+          "name":"position",
+          "offset":4,
+          "type":"CVector3f"
+        },
+        {
+          "len":4,
+          "name":"is_wall_splat",
+          "offset":16,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"blood_type",
+          "offset":20,
+          "type":"int"
+        },
+        {
+          "len":12,
+          "name":"rotation",
+          "offset":24,
+          "type":"CVector3f"
+        },
+        {
+          "len":4,
+          "name":"age",
+          "offset":36,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"texture_variant",
+          "offset":40,
+          "type":"int"
+        },
+        {
+          "len":12,
+          "name":"position_fixed",
+          "offset":44,
+          "type":"CVector3i"
+        },
+        {
+          "len":12,
+          "name":"normal_fixed",
+          "offset":56,
+          "type":"CVector3i"
         }
       ],
       "importable":true,
@@ -23984,15 +24242,15 @@
         },
         {
           "len":600,
-          "name":"sim_box",
+          "name":"physics_box",
           "offset":3276,
           "type":"CBox"
         },
         {
           "len":4,
-          "name":"unk",
+          "name":"ground_height",
           "offset":3876,
-          "type":"int"
+          "type":"float"
         },
         {
           "len":4,
@@ -24182,7 +24440,7 @@
         },
         {
           "len":4,
-          "name":"unk",
+          "name":"padding",
           "offset":60,
           "type":"int"
         },
@@ -24320,9 +24578,9 @@
         },
         {
           "len":4,
-          "name":"unk2",
+          "name":"anim_frame",
           "offset":784,
-          "type":"int"
+          "type":"float"
         },
         {
           "len":4,
@@ -24352,11 +24610,11 @@
           "len":4,
           "name":"constrain_extents_actor",
           "offset":804,
-          "type":"int"
+          "type":"CDemonActor*"
         },
         {
           "len":4,
-          "name":"unk3",
+          "name":"padding",
           "offset":808,
           "type":"int"
         },
@@ -24373,28 +24631,16 @@
           "type":"float"
         },
         {
-          "len":4,
-          "name":"sim_box",
+          "len":600,
+          "name":"physics_box",
           "offset":916,
-          "type":"CSimBox*"
-        },
-        {
-          "len":592,
-          "name":"unk4",
-          "offset":920,
-          "type":"char[592]"
+          "type":"CBox"
         },
         {
           "len":4,
-          "name":"unk5",
-          "offset":1512,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"unk6",
+          "name":"ground_height",
           "offset":1516,
-          "type":"int"
+          "type":"float"
         },
         {
           "len":4,
@@ -25785,7 +26031,7 @@
         },
         {
           "len":12,
-          "name":"unk1",
+          "name":"reserved",
           "offset":249464,
           "type":"char[12]"
         },
@@ -26697,9 +26943,9 @@
         },
         {
           "len":4,
-          "name":"unk2",
+          "name":"ground_check_radius",
           "offset":728,
-          "type":"int"
+          "type":"float"
         },
         {
           "len":4,
@@ -26708,10 +26954,22 @@
           "type":"CDemonActor*"
         },
         {
-          "len":28,
-          "name":"unk3",
+          "len":12,
+          "name":"cached_position",
           "offset":736,
-          "type":"char[28]"
+          "type":"CVector3f"
+        },
+        {
+          "len":12,
+          "name":"cached_orientation",
+          "offset":748,
+          "type":"UOrientationVector"
+        },
+        {
+          "len":4,
+          "name":"cached_ground_height",
+          "offset":760,
+          "type":"float"
         }
       ],
       "importable":true,
@@ -27171,7 +27429,7 @@
         },
         {
           "len":12,
-          "name":"unk",
+          "name":"padding",
           "offset":35488,
           "type":"char[12]"
         },
@@ -28337,7 +28595,7 @@
           "len":4,
           "name":"intensity",
           "offset":28,
-          "type":"_BIT_INTEGER"
+          "type":"_BIT_INTEGER32"
         },
         {
           "len":4,
@@ -30804,9 +31062,9 @@
         },
         {
           "len":4,
-          "name":"unk2",
+          "name":"attack_cooldown",
           "offset":48696,
-          "type":"int"
+          "type":"float"
         },
         {
           "len":4,
@@ -31025,16 +31283,10 @@
           "type":"char[256]"
         },
         {
-          "len":2,
-          "name":"hardware_flag1",
+          "len":4,
+          "name":"hardware_flags",
           "offset":512,
-          "type":"ushort"
-        },
-        {
-          "len":2,
-          "name":"hardware_flag2",
-          "offset":514,
-          "type":"ushort"
+          "type":"_BIT_INTEGER32"
         },
         {
           "len":2,
@@ -31052,7 +31304,7 @@
           "len":4,
           "name":"feature_flags",
           "offset":520,
-          "type":"uint"
+          "type":"_BIT_INTEGER32"
         },
         {
           "len":4,
@@ -32022,15 +32274,15 @@
         },
         {
           "len":4,
-          "name":"count",
+          "name":"fly_count",
           "offset":356,
           "type":"int"
         },
         {
           "len":10400,
-          "name":"unk1",
+          "name":"flies",
           "offset":360,
-          "type":"char[10400]"
+          "type":"SFly[200]"
         },
         {
           "len":4,
@@ -32046,9 +32298,9 @@
         },
         {
           "len":4,
-          "name":"unk2",
+          "name":"gather_timer",
           "offset":10768,
-          "type":"int"
+          "type":"float"
         },
         {
           "len":4,
@@ -32057,10 +32309,16 @@
           "type":"float"
         },
         {
-          "len":8,
-          "name":"unk3",
+          "len":4,
+          "name":"reserved",
           "offset":10776,
-          "type":"char[8]"
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"is_visible",
+          "offset":10780,
+          "type":"int"
         }
       ],
       "importable":true,
@@ -32135,22 +32393,34 @@
       "desc":"",
       "fields":[
         {
-          "len":8,
-          "name":"unk1",
+          "len":4,
+          "name":"expired",
           "offset":0,
-          "type":"char[8]"
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"blood_type",
+          "offset":4,
+          "type":"int"
         },
         {
           "len":48,
-          "name":"unk2",
+          "name":"corners",
           "offset":8,
           "type":"CVector3f[4]"
         },
         {
-          "len":8,
-          "name":"field_56",
+          "len":4,
+          "name":"alpha",
           "offset":56,
-          "type":"char[8]"
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"is_bloody",
+          "offset":60,
+          "type":"int"
         }
       ],
       "importable":true,
@@ -36369,10 +36639,46 @@
           "type":"CEnemy"
         },
         {
-          "len":28,
-          "name":"unk1",
+          "len":4,
+          "name":"ai_idle_counter",
           "offset":48828,
-          "type":"char[28]"
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"idle_timer",
+          "offset":48832,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"weapon_approach_timer",
+          "offset":48836,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"target_weapon",
+          "offset":48840,
+          "type":"CDemonActor*"
+        },
+        {
+          "len":4,
+          "name":"weapon_search_count",
+          "offset":48844,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"sound_variant",
+          "offset":48848,
+          "type":"_BIT_INTEGER32"
+        },
+        {
+          "len":4,
+          "name":"taunt_timer",
+          "offset":48852,
+          "type":"float"
         },
         {
           "len":4,
@@ -36411,10 +36717,106 @@
           "type":"char[100]"
         },
         {
-          "len":68,
-          "name":"unk2",
+          "len":4,
+          "name":"unk1",
           "offset":48976,
-          "type":"char[68]"
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"sfx_handle_1",
+          "offset":48980,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"unk2",
+          "offset":48984,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"sfx_handle_2",
+          "offset":48988,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"part_larm",
+          "offset":48992,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"part_l4arm",
+          "offset":48996,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"part_rarm",
+          "offset":49000,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"part_r4arm",
+          "offset":49004,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"part_rthigh",
+          "offset":49008,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"part_rshin",
+          "offset":49012,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"part_lthigh",
+          "offset":49016,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"part_lshin",
+          "offset":49020,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"part_waist",
+          "offset":49024,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"part_torso",
+          "offset":49028,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"part_head",
+          "offset":49032,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"firing_blend",
+          "offset":49036,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"firing_cooldown",
+          "offset":49040,
+          "type":"float"
         }
       ],
       "importable":true,
@@ -36526,7 +36928,7 @@
         },
         {
           "len":24,
-          "name":"unk",
+          "name":"reserved",
           "offset":3088,
           "type":"char[24]"
         },
@@ -40450,15 +40852,27 @@
         },
         {
           "len":600,
-          "name":"box",
+          "name":"physics_box",
           "offset":856,
           "type":"CBox"
         },
         {
-          "len":28,
-          "name":"unk",
+          "len":4,
+          "name":"ground_height",
           "offset":1456,
-          "type":"char[28]"
+          "type":"float"
+        },
+        {
+          "len":12,
+          "name":"spawn_position",
+          "offset":1460,
+          "type":"CVector3f"
+        },
+        {
+          "len":12,
+          "name":"spawn_orientation",
+          "offset":1472,
+          "type":"CVector3f"
         }
       ],
       "importable":true,
@@ -41254,15 +41668,15 @@
         },
         {
           "len":600,
-          "name":"box",
+          "name":"physics_box",
           "offset":4,
           "type":"CBox"
         },
         {
           "len":4,
-          "name":"unk",
+          "name":"ground_height",
           "offset":604,
-          "type":"int"
+          "type":"float"
         }
       ],
       "importable":true,
@@ -42340,9 +42754,9 @@
         },
         {
           "len":4,
-          "name":"unk1",
+          "name":"anim_frame",
           "offset":48828,
-          "type":"int"
+          "type":"float"
         },
         {
           "len":380,
@@ -42358,9 +42772,9 @@
         },
         {
           "len":4,
-          "name":"unk2",
+          "name":"anim_rate",
           "offset":49216,
-          "type":"int"
+          "type":"float"
         },
         {
           "len":12,
@@ -42394,9 +42808,9 @@
         },
         {
           "len":4,
-          "name":"unk3",
+          "name":"height_offset",
           "offset":49248,
-          "type":"int"
+          "type":"float"
         },
         {
           "len":4,
@@ -42406,27 +42820,15 @@
         },
         {
           "len":4,
-          "name":"unk4",
+          "name":"attack_timer",
           "offset":49256,
           "type":"float"
         },
         {
-          "len":4,
-          "name":"unk5",
+          "len":12,
+          "name":"velocity",
           "offset":49260,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"unk6",
-          "offset":49264,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"unk7",
-          "offset":49268,
-          "type":"int"
+          "type":"CVector3f"
         },
         {
           "len":4,
@@ -42454,21 +42856,21 @@
         },
         {
           "len":4,
-          "name":"unk9",
+          "name":"periodic_sound_handle",
           "offset":49384,
-          "type":"int"
+          "type":"uint"
         },
         {
           "len":4,
-          "name":"unk10",
+          "name":"periodic_sound_timer",
           "offset":49388,
           "type":"float"
         },
         {
           "len":4,
-          "name":"unk11",
+          "name":"boss_actor",
           "offset":49392,
-          "type":"int"
+          "type":"CDemonActor*"
         }
       ],
       "importable":true,
@@ -42495,10 +42897,40 @@
           "type":"CDeformableModelInstance"
         },
         {
-          "len":785232,
-          "name":"unk2",
+          "len":261732,
+          "name":"wing_cloth",
           "offset":57712,
-          "type":"char[785232]"
+          "type":"CCloth"
+        },
+        {
+          "len":12,
+          "name":"padding1",
+          "offset":319444,
+          "type":"char[12]"
+        },
+        {
+          "len":261732,
+          "name":"cape_cloth",
+          "offset":319456,
+          "type":"CCloth"
+        },
+        {
+          "len":12,
+          "name":"padding2",
+          "offset":581188,
+          "type":"char[12]"
+        },
+        {
+          "len":261732,
+          "name":"skirt_cloth",
+          "offset":581200,
+          "type":"CCloth"
+        },
+        {
+          "len":12,
+          "name":"padding3",
+          "offset":842932,
+          "type":"char[12]"
         },
         {
           "len":4,
@@ -42508,9 +42940,9 @@
         },
         {
           "len":3116,
-          "name":"unk3",
+          "name":"morph",
           "offset":842948,
-          "type":"char[3116]"
+          "type":"CMorph"
         },
         {
           "len":4,
@@ -42519,10 +42951,40 @@
           "type":"float"
         },
         {
-          "len":24,
-          "name":"unk4",
+          "len":4,
+          "name":"action_timer",
           "offset":846068,
-          "type":"char[24]"
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"flee_timer",
+          "offset":846072,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"has_attacked",
+          "offset":846076,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"sfx_handle",
+          "offset":846080,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"bat_ai_state",
+          "offset":846084,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"waypoint_index",
+          "offset":846088,
+          "type":"int"
         },
         {
           "len":4,
@@ -42550,7 +43012,7 @@
         },
         {
           "len":4,
-          "name":"unk5",
+          "name":"follow_result",
           "offset":846108,
           "type":"int"
         }
@@ -43240,15 +43702,15 @@
         },
         {
           "len":4,
-          "name":"box_mass",
+          "name":"ground_height",
           "offset":1376,
           "type":"float"
         },
         {
           "len":4,
-          "name":"unk3",
+          "name":"weight",
           "offset":1380,
-          "type":"int"
+          "type":"float"
         },
         {
           "len":4,
@@ -49423,7 +49885,7 @@
         },
         {
           "len":4,
-          "name":"unk",
+          "name":"padding",
           "offset":156,
           "type":"char[4]"
         },
@@ -49519,9 +49981,9 @@
         },
         {
           "len":4,
-          "name":"bone_indices",
+          "name":"collide_bone_index",
           "offset":216,
-          "type":"char[4]"
+          "type":"int"
         },
         {
           "len":4,
@@ -49530,16 +49992,10 @@
           "type":"int"
         },
         {
-          "len":4,
-          "name":"primary_bone_index",
+          "len":12,
+          "name":"bone_index",
           "offset":224,
-          "type":"int"
-        },
-        {
-          "len":8,
-          "name":"unk2",
-          "offset":228,
-          "type":"char[8]"
+          "type":"int[3]"
         },
         {
           "len":36,
@@ -50790,14 +51246,26 @@
       "desc":"",
       "fields":[
         {
-          "len":20,
-          "name":"unk",
+          "len":4,
+          "name":"bone_part",
           "offset":0,
-          "type":"char[20]"
+          "type":"int"
         },
         {
           "len":4,
-          "name":"unk2",
+          "name":"bone_index",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":12,
+          "name":"offset",
+          "offset":8,
+          "type":"CVector3f"
+        },
+        {
+          "len":4,
+          "name":"size",
           "offset":20,
           "type":"float"
         }
@@ -50815,13 +51283,13 @@
       "fields":[
         {
           "len":4,
-          "name":"unk1",
+          "name":"t",
           "offset":0,
-          "type":"char[4]"
+          "type":"float"
         },
         {
           "len":48,
-          "name":"unk2",
+          "name":"control_points",
           "offset":4,
           "type":"CVector3f[4]"
         }
@@ -59032,7 +59500,7 @@
     },
     {
       "base":"CStranger*",
-      "cat":"/Nocturne/Class/Game",
+      "cat":"/Nocturne/Typedef/Game",
       "component_offset":130264,
       "importable":true,
       "name":"CStranger_ptr_130264",
@@ -60008,6 +60476,14 @@
       "type":"typedef"
     },
     {
+      "base":"SFly*",
+      "cat":"/Nocturne/Typedef/Game",
+      "component_offset":4,
+      "importable":true,
+      "name":"SFly_ptr_4",
+      "type":"typedef"
+    },
+    {
       "base":"short",
       "cat":"/Nocturne/Typedef/System/windef.h",
       "importable":true,
@@ -60179,6 +60655,30 @@
       "desc":"",
       "fields":[
         {
+          "len":2,
+          "name":"word",
+          "offset":0,
+          "type":"ushort"
+        },
+        {
+          "len":2,
+          "name":"bytes",
+          "offset":0,
+          "type":"uchar[2]"
+        }
+      ],
+      "importable":true,
+      "len":2,
+      "name":"_BIT_INTEGER16",
+      "pack":false,
+      "type":"union"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Union/System/winnt.h",
+      "desc":"",
+      "fields":[
+        {
           "len":4,
           "name":"dword",
           "offset":0,
@@ -60199,7 +60699,7 @@
       ],
       "importable":true,
       "len":4,
-      "name":"_BIT_INTEGER",
+      "name":"_BIT_INTEGER32",
       "pack":false,
       "type":"union"
     },
@@ -60225,6 +60725,36 @@
       "len":8,
       "name":"_LARGE_INTEGER",
       "pack":true,
+      "type":"union"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Union/System/winnt.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":8,
+          "name":"mm",
+          "offset":0,
+          "type":"ulonglong"
+        },
+        {
+          "len":8,
+          "name":"u32",
+          "offset":0,
+          "type":"uint[2]"
+        },
+        {
+          "len":8,
+          "name":"b32",
+          "offset":0,
+          "type":"_BIT_INTEGER32[2]"
+        }
+      ],
+      "importable":true,
+      "len":8,
+      "name":"_MMX_INTEGER",
+      "pack":false,
       "type":"union"
     },
     {

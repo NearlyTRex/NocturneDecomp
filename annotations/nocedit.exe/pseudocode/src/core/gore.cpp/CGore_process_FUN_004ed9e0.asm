@@ -12,24 +12,24 @@
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 00539934
 ;
 ; Referenced Globals:
-;   CBloodParticle[256] CBloodParticle_ARRAY_02d833d4
+;   CBloodParticle[256] g_BloodParticles
 ;   undefined4 DAT_02d833ec
 ;   undefined4 DAT_02d83408
 ;   undefined4 DAT_02d83414
 ;   undefined4 DAT_02d8342c
 ;   undefined4 DAT_02d83448
-;   undefined4 DAT_02d873d4
-;   int INT_02d873d8
-;   CBloodSplat[2000] DAT_02d873dc
+;   int g_BloodSplatIndex
+;   int g_BloodSplatCount
+;   CBloodSplat[2000] g_BloodSplats
 ;   undefined4 DAT_02d87420
-;   int INT_02da8720
-;   CBloodPool[32] DAT_02da8724
+;   int g_BloodPoolCount
+;   CBloodPool[32] g_BloodPools
 ;   undefined4 DAT_02da874c
 ;
 ; Called Functions:
-;   core_gore.cpp_CBloodPool_FUN_004ecc40
-;   core_gore.cpp_CBloodPool_FUN_004ed0a0
-;   core_gore.cpp_CBloodSplat_FUN_004ecad0
+;   core_gore.cpp_CBloodPool_processAge_FUN_004ed0a0
+;   core_gore.cpp_CBloodPool_setupRenderState_FUN_004ecc40
+;   core_gore.cpp_CBloodSplat_processAge_FUN_004ecad0
 ;
 ; *****************************************************************************
 
@@ -42,8 +42,8 @@ section .text
     PUSH EBP                            ; 004ed9e3
     MOV EBP,ESP                         ; 004ed9e4
     AND ESP,0xfffffff8                  ; 004ed9e6
-    MOV EBX,0x2d833d4                   ; 004ed9e9 | CBloodParticle_ARRAY_02d833d4
-    LEA ESI,[EBX + 0x4000]              ; 004ed9ee | DAT_02d873d4
+    MOV EBX,0x2d833d4                   ; 004ed9e9 | g_BloodParticles
+    LEA ESI,[EBX + 0x4000]              ; 004ed9ee | g_BloodSplatIndex
     FLD float ptr [EBX + 0x18]          ; 004ed9f4 | DAT_02d833ec | DAT_02d8342c
         ;   Label: LAB_004ed9f4
     FLDZ                                ; 004ed9f7
@@ -57,18 +57,18 @@ section .text
     CMP EBX,ESI                         ; 004eda07
     JNZ 0x004ed9f4                      ; 004eda09
         ;   XREF to: 004ed9f4 (CONDITIONAL_JUMP)  ; LAB_004ed9f4
-    MOV EDX,dword ptr [0x02d873d8]      ; 004eda0b | INT_02d873d8
+    MOV EDX,dword ptr [0x02d873d8]      ; 004eda0b | g_BloodSplatCount
     XOR EBX,ESI                         ; 004eda11
     TEST EDX,EDX                        ; 004eda13
     JLE 0x004eda40                      ; 004eda15
         ;   XREF to: 004eda40 (CONDITIONAL_JUMP)  ; LAB_004eda40
-    MOV ESI,0x2d873dc                   ; 004eda17 | DAT_02d873dc
-    PUSH ESI                            ; 004eda1c | DAT_02d873dc | DAT_02d87420
+    MOV ESI,0x2d873dc                   ; 004eda17 | g_BloodSplats
+    PUSH ESI                            ; 004eda1c | g_BloodSplats | DAT_02d87420
         ;   Label: LAB_004eda1c
-    CALL core_gore.cpp_CBloodSplat_FUN_004ecad0 ; 004eda1d
-        ;   XREF to: 004ecad0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodSplat_FUN_004ecad0(CBloodSplat * this_ptr)
+    CALL core_gore.cpp_CBloodSplat_processAge_FUN_004ecad0 ; 004eda1d
+        ;   XREF to: 004ecad0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodSplat_processAge_FUN_004ecad0(CBloodSplat * this_ptr)
     INC EBX                             ; 004eda22
-    MOV ECX,dword ptr [0x02d873d8]      ; 004eda23 | INT_02d873d8
+    MOV ECX,dword ptr [0x02d873d8]      ; 004eda23 | g_BloodSplatCount
     ADD ESP,0x4                         ; 004eda29
     ADD ESI,0x44                        ; 004eda2c
     CMP EBX,ECX                         ; 004eda2f
@@ -77,23 +77,23 @@ section .text
     LEA EAX,[EAX]                       ; 004eda33
     LEA EDX,[EDX]                       ; 004eda39
     NOP                                 ; 004eda3f
-    PUSH 0x2da8724                      ; 004eda40 | DAT_02da8724
+    PUSH 0x2da8724                      ; 004eda40 | g_BloodPools
         ;   Label: LAB_004eda40
-    CALL core_gore.cpp_CBloodPool_FUN_004ecc40 ; 004eda45
-        ;   XREF to: 004ecc40 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodPool_FUN_004ecc40(CBloodPool * this_ptr)
+    CALL core_gore.cpp_CBloodPool_setupRenderState_FUN_004ecc40 ; 004eda45
+        ;   XREF to: 004ecc40 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodPool_setupRenderState_FUN_004ecc40(CBloodPool * this_ptr)
     XOR ESI,ESI                         ; 004eda4a
-    MOV EBX,dword ptr [0x02da8720]      ; 004eda4c | INT_02da8720
+    MOV EBX,dword ptr [0x02da8720]      ; 004eda4c | g_BloodPoolCount
     ADD ESP,0x4                         ; 004eda52
     TEST EBX,EBX                        ; 004eda55
     JLE 0x004eda80                      ; 004eda57
         ;   XREF to: 004eda80 (CONDITIONAL_JUMP)  ; LAB_004eda80
-    MOV EBX,0x2da8724                   ; 004eda59 | DAT_02da8724
-    PUSH EBX                            ; 004eda5e | DAT_02da8724 | DAT_02da874c
+    MOV EBX,0x2da8724                   ; 004eda59 | g_BloodPools
+    PUSH EBX                            ; 004eda5e | g_BloodPools | DAT_02da874c
         ;   Label: LAB_004eda5e
-    CALL core_gore.cpp_CBloodPool_FUN_004ed0a0 ; 004eda5f
-        ;   XREF to: 004ed0a0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodPool_FUN_004ed0a0(CBloodPool * this_ptr)
+    CALL core_gore.cpp_CBloodPool_processAge_FUN_004ed0a0 ; 004eda5f
+        ;   XREF to: 004ed0a0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodPool_processAge_FUN_004ed0a0(CBloodPool * this_ptr)
     INC ESI                             ; 004eda64
-    MOV EDI,dword ptr [0x02da8720]      ; 004eda65 | INT_02da8720
+    MOV EDI,dword ptr [0x02da8720]      ; 004eda65 | g_BloodPoolCount
     ADD ESP,0x4                         ; 004eda6b
     ADD EBX,0x28                        ; 004eda6e | DAT_02da874c
     CMP ESI,EDI                         ; 004eda71

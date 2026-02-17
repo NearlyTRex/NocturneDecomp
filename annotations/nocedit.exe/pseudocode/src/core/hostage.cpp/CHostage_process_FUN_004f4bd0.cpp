@@ -561,7 +561,7 @@ switchD_004f5c7d_caseD_5:
       local_11c.z = 0.0;
       core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                 ((CDemonActor *)this_ptr,&local_134,&local_11c);
-      core_gore_cpp_CGore_FUN_004edaa0(g_CGorePtr);
+      core_gore_cpp_CGore_spawnBloodParticles_FUN_004edaa0(g_CGorePtr,&local_158,&local_134,0);
     }
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_00429820((CCharacter *)this_ptr);

@@ -37,15 +37,15 @@ CVector3f * __cdecl CEnemy::getTargetPoint(CEnemy *this_ptr,CVector3f *out_point
 
 // Original: core_enemy.cpp_CEnemy_FUN_004a9a50
 // Address: 004a9a50
-int __cdecl CEnemy(CEnemy *this_ptr);
+int __cdecl CEnemy(CEnemy *this_ptr,CDemonActor *param_2);
 
 // Original: core_enemy.cpp_CEnemy_updateVictim_FUN_004a9b00
 // Address: 004a9b00
 void __cdecl CEnemy::updateVictim(CEnemy *this_ptr,float delta_time);
 
-// Original: core_enemy.cpp_CEnemy_FUN_004a9ef0
+// Original: core_enemy.cpp_CEnemy_setVictim_FUN_004a9ef0
 // Address: 004a9ef0
-void __cdecl CEnemy(CEnemy *this_ptr);
+void __cdecl CEnemy::setVictim(CEnemy *this_ptr,CDemonActor *victim);
 
 // Original: core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10
 // Address: 004a9f10
@@ -57,7 +57,7 @@ void __cdecl CEnemy::renderBackground(CEnemy *this_ptr,int layer_flag);
 
 // Original: core_enemy.cpp_CEnemy_FUN_004a9fd0
 // Address: 004a9fd0
-int __cdecl CEnemy(CEnemy *this_ptr);
+int __cdecl CEnemy(CEnemy *this_ptr,float delta_time);
 
 // Original: core_enemy.cpp_CEnemy_releaseVictim_FUN_004aa030
 // Address: 004aa030

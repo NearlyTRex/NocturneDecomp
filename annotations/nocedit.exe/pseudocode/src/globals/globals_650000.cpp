@@ -4955,12 +4955,12 @@ WatcomDestructorCall WatcomDestructorCall_0065f000 = {
 WatcomDestructorCall WatcomDestructorCall_0065f00c = {
     .delete_flags = 0x00000004,
     .destructor_func = (void *)core_gore_cpp_CBloodParticle_arrdtor_FUN_004ee480,
-    .object_instance = (void *)&CBloodParticle_ARRAY_02d833d4
+    .object_instance = (void *)&g_BloodParticles
 };
 WatcomDestructorCall WatcomDestructorCall_0065f018 = {
     .delete_flags = 0x00000004,
     .destructor_func = (void *)core_gore_cpp_CFootstep_arrdtor_FUN_004ee420,
-    .object_instance = (void *)&CFootstep_ARRAY_02da8c2c
+    .object_instance = (void *)&g_Footsteps
 };
 WatcomDestructorCall WatcomDestructorCall_0065f230 = {
     .delete_flags = 0x00000004,

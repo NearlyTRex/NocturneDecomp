@@ -134,7 +134,7 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_0043abb0(CCloth *this_ptr,CVector3f 
           local_30 = pSVar11;
           do {
             pCVar4 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                               (&local_9c,local_28,local_38 + local_30->primary_bone_index);
+                               (&local_9c,local_28,local_38 + local_30->bone_index[0]);
             local_174 = pCVar4->x * *pfVar9;
             local_170 = pCVar4->y * *pfVar9;
             local_16c = pCVar4->z * *pfVar9;
@@ -168,7 +168,7 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_0043abb0(CCloth *this_ptr,CVector3f 
     do {
       pSVar3 = local_24;
       local_64 = iVar6 * 0x11c;
-      iVar7 = *(int *)local_84->vertices[0].bone_indices;
+      iVar7 = local_84->vertices[0].collide_bone_index;
       if (iVar7 != -1) {
         local_168.z = local_24[iVar7].child_distance;
         local_168.x = 0.0;

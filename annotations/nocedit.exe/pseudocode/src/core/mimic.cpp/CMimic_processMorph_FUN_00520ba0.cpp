@@ -42,8 +42,11 @@ void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(CMimic *this_ptr)
       core_motion_cpp_CMotionController_advance_FUN_0052d610
                 ((CMotionController *)(*(int *)(this_ptr->unk4 + 0xc54) + 0x158));
     }
-    core_morph_cpp_CMorph_FUN_0052b600((CMorph *)(this_ptr->unk4 + 0x24),0);
-    core_morph_cpp_CMorph_FUN_0052b600((CMorph *)(this_ptr->unk4 + 0x24),1);
+    core_morph_cpp_CMorph_updateModelFromDeformable_FUN_0052b600
+              ((CMorph *)(this_ptr->unk4 + 0x24),0,&(this_ptr->base).base.model,0);
+    core_morph_cpp_CMorph_updateModelFromDeformable_FUN_0052b600
+              ((CMorph *)(this_ptr->unk4 + 0x24),1,
+               (CDeformableModelInstance *)(*(int *)(this_ptr->unk4 + 0xc54) + 0x158),0);
     iVar2 = 0;
     if (0 < *(int *)(this_ptr->unk4 + 0x78)) {
       iVar3 = 0;

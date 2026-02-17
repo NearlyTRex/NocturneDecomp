@@ -26,7 +26,7 @@
 ;   int g_ViewportRightFixed
 ;   int g_ViewportBottomFixed
 ;   int g_UseExternalRenderer
-;   _BIT_INTEGER g_RenderStateFlags
+;   _BIT_INTEGER32 g_RenderStateFlags
 ;   int g_RenderStateFlag2
 ;   int g_RenderedTriangleCount
 ;   int g_ActiveEdgeCount

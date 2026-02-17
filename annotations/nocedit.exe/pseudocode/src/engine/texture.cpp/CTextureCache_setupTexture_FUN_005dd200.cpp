@@ -37,9 +37,9 @@ void __cdecl engine_texture_cpp_CTextureCache_setupTexture_FUN_005dd200(CTexture
         iVar4 = iVar7 + 4;
         pbVar6 = pbVar6 + 3;
         *(uint *)((int)g_Hardware32BitPalette + iVar7) =
-             (uint)*pbVar2 << ((byte)g_BlueBitPosition & 0x1f) |
-             (uint)*pbVar1 << ((byte)g_GreenBitPosition & 0x1f) |
-             (uint)bVar3 << ((byte)g_RedBitPosition & 0x1f);
+             (uint)*pbVar2 << (g_BlueBitPosition.bytes[0] & 0x1f) |
+             (uint)*pbVar1 << (g_GreenBitPosition.bytes[0] & 0x1f) |
+             (uint)bVar3 << (g_RedBitPosition.bytes[0] & 0x1f);
         iVar7 = iVar4;
       } while (iVar4 != 0x400);
     }
@@ -49,14 +49,14 @@ void __cdecl engine_texture_cpp_CTextureCache_setupTexture_FUN_005dd200(CTexture
       do {
         *(ushort *)((int)g_Hardware16BitPalette + iVar7) =
              (ushort)((uint)pbVar6[1] / (uint)g_GreenScaleFactor <<
-                     ((byte)g_GreenBitPosition & 0x1f)) |
-             (ushort)((uint)*pbVar6 / (uint)g_RedScaleFactor << ((byte)g_RedBitPosition & 0x1f)) |
-             (ushort)((uint)pbVar6[2] / (uint)g_BlueScaleFactor << ((byte)g_BlueBitPosition & 0x1f))
-        ;
+                     (g_GreenBitPosition.bytes[0] & 0x1f)) |
+             (ushort)((uint)*pbVar6 / (uint)g_RedScaleFactor << (g_RedBitPosition.bytes[0] & 0x1f))
+             | (ushort)((uint)pbVar6[2] / (uint)g_BlueScaleFactor <<
+                       (g_BlueBitPosition.bytes[0] & 0x1f));
         if (g_BitsPerPixel == 0x20) {
-          uVar5 = (uint)pbVar6[2] << ((byte)g_BlueBitPosition & 0x1f) |
-                  (uint)*pbVar6 << ((byte)g_RedBitPosition & 0x1f) |
-                  (uint)pbVar6[1] << ((byte)g_GreenBitPosition & 0x1f);
+          uVar5 = (uint)pbVar6[2] << (g_BlueBitPosition.bytes[0] & 0x1f) |
+                  (uint)*pbVar6 << (g_RedBitPosition.bytes[0] & 0x1f) |
+                  (uint)pbVar6[1] << (g_GreenBitPosition.bytes[0] & 0x1f);
         }
         else {
           uVar5 = (uint)pbVar6[1] << 8 | (uint)*pbVar6 << 0x10 | (uint)pbVar6[2];
@@ -71,18 +71,18 @@ void __cdecl engine_texture_cpp_CTextureCache_setupTexture_FUN_005dd200(CTexture
   if ((uint)g_CurrentTextureDimension < 0x80) {
     if (0x1f < (uint)g_CurrentTextureDimension) {
       if ((uint)g_CurrentTextureDimension < 0x21) {
-        g_TextureShift1._0_4_ = 0x13;
-        g_TextureShift2._0_4_ = 0xe;
-        g_TextureMask1._0_4_ = 0x1f;
-        g_TextureMask2._0_4_ = 0x3e0;
+        g_TextureShift1.u32[0] = 0x13;
+        g_TextureShift2.u32[0] = 0xe;
+        g_TextureMask1.u32[0] = 0x1f;
+        g_TextureMask2.u32[0] = 0x3e0;
         g_TextureBits = 5;
         return;
       }
       if (g_CurrentTextureDimension == 0x40) {
-        g_TextureShift1._0_4_ = 0x12;
-        g_TextureShift2._0_4_ = 0xc;
-        g_TextureMask1._0_4_ = 0x3f;
-        g_TextureMask2._0_4_ = 0xfc0;
+        g_TextureShift1.u32[0] = 0x12;
+        g_TextureShift2.u32[0] = 0xc;
+        g_TextureMask1.u32[0] = 0x3f;
+        g_TextureMask2.u32[0] = 0xfc0;
         g_TextureBits = 6;
         return;
       }
@@ -90,10 +90,10 @@ void __cdecl engine_texture_cpp_CTextureCache_setupTexture_FUN_005dd200(CTexture
     return;
   }
   if ((uint)g_CurrentTextureDimension < 0x81) {
-    g_TextureShift1._0_4_ = 0x11;
-    g_TextureShift2._0_4_ = 10;
-    g_TextureMask1._0_4_ = 0x7f;
-    g_TextureMask2._0_4_ = 0x3f80;
+    g_TextureShift1.u32[0] = 0x11;
+    g_TextureShift2.u32[0] = 10;
+    g_TextureMask1.u32[0] = 0x7f;
+    g_TextureMask2.u32[0] = 0x3f80;
     g_TextureBits = 7;
     return;
   }
@@ -101,28 +101,28 @@ void __cdecl engine_texture_cpp_CTextureCache_setupTexture_FUN_005dd200(CTexture
     if (g_CurrentTextureDimension != 0x100) {
       return;
     }
-    g_TextureShift1._0_4_ = 0x10;
-    g_TextureShift2._0_4_ = 8;
-    g_TextureMask1._0_4_ = 0xff;
-    g_TextureMask2._0_4_ = 0xff00;
+    g_TextureShift1.u32[0] = 0x10;
+    g_TextureShift2.u32[0] = 8;
+    g_TextureMask1.u32[0] = 0xff;
+    g_TextureMask2.u32[0] = 0xff00;
     g_TextureBits = 8;
     return;
   }
   if ((uint)g_CurrentTextureDimension < 0x201) {
-    g_TextureShift1._0_4_ = 0xf;
-    g_TextureShift2._0_4_ = 6;
-    g_TextureMask1._0_4_ = 0x1ff;
-    g_TextureMask2._0_4_ = 0x3fe00;
+    g_TextureShift1.u32[0] = 0xf;
+    g_TextureShift2.u32[0] = 6;
+    g_TextureMask1.u32[0] = 0x1ff;
+    g_TextureMask2.u32[0] = 0x3fe00;
     g_TextureBits = 9;
     return;
   }
   if (g_CurrentTextureDimension != 0x400) {
     return;
   }
-  g_TextureShift1._0_4_ = 0xe;
-  g_TextureShift2._0_4_ = 4;
-  g_TextureMask1._0_4_ = 0x3ff;
-  g_TextureMask2._0_4_ = 0xffc00;
+  g_TextureShift1.u32[0] = 0xe;
+  g_TextureShift2.u32[0] = 4;
+  g_TextureMask1.u32[0] = 0x3ff;
+  g_TextureMask2.u32[0] = 0xffc00;
   g_TextureBits = 10;
   return;
 }

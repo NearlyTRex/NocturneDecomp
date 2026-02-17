@@ -6,13 +6,12 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_004528e0(CDemonCamera *this_ptr,float intensity)
 
 {
-  double dVar1;
-  
-  dVar1 = round
-                    ((double)(intensity * (float)65535));
-  this_ptr->corona_blend_factor = (int)ROUND(dVar1);
+  this_ptr->corona_blend_factor =
+       (int)ROUND(ROUND(intensity * (float)65535));
   return;
 }

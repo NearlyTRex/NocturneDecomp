@@ -1170,6 +1170,10 @@ def analyze_by_virtual_file(functions):
 
 def generate_virtual_file_report(files, output_path):
     """Generate report showing virtual file completion status."""
+
+    # Filter out CRT and entry files
+    files = {k: v for k, v in files.items() if not k.startswith('crt/') and k != 'entry'}
+
     lines = []
     lines.append("=" * 100)
     lines.append("VIRTUAL FILE COMPLETION REPORT")
@@ -1213,11 +1217,17 @@ def generate_virtual_file_report(files, output_path):
     lines.append("=" * 100)
     almost_files = [(k, v) for k, v in sorted_files if 90 <= v['clean_percent'] < 100]
     for vfile, data in almost_files:
-        suspect_summary = ", ".join("%s:%d" % (k, v) for k, v in sorted(data['suspect_types'].items()))
         lines.append("  %5.1f%% | %s" % (data['clean_percent'], vfile))
         lines.append("         %d/%d clean, %d remaining" % (data['clean_count'], data['total_count'], data['remaining']))
-        if suspect_summary:
-            lines.append("         Suspects: %s" % suspect_summary)
+        for func in data['functions']:
+            if func.get('complexity', {}).get('suspect_count', 0) > 0:
+                func_info = func.get('function', {})
+                complexity = func.get('complexity', {})
+                suspect_types = complexity.get('suspect_types', [])
+                lines.append("           - %s (%d lines) [%s]" % (
+                    func_info.get('name', 'unknown'),
+                    complexity.get('pseudocode_lines', 0),
+                    ', '.join(suspect_types)))
         lines.append("")
     lines.append("Total: %d files" % len(almost_files))
     lines.append("")
@@ -1228,11 +1238,17 @@ def generate_virtual_file_report(files, output_path):
     lines.append("=" * 100)
     mid_files = [(k, v) for k, v in sorted_files if 50 <= v['clean_percent'] < 90]
     for vfile, data in mid_files:
-        suspect_summary = ", ".join("%s:%d" % (k, v) for k, v in sorted(data['suspect_types'].items()))
         lines.append("  %5.1f%% | %s" % (data['clean_percent'], vfile))
         lines.append("         %d/%d clean, %d remaining" % (data['clean_count'], data['total_count'], data['remaining']))
-        if suspect_summary:
-            lines.append("         Suspects: %s" % suspect_summary)
+        for func in data['functions']:
+            if func.get('complexity', {}).get('suspect_count', 0) > 0:
+                func_info = func.get('function', {})
+                complexity = func.get('complexity', {})
+                suspect_types = complexity.get('suspect_types', [])
+                lines.append("           - %s (%d lines) [%s]" % (
+                    func_info.get('name', 'unknown'),
+                    complexity.get('pseudocode_lines', 0),
+                    ', '.join(suspect_types)))
     lines.append("")
     lines.append("Total: %d files" % len(mid_files))
     lines.append("")
@@ -1245,6 +1261,15 @@ def generate_virtual_file_report(files, output_path):
     for vfile, data in low_files:
         lines.append("  %5.1f%% | %s" % (data['clean_percent'], vfile))
         lines.append("         %d/%d clean, %d remaining" % (data['clean_count'], data['total_count'], data['remaining']))
+        for func in data['functions']:
+            if func.get('complexity', {}).get('suspect_count', 0) > 0:
+                func_info = func.get('function', {})
+                complexity = func.get('complexity', {})
+                suspect_types = complexity.get('suspect_types', [])
+                lines.append("           - %s (%d lines) [%s]" % (
+                    func_info.get('name', 'unknown'),
+                    complexity.get('pseudocode_lines', 0),
+                    ', '.join(suspect_types)))
     lines.append("")
     lines.append("Total: %d files" % len(low_files))
 
@@ -1424,6 +1449,14 @@ def generate_suspect_type_analysis(functions, output_path):
 
 def generate_easy_wins_list(functions, files, output_path):
     """Generate prioritized list of easy wins."""
+
+    # Filter out CRT and entry functions and files
+    def is_excluded(vfile):
+        return vfile.startswith('crt/') or vfile == 'entry'
+
+    non_crt_functions = [f for f in functions if not is_excluded(f.get('_virtual_file', ''))]
+    non_crt_files = {k: v for k, v in files.items() if not is_excluded(k)}
+
     lines = []
     lines.append("=" * 100)
     lines.append("EASY WINS - PRIORITIZED ACTION LIST")
@@ -1432,15 +1465,20 @@ def generate_easy_wins_list(functions, files, output_path):
 
     lines.append("This list shows the easiest paths to improving decompilation quality,")
     lines.append("sorted by effort required (lowest effort first).")
+    lines.append("(CRT functions are excluded)")
     lines.append("")
+
+    # Track files shown in priority sections
+    shown_files = set()
 
     # 1. Files with only 1-2 functions remaining
     lines.append("=" * 100)
     lines.append("PRIORITY 1: Files with 1-2 functions remaining")
     lines.append("=" * 100)
-    almost_done = [(k, v) for k, v in files.items() if 0 < v['remaining'] <= 2]
+    almost_done = [(k, v) for k, v in non_crt_files.items() if 0 < v['remaining'] <= 2]
     almost_done.sort(key=lambda x: x[1]['remaining'])
     for vfile, data in almost_done:
+        shown_files.add(vfile)
         lines.append("")
         lines.append("  %s (%d remaining of %d)" % (vfile, data['remaining'], data['total_count']))
         # List the remaining functions
@@ -1458,7 +1496,7 @@ def generate_easy_wins_list(functions, files, output_path):
     lines.append("PRIORITY 2: Small functions with 1 suspect (<50 lines)")
     lines.append("=" * 100)
     small_one_suspect = [
-        f for f in functions
+        f for f in non_crt_functions
         if f.get('complexity', {}).get('suspect_count', 0) == 1
         and f.get('complexity', {}).get('pseudocode_lines', 0) < 50
     ]
@@ -1474,22 +1512,21 @@ def generate_easy_wins_list(functions, files, output_path):
         funcs = by_type[stype]
         lines.append("")
         lines.append("  [%s] - %d functions" % (stype, len(funcs)))
-        for func in funcs[:10]:
+        for func in funcs:
             func_info = func.get('function', {})
             complexity = func.get('complexity', {})
-            name = func_info.get('name', 'unknown')[:55]
-            lines.append("    %-55s (%3d lines)" % (name, complexity.get('pseudocode_lines', 0)))
-        if len(funcs) > 10:
-            lines.append("    ... and %d more" % (len(funcs) - 10))
+            name = func_info.get('name', 'unknown')
+            lines.append("    %-70s (%3d lines)" % (name, complexity.get('pseudocode_lines', 0)))
     lines.append("")
 
     # 3. Files at 90%+ that could be completed
     lines.append("=" * 100)
     lines.append("PRIORITY 3: Files at 90%+ (finish them off!)")
     lines.append("=" * 100)
-    high_pct = [(k, v) for k, v in files.items() if 90 <= v['clean_percent'] < 100]
+    high_pct = [(k, v) for k, v in non_crt_files.items() if 90 <= v['clean_percent'] < 100]
     high_pct.sort(key=lambda x: -x[1]['clean_percent'])
     for vfile, data in high_pct:
+        shown_files.add(vfile)
         lines.append("")
         lines.append("  %s (%.1f%% complete)" % (vfile, data['clean_percent']))
         lines.append("    %d functions remaining:" % data['remaining'])
@@ -1498,8 +1535,24 @@ def generate_easy_wins_list(functions, files, output_path):
                 func_info = func.get('function', {})
                 complexity = func.get('complexity', {})
                 suspect_types = complexity.get('suspect_types', [])
-                lines.append("      %s (%d lines)" % (func_info.get('name', 'unknown')[:50], complexity.get('pseudocode_lines', 0)))
+                lines.append("      %s (%d lines)" % (func_info.get('name', 'unknown'), complexity.get('pseudocode_lines', 0)))
                 lines.append("        Types: %s" % suspect_types)
+    lines.append("")
+
+    # 4. All remaining files with incomplete functions
+    lines.append("=" * 100)
+    lines.append("ALL REMAINING FILES")
+    lines.append("=" * 100)
+    remaining = [
+        (k, v) for k, v in non_crt_files.items()
+        if k not in shown_files and v['remaining'] > 0
+    ]
+    remaining.sort(key=lambda x: -x[1]['clean_percent'])
+    for vfile, data in remaining:
+        lines.append("  %-60s %5.1f%%  (%d/%d clean, %d remaining)" % (
+            vfile, data['clean_percent'],
+            data['total_count'] - data['remaining'], data['total_count'],
+            data['remaining']))
 
     report_text = "\n".join(lines)
 

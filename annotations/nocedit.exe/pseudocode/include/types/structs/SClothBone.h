@@ -21,7 +21,7 @@ typedef struct SClothBone {
     float child_distance; // 0x44
     CMatrix3x4f world_matrix; // 0x48
     CMatrix3x3f local_matrix; // 0x78
-    char unk[4]; // 0x9c
+    char padding[4]; // 0x9c
     CVector3f position_offset; // 0xa0
 } SClothBone;
 

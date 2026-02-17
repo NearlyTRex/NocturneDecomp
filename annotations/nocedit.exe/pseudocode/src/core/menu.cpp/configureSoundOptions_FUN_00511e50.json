@@ -2,58 +2,58 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "incompatible_types",
-        "column": 17,
-        "line": 79,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
         "category": "other",
-        "column": 26,
-        "line": 133,
+        "column": 25,
+        "line": 119,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       },
       {
         "category": "other",
-        "column": 26,
-        "line": 137,
+        "column": 25,
+        "line": 123,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       },
       {
-        "category": "other",
-        "column": 42,
-        "line": 144,
-        "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
+        "category": "format_error",
+        "column": 31,
+        "line": 127,
+        "message": "format specifies type 'int' but the argument has type 'float' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 195,
+        "line": 177,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       },
       {
-        "category": "other",
-        "column": 42,
-        "line": 215,
-        "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
+        "category": "format_error",
+        "column": 31,
+        "line": 194,
+        "message": "format specifies type 'int' but the argument has type 'float' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 266,
+        "line": 245,
+        "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
+      },
+      {
+        "category": "format_error",
+        "column": 31,
+        "line": 262,
+        "message": "format specifies type 'int' but the argument has type 'float' [-Werror,-Wformat]"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 432,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       },
       {
         "category": "other",
-        "column": 65,
-        "line": 287,
-        "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
-      },
-      {
-        "category": "other",
-        "column": 45,
-        "line": 458,
-        "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
+        "column": 36,
+        "line": 532,
+        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       }
     ],
     "success": false,
@@ -61,18 +61,18 @@
   },
   "complexity": {
     "assembly_lines": 1482,
-    "complexity_score": 1030,
+    "complexity_score": 885,
     "cross_reference_count": 1,
     "function_call_count": 45,
     "global_count": 63,
-    "pseudocode_lines": 795,
-    "suspect_count": 22,
+    "pseudocode_lines": 750,
+    "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
-      "stack_param"
+      "unknown_field"
     ],
-    "total_lines": 2277
+    "total_lines": 2232
   },
   "cross_references": [
     {
@@ -1036,158 +1036,88 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_fffff5b4",
-      "text": "ulonglong in_stack_fffff5b4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 61,
-      "match": "in_stack_fffff5b4",
-      "text": "uVar22 = CONCAT44((int)((ulonglong)in_stack_fffff5b4 >> 0x20),g_CGamePtr);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
-      "match": "CONCAT44",
-      "text": "uVar22 = CONCAT44((int)((ulonglong)in_stack_fffff5b4 >> 0x20),g_CGamePtr);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
+      "description": "Complex pointer cast",
       "line": 72,
-      "match": "SUB84",
-      "text": "local_a38 = SUB84(dVar1,0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 86,
       "match": "(char *)((int)",
-      "text": "*(char *)((int)pacVar11 + 1) = cVar2;",
+      "text": "*(char *)((int)pacVar8 + 1) = cVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 132,
-      "match": "CONCAT44",
-      "text": "uVar22 = CONCAT44(uVar24,0x511fbd);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 136,
+      "line": 118,
       "match": "ROUND",
-      "text": "local_18 = (int)ROUND(dVar21);",
+      "text": "local_14 = (float)(int)ROUND(ROUND((fVar4 * 100.0f) / 0.25f +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 203,
-      "match": "CONCAT44",
-      "text": "uVar22 = CONCAT44(uVar24,0x5120c3);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 207,
+      "line": 118,
       "match": "ROUND",
-      "text": "local_18 = (int)ROUND(dVar21);",
+      "text": "local_14 = (float)(int)ROUND(ROUND((fVar4 * 100.0f) / 0.25f +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 255,
-      "match": "CONCAT44",
-      "text": "uStack_44 = (double)CONCAT44(iVar10 + 1,(float)uStack_44);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 274,
-      "match": "CONCAT44",
-      "text": "uVar22 = CONCAT44(uVar24,0x5121c7);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 278,
+      "line": 185,
       "match": "ROUND",
-      "text": "local_18 = (int)ROUND(dVar21);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 298,
-      "match": "(char *)((int)",
-      "text": "cVar2 = *(char *)((int)pDVar12 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 299,
-      "match": "(DWORD *)((int)",
-      "text": "pDVar12 = (DWORD *)((int)pDVar12 + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 543,
-      "match": "CONCAT44",
-      "text": "fVar20 = (float10)(double)CONCAT44(local_a38,uStack_a3c) *",
+      "text": "local_14 = (float)(int)ROUND(ROUND((fVar4 * 100.0f) / 1.0f +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 544,
-      "match": "CONCAT44",
-      "text": "(float10)(double)CONCAT44(local_a40,uStack_a44);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 547,
-      "match": "CONCAT44",
-      "text": "(iVar10,(float)(double)CONCAT44(local_a38,uStack_a3c),",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 554,
+      "line": 185,
       "match": "ROUND",
-      "text": "local_14 = (float)(int)ROUND(dVar21);",
+      "text": "local_14 = (float)(int)ROUND(ROUND((fVar4 * 100.0f) / 1.0f +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 556,
-      "match": "CONCAT44",
-      "text": "dVar21 = (double)CONCAT44(uVar24,height_half);",
+      "line": 253,
+      "match": "ROUND",
+      "text": "local_14 = (float)(int)ROUND(ROUND((fVar4 * 100.0f) / 0.25f +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 755,
-      "match": "CONCAT44",
-      "text": "uVar22 = CONCAT44(uVar24,&local_a20);",
+      "line": 253,
+      "match": "ROUND",
+      "text": "local_14 = (float)(int)ROUND(ROUND((fVar4 * 100.0f) / 0.25f +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 763,
+      "line": 515,
       "match": "CONCAT44",
-      "text": "uVar22 = CONCAT44(uVar7,&local_560);",
+      "text": "fVar16 = (float10)(double)CONCAT44(local_a40,uStack_a44) * (float10)dVar17;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 792,
+      "line": 518,
       "match": "CONCAT44",
-      "text": "uVar22 = CONCAT44(uVar24,1);",
+      "text": "(iVar7,(float)(double)CONCAT44(local_a40,uStack_a44),",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 520,
+      "match": "ROUND",
+      "text": "local_18 = (int)ROUND(ROUND((float)g_WindowHeight -",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 520,
+      "match": "ROUND",
+      "text": "local_18 = (int)ROUND(ROUND((float)g_WindowHeight -",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 525,
+      "match": "._4_4_",
+      "text": "local_a40 = uStack_4c._4_4_;",
+      "type": "unknown_field"
     }
   ]
 }

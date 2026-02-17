@@ -1,75 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 16,
-        "line": 42,
-        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 44,
-        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 46,
-        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 47,
-        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 48,
-        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 49,
-        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 21,
-        "line": 50,
-        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 51,
-        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 52,
-        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 133,
-    "complexity_score": 195,
+    "complexity_score": 100,
     "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 28,
     "pseudocode_lines": 60,
-    "suspect_count": 12,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
-      "unknown_field",
       "warning_unreachable"
     ],
     "total_lines": 193
@@ -123,56 +67,56 @@
     {
       "addr": "00682748",
       "name": "g_RedMask16",
-      "type": "ulonglong",
-      "value": "0xf800"
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "00682750",
       "name": "g_GreenMask16",
-      "type": "ulonglong",
-      "value": "0x7e0"
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "00682758",
       "name": "g_BlueMask16",
-      "type": "ulonglong",
-      "value": "0x1f"
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "00682760",
       "name": "g_RedMask32",
-      "type": "ulonglong",
-      "value": "0xf80000"
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "00682780",
       "name": "g_GreenMask32",
-      "type": "ulonglong",
-      "value": "0xfc00"
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "006827a0",
       "name": "g_BlueMask32",
-      "type": "ulonglong",
-      "value": "0xf8"
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "006827a8",
       "name": "g_TotalColorBits",
-      "type": "ulonglong",
-      "value": "0x8"
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "006827c8",
       "name": "g_GreenBlueBits",
-      "type": "ulonglong",
-      "value": "0x5"
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "006827e8",
       "name": "g_BlueBitShift",
-      "type": "ulonglong",
-      "value": "0x3"
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "02d01020",
@@ -195,7 +139,7 @@
     {
       "addr": "02d01f24",
       "name": "g_RedBitPosition",
-      "type": "int",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
@@ -207,13 +151,13 @@
     {
       "addr": "02d01f2c",
       "name": "g_RedBitCount",
-      "type": "int",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "02d01f30",
       "name": "g_GreenBitPosition",
-      "type": "int",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
@@ -225,13 +169,13 @@
     {
       "addr": "02d01f38",
       "name": "g_GreenBitCount",
-      "type": "int",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "02d01f3c",
       "name": "g_BlueBitPosition",
-      "type": "int",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
@@ -243,7 +187,7 @@
     {
       "addr": "02d01f44",
       "name": "g_BlueBitCount",
-      "type": "int",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
@@ -354,69 +298,6 @@
       "match": "(ushort *)((int)",
       "text": "*(ushort *)((int)g_ColorTable16 + iVar5) =",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 35,
-      "match": "._0_4_",
-      "text": "g_RedMask16._0_4_ = uVar4 << ((byte)g_RedBitPosition & 0x1f);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 37,
-      "match": "._0_4_",
-      "text": "g_GreenMask16._0_4_ = uVar7 << ((byte)g_GreenBitPosition & 0x1f);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 39,
-      "match": "._0_4_",
-      "text": "g_BlueMask16._0_4_ = uVar9 << ((byte)g_BlueBitPosition & 0x1f);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 40,
-      "match": "._0_4_",
-      "text": "g_RedMask32._0_4_ = (uVar4 << ((byte)g_RedBitCount & 0x1f)) << 0x10;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 41,
-      "match": "._0_4_",
-      "text": "g_GreenMask32._0_4_ = (uVar7 << ((byte)g_GreenBitCount & 0x1f)) << 8;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 42,
-      "match": "._0_4_",
-      "text": "g_BlueBitShift._0_4_ = g_BlueBitCount;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 43,
-      "match": "._0_4_",
-      "text": "g_TotalColorBits._0_4_ = g_RedBitCount + g_GreenBitCount + g_BlueBitCount;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 44,
-      "match": "._0_4_",
-      "text": "g_BlueMask32._0_4_ = uVar9 << ((byte)g_BlueBitCount & 0x1f);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 45,
-      "match": "._0_4_",
-      "text": "g_GreenBlueBits._0_4_ = g_GreenBitCount + g_BlueBitCount;",
-      "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",

@@ -16,14 +16,12 @@ void __cdecl core_mobster_cpp_CMobster_processDamage_FUN_00527740(CMobster *this
   CTommyGun *pCVar2;
   int iVar2;
   SMotion *pSVar3;
-  uint uVar4;
   
-  sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk2 + 0xc));
-  sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk2 + 4));
-  core_mobster_cpp_CMobster_FUN_00527380(this_ptr);
-  if (((this_ptr->base).base.model.part_data.visibility_flags[*(int *)(this_ptr->unk2 + 0x14)] == 0)
-     && ((this_ptr->base).base.model.part_data.visibility_flags[*(int *)(this_ptr->unk2 + 0x1c)] ==
-         0)) {
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handle_2);
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handle_1);
+  core_mobster_cpp_CMobster_FUN_00527380(this_ptr,damage_info);
+  if (((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_l4arm] == 0) &&
+     ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_r4arm] == 0)) {
     damage_info->damage_amount = 9999.9;
   }
   fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
@@ -38,15 +36,12 @@ void __cdecl core_mobster_cpp_CMobster_processDamage_FUN_00527740(CMobster *this
                 (&this_ptr_00->motion_controller,4,1);
       (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
                 ((CCharacter *)this_ptr,1,(CVector3f *)0x0);
-      if (*(int *)(this_ptr->unk2 + 8) == 0) {
-        sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)this_ptr->unk2);
-        uVar4 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
+      if (this_ptr->unk2 == 0) {
+        sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->unk1);
+        iVar2 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                           ((CDemonActor *)this_ptr,"mobster-die-?.wav");
-        this_ptr->unk2[8] = '\x01';
-        this_ptr->unk2[9] = '\0';
-        this_ptr->unk2[10] = '\0';
-        this_ptr->unk2[0xb] = '\0';
-        *(uint *)this_ptr->unk2 = uVar4;
+        this_ptr->unk2 = 1;
+        this_ptr->unk1 = iVar2;
         core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(&this_ptr->base,damage_info);
         return;
       }
@@ -65,11 +60,11 @@ LAB_005277e1:
     iVar2 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
     if (iVar2 != 0) goto LAB_005277e1;
   }
-  iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)this_ptr->unk2);
+  iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->unk1);
   if (iVar2 == 0) {
-    uVar4 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
+    iVar2 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                       ((CDemonActor *)this_ptr,"mobster-hit-?.wav");
-    *(uint *)this_ptr->unk2 = uVar4;
+    this_ptr->unk1 = iVar2;
     core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(&this_ptr->base,damage_info);
     return;
   }

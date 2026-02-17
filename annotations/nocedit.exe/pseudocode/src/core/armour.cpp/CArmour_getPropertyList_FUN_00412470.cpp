@@ -17,6 +17,6 @@ void __cdecl core_armour_cpp_CArmour_getPropertyList_FUN_00412470(CArmour *this_
             (property_list,"Model",data_ptr,0);
   core_actor_cpp_CActorPropertyList_addMotion_FUN_0040e4d0(property_list,"State",data_ptr);
   core_actor_cpp_CActorPropertyList_addEvent_FUN_0040e460
-            (property_list,"Fall event",this_ptr->unk);
+            (property_list,"Fall event",this_ptr->fall_apart_event);
   return;
 }

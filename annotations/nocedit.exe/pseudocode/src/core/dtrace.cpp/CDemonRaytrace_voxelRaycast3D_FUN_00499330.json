@@ -6,17 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 429,
-    "complexity_score": 306,
+    "complexity_score": 421,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 3,
-    "pseudocode_lines": 116,
-    "suspect_count": 18,
+    "pseudocode_lines": 136,
+    "suspect_count": 28,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "warning_unreachable"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 545
+    "total_lines": 565
   },
   "cross_references": [
     {
@@ -370,129 +369,199 @@
   },
   "suspects": [
     {
-      "description": "Unreachable code block removed",
-      "line": 2,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x00499729) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 3,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x0049946d) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 4,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x004994c8) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 5,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x00499701) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 6,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x004994ec) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 7,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x00499501) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 8,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x00499525) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 9,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x0049953a) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 10,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x00499751) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 11,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x0049955e) */",
-      "type": "warning_unreachable"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 74,
+      "line": 47,
       "match": "ROUND",
-      "text": "if ((((float)(int)ROUND(dVar22) == fVar10 - fVar11) &&",
+      "text": "iVar13 = (int)ROUND(ROUND((end_position->x - (this_ptr->bbox_min).x) * fVar5));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 75,
+      "line": 47,
       "match": "ROUND",
-      "text": "((float)(int)ROUND(dVar23) == fVar7 - fVar8)) &&",
+      "text": "iVar13 = (int)ROUND(ROUND((end_position->x - (this_ptr->bbox_min).x) * fVar5));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 77,
+      "line": 48,
       "match": "ROUND",
-      "text": "(int)ROUND(dVar24) == (int)ROUND(dVar19))) {",
+      "text": "iVar14 = (int)ROUND(ROUND(fVar10 * (end_position->y - (this_ptr->bbox_min).y)));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 77,
+      "line": 48,
       "match": "ROUND",
-      "text": "(int)ROUND(dVar24) == (int)ROUND(dVar19))) {",
+      "text": "iVar14 = (int)ROUND(ROUND(fVar10 * (end_position->y - (this_ptr->bbox_min).y)));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 98,
+      "line": 49,
       "match": "ROUND",
-      "text": "fVar17 = (float)((int)local_4c - (int)ROUND(dVar21));",
+      "text": "iVar15 = (int)ROUND(ROUND((end_position->z - (this_ptr->bbox_min).z) * fVar9));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 103,
+      "line": 49,
       "match": "ROUND",
-      "text": "local_60 = (float)((int)local_60 + (int)ROUND(dVar19));",
+      "text": "iVar15 = (int)ROUND(ROUND((end_position->z - (this_ptr->bbox_min).z) * fVar9));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 111,
+      "line": 50,
       "match": "ROUND",
-      "text": "local_5c = (float)((int)local_5c + (int)ROUND(dVar20));",
+      "text": "local_30 = (int)ROUND(ROUND(fVar6));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 112,
+      "line": 50,
       "match": "ROUND",
-      "text": "local_58 = (float)((int)local_58 - (int)ROUND(dVar21));",
+      "text": "local_30 = (int)ROUND(ROUND(fVar6));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 51,
+      "match": "ROUND",
+      "text": "local_2c = (int)ROUND(ROUND(fVar7));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 51,
+      "match": "ROUND",
+      "text": "local_2c = (int)ROUND(ROUND(fVar7));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 52,
+      "match": "ROUND",
+      "text": "iVar1 = (int)ROUND(ROUND(fVar8));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 52,
+      "match": "ROUND",
+      "text": "iVar1 = (int)ROUND(ROUND(fVar8));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 55,
+      "match": "SQRT",
+      "text": "fVar5 = SQRT(fVar4 * fVar4 + fVar2 * fVar2 + fVar3 * fVar3);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 60,
+      "match": "ROUND",
+      "text": "local_34 = (int)ROUND(ROUND(ABS(fVar2) * fVar5));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 60,
+      "match": "ROUND",
+      "text": "local_34 = (int)ROUND(ROUND(ABS(fVar2) * fVar5));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 60,
+      "match": "ABS",
+      "text": "local_34 = (int)ROUND(ROUND(ABS(fVar2) * fVar5));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 61,
+      "match": "ROUND",
+      "text": "local_38 = (int)ROUND(ROUND(ABS(fVar3) * fVar5));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 61,
+      "match": "ROUND",
+      "text": "local_38 = (int)ROUND(ROUND(ABS(fVar3) * fVar5));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 61,
+      "match": "ABS",
+      "text": "local_38 = (int)ROUND(ROUND(ABS(fVar3) * fVar5));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 62,
+      "match": "ROUND",
+      "text": "local_3c = (int)ROUND(ROUND(ABS(fVar4) * fVar5));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 62,
+      "match": "ROUND",
+      "text": "local_3c = (int)ROUND(ROUND(ABS(fVar4) * fVar5));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 62,
+      "match": "ABS",
+      "text": "local_3c = (int)ROUND(ROUND(ABS(fVar4) * fVar5));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 94,
+      "match": "ROUND",
+      "text": "local_28 = (int)ROUND(ROUND((float)local_38 * fVar6 - (float)local_34 * fVar7));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 94,
+      "match": "ROUND",
+      "text": "local_28 = (int)ROUND(ROUND((float)local_38 * fVar6 - (float)local_34 * fVar7));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 95,
+      "match": "ROUND",
+      "text": "iVar11 = (int)ROUND(ROUND((float)local_38 * fVar8 - (float)local_3c * fVar7));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 95,
+      "match": "ROUND",
+      "text": "iVar11 = (int)ROUND(ROUND((float)local_38 * fVar8 - (float)local_3c * fVar7));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 96,
+      "match": "ROUND",
+      "text": "iVar12 = (int)ROUND(ROUND((float)local_3c * fVar6 - (float)local_34 * fVar8));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 96,
+      "match": "ROUND",
+      "text": "iVar12 = (int)ROUND(ROUND((float)local_3c * fVar6 - (float)local_34 * fVar8));",
       "type": "decompiler_intrinsic"
     }
   ]

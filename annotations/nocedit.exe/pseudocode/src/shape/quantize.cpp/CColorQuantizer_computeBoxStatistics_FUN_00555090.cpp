@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl shape_quantize_cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090(CColorQuantizer *this_ptr,int box_index)
 
 {
@@ -24,46 +26,52 @@ void __cdecl shape_quantize_cpp_CColorQuantizer_computeBoxStatistics_FUN_0055509
   uint uVar13;
   int iVar14;
   byte *pbVar15;
-  double dVar16;
-  float local_58;
-  float local_50;
+  float local_48;
   float local_44;
+  float local_40;
   float local_3c;
+  float local_38;
   float local_34;
+  float local_30;
+  float local_2c;
   
   local_44 = 0.0;
+  local_30 = 0.0;
   local_3c = 0.0;
   iVar14 = this_ptr->boxes[box_index].start_index;
   iVar11 = this_ptr->boxes[box_index].start_index + this_ptr->boxes[box_index].pixel_count;
+  local_38 = 0.0;
   if (iVar14 < iVar11) {
+    local_38 = 0.0;
     local_3c = 0.0;
     local_44 = 0.0;
     pbVar15 = (byte *)(iVar14 * 4 + (int)this_ptr->pixel_data);
     do {
       iVar14 = iVar14 + 1;
       local_44 = (float)*pbVar15 + local_44;
+      local_30 = (float)pbVar15[1] + local_30;
       local_3c = (float)pbVar15[2] + local_3c;
+      local_38 = (float)pbVar15[3] + local_38;
       pbVar15 = pbVar15 + 4;
     } while (iVar14 < iVar11);
   }
-  dVar16 = round
-                     ((double)(local_44 / (float)(uint)this_ptr->boxes[box_index].pixel_count));
-  this_ptr->boxes[box_index].avg_red = (short)(int)ROUND(dVar16);
-  local_58 = 0.0;
-  dVar16 = round
-                     ((double)(local_34 / (float)(uint)this_ptr->boxes[box_index].pixel_count));
-  this_ptr->boxes[box_index].avg_green = (short)(int)ROUND(dVar16);
-  dVar16 = round
-                     ((double)(local_44 / (float)(uint)this_ptr->boxes[box_index].pixel_count));
-  this_ptr->boxes[box_index].avg_blue = (short)(int)ROUND(dVar16);
+  this_ptr->boxes[box_index].avg_red =
+       (short)(int)ROUND(ROUND(local_44 / (float)(uint)this_ptr->boxes[box_index].pixel_count));
+  this_ptr->boxes[box_index].avg_green =
+       (short)(int)ROUND(ROUND(local_30 / (float)(uint)this_ptr->boxes[box_index].pixel_count));
+  this_ptr->boxes[box_index].avg_blue =
+       (short)(int)ROUND(ROUND(local_3c / (float)(uint)this_ptr->boxes[box_index].pixel_count));
   uVar12 = this_ptr->boxes[box_index].pixel_count;
   this_ptr->boxes[box_index].red_variance = 0.0;
+  local_48 = 0.0;
   this_ptr->boxes[box_index].green_variance = 0.0;
+  local_34 = 0.0;
   this_ptr->boxes[box_index].blue_variance = 0.0;
+  local_40 = 0.0;
   this_ptr->boxes[box_index].intensity_variance = 0.0;
+  local_2c = 0.0;
   this_ptr->boxes[box_index].weighted_variance = 0.0;
-  dVar16 = round((double)(local_44 / (float)uVar12));
-  this_ptr->boxes[box_index].avg_intensity = (short)(int)ROUND(dVar16);
+  this_ptr->boxes[box_index].avg_intensity = (short)(int)ROUND(ROUND(local_38 / (float)uVar12));
   for (iVar14 = this_ptr->boxes[box_index].start_index * 4; iVar14 < iVar11 * 4; iVar14 = iVar14 + 4
       ) {
     uVar12 = (*(int *)((int)&this_ptr->boxes[box_index + -1].pixel_count + 2) >> 0x10) -
@@ -92,10 +100,10 @@ void __cdecl shape_quantize_cpp_CColorQuantizer_computeBoxStatistics_FUN_0055509
     this_ptr->boxes[box_index].green_variance = fVar10 + fVar7;
     this_ptr->boxes[box_index].blue_variance = fVar1 + fVar8;
     this_ptr->boxes[box_index].intensity_variance = fVar2 + fVar9;
-    local_58 = core_bugs_cpp_FUN_00427ba0();
-    local_44 = core_bugs_cpp_FUN_00427ba0();
-    local_50 = core_bugs_cpp_FUN_00427ba0();
-    local_3c = core_bugs_cpp_FUN_00427ba0();
+    local_48 = core_bugs_cpp_FUN_00427ba0();
+    local_34 = core_bugs_cpp_FUN_00427ba0();
+    local_40 = core_bugs_cpp_FUN_00427ba0();
+    local_2c = core_bugs_cpp_FUN_00427ba0();
     this_ptr->boxes[box_index].weighted_variance =
          fVar9 * fVar9 * (float)0.69999999999999996 +
          fVar8 * fVar8 * (float)0.11 +
@@ -109,10 +117,10 @@ void __cdecl shape_quantize_cpp_CColorQuantizer_computeBoxStatistics_FUN_0055509
   fVar2 = this_ptr->boxes[box_index].intensity_variance;
   fVar8 = (float)0.69999999999999996;
   this_ptr->boxes[box_index].red_variance =
-       this_ptr->boxes[box_index].red_variance * (float)0.33000000000000002 * local_58;
-  this_ptr->boxes[box_index].green_variance = fVar10 * fVar6 * local_44;
-  this_ptr->boxes[box_index].blue_variance = fVar1 * fVar7 * local_50;
-  this_ptr->boxes[box_index].intensity_variance = fVar2 * fVar8 * local_3c;
+       this_ptr->boxes[box_index].red_variance * (float)0.33000000000000002 * local_48;
+  this_ptr->boxes[box_index].green_variance = fVar10 * fVar6 * local_34;
+  this_ptr->boxes[box_index].blue_variance = fVar1 * fVar7 * local_40;
+  this_ptr->boxes[box_index].intensity_variance = fVar2 * fVar8 * local_2c;
   fVar10 = core_bugs_cpp_FUN_00427ba0();
   this_ptr->boxes[box_index].final_metric = fVar10;
   fVar10 = core_bugs_cpp_FUN_00427ba0();

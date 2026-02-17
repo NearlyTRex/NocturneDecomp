@@ -13,7 +13,7 @@
 ;   core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0 at 00473995
 ;
 ; Referenced Globals:
-;   _BIT_INTEGER g_CameraDownscaleIterations
+;   _BIT_INTEGER32 g_CameraDownscaleIterations
 ;   int[240] g_CoronaLeftExtent
 ;   int[240] g_CoronaRightExtent
 ;   int[240][320] g_CoronaDepthBuffer

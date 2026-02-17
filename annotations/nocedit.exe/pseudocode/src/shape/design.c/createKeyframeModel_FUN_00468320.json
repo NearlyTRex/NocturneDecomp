@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 286,
-    "complexity_score": 173,
+    "complexity_score": 181,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 14,
-    "pseudocode_lines": 118,
-    "suspect_count": 4,
+    "pseudocode_lines": 116,
+    "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param",
       "warning_type_propagation"
     ],
-    "total_lines": 404
+    "total_lines": 402
   },
   "cross_references": [
     {
@@ -347,7 +347,7 @@
   "suspects": [
     {
       "description": "Type propagation did not converge",
-      "line": 2,
+      "line": 3,
       "match": "WARNING: Type propagation algorithm not settling",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
@@ -368,9 +368,16 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 98,
+      "line": 96,
       "match": "ROUND",
-      "text": "local_264.cycle_length = (int)ROUND(dVar8);",
+      "text": "local_264.cycle_length = (int)ROUND(ROUND(local_14 * (float)65536));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 96,
+      "match": "ROUND",
+      "text": "local_264.cycle_length = (int)ROUND(ROUND(local_14 * (float)65536));",
       "type": "decompiler_intrinsic"
     }
   ]

@@ -5,18 +5,17 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 517,
-    "complexity_score": 299,
+    "assembly_lines": 518,
+    "complexity_score": 304,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 37,
     "pseudocode_lines": 239,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "extra_output"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 756
+    "total_lines": 757
   },
   "cross_references": [],
   "function": {
@@ -290,14 +289,15 @@
     "estimated_params": 3
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 8.73558648111332,
-    "instruction_count": 503,
+    "avg_pcode_per_instr": 8.720792079207921,
+    "instruction_count": 505,
     "opcode_distribution": {
       "BOOL_AND": 1,
       "BOOL_NEGATE": 306,
-      "CALL": 11,
+      "CALL": 10,
+      "CALLOTHER": 1,
       "CBRANCH": 1,
-      "COPY": 570,
+      "COPY": 582,
       "FLOAT2FLOAT": 2,
       "FLOAT_MULT": 4,
       "FLOAT_NEG": 1,
@@ -317,17 +317,17 @@
       "INT_SCARRY": 44,
       "INT_SEXT": 183,
       "INT_SLESS": 232,
-      "INT_SUB": 146,
+      "INT_SUB": 145,
       "INT_XOR": 61,
       "LOAD": 118,
       "POPCOUNT": 110,
       "RETURN": 2,
       "ROUND": 2,
-      "STORE": 69,
+      "STORE": 68,
       "SUBPIECE": 122,
       "TRUNC": 2
     },
-    "pcode_op_count": 4394
+    "pcode_op_count": 4404
   },
   "stack_frame": {
     "frame_size": 96,
@@ -459,38 +459,45 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 24,
-      "match": "extraout_ST1",
-      "text": "float10 extraout_ST1;",
-      "type": "extra_output"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 48,
+      "match": "fpatan",
+      "text": "fVar20 = (float10)fpatan((float10)rotation_x,(float10)rotation_z);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 49,
+      "match": "fpatan",
+      "text": "fVar19 = (float10)fpatan((float10)rotation_y,(float10)rotation_z);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 50,
+      "match": "ROUND",
+      "text": "iVar6 = (int)ROUND(ROUND(-fVar19 * (float10)0.31830988619288902 * (float10)32768))",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 50,
+      "match": "ROUND",
+      "text": "iVar6 = (int)ROUND(ROUND(-fVar19 * (float10)0.31830988619288902 * (float10)32768))",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 52,
-      "match": "extraout_ST1",
-      "text": "dVar20 = round((double)(extraout_ST1 * fVar17 * fVar18));",
-      "type": "extra_output"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 53,
       "match": "ROUND",
-      "text": "iVar2 = engine_matrix_c_interpolatedSin_FUN_0050c5c0((int)ROUND(dVar19));",
+      "text": "iVar10 = (int)ROUND(ROUND(fVar20 * (float10)0.31830988619288902 * (float10)32768))",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 57,
+      "line": 52,
       "match": "ROUND",
-      "text": "iVar6 = engine_matrix_c_interpolatedSin_FUN_0050c5c0((int)ROUND(dVar20));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 58,
-      "match": "ROUND",
-      "text": "iVar7 = engine_matrix_c_interpolatedCos_FUN_0050c600((int)ROUND(dVar20));",
+      "text": "iVar10 = (int)ROUND(ROUND(fVar20 * (float10)0.31830988619288902 * (float10)32768))",
       "type": "decompiler_intrinsic"
     }
   ]

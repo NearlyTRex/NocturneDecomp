@@ -24,9 +24,9 @@
 ;   int g_BitsPerPixel = 0x8
 ;   undefined4 g_LightmapTexturePalette[64]
 ;   int g_BackgroundSceneDepth
-;   int g_RedBitPosition
-;   int g_GreenBitPosition
-;   int g_BlueBitPosition
+;   _BIT_INTEGER32 g_RedBitPosition
+;   _BIT_INTEGER32 g_GreenBitPosition
+;   _BIT_INTEGER32 g_BlueBitPosition
 ;   float g_PerspectiveReciprocal
 ;   ulong g_SolidColorMode
 ;

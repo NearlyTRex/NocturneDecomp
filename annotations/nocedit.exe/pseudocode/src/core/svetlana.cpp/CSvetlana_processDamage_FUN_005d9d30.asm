@@ -19,7 +19,7 @@
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0
-;   core_gore.cpp_CGore_FUN_004ee030
+;   core_gore.cpp_CGore_spawnFliesOnActor_FUN_004ee030
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
@@ -137,8 +137,8 @@ section .text
     PUSH EBX                            ; 005d9e47
     MOV EDX,dword ptr [0x0067b9a0]      ; 005d9e48 | g_CGoreInstance | g_CGorePtr
     PUSH EDX                            ; 005d9e4e | g_CGoreInstance
-    CALL core_gore.cpp_CGore_FUN_004ee030 ; 005d9e4f
-        ;   XREF to: 004ee030 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004ee030(CGore * this_ptr, CDemonActor * actor)
+    CALL core_gore.cpp_CGore_spawnFliesOnActor_FUN_004ee030 ; 005d9e4f
+        ;   XREF to: 004ee030 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnFliesOnActor_FUN_004ee030(CGore * this_ptr, CDemonActor * actor, int gather_count, float spawn_rate, ...)
     ADD ESP,0x14                        ; 005d9e54
     MOV ECX,dword ptr [EBX + 0x9f8bc]   ; 005d9e57
     PUSH ECX                            ; 005d9e5d

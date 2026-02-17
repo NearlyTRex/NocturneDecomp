@@ -103,8 +103,9 @@ section .text
         ;   XREF to: 006013b1 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_006013b1(float10 y, float10 x)
     FLD ST1                             ; 0050dbfb
     FILD dword ptr [ESP + 0x58]         ; 0050dbfd
-    CALL crt_math.c_atan2_FUN_006013b1  ; 0050dc01
-        ;   XREF to: 006013b1 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_006013b1(float10 y, float10 x)
+    FXCH                                ; 0050dc01
+    FPATAN                              ; 0050dc03
+    NOP                                 ; 0050dc05
     FSTP ST2                            ; 0050dc06
     FXCH                                ; 0050dc08
     FCHS                                ; 0050dc0a

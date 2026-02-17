@@ -6,17 +6,18 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr)
 
 {
   float fVar1;
-  char *pcVar2;
+  char (*pacVar2) [256];
   int iVar3;
   int iVar4;
   int iVar5;
   CBitFont *this_ptr_00;
   char **text;
-  double dVar6;
   char local_164 [256];
   int local_64;
   int local_60;
@@ -26,15 +27,16 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr)
   int local_50;
   int local_4c;
   int local_48;
-  CBitFont *local_44;
+  int local_44;
   CBitFont *local_40;
   int local_3c;
   CBitFont *local_38;
   int local_34;
   int local_30;
+  int local_2c;
   int local_28;
   int local_24;
-  char *local_20;
+  int local_20;
   char (*local_1c) [256];
   CGame *local_18;
   int local_14;
@@ -47,10 +49,8 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr)
       iVar3 = 0xffff;
     }
     else {
-      iVar3 = 0x4d8422;
-      dVar6 = round
-                        ((double)this_ptr->message_timer * 65535);
-      local_18 = (CGame *)(int)ROUND(dVar6);
+      iVar3 = (int)ROUND(ROUND((double)this_ptr->message_timer * 65535));
+      local_14 = iVar3;
     }
     engine_3d_c_setRenderAlpha_FUN_00406d80(iVar3);
     local_38 = g_ThemeFont;
@@ -101,7 +101,7 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr)
   if ((this_ptr->letterbox_mode == 0) && (0 < this_ptr->status_display_count)) {
     iVar4 = local_60 >> 0x1f;
     iVar3 = local_60 + iVar4 * -4;
-    local_44 = (CBitFont *)(local_5c / 0x28);
+    local_44 = local_5c / 0x28;
     local_40 = g_SmallEditorFont;
     if (0x280 < g_WindowWidth) {
       local_40 = g_TinyFont;
@@ -110,20 +110,20 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr)
       local_40 = g_MediumFont;
     }
     iVar5 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(local_40,0x58);
-    if ((int)local_44 < iVar5) {
-      local_44 = (CBitFont *)engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(local_40,0x58);
+    if (local_44 < iVar5) {
+      local_44 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(local_40,0x58);
     }
     local_3c = local_60 / 0x50;
     local_58 = local_3c + ((int)(iVar3 - (uint)(iVar4 << 1 < 0)) >> 2);
     iVar3 = local_64 - local_5c / 0x50;
-    local_20 = (char *)0x0;
+    local_20 = 0;
     if (0 < this_ptr->status_display_count) {
       local_1c = this_ptr->status_bar_names;
-      local_50 = ((int)local_44 * 3) / 2;
+      local_50 = (local_44 * 3) / 2;
       local_18 = this_ptr;
       do {
         iVar4 = local_3c;
-        local_34 = iVar3 - (int)local_44;
+        local_34 = iVar3 - local_44;
         local_28 = local_58;
         iVar5 = 2;
         fVar1 = local_18->status_bar_values[0];
@@ -137,19 +137,17 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr)
         local_24 = iVar3;
         engine_2d_c_fillRectWithBorder_FUN_00403200(local_3c,local_34,local_58,iVar3,0,0);
         local_14 = (local_28 - iVar4) + 1;
-        dVar6 = round((double)((float)local_14 * fVar1));
-        local_30 = (int)ROUND(dVar6);
-        if (0 < local_30) {
-          engine_2d_c_fillRectColor_FUN_00403170
-                    (iVar4,(int)local_38,local_30 + iVar4,local_28,iVar5);
+        local_2c = (int)ROUND(ROUND((float)local_14 * fVar1));
+        if (0 < local_2c) {
+          engine_2d_c_fillRectColor_FUN_00403170(iVar4,local_34,local_2c + iVar4,local_24,iVar5);
         }
-        pcVar2 = local_20;
-        engine_font_cpp_CBitFont_drawText_FUN_004cda80
-                  (local_44,local_20,(int)local_40,local_34,0xf8,0);
-        local_20 = pcVar2 + 0x100;
-        local_1c = (char (*) [256])(*local_1c + 4);
-        iVar3 = iVar3 - local_54;
-      } while (local_24 + 1 < this_ptr->status_display_count);
+        pacVar2 = local_1c;
+        engine_font_cpp_CBitFont_drawText_FUN_004cda80(local_40,*local_1c,local_3c,local_30,0xf8,0);
+        local_1c = pacVar2 + 1;
+        local_18 = (CGame *)&local_18->game_pixy;
+        iVar3 = iVar3 - local_50;
+        local_20 = local_20 + 1;
+      } while (local_20 < this_ptr->status_display_count);
     }
   }
   return;

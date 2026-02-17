@@ -17,7 +17,7 @@ void __cdecl core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0(CCharacter
     body_part = core_bodypart_cpp_createBodyPart_FUN_00418e10();
     core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
               (this_ptr,body_part,part_index,in_stack_00000010);
-    core_bodypart_cpp_CBodyPart_FUN_0041a050(body_part);
+    core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_0041a050(body_part);
     return;
   }
   return;

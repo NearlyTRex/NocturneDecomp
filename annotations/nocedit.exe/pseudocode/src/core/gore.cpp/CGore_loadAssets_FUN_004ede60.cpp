@@ -13,36 +13,36 @@ void __cdecl core_gore_cpp_CGore_loadAssets_FUN_004ede60(CGore *this_ptr)
   SMRGLTextureBasic *pSVar2;
   int iVar3;
   
-  pSVar1 = SMRGLTextureBasic_ARRAY_0067b9c8;
+  pSVar1 = g_BloodSplatTextures;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-            (g_CDemonRendererPtr2,&SMRGLTextureBasic_0067b9b0);
+            (g_CDemonRendererPtr2,&g_BloodParticleTexture);
   do {
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,pSVar1);
     pSVar1 = pSVar1 + 1;
-  } while (pSVar1 != &SMRGLTextureBasic_0067ba28);
+  } while (pSVar1 != g_BloodSplatAnimTextures);
   iVar3 = 0;
-  pSVar1 = SMRGLTextureBasic_ARRAY_0067bba8;
+  pSVar1 = g_BloodSplatAnimTextures;
   do {
-    pSVar2 = &SMRGLTextureBasic_0067ba28 + iVar3 * 0x10;
+    pSVar1 = pSVar1 + 0x10;
+    pSVar2 = g_BloodSplatAnimTextures + iVar3 * 0x10;
     do {
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,pSVar2);
       pSVar2 = pSVar2 + 1;
     } while (pSVar2 != pSVar1);
     iVar3 = iVar3 + 1;
-    pSVar1 = pSVar1 + 0x10;
   } while (iVar3 < 4);
   iVar3 = 0;
-  pSVar1 = SMRGLTextureBasic_ARRAY_0067c2e0;
+  pSVar1 = g_BloodPoolAnimTextures;
   do {
-    pSVar2 = &SMRGLTextureBasic_0067c028 + iVar3 * 0x1d;
+    pSVar1 = pSVar1 + 0x1d;
+    pSVar2 = g_BloodPoolAnimTextures + iVar3 * 0x1d;
     do {
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,pSVar2);
       pSVar2 = pSVar2 + 1;
     } while (pSVar2 != pSVar1);
     iVar3 = iVar3 + 1;
-    pSVar1 = pSVar1 + 0x1d;
   } while (iVar3 < 4);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-            (g_CDemonRendererPtr2,&SMRGLTextureBasic_0067cb28);
+            (g_CDemonRendererPtr2,&g_FootstepTexture);
   return;
 }

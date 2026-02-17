@@ -6,17 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 1782,
-    "complexity_score": 770,
+    "complexity_score": 765,
     "cross_reference_count": 4,
     "function_call_count": 3,
     "global_count": 27,
-    "pseudocode_lines": 550,
-    "suspect_count": 21,
+    "pseudocode_lines": 560,
+    "suspect_count": 20,
     "suspect_types": [
-      "pointer_cast",
-      "undefined_data"
+      "pointer_cast"
     ],
-    "total_lines": 2332
+    "total_lines": 2342
   },
   "cross_references": [
     {
@@ -89,20 +88,20 @@
     {
       "addr": "00682748",
       "name": "g_RedMask16",
-      "type": "ulonglong",
-      "value": "0xf800"
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "00682750",
       "name": "g_GreenMask16",
-      "type": "ulonglong",
-      "value": "0x7e0"
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "00682758",
       "name": "g_BlueMask16",
-      "type": "ulonglong",
-      "value": "0x1f"
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "02cf6a9c",
@@ -131,7 +130,7 @@
     {
       "addr": "02d01f24",
       "name": "g_RedBitPosition",
-      "type": "int",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
@@ -143,13 +142,13 @@
     {
       "addr": "02d01f2c",
       "name": "g_RedBitCount",
-      "type": "int",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "02d01f30",
       "name": "g_GreenBitPosition",
-      "type": "int",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
@@ -161,13 +160,13 @@
     {
       "addr": "02d01f38",
       "name": "g_GreenBitCount",
-      "type": "int",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "02d01f3c",
       "name": "g_BlueBitPosition",
-      "type": "int",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
@@ -179,7 +178,7 @@
     {
       "addr": "02d01f44",
       "name": "g_BlueBitCount",
-      "type": "int",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
@@ -214,8 +213,8 @@
     },
     {
       "addr": "02d7b410",
-      "name": "DAT_02d7b410",
-      "type": "undefined1",
+      "name": "g_ShadowColor8",
+      "type": "uchar",
       "value": null
     },
     {
@@ -681,149 +680,142 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 89,
+      "line": 90,
       "match": "(int *)((int)",
-      "text": "pbVar3 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar13) + x);",
+      "text": "pbVar3 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar14) + x);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 108,
+      "line": 109,
       "match": "(int *)((int)",
-      "text": "puVar8 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar13) + x);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 111,
-      "match": "DAT_02d7b410",
-      "text": "*puVar8 = DAT_02d7b410;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 127,
-      "match": "(int *)((int)",
-      "text": "puVar8 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar13) + x);",
+      "text": "puVar8 = (uchar *)(*(int *)((int)g_ScreenBufferArray + iVar14) + x);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 146,
+      "line": 128,
       "match": "(int *)((int)",
-      "text": "puVar8 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar13) + x);",
+      "text": "puVar9 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar14) + x);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 169,
+      "line": 147,
       "match": "(int *)((int)",
-      "text": "puVar5 = (ushort *)(*(int *)((int)g_ScreenBufferArray + iVar13) + x * 2);",
+      "text": "puVar9 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar14) + x);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 188,
+      "line": 170,
       "match": "(int *)((int)",
-      "text": "puVar12 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_28) + x * 2);",
+      "text": "puVar5 = (ushort *)(*(int *)((int)g_ScreenBufferArray + iVar14) + x * 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 235,
+      "line": 189,
       "match": "(int *)((int)",
-      "text": "puVar12 = (ushort *)(*(int *)((int)g_ScreenBufferArray + iVar13) + x * 2);",
+      "text": "puVar13 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_28) + x * 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 254,
+      "line": 240,
       "match": "(int *)((int)",
-      "text": "puVar12 = (ushort *)(x * 2 + *(int *)((int)g_ScreenBufferArray + local_2c));",
+      "text": "puVar13 = (ushort *)(*(int *)((int)g_ScreenBufferArray + iVar14) + x * 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 301,
+      "line": 259,
       "match": "(int *)((int)",
-      "text": "puVar5 = (ushort *)(x * 2 + *(int *)((int)g_ScreenBufferArray + iVar13));",
+      "text": "puVar13 = (ushort *)(x * 2 + *(int *)((int)g_ScreenBufferArray + local_2c));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 320,
+      "line": 308,
       "match": "(int *)((int)",
-      "text": "puVar12 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_30) + x * 2);",
+      "text": "puVar5 = (ushort *)(x * 2 + *(int *)((int)g_ScreenBufferArray + iVar14));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 366,
+      "line": 327,
       "match": "(int *)((int)",
-      "text": "puVar12 = (ushort *)(x * 2 + *(int *)((int)g_ScreenBufferArray + iVar13));",
+      "text": "puVar13 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_30) + x * 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 383,
+      "line": 374,
       "match": "(int *)((int)",
-      "text": "puVar12 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_34) + x * 2);",
+      "text": "puVar13 = (ushort *)(x * 2 + *(int *)((int)g_ScreenBufferArray + iVar14));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 431,
+      "line": 391,
       "match": "(int *)((int)",
-      "text": "puVar11 = (uint *)(*(int *)((int)g_ScreenBufferArray + iVar13) + x * 4);",
+      "text": "puVar13 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_34) + x * 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 448,
+      "line": 441,
       "match": "(int *)((int)",
-      "text": "((uint *)(*(int *)((int)g_ScreenBufferArray + iVar13) + x * 4),local_d4,",
+      "text": "puVar12 = (uint *)(*(int *)((int)g_ScreenBufferArray + iVar14) + x * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 462,
+      "line": 458,
       "match": "(int *)((int)",
-      "text": "piVar6 = (int *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar13));",
+      "text": "((uint *)(*(int *)((int)g_ScreenBufferArray + iVar14) + x * 4),local_d4,",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 479,
+      "line": 472,
       "match": "(int *)((int)",
-      "text": "((uint *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar13)),local_d4,",
+      "text": "piVar6 = (int *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar14));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 492,
+      "line": 489,
       "match": "(int *)((int)",
-      "text": "piVar6 = (int *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar13));",
+      "text": "((uint *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar14)),local_d4,",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 509,
+      "line": 502,
       "match": "(int *)((int)",
-      "text": "((uint *)(*(int *)((int)g_ScreenBufferArray + iVar13) + x * 4),local_d4,",
+      "text": "piVar6 = (int *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar14));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 523,
+      "line": 519,
       "match": "(int *)((int)",
-      "text": "puVar11 = (uint *)(*(int *)((int)g_ScreenBufferArray + iVar13) + x * 4);",
+      "text": "((uint *)(*(int *)((int)g_ScreenBufferArray + iVar14) + x * 4),local_d4,",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 540,
+      "line": 533,
       "match": "(int *)((int)",
-      "text": "((uint *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar13)),local_d4,",
+      "text": "puVar12 = (uint *)(*(int *)((int)g_ScreenBufferArray + iVar14) + x * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 550,
+      "match": "(int *)((int)",
+      "text": "((uint *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar14)),local_d4,",
       "type": "pointer_cast"
     }
   ]

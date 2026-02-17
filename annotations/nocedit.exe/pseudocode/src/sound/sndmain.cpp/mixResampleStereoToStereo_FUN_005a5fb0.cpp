@@ -6,6 +6,7 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 /* WARNING: Restarted to delay deadcode elimination for space: stack */
 
 double __cdecl sound_sndmain_cpp_mixResampleStereoToStereo_FUN_005a5fb0(short *sample_data,SStereoBuffers *channel_buffers,SStereoGains *channel_gains,double resample_position,double resample_delta,int samples_to_process)
@@ -31,23 +32,20 @@ double __cdecl sound_sndmain_cpp_mixResampleStereoToStereo_FUN_005a5fb0(short *s
   
   if (0 < resample_position._0_4_) {
     dVar12 = floor((double)CONCAT44(sample_data,in_stack_00000010));
-    dVar12 = round(dVar12);
-    local_34._0_4_ = (uint)(longlong)ROUND(dVar12);
+    local_34._0_4_ = (uint)(longlong)ROUND(ROUND(dVar12));
     iVar10 = (uint)local_34;
-    local_34 = (longlong)ROUND(dVar12) & 0xffffffff;
-    dVar12 = round
-                       ((_in_stack_00000010 - (double)local_34) * 4294967296);
-    local_34._0_4_ = (uint)(longlong)ROUND(dVar12);
+    local_34 = (longlong)ROUND(ROUND(dVar12)) & 0xffffffff;
+    local_34._0_4_ =
+         (uint)(longlong)ROUND(ROUND((_in_stack_00000010 - (double)local_34) * 4294967296));
     uVar8 = (uint)local_34;
     dVar12 = floor((double)CONCAT44(channel_gains,channel_buffers));
-    dVar12 = round(dVar12);
-    local_34._0_4_ = (uint)(longlong)ROUND(dVar12);
+    local_34._0_4_ = (uint)(longlong)ROUND(ROUND(dVar12));
     iVar7 = (uint)local_34;
-    local_34 = (longlong)ROUND(dVar12) & 0xffffffff;
-    dVar12 = round
-                       (((double)CONCAT44(channel_gains,channel_buffers) - (double)local_34) *
-                        4294967296);
-    local_34._0_4_ = (uint)(longlong)ROUND(dVar12);
+    local_34 = (longlong)ROUND(ROUND(dVar12)) & 0xffffffff;
+    local_34._0_4_ =
+         (uint)(longlong)
+               ROUND(ROUND(((double)CONCAT44(channel_gains,channel_buffers) - (double)local_34) *
+                           4294967296));
     fVar3 = *in_stack_0000000c;
     fVar4 = in_stack_0000000c[1];
     iVar5 = in_stack_00000008[1];

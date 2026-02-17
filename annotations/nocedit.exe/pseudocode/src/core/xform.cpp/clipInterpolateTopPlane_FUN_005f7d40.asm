@@ -13,7 +13,7 @@
 ;   core_xform.cpp_transformAndClipGeometry_FUN_005f8550 at 005f8b1f
 ;
 ; Referenced Globals:
-;   _BIT_INTEGER g_RenderStateFlags
+;   _BIT_INTEGER32 g_RenderStateFlags
 ;
 ; *****************************************************************************
 

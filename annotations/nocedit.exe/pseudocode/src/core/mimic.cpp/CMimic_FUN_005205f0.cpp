@@ -95,7 +95,8 @@ int __cdecl core_mimic_cpp_CMimic_FUN_005205f0(CMimic *this_ptr)
                   (g_CDemonRendererPtr2,local_18);
       }
       else {
-        core_morph_cpp_CMorph_FUN_0052bae0((CMorph *)(this_ptr->unk4 + 0x24));
+        core_morph_cpp_CMorph_render_FUN_0052bae0
+                  ((CMorph *)(this_ptr->unk4 + 0x24),*(float *)(this_ptr->unk4 + 0xc50));
       }
     }
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);

@@ -9,6 +9,6 @@
 void __cdecl core_tvbat_cpp_CTVBat_FUN_005e4d70(CTVBat *this_ptr)
 
 {
-  this_ptr->unk4 = 3.0;
+  this_ptr->attack_timer = 3.0;
   return;
 }

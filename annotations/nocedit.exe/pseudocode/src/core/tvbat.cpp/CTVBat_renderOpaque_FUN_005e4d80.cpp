@@ -34,7 +34,7 @@ int __cdecl core_tvbat_cpp_CTVBat_renderOpaque_FUN_005e4d80(CTVBat *this_ptr)
   iStack_18 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
   if (iStack_18 != 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
-              (&this_ptr->model,(float)this_ptr->unk1,-1);
+              (&this_ptr->model,this_ptr->anim_frame,-1);
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
   if (g_CDemonMissionPtr->is_in_editor != 0) {

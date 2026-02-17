@@ -67,8 +67,9 @@ void __cdecl core_passngr_cpp_CPassenger_setup_FUN_00545d30(CPassenger *this_ptr
   core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(this_ptr_00);
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr_00);
   this_ptr_01 = (CMorph *)(this_ptr->unk + 100);
-  core_morph_cpp_CMorph_FUN_0052b430(this_ptr_01,0);
-  core_morph_cpp_CMorph_FUN_0052b430(this_ptr_01,1);
+  core_morph_cpp_CMorph_setupModelFromDeformable_FUN_0052b430(this_ptr_01,0,this_ptr_00);
+  core_morph_cpp_CMorph_setupModelFromDeformable_FUN_0052b430
+            (this_ptr_01,1,(CDeformableModelInstance *)(*(int *)(this_ptr->unk + 0x60) + 0x158));
   core_morph_cpp_CMorph_getReady_FUN_0052b680(this_ptr_01);
   this_ptr->morph_time = 0.0;
   core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000(this_ptr_00);

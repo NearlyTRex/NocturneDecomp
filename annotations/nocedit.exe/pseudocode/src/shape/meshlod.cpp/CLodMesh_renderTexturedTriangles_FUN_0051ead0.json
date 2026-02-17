@@ -1,38 +1,23 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 68,
-        "line": 76,
-        "message": "use of undeclared identifier 'stack0xffffff80'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 68,
-        "line": 103,
-        "message": "use of undeclared identifier 'stack0xffffff80'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 204,
-    "complexity_score": 236,
+    "complexity_score": 203,
     "cross_reference_count": 2,
     "function_call_count": 9,
     "global_count": 8,
-    "pseudocode_lines": 101,
-    "suspect_count": 11,
+    "pseudocode_lines": 98,
+    "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_many",
-      "pointer_cast",
-      "stack_ref",
-      "unaffected_reg"
+      "pointer_cast"
     ],
-    "total_lines": 305
+    "total_lines": 302
   },
   "cross_references": [
     {
@@ -351,74 +336,60 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 11,
-      "match": "unaff_EBX",
-      "text": "int unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 35,
-      "match": "(float *)((int)",
-      "text": "local_18 = (float *)((int)this_ptr->tri_data->attribute_indices + local_20);",
+      "line": 37,
+      "match": "(int *)((int)",
+      "text": "local_18 = (int *)((int)this_ptr->tri_data->attribute_indices + local_20);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 48,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)afStack_60 + iVar4) = pfVar6[4];",
+      "line": 50,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)aiStack_60 + iVar3) = piVar5[4];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 58,
+      "match": "ROUND",
+      "text": "local_28 = (int)ROUND(ROUND(local_2c * 65535.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 58,
+      "match": "ROUND",
+      "text": "local_28 = (int)ROUND(ROUND(local_2c * 65535.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 59,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)aiStack_60 + iVar3 + 4) = (int)ROUND(ROUND(local_30 * 65535.0f));",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 59,
       "match": "ROUND",
-      "text": "local_30 = (float)(int)ROUND(dVar10);",
+      "text": "*(int *)((int)aiStack_60 + iVar3 + 4) = (int)ROUND(ROUND(local_30 * 65535.0f));",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 60,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)afStack_60 + iVar4 + -4) = (int)ROUND(dVar9);",
-      "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 60,
+      "line": 59,
       "match": "ROUND",
-      "text": "*(int *)((int)afStack_60 + iVar4 + -4) = (int)ROUND(dVar9);",
+      "text": "*(int *)((int)aiStack_60 + iVar3 + 4) = (int)ROUND(ROUND(local_30 * 65535.0f));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 62,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)afStack_60 + iVar4) = local_30;",
+      "line": 61,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)aiStack_60 + iVar3 + 8) = local_28;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 69,
-      "match": "&stack0xffffff80",
-      "text": "(g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&stack0xffffff80);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 75,
-      "match": "unaff_EBX",
-      "text": "((int)atlas_texture_index * 0x48 + *(int *)(unaff_EBX + 0x14));",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 96,
-      "match": "&stack0xffffff80",
-      "text": "(g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&stack0xffffff80);",
-      "type": "stack_ref"
     },
     {
       "call_site_count": 3,

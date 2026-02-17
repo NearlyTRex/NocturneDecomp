@@ -6,35 +6,23 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl shape_design_c_writeSpatialTree_FUN_0045a200(STreeNode *node,_FILE *output_file,int node_index)
 
 {
-  double dVar1;
-  double dVar2;
-  double dVar3;
-  double dVar4;
-  uint uVar5;
-  uint uVar6;
-  uint uVar7;
-  uint uVar8;
-  
   if (node != (STreeNode *)0x0) {
     _fprintf(output_file,"MODEL%d:\n",node_index);
     if (node->node_type == 0) {
       _fprintf(output_file,"\tJUMP\t%s\n\n",g_ModelPartNames + (int)node->data1);
     }
     else {
-      uVar8 = 0x45a26c;
-      dVar1 = round((double)(node->data1 * 65535.0f));
-      uVar7 = 0x45a280;
-      dVar2 = round((double)(node->data2 * 65535.0f));
-      uVar6 = 0x45a294;
-      dVar3 = round((double)(node->data3 * 65535.0f));
-      uVar5 = 0x45a2a8;
-      dVar4 = round((double)(node->data4 * 65535.0f));
-      _fprintf(output_file,"\tORDER\t%d,%d,%d,%d,MODEL%d,MODEL%d\n\n",(int)ROUND(dVar1),(int)ROUND(dVar2)
-                 ,(int)ROUND(dVar3),(int)ROUND(dVar4),node_index * 2 + 1,node_index * 2,uVar5,uVar6,
-                 uVar7,uVar8);
+      _fprintf(output_file,"\tORDER\t%d,%d,%d,%d,MODEL%d,MODEL%d\n\n",
+                 (int)ROUND(ROUND(node->data1 * 65535.0f)),
+                 (int)ROUND(ROUND(node->data2 * 65535.0f)),
+                 (int)ROUND(ROUND(node->data3 * 65535.0f)),
+                 (int)ROUND(ROUND(node->data4 * 65535.0f)),node_index * 2 + 1,
+                 node_index * 2);
       shape_design_c_writeSpatialTree_FUN_0045a200(node->left_child,output_file,node_index * 2);
       shape_design_c_writeSpatialTree_FUN_0045a200(node->right_child,output_file,node_index * 2 + 1)
       ;

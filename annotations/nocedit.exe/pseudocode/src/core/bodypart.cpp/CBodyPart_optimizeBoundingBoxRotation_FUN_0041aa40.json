@@ -1,0 +1,724 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 288,
+    "complexity_score": 549,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 3,
+    "pseudocode_lines": 149,
+    "suspect_count": 39,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "pointer_cast"
+    ],
+    "total_lines": 437
+  },
+  "cross_references": [
+    {
+      "addr": "0041a050",
+      "from_addr": "0041a0df",
+      "name": "core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0041aa40",
+    "address_range": [
+      [
+        "0041aa40",
+        "0041adcb"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_0041aa40",
+    "signature": "void __cdecl core_bodypart_cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_0041aa40(CBodyPart *this_ptr,CVector3i *out_bbox_min,CVector3i *out_bbox_max)"
+  },
+  "function_calls": [
+    {
+      "addr": "0041a630",
+      "is_variadic": false,
+      "name": "core_bodypart.cpp_CBodyPart_applyRotation_FUN_0041a630"
+    },
+    {
+      "addr": "00471d30",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30"
+    },
+    {
+      "addr": "005fe6b0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00615e4c",
+      "name": "DOUBLE_00615e4c",
+      "type": "double",
+      "value": "3.14159265350000"
+    },
+    {
+      "addr": "00615e54",
+      "name": "DOUBLE_00615e54",
+      "type": "double",
+      "value": "0.0833333333333333"
+    },
+    {
+      "addr": "00615e5c",
+      "name": "FLOAT_00615e5c",
+      "type": "float",
+      "value": "65536"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0041a0df",
+        "call_type": "direct",
+        "caller": "core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050",
+        "estimated_params": 3,
+        "instructions_analyzed": 6,
+        "reg_params": [],
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "estimated_params": 3
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.815261044176707,
+    "instruction_count": 249,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 47,
+      "BOOL_OR": 5,
+      "BRANCH": 1,
+      "CALL": 11,
+      "CBRANCH": 13,
+      "COPY": 500,
+      "FLOAT2FLOAT": 22,
+      "FLOAT_MULT": 13,
+      "INT2FLOAT": 2,
+      "INT_ADD": 147,
+      "INT_AND": 196,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 98,
+      "INT_LEFT": 9,
+      "INT_LESS": 15,
+      "INT_MULT": 33,
+      "INT_NOTEQUAL": 43,
+      "INT_OR": 54,
+      "INT_RIGHT": 18,
+      "INT_SBORROW": 15,
+      "INT_SCARRY": 13,
+      "INT_SEXT": 27,
+      "INT_SLESS": 61,
+      "INT_SUB": 76,
+      "INT_XOR": 13,
+      "INT_ZEXT": 24,
+      "LOAD": 78,
+      "POPCOUNT": 43,
+      "RETURN": 1,
+      "ROUND": 9,
+      "STORE": 71,
+      "SUBPIECE": 18,
+      "TRUNC": 9
+    },
+    "pcode_op_count": 1697
+  },
+  "stack_frame": {
+    "frame_size": 208,
+    "local_size": 196,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_c0",
+        "offset": -192,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_bc",
+        "offset": -188,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b8",
+        "offset": -184,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b4",
+        "offset": -180,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b0",
+        "offset": -176,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_ac",
+        "offset": -172,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a8",
+        "offset": -168,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a4",
+        "offset": -164,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a0",
+        "offset": -160,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_9c",
+        "offset": -156,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_98",
+        "offset": -152,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_90",
+        "offset": -144,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8c",
+        "offset": -140,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_84",
+        "offset": -132,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBodyPart *"
+      },
+      {
+        "is_param": true,
+        "name": "out_bbox_min",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3i *"
+      },
+      {
+        "is_param": true,
+        "name": "out_bbox_max",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3i *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0041aa4c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 53,
+      "match": "ROUND",
+      "text": "local_28 = (int)ROUND(ROUND(local_b8.m[0].x * 65536.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 53,
+      "match": "ROUND",
+      "text": "local_28 = (int)ROUND(ROUND(local_b8.m[0].x * 65536.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 54,
+      "match": "ROUND",
+      "text": "local_24 = (int)ROUND(ROUND(local_b8.m[0].y * 65536.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 54,
+      "match": "ROUND",
+      "text": "local_24 = (int)ROUND(ROUND(local_b8.m[0].y * 65536.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 62,
+      "match": "ROUND",
+      "text": "local_3c = (int)ROUND(ROUND(local_b8.m[0].z * 65536.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 62,
+      "match": "ROUND",
+      "text": "local_3c = (int)ROUND(ROUND(local_b8.m[0].z * 65536.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 63,
+      "match": "ROUND",
+      "text": "local_20 = (int)ROUND(ROUND(local_b8.m[1].x * 65536.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 63,
+      "match": "ROUND",
+      "text": "local_20 = (int)ROUND(ROUND(local_b8.m[1].x * 65536.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 64,
+      "match": "ROUND",
+      "text": "local_34 = (int)ROUND(ROUND(local_b8.m[1].y * 65536.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 64,
+      "match": "ROUND",
+      "text": "local_34 = (int)ROUND(ROUND(local_b8.m[1].y * 65536.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 65,
+      "match": "ROUND",
+      "text": "local_2c = (int)ROUND(ROUND(local_b8.m[1].z * 65536.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 65,
+      "match": "ROUND",
+      "text": "local_2c = (int)ROUND(ROUND(local_b8.m[1].z * 65536.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 66,
+      "match": "ROUND",
+      "text": "local_30 = (int)ROUND(ROUND(local_b8.m[2].x * 65536.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 66,
+      "match": "ROUND",
+      "text": "local_30 = (int)ROUND(ROUND(local_b8.m[2].x * 65536.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 67,
+      "match": "ROUND",
+      "text": "local_38 = (int)ROUND(ROUND(local_b8.m[2].y * 65536.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 67,
+      "match": "ROUND",
+      "text": "local_38 = (int)ROUND(ROUND(local_b8.m[2].y * 65536.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 68,
+      "match": "ROUND",
+      "text": "local_40 = (int)ROUND(ROUND(local_b8.m[2].z * 65536.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 68,
+      "match": "ROUND",
+      "text": "local_40 = (int)ROUND(ROUND(local_b8.m[2].z * 65536.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 72,
+      "match": "(int *)((int)",
+      "text": "piVar9 = (int *)((int)&this_ptr->vertices->x + local_1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 73,
+      "match": "ROUND",
+      "text": "lVar1 = (longlong)(int)ROUND(ROUND(local_b8.m[0].x * 65536.0f)) * (longlong)*piVar9;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 73,
+      "match": "ROUND",
+      "text": "lVar1 = (longlong)(int)ROUND(ROUND(local_b8.m[0].x * 65536.0f)) * (longlong)*piVar9;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 74,
+      "match": "ROUND",
+      "text": "lVar2 = (longlong)(int)ROUND(ROUND(local_b8.m[1].x * 65536.0f)) *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 74,
+      "match": "ROUND",
+      "text": "lVar2 = (longlong)(int)ROUND(ROUND(local_b8.m[1].x * 65536.0f)) *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 76,
+      "match": "ROUND",
+      "text": "lVar3 = (longlong)(int)ROUND(ROUND(local_b8.m[2].x * 65536.0f)) *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 76,
+      "match": "ROUND",
+      "text": "lVar3 = (longlong)(int)ROUND(ROUND(local_b8.m[2].x * 65536.0f)) *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 81,
+      "match": "ROUND",
+      "text": "lVar1 = (longlong)(int)ROUND(ROUND(local_b8.m[0].y * 65536.0f)) * (longlong)*piVar9;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 81,
+      "match": "ROUND",
+      "text": "lVar1 = (longlong)(int)ROUND(ROUND(local_b8.m[0].y * 65536.0f)) * (longlong)*piVar9;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 82,
+      "match": "ROUND",
+      "text": "lVar2 = (longlong)(int)ROUND(ROUND(local_b8.m[1].y * 65536.0f)) *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 82,
+      "match": "ROUND",
+      "text": "lVar2 = (longlong)(int)ROUND(ROUND(local_b8.m[1].y * 65536.0f)) *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 84,
+      "match": "ROUND",
+      "text": "lVar3 = (longlong)(int)ROUND(ROUND(local_b8.m[2].y * 65536.0f)) *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 84,
+      "match": "ROUND",
+      "text": "lVar3 = (longlong)(int)ROUND(ROUND(local_b8.m[2].y * 65536.0f)) *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 89,
+      "match": "ROUND",
+      "text": "lVar1 = (longlong)(int)ROUND(ROUND(local_b8.m[0].z * 65536.0f)) * (longlong)*piVar9;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 89,
+      "match": "ROUND",
+      "text": "lVar1 = (longlong)(int)ROUND(ROUND(local_b8.m[0].z * 65536.0f)) * (longlong)*piVar9;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 90,
+      "match": "ROUND",
+      "text": "lVar2 = (longlong)(int)ROUND(ROUND(local_b8.m[1].z * 65536.0f)) *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 90,
+      "match": "ROUND",
+      "text": "lVar2 = (longlong)(int)ROUND(ROUND(local_b8.m[1].z * 65536.0f)) *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 94,
+      "match": "ROUND",
+      "text": "lVar1 = (longlong)(int)ROUND(ROUND(local_b8.m[2].z * 65536.0f)) *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 94,
+      "match": "ROUND",
+      "text": "lVar1 = (longlong)(int)ROUND(ROUND(local_b8.m[2].z * 65536.0f)) *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 143,
+      "match": "(int *)((int)",
+      "text": "piVar9 = (int *)((int)out_bbox_min + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 147,
+      "match": "(int *)((int)",
+      "text": "piVar9 = (int *)((int)out_bbox_max + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_cast"
+    }
+  ]
+}

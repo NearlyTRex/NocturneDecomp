@@ -21,7 +21,7 @@ int __cdecl core_bat_cpp_CBat_renderOpaque_FUN_00414bf0(CBat *this_ptr)
     return 0;
   }
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
-            (&this_ptr->model,(float)this_ptr->unk1,-1);
+            (&this_ptr->model,this_ptr->anim_frame,-1);
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base);
   return iVar1;
 }

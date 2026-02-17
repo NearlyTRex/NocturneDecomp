@@ -355,8 +355,8 @@ section .text
     MOV EDI,dword ptr [0x0067b9a0]      ; 0056c47b | g_CGorePtr
     PUSH EDI                            ; 0056c481 | g_CGoreInstance
     XOR ESI,ESI                         ; 0056c482
-    CALL core_gore.cpp_CGore_FUN_004ed7b0 ; 0056c484
-        ;   XREF to: 004ed7b0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004ed7b0(CGore * this_ptr)
+    CALL core_gore.cpp_CGore_renderParticles_FUN_004ed7b0 ; 0056c484
+        ;   XREF to: 004ed7b0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_renderParticles_FUN_004ed7b0(CGore * this_ptr)
     MOV EAX,dword ptr [EBX + 0x15acb4]  ; 0056c489
     ADD ESP,0x4                         ; 0056c48f
     TEST EAX,EAX                        ; 0056c492
@@ -371,8 +371,8 @@ section .text
     ADD ESP,0xc                         ; 0056c49f
     MOV EDX,dword ptr [0x0067b9a0]      ; 0056c4a2 | g_CGoreInstance | g_CGorePtr
     PUSH EDX                            ; 0056c4a8 | g_CGoreInstance
-    CALL core_gore.cpp_CGore_FUN_004ed7b0 ; 0056c4a9
-        ;   XREF to: 004ed7b0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004ed7b0(CGore * this_ptr)
+    CALL core_gore.cpp_CGore_renderParticles_FUN_004ed7b0 ; 0056c4a9
+        ;   XREF to: 004ed7b0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_renderParticles_FUN_004ed7b0(CGore * this_ptr)
     ADD ESP,0x4                         ; 0056c4ae
     PUSH EBX                            ; 0056c4b1
     INC ESI                             ; 0056c4b2
@@ -485,8 +485,8 @@ section .text
     PUSH 0x0                            ; 0056c5c0
     MOV ECX,dword ptr [0x0067b9a0]      ; 0056c5c2 | g_CGoreInstance | g_CGorePtr
     PUSH ECX                            ; 0056c5c8 | g_CGoreInstance
-    CALL core_gore.cpp_CGore_FUN_004ed830 ; 0056c5c9
-        ;   XREF to: 004ed830 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004ed830(CGore * this_ptr)
+    CALL core_gore.cpp_CGore_renderDecals_FUN_004ed830 ; 0056c5c9
+        ;   XREF to: 004ed830 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_renderDecals_FUN_004ed830(CGore * this_ptr, int render_all, int expire_flag)
     ADD ESP,0xc                         ; 0056c5ce
     PUSH 0x1                            ; 0056c5d1
     PUSH 0x0                            ; 0056c5d3

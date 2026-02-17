@@ -29,7 +29,7 @@ void __cdecl core_bat_cpp_CBat_getPropertyList_FUN_00414dc0(CBat *this_ptr,CActo
             (property_list,"Flap speed mult",&this_ptr->speed,
              (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addSound_FUN_0040e2d0
-            (property_list,"Periodic sound",this_ptr->unused);
+            (property_list,"Periodic sound",this_ptr->periodic_sound);
   core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160
             (property_list,"Sound period min",&this_ptr->periodic_sound_timer_min,
              (CActorPropertyValidatorFunc *)0x0);

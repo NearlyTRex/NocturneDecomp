@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 129,
+    "complexity_score": 84,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 13,
     "pseudocode_lines": 39,
-    "suspect_count": 8,
+    "suspect_count": 4,
     "suspect_types": [
-      "extra_output",
-      "undefined_data"
+      "extra_output"
     ],
     "total_lines": 120
   },
@@ -53,25 +52,25 @@
   },
   "function_calls": [
     {
-      "addr": "004ecc40",
-      "is_variadic": false,
-      "name": "core_gore.cpp_CBloodPool_FUN_004ecc40"
-    },
-    {
       "addr": "004ed0a0",
       "is_variadic": false,
-      "name": "core_gore.cpp_CBloodPool_FUN_004ed0a0"
+      "name": "core_gore.cpp_CBloodPool_processAge_FUN_004ed0a0"
+    },
+    {
+      "addr": "004ecc40",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CBloodPool_setupRenderState_FUN_004ecc40"
     },
     {
       "addr": "004ecad0",
       "is_variadic": false,
-      "name": "core_gore.cpp_CBloodSplat_FUN_004ecad0"
+      "name": "core_gore.cpp_CBloodSplat_processAge_FUN_004ecad0"
     }
   ],
   "globals": [
     {
       "addr": "02d833d4",
-      "name": "CBloodParticle_ARRAY_02d833d4",
+      "name": "g_BloodParticles",
       "type": "CBloodParticle[256]",
       "value": null
     },
@@ -107,19 +106,19 @@
     },
     {
       "addr": "02d873d4",
-      "name": "DAT_02d873d4",
-      "type": "undefined4",
+      "name": "g_BloodSplatIndex",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02d873d8",
-      "name": "INT_02d873d8",
+      "name": "g_BloodSplatCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "02d873dc",
-      "name": "DAT_02d873dc",
+      "name": "g_BloodSplats",
       "type": "CBloodSplat[2000]",
       "value": null
     },
@@ -131,13 +130,13 @@
     },
     {
       "addr": "02da8720",
-      "name": "INT_02da8720",
+      "name": "g_BloodPoolCount",
       "type": "int",
       "value": null
     },
     {
       "addr": "02da8724",
-      "name": "DAT_02da8724",
+      "name": "g_BloodPools",
       "type": "CBloodPool[32]",
       "value": null
     },
@@ -269,39 +268,11 @@
       "type": "extra_output"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_02d873d4",
-      "text": "} while (this_ptr_00 != (CBloodParticle *)&DAT_02d873d4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_02d873dc",
-      "text": "this_ptr_02 = DAT_02d873dc;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_02da8724",
-      "text": "core_gore_cpp_CBloodPool_FUN_004ecc40(DAT_02da8724);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 31,
       "match": "extraout_EAX",
       "text": "iVar1 = extraout_EAX;",
       "type": "extra_output"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_02da8724",
-      "text": "this_ptr_01 = DAT_02da8724;",
-      "type": "undefined_data"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",

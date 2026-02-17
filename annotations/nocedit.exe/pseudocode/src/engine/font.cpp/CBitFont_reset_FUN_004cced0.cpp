@@ -43,7 +43,7 @@ void __cdecl engine_font_cpp_CBitFont_reset_FUN_004cced0(CBitFont *this_ptr)
   this_ptr->shadow_offset_y = 1;
   this_ptr->rendering_ready = 0;
   this_ptr->is_initialized = 0;
-  this_ptr->unk = 0;
+  this_ptr->use_3d_rendering = 0;
   this_ptr->win_font_enabled = 0;
   this_ptr->win_font_helper = (CWinFont *)0x0;
   this_ptr->max_char_height = 0;

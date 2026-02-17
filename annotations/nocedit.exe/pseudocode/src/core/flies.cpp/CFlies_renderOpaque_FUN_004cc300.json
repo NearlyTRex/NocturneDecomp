@@ -3,9 +3,15 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 56,
-        "line": 134,
-        "message": "use of undeclared identifier 'stack0xffffff64'"
+        "column": 29,
+        "line": 58,
+        "message": "use of undeclared identifier 'DAT_02d7a808'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 31,
+        "line": 120,
+        "message": "use of undeclared identifier 'DAT_02d7a808'"
       }
     ],
     "success": false,
@@ -13,19 +19,18 @@
   },
   "complexity": {
     "assembly_lines": 322,
-    "complexity_score": 304,
+    "complexity_score": 346,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 18,
-    "pseudocode_lines": 134,
-    "suspect_count": 15,
+    "pseudocode_lines": 161,
+    "suspect_count": 17,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
-      "stack_ref",
       "undefined_data"
     ],
-    "total_lines": 456
+    "total_lines": 483
   },
   "cross_references": [],
   "function": {
@@ -60,17 +65,17 @@
     {
       "addr": "004cc230",
       "is_variadic": false,
-      "name": "core_flies.cpp_CFlies_FUN_004cc230"
+      "name": "core_flies.cpp_drawFlyPixel_FUN_004cc230"
     },
     {
       "addr": "005b90a0",
       "is_variadic": false,
-      "name": "core_spline.cpp_FUN_005b90a0"
+      "name": "core_spline.cpp_computeSplineBasis_FUN_005b90a0"
     },
     {
       "addr": "005b92d0",
       "is_variadic": false,
-      "name": "core_spline.cpp_FUN_005b92d0"
+      "name": "core_spline.cpp_evaluateSplinePoint3D_FUN_005b92d0"
     },
     {
       "addr": "005fe6b0",
@@ -308,108 +313,122 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 51,
+      "match": "DAT_02d7a808",
+      "text": "out_basis = (float *)&DAT_02d7a808;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 67,
       "match": "DAT_02d7a800",
       "text": "DAT_02d7a800 = uVar4 | uVar4 << 8 | uVar4 << 0x10;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 68,
       "match": "DAT_02d7a804",
       "text": "DAT_02d7a804 = DAT_02d7a800 ^ 0xffffff;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 68,
       "match": "DAT_02d7a800",
       "text": "DAT_02d7a804 = DAT_02d7a800 ^ 0xffffff;",
       "type": "undefined_data"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 81,
+      "line": 105,
       "match": "ROUND",
-      "text": "pcStack_18 = (char *)(int)ROUND(dVar9);",
+      "text": "iStack_1c = (int)ROUND(ROUND(pSStack_20->t * 64.0f));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 89,
+      "line": 105,
       "match": "ROUND",
-      "text": "CStack_30.x = (int)ROUND(fStack_3c * 256.0f);",
+      "text": "iStack_1c = (int)ROUND(ROUND(pSStack_20->t * 64.0f));",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 90,
-      "match": "ROUND",
-      "text": "CStack_30.y = (int)ROUND(fStack_38 * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 91,
-      "match": "ROUND",
-      "text": "CStack_30.z = (int)ROUND(fStack_34 * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
+      "description": "Undefined global data reference",
       "line": 113,
+      "match": "DAT_02d7a808",
+      "text": "((float *)(&DAT_02d7a808 + iStack_1c * 0x20),&CStack_40,pSStack_20->control_points",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 116,
+      "match": "ROUND",
+      "text": "CStack_34.x = (int)ROUND(CStack_40.x * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 117,
+      "match": "ROUND",
+      "text": "CStack_34.y = (int)ROUND(CStack_40.y * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 118,
+      "match": "ROUND",
+      "text": "CStack_34.z = (int)ROUND(CStack_40.z * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 141,
       "match": "(SRenderVertex *)((int)",
-      "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + (uint)bVar8 * -8 + 4);",
+      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + (uint)bVar9 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 114,
+      "line": 142,
       "match": "(SRenderVertex *)((int)",
-      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar8 * -2 + 1) * 4);",
+      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 119,
+      "line": 147,
       "match": "(SRenderVertex *)((int)",
-      "text": "vertices = (SRenderVertex *)((int)vertices + (uint)bVar8 * -8 + 4);",
+      "text": "vertices = (SRenderVertex *)((int)vertices + (uint)bVar9 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 120,
+      "line": 148,
       "match": "(SRenderVertex *)((int)",
-      "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar8 * -2 + 1) * 4);",
+      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 122,
+      "line": 150,
       "match": "(short *)((int)",
       "text": "psVar1 = (short *)((int)&pCVar2->vertex_buffer_ptr[1].projected_vertex.screen_x + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 124,
+      "line": 152,
       "match": "(short *)((int)",
       "text": "*(short *)((int)&pCVar2->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 125,
+      "line": 153,
       "match": "(short *)((int)",
       "text": "*(short *)((int)&pCVar2->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) + 1;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 127,
-      "match": "&stack0xffffff64",
-      "text": "(pCVar2,(SMRGLHeaderPrimitive *)&stack0xffffff64,999);",
-      "type": "stack_ref"
     }
   ],
   "vtable_info": {

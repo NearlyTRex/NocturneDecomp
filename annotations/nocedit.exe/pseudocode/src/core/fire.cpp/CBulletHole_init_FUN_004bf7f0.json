@@ -5,19 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 178,
-    "complexity_score": 150,
+    "assembly_lines": 179,
+    "complexity_score": 147,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 1,
-    "pseudocode_lines": 85,
+    "pseudocode_lines": 87,
     "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
-      "suspect_float"
+      "pointer_cast"
     ],
-    "total_lines": 263
+    "total_lines": 266
   },
   "cross_references": [
     {
@@ -107,14 +106,15 @@
     "estimated_params": 4
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.759740259740259,
-    "instruction_count": 154,
+    "avg_pcode_per_instr": 4.762820512820513,
+    "instruction_count": 156,
     "opcode_distribution": {
       "BOOL_NEGATE": 2,
       "BRANCH": 2,
-      "CALL": 9,
+      "CALL": 8,
+      "CALLOTHER": 1,
       "CBRANCH": 7,
-      "COPY": 297,
+      "COPY": 309,
       "FLOAT2FLOAT": 23,
       "FLOAT_ADD": 4,
       "FLOAT_MULT": 5,
@@ -129,14 +129,14 @@
       "INT_SBORROW": 6,
       "INT_SCARRY": 11,
       "INT_SLESS": 18,
-      "INT_SUB": 39,
+      "INT_SUB": 38,
       "INT_ZEXT": 2,
       "LOAD": 46,
       "POPCOUNT": 18,
       "RETURN": 2,
-      "STORE": 58
+      "STORE": 57
     },
-    "pcode_op_count": 733
+    "pcode_op_count": 743
   },
   "stack_frame": {
     "frame_size": 296,
@@ -303,36 +303,36 @@
   },
   "suspects": [
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 38,
-      "match": "6.976873e-39",
-      "text": "local_114.m[0].x = 6.976873e-39;",
-      "type": "suspect_float"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 44,
+      "match": "fpatan",
+      "text": "fVar6 = (float10)fpatan((float10)surface_normal->y,",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
+      "line": 45,
       "match": "SQRT",
       "text": "SQRT((float10)surface_normal->x * (float10)surface_normal->x +",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 45,
-      "match": "6.976905e-39",
-      "text": "local_114.m[0].w = 6.976905e-39;",
-      "type": "suspect_float"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 49,
+      "match": "fpatan",
+      "text": "fVar6 = (float10)fpatan((float10)surface_normal->x,(float10)surface_normal->z);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 63,
+      "line": 66,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 64,
+      "line": 67,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "pointer_cast"

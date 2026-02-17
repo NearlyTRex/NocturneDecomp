@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl core_wateract_cpp_CWaterActor_process_FUN_005eb100(CWaterActor *this_ptr,float delta_time)
 
 {
@@ -13,12 +15,9 @@ void __cdecl core_wateract_cpp_CWaterActor_process_FUN_005eb100(CWaterActor *thi
   CEventList *this_ptr_00;
   int iVar2;
   int iVar3;
-  double dVar4;
   
-  iVar2 = *(int *)(this_ptr->unk5 + 0x2af94);
-  dVar4 = round
-                    ((double)(delta_time * (float)65536 * (float)8));
-  iVar2 = iVar2 + (int)ROUND(dVar4);
+  iVar2 = *(int *)(this_ptr->unk5 + 0x2af94) +
+          (int)ROUND(ROUND(delta_time * (float)65536 * (float)8));
   *(int *)(this_ptr->unk5 + 0x2af94) = iVar2;
   if (0x10000 < iVar2) {
     iVar3 = *(int *)(this_ptr->unk5 + 0x2af90) + 1;
@@ -32,7 +31,7 @@ void __cdecl core_wateract_cpp_CWaterActor_process_FUN_005eb100(CWaterActor *thi
     }
   }
   this_ptr_00 = g_CEventListPtr;
-  *(float *)(this_ptr->unk5 + 0x7d04) = 1.0 / (float)this_ptr;
+  *(float *)(this_ptr->unk5 + 0x7d04) = 1.0 / delta_time;
   iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0(this_ptr_00,this_ptr->move_event)
   ;
   if (iVar2 != 0) {
@@ -45,7 +44,7 @@ void __cdecl core_wateract_cpp_CWaterActor_process_FUN_005eb100(CWaterActor *thi
   }
   switch(this_ptr->state) {
   case 1:
-    fVar1 = (float)this_ptr / this_ptr->time_to_move + this_ptr->param;
+    fVar1 = delta_time / this_ptr->time_to_move + this_ptr->param;
     this_ptr->param = fVar1;
     if (fVar1 <= 1.0) break;
     this_ptr->state = 2;
@@ -53,7 +52,7 @@ void __cdecl core_wateract_cpp_CWaterActor_process_FUN_005eb100(CWaterActor *thi
     this_ptr->param = 1.0;
     break;
   case 3:
-    fVar1 = this_ptr->param - (float)this_ptr / this_ptr->time_to_move_down;
+    fVar1 = this_ptr->param - delta_time / this_ptr->time_to_move_down;
     this_ptr->param = fVar1;
     if (0.0 <= fVar1) break;
     this_ptr->state = 0;

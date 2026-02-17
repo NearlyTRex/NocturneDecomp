@@ -56,13 +56,13 @@ void __cdecl core_dstrender_cpp_blendLightmapToTexture32BitInputOutput_FUN_00492
     uVar14 = pmulhw(uVar15,*(ulonglong *)
                             (g_LightmapData +
                             ((uint)*lightmap_indices + (uint)(*texture_indices >> 1)) * 4));
-    uVar7 = (ushort)((short)uVar8 + (short)uVar14 + (short)g_LightmapBlendBias1) >> 4;
+    uVar7 = (ushort)((short)uVar8 + (short)uVar14 + (short)g_LightmapBlendBias1.mm) >> 4;
     uVar9 = (ushort)((short)((ulonglong)uVar8 >> 0x10) + (short)((ulonglong)uVar14 >> 0x10) +
-                    (short)(g_LightmapBlendBias1 >> 0x10)) >> 4;
+                    (short)(g_LightmapBlendBias1.mm >> 0x10)) >> 4;
     uVar11 = (ushort)((short)((ulonglong)uVar8 >> 0x20) + (short)((ulonglong)uVar14 >> 0x20) +
-                     (short)(g_LightmapBlendBias1 >> 0x20)) >> 4;
+                     (short)(g_LightmapBlendBias1.mm >> 0x20)) >> 4;
     uVar12 = (ushort)((short)((ulonglong)uVar8 >> 0x30) + (short)((ulonglong)uVar14 >> 0x30) +
-                     (short)(g_LightmapBlendBias1 >> 0x30)) >> 4;
+                     (short)(g_LightmapBlendBias1.mm >> 0x30)) >> 4;
     *output_buffer =
          CONCAT13((uVar12 != 0) * (uVar12 < 0x100) * (char)uVar12 - (0xff < uVar12),
                   CONCAT12((uVar11 != 0) * (uVar11 < 0x100) * (char)uVar11 - (0xff < uVar11),
@@ -91,13 +91,13 @@ void __cdecl core_dstrender_cpp_blendLightmapToTexture32BitInputOutput_FUN_00492
     uVar14 = pmulhw(uVar15,*(ulonglong *)
                             (g_LightmapData +
                             ((uint)lightmap_indices[1] + (uint)(texture_indices[1] >> 1)) * 4));
-    uVar7 = (ushort)((short)uVar8 + (short)uVar14 + (short)g_LightmapBlendBias2) >> 4;
+    uVar7 = (ushort)((short)uVar8 + (short)uVar14 + (short)g_LightmapBlendBias2.mm) >> 4;
     uVar9 = (ushort)((short)((ulonglong)uVar8 >> 0x10) + (short)((ulonglong)uVar14 >> 0x10) +
-                    (short)(g_LightmapBlendBias2 >> 0x10)) >> 4;
+                    (short)(g_LightmapBlendBias2.mm >> 0x10)) >> 4;
     uVar11 = (ushort)((short)((ulonglong)uVar8 >> 0x20) + (short)((ulonglong)uVar14 >> 0x20) +
-                     (short)(g_LightmapBlendBias2 >> 0x20)) >> 4;
+                     (short)(g_LightmapBlendBias2.mm >> 0x20)) >> 4;
     uVar12 = (ushort)((short)((ulonglong)uVar8 >> 0x30) + (short)((ulonglong)uVar14 >> 0x30) +
-                     (short)(g_LightmapBlendBias2 >> 0x30)) >> 4;
+                     (short)(g_LightmapBlendBias2.mm >> 0x30)) >> 4;
     output_buffer[1] =
          CONCAT13((uVar12 != 0) * (uVar12 < 0x100) * (char)uVar12 - (0xff < uVar12),
                   CONCAT12((uVar11 != 0) * (uVar11 < 0x100) * (char)uVar11 - (0xff < uVar11),

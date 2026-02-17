@@ -13,9 +13,9 @@
 ; undefined4       Stack[-0x3c]:4  local_3c
 ; undefined4       Stack[-0x38]:4  local_38
 ; undefined4       Stack[-0x34]:4  local_34
-; undefined8       Stack[-0x30]:8  local_30
-; undefined8       Stack[-0x28]:8  local_28
-; undefined8       Stack[-0x20]:8  local_20
+; _MMX_INTEGER     Stack[-0x30]:8  local_30
+; _MMX_INTEGER     Stack[-0x28]:8  local_28
+; _MMX_INTEGER     Stack[-0x20]:8  local_20
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
@@ -26,12 +26,12 @@
 ;   void*[1200] g_ScreenBufferArray
 ;   uint[256] g_Hardware32BitPalette
 ;   ushort[256] g_Hardware16BitPalette
-;   int g_RedBitPosition
-;   int g_RedBitCount
-;   int g_GreenBitPosition
-;   int g_GreenBitCount
-;   int g_BlueBitPosition
-;   int g_BlueBitCount
+;   _BIT_INTEGER32 g_RedBitPosition
+;   _BIT_INTEGER32 g_RedBitCount
+;   _BIT_INTEGER32 g_GreenBitPosition
+;   _BIT_INTEGER32 g_GreenBitCount
+;   _BIT_INTEGER32 g_BlueBitPosition
+;   _BIT_INTEGER32 g_BlueBitCount
 ;   int g_ClipLeft
 ;   int g_ClipTop
 ;   int g_ClipRight

@@ -1,22 +1,40 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "other",
+        "column": 20,
+        "line": 48,
+        "message": "cannot cast from type 'float' to pointer type 'float *'"
+      },
+      {
+        "category": "other",
+        "column": 13,
+        "line": 50,
+        "message": "C-style cast from 'float *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 18,
+        "line": 56,
+        "message": "C-style cast from 'float *' to 'float' is not allowed"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 206,
-    "complexity_score": 174,
+    "complexity_score": 154,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 14,
-    "pseudocode_lines": 94,
-    "suspect_count": 7,
+    "pseudocode_lines": 69,
+    "suspect_count": 8,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "suspect_float"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 300
+    "total_lines": 275
   },
   "cross_references": [
     {
@@ -376,52 +394,59 @@
   },
   "suspects": [
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 42,
-      "match": "6.741156e-39",
-      "text": "CStack_6c.z = 6.741156e-39;",
-      "type": "suspect_float"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 46,
+      "line": 30,
       "match": "ROUND",
-      "text": "local_24 = (int)ROUND(dVar9);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 49,
-      "match": "6.741194e-39",
-      "text": "CStack_6c.y = 6.741194e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 51,
-      "match": "ROUND",
-      "text": "local_2c = (int)ROUND(dVar9);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 52,
-      "match": "6.741221e-39",
-      "text": "CStack_6c.x = 6.741221e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 57,
-      "match": "ROUND",
-      "text": "local_3c = (float)(int)ROUND(dVar9);",
+      "text": "local_20 = (int)ROUND(ROUND((local_5c.x - (this_ptr->bbox_min).x) / (this_ptr->cell_size).x));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 58,
+      "line": 30,
       "match": "ROUND",
-      "text": "local_2c = (int)ROUND(dVar10);",
+      "text": "local_20 = (int)ROUND(ROUND((local_5c.x - (this_ptr->bbox_min).x) / (this_ptr->cell_size).x));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 33,
+      "match": "ROUND",
+      "text": "local_24 = (int)ROUND(ROUND((local_5c.z - (this_ptr->bbox_min).z) / (this_ptr->cell_size).z));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 33,
+      "match": "ROUND",
+      "text": "local_24 = (int)ROUND(ROUND((local_5c.z - (this_ptr->bbox_min).z) / (this_ptr->cell_size).z));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 34,
+      "match": "ROUND",
+      "text": "local_2c = (int)ROUND(ROUND((local_5c.y - (this_ptr->bbox_min).y) * fVar1));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 34,
+      "match": "ROUND",
+      "text": "local_2c = (int)ROUND(ROUND((local_5c.y - (this_ptr->bbox_min).y) * fVar1));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 35,
+      "match": "ROUND",
+      "text": "local_1c = (int)ROUND(ROUND((local_4c - (this_ptr->bbox_min).y) * fVar1));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 35,
+      "match": "ROUND",
+      "text": "local_1c = (int)ROUND(ROUND((local_4c - (this_ptr->bbox_min).y) * fVar1));",
       "type": "decompiler_intrinsic"
     }
   ]

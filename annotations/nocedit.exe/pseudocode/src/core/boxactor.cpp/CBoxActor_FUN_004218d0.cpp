@@ -9,6 +9,7 @@
 void __cdecl core_boxactor_cpp_CBoxActor_FUN_004218d0(CBoxActor *this_ptr)
 
 {
+  float fVar1;
   CBoundingBox3D CStack_4c;
   CVector3f CStack_34;
   CVector3f CStack_28;
@@ -17,9 +18,9 @@ void __cdecl core_boxactor_cpp_CBoxActor_FUN_004218d0(CBoxActor *this_ptr)
   float fStack_14;
   CVector3f CStack_10;
   
-  this_ptr->unk5 = 0;
-  if ((0.0 < this_ptr->weight_in_pounds) &&
-     ((int *)(this_ptr->base).validation_magic == &g_ActorMagicNumber)) {
+  fVar1 = this_ptr->weight_in_pounds;
+  (this_ptr->physics_box).is_valid = 0;
+  if ((0.0 < fVar1) && ((int *)(this_ptr->base).validation_magic == &g_ActorMagicNumber)) {
     if ((this_ptr->model).model_ptr != (CKeyFramedModel *)0x0) {
       (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_4c);
       fStack_1c = CStack_4c.min.x + CStack_4c.max.x;
@@ -34,11 +35,11 @@ void __cdecl core_boxactor_cpp_CBoxActor_FUN_004218d0(CBoxActor *this_ptr)
       CStack_10.y = CStack_4c.max.y - CStack_4c.min.y;
       CStack_10.z = CStack_4c.max.z - CStack_4c.min.z;
       core_box_cpp_CBox_setupCorners_FUN_0041dd20
-                ((CBox *)&this_ptr->sim_box,&CStack_34,&(this_ptr->base).orient.vec,&CStack_10,
+                (&this_ptr->physics_box,&CStack_34,&(this_ptr->base).orient.vec,&CStack_10,
                  this_ptr->weight_in_pounds);
       return;
     }
-    this_ptr->unk5 = -1;
+    (this_ptr->physics_box).is_valid = -1;
   }
   return;
 }

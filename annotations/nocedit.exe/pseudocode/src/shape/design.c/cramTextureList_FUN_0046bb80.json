@@ -4,115 +4,115 @@
       {
         "category": "other",
         "column": 39,
-        "line": 106,
+        "line": 107,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 57,
-        "line": 116,
+        "line": 117,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 57,
-        "line": 124,
+        "line": 125,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 57,
-        "line": 132,
+        "line": 133,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 75,
-        "line": 140,
+        "line": 141,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 291,
+        "line": 287,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 78,
-        "line": 374,
+        "line": 370,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 394,
+        "line": 390,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 436,
+        "line": 432,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 60,
-        "line": 442,
+        "line": 438,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 106,
-        "line": 464,
+        "line": 460,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 484,
+        "line": 480,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 58,
-        "line": 490,
+        "line": 486,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 43,
-        "line": 547,
+        "line": 543,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 555,
+        "line": 551,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 64,
-        "line": 588,
+        "line": 584,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 48,
-        "line": 754,
+        "line": 750,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 38,
-        "line": 757,
+        "line": 753,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 37,
-        "line": 762,
+        "line": 758,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -121,16 +121,16 @@
   },
   "complexity": {
     "assembly_lines": 3277,
-    "complexity_score": 1086,
+    "complexity_score": 1101,
     "cross_reference_count": 3,
     "function_call_count": 34,
     "global_count": 172,
-    "pseudocode_lines": 1061,
-    "suspect_count": 2,
+    "pseudocode_lines": 1056,
+    "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 4338
+    "total_lines": 4333
   },
   "cross_references": [
     {
@@ -1863,16 +1863,30 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 166,
+      "line": 164,
       "match": "ROUND",
-      "text": "g_TextureAtlasEntries[local_5c].processed_width = (int)ROUND(dVar13);",
+      "text": "(int)ROUND(ROUND((double)(int)g_TextureAtlasEntries[local_5c].original_width *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 175,
+      "line": 164,
       "match": "ROUND",
-      "text": "local_980 = (int)ROUND(dVar13);",
+      "text": "(int)ROUND(ROUND((double)(int)g_TextureAtlasEntries[local_5c].original_width *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 168,
+      "match": "ROUND",
+      "text": "local_980 = (int)ROUND(ROUND((double)(int)g_TextureAtlasEntries[local_5c].original_height *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 168,
+      "match": "ROUND",
+      "text": "local_980 = (int)ROUND(ROUND((double)(int)g_TextureAtlasEntries[local_5c].original_height *",
       "type": "decompiler_intrinsic"
     }
   ]

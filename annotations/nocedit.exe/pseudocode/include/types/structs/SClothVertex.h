@@ -19,10 +19,9 @@ typedef struct SClothVertex {
     int floor_collision; // 0xbc
     CVector3f offset_pos; // 0xc0
     CVector3f prev_position; // 0xcc
-    char bone_indices[4]; // 0xd8
+    int collide_bone_index; // 0xd8
     int bone_influence_count; // 0xdc
-    int primary_bone_index; // 0xe0
-    char unk2[8]; // 0xe4
+    int bone_index[3]; // 0xe0
     CVector3f bone_positions[3]; // 0xec
     float bone_weights[3]; // 0x110
 } SClothVertex;

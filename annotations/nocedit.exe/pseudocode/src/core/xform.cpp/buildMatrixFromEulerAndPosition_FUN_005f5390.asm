@@ -15,7 +15,7 @@
 ; undefined8       Stack[-0x14]:8  local_14
 ;
 ; XREF[17]:
-;   core_bodypart.cpp_CBodyPart_FUN_0041a630 at 0041a87b
+;   core_bodypart.cpp_CBodyPart_applyRotation_FUN_0041a630 at 0041a87b
 ;   core_bugs.cpp_CBugs_FUN_00425fe0 at 004260e0
 ;   core_charactr.cpp_CCharacter_computePickup_FUN_0042ce80 at 0042cec0
 ;   core_cloth.cpp_CCloth_orientBoneToChild_FUN_0043a110 at 0043a20a

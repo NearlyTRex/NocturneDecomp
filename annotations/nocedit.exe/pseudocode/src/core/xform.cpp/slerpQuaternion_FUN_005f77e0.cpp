@@ -6,100 +6,72 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */
+
 CQuaternion4f * __stack3_esi core_xform_cpp_slerpQuaternion_FUN_005f77e0(CQuaternion4f *quat1_in,CQuaternion4f *quat2_in,float t,CQuaternion4f *quat_out)
 
 {
-  double dVar1;
-  double dVar2;
+  float fVar1;
+  float fVar2;
   float fVar3;
-  float *pfVar4;
-  float *pfVar5;
-  float *pfVar6;
-  byte bVar7;
-  float10 fVar8;
-  float10 fVar9;
-  float10 extraout_ST1;
-  float afStack_1830 [1517];
-  uint uStack_7c;
-  uint local_78;
-  uint uStack_74;
-  uint local_70;
-  float fStack_64;
+  CQuaternion4f *pCVar4;
+  float10 fVar5;
+  float10 fVar6;
+  float10 fVar7;
+  double local_80;
+  double local_78;
+  double local_70;
   float local_60;
   float local_5c;
   float local_58;
   float local_54;
-  float local_50 [3];
-  CQuaternion4f aCStack_44 [2];
+  CQuaternion4f local_40 [2];
   double local_18;
   
-  bVar7 = 0;
-  dVar1 = (double)t;
-  if (dVar1 <= 0.0) {
-    pfVar6 = local_50;
-    quat2_in = quat1_in;
-  }
-  else if (1.0 <= dVar1) {
-    pfVar6 = local_50;
-  }
-  else {
+  pCVar4 = quat1_in;
+  if ((0.0 < t) && (pCVar4 = quat2_in, t < 1.0)) {
     local_5c = quat2_in->w;
     local_58 = quat2_in->x;
     local_60 = quat2_in->y;
     local_54 = quat2_in->z;
-    dVar2 = (double)(quat1_in->w * quat2_in->w +
-                    quat1_in->z * quat2_in->z +
-                    quat1_in->y * quat2_in->y + quat1_in->x * quat2_in->x);
-    afStack_1830[0x5ec] = SUB84(dVar2,0);
-    uStack_7c = (uint)((ulonglong)dVar2 >> 0x20);
-    if (dVar2 < 0.0) {
+    local_80 = (double)(quat1_in->w * quat2_in->w +
+                       quat1_in->z * quat2_in->z +
+                       quat1_in->y * quat2_in->y + quat1_in->x * quat2_in->x);
+    if (local_80 < 0.0) {
       local_5c = -local_5c;
       local_58 = -local_58;
-      local_54 = -quat2_in->z;
+      local_54 = -local_54;
       local_60 = -local_60;
-      uStack_7c = uStack_7c ^ 0x80000000;
+      local_80 = -local_80;
     }
-    if ((double)CONCAT44(uStack_7c,afStack_1830[0x5ec]) <= 0.99999000000000005) {
-      fVar8 = (float10)(double)CONCAT44(uStack_7c,afStack_1830[0x5ec]);
-      fVar8 = atan2(SQRT((float10)1 - fVar8 * fVar8),fVar8);
-      fVar9 = (float10)fsin(((float10)1 - (float10)t) * fVar8);
-      fVar8 = (float10)fsin((float10)t * fVar8);
-      dVar2 = (double)(fVar9 * ((float10)1 / extraout_ST1));
-      uStack_74 = SUB84(dVar2,0);
-      local_70 = (uint)((ulonglong)dVar2 >> 0x20);
-      dVar2 = (double)(fVar8 * ((float10)1 / extraout_ST1));
-      uStack_7c = SUB84(dVar2,0);
-      local_78 = (uint)((ulonglong)dVar2 >> 0x20);
-      local_18 = (double)CONCAT44(uStack_74,local_78);
+    if (local_80 <= 0.99999000000000005) {
+      fVar5 = (float10)local_80;
+      fVar6 = SQRT((float10)1 - fVar5 * fVar5);
+      fVar7 = (float10)fpatan(fVar6,fVar5);
+      fVar5 = (float10)fsin(((float10)1 - (float10)t) * fVar7);
+      fVar7 = (float10)fsin((float10)t * fVar7);
+      fVar6 = (float10)1 / fVar6;
+      local_70 = (double)(fVar5 * fVar6);
+      local_78 = (double)(fVar7 * fVar6);
     }
     else {
-      local_18 = (double)t;
-      local_70 = SUB84(1.0 - local_18,0);
+      local_78 = (double)t;
+      local_18 = local_78;
+      local_70 = 1.0 - local_78;
     }
-    uStack_74 = (uint)((ulonglong)local_18 >> 0x20);
-    local_78 = SUB84(local_18,0);
-    fVar3 = (float)(double)CONCAT44(local_70,uStack_74);
-    fStack_64 = (float)((ulonglong)dVar1 >> 0x20);
-    pfVar6 = &local_54;
-    quat2_in = aCStack_44;
-    aCStack_44[0].y = fStack_64 * (float)(double)CONCAT44(local_78,uStack_7c) + quat1_in->y * fVar3;
-    aCStack_44[0].z = local_58 * (float)(double)CONCAT44(local_78,uStack_7c) + quat1_in->z * fVar3;
-    aCStack_44[0].w = local_60 * (float)(double)CONCAT44(local_78,uStack_7c) + quat1_in->w * fVar3;
-    aCStack_44[0].x = local_5c * (float)(double)CONCAT44(local_78,uStack_7c) + quat1_in->x * fVar3;
+    fVar1 = (float)local_70;
+    local_40[0].y = local_60 * (float)local_78 + quat1_in->y * fVar1;
+    local_40[0].z = local_54 * (float)local_78 + quat1_in->z * fVar1;
+    local_40[0].w = local_5c * (float)local_78 + quat1_in->w * fVar1;
+    local_40[0].x = local_58 * (float)local_78 + quat1_in->x * fVar1;
+    pCVar4 = local_40;
   }
-  pfVar5 = pfVar6 + (uint)bVar7 * -2 + 1;
-  pfVar4 = (float *)((int)quat2_in + (uint)bVar7 * -8 + 4);
-  *pfVar6 = quat2_in->w;
-  pfVar6 = pfVar4 + (uint)bVar7 * -2 + 1;
-  *pfVar5 = *pfVar4;
-  pfVar5[(uint)bVar7 * -2 + 1] = *pfVar6;
-  (pfVar5 + (uint)bVar7 * -2 + 1)[(uint)bVar7 * -2 + 1] = pfVar6[(uint)bVar7 * -2 + 1];
-  pfVar6 = (float *)((int)quat_out + (uint)bVar7 * -8 + 4);
-  quat_out->w = local_54;
-  pfVar4 = pfVar6 + (uint)bVar7 * -2 + 1;
-  *pfVar6 = local_50[(uint)bVar7 * -2];
-  *pfVar4 = local_50[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
-  pfVar4[(uint)bVar7 * -2 + 1] =
-       (local_50 + (uint)bVar7 * -2 + (uint)bVar7 * -2 + 1)[(uint)bVar7 * -2 + 1];
+  fVar1 = pCVar4->x;
+  fVar2 = pCVar4->y;
+  fVar3 = pCVar4->z;
+  quat_out->w = pCVar4->w;
+  quat_out->x = fVar1;
+  quat_out->y = fVar2;
+  quat_out->z = fVar3;
   return quat_out;
 }

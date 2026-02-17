@@ -13,10 +13,10 @@
 ;   WatcomStaticDestructorNode WatcomStaticDestructorNode_0067b980
 ;   WatcomStaticDestructorNode WatcomStaticDestructorNode_0067b990
 ;   CGore g_CGoreInstance
-;   CBloodParticle[256] CBloodParticle_ARRAY_02d833d4
-;   CBloodSplat[2000] DAT_02d873dc
-;   CBloodPool[32] DAT_02da8724
-;   CFootstep[1000] CFootstep_ARRAY_02da8c2c
+;   CBloodParticle[256] g_BloodParticles
+;   CBloodSplat[2000] g_BloodSplats
+;   CBloodPool[32] g_BloodPools
+;   CFootstep[1000] g_Footsteps
 ;
 ; Called Functions:
 ;   core_gore.cpp_CGore_ctor_FUN_004ed730
@@ -38,7 +38,7 @@ section .text
     ADD ESP,0x4                         ; 004eb8d7
     PUSH 0x65f080                       ; 004eb8da | g_CBloodParticleTypeInfo
     PUSH 0x100                          ; 004eb8df
-    PUSH 0x2d833d4                      ; 004eb8e4 | CBloodParticle_ARRAY_02d833d4
+    PUSH 0x2d833d4                      ; 004eb8e4 | g_BloodParticles
     CALL crt_memory.c___arrinit_FUN_005fe667 ; 004eb8e9
         ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004eb8ee
@@ -48,19 +48,19 @@ section .text
     ADD ESP,0x4                         ; 004eb8fb
     PUSH 0x65f0a0                       ; 004eb8fe | g_CBloodSplatTypeInfo
     PUSH 0x7d0                          ; 004eb903
-    PUSH 0x2d873dc                      ; 004eb908 | DAT_02d873dc
+    PUSH 0x2d873dc                      ; 004eb908 | g_BloodSplats
     CALL crt_memory.c___arrinit_FUN_005fe667 ; 004eb90d
         ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004eb912
     PUSH 0x65f0c0                       ; 004eb915 | g_CBloodPoolTypeInfo
     PUSH 0x20                           ; 004eb91a
-    PUSH 0x2da8724                      ; 004eb91c | DAT_02da8724
+    PUSH 0x2da8724                      ; 004eb91c | g_BloodPools
     CALL crt_memory.c___arrinit_FUN_005fe667 ; 004eb921
         ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004eb926
     PUSH 0x65f0e0                       ; 004eb929 | g_CFootstepTypeInfo
     PUSH 0x3e8                          ; 004eb92e
-    PUSH 0x2da8c2c                      ; 004eb933 | CFootstep_ARRAY_02da8c2c
+    PUSH 0x2da8c2c                      ; 004eb933 | g_Footsteps
     CALL crt_memory.c___arrinit_FUN_005fe667 ; 004eb938
         ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004eb93d

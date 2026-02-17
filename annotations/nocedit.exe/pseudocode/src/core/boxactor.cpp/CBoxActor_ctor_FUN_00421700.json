@@ -1,17 +1,24 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "missing_member",
+        "column": 11,
+        "line": 38,
+        "message": "no member named 'is_valid' in 'CBoxActor'"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 331,
+    "complexity_score": 321,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 2,
     "pseudocode_lines": 36,
-    "suspect_count": 29,
+    "suspect_count": 28,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
@@ -176,7 +183,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 11,
       "match": "ADJ",
-      "text": "pCVar3 = (CBoxActor_ptr_916)core_box_cpp_CBox_ctor_FUN_0041dc50((CBox *)&ADJ(pCVar2)->sim_box);",
+      "text": "pCVar3 = core_box_cpp_CBox_ctor_FUN_0041dc50(&ADJ(pCVar2)->physics_box);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -204,7 +211,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 15,
       "match": "ADJ",
-      "text": "ADJ(pCVar3)->unk2 = 0;",
+      "text": "ADJ(pCVar3)->anim_frame = 0.0;",
       "type": "decompiler_intrinsic"
     },
     {
@@ -302,7 +309,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 27,
       "match": "ADJ",
-      "text": "ADJ(pCVar3)->constrain_extents_actor = 0;",
+      "text": "ADJ(pCVar3)->constrain_extents_actor = (CDemonActor *)0x0;",
       "type": "decompiler_intrinsic"
     },
     {
@@ -317,13 +324,6 @@
       "line": 30,
       "match": "ADJ",
       "text": "(&ADJ(pCVar3)->model,\"question.kfm\");",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
-      "match": "ADJ",
-      "text": "ADJ(pCVar3)->unk5 = -1;",
       "type": "decompiler_intrinsic"
     },
     {

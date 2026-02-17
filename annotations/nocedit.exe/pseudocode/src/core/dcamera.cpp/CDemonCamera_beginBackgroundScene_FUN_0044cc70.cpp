@@ -39,14 +39,14 @@ void __cdecl core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_0044cc70(CDe
       ppvVar4 = (void **)((int)ppvVar4 + (uint)bVar6 * -2 + 1);
       ppvVar5 = (void **)((int)ppvVar5 + (uint)bVar6 * -2 + 1);
     }
-    g_BackgroundSavedRedBitPosition = g_RedBitPosition;
+    g_BackgroundSavedRedBitPosition = g_RedBitPosition.dword;
     g_BitsPerPixel = 0x20;
     g_UseExternalRenderer = 0;
-    g_BackgroundSavedGreenBitPosition = g_GreenBitPosition;
-    g_GreenBitPosition = 8;
-    g_BackgroundSavedBlueBitPosition = g_BlueBitPosition;
-    g_BlueBitPosition = 0;
-    g_RedBitPosition = 0x10;
+    g_BackgroundSavedGreenBitPosition = g_GreenBitPosition.dword;
+    g_GreenBitPosition.dword = 8;
+    g_BackgroundSavedBlueBitPosition = g_BlueBitPosition.dword;
+    g_BlueBitPosition.dword = 0;
+    g_RedBitPosition.dword = 0x10;
     iVar2 = 0;
     if (0 < this_ptr->framebuffer_height) {
       iVar3 = 0;

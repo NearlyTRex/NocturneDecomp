@@ -32,7 +32,7 @@
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
 ;   core_dracbrid.cpp_CDraculaBride_FUN_00485b20
-;   core_gore.cpp_CGore_FUN_004edbb0
+;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
 ;   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 ;
@@ -177,8 +177,8 @@ section .text
     PUSH EAX                            ; 00485afb
     MOV EDI,dword ptr [0x0067b9a0]      ; 00485afc | g_CGorePtr
     PUSH EDI                            ; 00485b02 | g_CGoreInstance
-    CALL core_gore.cpp_CGore_FUN_004edbb0 ; 00485b03
-        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004edbb0(CGore * this_ptr)
+    CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0 ; 00485b03
+        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)
     ADD ESP,0x14                        ; 00485b08
     MOV ESP,EBP                         ; 00485b0b
     POP EBP                             ; 00485b0d

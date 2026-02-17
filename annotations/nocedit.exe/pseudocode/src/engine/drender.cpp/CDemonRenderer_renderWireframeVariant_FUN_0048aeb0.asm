@@ -11,11 +11,11 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[7]:
-;   core_bodypart.cpp_CBodyPart_FUN_00419340 at 00419485
+;   core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00419340 at 00419485
 ;   core_dskybox.cpp_renderSkyDome_FUN_004901f0 at 0049064d
 ;   core_flies.cpp_CFlies_renderOpaque_FUN_004cc300 at 004cc6a0
 ;   core_glass.cpp_CGlass_renderBackground_FUN_004e9e90 at 004e9fc3
-;   core_morph.cpp_CMorphModel_FUN_0052b160 at 0052b229
+;   core_morph.cpp_CMorphModel_renderFaces_FUN_0052b160 at 0052b229
 ;   core_wateract.cpp_CWaterActor_renderTransparent_FUN_005eb280 at 005eb48f
 ;   engine_drender.cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00 at 0048cf27
 ;
@@ -24,7 +24,7 @@
 ;   int[16] g_VertexIndexBuffer
 ;   undefined4 g_VertexIndexBuffer[1]
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
-;   _BIT_INTEGER g_RenderStateFlags
+;   _BIT_INTEGER32 g_RenderStateFlags
 ;   int g_RenderStateFlag2
 ;
 ; Called Functions:

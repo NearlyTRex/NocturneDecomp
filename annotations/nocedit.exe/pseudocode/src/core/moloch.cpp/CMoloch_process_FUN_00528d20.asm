@@ -56,8 +56,8 @@
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 ;   core_moloch.cpp_CMoloch_FUN_005293b0
 ;   core_moloch.cpp_CMoloch_FUN_00529900
-;   core_morph.cpp_CMorph_FUN_0052b430
 ;   core_morph.cpp_CMorph_getReady_FUN_0052b680
+;   core_morph.cpp_CMorph_setupModelFromDeformable_FUN_0052b430
 ;   core_motion.cpp_CMotionController_advance_FUN_0052d610
 ;   ... and 11 more
 ;
@@ -600,14 +600,14 @@ section .text
     PUSH 0x0                            ; 00529327
     ADD EBX,0x21f5c                     ; 00529329
     PUSH EBX                            ; 0052932f
-    CALL core_morph.cpp_CMorph_FUN_0052b430 ; 00529330
-        ;   XREF to: 0052b430 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_FUN_0052b430(CMorph * this_ptr, int model_index)
+    CALL core_morph.cpp_CMorph_setupModelFromDeformable_FUN_0052b430 ; 00529330
+        ;   XREF to: 0052b430 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_setupModelFromDeformable_FUN_0052b430(CMorph * this_ptr, int model_index, CDeformableModelInstance * model_ptr)
     ADD ESP,0xc                         ; 00529335
     PUSH ESI                            ; 00529338
     PUSH 0x1                            ; 00529339
     PUSH EBX                            ; 0052933b
-    CALL core_morph.cpp_CMorph_FUN_0052b430 ; 0052933c
-        ;   XREF to: 0052b430 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_FUN_0052b430(CMorph * this_ptr, int model_index)
+    CALL core_morph.cpp_CMorph_setupModelFromDeformable_FUN_0052b430 ; 0052933c
+        ;   XREF to: 0052b430 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_setupModelFromDeformable_FUN_0052b430(CMorph * this_ptr, int model_index, CDeformableModelInstance * model_ptr)
     ADD ESP,0xc                         ; 00529341
     PUSH EBX                            ; 00529344
     CALL core_morph.cpp_CMorph_getReady_FUN_0052b680 ; 00529345

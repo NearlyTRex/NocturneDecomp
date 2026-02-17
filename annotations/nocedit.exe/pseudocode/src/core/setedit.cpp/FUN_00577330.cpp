@@ -34,9 +34,9 @@ void __cdecl core_setedit_cpp_FUN_00577330(void)
       uVar4 = uVar5 >> 8 & 0xff;
       uVar3 = uVar5 >> 0x10 & 0xff;
       if (g_BitsPerPixel == 0x20) {
-        uVar5 = (uVar5 & 0xff) << ((byte)g_RedBitPosition & 0x1f) |
-                uVar4 << ((byte)g_GreenBitPosition & 0x1f);
-        uVar3 = uVar3 << ((byte)g_BlueBitPosition & 0x1f);
+        uVar5 = (uVar5 & 0xff) << (g_RedBitPosition.bytes[0] & 0x1f) |
+                uVar4 << (g_GreenBitPosition.bytes[0] & 0x1f);
+        uVar3 = uVar3 << (g_BlueBitPosition.bytes[0] & 0x1f);
       }
       else {
         uVar5 = (uVar5 & 0xff) << 0x10 | uVar4 << 8;

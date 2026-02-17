@@ -19,7 +19,7 @@
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0
 ;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-;   core_gore.cpp_CGore_FUN_004edbb0
+;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0
 ;   core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0
 ;
 ; *****************************************************************************
@@ -413,8 +413,8 @@ section .text
     PUSH EAX                            ; 00549a7c
     MOV EBX,dword ptr [0x0067b9a0]      ; 00549a7d | g_CGoreInstance | g_CGorePtr
     PUSH EBX                            ; 00549a83 | g_CGoreInstance
-    CALL core_gore.cpp_CGore_FUN_004edbb0 ; 00549a84
-        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004edbb0(CGore * this_ptr)
+    CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0 ; 00549a84
+        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)
     ADD ESP,0x14                        ; 00549a89
     MOV ESP,EBP                         ; 00549a8c
     POP EBP                             ; 00549a8e

@@ -52,7 +52,7 @@
 ; XREF[7]:
 ;   core_box.cpp_CBox_processPhysics_FUN_0041e350 at 0041e3ef
 ;   core_dtrace.cpp_CDemonRaytrace_rayIntersection_FUN_00495aa0 at 00495abf
-;   core_gore.cpp_CFootstep_FUN_004ed240 at 004ed317
+;   core_gore.cpp_CFootstep_init_FUN_004ed240 at 004ed317
 ;   core_particle.cpp_CParticle_process_FUN_00545760 at 00545862
 ;   core_setcolid.cpp_CDemonSet_rayVoxelHeightQuery_FUN_00572340 at 005723b7
 ;   core_setcolid.cpp_CDemonSet_raycast_FUN_00572530 at 00572580

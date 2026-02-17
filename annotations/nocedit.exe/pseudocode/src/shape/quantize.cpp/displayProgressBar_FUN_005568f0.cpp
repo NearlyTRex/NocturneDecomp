@@ -6,32 +6,23 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 int __cdecl shape_quantize_cpp_displayProgressBar_FUN_005568f0(char *label,int total_count,int current_index)
 
 {
   char *pcVar1;
   char *pcVar2;
-  double dVar3;
-  uint unaff_retaddr;
-  char *buffer;
-  char *pcVar4;
-  char *pcStack_7c;
-  char local_78 [96];
-  ulong uStack_18;
+  char local_78 [100];
+  ulong local_14;
   int local_10;
   int local_c;
   
   local_10 = current_index;
   local_c = total_count;
-  pcStack_7c = label;
-  pcVar4 = "\r%s [                    ]\r";
-  pcVar1 = local_78;
   pcVar2 = local_78;
-  buffer = (char *)0x556933;
-  dVar3 = round
-                    (((double)current_index / (double)total_count) * 20);
-  uStack_18 = (ulong)ROUND(dVar3);
-  _sprintf(buffer,pcVar1,pcVar4);
+  local_14 = (ulong)ROUND(ROUND(((double)current_index / (double)total_count) * 20));
+  _sprintf(local_78,"\r%s [                    ]\r",label);
   do {
     pcVar1 = pcVar2;
     if (*pcVar2 == '[') goto LAB_0055695d;
@@ -42,14 +33,14 @@ int __cdecl shape_quantize_cpp_displayProgressBar_FUN_005568f0(char *label,int t
   } while (*pcVar1 != '\0');
   pcVar1 = (char *)0x0;
 LAB_0055695d:
-  memset(pcVar1 + 1,0x2e,uStack_18);
-  engine_2d_c_drawText_FUN_00401fd0((char *)&pcStack_7c,0,(g_QuantizeCurrentLineNumber + 4) * 0xb);
+  memset(pcVar1 + 1,0x2e,local_14);
+  engine_2d_c_drawText_FUN_00401fd0(local_78,0,(g_QuantizeCurrentLineNumber + 4) * 0xb);
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-  if (label + -1 != (char *)total_count) {
+  if (total_count + -1 != current_index) {
     return 0;
   }
-  _sprintf((char *)&pcStack_7c,"%s [....................]\n",unaff_retaddr);
-  engine_2d_c_drawText_FUN_00401fd0((char *)&pcStack_7c,0,(g_QuantizeCurrentLineNumber + 4) * 0xb);
+  _sprintf(local_78,"%s [....................]\n",label);
+  engine_2d_c_drawText_FUN_00401fd0(local_78,0,(g_QuantizeCurrentLineNumber + 4) * 0xb);
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
   return 0;
 }

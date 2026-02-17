@@ -1,17 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 37,
+    "complexity_score": 46,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 7,
-    "suspect_count": 2,
+    "pseudocode_lines": 6,
+    "suspect_count": 3,
     "suspect_types": [
-      "special_math_intrinsic",
-      "unknown_field"
+      "decompiler_intrinsic",
+      "special_math_intrinsic"
     ],
-    "total_lines": 24
+    "total_lines": 23
   },
   "cross_references": [
     {
@@ -107,11 +107,18 @@
   },
   "suspects": [
     {
-      "description": "Unknown/mangled field access",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 7,
+      "match": "ROUND",
+      "text": "*integer_part = ROUND(value);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 8,
-      "match": "._4_4_",
-      "text": "*value._4_4_ = dVar1;",
-      "type": "unknown_field"
+      "match": "ROUND",
+      "text": "return value - ROUND(value);",
+      "type": "decompiler_intrinsic"
     },
     {
       "address": "00602102",

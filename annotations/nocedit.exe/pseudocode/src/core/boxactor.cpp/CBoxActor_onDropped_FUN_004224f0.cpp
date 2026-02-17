@@ -19,7 +19,6 @@ void __cdecl core_boxactor_cpp_CBoxActor_onDropped_FUN_004224f0(CBoxActor *this_
   local_10.z = 0.0;
   local_10.y = 0.0;
   local_10.x = 9.424778;
-  core_box_cpp_CBox_setupVelocities_FUN_00420180((CBox *)&this_ptr->sim_box,drop_position,&local_10)
-  ;
+  core_box_cpp_CBox_setupVelocities_FUN_00420180(&this_ptr->physics_box,drop_position,&local_10);
   return;
 }

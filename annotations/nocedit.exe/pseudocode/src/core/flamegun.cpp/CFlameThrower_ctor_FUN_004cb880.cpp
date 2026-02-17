@@ -39,6 +39,6 @@ CFlameThrower * __cdecl core_flamegun_cpp_CFlameThrower_ctor_FUN_004cb880(CFlame
   pCVar2->unk[9] = '\0';
   pCVar2->unk[10] = '\0';
   pCVar2->unk[0xb] = '\0';
-  (pCVar2->base).unk3 = (int)fVar1;
+  (pCVar2->base).weight = fVar1;
   return pCVar2;
 }

@@ -1,28 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 16,
-        "line": 48,
-        "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 172,
-    "complexity_score": 82,
+    "complexity_score": 88,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 7,
-    "pseudocode_lines": 67,
-    "suspect_count": 1,
+    "pseudocode_lines": 63,
+    "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 239
+    "total_lines": 235
   },
   "cross_references": [],
   "function": {
@@ -242,9 +235,16 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 37,
+      "line": 35,
       "match": "ROUND",
-      "text": "local_14 = (uint)ROUND(dVar5);",
+      "text": "local_14 = (uint)ROUND(ROUND(this_ptr->unk7));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 35,
+      "match": "ROUND",
+      "text": "local_14 = (uint)ROUND(ROUND(this_ptr->unk7));",
       "type": "decompiler_intrinsic"
     }
   ],

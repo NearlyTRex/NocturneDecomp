@@ -1,0 +1,215 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 83,
+    "complexity_score": 67,
+    "cross_reference_count": 5,
+    "function_call_count": 1,
+    "global_count": 7,
+    "pseudocode_lines": 32,
+    "suspect_count": 3,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 115
+  },
+  "cross_references": [
+    {
+      "addr": "0052a580",
+      "from_addr": "0052a69b",
+      "name": "core_morph.cpp_CMorphModel_addPartFromPolygon_FUN_0052a580",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052a710",
+      "from_addr": "0052a801",
+      "name": "core_morph.cpp_CMorphModel_addPartFromVertexBuffer_FUN_0052a710",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052aa30",
+      "from_addr": "0052aa71",
+      "name": "core_morph.cpp_CMorphModel_animateFromDeformableModel_FUN_0052aa30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052aa80",
+      "from_addr": "0052aaa8",
+      "name": "core_morph.cpp_CMorphModel_animateFromKeyframedModel_FUN_0052aa80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052aa00",
+      "from_addr": "0052aa1d",
+      "name": "core_morph.cpp_CMorphModel_animateFromPartVertexBuffer_FUN_0052aa00",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0052a920",
+    "address_range": [
+      [
+        "0052a920",
+        "0052a9f4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_morph.cpp_CMorphModel_animateFromVertexBuffer_FUN_0052a920",
+    "signature": "void __cdecl core_morph_cpp_CMorphModel_animateFromVertexBuffer_FUN_0052a920(CMorphModel *this_ptr,int part_index,CVector3i *vertex_buffer,int start_offset,int vertex_count)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063a229",
+      "name": "s_core_morph_cpp_0063a229",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063a23b",
+      "name": "s_CMorphModel_animate_inva_0063a23b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063a265",
+      "name": "s_core_morph_cpp_0063a265",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063a277",
+      "name": "s_CMorphModel_animate_inva_0063a277",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00661b48",
+      "name": "FLOAT_00661b48",
+      "type": "float",
+      "value": "0.00390625"
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.757142857142857,
+    "instruction_count": 70,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "BOOL_OR": 2,
+      "CALL": 2,
+      "CBRANCH": 5,
+      "COPY": 107,
+      "FLOAT2FLOAT": 6,
+      "FLOAT_MULT": 3,
+      "INT2FLOAT": 3,
+      "INT_ADD": 31,
+      "INT_AND": 60,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 38,
+      "INT_LEFT": 4,
+      "INT_LESS": 3,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 9,
+      "INT_OR": 10,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 22,
+      "INT_SUB": 13,
+      "INT_XOR": 3,
+      "LOAD": 19,
+      "POPCOUNT": 18,
+      "RETURN": 1,
+      "STORE": 11
+    },
+    "pcode_op_count": 403
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMorphModel *"
+      },
+      {
+        "is_param": true,
+        "name": "part_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_buffer",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3i *"
+      },
+      {
+        "is_param": true,
+        "name": "start_offset",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)pvVar1 + iVar3 + 4) = (float)vertex_buffer->x * 0.00390625f;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)pvVar1 + iVar3 + 8) = (float)vertex_buffer->y * 0.00390625f;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)pvVar1 + iVar3 + 0xc) = (float)vertex_buffer->z * 0.00390625f;",
+      "type": "pointer_cast"
+    }
+  ]
+}

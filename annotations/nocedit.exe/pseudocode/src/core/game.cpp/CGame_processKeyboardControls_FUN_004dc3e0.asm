@@ -32,7 +32,7 @@
 ;   CKeys* g_CKeysPtr = 02dcd7d4
 ;   CScript* g_CScriptPtr = 0310f858
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   char[256] g_KeyboardState
+;   char[512] g_KeyboardState
 ;   undefined4 g_CGameInstance.delta_time_float
 ;   ... and 9 more
 ;

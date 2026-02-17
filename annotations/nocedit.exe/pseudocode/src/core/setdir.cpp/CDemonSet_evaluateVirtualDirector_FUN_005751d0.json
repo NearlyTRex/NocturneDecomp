@@ -4,32 +4,26 @@
       {
         "category": "undeclared_identifier",
         "column": 20,
-        "line": 100,
+        "line": 98,
         "message": "use of undeclared identifier 'stack0xfffffe8c'"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 155,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 155,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
+        "line": 151,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 157,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
+        "line": 153,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 158,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
+        "line": 154,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
       }
     ],
     "success": false,
@@ -37,11 +31,11 @@
   },
   "complexity": {
     "assembly_lines": 745,
-    "complexity_score": 511,
+    "complexity_score": 505,
     "cross_reference_count": 8,
     "function_call_count": 11,
     "global_count": 53,
-    "pseudocode_lines": 311,
+    "pseudocode_lines": 305,
     "suspect_count": 18,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -49,7 +43,7 @@
       "stack_ref",
       "unknown_field"
     ],
-    "total_lines": 1056
+    "total_lines": 1050
   },
   "cross_references": [
     {
@@ -636,128 +630,128 @@
   "suspects": [
     {
       "description": "Direct stack address reference",
-      "line": 93,
+      "line": 91,
       "match": "&stack0xfffffe8c",
       "text": "piVar2 = (int *)&stack0xfffffe8c;",
       "type": "stack_ref"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 98,
+      "line": 96,
       "match": "ROUND",
       "text": "piVar2[3] = (int)ROUND(pCVar3->x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 99,
+      "line": 97,
       "match": "ROUND",
       "text": "piVar2[4] = (int)ROUND(pCVar3->y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 100,
+      "line": 98,
       "match": "ROUND",
       "text": "piVar2[5] = (int)ROUND(pCVar3->z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 109,
+      "line": 107,
       "match": "ROUND",
       "text": "iStack_100 = (int)ROUND(fStack_88 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 110,
+      "line": 108,
       "match": "ROUND",
       "text": "iStack_fc = (int)ROUND(fStack_84 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 111,
+      "line": 109,
       "match": "ROUND",
       "text": "iStack_f8 = (int)ROUND(fStack_80 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 126,
+      "line": 121,
       "match": "ROUND",
-      "text": "iStack_60 = (int)ROUND(dVar13);",
+      "text": "iStack_5c = (int)ROUND(ROUND((float)(this_ptr->camera_count * 10) * g_CGamePtr->delta_time_float",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 121,
+      "match": "ROUND",
+      "text": "iStack_5c = (int)ROUND(ROUND((float)(this_ptr->camera_count * 10) * g_CGamePtr->delta_time_float",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 148,
+      "line": 144,
       "match": "._0_4_",
-      "text": "fStack_78 = (float)auStack_d8._0_4_ + (float)auStack_d8._12_4_;",
+      "text": "fStack_74 = (float)auStack_d4._0_4_ + fStack_c8;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 148,
-      "match": "._12_4_",
-      "text": "fStack_78 = (float)auStack_d8._0_4_ + (float)auStack_d8._12_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 150,
+      "line": 146,
       "match": "._4_4_",
-      "text": "fStack_74 = (float)auStack_d8._4_4_ + fStack_c8;",
+      "text": "fStack_70 = (float)auStack_d4._4_4_ + CStack_c4.min.x;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 151,
+      "line": 147,
       "match": "._8_4_",
-      "text": "fStack_70 = (float)auStack_d8._8_4_ + CStack_c4.min.x;",
+      "text": "fStack_6c = (float)auStack_d4._8_4_ + CStack_c4.min.y;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 169,
+      "line": 165,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_ZBufferScanlineArrayBackup + iVar10) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 170,
+      "line": 166,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar10);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 279,
+      "line": 274,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar10) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 280,
+      "line": 275,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_ZBufferScanlineArrayBackup + iVar10);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 294,
+      "line": 289,
       "match": "(float *)((int)",
-      "text": "if (local_160 < *(float *)((int)g_VDCameraScores + iVar7)) {",
+      "text": "if (fStack_15c < *(float *)((int)g_VDCameraScores + iVar7)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 295,
+      "line": 290,
       "match": "(float *)((int)",
-      "text": "local_160 = *(float *)((int)g_VDCameraScores + iVar7);",
+      "text": "fStack_15c = *(float *)((int)g_VDCameraScores + iVar7);",
       "type": "pointer_cast"
     }
   ]

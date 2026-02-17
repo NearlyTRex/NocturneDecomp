@@ -16,11 +16,11 @@
 ;   TerminatedCString s_engine_font_cpp_0062a6df
 ;   TerminatedCString s_Invalid_bitsPerPixel_in__0062a6f2
 ;   int g_BitsPerPixel = 0x8
-;   int g_RedBitPosition
+;   _BIT_INTEGER32 g_RedBitPosition
 ;   int g_RedScaleFactor
-;   int g_GreenBitPosition
+;   _BIT_INTEGER32 g_GreenBitPosition
 ;   int g_GreenScaleFactor
-;   int g_BlueBitPosition
+;   _BIT_INTEGER32 g_BlueBitPosition
 ;   int g_BlueScaleFactor
 ;   ushort g_ShadowColor16
 ;   int g_ShadowColor32

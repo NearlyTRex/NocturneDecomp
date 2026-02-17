@@ -1,36 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 49,
-        "line": 34,
-        "message": "use of undeclared identifier 'stack0xffffe550'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 54,
-        "line": 55,
-        "message": "use of undeclared identifier 'stack0xffffe550'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 130,
-    "complexity_score": 123,
+    "complexity_score": 107,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 12,
-    "pseudocode_lines": 48,
-    "suspect_count": 6,
+    "pseudocode_lines": 47,
+    "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
-      "stack_ref"
+      "pointer_cast"
     ],
-    "total_lines": 178
+    "total_lines": 177
   },
   "cross_references": [
     {
@@ -265,17 +251,17 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 19,
+      "line": 18,
       "match": "ROUND",
-      "text": "INT_00823a90 = (int)ROUND(dVar4);",
+      "text": "INT_00823a90 = (int)ROUND(ROUND((float)INT_00823a90 +",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 27,
-      "match": "&stack0xffffe550",
-      "text": "(this_ptr_00,(SBoneTransformData *)&stack0xffffe550);",
-      "type": "stack_ref"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 18,
+      "match": "ROUND",
+      "text": "INT_00823a90 = (int)ROUND(ROUND((float)INT_00823a90 +",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -297,13 +283,6 @@
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->fog + iVar2) = 0xffff;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 48,
-      "match": "&stack0xffffe550",
-      "text": "(&this_ptr->model,(SBoneTransformData *)&stack0xffffe550);",
-      "type": "stack_ref"
     }
   ]
 }

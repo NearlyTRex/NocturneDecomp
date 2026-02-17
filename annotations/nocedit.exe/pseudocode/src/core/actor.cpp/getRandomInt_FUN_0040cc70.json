@@ -6,12 +6,12 @@
   },
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 37,
+    "complexity_score": 47,
     "cross_reference_count": 36,
     "function_call_count": 3,
     "global_count": 6,
     "pseudocode_lines": 22,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
@@ -141,25 +141,25 @@
     {
       "addr": "004eb9a0",
       "from_addr": "004eb9b0",
-      "name": "core_gore.cpp_CBloodParticle_FUN_004eb9a0",
+      "name": "core_gore.cpp_CBloodParticle_setup_FUN_004eb9a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004ed0d0",
       "from_addr": "004ed0e1",
-      "name": "core_gore.cpp_CBloodPool_FUN_004ed0d0",
+      "name": "core_gore.cpp_CBloodPool_init_FUN_004ed0d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004ec2f0",
       "from_addr": "004ec320",
-      "name": "core_gore.cpp_CBloodSplat_FUN_004ec2f0",
+      "name": "core_gore.cpp_CBloodSplat_initGroundSplat_FUN_004ec2f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004ec390",
       "from_addr": "004ec3f4",
-      "name": "core_gore.cpp_CBloodSplat_FUN_004ec390",
+      "name": "core_gore.cpp_CBloodSplat_initWallSplat_FUN_004ec390",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -404,9 +404,16 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 20,
+      "line": 21,
       "match": "ROUND",
-      "text": "iVar2 = (int)ROUND(dVar4);",
+      "text": "iVar3 = (int)ROUND(ROUND((float)min_value + fVar2 * (float)dVar1));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 21,
+      "match": "ROUND",
+      "text": "iVar3 = (int)ROUND(ROUND((float)min_value + fVar2 * (float)dVar1));",
       "type": "decompiler_intrinsic"
     }
   ]

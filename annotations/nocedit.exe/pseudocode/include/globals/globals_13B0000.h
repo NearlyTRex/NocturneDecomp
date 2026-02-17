@@ -16,8 +16,8 @@ extern CDemonLight* g_CurrentLightForCorona;
 // CMatrix3x3i
 extern CMatrix3x3i g_CoronaCameraRotationMatrix;
 
-// _BIT_INTEGER
-extern _BIT_INTEGER g_CameraDownscaleIterations;
+// _BIT_INTEGER32
+extern _BIT_INTEGER32 g_CameraDownscaleIterations;
 
 // int
 extern int g_BackdropSaveActive;

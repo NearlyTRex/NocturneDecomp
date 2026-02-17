@@ -47,8 +47,8 @@
 ;   core_actor.cpp_createActorByName_FUN_0040c430
 ;   core_actor.cpp_getActorClassByName_FUN_0040c3c0
 ;   core_actor.cpp_resetActorTypeInfo_FUN_0040c7f0
-;   core_gore.cpp_CGore_FUN_004ed760
-;   core_gore.cpp_CGore_FUN_004ee1e0
+;   core_gore.cpp_CGore_load_FUN_004ee1e0
+;   core_gore.cpp_CGore_reset_FUN_004ed760
 ;   core_inv.cpp_CInventory_loadItems_FUN_004ff740
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70
@@ -513,8 +513,8 @@ section .text
         ;   Label: LAB_0052338c
     PUSH EDI                            ; 00523392 | g_CGoreInstance
     MOV dword ptr [EBX],0xffffffff      ; 00523393
-    CALL core_gore.cpp_CGore_FUN_004ed760 ; 00523399
-        ;   XREF to: 004ed760 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004ed760(CGore * this_ptr)
+    CALL core_gore.cpp_CGore_reset_FUN_004ed760 ; 00523399
+        ;   XREF to: 004ed760 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_reset_FUN_004ed760(CGore * this_ptr)
     MOV EBP,dword ptr [EBX + 0x8]       ; 0052339e
     ADD ESP,0x4                         ; 005233a1
     CMP EBP,0x7                         ; 005233a4
@@ -632,8 +632,8 @@ section .text
     PUSH EAX                            ; 005234fe
     MOV EDX,dword ptr [0x0067b9a0]      ; 005234ff | g_CGoreInstance | g_CGorePtr
     PUSH EDX                            ; 00523505 | g_CGoreInstance
-    CALL core_gore.cpp_CGore_FUN_004ee1e0 ; 00523506
-        ;   XREF to: 004ee1e0 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_CGore_FUN_004ee1e0(CGore * this_ptr, _FILE * file_handle)
+    CALL core_gore.cpp_CGore_load_FUN_004ee1e0 ; 00523506
+        ;   XREF to: 004ee1e0 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_CGore_load_FUN_004ee1e0(CGore * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 0052350b
     ADD ESP,0x148                       ; 0052350e
     POP EBP                             ; 00523514

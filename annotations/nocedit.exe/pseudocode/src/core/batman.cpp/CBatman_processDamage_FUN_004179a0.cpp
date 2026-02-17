@@ -19,8 +19,8 @@ void __cdecl core_batman_cpp_CBatman_processDamage_FUN_004179a0(CBatman *this_pt
   CVector3f local_30;
   CVector3f local_24;
   
-  sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk2 + 8));
-  sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)this_ptr->unk2);
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->attack_sound_handle);
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->alert_sound_handle);
   if (damage_info->ammo_type == 7) {
     iVar2 = 0;
     damage_info->damage_amount = damage_info->damage_amount * (float)2;
@@ -51,10 +51,10 @@ void __cdecl core_batman_cpp_CBatman_processDamage_FUN_004179a0(CBatman *this_pt
     if ((pSVar3->state_index != 7) && (pSVar3->state_index != 8)) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&this_ptr_00->motion_controller,7,1);
-      sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk2 + 4));
+      sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->voice_sound_handle);
       uVar4 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                         ((CDemonActor *)this_ptr,"batman-die.wav");
-      *(uint *)(this_ptr->unk2 + 4) = uVar4;
+      this_ptr->voice_sound_handle = uVar4;
       core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(&this_ptr->base,damage_info);
       return;
     }
@@ -73,11 +73,11 @@ void __cdecl core_batman_cpp_CBatman_processDamage_FUN_004179a0(CBatman *this_pt
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&(this_ptr->base).base.model.motion_controller,6,1);
     }
-    iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk2 + 4));
+    iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->voice_sound_handle);
     if (iVar2 == 0) {
       uVar4 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                         ((CDemonActor *)this_ptr,"batman-hurt?.wav");
-      *(uint *)(this_ptr->unk2 + 4) = uVar4;
+      this_ptr->voice_sound_handle = uVar4;
       core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(&this_ptr->base,damage_info);
       return;
     }

@@ -1,0 +1,305 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 191,
+    "complexity_score": 154,
+    "cross_reference_count": 4,
+    "function_call_count": 5,
+    "global_count": 12,
+    "pseudocode_lines": 89,
+    "suspect_count": 6,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 280
+  },
+  "cross_references": [
+    {
+      "addr": "0056c1a0",
+      "from_addr": "0056c5c9",
+      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056ae50",
+      "from_addr": "0056b724",
+      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00571380",
+      "from_addr": "00571390",
+      "name": "core_set.cpp_FUN_00571380",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005713c0",
+      "from_addr": "005713eb",
+      "name": "core_set.cpp_FUN_005713c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004ed830",
+    "address_range": [
+      [
+        "004ed830",
+        "004ed9de"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_gore.cpp_CGore_renderDecals_FUN_004ed830",
+    "signature": "void __cdecl core_gore_cpp_CGore_renderDecals_FUN_004ed830(CGore *this_ptr,int render_all,int expire_flag)"
+  },
+  "function_calls": [
+    {
+      "addr": "004ecce0",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CBloodPool_render_FUN_004ecce0"
+    },
+    {
+      "addr": "004ecc40",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CBloodPool_setupRenderState_FUN_004ecc40"
+    },
+    {
+      "addr": "004ec500",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CBloodSplat_render_FUN_004ec500"
+    },
+    {
+      "addr": "004ec470",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CBloodSplat_setupRenderState_FUN_004ec470"
+    },
+    {
+      "addr": "004ed3c0",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CFootstep_render_FUN_004ed3c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "02d81a9c",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "02d81ab0",
+      "name": "g_CGameInstance.blood_flag",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d873d8",
+      "name": "g_BloodSplatCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d873dc",
+      "name": "g_BloodSplats",
+      "type": "CBloodSplat[2000]",
+      "value": null
+    },
+    {
+      "addr": "02d87420",
+      "name": "DAT_02d87420",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02da8720",
+      "name": "g_BloodPoolCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02da8724",
+      "name": "g_BloodPools",
+      "type": "CBloodPool[32]",
+      "value": null
+    },
+    {
+      "addr": "02da874c",
+      "name": "DAT_02da874c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02da8c28",
+      "name": "g_FootstepCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02da8c2c",
+      "name": "g_Footsteps",
+      "type": "CFootstep[1000]",
+      "value": null
+    },
+    {
+      "addr": "02da8c6c",
+      "name": "DAT_02da8c6c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "0056b724",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50",
+        "estimated_params": 3,
+        "instructions_analyzed": 6,
+        "reg_params": [],
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0056c5c9",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_FUN_0056c1a0",
+        "estimated_params": 3,
+        "instructions_analyzed": 6,
+        "reg_params": [],
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00571390",
+        "call_type": "direct",
+        "caller": "core_set.cpp_FUN_00571380",
+        "estimated_params": 5,
+        "instructions_analyzed": 7,
+        "reg_params": [],
+        "stack_params": 5
+      },
+      {
+        "call_addr": "005713eb",
+        "call_type": "direct",
+        "caller": "core_set.cpp_FUN_005713c0",
+        "estimated_params": 3,
+        "instructions_analyzed": 6,
+        "reg_params": [],
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "estimated_params": 3
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.782608695652174,
+    "instruction_count": 138,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 6,
+      "BRANCH": 6,
+      "CALL": 8,
+      "CBRANCH": 19,
+      "COPY": 105,
+      "INT_ADD": 39,
+      "INT_AND": 111,
+      "INT_CARRY": 17,
+      "INT_EQUAL": 105,
+      "INT_LESS": 10,
+      "INT_NOTEQUAL": 9,
+      "INT_SBORROW": 10,
+      "INT_SCARRY": 23,
+      "INT_SLESS": 51,
+      "INT_SUB": 36,
+      "INT_XOR": 9,
+      "LOAD": 16,
+      "POPCOUNT": 51,
+      "RETURN": 2,
+      "STORE": 26
+    },
+    "pcode_op_count": 660
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGore *"
+      },
+      {
+        "is_param": true,
+        "name": "render_all",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "expire_flag",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(int *)((int)",
+      "text": "if (*(int *)((int)&g_BloodSplats[0].expired + iVar1) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(CBloodSplat *)((int)",
+      "text": "((CBloodSplat *)((int)&g_BloodSplats[0].expired + iVar1),expire_flag);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 44,
+      "match": "(int *)((int)",
+      "text": "if (*(int *)((int)&g_BloodPools[0].expired + iVar1) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(CBloodPool *)((int)",
+      "text": "((CBloodPool *)((int)&g_BloodPools[0].expired + iVar1),expire_flag);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 69,
+      "match": "(int *)((int)",
+      "text": "if (*(int *)((int)g_Footsteps[0].corners + iVar1 + -8) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 71,
+      "match": "(CFootstep *)((int)",
+      "text": "((CFootstep *)((int)g_Footsteps[0].corners + iVar1 + -8),expire_flag);",
+      "type": "pointer_cast"
+    }
+  ]
+}

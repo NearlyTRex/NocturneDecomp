@@ -31,8 +31,8 @@
 ;   core_cloth.cpp_CCloth_setup_FUN_00439710
 ;   core_enemy.cpp_CEnemy_setup_FUN_004a9650
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_morph.cpp_CMorph_FUN_0052b430
 ;   core_morph.cpp_CMorph_getReady_FUN_0052b680
+;   core_morph.cpp_CMorph_setupModelFromDeformable_FUN_0052b430
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
@@ -261,8 +261,8 @@ section .text
     PUSH 0x0                            ; 0051f64a
     LEA EAX,[EBX + 0x4be24]             ; 0051f64c
     PUSH EAX                            ; 0051f652
-    CALL core_morph.cpp_CMorph_FUN_0052b430 ; 0051f653
-        ;   XREF to: 0052b430 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_FUN_0052b430(CMorph * this_ptr, int model_index)
+    CALL core_morph.cpp_CMorph_setupModelFromDeformable_FUN_0052b430 ; 0051f653
+        ;   XREF to: 0052b430 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_setupModelFromDeformable_FUN_0052b430(CMorph * this_ptr, int model_index, CDeformableModelInstance * model_ptr)
     ADD ESP,0xc                         ; 0051f658
     PUSH ESI                            ; 0051f65b
     CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000 ; 0051f65c
@@ -340,8 +340,8 @@ section .text
     PUSH 0x1                            ; 0051f714
     LEA ESI,[EBX + 0x4be24]             ; 0051f716
     PUSH ESI                            ; 0051f71c
-    CALL core_morph.cpp_CMorph_FUN_0052b430 ; 0051f71d
-        ;   XREF to: 0052b430 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_FUN_0052b430(CMorph * this_ptr, int model_index)
+    CALL core_morph.cpp_CMorph_setupModelFromDeformable_FUN_0052b430 ; 0051f71d
+        ;   XREF to: 0052b430 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_setupModelFromDeformable_FUN_0052b430(CMorph * this_ptr, int model_index, CDeformableModelInstance * model_ptr)
     MOV EAX,dword ptr [EBX + 0x4ca54]   ; 0051f722
     ADD ESP,0xc                         ; 0051f728
     ADD EAX,0x158                       ; 0051f72b

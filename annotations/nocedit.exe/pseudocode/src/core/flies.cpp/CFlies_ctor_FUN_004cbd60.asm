@@ -12,7 +12,7 @@
 ;
 ; XREF[2]:
 ;   core_flies.cpp_factoryFunc_FUN_004cbd20 at 004cbd3a
-;   core_gore.cpp_CGore_FUN_004edf30 at 004ee015
+;   core_gore.cpp_CGore_spawnFlies_FUN_004edf30 at 004ee015
 ;
 ; Referenced Globals:
 ;   CDemonActor_vtable g_CFliesVTable

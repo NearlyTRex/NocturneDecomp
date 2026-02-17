@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 42,
-    "complexity_score": 31,
+    "complexity_score": 42,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 16,
-    "suspect_count": 1,
+    "pseudocode_lines": 17,
+    "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 58
+    "total_lines": 59
   },
   "cross_references": [],
   "function": {
@@ -114,9 +114,16 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 11,
+      "line": 13,
       "match": "ROUND",
-      "text": "pCVar2 = pCVar1->frame_bounds + (int)ROUND(dVar3) * 2;",
+      "text": "pCVar3 = pCVar2->frame_bounds + (int)ROUND(ROUND(fVar1)) * 2;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 13,
+      "match": "ROUND",
+      "text": "pCVar3 = pCVar2->frame_bounds + (int)ROUND(ROUND(fVar1)) * 2;",
       "type": "decompiler_intrinsic"
     }
   ],

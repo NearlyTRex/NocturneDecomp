@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 int __cdecl core_script_cpp_CScript_getLetterboxHeight_FUN_00559ac0(CScript *this_ptr)
 
 {
-  double dVar1;
-  
-  dVar1 = round
-                    ((double)((float)((g_WindowHeight - (g_WindowWidth * 100) / 0xb9) / 2) *
-                             g_ScriptTimeScale));
-  return (int)ROUND(dVar1);
+  return (int)ROUND(ROUND((float)((g_WindowHeight - (g_WindowWidth * 100) / 0xb9) / 2) *
+                          g_ScriptTimeScale));
 }

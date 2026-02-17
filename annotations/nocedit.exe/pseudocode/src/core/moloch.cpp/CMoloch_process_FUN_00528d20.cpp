@@ -250,8 +250,9 @@ LAB_00528f8e:
       core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450
                 ((CDeformableModelInstance *)this_ptr_00);
       pcVar10 = this_ptr->unk2;
-      core_morph_cpp_CMorph_FUN_0052b430((CMorph *)pcVar10,0);
-      core_morph_cpp_CMorph_FUN_0052b430((CMorph *)pcVar10,1);
+      core_morph_cpp_CMorph_setupModelFromDeformable_FUN_0052b430((CMorph *)pcVar10,0,pCVar1);
+      core_morph_cpp_CMorph_setupModelFromDeformable_FUN_0052b430
+                ((CMorph *)pcVar10,1,(CDeformableModelInstance *)this_ptr_00);
       core_morph_cpp_CMorph_getReady_FUN_0052b680((CMorph *)pcVar10);
       return;
     }

@@ -4,25 +4,25 @@
       {
         "category": "incompatible_types",
         "column": 12,
-        "line": 20,
+        "line": 18,
         "message": "assigning to 'CVector3i *' from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
         "column": 12,
-        "line": 24,
+        "line": 22,
         "message": "assigning to 'CVector3i *' from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
         "column": 12,
-        "line": 28,
+        "line": 26,
         "message": "assigning to 'SInputFace *' from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
         "column": 12,
-        "line": 31,
+        "line": 29,
         "message": "assigning to 'int *' from incompatible type 'void *'"
       }
     ],
@@ -31,30 +31,16 @@
   },
   "complexity": {
     "assembly_lines": 114,
-    "complexity_score": 86,
+    "complexity_score": 39,
     "cross_reference_count": 6,
     "function_call_count": 2,
     "global_count": 10,
-    "pseudocode_lines": 41,
-    "suspect_count": 4,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 155
+    "pseudocode_lines": 39,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 153
   },
   "cross_references": [
-    {
-      "addr": "0041a050",
-      "from_addr": "0041a080",
-      "name": "core_bodypart.cpp_CBodyPart_FUN_0041a050",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0041b070",
-      "from_addr": "0041b096",
-      "name": "core_bodypart.cpp_CBodyPart_FUN_0041b070",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "00419880",
       "from_addr": "00419aa7",
@@ -68,9 +54,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0041a050",
+      "from_addr": "0041a080",
+      "name": "core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00419be0",
       "from_addr": "00419c7f",
       "name": "core_bodypart.cpp_CBodyPart_process_FUN_00419be0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0041b070",
+      "from_addr": "0041b096",
+      "name": "core_bodypart.cpp_CBodyPart_setupPhysicsBox_FUN_0041b070",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -90,7 +88,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_bodypart.cpp_CBodyPart_setCounts_FUN_004191d0",
-    "signature": "void __cdecl core_bodypart_cpp_CBodyPart_setCounts_FUN_004191d0(CBodyPart *this_ptr)"
+    "signature": "void __cdecl core_bodypart_cpp_CBodyPart_setCounts_FUN_004191d0(CBodyPart *this_ptr,int vertex_count,int tri_count)"
   },
   "function_calls": [
     {
@@ -197,10 +195,10 @@
     "pcode_op_count": 549
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -209,37 +207,22 @@
         "offset": 4,
         "size": 4,
         "type": "CBodyPart *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "tri_count",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000008",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000008",
-      "text": "this_ptr->vertex_count = in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_0000000c",
-      "text": "this_ptr->tri_count = in_stack_0000000c;",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

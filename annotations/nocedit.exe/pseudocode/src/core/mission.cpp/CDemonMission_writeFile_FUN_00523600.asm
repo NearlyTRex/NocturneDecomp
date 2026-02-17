@@ -36,7 +36,7 @@
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90
 ;   core_actor.cpp_CDemonActor_save_FUN_0040af30
 ;   core_actor.cpp_syncActorTypeIDs_FUN_0040c7c0
-;   core_gore.cpp_CGore_FUN_004ee290
+;   core_gore.cpp_CGore_save_FUN_004ee290
 ;   core_inv.cpp_CInventory_saveItems_FUN_004ff3b0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_mission.cpp_CDemonMission_countActors_FUN_00523cc0
@@ -353,8 +353,8 @@ section .text
     PUSH ECX                            ; 00523934
     MOV ESI,dword ptr [0x0067b9a0]      ; 00523935 | g_CGorePtr
     PUSH ESI                            ; 0052393b | g_CGoreInstance
-    CALL core_gore.cpp_CGore_FUN_004ee290 ; 0052393c
-        ;   XREF to: 004ee290 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_CGore_FUN_004ee290(CGore * this_ptr, _FILE * file_handle)
+    CALL core_gore.cpp_CGore_save_FUN_004ee290 ; 0052393c
+        ;   XREF to: 004ee290 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_CGore_save_FUN_004ee290(CGore * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 00523941
     MOV dword ptr [EBX + 0x88c],0x0     ; 00523944
     ADD ESP,0x4                         ; 0052394e

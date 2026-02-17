@@ -144,22 +144,22 @@
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 20,
-      "match": "pCVar1[-3].",
-      "text": "((SBodyPartFire *)&pCVar1[-3].scrape_points[4].local_position.z,0);",
+      "match": "pCVar1[-1].",
+      "text": "((SBodyPartFire *)(pCVar1[-1].fires[0].flame.off_event + 0x3c),0);",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 22,
-      "match": "pSVar2[-2].",
-      "text": "((SBodyPartModel *)(pSVar2[-2].flame.base.create_event + 0x1c),0);",
+      "match": "pSVar1[-2].",
+      "text": "((SBodyPartModel *)(pSVar1[-2].flame.base.create_event + 0x1c),0);",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 25,
-      "match": "pSVar3[-2].",
-      "text": "((CDemonActor *)(pSVar3[-2].model.model_name + 8),1);",
+      "match": "pSVar2[-2].",
+      "text": "((CDemonActor *)(pSVar2[-2].model.model_name + 8),1);",
       "type": "negative_offset"
     }
   ],

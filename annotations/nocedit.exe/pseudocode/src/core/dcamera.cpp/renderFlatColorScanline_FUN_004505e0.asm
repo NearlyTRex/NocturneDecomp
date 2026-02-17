@@ -19,7 +19,7 @@
 ;   core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770 at 005707f2
 ;
 ; Referenced Globals:
-;   _BIT_INTEGER g_CameraDownscaleIterations
+;   _BIT_INTEGER32 g_CameraDownscaleIterations
 ;   SFogImagePlane g_CameraPlaneWorkBuffer
 ;   SFogImagePlane[16] g_CameraImageDecompressBuffer
 ;   undefined4 DAT_013fff78

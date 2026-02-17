@@ -1,12 +1,12 @@
 // Name: core_dstrender.cpp_saveMMXRegisters_FUN_004906b0
 // Address: 004906b0
 // Address Range: [[004906b0, 004906e8]]
-// Convention: __cdecl
-// Signature: void __cdecl core_dstrender_cpp_saveMMXRegisters_FUN_004906b0(void)
+// Convention: __mmx_save
+// Signature: void __mmx_save core_dstrender_cpp_saveMMXRegisters_FUN_004906b0(ulonglong mm0,ulonglong mm1,ulonglong mm2,ulonglong mm3,ulonglong mm4,ulonglong mm5,ulonglong mm6,ulonglong mm7)
 
 #include "nocturne.h"
 
-void __cdecl core_dstrender_cpp_saveMMXRegisters_FUN_004906b0(void)
+void __mmx_save core_dstrender_cpp_saveMMXRegisters_FUN_004906b0(ulonglong mm0,ulonglong mm1,ulonglong mm2,ulonglong mm3,ulonglong mm4,ulonglong mm5,ulonglong mm6,ulonglong mm7)
 {
 __asm {
         movq qword ptr [g_SavedMMX0],MM0

@@ -17,7 +17,7 @@ CBodyPart * __cdecl core_bodypart_cpp_CBodyPart_ctor_FUN_00419010(CBodyPart *thi
   pCVar1 = (CBodyPart *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
   pvVar1 = __arrinit(pCVar1->attached_models,3,&g_SBodyPartModelTypeInfo);
   pvVar2 = __arrinit(ADJ(pvVar1)->fires,2,&g_SBodyPartFireTypeInfo);
-  pCVar2 = core_box_cpp_CBox_ctor_FUN_0041dc50(&ADJ(pvVar2)->sim_box);
+  pCVar2 = core_box_cpp_CBox_ctor_FUN_0041dc50(&ADJ(pvVar2)->physics_box);
   ADJ(pCVar2)->base.vtable._ub = &g_CBodyPartVTable;
   ADJ(pCVar2)->carried_by_actor = (CDemonActor *)0x0;
   ADJ(pCVar2)->vertex_count = 0;

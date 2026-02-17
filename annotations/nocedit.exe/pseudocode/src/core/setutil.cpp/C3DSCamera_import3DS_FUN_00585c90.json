@@ -4,38 +4,44 @@
       {
         "category": "format_error",
         "column": 36,
-        "line": 70,
+        "line": 71,
         "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 58,
-        "line": 72,
-        "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 30,
-        "line": 73,
-        "message": "format specifies type 'float *' but the argument has type 'uint *' (aka 'unsigned int *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 30,
-        "line": 74,
-        "message": "format specifies type 'float *' but the argument has type 'uint *' (aka 'unsigned int *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 69,
-        "line": 144,
-        "message": "format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 31,
-        "line": 154,
-        "message": "C-style cast from 'C3DSCamera *' to 'float' is not allowed"
+        "line": 71,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 31,
+        "line": 72,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 73,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 74,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 75,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "format_error",
+        "column": 69,
+        "line": 142,
+        "message": "format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -43,15 +49,14 @@
   },
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 182,
+    "complexity_score": 207,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 152,
-    "suspect_count": 2,
+    "suspect_count": 5,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "suspect_float"
+      "decompiler_intrinsic"
     ],
     "total_lines": 220
   },
@@ -176,17 +181,38 @@
   },
   "suspects": [
     {
-      "description": "Likely misinterpreted integer as float",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 69,
-      "match": "8.115118e-39",
-      "text": "fVar9 = 8.115118e-39;",
-      "type": "suspect_float"
+      "match": "ROUND",
+      "text": "uStack_18 = (uint)ROUND(ROUND(uStack_240));",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 71,
+      "line": 69,
       "match": "ROUND",
-      "text": "auStack_1c[0] = (uint)ROUND(dVar8);",
+      "text": "uStack_18 = (uint)ROUND(ROUND(uStack_240));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 147,
+      "match": "fpatan",
+      "text": "fVar8 = (float10)fpatan((float10)fStack_3c,(float10)fStack_34);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 149,
+      "match": "fpatan",
+      "text": "fVar7 = (float10)fpatan((float10)fStack_38,",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 150,
+      "match": "SQRT",
+      "text": "SQRT((float10)fStack_3c * (float10)fStack_3c + fVar7 * (float10)fStack_34)",
       "type": "decompiler_intrinsic"
     }
   ]

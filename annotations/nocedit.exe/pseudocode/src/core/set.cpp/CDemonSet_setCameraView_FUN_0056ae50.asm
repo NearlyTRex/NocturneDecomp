@@ -767,8 +767,8 @@ section .text
     PUSH 0x1                            ; 0056b71b
     MOV ESI,dword ptr [0x0067b9a0]      ; 0056b71d | g_CGorePtr
     PUSH ESI                            ; 0056b723 | g_CGoreInstance
-    CALL core_gore.cpp_CGore_FUN_004ed830 ; 0056b724
-        ;   XREF to: 004ed830 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004ed830(CGore * this_ptr)
+    CALL core_gore.cpp_CGore_renderDecals_FUN_004ed830 ; 0056b724
+        ;   XREF to: 004ed830 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_renderDecals_FUN_004ed830(CGore * this_ptr, int render_all, int expire_flag)
     ADD ESP,0xc                         ; 0056b729
     PUSH 0x1                            ; 0056b72c
     PUSH 0x1                            ; 0056b72e

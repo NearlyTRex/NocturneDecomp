@@ -2,22 +2,88 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 68,
-        "line": 92,
-        "message": "use of undeclared identifier 'stack0xffffff48'"
+        "category": "other",
+        "column": 28,
+        "line": 123,
+        "message": "member reference base type 'char[80]' is not a structure or union"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 93,
-        "message": "use of undeclared identifier 'stack0xffffff48'"
+        "category": "other",
+        "column": 39,
+        "line": 126,
+        "message": "member reference base type 'char[80]' is not a structure or union"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 63,
-        "line": 111,
-        "message": "use of undeclared identifier 'stack0xffffff48'"
+        "category": "other",
+        "column": 30,
+        "line": 127,
+        "message": "member reference base type 'char[80]' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 129,
+        "message": "member reference base type 'char[80]' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 30,
+        "line": 130,
+        "message": "member reference base type 'char[80]' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 141,
+        "message": "member reference base type 'char[80]' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 141,
+        "message": "member reference base type 'char[80]' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 141,
+        "message": "member reference base type 'char[80]' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 141,
+        "message": "member reference base type 'char[80]' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 141,
+        "message": "member reference base type 'char[80]' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 141,
+        "message": "member reference base type 'char[80]' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 141,
+        "message": "member reference base type 'char[80]' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 141,
+        "message": "member reference base type 'char[80]' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 141,
+        "message": "member reference base type 'char[80]' is not a structure or union"
       }
     ],
     "success": false,
@@ -25,19 +91,18 @@
   },
   "complexity": {
     "assembly_lines": 369,
-    "complexity_score": 288,
+    "complexity_score": 313,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 3,
-    "pseudocode_lines": 178,
-    "suspect_count": 9,
+    "pseudocode_lines": 168,
+    "suspect_count": 13,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
-      "stack_ref",
-      "suspect_float"
+      "unknown_field"
     ],
-    "total_lines": 547
+    "total_lines": 537
   },
   "cross_references": [
     {
@@ -375,66 +440,94 @@
   },
   "suspects": [
     {
-      "description": "Direct stack address reference",
-      "line": 85,
-      "match": "&stack0xffffff48",
-      "text": "shape_design_c_initializeCramConfig_FUN_0046b6e0((SCramConfig *)&stack0xffffff48);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 86,
-      "match": "&stack0xffffff48",
-      "text": "pcVar8 = &stack0xffffff48;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 104,
-      "match": "&stack0xffffff48",
-      "text": "shape_design_c_cramTextureList_FUN_0046bb80((SCramConfig *)&stack0xffffff48);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 111,
+      "line": 104,
       "match": "(int *)((int)",
-      "text": "piVar2 = (int *)((int)model_ptr->poly_texture_index_list + iStack_28);",
+      "text": "piVar3 = (int *)((int)model_ptr->poly_texture_index_list + iStack_28);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 116,
+      "line": 109,
       "match": "(int *)((int)",
       "text": "(local_3c[*(int *)((int)model_ptr->poly_texture_index_list + iStack_28)].",
       "type": "pointer_cast"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 139,
-      "match": "6.580217e-39",
-      "text": "fVar11 = 6.580217e-39;",
-      "type": "suspect_float"
+      "description": "Unknown/mangled field access",
+      "line": 116,
+      "match": "._0_4_",
+      "text": "local_b8.filename._0_4_ =",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 119,
+      "match": "._0_4_",
+      "text": "if ((float)local_b8.filename._0_4_ < 0.0) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 120,
+      "match": "._0_4_",
+      "text": "local_b8.filename._0_4_ = 0.0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 122,
+      "match": "._0_4_",
+      "text": "if ((float)255.999 < (float)local_b8.filename._0_4_) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 123,
+      "match": "._0_4_",
+      "text": "local_b8.filename._0_4_ = 255.999;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 134,
+      "match": "._0_4_",
+      "text": "(int)ROUND(ROUND((double)(float)local_b8.filename._0_4_ * 65536));",
+      "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 141,
+      "line": 134,
       "match": "ROUND",
-      "text": "local_3c = (SMRGLTextureExtended *)(int)ROUND(dVar9);",
+      "text": "(int)ROUND(ROUND((double)(float)local_b8.filename._0_4_ * 65536));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 144,
+      "line": 134,
       "match": "ROUND",
-      "text": "iStack_40 = (int)ROUND(dVar10);",
+      "text": "(int)ROUND(ROUND((double)(float)local_b8.filename._0_4_ * 65536));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 135,
+      "match": "ROUND",
+      "text": "iStack_40 = (int)ROUND(ROUND(dVar2 * (double)fStack_bc));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 135,
+      "match": "ROUND",
+      "text": "iStack_40 = (int)ROUND(ROUND(dVar2 * (double)fStack_bc));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 152,
+      "line": 143,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)model_ptr->poly_texture_index_list + iStack_28) = iVar4;",
+      "text": "*(int *)((int)model_ptr->poly_texture_index_list + iStack_28) = iVar5;",
       "type": "pointer_cast"
     }
   ]

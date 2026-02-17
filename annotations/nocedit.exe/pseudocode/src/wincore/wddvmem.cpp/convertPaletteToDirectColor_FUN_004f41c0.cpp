@@ -32,24 +32,24 @@ void __cdecl wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004f41c0(void)
       iVar6 = iVar6 + 3;
       *(ushort *)((int)g_ColorTable16 + iVar5) =
            (ushort)((uint)(byte)g_SourcePaletteData[iVar3] / (uint)g_BlueScaleFactor <<
-                   ((byte)g_BlueBitPosition & 0x1f)) |
-           (ushort)((uint)*pbVar1 / (uint)g_RedScaleFactor << ((byte)g_RedBitPosition & 0x1f)) |
+                   (g_BlueBitPosition.bytes[0] & 0x1f)) |
+           (ushort)((uint)*pbVar1 / (uint)g_RedScaleFactor << (g_RedBitPosition.bytes[0] & 0x1f)) |
            (ushort)((uint)(byte)g_SourcePaletteData[iVar2] / (uint)g_GreenScaleFactor <<
-                   ((byte)g_GreenBitPosition & 0x1f));
+                   (g_GreenBitPosition.bytes[0] & 0x1f));
       iVar5 = iVar8;
     } while (iVar8 != 0x200);
-    uVar4 = 0xff >> ((byte)g_RedBitCount & 0x1f);
-    g_RedMask16._0_4_ = uVar4 << ((byte)g_RedBitPosition & 0x1f);
-    uVar7 = 0xff >> ((byte)g_GreenBitCount & 0x1f);
-    g_GreenMask16._0_4_ = uVar7 << ((byte)g_GreenBitPosition & 0x1f);
-    uVar9 = 0xff >> ((byte)g_BlueBitCount & 0x1f);
-    g_BlueMask16._0_4_ = uVar9 << ((byte)g_BlueBitPosition & 0x1f);
-    g_RedMask32._0_4_ = (uVar4 << ((byte)g_RedBitCount & 0x1f)) << 0x10;
-    g_GreenMask32._0_4_ = (uVar7 << ((byte)g_GreenBitCount & 0x1f)) << 8;
-    g_BlueBitShift._0_4_ = g_BlueBitCount;
-    g_TotalColorBits._0_4_ = g_RedBitCount + g_GreenBitCount + g_BlueBitCount;
-    g_BlueMask32._0_4_ = uVar9 << ((byte)g_BlueBitCount & 0x1f);
-    g_GreenBlueBits._0_4_ = g_GreenBitCount + g_BlueBitCount;
+    uVar4 = 0xff >> (g_RedBitCount.bytes[0] & 0x1f);
+    g_RedMask16.u32[0] = uVar4 << (g_RedBitPosition.bytes[0] & 0x1f);
+    uVar7 = 0xff >> (g_GreenBitCount.bytes[0] & 0x1f);
+    g_GreenMask16.u32[0] = uVar7 << (g_GreenBitPosition.bytes[0] & 0x1f);
+    uVar9 = 0xff >> (g_BlueBitCount.bytes[0] & 0x1f);
+    g_BlueMask16.u32[0] = uVar9 << (g_BlueBitPosition.bytes[0] & 0x1f);
+    g_RedMask32.u32[0] = (uVar4 << (g_RedBitCount.bytes[0] & 0x1f)) << 0x10;
+    g_GreenMask32.u32[0] = (uVar7 << (g_GreenBitCount.bytes[0] & 0x1f)) << 8;
+    g_BlueBitShift.b32[0] = g_BlueBitCount;
+    g_TotalColorBits.u32[0] = g_RedBitCount.dword + g_GreenBitCount.dword + g_BlueBitCount.dword;
+    g_BlueMask32.u32[0] = uVar9 << (g_BlueBitCount.bytes[0] & 0x1f);
+    g_GreenBlueBits.u32[0] = g_GreenBitCount.dword + g_BlueBitCount.dword;
   }
   if (g_BitsPerPixel == 0x20) {
     iVar6 = 0;
@@ -61,9 +61,9 @@ void __cdecl wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004f41c0(void)
       iVar8 = iVar5 + 4;
       iVar6 = iVar6 + 3;
       *(uint *)((int)g_ColorTable32 + iVar5) =
-           (uint)(byte)g_SourcePaletteData[iVar3] << ((byte)g_BlueBitPosition & 0x1f) |
-           (uint)(byte)g_SourcePaletteData[iVar2] << ((byte)g_GreenBitPosition & 0x1f) |
-           (uint)*pbVar1 << ((byte)g_RedBitPosition & 0x1f);
+           (uint)(byte)g_SourcePaletteData[iVar3] << (g_BlueBitPosition.bytes[0] & 0x1f) |
+           (uint)(byte)g_SourcePaletteData[iVar2] << (g_GreenBitPosition.bytes[0] & 0x1f) |
+           (uint)*pbVar1 << (g_RedBitPosition.bytes[0] & 0x1f);
       iVar5 = iVar8;
     } while (iVar8 != 0x400);
   }

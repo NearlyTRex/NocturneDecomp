@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl engine_drender_cpp_CDemonRenderer_setProjectionScaleSimple_FUN_0048c670(CDemonRenderer *this_ptr,float scale_factor)
 
 {
-  double dVar1;
-  
-  dVar1 = round
-                    ((double)((float)65536 / scale_factor));
-  g_ProjectionScale = (int)ROUND(dVar1);
+  g_ProjectionScale = (int)ROUND(ROUND((float)65536 / scale_factor));
   return;
 }

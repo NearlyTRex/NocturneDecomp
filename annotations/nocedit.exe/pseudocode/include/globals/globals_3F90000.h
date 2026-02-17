@@ -81,10 +81,6 @@ extern IUnknown* g_DirectDrawUnknown;
 // JOY_GET_POS_EX_FUNC*
 extern JOY_GET_POS_EX_FUNC* g_joyGetPosEx;
 
-// LARGE_INTEGER
-extern LARGE_INTEGER g_PerformanceCounter;
-extern LARGE_INTEGER g_PerformanceFrequency;
-
 // LPCRITICAL_SECTION
 extern LPCRITICAL_SECTION g_GlobalInitLock;
 
@@ -118,6 +114,10 @@ extern ThreadRegistryEntry* g_ThreadDataRegistryList;
 
 // WCHAR*
 extern WCHAR* g_CommandLineW;
+
+// _struct_19
+extern _struct_19 g_PerformanceCounter;
+extern _struct_19 g_PerformanceFrequency;
 
 // byte
 extern byte g_CommandLineBuffer;

@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 61,
+    "complexity_score": 87,
     "cross_reference_count": 6,
     "function_call_count": 1,
     "global_count": 2,
-    "pseudocode_lines": 26,
-    "suspect_count": 3,
+    "pseudocode_lines": 22,
+    "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 82
+    "total_lines": 78
   },
   "cross_references": [
     {
@@ -225,23 +225,44 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 16,
+      "line": 14,
       "match": "ROUND",
-      "text": "this_ptr->quadratic_radius_scaled = (int)ROUND(dVar4);",
+      "text": "this_ptr->quadratic_radius_scaled = (int)ROUND(ROUND(radius * radius * fVar1));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 17,
+      "line": 14,
       "match": "ROUND",
-      "text": "this_ptr->linear_radius_scaled = (int)ROUND(dVar3);",
+      "text": "this_ptr->quadratic_radius_scaled = (int)ROUND(ROUND(radius * radius * fVar1));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 27,
+      "line": 15,
       "match": "ROUND",
-      "text": "this_ptr->falloff_value = (int)ROUND(dVar3);",
+      "text": "this_ptr->linear_radius_scaled = (int)ROUND(ROUND(fVar2));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 15,
+      "match": "ROUND",
+      "text": "this_ptr->linear_radius_scaled = (int)ROUND(ROUND(fVar2));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 24,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(dVar3 / (double)(this_ptr->quadratic_radius_scaled >> 0x10)));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 24,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(dVar3 / (double)(this_ptr->quadratic_radius_scaled >> 0x10)));",
       "type": "decompiler_intrinsic"
     }
   ]

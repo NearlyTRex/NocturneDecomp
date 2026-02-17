@@ -8,8 +8,8 @@
 ; char *           Stack[0x8]:4   filename
 ;
 ; XREF[2]:
-;   core_morph.cpp_CMorphModel_FUN_0052aca0 at 0052ad69
-;   core_morph.cpp_CMorphModel_setFaceList_FUN_0052aac0 at 0052ab77
+;   core_morph.cpp_CMorphModel_setFaceListFromPolygon_FUN_0052aac0 at 0052ab77
+;   core_morph.cpp_CMorphModel_setFaceListFromTriangles_FUN_0052aca0 at 0052ad69
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_morph_cpp_0063a3a7

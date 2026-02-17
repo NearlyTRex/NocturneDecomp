@@ -8,69 +8,57 @@
         "message": "cannot cast from type 'float' to pointer type 'CKeyFramedModelInstance *'"
       },
       {
-        "category": "other",
-        "column": 45,
-        "line": 205,
-        "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
-      },
-      {
         "category": "format_error",
-        "column": 46,
-        "line": 221,
+        "column": 48,
+        "line": 216,
         "message": "format specifies type 'int' but the argument has type 'CKeyFramedModelInstance *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 221,
-        "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 423,
+        "line": 418,
         "message": "use of undeclared identifier 'DAT_02c14c88'"
       },
       {
         "category": "undeclared_identifier",
         "column": 56,
-        "line": 424,
+        "line": 419,
         "message": "use of undeclared identifier 'DAT_02c14c88'"
       },
       {
         "category": "undeclared_identifier",
         "column": 29,
-        "line": 545,
+        "line": 540,
         "message": "use of undeclared identifier 'stack0xfffff150'"
       },
       {
         "category": "undeclared_identifier",
         "column": 81,
-        "line": 546,
+        "line": 541,
         "message": "use of undeclared identifier 'stack0xfffff150'"
       },
       {
         "category": "undeclared_identifier",
         "column": 73,
-        "line": 548,
+        "line": 543,
         "message": "use of undeclared identifier 'stack0xfffff150'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 726,
+        "line": 717,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 64,
-        "line": 858,
+        "line": 840,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 868,
+        "line": 850,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -79,12 +67,12 @@
   },
   "complexity": {
     "assembly_lines": 2429,
-    "complexity_score": 1216,
+    "complexity_score": 1307,
     "cross_reference_count": 2,
     "function_call_count": 71,
     "global_count": 126,
-    "pseudocode_lines": 911,
-    "suspect_count": 28,
+    "pseudocode_lines": 892,
+    "suspect_count": 39,
     "suspect_types": [
       "decompiler_intrinsic",
       "negative_offset",
@@ -92,7 +80,7 @@
       "stack_ref",
       "undefined_data"
     ],
-    "total_lines": 3340
+    "total_lines": 3321
   },
   "cross_references": [
     {
@@ -2142,196 +2130,273 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 186,
+      "line": 183,
       "match": "ROUND",
-      "text": "local_1c = (CKeyFramedModelInstance *)(int)ROUND(dVar16);",
+      "text": "local_1c = (CKeyFramedModelInstance *)(int)ROUND(ROUND(local_70));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 183,
+      "match": "ROUND",
+      "text": "local_1c = (CKeyFramedModelInstance *)(int)ROUND(ROUND(local_70));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 194,
+      "line": 191,
       "match": "(byte *)((int)",
       "text": "if ((*(byte *)((int)&(pSVar2->projected_vertex).screen_x + iVar10 + 3) & 0x80) == 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 195,
+      "line": 192,
       "match": "(int *)((int)",
       "text": "local_4c = *(int *)((int)&(pSVar2->projected_vertex).screen_y + iVar10) >> 0x10;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 196,
+      "line": 193,
       "match": "(int *)((int)",
       "text": "x = *(int *)((int)&(pSVar2->projected_vertex).screen_x + iVar10) >> 0x10;",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 213,
+      "line": 207,
       "match": "ROUND",
-      "text": "local_1c = (CKeyFramedModelInstance *)(int)ROUND(dVar16);",
+      "text": "local_1c = (CKeyFramedModelInstance *)(int)ROUND(ROUND(local_70));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 397,
+      "line": 207,
+      "match": "ROUND",
+      "text": "local_1c = (CKeyFramedModelInstance *)(int)ROUND(ROUND(local_70));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 392,
       "match": "ROUND",
       "text": "local_cc = (int)ROUND(local_18c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 398,
+      "line": 393,
       "match": "ROUND",
       "text": "local_c8 = (int)ROUND(local_188 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 399,
+      "line": 394,
       "match": "ROUND",
       "text": "local_c4 = (int)ROUND(local_184 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Undefined global data reference",
-      "line": 416,
+      "line": 411,
       "match": "DAT_02c14c88",
       "text": "_sprintf(&DAT_02c14c88,\"noc%d.pcx\");",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 417,
+      "line": 412,
       "match": "DAT_02c14c88",
       "text": "engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(&DAT_02c14c88);",
       "type": "undefined_data"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 441,
+      "line": 436,
       "match": "local_1c[-1].",
       "text": "local_1c = (CKeyFramedModelInstance *)((int)&local_1c[-1].model_ptr + 3);",
       "type": "negative_offset"
     },
     {
       "description": "Complex pointer cast",
-      "line": 441,
+      "line": 436,
       "match": "(CKeyFramedModelInstance *)((int)",
       "text": "local_1c = (CKeyFramedModelInstance *)((int)&local_1c[-1].model_ptr + 3);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 514,
+      "line": 509,
       "match": "(CKeyFramedModel *)((int)",
       "text": "pCVar14 = (CKeyFramedModel *)((int)pCVar9 + (uint)bVar15 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 518,
+      "line": 513,
       "match": "pCVar14[-1].",
       "text": "pcVar11 = (char *)((int)&pCVar14[-1].padding + 3);",
       "type": "negative_offset"
     },
     {
       "description": "Complex pointer cast",
-      "line": 518,
+      "line": 513,
       "match": "(char *)((int)",
       "text": "pcVar11 = (char *)((int)&pCVar14[-1].padding + 3);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 538,
+      "line": 533,
       "match": "&stack0xfffff150",
       "text": "(&stack0xfffff150,(char *)0x0,\"models\",local_698,local_b98);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 539,
+      "line": 534,
       "match": "&stack0xfffff150",
       "text": "iVar8 = engine_dosio_c_findFile_FUN_00481760((SFoundFileInfo *)&stack0xfffff150);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 541,
+      "line": 536,
       "match": "&stack0xfffff150",
       "text": "iVar8 = core_dmodel_cpp_copyFile_FUN_0047c930(\"t:\\\\\",&stack0xfffff150,1);",
       "type": "stack_ref"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 687,
+      "line": 681,
       "match": "ROUND",
-      "text": "local_1c = (CKeyFramedModelInstance *)(int)ROUND(dVar16);",
+      "text": "pCVar7 = this_ptr->frame_bounds + (int)ROUND(ROUND(local_70)) * 2;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 717,
+      "line": 681,
       "match": "ROUND",
-      "text": "local_1c = (CKeyFramedModelInstance *)(int)ROUND(dVar16);",
+      "text": "pCVar7 = this_ptr->frame_bounds + (int)ROUND(ROUND(local_70)) * 2;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 754,
+      "line": 709,
       "match": "ROUND",
-      "text": "local_1c = (CKeyFramedModelInstance *)(int)ROUND(dVar16);",
+      "text": "local_1c = (CKeyFramedModelInstance *)(int)ROUND(ROUND(local_70));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 758,
+      "line": 709,
       "match": "ROUND",
-      "text": "local_1c = (CKeyFramedModelInstance *)(int)ROUND(dVar16);",
+      "text": "local_1c = (CKeyFramedModelInstance *)(int)ROUND(ROUND(local_70));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 762,
+      "line": 744,
       "match": "ROUND",
-      "text": "local_1c = (CKeyFramedModelInstance *)(int)ROUND(dVar16);",
+      "text": "(int)ROUND(ROUND(local_108.x * fVar4));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 744,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(local_108.x * fVar4));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 745,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)this_ptr->vertex_list + iVar8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 746,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(local_108.y * fVar4));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 746,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(local_108.y * fVar4));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 747,
+      "match": "ROUND",
+      "text": "local_1c = (CKeyFramedModelInstance *)(int)ROUND(ROUND(fVar4 * local_108.z));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 747,
+      "match": "ROUND",
+      "text": "local_1c = (CKeyFramedModelInstance *)(int)ROUND(ROUND(fVar4 * local_108.z));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 789,
+      "line": 774,
       "match": "collision_triangle_list[-1].",
       "text": "shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->collision_triangle_list[-1].area);",
       "type": "negative_offset"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 801,
+      "line": 785,
       "match": "ROUND",
-      "text": "local_1c = (CKeyFramedModelInstance *)(int)ROUND(dVar16);",
+      "text": "local_1c = (CKeyFramedModelInstance *)(int)ROUND(ROUND(local_70));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 824,
+      "line": 785,
       "match": "ROUND",
-      "text": "local_1c = (CKeyFramedModelInstance *)(int)ROUND(dVar16);",
+      "text": "local_1c = (CKeyFramedModelInstance *)(int)ROUND(ROUND(local_70));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 834,
+      "line": 807,
       "match": "ROUND",
-      "text": "local_20 = (int)ROUND(dVar16);",
+      "text": "local_1c = (CKeyFramedModelInstance *)(int)ROUND(ROUND(local_70));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 807,
+      "match": "ROUND",
+      "text": "local_1c = (CKeyFramedModelInstance *)(int)ROUND(ROUND(local_70));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 816,
+      "match": "ROUND",
+      "text": "local_20 = (int)ROUND(ROUND(local_70));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 816,
+      "match": "ROUND",
+      "text": "local_20 = (int)ROUND(ROUND(local_70));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Undefined global data reference",
-      "line": 852,
+      "line": 834,
       "match": "DAT_00670210",
       "text": "puVar12 = &DAT_00670210;",
       "type": "undefined_data"

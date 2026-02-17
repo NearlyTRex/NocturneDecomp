@@ -147,16 +147,16 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
           (local_44->base).orient.vec.y = local_88.x;
           (local_44->base).orient.vec.z = local_88.y;
         }
-        if (&local_44->sim_box != (CBox *)&local_ac) {
-          (local_44->sim_box).position.x = local_ac;
-          (local_44->sim_box).position.y = local_a8;
-          (local_44->sim_box).position.z = local_a4;
+        if (&local_44->physics_box != (CBox *)&local_ac) {
+          (local_44->physics_box).position.x = local_ac;
+          (local_44->physics_box).position.y = local_a8;
+          (local_44->physics_box).position.z = local_a4;
         }
-        pCVar12 = &(local_44->sim_box).orientation;
+        pCVar12 = &(local_44->physics_box).orientation;
         if ((CQuaternion4f *)pCVar12 != &local_88) {
           pCVar12->x = local_88.w;
-          (local_44->sim_box).orientation.y = local_88.x;
-          (local_44->sim_box).orientation.z = local_88.y;
+          (local_44->physics_box).orientation.y = local_88.x;
+          (local_44->physics_box).orientation.z = local_88.y;
         }
         local_28 = (CQuaternion4f *)&local_28[4].y;
         local_20 = (CQuaternion4f *)&local_20[4].y;
@@ -221,7 +221,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
   if (iVar10 == 0) {
     switch(iVar6) {
     case 0:
-      iVar6 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+      iVar6 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
       if (iVar6 == 0) {
         (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
         if ((this_ptr->base).victim != (CDemonActor *)0x0) {
@@ -237,7 +237,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
     case 1:
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       if ((this_ptr->base).victim == (CDemonActor *)0x0) {
-        iVar6 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+        iVar6 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
         if (iVar6 == 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&pCVar2->motion_controller,0,1);
@@ -273,7 +273,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
             fVar16 = (this_ptr->base).base.base.location.position.x - (pCVar4->location).position.x;
             fVar17 = (this_ptr->base).base.base.location.position.z - (pCVar4->location).position.z;
             if ((SQRT(fVar17 * fVar17 + fVar16 * fVar16) <= local_30 + (float)0.5) &&
-               ((float)(this_ptr->base).unk2 <= 0.0)) {
+               ((this_ptr->base).attack_cooldown <= 0.0)) {
               if ((this_ptr->base).base.carry_hands[1].carry_actor == (CDemonActor *)0x0) {
                 iVar6 = 2;
               }
@@ -285,7 +285,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
               sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handle);
               (*((this_ptr->base).base.base.vtable._ub)->playSound)
                         ((CDemonActor *)this_ptr,"boneguy-swing?.wav");
-              (this_ptr->base).unk2 = 0x3f800000;
+              (this_ptr->base).attack_cooldown = 1.0;
             }
           }
         }
@@ -380,8 +380,8 @@ LAB_0041c60c:
     (this_ptr->base).base.model.accumulated_root_motion.x =
          (this_ptr->base).base.model.accumulated_root_motion.y;
   }
-  if (0.0 < (float)(this_ptr->base).unk2) {
-    (this_ptr->base).unk2 = (int)((float)(this_ptr->base).unk2 - delta_time);
+  if (0.0 < (this_ptr->base).attack_cooldown) {
+    (this_ptr->base).attack_cooldown = (this_ptr->base).attack_cooldown - delta_time;
   }
   iVar6 = core_charactr_cpp_CCharacter_isOnGround_FUN_004297e0((CCharacter *)this_ptr);
   if (iVar6 != 0) {

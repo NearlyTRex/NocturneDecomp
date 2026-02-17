@@ -71,7 +71,7 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_00444310(CZombieCow *this_ptr,f
   if (iVar5 == 0) {
     switch(iVar3) {
     case 0:
-      iVar3 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+      iVar3 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
       if (iVar3 == 0) {
         (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
         if ((this_ptr->base).victim != (CDemonActor *)0x0) {
@@ -95,7 +95,7 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_00444310(CZombieCow *this_ptr,f
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       fVar10 = 4.5f;
       if ((this_ptr->base).victim == (CDemonActor *)0x0) {
-        iVar3 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+        iVar3 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
         if (iVar3 == 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&this_ptr_00->motion_controller,0,1);
@@ -125,10 +125,10 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_00444310(CZombieCow *this_ptr,f
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&this_ptr_00->motion_controller,0,1);
         }
-        else if ((0 < iVar3) && ((float)(this_ptr->base).unk2 <= 0.0)) {
+        else if ((0 < iVar3) && ((this_ptr->base).attack_cooldown <= 0.0)) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&this_ptr_00->motion_controller,2,1);
-          (this_ptr->base).unk2 = 0x40200000;
+          (this_ptr->base).attack_cooldown = 2.5;
         }
       }
       break;
@@ -150,7 +150,7 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_00444310(CZombieCow *this_ptr,f
                            (this_ptr_00,&local_78,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   ((CDemonActor *)this_ptr,&local_84,pCVar8);
-        core_gore_cpp_CGore_FUN_004ede30(g_CGorePtr);
+        core_gore_cpp_CGore_createBloodPool_FUN_004ede30(g_CGorePtr,&local_84,0);
         (this_ptr->base).pool_me = 1;
       }
     }
@@ -183,8 +183,8 @@ LAB_004445a0:
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
 switchD_0044482d_caseD_3:
-  if (0.0 < (float)(this_ptr->base).unk2) {
-    (this_ptr->base).unk2 = (int)((float)(this_ptr->base).unk2 - delta_time);
+  if (0.0 < (this_ptr->base).attack_cooldown) {
+    (this_ptr->base).attack_cooldown = (this_ptr->base).attack_cooldown - delta_time;
   }
   iVar3 = core_charactr_cpp_CCharacter_isOnGround_FUN_004297e0((CCharacter *)this_ptr);
   if (iVar3 != 0) {

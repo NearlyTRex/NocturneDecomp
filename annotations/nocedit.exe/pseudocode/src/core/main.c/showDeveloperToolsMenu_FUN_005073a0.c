@@ -121,7 +121,7 @@ LAB_0050740e:
               pCVar7 = core_morph_cpp_CMorph_ctor_FUN_0052b310(this_ptr_00);
             }
             if (pCVar7 != (CMorph *)0x0) {
-              core_morph_cpp_FUN_0052bcb0();
+              core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(pCVar7);
               g_CurrentDebugLine = 0x295;
               g_CurrentDebugFilename = "..\\core\\main.c";
               if (pCVar7 != (CMorph *)0x0) {

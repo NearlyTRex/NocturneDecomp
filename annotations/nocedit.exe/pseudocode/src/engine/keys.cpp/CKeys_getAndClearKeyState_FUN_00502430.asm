@@ -8,7 +8,7 @@
 ; EInputCodeType   Stack[0x8]:4   key_code
 ;
 ; Referenced Globals:
-;   char[256] g_KeyboardState
+;   char[512] g_KeyboardState
 ;
 ; *****************************************************************************
 

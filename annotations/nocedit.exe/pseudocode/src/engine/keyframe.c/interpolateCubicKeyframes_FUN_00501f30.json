@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 361,
-    "complexity_score": 217,
+    "complexity_score": 227,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 15,
-    "pseudocode_lines": 172,
-    "suspect_count": 4,
+    "pseudocode_lines": 142,
+    "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 533
+    "total_lines": 503
   },
   "cross_references": [],
   "function": {
@@ -313,30 +313,58 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 102,
+      "line": 76,
       "match": "ROUND",
-      "text": "local_28 = (int *)(int)ROUND(dVar28);",
+      "text": "iVar17 = (int)ROUND(ROUND((fVar6 * 0.5f - fVar8 * 0.5f) *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 109,
+      "line": 76,
       "match": "ROUND",
-      "text": "iVar27 = (int)ROUND(dVar28);",
+      "text": "iVar17 = (int)ROUND(ROUND((fVar6 * 0.5f - fVar8 * 0.5f) *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 110,
+      "line": 78,
       "match": "ROUND",
-      "text": "iVar23 = (int)ROUND(dVar29);",
+      "text": "iVar20 = (int)ROUND(ROUND(((fVar6 * -0.5f + fVar8) - fVar7 * 0.5f) *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 111,
+      "line": 78,
       "match": "ROUND",
-      "text": "iVar4 = (int)ROUND(dVar30);",
+      "text": "iVar20 = (int)ROUND(ROUND(((fVar6 * -0.5f + fVar8) - fVar7 * 0.5f) *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 80,
+      "match": "ROUND",
+      "text": "iVar15 = (int)ROUND(ROUND((fVar8 * -2.5f + fVar6 * 1.5f + 1.0) *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 80,
+      "match": "ROUND",
+      "text": "iVar15 = (int)ROUND(ROUND((fVar8 * -2.5f + fVar6 * 1.5f + 1.0) *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 82,
+      "match": "ROUND",
+      "text": "iVar4 = (int)ROUND(ROUND((fVar6 * -1.5f + fVar8 * 2.0f +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 82,
+      "match": "ROUND",
+      "text": "iVar4 = (int)ROUND(ROUND((fVar6 * -1.5f + fVar8 * 2.0f +",
       "type": "decompiler_intrinsic"
     }
   ],

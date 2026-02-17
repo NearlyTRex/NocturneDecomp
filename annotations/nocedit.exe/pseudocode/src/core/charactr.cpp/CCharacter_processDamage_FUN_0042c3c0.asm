@@ -41,7 +41,7 @@
 ;   core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0
 ;   core_charactr.cpp_CCharacter_shatter_FUN_0042b8e0
 ;   core_game.cpp_CGame_setStatusDisplay_FUN_004e0bf0
-;   core_gore.cpp_CGore_FUN_004edbb0
+;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0
 ;   crt_math.c_round_FUN_005fe6b0
 ;
 ; *****************************************************************************
@@ -153,8 +153,8 @@ section .text
     PUSH EAX                            ; 0042c49e
     MOV EAX,[0x0067b9a0]                ; 0042c49f | g_CGoreInstance | g_CGorePtr
     PUSH EAX                            ; 0042c4a4 | g_CGoreInstance
-    CALL core_gore.cpp_CGore_FUN_004edbb0 ; 0042c4a5
-        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004edbb0(CGore * this_ptr)
+    CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0 ; 0042c4a5
+        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)
     ADD ESP,0x14                        ; 0042c4aa
     POP EDI                             ; 0042c4ad
     CMP dword ptr [EBX + 0x2444],0x1    ; 0042c4ae

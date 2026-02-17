@@ -6,30 +6,29 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl core_flame_cpp_CFlame_FUN_004cad90(CFlame *this_ptr)
 
 {
-  int iVar1;
+  float fVar1;
   int iVar2;
-  double dVar3;
+  int iVar3;
   CColor3f local_28;
-  int iStack_18;
-  float local_14;
+  int local_14;
   
   local_28.r = (this_ptr->base).location.position.x;
   local_28.b = (this_ptr->base).location.position.z;
   local_28.g = (this_ptr->flame_size).y * (float)0.5 +
                (this_ptr->base).location.position.y;
   core_dglobe_cpp_CDemonGlobe_setColor_FUN_00471310(&this_ptr->globe,&local_28);
-  local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-this_ptr->randomness,this_ptr->randomness);
-  dVar3 = round
-                    ((double)((local_14 + this_ptr->intensity) * (float)65535));
-  iStack_18 = (int)ROUND(dVar3);
-  (this_ptr->globe).intensity_multiplier = iStack_18;
-  iVar1 = (iStack_18 + (iStack_18 >> 0x1f) * -0x100) - (uint)((iStack_18 >> 0x1f) << 7 < 0);
-  iVar2 = iVar1 >> 0x1f;
+  fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-this_ptr->randomness,this_ptr->randomness);
+  local_14 = (int)ROUND(ROUND((fVar1 + this_ptr->intensity) * (float)65535));
+  (this_ptr->globe).intensity_multiplier = local_14;
+  iVar2 = (local_14 + (local_14 >> 0x1f) * -0x100) - (uint)((local_14 >> 0x1f) << 7 < 0);
+  iVar3 = iVar2 >> 0x1f;
   (this_ptr->globe).intensity.bytes[0] =
-       (uchar)((int)(((iVar1 >> 8) + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2);
+       (uchar)((int)(((iVar2 >> 8) + iVar3 * -4) - (uint)(iVar3 << 1 < 0)) >> 2);
   core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360
             (&this_ptr->globe,
              (this_ptr->flame_size).y * this_ptr->globe_scalar * (float)2);

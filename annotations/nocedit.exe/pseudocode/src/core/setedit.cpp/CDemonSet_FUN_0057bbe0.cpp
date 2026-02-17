@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl core_setedit_cpp_CDemonSet_FUN_0057bbe0(CDemonSet *this_ptr)
 
 {
@@ -17,11 +19,10 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_0057bbe0(CDemonSet *this_ptr)
   char (*pacVar6) [40];
   int iVar7;
   char (*pacVar8) [40];
-  double dVar9;
   int in_stack_00000008;
-  char *pcVar10;
+  char *pcVar9;
   float *result_ptr;
-  ulonglong uVar11;
+  ulonglong uVar10;
   float local_8a8;
   CPickList local_8a4;
   CPickList local_4fc;
@@ -65,20 +66,20 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_0057bbe0(CDemonSet *this_ptr)
     engine_2d_c_drawText_FUN_00401fd0("D.  Delete filter",0,0x37);
     engine_2d_c_drawText_FUN_00401fd0("E.  Edit filter",0,0x42);
     if (local_18->blend_filter == 0) {
-      pcVar10 = "F.  Blend filter : No";
+      pcVar9 = "F.  Blend filter : No";
     }
     else {
-      pcVar10 = "F.  Blend filter : Yes";
+      pcVar9 = "F.  Blend filter : Yes";
     }
-    _sprintf(local_154,pcVar10);
+    _sprintf(local_154,pcVar9);
     engine_2d_c_drawText_FUN_00401fd0(local_154,0,0x58);
     if (local_18->move_filter == 0) {
-      pcVar10 = "G. Move filter : No";
+      pcVar9 = "G. Move filter : No";
     }
     else {
-      pcVar10 = "G. Move filter : Yes";
+      pcVar9 = "G. Move filter : Yes";
     }
-    _sprintf(local_154,pcVar10);
+    _sprintf(local_154,pcVar9);
     engine_2d_c_drawText_FUN_00401fd0(local_154,g_WindowWidth / 3,0x16);
     _sprintf
               (local_154,"H. Velocity X : %f",
@@ -118,13 +119,13 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_0057bbe0(CDemonSet *this_ptr)
     local_30 = engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_00502470(g_CKeysPtr);
     switch(local_30) {
     case 0x41:
-      pcVar10 = "Enter on time";
+      pcVar9 = "Enter on time";
       result_ptr = local_44;
       goto LAB_0057c050;
     case 0x42:
-      uVar11 = 0x100000000;
+      uVar10 = 0x100000000;
       iVar7 = 0;
-      pcVar10 = "Enter total time";
+      pcVar9 = "Enter total time";
       result_ptr = local_3c;
       goto LAB_0057c056;
     case 0x43:
@@ -165,7 +166,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_0057bbe0(CDemonSet *this_ptr)
         if (-1 < iVar7) {
           pacVar3 = local_28 + iVar7;
           pacVar2 = local_28 + iVar7 + 1;
-          pcVar10 = local_18->name + iVar7 * 4 + -4;
+          pcVar9 = local_18->name + iVar7 * 4 + -4;
           local_1c = iVar7;
           while (iVar7 = local_18->filter_count + -1, local_1c < iVar7) {
             pacVar6 = pacVar2;
@@ -182,8 +183,8 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_0057bbe0(CDemonSet *this_ptr)
             pacVar3 = pacVar3 + 1;
             pacVar2 = pacVar2 + 1;
             local_1c = local_1c + 1;
-            *(float *)(pcVar10 + 0x16f4) = *(float *)(pcVar10 + 0x16f8);
-            pcVar10 = pcVar10 + 4;
+            *(float *)(pcVar9 + 0x16f4) = *(float *)(pcVar9 + 0x16f8);
+            pcVar9 = pcVar9 + 4;
           }
           local_18->filter_count = iVar7;
         }
@@ -233,9 +234,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_0057bbe0(CDemonSet *this_ptr)
         local_54 = floor
                              ((double)(local_8a8 * (float)256 + (float)0.5))
         ;
-        pCVar4 = local_18;
-        dVar9 = round(local_54);
-        (pCVar4->filter_vel).x = (int)ROUND(dVar9);
+        (local_18->filter_vel).x = (int)ROUND(ROUND(local_54));
       }
       break;
     case 0x49:
@@ -247,27 +246,25 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_0057bbe0(CDemonSet *this_ptr)
         local_54 = floor
                              ((double)(local_8a8 * (float)256 + (float)0.5))
         ;
-        pCVar4 = local_18;
-        dVar9 = round(local_54);
-        (pCVar4->filter_vel).y = (int)ROUND(dVar9);
+        (local_18->filter_vel).y = (int)ROUND(ROUND(local_54));
       }
       break;
     case 0x4a:
-      pcVar10 = "Enter light aspect ratio (Y/X)";
+      pcVar9 = "Enter light aspect ratio (Y/X)";
       result_ptr = local_48;
 LAB_0057c050:
-      uVar11 = 0x100000000;
+      uVar10 = 0x100000000;
       iVar7 = 0;
       goto LAB_0057c056;
     case 0x4b:
-      uVar11 = 0x13f800000;
+      uVar10 = 0x13f800000;
       iVar7 = 1;
-      pcVar10 = "Enter light intensity (0..1)";
+      pcVar9 = "Enter light intensity (0..1)";
       result_ptr = local_40;
 LAB_0057c056:
       shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
-                (g_CEditorToolsPtr,pcVar10,result_ptr,iVar7,0.0,(float)uVar11,
-                 (int)((ulonglong)uVar11 >> 0x20));
+                (g_CEditorToolsPtr,pcVar9,result_ptr,iVar7,0.0,(float)uVar10,
+                 (int)((ulonglong)uVar10 >> 0x20));
     }
     if (local_30 == 0x1b) {
       core_set_cpp_CDemonSet_FUN_0056d2d0(this_ptr);

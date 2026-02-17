@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 79,
-        "line": 89,
+        "line": 84,
         "message": "use of undeclared identifier 'stack0xffffffdc'"
       },
       {
         "category": "undeclared_identifier",
         "column": 77,
-        "line": 108,
+        "line": 103,
         "message": "use of undeclared identifier 'stack0xffffffdc'"
       }
     ],
@@ -19,17 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 330,
-    "complexity_score": 198,
+    "complexity_score": 252,
     "cross_reference_count": 2,
     "function_call_count": 11,
     "global_count": 29,
-    "pseudocode_lines": 108,
-    "suspect_count": 8,
+    "pseudocode_lines": 102,
+    "suspect_count": 14,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_ref"
     ],
-    "total_lines": 438
+    "total_lines": 432
   },
   "cross_references": [
     {
@@ -461,54 +461,96 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 26,
       "match": "ROUND",
-      "text": "local_c4.surface_normal.A = (int)ROUND(dVar4);",
+      "text": "(int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.x * 65535.0f));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 29,
+      "line": 26,
       "match": "ROUND",
-      "text": "local_c4.surface_normal.B = (int)ROUND(dVar4);",
+      "text": "(int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.x * 65535.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 28,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.y * 65535.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 28,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.y * 65535.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 30,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.z * 65535.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 30,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.z * 65535.0f));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 32,
       "match": "ROUND",
-      "text": "local_c4.surface_normal.C = (int)ROUND(dVar4);",
+      "text": "(int)ROUND(ROUND(g_ModelPolygonData[polygon_index].plane_distance * 65535.0f *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 36,
+      "line": 32,
       "match": "ROUND",
-      "text": "local_c4.surface_normal.D = (int)ROUND(dVar4);",
+      "text": "(int)ROUND(ROUND(g_ModelPolygonData[polygon_index].plane_distance * 65535.0f *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 63,
+      "line": 58,
       "match": "ROUND",
-      "text": "g_RenderVertexBuffer[local_14].u = (int)ROUND(dVar4);",
+      "text": "(int)ROUND(ROUND(g_ModelPolygonData[polygon_index].uv_u[local_18] *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 67,
+      "line": 58,
       "match": "ROUND",
-      "text": "g_RenderVertexBuffer[local_14].v = (int)ROUND(dVar4);",
+      "text": "(int)ROUND(ROUND(g_ModelPolygonData[polygon_index].uv_u[local_18] *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 61,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(g_ModelPolygonData[polygon_index].uv_v[local_18] *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 61,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(g_ModelPolygonData[polygon_index].uv_v[local_18] *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Direct stack address reference",
-      "line": 82,
+      "line": 77,
       "match": "&stack0xffffffdc",
       "text": "engine_3d_c_processPolygonColor_FUN_00403e30((SMRGLHeaderPrimitive *)&stack0xffffffdc);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 101,
+      "line": 96,
       "match": "&stack0xffffffdc",
       "text": "engine_3d_c_processPolygonColor_FUN_00403e30((SMRGLHeaderPrimitive *)&stack0xffffffdc);",
       "type": "stack_ref"

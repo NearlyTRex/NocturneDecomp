@@ -6,18 +6,17 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2)
 
 {
-  CDrawSurface *x;
   int iVar1;
-  CDrawSurface *this_ptr_00;
   int iVar2;
-  int x_00;
-  double dVar3;
+  int iVar3;
   
-  iVar1 = x2;
-  this_ptr_00 = this_ptr;
+  iVar2 = y2;
+  iVar1 = x1;
   if (g_AnimationTimerValue != g_LastAnimationTimerValue) {
     g_DashAnimationAccumulatorOther =
          (float)g_GlobalDeltaTimeInt * (float)1.52587890625e-05 +
@@ -32,41 +31,39 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887
       g_DashAnimationAccumulatorOther = 0.0;
     }
   }
-  dVar3 = round((double)g_DashOffsetCounter);
-  iVar2 = (int)ROUND(dVar3);
-  x_00 = x2;
+  iVar3 = (int)ROUND(ROUND(g_DashOffsetCounter));
   if (x2 < x1) {
-    this_ptr = (CDrawSurface *)x2;
-    x_00 = x1;
+    x1 = x2;
+    x2 = iVar1;
   }
-  x = this_ptr;
-  if (x2 < y1) {
-    x2 = y1;
-    y1 = iVar1;
+  iVar1 = x1;
+  if (y2 < y1) {
+    y2 = y1;
+    y1 = iVar2;
   }
-  for (; iVar1 = y1, (int)x < x_00; x = (CDrawSurface *)((int)&x->width + 1)) {
-    if (iVar2 % (g_DashLength * 2) < g_DashLength) {
-      cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_004874d0(this_ptr_00,(int)x,y1);
+  for (; iVar2 = y1, iVar1 < x2; iVar1 = iVar1 + 1) {
+    if (iVar3 % (g_DashLength * 2) < g_DashLength) {
+      cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_004874d0(this_ptr,iVar1,y1);
     }
-    iVar2 = iVar2 + 1;
+    iVar3 = iVar3 + 1;
   }
-  for (; iVar1 < x2; iVar1 = iVar1 + 1) {
-    if (iVar2 % (g_DashLength * 2) < g_DashLength) {
-      cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_004874d0(this_ptr_00,x_00,iVar1);
+  for (; iVar2 < y2; iVar2 = iVar2 + 1) {
+    if (iVar3 % (g_DashLength * 2) < g_DashLength) {
+      cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_004874d0(this_ptr,x2,iVar2);
     }
-    iVar2 = iVar2 + 1;
+    iVar3 = iVar3 + 1;
   }
-  for (; (int)this_ptr < x_00; x_00 = x_00 + -1) {
-    if (iVar2 % (g_DashLength * 2) < g_DashLength) {
-      cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_004874d0(this_ptr_00,x_00,x2);
+  for (; x1 < x2; x2 = x2 + -1) {
+    if (iVar3 % (g_DashLength * 2) < g_DashLength) {
+      cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_004874d0(this_ptr,x2,y2);
     }
-    iVar2 = iVar2 + 1;
+    iVar3 = iVar3 + 1;
   }
-  for (; y1 < x2; x2 = x2 + -1) {
-    if (iVar2 % (g_DashLength * 2) < g_DashLength) {
-      cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_004874d0(this_ptr_00,(int)this_ptr,x2);
+  for (; y1 < y2; y2 = y2 + -1) {
+    if (iVar3 % (g_DashLength * 2) < g_DashLength) {
+      cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_004874d0(this_ptr,x1,y2);
     }
-    iVar2 = iVar2 + 1;
+    iVar3 = iVar3 + 1;
   }
   return;
 }

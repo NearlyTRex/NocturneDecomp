@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 7,
-    "complexity_score": 23,
+    "complexity_score": 31,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 2,
-    "pseudocode_lines": 8,
-    "suspect_count": 1,
+    "pseudocode_lines": 6,
+    "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 15
+    "total_lines": 13
   },
   "cross_references": [
     {
@@ -134,9 +134,16 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 9,
+      "line": 7,
       "match": "ROUND",
-      "text": "g_ProjectionScale = (int)ROUND(dVar1);",
+      "text": "g_ProjectionScale = (int)ROUND(ROUND((float)65536 / scale_factor));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 7,
+      "match": "ROUND",
+      "text": "g_ProjectionScale = (int)ROUND(ROUND((float)65536 / scale_factor));",
       "type": "decompiler_intrinsic"
     }
   ]

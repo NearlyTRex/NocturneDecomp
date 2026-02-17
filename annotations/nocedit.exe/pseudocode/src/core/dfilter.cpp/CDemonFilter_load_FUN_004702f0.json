@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 203,
-    "complexity_score": 90,
+    "complexity_score": 97,
     "cross_reference_count": 3,
     "function_call_count": 7,
     "global_count": 19,
-    "pseudocode_lines": 65,
-    "suspect_count": 2,
+    "pseudocode_lines": 62,
+    "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 268
+    "total_lines": 265
   },
   "cross_references": [
     {
@@ -313,16 +313,23 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 21,
-      "match": "SQRT",
-      "text": "dVar5 = round(SQRT((double)iVar3));",
+      "line": 20,
+      "match": "ROUND",
+      "text": "this_ptr->size = (int)ROUND(ROUND(SQRT((float10)iVar3)));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 22,
+      "line": 20,
       "match": "ROUND",
-      "text": "this_ptr->size = (int)ROUND(dVar5);",
+      "text": "this_ptr->size = (int)ROUND(ROUND(SQRT((float10)iVar3)));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 20,
+      "match": "SQRT",
+      "text": "this_ptr->size = (int)ROUND(ROUND(SQRT((float10)iVar3)));",
       "type": "decompiler_intrinsic"
     }
   ]

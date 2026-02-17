@@ -37,8 +37,8 @@
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
 ;   core_actor.cpp_getRandomInt_FUN_0040cc70
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0
-;   core_bodypart.cpp_FUN_0041b4e0
-;   core_bodypart.cpp_FUN_0041b540
+;   core_bodypart.cpp_addVector_FUN_0041b540
+;   core_bodypart.cpp_scaleVector_FUN_0041b4e0
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 ;   engine_console.cpp_CConsole_printf_FUN_00441890
@@ -207,12 +207,12 @@ section .text
     MOV ESI,0x3f000000                  ; 0041ce38
     PUSH EAX                            ; 0041ce3d
     MOV dword ptr [ESP + 0xc4],ESI      ; 0041ce3e
-    CALL core_bodypart.cpp_FUN_0041b540 ; 0041ce45
-        ;   XREF to: 0041b540 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_0041b540()
+    CALL core_bodypart.cpp_addVector_FUN_0041b540 ; 0041ce45
+        ;   XREF to: 0041b540 (UNCONDITIONAL_CALL)  ; CVector3f * core_bodypart.cpp_addVector_FUN_0041b540(CVector3f * a, CVector3f * dst, CVector3f * b)
     ADD ESP,0xc                         ; 0041ce4a
     PUSH EAX                            ; 0041ce4d
-    CALL core_bodypart.cpp_FUN_0041b4e0 ; 0041ce4e
-        ;   XREF to: 0041b4e0 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_0041b4e0()
+    CALL core_bodypart.cpp_scaleVector_FUN_0041b4e0 ; 0041ce4e
+        ;   XREF to: 0041b4e0 (UNCONDITIONAL_CALL)  ; CVector3f * core_bodypart.cpp_scaleVector_FUN_0041b4e0(CVector3f * src, CVector3f * dst, float * scalar)
     ADD ESP,0xc                         ; 0041ce53
     LEA EAX,[ESP + 0x70]                ; 0041ce56
     PUSH EAX                            ; 0041ce5a

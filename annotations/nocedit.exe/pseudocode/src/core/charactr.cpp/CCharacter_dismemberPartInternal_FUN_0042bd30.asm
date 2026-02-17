@@ -40,8 +40,8 @@
 ;   undefined4 DAT_00823b10
 ;
 ; Called Functions:
-;   core_bodypart.cpp_CBodyPart_FUN_0041add0
-;   core_bodypart.cpp_CBodyPart_FUN_0041ae50
+;   core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_0041add0
+;   core_bodypart.cpp_CBodyPart_addFire_FUN_0041ae50
 ;   core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_005a1040
 ;   core_xform.cpp_matrixToEulerAngles_FUN_005f5690
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10
@@ -205,8 +205,8 @@ section .text
     PUSH 0x823b10                       ; 0042bed5 | DAT_00823b10
     MOV EDI,dword ptr [EBP + 0x8a]      ; 0042beda
     PUSH EDI                            ; 0042bee0
-    CALL core_bodypart.cpp_CBodyPart_FUN_0041add0 ; 0042bee1
-        ;   XREF to: 0041add0 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_FUN_0041add0(CBodyPart * this_ptr)
+    CALL core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_0041add0 ; 0042bee1
+        ;   XREF to: 0041add0 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_0041add0(CBodyPart * this_ptr, char * model_name, CVector3i * scale, CVector3i * position)
     ADD ESP,0x10                        ; 0042bee6
     JMP 0x0042bdcb                      ; 0042bee9
         ;   XREF to: 0042bdcb (UNCONDITIONAL_JUMP)  ; LAB_0042bdcb
@@ -229,8 +229,8 @@ section .text
     PUSH EAX                            ; 0042bf12
     MOV ECX,dword ptr [EBP + 0x8a]      ; 0042bf13
     PUSH ECX                            ; 0042bf19
-    CALL core_bodypart.cpp_CBodyPart_FUN_0041ae50 ; 0042bf1a
-        ;   XREF to: 0041ae50 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_FUN_0041ae50(CBodyPart * this_ptr)
+    CALL core_bodypart.cpp_CBodyPart_addFire_FUN_0041ae50 ; 0042bf1a
+        ;   XREF to: 0041ae50 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_addFire_FUN_0041ae50(CBodyPart * this_ptr, CVector3f * param_2)
     ADD ESP,0x8                         ; 0042bf1f
     JMP 0x0042be11                      ; 0042bf22
         ;   XREF to: 0042be11 (UNCONDITIONAL_JUMP)  ; LAB_0042be11

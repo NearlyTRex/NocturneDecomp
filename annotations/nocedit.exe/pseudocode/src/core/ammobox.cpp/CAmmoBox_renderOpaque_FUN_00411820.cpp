@@ -27,7 +27,7 @@ int __cdecl core_ammobox_cpp_CAmmoBox_renderOpaque_FUN_00411820(CAmmoBox *this_p
   pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
   local_14 = pCVar2->frame_count + -1;
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
-            (&this_ptr->model,(float)local_14 * this_ptr->unk1,render_flags);
+            (&this_ptr->model,(float)local_14 * this_ptr->open_pct,render_flags);
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base);
   return iVar1;
 }

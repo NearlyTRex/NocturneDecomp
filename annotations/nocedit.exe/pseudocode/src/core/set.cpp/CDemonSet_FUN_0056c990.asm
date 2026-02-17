@@ -54,7 +54,7 @@
 ;   core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0
 ;   core_fire.cpp_CFireEffect_FUN_004c93d0
 ;   core_fire.cpp_CFireEffect_render_FUN_004c7180
-;   core_gore.cpp_CGore_FUN_004ed7b0
+;   core_gore.cpp_CGore_renderParticles_FUN_004ed7b0
 ;   core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80
 ;   core_set.cpp_CDemonSet_FUN_0056aca0
 ;   core_set.cpp_CDemonSet_FUN_0056d380
@@ -242,8 +242,8 @@ section .text
     MOV ECX,dword ptr [0x0067b9a0]      ; 0056cb70 | g_CGoreInstance | g_CGorePtr
         ;   Label: LAB_0056cb70
     PUSH ECX                            ; 0056cb76 | g_CGoreInstance
-    CALL core_gore.cpp_CGore_FUN_004ed7b0 ; 0056cb77
-        ;   XREF to: 004ed7b0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004ed7b0(CGore * this_ptr)
+    CALL core_gore.cpp_CGore_renderParticles_FUN_004ed7b0 ; 0056cb77
+        ;   XREF to: 004ed7b0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_renderParticles_FUN_004ed7b0(CGore * this_ptr)
     ADD ESP,0x4                         ; 0056cb7c
     MOV EBX,dword ptr [0x0067a3d0]      ; 0056cb7f | g_CFireEffectInstance | g_CFireEffectPtr
     PUSH EBX                            ; 0056cb85 | g_CFireEffectInstance

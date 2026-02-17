@@ -5,13 +5,13 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 66,
-    "complexity_score": 71,
+    "assembly_lines": 67,
+    "complexity_score": 90,
     "cross_reference_count": 74,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 26,
-    "suspect_count": 4,
+    "pseudocode_lines": 25,
+    "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
@@ -485,15 +485,16 @@
   ],
   "globals": [],
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.267857142857143,
-    "instruction_count": 56,
+    "avg_pcode_per_instr": 5.258620689655173,
+    "instruction_count": 58,
     "opcode_distribution": {
       "BOOL_NEGATE": 2,
       "BOOL_OR": 1,
       "BRANCH": 1,
-      "CALL": 2,
+      "CALL": 1,
+      "CALLOTHER": 1,
       "CBRANCH": 3,
-      "COPY": 153,
+      "COPY": 165,
       "FLOAT2FLOAT": 10,
       "FLOAT_ADD": 1,
       "FLOAT_EQUAL": 1,
@@ -512,14 +513,14 @@
       "INT_OR": 5,
       "INT_SBORROW": 1,
       "INT_SLESS": 4,
-      "INT_SUB": 6,
+      "INT_SUB": 5,
       "INT_ZEXT": 4,
       "LOAD": 19,
       "POPCOUNT": 4,
       "RETURN": 2,
-      "STORE": 14
+      "STORE": 13
     },
-    "pcode_op_count": 295
+    "pcode_op_count": 305
   },
   "stack_frame": {
     "frame_size": 36,
@@ -571,23 +572,37 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 9,
+      "line": 11,
       "match": "ABS",
       "text": "if ((ABS(in_direction_vector->x) == 0.0) && (ABS(in_direction_vector->z) == 0.0)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 9,
+      "line": 11,
       "match": "ABS",
       "text": "if ((ABS(in_direction_vector->x) == 0.0) && (ABS(in_direction_vector->z) == 0.0)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 17,
+      "line": 19,
       "match": "CONCAT44",
       "text": "out_euler_angles->x = (float)(double)CONCAT44(uStack_14,0x54411744);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 22,
+      "match": "fpatan",
+      "text": "fVar1 = (float10)fpatan((float10)in_direction_vector->x,(float10)in_direction_vector->z);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 24,
+      "match": "fpatan",
+      "text": "fVar1 = (float10)fpatan((float10)in_direction_vector->y,",
       "type": "decompiler_intrinsic"
     },
     {

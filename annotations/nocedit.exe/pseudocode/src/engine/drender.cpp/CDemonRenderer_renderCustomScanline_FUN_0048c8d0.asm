@@ -17,7 +17,7 @@
 ; Referenced Globals:
 ;   int g_ClippedVertexCount
 ;   SRenderVertex[16] g_ClippedVertexBuffer
-;   _BIT_INTEGER g_RenderStateFlags
+;   _BIT_INTEGER32 g_RenderStateFlags
 ;   int g_RenderStateFlag2
 ;
 ; Called Functions:

@@ -18,8 +18,8 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-;   core_flies.cpp_CFlies_FUN_004cca50
-;   core_gore.cpp_CGore_FUN_004ee030
+;   core_flies.cpp_findFliesByFollowActor_FUN_004cca50
+;   core_gore.cpp_CGore_spawnFliesOnActor_FUN_004ee030
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
         ;   XREF to: 0040ac80 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80(CDemonActor * this_ptr, char * context_file, int context_line)
     ADD ESP,0xc                         ; 00409e85
     PUSH EBX                            ; 00409e88
-    CALL core_flies.cpp_CFlies_FUN_004cca50 ; 00409e89
-        ;   XREF to: 004cca50 (UNCONDITIONAL_CALL)  ; CDemonActor * core_flies.cpp_CFlies_FUN_004cca50(CFlies * this_ptr)
+    CALL core_flies.cpp_findFliesByFollowActor_FUN_004cca50 ; 00409e89
+        ;   XREF to: 004cca50 (UNCONDITIONAL_CALL)  ; CFlies * core_flies.cpp_findFliesByFollowActor_FUN_004cca50(CDemonActor * actor)
     ADD ESP,0x4                         ; 00409e8e
     TEST EAX,EAX                        ; 00409e91
     JZ 0x00409e97                       ; 00409e93
@@ -51,8 +51,8 @@ section .text
     PUSH EBX                            ; 00409ea1
     MOV ECX,dword ptr [0x0067b9a0]      ; 00409ea2 | g_CGoreInstance | g_CGorePtr
     PUSH ECX                            ; 00409ea8 | g_CGoreInstance
-    CALL core_gore.cpp_CGore_FUN_004ee030 ; 00409ea9
-        ;   XREF to: 004ee030 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004ee030(CGore * this_ptr, CDemonActor * actor)
+    CALL core_gore.cpp_CGore_spawnFliesOnActor_FUN_004ee030 ; 00409ea9
+        ;   XREF to: 004ee030 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnFliesOnActor_FUN_004ee030(CGore * this_ptr, CDemonActor * actor, int gather_count, float spawn_rate, ...)
     ADD ESP,0x14                        ; 00409eae
     POP EBX                             ; 00409eb1
     RET                                 ; 00409eb2

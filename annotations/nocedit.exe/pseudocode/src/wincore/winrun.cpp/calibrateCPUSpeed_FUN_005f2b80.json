@@ -1,27 +1,18 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "missing_member",
-        "column": 41,
-        "line": 23,
-        "message": "no member named '_0_4_' in '_LARGE_INTEGER'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 183,
-    "complexity_score": 58,
+    "complexity_score": 43,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 16,
     "pseudocode_lines": 43,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unknown_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 226
   },
   "cross_references": [
@@ -130,13 +121,13 @@
     {
       "addr": "03f96ba8",
       "name": "g_PerformanceCounter",
-      "type": "LARGE_INTEGER",
+      "type": "_struct_19",
       "value": null
     },
     {
       "addr": "03f96bb0",
       "name": "g_PerformanceFrequency",
-      "type": "LARGE_INTEGER",
+      "type": "_struct_19",
       "value": null
     },
     {
@@ -259,13 +250,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unknown/mangled field access",
-      "line": 16,
-      "match": "._0_4_",
-      "text": "(double)g_PerformanceFrequency._0_4_ +",
-      "type": "unknown_field"
-    }
-  ]
+  "suspects": []
 }

@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   pixel_count
 ;
 ; Referenced Globals:
-;   ulonglong g_FilterBlendConstant = 0x0
+;   _MMX_INTEGER g_FilterBlendConstant
 ;
 ; *****************************************************************************
 

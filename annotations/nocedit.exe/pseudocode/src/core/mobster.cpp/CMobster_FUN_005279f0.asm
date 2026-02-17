@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_mobster_cpp_CMobster_FUN_005279f0(CMobster *this_ptr)
+; void __cdecl core_mobster_cpp_CMobster_FUN_005279f0(CMobster *this_ptr,int taunt_category)
 ;
 ; Parameters:
 ; CMobster *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   taunt_category
 ; Local Variables:
 ; undefined1       Stack[-0x80]:1  local_80
 ; undefined4       Stack[-0x1c]:4  local_1c
@@ -21,7 +22,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CSound* g_CSoundPtr = 03f6af64
 ;   undefined4 DAT_02d81ab8
-;   undefined4 DAT_02f37eb4
+;   int[5] g_MobsterTauntCounters
 ;   undefined4 g_CMobsterClassInfo.name_hash
 ;   undefined4 g_CDemonSetInstance.enemy_count
 ;   undefined4 DAT_03265258
@@ -60,11 +61,11 @@ section .text
     ADD EAX,0x60                        ; 00527a16
     SHL EBX,0x2                         ; 00527a19
     MOV dword ptr [ESP + 0x64],EAX      ; 00527a1c
-    MOV EDX,dword ptr [EBX + 0x2f37eb4] ; 00527a20 | DAT_02f37eb4
+    MOV EDX,dword ptr [EBX + 0x2f37eb4] ; 00527a20 | g_MobsterTauntCounters
         ;   Label: LAB_00527a20
     INC EDX                             ; 00527a26
     MOV EAX,[0x0067b654]                ; 00527a27 | g_CGamePtr
-    MOV dword ptr [EBX + 0x2f37eb4],EDX ; 00527a2c | DAT_02f37eb4
+    MOV dword ptr [EBX + 0x2f37eb4],EDX ; 00527a2c | g_MobsterTauntCounters
     CMP dword ptr [EAX + 0x1c],0x0      ; 00527a32 | DAT_02d81ab8
     JNZ 0x00527a5f                      ; 00527a36
         ;   XREF to: 00527a5f (CONDITIONAL_JUMP)  ; LAB_00527a5f
@@ -94,7 +95,7 @@ section .text
     POP ESI                             ; 00527a5c
     POP EBX                             ; 00527a5d
     RET                                 ; 00527a5e
-    MOV ECX,dword ptr [EBX + 0x2f37eb4] ; 00527a5f | DAT_02f37eb4
+    MOV ECX,dword ptr [EBX + 0x2f37eb4] ; 00527a5f | g_MobsterTauntCounters
         ;   Label: LAB_00527a5f
     PUSH ECX                            ; 00527a65
     MOV EAX,dword ptr [ESP + 0x68]      ; 00527a66
@@ -126,7 +127,7 @@ section .text
     JC 0x00527a49                       ; 00527ab3
         ;   XREF to: 00527a49 (CONDITIONAL_JUMP)  ; LAB_00527a49
     XOR ECX,ECX                         ; 00527ab5
-    MOV dword ptr [EBX + 0x2f37eb4],ECX ; 00527ab7 | DAT_02f37eb4
+    MOV dword ptr [EBX + 0x2f37eb4],ECX ; 00527ab7 | g_MobsterTauntCounters
     JMP 0x00527a43                      ; 00527abd
         ;   XREF to: 00527a43 (UNCONDITIONAL_JUMP)  ; LAB_00527a43
     FLD float ptr [ESI + 0xbed4]        ; 00527abf

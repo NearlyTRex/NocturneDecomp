@@ -1,0 +1,219 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 87,
+    "complexity_score": 51,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 8,
+    "pseudocode_lines": 36,
+    "suspect_count": 1,
+    "suspect_types": [
+      "param_count_too_few"
+    ],
+    "total_lines": 123
+  },
+  "cross_references": [
+    {
+      "addr": "004ee030",
+      "from_addr": "004ee04d",
+      "name": "core_gore.cpp_CGore_spawnFliesOnActor_FUN_004ee030",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004edf30",
+    "address_range": [
+      [
+        "004edf30",
+        "004ee021"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_gore.cpp_CGore_spawnFlies_FUN_004edf30",
+    "signature": "CFlies * __cdecl core_gore_cpp_CGore_spawnFlies_FUN_004edf30(CGore *this_ptr,CVector3f *position,int gather_count,float spawn_rate,CVector3f *box_size)"
+  },
+  "function_calls": [
+    {
+      "addr": "004cbd60",
+      "is_variadic": false,
+      "name": "core_flies.cpp_CFlies_ctor_FUN_004cbd60"
+    },
+    {
+      "addr": "00506f10",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "00523b70",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70"
+    },
+    {
+      "addr": "00524700",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_generateActorName_FUN_00524700"
+    },
+    {
+      "addr": "0050f1b0",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062e3fa",
+      "name": "s_core_gore_cpp_0062e3fa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062e40b",
+      "name": "s_core_gore_cpp_0062e40b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062e41c",
+      "name": "s_Can_t_create_flies_0062e41c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062e432",
+      "name": "DOUBLE_0062e432",
+      "type": "double",
+      "value": "60"
+    },
+    {
+      "addr": "0067d550",
+      "name": "g_CDemonMissionPtr",
+      "type": "CDemonMission*",
+      "value": "02f33740"
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f33740",
+      "name": "g_CDemonMissionInstance",
+      "type": "CDemonMission",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004ee04d",
+        "call_type": "direct",
+        "caller": "core_gore.cpp_CGore_spawnFliesOnActor_FUN_004ee030",
+        "estimated_params": 7,
+        "instructions_analyzed": 12,
+        "reg_params": [],
+        "stack_params": 7
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 5,
+    "estimated_params": 7
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.7083333333333335,
+    "instruction_count": 72,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 1,
+      "CALL": 5,
+      "CALLIND": 1,
+      "CBRANCH": 4,
+      "COPY": 77,
+      "FLOAT2FLOAT": 3,
+      "FLOAT_DIV": 1,
+      "INT_ADD": 29,
+      "INT_AND": 23,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 20,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 10,
+      "INT_SUB": 20,
+      "LOAD": 17,
+      "POPCOUNT": 10,
+      "RETURN": 1,
+      "STORE": 29
+    },
+    "pcode_op_count": 267
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGore *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "gather_count",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "spawn_rate",
+        "offset": 16,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "box_size",
+        "offset": 20,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "call_site_count": 1,
+      "declared_params": 5,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 7,
+      "fix_type": "add_params",
+      "match": "declared:5 vs estimated:7",
+      "param_delta": 2,
+      "text": "Function declares 5 params but call sites push 7 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 34,
+        "line": 35,
         "message": "no matching function for call to 'core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30'"
       }
     ],
@@ -13,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 199,
-    "complexity_score": 115,
+    "complexity_score": 136,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 2,
-    "pseudocode_lines": 80,
-    "suspect_count": 3,
+    "pseudocode_lines": 71,
+    "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 279
+    "total_lines": 270
   },
   "cross_references": [
     {
@@ -340,23 +340,44 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
+      "line": 33,
+      "match": "ROUND",
+      "text": "local_28 = (int)ROUND(ROUND((local_58 / (this_ptr->adjusted_size).x) * fVar3 + 1.0));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 33,
+      "match": "ROUND",
+      "text": "local_28 = (int)ROUND(ROUND((local_58 / (this_ptr->adjusted_size).x) * fVar3 + 1.0));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 35,
+      "match": "ROUND",
+      "text": "local_24 = (int)ROUND(ROUND((local_54 / (this_ptr->adjusted_size).y) * fVar3 + 1.0));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 35,
+      "match": "ROUND",
+      "text": "local_24 = (int)ROUND(ROUND((local_54 / (this_ptr->adjusted_size).y) * fVar3 + 1.0));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 37,
       "match": "ROUND",
-      "text": "iStack_2c = (int)ROUND(dVar5);",
+      "text": "local_1c = (int)ROUND(ROUND((local_50 / (this_ptr->adjusted_size).z) * fVar3 + 1.0));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
+      "line": 37,
       "match": "ROUND",
-      "text": "iStack_2c = (int)ROUND(dVar5);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 45,
-      "match": "ROUND",
-      "text": "local_28 = (int)ROUND(dVar5);",
+      "text": "local_1c = (int)ROUND(ROUND((local_50 / (this_ptr->adjusted_size).z) * fVar3 + 1.0));",
       "type": "decompiler_intrinsic"
     }
   ]

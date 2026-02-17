@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 176,
-    "complexity_score": 82,
+    "complexity_score": 90,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 10,
-    "pseudocode_lines": 67,
-    "suspect_count": 1,
+    "pseudocode_lines": 65,
+    "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 243
+    "total_lines": 241
   },
   "cross_references": [],
   "function": {
@@ -206,9 +206,16 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 25,
+      "line": 24,
       "match": "ROUND",
-      "text": "iVar5 = (int)ROUND(dVar6);",
+      "text": "iVar6 = (int)ROUND(ROUND(g_MpegSampleRateTable[iVar4][pSVar3->sampling_rate_index]));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 24,
+      "match": "ROUND",
+      "text": "iVar6 = (int)ROUND(ROUND(g_MpegSampleRateTable[iVar4][pSVar3->sampling_rate_index]));",
       "type": "decompiler_intrinsic"
     }
   ]

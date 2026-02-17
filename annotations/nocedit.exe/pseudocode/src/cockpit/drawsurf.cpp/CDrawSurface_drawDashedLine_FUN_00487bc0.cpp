@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawDashedLine_FUN_00487bc0(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2)
 
 {
@@ -15,13 +17,11 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawDashedLine_FUN_00487bc0(CDraw
   int x;
   int iVar3;
   int iVar4;
-  double dVar5;
-  CDrawSurface *unaff_retaddr;
-  int iStack_30;
   int local_2c;
   int local_28;
   int local_24;
-  uint local_1c;
+  int local_20;
+  uint local_18;
   
   if (g_AnimationTimerValue != g_DashAnimationLastFrame) {
     g_DashAnimationAccumulator =
@@ -36,18 +36,17 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawDashedLine_FUN_00487bc0(CDraw
       g_DashAnimationAccumulator = 0.0;
     }
   }
-  dVar5 = round((double)g_DashAnimationOffset);
-  local_1c = (uint)ROUND(dVar5);
-  local_2c = 1;
+  local_18 = (uint)ROUND(ROUND(g_DashAnimationOffset));
+  local_28 = 1;
   iVar4 = x1 - this_ptr->x;
   x = x2 - this_ptr->x;
   iVar2 = y1 - this_ptr->y;
   y = y2 - this_ptr->y;
-  iStack_30 = 1;
+  local_2c = 1;
   iVar1 = iVar2;
   iVar3 = iVar4;
   if (iVar2 <= y) {
-    iStack_30 = -1;
+    local_2c = -1;
     iVar1 = y;
     y = iVar2;
     iVar3 = x;
@@ -57,46 +56,46 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawDashedLine_FUN_00487bc0(CDraw
   iVar3 = iVar3 - x;
   if (iVar3 < 0) {
     iVar3 = -iVar3;
-    local_2c = -1;
+    local_28 = -1;
   }
   if (iVar1 < iVar3) {
-    local_24 = 0;
+    local_20 = 0;
     iVar2 = iVar1 * 2 - iVar3;
     if (-1 < iVar3) {
       do {
-        if ((int)((local_1c ^ (int)local_1c >> 0x1f) - ((int)local_1c >> 0x1f)) % (g_DashLength * 2)
+        if ((int)((local_18 ^ (int)local_18 >> 0x1f) - ((int)local_18 >> 0x1f)) % (g_DashLength * 2)
             < g_DashLength) {
-          cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_004874d0(unaff_retaddr,x,y);
+          cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_004874d0(this_ptr,x,y);
         }
         if (0 < iVar2) {
           y = y + 1;
           iVar2 = iVar2 - iVar3;
         }
-        local_1c = local_1c + iStack_30;
-        x = x + local_2c;
-        local_24 = local_24 + 1;
+        local_18 = local_18 + local_2c;
+        x = x + local_28;
+        local_20 = local_20 + 1;
         iVar2 = iVar2 + iVar1;
-      } while (local_24 <= iVar3);
+      } while (local_20 <= iVar3);
     }
   }
   else {
-    local_28 = 0;
+    local_24 = 0;
     iVar2 = iVar3 * 2 - iVar1;
     if (-1 < iVar1) {
       do {
-        if ((int)((local_1c ^ (int)local_1c >> 0x1f) - ((int)local_1c >> 0x1f)) % (g_DashLength * 2)
+        if ((int)((local_18 ^ (int)local_18 >> 0x1f) - ((int)local_18 >> 0x1f)) % (g_DashLength * 2)
             < g_DashLength) {
-          cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_004874d0(unaff_retaddr,x,y);
+          cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_004874d0(this_ptr,x,y);
         }
         if (0 < iVar2) {
           iVar2 = iVar2 - iVar1;
-          x = x + local_2c;
+          x = x + local_28;
         }
         y = y + 1;
         iVar2 = iVar2 + iVar3;
-        local_1c = local_1c + iStack_30;
-        local_28 = local_28 + 1;
-      } while (local_28 <= iVar1);
+        local_18 = local_18 + local_2c;
+        local_24 = local_24 + 1;
+      } while (local_24 <= iVar1);
     }
   }
   return;

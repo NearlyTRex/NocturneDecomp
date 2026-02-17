@@ -9,7 +9,7 @@
 uint __cdecl engine_font_cpp_packPixelScaled_FUN_004d1110(int red,int green,int blue)
 
 {
-  return (uint)blue / (uint)g_BlueScaleFactor << ((byte)g_BlueBitPosition & 0x1f) |
-         (uint)green / (uint)g_GreenScaleFactor << ((byte)g_GreenBitPosition & 0x1f) |
-         (uint)red / (uint)g_RedScaleFactor << ((byte)g_RedBitPosition & 0x1f);
+  return (uint)blue / (uint)g_BlueScaleFactor << (g_BlueBitPosition.bytes[0] & 0x1f) |
+         (uint)green / (uint)g_GreenScaleFactor << (g_GreenBitPosition.bytes[0] & 0x1f) |
+         (uint)red / (uint)g_RedScaleFactor << (g_RedBitPosition.bytes[0] & 0x1f);
 }

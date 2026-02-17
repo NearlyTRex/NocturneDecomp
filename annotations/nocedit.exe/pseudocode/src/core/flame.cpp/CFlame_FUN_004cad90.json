@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 43,
+    "complexity_score": 51,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 1,
-    "pseudocode_lines": 28,
-    "suspect_count": 1,
+    "pseudocode_lines": 26,
+    "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 66
+    "total_lines": 64
   },
   "cross_references": [
     {
@@ -167,9 +167,16 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 20,
+      "line": 19,
       "match": "ROUND",
-      "text": "iStack_18 = (int)ROUND(dVar3);",
+      "text": "local_14 = (int)ROUND(ROUND((fVar1 + this_ptr->intensity) * (float)65535));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 19,
+      "match": "ROUND",
+      "text": "local_14 = (int)ROUND(ROUND((fVar1 + this_ptr->intensity) * (float)65535));",
       "type": "decompiler_intrinsic"
     }
   ]

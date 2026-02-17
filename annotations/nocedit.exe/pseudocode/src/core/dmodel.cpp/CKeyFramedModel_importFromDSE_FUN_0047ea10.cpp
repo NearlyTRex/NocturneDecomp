@@ -6,21 +6,19 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl core_dmodel_cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10(CKeyFramedModel *this_ptr)
 
 {
-  char cVar1;
-  CVector3i **ppCVar2;
-  SMRGLPrimitiveQuad **ppSVar3;
-  double dVar4;
+  float *pfVar1;
+  char cVar2;
+  double dVar3;
+  int iVar4;
   int iVar5;
   int iVar6;
-  int iVar7;
+  char *pcVar7;
   char *pcVar8;
-  int unaff_EDI;
-  char *pcVar9;
-  double dVar10;
-  int iVar11;
   int local_1c;
   char *local_18;
   int local_14;
@@ -30,31 +28,26 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10(CKeyFram
   if ((g_VertexCount < 1) || (g_PolygonCount < 1)) {
     return;
   }
-  iVar7 = 0;
+  iVar6 = 0;
   core_dmodel_cpp_CKeyFramedModel_allocate_FUN_00477bf0
             (this_ptr,g_VertexCount,g_PolygonCount,300,1,1);
-  dVar4 = 256;
+  dVar3 = 256;
   if (0 < this_ptr->vertex_count) {
+    iVar4 = 0;
     iVar5 = 0;
-    iVar6 = 0;
     do {
-      ppCVar2 = this_ptr->vertex_list;
-      dVar10 = round
-                         ((double)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar5) * dVar4);
-      unaff_EDI = (int)ROUND(dVar10);
-      *(int *)((int)ppCVar2 + iVar6) = unaff_EDI;
-      ppCVar2 = this_ptr->vertex_list;
-      dVar10 = round
-                         ((double)*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar5) * dVar4);
-      *(int *)((int)ppCVar2 + iVar6 + 4) = (int)ROUND(dVar10);
-      ppCVar2 = this_ptr->vertex_list;
-      dVar10 = round
-                         ((double)*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar5) * dVar4);
-      iVar5 = iVar5 + 0x14;
-      *(int *)((int)ppCVar2 + iVar6 + 8) = (int)ROUND(dVar10);
-      iVar7 = iVar7 + 1;
-      iVar6 = iVar6 + 0xc;
-    } while (iVar7 < this_ptr->vertex_count);
+      *(int *)((int)this_ptr->vertex_list + iVar5) =
+           (int)ROUND(ROUND((double)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar4) * dVar3))
+      ;
+      *(int *)((int)this_ptr->vertex_list + iVar5 + 4) =
+           (int)ROUND(ROUND((double)*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar4) * dVar3))
+      ;
+      pfVar1 = (float *)((int)&g_LoadedVertices[0].vertex.z + iVar4);
+      iVar4 = iVar4 + 0x14;
+      *(int *)((int)this_ptr->vertex_list + iVar5 + 8) = (int)ROUND(ROUND((double)*pfVar1 * dVar3));
+      iVar6 = iVar6 + 1;
+      iVar5 = iVar5 + 0xc;
+    } while (iVar6 < this_ptr->vertex_count);
   }
   this_ptr->texture_count = 0;
   local_10 = 0;
@@ -63,62 +56,59 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10(CKeyFram
     local_1c = 0;
     local_18 = g_ModelPolygonData[0].texture_name;
     do {
-      iVar7 = local_10 * 0x184;
-      iVar6 = 0;
+      iVar6 = local_10 * 0x184;
+      iVar5 = 0;
       *(uint *)((int)this_ptr->poly_vert_list + local_14 + 4) =
            g_ModelPolygonData[local_10].vertex_indices_count;
-      dVar4 = 65536;
-      iVar5 = 0;
+      dVar3 = 65536;
+      iVar4 = 0;
       if (0 < (int)g_ModelPolygonData[local_10].vertex_indices_count) {
         do {
-          *(uint *)((int)this_ptr->poly_vert_list + iVar5 + local_14 + 0x18) =
-               *(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar7);
-          dVar10 = round
-                             ((double)*(float *)((int)g_ModelPolygonData[0].uv_u + iVar7) * dVar4);
-          iVar11 = (int)ROUND(dVar10);
-          *(int *)(unaff_EDI + 0x1c) = iVar11;
-          ppSVar3 = this_ptr->poly_vert_list;
-          dVar10 = round
-                             ((double)*(float *)((int)g_ModelPolygonData[0].uv_v + iVar7) * dVar4);
-          *(int *)((int)ppSVar3 + iVar5 + local_14 + 0x20) = (int)ROUND(dVar10);
-          iVar7 = iVar7 + 4;
-          iVar6 = iVar6 + 1;
-          iVar5 = iVar5 + 0xc;
-          unaff_EDI = iVar11;
-        } while (iVar6 < *(int *)((int)g_ModelPolygonData[0].vertex_indices + local_14 + -0x14));
+          *(uint *)((int)this_ptr->poly_vert_list + iVar4 + local_14 + 0x18) =
+               *(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar6);
+          *(int *)((int)this_ptr->poly_vert_list + iVar4 + local_14 + 0x1c) =
+               (int)ROUND(ROUND((double)*(float *)((int)g_ModelPolygonData[0].uv_u + iVar6) * dVar3)
+                         );
+          *(int *)((int)this_ptr->poly_vert_list + iVar4 + local_14 + 0x20) =
+               (int)ROUND(ROUND((double)*(float *)((int)g_ModelPolygonData[0].uv_v + iVar6) * dVar3)
+                         );
+          iVar6 = iVar6 + 4;
+          iVar5 = iVar5 + 1;
+          iVar4 = iVar4 + 0xc;
+        } while (iVar5 < (int)g_ModelPolygonData[local_10].vertex_indices_count);
       }
-      iVar7 = 0;
+      iVar6 = 0;
       if (0 < this_ptr->texture_count) {
-        pcVar8 = this_ptr->texture_list[0].base.texture_name;
+        pcVar7 = this_ptr->texture_list[0].base.texture_name;
         do {
-          iVar5 = stricmp(pcVar8,local_18);
-          if (iVar5 == 0) break;
-          iVar7 = iVar7 + 1;
-          pcVar8 = pcVar8 + 0x48;
-        } while (iVar7 < this_ptr->texture_count);
+          iVar4 = stricmp(pcVar7,local_18);
+          if (iVar4 == 0) break;
+          iVar6 = iVar6 + 1;
+          pcVar7 = pcVar7 + 0x48;
+        } while (iVar6 < this_ptr->texture_count);
       }
-      if (this_ptr->texture_count <= iVar7) {
-        if (299 < iVar7) {
+      if (this_ptr->texture_count <= iVar6) {
+        if (299 < iVar6) {
           g_CurrentFilename = "..\\core\\dmodel.cpp";
           g_CurrentLineNumber = 0xe45;
           core_main_c_displayErrorAndQuit_FUN_00506f10("CKeyFramedModel::exportToDSE() - Too many textures!");
         }
-        pcVar9 = this_ptr->texture_list[iVar7].base.texture_name;
-        pcVar8 = local_18;
+        pcVar8 = this_ptr->texture_list[iVar6].base.texture_name;
+        pcVar7 = local_18;
         do {
-          cVar1 = *pcVar8;
-          *pcVar9 = cVar1;
-          if (cVar1 == '\0') break;
-          cVar1 = pcVar8[1];
+          cVar2 = *pcVar7;
+          *pcVar8 = cVar2;
+          if (cVar2 == '\0') break;
+          cVar2 = pcVar7[1];
+          pcVar7 = pcVar7 + 2;
+          pcVar8[1] = cVar2;
           pcVar8 = pcVar8 + 2;
-          pcVar9[1] = cVar1;
-          pcVar9 = pcVar9 + 2;
-        } while (cVar1 != '\0');
+        } while (cVar2 != '\0');
         this_ptr->texture_count = this_ptr->texture_count + 1;
       }
       local_14 = local_14 + 0x48;
       local_10 = local_10 + 1;
-      *(int *)((int)this_ptr->poly_texture_index_list + local_1c) = iVar7;
+      *(int *)((int)this_ptr->poly_texture_index_list + local_1c) = iVar6;
       local_1c = local_1c + 4;
       local_18 = local_18 + 0x184;
     } while (local_10 < this_ptr->poly_count);

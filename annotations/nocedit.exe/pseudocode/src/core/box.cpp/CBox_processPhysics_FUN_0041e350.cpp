@@ -433,13 +433,13 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
       local_344.scrape_points[6].transformed_position.y = local_b8 * (float)*piVar1;
       local_344.scrape_points[6].transformed_position.z = local_b4 * (float)*piVar1;
       local_344.linear_velocity.y = 1.0 / delta_time;
-      local_344.unk =
+      local_344.padding =
            (int)(local_344.scrape_points[6].transformed_position.x * local_344.linear_velocity.y);
       local_344.linear_velocity.x =
            local_344.scrape_points[6].transformed_position.y * local_344.linear_velocity.y;
       local_344.linear_velocity.y =
            local_344.scrape_points[6].transformed_position.z * local_344.linear_velocity.y;
-      (this_ptr->linear_momentum).x = (this_ptr->linear_momentum).x + (float)local_344.unk;
+      (this_ptr->linear_momentum).x = (this_ptr->linear_momentum).x + (float)local_344.padding;
       (this_ptr->linear_momentum).y = (this_ptr->linear_momentum).y + local_344.linear_velocity.x;
       (this_ptr->linear_momentum).z = (this_ptr->linear_momentum).z + local_344.linear_velocity.y;
       (this_ptr->angular_velocity).z = 0.0;
@@ -450,12 +450,12 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
            (pSVar12->local_position).y * local_344.linear_velocity.y -
            (pSVar12->local_position).z * local_344.linear_velocity.x;
       local_344.scrape_points[7].transformed_position.x =
-           (pSVar12->local_position).z * (float)local_344.unk -
+           (pSVar12->local_position).z * (float)local_344.padding -
            (pSVar12->local_position).x * local_344.linear_velocity.y;
       local_b0 = local_344.scrape_points[7].local_position.z * 0.1f;
       local_344.scrape_points[7].transformed_position.y =
            (pSVar12->local_position).x * local_344.linear_velocity.x -
-           (pSVar12->local_position).y * (float)local_344.unk;
+           (pSVar12->local_position).y * (float)local_344.padding;
       local_ac = local_344.scrape_points[7].transformed_position.x * 0.1f;
       local_a8 = local_344.scrape_points[7].transformed_position.y * 0.1f;
       (this_ptr->angular_momentum).x = (this_ptr->angular_momentum).x + local_b0;

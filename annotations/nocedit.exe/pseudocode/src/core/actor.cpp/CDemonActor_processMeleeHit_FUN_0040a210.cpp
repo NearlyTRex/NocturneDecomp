@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor *this_ptr,int hit_type)
 
 {
@@ -169,11 +171,13 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor 
                      (SDamageInfo *)&local_1a0.impact_direction);
           uStack_26c = (double)(float)local_1a0.damage_type;
           if (0.0 < uStack_26c) {
-            round(uStack_26c * 0.5 + 1.0);
-            in_stack_fffffd70 = (float *)0x40a511;
-            core_gore_cpp_CGore_FUN_004edbb0(g_CGorePtr);
+            core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0
+                      (g_CGorePtr,(CVector3f *)&local_a4.z,(CVector3f *)&local_3c,
+                       (int)ROUND(ROUND(uStack_26c * 0.5 + 1.0)),pCVar3->collision_layer
+                      );
             (*((this_ptr->vtable)._ub)->playAttackHitEffects)
-                      (this_ptr,hit_type,(SDamageInfo *)&local_1a0.ammo_type,(CDemonActor *)pCVar3);
+                      (this_ptr,hit_type,(SDamageInfo *)&local_1a0.weapon_damage_modifier,
+                       (CDemonActor *)pCVar3);
           }
         }
       }

@@ -31,17 +31,17 @@
   },
   "complexity": {
     "assembly_lines": 395,
-    "complexity_score": 207,
+    "complexity_score": 216,
     "cross_reference_count": 7,
     "function_call_count": 9,
     "global_count": 16,
-    "pseudocode_lines": 147,
-    "suspect_count": 5,
+    "pseudocode_lines": 146,
+    "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
       "undefined_data"
     ],
-    "total_lines": 542
+    "total_lines": 541
   },
   "cross_references": [
     {
@@ -346,35 +346,42 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 26,
       "match": "ROUND",
-      "text": "iVar10 = (int)ROUND(dVar7);",
+      "text": "iVar9 = (int)ROUND(ROUND(this_ptr->transparency * (float)65535));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 26,
+      "match": "ROUND",
+      "text": "iVar9 = (int)ROUND(ROUND(this_ptr->transparency * (float)65535));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Undefined global data reference",
       "line": 110,
       "match": "DAT_00827500",
-      "text": "local_18 = &DAT_00827500;",
+      "text": "local_14 = &DAT_00827500;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 135,
       "match": "DAT_00827500",
-      "text": "(g_CDemonSetPtr,(this_ptr->model).vertex_count,local_20,(SInputFace *)&DAT_00827500,",
+      "text": "(g_CDemonSetPtr,(this_ptr->model).vertex_count,local_1c,(SInputFace *)&DAT_00827500,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 139,
       "match": "DAT_00827500",
-      "text": "pSVar8 = (SMRGLPrimitiveQuad *)&DAT_00827500;",
+      "text": "pSVar7 = (SMRGLPrimitiveQuad *)&DAT_00827500;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 142,
       "match": "DAT_00827500",
-      "text": "pSVar8 = (SMRGLPrimitiveQuad *)&DAT_00827500;",
+      "text": "pSVar7 = (SMRGLPrimitiveQuad *)&DAT_00827500;",
       "type": "undefined_data"
     }
   ]

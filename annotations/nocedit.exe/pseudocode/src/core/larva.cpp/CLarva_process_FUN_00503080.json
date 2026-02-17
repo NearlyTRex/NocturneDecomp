@@ -25,15 +25,14 @@
   },
   "complexity": {
     "assembly_lines": 637,
-    "complexity_score": 770,
+    "complexity_score": 715,
     "cross_reference_count": 0,
     "function_call_count": 22,
     "global_count": 17,
     "pseudocode_lines": 360,
-    "suspect_count": 38,
+    "suspect_count": 33,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "stack_param",
       "stack_ref",
       "unknown_type",
@@ -126,7 +125,7 @@
     {
       "addr": "004ede30",
       "is_variadic": false,
-      "name": "core_gore.cpp_CGore_FUN_004ede30"
+      "name": "core_gore.cpp_CGore_createBloodPool_FUN_004ede30"
     },
     {
       "addr": "0052d610",
@@ -766,37 +765,16 @@
   "suspects": [
     {
       "description": "Unreachable code block removed",
-      "line": 2,
+      "line": 3,
       "match": "WARNING: Removing unreachable block",
       "text": "/* WARNING: Removing unreachable block (ram,0x0050389e) */",
       "type": "warning_unreachable"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 23,
-      "match": "extraout_ST1",
-      "text": "float10 extraout_ST1;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 24,
-      "match": "extraout_ST2",
-      "text": "float10 extraout_ST2;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 26,
-      "match": "extraout_ST3",
-      "text": "unkbyte10 extraout_ST3;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unknown/unresolved type",
       "line": 26,
       "match": "unkbyte10",
-      "text": "unkbyte10 extraout_ST3;",
+      "text": "unkbyte10 Var17;",
       "type": "unknown_type"
     },
     {
@@ -817,14 +795,21 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 104,
       "match": "fsin",
-      "text": "fsin((float10)-0.52359877558333301);",
+      "text": "fVar14 = (float10)fsin((float10)-0.52359877558333301);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 105,
       "match": "fptan",
-      "text": "fptan((float10)0.52359877558333301);",
+      "text": "fVar15 = (float10)fptan((float10)0.52359877558333301);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 108,
+      "match": "fpatan",
+      "text": "Var17 = fpatan((float10)local_ec,(float10)local_14 + fVar16);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -835,46 +820,25 @@
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 110,
-      "match": "extraout_ST3",
-      "text": "fVar12 = (float10)fcos(extraout_ST3);",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 110,
       "match": "fcos",
-      "text": "fVar12 = (float10)fcos(extraout_ST3);",
+      "text": "fVar16 = (float10)fcos((float10)-0.52359877558333301);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 111,
       "match": "fsin",
-      "text": "fVar13 = (float10)fsin(fVar14);",
+      "text": "fVar12 = (float10)fsin(Var17);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 112,
       "match": "fcos",
-      "text": "fVar14 = (float10)fcos(fVar14);",
+      "text": "fVar13 = (float10)fcos(Var17);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 116,
-      "match": "extraout_ST1",
-      "text": "(extraout_ST1 * (float10)fVar3 - (float10)local_e8);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 117,
-      "match": "extraout_ST2",
-      "text": "local_ac = (float)-extraout_ST2;",
-      "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
@@ -936,7 +900,7 @@
       "description": "Unresolved stack parameter",
       "line": 203,
       "match": "in_stack_fffffe10",
-      "text": "in_stack_fffffe10 = pCVar16;",
+      "text": "in_stack_fffffe10 = pCVar18;",
       "type": "stack_param"
     },
     {
@@ -950,14 +914,14 @@
       "description": "Unresolved stack parameter",
       "line": 222,
       "match": "in_stack_fffffe10",
-      "text": "path_map,(CVector3f *)in_stack_fffffe10,fVar17,in_stack_fffffe18);",
+      "text": "path_map,(CVector3f *)in_stack_fffffe10,fVar19,in_stack_fffffe18);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 222,
       "match": "in_stack_fffffe18",
-      "text": "path_map,(CVector3f *)in_stack_fffffe10,fVar17,in_stack_fffffe18);",
+      "text": "path_map,(CVector3f *)in_stack_fffffe10,fVar19,in_stack_fffffe18);",
       "type": "stack_param"
     },
     {

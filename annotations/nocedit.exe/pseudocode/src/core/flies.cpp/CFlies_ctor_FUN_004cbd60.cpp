@@ -14,7 +14,7 @@ CFlies * __cdecl core_flies_cpp_CFlies_ctor_FUN_004cbd60(CFlies *this_ptr)
   uint local_c [3];
   
   pCVar1 = (CFlies *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
-  pvVar1 = __arrinit(pCVar1->unk1,200,&g_SFlyTypeInfo);
+  pvVar1 = __arrinit(pCVar1->flies,200,&g_SFlyTypeInfo);
   *(CDemonActor_vtable **)((int)pvVar1 + -0x14) = &g_CFliesVTable;
   *(uint *)((int)pvVar1 + -4) = 0x14;
   if ((uint *)((int)pvVar1 + -0x10) != local_c) {

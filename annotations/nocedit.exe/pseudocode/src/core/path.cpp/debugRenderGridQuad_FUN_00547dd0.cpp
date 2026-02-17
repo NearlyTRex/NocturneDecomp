@@ -6,80 +6,67 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl core_path_cpp_debugRenderGridQuad_FUN_00547dd0(int grid_x,int grid_y,int grid_z,int color,int fog,float w_recip)
 
 {
+  CDemonRenderer *this_ptr;
   float fVar1;
-  float fVar2;
-  double dVar3;
-  CDemonRenderer *pCVar4;
-  int iVar5;
-  int iVar6;
-  int iVar7;
-  double dVar8;
-  double dVar9;
-  double dVar10;
-  CVector3i *pCVar11;
-  int *piVar12;
-  int iStack_3c;
-  float fStack_38;
-  float local_2c;
+  int iVar2;
+  int iVar3;
+  int iVar4;
+  int in_stack_0000001c;
+  CVector3i local_30;
+  float local_24;
+  float local_20;
+  float local_1c;
+  int local_10;
   
-  pCVar4 = g_CDemonRendererPtr2;
-  dVar3 = 256;
-  fVar1 = g_CDemonRaytraceInstance.adjusted_size.y * 256.0f;
-  fVar2 = g_CDemonRaytraceInstance.adjusted_size.z * 256.0f;
-  dVar10 = (double)g_CDemonRaytraceInstance.bbox_min.y * 256;
-  fStack_38 = 7.759508e-39;
-  dVar8 = round
-                    ((double)((float)grid_x *
-                             g_CDemonRaytraceInstance.adjusted_size.x * 256.0f));
-  iStack_3c = 0x547e61;
-  dVar9 = round((double)((float)grid_z * fVar2));
-  fStack_38 = (float)(int)ROUND(dVar8);
-  pCVar11 = (CVector3i *)0x547e77;
-  dVar10 = round(dVar3 + dVar10 + (double)grid_y * (double)fVar1);
-  fStack_38 = (float)(int)ROUND(dVar10);
+  local_24 = g_CDemonRaytraceInstance.adjusted_size.x * 256.0f;
+  local_20 = g_CDemonRaytraceInstance.adjusted_size.y * 256.0f;
+  local_1c = g_CDemonRaytraceInstance.adjusted_size.z * 256.0f;
+  fVar1 = (float)(in_stack_0000001c << 8);
+  local_30.x = (int)ROUND(ROUND((float)grid_x * local_24));
+  local_30.z = (int)ROUND(ROUND((float)grid_z * local_1c));
+  local_30.y = (int)ROUND(ROUND(256 +
+                                (double)g_CDemonRaytraceInstance.bbox_min.y * 256 +
+                                (double)grid_y * (double)local_20));
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-            (&pCVar4->vertex_buffer_ptr->projected_vertex,pCVar11);
-  pCVar4 = g_CDemonRendererPtr2;
-  piVar12 = &iStack_3c;
-  pCVar11 = (CVector3i *)0x547eaa;
-  round((double)((float)iStack_3c + (float)(int)ROUND(dVar9)));
+            (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_30);
+  local_10 = local_30.x;
+  local_30.x = (int)ROUND(ROUND((float)local_30.x + local_24));
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-            (&pCVar4->vertex_buffer_ptr[1].projected_vertex,pCVar11);
-  pCVar4 = g_CDemonRendererPtr2;
-  pCVar11 = (CVector3i *)0x547ee0;
-  dVar10 = round((double)((float)(int)fStack_38 + local_2c));
-  iStack_3c = (int)ROUND(dVar10);
+            (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_30);
+  local_10 = local_30.z;
+  local_30.z = (int)ROUND(ROUND((float)local_30.z + local_1c));
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-            (&pCVar4->vertex_buffer_ptr[2].projected_vertex,pCVar11);
-  pCVar4 = g_CDemonRendererPtr2;
-  pCVar11 = (CVector3i *)0x547f16;
-  round((double)((float)(int)piVar12 - fStack_38));
-  iVar5 = color << 8;
-  iVar6 = fog << 8;
-  iVar7 = (int)w_recip << 8;
+            (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_30);
+  local_10 = local_30.x;
+  local_30.x = (int)ROUND(ROUND((float)local_30.x - local_24));
+  iVar2 = color << 8;
+  iVar3 = fog << 8;
+  iVar4 = (int)w_recip << 8;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-            (&pCVar4->vertex_buffer_ptr[3].projected_vertex,pCVar11);
-  pCVar4 = g_CDemonRendererPtr2;
-  g_CDemonRendererPtr2->vertex_buffer_ptr->light = iVar5;
-  pCVar4->vertex_buffer_ptr->color = iVar6;
-  pCVar4->vertex_buffer_ptr->fog = iVar7;
-  pCVar4->vertex_buffer_ptr->w_recip = (float)grid_x;
-  pCVar4->vertex_buffer_ptr[1].light = iVar5;
-  pCVar4->vertex_buffer_ptr[1].color = iVar6;
-  pCVar4->vertex_buffer_ptr[1].fog = iVar7;
-  pCVar4->vertex_buffer_ptr[1].w_recip = (float)grid_x;
-  pCVar4->vertex_buffer_ptr[2].light = iVar5;
-  pCVar4->vertex_buffer_ptr[2].color = iVar6;
-  pCVar4->vertex_buffer_ptr[2].fog = iVar7;
-  pCVar4->vertex_buffer_ptr[2].w_recip = (float)grid_x;
-  pCVar4->vertex_buffer_ptr[3].light = iVar5;
-  pCVar4->vertex_buffer_ptr[3].color = iVar6;
-  pCVar4->vertex_buffer_ptr[3].fog = iVar7;
-  pCVar4->vertex_buffer_ptr[3].w_recip = (float)grid_x;
+            (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_30);
+  this_ptr = g_CDemonRendererPtr2;
+  g_CDemonRendererPtr2->vertex_buffer_ptr->light = iVar2;
+  this_ptr->vertex_buffer_ptr->color = iVar3;
+  this_ptr->vertex_buffer_ptr->fog = iVar4;
+  this_ptr->vertex_buffer_ptr->w_recip = fVar1;
+  this_ptr->vertex_buffer_ptr[1].light = iVar2;
+  this_ptr->vertex_buffer_ptr[1].color = iVar3;
+  this_ptr->vertex_buffer_ptr[1].fog = iVar4;
+  this_ptr->vertex_buffer_ptr[1].w_recip = fVar1;
+  this_ptr->vertex_buffer_ptr[2].light = iVar2;
+  this_ptr->vertex_buffer_ptr[2].color = iVar3;
+  this_ptr->vertex_buffer_ptr[2].fog = iVar4;
+  this_ptr->vertex_buffer_ptr[2].w_recip = fVar1;
+  this_ptr->vertex_buffer_ptr[3].light = iVar2;
+  this_ptr->vertex_buffer_ptr[3].color = iVar3;
+  this_ptr->vertex_buffer_ptr[3].fog = iVar4;
+  this_ptr->vertex_buffer_ptr[3].w_recip = fVar1;
   engine_drender_cpp_CDemonRenderer_renderMaximumQualityVariant_FUN_0048bba0
-            (pCVar4,&SMRGLPrimitiveQuad_030d4fd0.base);
+            (this_ptr,&SMRGLPrimitiveQuad_030d4fd0.base);
   return;
 }

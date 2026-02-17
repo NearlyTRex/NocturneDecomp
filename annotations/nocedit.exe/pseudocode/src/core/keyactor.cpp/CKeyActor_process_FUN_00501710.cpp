@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl core_keyactor_cpp_CKeyActor_process_FUN_00501710(CKeyActor *this_ptr,float delta_time)
 
 {
@@ -13,15 +15,12 @@ void __cdecl core_keyactor_cpp_CKeyActor_process_FUN_00501710(CKeyActor *this_pt
   int iVar1;
   int iVar2;
   float10 fVar3;
-  double dVar4;
   
   *(float *)this_ptr->unk = delta_time * (float)3.1415926535000001 + *(float *)this_ptr->unk;
   core_dglobe_cpp_CDemonGlobe_setColor_FUN_00471310
             ((CDemonGlobe *)(this_ptr->unk + 4),(CColor3f *)&(this_ptr->base).location);
   fVar3 = (float10)fsin((float10)*(float *)this_ptr->unk);
-  dVar4 = round
-                    ((double)(fVar3 * (float10)8192 + (float10)16384));
-  iVar1 = (int)ROUND(dVar4);
+  iVar1 = (int)ROUND(ROUND(fVar3 * (float10)8192 + (float10)16384));
   *(int *)(this_ptr->unk + 0x40) = iVar1;
   iVar1 = (iVar1 + (iVar1 >> 0x1f) * -0x100) - (uint)((iVar1 >> 0x1f) << 7 < 0);
   iVar2 = iVar1 >> 0x1f;

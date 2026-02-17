@@ -26,7 +26,7 @@ int __cdecl core_bodypart_cpp_CBodyPart_renderOpaque_FUN_004194b0(CBodyPart *thi
       if ((this_ptr->transparent_geometry_flag == 0) ||
          (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
          iVar2 != 0)) {
-        core_bodypart_cpp_CBodyPart_FUN_00419340(this_ptr,-1);
+        core_bodypart_cpp_CBodyPart_renderGeometry_FUN_00419340(this_ptr,-1);
       }
       iVar2 = 0;
       if (0 < this_ptr->attached_model_count) {

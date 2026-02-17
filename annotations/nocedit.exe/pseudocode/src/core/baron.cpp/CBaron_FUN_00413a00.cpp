@@ -20,8 +20,8 @@ void __cdecl core_baron_cpp_CBaron_FUN_00413a00(CBaron *this_ptr,float param_2)
       }
       else if (uVar1 == 0x6e) {
         this_ptr->summoned = 0;
-        this_ptr->unk13 = 0;
-        this_ptr->unk5 = 0;
+        this_ptr->shell_visible = 0;
+        this_ptr->target_actor = (CDemonActor *)0x0;
       }
     }
   } while (0.0 < param_2);

@@ -136,7 +136,8 @@ void __cdecl core_pendulum_cpp_CPendulum_FUN_005495c0(CPendulum *this_ptr)
           CStack_a0.y = CStack_4c.y;
           CStack_a0.z = CStack_4c.z;
         }
-        core_gore_cpp_CGore_FUN_004edbb0(g_CGorePtr);
+        core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0
+                  (g_CGorePtr,&CStack_a0,(CVector3f *)0x0,200,0);
         return;
       }
     }

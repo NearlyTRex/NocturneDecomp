@@ -266,6 +266,21 @@ extern _FILE g_StderrLogFile;
 // _FILE*
 extern _FILE* g_StaticFilePoolStart;
 
+// _MMX_INTEGER
+extern _MMX_INTEGER g_TextureShift1;
+extern _MMX_INTEGER g_TextureShift2;
+extern _MMX_INTEGER g_TextureMask1;
+extern _MMX_INTEGER g_TextureMask2;
+extern _MMX_INTEGER g_RedMask16;
+extern _MMX_INTEGER g_GreenMask16;
+extern _MMX_INTEGER g_BlueMask16;
+extern _MMX_INTEGER g_RedMask32;
+extern _MMX_INTEGER g_GreenMask32;
+extern _MMX_INTEGER g_BlueMask32;
+extern _MMX_INTEGER g_TotalColorBits;
+extern _MMX_INTEGER g_GreenBlueBits;
+extern _MMX_INTEGER g_BlueBitShift;
+
 // byte
 extern byte BYTE_00684acc;
 extern byte BYTE_00684acd;
@@ -453,21 +468,6 @@ extern uint g_WindowsVersionMid;
 extern uint g_WindowsVersionCombined;
 extern uint g_MaxHandleCount;
 extern uint g_CodePage;
-
-// ulonglong
-extern ulonglong g_TextureShift1;
-extern ulonglong g_TextureShift2;
-extern ulonglong g_TextureMask1;
-extern ulonglong g_TextureMask2;
-extern ulonglong g_RedMask16;
-extern ulonglong g_GreenMask16;
-extern ulonglong g_BlueMask16;
-extern ulonglong g_RedMask32;
-extern ulonglong g_GreenMask32;
-extern ulonglong g_BlueMask32;
-extern ulonglong g_TotalColorBits;
-extern ulonglong g_GreenBlueBits;
-extern ulonglong g_BlueBitShift;
 
 // undefined1
 extern undefined1 DAT_0068500c;

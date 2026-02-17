@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 int __cdecl engine_matrix_c_calculate3DDistance_FUN_0050d830(int x1,int y1,int z1,int x2,int y2,int z2)
 
 {
-  double dVar1;
-  
-  dVar1 = round
-                    (SQRT((double)(z1 - z2) * (double)(z1 - z2) +
-                          (double)(y1 - y2) * (double)(y1 - y2) +
-                          (double)(x1 - x2) * (double)(x1 - x2)));
-  return (int)ROUND(dVar1);
+  return (int)ROUND(ROUND(SQRT((float10)(z1 - z2) * (float10)(z1 - z2) +
+                               (float10)(y1 - y2) * (float10)(y1 - y2) +
+                               (float10)(x1 - x2) * (float10)(x1 - x2))));
 }

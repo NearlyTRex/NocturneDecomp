@@ -7,13 +7,13 @@
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
 ;
 ; XREF[7]:
-;   core_fire.cpp_CFireball_initRender_FUN_004c0d80 at 004c0de1
+;   core_fire.cpp_CFireball_setupRenderState_FUN_004c0d80 at 004c0de1
 ;   core_fire.cpp_CPopcorn_render_FUN_004c64c0 at 004c654c
 ;   core_fire.cpp_CRainDrop_render_FUN_004c6830 at 004c68bf
-;   core_fire.cpp_CSmokeParticle_initRender_FUN_004bf1f0 at 004bf251
-;   core_fire.cpp_CSpark_initRender_FUN_004c0300 at 004c039b
+;   core_fire.cpp_CSmokeParticle_setupRenderState_FUN_004bf1f0 at 004bf251
+;   core_fire.cpp_CSpark_setupRenderState_FUN_004c0300 at 004c039b
 ;   core_flame.cpp_CFlame_renderTransparent_FUN_004ca110 at 004ca219
-;   core_gore.cpp_CBloodParticle_FUN_004eb9d0 at 004eba31
+;   core_gore.cpp_CBloodParticle_setupRenderState_FUN_004eb9d0 at 004eba31
 ;
 ; Called Functions:
 ;   engine_matrix.c_getCameraRotation_FUN_0050e2f0

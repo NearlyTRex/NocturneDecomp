@@ -17,6 +17,6 @@ CBodyPart * __cdecl core_skeleton_cpp_CDeformableModelInstance_spawnDismemberedB
   if (body_part == (CBodyPart *)0x0) {
     return (CBodyPart *)0x0;
   }
-  core_bodypart_cpp_CBodyPart_FUN_0041a050(body_part);
+  core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_0041a050(body_part);
   return body_part;
 }

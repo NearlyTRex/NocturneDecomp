@@ -18,10 +18,10 @@
 ;   int g_DeltaTextureV = 0x0
 ;   void* g_PerspectiveScanlineColorPtr = 00000000
 ;   int g_PerspectiveScanlinePixelCount = 0x0
-;   ulonglong g_TextureShift1 = 0x10
-;   ulonglong g_TextureShift2 = 0x8
-;   ulonglong g_TextureMask1 = 0xff
-;   ulonglong g_TextureMask2 = 0xff00
+;   _MMX_INTEGER g_TextureShift1
+;   _MMX_INTEGER g_TextureShift2
+;   _MMX_INTEGER g_TextureMask1
+;   _MMX_INTEGER g_TextureMask2
 ;   void*[1200] g_ScreenBufferArray
 ;   undefined4 DAT_02d02584
 ;   void* g_CurrentTextureData

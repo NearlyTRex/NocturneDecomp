@@ -6,20 +6,14 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_00471400(CDemonGlobe *this_ptr)
 
 {
-  CDemonRenderer *this_ptr_00;
   int iVar1;
   int iVar2;
-  double dVar3;
-  SMRGLHeaderPrimitive *prim;
-  RenderScanlineFunc *scanline_renderer;
-  byte local_64 [4];
-  uint local_60;
-  uint local_5c;
-  uint local_58;
-  int local_54;
+  SMRGLHeaderPrimitive local_64;
   uint local_4c;
   uint local_48;
   uint local_44;
@@ -68,25 +62,22 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_00471400(CDemonGlobe *
     } while (iVar1 != 0x2e8);
     iVar1 = 0;
     do {
-      this_ptr_00 = g_CDemonRendererPtr1;
-      local_60 = *(uint *)((int)g_CoronaFacePrimitives[0].vertices + iVar1 + -0x14);
-      local_5c = *(uint *)((int)g_CoronaFacePrimitives[0].vertices + iVar1 + -0x10);
-      local_58 = *(uint *)((int)g_CoronaFacePrimitives[0].vertices + iVar1 + -0xc);
-      local_54 = *(uint *)((int)g_CoronaFacePrimitives[0].vertices + iVar1 + -8);
+      local_64.base.count = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar1 + -0x14);
+      local_64.surface_normal.A = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar1 + -0x10);
+      local_64.surface_normal.B = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar1 + -0xc);
+      local_64.surface_normal.C = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar1 + -8);
       iVar2 = iVar1 + -4;
       local_4c = *(uint *)((int)g_CoronaFacePrimitives[0].vertices + iVar1);
       local_48 = *(uint *)((int)g_CoronaFacePrimitives[0].vertices + iVar1 + 4);
       local_44 = *(uint *)((int)g_CoronaFacePrimitives[0].vertices + iVar1 + 8);
       local_40 = *(uint *)((int)g_CoronaFacePrimitives[0].vertices + iVar1 + 0xc);
-      scanline_renderer = (RenderScanlineFunc *)local_64;
       iVar1 = iVar1 + 0x24;
-      prim = (SMRGLHeaderPrimitive *)0x471588;
-      dVar3 = round
-                        ((double)((float)*(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2) *
-                                 this_ptr->radius));
-      local_54 = (int)ROUND(dVar3);
+      local_64.surface_normal.D =
+           (int)ROUND(ROUND((float)*(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2) *
+                            this_ptr->radius));
       engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0
-                (this_ptr_00,prim,scanline_renderer);
+                (g_CDemonRendererPtr1,&local_64,
+                 core_dcamera_cpp_renderCoronaDepthScanline_FUN_00450320);
     } while (iVar1 != 0xbd0);
     return;
   }

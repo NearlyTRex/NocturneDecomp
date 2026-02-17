@@ -33,7 +33,7 @@ void __cdecl core_weapon_cpp_CWeapon_FUN_005ee740(CWeapon *this_ptr)
     CStack_28.z = CStack_4c.max.z - CStack_4c.min.z;
     core_box_cpp_CBox_setupCorners_FUN_0041dd20
               (&this_ptr->physics_box,&CStack_34,&(this_ptr->base).orient.vec,&CStack_28,
-               (float)this_ptr->unk3);
+               this_ptr->weight);
     return;
   }
   return;

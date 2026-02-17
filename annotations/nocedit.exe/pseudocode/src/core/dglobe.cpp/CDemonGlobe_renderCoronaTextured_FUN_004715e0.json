@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 113,
-    "complexity_score": 189,
+    "complexity_score": 304,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 30,
-    "pseudocode_lines": 49,
-    "suspect_count": 13,
+    "pseudocode_lines": 64,
+    "suspect_count": 23,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 162
+    "total_lines": 177
   },
   "cross_references": [
     {
@@ -402,94 +402,164 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 16,
+      "line": 25,
       "match": "(int *)((int)",
-      "text": "local_1c.x = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].x + iVar3) *",
+      "text": "local_28 = (float)*(int *)((int)&g_CoronaVertexPositions[0].x + iVar3) *",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(int *)((int)",
+      "text": "local_24 = (float)*(int *)((int)&g_CoronaVertexPositions[0].y + iVar3) *",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(int *)((int)",
+      "text": "local_20 = (float)*(int *)((int)&g_CoronaVertexPositions[0].z + iVar3) *",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 16,
+      "line": 31,
       "match": "ROUND",
-      "text": "local_1c.x = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].x + iVar3) *",
+      "text": "local_1c.x = (int)ROUND(local_28 * 256.0f);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 19,
-      "match": "(int *)((int)",
-      "text": "local_1c.y = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].y + iVar3) *",
-      "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 19,
+      "line": 32,
       "match": "ROUND",
-      "text": "local_1c.y = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].y + iVar3) *",
+      "text": "local_1c.y = (int)ROUND(local_24 * 256.0f);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 22,
-      "match": "(int *)((int)",
-      "text": "local_1c.z = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].z + iVar3) *",
-      "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 22,
+      "line": 33,
       "match": "ROUND",
-      "text": "local_1c.z = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].z + iVar3) *",
+      "text": "local_1c.z = (int)ROUND(local_20 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 39,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_CDemonRendererPtr1->vertex_buffer_ptr->u + iVar2) = 0x800000;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 31,
+      "line": 40,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->v + iVar2) = 0x800000;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 41,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->w_recip + iVar2) = 0x8000;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 42,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->light + iVar2) = 0xffff;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 43,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->color + iVar2) = 0xffff;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 45,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->fog + iVar2) = 0xffff;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 51,
       "match": "(int *)((int)",
-      "text": "((double)((float)*(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar3) *",
+      "text": "SStack_50.base.count = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + -0x14);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 52,
+      "match": "(int *)((int)",
+      "text": "SStack_50.surface_normal.A = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + -0x10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 53,
+      "match": "(int *)((int)",
+      "text": "SStack_50.surface_normal.B = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + -0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 54,
+      "match": "(int *)((int)",
+      "text": "SStack_50.surface_normal.C = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + -8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 56,
+      "match": "(uint *)((int)",
+      "text": "local_38 = *(uint *)((int)g_CoronaFacePrimitives[0].vertices + iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 57,
+      "match": "(uint *)((int)",
+      "text": "local_34 = *(uint *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 58,
+      "match": "(uint *)((int)",
+      "text": "local_30 = *(uint *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 59,
+      "match": "(uint *)((int)",
+      "text": "local_2c = *(uint *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 62,
+      "match": "(int *)((int)",
+      "text": "(int)ROUND(ROUND((float)*(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar3) *",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 62,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND((float)*(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar3) *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 62,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND((float)*(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar3) *",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

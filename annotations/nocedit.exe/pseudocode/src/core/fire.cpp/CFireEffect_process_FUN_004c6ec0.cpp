@@ -58,7 +58,7 @@ void __cdecl core_fire_cpp_CFireEffect_process_FUN_004c6ec0(CFireEffect *this_pt
   if (0 < g_StakeActiveCount) {
     this_ptr_03 = g_StakePool;
     do {
-      if ((this_ptr_03->box).is_valid != 0) {
+      if ((this_ptr_03->physics_box).is_valid != 0) {
         core_fire_cpp_CStake_process_FUN_004c0210(this_ptr_03);
       }
       iVar2 = iVar2 + 1;

@@ -6,22 +6,23 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0(CDemonLight *this_ptr)
 
 {
-  SRenderVertex *pSVar1;
+  float fVar1;
   float fVar2;
   CDemonRenderer *this_ptr_00;
   CVector3f *pCVar3;
   int iVar4;
   byte bVar5;
-  double dVar6;
   int aiStackY_10bc [990];
-  SMRGLHeaderPrimitive local_130;
-  uint local_118;
+  SMRGLHeaderPrimitive local_12c;
   uint local_114;
   uint local_110;
   uint local_10c;
+  uint local_108;
   CVector3f local_104;
   CVector3i local_f8;
   CVector3f local_ec;
@@ -51,6 +52,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0
   float local_38;
   float local_34;
   float local_30;
+  float local_2c;
   float local_28;
   float local_24;
   float local_20;
@@ -78,7 +80,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0
     local_1c = local_8c.x * local_8c.x + local_28;
     local_24 = local_20 * local_20;
     if (local_1c <= local_24) {
-      local_130.base.type = (int)(1.0 - local_1c / local_24);
+      fVar1 = local_1c / local_24;
       engine_drender_cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
                 (g_CDemonRendererPtr2,&local_d4);
       local_5c = local_d4.x;
@@ -161,34 +163,31 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0
             engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
                       (g_CDemonRendererPtr2,g_LightTextures + 1);
             this_ptr_00 = g_CDemonRendererPtr2;
-            local_130.surface_normal.A = 4;
-            local_118 = 0;
-            local_130.surface_normal.D = 0;
-            local_130.surface_normal.C = 0;
-            local_130.surface_normal.B = 0;
+            local_12c.base.count = 4;
+            local_12c.surface_normal.D = 0;
+            local_12c.surface_normal.C = 0;
+            local_12c.surface_normal.B = 0;
+            local_12c.surface_normal.A = 0;
             local_114 = 0;
-            pSVar1 = g_CDemonRendererPtr2->vertex_buffer_ptr;
-            dVar6 = round
-                              ((double)(((((this_ptr->base).max_distance - fVar2) *
-                                         (float)8192) / (this_ptr->base).max_distance) *
-                                       (float)local_130.base.type));
-            local_30 = (float)(int)ROUND(dVar6);
-            pSVar1->w_recip = local_30;
+            local_2c = (float)(int)ROUND(ROUND(((((this_ptr->base).max_distance - fVar2) *
+                                                (float)8192) /
+                                               (this_ptr->base).max_distance) * (1.0 - fVar1)));
+            g_CDemonRendererPtr2->vertex_buffer_ptr->w_recip = local_2c;
             this_ptr_00->vertex_buffer_ptr->light = 0xffff;
             this_ptr_00->vertex_buffer_ptr->color = 0xffff;
             this_ptr_00->vertex_buffer_ptr->fog = 0xffff;
-            local_114 = 1;
-            this_ptr_00->vertex_buffer_ptr[1].w_recip = local_30;
+            local_110 = 1;
+            this_ptr_00->vertex_buffer_ptr[1].w_recip = local_2c;
             this_ptr_00->vertex_buffer_ptr[1].light = 0xffff;
             this_ptr_00->vertex_buffer_ptr[1].color = 0xffff;
             this_ptr_00->vertex_buffer_ptr[1].fog = 0xffff;
-            local_110 = 2;
-            this_ptr_00->vertex_buffer_ptr[2].w_recip = local_30;
+            local_10c = 2;
+            this_ptr_00->vertex_buffer_ptr[2].w_recip = local_2c;
             this_ptr_00->vertex_buffer_ptr[2].light = 0xffff;
             this_ptr_00->vertex_buffer_ptr[2].color = 0xffff;
             this_ptr_00->vertex_buffer_ptr[2].fog = 0xffff;
-            local_10c = 3;
-            this_ptr_00->vertex_buffer_ptr[3].w_recip = local_30;
+            local_108 = 3;
+            this_ptr_00->vertex_buffer_ptr[3].w_recip = local_2c;
             this_ptr_00->vertex_buffer_ptr[3].light = 0xffff;
             this_ptr_00->vertex_buffer_ptr[3].color = 0xffff;
             this_ptr_00->vertex_buffer_ptr[3].fog = 0xffff;
@@ -201,7 +200,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0
             this_ptr_00->vertex_buffer_ptr[3].u = 0xf80000;
             this_ptr_00->vertex_buffer_ptr[3].v = 0x80000;
             engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-                      (this_ptr_00,&local_130);
+                      (this_ptr_00,&local_12c);
             iVar4 = iVar4 + 1;
             engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
           } while (iVar4 < 0x19);

@@ -1,0 +1,147 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 51,
+    "complexity_score": 17,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 3,
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 68
+  },
+  "cross_references": [
+    {
+      "addr": "0040ca10",
+      "from_addr": "0040cae0",
+      "name": "core_actor.cpp_CDemonActor_handleFootstep_FUN_0040ca10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004ee070",
+    "address_range": [
+      [
+        "004ee070",
+        "004ee0e6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_gore.cpp_CGore_createFootstep_FUN_004ee070",
+    "signature": "void __cdecl core_gore_cpp_CGore_createFootstep_FUN_004ee070(CGore *this_ptr,CVector3f *position,UOrientationVector *orientation,int surface_type ,int alpha,int blood_type)"
+  },
+  "function_calls": [
+    {
+      "addr": "004ed240",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CFootstep_init_FUN_004ed240"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02da8c24",
+      "name": "g_FootstepIndex",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02da8c28",
+      "name": "g_FootstepCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02da8c2c",
+      "name": "g_Footsteps",
+      "type": "CFootstep[1000]",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.511627906976744,
+    "instruction_count": 43,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 2,
+      "COPY": 41,
+      "INT_ADD": 14,
+      "INT_AND": 30,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 21,
+      "INT_LEFT": 2,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 11,
+      "INT_SUB": 15,
+      "INT_XOR": 2,
+      "LOAD": 10,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 11
+    },
+    "pcode_op_count": 194
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGore *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "orientation",
+        "offset": 12,
+        "size": 4,
+        "type": "UOrientationVector *"
+      },
+      {
+        "is_param": true,
+        "name": "surface_type",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "alpha",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "blood_type",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

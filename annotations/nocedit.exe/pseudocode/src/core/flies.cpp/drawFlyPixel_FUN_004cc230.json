@@ -1,0 +1,358 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 53,
+    "complexity_score": 352,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 6,
+    "pseudocode_lines": 47,
+    "suspect_count": 28,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "mmx_assembly",
+      "nonstandard_int",
+      "pointer_cast",
+      "undefined_data"
+    ],
+    "total_lines": 100
+  },
+  "cross_references": [
+    {
+      "addr": "004cc300",
+      "from_addr": "004cc6e6",
+      "name": "core_flies.cpp_CFlies_renderOpaque_FUN_004cc300",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004cc2c0",
+      "from_addr": "004cc2e9",
+      "name": "core_flies.cpp_drawFlyPixelClipped_FUN_004cc2c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004cc230",
+    "address_range": [
+      [
+        "004cc230",
+        "004cc2b6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_flies.cpp_drawFlyPixel_FUN_004cc230",
+    "signature": "void __cdecl core_flies_cpp_drawFlyPixel_FUN_004cc230(int screen_x,int screen_y,int z_depth)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0067939c",
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "02cf6a9c",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
+      "value": null
+    },
+    {
+      "addr": "02cf7d5c",
+      "name": "g_ZBufferScanlineArray",
+      "type": "uint*[1200]",
+      "value": null
+    },
+    {
+      "addr": "02d02570",
+      "name": "g_ActiveRenderColor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d7a800",
+      "name": "DAT_02d7a800",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d7a804",
+      "name": "DAT_02d7a804",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.666666666666667,
+    "instruction_count": 48,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "BOOL_OR": 1,
+      "CBRANCH": 2,
+      "COPY": 74,
+      "INT_ADD": 31,
+      "INT_AND": 34,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 14,
+      "INT_LEFT": 4,
+      "INT_LESS": 3,
+      "INT_MULT": 33,
+      "INT_NOTEQUAL": 4,
+      "INT_OR": 10,
+      "INT_RIGHT": 4,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 26,
+      "INT_SLESSEQUAL": 8,
+      "INT_SUB": 9,
+      "INT_XOR": 3,
+      "INT_ZEXT": 4,
+      "LOAD": 18,
+      "POPCOUNT": 6,
+      "RETURN": 2,
+      "STORE": 6,
+      "SUBPIECE": 9
+    },
+    "pcode_op_count": 320
+  },
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "screen_x",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "screen_y",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "z_depth",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 16,
+      "match": "uint5",
+      "text": "uint5 uVar12;",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(uint *)((int)",
+      "text": "puVar3 = (uint *)((int)g_ScreenBufferArray[screen_y] + screen_x * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 21,
+      "match": "uint7",
+      "text": "uVar9 = (ushort)(((uint7)(byte)((uint)g_ActiveRenderColor >> 0x18) << 0x30) >> 0x28);",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 22,
+      "match": "CONCAT34",
+      "text": "uVar2 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)uVar1 >> 0x18) << 0x30) >>",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 22,
+      "match": "CONCAT25",
+      "text": "uVar2 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)uVar1 >> 0x18) << 0x30) >>",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 22,
+      "match": "int3",
+      "text": "uVar2 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)uVar1 >> 0x18) << 0x30) >>",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 22,
+      "match": "uint7",
+      "text": "uVar2 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)uVar1 >> 0x18) << 0x30) >>",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 23,
+      "match": "CONCAT14",
+      "text": "0x28),CONCAT14((char)((uint)uVar1 >> 0x10),uVar1)",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 25,
+      "match": "uint5",
+      "text": "uVar12 = (uint5)uVar2 & 0xffffffff00;",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 26,
+      "match": "uint7",
+      "text": "uVar5 = (ushort)(((uint7)(byte)((uint)DAT_02d7a800 >> 0x18) << 0x30) >> 0x28);",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_02d7a800",
+      "text": "uVar5 = (ushort)(((uint7)(byte)((uint)DAT_02d7a800 >> 0x18) << 0x30) >> 0x28);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 27,
+      "match": "uint7",
+      "text": "uVar7 = (ushort)(((uint7)(byte)((uint)DAT_02d7a804 >> 0x18) << 0x30) >> 0x28);",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_02d7a804",
+      "text": "uVar7 = (ushort)(((uint7)(byte)((uint)DAT_02d7a804 >> 0x18) << 0x30) >> 0x28);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_02d7a804",
+      "text": "uVar4 = (ushort)(byte)g_ActiveRenderColor * ((ushort)DAT_02d7a804 & 0xff) +",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_02d7a800",
+      "text": "((ushort)uVar1 & 0xff) * (ushort)(byte)DAT_02d7a800;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 30,
+      "match": "DAT_02d7a804",
+      "text": "uVar6 = (ushort)(byte)((uint)g_ActiveRenderColor >> 8) * (ushort)(byte)((uint)DAT_02d7a804 >> 8)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 31,
+      "match": "CONCAT43",
+      "text": "+ ((ushort)(CONCAT43(uVar2,CONCAT12((char)((uint)uVar1 >> 8),(ushort)uVar1)) >> 0x10) &",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 31,
+      "match": "CONCAT12",
+      "text": "+ ((ushort)(CONCAT43(uVar2,CONCAT12((char)((uint)uVar1 >> 8),(ushort)uVar1)) >> 0x10) &",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_02d7a800",
+      "text": "0xff) * (ushort)(byte)((uint)DAT_02d7a800 >> 8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 33,
+      "match": "CONCAT21",
+      "text": "uVar8 = (short)CONCAT21(uVar9,(char)((uint)g_ActiveRenderColor >> 0x10)) *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 34,
+      "match": "CONCAT21",
+      "text": "(short)CONCAT21(uVar7,(char)((uint)DAT_02d7a804 >> 0x10)) +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 34,
+      "match": "DAT_02d7a804",
+      "text": "(short)CONCAT21(uVar7,(char)((uint)DAT_02d7a804 >> 0x10)) +",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 35,
+      "match": "CONCAT21",
+      "text": "(short)(uVar12 >> 8) * (short)CONCAT21(uVar5,(char)((uint)DAT_02d7a800 >> 0x10));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 35,
+      "match": "DAT_02d7a800",
+      "text": "(short)(uVar12 >> 8) * (short)CONCAT21(uVar5,(char)((uint)DAT_02d7a800 >> 0x10));",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 41,
+      "match": "CONCAT13",
+      "text": "*puVar3 = CONCAT13((uVar11 != 0) * (uVar11 < 0x100) * (char)(uVar10 >> 8) - (0xff < uVar11),",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 42,
+      "match": "CONCAT12",
+      "text": "CONCAT12((uVar9 != 0) * (uVar9 < 0x100) * (char)(uVar8 >> 8) - (0xff < uVar9)",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 43,
+      "match": "CONCAT11",
+      "text": ",CONCAT11((uVar7 != 0) * (uVar7 < 0x100) * (char)(uVar6 >> 8) -",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "MMX/SIMD assembly - may not decompile to clean C code",
+      "line": 32,
+      "match": "EMMS, MOVD, PACKUSWB, PADDW, PMULLW",
+      "text": "Function uses MMX instructions",
+      "type": "mmx_assembly"
+    }
+  ]
+}

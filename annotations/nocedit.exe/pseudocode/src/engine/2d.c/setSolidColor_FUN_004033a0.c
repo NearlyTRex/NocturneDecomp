@@ -15,9 +15,9 @@ void __cdecl engine_2d_c_setSolidColor_FUN_004033a0(int red_component,int green_
   g_SolidColorMode = red_component << 0x10 | green_component << 8 | blue_component;
   if ((g_BitsPerPixel != 0x10) && (g_BitsPerPixel == 0x20)) {
     g_SolidColorMode =
-         blue_component << ((byte)g_BlueBitPosition & 0x1f) |
-         red_component << ((byte)g_RedBitPosition & 0x1f) |
-         green_component << ((byte)g_GreenBitPosition & 0x1f);
+         blue_component << (g_BlueBitPosition.bytes[0] & 0x1f) |
+         red_component << (g_RedBitPosition.bytes[0] & 0x1f) |
+         green_component << (g_GreenBitPosition.bytes[0] & 0x1f);
   }
   if (g_UseExternalRenderer == 0) {
     return;

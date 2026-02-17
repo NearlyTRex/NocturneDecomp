@@ -16,14 +16,14 @@
 ;   core_fire.cpp_CSmokeParticle_render_FUN_004bf4c0 at 004bf7cf
 ;   core_fire.cpp_CTrail_render_FUN_004c5e90 at 004c6136
 ;   core_gore.cpp_CBloodParticle_render_FUN_004ebac0 at 004ebe49
-;   core_gore.cpp_CBloodPool_FUN_004ecce0 at 004ecf8f
-;   core_gore.cpp_CBloodSplat_FUN_004ec500 at 004ec7ec
+;   core_gore.cpp_CBloodPool_render_FUN_004ecce0 at 004ecf8f
+;   core_gore.cpp_CBloodSplat_render_FUN_004ec500 at 004ec7ec
 ;   ... and 3 more
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
-;   _BIT_INTEGER g_RenderStateFlags
+;   _BIT_INTEGER32 g_RenderStateFlags
 ;   int g_RenderStateFlag2
 ;
 ; Called Functions:

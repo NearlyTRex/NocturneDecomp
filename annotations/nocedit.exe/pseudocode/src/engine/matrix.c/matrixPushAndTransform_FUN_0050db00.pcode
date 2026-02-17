@@ -287,10 +287,25 @@ COPY (register,0x1100,10) = (unique,0x29480,10)
 LOAD (unique,0x5180,4) = (const,0x1a1,4), (unique,0x3b00,4)
 INT2FLOAT (register,0x1100,10) = (unique,0x5180,4)
 
-@0050dc01 [ESP:-80](-4)  # CALL 0x006013b1
-INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
-STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x50dc06,4)
-CALL (ram,0x6013b1,4)
+@0050dc01 [ESP:-80]  # FXCH
+COPY (register,0x10ac,4) = (const,0x50dc01,4)
+COPY (unique,0x61b80,10) = (register,0x1100,10)
+COPY (register,0x1100,10) = (register,0x1110,10)
+COPY (register,0x1110,10) = (unique,0x61b80,10)
+
+@0050dc03 [ESP:-80]  # FPATAN
+COPY (register,0x10ac,4) = (const,0x50dc03,4)
+CALLOTHER (register,0x1110,10) = (const,0x66,4), (register,0x1110,10), (register,0x1100,10)
+COPY (register,0x1100,10) = (register,0x1110,10)
+COPY (register,0x1110,10) = (register,0x1120,10)
+COPY (register,0x1120,10) = (register,0x1130,10)
+COPY (register,0x1130,10) = (register,0x1140,10)
+COPY (register,0x1140,10) = (register,0x1150,10)
+COPY (register,0x1150,10) = (register,0x1160,10)
+COPY (register,0x1160,10) = (register,0x1170,10)
+
+@0050dc05 [ESP:-80]  # NOP
+# (no p-code)
 
 @0050dc06 [ESP:-80]  # FSTP ST2
 COPY (register,0x10ac,4) = (const,0x50dc06,4)
@@ -5417,5 +5432,5 @@ INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
 # ============================================================================
-# Summary: 503 instructions, 4394 P-code ops
+# Summary: 505 instructions, 4404 P-code ops
 # ============================================================================

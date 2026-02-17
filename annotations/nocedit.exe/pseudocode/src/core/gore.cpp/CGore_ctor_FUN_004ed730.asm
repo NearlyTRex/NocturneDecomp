@@ -10,7 +10,7 @@
 ;   core_gore.cpp_staticInit_FUN_004eb8c0 at 004eb8c5
 ;
 ; Called Functions:
-;   core_gore.cpp_CGore_FUN_004ed760
+;   core_gore.cpp_CGore_reset_FUN_004ed760
 ;
 ; *****************************************************************************
 
@@ -20,8 +20,8 @@ section .text
         ;   Label: core_gore.cpp_CGore_ctor_FUN_004ed730
     MOV EBX,dword ptr [ESP + 0x8]       ; 004ed731
     PUSH EBX                            ; 004ed735
-    CALL core_gore.cpp_CGore_FUN_004ed760 ; 004ed736
-        ;   XREF to: 004ed760 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004ed760(CGore * this_ptr)
+    CALL core_gore.cpp_CGore_reset_FUN_004ed760 ; 004ed736
+        ;   XREF to: 004ed760 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_reset_FUN_004ed760(CGore * this_ptr)
     ADD ESP,0x4                         ; 004ed73b
     MOV EAX,EBX                         ; 004ed73e
     POP EBX                             ; 004ed740

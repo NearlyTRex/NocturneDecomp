@@ -38,7 +38,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_FUN_0041d8a0(CBoneGuy *this_ptr)
       *puVar6 = *(uint *)((int)&local_24 + (uint)bVar8 * -8 + 4);
       *puVar7 = *puVar5;
       puVar7[(uint)bVar8 * -2 + 1] = puVar5[(uint)bVar8 * -2 + 1];
-      ((pCVar3->boxes[0].body_part)->sim_box).is_valid = 0;
+      ((pCVar3->boxes[0].body_part)->physics_box).is_valid = 0;
       pCVar1 = pCVar3->boxes[0].body_part;
       pCVar2 = &(pCVar1->base).location;
       if ((CLocation *)pCVar4 != pCVar2) {

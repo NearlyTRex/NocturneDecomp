@@ -29057,7 +29057,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_fire.cpp_CSpark_initRender_FUN_004c0300",
+    "name":"core_fire.cpp_CSpark_setupRenderState_FUN_004c0300",
     "ret":"int",
     "vars":{
       "locals":[
@@ -29183,7 +29183,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_fire.cpp_CFireball_initRender_FUN_004c0d80",
+    "name":"core_fire.cpp_CFireball_setupRenderState_FUN_004c0d80",
     "ret":"int",
     "vars":{
       "locals":[
@@ -39978,7 +39978,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gore.cpp_CBloodSplat_FUN_004ec500",
+    "name":"core_gore.cpp_CBloodSplat_render_FUN_004ec500",
     "ret":"void",
     "vars":{
       "locals":[
@@ -40495,6 +40495,22 @@
             ]
           },
           "type":"CBloodSplat*"
+        },
+        {
+          "name":"expire_flag",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -40510,8 +40526,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gore.cpp_CBloodSplat_FUN_004ecb00",
-    "ret":"void",
+    "name":"core_gore.cpp_CBloodSplat_load_FUN_004ecb00",
+    "ret":"int",
     "vars":{
       "params":[
         {
@@ -40529,8 +40545,34 @@
             ]
           },
           "type":"CBloodSplat*"
+        },
+        {
+          "name":"file_handle",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"_FILE*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -50315,6 +50357,22 @@
             ]
           },
           "type":"CMobster*"
+        },
+        {
+          "name":"damage_info",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SDamageInfo*"
         }
       ]
     }
@@ -50504,7 +50562,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_morph.cpp_CMorphModel_addPart_FUN_0052a580",
+    "name":"core_morph.cpp_CMorphModel_addPartFromPolygon_FUN_0052a580",
     "ret":"void",
     "vars":{
       "params":[
@@ -50523,6 +50581,118 @@
             ]
           },
           "type":"CMorphModel*"
+        },
+        {
+          "name":"vertex_count",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"vertex_data",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3i*"
+        },
+        {
+          "name":"poly_count",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"poly_data",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"SMRGLPrimitiveQuad*"
+        },
+        {
+          "name":"poly_stride",
+          "storage":{
+            "offset":24,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x18]",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"texture_list",
+          "storage":{
+            "offset":28,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x1c]",
+                "offset":28,
+                "size":4
+              }
+            ]
+          },
+          "type":"SMRGLTextureExtended*"
+        },
+        {
+          "name":"texture_index_list",
+          "storage":{
+            "offset":32,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x20]",
+                "offset":32,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
         }
       ]
     }
@@ -50538,7 +50708,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_morph.cpp_CMorphModel_FUN_0052aa00",
+    "name":"core_morph.cpp_CMorphModel_animateFromPartVertexBuffer_FUN_0052aa00",
     "ret":"void",
     "vars":{
       "params":[
@@ -50557,6 +50727,70 @@
             ]
           },
           "type":"CMorphModel*"
+        },
+        {
+          "name":"part_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"vertex_buffer",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3i*"
+        },
+        {
+          "name":"start_offset",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"vertex_count",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -50572,7 +50806,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_morph.cpp_CMorphModel_FUN_0052aa80",
+    "name":"core_morph.cpp_CMorphModel_animateFromKeyframedModel_FUN_0052aa80",
     "ret":"void",
     "vars":{
       "params":[
@@ -50591,6 +50825,54 @@
             ]
           },
           "type":"CMorphModel*"
+        },
+        {
+          "name":"part_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"model_ptr",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CKeyFramedModel*"
+        },
+        {
+          "name":"frame_index",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -50606,7 +50888,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_morph.cpp_FUN_0052b280",
+    "name":"core_morph.cpp_CMorphModel_findNearestPoint_FUN_0052b280",
     "ret":"int",
     "vars":{
       "locals":[
@@ -50691,6 +50973,40 @@
           "type":"undefined4"
         }
       ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CMorphModel*"
+        },
+        {
+          "name":"position",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -50714,7 +51030,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_morph.cpp_CMorph_FUN_0052b500",
+    "name":"core_morph.cpp_CMorph_addPartToModel_FUN_0052b500",
     "ret":"void",
     "vars":{
       "params":[
@@ -50764,7 +51080,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_morph.cpp_CMorph_FUN_0052b580",
+    "name":"core_morph.cpp_CMorph_addPartFromKeyframedModel_FUN_0052b580",
     "ret":"void",
     "vars":{
       "params":[
@@ -50846,7 +51162,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_morph.cpp_CMorph_FUN_0052b600",
+    "name":"core_morph.cpp_CMorph_updateModelFromDeformable_FUN_0052b600",
     "ret":"void",
     "vars":{
       "params":[
@@ -50876,6 +51192,38 @@
               {
                 "addr":"Stack[0x8]",
                 "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"model_ptr",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModelInstance*"
+        },
+        {
+          "name":"part_index",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
                 "size":4
               }
             ]
@@ -51620,7 +51968,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_morph.cpp_FUN_0052bb80",
+    "name":"core_morph.cpp_drawVertexMarker_FUN_0052bb80",
     "ret":"void",
     "vars":{
       "locals":[
@@ -51655,6 +52003,40 @@
             ]
           },
           "type":"undefined4"
+        }
+      ],
+      "params":[
+        {
+          "name":"vertex",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"SProjectedVertex*"
+        },
+        {
+          "name":"radius",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -58146,6 +58528,11 @@
   {
     "addr":"00564500",
     "body":[
+      {
+        "end":"005644d0",
+        "size":54,
+        "start":"0056449b"
+      },
       {
         "end":"0056455d",
         "size":94,
@@ -64773,6 +65160,38 @@
             ]
           },
           "type":"CDeformableModelInstance*"
+        },
+        {
+          "name":"param_2",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"param_3",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -65768,7 +66187,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_findFreeSampleSlot_FUN_005a4400",
+    "name":"sound_sndmain.cpp_findFreeSfxSample_FUN_005a4400",
     "ret":"CSfxSample*",
     "vars":{
       "ret_storage":{
@@ -66005,7 +66424,7 @@
       ],
       "params":[
         {
-          "name":"filename",
+          "name":"slot_index",
           "storage":{
             "offset":4,
             "size":4,
@@ -66014,6 +66433,22 @@
               {
                 "addr":"Stack[0x4]",
                 "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"filename",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
                 "size":4
               }
             ]

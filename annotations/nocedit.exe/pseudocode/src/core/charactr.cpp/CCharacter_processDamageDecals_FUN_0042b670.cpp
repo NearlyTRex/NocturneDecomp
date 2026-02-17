@@ -44,7 +44,8 @@ void __cdecl core_charactr_cpp_CCharacter_processDamageDecals_FUN_0042b670(CChar
           local_38.x = 3.0;
           core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                     (&this_ptr->base,&local_5c,&local_38);
-          core_gore_cpp_CGore_FUN_004edaa0(g_CGorePtr);
+          core_gore_cpp_CGore_spawnBloodParticles_FUN_004edaa0
+                    (g_CGorePtr,&local_44,&local_5c,this_ptr->collision_layer);
         }
       }
       iVar3 = iVar3 + 1;

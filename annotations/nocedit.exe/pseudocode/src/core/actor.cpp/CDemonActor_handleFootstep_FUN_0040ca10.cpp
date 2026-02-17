@@ -33,11 +33,13 @@ void __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10(CDemonActor 
   if (iVar4 != 0) {
     surface_type = 6;
   }
-  iVar4 = core_gore_cpp_CGore_FUN_004ee0f0(g_CGorePtr);
+  iVar4 = core_gore_cpp_CGore_findBloodTypeAtPosition_FUN_004ee0f0
+                    (g_CGorePtr,position,(int *)&this_ptr->blood_effect_color);
   if (iVar4 == 0) {
     if (this_ptr->blood_effect_timer < 1) {
       if (surface_type == 3) {
-        core_gore_cpp_CGore_FUN_004ee070(g_CGorePtr);
+        core_gore_cpp_CGore_createFootstep_FUN_004ee070
+                  (g_CGorePtr,position,&this_ptr->orient,3,0x4000,0);
       }
       goto LAB_0040cb07;
     }
@@ -45,7 +47,9 @@ void __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10(CDemonActor 
   else {
     this_ptr->blood_effect_timer = 0xffff;
   }
-  core_gore_cpp_CGore_FUN_004ee070(g_CGorePtr);
+  core_gore_cpp_CGore_createFootstep_FUN_004ee070
+            (g_CGorePtr,position,&this_ptr->orient,0xb,this_ptr->blood_effect_timer,
+             this_ptr->blood_effect_color);
   iVar4 = this_ptr->blood_effect_timer + -0x2000;
   this_ptr->blood_effect_timer = iVar4;
   if (iVar4 < 0) {

@@ -1,29 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 79,
-        "line": 57,
-        "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 187,
-    "complexity_score": 106,
+    "complexity_score": 104,
     "cross_reference_count": 2,
     "function_call_count": 11,
     "global_count": 8,
-    "pseudocode_lines": 66,
-    "suspect_count": 3,
+    "pseudocode_lines": 59,
+    "suspect_count": 4,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "suspect_float"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 253
+    "total_lines": 246
   },
   "cross_references": [
     {
@@ -287,24 +279,31 @@
   },
   "suspects": [
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 25,
-      "match": "7.477411e-39",
-      "text": "fVar7 = 7.477411e-39;",
-      "type": "suspect_float"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 27,
+      "line": 24,
       "match": "ROUND",
-      "text": "iVar1 = (int)ROUND(dVar5);",
+      "text": "iVar1 = (int)ROUND(ROUND(local_30));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 36,
+      "line": 24,
       "match": "ROUND",
-      "text": "iVar2 = (int)ROUND(dVar5);",
+      "text": "iVar1 = (int)ROUND(ROUND(local_30));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 30,
+      "match": "ROUND",
+      "text": "iVar2 = (int)ROUND(ROUND(((float)(iVar2 - target_tri_count) * local_30) / (float)iVar3));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 30,
+      "match": "ROUND",
+      "text": "iVar2 = (int)ROUND(ROUND(((float)(iVar2 - target_tri_count) * local_30) / (float)iVar3));",
       "type": "decompiler_intrinsic"
     }
   ]

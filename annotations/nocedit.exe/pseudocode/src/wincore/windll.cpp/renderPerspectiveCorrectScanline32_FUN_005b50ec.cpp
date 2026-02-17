@@ -107,8 +107,10 @@ void __cdecl wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec(
           if ((g_RenderStateFlags.dword & 1) != 0) {
             uVar3 = g_Hardware32BitPalette
                     [*(byte *)((int)g_CurrentTextureData +
-                              (uVar6 >> ((byte)g_TextureShift2 & 0x1f) & (uint)g_TextureMask2) +
-                              (uVar2 >> ((byte)g_TextureShift1 & 0x1f) & (uint)g_TextureMask1))];
+                              (uVar6 >> (g_TextureShift2.b32[0].bytes[0] & 0x1f) &
+                              g_TextureMask2.u32[0]) +
+                              (uVar2 >> (g_TextureShift1.b32[0].bytes[0] & 0x1f) &
+                              g_TextureMask1.u32[0]))];
           }
           *(uint *)((int)g_CurrentScreenPtr + uVar10) = uVar3;
           if ((g_RenderStateFlags.dword & 0x80) != 0) {

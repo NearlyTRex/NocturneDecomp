@@ -4,31 +4,31 @@
       {
         "category": "incompatible_types",
         "column": 17,
-        "line": 47,
+        "line": 46,
         "message": "assigning to 'int' from incompatible type 'void'"
       },
       {
         "category": "incompatible_types",
-        "column": 63,
-        "line": 68,
+        "column": 68,
+        "line": 67,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "format_error",
         "column": 63,
-        "line": 68,
-        "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
+        "line": 67,
+        "message": "format specifies type 'double' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "other",
-        "column": 14,
-        "line": 69,
+        "column": 68,
+        "line": 67,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
         "category": "incompatible_types",
         "column": 11,
-        "line": 71,
+        "line": 70,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       }
     ],
@@ -37,17 +37,17 @@
   },
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 135,
+    "complexity_score": 123,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 3,
-    "pseudocode_lines": 65,
-    "suspect_count": 6,
+    "pseudocode_lines": 63,
+    "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param"
     ],
-    "total_lines": 202
+    "total_lines": 200
   },
   "cross_references": [],
   "function": {
@@ -320,44 +320,37 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 12,
       "match": "in_stack_fffffe10",
       "text": "uint in_stack_fffffe10;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 20,
       "match": "in_stack_fffffe10",
       "text": "local_20 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,in_stack_fffffe10);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 35,
-      "match": "CONCAT44",
-      "text": "local_20 = (double)CONCAT44((int)ROUND(dVar6),(uint)local_20);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 35,
+      "line": 32,
       "match": "ROUND",
-      "text": "local_20 = (double)CONCAT44((int)ROUND(dVar6),(uint)local_20);",
+      "text": "iVar3 = (int)ROUND(ROUND((float)local_1dc.sample_info.sample_count * (float)(fVar1 - fVar5)",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 36,
+      "line": 32,
       "match": "ROUND",
-      "text": "dVar6 = (double)(int)ROUND(dVar6);",
+      "text": "iVar3 = (int)ROUND(ROUND((float)local_1dc.sample_info.sample_count * (float)(fVar1 - fVar5)",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
-      "match": "SUB84",
-      "text": "((char *)&local_1dc.taken,\"m-gun1.wav @ 2.3 * %f\",SUB84((double)fVar2,0),",
+      "line": 60,
+      "match": "SUB82",
+      "text": "((char *)&local_1dc.taken,\"m-gun1.wav @ 2.3 * %f\",0xe9,SUB82((double)fVar2,0),",
       "type": "decompiler_intrinsic"
     }
   ],

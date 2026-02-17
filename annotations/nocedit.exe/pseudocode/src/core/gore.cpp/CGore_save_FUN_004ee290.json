@@ -1,0 +1,161 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 71,
+    "complexity_score": 29,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 9,
+    "pseudocode_lines": 29,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 100
+  },
+  "cross_references": [
+    {
+      "addr": "00523600",
+      "from_addr": "0052393c",
+      "name": "core_mission.cpp_CDemonMission_writeFile_FUN_00523600",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004ee290",
+    "address_range": [
+      [
+        "004ee290",
+        "004ee334"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_gore.cpp_CGore_save_FUN_004ee290",
+    "signature": "int __cdecl core_gore_cpp_CGore_save_FUN_004ee290(CGore *this_ptr,_FILE *file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "004ed1c0",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CBloodPool_save_FUN_004ed1c0"
+    },
+    {
+      "addr": "004ecb90",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CBloodSplat_save_FUN_004ecb90"
+    },
+    {
+      "addr": "005fe6d0",
+      "is_variadic": true,
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062e452",
+      "name": "s_Gore_0062e452",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062e460",
+      "name": "s_d_0062e460",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062e464",
+      "name": "s_d_0062e464",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02d873d8",
+      "name": "g_BloodSplatCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d873dc",
+      "name": "g_BloodSplats",
+      "type": "CBloodSplat[2000]",
+      "value": null
+    },
+    {
+      "addr": "02d87420",
+      "name": "DAT_02d87420",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02da8720",
+      "name": "g_BloodPoolCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02da8724",
+      "name": "g_BloodPools",
+      "type": "CBloodPool[32]",
+      "value": null
+    },
+    {
+      "addr": "02da874c",
+      "name": "DAT_02da874c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.228070175438597,
+    "instruction_count": 57,
+    "opcode_distribution": {
+      "BOOL_OR": 2,
+      "CALL": 5,
+      "CBRANCH": 4,
+      "COPY": 46,
+      "INT_ADD": 15,
+      "INT_AND": 32,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 30,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 4,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 15,
+      "INT_SUB": 23,
+      "INT_XOR": 2,
+      "LOAD": 6,
+      "POPCOUNT": 15,
+      "RETURN": 1,
+      "STORE": 21
+    },
+    "pcode_op_count": 241
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGore *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
+      }
+    ]
+  },
+  "suspects": []
+}

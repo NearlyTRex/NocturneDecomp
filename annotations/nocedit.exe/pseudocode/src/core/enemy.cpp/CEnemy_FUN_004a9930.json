@@ -1,24 +1,37 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 30,
+        "line": 23,
+        "message": "use of undeclared identifier 'stack0xffffffe0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 43,
+        "line": 26,
+        "message": "use of undeclared identifier 'stack0xfffffff4'"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 155,
+    "complexity_score": 172,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
-    "pseudocode_lines": 25,
-    "suspect_count": 11,
+    "pseudocode_lines": 22,
+    "suspect_count": 13,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
       "stack_param",
-      "suspect_float"
+      "stack_ref"
     ],
-    "total_lines": 93
+    "total_lines": 90
   },
   "cross_references": [
     {
@@ -45,7 +58,7 @@
     {
       "addr": "004edbb0",
       "is_variadic": false,
-      "name": "core_gore.cpp_CGore_FUN_004edbb0"
+      "name": "core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0"
     },
     {
       "addr": "005fe6b0",
@@ -178,21 +191,21 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 7,
+      "line": 8,
       "match": "in_stack_00000008",
       "text": "CVector3f *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 9,
       "match": "in_stack_0000000c",
       "text": "CVector3f *in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 10,
       "match": "in_stack_00000010",
       "text": "SDamageInfo *in_stack_00000010;",
       "type": "stack_param"
@@ -201,49 +214,63 @@
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_00000008",
-      "text": "(this_ptr_00,in_stack_00000008,in_stack_0000000c,in_stack_00000010,&local_20);",
+      "text": "(this_ptr_00,in_stack_00000008,in_stack_0000000c,in_stack_00000010,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_0000000c",
-      "text": "(this_ptr_00,in_stack_00000008,in_stack_0000000c,in_stack_00000010,&local_20);",
+      "text": "(this_ptr_00,in_stack_00000008,in_stack_0000000c,in_stack_00000010,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_00000010",
-      "text": "(this_ptr_00,in_stack_00000008,in_stack_0000000c,in_stack_00000010,&local_20);",
+      "text": "(this_ptr_00,in_stack_00000008,in_stack_0000000c,in_stack_00000010,",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Direct stack address reference",
       "line": 16,
+      "match": "&stack0xffffffe0",
+      "text": "(CVector3f *)&stack0xffffffe0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
       "match": "in_stack_00000010",
       "text": "if (0.0 < (double)in_stack_00000010->damage_amount) {",
       "type": "stack_param"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 18,
-      "match": "6.850934e-39",
-      "text": "local_20.y = 6.850934e-39;",
-      "type": "suspect_float"
+      "description": "Direct stack address reference",
+      "line": 19,
+      "match": "&stack0xfffffff4",
+      "text": "(g_CGorePtr,(CVector3f *)&stack0xfffffff4,(CVector3f *)0x0,",
+      "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 20,
       "match": "in_stack_00000010",
-      "text": "((double)in_stack_00000010->damage_amount * 1.2 *",
+      "text": "(int)ROUND(ROUND((double)in_stack_00000010->damage_amount * 1.2 *",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 22,
+      "line": 20,
       "match": "ROUND",
-      "text": "local_20.x = (float)(int)ROUND(dVar1);",
+      "text": "(int)ROUND(ROUND((double)in_stack_00000010->damage_amount * 1.2 *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 20,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND((double)in_stack_00000010->damage_amount * 1.2 *",
       "type": "decompiler_intrinsic"
     },
     {

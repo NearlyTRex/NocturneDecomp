@@ -5,7 +5,7 @@
         "category": "other",
         "column": 72,
         "line": 81,
-        "message": "C-style cast from 'char *' to 'float' is not allowed"
+        "message": "C-style cast from 'CGabriella *' to 'float' is not allowed"
       },
       {
         "category": "undeclared_identifier",
@@ -25,19 +25,19 @@
   },
   "complexity": {
     "assembly_lines": 376,
-    "complexity_score": 287,
+    "complexity_score": 296,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 13,
-    "pseudocode_lines": 167,
-    "suspect_count": 10,
+    "pseudocode_lines": 166,
+    "suspect_count": 11,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 543
+    "total_lines": 542
   },
   "cross_references": [
     {
@@ -99,7 +99,7 @@
     {
       "addr": "004edbb0",
       "is_variadic": false,
-      "name": "core_gore.cpp_CGore_FUN_004edbb0"
+      "name": "core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0"
     },
     {
       "addr": "004f2ed0",
@@ -414,16 +414,16 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 14,
       "match": "in_stack_00000008",
       "text": "float in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 15,
       "match": "in_stack_ffffff58",
-      "text": "char *in_stack_ffffff58;",
+      "text": "CGabriella *in_stack_ffffff58;",
       "type": "stack_param"
     },
     {
@@ -437,7 +437,7 @@
       "description": "Unresolved stack parameter",
       "line": 94,
       "match": "in_stack_ffffff58",
-      "text": "in_stack_ffffff58 = (char *)this_ptr_00;",
+      "text": "in_stack_ffffff58 = (CGabriella *)this_ptr_00;",
       "type": "stack_param"
     },
     {
@@ -456,16 +456,23 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 126,
+      "line": 127,
       "match": "ROUND",
-      "text": "iStack_14 = (int)ROUND(dVar5);",
+      "text": "(int)ROUND(ROUND((double)fStack_94 * 0.20000000000000001)) + 1,0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 127,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND((double)fStack_94 * 0.20000000000000001)) + 1,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 128,
       "match": "in_stack_ffffff58",
-      "text": "in_stack_ffffff58 = \"kick1.wav\";",
+      "text": "in_stack_ffffff58 = this_ptr;",
       "type": "stack_param"
     },
     {

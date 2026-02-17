@@ -27,7 +27,7 @@ void __cdecl core_bat_cpp_CBat_archive_FUN_00414910(CBat *this_ptr)
   if (g_CBatClassVersion < 4) {
     return;
   }
-  core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->unused,(char *)0x0);
+  core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->periodic_sound,(char *)0x0);
   core_actor_cpp_archiveFloat_FUN_0040b770
             (&this_ptr->periodic_sound_timer_min,"periodicSoundTimerMin");
   core_actor_cpp_archiveFloat_FUN_0040b770

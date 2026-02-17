@@ -132,7 +132,7 @@ section .text
     PUSH EDI                            ; 0042b05f
     PUSH EBX                            ; 0042b060
     CALL core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800 ; 0042b061
-        ;   XREF to: 005a1800 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800(CDeformableModelInstance * this_ptr)
+        ;   XREF to: 005a1800 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800(CDeformableModelInstance * this_ptr, int param_2, int param_3)
     ADD ESP,0xc                         ; 0042b066
     XOR EAX,EAX                         ; 0042b069
     MOV EBX,0xb332                      ; 0042b06b

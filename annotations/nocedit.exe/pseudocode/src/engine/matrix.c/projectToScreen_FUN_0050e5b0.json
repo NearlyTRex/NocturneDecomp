@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 89,
+    "complexity_score": 93,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
-    "pseudocode_lines": 29,
-    "suspect_count": 5,
+    "pseudocode_lines": 23,
+    "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 87
+    "total_lines": 81
   },
   "cross_references": [],
   "function": {
@@ -192,37 +192,44 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 19,
+      "line": 18,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)local_44 + (uint)bVar1 * -8 + -8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 20,
+      "line": 19,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)local_44 + (uint)bVar1 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 21,
+      "line": 20,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)local_44 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + -4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 22,
+      "line": 21,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)local_44 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 29,
+      "line": 23,
       "match": "ROUND",
-      "text": "return (int)ROUND(dVar2);",
+      "text": "return (int)ROUND(ROUND(((-(float10)input_value * (float10)g_ViewportCenterYFixed) /",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 23,
+      "match": "ROUND",
+      "text": "return (int)ROUND(ROUND(((-(float10)input_value * (float10)g_ViewportCenterYFixed) /",
       "type": "decompiler_intrinsic"
     }
   ]

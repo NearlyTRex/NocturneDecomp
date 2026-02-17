@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 72,
+    "complexity_score": 79,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 5,
-    "pseudocode_lines": 27,
-    "suspect_count": 3,
+    "pseudocode_lines": 24,
+    "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "suspect_float"
     ],
-    "total_lines": 78
+    "total_lines": 75
   },
   "cross_references": [
     {
@@ -189,24 +189,31 @@
   },
   "suspects": [
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 19,
-      "match": "7.994614e-39",
-      "text": "local_18 = 7.994614e-39;",
-      "type": "suspect_float"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 21,
+      "line": 19,
       "match": "ROUND",
-      "text": "iVar5 = (int)ROUND(dVar4);",
+      "text": "local_18 = (float)(int)ROUND(ROUND(fVar3 * (float10)65536));",
       "type": "decompiler_intrinsic"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 19,
+      "match": "ROUND",
+      "text": "local_18 = (float)(int)ROUND(ROUND(fVar3 * (float10)65536));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 21,
+      "match": "3.58732e-43",
+      "text": "local_18 = 3.58732e-43;",
+      "type": "suspect_float"
+    },
+    {
       "description": "Complex pointer cast",
-      "line": 26,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)g_IntensityToValueLookupTable + iVar1) = iVar5;",
+      "line": 24,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)g_IntensityToValueLookupTable + iVar1) = local_18;",
       "type": "pointer_cast"
     }
   ]

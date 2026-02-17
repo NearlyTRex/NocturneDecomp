@@ -85,8 +85,9 @@ section .text
     FADDP                               ; 005e78b1
     FSQRT                               ; 005e78b3
     FLD float ptr [EDX + 0x4]           ; 005e78b5
-    CALL crt_math.c_atan2_FUN_006013b1  ; 005e78b8
-        ;   XREF to: 006013b1 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_006013b1(float10 y, float10 x)
+    FXCH                                ; 005e78b8
+    FPATAN                              ; 005e78ba
+    NOP                                 ; 005e78bc
     FCHS                                ; 005e78bd
     FSTP float ptr [ECX]                ; 005e78bf
     MOV EAX,ECX                         ; 005e78c1

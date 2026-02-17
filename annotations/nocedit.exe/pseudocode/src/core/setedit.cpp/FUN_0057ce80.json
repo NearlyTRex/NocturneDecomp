@@ -10,7 +10,7 @@
       {
         "category": "format_error",
         "column": 30,
-        "line": 119,
+        "line": 120,
         "message": "format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       }
     ],
@@ -19,18 +19,18 @@
   },
   "complexity": {
     "assembly_lines": 350,
-    "complexity_score": 592,
+    "complexity_score": 593,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 36,
-    "pseudocode_lines": 137,
+    "pseudocode_lines": 138,
     "suspect_count": 44,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "stack_param"
     ],
-    "total_lines": 487
+    "total_lines": 488
   },
   "cross_references": [
     {
@@ -311,19 +311,19 @@
     {
       "addr": "02d01f24",
       "name": "g_RedBitPosition",
-      "type": "int",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "02d01f30",
       "name": "g_GreenBitPosition",
-      "type": "int",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "02d01f3c",
       "name": "g_BlueBitPosition",
-      "type": "int",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
@@ -782,63 +782,63 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 105,
+      "line": 106,
       "match": "in_stack_00000010",
       "text": "} while (iVar2 < in_stack_00000010);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 109,
+      "line": 110,
       "match": "in_stack_00000014",
       "text": "} while (iVar5 < in_stack_00000014);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 112,
+      "line": 113,
       "match": "in_stack_0000000c",
       "text": "_sprintf(local_a0,\"%s.act\",in_stack_0000000c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 123,
+      "line": 124,
       "match": "in_stack_0000001c",
       "text": "if (0 < in_stack_0000001c) {",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 127,
+      "line": 128,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_ScreenBufferArray + iVar5) = *(uint *)((int)local_2670 + iVar5)",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 127,
+      "line": 128,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_ScreenBufferArray + iVar5) = *(uint *)((int)local_2670 + iVar5)",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 129,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar5) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 130,
       "match": "(uint *)((int)",
+      "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar5) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 131,
+      "match": "(uint *)((int)",
       "text": "*(uint *)((int)auStack_13b0 + iVar5);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 132,
+      "line": 133,
       "match": "in_stack_0000001c",
       "text": "} while (iVar2 < in_stack_0000001c * 4);",
       "type": "stack_param"

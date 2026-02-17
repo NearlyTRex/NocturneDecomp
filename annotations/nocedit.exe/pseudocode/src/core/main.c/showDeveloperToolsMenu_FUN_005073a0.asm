@@ -48,7 +48,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_morph.cpp_CMorph_ctor_FUN_0052b310
 ;   core_morph.cpp_CMorph_dtor_FUN_0052b330
-;   core_morph.cpp_FUN_0052bcb0
+;   core_morph.cpp_CMorph_editMorph_FUN_0052bcb0
 ;   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0
 ;   core_procedur.cpp_CProceduralTexture_showMenu_FUN_00554880
 ;   core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940
@@ -518,8 +518,8 @@ section .text
         ;   XREF to: 00507522 (CONDITIONAL_JUMP)  ; LAB_00507522
     PUSH EBX                            ; 005078a0
     MOV ESI,0x295                       ; 005078a1
-    CALL core_morph.cpp_FUN_0052bcb0    ; 005078a6
-        ;   XREF to: 0052bcb0 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_0052bcb0()
+    CALL core_morph.cpp_CMorph_editMorph_FUN_0052bcb0 ; 005078a6
+        ;   XREF to: 0052bcb0 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_editMorph_FUN_0052bcb0(CMorph * morph)
     MOV ECX,0x63521c                    ; 005078ab | = "..\\core\\main.c"
     ADD ESP,0x4                         ; 005078b0
     MOV dword ptr [0x02f0d944],ESI      ; 005078b3 | g_CurrentDebugLine

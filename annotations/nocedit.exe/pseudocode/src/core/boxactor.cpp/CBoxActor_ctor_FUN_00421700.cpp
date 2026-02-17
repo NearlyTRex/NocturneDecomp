@@ -15,11 +15,11 @@ CBoxActor * __cdecl core_boxactor_cpp_CBoxActor_ctor_FUN_00421700(CBoxActor *thi
   
   pCVar1 = (CBoxActor *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
   pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&pCVar1->model);
-  pCVar3 = (CBoxActor_ptr_916)core_box_cpp_CBox_ctor_FUN_0041dc50((CBox *)&ADJ(pCVar2)->sim_box);
+  pCVar3 = core_box_cpp_CBox_ctor_FUN_0041dc50(&ADJ(pCVar2)->physics_box);
   ADJ(pCVar3)->base.vtable._ub = &g_CBoxActorVTable;
   ADJ(pCVar3)->weight_in_pounds = 0.0;
   ADJ(pCVar3)->fps = 20.0;
-  ADJ(pCVar3)->unk2 = 0;
+  ADJ(pCVar3)->anim_frame = 0.0;
   (ADJ(pCVar3)->rpm).z = 0.0;
   (ADJ(pCVar3)->rpm).y = (ADJ(pCVar3)->rpm).z;
   (ADJ(pCVar3)->rpm).x = (ADJ(pCVar3)->rpm).y;
@@ -31,11 +31,11 @@ CBoxActor * __cdecl core_boxactor_cpp_CBoxActor_ctor_FUN_00421700(CBoxActor *thi
   ADJ(pCVar3)->carrier_actor = (CDemonActor *)0x0;
   ADJ(pCVar3)->pushed_by_actor = (CDemonActor *)0x0;
   ADJ(pCVar3)->push_sound[0] = '\0';
-  ADJ(pCVar3)->constrain_extents_actor = 0;
+  ADJ(pCVar3)->constrain_extents_actor = (CDemonActor *)0x0;
   ADJ(pCVar3)->ground_type = 0;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (&ADJ(pCVar3)->model,"question.kfm");
-  ADJ(pCVar3)->unk5 = -1;
+  pCVar3->is_valid = -1;
   ADJ(pCVar3)->plot_in_shadow_flag = 1;
   ADJ(pCVar3)->collision_flag = 1;
   ADJ(pCVar3)->dont_use_normals = 0;

@@ -6,19 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 131,
-    "complexity_score": 171,
+    "complexity_score": 192,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 8,
-    "pseudocode_lines": 71,
-    "suspect_count": 8,
+    "pseudocode_lines": 67,
+    "suspect_count": 11,
     "suspect_types": [
       "decompiler_intrinsic",
-      "param_count_too_few",
       "pointer_cast",
-      "stack_param"
+      "unnamed_param"
     ],
-    "total_lines": 202
+    "total_lines": 198
   },
   "cross_references": [
     {
@@ -38,7 +37,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800",
-    "signature": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800(CDeformableModelInstance *this_ptr)"
+    "signature": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800(CDeformableModelInstance *this_ptr,int param_2,int param_3)"
   },
   "function_calls": [
     {
@@ -125,8 +124,8 @@
         "stack_params": 3
       }
     ],
-    "confidence": "low",
-    "declared_params": 1,
+    "confidence": "medium",
+    "declared_params": 3,
     "estimated_params": 3
   },
   "pcode_summary": {
@@ -171,10 +170,10 @@
     "pcode_op_count": 539
   },
   "stack_frame": {
-    "frame_size": 36,
+    "frame_size": 44,
     "local_size": 32,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -204,69 +203,100 @@
         "offset": 4,
         "size": 4,
         "type": "CDeformableModelInstance *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "param_3",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000008",
-      "text": "char *in_stack_00000008;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_2",
+      "text": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800(CDeformableModelInstance *this_ptr,int param_2,int param_3)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_3",
+      "text": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800(CDeformableModelInstance *this_ptr,int param_2,int param_3)",
+      "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 52,
       "match": "(int *)((int)",
-      "text": "piVar7 = (int *)((int)&this_ptr->skinned_vertices_buffer->x + iVar11);",
+      "text": "piVar7 = (int *)((int)&this_ptr->skinned_vertices_buffer->x + iVar10);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 56,
-      "match": "in_stack_00000008",
-      "text": "pcVar8 = in_stack_00000008;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 55,
+      "match": "param_2",
+      "text": "iVar6 = param_2;",
+      "type": "unnamed_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
+      "line": 58,
+      "match": "fpatan",
+      "text": "fVar11 = (float10)fpatan((float10)*piVar7,(float10)piVar7[2]);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 59,
+      "match": "param_2",
+      "text": "iVar6 = param_2 + (int)ROUND(ROUND(fVar11 * (float10)2670176.8577967598));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 59,
       "match": "ROUND",
-      "text": "pcVar8 = (this_ptr->motion_controller).current_motion_name + (int)ROUND(dVar13) + -0x30;",
+      "text": "iVar6 = param_2 + (int)ROUND(ROUND(fVar11 * (float10)2670176.8577967598));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 59,
+      "match": "ROUND",
+      "text": "iVar6 = param_2 + (int)ROUND(ROUND(fVar11 * (float10)2670176.8577967598));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 66,
+      "line": 62,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->v + iVar6) =",
+      "text": "*(int *)((int)&pSVar4->u + iVar5) = iVar6;",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 67,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c + (int)(((longlong)(piVar7[1] - iVar10) * 0x1000000) / (longlong)iVar9)",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 64,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->v + iVar5) =",
+      "type": "pointer_cast"
     },
     {
-      "call_site_count": 1,
-      "declared_params": 1,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:1 vs estimated:3",
-      "param_delta": 2,
-      "text": "Function declares 1 params but call sites push 3 (2 missing)",
-      "type": "param_count_too_few"
+      "description": "Unnamed function parameter",
+      "line": 65,
+      "match": "param_3",
+      "text": "param_3 + (int)(((longlong)(piVar7[1] - iVar9) * 0x1000000) / (longlong)iVar8);",
+      "type": "unnamed_param"
     }
   ]
 }

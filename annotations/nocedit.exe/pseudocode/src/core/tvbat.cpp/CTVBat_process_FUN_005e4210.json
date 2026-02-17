@@ -4,28 +4,26 @@
       {
         "category": "incompatible_types",
         "column": 16,
-        "line": 323,
-        "message": "assigning to 'int' from incompatible type 'void'"
+        "line": 324,
+        "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       }
     ],
     "success": false,
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 791,
-    "complexity_score": 462,
+    "assembly_lines": 792,
+    "complexity_score": 443,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 29,
-    "pseudocode_lines": 322,
-    "suspect_count": 12,
+    "pseudocode_lines": 323,
+    "suspect_count": 11,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
-      "pointer_cast",
       "warning_type_propagation"
     ],
-    "total_lines": 1113
+    "total_lines": 1115
   },
   "cross_references": [],
   "function": {
@@ -75,7 +73,7 @@
     {
       "addr": "004edbb0",
       "is_variadic": false,
-      "name": "core_gore.cpp_CGore_FUN_004edbb0"
+      "name": "core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0"
     },
     {
       "addr": "00506f10",
@@ -287,17 +285,17 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 6.273638968481375,
-    "instruction_count": 698,
+    "avg_pcode_per_instr": 6.27,
+    "instruction_count": 700,
     "opcode_distribution": {
       "BOOL_NEGATE": 18,
       "BOOL_OR": 24,
       "BRANCH": 5,
-      "CALL": 14,
+      "CALL": 13,
       "CALLIND": 3,
-      "CALLOTHER": 4,
+      "CALLOTHER": 5,
       "CBRANCH": 42,
-      "COPY": 2203,
+      "COPY": 2215,
       "FLOAT2FLOAT": 221,
       "FLOAT_ABS": 1,
       "FLOAT_ADD": 27,
@@ -326,16 +324,16 @@
       "INT_SLESS": 55,
       "INT_SREM": 1,
       "INT_SRIGHT": 2,
-      "INT_SUB": 77,
+      "INT_SUB": 76,
       "INT_XOR": 2,
       "INT_ZEXT": 66,
       "LOAD": 219,
       "POPCOUNT": 55,
       "RETURN": 2,
-      "STORE": 175,
+      "STORE": 174,
       "SUBPIECE": 2
     },
-    "pcode_op_count": 4379
+    "pcode_op_count": 4389
   },
   "stack_frame": {
     "frame_size": 392,
@@ -737,24 +735,10 @@
   "suspects": [
     {
       "description": "Type propagation did not converge",
-      "line": 2,
+      "line": 3,
       "match": "WARNING: Type propagation algorithm not settling",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 28,
-      "match": "extraout_ST1",
-      "text": "float10 extraout_ST1;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 75,
-      "match": "(int *)((int)",
-      "text": "this_ptr->unk11 = *(int *)((int)g_CDemonSetPtr->enemies + iVar14);",
-      "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
@@ -779,42 +763,49 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 218,
+      "line": 215,
+      "match": "fpatan",
+      "text": "fVar19 = (float10)fpatan((float10)local_88,(float10)local_80);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 216,
       "match": "SQRT",
-      "text": "SQRT((float10)local_8c * (float10)local_8c +",
+      "text": "fVar18 = SQRT((float10)local_88 * (float10)local_88 + (float10)local_80 * (float10)local_80);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 220,
-      "match": "extraout_ST1",
-      "text": "local_24 = (float)extraout_ST1;",
-      "type": "extra_output"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 217,
+      "match": "fpatan",
+      "text": "fVar21 = (float10)fpatan((float10)local_84,fVar18);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 249,
+      "line": 248,
       "match": "fsin",
-      "text": "fVar18 = (float10)fsin(fVar17);",
+      "text": "fVar21 = (float10)fsin(fVar18);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 251,
+      "line": 250,
       "match": "fsin",
       "text": "fVar20 = (float10)fsin(fVar19);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 252,
+      "line": 251,
       "match": "fcos",
-      "text": "fVar17 = (float10)fcos(fVar17);",
+      "text": "fVar18 = (float10)fcos(fVar18);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 253,
+      "line": 252,
       "match": "fcos",
       "text": "fVar19 = (float10)fcos(fVar19);",
       "type": "decompiler_intrinsic"

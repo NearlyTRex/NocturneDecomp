@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 33,
-    "complexity_score": 34,
+    "complexity_score": 42,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 9,
-    "suspect_count": 2,
+    "pseudocode_lines": 7,
+    "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 42
+    "total_lines": 40
   },
   "cross_references": [],
   "function": {
@@ -141,16 +141,23 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 8,
-      "match": "SQRT",
-      "text": "(SQRT((double)(z1 - z2) * (double)(z1 - z2) +",
+      "line": 7,
+      "match": "ROUND",
+      "text": "return (int)ROUND(ROUND(SQRT((float10)(z1 - z2) * (float10)(z1 - z2) +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 11,
+      "line": 7,
       "match": "ROUND",
-      "text": "return (int)ROUND(dVar1);",
+      "text": "return (int)ROUND(ROUND(SQRT((float10)(z1 - z2) * (float10)(z1 - z2) +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 7,
+      "match": "SQRT",
+      "text": "return (int)ROUND(ROUND(SQRT((float10)(z1 - z2) * (float10)(z1 - z2) +",
       "type": "decompiler_intrinsic"
     }
   ]

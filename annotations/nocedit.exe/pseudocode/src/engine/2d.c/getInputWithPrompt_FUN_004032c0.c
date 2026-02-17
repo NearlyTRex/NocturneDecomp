@@ -11,10 +11,10 @@ int __cdecl engine_2d_c_getInputWithPrompt_FUN_004032c0(char *buffer,int max_len
 {
   uchar *puVar1;
   uint uVar2;
-  _BIT_INTEGER _Var3;
+  _BIT_INTEGER32 _Var3;
   int iVar4;
   char local_114 [256];
-  _BIT_INTEGER local_14;
+  _BIT_INTEGER32 local_14;
   
   *buffer = '\0';
   engine_2d_c_clearInputAndWait_FUN_00403260();

@@ -18,7 +18,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[6]:
-;   core_bodypart.cpp_CBodyPart_FUN_0041a050 at 0041a43a
+;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050 at 0041a43a
 ;   core_dmodel.cpp_CKeyFramedModel_calcNormals_FUN_00477e60 at 00477ed5
 ;   core_dpart.cpp_CDemonPart_calculateFaceNormals_FUN_004824f0 at 00482567
 ;   core_set.cpp_FUN_005702b0 at 005706b6

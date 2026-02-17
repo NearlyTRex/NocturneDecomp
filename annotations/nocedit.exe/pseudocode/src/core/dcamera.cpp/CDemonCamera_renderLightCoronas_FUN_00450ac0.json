@@ -3,15 +3,15 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 54,
-        "line": 102,
-        "message": "use of undeclared identifier 'stack0xffffff9c'"
+        "column": 52,
+        "line": 97,
+        "message": "use of undeclared identifier 'stack0xffffffa4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 28,
-        "line": 104,
-        "message": "use of undeclared identifier 'stack0xffffffa0'"
+        "line": 99,
+        "message": "use of undeclared identifier 'stack0xffffffa8'"
       }
     ],
     "success": false,
@@ -19,18 +19,19 @@
   },
   "complexity": {
     "assembly_lines": 272,
-    "complexity_score": 269,
+    "complexity_score": 318,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 35,
-    "pseudocode_lines": 134,
-    "suspect_count": 12,
+    "pseudocode_lines": 128,
+    "suspect_count": 17,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
+      "stack_param",
       "stack_ref"
     ],
-    "total_lines": 406
+    "total_lines": 400
   },
   "cross_references": [
     {
@@ -229,7 +230,7 @@
     {
       "addr": "013bc260",
       "name": "g_CameraDownscaleIterations",
-      "type": "_BIT_INTEGER",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
@@ -485,87 +486,122 @@
   },
   "suspects": [
     {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_ffffffa0",
+      "text": "CVector3i *in_stack_ffffffa0;",
+      "type": "stack_param"
+    },
+    {
       "description": "Complex pointer cast",
-      "line": 46,
+      "line": 45,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)g_DitherPatternTable + iVar4) = uVar3 & 0xff;",
+      "text": "*(uint *)((int)g_DitherPatternTable + iVar3) = uVar2 & 0xff;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 52,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)g_CoronaLeftExtent + iVar3) = this_ptr->display_width;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 53,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)g_CoronaLeftExtent + iVar4) = this_ptr->display_width;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 54,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)g_CoronaRightExtent + iVar4) = 0;",
+      "text": "*(uint *)((int)g_CoronaRightExtent + iVar3) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 66,
+      "line": 61,
       "match": "ROUND",
-      "text": "g_CoronaDepthShift = (int)ROUND(dVar12);",
+      "text": "g_CoronaDepthShift = (int)ROUND(ROUND(fVar1 * 0.30103 * (float)3.3219280948900001));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 67,
+      "line": 61,
       "match": "ROUND",
-      "text": "g_CoronaMaxDepth = (int)ROUND(dVar11);",
+      "text": "g_CoronaDepthShift = (int)ROUND(ROUND(fVar1 * 0.30103 * (float)3.3219280948900001));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 62,
+      "match": "ROUND",
+      "text": "g_CoronaMaxDepth = (int)ROUND(ROUND(fVar1));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 62,
+      "match": "ROUND",
+      "text": "g_CoronaMaxDepth = (int)ROUND(ROUND(fVar1));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 76,
+      "line": 71,
       "match": "(int *)((int)",
-      "text": "if (this_ptr->display_width != *(int *)((int)g_CoronaLeftExtent + local_34)) {",
+      "text": "if (this_ptr->display_width != *(int *)((int)g_CoronaLeftExtent + local_2c)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 77,
+      "line": 72,
       "match": "(int *)((int)",
-      "text": "local_20 = *(int *)((int)g_CoronaLeftExtent + local_34);",
+      "text": "local_18 = *(int *)((int)g_CoronaLeftExtent + local_2c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 78,
+      "line": 73,
       "match": "(int *)((int)",
-      "text": "local_30 = *(int *)((int)g_CoronaRightExtent + local_34);",
+      "text": "local_28 = *(int *)((int)g_CoronaRightExtent + local_2c);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 86,
+      "line": 81,
       "match": "SBORROW4",
-      "text": "bVar10 = SBORROW4(local_20,local_30);",
+      "text": "bVar9 = SBORROW4(local_18,local_28);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 88,
+      "match": "in_stack_ffffffa0",
+      "text": "(&g_CurrentLightForCorona->base,local_1c,in_stack_ffffffa0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 89,
+      "match": "in_stack_ffffffa0",
+      "text": "local_54 = in_stack_ffffffa0;",
+      "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 95,
-      "match": "&stack0xffffff9c",
-      "text": "aiStack_58[(uint)bVar9 * -2] = *(int *)(&stack0xffffff9c + (uint)bVar9 * -8);",
+      "line": 90,
+      "match": "&stack0xffffffa4",
+      "text": "local_50[(uint)bVar8 * -2] = *(int *)(&stack0xffffffa4 + (uint)bVar8 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 97,
-      "match": "&stack0xffffffa0",
-      "text": "*(int *)(&stack0xffffffa0 + (uint)bVar9 * -8 + (uint)bVar9 * -8);",
+      "line": 92,
+      "match": "&stack0xffffffa8",
+      "text": "*(int *)(&stack0xffffffa8 + (uint)bVar8 * -8 + (uint)bVar8 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 124,
+      "line": 119,
       "match": "SBORROW4",
-      "text": "bVar10 = SBORROW4(local_20,local_30);",
+      "text": "bVar9 = SBORROW4(local_18,local_28);",
       "type": "decompiler_intrinsic"
     }
   ]

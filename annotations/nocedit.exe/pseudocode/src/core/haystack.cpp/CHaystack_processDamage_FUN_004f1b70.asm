@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0
-;   core_gore.cpp_CGore_FUN_004ee030
+;   core_gore.cpp_CGore_spawnFliesOnActor_FUN_004ee030
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 ;
@@ -125,8 +125,8 @@ section .text
     PUSH EBX                            ; 004f1c69
     MOV EAX,[0x0067b9a0]                ; 004f1c6a | g_CGoreInstance | g_CGorePtr
     PUSH EAX                            ; 004f1c6f | g_CGoreInstance
-    CALL core_gore.cpp_CGore_FUN_004ee030 ; 004f1c70
-        ;   XREF to: 004ee030 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004ee030(CGore * this_ptr, CDemonActor * actor)
+    CALL core_gore.cpp_CGore_spawnFliesOnActor_FUN_004ee030 ; 004f1c70
+        ;   XREF to: 004ee030 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnFliesOnActor_FUN_004ee030(CGore * this_ptr, CDemonActor * actor, int gather_count, float spawn_rate, ...)
     ADD ESP,0x14                        ; 004f1c75
     PUSH EDI                            ; 004f1c78
     PUSH EBX                            ; 004f1c79

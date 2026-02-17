@@ -27,7 +27,7 @@ CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_dtor_FUN_0041da40(CBoneGuy *this_pt
   pCVar2 = core_armour_cpp_CFlame_arrdtor_FUN_00412720((CFlame *)&pSVar1[-0x1f0].orient.y,0);
   pSVar3 = core_armour_cpp_SFire_arrdtor_FUN_00412700
                      ((SFire *)(pCVar2[-2].base.create_event + 0x20),0);
-  pCVar4 = core_armour_cpp_CVector3f_arrdtor_FUN_004126e0((CVector3f *)(pSVar3[-0x16].unk + 4),0);
+  pCVar4 = core_armour_cpp_CVector3f_arrdtor_FUN_004126e0((CVector3f *)&pSVar3[-0x16].bone_index,0);
   pCVar4 = core_armour_cpp_CVector3f_arrdtor_FUN_004126e0(pCVar4 + -0xf,0);
   pCVar5 = core_cloth_cpp_CClothList_dtor_FUN_0043bf80((CClothList *)(pCVar4 + -0x26),0);
   pCVar6 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40

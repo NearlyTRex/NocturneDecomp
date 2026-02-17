@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 12,
-        "line": 32,
+        "line": 33,
         "message": "assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 62,
+    "complexity_score": 71,
     "cross_reference_count": 6,
     "function_call_count": 5,
     "global_count": 8,
-    "pseudocode_lines": 32,
-    "suspect_count": 2,
+    "pseudocode_lines": 31,
+    "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 107
+    "total_lines": 106
   },
   "cross_references": [
     {
@@ -218,16 +218,23 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 22,
+      "line": 23,
       "match": "(ushort *)((int)",
       "text": "this_ptr->shadow_depth_buffer = (ushort *)((int)this_ptr->shadow_buffer_raw + 0x10U & 0xfffffff0);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
+      "line": 32,
       "match": "ROUND",
-      "text": "(this_ptr,(&g_GlobalFilters)[(int)ROUND(dVar6)],0,0,iVar4);",
+      "text": "(this_ptr,(&g_GlobalFilters)[(int)ROUND(ROUND(this_ptr->volumetric_intensity * fVar1))],",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 32,
+      "match": "ROUND",
+      "text": "(this_ptr,(&g_GlobalFilters)[(int)ROUND(ROUND(this_ptr->volumetric_intensity * fVar1))],",
       "type": "decompiler_intrinsic"
     }
   ]

@@ -190,19 +190,11 @@ SMRGLTextureBasic DAT_0067B948 = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "7YEARS.RAW"
 };
-SMRGLTextureBasic SMRGLTextureBasic_0067b9b0 = {
+SMRGLTextureBasic g_BloodParticleTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "BGLOB.RAW"
 };
-SMRGLTextureBasic SMRGLTextureBasic_0067ba28 = {
-    .base = {.type = 0x0000000D, .count = 0x00000000},
-    .texture_name = "BVSP1-01.RAW"
-};
-SMRGLTextureBasic SMRGLTextureBasic_0067c028 = {
-    .base = {.type = 0x0000000D, .count = 0x00000000},
-    .texture_name = "BPOL1-01.RAW"
-};
-SMRGLTextureBasic SMRGLTextureBasic_0067cb28 = {
+SMRGLTextureBasic g_FootstepTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "FOOTSTEP.RAW"
 };
@@ -223,72 +215,12 @@ SMRGLTextureBasic SMRGLTextureBasic_0067d150 = {
 SMRGLTextureBasic* g_LightTexturesEnd = nullptr;
 SMRGLTextureBasic* g_SkyDomeTexturePtr = (SMRGLTextureBasic*)&g_SkyDomeTextureData;
 
-// SMRGLTextureBasic[15]
-SMRGLTextureBasic SMRGLTextureBasic_ARRAY_0067ba40[15] = {
+// SMRGLTextureBasic[116]
+SMRGLTextureBasic g_BloodPoolAnimTextures[116] = {
     {
         .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP1-02.RAW"
+        .texture_name = "BPOL1-01.RAW"
     },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP1-03.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP1-04.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP1-05.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP1-06.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP1-07.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP1-08.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP1-09.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP1-10.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP1-11.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP1-12.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP1-13.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP1-14.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP1-15.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP1-16.RAW"
-    }
-};
-
-// SMRGLTextureBasic[28]
-SMRGLTextureBasic SMRGLTextureBasic_ARRAY_0067c040[28] = {
     {
         .base = {.type = 0x0000000D, .count = 0x00000000},
         .texture_name = "BPOL1-02.RAW"
@@ -400,801 +332,7 @@ SMRGLTextureBasic SMRGLTextureBasic_ARRAY_0067c040[28] = {
     {
         .base = {.type = 0x0000000D, .count = 0x00000000},
         .texture_name = "BPOL1-29.RAW"
-    }
-};
-
-// SMRGLTextureBasic[40]
-SMRGLTextureBasic g_FireEffectSmokeParticleTextures[40] = {
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0050.RAW"
     },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0051.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0052.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0053.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0054.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0055.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0056.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0057.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0058.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0059.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0060.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0061.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0062.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0063.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0064.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0065.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0066.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0067.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0068.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0069.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0070.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0071.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0072.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0073.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0074.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0075.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0076.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0077.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0078.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0079.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0080.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0081.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0082.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0083.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0084.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0085.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0086.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0087.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0088.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SPFB0089.RAW"
-    }
-};
-SMRGLTextureBasic SMRGLTextureBasic_ARRAY_0067b100[40] = {
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "F0100.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "F0300.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "F0500.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "F0700.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "F0900.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "F1100.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "F1300.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "F1500.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "CAN0100.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "CAN0300.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "CAN0500.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "CAN0700.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "CAN0900.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "CAN1100.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "CAN1300.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "CAN1500.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BF0100.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BF0300.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BF0500.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BF0700.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BF0900.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BF1100.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BF1300.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BF1500.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BF0100.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BF0300.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BF0500.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BF0700.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BF0900.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BF1100.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BF1300.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BF1500.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BF0100.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BF0300.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BF0500.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BF0700.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BF0900.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BF1100.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BF1300.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BF1500.RAW"
-    }
-};
-
-// SMRGLTextureBasic[48]
-SMRGLTextureBasic SMRGLTextureBasic_ARRAY_0067bba8[48] = {
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP2-01.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP2-02.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP2-03.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP2-04.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP2-05.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP2-06.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP2-07.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP2-08.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP2-09.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP2-10.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP2-11.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP2-12.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP2-13.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP2-14.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP2-15.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP2-16.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP3-01.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP3-02.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP3-03.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP3-04.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP3-05.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP3-06.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP3-07.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP3-08.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP3-09.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP3-10.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP3-11.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP3-12.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP3-13.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP3-14.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP3-15.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP3-16.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP4-01.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP4-02.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP4-03.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP4-04.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP4-05.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP4-06.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP4-07.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP4-08.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP4-09.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP4-10.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP4-11.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP4-12.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP4-13.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP4-14.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP4-15.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BVSP4-16.RAW"
-    }
-};
-
-// SMRGLTextureBasic[4]
-SMRGLTextureBasic SMRGLTextureBasic_ARRAY_0067b9c8[4] = {
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BHSP1.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BHSP2.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BHSP3.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BHSP4.RAW"
-    }
-};
-
-// SMRGLTextureBasic[54]
-SMRGLTextureBasic g_FireEffectExplosionTextures[54] = {
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01100.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01101.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01102.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01103.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01104.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01105.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01106.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01107.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01108.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01109.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01110.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01111.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01112.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01113.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01114.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01115.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01116.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01117.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01118.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01119.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01120.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01121.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01122.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01123.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01124.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01125.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01126.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01127.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01128.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01129.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01130.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01131.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01132.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01133.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01134.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01135.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01140.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01141.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01142.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01143.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01144.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01145.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01146.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01147.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01148.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01149.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01150.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01151.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01152.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01153.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01154.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01155.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01156.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "ZG01157.RAW"
-    }
-};
-
-// SMRGLTextureBasic[6]
-SMRGLTextureBasic g_FireEffectLightningBoltTextures[6] = {
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BOLT1.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BOLT2.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BOLT3.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BOLT4.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BOLT5.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "BOLT6.RAW"
-    }
-};
-
-// SMRGLTextureBasic[87]
-SMRGLTextureBasic SMRGLTextureBasic_ARRAY_0067c2e0[87] = {
     {
         .base = {.type = 0x0000000D, .count = 0x00000000},
         .texture_name = "BPOL2-01.RAW"
@@ -1545,6 +683,860 @@ SMRGLTextureBasic SMRGLTextureBasic_ARRAY_0067c2e0[87] = {
     }
 };
 
+// SMRGLTextureBasic[40]
+SMRGLTextureBasic g_FireEffectSmokeParticleTextures[40] = {
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0050.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0051.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0052.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0053.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0054.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0055.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0056.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0057.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0058.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0059.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0060.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0061.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0062.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0063.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0064.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0065.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0066.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0067.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0068.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0069.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0070.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0071.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0072.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0073.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0074.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0075.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0076.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0077.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0078.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0079.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0080.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0081.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0082.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0083.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0084.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0085.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0086.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0087.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0088.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SPFB0089.RAW"
+    }
+};
+SMRGLTextureBasic SMRGLTextureBasic_ARRAY_0067b100[40] = {
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "F0100.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "F0300.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "F0500.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "F0700.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "F0900.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "F1100.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "F1300.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "F1500.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "CAN0100.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "CAN0300.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "CAN0500.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "CAN0700.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "CAN0900.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "CAN1100.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "CAN1300.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "CAN1500.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF0100.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF0300.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF0500.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF0700.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF0900.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF1100.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF1300.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF1500.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF0100.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF0300.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF0500.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF0700.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF0900.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF1100.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF1300.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF1500.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF0100.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF0300.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF0500.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF0700.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF0900.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF1100.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF1300.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BF1500.RAW"
+    }
+};
+
+// SMRGLTextureBasic[4]
+SMRGLTextureBasic g_BloodSplatTextures[4] = {
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BHSP1.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BHSP2.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BHSP3.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BHSP4.RAW"
+    }
+};
+
+// SMRGLTextureBasic[54]
+SMRGLTextureBasic g_FireEffectExplosionTextures[54] = {
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01100.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01101.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01102.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01103.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01104.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01105.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01106.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01107.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01108.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01109.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01110.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01111.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01112.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01113.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01114.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01115.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01116.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01117.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01118.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01119.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01120.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01121.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01122.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01123.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01124.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01125.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01126.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01127.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01128.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01129.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01130.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01131.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01132.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01133.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01134.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01135.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01140.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01141.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01142.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01143.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01144.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01145.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01146.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01147.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01148.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01149.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01150.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01151.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01152.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01153.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01154.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01155.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01156.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "ZG01157.RAW"
+    }
+};
+
+// SMRGLTextureBasic[64]
+SMRGLTextureBasic g_BloodSplatAnimTextures[64] = {
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP1-01.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP1-02.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP1-03.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP1-04.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP1-05.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP1-06.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP1-07.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP1-08.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP1-09.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP1-10.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP1-11.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP1-12.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP1-13.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP1-14.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP1-15.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP1-16.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP2-01.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP2-02.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP2-03.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP2-04.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP2-05.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP2-06.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP2-07.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP2-08.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP2-09.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP2-10.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP2-11.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP2-12.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP2-13.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP2-14.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP2-15.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP2-16.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP3-01.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP3-02.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP3-03.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP3-04.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP3-05.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP3-06.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP3-07.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP3-08.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP3-09.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP3-10.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP3-11.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP3-12.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP3-13.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP3-14.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP3-15.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP3-16.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP4-01.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP4-02.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP4-03.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP4-04.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP4-05.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP4-06.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP4-07.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP4-08.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP4-09.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP4-10.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP4-11.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP4-12.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP4-13.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP4-14.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP4-15.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BVSP4-16.RAW"
+    }
+};
+
+// SMRGLTextureBasic[6]
+SMRGLTextureBasic g_FireEffectLightningBoltTextures[6] = {
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BOLT1.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BOLT2.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BOLT3.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BOLT4.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BOLT5.RAW"
+    },
+    {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "BOLT6.RAW"
+    }
+};
+
 // SMRGLTextureBasic[8]
 SMRGLTextureBasic g_AudioSpectrumTextures[8] = {
     {
@@ -1691,13 +1683,13 @@ WatcomStaticDestructorNode WatcomStaticDestructorNode_0067b980 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&WatcomDestructorCall_0065f00c,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&CBloodParticle_ARRAY_02d833d4
+    .object_instance = (void *)&g_BloodParticles
 };
 WatcomStaticDestructorNode WatcomStaticDestructorNode_0067b990 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&WatcomDestructorCall_0065f018,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&CFootstep_ARRAY_02da8c2c
+    .object_instance = (void *)&g_Footsteps
 };
 WatcomStaticDestructorNode g_CGroundDestructorNode = {
     .next = nullptr,
@@ -1898,6 +1890,17 @@ WatcomStaticDestructorNode WatcomStaticDestructorNode_0067d748 = {
     .object_instance = (void *)&g_MoonBatModel
 };
 
+// _MMX_INTEGER
+_MMX_INTEGER g_FilterBlendConstant = {};
+_MMX_INTEGER g_LightmapBlendBias1 = {};
+_MMX_INTEGER g_LightmapBlendBias2 = {0x0008000800080008ULL};
+_MMX_INTEGER g_AmbientLightMMX1 = {0x0004000400040004ULL};
+_MMX_INTEGER g_AmbientLightMMX2 = {0x000C000C000C000CULL};
+_MMX_INTEGER g_LightmapBlendBias5 = {};
+_MMX_INTEGER g_LightmapBlendBias6 = {0x0040004000400040ULL};
+_MMX_INTEGER g_LightmapBlendBias3 = {0x0020002000200020ULL};
+_MMX_INTEGER g_LightmapBlendBias4 = {0x0060006000600060ULL};
+
 // byte
 byte g_CPUInfoFamily = 0x96;
 byte g_CPUInfoModel = 0x13;
@@ -2087,17 +2090,6 @@ uint g_MpegBitMaskTableMultiBit[18] = {
 
 // uint[8]
 uint g_MpegBitMaskTableSingleBit[8] = {0x00000001, 0x00000002, 0x00000004, 0x00000008, 0x00000010, 0x00000020, 0x00000040, 0x00000080};
-
-// ulonglong
-ulonglong g_FilterBlendConstant = 0x0;
-ulonglong g_LightmapBlendBias1 = 0x0;
-ulonglong g_LightmapBlendBias2 = 0x8000800080008;
-ulonglong g_AmbientLightMMX1 = 0x4000400040004;
-ulonglong g_AmbientLightMMX2 = 0xc000c000c000c;
-ulonglong g_LightmapBlendBias5 = 0x0;
-ulonglong g_LightmapBlendBias6 = 0x40004000400040;
-ulonglong g_LightmapBlendBias3 = 0x20002000200020;
-ulonglong g_LightmapBlendBias4 = 0x60006000600060;
 
 // undefined1
 undefined1 g_MagicNumEFD = 0x45;

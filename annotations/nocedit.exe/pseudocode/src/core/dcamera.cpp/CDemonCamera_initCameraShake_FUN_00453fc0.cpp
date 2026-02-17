@@ -6,30 +6,19 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl core_dcamera_cpp_CDemonCamera_initCameraShake_FUN_00453fc0(CDemonCamera *this_ptr,float peak_intensity,float attack_time,float sustain_duration ,float decay_time)
 
 {
-  int iVar1;
-  double dVar2;
-  double dVar3;
-  double dVar4;
-  double dVar5;
-  
-  dVar3 = (double)sustain_duration * 65536;
-  dVar4 = (double)attack_time * 65536;
-  iVar1 = 0;
-  dVar5 = (double)decay_time * 65536;
+  g_CameraShakeState = 0;
   g_CameraShakeAttackAccum = 0;
-  dVar2 = round((double)peak_intensity * 65536);
-  dVar3 = round(dVar3);
-  dVar4 = round(dVar4);
-  dVar5 = round(dVar5);
-  g_CameraShakeSustainValue = (int)ROUND(dVar3);
-  g_CameraShakeAttackTime = (int)ROUND(dVar4);
-  g_CameraShakeDecayDuration = (int)ROUND(dVar5);
-  g_CameraShakePeakValue = (int)ROUND(dVar2);
+  g_CameraShakeSustainValue = (int)ROUND(ROUND((double)sustain_duration * 65536));
+  g_CameraShakeAttackTime = (int)ROUND(ROUND((double)attack_time * 65536));
+  g_CameraShakeDecayDuration = (int)ROUND(ROUND((double)decay_time * 65536));
+  g_CameraShakePeakValue = (int)ROUND(ROUND((double)peak_intensity * 65536));
   if (g_CameraShakeAttackTime == 0) {
-    iVar1 = 1;
+    g_CameraShakeState = 1;
     g_CameraShakeSustainTimer = g_CameraShakeSustainValue;
     if (g_CameraShakeSustainValue == 0) {
       g_CameraShakeDecayTimer = g_CameraShakeDecayDuration;
@@ -37,6 +26,5 @@ void __cdecl core_dcamera_cpp_CDemonCamera_initCameraShake_FUN_00453fc0(CDemonCa
       return;
     }
   }
-  g_CameraShakeState = iVar1;
   return;
 }

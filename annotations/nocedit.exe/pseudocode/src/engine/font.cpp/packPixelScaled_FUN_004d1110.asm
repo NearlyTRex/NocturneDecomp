@@ -12,11 +12,11 @@
 ;   core_setedit.cpp_CDemonSet_FUN_00577af0 at 00578079
 ;
 ; Referenced Globals:
-;   int g_RedBitPosition
+;   _BIT_INTEGER32 g_RedBitPosition
 ;   int g_RedScaleFactor
-;   int g_GreenBitPosition
+;   _BIT_INTEGER32 g_GreenBitPosition
 ;   int g_GreenScaleFactor
-;   int g_BlueBitPosition
+;   _BIT_INTEGER32 g_BlueBitPosition
 ;   int g_BlueScaleFactor
 ;
 ; *****************************************************************************

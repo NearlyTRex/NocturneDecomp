@@ -7931,7 +7931,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_bodypart.cpp_CBodyPart_FUN_0041b070",
+    "name":"core_bodypart.cpp_CBodyPart_setupPhysicsBox_FUN_0041b070",
     "ret":"void",
     "vars":{
       "params":[
@@ -8009,8 +8009,54 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_bodypart.cpp_FUN_0041b570",
-    "ret":"void"
+    "name":"core_bodypart.cpp_copyVector_FUN_0041b570",
+    "ret":"CVector3f*",
+    "vars":{
+      "params":[
+        {
+          "name":"dst",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"src",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
   },
   {
     "addr":"0041b770",
@@ -36571,7 +36617,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_enemy.cpp_CEnemy_FUN_004a9ef0",
+    "name":"core_enemy.cpp_CEnemy_setVictim_FUN_004a9ef0",
     "ret":"void",
     "vars":{
       "params":[
@@ -36590,6 +36636,22 @@
             ]
           },
           "type":"CEnemy*"
+        },
+        {
+          "name":"victim",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonActor*"
         }
       ]
     }
@@ -38355,7 +38417,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_fire.cpp_CSmokeParticle_initRender_FUN_004bf1f0",
+    "name":"core_fire.cpp_CSmokeParticle_setupRenderState_FUN_004bf1f0",
     "ret":"int",
     "vars":{
       "locals":[
@@ -46049,7 +46111,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gore.cpp_CBloodSplat_FUN_004ec2f0",
+    "name":"core_gore.cpp_CBloodSplat_initGroundSplat_FUN_004ec2f0",
     "ret":"void",
     "vars":{
       "params":[
@@ -46068,6 +46130,38 @@
             ]
           },
           "type":"CBloodSplat*"
+        },
+        {
+          "name":"position",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"blood_type",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -46083,7 +46177,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gore.cpp_CBloodSplat_FUN_004ec470",
+    "name":"core_gore.cpp_CBloodSplat_setupRenderState_FUN_004ec470",
     "ret":"void",
     "vars":{
       "params":[
@@ -46117,7 +46211,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gore.cpp_CGore_FUN_004edaf0",
+    "name":"core_gore.cpp_CGore_allocateBloodSplat_FUN_004edaf0",
     "ret":"CBloodSplat*",
     "vars":{
       "params":[
@@ -46161,7 +46255,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gore.cpp_CGore_FUN_004edb70",
+    "name":"core_gore.cpp_CGore_createWallBloodSplat_FUN_004edb70",
     "ret":"void",
     "vars":{
       "params":[
@@ -46180,6 +46274,54 @@
             ]
           },
           "type":"CGore*"
+        },
+        {
+          "name":"position",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"normal",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"blood_type",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -46195,7 +46337,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gore.cpp_CGore_FUN_004ee070",
+    "name":"core_gore.cpp_CGore_createFootstep_FUN_004ee070",
     "ret":"void",
     "vars":{
       "params":[
@@ -46214,6 +46356,86 @@
             ]
           },
           "type":"CGore*"
+        },
+        {
+          "name":"position",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"orientation",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"UOrientationVector*"
+        },
+        {
+          "name":"surface_type",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"alpha",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"blood_type",
+          "storage":{
+            "offset":24,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x18]",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -46229,7 +46451,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gore.cpp_CGore_FUN_004ee0f0",
+    "name":"core_gore.cpp_CGore_findBloodTypeAtPosition_FUN_004ee0f0",
     "ret":"int",
     "vars":{
       "params":[
@@ -46248,6 +46470,38 @@
             ]
           },
           "type":"CGore*"
+        },
+        {
+          "name":"position",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"out_blood_type",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
         }
       ],
       "ret_storage":{
@@ -56909,6 +57163,22 @@
             ]
           },
           "type":"CMobster*"
+        },
+        {
+          "name":"taunt_category",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -57526,7 +57796,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_morph.cpp_CMorphModel_FUN_0052a870",
+    "name":"core_morph.cpp_CMorphModel_addPartFromDeformableModel_FUN_0052a870",
     "ret":"void",
     "vars":{
       "params":[
@@ -57545,6 +57815,22 @@
             ]
           },
           "type":"CMorphModel*"
+        },
+        {
+          "name":"model_ptr",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModelInstance*"
         }
       ]
     }
@@ -57804,7 +58090,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_morph.cpp_CMorph_FUN_0052b370",
+    "name":"core_morph.cpp_CMorph_setupModelFromPolygons_FUN_0052b370",
     "ret":"void",
     "vars":{
       "params":[
@@ -57854,7 +58140,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_morph.cpp_CMorph_FUN_0052b470",
+    "name":"core_morph.cpp_CMorph_setupModelFromKeyframed_FUN_0052b470",
     "ret":"void",
     "vars":{
       "params":[
@@ -82966,7 +83252,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_spline.cpp_FUN_005b9270",
+    "name":"core_spline.cpp_evaluateSplintInt_FUN_005b9270",
     "ret":"int",
     "vars":{
       "locals":[
@@ -83019,6 +83305,88 @@
           "type":"undefined4"
         }
       ],
+      "params":[
+        {
+          "name":"basis",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"float*"
+        },
+        {
+          "name":"v0",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"v1",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"v2",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"v3",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -83042,7 +83410,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_spline.cpp_FUN_005b93f0",
+    "name":"core_spline.cpp_evaluateSplineTangentScalar_FUN_005b93f0",
     "ret":"float",
     "vars":{
       "locals":[
@@ -83061,6 +83429,88 @@
             ]
           },
           "type":"undefined4"
+        }
+      ],
+      "params":[
+        {
+          "name":"basis",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"float*"
+        },
+        {
+          "name":"p0",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float*"
+        },
+        {
+          "name":"p1",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"float*"
+        },
+        {
+          "name":"p2",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"float*"
+        },
+        {
+          "name":"p3",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"float*"
         }
       ],
       "ret_storage":{

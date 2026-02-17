@@ -1,43 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 14,
-        "line": 37,
-        "message": "member reference base type 'byte[48]' (aka 'unsigned char[48]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 39,
-        "message": "member reference base type 'byte[48]' (aka 'unsigned char[48]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 13,
-        "line": 75,
-        "message": "member reference base type 'byte[48]' (aka 'unsigned char[48]') is not a structure or union"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 164,
-    "complexity_score": 171,
+    "complexity_score": 139,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 1,
-    "pseudocode_lines": 81,
-    "suspect_count": 7,
+    "pseudocode_lines": 69,
+    "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
-      "suspect_float",
-      "unknown_field"
+      "pointer_cast"
     ],
-    "total_lines": 245
+    "total_lines": 233
   },
   "cross_references": [],
   "function": {
@@ -271,53 +250,46 @@
   },
   "suspects": [
     {
-      "description": "Unknown/mangled field access",
-      "line": 30,
-      "match": "._0_4_",
-      "text": "auStack_104._0_4_ = 0.0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 32,
-      "match": "8.647348e-39",
-      "text": "auStack_104._0_4_ = 8.647348e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 32,
-      "match": "._0_4_",
-      "text": "auStack_104._0_4_ = 8.647348e-39;",
-      "type": "unknown_field"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 27,
+      "match": "ROUND",
+      "text": "local_c = (int)ROUND(ROUND(fVar1));",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 34,
+      "line": 27,
       "match": "ROUND",
-      "text": "local_10 = (float)(int)ROUND(dVar7);",
+      "text": "local_c = (int)ROUND(ROUND(fVar1));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 59,
+      "line": 51,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 52,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 65,
+      "line": 55,
       "match": "ROUND",
-      "text": "pCStack_14 = (CKeyFramedModelInstance *)(int)ROUND(dVar7);",
+      "text": "local_c = (int)ROUND(ROUND(fVar1));",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 68,
-      "match": "._44_4_",
-      "text": "auStack_74._44_4_ = pCVar2->x;",
-      "type": "unknown_field"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 55,
+      "match": "ROUND",
+      "text": "local_c = (int)ROUND(ROUND(fVar1));",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

@@ -1,0 +1,285 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 163,
+    "complexity_score": 51,
+    "cross_reference_count": 5,
+    "function_call_count": 4,
+    "global_count": 8,
+    "pseudocode_lines": 51,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 214
+  },
+  "cross_references": [
+    {
+      "addr": "0052a8d0",
+      "from_addr": "0052a90e",
+      "name": "core_morph.cpp_CMorphModel_addPartFromKeyFramedModel_FUN_0052a8d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052b4b0",
+      "from_addr": "0052b4f0",
+      "name": "core_morph.cpp_CMorph_addPartToModel_FUN_0052b4b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052b500",
+      "from_addr": "0052b540",
+      "name": "core_morph.cpp_CMorph_addPartToModel_FUN_0052b500",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052b370",
+      "from_addr": "0052b3b9",
+      "name": "core_morph.cpp_CMorph_setupModelFromPolygons_FUN_0052b370",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052b3d0",
+      "from_addr": "0052b419",
+      "name": "core_morph.cpp_CMorph_setupModelFromPolygons_FUN_0052b3d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0052a580",
+    "address_range": [
+      [
+        "0052a580",
+        "0052a704"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_morph.cpp_CMorphModel_addPartFromPolygon_FUN_0052a580",
+    "signature": "void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_0052a580(CMorphModel *this_ptr,int vertex_count,CVector3i *vertex_data,int poly_count,SMRGLPrimitiveQuad *poly_data,int poly_stride,SMRGLTextureExtended *texture_list,int *texture_index_list)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0052a920",
+      "is_variadic": false,
+      "name": "core_morph.cpp_CMorphModel_animateFromVertexBuffer_FUN_0052a920"
+    },
+    {
+      "addr": "0052aac0",
+      "is_variadic": false,
+      "name": "core_morph.cpp_CMorphModel_setFaceListFromPolygon_FUN_0052aac0"
+    },
+    {
+      "addr": "0050f540",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063a103",
+      "name": "s_core_morph_cpp_0063a103",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063a115",
+      "name": "s_CMorphModel_addPart_too__0063a115",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063a13c",
+      "name": "s_core_morph_cpp_0063a13c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063a14e",
+      "name": "s_core_morph_cpp_0063a14e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063a160",
+      "name": "s_core_morph_cpp_0063a160",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063a172",
+      "name": "s_CMorphModel_setup_out_of_0063a172",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "0052a90e",
+        "call_type": "direct",
+        "caller": "core_morph.cpp_CMorphModel_addPartFromKeyFramedModel_FUN_0052a8d0",
+        "estimated_params": 3,
+        "instructions_analyzed": 7,
+        "reg_params": [],
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0052b3b9",
+        "call_type": "direct",
+        "caller": "core_morph.cpp_CMorph_setupModelFromPolygons_FUN_0052b370",
+        "estimated_params": 8,
+        "instructions_analyzed": 16,
+        "reg_params": [],
+        "stack_params": 8
+      },
+      {
+        "call_addr": "0052b4f0",
+        "call_type": "direct",
+        "caller": "core_morph.cpp_CMorph_addPartToModel_FUN_0052b4b0",
+        "estimated_params": 12,
+        "instructions_analyzed": 26,
+        "reg_params": [],
+        "stack_params": 12
+      },
+      {
+        "call_addr": "0052b540",
+        "call_type": "direct",
+        "caller": "core_morph.cpp_CMorph_addPartToModel_FUN_0052b500",
+        "estimated_params": 12,
+        "instructions_analyzed": 26,
+        "reg_params": [],
+        "stack_params": 12
+      },
+      {
+        "call_addr": "0052b419",
+        "call_type": "direct",
+        "caller": "core_morph.cpp_CMorph_setupModelFromPolygons_FUN_0052b3d0",
+        "estimated_params": 8,
+        "instructions_analyzed": 16,
+        "reg_params": [],
+        "stack_params": 8
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 8,
+    "estimated_params": 8
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.108695652173913,
+    "instruction_count": 138,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 48,
+      "BOOL_OR": 1,
+      "BRANCH": 2,
+      "CALL": 6,
+      "CBRANCH": 7,
+      "COPY": 119,
+      "INT_ADD": 59,
+      "INT_AND": 170,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 77,
+      "INT_LEFT": 18,
+      "INT_LESS": 4,
+      "INT_MULT": 6,
+      "INT_NOTEQUAL": 19,
+      "INT_OR": 45,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 51,
+      "INT_SUB": 49,
+      "INT_XOR": 10,
+      "LOAD": 46,
+      "POPCOUNT": 33,
+      "RETURN": 2,
+      "STORE": 42
+    },
+    "pcode_op_count": 843
+  },
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 32,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMorphModel *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_data",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3i *"
+      },
+      {
+        "is_param": true,
+        "name": "poly_count",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "poly_data",
+        "offset": 20,
+        "size": 4,
+        "type": "SMRGLPrimitiveQuad *"
+      },
+      {
+        "is_param": true,
+        "name": "poly_stride",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "texture_list",
+        "offset": 28,
+        "size": 4,
+        "type": "SMRGLTextureExtended *"
+      },
+      {
+        "is_param": true,
+        "name": "texture_index_list",
+        "offset": 32,
+        "size": 4,
+        "type": "int *"
+      }
+    ]
+  },
+  "suspects": []
+}

@@ -1,0 +1,355 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 20,
+        "line": 53,
+        "message": "use of undeclared identifier 'stack0xffffff98'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 67,
+    "complexity_score": 177,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 19,
+    "pseudocode_lines": 52,
+    "suspect_count": 11,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "pointer_cast",
+      "stack_ref"
+    ],
+    "total_lines": 119
+  },
+  "cross_references": [
+    {
+      "addr": "004c7180",
+      "from_addr": "004c71e7",
+      "name": "core_fire.cpp_CFireEffect_render_FUN_004c7180",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c0d80",
+    "address_range": [
+      [
+        "004c0d80",
+        "004c0e62"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CFireball_setupRenderState_FUN_004c0d80",
+    "signature": "int __cdecl core_fire_cpp_CFireball_setupRenderState_FUN_004c0d80(CFireball *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe6b0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "0048c7e0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00629ca3",
+      "name": "DOUBLE_00629ca3",
+      "type": "double",
+      "value": "-65536"
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr2",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "00823a74",
+      "name": "g_CurrentSceneCamera",
+      "type": "CDemonCamera*",
+      "value": null
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02d12db4",
+      "name": "g_BillboardCameraRight",
+      "type": "CVector3i",
+      "value": null
+    },
+    {
+      "addr": "02d12db8",
+      "name": "g_BillboardCameraRight.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d12dbc",
+      "name": "DAT_02d12dbc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d12dc0",
+      "name": "g_BillboardCameraUp",
+      "type": "CVector3i",
+      "value": null
+    },
+    {
+      "addr": "02d12dc4",
+      "name": "g_BillboardCameraUp.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d12dc8",
+      "name": "g_BillboardCameraUp.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d12dd0",
+      "name": "g_BillboardPrimitive.base.base.count",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d12dd4",
+      "name": "g_BillboardPrimitive.base.surface_normal.A",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d12dd8",
+      "name": "g_BillboardPrimitive.base.surface_normal.B",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d12ddc",
+      "name": "g_BillboardPrimitive.base.surface_normal.C",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d12de0",
+      "name": "g_BillboardPrimitive.base.surface_normal.D",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d12de4",
+      "name": "g_BillboardPrimitive.vertices[0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d12de8",
+      "name": "g_BillboardPrimitive.vertices[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d12dec",
+      "name": "g_BillboardPrimitive.vertices[2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d12df0",
+      "name": "g_BillboardPrimitive.vertices[3]",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.838709677419355,
+    "instruction_count": 62,
+    "opcode_distribution": {
+      "BRANCH": 2,
+      "CALL": 4,
+      "CBRANCH": 2,
+      "COPY": 148,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_MULT": 3,
+      "INT_ADD": 24,
+      "INT_AND": 10,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 12,
+      "INT_LESS": 1,
+      "INT_MULT": 10,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 5,
+      "INT_SUB": 21,
+      "INT_XOR": 2,
+      "INT_ZEXT": 10,
+      "LOAD": 12,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "ROUND": 3,
+      "STORE": 13,
+      "TRUNC": 3
+    },
+    "pcode_op_count": 300
+  },
+  "stack_frame": {
+    "frame_size": 104,
+    "local_size": 100,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireball *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "004c0e11",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 33,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&g_BillboardCameraRight + (uint)bVar6 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_18 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_18 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(CMatrix3x3i *)((int)",
+      "text": "pCVar3 = (CMatrix3x3i *)((int)pCVar3 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 46,
+      "match": "&stack0xffffff98",
+      "text": "piVar5 = (int *)&stack0xffffff98;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 52,
+      "match": "ROUND",
+      "text": "g_BillboardCameraUp.x = (int)ROUND(ROUND((double)local_60 * -65536));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 52,
+      "match": "ROUND",
+      "text": "g_BillboardCameraUp.x = (int)ROUND(ROUND((double)local_60 * -65536));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 53,
+      "match": "ROUND",
+      "text": "g_BillboardCameraUp.y = (int)ROUND(ROUND((double)local_54 * -65536));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 53,
+      "match": "ROUND",
+      "text": "g_BillboardCameraUp.y = (int)ROUND(ROUND((double)local_54 * -65536));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 54,
+      "match": "ROUND",
+      "text": "g_BillboardCameraUp.z = (int)ROUND(ROUND((double)local_48 * -65536));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 54,
+      "match": "ROUND",
+      "text": "g_BillboardCameraUp.z = (int)ROUND(ROUND((double)local_48 * -65536));",
+      "type": "decompiler_intrinsic"
+    }
+  ]
+}

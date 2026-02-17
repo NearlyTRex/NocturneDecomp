@@ -32,11 +32,11 @@
 ;   int g_PaletteColorIndex
 ;   int g_UseRGBConversion
 ;   uchar[32768] g_ColorCubeLookup
-;   int g_RedBitPosition
+;   _BIT_INTEGER32 g_RedBitPosition
 ;   int g_RedScaleFactor
-;   int g_GreenBitPosition
+;   _BIT_INTEGER32 g_GreenBitPosition
 ;   int g_GreenScaleFactor
-;   int g_BlueBitPosition
+;   _BIT_INTEGER32 g_BlueBitPosition
 ;   int g_BlueScaleFactor
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber

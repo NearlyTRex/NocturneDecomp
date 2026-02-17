@@ -5,10 +5,10 @@
 // =============================================================================
 
 // CBloodParticle[256]
-CBloodParticle CBloodParticle_ARRAY_02d833d4[256] = {};
+CBloodParticle g_BloodParticles[256] = {};
 
 // CBloodSplat[2000]
-CBloodSplat DAT_02d873dc[2000] = {};
+CBloodSplat g_BloodSplats[2000] = {};
 
 // CDemonActorType
 CDemonActorType g_CGargoyleClassInfo = {};
@@ -26,7 +26,8 @@ CGore g_CGoreInstance = {};
 CPickList g_CPickList = {};
 
 // SMRGLPrimitiveQuadIndex
-SMRGLPrimitiveQuadIndex SMRGLPrimitiveQuadIndex_02d83368 = {};
+SMRGLPrimitiveQuadIndex g_GoreQuadPrimitive = {};
+SMRGLPrimitiveQuadIndex g_FootstepPrimitive = {};
 
 // char
 char g_CurrentSaveFile = {};
@@ -86,23 +87,15 @@ int INT_02d83318 = {};
 int INT_02d8331c = {};
 int INT_02d83320 = {};
 int INT_02d83324 = {};
-int INT_02d83390 = {};
+int g_ParticleCameraRotation = {};
 int INT_02d83394 = {};
 int INT_02d83398 = {};
 int INT_02d8339c = {};
 int INT_02d833a0 = {};
 int INT_02d833a4 = {};
-int INT_02d833a8 = {};
-int INT_02d833ac = {};
-int INT_02d833b0 = {};
-int INT_02d833b4 = {};
-int INT_02d833b8 = {};
-int INT_02d833bc = {};
-int INT_02d833c0 = {};
-int INT_02d833c4 = {};
-int INT_02d833c8 = {};
-int INT_02d833cc = {};
-int INT_02d873d8 = {};
+int g_BloodParticleIndex = {};
+int g_BloodSplatIndex = {};
+int g_BloodSplatCount = {};
 
 // undefined1
 undefined1 DAT_02d82c81 = {};
@@ -125,6 +118,4 @@ undefined4 DAT_02d831ec = {};
 undefined4 DAT_02d831f0 = {};
 undefined4 DAT_02d831f4 = {};
 undefined4 DAT_02d831f8 = {};
-undefined4 DAT_02d833d0 = {};
-undefined4 DAT_02d873d4 = {};
 

@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CSfxSample * __cdecl sound_sndmain_cpp_loadStreamingSoundFile_FUN_005a5200(char *filename)
+; CSfxSample * __cdecl sound_sndmain_cpp_loadStreamingSoundFile_FUN_005a5200(int slot_index,char *filename)
 ;
 ; Parameters:
-; char *           Stack[0x4]:4   filename
+; int              Stack[0x4]:4   slot_index
+; char *           Stack[0x8]:4   filename
 ; Local Variables:
 ; undefined        Stack[-0x114]:1  local_114
 ; undefined4       Stack[-0x14]:4  local_14

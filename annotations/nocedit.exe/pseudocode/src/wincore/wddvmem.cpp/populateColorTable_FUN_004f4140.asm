@@ -8,9 +8,9 @@
 ;   int g_BitsPerPixel = 0x8
 ;   uint[256] g_ColorTable32
 ;   undefined4 g_ColorTable32[1]
-;   int g_RedBitPosition
-;   int g_GreenBitPosition
-;   int g_BlueBitPosition
+;   _BIT_INTEGER32 g_RedBitPosition
+;   _BIT_INTEGER32 g_GreenBitPosition
+;   _BIT_INTEGER32 g_BlueBitPosition
 ;   char[768] g_SourcePaletteData
 ;   undefined4 CHAR_ARRAY_02d01f49
 ;   undefined4 CHAR_ARRAY_02d01f4a

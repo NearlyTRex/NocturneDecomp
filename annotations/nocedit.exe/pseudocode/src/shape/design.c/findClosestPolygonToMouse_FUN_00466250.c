@@ -6,11 +6,12 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 int __cdecl shape_design_c_findClosestPolygonToMouse_FUN_00466250(void)
 
 {
   int iVar1;
-  double dVar2;
   CVector3i local_104;
   SClipPlane local_f0 [5];
   char local_a0 [80];
@@ -35,15 +36,12 @@ int __cdecl shape_design_c_findClosestPolygonToMouse_FUN_00466250(void)
   }
   else {
     for (local_4c = 0; local_4c < g_VertexCount; local_4c = local_4c + 1) {
-      dVar2 = round
-                        ((double)(g_LoadedVertices[local_4c].vertex.x * 256.0f));
-      local_104.x = (int)ROUND(dVar2);
-      dVar2 = round
-                        ((double)(g_LoadedVertices[local_4c].vertex.y * 256.0f));
-      local_104.y = (int)ROUND(dVar2);
-      dVar2 = round
-                        ((double)(g_LoadedVertices[local_4c].vertex.z * 256.0f));
-      local_104.z = (int)ROUND(dVar2);
+      local_104.x = (int)ROUND(ROUND(g_LoadedVertices[local_4c].vertex.x * 256.0f
+                                    ));
+      local_104.y = (int)ROUND(ROUND(g_LoadedVertices[local_4c].vertex.y * 256.0f
+                                    ));
+      local_104.z = (int)ROUND(ROUND(g_LoadedVertices[local_4c].vertex.z * 256.0f
+                                    ));
       engine_matrix_c_transformToCache_FUN_0050cd70(local_4c,&local_104);
     }
     for (local_4c = 0; local_4c < g_PolygonCount; local_4c = local_4c + 1) {
@@ -91,22 +89,15 @@ int __cdecl shape_design_c_findClosestPolygonToMouse_FUN_00466250(void)
       local_44 = g_MouseX - g_PolygonScreenCache[local_4c].center_x;
       local_40 = g_MouseY - g_PolygonScreenCache[local_4c].center_y;
       local_18 = local_44 * local_44 + local_40 * local_40;
-      dVar2 = round
-                        ((double)(g_ModelPolygonData[local_4c].normal.x * 65535.0f)
-                        );
-      local_f0[0].A = (int)ROUND(dVar2);
-      dVar2 = round
-                        ((double)(g_ModelPolygonData[local_38].normal.y * 65535.0f)
-                        );
-      local_f0[0].B = (int)ROUND(dVar2);
-      dVar2 = round
-                        ((double)(g_ModelPolygonData[local_38].normal.z * 65535.0f)
-                        );
-      local_f0[0].C = (int)ROUND(dVar2);
-      dVar2 = round
-                        ((double)(g_ModelPolygonData[local_38].plane_distance *
-                                  65535.0f * 256.0f));
-      local_f0[0].D = (int)ROUND(dVar2);
+      local_f0[0].A =
+           (int)ROUND(ROUND(g_ModelPolygonData[local_4c].normal.x * 65535.0f));
+      local_f0[0].B =
+           (int)ROUND(ROUND(g_ModelPolygonData[local_4c].normal.y * 65535.0f));
+      local_f0[0].C =
+           (int)ROUND(ROUND(g_ModelPolygonData[local_4c].normal.z * 65535.0f));
+      local_f0[0].D =
+           (int)ROUND(ROUND(g_ModelPolygonData[local_4c].plane_distance * 65535.0f
+                            * 256.0f));
       if ((local_18 < local_14) &&
          (iVar1 = engine_3d_c_isVisiblePlane_FUN_00403950(local_f0), iVar1 != 0)) {
         local_14 = local_18;

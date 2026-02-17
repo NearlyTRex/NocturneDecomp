@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl shape_meshlod_cpp_CLodMesh_generateLOD_FUN_00516ba0(CLodMesh *this_ptr,int target_tri_count,uint display_mode)
 
 {
@@ -15,9 +17,6 @@ void __cdecl shape_meshlod_cpp_CLodMesh_generateLOD_FUN_00516ba0(CLodMesh *this_
   char *pcVar4;
   char *buffer;
   CLodEdge *edge_data;
-  double dVar5;
-  uint uVar6;
-  float fVar7;
   float local_30;
   int local_24;
   
@@ -29,18 +28,13 @@ void __cdecl shape_meshlod_cpp_CLodMesh_generateLOD_FUN_00516ba0(CLodMesh *this_
     if (iVar2 <= target_tri_count) break;
     iVar3 = shape_meshlod_cpp_CLodMesh_findMinimumCostEdge_FUN_00519680(this_ptr);
     if (iVar3 < 0) break;
-    fVar7 = 7.477411e-39;
-    dVar5 = round((double)local_30);
-    iVar1 = (int)ROUND(dVar5);
+    iVar1 = (int)ROUND(ROUND(local_30));
     edge_data = this_ptr->edges_ptr + iVar3;
     _sprintf
               (g_LodMeshProgressBuffer,"Mesh degredation in progress...%d:%02d elapsed",iVar1 / 0x3c,iVar1 % 0x3c
               );
     if ((5 < iVar1) && (iVar3 = this_ptr->next_lod->tri_count - iVar2, 10 < iVar3)) {
-      uVar6 = 0x516c6a;
-      dVar5 = round
-                        ((double)(((float)(iVar2 - target_tri_count) * fVar7) / (float)iVar3));
-      iVar2 = (int)ROUND(dVar5);
+      iVar2 = (int)ROUND(ROUND(((float)(iVar2 - target_tri_count) * local_30) / (float)iVar3));
       if (0 < iVar2) {
         pcVar4 = g_LodMeshProgressBuffer;
         do {
@@ -54,7 +48,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_generateLOD_FUN_00516ba0(CLodMesh *this_
         buffer = (char *)0x0;
 LAB_00516cb3:
         _sprintf
-                  (buffer,", est %d:%02d remaining",iVar2 / 0x3c,iVar2 % 0x3c,uVar6);
+                  (buffer,", est %d:%02d remaining",iVar2 / 0x3c,iVar2 % 0x3c);
       }
     }
     iVar2 = shape_meshlod_cpp_CLodMesh_previewLodGeneration_FUN_0051d520(this_ptr,0,display_mode);

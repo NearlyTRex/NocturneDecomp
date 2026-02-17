@@ -34,7 +34,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410(
       g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
     }
     g_RenderStateFlag2 = PREPROCESS_W_DEPTH_REPLACEMENT;
-    g_RenderStateFlags = (_BIT_INTEGER)render_mode;
+    g_RenderStateFlags = (_BIT_INTEGER32)render_mode;
     if (0 < face_count) {
       do {
         while ((g_CullingMode != 0 &&

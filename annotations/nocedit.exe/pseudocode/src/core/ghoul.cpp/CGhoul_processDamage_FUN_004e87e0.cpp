@@ -6,6 +6,7 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 /* WARNING: Type propagation algorithm not settling */
 
 void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,SDamageInfo *damage_info)
@@ -22,8 +23,6 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,S
   uint uVar8;
   CMotionList *this_ptr_01;
   int iVar9;
-  double dVar10;
-  float spawn_radius;
   char local_78 [100];
   float local_14;
   
@@ -128,11 +127,8 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,S
       fVar4 = (float)65536;
       this_ptr->arise_timer = 0xa0000;
       pCVar3 = (this_ptr->base).base.base.vtable._ub;
-      spawn_radius = 7.00649e-44;
-      iVar9 = 0x4e8999;
-      dVar10 = round((double)(local_14 * fVar4));
-      *(int *)(this_ptr->unk1 + 8) = (int)ROUND(dVar10);
-      (*pCVar3->spawnFlies)((CDemonActor *)this_ptr,iVar9,spawn_radius);
+      *(int *)(this_ptr->unk1 + 8) = (int)ROUND(ROUND(local_14 * fVar4));
+      (*pCVar3->spawnFlies)((CDemonActor *)this_ptr,0x32,25.0);
     }
   }
   else {

@@ -6,6 +6,7 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 /* WARNING: Exceeded maximum restarts with more pending */
 
 int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_005ae830(CDirectSoundDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_samples_per_block)
@@ -13,12 +14,12 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_005ae830(CDirectSound
 {
   uint uVar1;
   char *pcVar2;
-  double dVar3;
+  char acStack_6b0 [400];
   char acStack_520 [400];
   char acStack_390 [400];
-  char acStack_200 [396];
-  DSBUFFERDESC DStack_74;
-  byte auStack_5c [20];
+  char acStack_200 [400];
+  DSBUFFERDESC DStack_70;
+  DSBUFFERDESC DStack_5c;
   WAVEFORMATEX local_48;
   tWAVEFORMATEX tStack_34;
   IDirectSoundBuffer *pIStack_20;
@@ -61,38 +62,38 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_005ae830(CDirectSound
         tStack_34.wBitsPerSample = 0x10;
         tStack_34.nBlockAlign = 2;
         tStack_34.nAvgBytesPerSec = 0xac44;
-        memset(auStack_5c,0,0x14);
-        auStack_5c._16_4_ = &tStack_34;
-        auStack_5c._0_4_ = 0x14;
-        auStack_5c._4_4_ = 0x12;
-        auStack_5c._8_4_ = 0x400;
+        memset(&DStack_5c,0,0x14);
+        DStack_5c.lpwfxFormat = &tStack_34;
+        DStack_5c.dwSize = 0x14;
+        DStack_5c.dwFlags = 0x12;
+        DStack_5c.dwBufferBytes = 0x400;
         uVar1 = (*g_DirectSound->vtable->CreateSoundBuffer)
-                          (g_DirectSound,(LPDSBUFFERDESC)auStack_5c,&pIStack_20,(LPUNKNOWN)0x0);
+                          (g_DirectSound,&DStack_5c,&pIStack_20,(LPUNKNOWN)0x0);
         if (uVar1 == 0) {
-          (*pIStack_20->vtable->QueryInterface)(pIStack_20,&g_IID_IDirectSound3DBuffer);
+          (*pIStack_20->vtable->QueryInterface)(pIStack_20,&g_IID_IDirectSound3DBuffer,&piStack_1c);
           if (piStack_1c == (int *)0x0) {
             if (pIStack_20 != (IDirectSoundBuffer *)0x0) {
-              (*pIStack_20->vtable->Release)();
+              (*pIStack_20->vtable->Release)(pIStack_20);
               pIStack_20 = (IDirectSoundBuffer *)0x0;
             }
           }
           else {
-            (**(code **)*piStack_1c)(piStack_1c,&g_IID_IKsPropertySet);
+            (**(code **)*piStack_1c)(piStack_1c,&g_IID_IKsPropertySet,&g_DirectSoundPropertySet);
             if (pIStack_20 != (IDirectSoundBuffer *)0x0) {
-              (*pIStack_20->vtable->Release)();
+              (*pIStack_20->vtable->Release)(pIStack_20);
               pIStack_20 = (IDirectSoundBuffer *)0x0;
             }
             if (piStack_1c != (int *)0x0) {
-              (**(code **)(*piStack_1c + 8))();
+              (**(code **)(*piStack_1c + 8))(piStack_1c);
               piStack_1c = (int *)0x0;
             }
           }
         }
         else {
-          sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar1);
+          pcVar2 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar1);
           _sprintf
                     (acStack_390,"DirectSux: Unable to %s.  (%s)",
-                     "Create temp secondary buffer for property set creation");
+                     "Create temp secondary buffer for property set creation",pcVar2);
           sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_390);
         }
         if (g_DirectSoundPropertySet != (IKsPropertySet *)0x0) {
@@ -107,50 +108,48 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_005ae830(CDirectSound
         }
         g_StreamBlockCount = 8;
         fStack_14 = sound_sndmain_cpp_getMaxSwLatency_FUN_005abea0();
-        dVar3 = round
-                          ((double)(((float)g_StreamSampleRate * fStack_14) /
-                                   (float)g_StreamBlockCount));
-        g_StreamSamplesPerBlock = (int)ROUND(dVar3);
+        g_StreamSamplesPerBlock =
+             (int)ROUND(ROUND(((float)g_StreamSampleRate * fStack_14) / (float)g_StreamBlockCount));
         g_StreamSamplesPerBlock = g_StreamSamplesPerBlock + 0xfU & 0xfffffff0;
         g_StreamBlockSizeBytes =
              g_StreamSamplesPerBlock *
              ((int)((g_StreamBitsPerSample + (g_StreamBitsPerSample >> 0x1f) * -8) -
                    (uint)((g_StreamBitsPerSample >> 0x1f) << 2 < 0)) >> 3) * g_StreamChannelCount;
-        memset(&DStack_74,0,0x14);
-        DStack_74.lpwfxFormat = (LPWAVEFORMATEX)(auStack_5c + 0x10);
-        DStack_74.dwBufferBytes = g_StreamBlockSizeBytes * g_StreamBlockCount;
-        DStack_74.dwSize = 0x14;
-        DStack_74.dwFlags = 0;
+        memset(&DStack_70,0,0x14);
+        DStack_70.lpwfxFormat = &local_48;
+        DStack_70.dwBufferBytes = g_StreamBlockSizeBytes * g_StreamBlockCount;
+        DStack_70.dwSize = 0x14;
+        DStack_70.dwFlags = 0;
         if (g_DirectSoundSecondaryBuffer != (IDirectSoundBuffer *)0x0) {
           (*g_DirectSoundSecondaryBuffer->vtable->Release)((IUnknown *)g_DirectSoundSecondaryBuffer)
           ;
           g_DirectSoundSecondaryBuffer = (IDirectSoundBuffer *)0x0;
         }
         uVar1 = (*g_DirectSound->vtable->CreateSoundBuffer)
-                          (g_DirectSound,&DStack_74,&g_DirectSoundSecondaryBuffer,(LPUNKNOWN)0x0);
+                          (g_DirectSound,&DStack_70,&g_DirectSoundSecondaryBuffer,(LPUNKNOWN)0x0);
         if (uVar1 == 0) {
-          *(int *)sample_rate = g_StreamSamplesPerBlock;
+          *out_samples_per_block = g_StreamSamplesPerBlock;
           return 1;
         }
         pcVar2 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar1);
         _sprintf
-                  (&stack0xfffff94c,"DirectSux: Unable to %s.  (%s)",
+                  (acStack_6b0,"DirectSux: Unable to %s.  (%s)",
                    "Create the secondary buffer",pcVar2);
-        sound_sndmain_cpp_logSoundError_FUN_005adba0(&stack0xfffff94c);
+        sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_6b0);
       }
       else {
-        sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar1);
+        pcVar2 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar1);
         _sprintf
                   (acStack_200,"DirectSux: Unable to %s.  (%s)",
-                   "Get Primary buffer format");
+                   "Get Primary buffer format",pcVar2);
         sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_200);
       }
     }
     else {
-      sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar1);
+      pcVar2 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar1);
       _sprintf
-                (acStack_520,"DirectSux: Unable to %s.  (%s)","Set Primary buffer format")
-      ;
+                (acStack_520,"DirectSux: Unable to %s.  (%s)","Set Primary buffer format",
+                 pcVar2);
       sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_520);
     }
   }

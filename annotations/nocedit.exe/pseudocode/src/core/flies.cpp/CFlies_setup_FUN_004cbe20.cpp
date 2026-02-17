@@ -9,19 +9,16 @@
 void __cdecl core_flies_cpp_CFlies_setup_FUN_004cbe20(CFlies *this_ptr)
 
 {
-  int iVar1;
+  int fly_index;
   
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
-  iVar1 = 0;
-  if (0 < this_ptr->count) {
+  fly_index = 0;
+  if (0 < this_ptr->fly_count) {
     do {
-      core_flies_cpp_CFlies_FUN_004cc760(this_ptr);
-      iVar1 = iVar1 + 1;
-    } while (iVar1 < this_ptr->count);
+      core_flies_cpp_CFlies_initFly_FUN_004cc760(this_ptr,fly_index);
+      fly_index = fly_index + 1;
+    } while (fly_index < this_ptr->fly_count);
   }
-  this_ptr->unk3[4] = '\x01';
-  this_ptr->unk3[5] = '\0';
-  this_ptr->unk3[6] = '\0';
-  this_ptr->unk3[7] = '\0';
+  this_ptr->is_visible = 1;
   return;
 }

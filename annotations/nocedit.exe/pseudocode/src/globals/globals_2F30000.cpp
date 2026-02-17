@@ -95,6 +95,9 @@ int INT_02f37ef4 = {};
 int g_MoonCloudScrollX = {};
 int g_MoonCloudScrollY = {};
 
+// int[5]
+int g_MobsterTauntCounters[5] = {};
+
 // uchar
 uchar g_TempFacesInitGuard = {};
 

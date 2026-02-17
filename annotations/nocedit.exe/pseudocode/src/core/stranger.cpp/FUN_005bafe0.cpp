@@ -2,19 +2,19 @@
 // Address: 005bafe0
 // Address Range: [[005bafe0, 005bb008]]
 // Convention: __cdecl
-// Signature: bool __cdecl core_stranger_cpp_FUN_005bafe0(void)
+// Signature: int __cdecl core_stranger_cpp_FUN_005bafe0(void)
 
 #include "nocturne.h"
 
-bool __cdecl core_stranger_cpp_FUN_005bafe0(void)
+int __cdecl core_stranger_cpp_FUN_005bafe0(void)
 
 {
   int iVar1;
   int in_stack_00000008;
   
   if (in_stack_00000008 == 0) {
-    return false;
+    return 0;
   }
   iVar1 = (**(code **)(*(int *)(in_stack_00000008 + 0x154) + 0x7c))();
-  return iVar1 == 4;
+  return (uint)(iVar1 == 4);
 }

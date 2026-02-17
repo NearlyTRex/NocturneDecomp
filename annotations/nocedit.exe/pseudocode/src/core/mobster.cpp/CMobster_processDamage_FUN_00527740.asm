@@ -46,7 +46,7 @@ section .text
     PUSH EDI                            ; 0052776a
     PUSH EBX                            ; 0052776b
     CALL core_mobster.cpp_CMobster_FUN_00527380 ; 0052776c
-        ;   XREF to: 00527380 (UNCONDITIONAL_CALL)  ; void core_mobster.cpp_CMobster_FUN_00527380(CMobster * this_ptr)
+        ;   XREF to: 00527380 (UNCONDITIONAL_CALL)  ; void core_mobster.cpp_CMobster_FUN_00527380(CMobster * this_ptr, SDamageInfo * damage_info)
     MOV EAX,dword ptr [EBX + 0xbf64]    ; 00527771
     MOV ESI,dword ptr [EBX + EAX*0x4 + 0x2298] ; 00527777
     ADD ESP,0x8                         ; 0052777e

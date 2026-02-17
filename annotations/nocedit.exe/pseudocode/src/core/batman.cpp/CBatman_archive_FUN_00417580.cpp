@@ -23,7 +23,7 @@ void __cdecl core_batman_cpp_CBatman_archive_FUN_00417580(CBatman *this_ptr)
     }
   }
   else {
-    core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->unk1,"fallEvent");
+    core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->fall_event,"fallEvent");
     if (g_CBatmanClassVersion < 3) {
       return;
     }

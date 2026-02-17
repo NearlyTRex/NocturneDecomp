@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 22,
-    "complexity_score": 29,
+    "complexity_score": 36,
     "cross_reference_count": 52,
     "function_call_count": 3,
     "global_count": 0,
-    "pseudocode_lines": 14,
-    "suspect_count": 1,
+    "pseudocode_lines": 11,
+    "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 36
+    "total_lines": 33
   },
   "cross_references": [
     {
@@ -426,9 +426,16 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 12,
+      "line": 10,
       "match": "ROUND",
-      "text": "instance = (CKeyFramedModelInstance *)(int)ROUND(dVar1);",
+      "text": "instance = (CKeyFramedModelInstance *)(int)ROUND(ROUND(animation_frame));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 10,
+      "match": "ROUND",
+      "text": "instance = (CKeyFramedModelInstance *)(int)ROUND(ROUND(animation_frame));",
       "type": "decompiler_intrinsic"
     }
   ]

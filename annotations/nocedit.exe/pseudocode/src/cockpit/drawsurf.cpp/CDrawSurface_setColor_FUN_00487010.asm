@@ -25,9 +25,9 @@
 ;   int g_ScaledBlueComponent
 ;   int g_PackedPixelColor
 ;   int g_DuplicatedPixelColor
-;   int g_RedBitPosition
+;   _BIT_INTEGER32 g_RedBitPosition
 ;   int g_RedScaleFactor
-;   int g_GreenBitPosition
+;   _BIT_INTEGER32 g_GreenBitPosition
 ;   ... and 8 more
 ;
 ; Called Functions:

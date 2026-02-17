@@ -28,7 +28,7 @@
 ;   undefined4 g_CoronaCameraRotationMatrix.m[0].z
 ;   undefined4 g_CoronaCameraRotationMatrix.m[1].z
 ;   undefined4 g_CoronaCameraRotationMatrix.m[2].z
-;   _BIT_INTEGER g_CameraDownscaleIterations
+;   _BIT_INTEGER32 g_CameraDownscaleIterations
 ;   int[240][320] g_CoronaDepthBuffer
 ;   uint*[1200] g_ZBufferScanlineArray
 ;

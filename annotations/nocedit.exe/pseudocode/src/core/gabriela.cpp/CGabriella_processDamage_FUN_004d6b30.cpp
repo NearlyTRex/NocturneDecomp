@@ -60,7 +60,8 @@ void __cdecl core_gabriela_cpp_CGabriella_processDamage_FUN_004d6b30(CGabriella 
           fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.25,0.4);
           (*pCVar1->playSoundWithVolume)((CDemonActor *)this_ptr,"gb-die[1,6].wav",fVar3);
         }
-        core_gore_cpp_CGore_FUN_004ee030(g_CGorePtr,(CDemonActor *)this_ptr);
+        core_gore_cpp_CGore_spawnFliesOnActor_FUN_004ee030
+                  (g_CGorePtr,(CDemonActor *)this_ptr,0x32,50.0,(CVector3f *)0x0);
       }
     }
   }

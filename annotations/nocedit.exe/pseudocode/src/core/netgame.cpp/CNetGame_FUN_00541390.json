@@ -2,21 +2,9 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "format_error",
-        "column": 46,
-        "line": 116,
-        "message": "format specifies type 'int' but the argument has type 'char *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "other",
-        "column": 55,
-        "line": 116,
-        "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 61,
-        "line": 289,
+        "line": 286,
         "message": "use of undeclared identifier 'DAT_02f7c640'"
       }
     ],
@@ -25,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 837,
-    "complexity_score": 376,
+    "complexity_score": 382,
     "cross_reference_count": 2,
     "function_call_count": 26,
     "global_count": 64,
-    "pseudocode_lines": 296,
-    "suspect_count": 7,
+    "pseudocode_lines": 292,
+    "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
       "undefined_data"
     ],
-    "total_lines": 1133
+    "total_lines": 1129
   },
   "cross_references": [
     {
@@ -748,42 +736,49 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 108,
+      "line": 105,
       "match": "ROUND",
-      "text": "local_1c = (char *)(int)ROUND(dVar9);",
+      "text": "local_18 = (int)ROUND(ROUND(*(float *)(local_1c + 0x28) * 1000.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 105,
+      "match": "ROUND",
+      "text": "local_18 = (int)ROUND(ROUND(*(float *)(local_1c + 0x28) * 1000.0f));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Undefined global data reference",
-      "line": 174,
+      "line": 171,
       "match": "DAT_02f7c8c4",
       "text": "this_ptr->players[this_ptr->local_player_index].player_id = DAT_02f7c8c4;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 183,
+      "line": 180,
       "match": "DAT_02f7c8c4",
       "text": "if (DAT_02f7c8c4 != pCVar5->players[0].player_id) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 245,
+      "line": 242,
       "match": "DAT_02f7c8c8",
       "text": "DAT_02f7c8c8 = g_CurrentGameTime - 0x1e0000;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 252,
+      "line": 249,
       "match": "DAT_00680a04",
       "text": "if ((this_ptr->connection_type == 2) && (DAT_00680a04 != 0)) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 282,
+      "line": 279,
       "match": "DAT_02f7c640",
       "text": "(g_CEditorToolsPtr,\"Send chat\",&DAT_02f7c640,0x100,1),",
       "type": "undefined_data"

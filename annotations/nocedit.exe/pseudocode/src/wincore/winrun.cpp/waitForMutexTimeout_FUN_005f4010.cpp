@@ -6,18 +6,18 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 int __cdecl wincore_winrun_cpp_waitForMutexTimeout_FUN_005f4010(HANDLE mutex_handle,double timeout_seconds)
 
 {
   DWORD DVar1;
-  double dVar2;
-  uint uStack_c;
+  uint local_8;
   
   if (mutex_handle == (HANDLE)0x0) {
     return 0;
   }
-  dVar2 = round(timeout_seconds * 1000);
-  uStack_c = (DWORD)(longlong)ROUND(dVar2);
-  DVar1 = (*g_WaitForSingleObjectFunc)(mutex_handle,uStack_c);
+  local_8 = (DWORD)(longlong)ROUND(ROUND(timeout_seconds * 1000));
+  DVar1 = (*g_WaitForSingleObjectFunc)(mutex_handle,local_8);
   return (uint)(DVar1 == 0);
 }

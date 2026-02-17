@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 130,
+    "complexity_score": 205,
     "cross_reference_count": 62,
     "function_call_count": 2,
     "global_count": 3,
-    "pseudocode_lines": 45,
-    "suspect_count": 8,
+    "pseudocode_lines": 20,
+    "suspect_count": 18,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 172
+    "total_lines": 147
   },
   "cross_references": [
     {
@@ -255,7 +255,7 @@
     {
       "addr": "004ec500",
       "from_addr": "004ec5d4",
-      "name": "core_gore.cpp_CBloodSplat_FUN_004ec500",
+      "name": "core_gore.cpp_CBloodSplat_render_FUN_004ec500",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -517,58 +517,128 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
+      "line": 9,
       "match": "ROUND",
-      "text": "iVar4 = (int)ROUND(dVar1);",
+      "text": "((int)ROUND(ROUND((double)(float)position->x * 0.31830988619288902 * 32768)),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 27,
+      "line": 9,
       "match": "ROUND",
-      "text": "((int)ROUND(dVar3),(int)ROUND(dVar2),iVar5,iVar4,iVar6,iVar7);",
+      "text": "((int)ROUND(ROUND((double)(float)position->x * 0.31830988619288902 * 32768)),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 27,
+      "line": 10,
       "match": "ROUND",
-      "text": "((int)ROUND(dVar3),(int)ROUND(dVar2),iVar5,iVar4,iVar6,iVar7);",
+      "text": "(int)ROUND(ROUND((double)(float)position->z * 0.31830988619288902 * 32768)),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 38,
+      "line": 10,
       "match": "ROUND",
-      "text": "iVar4 = (int)ROUND(dVar3);",
+      "text": "(int)ROUND(ROUND((double)(float)position->z * 0.31830988619288902 * 32768)),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 39,
+      "line": 11,
       "match": "ROUND",
-      "text": "iVar5 = (int)ROUND(dVar2);",
+      "text": "(int)ROUND(ROUND((double)(float)position->y * 0.31830988619288902 * 32768)),0,0",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
+      "line": 11,
       "match": "ROUND",
-      "text": "iVar6 = (int)ROUND(dVar3);",
+      "text": "(int)ROUND(ROUND((double)(float)position->y * 0.31830988619288902 * 32768)),0,0",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 46,
+      "line": 16,
       "match": "ROUND",
-      "text": "((int)ROUND(dVar3),(int)ROUND(dVar2),iVar7,iVar6,iVar5,iVar4);",
+      "text": "((int)ROUND(ROUND((double)(float)position->x * 0.31830988619288902 * 32768)),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 46,
+      "line": 16,
       "match": "ROUND",
-      "text": "((int)ROUND(dVar3),(int)ROUND(dVar2),iVar7,iVar6,iVar5,iVar4);",
+      "text": "((int)ROUND(ROUND((double)(float)position->x * 0.31830988619288902 * 32768)),",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 17,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND((double)(float)position->z * 0.31830988619288902 * 32768)),",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 17,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND((double)(float)position->z * 0.31830988619288902 * 32768)),",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 18,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND((double)(float)position->y * 0.31830988619288902 * 32768)),",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 18,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND((double)(float)position->y * 0.31830988619288902 * 32768)),",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 19,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND((double)(float)rotation->x * 256)),",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 19,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND((double)(float)rotation->x * 256)),",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 20,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND((double)(float)rotation->y * 256)),",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 20,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND((double)(float)rotation->y * 256)),",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 21,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND((double)(float)rotation->z * 256)));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 21,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND((double)(float)rotation->z * 256)));",
       "type": "decompiler_intrinsic"
     }
   ]

@@ -2,11 +2,13 @@
 // Address: 005a5200
 // Address Range: [[005a5200, 005a5520]]
 // Convention: __cdecl
-// Signature: CSfxSample * __cdecl sound_sndmain_cpp_loadStreamingSoundFile_FUN_005a5200(char *filename)
+// Signature: CSfxSample * __cdecl sound_sndmain_cpp_loadStreamingSoundFile_FUN_005a5200(int slot_index,char *filename)
 
 #include "nocturne.h"
 
-CSfxSample * __cdecl sound_sndmain_cpp_loadStreamingSoundFile_FUN_005a5200(char *filename)
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
+CSfxSample * __cdecl sound_sndmain_cpp_loadStreamingSoundFile_FUN_005a5200(int slot_index,char *filename)
 
 {
   char cVar1;
@@ -17,9 +19,7 @@ CSfxSample * __cdecl sound_sndmain_cpp_loadStreamingSoundFile_FUN_005a5200(char 
   _FILE *p_Var4;
   long lVar5;
   int iVar6;
-  double dVar7;
-  char *in_stack_00000008;
-  CSfxSample *pCVar8;
+  CSfxSample *pCVar7;
   char local_114 [256];
   CSfxSample *local_14;
   
@@ -42,12 +42,11 @@ LAB_005a5242:
   if (local_14 == (CSfxSample *)0x0) {
     return (CSfxSample *)0x0;
   }
-  engine_dosio_c_splitPath_FUN_00481f20
-            (in_stack_00000008,(char *)0x0,(char *)0x0,(char *)0x0,local_114);
+  engine_dosio_c_splitPath_FUN_00481f20(filename,(char *)0x0,(char *)0x0,(char *)0x0,local_114);
   iVar6 = stricmp(local_114,"mp3");
   if ((iVar6 == 0) ||
      (iVar6 = stricmp(local_114,".mp3"), iVar6 == 0)) {
-    iVar6 = engine_dosio_c_getFileSize_FUN_00481880("sound",in_stack_00000008);
+    iVar6 = engine_dosio_c_getFileSize_FUN_00481880("sound",filename);
     if (iVar6 < 1) goto LAB_005a5505;
     this_ptr = (CMP3Decoder *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x8630,"..\\sound\\sndmain.cpp",0x3c5);
     pCVar3 = (CMP3Decoder *)0x0;
@@ -60,16 +59,16 @@ LAB_005a5242:
       g_CurrentLineNumber = 0x3c6;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory.");
     }
-    sound_mp3_cpp_CMP3Decoder_openFile_FUN_00534550(sfx_sample->mp3_data,in_stack_00000008);
-    pCVar8 = sfx_sample;
+    sound_mp3_cpp_CMP3Decoder_openFile_FUN_00534550(sfx_sample->mp3_data,filename);
+    pCVar7 = sfx_sample;
     do {
-      cVar1 = *in_stack_00000008;
-      (pCVar8->sample_info).name[0] = cVar1;
+      cVar1 = *filename;
+      (pCVar7->sample_info).name[0] = cVar1;
       if (cVar1 == '\0') break;
-      cVar1 = in_stack_00000008[1];
-      in_stack_00000008 = in_stack_00000008 + 2;
-      (pCVar8->sample_info).name[1] = cVar1;
-      pCVar8 = (CSfxSample *)((pCVar8->sample_info).name + 2);
+      cVar1 = filename[1];
+      filename = filename + 2;
+      (pCVar7->sample_info).name[1] = cVar1;
+      pCVar7 = (CSfxSample *)((pCVar7->sample_info).name + 2);
     } while (cVar1 != '\0');
     (sfx_sample->sample_info).streaming_flag = 1;
     pCVar3 = sfx_sample->mp3_data;
@@ -86,25 +85,23 @@ LAB_005a5242:
     fVar2 = (float)iVar6 * 2.0f;
     sfx_sample->stream_read_position = 0;
     sfx_sample->stream_write_position = 0;
-    pCVar8 = (CSfxSample *)0x5a53d2;
-    dVar7 = round((double)fVar2);
-    sfx_sample->streaming_buffer_size = (int)ROUND(dVar7);
-    sfx_sample->streaming_slot_index = (int)filename;
-    iVar6 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_005a6170(pCVar8);
+    sfx_sample->streaming_buffer_size = (int)ROUND(ROUND(fVar2));
+    sfx_sample->streaming_slot_index = slot_index;
+    iVar6 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_005a6170(sfx_sample);
   }
   else {
-    p_Var4 = engine_dosio_c_getFile_FUN_00481a50("sound",in_stack_00000008,"rb");
+    p_Var4 = engine_dosio_c_getFile_FUN_00481a50("sound",filename,"rb");
     sfx_sample->file_handle = p_Var4;
-    pCVar8 = sfx_sample;
+    pCVar7 = sfx_sample;
     if (p_Var4 == (_FILE *)0x0) goto LAB_005a5505;
     do {
-      cVar1 = *in_stack_00000008;
-      (pCVar8->sample_info).name[0] = cVar1;
+      cVar1 = *filename;
+      (pCVar7->sample_info).name[0] = cVar1;
       if (cVar1 == '\0') break;
-      cVar1 = in_stack_00000008[1];
-      in_stack_00000008 = in_stack_00000008 + 2;
-      (pCVar8->sample_info).name[1] = cVar1;
-      pCVar8 = (CSfxSample *)((pCVar8->sample_info).name + 2);
+      cVar1 = filename[1];
+      filename = filename + 2;
+      (pCVar7->sample_info).name[1] = cVar1;
+      pCVar7 = (CSfxSample *)((pCVar7->sample_info).name + 2);
     } while (cVar1 != '\0');
     lVar5 = _ftell(sfx_sample->file_handle);
     sfx_sample->file_offset = lVar5;
@@ -119,11 +116,9 @@ LAB_005a5242:
     fVar2 = (float)iVar6 * 2.0f;
     sfx_sample->stream_read_position = 0;
     sfx_sample->stream_write_position = 0;
-    pCVar8 = (CSfxSample *)0x5a54e9;
-    dVar7 = round((double)fVar2);
-    sfx_sample->streaming_buffer_size = (int)ROUND(dVar7);
-    sfx_sample->streaming_slot_index = (int)filename;
-    iVar6 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_005a6170(pCVar8);
+    sfx_sample->streaming_buffer_size = (int)ROUND(ROUND(fVar2));
+    sfx_sample->streaming_slot_index = slot_index;
+    iVar6 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_005a6170(sfx_sample);
   }
   if (iVar6 != 0) {
     sound_sndmain_cpp_CSfxSample_seek_FUN_005a65a0(sfx_sample,0,0);

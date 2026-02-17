@@ -112,8 +112,10 @@ int INT_02d7b88c = {};
 int INT_02d7b890 = {};
 int INT_02d7b894 = {};
 
+// uchar
+uchar g_ShadowColor8 = {};
+
 // undefined1
-undefined1 DAT_02d7b410 = {};
 undefined1 DAT_02d7b804 = {};
 
 // undefined4

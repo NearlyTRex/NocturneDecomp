@@ -15,7 +15,7 @@ void __cdecl core_fire_cpp_CFireEffect_renderDecals_FUN_004c74a0(CFireEffect *th
   int iVar3;
   CStake *pCVar4;
   
-  core_fire_cpp_CBulletHole_initRender_FUN_004bfa40(g_BulletHolePool);
+  core_fire_cpp_CBulletHole_setupRenderState_FUN_004bfa40(g_BulletHolePool);
   if (render_mode == 0) {
     iVar3 = 0;
     if (0 < g_BulletHoleActiveCount) {
@@ -51,13 +51,13 @@ void __cdecl core_fire_cpp_CFireEffect_renderDecals_FUN_004c74a0(CFireEffect *th
     pCVar4 = g_StakePool;
     iVar2 = 0;
     do {
-      if ((pCVar4->box).is_valid == 0) {
-        *(uint *)((int)g_StakePool[0].box.rotation_matrix.m + iVar2 + -0x1c) = 1;
+      if ((pCVar4->physics_box).is_valid == 0) {
+        *(uint *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar2 + -0x1c) = 1;
 LAB_004c7525:
         core_fire_cpp_CStake_render_FUN_004c0140
-                  ((CStake *)((int)g_StakePool[0].box.rotation_matrix.m + iVar2 + -0x1c));
+                  ((CStake *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar2 + -0x1c));
       }
-      else if (*(int *)((int)g_StakePool[0].box.rotation_matrix.m + iVar2 + -0x1c) != 0)
+      else if (*(int *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar2 + -0x1c) != 0)
       goto LAB_004c7525;
       iVar2 = iVar2 + 0x260;
       iVar3 = iVar3 + 1;

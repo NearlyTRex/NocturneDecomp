@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 int __cdecl sound_mp3_cpp_validateLayer2AllocationTable_FUN_0052e8d0(SMpegFrame *frame)
 
 {
@@ -14,17 +16,13 @@ int __cdecl sound_mp3_cpp_validateLayer2AllocationTable_FUN_0052e8d0(SMpegFrame 
   int iVar3;
   int iVar4;
   int iVar5;
-  double dVar6;
-  uint uVar7;
   
   pSVar2 = frame->header;
   iVar3 = pSVar2->mpeg_version;
   iVar5 = g_MpegBitrateTable[iVar3 + -1][pSVar2->layer + 2][pSVar2->bitrate_index] /
           frame->samples_per_granule;
   iVar4 = frame->sblimit;
-  uVar7 = 0x52e93d;
-  dVar6 = round(g_MpegSampleRateTable[iVar3][pSVar2->sampling_rate_index]);
-  iVar1 = (int)ROUND(dVar6);
+  iVar1 = (int)ROUND(ROUND(g_MpegSampleRateTable[iVar3][pSVar2->sampling_rate_index]));
   if (iVar3 == 1) {
     if (((iVar1 == 0x30) && (0x37 < iVar5)) || ((0x37 < iVar5 && (iVar5 < 0x51)))) {
       if (frame->table_index == 0) {
@@ -51,6 +49,6 @@ int __cdecl sound_mp3_cpp_validateLayer2AllocationTable_FUN_0052e8d0(SMpegFrame 
   g_CurrentFilename = "..\\sound\\mp3.cpp";
   g_CurrentLineNumber = 0x1a2;
   core_main_c_displayErrorAndQuit_FUN_00506f10
-            ("MPEG Layer 2 - pick_table - can't load tables!  File: %s",g_CurrentMp3Filename,uVar7);
+            ("MPEG Layer 2 - pick_table - can't load tables!  File: %s",g_CurrentMp3Filename);
   return iVar4;
 }

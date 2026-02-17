@@ -31,13 +31,13 @@ void __cdecl CFlies::archive(CFlies *this_ptr);
 // Address: 004cbf00
 void __cdecl CFlies::process(CFlies *this_ptr,float delta_time);
 
-// Original: core_flies.cpp_CFlies_FUN_004cc230
+// Original: core_flies.cpp_drawFlyPixel_FUN_004cc230
 // Address: 004cc230
-void __cdecl CFlies(CFlies *this_ptr);
+void __cdecl drawFlyPixel(int screen_x,int screen_y,int z_depth);
 
-// Original: core_flies.cpp_CFlies_FUN_004cc2c0
+// Original: core_flies.cpp_drawFlyPixelClipped_FUN_004cc2c0
 // Address: 004cc2c0
-void __cdecl CFlies(CFlies *this_ptr);
+void __cdecl drawFlyPixelClipped(int screen_x,int screen_y,int z_depth);
 
 // Original: core_flies.cpp_CFlies_renderOpaque_FUN_004cc300
 // Address: 004cc300
@@ -51,17 +51,17 @@ CBoundingBox3D * __cdecl CFlies::getBoundingBox(CFlies *this_ptr,CBoundingBox3D 
 // Address: 004cc750
 int __cdecl CFlies::hasCollision(CFlies *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_flies.cpp_CFlies_FUN_004cc760
+// Original: core_flies.cpp_CFlies_initFly_FUN_004cc760
 // Address: 004cc760
-void __cdecl CFlies(CFlies *this_ptr);
+void __cdecl CFlies::initFly(CFlies *this_ptr,int fly_index);
 
-// Original: core_flies.cpp_CFlies_FUN_004cc820
+// Original: core_flies.cpp_CFlies_generateRandomPoint_FUN_004cc820
 // Address: 004cc820
-float * __cdecl CFlies(CFlies *this_ptr);
+CVector3f * __cdecl CFlies::generateRandomPoint(CFlies *this_ptr,CVector3f *out_point,CVector3f *reference_point);
 
-// Original: core_flies.cpp_CFlies_FUN_004cca50
+// Original: core_flies.cpp_findFliesByFollowActor_FUN_004cca50
 // Address: 004cca50
-CDemonActor * __cdecl CFlies(CFlies *this_ptr);
+CFlies * __cdecl findFliesByFollowActor(CDemonActor *actor);
 
 // Original: core_flies.cpp_CFlies_getPropertyList_FUN_004ccaa0
 // Address: 004ccaa0

@@ -6,11 +6,12 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 STreeNode * __cdecl shape_design_c_parseSpatialTreeFromFile_FUN_004580a0(_FILE *file)
 
 {
   STreeNode *pSVar1;
-  double dVar2;
   STreeNode *local_34;
   byte local_2c [4];
   int local_28;
@@ -29,8 +30,7 @@ STreeNode * __cdecl shape_design_c_parseSpatialTreeFromFile_FUN_004580a0(_FILE *
     local_34 = shape_design_c_allocateSpatialTreeNode_FUN_00457ed0();
     local_34->node_type = local_28;
     if (local_24 == 3) {
-      dVar2 = round((double)local_20);
-      local_34->data1 = (float)(int)ROUND(dVar2);
+      local_34->data1 = (float)(int)ROUND(ROUND(local_20));
     }
     else {
       local_34->data1 = local_20;

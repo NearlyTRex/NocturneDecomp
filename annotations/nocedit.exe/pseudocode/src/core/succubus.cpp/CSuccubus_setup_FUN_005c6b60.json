@@ -6,17 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 277,
-    "complexity_score": 162,
+    "complexity_score": 130,
     "cross_reference_count": 0,
     "function_call_count": 14,
     "global_count": 37,
-    "pseudocode_lines": 112,
-    "suspect_count": 4,
+    "pseudocode_lines": 115,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "warning_type_propagation"
     ],
-    "total_lines": 389
+    "total_lines": 392
   },
   "cross_references": [],
   "function": {
@@ -53,19 +52,19 @@
       "name": "core_enemy.cpp_CEnemy_setup_FUN_004a9650"
     },
     {
-      "addr": "0052b430",
-      "is_variadic": false,
-      "name": "core_morph.cpp_CMorph_FUN_0052b430"
-    },
-    {
       "addr": "0052b580",
       "is_variadic": false,
-      "name": "core_morph.cpp_CMorph_FUN_0052b580"
+      "name": "core_morph.cpp_CMorph_addPartFromKeyframedModel_FUN_0052b580"
     },
     {
       "addr": "0052b680",
       "is_variadic": false,
       "name": "core_morph.cpp_CMorph_getReady_FUN_0052b680"
+    },
+    {
+      "addr": "0052b430",
+      "is_variadic": false,
+      "name": "core_morph.cpp_CMorph_setupModelFromDeformable_FUN_0052b430"
     },
     {
       "addr": "0059fb40",
@@ -250,8 +249,8 @@
     },
     {
       "addr": "02f43974",
-      "name": "DAT_02f43974",
-      "type": "undefined4",
+      "name": "INT_02f43974",
+      "type": "int",
       "value": null
     },
     {
@@ -398,27 +397,6 @@
       "match": "WARNING: Type propagation algorithm not settling",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 86,
-      "match": "DAT_02f43974",
-      "text": "DAT_02f43974 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 88,
-      "match": "DAT_02f43974",
-      "text": "DAT_02f43974 = 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 90,
-      "match": "DAT_02f43974",
-      "text": "DAT_02f43974 = 0;",
-      "type": "undefined_data"
     }
   ],
   "vtable_info": {

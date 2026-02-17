@@ -25,11 +25,11 @@
 ;   TerminatedCString s_engine_font_cpp_0062a721
 ;   TerminatedCString s_CBitFont_remapPalette_In_0062a734
 ;   int g_BitsPerPixel = 0x8
-;   int g_RedBitPosition
+;   _BIT_INTEGER32 g_RedBitPosition
 ;   int g_RedScaleFactor
-;   int g_GreenBitPosition
+;   _BIT_INTEGER32 g_GreenBitPosition
 ;   int g_GreenScaleFactor
-;   int g_BlueBitPosition
+;   _BIT_INTEGER32 g_BlueBitPosition
 ;   int g_BlueScaleFactor
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber

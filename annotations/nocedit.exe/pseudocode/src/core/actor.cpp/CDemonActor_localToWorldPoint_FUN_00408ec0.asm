@@ -19,8 +19,8 @@
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00415470 at 0041570d
 ;   core_batman.cpp_CBatman_processDamage_FUN_004179a0 at 00417a03
 ;   core_batman.cpp_CBatman_process_FUN_00416870 at 00416e28
-;   core_bodypart.cpp_CBodyPart_FUN_00419e10 at 00419e81
-;   core_bodypart.cpp_CBodyPart_FUN_0041a050 at 0041a3a8
+;   core_bodypart.cpp_CBodyPart_addFire_FUN_0041ae50 at 0041aea0
+;   core_bodypart.cpp_CBodyPart_applyRotation_FUN_0041a630 at 0041a93b
 ;   ... and 136 more
 ;
 ; Called Functions:

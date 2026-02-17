@@ -449,10 +449,25 @@ COPY (register,0x1100,10) = (unique,0x29480,10)
 LOAD (unique,0x5480,4) = (const,0x1a1,4), (register,0x14,4) /* EBP */
 FLOAT2FLOAT (register,0x1100,10) = (unique,0x5480,4)
 
-@004bf8c1 [ESP:-268](-4)  # CALL 0x006013b1
-INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
-STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x4bf8c6,4)
-CALL (ram,0x6013b1,4)
+@004bf8c1 [ESP:-268]  # FXCH
+COPY (register,0x10ac,4) = (const,0x4bf8c1,4)
+COPY (unique,0x61b80,10) = (register,0x1100,10)
+COPY (register,0x1100,10) = (register,0x1110,10)
+COPY (register,0x1110,10) = (unique,0x61b80,10)
+
+@004bf8c3 [ESP:-268]  # FPATAN
+COPY (register,0x10ac,4) = (const,0x4bf8c3,4)
+CALLOTHER (register,0x1110,10) = (const,0x66,4), (register,0x1110,10), (register,0x1100,10)
+COPY (register,0x1100,10) = (register,0x1110,10)
+COPY (register,0x1110,10) = (register,0x1120,10)
+COPY (register,0x1120,10) = (register,0x1130,10)
+COPY (register,0x1130,10) = (register,0x1140,10)
+COPY (register,0x1140,10) = (register,0x1150,10)
+COPY (register,0x1150,10) = (register,0x1160,10)
+COPY (register,0x1160,10) = (register,0x1170,10)
+
+@004bf8c5 [ESP:-268]  # NOP
+# (no p-code)
 
 @004bf8c6 [ESP:-272](-4)  # PUSH 0x3
 COPY (unique,0x43d80,4) = (const,0x3,4)
@@ -1058,5 +1073,5 @@ INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
 # ============================================================================
-# Summary: 154 instructions, 733 P-code ops
+# Summary: 156 instructions, 743 P-code ops
 # ============================================================================

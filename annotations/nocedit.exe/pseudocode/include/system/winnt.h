@@ -59,12 +59,18 @@ typedef struct _RTL_CRITICAL_SECTION_DEBUG* PRTL_CRITICAL_SECTION_DEBUG;
 // Unsigned Long Integer (compiler-specific size)
 typedef ACCESS_MASK REGSAM;
 
-// Union: _BIT_INTEGER
-typedef union _BIT_INTEGER {
+// Union: _BIT_INTEGER16
+typedef union _BIT_INTEGER16 {
+    ushort word;
+    uchar bytes[2];
+} _BIT_INTEGER16;
+
+// Union: _BIT_INTEGER32
+typedef union _BIT_INTEGER32 {
     uint dword;
     ushort words[2];
     uchar bytes[4];
-} _BIT_INTEGER;
+} _BIT_INTEGER32;
 
 // Structure: _EXCEPTION_RECORD
 typedef struct _EXCEPTION_RECORD {
@@ -173,6 +179,13 @@ typedef struct _LIST_ENTRY {
 
 // Typedef: LIST_ENTRY
 typedef _LIST_ENTRY LIST_ENTRY;
+
+// Union: _MMX_INTEGER
+typedef union _MMX_INTEGER {
+    ulonglong mm;
+    uint u32[2];
+    _BIT_INTEGER32 b32[2];
+} _MMX_INTEGER;
 
 // Structure: _RTL_CRITICAL_SECTION_DEBUG
 typedef struct _RTL_CRITICAL_SECTION_DEBUG {

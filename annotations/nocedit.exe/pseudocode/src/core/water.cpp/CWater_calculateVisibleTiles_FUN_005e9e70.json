@@ -1,104 +1,23 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 38,
-        "line": 58,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 62,
-        "line": 58,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 38,
-        "line": 59,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 62,
-        "line": 59,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 32,
-        "line": 60,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 60,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 31,
-        "line": 66,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 55,
-        "line": 66,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 32,
-        "line": 70,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 70,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 21,
-        "line": 103,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 21,
-        "line": 110,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 80,
-        "line": 130,
-        "message": "use of undeclared identifier 'stack0xffffff48'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 347,
-    "complexity_score": 512,
+    "complexity_score": 389,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 28,
-    "pseudocode_lines": 147,
-    "suspect_count": 34,
+    "pseudocode_lines": 154,
+    "suspect_count": 22,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
-      "stack_ref",
-      "undefined_data",
-      "unknown_field"
+      "undefined_data"
     ],
-    "total_lines": 494
+    "total_lines": 501
   },
   "cross_references": [
     {
@@ -703,238 +622,154 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
+      "line": 10,
       "match": "extraout_EAX",
       "text": "int extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 46,
       "match": "DAT_03f8f608",
       "text": "(&DAT_03f8f608)[iVar7] = *(byte *)(iVar4 + 0x2cf901f + iVar2);",
       "type": "undefined_data"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 45,
+      "line": 50,
       "match": "ABS",
       "text": "if (ABS(this_ptr->water_level_y) != 0.0) {",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 51,
-      "match": "._0_4_",
-      "text": "FLOAT_03f875f0 = ((float)local_44._0_4_ + (float)local_8c._0_4_) * fVar1;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 51,
-      "match": "._0_4_",
-      "text": "FLOAT_03f875f0 = ((float)local_44._0_4_ + (float)local_8c._0_4_) * fVar1;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 52,
-      "match": "._8_4_",
-      "text": "FLOAT_03f875f8 = ((float)local_44._8_4_ + (float)local_8c._8_4_) * fVar1;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 52,
-      "match": "._8_4_",
-      "text": "FLOAT_03f875f8 = ((float)local_44._8_4_ + (float)local_8c._8_4_) * fVar1;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 53,
-      "match": "._0_4_",
-      "text": "local_28 = ((float)local_8c._0_4_ - (float)local_44._0_4_) * fVar1 * (float)1.1000000000000001;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 53,
-      "match": "._0_4_",
-      "text": "local_28 = ((float)local_8c._0_4_ - (float)local_44._0_4_) * fVar1 * (float)1.1000000000000001;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 59,
-      "match": "._4_4_",
-      "text": "local_24 = (float)local_8c._4_4_ - (float)local_44._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 59,
-      "match": "._4_4_",
-      "text": "local_24 = (float)local_8c._4_4_ - (float)local_44._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 63,
-      "match": "._8_4_",
-      "text": "local_2c = ((float)local_8c._8_4_ - (float)local_44._8_4_) * (float)0.5 *",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 63,
-      "match": "._8_4_",
-      "text": "local_2c = ((float)local_8c._8_4_ - (float)local_44._8_4_) * (float)0.5 *",
-      "type": "unknown_field"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 69,
+      "line": 70,
       "match": "ROUND",
-      "text": "local_20 = (float)(int)ROUND(dVar8);",
+      "text": "local_1c = (int)ROUND(ROUND(local_20 / this_ptr->tile_size + 1.0));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 73,
+      "line": 70,
+      "match": "ROUND",
+      "text": "local_1c = (int)ROUND(ROUND(local_20 / this_ptr->tile_size + 1.0));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 74,
       "match": "SBORROW4",
-      "text": "if (SBORROW4(iVar7,(int)local_20) != (int)local_20 * -2 < 0) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 84,
-      "match": "ROUND",
-      "text": "local_78 = (int)ROUND(local_54.x * 256.0f);",
+      "text": "if (SBORROW4(iVar7,local_1c) != local_1c * -2 < 0) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 85,
       "match": "ROUND",
-      "text": "local_74 = (int)ROUND(local_54.y * 256.0f);",
+      "text": "local_74 = (int)ROUND(local_50.x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 86,
       "match": "ROUND",
-      "text": "local_70 = (int)ROUND(local_54.z * 256.0f);",
+      "text": "local_70 = (int)ROUND(local_50.y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 90,
+      "line": 87,
       "match": "ROUND",
-      "text": "local_60.x = (int)ROUND(256.0f * 0.0);",
+      "text": "local_6c = (int)ROUND(local_50.z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 91,
       "match": "ROUND",
-      "text": "local_60.y = (int)ROUND(256.0f * 0.0);",
+      "text": "local_5c.x = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 92,
       "match": "ROUND",
-      "text": "local_60.z = (int)ROUND(256.0f * 0.0);",
+      "text": "local_5c.y = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 96,
-      "match": "._8_4_",
-      "text": "local_8c._8_4_ = (uint)ROUND(local_54.x * 256.0f);",
-      "type": "unknown_field"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 96,
+      "line": 93,
       "match": "ROUND",
-      "text": "local_8c._8_4_ = (uint)ROUND(local_54.x * 256.0f);",
+      "text": "local_5c.z = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 97,
       "match": "ROUND",
-      "text": "local_80 = (int)ROUND(local_54.y * 256.0f);",
+      "text": "local_80.x = (int)ROUND(local_50.x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 98,
       "match": "ROUND",
-      "text": "local_7c = (int)ROUND(local_54.z * 256.0f);",
+      "text": "local_80.y = (int)ROUND(local_50.y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 103,
-      "match": "._8_4_",
-      "text": "local_44._8_4_ = (uint)ROUND(local_54.x * 256.0f);",
-      "type": "unknown_field"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 99,
+      "match": "ROUND",
+      "text": "local_80.z = (int)ROUND(local_50.z * 256.0f);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 103,
       "match": "ROUND",
-      "text": "local_44._8_4_ = (uint)ROUND(local_54.x * 256.0f);",
+      "text": "local_38.x = (int)ROUND(local_50.x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 104,
       "match": "ROUND",
-      "text": "local_38 = (int)ROUND(local_54.y * 256.0f);",
+      "text": "local_38.y = (int)ROUND(local_50.y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 105,
       "match": "ROUND",
-      "text": "local_34 = (int)ROUND(local_54.z * 256.0f);",
+      "text": "local_38.z = (int)ROUND(local_50.z * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 109,
+      "match": "ROUND",
+      "text": "local_68.x = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 110,
       "match": "ROUND",
-      "text": "local_6c.x = (int)ROUND(256.0f * 0.0);",
+      "text": "local_68.y = (int)ROUND(local_50.y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 111,
       "match": "ROUND",
-      "text": "local_6c.y = (int)ROUND(local_54.y * 256.0f);",
+      "text": "local_68.z = (int)ROUND(local_50.z * 256.0f);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 112,
-      "match": "ROUND",
-      "text": "local_6c.z = (int)ROUND(local_54.z * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 123,
-      "match": "&stack0xffffff48",
-      "text": "(g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&stack0xffffff48);",
-      "type": "stack_ref"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 147,
+      "line": 155,
       "match": "extraout_EAX",
       "text": "return extraout_EAX;",
       "type": "extra_output"

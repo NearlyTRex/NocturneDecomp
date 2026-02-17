@@ -23,7 +23,7 @@
 ;   int g_BitsPerPixel = 0x8
 ;   char[241][320] g_CoronaBlurWorkBuffer
 ;   undefined4 g_LightmapTexturePalette[64]
-;   _BIT_INTEGER g_CameraDownscaleIterations
+;   _BIT_INTEGER32 g_CameraDownscaleIterations
 ;   int g_CameraEdgeCount
 ;   int[10000] g_CameraEdgeDetectionResults
 ;   undefined4 DAT_013bc26c
@@ -44,8 +44,8 @@
 ;   core_dstrender.cpp_blendBilerpTextureWithLightmapMMX_FUN_00493450
 ;   core_dstrender.cpp_blendLightmapToTexture32BitInputOutput_FUN_004926e1
 ;   core_dstrender.cpp_blendLightmapToTexture64BitOutput_FUN_00492bd5
+;   core_dstrender.cpp_blendLightmapToTextureMMX_FUN_00492f03
 ;   core_dstrender.cpp_blendLightmapToTextureMMX_FUN_00493dc4
-;   core_dstrender.cpp_blendLightmapToTextureMMX_Variant2_FUN_00492f03
 ;   core_dstrender.cpp_blendTextureWithLightmapMMX_FUN_00493860
 ;
 ; *****************************************************************************
@@ -196,8 +196,8 @@ section .text
     PUSH ECX                            ; 00453434
     MOV EBX,dword ptr [ESP + 0x20]      ; 00453435
     PUSH EBX                            ; 00453439
-    CALL core_dstrender.cpp_blendLightmapToTextureMMX_Variant2_FUN_00492f03 ; 0045343a
-        ;   XREF to: 00492f03 (UNCONDITIONAL_CALL)  ; void core_dstrender.cpp_blendLightmapToTextureMMX_Variant2_FUN_00492f03(uint * output_buffer, ulonglong * texture_buffer, byte * texture_indices, byte * lightmap_indices, ...)
+    CALL core_dstrender.cpp_blendLightmapToTextureMMX_FUN_00492f03 ; 0045343a
+        ;   XREF to: 00492f03 (UNCONDITIONAL_CALL)  ; void core_dstrender.cpp_blendLightmapToTextureMMX_FUN_00492f03(uint * output_buffer, ulonglong * texture_buffer, byte * texture_indices, byte * lightmap_indices, ...)
     ADD ESP,0x14                        ; 0045343f
     JMP 0x004533fd                      ; 00453442
         ;   XREF to: 004533fd (UNCONDITIONAL_JUMP)  ; LAB_004533fd

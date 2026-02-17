@@ -90,7 +90,7 @@
 ;   core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_0042b760
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0
 ;   core_enemy.cpp_CEnemy_FUN_004a9fd0
-;   core_gore.cpp_CGore_FUN_004ede30
+;   core_gore.cpp_CGore_createBloodPool_FUN_004ede30
 ;   ... and 6 more
 ;
 ; *****************************************************************************
@@ -178,7 +178,7 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 00423b5e
     PUSH EBX                            ; 00423b64
     CALL core_enemy.cpp_CEnemy_FUN_004a9fd0 ; 00423b65
-        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr)
+        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00423b6a
     TEST EAX,EAX                        ; 00423b6d
     JZ 0x00423d1a                       ; 00423b6f
@@ -246,8 +246,8 @@ section .text
     PUSH EAX                            ; 00423c08
     MOV ESI,dword ptr [0x0067b9a0]      ; 00423c09 | g_CGorePtr
     PUSH ESI                            ; 00423c0f | g_CGoreInstance
-    CALL core_gore.cpp_CGore_FUN_004ede30 ; 00423c10
-        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004ede30(CGore * this_ptr)
+    CALL core_gore.cpp_CGore_createBloodPool_FUN_004ede30 ; 00423c10
+        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_createBloodPool_FUN_004ede30(CGore * this_ptr, CVector3f * position, int blood_type)
     ADD ESP,0xc                         ; 00423c15
     PUSH 0x41c80000                     ; 00423c18
     PUSH 0x32                           ; 00423c1d
@@ -262,7 +262,7 @@ section .text
         ;   Label: LAB_00423c3e
     PUSH EBX                            ; 00423c44
     CALL core_enemy.cpp_CEnemy_FUN_004a9fd0 ; 00423c45
-        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr)
+        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00423c4a
     TEST EAX,EAX                        ; 00423c4d
     JZ 0x00423c69                       ; 00423c4f

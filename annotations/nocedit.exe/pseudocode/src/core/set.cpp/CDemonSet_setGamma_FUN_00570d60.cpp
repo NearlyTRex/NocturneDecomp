@@ -6,14 +6,14 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl core_set_cpp_CDemonSet_setGamma_FUN_00570d60(CDemonSet *this_ptr,int gamma)
 
 {
   int iVar1;
   int iVar2;
   float10 fVar3;
-  double dVar4;
-  int iVar5;
   float local_18;
   
   core_dcamera_cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0(&g_CDemonCameraInstance,gamma);
@@ -23,14 +23,12 @@ void __cdecl core_set_cpp_CDemonSet_setGamma_FUN_00570d60(CDemonSet *this_ptr,in
   do {
     fVar3 = pow((float10)iVar2 * (float10)1.52587890625e-05,(float10)local_18)
     ;
-    local_18 = 7.994614e-39;
-    dVar4 = round((double)(fVar3 * (float10)65536));
-    iVar5 = (int)ROUND(dVar4);
-    if (iVar5 < 0x100) {
-      iVar5 = 0x100;
+    local_18 = (float)(int)ROUND(ROUND(fVar3 * (float10)65536));
+    if ((int)local_18 < 0x100) {
+      local_18 = 3.58732e-43;
     }
     iVar2 = iVar2 + 1;
-    *(int *)((int)g_IntensityToValueLookupTable + iVar1) = iVar5;
+    *(float *)((int)g_IntensityToValueLookupTable + iVar1) = local_18;
     iVar1 = iVar1 + 4;
   } while (iVar2 < 0x10000);
   return;

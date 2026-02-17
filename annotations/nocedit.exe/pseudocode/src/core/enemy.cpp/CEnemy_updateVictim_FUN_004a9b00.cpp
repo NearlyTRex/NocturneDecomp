@@ -101,7 +101,7 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00(CEnemy *this_ptr,fl
         }
         if (iVar9 < 0) break;
         local_1c = (CDemonActor *)(&DAT_02cf2bf4)[iVar9];
-        iVar8 = core_enemy_cpp_CEnemy_FUN_004a9a50(this_ptr);
+        iVar8 = core_enemy_cpp_CEnemy_FUN_004a9a50(this_ptr,local_1c);
         this_ptr_01 = g_CConsolePtr;
         if (iVar8 != 0) {
           this_ptr->victim = local_1c;

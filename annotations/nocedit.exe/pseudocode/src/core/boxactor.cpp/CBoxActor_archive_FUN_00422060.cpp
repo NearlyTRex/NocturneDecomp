@@ -43,10 +43,10 @@ void __cdecl core_boxactor_cpp_CBoxActor_archive_FUN_00422060(CBoxActor *this_pt
     core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->ground_type,"groundType");
   }
   if (g_CBoxActorClassVersion < 4) {
-    this_ptr->unk5 = -1;
+    (this_ptr->physics_box).is_valid = -1;
   }
   else {
-    core_actor_cpp_archiveSimBox_FUN_0040bd70((CSimBox *)&this_ptr->sim_box,"simBox");
+    core_actor_cpp_archiveSimBox_FUN_0040bd70((CSimBox *)&this_ptr->physics_box,"simBox");
   }
   if (g_CBoxActorClassVersion < 5) {
     this_ptr->plot_in_shadow_flag = 1;

@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(CMobster *this_ptr)
+; void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(CMobster *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CMobster *       Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x8c]:4  local_8c
 ; undefined4       Stack[-0x88]:4  local_88
@@ -90,7 +91,7 @@ section .text
         ;   Label: LAB_005267d8
     PUSH EBX                            ; 005267d9
     CALL core_enemy.cpp_CEnemy_FUN_004a9a50 ; 005267da
-        ;   XREF to: 004a9a50 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9a50(CEnemy * this_ptr)
+        ;   XREF to: 004a9a50 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9a50(CEnemy * this_ptr, CDemonActor * param_2)
     ADD ESP,0x8                         ; 005267df
     TEST EAX,EAX                        ; 005267e2
     JZ 0x00526a8c                       ; 005267e4

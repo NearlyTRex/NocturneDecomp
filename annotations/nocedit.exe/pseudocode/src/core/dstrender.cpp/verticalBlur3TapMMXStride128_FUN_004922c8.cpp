@@ -36,10 +36,10 @@ void __cdecl core_dstrender_cpp_verticalBlur3TapMMXStride128_FUN_004922c8(ulongl
   uVar11 = input_buffer[-0x10];
   uVar1 = *input_buffer;
   uVar2 = input_buffer[0x10];
-  uVar7 = (byte)((uint)(uint)g_FilterBlendConstant >> 0x18);
-  uVar6 = (byte)((uint)(uint)g_FilterBlendConstant >> 0x10);
-  uVar5 = (byte)((uint)(uint)g_FilterBlendConstant >> 8);
-  uVar4 = (byte)(uint)g_FilterBlendConstant;
+  uVar7 = (byte)((uint)g_FilterBlendConstant._0_4_ >> 0x18);
+  uVar6 = (byte)((uint)g_FilterBlendConstant._0_4_ >> 0x10);
+  uVar5 = (byte)((uint)g_FilterBlendConstant._0_4_ >> 8);
+  uVar4 = (byte)g_FilterBlendConstant.u32[0];
   uVar12 = CONCAT62(CONCAT51(CONCAT41(CONCAT31(CONCAT21(CONCAT11(uVar7,(char)(uVar1 >> 0x18)),uVar6)
                                                ,(char)(uVar1 >> 0x10)),uVar5),(char)(uVar1 >> 8)),
                     CONCAT11(uVar4,(char)uVar1));
@@ -54,7 +54,7 @@ void __cdecl core_dstrender_cpp_verticalBlur3TapMMXStride128_FUN_004922c8(ulongl
   uVar11 = input_buffer[-0x11];
   uVar1 = input_buffer[-1];
   uVar2 = input_buffer[0xf];
-  uVar4 = (byte)g_FilterBlendConstant._4_4_;
+  uVar4 = (byte)g_FilterBlendConstant.u32[1];
   uVar5 = (byte)((uint)g_FilterBlendConstant._4_4_ >> 8);
   uVar6 = (byte)((uint)g_FilterBlendConstant._4_4_ >> 0x10);
   uVar7 = (byte)((uint)g_FilterBlendConstant._4_4_ >> 0x18);
@@ -81,7 +81,7 @@ void __cdecl core_dstrender_cpp_verticalBlur3TapMMXStride128_FUN_004922c8(ulongl
     uVar11 = input_buffer[-0x10];
     uVar1 = *input_buffer;
     uVar2 = input_buffer[0x10];
-    uVar4 = (byte)g_FilterBlendConstant._4_4_;
+    uVar4 = (byte)g_FilterBlendConstant.u32[1];
     uVar5 = (byte)((uint)g_FilterBlendConstant._4_4_ >> 8);
     uVar6 = (byte)((uint)g_FilterBlendConstant._4_4_ >> 0x10);
     uVar7 = (byte)((uint)g_FilterBlendConstant._4_4_ >> 0x18);
@@ -111,10 +111,10 @@ void __cdecl core_dstrender_cpp_verticalBlur3TapMMXStride128_FUN_004922c8(ulongl
     uVar1 = input_buffer[-0xf];
     uVar2 = input_buffer[1];
     uVar10 = input_buffer[0x11];
-    uVar7 = (byte)((uint)(uint)g_FilterBlendConstant >> 0x18);
-    uVar6 = (byte)((uint)(uint)g_FilterBlendConstant >> 0x10);
-    uVar5 = (byte)((uint)(uint)g_FilterBlendConstant >> 8);
-    uVar4 = (byte)(uint)g_FilterBlendConstant;
+    uVar7 = (byte)((uint)g_FilterBlendConstant._0_4_ >> 0x18);
+    uVar6 = (byte)((uint)g_FilterBlendConstant._0_4_ >> 0x10);
+    uVar5 = (byte)((uint)g_FilterBlendConstant._0_4_ >> 8);
+    uVar4 = (byte)g_FilterBlendConstant.u32[0];
     uVar12 = CONCAT62(CONCAT51(CONCAT41(CONCAT31(CONCAT21(CONCAT11(uVar7,(char)(uVar2 >> 0x18)),
                                                           uVar6),(char)(uVar2 >> 0x10)),uVar5),
                                (char)(uVar2 >> 8)),CONCAT11(uVar4,(char)uVar2));

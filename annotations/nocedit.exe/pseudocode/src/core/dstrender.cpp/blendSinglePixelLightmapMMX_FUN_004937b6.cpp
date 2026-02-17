@@ -64,8 +64,8 @@ void __cdecl core_dstrender_cpp_blendSinglePixelLightmapMMX_FUN_004937b6(ushort 
                                      (uVar5 != 0) * (uVar5 < 0x100) * (char)uVar5 - (0xff < uVar5)))
                   );
   *output_pixel =
-       (ushort)((uVar7 & g_BlueMask32) >> g_BlueBitShift) |
-       (ushort)((uVar7 & g_GreenMask32) >> g_GreenBlueBits) |
-       (ushort)((uVar7 & g_RedMask32) >> g_TotalColorBits);
+       (ushort)((uVar7 & g_BlueMask32.mm) >> g_BlueBitShift.mm) |
+       (ushort)((uVar7 & g_GreenMask32.mm) >> g_GreenBlueBits.mm) |
+       (ushort)((uVar7 & g_RedMask32.mm) >> g_TotalColorBits.mm);
   return;
 }

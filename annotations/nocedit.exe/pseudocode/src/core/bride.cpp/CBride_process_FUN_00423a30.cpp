@@ -69,7 +69,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
     uVar6 = pSVar5->state_index;
     if (uVar6 < 5) {
       if (uVar6 == 0) {
-        iVar4 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+        iVar4 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
         if (iVar4 == 0) {
           (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time)
           ;
@@ -115,7 +115,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
         (this_ptr->base).base.turn_speed = fVar11 * fVar12 * delta_time;
         (*(pCVar2->_ue).updateVictim)(&this_ptr->base,delta_time);
         if ((this_ptr->base).victim == (CDemonActor *)0x0) {
-          iVar4 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+          iVar4 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
           if (iVar4 == 0) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&pCVar1->motion_controller,0,1);
@@ -137,7 +137,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&pCVar1->motion_controller,0,1);
           }
-          else if (((0 < iVar4) && ((float)(this_ptr->base).unk2 <= 0.0)) &&
+          else if (((0 < iVar4) && ((this_ptr->base).attack_cooldown <= 0.0)) &&
                   (pCVar3 = (CCharacter *)(this_ptr->base).victim,
                   pCVar8 = (*(((pCVar3->base).vtable._uc)->_uc).getGrabber)(pCVar3),
                   pCVar8 == (CDemonActor *)0x0)) {
@@ -172,7 +172,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
         pCVar8 = (*(((pCVar3->base).vtable._uc)->_uc).getGrabber)(pCVar3);
         if (pCVar8 == (CDemonActor *)0x0) {
           local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.2,0.5);
-          (this_ptr->base).unk2 = (int)local_14;
+          (this_ptr->base).attack_cooldown = local_14;
           local_20 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_0052e2b0
                                (&pCVar1->motion_controller);
           local_4c = (double)local_20;
@@ -229,7 +229,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
         pCVar8 = (*(((pCVar3->base).vtable._uc)->_uc).getGrabber)(pCVar3);
         if (pCVar8 == (CDemonActor *)0x0) {
           local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.2,0.5);
-          (this_ptr->base).unk2 = (int)local_14;
+          (this_ptr->base).attack_cooldown = local_14;
           local_1c = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_0052e2b0
                                (&pCVar1->motion_controller);
           local_54 = (double)local_1c;
@@ -289,7 +289,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
                          (pCVar1,&local_c8,0);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)this_ptr,&local_d4,pCVar7);
-      core_gore_cpp_CGore_FUN_004ede30(g_CGorePtr);
+      core_gore_cpp_CGore_createBloodPool_FUN_004ede30(g_CGorePtr,&local_d4,0);
       (*((this_ptr->base).base.base.vtable._ub)->spawnFlies)((CDemonActor *)this_ptr,0x32,25.0);
       (this_ptr->base).pool_me = 1;
     }
@@ -329,8 +329,8 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
         core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,uVar6);
       }
     }
-    if (0.0 < (float)(this_ptr->base).unk2) {
-      (this_ptr->base).unk2 = (int)((float)(this_ptr->base).unk2 - delta_time);
+    if (0.0 < (this_ptr->base).attack_cooldown) {
+      (this_ptr->base).attack_cooldown = (this_ptr->base).attack_cooldown - delta_time;
     }
     (this_ptr->base).base.base.orient.vec.y =
          (this_ptr->base).base.turn_angle_accumulator + (this_ptr->base).base.base.orient.vec.y;

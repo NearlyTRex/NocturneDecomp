@@ -40,8 +40,8 @@ typedef struct CBodyPart {
     int render_alpha; // 0xcc0
     int dont_pick_me_up; // 0xcc4
     int fire_time_remaining; // 0xcc8
-    CBox sim_box; // 0xccc
-    int unk; // 0xf24
+    CBox physics_box; // 0xccc
+    float ground_height; // 0xf24
     struct CDemonActor* carried_by_actor; // 0xf28
     int is_visible; // 0xf2c
 } CBodyPart;

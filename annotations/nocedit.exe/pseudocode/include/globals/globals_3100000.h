@@ -30,8 +30,8 @@ extern CPickList g_ScriptPickList;
 // CScript
 extern CScript g_CScriptInstance;
 
-// _BIT_INTEGER
-extern _BIT_INTEGER g_CursorBlinkTimer;
+// _BIT_INTEGER32
+extern _BIT_INTEGER32 g_CursorBlinkTimer;
 
 // char[100]
 extern char g_ScriptTempBuffer[100];

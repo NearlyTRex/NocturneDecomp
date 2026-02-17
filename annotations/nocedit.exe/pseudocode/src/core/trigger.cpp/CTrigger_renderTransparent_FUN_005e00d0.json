@@ -1,49 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 40,
-        "line": 158,
-        "message": "member reference base type 'byte[24]' (aka 'unsigned char[24]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 53,
-        "line": 170,
-        "message": "member reference base type 'byte[24]' (aka 'unsigned char[24]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 53,
-        "line": 170,
-        "message": "member reference base type 'byte[24]' (aka 'unsigned char[24]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 53,
-        "line": 170,
-        "message": "member reference base type 'byte[24]' (aka 'unsigned char[24]') is not a structure or union"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 439,
-    "complexity_score": 499,
+    "complexity_score": 474,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 16,
-    "pseudocode_lines": 229,
-    "suspect_count": 25,
+    "pseudocode_lines": 224,
+    "suspect_count": 24,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
-      "suspect_float",
-      "unknown_field"
+      "pointer_cast"
     ],
-    "total_lines": 668
+    "total_lines": 663
   },
   "cross_references": [],
   "function": {
@@ -300,178 +273,171 @@
   },
   "suspects": [
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 96,
-      "match": "8.633136e-39",
-      "text": "fVar13 = 8.633136e-39;",
-      "type": "suspect_float"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 100,
+      "line": 97,
       "match": "ROUND",
-      "text": "SStack_d4.base.type = (int)ROUND(dVar12);",
+      "text": "iStack_d0 = (int)ROUND(ROUND((this_ptr->trigger_size).x * (float)0.10000000000000001 +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 113,
+      "line": 97,
       "match": "ROUND",
-      "text": "iStack_30 = (int)ROUND(dVar12);",
+      "text": "iStack_d0 = (int)ROUND(ROUND((this_ptr->trigger_size).x * (float)0.10000000000000001 +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 122,
+      "line": 108,
       "match": "ROUND",
-      "text": "CStack_58.x = (int)ROUND(fStack_70 * 256.0f);",
+      "text": "iStack_28 = (int)ROUND(ROUND(fVar1 * 256.0f));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 123,
+      "line": 108,
       "match": "ROUND",
-      "text": "CStack_58.y = (int)ROUND(fStack_6c * 256.0f);",
+      "text": "iStack_28 = (int)ROUND(ROUND(fVar1 * 256.0f));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 124,
+      "line": 117,
       "match": "ROUND",
-      "text": "CStack_58.z = (int)ROUND(fStack_68 * 256.0f);",
+      "text": "CStack_50.x = (int)ROUND(fStack_68 * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 118,
+      "match": "ROUND",
+      "text": "CStack_50.y = (int)ROUND(fStack_64 * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 119,
+      "match": "ROUND",
+      "text": "CStack_50.z = (int)ROUND(fStack_60 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 133,
+      "line": 128,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 134,
+      "line": 129,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 136,
+      "line": 131,
       "match": "ROUND",
-      "text": "CStack_7c.x = (int)ROUND(fStack_70 * 256.0f);",
+      "text": "CStack_74.x = (int)ROUND(fStack_68 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 137,
+      "line": 132,
       "match": "ROUND",
-      "text": "CStack_7c.y = (int)ROUND(fStack_84 * 256.0f);",
+      "text": "CStack_74.y = (int)ROUND(CStack_8c.max.y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 138,
+      "line": 133,
       "match": "ROUND",
-      "text": "CStack_7c.z = (int)ROUND(fStack_68 * 256.0f);",
+      "text": "CStack_74.z = (int)ROUND(fStack_60 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 149,
+      "line": 145,
       "match": "fsin",
-      "text": "fVar10 = (float10)fsin(fVar11);",
+      "text": "fVar10 = (float10)fsin(fVar12);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 150,
+      "line": 146,
       "match": "fcos",
-      "text": "fVar11 = (float10)fcos(fVar11);",
+      "text": "fVar12 = (float10)fcos(fVar12);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 151,
-      "match": "._20_4_",
-      "text": "fStack_6c = (float)local_a4._20_4_;",
-      "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 155,
+      "line": 152,
       "match": "(int *)((int)",
       "text": "piVar8 = (int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 159,
+      "line": 156,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 162,
+      "line": 159,
       "match": "ROUND",
-      "text": "CStack_64.x = (int)ROUND(fStack_70 * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 163,
-      "match": "._20_4_",
-      "text": "CStack_64.y = (int)ROUND((float)local_a4._20_4_ * 256.0f);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 163,
-      "match": "ROUND",
-      "text": "CStack_64.y = (int)ROUND((float)local_a4._20_4_ * 256.0f);",
+      "text": "CStack_5c.x = (int)ROUND(fStack_68 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 164,
+      "line": 160,
       "match": "ROUND",
-      "text": "CStack_64.z = (int)ROUND(fStack_68 * 256.0f);",
+      "text": "CStack_5c.y = (int)ROUND(CStack_8c.min.y * 256.0f);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 161,
+      "match": "ROUND",
+      "text": "CStack_5c.z = (int)ROUND(fStack_60 * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 170,
+      "match": "(int *)((int)",
+      "text": "piVar8 = (int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 174,
-      "match": "(int *)((int)",
-      "text": "piVar8 = (int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 178,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 181,
+      "line": 177,
       "match": "ROUND",
-      "text": "aCStack_4c[0].x = (int)ROUND(fStack_70 * 256.0f);",
+      "text": "aCStack_44[0].x = (int)ROUND(fStack_68 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 182,
+      "line": 178,
       "match": "ROUND",
-      "text": "aCStack_4c[0].y = (int)ROUND(fStack_84 * 256.0f);",
+      "text": "aCStack_44[0].y = (int)ROUND(CStack_8c.max.y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 183,
+      "line": 179,
       "match": "ROUND",
-      "text": "aCStack_4c[0].z = (int)ROUND(fStack_68 * 256.0f);",
+      "text": "aCStack_44[0].z = (int)ROUND(fStack_60 * 256.0f);",
       "type": "decompiler_intrinsic"
     }
   ],

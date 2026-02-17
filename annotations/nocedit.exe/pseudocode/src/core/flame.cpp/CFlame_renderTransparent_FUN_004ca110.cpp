@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_ptr)
 
 {
@@ -18,7 +20,6 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
   CBoundingBox3D *this_ptr_01;
   SProjectedVertex *point;
   byte bVar6;
-  double dVar7;
   uint auStackY_1088 [973];
   SMRGLHeaderPrimitive SStack_144;
   uint uStack_12c;
@@ -137,7 +138,7 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
           (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)
                     (g_CurrentSceneCamera,&(this_ptr->base).location,0);
           g_RenderVertexBuffer[0].w_recip = (float)(0xffff - (int)g_PerspectiveReciprocal);
-          if (iStack_14 == 3) {
+          if (iStack_18 == 3) {
             g_RenderVertexBuffer[0].w_recip = (float)((int)g_RenderVertexBuffer[0].w_recip / 2);
           }
           if (this_ptr->which_flame == 4) {
@@ -174,11 +175,10 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
           g_RenderVertexBuffer[2].v = 0x80000;
           g_RenderVertexBuffer[1].v = 0x80000;
           g_RenderVertexBuffer[0].v = 0xf80000;
+          fStack_10 = (float)(int)ROUND(ROUND(this_ptr->animation_time));
           g_RenderVertexBuffer[1].w_recip = g_RenderVertexBuffer[0].w_recip;
           g_RenderVertexBuffer[2].w_recip = g_RenderVertexBuffer[0].w_recip;
           g_RenderVertexBuffer[3].w_recip = g_RenderVertexBuffer[0].w_recip;
-          dVar7 = round((double)this_ptr->animation_time);
-          fStack_10 = (float)(int)ROUND(dVar7);
           engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
                     (g_CDemonRendererPtr2,
                      SMRGLTextureBasic_ARRAY_0067b100 +

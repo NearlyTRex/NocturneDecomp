@@ -16,7 +16,7 @@ typedef struct CEnemy {
     int randomize_me; // 0xbe2c
     int is_in_combat; // 0xbe30
     float guard_distance; // 0xbe34
-    int unk2; // 0xbe38
+    float attack_cooldown; // 0xbe38
     struct CDemonActor* victim; // 0xbe3c
     float victim_search_timer; // 0xbe40
     float victim_search_radius; // 0xbe44

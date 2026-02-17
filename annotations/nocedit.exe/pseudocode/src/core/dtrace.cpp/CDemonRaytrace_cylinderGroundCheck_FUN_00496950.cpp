@@ -6,120 +6,93 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 float __cdecl core_dtrace_cpp_CDemonRaytrace_cylinderGroundCheck_FUN_00496950(CDemonRaytrace *this_ptr,CVector3f *pos,float radius,int *hit_flag,CVector3f *normal_out)
 
 {
   float fVar1;
   float fVar2;
   float fVar3;
-  float fVar4;
-  float fVar5;
-  float fVar6;
-  bool bVar7;
+  bool bVar4;
   CDemonCube *this_ptr_00;
-  int iVar8;
-  CVector3f *unaff_EBX;
-  float fVar9;
-  float *unaff_ESI;
+  int iVar5;
+  int grid_z;
   int grid_x;
-  float unaff_EDI;
-  double dVar10;
-  double dVar11;
-  double dVar12;
-  double dVar13;
-  double dVar14;
-  double dVar15;
-  CVector3f CStack_70;
-  CVector3f local_64;
-  int iStack_58;
-  CVector3f local_54;
-  float local_48;
-  float local_44;
-  int local_3c;
-  float local_38;
-  float local_34;
+  CVector3f CStack_58;
+  CVector3f local_4c;
+  int local_40;
+  CVector3f local_3c;
   int local_30;
   float local_2c;
+  int local_24;
   int local_20;
+  int local_1c;
+  int local_18;
+  int local_14;
   
-  local_54.z = pos->x;
-  local_44 = pos->z;
-  local_64.x = pos->x;
-  local_48 = pos->y + 2.0f;
-  local_64.z = pos->z;
-  local_64.y = pos->y + -10.0f;
-  fVar9 = 1.0 / (this_ptr->cell_size).y;
-  local_38 = local_54.z - (this_ptr->bbox_min).x;
-  fVar1 = local_38 - radius;
-  fVar3 = 1.0 / (this_ptr->cell_size).x;
-  local_34 = local_44 - (this_ptr->bbox_min).z;
+  local_4c.x = pos->x;
+  local_4c.z = pos->z;
+  local_4c.y = pos->y + 2.0f;
+  fVar3 = pos->y + -10.0f;
+  fVar1 = 1.0 / (this_ptr->cell_size).y;
+  local_3c.y = local_4c.x - (this_ptr->bbox_min).x;
+  fVar2 = 1.0 / (this_ptr->cell_size).x;
+  local_3c.z = local_4c.z - (this_ptr->bbox_min).z;
   local_2c = 1.0 / (this_ptr->cell_size).z;
-  fVar5 = local_64.y - (this_ptr->bbox_min).y;
-  fVar4 = (local_34 - radius) * local_2c;
-  fVar2 = local_38 + radius;
-  fVar6 = (local_34 + radius) * local_2c;
-  bVar7 = false;
-  CStack_70.z = 6.742069e-39;
-  dVar10 = round((double)((local_48 - (this_ptr->bbox_min).y) * fVar9));
-  CStack_70.y = 6.742079e-39;
-  dVar11 = round((double)(fVar5 * fVar9));
-  local_44 = -1e+30;
-  CStack_70.x = 6.742122e-39;
-  local_2c = (float)(int)ROUND(dVar11);
-  local_20 = (int)ROUND(dVar10);
-  dVar12 = round((double)(fVar1 * fVar3));
-  dVar13 = round((double)fVar4);
-  dVar14 = round((double)(fVar2 * fVar3));
-  dVar15 = round((double)fVar6);
-  iStack_58 = (int)ROUND(dVar12);
-  local_34 = (float)(int)ROUND(dVar13);
-  local_38 = (float)(int)ROUND(dVar14);
-  local_2c = (float)(int)ROUND(dVar15);
-  if ((int)ROUND(dVar11) <= (int)ROUND(dVar10)) {
+  bVar4 = false;
+  local_18 = (int)ROUND(ROUND((local_4c.y - (this_ptr->bbox_min).y) * fVar1));
+  local_24 = (int)ROUND(ROUND((fVar3 - (this_ptr->bbox_min).y) * fVar1));
+  local_3c.x = -1e+30;
+  local_40 = (int)ROUND(ROUND((local_3c.y - radius) * fVar2));
+  local_1c = (int)ROUND(ROUND((local_3c.z - radius) * local_2c));
+  local_20 = (int)ROUND(ROUND((local_3c.y + radius) * fVar2));
+  local_14 = (int)ROUND(ROUND((local_3c.z + radius) * local_2c));
+  if (local_24 <= local_18) {
     do {
-      grid_x = iStack_58;
-      if (iStack_58 <= (int)local_38) {
+      grid_x = local_40;
+      if (local_40 <= local_20) {
         do {
-          fVar9 = local_34;
-          if ((int)local_34 <= (int)local_2c) {
+          grid_z = local_1c;
+          if (local_1c <= local_14) {
             do {
               this_ptr_00 = core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004952b0
-                                      (this_ptr,grid_x,local_30,(int)fVar9);
+                                      (this_ptr,grid_x,local_18,grid_z);
               if (this_ptr_00 != (CDemonCube *)0x0) {
-                iVar8 = core_dcube_cpp_CDemonCube_testCylinderGroundCollision_FUN_00457b60
-                                  (this_ptr_00,&local_64,unaff_EDI,&local_54,&CStack_70,
-                                   (uint *)&local_48);
-                if (iVar8 != 0) {
-                  bVar7 = true;
+                iVar5 = core_dcube_cpp_CDemonCube_testCylinderGroundCollision_FUN_00457b60
+                                  (this_ptr_00,&local_4c,radius,&local_3c,&CStack_58,
+                                   (uint *)&local_30);
+                if (iVar5 != 0) {
+                  bVar4 = true;
                 }
               }
-              fVar9 = (float)((int)fVar9 + 1);
-            } while ((int)fVar9 <= (int)local_2c);
+              grid_z = grid_z + 1;
+            } while (grid_z <= local_14);
           }
           grid_x = grid_x + 1;
-        } while (grid_x <= (int)local_38);
+        } while (grid_x <= local_20);
       }
-      if (bVar7) {
-        if ((unaff_EBX != (CVector3f *)0x0) && (&CStack_70 != unaff_EBX)) {
-          unaff_EBX->x = CStack_70.x;
-          unaff_EBX->y = CStack_70.y;
-          unaff_EBX->z = CStack_70.z;
+      if (bVar4) {
+        if ((normal_out != (CVector3f *)0x0) && (&CStack_58 != normal_out)) {
+          normal_out->x = CStack_58.x;
+          normal_out->y = CStack_58.y;
+          normal_out->z = CStack_58.z;
         }
-        if (unaff_ESI != (float *)0x0) {
-          *unaff_ESI = local_48;
+        if (hit_flag != (int *)0x0) {
+          *hit_flag = local_30;
         }
-        return local_54.x;
+        return local_3c.x;
       }
-      local_30 = local_30 + -1;
-    } while (local_3c <= local_30);
+      local_18 = local_18 + -1;
+    } while (local_24 <= local_18);
   }
-  if (unaff_ESI != (float *)0x0) {
-    *unaff_ESI = 1.4013e-45;
+  if (hit_flag != (int *)0x0) {
+    *hit_flag = 1;
   }
-  if (unaff_EBX != (CVector3f *)0x0) {
-    unaff_EBX->y = 1.0;
-    unaff_EBX->z = 0.0;
-    unaff_EBX->x = 0.0;
+  if (normal_out != (CVector3f *)0x0) {
+    normal_out->y = 1.0;
+    normal_out->z = 0.0;
+    normal_out->x = 0.0;
   }
-  return 6.742142e-39;
+  return fVar3;
 }

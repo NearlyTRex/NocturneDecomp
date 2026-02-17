@@ -6,13 +6,14 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl shape_design_c_renderSinglePolygon_FUN_0045ce20(int polygon_index)
 
 {
   char cVar1;
   char *pcVar2;
   char *pcVar3;
-  double dVar4;
   SMRGLHeaderPrimitive local_c4;
   uint auStack_ac [16];
   SMRGLTextureBasic local_6c [3];
@@ -28,19 +29,15 @@ void __cdecl shape_design_c_renderSinglePolygon_FUN_0045ce20(int polygon_index)
        (g_ModelPolygonData[polygon_index].part_assignment == g_CurrentPartIndex)))))) {
     shape_design_c_calculatePolygonNormal_FUN_0045caa0(g_ModelPolygonData + polygon_index);
     local_c4.base.count = g_ModelPolygonData[polygon_index].vertex_indices_count;
-    dVar4 = round
-                      ((double)(g_ModelPolygonData[polygon_index].normal.x * 65535.0f));
-    local_c4.surface_normal.A = (int)ROUND(dVar4);
-    dVar4 = round
-                      ((double)(g_ModelPolygonData[polygon_index].normal.y * 65535.0f));
-    local_c4.surface_normal.B = (int)ROUND(dVar4);
-    dVar4 = round
-                      ((double)(g_ModelPolygonData[polygon_index].normal.z * 65535.0f));
-    local_c4.surface_normal.C = (int)ROUND(dVar4);
-    dVar4 = round
-                      ((double)(g_ModelPolygonData[polygon_index].plane_distance *
-                                65535.0f * 256.0f));
-    local_c4.surface_normal.D = (int)ROUND(dVar4);
+    local_c4.surface_normal.A =
+         (int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.x * 65535.0f));
+    local_c4.surface_normal.B =
+         (int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.y * 65535.0f));
+    local_c4.surface_normal.C =
+         (int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.z * 65535.0f));
+    local_c4.surface_normal.D =
+         (int)ROUND(ROUND(g_ModelPolygonData[polygon_index].plane_distance * 65535.0f *
+                          256.0f));
     for (local_18 = 0; local_18 < (int)g_ModelPolygonData[polygon_index].vertex_indices_count;
         local_18 = local_18 + 1) {
       auStack_ac[local_18] = g_ModelPolygonData[polygon_index].vertex_indices[local_18];
@@ -64,14 +61,12 @@ void __cdecl shape_design_c_renderSinglePolygon_FUN_0045ce20(int polygon_index)
       for (local_18 = 0; local_18 < (int)g_ModelPolygonData[polygon_index].vertex_indices_count;
           local_18 = local_18 + 1) {
         local_14 = g_ModelPolygonData[polygon_index].vertex_indices[local_18];
-        dVar4 = round
-                          ((double)(g_ModelPolygonData[polygon_index].uv_u[local_18] *
-                                   (float)65536));
-        g_RenderVertexBuffer[local_14].u = (int)ROUND(dVar4);
-        dVar4 = round
-                          ((double)(g_ModelPolygonData[polygon_index].uv_v[local_18] *
-                                   (float)65536));
-        g_RenderVertexBuffer[local_14].v = (int)ROUND(dVar4);
+        g_RenderVertexBuffer[local_14].u =
+             (int)ROUND(ROUND(g_ModelPolygonData[polygon_index].uv_u[local_18] *
+                              (float)65536));
+        g_RenderVertexBuffer[local_14].v =
+             (int)ROUND(ROUND(g_ModelPolygonData[polygon_index].uv_v[local_18] *
+                              (float)65536));
       }
       if (g_ZBufferEnabled == 0) {
         engine_3d_c_renderPolygonPlaneMaskedNearPlane_FUN_00404a40(&local_c4);

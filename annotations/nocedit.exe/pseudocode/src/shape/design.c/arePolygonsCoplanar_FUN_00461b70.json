@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 160,
+    "complexity_score": 148,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 35,
+    "pseudocode_lines": 23,
     "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 123
+    "total_lines": 111
   },
   "cross_references": [
     {
@@ -166,86 +166,86 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 26,
+      "line": 11,
       "match": "ROUND",
-      "text": "uVar1 = (int)ROUND(dVar2) - (int)ROUND(dVar5) >> 0x1f;",
+      "text": "uVar1 = (int)ROUND(ROUND((float)(int)scale_factor * (polygon1_ptr->normal).x)) -",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 26,
+      "line": 11,
       "match": "ROUND",
-      "text": "uVar1 = (int)ROUND(dVar2) - (int)ROUND(dVar5) >> 0x1f;",
+      "text": "uVar1 = (int)ROUND(ROUND((float)(int)scale_factor * (polygon1_ptr->normal).x)) -",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 27,
+      "line": 12,
       "match": "ROUND",
-      "text": "if ((((int)(((int)ROUND(dVar2) - (int)ROUND(dVar5) ^ uVar1) - uVar1) < tolerance) &&",
+      "text": "(int)ROUND(ROUND((float)(int)scale_factor * (polygon2_ptr->normal).x));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 27,
+      "line": 12,
       "match": "ROUND",
-      "text": "if ((((int)(((int)ROUND(dVar2) - (int)ROUND(dVar5) ^ uVar1) - uVar1) < tolerance) &&",
+      "text": "(int)ROUND(ROUND((float)(int)scale_factor * (polygon2_ptr->normal).x));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 28,
+      "line": 15,
       "match": "ROUND",
-      "text": "(uVar1 = (int)ROUND(dVar3) - (int)ROUND(dVar6) >> 0x1f,",
+      "text": "(uVar1 = (int)ROUND(ROUND((float)(int)scale_factor * (polygon1_ptr->normal).y)) -",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 28,
+      "line": 15,
       "match": "ROUND",
-      "text": "(uVar1 = (int)ROUND(dVar3) - (int)ROUND(dVar6) >> 0x1f,",
+      "text": "(uVar1 = (int)ROUND(ROUND((float)(int)scale_factor * (polygon1_ptr->normal).y)) -",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 29,
+      "line": 16,
       "match": "ROUND",
-      "text": "(int)(((int)ROUND(dVar3) - (int)ROUND(dVar6) ^ uVar1) - uVar1) < tolerance)) &&",
+      "text": "(int)ROUND(ROUND((float)(int)scale_factor * (polygon2_ptr->normal).y)),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 29,
+      "line": 16,
       "match": "ROUND",
-      "text": "(int)(((int)ROUND(dVar3) - (int)ROUND(dVar6) ^ uVar1) - uVar1) < tolerance)) &&",
+      "text": "(int)ROUND(ROUND((float)(int)scale_factor * (polygon2_ptr->normal).y)),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
+      "line": 18,
       "match": "ROUND",
-      "text": "(uVar1 = (int)ROUND(dVar4) - (int)ROUND(dVar7) >> 0x1f,",
+      "text": "(uVar1 = (int)ROUND(ROUND((float)(int)scale_factor * (polygon1_ptr->normal).z)) -",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
+      "line": 18,
       "match": "ROUND",
-      "text": "(uVar1 = (int)ROUND(dVar4) - (int)ROUND(dVar7) >> 0x1f,",
+      "text": "(uVar1 = (int)ROUND(ROUND((float)(int)scale_factor * (polygon1_ptr->normal).z)) -",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
+      "line": 19,
       "match": "ROUND",
-      "text": "(int)(((int)ROUND(dVar4) - (int)ROUND(dVar7) ^ uVar1) - uVar1) < tolerance)) {",
+      "text": "(int)ROUND(ROUND((float)(int)scale_factor * (polygon2_ptr->normal).z)),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
+      "line": 19,
       "match": "ROUND",
-      "text": "(int)(((int)ROUND(dVar4) - (int)ROUND(dVar7) ^ uVar1) - uVar1) < tolerance)) {",
+      "text": "(int)ROUND(ROUND((float)(int)scale_factor * (polygon2_ptr->normal).z)),",
       "type": "decompiler_intrinsic"
     }
   ]

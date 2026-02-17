@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 422,
-    "complexity_score": 286,
+    "complexity_score": 284,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 11,
-    "pseudocode_lines": 196,
+    "pseudocode_lines": 194,
     "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "undefined_data"
     ],
-    "total_lines": 618
+    "total_lines": 616
   },
   "cross_references": [
     {
@@ -393,7 +393,7 @@
       "description": "Undefined global data reference",
       "line": 59,
       "match": "DAT_00823c54",
-      "text": "(float)(&DAT_00823c54)[iVar5] + (pCVar9->fire_effects[0].unk2 * fVar2) / fVar1;",
+      "text": "(float)(&DAT_00823c54)[iVar5] + (pCVar9->fire_effects[0].size * fVar2) / fVar1;",
       "type": "undefined_data"
     },
     {
@@ -419,7 +419,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 139,
+      "line": 138,
       "match": "(CLocation *)((int)",
       "text": "pCVar11 = (CLocation *)((int)(pCVar11 + 0x2a) + 4);",
       "type": "pointer_cast"

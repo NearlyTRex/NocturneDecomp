@@ -28,6 +28,7 @@
 #include "types/structs/SMRGLHeaderPrimitive.h"
 #include "types/structs/SQuadVertices.h"
 #include "types/structs/SSurfaceInfo.h"
+#include "types/unions/UOrientationVector.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x4E0000
@@ -135,47 +136,47 @@ void __cdecl core_glass_cpp_CGlass_addFilesToExtract_FUN_004eb690(CGlass *this_p
 CGlass * __cdecl core_glass_cpp_CGlass_dtor_FUN_004eb820(CGlass *this_ptr,uint flags);
 CVector3f * __cdecl core_glass_cpp_CVector3f_arrdtor_FUN_004eb8a0(CVector3f *objs,uint flags);
 void __cdecl core_gore_cpp_staticInit_FUN_004eb8c0(void);
-void __cdecl core_gore_cpp_FUN_004eb950(void);
-void __cdecl core_gore_cpp_CBloodParticle_FUN_004eb9a0(CBloodParticle *this_ptr);
-void __cdecl core_gore_cpp_CBloodParticle_FUN_004eb9d0(CBloodParticle *this_ptr);
+void __cdecl core_gore_cpp_getBloodColorParams_FUN_004eb950(int blood_type,int *out_light,int *out_color,int *out_fog);
+void __cdecl core_gore_cpp_CBloodParticle_setup_FUN_004eb9a0(CBloodParticle *this_ptr,CVector3f *position,CVector3f *velocity,int blood_type);
+void __cdecl core_gore_cpp_CBloodParticle_setupRenderState_FUN_004eb9d0(CBloodParticle *this_ptr);
 void __cdecl core_gore_cpp_CBloodParticle_render_FUN_004ebac0(CBloodParticle *this_ptr);
 int __cdecl core_gore_cpp_CBloodParticle_onCollision_FUN_004ec290(CBloodParticle *this_ptr,CVector3f *collision_normal);
-void __cdecl core_gore_cpp_CBloodSplat_FUN_004ec2f0(CBloodSplat *this_ptr);
-void __cdecl core_gore_cpp_CBloodSplat_FUN_004ec390(CBloodSplat *this_ptr);
-void __cdecl core_gore_cpp_CBloodSplat_FUN_004ec470(CBloodSplat *this_ptr);
-void __cdecl core_gore_cpp_CBloodSplat_FUN_004ec500(CBloodSplat *this_ptr);
-void __cdecl core_gore_cpp_CBloodSplat_FUN_004ecad0(CBloodSplat *this_ptr);
-void __cdecl core_gore_cpp_CBloodSplat_FUN_004ecb00(CBloodSplat *this_ptr);
-void __cdecl core_gore_cpp_CBloodSplat_FUN_004ecb90(CBloodSplat *this_ptr);
-void __cdecl core_gore_cpp_CBloodPool_FUN_004ecc40(CBloodPool *this_ptr);
-void __cdecl core_gore_cpp_CBloodPool_FUN_004ecce0(CBloodPool *this_ptr);
-void __cdecl core_gore_cpp_CBloodPool_FUN_004ed0a0(CBloodPool *this_ptr);
-void __cdecl core_gore_cpp_CBloodPool_FUN_004ed0d0(CBloodPool *this_ptr);
-void __cdecl core_gore_cpp_CBloodPool_FUN_004ed160(CBloodPool *this_ptr);
-void __cdecl core_gore_cpp_CBloodPool_FUN_004ed1c0(CBloodPool *this_ptr);
-void __cdecl core_gore_cpp_CFootstep_FUN_004ed240(CFootstep *this_ptr);
-void __cdecl core_gore_cpp_CFootstep_FUN_004ed3c0(CFootstep *this_ptr);
+void __cdecl core_gore_cpp_CBloodSplat_initGroundSplat_FUN_004ec2f0(CBloodSplat *this_ptr,CVector3f *position,int blood_type);
+void __cdecl core_gore_cpp_CBloodSplat_initWallSplat_FUN_004ec390(CBloodSplat *this_ptr,CVector3f *position,CVector3f *normal,int blood_type);
+void __cdecl core_gore_cpp_CBloodSplat_setupRenderState_FUN_004ec470(CBloodSplat *this_ptr);
+void __cdecl core_gore_cpp_CBloodSplat_render_FUN_004ec500(CBloodSplat *this_ptr,int expire_flag);
+void __cdecl core_gore_cpp_CBloodSplat_processAge_FUN_004ecad0(CBloodSplat *this_ptr);
+int __cdecl core_gore_cpp_CBloodSplat_load_FUN_004ecb00(CBloodSplat *this_ptr,_FILE *file_handle);
+int __cdecl core_gore_cpp_CBloodSplat_save_FUN_004ecb90(CBloodSplat *this_ptr,_FILE *file_handle);
+void __cdecl core_gore_cpp_CBloodPool_setupRenderState_FUN_004ecc40(CBloodPool *this_ptr);
+void __cdecl core_gore_cpp_CBloodPool_render_FUN_004ecce0(CBloodPool *this_ptr,int expire_flag);
+void __cdecl core_gore_cpp_CBloodPool_processAge_FUN_004ed0a0(CBloodPool *this_ptr);
+void __cdecl core_gore_cpp_CBloodPool_init_FUN_004ed0d0(CBloodPool *this_ptr,CVector3f *position,int blood_type);
+int __cdecl core_gore_cpp_CBloodPool_load_FUN_004ed160(CBloodPool *this_ptr,_FILE *file_handle);
+int __cdecl core_gore_cpp_CBloodPool_save_FUN_004ed1c0(CBloodPool *this_ptr,_FILE *file_handle);
+void __cdecl core_gore_cpp_CFootstep_init_FUN_004ed240(CFootstep *this_ptr,CVector3f *position,UOrientationVector *orientation, int is_bloody,int alpha,int blood_type);
+void __cdecl core_gore_cpp_CFootstep_render_FUN_004ed3c0(CFootstep *this_ptr,int expire_flag);
 CGore * __cdecl core_gore_cpp_CGore_ctor_FUN_004ed730(CGore *this_ptr);
 CGore * __cdecl core_gore_cpp_CGore_dtor_FUN_004ed750(CGore *this_ptr,uint flags);
-void __cdecl core_gore_cpp_CGore_FUN_004ed760(CGore *this_ptr);
-void __cdecl core_gore_cpp_CGore_FUN_004ed7b0(CGore *this_ptr);
-void __cdecl core_gore_cpp_CGore_FUN_004ed830(CGore *this_ptr);
+void __cdecl core_gore_cpp_CGore_reset_FUN_004ed760(CGore *this_ptr);
+void __cdecl core_gore_cpp_CGore_renderParticles_FUN_004ed7b0(CGore *this_ptr);
+void __cdecl core_gore_cpp_CGore_renderDecals_FUN_004ed830(CGore *this_ptr,int render_all,int expire_flag);
 int __cdecl core_gore_cpp_CGore_process_FUN_004ed9e0(CGore *this_ptr);
-void __cdecl core_gore_cpp_CGore_FUN_004edaa0(CGore *this_ptr);
-CBloodSplat * __cdecl core_gore_cpp_CGore_FUN_004edaf0(CGore *this_ptr);
-void __cdecl core_gore_cpp_CGore_FUN_004edb40(CGore *this_ptr);
-void __cdecl core_gore_cpp_CGore_FUN_004edb70(CGore *this_ptr);
-void __cdecl core_gore_cpp_CGore_FUN_004edbb0(CGore *this_ptr);
-CBloodPool * __cdecl core_gore_cpp_CGore_FUN_004edde0(CGore *ptr);
-void __cdecl core_gore_cpp_CGore_FUN_004ede30(CGore *this_ptr);
+void __cdecl core_gore_cpp_CGore_spawnBloodParticles_FUN_004edaa0(CGore *this_ptr,CVector3f *position,CVector3f *velocity,int blood_type);
+CBloodSplat * __cdecl core_gore_cpp_CGore_allocateBloodSplat_FUN_004edaf0(CGore *this_ptr);
+void __cdecl core_gore_cpp_CGore_createGroundBloodSplat_FUN_004edb40(CGore *this_ptr,CVector3f *position,int blood_type);
+void __cdecl core_gore_cpp_CGore_createWallBloodSplat_FUN_004edb70(CGore *this_ptr,CVector3f *position,CVector3f *normal,int blood_type);
+void __cdecl core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0(CGore *this_ptr,CVector3f *position,CVector3f *direction,int count,int blood_type);
+CBloodPool * __cdecl core_gore_cpp_CGore_allocateBloodPool_FUN_004edde0(CGore *this_ptr);
+void __cdecl core_gore_cpp_CGore_createBloodPool_FUN_004ede30(CGore *this_ptr,CVector3f *position,int blood_type);
 void __cdecl core_gore_cpp_CGore_loadAssets_FUN_004ede60(CGore *this_ptr);
-CFlies * __cdecl core_gore_cpp_CGore_FUN_004edf30(CGore *this_ptr);
-void __cdecl core_gore_cpp_CGore_FUN_004ee030(CGore *this_ptr,CDemonActor *actor);
-void __cdecl core_gore_cpp_CGore_FUN_004ee070(CGore *this_ptr);
-int __cdecl core_gore_cpp_CGore_FUN_004ee0f0(CGore *this_ptr);
-int __cdecl core_gore_cpp_CGore_FUN_004ee1e0(CGore *this_ptr,_FILE *file_handle);
-int __cdecl core_gore_cpp_CGore_FUN_004ee290(CGore *this_ptr,_FILE *file_handle);
-void __cdecl core_gore_cpp_FUN_004ee340(void);
+CFlies * __cdecl core_gore_cpp_CGore_spawnFlies_FUN_004edf30(CGore *this_ptr,CVector3f *position,int gather_count,float spawn_rate, CVector3f *box_size);
+void __cdecl core_gore_cpp_CGore_spawnFliesOnActor_FUN_004ee030(CGore *this_ptr,CDemonActor *actor,int gather_count,float spawn_rate, CVector3f *box_size);
+void __cdecl core_gore_cpp_CGore_createFootstep_FUN_004ee070(CGore *this_ptr,CVector3f *position,UOrientationVector *orientation,int surface_type ,int alpha,int blood_type);
+int __cdecl core_gore_cpp_CGore_findBloodTypeAtPosition_FUN_004ee0f0(CGore *this_ptr,CVector3f *position,int *out_blood_type);
+int __cdecl core_gore_cpp_CGore_load_FUN_004ee1e0(CGore *this_ptr,_FILE *file_handle);
+int __cdecl core_gore_cpp_CGore_save_FUN_004ee290(CGore *this_ptr,_FILE *file_handle);
+CVector3f * __cdecl core_gore_cpp_convertVecFloatToFixed_FUN_004ee340(CVector3f *src,CVector3i *dst);
 CFootstep * __cdecl core_gore_cpp_CFootstep_ctor_FUN_004ee370(CFootstep *this_ptr);
 CFootstep * __cdecl core_gore_cpp_CFootstep_dtor_FUN_004ee390(CFootstep *this_ptr,uint flags);
 CBloodPool * __cdecl core_gore_cpp_CBloodPool_ctor_FUN_004ee3b0(CBloodPool *this_ptr);

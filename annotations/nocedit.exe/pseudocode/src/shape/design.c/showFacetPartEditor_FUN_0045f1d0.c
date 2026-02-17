@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
 
 {
@@ -116,10 +118,8 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
       engine_3d_c_processCameraRelativePoint_FUN_004037e0(&local_68);
       engine_matrix_c_matrixPushAndTransform_FUN_0050cee0(local_58,local_3c,local_38,0,0,0);
       if (g_WireframeMode != 0) {
-        dVar9 = round((double)local_20);
-        iVar4 = (int)ROUND(dVar9);
-        dVar9 = round((double)local_48);
-        iVar1 = (int)ROUND(dVar9);
+        iVar4 = (int)ROUND(ROUND(local_20));
+        iVar1 = (int)ROUND(ROUND(local_48));
         g_TransformMatrix.m[0].x =
              (uint)((longlong)iVar4 * (longlong)g_TransformMatrix.m[0].x) >> 0x10 |
              (int)((ulonglong)((longlong)iVar4 * (longlong)g_TransformMatrix.m[0].x) >> 0x20) <<

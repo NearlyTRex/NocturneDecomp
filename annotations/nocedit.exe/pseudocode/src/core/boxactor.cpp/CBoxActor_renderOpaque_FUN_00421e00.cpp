@@ -33,7 +33,7 @@ int __cdecl core_boxactor_cpp_CBoxActor_renderOpaque_FUN_00421e00(CBoxActor *thi
   iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
   if (iVar2 != 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
-              (&this_ptr->model,(float)this_ptr->unk2,-1);
+              (&this_ptr->model,this_ptr->anim_frame,-1);
   }
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
   return iVar2;

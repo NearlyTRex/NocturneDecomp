@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 int __cdecl engine_matrix_c_vectorLength3DToInt_FUN_0050dad0(CVector3i *vector_ptr)
 
 {
-  double dVar1;
-  
-  dVar1 = round
-                    (SQRT((double)vector_ptr->z * (double)vector_ptr->z +
-                          (double)vector_ptr->y * (double)vector_ptr->y +
-                          (double)vector_ptr->x * (double)vector_ptr->x));
-  return (int)ROUND(dVar1);
+  return (int)ROUND(ROUND(SQRT((float10)vector_ptr->z * (float10)vector_ptr->z +
+                               (float10)vector_ptr->y * (float10)vector_ptr->y +
+                               (float10)vector_ptr->x * (float10)vector_ptr->x)));
 }

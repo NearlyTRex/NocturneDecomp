@@ -18,6 +18,6 @@ CBaronWeapon * __cdecl core_baron_cpp_CBaronWeapon_ctor_FUN_00413d40(CBaronWeapo
   (pCVar1->base).bolt_velocity = 200.0;
   (pCVar1->base).fire_cooldown = 0.0;
   (pCVar1->base).can_attach_light = 0;
-  pCVar1->unk = 0;
+  pCVar1->baron = (CBaron *)0x0;
   return pCVar1;
 }

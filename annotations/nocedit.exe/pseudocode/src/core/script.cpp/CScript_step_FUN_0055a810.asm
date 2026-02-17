@@ -217,14 +217,14 @@
 ;   core_actor.cpp_CVector_ctor_FUN_00410340
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0
-;   core_bodypart.cpp_CBodyPart_FUN_0041a050
+;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050
 ;   core_bodypart.cpp_createBodyPart_FUN_00418e10
-;   core_bodypart.cpp_FUN_0041b510
+;   core_bodypart.cpp_subtractVector_FUN_0041b510
 ;   core_bugs.cpp_FUN_00427b70
 ;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
 ;   core_charactr.cpp_CCharacter_initGesture_FUN_0042d390
 ;   core_charactr.cpp_CCharacter_setLookAtTarget_FUN_0042ddd0
-;   core_enemy.cpp_CEnemy_FUN_004a9ef0
+;   core_enemy.cpp_CEnemy_setVictim_FUN_004a9ef0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 ;   core_event.cpp_CEventList_executeCommands_FUN_004aabe0
 ;   ... and 62 more
@@ -3226,8 +3226,8 @@ section .text
         ;   XREF to: 0055c908 (CONDITIONAL_JUMP)  ; LAB_0055c908
     MOV ECX,dword ptr [ESP + 0x3ebc]    ; 0055c936
     PUSH ECX                            ; 0055c93d
-    CALL core_bodypart.cpp_CBodyPart_FUN_0041a050 ; 0055c93e
-        ;   XREF to: 0041a050 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_FUN_0041a050(CBodyPart * this_ptr)
+    CALL core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050 ; 0055c93e
+        ;   XREF to: 0041a050 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050(CBodyPart * this_ptr)
     ADD ESP,0x4                         ; 0055c943
     JMP 0x0055a8bb                      ; 0055c946
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
@@ -6672,8 +6672,8 @@ section .text
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
     PUSH EAX                            ; 0055f386
     PUSH ESI                            ; 0055f387
-    CALL core_enemy.cpp_CEnemy_FUN_004a9ef0 ; 0055f388
-        ;   XREF to: 004a9ef0 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_FUN_004a9ef0(CEnemy * this_ptr)
+    CALL core_enemy.cpp_CEnemy_setVictim_FUN_004a9ef0 ; 0055f388
+        ;   XREF to: 004a9ef0 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_setVictim_FUN_004a9ef0(CEnemy * this_ptr, CDemonActor * victim)
     ADD ESP,0x8                         ; 0055f38d
     JMP 0x0055a8bb                      ; 0055f390
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
@@ -6717,7 +6717,7 @@ section .text
     TEST EAX,EAX                        ; 0055f412
     JNZ 0x0055f420                      ; 0055f414
         ;   XREF to: 0055f420 (CONDITIONAL_JUMP)  ; LAB_0055f420
-    MOV EAX,[0x00662638]                ; 0055f416 | DAT_00662638
+    MOV EAX,[0x00662638]                ; 0055f416 | PTR_00662638
     JMP 0x0055f360                      ; 0055f41b
         ;   XREF to: 0055f360 (UNCONDITIONAL_JUMP)  ; LAB_0055f360
     PUSH 0x823c14                       ; 0055f420 | g_CCharacterClassInfo
@@ -6834,8 +6834,8 @@ section .text
     PUSH EDX                            ; 0055f583
     ADD EAX,0x20                        ; 0055f584
     PUSH EAX                            ; 0055f587
-    CALL core_bodypart.cpp_FUN_0041b510 ; 0055f588
-        ;   XREF to: 0041b510 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_0041b510()
+    CALL core_bodypart.cpp_subtractVector_FUN_0041b510 ; 0055f588
+        ;   XREF to: 0041b510 (UNCONDITIONAL_CALL)  ; CVector3f * core_bodypart.cpp_subtractVector_FUN_0041b510(CVector3f * a, CVector3f * dst, CVector3f * b)
     ADD ESP,0xc                         ; 0055f58d
     LEA EAX,[ESP + 0x3e60]              ; 0055f590
     PUSH EAX                            ; 0055f597

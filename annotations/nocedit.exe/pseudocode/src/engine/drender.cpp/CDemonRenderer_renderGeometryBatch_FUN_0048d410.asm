@@ -22,7 +22,7 @@
 ;   int g_ClippedVertexCount
 ;   SRenderVertex[16] g_ClippedVertexBuffer
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
-;   _BIT_INTEGER g_RenderStateFlags
+;   _BIT_INTEGER32 g_RenderStateFlags
 ;   undefined4 DAT_02d052a1
 ;   int g_RenderStateFlag2
 ;   char* g_CurrentFilename

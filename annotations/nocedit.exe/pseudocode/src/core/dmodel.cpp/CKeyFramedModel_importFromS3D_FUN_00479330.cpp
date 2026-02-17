@@ -6,15 +6,17 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl core_dmodel_cpp_CKeyFramedModel_importFromS3D_FUN_00479330(CKeyFramedModel *this_ptr,char *filename)
 
 {
   char cVar1;
   SMRGLPrimitiveQuad **ppSVar2;
   SMRGLPrimitiveQuad *pSVar3;
-  CVector3i **ppCVar4;
-  bool bVar5;
-  float fVar6;
+  bool bVar4;
+  float fVar5;
+  double dVar6;
   _FILE *file;
   int iVar7;
   int iVar8;
@@ -24,8 +26,6 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_importFromS3D_FUN_00479330(CKeyFram
   uint uVar12;
   char *pcVar13;
   char *pcVar14;
-  double dVar15;
-  double dVar16;
   CPickList local_c84;
   uchar auStack_8dc [300];
   char local_7b0 [260];
@@ -244,14 +244,14 @@ LAB_0047983f:
               _fputc(iVar7,local_24);
             }
             if (((p_Var9->_flag & 0x20) == 0) && ((local_24->_flag & 0x20) == 0)) {
-              bVar5 = true;
+              bVar4 = true;
             }
             else {
-              bVar5 = false;
+              bVar4 = false;
             }
             shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var9,"..\\core\\dmodel.cpp",0x600);
             shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_24,"..\\core\\dmodel.cpp",0x601);
-            if (bVar5) goto LAB_004797c3;
+            if (bVar4) goto LAB_004797c3;
           }
         }
         iVar7 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
@@ -294,16 +294,18 @@ LAB_004797c3:
       for (iVar7 = 0; iVar7 < (int)ppSVar2[iVar11 * 0x12 + 1]; iVar7 = iVar7 + 1) {
         ppSVar2[iVar11 * 0x12 + iVar7 * 3 + 6] = *(SMRGLPrimitiveQuad **)(local_7c + iVar7 * 4 + -4)
         ;
-        dVar16 = 65536;
-        dVar15 = round
-                           ((double)*(float *)(local_64 + iVar7 * 4 + -4) * 65536);
-        local_1c = (SMRGLPrimitiveQuad *)(int)ROUND(dVar15);
-        ppSVar2[iVar11 * 0x12 + iVar7 * 3 + 7] = (SMRGLPrimitiveQuad *)(int)ROUND(dVar15);
-        local_c84.base.item_count = 0x479af8;
-        dVar16 = round
-                           (dVar16 * (double)*(float *)(local_70 + iVar7 * 4 + -4));
-        local_1c = (SMRGLPrimitiveQuad *)(int)ROUND(dVar16);
-        ppSVar2[iVar11 * 0x12 + iVar7 * 3 + 8] = (SMRGLPrimitiveQuad *)(int)ROUND(dVar16);
+        dVar6 = 65536;
+        local_1c = (SMRGLPrimitiveQuad *)
+                   (int)ROUND(ROUND((double)*(float *)(local_64 + iVar7 * 4 + -4) * 65536)
+                             );
+        ppSVar2[iVar11 * 0x12 + iVar7 * 3 + 7] =
+             (SMRGLPrimitiveQuad *)
+             (int)ROUND(ROUND((double)*(float *)(local_64 + iVar7 * 4 + -4) * 65536));
+        local_1c = (SMRGLPrimitiveQuad *)
+                   (int)ROUND(ROUND(dVar6 * (double)*(float *)(local_70 + iVar7 * 4 + -4)));
+        ppSVar2[iVar11 * 0x12 + iVar7 * 3 + 8] =
+             (SMRGLPrimitiveQuad *)
+             (int)ROUND(ROUND(dVar6 * (double)*(float *)(local_70 + iVar7 * 4 + -4)));
       }
     }
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
@@ -324,20 +326,11 @@ LAB_004797c3:
       }
       iVar7 = _fscanf(local_20,"%f,%f,%f\n",&local_40,&local_3c,&local_38);
       if (iVar7 != 3) break;
-      fVar6 = (float)256;
-      ppCVar4 = this_ptr->vertex_list;
-      dVar16 = round((double)(local_40 * fVar6));
-      local_1c = (SMRGLPrimitiveQuad *)(int)ROUND(dVar16);
-      ppCVar4[iVar11 * 3] = (CVector3i *)local_1c;
-      ppCVar4 = this_ptr->vertex_list;
-      dVar16 = round((double)(local_3c * fVar6));
-      local_1c = (SMRGLPrimitiveQuad *)(int)ROUND(dVar16);
-      ppCVar4[iVar11 * 3 + 1] = (CVector3i *)local_1c;
-      ppCVar4 = this_ptr->vertex_list;
-      local_c84.base.item_count = 0x479c06;
-      dVar16 = round((double)(local_38 * fVar6));
-      local_1c = (SMRGLPrimitiveQuad *)(int)ROUND(dVar16);
-      ppCVar4[iVar11 * 3 + 2] = (CVector3i *)local_1c;
+      fVar5 = (float)256;
+      this_ptr->vertex_list[iVar11 * 3] = (CVector3i *)(int)ROUND(ROUND(local_40 * fVar5));
+      this_ptr->vertex_list[iVar11 * 3 + 1] = (CVector3i *)(int)ROUND(ROUND(local_3c * fVar5));
+      local_1c = (SMRGLPrimitiveQuad *)(int)ROUND(ROUND(local_38 * fVar5));
+      this_ptr->vertex_list[iVar11 * 3 + 2] = (CVector3i *)local_1c;
       iVar11 = iVar11 + 1;
     }
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_c84,0);
@@ -413,9 +406,7 @@ LAB_00479c73:
       if (1.0 < local_2c) {
         local_2c = 1.0;
       }
-      local_c84.base.item_count = 0x479dbb;
-      dVar16 = round((double)(local_2c * 255.0f));
-      local_1c = (SMRGLPrimitiveQuad *)(int)ROUND(dVar16);
+      local_1c = (SMRGLPrimitiveQuad *)(int)ROUND(ROUND(local_2c * 255.0f));
       auStack_8dc[iVar11] = (uchar)local_1c;
     }
     puVar10 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
@@ -426,14 +417,14 @@ LAB_00479c73:
       g_CurrentLineNumber = 0x726;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory for envMapOpacList");
     }
-    bVar5 = true;
+    bVar4 = true;
     for (iVar11 = 0; iVar11 < this_ptr->poly_count; iVar11 = iVar11 + 1) {
       this_ptr->env_map_opac_list[iVar11] = auStack_8dc[this_ptr->poly_texture_index_list[iVar11]];
       if (5 < this_ptr->env_map_opac_list[iVar11]) {
-        bVar5 = false;
+        bVar4 = false;
       }
     }
-    if (bVar5) {
+    if (bVar4) {
       g_CurrentDebugFilename = "..\\core\\dmodel.cpp";
       g_CurrentDebugLine = 0x731;
       shape_memdbg_cpp_free_FUN_005fe659(this_ptr->env_map_opac_list);

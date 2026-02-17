@@ -28,7 +28,8 @@ void __cdecl core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_0042b760(CCharacte
       local_34.y = 0.0;
       local_34.z = 0.0;
       core_actor_cpp_CDemonActor_transformVector_FUN_00408e80(&this_ptr->base,&local_1c,&local_34);
-      core_gore_cpp_CGore_FUN_004edaa0(g_CGorePtr);
+      core_gore_cpp_CGore_spawnBloodParticles_FUN_004edaa0
+                (g_CGorePtr,&local_10,&local_1c,this_ptr->collision_layer);
       return;
     }
   }

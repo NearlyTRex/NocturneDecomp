@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4890(CGabriella *this_ptr)
 
 {
@@ -16,21 +18,19 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4890(CGabriella *this_ptr)
   CCharacter *this_ptr_01;
   CVector3f *pCVar3;
   int iVar4;
-  double dVar5;
   float in_stack_00000008;
-  char *in_stack_ffffff58;
+  CGabriella *in_stack_ffffff58;
   float fStack_94;
   CVector3f local_84 [2];
   CGabriella *local_6c;
   CGabriella *local_68;
-  CVector3f local_64;
+  byte local_64 [12];
   byte local_58 [16];
   byte auStack_48 [20];
   CVector3f local_34;
   CVector3f local_28;
   CCharacter *local_1c;
   float local_18;
-  int iStack_14;
   
   this_ptr_00 = &(this_ptr->base).base.model;
   do {
@@ -98,7 +98,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4890(CGabriella *this_ptr)
     case 3:
       (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
                 ((CCharacter *)this_ptr,0,(CVector3f *)0x0);
-      in_stack_ffffff58 = (char *)this_ptr_00;
+      in_stack_ffffff58 = (CGabriella *)this_ptr_00;
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&this_ptr_00->motion_controller,0,1);
       break;
@@ -114,11 +114,11 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4890(CGabriella *this_ptr)
         pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                            (this_ptr_00,(CVector3f *)(auStack_48 + 8),INT_02d7b878);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                  ((CDemonActor *)this_ptr,&local_64,pCVar3);
+                  ((CDemonActor *)this_ptr,(CVector3f *)local_64,pCVar3);
         core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff60);
         local_18 = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,15.0);
         pCVar3 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                           ((CDemonActor *)this_ptr_01,&local_34,&local_64);
+                           ((CDemonActor *)this_ptr_01,&local_34,(CVector3f *)local_64);
         if (local_84 != pCVar3) {
           local_84[0].x = pCVar3->x;
           local_84[0].y = pCVar3->y;
@@ -129,10 +129,10 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4890(CGabriella *this_ptr)
         (*(((local_1c->base).vtable._uc)->_uc).processDamage)
                   (local_1c,(SDamageInfo *)&stack0xffffff60);
         if (0.0 < (double)fStack_94) {
-          dVar5 = round((double)fStack_94 * 0.20000000000000001);
-          iStack_14 = (int)ROUND(dVar5);
-          core_gore_cpp_CGore_FUN_004edbb0(g_CGorePtr);
-          in_stack_ffffff58 = "kick1.wav";
+          core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0
+                    (g_CGorePtr,(CVector3f *)(local_64 + 8),(CVector3f *)0x0,
+                     (int)ROUND(ROUND((double)fStack_94 * 0.20000000000000001)) + 1,0);
+          in_stack_ffffff58 = this_ptr;
           (*((this_ptr->base).base.base.vtable._ub)->playSound)
                     ((CDemonActor *)this_ptr,"kick1.wav");
           (this_ptr->base).base.grabbed_by = (CDemonActor *)0x0;

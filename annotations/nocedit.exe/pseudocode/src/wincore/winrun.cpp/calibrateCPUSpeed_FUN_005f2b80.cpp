@@ -17,12 +17,12 @@ void __cdecl wincore_winrun_cpp_calibrateCPUSpeed_FUN_005f2b80(void)
   int local_18;
   int local_14;
   
-  BVar1 = (*g_QueryPerformanceFrequencyFunc)(&g_PerformanceFrequency);
+  BVar1 = (*g_QueryPerformanceFrequencyFunc)((LARGE_INTEGER *)&g_PerformanceFrequency);
   if (BVar1 == 1) {
     g_TimerCalibration =
-         (double)g_PerformanceFrequency._0_4_ +
-         (double)g_PerformanceFrequency.s.HighPart * 4294967296;
-    (*g_QueryPerformanceCounterFunc)(&g_PerformanceCounter);
+         (double)g_PerformanceFrequency.LowPart +
+         (double)g_PerformanceFrequency.HighPart * 4294967296;
+    (*g_QueryPerformanceCounterFunc)((LARGE_INTEGER *)&g_PerformanceCounter);
   }
   else {
     g_UseMultimediaTimer = 1;

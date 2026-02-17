@@ -1,6 +1,6 @@
 // Name: core_script.cpp_updateSelection_FUN_00564500
 // Address: 00564500
-// Address Range: [[00564500, 0056455d]]
+// Address Range: [[0056449b, 005644d0] [00564500, 0056455d]]
 // Convention: __cdecl
 // Signature: void __cdecl core_script_cpp_updateSelection_FUN_00564500(void)
 

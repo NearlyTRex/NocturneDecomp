@@ -24,7 +24,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(CD
         g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
       }
       g_RenderStateFlag2 = PREPROCESS_W_DEPTH_REPLACEMENT;
-      g_RenderStateFlags = (_BIT_INTEGER)render_flags;
+      g_RenderStateFlags = (_BIT_INTEGER32)render_flags;
     }
     else {
       g_RenderStateFlags.dword = 0;

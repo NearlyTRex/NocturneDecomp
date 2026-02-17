@@ -258,7 +258,7 @@ void __cdecl core_cloth_cpp_CCloth_setup_FUN_00439710(CCloth *this_ptr,CVector3f
           pSVar23 = pSVar19;
           pSVar17 = local_1c;
           do {
-            pSVar17->primary_bone_index = (uint)pSVar19->bone_indices[0];
+            pSVar17->bone_index[0] = (uint)pSVar19->bone_indices[0];
             if (pCVar10 != pCVar12) {
               pCVar10->x = pCVar12->x;
               pCVar10->y = pCVar12->y;
@@ -345,10 +345,7 @@ void __cdecl core_cloth_cpp_CCloth_setup_FUN_00439710(CCloth *this_ptr,CVector3f
   pCVar11 = this_ptr;
   if (0 < (this_ptr->model).vertex_count) {
     do {
-      pCVar11->vertices[0].bone_indices[0] = -1;
-      pCVar11->vertices[0].bone_indices[1] = -1;
-      pCVar11->vertices[0].bone_indices[2] = -1;
-      pCVar11->vertices[0].bone_indices[3] = -1;
+      pCVar11->vertices[0].collide_bone_index = -1;
       iVar8 = iVar8 + 1;
       pCVar11 = (CCloth *)&(pCVar11->model).env_map_opac_list;
     } while (iVar8 < (this_ptr->model).vertex_count);

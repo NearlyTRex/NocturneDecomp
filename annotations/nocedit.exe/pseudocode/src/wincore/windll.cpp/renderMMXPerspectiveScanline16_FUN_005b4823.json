@@ -629,80 +629,80 @@
     {
       "addr": "006826e0",
       "name": "g_TextureShift1",
-      "type": "ulonglong",
-      "value": "0x10"
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "00682700",
       "name": "g_TextureShift2",
-      "type": "ulonglong",
-      "value": "0x8"
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "00682720",
       "name": "g_TextureMask1",
-      "type": "ulonglong",
-      "value": "0xff"
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "00682740",
       "name": "g_TextureMask2",
-      "type": "ulonglong",
-      "value": "0xff00"
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "00682748",
       "name": "g_RedMask16",
-      "type": "ulonglong",
-      "value": "0xf800"
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "00682750",
       "name": "g_GreenMask16",
-      "type": "ulonglong",
-      "value": "0x7e0"
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "00682758",
       "name": "g_BlueMask16",
-      "type": "ulonglong",
-      "value": "0x1f"
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "00682760",
       "name": "g_RedMask32",
-      "type": "ulonglong",
-      "value": "0xf80000"
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "00682780",
       "name": "g_GreenMask32",
-      "type": "ulonglong",
-      "value": "0xfc00"
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "006827a0",
       "name": "g_BlueMask32",
-      "type": "ulonglong",
-      "value": "0xf8"
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "006827a8",
       "name": "g_TotalColorBits",
-      "type": "ulonglong",
-      "value": "0x8"
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "006827c8",
       "name": "g_GreenBlueBits",
-      "type": "ulonglong",
-      "value": "0x5"
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "006827e8",
       "name": "g_BlueBitShift",
-      "type": "ulonglong",
-      "value": "0x3"
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "006827f0",
@@ -779,7 +779,7 @@
     {
       "addr": "02d052a0",
       "name": "g_RenderStateFlags",
-      "type": "_BIT_INTEGER",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
@@ -1394,21 +1394,21 @@
       "description": "Non-standard integer size (decompiler artifact)",
       "line": 347,
       "match": "uint7",
-      "text": "uVar36 = (uint7)((uVar15 & g_BlueMask16) << g_BlueBitShift) |",
+      "text": "uVar36 = (uint7)((uVar15 & g_BlueMask16.mm) << g_BlueBitShift.mm) |",
       "type": "nonstandard_int"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
       "line": 348,
       "match": "uint7",
-      "text": "(uint7)((uVar15 & g_GreenMask16) << g_GreenBlueBits) |",
+      "text": "(uint7)((uVar15 & g_GreenMask16.mm) << g_GreenBlueBits.mm) |",
       "type": "nonstandard_int"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
       "line": 349,
       "match": "uint7",
-      "text": "(uint7)((uVar15 & g_RedMask16) << g_TotalColorBits);",
+      "text": "(uint7)((uVar15 & g_RedMask16.mm) << g_TotalColorBits.mm);",
       "type": "nonstandard_int"
     },
     {
@@ -1674,21 +1674,21 @@
       "description": "Non-standard integer size (decompiler artifact)",
       "line": 484,
       "match": "uint7",
-      "text": "uVar36 = (uint7)((uVar15 & g_BlueMask16) << g_BlueBitShift) |",
+      "text": "uVar36 = (uint7)((uVar15 & g_BlueMask16.mm) << g_BlueBitShift.mm) |",
       "type": "nonstandard_int"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
       "line": 485,
       "match": "uint7",
-      "text": "(uint7)((uVar15 & g_GreenMask16) << g_GreenBlueBits) |",
+      "text": "(uint7)((uVar15 & g_GreenMask16.mm) << g_GreenBlueBits.mm) |",
       "type": "nonstandard_int"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
       "line": 486,
       "match": "uint7",
-      "text": "(uint7)((uVar15 & g_RedMask16) << g_TotalColorBits);",
+      "text": "(uint7)((uVar15 & g_RedMask16.mm) << g_TotalColorBits.mm);",
       "type": "nonstandard_int"
     },
     {

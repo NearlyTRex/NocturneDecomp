@@ -6,42 +6,43 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl core_game_cpp_CGame_renderIrisFade_FUN_004e0aa0(CGame *this_ptr)
 
 {
-  int iVar1;
-  uint *puVar2;
-  int iVar3;
+  float fVar1;
+  int iVar2;
+  uint *puVar3;
   int iVar4;
-  double dVar5;
+  int iVar5;
   CGame *in_stack_ffffffec;
   
   if (DAT_02d831ec != 0) {
     if (((DAT_02d831ec < 4) && (DAT_02d831ec != 1)) && (0x3f7fffff < (int)DAT_02d831f0)) {
       core_game_cpp_CGame_calculateIrisFadeCenter_FUN_004e09a0(in_stack_ffffffec);
-      iVar3 = g_WindowHeight;
       if (g_BitsPerPixel == 0x20) {
-        iVar4 = 0;
-        dVar5 = round((double)(DAT_02d831f0 * DAT_02d831f0));
-        if (0 < iVar3) {
-          iVar3 = 0;
+        fVar1 = DAT_02d831f0 * DAT_02d831f0;
+        iVar5 = 0;
+        if (0 < g_WindowHeight) {
+          iVar4 = 0;
           do {
-            puVar2 = *(uint **)((int)g_ScreenBufferArray + iVar3);
-            iVar1 = 0;
+            puVar3 = *(uint **)((int)g_ScreenBufferArray + iVar4);
+            iVar2 = 0;
             if (0 < g_WindowWidth) {
               do {
-                if ((int)ROUND(dVar5) <
-                    (DAT_02d831f8 - iVar4) * (DAT_02d831f8 - iVar4) +
-                    (DAT_02d831f4 - iVar1) * (DAT_02d831f4 - iVar1)) {
-                  *puVar2 = 0;
+                if ((int)ROUND(ROUND(fVar1)) <
+                    (DAT_02d831f8 - iVar5) * (DAT_02d831f8 - iVar5) +
+                    (DAT_02d831f4 - iVar2) * (DAT_02d831f4 - iVar2)) {
+                  *puVar3 = 0;
                 }
-                iVar1 = iVar1 + 1;
-                puVar2 = puVar2 + 1;
-              } while (iVar1 < g_WindowWidth);
+                iVar2 = iVar2 + 1;
+                puVar3 = puVar3 + 1;
+              } while (iVar2 < g_WindowWidth);
             }
-            iVar3 = iVar3 + 4;
-            iVar4 = iVar4 + 1;
-          } while (iVar4 < g_WindowHeight);
+            iVar4 = iVar4 + 4;
+            iVar5 = iVar5 + 1;
+          } while (iVar5 < g_WindowHeight);
         }
       }
     }

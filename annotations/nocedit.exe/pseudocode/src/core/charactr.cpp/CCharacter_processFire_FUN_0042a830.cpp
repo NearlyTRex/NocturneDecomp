@@ -60,10 +60,10 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042a830(CCharacter *t
         fVar2 = (float)65535;
         pCVar9 = this_ptr;
         do {
-          iVar5 = *(int *)(pCVar9->fire_effects[0].unk + 4);
+          iVar5 = pCVar9->fire_effects[0].bone_index;
           iVar8 = iVar8 + 1;
           (&DAT_00823c54)[iVar5] =
-               (float)(&DAT_00823c54)[iVar5] + (pCVar9->fire_effects[0].unk2 * fVar2) / fVar1;
+               (float)(&DAT_00823c54)[iVar5] + (pCVar9->fire_effects[0].size * fVar2) / fVar1;
           pCVar9 = (CCharacter *)((pCVar9->base).actor_name + 0x18);
         } while (iVar8 < this_ptr->fire_count);
       }
@@ -125,20 +125,19 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042a830(CCharacter *t
     local_24 = this_ptr;
     pCVar11 = &this_ptr->flames[0].base.location;
     do {
-      if ((this_ptr->model).part_data.visibility_flags[*(int *)pSVar10->unk] != 0) {
+      if ((this_ptr->model).part_data.visibility_flags[pSVar10->bone_part] != 0) {
         (this_ptr->base).is_transparent = 1;
         pCVar6 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                           (&local_5c,(CVector3f *)(pSVar10->unk + 8),
-                            local_40 + *(int *)(pSVar10->unk + 4));
+                           (&local_5c,&pSVar10->offset,local_40 + pSVar10->bone_index);
         pCVar6 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                            (&this_ptr->base,&local_68,pCVar6);
         (pCVar11->position).x = pCVar6->x;
         (pCVar11->position).y = pCVar6->y;
         (pCVar11->position).z = pCVar6->z;
         fVar1 = (float)0.5;
-        local_24->flames[0].flame_size.x = pSVar10->unk2 * fVar1;
-        local_24->flames[0].flame_size.y = pSVar10->unk2;
-        local_24->flames[0].flame_size.z = pSVar10->unk2 * fVar1;
+        local_24->flames[0].flame_size.x = pSVar10->size * fVar1;
+        local_24->flames[0].flame_size.y = pSVar10->size;
+        local_24->flames[0].flame_size.z = pSVar10->size * fVar1;
         (*((UActorVTable *)(local_48[local_28].base.actor_name + 0x154))->_ub->process)
                   (&local_48[local_28].base,delta_time);
       }
@@ -154,21 +153,21 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042a830(CCharacter *t
     local_30 = 0;
     do {
       local_1c = local_20;
-      if (((this_ptr->model).part_data.visibility_flags[*(int *)local_20->unk] != 0) &&
-         (fVar1 = local_3c * (float)this_ptr->fire_allow_hero + local_20->unk2,
-         local_20->unk2 = fVar1, 3.0f < fVar1)) {
-        local_20->unk2 = 3.0f;
+      if (((this_ptr->model).part_data.visibility_flags[local_20->bone_part] != 0) &&
+         (fVar1 = local_3c * (float)this_ptr->fire_allow_hero + local_20->size,
+         local_20->size = fVar1, 3.0f < fVar1)) {
+        local_20->size = 3.0f;
         iVar8 = 0;
         pCVar3 = local_18;
         if (0 < local_18->bone_count) {
           do {
             uVar7 = pCVar3->bone_list[0].parent_index;
-            if (uVar7 == *(uint *)(local_1c->unk + 4)) {
-              uVar7 = uVar7 ^ *(uint *)(local_1c->unk + 4);
+            if (uVar7 == local_1c->bone_index) {
+              uVar7 = uVar7 ^ local_1c->bone_index;
               pCVar9 = this_ptr;
               if (0 < this_ptr->fire_count) {
                 do {
-                  if (iVar8 == *(int *)(pCVar9->fire_effects[0].unk + 4)) break;
+                  if (iVar8 == pCVar9->fire_effects[0].bone_index) break;
                   uVar7 = uVar7 + 1;
                   pCVar9 = (CCharacter *)((pCVar9->base).actor_name + 0x18);
                 } while ((int)uVar7 < this_ptr->fire_count);
@@ -186,16 +185,15 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042a830(CCharacter *t
         if (0 < this_ptr->fire_count) {
           pCVar9 = this_ptr;
           do {
-            if (local_18->bone_list[*(int *)(local_1c->unk + 4)].parent_index ==
-                *(int *)(pCVar9->fire_effects[0].unk + 4)) break;
+            if (local_18->bone_list[local_1c->bone_index].parent_index ==
+                pCVar9->fire_effects[0].bone_index) break;
             iVar8 = iVar8 + 1;
             pCVar9 = (CCharacter *)((pCVar9->base).actor_name + 0x18);
           } while (iVar8 < this_ptr->fire_count);
         }
         if (iVar8 == this_ptr->fire_count) {
           core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042a520
-                    (this_ptr,(int)local_18,
-                     local_18->bone_list[*(int *)(local_1c->unk + 4)].parent_index);
+                    (this_ptr,(int)local_18,local_18->bone_list[local_1c->bone_index].parent_index);
         }
       }
       local_20 = local_20 + 1;

@@ -107,6 +107,9 @@ extern int INT_02f37ef4;
 extern int g_MoonCloudScrollX;
 extern int g_MoonCloudScrollY;
 
+// int[5]
+extern int g_MobsterTauntCounters[5];
+
 // uchar
 extern uchar g_TempFacesInitGuard;
 

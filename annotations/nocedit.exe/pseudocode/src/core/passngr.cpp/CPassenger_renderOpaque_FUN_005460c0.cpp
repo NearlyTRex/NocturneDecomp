@@ -22,9 +22,12 @@ int __cdecl core_passngr_cpp_CPassenger_renderOpaque_FUN_005460c0(CPassenger *th
     if (iVar1 != 0) {
       if (ABS(this_ptr->morph_time) != 0.0) {
         this_ptr_00 = (CMorph *)(this_ptr->unk + 100);
-        core_morph_cpp_CMorph_FUN_0052b600(this_ptr_00,0);
-        core_morph_cpp_CMorph_FUN_0052b600(this_ptr_00,1);
-        core_morph_cpp_CMorph_FUN_0052bae0(this_ptr_00);
+        core_morph_cpp_CMorph_updateModelFromDeformable_FUN_0052b600
+                  (this_ptr_00,0,&(this_ptr->base).base.model,0);
+        core_morph_cpp_CMorph_updateModelFromDeformable_FUN_0052b600
+                  (this_ptr_00,1,
+                   (CDeformableModelInstance *)(*(int *)(this_ptr->unk + 0x60) + 0x158),0);
+        core_morph_cpp_CMorph_render_FUN_0052bae0(this_ptr_00,this_ptr->morph_time);
         core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
         return iVar1;
       }

@@ -1,0 +1,112 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 15,
+    "complexity_score": 42,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 7,
+    "suspect_count": 3,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
+    "total_lines": 22
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004ee340",
+    "address_range": [
+      [
+        "004ee340",
+        "004ee36c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_gore.cpp_convertVecFloatToFixed_FUN_004ee340",
+    "signature": "CVector3f * __cdecl core_gore_cpp_convertVecFloatToFixed_FUN_004ee340(CVector3f *src,CVector3i *dst)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0065f028",
+      "name": "FLOAT_0065f028",
+      "type": "float",
+      "value": "65536"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.0,
+    "instruction_count": 14,
+    "opcode_distribution": {
+      "COPY": 62,
+      "FLOAT2FLOAT": 6,
+      "FLOAT_MULT": 3,
+      "INT_ADD": 8,
+      "INT_SUB": 1,
+      "LOAD": 7,
+      "RETURN": 1,
+      "ROUND": 3,
+      "STORE": 4,
+      "TRUNC": 3
+    },
+    "pcode_op_count": 98
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "src",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "dst",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3i *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 5,
+      "match": "ROUND",
+      "text": "dst->x = (int)ROUND(src->x * 65536.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 6,
+      "match": "ROUND",
+      "text": "dst->y = (int)ROUND(src->y * 65536.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 7,
+      "match": "ROUND",
+      "text": "dst->z = (int)ROUND(src->z * 65536.0f);",
+      "type": "decompiler_intrinsic"
+    }
+  ]
+}

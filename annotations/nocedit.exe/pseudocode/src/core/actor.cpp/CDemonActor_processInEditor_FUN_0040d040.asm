@@ -22,7 +22,7 @@
 ; Referenced Globals:
 ;   CKeys* g_CKeysPtr = 02dcd7d4
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
-;   _BIT_INTEGER g_MouseButtonFlags
+;   _BIT_INTEGER32 g_MouseButtonFlags
 ;   CKeys g_CKeysInstance
 ;   CDemonMission g_CDemonMissionInstance
 ;

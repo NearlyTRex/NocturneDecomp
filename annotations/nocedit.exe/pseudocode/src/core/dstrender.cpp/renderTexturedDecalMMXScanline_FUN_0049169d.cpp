@@ -55,8 +55,8 @@ void __cdecl core_dstrender_cpp_renderTexturedDecalMMXScanline_FUN_0049169d(SEdg
       if (*(int *)((int)g_PerspectiveScanlineZPtr + uVar6) <= (int)uVar1) {
         *(uint *)((int)g_PerspectiveScanlineColorPtr + uVar6) =
              g_Hardware32BitPalette
-             [*(byte *)((uVar3 >> g_TextureShift1 & (uint)g_TextureMask1) +
-                        (uVar4 >> g_TextureShift2 & (uint)g_TextureMask2) +
+             [*(byte *)((uVar3 >> g_TextureShift1.mm & g_TextureMask1.u32[0]) +
+                        (uVar4 >> g_TextureShift2.mm & g_TextureMask2.u32[0]) +
                        (int)g_CurrentTextureData)];
       }
       uVar6 = uVar6 + 4;

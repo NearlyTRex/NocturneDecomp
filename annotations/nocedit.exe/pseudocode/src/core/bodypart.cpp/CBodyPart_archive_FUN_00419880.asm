@@ -32,7 +32,7 @@
 ;   core_actor.cpp_archiveInteger_FUN_0040b7f0
 ;   core_actor.cpp_archiveSimBox_FUN_0040bd70
 ;   core_actor.cpp_CDemonActor_archive_FUN_0040c1c0
-;   core_bodypart.cpp_CBodyPart_FUN_0041a050
+;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050
 ;   core_bodypart.cpp_CBodyPart_setCounts_FUN_004191d0
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
@@ -242,7 +242,7 @@ section .text
     PUSH EDI                            ; 00419aa5
     PUSH EBX                            ; 00419aa6
     CALL core_bodypart.cpp_CBodyPart_setCounts_FUN_004191d0 ; 00419aa7
-        ;   XREF to: 004191d0 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_setCounts_FUN_004191d0(CBodyPart * this_ptr)
+        ;   XREF to: 004191d0 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_setCounts_FUN_004191d0(CBodyPart * this_ptr, int vertex_count, int tri_count)
     XOR EDI,EDI                         ; 00419aac
     MOV EBP,dword ptr [EBX + 0x174]     ; 00419aae
     ADD ESP,0xc                         ; 00419ab4
@@ -345,8 +345,8 @@ section .text
     MOV EBX,EBX                         ; 00419bae
     PUSH EBX                            ; 00419bb0
         ;   Label: LAB_00419bb0
-    CALL core_bodypart.cpp_CBodyPart_FUN_0041a050 ; 00419bb1
-        ;   XREF to: 0041a050 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_FUN_0041a050(CBodyPart * this_ptr)
+    CALL core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050 ; 00419bb1
+        ;   XREF to: 0041a050 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050(CBodyPart * this_ptr)
     ADD ESP,0x4                         ; 00419bb6
     JMP 0x004199f0                      ; 00419bb9
         ;   XREF to: 004199f0 (UNCONDITIONAL_JUMP)  ; LAB_004199f0

@@ -2,21 +2,19 @@
 // Address: 004191d0
 // Address Range: [[004191d0, 0041933d]]
 // Convention: __cdecl
-// Signature: void __cdecl core_bodypart_cpp_CBodyPart_setCounts_FUN_004191d0(CBodyPart *this_ptr)
+// Signature: void __cdecl core_bodypart_cpp_CBodyPart_setCounts_FUN_004191d0(CBodyPart *this_ptr,int vertex_count,int tri_count)
 
 #include "nocturne.h"
 
-void __cdecl core_bodypart_cpp_CBodyPart_setCounts_FUN_004191d0(CBodyPart *this_ptr)
+void __cdecl core_bodypart_cpp_CBodyPart_setCounts_FUN_004191d0(CBodyPart *this_ptr,int vertex_count,int tri_count)
 
 {
   CVector3i *pCVar1;
   SInputFace *pSVar2;
   int *piVar3;
-  int in_stack_00000008;
-  int in_stack_0000000c;
   
-  this_ptr->vertex_count = in_stack_00000008;
-  this_ptr->tri_count = in_stack_0000000c;
+  this_ptr->vertex_count = vertex_count;
+  this_ptr->tri_count = tri_count;
   pCVar1 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
                      (this_ptr->vertices,this_ptr->vertex_count * 0xc,"..\\core\\bodypart.cpp",
                       0xa8);

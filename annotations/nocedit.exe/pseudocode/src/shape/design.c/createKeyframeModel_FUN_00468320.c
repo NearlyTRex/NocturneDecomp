@@ -6,6 +6,7 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 /* WARNING: Type propagation algorithm not settling */
 
 void __cdecl shape_design_c_createKeyframeModel_FUN_00468320(void)
@@ -19,7 +20,6 @@ void __cdecl shape_design_c_createKeyframeModel_FUN_00468320(void)
   char (*pacVar6) [16];
   byte bVar7;
   double dVar8;
-  uint uVar9;
   ulonglong in_stack_fffffd94;
   SMRGLKeyframeModel local_264;
   char local_10c [80];
@@ -100,15 +100,13 @@ void __cdecl shape_design_c_createKeyframeModel_FUN_00468320(void)
         dVar8 = _strtod(pcVar5);
         local_14 = (float)dVar8;
         if ((0.0 < local_14) && (local_14 < (float)127)) {
-          uVar9 = 0x4684ef;
-          dVar8 = round((double)(local_14 * (float)65536));
-          local_264.cycle_length = (int)ROUND(dVar8);
+          local_264.cycle_length = (int)ROUND(ROUND(local_14 * (float)65536));
           local_264.header.base.type = 0x20;
           local_1c = engine_dosio_c_getFile_FUN_00481a50("models",local_10c,"wb");
           if (local_1c == (_FILE *)0x0) {
             g_CurrentFilename = "..\\shape\\design.c";
             g_CurrentLineNumber = 0x2277;
-            core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to write keyframed model",uVar9);
+            core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to write keyframed model");
           }
           _fwrite(&local_264,1,0x158,local_1c);
           local_18 = 0;

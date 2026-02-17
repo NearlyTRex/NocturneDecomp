@@ -9,7 +9,7 @@
 ;
 ; XREF[3]:
 ;   core_charactr.cpp_CCharacter_renderEthereal_FUN_0042af60 at 0042b04f
-;   core_morph.cpp_FUN_0052bcb0 at 0052c066
+;   core_morph.cpp_CMorph_editMorph_FUN_0052bcb0 at 0052c066
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150 at 005a0163
 ;
 ; Called Functions:

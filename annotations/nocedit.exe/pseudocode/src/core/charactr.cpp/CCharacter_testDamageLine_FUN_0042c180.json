@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 215,
-    "complexity_score": 89,
+    "complexity_score": 108,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 5,
-    "pseudocode_lines": 64,
-    "suspect_count": 2,
+    "pseudocode_lines": 73,
+    "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 279
+    "total_lines": 288
   },
   "cross_references": [],
   "function": {
@@ -45,7 +45,7 @@
     {
       "addr": "004edbb0",
       "is_variadic": false,
-      "name": "core_gore.cpp_CGore_FUN_004edbb0"
+      "name": "core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0"
     },
     {
       "addr": "005fe6b0",
@@ -221,16 +221,23 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 40,
+      "line": 42,
       "match": "SQRT",
-      "text": "fVar1 = SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2);",
+      "text": "fVar1 = SQRT(fStack_70 * fStack_70 + fStack_78 * fStack_78 + fStack_74 * fStack_74);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
+      "line": 43,
       "match": "ROUND",
-      "text": "iStack_1c = (int)ROUND(dVar6);",
+      "text": "iStack_18 = (int)ROUND(ROUND((double)damage_info->damage_amount * 0.40000000000000002));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 43,
+      "match": "ROUND",
+      "text": "iStack_18 = (int)ROUND(ROUND((double)damage_info->damage_amount * 0.40000000000000002));",
       "type": "decompiler_intrinsic"
     }
   ],

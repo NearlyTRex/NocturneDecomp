@@ -43,9 +43,9 @@ int __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0(CDemon
       ppvVar5 = (void **)((int)ppvVar5 + (uint)bVar8 * -2 + 1);
       ppvVar6 = (void **)((int)ppvVar6 + (uint)bVar8 * -2 + 1);
     }
-    g_RedBitPosition = g_BackgroundSavedRedBitPosition;
-    g_GreenBitPosition = g_BackgroundSavedGreenBitPosition;
-    g_BlueBitPosition = g_BackgroundSavedBlueBitPosition;
+    g_RedBitPosition.dword = g_BackgroundSavedRedBitPosition;
+    g_GreenBitPosition.dword = g_BackgroundSavedGreenBitPosition;
+    g_BlueBitPosition.dword = g_BackgroundSavedBlueBitPosition;
     in_EAX = g_BackgroundSavedBlueBitPosition;
     if (restore_zbuffer != 0) {
       iVar3 = 0;

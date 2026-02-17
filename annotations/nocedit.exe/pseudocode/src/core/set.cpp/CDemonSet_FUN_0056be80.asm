@@ -47,7 +47,7 @@
 ;   core_dlight.cpp_CDemonLight_clearCircularShadowMapEdges_FUN_004735c0
 ;   core_dlight.cpp_CDemonLight_endScene_FUN_00472d30
 ;   core_fire.cpp_CFireEffect_render_FUN_004c7180
-;   core_gore.cpp_CGore_FUN_004ed7b0
+;   core_gore.cpp_CGore_renderParticles_FUN_004ed7b0
 ;   core_set.cpp_CDemonSet_FUN_0056aca0
 ;   core_set.cpp_CDemonSet_FUN_0056fbd0
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190
@@ -240,8 +240,8 @@ section .text
     MOV EBX,dword ptr [0x0067b9a0]      ; 0056c05c | g_CGoreInstance | g_CGorePtr
         ;   Label: LAB_0056c05c
     PUSH EBX                            ; 0056c062 | g_CGoreInstance
-    CALL core_gore.cpp_CGore_FUN_004ed7b0 ; 0056c063
-        ;   XREF to: 004ed7b0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004ed7b0(CGore * this_ptr)
+    CALL core_gore.cpp_CGore_renderParticles_FUN_004ed7b0 ; 0056c063
+        ;   XREF to: 004ed7b0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_renderParticles_FUN_004ed7b0(CGore * this_ptr)
     ADD ESP,0x4                         ; 0056c068
     MOV EDI,dword ptr [0x0067a3d0]      ; 0056c06b | g_CFireEffectPtr
     PUSH EDI                            ; 0056c071 | g_CFireEffectInstance
@@ -305,8 +305,8 @@ section .text
     MOV ECX,dword ptr [0x0067b9a0]      ; 0056c105 | g_CGoreInstance | g_CGorePtr
         ;   Label: LAB_0056c105
     PUSH ECX                            ; 0056c10b | g_CGoreInstance
-    CALL core_gore.cpp_CGore_FUN_004ed7b0 ; 0056c10c
-        ;   XREF to: 004ed7b0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004ed7b0(CGore * this_ptr)
+    CALL core_gore.cpp_CGore_renderParticles_FUN_004ed7b0 ; 0056c10c
+        ;   XREF to: 004ed7b0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_renderParticles_FUN_004ed7b0(CGore * this_ptr)
     ADD ESP,0x4                         ; 0056c111
     MOV EBX,dword ptr [0x0067a3d0]      ; 0056c114 | g_CFireEffectInstance | g_CFireEffectPtr
     PUSH EBX                            ; 0056c11a | g_CFireEffectInstance

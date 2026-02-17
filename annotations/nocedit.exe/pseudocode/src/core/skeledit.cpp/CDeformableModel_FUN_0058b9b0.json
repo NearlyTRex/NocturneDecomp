@@ -4,32 +4,50 @@
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 40,
+        "line": 38,
         "message": "no matching function for call to '__STK'"
       },
       {
         "category": "format_error",
         "column": 85,
-        "line": 51,
+        "line": 49,
+        "message": "format specifies type 'int *' but the argument has type 'ushort *' (aka 'unsigned short *') [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 46,
+        "line": 50,
         "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 48,
-        "line": 52,
-        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 57,
-        "line": 52,
+        "column": 55,
+        "line": 50,
         "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 79,
-        "line": 52,
-        "message": "format specifies type 'int *' but the argument has type 'ushort *' (aka 'unsigned short *') [-Werror,-Wformat]"
+        "column": 64,
+        "line": 50,
+        "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 73,
+        "line": 50,
+        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 82,
+        "line": 50,
+        "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 91,
+        "line": 50,
+        "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -37,21 +55,18 @@
   },
   "complexity": {
     "assembly_lines": 243,
-    "complexity_score": 299,
+    "complexity_score": 216,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 3,
-    "pseudocode_lines": 109,
-    "suspect_count": 16,
+    "pseudocode_lines": 101,
+    "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
-      "stack_param",
-      "suspect_float",
-      "unaffected_reg",
-      "warning_type_propagation"
+      "stack_param"
     ],
-    "total_lines": 352
+    "total_lines": 344
   },
   "cross_references": [
     {
@@ -310,115 +325,73 @@
   },
   "suspects": [
     {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 13,
-      "match": "unaff_EBP",
-      "text": "float unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 13,
       "match": "in_stack_00000008",
       "text": "_FILE *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 36,
+      "line": 34,
       "match": "in_stack_00000008",
-      "text": "iVar4 = _fgetc(in_stack_00000008);",
+      "text": "iVar2 = _fgetc(in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 44,
+      "line": 42,
       "match": "in_stack_00000008",
-      "text": "iVar5 = _fscanf(in_stack_00000008,\"%d,%d,%f,%f,%d,%f,%f,%d,%f,%f\\n\",&local_28,local_3c,",
+      "text": "iVar3 = _fscanf(in_stack_00000008,\"%d,%d,%f,%f,%d,%f,%f,%d,%f,%f\\n\",&local_28,local_3c,",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 58,
-      "match": "(float *)((int)",
-      "text": "if (*(float *)((int)local_54 + iVar5) < local_18) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 59,
-      "match": "(float *)((int)",
-      "text": "local_18 = *(float *)((int)local_54 + iVar5);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 75,
+      "line": 72,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)this_ptr->index_data_ptr[0] + iVar4) = local_28;",
+      "text": "*(int *)((int)this_ptr->index_data_ptr[0] + iVar2) = local_28;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 77,
+      "line": 74,
       "match": "(ushort *)((int)",
-      "text": "puVar6 = (ushort *)((int)&(pSVar2->vertex_indices).vertex_index_0 + iVar8);",
+      "text": "puVar4 = (ushort *)((int)&(pSVar1->vertex_indices).vertex_index_0 + iVar6);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 79,
+      "line": 76,
       "match": "(ushort *)((int)",
-      "text": "*puVar6 = *(ushort *)((int)local_34 + iVar5);",
+      "text": "*puVar4 = *(ushort *)((int)local_3c + iVar3);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 80,
-      "match": "(float *)((int)",
-      "text": "fVar1 = *(float *)((int)local_54 + iVar5 + 8U);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 82,
-      "match": "8.148736e-39",
-      "text": "local_54[1] = 8.148736e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 85,
-      "match": "8.148745e-39",
-      "text": "local_54[0] = 8.148745e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 86,
-      "match": "unaff_EBP",
-      "text": "dVar10 = round((double)((fVar1 - unaff_EBP) * fVar3));",
-      "type": "unaffected_reg"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 87,
+      "line": 77,
       "match": "ROUND",
-      "text": "local_20 = (int)ROUND(dVar9);",
+      "text": "local_20 = (int)ROUND(ROUND((*(float *)(local_44 + iVar3 + -4) - local_24) *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 88,
+      "line": 77,
       "match": "ROUND",
-      "text": "local_14 = (int)ROUND(dVar10);",
+      "text": "local_20 = (int)ROUND(ROUND((*(float *)(local_44 + iVar3 + -4) - local_24) *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 79,
+      "match": "ROUND",
+      "text": "local_14 = (int)ROUND(ROUND((*(float *)(local_50 + iVar3 + -4) - local_18) *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 79,
+      "match": "ROUND",
+      "text": "local_14 = (int)ROUND(ROUND((*(float *)(local_50 + iVar3 + -4) - local_18) *",
       "type": "decompiler_intrinsic"
     }
   ]

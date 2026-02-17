@@ -4,13 +4,13 @@
       {
         "category": "incompatible_types",
         "column": 17,
-        "line": 123,
+        "line": 122,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       },
       {
         "category": "incompatible_types",
         "column": 15,
-        "line": 163,
+        "line": 159,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       }
     ],
@@ -19,19 +19,18 @@
   },
   "complexity": {
     "assembly_lines": 331,
-    "complexity_score": 221,
+    "complexity_score": 212,
     "cross_reference_count": 0,
     "function_call_count": 14,
     "global_count": 6,
-    "pseudocode_lines": 161,
+    "pseudocode_lines": 157,
     "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
-      "suspect_float",
       "warning_type_propagation"
     ],
-    "total_lines": 492
+    "total_lines": 488
   },
   "cross_references": [],
   "function": {
@@ -247,30 +246,30 @@
   "suspects": [
     {
       "description": "Type propagation did not converge",
-      "line": 2,
+      "line": 3,
       "match": "WARNING: Type propagation algorithm not settling",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
     },
     {
       "description": "Complex pointer cast",
-      "line": 108,
+      "line": 107,
       "match": "(CGhoul *)((int)",
       "text": "pCVar5 = (CGhoul *)((int)&(pCVar5->base).base.base.orient + 8);",
       "type": "pointer_cast"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 124,
-      "match": "7.00649e-44",
-      "text": "spawn_radius = 7.00649e-44;",
-      "type": "suspect_float"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 123,
+      "match": "ROUND",
+      "text": "*(int *)(this_ptr->unk1 + 8) = (int)ROUND(ROUND(local_14 * fVar4));",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 127,
+      "line": 123,
       "match": "ROUND",
-      "text": "*(int *)(this_ptr->unk1 + 8) = (int)ROUND(dVar10);",
+      "text": "*(int *)(this_ptr->unk1 + 8) = (int)ROUND(ROUND(local_14 * fVar4));",
       "type": "decompiler_intrinsic"
     }
   ],

@@ -14,9 +14,9 @@ void __cdecl core_ammobox_cpp_CAmmoBox_FUN_00411700(CAmmoBox *this_ptr,CInventor
   CAmmo *this_ptr_00;
   char *pcVar3;
   
-  if ((CDemonActor *)this_ptr->item != (CDemonActor *)0x0) {
-    core_inv_cpp_CInventory_addItem_FUN_004fd600(inventory,(CDemonActor *)this_ptr->item,1);
-    this_ptr->item = (char *)0x0;
+  if (this_ptr->item != (CDemonActor *)0x0) {
+    core_inv_cpp_CInventory_addItem_FUN_004fd600(inventory,this_ptr->item,1);
+    this_ptr->item = (CDemonActor *)0x0;
     this_ptr->ammo_count = 0;
     return;
   }

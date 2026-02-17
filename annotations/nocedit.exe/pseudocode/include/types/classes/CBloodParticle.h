@@ -8,6 +8,7 @@
 // Ghidra size: 0x40 (64 bytes)
 typedef struct CBloodParticle {
     CParticle base; // 0x0
-    char field1_0x38[8]; // 0x38
+    int blood_type; // 0x38
+    int texture_index; // 0x3c
 } CBloodParticle;
 

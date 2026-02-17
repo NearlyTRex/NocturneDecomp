@@ -2,10 +2,118 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 45,
-        "line": 283,
-        "message": "member reference base type 'double' is not a structure or union"
+        "category": "undeclared_identifier",
+        "column": 57,
+        "line": 253,
+        "message": "use of undeclared identifier 'stack0xfffffe68'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 57,
+        "line": 253,
+        "message": "use of undeclared identifier 'stack0xfffffe68'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 57,
+        "line": 253,
+        "message": "use of undeclared identifier 'stack0xfffffe68'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 57,
+        "line": 253,
+        "message": "use of undeclared identifier 'stack0xfffffe68'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 57,
+        "line": 253,
+        "message": "use of undeclared identifier 'stack0xfffffe68'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 57,
+        "line": 253,
+        "message": "use of undeclared identifier 'stack0xfffffe68'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 57,
+        "line": 253,
+        "message": "use of undeclared identifier 'stack0xfffffe68'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 57,
+        "line": 253,
+        "message": "use of undeclared identifier 'stack0xfffffe68'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 57,
+        "line": 253,
+        "message": "use of undeclared identifier 'stack0xfffffe68'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 57,
+        "line": 256,
+        "message": "use of undeclared identifier 'stack0xfffffe6c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 57,
+        "line": 256,
+        "message": "use of undeclared identifier 'stack0xfffffe6c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 57,
+        "line": 256,
+        "message": "use of undeclared identifier 'stack0xfffffe6c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 57,
+        "line": 256,
+        "message": "use of undeclared identifier 'stack0xfffffe6c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 57,
+        "line": 256,
+        "message": "use of undeclared identifier 'stack0xfffffe6c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 57,
+        "line": 256,
+        "message": "use of undeclared identifier 'stack0xfffffe6c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 57,
+        "line": 256,
+        "message": "use of undeclared identifier 'stack0xfffffe6c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 57,
+        "line": 256,
+        "message": "use of undeclared identifier 'stack0xfffffe6c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 57,
+        "line": 256,
+        "message": "use of undeclared identifier 'stack0xfffffe6c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 57,
+        "line": 259,
+        "message": "use of undeclared identifier 'stack0xfffffe70'"
       }
     ],
     "success": false,
@@ -13,18 +121,18 @@
   },
   "complexity": {
     "assembly_lines": 1395,
-    "complexity_score": 923,
+    "complexity_score": 975,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 22,
-    "pseudocode_lines": 728,
-    "suspect_count": 18,
+    "pseudocode_lines": 700,
+    "suspect_count": 26,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
-      "unknown_field"
+      "stack_ref"
     ],
-    "total_lines": 2123
+    "total_lines": 2095
   },
   "cross_references": [
     {
@@ -952,128 +1060,184 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 121,
+      "line": 117,
       "match": "(int *)((int)",
-      "text": "local_134[(uint)bVar12 * -2] = *(int *)((int)&local_150 + (uint)bVar12 * -8 + 4);",
+      "text": "local_134[(uint)bVar6 * -2] = *(int *)((int)&local_150 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 123,
+      "line": 119,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)&local_150 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);",
+      "text": "*(int *)((int)&local_150 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 132,
+      "line": 125,
       "match": "ROUND",
-      "text": "local_13c = (int)ROUND(dVar14);",
+      "text": "local_138 = (int)ROUND(ROUND(((float)local_138 * fVar1 - (this_ptr->bbox_min).x) /",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 136,
+      "line": 125,
       "match": "ROUND",
-      "text": "local_13c = (int)ROUND(dVar14);",
+      "text": "local_138 = (int)ROUND(ROUND(((float)local_138 * fVar1 - (this_ptr->bbox_min).x) /",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 141,
+      "line": 127,
       "match": "ROUND",
-      "text": "iVar9 = (int)ROUND(dVar14);",
+      "text": "local_134[0] = (int)ROUND(ROUND(((float)local_134[0] * fVar1 - (this_ptr->bbox_min).y) /",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 146,
+      "line": 127,
       "match": "ROUND",
-      "text": "local_140 = (int)ROUND(dVar14);",
+      "text": "local_134[0] = (int)ROUND(ROUND(((float)local_134[0] * fVar1 - (this_ptr->bbox_min).y) /",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 129,
+      "match": "ROUND",
+      "text": "local_13c = (int)ROUND(ROUND(fov_or_radius * 256.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 129,
+      "match": "ROUND",
+      "text": "local_13c = (int)ROUND(ROUND(fov_or_radius * 256.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 130,
+      "match": "ROUND",
+      "text": "local_134[1] = (int)ROUND(ROUND(((float)local_134[1] * fVar1 - (this_ptr->bbox_min).z) /",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 130,
+      "match": "ROUND",
+      "text": "local_134[1] = (int)ROUND(ROUND(((float)local_134[1] * fVar1 - (this_ptr->bbox_min).z) /",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 245,
+      "match": "ROUND",
+      "text": "local_114 = (int)ROUND(ROUND((double)local_138 +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 245,
+      "match": "ROUND",
+      "text": "local_114 = (int)ROUND(ROUND((double)local_138 +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 246,
+      "match": "&stack0xfffffe68",
+      "text": "(double)*(int *)((int)&stack0xfffffe68 + iVar3) /",
+      "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 264,
+      "line": 246,
       "match": "(int *)((int)",
-      "text": "iVar1 = *(int *)((int)local_1a8 + iVar8 + 4);",
+      "text": "(double)*(int *)((int)&stack0xfffffe68 + iVar3) /",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 248,
+      "match": "ROUND",
+      "text": "local_110 = (int)ROUND(ROUND((double)local_134[0] +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 248,
+      "match": "ROUND",
+      "text": "local_110 = (int)ROUND(ROUND((double)local_134[0] +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 249,
+      "match": "&stack0xfffffe6c",
+      "text": "(double)*(int *)((int)&stack0xfffffe6c + iVar3) /",
+      "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 265,
+      "line": 249,
       "match": "(int *)((int)",
-      "text": "dVar17 = (double)*(int *)((int)local_1a8 + iVar8 + 8) / dStack_1c0;",
+      "text": "(double)*(int *)((int)&stack0xfffffe6c + iVar3) /",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 251,
+      "match": "ROUND",
+      "text": "local_10c = (int)ROUND(ROUND((double)local_134[1] +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 251,
+      "match": "ROUND",
+      "text": "local_10c = (int)ROUND(ROUND((double)local_134[1] +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 252,
+      "match": "&stack0xfffffe70",
+      "text": "(double)*(int *)((int)&stack0xfffffe70 + iVar3) /",
+      "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 273,
+      "line": 252,
       "match": "(int *)((int)",
-      "text": "((double)local_150.z + (double)*(int *)((int)local_1a8 + iVar8) / dVar14);",
+      "text": "(double)*(int *)((int)&stack0xfffffe70 + iVar3) /",
       "type": "pointer_cast"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 276,
-      "match": "._4_4_",
-      "text": "dStack_1c0 = (double)CONCAT44(dStack_1c0._4_4_,0x4982ca);",
-      "type": "unknown_field"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 276,
-      "match": "CONCAT44",
-      "text": "dStack_1c0 = (double)CONCAT44(dStack_1c0._4_4_,0x4982ca);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 278,
-      "match": "ROUND",
-      "text": "local_134[1] = (int)ROUND(dVar15);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 279,
-      "match": "ROUND",
-      "text": "local_134[2] = (int)ROUND(dVar16);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 280,
-      "match": "ROUND",
-      "text": "local_134[3] = (int)ROUND(dVar17);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 427,
+      "line": 400,
       "match": "SBORROW4",
-      "text": "bVar13 = SBORROW4(local_ac,iVar7);",
+      "text": "bVar7 = SBORROW4(local_90,iVar2);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 435,
+      "line": 408,
       "match": "SBORROW4",
-      "text": "bVar13 = SBORROW4(iVar8,iVar7);",
+      "text": "bVar7 = SBORROW4(iVar3,iVar2);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 557,
+      "line": 530,
       "match": "SBORROW4",
-      "text": "bVar13 = SBORROW4(local_9c,iVar7);",
+      "text": "bVar7 = SBORROW4(local_80,iVar2);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 565,
+      "line": 538,
       "match": "SBORROW4",
-      "text": "bVar13 = SBORROW4(iVar8,iVar7);",
+      "text": "bVar7 = SBORROW4(iVar3,iVar2);",
       "type": "decompiler_intrinsic"
     }
   ]

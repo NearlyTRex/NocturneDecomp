@@ -21,8 +21,8 @@
 ;   TerminatedCString s_Nocturne_Editor_006581b7
 ;   char* g_ApplicationTimerTitle = 006581b7
 ;   int g_CalibratedCPUSpeed
-;   LARGE_INTEGER g_PerformanceCounter
-;   LARGE_INTEGER g_PerformanceFrequency
+;   _struct_19 g_PerformanceCounter
+;   _struct_19 g_PerformanceFrequency
 ;   undefined4 g_PerformanceFrequency+4
 ;   double g_TimerCalibration
 ;   BOOL g_UseMultimediaTimer

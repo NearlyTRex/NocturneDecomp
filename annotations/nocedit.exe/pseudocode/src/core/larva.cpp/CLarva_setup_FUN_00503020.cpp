@@ -21,6 +21,6 @@ void __cdecl core_larva_cpp_CLarva_setup_FUN_00503020(CLarva *this_ptr)
   this_ptr->unk[3] = '\0';
   core_enemy_cpp_CEnemy_setup_FUN_004a9650(&this_ptr->base);
   fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,30.0);
-  (this_ptr->base).unk2 = (int)fVar1;
+  (this_ptr->base).attack_cooldown = fVar1;
   return;
 }

@@ -29,16 +29,12 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053e220(CDemonMission *this_ptr
   float fStack_90;
   float fStack_8c;
   float fStack_88;
-  float fStack_84;
-  float fStack_80;
-  float fStack_7c;
+  CVector3f CStack_84;
   CVector3f CStack_78;
   float fStack_6c;
   float fStack_68;
   float fStack_64;
-  float fStack_60;
-  float fStack_5c;
-  float fStack_58;
+  CVector3f CStack_60;
   CVector3i CStack_54;
   CVector3i CStack_48;
   float fStack_3c;
@@ -181,7 +177,8 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053e220(CDemonMission *this_ptr
       fStack_c4 = fStack_c4 - g_CGamePtr->delta_time_float;
       if (fStack_c4 < 0.0) {
         fStack_c4 = fStack_c4 + 0.1f;
-        core_gore_cpp_CGore_FUN_004edaa0(g_CGorePtr);
+        core_gore_cpp_CGore_spawnBloodParticles_FUN_004edaa0
+                  (g_CGorePtr,(CVector3f *)(local_bc + 4),(CVector3f *)0x0,0);
       }
     }
     iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_RETURN);
@@ -191,12 +188,13 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053e220(CDemonMission *this_ptr
     else {
       local_bc._0_4_ = (float)local_bc._0_4_ - g_CGamePtr->delta_time_float;
       if ((float)local_bc._0_4_ < 0.0) {
-        fStack_58 = (float)10;
-        fStack_60 = (pCStack_18->base).orient_matrix.m[0].z * fStack_58;
-        fStack_5c = (pCStack_18->base).orient_matrix.m[1].z * fStack_58;
-        fStack_58 = fStack_58 * (pCStack_18->base).orient_matrix.m[2].z;
+        CStack_60.z = (float)10;
+        CStack_60.x = (pCStack_18->base).orient_matrix.m[0].z * CStack_60.z;
+        CStack_60.y = (pCStack_18->base).orient_matrix.m[1].z * CStack_60.z;
+        CStack_60.z = CStack_60.z * (pCStack_18->base).orient_matrix.m[2].z;
         local_bc._0_4_ = (float)local_bc._0_4_ + 0.1f;
-        core_gore_cpp_CGore_FUN_004edaa0(g_CGorePtr);
+        core_gore_cpp_CGore_spawnBloodParticles_FUN_004edaa0
+                  (g_CGorePtr,(CVector3f *)(local_bc + 4),&CStack_60,0);
       }
     }
     iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_P);
@@ -217,10 +215,10 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053e220(CDemonMission *this_ptr
         fStack_34 = CStack_9c.z - CStack_78.z;
         fStack_68 = fStack_38 * fStack_14;
         fStack_64 = fStack_34 * fStack_14;
-        fStack_84 = CStack_78.x + fStack_6c;
-        fStack_80 = CStack_78.y + fStack_68;
-        fStack_7c = CStack_78.z + fStack_64;
-        core_gore_cpp_CGore_FUN_004ede30(g_CGorePtr);
+        CStack_84.x = CStack_78.x + fStack_6c;
+        CStack_84.y = CStack_78.y + fStack_68;
+        CStack_84.z = CStack_78.z + fStack_64;
+        core_gore_cpp_CGore_createBloodPool_FUN_004ede30(g_CGorePtr,&CStack_84,0);
       }
     }
     iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_R);
@@ -228,7 +226,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053e220(CDemonMission *this_ptr
       iVar4 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                         (g_CEditorToolsPtr,"Reset gore?");
       if (iVar4 != 0) {
-        core_gore_cpp_CGore_FUN_004ed760(g_CGorePtr);
+        core_gore_cpp_CGore_reset_FUN_004ed760(g_CGorePtr);
         core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50
                   (g_CDemonSetPtr,g_CDemonSetPtr->selected_camera_index);
       }

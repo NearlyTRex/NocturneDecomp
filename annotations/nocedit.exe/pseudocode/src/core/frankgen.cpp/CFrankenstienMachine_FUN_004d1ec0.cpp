@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl core_frankgen_cpp_CFrankenstienMachine_FUN_004d1ec0(CFrankenstienMachine *this_ptr)
 
 {
@@ -17,7 +19,6 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_FUN_004d1ec0(CFrankenstienMa
   fVar1 = in_stack_00000008 * in_stack_0000000c + (float)this_ptr->unk3;
   this_ptr->unk3 = (int)fVar1;
   dVar2 = floor((double)fVar1);
-  dVar2 = round(dVar2);
-  this_ptr->unk3 = (int)((float)this_ptr->unk3 - (float)(int)ROUND(dVar2));
+  this_ptr->unk3 = (int)((float)this_ptr->unk3 - (float)(int)ROUND(ROUND(dVar2)));
   return;
 }

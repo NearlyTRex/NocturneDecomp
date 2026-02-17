@@ -6,17 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 137,
+    "complexity_score": 173,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 15,
-    "pseudocode_lines": 67,
-    "suspect_count": 6,
+    "pseudocode_lines": 68,
+    "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast"
+      "pointer_cast",
+      "stack_param"
     ],
-    "total_lines": 220
+    "total_lines": 221
   },
   "cross_references": [],
   "function": {
@@ -250,46 +251,67 @@
   },
   "suspects": [
     {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000018",
+      "text": "int *in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 29,
+      "line": 31,
       "match": "ROUND",
-      "text": "g_WaveOutBufferSize = (int)ROUND(dVar7);",
+      "text": "(int)ROUND(ROUND(((float)g_WaveOutSampleRate * fVar2) / (float)g_WaveOutNumBuffers));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 31,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(((float)g_WaveOutSampleRate * fVar2) / (float)g_WaveOutNumBuffers));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 40,
+      "line": 42,
       "match": "(HGLOBAL *)((int)",
       "text": "*(HGLOBAL *)((int)g_WaveOutBufferHandles + iVar6) = pvVar3;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 45,
       "match": "(LPVOID *)((int)",
       "text": "*(LPVOID *)((int)g_WaveOutBuffers + iVar6) = pvVar4;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 46,
+      "line": 48,
       "match": "(HGLOBAL *)((int)",
       "text": "*(HGLOBAL *)((int)g_WaveOutHeaderHandles + iVar6) = pvVar3;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 51,
       "match": "(HGLOBAL *)((int)",
       "text": "pvVar4 = (*g_GlobalLockFunc)(*(HGLOBAL *)((int)g_WaveOutHeaderHandles + iVar6));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 52,
       "match": "(LPVOID *)((int)",
       "text": "*(LPVOID *)((int)g_WaveOutHeaders + iVar6) = pvVar4;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 65,
+      "match": "in_stack_00000018",
+      "text": "*in_stack_00000018 = g_WaveOutBufferSize;",
+      "type": "stack_param"
     }
   ],
   "vtable_info": {

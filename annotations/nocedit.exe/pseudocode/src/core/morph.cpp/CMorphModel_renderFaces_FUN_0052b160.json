@@ -1,0 +1,237 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 105,
+    "complexity_score": 79,
+    "cross_reference_count": 1,
+    "function_call_count": 8,
+    "global_count": 5,
+    "pseudocode_lines": 39,
+    "suspect_count": 3,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "pointer_cast"
+    ],
+    "total_lines": 144
+  },
+  "cross_references": [
+    {
+      "addr": "0052af30",
+      "from_addr": "0052af60",
+      "name": "core_morph.cpp_CMorphModel_render_FUN_0052af30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0052b160",
+    "address_range": [
+      [
+        "0052b160",
+        "0052b270"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_morph.cpp_CMorphModel_renderFaces_FUN_0052b160",
+    "signature": "void __cdecl core_morph_cpp_CMorphModel_renderFaces_FUN_0052b160(CMorphModel *this_ptr,float morph_t)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe6b0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "0048db80",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80"
+    },
+    {
+      "addr": "0048caa0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0"
+    },
+    {
+      "addr": "0048da80",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80"
+    },
+    {
+      "addr": "0048aeb0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0"
+    },
+    {
+      "addr": "0048ca60",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60"
+    },
+    {
+      "addr": "0048ca00",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00"
+    },
+    {
+      "addr": "0048d6c0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063a437",
+      "name": "DOUBLE_0063a437",
+      "type": "double",
+      "value": "65535"
+    },
+    {
+      "addr": "0063a43f",
+      "name": "FLOAT_0063a43f",
+      "type": "float",
+      "value": "2"
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr2",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02d051f4",
+      "name": "g_PerspectiveReciprocal",
+      "type": "float",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0052af60",
+        "call_type": "direct",
+        "caller": "core_morph.cpp_CMorphModel_render_FUN_0052af30",
+        "estimated_params": 2,
+        "instructions_analyzed": 5,
+        "reg_params": [],
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.224719101123595,
+    "instruction_count": 89,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BOOL_OR": 1,
+      "CALL": 9,
+      "CBRANCH": 3,
+      "COPY": 115,
+      "FLOAT2FLOAT": 3,
+      "FLOAT_MULT": 2,
+      "FLOAT_SUB": 1,
+      "INT_ADD": 31,
+      "INT_AND": 55,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 43,
+      "INT_LEFT": 1,
+      "INT_LESS": 4,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 7,
+      "INT_OR": 6,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 13,
+      "INT_SEXT": 6,
+      "INT_SLESS": 23,
+      "INT_SUB": 35,
+      "INT_XOR": 3,
+      "LOAD": 17,
+      "POPCOUNT": 21,
+      "RETURN": 1,
+      "ROUND": 1,
+      "STORE": 33,
+      "SUBPIECE": 4,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 465
+  },
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 32,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMorphModel *"
+      },
+      {
+        "is_param": true,
+        "name": "morph_t",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 17,
+      "match": "ROUND",
+      "text": "(longlong)(int)ROUND(ROUND(morph_t * (float)65535 * (2.0f - morph_t)))",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 17,
+      "match": "ROUND",
+      "text": "(longlong)(int)ROUND(ROUND(morph_t * (float)65535 * (2.0f - morph_t)))",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(SMRGLHeaderPrimitive *)((int)",
+      "text": "polygon_info = (SMRGLHeaderPrimitive *)((int)this_ptr->faces + iVar3);",
+      "type": "pointer_cast"
+    }
+  ]
+}

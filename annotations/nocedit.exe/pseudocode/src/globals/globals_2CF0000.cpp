@@ -27,8 +27,8 @@ SWindow g_WindowStack[5] = {};
 // UOrientationVector
 UOrientationVector UNION_UOrientationVector_02cf2b6c = {};
 
-// _BIT_INTEGER
-_BIT_INTEGER g_MouseButtonFlags = {};
+// _BIT_INTEGER32
+_BIT_INTEGER32 g_MouseButtonFlags = {};
 
 // char*
 char* g_ClipboardBackupText = {};

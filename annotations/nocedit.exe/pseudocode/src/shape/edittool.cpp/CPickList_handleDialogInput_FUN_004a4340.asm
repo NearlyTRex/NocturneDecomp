@@ -17,7 +17,7 @@
 ;   void* g_ActiveControl
 ;   int g_MouseX
 ;   int g_MouseY
-;   _BIT_INTEGER g_MouseButtonFlags
+;   _BIT_INTEGER32 g_MouseButtonFlags
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CEdButton_wasClicked_FUN_004a6830

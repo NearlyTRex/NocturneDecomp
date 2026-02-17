@@ -124,8 +124,10 @@ extern int INT_02d7b88c;
 extern int INT_02d7b890;
 extern int INT_02d7b894;
 
+// uchar
+extern uchar g_ShadowColor8;
+
 // undefined1
-extern undefined1 DAT_02d7b410;
 extern undefined1 DAT_02d7b804;
 
 // undefined4

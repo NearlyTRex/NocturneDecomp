@@ -6,27 +6,26 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 int __cdecl wincore_winrun_cpp_getTime_FUN_005f2dc0(void)
 
 {
-  int iVar1;
-  DWORD DVar2;
-  double dVar3;
+  DWORD DVar1;
   
   if (g_UseMultimediaTimer != 0) {
-    DVar2 = (*g_timeGetTimeFunc)();
-    return DVar2 * 0x49c;
+    DVar1 = (*g_timeGetTimeFunc)();
+    return DVar1 * 0x49c;
   }
-  g_PreviousCounterLow = g_PerformanceCounter.s.LowPart;
-  g_PreviousCounterHigh = g_PerformanceCounter.s.HighPart;
-  (*g_QueryPerformanceCounterFunc)(&g_PerformanceCounter);
-  iVar1 = g_AccumulatedGameTime;
-  dVar3 = round
-                    (((((double)g_PerformanceCounter._0_4_ +
-                       (double)g_PerformanceCounter.s.HighPart * 4294967296) -
-                      ((double)g_PreviousCounterLow +
-                      (double)(int)g_PreviousCounterHigh * 4294967296)) /
-                     g_TimerCalibration) * 65536 * 18);
-  g_AccumulatedGameTime = iVar1 + (int)ROUND(dVar3);
-  return iVar1 + (int)ROUND(dVar3);
+  g_PreviousCounterLow = g_PerformanceCounter.LowPart;
+  g_PreviousCounterHigh = g_PerformanceCounter.HighPart;
+  (*g_QueryPerformanceCounterFunc)((LARGE_INTEGER *)&g_PerformanceCounter);
+  g_AccumulatedGameTime =
+       g_AccumulatedGameTime +
+       (int)ROUND(ROUND(((((double)g_PerformanceCounter.LowPart +
+                          (double)g_PerformanceCounter.HighPart * 4294967296) -
+                         ((double)g_PreviousCounterLow +
+                         (double)(int)g_PreviousCounterHigh * 4294967296)) /
+                        g_TimerCalibration) * 65536 * 18));
+  return g_AccumulatedGameTime;
 }

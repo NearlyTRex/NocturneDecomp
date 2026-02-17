@@ -363,15 +363,15 @@ int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_han
     if (g_DLLFunctionsMissing == 0) {
       g_ExternalRendererActive = 1;
       memset(&CStack_9c,0,0x8c);
-      CStack_9c.red_bit_position = &g_RedBitPosition;
+      CStack_9c.red_bit_position = (int *)&g_RedBitPosition;
       CStack_9c.red_scale_factor = &g_RedScaleFactor;
-      CStack_9c.red_bit_count = &g_RedBitCount;
-      CStack_9c.green_bit_position = &g_GreenBitPosition;
+      CStack_9c.red_bit_count = (int *)&g_RedBitCount;
+      CStack_9c.green_bit_position = (int *)&g_GreenBitPosition;
       CStack_9c.green_scale_factor = &g_GreenScaleFactor;
-      CStack_9c.green_bit_count = &g_GreenBitCount;
-      CStack_9c.blue_bit_position = &g_BlueBitPosition;
+      CStack_9c.green_bit_count = (int *)&g_GreenBitCount;
+      CStack_9c.blue_bit_position = (int *)&g_BlueBitPosition;
       CStack_9c.blue_scale_factor = &g_BlueScaleFactor;
-      CStack_9c.blue_bit_count = &g_BlueBitCount;
+      CStack_9c.blue_bit_count = (int *)&g_BlueBitCount;
       CStack_9c.blend_mode = &g_BlendMode;
       CStack_9c.current_lighting = &g_CurrentLightingValue;
       CStack_9c.current_alpha = &g_CurrentAlphaValue;

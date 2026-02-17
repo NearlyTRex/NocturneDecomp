@@ -20,7 +20,7 @@
 ;   SLEEP_FUNC* g_SleepFunc = 00212228
 ;   int g_WindowActive = -0x1
 ;   int g_ForceMessagePump = 0x1
-;   char[256] g_KeyboardState
+;   char[512] g_KeyboardState
 ;   undefined4 CHAR_ARRAY_02d03e99
 ;   int g_InputDisabled
 ;   undefined4 g_MessageFlags[1]

@@ -11,8 +11,8 @@
 ; XREF[30]:
 ;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0 at 00408eb3
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10 at 00408f46
-;   core_bodypart.cpp_CBodyPart_FUN_0041a050 at 0041a57a
-;   core_bodypart.cpp_CBodyPart_FUN_0041a630 at 0041a90e
+;   core_bodypart.cpp_CBodyPart_applyRotation_FUN_0041a630 at 0041a90e
+;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050 at 0041a57a
 ;   core_box.cpp_CBox_processPhysics_FUN_0041e350 at 0041ef23
 ;   core_box.cpp_CBox_setupVelocities_FUN_00420180 at 004201b9
 ;   core_cloth.cpp_CCloth_applyRotation_FUN_0043e1a0 at 0043e230

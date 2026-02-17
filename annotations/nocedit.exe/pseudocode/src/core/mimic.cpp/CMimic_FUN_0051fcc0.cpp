@@ -219,7 +219,7 @@ LAB_0051fd7d:
                            (local_18,&local_a0,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   ((CDemonActor *)this_ptr,&local_7c,pCVar5);
-        core_gore_cpp_CGore_FUN_004ede30(g_CGorePtr);
+        core_gore_cpp_CGore_createBloodPool_FUN_004ede30(g_CGorePtr,&local_7c,0);
         (this_ptr->base).pool_me = 1;
       }
       goto LAB_0051fdb4;

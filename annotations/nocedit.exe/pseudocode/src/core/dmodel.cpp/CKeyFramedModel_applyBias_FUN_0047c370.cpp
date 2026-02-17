@@ -6,39 +6,33 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl core_dmodel_cpp_CKeyFramedModel_applyBias_FUN_0047c370(CKeyFramedModel *this_ptr,CVector3f *bias_offset)
 
 {
   int *piVar1;
-  float fVar2;
-  float fVar3;
-  int iVar4;
-  int iVar5;
+  int iVar2;
+  int iVar3;
+  double dVar4;
+  double dVar5;
   double dVar6;
-  double dVar7;
-  int iVar8;
   
-  dVar6 = floor
+  dVar4 = floor
                     ((double)(bias_offset->x * (float)256 + (float)0.5));
-  fVar2 = bias_offset->y;
-  fVar3 = (float)256;
-  round(dVar6);
-  dVar6 = floor((double)(fVar2 * fVar3 + (float)0.5));
-  fVar2 = bias_offset->z;
-  fVar3 = (float)256;
-  dVar7 = round(dVar6);
-  dVar6 = floor((double)(fVar2 * fVar3 + (float)0.5));
-  iVar8 = (int)((ulonglong)dVar6 >> 0x20);
-  dVar6 = round(dVar6);
-  iVar5 = 0;
-  for (iVar4 = 0; iVar4 < this_ptr->frame_count * this_ptr->vertex_count; iVar4 = iVar4 + 1) {
-    piVar1 = (int *)(iVar5 + (int)this_ptr->vertex_list);
-    *piVar1 = *piVar1 + (int)ROUND(dVar7);
-    piVar1 = (int *)(iVar5 + 4 + (int)this_ptr->vertex_list);
-    *piVar1 = *piVar1 + iVar8;
-    *(int *)(iVar5 + 8 + (int)this_ptr->vertex_list) =
-         *(int *)(iVar5 + 8 + (int)this_ptr->vertex_list) + (int)ROUND(dVar6);
-    iVar5 = iVar5 + 0xc;
+  dVar5 = floor
+                    ((double)(bias_offset->y * (float)256 + (float)0.5));
+  dVar6 = floor
+                    ((double)(bias_offset->z * (float)256 + (float)0.5));
+  iVar3 = 0;
+  for (iVar2 = 0; iVar2 < this_ptr->frame_count * this_ptr->vertex_count; iVar2 = iVar2 + 1) {
+    piVar1 = (int *)(iVar3 + (int)this_ptr->vertex_list);
+    *piVar1 = *piVar1 + (int)ROUND(ROUND(dVar4));
+    piVar1 = (int *)(iVar3 + 4 + (int)this_ptr->vertex_list);
+    *piVar1 = *piVar1 + (int)ROUND(ROUND(dVar5));
+    *(int *)(iVar3 + 8 + (int)this_ptr->vertex_list) =
+         *(int *)(iVar3 + 8 + (int)this_ptr->vertex_list) + (int)ROUND(ROUND(dVar6));
+    iVar3 = iVar3 + 0xc;
   }
   core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(this_ptr);
   return;

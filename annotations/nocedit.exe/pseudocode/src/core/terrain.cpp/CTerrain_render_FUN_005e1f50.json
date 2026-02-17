@@ -1,29 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 49,
-        "line": 47,
-        "message": "use of undeclared identifier 'stack0xffffffc4'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 97,
-    "complexity_score": 99,
+    "complexity_score": 89,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 6,
-    "pseudocode_lines": 39,
-    "suspect_count": 5,
+    "pseudocode_lines": 24,
+    "suspect_count": 6,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "stack_ref"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 136
+    "total_lines": 121
   },
   "cross_references": [
     {
@@ -236,38 +228,45 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
+      "line": 19,
       "match": "ROUND",
-      "text": "local_20 = (int)ROUND(dVar5);",
+      "text": "local_24.x = local_24.x + (int)ROUND(ROUND((double)(float)local_30.x * 256));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
+      "line": 19,
       "match": "ROUND",
-      "text": "local_30.y = (int)ROUND(dVar5) + iVar3;",
+      "text": "local_24.x = local_24.x + (int)ROUND(ROUND((double)(float)local_30.x * 256));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 34,
+      "line": 20,
       "match": "ROUND",
-      "text": "local_24 = (int)ROUND(dVar6);",
+      "text": "local_24.y = (int)ROUND(ROUND((double)(float)local_30.y * 256)) + local_24.y;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 36,
+      "line": 20,
       "match": "ROUND",
-      "text": "local_30.x = iVar1 + (int)ROUND(dVar4);",
+      "text": "local_24.y = (int)ROUND(ROUND((double)(float)local_30.y * 256)) + local_24.y;",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 40,
-      "match": "&stack0xffffffc4",
-      "text": "(g_CDemonRendererPtr2,(CVector3i *)&stack0xffffffc4);",
-      "type": "stack_ref"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 21,
+      "match": "ROUND",
+      "text": "local_18 = (int)ROUND(ROUND((double)(float)local_30.z * 256));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 21,
+      "match": "ROUND",
+      "text": "local_18 = (int)ROUND(ROUND((double)(float)local_30.z * 256));",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

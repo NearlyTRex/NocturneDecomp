@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   crt_unknown.c_FUN_00608e14 at 00608e27
+;   crt_math.c_atan2_FUN_00608e14 at 00608e27
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006874d4

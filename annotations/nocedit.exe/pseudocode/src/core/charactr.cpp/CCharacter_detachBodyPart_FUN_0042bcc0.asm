@@ -20,7 +20,7 @@
 ;   core_zombie.cpp_CZombie_FUN_005fc220 at 005fc382
 ;
 ; Called Functions:
-;   core_bodypart.cpp_CBodyPart_FUN_0041a050
+;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050
 ;   core_bodypart.cpp_createBodyPart_FUN_00418e10
 ;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
 ;
@@ -73,8 +73,8 @@ section .text
         ;   XREF to: 0042bd30 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_0042bd30(CCharacter * this_ptr, CBodyPart * body_part, int part_index, int render_in_background)
     ADD ESP,0x10                        ; 0042bd19
     PUSH ESI                            ; 0042bd1c
-    CALL core_bodypart.cpp_CBodyPart_FUN_0041a050 ; 0042bd1d
-        ;   XREF to: 0041a050 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_FUN_0041a050(CBodyPart * this_ptr)
+    CALL core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050 ; 0042bd1d
+        ;   XREF to: 0041a050 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050(CBodyPart * this_ptr)
     ADD ESP,0x4                         ; 0042bd22
     POP EDI                             ; 0042bd25
     POP EBP                             ; 0042bd26

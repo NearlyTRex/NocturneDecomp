@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl core_dfilter_cpp_CDemonFilter_init_FUN_004705a0(CDemonFilter *this_ptr,float init_value,int flags)
 
 {
@@ -14,9 +16,8 @@ void __cdecl core_dfilter_cpp_CDemonFilter_init_FUN_004705a0(CDemonFilter *this_
   int iVar3;
   int iVar4;
   int iVar5;
-  double dVar6;
   float local_28;
-  byte bStack_20;
+  byte local_1c;
   
   if (flags == 0) {
     core_dfilter_cpp_CDemonFilter_allocMemory_FUN_00470260(this_ptr);
@@ -42,12 +43,11 @@ void __cdecl core_dfilter_cpp_CDemonFilter_init_FUN_004705a0(CDemonFilter *this_
             fVar1 = (float)*(byte *)((int)this_ptr->data_buffer + this_ptr->size * iVar5 + iVar4) *
                     fVar1;
           }
-          dVar6 = round((double)fVar1);
-          bStack_20 = (byte)(int)ROUND(dVar6);
-          if (0x3f < bStack_20) {
-            bStack_20 = 0x3f;
+          local_1c = (byte)(int)ROUND(ROUND(fVar1));
+          if (0x3f < local_1c) {
+            local_1c = 0x3f;
           }
-          *(byte *)(this_ptr->size * iVar5 + iVar4 + (int)this_ptr->data_buffer) = bStack_20;
+          *(byte *)(this_ptr->size * iVar5 + iVar4 + (int)this_ptr->data_buffer) = local_1c;
           iVar4 = iVar4 + 1;
         } while (iVar4 < this_ptr->size);
       }

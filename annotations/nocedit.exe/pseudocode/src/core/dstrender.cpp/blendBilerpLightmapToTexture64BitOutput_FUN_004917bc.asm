@@ -14,8 +14,8 @@
 ;   core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453270 at 004535a0
 ;
 ; Referenced Globals:
-;   ulonglong g_LightmapBlendBias1 = 0x0
-;   ulonglong g_LightmapBlendBias2 = 0x8000800080008
+;   _MMX_INTEGER g_LightmapBlendBias1
+;   _MMX_INTEGER g_LightmapBlendBias2
 ;   ushort[384] g_LightmapData
 ;   undefined4 g_LightmapData[16]
 ;   undefined4 g_LightmapData[32]

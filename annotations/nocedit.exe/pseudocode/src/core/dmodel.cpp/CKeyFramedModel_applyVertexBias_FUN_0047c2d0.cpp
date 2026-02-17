@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl core_dmodel_cpp_CKeyFramedModel_applyVertexBias_FUN_0047c2d0(CKeyFramedModel *this_ptr,int frame_index)
 
 {
@@ -17,11 +19,10 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_applyVertexBias_FUN_0047c2d0(CKeyFr
   dVar3 = floor
                     ((double)(this_ptr->frame_bounds[frame_index * 2].y * (float)256 +
                              (float)0.5));
-  dVar3 = round(-dVar3);
   iVar2 = 0;
   for (iVar1 = 0; iVar1 < this_ptr->frame_count * this_ptr->vertex_count; iVar1 = iVar1 + 1) {
     *(int *)(iVar2 + 4 + (int)this_ptr->vertex_list) =
-         *(int *)(iVar2 + 4 + (int)this_ptr->vertex_list) + (int)ROUND(dVar3);
+         *(int *)(iVar2 + 4 + (int)this_ptr->vertex_list) + (int)ROUND(ROUND(-dVar3));
     iVar2 = iVar2 + 0xc;
   }
   core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(this_ptr);

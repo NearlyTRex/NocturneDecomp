@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 64,
+    "complexity_score": 62,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
-    "pseudocode_lines": 29,
+    "pseudocode_lines": 27,
     "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 75
+    "total_lines": 73
   },
   "cross_references": [],
   "function": {
@@ -130,23 +130,23 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 21,
+      "line": 19,
+      "match": "ROUND",
+      "text": "iVar1 = (int)ROUND(ROUND(SQRT(fVar4 * fVar4 + fVar3 * fVar3 + fVar2 * fVar2) *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 19,
+      "match": "ROUND",
+      "text": "iVar1 = (int)ROUND(ROUND(SQRT(fVar4 * fVar4 + fVar3 * fVar3 + fVar2 * fVar2) *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 19,
       "match": "SQRT",
-      "text": "((double)(SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1) *",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
-      "match": "ROUND",
-      "text": "lVar5 = (longlong)((int)(iVar4 - (uint)(iVar7 << 1 < 0)) >> 2) * (longlong)(int)ROUND(dVar8);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 27,
-      "match": "ROUND",
-      "text": "lVar5 = (longlong)(iVar6 / 2) * (longlong)(int)ROUND(dVar8);",
+      "text": "iVar1 = (int)ROUND(ROUND(SQRT(fVar4 * fVar4 + fVar3 * fVar3 + fVar2 * fVar2) *",
       "type": "decompiler_intrinsic"
     }
   ],

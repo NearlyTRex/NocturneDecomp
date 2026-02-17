@@ -76,9 +76,10 @@ LAB_00548d63:
       if (0 < g_WindowWidth) {
         do {
           uVar2 = *puVar6;
-          local_20 = (uint)(uVar2 >> ((byte)g_RedBitPosition & 0x1f)) * g_RedScaleFactor & 0xff;
-          local_1c = (uint)(uVar2 >> ((byte)g_GreenBitPosition & 0x1f)) * g_GreenScaleFactor & 0xff;
-          uVar4 = (uint)(uVar2 >> ((byte)g_BlueBitPosition & 0x1f)) * g_BlueScaleFactor;
+          local_20 = (uint)(uVar2 >> (g_RedBitPosition.bytes[0] & 0x1f)) * g_RedScaleFactor & 0xff;
+          local_1c = (uint)(uVar2 >> (g_GreenBitPosition.bytes[0] & 0x1f)) * g_GreenScaleFactor &
+                     0xff;
+          uVar4 = (uint)(uVar2 >> (g_BlueBitPosition.bytes[0] & 0x1f)) * g_BlueScaleFactor;
           _fputc(local_20,file);
           _fputc(local_1c,file);
           puVar6 = puVar6 + 1;

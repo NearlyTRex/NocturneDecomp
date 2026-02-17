@@ -29,7 +29,7 @@ void __cdecl core_dskybox_cpp_staticInit_FUN_00490040(void);
 SMRGLTextureBasic * __cdecl core_dskybox_cpp_initializeSkyboxTexture_FUN_00490070(SMRGLTextureBasic *texture);
 void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_004900b0(float *light_color,int u_coord,int v_coord,float *uv_offset);
 void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0(SMRGLTextureBasic *sky_texture,char *texture_name,float brightness_factor);
-void __cdecl core_dstrender_cpp_saveMMXRegisters_FUN_004906b0(void);
+void __mmx_save core_dstrender_cpp_saveMMXRegisters_FUN_004906b0 (ulonglong mm0,ulonglong mm1,ulonglong mm2,ulonglong mm3,ulonglong mm4,ulonglong mm5, ulonglong mm6,ulonglong mm7);
 void __cdecl core_dstrender_cpp_renderDepthOnlyReversed_FUN_004906e9(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y);
 void __cdecl core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y);
 void __cdecl core_dstrender_cpp_renderDepth16BitConditional_FUN_0049077d(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y);
@@ -54,7 +54,7 @@ void __cdecl core_dstrender_cpp_blendLightmapToTexture64BitOutput_FUN_004925c5(u
 void __cdecl core_dstrender_cpp_blendLightmapToTexture32BitInputOutput_FUN_004926e1(uint *output_buffer,uint *texture_buffer,byte *texture_indices, byte *lightmap_indices,int pixel_count);
 void __cdecl core_dstrender_cpp_blendLightmapToTexture64BitOutput_FUN_00492bd5(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices, byte *lightmap_indices,int pixel_count);
 void __cdecl core_dstrender_cpp_alphaBlendPixelsMMX_FUN_00492e8a(uint *output_buffer,uint *source1_buffer,uint *source2_buffer,uint alpha1, uint alpha2,int pixel_count);
-void __cdecl core_dstrender_cpp_blendLightmapToTextureMMX_Variant2_FUN_00492f03(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices, byte *lightmap_indices,int pixel_count);
+void __cdecl core_dstrender_cpp_blendLightmapToTextureMMX_FUN_00492f03(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices, byte *lightmap_indices,int pixel_count);
 void __cdecl core_dstrender_cpp_blendBilerpTextureWithLightmapMMX_FUN_00493450(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices, byte *lightmap_indices,int pixel_count);
 void __cdecl core_dstrender_cpp_blendSinglePixelLightmapMMX_FUN_004937b6(ushort *output_pixel,uint *texture_pixel,byte *texture_index,byte *lightmap_index);
 void __cdecl core_dstrender_cpp_blendTextureWithLightmapMMX_FUN_00493860(uint *output_buffer,uint *texture_buffer,byte *texture_indices, byte *lightmap_indices,int pixel_count);
@@ -149,7 +149,7 @@ float __cdecl core_dynamite_cpp_CDynamite_getDamage_FUN_0049cee0(CDynamite *this
 void __cdecl core_dynamite_cpp_CDynamite_fireProjectile_FUN_0049cf10(CDynamite *this_ptr);
 void __cdecl core_dynamite_cpp_CDynamite_FUN_0049cf20(CDynamite *this_ptr);
 int __cdecl core_dynamite_cpp_CDynamite_FUN_0049cf70(CDynamite *this_ptr);
-bool __cdecl core_dynamite_cpp_CDynamite_FUN_0049cf90(CDynamite *this_ptr);
+int __cdecl core_dynamite_cpp_CDynamite_FUN_0049cf90(CDynamite *this_ptr);
 void __cdecl core_dynamite_cpp_CDynamite_process_FUN_0049cfb0(CDynamite *this_ptr,float delta_time);
 CDynamite * __cdecl core_dynamite_cpp_CDynamite_dtor_FUN_0049d120(CDynamite *this_ptr,uint flags);
 void __cdecl shape_edittool_cpp_staticInit_FUN_0049d170(void);

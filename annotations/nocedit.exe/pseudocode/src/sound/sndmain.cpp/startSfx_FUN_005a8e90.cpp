@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 uint __cdecl sound_sndmain_cpp_startSfx_FUN_005a8e90(char *filename)
 
 {
@@ -27,9 +29,8 @@ uint __cdecl sound_sndmain_cpp_startSfx_FUN_005a8e90(char *filename)
   char *pcVar15;
   char *pcVar16;
   CSfxOptions *pCVar17;
-  byte bVar18;
-  double dVar19;
-  CSfxSample *pCVar20;
+  CSfxSample *pCVar18;
+  byte bVar19;
   char local_390 [256];
   char local_290 [256];
   char local_190 [256];
@@ -40,7 +41,7 @@ uint __cdecl sound_sndmain_cpp_startSfx_FUN_005a8e90(char *filename)
   CSfxSample *local_14;
   CVector3d *pCVar5;
   
-  bVar18 = 0;
+  bVar19 = 0;
   pcVar16 = local_390;
   pcVar14 = local_390;
   pcVar15 = local_390;
@@ -62,8 +63,8 @@ uint __cdecl sound_sndmain_cpp_startSfx_FUN_005a8e90(char *filename)
   pCVar17 = &local_90;
   for (iVar3 = 0x1c; iVar3 != 0; iVar3 = iVar3 + -1) {
     pCVar17->channel_index = pCVar13->channel_index;
-    pCVar13 = (CSfxOptions *)((int)pCVar13 + ((uint)bVar18 * -2 + 1) * 4);
-    pCVar17 = (CSfxOptions *)((int)pCVar17 + ((uint)bVar18 * -2 + 1) * 4);
+    pCVar13 = (CSfxOptions *)((int)pCVar13 + ((uint)bVar19 * -2 + 1) * 4);
+    pCVar17 = (CSfxOptions *)((int)pCVar17 + ((uint)bVar19 * -2 + 1) * 4);
   }
   iVar3 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_005a9ea0(local_90.channel_index);
   if (iVar3 == 0) {
@@ -97,8 +98,8 @@ uint __cdecl sound_sndmain_cpp_startSfx_FUN_005a8e90(char *filename)
   pCVar4 = this_ptr_00;
   for (iVar3 = 0x1c; iVar3 != 0; iVar3 = iVar3 + -1) {
     (pCVar4->options).channel_index = pCVar13->channel_index;
-    pCVar13 = (CSfxOptions *)((int)pCVar13 + ((uint)bVar18 * -2 + 1) * 4);
-    pCVar4 = (CSfxSlot *)((int)pCVar4 + (uint)bVar18 * -8 + 4);
+    pCVar13 = (CSfxOptions *)((int)pCVar13 + ((uint)bVar19 * -2 + 1) * 4);
+    pCVar4 = (CSfxSlot *)((int)pCVar4 + (uint)bVar19 * -8 + 4);
   }
   iVar3 = engine_dosio_c_getFileSize_FUN_00481880("sound",local_390);
   if (iVar3 < 0x200001) {
@@ -151,15 +152,15 @@ LAB_005a900a:
           }
           sound_mp3_cpp_CMP3Decoder_openFile_FUN_00534550(local_14->mp3_data,local_390);
           pCVar11 = local_14;
-          pCVar20 = local_14;
+          pCVar18 = local_14;
           do {
             cVar2 = *pcVar14;
-            (pCVar20->sample_info).name[0] = cVar2;
+            (pCVar18->sample_info).name[0] = cVar2;
             if (cVar2 == '\0') break;
             cVar2 = pcVar14[1];
             pcVar14 = pcVar14 + 2;
-            (pCVar20->sample_info).name[1] = cVar2;
-            pCVar20 = (CSfxSample *)((pCVar20->sample_info).name + 2);
+            (pCVar18->sample_info).name[1] = cVar2;
+            pCVar18 = (CSfxSample *)((pCVar18->sample_info).name + 2);
           } while (cVar2 != '\0');
           (local_14->sample_info).streaming_flag = 1;
           pCVar8 = local_14->mp3_data;
@@ -169,7 +170,6 @@ LAB_005a900a:
           (local_14->sample_info).sample_count = -1;
           (local_14->sample_info).sample_rate = iVar3;
           sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(local_14);
-          uVar7 = local_20;
           pCVar11->taken = 0;
           pCVar11->ref_count = 0;
           iVar3 = (pCVar11->sample_info).sample_rate;
@@ -177,14 +177,12 @@ LAB_005a900a:
           fVar1 = (float)iVar3 * 2.0f;
           pCVar11->stream_read_position = 0;
           pCVar11->stream_write_position = 0;
-          pCVar20 = (CSfxSample *)0x5a93a9;
-          dVar19 = round((double)fVar1);
-          pCVar11->streaming_buffer_size = (int)ROUND(dVar19);
-          pCVar11->streaming_slot_index = uVar7;
-          iVar3 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_005a6170(pCVar20);
-          pCVar11 = local_18;
+          pCVar11->streaming_buffer_size = (int)ROUND(ROUND(fVar1));
+          pCVar11->streaming_slot_index = local_20;
+          iVar3 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_005a6170(pCVar11);
+          pCVar11 = local_14;
 joined_r0x005a94f6:
-          local_18 = pCVar11;
+          local_14 = pCVar11;
           if (iVar3 != 0) {
             sound_sndmain_cpp_CSfxSample_seek_FUN_005a65a0(pCVar11,0,0);
             goto LAB_005a9026;
@@ -195,16 +193,16 @@ joined_r0x005a94f6:
         p_Var9 = engine_dosio_c_getFile_FUN_00481a50("sound",local_390,"rb");
         pCVar11 = local_18;
         local_18->file_handle = p_Var9;
-        pCVar20 = local_18;
+        pCVar18 = local_18;
         if (p_Var9 != (_FILE *)0x0) {
           do {
             cVar2 = *pcVar15;
-            (pCVar20->sample_info).name[0] = cVar2;
+            (pCVar18->sample_info).name[0] = cVar2;
             if (cVar2 == '\0') break;
             cVar2 = pcVar15[1];
             pcVar15 = pcVar15 + 2;
-            (pCVar20->sample_info).name[1] = cVar2;
-            pCVar20 = (CSfxSample *)((pCVar20->sample_info).name + 2);
+            (pCVar18->sample_info).name[1] = cVar2;
+            pCVar18 = (CSfxSample *)((pCVar18->sample_info).name + 2);
           } while (cVar2 != '\0');
           lVar10 = _ftell(local_18->file_handle);
           pCVar11->file_offset = lVar10;
@@ -212,24 +210,22 @@ joined_r0x005a94f6:
                             (pCVar11->file_handle,&pCVar11->file_offset,pCVar11);
           if (iVar3 != 0) {
             sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(local_18);
-            pCVar11 = local_18;
             iVar3 = (local_18->sample_info).sample_rate;
             local_18->taken = 0;
             fVar1 = (float)iVar3 * 2.0f;
             local_18->ref_count = 0;
             local_18->buffer_id = 0;
-            dVar19 = round((double)fVar1);
-            pCVar11->streaming_buffer_size = (int)ROUND(dVar19);
-            pCVar11->stream_read_position = 0;
-            pCVar11->stream_write_position = 0;
-            pCVar11->streaming_slot_index = local_90.unk;
-            iVar3 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_005a6170(pCVar11);
-            pCVar11 = local_18;
+            local_18->streaming_buffer_size = (int)ROUND(ROUND(fVar1));
+            local_18->stream_read_position = 0;
+            local_18->stream_write_position = 0;
+            local_18->streaming_slot_index = local_20;
+            iVar3 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_005a6170(local_18);
+            pCVar11 = local_14;
             goto joined_r0x005a94f6;
           }
         }
       }
-      sound_sndmain_cpp_CSfxSample_freeMemory_FUN_005a62c0(local_18);
+      sound_sndmain_cpp_CSfxSample_freeMemory_FUN_005a62c0(local_14);
       pCVar11 = (CSfxSample *)0x0;
     }
   }
@@ -237,8 +233,7 @@ LAB_005a9026:
   g_SfxSlots[uVar12].sample = pCVar11;
   pCVar11 = g_SfxSlots[uVar12].sample;
   if (pCVar11 == (CSfxSample *)0x0) {
-    sound_sndmain_cpp_logSoundError_FUN_005adba0
-              ("startSfx - can't get sample %s\n",&stack0xfffffc6c);
+    sound_sndmain_cpp_logSoundError_FUN_005adba0("startSfx - can't get sample %s\n",local_390);
   }
   else {
     pCVar11->ref_count = pCVar11->ref_count + 1;
@@ -258,10 +253,10 @@ LAB_005a9026:
     pCVar11 = g_SfxSlots[uVar12].sample;
     g_SfxSlots[uVar12].reference_distance =
          ((g_SfxSlots[uVar12].sample)->sample_info).reference_distance;
-    pCVar20 = g_SfxSlots[uVar12].sample;
+    pCVar18 = g_SfxSlots[uVar12].sample;
     g_SfxPlaybackStateCounter = iVar3;
     g_SfxSlots[uVar12].min_distance = (pCVar11->sample_info).reference_volume_distance;
-    g_SfxSlots[uVar12].max_distance = (pCVar20->sample_info).max_distance;
+    g_SfxSlots[uVar12].max_distance = (pCVar18->sample_info).max_distance;
     if (0xfffffe < iVar3) {
       g_SfxPlaybackStateCounter = 1;
     }
@@ -281,7 +276,7 @@ LAB_005a9026:
            iVar6 == 0)) goto LAB_005a9523;
       }
       sound_sndmain_cpp_unlockSound_FUN_005abdc0();
-      return iVar3 << 6 | local_20;
+      return iVar3 << 6 | local_1c;
     }
   }
 LAB_005a9523:

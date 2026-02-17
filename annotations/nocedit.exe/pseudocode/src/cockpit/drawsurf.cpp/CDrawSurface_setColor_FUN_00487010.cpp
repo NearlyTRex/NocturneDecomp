@@ -23,9 +23,9 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_00487010(int color_v
     g_ScaledGreenComponent = (uint)(0xff / (ulonglong)(uint)g_GreenScaleFactor) >> (bVar2 & 0x1f);
     g_ScaledBlueComponent = (uint)(0xff / (ulonglong)(uint)g_BlueScaleFactor) >> (bVar2 & 0x1f);
     g_PackedPixelColor =
-         g_ScaledRedComponent << ((byte)g_RedBitPosition & 0x1f) |
-         g_ScaledGreenComponent << ((byte)g_GreenBitPosition & 0x1f) |
-         g_ScaledBlueComponent << ((byte)g_BlueBitPosition & 0x1f);
+         g_ScaledRedComponent << (g_RedBitPosition.bytes[0] & 0x1f) |
+         g_ScaledGreenComponent << (g_GreenBitPosition.bytes[0] & 0x1f) |
+         g_ScaledBlueComponent << (g_BlueBitPosition.bytes[0] & 0x1f);
     g_DuplicatedPixelColor = g_PackedPixelColor | g_PackedPixelColor << 0x10;
     color_value = 0;
   }
@@ -42,18 +42,18 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_00487010(int color_v
     if ((uint)g_BitsPerPixel < 0x11) {
       g_CurrentDrawColor =
            ((uint)(byte)g_SourcePaletteData[iVar1] / (uint)g_RedScaleFactor <<
-            ((byte)g_RedBitPosition & 0x1f) |
+            (g_RedBitPosition.bytes[0] & 0x1f) |
             (uint)(byte)g_SourcePaletteData[iVar1 + 1] / (uint)g_GreenScaleFactor <<
-            ((byte)g_GreenBitPosition & 0x1f) |
+            (g_GreenBitPosition.bytes[0] & 0x1f) |
            (uint)(byte)g_SourcePaletteData[iVar1 + 2] / (uint)g_BlueScaleFactor <<
-           ((byte)g_BlueBitPosition & 0x1f)) & 0xffff;
+           (g_BlueBitPosition.bytes[0] & 0x1f)) & 0xffff;
       return;
     }
     if (g_BitsPerPixel == 0x20) {
       g_CurrentDrawColor =
-           (uint)(byte)g_SourcePaletteData[iVar1 + 2] << ((byte)g_BlueBitPosition & 0x1f) |
-           (uint)(byte)g_SourcePaletteData[iVar1 + 1] << ((byte)g_GreenBitPosition & 0x1f) |
-           (uint)(byte)g_SourcePaletteData[iVar1] << ((byte)g_RedBitPosition & 0x1f);
+           (uint)(byte)g_SourcePaletteData[iVar1 + 2] << (g_BlueBitPosition.bytes[0] & 0x1f) |
+           (uint)(byte)g_SourcePaletteData[iVar1 + 1] << (g_GreenBitPosition.bytes[0] & 0x1f) |
+           (uint)(byte)g_SourcePaletteData[iVar1] << (g_RedBitPosition.bytes[0] & 0x1f);
       return;
     }
   }

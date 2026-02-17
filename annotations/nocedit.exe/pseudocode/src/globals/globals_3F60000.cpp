@@ -272,6 +272,9 @@ SSoundDeviceInfo g_SoundDevices[8] = {};
 // STrainNoise[10]
 STrainNoise g_TrainNoiseArray[10] = {};
 
+// byte
+byte BYTE_03f6baac = {};
+
 // char[40]
 char g_SoundAmbientSoundName[40] = {};
 
@@ -442,9 +445,6 @@ uint g_WindSoundHandle = {};
 uint g_WaterSoundHandle = {};
 uint g_TrainRailNoiseHandle = {};
 uint g_TrainExteriorAmbientHandle = {};
-
-// undefined1
-undefined1 DAT_03f6baac = {};
 
 // undefined4
 undefined4 DAT_03f6baa8 = {};

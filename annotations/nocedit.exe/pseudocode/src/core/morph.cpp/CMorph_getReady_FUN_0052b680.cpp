@@ -39,9 +39,7 @@ void __cdecl core_morph_cpp_CMorph_getReady_FUN_0052b680(CMorph *this_ptr)
   float local_5c;
   float local_58;
   float local_54;
-  float local_50;
-  float local_4c;
-  float local_48;
+  CVector3f local_50;
   float local_44;
   float local_40;
   float local_3c;
@@ -131,20 +129,21 @@ void __cdecl core_morph_cpp_CMorph_getReady_FUN_0052b680(CMorph *this_ptr)
       iVar4 = 0;
       do {
         pvVar1 = local_14->models[0].points;
-        local_50 = *(float *)((int)pvVar1 + iVar4 + 4);
-        local_4c = *(float *)((int)pvVar1 + iVar4 + 8);
-        local_48 = *(float *)((int)pvVar1 + iVar4 + 0xc);
+        local_50.x = *(float *)((int)pvVar1 + iVar4 + 4);
+        local_50.y = *(float *)((int)pvVar1 + iVar4 + 8);
+        local_50.z = *(float *)((int)pvVar1 + iVar4 + 0xc);
         if (this_ptr->rescale_enabled != 0) {
-          local_50 = local_50 - (pCVar5->min).x;
-          local_50 = local_50 * local_68;
-          local_4c = local_4c - (&local_c8)[iVar2].min.y;
-          local_4c = local_4c * local_64;
-          local_48 = (local_48 - (&local_c8)[iVar2].min.z) * local_60;
-          local_50 = local_50 + (pCVar3->min).x;
-          local_4c = local_4c + (&local_c8)[iVar7].min.y;
-          local_48 = local_48 + (&local_c8)[iVar7].min.z;
+          local_50.x = local_50.x - (pCVar5->min).x;
+          local_50.x = local_50.x * local_68;
+          local_50.y = local_50.y - (&local_c8)[iVar2].min.y;
+          local_50.y = local_50.y * local_64;
+          local_50.z = (local_50.z - (&local_c8)[iVar2].min.z) * local_60;
+          local_50.x = local_50.x + (pCVar3->min).x;
+          local_50.y = local_50.y + (&local_c8)[iVar7].min.y;
+          local_50.z = local_50.z + (&local_c8)[iVar7].min.z;
         }
-        iVar6 = core_morph_cpp_FUN_0052b280();
+        iVar6 = core_morph_cpp_CMorphModel_findNearestPoint_FUN_0052b280(local_18->models,&local_50)
+        ;
         *(int *)((int)local_14->models[0].points + iVar4) = iVar6;
         iVar8 = iVar8 + 1;
         iVar4 = iVar4 + 0x10;

@@ -26,7 +26,7 @@
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_00524700
 ;   core_mission.cpp_CDemonMission_markActorToDelete_FUN_005240a0
-;   core_morph.cpp_CMorph_FUN_0052b600
+;   core_morph.cpp_CMorph_updateModelFromDeformable_FUN_0052b600
 ;   core_motion.cpp_CMotionController_advance_FUN_0052d610
 ;
 ; *****************************************************************************
@@ -145,8 +145,8 @@ section .text
     PUSH 0x0                            ; 00520cab
     LEA ESI,[EBX + 0x4be24]             ; 00520cad
     PUSH ESI                            ; 00520cb3
-    CALL core_morph.cpp_CMorph_FUN_0052b600 ; 00520cb4
-        ;   XREF to: 0052b600 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_FUN_0052b600(CMorph * this_ptr, int model_index)
+    CALL core_morph.cpp_CMorph_updateModelFromDeformable_FUN_0052b600 ; 00520cb4
+        ;   XREF to: 0052b600 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_updateModelFromDeformable_FUN_0052b600(CMorph * this_ptr, int model_index, CDeformableModelInstance * model_ptr, int part_index)
     ADD ESP,0x10                        ; 00520cb9
     MOV EAX,dword ptr [EBX + 0x4ca54]   ; 00520cbc
     PUSH 0x0                            ; 00520cc2
@@ -154,8 +154,8 @@ section .text
     PUSH EAX                            ; 00520cc9
     PUSH 0x1                            ; 00520cca
     PUSH ESI                            ; 00520ccc
-    CALL core_morph.cpp_CMorph_FUN_0052b600 ; 00520ccd
-        ;   XREF to: 0052b600 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_FUN_0052b600(CMorph * this_ptr, int model_index)
+    CALL core_morph.cpp_CMorph_updateModelFromDeformable_FUN_0052b600 ; 00520ccd
+        ;   XREF to: 0052b600 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_updateModelFromDeformable_FUN_0052b600(CMorph * this_ptr, int model_index, CDeformableModelInstance * model_ptr, int part_index)
     ADD ESP,0x10                        ; 00520cd2
     MOV ESI,dword ptr [EBX + 0x4be78]   ; 00520cd5
     XOR EAX,EAX                         ; 00520cdb

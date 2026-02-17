@@ -41,11 +41,13 @@
 #include "types/typedefs/CHealthItem_ptr_344.h"
 #include "types/typedefs/CLightActor_ptr_1648.h"
 #include "types/typedefs/CScript_ptr_56.h"
+#include "types/typedefs/CStranger_ptr_130264.h"
 #include "types/typedefs/CTVBat_ptr_48832.h"
 #include "types/typedefs/CTurret_ptr_1412.h"
 #include "types/typedefs/MessageHandler.h"
 #include "types/typedefs/SBitBuffer_ptr_8.h"
 #include "types/typedefs/SBodyPartFire_ptr_12.h"
 #include "types/typedefs/SBodyPartModel_ptr_24.h"
+#include "types/typedefs/SFly_ptr_4.h"
 #include "types/typedefs/SScrape_ptr_1020.h"
 

@@ -48,7 +48,7 @@
 ;   undefined4 DAT_03671300
 ;
 ; Called Functions:
-;   core_bodypart.cpp_CBodyPart_FUN_0041af90
+;   core_bodypart.cpp_CBodyPart_addTexture_FUN_0041af90
 ;   core_bodypart.cpp_CBodyPart_setCounts_FUN_004191d0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_memory.c_memset_FUN_005fde40
@@ -261,7 +261,7 @@ section .text
     PUSH ECX                            ; 0059c83c
     PUSH EBP                            ; 0059c83d
     CALL core_bodypart.cpp_CBodyPart_setCounts_FUN_004191d0 ; 0059c83e
-        ;   XREF to: 004191d0 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_setCounts_FUN_004191d0(CBodyPart * this_ptr)
+        ;   XREF to: 004191d0 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_setCounts_FUN_004191d0(CBodyPart * this_ptr, int vertex_count, int tri_count)
     ADD ESP,0xc                         ; 0059c843
     MOV EAX,dword ptr [ESP + 0x5c]      ; 0059c846
     MOV EDX,dword ptr [ESP + 0x58]      ; 0059c84a
@@ -391,8 +391,8 @@ section .text
     PUSH EAX                            ; 0059c9d4
     PUSH EBP                            ; 0059c9d5
     ADD EDI,0x3c                        ; 0059c9d6
-    CALL core_bodypart.cpp_CBodyPart_FUN_0041af90 ; 0059c9d9
-        ;   XREF to: 0041af90 (UNCONDITIONAL_CALL)  ; int core_bodypart.cpp_CBodyPart_FUN_0041af90(CBodyPart * this_ptr)
+    CALL core_bodypart.cpp_CBodyPart_addTexture_FUN_0041af90 ; 0059c9d9
+        ;   XREF to: 0041af90 (UNCONDITIONAL_CALL)  ; int core_bodypart.cpp_CBodyPart_addTexture_FUN_0041af90(CBodyPart * this_ptr, char * texture_name)
     ADD ESP,0x8                         ; 0059c9de
     MOV EDX,dword ptr [EBP + 0x188]     ; 0059c9e1
     MOV ECX,dword ptr [ESP + 0x34]      ; 0059c9e7
@@ -488,8 +488,8 @@ section .text
     PUSH EBP                            ; 0059cb09
     ADD EDI,0x4                         ; 0059cb0a
     ADD ESI,0x4                         ; 0059cb0d
-    CALL core_bodypart.cpp_CBodyPart_FUN_0041af90 ; 0059cb10
-        ;   XREF to: 0041af90 (UNCONDITIONAL_CALL)  ; int core_bodypart.cpp_CBodyPart_FUN_0041af90(CBodyPart * this_ptr)
+    CALL core_bodypart.cpp_CBodyPart_addTexture_FUN_0041af90 ; 0059cb10
+        ;   XREF to: 0041af90 (UNCONDITIONAL_CALL)  ; int core_bodypart.cpp_CBodyPart_addTexture_FUN_0041af90(CBodyPart * this_ptr, char * texture_name)
     ADD ESP,0x8                         ; 0059cb15
     MOV EDX,dword ptr [EBP + 0x188]     ; 0059cb18
     MOV EBX,dword ptr [ESP + 0x38]      ; 0059cb1e

@@ -5,16 +5,14 @@
 // =============================================================================
 
 // CBloodPool[32]
-CBloodPool DAT_02da8724[32] = {};
+CBloodPool g_BloodPools[32] = {};
 
 // CFootstep[1000]
-CFootstep CFootstep_ARRAY_02da8c2c[1000] = {};
+CFootstep g_Footsteps[1000] = {};
 
 // int
-int INT_02da8720 = {};
-
-// undefined4
-undefined4 DAT_02da871c = {};
-undefined4 DAT_02da8c24 = {};
-undefined4 DAT_02da8c28 = {};
+int g_BloodPoolIndex = {};
+int g_BloodPoolCount = {};
+int g_FootstepIndex = {};
+int g_FootstepCount = {};
 

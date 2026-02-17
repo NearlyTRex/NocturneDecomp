@@ -31,18 +31,18 @@
 ;   ... and 71 more
 ;
 ; Called Functions:
-;   core_fire.cpp_CBulletHole_initRender_FUN_004bfa40
 ;   core_fire.cpp_CBulletHole_render_FUN_004bfac0
+;   core_fire.cpp_CBulletHole_setupRenderState_FUN_004bfa40
 ;   core_fire.cpp_CBulletTrail_render_FUN_004c21f0
 ;   core_fire.cpp_CExplosion_render_FUN_004c3b10
-;   core_fire.cpp_CFireball_initRender_FUN_004c0d80
+;   core_fire.cpp_CFireball_setupRenderState_FUN_004c0d80
 ;   core_fire.cpp_CGunFlame_render_FUN_004c50b0
 ;   core_fire.cpp_CLaserBeam_render_FUN_004c25c0
 ;   core_fire.cpp_CLightningBolt_render_FUN_004c5720
 ;   core_fire.cpp_CMuzzleFlash_render_FUN_004c1a30
-;   core_fire.cpp_CSmokeParticle_initRender_FUN_004bf1f0
 ;   core_fire.cpp_CSmokeParticle_render_FUN_004bf4c0
-;   core_fire.cpp_CSpark_initRender_FUN_004c0300
+;   core_fire.cpp_CSmokeParticle_setupRenderState_FUN_004bf1f0
+;   core_fire.cpp_CSpark_setupRenderState_FUN_004c0300
 ;   core_fire.cpp_CStake_render_FUN_004c0140
 ;   core_fire.cpp_CToss_render_FUN_004c4160
 ;   core_fire.cpp_CTrail_render_FUN_004c5e90
@@ -98,8 +98,8 @@ section .text
         ;   XREF to: 004c71c0 (CONDITIONAL_JUMP)  ; LAB_004c71c0
     PUSH 0x2d62ea8                      ; 004c71dd | g_FireballPool
     MOV EBX,0x2d62ea8                   ; 004c71e2 | g_FireballPool
-    CALL core_fire.cpp_CFireball_initRender_FUN_004c0d80 ; 004c71e7
-        ;   XREF to: 004c0d80 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CFireball_initRender_FUN_004c0d80(CFireball * this_ptr)
+    CALL core_fire.cpp_CFireball_setupRenderState_FUN_004c0d80 ; 004c71e7
+        ;   XREF to: 004c0d80 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CFireball_setupRenderState_FUN_004c0d80(CFireball * this_ptr)
     ADD ESP,0x4                         ; 004c71ec
     LEA ESI,[EBX + 0x2700]              ; 004c71ef | INT_02d655a8
     FLD float ptr [EBX + 0x18]          ; 004c71f5 | DAT_02d62ec0 | DAT_02d62f5c
@@ -150,8 +150,8 @@ section .text
     ADD ESP,0x18                        ; 004c7258
     PUSH 0x2d2a1f4                      ; 004c725b | g_BulletHolePool
     XOR ESI,ESI                         ; 004c7260
-    CALL core_fire.cpp_CBulletHole_initRender_FUN_004bfa40 ; 004c7262
-        ;   XREF to: 004bfa40 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CBulletHole_initRender_FUN_004bfa40(CBulletHole * this_ptr)
+    CALL core_fire.cpp_CBulletHole_setupRenderState_FUN_004bfa40 ; 004c7262
+        ;   XREF to: 004bfa40 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CBulletHole_setupRenderState_FUN_004bfa40(CBulletHole * this_ptr)
     MOV ECX,dword ptr [0x02d2a1ec]      ; 004c7267 | g_BulletHoleActiveCount
     ADD ESP,0x4                         ; 004c726d
     TEST ECX,ECX                        ; 004c7270
@@ -178,8 +178,8 @@ section .text
     PUSH 0x2d141ec                      ; 004c729d | g_SmokeParticlePool
         ;   Label: LAB_004c729d
     MOV EBX,0x2d141ec                   ; 004c72a2 | g_SmokeParticlePool
-    CALL core_fire.cpp_CSmokeParticle_initRender_FUN_004bf1f0 ; 004c72a7
-        ;   XREF to: 004bf1f0 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CSmokeParticle_initRender_FUN_004bf1f0(CSmokeParticle * this_ptr)
+    CALL core_fire.cpp_CSmokeParticle_setupRenderState_FUN_004bf1f0 ; 004c72a7
+        ;   XREF to: 004bf1f0 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CSmokeParticle_setupRenderState_FUN_004bf1f0(CSmokeParticle * this_ptr)
     ADD ESP,0x4                         ; 004c72ac
     LEA ESI,[EBX + 0x16000]             ; 004c72af | g_BulletHoleActiveCount
     MOV EAX,dword ptr [EBX]             ; 004c72b5 | g_SmokeParticlePool | DAT_02d14218
@@ -234,8 +234,8 @@ section .text
     PUSH 0x2d53e00                      ; 004c7320 | g_SparkPool
         ;   Label: LAB_004c7320
     MOV EBX,0x2d53e00                   ; 004c7325 | g_SparkPool
-    CALL core_fire.cpp_CSpark_initRender_FUN_004c0300 ; 004c732a
-        ;   XREF to: 004c0300 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CSpark_initRender_FUN_004c0300(CSpark * this_ptr)
+    CALL core_fire.cpp_CSpark_setupRenderState_FUN_004c0300 ; 004c732a
+        ;   XREF to: 004c0300 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CSpark_setupRenderState_FUN_004c0300(CSpark * this_ptr)
     ADD ESP,0x4                         ; 004c732f
     LEA ESI,[EBX + 0x4c00]              ; 004c7332 | g_SparkActiveCount
     FLD float ptr [EBX + 0x18]          ; 004c7338 | DAT_02d53e18 | DAT_02d53e64

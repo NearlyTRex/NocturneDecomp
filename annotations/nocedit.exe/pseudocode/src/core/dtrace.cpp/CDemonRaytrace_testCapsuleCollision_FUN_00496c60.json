@@ -6,17 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 202,
-    "complexity_score": 243,
+    "complexity_score": 230,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 12,
-    "pseudocode_lines": 63,
-    "suspect_count": 17,
+    "pseudocode_lines": 105,
+    "suspect_count": 12,
     "suspect_types": [
-      "unaffected_reg",
-      "warning_unreachable"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 265
+    "total_lines": 307
   },
   "cross_references": [
     {
@@ -238,123 +237,88 @@
   },
   "suspects": [
     {
-      "description": "Unreachable code block removed",
-      "line": 2,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x00496db8) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 3,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x00496dc4) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 4,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x00496dd8) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 5,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x00496de2) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 6,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x00496deb) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 7,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x00496df4) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 8,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x00496dac) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 18,
-      "match": "unaff_EBX",
-      "text": "int unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 19,
-      "match": "unaff_EDI",
-      "text": "int unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 45,
-      "match": "unaff_EBX",
-      "text": "fVar5 = 1.0 / *(float *)(unaff_EBX + 0x2c);",
-      "type": "unaffected_reg"
+      "match": "ROUND",
+      "text": "grid_x = (int)ROUND(ROUND(fVar4 * (1.0 / fVar1)));",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 47,
-      "match": "unaff_EBX",
-      "text": "fVar4 = *(float *)(unaff_EBX + 0x14);",
-      "type": "unaffected_reg"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 45,
+      "match": "ROUND",
+      "text": "grid_x = (int)ROUND(ROUND(fVar4 * (1.0 / fVar1)));",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 49,
-      "match": "unaff_EBX",
-      "text": "((double)((capsule_data->bottom_y - *(float *)(unaff_EBX + 0x14)) * fVar5));",
-      "type": "unaffected_reg"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 73,
+      "match": "ROUND",
+      "text": "for (; grid_y = (int)ROUND(ROUND((fVar4 - fVar5) * fVar13)), fVar18 = g_ZeroVector.y,",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 52,
-      "match": "unaff_EDI",
-      "text": "fVar5 = ((capsule_data->start_z + capsule_data->dir_z) - *(float *)(unaff_EDI + 0x18)) -",
-      "type": "unaffected_reg"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 73,
+      "match": "ROUND",
+      "text": "for (; grid_y = (int)ROUND(ROUND((fVar4 - fVar5) * fVar13)), fVar18 = g_ZeroVector.y,",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 54,
-      "match": "unaff_EDI",
-      "text": "fVar1 = *(float *)(unaff_EDI + 0x30);",
-      "type": "unaffected_reg"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 75,
+      "match": "ROUND",
+      "text": "grid_x <= (int)ROUND(ROUND(((fVar11 - fVar2) + fVar3) * (1.0 / fVar1))); grid_x = grid_x + 1)",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 58,
-      "match": "unaff_EDI",
-      "text": "fVar5 = (capsule_data->start_z - *(float *)(unaff_EDI + 0x18)) - capsule_data->radius;",
-      "type": "unaffected_reg"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 75,
+      "match": "ROUND",
+      "text": "grid_x <= (int)ROUND(ROUND(((fVar11 - fVar2) + fVar3) * (1.0 / fVar1))); grid_x = grid_x + 1)",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 59,
-      "match": "unaff_EDI",
-      "text": "fVar1 = *(float *)(unaff_EDI + 0x30);",
-      "type": "unaffected_reg"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 78,
+      "match": "ROUND",
+      "text": "grid_z = (int)ROUND(ROUND(fVar14 * (1.0 / fVar8))), g_TempNormal0.y = g_ZeroVector.y,",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 62,
-      "match": "unaff_EDI",
-      "text": "fVar2 = *(float *)(unaff_EDI + 0x18);",
-      "type": "unaffected_reg"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 78,
+      "match": "ROUND",
+      "text": "grid_z = (int)ROUND(ROUND(fVar14 * (1.0 / fVar8))), g_TempNormal0.y = g_ZeroVector.y,",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 80,
+      "match": "ROUND",
+      "text": "grid_y <= (int)ROUND(ROUND((fVar6 - fVar7) * fVar13)); grid_y = grid_y + 1) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 80,
+      "match": "ROUND",
+      "text": "grid_y <= (int)ROUND(ROUND((fVar6 - fVar7) * fVar13)); grid_y = grid_y + 1) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 82,
+      "match": "ROUND",
+      "text": "grid_z <= (int)ROUND(ROUND(((fVar12 - fVar9) + fVar10) * (1.0 / fVar8)));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 82,
+      "match": "ROUND",
+      "text": "grid_z <= (int)ROUND(ROUND(((fVar12 - fVar9) + fVar10) * (1.0 / fVar8)));",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

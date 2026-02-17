@@ -64,7 +64,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056be80(CDemonSet *this_ptr)
                 pCVar6 = (CDemonSet *)pCVar6->cameras;
               } while (local_18 < this_ptr->sorted_render_actor_count);
             }
-            core_gore_cpp_CGore_FUN_004ed7b0(g_CGorePtr);
+            core_gore_cpp_CGore_renderParticles_FUN_004ed7b0(g_CGorePtr);
             core_fire_cpp_CFireEffect_render_FUN_004c7180(g_CFireEffectPtr);
           }
           core_dlight_cpp_CDemonLight_endScene_FUN_00472d30(pCVar2);
@@ -103,7 +103,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056be80(CDemonSet *this_ptr)
               pCVar6 = (CDemonSet *)pCVar6->cameras;
             } while (iVar5 < this_ptr->sorted_render_actor_count);
           }
-          core_gore_cpp_CGore_FUN_004ed7b0(g_CGorePtr);
+          core_gore_cpp_CGore_renderParticles_FUN_004ed7b0(g_CGorePtr);
           core_fire_cpp_CFireEffect_render_FUN_004c7180(g_CFireEffectPtr);
           g_CurrentShadowLight = (CDemonLight *)0x0;
           core_dlight_cpp_CDemonLight_endScene_FUN_00472d30(pCVar2);

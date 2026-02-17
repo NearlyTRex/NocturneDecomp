@@ -12,7 +12,7 @@ typedef struct CBox {
     CVector3f position; // 0x0
     CVector3f orientation; // 0xc
     CMatrix3x3f rotation_matrix; // 0x18
-    int unk; // 0x3c
+    int padding; // 0x3c
     CVector3f linear_velocity; // 0x40
     CVector3f linear_velocity_local; // 0x4c
     CVector3f linear_velocity_temp; // 0x58

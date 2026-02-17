@@ -4,37 +4,37 @@
       {
         "category": "other",
         "column": 10,
-        "line": 73,
+        "line": 81,
         "message": "member reference base type 'int' is not a structure or union"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 74,
+        "line": 82,
         "message": "member reference base type 'int' is not a structure or union"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 77,
+        "line": 85,
         "message": "member reference base type 'int' is not a structure or union"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 78,
+        "line": 86,
         "message": "member reference base type 'int' is not a structure or union"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 83,
+        "line": 91,
         "message": "member reference base type 'int' is not a structure or union"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 84,
+        "line": 92,
         "message": "member reference base type 'int' is not a structure or union"
       }
     ],
@@ -43,18 +43,18 @@
   },
   "complexity": {
     "assembly_lines": 322,
-    "complexity_score": 238,
+    "complexity_score": 285,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 5,
-    "pseudocode_lines": 113,
-    "suspect_count": 11,
+    "pseudocode_lines": 120,
+    "suspect_count": 15,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "unknown_field"
     ],
-    "total_lines": 435
+    "total_lines": 442
   },
   "cross_references": [
     {
@@ -317,77 +317,105 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 44,
+      "line": 52,
       "match": "ROUND",
-      "text": "this_ptr->boxes[box_index].avg_red = (short)(int)ROUND(dVar16);",
+      "text": "(short)(int)ROUND(ROUND(local_44 / (float)(uint)this_ptr->boxes[box_index].pixel_count));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 48,
+      "line": 52,
       "match": "ROUND",
-      "text": "this_ptr->boxes[box_index].avg_green = (short)(int)ROUND(dVar16);",
+      "text": "(short)(int)ROUND(ROUND(local_44 / (float)(uint)this_ptr->boxes[box_index].pixel_count));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 51,
+      "line": 54,
       "match": "ROUND",
-      "text": "this_ptr->boxes[box_index].avg_blue = (short)(int)ROUND(dVar16);",
+      "text": "(short)(int)ROUND(ROUND(local_30 / (float)(uint)this_ptr->boxes[box_index].pixel_count));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 59,
+      "line": 54,
       "match": "ROUND",
-      "text": "this_ptr->boxes[box_index].avg_intensity = (short)(int)ROUND(dVar16);",
+      "text": "(short)(int)ROUND(ROUND(local_30 / (float)(uint)this_ptr->boxes[box_index].pixel_count));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 56,
+      "match": "ROUND",
+      "text": "(short)(int)ROUND(ROUND(local_3c / (float)(uint)this_ptr->boxes[box_index].pixel_count));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 56,
+      "match": "ROUND",
+      "text": "(short)(int)ROUND(ROUND(local_3c / (float)(uint)this_ptr->boxes[box_index].pixel_count));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 67,
+      "match": "ROUND",
+      "text": "this_ptr->boxes[box_index].avg_intensity = (short)(int)ROUND(ROUND(local_38 / (float)uVar12));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 67,
+      "match": "ROUND",
+      "text": "this_ptr->boxes[box_index].avg_intensity = (short)(int)ROUND(ROUND(local_38 / (float)uVar12));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 62,
+      "line": 70,
       "match": "(int *)((int)",
       "text": "uVar12 = (*(int *)((int)&this_ptr->boxes[box_index + -1].pixel_count + 2) >> 0x10) -",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 66,
+      "line": 74,
       "match": "._0_2_",
       "text": "iVar3._0_2_ = this_ptr->boxes[box_index].avg_red;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 67,
+      "line": 75,
       "match": "._2_2_",
       "text": "iVar3._2_2_ = this_ptr->boxes[box_index].avg_green;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 70,
+      "line": 78,
       "match": "._0_2_",
       "text": "iVar4._0_2_ = this_ptr->boxes[box_index].avg_green;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 71,
+      "line": 79,
       "match": "._2_2_",
       "text": "iVar4._2_2_ = this_ptr->boxes[box_index].avg_blue;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 76,
+      "line": 84,
       "match": "._0_2_",
       "text": "iVar5._0_2_ = this_ptr->boxes[box_index].avg_blue;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 77,
+      "line": 85,
       "match": "._2_2_",
       "text": "iVar5._2_2_ = this_ptr->boxes[box_index].avg_intensity;",
       "type": "unknown_field"

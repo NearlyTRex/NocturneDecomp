@@ -2,34 +2,16 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "incompatible_types",
-        "column": 14,
-        "line": 32,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 14,
-        "line": 39,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 14,
-        "line": 44,
-        "message": "invalid operands to binary expression ('double' and 'int')"
+        "category": "undeclared_identifier",
+        "column": 52,
+        "line": 36,
+        "message": "use of undeclared identifier 'stack0xffffffe8'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 48,
-        "line": 48,
-        "message": "use of undeclared identifier 'stack0xffffffe0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 50,
-        "message": "use of undeclared identifier 'stack0xffffffe4'"
+        "column": 23,
+        "line": 38,
+        "message": "use of undeclared identifier 'stack0xffffffec'"
       }
     ],
     "success": false,
@@ -37,18 +19,19 @@
   },
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 147,
+    "complexity_score": 189,
     "cross_reference_count": 7,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 42,
-    "suspect_count": 9,
+    "pseudocode_lines": 29,
+    "suspect_count": 14,
     "suspect_types": [
       "decompiler_intrinsic",
+      "pointer_cast",
       "stack_ref",
       "unaffected_reg"
     ],
-    "total_lines": 101
+    "total_lines": 88
   },
   "cross_references": [
     {
@@ -218,64 +201,99 @@
       "description": "Unaffected register variable",
       "line": 8,
       "match": "unaff_ESI",
-      "text": "uint *unaff_ESI;",
+      "text": "int *unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 25,
-      "match": "SUB84",
-      "text": "local_10 = SUB84(dVar5,0);",
+      "line": 19,
+      "match": "ROUND",
+      "text": "dVar1 = ROUND(local_10);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
-      "match": "SUB84",
-      "text": "local_14 = SUB84(dVar5,0);",
+      "line": 23,
+      "match": "ROUND",
+      "text": "local_18 = (int)ROUND(ROUND(local_10));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 37,
-      "match": "SUB84",
-      "text": "local_18 = SUB84(dVar5,0);",
+      "line": 23,
+      "match": "ROUND",
+      "text": "local_18 = (int)ROUND(ROUND(local_10));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 27,
+      "match": "ROUND",
+      "text": "local_14 = (int)ROUND(ROUND(local_10));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 27,
+      "match": "ROUND",
+      "text": "local_14 = (int)ROUND(ROUND(local_10));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unaffected register variable",
-      "line": 40,
+      "line": 28,
       "match": "unaff_ESI",
-      "text": "*unaff_ESI = uVar6;",
+      "text": "*unaff_ESI = (int)ROUND(dVar1);",
       "type": "unaffected_reg"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 28,
+      "match": "ROUND",
+      "text": "*unaff_ESI = (int)ROUND(dVar1);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Direct stack address reference",
-      "line": 41,
-      "match": "&stack0xffffffe0",
-      "text": "unaff_ESI[(uint)bVar4 * -2 + 1] = *(uint *)(&stack0xffffffe0 + (uint)bVar4 * -8);",
+      "line": 29,
+      "match": "&stack0xffffffe8",
+      "text": "unaff_ESI[(uint)bVar2 * -2 + 1] = *(int *)((int)&stack0xffffffe8 + (uint)bVar2 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Unaffected register variable",
-      "line": 41,
+      "line": 29,
       "match": "unaff_ESI",
-      "text": "unaff_ESI[(uint)bVar4 * -2 + 1] = *(uint *)(&stack0xffffffe0 + (uint)bVar4 * -8);",
+      "text": "unaff_ESI[(uint)bVar2 * -2 + 1] = *(int *)((int)&stack0xffffffe8 + (uint)bVar2 * -8);",
       "type": "unaffected_reg"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(int *)((int)",
+      "text": "unaff_ESI[(uint)bVar2 * -2 + 1] = *(int *)((int)&stack0xffffffe8 + (uint)bVar2 * -8);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unaffected register variable",
-      "line": 42,
+      "line": 30,
       "match": "unaff_ESI",
-      "text": "(unaff_ESI + (uint)bVar4 * -2 + 1)[(uint)bVar4 * -2 + 1] =",
+      "text": "(unaff_ESI + (uint)bVar2 * -2 + 1)[(uint)bVar2 * -2 + 1] =",
       "type": "unaffected_reg"
     },
     {
       "description": "Direct stack address reference",
-      "line": 43,
-      "match": "&stack0xffffffe4",
-      "text": "*(uint *)(&stack0xffffffe4 + (uint)bVar4 * -8 + (uint)bVar4 * -8);",
+      "line": 31,
+      "match": "&stack0xffffffec",
+      "text": "*(int *)((int)&stack0xffffffec + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
       "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&stack0xffffffec + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
+      "type": "pointer_cast"
     }
   ]
 }

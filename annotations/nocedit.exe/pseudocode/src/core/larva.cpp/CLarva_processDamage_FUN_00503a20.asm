@@ -28,7 +28,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10
-;   core_gore.cpp_CGore_FUN_004edbb0
+;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
@@ -130,8 +130,8 @@ section .text
     PUSH EAX                            ; 00503b15
     MOV ECX,dword ptr [0x0067b9a0]      ; 00503b16 | g_CGoreInstance | g_CGorePtr
     PUSH ECX                            ; 00503b1c | g_CGoreInstance
-    CALL core_gore.cpp_CGore_FUN_004edbb0 ; 00503b1d
-        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004edbb0(CGore * this_ptr)
+    CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0 ; 00503b1d
+        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)
     ADD ESP,0x14                        ; 00503b22
     PUSH EDI                            ; 00503b25
     PUSH EBX                            ; 00503b26

@@ -41,7 +41,7 @@ int __cdecl CDynamite(CDynamite *this_ptr);
 
 // Original: core_dynamite.cpp_CDynamite_FUN_0049cf90
 // Address: 0049cf90
-bool __cdecl CDynamite(CDynamite *this_ptr);
+int __cdecl CDynamite(CDynamite *this_ptr);
 
 // Original: core_dynamite.cpp_CDynamite_process_FUN_0049cfb0
 // Address: 0049cfb0

@@ -10,6 +10,7 @@ void __cdecl core_boxactor_cpp_CBoxActor_setPositionAndOrientation_FUN_00422640(
 
 {
   UOrientationVector *pUVar1;
+  CVector3f *pCVar2;
   
   (this_ptr->base).location.position.x = new_position->x;
   (this_ptr->base).location.position.y = new_position->y;
@@ -21,15 +22,16 @@ void __cdecl core_boxactor_cpp_CBoxActor_setPositionAndOrientation_FUN_00422640(
     (this_ptr->base).orient.vec.z = new_orientation->z;
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
-  if ((CVector3f *)&this_ptr->sim_box != new_position) {
-    this_ptr->sim_box = (CSimBox *)new_position->x;
-    *(float *)this_ptr->unk4 = new_position->y;
-    *(float *)(this_ptr->unk4 + 4) = new_position->z;
+  if (&this_ptr->physics_box != (CBox *)new_position) {
+    (this_ptr->physics_box).position.x = new_position->x;
+    (this_ptr->physics_box).position.y = new_position->y;
+    (this_ptr->physics_box).position.z = new_position->z;
   }
-  if ((CVector3f *)(this_ptr->unk4 + 8) != new_orientation) {
-    ((CVector3f *)(this_ptr->unk4 + 8))->x = new_orientation->x;
-    *(float *)(this_ptr->unk4 + 0xc) = new_orientation->y;
-    *(float *)(this_ptr->unk4 + 0x10) = new_orientation->z;
+  pCVar2 = &(this_ptr->physics_box).orientation;
+  if (pCVar2 != new_orientation) {
+    pCVar2->x = new_orientation->x;
+    (this_ptr->physics_box).orientation.y = new_orientation->y;
+    (this_ptr->physics_box).orientation.z = new_orientation->z;
   }
   core_boxactor_cpp_CBoxActor_FUN_004218d0(this_ptr);
   return;

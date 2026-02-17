@@ -13,7 +13,7 @@
 ;   void* g_ActiveControl
 ;   int g_MouseX
 ;   int g_MouseY
-;   _BIT_INTEGER g_MouseButtonFlags
+;   _BIT_INTEGER32 g_MouseButtonFlags
 ;
 ; *****************************************************************************
 

@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 77,
+    "complexity_score": 105,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 9,
-    "pseudocode_lines": 32,
-    "suspect_count": 4,
+    "pseudocode_lines": 20,
+    "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 84
+    "total_lines": 72
   },
   "cross_references": [
     {
@@ -189,30 +189,58 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 20,
+      "line": 9,
       "match": "ROUND",
-      "text": "g_CameraShakeSustainValue = (int)ROUND(dVar3);",
+      "text": "g_CameraShakeSustainValue = (int)ROUND(ROUND((double)sustain_duration * 65536));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 21,
+      "line": 9,
       "match": "ROUND",
-      "text": "g_CameraShakeAttackTime = (int)ROUND(dVar4);",
+      "text": "g_CameraShakeSustainValue = (int)ROUND(ROUND((double)sustain_duration * 65536));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 22,
+      "line": 10,
       "match": "ROUND",
-      "text": "g_CameraShakeDecayDuration = (int)ROUND(dVar5);",
+      "text": "g_CameraShakeAttackTime = (int)ROUND(ROUND((double)attack_time * 65536));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
+      "line": 10,
       "match": "ROUND",
-      "text": "g_CameraShakePeakValue = (int)ROUND(dVar2);",
+      "text": "g_CameraShakeAttackTime = (int)ROUND(ROUND((double)attack_time * 65536));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 11,
+      "match": "ROUND",
+      "text": "g_CameraShakeDecayDuration = (int)ROUND(ROUND((double)decay_time * 65536));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 11,
+      "match": "ROUND",
+      "text": "g_CameraShakeDecayDuration = (int)ROUND(ROUND((double)decay_time * 65536));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 12,
+      "match": "ROUND",
+      "text": "g_CameraShakePeakValue = (int)ROUND(ROUND((double)peak_intensity * 65536));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 12,
+      "match": "ROUND",
+      "text": "g_CameraShakePeakValue = (int)ROUND(ROUND((double)peak_intensity * 65536));",
       "type": "decompiler_intrinsic"
     }
   ]

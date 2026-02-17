@@ -1,0 +1,217 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 99,
+    "complexity_score": 127,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 4,
+    "pseudocode_lines": 57,
+    "suspect_count": 6,
+    "suspect_types": [
+      "pointer_cast",
+      "unnamed_param"
+    ],
+    "total_lines": 156
+  },
+  "cross_references": [
+    {
+      "addr": "0042bd30",
+      "from_addr": "0042bf1a",
+      "name": "core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_0042bd30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0041ae50",
+    "address_range": [
+      [
+        "0041ae50",
+        "0041af6e"
+      ],
+      [
+        "0041af82",
+        "0041af87"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_bodypart.cpp_CBodyPart_addFire_FUN_0041ae50",
+    "signature": "void __cdecl core_bodypart_cpp_CBodyPart_addFire_FUN_0041ae50(CBodyPart *this_ptr,CVector3f *param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408ec0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0"
+    },
+    {
+      "addr": "0040cc10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10"
+    },
+    {
+      "addr": "004c9b90",
+      "is_variadic": false,
+      "name": "core_flame.cpp_CFlame_setup_FUN_004c9b90"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00615e60",
+      "name": "s_CHAR2_RAW_00615e60",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00615e61",
+      "name": "s_HAR2.RAW_00615e61",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00615e62",
+      "name": "s_AR2.RAW_00615e62",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00615e63",
+      "name": "s_R2.RAW_00615e63",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0042bf1a",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_0042bd30",
+        "estimated_params": 2,
+        "instructions_analyzed": 6,
+        "reg_params": [],
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.518072289156627,
+    "instruction_count": 83,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CALL": 3,
+      "CBRANCH": 6,
+      "COPY": 99,
+      "FLOAT2FLOAT": 4,
+      "INT_ADD": 42,
+      "INT_AND": 37,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 37,
+      "INT_LESS": 6,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 9,
+      "INT_SEXT": 3,
+      "INT_SLESS": 18,
+      "INT_SUB": 20,
+      "INT_XOR": 2,
+      "LOAD": 18,
+      "POPCOUNT": 18,
+      "RETURN": 1,
+      "STORE": 30,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 375
+  },
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBodyPart *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "text": "void __cdecl core_bodypart_cpp_CBodyPart_addFire_FUN_0041ae50(CBodyPart *this_ptr,CVector3f *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_2",
+      "text": "if (input_local_point != param_2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_2",
+      "text": "input_local_point->x = param_2->x;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_2",
+      "text": "input_local_point->y = param_2->y;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_2",
+      "text": "input_local_point->z = param_2->z;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 51,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)this_ptr->face_texture_indices + iVar3) = 0;",
+      "type": "pointer_cast"
+    }
+  ]
+}

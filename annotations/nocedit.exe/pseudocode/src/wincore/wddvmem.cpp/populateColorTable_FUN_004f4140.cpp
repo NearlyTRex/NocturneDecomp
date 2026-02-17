@@ -18,9 +18,9 @@ ulonglong __cdecl wincore_wddvmem_cpp_populateColorTable_FUN_004f4140(void)
   iVar3 = 0;
   do {
     if (g_BitsPerPixel == 0x20) {
-      uVar2 = (uint)(byte)g_SourcePaletteData[iVar1 + 2] << ((byte)g_BlueBitPosition & 0x1f) |
-              (uint)(byte)g_SourcePaletteData[iVar1] << ((byte)g_RedBitPosition & 0x1f) |
-              (uint)(byte)g_SourcePaletteData[iVar1 + 1] << ((byte)g_GreenBitPosition & 0x1f);
+      uVar2 = (uint)(byte)g_SourcePaletteData[iVar1 + 2] << (g_BlueBitPosition.bytes[0] & 0x1f) |
+              (uint)(byte)g_SourcePaletteData[iVar1] << (g_RedBitPosition.bytes[0] & 0x1f) |
+              (uint)(byte)g_SourcePaletteData[iVar1 + 1] << (g_GreenBitPosition.bytes[0] & 0x1f);
     }
     else {
       uVar2 = (uint)(byte)g_SourcePaletteData[iVar1] << 0x10 |

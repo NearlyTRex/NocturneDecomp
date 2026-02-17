@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 int __cdecl shape_quantize_cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0(CColorQuantizer *this_ptr,uchar *output_buffer)
 
 {
@@ -20,10 +22,7 @@ int __cdecl shape_quantize_cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff
   int iVar9;
   CColorQuantizer *pCVar10;
   int iVar11;
-  double dVar12;
-  uchar uStack_20;
-  uchar uStack_1c;
-  uchar uStack_18;
+  uchar local_14;
   
   iVar11 = 0;
   if (0 < this_ptr->num_colors) {
@@ -96,17 +95,14 @@ int __cdecl shape_quantize_cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff
   pCVar7 = this_ptr;
   if (0 < (int)puVar8) {
     do {
-      dVar12 = round((double)pCVar7->palette[0].r);
       puVar8 = output_buffer + 3;
-      uStack_18 = (uchar)(int)ROUND(dVar12);
-      output_buffer[2] = uStack_18;
-      dVar12 = round((double)pCVar7->palette[0].g);
-      uStack_1c = (uchar)(int)ROUND(dVar12);
-      output_buffer[1] = uStack_1c;
-      dVar12 = round((double)pCVar7->palette[0].b);
-      uStack_20 = (uchar)(int)ROUND(dVar12);
+      local_14 = (uchar)(int)ROUND(ROUND(pCVar7->palette[0].r));
+      output_buffer[2] = local_14;
+      local_14 = (uchar)(int)ROUND(ROUND(pCVar7->palette[0].g));
+      output_buffer[1] = local_14;
+      local_14 = (uchar)(int)ROUND(ROUND(pCVar7->palette[0].b));
       iVar11 = iVar11 + 1;
-      *output_buffer = uStack_20;
+      *output_buffer = local_14;
       output_buffer = puVar8;
       pCVar7 = (CColorQuantizer *)&pCVar7->error_buffer_r;
     } while (iVar11 < this_ptr->num_colors);

@@ -258,9 +258,9 @@ LAB_0044f4fd:
         uVar26 = (uint)(&g_CameraImagePaletteData.colors[0].r)[iVar18];
         uVar8 = (uint)(&g_CameraImagePaletteData.colors[0].g)[iVar18];
         if (g_BitsPerPixel == 0x20) {
-          uVar23 = uVar23 << ((byte)g_BlueBitPosition & 0x1f) |
-                   uVar8 << ((byte)g_GreenBitPosition & 0x1f) |
-                   uVar26 << ((byte)g_RedBitPosition & 0x1f);
+          uVar23 = uVar23 << (g_BlueBitPosition.bytes[0] & 0x1f) |
+                   uVar8 << (g_GreenBitPosition.bytes[0] & 0x1f) |
+                   uVar26 << (g_RedBitPosition.bytes[0] & 0x1f);
         }
         else {
           uVar23 = uVar8 << 8 | uVar26 << 0x10 | uVar23;

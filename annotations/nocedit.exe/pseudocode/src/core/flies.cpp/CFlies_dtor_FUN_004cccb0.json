@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 33,
+    "complexity_score": 34,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 1,
-    "pseudocode_lines": 18,
+    "pseudocode_lines": 19,
     "suspect_count": 1,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 65
+    "total_lines": 66
   },
   "cross_references": [],
   "function": {
@@ -120,9 +120,9 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 15,
+      "line": 16,
       "match": "pSVar1[-7].",
-      "text": "ptr = (CFlies *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)pSVar1[-7].unk2,1);",
+      "text": "core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)pSVar1[-7].control_points,1);",
       "type": "negative_offset"
     }
   ],

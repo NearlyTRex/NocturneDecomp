@@ -48,9 +48,9 @@ extern SInventoryItemInfo g_ItemDefinitionArray[100];
 // char[256]
 extern char g_ErrorMessageBuffer_02db8a70[256];
 extern char g_ErrorMessageBuffer_02db8b70[256];
-extern char DAT_02db8c70[256];
+extern char CHAR_ARRAY_02db8c70[256];
 extern char DAT_02db9670[256];
-extern char DAT_02dba070[256];
+extern char CHAR_ARRAY_02dba070[256];
 
 // int
 extern int INT_02db8700;

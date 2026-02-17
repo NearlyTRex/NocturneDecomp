@@ -42,9 +42,7 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
   CVector3f CStack_a0;
   CVector3f CStack_94;
   CVector3f CStack_88;
-  float fStack_7c;
-  float fStack_78;
-  float fStack_74;
+  CVector3f CStack_7c;
   CVector3f CStack_70;
   CVector3f CStack_64;
   CVector3f CStack_58;
@@ -142,14 +140,16 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
               core_xform_cpp_clearTranslation_FUN_005f5370((CMatrix3x4f *)local_28);
               iVar4 = 0;
               do {
-                fStack_7c = core_actor_cpp_getRandomFloat_FUN_0040cc10(-7.0,7.0);
-                fStack_18 = fStack_7c;
-                fStack_74 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-7.0,7.0);
-                fStack_18 = fStack_74;
-                fStack_78 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-1.0,15.0);
+                CStack_7c.x = core_actor_cpp_getRandomFloat_FUN_0040cc10(-7.0,7.0);
+                fStack_18 = CStack_7c.x;
+                CStack_7c.z = core_actor_cpp_getRandomFloat_FUN_0040cc10(-7.0,7.0);
+                fStack_18 = CStack_7c.z;
+                CStack_7c.y = core_actor_cpp_getRandomFloat_FUN_0040cc10(-1.0,15.0);
                 iVar4 = iVar4 + 1;
-                fStack_18 = fStack_78;
-                core_gore_cpp_CGore_FUN_004edaa0(g_CGorePtr);
+                fStack_18 = CStack_7c.y;
+                core_gore_cpp_CGore_spawnBloodParticles_FUN_004edaa0
+                          (g_CGorePtr,&CStack_a0,&CStack_7c,
+                           (this_ptr->base).victim[0x1c].was_created);
               } while (iVar4 < 0x46);
             }
           }

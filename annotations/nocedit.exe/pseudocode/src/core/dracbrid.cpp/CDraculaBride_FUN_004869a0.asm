@@ -51,9 +51,9 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
-;   core_spline.cpp_FUN_005b90a0
-;   core_spline.cpp_FUN_005b92d0
-;   core_spline.cpp_FUN_005b9490
+;   core_spline.cpp_computeSplineBasis_FUN_005b90a0
+;   core_spline.cpp_evaluateSplinePoint3D_FUN_005b92d0
+;   core_spline.cpp_evaluateSplineTangent3D_FUN_005b9490
 ;   engine_console.cpp_CConsole_printf_FUN_00441890
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 ;
@@ -208,8 +208,8 @@ section .text
     PUSH dword ptr [EAX + 0x1c]         ; 00486bb3 | DAT_02c6d130
     LEA EAX,[ESP + 0x8]                 ; 00486bb6
     PUSH EAX                            ; 00486bba
-    CALL core_spline.cpp_FUN_005b90a0   ; 00486bbb
-        ;   XREF to: 005b90a0 (UNCONDITIONAL_CALL)  ; void core_spline.cpp_FUN_005b90a0()
+    CALL core_spline.cpp_computeSplineBasis_FUN_005b90a0 ; 00486bbb
+        ;   XREF to: 005b90a0 (UNCONDITIONAL_CALL)  ; void core_spline.cpp_computeSplineBasis_FUN_005b90a0(float * out_basis, float t, float tension)
     ADD ESP,0xc                         ; 00486bc0
     MOV EAX,dword ptr [ESP + 0x68]      ; 00486bc3
     ADD EAX,0x44                        ; 00486bc7
@@ -224,8 +224,8 @@ section .text
     PUSH EAX                            ; 00486bdd
     LEA EAX,[ESP + 0x14]                ; 00486bde
     PUSH EAX                            ; 00486be2
-    CALL core_spline.cpp_FUN_005b92d0   ; 00486be3
-        ;   XREF to: 005b92d0 (UNCONDITIONAL_CALL)  ; float * core_spline.cpp_FUN_005b92d0()
+    CALL core_spline.cpp_evaluateSplinePoint3D_FUN_005b92d0 ; 00486be3
+        ;   XREF to: 005b92d0 (UNCONDITIONAL_CALL)  ; CVector3f * core_spline.cpp_evaluateSplinePoint3D_FUN_005b92d0(float * basis, CVector3f * out, CVector3f * p0, CVector3f * p1, ...)
     ADD ESP,0x18                        ; 00486be8
     MOV EBX,dword ptr [ESP + 0x68]      ; 00486beb
     ADD EBX,0x4                         ; 00486bef | DAT_02c6d118
@@ -271,8 +271,8 @@ section .text
     PUSH EAX                            ; 00486c5d
     LEA EAX,[ESP + 0x14]                ; 00486c5e
     PUSH EAX                            ; 00486c62
-    CALL core_spline.cpp_FUN_005b9490   ; 00486c63
-        ;   XREF to: 005b9490 (UNCONDITIONAL_CALL)  ; float * core_spline.cpp_FUN_005b9490()
+    CALL core_spline.cpp_evaluateSplineTangent3D_FUN_005b9490 ; 00486c63
+        ;   XREF to: 005b9490 (UNCONDITIONAL_CALL)  ; CVector3f * core_spline.cpp_evaluateSplineTangent3D_FUN_005b9490(float * basis, CVector3f * out, CVector3f * p0, CVector3f * p1, ...)
     ADD ESP,0x18                        ; 00486c68
     MOV EBX,dword ptr [ESP + 0x68]      ; 00486c6b
     ADD EBX,0x10                        ; 00486c6f

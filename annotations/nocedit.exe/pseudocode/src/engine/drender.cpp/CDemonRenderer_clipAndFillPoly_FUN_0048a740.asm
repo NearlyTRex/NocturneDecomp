@@ -26,7 +26,7 @@
 ;   TerminatedCString s_CDemonRenderer_clipAndFi_00621f78
 ;   int g_ClippedVertexCount
 ;   SRenderVertex[16] g_ClippedVertexBuffer
-;   _BIT_INTEGER g_RenderStateFlags
+;   _BIT_INTEGER32 g_RenderStateFlags
 ;   undefined4 DAT_02d052a1
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber

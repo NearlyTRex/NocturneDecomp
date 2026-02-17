@@ -23,8 +23,24 @@ DWORD g_JoyButtons = {};
 // RenderScanlineFunc*
 RenderScanlineFunc* g_ScanlineRenderFunc = {};
 
-// _BIT_INTEGER
-_BIT_INTEGER g_RenderStateFlags = {};
+// _BIT_INTEGER32
+_BIT_INTEGER32 g_RedBitPosition = {};
+_BIT_INTEGER32 g_RedBitCount = {};
+_BIT_INTEGER32 g_GreenBitPosition = {};
+_BIT_INTEGER32 g_GreenBitCount = {};
+_BIT_INTEGER32 g_BlueBitPosition = {};
+_BIT_INTEGER32 g_BlueBitCount = {};
+_BIT_INTEGER32 g_RenderStateFlags = {};
+
+// _MMX_INTEGER
+_MMX_INTEGER g_SavedMMX0 = {};
+_MMX_INTEGER g_SavedMMX1 = {};
+_MMX_INTEGER g_SavedMMX2 = {};
+_MMX_INTEGER g_SavedMMX3 = {};
+_MMX_INTEGER g_SavedMMX4 = {};
+_MMX_INTEGER g_SavedMMX5 = {};
+_MMX_INTEGER g_SavedMMX6 = {};
+_MMX_INTEGER g_SavedMMX7 = {};
 
 // byte
 byte g_LeftMousePressed = {};
@@ -38,11 +54,13 @@ byte* g_CurrentPalette = {};
 char g_FileTransferErrorMessage[1024] = {};
 
 // char[256]
-char g_KeyboardState[256] = {};
 char g_EventErrorMessageBuffer[256] = {};
 
 // char[32768]
 char g_FileTransferBuffer[32768] = {};
+
+// char[512]
+char g_KeyboardState[512] = {};
 
 // char[768]
 char g_SourcePaletteData[768] = {};
@@ -51,15 +69,9 @@ char g_SourcePaletteData[768] = {};
 float g_PerspectiveReciprocal = {};
 
 // int
-int g_RedBitPosition = {};
 int g_RedScaleFactor = {};
-int g_RedBitCount = {};
-int g_GreenBitPosition = {};
 int g_GreenScaleFactor = {};
-int g_GreenBitCount = {};
-int g_BlueBitPosition = {};
 int g_BlueScaleFactor = {};
-int g_BlueBitCount = {};
 int g_ViewportCenterXFixed = {};
 int g_ViewportCenterYFixed = {};
 int g_ViewportRightFixed = {};
@@ -117,16 +129,6 @@ uint g_Hardware32BitPalette[256] = {};
 
 // ulong
 ulong g_SolidColorMode = {};
-
-// ulonglong
-ulonglong g_SavedMMX0 = {};
-ulonglong g_SavedMMX1 = {};
-ulonglong g_SavedMMX2 = {};
-ulonglong g_SavedMMX3 = {};
-ulonglong g_SavedMMX4 = {};
-ulonglong g_SavedMMX5 = {};
-ulonglong g_SavedMMX6 = {};
-ulonglong g_SavedMMX7 = {};
 
 // ushort[256]
 ushort g_ColorTable16[256] = {};

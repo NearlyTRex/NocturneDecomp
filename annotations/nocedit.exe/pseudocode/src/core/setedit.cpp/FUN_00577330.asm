@@ -14,9 +14,9 @@
 ;   int g_BitsPerPixel = 0x8
 ;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_ScreenBufferArray[1]
-;   int g_RedBitPosition
-;   int g_GreenBitPosition
-;   int g_BlueBitPosition
+;   _BIT_INTEGER32 g_RedBitPosition
+;   _BIT_INTEGER32 g_GreenBitPosition
+;   _BIT_INTEGER32 g_BlueBitPosition
 ;   undefined4 DAT_03365cc0
 ;   undefined4 DAT_03365cc4
 ;

@@ -16,17 +16,17 @@ void __cdecl core_boxactor_cpp_CBoxActor_setup_FUN_00421830(CBoxActor *this_ptr)
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&this_ptr->model);
   pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
   iVar1 = pCVar2->frame_count;
-  if ((float)this_ptr->unk2 < 0.0) {
-    this_ptr->unk2 = 0;
+  if (this_ptr->anim_frame < 0.0) {
+    this_ptr->anim_frame = 0.0;
   }
-  if ((float)iVar1 <= (float)this_ptr->unk2) {
-    this_ptr->unk2 = (int)(float)(iVar1 + -1);
+  if ((float)iVar1 <= this_ptr->anim_frame) {
+    this_ptr->anim_frame = (float)(iVar1 + -1);
   }
-  if (-1 < this_ptr->unk5) {
-    this_ptr->unk3 = 0;
+  if (-1 < (this_ptr->physics_box).is_valid) {
+    this_ptr->padding = 0;
     return;
   }
   core_boxactor_cpp_CBoxActor_FUN_004218d0(this_ptr);
-  this_ptr->unk3 = 0;
+  this_ptr->padding = 0;
   return;
 }

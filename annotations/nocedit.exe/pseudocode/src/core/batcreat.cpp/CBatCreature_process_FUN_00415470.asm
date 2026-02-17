@@ -346,8 +346,8 @@ section .text
     PUSH EAX                            ; 0041571a
     MOV ESI,dword ptr [0x0067b9a0]      ; 0041571b | g_CGorePtr
     PUSH ESI                            ; 00415721 | g_CGoreInstance
-    CALL core_gore.cpp_CGore_FUN_004ede30 ; 00415722
-        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004ede30(CGore * this_ptr)
+    CALL core_gore.cpp_CGore_createBloodPool_FUN_004ede30 ; 00415722
+        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_createBloodPool_FUN_004ede30(CGore * this_ptr, CVector3f * position, int blood_type)
     ADD ESP,0xc                         ; 00415727
     MOV dword ptr [EBX + 0xbe28],0x1    ; 0041572a
     JMP 0x0041556b                      ; 00415734
@@ -613,7 +613,7 @@ section .text
         ;   Label: LAB_00415a2c
     PUSH EBX                            ; 00415a32
     CALL core_enemy.cpp_CEnemy_FUN_004a9fd0 ; 00415a33
-        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr)
+        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00415a38
     TEST EAX,EAX                        ; 00415a3b
     JZ 0x0041556b                       ; 00415a3d
@@ -639,7 +639,7 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 00415a75
     PUSH EBX                            ; 00415a7b
     CALL core_enemy.cpp_CEnemy_FUN_004a9fd0 ; 00415a7c
-        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr)
+        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00415a81
     TEST EAX,EAX                        ; 00415a84
     JZ 0x00415a9a                       ; 00415a86

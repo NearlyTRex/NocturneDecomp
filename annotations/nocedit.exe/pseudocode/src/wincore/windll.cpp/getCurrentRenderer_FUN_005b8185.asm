@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * __cdecl wincore_windll_cpp_getCurrentRenderer_FUN_005b8185(int *renderer)
+; char * __cdecl wincore_windll_cpp_getCurrentRenderer_FUN_005b8185(int *renderer_handle)
 ;
 ; Parameters:
-; int *            Stack[0x4]:4   renderer
+; int *            Stack[0x4]:4   renderer_handle
 ;
 ; Referenced Globals:
 ;   TerminatedCString g_RendererDllName

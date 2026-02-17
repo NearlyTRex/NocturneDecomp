@@ -75,7 +75,7 @@ switchD_004448f6_default:
       }
       core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_0042f300
                 ((CCharacter *)this_ptr,"limb?.wav");
-      core_bodypart_cpp_CBodyPart_FUN_0041a050(body_part);
+      core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_0041a050(body_part);
       if ((this_ptr->base).base.model.part_data.visibility_flags[*(int *)(this_ptr->unk + 0xc)] == 0
          ) {
         in_stack_00000008[1] = 0x461c3c00;

@@ -25,6 +25,6 @@ CElephantGun * __cdecl core_elephant_cpp_CElephantGun_ctor_FUN_004a6fe0(CElephan
   fVar1 = 8.0f;
   (pCVar2->base).fire_cooldown = 0.0;
   pCVar2->field2_0x57c = 0;
-  (pCVar2->base).unk3 = (int)fVar1;
+  (pCVar2->base).weight = fVar1;
   return pCVar2;
 }

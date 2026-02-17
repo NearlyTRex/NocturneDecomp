@@ -13,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 332,
-    "complexity_score": 154,
+    "complexity_score": 168,
     "cross_reference_count": 2,
     "function_call_count": 11,
     "global_count": 16,
-    "pseudocode_lines": 129,
-    "suspect_count": 2,
+    "pseudocode_lines": 123,
+    "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 461
+    "total_lines": 455
   },
   "cross_references": [
     {
@@ -413,16 +413,30 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 82,
+      "line": 77,
       "match": "ROUND",
-      "text": "local_18 = (int)ROUND(dVar8);",
+      "text": "local_14 = (int)ROUND(ROUND(g_MpegSampleRateTable[iVar5][*(int *)(local_48.mpeg_version + 0x10)]",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 128,
+      "line": 77,
       "match": "ROUND",
-      "text": "unaff_retaddr->sample_rate = (int)ROUND(dVar8);",
+      "text": "local_14 = (int)ROUND(ROUND(g_MpegSampleRateTable[iVar5][*(int *)(local_48.mpeg_version + 0x10)]",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 123,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(g_MpegSampleRateTable[local_78[0]][local_68] * 1000));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 123,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(g_MpegSampleRateTable[local_78[0]][local_68] * 1000));",
       "type": "decompiler_intrinsic"
     }
   ]

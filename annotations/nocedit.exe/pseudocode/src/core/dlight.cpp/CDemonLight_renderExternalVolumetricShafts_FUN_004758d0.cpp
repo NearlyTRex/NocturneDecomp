@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0(CDemonLight *this_ptr)
 
 {
@@ -13,8 +15,8 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0047
   float fVar2;
   CDemonRenderer *this_ptr_00;
   CVector3f *pCVar3;
-  int iVar4;
   CMatrix3x3i *this_ptr_01;
+  int iVar4;
   byte bVar5;
   float10 fVar6;
   float10 fVar7;
@@ -22,8 +24,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0047
   float10 fVar9;
   unkbyte10 Var10;
   float10 fVar11;
-  double dVar12;
-  int aiStackY_10d8 [985];
+  int aiStackY_10d8 [987];
   SMRGLHeaderPrimitive local_160;
   uint local_148;
   uint local_144;
@@ -149,20 +150,15 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0047
             fVar6 = (float10)fcos(fVar6);
             fVar11 = (float10)fcos(fVar11);
             local_18 = this_ptr->shadow_map_width - (this_ptr->shadow_map_width >> 0x1f) >> 1;
-            local_14 = this_ptr->shadow_map_height - (this_ptr->shadow_map_height >> 0x1f) >> 1;
             fVar9 = (float10)local_4c;
             local_30 = (float)(fVar6 * fVar9);
-            iVar4 = this_ptr->shadow_map_width;
-            dVar12 = round
-                               ((double)((float)local_14 - (float)local_14 * local_30));
-            local_78 = (int)ROUND(dVar12);
-            iVar4 = local_78 * iVar4;
+            fVar1 = (float)(this_ptr->shadow_map_height - (this_ptr->shadow_map_height >> 0x1f) >> 1
+                           );
+            local_78 = (int)ROUND(ROUND(fVar1 - fVar1 * local_30));
             local_34 = (float)(fVar7 * fVar9);
-            local_160.base.type = 0x475c38;
-            dVar12 = round
-                               ((double)((float)local_18 * local_34 + (float)local_18));
-            local_70 = (int)ROUND(dVar12);
-            local_2c = (float)this_ptr->shadow_depth_buffer[iVar4 + local_70] *
+            local_70 = (int)ROUND(ROUND((float)local_18 * local_34 + (float)local_18));
+            local_2c = (float)this_ptr->shadow_depth_buffer
+                              [local_78 * this_ptr->shadow_map_width + local_70] *
                        (float)0.00390625;
             local_24 = 0;
             local_3c = (float)(fVar8 * fVar9);

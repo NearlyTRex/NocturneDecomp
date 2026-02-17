@@ -11,6 +11,6 @@ CStake * __cdecl core_fire_cpp_CStake_dtor_FUN_004c9760(CStake *this_ptr,uint fl
 {
   CBox *pCVar1;
   
-  pCVar1 = core_box_cpp_CBox_dtor_FUN_0041dd00(&this_ptr->box,0);
+  pCVar1 = core_box_cpp_CBox_dtor_FUN_0041dd00(&this_ptr->physics_box,0);
   return (CStake *)&pCVar1[-1].is_valid;
 }

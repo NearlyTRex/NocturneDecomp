@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 106,
-    "complexity_score": 131,
+    "complexity_score": 217,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 6,
-    "pseudocode_lines": 36,
-    "suspect_count": 9,
+    "pseudocode_lines": 42,
+    "suspect_count": 17,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 142
+    "total_lines": 148
   },
   "cross_references": [],
   "function": {
@@ -257,65 +257,121 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 12,
+      "line": 15,
       "match": "ROUND",
       "text": "local_30.x = (int)ROUND((this_ptr->vertex1).x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 13,
+      "line": 16,
       "match": "ROUND",
       "text": "local_30.y = (int)ROUND((this_ptr->vertex1).y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 14,
+      "line": 17,
       "match": "ROUND",
       "text": "local_30.z = (int)ROUND((this_ptr->vertex1).z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 17,
+      "line": 20,
       "match": "ROUND",
       "text": "local_18.x = (int)ROUND((this_ptr->vertex2).x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 18,
+      "line": 21,
       "match": "ROUND",
       "text": "local_18.y = (int)ROUND((this_ptr->vertex2).y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 19,
+      "line": 22,
       "match": "ROUND",
       "text": "local_18.z = (int)ROUND((this_ptr->vertex2).z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 22,
+      "line": 25,
       "match": "ROUND",
       "text": "local_24.x = (int)ROUND((this_ptr->vertex3).x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
+      "line": 26,
       "match": "ROUND",
       "text": "local_24.y = (int)ROUND((this_ptr->vertex3).y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
+      "line": 27,
       "match": "ROUND",
       "text": "local_24.z = (int)ROUND((this_ptr->vertex3).z * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 32,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND((double)(this_ptr->normal).x * -65536));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 32,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND((double)(this_ptr->normal).x * -65536));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 34,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND((double)(this_ptr->normal).y * -65536));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 34,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND((double)(this_ptr->normal).y * -65536));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 36,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(-65536 * (double)(this_ptr->normal).z));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 36,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(-65536 * (double)(this_ptr->normal).z));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 41,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(this_ptr->plane_distance * (float)65536 *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 41,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(this_ptr->plane_distance * (float)65536 *",
       "type": "decompiler_intrinsic"
     }
   ]

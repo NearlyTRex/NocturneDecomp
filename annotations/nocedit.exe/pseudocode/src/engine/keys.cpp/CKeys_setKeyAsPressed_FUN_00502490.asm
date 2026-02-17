@@ -11,7 +11,7 @@
 ;   core_game.cpp_CGame_resetKeyState_FUN_004dbe60 at 004dbea2
 ;
 ; Referenced Globals:
-;   char[256] g_KeyboardState
+;   char[512] g_KeyboardState
 ;
 ; *****************************************************************************
 

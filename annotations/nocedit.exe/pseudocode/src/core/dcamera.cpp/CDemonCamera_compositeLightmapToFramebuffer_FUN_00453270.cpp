@@ -34,9 +34,10 @@ void __cdecl core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00
   core_dcamera_cpp_CDemonCamera_blurCoronaBufferAndClearEdges_FUN_004509b0(this_ptr);
   if (g_BitsPerPixel == 0x20) {
     g_SolidColorMode =
-         (g_LightmapTexturePalette[g_FogColorIndexB] & 0xff) << ((byte)g_BlueBitPosition & 0x1f) |
-         (g_LightmapTexturePalette[g_FogColorIndexR] & 0xff) << ((byte)g_RedBitPosition & 0x1f) |
-         (g_LightmapTexturePalette[g_FogColorIndexG] & 0xff) << ((byte)g_GreenBitPosition & 0x1f);
+         (g_LightmapTexturePalette[g_FogColorIndexB] & 0xff) << (g_BlueBitPosition.bytes[0] & 0x1f)
+         | (g_LightmapTexturePalette[g_FogColorIndexR] & 0xff) << (g_RedBitPosition.bytes[0] & 0x1f)
+           | (g_LightmapTexturePalette[g_FogColorIndexG] & 0xff) <<
+             (g_GreenBitPosition.bytes[0] & 0x1f);
   }
   else {
     g_SolidColorMode =
@@ -61,7 +62,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00
                      this_ptr->framebuffer_width);
         }
         if (this_ptr->scale_factor == 2) {
-          core_dstrender_cpp_blendLightmapToTextureMMX_Variant2_FUN_00492f03
+          core_dstrender_cpp_blendLightmapToTextureMMX_FUN_00492f03
                     ((uint *)puVar6,puVar7,(byte *)pacVar8,(byte *)pacVar5,
                      this_ptr->framebuffer_width);
         }

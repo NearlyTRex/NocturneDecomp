@@ -17,7 +17,9 @@ typedef struct CSimBox {
     char trigger_event[100]; // 0x2dc
     CVector3f initial_velocity; // 0x340
     CVector3f init_rot_vel; // 0x34c
-    CBox box; // 0x358
-    char unk[28]; // 0x5b0
+    CBox physics_box; // 0x358
+    float ground_height; // 0x5b0
+    CVector3f spawn_position; // 0x5b4
+    CVector3f spawn_orientation; // 0x5c0
 } CSimBox;
 

@@ -16,49 +16,49 @@
       {
         "category": "undeclared_identifier",
         "column": 18,
-        "line": 117,
+        "line": 118,
         "message": "use of undeclared identifier 'stack0xffffffe8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 18,
-        "line": 118,
+        "line": 119,
         "message": "use of undeclared identifier 'stack0xffffffec'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 18,
-        "line": 123,
-        "message": "use of undeclared identifier 'stack0xffffffdc'"
       },
       {
         "category": "undeclared_identifier",
         "column": 18,
         "line": 124,
+        "message": "use of undeclared identifier 'stack0xffffffdc'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 18,
+        "line": 125,
         "message": "use of undeclared identifier 'stack0xffffffe0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 28,
-        "line": 129,
+        "line": 130,
         "message": "use of undeclared identifier 'stack0xffffffe8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 23,
-        "line": 131,
+        "line": 132,
         "message": "use of undeclared identifier 'stack0xffffffec'"
       },
       {
         "category": "undeclared_identifier",
         "column": 28,
-        "line": 135,
+        "line": 136,
         "message": "use of undeclared identifier 'stack0xffffffdc'"
       },
       {
         "category": "undeclared_identifier",
         "column": 23,
-        "line": 137,
+        "line": 138,
         "message": "use of undeclared identifier 'stack0xffffffe0'"
       }
     ],
@@ -67,17 +67,17 @@
   },
   "complexity": {
     "assembly_lines": 329,
-    "complexity_score": 241,
+    "complexity_score": 244,
     "cross_reference_count": 0,
     "function_call_count": 15,
     "global_count": 47,
-    "pseudocode_lines": 141,
+    "pseudocode_lines": 144,
     "suspect_count": 9,
     "suspect_types": [
       "stack_ref",
       "unresolved_funcptr"
     ],
-    "total_lines": 470
+    "total_lines": 473
   },
   "cross_references": [],
   "function": {
@@ -124,14 +124,14 @@
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
-      "addr": "0052b430",
-      "is_variadic": false,
-      "name": "core_morph.cpp_CMorph_FUN_0052b430"
-    },
-    {
       "addr": "0052b680",
       "is_variadic": false,
       "name": "core_morph.cpp_CMorph_getReady_FUN_0052b680"
+    },
+    {
+      "addr": "0052b430",
+      "is_variadic": false,
+      "name": "core_morph.cpp_CMorph_setupModelFromDeformable_FUN_0052b430"
     },
     {
       "addr": "0059fb40",
@@ -545,56 +545,56 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 110,
+      "line": 111,
       "match": "&stack0xffffffe8",
       "text": "*(uint *)(&stack0xffffffe8 + (uint)bVar8 * -8) = *puVar7;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 111,
+      "line": 112,
       "match": "&stack0xffffffec",
       "text": "*(uint *)(&stack0xffffffec + (uint)bVar8 * -8 + (uint)bVar8 * -8) =",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 116,
+      "line": 117,
       "match": "&stack0xffffffdc",
       "text": "*(uint *)(&stack0xffffffdc + (uint)bVar8 * -8) = *puVar7;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 117,
+      "line": 118,
       "match": "&stack0xffffffe0",
       "text": "*(uint *)(&stack0xffffffe0 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 122,
+      "line": 123,
       "match": "&stack0xffffffe8",
       "text": "*puVar7 = *(uint *)(&stack0xffffffe8 + (uint)bVar8 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 124,
+      "line": 125,
       "match": "&stack0xffffffec",
       "text": "*(uint *)(&stack0xffffffec + (uint)bVar8 * -8 + (uint)bVar8 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 128,
+      "line": 129,
       "match": "&stack0xffffffdc",
       "text": "*puVar7 = *(uint *)(&stack0xffffffdc + (uint)bVar8 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 130,
+      "line": 131,
       "match": "&stack0xffffffe0",
       "text": "*(uint *)(&stack0xffffffe0 + (uint)bVar8 * -8 + (uint)bVar8 * -8);",
       "type": "stack_ref"

@@ -264,7 +264,7 @@ LAB_00565363:
   else if (g_ActiveControl == (void *)0x0) {
     if ((g_MouseButtonFlags.dword & 1) == 0) {
       if ((g_MouseButtonFlags.dword & 2) != 0) {
-        g_MouseButtonFlags = (_BIT_INTEGER)g_ActiveControl;
+        g_MouseButtonFlags = (_BIT_INTEGER32)g_ActiveControl;
         iVar5 = core_script_cpp_CScript_screenToScriptPosition_FUN_00566c20
                           (this_ptr,g_MouseX,g_MouseY,&g_CurrentEditingColumn,&g_CurrentEditingLine)
         ;
@@ -283,7 +283,7 @@ LAB_00565363:
          iVar5 != 0)) {
         core_script_cpp_CScript_editParameterAtPosition_FUN_00565ae0
                   (this_ptr,g_CurrentEditingColumn,g_CurrentEditingLine);
-        g_MouseButtonFlags = (_BIT_INTEGER)this_ptr_00;
+        g_MouseButtonFlags = (_BIT_INTEGER32)this_ptr_00;
         pCVar3 = g_ActiveControl;
       }
       g_ActiveControl = pCVar3;

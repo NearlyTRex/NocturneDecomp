@@ -6,19 +6,19 @@
   },
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 142,
+    "complexity_score": 151,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 8,
-    "pseudocode_lines": 32,
-    "suspect_count": 9,
+    "pseudocode_lines": 31,
+    "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "param_count_too_few",
       "pointer_cast"
     ],
-    "total_lines": 96
+    "total_lines": 95
   },
   "cross_references": [
     {
@@ -221,37 +221,44 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
+      "line": 12,
       "match": "extraout_ST1",
       "text": "float10 extraout_ST1;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
+      "line": 13,
       "match": "extraout_ST2",
       "text": "float10 extraout_ST2;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
+      "line": 14,
       "match": "extraout_ST3",
       "text": "float10 extraout_ST3;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 21,
+      "line": 22,
       "match": "extraout_ST3",
-      "text": "dVar5 = round((double)(fVar4 * extraout_ST3));",
+      "text": "uVar1 = (uint)ROUND(ROUND(fVar4 * extraout_ST3));",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 22,
       "match": "ROUND",
-      "text": "uVar1 = (uint)ROUND(dVar5);",
+      "text": "uVar1 = (uint)ROUND(ROUND(fVar4 * extraout_ST3));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 22,
+      "match": "ROUND",
+      "text": "uVar1 = (uint)ROUND(ROUND(fVar4 * extraout_ST3));",
       "type": "decompiler_intrinsic"
     },
     {

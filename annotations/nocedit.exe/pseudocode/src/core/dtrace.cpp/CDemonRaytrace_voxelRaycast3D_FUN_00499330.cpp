@@ -6,21 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Removing unreachable block (ram,0x00499729) */
-/* WARNING: Removing unreachable block (ram,0x0049946d) */
-/* WARNING: Removing unreachable block (ram,0x004994c8) */
-/* WARNING: Removing unreachable block (ram,0x00499701) */
-/* WARNING: Removing unreachable block (ram,0x004994ec) */
-/* WARNING: Removing unreachable block (ram,0x00499501) */
-/* WARNING: Removing unreachable block (ram,0x00499525) */
-/* WARNING: Removing unreachable block (ram,0x0049953a) */
-/* WARNING: Removing unreachable block (ram,0x00499751) */
-/* WARNING: Removing unreachable block (ram,0x0049955e) */
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
 int __cdecl core_dtrace_cpp_CDemonRaytrace_voxelRaycast3D_FUN_00499330(CDemonRaytrace *this_ptr,CVector3f *start_position,CVector3f *end_position)
 
 {
-  float fVar1;
+  int iVar1;
   float fVar2;
   float fVar3;
   float fVar4;
@@ -30,98 +21,127 @@ int __cdecl core_dtrace_cpp_CDemonRaytrace_voxelRaycast3D_FUN_00499330(CDemonRay
   float fVar8;
   float fVar9;
   float fVar10;
-  float fVar11;
-  float fVar12;
-  float fVar13;
-  float fVar14;
+  int iVar11;
+  int iVar12;
+  int iVar13;
+  int iVar14;
   int iVar15;
   CDemonCube *pCVar16;
-  float fVar17;
-  int iVar18;
-  double dVar19;
-  double dVar20;
-  double dVar21;
-  double dVar22;
-  double dVar23;
-  double dVar24;
-  int iStack_74;
-  float local_6c;
-  int local_68;
-  float local_60;
-  float local_5c;
-  float local_58;
-  int local_54;
-  float local_50;
-  float local_4c;
+  int iVar17;
+  int local_48;
+  int local_44;
+  int local_40;
+  int local_3c;
+  int local_38;
+  int local_34;
+  int local_30;
+  int local_2c;
+  int local_28;
+  int local_24;
+  int local_20;
+  int local_1c;
   
-  fVar12 = 1.0 / ((this_ptr->cell_size).x * 0.125f);
-  fVar1 = start_position->y;
-  fVar17 = (this_ptr->bbox_min).y;
-  fVar14 = 1.0 / ((this_ptr->cell_size).y * 0.125f);
-  fVar2 = start_position->z;
-  fVar3 = (this_ptr->bbox_min).z;
-  local_60 = (start_position->x - (this_ptr->bbox_min).x) * fVar12;
-  fVar13 = 1.0 / ((this_ptr->cell_size).z * 0.125f);
-  fVar4 = end_position->y;
-  fVar5 = (this_ptr->bbox_min).y;
-  fVar6 = end_position->z;
-  fVar7 = end_position->x;
-  fVar8 = start_position->x;
-  fVar9 = (this_ptr->bbox_min).z;
-  fVar10 = end_position->z;
-  fVar11 = start_position->z;
-  iVar18 = 1;
-  dVar19 = round
-                     ((double)((end_position->x - (this_ptr->bbox_min).x) * fVar12));
-  dVar20 = round((double)(fVar14 * (fVar4 - fVar5)));
-  dVar21 = round((double)((fVar6 - fVar9) * fVar13));
-  dVar22 = round((double)local_6c);
-  dVar23 = round((double)local_5c);
-  dVar24 = round((double)local_58);
-  if ((((float)(int)ROUND(dVar22) == fVar10 - fVar11) &&
-      ((float)(int)ROUND(dVar23) == fVar7 - fVar8)) &&
-     (iVar15 = local_54, fVar1 = (fVar1 - fVar17) * fVar14, fVar17 = (fVar2 - fVar3) * fVar13,
-     (int)ROUND(dVar24) == (int)ROUND(dVar19))) {
-    while( true ) {
-      local_4c = fVar17;
-      local_50 = fVar1;
-      local_54 = iVar15;
-      pCVar16 = core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004952b0
-                          (this_ptr,(int)(((int)local_60 + ((int)local_60 >> 0x1f) * -8) -
-                                         (uint)(((int)local_60 >> 0x1f) << 2 < 0)) >> 3,
-                           (int)(((int)local_5c + ((int)local_5c >> 0x1f) * -8) -
-                                (uint)(((int)local_5c >> 0x1f) << 2 < 0)) >> 3,
-                           (int)((local_54 + (local_54 >> 0x1f) * -8) -
-                                (uint)((local_54 >> 0x1f) << 2 < 0)) >> 3);
-      if (pCVar16 != (CDemonCube *)0x0) {
-        if ((pCVar16->voxel_buffer1 != (SVoxelGrid *)0x0) &&
-           ((pCVar16->voxel_buffer1->voxels[local_54 % 8][(int)local_5c % 8] &
-            g_VoxelYBitMasks[(int)local_60 % 8]) != 0)) {
-          return 1;
-        }
-      }
-      iVar18 = iVar18 + -1;
-      if (iVar18 < 1) break;
-      fVar17 = (float)((int)local_4c - (int)ROUND(dVar21));
-      iVar15 = local_54 + iStack_74;
-      fVar1 = (float)((int)local_50 + local_68);
-      if ((int)local_58 < 0) {
-        if ((int)local_4c < 0) {
-          local_60 = (float)((int)local_60 + (int)ROUND(dVar19));
-          local_58 = (float)((int)local_58 + local_68);
-          iVar15 = local_54;
-          fVar1 = local_50;
-          fVar17 = (float)((int)local_4c + (int)local_6c);
-        }
-      }
-      else if (-1 < (int)local_50) {
-        local_5c = (float)((int)local_5c + (int)ROUND(dVar20));
-        local_58 = (float)((int)local_58 - (int)ROUND(dVar21));
-        iVar15 = local_54;
-        fVar1 = (float)((int)local_50 - (int)local_6c);
-        fVar17 = local_4c;
+  fVar5 = 1.0 / ((this_ptr->cell_size).x * 0.125f);
+  fVar10 = 1.0 / ((this_ptr->cell_size).y * 0.125f);
+  fVar6 = (start_position->x - (this_ptr->bbox_min).x) * fVar5;
+  fVar9 = 1.0 / ((this_ptr->cell_size).z * 0.125f);
+  fVar7 = (start_position->y - (this_ptr->bbox_min).y) * fVar10;
+  fVar8 = (start_position->z - (this_ptr->bbox_min).z) * fVar9;
+  fVar2 = end_position->x - start_position->x;
+  fVar3 = end_position->y - start_position->y;
+  fVar4 = end_position->z - start_position->z;
+  iVar17 = 1;
+  iVar13 = (int)ROUND(ROUND((end_position->x - (this_ptr->bbox_min).x) * fVar5));
+  iVar14 = (int)ROUND(ROUND(fVar10 * (end_position->y - (this_ptr->bbox_min).y)));
+  iVar15 = (int)ROUND(ROUND((end_position->z - (this_ptr->bbox_min).z) * fVar9));
+  local_30 = (int)ROUND(ROUND(fVar6));
+  local_2c = (int)ROUND(ROUND(fVar7));
+  iVar1 = (int)ROUND(ROUND(fVar8));
+  if (((local_30 != iVar13) || (local_2c != iVar14)) ||
+     (iVar11 = local_20, iVar12 = local_1c, iVar1 != iVar15)) {
+    fVar5 = SQRT(fVar4 * fVar4 + fVar2 * fVar2 + fVar3 * fVar3);
+    if (fVar5 <= 0.0) {
+      return 0;
+    }
+    fVar5 = 2.684355e+08f / fVar5;
+    local_34 = (int)ROUND(ROUND(ABS(fVar2) * fVar5));
+    local_38 = (int)ROUND(ROUND(ABS(fVar3) * fVar5));
+    local_3c = (int)ROUND(ROUND(ABS(fVar4) * fVar5));
+    if (fVar2 < 0.0) {
+      iVar13 = local_30 - iVar13;
+      fVar6 = fVar6 - (float)local_30;
+      local_40 = -1;
+    }
+    else {
+      iVar13 = iVar13 - local_30;
+      fVar6 = (float)(local_30 + 1) - fVar6;
+      local_40 = 1;
+    }
+    if (fVar3 < 0.0) {
+      iVar14 = local_2c - iVar14;
+      fVar7 = fVar7 - (float)local_2c;
+      local_48 = -1;
+    }
+    else {
+      iVar14 = iVar14 - local_2c;
+      fVar7 = (float)(local_2c + 1) - fVar7;
+      local_48 = 1;
+    }
+    if (fVar4 < 0.0) {
+      iVar15 = iVar1 - iVar15;
+      fVar8 = fVar8 - (float)iVar1;
+      local_44 = -1;
+    }
+    else {
+      iVar15 = iVar15 - iVar1;
+      fVar8 = (float)(iVar1 + 1) - fVar8;
+      local_44 = 1;
+    }
+    iVar17 = iVar13 + 1 + iVar14 + iVar15;
+    local_28 = (int)ROUND(ROUND((float)local_38 * fVar6 - (float)local_34 * fVar7));
+    iVar11 = (int)ROUND(ROUND((float)local_38 * fVar8 - (float)local_3c * fVar7));
+    iVar12 = (int)ROUND(ROUND((float)local_3c * fVar6 - (float)local_34 * fVar8));
+  }
+  do {
+    local_1c = iVar12;
+    local_20 = iVar11;
+    local_24 = iVar1;
+    pCVar16 = core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004952b0
+                        (this_ptr,(int)((local_30 + (local_30 >> 0x1f) * -8) -
+                                       (uint)((local_30 >> 0x1f) << 2 < 0)) >> 3,
+                         (int)((local_2c + (local_2c >> 0x1f) * -8) -
+                              (uint)((local_2c >> 0x1f) << 2 < 0)) >> 3,
+                         (int)((local_24 + (local_24 >> 0x1f) * -8) -
+                              (uint)((local_24 >> 0x1f) << 2 < 0)) >> 3);
+    if (pCVar16 != (CDemonCube *)0x0) {
+      if ((pCVar16->voxel_buffer1 != (SVoxelGrid *)0x0) &&
+         ((pCVar16->voxel_buffer1->voxels[local_24 % 8][local_2c % 8] &
+          g_VoxelYBitMasks[local_30 % 8]) != 0)) {
+        return 1;
       }
     }
-  }
-  return 0;
+    iVar17 = iVar17 + -1;
+    if (iVar17 < 1) {
+      return 0;
+    }
+    iVar1 = local_24 + local_44;
+    iVar11 = local_20 + local_38;
+    iVar12 = local_1c - local_34;
+    if (local_28 < 0) {
+      if (local_1c < 0) {
+        local_30 = local_30 + local_40;
+        local_28 = local_28 + local_38;
+        iVar1 = local_24;
+        iVar11 = local_20;
+        iVar12 = local_1c + local_3c;
+      }
+    }
+    else if (-1 < local_20) {
+      local_2c = local_2c + local_48;
+      local_28 = local_28 - local_34;
+      iVar1 = local_24;
+      iVar11 = local_20 - local_3c;
+      iVar12 = local_1c;
+    }
+  } while( true );
 }

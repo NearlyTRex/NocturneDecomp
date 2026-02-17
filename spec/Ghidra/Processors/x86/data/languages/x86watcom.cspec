@@ -517,12 +517,13 @@
             <register name="EDX" />
         </killedbycall>
     </prototype>
-    <!-- __fpustack: For complex FPU functions (atan2, pow, asin, acos, etc.) that use many FPU registers.
-         All ST registers are killed. Callers should use FNSAVE/FRSTOR if they have values in ST1-ST7. -->
-    <prototype name="__fpustack" extrapop="4" stackshift="0">
+    <!-- __fpustack: For complex FPU functions (atan2, pow, etc.) that take params via FPU registers.
+         All ST registers are killed. Callers should use FNSAVE/FRSTOR if they have values in ST1-ST7.
+         ECX and EDX are preserved (unlike __fpureg which kills them). -->
+    <prototype name="__fpustack" extrapop="0" stackshift="0">
         <input>
-            <pentry minsize="10" maxsize="10" metatype="float"><addr offset="4" space="stack" /></pentry>
-            <pentry minsize="10" maxsize="10" metatype="float"><addr offset="14" space="stack" /></pentry>
+            <pentry minsize="4" maxsize="10" metatype="float"><register name="ST0" /></pentry>
+            <pentry minsize="4" maxsize="10" metatype="float"><register name="ST1" /></pentry>
         </input>
         <output killedbycall="true">
             <pentry minsize="10" maxsize="10" metatype="float" extension="float"><register name="ST0" /></pentry>
@@ -546,13 +547,14 @@
             <register name="ST7" />
         </killedbycall>
     </prototype>
-    <!-- __fpustack_safe: For simple FPU functions (fdiv, fmul, etc.) that preserve caller's FPU stack.
+    <!-- __fpustack_safe: For simple FPU functions (fdiv, fmul, etc.) that take params via FPU registers.
          Only ST0 is killed (return value). ST1-ST7 are preserved (shifted during call, restored after).
-         Use this when callers do FXCH STn after the call, indicating they expect STn to be valid. -->
-    <prototype name="__fpustack_safe" extrapop="4" stackshift="0">
+         Use this when callers do FXCH STn after the call, indicating they expect STn to be valid.
+         ECX and EDX are preserved (unlike __fpureg which kills them). -->
+    <prototype name="__fpustack_safe" extrapop="0" stackshift="0">
         <input>
-            <pentry minsize="10" maxsize="10" metatype="float"><addr offset="4" space="stack" /></pentry>
-            <pentry minsize="10" maxsize="10" metatype="float"><addr offset="14" space="stack" /></pentry>
+            <pentry minsize="4" maxsize="10" metatype="float"><register name="ST0" /></pentry>
+            <pentry minsize="4" maxsize="10" metatype="float"><register name="ST1" /></pentry>
         </input>
         <output killedbycall="true">
             <pentry minsize="10" maxsize="10" metatype="float" extension="float"><register name="ST0" /></pentry>
@@ -569,7 +571,7 @@
             <register name="ST0" />
         </killedbycall>
     </prototype>
-    <!-- ECX and EDX are preserved by both __fpustack variants -->
+    <!-- __mathinternal: For internal CRT math support functions -->
     <prototype name="__mathinternal" extrapop="0" stackshift="4">
         <input>
             <!-- No parameters -->
@@ -726,6 +728,32 @@
          probes stack pages. Preserves ALL registers including EAX, ECX, EDX. -->
     <prototype name="__stk_probe" extrapop="4" stackshift="4">
         <input>
+        </input>
+        <output>
+        </output>
+        <unaffected>
+            <register name="ESP" />
+            <register name="EAX" />
+            <register name="EBX" />
+            <register name="ECX" />
+            <register name="EDX" />
+            <register name="ESI" />
+            <register name="EDI" />
+            <register name="EBP" />
+        </unaffected>
+    </prototype>
+    <!-- __mmx_save: Takes all 8 MMX registers as input, preserves everything.
+         Used by saveMMXRegisters which stores MM0-MM7 to globals. -->
+    <prototype name="__mmx_save" extrapop="4" stackshift="4">
+        <input>
+            <pentry minsize="8" maxsize="8"><register name="MM0" /></pentry>
+            <pentry minsize="8" maxsize="8"><register name="MM1" /></pentry>
+            <pentry minsize="8" maxsize="8"><register name="MM2" /></pentry>
+            <pentry minsize="8" maxsize="8"><register name="MM3" /></pentry>
+            <pentry minsize="8" maxsize="8"><register name="MM4" /></pentry>
+            <pentry minsize="8" maxsize="8"><register name="MM5" /></pentry>
+            <pentry minsize="8" maxsize="8"><register name="MM6" /></pentry>
+            <pentry minsize="8" maxsize="8"><register name="MM7" /></pentry>
         </input>
         <output>
         </output>

@@ -86,7 +86,7 @@ switchD_004fab96_default:
       }
       core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_0042f300
                 ((CCharacter *)this_ptr,"limb?.wav");
-      core_bodypart_cpp_CBodyPart_FUN_0041a050(body_part);
+      core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_0041a050(body_part);
       in_stack_00000008[2] = (int)((float)in_stack_00000008[2] * (float)7);
     }
   }

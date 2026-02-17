@@ -21,8 +21,8 @@ CPickList g_ScriptPickList = {};
 // CScript
 CScript g_CScriptInstance = {};
 
-// _BIT_INTEGER
-_BIT_INTEGER g_CursorBlinkTimer = {};
+// _BIT_INTEGER32
+_BIT_INTEGER32 g_CursorBlinkTimer = {};
 
 // char[100]
 char g_ScriptTempBuffer[100] = {};

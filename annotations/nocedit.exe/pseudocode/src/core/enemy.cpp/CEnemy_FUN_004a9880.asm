@@ -26,7 +26,7 @@
 ;   CGore g_CGoreInstance
 ;
 ; Called Functions:
-;   core_gore.cpp_CGore_FUN_004edbb0
+;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0
 ;   crt_math.c_round_FUN_005fe6b0
 ;
 ; *****************************************************************************
@@ -94,8 +94,8 @@ section .text
     PUSH EAX                            ; 004a990d
     MOV ESI,dword ptr [0x0067b9a0]      ; 004a990e | g_CGorePtr
     PUSH ESI                            ; 004a9914 | g_CGoreInstance
-    CALL core_gore.cpp_CGore_FUN_004edbb0 ; 004a9915
-        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004edbb0(CGore * this_ptr)
+    CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0 ; 004a9915
+        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)
     MOV EAX,0x1                         ; 004a991a
     ADD ESP,0x14                        ; 004a991f
     MOV ESP,EBP                         ; 004a9922

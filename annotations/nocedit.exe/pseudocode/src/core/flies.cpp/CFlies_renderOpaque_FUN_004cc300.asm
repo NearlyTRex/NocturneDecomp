@@ -30,9 +30,9 @@
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
-;   core_flies.cpp_CFlies_FUN_004cc230
-;   core_spline.cpp_FUN_005b90a0
-;   core_spline.cpp_FUN_005b92d0
+;   core_flies.cpp_drawFlyPixel_FUN_004cc230
+;   core_spline.cpp_computeSplineBasis_FUN_005b90a0
+;   core_spline.cpp_evaluateSplinePoint3D_FUN_005b92d0
 ;   crt_math.c_round_FUN_005fe6b0
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
 ;   engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
@@ -108,8 +108,8 @@ section .text
     FSTP float ptr [ESP]                ; 004cc3a8
     PUSH ESI                            ; 004cc3ab | DAT_02d7a808 | DAT_02d7a828
     INC EBX                             ; 004cc3ac
-    CALL core_spline.cpp_FUN_005b90a0   ; 004cc3ad
-        ;   XREF to: 005b90a0 (UNCONDITIONAL_CALL)  ; void core_spline.cpp_FUN_005b90a0()
+    CALL core_spline.cpp_computeSplineBasis_FUN_005b90a0 ; 004cc3ad
+        ;   XREF to: 005b90a0 (UNCONDITIONAL_CALL)  ; void core_spline.cpp_computeSplineBasis_FUN_005b90a0(float * out_basis, float t, float tension)
     ADD ESP,0xc                         ; 004cc3b2
     ADD ESI,0x20                        ; 004cc3b5
     CMP EBX,0x40                        ; 004cc3b8
@@ -213,8 +213,8 @@ section .text
     ADD EAX,0x2d7a808                   ; 004cc529 | DAT_02d7afe8 | DAT_02d7a808
     PUSH EAX                            ; 004cc52e | DAT_02d7afe8
     LEA EBX,[ESP + 0x84]                ; 004cc52f
-    CALL core_spline.cpp_FUN_005b92d0   ; 004cc536
-        ;   XREF to: 005b92d0 (UNCONDITIONAL_CALL)  ; float * core_spline.cpp_FUN_005b92d0()
+    CALL core_spline.cpp_evaluateSplinePoint3D_FUN_005b92d0 ; 004cc536
+        ;   XREF to: 005b92d0 (UNCONDITIONAL_CALL)  ; CVector3f * core_spline.cpp_evaluateSplinePoint3D_FUN_005b92d0(float * basis, CVector3f * out, CVector3f * p0, CVector3f * p1, ...)
     ADD ESP,0x18                        ; 004cc53b
     LEA EAX,[ESP + 0x60]                ; 004cc53e
     MOV EDX,dword ptr [0x006703ec]      ; 004cc542 | g_CDemonRendererInstance | g_CDemonRendererPtr2
@@ -362,8 +362,8 @@ section .text
     PUSH EAX                            ; 004cc6e3
     PUSH EDI                            ; 004cc6e4
     PUSH ESI                            ; 004cc6e5
-    CALL core_flies.cpp_CFlies_FUN_004cc230 ; 004cc6e6
-        ;   XREF to: 004cc230 (UNCONDITIONAL_CALL)  ; void core_flies.cpp_CFlies_FUN_004cc230(CFlies * this_ptr)
+    CALL core_flies.cpp_drawFlyPixel_FUN_004cc230 ; 004cc6e6
+        ;   XREF to: 004cc230 (UNCONDITIONAL_CALL)  ; void core_flies.cpp_drawFlyPixel_FUN_004cc230(int screen_x, int screen_y, int z_depth)
     ADD ESP,0xc                         ; 004cc6eb
     JMP 0x004cc58d                      ; 004cc6ee
         ;   XREF to: 004cc58d (UNCONDITIONAL_JUMP)  ; LAB_004cc58d

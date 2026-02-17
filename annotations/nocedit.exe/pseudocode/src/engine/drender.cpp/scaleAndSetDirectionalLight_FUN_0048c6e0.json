@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 86,
+    "complexity_score": 120,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
-    "pseudocode_lines": 16,
-    "suspect_count": 6,
+    "pseudocode_lines": 10,
+    "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param"
     ],
-    "total_lines": 51
+    "total_lines": 45
   },
   "cross_references": [],
   "function": {
@@ -126,35 +126,63 @@
       "description": "Unresolved stack parameter",
       "line": 10,
       "match": "in_stack_00000008",
-      "text": "dVar1 = (double)in_stack_00000008[1] * 65536;",
+      "text": "((int)ROUND(ROUND((double)*in_stack_00000008 * 65536)),",
       "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 10,
+      "match": "ROUND",
+      "text": "((int)ROUND(ROUND((double)*in_stack_00000008 * 65536)),",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 10,
+      "match": "ROUND",
+      "text": "((int)ROUND(ROUND((double)*in_stack_00000008 * 65536)),",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_00000008",
-      "text": "dVar2 = (double)*in_stack_00000008 * 65536;",
+      "text": "(int)ROUND(ROUND((double)in_stack_00000008[1] * 65536)),",
       "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 11,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND((double)in_stack_00000008[1] * 65536)),",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 11,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND((double)in_stack_00000008[1] * 65536)),",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_00000008",
-      "text": "round((double)in_stack_00000008[2] * 65536);",
+      "text": "(int)ROUND(ROUND((double)in_stack_00000008[2] * 65536)));",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 16,
+      "line": 12,
       "match": "ROUND",
-      "text": "engine_light_cpp_setDirectionalLightVector_FUN_005054d0((int)ROUND(dVar2),(int)ROUND(dVar1),dir_z)",
+      "text": "(int)ROUND(ROUND((double)in_stack_00000008[2] * 65536)));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 16,
+      "line": 12,
       "match": "ROUND",
-      "text": "engine_light_cpp_setDirectionalLightVector_FUN_005054d0((int)ROUND(dVar2),(int)ROUND(dVar1),dir_z)",
+      "text": "(int)ROUND(ROUND((double)in_stack_00000008[2] * 65536)));",
       "type": "decompiler_intrinsic"
     }
   ]

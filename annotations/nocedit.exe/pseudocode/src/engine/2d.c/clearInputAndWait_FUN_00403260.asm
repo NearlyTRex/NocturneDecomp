@@ -18,7 +18,7 @@
 ;   ... and 88 more
 ;
 ; Referenced Globals:
-;   char[256] g_KeyboardState
+;   char[512] g_KeyboardState
 ;   undefined4 CHAR_ARRAY_02d03e99
 ;
 ; Called Functions:

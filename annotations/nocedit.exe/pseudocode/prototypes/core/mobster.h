@@ -45,7 +45,7 @@ void __cdecl CMobster::process(CMobster *this_ptr,float delta_time);
 
 // Original: core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0
 // Address: 005267a0
-void __cdecl CMobster::aimTommyGun(CMobster *this_ptr);
+void __cdecl CMobster::aimTommyGun(CMobster *this_ptr,float delta_time);
 
 // Original: core_mobster.cpp_FUN_00526b00
 // Address: 00526b00
@@ -57,7 +57,7 @@ void __stack2_esi CMobster::getCarryObjToBodyXForm(CMobster *this_ptr,int hand_i
 
 // Original: core_mobster.cpp_CMobster_FUN_00526d90
 // Address: 00526d90
-int __cdecl CMobster(CMobster *this_ptr);
+int __cdecl CMobster(CMobster *this_ptr,float delta_time);
 
 // Original: core_mobster.cpp_CMobster_FUN_005271c0
 // Address: 005271c0
@@ -73,7 +73,7 @@ void __cdecl CMobster::reset(CMobster *this_ptr);
 
 // Original: core_mobster.cpp_CMobster_FUN_00527380
 // Address: 00527380
-void __cdecl CMobster(CMobster *this_ptr);
+void __cdecl CMobster(CMobster *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_mobster.cpp_CMobster_processDamage_FUN_00527740
 // Address: 00527740
@@ -89,7 +89,7 @@ void __cdecl CMobster::hasCollision(CMobster *this_ptr,SCollisionInfo *collision
 
 // Original: core_mobster.cpp_CMobster_FUN_005279f0
 // Address: 005279f0
-void __cdecl CMobster(CMobster *this_ptr);
+void __cdecl CMobster(CMobster *this_ptr,int taunt_category);
 
 // Original: core_mobster.cpp_CMobster_getPropertyList_FUN_00527b70
 // Address: 00527b70

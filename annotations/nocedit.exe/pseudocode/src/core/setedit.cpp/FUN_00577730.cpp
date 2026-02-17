@@ -69,11 +69,11 @@ int __cdecl core_setedit_cpp_FUN_00577730(void)
             local_14 = local_14 + 1;
             uVar7 = *(uint *)(&DAT_03365cc0 + iVar6);
             *local_14 = (ushort)((uVar7 >> 0x10 & 0xff) / (uint)g_BlueScaleFactor <<
-                                ((byte)g_BlueBitPosition & 0x1f)) |
+                                (g_BlueBitPosition.bytes[0] & 0x1f)) |
                         (ushort)((uVar7 & 0xff) / (uint)g_RedScaleFactor <<
-                                ((byte)g_RedBitPosition & 0x1f)) |
+                                (g_RedBitPosition.bytes[0] & 0x1f)) |
                         (ushort)((uVar7 >> 8 & 0xff) / (uint)g_GreenScaleFactor <<
-                                ((byte)g_GreenBitPosition & 0x1f));
+                                (g_GreenBitPosition.bytes[0] & 0x1f));
             iVar6 = iVar6 + 4;
           } while (iVar6 != local_2c);
           local_64 = local_64 + 4;
@@ -93,9 +93,9 @@ int __cdecl core_setedit_cpp_FUN_00577730(void)
             uVar8 = uVar7 >> 8 & 0xff;
             uVar4 = uVar7 >> 0x10 & 0xff;
             if (g_BitsPerPixel == 0x20) {
-              uVar7 = (uVar7 & 0xff) << ((byte)g_RedBitPosition & 0x1f) |
-                      uVar8 << ((byte)g_GreenBitPosition & 0x1f);
-              uVar4 = uVar4 << ((byte)g_BlueBitPosition & 0x1f);
+              uVar7 = (uVar7 & 0xff) << (g_RedBitPosition.bytes[0] & 0x1f) |
+                      uVar8 << (g_GreenBitPosition.bytes[0] & 0x1f);
+              uVar4 = uVar4 << (g_BlueBitPosition.bytes[0] & 0x1f);
             }
             else {
               uVar7 = (uVar7 & 0xff) << 0x10 | uVar8 << 8;

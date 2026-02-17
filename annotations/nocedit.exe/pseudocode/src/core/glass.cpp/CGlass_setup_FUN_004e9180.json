@@ -1,37 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 35,
-        "line": 132,
-        "message": "use of undeclared identifier 'stack0xffffff20'"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 160,
-        "message": "C-style cast from 'SMRGLPrimitiveQuad *' to 'float' is not allowed"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 12,
-    "complexity_score": 353,
+    "complexity_score": 343,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 263,
-    "suspect_count": 7,
+    "pseudocode_lines": 258,
+    "suspect_count": 8,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "pointer_cast",
-      "stack_ref",
-      "suspect_float"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 275
+    "total_lines": 270
   },
   "cross_references": [],
   "function": {
@@ -411,52 +395,59 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 93,
+      "line": 94,
       "match": "ROUND",
-      "text": "local_18 = (int)ROUND(dVar9);",
+      "text": "iVar4 = (int)ROUND(ROUND((this_ptr->glass_size).x * (float)0.5)) + 1;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 100,
+      "line": 94,
       "match": "ROUND",
-      "text": "local_1c = (int)ROUND(dVar9);",
+      "text": "iVar4 = (int)ROUND(ROUND((this_ptr->glass_size).x * (float)0.5)) + 1;",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 125,
-      "match": "&stack0xffffff20",
-      "text": "if (pCVar4 != (CVector3f *)&stack0xffffff20) {",
-      "type": "stack_ref"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 99,
+      "match": "ROUND",
+      "text": "local_14 = (int)ROUND(ROUND((this_ptr->glass_size).y * (float)0.5));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 99,
+      "match": "ROUND",
+      "text": "local_14 = (int)ROUND(ROUND((this_ptr->glass_size).y * (float)0.5));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 134,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(((double)iVar7 / (double)this_ptr->grid_cols) * 16515072 +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 134,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(((double)iVar7 / (double)this_ptr->grid_cols) * 16515072 +",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 136,
       "match": "ROUND",
-      "text": "*(int *)(pcVar8 + 0x5e4) = (int)ROUND(dVar10);",
+      "text": "local_14 = (int)ROUND(ROUND(dVar3 + ((double)(this_ptr->grid_rows - local_20) /",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 138,
-      "match": "7.216921e-39",
-      "text": "fVar11 = 7.216921e-39;",
-      "type": "suspect_float"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 141,
+      "line": 136,
       "match": "ROUND",
-      "text": "local_24 = (int)ROUND(dVar9);",
+      "text": "local_14 = (int)ROUND(ROUND(dVar3 + ((double)(this_ptr->grid_rows - local_20) /",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 157,
-      "match": "(SMRGLPrimitiveQuad *)((int)",
-      "text": "pSVar5 = (SMRGLPrimitiveQuad *)((int)local_3c.z + local_20 * 0x48);",
-      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

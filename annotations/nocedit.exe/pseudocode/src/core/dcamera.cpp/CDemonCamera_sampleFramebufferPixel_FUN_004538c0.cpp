@@ -11,9 +11,9 @@ void __cdecl core_dcamera_cpp_CDemonCamera_sampleFramebufferPixel_FUN_004538c0(C
 {
   uint uVar1;
   byte bVar2;
-  byte bVar3;
+  byte uVar3;
   
-  bVar3 = (byte)g_BlueBitPosition;
+  uVar3 = g_BlueBitPosition.bytes[0];
   if ((int)((vertex->projected_vertex).screen_x & -0x80000000) != 0) {
     vertex->fog = 0;
     vertex->color = vertex->fog;
@@ -24,9 +24,9 @@ void __cdecl core_dcamera_cpp_CDemonCamera_sampleFramebufferPixel_FUN_004538c0(C
                    (((vertex->projected_vertex).screen_x >> 0x10) +
                    ((vertex->projected_vertex).screen_y >> 0x10) * this_ptr->framebuffer_width) * 4)
   ;
-  bVar2 = (byte)g_GreenBitPosition & 0x1f;
-  vertex->light = (uVar1 >> ((byte)g_RedBitPosition & 0x1f) & 0xff) << 8;
+  bVar2 = g_GreenBitPosition.bytes[0] & 0x1f;
+  vertex->light = (uVar1 >> (g_RedBitPosition.bytes[0] & 0x1f) & 0xff) << 8;
   vertex->color = (uVar1 >> bVar2 & 0xff) << 8;
-  vertex->fog = (uVar1 >> (bVar3 & 0x1f) & 0xff) << 8;
+  vertex->fog = (uVar1 >> (uVar3 & 0x1f) & 0xff) << 8;
   return;
 }

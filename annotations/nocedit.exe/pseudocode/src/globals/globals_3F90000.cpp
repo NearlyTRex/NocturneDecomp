@@ -62,10 +62,6 @@ IUnknown* g_DirectDrawUnknown = {};
 // JOY_GET_POS_EX_FUNC*
 JOY_GET_POS_EX_FUNC* g_joyGetPosEx = {};
 
-// LARGE_INTEGER
-LARGE_INTEGER g_PerformanceCounter = {};
-LARGE_INTEGER g_PerformanceFrequency = {};
-
 // LPCRITICAL_SECTION
 LPCRITICAL_SECTION g_GlobalInitLock = {};
 
@@ -99,6 +95,10 @@ ThreadRegistryEntry* g_ThreadDataRegistryList = {};
 
 // WCHAR*
 WCHAR* g_CommandLineW = {};
+
+// _struct_19
+_struct_19 g_PerformanceCounter = {};
+_struct_19 g_PerformanceFrequency = {};
 
 // byte
 byte g_CommandLineBuffer = {};

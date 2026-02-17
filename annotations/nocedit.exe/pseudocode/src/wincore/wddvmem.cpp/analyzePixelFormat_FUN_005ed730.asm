@@ -14,15 +14,15 @@
 ;   TerminatedCString s_setColorTable16_Unable_t_00657933
 ;   TerminatedCString s_wincore_wddvmem_cpp_00657961
 ;   TerminatedCString s_setColorTable16_Unable_t_00657978
-;   int g_RedBitPosition
+;   _BIT_INTEGER32 g_RedBitPosition
 ;   int g_RedScaleFactor
-;   int g_RedBitCount
-;   int g_GreenBitPosition
+;   _BIT_INTEGER32 g_RedBitCount
+;   _BIT_INTEGER32 g_GreenBitPosition
 ;   int g_GreenScaleFactor
-;   int g_GreenBitCount
-;   int g_BlueBitPosition
+;   _BIT_INTEGER32 g_GreenBitCount
+;   _BIT_INTEGER32 g_BlueBitPosition
 ;   int g_BlueScaleFactor
-;   int g_BlueBitCount
+;   _BIT_INTEGER32 g_BlueBitCount
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   ... and 1 more

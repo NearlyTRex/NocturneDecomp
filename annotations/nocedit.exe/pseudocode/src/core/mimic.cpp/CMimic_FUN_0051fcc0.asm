@@ -92,7 +92,7 @@
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_00429820
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0
 ;   core_cloth.cpp_CCloth_process_FUN_0043ab80
-;   core_gore.cpp_CGore_FUN_004ede30
+;   core_gore.cpp_CGore_createBloodPool_FUN_004ede30
 ;   core_mimic.cpp_CMimic_beginMorph_FUN_00520a80
 ;   core_motion.cpp_CMotionController_advance_FUN_0052d610
 ;   core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_0052e2b0
@@ -272,8 +272,8 @@ section .text
     PUSH EAX                            ; 0051fe7e
     MOV EDI,dword ptr [0x0067b9a0]      ; 0051fe7f | g_CGorePtr
     PUSH EDI                            ; 0051fe85 | g_CGoreInstance
-    CALL core_gore.cpp_CGore_FUN_004ede30 ; 0051fe86
-        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004ede30(CGore * this_ptr)
+    CALL core_gore.cpp_CGore_createBloodPool_FUN_004ede30 ; 0051fe86
+        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_createBloodPool_FUN_004ede30(CGore * this_ptr, CVector3f * position, int blood_type)
     ADD ESP,0xc                         ; 0051fe8b
     MOV dword ptr [EBX + 0xbe28],0x1    ; 0051fe8e
     JMP 0x0051fdb4                      ; 0051fe98

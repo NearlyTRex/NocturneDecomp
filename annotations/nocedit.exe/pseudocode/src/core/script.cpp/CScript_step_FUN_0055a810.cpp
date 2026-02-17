@@ -919,7 +919,8 @@ joined_r0x0055f6da:
                                                 iVar6 = iVar6 + 1;
                                                 iVar18 = iVar18 + 4;
                                               } while (iVar6 < 0x1e);
-                                              core_bodypart_cpp_CBodyPart_FUN_0041a050(local_ec);
+                                              core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_0041a050
+                                                        (local_ec);
                                             }
                                           }
                                           else {
@@ -2796,6 +2797,7 @@ LAB_0055f0a8:
                                                              &g_CEnemyClassInfo);
                                                   if (this_ptr_03 == (CEnemy *)0x0)
                                                   goto joined_r0x0055c026;
+                                                  pCVar14 = (CDemonActor *)0x0;
                                                   if (*local_11c == ',') {
                                                     local_44 = -1;
                                                     sscanf
@@ -2814,6 +2816,7 @@ LAB_0055f0a8:
                                                     iVar6 = stricmp
                                                                       (local_1204,"disable"
                                                                       );
+                                                    pCVar14 = PTR_00662638;
                                                     if ((iVar6 != 0) &&
                                                        (pCVar14 = 
                                                   core_script_cpp_getActor_FUN_005594e0
@@ -2831,7 +2834,8 @@ LAB_0055f0a8:
                                                   }
                                                   local_11c = local_11c + 1;
                                                   if (g_ScriptEventsEnabled == 0) {
-                                                    core_enemy_cpp_CEnemy_FUN_004a9ef0(this_ptr_03);
+                                                    core_enemy_cpp_CEnemy_setVictim_FUN_004a9ef0
+                                                              (this_ptr_03,pCVar14);
                                                   }
                                                   }
                                                   else {
@@ -2873,7 +2877,10 @@ LAB_0055f0a8:
                                                   pCVar11 == (CDemonActor *)0x0))
                                                   goto joined_r0x0055c026;
                                                   if (g_ScriptEventsEnabled == 0) {
-                                                    core_bodypart_cpp_FUN_0041b510();
+                                                    core_bodypart_cpp_subtractVector_FUN_0041b510
+                                                              (&(pCVar11->location).position,
+                                                               &local_148,
+                                                               &(pCVar14->location).position);
                                                     pCVar12 = 
                                                   core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                                                             (&local_160,&local_148);

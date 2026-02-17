@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 172,
-    "complexity_score": 199,
+    "complexity_score": 201,
     "cross_reference_count": 57,
     "function_call_count": 0,
     "global_count": 22,
-    "pseudocode_lines": 119,
+    "pseudocode_lines": 121,
     "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 291
+    "total_lines": 293
   },
   "cross_references": [
     {
@@ -433,26 +433,26 @@
     {
       "addr": "006826e0",
       "name": "g_TextureShift1",
-      "type": "ulonglong",
-      "value": "0x10"
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "00682700",
       "name": "g_TextureShift2",
-      "type": "ulonglong",
-      "value": "0x8"
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "00682720",
       "name": "g_TextureMask1",
-      "type": "ulonglong",
-      "value": "0xff"
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "00682740",
       "name": "g_TextureMask2",
-      "type": "ulonglong",
-      "value": "0xff00"
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "02cf6a9c",
@@ -499,7 +499,7 @@
     {
       "addr": "02d052a0",
       "name": "g_RenderStateFlags",
-      "type": "_BIT_INTEGER",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
@@ -606,7 +606,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 110,
+      "line": 112,
       "match": "(int *)((int)",
       "text": "*(int *)((int)g_CurrentZBufferPtr + uVar10) = iVar8;",
       "type": "pointer_cast"

@@ -25,7 +25,7 @@
 ;   double g_TimeScaleFactor2 = 18
 ;   DWORD g_PreviousCounterLow
 ;   DWORD g_PreviousCounterHigh
-;   LARGE_INTEGER g_PerformanceCounter
+;   _struct_19 g_PerformanceCounter
 ;   undefined4 g_PerformanceCounter+4
 ;   double g_TimerCalibration
 ;   int g_AccumulatedGameTime

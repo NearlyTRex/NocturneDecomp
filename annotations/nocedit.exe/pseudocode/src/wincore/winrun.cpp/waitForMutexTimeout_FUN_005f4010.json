@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 24,
-    "complexity_score": 43,
+    "complexity_score": 52,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
-    "pseudocode_lines": 13,
-    "suspect_count": 2,
+    "pseudocode_lines": 12,
+    "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_many"
     ],
-    "total_lines": 37
+    "total_lines": 36
   },
   "cross_references": [
     {
@@ -146,7 +146,14 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 13,
       "match": "ROUND",
-      "text": "uStack_c = (DWORD)(longlong)ROUND(dVar2);",
+      "text": "local_8 = (DWORD)(longlong)ROUND(ROUND(timeout_seconds * 1000));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 13,
+      "match": "ROUND",
+      "text": "local_8 = (DWORD)(longlong)ROUND(ROUND(timeout_seconds * 1000));",
       "type": "decompiler_intrinsic"
     },
     {

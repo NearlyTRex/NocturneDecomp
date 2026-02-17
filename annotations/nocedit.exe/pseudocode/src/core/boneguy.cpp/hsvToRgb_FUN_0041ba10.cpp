@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 CVector3f * __cdecl core_boneguy_cpp_hsvToRgb_FUN_0041ba10(CVector3f *out_rgb,CVector3f *in_hsv)
 
 {
@@ -14,58 +16,65 @@ CVector3f * __cdecl core_boneguy_cpp_hsvToRgb_FUN_0041ba10(CVector3f *out_rgb,CV
   float fVar3;
   float fVar4;
   float fVar5;
-  double dVar6;
-  float local_34;
-  float fStack_20;
+  float fVar6;
+  float fVar7;
+  double dVar8;
   float local_1c;
-  float local_14;
+  float local_18;
+  float local_10;
   
-  fVar1 = in_hsv->y;
-  fVar5 = in_hsv->z;
-  if (0.0 < fVar1) {
-    fVar4 = in_hsv->x * (float)0.023529411764705899;
-    dVar6 = floor((double)fVar4);
-    dVar6 = round(dVar6);
-    fVar2 = (1.0 - local_34) * fVar4;
-    fVar1 = fVar1 - (float)(int)ROUND(dVar6);
-    fVar3 = (1.0 - local_34 * fVar1) * fVar4;
-    fVar1 = (1.0 - (1.0 - fVar1) * local_34) * fVar4;
-    fVar5 = fStack_20;
-    switch(((int)ROUND(dVar6) + 600) % 6) {
+  fVar1 = in_hsv->z;
+  fVar5 = fVar1;
+  fVar6 = fVar1;
+  fVar7 = fVar1;
+  if (0.0 < in_hsv->y) {
+    fVar6 = in_hsv->y * (float)0.0039215686274509803;
+    fVar5 = in_hsv->x * (float)0.023529411764705899;
+    dVar8 = floor((double)fVar5);
+    fVar2 = (1.0 - fVar6) * fVar1;
+    fVar5 = fVar5 - (float)(int)ROUND(ROUND(dVar8));
+    fVar3 = (1.0 - fVar6 * fVar5) * fVar1;
+    fVar4 = (1.0 - (1.0 - fVar5) * fVar6) * fVar1;
+    fVar5 = local_1c;
+    fVar6 = local_18;
+    fVar7 = local_10;
+    switch(((int)ROUND(ROUND(dVar8)) + 600) % 6) {
     case 0:
       fVar5 = fVar2;
-      local_1c = fVar4;
-      local_14 = fVar1;
+      fVar6 = fVar1;
+      fVar7 = fVar4;
       break;
     case 1:
       fVar5 = fVar2;
-      local_1c = fVar3;
-      local_14 = fVar4;
+      fVar6 = fVar3;
+      fVar7 = fVar1;
       break;
     case 2:
-      fVar5 = fVar1;
-      local_1c = fVar2;
-      local_14 = fVar4;
+      fVar5 = fVar4;
+      fVar6 = fVar2;
+      fVar7 = fVar1;
       break;
     case 3:
-      fVar5 = fVar4;
-      local_1c = fVar2;
-      local_14 = fVar3;
+      fVar5 = fVar1;
+      fVar6 = fVar2;
+      fVar7 = fVar3;
       break;
     case 4:
-      fVar5 = fVar4;
-      local_1c = fVar1;
-      local_14 = fVar2;
+      fVar5 = fVar1;
+      fVar6 = fVar4;
+      fVar7 = fVar2;
       break;
     case 5:
       fVar5 = fVar3;
-      local_1c = fVar4;
-      local_14 = fVar2;
+      fVar6 = fVar1;
+      fVar7 = fVar2;
     }
   }
-  fStack_20 = fVar5;
-  out_rgb->x = local_1c;
-  out_rgb->y = local_14;
-  out_rgb->z = fStack_20;
+  local_10 = fVar7;
+  local_18 = fVar6;
+  local_1c = fVar5;
+  out_rgb->x = local_18;
+  out_rgb->y = local_10;
+  out_rgb->z = local_1c;
   return out_rgb;
 }

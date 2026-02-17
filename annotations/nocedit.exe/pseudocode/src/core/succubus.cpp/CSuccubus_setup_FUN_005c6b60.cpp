@@ -88,13 +88,16 @@ void __cdecl core_succubus_cpp_CSuccubus_setup_FUN_005c6b60(CSuccubus *this_ptr)
   core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
             ((CDeformableModelInstance *)pcVar2);
   this_ptr_00 = (CMorph *)(this_ptr->unk + 0x2480);
-  core_morph_cpp_CMorph_FUN_0052b430(this_ptr_00,0);
-  core_morph_cpp_CMorph_FUN_0052b430(this_ptr_00,1);
-  DAT_02f43974 = 0;
-  core_morph_cpp_CMorph_FUN_0052b580(this_ptr_00,1,*(CKeyFramedModel **)(this_ptr->unk + 0x2448),0);
-  DAT_02f43974 = 1;
-  core_morph_cpp_CMorph_FUN_0052b580(this_ptr_00,1,*(CKeyFramedModel **)(this_ptr->unk + 0x2448),0);
-  DAT_02f43974 = 0;
+  core_morph_cpp_CMorph_setupModelFromDeformable_FUN_0052b430(this_ptr_00,0,pCVar1);
+  core_morph_cpp_CMorph_setupModelFromDeformable_FUN_0052b430
+            (this_ptr_00,1,(CDeformableModelInstance *)pcVar2);
+  INT_02f43974 = 0;
+  core_morph_cpp_CMorph_addPartFromKeyframedModel_FUN_0052b580
+            (this_ptr_00,1,*(CKeyFramedModel **)(this_ptr->unk + 0x2448),0);
+  INT_02f43974 = 1;
+  core_morph_cpp_CMorph_addPartFromKeyframedModel_FUN_0052b580
+            (this_ptr_00,1,*(CKeyFramedModel **)(this_ptr->unk + 0x2448),0);
+  INT_02f43974 = 0;
   this_ptr->unk[0x30a8] = '\0';
   this_ptr->unk[0x30a9] = '\0';
   this_ptr->unk[0x30aa] = '\0';

@@ -4,19 +4,19 @@
       {
         "category": "overload_error",
         "column": 14,
-        "line": 37,
+        "line": 39,
         "message": "ambiguous operand size for instruction 'fmul'"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 34,
+        "line": 36,
         "message": "use of undeclared label 'ST0'"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 37,
+        "line": 39,
         "message": "use of undeclared label 'ST1'"
       }
     ],
@@ -25,19 +25,18 @@
   },
   "complexity": {
     "assembly_lines": 271,
-    "complexity_score": 299,
+    "complexity_score": 307,
     "cross_reference_count": 5,
     "function_call_count": 16,
     "global_count": 35,
-    "pseudocode_lines": 129,
-    "suspect_count": 15,
+    "pseudocode_lines": 122,
+    "suspect_count": 17,
     "suspect_types": [
       "decompiler_intrinsic",
       "mmx_assembly",
-      "pointer_cast",
-      "suspect_float"
+      "pointer_cast"
     ],
-    "total_lines": 400
+    "total_lines": 393
   },
   "cross_references": [
     {
@@ -618,100 +617,114 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 56,
+      "line": 57,
       "match": "(float *)((int)",
-      "text": "if (0.0 <= *(float *)((int)&g_MoonBats[0].course_position + iVar4)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 58,
-      "match": "(int *)((int)",
-      "text": "(g_MoonBatCourses + *(int *)((int)&g_MoonBats[0].course_index + iVar4));",
+      "text": "if (0.0 <= *(float *)((int)&g_MoonBats[0].course_position + iVar5)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 59,
-      "match": "(float *)((int)",
-      "text": "local_44.x = local_44.x + *(float *)((int)&g_MoonBats[0].random_offset.x + iVar4);",
+      "match": "(int *)((int)",
+      "text": "(g_MoonBatCourses + *(int *)((int)&g_MoonBats[0].course_index + iVar5));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 60,
       "match": "(float *)((int)",
-      "text": "local_44.y = local_44.y + *(float *)((int)&g_MoonBats[0].random_offset.y + iVar4);",
+      "text": "local_44.x = local_44.x + *(float *)((int)&g_MoonBats[0].random_offset.x + iVar5);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 61,
       "match": "(float *)((int)",
-      "text": "local_44.z = local_44.z + *(float *)((int)&g_MoonBats[0].random_offset.z + iVar4);",
+      "text": "local_44.y = local_44.y + *(float *)((int)&g_MoonBats[0].random_offset.y + iVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 62,
+      "match": "(float *)((int)",
+      "text": "local_44.z = local_44.z + *(float *)((int)&g_MoonBats[0].random_offset.z + iVar5);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 69,
       "match": "(float *)((int)",
-      "text": "((double)*(float *)((int)&g_MoonBats[0].animation_frame + iVar4));",
+      "text": "(int)ROUND(ROUND(*(float *)((int)&g_MoonBats[0].animation_frame + iVar5)));",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 70,
+      "line": 69,
       "match": "ROUND",
-      "text": "local_14 = (CKeyFramedModelInstance *)(int)ROUND(dVar7);",
+      "text": "(int)ROUND(ROUND(*(float *)((int)&g_MoonBats[0].animation_frame + iVar5)));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 69,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(*(float *)((int)&g_MoonBats[0].animation_frame + iVar5)));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 76,
-      "match": "(int *)((int)",
-      "text": "g_MoonBatCourses[*(int *)((int)&g_MoonBats[0].course_index + iVar4)].len;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 77,
+      "line": 73,
       "match": "(float *)((int)",
-      "text": "local_18 = *(float *)((int)&g_MoonBats[0].course_position + iVar4) / (float)(int)local_14;",
+      "text": "local_18 = *(float *)((int)&g_MoonBats[0].course_position + iVar5) /",
       "type": "pointer_cast"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 85,
-      "match": "7.588293e-39",
-      "text": "local_5c.x = 7.588293e-39;",
-      "type": "suspect_float"
+      "description": "Complex pointer cast",
+      "line": 74,
+      "match": "(int *)((int)",
+      "text": "(float)g_MoonBatCourses[*(int *)((int)&g_MoonBats[0].course_index + iVar5)].len;",
+      "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 87,
+      "line": 82,
       "match": "ROUND",
-      "text": "local_14 = (CKeyFramedModelInstance *)(int)ROUND(dVar7);",
+      "text": "local_14 = (CKeyFramedModelInstance *)(int)ROUND(ROUND(dVar1));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 105,
-      "match": "CONCAT44",
-      "text": "uVar6 = paddusb(*puVar5,CONCAT44(g_Hardware32BitPalette",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 111,
-      "match": "CONCAT44",
-      "text": "uVar6 = paddusb(uVar6,CONCAT44(g_Hardware32BitPalette",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 125,
+      "line": 82,
       "match": "ROUND",
-      "text": "local_1c = (int)ROUND(dVar7);",
+      "text": "local_14 = (CKeyFramedModelInstance *)(int)ROUND(ROUND(dVar1));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 100,
+      "match": "CONCAT44",
+      "text": "uVar7 = paddusb(*puVar6,CONCAT44(g_Hardware32BitPalette",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 106,
+      "match": "CONCAT44",
+      "text": "uVar7 = paddusb(uVar7,CONCAT44(g_Hardware32BitPalette",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 119,
+      "match": "ROUND",
+      "text": "local_1c = (int)ROUND(ROUND(g_MoonAnimationTimer));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 119,
+      "match": "ROUND",
+      "text": "local_1c = (int)ROUND(ROUND(g_MoonAnimationTimer));",
       "type": "decompiler_intrinsic"
     },
     {

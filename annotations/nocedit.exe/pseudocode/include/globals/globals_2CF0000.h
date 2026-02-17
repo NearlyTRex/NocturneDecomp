@@ -38,8 +38,8 @@ extern SWindow g_WindowStack[5];
 // UOrientationVector
 extern UOrientationVector UNION_UOrientationVector_02cf2b6c;
 
-// _BIT_INTEGER
-extern _BIT_INTEGER g_MouseButtonFlags;
+// _BIT_INTEGER32
+extern _BIT_INTEGER32 g_MouseButtonFlags;
 
 // char*
 extern char* g_ClipboardBackupText;

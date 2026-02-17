@@ -38,7 +38,8 @@ void __cdecl core_svetlana_cpp_CSvetlana_processDamage_FUN_005d9d30(CSvetlana *t
         (this_ptr->base).base.grabbed_by = (CDemonActor *)0x0;
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&this_ptr_00->motion_controller,8,1);
-        core_gore_cpp_CGore_FUN_004ee030(g_CGorePtr,(CDemonActor *)this_ptr);
+        core_gore_cpp_CGore_spawnFliesOnActor_FUN_004ee030
+                  (g_CGorePtr,(CDemonActor *)this_ptr,0x32,50.0,(CVector3f *)0x0);
         sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->unk5);
         iVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                           ((CDemonActor *)this_ptr,"svet-die.wav");

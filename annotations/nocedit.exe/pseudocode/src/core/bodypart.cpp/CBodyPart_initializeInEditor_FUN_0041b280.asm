@@ -26,7 +26,7 @@
 ;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
-;   core_bodypart.cpp_CBodyPart_FUN_0041a050
+;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050
 ;   core_skeleton.cpp_CDeformableModel_getPartPtr_FUN_0059c220
 ;   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
 ;   core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_005a1040
@@ -264,8 +264,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x2844]    ; 0041b4ae
         ;   Label: LAB_0041b4ae
     PUSH ECX                            ; 0041b4b5
-    CALL core_bodypart.cpp_CBodyPart_FUN_0041a050 ; 0041b4b6
-        ;   XREF to: 0041a050 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_FUN_0041a050(CBodyPart * this_ptr)
+    CALL core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050 ; 0041b4b6
+        ;   XREF to: 0041a050 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050(CBodyPart * this_ptr)
     ADD ESP,0x4                         ; 0041b4bb
     PUSH 0x0                            ; 0041b4be
     LEA EAX,[ESP + 0x4]                 ; 0041b4c0

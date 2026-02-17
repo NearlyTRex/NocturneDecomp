@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   char[256] g_KeyboardState
+;   char[512] g_KeyboardState
 ;   char[600] g_PrevKeyboardState
 ;
 ; *****************************************************************************

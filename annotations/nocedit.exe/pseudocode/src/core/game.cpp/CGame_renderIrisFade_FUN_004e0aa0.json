@@ -6,12 +6,12 @@
   },
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 188,
+    "complexity_score": 198,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 9,
     "pseudocode_lines": 43,
-    "suspect_count": 13,
+    "suspect_count": 14,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param",
@@ -191,42 +191,42 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 12,
       "match": "in_stack_ffffffec",
       "text": "CGame *in_stack_ffffffec;",
       "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 12,
+      "line": 14,
       "match": "DAT_02d831ec",
       "text": "if (DAT_02d831ec != 0) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 13,
+      "line": 15,
       "match": "DAT_02d831ec",
       "text": "if (((DAT_02d831ec < 4) && (DAT_02d831ec != 1)) && (0x3f7fffff < (int)DAT_02d831f0)) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 13,
+      "line": 15,
       "match": "DAT_02d831ec",
       "text": "if (((DAT_02d831ec < 4) && (DAT_02d831ec != 1)) && (0x3f7fffff < (int)DAT_02d831f0)) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 13,
+      "line": 15,
       "match": "DAT_02d831f0",
       "text": "if (((DAT_02d831ec < 4) && (DAT_02d831ec != 1)) && (0x3f7fffff < (int)DAT_02d831f0)) {",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 16,
       "match": "in_stack_ffffffec",
       "text": "core_game_cpp_CGame_calculateIrisFadeCenter_FUN_004e09a0(in_stack_ffffffec);",
       "type": "stack_param"
@@ -235,49 +235,56 @@
       "description": "Undefined global data reference",
       "line": 18,
       "match": "DAT_02d831f0",
-      "text": "dVar5 = round((double)(DAT_02d831f0 * DAT_02d831f0));",
+      "text": "fVar1 = DAT_02d831f0 * DAT_02d831f0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 18,
       "match": "DAT_02d831f0",
-      "text": "dVar5 = round((double)(DAT_02d831f0 * DAT_02d831f0));",
+      "text": "fVar1 = DAT_02d831f0 * DAT_02d831f0;",
       "type": "undefined_data"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 26,
+      "line": 27,
       "match": "ROUND",
-      "text": "if ((int)ROUND(dVar5) <",
+      "text": "if ((int)ROUND(ROUND(fVar1)) <",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 27,
+      "match": "ROUND",
+      "text": "if ((int)ROUND(ROUND(fVar1)) <",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Undefined global data reference",
-      "line": 27,
+      "line": 28,
       "match": "DAT_02d831f8",
-      "text": "(DAT_02d831f8 - iVar4) * (DAT_02d831f8 - iVar4) +",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_02d831f8",
-      "text": "(DAT_02d831f8 - iVar4) * (DAT_02d831f8 - iVar4) +",
+      "text": "(DAT_02d831f8 - iVar5) * (DAT_02d831f8 - iVar5) +",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 28,
-      "match": "DAT_02d831f4",
-      "text": "(DAT_02d831f4 - iVar1) * (DAT_02d831f4 - iVar1)) {",
+      "match": "DAT_02d831f8",
+      "text": "(DAT_02d831f8 - iVar5) * (DAT_02d831f8 - iVar5) +",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 28,
+      "line": 29,
       "match": "DAT_02d831f4",
-      "text": "(DAT_02d831f4 - iVar1) * (DAT_02d831f4 - iVar1)) {",
+      "text": "(DAT_02d831f4 - iVar2) * (DAT_02d831f4 - iVar2)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_02d831f4",
+      "text": "(DAT_02d831f4 - iVar2) * (DAT_02d831f4 - iVar2)) {",
       "type": "undefined_data"
     }
   ]

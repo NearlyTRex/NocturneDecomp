@@ -143,10 +143,6 @@ void SetStdHandleToSomething(HANDLE param_1,uint param_2);
 // Address: 00608bb0
 void __cdecl staticFinal(void);
 
-// Original: crt_unknown.c_FUN_00608e14
-// Address: 00608e14
-undefined4 FUN_00608e14(void);
-
 // Original: crt_unknown.c_staticFinal_FUN_00608fc0
 // Address: 00608fc0
 void __cdecl staticFinal(void);

@@ -29,8 +29,8 @@
 ;   CSound g_CSoundInstance
 ;
 ; Called Functions:
-;   core_gore.cpp_CGore_FUN_004ee070
-;   core_gore.cpp_CGore_FUN_004ee0f0
+;   core_gore.cpp_CGore_createFootstep_FUN_004ee070
+;   core_gore.cpp_CGore_findBloodTypeAtPosition_FUN_004ee0f0
 ;   core_ground.cpp_getGroundTypeCode_FUN_004eece0
 ;   core_setcolid.cpp_CDemonSet_FUN_00574580
 ;   core_sound.cpp_CSound_playActorSound_FUN_005b3a40
@@ -98,8 +98,8 @@ section .text
     PUSH ESI                            ; 0040caa2
     MOV ECX,dword ptr [0x0067b9a0]      ; 0040caa3 | g_CGoreInstance | g_CGorePtr
     PUSH ECX                            ; 0040caa9 | g_CGoreInstance
-    CALL core_gore.cpp_CGore_FUN_004ee0f0 ; 0040caaa
-        ;   XREF to: 004ee0f0 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_CGore_FUN_004ee0f0(CGore * this_ptr)
+    CALL core_gore.cpp_CGore_findBloodTypeAtPosition_FUN_004ee0f0 ; 0040caaa
+        ;   XREF to: 004ee0f0 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_CGore_findBloodTypeAtPosition_FUN_004ee0f0(CGore * this_ptr, CVector3f * position, int * out_blood_type)
     ADD ESP,0xc                         ; 0040caaf
     TEST EAX,EAX                        ; 0040cab2
     JZ 0x0040cb55                       ; 0040cab4
@@ -116,8 +116,8 @@ section .text
     PUSH ESI                            ; 0040cad8
     MOV EBP,dword ptr [0x0067b9a0]      ; 0040cad9 | g_CGorePtr
     PUSH EBP                            ; 0040cadf | g_CGoreInstance
-    CALL core_gore.cpp_CGore_FUN_004ee070 ; 0040cae0
-        ;   XREF to: 004ee070 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004ee070(CGore * this_ptr)
+    CALL core_gore.cpp_CGore_createFootstep_FUN_004ee070 ; 0040cae0
+        ;   XREF to: 004ee070 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_createFootstep_FUN_004ee070(CGore * this_ptr, CVector3f * position, UOrientationVector * orientation, int surface_type, ...)
     MOV EAX,dword ptr [EBX + 0x114]     ; 0040cae5
     SUB EAX,0x2000                      ; 0040caeb
     ADD ESP,0x18                        ; 0040caf0
@@ -173,8 +173,8 @@ section .text
     PUSH ESI                            ; 0040cb72
     MOV EAX,[0x0067b9a0]                ; 0040cb73 | g_CGoreInstance | g_CGorePtr
     PUSH EAX                            ; 0040cb78 | g_CGoreInstance
-    CALL core_gore.cpp_CGore_FUN_004ee070 ; 0040cb79
-        ;   XREF to: 004ee070 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004ee070(CGore * this_ptr)
+    CALL core_gore.cpp_CGore_createFootstep_FUN_004ee070 ; 0040cb79
+        ;   XREF to: 004ee070 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_createFootstep_FUN_004ee070(CGore * this_ptr, CVector3f * position, UOrientationVector * orientation, int surface_type, ...)
     ADD ESP,0x18                        ; 0040cb7e
     JMP 0x0040cb07                      ; 0040cb81
         ;   XREF to: 0040cb07 (UNCONDITIONAL_JUMP)  ; LAB_0040cb07

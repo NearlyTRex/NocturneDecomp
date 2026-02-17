@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 88,
+    "complexity_score": 116,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 5,
-    "pseudocode_lines": 28,
-    "suspect_count": 5,
+    "pseudocode_lines": 26,
+    "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 74
+    "total_lines": 72
   },
   "cross_references": [
     {
@@ -161,37 +161,58 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 21,
+      "line": 22,
       "match": "fsin",
       "text": "fVar7 = (float10)fsin(fVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 22,
+      "line": 23,
       "match": "fcos",
       "text": "fVar6 = (float10)fcos(fVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 25,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)g_SinTable + iVar2) = 0x50c57e;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 27,
+      "line": 24,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)g_CosTable + iVar2) = (int)ROUND(dVar8);",
+      "text": "*(int *)((int)g_SinTable + iVar2) = (int)ROUND(ROUND(fVar7 * fVar3));",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 27,
+      "line": 24,
       "match": "ROUND",
-      "text": "*(int *)((int)g_CosTable + iVar2) = (int)ROUND(dVar8);",
+      "text": "*(int *)((int)g_SinTable + iVar2) = (int)ROUND(ROUND(fVar7 * fVar3));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 24,
+      "match": "ROUND",
+      "text": "*(int *)((int)g_SinTable + iVar2) = (int)ROUND(ROUND(fVar7 * fVar3));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)g_CosTable + iVar2) = (int)ROUND(ROUND(fVar6 * fVar3));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 26,
+      "match": "ROUND",
+      "text": "*(int *)((int)g_CosTable + iVar2) = (int)ROUND(ROUND(fVar6 * fVar3));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 26,
+      "match": "ROUND",
+      "text": "*(int *)((int)g_CosTable + iVar2) = (int)ROUND(ROUND(fVar6 * fVar3));",
       "type": "decompiler_intrinsic"
     }
   ]

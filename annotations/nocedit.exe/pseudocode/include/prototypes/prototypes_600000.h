@@ -69,7 +69,7 @@ int __cdecl crt_io_c_chdir_FUN_006012a0(char *path);
 int __cdecl crt_heap_c__heapwalk_FUN_006012c0(_heapinfo *heap_info);
 int __cdecl crt_heap_c_heapWalk_FUN_006012d0(HeapState *heap_state_ptr,Heap *heap_ptr);
 int __cdecl crt_heap_c_heapCheck_FUN_00601374(void *heap_state_ptr);
-float10 __fpustack crt_math_c_atan2_FUN_006013b1(float10 y,float10 x);
+float10 __fpureg crt_math_c_atan2_FUN_006013b1(float10 y,float10 x);
 char * __cdecl crt_env_c_getenv_FUN_006013f0(char *name);
 int * crt_errno_c__errno_FUN_00601450(void);
 char * __watcallStack crt_string_c_strerror_FUN_00601470(int errnum);
@@ -329,7 +329,7 @@ int __cdecl crt_fstream_cpp_filebuf_open_FUN_00608c15(filebuf *this_ptr,char *fi
 int __watcallStack crt_stdio_c_stream_valid_FUN_00608cd1(_FILE *stream,int operation_type);
 char * __cdecl crt_io_c_getcwd_FUN_00608d20(char *buffer,SIZE_T size);
 void * __cdecl crt_memory_c___arrinit__FUN_00608dc8(void *array_start,int element_count,WatcomTypeInfo *type_info);
-undefined4 crt_unknown_c_FUN_00608e14(void);
+float10 __fpustack crt_math_c_atan2_FUN_00608e14(float10 y,float10 x);
 int __cdecl crt_string_c_mbstrnicmp_FUN_00608e50(char *str1,char *str2,SIZE_T count);
 void __cdecl crt_stdio_c_DetectDeviceAndSetBuffering_FUN_00608ee0(_FILE *file);
 void __cdecl crt_ioinit_c_staticInit_FUN_00608f20(void);

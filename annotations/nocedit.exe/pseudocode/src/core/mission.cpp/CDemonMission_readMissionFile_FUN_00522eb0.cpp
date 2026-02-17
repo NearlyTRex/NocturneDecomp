@@ -246,9 +246,9 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonM
     }
     this_ptr_00 = g_CGorePtr;
     this_ptr->current_set_index = -1;
-    core_gore_cpp_CGore_FUN_004ed760(this_ptr_00);
+    core_gore_cpp_CGore_reset_FUN_004ed760(this_ptr_00);
     if (6 < this_ptr->mission_version_num) {
-      core_gore_cpp_CGore_FUN_004ee1e0(g_CGorePtr,file_handle);
+      core_gore_cpp_CGore_load_FUN_004ee1e0(g_CGorePtr,file_handle);
       return;
     }
   }

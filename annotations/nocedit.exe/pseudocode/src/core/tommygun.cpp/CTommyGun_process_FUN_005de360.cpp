@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_ptr,float delta_time)
 
 {
@@ -14,11 +16,10 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_pt
   int iVar3;
   uint uVar4;
   float10 fVar5;
-  double dVar6;
   uint in_stack_fffffe10;
   CSfxSample local_1dc;
   double local_28;
-  ulonglong local_20;
+  double local_20;
   float local_18;
   
   core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base,delta_time);
@@ -35,14 +36,12 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_pt
       iVar3 = sound_sndmain_cpp_getSfxSampleInfo_FUN_005a96e0(this_ptr->sfx_handle,&local_1dc);
       if (iVar3 != 0) {
         local_18 = (float)local_1dc.sample_info.sample_count;
-        dVar6 = round
-                          ((double)((float)local_1dc.sample_info.sample_count *
-                                    (float)(fVar1 - fVar5) * 0.1666667f));
+        iVar3 = (int)ROUND(ROUND((float)local_1dc.sample_info.sample_count * (float)(fVar1 - fVar5)
+                                 * 0.1666667f));
         sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
-        local_20 = (double)CONCAT44((int)ROUND(dVar6),(uint)local_20);
-        dVar6 = (double)(int)ROUND(dVar6);
-        if (0.0 < dVar6) {
-          sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005a8be0(dVar6,0);
+        local_18 = (float)iVar3;
+        if (0.0 < (double)iVar3) {
+          sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005a8be0((double)iVar3,0);
         }
         iVar3 = (*((this_ptr->base).base.vtable._ub)->playSound)
                           ((CDemonActor *)this_ptr,"m-gun-t.wav");
@@ -65,7 +64,7 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_pt
   }
   sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handle);
   _sprintf
-            ((char *)&local_1dc.taken,"m-gun1.wav @ 2.3 * %f",SUB84((double)fVar2,0),
+            ((char *)&local_1dc.taken,"m-gun1.wav @ 2.3 * %f",0xe9,SUB82((double)fVar2,0),
              (int)((ulonglong)(double)fVar2 >> 0x20));
   sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->unk2);
   uVar4 = (*((this_ptr->base).base.vtable._ub)->playAmbientSound)

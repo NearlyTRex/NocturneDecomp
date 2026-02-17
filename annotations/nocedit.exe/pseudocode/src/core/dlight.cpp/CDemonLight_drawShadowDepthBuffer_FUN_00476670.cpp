@@ -83,9 +83,9 @@ void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00476670(CDem
                 local_24 = uVar4 + local_24 >> 1;
                 uVar4 = local_24 * 3 >> 2;
                 if (g_BitsPerPixel == 0x20) {
-                  uVar4 = local_24 << ((byte)g_BlueBitPosition & 0x1f) |
-                          uVar4 << ((byte)g_GreenBitPosition & 0x1f) |
-                          uVar4 << ((byte)g_RedBitPosition & 0x1f);
+                  uVar4 = local_24 << (g_BlueBitPosition.bytes[0] & 0x1f) |
+                          uVar4 << (g_GreenBitPosition.bytes[0] & 0x1f) |
+                          uVar4 << (g_RedBitPosition.bytes[0] & 0x1f);
                 }
                 else {
                   uVar4 = uVar4 << 0x10 | uVar4 << 8 | local_24;
@@ -143,10 +143,11 @@ void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00476670(CDem
                 local_28 = uVar4 + local_28 >> 1;
                 uVar4 = local_28 * 3 >> 2;
                 uVar3 = (ushort)(local_28 / (uint)g_BlueScaleFactor <<
-                                ((byte)g_BlueBitPosition & 0x1f)) |
-                        (ushort)(uVar4 / (uint)g_RedScaleFactor << ((byte)g_RedBitPosition & 0x1f))
-                        | (ushort)(uVar4 / (uint)g_GreenScaleFactor <<
-                                  ((byte)g_GreenBitPosition & 0x1f));
+                                (g_BlueBitPosition.bytes[0] & 0x1f)) |
+                        (ushort)(uVar4 / (uint)g_RedScaleFactor <<
+                                (g_RedBitPosition.bytes[0] & 0x1f)) |
+                        (ushort)(uVar4 / (uint)g_GreenScaleFactor <<
+                                (g_GreenBitPosition.bytes[0] & 0x1f));
                 *puVar9 = uVar3;
                 if (0x140 < g_WindowWidth) {
                   puVar9[1] = uVar3;

@@ -36,9 +36,8 @@ void __cdecl core_boxactor_cpp_CBoxActor_getPropertyList_FUN_004226e0(CBoxActor 
             (property_list,"canBePushed",&this_ptr->can_be_pushed);
   if (this_ptr->can_be_pushed != 0) {
     core_actor_cpp_CActorPropertyList_addChoice_FUN_0040e350
-              (property_list,"Constrain to this actor's box",
-               (CDemonActor **)&this_ptr->constrain_extents_actor,1,"CDemonActor",
-               (CActorPropertyValidatorFunc *)0x0);
+              (property_list,"Constrain to this actor's box",&this_ptr->constrain_extents_actor,
+               1,"CDemonActor",(CActorPropertyValidatorFunc *)0x0);
     core_actor_cpp_CActorPropertyList_addSound_FUN_0040e2d0
               (property_list,"push sound",this_ptr->push_sound);
   }

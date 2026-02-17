@@ -24,6 +24,6 @@ CFlashlight * __cdecl core_flashlit_cpp_CFlashlight_ctor_FUN_004cbbc0(CFlashligh
   fVar1 = 8.0f;
   pCVar2->fire_cooldown = 0.0;
   pCVar2->ammo_count = 0;
-  pCVar2->unk3 = (int)fVar1;
+  pCVar2->weight = fVar1;
   return (CFlashlight *)pCVar2;
 }

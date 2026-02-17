@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_enemy_cpp_CEnemy_FUN_004a9fd0(CEnemy *this_ptr)
+; int __cdecl core_enemy_cpp_CEnemy_FUN_004a9fd0(CEnemy *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CEnemy *         Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ;
 ; XREF[18]:
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00415470 at 00415a33

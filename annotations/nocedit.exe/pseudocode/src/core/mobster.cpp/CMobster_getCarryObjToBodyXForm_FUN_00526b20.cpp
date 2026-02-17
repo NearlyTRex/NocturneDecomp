@@ -11,10 +11,10 @@
 void __stack2_esi core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_00526b20(CMobster *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
-  CDemonActor *pCVar1;
-  int iVar2;
-  CMatrix3x4f *pCVar3;
-  byte bVar4;
+  CElephantGun *pCVar1;
+  int iVar1;
+  CMatrix3x4f *pCVar2;
+  byte bVar3;
   CMatrix3x4f local_d8;
   CMatrix3x4f local_a8;
   CVector3f local_78 [2];
@@ -26,13 +26,14 @@ void __stack2_esi core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_00526b20(
   CVector3f local_24;
   CVector3f local_18;
   
-  bVar4 = 0;
-  iVar2 = (this_ptr->base).base.carry_hands[hand_index].bone_index;
+  bVar3 = 0;
+  iVar1 = (this_ptr->base).base.carry_hands[hand_index].bone_index;
   if (hand_index == 1) {
-    pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790
+    pCVar1 = (CElephantGun *)
+             core_actor_cpp_castToClassHash_FUN_0040c790
                        ((this_ptr->base).base.carry_hands[hand_index].carry_actor,
                         g_CElephantGunClassInfo.name_hash);
-    if (pCVar1 == (CDemonActor *)0x0) {
+    if (pCVar1 == (CElephantGun *)0x0) {
       local_78[0].x = 0.228082;
       local_78[0].y = -0.13793;
       local_78[0].z = -0.112196;
@@ -89,13 +90,13 @@ void __stack2_esi core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_00526b20(
   }
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0(&local_d8,&local_60,&local_30);
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-            (&local_d8,(this_ptr->base).base.model.bone_transform.bone_world_matrices + iVar2,
+            (&local_d8,(this_ptr->base).base.model.bone_transform.bone_world_matrices + iVar1,
              &local_a8);
-  pCVar3 = &local_a8;
-  for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-    out_matrix->m[0].w = pCVar3->m[0].w;
-    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
-    out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar4 * -2 + 1) * 4);
+  pCVar2 = &local_a8;
+  for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+    out_matrix->m[0].w = pCVar2->m[0].w;
+    pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar3 * -2 + 1) * 4);
+    out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar3 * -2 + 1) * 4);
   }
   return;
 }

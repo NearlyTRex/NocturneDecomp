@@ -16,15 +16,15 @@
 ;   TerminatedCString s_noscape_cth_00656ae8
 ;   TerminatedCString s_nosskirt_cth_00656af4
 ;   TerminatedCString s_Bip01_Spine2_00656b01
-;   undefined4 DAT_02f43974
+;   int INT_02f43974
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_load_FUN_00438cf0
 ;   core_cloth.cpp_CCloth_setup_FUN_00439710
 ;   core_enemy.cpp_CEnemy_setup_FUN_004a9650
-;   core_morph.cpp_CMorph_FUN_0052b430
-;   core_morph.cpp_CMorph_FUN_0052b580
+;   core_morph.cpp_CMorph_addPartFromKeyframedModel_FUN_0052b580
 ;   core_morph.cpp_CMorph_getReady_FUN_0052b680
+;   core_morph.cpp_CMorph_setupModelFromDeformable_FUN_0052b430
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 ;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
@@ -128,17 +128,17 @@ section .text
     PUSH EAX                            ; 005e57a3
     LEA ESI,[EBX + 0xcdcc4]             ; 005e57a4
     PUSH ESI                            ; 005e57aa
-    MOV [0x02f43974],EAX                ; 005e57ab | DAT_02f43974
-    CALL core_morph.cpp_CMorph_FUN_0052b430 ; 005e57b0
-        ;   XREF to: 0052b430 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_FUN_0052b430(CMorph * this_ptr, int model_index)
+    MOV [0x02f43974],EAX                ; 005e57ab | INT_02f43974
+    CALL core_morph.cpp_CMorph_setupModelFromDeformable_FUN_0052b430 ; 005e57b0
+        ;   XREF to: 0052b430 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_setupModelFromDeformable_FUN_0052b430(CMorph * this_ptr, int model_index, CDeformableModelInstance * model_ptr)
     ADD ESP,0xc                         ; 005e57b5
     PUSH 0x0                            ; 005e57b8
     MOV EDX,dword ptr [ESP + 0x10]      ; 005e57ba
     PUSH EDX                            ; 005e57be
     PUSH 0x0                            ; 005e57bf
     PUSH ESI                            ; 005e57c1
-    CALL core_morph.cpp_CMorph_FUN_0052b580 ; 005e57c2
-        ;   XREF to: 0052b580 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_FUN_0052b580(CMorph * this_ptr, int model_index, CKeyFramedModel * model_ptr, int frame_index)
+    CALL core_morph.cpp_CMorph_addPartFromKeyframedModel_FUN_0052b580 ; 005e57c2
+        ;   XREF to: 0052b580 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_addPartFromKeyframedModel_FUN_0052b580(CMorph * this_ptr, int model_index, CKeyFramedModel * model_ptr, int frame_index)
     ADD ESP,0x10                        ; 005e57c7
     PUSH 0x0                            ; 005e57ca
     MOV EAX,dword ptr [ESP + 0x10]      ; 005e57cc
@@ -146,9 +146,9 @@ section .text
     PUSH 0x0                            ; 005e57d1
     MOV ECX,0x1                         ; 005e57d3
     PUSH ESI                            ; 005e57d8
-    MOV dword ptr [0x02f43974],ECX      ; 005e57d9 | DAT_02f43974
-    CALL core_morph.cpp_CMorph_FUN_0052b580 ; 005e57df
-        ;   XREF to: 0052b580 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_FUN_0052b580(CMorph * this_ptr, int model_index, CKeyFramedModel * model_ptr, int frame_index)
+    MOV dword ptr [0x02f43974],ECX      ; 005e57d9 | INT_02f43974
+    CALL core_morph.cpp_CMorph_addPartFromKeyframedModel_FUN_0052b580 ; 005e57df
+        ;   XREF to: 0052b580 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_addPartFromKeyframedModel_FUN_0052b580(CMorph * this_ptr, int model_index, CKeyFramedModel * model_ptr, int frame_index)
     ADD ESP,0x10                        ; 005e57e4
     XOR EDX,EDX                         ; 005e57e7
     PUSH EDX                            ; 005e57e9
@@ -156,9 +156,9 @@ section .text
     PUSH ECX                            ; 005e57ee
     PUSH EDX                            ; 005e57ef
     PUSH ESI                            ; 005e57f0
-    MOV dword ptr [0x02f43974],EDX      ; 005e57f1 | DAT_02f43974
-    CALL core_morph.cpp_CMorph_FUN_0052b580 ; 005e57f7
-        ;   XREF to: 0052b580 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_FUN_0052b580(CMorph * this_ptr, int model_index, CKeyFramedModel * model_ptr, int frame_index)
+    MOV dword ptr [0x02f43974],EDX      ; 005e57f1 | INT_02f43974
+    CALL core_morph.cpp_CMorph_addPartFromKeyframedModel_FUN_0052b580 ; 005e57f7
+        ;   XREF to: 0052b580 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_addPartFromKeyframedModel_FUN_0052b580(CMorph * this_ptr, int model_index, CKeyFramedModel * model_ptr, int frame_index)
     ADD ESP,0x10                        ; 005e57fc
     PUSH 0x0                            ; 005e57ff
     MOV EDX,dword ptr [ESP + 0x8]       ; 005e5801
@@ -166,25 +166,25 @@ section .text
     PUSH 0x0                            ; 005e5806
     MOV EAX,0x1                         ; 005e5808
     PUSH ESI                            ; 005e580d
-    MOV [0x02f43974],EAX                ; 005e580e | DAT_02f43974
-    CALL core_morph.cpp_CMorph_FUN_0052b580 ; 005e5813
-        ;   XREF to: 0052b580 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_FUN_0052b580(CMorph * this_ptr, int model_index, CKeyFramedModel * model_ptr, int frame_index)
+    MOV [0x02f43974],EAX                ; 005e580e | INT_02f43974
+    CALL core_morph.cpp_CMorph_addPartFromKeyframedModel_FUN_0052b580 ; 005e5813
+        ;   XREF to: 0052b580 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_addPartFromKeyframedModel_FUN_0052b580(CMorph * this_ptr, int model_index, CKeyFramedModel * model_ptr, int frame_index)
     ADD ESP,0x10                        ; 005e5818
     PUSH EBP                            ; 005e581b
     PUSH 0x1                            ; 005e581c
     XOR ECX,ECX                         ; 005e581e
     PUSH ESI                            ; 005e5820
-    MOV dword ptr [0x02f43974],ECX      ; 005e5821 | DAT_02f43974
-    CALL core_morph.cpp_CMorph_FUN_0052b430 ; 005e5827
-        ;   XREF to: 0052b430 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_FUN_0052b430(CMorph * this_ptr, int model_index)
+    MOV dword ptr [0x02f43974],ECX      ; 005e5821 | INT_02f43974
+    CALL core_morph.cpp_CMorph_setupModelFromDeformable_FUN_0052b430 ; 005e5827
+        ;   XREF to: 0052b430 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_setupModelFromDeformable_FUN_0052b430(CMorph * this_ptr, int model_index, CDeformableModelInstance * model_ptr)
     ADD ESP,0xc                         ; 005e582c
     PUSH 0x0                            ; 005e582f
     MOV EAX,dword ptr [ESP + 0xc]       ; 005e5831
     PUSH EAX                            ; 005e5835
     PUSH 0x1                            ; 005e5836
     PUSH ESI                            ; 005e5838
-    CALL core_morph.cpp_CMorph_FUN_0052b580 ; 005e5839
-        ;   XREF to: 0052b580 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_FUN_0052b580(CMorph * this_ptr, int model_index, CKeyFramedModel * model_ptr, int frame_index)
+    CALL core_morph.cpp_CMorph_addPartFromKeyframedModel_FUN_0052b580 ; 005e5839
+        ;   XREF to: 0052b580 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_addPartFromKeyframedModel_FUN_0052b580(CMorph * this_ptr, int model_index, CKeyFramedModel * model_ptr, int frame_index)
     ADD ESP,0x10                        ; 005e583e
     PUSH 0x0                            ; 005e5841
     MOV ECX,dword ptr [ESP + 0xc]       ; 005e5843
@@ -192,13 +192,13 @@ section .text
     MOV EDX,0x1                         ; 005e5848
     PUSH EDX                            ; 005e584d
     PUSH ESI                            ; 005e584e
-    MOV dword ptr [0x02f43974],EDX      ; 005e584f | DAT_02f43974
-    CALL core_morph.cpp_CMorph_FUN_0052b580 ; 005e5855
-        ;   XREF to: 0052b580 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_FUN_0052b580(CMorph * this_ptr, int model_index, CKeyFramedModel * model_ptr, int frame_index)
+    MOV dword ptr [0x02f43974],EDX      ; 005e584f | INT_02f43974
+    CALL core_morph.cpp_CMorph_addPartFromKeyframedModel_FUN_0052b580 ; 005e5855
+        ;   XREF to: 0052b580 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_addPartFromKeyframedModel_FUN_0052b580(CMorph * this_ptr, int model_index, CKeyFramedModel * model_ptr, int frame_index)
     ADD ESP,0x10                        ; 005e585a
     XOR EAX,EAX                         ; 005e585d
     PUSH ESI                            ; 005e585f
-    MOV [0x02f43974],EAX                ; 005e5860 | DAT_02f43974
+    MOV [0x02f43974],EAX                ; 005e5860 | INT_02f43974
     CALL core_morph.cpp_CMorph_getReady_FUN_0052b680 ; 005e5865
         ;   XREF to: 0052b680 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_getReady_FUN_0052b680(CMorph * this_ptr)
     ADD ESP,0x4                         ; 005e586a

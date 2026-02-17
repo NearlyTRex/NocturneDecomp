@@ -23,10 +23,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_005e7510(CVam
   CVampireBoss *pCVar10;
   float local_20;
   
-  this_ptr->unk4[0x14] = '\0';
-  this_ptr->unk4[0x15] = '\0';
-  this_ptr->unk4[0x16] = '\0';
-  this_ptr->unk4[0x17] = '\0';
+  this_ptr->waypoint_index = 0;
   iVar9 = 0;
   local_20 = -8675309.0;
   pCVar10 = this_ptr;
@@ -47,7 +44,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_005e7510(CVam
     fVar3 = fVar6 * fVar6 + fVar5 * fVar5 + fVar4 * fVar4 +
             fVar7 * fVar7 + fVar8 * fVar8 + fVar3 * fVar3;
     if (local_20 < fVar3) {
-      *(int *)(this_ptr->unk4 + 0x14) = iVar9;
+      this_ptr->waypoint_index = iVar9;
       local_20 = fVar3;
     }
     iVar9 = iVar9 + 1;

@@ -38,7 +38,8 @@ void __cdecl core_haystack_cpp_CHaystack_processDamage_FUN_004f1b70(CHaystack *t
         (this_ptr->base).base.grabbed_by = (CDemonActor *)0x0;
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&this_ptr_00->motion_controller,8,1);
-        core_gore_cpp_CGore_FUN_004ee030(g_CGorePtr,(CDemonActor *)this_ptr);
+        core_gore_cpp_CGore_spawnFliesOnActor_FUN_004ee030
+                  (g_CGorePtr,(CDemonActor *)this_ptr,0x32,50.0,(CVector3f *)0x0);
         core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0((CCharacter *)this_ptr,damage_info);
         return;
       }

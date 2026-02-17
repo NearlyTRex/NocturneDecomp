@@ -40,19 +40,19 @@
       {
         "category": "format_error",
         "column": 51,
-        "line": 364,
+        "line": 357,
         "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 419,
+        "line": 410,
         "message": "cast from pointer to smaller type 'uchar' (aka 'unsigned char') loses information"
       },
       {
         "category": "incompatible_types",
         "column": 15,
-        "line": 421,
+        "line": 412,
         "message": "assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'"
       }
     ],
@@ -61,16 +61,16 @@
   },
   "complexity": {
     "assembly_lines": 1208,
-    "complexity_score": 518,
+    "complexity_score": 588,
     "cross_reference_count": 1,
     "function_call_count": 29,
     "global_count": 57,
-    "pseudocode_lines": 433,
-    "suspect_count": 8,
+    "pseudocode_lines": 423,
+    "suspect_count": 16,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 1641
+    "total_lines": 1631
   },
   "cross_references": [
     {
@@ -941,58 +941,114 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 293,
+      "line": 292,
       "match": "ROUND",
-      "text": "local_1c = (SMRGLPrimitiveQuad *)(int)ROUND(dVar15);",
+      "text": "(int)ROUND(ROUND((double)*(float *)(local_64 + iVar7 * 4 + -4) * 65536)",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 294,
+      "line": 292,
       "match": "ROUND",
-      "text": "ppSVar2[iVar11 * 0x12 + iVar7 * 3 + 7] = (SMRGLPrimitiveQuad *)(int)ROUND(dVar15);",
+      "text": "(int)ROUND(ROUND((double)*(float *)(local_64 + iVar7 * 4 + -4) * 65536)",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 296,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND((double)*(float *)(local_64 + iVar7 * 4 + -4) * 65536));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 296,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND((double)*(float *)(local_64 + iVar7 * 4 + -4) * 65536));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 298,
       "match": "ROUND",
-      "text": "local_1c = (SMRGLPrimitiveQuad *)(int)ROUND(dVar16);",
+      "text": "(int)ROUND(ROUND(dVar6 * (double)*(float *)(local_70 + iVar7 * 4 + -4)));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 299,
+      "line": 298,
       "match": "ROUND",
-      "text": "ppSVar2[iVar11 * 0x12 + iVar7 * 3 + 8] = (SMRGLPrimitiveQuad *)(int)ROUND(dVar16);",
+      "text": "(int)ROUND(ROUND(dVar6 * (double)*(float *)(local_70 + iVar7 * 4 + -4)));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 301,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(dVar6 * (double)*(float *)(local_70 + iVar7 * 4 + -4)));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 301,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(dVar6 * (double)*(float *)(local_70 + iVar7 * 4 + -4)));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 323,
       "match": "ROUND",
-      "text": "local_1c = (SMRGLPrimitiveQuad *)(int)ROUND(dVar16);",
+      "text": "this_ptr->vertex_list[iVar11 * 3] = (CVector3i *)(int)ROUND(ROUND(local_40 * fVar5));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 327,
+      "line": 323,
       "match": "ROUND",
-      "text": "local_1c = (SMRGLPrimitiveQuad *)(int)ROUND(dVar16);",
+      "text": "this_ptr->vertex_list[iVar11 * 3] = (CVector3i *)(int)ROUND(ROUND(local_40 * fVar5));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 332,
+      "line": 324,
       "match": "ROUND",
-      "text": "local_1c = (SMRGLPrimitiveQuad *)(int)ROUND(dVar16);",
+      "text": "this_ptr->vertex_list[iVar11 * 3 + 1] = (CVector3i *)(int)ROUND(ROUND(local_3c * fVar5));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 411,
+      "line": 324,
       "match": "ROUND",
-      "text": "local_1c = (SMRGLPrimitiveQuad *)(int)ROUND(dVar16);",
+      "text": "this_ptr->vertex_list[iVar11 * 3 + 1] = (CVector3i *)(int)ROUND(ROUND(local_3c * fVar5));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 325,
+      "match": "ROUND",
+      "text": "local_1c = (SMRGLPrimitiveQuad *)(int)ROUND(ROUND(local_38 * fVar5));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 325,
+      "match": "ROUND",
+      "text": "local_1c = (SMRGLPrimitiveQuad *)(int)ROUND(ROUND(local_38 * fVar5));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 402,
+      "match": "ROUND",
+      "text": "local_1c = (SMRGLPrimitiveQuad *)(int)ROUND(ROUND(local_2c * 255.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 402,
+      "match": "ROUND",
+      "text": "local_1c = (SMRGLPrimitiveQuad *)(int)ROUND(ROUND(local_2c * 255.0f));",
       "type": "decompiler_intrinsic"
     }
   ]

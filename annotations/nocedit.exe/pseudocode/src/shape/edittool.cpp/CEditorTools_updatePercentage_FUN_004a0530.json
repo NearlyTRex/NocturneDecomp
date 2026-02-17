@@ -1,34 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 47,
-        "line": 92,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 34,
-        "line": 98,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 303,
-    "complexity_score": 193,
+    "complexity_score": 190,
     "cross_reference_count": 25,
     "function_call_count": 11,
     "global_count": 26,
-    "pseudocode_lines": 98,
-    "suspect_count": 9,
+    "pseudocode_lines": 85,
+    "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 401
+    "total_lines": 388
   },
   "cross_references": [
     {
@@ -585,65 +572,72 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
+      "line": 35,
       "match": "ROUND",
-      "text": "if (((int)ROUND(dVar5) != g_WindowStack[g_WindowStackCount + -1].progress_percentage) ||",
+      "text": "iVar1 = (int)ROUND(ROUND(local_34 * (float)100 +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 48,
+      "line": 35,
       "match": "ROUND",
-      "text": "\"%d%% complete\",(int)ROUND(dVar5),uVar8);",
+      "text": "iVar1 = (int)ROUND(ROUND(local_34 * (float)100 +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 65,
+      "line": 57,
       "match": "ROUND",
-      "text": "iVar4 = (int)ROUND(dVar5) + x1_00;",
+      "text": "iVar7 = (int)ROUND(ROUND((float)((x2 - x1) + 1) * local_34 + (float)0.5))",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 81,
+      "line": 57,
       "match": "ROUND",
-      "text": "iVar3 = (int)ROUND(dVar6);",
+      "text": "iVar7 = (int)ROUND(ROUND((float)((x2 - x1) + 1) * local_34 + (float)0.5))",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 85,
-      "match": "CONCAT44",
-      "text": "((double)CONCAT44(SUB84(dVar5,0),uVar8) + 0.5);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 85,
-      "match": "SUB84",
-      "text": "((double)CONCAT44(SUB84(dVar5,0),uVar8) + 0.5);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 90,
+      "line": 70,
       "match": "ROUND",
-      "text": "(int)ROUND(dVar6) / 0x3c,(int)ROUND(dVar6) % 0x3c,iVar3 / 0x3c,iVar3 % 0x3c,",
+      "text": "iVar7 = (int)ROUND(ROUND(((progress_max - progress_min) * fVar2) / progress_min +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 90,
+      "line": 70,
       "match": "ROUND",
-      "text": "(int)ROUND(dVar6) / 0x3c,(int)ROUND(dVar6) % 0x3c,iVar3 / 0x3c,iVar3 % 0x3c,",
+      "text": "iVar7 = (int)ROUND(ROUND(((progress_max - progress_min) * fVar2) / progress_min +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 91,
-      "match": "SUB84",
-      "text": "uVar7,uVar8,SUB84(dVar5,0),(int)((ulonglong)dVar5 >> 0x20));",
+      "line": 78,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(dVar3)) / 0x3c,(int)ROUND(ROUND(dVar3)) % 0x3c,iVar7 / 0x3c,",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 78,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(dVar3)) / 0x3c,(int)ROUND(ROUND(dVar3)) % 0x3c,iVar7 / 0x3c,",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 78,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(dVar3)) / 0x3c,(int)ROUND(ROUND(dVar3)) % 0x3c,iVar7 / 0x3c,",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 78,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(dVar3)) / 0x3c,(int)ROUND(ROUND(dVar3)) % 0x3c,iVar7 / 0x3c,",
       "type": "decompiler_intrinsic"
     }
   ]

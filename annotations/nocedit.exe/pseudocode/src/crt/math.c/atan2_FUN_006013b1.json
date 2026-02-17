@@ -1,35 +1,35 @@
 {
   "complexity": {
-    "assembly_lines": 13,
-    "complexity_score": 40,
+    "assembly_lines": 20,
+    "complexity_score": 37,
     "cross_reference_count": 12,
-    "function_call_count": 1,
-    "global_count": 1,
-    "pseudocode_lines": 10,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 7,
     "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic",
       "special_math_intrinsic"
     ],
-    "total_lines": 23
+    "total_lines": 27
   },
   "cross_references": [
     {
       "addr": "004bf7f0",
-      "from_addr": "004bf8c1",
+      "from_addr": "004bf8aa",
       "name": "core_fire.cpp_CBulletHole_init_FUN_004bf7f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004ec390",
-      "from_addr": "004ec3e5",
-      "name": "core_gore.cpp_CBloodSplat_FUN_004ec390",
+      "from_addr": "004ec3cf",
+      "name": "core_gore.cpp_CBloodSplat_initWallSplat_FUN_004ec390",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004edbb0",
       "from_addr": "004edc90",
-      "name": "core_gore.cpp_CGore_FUN_004edbb0",
+      "name": "core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -40,7 +40,7 @@
     },
     {
       "addr": "005be520",
-      "from_addr": "005bf55e",
+      "from_addr": "005bf25f",
       "name": "core_stranger.cpp_CStranger_FUN_005be520",
       "type": "UNCONDITIONAL_CALL"
     },
@@ -95,46 +95,23 @@
         "006013c5"
       ]
     ],
-    "convention": "__fpustack",
+    "convention": "__fpureg",
     "name": "crt_math.c_atan2_FUN_006013b1",
-    "signature": "float10 __fpustack crt_math_c_atan2_FUN_006013b1(float10 y,float10 x)"
+    "signature": "float10 __fpureg crt_math_c_atan2_FUN_006013b1(float10 y,float10 x)"
   },
-  "function_calls": [
-    {
-      "addr": "00608e14",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_00608e14"
-    }
-  ],
-  "globals": [
-    {
-      "addr": "00685060",
-      "name": "g_UseSoftwareMath",
-      "type": "byte",
-      "value": "0x0"
-    }
-  ],
+  "function_calls": [],
+  "globals": [],
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.428571428571429,
-    "instruction_count": 7,
+    "avg_pcode_per_instr": 0.8421052631578947,
+    "instruction_count": 19,
     "opcode_distribution": {
-      "BOOL_NEGATE": 1,
-      "BRANCH": 1,
-      "CALL": 1,
       "CALLOTHER": 1,
-      "CBRANCH": 1,
-      "COPY": 14,
+      "COPY": 12,
       "INT_ADD": 1,
-      "INT_AND": 3,
-      "INT_EQUAL": 2,
-      "INT_SLESS": 1,
-      "INT_SUB": 1,
       "LOAD": 1,
-      "POPCOUNT": 1,
-      "RETURN": 1,
-      "STORE": 1
+      "RETURN": 1
     },
-    "pcode_op_count": 31
+    "pcode_op_count": 16
   },
   "stack_frame": {
     "frame_size": 0,
@@ -147,9 +124,9 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 6,
+      "line": 9,
       "match": "fpatan",
-      "text": "x = (float10)fpatan(y,x);",
+      "text": "fVar1 = (float10)fpatan(y,x);",
       "type": "decompiler_intrinsic"
     },
     {

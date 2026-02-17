@@ -1,18 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dstrender_cpp_saveMMXRegisters_FUN_004906b0(void)
+; void __mmx_save core_dstrender_cpp_saveMMXRegisters_FUN_004906b0(ulonglong mm0,ulonglong mm1,ulonglong mm2,ulonglong mm3,ulonglong mm4,ulonglong mm5,ulonglong mm6,ulonglong mm7)
 ;
 ;
 ; Referenced Globals:
-;   ulonglong g_SavedMMX0
-;   ulonglong g_SavedMMX1
-;   ulonglong g_SavedMMX2
-;   ulonglong g_SavedMMX3
-;   ulonglong g_SavedMMX4
-;   ulonglong g_SavedMMX5
-;   ulonglong g_SavedMMX6
-;   ulonglong g_SavedMMX7
+;   _MMX_INTEGER g_SavedMMX0
+;   _MMX_INTEGER g_SavedMMX1
+;   _MMX_INTEGER g_SavedMMX2
+;   _MMX_INTEGER g_SavedMMX3
+;   _MMX_INTEGER g_SavedMMX4
+;   _MMX_INTEGER g_SavedMMX5
+;   _MMX_INTEGER g_SavedMMX6
+;   _MMX_INTEGER g_SavedMMX7
 ;
 ; *****************************************************************************
 

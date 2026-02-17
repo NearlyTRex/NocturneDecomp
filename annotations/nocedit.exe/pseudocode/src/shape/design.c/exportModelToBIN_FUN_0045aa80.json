@@ -1,53 +1,23 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 54,
-        "line": 133,
-        "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
-      },
-      {
-        "category": "other",
-        "column": 57,
-        "line": 142,
-        "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
-      },
-      {
-        "category": "other",
-        "column": 77,
-        "line": 167,
-        "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 234,
-        "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
-      },
-      {
-        "category": "other",
-        "column": 31,
-        "line": 416,
-        "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 1273,
-    "complexity_score": 930,
+    "complexity_score": 1137,
     "cross_reference_count": 2,
     "function_call_count": 14,
     "global_count": 75,
-    "pseudocode_lines": 440,
-    "suspect_count": 48,
+    "pseudocode_lines": 382,
+    "suspect_count": 74,
     "suspect_types": [
       "decompiler_intrinsic",
+      "stack_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 1713
+    "total_lines": 1655
   },
   "cross_references": [
     {
@@ -956,339 +926,521 @@
   },
   "suspects": [
     {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_ffffff04",
+      "text": "int in_stack_ffffff04;",
+      "type": "stack_param"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 53,
+      "line": 52,
       "match": "code",
       "text": "_fprintf(local_1c,\"code\\tsegment\\n\");",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 54,
+      "line": 53,
       "match": "code",
       "text": "_fprintf(local_1c,\"\\tASSUME\\tcs:code\\n\\n\");",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 70,
+      "line": 69,
       "match": "ABS",
       "text": "if (local_14 < ABS(g_LoadedVertices[local_28].vertex.x)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 71,
+      "line": 70,
       "match": "ABS",
       "text": "local_14 = ABS(g_LoadedVertices[local_28].vertex.x);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 72,
+      "match": "ABS",
+      "text": "if (local_14 < ABS(g_LoadedVertices[local_28].vertex.y)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 73,
       "match": "ABS",
-      "text": "if (local_14 < ABS(g_LoadedVertices[local_28].vertex.y)) {",
+      "text": "local_14 = ABS(g_LoadedVertices[local_28].vertex.y);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 74,
+      "line": 75,
       "match": "ABS",
-      "text": "local_14 = ABS(g_LoadedVertices[local_28].vertex.y);",
+      "text": "if (local_14 < ABS(g_LoadedVertices[local_28].vertex.z)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 76,
       "match": "ABS",
-      "text": "if (local_14 < ABS(g_LoadedVertices[local_28].vertex.z)) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 77,
-      "match": "ABS",
       "text": "local_14 = ABS(g_LoadedVertices[local_28].vertex.z);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 85,
+      "line": 84,
       "match": "ABS",
       "text": "if ((scale_mode == 0x32) && (local_14 < ABS(g_LoadedVertices[local_28].vertex.x))) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 86,
+      "line": 85,
       "match": "ABS",
       "text": "local_14 = ABS(g_LoadedVertices[local_28].vertex.x);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 88,
+      "line": 87,
       "match": "ABS",
       "text": "if ((scale_mode == 0x33) && (local_14 < ABS(g_LoadedVertices[local_28].vertex.y))) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 89,
+      "line": 88,
       "match": "ABS",
       "text": "local_14 = ABS(g_LoadedVertices[local_28].vertex.y);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 91,
+      "line": 90,
       "match": "ABS",
       "text": "if ((scale_mode == 0x34) && (local_14 < ABS(g_LoadedVertices[local_28].vertex.z))) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 92,
+      "line": 91,
       "match": "ABS",
       "text": "local_14 = ABS(g_LoadedVertices[local_28].vertex.z);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 103,
+      "line": 102,
       "match": "ABS",
       "text": "if (local_14 < ABS(g_LoadedVertices[local_28].vertex.x)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 104,
+      "line": 103,
       "match": "ABS",
       "text": "local_14 = ABS(g_LoadedVertices[local_28].vertex.x);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 106,
+      "line": 105,
       "match": "ABS",
       "text": "if (local_14 < ABS(g_LoadedVertices[local_28].vertex.y)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 107,
+      "line": 106,
       "match": "ABS",
       "text": "local_14 = ABS(g_LoadedVertices[local_28].vertex.y);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 109,
+      "line": 108,
       "match": "ABS",
       "text": "if (local_14 < ABS(g_LoadedVertices[local_28].vertex.z)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 110,
+      "line": 109,
       "match": "ABS",
       "text": "local_14 = ABS(g_LoadedVertices[local_28].vertex.z);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 117,
+      "line": 112,
       "match": "ROUND",
-      "text": "local_18 = (int)ROUND(dVar6) + 1;",
+      "text": "local_18 = (int)ROUND(ROUND(((double)local_14 * 0.6931471805599453) /",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 118,
+      "line": 112,
+      "match": "ROUND",
+      "text": "local_18 = (int)ROUND(ROUND(((double)local_14 * 0.6931471805599453) /",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 114,
+      "match": "in_stack_ffffff04",
+      "text": "dVar7 = ldexp((double)CONCAT44(local_18,0x3ff00000),in_stack_ffffff04)",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 114,
       "match": "CONCAT44",
-      "text": "dVar6 = ldexp((double)CONCAT44(local_18,0x3ff00000),iVar11);",
+      "text": "dVar7 = ldexp((double)CONCAT44(local_18,0x3ff00000),in_stack_ffffff04)",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 124,
+      "line": 119,
       "match": "ROUND",
-      "text": "local_34 = (int)ROUND(dVar6);",
+      "text": "local_34 = (int)ROUND(ROUND(local_14 * (float)65536));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 146,
+      "line": 119,
       "match": "ROUND",
-      "text": "local_68 = (int)ROUND(dVar6);",
+      "text": "local_34 = (int)ROUND(ROUND(local_14 * (float)65536));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 152,
+      "line": 136,
       "match": "ROUND",
-      "text": "local_64 = (int)ROUND(dVar6);",
+      "text": "local_68 = (int)ROUND(ROUND(local_14 *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 136,
+      "match": "ROUND",
+      "text": "local_68 = (int)ROUND(ROUND(local_14 *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 139,
+      "match": "ROUND",
+      "text": "local_64 = (int)ROUND(ROUND(local_14 *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 139,
+      "match": "ROUND",
+      "text": "local_64 = (int)ROUND(ROUND(local_14 *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 142,
+      "match": "ROUND",
+      "text": "local_60 = (int)ROUND(ROUND(local_14 *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 142,
+      "match": "ROUND",
+      "text": "local_60 = (int)ROUND(ROUND(local_14 *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 158,
       "match": "ROUND",
-      "text": "local_60 = (int)ROUND(dVar6);",
+      "text": "local_68 = (int)ROUND(ROUND(g_VertexNormals[local_28].vertex.x * 65535.0f));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 174,
+      "line": 158,
       "match": "ROUND",
-      "text": "local_68 = (int)ROUND(dVar6);",
+      "text": "local_68 = (int)ROUND(ROUND(g_VertexNormals[local_28].vertex.x * 65535.0f));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 177,
+      "line": 159,
       "match": "ROUND",
-      "text": "local_64 = (int)ROUND(dVar6);",
+      "text": "local_64 = (int)ROUND(ROUND(g_VertexNormals[local_28].vertex.y * 65535.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 159,
+      "match": "ROUND",
+      "text": "local_64 = (int)ROUND(ROUND(g_VertexNormals[local_28].vertex.y * 65535.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 160,
+      "match": "ROUND",
+      "text": "local_60 = (int)ROUND(ROUND(g_VertexNormals[local_28].vertex.z * 65535.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 160,
+      "match": "ROUND",
+      "text": "local_60 = (int)ROUND(ROUND(g_VertexNormals[local_28].vertex.z * 65535.0f));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 180,
       "match": "ROUND",
-      "text": "local_60 = (int)ROUND(dVar6);",
+      "text": "local_78 = (int)ROUND(ROUND(g_ModelPolygonData[local_28].normal.x *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 204,
+      "line": 180,
       "match": "ROUND",
-      "text": "local_78 = (int)ROUND(dVar6);",
+      "text": "local_78 = (int)ROUND(ROUND(g_ModelPolygonData[local_28].normal.x *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 209,
+      "line": 182,
       "match": "ROUND",
-      "text": "local_74 = (int)ROUND(dVar6);",
+      "text": "local_74 = (int)ROUND(ROUND(g_ModelPolygonData[local_28].normal.y *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 214,
+      "line": 182,
       "match": "ROUND",
-      "text": "local_70 = (int)ROUND(dVar6);",
+      "text": "local_74 = (int)ROUND(ROUND(g_ModelPolygonData[local_28].normal.y *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 221,
+      "line": 184,
       "match": "ROUND",
-      "text": "local_6c = (int)ROUND(dVar6);",
+      "text": "local_70 = (int)ROUND(ROUND(g_ModelPolygonData[local_28].normal.z *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 317,
+      "line": 184,
       "match": "ROUND",
-      "text": "local_78 = (int)ROUND(dVar6);",
+      "text": "local_70 = (int)ROUND(ROUND(g_ModelPolygonData[local_28].normal.z *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 321,
+      "line": 186,
       "match": "ROUND",
-      "text": "local_74 = (int)ROUND(dVar6);",
+      "text": "local_6c = (int)ROUND(ROUND(local_14 *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 325,
+      "line": 186,
       "match": "ROUND",
-      "text": "local_70 = (int)ROUND(dVar6);",
+      "text": "local_6c = (int)ROUND(ROUND(local_14 *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 331,
+      "line": 283,
       "match": "ROUND",
-      "text": "local_6c = (int)ROUND(dVar6);",
+      "text": "local_78 = (int)ROUND(ROUND(g_ModelPolygonData[local_28].normal.x *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 338,
+      "line": 283,
       "match": "ROUND",
-      "text": "local_78 = (int)ROUND(dVar6);",
+      "text": "local_78 = (int)ROUND(ROUND(g_ModelPolygonData[local_28].normal.x *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 342,
+      "line": 285,
       "match": "ROUND",
-      "text": "local_74 = (int)ROUND(dVar6);",
+      "text": "local_74 = (int)ROUND(ROUND(g_ModelPolygonData[local_28].normal.y *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 346,
+      "line": 285,
       "match": "ROUND",
-      "text": "local_70 = (int)ROUND(dVar6);",
+      "text": "local_74 = (int)ROUND(ROUND(g_ModelPolygonData[local_28].normal.y *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 352,
+      "line": 287,
       "match": "ROUND",
-      "text": "local_6c = (int)ROUND(dVar6);",
+      "text": "local_70 = (int)ROUND(ROUND(g_ModelPolygonData[local_28].normal.z *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 367,
+      "line": 287,
+      "match": "ROUND",
+      "text": "local_70 = (int)ROUND(ROUND(g_ModelPolygonData[local_28].normal.z *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 289,
+      "match": "ROUND",
+      "text": "local_6c = (int)ROUND(ROUND(local_14 *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 289,
+      "match": "ROUND",
+      "text": "local_6c = (int)ROUND(ROUND(local_14 *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 296,
+      "match": "ROUND",
+      "text": "local_78 = (int)ROUND(ROUND(g_ModelPolygonData[local_28].normal.x *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 296,
+      "match": "ROUND",
+      "text": "local_78 = (int)ROUND(ROUND(g_ModelPolygonData[local_28].normal.x *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 298,
+      "match": "ROUND",
+      "text": "local_74 = (int)ROUND(ROUND(g_ModelPolygonData[local_28].normal.y *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 298,
+      "match": "ROUND",
+      "text": "local_74 = (int)ROUND(ROUND(g_ModelPolygonData[local_28].normal.y *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 300,
+      "match": "ROUND",
+      "text": "local_70 = (int)ROUND(ROUND(g_ModelPolygonData[local_28].normal.z *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 300,
+      "match": "ROUND",
+      "text": "local_70 = (int)ROUND(ROUND(g_ModelPolygonData[local_28].normal.z *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 302,
+      "match": "ROUND",
+      "text": "local_6c = (int)ROUND(ROUND(local_14 *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 302,
+      "match": "ROUND",
+      "text": "local_6c = (int)ROUND(ROUND(local_14 *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 320,
       "match": "ABS",
       "text": "if (ABS(g_VertexNormals[uVar2].vertex.x) != 0.0) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 370,
+      "line": 323,
       "match": "ABS",
       "text": "if (ABS(g_VertexNormals[uVar2].vertex.y) != 0.0) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 373,
+      "line": 326,
       "match": "ABS",
       "text": "if (ABS(g_VertexNormals[uVar2].vertex.z) != 0.0) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 403,
+      "line": 355,
       "match": "ROUND",
-      "text": "iVar11 = (int)ROUND(dVar6);",
+      "text": "(short)(int)ROUND(ROUND(g_ModelPolygonData[local_28].uv_u[local_24])),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 408,
+      "line": 355,
       "match": "ROUND",
-      "text": "g_ModelPolygonData[local_28].vertex_indices[local_24],(int)ROUND(dVar6),",
+      "text": "(short)(int)ROUND(ROUND(g_ModelPolygonData[local_28].uv_u[local_24])),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 420,
+      "line": 356,
       "match": "ROUND",
-      "text": "local_20 = (int)ROUND(dVar6);",
+      "text": "(int)ROUND(ROUND(g_ModelPolygonData[local_28].uv_v[local_24])));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 425,
+      "line": 356,
       "match": "ROUND",
-      "text": "local_20 = (int)ROUND(dVar6);",
+      "text": "(int)ROUND(ROUND(g_ModelPolygonData[local_28].uv_v[local_24])));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 364,
+      "match": "ROUND",
+      "text": "local_20 = (int)ROUND(ROUND(g_ModelPolygonData[local_28].uv_u[local_24] *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 364,
+      "match": "ROUND",
+      "text": "local_20 = (int)ROUND(ROUND(g_ModelPolygonData[local_28].uv_u[local_24] *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 367,
+      "match": "ROUND",
+      "text": "local_20 = (int)ROUND(ROUND(g_ModelPolygonData[local_28].uv_v[local_24] *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 367,
+      "match": "ROUND",
+      "text": "local_20 = (int)ROUND(ROUND(g_ModelPolygonData[local_28].uv_v[local_24] *",
       "type": "decompiler_intrinsic"
     }
   ]

@@ -5,7 +5,7 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 39,
+    "assembly_lines": 64,
     "complexity_score": 25,
     "cross_reference_count": 3,
     "function_call_count": 0,
@@ -13,7 +13,7 @@
     "pseudocode_lines": 25,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 64
+    "total_lines": 89
   },
   "cross_references": [
     {
@@ -38,6 +38,10 @@
   "function": {
     "address": "00564500",
     "address_range": [
+      [
+        "0056449b",
+        "005644d0"
+      ],
       [
         "00564500",
         "0056455d"
@@ -152,13 +156,14 @@
     "estimated_params": 0
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 2.96875,
-    "instruction_count": 32,
+    "avg_pcode_per_instr": 2.2857142857142856,
+    "instruction_count": 49,
     "opcode_distribution": {
       "BOOL_AND": 1,
       "BOOL_NEGATE": 1,
+      "BRANCH": 4,
       "CBRANCH": 5,
-      "COPY": 32,
+      "COPY": 45,
       "INT_ADD": 5,
       "INT_AND": 10,
       "INT_EQUAL": 10,
@@ -172,7 +177,7 @@
       "RETURN": 1,
       "STORE": 4
     },
-    "pcode_op_count": 95
+    "pcode_op_count": 112
   },
   "stack_frame": {
     "frame_size": 4,

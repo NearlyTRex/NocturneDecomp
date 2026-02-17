@@ -18,7 +18,7 @@ CSimBox * __cdecl core_simbox_cpp_CSimBox_dtor_FUN_005893e0(CSimBox *this_ptr,ui
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  pCVar1 = core_box_cpp_CBox_dtor_FUN_0041dd00(&this_ptr->box,0);
+  pCVar1 = core_box_cpp_CBox_dtor_FUN_0041dd00(&this_ptr->physics_box,0);
   ptr = (CSimBox *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30
                   ((CDemonActor *)&pCVar1[-2].scrape_points[3].local_position.z,1);

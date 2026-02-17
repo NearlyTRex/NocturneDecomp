@@ -15,10 +15,10 @@
 // =============================================================================
 
 // CBloodParticle[256]
-extern CBloodParticle CBloodParticle_ARRAY_02d833d4[256];
+extern CBloodParticle g_BloodParticles[256];
 
 // CBloodSplat[2000]
-extern CBloodSplat DAT_02d873dc[2000];
+extern CBloodSplat g_BloodSplats[2000];
 
 // CDemonActorType
 extern CDemonActorType g_CGargoyleClassInfo;
@@ -36,7 +36,8 @@ extern CGore g_CGoreInstance;
 extern CPickList g_CPickList;
 
 // SMRGLPrimitiveQuadIndex
-extern SMRGLPrimitiveQuadIndex SMRGLPrimitiveQuadIndex_02d83368;
+extern SMRGLPrimitiveQuadIndex g_GoreQuadPrimitive;
+extern SMRGLPrimitiveQuadIndex g_FootstepPrimitive;
 
 // char
 extern char g_CurrentSaveFile;
@@ -96,23 +97,15 @@ extern int INT_02d83318;
 extern int INT_02d8331c;
 extern int INT_02d83320;
 extern int INT_02d83324;
-extern int INT_02d83390;
+extern int g_ParticleCameraRotation;
 extern int INT_02d83394;
 extern int INT_02d83398;
 extern int INT_02d8339c;
 extern int INT_02d833a0;
 extern int INT_02d833a4;
-extern int INT_02d833a8;
-extern int INT_02d833ac;
-extern int INT_02d833b0;
-extern int INT_02d833b4;
-extern int INT_02d833b8;
-extern int INT_02d833bc;
-extern int INT_02d833c0;
-extern int INT_02d833c4;
-extern int INT_02d833c8;
-extern int INT_02d833cc;
-extern int INT_02d873d8;
+extern int g_BloodParticleIndex;
+extern int g_BloodSplatIndex;
+extern int g_BloodSplatCount;
 
 // undefined1
 extern undefined1 DAT_02d82c81;
@@ -135,6 +128,4 @@ extern undefined4 DAT_02d831ec;
 extern undefined4 DAT_02d831f0;
 extern undefined4 DAT_02d831f4;
 extern undefined4 DAT_02d831f8;
-extern undefined4 DAT_02d833d0;
-extern undefined4 DAT_02d873d4;
 

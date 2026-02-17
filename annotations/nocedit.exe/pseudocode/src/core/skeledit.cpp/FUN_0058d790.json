@@ -4,13 +4,13 @@
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 64,
+        "line": 65,
         "message": "no matching function for call to '__STK'"
       },
       {
         "category": "incompatible_types",
         "column": 18,
-        "line": 157,
+        "line": 156,
         "message": "assigning to 'int *' from incompatible type 'void *'"
       }
     ],
@@ -19,18 +19,18 @@
   },
   "complexity": {
     "assembly_lines": 505,
-    "complexity_score": 965,
+    "complexity_score": 1023,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 10,
-    "pseudocode_lines": 250,
-    "suspect_count": 70,
+    "pseudocode_lines": 248,
+    "suspect_count": 76,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_param"
     ],
-    "total_lines": 755
+    "total_lines": 753
   },
   "cross_references": [
     {
@@ -434,57 +434,50 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 28,
+      "line": 29,
       "match": "in_stack_00000004",
       "text": "CDeformableModel *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 29,
+      "line": 30,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 30,
+      "line": 31,
       "match": "in_stack_0000000c",
       "text": "CLodMesh *in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 31,
+      "line": 32,
       "match": "in_stack_00000010",
       "text": "int in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 58,
+      "line": 59,
       "match": "in_stack_00000004",
       "text": "pCVar4 = core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 61,
+      "line": 62,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004,in_stack_00000008,in_stack_0000000c->vertex_count,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 61,
+      "line": 62,
       "match": "in_stack_00000008",
-      "text": "(in_stack_00000004,in_stack_00000008,in_stack_0000000c->vertex_count,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 61,
-      "match": "in_stack_0000000c",
       "text": "(in_stack_00000004,in_stack_00000008,in_stack_0000000c->vertex_count,",
       "type": "stack_param"
     },
@@ -492,138 +485,145 @@
       "description": "Unresolved stack parameter",
       "line": 62,
       "match": "in_stack_0000000c",
+      "text": "(in_stack_00000004,in_stack_00000008,in_stack_0000000c->vertex_count,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 63,
+      "match": "in_stack_0000000c",
       "text": "in_stack_0000000c->tri_count,0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 66,
+      "line": 67,
       "match": "in_stack_00000008",
       "text": "local_58 = in_stack_00000008 * 4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 69,
+      "line": 70,
       "match": "in_stack_00000004",
       "text": "if (*(int *)((int)in_stack_00000004->vertex_count + local_58) <= local_38) {",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 69,
+      "line": 70,
       "match": "(int *)((int)",
       "text": "if (*(int *)((int)in_stack_00000004->vertex_count + local_58) <= local_38) {",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 70,
+      "line": 71,
       "match": "in_stack_0000000c",
       "text": "shape_meshlod_cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30(in_stack_0000000c,0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 71,
+      "line": 72,
       "match": "in_stack_0000000c",
       "text": "shape_meshlod_cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30(in_stack_0000000c,1);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 72,
+      "line": 73,
       "match": "in_stack_0000000c",
       "text": "shape_meshlod_cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30(in_stack_0000000c,2);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 74,
+      "line": 75,
       "match": "in_stack_00000004",
-      "text": "iVar16 = (int)in_stack_00000004->lod_info + in_stack_00000008 * 4 + -4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 74,
-      "match": "in_stack_00000008",
       "text": "iVar16 = (int)in_stack_00000004->lod_info + in_stack_00000008 * 4 + -4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 75,
+      "match": "in_stack_00000008",
+      "text": "iVar16 = (int)in_stack_00000004->lod_info + in_stack_00000008 * 4 + -4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 76,
       "match": "in_stack_00000004",
       "text": "if (0 < in_stack_00000004->num_parts) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 81,
+      "line": 82,
       "match": "in_stack_00000004",
       "text": "} while (iVar10 < in_stack_00000004->num_parts);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 83,
+      "line": 84,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->tri_count[in_stack_00000008] = 0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 83,
+      "line": 84,
       "match": "in_stack_00000008",
       "text": "in_stack_00000004->tri_count[in_stack_00000008] = 0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 84,
+      "line": 85,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->cap_tri_count[in_stack_00000008] = 0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 84,
+      "line": 85,
       "match": "in_stack_00000008",
       "text": "in_stack_00000004->cap_tri_count[in_stack_00000008] = 0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 86,
+      "line": 87,
       "match": "in_stack_0000000c",
       "text": "if (0 < in_stack_0000000c->tri_count) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 87,
+      "line": 88,
       "match": "in_stack_00000008",
       "text": "local_2c = in_stack_00000008 * 4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 90,
+      "line": 91,
       "match": "in_stack_00000004",
       "text": "local_54 = (int)in_stack_00000004->lod_info + local_2c + -4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 93,
+      "line": 94,
       "match": "in_stack_0000000c",
       "text": "puVar21 = (uint *)((int)in_stack_0000000c->tri_data->attribute_indices + local_50);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 93,
+      "line": 94,
       "match": "(uint *)((int)",
       "text": "puVar21 = (uint *)((int)in_stack_0000000c->tri_data->attribute_indices + local_50);",
       "type": "pointer_cast"
@@ -632,292 +632,334 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 103,
       "match": "ROUND",
-      "text": "puVar7[3] = (short)(int)ROUND(dVar23);",
+      "text": "puVar7[3] = (short)(int)ROUND(ROUND((double)(float)puVar15[7] * dVar3));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 108,
+      "line": 103,
       "match": "ROUND",
-      "text": "local_14 = (int)ROUND(dVar23);",
+      "text": "puVar7[3] = (short)(int)ROUND(ROUND((double)(float)puVar15[7] * dVar3));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 107,
+      "match": "ROUND",
+      "text": "local_14 = (int)ROUND(ROUND((double)*pfVar18 * dVar3));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 107,
+      "match": "ROUND",
+      "text": "local_14 = (int)ROUND(ROUND((double)*pfVar18 * dVar3));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 114,
+      "line": 113,
       "match": "in_stack_00000004",
-      "text": "piVar9 = (int *)((int)in_stack_00000004->parts[puVar21[1]].tri_counts + local_2c);",
+      "text": "piVar9 = in_stack_00000004->parts[puVar21[1]].tri_counts + in_stack_00000008;",
       "type": "stack_param"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 114,
-      "match": "(int *)((int)",
-      "text": "piVar9 = (int *)((int)in_stack_00000004->parts[puVar21[1]].tri_counts + local_2c);",
-      "type": "pointer_cast"
+      "description": "Unresolved stack parameter",
+      "line": 113,
+      "match": "in_stack_00000008",
+      "text": "piVar9 = in_stack_00000004->parts[puVar21[1]].tri_counts + in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 115,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004->tri_count[in_stack_00000008] =",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 115,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000004->tri_count[in_stack_00000008] =",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 116,
       "match": "in_stack_00000004",
-      "text": "piVar9 = (int *)((int)in_stack_00000004->tri_count + local_2c);",
+      "text": "in_stack_00000004->tri_count[in_stack_00000008] + 1;",
       "type": "stack_param"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Unresolved stack parameter",
       "line": 116,
-      "match": "(int *)((int)",
-      "text": "piVar9 = (int *)((int)in_stack_00000004->tri_count + local_2c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 120,
-      "match": "in_stack_00000004",
-      "text": "piVar9 = (int *)((int)in_stack_00000004->parts[puVar21[1]].cap_tri_counts + local_2c);",
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000004->tri_count[in_stack_00000008] + 1;",
       "type": "stack_param"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 120,
-      "match": "(int *)((int)",
-      "text": "piVar9 = (int *)((int)in_stack_00000004->parts[puVar21[1]].cap_tri_counts + local_2c);",
-      "type": "pointer_cast"
+      "description": "Unresolved stack parameter",
+      "line": 119,
+      "match": "in_stack_00000004",
+      "text": "piVar9 = in_stack_00000004->parts[puVar21[1]].cap_tri_counts + in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 119,
+      "match": "in_stack_00000008",
+      "text": "piVar9 = in_stack_00000004->parts[puVar21[1]].cap_tri_counts + in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 121,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004->cap_tri_count[in_stack_00000008] =",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 121,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000004->cap_tri_count[in_stack_00000008] =",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 122,
       "match": "in_stack_00000004",
-      "text": "piVar9 = (int *)((int)in_stack_00000004->cap_tri_count + local_2c);",
+      "text": "in_stack_00000004->cap_tri_count[in_stack_00000008] + 1;",
       "type": "stack_param"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Unresolved stack parameter",
       "line": 122,
-      "match": "(int *)((int)",
-      "text": "piVar9 = (int *)((int)in_stack_00000004->cap_tri_count + local_2c);",
-      "type": "pointer_cast"
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000004->cap_tri_count[in_stack_00000008] + 1;",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 129,
+      "line": 128,
       "match": "in_stack_0000000c",
       "text": "} while (local_30 < in_stack_0000000c->tri_count);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 134,
+      "line": 133,
       "match": "in_stack_00000004",
       "text": "iVar16 = (int)in_stack_00000004->lod_info + in_stack_00000008 * 4 + -4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 134,
+      "line": 133,
       "match": "in_stack_00000008",
       "text": "iVar16 = (int)in_stack_00000004->lod_info + in_stack_00000008 * 4 + -4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 135,
+      "line": 134,
       "match": "in_stack_00000004",
       "text": "if (0 < in_stack_00000004->num_parts) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 141,
+      "line": 140,
       "match": "in_stack_00000004",
       "text": "} while (iVar11 < in_stack_00000004->num_parts);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 143,
+      "line": 142,
       "match": "in_stack_00000004",
       "text": "if ((iVar10 != in_stack_00000004->tri_count[in_stack_00000008]) ||",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 143,
+      "line": 142,
       "match": "in_stack_00000008",
       "text": "if ((iVar10 != in_stack_00000004->tri_count[in_stack_00000008]) ||",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 144,
+      "line": 143,
       "match": "in_stack_00000004",
       "text": "(iVar20 != in_stack_00000004->cap_tri_count[in_stack_00000008])) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 144,
+      "line": 143,
       "match": "in_stack_00000008",
       "text": "(iVar20 != in_stack_00000004->cap_tri_count[in_stack_00000008])) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 149,
+      "line": 148,
       "match": "in_stack_00000004",
       "text": "if (0 < in_stack_00000004->cap_tri_count[in_stack_00000008]) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 149,
+      "line": 148,
       "match": "in_stack_00000008",
       "text": "if (0 < in_stack_00000004->cap_tri_count[in_stack_00000008]) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 151,
+      "line": 150,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->cap_tri_count[in_stack_00000008] * 4,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 151,
+      "line": 150,
       "match": "in_stack_00000008",
       "text": "(in_stack_00000004->cap_tri_count[in_stack_00000008] * 4,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 153,
+      "line": 152,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->cap_index_ptr[in_stack_00000008] = piVar9;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 153,
+      "line": 152,
       "match": "in_stack_00000008",
       "text": "in_stack_00000004->cap_index_ptr[in_stack_00000008] = piVar9;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 161,
+      "line": 160,
       "match": "in_stack_00000004",
       "text": "iVar16 = in_stack_00000004->tri_count[in_stack_00000008];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 161,
+      "line": 160,
       "match": "in_stack_00000008",
       "text": "iVar16 = in_stack_00000004->tri_count[in_stack_00000008];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 162,
+      "line": 161,
       "match": "in_stack_00000004",
       "text": "if (0 < in_stack_00000004->num_parts) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 163,
+      "line": 162,
       "match": "in_stack_00000004",
       "text": "local_44 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 167,
+      "line": 166,
       "match": "in_stack_00000008",
       "text": "for (iVar11 = 0; iVar11 < local_44->parts[0].cap_tri_counts[in_stack_00000008];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 170,
+      "line": 169,
       "match": "in_stack_00000004",
       "text": "*(uint *)((int)in_stack_00000004->cap_index_ptr[in_stack_00000008] + iVar20) =",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 170,
+      "line": 169,
       "match": "in_stack_00000008",
       "text": "*(uint *)((int)in_stack_00000004->cap_index_ptr[in_stack_00000008] + iVar20) =",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 170,
+      "line": 169,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)in_stack_00000004->cap_index_ptr[in_stack_00000008] + iVar20) =",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 172,
+      "line": 171,
       "match": "in_stack_0000000c",
       "text": "((int)in_stack_0000000c->tri_data->attribute_indices + iVar10 + 0xc);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 179,
+      "line": 178,
       "match": "in_stack_00000004",
       "text": "} while (local_34 < in_stack_00000004->num_parts);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 184,
+      "line": 183,
       "match": "in_stack_0000000c",
       "text": "pcVar13 = in_stack_0000000c->vertex_data->lod_workspace + local_3c + -0x10;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 204,
+      "line": 203,
       "match": "in_stack_00000004",
       "text": "pfVar18 = (float *)(*(int *)((int)in_stack_00000004->vertex_data_ptr + iVar16) + local_4c);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 204,
+      "line": 203,
       "match": "(int *)((int)",
       "text": "pfVar18 = (float *)(*(int *)((int)in_stack_00000004->vertex_data_ptr + iVar16) + local_4c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 215,
+      "line": 214,
       "match": "(float *)((int)",
       "text": "if (local_538 < *(float *)((int)local_528 + iVar11)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 216,
+      "line": 215,
       "match": "(float *)((int)",
       "text": "local_538 = *(float *)((int)local_528 + iVar11);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 224,
+      "line": 223,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)pfVar18 + *(byte *)pfVar18 + 1) = (byte)iVar16;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 227,
+      "line": 226,
       "match": "in_stack_00000010",
       "text": "(local_70,&local_534,(CMatrix3x4f *)(iVar16 * 0x30 + in_stack_00000010));",
       "type": "stack_param"

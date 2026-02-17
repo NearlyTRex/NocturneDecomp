@@ -4,20 +4,8 @@
       {
         "category": "incompatible_types",
         "column": 15,
-        "line": 62,
+        "line": 60,
         "message": "assigning to 'float *' from incompatible type 'void *'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 26,
-        "line": 107,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 28,
-        "line": 114,
-        "message": "invalid operands to binary expression ('double' and 'int')"
       }
     ],
     "success": false,
@@ -25,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 429,
-    "complexity_score": 290,
+    "complexity_score": 283,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 8,
-    "pseudocode_lines": 170,
+    "pseudocode_lines": 163,
     "suspect_count": 11,
     "suspect_types": [
       "decompiler_intrinsic",
       "warning_unreachable"
     ],
-    "total_lines": 599
+    "total_lines": 592
   },
   "cross_references": [
     {
@@ -414,79 +402,79 @@
   "suspects": [
     {
       "description": "Unreachable code block removed",
-      "line": 2,
+      "line": 3,
       "match": "WARNING: Removing unreachable block",
       "text": "/* WARNING: Removing unreachable block (ram,0x005ac957) */",
       "type": "warning_unreachable"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 82,
+      "line": 80,
       "match": "fcos",
-      "text": "fVar4 = (float10)fcos(fVar20);",
+      "text": "fVar4 = (float10)fcos(fVar22);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 83,
+      "line": 81,
       "match": "fsin",
-      "text": "fVar21 = (float10)fsin(fVar20);",
+      "text": "fVar23 = (float10)fsin(fVar22);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 86,
+      "line": 84,
       "match": "fsin",
-      "text": "fVar23 = (float10)fsin(fVar20);",
+      "text": "fVar25 = (float10)fsin(fVar22);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 87,
+      "line": 85,
       "match": "fcos",
-      "text": "fVar20 = (float10)fcos(fVar20);",
+      "text": "fVar22 = (float10)fcos(fVar22);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 100,
-      "match": "SUB84",
-      "text": "local_84 = SUB84((double)fVar20,0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 107,
-      "match": "SUB84",
-      "text": "local_8c = SUB84(dVar27,0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 108,
-      "match": "CONCAT44",
-      "text": "fVar25 = fVar24 * (float10)dVar27 - (float10)(double)CONCAT44(uStack_80,local_84);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 145,
+      "line": 135,
       "match": "ROUND",
-      "text": "local_44 = (int)ROUND(dVar27);",
+      "text": "local_38 = (int)ROUND(ROUND(dVar29));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 168,
+      "line": 135,
+      "match": "ROUND",
+      "text": "local_38 = (int)ROUND(ROUND(dVar29));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 138,
+      "match": "ROUND",
+      "text": "local_3c = (int)ROUND(ROUND(dVar29));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 138,
+      "match": "ROUND",
+      "text": "local_3c = (int)ROUND(ROUND(dVar29));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 161,
       "match": "SQRT",
       "text": "fVar5 = SQRT(fVar2 * fVar2 + fVar1 * fVar1) + fVar5;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 171,
+      "line": 164,
       "match": "SQRT",
-      "text": "return (int)(SQRT((fVar5 / (float)iVar19) / (float)iVar11) * (float)2);",
+      "text": "return (int)(SQRT((fVar5 / (float)iVar21) / (float)iVar13) * (float)2);",
       "type": "decompiler_intrinsic"
     }
   ]

@@ -1,0 +1,204 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 126,
+    "complexity_score": 37,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 6,
+    "pseudocode_lines": 37,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 163
+  },
+  "cross_references": [
+    {
+      "addr": "004869a0",
+      "from_addr": "00486bbb",
+      "name": "core_dracbrid.cpp_CDraculaBride_FUN_004869a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004cc300",
+      "from_addr": "004cc3ad",
+      "name": "core_flies.cpp_CFlies_renderOpaque_FUN_004cc300",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005b90a0",
+    "address_range": [
+      [
+        "005b90a0",
+        "005b922b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_spline.cpp_computeSplineBasis_FUN_005b90a0",
+    "signature": "void __cdecl core_spline_cpp_computeSplineBasis_FUN_005b90a0(float *out_basis,float t,float tension)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00652fc6",
+      "name": "DOUBLE_00652fc6",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "addr": "00652fce",
+      "name": "FLOAT_00652fce",
+      "type": "float",
+      "value": "2"
+    },
+    {
+      "addr": "00652fd2",
+      "name": "FLOAT_00652fd2",
+      "type": "float",
+      "value": "-3"
+    },
+    {
+      "addr": "00652fd6",
+      "name": "FLOAT_00652fd6",
+      "type": "float",
+      "value": "3"
+    },
+    {
+      "addr": "00652fda",
+      "name": "FLOAT_00652fda",
+      "type": "float",
+      "value": "-2"
+    },
+    {
+      "addr": "00652fde",
+      "name": "FLOAT_00652fde",
+      "type": "float",
+      "value": "4"
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.568,
+    "instruction_count": 125,
+    "opcode_distribution": {
+      "COPY": 576,
+      "FLOAT2FLOAT": 70,
+      "FLOAT_ADD": 11,
+      "FLOAT_MULT": 28,
+      "FLOAT_NEG": 1,
+      "FLOAT_SUB": 7,
+      "INT2FLOAT": 2,
+      "INT_ADD": 48,
+      "INT_AND": 4,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 1,
+      "LOAD": 43,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 17
+    },
+    "pcode_op_count": 821
+  },
+  "stack_frame": {
+    "frame_size": 52,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4",
+        "offset": -4,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "out_basis",
+        "offset": 4,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
+        "name": "t",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "tension",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": []
+}

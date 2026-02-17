@@ -12,7 +12,7 @@
 ;   core_dcamera.cpp_CDemonCamera_blurCoronaBufferAndClearEdges_FUN_004509b0 at 00450a75
 ;
 ; Referenced Globals:
-;   ulonglong g_FilterBlendConstant = 0x0
+;   _MMX_INTEGER g_FilterBlendConstant
 ;
 ; *****************************************************************************
 

@@ -4,13 +4,13 @@
       {
         "category": "incompatible_types",
         "column": 22,
-        "line": 23,
+        "line": 25,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "incompatible_types",
         "column": 11,
-        "line": 22,
+        "line": 24,
         "message": "no matching function for call to 'sound_sndmain_cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0'"
       }
     ],
@@ -19,12 +19,12 @@
   },
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 110,
+    "complexity_score": 120,
     "cross_reference_count": 4,
     "function_call_count": 6,
     "global_count": 10,
     "pseudocode_lines": 50,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param"
@@ -250,37 +250,44 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 10,
       "match": "in_stack_ffffffe4",
       "text": "ulonglong in_stack_ffffffe4;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 16,
+      "line": 18,
       "match": "SUB84",
       "text": "(SUB84((double)playback_position,0),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 19,
       "match": "in_stack_ffffffe4",
       "text": "(double)((ulonglong)(double)playback_position >> 0x20),(uint)in_stack_ffffffe4,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 20,
       "match": "in_stack_ffffffe4",
       "text": "(uint)((ulonglong)in_stack_ffffffe4 >> 0x20));",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 20,
+      "line": 21,
       "match": "ROUND",
-      "text": "this_ptr->stream_read_position = (int)ROUND(dVar2);",
+      "text": "this_ptr->stream_read_position = (int)ROUND(ROUND(dVar2));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 21,
+      "match": "ROUND",
+      "text": "this_ptr->stream_read_position = (int)ROUND(ROUND(dVar2));",
       "type": "decompiler_intrinsic"
     }
   ]

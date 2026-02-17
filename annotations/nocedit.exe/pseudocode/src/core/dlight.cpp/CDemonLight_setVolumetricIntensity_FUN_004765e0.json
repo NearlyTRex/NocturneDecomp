@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 45,
-    "complexity_score": 50,
+    "complexity_score": 62,
     "cross_reference_count": 7,
     "function_call_count": 2,
     "global_count": 4,
-    "pseudocode_lines": 25,
-    "suspect_count": 2,
+    "pseudocode_lines": 17,
+    "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 70
+    "total_lines": 62
   },
   "cross_references": [
     {
@@ -174,16 +174,30 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 17,
+      "line": 11,
       "match": "ROUND",
-      "text": "(this_ptr,(&g_PlayerFilters)[(int)ROUND(dVar1)],0,iVar2,iVar3);",
+      "text": "[(int)ROUND(ROUND(this_ptr->volumetric_intensity *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 26,
+      "line": 11,
       "match": "ROUND",
-      "text": "(this_ptr,(&g_GlobalFilters)[(int)ROUND(dVar1)],0,iVar2,iVar3);",
+      "text": "[(int)ROUND(ROUND(this_ptr->volumetric_intensity *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 17,
+      "match": "ROUND",
+      "text": "[(int)ROUND(ROUND(this_ptr->volumetric_intensity *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 17,
+      "match": "ROUND",
+      "text": "[(int)ROUND(ROUND(this_ptr->volumetric_intensity *",
       "type": "decompiler_intrinsic"
     }
   ]

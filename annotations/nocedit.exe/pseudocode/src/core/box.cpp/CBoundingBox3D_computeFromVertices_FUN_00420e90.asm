@@ -16,7 +16,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_morph.cpp_FUN_0052bcb0 at 0052bed4
+;   core_morph.cpp_CMorph_editMorph_FUN_0052bcb0 at 0052bed4
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 00597e01
 ;
 ; Referenced Globals:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool __cdecl core_dynamite_cpp_CDynamite_FUN_0049cf90(CDynamite *this_ptr)
+; int __cdecl core_dynamite_cpp_CDynamite_FUN_0049cf90(CDynamite *this_ptr)
 ;
 ; Parameters:
 ; CDynamite *      Stack[0x4]:4   this_ptr

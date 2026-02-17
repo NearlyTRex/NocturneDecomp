@@ -1,0 +1,216 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 75,
+    "complexity_score": 126,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 2,
+    "pseudocode_lines": 31,
+    "suspect_count": 9,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
+    "total_lines": 106
+  },
+  "cross_references": [
+    {
+      "addr": "004edb70",
+      "from_addr": "004edb98",
+      "name": "core_gore.cpp_CGore_createWallBloodSplat_FUN_004edb70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004ec390",
+    "address_range": [
+      [
+        "004ec390",
+        "004ec462"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_gore.cpp_CBloodSplat_initWallSplat_FUN_004ec390",
+    "signature": "void __cdecl core_gore_cpp_CBloodSplat_initWallSplat_FUN_004ec390(CBloodSplat *this_ptr,CVector3f *position,CVector3f *normal,int blood_type)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cc70",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomInt_FUN_0040cc70"
+    },
+    {
+      "addr": "006013b1",
+      "is_variadic": false,
+      "name": "crt_math.c_atan2_FUN_006013b1"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0065f024",
+      "name": "FLOAT_0065f024",
+      "type": "float",
+      "value": "256"
+    },
+    {
+      "addr": "0065f028",
+      "name": "FLOAT_0065f028",
+      "type": "float",
+      "value": "65536"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004edb98",
+        "call_type": "direct",
+        "caller": "core_gore.cpp_CGore_createWallBloodSplat_FUN_004edb70",
+        "estimated_params": 4,
+        "instructions_analyzed": 9,
+        "reg_params": [],
+        "stack_params": 4
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 4,
+    "estimated_params": 4
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.642857142857143,
+    "instruction_count": 70,
+    "opcode_distribution": {
+      "CALL": 2,
+      "CALLOTHER": 1,
+      "CBRANCH": 1,
+      "COPY": 240,
+      "FLOAT2FLOAT": 19,
+      "FLOAT_ADD": 1,
+      "FLOAT_MULT": 8,
+      "FLOAT_NEG": 1,
+      "FLOAT_SQRT": 1,
+      "INT_ADD": 35,
+      "INT_AND": 4,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 9,
+      "LOAD": 23,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "ROUND": 6,
+      "STORE": 25,
+      "TRUNC": 6
+    },
+    "pcode_op_count": 395
+  },
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBloodSplat *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "normal",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "blood_type",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 16,
+      "match": "fpatan",
+      "text": "fVar2 = (float10)fpatan((float10)normal->y,",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 17,
+      "match": "SQRT",
+      "text": "SQRT((float10)normal->x * (float10)normal->x +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 21,
+      "match": "fpatan",
+      "text": "fVar2 = (float10)fpatan((float10)normal->x,(float10)normal->z);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 26,
+      "match": "ROUND",
+      "text": "(this_ptr->position_fixed).x = (int)ROUND(position->x * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 27,
+      "match": "ROUND",
+      "text": "(this_ptr->position_fixed).y = (int)ROUND(position->y * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 28,
+      "match": "ROUND",
+      "text": "(this_ptr->position_fixed).z = (int)ROUND(position->z * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 29,
+      "match": "ROUND",
+      "text": "(this_ptr->normal_fixed).x = (int)ROUND(normal->x * 65536.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 30,
+      "match": "ROUND",
+      "text": "(this_ptr->normal_fixed).y = (int)ROUND(normal->y * 65536.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 31,
+      "match": "ROUND",
+      "text": "(this_ptr->normal_fixed).z = (int)ROUND(normal->z * 65536.0f);",
+      "type": "decompiler_intrinsic"
+    }
+  ]
+}

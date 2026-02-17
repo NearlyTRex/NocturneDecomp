@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl engine_keyframe_c_calculatePackedSurfaceNormal_FUN_00501a00(CVector3i *vertex_data,SSurfacePackedNormal *data)
 
 {
@@ -20,9 +22,6 @@ void __cdecl engine_keyframe_c_calculatePackedSurfaceNormal_FUN_00501a00(CVector
   float fVar9;
   float fVar10;
   float fVar11;
-  double dVar12;
-  double dVar13;
-  double dVar14;
   float local_30;
   
   iVar2 = data->vertex_index_1;
@@ -50,14 +49,10 @@ void __cdecl engine_keyframe_c_calculatePackedSurfaceNormal_FUN_00501a00(CVector
   iVar3 = vertex_data[iVar4].x;
   fVar9 = fVar5 * local_30 * fVar9;
   iVar4 = vertex_data[iVar4].z;
-  dVar12 = round((double)fVar7);
-  dVar13 = round((double)fVar6);
-  dVar14 = round((double)fVar9);
-  data->normal_x = (int)ROUND(dVar12);
-  data->normal_y = (int)ROUND(dVar13);
-  data->normal_z = (int)ROUND(dVar14);
-  dVar12 = round
-                     ((double)((float)iVar4 * fVar9 + (float)iVar3 * fVar7 + (float)iVar2 * fVar6));
-  data->dot_product = (int)ROUND(dVar12);
+  data->normal_x = (int)ROUND(ROUND(fVar7));
+  data->normal_y = (int)ROUND(ROUND(fVar6));
+  data->normal_z = (int)ROUND(ROUND(fVar9));
+  data->dot_product =
+       (int)ROUND(ROUND((float)iVar4 * fVar9 + (float)iVar3 * fVar7 + (float)iVar2 * fVar6));
   return;
 }

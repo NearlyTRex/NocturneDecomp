@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 float __cdecl core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0(CMotionController *this_ptr,int motion_index,float marker_position)
 
 {
@@ -14,14 +16,17 @@ float __cdecl core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3
   float fVar3;
   int iVar4;
   int iVar5;
-  double dVar6;
-  float local_1c;
+  float local_18;
   
   pCVar2 = this_ptr->motion_list_ptr;
-  if ((0.0 < marker_position) &&
-     (marker_position < (float)(pCVar2->motions[motion_index].marker_count + 1))) {
-    dVar6 = round((double)marker_position);
-    iVar1 = (int)ROUND(dVar6);
+  if (marker_position <= 0.0) {
+    local_18 = 0.0;
+  }
+  else if ((float)(pCVar2->motions[motion_index].marker_count + 1) <= marker_position) {
+    local_18 = (float)(pCVar2->motions[motion_index].frame_count + -1);
+  }
+  else {
+    iVar1 = (int)ROUND(ROUND(marker_position));
     iVar5 = 0;
     if (0 < iVar1) {
       iVar5 = pCVar2->motions[motion_index].markers[iVar1 + -1];
@@ -33,14 +38,14 @@ float __cdecl core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3
     fVar3 = (float)iVar5 * (1.0 - (marker_position - (float)iVar1)) +
             (float)iVar4 * (marker_position - (float)iVar1);
     if (fVar3 < 0.0) {
-      local_1c = 0.0;
+      local_18 = 0.0;
     }
     else {
-      local_1c = (float)(pCVar2->motions[motion_index].frame_count + -1);
-      if (fVar3 <= local_1c) {
+      local_18 = (float)(pCVar2->motions[motion_index].frame_count + -1);
+      if (fVar3 <= local_18) {
         return fVar3;
       }
     }
   }
-  return local_1c;
+  return local_18;
 }

@@ -1,0 +1,135 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 91,
+    "complexity_score": 38,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 4,
+    "pseudocode_lines": 38,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 129
+  },
+  "cross_references": [
+    {
+      "addr": "0059c5e0",
+      "from_addr": "0059cb10",
+      "name": "core_skeleton.cpp_CDeformableModel_dismember_FUN_0059c5e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0041af90",
+    "address_range": [
+      [
+        "0041af90",
+        "0041b06d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_bodypart.cpp_CBodyPart_addTexture_FUN_0041af90",
+    "signature": "int __cdecl core_bodypart_cpp_CBodyPart_addTexture_FUN_0041af90(CBodyPart *this_ptr,char *texture_name)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fde40",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005fde40"
+    },
+    {
+      "addr": "005fe7f0",
+      "is_variadic": false,
+      "name": "crt_string.c_stricmp_FUN_005fe7f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00615e6a",
+      "name": "s_core_bodypart_cpp_00615e6a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00615e7f",
+      "name": "s_Too_many_body_part_textu_00615e7f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.266666666666667,
+    "instruction_count": 75,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 11,
+      "BOOL_OR": 1,
+      "CALL": 3,
+      "CBRANCH": 6,
+      "COPY": 62,
+      "INT_ADD": 37,
+      "INT_AND": 66,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 44,
+      "INT_LEFT": 4,
+      "INT_LESS": 6,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 7,
+      "INT_OR": 10,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 25,
+      "INT_SUB": 22,
+      "INT_XOR": 3,
+      "LOAD": 21,
+      "POPCOUNT": 21,
+      "RETURN": 2,
+      "STORE": 17
+    },
+    "pcode_op_count": 395
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBodyPart *"
+      },
+      {
+        "is_param": true,
+        "name": "texture_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
+}

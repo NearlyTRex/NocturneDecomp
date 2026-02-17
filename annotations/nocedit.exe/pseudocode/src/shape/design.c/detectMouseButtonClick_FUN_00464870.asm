@@ -16,7 +16,7 @@
 ;
 ; Referenced Globals:
 ;   int g_MouseButtonClickCounter
-;   _BIT_INTEGER g_MouseButtonFlags
+;   _BIT_INTEGER32 g_MouseButtonFlags
 ;
 ; *****************************************************************************
 

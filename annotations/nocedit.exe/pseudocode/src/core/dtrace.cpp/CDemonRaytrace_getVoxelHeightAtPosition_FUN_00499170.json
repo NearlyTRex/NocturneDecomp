@@ -1,29 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 48,
-        "line": 77,
-        "message": "member reference base type 'float' is not a structure or union"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 166,
-    "complexity_score": 150,
+    "complexity_score": 173,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
-    "pseudocode_lines": 80,
-    "suspect_count": 6,
+    "pseudocode_lines": 48,
+    "suspect_count": 12,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "unknown_field"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 246
+    "total_lines": 214
   },
   "cross_references": [
     {
@@ -208,45 +200,87 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 47,
+      "line": 16,
       "match": "ROUND",
-      "text": "iStack_34 = (int)ROUND(dVar18);",
+      "text": "grid_x = (int)ROUND(ROUND((world_position->x - (this_ptr->bbox_min).x) / (this_ptr->cell_size).x))",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 53,
+      "line": 16,
       "match": "ROUND",
-      "text": "((double)((fVar10 - ((float)(int)ROUND(dVar16) * fVar8 + fVar9)) / fVar13));",
+      "text": "grid_x = (int)ROUND(ROUND((world_position->x - (this_ptr->bbox_min).x) / (this_ptr->cell_size).x))",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 54,
+      "line": 18,
       "match": "ROUND",
-      "text": "local_30 = (int)ROUND(dVar16);",
+      "text": "local_1c = (int)ROUND(ROUND((world_position->y - (this_ptr->bbox_min).y) / (this_ptr->cell_size).y",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 56,
+      "line": 18,
       "match": "ROUND",
-      "text": "((double)((fVar4 - ((float)(int)ROUND(dVar17) * fVar2 + fVar3)) / (fVar11 * fVar14)));",
+      "text": "local_1c = (int)ROUND(ROUND((world_position->y - (this_ptr->bbox_min).y) / (this_ptr->cell_size).y",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 59,
+      "line": 20,
       "match": "ROUND",
-      "text": "iVar1 = (int)ROUND(dVar16);",
+      "text": "grid_z = (int)ROUND(ROUND((world_position->z - (this_ptr->bbox_min).z) / (this_ptr->cell_size).z))",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 70,
-      "match": "._0_1_",
-      "text": "g_PrecomputedSurfaceNormals[0x63dc].x._0_1_) != 0)) {",
-      "type": "unknown_field"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 20,
+      "match": "ROUND",
+      "text": "grid_z = (int)ROUND(ROUND((world_position->z - (this_ptr->bbox_min).z) / (this_ptr->cell_size).z))",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 22,
+      "match": "ROUND",
+      "text": "iVar1 = (int)ROUND(ROUND((world_position->x -",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 22,
+      "match": "ROUND",
+      "text": "iVar1 = (int)ROUND(ROUND((world_position->x -",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 25,
+      "match": "ROUND",
+      "text": "local_18 = (int)ROUND(ROUND((world_position->y -",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 25,
+      "match": "ROUND",
+      "text": "local_18 = (int)ROUND(ROUND((world_position->y -",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 28,
+      "match": "ROUND",
+      "text": "iVar2 = (int)ROUND(ROUND((world_position->z -",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 28,
+      "match": "ROUND",
+      "text": "iVar2 = (int)ROUND(ROUND((world_position->z -",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

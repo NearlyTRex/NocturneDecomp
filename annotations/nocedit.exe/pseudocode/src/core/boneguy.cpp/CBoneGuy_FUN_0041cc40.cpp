@@ -14,11 +14,14 @@ int __cdecl core_boneguy_cpp_CBoneGuy_FUN_0041cc40(CBoneGuy *this_ptr)
   float fVar1;
   CDemonActor *pCVar2;
   CDemonActor *pCVar3;
+  CVector3f *src;
   int iVar4;
   CBoundingBox3D *pCVar5;
   int iVar6;
   CDeformableModelInstance *this_ptr_00;
   float in_stack_00000008;
+  CVector3f *dst;
+  float *scalar;
   uint auStack_d4 [10];
   CBoundingBox3D CStack_ac;
   CBoundingBox3D CStack_94;
@@ -27,11 +30,12 @@ int __cdecl core_boneguy_cpp_CBoneGuy_FUN_0041cc40(CBoneGuy *this_ptr)
   float fStack_64;
   float fStack_60;
   float fStack_5c;
-  CVector3f aCStack_58 [2];
+  CVector3f CStack_58;
+  CVector3f CStack_4c;
   float fStack_40;
   float fStack_3c;
   float fStack_38;
-  uint uStack_30;
+  float fStack_30;
   int local_2c;
   int local_24;
   int local_20;
@@ -66,16 +70,19 @@ int __cdecl core_boneguy_cpp_CBoneGuy_FUN_0041cc40(CBoneGuy *this_ptr)
           if (iVar4 == 3) {
             pCVar3 = this_ptr->pickup_target;
             (*((pCVar3->vtable)._ub)->getBoundingBox)(pCVar3,&CStack_94);
-            uStack_30 = 0x3f000000;
-            core_bodypart_cpp_FUN_0041b540();
-            core_bodypart_cpp_FUN_0041b4e0();
+            scalar = &fStack_30;
+            dst = &CStack_70;
+            fStack_30 = 0.5;
+            src = core_bodypart_cpp_addVector_FUN_0041b540(&CStack_94.min,&CStack_4c,&CStack_94.max)
+            ;
+            core_bodypart_cpp_scaleVector_FUN_0041b4e0(src,dst,scalar);
             CStack_70.z = CStack_94.min.z + (float)0.40000000000000002;
-            core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(pCVar3,aCStack_58,&CStack_70);
+            core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(pCVar3,&CStack_58,&CStack_70);
             CStack_7c.y = 0.0;
             CStack_7c.z = 0.0;
             CStack_7c.x = 1.5;
             iVar6 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
-                              ((CCharacter *)this_ptr,aCStack_58,(CPathMap *)0x0,&CStack_7c,0.0,0.0)
+                              ((CCharacter *)this_ptr,&CStack_58,(CPathMap *)0x0,&CStack_7c,0.0,0.0)
             ;
           }
         }

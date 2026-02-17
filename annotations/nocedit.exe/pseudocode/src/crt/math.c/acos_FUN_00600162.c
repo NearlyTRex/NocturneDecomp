@@ -6,31 +6,33 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */
+
 double __fpustack_safe acos(double x)
 
 {
   char extraout_AL;
-  float10 y;
   float10 fVar1;
-  double dVar2;
+  float10 fVar2;
+  double dVar3;
   
-  y = (float10)x;
-  fVar1 = (float10)1 - y * y;
-  if (fVar1 == (float10)0) {
-    if (y < fVar1) {
-      fVar1 = (float10)3.141592653589793;
+  fVar1 = (float10)x;
+  fVar2 = (float10)1 - fVar1 * fVar1;
+  if (fVar2 == (float10)0) {
+    if (fVar1 < fVar2) {
+      fVar2 = (float10)3.141592653589793;
     }
     else {
-      fVar1 = (float10)0;
+      fVar2 = (float10)0;
     }
   }
   else {
-    dVar2 = sqrt((double)fVar1);
-    fVar1 = (float10)dVar2;
+    dVar3 = sqrt((double)fVar2);
+    fVar2 = (float10)dVar3;
     if (extraout_AL == '\0') {
-      fVar1 = atan2(y,fVar1);
-      fVar1 = 1.5707963f - fVar1;
+      fVar2 = (float10)fpatan(fVar1,fVar2);
+      fVar2 = 1.5707963f - fVar2;
     }
   }
-  return (double)fVar1;
+  return (double)fVar2;
 }

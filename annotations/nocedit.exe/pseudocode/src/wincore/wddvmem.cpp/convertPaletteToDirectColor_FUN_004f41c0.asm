@@ -15,19 +15,19 @@
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
-;   ulonglong g_RedMask16 = 0xf800
-;   ulonglong g_GreenMask16 = 0x7e0
-;   ulonglong g_BlueMask16 = 0x1f
-;   ulonglong g_RedMask32 = 0xf80000
-;   ulonglong g_GreenMask32 = 0xfc00
-;   ulonglong g_BlueMask32 = 0xf8
-;   ulonglong g_TotalColorBits = 0x8
-;   ulonglong g_GreenBlueBits = 0x5
-;   ulonglong g_BlueBitShift = 0x3
+;   _MMX_INTEGER g_RedMask16
+;   _MMX_INTEGER g_GreenMask16
+;   _MMX_INTEGER g_BlueMask16
+;   _MMX_INTEGER g_RedMask32
+;   _MMX_INTEGER g_GreenMask32
+;   _MMX_INTEGER g_BlueMask32
+;   _MMX_INTEGER g_TotalColorBits
+;   _MMX_INTEGER g_GreenBlueBits
+;   _MMX_INTEGER g_BlueBitShift
 ;   ushort[256] g_ColorTable16
 ;   uint[256] g_ColorTable32
 ;   undefined4 g_ColorTable32[1]
-;   int g_RedBitPosition
+;   _BIT_INTEGER32 g_RedBitPosition
 ;   int g_RedScaleFactor
 ;   ... and 13 more
 ;

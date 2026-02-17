@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 121,
-    "complexity_score": 78,
+    "complexity_score": 93,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 6,
-    "pseudocode_lines": 53,
-    "suspect_count": 2,
+    "pseudocode_lines": 48,
+    "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 174
+    "total_lines": 169
   },
   "cross_references": [],
   "function": {
@@ -184,16 +184,30 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 35,
+      "line": 31,
       "match": "ROUND",
-      "text": "local_20 = (int)ROUND(dVar7);",
+      "text": "local_18 = (int)ROUND(ROUND((fVar3 / fVar4 + fVar5) * (float)g_CurrentTextureDimension));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 36,
+      "line": 31,
       "match": "ROUND",
-      "text": "local_1c = (int)ROUND(dVar8);",
+      "text": "local_18 = (int)ROUND(ROUND((fVar3 / fVar4 + fVar5) * (float)g_CurrentTextureDimension));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 32,
+      "match": "ROUND",
+      "text": "local_14 = (int)ROUND(ROUND((1.0 - fVar1 / fVar2) * (float)g_CurrentTextureDimension));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 32,
+      "match": "ROUND",
+      "text": "local_14 = (int)ROUND(ROUND((1.0 - fVar1 / fVar2) * (float)g_CurrentTextureDimension));",
       "type": "decompiler_intrinsic"
     }
   ],

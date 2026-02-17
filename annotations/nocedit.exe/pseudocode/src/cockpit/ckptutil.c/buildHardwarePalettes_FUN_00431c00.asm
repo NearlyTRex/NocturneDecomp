@@ -15,11 +15,11 @@
 ;   uint[256] g_Hardware32BitPalette
 ;   undefined4 g_GlobalPalette[1]
 ;   ushort[256] g_Hardware16BitPalette
-;   int g_RedBitPosition
+;   _BIT_INTEGER32 g_RedBitPosition
 ;   int g_RedScaleFactor
-;   int g_GreenBitPosition
+;   _BIT_INTEGER32 g_GreenBitPosition
 ;   int g_GreenScaleFactor
-;   int g_BlueBitPosition
+;   _BIT_INTEGER32 g_BlueBitPosition
 ;   int g_BlueScaleFactor
 ;
 ; *****************************************************************************

@@ -26,6 +26,6 @@ CTommyGun * __cdecl core_tommygun_cpp_CTommyGun_ctor_FUN_005dda90(CTommyGun *thi
   fVar1 = 8.0f;
   pCVar2->unk2 = 0;
   pCVar2->unk = 0;
-  (pCVar2->base).unk3 = (int)fVar1;
+  (pCVar2->base).weight = fVar1;
   return pCVar2;
 }

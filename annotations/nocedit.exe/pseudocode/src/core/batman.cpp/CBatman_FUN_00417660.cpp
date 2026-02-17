@@ -24,22 +24,22 @@ void __cdecl core_batman_cpp_CBatman_FUN_00417660(CBatman *this_ptr)
     iVar2 = rand();
     switch(iVar2 % 6) {
     case 0:
-      iVar2 = *(int *)(this_ptr->unk1 + 0x6c);
+      iVar2 = this_ptr->part_larm;
       break;
     case 1:
-      iVar2 = *(int *)(this_ptr->unk1 + 0x70);
+      iVar2 = this_ptr->part_lforearm;
       break;
     case 2:
-      iVar2 = *(int *)(this_ptr->unk1 + 0x74);
+      iVar2 = this_ptr->part_rarm;
       break;
     case 3:
-      iVar2 = *(int *)(this_ptr->unk1 + 0x78);
+      iVar2 = this_ptr->part_rforearm;
       break;
     case 4:
-      iVar2 = *(int *)(this_ptr->unk1 + 100);
+      iVar2 = this_ptr->part_head;
       break;
     case 5:
-      iVar2 = *(int *)(this_ptr->unk1 + 0x68);
+      iVar2 = this_ptr->part_torso;
       break;
     default:
       goto switchD_00417696_default;
@@ -48,15 +48,15 @@ void __cdecl core_batman_cpp_CBatman_FUN_00417660(CBatman *this_ptr)
   }
 switchD_00417696_default:
   iVar2 = *in_stack_00000008;
-  if (((((iVar2 == *(int *)(this_ptr->unk1 + 0x6c)) || (iVar2 == *(int *)(this_ptr->unk1 + 0x70)))
-       || (iVar2 == *(int *)(this_ptr->unk1 + 0x74))) ||
-      ((iVar2 == *(int *)(this_ptr->unk1 + 0x78) || (iVar2 == *(int *)(this_ptr->unk1 + 0x68))))) ||
-     (iVar2 == *(int *)(this_ptr->unk1 + 100))) {
+  if (((((iVar2 == this_ptr->part_larm) || (iVar2 == this_ptr->part_lforearm)) ||
+       (iVar2 == this_ptr->part_rarm)) ||
+      ((iVar2 == this_ptr->part_rforearm || (iVar2 == this_ptr->part_torso)))) ||
+     (iVar2 == this_ptr->part_head)) {
     local_14 = (float)in_stack_00000008[0xb];
-    if (*(int *)(this_ptr->unk1 + 100) == *in_stack_00000008) {
+    if (this_ptr->part_head == *in_stack_00000008) {
       local_14 = 0.05;
     }
-    if (*(int *)(this_ptr->unk1 + 0x68) == *in_stack_00000008) {
+    if (this_ptr->part_torso == *in_stack_00000008) {
       local_14 = 0.02;
     }
     if (g_CGamePtr->gratuitous_dismemberment != 0) {
@@ -70,42 +70,41 @@ switchD_00417696_default:
       body_part = core_bodypart_cpp_createBodyPart_FUN_00418e10();
       core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
                 ((CCharacter *)this_ptr,body_part,*in_stack_00000008,0);
-      if (*in_stack_00000008 == *(int *)(this_ptr->unk1 + 0x6c)) {
+      if (*in_stack_00000008 == this_ptr->part_larm) {
         core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
-                  ((CCharacter *)this_ptr,body_part,*(int *)(this_ptr->unk1 + 0x70),0);
+                  ((CCharacter *)this_ptr,body_part,this_ptr->part_lforearm,0);
       }
-      if (*(int *)(this_ptr->unk1 + 0x74) == *in_stack_00000008) {
+      if (this_ptr->part_rarm == *in_stack_00000008) {
         core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
-                  ((CCharacter *)this_ptr,body_part,*(int *)(this_ptr->unk1 + 0x78),0);
+                  ((CCharacter *)this_ptr,body_part,this_ptr->part_rforearm,0);
       }
-      if (*(int *)(this_ptr->unk1 + 0x68) == *in_stack_00000008) {
+      if (this_ptr->part_torso == *in_stack_00000008) {
         core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
-                  ((CCharacter *)this_ptr,*(int *)(this_ptr->unk1 + 0x74));
+                  ((CCharacter *)this_ptr,this_ptr->part_rarm);
         core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
-                  ((CCharacter *)this_ptr,*(int *)(this_ptr->unk1 + 0x78));
+                  ((CCharacter *)this_ptr,this_ptr->part_rforearm);
         core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
-                  ((CCharacter *)this_ptr,*(int *)(this_ptr->unk1 + 0x6c));
+                  ((CCharacter *)this_ptr,this_ptr->part_larm);
         core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
-                  ((CCharacter *)this_ptr,*(int *)(this_ptr->unk1 + 0x70));
+                  ((CCharacter *)this_ptr,this_ptr->part_lforearm);
         core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
-                  ((CCharacter *)this_ptr,*(int *)(this_ptr->unk1 + 100));
+                  ((CCharacter *)this_ptr,this_ptr->part_head);
       }
       core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_0042f300
                 ((CCharacter *)this_ptr,"limb?.wav");
-      core_bodypart_cpp_CBodyPart_FUN_0041a050(body_part);
-      if ((this_ptr->base).base.model.part_data.visibility_flags[*(int *)(this_ptr->unk1 + 100)] ==
-          0) {
+      core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_0041a050(body_part);
+      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_head] == 0) {
         in_stack_00000008[1] = 0x461c3c00;
       }
       in_stack_00000008[2] = (int)((float)in_stack_00000008[2] * (float)7);
     }
   }
   iVar2 = *in_stack_00000008;
-  if (iVar2 == *(int *)(this_ptr->unk1 + 100)) {
+  if (iVar2 == this_ptr->part_head) {
     fVar1 = (float)in_stack_00000008[1] * (float)2.5;
   }
   else {
-    if ((iVar2 == *(int *)(this_ptr->unk1 + 0x7c)) || (iVar2 == *(int *)(this_ptr->unk1 + 0x68))) {
+    if ((iVar2 == this_ptr->part_pelvis) || (iVar2 == this_ptr->part_torso)) {
       in_stack_00000008[1] = in_stack_00000008[1];
       goto LAB_00417851;
     }
@@ -114,7 +113,7 @@ switchD_00417696_default:
   in_stack_00000008[1] = (int)fVar1;
 LAB_00417851:
   this_ptr_00 = g_CConsolePtr;
-  if ((*(int *)(this_ptr->unk1 + 0x68) == *in_stack_00000008) && (in_stack_00000008[0xc] == 0x68)) {
+  if ((this_ptr->part_torso == *in_stack_00000008) && (in_stack_00000008[0xc] == 0x68)) {
     in_stack_00000008[1] = (int)((float)in_stack_00000008[1] * (float)20);
     engine_console_cpp_CConsole_printf_FUN_00441890(this_ptr_00,"Shot thru the heart\n");
     iVar2 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);

@@ -1,0 +1,434 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 138,
+    "complexity_score": 141,
+    "cross_reference_count": 15,
+    "function_call_count": 3,
+    "global_count": 0,
+    "pseudocode_lines": 86,
+    "suspect_count": 5,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
+    "total_lines": 224
+  },
+  "cross_references": [
+    {
+      "addr": "0040a210",
+      "from_addr": "0040a50c",
+      "name": "core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042b9e0",
+      "from_addr": "0042bc0a",
+      "name": "core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042c3c0",
+      "from_addr": "0042c4a5",
+      "name": "core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042c180",
+      "from_addr": "0042c2d5",
+      "name": "core_charactr.cpp_CCharacter_testDamageLine_FUN_0042c180",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004858f0",
+      "from_addr": "00485b03",
+      "name": "core_dracbrid.cpp_CDraculaBride_FUN_004858f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a9880",
+      "from_addr": "004a9915",
+      "name": "core_enemy.cpp_CEnemy_FUN_004a9880",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a9930",
+      "from_addr": "004a99b4",
+      "name": "core_enemy.cpp_CEnemy_FUN_004a9930",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d4890",
+      "from_addr": "004d4bc5",
+      "name": "core_gabriela.cpp_CGabriella_FUN_004d4890",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e6600",
+      "from_addr": "004e6d05",
+      "name": "core_ghoul.cpp_CGhoul_process_FUN_004e6600",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f9c30",
+      "from_addr": "004f9ed8",
+      "name": "core_imp.cpp_CImp_process_FUN_004f9c30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00503a20",
+      "from_addr": "00503b1d",
+      "name": "core_larva.cpp_CLarva_processDamage_FUN_00503a20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005495c0",
+      "from_addr": "00549a84",
+      "name": "core_pendulum.cpp_CPendulum_FUN_005495c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005e5130",
+      "from_addr": "005e517c",
+      "name": "core_tvbat.cpp_CTVBat_processDamage_FUN_005e5130",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005e4210",
+      "from_addr": "005e46d0",
+      "name": "core_tvbat.cpp_CTVBat_process_FUN_005e4210",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005f9470",
+      "from_addr": "005f9d3f",
+      "name": "core_zombie.cpp_CZombie_process_FUN_005f9470",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004edbb0",
+    "address_range": [
+      [
+        "004edbb0",
+        "004edce4"
+      ],
+      [
+        "004eddc2",
+        "004eddd4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0",
+    "signature": "void __cdecl core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0(CGore *this_ptr,CVector3f *position,CVector3f *direction,int count,int blood_type)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cc10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10"
+    },
+    {
+      "addr": "004edaa0",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CGore_spawnBloodParticles_FUN_004edaa0"
+    },
+    {
+      "addr": "006013b1",
+      "is_variadic": false,
+      "name": "crt_math.c_atan2_FUN_006013b1"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.8655462184873945,
+    "instruction_count": 119,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 3,
+      "BRANCH": 1,
+      "CALL": 3,
+      "CALLOTHER": 1,
+      "CBRANCH": 7,
+      "COPY": 377,
+      "FLOAT2FLOAT": 22,
+      "FLOAT_ADD": 5,
+      "FLOAT_DIV": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 11,
+      "FLOAT_NAN": 2,
+      "FLOAT_NEG": 1,
+      "FLOAT_SQRT": 3,
+      "INT2FLOAT": 2,
+      "INT_ADD": 47,
+      "INT_AND": 37,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 28,
+      "INT_LEFT": 4,
+      "INT_LESS": 4,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 5,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 14,
+      "INT_SUB": 17,
+      "INT_XOR": 4,
+      "INT_ZEXT": 4,
+      "LOAD": 31,
+      "POPCOUNT": 14,
+      "RETURN": 1,
+      "STORE": 30
+    },
+    "pcode_op_count": 698
+  },
+  "stack_frame": {
+    "frame_size": 148,
+    "local_size": 128,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGore *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "direction",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "count",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "blood_type",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004edbb9",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 33,
+      "match": "SQRT",
+      "text": "local_1c = SQRT(direction->z * direction->z +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 40,
+      "match": "SQRT",
+      "text": "fVar1 = SQRT(local_40.z * local_40.z + local_40.x * local_40.x + local_40.y * local_40.y);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 52,
+      "match": "fpatan",
+      "text": "fVar4 = (float10)fpatan((float10)local_40.y,",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 53,
+      "match": "SQRT",
+      "text": "SQRT((float10)local_40.x * (float10)local_40.x +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 56,
+      "match": "fpatan",
+      "text": "fVar3 = (float10)fpatan((float10)local_40.x,(float10)local_40.z);",
+      "type": "decompiler_intrinsic"
+    }
+  ]
+}

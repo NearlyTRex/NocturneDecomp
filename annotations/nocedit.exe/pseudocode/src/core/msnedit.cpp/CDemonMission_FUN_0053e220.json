@@ -4,13 +4,19 @@
       {
         "category": "other",
         "column": 47,
-        "line": 111,
+        "line": 107,
         "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 169,
+        "line": 165,
+        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 15,
+        "line": 186,
         "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
@@ -21,44 +27,38 @@
       },
       {
         "category": "other",
-        "column": 15,
-        "line": 192,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
         "column": 39,
-        "line": 192,
+        "line": 189,
         "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 193,
+        "line": 190,
         "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 17,
-        "line": 198,
+        "line": 195,
         "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 198,
+        "line": 195,
         "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 204,
+        "line": 202,
         "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 207,
+        "line": 205,
         "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       }
     ],
@@ -67,17 +67,17 @@
   },
   "complexity": {
     "assembly_lines": 625,
-    "complexity_score": 428,
+    "complexity_score": 426,
     "cross_reference_count": 1,
     "function_call_count": 43,
     "global_count": 43,
-    "pseudocode_lines": 238,
+    "pseudocode_lines": 236,
     "suspect_count": 18,
     "suspect_types": [
       "pointer_cast",
       "unknown_field"
     ],
-    "total_lines": 863
+    "total_lines": 861
   },
   "cross_references": [
     {
@@ -162,24 +162,24 @@
       "name": "core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90"
     },
     {
-      "addr": "004ed760",
-      "is_variadic": false,
-      "name": "core_gore.cpp_CGore_FUN_004ed760"
-    },
-    {
-      "addr": "004edaa0",
-      "is_variadic": false,
-      "name": "core_gore.cpp_CGore_FUN_004edaa0"
-    },
-    {
       "addr": "004ede30",
       "is_variadic": false,
-      "name": "core_gore.cpp_CGore_FUN_004ede30"
+      "name": "core_gore.cpp_CGore_createBloodPool_FUN_004ede30"
     },
     {
       "addr": "004ed9e0",
       "is_variadic": false,
       "name": "core_gore.cpp_CGore_process_FUN_004ed9e0"
+    },
+    {
+      "addr": "004ed760",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CGore_reset_FUN_004ed760"
+    },
+    {
+      "addr": "004edaa0",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CGore_spawnBloodParticles_FUN_004edaa0"
     },
     {
       "addr": "00506f10",
@@ -459,7 +459,7 @@
     {
       "addr": "02cf6a94",
       "name": "g_MouseButtonFlags",
-      "type": "_BIT_INTEGER",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
@@ -692,126 +692,126 @@
   "suspects": [
     {
       "description": "Unknown/mangled field access",
-      "line": 104,
+      "line": 100,
       "match": "._4_4_",
       "text": "(pCStack_20->position).x = (float)local_bc._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 147,
+      "line": 143,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&CStack_30 + (uint)bVar5 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 148,
+      "line": 144,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&CStack_48 + (uint)bVar5 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 149,
+      "line": 145,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&CStack_30 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 150,
+      "line": 146,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&CStack_48 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 154,
+      "line": 150,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&CStack_30 + (uint)bVar5 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 155,
+      "line": 151,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&CStack_54 + (uint)bVar5 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 156,
+      "line": 152,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&CStack_30 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 157,
+      "line": 153,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&CStack_54 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 162,
+      "line": 158,
       "match": "._4_4_",
       "text": "local_bc._4_4_ = fStack_90;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 182,
+      "line": 179,
       "match": "._0_4_",
       "text": "local_bc._0_4_ = 0.0;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 185,
+      "line": 182,
       "match": "._0_4_",
       "text": "local_bc._0_4_ = (float)local_bc._0_4_ - g_CGamePtr->delta_time_float;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 185,
+      "line": 182,
       "match": "._0_4_",
       "text": "local_bc._0_4_ = (float)local_bc._0_4_ - g_CGamePtr->delta_time_float;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 186,
+      "line": 183,
       "match": "._0_4_",
       "text": "if ((float)local_bc._0_4_ < 0.0) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 191,
+      "line": 188,
       "match": "._0_4_",
       "text": "local_bc._0_4_ = (float)local_bc._0_4_ + 0.1f;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 191,
+      "line": 188,
       "match": "._0_4_",
       "text": "local_bc._0_4_ = (float)local_bc._0_4_ + 0.1f;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 197,
+      "line": 195,
       "match": "._4_4_",
       "text": "CStack_78.x = (float)local_bc._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 200,
+      "line": 198,
       "match": "._4_4_",
       "text": "CStack_9c.x = (float)local_bc._4_4_;",
       "type": "unknown_field"

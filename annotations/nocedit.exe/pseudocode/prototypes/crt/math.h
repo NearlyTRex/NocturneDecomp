@@ -37,7 +37,7 @@ float10 __fpustack_safe asin(float10 sine_value);
 
 // Original: crt_math.c_atan2_FUN_006013b1
 // Address: 006013b1
-float10 __fpustack atan2(float10 y,float10 x);
+float10 __fpureg atan2(float10 y,float10 x);
 
 // Original: crt_math.c_modf_FUN_00602102
 // Address: 00602102
@@ -334,6 +334,10 @@ float10 __fpustack pentiumFdivBugWorkaroundDouble(float10 param0,double param1);
 // Original: crt_math.c_sqrt_FUN_0060710c
 // Address: 0060710c
 double __fpureg sqrt(double value);
+
+// Original: crt_math.c_atan2_FUN_00608e14
+// Address: 00608e14
+float10 __fpustack atan2(float10 y,float10 x);
 
 // Original: crt_math.c_doubleToFloat_FUN_0060b26c
 // Address: 0060b26c

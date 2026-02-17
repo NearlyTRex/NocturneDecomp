@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 10,
-    "complexity_score": 35,
+    "complexity_score": 27,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 8,
-    "pseudocode_lines": 20,
+    "pseudocode_lines": 12,
     "suspect_count": 1,
     "suspect_types": [
       "mmx_assembly"
     ],
-    "total_lines": 30
+    "total_lines": 22
   },
   "cross_references": [],
   "function": {
@@ -26,58 +26,58 @@
         "004906e8"
       ]
     ],
-    "convention": "__cdecl",
+    "convention": "__mmx_save",
     "name": "core_dstrender.cpp_saveMMXRegisters_FUN_004906b0",
-    "signature": "void __cdecl core_dstrender_cpp_saveMMXRegisters_FUN_004906b0(void)"
+    "signature": "void __mmx_save core_dstrender_cpp_saveMMXRegisters_FUN_004906b0(ulonglong mm0,ulonglong mm1,ulonglong mm2,ulonglong mm3,ulonglong mm4,ulonglong mm5,ulonglong mm6,ulonglong mm7)"
   },
   "function_calls": [],
   "globals": [
     {
       "addr": "02d05258",
       "name": "g_SavedMMX0",
-      "type": "ulonglong",
+      "type": "_MMX_INTEGER",
       "value": null
     },
     {
       "addr": "02d05260",
       "name": "g_SavedMMX1",
-      "type": "ulonglong",
+      "type": "_MMX_INTEGER",
       "value": null
     },
     {
       "addr": "02d05268",
       "name": "g_SavedMMX2",
-      "type": "ulonglong",
+      "type": "_MMX_INTEGER",
       "value": null
     },
     {
       "addr": "02d05270",
       "name": "g_SavedMMX3",
-      "type": "ulonglong",
+      "type": "_MMX_INTEGER",
       "value": null
     },
     {
       "addr": "02d05278",
       "name": "g_SavedMMX4",
-      "type": "ulonglong",
+      "type": "_MMX_INTEGER",
       "value": null
     },
     {
       "addr": "02d05280",
       "name": "g_SavedMMX5",
-      "type": "ulonglong",
+      "type": "_MMX_INTEGER",
       "value": null
     },
     {
       "addr": "02d05288",
       "name": "g_SavedMMX6",
-      "type": "ulonglong",
+      "type": "_MMX_INTEGER",
       "value": null
     },
     {
       "addr": "02d05290",
       "name": "g_SavedMMX7",
-      "type": "ulonglong",
+      "type": "_MMX_INTEGER",
       "value": null
     }
   ],
@@ -85,8 +85,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "estimated_params": 0
+    "declared_params": 8,
+    "estimated_params": 8
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 1.2222222222222223,

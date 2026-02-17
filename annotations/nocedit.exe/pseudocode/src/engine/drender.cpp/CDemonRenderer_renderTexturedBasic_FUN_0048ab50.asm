@@ -19,7 +19,7 @@
 ;   int g_RenderPixelCounter
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
 ;   int g_UseExternalRenderer
-;   _BIT_INTEGER g_RenderStateFlags
+;   _BIT_INTEGER32 g_RenderStateFlags
 ;   int g_RenderStateFlag2
 ;   int g_RenderedTriangleCount
 ;

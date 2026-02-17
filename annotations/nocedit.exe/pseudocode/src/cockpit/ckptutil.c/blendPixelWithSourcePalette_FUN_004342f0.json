@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 221,
-    "complexity_score": 123,
+    "complexity_score": 148,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 15,
-    "pseudocode_lines": 63,
-    "suspect_count": 5,
+    "pseudocode_lines": 58,
+    "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 284
+    "total_lines": 279
   },
   "cross_references": [
     {
@@ -62,37 +62,37 @@
     {
       "addr": "02d01f24",
       "name": "g_RedBitPosition",
-      "type": "int",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "02d01f2c",
       "name": "g_RedBitCount",
-      "type": "int",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "02d01f30",
       "name": "g_GreenBitPosition",
-      "type": "int",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "02d01f38",
       "name": "g_GreenBitCount",
-      "type": "int",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "02d01f3c",
       "name": "g_BlueBitPosition",
-      "type": "int",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "02d01f44",
       "name": "g_BlueBitCount",
-      "type": "int",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
@@ -283,35 +283,56 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 20,
       "match": "(ushort *)((int)",
-      "text": "uVar3 = *(ushort *)((int)g_ScreenBufferArray[y] + x * 2);",
+      "text": "uVar1 = *(ushort *)((int)g_ScreenBufferArray[y] + x * 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 45,
+      "line": 38,
       "match": "ROUND",
-      "text": "local_3c = (uint)(longlong)ROUND(dVar11);",
+      "text": "ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3] * fVar2 +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 38,
+      "match": "ROUND",
+      "text": "ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3] * fVar2 +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 41,
+      "match": "ROUND",
+      "text": "ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3 + 1] * fVar2 +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 41,
+      "match": "ROUND",
+      "text": "ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3 + 1] * fVar2 +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 46,
       "match": "ROUND",
-      "text": "local_34 = (uint)(longlong)ROUND(dVar12);",
+      "text": "ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3 + 2] * fVar2 +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 50,
+      "line": 46,
       "match": "ROUND",
-      "text": "local_38 = (uint)(longlong)ROUND(dVar11);",
+      "text": "ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3 + 2] * fVar2 +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 56,
       "match": "(ushort *)((int)",
       "text": "*(ushort *)((int)g_ScreenBufferArray[y] + x * 2) =",
       "type": "pointer_cast"

@@ -24,7 +24,7 @@
 ;   int g_DitherPatternOffset
 ;   int[256] g_DitherPatternTable
 ;   undefined4 g_DitherPatternTable[1]
-;   _BIT_INTEGER g_CameraDownscaleIterations
+;   _BIT_INTEGER32 g_CameraDownscaleIterations
 ;   SFogImagePlane g_CameraPlaneWorkBuffer
 ;   uint*[1200] g_ZBufferScanlineArray
 ;   int g_ClipLeft

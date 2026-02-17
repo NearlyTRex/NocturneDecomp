@@ -77,7 +77,7 @@ void __cdecl core_charactr_cpp_CCharacter_setup_FUN_00428140(CCharacter *this_pt
     if (0 < this_ptr->fire_count) {
       do {
         pCVar6->flames[0].which_flame = 4;
-        pCVar5->fire_effects[0].unk2 = 2.0;
+        pCVar5->fire_effects[0].size = 2.0;
         iVar4 = iVar4 + 1;
         pCVar5 = (CCharacter *)((pCVar5->base).actor_name + 0x18);
         pCVar6 = (CCharacter *)&(pCVar6->model).transformed_vertices[0x14].y;

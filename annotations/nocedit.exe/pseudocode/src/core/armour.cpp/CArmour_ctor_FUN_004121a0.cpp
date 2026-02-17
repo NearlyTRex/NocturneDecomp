@@ -25,7 +25,7 @@ CArmour * __cdecl core_armour_cpp_CArmour_ctor_FUN_004121a0(CArmour *this_ptr)
   fVar2 = 50.0f;
   (pCVar4->base).base.collision_cylinder_height = 0.6;
   (pCVar4->base).base.collision_cylinder_radius = 2.0;
-  pcVar6 = pCVar4->unk;
+  pcVar6 = pCVar4->fall_apart_event;
   (pCVar4->base).base.ai_detection_range_min = fVar2;
   (pCVar4->base).base.ai_detection_range_max = fVar3;
   do {

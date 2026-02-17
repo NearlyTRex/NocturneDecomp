@@ -15,8 +15,8 @@
 ;
 ; XREF[46]:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10 at 00408c62
-;   core_bodypart.cpp_CBodyPart_FUN_0041a630 at 0041a651
-;   core_bodypart.cpp_CBodyPart_FUN_0041aa40 at 0041aac2
+;   core_bodypart.cpp_CBodyPart_applyRotation_FUN_0041a630 at 0041a651
+;   core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_0041aa40 at 0041aac2
 ;   core_box.cpp_CBox_processPhysics_FUN_0041e350 at 0041e758
 ;   core_box.cpp_CBox_updateTransform_FUN_0041e0e0 at 0041e11a
 ;   core_boxactor.cpp_CLightActor_process_FUN_00422a50 at 00422c51

@@ -29,7 +29,7 @@ CEnemy * __cdecl core_enemy_cpp_CEnemy_ctor_FUN_004a9500(CEnemy *this_ptr)
   pCVar2->is_in_combat = 0;
   pCVar2->patrol_name_pattern[0] = '\0';
   pCVar2->guard_distance = 100.0;
-  pCVar2->unk2 = 0;
+  pCVar2->attack_cooldown = 0.0;
   pCVar2->victim_height = 6.0;
   pCVar2->allow_pathfind_to_new_targets = 1;
   pCVar2->speed = fVar3;

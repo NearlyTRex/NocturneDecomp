@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 int __cdecl shape_design_c_cramTextureList_FUN_0046bb80(SCramConfig *cram_config)
 
 {
@@ -21,7 +23,6 @@ int __cdecl shape_design_c_cramTextureList_FUN_0046bb80(SCramConfig *cram_config
   char *pcVar10;
   char *pcVar11;
   byte bVar12;
-  double dVar13;
   char acStackY_146e [1018];
   ushort auStackY_1074 [630];
   char local_b58 [260];
@@ -166,20 +167,15 @@ int __cdecl shape_design_c_cramTextureList_FUN_0046bb80(SCramConfig *cram_config
     if (g_TextureAtlasEntries[local_5c].max_v <= g_TextureAtlasEntries[local_5c].min_v) {
       g_TextureAtlasEntries[local_5c].max_v = g_TextureAtlasEntries[local_5c].min_v + 0x10000;
     }
-    local_980 = g_TextureAtlasEntries[local_5c].max_u - g_TextureAtlasEntries[local_5c].min_u;
-    dVar13 = round
-                       ((double)(int)g_TextureAtlasEntries[local_5c].original_width *
-                        (double)local_980 * 5.9604644775390599e-08);
-    g_TextureAtlasEntries[local_5c].processed_width = (int)ROUND(dVar13);
-    local_980 = g_TextureAtlasEntries[local_5c].max_v - g_TextureAtlasEntries[local_5c].min_v;
-    local_b58[0] = -0x31;
-    local_b58[1] = -0x40;
-    local_b58[2] = 'F';
-    local_b58[3] = '\0';
-    dVar13 = round
-                       ((double)(int)g_TextureAtlasEntries[local_5c].original_height *
-                        (double)local_980 * 5.9604644775390599e-08);
-    local_980 = (int)ROUND(dVar13);
+    g_TextureAtlasEntries[local_5c].processed_width =
+         (int)ROUND(ROUND((double)(int)g_TextureAtlasEntries[local_5c].original_width *
+                          (double)(g_TextureAtlasEntries[local_5c].max_u -
+                                  g_TextureAtlasEntries[local_5c].min_u) *
+                          5.9604644775390599e-08));
+    local_980 = (int)ROUND(ROUND((double)(int)g_TextureAtlasEntries[local_5c].original_height *
+                                 (double)(g_TextureAtlasEntries[local_5c].max_v -
+                                         g_TextureAtlasEntries[local_5c].min_v) *
+                                 5.9604644775390599e-08));
     g_TextureAtlasEntries[local_5c].processed_height = local_980;
     if (g_TextureAtlasEntries[local_5c].processed_width < 1) {
       g_TextureAtlasEntries[local_5c].processed_width = 1;

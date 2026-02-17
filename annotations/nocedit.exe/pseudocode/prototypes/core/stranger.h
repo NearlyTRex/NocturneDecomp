@@ -45,7 +45,7 @@ int __cdecl FUN_005bafd2(void);
 
 // Original: core_stranger.cpp_FUN_005bafe0
 // Address: 005bafe0
-bool __cdecl FUN_005bafe0(void);
+int __cdecl FUN_005bafe0(void);
 
 // Original: core_stranger.cpp_FUN_005bb010
 // Address: 005bb010

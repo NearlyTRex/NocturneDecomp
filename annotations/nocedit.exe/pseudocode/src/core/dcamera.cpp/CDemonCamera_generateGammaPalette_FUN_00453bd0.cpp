@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl core_dcamera_cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0(CDemonCamera *this_ptr,int gamma_value)
 
 {
@@ -17,7 +19,6 @@ void __cdecl core_dcamera_cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0(CDe
   float10 extraout_ST1;
   float10 extraout_ST2;
   float10 extraout_ST3;
-  double dVar5;
   
   iVar3 = 0;
   exp = (float10)((float)gamma_value * (float)1.52587890625e-05);
@@ -25,8 +26,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0(CDe
   iVar2 = 0;
   do {
     fVar4 = pow((float10)iVar3 * fVar4,exp);
-    dVar5 = round((double)(fVar4 * extraout_ST3));
-    uVar1 = (uint)ROUND(dVar5);
+    uVar1 = (uint)ROUND(ROUND(fVar4 * extraout_ST3));
     iVar3 = iVar3 + 1;
     *(uint *)((int)g_LightmapTexturePalette + iVar2) =
          uVar1 << 0x18 | uVar1 << 0x10 | uVar1 << 8 | uVar1;

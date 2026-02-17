@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 188,
-    "complexity_score": 126,
+    "complexity_score": 143,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 4,
-    "pseudocode_lines": 91,
-    "suspect_count": 3,
+    "pseudocode_lines": 88,
+    "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 279
+    "total_lines": 276
   },
   "cross_references": [
     {
@@ -350,23 +350,37 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 34,
+      "line": 35,
       "match": "SQRT",
-      "text": "local_7c.x = SQRT(local_58 * local_58 + local_64.y * local_64.y + local_64.z * local_64.z) -",
+      "text": "fVar2 = SQRT(local_60.z * local_60.z + local_60.x * local_60.x + local_60.y * local_60.y) -",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
+      "line": 40,
       "match": "ROUND",
-      "text": "local_24 = (int)ROUND(dVar4);",
+      "text": "local_20 = (int)ROUND(ROUND(fVar2 / *(float *)(this_ptr->unk + 0x1c)));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 79,
+      "line": 40,
       "match": "ROUND",
-      "text": "fStack_1c = (float)(int)ROUND(dVar4);",
+      "text": "local_20 = (int)ROUND(ROUND(fVar2 / *(float *)(this_ptr->unk + 0x1c)));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 77,
+      "match": "ROUND",
+      "text": "local_14 = (int)ROUND(ROUND(fVar2));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 77,
+      "match": "ROUND",
+      "text": "local_14 = (int)ROUND(ROUND(fVar2));",
       "type": "decompiler_intrinsic"
     }
   ]

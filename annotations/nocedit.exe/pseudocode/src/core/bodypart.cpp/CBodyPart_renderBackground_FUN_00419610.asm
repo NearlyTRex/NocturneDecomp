@@ -20,7 +20,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
-;   core_bodypart.cpp_CBodyPart_FUN_00419340
+;   core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00419340
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
 ;   engine_console.cpp_CConsole_printf_FUN_00441890
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
@@ -88,8 +88,8 @@ section .text
     PUSH -0x1                           ; 004196b1
         ;   Label: LAB_004196b1
     PUSH EBX                            ; 004196b3
-    CALL core_bodypart.cpp_CBodyPart_FUN_00419340 ; 004196b4
-        ;   XREF to: 00419340 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_FUN_00419340(CBodyPart * this_ptr, int render_flags)
+    CALL core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00419340 ; 004196b4
+        ;   XREF to: 00419340 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00419340(CBodyPart * this_ptr, int render_flags)
     ADD ESP,0x8                         ; 004196b9
     MOV EAX,[0x006703ec]                ; 004196bc | g_CDemonRendererPtr2
         ;   Label: LAB_004196bc

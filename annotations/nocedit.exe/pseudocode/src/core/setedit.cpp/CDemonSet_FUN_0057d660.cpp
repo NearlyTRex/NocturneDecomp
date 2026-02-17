@@ -142,9 +142,9 @@ LAB_0057d6df:
         iStack_44 = iStack_48;
         uVar6 = _fgetc(p_Var4);
         if (g_BitsPerPixel == 0x20) {
-          uStack_34 = (int)fVar5 << ((byte)g_RedBitPosition & 0x1f);
-          uVar12 = iStack_44 << ((byte)g_GreenBitPosition & 0x1f) | uStack_34;
-          uVar8 = uVar6 << ((byte)g_BlueBitPosition & 0x1f);
+          uStack_34 = (int)fVar5 << (g_RedBitPosition.bytes[0] & 0x1f);
+          uVar12 = iStack_44 << (g_GreenBitPosition.bytes[0] & 0x1f) | uStack_34;
+          uVar8 = uVar6 << (g_BlueBitPosition.bytes[0] & 0x1f);
         }
         else {
           uVar12 = iStack_44 << 8 | (int)fVar5 << 0x10;
@@ -346,9 +346,9 @@ LAB_0057db4e:
               uVar6 = 0xff;
             }
             if (g_BitsPerPixel == 0x20) {
-              local_28 = uVar6 << ((byte)g_RedBitPosition & 0x1f);
-              uVar8 = local_28 | uVar6 << ((byte)g_GreenBitPosition & 0x1f);
-              uVar6 = uVar6 << ((byte)g_BlueBitPosition & 0x1f);
+              local_28 = uVar6 << (g_RedBitPosition.bytes[0] & 0x1f);
+              uVar8 = local_28 | uVar6 << (g_GreenBitPosition.bytes[0] & 0x1f);
+              uVar6 = uVar6 << (g_BlueBitPosition.bytes[0] & 0x1f);
             }
             else {
               uVar8 = uVar6 << 0x10 | uVar6 << 8;

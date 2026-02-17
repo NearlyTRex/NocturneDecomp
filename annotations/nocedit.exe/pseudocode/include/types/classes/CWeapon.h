@@ -24,8 +24,8 @@ typedef struct CWeapon {
     float fire_cooldown_timer; // 0x300
     struct CDemonActor* carried_by_actor; // 0x304
     CBox physics_box; // 0x308
-    float box_mass; // 0x560
-    int unk3; // 0x564
+    float ground_height; // 0x560
+    float weight; // 0x564
     int ammo_count; // 0x568
     int ammo_type; // 0x56c
     float sim_timer; // 0x570

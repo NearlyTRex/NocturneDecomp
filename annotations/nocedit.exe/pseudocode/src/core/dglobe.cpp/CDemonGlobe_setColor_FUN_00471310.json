@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 53,
+    "complexity_score": 80,
     "cross_reference_count": 7,
     "function_call_count": 1,
     "global_count": 1,
-    "pseudocode_lines": 18,
-    "suspect_count": 3,
+    "pseudocode_lines": 15,
+    "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 53
+    "total_lines": 50
   },
   "cross_references": [
     {
@@ -143,21 +143,42 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 15,
       "match": "ROUND",
-      "text": "(this_ptr->color).r = (int)ROUND(dVar1);",
+      "text": "(this_ptr->color).r = (int)ROUND(ROUND((double)color->r * 256));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 15,
+      "match": "ROUND",
+      "text": "(this_ptr->color).r = (int)ROUND(ROUND((double)color->r * 256));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 16,
+      "match": "ROUND",
+      "text": "(this_ptr->color).g = (int)ROUND(ROUND((double)color->g * dVar1));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 16,
+      "match": "ROUND",
+      "text": "(this_ptr->color).g = (int)ROUND(ROUND((double)color->g * dVar1));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 17,
       "match": "ROUND",
-      "text": "(this_ptr->color).g = (int)ROUND(dVar1);",
+      "text": "(this_ptr->color).b = (int)ROUND(ROUND(dVar1 * (double)color->b));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 19,
+      "line": 17,
       "match": "ROUND",
-      "text": "(this_ptr->color).b = (int)ROUND(dVar2);",
+      "text": "(this_ptr->color).b = (int)ROUND(ROUND(dVar1 * (double)color->b));",
       "type": "decompiler_intrinsic"
     }
   ]

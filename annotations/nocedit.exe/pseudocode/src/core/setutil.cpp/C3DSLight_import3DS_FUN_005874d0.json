@@ -4,49 +4,49 @@
       {
         "category": "format_error",
         "column": 30,
-        "line": 67,
+        "line": 69,
         "message": "format specifies type 'int *' but the argument has type 'C3DSLight *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 36,
-        "line": 68,
+        "line": 70,
         "message": "format specifies type 'int *' but the argument has type 'CColor3f *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 53,
-        "line": 68,
+        "line": 70,
         "message": "format specifies type 'int *' but the argument has type 'float *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 74,
-        "line": 68,
+        "line": 70,
         "message": "format specifies type 'int *' but the argument has type 'float *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 36,
-        "line": 72,
+        "line": 74,
         "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 30,
-        "line": 77,
-        "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 30,
-        "line": 78,
-        "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 30,
         "line": 79,
+        "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 30,
+        "line": 80,
+        "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 30,
+        "line": 81,
         "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       }
     ],
@@ -55,14 +55,16 @@
   },
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 79,
+    "complexity_score": 118,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 79,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 140
+    "pseudocode_lines": 83,
+    "suspect_count": 3,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
+    "total_lines": 144
   },
   "cross_references": [],
   "function": {
@@ -205,5 +207,27 @@
     ],
     "severity": "medium"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 81,
+      "match": "fpatan",
+      "text": "fVar11 = (float10)fpatan((float10)fStack_38,(float10)fVar2);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 83,
+      "match": "fpatan",
+      "text": "fVar9 = (float10)fpatan((float10)(fStack_34 - fVar1),",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 84,
+      "match": "SQRT",
+      "text": "SQRT(fVar10 * fVar10 + fVar9 * (float10)fVar2));",
+      "type": "decompiler_intrinsic"
+    }
+  ]
 }

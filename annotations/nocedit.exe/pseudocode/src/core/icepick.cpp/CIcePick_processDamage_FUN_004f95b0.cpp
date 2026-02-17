@@ -42,7 +42,8 @@ void __cdecl core_icepick_cpp_CIcePick_processDamage_FUN_004f95b0(CIcePick *this
                   (&this_ptr_00->motion_controller,8,1);
         (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
                   ((CCharacter *)this_ptr,1,(CVector3f *)0x0);
-        core_gore_cpp_CGore_FUN_004ee030(g_CGorePtr,(CDemonActor *)this_ptr);
+        core_gore_cpp_CGore_spawnFliesOnActor_FUN_004ee030
+                  (g_CGorePtr,(CDemonActor *)this_ptr,0x32,50.0,(CVector3f *)0x0);
         sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk + 8));
         (*((this_ptr->base).base.base.vtable._ub)->playSound)
                   ((CDemonActor *)this_ptr,"icepick_die01.wav");

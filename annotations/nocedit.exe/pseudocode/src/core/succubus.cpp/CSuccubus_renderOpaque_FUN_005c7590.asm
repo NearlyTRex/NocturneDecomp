@@ -20,9 +20,9 @@
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
 ;   core_charactr.cpp_CCharacter_renderCharacter_FUN_00429aa0
 ;   core_cloth.cpp_CClothList_render_FUN_0043c320
-;   core_morph.cpp_CMorph_FUN_0052b600
-;   core_morph.cpp_CMorph_FUN_0052b640
-;   core_morph.cpp_CMorph_FUN_0052bae0
+;   core_morph.cpp_CMorph_render_FUN_0052bae0
+;   core_morph.cpp_CMorph_updateModelFromDeformable_FUN_0052b600
+;   core_morph.cpp_CMorph_updateModelFromKeyframed_FUN_0052b640
 ;   core_motion.cpp_CMotionController_render_FUN_0052e700
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
 ;   engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00
@@ -144,15 +144,15 @@ section .text
     PUSH EBP                            ; 005c7698
     LEA ESI,[EBX + 0xe33c]              ; 005c7699
     PUSH ESI                            ; 005c769f
-    CALL core_morph.cpp_CMorph_FUN_0052b600 ; 005c76a0
-        ;   XREF to: 0052b600 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_FUN_0052b600(CMorph * this_ptr, int model_index)
+    CALL core_morph.cpp_CMorph_updateModelFromDeformable_FUN_0052b600 ; 005c76a0
+        ;   XREF to: 0052b600 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_updateModelFromDeformable_FUN_0052b600(CMorph * this_ptr, int model_index, CDeformableModelInstance * model_ptr, int part_index)
     ADD ESP,0x10                        ; 005c76a5
     PUSH EBP                            ; 005c76a8
     PUSH EDI                            ; 005c76a9
     PUSH 0x1                            ; 005c76aa
     PUSH ESI                            ; 005c76ac
-    CALL core_morph.cpp_CMorph_FUN_0052b600 ; 005c76ad
-        ;   XREF to: 0052b600 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_FUN_0052b600(CMorph * this_ptr, int model_index)
+    CALL core_morph.cpp_CMorph_updateModelFromDeformable_FUN_0052b600 ; 005c76ad
+        ;   XREF to: 0052b600 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_updateModelFromDeformable_FUN_0052b600(CMorph * this_ptr, int model_index, CDeformableModelInstance * model_ptr, int part_index)
     ADD ESP,0x10                        ; 005c76b2
     PUSH 0x1                            ; 005c76b5
     PUSH EBP                            ; 005c76b7
@@ -160,8 +160,8 @@ section .text
     PUSH EDI                            ; 005c76be
     PUSH 0x1                            ; 005c76bf
     PUSH ESI                            ; 005c76c1
-    CALL core_morph.cpp_CMorph_FUN_0052b640 ; 005c76c2
-        ;   XREF to: 0052b640 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_FUN_0052b640(CMorph * this_ptr, int model_index)
+    CALL core_morph.cpp_CMorph_updateModelFromKeyframed_FUN_0052b640 ; 005c76c2
+        ;   XREF to: 0052b640 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_updateModelFromKeyframed_FUN_0052b640(CMorph * this_ptr, int model_index, CKeyFramedModel * model_ptr, int frame_index, ...)
     ADD ESP,0x14                        ; 005c76c7
     PUSH 0x2                            ; 005c76ca
     PUSH EBP                            ; 005c76cc
@@ -169,16 +169,16 @@ section .text
     PUSH EBP                            ; 005c76d3
     PUSH 0x1                            ; 005c76d4
     PUSH ESI                            ; 005c76d6
-    CALL core_morph.cpp_CMorph_FUN_0052b640 ; 005c76d7
-        ;   XREF to: 0052b640 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_FUN_0052b640(CMorph * this_ptr, int model_index)
+    CALL core_morph.cpp_CMorph_updateModelFromKeyframed_FUN_0052b640 ; 005c76d7
+        ;   XREF to: 0052b640 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_updateModelFromKeyframed_FUN_0052b640(CMorph * this_ptr, int model_index, CKeyFramedModel * model_ptr, int frame_index, ...)
     FLD float ptr [EBX + 0xe338]        ; 005c76dc
     FDIV float ptr [0x00663938]         ; 005c76e2 | FLOAT_00663938
     ADD ESP,0x14                        ; 005c76e8
     SUB ESP,0x4                         ; 005c76eb
     FSTP float ptr [ESP]                ; 005c76ee
     PUSH ESI                            ; 005c76f1
-    CALL core_morph.cpp_CMorph_FUN_0052bae0 ; 005c76f2
-        ;   XREF to: 0052bae0 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_FUN_0052bae0(CMorph * this_ptr)
+    CALL core_morph.cpp_CMorph_render_FUN_0052bae0 ; 005c76f2
+        ;   XREF to: 0052bae0 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_render_FUN_0052bae0(CMorph * this_ptr, float morph_t)
     JMP 0x005c7623                      ; 005c76f7
         ;   XREF to: 005c7623 (UNCONDITIONAL_JUMP)  ; LAB_005c7623
     PUSH EBX                            ; 005c76fc

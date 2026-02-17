@@ -28,7 +28,7 @@ CHighPriestOfGardath * __cdecl core_hpriest_cpp_CHighPriestOfGardath_dtor_FUN_00
                      ((CFlame *)(pCVar1[-1].height_cache_tags[0xb] + 0x39),0);
   pSVar3 = core_armour_cpp_SFire_arrdtor_FUN_00412700
                      ((SFire *)(pCVar2[-2].base.create_event + 0x20),0);
-  pCVar4 = core_armour_cpp_CVector3f_arrdtor_FUN_004126e0((CVector3f *)(pSVar3[-0x16].unk + 4),0);
+  pCVar4 = core_armour_cpp_CVector3f_arrdtor_FUN_004126e0((CVector3f *)&pSVar3[-0x16].bone_index,0);
   pCVar4 = core_armour_cpp_CVector3f_arrdtor_FUN_004126e0(pCVar4 + -0xf,0);
   pCVar5 = core_cloth_cpp_CClothList_dtor_FUN_0043bf80((CClothList *)(pCVar4 + -0x26),0);
   pCVar6 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40

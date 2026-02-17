@@ -4,13 +4,13 @@
       {
         "category": "incompatible_types",
         "column": 41,
-        "line": 47,
+        "line": 45,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "incompatible_types",
-        "column": 41,
-        "line": 49,
+        "column": 50,
+        "line": 48,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
@@ -21,8 +21,14 @@
       },
       {
         "category": "incompatible_types",
-        "column": 43,
-        "line": 55,
+        "column": 52,
+        "line": 56,
+        "message": "invalid operands to binary expression ('double' and 'int')"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 27,
+        "line": 60,
         "message": "invalid operands to binary expression ('double' and 'int')"
       }
     ],
@@ -31,15 +37,16 @@
   },
   "complexity": {
     "assembly_lines": 204,
-    "complexity_score": 268,
+    "complexity_score": 443,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 1,
     "pseudocode_lines": 68,
-    "suspect_count": 19,
+    "suspect_count": 36,
     "suspect_types": [
       "decompiler_intrinsic",
-      "param_count_too_many"
+      "param_count_too_many",
+      "stack_param"
     ],
     "total_lines": 272
   },
@@ -384,66 +391,115 @@
   },
   "suspects": [
     {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_ffffff98",
+      "text": "uint in_stack_ffffff98;",
+      "type": "stack_param"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 27,
+      "line": 29,
       "match": "ROUND",
-      "text": "local_24 = (int)ROUND(dVar1);",
+      "text": "local_24 = (int)ROUND(ROUND(dVar1));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
+      "line": 29,
       "match": "ROUND",
-      "text": "local_20 = (int)ROUND(dVar1);",
+      "text": "local_24 = (int)ROUND(ROUND(dVar1));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 31,
+      "match": "ROUND",
+      "text": "local_20 = (int)ROUND(ROUND(dVar1));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 31,
+      "match": "ROUND",
+      "text": "local_20 = (int)ROUND(ROUND(dVar1));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 33,
       "match": "ROUND",
-      "text": "local_1c = (int)ROUND(dVar1);",
+      "text": "local_1c = (int)ROUND(ROUND(dVar1));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 37,
+      "line": 33,
       "match": "ROUND",
-      "text": "local_18 = (int)ROUND(dVar1);",
+      "text": "local_1c = (int)ROUND(ROUND(dVar1));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 40,
+      "line": 35,
+      "match": "ROUND",
+      "text": "local_18 = (int)ROUND(ROUND(dVar1));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 35,
+      "match": "ROUND",
+      "text": "local_18 = (int)ROUND(ROUND(dVar1));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 38,
       "match": "CONCAT44",
       "text": "((double)CONCAT44(SUB84(coord_y1,0),(int)((ulonglong)(double)local_14 >> 0x20)",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 40,
+      "line": 38,
       "match": "SUB84",
       "text": "((double)CONCAT44(SUB84(coord_y1,0),(int)((ulonglong)(double)local_14 >> 0x20)",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
-      "match": "CONCAT44",
-      "text": "(double)CONCAT44(SUB84(coord_y2,0),(int)((ulonglong)coord_y1 >> 0x20)),",
+      "line": 40,
+      "match": "CONCAT26",
+      "text": "(double)CONCAT26((short)((ulonglong)coord_y2 >> 0x10),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
-      "match": "SUB84",
-      "text": "(double)CONCAT44(SUB84(coord_y2,0),(int)((ulonglong)coord_y1 >> 0x20)),",
+      "line": 41,
+      "match": "CONCAT24",
+      "text": "CONCAT24(SUB82(coord_y2,0),",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 41,
+      "match": "SUB82",
+      "text": "CONCAT24(SUB82(coord_y2,0),",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 43,
+      "match": "in_stack_ffffff98",
+      "text": "(double)CONCAT44(in_stack_ffffff98,(int)((ulonglong)coord_y2 >> 0x20)));",
+      "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 43,
       "match": "CONCAT44",
-      "text": "(double)CONCAT44(uVar3,(int)((ulonglong)coord_y2 >> 0x20)));",
+      "text": "(double)CONCAT44(in_stack_ffffff98,(int)((ulonglong)coord_y2 >> 0x20)));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -463,50 +519,120 @@
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 48,
-      "match": "CONCAT44",
-      "text": "(double)CONCAT44(SUB84(coord_x2,0),(int)((ulonglong)coord_x1 >> 0x20)),",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 48,
-      "match": "SUB84",
-      "text": "(double)CONCAT44(SUB84(coord_x2,0),(int)((ulonglong)coord_x1 >> 0x20)),",
+      "match": "CONCAT26",
+      "text": "(double)CONCAT26((short)((ulonglong)coord_x2 >> 0x10),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 49,
+      "match": "CONCAT24",
+      "text": "CONCAT24(SUB82(coord_x2,0),",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 49,
+      "match": "SUB82",
+      "text": "CONCAT24(SUB82(coord_x2,0),",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 51,
+      "match": "in_stack_ffffff98",
+      "text": "(double)CONCAT44(in_stack_ffffff98,(int)((ulonglong)coord_x2 >> 0x20)));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 51,
       "match": "CONCAT44",
-      "text": "(double)CONCAT44(uVar3,(int)((ulonglong)coord_x2 >> 0x20)));",
+      "text": "(double)CONCAT44(in_stack_ffffff98,(int)((ulonglong)coord_x2 >> 0x20)));",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 63,
-      "match": "ROUND",
-      "text": "*(int *)atlas_width = (int)ROUND(dVar1);",
-      "type": "decompiler_intrinsic"
+      "description": "Unresolved stack parameter",
+      "line": 53,
+      "match": "in_stack_ffffff98",
+      "text": "in_stack_ffffff98 = SUB84(dVar2,0);",
+      "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 65,
-      "match": "ROUND",
-      "text": "*(int *)atlas_height = (int)ROUND(dVar1);",
+      "line": 53,
+      "match": "SUB84",
+      "text": "in_stack_ffffff98 = SUB84(dVar2,0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 58,
+      "match": "in_stack_ffffff98",
+      "text": "local_2c = local_2c + (double)CONCAT44(uStack_64,in_stack_ffffff98);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 58,
+      "match": "CONCAT44",
+      "text": "local_2c = local_2c + (double)CONCAT44(uStack_64,in_stack_ffffff98);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 67,
       "match": "ROUND",
-      "text": "*(int *)red_out = (int)ROUND(dVar1);",
+      "text": "*(int *)atlas_width = (int)ROUND(ROUND(local_4c + 0.5));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 67,
+      "match": "ROUND",
+      "text": "*(int *)atlas_width = (int)ROUND(ROUND(local_4c + 0.5));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 68,
+      "match": "ROUND",
+      "text": "*(int *)atlas_height = (int)ROUND(ROUND(local_44 + 0.5));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 68,
+      "match": "ROUND",
+      "text": "*(int *)atlas_height = (int)ROUND(ROUND(local_44 + 0.5));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 69,
       "match": "ROUND",
-      "text": "*(int *)green_out = (int)ROUND(dVar1);",
+      "text": "*(int *)red_out = (int)ROUND(ROUND(local_3c + 0.5));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 69,
+      "match": "ROUND",
+      "text": "*(int *)red_out = (int)ROUND(ROUND(local_3c + 0.5));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 70,
+      "match": "ROUND",
+      "text": "*(int *)green_out = (int)ROUND(ROUND(local_34 + 0.5));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 70,
+      "match": "ROUND",
+      "text": "*(int *)green_out = (int)ROUND(ROUND(local_34 + 0.5));",
       "type": "decompiler_intrinsic"
     },
     {

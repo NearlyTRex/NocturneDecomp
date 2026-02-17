@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:
-;   core_morph.cpp_FUN_0052bcb0 at 0052ca6c
+;   core_morph.cpp_CMorph_editMorph_FUN_0052bcb0 at 0052ca6c
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_SMorphControlPointTypeInfo

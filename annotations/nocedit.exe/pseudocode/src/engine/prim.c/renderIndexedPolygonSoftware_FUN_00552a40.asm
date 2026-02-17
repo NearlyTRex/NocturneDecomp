@@ -32,7 +32,7 @@
 ;   int g_CullingMode
 ;   int g_UseExternalRenderer
 ;   int g_ProcessorType
-;   _BIT_INTEGER g_RenderStateFlags
+;   _BIT_INTEGER32 g_RenderStateFlags
 ;   ... and 19 more
 ;
 ; Called Functions:

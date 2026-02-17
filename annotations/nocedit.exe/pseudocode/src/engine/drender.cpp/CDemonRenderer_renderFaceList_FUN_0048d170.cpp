@@ -9,7 +9,7 @@
 void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0048d170(CDemonRenderer *this_ptr,SInputFace *face_array,int face_count,int render_flags)
 
 {
-  _BIT_INTEGER _Var1;
+  _BIT_INTEGER32 _Var1;
   int iVar2;
   int iVar3;
   CVector3i local_24;

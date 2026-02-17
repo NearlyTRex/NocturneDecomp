@@ -40,73 +40,79 @@
       {
         "category": "format_error",
         "column": 89,
-        "line": 1041,
+        "line": 1042,
         "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 86,
-        "line": 1262,
+        "line": 1263,
         "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "incompatible_types",
         "column": 64,
-        "line": 1366,
+        "line": 1367,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "other",
         "column": 65,
-        "line": 1383,
+        "line": 1384,
         "message": "assigning to 'char *' from 'const char *' discards qualifiers"
       },
       {
         "category": "other",
         "column": 65,
-        "line": 1386,
+        "line": 1387,
         "message": "assigning to 'char *' from 'const char *' discards qualifiers"
       },
       {
         "category": "other",
         "column": 65,
-        "line": 1408,
+        "line": 1409,
         "message": "assigning to 'char *' from 'const char *' discards qualifiers"
       },
       {
         "category": "other",
         "column": 65,
-        "line": 1411,
+        "line": 1412,
         "message": "assigning to 'char *' from 'const char *' discards qualifiers"
       },
       {
         "category": "undeclared_identifier",
         "column": 78,
-        "line": 1526,
+        "line": 1527,
         "message": "use of undeclared identifier 'SUB14'"
       },
       {
         "category": "format_error",
         "column": 83,
-        "line": 2127,
+        "line": 2128,
         "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 2470,
+        "line": 2471,
         "message": "C-style cast from 'struct CDemonActor *' to 'float' is not allowed"
       },
       {
         "category": "format_error",
         "column": 83,
-        "line": 2631,
+        "line": 2632,
         "message": "format specifies type 'float *' but the argument has type 'uint *' (aka 'unsigned int *') [-Werror,-Wformat]"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 63,
+        "line": 2819,
+        "message": "use of undeclared identifier 'PTR_00662638'"
       },
       {
         "category": "format_error",
         "column": 73,
-        "line": 3362,
+        "line": 3369,
         "message": "format specifies type 'char *' but the argument has type 'C3DSLight *' [-Werror,-Wformat]"
       }
     ],
@@ -115,18 +121,18 @@
   },
   "complexity": {
     "assembly_lines": 7415,
-    "complexity_score": 3447,
+    "complexity_score": 3454,
     "cross_reference_count": 4,
     "function_call_count": 77,
     "global_count": 341,
-    "pseudocode_lines": 3352,
+    "pseudocode_lines": 3359,
     "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "warning_type_propagation"
     ],
-    "total_lines": 10767
+    "total_lines": 10774
   },
   "cross_references": [
     {
@@ -200,7 +206,7 @@
     {
       "addr": "0041a050",
       "is_variadic": false,
-      "name": "core_bodypart.cpp_CBodyPart_FUN_0041a050"
+      "name": "core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050"
     },
     {
       "addr": "00418e10",
@@ -210,7 +216,7 @@
     {
       "addr": "0041b510",
       "is_variadic": false,
-      "name": "core_bodypart.cpp_FUN_0041b510"
+      "name": "core_bodypart.cpp_subtractVector_FUN_0041b510"
     },
     {
       "addr": "00427b70",
@@ -235,7 +241,7 @@
     {
       "addr": "004a9ef0",
       "is_variadic": false,
-      "name": "core_enemy.cpp_CEnemy_FUN_004a9ef0"
+      "name": "core_enemy.cpp_CEnemy_setVictim_FUN_004a9ef0"
     },
     {
       "addr": "004adca0",
@@ -2253,9 +2259,9 @@
     },
     {
       "addr": "00662638",
-      "name": "DAT_00662638",
-      "type": "undefined4",
-      "value": null
+      "name": "PTR_00662638",
+      "type": "CDemonActor*",
+      "value": "ffffffff"
     },
     {
       "addr": "0066e8e0",
@@ -3967,35 +3973,35 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 1354,
+      "line": 1355,
       "match": "CONCAT44",
       "text": "dVar1 = (double)CONCAT44(local_124,local_11c);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 1359,
+      "line": 1360,
       "match": "SUB84",
       "text": "SUB84(dVar1,0),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 1395,
+      "line": 1396,
       "match": "CONCAT44",
       "text": "dVar1 = (double)CONCAT44(local_124,local_11c);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 1519,
+      "line": 1520,
       "match": "SUB14",
       "text": "updateVictim)(local_c4,SUB14(local_c0 == 0,0))",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 3199,
+      "line": 3206,
       "match": "CONCAT44",
       "text": "dVar1 = (double)CONCAT44(pcVar17,local_124);",
       "type": "decompiler_intrinsic"

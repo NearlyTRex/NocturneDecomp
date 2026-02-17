@@ -1,40 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 47,
-        "line": 35,
-        "message": "C-style cast from 'CWaterActor *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 13,
-        "line": 48,
-        "message": "C-style cast from 'CWaterActor *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 31,
-        "line": 56,
-        "message": "C-style cast from 'CWaterActor *' to 'float' is not allowed"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 114,
-    "complexity_score": 76,
+    "complexity_score": 84,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 10,
-    "pseudocode_lines": 61,
-    "suspect_count": 1,
+    "pseudocode_lines": 59,
+    "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 175
+    "total_lines": 173
   },
   "cross_references": [],
   "function": {
@@ -211,9 +192,16 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 14,
+      "line": 13,
       "match": "ROUND",
-      "text": "iVar2 = iVar2 + (int)ROUND(dVar4);",
+      "text": "(int)ROUND(ROUND(delta_time * (float)65536 * (float)8));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 13,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(delta_time * (float)65536 * (float)8));",
       "type": "decompiler_intrinsic"
     }
   ],

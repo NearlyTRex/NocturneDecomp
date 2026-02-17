@@ -1,42 +1,23 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 26,
-        "line": 126,
-        "message": "cannot cast from type 'float' to pointer type 'byte *' (aka 'unsigned char *')"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 127,
-        "message": "C-style cast from 'byte *' (aka 'unsigned char *') to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 85,
-        "line": 128,
-        "message": "C-style cast from 'byte *' (aka 'unsigned char *') to 'float' is not allowed"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 657,
-    "complexity_score": 345,
+    "complexity_score": 348,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 15,
-    "pseudocode_lines": 240,
+    "pseudocode_lines": 243,
     "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_many",
       "pointer_cast"
     ],
-    "total_lines": 897
+    "total_lines": 900
   },
   "cross_references": [
     {
@@ -705,58 +686,58 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 128,
-      "match": "SQRT",
-      "text": "local_12c.surface_normal.A = (int)((float)127 / SQRT(fVar2));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 140,
-      "match": "ROUND",
-      "text": "local_28 = (float)(int)ROUND(dVar10);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
       "line": 142,
+      "match": "SQRT",
+      "text": "local_130 = (float)127 / SQRT(fVar3);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 147,
       "match": "ROUND",
-      "text": "local_2c = (float)(int)ROUND(dVar11);",
+      "text": "local_2c = (int)ROUND(ROUND(local_38 + 127.0f));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 144,
+      "line": 147,
       "match": "ROUND",
-      "text": "local_30 = (float)(int)ROUND(dVar10);",
+      "text": "local_2c = (int)ROUND(ROUND(local_38 + 127.0f));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 146,
+      "line": 148,
       "match": "ROUND",
-      "text": "(g_CDemonRendererPtr2,(int)local_30,(int)ROUND(dVar11),iVar7);",
+      "text": "local_30 = (int)ROUND(ROUND(local_34 + 127.0f));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 166,
-      "match": "NAN",
-      "text": "local_68 = -NAN;",
+      "line": 148,
+      "match": "ROUND",
+      "text": "local_30 = (int)ROUND(ROUND(local_34 + 127.0f));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 207,
-      "match": "NAN",
-      "text": "local_64 = -NAN;",
+      "line": 151,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(local_3c + 127.0f)),local_2c);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 151,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(local_3c + 127.0f)),local_2c);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 220,
-      "match": "(float *)((int)",
-      "text": "(fVar2 = *(float *)((int)this_ptr->index_data_ptr[lod_index] + (int)local_4c),",
+      "line": 225,
+      "match": "(int *)((int)",
+      "text": "(iVar7 = *(int *)((int)this_ptr->index_data_ptr[lod_index] + local_4c),",
       "type": "pointer_cast"
     },
     {

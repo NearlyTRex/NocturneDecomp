@@ -82,7 +82,7 @@
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
 ;   core_enemy.cpp_CEnemy_FUN_004a9880
 ;   core_enemy.cpp_CEnemy_FUN_004a9fd0
-;   core_gore.cpp_CGore_FUN_004ede30
+;   core_gore.cpp_CGore_createBloodPool_FUN_004ede30
 ;   ... and 9 more
 ;
 ; *****************************************************************************
@@ -336,8 +336,8 @@ section .text
     PUSH EAX                            ; 004f71c3
     MOV EDI,dword ptr [0x0067b9a0]      ; 004f71c4 | g_CGorePtr
     PUSH EDI                            ; 004f71ca | g_CGoreInstance
-    CALL core_gore.cpp_CGore_FUN_004ede30 ; 004f71cb
-        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004ede30(CGore * this_ptr)
+    CALL core_gore.cpp_CGore_createBloodPool_FUN_004ede30 ; 004f71cb
+        ;   XREF to: 004ede30 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_createBloodPool_FUN_004ede30(CGore * this_ptr, CVector3f * position, int blood_type)
     ADD ESP,0xc                         ; 004f71d0
     MOV dword ptr [EBX + 0xbe28],0x1    ; 004f71d3
     JMP 0x004f7017                      ; 004f71dd
@@ -518,7 +518,7 @@ section .text
         ;   Label: LAB_004f73be
     PUSH EBX                            ; 004f73c4
     CALL core_enemy.cpp_CEnemy_FUN_004a9fd0 ; 004f73c5
-        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr)
+        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004f73ca
     TEST EAX,EAX                        ; 004f73cd
     JZ 0x004f7017                       ; 004f73cf
@@ -546,7 +546,7 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 004f740d
     PUSH EBX                            ; 004f7413
     CALL core_enemy.cpp_CEnemy_FUN_004a9fd0 ; 004f7414
-        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr)
+        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004f7419
     TEST EAX,EAX                        ; 004f741c
     JNZ 0x004f73d5                      ; 004f741e

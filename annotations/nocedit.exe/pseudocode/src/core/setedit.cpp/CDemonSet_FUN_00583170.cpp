@@ -100,7 +100,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
   double local_78;
   int *local_70;
   int *local_6c;
-  _BIT_INTEGER local_68;
+  _BIT_INTEGER32 local_68;
   C3DSCamera *local_64;
   float local_60;
   float local_5c;

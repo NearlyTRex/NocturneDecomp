@@ -26,7 +26,7 @@
 ;   int g_CullingMode
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
 ;   int g_UseExternalRenderer
-;   _BIT_INTEGER g_RenderStateFlags
+;   _BIT_INTEGER32 g_RenderStateFlags
 ;   int g_RenderStateFlag2
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber

@@ -21,10 +21,10 @@ void __cdecl core_baron_cpp_CBaronWeapon_setWeaponState_FUN_00413e90(CBaronWeapo
       core_main_c_displayErrorAndQuit_FUN_00506f10("CBaronWeapon::setWeaponState - I'm drawn, but nobody's carrying me??");
     }
     core_baron_cpp_CBaronWeapon_FUN_00413f20(this_ptr);
-    core_baron_cpp_FUN_00413470(this_ptr->unk,pCVar1);
+    core_baron_cpp_FUN_00413470((int)this_ptr->baron,pCVar1);
   }
-  else if ((CBaron *)this_ptr->unk != (CBaron *)0x0) {
-    core_baron_cpp_CBaron_FUN_004135a0((CBaron *)this_ptr->unk,(int)pCVar1);
+  else if (this_ptr->baron != (CBaron *)0x0) {
+    core_baron_cpp_CBaron_FUN_004135a0(this_ptr->baron,(int)pCVar1);
     return;
   }
   return;

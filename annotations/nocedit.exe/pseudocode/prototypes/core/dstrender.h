@@ -5,7 +5,7 @@
 
 // Original: core_dstrender.cpp_saveMMXRegisters_FUN_004906b0
 // Address: 004906b0
-void __cdecl saveMMXRegisters(void);
+void __mmx_save saveMMXRegisters(ulonglong mm0,ulonglong mm1,ulonglong mm2,ulonglong mm3,ulonglong mm4,ulonglong mm5,ulonglong mm6,ulonglong mm7);
 
 // Original: core_dstrender.cpp_renderDepthOnlyReversed_FUN_004906e9
 // Address: 004906e9
@@ -103,9 +103,9 @@ void __cdecl blendLightmapToTexture64BitOutput(uint *output_buffer,ulonglong *te
 // Address: 00492e8a
 void __cdecl alphaBlendPixelsMMX(uint *output_buffer,uint *source1_buffer,uint *source2_buffer,uint alpha1,uint alpha2,int pixel_count);
 
-// Original: core_dstrender.cpp_blendLightmapToTextureMMX_Variant2_FUN_00492f03
+// Original: core_dstrender.cpp_blendLightmapToTextureMMX_FUN_00492f03
 // Address: 00492f03
-void __cdecl blendLightmapToTextureMMX::Variant2(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
+void __cdecl blendLightmapToTextureMMX(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 
 // Original: core_dstrender.cpp_blendBilerpTextureWithLightmapMMX_FUN_00493450
 // Address: 00493450

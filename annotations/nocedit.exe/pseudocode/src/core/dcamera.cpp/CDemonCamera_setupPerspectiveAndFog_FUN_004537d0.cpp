@@ -30,10 +30,11 @@ void __cdecl core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0(C
        (float)(*((this_ptr->base).vtable)->calculatePerspective)(this_ptr,&local_10,max_distance);
   uVar1 = g_LightmapTexturePalette[g_FogColorIndexB] & 0xff;
   if (g_BitsPerPixel == 0x20) {
-    uVar2 = (g_LightmapTexturePalette[g_FogColorIndexR] & 0xff) << ((byte)g_RedBitPosition & 0x1f) |
-            (g_LightmapTexturePalette[g_FogColorIndexG] & 0xff) << ((byte)g_GreenBitPosition & 0x1f)
-    ;
-    uVar1 = uVar1 << ((byte)g_BlueBitPosition & 0x1f);
+    uVar2 = (g_LightmapTexturePalette[g_FogColorIndexR] & 0xff) <<
+            (g_RedBitPosition.bytes[0] & 0x1f) |
+            (g_LightmapTexturePalette[g_FogColorIndexG] & 0xff) <<
+            (g_GreenBitPosition.bytes[0] & 0x1f);
+    uVar1 = uVar1 << (g_BlueBitPosition.bytes[0] & 0x1f);
   }
   else {
     uVar2 = (g_LightmapTexturePalette[g_FogColorIndexR] & 0xff) << 0x10 |

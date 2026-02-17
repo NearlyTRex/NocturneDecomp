@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 int __cdecl core_vessel_cpp_CCryptVessel_renderTransparent_FUN_005e98b0(CCryptVessel *this_ptr)
 
 {
@@ -13,8 +15,6 @@ int __cdecl core_vessel_cpp_CCryptVessel_renderTransparent_FUN_005e98b0(CCryptVe
   CKeyFramedModel *pCVar2;
   char *pcVar3;
   char *pcVar4;
-  double dVar5;
-  uint uVar6;
   CVector3i local_2c;
   CVector3i local_20;
   uint local_14;
@@ -39,13 +39,10 @@ int __cdecl core_vessel_cpp_CCryptVessel_renderTransparent_FUN_005e98b0(CCryptVe
             (g_CDemonRendererPtr2,&local_20,&local_2c);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xffff);
   if (this_ptr->visual_type == 2) {
-    uVar6 = 0x5e9a3e;
-    dVar5 = round((double)this_ptr->unk7);
-    local_14 = (uint)ROUND(dVar5);
+    local_14 = (uint)ROUND(ROUND(this_ptr->unk7));
     pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->unk5);
     _sprintf
-              (pCVar2->texture_list[0].base.texture_name,"BWATER%d.RAW",local_14 & 0xf,
-               uVar6);
+              (pCVar2->texture_list[0].base.texture_name,"BWATER%d.RAW",local_14 & 0xf);
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,48000);
   }
   else {

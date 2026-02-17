@@ -413,7 +413,7 @@ void __cdecl CDeformableModelInstance::renderBones(CDeformableModelInstance *thi
 
 // Original: core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800
 // Address: 005a1800
-void __cdecl CDeformableModelInstance::computeCylindricalUVs(CDeformableModelInstance *this_ptr);
+void __cdecl CDeformableModelInstance::computeCylindricalUVs(CDeformableModelInstance *this_ptr,int param_2,int param_3);
 
 // Original: core_skeleton.cpp_computeBoneWorldMatrices_FUN_005a1950
 // Address: 005a1950

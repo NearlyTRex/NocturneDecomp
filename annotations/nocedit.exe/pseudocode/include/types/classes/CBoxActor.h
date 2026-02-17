@@ -1,10 +1,8 @@
 #pragma once
 
-// Forward declarations
-struct CSimBox;
-
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBox.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CVector3f.h"
@@ -19,19 +17,17 @@ typedef struct CBoxActor {
     uint sfx_handle; // 0x2fc
     CVector3f rpm; // 0x300
     float fps; // 0x30c
-    int unk2; // 0x310
+    float anim_frame; // 0x310
     int pickup_type; // 0x314
     struct CDemonActor* carrier_actor; // 0x318
     int can_be_pushed; // 0x31c
     struct CDemonActor* pushed_by_actor; // 0x320
-    int constrain_extents_actor; // 0x324
-    int unk3; // 0x328
+    struct CDemonActor* constrain_extents_actor; // 0x324
+    int padding; // 0x328
     char push_sound[100]; // 0x32c
     float weight_in_pounds; // 0x390
-    struct CSimBox* sim_box; // 0x394
-    char unk4[592]; // 0x398
-    int unk5; // 0x5e8
-    int unk6; // 0x5ec
+    CBox physics_box; // 0x394
+    float ground_height; // 0x5ec
     int ground_type; // 0x5f0
     int plot_in_shadow_flag; // 0x5f4
     int collision_flag; // 0x5f8

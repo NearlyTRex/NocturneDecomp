@@ -24,7 +24,7 @@
 ; Referenced Globals:
 ;   CVector3i[15360] g_PrecomputedWorldPositions
 ;   int[76800] g_PrecomputedDepthBuffer
-;   _BIT_INTEGER g_CameraDownscaleIterations
+;   _BIT_INTEGER32 g_CameraDownscaleIterations
 ;   int[240][320] g_CoronaDepthBuffer
 ;   CDemonGlobe* g_CurrentGlobe
 ;   int g_CoronaVisibilityEnabled

@@ -14,8 +14,8 @@
 ;   core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453270 at 004535ee
 ;
 ; Referenced Globals:
-;   ulonglong g_AmbientLightMMX1 = 0x4000400040004
-;   ulonglong g_AmbientLightMMX2 = 0xc000c000c000c
+;   _MMX_INTEGER g_AmbientLightMMX1
+;   _MMX_INTEGER g_AmbientLightMMX2
 ;   ushort[384] g_LightmapData
 ;   double g_LightmapXorMask = 0.126945525291829
 ;   uint[256] g_LightmapTexturePalette

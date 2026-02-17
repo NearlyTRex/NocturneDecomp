@@ -1736,8 +1736,8 @@ section .text
     ADD ESP,0x4                         ; 0053a37a
     MOV EBX,dword ptr [0x0067b9a0]      ; 0053a37d | g_CGoreInstance | g_CGorePtr
     PUSH EBX                            ; 0053a383 | g_CGoreInstance
-    CALL core_gore.cpp_CGore_FUN_004ed7b0 ; 0053a384
-        ;   XREF to: 004ed7b0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004ed7b0(CGore * this_ptr)
+    CALL core_gore.cpp_CGore_renderParticles_FUN_004ed7b0 ; 0053a384
+        ;   XREF to: 004ed7b0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_renderParticles_FUN_004ed7b0(CGore * this_ptr)
     ADD ESP,0x4                         ; 0053a389
     PUSH 0x1                            ; 0053a38c
     MOV ESI,dword ptr [0x006703ec]      ; 0053a38e | g_CDemonRendererPtr2

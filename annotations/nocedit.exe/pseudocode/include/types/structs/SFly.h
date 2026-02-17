@@ -7,7 +7,7 @@
 // Structure: SFly
 // Ghidra size: 0x34 (52 bytes)
 typedef struct SFly {
-    char unk1[4]; // 0x0
-    CVector3f unk2[4]; // 0x4
+    float t; // 0x0
+    CVector3f control_points[4]; // 0x4
 } SFly;
 

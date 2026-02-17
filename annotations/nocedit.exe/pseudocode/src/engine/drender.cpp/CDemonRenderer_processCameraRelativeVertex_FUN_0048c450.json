@@ -6,17 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 77,
+    "complexity_score": 75,
     "cross_reference_count": 77,
     "function_call_count": 2,
     "global_count": 1,
-    "pseudocode_lines": 17,
-    "suspect_count": 5,
+    "pseudocode_lines": 10,
+    "suspect_count": 6,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "suspect_float"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 42
+    "total_lines": 35
   },
   "cross_references": [
     {
@@ -310,13 +309,13 @@
     {
       "addr": "004ecce0",
       "from_addr": "004ecd2f",
-      "name": "core_gore.cpp_CBloodPool_FUN_004ecce0",
+      "name": "core_gore.cpp_CBloodPool_render_FUN_004ecce0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004ec500",
       "from_addr": "004ec55a",
-      "name": "core_gore.cpp_CBloodSplat_FUN_004ec500",
+      "name": "core_gore.cpp_CBloodSplat_render_FUN_004ec500",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -344,15 +343,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0052ca90",
-      "from_addr": "0052cb27",
-      "name": "core_morph.cpp_CMorph_FUN_0052ca90",
+      "addr": "0052bcb0",
+      "from_addr": "0052c261",
+      "name": "core_morph.cpp_CMorph_editMorph_FUN_0052bcb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0052bcb0",
-      "from_addr": "0052c261",
-      "name": "core_morph.cpp_FUN_0052bcb0",
+      "addr": "0052ca90",
+      "from_addr": "0052cb27",
+      "name": "core_morph.cpp_CMorph_previewMorph_FUN_0052ca90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -586,38 +585,45 @@
   },
   "suspects": [
     {
-      "description": "Likely misinterpreted integer as float",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 9,
+      "match": "ROUND",
+      "text": "CStack_10.x = (float)(int)ROUND(ROUND((double)world_position->x * 256));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 9,
+      "match": "ROUND",
+      "text": "CStack_10.x = (float)(int)ROUND(ROUND((double)world_position->x * 256));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 10,
-      "match": "6.68261e-39",
-      "text": "CStack_18.x = 6.68261e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 12,
       "match": "ROUND",
-      "text": "CStack_18.y = (float)(int)ROUND(dVar1);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 13,
-      "match": "6.68263e-39",
-      "text": "CStack_18.w = 6.68263e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 15,
-      "match": "ROUND",
-      "text": "CStack_18.y = (float)(int)ROUND(dVar1);",
+      "text": "CStack_10.y = (float)(int)ROUND(ROUND((double)world_position->y * 256));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 17,
+      "line": 10,
       "match": "ROUND",
-      "text": "CStack_18.y = (float)(int)ROUND(dVar2);",
+      "text": "CStack_10.y = (float)(int)ROUND(ROUND((double)world_position->y * 256));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 11,
+      "match": "ROUND",
+      "text": "CStack_10.z = (float)(int)ROUND(ROUND(256 * (double)world_position->z));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 11,
+      "match": "ROUND",
+      "text": "CStack_10.z = (float)(int)ROUND(ROUND(256 * (double)world_position->z));",
       "type": "decompiler_intrinsic"
     }
   ]

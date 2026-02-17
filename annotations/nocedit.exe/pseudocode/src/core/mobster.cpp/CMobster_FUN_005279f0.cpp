@@ -2,49 +2,46 @@
 // Address: 005279f0
 // Address Range: [[005279f0, 00527b66]]
 // Convention: __cdecl
-// Signature: void __cdecl core_mobster_cpp_CMobster_FUN_005279f0(CMobster *this_ptr)
+// Signature: void __cdecl core_mobster_cpp_CMobster_FUN_005279f0(CMobster *this_ptr,int taunt_category)
 
 #include "nocturne.h"
 
-void __cdecl core_mobster_cpp_CMobster_FUN_005279f0(CMobster *this_ptr)
+void __cdecl core_mobster_cpp_CMobster_FUN_005279f0(CMobster *this_ptr,int taunt_category)
 
 {
-  uint sfx_handle;
   CGame *pCVar1;
   CDemonActor *pCVar2;
   int iVar3;
   uint uVar4;
   int iVar5;
   int iVar6;
-  int in_stack_00000008;
   char local_80 [100];
   int local_1c;
   int local_18;
   float local_14;
   
-  if (*(float *)(this_ptr->unk1 + 0x18) <= 0.0) {
-    iVar6 = 0;
-    local_1c = in_stack_00000008 + 0x60;
-    iVar5 = in_stack_00000008 * 4;
+  if (this_ptr->taunt_timer <= 0.0) {
+    iVar5 = 0;
+    local_1c = taunt_category + 0x60;
     do {
       pCVar1 = g_CGamePtr;
-      iVar3 = *(int *)(&DAT_02f37eb4 + iVar5);
-      *(int *)(&DAT_02f37eb4 + iVar5) = iVar3 + 1;
-      if (((pCVar1->foul_language_flag != 0) || (in_stack_00000008 != 1)) || (iVar3 + 1 != 6)) {
+      iVar6 = g_MobsterTauntCounters[taunt_category];
+      g_MobsterTauntCounters[taunt_category] = iVar6 + 1;
+      if (((pCVar1->foul_language_flag != 0) || (taunt_category != 1)) || (iVar6 + 1 != 6)) {
         _sprintf
-                  (local_80,"mobster-cheese-%c-%c-%d.wav",(uint)(byte)this_ptr->unk1[0x14],
-                   local_1c,*(uint *)(&DAT_02f37eb4 + iVar5));
+                  (local_80,"mobster-cheese-%c-%c-%d.wav",
+                   (uint)(this_ptr->sound_variant).bytes[0],local_1c,
+                   g_MobsterTauntCounters[taunt_category]);
         local_14 = core_sound_cpp_CSound_getSoundDuration_FUN_005b3ba0(g_CSoundPtr,local_80);
-        *(float *)(this_ptr->unk1 + 0x18) = local_14;
-        if (0.0 < *(float *)(this_ptr->unk1 + 0x18)) break;
-        *(uint *)(&DAT_02f37eb4 + iVar5) = 0;
+        this_ptr->taunt_timer = local_14;
+        if (0.0 < this_ptr->taunt_timer) break;
+        g_MobsterTauntCounters[taunt_category] = 0;
       }
-      iVar6 = iVar6 + 1;
-    } while (iVar6 < 3);
-    if (0.0 < *(float *)(this_ptr->unk1 + 0x18)) {
-      sfx_handle = *(uint *)(this_ptr->unk2 + 0xc);
-      *(float *)(this_ptr->unk1 + 0x18) = *(float *)(this_ptr->unk1 + 0x18) + 5.0f;
-      iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(sfx_handle);
+      iVar5 = iVar5 + 1;
+    } while (iVar5 < 3);
+    if (0.0 < this_ptr->taunt_timer) {
+      this_ptr->taunt_timer = this_ptr->taunt_timer + 5.0f;
+      iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handle_2);
       if (iVar5 == 0) {
         iVar6 = 0;
         iVar5 = 0;
@@ -53,7 +50,7 @@ void __cdecl core_mobster_cpp_CMobster_FUN_005279f0(CMobster *this_ptr)
           if (g_CDemonSetPtr->enemy_count <= iVar6) {
             uVar4 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                               ((CDemonActor *)this_ptr,local_80);
-            *(uint *)(this_ptr->unk2 + 4) = uVar4;
+            this_ptr->sfx_handle_1 = uVar4;
             return;
           }
           pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790

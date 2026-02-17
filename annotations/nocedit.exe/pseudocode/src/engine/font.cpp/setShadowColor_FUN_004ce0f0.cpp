@@ -14,14 +14,15 @@ void __cdecl engine_font_cpp_setShadowColor_FUN_004ce0f0(uint red,uint green,uin
   if (g_BitsPerPixel != 8) {
     if (g_BitsPerPixel == 0x10) {
       g_ShadowColor16 =
-           (ushort)(blue / (uint)g_BlueScaleFactor << ((byte)g_BlueBitPosition & 0x1f)) |
-           (ushort)(red / (uint)g_RedScaleFactor << ((byte)g_RedBitPosition & 0x1f)) |
-           (ushort)(green / (uint)g_GreenScaleFactor << ((byte)g_GreenBitPosition & 0x1f));
+           (ushort)(blue / (uint)g_BlueScaleFactor << (g_BlueBitPosition.bytes[0] & 0x1f)) |
+           (ushort)(red / (uint)g_RedScaleFactor << (g_RedBitPosition.bytes[0] & 0x1f)) |
+           (ushort)(green / (uint)g_GreenScaleFactor << (g_GreenBitPosition.bytes[0] & 0x1f));
     }
     else if (g_BitsPerPixel == 0x20) {
       g_ShadowColor32 =
-           blue << ((byte)g_BlueBitPosition & 0x1f) |
-           red << ((byte)g_RedBitPosition & 0x1f) | green << ((byte)g_GreenBitPosition & 0x1f);
+           blue << (g_BlueBitPosition.bytes[0] & 0x1f) |
+           red << (g_RedBitPosition.bytes[0] & 0x1f) | green << (g_GreenBitPosition.bytes[0] & 0x1f)
+      ;
     }
     else {
       g_CurrentFilename = "..\\engine\\font.cpp";

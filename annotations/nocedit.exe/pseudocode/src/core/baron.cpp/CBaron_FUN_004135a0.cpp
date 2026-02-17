@@ -9,10 +9,11 @@
 void __cdecl core_baron_cpp_CBaron_FUN_004135a0(CBaron *this_ptr,int param_2)
 
 {
-  if ((param_2 == this_ptr->unk5) && (this_ptr->unk5 != 0)) {
+  if (((CDemonActor *)param_2 == this_ptr->target_actor) &&
+     (this_ptr->target_actor != (CDemonActor *)0x0)) {
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               (&(this_ptr->base).base.model.motion_controller,7,1);
-    this_ptr->unk5 = 0;
+    this_ptr->target_actor = (CDemonActor *)0x0;
     return;
   }
   return;

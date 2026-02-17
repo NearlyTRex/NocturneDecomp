@@ -29,23 +29,23 @@ ulonglong __cdecl wincore_wddvmem_cpp_initializeColorMasks_FUN_004f3ff0(void)
     iVar5 = iVar5 + 3;
     *(ushort *)((int)g_ColorTable16 + iVar7) =
          (ushort)((uint)(byte)g_SourcePaletteData[iVar3] / (uint)g_BlueScaleFactor <<
-                 ((byte)g_BlueBitPosition & 0x1f)) |
+                 (g_BlueBitPosition.bytes[0] & 0x1f)) |
          (ushort)((uint)(byte)g_SourcePaletteData[iVar2] / (uint)g_GreenScaleFactor <<
-                 ((byte)g_GreenBitPosition & 0x1f)) |
-         (ushort)((uint)*pbVar1 / (uint)g_RedScaleFactor << ((byte)g_RedBitPosition & 0x1f));
+                 (g_GreenBitPosition.bytes[0] & 0x1f)) |
+         (ushort)((uint)*pbVar1 / (uint)g_RedScaleFactor << (g_RedBitPosition.bytes[0] & 0x1f));
     iVar7 = iVar8;
   } while (iVar8 != 0x200);
-  uVar9 = 0xff >> ((byte)g_RedBitCount & 0x1f);
-  g_RedMask16._0_4_ = uVar9 << ((byte)g_RedBitPosition & 0x1f);
-  uVar6 = 0xff >> ((byte)g_GreenBitCount & 0x1f);
-  g_GreenMask16._0_4_ = uVar6 << ((byte)g_GreenBitPosition & 0x1f);
-  uVar4 = 0xff >> ((byte)g_BlueBitCount & 0x1f);
-  g_BlueMask16._0_4_ = uVar4 << ((byte)g_BlueBitPosition & 0x1f);
-  g_BlueMask32._0_4_ = uVar4 << ((byte)g_BlueBitCount & 0x1f);
-  g_RedMask32._0_4_ = (uVar9 << ((byte)g_RedBitCount & 0x1f)) << 0x10;
-  g_GreenMask32._0_4_ = (uVar6 << ((byte)g_GreenBitCount & 0x1f)) << 8;
-  g_TotalColorBits._0_4_ = g_RedBitCount + g_GreenBitCount + g_BlueBitCount;
-  g_BlueBitShift._0_4_ = g_BlueBitCount;
-  g_GreenBlueBits._0_4_ = g_GreenBitCount + g_BlueBitCount;
-  return CONCAT44(g_GreenBitCount,g_GreenBitCount + g_BlueBitCount);
+  uVar9 = 0xff >> (g_RedBitCount.bytes[0] & 0x1f);
+  g_RedMask16.u32[0] = uVar9 << (g_RedBitPosition.bytes[0] & 0x1f);
+  uVar6 = 0xff >> (g_GreenBitCount.bytes[0] & 0x1f);
+  g_GreenMask16.u32[0] = uVar6 << (g_GreenBitPosition.bytes[0] & 0x1f);
+  uVar4 = 0xff >> (g_BlueBitCount.bytes[0] & 0x1f);
+  g_BlueMask16.u32[0] = uVar4 << (g_BlueBitPosition.bytes[0] & 0x1f);
+  g_BlueMask32.u32[0] = uVar4 << (g_BlueBitCount.bytes[0] & 0x1f);
+  g_RedMask32.u32[0] = (uVar9 << (g_RedBitCount.bytes[0] & 0x1f)) << 0x10;
+  g_GreenMask32.u32[0] = (uVar6 << (g_GreenBitCount.bytes[0] & 0x1f)) << 8;
+  g_TotalColorBits.u32[0] = g_RedBitCount.dword + g_GreenBitCount.dword + g_BlueBitCount.dword;
+  g_BlueBitShift.b32[0] = g_BlueBitCount;
+  g_GreenBlueBits.u32[0] = g_GreenBitCount.dword + g_BlueBitCount.dword;
+  return CONCAT44(g_GreenBitCount.dword,g_GreenBitCount.dword + g_BlueBitCount.dword);
 }

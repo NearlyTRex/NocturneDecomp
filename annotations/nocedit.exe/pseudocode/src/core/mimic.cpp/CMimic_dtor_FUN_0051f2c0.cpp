@@ -43,7 +43,7 @@ CMimic * __cdecl core_mimic_cpp_CMimic_dtor_FUN_0051f2c0(CMimic *this_ptr,uint f
                      ((CFlame *)(pCVar3[-1].vertices[0x2cd].connected_indices + 0xd),0);
   pSVar5 = core_armour_cpp_SFire_arrdtor_FUN_00412700
                      ((SFire *)(pCVar4[-2].base.create_event + 0x20),0);
-  pCVar6 = core_armour_cpp_CVector3f_arrdtor_FUN_004126e0((CVector3f *)(pSVar5[-0x16].unk + 4),0);
+  pCVar6 = core_armour_cpp_CVector3f_arrdtor_FUN_004126e0((CVector3f *)&pSVar5[-0x16].bone_index,0);
   pCVar6 = core_armour_cpp_CVector3f_arrdtor_FUN_004126e0(pCVar6 + -0xf,0);
   pCVar7 = core_cloth_cpp_CClothList_dtor_FUN_0043bf80((CClothList *)(pCVar6 + -0x26),0);
   pCVar8 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40

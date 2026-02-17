@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 02d81a9c
-;   char[256] g_KeyboardState
+;   char[512] g_KeyboardState
 ;   undefined4 g_CGameInstance.delta_time_float
 ;
 ; *****************************************************************************

@@ -31,8 +31,24 @@ extern DWORD g_JoyButtons;
 // RenderScanlineFunc*
 extern RenderScanlineFunc* g_ScanlineRenderFunc;
 
-// _BIT_INTEGER
-extern _BIT_INTEGER g_RenderStateFlags;
+// _BIT_INTEGER32
+extern _BIT_INTEGER32 g_RedBitPosition;
+extern _BIT_INTEGER32 g_RedBitCount;
+extern _BIT_INTEGER32 g_GreenBitPosition;
+extern _BIT_INTEGER32 g_GreenBitCount;
+extern _BIT_INTEGER32 g_BlueBitPosition;
+extern _BIT_INTEGER32 g_BlueBitCount;
+extern _BIT_INTEGER32 g_RenderStateFlags;
+
+// _MMX_INTEGER
+extern _MMX_INTEGER g_SavedMMX0;
+extern _MMX_INTEGER g_SavedMMX1;
+extern _MMX_INTEGER g_SavedMMX2;
+extern _MMX_INTEGER g_SavedMMX3;
+extern _MMX_INTEGER g_SavedMMX4;
+extern _MMX_INTEGER g_SavedMMX5;
+extern _MMX_INTEGER g_SavedMMX6;
+extern _MMX_INTEGER g_SavedMMX7;
 
 // byte
 extern byte g_LeftMousePressed;
@@ -46,11 +62,13 @@ extern byte* g_CurrentPalette;
 extern char g_FileTransferErrorMessage[1024];
 
 // char[256]
-extern char g_KeyboardState[256];
 extern char g_EventErrorMessageBuffer[256];
 
 // char[32768]
 extern char g_FileTransferBuffer[32768];
+
+// char[512]
+extern char g_KeyboardState[512];
 
 // char[768]
 extern char g_SourcePaletteData[768];
@@ -59,15 +77,9 @@ extern char g_SourcePaletteData[768];
 extern float g_PerspectiveReciprocal;
 
 // int
-extern int g_RedBitPosition;
 extern int g_RedScaleFactor;
-extern int g_RedBitCount;
-extern int g_GreenBitPosition;
 extern int g_GreenScaleFactor;
-extern int g_GreenBitCount;
-extern int g_BlueBitPosition;
 extern int g_BlueScaleFactor;
-extern int g_BlueBitCount;
 extern int g_ViewportCenterXFixed;
 extern int g_ViewportCenterYFixed;
 extern int g_ViewportRightFixed;
@@ -125,16 +137,6 @@ extern uint g_Hardware32BitPalette[256];
 
 // ulong
 extern ulong g_SolidColorMode;
-
-// ulonglong
-extern ulonglong g_SavedMMX0;
-extern ulonglong g_SavedMMX1;
-extern ulonglong g_SavedMMX2;
-extern ulonglong g_SavedMMX3;
-extern ulonglong g_SavedMMX4;
-extern ulonglong g_SavedMMX5;
-extern ulonglong g_SavedMMX6;
-extern ulonglong g_SavedMMX7;
 
 // ushort[256]
 extern ushort g_ColorTable16[256];

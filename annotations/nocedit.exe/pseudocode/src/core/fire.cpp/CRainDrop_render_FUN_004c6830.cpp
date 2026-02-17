@@ -6,24 +6,21 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl core_fire_cpp_CRainDrop_render_FUN_004c6830(CRainDrop *this_ptr)
 
 {
   SRenderVertex *vertex_ptr;
   int iVar1;
   byte bVar2;
-  double dVar3;
-  int aiStackY_1020 [983];
+  uint auStackY_1020 [984];
   CVector3i *rotation;
-  int iStack_a8;
-  int iStack_a4;
-  int iStack_a0;
-  int iStack_9c;
-  int iStack_98;
-  uint uStack_94;
+  SMRGLHeaderPrimitive SStack_a8;
   uint uStack_90;
   uint uStack_8c;
   uint uStack_88;
+  uint uStack_84;
   CVector3i local_80;
   CVector3i local_74;
   CVector3i local_68;
@@ -32,11 +29,10 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_004c6830(CRainDrop *this_ptr)
   uint local_54;
   CVector3i local_50;
   CVector3i local_44;
-  byte local_38 [12];
-  int iStack_2c;
-  int iStack_28;
+  CVector3i local_38;
+  CVector3i CStack_2c;
   CVector3i local_20;
-  int iStack_14;
+  float fStack_14;
   int iStack_10;
   
   bVar2 = 0;
@@ -54,13 +50,13 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_004c6830(CRainDrop *this_ptr)
   engine_drender_cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0
             (g_CDemonRendererPtr2,&local_20);
   rotation = (CVector3i *)0x0;
-  local_38._0_4_ = local_20.x;
-  *(uint *)(local_38 + (uint)bVar2 * -8 + 4) =
+  local_38.x = local_20.x;
+  *(uint *)((int)&local_38 + (uint)bVar2 * -8 + 4) =
        *(uint *)((int)&local_20 + (uint)bVar2 * -8 + 4);
-  *(uint *)(local_38 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
+  *(uint *)((int)&local_38 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
        *(uint *)((int)&local_20 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
   engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0
-            (g_CDemonRendererPtr2,(CVector3i *)local_38,rotation);
+            (g_CDemonRendererPtr2,&local_38,rotation);
   local_5c = 0xbe000000;
   local_58 = 0xbe000000;
   local_54 = 0;
@@ -96,7 +92,7 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_004c6830(CRainDrop *this_ptr)
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr2,&g_FireEffectRainDropTexture);
   (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)(g_CurrentSceneCamera,this_ptr,0);
-  iStack_14 = 0xffff - (int)g_PerspectiveReciprocal;
+  iStack_10 = 0xffff - (int)g_PerspectiveReciprocal;
   g_RenderVertexBuffer[1].u = 0xd00000;
   g_RenderVertexBuffer[0].u = 0x800000;
   g_RenderVertexBuffer[0].v = 0xdc0000;
@@ -104,33 +100,31 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_004c6830(CRainDrop *this_ptr)
   g_RenderVertexBuffer[2].u = 0x800000;
   g_RenderVertexBuffer[3].u = 0x800000;
   g_RenderVertexBuffer[2].v = (int)g_CameraLoadImageReadBuffer + 0x771b0;
-  iStack_10 = iStack_14;
-  dVar3 = round
-                    ((double)((float)iStack_14 *
-                             (this_ptr->base).lifetime_remaining * (float)4));
-  g_RenderVertexBuffer[0].w_recip = (float)(int)ROUND(dVar3);
+  g_RenderVertexBuffer[0].w_recip =
+       (float)(int)ROUND(ROUND((float)iStack_10 *
+                               (this_ptr->base).lifetime_remaining * (float)4));
   g_RenderVertexBuffer[3].v = (int)g_CameraLoadImageReadBuffer + 0x771b0;
-  local_38._8_4_ = (uint)ROUND((this_ptr->base).position.x * 256.0f);
-  iStack_2c = (int)ROUND((this_ptr->base).position.y * 256.0f);
-  iStack_28 = (int)ROUND((this_ptr->base).position.z * 256.0f);
+  CStack_2c.x = (int)ROUND((this_ptr->base).position.x * 256.0f);
+  CStack_2c.y = (int)ROUND((this_ptr->base).position.y * 256.0f);
+  CStack_2c.z = (int)ROUND((this_ptr->base).position.z * 256.0f);
   g_RenderVertexBuffer[1].w_recip = g_RenderVertexBuffer[0].w_recip;
   g_RenderVertexBuffer[2].w_recip = g_RenderVertexBuffer[0].w_recip;
   g_RenderVertexBuffer[3].w_recip = g_RenderVertexBuffer[0].w_recip;
-  local_20.z = (int)g_RenderVertexBuffer[0].w_recip;
+  fStack_14 = g_RenderVertexBuffer[0].w_recip;
   core_set_cpp_CDemonSet_computeLighting_FUN_0056e110
-            (g_CDemonSetPtr,(CVector3i *)(local_38 + 8),&g_BillboardCameraUp,0,4);
+            (g_CDemonSetPtr,&CStack_2c,&g_BillboardCameraUp,0,4);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
-  iStack_98 = 0;
-  iStack_9c = 0;
-  iStack_a0 = 0;
-  iStack_a4 = 0;
-  uStack_94 = 0;
-  uStack_88 = 3;
-  iStack_a8 = 4;
-  uStack_90 = 1;
-  uStack_8c = 2;
+  SStack_a8.surface_normal.D = 0;
+  SStack_a8.surface_normal.C = 0;
+  SStack_a8.surface_normal.B = 0;
+  SStack_a8.surface_normal.A = 0;
+  uStack_90 = 0;
+  uStack_84 = 3;
+  SStack_a8.base.count = 4;
+  uStack_8c = 1;
+  uStack_88 = 2;
   engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-            (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&stack0xffffff54);
+            (g_CDemonRendererPtr2,&SStack_a8);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
   return;

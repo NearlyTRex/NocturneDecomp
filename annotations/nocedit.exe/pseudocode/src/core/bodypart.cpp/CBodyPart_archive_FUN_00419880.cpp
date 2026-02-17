@@ -26,7 +26,8 @@ void __cdecl core_bodypart_cpp_CBodyPart_archive_FUN_00419880(CBodyPart *this_pt
   core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->tri_count,"triCount");
   core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->texture_count,"textureCount");
   if (g_ActorReadingMode == 1) {
-    core_bodypart_cpp_CBodyPart_setCounts_FUN_004191d0(this_ptr);
+    core_bodypart_cpp_CBodyPart_setCounts_FUN_004191d0
+              (this_ptr,this_ptr->vertex_count,this_ptr->tri_count);
     iVar6 = 0;
     if (0 < this_ptr->vertex_count) {
       iVar9 = 0;
@@ -66,7 +67,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_archive_FUN_00419880(CBodyPart *this_pt
         pcVar8 = pcVar8 + 0x18;
       } while (iVar6 < this_ptr->texture_count);
     }
-    core_bodypart_cpp_CBodyPart_FUN_0041a050(this_ptr);
+    core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_0041a050(this_ptr);
   }
   else {
     iVar6 = 0;
@@ -115,7 +116,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_archive_FUN_00419880(CBodyPart *this_pt
     }
   }
   if (1 < g_CBodyPartClassVersion) {
-    core_actor_cpp_archiveSimBox_FUN_0040bd70((CSimBox *)&this_ptr->sim_box,"simBox");
+    core_actor_cpp_archiveSimBox_FUN_0040bd70((CSimBox *)&this_ptr->physics_box,"simBox");
     core_actor_cpp_archiveActor_FUN_0040b870
               ((CDemonActor *)&this_ptr->carried_by_actor,"carriedByActor");
   }

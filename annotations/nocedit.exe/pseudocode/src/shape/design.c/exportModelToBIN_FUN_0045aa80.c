@@ -6,20 +6,19 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int depth_mode,int scale_mode,int export_format,int include_textures)
 
 {
   char cVar1;
   uint uVar2;
   bool bVar3;
-  char *pcVar4;
+  int iVar4;
   char *pcVar5;
-  double dVar6;
-  uint uVar7;
-  uint uVar8;
-  uint uVar9;
-  uint uVar10;
-  int iVar11;
+  char *pcVar6;
+  double dVar7;
+  int in_stack_ffffff04;
   int local_f8;
   uint local_98;
   uint local_94;
@@ -117,20 +116,16 @@ void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int dep
           local_14 = ABS(g_LoadedVertices[local_28].vertex.z);
         }
       }
-      iVar11 = 0x45adb0;
-      dVar6 = round
-                        (((double)local_14 * 0.6931471805599453) /
-                         (2 * 0.6931471805599453));
-      local_18 = (int)ROUND(dVar6) + 1;
-      dVar6 = ldexp((double)CONCAT44(local_18,0x3ff00000),iVar11);
-      local_14 = (float)64 / (float)dVar6;
+      local_18 = (int)ROUND(ROUND(((double)local_14 * 0.6931471805599453) /
+                                  (2 * 0.6931471805599453))) + 1;
+      dVar7 = ldexp((double)CONCAT44(local_18,0x3ff00000),in_stack_ffffff04)
+      ;
+      local_14 = (float)64 / (float)dVar7;
     }
     local_38 = 0x14;
-    uVar10 = 0x45ae02;
-    dVar6 = round((double)(local_14 * (float)65536));
-    local_34 = (int)ROUND(dVar6);
+    local_34 = (int)ROUND(ROUND(local_14 * (float)65536));
     if (export_format == 0) {
-      _fprintf(local_1c,"\tMAGNIFY\t%d\n\n",local_34,uVar10);
+      _fprintf(local_1c,"\tMAGNIFY\t%d\n\n",local_34);
     }
     else {
       _fwrite(&local_38,1,8,local_1c);
@@ -139,32 +134,23 @@ void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int dep
     local_58 = 0;
     local_54 = g_VertexCount;
     if (export_format == 0) {
-      _fprintf(local_1c,"\tVLIST\t0,%d\n",g_VertexCount,uVar10);
+      _fprintf(local_1c,"\tVLIST\t0,%d\n",g_VertexCount);
     }
     else {
       _fwrite(&local_5c,1,0xc,local_1c);
     }
     for (local_28 = 0; local_28 < g_VertexCount; local_28 = local_28 + 1) {
-      uVar8 = 0x45aeb7;
-      dVar6 = round
-                        ((double)(local_14 *
-                                 g_LoadedVertices[local_28].vertex.x * (float)256
-                                 ));
-      local_68 = (int)ROUND(dVar6);
-      uVar7 = 0x45aed4;
-      dVar6 = round
-                        ((double)(local_14 *
-                                 g_LoadedVertices[local_28].vertex.y * (float)256
-                                 ));
-      local_64 = (int)ROUND(dVar6);
-      uVar10 = 0x45aef1;
-      dVar6 = round
-                        ((double)(local_14 *
-                                 g_LoadedVertices[local_28].vertex.z * (float)256
-                                 ));
-      local_60 = (int)ROUND(dVar6);
+      local_68 = (int)ROUND(ROUND(local_14 *
+                                  g_LoadedVertices[local_28].vertex.x *
+                                  (float)256));
+      local_64 = (int)ROUND(ROUND(local_14 *
+                                  g_LoadedVertices[local_28].vertex.y *
+                                  (float)256));
+      local_60 = (int)ROUND(ROUND(local_14 *
+                                  g_LoadedVertices[local_28].vertex.z *
+                                  (float)256));
       if (export_format == 0) {
-        _fprintf(local_1c,"\tVERTEX\t%d,%d,%d\n",local_68,local_64,local_60,uVar10,uVar7,uVar8);
+        _fprintf(local_1c,"\tVERTEX\t%d,%d,%d\n",local_68,(short)local_64,local_60);
       }
       else {
         _fwrite(&local_68,1,0xc,local_1c);
@@ -176,15 +162,9 @@ void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int dep
       local_54 = g_VertexCount;
       _fwrite(&local_5c,1,0xc,local_1c);
       for (local_28 = 0; local_28 < g_VertexCount; local_28 = local_28 + 1) {
-        dVar6 = round
-                          ((double)(g_VertexNormals[local_28].vertex.x * 65535.0f));
-        local_68 = (int)ROUND(dVar6);
-        dVar6 = round
-                          ((double)(g_VertexNormals[local_28].vertex.y * 65535.0f));
-        local_64 = (int)ROUND(dVar6);
-        dVar6 = round
-                          ((double)(g_VertexNormals[local_28].vertex.z * 65535.0f));
-        local_60 = (int)ROUND(dVar6);
+        local_68 = (int)ROUND(ROUND(g_VertexNormals[local_28].vertex.x * 65535.0f));
+        local_64 = (int)ROUND(ROUND(g_VertexNormals[local_28].vertex.y * 65535.0f));
+        local_60 = (int)ROUND(ROUND(g_VertexNormals[local_28].vertex.z * 65535.0f));
         _fwrite(&local_68,1,0xc,local_1c);
       }
     }
@@ -204,34 +184,22 @@ void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int dep
     for (local_28 = 0; local_28 < g_PolygonCount; local_28 = local_28 + 1) {
       shape_design_c_calculatePolygonNormal_FUN_0045caa0(g_ModelPolygonData + local_28);
       local_7c = g_ModelPolygonData[local_28].vertex_indices_count;
-      uVar9 = 0x45b0a4;
-      dVar6 = round
-                        ((double)(g_ModelPolygonData[local_28].normal.x *
-                                 (float)65535));
-      local_78 = (int)ROUND(dVar6);
-      uVar8 = 0x45b0bf;
-      dVar6 = round
-                        ((double)(g_ModelPolygonData[local_28].normal.y *
-                                 (float)65535));
-      local_74 = (int)ROUND(dVar6);
-      uVar7 = 0x45b0da;
-      dVar6 = round
-                        ((double)(g_ModelPolygonData[local_28].normal.z *
-                                 (float)65535));
-      local_70 = (int)ROUND(dVar6);
-      uVar10 = 0x45b100;
-      dVar6 = round
-                        ((double)(local_14 *
-                                 g_ModelPolygonData[local_28].plane_distance *
-                                 (float)65535 * (float)256)
-                        );
-      local_6c = (int)ROUND(dVar6);
+      local_78 = (int)ROUND(ROUND(g_ModelPolygonData[local_28].normal.x *
+                                  (float)65535));
+      local_74 = (int)ROUND(ROUND(g_ModelPolygonData[local_28].normal.y *
+                                  (float)65535));
+      local_70 = (int)ROUND(ROUND(g_ModelPolygonData[local_28].normal.z *
+                                  (float)65535));
+      local_6c = (int)ROUND(ROUND(local_14 *
+                                  g_ModelPolygonData[local_28].plane_distance *
+                                  (float)65535 * (float)256
+                                 ));
       if (g_ModelPolygonData[local_28].polygon_type == 1) {
         if (g_EditorColorIndex != g_ModelPolygonData[local_28].material_id) {
           local_30 = 10;
           local_2c = g_ModelPolygonData[local_28].material_id;
           if (export_format == 0) {
-            _fprintf(local_1c,"\tCOLOR\t%d\n",local_2c,uVar10,uVar7,uVar8,uVar9);
+            _fprintf(local_1c,"\tCOLOR\t%d\n",local_2c);
           }
           else {
             _fwrite(&local_30,1,8,local_1c);
@@ -259,7 +227,8 @@ void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int dep
           if (local_80 == 5) {
             _fprintf(local_1c,"\tFACET");
           }
-          _fprintf(local_1c,"%d\t%d,%d,%d,%d",local_7c,local_78,local_74,local_70,local_6c);
+          _fprintf(local_1c,"%d\t%d,%d,%d,%d",local_7c,local_78,local_74,(short)local_70,
+                     local_6c);
           for (local_24 = 0; local_24 < (int)local_7c; local_24 = local_24 + 1) {
             _fprintf(local_1c,",%d",g_ModelPolygonData[local_28].vertex_indices[local_24]);
           }
@@ -271,30 +240,30 @@ void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int dep
         }
       }
       else {
-        iVar11 = strcmp
-                           (g_TempTextureName,g_ModelPolygonData[local_28].texture_name);
-        if (iVar11 != 0) {
-          pcVar4 = g_ModelPolygonData[local_28].texture_name;
-          pcVar5 = g_TempTextureName;
-          do {
-            cVar1 = *pcVar4;
-            *pcVar5 = cVar1;
-            if (cVar1 == '\0') break;
-            cVar1 = pcVar4[1];
-            pcVar4 = pcVar4 + 2;
-            pcVar5[1] = cVar1;
-            pcVar5 = pcVar5 + 2;
-          } while (cVar1 != '\0');
-          pcVar5 = g_TempTextureName;
-          pcVar4 = local_90;
+        iVar4 = strcmp
+                          (g_TempTextureName,g_ModelPolygonData[local_28].texture_name);
+        if (iVar4 != 0) {
+          pcVar5 = g_ModelPolygonData[local_28].texture_name;
+          pcVar6 = g_TempTextureName;
           do {
             cVar1 = *pcVar5;
-            *pcVar4 = cVar1;
+            *pcVar6 = cVar1;
             if (cVar1 == '\0') break;
             cVar1 = pcVar5[1];
             pcVar5 = pcVar5 + 2;
-            pcVar4[1] = cVar1;
-            pcVar4 = pcVar4 + 2;
+            pcVar6[1] = cVar1;
+            pcVar6 = pcVar6 + 2;
+          } while (cVar1 != '\0');
+          pcVar6 = g_TempTextureName;
+          pcVar5 = local_90;
+          do {
+            cVar1 = *pcVar6;
+            *pcVar5 = cVar1;
+            if (cVar1 == '\0') break;
+            cVar1 = pcVar6[1];
+            pcVar6 = pcVar6 + 2;
+            pcVar5[1] = cVar1;
+            pcVar5 = pcVar5 + 2;
           } while (cVar1 != '\0');
           local_94 = 0;
           local_98 = 0xd;
@@ -318,45 +287,29 @@ void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int dep
         }
         else if (depth_mode == 0x47) {
           local_80 = 0x34;
-          dVar6 = round
-                            ((double)(g_ModelPolygonData[local_28].normal.x *
-                                     (float)2048));
-          local_78 = (int)ROUND(dVar6);
-          dVar6 = round
-                            ((double)(g_ModelPolygonData[local_28].normal.y *
-                                     (float)2048));
-          local_74 = (int)ROUND(dVar6);
-          dVar6 = round
-                            ((double)(g_ModelPolygonData[local_28].normal.z *
-                                     (float)2048));
-          local_70 = (int)ROUND(dVar6);
-          dVar6 = round
-                            ((double)(local_14 *
-                                     g_ModelPolygonData[local_28].plane_distance *
-                                     (float)2048 *
-                                     (float)256));
-          local_6c = (int)ROUND(dVar6);
+          local_78 = (int)ROUND(ROUND(g_ModelPolygonData[local_28].normal.x *
+                                      (float)2048));
+          local_74 = (int)ROUND(ROUND(g_ModelPolygonData[local_28].normal.y *
+                                      (float)2048));
+          local_70 = (int)ROUND(ROUND(g_ModelPolygonData[local_28].normal.z *
+                                      (float)2048));
+          local_6c = (int)ROUND(ROUND(local_14 *
+                                      g_ModelPolygonData[local_28].plane_distance *
+                                      (float)2048 *
+                                      (float)256));
         }
         else if (depth_mode == 0x48) {
           local_80 = 0xe;
-          dVar6 = round
-                            ((double)(g_ModelPolygonData[local_28].normal.x *
-                                     (float)2048));
-          local_78 = (int)ROUND(dVar6);
-          dVar6 = round
-                            ((double)(g_ModelPolygonData[local_28].normal.y *
-                                     (float)2048));
-          local_74 = (int)ROUND(dVar6);
-          dVar6 = round
-                            ((double)(g_ModelPolygonData[local_28].normal.z *
-                                     (float)2048));
-          local_70 = (int)ROUND(dVar6);
-          dVar6 = round
-                            ((double)(local_14 *
-                                     g_ModelPolygonData[local_28].plane_distance *
-                                     (float)2048 *
-                                     (float)256));
-          local_6c = (int)ROUND(dVar6);
+          local_78 = (int)ROUND(ROUND(g_ModelPolygonData[local_28].normal.x *
+                                      (float)2048));
+          local_74 = (int)ROUND(ROUND(g_ModelPolygonData[local_28].normal.y *
+                                      (float)2048));
+          local_70 = (int)ROUND(ROUND(g_ModelPolygonData[local_28].normal.z *
+                                      (float)2048));
+          local_6c = (int)ROUND(ROUND(local_14 *
+                                      g_ModelPolygonData[local_28].plane_distance *
+                                      (float)2048 *
+                                      (float)256));
         }
         else if (depth_mode == 0x5a) {
           local_80 = 0x22;
@@ -401,19 +354,13 @@ void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int dep
           if (local_80 == 0x22) {
             _fprintf(local_1c,"\tZPFACET");
           }
-          _fprintf(local_1c,"%dTMAP\t%d,%d,%d,%d",local_7c,local_78,local_74,local_70,local_6c)
-          ;
+          _fprintf(local_1c,"%dTMAP\t%d,%d,%d,%d",local_7c,local_78,local_74,(short)local_70,
+                     local_6c);
           for (local_24 = 0; local_24 < (int)local_7c; local_24 = local_24 + 1) {
-            uVar7 = 0x45b761;
-            dVar6 = round
-                              ((double)g_ModelPolygonData[local_28].uv_v[local_24]);
-            iVar11 = (int)ROUND(dVar6);
-            uVar10 = 0x45b787;
-            dVar6 = round
-                              ((double)g_ModelPolygonData[local_28].uv_u[local_24]);
             _fprintf(local_1c,",%d,%d,%d",
-                       g_ModelPolygonData[local_28].vertex_indices[local_24],(int)ROUND(dVar6),
-                       uVar10,iVar11,uVar7);
+                       g_ModelPolygonData[local_28].vertex_indices[local_24],
+                       (short)(int)ROUND(ROUND(g_ModelPolygonData[local_28].uv_u[local_24])),
+                       (int)ROUND(ROUND(g_ModelPolygonData[local_28].uv_v[local_24])));
           }
           _fprintf(local_1c,"\n");
         }
@@ -421,15 +368,11 @@ void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int dep
           _fwrite(&local_80,1,0x18,local_1c);
           for (local_24 = 0; local_24 < (int)local_7c; local_24 = local_24 + 1) {
             _fwrite((void *)(local_28 * 0x184 + 0x16e99c8 + local_24 * 4),1,4,local_1c);
-            dVar6 = round
-                              ((double)(g_ModelPolygonData[local_28].uv_u[local_24] *
-                                       (float)65536));
-            local_20 = (int)ROUND(dVar6);
+            local_20 = (int)ROUND(ROUND(g_ModelPolygonData[local_28].uv_u[local_24] *
+                                        (float)65536));
             _fwrite(&local_20,1,4,local_1c);
-            dVar6 = round
-                              ((double)(g_ModelPolygonData[local_28].uv_v[local_24] *
-                                       (float)65536));
-            local_20 = (int)ROUND(dVar6);
+            local_20 = (int)ROUND(ROUND(g_ModelPolygonData[local_28].uv_v[local_24] *
+                                        (float)65536));
             _fwrite(&local_20,1,4,local_1c);
           }
         }

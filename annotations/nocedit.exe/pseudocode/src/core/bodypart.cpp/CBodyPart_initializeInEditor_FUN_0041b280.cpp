@@ -81,7 +81,7 @@ int __cdecl core_bodypart_cpp_CBodyPart_initializeInEditor_FUN_0041b280(CBodyPar
           iVar3 = iVar3 + 4;
         } while (iVar6 < iVar2);
       }
-      core_bodypart_cpp_CBodyPart_FUN_0041a050(this_ptr);
+      core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_0041a050(this_ptr);
       core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40(&local_2840,0);
       return 1;
     }

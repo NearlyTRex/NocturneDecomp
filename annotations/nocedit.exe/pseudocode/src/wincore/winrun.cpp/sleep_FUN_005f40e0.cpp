@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl wincore_winrun_cpp_sleep_FUN_005f40e0(double seconds)
 
 {
@@ -16,7 +18,6 @@ void __cdecl wincore_winrun_cpp_sleep_FUN_005f40e0(double seconds)
     return;
   }
   dVar1 = ceil(seconds * 1000);
-  dVar1 = round(dVar1);
-  (*g_SleepFunc)((DWORD)(longlong)ROUND(dVar1));
+  (*g_SleepFunc)((DWORD)(longlong)ROUND(ROUND(dVar1)));
   return;
 }

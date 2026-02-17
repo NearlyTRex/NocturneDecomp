@@ -151,11 +151,11 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c1a0(CDemonSet *this_ptr)
   core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0
             (&g_CDemonCameraInstance,(CVector3f *)0x0,0.0);
   iVar7 = 0;
-  core_gore_cpp_CGore_FUN_004ed7b0(g_CGorePtr);
+  core_gore_cpp_CGore_renderParticles_FUN_004ed7b0(g_CGorePtr);
   if (0 < this_ptr->mirror_glass_actor_count) {
     do {
       core_set_cpp_CDemonSet_setupMirrorRendering_FUN_005709e0(this_ptr,iVar7,0);
-      core_gore_cpp_CGore_FUN_004ed7b0(g_CGorePtr);
+      core_gore_cpp_CGore_renderParticles_FUN_004ed7b0(g_CGorePtr);
       iVar7 = iVar7 + 1;
       core_set_cpp_FUN_00570af0();
     } while (iVar7 < this_ptr->mirror_glass_actor_count);
@@ -205,7 +205,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c1a0(CDemonSet *this_ptr)
     } while (local_2c < g_DynamicLightCount);
   }
   core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_0044cc70(&g_CDemonCameraInstance);
-  core_gore_cpp_CGore_FUN_004ed830(g_CGorePtr);
+  core_gore_cpp_CGore_renderDecals_FUN_004ed830(g_CGorePtr,0,1);
   core_fire_cpp_CFireEffect_renderDecals_FUN_004c74a0(g_CFireEffectPtr,0,1);
   if (g_CWaterPtr->wave_animation_enabled == 0) {
     core_water_cpp_CWater_render_FUN_005ea320(g_CWaterPtr,0);

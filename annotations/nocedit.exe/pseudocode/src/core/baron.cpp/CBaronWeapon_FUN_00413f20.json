@@ -1,46 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 10,
-        "line": 34,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 16,
-        "line": 34,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 37,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 18,
-        "line": 37,
-        "message": "expected expression"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 80,
-    "complexity_score": 58,
+    "complexity_score": 35,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 8,
-    "pseudocode_lines": 33,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unresolved_funcptr"
-    ],
-    "total_lines": 113
+    "pseudocode_lines": 35,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 115
   },
   "cross_references": [
     {
@@ -241,20 +214,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 27,
-      "match": "code *",
-      "text": "(*(code *)**(uint **)(this_ptr->unk + 0x154))(this_ptr->unk);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 30,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(this_ptr->unk + 0x154) + 0x60))",
-      "type": "unresolved_funcptr"
-    }
-  ]
+  "suspects": []
 }

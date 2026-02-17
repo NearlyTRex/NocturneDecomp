@@ -11,31 +11,33 @@ void __cdecl core_baron_cpp_CBaronWeapon_FUN_00413f20(CBaronWeapon *this_ptr)
 {
   CDemonMission *this_ptr_00;
   CBaron *pCVar1;
-  CDemonActor *actor;
+  CBaron *actor;
   int iVar1;
   int iVar2;
   
-  if (this_ptr->unk == 0) {
+  if (this_ptr->baron == (CBaron *)0x0) {
     iVar2 = 0;
     for (iVar1 = 0; iVar1 < g_CDemonSetPtr->actor_count; iVar1 = iVar1 + 1) {
       pCVar1 = (CBaron *)
                core_actor_cpp_castToClassHash_FUN_0040c790
                          (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar2),
                           g_CBaronClassInfo.name_hash);
-      this_ptr->unk = (int)pCVar1;
+      this_ptr->baron = pCVar1;
       if (pCVar1 != (CBaron *)0x0) break;
       iVar2 = iVar2 + 4;
     }
-    if (this_ptr->unk == 0) {
-      actor = core_actor_cpp_createActorByName_FUN_0040c430("CBaron");
+    if (this_ptr->baron == (CBaron *)0x0) {
+      actor = (CBaron *)core_actor_cpp_createActorByName_FUN_0040c430("CBaron");
       this_ptr_00 = g_CDemonMissionPtr;
-      this_ptr->unk = (int)actor;
-      core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(this_ptr_00,actor);
-      (*(code *)**(uint **)(this_ptr->unk + 0x154))(this_ptr->unk);
+      this_ptr->baron = actor;
+      core_mission_cpp_CDemonMission_generateActorName_FUN_00524700
+                (this_ptr_00,(CDemonActor *)actor);
+      (*((this_ptr->baron->base).base.base.vtable._ub)->setup)((CDemonActor *)this_ptr->baron);
       core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70
-                (g_CDemonMissionPtr,(CDemonActor *)this_ptr->unk);
-      (**(code **)(*(int *)(this_ptr->unk + 0x154) + 0x60))
-                (this_ptr->unk,&(this_ptr->base).base.location,&(this_ptr->base).base.orient);
+                (g_CDemonMissionPtr,(CDemonActor *)this_ptr->baron);
+      (*((this_ptr->baron->base).base.base.vtable._ub)->setPositionAndOrientation)
+                ((CDemonActor *)this_ptr->baron,&(this_ptr->base).base.location.position,
+                 (CVector3f *)&(this_ptr->base).base.orient);
       return;
     }
   }

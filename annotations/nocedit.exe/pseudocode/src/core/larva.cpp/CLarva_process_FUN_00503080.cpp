@@ -6,6 +6,7 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */
 /* WARNING: Removing unreachable block (ram,0x0050389e) */
 
 void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float delta_time)
@@ -27,13 +28,12 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
   float10 fVar12;
   float10 fVar13;
   float10 fVar14;
-  float10 extraout_ST1;
-  float10 extraout_ST2;
   float10 fVar15;
-  unkbyte10 extraout_ST3;
+  float10 fVar16;
+  unkbyte10 Var17;
   CLarva *in_stack_fffffe10;
-  CLarva *pCVar16;
-  float fVar17;
+  CLarva *pCVar18;
+  float fVar19;
   float in_stack_fffffe18;
   CVector3f local_128;
   CVector3f local_11c;
@@ -108,23 +108,23 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-2.0,2.0);
       local_ec = local_14 + local_ec;
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-2.0,2.0);
-      fsin((float10)-0.52359877558333301);
-      fptan((float10)0.52359877558333301);
-      fVar14 = (float10)local_e4;
-      local_e4 = (float)((float10)local_14 + fVar14);
-      fVar14 = atan2((float10)local_ec,(float10)local_14 + fVar14);
+      fVar14 = (float10)fsin((float10)-0.52359877558333301);
+      fVar15 = (float10)fptan((float10)0.52359877558333301);
+      fVar16 = (float10)local_e4;
+      local_e4 = (float)((float10)local_14 + fVar16);
+      Var17 = fpatan((float10)local_ec,(float10)local_14 + fVar16);
       fVar3 = SQRT(local_ec * local_ec + local_e4 * local_e4);
-      fVar12 = (float10)fcos(extraout_ST3);
-      fVar13 = (float10)fsin(fVar14);
-      fVar14 = (float10)fcos(fVar14);
+      fVar16 = (float10)fcos((float10)-0.52359877558333301);
+      fVar12 = (float10)fsin(Var17);
+      fVar13 = (float10)fcos(Var17);
       local_60 = (double)fVar3;
       local_24 = fVar3 * (float)32 * fVar3;
-      fVar15 = fVar12 * (float10)2.0f * fVar12 *
-               (extraout_ST1 * (float10)fVar3 - (float10)local_e8);
-      local_ac = (float)-extraout_ST2;
+      fVar15 = fVar16 * (float10)2.0f * fVar16 *
+               (fVar15 * (float10)fVar3 - (float10)local_e8);
+      local_ac = (float)-fVar14;
       local_20 = (float)fVar15;
-      local_b0 = (float)(fVar13 * fVar12);
-      local_a8 = (float)(fVar14 * fVar12);
+      local_b0 = (float)(fVar12 * fVar16);
+      local_a8 = (float)(fVar13 * fVar16);
       if ((float10)0 < fVar15) {
         local_1c = SQRT(local_24 / local_20);
         local_8c = local_b0 * local_1c;
@@ -148,9 +148,9 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
   }
   fVar3 = (this_ptr->base).speed;
   fVar6 = (float)0.39269908168750001;
-  fVar17 = (float)3;
+  fVar19 = (float)3;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  (this_ptr->base).base.turn_speed = delta_time * fVar6 * fVar3 * fVar17;
+  (this_ptr->base).base.turn_speed = delta_time * fVar6 * fVar3 * fVar19;
   pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                      ((CMotionController *)pCVar9);
   local_30 = pSVar8->state_index;
@@ -163,7 +163,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
       pCVar5 = (this_ptr->base).victim;
       if (pCVar5 == (CDemonActor *)0x0) {
         in_stack_fffffe10 = this_ptr;
-        iVar7 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+        iVar7 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
         if (iVar7 != 0) {
           in_stack_fffffe10 = (CLarva *)0x1;
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -188,26 +188,26 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&(this_ptr->base).base.model.motion_controller,1,1);
         }
-        else if ((float)(this_ptr->base).unk2 <= 0.0) {
+        else if ((this_ptr->base).attack_cooldown <= 0.0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     ((CMotionController *)pCVar9,2,1);
           in_stack_fffffe10 = (CLarva *)0x41700000;
           local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(15.0,30.0);
-          (this_ptr->base).unk2 = (int)local_14;
+          (this_ptr->base).attack_cooldown = local_14;
         }
       }
     }
     else if (local_28 < 2) {
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       fVar3 = 20.0f;
-      pCVar16 = (CLarva *)(this_ptr->base).victim;
-      if (pCVar16 == (CLarva *)0x0) {
+      pCVar18 = (CLarva *)(this_ptr->base).victim;
+      if (pCVar18 == (CLarva *)0x0) {
         in_stack_fffffe10 = this_ptr;
-        iVar7 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+        iVar7 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
         if (iVar7 == 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     ((CMotionController *)pCVar9,0,1);
-          in_stack_fffffe10 = pCVar16;
+          in_stack_fffffe10 = pCVar18;
         }
       }
       else {
@@ -219,14 +219,14 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
              (this_ptr->base).base.model.accumulated_root_motion.y;
         local_110 = 0;
         local_10c = 0;
-        fVar17 = 0.17453292;
+        fVar19 = 0.17453292;
         local_108 = fVar3;
         in_stack_fffffe10 = (CLarva *)0x3f000000;
         pCVar5 = (this_ptr->base).victim;
         path_map = (*((pCVar5->vtable)._ub)->getPathMap)(pCVar5);
         iVar7 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
                           ((CCharacter *)this_ptr,&(((this_ptr->base).victim)->location).position,
-                           path_map,(CVector3f *)in_stack_fffffe10,fVar17,in_stack_fffffe18);
+                           path_map,(CVector3f *)in_stack_fffffe10,fVar19,in_stack_fffffe18);
         if (iVar7 < 0) {
           engine_console_cpp_CConsole_printf_FUN_00441890
                     (g_CConsolePtr,"%s gave up chase - I'm confused\n");
@@ -234,7 +234,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
                     ((CMotionController *)pCVar9,0,1);
           in_stack_fffffe10 = pCVar9;
         }
-        if ((float)(this_ptr->base).unk2 <= 0.0) {
+        if ((this_ptr->base).attack_cooldown <= 0.0) {
           pCVar5 = (this_ptr->base).victim;
           local_f8.x = (pCVar5->location).position.x -
                        (this_ptr->base).base.base.location.position.x;
@@ -262,7 +262,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
               in_stack_fffffe10 = (CLarva *)&(this_ptr->base).base.model;
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         ((CMotionController *)in_stack_fffffe10,2,1);
-              (this_ptr->base).unk2 = 0x40c00000;
+              (this_ptr->base).attack_cooldown = 6.0;
             }
           }
         }
@@ -274,7 +274,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
                           ((CDeformableModelInstance *)pCVar9,&local_c8,0);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)this_ptr,&local_e0,pCVar10);
-      core_gore_cpp_CGore_FUN_004ede30(g_CGorePtr);
+      core_gore_cpp_CGore_createBloodPool_FUN_004ede30(g_CGorePtr,&local_e0,1);
       (this_ptr->base).pool_me = 1;
     }
     goto LAB_00503184;
@@ -305,19 +305,19 @@ LAB_00503501:
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
 LAB_00503184:
-  if (0.0 < (float)(this_ptr->base).unk2) {
-    (this_ptr->base).unk2 = (int)((float)(this_ptr->base).unk2 - delta_time);
+  if (0.0 < (this_ptr->base).attack_cooldown) {
+    (this_ptr->base).attack_cooldown = (this_ptr->base).attack_cooldown - delta_time;
   }
   if (local_30 == 1) {
     iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk + 8));
     if (iVar7 == 0) {
-      fVar14 = (float10)1;
-      fVar12 = (float10)1.4426950408889634 *
+      fVar16 = (float10)1;
+      fVar14 = (float10)1.4426950408889634 *
                (float10)0.6931471805599453 * (float10)(this_ptr->base).base.size_scale *
                (float10)-0.20000000000000001;
-      fVar13 = (float10)f2xm1(fVar12 - (fVar12 / fVar14) * fVar14);
-      fVar14 = (float10)fscale(fVar13 + fVar14,fVar12);
-      local_68 = (double)fVar14;
+      fVar15 = (float10)f2xm1(fVar14 - (fVar14 / fVar16) * fVar16);
+      fVar16 = (float10)fscale(fVar15 + fVar16,fVar14);
+      local_68 = (double)fVar16;
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.99,1.01);
       _sprintf
                 (&stack0xfffffe10,"slime.wav @%f *%f",(double)(this_ptr->base).base.size_scale,

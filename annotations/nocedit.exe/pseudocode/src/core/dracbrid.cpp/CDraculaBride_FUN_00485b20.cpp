@@ -20,7 +20,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_FUN_00485b20(CDraculaBride *this_pt
     body_part = core_bodypart_cpp_createBodyPart_FUN_00418e10();
     core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
               ((CCharacter *)this_ptr,body_part,in_stack_00000008,in_stack_00000010);
-    core_bodypart_cpp_CBodyPart_FUN_0041a050(body_part);
+    core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_0041a050(body_part);
     *(CBodyPart **)(this_ptr->unk4 + this_ptr->part_count * 4) = body_part;
     this_ptr->part_count = this_ptr->part_count + 1;
     (body_part->base).is_transparent = 1;

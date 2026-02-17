@@ -776,7 +776,7 @@ section .text
     PUSH EAX                            ; 005bed48
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30 ; 005bed49
         ;   XREF to: 00471d30 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
-    MOV AH,byte ptr [0x03f6baac]        ; 005bed4e | DAT_03f6baac
+    MOV AH,byte ptr [0x03f6baac]        ; 005bed4e | BYTE_03f6baac
     ADD ESP,0x8                         ; 005bed54
     TEST AH,0x1                         ; 005bed57
     JZ 0x005befc3                       ; 005bed5a
@@ -944,7 +944,7 @@ section .text
     MOV DL,AH                           ; 005befc3
         ;   Label: LAB_005befc3
     OR DL,0x1                           ; 005befc5
-    MOV byte ptr [0x03f6baac],DL        ; 005befc8 | DAT_03f6baac
+    MOV byte ptr [0x03f6baac],DL        ; 005befc8 | BYTE_03f6baac
     JMP 0x005bed60                      ; 005befce
         ;   XREF to: 005bed60 (UNCONDITIONAL_JUMP)  ; LAB_005bed60
     FLD double ptr [ESP + 0x10]         ; 005befd3
@@ -1374,8 +1374,9 @@ section .text
     FSUBR float ptr [ESP + 0x1de8]      ; 005bf54f
     FLD float ptr [0x00663778]          ; 005bf556 | FLOAT_00663778
     FXCH                                ; 005bf55c
-    CALL crt_math.c_atan2_FUN_006013b1  ; 005bf55e
-        ;   XREF to: 006013b1 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_006013b1(float10 y, float10 x)
+    FXCH                                ; 005bf55e
+    FPATAN                              ; 005bf560
+    NOP                                 ; 005bf562
     SUB ESP,0x4                         ; 005bf563
     LEA ESI,[ESP + 0x1c14]              ; 005bf566
     FSTP float ptr [ESP]                ; 005bf56d

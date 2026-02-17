@@ -24,7 +24,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_randomChance_FUN_0040cd10
-;   core_bodypart.cpp_CBodyPart_FUN_0041a050
+;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050
 ;   core_bodypart.cpp_createBodyPart_FUN_00418e10
 ;   core_charactr.cpp_CCharacter_detachBodyPart_FUN_0042bcc0
 ;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
@@ -203,8 +203,8 @@ section .text
         ;   XREF to: 0042f300 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_playSoundWithCooldown_FUN_0042f300(CCharacter * this_ptr, char * sound_name)
     ADD ESP,0x8                         ; 00444a48
     PUSH EBP                            ; 00444a4b
-    CALL core_bodypart.cpp_CBodyPart_FUN_0041a050 ; 00444a4c
-        ;   XREF to: 0041a050 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_FUN_0041a050(CBodyPart * this_ptr)
+    CALL core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050 ; 00444a4c
+        ;   XREF to: 0041a050 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050(CBodyPart * this_ptr)
     MOV EAX,dword ptr [EBX + 0xbec8]    ; 00444a51
     MOV EDI,dword ptr [EBX + EAX*0x4 + 0x2298] ; 00444a57
     ADD ESP,0x4                         ; 00444a5e

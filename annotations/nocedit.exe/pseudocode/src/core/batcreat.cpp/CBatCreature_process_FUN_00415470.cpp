@@ -22,8 +22,7 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00415470(CBatCreature *t
   uint uVar8;
   CVector3f *pCVar9;
   CPathMap *path_map;
-  uint uVar10;
-  float fVar11;
+  float fVar10;
   float max_distance;
   float in_stack_fffffec4;
   CVector3f local_100;
@@ -73,10 +72,10 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00415470(CBatCreature *t
     core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,uVar8);
   }
   fVar3 = (this_ptr->base).speed;
-  fVar11 = (float)3.1415926535000001;
+  fVar10 = (float)3.1415926535000001;
   this_ptr_00 = &(this_ptr->base).base.model;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  (this_ptr->base).base.turn_speed = delta_time * fVar11 * fVar3;
+  (this_ptr->base).base.turn_speed = delta_time * fVar10 * fVar3;
   pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                      (&this_ptr_00->motion_controller);
   iVar5 = pSVar6->state_index;
@@ -88,7 +87,7 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00415470(CBatCreature *t
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       pCVar4 = (this_ptr->base).victim;
       if (pCVar4 == (CDemonActor *)0x0) {
-        iVar5 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+        iVar5 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
         if (iVar5 != 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&this_ptr_00->motion_controller,1,1);
@@ -107,23 +106,23 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00415470(CBatCreature *t
         if (ABS(local_14) < (float)0.52359877558333301) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&this_ptr_00->motion_controller,3,1);
-          iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk + 0x3c));
+          iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->voice_sound_handle);
           if ((iVar5 == 0) &&
-             (iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk + 0x40)),
+             (iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->attack_sound_handle),
              iVar5 == 0)) {
-            uVar10 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
-                               ((CDemonActor *)this_ptr,"batman-attack?.wav");
-            *(uint *)(this_ptr->unk + 0x40) = uVar10;
+            uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
+                              ((CDemonActor *)this_ptr,"batman-attack?.wav");
+            this_ptr->attack_sound_handle = uVar8;
           }
         }
       }
       if ((this_ptr->base).guard_distance <= local_1c) break;
       if (local_1c < 10.0f) {
         iVar5 = 1;
-        (this_ptr->base).unk2 = 0;
+        (this_ptr->base).attack_cooldown = 0.0;
       }
       else {
-        (this_ptr->base).unk2 = 0;
+        (this_ptr->base).attack_cooldown = 0.0;
         iVar5 = core_actor_cpp_randomChance_FUN_0040cd10(0.1);
         if (iVar5 != 0) {
           pCVar4 = (this_ptr->base).victim;
@@ -148,27 +147,24 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00415470(CBatCreature *t
 LAB_004158fb:
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&(this_ptr->base).base.model.motion_controller,iVar5,1);
-      if ((((*(int *)(this_ptr->unk + 0x44) == 0) &&
-           (iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk + 0x3c)),
+      if ((((this_ptr->alert_played == 0) &&
+           (iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->voice_sound_handle),
            iVar5 == 0)) &&
-          (iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk + 0x40)),
+          (iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->attack_sound_handle),
           iVar5 == 0)) &&
-         (iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk + 0x38)),
+         (iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->alert_sound_handle),
          iVar5 == 0)) {
-        uVar10 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
-                           ((CDemonActor *)this_ptr,"batman-alert.wav");
-        this_ptr->unk[0x44] = '\x01';
-        this_ptr->unk[0x45] = '\0';
-        this_ptr->unk[0x46] = '\0';
-        this_ptr->unk[0x47] = '\0';
-        *(uint *)(this_ptr->unk + 0x38) = uVar10;
+        uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
+                          ((CDemonActor *)this_ptr,"batman-alert.wav");
+        this_ptr->alert_played = 1;
+        this_ptr->alert_sound_handle = uVar8;
       }
       break;
     case 1:
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       fVar3 = 3.5f;
       if ((this_ptr->base).victim == (CDemonActor *)0x0) {
-        iVar5 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+        iVar5 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
         if (iVar5 == 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&this_ptr_00->motion_controller,0,1);
@@ -181,7 +177,7 @@ LAB_004158fb:
       else {
         max_distance = 0.17453292;
         local_24 = 3.5f;
-        fVar11 = 0.5;
+        fVar10 = 0.5;
         (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
         (this_ptr->base).base.model.accumulated_root_motion.y =
              (this_ptr->base).base.model.accumulated_root_motion.z;
@@ -195,7 +191,7 @@ LAB_004158fb:
         path_map = (*((pCVar4->vtable)._ub)->getPathMap)(pCVar4);
         iVar7 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
                           ((CCharacter *)this_ptr,&(((this_ptr->base).victim)->location).position,
-                           path_map,pCVar9,fVar11,max_distance);
+                           path_map,pCVar9,fVar10,max_distance);
         if (-1 < iVar7) {
           pCVar1 = &(this_ptr->base).base.base.location;
           pCVar4 = (this_ptr->base).victim;
@@ -204,7 +200,7 @@ LAB_004158fb:
           local_9c = 0;
           local_20 = SQRT(local_98 * local_98 + local_a0 * local_a0);
           local_18 = local_20;
-          if ((10.0f < local_20) && ((this_ptr->base).unk2 = 0, iVar5 == 1)) {
+          if ((10.0f < local_20) && ((this_ptr->base).attack_cooldown = 0.0, iVar5 == 1)) {
             pCVar4 = (this_ptr->base).victim;
             local_94.x = (pCVar4->location).position.x - (pCVar1->position).x;
             local_94.y = (pCVar4->location).position.y -
@@ -219,19 +215,19 @@ LAB_004158fb:
                     (this_ptr->base).base.base.location.position.y) < (float)2)) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         (&this_ptr_00->motion_controller,2,1);
-              uVar8 = *(uint *)(this_ptr->unk + 0x3c);
-              (this_ptr->base).unk2 = 0;
+              uVar8 = this_ptr->voice_sound_handle;
+              (this_ptr->base).attack_cooldown = 0.0;
               iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(uVar8);
               if ((iVar5 == 0) &&
-                 (iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
-                                    (*(uint *)(this_ptr->unk + 0x40)), iVar5 == 0)) {
-                uVar10 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
-                                   ((CDemonActor *)this_ptr,"batman-attack?.wav");
-                *(uint *)(this_ptr->unk + 0x40) = uVar10;
+                 (iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->attack_sound_handle)
+                 , iVar5 == 0)) {
+                uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
+                                  ((CDemonActor *)this_ptr,"batman-attack?.wav");
+                this_ptr->attack_sound_handle = uVar8;
               }
             }
           }
-          if ((local_20 <= local_24) && ((float)(this_ptr->base).unk2 <= 0.0)) {
+          if ((local_20 <= local_24) && ((this_ptr->base).attack_cooldown <= 0.0)) {
             pCVar4 = (this_ptr->base).victim;
             local_88.x = (pCVar4->location).position.x -
                          (this_ptr->base).base.base.location.position.x;
@@ -245,15 +241,15 @@ LAB_004158fb:
             if (ABS(local_14) < (float)0.52359877558333301) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         (&(this_ptr->base).base.model.motion_controller,3,1);
-              uVar8 = *(uint *)(this_ptr->unk + 0x3c);
-              (this_ptr->base).unk2 = 0x3f800000;
+              uVar8 = this_ptr->voice_sound_handle;
+              (this_ptr->base).attack_cooldown = 1.0;
               iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(uVar8);
               if ((iVar5 == 0) &&
-                 (iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
-                                    (*(uint *)(this_ptr->unk + 0x40)), iVar5 == 0)) {
-                uVar10 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
-                                   ((CDemonActor *)this_ptr,"batman-attack?.wav");
-                *(uint *)(this_ptr->unk + 0x40) = uVar10;
+                 (iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->attack_sound_handle)
+                 , iVar5 == 0)) {
+                uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
+                                  ((CDemonActor *)this_ptr,"batman-attack?.wav");
+                this_ptr->attack_sound_handle = uVar8;
               }
             }
           }
@@ -282,7 +278,7 @@ LAB_004158fb:
                            (this_ptr_00,&local_4c,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   ((CDemonActor *)this_ptr,&local_100,pCVar9);
-        core_gore_cpp_CGore_FUN_004ede30(g_CGorePtr);
+        core_gore_cpp_CGore_createBloodPool_FUN_004ede30(g_CGorePtr,&local_100,0);
         (this_ptr->base).pool_me = 1;
       }
     }
@@ -315,8 +311,8 @@ LAB_004156d6:
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
 switchD_00415d62_caseD_2:
-  if (0.0 < (float)(this_ptr->base).unk2) {
-    (this_ptr->base).unk2 = (int)((float)(this_ptr->base).unk2 - delta_time);
+  if (0.0 < (this_ptr->base).attack_cooldown) {
+    (this_ptr->base).attack_cooldown = (this_ptr->base).attack_cooldown - delta_time;
   }
   iVar5 = core_charactr_cpp_CCharacter_isOnGround_FUN_004297e0((CCharacter *)this_ptr);
   if (iVar5 != 0) {

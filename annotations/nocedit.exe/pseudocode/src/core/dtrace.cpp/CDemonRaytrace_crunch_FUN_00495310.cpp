@@ -6,25 +6,24 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *this_ptr,float cube_size)
 
 {
   int iVar1;
-  int iVar2;
+  float fVar2;
   float fVar3;
   float fVar4;
   float fVar5;
   float fVar6;
   float fVar7;
-  float fVar8;
-  int *piVar9;
+  int *piVar8;
   CDemonTriangle *vertex1;
-  int iVar10;
-  float *pfVar11;
-  int *piVar12;
-  float *pfVar13;
-  double dVar14;
-  uint uVar15;
+  int iVar9;
+  float *pfVar10;
+  int *piVar11;
+  float *pfVar12;
   float local_e8;
   float local_e4;
   float local_e0;
@@ -76,32 +75,24 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *
   int local_18;
   float *local_14;
   
-  fVar7 = 1.0 / cube_size;
-  dVar14 = round
-                     ((double)(((this_ptr->bbox_max).x - (this_ptr->bbox_min).x) * fVar7));
-  local_14 = (float *)(int)ROUND(dVar14);
-  fVar3 = (this_ptr->bbox_max).x;
-  fVar4 = (this_ptr->bbox_min).x;
-  (this_ptr->grid_coord).x = (int)local_14 + 1;
-  iVar10 = (this_ptr->grid_coord).x;
-  dVar14 = round
-                     ((double)(((this_ptr->bbox_max).y - (this_ptr->bbox_min).y) * fVar7));
-  local_14 = (float *)(int)ROUND(dVar14);
-  fVar5 = (this_ptr->bbox_max).y;
-  fVar6 = (this_ptr->bbox_min).y;
-  (this_ptr->grid_coord).y = (int)local_14 + 1;
-  iVar1 = (this_ptr->grid_coord).y;
-  uVar15 = 0x495382;
-  dVar14 = round
-                     ((double)(((this_ptr->bbox_max).z - (this_ptr->bbox_min).z) * fVar7));
-  local_14 = (float *)(int)ROUND(dVar14);
-  fVar7 = (this_ptr->bbox_max).z;
-  fVar8 = (this_ptr->bbox_min).z;
+  fVar6 = 1.0 / cube_size;
+  fVar2 = (this_ptr->bbox_max).x;
+  fVar3 = (this_ptr->bbox_min).x;
+  (this_ptr->grid_coord).x =
+       (int)ROUND(ROUND(((this_ptr->bbox_max).x - (this_ptr->bbox_min).x) * fVar6)) + 1;
+  fVar4 = (this_ptr->bbox_max).y;
+  fVar5 = (this_ptr->bbox_min).y;
+  (this_ptr->grid_coord).y =
+       (int)ROUND(ROUND(((this_ptr->bbox_max).y - (this_ptr->bbox_min).y) * fVar6)) + 1;
+  iVar9 = (this_ptr->grid_coord).y;
+  local_14 = (float *)(int)ROUND(ROUND(((this_ptr->bbox_max).z - (this_ptr->bbox_min).z) * fVar6));
+  fVar6 = (this_ptr->bbox_max).z;
+  fVar7 = (this_ptr->bbox_min).z;
   (this_ptr->grid_coord).z = (int)local_14 + 1;
-  iVar2 = (this_ptr->grid_coord).z;
-  (this_ptr->cell_size).x = (fVar3 - fVar4) / (float)iVar10;
-  (this_ptr->cell_size).y = (fVar5 - fVar6) / (float)iVar1;
-  (this_ptr->cell_size).z = (fVar7 - fVar8) / (float)iVar2;
+  iVar1 = (this_ptr->grid_coord).z;
+  (this_ptr->cell_size).x = (fVar2 - fVar3) / (float)(this_ptr->grid_coord).x;
+  (this_ptr->cell_size).y = (fVar4 - fVar5) / (float)iVar9;
+  (this_ptr->cell_size).z = (fVar6 - fVar7) / (float)iVar1;
   local_90 = (this_ptr->cell_size).x / 8.0f;
   local_8c = (this_ptr->cell_size).y * 0.125f;
   local_88 = 0.125f * (this_ptr->cell_size).z;
@@ -111,82 +102,82 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *
     (this_ptr->adjusted_size).z = local_88;
   }
   core_dtrace_cpp_CDemonRaytrace_allocNewCubeList_FUN_00494380(this_ptr);
-  iVar10 = this_ptr->triangle_count;
-  piVar9 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
-                     (iVar10 * 0x1c + 4,"..\\core\\dtrace.cpp",0x2ed);
-  local_44 = piVar9;
-  if (piVar9 != (int *)0x0) {
-    local_44 = piVar9 + 1;
-    *piVar9 = iVar10;
+  iVar9 = this_ptr->triangle_count;
+  piVar8 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+                     (iVar9 * 0x1c + 4,"..\\core\\dtrace.cpp",0x2ed);
+  local_44 = piVar8;
+  if (piVar8 != (int *)0x0) {
+    local_44 = piVar8 + 1;
+    *piVar8 = iVar9;
   }
   if (local_44 == (int *)0x0) {
     g_CurrentFilename = "..\\core\\dtrace.cpp";
     g_CurrentLineNumber = 0x2ee;
-    core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonRaytrace::crunch - out of refList memory",uVar15);
+    core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonRaytrace::crunch - out of refList memory");
   }
-  iVar10 = 0;
+  iVar9 = 0;
   if (0 < this_ptr->triangle_count) {
     local_68 = 0;
-    piVar9 = local_44;
+    piVar8 = local_44;
     do {
-      piVar12 = (int *)((int)&(this_ptr->triangle_list->vertex1).x + local_68);
-      local_a8 = *piVar12;
-      local_a4 = piVar12[1];
-      local_a0 = piVar12[2];
-      local_6c = (float *)(piVar12 + 3);
+      piVar11 = (int *)((int)&(this_ptr->triangle_list->vertex1).x + local_68);
+      local_a8 = *piVar11;
+      local_a4 = piVar11[1];
+      local_a0 = piVar11[2];
+      local_6c = (float *)(piVar11 + 3);
       local_84 = *local_6c;
-      local_80 = (float)piVar12[4];
-      local_7c = (float)piVar12[5];
-      local_78 = (float)piVar12[6];
-      local_74 = (float)piVar12[7];
-      local_70 = (float)piVar12[8];
-      *piVar9 = iVar10;
-      piVar9[4] = local_a8;
-      piVar9[1] = piVar9[4];
-      piVar9[5] = local_a4;
-      piVar9[2] = piVar9[5];
-      piVar9[6] = local_a0;
-      piVar9[3] = piVar9[6];
-      if (local_84 < (float)piVar9[1]) {
-        piVar9[1] = (int)local_84;
+      local_80 = (float)piVar11[4];
+      local_7c = (float)piVar11[5];
+      local_78 = (float)piVar11[6];
+      local_74 = (float)piVar11[7];
+      local_70 = (float)piVar11[8];
+      *piVar8 = iVar9;
+      piVar8[4] = local_a8;
+      piVar8[1] = piVar8[4];
+      piVar8[5] = local_a4;
+      piVar8[2] = piVar8[5];
+      piVar8[6] = local_a0;
+      piVar8[3] = piVar8[6];
+      if (local_84 < (float)piVar8[1]) {
+        piVar8[1] = (int)local_84;
       }
-      if ((float)piVar9[4] < local_84) {
-        piVar9[4] = (int)local_84;
+      if ((float)piVar8[4] < local_84) {
+        piVar8[4] = (int)local_84;
       }
-      if (local_80 < (float)piVar9[2]) {
-        piVar9[2] = (int)local_80;
+      if (local_80 < (float)piVar8[2]) {
+        piVar8[2] = (int)local_80;
       }
-      if ((float)piVar9[5] < local_80) {
-        piVar9[5] = (int)local_80;
+      if ((float)piVar8[5] < local_80) {
+        piVar8[5] = (int)local_80;
       }
-      if (local_7c < (float)piVar9[3]) {
-        piVar9[3] = (int)local_7c;
+      if (local_7c < (float)piVar8[3]) {
+        piVar8[3] = (int)local_7c;
       }
-      if ((float)piVar9[6] < local_7c) {
-        piVar9[6] = (int)local_7c;
+      if ((float)piVar8[6] < local_7c) {
+        piVar8[6] = (int)local_7c;
       }
-      if (local_78 < (float)piVar9[1]) {
-        piVar9[1] = (int)local_78;
+      if (local_78 < (float)piVar8[1]) {
+        piVar8[1] = (int)local_78;
       }
-      if ((float)piVar9[4] < local_78) {
-        piVar9[4] = (int)local_78;
+      if ((float)piVar8[4] < local_78) {
+        piVar8[4] = (int)local_78;
       }
-      if (local_74 < (float)piVar9[2]) {
-        piVar9[2] = (int)local_74;
+      if (local_74 < (float)piVar8[2]) {
+        piVar8[2] = (int)local_74;
       }
-      if ((float)piVar9[5] < local_74) {
-        piVar9[5] = (int)local_74;
+      if ((float)piVar8[5] < local_74) {
+        piVar8[5] = (int)local_74;
       }
-      if (local_70 < (float)piVar9[3]) {
-        piVar9[3] = (int)local_70;
+      if (local_70 < (float)piVar8[3]) {
+        piVar8[3] = (int)local_70;
       }
-      if ((float)piVar9[6] < local_70) {
-        piVar9[6] = (int)local_70;
+      if ((float)piVar8[6] < local_70) {
+        piVar8[6] = (int)local_70;
       }
-      piVar9 = piVar9 + 7;
-      iVar10 = iVar10 + 1;
+      piVar8 = piVar8 + 7;
+      iVar9 = iVar9 + 1;
       local_68 = local_68 + 0x38;
-    } while (iVar10 < this_ptr->triangle_count);
+    } while (iVar9 < this_ptr->triangle_count);
   }
   shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
             (g_CEditorToolsPtr,"Cube crunch");
@@ -201,34 +192,34 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *
       if (-1 < local_58) {
         local_50 = local_44;
         local_4c = local_44 + local_58 * 7;
-        pfVar13 = (float *)(local_44 + local_58 * 7 + 1);
+        pfVar12 = (float *)(local_44 + local_58 * 7 + 1);
         do {
-          piVar9 = local_50;
+          piVar8 = local_50;
           local_48 = local_50;
           if ((local_b4.x < (float)local_50[1]) || ((float)local_50[4] < local_9c.x)) {
             local_54 = local_4c;
-            pfVar11 = (float *)(local_50 + 1);
-            iVar10 = *local_50;
-            core_charactr_cpp_copyFloat_FUN_0042fb00(&local_e8,pfVar11);
-            core_charactr_cpp_copyFloat_FUN_0042faf0(&local_e4,(float *)(piVar9 + 2));
-            core_charactr_cpp_copyFloat_FUN_0042fae0(&local_e0,(float *)(piVar9 + 3));
+            pfVar10 = (float *)(local_50 + 1);
+            iVar9 = *local_50;
+            core_charactr_cpp_copyFloat_FUN_0042fb00(&local_e8,pfVar10);
+            core_charactr_cpp_copyFloat_FUN_0042faf0(&local_e4,(float *)(piVar8 + 2));
+            core_charactr_cpp_copyFloat_FUN_0042fae0(&local_e0,(float *)(piVar8 + 3));
             local_14 = (float *)(local_48 + 4);
             core_charactr_cpp_copyFloat_FUN_0042fb00(&local_dc,local_14);
             core_charactr_cpp_copyFloat_FUN_0042faf0(&local_d8,local_14 + 1);
             core_charactr_cpp_copyFloat_FUN_0042fae0(&local_d4,local_14 + 2);
             local_64 = local_4c;
             *local_48 = *local_4c;
-            if (pfVar11 != pfVar13) {
-              *pfVar11 = *pfVar13;
-              piVar9[2] = (int)pfVar13[1];
-              piVar9[3] = (int)pfVar13[2];
+            if (pfVar10 != pfVar12) {
+              *pfVar10 = *pfVar12;
+              piVar8[2] = (int)pfVar12[1];
+              piVar8[3] = (int)pfVar12[2];
             }
             if (local_48 + 4 != local_4c + 4) {
               local_48[4] = local_4c[4];
               local_48[5] = local_4c[5];
               local_48[6] = local_4c[6];
             }
-            *local_54 = iVar10;
+            *local_54 = iVar9;
             if ((float *)(local_54 + 1) != &local_e8) {
               local_54[1] = (int)local_e8;
               local_54[2] = (int)local_e4;
@@ -239,7 +230,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *
               local_54[5] = (int)local_d8;
               local_54[6] = (int)local_d4;
             }
-            pfVar13 = pfVar13 + -7;
+            pfVar12 = pfVar12 + -7;
             local_4c = local_4c + -7;
             local_58 = local_58 + -1;
           }
@@ -261,27 +252,27 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *
           if (-1 < local_60) {
             local_28 = local_44;
             local_2c = local_44 + local_60 * 7;
-            pfVar13 = (float *)(local_44 + local_60 * 7 + 1);
+            pfVar12 = (float *)(local_44 + local_60 * 7 + 1);
             do {
-              piVar9 = local_28;
+              piVar8 = local_28;
               local_24 = local_28;
               if ((local_b4.y < (float)local_28[2]) || ((float)local_28[5] < local_9c.y)) {
                 local_30 = local_2c;
-                pfVar11 = (float *)(local_28 + 1);
+                pfVar10 = (float *)(local_28 + 1);
                 local_d0 = *local_28;
-                core_charactr_cpp_copyFloat_FUN_0042fb00(&local_cc,pfVar11);
-                core_charactr_cpp_copyFloat_FUN_0042faf0(&local_c8,(float *)(piVar9 + 2));
-                core_charactr_cpp_copyFloat_FUN_0042fae0(&local_c4,(float *)(piVar9 + 3));
+                core_charactr_cpp_copyFloat_FUN_0042fb00(&local_cc,pfVar10);
+                core_charactr_cpp_copyFloat_FUN_0042faf0(&local_c8,(float *)(piVar8 + 2));
+                core_charactr_cpp_copyFloat_FUN_0042fae0(&local_c4,(float *)(piVar8 + 3));
                 local_14 = (float *)(local_24 + 4);
                 core_charactr_cpp_copyFloat_FUN_0042fb00(&local_c0,local_14);
                 core_charactr_cpp_copyFloat_FUN_0042faf0(&local_bc,local_14 + 1);
                 core_charactr_cpp_copyFloat_FUN_0042fae0(&local_b8,local_14 + 2);
                 local_40 = local_2c;
                 *local_24 = *local_2c;
-                if (pfVar11 != pfVar13) {
-                  *pfVar11 = *pfVar13;
-                  piVar9[2] = (int)pfVar13[1];
-                  piVar9[3] = (int)pfVar13[2];
+                if (pfVar10 != pfVar12) {
+                  *pfVar10 = *pfVar12;
+                  piVar8[2] = (int)pfVar12[1];
+                  piVar8[3] = (int)pfVar12[2];
                 }
                 if (local_24 + 4 != local_2c + 4) {
                   local_24[4] = local_2c[4];
@@ -299,7 +290,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *
                   local_30[5] = (int)local_bc;
                   local_30[6] = (int)local_b8;
                 }
-                pfVar13 = pfVar13 + -7;
+                pfVar12 = pfVar12 + -7;
                 local_2c = local_2c + -7;
                 local_34 = local_34 + -1;
               }
@@ -314,28 +305,27 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *
             do {
               local_9c.z = (float)local_20 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z;
               local_b4.z = local_9c.z + (this_ptr->cell_size).z;
-              iVar10 = (this_ptr->grid_coord).y;
+              iVar9 = (this_ptr->grid_coord).y;
               iVar1 = (this_ptr->grid_coord).z;
-              local_14 = (float *)((int)((int)local_3c * iVar10 + (int)local_38) * iVar1 + local_20)
-              ;
+              local_14 = (float *)((int)((int)local_3c * iVar9 + (int)local_38) * iVar1 + local_20);
               shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
                         (g_CEditorToolsPtr,(float)(int)local_14,
-                         (float)((this_ptr->grid_coord).x * iVar10 * iVar1));
+                         (float)((this_ptr->grid_coord).x * iVar9 * iVar1));
               local_1c = this_ptr->cube_data +
                          (this_ptr->grid_coord).z * (int)local_3c * (this_ptr->grid_coord).y +
                          (int)local_38 * (this_ptr->grid_coord).z + local_20;
-              iVar10 = 0;
+              iVar9 = 0;
               core_dcube_cpp_CDemonCube_setBounds_FUN_00456a90(local_1c,&local_9c,&local_b4);
-              piVar9 = local_44;
+              piVar8 = local_44;
               if (0 < local_18) {
                 do {
-                  vertex1 = this_ptr->triangle_list + *piVar9;
-                  iVar10 = iVar10 + 1;
+                  vertex1 = this_ptr->triangle_list + *piVar8;
+                  iVar9 = iVar9 + 1;
                   core_dcube_cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0
                             ((CDemonCubeFrustum *)local_1c,&vertex1->vertex1,&vertex1->vertex2,
-                             &vertex1->vertex3,this_ptr->triangle_flags[*piVar9]);
-                  piVar9 = piVar9 + 7;
-                } while (iVar10 < local_18);
+                             &vertex1->vertex3,this_ptr->triangle_flags[*piVar8]);
+                  piVar8 = piVar8 + 7;
+                } while (iVar9 < local_18);
               }
               core_dcube_cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0(local_1c);
               local_20 = local_20 + 1;

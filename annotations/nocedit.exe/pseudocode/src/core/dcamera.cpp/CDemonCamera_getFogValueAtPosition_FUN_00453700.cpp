@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 int __cdecl core_dcamera_cpp_CDemonCamera_getFogValueAtPosition_FUN_00453700(CDemonCamera *this_ptr,CVector3i *world_position)
 
 {
@@ -13,16 +15,14 @@ int __cdecl core_dcamera_cpp_CDemonCamera_getFogValueAtPosition_FUN_00453700(CDe
   float fVar2;
   float fVar3;
   uint uVar4;
-  double dVar5;
   
   fVar1 = (float)(world_position->x - (this_ptr->camera_origin).x) * 0.00390625f;
   fVar2 = (float)(world_position->y - (this_ptr->camera_origin).y) * 0.00390625f;
   fVar3 = (float)(world_position->z - (this_ptr->camera_origin).z) * 0.00390625f;
-  dVar5 = round
-                    ((double)(SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2) *
-                             (float)256));
   uVar4 = core_dcamera_cpp_sampleFogAlongRay_FUN_0044bdd0
-                    (&g_CameraFogGrid,&this_ptr->camera_origin,world_position,(int)ROUND(dVar5));
+                    (&g_CameraFogGrid,&this_ptr->camera_origin,world_position,
+                     (int)ROUND(ROUND(SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2) *
+                                      (float)256)));
   uVar4 = uVar4 * 0xff >> 0xe;
   if (0xff < uVar4) {
     return 0xffff;

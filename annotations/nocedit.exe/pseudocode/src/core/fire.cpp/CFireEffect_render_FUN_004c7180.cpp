@@ -32,9 +32,9 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_004c7180(CFireEffect *this_ptr
   if (0 < g_StakeActiveCount) {
     iVar1 = 0;
     do {
-      if (*(int *)((int)g_StakePool[0].box.rotation_matrix.m + iVar1 + -0x1c) == 0) {
+      if (*(int *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar1 + -0x1c) == 0) {
         core_fire_cpp_CStake_render_FUN_004c0140
-                  ((CStake *)((int)g_StakePool[0].box.rotation_matrix.m + iVar1 + -0x1c));
+                  ((CStake *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar1 + -0x1c));
       }
       iVar2 = iVar2 + 1;
       iVar1 = iVar1 + 0x260;
@@ -48,7 +48,7 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_004c7180(CFireEffect *this_ptr
     this_ptr_00 = this_ptr_00 + 1;
   } while (this_ptr_00 != (CRock *)&g_CFireEffectRocksEnd);
   this_ptr_01 = g_FireballPool;
-  core_fire_cpp_CFireball_initRender_FUN_004c0d80(g_FireballPool);
+  core_fire_cpp_CFireball_setupRenderState_FUN_004c0d80(g_FireballPool);
   do {
     if (0.0 < (this_ptr_01->base).lifetime_remaining) {
       (*((this_ptr_01->base).vtable)->render)(&this_ptr_01->base);
@@ -64,7 +64,7 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_004c7180(CFireEffect *this_ptr
   if (iVar2 == 0) {
     core_set_cpp_CDemonSet_FUN_0056d380(g_CDemonSetPtr);
     iVar2 = 0;
-    core_fire_cpp_CBulletHole_initRender_FUN_004bfa40(g_BulletHolePool);
+    core_fire_cpp_CBulletHole_setupRenderState_FUN_004bfa40(g_BulletHolePool);
     if (0 < g_BulletHoleActiveCount) {
       iVar1 = 0;
       do {
@@ -77,7 +77,7 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_004c7180(CFireEffect *this_ptr
       } while (iVar2 < g_BulletHoleActiveCount);
     }
     this_ptr_03 = g_SmokeParticlePool;
-    core_fire_cpp_CSmokeParticle_initRender_FUN_004bf1f0(g_SmokeParticlePool);
+    core_fire_cpp_CSmokeParticle_setupRenderState_FUN_004bf1f0(g_SmokeParticlePool);
     do {
       if (this_ptr_03->active != 0) {
         core_fire_cpp_CSmokeParticle_render_FUN_004bf4c0(this_ptr_03);
@@ -101,7 +101,7 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_004c7180(CFireEffect *this_ptr
       } while (iVar2 < (int)g_CFireEffectRocksEnd);
     }
     this_ptr_05 = g_SparkPool;
-    core_fire_cpp_CSpark_initRender_FUN_004c0300(g_SparkPool);
+    core_fire_cpp_CSpark_setupRenderState_FUN_004c0300(g_SparkPool);
     do {
       if (0.0 < (this_ptr_05->base).lifetime_remaining) {
         (*((this_ptr_05->base).vtable)->render)(&this_ptr_05->base);

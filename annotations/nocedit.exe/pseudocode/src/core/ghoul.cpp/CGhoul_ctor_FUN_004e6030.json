@@ -6,17 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 20,
-    "complexity_score": 102,
+    "complexity_score": 101,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
-    "pseudocode_lines": 62,
-    "suspect_count": 3,
+    "pseudocode_lines": 56,
+    "suspect_count": 4,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "suspect_float"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 82
+    "total_lines": 76
   },
   "cross_references": [
     {
@@ -132,24 +131,31 @@
   },
   "suspects": [
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 18,
-      "match": "7.197803e-39",
-      "text": "fVar4 = 7.197803e-39;",
-      "type": "suspect_float"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 20,
+      "line": 17,
       "match": "ROUND",
-      "text": "*(int *)(pCVar1->unk1 + 4) = (int)ROUND(dVar3);",
+      "text": "*(int *)(pCVar1->unk1 + 4) = (int)ROUND(ROUND(fVar2 * (float)65536));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 35,
+      "line": 17,
       "match": "ROUND",
-      "text": "*(int *)(pCVar1->unk1 + 8) = (int)ROUND(dVar3);",
+      "text": "*(int *)(pCVar1->unk1 + 4) = (int)ROUND(ROUND(fVar2 * (float)65536));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 30,
+      "match": "ROUND",
+      "text": "*(int *)(pCVar1->unk1 + 8) = (int)ROUND(ROUND(fVar3 * fVar2));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 30,
+      "match": "ROUND",
+      "text": "*(int *)(pCVar1->unk1 + 8) = (int)ROUND(ROUND(fVar3 * fVar2));",
       "type": "decompiler_intrinsic"
     }
   ],

@@ -11,8 +11,8 @@
 ; int              Stack[0x14]:4   pixel_count
 ;
 ; Referenced Globals:
-;   ulonglong g_LightmapBlendBias1 = 0x0
-;   ulonglong g_LightmapBlendBias2 = 0x8000800080008
+;   _MMX_INTEGER g_LightmapBlendBias1
+;   _MMX_INTEGER g_LightmapBlendBias2
 ;   ushort[384] g_LightmapData
 ;   double g_LightmapXorMask = 0.126945525291829
 ;   uint[256] g_LightmapTexturePalette

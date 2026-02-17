@@ -1,6 +1,6 @@
 // Name: core_script.cpp_clearSelections_FUN_005644e0
 // Address: 005644e0
-// Address Range: [[0056449b, 005644d0] [005644e0, 005644ff]]
+// Address Range: [[005644e0, 005644ff]]
 // Convention: __cdecl
 // Signature: void __cdecl core_script_cpp_clearSelections_FUN_005644e0(void)
 

@@ -3,18 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 16,
-        "line": 54,
-        "message": "cannot cast from type 'float' to pointer type 'int *'"
-      },
-      {
-        "category": "other",
-        "column": 26,
-        "line": 60,
-        "message": "C-style cast from 'int *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
         "column": 59,
         "line": 70,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
@@ -26,22 +14,46 @@
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 129,
-        "message": "use of undeclared identifier 'code'"
+        "category": "other",
+        "column": 59,
+        "line": 116,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
-        "category": "syntax_error",
-        "column": 24,
-        "line": 129,
-        "message": "expected expression"
+        "category": "incompatible_types",
+        "column": 56,
+        "line": 126,
+        "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "other",
-        "column": 73,
-        "line": 159,
-        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
+        "column": 59,
+        "line": 130,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 145,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 160,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 169,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 184,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
     "success": false,
@@ -49,18 +61,16 @@
   },
   "complexity": {
     "assembly_lines": 482,
-    "complexity_score": 244,
+    "complexity_score": 240,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 20,
-    "pseudocode_lines": 189,
-    "suspect_count": 4,
+    "pseudocode_lines": 185,
+    "suspect_count": 5,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "unknown_field",
-      "unresolved_funcptr"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 671
+    "total_lines": 667
   },
   "cross_references": [],
   "function": {
@@ -397,31 +407,38 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 90,
+      "line": 89,
       "match": "ROUND",
-      "text": "local_20 = (IDirectSoundBuffer *)(int)ROUND(dVar5);",
+      "text": "lStack_1c = (long)ROUND(ROUND(dStack_34));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 121,
+      "line": 89,
       "match": "ROUND",
-      "text": "lStack_3c = (longlong)ROUND(dVar5);",
+      "text": "lStack_1c = (long)ROUND(ROUND(dStack_34));",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 122,
-      "match": "code *",
-      "text": "uVar2 = (**(code **)(*local_28 + 0x44))(local_28,(uint)lStack_3c,uVar6);",
-      "type": "unresolved_funcptr"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 117,
+      "match": "ROUND",
+      "text": "ROUND(ROUND((float)(slot->sample->sample_info).sample_rate *",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 152,
-      "match": "._4_4_",
-      "text": "uVar2 = (*this_ptr_00->vtable->SetMinDistance)(this_ptr_00,uStack_34._4_4_,1);",
-      "type": "unknown_field"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 117,
+      "match": "ROUND",
+      "text": "ROUND(ROUND((float)(slot->sample->sample_info).sample_rate *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 119,
+      "match": "SUB84",
+      "text": "uVar3 = (*local_20->vtable->SetFrequency)(local_20,SUB84(dStack_34,0));",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

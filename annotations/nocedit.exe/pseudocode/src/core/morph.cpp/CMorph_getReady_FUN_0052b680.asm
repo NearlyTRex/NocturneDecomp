@@ -55,7 +55,7 @@
 ;   core_mimic.cpp_CMimic_setup_FUN_0051f3e0 at 0051f73a
 ;   core_moloch.cpp_CMoloch_process_FUN_00528d20 at 00529345
 ;   core_moloch.cpp_CMoloch_setup_FUN_00528c70 at 00528cf0
-;   core_morph.cpp_FUN_0052bcb0 at 0052c4ab
+;   core_morph.cpp_CMorph_editMorph_FUN_0052bcb0 at 0052c4ab
 ;   core_passngr.cpp_CPassenger_setup_FUN_00545d30 at 00545dc1
 ;   core_succubus.cpp_CSuccubus_setup_FUN_005c6b60 at 005c6e24
 ;   core_vampboss.cpp_CVampireBoss_setup_FUN_005e56c0 at 005e5865
@@ -70,7 +70,7 @@
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_expand_FUN_00420240
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_morph.cpp_FUN_0052b280
+;   core_morph.cpp_CMorphModel_findNearestPoint_FUN_0052b280
 ;   crt_memory.c___arrinit_FUN_005fe667
 ;
 ; *****************************************************************************
@@ -330,8 +330,8 @@ section .text
     PUSH EAX                            ; 0052ba07
     MOV EAX,dword ptr [ESP + 0xb4]      ; 0052ba08
     PUSH EAX                            ; 0052ba0f
-    CALL core_morph.cpp_FUN_0052b280    ; 0052ba10
-        ;   XREF to: 0052b280 (UNCONDITIONAL_CALL)  ; int core_morph.cpp_FUN_0052b280()
+    CALL core_morph.cpp_CMorphModel_findNearestPoint_FUN_0052b280 ; 0052ba10
+        ;   XREF to: 0052b280 (UNCONDITIONAL_CALL)  ; int core_morph.cpp_CMorphModel_findNearestPoint_FUN_0052b280(CMorphModel * this_ptr, CVector3f * position)
     ADD ESP,0x8                         ; 0052ba15
     MOV EDX,dword ptr [ESP + 0xb4]      ; 0052ba18
     MOV EDX,dword ptr [EDX + 0x58]      ; 0052ba1f

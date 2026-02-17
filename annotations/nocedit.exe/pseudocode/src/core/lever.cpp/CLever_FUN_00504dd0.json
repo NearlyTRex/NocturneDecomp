@@ -1,29 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 62,
-        "line": 22,
-        "message": "use of undeclared identifier 'stack0xffffffd8'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 64,
+    "complexity_score": 85,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 1,
-    "pseudocode_lines": 14,
-    "suspect_count": 4,
+    "pseudocode_lines": 25,
+    "suspect_count": 5,
     "suspect_types": [
-      "stack_param",
-      "stack_ref"
+      "decompiler_intrinsic",
+      "stack_param"
     ],
-    "total_lines": 76
+    "total_lines": 87
   },
   "cross_references": [
     {
@@ -159,28 +152,35 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 6,
+      "line": 10,
       "match": "in_stack_00000008",
       "text": "CVector3f *in_stack_00000008;",
       "type": "stack_param"
     },
     {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 20,
+      "match": "ROUND",
+      "text": "local_18 = (int)ROUND(ROUND((float)local_14 * this_ptr->param));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 20,
+      "match": "ROUND",
+      "text": "local_18 = (int)ROUND(ROUND((float)local_14 * this_ptr->param));",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 27,
       "match": "in_stack_00000008",
-      "text": "(&this_ptr->base,in_stack_00000008,(CVector3f *)&stack0xffffffd8);",
+      "text": "(&this_ptr->base,in_stack_00000008,&local_24);",
       "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 15,
-      "match": "&stack0xffffffd8",
-      "text": "(&this_ptr->base,in_stack_00000008,(CVector3f *)&stack0xffffffd8);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 28,
       "match": "in_stack_00000008",
       "text": "return in_stack_00000008;",
       "type": "stack_param"

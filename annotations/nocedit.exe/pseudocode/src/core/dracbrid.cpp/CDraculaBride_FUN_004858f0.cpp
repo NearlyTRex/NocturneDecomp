@@ -76,7 +76,8 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_FUN_004858f0(CDraculaBride *this_pt
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
             ((CDemonActor *)this_ptr,&CStack_60,&CStack_54);
   if ((this_ptr->base).base.is_fully_burned == 0) {
-    core_gore_cpp_CGore_FUN_004edbb0(g_CGorePtr);
+    core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0
+              (g_CGorePtr,&CStack_60,in_stack_00000008,100,(this_ptr->base).base.collision_layer);
     return;
   }
   (this_ptr->base).base.fire_count = 0;

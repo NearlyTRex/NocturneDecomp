@@ -73,9 +73,10 @@ LAB_00548f43:
       puVar2 = *(uint **)((int)g_ScreenBufferArray + local_18);
       if (0 < g_WindowWidth) {
         do {
-          uVar3 = (*puVar2 >> ((byte)g_GreenBitPosition & 0x1f)) * g_GreenScaleFactor;
-          local_1c = (*puVar2 >> ((byte)g_BlueBitPosition & 0x1f)) * g_BlueScaleFactor & 0xff;
-          _fputc(g_RedScaleFactor * (*puVar2 >> ((byte)g_RedBitPosition & 0x1f)) & 0xff,file);
+          uVar3 = (*puVar2 >> (g_GreenBitPosition.bytes[0] & 0x1f)) * g_GreenScaleFactor;
+          local_1c = (*puVar2 >> (g_BlueBitPosition.bytes[0] & 0x1f)) * g_BlueScaleFactor & 0xff;
+          _fputc(g_RedScaleFactor * (*puVar2 >> (g_RedBitPosition.bytes[0] & 0x1f)) & 0xff,file)
+          ;
           _fputc(uVar3 & 0xff,file);
           puVar2 = puVar2 + 1;
           iVar5 = iVar5 + 1;

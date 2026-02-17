@@ -6,12 +6,11 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 double __crtmath modf(double value,double *integer_part)
 
 {
-  double dVar1;
-  
-  dVar1 = round(value);
-  *value._4_4_ = dVar1;
-  return value - dVar1;
+  *integer_part = ROUND(value);
+  return value - ROUND(value);
 }

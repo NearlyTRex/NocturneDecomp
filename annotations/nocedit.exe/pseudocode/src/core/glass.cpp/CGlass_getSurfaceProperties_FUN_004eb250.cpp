@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl core_glass_cpp_CGlass_getSurfaceProperties_FUN_004eb250(CGlass *this_ptr,SSurfaceInfo *surface_info)
 
 {
@@ -14,11 +16,8 @@ void __cdecl core_glass_cpp_CGlass_getSurfaceProperties_FUN_004eb250(CGlass *thi
   float fVar3;
   float fVar4;
   float fVar5;
-  float fVar6;
-  double dVar7;
-  double dVar8;
-  int local_20;
-  int local_1c;
+  int local_18;
+  int local_14;
   
   core_actor_cpp_CDemonActor_getSurfaceProperties_FUN_00409840(&this_ptr->base,surface_info);
   if (this_ptr->mirror_flag == 0) {
@@ -36,24 +35,21 @@ void __cdecl core_glass_cpp_CGlass_getSurfaceProperties_FUN_004eb250(CGlass *thi
     fVar5 = (float)0.5;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
               (g_CDemonRendererPtr2,&this_ptr->broken_texture);
-    fVar6 = (float)g_CurrentTextureDimension;
-    dVar7 = round((double)((fVar3 / fVar4 + fVar5) * fVar6));
-    dVar8 = round((double)((1.0 - fVar1 / fVar2) * fVar6));
-    local_20 = (int)ROUND(dVar7);
-    local_1c = (int)ROUND(dVar8);
-    if (local_20 < 0) {
-      local_20 = 0;
+    local_18 = (int)ROUND(ROUND((fVar3 / fVar4 + fVar5) * (float)g_CurrentTextureDimension));
+    local_14 = (int)ROUND(ROUND((1.0 - fVar1 / fVar2) * (float)g_CurrentTextureDimension));
+    if (local_18 < 0) {
+      local_18 = 0;
     }
-    if (g_CurrentTextureDimension <= local_20) {
-      local_20 = g_CurrentTextureDimension + -1;
+    if (g_CurrentTextureDimension <= local_18) {
+      local_18 = g_CurrentTextureDimension + -1;
     }
-    if (local_1c < 0) {
-      local_1c = 0;
+    if (local_14 < 0) {
+      local_14 = 0;
     }
-    if (g_CurrentTextureDimension <= local_1c) {
-      local_1c = g_CurrentTextureDimension + -1;
+    if (g_CurrentTextureDimension <= local_14) {
+      local_14 = g_CurrentTextureDimension + -1;
     }
-    if (*(char *)(local_20 + local_1c * g_CurrentTextureDimension + (int)g_CurrentTextureData) ==
+    if (*(char *)(local_18 + local_14 * g_CurrentTextureDimension + (int)g_CurrentTextureData) ==
         '\0') {
       surface_info->alpha_or_wetness = 1.0;
       return;

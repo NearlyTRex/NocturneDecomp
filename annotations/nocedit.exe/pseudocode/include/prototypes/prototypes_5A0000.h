@@ -71,7 +71,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005
 CBoundingBox3D * __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a16c0(CDeformableModelInstance *this_ptr,CBoundingBox3D *output_bbox);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_renderSkeleton_FUN_005a17b0(CDeformableModelInstance *this_ptr,int color,int render_flags);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_renderBones_FUN_005a17e0(CDeformableModelInstance *this_ptr);
-void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800(CDeformableModelInstance *this_ptr);
+void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800(CDeformableModelInstance *this_ptr,int param_2,int param_3);
 void __cdecl core_skeleton_cpp_computeBoneWorldMatrices_FUN_005a1950(SBoneTransformData *bone_data,CDeformableModelInstance *instance_ptr);
 void __cdecl core_skeleton_cpp_blendBoneTransformData_FUN_005a1b70(CVector3f *result_root_pos,SBoneTransformData *bone_data_out, SBoneTransformData *bone_data_in,float blend_weight, CDeformableModelInstance *instance_ptr);
 CDeformableModel * __cdecl core_skeleton_cpp_getDeformableModel_FUN_005a1cf0(char *model_filename);
@@ -111,13 +111,13 @@ void __cdecl sound_sndmain_cpp_computeComplexFFT_FUN_005a39a0(float *input_real,
 void __cdecl sound_sndmain_cpp_computeFFT_FUN_005a3c90(float *input,int size,float *output_real,float *output_imag);
 int __cdecl sound_sndmain_cpp_parseWavFile_FUN_005a3fe0(_FILE *file_handle,long *file_offset_ptr,CSfxSample *sfx_sample);
 int __cdecl sound_sndmain_cpp_getActiveSfxCount_FUN_005a43a0(void);
-CSfxSample * __cdecl sound_sndmain_cpp_findFreeSampleSlot_FUN_005a4400(void);
+CSfxSample * __cdecl sound_sndmain_cpp_findFreeSfxSample_FUN_005a4400(void);
 int __cdecl sound_sndmain_cpp_ensureSoundMemoryAvailable_FUN_005a4450(int requested_bytes);
 void __cdecl sound_sndmain_cpp_trimLineAndRemoveComments_FUN_005a4530(char *line);
 void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(CSfxSample *this_ptr);
 CSfxSample * __cdecl sound_sndmain_cpp_getSfxSample_FUN_005a4c80(char *filename);
 int __cdecl sound_sndmain_cpp_isStreamableFile_FUN_005a5180(char *filename,char *filepath);
-CSfxSample * __cdecl sound_sndmain_cpp_loadStreamingSoundFile_FUN_005a5200(char *filename);
+CSfxSample * __cdecl sound_sndmain_cpp_loadStreamingSoundFile_FUN_005a5200(int slot_index,char *filename);
 void __cdecl sound_sndmain_cpp_calculateVirtualSpeakerPositions_FUN_005a5530(void);
 int __cdecl sound_sndmain_cpp_allocateHwSample_FUN_005a5620(int bits_per_sample,int channel_count,int sample_rate,int sample_count);
 float __cdecl sound_sndmain_cpp_calculateDistanceGain_FUN_005a56c0(float distance,float reference_distance,float min_distance,float max_distance);

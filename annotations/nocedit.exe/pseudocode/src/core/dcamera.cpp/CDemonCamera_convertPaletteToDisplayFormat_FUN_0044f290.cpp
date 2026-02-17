@@ -23,8 +23,9 @@ void __cdecl core_dcamera_cpp_CDemonCamera_convertPaletteToDisplayFormat_FUN_004
     uVar6 = (uint)(&g_CameraImagePaletteData.colors[0].r)[iVar1];
     uVar2 = (uint)(&g_CameraImagePaletteData.colors[0].b)[iVar1];
     if (g_BitsPerPixel == 0x20) {
-      uVar2 = uVar2 << ((byte)g_BlueBitPosition & 0x1f) |
-              uVar6 << ((byte)g_RedBitPosition & 0x1f) | uVar5 << ((byte)g_GreenBitPosition & 0x1f);
+      uVar2 = uVar2 << (g_BlueBitPosition.bytes[0] & 0x1f) |
+              uVar6 << (g_RedBitPosition.bytes[0] & 0x1f) |
+              uVar5 << (g_GreenBitPosition.bytes[0] & 0x1f);
     }
     else {
       uVar2 = uVar6 << 0x10 | uVar5 << 8 | uVar2;

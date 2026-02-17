@@ -56,7 +56,8 @@ void __cdecl core_scat_cpp_CScat_processDamage_FUN_00557ea0(CScat *this_ptr,SDam
       (this_ptr->base).base.grabbed_by = (CDemonActor *)0x0;
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&this_ptr_00->motion_controller,4,1);
-      core_gore_cpp_CGore_FUN_004ee030(g_CGorePtr,(CDemonActor *)this_ptr);
+      core_gore_cpp_CGore_spawnFliesOnActor_FUN_004ee030
+                (g_CGorePtr,(CDemonActor *)this_ptr,0x32,50.0,(CVector3f *)0x0);
     }
   }
   (*((this_ptr->base).base.base.vtable._ub)->playSound)

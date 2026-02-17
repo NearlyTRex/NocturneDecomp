@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
 {
 __asm {

@@ -90,7 +90,7 @@ void __cdecl core_baron_cpp_CBaron_FUN_004136b0(CBaron *this_ptr)
   local_d0.damage_type = 6;
   local_d0.damage_amount = 100.0;
   local_d0.attacker = (CDemonActor *)this_ptr;
-  local_d0.wielder = (CDemonActor *)this_ptr->unk5;
+  local_d0.wielder = this_ptr->target_actor;
   if ((CBaron *)local_d0.wielder == (CBaron *)0x0) {
     local_d0.wielder = (CDemonActor *)this_ptr;
   }

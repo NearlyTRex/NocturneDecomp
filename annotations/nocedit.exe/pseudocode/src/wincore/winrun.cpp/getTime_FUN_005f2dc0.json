@@ -1,29 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "missing_member",
-        "column": 54,
-        "line": 25,
-        "message": "no member named '_0_4_' in '_LARGE_INTEGER'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 62,
+    "complexity_score": 45,
     "cross_reference_count": 46,
     "function_call_count": 3,
     "global_count": 12,
-    "pseudocode_lines": 22,
-    "suspect_count": 3,
+    "pseudocode_lines": 20,
+    "suspect_count": 2,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "unknown_field"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 74
+    "total_lines": 72
   },
   "cross_references": [
     {
@@ -378,7 +370,7 @@
     {
       "addr": "03f96ba8",
       "name": "g_PerformanceCounter",
-      "type": "LARGE_INTEGER",
+      "type": "_struct_19",
       "value": null
     },
     {
@@ -454,24 +446,17 @@
   },
   "suspects": [
     {
-      "description": "Unknown/mangled field access",
-      "line": 18,
-      "match": "._0_4_",
-      "text": "(((((double)g_PerformanceCounter._0_4_ +",
-      "type": "unknown_field"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
+      "line": 18,
       "match": "ROUND",
-      "text": "g_AccumulatedGameTime = iVar1 + (int)ROUND(dVar3);",
+      "text": "(int)ROUND(ROUND(((((double)g_PerformanceCounter.LowPart +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
+      "line": 18,
       "match": "ROUND",
-      "text": "return iVar1 + (int)ROUND(dVar3);",
+      "text": "(int)ROUND(ROUND(((((double)g_PerformanceCounter.LowPart +",
       "type": "decompiler_intrinsic"
     }
   ]

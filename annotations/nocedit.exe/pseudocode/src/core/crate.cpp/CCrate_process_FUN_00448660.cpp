@@ -42,30 +42,30 @@ void __cdecl core_crate_cpp_CCrate_process_FUN_00448660(CCrate *this_ptr,float d
   (this_ptr->base).platform_orientation_delta.z = 0.0;
   (this_ptr->base).platform_orientation_delta.y = (this_ptr->base).platform_orientation_delta.z;
   pCVar3->x = (this_ptr->base).platform_orientation_delta.y;
-  if (((((*(float *)this_ptr->unk3 == (this_ptr->base).location.position.x) &&
-        (*(float *)(this_ptr->unk3 + 4) == (this_ptr->base).location.position.y)) &&
-       (*(float *)(this_ptr->unk3 + 8) == (this_ptr->base).location.position.z)) &&
-      ((*(float *)(this_ptr->unk3 + 0xc) == (this_ptr->base).orient.vec.x &&
-       (*(float *)(this_ptr->unk3 + 0x10) == (this_ptr->base).orient.vec.y)))) &&
-     (*(float *)(this_ptr->unk3 + 0x14) == (this_ptr->base).orient.vec.z)) {
-    local_c = *(float *)(this_ptr->unk3 + 0x18);
+  if ((((((this_ptr->cached_position).x == (this_ptr->base).location.position.x) &&
+        ((this_ptr->cached_position).y == (this_ptr->base).location.position.y)) &&
+       ((this_ptr->cached_position).z == (this_ptr->base).location.position.z)) &&
+      (((this_ptr->cached_orientation).vec.x == (this_ptr->base).orient.vec.x &&
+       ((this_ptr->cached_orientation).vec.y == (this_ptr->base).orient.vec.y)))) &&
+     ((this_ptr->cached_orientation).vec.z == (this_ptr->base).orient.vec.z)) {
+    local_c = this_ptr->cached_ground_height;
   }
   else {
     local_c = (*((this_ptr->base).vtable._ub)->cylinderGroundCheck)
-                        (&this_ptr->base,(float)this_ptr->unk2,(CVector3f *)0x0);
+                        (&this_ptr->base,this_ptr->ground_check_radius,(CVector3f *)0x0);
     pCVar1 = &(this_ptr->base).location;
-    if ((CLocation *)this_ptr->unk3 != pCVar1) {
-      *(float *)this_ptr->unk3 = (pCVar1->position).x;
-      *(float *)(this_ptr->unk3 + 4) = (this_ptr->base).location.position.y;
-      *(float *)(this_ptr->unk3 + 8) = (this_ptr->base).location.position.z;
+    if ((CLocation *)&this_ptr->cached_position != pCVar1) {
+      (this_ptr->cached_position).x = (pCVar1->position).x;
+      (this_ptr->cached_position).y = (this_ptr->base).location.position.y;
+      (this_ptr->cached_position).z = (this_ptr->base).location.position.z;
     }
     pUVar2 = &(this_ptr->base).orient;
-    if ((UOrientationVector *)(this_ptr->unk3 + 0xc) != pUVar2) {
-      *(float *)(this_ptr->unk3 + 0xc) = (pUVar2->vec).x;
-      *(float *)(this_ptr->unk3 + 0x10) = (this_ptr->base).orient.vec.y;
-      *(float *)(this_ptr->unk3 + 0x14) = (this_ptr->base).orient.vec.z;
+    if (&this_ptr->cached_orientation != pUVar2) {
+      (this_ptr->cached_orientation).vec.x = (pUVar2->vec).x;
+      (this_ptr->cached_orientation).vec.y = (this_ptr->base).orient.vec.y;
+      (this_ptr->cached_orientation).vec.z = (this_ptr->base).orient.vec.z;
     }
-    *(float *)(this_ptr->unk3 + 0x18) = local_c;
+    this_ptr->cached_ground_height = local_c;
     fStack_8 = local_c;
   }
   if ((this_ptr->last_platform == (CDemonActor *)0x0) &&

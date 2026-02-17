@@ -6,10 +6,11 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl shape_design_c_renderPolygonVerticesWithLabels_FUN_0045c2f0(int polygon_index)
 
 {
-  double dVar1;
   char local_7c [80];
   CVector3i local_2c;
   int local_20;
@@ -26,18 +27,12 @@ void __cdecl shape_design_c_renderPolygonVerticesWithLabels_FUN_0045c2f0(int pol
     for (local_20 = 0; local_20 < (int)g_ModelPolygonData[polygon_index].vertex_indices_count;
         local_20 = local_20 + 1) {
       local_14 = g_ModelPolygonData[polygon_index].vertex_indices[local_20];
-      dVar1 = round
-                        ((double)(g_LoadedVertices[local_14].vertex.x * 256.0f)
-                        );
-      local_2c.x = (int)ROUND(dVar1);
-      dVar1 = round
-                        ((double)(g_LoadedVertices[local_14].vertex.y * 256.0f)
-                        );
-      local_2c.y = (int)ROUND(dVar1);
-      dVar1 = round
-                        ((double)(g_LoadedVertices[local_14].vertex.z * 256.0f)
-                        );
-      local_2c.z = (int)ROUND(dVar1);
+      local_2c.x = (int)ROUND(ROUND(g_LoadedVertices[local_14].vertex.x *
+                                    256.0f));
+      local_2c.y = (int)ROUND(ROUND(g_LoadedVertices[local_14].vertex.y *
+                                    256.0f));
+      local_2c.z = (int)ROUND(ROUND(g_LoadedVertices[local_14].vertex.z *
+                                    256.0f));
       engine_matrix_c_transformToCache_FUN_0050cd70(local_20,&local_2c);
     }
     for (local_20 = 0; local_20 < (int)g_ModelPolygonData[polygon_index].vertex_indices_count;

@@ -84,7 +84,7 @@
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
 ;   core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
-;   core_gore.cpp_CGore_FUN_004edbb0
+;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0
 ;   crt_math.c_atan2_FUN_006013b1
@@ -339,8 +339,9 @@ section .text
     FXCH                                ; 005e457c
     FST float ptr [ESP + 0x8]           ; 005e457e
     FXCH                                ; 005e4582
-    CALL crt_math.c_atan2_FUN_006013b1  ; 005e4584
-        ;   XREF to: 006013b1 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_006013b1(float10 y, float10 x)
+    FXCH                                ; 005e4584
+    FPATAN                              ; 005e4586
+    NOP                                 ; 005e4588
     MOV EDI,dword ptr [EBX + 0xbe3c]    ; 005e4589
     FXCH                                ; 005e458f
     FSTP float ptr [ESP + 0x15c]        ; 005e4591
@@ -435,8 +436,8 @@ section .text
     PUSH EAX                            ; 005e46c8
     MOV ECX,dword ptr [0x0067b9a0]      ; 005e46c9 | g_CGorePtr | g_CGoreInstance
     PUSH ECX                            ; 005e46cf | g_CGoreInstance
-    CALL core_gore.cpp_CGore_FUN_004edbb0 ; 005e46d0
-        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004edbb0(CGore * this_ptr)
+    CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0 ; 005e46d0
+        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)
     ADD ESP,0x14                        ; 005e46d5
     FLD float ptr [EBX + 0x30]          ; 005e46d8
         ;   Label: LAB_005e46d8

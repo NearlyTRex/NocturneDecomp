@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 89,
+    "complexity_score": 127,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 11,
-    "pseudocode_lines": 34,
-    "suspect_count": 5,
+    "pseudocode_lines": 22,
+    "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 96
+    "total_lines": 84
   },
   "cross_references": [
     {
@@ -175,37 +175,72 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
+      "line": 15,
       "match": "ROUND",
-      "text": "g_CameraFogGrid.scroll_vector.x = (int)ROUND(dVar3);",
+      "text": "(int)ROUND(ROUND((double)(fog_config->scroll).x * 65536));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
+      "line": 15,
       "match": "ROUND",
-      "text": "g_CameraFogGrid.scroll_vector.y = (int)ROUND(dVar4);",
+      "text": "(int)ROUND(ROUND((double)(fog_config->scroll).x * 65536));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
+      "line": 17,
       "match": "ROUND",
-      "text": "g_CameraFogGrid.scroll_vector.z = (int)ROUND(dVar5);",
+      "text": "(int)ROUND(ROUND((double)(fog_config->scroll).y * 65536));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 34,
+      "line": 17,
       "match": "ROUND",
-      "text": "g_CameraFogGrid.height_threshold = (int)ROUND(dVar6);",
+      "text": "(int)ROUND(ROUND((double)(fog_config->scroll).y * 65536));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 35,
+      "line": 19,
       "match": "ROUND",
-      "text": "g_CameraFogGrid.density_multiplier = (int)ROUND(dVar7);",
+      "text": "(int)ROUND(ROUND((double)(fog_config->scroll).z * 65536));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 19,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND((double)(fog_config->scroll).z * 65536));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 21,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(fog_config->height_threshold * (float)256));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 21,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(fog_config->height_threshold * (float)256));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 23,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND((double)fog_config->density_multiplier * 65536));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 23,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND((double)fog_config->density_multiplier * 65536));",
       "type": "decompiler_intrinsic"
     }
   ]

@@ -3740,6 +3740,21 @@ _FILE g_StderrLogFile = {
 // _FILE*
 _FILE* g_StaticFilePoolStart = nullptr;
 
+// _MMX_INTEGER
+_MMX_INTEGER g_TextureShift1 = {0x0000000000000010ULL};
+_MMX_INTEGER g_TextureShift2 = {0x0000000000000008ULL};
+_MMX_INTEGER g_TextureMask1 = {0x00000000000000FFULL};
+_MMX_INTEGER g_TextureMask2 = {0x000000000000FF00ULL};
+_MMX_INTEGER g_RedMask16 = {0x000000000000F800ULL};
+_MMX_INTEGER g_GreenMask16 = {0x00000000000007E0ULL};
+_MMX_INTEGER g_BlueMask16 = {0x000000000000001FULL};
+_MMX_INTEGER g_RedMask32 = {0x0000000000F80000ULL};
+_MMX_INTEGER g_GreenMask32 = {0x000000000000FC00ULL};
+_MMX_INTEGER g_BlueMask32 = {0x00000000000000F8ULL};
+_MMX_INTEGER g_TotalColorBits = {0x0000000000000008ULL};
+_MMX_INTEGER g_GreenBlueBits = {0x0000000000000005ULL};
+_MMX_INTEGER g_BlueBitShift = {0x0000000000000003ULL};
+
 // byte
 byte BYTE_00684acc = 0x0;
 byte BYTE_00684acd = 0x0;
@@ -3942,21 +3957,6 @@ uint g_WindowsVersionMid = 0x0;
 uint g_WindowsVersionCombined = 0x0;
 uint g_MaxHandleCount = 0x14;
 uint g_CodePage = 0x1;
-
-// ulonglong
-ulonglong g_TextureShift1 = 0x10;
-ulonglong g_TextureShift2 = 0x8;
-ulonglong g_TextureMask1 = 0xff;
-ulonglong g_TextureMask2 = 0xff00;
-ulonglong g_RedMask16 = 0xf800;
-ulonglong g_GreenMask16 = 0x7e0;
-ulonglong g_BlueMask16 = 0x1f;
-ulonglong g_RedMask32 = 0xf80000;
-ulonglong g_GreenMask32 = 0xfc00;
-ulonglong g_BlueMask32 = 0xf8;
-ulonglong g_TotalColorBits = 0x8;
-ulonglong g_GreenBlueBits = 0x5;
-ulonglong g_BlueBitShift = 0x3;
 
 // undefined1
 undefined1 DAT_0068500c = 0;

@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFramedModel *this_ptr)
 
 {
@@ -25,8 +27,6 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
   char *pcVar13;
   CKeyFramedModel *pCVar14;
   byte bVar15;
-  double dVar16;
-  uint uVar17;
   int local_ca8;
   char local_c9c [260];
   char local_b98 [256];
@@ -187,11 +187,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                 (g_CDemonRendererPtr1,&local_114);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                 (g_CDemonRendererPtr1,(CVector3i *)&local_114,(CVector3i *)0x0);
-      uVar17 = 0xffffffff;
-      iVar8 = 0x47cdcc;
-      dVar16 = round((double)local_70);
-      local_1c = (CKeyFramedModelInstance *)(int)ROUND(dVar16);
-      core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850(this_ptr,local_1c,0,iVar8);
+      local_1c = (CKeyFramedModelInstance *)(int)ROUND(ROUND(local_70));
+      core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850(this_ptr,local_1c,0,-1);
       uVar6 = local_68;
       engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
       if ((uVar6 != 0) && (iVar8 = 0, 0 < this_ptr->vertex_count)) {
@@ -202,7 +199,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
             local_4c = *(int *)((int)&(pSVar2->projected_vertex).screen_y + iVar10) >> 0x10;
             x = *(int *)((int)&(pSVar2->projected_vertex).screen_x + iVar10) >> 0x10;
             if (-1 < x) {
-              _sprintf(local_2dc,"%d",iVar8,uVar17);
+              _sprintf(local_2dc,"%d",iVar8);
               engine_2d_c_drawText_FUN_00401fd0(local_2dc,x,local_4c);
             }
           }
@@ -214,11 +211,9 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
         shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0(g_CEditorToolsPtr,4.0,3);
       }
       if (local_60 == 0) {
-        iVar8 = this_ptr->frame_count;
-        uVar17 = 0x47d215;
-        dVar16 = round((double)local_70);
-        local_1c = (CKeyFramedModelInstance *)(int)ROUND(dVar16);
-        _sprintf(local_408,"Frame: %d of %d",local_1c,iVar8,uVar17);
+        local_1c = (CKeyFramedModelInstance *)(int)ROUND(ROUND(local_70));
+        _sprintf
+                  (local_408,"Frame: %d of %d",local_1c,this_ptr->frame_count);
         engine_2d_c_drawText_FUN_00401fd0(local_408,0,g_WindowHeight + -0x37);
       }
     }
@@ -690,9 +685,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                       (g_CEditorToolsPtr,"Nothing to bias!");
           }
           else {
-            dVar16 = round((double)local_70);
-            local_1c = (CKeyFramedModelInstance *)(int)ROUND(dVar16);
-            pCVar7 = this_ptr->frame_bounds + (int)local_1c * 2;
+            pCVar7 = this_ptr->frame_bounds + (int)ROUND(ROUND(local_70)) * 2;
             local_1a4 = pCVar7->x;
             local_1a0 = pCVar7->y;
             local_19c = pCVar7->z;
@@ -719,10 +712,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
             local_a0 = local_19c + local_190;
             local_144 = local_a8 * 0.5;
             local_140 = local_a4 * 0.5;
-            fVar4 = local_a0 * 0.5;
-            dVar16 = round((double)local_70);
-            local_1c = (CKeyFramedModelInstance *)(int)ROUND(dVar16);
-            local_13c = fVar4;
+            local_13c = local_a0 * 0.5;
+            local_1c = (CKeyFramedModelInstance *)(int)ROUND(ROUND(local_70));
             _sprintf(local_598,"Current dimensions on frame %d\nX: (%6.2f ... %6.2f), center = %g\nY: (%6.2f ... %6.2f), center = %g\nZ: (%6.2f ... %6.2f), center = %g\n\nEnter x,y,z bias amount\n");
             iVar8 = shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300
                               (g_CEditorToolsPtr,local_598,&local_138,0);
@@ -756,18 +747,12 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                   local_108.z = pCVar7->z;
                 }
                 fVar4 = (float)256;
-                ppCVar3 = this_ptr->vertex_list;
-                dVar16 = round((double)(local_108.x * fVar4));
-                local_1c = (CKeyFramedModelInstance *)(int)ROUND(dVar16);
-                *(CKeyFramedModelInstance **)(iVar8 + (int)ppCVar3) = local_1c;
-                ppCVar3 = this_ptr->vertex_list;
-                dVar16 = round((double)(local_108.y * fVar4));
-                local_1c = (CKeyFramedModelInstance *)(int)ROUND(dVar16);
-                *(CKeyFramedModelInstance **)((int)ppCVar3 + iVar8 + 4) = local_1c;
-                ppCVar3 = this_ptr->vertex_list;
-                dVar16 = round((double)(fVar4 * local_108.z));
-                local_1c = (CKeyFramedModelInstance *)(int)ROUND(dVar16);
-                *(CKeyFramedModelInstance **)(iVar8 + 8 + (int)ppCVar3) = local_1c;
+                *(int *)(iVar8 + (int)this_ptr->vertex_list) =
+                     (int)ROUND(ROUND(local_108.x * fVar4));
+                *(int *)((int)this_ptr->vertex_list + iVar8 + 4) =
+                     (int)ROUND(ROUND(local_108.y * fVar4));
+                local_1c = (CKeyFramedModelInstance *)(int)ROUND(ROUND(fVar4 * local_108.z));
+                *(CKeyFramedModelInstance **)(iVar8 + 8 + (int)this_ptr->vertex_list) = local_1c;
                 iVar8 = iVar8 + 0xc;
               }
               core_course_cpp_CCourse_dtor_FUN_004424e0(&local_f0,0);
@@ -804,8 +789,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                         (g_CEditorToolsPtr,"Nothing to bias!");
             }
             else {
-              dVar16 = round((double)local_70);
-              local_1c = (CKeyFramedModelInstance *)(int)ROUND(dVar16);
+              local_1c = (CKeyFramedModelInstance *)(int)ROUND(ROUND(local_70));
               core_dmodel_cpp_CKeyFramedModel_applyVertexBias_FUN_0047c2d0(this_ptr,(int)local_1c);
             }
           }
@@ -827,8 +811,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                           (g_CEditorToolsPtr,"Nothing to recenter!");
               }
               else {
-                dVar16 = round((double)local_70);
-                local_1c = (CKeyFramedModelInstance *)(int)ROUND(dVar16);
+                local_1c = (CKeyFramedModelInstance *)(int)ROUND(ROUND(local_70));
                 core_dmodel_cpp_CKeyFramedModel_recenter_FUN_0047c220(this_ptr,(int)local_1c);
               }
             }
@@ -837,8 +820,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                         (g_CEditorToolsPtr,"Nothing to scale!");
             }
             else {
-              dVar16 = round((double)local_70);
-              local_20 = (int)ROUND(dVar16);
+              local_20 = (int)ROUND(ROUND(local_70));
               pCVar7 = this_ptr->frame_bounds + local_20 * 2;
               local_1bc = pCVar7->x;
               local_1b8 = pCVar7->y;

@@ -237,8 +237,8 @@ void __cdecl wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031(STex
           }
           else {
             uVar9 = g_Hardware32BitPalette
-                    [*(byte *)((uVar11 >> g_TextureShift1 & (uint)g_TextureMask1) +
-                               (uVar8 >> g_TextureShift2 & (uint)g_TextureMask2) +
+                    [*(byte *)((uVar11 >> g_TextureShift1.mm & g_TextureMask1.u32[0]) +
+                               (uVar8 >> g_TextureShift2.mm & g_TextureMask2.u32[0]) +
                               (int)g_CurrentTextureData)];
           }
           uVar23 = psllw((ulonglong)
@@ -329,8 +329,8 @@ void __cdecl wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031(STex
           uVar20 = (ushort)(uVar38 >> 0x30);
           if (((g_RenderStateFlags.dword & 0x40) == 0) ||
              (*(int *)(uVar19 + (int)g_CurrentZBufferPtr) <= iVar17)) {
-            pbVar15 = (byte *)((uVar11 >> g_TextureShift1 & (uint)g_TextureMask1) +
-                               (uVar8 >> g_TextureShift2 & (uint)g_TextureMask2) +
+            pbVar15 = (byte *)((uVar11 >> g_TextureShift1.mm & g_TextureMask1.u32[0]) +
+                               (uVar8 >> g_TextureShift2.mm & g_TextureMask2.u32[0]) +
                               (int)g_CurrentTextureData);
             uVar9 = g_Hardware32BitPalette[*pbVar15];
             uVar38 = (ulonglong)
@@ -471,8 +471,8 @@ void __cdecl wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031(STex
         if ((((g_RenderStateFlags.dword & 0x40) == 0) ||
             (*(int *)(uVar19 + (int)g_CurrentZBufferPtr) <= iVar17)) &&
            (uVar9 = g_Hardware32BitPalette
-                    [*(byte *)((uVar11 >> g_TextureShift1 & (uint)g_TextureMask1) +
-                               (uVar8 >> g_TextureShift2 & (uint)g_TextureMask2) +
+                    [*(byte *)((uVar11 >> g_TextureShift1.mm & g_TextureMask1.u32[0]) +
+                               (uVar8 >> g_TextureShift2.mm & g_TextureMask2.u32[0]) +
                               (int)g_CurrentTextureData)], uVar9 != 0)) {
           uVar43 = 0;
           if ((g_RenderStateFlags.dword & 0x20) != 0) {

@@ -7,8 +7,10 @@
 // Structure: CFootstep
 // Ghidra size: 0x40 (64 bytes)
 typedef struct CFootstep {
-    char unk1[8]; // 0x0
-    CVector3f unk2[4]; // 0x8
-    char field2_0x38[8]; // 0x38
+    int expired; // 0x0
+    int blood_type; // 0x4
+    CVector3f corners[4]; // 0x8
+    int alpha; // 0x38
+    int is_bloody; // 0x3c
 } CFootstep;
 

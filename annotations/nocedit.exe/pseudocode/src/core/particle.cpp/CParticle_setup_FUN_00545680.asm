@@ -14,7 +14,7 @@
 ; XREF[3]:
 ;   core_fire.cpp_FUN_004c17c0 at 004c17d6
 ;   core_fire.cpp_FUN_004c6170 at 004c6188
-;   core_gore.cpp_CBloodParticle_FUN_004eb9a0 at 004eb9c6
+;   core_gore.cpp_CBloodParticle_setup_FUN_004eb9a0 at 004eb9c6
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10

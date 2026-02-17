@@ -6,29 +6,22 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl shape_design_c_processVerticesAndRenderPolygons_FUN_0045d5d0(void)
 
 {
   int iVar1;
   int iVar2;
-  double dVar3;
-  double dVar4;
-  double dVar5;
   CVector3i local_28;
   int local_1c;
   int local_18;
   int local_14;
   
   for (local_1c = 0; local_1c < g_VertexCount; local_1c = local_1c + 1) {
-    dVar3 = round
-                      ((double)(g_LoadedVertices[local_1c].vertex.x * 256.0f));
-    local_28.x = (int)ROUND(dVar3);
-    dVar3 = round
-                      ((double)(g_LoadedVertices[local_1c].vertex.y * 256.0f));
-    local_28.y = (int)ROUND(dVar3);
-    dVar3 = round
-                      ((double)(g_LoadedVertices[local_1c].vertex.z * 256.0f));
-    local_28.z = (int)ROUND(dVar3);
+    local_28.x = (int)ROUND(ROUND(g_LoadedVertices[local_1c].vertex.x * 256.0f));
+    local_28.y = (int)ROUND(ROUND(g_LoadedVertices[local_1c].vertex.y * 256.0f));
+    local_28.z = (int)ROUND(ROUND(g_LoadedVertices[local_1c].vertex.z * 256.0f));
     engine_matrix_c_transformToCache_FUN_0050cd70(local_1c,&local_28);
   }
   if (g_KeyboardState[0x22] != '\0') {
@@ -49,14 +42,13 @@ void __cdecl shape_design_c_processVerticesAndRenderPolygons_FUN_0045d5d0(void)
     g_WireframeMode = 1 - g_WireframeMode;
   }
   for (local_1c = 0; local_1c < g_VertexCount; local_1c = local_1c + 1) {
-    dVar3 = round
-                      ((double)(g_VertexNormals[local_1c].vertex.x * (float)65535));
-    dVar4 = round
-                      ((double)(g_VertexNormals[local_1c].vertex.y * (float)65535));
-    dVar5 = round
-                      ((double)(g_VertexNormals[local_1c].vertex.z * (float)65535));
     iVar2 = engine_light_cpp_calculatePhongLighting_FUN_00505530
-                      ((int)ROUND(dVar3),(int)ROUND(dVar4),(int)ROUND(dVar5));
+                      ((int)ROUND(ROUND(g_VertexNormals[local_1c].vertex.x *
+                                        (float)65535)),
+                       (int)ROUND(ROUND(g_VertexNormals[local_1c].vertex.y *
+                                        (float)65535)),
+                       (int)ROUND(ROUND(g_VertexNormals[local_1c].vertex.z *
+                                        (float)65535)));
     g_RenderVertexBuffer[local_1c].light = iVar2;
   }
   for (local_1c = 0; local_1c < g_PolygonCount; local_1c = local_1c + 1) {

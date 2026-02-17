@@ -30,7 +30,7 @@ int __cdecl core_boxactor_cpp_CBoxActor_renderTransparent_FUN_00421ef0(CBoxActor
   }
   if (iVar2 != 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
-              (&this_ptr->model,(float)this_ptr->unk2,-1);
+              (&this_ptr->model,this_ptr->anim_frame,-1);
   }
   if (this_ptr->dont_use_normals != 0) {
     g_CDemonSetPtr->disable_directional_lighting = 0;

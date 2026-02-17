@@ -289,7 +289,6 @@
 #include "types/classes/CStrList.h"
 #include "types/classes/CStrList_vtable.h"
 #include "types/classes/CStranger.h"
-#include "types/classes/CStranger_ptr_130264.h"
 #include "types/classes/CSuccubus.h"
 #include "types/classes/CSvetlana.h"
 #include "types/classes/CTVBat.h"

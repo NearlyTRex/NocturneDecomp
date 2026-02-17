@@ -11,9 +11,9 @@ void __cdecl staticInit(void);
 // Address: 004bf1a0
 float __cdecl FUN_004bf1a0(void);
 
-// Original: core_fire.cpp_CSmokeParticle_initRender_FUN_004bf1f0
+// Original: core_fire.cpp_CSmokeParticle_setupRenderState_FUN_004bf1f0
 // Address: 004bf1f0
-int __cdecl CSmokeParticle::initRender(CSmokeParticle *this_ptr);
+int __cdecl CSmokeParticle::setupRenderState(CSmokeParticle *this_ptr);
 
 // Original: core_fire.cpp_CSmokeParticle_reset_FUN_004bf2e0
 // Address: 004bf2e0
@@ -39,9 +39,9 @@ void __cdecl CBulletHole::init(CBulletHole *this_ptr,CVector3f *hit_position,CVe
 // Address: 004bfa00
 void __cdecl CBulletHole::process(CBulletHole *this_ptr);
 
-// Original: core_fire.cpp_CBulletHole_initRender_FUN_004bfa40
+// Original: core_fire.cpp_CBulletHole_setupRenderState_FUN_004bfa40
 // Address: 004bfa40
-void __cdecl CBulletHole::initRender(CBulletHole *this_ptr);
+void __cdecl CBulletHole::setupRenderState(CBulletHole *this_ptr);
 
 // Original: core_fire.cpp_CBulletHole_render_FUN_004bfac0
 // Address: 004bfac0
@@ -71,9 +71,9 @@ void __cdecl CStake::process(CStake *this_ptr);
 // Address: 004c0240
 void __cdecl CSpark::process(CSpark *this_ptr);
 
-// Original: core_fire.cpp_CSpark_initRender_FUN_004c0300
+// Original: core_fire.cpp_CSpark_setupRenderState_FUN_004c0300
 // Address: 004c0300
-int __cdecl CSpark::initRender(CSpark *this_ptr);
+int __cdecl CSpark::setupRenderState(CSpark *this_ptr);
 
 // Original: core_fire.cpp_CSpark_render_FUN_004c0420
 // Address: 004c0420
@@ -91,9 +91,9 @@ void __cdecl loadFireBallAssets(void);
 // Address: 004c0b30
 void __cdecl CFireball::process(CFireball *this_ptr);
 
-// Original: core_fire.cpp_CFireball_initRender_FUN_004c0d80
+// Original: core_fire.cpp_CFireball_setupRenderState_FUN_004c0d80
 // Address: 004c0d80
-int __cdecl CFireball::initRender(CFireball *this_ptr);
+int __cdecl CFireball::setupRenderState(CFireball *this_ptr);
 
 // Original: core_fire.cpp_CFireball_render_FUN_004c0e70
 // Address: 004c0e70

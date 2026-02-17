@@ -25,8 +25,9 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_processPolygonColor_FUN_00403e30(SMRGL
       return (SMRGLHeaderExtended *)&polygon_info->surface_normal;
     }
     g_CurrentPolygonColor =
-         uVar3 << ((byte)g_BlueBitPosition & 0x1f) |
-         uVar2 << ((byte)g_GreenBitPosition & 0x1f) | uVar4 << ((byte)g_RedBitPosition & 0x1f);
+         uVar3 << (g_BlueBitPosition.bytes[0] & 0x1f) |
+         uVar2 << (g_GreenBitPosition.bytes[0] & 0x1f) | uVar4 << (g_RedBitPosition.bytes[0] & 0x1f)
+    ;
   }
   return (SMRGLHeaderExtended *)&polygon_info->surface_normal;
 }

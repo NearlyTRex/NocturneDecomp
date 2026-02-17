@@ -50,13 +50,13 @@ void __cdecl core_dstrender_cpp_blendLightmapToTexture64BitOutput_FUN_00492bd5(u
     uVar12 = pmulhw(uVar13,*(ulonglong *)
                             (g_LightmapData +
                             ((uint)*lightmap_indices + (uint)(*texture_indices >> 1)) * 4));
-    uVar6 = (ushort)((short)uVar7 + (short)uVar12 + (short)g_AmbientLightMMX1) >> 4;
+    uVar6 = (ushort)((short)uVar7 + (short)uVar12 + (short)g_AmbientLightMMX1.mm) >> 4;
     uVar8 = (ushort)((short)((ulonglong)uVar7 >> 0x10) + (short)((ulonglong)uVar12 >> 0x10) +
-                    (short)(g_AmbientLightMMX1 >> 0x10)) >> 4;
+                    (short)(g_AmbientLightMMX1.mm >> 0x10)) >> 4;
     uVar9 = (ushort)((short)((ulonglong)uVar7 >> 0x20) + (short)((ulonglong)uVar12 >> 0x20) +
-                    (short)(g_AmbientLightMMX1 >> 0x20)) >> 4;
+                    (short)(g_AmbientLightMMX1.mm >> 0x20)) >> 4;
     uVar10 = (ushort)((short)((ulonglong)uVar7 >> 0x30) + (short)((ulonglong)uVar12 >> 0x30) +
-                     (short)(g_AmbientLightMMX1 >> 0x30)) >> 4;
+                     (short)(g_AmbientLightMMX1.mm >> 0x30)) >> 4;
     *output_buffer =
          CONCAT13((uVar10 != 0) * (uVar10 < 0x100) * (char)uVar10 - (0xff < uVar10),
                   CONCAT12((uVar9 != 0) * (uVar9 < 0x100) * (char)uVar9 - (0xff < uVar9),
@@ -81,13 +81,13 @@ void __cdecl core_dstrender_cpp_blendLightmapToTexture64BitOutput_FUN_00492bd5(u
     uVar12 = pmulhw(uVar13,*(ulonglong *)
                             (g_LightmapData +
                             ((uint)lightmap_indices[1] + (uint)(texture_indices[1] >> 1)) * 4));
-    uVar6 = (ushort)((short)uVar7 + (short)uVar12 + (short)g_AmbientLightMMX2) >> 4;
+    uVar6 = (ushort)((short)uVar7 + (short)uVar12 + (short)g_AmbientLightMMX2.mm) >> 4;
     uVar8 = (ushort)((short)((ulonglong)uVar7 >> 0x10) + (short)((ulonglong)uVar12 >> 0x10) +
-                    (short)(g_AmbientLightMMX2 >> 0x10)) >> 4;
+                    (short)(g_AmbientLightMMX2.mm >> 0x10)) >> 4;
     uVar9 = (ushort)((short)((ulonglong)uVar7 >> 0x20) + (short)((ulonglong)uVar12 >> 0x20) +
-                    (short)(g_AmbientLightMMX2 >> 0x20)) >> 4;
+                    (short)(g_AmbientLightMMX2.mm >> 0x20)) >> 4;
     uVar10 = (ushort)((short)((ulonglong)uVar7 >> 0x30) + (short)((ulonglong)uVar12 >> 0x30) +
-                     (short)(g_AmbientLightMMX2 >> 0x30)) >> 4;
+                     (short)(g_AmbientLightMMX2.mm >> 0x30)) >> 4;
     output_buffer[1] =
          CONCAT13((uVar10 != 0) * (uVar10 < 0x100) * (char)uVar10 - (0xff < uVar10),
                   CONCAT12((uVar9 != 0) * (uVar9 < 0x100) * (char)uVar9 - (0xff < uVar9),

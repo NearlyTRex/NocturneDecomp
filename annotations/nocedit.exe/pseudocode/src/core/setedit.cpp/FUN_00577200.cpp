@@ -31,11 +31,11 @@ void __cdecl core_setedit_cpp_FUN_00577200(void)
       uVar1 = *(uint *)(&DAT_03365cc0 + iVar2);
       iVar2 = iVar2 + 4;
       *local_24 = (ushort)((uVar1 >> 8 & 0xff) / (uint)g_GreenScaleFactor <<
-                          ((byte)g_GreenBitPosition & 0x1f)) |
+                          (g_GreenBitPosition.bytes[0] & 0x1f)) |
                   (ushort)((uVar1 & 0xff) / (uint)g_RedScaleFactor <<
-                          ((byte)g_RedBitPosition & 0x1f)) |
+                          (g_RedBitPosition.bytes[0] & 0x1f)) |
                   (ushort)((uVar1 >> 0x10 & 0xff) / (uint)g_BlueScaleFactor <<
-                          ((byte)g_BlueBitPosition & 0x1f));
+                          (g_BlueBitPosition.bytes[0] & 0x1f));
     } while (iVar2 != local_18);
     local_1c = local_1c + 4;
     local_14 = local_14 + 1;

@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 183,
+    "complexity_score": 192,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 3,
-    "pseudocode_lines": 63,
-    "suspect_count": 11,
+    "pseudocode_lines": 52,
+    "suspect_count": 13,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 190
+    "total_lines": 179
   },
   "cross_references": [
     {
@@ -220,79 +220,93 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 29,
       "match": "(int *)((int)",
-      "text": "if (*(int *)((int)pCVar1->edge_perpendiculars + iVar5 + -0x14) == 0) {",
+      "text": "if (*(int *)((int)pCVar1->edge_perpendiculars + iVar3 + -0x14) == 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 30,
       "match": "(uint *)((int)",
-      "text": "local_48 = *(uint *)((int)(pCVar1->uv_coords + -2) + iVar5 + 4);",
+      "text": "local_48 = *(uint *)((int)(pCVar1->uv_coords + -2) + iVar3 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(uint *)((int)",
+      "text": "local_3c = *(uint *)((int)(pCVar1->uv_coords + -1) + iVar3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(uint *)((int)",
+      "text": "local_30 = *(uint *)((int)(pCVar1->uv_coords + -1) + iVar3 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 34,
-      "match": "(uint *)((int)",
-      "text": "local_3c = *(uint *)((int)(pCVar1->uv_coords + -1) + iVar5);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 35,
-      "match": "(uint *)((int)",
-      "text": "local_30 = *(uint *)((int)(pCVar1->uv_coords + -1) + iVar5 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 37,
       "match": "(float *)((int)",
-      "text": "fVar2 = *(float *)((int)(pCVar1->edge_perpendiculars + -1) + iVar5) * 127.0f +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 39,
-      "match": "(float *)((int)",
-      "text": "fVar3 = *(float *)((int)pCVar1->edge_perpendiculars + iVar5 + -0x10) * 127.0f +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 42,
-      "match": "(float *)((int)",
-      "text": "((double)(*(float *)((int)pCVar1->edge_perpendiculars + iVar5 + -8) *",
+      "text": "local_18 = (int)ROUND(ROUND(*(float *)((int)pCVar1->edge_perpendiculars + iVar3 + -8) *",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 45,
+      "line": 34,
       "match": "ROUND",
-      "text": "iStack_20 = (int)ROUND(dVar6);",
+      "text": "local_18 = (int)ROUND(ROUND(*(float *)((int)pCVar1->edge_perpendiculars + iVar3 + -8) *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 47,
+      "line": 34,
       "match": "ROUND",
-      "text": "iStack_1c = (int)ROUND(dVar7);",
+      "text": "local_18 = (int)ROUND(ROUND(*(float *)((int)pCVar1->edge_perpendiculars + iVar3 + -8) *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(float *)((int)",
+      "text": "local_14 = (int)ROUND(ROUND(*(float *)((int)pCVar1->edge_perpendiculars + iVar3 + -0x10) *",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 36,
+      "match": "ROUND",
+      "text": "local_14 = (int)ROUND(ROUND(*(float *)((int)pCVar1->edge_perpendiculars + iVar3 + -0x10) *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 49,
+      "line": 36,
       "match": "ROUND",
-      "text": "iStack_20 = (int)ROUND(dVar6);",
+      "text": "local_14 = (int)ROUND(ROUND(*(float *)((int)pCVar1->edge_perpendiculars + iVar3 + -0x10) *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 40,
+      "match": "(float *)((int)",
+      "text": "(int)ROUND(ROUND(*(float *)((int)(pCVar1->edge_perpendiculars + -1) + iVar3) *",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 40,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(*(float *)((int)(pCVar1->edge_perpendiculars + -1) + iVar3) *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 51,
+      "line": 40,
       "match": "ROUND",
-      "text": "(g_CDemonRendererPtr2,iStack_20,(int)ROUND(dVar7),blue_component);",
+      "text": "(int)ROUND(ROUND(*(float *)((int)(pCVar1->edge_perpendiculars + -1) + iVar3) *",
       "type": "decompiler_intrinsic"
     }
   ]

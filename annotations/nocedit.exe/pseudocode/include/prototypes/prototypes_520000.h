@@ -36,9 +36,12 @@
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SHuffmanTable.h"
+#include "types/structs/SInputFace.h"
 #include "types/structs/SMRGLHeaderExtended.h"
 #include "types/structs/SMRGLHeaderPrimitive.h"
 #include "types/structs/SMRGLModelBounds.h"
+#include "types/structs/SMRGLPrimitiveQuad.h"
+#include "types/structs/SMRGLTextureExtended.h"
 #include "types/structs/SMorphControlPoint.h"
 #include "types/structs/SMotion.h"
 #include "types/structs/SMotionTransition.h"
@@ -47,6 +50,8 @@
 #include "types/structs/SMpegSubbandAllocation.h"
 #include "types/structs/SMpegSubbandSCFSI.h"
 #include "types/structs/SMpegSubbandScalefactors.h"
+#include "types/structs/SProjectedVertex.h"
+#include "types/structs/STextureSet.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x520000
@@ -150,18 +155,18 @@ void __cdecl core_mobster_cpp_CMobster_setup_FUN_00525340(CMobster *this_ptr);
 void __cdecl core_mobster_cpp_CMobster_FUN_00525650(CMobster *this_ptr);
 void __cdecl core_mobster_cpp_CMobster_FUN_00525720(CMobster *this_ptr);
 void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,float delta_time);
-void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(CMobster *this_ptr);
+void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(CMobster *this_ptr,float delta_time);
 void __cdecl core_mobster_cpp_FUN_00526b00(void);
 void __stack2_esi core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_00526b20 (CMobster *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
-int __cdecl core_mobster_cpp_CMobster_FUN_00526d90(CMobster *this_ptr);
+int __cdecl core_mobster_cpp_CMobster_FUN_00526d90(CMobster *this_ptr,float delta_time);
 void __cdecl core_mobster_cpp_CMobster_FUN_005271c0(CMobster *this_ptr);
 void __cdecl core_mobster_cpp_CMobster_archive_FUN_00527230(CMobster *this_ptr);
 void __cdecl core_mobster_cpp_CMobster_reset_FUN_00527360(CMobster *this_ptr);
-void __cdecl core_mobster_cpp_CMobster_FUN_00527380(CMobster *this_ptr);
+void __cdecl core_mobster_cpp_CMobster_FUN_00527380(CMobster *this_ptr,SDamageInfo *damage_info);
 void __cdecl core_mobster_cpp_CMobster_processDamage_FUN_00527740(CMobster *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_mobster_cpp_CMobster_getTargetPoints_FUN_005278d0(CMobster *this_ptr,CVector3f *out_points_array);
 void __cdecl core_mobster_cpp_CMobster_hasCollision_FUN_005279d0(CMobster *this_ptr,SCollisionInfo *collision_info);
-void __cdecl core_mobster_cpp_CMobster_FUN_005279f0(CMobster *this_ptr);
+void __cdecl core_mobster_cpp_CMobster_FUN_005279f0(CMobster *this_ptr,int taunt_category);
 void __cdecl core_mobster_cpp_CMobster_getPropertyList_FUN_00527b70(CMobster *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_mobster_cpp_CMobster_FUN_00527c30(CMobster *this_ptr);
 void __cdecl core_mobster_cpp_CMobster_addFilesToExtract_FUN_00527c40(CMobster *this_ptr,_FILE *file_handle);
@@ -203,47 +208,47 @@ SBat * __cdecl core_moon_cpp_SBat_dtor_FUN_0052a420(SBat *this_ptr,uint flags);
 SBat * __cdecl core_moon_cpp_SBat_arrdtor_FUN_0052a430(SBat *objs,uint flags);
 CCourse * __cdecl core_moon_cpp_CCourse_arrdtor_FUN_0052a450(CCourse *objs,uint flags);
 CAlphaBitmap * __cdecl core_moon_cpp_CAlphaBitmap_arrdtor_FUN_0052a470(CAlphaBitmap *objs,uint flags);
-int __cdecl core_morph_cpp_FUN_0052a490(void);
+int __cdecl core_morph_cpp_countTrianglesFromPolygons_FUN_0052a490(int poly_count,int *poly_headers,int poly_stride);
 CMorphModel * __cdecl core_morph_cpp_CMorphModel_ctor_FUN_0052a4c0(CMorphModel *this_ptr);
 CMorphModel * __cdecl core_morph_cpp_CMorphModel_dtor_FUN_0052a4f0(CMorphModel *this_ptr,uint flags);
 void __cdecl core_morph_cpp_CMorphModel_free_FUN_0052a510(CMorphModel *this_ptr);
-void __cdecl core_morph_cpp_CMorphModel_addPart_FUN_0052a580(CMorphModel *this_ptr);
-void __cdecl core_morph_cpp_CMorphModel_FUN_0052a710(CMorphModel *this_ptr);
-void __cdecl core_morph_cpp_CMorphModel_FUN_0052a870(CMorphModel *this_ptr);
-void __cdecl core_morph_cpp_CMorphModel_FUN_0052a8d0(CMorphModel *this_ptr,CKeyFramedModel *model_ptr,int frame_index);
-void __cdecl core_morph_cpp_CMorphModel_animate_FUN_0052a920(CMorphModel *this_ptr,int part_index);
-void __cdecl core_morph_cpp_CMorphModel_FUN_0052aa00(CMorphModel *this_ptr);
-void __cdecl core_morph_cpp_CMorphModel_FUN_0052aa30(CMorphModel *this_ptr);
-void __cdecl core_morph_cpp_CMorphModel_FUN_0052aa80(CMorphModel *this_ptr);
-void __cdecl core_morph_cpp_CMorphModel_setFaceList_FUN_0052aac0(CMorphModel *this_ptr,int part_index);
-void __cdecl core_morph_cpp_CMorphModel_FUN_0052aca0(CMorphModel *this_ptr);
+void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_0052a580(CMorphModel *this_ptr,int vertex_count,CVector3i *vertex_data,int poly_count, SMRGLPrimitiveQuad *poly_data,int poly_stride,SMRGLTextureExtended *texture_list, int *texture_index_list);
+void __cdecl core_morph_cpp_CMorphModel_addPartFromVertexBuffer_FUN_0052a710(CMorphModel *this_ptr,int vertex_count,CVector3i *skinned_vertices,int tri_count, SInputFace *tri_data,STextureSet *texture_sets,int *index_data);
+void __cdecl core_morph_cpp_CMorphModel_addPartFromDeformableModel_FUN_0052a870(CMorphModel *this_ptr,CDeformableModelInstance *model_ptr);
+void __cdecl core_morph_cpp_CMorphModel_addPartFromKeyFramedModel_FUN_0052a8d0(CMorphModel *this_ptr,CKeyFramedModel *model_ptr,int frame_index);
+void __cdecl core_morph_cpp_CMorphModel_animateFromVertexBuffer_FUN_0052a920(CMorphModel *this_ptr,int part_index,CVector3i *vertex_buffer,int start_offset, int vertex_count);
+void __cdecl core_morph_cpp_CMorphModel_animateFromPartVertexBuffer_FUN_0052aa00(CMorphModel *this_ptr,int part_index,CVector3i *vertex_buffer,int start_offset, int vertex_count);
+void __cdecl core_morph_cpp_CMorphModel_animateFromDeformableModel_FUN_0052aa30(CMorphModel *this_ptr,int part_index,CDeformableModelInstance *model_ptr);
+void __cdecl core_morph_cpp_CMorphModel_animateFromKeyframedModel_FUN_0052aa80(CMorphModel *this_ptr,int part_index,CKeyFramedModel *model_ptr,int frame_index);
+void __cdecl core_morph_cpp_CMorphModel_setFaceListFromPolygon_FUN_0052aac0(CMorphModel *this_ptr,int part_index,SMRGLPrimitiveQuad *poly_data,int poly_stride, SMRGLTextureExtended *texture_list,int *texture_index_list,int start_face, int poly_count);
+void __cdecl core_morph_cpp_CMorphModel_setFaceListFromTriangles_FUN_0052aca0(CMorphModel *this_ptr,int part_index,SInputFace *face_data,STextureSet *texture_sets ,int *index_data,int start_face,int face_count);
 int __cdecl core_morph_cpp_CMorphModel_findOrAddTexture_FUN_0052ae60(CMorphModel *this_ptr,char *filename);
-void __cdecl core_morph_cpp_CMorphModel_FUN_0052af30(CMorphModel *this_ptr);
+void __cdecl core_morph_cpp_CMorphModel_render_FUN_0052af30(CMorphModel *this_ptr,float morph_t);
 void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_0052af70(CMorphModel *this_ptr);
-void __cdecl core_morph_cpp_CMorphModel_FUN_0052b160(CMorphModel *this_ptr);
-int __cdecl core_morph_cpp_FUN_0052b280(void);
+void __cdecl core_morph_cpp_CMorphModel_renderFaces_FUN_0052b160(CMorphModel *this_ptr,float morph_t);
+int __cdecl core_morph_cpp_CMorphModel_findNearestPoint_FUN_0052b280(CMorphModel *this_ptr,CVector3f *position);
 CMorph * __cdecl core_morph_cpp_CMorph_ctor_FUN_0052b310(CMorph *this_ptr);
 CMorph * __cdecl core_morph_cpp_CMorph_dtor_FUN_0052b330(CMorph *this_ptr,uint flags);
-void __cdecl core_morph_cpp_CMorph_FUN_0052b350(CMorph *this_ptr);
-void __cdecl core_morph_cpp_CMorph_FUN_0052b370(CMorph *this_ptr,int model_index);
-void __cdecl core_morph_cpp_CMorph_FUN_0052b3d0(CMorph *this_ptr,int model_index);
-void __cdecl core_morph_cpp_CMorph_FUN_0052b430(CMorph *this_ptr,int model_index);
-void __cdecl core_morph_cpp_CMorph_FUN_0052b470(CMorph *this_ptr,int model_index,CKeyFramedModel *model_ptr,int frame_index);
-void __cdecl core_morph_cpp_CMorph_FUN_0052b4b0(CMorph *this_ptr,int model_index);
-void __cdecl core_morph_cpp_CMorph_FUN_0052b500(CMorph *this_ptr,int model_index);
-void __cdecl core_morph_cpp_CMorph_FUN_0052b550(CMorph *this_ptr,int model_index);
-void __cdecl core_morph_cpp_CMorph_FUN_0052b580(CMorph *this_ptr,int model_index,CKeyFramedModel *model_ptr,int frame_index);
-void __cdecl core_morph_cpp_CMorph_FUN_0052b5c0(CMorph *this_ptr,int model_index);
-void __cdecl core_morph_cpp_CMorph_FUN_0052b600(CMorph *this_ptr,int model_index);
-void __cdecl core_morph_cpp_CMorph_FUN_0052b640(CMorph *this_ptr,int model_index);
+void __cdecl core_morph_cpp_CMorph_free_FUN_0052b350(CMorph *this_ptr);
+void __cdecl core_morph_cpp_CMorph_setupModelFromPolygons_FUN_0052b370(CMorph *this_ptr,int model_index);
+void __cdecl core_morph_cpp_CMorph_setupModelFromPolygons_FUN_0052b3d0(CMorph *this_ptr,int model_index);
+void __cdecl core_morph_cpp_CMorph_setupModelFromDeformable_FUN_0052b430(CMorph *this_ptr,int model_index,CDeformableModelInstance *model_ptr);
+void __cdecl core_morph_cpp_CMorph_setupModelFromKeyframed_FUN_0052b470(CMorph *this_ptr,int model_index,CKeyFramedModel *model_ptr,int frame_index);
+void __cdecl core_morph_cpp_CMorph_addPartToModel_FUN_0052b4b0(CMorph *this_ptr,int model_index);
+void __cdecl core_morph_cpp_CMorph_addPartToModel_FUN_0052b500(CMorph *this_ptr,int model_index);
+void __cdecl core_morph_cpp_CMorph_addPartFromDeformableModel_FUN_0052b550(CMorph *this_ptr,int model_index,CDeformableModelInstance *model_ptr);
+void __cdecl core_morph_cpp_CMorph_addPartFromKeyframedModel_FUN_0052b580(CMorph *this_ptr,int model_index,CKeyFramedModel *model_ptr,int frame_index);
+void __cdecl core_morph_cpp_CMorph_updateModelVertices_FUN_0052b5c0(CMorph *this_ptr,int model_index);
+void __cdecl core_morph_cpp_CMorph_updateModelFromDeformable_FUN_0052b600(CMorph *this_ptr,int model_index,CDeformableModelInstance *model_ptr,int part_index);
+void __cdecl core_morph_cpp_CMorph_updateModelFromKeyframed_FUN_0052b640(CMorph *this_ptr,int model_index,CKeyFramedModel *model_ptr,int frame_index, int part_index);
 void __cdecl core_morph_cpp_CMorph_getReady_FUN_0052b680(CMorph *this_ptr);
-void __cdecl core_morph_cpp_CMorph_FUN_0052bae0(CMorph *this_ptr);
-void __cdecl core_morph_cpp_FUN_0052bb50(void);
-void __cdecl core_morph_cpp_FUN_0052bb80(void);
-void __cdecl core_morph_cpp_FUN_0052bcb0(void);
-void __cdecl core_morph_cpp_CMorph_FUN_0052ca90(CMorph *this_ptr);
-void __cdecl core_morph_cpp_FUN_0052cc10(void);
-int __cdecl core_morph_cpp_FUN_0052cc40(void);
+void __cdecl core_morph_cpp_CMorph_render_FUN_0052bae0(CMorph *this_ptr,float morph_t);
+void __cdecl core_morph_cpp_plotPixelSafe_FUN_0052bb50(int x,int y);
+void __cdecl core_morph_cpp_drawVertexMarker_FUN_0052bb80(SProjectedVertex *vertex,int radius);
+void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph);
+void __cdecl core_morph_cpp_CMorph_previewMorph_FUN_0052ca90(CMorph *this_ptr);
+void __cdecl core_morph_cpp_transformAndProjectVertex_FUN_0052cc10(SProjectedVertex **vertex_buffer_ptr,int vertex_index,CVector3i *input);
+int __cdecl core_morph_cpp_addInts_FUN_0052cc40(int a,int b);
 SMorphControlPoint * __cdecl core_morph_cpp_SMorphControlPoint_ctor_FUN_0052cc50(SMorphControlPoint *this_ptr);
 SMorphControlPoint * __cdecl core_morph_cpp_SMorphControlPoint_dtor_FUN_0052cc70(SMorphControlPoint *this_ptr,uint flags);
 CVector3f * __cdecl core_morph_cpp_CVector3f_arrdtor_FUN_0052cc90(CVector3f *objs,uint flags);
@@ -251,7 +256,7 @@ SMorphControlPoint * __cdecl core_morph_cpp_SMorphControlPoint_arrdtor_FUN_0052c
 CDeformableModelInstance * __cdecl core_morph_cpp_CDeformableModelInstance_arrdtor_FUN_0052ccd0(CDeformableModelInstance *objs,uint flags);
 CBoundingBox3D * __cdecl core_morph_cpp_CBoundingBox3D_arrdtor_FUN_0052ccf0(CBoundingBox3D *objs,uint flags);
 CMorphModel * __cdecl core_morph_cpp_CMorphModel_arrdtor_FUN_0052cd10(CMorphModel *objs,uint flags);
-void __cdecl core_morph_cpp_FUN_0052cd30(void);
+void __cdecl core_morph_cpp_skipLine_FUN_0052cd30(_FILE *file_handle);
 CMotionList * __cdecl core_motion_cpp_CMotionList_ctor_FUN_0052cd50(CMotionList *this_ptr);
 void __cdecl core_motion_cpp_CMotionList_load_FUN_0052cd70(CMotionList *this_ptr,_FILE *file_handle);
 void __cdecl core_motion_cpp_CMotionList_save_FUN_0052d170(CMotionList *this_ptr,_FILE *file_handle);

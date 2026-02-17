@@ -6,11 +6,13 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl core_game_cpp_drawHealthBar_FUN_004d7fa0(void)
 
 {
+  int iVar1;
   int color;
-  double dVar1;
   int in_stack_00000004;
   int in_stack_00000008;
   int in_stack_0000000c;
@@ -26,14 +28,12 @@ void __cdecl core_game_cpp_drawHealthBar_FUN_004d7fa0(void)
   }
   engine_2d_c_fillRectWithBorder_FUN_00403200
             (in_stack_00000004,in_stack_00000008,in_stack_0000000c,in_stack_00000010,0,0);
-  dVar1 = round
-                    ((double)((float)((in_stack_0000000c - in_stack_00000004) + 1) *
-                             in_stack_00000014));
-  if ((int)ROUND(dVar1) < 1) {
+  iVar1 = (int)ROUND(ROUND((float)((in_stack_0000000c - in_stack_00000004) + 1) * in_stack_00000014)
+                    );
+  if (iVar1 < 1) {
     return;
   }
   engine_2d_c_fillRectColor_FUN_00403170
-            (in_stack_00000004,in_stack_00000008,in_stack_00000004 + (int)ROUND(dVar1),
-             in_stack_0000000c,color);
+            (in_stack_00000004,in_stack_00000008,in_stack_00000004 + iVar1,in_stack_00000010,color);
   return;
 }

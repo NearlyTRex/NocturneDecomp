@@ -2,33 +2,9 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 31,
-        "message": "use of undeclared identifier 'DAT_02f37eb4'; did you mean 'DAT_02f3dbb4'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 32,
-        "message": "use of undeclared identifier 'DAT_02f37eb4'; did you mean 'DAT_02f3dbb4'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 40,
-        "line": 36,
-        "message": "use of undeclared identifier 'DAT_02f37eb4'; did you mean 'DAT_02f3dbb4'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 20,
-        "line": 40,
-        "message": "use of undeclared identifier 'DAT_02f37eb4'; did you mean 'DAT_02f3dbb4'?"
-      },
-      {
         "category": "incompatible_types",
         "column": 21,
-        "line": 54,
+        "line": 51,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       }
     ],
@@ -37,17 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 159,
-    "complexity_score": 153,
+    "complexity_score": 60,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 12,
-    "pseudocode_lines": 63,
-    "suspect_count": 8,
-    "suspect_types": [
-      "stack_param",
-      "undefined_data"
-    ],
-    "total_lines": 222
+    "pseudocode_lines": 60,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 219
   },
   "cross_references": [
     {
@@ -68,7 +41,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_mobster.cpp_CMobster_FUN_005279f0",
-    "signature": "void __cdecl core_mobster_cpp_CMobster_FUN_005279f0(CMobster *this_ptr)"
+    "signature": "void __cdecl core_mobster_cpp_CMobster_FUN_005279f0(CMobster *this_ptr,int taunt_category)"
   },
   "function_calls": [
     {
@@ -131,8 +104,8 @@
     },
     {
       "addr": "02f37eb4",
-      "name": "DAT_02f37eb4",
-      "type": "undefined4",
+      "name": "g_MobsterTauntCounters",
+      "type": "int[5]",
       "value": null
     },
     {
@@ -206,10 +179,10 @@
     "pcode_op_count": 749
   },
   "stack_frame": {
-    "frame_size": 136,
+    "frame_size": 140,
     "local_size": 132,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -246,6 +219,13 @@
         "offset": 4,
         "size": 4,
         "type": "CMobster *"
+      },
+      {
+        "is_param": true,
+        "name": "taunt_category",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
@@ -266,62 +246,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000008",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000008",
-      "text": "local_1c = in_stack_00000008 + 0x60;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000008",
-      "text": "iVar5 = in_stack_00000008 * 4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_02f37eb4",
-      "text": "iVar3 = *(int *)(&DAT_02f37eb4 + iVar5);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_02f37eb4",
-      "text": "*(int *)(&DAT_02f37eb4 + iVar5) = iVar3 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_00000008",
-      "text": "if (((pCVar1->foul_language_flag != 0) || (in_stack_00000008 != 1)) || (iVar3 + 1 != 6)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_02f37eb4",
-      "text": "local_1c,*(uint *)(&DAT_02f37eb4 + iVar5));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_02f37eb4",
-      "text": "*(uint *)(&DAT_02f37eb4 + iVar5) = 0;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

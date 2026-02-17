@@ -34,22 +34,22 @@ void __cdecl core_simbox_cpp_CSimBox_setup_FUN_00588e00(CSimBox *this_ptr)
   CStack_14.z = CStack_2c.max.z - CStack_2c.min.z;
   position = &(this_ptr->base).location;
   core_box_cpp_CBox_setupCorners_FUN_0041dd20
-            (&this_ptr->box,&position->position,&(this_ptr->base).orient.vec,&CStack_14,
+            (&this_ptr->physics_box,&position->position,&(this_ptr->base).orient.vec,&CStack_14,
              this_ptr->weight);
-  if ((CLocation *)(this_ptr->unk + 4) != position) {
-    *(float *)(this_ptr->unk + 4) = (position->position).x;
-    *(float *)(this_ptr->unk + 8) = (this_ptr->base).location.position.y;
-    *(float *)(this_ptr->unk + 0xc) = (this_ptr->base).location.position.z;
+  if ((CLocation *)&this_ptr->spawn_position != position) {
+    (this_ptr->spawn_position).x = (position->position).x;
+    (this_ptr->spawn_position).y = (this_ptr->base).location.position.y;
+    (this_ptr->spawn_position).z = (this_ptr->base).location.position.z;
   }
   pUVar1 = &(this_ptr->base).orient;
-  if ((UOrientationVector *)(this_ptr->unk + 0x10) != pUVar1) {
-    *(float *)(this_ptr->unk + 0x10) = (pUVar1->vec).x;
-    *(float *)(this_ptr->unk + 0x14) = (this_ptr->base).orient.vec.y;
-    *(float *)(this_ptr->unk + 0x18) = (this_ptr->base).orient.vec.z;
+  if (&this_ptr->spawn_orientation != (CVector3f *)pUVar1) {
+    (this_ptr->spawn_orientation).x = (pUVar1->vec).x;
+    (this_ptr->spawn_orientation).y = (this_ptr->base).orient.vec.y;
+    (this_ptr->spawn_orientation).z = (this_ptr->base).orient.vec.z;
   }
   if (this_ptr->type != 1) {
     return;
   }
-  (this_ptr->box).is_valid = 0;
+  (this_ptr->physics_box).is_valid = 0;
   return;
 }

@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 281,
-    "complexity_score": 148,
+    "complexity_score": 199,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 27,
-    "pseudocode_lines": 83,
-    "suspect_count": 6,
+    "pseudocode_lines": 74,
+    "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 364
+    "total_lines": 355
   },
   "cross_references": [
     {
@@ -380,44 +380,86 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 18,
+      "line": 15,
       "match": "ROUND",
-      "text": "local_28.x = (int)ROUND(dVar3);",
+      "text": "local_28.x = (int)ROUND(ROUND(g_LoadedVertices[local_1c].vertex.x * 256.0f));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 21,
+      "line": 15,
       "match": "ROUND",
-      "text": "local_28.y = (int)ROUND(dVar3);",
+      "text": "local_28.x = (int)ROUND(ROUND(g_LoadedVertices[local_1c].vertex.x * 256.0f));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
+      "line": 16,
       "match": "ROUND",
-      "text": "local_28.z = (int)ROUND(dVar3);",
+      "text": "local_28.y = (int)ROUND(ROUND(g_LoadedVertices[local_1c].vertex.y * 256.0f));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
+      "line": 16,
       "match": "ROUND",
-      "text": "((int)ROUND(dVar3),(int)ROUND(dVar4),(int)ROUND(dVar5));",
+      "text": "local_28.y = (int)ROUND(ROUND(g_LoadedVertices[local_1c].vertex.y * 256.0f));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
+      "line": 17,
       "match": "ROUND",
-      "text": "((int)ROUND(dVar3),(int)ROUND(dVar4),(int)ROUND(dVar5));",
+      "text": "local_28.z = (int)ROUND(ROUND(g_LoadedVertices[local_1c].vertex.z * 256.0f));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
+      "line": 17,
       "match": "ROUND",
-      "text": "((int)ROUND(dVar3),(int)ROUND(dVar4),(int)ROUND(dVar5));",
+      "text": "local_28.z = (int)ROUND(ROUND(g_LoadedVertices[local_1c].vertex.z * 256.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 39,
+      "match": "ROUND",
+      "text": "((int)ROUND(ROUND(g_VertexNormals[local_1c].vertex.x *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 39,
+      "match": "ROUND",
+      "text": "((int)ROUND(ROUND(g_VertexNormals[local_1c].vertex.x *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 41,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(g_VertexNormals[local_1c].vertex.y *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 41,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(g_VertexNormals[local_1c].vertex.y *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 43,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(g_VertexNormals[local_1c].vertex.z *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 43,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(g_VertexNormals[local_1c].vertex.z *",
       "type": "decompiler_intrinsic"
     }
   ]

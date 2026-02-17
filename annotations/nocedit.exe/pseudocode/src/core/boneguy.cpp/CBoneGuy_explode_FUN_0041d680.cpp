@@ -66,7 +66,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041d680(CBoneGuy *this_ptr)
       core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
                 ((CCharacter *)this_ptr,body_part,local_18,0);
       body_part->dont_pick_me_up = 1;
-      core_bodypart_cpp_CBodyPart_FUN_0041a050(body_part);
+      core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_0041a050(body_part);
       local_1c->boxes[0].body_part = body_part;
       pCVar5 = &(body_part->base).location;
       pSVar3 = local_20 + local_18;

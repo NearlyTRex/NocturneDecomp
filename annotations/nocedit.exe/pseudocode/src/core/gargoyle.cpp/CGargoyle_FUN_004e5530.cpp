@@ -83,7 +83,7 @@ switchD_004e5566_default:
         core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
                   ((CCharacter *)this_ptr,*(int *)(this_ptr->unk + 0x28));
       }
-      core_bodypart_cpp_CBodyPart_FUN_0041a050(body_part);
+      core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_0041a050(body_part);
       if ((this_ptr->base).base.model.part_data.visibility_flags[*(int *)(this_ptr->unk + 0x28)] ==
           0) {
         in_stack_00000008[1] = 0x461c3c00;

@@ -1,0 +1,198 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 20,
+    "complexity_score": 6,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 26
+  },
+  "cross_references": [
+    {
+      "addr": "005c6b60",
+      "from_addr": "005c6e0d",
+      "name": "core_succubus.cpp_CSuccubus_setup_FUN_005c6b60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005e56c0",
+      "from_addr": "005e57c2",
+      "name": "core_vampboss.cpp_CVampireBoss_setup_FUN_005e56c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0052b580",
+    "address_range": [
+      [
+        "0052b580",
+        "0052b5b0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_morph.cpp_CMorph_addPartFromKeyframedModel_FUN_0052b580",
+    "signature": "void __cdecl core_morph_cpp_CMorph_addPartFromKeyframedModel_FUN_0052b580(CMorph *this_ptr,int model_index,CKeyFramedModel *model_ptr,int frame_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "0052a8d0",
+      "is_variadic": false,
+      "name": "core_morph.cpp_CMorphModel_addPartFromKeyFramedModel_FUN_0052a8d0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 8,
+    "call_sites": [
+      {
+        "call_addr": "005e57c2",
+        "call_type": "direct",
+        "caller": "core_vampboss.cpp_CVampireBoss_setup_FUN_005e56c0",
+        "estimated_params": 4,
+        "instructions_analyzed": 7,
+        "reg_params": [],
+        "stack_params": 4
+      },
+      {
+        "call_addr": "005c6e0d",
+        "call_type": "direct",
+        "caller": "core_succubus.cpp_CSuccubus_setup_FUN_005c6b60",
+        "estimated_params": 4,
+        "instructions_analyzed": 9,
+        "reg_params": [],
+        "stack_params": 4
+      },
+      {
+        "call_addr": "005c6def",
+        "call_type": "direct",
+        "caller": "core_succubus.cpp_CSuccubus_setup_FUN_005c6b60",
+        "estimated_params": 4,
+        "instructions_analyzed": 9,
+        "reg_params": [],
+        "stack_params": 4
+      },
+      {
+        "call_addr": "005e5813",
+        "call_type": "direct",
+        "caller": "core_vampboss.cpp_CVampireBoss_setup_FUN_005e56c0",
+        "estimated_params": 4,
+        "instructions_analyzed": 9,
+        "reg_params": [],
+        "stack_params": 4
+      },
+      {
+        "call_addr": "005e5855",
+        "call_type": "direct",
+        "caller": "core_vampboss.cpp_CVampireBoss_setup_FUN_005e56c0",
+        "estimated_params": 4,
+        "instructions_analyzed": 9,
+        "reg_params": [],
+        "stack_params": 4
+      },
+      {
+        "call_addr": "005e57f7",
+        "call_type": "direct",
+        "caller": "core_vampboss.cpp_CVampireBoss_setup_FUN_005e56c0",
+        "estimated_params": 4,
+        "instructions_analyzed": 9,
+        "reg_params": [],
+        "stack_params": 4
+      },
+      {
+        "call_addr": "005e5839",
+        "call_type": "direct",
+        "caller": "core_vampboss.cpp_CVampireBoss_setup_FUN_005e56c0",
+        "estimated_params": 4,
+        "instructions_analyzed": 7,
+        "reg_params": [],
+        "stack_params": 4
+      },
+      {
+        "call_addr": "005e57df",
+        "call_type": "direct",
+        "caller": "core_vampboss.cpp_CVampireBoss_setup_FUN_005e56c0",
+        "estimated_params": 4,
+        "instructions_analyzed": 9,
+        "reg_params": [],
+        "stack_params": 4
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 4,
+    "estimated_params": 4
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 8.166666666666666,
+    "instruction_count": 18,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "CALL": 1,
+      "COPY": 13,
+      "INT_ADD": 10,
+      "INT_AND": 34,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 14,
+      "INT_LEFT": 4,
+      "INT_LESS": 1,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 4,
+      "INT_OR": 10,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 10,
+      "INT_SUB": 8,
+      "INT_XOR": 2,
+      "LOAD": 6,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 5
+    },
+    "pcode_op_count": 147
+  },
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMorph *"
+      },
+      {
+        "is_param": true,
+        "name": "model_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "model_ptr",
+        "offset": 12,
+        "size": 4,
+        "type": "CKeyFramedModel *"
+      },
+      {
+        "is_param": true,
+        "name": "frame_index",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

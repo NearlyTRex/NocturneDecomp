@@ -15,7 +15,7 @@
 ; undefined8       Stack[-0x14]:8  local_14
 ;
 ; XREF[35]:
-;   core_bodypart.cpp_CBodyPart_FUN_0041a630 at 0041a9ba
+;   core_bodypart.cpp_CBodyPart_applyRotation_FUN_0041a630 at 0041a9ba
 ;   core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40 at 0041ca9b
 ;   core_boxactor.cpp_CLightActor_process_FUN_00422a50 at 00422be1
 ;   core_bugs.cpp_CBugs_FUN_00425fe0 at 004260cb

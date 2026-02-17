@@ -11,7 +11,7 @@
 ; char *           Stack[0x14]:4   prompt
 ; Local Variables:
 ; undefined1       Stack[-0x114]:1  local_114
-; _BIT_INTEGER     Stack[-0x14]:4  local_14
+; _BIT_INTEGER32   Stack[-0x14]:4  local_14
 ;
 ; XREF[42]:
 ;   core_cloth.cpp_CCloth_addCollisionBone_FUN_0043c430 at 0043c579

@@ -84,20 +84,20 @@ void __cdecl core_dstrender_cpp_blendBilerpTextureWithLightmapMMX_FUN_00493450(u
     sVar20 = (short)((ulonglong)uVar22 >> 0x10);
     sVar21 = (short)((ulonglong)uVar22 >> 0x20);
     sVar23 = (short)((ulonglong)uVar22 >> 0x30);
-    uVar7 = (ushort)((short)uVar8 + (short)uVar22 + (short)g_LightmapBlendBias3) >> 4;
+    uVar7 = (ushort)((short)uVar8 + (short)uVar22 + (short)g_LightmapBlendBias3.mm) >> 4;
     uVar10 = (ushort)((short)((ulonglong)uVar8 >> 0x10) + sVar20 +
-                     (short)(g_LightmapBlendBias3 >> 0x10)) >> 4;
+                     (short)(g_LightmapBlendBias3.mm >> 0x10)) >> 4;
     uVar11 = (ushort)((short)((ulonglong)uVar8 >> 0x20) + sVar21 +
-                     (short)(g_LightmapBlendBias3 >> 0x20)) >> 4;
+                     (short)(g_LightmapBlendBias3.mm >> 0x20)) >> 4;
     uVar12 = (ushort)((short)((ulonglong)uVar8 >> 0x30) + sVar23 +
-                     (short)(g_LightmapBlendBias3 >> 0x30)) >> 4;
-    uVar13 = (ushort)((short)uVar14 + (short)uVar22 + (short)g_LightmapBlendBias4) >> 4;
+                     (short)(g_LightmapBlendBias3.mm >> 0x30)) >> 4;
+    uVar13 = (ushort)((short)uVar14 + (short)uVar22 + (short)g_LightmapBlendBias4.mm) >> 4;
     uVar15 = (ushort)((short)((ulonglong)uVar14 >> 0x10) + sVar20 +
-                     (short)(g_LightmapBlendBias4 >> 0x10)) >> 4;
+                     (short)(g_LightmapBlendBias4.mm >> 0x10)) >> 4;
     uVar16 = (ushort)((short)((ulonglong)uVar14 >> 0x20) + sVar21 +
-                     (short)(g_LightmapBlendBias4 >> 0x20)) >> 4;
+                     (short)(g_LightmapBlendBias4.mm >> 0x20)) >> 4;
     uVar17 = (ushort)((short)((ulonglong)uVar14 >> 0x30) + sVar23 +
-                     (short)(g_LightmapBlendBias4 >> 0x30)) >> 4;
+                     (short)(g_LightmapBlendBias4.mm >> 0x30)) >> 4;
     uVar9 = (ulonglong)
             CONCAT13((uVar12 != 0) * (uVar12 < 0x100) * (char)uVar12 - (0xff < uVar12),
                      CONCAT12((uVar11 != 0) * (uVar11 < 0x100) * (char)uVar11 - (0xff < uVar11),
@@ -116,12 +116,12 @@ void __cdecl core_dstrender_cpp_blendBilerpTextureWithLightmapMMX_FUN_00493450(u
     texture_indices = texture_indices + 1;
     lightmap_indices = lightmap_indices + 1;
     *output_buffer =
-         (uint)((uVar9 & g_BlueMask32) >> g_BlueBitShift) |
-         (uint)((uVar9 & g_GreenMask32) >> g_GreenBlueBits) |
-         (uint)((uVar9 & g_RedMask32) >> g_TotalColorBits) |
-         (uint)(((uVar18 & g_BlueMask32) >> g_BlueBitShift |
-                 (uVar18 & g_GreenMask32) >> g_GreenBlueBits |
-                (uVar18 & g_RedMask32) >> g_TotalColorBits) << 0x10);
+         (uint)((uVar9 & g_BlueMask32.mm) >> g_BlueBitShift.mm) |
+         (uint)((uVar9 & g_GreenMask32.mm) >> g_GreenBlueBits.mm) |
+         (uint)((uVar9 & g_RedMask32.mm) >> g_TotalColorBits.mm) |
+         (uint)(((uVar18 & g_BlueMask32.mm) >> g_BlueBitShift.mm |
+                 (uVar18 & g_GreenMask32.mm) >> g_GreenBlueBits.mm |
+                (uVar18 & g_RedMask32.mm) >> g_TotalColorBits.mm) << 0x10);
     output_buffer = output_buffer + 1;
     iVar6 = pixel_count + -2;
     bVar3 = 1 < pixel_count;

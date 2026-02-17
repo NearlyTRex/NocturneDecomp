@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 142,
-    "complexity_score": 140,
+    "complexity_score": 165,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
-    "pseudocode_lines": 105,
-    "suspect_count": 3,
+    "pseudocode_lines": 100,
+    "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 247
+    "total_lines": 242
   },
   "cross_references": [
     {
@@ -179,23 +179,44 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
+      "line": 92,
+      "match": "ROUND",
+      "text": "local_14 = (uchar)(int)ROUND(ROUND(pCVar7->palette[0].r));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 92,
+      "match": "ROUND",
+      "text": "local_14 = (uchar)(int)ROUND(ROUND(pCVar7->palette[0].r));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 94,
       "match": "ROUND",
-      "text": "uStack_18 = (uchar)(int)ROUND(dVar12);",
+      "text": "local_14 = (uchar)(int)ROUND(ROUND(pCVar7->palette[0].g));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 97,
+      "line": 94,
       "match": "ROUND",
-      "text": "uStack_1c = (uchar)(int)ROUND(dVar12);",
+      "text": "local_14 = (uchar)(int)ROUND(ROUND(pCVar7->palette[0].g));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 100,
+      "line": 96,
       "match": "ROUND",
-      "text": "uStack_20 = (uchar)(int)ROUND(dVar12);",
+      "text": "local_14 = (uchar)(int)ROUND(ROUND(pCVar7->palette[0].b));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 96,
+      "match": "ROUND",
+      "text": "local_14 = (uchar)(int)ROUND(ROUND(pCVar7->palette[0].b));",
       "type": "decompiler_intrinsic"
     }
   ]

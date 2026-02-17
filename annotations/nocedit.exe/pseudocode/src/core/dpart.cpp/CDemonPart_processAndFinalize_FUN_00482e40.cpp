@@ -6,15 +6,16 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl core_dpart_cpp_CDemonPart_processAndFinalize_FUN_00482e40(CDemonPart *this_ptr,int enable_vertex_reduction,int enable_polygon_optimize)
 
 {
-  CVector3i *pCVar1;
+  float *pfVar1;
   double dVar2;
   int iVar3;
   int iVar4;
   int iVar5;
-  double dVar6;
   
   shape_design_c_calculateVertexNormals_FUN_0045be40();
   if (enable_vertex_reduction != 0) {
@@ -34,19 +35,16 @@ void __cdecl core_dpart_cpp_CDemonPart_processAndFinalize_FUN_00482e40(CDemonPar
     iVar3 = 0;
     iVar4 = 0;
     do {
-      pCVar1 = this_ptr->vertex_positions;
-      dVar6 = round
-                        ((double)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar3) * dVar2);
-      *(int *)((int)&pCVar1->x + iVar4) = (int)ROUND(dVar6);
-      pCVar1 = this_ptr->vertex_positions;
-      dVar6 = round
-                        ((double)*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar3) * dVar2);
-      *(int *)((int)&pCVar1->y + iVar4) = (int)ROUND(dVar6);
-      pCVar1 = this_ptr->vertex_positions;
-      dVar6 = round
-                        ((double)*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar3) * dVar2);
+      *(int *)((int)&this_ptr->vertex_positions->x + iVar4) =
+           (int)ROUND(ROUND((double)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar3) * dVar2))
+      ;
+      *(int *)((int)&this_ptr->vertex_positions->y + iVar4) =
+           (int)ROUND(ROUND((double)*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar3) * dVar2))
+      ;
+      pfVar1 = (float *)((int)&g_LoadedVertices[0].vertex.z + iVar3);
       iVar3 = iVar3 + 0x14;
-      *(int *)((int)&pCVar1->z + iVar4) = (int)ROUND(dVar6);
+      *(int *)((int)&this_ptr->vertex_positions->z + iVar4) =
+           (int)ROUND(ROUND((double)*pfVar1 * dVar2));
       iVar5 = iVar5 + 1;
       iVar4 = iVar4 + 0xc;
     } while (iVar5 < this_ptr->vertex_count);

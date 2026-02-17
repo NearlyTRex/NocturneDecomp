@@ -1,0 +1,250 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 22,
+    "complexity_score": 7,
+    "cross_reference_count": 8,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 29
+  },
+  "cross_references": [
+    {
+      "addr": "00418680",
+      "from_addr": "004186b8",
+      "name": "core_biggs.cpp_CBiggs_setup_FUN_00418680",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051f3e0",
+      "from_addr": "0051f653",
+      "name": "core_mimic.cpp_CMimic_setup_FUN_0051f3e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00528d20",
+      "from_addr": "00529330",
+      "name": "core_moloch.cpp_CMoloch_process_FUN_00528d20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00528c70",
+      "from_addr": "00528ce7",
+      "name": "core_moloch.cpp_CMoloch_setup_FUN_00528c70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052bcb0",
+      "from_addr": "0052c481",
+      "name": "core_morph.cpp_CMorph_editMorph_FUN_0052bcb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00545d30",
+      "from_addr": "00545da1",
+      "name": "core_passngr.cpp_CPassenger_setup_FUN_00545d30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005c6b60",
+      "from_addr": "005c6dc9",
+      "name": "core_succubus.cpp_CSuccubus_setup_FUN_005c6b60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005e56c0",
+      "from_addr": "005e5827",
+      "name": "core_vampboss.cpp_CVampireBoss_setup_FUN_005e56c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0052b430",
+    "address_range": [
+      [
+        "0052b430",
+        "0052b464"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_morph.cpp_CMorph_setupModelFromDeformable_FUN_0052b430",
+    "signature": "void __cdecl core_morph_cpp_CMorph_setupModelFromDeformable_FUN_0052b430(CMorph *this_ptr,int model_index,CDeformableModelInstance *model_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0052a870",
+      "is_variadic": false,
+      "name": "core_morph.cpp_CMorphModel_addPartFromDeformableModel_FUN_0052a870"
+    },
+    {
+      "addr": "0052a510",
+      "is_variadic": false,
+      "name": "core_morph.cpp_CMorphModel_free_FUN_0052a510"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 15,
+    "call_sites": [
+      {
+        "call_addr": "0052c481",
+        "call_type": "direct",
+        "caller": "core_morph.cpp_CMorph_editMorph_FUN_0052bcb0",
+        "estimated_params": 3,
+        "instructions_analyzed": 7,
+        "reg_params": [],
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00545da1",
+        "call_type": "direct",
+        "caller": "core_passngr.cpp_CPassenger_setup_FUN_00545d30",
+        "estimated_params": 3,
+        "instructions_analyzed": 6,
+        "reg_params": [],
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00528ce7",
+        "call_type": "direct",
+        "caller": "core_moloch.cpp_CMoloch_setup_FUN_00528c70",
+        "estimated_params": 3,
+        "instructions_analyzed": 5,
+        "reg_params": [],
+        "stack_params": 3
+      },
+      {
+        "call_addr": "005e5827",
+        "call_type": "direct",
+        "caller": "core_vampboss.cpp_CVampireBoss_setup_FUN_005e56c0",
+        "estimated_params": 3,
+        "instructions_analyzed": 7,
+        "reg_params": [],
+        "stack_params": 3
+      },
+      {
+        "call_addr": "005c6dc9",
+        "call_type": "direct",
+        "caller": "core_succubus.cpp_CSuccubus_setup_FUN_005c6b60",
+        "estimated_params": 3,
+        "instructions_analyzed": 6,
+        "reg_params": [],
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00529330",
+        "call_type": "direct",
+        "caller": "core_moloch.cpp_CMoloch_process_FUN_00528d20",
+        "estimated_params": 3,
+        "instructions_analyzed": 6,
+        "reg_params": [],
+        "stack_params": 3
+      },
+      {
+        "call_addr": "005e57b0",
+        "call_type": "direct",
+        "caller": "core_vampboss.cpp_CVampireBoss_setup_FUN_005e56c0",
+        "estimated_params": 3,
+        "instructions_analyzed": 8,
+        "reg_params": [],
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0051f653",
+        "call_type": "direct",
+        "caller": "core_mimic.cpp_CMimic_setup_FUN_0051f3e0",
+        "estimated_params": 3,
+        "instructions_analyzed": 6,
+        "reg_params": [],
+        "stack_params": 3
+      },
+      {
+        "call_addr": "005c6dd5",
+        "call_type": "direct",
+        "caller": "core_succubus.cpp_CSuccubus_setup_FUN_005c6b60",
+        "estimated_params": 3,
+        "instructions_analyzed": 5,
+        "reg_params": [],
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004186b8",
+        "call_type": "direct",
+        "caller": "core_biggs.cpp_CBiggs_setup_FUN_00418680",
+        "estimated_params": 3,
+        "instructions_analyzed": 6,
+        "reg_params": [],
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "estimated_params": 3
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 8.210526315789474,
+    "instruction_count": 19,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "CALL": 2,
+      "COPY": 12,
+      "INT_ADD": 10,
+      "INT_AND": 36,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 16,
+      "INT_LEFT": 4,
+      "INT_LESS": 1,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 4,
+      "INT_OR": 10,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 11,
+      "INT_SUB": 9,
+      "INT_XOR": 2,
+      "LOAD": 5,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 156
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMorph *"
+      },
+      {
+        "is_param": true,
+        "name": "model_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "model_ptr",
+        "offset": 12,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      }
+    ]
+  },
+  "suspects": []
+}

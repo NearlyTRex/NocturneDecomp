@@ -4,37 +4,37 @@
       {
         "category": "other",
         "column": 39,
-        "line": 41,
+        "line": 29,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 46,
-        "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
+        "column": 48,
+        "line": 32,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 31,
-        "line": 49,
+        "line": 36,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 68,
+        "line": 55,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
-        "column": 70,
-        "line": 72,
-        "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
+        "column": 52,
+        "line": 57,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 31,
-        "line": 75,
+        "line": 61,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -43,16 +43,16 @@
   },
   "complexity": {
     "assembly_lines": 247,
-    "complexity_score": 157,
+    "complexity_score": 122,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 32,
-    "pseudocode_lines": 72,
-    "suspect_count": 8,
+    "pseudocode_lines": 57,
+    "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 319
+    "total_lines": 304
   },
   "cross_references": [],
   "function": {
@@ -402,58 +402,44 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 38,
+      "line": 17,
       "match": "ROUND",
-      "text": "g_ModelPolygonData[polygon_index].vertex_indices_count,(int)ROUND(dVar5),",
+      "text": "iVar1 = (int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.x * 65535.0f));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 39,
+      "line": 17,
       "match": "ROUND",
-      "text": "(int)ROUND(dVar6),(int)ROUND(dVar7),(int)ROUND(dVar8),uVar9,uVar10,uVar11);",
+      "text": "iVar1 = (int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.x * 65535.0f));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 39,
+      "line": 18,
       "match": "ROUND",
-      "text": "(int)ROUND(dVar6),(int)ROUND(dVar7),(int)ROUND(dVar8),uVar9,uVar10,uVar11);",
+      "text": "iVar2 = (int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.y * 65535.0f));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 39,
+      "line": 18,
       "match": "ROUND",
-      "text": "(int)ROUND(dVar6),(int)ROUND(dVar7),(int)ROUND(dVar8),uVar9,uVar10,uVar11);",
+      "text": "iVar2 = (int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.y * 65535.0f));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 64,
+      "line": 19,
       "match": "ROUND",
-      "text": "g_ModelPolygonData[polygon_index].vertex_indices_count,(int)ROUND(dVar5),",
+      "text": "iVar3 = (int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.z * 65535.0f));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 65,
+      "line": 19,
       "match": "ROUND",
-      "text": "(int)ROUND(dVar6),(int)ROUND(dVar7),(int)ROUND(dVar8),uVar9,uVar10);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 65,
-      "match": "ROUND",
-      "text": "(int)ROUND(dVar6),(int)ROUND(dVar7),(int)ROUND(dVar8),uVar9,uVar10);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 65,
-      "match": "ROUND",
-      "text": "(int)ROUND(dVar6),(int)ROUND(dVar7),(int)ROUND(dVar8),uVar9,uVar10);",
+      "text": "iVar3 = (int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.z * 65535.0f));",
       "type": "decompiler_intrinsic"
     }
   ]

@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 117,
-    "complexity_score": 51,
+    "complexity_score": 65,
     "cross_reference_count": 7,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 36,
-    "suspect_count": 1,
+    "pseudocode_lines": 40,
+    "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 153
+    "total_lines": 157
   },
   "cross_references": [
     {
@@ -218,9 +218,16 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 17,
+      "line": 22,
       "match": "ROUND",
-      "text": "iVar1 = (int)ROUND(dVar6);",
+      "text": "iVar1 = (int)ROUND(ROUND(marker_position));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 22,
+      "match": "ROUND",
+      "text": "iVar1 = (int)ROUND(ROUND(marker_position));",
       "type": "decompiler_intrinsic"
     }
   ]

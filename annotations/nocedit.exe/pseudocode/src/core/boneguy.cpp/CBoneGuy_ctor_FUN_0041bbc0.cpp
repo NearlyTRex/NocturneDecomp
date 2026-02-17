@@ -6,6 +6,7 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 /* WARNING: Type propagation algorithm not settling */
 
 CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_ctor_FUN_0041bbc0(CBoneGuy *this_ptr)
@@ -19,10 +20,8 @@ CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_ctor_FUN_0041bbc0(CBoneGuy *this_pt
   int iVar4;
   char *pcVar5;
   char *pcVar6;
-  double dVar7;
   CVector3f local_20;
   CVector3f local_14;
-  float local_8;
   
   pCVar4 = (CBoneGuy *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
   dest = __arrinit(pCVar4->boxes,0x14,&g_SBoneGuyBoxTypeInfo);
@@ -59,18 +58,12 @@ CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_ctor_FUN_0041bbc0(CBoneGuy *this_pt
   ADJ(dest)->base.victim_height = 6.0;
   ADJ(dest)->pickup_attempt_count = iVar4;
   local_14.x = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,255.0);
-  local_8 = local_14.x;
   local_14.y = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,40.0);
-  local_8 = local_14.y;
   local_14.z = core_actor_cpp_getRandomFloat_FUN_0040cc10(106.0,256.0);
-  local_8 = local_14.z;
   core_boneguy_cpp_hsvToRgb_FUN_0041ba10(&local_20,&local_14);
   fVar2 = 256.0f;
-  dVar7 = round((double)(local_20.x * 256.0f));
-  ADJ(dest)->base.base.base.scale.x = (int)ROUND(dVar7);
-  dVar7 = round((double)(local_20.x * fVar2));
-  ADJ(dest)->base.base.base.scale.y = (int)ROUND(dVar7);
-  dVar7 = round((double)(fVar2 * local_20.x));
-  ADJ(dest)->base.base.base.scale.z = (int)ROUND(dVar7);
+  ADJ(dest)->base.base.base.scale.x = (int)ROUND(ROUND(local_20.x * 256.0f));
+  ADJ(dest)->base.base.base.scale.y = (int)ROUND(ROUND(local_20.y * fVar2));
+  ADJ(dest)->base.base.base.scale.z = (int)ROUND(ROUND(fVar2 * local_20.z));
   return ADJ(dest);
 }

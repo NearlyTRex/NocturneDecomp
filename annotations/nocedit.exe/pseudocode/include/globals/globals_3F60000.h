@@ -342,6 +342,9 @@ extern SSoundDeviceInfo g_SoundDevices[8];
 // STrainNoise[10]
 extern STrainNoise g_TrainNoiseArray[10];
 
+// byte
+extern byte BYTE_03f6baac;
+
 // char[40]
 extern char g_SoundAmbientSoundName[40];
 
@@ -512,9 +515,6 @@ extern uint g_WindSoundHandle;
 extern uint g_WaterSoundHandle;
 extern uint g_TrainRailNoiseHandle;
 extern uint g_TrainExteriorAmbientHandle;
-
-// undefined1
-extern undefined1 DAT_03f6baac;
 
 // undefined4
 extern undefined4 DAT_03f6baa8;

@@ -6,6 +6,7 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 /* WARNING: Type propagation algorithm not settling */
 
 int __cdecl core_skeledit_cpp_CSkeleton_FUN_00592690(CSkeleton *this_ptr,char *filename)
@@ -43,7 +44,6 @@ int __cdecl core_skeledit_cpp_CSkeleton_FUN_00592690(CSkeleton *this_ptr,char *f
   CMatrix3x3f *pCVar25;
   bool bVar26;
   byte bVar27;
-  double dVar28;
   CBoneStructure *in_stack_fffeec08;
   int local_ded4;
   char local_ded0 [32];
@@ -799,7 +799,6 @@ LAB_00592a67:
                                   local_64 = -1;
                                   sscanf(pcVar18,"%*s%f%n",local_8c)
                                   ;
-                                  pSVar14 = local_ec;
                                   if (local_64 < 0) {
                                     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                               (g_CEditorToolsPtr,"Can't parse tween time for \"->\" statement for animation %s in %s:\n%s"
@@ -820,22 +819,18 @@ LAB_00592a67:
                                          != 0) {
                                     pcVar18 = pcVar18 + 1;
                                   }
-                                  if ((local_ec->exit_forward_cmd == 5) ||
-                                     (local_ec->exit_forward_cmd == 6)) {
-                                    in_stack_fffeec08 = (CBoneStructure *)0x594670;
-                                    dVar28 = round
-                                                       ((double)((float)local_ec->frame_count -
-                                                                local_ec->exit_forward_tween_time *
-                                                                local_ec->fps));
-                                    pSVar14->exit_forward_from_frame = (int)ROUND(dVar28);
-                                    if (pSVar14->exit_forward_from_frame < 0) {
-                                      shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-                                                (g_CEditorToolsPtr,
-                                                 "Tween time for \"->\" statement is longer than animation time in animation %s in %s:\n%s",local_ec,
-                                                 filename,local_20a4);
-                                      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_2ca8,0);
-                                      goto LAB_005927ee;
-                                    }
+                                  if (((local_ec->exit_forward_cmd == 5) ||
+                                      (local_ec->exit_forward_cmd == 6)) &&
+                                     (local_ec->exit_forward_from_frame =
+                                           (int)ROUND(ROUND((float)local_ec->frame_count -
+                                                            local_ec->exit_forward_tween_time *
+                                                            local_ec->fps)),
+                                     local_ec->exit_forward_from_frame < 0)) {
+                                    shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
+                                              (g_CEditorToolsPtr,"Tween time for \"->\" statement is longer than animation time in animation %s in %s:\n%s"
+                                               ,local_ec,filename);
+                                    shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_2ca8,0);
+                                    goto LAB_005927ee;
                                   }
                                 }
                               }

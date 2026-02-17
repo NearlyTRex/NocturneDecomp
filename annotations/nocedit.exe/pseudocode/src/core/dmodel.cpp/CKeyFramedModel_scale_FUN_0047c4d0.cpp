@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl core_dmodel_cpp_CKeyFramedModel_scale_FUN_0047c4d0(CKeyFramedModel *this_ptr,CVector3f *scale_factors)
 
 {
@@ -18,18 +20,15 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_scale_FUN_0047c4d0(CKeyFramedModel 
     dVar3 = floor
                       ((double)((float)*(int *)(iVar1 + (int)this_ptr->vertex_list) *
                                 scale_factors->x + (float)0.5));
-    dVar3 = round(dVar3);
-    *(int *)((int)this_ptr->vertex_list + iVar1) = (int)ROUND(dVar3);
+    *(int *)((int)this_ptr->vertex_list + iVar1) = (int)ROUND(ROUND(dVar3));
     dVar3 = floor
                       ((double)((float)*(int *)(iVar1 + 4 + (int)this_ptr->vertex_list) *
                                 scale_factors->y + (float)0.5));
-    dVar3 = round(dVar3);
-    *(int *)((int)this_ptr->vertex_list + iVar1 + 4) = (int)ROUND(dVar3);
+    *(int *)((int)this_ptr->vertex_list + iVar1 + 4) = (int)ROUND(ROUND(dVar3));
     dVar3 = floor
                       ((double)((float)*(int *)(iVar1 + 8 + (int)this_ptr->vertex_list) *
                                 scale_factors->z + (float)0.5));
-    dVar3 = round(dVar3);
-    *(int *)((int)this_ptr->vertex_list + iVar1 + 8) = (int)ROUND(dVar3);
+    *(int *)((int)this_ptr->vertex_list + iVar1 + 8) = (int)ROUND(ROUND(dVar3));
     iVar1 = iVar1 + 0xc;
   }
   core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(this_ptr);

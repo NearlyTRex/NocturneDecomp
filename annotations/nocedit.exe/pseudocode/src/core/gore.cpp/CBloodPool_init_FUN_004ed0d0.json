@@ -1,0 +1,182 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 47,
+    "complexity_score": 56,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 4,
+    "pseudocode_lines": 21,
+    "suspect_count": 3,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
+    "total_lines": 68
+  },
+  "cross_references": [
+    {
+      "addr": "004ede30",
+      "from_addr": "004ede52",
+      "name": "core_gore.cpp_CGore_createBloodPool_FUN_004ede30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004ed0d0",
+    "address_range": [
+      [
+        "004ed0d0",
+        "004ed15b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_gore.cpp_CBloodPool_init_FUN_004ed0d0",
+    "signature": "void __cdecl core_gore_cpp_CBloodPool_init_FUN_004ed0d0(CBloodPool *this_ptr,CVector3f *position,int blood_type)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cc70",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomInt_FUN_0040cc70"
+    },
+    {
+      "addr": "005716b0",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062e39a",
+      "name": "FLOAT_0062e39a",
+      "type": "float",
+      "value": "0.1000000"
+    },
+    {
+      "addr": "0065f024",
+      "name": "FLOAT_0065f024",
+      "type": "float",
+      "value": "256"
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004ede52",
+        "call_type": "direct",
+        "caller": "core_gore.cpp_CGore_createBloodPool_FUN_004ede30",
+        "estimated_params": 3,
+        "instructions_analyzed": 7,
+        "reg_params": [],
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "estimated_params": 3
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.954545454545454,
+    "instruction_count": 44,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 135,
+      "FLOAT2FLOAT": 13,
+      "FLOAT_ADD": 1,
+      "FLOAT_MULT": 3,
+      "INT_ADD": 26,
+      "INT_AND": 8,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 8,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 4,
+      "INT_SUB": 10,
+      "LOAD": 13,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "ROUND": 3,
+      "STORE": 20,
+      "TRUNC": 3
+    },
+    "pcode_op_count": 262
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 16,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBloodPool *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "blood_type",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 19,
+      "match": "ROUND",
+      "text": "(this_ptr->position_fixed).x = (int)ROUND((this_ptr->position).x * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 20,
+      "match": "ROUND",
+      "text": "(this_ptr->position_fixed).y = (int)ROUND((this_ptr->position).y * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 21,
+      "match": "ROUND",
+      "text": "(this_ptr->position_fixed).z = (int)ROUND((this_ptr->position).z * 256.0f);",
+      "type": "decompiler_intrinsic"
+    }
+  ]
+}

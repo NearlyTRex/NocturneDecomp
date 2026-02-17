@@ -17,7 +17,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_renderBackground_FUN_00419610(CBodyPart
   
   if (this_ptr->render_in_background == 0) {
     if ((((layer_flag != 0) && (this_ptr->carried_by_actor == (CDemonActor *)0x0)) &&
-        ((this_ptr->sim_box).is_valid == 0)) &&
+        ((this_ptr->physics_box).is_valid == 0)) &&
        (iVar1 = (*((this_ptr->base).vtable._ub)->getAllowedMeleeAttackTypes)(&this_ptr->base),
        this_ptr_00 = g_CConsolePtr, iVar1 == 0)) {
       this_ptr->render_in_background = 1;
@@ -28,7 +28,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_renderBackground_FUN_00419610(CBodyPart
       return;
     }
   }
-  if ((this_ptr->render_in_background != 1) || ((this_ptr->sim_box).is_valid == 0)) {
+  if ((this_ptr->render_in_background != 1) || ((this_ptr->physics_box).is_valid == 0)) {
     this_ptr->render_in_background = 2;
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
     g_CDemonSetPtr->disable_directional_lighting = this_ptr->dont_use_normals;
@@ -38,7 +38,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_renderBackground_FUN_00419610(CBodyPart
        ((this_ptr->transparent_geometry_flag == 0 ||
         (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
         iVar2 != 0)))) {
-      core_bodypart_cpp_CBodyPart_FUN_00419340(this_ptr,-1);
+      core_bodypart_cpp_CBodyPart_renderGeometry_FUN_00419340(this_ptr,-1);
     }
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
     g_CDemonSetPtr->disable_directional_lighting = 0;

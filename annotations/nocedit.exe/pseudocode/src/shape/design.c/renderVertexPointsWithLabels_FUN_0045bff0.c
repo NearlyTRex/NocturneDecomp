@@ -6,10 +6,11 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl shape_design_c_renderVertexPointsWithLabels_FUN_0045bff0(void)
 
 {
-  double dVar1;
   char local_88 [80];
   CVector3i local_38;
   int local_2c;
@@ -26,15 +27,9 @@ void __cdecl shape_design_c_renderVertexPointsWithLabels_FUN_0045bff0(void)
   }
   if (g_VertexDisplayEnabled != 0) {
     for (local_24 = 0; local_24 < g_VertexCount; local_24 = local_24 + 1) {
-      dVar1 = round
-                        ((double)(g_LoadedVertices[local_24].vertex.x * 256.0f));
-      local_38.x = (int)ROUND(dVar1);
-      dVar1 = round
-                        ((double)(g_LoadedVertices[local_24].vertex.y * 256.0f));
-      local_38.y = (int)ROUND(dVar1);
-      dVar1 = round
-                        ((double)(g_LoadedVertices[local_24].vertex.z * 256.0f));
-      local_38.z = (int)ROUND(dVar1);
+      local_38.x = (int)ROUND(ROUND(g_LoadedVertices[local_24].vertex.x * 256.0f));
+      local_38.y = (int)ROUND(ROUND(g_LoadedVertices[local_24].vertex.y * 256.0f));
+      local_38.z = (int)ROUND(ROUND(g_LoadedVertices[local_24].vertex.z * 256.0f));
       engine_matrix_c_transformToCache_FUN_0050cd70(local_24,&local_38);
       g_VertexDepthSortedIndices[local_24] = local_24;
     }

@@ -21,9 +21,9 @@
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
-;   int g_RedBitPosition
-;   int g_GreenBitPosition
-;   int g_BlueBitPosition
+;   _BIT_INTEGER32 g_RedBitPosition
+;   _BIT_INTEGER32 g_GreenBitPosition
+;   _BIT_INTEGER32 g_BlueBitPosition
 ;   int g_ActiveRenderColor
 ;   int g_UseExternalRenderer
 ;

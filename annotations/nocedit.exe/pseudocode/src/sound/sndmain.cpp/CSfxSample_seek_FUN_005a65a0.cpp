@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl sound_sndmain_cpp_CSfxSample_seek_FUN_005a65a0(CSfxSample *this_ptr,int playback_position,int dest_buffer_offset)
 
 {
@@ -23,8 +25,7 @@ void __cdecl sound_sndmain_cpp_CSfxSample_seek_FUN_005a65a0(CSfxSample *this_ptr
                     (SUB84((double)playback_position,0),
                      (double)((ulonglong)(double)playback_position >> 0x20),(uint)in_stack_ffffffe4,
                      (uint)((ulonglong)in_stack_ffffffe4 >> 0x20));
-  dVar2 = round(dVar2);
-  this_ptr->stream_read_position = (int)ROUND(dVar2);
+  this_ptr->stream_read_position = (int)ROUND(ROUND(dVar2));
   if (this_ptr->stream_read_position < 0) {
     this_ptr->stream_read_position = 0;
   }

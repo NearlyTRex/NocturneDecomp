@@ -100,7 +100,7 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
   float local_3c;
   int local_38;
   float local_34;
-  _BIT_INTEGER local_30;
+  _BIT_INTEGER32 local_30;
   float local_2c;
   float local_28;
   float local_24;
@@ -384,7 +384,7 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
         core_set_cpp_CDemonSet_FUN_0056cd60(g_CDemonSetPtr);
         core_set_cpp_CDemonSet_FUN_0056cf00(g_CDemonSetPtr);
         core_fire_cpp_CFireEffect_render_FUN_004c7180(g_CFireEffectPtr);
-        core_gore_cpp_CGore_FUN_004ed7b0(g_CGorePtr);
+        core_gore_cpp_CGore_renderParticles_FUN_004ed7b0(g_CGorePtr);
         engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr2,1);
         core_dcamera_cpp_CDemonCamera_endScene_FUN_0044cb80(&g_CDemonCameraInstance,0);
       }

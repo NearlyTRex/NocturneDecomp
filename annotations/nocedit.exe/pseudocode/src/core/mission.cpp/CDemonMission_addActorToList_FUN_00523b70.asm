@@ -10,7 +10,7 @@
 ; XREF[17]:
 ;   core_baron.cpp_CBaronWeapon_FUN_00413f20 at 00413fbd
 ;   core_bodypart.cpp_createBodyPart_FUN_00418e10 at 00418eda
-;   core_gore.cpp_CGore_FUN_004edf30 at 004ee006
+;   core_gore.cpp_CGore_spawnFlies_FUN_004edf30 at 004ee006
 ;   core_mimic.cpp_CMimic_processMorph_FUN_00520ba0 at 00520c48
 ;   core_mission.cpp_CDemonMission_FUN_00524c20 at 00524d6f
 ;   core_mission.cpp_CDemonMission_createOneHero_FUN_00524920 at 00524a40

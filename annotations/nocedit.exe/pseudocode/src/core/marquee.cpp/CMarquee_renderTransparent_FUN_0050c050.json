@@ -1,39 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 21,
-        "line": 98,
-        "message": "member reference base type 'byte[24]' (aka 'unsigned char[24]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 21,
-        "line": 99,
-        "message": "member reference base type 'byte[24]' (aka 'unsigned char[24]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 21,
-        "line": 100,
-        "message": "member reference base type 'byte[24]' (aka 'unsigned char[24]') is not a structure or union"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 241,
-    "complexity_score": 162,
+    "complexity_score": 147,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 5,
     "pseudocode_lines": 102,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "unknown_field"
+      "decompiler_intrinsic"
     ],
     "total_lines": 343
   },
@@ -346,38 +326,31 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
+      "line": 34,
       "match": "ROUND",
-      "text": "iVar2 = (int)ROUND(dVar4);",
+      "text": "iVar2 = (int)ROUND(ROUND(this_ptr->param));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 56,
+      "line": 34,
       "match": "ROUND",
-      "text": "iVar2 = (int)ROUND(dVar4);",
+      "text": "iVar2 = (int)ROUND(ROUND(this_ptr->param));",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 91,
-      "match": "._0_4_",
-      "text": "local_4c._0_4_ = pCVar1->x;",
-      "type": "unknown_field"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 57,
+      "match": "ROUND",
+      "text": "iVar2 = (int)ROUND(ROUND(this_ptr->param));",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 92,
-      "match": "._4_4_",
-      "text": "local_4c._4_4_ = pCVar1->y;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 93,
-      "match": "._8_4_",
-      "text": "local_4c._8_4_ = pCVar1->z;",
-      "type": "unknown_field"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 57,
+      "match": "ROUND",
+      "text": "iVar2 = (int)ROUND(ROUND(this_ptr->param));",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

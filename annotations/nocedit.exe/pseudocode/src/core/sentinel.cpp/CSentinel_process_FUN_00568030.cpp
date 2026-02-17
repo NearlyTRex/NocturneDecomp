@@ -165,7 +165,7 @@ LAB_00568089:
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       pCVar7 = (this_ptr->base).victim;
       if (pCVar7 == (CDemonActor *)0x0) {
-        iVar4 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+        iVar4 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
         if (iVar4 == 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&(this_ptr->base).base.model.motion_controller,1,1);
@@ -230,7 +230,7 @@ LAB_00568089:
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&pCVar1->motion_controller,3,1);
           }
-          if ((local_24 <= local_20) && ((float)(this_ptr->base).unk2 <= 0.0)) {
+          if ((local_24 <= local_20) && ((this_ptr->base).attack_cooldown <= 0.0)) {
             pCVar7 = (this_ptr->base).victim;
             local_bc.x = (pCVar7->location).position.x -
                          (this_ptr->base).base.base.location.position.x;
@@ -253,7 +253,7 @@ LAB_00568089:
                 core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                           (&pCVar1->motion_controller,4,1);
               }
-              (this_ptr->base).unk2 = 0x3f800000;
+              (this_ptr->base).attack_cooldown = 1.0;
             }
           }
           if ((this_ptr->base).guard_distance < local_24) {
@@ -263,7 +263,7 @@ LAB_00568089:
         }
         break;
       }
-      iVar4 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+      iVar4 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
       if (iVar4 == 0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&pCVar1->motion_controller,0,1);
@@ -359,7 +359,7 @@ LAB_0056878f:
                            (&(this_ptr->base).base.model,local_44,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   ((CDemonActor *)this_ptr,&local_128,pCVar9);
-        core_gore_cpp_CGore_FUN_004ede30(g_CGorePtr);
+        core_gore_cpp_CGore_createBloodPool_FUN_004ede30(g_CGorePtr,&local_128,0);
         (this_ptr->base).pool_me = 1;
       }
       break;
@@ -415,8 +415,8 @@ LAB_0056845d:
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
 switchD_00568487_caseD_d:
-  if (0.0 < (float)(this_ptr->base).unk2) {
-    (this_ptr->base).unk2 = (int)((float)(this_ptr->base).unk2 - delta_time);
+  if (0.0 < (this_ptr->base).attack_cooldown) {
+    (this_ptr->base).attack_cooldown = (this_ptr->base).attack_cooldown - delta_time;
   }
   iVar4 = core_charactr_cpp_CCharacter_isOnGround_FUN_004297e0((CCharacter *)this_ptr);
   if (iVar4 != 0) {

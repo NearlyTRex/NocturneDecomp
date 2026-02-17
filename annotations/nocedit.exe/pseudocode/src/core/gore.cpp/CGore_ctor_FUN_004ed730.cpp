@@ -9,6 +9,6 @@
 CGore * __cdecl core_gore_cpp_CGore_ctor_FUN_004ed730(CGore *this_ptr)
 
 {
-  core_gore_cpp_CGore_FUN_004ed760(this_ptr);
+  core_gore_cpp_CGore_reset_FUN_004ed760(this_ptr);
   return this_ptr;
 }

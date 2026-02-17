@@ -19,7 +19,7 @@
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
 ;   int g_UseExternalRenderer
 ;   BOOL g_MMXSupported
-;   _BIT_INTEGER g_RenderStateFlags
+;   _BIT_INTEGER32 g_RenderStateFlags
 ;   int g_RenderStateFlag2
 ;
 ; Called Functions:

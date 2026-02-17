@@ -4,49 +4,49 @@
       {
         "category": "other",
         "column": 30,
-        "line": 146,
+        "line": 144,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 150,
+        "line": 148,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 26,
+        "line": 161,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
-        "column": 33,
-        "line": 167,
-        "message": "format specifies type 'int' but the argument has type 'CBitFont *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 47,
-        "line": 199,
+        "column": 45,
+        "line": 190,
         "message": "format specifies type 'char *' but the argument has type 'ulonglong' (aka 'unsigned long long') [-Werror,-Wformat]"
       },
       {
         "category": "other",
-        "column": 37,
-        "line": 199,
+        "column": 35,
+        "line": 190,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
-        "column": 44,
-        "line": 263,
+        "column": 42,
+        "line": 255,
         "message": "format specifies type 'int' but the argument has type 'float' [-Werror,-Wformat]"
       },
       {
         "category": "other",
-        "column": 30,
-        "line": 275,
+        "column": 28,
+        "line": 267,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
-        "column": 36,
-        "line": 285,
+        "column": 34,
+        "line": 277,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -55,17 +55,17 @@
   },
   "complexity": {
     "assembly_lines": 1078,
-    "complexity_score": 538,
+    "complexity_score": 537,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 53,
-    "pseudocode_lines": 378,
-    "suspect_count": 15,
+    "pseudocode_lines": 357,
+    "suspect_count": 17,
     "suspect_types": [
       "decompiler_intrinsic",
       "undefined_data"
     ],
-    "total_lines": 1456
+    "total_lines": 1435
   },
   "cross_references": [
     {
@@ -382,7 +382,7 @@
     },
     {
       "addr": "02db8c70",
-      "name": "DAT_02db8c70",
+      "name": "CHAR_ARRAY_02db8c70",
       "type": "char[256]",
       "value": null
     },
@@ -406,7 +406,7 @@
     },
     {
       "addr": "02dba070",
-      "name": "DAT_02dba070",
+      "name": "CHAR_ARRAY_02dba070",
       "type": "char[256]",
       "value": null
     },
@@ -852,108 +852,122 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 90,
+      "line": 88,
       "match": "ROUND",
-      "text": "local_6c = (int)ROUND(dVar10);",
+      "text": "local_68 = (int)ROUND(ROUND(this_ptr->weapon_highlight_timer * 65535.0f));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 159,
+      "line": 88,
       "match": "ROUND",
-      "text": "local_1c = (CBitFont *)(int)ROUND(dVar10);",
+      "text": "local_68 = (int)ROUND(ROUND(this_ptr->weapon_highlight_timer * 65535.0f));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 184,
-      "match": "CONCAT44",
-      "text": "uVar14 = CONCAT44(pcVar6,pcVar4);",
+      "line": 153,
+      "match": "ROUND",
+      "text": "local_14 = (int)ROUND(ROUND(pCVar3[4].location.position.y * (float)100));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 190,
-      "match": "CONCAT44",
-      "text": "uVar14 = CONCAT44(pcVar6,pcVar4);",
+      "line": 153,
+      "match": "ROUND",
+      "text": "local_14 = (int)ROUND(ROUND(pCVar3[4].location.position.y * (float)100));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 218,
+      "line": 175,
       "match": "CONCAT44",
-      "text": "uVar14 = CONCAT44(pcVar6,pcVar4);",
+      "text": "uVar13 = CONCAT44(pcVar5,pcVar6);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 181,
+      "match": "CONCAT44",
+      "text": "uVar13 = CONCAT44(pcVar5,pcVar6);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 209,
+      "match": "CONCAT44",
+      "text": "uVar13 = CONCAT44(pcVar5,pcVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Undefined global data reference",
-      "line": 225,
-      "match": "DAT_02db8c70",
-      "text": "((CBitFont *)local_48,acStack_17c,DAT_02db8c70,10,0x100,local_54 - local_5c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 232,
-      "match": "DAT_02db8c70",
-      "text": "pcVar6 = DAT_02db8c70;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 281,
+      "line": 273,
       "match": "DAT_02db9670",
-      "text": "((CBitFont *)local_48,acStack_57c,DAT_02db9670,10,0x100,iVar7 - local_60)",
+      "text": "((CBitFont *)local_44,local_578,DAT_02db9670,10,0x100,iVar8 - local_5c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 289,
+      "line": 280,
       "match": "DAT_02db9670",
-      "text": "pcVar6 = DAT_02db9670;",
+      "text": "pcVar5 = DAT_02db9670;",
       "type": "undefined_data"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 310,
+      "line": 293,
       "match": "ROUND",
-      "text": "iStack_80 = (int)ROUND(dVar10);",
+      "text": "local_78 = (int)ROUND(ROUND((float)local_14 +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 323,
+      "line": 293,
       "match": "ROUND",
-      "text": "local_6c = (int)ROUND(dVar10);",
+      "text": "local_78 = (int)ROUND(ROUND((float)local_14 +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 343,
+      "line": 307,
       "match": "ROUND",
-      "text": "local_78 = (int)ROUND(dVar10);",
+      "text": "local_64 = (int)ROUND(ROUND(local_67c * 65535.0f));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 353,
+      "line": 307,
       "match": "ROUND",
-      "text": "local_68 = (int)ROUND(dVar10);",
+      "text": "local_64 = (int)ROUND(ROUND(local_67c * 65535.0f));",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 364,
-      "match": "DAT_02dba070",
-      "text": "(local_1c,this_ptr->message_text,DAT_02dba070,10,0x100,",
-      "type": "undefined_data"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 324,
+      "match": "ROUND",
+      "text": "local_70 = (int)ROUND(ROUND((float)local_14 - (float)local_14 * local_680));",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 370,
-      "match": "DAT_02dba070",
-      "text": "pcVar6 = DAT_02dba070;",
-      "type": "undefined_data"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 324,
+      "match": "ROUND",
+      "text": "local_70 = (int)ROUND(ROUND((float)local_14 - (float)local_14 * local_680));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 333,
+      "match": "ROUND",
+      "text": "local_60 = (int)ROUND(ROUND(dVar1 * 65535));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 333,
+      "match": "ROUND",
+      "text": "local_60 = (int)ROUND(ROUND(dVar1 * 65535));",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

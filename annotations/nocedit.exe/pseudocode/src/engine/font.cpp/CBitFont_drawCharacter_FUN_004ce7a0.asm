@@ -71,19 +71,19 @@
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
 ;   int g_CurrentAlphaValue = 0xff
-;   ulonglong g_RedMask16 = 0xf800
-;   ulonglong g_GreenMask16 = 0x7e0
-;   ulonglong g_BlueMask16 = 0x1f
+;   _MMX_INTEGER g_RedMask16
+;   _MMX_INTEGER g_GreenMask16
+;   _MMX_INTEGER g_BlueMask16
 ;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_ScreenBufferArray[1]
 ;   ushort[256] g_ColorTable16
 ;   uint[256] g_ColorTable32
-;   int g_RedBitPosition
+;   _BIT_INTEGER32 g_RedBitPosition
 ;   int g_RedScaleFactor
-;   int g_RedBitCount
-;   int g_GreenBitPosition
+;   _BIT_INTEGER32 g_RedBitCount
+;   _BIT_INTEGER32 g_GreenBitPosition
 ;   int g_GreenScaleFactor
-;   int g_GreenBitCount
+;   _BIT_INTEGER32 g_GreenBitCount
 ;   ... and 12 more
 ;
 ; Called Functions:
@@ -364,7 +364,7 @@ section .text
     CMP EAX,dword ptr [EBX + 0x3188]    ; 004ceac7
     JZ 0x004cead6                       ; 004ceacd
         ;   XREF to: 004cead6 (CONDITIONAL_JUMP)  ; LAB_004cead6
-    MOV AL,[0x02d7b410]                 ; 004ceacf | DAT_02d7b410
+    MOV AL,[0x02d7b410]                 ; 004ceacf | g_ShadowColor8
     MOV byte ptr [EDX],AL               ; 004cead4
     MOV EAX,dword ptr [ESP + 0x4]       ; 004cead6
         ;   Label: LAB_004cead6

@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl engine_matrix_c_initializeTrigTables_FUN_0050c530(void)
 
 {
@@ -16,7 +18,6 @@ void __cdecl engine_matrix_c_initializeTrigTables_FUN_0050c530(void)
   float10 fVar5;
   float10 fVar6;
   float10 fVar7;
-  double dVar8;
   
   iVar1 = 0;
   fVar3 = (float10)65536;
@@ -27,11 +28,9 @@ void __cdecl engine_matrix_c_initializeTrigTables_FUN_0050c530(void)
     fVar6 = (float10)iVar1 * fVar5 * fVar4;
     fVar7 = (float10)fsin(fVar6);
     fVar6 = (float10)fcos(fVar6);
-    round((double)(fVar7 * fVar3));
-    dVar8 = round((double)(fVar6 * fVar3));
-    *(uint *)((int)g_SinTable + iVar2) = 0x50c57e;
+    *(int *)((int)g_SinTable + iVar2) = (int)ROUND(ROUND(fVar7 * fVar3));
     iVar1 = iVar1 + 1;
-    *(int *)((int)g_CosTable + iVar2) = (int)ROUND(dVar8);
+    *(int *)((int)g_CosTable + iVar2) = (int)ROUND(ROUND(fVar6 * fVar3));
     iVar2 = iVar2 + 4;
   } while (iVar1 < 0x101);
   return;

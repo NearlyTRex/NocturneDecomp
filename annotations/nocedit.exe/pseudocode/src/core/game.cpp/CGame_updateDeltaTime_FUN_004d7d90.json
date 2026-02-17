@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 60,
-    "complexity_score": 54,
+    "complexity_score": 72,
     "cross_reference_count": 23,
     "function_call_count": 2,
     "global_count": 5,
-    "pseudocode_lines": 29,
-    "suspect_count": 2,
+    "pseudocode_lines": 27,
+    "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 89
+    "total_lines": 87
   },
   "cross_references": [
     {
@@ -85,15 +85,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0052ca90",
-      "from_addr": "0052cb48",
-      "name": "core_morph.cpp_CMorph_FUN_0052ca90",
+      "addr": "0052bcb0",
+      "from_addr": "0052c3ef",
+      "name": "core_morph.cpp_CMorph_editMorph_FUN_0052bcb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0052bcb0",
-      "from_addr": "0052c3ef",
-      "name": "core_morph.cpp_FUN_0052bcb0",
+      "addr": "0052ca90",
+      "from_addr": "0052cb48",
+      "name": "core_morph.cpp_CMorph_previewMorph_FUN_0052ca90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -273,14 +273,28 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 22,
       "match": "ROUND",
-      "text": "this_ptr->delta_time_int = (int)ROUND(dVar3);",
+      "text": "(int)ROUND(ROUND((float)this_ptr->delta_time_int * this_ptr->time_scale_factor));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 27,
+      "line": 22,
       "match": "ROUND",
-      "text": "this_ptr->delta_time_int = (int)ROUND(dVar3);",
+      "text": "(int)ROUND(ROUND((float)this_ptr->delta_time_int * this_ptr->time_scale_factor));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 25,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND((65536.0f / 30.0f) *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 25,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND((65536.0f / 30.0f) *",
       "type": "decompiler_intrinsic"
     }
   ]

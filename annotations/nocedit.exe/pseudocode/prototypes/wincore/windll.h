@@ -289,4 +289,4 @@ int __cdecl switchRenderer(char *new_dll_name,int renderer_handle);
 
 // Original: wincore_windll.cpp_getCurrentRenderer_FUN_005b8185
 // Address: 005b8185
-char * __cdecl getCurrentRenderer(int *renderer);
+char * __cdecl getCurrentRenderer(int *renderer_handle);

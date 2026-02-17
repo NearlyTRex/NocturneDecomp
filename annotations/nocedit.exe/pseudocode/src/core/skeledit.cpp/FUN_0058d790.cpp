@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl core_skeledit_cpp_FUN_0058d790(void)
 
 {
@@ -31,7 +33,6 @@ void __cdecl core_skeledit_cpp_FUN_0058d790(void)
   int iVar20;
   uint *puVar21;
   byte bVar22;
-  double dVar23;
   CDeformableModel *in_stack_00000004;
   int in_stack_00000008;
   CLodMesh *in_stack_0000000c;
@@ -106,28 +107,26 @@ void __cdecl core_skeledit_cpp_FUN_0058d790(void)
           puVar15 = puVar21;
           do {
             *puVar7 = *(ushort *)(puVar12 + 4);
-            dVar23 = round((double)(float)puVar15[7] * dVar3);
-            puVar7[3] = (short)(int)ROUND(dVar23);
+            puVar7[3] = (short)(int)ROUND(ROUND((double)(float)puVar15[7] * dVar3));
             pfVar18 = (float *)(puVar15 + 8);
             puVar15 = puVar15 + 2;
             puVar8 = puVar7 + 1;
-            dVar23 = round((double)*pfVar18 * dVar3);
-            local_14 = (int)ROUND(dVar23);
+            local_14 = (int)ROUND(ROUND((double)*pfVar18 * dVar3));
             puVar12 = puVar12 + 1;
             puVar7[6] = (short)local_14;
             puVar7 = puVar8;
           } while (puVar8 != puVar19 + 3);
           if (puVar21[2] == 0) {
-            piVar9 = (int *)((int)in_stack_00000004->parts[puVar21[1]].tri_counts + local_2c);
+            piVar9 = in_stack_00000004->parts[puVar21[1]].tri_counts + in_stack_00000008;
             *piVar9 = *piVar9 + 1;
-            piVar9 = (int *)((int)in_stack_00000004->tri_count + local_2c);
-            *piVar9 = *piVar9 + 1;
+            in_stack_00000004->tri_count[in_stack_00000008] =
+                 in_stack_00000004->tri_count[in_stack_00000008] + 1;
           }
           else {
-            piVar9 = (int *)((int)in_stack_00000004->parts[puVar21[1]].cap_tri_counts + local_2c);
+            piVar9 = in_stack_00000004->parts[puVar21[1]].cap_tri_counts + in_stack_00000008;
             *piVar9 = *piVar9 + 1;
-            piVar9 = (int *)((int)in_stack_00000004->cap_tri_count + local_2c);
-            *piVar9 = *piVar9 + 1;
+            in_stack_00000004->cap_tri_count[in_stack_00000008] =
+                 in_stack_00000004->cap_tri_count[in_stack_00000008] + 1;
           }
           local_48 = local_48 + 4;
           local_40 = local_40 + 0x12;

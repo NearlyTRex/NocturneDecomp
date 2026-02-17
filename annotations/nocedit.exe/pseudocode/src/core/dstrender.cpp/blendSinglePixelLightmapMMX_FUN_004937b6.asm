@@ -15,12 +15,12 @@
 ; Referenced Globals:
 ;   ushort[384] g_LightmapData
 ;   double g_LightmapXorMask = 0.126945525291829
-;   ulonglong g_RedMask32 = 0xf80000
-;   ulonglong g_GreenMask32 = 0xfc00
-;   ulonglong g_BlueMask32 = 0xf8
-;   ulonglong g_TotalColorBits = 0x8
-;   ulonglong g_GreenBlueBits = 0x5
-;   ulonglong g_BlueBitShift = 0x3
+;   _MMX_INTEGER g_RedMask32
+;   _MMX_INTEGER g_GreenMask32
+;   _MMX_INTEGER g_BlueMask32
+;   _MMX_INTEGER g_TotalColorBits
+;   _MMX_INTEGER g_GreenBlueBits
+;   _MMX_INTEGER g_BlueBitShift
 ;   uint[256] g_LightmapTexturePalette
 ;   ulong g_SolidColorMode
 ;

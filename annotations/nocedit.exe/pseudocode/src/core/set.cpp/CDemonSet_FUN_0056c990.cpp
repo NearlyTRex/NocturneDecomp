@@ -84,7 +84,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c990(CDemonSet *this_ptr)
         pCVar5 = (CDemonSet *)pCVar5->cameras;
       } while (iVar3 < this_ptr->sorted_render_actor_count);
     }
-    core_gore_cpp_CGore_FUN_004ed7b0(g_CGorePtr);
+    core_gore_cpp_CGore_renderParticles_FUN_004ed7b0(g_CGorePtr);
     core_fire_cpp_CFireEffect_render_FUN_004c7180(g_CFireEffectPtr);
     core_dlight_cpp_CDemonLight_endScene_FUN_00472d30(local_14);
     local_5c.x = (int)ROUND(local_2c.x * 256.0f);

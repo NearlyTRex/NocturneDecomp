@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 78,
-    "complexity_score": 325,
+    "complexity_score": 348,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 9,
-    "pseudocode_lines": 65,
-    "suspect_count": 25,
+    "pseudocode_lines": 58,
+    "suspect_count": 28,
     "suspect_types": [
       "decompiler_intrinsic",
       "warning_type_propagation"
     ],
-    "total_lines": 143
+    "total_lines": 136
   },
   "cross_references": [
     {
@@ -178,43 +178,15 @@
         "is_param": false,
         "name": "local_20",
         "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_10",
-        "offset": -16,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_c",
-        "offset": -12,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
@@ -235,175 +207,196 @@
   "suspects": [
     {
       "description": "Type propagation did not converge",
-      "line": 2,
+      "line": 3,
       "match": "WARNING: Type propagation algorithm not settling",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 22,
+      "line": 21,
       "match": "ADJ",
       "text": "ADJ(dest)->base.base.base.vtable._ub = &g_CBoneGuyVTable;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
+      "line": 23,
       "match": "ADJ",
       "text": "(&ADJ(dest)->base.base.model,\"boneguy.dfm\");",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 25,
+      "line": 24,
       "match": "ADJ",
       "text": "ADJ(dest)->base.base.collision_cylinder_height = 0.6;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 26,
+      "line": 25,
       "match": "ADJ",
       "text": "ADJ(dest)->base.base.collision_cylinder_radius = 0.9;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 28,
+      "line": 27,
       "match": "ADJ",
       "text": "ADJ(dest)->base.base.base.is_transparent = 1;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 29,
+      "line": 28,
       "match": "ADJ",
       "text": "pcVar6 = ADJ(dest)->death_event;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
+      "line": 29,
       "match": "ADJ",
       "text": "ADJ(dest)->blown_up = 0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
+      "line": 31,
       "match": "ADJ",
       "text": "ADJ(dest)->base.base.collision_layer = 2;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 34,
+      "line": 33,
       "match": "ADJ",
       "text": "ADJ(dest)->recombine_time = 10.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 35,
+      "line": 34,
       "match": "ADJ",
       "text": "ADJ(dest)->base.base.ai_detection_range_min = fVar2;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 36,
+      "line": 35,
       "match": "ADJ",
       "text": "ADJ(dest)->base.base.ai_detection_range_max = fVar3;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 46,
+      "line": 45,
       "match": "ADJ",
       "text": "ADJ(dest)->box_count = 0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 49,
+      "line": 48,
       "match": "ADJ",
       "text": "ADJ(dest)->search_timer = 0.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 50,
+      "line": 49,
       "match": "ADJ",
       "text": "ADJ(dest)->pickup_cooldown = 0.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 51,
+      "line": 50,
       "match": "ADJ",
       "text": "ADJ(dest)->pickup_target = (CDemonActor *)0x0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
+      "line": 51,
       "match": "ADJ",
       "text": "ADJ(dest)->base.victim_height = 6.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 53,
+      "line": 52,
       "match": "ADJ",
       "text": "ADJ(dest)->pickup_attempt_count = iVar4;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 63,
+      "line": 58,
       "match": "ADJ",
-      "text": "ADJ(dest)->base.base.base.scale.x = (int)ROUND(dVar7);",
+      "text": "ADJ(dest)->base.base.base.scale.x = (int)ROUND(ROUND(local_20.x * 256.0f));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 63,
+      "line": 58,
       "match": "ROUND",
-      "text": "ADJ(dest)->base.base.base.scale.x = (int)ROUND(dVar7);",
+      "text": "ADJ(dest)->base.base.base.scale.x = (int)ROUND(ROUND(local_20.x * 256.0f));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 65,
+      "line": 58,
+      "match": "ROUND",
+      "text": "ADJ(dest)->base.base.base.scale.x = (int)ROUND(ROUND(local_20.x * 256.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 59,
       "match": "ADJ",
-      "text": "ADJ(dest)->base.base.base.scale.y = (int)ROUND(dVar7);",
+      "text": "ADJ(dest)->base.base.base.scale.y = (int)ROUND(ROUND(local_20.y * fVar2));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 65,
+      "line": 59,
       "match": "ROUND",
-      "text": "ADJ(dest)->base.base.base.scale.y = (int)ROUND(dVar7);",
+      "text": "ADJ(dest)->base.base.base.scale.y = (int)ROUND(ROUND(local_20.y * fVar2));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 67,
+      "line": 59,
+      "match": "ROUND",
+      "text": "ADJ(dest)->base.base.base.scale.y = (int)ROUND(ROUND(local_20.y * fVar2));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 60,
       "match": "ADJ",
-      "text": "ADJ(dest)->base.base.base.scale.z = (int)ROUND(dVar7);",
+      "text": "ADJ(dest)->base.base.base.scale.z = (int)ROUND(ROUND(fVar2 * local_20.z));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 67,
+      "line": 60,
       "match": "ROUND",
-      "text": "ADJ(dest)->base.base.base.scale.z = (int)ROUND(dVar7);",
+      "text": "ADJ(dest)->base.base.base.scale.z = (int)ROUND(ROUND(fVar2 * local_20.z));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 68,
+      "line": 60,
+      "match": "ROUND",
+      "text": "ADJ(dest)->base.base.base.scale.z = (int)ROUND(ROUND(fVar2 * local_20.z));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 61,
       "match": "ADJ",
       "text": "return ADJ(dest);",
       "type": "decompiler_intrinsic"

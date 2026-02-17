@@ -4,56 +4,32 @@
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 61,
+        "line": 57,
         "message": "use of undeclared identifier 'stack0xfffffd8c'; did you mean 'in_stack_fffffd8c'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 62,
-        "line": 62,
+        "line": 58,
         "message": "use of undeclared identifier 'stack0xfffffd8c'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 39,
-        "line": 65,
+        "column": 37,
+        "line": 64,
         "message": "use of undeclared identifier 'stack0xfffffd8c'; did you mean 'in_stack_fffffd8c'?"
       },
       {
         "category": "undeclared_identifier",
-        "column": 5,
-        "line": 74,
+        "column": 3,
+        "line": 73,
         "message": "use of undeclared identifier 'stream_write_internal'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 7,
-        "line": 83,
+        "column": 5,
+        "line": 80,
         "message": "use of undeclared identifier 'stream_write_internal'"
-      },
-      {
-        "category": "other",
-        "column": 24,
-        "line": 161,
-        "message": "array type 'char[4]' is not assignable"
-      },
-      {
-        "category": "other",
-        "column": 28,
-        "line": 186,
-        "message": "C-style cast from 'int' to 'char[4]' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 26,
-        "line": 190,
-        "message": "C-style cast from 'int' to 'char[4]' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 216,
-        "message": "C-style cast from 'int' to 'char[4]' is not allowed"
       }
     ],
     "success": false,
@@ -61,20 +37,19 @@
   },
   "complexity": {
     "assembly_lines": 445,
-    "complexity_score": 446,
+    "complexity_score": 359,
     "cross_reference_count": 1,
     "function_call_count": 18,
     "global_count": 41,
-    "pseudocode_lines": 221,
-    "suspect_count": 20,
+    "pseudocode_lines": 199,
+    "suspect_count": 14,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_param",
-      "stack_ref",
-      "unaffected_reg"
+      "stack_ref"
     ],
-    "total_lines": 666
+    "total_lines": 644
   },
   "cross_references": [
     {
@@ -675,144 +650,102 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 12,
-      "match": "unaff_ESI",
-      "text": "CDemonCamera *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 18,
       "match": "in_stack_fffffd8c",
-      "text": "SIZE_T in_stack_fffffd8c;",
+      "text": "int *in_stack_fffffd8c;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 54,
+      "line": 50,
       "match": "&stack0xfffffd8c",
       "text": "_sprintf(&stack0xfffffd8c,\"%s.fog\",this_ptr->camera_name);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 55,
+      "line": 51,
       "match": "&stack0xfffffd8c",
       "text": "file_ptr = engine_dosio_c_getFile_FUN_00481a50(\"backdrop\",&stack0xfffffd8c,\"rb\")",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 58,
+      "line": 57,
       "match": "&stack0xfffffd8c",
       "text": "_sprintf(local_f8,\"backdrop\\\\%s\",&stack0xfffffd8c);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 61,
+      "line": 60,
       "match": "in_stack_fffffd8c",
-      "text": "in_stack_fffffd8c);",
+      "text": "(SIZE_T)in_stack_fffffd8c);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 81,
+      "line": 74,
       "match": "ROUND",
-      "text": "CStack_68.z = (int)ROUND(dVar10);",
+      "text": "local_5c.x = (int)ROUND(ROUND((double)(float)(this_ptr->base).position.x *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 84,
+      "line": 74,
       "match": "ROUND",
-      "text": "CStack_68.z = (int)ROUND(dVar10);",
+      "text": "local_5c.x = (int)ROUND(ROUND((double)(float)(this_ptr->base).position.x *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 86,
+      "line": 76,
       "match": "ROUND",
-      "text": "CStack_68.z = (int)ROUND(dVar11);",
+      "text": "local_5c.y = (int)ROUND(ROUND((double)(float)(this_ptr->base).position.y *",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 99,
-      "match": "unaff_ESI",
-      "text": "if (1 < unaff_ESI->display_height) {",
-      "type": "unaffected_reg"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 76,
+      "match": "ROUND",
+      "text": "local_5c.y = (int)ROUND(ROUND((double)(float)(this_ptr->base).position.y *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 78,
+      "match": "ROUND",
+      "text": "local_5c.z = (int)ROUND(ROUND(256 *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 78,
+      "match": "ROUND",
+      "text": "local_5c.z = (int)ROUND(ROUND(256 *",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 104,
+      "line": 94,
       "match": "(CVector3i *)((int)",
-      "text": "end_pos = (CVector3i *)((int)&g_PrecomputedWorldPositions[0].x + local_40);",
+      "text": "end_pos = (CVector3i *)((int)&g_PrecomputedWorldPositions[0].x + local_34);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 105,
+      "line": 95,
       "match": "(int *)((int)",
-      "text": "piVar5 = (int *)((int)g_PrecomputedDepthBuffer + local_3c);",
+      "text": "piVar5 = (int *)((int)g_PrecomputedDepthBuffer + local_30);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 108,
-      "match": "unaff_ESI",
-      "text": "if (1 < unaff_ESI->display_width) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 126,
-      "match": "unaff_ESI",
-      "text": "} while (iVar6 < unaff_ESI->display_width);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 132,
-      "match": "unaff_ESI",
-      "text": "} while (local_34 < unaff_ESI->display_height);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 134,
-      "match": "unaff_ESI",
-      "text": "core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00453020(unaff_ESI,local_24);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 136,
-      "match": "unaff_ESI",
-      "text": "if (0 < unaff_ESI->display_height) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 151,
-      "match": "unaff_ESI",
-      "text": "if (0 < unaff_ESI->display_width) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 180,
-      "match": "unaff_ESI",
-      "text": "} while (iVar3 < unaff_ESI->display_width);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 185,
-      "match": "unaff_ESI",
-      "text": "} while (local_38 < unaff_ESI->display_height);",
-      "type": "unaffected_reg"
+      "description": "Unresolved stack parameter",
+      "line": 174,
+      "match": "in_stack_fffffd8c",
+      "text": "local_174 + 0x44,in_stack_fffffd8c);",
+      "type": "stack_param"
     }
   ]
 }

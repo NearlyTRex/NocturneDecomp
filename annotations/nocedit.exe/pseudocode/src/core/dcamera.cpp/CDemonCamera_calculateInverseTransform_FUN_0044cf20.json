@@ -6,17 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 196,
-    "complexity_score": 176,
+    "complexity_score": 230,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
-    "pseudocode_lines": 56,
-    "suspect_count": 11,
+    "pseudocode_lines": 45,
+    "suspect_count": 18,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "suspect_float"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 252
+    "total_lines": 241
   },
   "cross_references": [
     {
@@ -289,79 +288,128 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
+      "line": 34,
       "match": "ROUND",
-      "text": "(this_ptr->inverted_matrix).m[0].x = (int)ROUND(dVar14);",
+      "text": "(this_ptr->inverted_matrix).m[0].x = (int)ROUND(ROUND(fVar5 * fVar13));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 43,
+      "line": 34,
       "match": "ROUND",
-      "text": "(this_ptr->inverted_matrix).m[0].y = (int)ROUND(dVar14);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 49,
-      "match": "6.319857e-39",
-      "text": "dVar19 = round((double)(fVar1 * 6.319857e-39));",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 50,
-      "match": "6.319886e-39",
-      "text": "dVar20 = round((double)(fVar11 * 6.319886e-39));",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 51,
-      "match": "ROUND",
-      "text": "(this_ptr->inverted_matrix).m[0].z = (int)ROUND(dVar14);",
+      "text": "(this_ptr->inverted_matrix).m[0].x = (int)ROUND(ROUND(fVar5 * fVar13));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
+      "line": 36,
       "match": "ROUND",
-      "text": "(this_ptr->inverted_matrix).m[1].x = (int)ROUND(dVar15);",
+      "text": "(int)ROUND(ROUND(-(fVar10 * fVar7 - fVar12 * fVar6) * fVar13));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 53,
+      "line": 36,
       "match": "ROUND",
-      "text": "(this_ptr->inverted_matrix).m[1].y = (int)ROUND(dVar16);",
+      "text": "(int)ROUND(ROUND(-(fVar10 * fVar7 - fVar12 * fVar6) * fVar13));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 54,
+      "line": 37,
       "match": "ROUND",
-      "text": "(this_ptr->inverted_matrix).m[1].z = (int)ROUND(dVar17);",
+      "text": "(this_ptr->inverted_matrix).m[0].z = (int)ROUND(ROUND((fVar10 * fVar4 - fVar12 * fVar3) * fVar13))",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 55,
+      "line": 37,
       "match": "ROUND",
-      "text": "(this_ptr->inverted_matrix).m[2].x = (int)ROUND(dVar18);",
+      "text": "(this_ptr->inverted_matrix).m[0].z = (int)ROUND(ROUND((fVar10 * fVar4 - fVar12 * fVar3) * fVar13))",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 56,
+      "line": 39,
       "match": "ROUND",
-      "text": "(this_ptr->inverted_matrix).m[2].y = (int)ROUND(dVar19);",
+      "text": "(this_ptr->inverted_matrix).m[1].x = (int)ROUND(ROUND(-fVar9 * fVar13));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 57,
+      "line": 39,
       "match": "ROUND",
-      "text": "(this_ptr->inverted_matrix).m[2].z = (int)ROUND(dVar20);",
+      "text": "(this_ptr->inverted_matrix).m[1].x = (int)ROUND(ROUND(-fVar9 * fVar13));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 40,
+      "match": "ROUND",
+      "text": "(this_ptr->inverted_matrix).m[1].y = (int)ROUND(ROUND((fVar2 * fVar7 - fVar12 * fVar11) * fVar13))",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 40,
+      "match": "ROUND",
+      "text": "(this_ptr->inverted_matrix).m[1].y = (int)ROUND(ROUND((fVar2 * fVar7 - fVar12 * fVar11) * fVar13))",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 42,
+      "match": "ROUND",
+      "text": "(this_ptr->inverted_matrix).m[1].z = (int)ROUND(ROUND(-(fVar2 * fVar4 - fVar12 * fVar8) * fVar13))",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 42,
+      "match": "ROUND",
+      "text": "(this_ptr->inverted_matrix).m[1].z = (int)ROUND(ROUND(-(fVar2 * fVar4 - fVar12 * fVar8) * fVar13))",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 44,
+      "match": "ROUND",
+      "text": "(this_ptr->inverted_matrix).m[2].x = (int)ROUND(ROUND(fVar1 * fVar13));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 44,
+      "match": "ROUND",
+      "text": "(this_ptr->inverted_matrix).m[2].x = (int)ROUND(ROUND(fVar1 * fVar13));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 46,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(-(fVar2 * fVar6 - fVar10 * fVar11) * fVar13));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 46,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(-(fVar2 * fVar6 - fVar10 * fVar11) * fVar13));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 47,
+      "match": "ROUND",
+      "text": "(this_ptr->inverted_matrix).m[2].z = (int)ROUND(ROUND((fVar2 * fVar3 - fVar10 * fVar8) * fVar13));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 47,
+      "match": "ROUND",
+      "text": "(this_ptr->inverted_matrix).m[2].z = (int)ROUND(ROUND((fVar2 * fVar3 - fVar10 * fVar8) * fVar13));",
       "type": "decompiler_intrinsic"
     }
   ]

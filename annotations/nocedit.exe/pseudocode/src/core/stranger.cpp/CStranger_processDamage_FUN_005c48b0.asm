@@ -35,7 +35,7 @@
 ;   core_actor.cpp_randomChance_FUN_0040cd10
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0
 ;   core_game.cpp_CGame_resetInventoryDisplayTimer_FUN_004e0bd0
-;   core_gore.cpp_CGore_FUN_004ee030
+;   core_gore.cpp_CGore_spawnFliesOnActor_FUN_004ee030
 ;   core_hero.cpp_CHero_FUN_004f3580
 ;   core_inv.cpp_CInventory_autoUseHealthItem_FUN_00501570
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
@@ -201,8 +201,8 @@ section .text
     PUSH EBX                            ; 005c4a77
     MOV EAX,[0x0067b9a0]                ; 005c4a78 | g_CGorePtr | g_CGoreInstance
     PUSH EAX                            ; 005c4a7d | g_CGoreInstance
-    CALL core_gore.cpp_CGore_FUN_004ee030 ; 005c4a7e
-        ;   XREF to: 004ee030 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004ee030(CGore * this_ptr, CDemonActor * actor)
+    CALL core_gore.cpp_CGore_spawnFliesOnActor_FUN_004ee030 ; 005c4a7e
+        ;   XREF to: 004ee030 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnFliesOnActor_FUN_004ee030(CGore * this_ptr, CDemonActor * actor, int gather_count, float spawn_rate, ...)
     ADD ESP,0x14                        ; 005c4a83
     MOV EDX,dword ptr [EBX + 0x1fc2c]   ; 005c4a86
         ;   Label: LAB_005c4a86

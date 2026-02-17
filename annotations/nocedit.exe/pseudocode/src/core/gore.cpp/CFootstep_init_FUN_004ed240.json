@@ -1,0 +1,339 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "lvalue_required",
+        "column": 59,
+        "line": 29,
+        "message": "cannot take the address of an rvalue of type 'float'"
+      },
+      {
+        "category": "lvalue_required",
+        "column": 60,
+        "line": 30,
+        "message": "cannot take the address of an rvalue of type 'float'"
+      },
+      {
+        "category": "lvalue_required",
+        "column": 59,
+        "line": 32,
+        "message": "cannot take the address of an rvalue of type 'float'"
+      },
+      {
+        "category": "lvalue_required",
+        "column": 58,
+        "line": 33,
+        "message": "cannot take the address of an rvalue of type 'float'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 139,
+    "complexity_score": 134,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 9,
+    "pseudocode_lines": 54,
+    "suspect_count": 7,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "pointer_cast"
+    ],
+    "total_lines": 193
+  },
+  "cross_references": [
+    {
+      "addr": "004ee070",
+      "from_addr": "004ee0d0",
+      "name": "core_gore.cpp_CGore_createFootstep_FUN_004ee070",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004ed240",
+    "address_range": [
+      [
+        "004ed240",
+        "004ed3b6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_gore.cpp_CFootstep_init_FUN_004ed240",
+    "signature": "void __cdecl core_gore_cpp_CFootstep_init_FUN_004ed240(CFootstep *this_ptr,CVector3f *position,UOrientationVector *orientation,int is_bloody,int alpha,int blood_type)"
+  },
+  "function_calls": [
+    {
+      "addr": "00495b70",
+      "is_variadic": false,
+      "name": "core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062e3e2",
+      "name": "DOUBLE_0062e3e2",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "addr": "0062e3ea",
+      "name": "DOUBLE_0062e3ea",
+      "type": "double",
+      "value": "4"
+    },
+    {
+      "addr": "0062e3f2",
+      "name": "FLOAT_0062e3f2",
+      "type": "float",
+      "value": "-3"
+    },
+    {
+      "addr": "0062e3f6",
+      "name": "FLOAT_0062e3f6",
+      "type": "float",
+      "value": "0.08333334"
+    },
+    {
+      "addr": "0067cb08",
+      "name": "FLOAT_0067cb08",
+      "type": "float",
+      "value": "1"
+    },
+    {
+      "addr": "0067cb0c",
+      "name": "FLOAT_0067cb0c",
+      "type": "float",
+      "value": "-1"
+    },
+    {
+      "addr": "0067cb18",
+      "name": "FLOAT_0067cb18",
+      "type": "float",
+      "value": "1"
+    },
+    {
+      "addr": "0067cb1c",
+      "name": "DAT_0067cb1c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03277d14",
+      "name": "g_CDemonRaytraceInstance",
+      "type": "CDemonRaytrace",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.188976377952756,
+    "instruction_count": 127,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 2,
+      "CALL": 1,
+      "CALLOTHER": 2,
+      "CBRANCH": 5,
+      "COPY": 311,
+      "FLOAT2FLOAT": 26,
+      "FLOAT_ABS": 1,
+      "FLOAT_ADD": 7,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 7,
+      "FLOAT_NAN": 2,
+      "FLOAT_NEG": 1,
+      "FLOAT_SUB": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 62,
+      "INT_AND": 36,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 30,
+      "INT_LEFT": 4,
+      "INT_LESS": 5,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 15,
+      "INT_SUB": 15,
+      "INT_XOR": 2,
+      "INT_ZEXT": 4,
+      "LOAD": 38,
+      "POPCOUNT": 15,
+      "RETURN": 1,
+      "STORE": 31
+    },
+    "pcode_op_count": 659
+  },
+  "stack_frame": {
+    "frame_size": 92,
+    "local_size": 68,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFootstep *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "orientation",
+        "offset": 12,
+        "size": 4,
+        "type": "UOrientationVector *"
+      },
+      {
+        "is_param": true,
+        "name": "is_bloody",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "alpha",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "blood_type",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004ed249",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 18,
+      "match": "fsin",
+      "text": "fVar5 = (float10)fsin((float10)(orientation->vec).y);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 19,
+      "match": "fcos",
+      "text": "fVar6 = (float10)fcos((float10)(orientation->vec).y);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 22,
+      "match": "(float *)((int)",
+      "text": "local_40.x = (float)(fVar5 * (float10)*(float *)((int)&1.0f + iVar2) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(float *)((int)",
+      "text": "-fVar6 * (float10)*(float *)((int)&1.0f + iVar2) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(float *)((int)",
+      "text": "local_40.z = (float)(fVar6 * (float10)*(float *)((int)&1.0f + iVar2) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(float *)((int)",
+      "text": "fVar5 * (float10)*(float *)((int)&1.0f + iVar2)) + position->z;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 47,
+      "match": "ABS",
+      "text": "if ((float)0.5 < ABS(this_ptr->corners[0].y - pfVar3[3])) {",
+      "type": "decompiler_intrinsic"
+    }
+  ]
+}

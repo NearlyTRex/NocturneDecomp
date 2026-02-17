@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 60,
+    "complexity_score": 93,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 2,
-    "pseudocode_lines": 35,
-    "suspect_count": 2,
+    "pseudocode_lines": 28,
+    "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 118
+    "total_lines": 111
   },
   "cross_references": [
     {
@@ -169,16 +169,44 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 29,
+      "line": 23,
       "match": "ROUND",
-      "text": "*piVar1 = *piVar1 + (int)ROUND(dVar7);",
+      "text": "*piVar1 = *piVar1 + (int)ROUND(ROUND(dVar4));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
+      "line": 23,
       "match": "ROUND",
-      "text": "*(int *)(iVar5 + 8 + (int)this_ptr->vertex_list) + (int)ROUND(dVar6);",
+      "text": "*piVar1 = *piVar1 + (int)ROUND(ROUND(dVar4));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 25,
+      "match": "ROUND",
+      "text": "*piVar1 = *piVar1 + (int)ROUND(ROUND(dVar5));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 25,
+      "match": "ROUND",
+      "text": "*piVar1 = *piVar1 + (int)ROUND(ROUND(dVar5));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 27,
+      "match": "ROUND",
+      "text": "*(int *)(iVar3 + 8 + (int)this_ptr->vertex_list) + (int)ROUND(ROUND(dVar6));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 27,
+      "match": "ROUND",
+      "text": "*(int *)(iVar3 + 8 + (int)this_ptr->vertex_list) + (int)ROUND(ROUND(dVar6));",
       "type": "decompiler_intrinsic"
     }
   ]

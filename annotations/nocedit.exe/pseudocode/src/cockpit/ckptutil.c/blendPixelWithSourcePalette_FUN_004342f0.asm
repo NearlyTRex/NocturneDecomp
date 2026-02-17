@@ -23,12 +23,12 @@
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
 ;   void*[1200] g_ScreenBufferArray
-;   int g_RedBitPosition
-;   int g_RedBitCount
-;   int g_GreenBitPosition
-;   int g_GreenBitCount
-;   int g_BlueBitPosition
-;   int g_BlueBitCount
+;   _BIT_INTEGER32 g_RedBitPosition
+;   _BIT_INTEGER32 g_RedBitCount
+;   _BIT_INTEGER32 g_GreenBitPosition
+;   _BIT_INTEGER32 g_GreenBitCount
+;   _BIT_INTEGER32 g_BlueBitPosition
+;   _BIT_INTEGER32 g_BlueBitCount
 ;   char[768] g_SourcePaletteData
 ;   undefined4 CHAR_ARRAY_02d01f49
 ;   undefined4 CHAR_ARRAY_02d01f4a

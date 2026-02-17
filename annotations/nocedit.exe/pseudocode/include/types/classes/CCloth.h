@@ -20,7 +20,7 @@ typedef struct CCloth {
     float floor_friction; // 0x3ce6c
     float wind_area; // 0x3ce70
     float mom_inert; // 0x3ce74
-    char unk1[12]; // 0x3ce78
+    char reserved[12]; // 0x3ce78
     int double_sided; // 0x3ce84
     float transparency; // 0x3ce88
     int collide_bone_count; // 0x3ce8c

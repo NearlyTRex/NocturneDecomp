@@ -58,14 +58,14 @@
   },
   "function_calls": [
     {
-      "addr": "004bfa40",
-      "is_variadic": false,
-      "name": "core_fire.cpp_CBulletHole_initRender_FUN_004bfa40"
-    },
-    {
       "addr": "004bfac0",
       "is_variadic": false,
       "name": "core_fire.cpp_CBulletHole_render_FUN_004bfac0"
+    },
+    {
+      "addr": "004bfa40",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CBulletHole_setupRenderState_FUN_004bfa40"
     },
     {
       "addr": "004c21f0",
@@ -80,7 +80,7 @@
     {
       "addr": "004c0d80",
       "is_variadic": false,
-      "name": "core_fire.cpp_CFireball_initRender_FUN_004c0d80"
+      "name": "core_fire.cpp_CFireball_setupRenderState_FUN_004c0d80"
     },
     {
       "addr": "004c50b0",
@@ -103,19 +103,19 @@
       "name": "core_fire.cpp_CMuzzleFlash_render_FUN_004c1a30"
     },
     {
-      "addr": "004bf1f0",
-      "is_variadic": false,
-      "name": "core_fire.cpp_CSmokeParticle_initRender_FUN_004bf1f0"
-    },
-    {
       "addr": "004bf4c0",
       "is_variadic": false,
       "name": "core_fire.cpp_CSmokeParticle_render_FUN_004bf4c0"
     },
     {
+      "addr": "004bf1f0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CSmokeParticle_setupRenderState_FUN_004bf1f0"
+    },
+    {
       "addr": "004c0300",
       "is_variadic": false,
-      "name": "core_fire.cpp_CSpark_initRender_FUN_004c0300"
+      "name": "core_fire.cpp_CSpark_setupRenderState_FUN_004c0300"
     },
     {
       "addr": "004c0140",
@@ -798,14 +798,14 @@
       "description": "Complex pointer cast",
       "line": 28,
       "match": "(int *)((int)",
-      "text": "if (*(int *)((int)g_StakePool[0].box.rotation_matrix.m + iVar1 + -0x1c) == 0) {",
+      "text": "if (*(int *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar1 + -0x1c) == 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 30,
       "match": "(CStake *)((int)",
-      "text": "((CStake *)((int)g_StakePool[0].box.rotation_matrix.m + iVar1 + -0x1c));",
+      "text": "((CStake *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar1 + -0x1c));",
       "type": "pointer_cast"
     },
     {

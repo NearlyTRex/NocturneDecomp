@@ -1,0 +1,108 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 24,
+    "complexity_score": 27,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 12,
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 36
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0052a490",
+    "address_range": [
+      [
+        "0052a490",
+        "0052a4b7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_morph.cpp_countTrianglesFromPolygons_FUN_0052a490",
+    "signature": "int __cdecl core_morph_cpp_countTrianglesFromPolygons_FUN_0052a490(int poly_count,int *poly_headers,int poly_stride)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "estimated_params": 3
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.2105263157894735,
+    "instruction_count": 19,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CBRANCH": 2,
+      "COPY": 17,
+      "INT_ADD": 9,
+      "INT_AND": 16,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 15,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 7,
+      "INT_SUB": 4,
+      "INT_XOR": 1,
+      "LOAD": 7,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 2
+    },
+    "pcode_op_count": 99
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "poly_count",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "poly_headers",
+        "offset": 8,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "poly_stride",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 11,
+      "match": "(int *)((int)",
+      "text": "poly_headers = (int *)((int)poly_headers + poly_stride);",
+      "type": "pointer_cast"
+    }
+  ]
+}

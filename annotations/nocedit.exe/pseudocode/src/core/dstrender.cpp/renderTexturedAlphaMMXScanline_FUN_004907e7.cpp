@@ -57,8 +57,9 @@ void __cdecl core_dstrender_cpp_renderTexturedAlphaMMXScanline_FUN_004907e7(SEdg
         if (g_CurrentTextureOpacityData == (void *)0x0) {
           pvVar2 = g_CurrentTextureData;
         }
-        if (*(char *)((uVar4 >> g_TextureShift1 & (uint)g_TextureMask1) +
-                      (uVar5 >> g_TextureShift2 & (uint)g_TextureMask2) + (int)pvVar2) != '\0') {
+        if (*(char *)((uVar4 >> g_TextureShift1.mm & g_TextureMask1.u32[0]) +
+                      (uVar5 >> g_TextureShift2.mm & g_TextureMask2.u32[0]) + (int)pvVar2) != '\0')
+        {
           *(ushort *)((int)g_PerspectiveScanlineZPtr + uVar7) = (ushort)uVar1;
         }
       }

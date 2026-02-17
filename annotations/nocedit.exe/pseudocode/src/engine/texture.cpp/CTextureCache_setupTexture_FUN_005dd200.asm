@@ -18,19 +18,19 @@
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
 ;   int g_CurrentTextureDimension = 0x100
-;   ulonglong g_TextureShift1 = 0x10
-;   ulonglong g_TextureShift2 = 0x8
-;   ulonglong g_TextureMask1 = 0xff
-;   ulonglong g_TextureMask2 = 0xff00
+;   _MMX_INTEGER g_TextureShift1
+;   _MMX_INTEGER g_TextureShift2
+;   _MMX_INTEGER g_TextureMask1
+;   _MMX_INTEGER g_TextureMask2
 ;   byte* g_CurrentPalette
 ;   uint[256] g_Hardware32BitPalette
 ;   undefined4 g_GlobalPalette[1]
 ;   ushort[256] g_Hardware16BitPalette
-;   int g_RedBitPosition
+;   _BIT_INTEGER32 g_RedBitPosition
 ;   int g_RedScaleFactor
-;   int g_GreenBitPosition
+;   _BIT_INTEGER32 g_GreenBitPosition
 ;   int g_GreenScaleFactor
-;   int g_BlueBitPosition
+;   _BIT_INTEGER32 g_BlueBitPosition
 ;   ... and 7 more
 ;
 ; *****************************************************************************

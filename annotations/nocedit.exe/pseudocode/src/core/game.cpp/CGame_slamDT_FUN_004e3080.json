@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 33,
-    "complexity_score": 29,
+    "complexity_score": 38,
     "cross_reference_count": 5,
     "function_call_count": 2,
     "global_count": 6,
-    "pseudocode_lines": 14,
-    "suspect_count": 1,
+    "pseudocode_lines": 13,
+    "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 47
+    "total_lines": 46
   },
   "cross_references": [
     {
@@ -173,9 +173,16 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 14,
+      "line": 13,
       "match": "ROUND",
-      "text": "this_ptr->delta_time_int = (int)ROUND(dVar1);",
+      "text": "this_ptr->delta_time_int = (int)ROUND(ROUND(this_ptr->delta_time_float * 65536.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 13,
+      "match": "ROUND",
+      "text": "this_ptr->delta_time_int = (int)ROUND(ROUND(this_ptr->delta_time_float * 65536.0f));",
       "type": "decompiler_intrinsic"
     }
   ]

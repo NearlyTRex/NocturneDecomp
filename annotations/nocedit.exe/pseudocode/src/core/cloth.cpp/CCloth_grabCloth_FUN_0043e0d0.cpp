@@ -29,6 +29,6 @@ void __cdecl core_cloth_cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth *this_ptr,char 
     core_main_c_displayErrorAndQuit_FUN_00506f10("CCloth::grabCloth - Can't find bone %s",bone_name);
   }
   this_ptr->vertices[vertex_index].locked = 1;
-  *(int *)this_ptr->vertices[vertex_index].bone_indices = iVar2;
+  this_ptr->vertices[vertex_index].collide_bone_index = iVar2;
   return;
 }

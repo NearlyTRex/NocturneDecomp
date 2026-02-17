@@ -52,7 +52,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float d
       this_ptr->summoned = 1;
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar9->motion_controller,6,1)
       ;
-      this_ptr->unk13 = 1;
+      this_ptr->shell_visible = 1;
     }
   }
   else {
@@ -114,7 +114,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float d
         iVar3 = 2;
       }
       if ((this_ptr->base).player_control.action_states[3] != 0) {
-        this_ptr->unk6 = 1;
+        this_ptr->new_attack = 1;
         iVar3 = 4;
         (this_ptr->base).player_control.action_states[3] = 0;
       }
@@ -147,23 +147,23 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float d
         local_54.y = pCVar4->y;
         local_54.z = pCVar4->z;
       }
-      if (this_ptr->unk6 == 0) {
+      if (this_ptr->new_attack == 0) {
         pCStack_c0 = &local_30;
         core_fire_cpp_CFireEffect_FUN_004c90c0(g_CFireEffectPtr);
         pCStack_c0 = &local_54;
         core_fire_cpp_CFireEffect_FUN_004c90c0(g_CFireEffectPtr);
       }
-      if ((CVector3f *)&this_ptr->unk7 != &local_30) {
-        this_ptr->unk7 = (int)local_30.x;
-        this_ptr->unk8 = (int)local_30.y;
-        this_ptr->unk9 = (int)local_30.z;
+      if (&this_ptr->left_hand_pos != &local_30) {
+        (this_ptr->left_hand_pos).x = local_30.x;
+        (this_ptr->left_hand_pos).y = local_30.y;
+        (this_ptr->left_hand_pos).z = local_30.z;
       }
-      if ((CVector3f *)&this_ptr->unk10 != &local_54) {
-        this_ptr->unk10 = (int)local_54.x;
-        this_ptr->unk11 = (int)local_54.y;
-        this_ptr->unk12 = (int)local_54.z;
+      if (&this_ptr->right_hand_pos != &local_54) {
+        (this_ptr->right_hand_pos).x = local_54.x;
+        (this_ptr->right_hand_pos).y = local_54.y;
+        (this_ptr->right_hand_pos).z = local_54.z;
       }
-      this_ptr->unk6 = 0;
+      this_ptr->new_attack = 0;
     }
     goto switchD_0041345d_default;
   }
@@ -210,9 +210,9 @@ switchD_0041345d_default:
   pCVar9 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(pCVar9);
   blend_callback = core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0;
-  fVar10 = this_ptr->unk4;
+  fVar10 = this_ptr->head_blend_weight;
   iVar3 = INT_00822498;
-  core_xform_cpp_eulerToQuaternion_FUN_005f7b20((CVector3f *)&this_ptr->unk1,&local_a4);
+  core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&this_ptr->head_rotation,&local_a4);
   source_quaternions = &local_94;
   local_94.w = local_a4.w;
   puVar7 = (uint *)((int)&local_94 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);

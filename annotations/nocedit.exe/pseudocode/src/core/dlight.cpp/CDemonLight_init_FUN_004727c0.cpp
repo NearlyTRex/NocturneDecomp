@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl core_dlight_cpp_CDemonLight_init_FUN_004727c0(CDemonLight *this_ptr)
 
 {
@@ -14,7 +16,6 @@ void __cdecl core_dlight_cpp_CDemonLight_init_FUN_004727c0(CDemonLight *this_ptr
   uchar *puVar3;
   int iVar4;
   int iVar5;
-  double dVar6;
   
   core_dlight_cpp_CDemonLight_free_FUN_004728b0(this_ptr);
   pvVar2 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
@@ -34,9 +35,8 @@ void __cdecl core_dlight_cpp_CDemonLight_init_FUN_004727c0(CDemonLight *this_ptr
                       "..\\core\\dlight.cpp",0x71);
   fVar1 = (float)7;
   this_ptr->lightmap_visibility_bits = puVar3;
-  iVar4 = 0x472857;
-  dVar6 = round((double)(this_ptr->volumetric_intensity * fVar1));
   core_dlight_cpp_CDemonLight_applyFilter_FUN_00474770
-            (this_ptr,(&g_GlobalFilters)[(int)ROUND(dVar6)],0,0,iVar4);
+            (this_ptr,(&g_GlobalFilters)[(int)ROUND(ROUND(this_ptr->volumetric_intensity * fVar1))],
+             0,0,0);
   return;
 }

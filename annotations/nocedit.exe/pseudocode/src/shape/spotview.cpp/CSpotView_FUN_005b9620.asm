@@ -9,8 +9,8 @@
 ; XREF[8]:
 ;   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 at 0043c8f5
 ;   core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590 at 0043d5c8
-;   core_morph.cpp_CMorph_FUN_0052ca90 at 0052caae
-;   core_morph.cpp_FUN_0052bcb0 at 0052bdf3
+;   core_morph.cpp_CMorph_editMorph_FUN_0052bcb0 at 0052bdf3
+;   core_morph.cpp_CMorph_previewMorph_FUN_0052ca90 at 0052caae
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 00596a02
 ;   shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 at 0051da03
 ;   shape_spotview.cpp_CSpotView_FUN_005b9670 at 005b9937

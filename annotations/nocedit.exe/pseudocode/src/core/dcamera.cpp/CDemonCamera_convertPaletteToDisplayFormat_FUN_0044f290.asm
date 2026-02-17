@@ -16,9 +16,9 @@
 ;   undefined4 DAT_00c196fd
 ;   uint[256] g_CameraConvertedPalette
 ;   undefined4 DAT_00c19a00
-;   int g_RedBitPosition
-;   int g_GreenBitPosition
-;   int g_BlueBitPosition
+;   _BIT_INTEGER32 g_RedBitPosition
+;   _BIT_INTEGER32 g_GreenBitPosition
+;   _BIT_INTEGER32 g_BlueBitPosition
 ;
 ; *****************************************************************************
 

@@ -238,8 +238,8 @@ void __cdecl wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823(STex
           }
           else {
             uVar10 = g_Hardware32BitPalette
-                     [*(byte *)((uVar12 >> g_TextureShift1 & (uint)g_TextureMask1) +
-                                (uVar9 >> g_TextureShift2 & (uint)g_TextureMask2) +
+                     [*(byte *)((uVar12 >> g_TextureShift1.mm & g_TextureMask1.u32[0]) +
+                                (uVar9 >> g_TextureShift2.mm & g_TextureMask2.u32[0]) +
                                (int)g_CurrentTextureData)];
           }
           uVar23 = psllw((ulonglong)
@@ -293,9 +293,9 @@ void __cdecl wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823(STex
                                                 (char)(uVar24 >> 8) - (0xff < uVar26))));
           }
           *(ushort *)((uVar20 >> 1) + (int)g_CurrentScreenPtr) =
-               (ushort)((uVar34 & g_BlueMask32) >> g_BlueBitShift) |
-               (ushort)((uVar34 & g_GreenMask32) >> g_GreenBlueBits) |
-               (ushort)((uVar34 & g_RedMask32) >> g_TotalColorBits);
+               (ushort)((uVar34 & g_BlueMask32.mm) >> g_BlueBitShift.mm) |
+               (ushort)((uVar34 & g_GreenMask32.mm) >> g_GreenBlueBits.mm) |
+               (ushort)((uVar34 & g_RedMask32.mm) >> g_TotalColorBits.mm);
           if ((g_RenderStateFlags.dword & 0x80) != 0) {
             *(int *)((int)g_CurrentZBufferPtr + uVar20) = iVar18;
           }
@@ -335,8 +335,8 @@ void __cdecl wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823(STex
           uVar21 = (ushort)(uVar39 >> 0x30);
           if (((g_RenderStateFlags.dword & 0x40) == 0) ||
              (*(int *)(uVar20 + (int)g_CurrentZBufferPtr) <= iVar18)) {
-            pbVar16 = (byte *)((uVar12 >> g_TextureShift1 & (uint)g_TextureMask1) +
-                               (uVar9 >> g_TextureShift2 & (uint)g_TextureMask2) +
+            pbVar16 = (byte *)((uVar12 >> g_TextureShift1.mm & g_TextureMask1.u32[0]) +
+                               (uVar9 >> g_TextureShift2.mm & g_TextureMask2.u32[0]) +
                               (int)g_CurrentTextureData);
             uVar10 = g_Hardware32BitPalette[*pbVar16];
             uVar39 = (ulonglong)
@@ -351,9 +351,9 @@ void __cdecl wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823(STex
               if ((((iVar11 < 0xff01) || (uVar10 < 0xff)) || (iVar11 < 0xff)) || (g_BlendMode != 0))
               {
                 uVar15 = (uint)*(ushort *)((uVar20 >> 1) + (int)g_CurrentScreenPtr);
-                uVar36 = (uint7)((uVar15 & g_BlueMask16) << g_BlueBitShift) |
-                         (uint7)((uVar15 & g_GreenMask16) << g_GreenBlueBits) |
-                         (uint7)((uVar15 & g_RedMask16) << g_TotalColorBits);
+                uVar36 = (uint7)((uVar15 & g_BlueMask16.mm) << g_BlueBitShift.mm) |
+                         (uint7)((uVar15 & g_GreenMask16.mm) << g_GreenBlueBits.mm) |
+                         (uint7)((uVar15 & g_RedMask16.mm) << g_TotalColorBits.mm);
                 uVar24 = (ushort)(((uVar36 >> 0x18) << 0x30) >> 0x28);
                 uVar7 = CONCAT21(uVar24,(char)(uVar36 >> 0x10));
                 uVar8 = CONCAT41((int)(((uint7)uVar7 << 0x20) >> 0x18),(char)(uVar36 >> 8));
@@ -448,9 +448,9 @@ void __cdecl wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823(STex
                                                     (0xff < sVar37))));
               }
               *(ushort *)((uVar20 >> 1) + (int)g_CurrentScreenPtr) =
-                   (ushort)((uVar39 & g_BlueMask32) >> g_BlueBitShift) |
-                   (ushort)((uVar39 & g_GreenMask32) >> g_GreenBlueBits) |
-                   (ushort)((uVar39 & g_RedMask32) >> g_TotalColorBits);
+                   (ushort)((uVar39 & g_BlueMask32.mm) >> g_BlueBitShift.mm) |
+                   (ushort)((uVar39 & g_GreenMask32.mm) >> g_GreenBlueBits.mm) |
+                   (ushort)((uVar39 & g_RedMask32.mm) >> g_TotalColorBits.mm);
               if ((g_RenderStateFlags.dword & 0x80) != 0) {
                 *(int *)(uVar20 + (int)g_CurrentZBufferPtr) = iVar18;
               }
@@ -482,15 +482,15 @@ void __cdecl wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823(STex
         if ((((g_RenderStateFlags.dword & 0x40) == 0) ||
             (*(int *)(uVar20 + (int)g_CurrentZBufferPtr) <= iVar18)) &&
            (uVar10 = g_Hardware32BitPalette
-                     [*(byte *)((uVar12 >> g_TextureShift1 & (uint)g_TextureMask1) +
-                                (uVar9 >> g_TextureShift2 & (uint)g_TextureMask2) +
+                     [*(byte *)((uVar12 >> g_TextureShift1.mm & g_TextureMask1.u32[0]) +
+                                (uVar9 >> g_TextureShift2.mm & g_TextureMask2.u32[0]) +
                                (int)g_CurrentTextureData)], uVar10 != 0)) {
           uVar44 = 0;
           if ((g_RenderStateFlags.dword & 0x20) != 0) {
             uVar15 = (uint)*(ushort *)((uVar20 >> 1) + (int)g_CurrentScreenPtr);
-            uVar36 = (uint7)((uVar15 & g_BlueMask16) << g_BlueBitShift) |
-                     (uint7)((uVar15 & g_GreenMask16) << g_GreenBlueBits) |
-                     (uint7)((uVar15 & g_RedMask16) << g_TotalColorBits);
+            uVar36 = (uint7)((uVar15 & g_BlueMask16.mm) << g_BlueBitShift.mm) |
+                     (uint7)((uVar15 & g_GreenMask16.mm) << g_GreenBlueBits.mm) |
+                     (uint7)((uVar15 & g_RedMask16.mm) << g_TotalColorBits.mm);
             uVar44 = (ulonglong)
                      CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uVar36 >> 0x18) << 0x30) >>
                                                                      0x28),(char)(uVar36 >> 0x10))
@@ -564,9 +564,9 @@ void __cdecl wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823(STex
           }
           uVar44 = (ulonglong)uVar10;
           *(ushort *)((uVar20 >> 1) + (int)g_CurrentScreenPtr) =
-               (ushort)((uVar44 & g_BlueMask32) >> g_BlueBitShift) |
-               (ushort)((uVar44 & g_GreenMask32) >> g_GreenBlueBits) |
-               (ushort)((uVar44 & g_RedMask32) >> g_TotalColorBits);
+               (ushort)((uVar44 & g_BlueMask32.mm) >> g_BlueBitShift.mm) |
+               (ushort)((uVar44 & g_GreenMask32.mm) >> g_GreenBlueBits.mm) |
+               (ushort)((uVar44 & g_RedMask32.mm) >> g_TotalColorBits.mm);
           if ((g_RenderStateFlags.dword & 0x80) != 0) {
             *(int *)(uVar20 + (int)g_CurrentZBufferPtr) = iVar18;
           }

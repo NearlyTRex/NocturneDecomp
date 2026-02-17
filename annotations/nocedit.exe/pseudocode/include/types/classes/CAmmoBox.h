@@ -14,10 +14,10 @@ typedef struct CAmmoBox {
     char weapon_class_name[64]; // 0x2d4
     int ammo_count; // 0x314
     EAmmoBoxType ammo_type; // 0x318
-    float unk1; // 0x31c
-    char* item; // 0x320
+    float open_pct; // 0x31c
+    struct CDemonActor* item; // 0x320
     int has_collision; // 0x324
     char open_sound[32]; // 0x328
-    int unk2; // 0x348
+    int is_sound_playing; // 0x348
 } CAmmoBox;
 

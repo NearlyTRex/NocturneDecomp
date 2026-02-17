@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl core_lightgun_cpp_CLightGun_process_FUN_00506450(CLightGun *this_ptr,float delta_time)
 
 {
@@ -15,7 +17,6 @@ void __cdecl core_lightgun_cpp_CLightGun_process_FUN_00506450(CLightGun *this_pt
   CDemonFilter *filter_ptr;
   uint uVar3;
   int unaff_ESI;
-  double dVar4;
   
   core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base,delta_time);
   fVar1 = core_inv_cpp_CInventory_calculateTotalBatteryCharge_FUN_004ffda0
@@ -27,10 +28,8 @@ void __cdecl core_lightgun_cpp_CLightGun_process_FUN_00506450(CLightGun *this_pt
   }
   fVar1 = *(float *)(this_ptr->unk + 8) / 30.0f;
   *(float *)(this_ptr->unk + 0xc) = fVar1;
-  iVar2 = (this_ptr->base).weapon_state;
-  dVar4 = round((double)(fVar1 * (float)100));
-  (this_ptr->base).ammo_count = (int)ROUND(dVar4);
-  if (iVar2 == 2) {
+  (this_ptr->base).ammo_count = (int)ROUND(ROUND(fVar1 * (float)100));
+  if ((this_ptr->base).weapon_state == 2) {
     fVar1 = (2.5f - 2.0f) * *(float *)(this_ptr->unk + 0xc) + 2.0f;
     base_frequency =
          1.0f + (2.0f - 1.0f) * *(float *)(this_ptr->unk + 0xc);

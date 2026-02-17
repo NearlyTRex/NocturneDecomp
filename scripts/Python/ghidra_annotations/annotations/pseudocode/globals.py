@@ -637,6 +637,21 @@ def format_struct_initializer(data_type, raw_bytes, currentProgram=None, use_des
         if not hasattr(data_type, 'getComponents'):
             return None
         if "Union" in data_type.__class__.__name__:
+            # For unions, initialize via the first member only (C union initializer rule)
+            components = data_type.getComponents() if hasattr(data_type, 'getComponents') else None
+            if components and len(components) > 0:
+                first_comp = components[0]
+                first_comp_size = first_comp.getLength()
+                # Pad or truncate raw bytes to match first component's size
+                if len(raw_bytes) >= first_comp_size:
+                    init_bytes = raw_bytes[:first_comp_size]
+                else:
+                    init_bytes = raw_bytes + [0] * (first_comp_size - len(raw_bytes))
+                int_val = bytes_to_int_le(init_bytes)
+                hex_str = format_int_by_size(int_val, first_comp_size)
+                if first_comp_size == 8:
+                    hex_str += "ULL"
+                return "{%s}" % hex_str
             return None
 
         # For variable-length structs, we'll still initialize the defined fields

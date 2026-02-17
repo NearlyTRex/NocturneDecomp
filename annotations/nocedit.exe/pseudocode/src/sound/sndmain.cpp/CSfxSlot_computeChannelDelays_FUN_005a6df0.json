@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 87,
+    "complexity_score": 82,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 9,
-    "pseudocode_lines": 62,
+    "pseudocode_lines": 57,
     "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 172
+    "total_lines": 167
   },
   "cross_references": [
     {
@@ -206,16 +206,16 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
+      "line": 30,
       "match": "ROUND",
-      "text": "iVar1 = (int)ROUND(dVar6);",
+      "text": "iVar1 = (int)ROUND(ROUND(pCVar6->distance_to_speakers[0] * (float)(dVar3 * dVar2)));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
-      "match": "CONCAT44",
-      "text": "local_20 = (double)CONCAT44(iVar1,0x5a6eb0);",
+      "line": 30,
+      "match": "ROUND",
+      "text": "iVar1 = (int)ROUND(ROUND(pCVar6->distance_to_speakers[0] * (float)(dVar3 * dVar2)));",
       "type": "decompiler_intrinsic"
     }
   ]

@@ -3,99 +3,45 @@
     "errors": [
       {
         "category": "other",
-        "column": 19,
-        "line": 65,
-        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 66,
-        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 67,
-        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 68,
-        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 87,
-        "line": 72,
-        "message": "too few arguments to function call, expected 3, have 2"
+        "column": 49,
+        "line": 73,
+        "message": "cannot initialize a parameter of type 'struct IUnknown *' with an lvalue of type 'IDirectSoundBuffer *'"
       },
       {
         "category": "other",
         "column": 46,
-        "line": 75,
-        "message": "too few arguments to function call, expected 1, have 0"
+        "line": 76,
+        "message": "cannot initialize a parameter of type 'struct IUnknown *' with an lvalue of type 'IDirectSoundBuffer *'"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 80,
+        "line": 81,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 24,
-        "line": 80,
+        "line": 81,
         "message": "expected expression"
       },
       {
         "category": "other",
         "column": 46,
-        "line": 82,
-        "message": "too few arguments to function call, expected 1, have 0"
+        "line": 83,
+        "message": "cannot initialize a parameter of type 'struct IUnknown *' with an lvalue of type 'IDirectSoundBuffer *'"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 86,
+        "line": 87,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 26,
-        "line": 86,
+        "line": 87,
         "message": "expected expression"
-      },
-      {
-        "category": "other",
-        "column": 63,
-        "line": 94,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 137,
-        "message": "use of undeclared identifier 'stack0xfffff94c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 55,
-        "line": 139,
-        "message": "use of undeclared identifier 'stack0xfffff94c'"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 144,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "other",
-        "column": 59,
-        "line": 152,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
     "success": false,
@@ -103,20 +49,18 @@
   },
   "complexity": {
     "assembly_lines": 391,
-    "complexity_score": 276,
+    "complexity_score": 215,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 19,
-    "pseudocode_lines": 151,
-    "suspect_count": 10,
+    "pseudocode_lines": 150,
+    "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
-      "stack_ref",
-      "unknown_field",
       "unresolved_funcptr",
       "warning_max_restarts"
     ],
-    "total_lines": 542
+    "total_lines": 541
   },
   "cross_references": [],
   "function": {
@@ -418,73 +362,38 @@
   "suspects": [
     {
       "description": "Decompiler iteration limit exceeded",
-      "line": 2,
+      "line": 3,
       "match": "WARNING: Exceeded maximum restarts with more pending",
       "text": "/* WARNING: Exceeded maximum restarts with more pending */",
       "type": "warning_max_restarts"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 58,
-      "match": "._16_4_",
-      "text": "auStack_5c._16_4_ = &tStack_34;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 59,
-      "match": "._0_4_",
-      "text": "auStack_5c._0_4_ = 0x14;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 60,
-      "match": "._4_4_",
-      "text": "auStack_5c._4_4_ = 0x12;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 61,
-      "match": "._8_4_",
-      "text": "auStack_5c._8_4_ = 0x400;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 73,
+      "line": 74,
       "match": "code *",
-      "text": "(**(code **)*piStack_1c)(piStack_1c,&g_IID_IKsPropertySet);",
+      "text": "(**(code **)*piStack_1c)(piStack_1c,&g_IID_IKsPropertySet,&g_DirectSoundPropertySet);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 79,
+      "line": 80,
       "match": "code *",
-      "text": "(**(code **)(*piStack_1c + 8))();",
+      "text": "(**(code **)(*piStack_1c + 8))(piStack_1c);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 106,
+      "line": 105,
       "match": "ROUND",
-      "text": "g_StreamSamplesPerBlock = (int)ROUND(dVar3);",
+      "text": "(int)ROUND(ROUND(((float)g_StreamSampleRate * fStack_14) / (float)g_StreamBlockCount));",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 130,
-      "match": "&stack0xfffff94c",
-      "text": "(&stack0xfffff94c,\"DirectSux: Unable to %s.  (%s)\",",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 132,
-      "match": "&stack0xfffff94c",
-      "text": "sound_sndmain_cpp_logSoundError_FUN_005adba0(&stack0xfffff94c);",
-      "type": "stack_ref"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 105,
+      "match": "ROUND",
+      "text": "(int)ROUND(ROUND(((float)g_StreamSampleRate * fStack_14) / (float)g_StreamBlockCount));",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

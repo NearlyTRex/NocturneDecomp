@@ -12,8 +12,8 @@
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047ccab
 ;   core_moon.cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0 at 0052a2cc
 ;   core_moon.cpp_CMoon_render_FUN_00529ed0 at 00529ee6
-;   core_morph.cpp_CMorph_FUN_0052ca90 at 0052cb07
-;   core_morph.cpp_FUN_0052bcb0 at 0052bfb7
+;   core_morph.cpp_CMorph_editMorph_FUN_0052bcb0 at 0052bfb7
+;   core_morph.cpp_CMorph_previewMorph_FUN_0052ca90 at 0052cb07
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053a316
 ;   ... and 9 more
 ;

@@ -6,6 +6,7 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 /* WARNING: Type propagation algorithm not settling */
 
 void __cdecl core_imp_cpp_CImp_process_FUN_004f9c30(CImp *this_ptr,float delta_time)
@@ -26,8 +27,7 @@ void __cdecl core_imp_cpp_CImp_process_FUN_004f9c30(CImp *this_ptr,float delta_t
   CImp *pCVar13;
   CPathMap *path_map;
   uint uVar14;
-  double dVar15;
-  float fVar16;
+  float fVar15;
   float max_distance;
   float in_stack_fffffe60;
   SDamageInfo local_164;
@@ -107,8 +107,8 @@ LAB_004f9c99:
                   ((CDemonActor *)this_ptr,&local_68,&local_50);
         pCVar9 = (this_ptr->base).victim;
         fVar3 = local_68.x - (pCVar9->location).position.x;
-        fVar16 = local_68.z - (pCVar9->location).position.z;
-        bVar6 = (float)0.80000000000000004 < SQRT(fVar16 * fVar16 + fVar3 * fVar3);
+        fVar15 = local_68.z - (pCVar9->location).position.z;
+        bVar6 = (float)0.80000000000000004 < SQRT(fVar15 * fVar15 + fVar3 * fVar3);
         if (((ABS(local_68.y - (((this_ptr->base).victim)->location).position.y) <=
               (float)4) &&
             ((bVar6 || (pCVar4 = (CCharacter *)(this_ptr->base).victim,
@@ -141,11 +141,10 @@ LAB_004f9c99:
         pCVar4 = (CCharacter *)(this_ptr->base).victim;
         local_14 = local_164.damage_amount;
         (*(((pCVar4->base).vtable._uc)->_uc).processDamage)(pCVar4,&local_164);
-        dVar15 = round
-                           ((double)(local_164.damage_amount * (float)2.5 *
+        local_3c = (int)ROUND(ROUND(local_164.damage_amount * (float)2.5 *
                                     (float)0.25));
-        local_3c = (int)ROUND(dVar15);
-        core_gore_cpp_CGore_FUN_004edbb0(g_CGorePtr);
+        core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0
+                  (g_CGorePtr,&local_8c,(CVector3f *)0x0,local_3c,0);
         pCVar4 = (CCharacter *)(this_ptr->base).victim;
         iVar7 = (*(((pCVar4->base).vtable._uc)->_uc).getDeathState)(pCVar4);
         if (iVar7 < 1) {
@@ -166,10 +165,10 @@ LAB_004f9c99:
     goto LAB_004f9c99;
   }
   fVar3 = (this_ptr->base).speed;
-  fVar16 = (float)3.1415926535000001;
+  fVar15 = (float)3.1415926535000001;
   pCVar1 = &(this_ptr->base).base.model;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  (this_ptr->base).base.turn_speed = delta_time * fVar16 * fVar3;
+  (this_ptr->base).base.turn_speed = delta_time * fVar15 * fVar3;
   pSVar11 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                       (&pCVar1->motion_controller);
   iVar7 = pSVar11->state_index;
@@ -185,7 +184,7 @@ LAB_004f9c99:
         (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
         pCVar9 = (this_ptr->base).victim;
         if (pCVar9 == (CDemonActor *)0x0) {
-          iVar7 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+          iVar7 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
           if (iVar7 != 0) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&pCVar1->motion_controller,1,1);
@@ -242,7 +241,7 @@ LAB_004f9c99:
       pCVar9 = (this_ptr->base).victim;
       pCVar1 = &(this_ptr->base).base.model;
       if (pCVar9 == (CDemonActor *)0x0) {
-        iVar7 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base);
+        iVar7 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
         if (iVar7 == 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&pCVar1->motion_controller,0,1);
@@ -258,7 +257,7 @@ LAB_004f9c99:
           local_28 = 2.0f;
           max_distance = 0.17453292;
           (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-          fVar16 = 0.5;
+          fVar15 = 0.5;
           (this_ptr->base).base.model.accumulated_root_motion.y =
                (this_ptr->base).base.model.accumulated_root_motion.z;
           (this_ptr->base).base.model.accumulated_root_motion.x =
@@ -271,7 +270,7 @@ LAB_004f9c99:
           path_map = (*((pCVar5->vtable)._ub)->getPathMap)(pCVar5);
           iVar7 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
                             ((CCharacter *)this_ptr,&(((this_ptr->base).victim)->location).position,
-                             path_map,pCVar10,fVar16,max_distance);
+                             path_map,pCVar10,fVar15,max_distance);
           if (-1 < iVar7) {
             pCVar9 = (this_ptr->base).victim;
             local_a4 = (this_ptr->base).base.base.location.position.x -
@@ -314,7 +313,7 @@ LAB_004f9c99:
                 }
               }
             }
-            if ((local_1c <= local_28) && ((float)(this_ptr->base).unk2 <= 0.0)) {
+            if ((local_1c <= local_28) && ((this_ptr->base).attack_cooldown <= 0.0)) {
               pCVar9 = (this_ptr->base).victim;
               local_d4.x = (pCVar9->location).position.x -
                            (this_ptr->base).base.base.location.position.x;
@@ -329,7 +328,7 @@ LAB_004f9c99:
               if (ABS(local_14) < (float)0.52359877558333301) {
                 core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                           (&(this_ptr->base).base.model.motion_controller,4,1);
-                (this_ptr->base).unk2 = 0x40800000;
+                (this_ptr->base).attack_cooldown = 4.0;
               }
             }
             if ((this_ptr->base).guard_distance < local_1c) {
@@ -422,7 +421,7 @@ LAB_004f9c99:
                             (pCVar1,&local_f8,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   ((CDemonActor *)this_ptr,&local_c8,pCVar10);
-        core_gore_cpp_CGore_FUN_004ede30(g_CGorePtr);
+        core_gore_cpp_CGore_createBloodPool_FUN_004ede30(g_CGorePtr,&local_c8,0);
         (this_ptr->base).pool_me = 1;
       }
       break;
@@ -476,8 +475,8 @@ LAB_004fa163:
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
 switchD_004fa8ed_caseD_8:
-  if (0.0 < (float)(this_ptr->base).unk2) {
-    (this_ptr->base).unk2 = (int)((float)(this_ptr->base).unk2 - delta_time);
+  if (0.0 < (this_ptr->base).attack_cooldown) {
+    (this_ptr->base).attack_cooldown = (this_ptr->base).attack_cooldown - delta_time;
   }
   iVar7 = core_charactr_cpp_CCharacter_isOnGround_FUN_004297e0((CCharacter *)this_ptr);
   if ((iVar7 != 0) && (local_24 != 9)) {

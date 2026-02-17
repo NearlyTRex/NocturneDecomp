@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_mobster_cpp_CMobster_FUN_00527380(CMobster *this_ptr)
+; void __cdecl core_mobster_cpp_CMobster_FUN_00527380(CMobster *this_ptr,SDamageInfo *damage_info)
 ;
 ; Parameters:
 ; CMobster *       Stack[0x4]:4   this_ptr
+; SDamageInfo *    Stack[0x8]:4   damage_info
 ; Local Variables:
 ; undefined8       Stack[-0x30]:8  local_30
 ; undefined4       Stack[-0x20]:4  local_20
@@ -30,7 +31,7 @@
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
 ;   core_actor.cpp_randomChance_FUN_0040cd10
-;   core_bodypart.cpp_CBodyPart_FUN_0041a050
+;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050
 ;   core_bodypart.cpp_createBodyPart_FUN_00418e10
 ;   core_charactr.cpp_CCharacter_detachBodyPart_FUN_0042bcc0
 ;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
@@ -254,8 +255,8 @@ section .text
     ADD ESP,0x8                         ; 0052758b
     MOV ECX,dword ptr [ESP + 0x10]      ; 0052758e
     PUSH ECX                            ; 00527592
-    CALL core_bodypart.cpp_CBodyPart_FUN_0041a050 ; 00527593
-        ;   XREF to: 0041a050 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_FUN_0041a050(CBodyPart * this_ptr)
+    CALL core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050 ; 00527593
+        ;   XREF to: 0041a050 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050(CBodyPart * this_ptr)
     MOV EAX,dword ptr [EBX + 0xbf88]    ; 00527598
     MOV EDI,dword ptr [EBX + EAX*0x4 + 0x2298] ; 0052759e
     ADD ESP,0x4                         ; 005275a5

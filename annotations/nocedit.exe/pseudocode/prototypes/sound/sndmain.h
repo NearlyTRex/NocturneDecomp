@@ -23,9 +23,9 @@ int __cdecl parseWavFile(_FILE *file_handle,long *file_offset_ptr,CSfxSample *sf
 // Address: 005a43a0
 int __cdecl getActiveSfxCount(void);
 
-// Original: sound_sndmain.cpp_findFreeSampleSlot_FUN_005a4400
+// Original: sound_sndmain.cpp_findFreeSfxSample_FUN_005a4400
 // Address: 005a4400
-CSfxSample * __cdecl findFreeSampleSlot(void);
+CSfxSample * __cdecl findFreeSfxSample(void);
 
 // Original: sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_005a4450
 // Address: 005a4450
@@ -49,7 +49,7 @@ int __cdecl isStreamableFile(char *filename,char *filepath);
 
 // Original: sound_sndmain.cpp_loadStreamingSoundFile_FUN_005a5200
 // Address: 005a5200
-CSfxSample * __cdecl loadStreamingSoundFile(char *filename);
+CSfxSample * __cdecl loadStreamingSoundFile(int slot_index,char *filename);
 
 // Original: sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_005a5530
 // Address: 005a5530

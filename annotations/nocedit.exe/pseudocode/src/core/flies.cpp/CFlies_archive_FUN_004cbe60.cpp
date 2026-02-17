@@ -10,7 +10,7 @@ void __cdecl core_flies_cpp_CFlies_archive_FUN_004cbe60(CFlies *this_ptr)
 
 {
   core_actor_cpp_CDemonActor_archive_FUN_0040c1c0(&this_ptr->base);
-  core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->count,"count");
+  core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->fly_count,"count");
   if (g_CFliesClassVersion < 2) {
     if (g_CFliesClassVersion < 3) {
       return;

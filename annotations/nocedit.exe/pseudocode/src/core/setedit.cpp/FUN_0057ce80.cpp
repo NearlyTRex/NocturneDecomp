@@ -99,9 +99,10 @@ void __cdecl core_setedit_cpp_FUN_0057ce80(void)
         do {
           if ((iVar2 < in_stack_00000018) && (iVar5 < in_stack_0000001c)) {
             character = (uint)g_ColorCubeLookup
-                              [((*puVar4 >> ((byte)g_BlueBitPosition & 0x1f) & 0xff) >> 3) +
-                               ((*puVar4 >> ((byte)g_GreenBitPosition & 0x1f) & 0xff) >> 3) * 0x20 +
-                               ((*puVar4 >> ((byte)g_RedBitPosition & 0x1f) & 0xff) >> 3) * 0x400];
+                              [((*puVar4 >> (g_BlueBitPosition.bytes[0] & 0x1f) & 0xff) >> 3) +
+                               ((*puVar4 >> (g_GreenBitPosition.bytes[0] & 0x1f) & 0xff) >> 3) *
+                               0x20 + ((*puVar4 >> (g_RedBitPosition.bytes[0] & 0x1f) & 0xff) >> 3)
+                                      * 0x400];
           }
           else {
             character = 0;

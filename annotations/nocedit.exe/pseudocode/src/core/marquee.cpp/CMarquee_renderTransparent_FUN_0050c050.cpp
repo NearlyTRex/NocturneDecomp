@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 int __cdecl core_marquee_cpp_CMarquee_renderTransparent_FUN_0050c050(CMarquee *this_ptr)
 
 {
@@ -13,15 +15,16 @@ int __cdecl core_marquee_cpp_CMarquee_renderTransparent_FUN_0050c050(CMarquee *t
   CVector3f *pCVar1;
   int iVar2;
   int iVar3;
-  double dVar4;
-  CVector3f aCStack_8c [2];
-  CVector3f CStack_74;
-  CVector3f aCStack_68 [2];
-  byte local_4c [24];
+  CVector3f local_88 [2];
+  CVector3f local_70;
+  CVector3f local_64 [2];
+  CVector3f local_4c;
+  CVector3f local_40;
   CVector3f local_34;
   float local_28;
   float local_24;
-  int local_20;
+  float local_20;
+  int local_1c;
   CCourse *local_18;
   int local_14;
   int local_10;
@@ -35,21 +38,20 @@ int __cdecl core_marquee_cpp_CMarquee_renderTransparent_FUN_0050c050(CMarquee *t
     this_ptr_00 = (CCourse *)this_ptr->unk3;
     if (g_CDemonMissionPtr->is_in_editor == 0) {
       if (this_ptr->type == 1) {
-        dVar4 = round((double)this_ptr->param);
-        iVar2 = (int)ROUND(dVar4);
+        iVar2 = (int)ROUND(ROUND(this_ptr->param));
         iVar3 = 0;
-        local_14 = iVar2;
+        local_10 = iVar2;
         if (0 < iVar2) {
           do {
-            local_28 = (float)iVar3;
-            local_10 = iVar3;
+            local_24 = (float)iVar3;
+            local_c = iVar3;
             core_course_cpp_CCourse_FUN_00442710(this_ptr_00);
             pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                               (&this_ptr->base,&CStack_74,aCStack_68);
-            if (aCStack_68 != pCVar1) {
-              aCStack_68[0].x = pCVar1->x;
-              aCStack_68[0].y = pCVar1->y;
-              aCStack_68[0].z = pCVar1->z;
+                               (&this_ptr->base,&local_70,local_64);
+            if (local_64 != pCVar1) {
+              local_64[0].x = pCVar1->x;
+              local_64[0].y = pCVar1->y;
+              local_64[0].z = pCVar1->z;
             }
             iVar3 = iVar3 + 1;
             core_marquee_cpp_CMarquee_FUN_0050bec0(this_ptr);
@@ -57,29 +59,28 @@ int __cdecl core_marquee_cpp_CMarquee_renderTransparent_FUN_0050c050(CMarquee *t
         }
       }
       else if (this_ptr->type == 0) {
-        dVar4 = round((double)this_ptr->param);
-        local_18 = *(CCourse **)this_ptr_00;
+        local_14 = *(int *)this_ptr_00;
         iVar3 = 0;
-        iVar2 = (int)ROUND(dVar4);
-        local_20 = iVar2;
-        if (0 < (int)local_18) {
+        iVar2 = (int)ROUND(ROUND(this_ptr->param));
+        local_1c = iVar2;
+        if (0 < local_14) {
           do {
             if (iVar2 % this_ptr->phase != 0) {
-              local_24 = (float)iVar3;
-              local_10 = iVar3;
+              local_20 = (float)iVar3;
+              local_c = iVar3;
               core_course_cpp_CCourse_FUN_00442710(this_ptr_00);
               pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                                 (&this_ptr->base,(CVector3f *)(local_4c + 8),aCStack_8c);
-              if (aCStack_8c != pCVar1) {
-                aCStack_8c[0].x = pCVar1->x;
-                aCStack_8c[0].y = pCVar1->y;
-                aCStack_8c[0].z = pCVar1->z;
+                                 (&this_ptr->base,&local_40,local_88);
+              if (local_88 != pCVar1) {
+                local_88[0].x = pCVar1->x;
+                local_88[0].y = pCVar1->y;
+                local_88[0].z = pCVar1->z;
               }
               core_marquee_cpp_CMarquee_FUN_0050bec0(this_ptr);
             }
             iVar3 = iVar3 + 1;
             iVar2 = iVar2 + 1;
-          } while (iVar3 < (int)local_18);
+          } while (iVar3 < local_14);
         }
       }
     }
@@ -93,11 +94,11 @@ int __cdecl core_marquee_cpp_CMarquee_renderTransparent_FUN_0050c050(CMarquee *t
           local_c = iVar3;
           core_course_cpp_CCourse_FUN_00442710(local_18);
           pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                             (&this_ptr->base,&local_34,(CVector3f *)local_4c);
-          if ((CVector3f *)local_4c != pCVar1) {
-            local_4c._0_4_ = pCVar1->x;
-            local_4c._4_4_ = pCVar1->y;
-            local_4c._8_4_ = pCVar1->z;
+                             (&this_ptr->base,&local_34,&local_4c);
+          if (&local_4c != pCVar1) {
+            local_4c.x = pCVar1->x;
+            local_4c.y = pCVar1->y;
+            local_4c.z = pCVar1->z;
           }
           iVar3 = iVar3 + 1;
           core_marquee_cpp_CMarquee_FUN_0050bec0(this_ptr);
