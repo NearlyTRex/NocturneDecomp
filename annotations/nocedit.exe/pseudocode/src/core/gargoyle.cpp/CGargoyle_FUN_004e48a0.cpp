@@ -32,8 +32,8 @@ int __cdecl core_gargoyle_cpp_CGargoyle_FUN_004e48a0(CGargoyle *this_ptr)
     local_24.z = (this_ptr->base).base.base.location.position.z - (pCVar2->location).position.z;
     if (SQRT(local_24.z * local_24.z + local_24.x * local_24.x + local_24.y * local_24.y) <=
         (this_ptr->base).guard_distance) {
-      pCVar5 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-                         (&local_18,&local_24);
+      pCVar5 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_18,&local_24)
+      ;
       if (&local_24 != pCVar5) {
         local_24.x = pCVar5->x;
         local_24.y = pCVar5->y;

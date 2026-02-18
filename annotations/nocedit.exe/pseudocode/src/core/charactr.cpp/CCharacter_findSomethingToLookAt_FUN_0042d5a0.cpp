@@ -91,7 +91,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
                (fVar6 = CStack_50.z * CStack_50.z +
                         CStack_50.x * CStack_50.x + CStack_50.y * CStack_50.y, fStack_24 = fVar6,
                (int)fVar6 < 0x44610001)) &&
-              (core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+              (core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                          (&CStack_44,&CStack_50), ABS(CStack_44.y) <= (float)1.3962634015555599)) &&
              (ABS(CStack_44.x) <= (float)0.78539816337500001)) {
             fStack_100 = 10.0;
@@ -116,7 +116,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
               fStack_100 = fStack_100 * (float)1.1000000000000001;
             }
             if (-1.0f <= fStack_100) {
-              core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
+              core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
               core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,&this_ptr->base);
               core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,&pCVar4->base);
               core_setcolid_cpp_CDemonSet_setRayType_FUN_00574230(g_CDemonSetPtr,2);
@@ -132,7 +132,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
         }
         iStack_18 = iStack_18 + 4;
       }
-      core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
+      core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
       fStack_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(1.0,2.0);
       this_ptr->look_at_search_timer = fStack_14;
     }
@@ -186,8 +186,8 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
     CStack_f8.z = CStack_74.z - CStack_8c.z;
     core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
               (&this_ptr->base,&CStack_e0,&CStack_f8);
-    pCVar5 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-                       (&CStack_bc,&CStack_e0);
+    pCVar5 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_bc,&CStack_e0)
+    ;
     if (&CStack_d4 != pCVar5) {
       CStack_d4.x = pCVar5->x;
       CStack_d4.y = pCVar5->y;

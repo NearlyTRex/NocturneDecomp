@@ -21,7 +21,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
-;   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 ;
 ; *****************************************************************************
 
@@ -42,8 +42,8 @@ section .text
     PUSH EAX                            ; 00428d9b
     LEA EAX,[ESP + 0x4]                 ; 00428d9c
     PUSH EAX                            ; 00428da0
-    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 00428da1
-        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 00428da1
+        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 00428da6
     MOV EAX,dword ptr [EAX + 0x4]       ; 00428da9
     MOV dword ptr [ESP + 0x24],EAX      ; 00428dac

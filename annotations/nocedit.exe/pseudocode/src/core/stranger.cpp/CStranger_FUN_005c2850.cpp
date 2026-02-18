@@ -205,7 +205,7 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c2850(CStranger *this_ptr)
                     (g_CDemonSetPtr,local_6c,fStack_64,local_78.x,local_78.z,1.0,(void *)0x3dcccccd,
                      (void *)0x40400000);
   if (fVar9 < 1.0) {
-    core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
+    core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
     return 0;
   }
   local_cc.x = local_6c + local_78.x;
@@ -213,7 +213,7 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c2850(CStranger *this_ptr)
   local_cc.z = fStack_64 + local_78.z;
   local_28 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
                        (g_CDemonSetPtr,&local_cc,0.5);
-  core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
+  core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
   if (ABS(local_28 - (this_ptr->base).base.base.location.position.y) <= 1.0) {
     iVar6 = 0;
     iVar13 = 0;

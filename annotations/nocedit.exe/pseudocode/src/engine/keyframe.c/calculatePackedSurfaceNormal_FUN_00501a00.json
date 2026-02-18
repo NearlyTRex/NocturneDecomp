@@ -41,7 +41,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_keyframe.c_calculatePackedSurfaceNormal_FUN_00501a00",
-    "signature": "void __cdecl engine_keyframe_c_calculatePackedSurfaceNormal_FUN_00501a00(CVector3i *vertex_data,SSurfacePackedNormal *data)"
+    "signature": "void __cdecl engine_keyframe_c_calculatePackedSurfaceNormal_FUN_00501a00(CVector3i *vertex_data,SMRGLPrimitiveTriangleIndex *texture)"
   },
   "function_calls": [
     {
@@ -216,10 +216,10 @@
       },
       {
         "is_param": true,
-        "name": "data",
+        "name": "texture",
         "offset": 8,
         "size": 4,
-        "type": "SSurfacePackedNormal *"
+        "type": "SMRGLPrimitiveTriangleIndex *"
       }
     ]
   },
@@ -242,42 +242,42 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 45,
       "match": "ROUND",
-      "text": "data->normal_x = (int)ROUND(ROUND(fVar7));",
+      "text": "(texture->base).surface_normal.A = (int)ROUND(ROUND(fVar7));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 45,
       "match": "ROUND",
-      "text": "data->normal_x = (int)ROUND(ROUND(fVar7));",
+      "text": "(texture->base).surface_normal.A = (int)ROUND(ROUND(fVar7));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 46,
       "match": "ROUND",
-      "text": "data->normal_y = (int)ROUND(ROUND(fVar6));",
+      "text": "(texture->base).surface_normal.B = (int)ROUND(ROUND(fVar6));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 46,
       "match": "ROUND",
-      "text": "data->normal_y = (int)ROUND(ROUND(fVar6));",
+      "text": "(texture->base).surface_normal.B = (int)ROUND(ROUND(fVar6));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 47,
       "match": "ROUND",
-      "text": "data->normal_z = (int)ROUND(ROUND(fVar9));",
+      "text": "(texture->base).surface_normal.C = (int)ROUND(ROUND(fVar9));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 47,
       "match": "ROUND",
-      "text": "data->normal_z = (int)ROUND(ROUND(fVar9));",
+      "text": "(texture->base).surface_normal.C = (int)ROUND(ROUND(fVar9));",
       "type": "decompiler_intrinsic"
     },
     {

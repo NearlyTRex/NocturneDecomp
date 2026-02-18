@@ -17,15 +17,16 @@ int __cdecl core_fire_cpp_CShell_onCollision_FUN_004c6380(CShell *this_ptr,CVect
   int iVar4;
   float local_18;
   
-  local_18 = (float)(4 - *(int *)(this_ptr->unk + 0x18)) * (float)0.25;
+  local_18 = (float)(4 - this_ptr->bounce_count) * (float)0.25;
   if (local_18 < 0.0) {
     local_18 = 0.0;
   }
   fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-6.2831855,6.2831855);
-  *(float *)(this_ptr->unk + 0xc) = fVar1 * local_18;
+  (this_ptr->angular_velocity).x = fVar1 * local_18;
   fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-3.1415927,3.1415927);
-  *(float *)(this_ptr->unk + 0x10) = fVar1 * local_18;
-  if (*(int *)(this_ptr->unk + 0x18) == 0) {
+  iVar3 = this_ptr->bounce_count;
+  (this_ptr->angular_velocity).y = fVar1 * local_18;
+  if (iVar3 == 0) {
     iVar4 = 0;
     iVar3 = 0;
     do {
@@ -36,23 +37,23 @@ int __cdecl core_fire_cpp_CShell_onCollision_FUN_004c6380(CShell *this_ptr,CVect
     } while (iVar3 < 0xc);
     if (iVar4 != 3) {
       iVar3 = stricmp
-                        (*(char **)(this_ptr->unk + 0x1c),"shell.kfm");
+                        (this_ptr->model_ptr->model_filename,"shell.kfm");
       if (iVar3 == 0) {
         core_sound_cpp_CSound_playActorSound_FUN_005b3a40
                   (g_CSoundPtr,(CDemonActor *)g_CFireEffectPtr,"sh-sh?c @ .15",
                    (CVector3f *)this_ptr);
         *(uint *)(&DAT_02d141dc + iVar4 * 4) = extraout_EAX;
-        *(int *)(this_ptr->unk + 0x18) = *(int *)(this_ptr->unk + 0x18) + 1;
+        this_ptr->bounce_count = this_ptr->bounce_count + 1;
         return 0;
       }
       core_sound_cpp_CSound_playActorSound_FUN_005b3a40
                 (g_CSoundPtr,(CDemonActor *)g_CFireEffectPtr,"44-sh?c @ .2",
                  (CVector3f *)this_ptr);
       *(uint *)(&DAT_02d141dc + iVar4 * 4) = extraout_EAX_00;
-      *(int *)(this_ptr->unk + 0x18) = *(int *)(this_ptr->unk + 0x18) + 1;
+      this_ptr->bounce_count = this_ptr->bounce_count + 1;
       return 0;
     }
   }
-  *(int *)(this_ptr->unk + 0x18) = *(int *)(this_ptr->unk + 0x18) + 1;
+  this_ptr->bounce_count = this_ptr->bounce_count + 1;
   return 0;
 }

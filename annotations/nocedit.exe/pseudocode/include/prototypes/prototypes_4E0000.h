@@ -25,9 +25,9 @@
 #include "types/classes/CVector4i.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
+#include "types/structs/SLaserInfo.h"
 #include "types/structs/SMRGLHeaderPrimitive.h"
 #include "types/structs/SQuadVertices.h"
-#include "types/structs/SSurfaceInfo.h"
 #include "types/unions/UOrientationVector.h"
 
 // =============================================================================
@@ -126,7 +126,7 @@ void __cdecl core_glass_cpp_CGlass_archive_FUN_004ea090(CGlass *this_ptr);
 int __cdecl core_glass_cpp_CGlass_hasCollision_FUN_004ea190(CGlass *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0(CGlass *this_ptr,SQuadVertices *quad_vertices,CVector4i *quad_uv_u, CVector4i *quad_uv_v,int subdivision_level);
 void __cdecl core_glass_cpp_CGlass_shatter_FUN_004eaef0(CGlass *this_ptr,CVector3f *location);
-void __cdecl core_glass_cpp_CGlass_getSurfaceProperties_FUN_004eb250(CGlass *this_ptr,SSurfaceInfo *surface_info);
+void __cdecl core_glass_cpp_CGlass_onLaserHit_FUN_004eb250(CGlass *this_ptr,SLaserInfo *laser_info);
 int __cdecl core_glass_cpp_CGlass_getGroundType_FUN_004eb390(CGlass *this_ptr);
 int __cdecl core_glass_cpp_CGlass_checkBreakableCondition_FUN_004eb3a0(CGlass *this_ptr);
 void __cdecl core_glass_cpp_CGlass_getPropertyList_FUN_004eb3c0(CGlass *this_ptr,CActorPropertyList *property_list);

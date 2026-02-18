@@ -74,10 +74,10 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
-;   core_fire.cpp_CFireEffect_FUN_004c8230
+;   core_fire.cpp_CFireEffect_traceLaser_FUN_004c8230
 ;   core_fire.cpp_SLaserInfo_ctor_FUN_004c81f0
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0
-;   core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180
+;   core_setcolid.cpp_CDemonSet_init_FUN_00574180
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
 ;   shape_edittool.cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90
 ;   shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
@@ -125,8 +125,8 @@ section .text
     MOV ECX,dword ptr [0x006810c8]      ; 004a88b3 | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_004a88b3
     PUSH ECX                            ; 004a88b9 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 004a88ba
-        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_init_FUN_00574180 ; 004a88ba
+        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00574180(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 004a88bf
     PUSH EBX                            ; 004a88c2
     MOV ESI,dword ptr [0x006810c8]      ; 004a88c3 | g_CDemonSetPtr
@@ -213,13 +213,13 @@ section .text
     PUSH EBX                            ; 004a89b3
     MOV EBX,dword ptr [0x0067a3d0]      ; 004a89b4 | g_CFireEffectInstance | g_CFireEffectPtr
     PUSH EBX                            ; 004a89ba | g_CFireEffectInstance
-    CALL core_fire.cpp_CFireEffect_FUN_004c8230 ; 004a89bb
-        ;   XREF to: 004c8230 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c8230(CFireEffect * this_ptr)
+    CALL core_fire.cpp_CFireEffect_traceLaser_FUN_004c8230 ; 004a89bb
+        ;   XREF to: 004c8230 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_traceLaser_FUN_004c8230(CFireEffect * this_ptr, CVector3f * origin, CVector3f * direction, SLaserInfo * laser_info, ...)
     ADD ESP,0x14                        ; 004a89c0
     MOV ESI,dword ptr [0x006810c8]      ; 004a89c3 | g_CDemonSetPtr
     PUSH ESI                            ; 004a89c9 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 004a89ca
-        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_init_FUN_00574180 ; 004a89ca
+        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00574180(CDemonSet * this_ptr)
     MOV EAX,0x1                         ; 004a89cf
     ADD ESP,0x4                         ; 004a89d4
     LEA ESP,[EBP + 0x7e]                ; 004a89d7

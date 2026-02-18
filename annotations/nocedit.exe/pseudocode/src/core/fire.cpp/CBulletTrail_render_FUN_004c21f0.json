@@ -47,7 +47,7 @@
     {
       "addr": "005e7830",
       "is_variadic": false,
-      "name": "core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830"
+      "name": "core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830"
     },
     {
       "addr": "005fe6b0",
@@ -350,37 +350,37 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 35,
+      "line": 36,
       "match": "SQRT",
-      "text": "fVar2 = SQRT(local_60.z * local_60.z + local_60.x * local_60.x + local_60.y * local_60.y) -",
+      "text": "fVar3 = SQRT(local_60.z * local_60.z + local_60.x * local_60.x + local_60.y * local_60.y) -",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 40,
+      "line": 41,
       "match": "ROUND",
-      "text": "local_20 = (int)ROUND(ROUND(fVar2 / *(float *)(this_ptr->unk + 0x1c)));",
+      "text": "local_20 = (int)ROUND(ROUND(fVar3 / this_ptr->segment_length));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 40,
+      "line": 41,
       "match": "ROUND",
-      "text": "local_20 = (int)ROUND(ROUND(fVar2 / *(float *)(this_ptr->unk + 0x1c)));",
+      "text": "local_20 = (int)ROUND(ROUND(fVar3 / this_ptr->segment_length));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 77,
+      "line": 78,
       "match": "ROUND",
-      "text": "local_14 = (int)ROUND(ROUND(fVar2));",
+      "text": "local_14 = (int)ROUND(ROUND(fVar3));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 77,
+      "line": 78,
       "match": "ROUND",
-      "text": "local_14 = (int)ROUND(ROUND(fVar2));",
+      "text": "local_14 = (int)ROUND(ROUND(fVar3));",
       "type": "decompiler_intrinsic"
     }
   ]

@@ -9,9 +9,6 @@
 void __cdecl core_fire_cpp_CTrail_reset_FUN_004c5de0(CTrail *this_ptr)
 
 {
-  this_ptr->unk[0x10] = '\0';
-  this_ptr->unk[0x11] = '\0';
-  this_ptr->unk[0x12] = '\0';
-  this_ptr->unk[0x13] = '\0';
+  this_ptr->lifetime = 0.0;
   return;
 }

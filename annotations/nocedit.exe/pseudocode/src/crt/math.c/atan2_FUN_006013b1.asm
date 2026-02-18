@@ -12,7 +12,7 @@
 ;   core_stranger.cpp_CStranger_FUN_005be520 at 005bf25f
 ;   core_tvbat.cpp_CTVBat_process_FUN_005e4210 at 005e455a
 ;   core_vampboss.cpp_CVampireBoss_process_FUN_005e5970 at 005e5d01
-;   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 at 005e78a0
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 at 005e78a0
 ;   core_xform.cpp_slerpQuaternion_FUN_005f77e0 at 005f796e
 ;   crt_math.c_acos_FUN_00600162 at 0060018f
 ;   ... and 2 more

@@ -1,0 +1,163 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 52,
+    "complexity_score": 20,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 4,
+    "pseudocode_lines": 20,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 72
+  },
+  "cross_references": [
+    {
+      "addr": "004136b0",
+      "from_addr": "004139af",
+      "name": "core_baron.cpp_CBaron_FUN_004136b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a8070",
+      "from_addr": "004a8763",
+      "name": "core_emitter.cpp_CEmitter_process_FUN_004a8070",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c8fd0",
+    "address_range": [
+      [
+        "004c8fd0",
+        "004c9053"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004c8fd0",
+    "signature": "void __cdecl core_fire_cpp_CFireEffect_createLightningBoltDirectional_FUN_004c8fd0(CFireEffect *this_ptr,CVector3f *start_position,CVector3f *end_position,int enable_camera_shake,float end_width,float end_spread)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c5680",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CLightningBolt_activateDirectional_FUN_004c5680"
+    },
+    {
+      "addr": "00570fa0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_initCameraShake_FUN_00570fa0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "02d715b8",
+      "name": "g_LightningBoltAllocIndex",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d715bc",
+      "name": "g_LightningBoltPool",
+      "type": "CLightningBolt[10]",
+      "value": null
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.931818181818182,
+    "instruction_count": 44,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 12,
+      "CALL": 2,
+      "CBRANCH": 3,
+      "COPY": 35,
+      "INT_ADD": 18,
+      "INT_AND": 46,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 27,
+      "INT_LEFT": 4,
+      "INT_LESS": 5,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 4,
+      "INT_OR": 10,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 16,
+      "INT_SUB": 21,
+      "INT_XOR": 3,
+      "LOAD": 13,
+      "POPCOUNT": 12,
+      "RETURN": 3,
+      "STORE": 14
+    },
+    "pcode_op_count": 261
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireEffect *"
+      },
+      {
+        "is_param": true,
+        "name": "start_position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "end_position",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "enable_camera_shake",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "end_width",
+        "offset": 20,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "end_spread",
+        "offset": 24,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": []
+}

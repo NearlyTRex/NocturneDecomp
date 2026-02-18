@@ -49,7 +49,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
-;   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 ;   core_xform.cpp_quaternionFromAngleX_FUN_005f79b0
 ;   core_xform.cpp_quaternionFromAngleY_FUN_005f79f0
 ;   core_xform.cpp_transformVector3x4_FUN_005f4dc0
@@ -173,8 +173,8 @@ section .text
     PUSH EAX                            ; 005268d0
     LEA EAX,[ESP + 0x60]                ; 005268d1
     PUSH EAX                            ; 005268d5
-    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 005268d6
-        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 005268d6
+        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 005268db
     FLD float ptr [ESP + 0x60]          ; 005268de
     FSUB float ptr [EBX + 0x34]         ; 005268e2

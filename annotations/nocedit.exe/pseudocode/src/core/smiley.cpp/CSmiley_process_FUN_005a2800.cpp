@@ -161,7 +161,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005a2800(CSmiley *this_ptr,floa
                           local_58.x * local_58.x + local_58.y * local_58.y);
           local_18 = local_20;
           if (local_20 < 2.5f + 1.0) {
-            core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_c4,&local_58);
+            core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_c4,&local_58);
             local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                                  (local_c4.y - (this_ptr->base).base.base.orient.vec.y);
             if (ABS(local_14) < (float)0.52359877558333301) {

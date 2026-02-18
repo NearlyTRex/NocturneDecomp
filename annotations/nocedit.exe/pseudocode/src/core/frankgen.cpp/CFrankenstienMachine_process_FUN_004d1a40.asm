@@ -33,7 +33,7 @@
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
 ;   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
-;   core_fire.cpp_CFireEffect_FUN_004c79d0
+;   core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0
 ;   core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330
 ;   core_frankgen.cpp_CFrankenstienMachine_FUN_004d1ec0
 ;   core_frankgen.cpp_CFrankenstienMachine_FUN_004d1f20
@@ -256,8 +256,8 @@ section .text
     PUSH EAX                            ; 004d1cf9
     MOV ECX,dword ptr [0x0067a3d0]      ; 004d1cfa | g_CFireEffectPtr | g_CFireEffectInstance
     PUSH ECX                            ; 004d1d00 | g_CFireEffectInstance
-    CALL core_fire.cpp_CFireEffect_FUN_004c79d0 ; 004d1d01
-        ;   XREF to: 004c79d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c79d0(CFireEffect * this_ptr)
+    CALL core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0 ; 004d1d01
+        ;   XREF to: 004c79d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int intensity_target, ...)
     ADD ESP,0x1c                        ; 004d1d06
     PUSH 0x62a9d8                       ; 004d1d09 | = "frankx-bed1.wav"
         ;   Label: LAB_004d1d09

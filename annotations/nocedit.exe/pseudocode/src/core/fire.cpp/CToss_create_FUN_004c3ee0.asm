@@ -1,10 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CToss_create_FUN_004c3ee0(CToss *this_ptr)
+; void __cdecl core_fire_cpp_CToss_create_FUN_004c3ee0(CToss *this_ptr,int toss_type,CVector3f *position,UOrientationVector *orientation,CVector3f *velocity,float fuse_time)
 ;
 ; Parameters:
 ; CToss *          Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   toss_type
+; CVector3f *      Stack[0xc]:4   position
+; UOrientationVector * Stack[0x10]:4   orientation
+; CVector3f *      Stack[0x14]:4   velocity
+; float            Stack[0x18]:4   fuse_time
 ; Local Variables:
 ; undefined4       Stack[-0x2c]:4  local_2c
 ; undefined4       Stack[-0x28]:4  local_28
@@ -15,7 +20,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_fire.cpp_CFireEffect_FUN_004c8e40 at 004c8e6e
+;   core_fire.cpp_CFireEffect_allocateToss_FUN_004c8e40 at 004c8e6e
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_dynamitestick_kfm_00629ddb

@@ -38,11 +38,11 @@
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0
-;   core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180
+;   core_setcolid.cpp_CDemonSet_init_FUN_00574180
 ;   core_setcolid.cpp_CDemonSet_setRayType_FUN_00574230
 ;   core_setcolid.cpp_CDemonSet_testLineOcclusion_FUN_00572460
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-;   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 ;
 ; *****************************************************************************
 
@@ -236,8 +236,8 @@ section .text
     PUSH EAX                            ; 0042d7d6
     LEA EAX,[ESP + 0xc0]                ; 0042d7d7
     PUSH EAX                            ; 0042d7de
-    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 0042d7df
-        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 0042d7df
+        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 0042d7e4
     FLD float ptr [ESP + 0xc0]          ; 0042d7e7
     FABS                                ; 0042d7ee
@@ -331,8 +331,8 @@ section .text
         ;   XREF to: 0042d6c1 (CONDITIONAL_JUMP)  ; LAB_0042d6c1
     MOV EDX,dword ptr [0x006810c8]      ; 0042d8e6 | g_CDemonSetPtr | g_CDemonSetInstance
     PUSH EDX                            ; 0042d8ec | g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 0042d8ed
-        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_init_FUN_00574180 ; 0042d8ed
+        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00574180(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0042d8f2
     PUSH ESI                            ; 0042d8f5
     MOV ECX,dword ptr [0x006810c8]      ; 0042d8f6 | g_CDemonSetPtr | g_CDemonSetInstance
@@ -413,8 +413,8 @@ section .text
         ;   XREF to: 0042d732 (UNCONDITIONAL_JUMP)  ; LAB_0042d732
     PUSH EAX                            ; 0042d9ea | g_CDemonSetInstance
         ;   Label: LAB_0042d9ea
-    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 0042d9eb
-        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_init_FUN_00574180 ; 0042d9eb
+        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00574180(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0042d9f0
     PUSH 0x40000000                     ; 0042d9f3
     PUSH 0x3f800000                     ; 0042d9f8
@@ -504,8 +504,8 @@ section .text
     PUSH EAX                            ; 0042db2a
     LEA EAX,[ESP + 0x48]                ; 0042db2b
     PUSH EAX                            ; 0042db2f
-    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 0042db30
-        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 0042db30
+        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     MOV EDX,EAX                         ; 0042db35
     LEA EAX,[ESP + 0x34]                ; 0042db37
     ADD ESP,0x8                         ; 0042db3b

@@ -1,0 +1,161 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 114,
+    "complexity_score": 48,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 2,
+    "pseudocode_lines": 48,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 162
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005097e0",
+    "address_range": [
+      [
+        "005097e0",
+        "005098e4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_manpuz.cpp_CMansionPuzzleCircle_onLaserHit_FUN_005097e0",
+    "signature": "void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_onLaserHit_FUN_005097e0(CMansionPuzzleCircle *this_ptr,SLaserInfo *laser_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "00409840",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_onLaserHit_FUN_00409840"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006356fd",
+      "name": "DOUBLE_006356fd",
+      "type": "double",
+      "value": "0.00392156862745098"
+    },
+    {
+      "addr": "00635705",
+      "name": "DOUBLE_00635705",
+      "type": "double",
+      "value": "0.25"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.383838383838384,
+    "instruction_count": 99,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 3,
+      "BRANCH": 2,
+      "CALL": 1,
+      "CBRANCH": 5,
+      "COPY": 271,
+      "FLOAT2FLOAT": 26,
+      "FLOAT_ADD": 7,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_MULT": 15,
+      "FLOAT_NAN": 4,
+      "FLOAT_SUB": 6,
+      "INT2FLOAT": 4,
+      "INT_ADD": 44,
+      "INT_AND": 43,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 32,
+      "INT_LEFT": 8,
+      "INT_LESS": 4,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 13,
+      "INT_OR": 10,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 9,
+      "INT_SEXT": 3,
+      "INT_SLESS": 16,
+      "INT_SUB": 11,
+      "INT_XOR": 2,
+      "INT_ZEXT": 8,
+      "LOAD": 36,
+      "POPCOUNT": 16,
+      "RETURN": 1,
+      "STORE": 12,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 632
+  },
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMansionPuzzleCircle *"
+      },
+      {
+        "is_param": true,
+        "name": "laser_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SLaserInfo *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005097e9",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CMansionPuzzleCircle",
+        "offset": 172,
+        "vtable_addr": "00660da4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

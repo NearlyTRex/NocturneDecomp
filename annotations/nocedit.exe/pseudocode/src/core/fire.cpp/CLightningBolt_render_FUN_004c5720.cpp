@@ -12,7 +12,7 @@ void __cdecl core_fire_cpp_CLightningBolt_render_FUN_004c5720(CLightningBolt *th
 
 {
   CVector3f *world_position;
-  char *pcVar1;
+  CVector3f *pCVar1;
   int *piVar2;
   float fVar3;
   float fVar4;
@@ -44,7 +44,7 @@ void __cdecl core_fire_cpp_CLightningBolt_render_FUN_004c5720(CLightningBolt *th
   int local_c;
   int local_8;
   
-  if (*(float *)(this_ptr->unk + 0x14) <= 0.0) {
+  if (this_ptr->lifetime <= 0.0) {
     return;
   }
   iVar7 = rand();
@@ -90,8 +90,8 @@ void __cdecl core_fire_cpp_CLightningBolt_render_FUN_004c5720(CLightningBolt *th
   g_RenderVertexBuffer[3].fog = 0xffff;
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xffff);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
-  fVar4 = *(float *)this_ptr->unk;
-  world_position = (CVector3f *)(this_ptr->unk + 4);
+  fVar4 = (float)this_ptr->mode;
+  world_position = &this_ptr->start_position;
   if (fVar4 == 0.0) {
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
               (g_CDemonRendererPtr2,world_position);
@@ -100,13 +100,13 @@ void __cdecl core_fire_cpp_CLightningBolt_render_FUN_004c5720(CLightningBolt *th
     local_24.x = (int)fVar4;
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
               (g_CDemonRendererPtr2,&local_24,(CVector3i *)0x0);
-    if (0.0 < *(float *)(this_ptr->unk + 0x18)) {
-      local_b4 = *(float *)(this_ptr->unk + 0x18);
+    if (0.0 < this_ptr->end_width) {
+      local_b4 = this_ptr->end_width;
     }
     else {
-      local_b4 = *(float *)(this_ptr->unk + 0x10) * (float)0.25;
+      local_b4 = this_ptr->start_width * (float)0.25;
     }
-    local_b0 = *(float *)(this_ptr->unk + 0x10);
+    local_b0 = this_ptr->start_width;
     local_60.x = (int)ROUND(local_b4 * 256.0f);
     local_60.y = (int)ROUND(local_b0 * 256.0f);
     local_60.z = (int)ROUND(256.0f * 0.0);
@@ -137,30 +137,30 @@ void __cdecl core_fire_cpp_CLightningBolt_render_FUN_004c5720(CLightningBolt *th
   }
   else {
     local_9c.x = (int)ROUND(world_position->x * 256.0f);
-    local_9c.y = (int)ROUND(*(float *)(this_ptr->unk + 8) * 256.0f);
-    local_9c.z = (int)ROUND(*(float *)(this_ptr->unk + 0xc) * 256.0f);
+    local_9c.y = (int)ROUND((this_ptr->start_position).y * 256.0f);
+    local_9c.z = (int)ROUND((this_ptr->start_position).z * 256.0f);
     wincore_windll_cpp_transformPoint_FUN_005b5a25
               (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_9c);
     local_6c.x = (int)ROUND(world_position->x * 256.0f);
-    local_6c.y = (int)ROUND(*(float *)(this_ptr->unk + 8) * 256.0f);
-    local_6c.z = (int)ROUND(*(float *)(this_ptr->unk + 0xc) * 256.0f);
+    local_6c.y = (int)ROUND((this_ptr->start_position).y * 256.0f);
+    local_6c.z = (int)ROUND((this_ptr->start_position).z * 256.0f);
     wincore_windll_cpp_transformPoint_FUN_005b5a25
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_6c);
-    pcVar1 = this_ptr->unk + 0x1c;
-    local_3c.x = (int)ROUND(*(float *)pcVar1 * 256.0f);
-    local_3c.y = (int)ROUND(*(float *)(this_ptr->unk + 0x20) * 256.0f);
-    local_3c.z = (int)ROUND(*(float *)(this_ptr->unk + 0x24) * 256.0f);
+    pCVar1 = &this_ptr->end_position;
+    local_3c.x = (int)ROUND(pCVar1->x * 256.0f);
+    local_3c.y = (int)ROUND((this_ptr->end_position).y * 256.0f);
+    local_3c.z = (int)ROUND((this_ptr->end_position).z * 256.0f);
     wincore_windll_cpp_transformPoint_FUN_005b5a25
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_3c);
-    local_90.x = (int)ROUND(*(float *)pcVar1 * 256.0f);
-    local_90.y = (int)ROUND(*(float *)(this_ptr->unk + 0x20) * 256.0f);
-    local_90.z = (int)ROUND(*(float *)(this_ptr->unk + 0x24) * 256.0f);
+    local_90.x = (int)ROUND(pCVar1->x * 256.0f);
+    local_90.y = (int)ROUND((this_ptr->end_position).y * 256.0f);
+    local_90.z = (int)ROUND((this_ptr->end_position).z * 256.0f);
     wincore_windll_cpp_transformPoint_FUN_005b5a25
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_90);
     pCVar6 = g_CDemonRendererPtr2;
-    fVar4 = *(float *)(this_ptr->unk + 0x18);
+    fVar4 = this_ptr->end_width;
     fVar5 = (float)256;
-    fVar3 = *(float *)(this_ptr->unk + 0x28);
+    fVar3 = this_ptr->end_spread;
     (g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).screen_x = -0x80000000;
     local_c = (int)ROUND(ROUND(fVar4 * fVar5));
     piVar2 = &(pCVar6->vertex_buffer_ptr->projected_vertex).transformed_y;
@@ -177,23 +177,23 @@ void __cdecl core_fire_cpp_CLightningBolt_render_FUN_004c5720(CLightningBolt *th
          pCVar6->vertex_buffer_ptr[3].projected_vertex.transformed_y - local_8;
     engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0(pCVar6,&local_dc);
     local_54.x = (int)ROUND(world_position->x * 256.0f);
-    local_54.y = (int)ROUND(*(float *)(this_ptr->unk + 8) * 256.0f);
-    local_54.z = (int)ROUND(*(float *)(this_ptr->unk + 0xc) * 256.0f);
+    local_54.y = (int)ROUND((this_ptr->start_position).y * 256.0f);
+    local_54.z = (int)ROUND((this_ptr->start_position).z * 256.0f);
     wincore_windll_cpp_transformPoint_FUN_005b5a25
               (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_54);
     local_78.x = (int)ROUND(world_position->x * 256.0f);
-    local_78.y = (int)ROUND(*(float *)(this_ptr->unk + 8) * 256.0f);
-    local_78.z = (int)ROUND(*(float *)(this_ptr->unk + 0xc) * 256.0f);
+    local_78.y = (int)ROUND((this_ptr->start_position).y * 256.0f);
+    local_78.z = (int)ROUND((this_ptr->start_position).z * 256.0f);
     wincore_windll_cpp_transformPoint_FUN_005b5a25
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_78);
-    local_a8.x = (int)ROUND(*(float *)pcVar1 * 256.0f);
-    local_a8.y = (int)ROUND(*(float *)(this_ptr->unk + 0x20) * 256.0f);
-    local_a8.z = (int)ROUND(*(float *)(this_ptr->unk + 0x24) * 256.0f);
+    local_a8.x = (int)ROUND(pCVar1->x * 256.0f);
+    local_a8.y = (int)ROUND((this_ptr->end_position).y * 256.0f);
+    local_a8.z = (int)ROUND((this_ptr->end_position).z * 256.0f);
     wincore_windll_cpp_transformPoint_FUN_005b5a25
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_a8);
-    local_84.x = (int)ROUND(*(float *)pcVar1 * 256.0f);
-    local_84.y = (int)ROUND(*(float *)(this_ptr->unk + 0x20) * 256.0f);
-    local_84.z = (int)ROUND(*(float *)(this_ptr->unk + 0x24) * 256.0f);
+    local_84.x = (int)ROUND(pCVar1->x * 256.0f);
+    local_84.y = (int)ROUND((this_ptr->end_position).y * 256.0f);
+    local_84.z = (int)ROUND((this_ptr->end_position).z * 256.0f);
     wincore_windll_cpp_transformPoint_FUN_005b5a25
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_84);
     pCVar6 = g_CDemonRendererPtr2;

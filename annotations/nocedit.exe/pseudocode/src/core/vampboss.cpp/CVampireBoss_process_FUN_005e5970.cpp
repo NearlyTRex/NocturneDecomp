@@ -489,7 +489,7 @@ LAB_005e648e:
                        (this_ptr->base).base.base.location.position.y;
           local_d0.z = (pCVar3->base).base.location.position.z -
                        (this_ptr->base).base.base.location.position.z;
-          pCVar12 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+          pCVar12 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                               (&local_dc,&local_d0);
           local_114 = pCVar12->y;
           local_18 = (CVector3f *)
@@ -547,7 +547,7 @@ LAB_005e648e:
                       (this_ptr->base).base.base.location.position.y;
         local_13c.z = (pCVar3->base).base.location.position.z -
                       (this_ptr->base).base.base.location.position.z;
-        pCVar12 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+        pCVar12 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                             (&local_130,&local_13c);
         local_120 = pCVar12->y;
         local_18 = (CVector3f *)

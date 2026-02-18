@@ -116,7 +116,7 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
       this_ptr = g_CSpotViewPtr;
       local_80 = g_CDemonSetPtr->lighting_quality_mode;
       g_CDemonSetPtr->lighting_quality_mode = 1;
-      shape_spotview_cpp_CSpotView_FUN_005b9620(this_ptr);
+      shape_spotview_cpp_CSpotView_reset_FUN_005b9620(this_ptr,0x1f);
       iVar3 = 0;
       core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
       g_MouseButtonFlags.dword = 0;
@@ -143,12 +143,12 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
                      local_4db8[iVar15].skinned_vertices_buffer);
           iVar9 = 0;
           if (0 < iVar3) {
-            pfVar10 = (float *)((int)&local_4a8[0].unk2[0].x + local_48);
+            pfVar10 = (float *)((int)&local_4a8[0].position[0].x + local_48);
             iVar14 = local_34;
             do {
-              pcVar8 = local_4a8[0].unk1 + iVar14;
+              piVar7 = (int *)((int)local_4a8[0].vertex_index + iVar14);
               iVar14 = iVar14 + 0x20;
-              pCVar4 = local_4db8[iVar15].skinned_vertices_buffer + *(int *)pcVar8;
+              pCVar4 = local_4db8[iVar15].skinned_vertices_buffer + *piVar7;
               iVar9 = iVar9 + 1;
               *pfVar10 = (float)pCVar4->x * 0.00390625f;
               pfVar10[1] = (float)pCVar4->y * 0.00390625f;
@@ -176,7 +176,7 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
           engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890
                     (g_CDemonRendererPtr2,(g_WindowWidth / 2) * iVar9,local_54,g_WindowWidth / 2,
                      local_58);
-          shape_spotview_cpp_CSpotView_FUN_005b9a20(g_CSpotViewPtr);
+          shape_spotview_cpp_CSpotView_applyCamera_FUN_005b9a20(g_CSpotViewPtr);
           engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                     (g_CDemonRendererPtr2,&g_ZeroVector);
           core_skeleton_cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250(local_40,0);
@@ -217,7 +217,7 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
             local_68 = local_7c * 4;
             iVar14 = 0;
             do {
-              if (iVar15 == *(int *)(local_4a8[0].unk1 + iVar9)) {
+              if (iVar15 == *(int *)((int)local_4a8[0].vertex_index + iVar9)) {
                 local_50 = *(int *)((int)local_4a8 + local_7c * 4 + iVar14);
               }
               iVar14 = iVar14 + 0x20;
@@ -295,7 +295,7 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
           engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890
                     (g_CDemonRendererPtr2,(g_WindowWidth / 2) * local_c,local_54,g_WindowWidth / 2,
                      local_58);
-          shape_spotview_cpp_CSpotView_FUN_005b9a20(g_CSpotViewPtr);
+          shape_spotview_cpp_CSpotView_applyCamera_FUN_005b9a20(g_CSpotViewPtr);
           engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                     (g_CDemonRendererPtr2,&g_ZeroVector);
           core_skeleton_cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250(local_2c,0);
@@ -310,13 +310,13 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
           iVar9 = local_38;
           if (0 < iVar3) {
             do {
-              if ((local_8 == local_c) && (iVar15 == *(int *)(local_4a8[0].unk1 + iVar9))) {
+              iVar13 = *(int *)((int)local_4a8[0].vertex_index + iVar9);
+              if ((local_8 == local_c) && (iVar15 == iVar13)) {
                 local_24 = iVar14;
               }
               iVar14 = iVar14 + 1;
               core_morph_cpp_drawVertexMarker_FUN_0052bb80
-                        (&g_CDemonRendererPtr2->vertex_buffer_ptr
-                          [*(int *)(local_4a8[0].unk1 + iVar9)].projected_vertex,5);
+                        (&g_CDemonRendererPtr2->vertex_buffer_ptr[iVar13].projected_vertex,5);
               iVar9 = iVar9 + 0x20;
             } while (iVar14 < iVar3);
           }
@@ -345,7 +345,7 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
         if (g_MouseButtonFlags.dword == 1) {
           if (local_78.dword == 1) {
             if (((-1 < local_6c) && (local_70 == local_8)) && (local_24 < 0)) {
-              *(int *)(local_4a8[local_6c].unk1 + local_70 * 4) = iVar15;
+              local_4a8[local_6c].vertex_index[local_70] = iVar15;
             }
           }
           else if (local_78.dword == 0) {
@@ -353,7 +353,7 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
               if (-1 < iVar15) {
                 if (iVar3 < 0x14) {
                   local_70 = local_8;
-                  *(int *)(local_4a8[0].unk1 + local_8 * 4 + local_74) = iVar15;
+                  *(int *)((int)local_4a8[0].vertex_index + local_8 * 4 + local_74) = iVar15;
                   local_6c = iVar3;
                   *(int *)((int)local_4a8 + (1 - iVar9) * 4 + local_74) = local_50;
                   iVar3 = iVar3 + 1;
@@ -381,7 +381,7 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
         local_78 = g_MouseButtonFlags;
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
         core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
-        shape_spotview_cpp_CSpotView_FUN_005b9670(g_CSpotViewPtr);
+        shape_spotview_cpp_CSpotView_handleInput_FUN_005b9670(g_CSpotViewPtr,0x1f);
         iVar15 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
         if (iVar15 != 0) break;
         iVar15 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_T);

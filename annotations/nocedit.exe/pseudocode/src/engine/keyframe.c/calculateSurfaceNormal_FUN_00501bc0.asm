@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_keyframe_c_calculateSurfaceNormal_FUN_00501bc0(CVector3i *vertex_data,SSurfaceNormal *output)
+; void __cdecl engine_keyframe_c_calculateSurfaceNormal_FUN_00501bc0(CVector3i *vertex_data,SMRGLPrimitiveTriangle *texture)
 ;
 ; Parameters:
 ; CVector3i *      Stack[0x4]:4   vertex_data
-; SSurfaceNormal * Stack[0x8]:4   output
+; SMRGLPrimitiveTriangle * Stack[0x8]:4   texture
 ; Local Variables:
 ; undefined4       Stack[-0x44]:4  local_44
 ; undefined4       Stack[-0x40]:4  local_40

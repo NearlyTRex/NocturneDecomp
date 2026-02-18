@@ -6,12 +6,12 @@
   },
   "complexity": {
     "assembly_lines": 1020,
-    "complexity_score": 514,
+    "complexity_score": 554,
     "cross_reference_count": 1,
     "function_call_count": 42,
     "global_count": 33,
     "pseudocode_lines": 429,
-    "suspect_count": 8,
+    "suspect_count": 12,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -224,19 +224,19 @@
       "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70"
     },
     {
-      "addr": "005b9620",
+      "addr": "005b9a20",
       "is_variadic": false,
-      "name": "shape_spotview.cpp_CSpotView_FUN_005b9620"
+      "name": "shape_spotview.cpp_CSpotView_applyCamera_FUN_005b9a20"
     },
     {
       "addr": "005b9670",
       "is_variadic": false,
-      "name": "shape_spotview.cpp_CSpotView_FUN_005b9670"
+      "name": "shape_spotview.cpp_CSpotView_handleInput_FUN_005b9670"
     },
     {
-      "addr": "005b9a20",
+      "addr": "005b9620",
       "is_variadic": false,
-      "name": "shape_spotview.cpp_CSpotView_FUN_005b9a20"
+      "name": "shape_spotview.cpp_CSpotView_reset_FUN_005b9620"
     },
     {
       "addr": "005eda20",
@@ -986,7 +986,14 @@
       "description": "Complex pointer cast",
       "line": 139,
       "match": "(float *)((int)",
-      "text": "pfVar10 = (float *)((int)&local_4a8[0].unk2[0].x + local_48);",
+      "text": "pfVar10 = (float *)((int)&local_4a8[0].position[0].x + local_48);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 142,
+      "match": "(int *)((int)",
+      "text": "piVar7 = (int *)((int)local_4a8[0].vertex_index + iVar14);",
       "type": "pointer_cast"
     },
     {
@@ -1012,6 +1019,13 @@
     },
     {
       "description": "Complex pointer cast",
+      "line": 213,
+      "match": "(int *)((int)",
+      "text": "if (iVar15 == *(int *)((int)local_4a8[0].vertex_index + iVar9)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 214,
       "match": "(int *)((int)",
       "text": "local_50 = *(int *)((int)local_4a8 + local_7c * 4 + iVar14);",
@@ -1022,6 +1036,20 @@
       "line": 260,
       "match": "(int *)((int)",
       "text": "piVar7 = (int *)((int)&(local_4db8[1 - local_8].skinned_vertices_buffer)->x + iVar9);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 306,
+      "match": "(int *)((int)",
+      "text": "iVar13 = *(int *)((int)local_4a8[0].vertex_index + iVar9);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 349,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)local_4a8[0].vertex_index + local_8 * 4 + local_74) = iVar15;",
       "type": "pointer_cast"
     },
     {

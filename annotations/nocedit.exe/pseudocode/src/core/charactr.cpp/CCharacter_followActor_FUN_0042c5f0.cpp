@@ -85,7 +85,7 @@ void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_0042c5f0(CCharacter *t
   local_50.y = 0.0;
   pCVar2 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
                      (&this_ptr->base,&local_44,&local_50);
-  pCVar2 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_38,pCVar2);
+  pCVar2 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_38,pCVar2);
   this_ptr->turn_angle_accumulator = pCVar2->y;
   if (*out_state == 0) {
     if ((float)0.17453292519444399 < ABS(this_ptr->turn_angle_accumulator)) goto LAB_0042c771;

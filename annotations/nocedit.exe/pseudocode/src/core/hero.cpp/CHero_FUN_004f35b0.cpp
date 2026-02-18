@@ -51,7 +51,7 @@ int __cdecl core_hero_cpp_CHero_FUN_004f35b0(CHero *this_ptr)
         if ((((1.0 <= local_30) && (local_30 <= 6)) &&
             (local_28 = (double)local_3c.z, (float)0.5 <= local_3c.z)) &&
            ((local_28 <= 3 && (ABS(local_3c.x) <= (float)3)))) {
-          pCVar3 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+          pCVar3 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                              (&local_48,&local_3c);
           if ((ABS(pCVar3->y) <= (float)60) &&
              (pCVar1 = this_ptr_00->dest_actor, this_ptr->target_actor = pCVar1,

@@ -41,7 +41,7 @@
 ;   core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 ;   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
-;   core_fire.cpp_CFireEffect_FUN_004c79d0
+;   core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0
 ;   core_flame.cpp_CFlame_FUN_004cad90
 ;   core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0
 ;   core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80
@@ -96,8 +96,8 @@ section .text
     MOV EAX,[0x0067a3d0]                ; 004c9c6f | g_CFireEffectPtr | g_CFireEffectInstance
     PUSH EAX                            ; 004c9c74 | g_CFireEffectInstance
     INC EBX                             ; 004c9c75
-    CALL core_fire.cpp_CFireEffect_FUN_004c79d0 ; 004c9c76
-        ;   XREF to: 004c79d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c79d0(CFireEffect * this_ptr)
+    CALL core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0 ; 004c9c76
+        ;   XREF to: 004c79d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int intensity_target, ...)
     ADD ESP,0x1c                        ; 004c9c7b
     CMP EBX,0xa                         ; 004c9c7e
     JL 0x004c9c5b                       ; 004c9c81

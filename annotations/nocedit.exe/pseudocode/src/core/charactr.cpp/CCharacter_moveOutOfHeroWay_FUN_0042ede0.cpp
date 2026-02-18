@@ -49,12 +49,12 @@ int __cdecl core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0(CCharacte
     local_2c = pCVar4;
     core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
               ((CDemonActor *)pCVar4,&local_a4,&location->position);
-    pCVar5 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_bc,&local_a4);
+    pCVar5 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_bc,&local_a4);
     fVar1 = pCVar5->y;
     local_44.x = (location->position).x - (pCVar4->base).base.location.position.x;
     local_44.y = (this_ptr->base).location.position.y - (pCVar4->base).base.location.position.y;
     local_44.z = (this_ptr->base).location.position.z - (pCVar4->base).base.location.position.z;
-    pCVar5 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_8c,&local_44);
+    pCVar5 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_8c,&local_44);
     local_24 = pCVar5->y;
     iVar3 = (*(((pCVar4->base).base.vtable._ue)->_ue).randomize)(pCVar4);
     pCVar4 = local_2c;

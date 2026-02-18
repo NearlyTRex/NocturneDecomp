@@ -59,7 +59,7 @@
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_path.cpp_CPathMap_findPathWithRetry_FUN_00547d00
 ;   core_path.cpp_FUN_00548500
-;   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 ;   crt_memory.c_memset_FUN_005fde40
 ;
 ; *****************************************************************************
@@ -200,8 +200,8 @@ section .text
     PUSH EAX                            ; 004400b3
     LEA EAX,[ESP + 0x70]                ; 004400b4
     PUSH EAX                            ; 004400b8
-    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 004400b9
-        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 004400b9
+        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     FLD float ptr [EAX + 0x4]           ; 004400be
     ADD ESP,0x8                         ; 004400c1
     FSUB float ptr [EBX + 0x34]         ; 004400c4
@@ -279,8 +279,8 @@ section .text
     PUSH EAX                            ; 004401bc
     LEA EAX,[ESP + 0x40]                ; 004401bd
     PUSH EAX                            ; 004401c1
-    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 004401c2
-        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 004401c2
+        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     MOV EDX,EAX                         ; 004401c7
     LEA EAX,[ESP + 0x5c]                ; 004401c9
     ADD ESP,0x8                         ; 004401cd

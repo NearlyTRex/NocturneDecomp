@@ -869,8 +869,8 @@ section .text
     PUSH EAX                            ; 004d3752
     LEA EAX,[EBP + 0xffffff72]          ; 004d3753
     PUSH EAX                            ; 004d3759
-    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 004d375a
-        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 004d375a
+        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 004d375f
     PUSH dword ptr [EAX + 0x4]          ; 004d3762
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70 ; 004d3765
@@ -1046,8 +1046,8 @@ section .text
     PUSH EAX                            ; 004d394c
     LEA EAX,[EBP + -0x52]               ; 004d394d
     PUSH EAX                            ; 004d3950
-    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 004d3951
-        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 004d3951
+        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 004d3956
     PUSH dword ptr [EAX + 0x4]          ; 004d3959
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70 ; 004d395c

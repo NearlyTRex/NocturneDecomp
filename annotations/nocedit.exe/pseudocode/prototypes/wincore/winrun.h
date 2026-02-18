@@ -61,7 +61,7 @@ void __cdecl setCursorPosition(int x,int y);
 
 // Original: wincore_winrun.cpp_addWindowsMessageHook_FUN_005f3100
 // Address: 005f3100
-void __cdecl addWindowsMessageHook(void);
+void __cdecl addWindowsMessageHook(MessageHandler message_handler);
 
 // Original: wincore_winrun.cpp_mainWindowProc_FUN_005f3150
 // Address: 005f3150
@@ -81,7 +81,7 @@ void __cdecl displayMessageBoxAndQuit(char *message);
 
 // Original: wincore_winrun.cpp_getKeyName_FUN_005f3980
 // Address: 005f3980
-char * __cdecl getKeyName(int keycode);
+char * __cdecl getKeyName(EInputCodeType keycode);
 
 // Original: wincore_winrun.cpp_createMutex_FUN_005f3fe0
 // Address: 005f3fe0

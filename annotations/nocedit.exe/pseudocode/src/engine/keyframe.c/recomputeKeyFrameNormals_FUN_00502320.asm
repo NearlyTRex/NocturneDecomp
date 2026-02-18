@@ -75,7 +75,7 @@ section .text
         ;   Label: LAB_0050237f
     PUSH ESI                            ; 00502380
     CALL engine_keyframe.c_calculateSurfaceNormal_FUN_00501bc0 ; 00502381
-        ;   XREF to: 00501bc0 (UNCONDITIONAL_CALL)  ; void engine_keyframe.c_calculateSurfaceNormal_FUN_00501bc0(CVector3i * vertex_data, SSurfaceNormal * output)
+        ;   XREF to: 00501bc0 (UNCONDITIONAL_CALL)  ; void engine_keyframe.c_calculateSurfaceNormal_FUN_00501bc0(CVector3i * vertex_data, SMRGLPrimitiveTriangle * texture)
     ADD ESP,0x8                         ; 00502386
         ;   Label: LAB_00502386
     PUSH EBX                            ; 00502389
@@ -130,7 +130,7 @@ section .text
         ;   Label: LAB_005023f7
     PUSH ESI                            ; 005023f8
     CALL engine_keyframe.c_calculatePackedSurfaceNormal_FUN_00501a00 ; 005023f9
-        ;   XREF to: 00501a00 (UNCONDITIONAL_CALL)  ; void engine_keyframe.c_calculatePackedSurfaceNormal_FUN_00501a00(CVector3i * vertex_data, SSurfacePackedNormal * data)
+        ;   XREF to: 00501a00 (UNCONDITIONAL_CALL)  ; void engine_keyframe.c_calculatePackedSurfaceNormal_FUN_00501a00(CVector3i * vertex_data, SMRGLPrimitiveTriangleIndex * texture)
     JMP 0x00502386                      ; 005023fe
         ;   XREF to: 00502386 (UNCONDITIONAL_JUMP)  ; LAB_00502386
     JBE 0x005023f7                      ; 00502400

@@ -763,7 +763,7 @@ LAB_004e7243:
             do {
               local_68 = (float)(int)fVar23 * (float)6.2831853070000001 * (float)0.25;
               local_14 = fVar23;
-              core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
+              core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
               core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0
                         (g_CDemonSetPtr,(CDemonActor *)this_ptr);
               fVar18 = (float10)fcos((float10)local_68);
@@ -779,7 +779,7 @@ LAB_004e7243:
                                     (void *)((this_ptr->base).base.base.location.position.y +
                                             local_1c));
               local_14 = local_6c;
-              core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
+              core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
               if (local_6c < 1.0) break;
               fVar23 = (float)((int)fVar23 + 1);
             } while ((int)fVar23 < 4);

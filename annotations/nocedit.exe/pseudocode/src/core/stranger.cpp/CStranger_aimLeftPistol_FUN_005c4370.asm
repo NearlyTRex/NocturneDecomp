@@ -30,11 +30,11 @@
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0
-;   core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180
+;   core_setcolid.cpp_CDemonSet_init_FUN_00574180
 ;   core_setcolid.cpp_CDemonSet_raycast_FUN_00572530
 ;   core_setcolid.cpp_CDemonSet_setRayTypeLaser_FUN_00574270
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-;   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 ;   crt_math.c_acos_FUN_00600162
 ;
 ; *****************************************************************************
@@ -140,8 +140,8 @@ section .text
     MOV EAX,[0x006810c8]                ; 005c44b3 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EAX                            ; 005c44b8 | g_CDemonSetInstance
     FSTP float ptr [ESP + 0x30]         ; 005c44b9
-    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 005c44bd
-        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_init_FUN_00574180 ; 005c44bd
+        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00574180(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 005c44c2
     FLDZ                                ; 005c44c5
     FLD float ptr [ESP + 0x2c]          ; 005c44c7
@@ -226,8 +226,8 @@ section .text
     FSTP float ptr [ESP + 0x78]         ; 005c45e0
     PUSH EAX                            ; 005c45e4
     FSTP float ptr [ESP + 0x80]         ; 005c45e5
-    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 005c45ec
-        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 005c45ec
+        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 005c45f1
     FLD float ptr [ESP + 0x74]          ; 005c45f4
     FMUL ST0                            ; 005c45f8

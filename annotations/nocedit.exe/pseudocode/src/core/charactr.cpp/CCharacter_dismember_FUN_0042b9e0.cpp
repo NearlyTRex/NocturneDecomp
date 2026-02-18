@@ -41,8 +41,8 @@ void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_0042b9e0(CCharacter *thi
       if (0 < local_24) {
         do {
           if ((impact_point != (CVector3f *)0x0) && (0.0 < local_b0)) {
-            core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-                      (&local_3c,impact_point);
+            core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_3c,impact_point)
+            ;
             local_20 = -local_b0;
             local_18 = core_actor_cpp_getRandomFloat_FUN_0040cc10(local_20,local_b0);
             local_3c.y = local_18 + local_3c.y;

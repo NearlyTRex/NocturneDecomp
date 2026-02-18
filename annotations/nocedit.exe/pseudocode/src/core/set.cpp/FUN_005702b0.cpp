@@ -20,7 +20,7 @@ void __cdecl core_set_cpp_FUN_005702b0(void)
   int in_stack_0000000c;
   int in_stack_00000010;
   int aiStackY_1020 [960];
-  SSurfaceNormal SStack_118;
+  SMRGLPrimitiveTriangle SStack_118;
   uint local_d0;
   uint uStack_cc;
   uint local_90;
@@ -48,53 +48,29 @@ void __cdecl core_set_cpp_FUN_005702b0(void)
   local_28[2] = 0;
   if (0 < in_stack_0000000c) {
     do {
-      SStack_118.dot_product = 0;
-      SStack_118.normal_z = 0;
-      SStack_118.normal_y = 0;
-      SStack_118.normal_x = 0;
-      SStack_118.vertex_count = 3;
-      SStack_118.vertex_index_1 = (uint)*in_stack_00000008;
-      SStack_118.vertex_index_2 = (uint)in_stack_00000008[1];
-      SStack_118.vertex_index_3 = (uint)in_stack_00000008[2];
-      iVar3 = (uint)in_stack_00000008[3] << 8;
-      SStack_118.unk1[0] = (char)iVar3;
-      SStack_118.unk1[1] = (char)((uint)iVar3 >> 8);
-      SStack_118.unk1[2] = (char)((uint)iVar3 >> 0x10);
-      SStack_118.unk1[3] = (char)((uint)iVar3 >> 0x18);
-      iVar3 = (uint)in_stack_00000008[4] << 8;
-      SStack_118.unk2[0] = (char)iVar3;
-      SStack_118.unk2[1] = (char)((uint)iVar3 >> 8);
-      SStack_118.unk2[2] = (char)((uint)iVar3 >> 0x10);
-      SStack_118.unk2[3] = (char)((uint)iVar3 >> 0x18);
-      iVar3 = (uint)in_stack_00000008[5] << 8;
-      SStack_118.unk3[0] = (char)iVar3;
-      SStack_118.unk3[1] = (char)((uint)iVar3 >> 8);
-      SStack_118.unk3[2] = (char)((uint)iVar3 >> 0x10);
-      SStack_118.unk3[3] = (char)((uint)iVar3 >> 0x18);
-      iVar3 = (uint)in_stack_00000008[6] << 8;
-      SStack_118.unk1[4] = (char)iVar3;
-      SStack_118.unk1[5] = (char)((uint)iVar3 >> 8);
-      SStack_118.unk1[6] = (char)((uint)iVar3 >> 0x10);
-      SStack_118.unk1[7] = (char)((uint)iVar3 >> 0x18);
-      iVar3 = (uint)in_stack_00000008[7] << 8;
-      SStack_118.unk2[4] = (char)iVar3;
-      SStack_118.unk2[5] = (char)((uint)iVar3 >> 8);
-      SStack_118.unk2[6] = (char)((uint)iVar3 >> 0x10);
-      SStack_118.unk2[7] = (char)((uint)iVar3 >> 0x18);
-      iVar3 = (uint)in_stack_00000008[8] << 8;
-      SStack_118.unk3[4] = (char)iVar3;
-      SStack_118.unk3[5] = (char)((uint)iVar3 >> 8);
-      SStack_118.unk3[6] = (char)((uint)iVar3 >> 0x10);
-      SStack_118.unk3[7] = (char)((uint)iVar3 >> 0x18);
+      SStack_118.base.surface_normal.D = 0;
+      SStack_118.base.surface_normal.C = 0;
+      SStack_118.base.surface_normal.B = 0;
+      SStack_118.base.surface_normal.A = 0;
+      SStack_118.base.base.count = 3;
+      SStack_118.vertices[0].vertex_index = (uint)*in_stack_00000008;
+      SStack_118.vertices[1].vertex_index = (uint)in_stack_00000008[1];
+      SStack_118.vertices[2].vertex_index = (uint)in_stack_00000008[2];
+      SStack_118.vertices[0].texture_u = (uint)in_stack_00000008[3] << 8;
+      SStack_118.vertices[1].texture_u = (uint)in_stack_00000008[4] << 8;
+      SStack_118.vertices[2].texture_u = (uint)in_stack_00000008[5] << 8;
+      SStack_118.vertices[0].texture_v = (uint)in_stack_00000008[6] << 8;
+      SStack_118.vertices[1].texture_v = (uint)in_stack_00000008[7] << 8;
+      SStack_118.vertices[2].texture_v = (uint)in_stack_00000008[8] << 8;
       if (*(int *)(in_stack_00000004 + 0x15ae84) != 0) {
         engine_keyframe_c_calculateSurfaceNormal_FUN_00501bc0(g_TransformedVertexArray,&SStack_118);
       }
       local_28[4] = 0;
-      if (0 < SStack_118.vertex_count) {
+      if (0 < SStack_118.base.base.count) {
         local_28[3] = 0;
         local_28[5] = 0;
         do {
-          iVar3 = *(int *)(SStack_118.unk1 + local_28[3] + -4);
+          iVar3 = *(int *)((int)&SStack_118.vertices[0].vertex_index + local_28[3]);
           if ((((*(int *)(in_stack_00000004 + 0x15ae84) == 0) ||
                (1.0 <= ABS(g_VertexNormalArray[iVar3].x))) ||
               (1.0 <= ABS(g_VertexNormalArray[iVar3].y))) ||
@@ -123,9 +99,9 @@ void __cdecl core_set_cpp_FUN_005702b0(void)
           local_28[4] = iVar5;
           local_28[5] = local_28[5] + 4;
           local_28[3] = local_28[3] + 0xc;
-        } while (iVar5 < SStack_118.vertex_count);
+        } while (iVar5 < SStack_118.base.base.count);
       }
-      if (1 < SStack_118.vertex_count) {
+      if (1 < SStack_118.base.base.count) {
         iVar3 = 4;
         do {
           if ((0x8000 < local_d0) && (*(int *)((int)&local_d0 + iVar3) < -0x8000)) {
@@ -143,33 +119,35 @@ void __cdecl core_set_cpp_FUN_005702b0(void)
             *(int *)((int)&local_90 + iVar3) = *(int *)((int)&local_90 + iVar3) + -0x10000;
           }
           iVar3 = iVar3 + 4;
-        } while (iVar3 < SStack_118.vertex_count * 4);
+        } while (iVar3 < SStack_118.base.base.count * 4);
       }
       iVar3 = 0;
-      if (0 < SStack_118.vertex_count) {
+      if (0 < SStack_118.base.base.count) {
         iVar4 = 0;
         iVar5 = 0;
         do {
-          *(int *)(SStack_118.unk1 + iVar5) = *(int *)((int)&local_d0 + iVar4) << 8;
-          *(int *)(SStack_118.unk1 + iVar5 + 4) = *(int *)((int)&local_90 + iVar4) << 8;
+          *(int *)((int)&SStack_118.vertices[0].texture_u + iVar5) =
+               *(int *)((int)&local_d0 + iVar4) << 8;
+          *(int *)((int)&SStack_118.vertices[0].texture_v + iVar5) =
+               *(int *)((int)&local_90 + iVar4) << 8;
           iVar3 = iVar3 + 1;
           iVar4 = iVar4 + 4;
           iVar5 = iVar5 + 0xc;
-        } while (iVar3 < SStack_118.vertex_count);
+        } while (iVar3 < SStack_118.base.base.count);
       }
       if (*(int *)(in_stack_00000004 + 0x15ae84) != 0) {
-        SStack_118.normal_z = 0;
-        SStack_118.normal_y = 0;
-        SStack_118.normal_x = 0;
-        SStack_118.dot_product = 0;
+        SStack_118.base.surface_normal.C = 0;
+        SStack_118.base.surface_normal.B = 0;
+        SStack_118.base.surface_normal.A = 0;
+        SStack_118.base.surface_normal.D = 0;
       }
       if (in_stack_00000010 < 0xfde9) {
         engine_drender_cpp_CDemonRenderer_renderUltraPremium_FUN_0048b970
-                  (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&SStack_118);
+                  (g_CDemonRendererPtr2,&SStack_118.base);
       }
       else {
         engine_drender_cpp_CDemonRenderer_renderPremium_FUN_0048b1e0
-                  (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&SStack_118);
+                  (g_CDemonRendererPtr2,&SStack_118.base);
       }
       in_stack_00000008 = in_stack_00000008 + 9;
       local_28[2] = local_28[2] + 1;

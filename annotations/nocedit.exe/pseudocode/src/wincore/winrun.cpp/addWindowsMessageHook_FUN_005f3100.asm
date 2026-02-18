@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl wincore_winrun_cpp_addWindowsMessageHook_FUN_005f3100(void)
+; void __cdecl wincore_winrun_cpp_addWindowsMessageHook_FUN_005f3100(MessageHandler message_handler)
 ;
+; Parameters:
+; MessageHandler   Stack[0x4]:4   message_handler
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wincore_winrun_cpp_00657f4c

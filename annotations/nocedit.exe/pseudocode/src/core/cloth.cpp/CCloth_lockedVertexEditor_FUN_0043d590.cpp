@@ -45,7 +45,7 @@ void __cdecl core_cloth_cpp_CCloth_lockedVertexEditor_FUN_0043d590(CCloth *this_
   local_38 = -1;
   local_30 = 1;
   local_3c = 0;
-  shape_spotview_cpp_CSpotView_FUN_005b9620(g_CSpotViewPtr);
+  shape_spotview_cpp_CSpotView_reset_FUN_005b9620(g_CSpotViewPtr,0x1f);
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   core_cloth_cpp_CCloth_setup_FUN_00439710
             (this_ptr,&g_ZeroVector,&g_ZeroVector,(CDeformableModelInstance *)0x0);
@@ -76,16 +76,16 @@ void __cdecl core_cloth_cpp_CCloth_lockedVertexEditor_FUN_0043d590(CCloth *this_
   local_44 = local_84.min.z + local_84.max.z;
   local_54 = local_48 * 0.5f;
   local_50 = local_44 * 0.5f;
-  if ((float *)(g_CSpotViewPtr->unk + 0x18) != &local_58) {
-    *(float *)(g_CSpotViewPtr->unk + 0x18) = local_58;
-    *(float *)(pCVar3->unk + 0x1c) = local_54;
-    *(float *)(pCVar3->unk + 0x20) = local_50;
+  if (&g_CSpotViewPtr->loat_at != (CVector3f *)&local_58) {
+    (g_CSpotViewPtr->loat_at).x = local_58;
+    (pCVar3->loat_at).y = local_54;
+    (pCVar3->loat_at).z = local_50;
   }
   while( true ) {
     engine_2d_c_fillRectColor_FUN_00403170(0,0,g_WindowWidth + -1,g_WindowHeight + -1,0xf8);
     wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
-    shape_spotview_cpp_CSpotView_FUN_005b9670(g_CSpotViewPtr);
-    shape_spotview_cpp_CSpotView_FUN_005b9a20(g_CSpotViewPtr);
+    shape_spotview_cpp_CSpotView_handleInput_FUN_005b9670(g_CSpotViewPtr,0x1f);
+    shape_spotview_cpp_CSpotView_applyCamera_FUN_005b9a20(g_CSpotViewPtr);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
               (g_CDemonRendererPtr2,&g_ZeroVector);
     local_18 = 0;
@@ -291,14 +291,11 @@ void __cdecl core_cloth_cpp_CCloth_lockedVertexEditor_FUN_0043d590(CCloth *this_
       local_3c = (uint)(local_3c == 0);
     }
   }
-  shape_spotview_cpp_CSpotView_FUN_005b9620(g_CSpotViewPtr);
+  shape_spotview_cpp_CSpotView_reset_FUN_005b9620(g_CSpotViewPtr,0x1f);
   pCVar3 = g_CSpotViewPtr;
-  pCVar3->unk[0x20] = '\0';
-  pCVar3->unk[0x21] = '\0';
-  pCVar3->unk[0x22] = '\0';
-  pCVar3->unk[0x23] = '\0';
-  *(uint *)(pCVar3->unk + 0x1c) = *(uint *)(pCVar3->unk + 0x20);
-  *(uint *)(pCVar3->unk + 0x18) = *(uint *)(pCVar3->unk + 0x1c);
+  (g_CSpotViewPtr->loat_at).z = 0.0;
+  (pCVar3->loat_at).y = (pCVar3->loat_at).z;
+  (pCVar3->loat_at).x = (pCVar3->loat_at).y;
   engine_2d_c_clearInputAndWait_FUN_00403260();
   return;
 }

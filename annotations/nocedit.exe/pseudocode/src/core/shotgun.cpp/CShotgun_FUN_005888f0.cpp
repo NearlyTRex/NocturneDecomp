@@ -61,7 +61,7 @@ void __cdecl core_shotgun_cpp_CShotgun_FUN_005888f0(CShotgun *this_ptr)
     fStack_4c = fStack_4c * fVar1;
     fStack_48 = fStack_48 * fVar1;
   }
-  core_fire_cpp_CFireEffect_FUN_004c7f20(g_CFireEffectPtr);
+  core_fire_cpp_CFireEffect_createLaserSegment2_FUN_004c7f20(g_CFireEffectPtr);
   this_ptr->unk[4] = '\x01';
   this_ptr->unk[5] = '\0';
   this_ptr->unk[6] = '\0';

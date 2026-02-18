@@ -11,7 +11,7 @@
 ; float            Stack[0x14]:4   f4
 ;
 ; XREF[2]:
-;   core_fire.cpp_CFireEffect_FUN_004c8230 at 004c82b9
+;   core_fire.cpp_CFireEffect_traceLaser_FUN_004c8230 at 004c82b9
 ;   core_stranger.cpp_CStranger_aimLeftPistol_FUN_005c4370 at 005c4459
 ;
 ; *****************************************************************************

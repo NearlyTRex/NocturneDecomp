@@ -6,14 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 12,
+    "complexity_score": 60,
     "cross_reference_count": 6,
     "function_call_count": 3,
     "global_count": 5,
-    "pseudocode_lines": 12,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 60
+    "pseudocode_lines": 15,
+    "suspect_count": 4,
+    "suspect_types": [
+      "stack_param"
+    ],
+    "total_lines": 63
   },
   "cross_references": [
     {
@@ -69,12 +71,12 @@
     {
       "addr": "004c3970",
       "is_variadic": false,
-      "name": "core_fire.cpp_CExplosion_FUN_004c3970"
+      "name": "core_fire.cpp_CExplosion_activate_FUN_004c3970"
     },
     {
       "addr": "004c8ea0",
       "is_variadic": false,
-      "name": "core_fire.cpp_CFireEffect_FUN_004c8ea0"
+      "name": "core_fire.cpp_CFireEffect_createCrater_FUN_004c8ea0"
     },
     {
       "addr": "005b3a40",
@@ -165,5 +167,34 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_0000000c",
+      "text": "float in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000010",
+      "text": "int in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_0000000c",
+      "text": "(g_ExplosionPool + g_ExplosionPoolIndex,position,in_stack_0000000c,in_stack_00000010);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000010",
+      "text": "(g_ExplosionPool + g_ExplosionPoolIndex,position,in_stack_0000000c,in_stack_00000010);",
+      "type": "stack_param"
+    }
+  ]
 }

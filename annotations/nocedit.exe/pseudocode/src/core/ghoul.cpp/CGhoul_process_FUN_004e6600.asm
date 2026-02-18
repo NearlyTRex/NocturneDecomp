@@ -1262,8 +1262,8 @@ section .text
     FMUL double ptr [0x0062ddba]        ; 004e7289 | DOUBLE_0062ddba
     PUSH ECX                            ; 004e728f | g_CDemonSetInstance
     FSTP float ptr [EBP + 0x22]         ; 004e7290
-    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 004e7293
-        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_init_FUN_00574180 ; 004e7293
+        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00574180(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 004e7298
     PUSH EBX                            ; 004e729b
     MOV EAX,[0x006810c8]                ; 004e729c | g_CDemonSetPtr | g_CDemonSetInstance
@@ -1308,8 +1308,8 @@ section .text
     FLD float ptr [EBP + 0x76]          ; 004e7312
     PUSH ECX                            ; 004e7315 | g_CDemonSetInstance
     FSTP float ptr [EBP + 0x1e]         ; 004e7316
-    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 004e7319
-        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_init_FUN_00574180 ; 004e7319
+        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00574180(CDemonSet * this_ptr)
     FLD float ptr [EBP + 0x1e]          ; 004e731e
     FLD1                                ; 004e7321
     ADD ESP,0x4                         ; 004e7323

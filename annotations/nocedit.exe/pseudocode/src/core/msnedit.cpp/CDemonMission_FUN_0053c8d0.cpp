@@ -19,6 +19,6 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053c8d0(CDemonMission *this_ptr
   fVar1 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
                     (g_CDemonSetPtr,&(in_stack_00000008->location).position,0.0);
   (in_stack_00000008->location).position.y = fVar1;
-  core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
+  core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
   return;
 }

@@ -18,7 +18,7 @@ CVector3f * __cdecl core_stranger_cpp_FUN_005c37e0(void)
   float *in_stack_0000000c;
   float local_24;
   
-  core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
             (in_stack_00000004,in_stack_00000008);
   fVar2 = SQRT(in_stack_00000008->z * in_stack_00000008->z +
                in_stack_00000008->x * in_stack_00000008->x +

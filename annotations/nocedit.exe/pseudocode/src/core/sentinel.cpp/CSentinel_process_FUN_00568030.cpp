@@ -238,7 +238,7 @@ LAB_00568089:
                          (this_ptr->base).base.base.location.position.y;
             local_bc.z = (pCVar7->location).position.z -
                          (this_ptr->base).base.base.location.position.z;
-            core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_74,&local_bc);
+            core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_74,&local_bc);
             local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                                  (local_74.y - (this_ptr->base).base.base.orient.vec.y);
             if (ABS(local_14) < (float)0.52359877558333301) {
@@ -383,7 +383,7 @@ LAB_0056878f:
         local_f8.x = (pCVar7->location).position.x - (this_ptr->base).base.base.location.position.x;
         local_f8.y = (pCVar7->location).position.y - (this_ptr->base).base.base.location.position.y;
         local_f8.z = (pCVar7->location).position.z - (this_ptr->base).base.base.location.position.z;
-        core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_d4,&local_f8);
+        core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_d4,&local_f8);
         (this_ptr->base).base.base.orient.vec.y = local_d4.y;
       }
     }

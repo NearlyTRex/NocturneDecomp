@@ -89,7 +89,7 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_005c3150(CStranger *thi
       start_pos = &(this_ptr->weapon->location).position;
     }
     if (start_pos != (CVector3f *)0x0) {
-      core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
+      core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
       core_setcolid_cpp_CDemonSet_setRayType_FUN_00574230(g_CDemonSetPtr,1);
       core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,(CDemonActor *)this_ptr);
       core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,this_ptr->weapon);
@@ -104,8 +104,10 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_005c3150(CStranger *thi
       if (local_14 < 0.0) {
         local_18 = 10.0;
       }
-      core_fire_cpp_CFireEffect_FUN_004c7f80(g_CFireEffectPtr);
-      core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
+      core_fire_cpp_CFireEffect_createLaserBeamPath_FUN_004c7f80
+                (g_CFireEffectPtr,start_pos,local_7c,1.0,1.0,&g_CDemonSetPtr->collision_normal,
+                 local_18,0xff,0,0);
+      core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
     }
   }
   pCVar1 = this_ptr->weapon;

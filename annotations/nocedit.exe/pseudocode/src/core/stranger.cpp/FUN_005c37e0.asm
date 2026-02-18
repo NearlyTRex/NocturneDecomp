@@ -21,7 +21,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
-;   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 ;   crt_math.c_acos_FUN_00600162
 ;
 ; *****************************************************************************
@@ -40,8 +40,8 @@ section .text
     MOV ESI,dword ptr [EBP + 0x18]      ; 005c37ef
     PUSH ESI                            ; 005c37f2
     PUSH EBX                            ; 005c37f3
-    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 005c37f4
-        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 005c37f4
+        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     FLD float ptr [ESI + 0x4]           ; 005c37f9
     FMUL ST0                            ; 005c37fc
     FLD float ptr [ESI]                 ; 005c37fe

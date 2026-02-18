@@ -105,7 +105,8 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_process_FUN_004d1a40(CFranke
         CStack_38.y = pCVar3->y;
         CStack_38.z = pCVar3->z;
       }
-      core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);
+      core_fire_cpp_CFireEffect_createSpark_FUN_004c79d0
+                (g_CFireEffectPtr,&CStack_38,(CVector3f *)0x0,0x4000,0x10000,0,0xffff);
     }
     core_frankgen_cpp_CFrankenstienMachine_FUN_004d1f20(this_ptr);
     core_frankgen_cpp_CFrankenstienMachine_FUN_004d1f20(this_ptr);

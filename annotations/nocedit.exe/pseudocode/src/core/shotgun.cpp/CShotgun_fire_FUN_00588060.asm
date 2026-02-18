@@ -25,8 +25,8 @@
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
 ;   core_actor.cpp_getRandomInt_FUN_0040cc70
-;   core_fire.cpp_CFireEffect_FUN_004c7a60
-;   core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180
+;   core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60
+;   core_setcolid.cpp_CDemonSet_init_FUN_00574180
 ;   core_sound.cpp_CSound_playActorSound_FUN_005b3a40
 ;   core_weapon.cpp_CWeapon_fire_FUN_005ee6e0
 ;
@@ -89,8 +89,8 @@ section .text
     MOV EAX,[0x006810c8]                ; 0058830a | g_CDemonSetPtr | g_CDemonSetInstance
         ;   Label: LAB_0058830a
     PUSH EAX                            ; 0058830f | g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 00588310
-        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_init_FUN_00574180 ; 00588310
+        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00574180(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00588315
     MOV EAX,dword ptr [ESP + 0x6c]      ; 00588318
     MOV dword ptr [ESP + 0x9c],EAX      ; 0058831c
@@ -107,8 +107,8 @@ section .text
     FADD float ptr [0x00649b37]         ; 00588352 | FLOAT_00649b37
     PUSH EDX                            ; 00588358 | g_CFireEffectInstance
     FSTP float ptr [ESP + 0xac]         ; 00588359
-    CALL core_fire.cpp_CFireEffect_FUN_004c7a60 ; 00588360
-        ;   XREF to: 004c7a60 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c7a60(CFireEffect * this_ptr)
+    CALL core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60 ; 00588360
+        ;   XREF to: 004c7a60 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60(CFireEffect * this_ptr)
     ADD ESP,0xc                         ; 00588365
     LEA EAX,[ESP + 0x6c]                ; 00588368
     PUSH EAX                            ; 0058836c

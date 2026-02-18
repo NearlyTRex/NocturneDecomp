@@ -2,11 +2,11 @@
 // Address: 005eeeb0
 // Address Range: [[005eeeb0, 005eeecf]]
 // Convention: __cdecl
-// Signature: void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_005eeeb0(CWeather *this_ptr,float param_2,int param_3)
+// Signature: void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_005eeeb0(CWeather *this_ptr,float flash_timer,int play_sound)
 
 #include "nocturne.h"
 
-void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_005eeeb0(CWeather *this_ptr,float param_2,int param_3)
+void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_005eeeb0(CWeather *this_ptr,float flash_timer,int play_sound)
 
 {
   float fVar1;
@@ -33,7 +33,7 @@ void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_005eeeb0(CWeath
   local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,20.0);
   this_ptr->lightning_countdown = local_14;
   local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(2.0,this_ptr->max_flash_interval);
-  this_ptr->flash_timer = param_2;
+  this_ptr->flash_timer = flash_timer;
   this_ptr->lightning_active = 1;
   this_ptr->sub_flash_interval = local_14;
   core_dtrace_cpp_CDemonRaytrace_getBBoxMin_FUN_00499b40(&g_CDemonRaytraceInstance,&local_30);
@@ -68,8 +68,9 @@ void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_005eeeb0(CWeath
     local_6c.y = local_48.y;
     local_6c.z = local_48.z;
   }
-  if (param_3 != 0) {
-    core_fire_cpp_CFireEffect_FUN_004c8f50(g_CFireEffectPtr);
+  if (play_sound != 0) {
+    core_fire_cpp_CFireEffect_createLightningBolt_FUN_004c8f50
+              (g_CFireEffectPtr,&local_6c,local_18,0,0.0);
   }
   this_ptr_00 = g_CEventListPtr;
   local_14 = (float)g_CDemonCameraInstance.corona_blend_factor;
@@ -84,11 +85,11 @@ void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_005eeeb0(CWeath
       local_98 = 1.0;
     }
     core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_004528e0(&g_CDemonCameraInstance,local_98);
-    if (param_3 == 0) {
+    if (play_sound == 0) {
       return;
     }
   }
-  else if (param_3 == 0) {
+  else if (play_sound == 0) {
     return;
   }
   core_sound_cpp_CSound_playActorSound_FUN_005b3a40

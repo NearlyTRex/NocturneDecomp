@@ -266,7 +266,7 @@ section .text
     PUSH EBX                            ; 0051370c
         ;   Label: LAB_0051370c
     CALL wincore_winrun.cpp_getKeyName_FUN_005f3980 ; 0051370d
-        ;   XREF to: 005f3980 (UNCONDITIONAL_CALL)  ; char * wincore_winrun.cpp_getKeyName_FUN_005f3980(int keycode)
+        ;   XREF to: 005f3980 (UNCONDITIONAL_CALL)  ; char * wincore_winrun.cpp_getKeyName_FUN_005f3980(EInputCodeType keycode)
     MOV ESI,EAX                         ; 00513712
     ADD ESP,0x4                         ; 00513714
     JMP 0x005136ae                      ; 00513717

@@ -31,29 +31,27 @@ void __cdecl core_fire_cpp_CExplosion_render_FUN_004c3b10(CExplosion *this_ptr)
   int local_10;
   int local_c;
   
-  if ((*(uint *)(this_ptr->unk + 0xc) & 0x7fffffff) == 0) {
+  if (ABS(this_ptr->lifetime) == 0.0) {
     return;
   }
-  local_1c = (int)ROUND(ROUND((1.0 - *(float *)(this_ptr->unk + 0xc)) * (float)27));
+  local_1c = (int)ROUND(ROUND((1.0 - this_ptr->lifetime) * (float)27));
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr2,g_FireEffectExplosionTextures + local_1c * 2);
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-            (g_CDemonRendererPtr2,(CVector3f *)this_ptr);
+            (g_CDemonRendererPtr2,&this_ptr->position);
   engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
             (g_CDemonRendererPtr2,(float *)&local_58);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr2,&local_58,(CVector3i *)0x0);
-  local_10 = (int)ROUND(ROUND(*(float *)(this_ptr->unk + 0x10) * (float)148 *
-                              (float)0.00390625));
-  local_14 = (int)ROUND(ROUND(-*(float *)(this_ptr->unk + 0x10) * 108.0f *
-                              (float)0.00390625));
-  if (*(int *)(this_ptr->unk + 0x18) != 0) {
+  local_10 = (int)ROUND(ROUND(this_ptr->scale * (float)148 * (float)0.00390625));
+  local_14 = (int)ROUND(ROUND(-this_ptr->scale * 108.0f * (float)0.00390625));
+  if (this_ptr->flip_flag != 0) {
     local_10 = -local_10;
     local_14 = -local_14;
   }
   local_c = local_14;
   local_34 = (float)local_14;
-  local_30 = *(float *)(this_ptr->unk + 0x10) * 143.0f * (float)0.00390625;
+  local_30 = this_ptr->scale * 143.0f * (float)0.00390625;
   local_2c = 0.0;
   local_28.x = (int)ROUND(local_34 * 256.0f);
   local_28.y = (int)ROUND(local_30 * 256.0f);
@@ -68,7 +66,7 @@ void __cdecl core_fire_cpp_CExplosion_render_FUN_004c3b10(CExplosion *this_ptr)
   local_4c.z = (int)ROUND(local_2c * 256.0f);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_4c);
-  local_30 = -*(float *)(this_ptr->unk + 0x10) * (float)113 * (float)0.00390625;
+  local_30 = -this_ptr->scale * (float)113 * (float)0.00390625;
   local_40.x = (int)ROUND(local_34 * 256.0f);
   local_40.y = (int)ROUND(local_30 * 256.0f);
   local_40.z = (int)ROUND(local_2c * 256.0f);

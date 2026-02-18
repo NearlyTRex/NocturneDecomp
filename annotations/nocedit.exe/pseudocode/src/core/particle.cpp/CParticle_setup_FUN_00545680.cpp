@@ -30,7 +30,7 @@ void __cdecl core_particle_cpp_CParticle_setup_FUN_00545680(CParticle *this_ptr,
       (this_ptr->velocity).z = velocity->z;
     }
     this_ptr->lifetime_remaining = 5.0;
-    this_ptr->collision_result = 0;
+    this_ptr->was_in_solid = 0;
     return;
   }
   fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.7853982,1.5707964);
@@ -44,6 +44,6 @@ void __cdecl core_particle_cpp_CParticle_setup_FUN_00545680(CParticle *this_ptr,
   (this_ptr->velocity).x = (float)(fVar3 * fVar7 * fVar4);
   (this_ptr->velocity).z = (float)(fVar5 * fVar7 * fVar4);
   this_ptr->lifetime_remaining = 5.0;
-  this_ptr->collision_result = 0;
+  this_ptr->was_in_solid = 0;
   return;
 }

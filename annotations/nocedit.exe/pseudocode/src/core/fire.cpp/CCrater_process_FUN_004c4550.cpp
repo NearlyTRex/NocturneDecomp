@@ -12,32 +12,25 @@ void __cdecl core_fire_cpp_CCrater_process_FUN_004c4550(CCrater *this_ptr)
   CVector3f *position;
   CVector3f local_18;
   
-  if (*(int *)this_ptr->unk != 0) {
-    if ((0.0 < *(float *)(this_ptr->unk + 8)) &&
-       (*(float *)(this_ptr->unk + 8) = *(float *)(this_ptr->unk + 8) - g_CGamePtr->delta_time_float
-       , *(float *)(this_ptr->unk + 8) < 0.0)) {
-      this_ptr->unk[4] = '\x01';
-      this_ptr->unk[5] = '\0';
-      this_ptr->unk[6] = '\0';
-      this_ptr->unk[7] = '\0';
-      this_ptr->unk[8] = '\0';
-      this_ptr->unk[9] = '\0';
-      this_ptr->unk[10] = '\0';
-      this_ptr->unk[0xb] = '\0';
+  if (this_ptr->active != 0) {
+    if ((0.0 < this_ptr->smoke_delay) &&
+       (this_ptr->smoke_delay = this_ptr->smoke_delay - g_CGamePtr->delta_time_float,
+       this_ptr->smoke_delay < 0.0)) {
+      this_ptr->has_smoke = 1;
+      this_ptr->smoke_delay = 0.0;
     }
-    *(float *)(this_ptr->unk + 0x18) =
-         g_CGamePtr->delta_time_float + *(float *)(this_ptr->unk + 0x18);
-    if ((float)0.20000000000000001 < *(float *)(this_ptr->unk + 0x18)) {
-      *(float *)(this_ptr->unk + 0x18) = *(float *)(this_ptr->unk + 0x18) + -0.2f;
+    this_ptr->smoke_spawn_timer = g_CGamePtr->delta_time_float + this_ptr->smoke_spawn_timer;
+    if ((float)0.20000000000000001 < this_ptr->smoke_spawn_timer) {
+      this_ptr->smoke_spawn_timer = this_ptr->smoke_spawn_timer + -0.2f;
       local_18.x = 0.0;
       local_18.y = 1.0;
-      position = (CVector3f *)(this_ptr->unk + 0x1c);
+      position = this_ptr->smoke_positions;
       local_18.z = 0.0;
       do {
         core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
                   (g_CFireEffectPtr,position,1.0,&local_18,0xffff);
         position = position + 1;
-      } while (position != (CVector3f *)(this_ptr->unk + 0x40));
+      } while (position != this_ptr->corner_positions);
     }
   }
   return;

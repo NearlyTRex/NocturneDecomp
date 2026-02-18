@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_005eeeb0(CWeather *this_ptr,float param_2,int param_3)
+; void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_005eeeb0(CWeather *this_ptr,float flash_timer,int play_sound)
 ;
 ; Parameters:
 ; CWeather *       Stack[0x4]:4   this_ptr
-; float            Stack[0x8]:4   param_2
-; int              Stack[0xc]:4   param_3
+; float            Stack[0x8]:4   flash_timer
+; int              Stack[0xc]:4   play_sound
 ; Local Variables:
 ; undefined4       Stack[-0x98]:4  local_98
 ; undefined1       Stack[-0x94]:1  local_94
@@ -35,7 +35,7 @@
 ; XREF[3]:
 ;   core_event.cpp_CEventList_executeCommand_FUN_004aacc0 at 004ac2bc
 ;   core_lightgun.cpp_CLightGun_process_FUN_00506450 at 005065b6
-;   core_weather.cpp_CWeather_FUN_005eeaf0 at 005eedc3
+;   core_weather.cpp_CWeather_update_FUN_005eeaf0 at 005eedc3
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10

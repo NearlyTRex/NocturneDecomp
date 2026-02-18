@@ -42,7 +42,7 @@ int __cdecl core_hero_cpp_CHero_FUN_004f33b0(CHero *this_ptr)
           (local_60.y = 0.0,
           SQRT(local_60.z * local_60.z + local_60.x * local_60.x) <= (float)10)) &&
          (this_ptr_00 != this_ptr)) {
-        pCVar4 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+        pCVar4 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                            (&local_30,&local_60);
         local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                              (pCVar4->y - (this_ptr->base).base.orient.vec.y);

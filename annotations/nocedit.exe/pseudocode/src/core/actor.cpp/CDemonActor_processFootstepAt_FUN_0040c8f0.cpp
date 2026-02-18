@@ -39,7 +39,7 @@ int __cdecl core_actor_cpp_CDemonActor_processFootstepAt_FUN_0040c8f0(CDemonActo
   local_18 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
                        (g_CDemonSetPtr,&(this_ptr->location).position,0.0);
   local_8 = local_18;
-  core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
+  core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
   if (local_1c < local_18 + (float)-1) {
     iVar1 = g_CDemonSetPtr->ground_type;
   }

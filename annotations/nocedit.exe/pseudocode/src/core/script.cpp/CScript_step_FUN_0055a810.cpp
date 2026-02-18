@@ -2882,7 +2882,7 @@ LAB_0055f0a8:
                                                                &local_148,
                                                                &(pCVar14->location).position);
                                                     pCVar12 = 
-                                                  core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+                                                  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                                                             (&local_160,&local_148);
                                                   (pCVar14->orient).vec.y = pCVar12->y;
                                                   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10

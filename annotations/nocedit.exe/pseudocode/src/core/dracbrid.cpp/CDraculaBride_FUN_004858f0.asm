@@ -34,7 +34,7 @@
 ;   core_dracbrid.cpp_CDraculaBride_FUN_00485b20
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
-;   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 ;
 ; *****************************************************************************
 
@@ -158,8 +158,8 @@ section .text
     PUSH EBX                            ; 00485a18
     LEA EAX,[ESP + 0x78]                ; 00485a19
     PUSH EAX                            ; 00485a1d
-    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 00485a1e
-        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 00485a1e
+        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 00485a23
     PUSH dword ptr [ESP]                ; 00485a26
     FLD float ptr [ESP + 0x4]           ; 00485a29

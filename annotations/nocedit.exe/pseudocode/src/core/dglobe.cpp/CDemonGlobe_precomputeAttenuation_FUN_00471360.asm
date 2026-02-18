@@ -14,7 +14,7 @@
 ;   core_boxactor.cpp_CLightActor_process_FUN_00422a50 at 00422b5d
 ;   core_emitter.cpp_CEmitter_process_FUN_004a8070 at 004a81e2
 ;   core_fire.cpp_CFireball_process_FUN_004c0b30 at 004c0bca
-;   core_fire.cpp_FUN_004c1940 at 004c196c
+;   core_fire.cpp_CMuzzleFlash_init_FUN_004c1940 at 004c196c
 ;   core_keyactor.cpp_CKeyActor_process_FUN_00501710 at 0050178f
 ;   core_weapon.cpp_CWeapon_updateLighting_FUN_005ee4a0 at 005ee605
 ;

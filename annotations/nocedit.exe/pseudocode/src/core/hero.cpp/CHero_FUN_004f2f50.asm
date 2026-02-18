@@ -43,7 +43,7 @@
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 ;   core_event.cpp_CRuleList_evaluateAndRun_FUN_004b18e0
 ;   core_lever.cpp_CLever_FUN_00505080
-;   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 ;
 ; *****************************************************************************
 
@@ -137,8 +137,8 @@ section .text
     PUSH EAX                            ; 004f3031
     LEA EAX,[ESP + 0x24]                ; 004f3032
     PUSH EAX                            ; 004f3036
-    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 004f3037
-        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 004f3037
+        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     FLD float ptr [EAX + 0x4]           ; 004f303c
     FABS                                ; 004f303f
     ADD ESP,0x8                         ; 004f3041

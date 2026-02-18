@@ -95,7 +95,7 @@ LAB_005c50a7:
   *(float *)(this_ptr->unk8 + 0x48) = *(float *)(this_ptr->unk8 + 0x48) + local_f4;
   return;
 LAB_005c4d62:
-  core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
+  core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
   core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,(CDemonActor *)this_ptr);
   local_a4.x = 0.0;
   local_a4.y = 0.0;
@@ -153,6 +153,6 @@ LAB_005c4d62:
      (fVar1 = 1.0 - (local_18 * local_20 - local_1c) / (local_20 - local_1c), local_f8 < fVar1)) {
     local_f8 = fVar1;
   }
-  core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
+  core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
   goto LAB_005c50a7;
 }

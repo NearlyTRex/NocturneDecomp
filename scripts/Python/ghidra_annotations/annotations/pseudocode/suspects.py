@@ -4,6 +4,60 @@
 import re
 from collections import defaultdict
 
+# Safe decompiler intrinsics - these are detected as suspects but do NOT count
+# against a function's "clean" status in reports. These intrinsics have valid
+# C macro definitions in the intrinsics header and compile successfully.
+SAFE_INTRINSICS = frozenset({
+    # Offset pointer adjustment
+    'ADJ',      # #define ADJ(x) (x) - identity macro
+    # Math intrinsics (uppercase Ghidra names)
+    'ROUND',    # #define ROUND(x) - valid rounding implementation
+    'SQRT',     # #define SQRT(x) sqrt(x)
+    'TRUNC',    # #define TRUNC(x) ((int)(x))
+    'FLOOR',    # #define FLOOR(x) floor(x)
+    'CEIL',     # #define CEIL(x) ceil(x)
+    'ABS',      # #define ABS(x) ((x) < 0 ? -(x) : (x))
+    'NAN',      # #define NAN(x) isnan(x)
+    # FPU intrinsics (x87 mnemonic names -> standard C math)
+    'fsin',     # #define fsin(x) sin(x)
+    'fcos',     # #define fcos(x) cos(x)
+    'fptan',    # #define fptan(x) tan(x)
+    'fpatan',   # #define fpatan(y, x) atan2(y, x)
+    'fsqrt',    # #define fsqrt(x) sqrt(x)
+    'fabs',     # #define fabs(x) fabs(x)
+})
+
+
+def is_safe_suspect(suspect):
+    """Check if a suspect is a safe intrinsic that doesn't affect clean status.
+
+    Args:
+        suspect: A suspect dictionary with 'type' and 'match' keys
+
+    Returns:
+        True if this suspect is a safe decompiler intrinsic
+    """
+    return (suspect.get('type') == 'decompiler_intrinsic' and
+            suspect.get('match') in SAFE_INTRINSICS)
+
+
+def has_only_safe_suspects(suspects):
+    """Check if all suspects in a list are safe intrinsics.
+
+    A function with only safe suspects is considered "effectively clean"
+    for reporting purposes.
+
+    Args:
+        suspects: List of suspect dictionaries
+
+    Returns:
+        True if the list is empty or contains only safe intrinsics
+    """
+    if not suspects:
+        return True
+    return all(is_safe_suspect(s) for s in suspects)
+
+
 # Patterns that indicate potential issues in decompiled code
 # Format: (pattern_string, issue_type, description)
 _SUSPECT_PATTERN_DEFS = [

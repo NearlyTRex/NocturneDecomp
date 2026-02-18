@@ -6,17 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 1250,
-    "complexity_score": 1080,
+    "complexity_score": 1055,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 22,
     "pseudocode_lines": 520,
-    "suspect_count": 54,
+    "suspect_count": 52,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
-      "suspect_float",
-      "undefined_data"
+      "suspect_float"
     ],
     "total_lines": 1770
   },
@@ -68,12 +67,12 @@
     {
       "addr": "004c24d0",
       "is_variadic": false,
-      "name": "core_fire.cpp_FUN_004c24d0"
+      "name": "core_fire.cpp_computeScreenSpaceSize_FUN_004c24d0"
     },
     {
       "addr": "005e7830",
       "is_variadic": false,
-      "name": "core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830"
+      "name": "core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830"
     },
     {
       "addr": "005fe6b0",
@@ -269,8 +268,8 @@
     },
     {
       "addr": "02d13564",
-      "name": "DAT_02d13564",
-      "type": "undefined4",
+      "name": "g_TextureAnimCounter1",
+      "type": "int",
       "value": null
     },
     {
@@ -1551,14 +1550,14 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 137,
       "match": "SQRT",
-      "text": "fVar2 = SQRT(local_1a4.z * local_1a4.z + local_1a4.x * local_1a4.x + local_1a4.y * local_1a4.y);",
+      "text": "depth = SQRT(local_1a4.z * local_1a4.z + local_1a4.x * local_1a4.x + local_1a4.y * local_1a4.y);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 184,
       "match": "fcos",
-      "text": "fVar11 = (float10)fcos((float10)*(float *)(this_ptr->unk + 0x3c));",
+      "text": "fVar10 = (float10)fcos((float10)this_ptr->cone_angle);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -1579,7 +1578,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 192,
       "match": "fptan",
-      "text": "fVar11 = (float10)fptan((float10)*(float *)(this_ptr->unk + 0x3c));",
+      "text": "fVar10 = (float10)fptan((float10)this_ptr->cone_angle);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -1691,7 +1690,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 314,
       "match": "fptan",
-      "text": "fVar11 = (float10)fptan((float10)fVar1);",
+      "text": "fVar10 = (float10)fptan((float10)fVar1);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -1705,42 +1704,42 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 333,
       "match": "fsin",
-      "text": "fVar12 = (float10)fsin(fVar11);",
+      "text": "fVar11 = (float10)fsin(fVar10);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 334,
       "match": "fcos",
-      "text": "fVar11 = (float10)fcos(fVar11);",
+      "text": "fVar10 = (float10)fcos(fVar10);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
       "line": 339,
       "match": "(SRenderVertex *)((int)",
-      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar10 * -2 + 1) * 4);",
+      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 340,
       "match": "(SRenderVertex *)((int)",
-      "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar10 * -2 + 1) * 4);",
+      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 349,
       "match": "(SRenderVertex *)((int)",
-      "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar10 * -2 + 1) * 4);",
+      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 350,
       "match": "(SRenderVertex *)((int)",
-      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar10 * -2 + 1) * 4);",
+      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
@@ -1798,20 +1797,6 @@
       "match": "ROUND",
       "text": "local_34 = (int)ROUND(ROUND(local_48));",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 381,
-      "match": "DAT_02d13564",
-      "text": "local_2ac = ((local_20 << 8) / (int)local_24 + DAT_02d13564) * 0x10000;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 383,
-      "match": "DAT_02d13564",
-      "text": "local_294 = (local_30 / (int)local_24 + DAT_02d13564) * 0x10000;",
-      "type": "undefined_data"
     },
     {
       "description": "Decompiler intrinsic (not real C)",

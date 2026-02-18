@@ -175,9 +175,9 @@ int __cdecl CDemonActor::testRayIntersection(CDemonActor *this_ptr,CVector3f *ra
 // Address: 00409470
 float __cdecl CDemonActor::rayIntersect(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_hit_normal,SCollisionInfo *collision_info,int bbox_type,CBoundingBox3D *ray_bbox);
 
-// Original: core_actor.cpp_CDemonActor_getSurfaceProperties_FUN_00409840
+// Original: core_actor.cpp_CDemonActor_onLaserHit_FUN_00409840
 // Address: 00409840
-void __cdecl CDemonActor::getSurfaceProperties(CDemonActor *this_ptr,SSurfaceInfo *surface_info);
+void __cdecl CDemonActor::onLaserHit(CDemonActor *this_ptr,SLaserInfo *laser_info);
 
 // Original: core_actor.cpp_CDemonActor_getBlockVirtualDirectorFlag_FUN_00409880
 // Address: 00409880

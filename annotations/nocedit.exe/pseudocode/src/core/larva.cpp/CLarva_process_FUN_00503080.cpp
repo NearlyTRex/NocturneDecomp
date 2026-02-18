@@ -53,16 +53,12 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
   float local_cc;
   CVector3f local_c8;
   CVector3f local_bc;
-  float local_b0;
-  float local_ac;
-  float local_a8;
+  CVector3f local_b0;
   CVector3f local_a4;
   float local_98;
   float local_94;
   float local_90;
-  float local_8c;
-  float local_88;
-  float local_84;
+  CVector3f local_8c;
   CVector3f local_80;
   CVector3f local_74;
   double local_68;
@@ -121,26 +117,27 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
       local_24 = fVar3 * (float)32 * fVar3;
       fVar15 = fVar16 * (float10)2.0f * fVar16 *
                (fVar15 * (float10)fVar3 - (float10)local_e8);
-      local_ac = (float)-fVar14;
+      local_b0.y = (float)-fVar14;
       local_20 = (float)fVar15;
-      local_b0 = (float)(fVar12 * fVar16);
-      local_a8 = (float)(fVar13 * fVar16);
+      local_b0.x = (float)(fVar12 * fVar16);
+      local_b0.z = (float)(fVar13 * fVar16);
       if ((float10)0 < fVar15) {
         local_1c = SQRT(local_24 / local_20);
-        local_8c = local_b0 * local_1c;
-        local_88 = local_ac * local_1c;
-        local_84 = local_a8 * local_1c;
+        local_8c.x = local_b0.x * local_1c;
+        local_8c.y = local_b0.y * local_1c;
+        local_8c.z = local_b0.z * local_1c;
         if (&local_b0 != &local_8c) {
-          local_b0 = local_8c;
-          local_ac = local_88;
-          local_a8 = local_84;
+          local_b0.x = local_8c.x;
+          local_b0.y = local_8c.y;
+          local_b0.z = local_8c.z;
         }
         local_11c.z = 1.0;
         local_11c.x = 0.0;
         local_11c.y = 0.5;
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   ((CDemonActor *)this_ptr,&local_74,&local_11c);
-        core_fire_cpp_CFireEffect_FUN_004c7db0(g_CFireEffectPtr);
+        core_fire_cpp_CFireEffect_createFireball_FUN_004c7db0
+                  (g_CFireEffectPtr,&local_74,&local_b0,2,0);
         (*((this_ptr->base).base.base.vtable._ub)->playSound)
                   ((CDemonActor *)this_ptr,"larva-blow1.wav");
       }
@@ -179,7 +176,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
         local_54 = local_128.z * local_128.z + local_128.x * local_128.x + local_128.y * local_128.y
         ;
         local_2c = (float)(((int)local_54 >> 1) + INT_02d7a7b8);
-        core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_80,&local_128);
+        core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_80,&local_128);
         in_stack_fffffe10 = (CLarva *)0x503624;
         local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                              (local_80.y - (this_ptr->base).base.base.orient.vec.y);
@@ -246,7 +243,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
           local_40 = (float)(((int)local_44 >> 1) + INT_02d7a7b8);
           if (local_40 < (this_ptr->base).guard_distance) {
             in_stack_fffffe10 = (CLarva *)0x5037db;
-            pCVar10 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+            pCVar10 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                                 (&local_a4,&local_f8);
             if (&local_f8 != pCVar10) {
               local_f8.x = pCVar10->x;

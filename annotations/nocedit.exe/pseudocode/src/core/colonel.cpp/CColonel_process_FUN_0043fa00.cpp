@@ -196,7 +196,7 @@ switchD_0043fe37_caseD_5:
     if ((this_ptr->base).base.grabbed_type == 0) {
       pCVar6 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                          ((CDemonActor *)this_ptr,&local_5c,&(pCVar3->location).position);
-      pCVar6 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_44,pCVar6);
+      pCVar6 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_44,pCVar6);
       local_14 = (CCharacter_full_vtable *)core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar6->y)
       ;
       in_stack_ffffff68 = (float)local_14;

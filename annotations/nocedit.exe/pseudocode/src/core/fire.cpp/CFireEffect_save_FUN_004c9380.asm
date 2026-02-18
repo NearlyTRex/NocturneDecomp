@@ -15,7 +15,7 @@
 ;   TerminatedCString s_s_1_0062a0d3
 ;   CCrater[20] g_CraterPool
 ;   undefined4 DAT_02d6c714
-;   CCrater* g_CraterActiveListHead
+;   int g_GunFlameAllocIndex
 ;
 ; Called Functions:
 ;   core_fire.cpp_CCrater_save_FUN_004c49c0
@@ -38,7 +38,7 @@ section .text
     PUSH 0x62a0d3                       ; 004c9395 | = "1\n"
     MOV EBX,0x2d6c6a4                   ; 004c939a | g_CraterPool
     PUSH ESI                            ; 004c939f
-    LEA EDI,[EBX + 0x8c0]               ; 004c93a0 | g_CraterActiveListHead
+    LEA EDI,[EBX + 0x8c0]               ; 004c93a0 | g_GunFlameAllocIndex
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004c93a6
         ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 004c93ab

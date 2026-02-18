@@ -31,7 +31,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0
-;   core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180
+;   core_setcolid.cpp_CDemonSet_init_FUN_00574180
 ;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0
 ;
 ; *****************************************************************************
@@ -113,8 +113,8 @@ section .text
     MOV EDI,dword ptr [0x006810c8]      ; 0040c9b7 | g_CDemonSetPtr
     PUSH EDI                            ; 0040c9bd | g_CDemonSetInstance
     FSTP float ptr [ESP + 0x28]         ; 0040c9be
-    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 0040c9c2
-        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_init_FUN_00574180 ; 0040c9c2
+        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00574180(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0040c9c7
     FLD float ptr [ESP + 0x24]          ; 0040c9ca
     FADD double ptr [0x006142c0]        ; 0040c9ce | DOUBLE_006142c0

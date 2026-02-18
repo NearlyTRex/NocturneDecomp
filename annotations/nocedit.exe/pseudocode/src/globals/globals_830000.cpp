@@ -18,13 +18,11 @@ CDemonActorType g_CColonelClassInfo = {};
 CDemonActorType g_CConveyorClassInfo = {};
 CDemonActorType g_CZombieCowClassInfo = {};
 
+// CVector3f
+CVector3f CVector3f_00838e40 = {};
+CVector3f CVector3f_00838e4c = {};
+
 // int
-int INT_00838e40 = {};
-int INT_00838e44 = {};
-int INT_00838e48 = {};
-int INT_00838e4c = {};
-int INT_00838e50 = {};
-int INT_00838e54 = {};
 int INT_0083b124 = {};
 int INT_0083b128 = {};
 int INT_0083b12c = {};

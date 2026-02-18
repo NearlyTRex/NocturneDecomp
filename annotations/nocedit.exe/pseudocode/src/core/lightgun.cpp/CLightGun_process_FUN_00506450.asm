@@ -159,7 +159,7 @@ section .text
     PUSH 0x3dcccccd                     ; 005065b0
     PUSH ESI                            ; 005065b5 | g_CWeatherInstance
     CALL core_weather.cpp_CWeather_createLightningStrike_FUN_005eeeb0 ; 005065b6
-        ;   XREF to: 005eeeb0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_createLightningStrike_FUN_005eeeb0(CWeather * this_ptr, float param_2, int param_3)
+        ;   XREF to: 005eeeb0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_createLightningStrike_FUN_005eeeb0(CWeather * this_ptr, float flash_timer, int play_sound)
     ADD ESP,0xc                         ; 005065bb
     PUSH 0x2d7eaf0                      ; 005065be | g_CDemonLightInstance
         ;   Label: LAB_005065be

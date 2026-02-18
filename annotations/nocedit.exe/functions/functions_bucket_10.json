@@ -37602,7 +37602,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_fire.cpp_CFireEffect_FUN_004c8c90",
+    "name":"core_fire.cpp_CFireEffect_checkExplosionDamage_FUN_004c8c90",
     "ret":"int",
     "vars":{
       "locals":[
@@ -37847,6 +37847,70 @@
             ]
           },
           "type":"CFireEffect*"
+        },
+        {
+          "name":"position",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"radius",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"out_force_dir",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"out_damage",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
         }
       ],
       "ret_storage":{
@@ -37872,7 +37936,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_fire.cpp_CFireEffect_FUN_004c9290",
+    "name":"core_fire.cpp_CFireEffect_createRainDrop_FUN_004c9290",
     "ret":"void",
     "vars":{
       "params":[
@@ -37891,6 +37955,38 @@
             ]
           },
           "type":"CFireEffect*"
+        },
+        {
+          "name":"position",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"velocity",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
         }
       ]
     }
@@ -91370,7 +91466,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_vehicle.cpp_staticInit_FUN_005e7810",
+    "name":"core_vecdir.cpp_staticInit_FUN_005e7810",
     "ret":"void"
   },
   {
@@ -91870,7 +91966,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_wateract.cpp_CWaterActor_getSurfaceProperties_FUN_005eb910",
+    "name":"core_wateract.cpp_CWaterActor_onLaserHit_FUN_005eb910",
     "ret":"void",
     "vars":{
       "params":[
@@ -91891,7 +91987,7 @@
           "type":"CWaterActor*"
         },
         {
-          "name":"surface_info",
+          "name":"laser_info",
           "storage":{
             "offset":8,
             "size":4,
@@ -91904,7 +92000,7 @@
               }
             ]
           },
-          "type":"SSurfaceInfo*"
+          "type":"SLaserInfo*"
         }
       ]
     }
@@ -92415,7 +92511,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_weather.cpp_CWeather_FUN_005ef190",
+    "name":"core_weather.cpp_CWeather_renderParticles_FUN_005ef190",
     "ret":"void",
     "vars":{
       "locals":[

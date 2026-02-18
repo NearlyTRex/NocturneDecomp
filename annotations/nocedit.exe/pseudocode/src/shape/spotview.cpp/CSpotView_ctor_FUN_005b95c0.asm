@@ -18,7 +18,7 @@
 ;   float FLOAT_03f6ba20
 ;
 ; Called Functions:
-;   shape_spotview.cpp_CSpotView_FUN_005b9620
+;   shape_spotview.cpp_CSpotView_reset_FUN_005b9620
 ;
 ; *****************************************************************************
 
@@ -47,8 +47,8 @@ section .text
     FSTP float ptr [EBX + 0x8]          ; 005b9605
     FSTP float ptr [EBX + 0xc]          ; 005b9608
     MOV dword ptr [EBX + 0x14],0x0      ; 005b960b
-    CALL shape_spotview.cpp_CSpotView_FUN_005b9620 ; 005b9612
-        ;   XREF to: 005b9620 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_FUN_005b9620(CSpotView * this_ptr)
+    CALL shape_spotview.cpp_CSpotView_reset_FUN_005b9620 ; 005b9612
+        ;   XREF to: 005b9620 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_reset_FUN_005b9620(CSpotView * this_ptr, uint control_flags)
     ADD ESP,0x8                         ; 005b9617
     MOV EAX,EBX                         ; 005b961a
     POP EBX                             ; 005b961c

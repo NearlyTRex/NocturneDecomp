@@ -58,7 +58,7 @@ CDemonSet * __cdecl core_set_cpp_CDemonSet_ctor_FUN_005690c0(CDemonSet *this_ptr
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(this_ptr_00);
+  core_setcolid_cpp_CDemonSet_init_FUN_00574180(this_ptr_00);
   *(uint *)((int)pvVar2 + 0x42cc) = 0;
   *(uint *)((int)pvVar2 + -0x768) = 0;
   *(uint *)((int)pvVar2 + 17000) = 2;

@@ -23,6 +23,8 @@ void __cdecl core_fire_cpp_CGunFlame_render_FUN_004c50b0(CGunFlame *this_ptr)
   float10 fVar9;
   float10 fVar10;
   float10 fVar11;
+  float10 fVar12;
+  float10 fVar13;
   float local_d0;
   SMRGLHeaderPrimitive local_c4;
   uint local_ac;
@@ -47,44 +49,42 @@ void __cdecl core_fire_cpp_CGunFlame_render_FUN_004c50b0(CGunFlame *this_ptr)
   float local_1c;
   int local_18;
   
-  if (*(float *)this_ptr->unk <= 0.0) {
+  if (this_ptr->lifetime <= 0.0) {
     return;
   }
-  local_28 = (float)(int)ROUND(ROUND(*(float *)(this_ptr->unk + 0x1c)));
+  local_28 = (float)(int)ROUND(ROUND(this_ptr->anim_frame));
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr2,g_GunFlameTextures + (int)local_28);
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-            (g_CDemonRendererPtr2,(CVector3f *)(this_ptr->unk + 4));
+            (g_CDemonRendererPtr2,&this_ptr->position);
   engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
             (g_CDemonRendererPtr2,(float *)&local_84);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr2,&local_84,(CVector3i *)0x0);
-  fVar11 = ((float10)2.0f - (float10)*(float *)this_ptr->unk) / (float10)2.0f;
-  fVar1 = (float)fVar11;
-  fVar2 = (float)(fVar11 * (float10)4 + (float10)0.40000000000000002);
+  fVar13 = ((float10)2.0f - (float10)this_ptr->lifetime) / (float10)2.0f;
+  fVar1 = (float)fVar13;
+  fVar2 = (float)(fVar13 * (float10)4 + (float10)0.40000000000000002);
   local_d0 = fVar2;
-  if ((float10)(double)fVar11 < (float10)0.40000000000000002) {
+  if ((float10)(double)fVar13 < (float10)0.40000000000000002) {
     pfVar7 = engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
                        (g_CDemonRendererPtr2,local_90);
-    local_9c = *pfVar7 - ((CVector3f *)(this_ptr->unk + 4))->x;
-    fVar8 = (float10)pfVar7[1] - (float10)*(float *)(this_ptr->unk + 8);
+    local_9c = *pfVar7 - (this_ptr->position).x;
+    fVar8 = (float10)pfVar7[1] - (float10)(this_ptr->position).y;
     local_98 = (float)fVar8;
-    fVar9 = (float10)pfVar7[2] - (float10)*(float *)(this_ptr->unk + 0xc);
+    fVar9 = (float10)pfVar7[2] - (float10)(this_ptr->position).z;
     local_94 = (float)fVar9;
-    fVar10 = (float10)*(float *)(this_ptr->unk + 0x10);
+    fVar10 = (float10)(this_ptr->velocity).y;
+    fVar11 = (float10)(this_ptr->velocity).x;
+    fVar12 = (float10)(this_ptr->velocity).z;
     local_d0 = (float)(((float10)1 +
                        ((float10)1 -
-                       ABS((float10)local_94 * (float10)*(float *)(this_ptr->unk + 0x18) +
-                           (float10)local_9c * (float10)*(float *)(this_ptr->unk + 0x10) +
-                           (float10)local_98 * (float10)*(float *)(this_ptr->unk + 0x14)) /
-                       (SQRT((float10)*(float *)(this_ptr->unk + 0x18) *
-                             (float10)*(float *)(this_ptr->unk + 0x18) +
-                             fVar10 * fVar10 +
-                             (float10)*(float *)(this_ptr->unk + 0x14) *
-                             (float10)*(float *)(this_ptr->unk + 0x14)) *
+                       ABS((float10)local_94 * (float10)(this_ptr->velocity).z +
+                           (float10)local_9c * (float10)(this_ptr->velocity).x +
+                           (float10)local_98 * (float10)(this_ptr->velocity).y) /
+                       (SQRT(fVar12 * fVar12 + fVar11 * fVar11 + fVar10 * fVar10) *
                        SQRT(fVar9 * (float10)local_94 +
                             (float10)local_9c * (float10)local_9c + fVar8 * (float10)local_98))) *
-                       ((float10)1 - (float10)(double)fVar11 * (float10)2.5) *
+                       ((float10)1 - (float10)(double)fVar13 * (float10)2.5) *
                        (float10)2) * (float10)fVar2);
   }
   local_74 = fVar2 * 128.0f * (float)0.00390625;

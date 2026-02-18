@@ -129,7 +129,7 @@ LAB_00558aeb:
   CStack_84.x = CStack_9c.x - pCVar5->x;
   CStack_84.y = CStack_9c.y - pCVar5->y;
   CStack_84.z = CStack_9c.z - pCVar5->z;
-  core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_54,&CStack_84);
+  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_54,&CStack_84);
   local_13c = CStack_54.x;
   local_2c = CStack_54.y;
 LAB_005587bd:

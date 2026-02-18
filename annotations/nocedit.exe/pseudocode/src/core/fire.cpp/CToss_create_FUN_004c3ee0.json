@@ -6,23 +6,22 @@
   },
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 169,
+    "complexity_score": 50,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 5,
-    "pseudocode_lines": 49,
-    "suspect_count": 11,
+    "pseudocode_lines": 35,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
-      "stack_param"
+      "param_count_too_few"
     ],
-    "total_lines": 145
+    "total_lines": 131
   },
   "cross_references": [
     {
       "addr": "004c8e40",
       "from_addr": "004c8e6e",
-      "name": "core_fire.cpp_CFireEffect_FUN_004c8e40",
+      "name": "core_fire.cpp_CFireEffect_allocateToss_FUN_004c8e40",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -36,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_fire.cpp_CToss_create_FUN_004c3ee0",
-    "signature": "void __cdecl core_fire_cpp_CToss_create_FUN_004c3ee0(CToss *this_ptr)"
+    "signature": "void __cdecl core_fire_cpp_CToss_create_FUN_004c3ee0(CToss *this_ptr,int toss_type,CVector3f *position,UOrientationVector *orientation,CVector3f *velocity,float fuse_time)"
   },
   "function_calls": [
     {
@@ -108,7 +107,7 @@
       {
         "call_addr": "004c8e6e",
         "call_type": "direct",
-        "caller": "core_fire.cpp_CFireEffect_FUN_004c8e40",
+        "caller": "core_fire.cpp_CFireEffect_allocateToss_FUN_004c8e40",
         "estimated_params": 10,
         "instructions_analyzed": 17,
         "reg_params": [],
@@ -116,7 +115,7 @@
       }
     ],
     "confidence": "low",
-    "declared_params": 1,
+    "declared_params": 6,
     "estimated_params": 10
   },
   "pcode_summary": {
@@ -156,10 +155,10 @@
     "pcode_op_count": 412
   },
   "stack_frame": {
-    "frame_size": 52,
+    "frame_size": 72,
     "local_size": 48,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 24,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -217,89 +216,54 @@
         "offset": 4,
         "size": 4,
         "type": "CToss *"
+      },
+      {
+        "is_param": true,
+        "name": "toss_type",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "orientation",
+        "offset": 16,
+        "size": 4,
+        "type": "UOrientationVector *"
+      },
+      {
+        "is_param": true,
+        "name": "velocity",
+        "offset": 20,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "fuse_time",
+        "offset": 24,
+        "size": 4,
+        "type": "float"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 7,
-      "match": "in_stack_00000008",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_0000000c",
-      "text": "CVector3f *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000010",
-      "text": "CVector3f *in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000014",
-      "text": "CVector3f *in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000018",
-      "text": "uint in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000008",
-      "text": "this_ptr->unk1 = in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000018",
-      "text": "*(uint *)(this_ptr->unk2 + 0x25c) = in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 45,
-      "match": "in_stack_0000000c",
-      "text": "((CBox *)this_ptr->unk2,in_stack_0000000c,in_stack_00000010,&local_2c,local_14);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 45,
-      "match": "in_stack_00000010",
-      "text": "((CBox *)this_ptr->unk2,in_stack_0000000c,in_stack_00000010,&local_2c,local_14);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 49,
-      "match": "in_stack_00000014",
-      "text": "core_box_cpp_CBox_setupVelocities_FUN_00420180((CBox *)this_ptr->unk2,in_stack_00000014,&local_20)",
-      "type": "stack_param"
-    },
-    {
       "call_site_count": 1,
-      "declared_params": 1,
+      "declared_params": 6,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 10,
       "fix_type": "add_params",
-      "match": "declared:1 vs estimated:10",
-      "param_delta": 9,
-      "text": "Function declares 1 params but call sites push 10 (9 missing)",
+      "match": "declared:6 vs estimated:10",
+      "param_delta": 4,
+      "text": "Function declares 6 params but call sites push 10 (4 missing)",
       "type": "param_count_too_few"
     }
   ]

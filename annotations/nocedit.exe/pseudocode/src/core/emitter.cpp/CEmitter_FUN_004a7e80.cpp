@@ -26,12 +26,8 @@ void __cdecl core_emitter_cpp_CEmitter_FUN_004a7e80(CEmitter *this_ptr)
   float local_60;
   float local_5c;
   float local_58;
-  float local_54;
-  float local_50;
-  float local_4c;
-  float local_48;
-  float local_44;
-  float local_40;
+  CVector3f local_54;
+  CVector3f local_48;
   double dStack_3c;
   float local_18;
   float local_14;
@@ -63,20 +59,21 @@ void __cdecl core_emitter_cpp_CEmitter_FUN_004a7e80(CEmitter *this_ptr)
   dStack_3c = (double)fVar1;
   local_18 = fVar1 * (float)32 * fVar1;
   fVar4 = fVar5 * (float10)2.0f * fVar5 * (fVar4 * (float10)fVar1 - (float10)local_68);
-  local_44 = (float)-fVar3;
-  local_48 = (float)(fVar6 * fVar5);
-  local_40 = (float)(fVar7 * fVar5);
+  local_48.y = (float)-fVar3;
+  local_48.x = (float)(fVar6 * fVar5);
+  local_48.z = (float)(fVar7 * fVar5);
   if ((float10)0 < fVar4) {
     local_14 = SQRT(local_18 / (float)fVar4);
-    local_54 = local_48 * local_14;
-    local_50 = local_44 * local_14;
-    local_4c = local_40 * local_14;
+    local_54.x = local_48.x * local_14;
+    local_54.y = local_48.y * local_14;
+    local_54.z = local_48.z * local_14;
     if (&local_48 != &local_54) {
-      local_48 = local_54;
-      local_44 = local_50;
-      local_40 = local_4c;
+      local_48.x = local_54.x;
+      local_48.y = local_54.y;
+      local_48.z = local_54.z;
     }
-    core_fire_cpp_CFireEffect_FUN_004c7db0(g_CFireEffectPtr);
+    core_fire_cpp_CFireEffect_createFireball_FUN_004c7db0
+              (g_CFireEffectPtr,&(this_ptr->base).location.position,&local_48,0,0);
   }
   return;
 }

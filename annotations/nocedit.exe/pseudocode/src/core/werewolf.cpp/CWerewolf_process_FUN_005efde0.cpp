@@ -361,8 +361,8 @@ LAB_005f0ae7:
             }
             pCVar1 = &(this_ptr->base).base.model;
             if (local_1c < local_28) {
-              core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-                        (&local_170,&local_bc);
+              core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_170,&local_bc)
+              ;
               actor_ptr = (CWerewolf *)0x5f0f40;
               local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                                    (local_170.y - (this_ptr->base).base.base.orient.vec.y);

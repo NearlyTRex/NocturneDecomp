@@ -2612,8 +2612,8 @@ section .text
     XOR EBX,EBX                         ; 004af8e2
     PUSH EAX                            ; 004af8e4
     MOV dword ptr [ESP + 0x98c],EBX     ; 004af8e5
-    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 004af8ec
-        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 004af8ec
+        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     FLD float ptr [EAX + 0x4]           ; 004af8f1
     FABS                                ; 004af8f4
     ADD ESP,0x8                         ; 004af8f6

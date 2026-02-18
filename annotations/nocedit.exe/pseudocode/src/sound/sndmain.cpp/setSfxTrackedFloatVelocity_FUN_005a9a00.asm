@@ -8,7 +8,7 @@
 ; CVector3f *      Stack[0x8]:4   velocity_source_ptr
 ;
 ; XREF[1]:
-;   core_fire.cpp_CFireEffect_FUN_004c7db0 at 004c7e44
+;   core_fire.cpp_CFireEffect_createFireball_FUN_004c7db0 at 004c7e44
 ;
 ; Referenced Globals:
 ;   CSoundDevice* g_CSoundDevicePtr

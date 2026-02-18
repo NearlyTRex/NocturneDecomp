@@ -201,8 +201,8 @@
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
 ;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
-;   core_fire.cpp_FUN_004c24d0
-;   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+;   core_fire.cpp_computeScreenSpaceSize_FUN_004c24d0
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 ;   crt_math.c_round_FUN_005fe6b0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
@@ -247,8 +247,8 @@ section .text
     LEA EAX,[ESP + 0x278]               ; 004c260d
     PUSH EAX                            ; 004c2614
     FSTP float ptr [ESP + 0x17c]        ; 004c2615
-    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 004c261c
-        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 004c261c
+        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 004c2621
     FLD float ptr [ESP + 0x170]         ; 004c2624
     FMUL ST0                            ; 004c262b
@@ -781,16 +781,16 @@ section .text
         ;   Label: LAB_004c2e15
     PUSH dword ptr [EAX + 0x38]         ; 004c2e18
     PUSH 0x0                            ; 004c2e1b
-    CALL core_fire.cpp_FUN_004c24d0     ; 004c2e1d
-        ;   XREF to: 004c24d0 (UNCONDITIONAL_CALL)  ; float core_fire.cpp_FUN_004c24d0()
+    CALL core_fire.cpp_computeScreenSpaceSize_FUN_004c24d0 ; 004c2e1d
+        ;   XREF to: 004c24d0 (UNCONDITIONAL_CALL)  ; float core_fire.cpp_computeScreenSpaceSize_FUN_004c24d0(float depth, float min_size)
     MOV dword ptr [ESP + 0x300],EAX     ; 004c2e22
     FLD float ptr [ESP + 0x300]         ; 004c2e29
     ADD ESP,0x8                         ; 004c2e30
     PUSH dword ptr [ESP + 0x2bc]        ; 004c2e33
     PUSH dword ptr [ESP + 0x28]         ; 004c2e3a
     FSTP float ptr [ESP + 0x2dc]        ; 004c2e3e
-    CALL core_fire.cpp_FUN_004c24d0     ; 004c2e45
-        ;   XREF to: 004c24d0 (UNCONDITIONAL_CALL)  ; float core_fire.cpp_FUN_004c24d0()
+    CALL core_fire.cpp_computeScreenSpaceSize_FUN_004c24d0 ; 004c2e45
+        ;   XREF to: 004c24d0 (UNCONDITIONAL_CALL)  ; float core_fire.cpp_computeScreenSpaceSize_FUN_004c24d0(float depth, float min_size)
     MOV dword ptr [ESP + 0x300],EAX     ; 004c2e4a
     FLD float ptr [ESP + 0x300]         ; 004c2e51
     ADD ESP,0x8                         ; 004c2e58
@@ -1152,7 +1152,7 @@ section .text
     MOV EAX,EDX                         ; 004c3395
     SAR EDX,0x1f                        ; 004c3397
     IDIV ECX                            ; 004c339a
-    MOV EBX,dword ptr [0x02d13564]      ; 004c339c | DAT_02d13564
+    MOV EBX,dword ptr [0x02d13564]      ; 004c339c | g_TextureAnimCounter1
     ADD EAX,EBX                         ; 004c33a2
     SHL EAX,0x10                        ; 004c33a4
     MOV dword ptr [ESP + 0x58],EAX      ; 004c33a7
@@ -1233,8 +1233,8 @@ section .text
     FSUB float ptr [ESP + 0x208]        ; 004c34bc
     PUSH EAX                            ; 004c34c3
     FSTP float ptr [ESP + 0x1f4]        ; 004c34c4
-    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 004c34cb
-        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 004c34cb
+        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     MOV EDX,EAX                         ; 004c34d0
     LEA EAX,[ESP + 0x27c]               ; 004c34d2
     ADD ESP,0x8                         ; 004c34d9

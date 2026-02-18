@@ -69,10 +69,10 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
-;   core_fire.cpp_CFireEffect_FUN_004c8230
+;   core_fire.cpp_CFireEffect_traceLaser_FUN_004c8230
 ;   core_fire.cpp_SLaserInfo_ctor_FUN_004c81f0
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0
-;   core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180
+;   core_setcolid.cpp_CDemonSet_init_FUN_00574180
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
 ;
 ; *****************************************************************************
@@ -131,8 +131,8 @@ section .text
     ADD ESP,0xc                         ; 005ee8a2
     MOV EDI,dword ptr [0x006810c8]      ; 005ee8a5 | g_CDemonSetPtr
     PUSH EDI                            ; 005ee8ab | g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 005ee8ac
-        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_init_FUN_00574180 ; 005ee8ac
+        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00574180(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 005ee8b1
     PUSH EBX                            ; 005ee8b4
     MOV EAX,[0x006810c8]                ; 005ee8b5 | g_CDemonSetInstance | g_CDemonSetPtr
@@ -228,13 +228,13 @@ section .text
     PUSH EAX                            ; 005ee9be | g_CFireEffectInstance
     MOV dword ptr [EBP + 0x12],EBX      ; 005ee9bf
     MOV dword ptr [EBP + -0x42],EBX     ; 005ee9c2
-    CALL core_fire.cpp_CFireEffect_FUN_004c8230 ; 005ee9c5
-        ;   XREF to: 004c8230 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c8230(CFireEffect * this_ptr)
+    CALL core_fire.cpp_CFireEffect_traceLaser_FUN_004c8230 ; 005ee9c5
+        ;   XREF to: 004c8230 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_traceLaser_FUN_004c8230(CFireEffect * this_ptr, CVector3f * origin, CVector3f * direction, SLaserInfo * laser_info, ...)
     ADD ESP,0x14                        ; 005ee9ca
     MOV EDX,dword ptr [0x006810c8]      ; 005ee9cd | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EDX                            ; 005ee9d3 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 005ee9d4
-        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_init_FUN_00574180 ; 005ee9d4
+        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00574180(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 005ee9d9
     LEA ESP,[EBP + 0x7e]                ; 005ee9dc
     POP EBP                             ; 005ee9df

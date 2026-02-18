@@ -49,7 +49,7 @@ void __cdecl shape_cramtex_cpp_placementCollisionCheck_FUN_00448260(int layer_id
       } while (-1 < iVar3);
     }
     if (iVar3 < 0) {
-      local_14->reserved_0x18 = 0;
+      local_14->unk1 = 0;
       local_14->active_flag = 1;
       local_14->left = layer_id;
       local_14->top = start_x;

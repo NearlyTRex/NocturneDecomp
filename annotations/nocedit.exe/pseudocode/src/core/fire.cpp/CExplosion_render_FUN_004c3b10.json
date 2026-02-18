@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 250,
-    "complexity_score": 330,
+    "complexity_score": 338,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 11,
-    "pseudocode_lines": 100,
-    "suspect_count": 22,
+    "pseudocode_lines": 98,
+    "suspect_count": 23,
     "suspect_types": [
       "decompiler_intrinsic",
       "suspect_float"
     ],
-    "total_lines": 350
+    "total_lines": 348
   },
   "cross_references": [
     {
@@ -426,154 +426,161 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
-      "match": "ROUND",
-      "text": "local_1c = (int)ROUND(ROUND((1.0 - *(float *)(this_ptr->unk + 0xc)) * (float)27));",
+      "line": 27,
+      "match": "ABS",
+      "text": "if (ABS(this_ptr->lifetime) == 0.0) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 30,
       "match": "ROUND",
-      "text": "local_1c = (int)ROUND(ROUND((1.0 - *(float *)(this_ptr->unk + 0xc)) * (float)27));",
+      "text": "local_1c = (int)ROUND(ROUND((1.0 - this_ptr->lifetime) * (float)27));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 30,
+      "match": "ROUND",
+      "text": "local_1c = (int)ROUND(ROUND((1.0 - this_ptr->lifetime) * (float)27));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 39,
       "match": "ROUND",
-      "text": "local_10 = (int)ROUND(ROUND(*(float *)(this_ptr->unk + 0x10) * (float)148 *",
+      "text": "local_10 = (int)ROUND(ROUND(this_ptr->scale * (float)148 * (float)0.00390625));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 39,
       "match": "ROUND",
-      "text": "local_10 = (int)ROUND(ROUND(*(float *)(this_ptr->unk + 0x10) * (float)148 *",
+      "text": "local_10 = (int)ROUND(ROUND(this_ptr->scale * (float)148 * (float)0.00390625));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
+      "line": 40,
       "match": "ROUND",
-      "text": "local_14 = (int)ROUND(ROUND(-*(float *)(this_ptr->unk + 0x10) * 108.0f *",
+      "text": "local_14 = (int)ROUND(ROUND(-this_ptr->scale * 108.0f * (float)0.00390625));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
+      "line": 40,
       "match": "ROUND",
-      "text": "local_14 = (int)ROUND(ROUND(-*(float *)(this_ptr->unk + 0x10) * 108.0f *",
+      "text": "local_14 = (int)ROUND(ROUND(-this_ptr->scale * 108.0f * (float)0.00390625));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 51,
+      "line": 49,
       "match": "ROUND",
       "text": "local_28.x = (int)ROUND(local_34 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
+      "line": 50,
       "match": "ROUND",
       "text": "local_28.y = (int)ROUND(local_30 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 53,
+      "line": 51,
       "match": "ROUND",
       "text": "local_28.z = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 59,
+      "line": 57,
       "match": "ROUND",
       "text": "local_4c.x = (int)ROUND(local_34 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 60,
+      "line": 58,
       "match": "ROUND",
       "text": "local_4c.y = (int)ROUND(local_30 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
+      "line": 59,
       "match": "ROUND",
       "text": "local_4c.z = (int)ROUND(local_2c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 65,
+      "line": 63,
       "match": "ROUND",
       "text": "local_40.x = (int)ROUND(local_34 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 66,
+      "line": 64,
       "match": "ROUND",
       "text": "local_40.y = (int)ROUND(local_30 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 67,
+      "line": 65,
       "match": "ROUND",
       "text": "local_40.z = (int)ROUND(local_2c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 71,
+      "line": 69,
       "match": "ROUND",
       "text": "local_64.x = (int)ROUND(local_18 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 72,
+      "line": 70,
       "match": "ROUND",
       "text": "local_64.y = (int)ROUND(local_30 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 73,
+      "line": 71,
       "match": "ROUND",
       "text": "local_64.z = (int)ROUND(local_2c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 85,
+      "line": 83,
       "match": "4.59177e-41",
       "text": "this_ptr_00->vertex_buffer_ptr->w_recip = 4.59177e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 86,
+      "line": 84,
       "match": "4.59177e-41",
       "text": "this_ptr_00->vertex_buffer_ptr[1].w_recip = 4.59177e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 87,
+      "line": 85,
       "match": "4.59177e-41",
       "text": "this_ptr_00->vertex_buffer_ptr[2].w_recip = 4.59177e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 88,
+      "line": 86,
       "match": "4.59177e-41",
       "text": "this_ptr_00->vertex_buffer_ptr[3].w_recip = 4.59177e-41;",
       "type": "suspect_float"

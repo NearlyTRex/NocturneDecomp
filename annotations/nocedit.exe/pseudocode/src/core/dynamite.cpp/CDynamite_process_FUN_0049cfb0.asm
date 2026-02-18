@@ -23,7 +23,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_randomChance_FUN_0040cd10
-;   core_fire.cpp_CFireEffect_FUN_004c79d0
+;   core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0
 ;   core_sound.cpp_CSound_killSound_FUN_005b3b90
 ;   core_weapon.cpp_CWeapon_process_FUN_005ee110
 ;
@@ -160,8 +160,8 @@ section .text
     PUSH EAX                            ; 0049d105
     MOV EDX,dword ptr [0x0067a3d0]      ; 0049d106 | g_CFireEffectInstance | g_CFireEffectPtr
     PUSH EDX                            ; 0049d10c | g_CFireEffectInstance
-    CALL core_fire.cpp_CFireEffect_FUN_004c79d0 ; 0049d10d
-        ;   XREF to: 004c79d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c79d0(CFireEffect * this_ptr)
+    CALL core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0 ; 0049d10d
+        ;   XREF to: 004c79d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int intensity_target, ...)
     ADD ESP,0x1c                        ; 0049d112
     MOV ESP,EBP                         ; 0049d115
     POP EBP                             ; 0049d117

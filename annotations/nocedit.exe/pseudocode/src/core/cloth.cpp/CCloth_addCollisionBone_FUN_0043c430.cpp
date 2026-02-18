@@ -89,8 +89,7 @@ void __cdecl core_cloth_cpp_CCloth_addCollisionBone_FUN_0043c430(CCloth *this_pt
     this_ptr->collide_bone_count = this_ptr->collide_bone_count + 1;
   }
   core_cloth_cpp_CCloth_setup_FUN_00439710
-            (this_ptr,(CVector3f *)&INT_00838e40,(CVector3f *)&INT_00838e4c,
-             &g_CDeformableModelInstanceInstance);
+            (this_ptr,&CVector3f_00838e40,&CVector3f_00838e4c,&g_CDeformableModelInstanceInstance);
   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffffb34,0);
   return;
 }

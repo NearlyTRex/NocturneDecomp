@@ -56,7 +56,7 @@ int __cdecl core_gabriela_cpp_CGabriella_FUN_004d5c60(CGabriella *this_ptr)
                   ((CDemonActor *)this_ptr,&local_90,&(this_ptr_00->location).position);
         if ((ABS(local_90.x) <= (float)0.29999999999999999) &&
            (((float)0.5 <= local_90.z && ((double)local_90.z <= 3)))) {
-          pCVar1 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+          pCVar1 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                              (&local_54,&local_90);
           local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar1->y);
           if (ABS(local_18) <= (float)0.17453292519444399) {
@@ -75,7 +75,7 @@ int __cdecl core_gabriela_cpp_CGabriella_FUN_004d5c60(CGabriella *this_ptr)
             if (((ABS(local_90.x) <= (float)0.29999999999999999) &&
                 ((float)0.5 <= local_90.z)) && ((double)local_90.z <= 3))
             {
-              pCVar1 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+              pCVar1 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                                  (&local_30,&local_90);
               local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar1->y);
               if (ABS(local_18) <= (float)0.17453292519444399) {
@@ -100,7 +100,7 @@ int __cdecl core_gabriela_cpp_CGabriella_FUN_004d5c60(CGabriella *this_ptr)
                              (this_ptr->base).base.base.location.position.y;
                 local_48.z = (local_24->location).position.z -
                              (this_ptr->base).base.base.location.position.z;
-                pCVar1 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+                pCVar1 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                                    (&local_3c,&local_48);
                 (this_ptr->base).base.base.orient.vec.y = pCVar1->y;
                 core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10

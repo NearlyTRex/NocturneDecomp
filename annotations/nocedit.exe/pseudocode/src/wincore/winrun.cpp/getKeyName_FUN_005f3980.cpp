@@ -2,323 +2,322 @@
 // Address: 005f3980
 // Address Range: [[005f3980, 005f3fd9]]
 // Convention: __cdecl
-// Signature: char * __cdecl wincore_winrun_cpp_getKeyName_FUN_005f3980(int keycode)
+// Signature: char * __cdecl wincore_winrun_cpp_getKeyName_FUN_005f3980(EInputCodeType keycode)
 
 #include "nocturne.h"
 
-char * __cdecl wincore_winrun_cpp_getKeyName_FUN_005f3980(int keycode)
+char * __cdecl wincore_winrun_cpp_getKeyName_FUN_005f3980(EInputCodeType keycode)
 
 {
   int iVar1;
   
-  if ((keycode < 0x200) &&
-     (iVar1 = (*g_GetKeyNameTextAFunc)((keycode & 0x1ffU) << 0x10,g_KeyNameBuffer,200), 0 < iVar1))
-  {
+  if (((int)keycode < 0x200) &&
+     (iVar1 = (*g_GetKeyNameTextAFunc)((keycode & 0x1ff) << 0x10,g_KeyNameBuffer,200), 0 < iVar1)) {
     return g_KeyNameBuffer;
   }
-  if ((uint)keycode < 0x34) {
-    if (0x18 < (uint)keycode) {
-      if ((uint)keycode < 0x1a) {
+  if (keycode < DIK_PERIOD) {
+    if (DIK_O < keycode) {
+      if (keycode < DIK_LBRACKET) {
         return "P";
       }
-      if ((uint)keycode < 0x26) {
-        if ((uint)keycode < 0x1f) {
-          if ((uint)keycode < 0x1c) {
-            if ((uint)keycode < 0x1b) {
+      if (keycode < DIK_L) {
+        if (keycode < DIK_S) {
+          if (keycode < DIK_RETURN) {
+            if (keycode < DIK_RBRACKET) {
               return "[";
             }
             return "]";
           }
-          if (0x1c < (uint)keycode) {
-            if ((uint)keycode < 0x1e) {
+          if (DIK_RETURN < keycode) {
+            if (keycode < DIK_A) {
               return "LeftCtrl";
             }
             return "A";
           }
           return "Enter";
         }
-        if ((uint)keycode < 0x20) {
+        if (keycode < DIK_D) {
           return "S";
         }
-        if (0x21 < (uint)keycode) {
-          if ((uint)keycode < 0x23) {
+        if (DIK_F < keycode) {
+          if (keycode < DIK_H) {
             return "G";
           }
-          if ((uint)keycode < 0x24) {
+          if (keycode < DIK_J) {
             return "H";
           }
-          if ((uint)keycode < 0x25) {
+          if (keycode < DIK_K) {
             return "J";
           }
           return "K";
         }
-        if ((uint)keycode < 0x21) {
+        if (keycode < DIK_F) {
           return "D";
         }
         return "F";
       }
-      if ((uint)keycode < 0x27) {
+      if (keycode < DIK_SEMICOLON) {
         return "L";
       }
-      if ((uint)keycode < 0x2d) {
-        if ((uint)keycode < 0x29) {
-          if ((uint)keycode < 0x28) {
+      if (keycode < DIK_X) {
+        if (keycode < DIK_GRAVE) {
+          if (keycode < DIK_APOSTROPHE) {
             return ";";
           }
           return "'";
         }
-        if ((uint)keycode < 0x2a) {
+        if (keycode < DIK_LSHIFT) {
           return "`";
         }
-        if ((uint)keycode < 0x2b) {
+        if (keycode < DIK_BACKSLASH) {
           return "LeftShift";
         }
-        if (keycode == 0x2c) {
+        if (keycode == DIK_Z) {
           return "Z";
         }
         return "(invalid key)";
       }
-      if ((uint)keycode < 0x2e) {
+      if (keycode < DIK_C) {
         return "X";
       }
-      if ((uint)keycode < 0x30) {
-        if ((uint)keycode < 0x2f) {
+      if (keycode < DIK_B) {
+        if (keycode < DIK_V) {
           return "C";
         }
         return "V";
       }
-      if ((uint)keycode < 0x31) {
+      if (keycode < DIK_N) {
         return "B";
       }
-      if ((uint)keycode < 0x32) {
+      if (keycode < DIK_M) {
         return "N";
       }
-      if ((uint)keycode < 0x33) {
+      if (keycode < DIK_COMMA) {
         return "M";
       }
       return ",";
     }
-    if (0xb < (uint)keycode) {
-      if ((uint)keycode < 0xd) {
+    if (DIK_0 < keycode) {
+      if (keycode < DIK_EQUALS) {
         return "-";
       }
-      if ((uint)keycode < 0x12) {
-        if ((uint)keycode < 0xf) {
-          if ((uint)keycode < 0xe) {
+      if (keycode < DIK_E) {
+        if (keycode < DIK_TAB) {
+          if (keycode < DIK_BACK) {
             return "=";
           }
           return "BackSpace";
         }
-        if (0xf < (uint)keycode) {
-          if ((uint)keycode < 0x11) {
+        if (DIK_TAB < keycode) {
+          if (keycode < DIK_W) {
             return "Q";
           }
           return "W";
         }
         return "Tab";
       }
-      if ((uint)keycode < 0x13) {
+      if (keycode < DIK_R) {
         return "E";
       }
-      if (0x14 < (uint)keycode) {
-        if ((uint)keycode < 0x16) {
+      if (DIK_T < keycode) {
+        if (keycode < DIK_U) {
           return "Y";
         }
-        if ((uint)keycode < 0x17) {
+        if (keycode < DIK_I) {
           return "U";
         }
-        if ((uint)keycode < 0x18) {
+        if (keycode < DIK_O) {
           return "I";
         }
         return "O";
       }
-      if ((uint)keycode < 0x14) {
+      if (keycode < DIK_T) {
         return "R";
       }
       return "T";
     }
-    if (5 < (uint)keycode) {
-      if ((uint)keycode < 7) {
+    if (DIK_4 < keycode) {
+      if (keycode < DIK_6) {
         return "5";
       }
-      if ((uint)keycode < 9) {
-        if ((uint)keycode < 8) {
+      if (keycode < DIK_8) {
+        if (keycode < DIK_7) {
           return "6";
         }
         return "7";
       }
-      if ((uint)keycode < 10) {
+      if (keycode < DIK_9) {
         return "8";
       }
-      if ((uint)keycode < 0xb) {
+      if (keycode < DIK_0) {
         return "9";
       }
       return "0";
     }
-    if (2 < (uint)keycode) {
-      if ((uint)keycode < 4) {
+    if (DIK_1 < keycode) {
+      if (keycode < DIK_3) {
         return "2";
       }
-      if ((uint)keycode < 5) {
+      if (keycode < DIK_4) {
         return "3";
       }
       return "4";
     }
     if (keycode != 0) {
-      if (1 < (uint)keycode) {
+      if (DIK_ESCAPE < keycode) {
         return "1";
       }
       return "Esc";
     }
   }
   else {
-    if ((uint)keycode < 0x35) {
+    if (keycode < DIK_SLASH) {
       return ".";
     }
-    if ((uint)keycode < 0x4d) {
-      if (0x3f < (uint)keycode) {
-        if ((uint)keycode < 0x41) {
+    if (keycode < DIK_NUMPAD6) {
+      if (DIK_F5 < keycode) {
+        if (keycode < DIK_F7) {
           return "F6";
         }
-        if ((uint)keycode < 0x46) {
-          if ((uint)keycode < 0x43) {
-            if ((uint)keycode < 0x42) {
+        if (keycode < DIK_SCROLL) {
+          if (keycode < DIK_F9) {
+            if (keycode < DIK_F8) {
               return "F7";
             }
             return "F8";
           }
-          if (0x43 < (uint)keycode) {
-            if ((uint)keycode < 0x45) {
+          if (DIK_F9 < keycode) {
+            if (keycode < DIK_PAUSE) {
               return "F10";
             }
             return "Pause";
           }
           return "F9";
         }
-        if ((uint)keycode < 0x47) {
+        if (keycode < DIK_NUMPAD7) {
           return "ScrollLock";
         }
-        if (0x48 < (uint)keycode) {
-          if ((uint)keycode < 0x4a) {
+        if (DIK_NUMPAD8 < keycode) {
+          if (keycode < DIK_SUBTRACT) {
             return "NumPad9";
           }
-          if ((uint)keycode < 0x4b) {
+          if (keycode < DIK_NUMPAD4) {
             return "NumPad-";
           }
-          if ((uint)keycode < 0x4c) {
+          if (keycode < DIK_NUMPAD5) {
             return "NumPad4";
           }
           return "NumPad5";
         }
-        if ((uint)keycode < 0x48) {
+        if (keycode < DIK_NUMPAD8) {
           return "NumPad7";
         }
         return "NumPad8";
       }
-      if ((uint)keycode < 0x3a) {
-        if ((uint)keycode < 0x37) {
-          if ((uint)keycode < 0x36) {
+      if (keycode < DIK_CAPITAL) {
+        if (keycode < DIK_MULTIPLY) {
+          if (keycode < DIK_RSHIFT) {
             return "/";
           }
           return "RightShift";
         }
-        if (0x37 < (uint)keycode) {
-          if ((uint)keycode < 0x39) {
+        if (DIK_MULTIPLY < keycode) {
+          if (keycode < DIK_SPACE) {
             return "LeftAlt";
           }
           return "Space";
         }
         return "NumPad*";
       }
-      if ((uint)keycode < 0x3b) {
+      if (keycode < DIK_F1) {
         return "CapsLock";
       }
-      if (0x3c < (uint)keycode) {
-        if ((uint)keycode < 0x3e) {
+      if (DIK_F2 < keycode) {
+        if (keycode < DIK_F4) {
           return "F3";
         }
-        if ((uint)keycode < 0x3f) {
+        if (keycode < DIK_F5) {
           return "F4";
         }
         return "F5";
       }
-      if ((uint)keycode < 0x3c) {
+      if (keycode < DIK_F2) {
         return "F1";
       }
       return "F2";
     }
-    if ((uint)keycode < 0x4e) {
+    if (keycode < DIK_ADD) {
       return "NumPad6";
     }
-    if ((uint)keycode < 0x145) {
-      if ((uint)keycode < 0x53) {
-        if ((uint)keycode < 0x50) {
-          if ((uint)keycode < 0x4f) {
+    if (keycode < DIK_NUMLOCK) {
+      if (keycode < DIK_DECIMAL) {
+        if (keycode < DIK_NUMPAD2) {
+          if (keycode < DIK_NUMPAD1) {
             return "NumPad+";
           }
           return "NumPad1";
         }
-        if (0x50 < (uint)keycode) {
-          if ((uint)keycode < 0x52) {
+        if (DIK_NUMPAD2 < keycode) {
+          if (keycode < DIK_NUMPAD0) {
             return "NumPad3";
           }
           return "NumPad0";
         }
         return "NumPad2";
       }
-      if ((uint)keycode < 0x54) {
+      if (keycode < (DIK_NUMPAD2|DIK_3)) {
         return "NumPad.";
       }
-      if (0x11b < (uint)keycode) {
-        if ((uint)keycode < 0x11d) {
+      if (0x11b < keycode) {
+        if (keycode < DIK_RCONTROL) {
           return "NumPadEnter";
         }
-        if ((uint)keycode < 0x135) {
-          if (keycode == 0x11d) {
+        if (keycode < DIK_DIVIDE) {
+          if (keycode == DIK_RCONTROL) {
             return "RightCtrl";
           }
           return "(invalid key)";
         }
-        if ((uint)keycode < 0x136) {
+        if (keycode < 0x136) {
           return "NumPad/";
         }
-        if (keycode == 0x138) {
+        if (keycode == DIK_RMENU) {
           return "RightAlt";
         }
         return "(invalid key)";
       }
-      if (0x56 < (uint)keycode) {
-        if ((uint)keycode < 0x58) {
+      if ((DIK_NUMPAD2|DIK_5) < keycode) {
+        if (keycode < DIK_F12) {
           return "F11";
         }
-        if (keycode == 0x58) {
+        if (keycode == DIK_F12) {
           return "F12";
         }
         return "(invalid key)";
       }
     }
     else {
-      if ((uint)keycode < 0x146) {
+      if (keycode < 0x146) {
         return "NumLock";
       }
-      if ((uint)keycode < 0x14f) {
-        if ((uint)keycode < 0x149) {
-          if (0x146 < (uint)keycode) {
-            if ((uint)keycode < 0x148) {
+      if (keycode < DIK_END) {
+        if (keycode < DIK_PRIOR) {
+          if (0x146 < keycode) {
+            if (keycode < DIK_UP) {
               return "Home";
             }
             return "Up";
           }
         }
         else {
-          if ((uint)keycode < 0x14a) {
+          if (keycode < (DIK_UP|DIK_1)) {
             return "PgUp";
           }
-          if (0x14a < (uint)keycode) {
-            if ((uint)keycode < 0x14c) {
+          if ((DIK_UP|DIK_1) < keycode) {
+            if (keycode < (DIK_UP|DIK_3)) {
               return "Left";
             }
-            if (keycode == 0x14d) {
+            if (keycode == DIK_RIGHT) {
               return "Right";
             }
             return "(invalid key)";
@@ -326,28 +325,28 @@ char * __cdecl wincore_winrun_cpp_getKeyName_FUN_005f3980(int keycode)
         }
       }
       else {
-        if ((uint)keycode < 0x150) {
+        if (keycode < DIK_DOWN) {
           return "End";
         }
-        if ((uint)keycode < 0x152) {
-          if ((uint)keycode < 0x151) {
+        if (keycode < DIK_INSERT) {
+          if (keycode < DIK_NEXT) {
             return "Down";
           }
           return "PgDn";
         }
-        if ((uint)keycode < 0x153) {
+        if (keycode < DIK_DELETE) {
           return "Ins";
         }
-        if ((uint)keycode < 0x200) {
-          if (keycode == 0x153) {
+        if (keycode < DIM_LBUTTON) {
+          if (keycode == DIK_DELETE) {
             return "Del";
           }
         }
         else {
-          if ((uint)keycode < 0x201) {
+          if (keycode < DIM_RBUTTON) {
             return "Left Mouse Button";
           }
-          if (keycode == 0x201) {
+          if (keycode == DIM_RBUTTON) {
             return "Right Mouse Button";
           }
         }

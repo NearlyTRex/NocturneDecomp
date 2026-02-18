@@ -449,8 +449,8 @@ section .text
     MOV EDX,dword ptr [0x006848fc]      ; 0056c560 | g_CWeatherInstance | g_CWeatherPtr
         ;   Label: LAB_0056c560
     PUSH EDX                            ; 0056c566 | g_CWeatherInstance
-    CALL core_weather.cpp_CWeather_FUN_005ef190 ; 0056c567
-        ;   XREF to: 005ef190 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_FUN_005ef190(CWeather * this_ptr)
+    CALL core_weather.cpp_CWeather_renderParticles_FUN_005ef190 ; 0056c567
+        ;   XREF to: 005ef190 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_renderParticles_FUN_005ef190(CWeather * this_ptr)
     MOV ESI,dword ptr [0x032776b4]      ; 0056c56c | g_DynamicLightCount
     XOR ECX,ECX                         ; 0056c572
     ADD ESP,0x4                         ; 0056c574

@@ -125,7 +125,7 @@ void __cdecl core_colonel_cpp_CColonel_FUN_0043ff20(CColonel *this_ptr)
                   (&this_ptr_00->motion_controller);
       }
       if (bVar2) {
-        pCVar5 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+        pCVar5 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                            (&local_3c,&local_54);
         local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                              (pCVar5->y - (this_ptr->base).base.base.orient.vec.y);
@@ -156,7 +156,7 @@ void __cdecl core_colonel_cpp_CColonel_FUN_0043ff20(CColonel *this_ptr)
       local_54.y = local_78.y;
       local_54.z = local_78.z;
     }
-    pCVar5 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_6c,&local_54);
+    pCVar5 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_6c,&local_54);
     if (&local_54 != pCVar5) {
       local_54.x = pCVar5->x;
       local_54.y = pCVar5->y;

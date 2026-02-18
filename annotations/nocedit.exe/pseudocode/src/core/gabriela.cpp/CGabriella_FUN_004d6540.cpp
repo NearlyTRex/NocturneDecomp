@@ -116,7 +116,7 @@ LAB_004d6841:
       CStack_98.x = CStack_74.x - pCVar6->x;
       CStack_98.y = CStack_74.y - pCVar6->y;
       CStack_98.z = CStack_74.z - pCVar6->z;
-      core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_5c,&CStack_98);
+      core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_5c,&CStack_98);
       fVar2 = in_stack_00000008 / 0.3f;
       *(float *)(this_ptr->unk1 + 0xc) = CStack_5c.x;
       fVar2 = fVar2 + (float)this_ptr->unk3;

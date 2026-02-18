@@ -58,10 +58,14 @@ void __cdecl core_fire_cpp_CFireball_process_FUN_004c0b30(CFireball *this_ptr)
       this_ptr->spawn_timer = iVar3 + -0x1000;
       core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
                 (this_ptr_00,(CVector3f *)this_ptr,2.0,(CVector3f *)0x0,0xffff);
-      core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);
-      core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);
-      core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);
-      core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);
+      core_fire_cpp_CFireEffect_createSpark_FUN_004c79d0
+                (g_CFireEffectPtr,(CVector3f *)this_ptr,(CVector3f *)0x0,0x20000,0x10000,0,0xffff);
+      core_fire_cpp_CFireEffect_createSpark_FUN_004c79d0
+                (g_CFireEffectPtr,(CVector3f *)this_ptr,(CVector3f *)0x0,0x20000,0x10000,0,0xffff);
+      core_fire_cpp_CFireEffect_createSpark_FUN_004c79d0
+                (g_CFireEffectPtr,(CVector3f *)this_ptr,(CVector3f *)0x0,0x20000,0x10000,0,0xffff);
+      core_fire_cpp_CFireEffect_createSpark_FUN_004c79d0
+                (g_CFireEffectPtr,(CVector3f *)this_ptr,(CVector3f *)0x0,0x20000,0x10000,0,0xffff);
     }
   }
   if (this_ptr->lighting_active == 0) {

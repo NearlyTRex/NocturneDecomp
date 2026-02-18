@@ -23,7 +23,7 @@
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
 ;   core_actor.cpp_getRandomInt_FUN_0040cc70
-;   core_fire.cpp_CFireEffect_FUN_004c7a60
+;   core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60
 ;   core_sound.cpp_CSound_playActorSound_FUN_005b3a40
 ;   core_weapon.cpp_CWeapon_fire_FUN_005ee6e0
 ;
@@ -99,8 +99,8 @@ section .text
     FADD float ptr [0x0062400a]         ; 004a7439 | FLOAT_0062400a
     PUSH EAX                            ; 004a743f | g_CFireEffectInstance
     FSTP float ptr [ESP + 0x70]         ; 004a7440
-    CALL core_fire.cpp_CFireEffect_FUN_004c7a60 ; 004a7444
-        ;   XREF to: 004c7a60 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c7a60(CFireEffect * this_ptr)
+    CALL core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60 ; 004a7444
+        ;   XREF to: 004c7a60 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60(CFireEffect * this_ptr)
     ADD ESP,0xc                         ; 004a7449
     LEA EAX,[ESP + 0xa8]                ; 004a744c
     PUSH EAX                            ; 004a7453

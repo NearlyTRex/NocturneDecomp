@@ -133,7 +133,7 @@ void __cdecl core_haystack_cpp_CHaystack_FUN_004f13f0(CHaystack *this_ptr)
         }
       }
       if (bVar2) {
-        pCVar5 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+        pCVar5 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                            (&local_60,&local_48);
         local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                              (pCVar5->y - (this_ptr->base).base.base.orient.vec.y);
@@ -164,7 +164,7 @@ void __cdecl core_haystack_cpp_CHaystack_FUN_004f13f0(CHaystack *this_ptr)
       local_48.y = local_6c.y;
       local_48.z = local_6c.z;
     }
-    pCVar5 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_3c,&local_48);
+    pCVar5 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_3c,&local_48);
     if (&local_48 != pCVar5) {
       local_48.x = pCVar5->x;
       local_48.y = pCVar5->y;

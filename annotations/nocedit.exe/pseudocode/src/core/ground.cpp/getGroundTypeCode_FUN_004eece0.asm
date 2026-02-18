@@ -8,7 +8,7 @@
 ;
 ; XREF[3]:
 ;   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040ca10 at 0040cb15
-;   core_fire.cpp_CFireEffect_FUN_004c76a0 at 004c78af
+;   core_fire.cpp_CFireEffect_createBulletImpact_FUN_004c76a0 at 004c78af
 ;   core_setedit.cpp_FUN_00578420 at 0057854d
 ;
 ; Referenced Globals:

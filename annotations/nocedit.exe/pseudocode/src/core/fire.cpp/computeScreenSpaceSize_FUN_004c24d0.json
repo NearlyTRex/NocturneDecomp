@@ -1,0 +1,266 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 82,
+    "complexity_score": 87,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 9,
+    "pseudocode_lines": 32,
+    "suspect_count": 5,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
+    "total_lines": 114
+  },
+  "cross_references": [
+    {
+      "addr": "004c25c0",
+      "from_addr": "004c2e1d",
+      "name": "core_fire.cpp_CLaserBeam_render_FUN_004c25c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c24d0",
+    "address_range": [
+      [
+        "004c24d0",
+        "004c25b7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_computeScreenSpaceSize_FUN_004c24d0",
+    "signature": "float __cdecl core_fire_cpp_computeScreenSpaceSize_FUN_004c24d0(float depth,float min_size)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b575c",
+      "is_variadic": false,
+      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00629d03",
+      "name": "DOUBLE_00629d03",
+      "type": "double",
+      "value": "0.00390625"
+    },
+    {
+      "addr": "00629d0b",
+      "name": "DOUBLE_00629d0b",
+      "type": "double",
+      "value": "0.0000152587890625"
+    },
+    {
+      "addr": "00629d13",
+      "name": "FLOAT_00629d13",
+      "type": "float",
+      "value": "0.2000000"
+    },
+    {
+      "addr": "0065dca8",
+      "name": "FLOAT_0065dca8",
+      "type": "float",
+      "value": "256"
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr2",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "006793c0",
+      "name": "g_ProjectionScale",
+      "type": "int",
+      "value": "0x10000"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02d02548",
+      "name": "g_ViewportCenterXFixed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0254c",
+      "name": "g_ViewportCenterYFixed",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.108108108108108,
+    "instruction_count": 74,
+    "opcode_distribution": {
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 2,
+      "COPY": 242,
+      "FLOAT2FLOAT": 15,
+      "FLOAT_ABS": 2,
+      "FLOAT_DIV": 3,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_MULT": 8,
+      "FLOAT_NAN": 4,
+      "INT2FLOAT": 4,
+      "INT_ADD": 31,
+      "INT_AND": 20,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 10,
+      "INT_LEFT": 8,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 10,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 5,
+      "INT_SUB": 5,
+      "INT_XOR": 1,
+      "INT_ZEXT": 8,
+      "LOAD": 20,
+      "POPCOUNT": 5,
+      "RETURN": 2,
+      "ROUND": 3,
+      "STORE": 15,
+      "TRUNC": 3
+    },
+    "pcode_op_count": 452
+  },
+  "stack_frame": {
+    "frame_size": 64,
+    "local_size": 56,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "depth",
+        "offset": 4,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "min_size",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 17,
+      "match": "ROUND",
+      "text": "local_34.x = (int)ROUND(256.0f * 0.0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 18,
+      "match": "ROUND",
+      "text": "local_34.y = (int)ROUND(256.0f * 0.0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 19,
+      "match": "ROUND",
+      "text": "local_34.z = (int)ROUND(depth * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 26,
+      "match": "ABS",
+      "text": "fVar3 = ABS(fVar1 / ((float)g_ViewportCenterXFixed * fVar2));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 27,
+      "match": "ABS",
+      "text": "fVar1 = ABS(fVar1 / ((float)g_ViewportCenterYFixed * fVar2));",
+      "type": "decompiler_intrinsic"
+    }
+  ]
+}

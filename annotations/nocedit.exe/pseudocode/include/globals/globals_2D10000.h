@@ -69,14 +69,14 @@ extern int g_CurrentFileSize;
 extern int g_CurrentFileOffset;
 extern int g_CurrentFileCompressedSize;
 extern int g_AuditRecordCount;
+extern int g_TextureAnimCounter2;
+extern int g_TextureAnimCounter1;
 extern int g_SmokeParticleAllocIndex;
 
 // time_t
 extern time_t g_PodCreationTime;
 
 // undefined4
-extern undefined4 DAT_02d13560;
-extern undefined4 DAT_02d13564;
 extern undefined4 DAT_02d13eb4;
 extern undefined4 DAT_02d13eb8;
 extern undefined4 DAT_02d13f80;

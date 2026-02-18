@@ -202,7 +202,7 @@ int __cdecl shape_cramtex_cpp_generateTextureAtlasLayout_FUN_00444d90(uint textu
         } while (-1 < iVar16);
       }
       if (iVar16 < 0) {
-        local_20->reserved_0x18 = 0;
+        local_20->unk1 = 0;
         local_20->active_flag = 1;
         local_20->left = 0;
         local_20->top = 0;
@@ -251,7 +251,7 @@ LAB_004451a8:
         } while (-1 < iVar17);
       }
       if (iVar17 < 0) {
-        local_1c->reserved_0x18 = 0;
+        local_1c->unk1 = 0;
         local_1c->active_flag = 1;
         local_1c->left = 0;
         local_1c->top = iVar18;
@@ -299,7 +299,7 @@ LAB_004451f7:
             } while (-1 < iVar15);
           }
           if (iVar15 < 0) {
-            local_18->reserved_0x18 = 0;
+            local_18->unk1 = 0;
             local_18->active_flag = 1;
             local_18->left = local_14;
             local_18->top = 0;

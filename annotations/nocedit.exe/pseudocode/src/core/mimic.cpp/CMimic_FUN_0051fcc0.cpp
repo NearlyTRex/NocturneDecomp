@@ -86,7 +86,7 @@ void __cdecl core_mimic_cpp_CMimic_FUN_0051fcc0(CMimic *this_ptr)
          (ABS((this_ptr->base).base.base.location.position.y -
               (g_HeroActors[g_LocalHeroIndex]->base).base.location.position.y) <=
           (float)15)) {
-        pCVar5 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+        pCVar5 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                            (&local_58,&local_70);
         local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar5->y);
         if (SQRT(local_70.z * local_70.z + local_70.x * local_70.x + local_70.y * local_70.y) <

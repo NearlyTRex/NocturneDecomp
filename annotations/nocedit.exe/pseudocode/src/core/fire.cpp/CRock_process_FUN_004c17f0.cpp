@@ -11,28 +11,28 @@
 void __cdecl core_fire_cpp_CRock_process_FUN_004c17f0(CRock *this_ptr)
 
 {
-  int iVar1;
-  float fVar2;
+  int *piVar1;
+  int iVar2;
   float fVar3;
   float fVar4;
-  longlong lVar5;
-  int iVar6;
+  float fVar5;
+  longlong lVar6;
+  int iVar7;
   
   core_particle_cpp_CParticle_process_FUN_00545760(&this_ptr->base);
-  iVar6 = g_GlobalDeltaTimeInt;
-  fVar2 = (this_ptr->base).velocity.y;
-  fVar3 = (this_ptr->base).velocity.x;
-  fVar4 = (this_ptr->base).velocity.z;
-  iVar1 = (int)ROUND(ROUND(SQRT(fVar4 * fVar4 + fVar3 * fVar3 + fVar2 * fVar2) *
+  iVar7 = g_GlobalDeltaTimeInt;
+  fVar3 = (this_ptr->base).velocity.y;
+  fVar4 = (this_ptr->base).velocity.x;
+  fVar5 = (this_ptr->base).velocity.z;
+  iVar2 = (int)ROUND(ROUND(SQRT(fVar5 * fVar5 + fVar4 * fVar4 + fVar3 * fVar3) *
                            (float)32767.700000000001));
-  lVar5 = (longlong)
+  lVar6 = (longlong)
           ((int)((g_GlobalDeltaTimeInt + (g_GlobalDeltaTimeInt >> 0x1f) * -4) -
-                (uint)((g_GlobalDeltaTimeInt >> 0x1f) << 1 < 0)) >> 2) * (longlong)iVar1;
-  *(uint *)this_ptr->unk =
-       *(int *)this_ptr->unk + ((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10);
-  lVar5 = (longlong)(iVar6 / 2) * (longlong)iVar1;
-  *(uint *)(this_ptr->unk + 4) =
-       *(int *)(this_ptr->unk + 4) + ((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10)
-  ;
+                (uint)((g_GlobalDeltaTimeInt >> 0x1f) << 1 < 0)) >> 2) * (longlong)iVar2;
+  (this_ptr->rotation).x =
+       (this_ptr->rotation).x + ((uint)lVar6 >> 0x10 | (int)((ulonglong)lVar6 >> 0x20) << 0x10);
+  lVar6 = (longlong)(iVar7 / 2) * (longlong)iVar2;
+  piVar1 = &(this_ptr->rotation).y;
+  *piVar1 = *piVar1 + ((uint)lVar6 >> 0x10 | (int)((ulonglong)lVar6 >> 0x20) << 0x10);
   return;
 }

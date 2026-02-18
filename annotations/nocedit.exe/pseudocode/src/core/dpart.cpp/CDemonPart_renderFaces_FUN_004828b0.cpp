@@ -42,12 +42,12 @@ void __cdecl core_dpart_cpp_CDemonPart_renderFaces_FUN_004828b0(CDemonPart *this
         local_40 = plane->vertex_index_1;
         local_34 = plane->vertex_index_2;
         local_28 = plane->vertex_index_3;
-        if (plane->material == -1) {
+        if (plane->vertex_index_4 == -1) {
           local_58.base.count = 3;
         }
         else {
           local_58.base.count = 4;
-          local_1c = plane->material;
+          local_1c = plane->vertex_index_4;
         }
         core_set_cpp_CDemonSet_FUN_00570960(g_CDemonSetPtr,&local_58,1);
       }

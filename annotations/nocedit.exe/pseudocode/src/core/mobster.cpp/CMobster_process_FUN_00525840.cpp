@@ -215,7 +215,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
                           local_10c.x * local_10c.x + local_10c.y * local_10c.y);
           local_18 = local_20;
           if (local_20 < 3.0f + 1.0) {
-            core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_70,&local_10c);
+            core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_70,&local_10c);
             in_stack_fffffe70 = (CMobster *)(local_70.y - (this_ptr->base).base.base.orient.vec.y);
             local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70((float)in_stack_fffffe70);
             if ((ABS(local_14) < (float)0.52359877558333301) &&
@@ -325,7 +325,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
                              (this_ptr->base).base.base.location.position.y;
                 local_b8.z = (pCVar10->location).position.z -
                              (this_ptr->base).base.base.location.position.z;
-                core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+                core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                           (&local_f4,&local_b8);
                 in_stack_fffffe70 = (CMobster *)0x52674a;
                 local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
@@ -370,7 +370,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
                              (this_ptr->base).base.base.location.position.y;
                 local_e8.z = (pCVar10->location).position.z -
                              (this_ptr->base).base.base.location.position.z;
-                core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+                core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                           (&local_58,&local_e8);
                 in_stack_fffffe70 = (CMobster *)0x526602;
                 local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
@@ -433,7 +433,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
                            ((this_ptr->base).base.carry_hands[1].carry_actor,
                             g_CWeaponClassInfo.name_hash);
         if (pCVar9 != (CMobster *)0x0) {
-          core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
+          core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
           local_34 = (pCVar9->base).base.model.transformed_vertices[0x4f].y;
           pCVar4 = (pCVar9->base).base.base.vtable._uc;
           (pCVar9->base).base.model.transformed_vertices[0x4f].y = 1.4013e-43;
@@ -451,7 +451,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
                              g_CWeaponClassInfo.name_hash);
         local_2c = pCVar12;
         if (pCVar12 != (CCharacter *)0x0) {
-          core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
+          core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
           pCVar4 = (pCVar12->base).vtable._uc;
           fVar14 = (pCVar12->model).transformed_vertices[0x4f].y;
           (pCVar12->model).transformed_vertices[0x4f].y = 1.4013e-43;

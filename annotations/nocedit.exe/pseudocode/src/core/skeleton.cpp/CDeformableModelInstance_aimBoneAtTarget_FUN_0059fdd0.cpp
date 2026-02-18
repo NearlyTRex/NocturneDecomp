@@ -39,7 +39,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059
   local_2c.x = target_position->x - pCVar1->x;
   local_2c.y = target_position->y - pCVar1->y;
   local_2c.z = target_position->z - pCVar1->z;
-  core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_20,&local_2c);
+  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_20,&local_2c);
   core_xform_cpp_quaternionFromAngleX_FUN_005f79b0(local_20.x,&local_3c);
   quat2_in_00 = &local_ac;
   local_ac.w = local_3c.w;

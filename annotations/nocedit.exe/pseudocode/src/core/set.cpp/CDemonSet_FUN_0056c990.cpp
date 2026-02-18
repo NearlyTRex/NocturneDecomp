@@ -93,7 +93,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c990(CDemonSet *this_ptr)
     core_set_cpp_CDemonSet_FUN_0056d380(this_ptr);
     iVar3 = core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80
                       (this_ptr,&local_5c,(CVector3i *)0x0);
-    iVar4 = core_fire_cpp_CFireEffect_FUN_004c93d0(g_CFireEffectPtr);
+    iVar4 = core_fire_cpp_CFireEffect_hasActiveMuzzleFlash_FUN_004c93d0(g_CFireEffectPtr);
     if (g_WindowHeight < 0xf1) {
       iVar1 = -local_14->shadow_map_width;
       iVar2 = -local_14->shadow_map_height;

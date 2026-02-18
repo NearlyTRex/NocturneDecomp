@@ -1,0 +1,155 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 24,
+    "complexity_score": 44,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 9,
+    "suspect_count": 3,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
+    "total_lines": 33
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004c9400",
+    "address_range": [
+      [
+        "004c9400",
+        "004c9440"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_transformWorldToScreen_FUN_004c9400",
+    "signature": "void __cdecl core_fire_cpp_transformWorldToScreen_FUN_004c9400(CVector3i *input,SProjectedVertex *output,CVector3f *world_position)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b5a25",
+      "is_variadic": false,
+      "name": "wincore_windll.cpp_transformPoint_FUN_005b5a25"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0065dca8",
+      "name": "FLOAT_0065dca8",
+      "type": "float",
+      "value": "256"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "estimated_params": 3
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.181818181818182,
+    "instruction_count": 22,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 66,
+      "FLOAT2FLOAT": 6,
+      "FLOAT_MULT": 3,
+      "INT_ADD": 10,
+      "INT_AND": 6,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 6,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 3,
+      "INT_SUB": 5,
+      "LOAD": 7,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "ROUND": 3,
+      "STORE": 7,
+      "TRUNC": 3
+    },
+    "pcode_op_count": 136
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 20,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "input",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector3i *"
+      },
+      {
+        "is_param": true,
+        "name": "output",
+        "offset": 8,
+        "size": 4,
+        "type": "SProjectedVertex *"
+      },
+      {
+        "is_param": true,
+        "name": "world_position",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 7,
+      "match": "ROUND",
+      "text": "local_10.x = (int)ROUND(world_position->x * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 8,
+      "match": "ROUND",
+      "text": "local_10.y = (int)ROUND(world_position->y * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 9,
+      "match": "ROUND",
+      "text": "local_10.z = (int)ROUND(world_position->z * 256.0f);",
+      "type": "decompiler_intrinsic"
+    }
+  ]
+}

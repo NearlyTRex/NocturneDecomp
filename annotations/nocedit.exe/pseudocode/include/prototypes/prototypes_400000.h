@@ -37,12 +37,12 @@
 #include "types/structs/SInteractionInfo.h"
 #include "types/structs/SInteractionState.h"
 #include "types/structs/SIntersectXZCylinder.h"
+#include "types/structs/SLaserInfo.h"
 #include "types/structs/SLineStrip.h"
 #include "types/structs/SMRGLHeaderExtended.h"
 #include "types/structs/SMRGLHeaderPrimitive.h"
 #include "types/structs/SRenderBufferEntry.h"
 #include "types/structs/SRenderVertex.h"
-#include "types/structs/SSurfaceInfo.h"
 #include "types/structs/SVertexBatch.h"
 
 // =============================================================================
@@ -267,7 +267,7 @@ int __cdecl core_actor_cpp_CDemonActor_testLineIntersection_FUN_00409150(CDemonA
 CBoundingBox3D * __cdecl core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_00409270(CDemonActor *this_ptr,CBoundingBox3D *output_bbox,SCollisionInfo *collision_info, int bounding_box_type);
 int __cdecl core_actor_cpp_CDemonActor_testRayIntersection_FUN_004093f0(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction, CVector3f *out_hit_normal,void *unused);
 float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction, CVector3f *out_hit_normal,SCollisionInfo *collision_info,int bbox_type, CBoundingBox3D *ray_bbox);
-void __cdecl core_actor_cpp_CDemonActor_getSurfaceProperties_FUN_00409840(CDemonActor *this_ptr,SSurfaceInfo *surface_info);
+void __cdecl core_actor_cpp_CDemonActor_onLaserHit_FUN_00409840(CDemonActor *this_ptr,SLaserInfo *laser_info);
 int __cdecl core_actor_cpp_CDemonActor_getBlockVirtualDirectorFlag_FUN_00409880(CDemonActor *this_ptr);
 int __cdecl core_actor_cpp_CDemonActor_allowBulletHoles_FUN_004098a0(CDemonActor *this_ptr);
 void __cdecl core_actor_cpp_CDemonActor_updateCollisionData_FUN_004098c0(CDemonActor *this_ptr);

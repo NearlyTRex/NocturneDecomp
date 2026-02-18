@@ -94,8 +94,8 @@ section .text
     PUSH EDI                            ; 0043d5bf | g_CSpotViewInstance
     MOV dword ptr [ESP + 0x5c],EBX      ; 0043d5c0
     MOV dword ptr [ESP + 0x50],ESI      ; 0043d5c4
-    CALL shape_spotview.cpp_CSpotView_FUN_005b9620 ; 0043d5c8
-        ;   XREF to: 005b9620 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_FUN_005b9620(CSpotView * this_ptr)
+    CALL shape_spotview.cpp_CSpotView_reset_FUN_005b9620 ; 0043d5c8
+        ;   XREF to: 005b9620 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_reset_FUN_005b9620(CSpotView * this_ptr, uint control_flags)
     ADD ESP,0x8                         ; 0043d5cd
     MOV EAX,[0x0067b654]                ; 0043d5d0 | g_CGameInstance | g_CGamePtr
     PUSH EAX                            ; 0043d5d5 | g_CGameInstance
@@ -193,13 +193,13 @@ section .text
     PUSH 0x1f                           ; 0043d6de
     MOV EBX,dword ptr [0x0068416c]      ; 0043d6e0 | g_CSpotViewInstance | g_CSpotViewPtr
     PUSH EBX                            ; 0043d6e6 | g_CSpotViewInstance
-    CALL shape_spotview.cpp_CSpotView_FUN_005b9670 ; 0043d6e7
-        ;   XREF to: 005b9670 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_FUN_005b9670(CSpotView * this_ptr)
+    CALL shape_spotview.cpp_CSpotView_handleInput_FUN_005b9670 ; 0043d6e7
+        ;   XREF to: 005b9670 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_handleInput_FUN_005b9670(CSpotView * this_ptr, uint control_flags)
     ADD ESP,0x8                         ; 0043d6ec
     MOV ESI,dword ptr [0x0068416c]      ; 0043d6ef | g_CSpotViewPtr
     PUSH ESI                            ; 0043d6f5 | g_CSpotViewInstance
-    CALL shape_spotview.cpp_CSpotView_FUN_005b9a20 ; 0043d6f6
-        ;   XREF to: 005b9a20 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_FUN_005b9a20(CSpotView * this_ptr)
+    CALL shape_spotview.cpp_CSpotView_applyCamera_FUN_005b9a20 ; 0043d6f6
+        ;   XREF to: 005b9a20 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_applyCamera_FUN_005b9a20(CSpotView * this_ptr)
     ADD ESP,0x4                         ; 0043d6fb
     PUSH 0x3f87558                      ; 0043d6fe | g_ZeroVector
     MOV EDI,dword ptr [0x006703ec]      ; 0043d703 | g_CDemonRendererPtr2
@@ -715,8 +715,8 @@ section .text
         ;   Label: LAB_0043dc87
     MOV ECX,dword ptr [0x0068416c]      ; 0043dc89 | g_CSpotViewInstance | g_CSpotViewPtr
     PUSH ECX                            ; 0043dc8f | g_CSpotViewInstance
-    CALL shape_spotview.cpp_CSpotView_FUN_005b9620 ; 0043dc90
-        ;   XREF to: 005b9620 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_FUN_005b9620(CSpotView * this_ptr)
+    CALL shape_spotview.cpp_CSpotView_reset_FUN_005b9620 ; 0043dc90
+        ;   XREF to: 005b9620 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_reset_FUN_005b9620(CSpotView * this_ptr, uint control_flags)
     MOV EAX,[0x0068416c]                ; 0043dc95 | g_CSpotViewPtr
     MOV dword ptr [EAX + 0x20],0x0      ; 0043dc9a | DAT_03f6ba00
     ADD ESP,0x8                         ; 0043dca1

@@ -33,8 +33,8 @@
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
 ;   core_crate.cpp_CCrate_FUN_00448a70
-;   core_fire.cpp_CFireEffect_FUN_004c76a0
-;   core_fire.cpp_CFireEffect_FUN_004c7a60
+;   core_fire.cpp_CFireEffect_createBulletImpact_FUN_004c76a0
+;   core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60
 ;   core_flamecan.cpp_CFlameCan_FUN_004cb340
 ;   core_glass.cpp_CGlass_checkBreakableCondition_FUN_004eb3a0
 ;   core_glass.cpp_CGlass_shatter_FUN_004eaef0
@@ -339,8 +339,8 @@ section .text
     FADD float ptr [0x006567a4]         ; 005e3b3d | FLOAT_006567a4
     PUSH EDX                            ; 005e3b43 | g_CFireEffectInstance
     FSTP float ptr [ESP + 0xb4]         ; 005e3b44
-    CALL core_fire.cpp_CFireEffect_FUN_004c7a60 ; 005e3b4b
-        ;   XREF to: 004c7a60 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c7a60(CFireEffect * this_ptr)
+    CALL core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60 ; 005e3b4b
+        ;   XREF to: 004c7a60 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60(CFireEffect * this_ptr)
     FLD float ptr [EBX + 0x774]         ; 005e3b50
     MOV EAX,0x1                         ; 005e3b56
     MOV dword ptr [EBX + 0x8b0],0x2     ; 005e3b5b
@@ -440,8 +440,8 @@ section .text
     PUSH EAX                            ; 005e3c56 | DAT_032613b0
     MOV ECX,dword ptr [0x0067a3d0]      ; 005e3c57 | g_CFireEffectInstance | g_CFireEffectPtr
     PUSH ECX                            ; 005e3c5d | g_CFireEffectInstance
-    CALL core_fire.cpp_CFireEffect_FUN_004c76a0 ; 005e3c5e
-        ;   XREF to: 004c76a0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c76a0(CFireEffect * this_ptr)
+    CALL core_fire.cpp_CFireEffect_createBulletImpact_FUN_004c76a0 ; 005e3c5e
+        ;   XREF to: 004c76a0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createBulletImpact_FUN_004c76a0(CFireEffect * this_ptr, CVector3f * impact_pos, CVector3f * surface_normal, int ground_type, ...)
     ADD ESP,0x14                        ; 005e3c63
     JMP 0x005e3b03                      ; 005e3c66
         ;   XREF to: 005e3b03 (UNCONDITIONAL_JUMP)  ; LAB_005e3b03

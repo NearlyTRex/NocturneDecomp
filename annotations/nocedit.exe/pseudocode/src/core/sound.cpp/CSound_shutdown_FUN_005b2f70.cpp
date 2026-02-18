@@ -15,7 +15,7 @@ void __cdecl core_sound_cpp_CSound_shutdown_FUN_005b2f70(CSound *this_ptr)
   iVar2 = 0;
   g_SoundAudioInitialized = 0;
   do {
-    puVar1 = (uint *)((int)&g_TrainNoiseArray[0].sound_handle + iVar2);
+    puVar1 = (uint *)((int)&g_TrainNoiseArray[0].sfx_handle + iVar2);
     iVar2 = iVar2 + 0x10;
     sound_sndmain_cpp_killSfx_FUN_005a9c40(*puVar1);
   } while (iVar2 != 0xa0);

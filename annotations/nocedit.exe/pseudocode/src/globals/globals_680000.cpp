@@ -818,7 +818,7 @@ RuntimeHandlerEntry g_InitHandlers[166] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_vehicle_cpp_staticInit_FUN_005e7810
+        .func = (RUNTIME_HANDLER_FUNC *)core_vecdir_cpp_staticInit_FUN_005e7810
     },
     {
         .status = 0x00,
@@ -3138,15 +3138,15 @@ SMRGLTextureBasic DAT_006843FC = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "DIRT.RAW"
 };
-SMRGLTextureBasic SMRGLTextureBasic_00684900 = {
+SMRGLTextureBasic g_RainDropTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "RAINDRP1.RAW"
 };
-SMRGLTextureBasic SMRGLTextureBasic_00684918 = {
+SMRGLTextureBasic g_RainSplashTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "RAINSPLT.RAW"
 };
-SMRGLTextureBasic SMRGLTextureBasic_00684930 = {
+SMRGLTextureBasic g_SnowflakeTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "SNOWFLKE.RAW"
 };

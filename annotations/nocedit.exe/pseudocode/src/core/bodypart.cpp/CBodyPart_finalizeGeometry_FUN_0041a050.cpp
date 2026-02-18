@@ -21,12 +21,12 @@ void __cdecl core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_0041a050(CBodyPart
   CVector3f *pCVar8;
   float fVar9;
   int iVar10;
-  SSurfaceNormal *pSVar11;
+  SMRGLPrimitiveTriangle *pSVar11;
   int iVar12;
   int *piVar13;
   int iVar14;
   CLocation *pCVar15;
-  SSurfaceNormal *output;
+  SMRGLPrimitiveTriangle *texture;
   int iVar16;
   CVector3f local_78;
   CVector3f local_6c;
@@ -118,21 +118,21 @@ void __cdecl core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_0041a050(CBodyPart
     if (0 < this_ptr->tri_count) {
       local_24 = 0;
       do {
-        output = (SSurfaceNormal *)
-                 ((int)&(this_ptr->faces->vertex_indices).vertex_index_0 + local_24);
-        output->vertex_count = 3;
-        engine_keyframe_c_calculateSurfaceNormal_FUN_00501bc0(this_ptr->vertices,output);
+        texture = (SMRGLPrimitiveTriangle *)
+                  ((int)&(this_ptr->faces->vertex_indices).vertex_index_0 + local_24);
+        (texture->base).base.count = 3;
+        engine_keyframe_c_calculateSurfaceNormal_FUN_00501bc0(this_ptr->vertices,texture);
         iVar10 = 0;
-        pSVar11 = output;
-        if (0 < output->vertex_count) {
+        pSVar11 = texture;
+        if (0 < (texture->base).base.count) {
           do {
-            pCVar7 = this_ptr->normals + pSVar11->vertex_index_1;
-            pCVar7->x = pCVar7->x + output->normal_x;
-            pCVar7->y = pCVar7->y + output->normal_y;
-            pCVar7->z = pCVar7->z + output->normal_z;
+            pCVar7 = this_ptr->normals + pSVar11->vertices[0].vertex_index;
+            pCVar7->x = pCVar7->x + (texture->base).surface_normal.A;
+            pCVar7->y = pCVar7->y + (texture->base).surface_normal.B;
+            pCVar7->z = pCVar7->z + (texture->base).surface_normal.C;
             iVar10 = iVar10 + 1;
-            pSVar11 = (SSurfaceNormal *)&pSVar11->normal_y;
-          } while (iVar10 < output->vertex_count);
+            pSVar11 = (SMRGLPrimitiveTriangle *)&(pSVar11->base).surface_normal.B;
+          } while (iVar10 < (texture->base).base.count);
         }
         local_24 = local_24 + 0x3c;
         local_20 = local_20 + 1;

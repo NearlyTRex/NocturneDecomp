@@ -117,7 +117,7 @@ LAB_004f7178:
       local_28 = SQRT(local_c4.z * local_c4.z + local_c4.x * local_c4.x + local_c4.y * local_c4.y);
       local_24 = local_28;
       if (local_28 < 2.0f) {
-        core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_40,&local_c4);
+        core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_40,&local_c4);
         local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                              (local_40.y - (this_ptr->base).base.base.orient.vec.y);
         if (ABS(local_14) < (float)0.52359877558333301) {
@@ -199,7 +199,7 @@ LAB_004f7178:
                        (this_ptr->base).base.base.location.position.y;
           local_70.z = (pCVar4->location).position.z -
                        (this_ptr->base).base.base.location.position.z;
-          core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_88,&local_70);
+          core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_88,&local_70);
           local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                                (local_88.y - (this_ptr->base).base.base.orient.vec.y);
           if (ABS(local_14) < (float)0.52359877558333301) {

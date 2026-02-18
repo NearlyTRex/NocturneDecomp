@@ -131,7 +131,7 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c1fe0(CStranger *this_ptr)
               CStack_74.x = local_a4.x - (this_ptr->base).base.base.location.position.x;
               CStack_74.y = local_a4.y - (this_ptr->base).base.base.location.position.y;
               CStack_74.z = local_a4.z - (this_ptr->base).base.base.location.position.z;
-              pCVar1 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+              pCVar1 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                                  (&CStack_80,&CStack_74);
               this_ptr_00 = g_CConsolePtr;
               this_ptr->unk12 = (int)pCVar1->y;

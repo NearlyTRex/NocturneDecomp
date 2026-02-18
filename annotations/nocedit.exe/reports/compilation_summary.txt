@@ -5,15 +5,15 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6494
-Successful: 5460 (84.1%)
-Failed: 1034
+Successful: 5461 (84.1%)
+Failed: 1033
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           1831
-  undeclared_identifier            949
+  other                           1822
+  undeclared_identifier            956
   incompatible_types               680
-  format_error                     612
+  format_error                     600
   syntax_error                     106
   missing_member                    31
   lvalue_required                   26
@@ -22,7 +22,7 @@ ERROR CATEGORIES
   overload_error                     1
 
 ====================================================================================================
-CATEGORY: other (1831 errors)
+CATEGORY: other (1822 errors)
 ====================================================================================================
 
   core_hero.cpp_CHero_FUN_004f3960
@@ -54,7 +54,7 @@ CATEGORY: other (1831 errors)
   core_set.cpp_CDemonSet_FUN_0056fbd0
     Line 119: C-style cast from 'CHero *' to 'float' is not allowed...
   core_larva.cpp_CLarva_process_FUN_00503080
-    Line 369: C-style cast from 'CLarva *' to 'float' is not allowed...
+    Line 366: C-style cast from 'CLarva *' to 'float' is not allowed...
   core_ghoul.cpp_CGhoul_process_FUN_004e6600
     Line 171: C-style cast from 'CPlatform *' to 'float' is not allowed...
   core_crossbow.cpp_CCrossbow_fire_FUN_00448f20
@@ -86,10 +86,10 @@ CATEGORY: other (1831 errors)
   shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050
     Line 63: C-style cast from 'WatcomTypeInfo *' to 'float' is not allowed...
 
-  ... and 351 more errors
+  ... and 350 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (949 errors)
+CATEGORY: undeclared_identifier (956 errors)
 ====================================================================================================
 
   core_game.cpp_CGame_saveGame_FUN_004e0cd0
@@ -119,7 +119,7 @@ CATEGORY: undeclared_identifier (949 errors)
   core_cloth.cpp_CCloth_render_FUN_0043bae0
     Line 117: use of undeclared identifier 'DAT_00827500'...
   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880
-    Line 165: use of undeclared identifier 'DAT_0083b110'; did you mean 'DAT_0083b10c'?...
+    Line 164: use of undeclared identifier 'DAT_0083b110'; did you mean 'DAT_0083b10c'?...
   shape_cramtex.cpp_generateTextureAtlasLayout_FUN_00444d90
     Line 98: use of undeclared identifier 'DAT_0084a8b0'; did you mean 'DAT_00823a80'?...
   shape_cramtex.cpp_generateTextureAtlas_FUN_00445820
@@ -129,7 +129,7 @@ CATEGORY: undeclared_identifier (949 errors)
   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0
     Line 418: use of undeclared identifier 'DAT_02c14c88'...
   core_fire.cpp_CShell_onCollision_FUN_004c6380
-    Line 32: use of undeclared identifier 'DAT_02d141dc'; did you mean 'DAT_02d141e0'?...
+    Line 33: use of undeclared identifier 'DAT_02d141dc'; did you mean 'DAT_02d141e0'?...
   core_flies.cpp_CFlies_renderOpaque_FUN_004cc300
     Line 58: use of undeclared identifier 'DAT_02d7a808'...
   core_game.cpp_CGame_displayActStats_FUN_004e3800
@@ -153,7 +153,7 @@ CATEGORY: undeclared_identifier (949 errors)
   core_netgame.cpp_CNetGame_processChatOut_FUN_00541e40
     Line 62: use of undeclared identifier 'DAT_02f98ae0'...
 
-  ... and 315 more errors
+  ... and 316 more errors
 
 ====================================================================================================
 CATEGORY: incompatible_types (680 errors)
@@ -223,7 +223,7 @@ CATEGORY: incompatible_types (680 errors)
   ... and 413 more errors
 
 ====================================================================================================
-CATEGORY: format_error (612 errors)
+CATEGORY: format_error (600 errors)
 ====================================================================================================
 
   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
@@ -314,7 +314,7 @@ CATEGORY: syntax_error (106 errors)
   core_event.cpp_CEventList_evaluateAtom_FUN_004ae140
     Line 1183: expected expression...
   core_fire.cpp_CFireball_process_FUN_004c0b30
-    Line 88: expected expression...
+    Line 92: expected expression...
   core_fire.cpp_CGunFlame_initProcess_FUN_004c4b00
     Line 22: expected expression...
   core_gabriela.cpp_CGabriella_FUN_004d6540
@@ -392,7 +392,7 @@ CATEGORY: lvalue_required (26 errors)
   core_scat.cpp_CScat_FUN_005584a0
     Line 114: cannot take the address of an rvalue of type 'float'...
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
-    Line 563: cannot take the address of an rvalue of type 'float'...
+    Line 556: cannot take the address of an rvalue of type 'float'...
   core_stranger.cpp_CStranger_FUN_005c02b0
     Line 141: cannot take the address of an rvalue of type 'float'...
   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
@@ -467,8 +467,8 @@ CATEGORY: overload_error (1 errors)
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in successfully compiled functions: 2.16
-Average suspects in failed compilations: 11.89
+Average suspects in successfully compiled functions: 2.10
+Average suspects in failed compilations: 11.82
 
-Functions that compile but have suspect patterns: 1729
+Functions that compile but have suspect patterns: 1714
 (These may have runtime issues even though syntax is valid)

@@ -89,7 +89,7 @@ float __cdecl core_setcolid_cpp_CDemonSet_testCapsuleCollision_FUN_00573470(CDem
 void __cdecl core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_00573e10(CDemonSet *this_ptr);
 void __cdecl core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00573fc0(CDemonSet *this_ptr);
 void __cdecl core_setcolid_cpp_CDemonSet_FUN_00574170(CDemonSet *this_ptr);
-void __cdecl core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet *this_ptr);
+void __cdecl core_setcolid_cpp_CDemonSet_init_FUN_00574180(CDemonSet *this_ptr);
 void __cdecl core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(CDemonSet *this_ptr,CDemonActor *actor);
 void __cdecl core_setcolid_cpp_CDemonSet_disableIgnore_FUN_00574210(CDemonSet *this_ptr);
 void __cdecl core_setcolid_cpp_CDemonSet_FUN_00574220(CDemonSet *this_ptr);

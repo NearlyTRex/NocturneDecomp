@@ -126,7 +126,7 @@ LAB_005e2ed6:
          (local_b4.max.z < pCVar2->z)))))) goto LAB_005e2ed6;
     pCVar2 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                        ((CDemonActor *)this_ptr,&CStack_84,&CStack_54);
-    core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_48,pCVar2);
+    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_48,pCVar2);
     if (((CStack_48.x < -0.5235988f) || (1.22173f < CStack_48.x)) ||
        (SQRT(CStack_90.z * CStack_90.z + CStack_90.x * CStack_90.x + CStack_90.y * CStack_90.y) <
         SQRT(CStack_48.z * CStack_48.z + CStack_48.x * CStack_48.x + CStack_48.y * CStack_48.y)))

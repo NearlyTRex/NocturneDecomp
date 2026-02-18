@@ -305,8 +305,8 @@ section .text
     FSTP float ptr [EBP + 0xffffff2e]   ; 005969f5
     PUSH EAX                            ; 005969fb
     FSTP float ptr [EBP + 0xffffff36]   ; 005969fc
-    CALL shape_spotview.cpp_CSpotView_FUN_005b9620 ; 00596a02
-        ;   XREF to: 005b9620 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_FUN_005b9620(CSpotView * this_ptr)
+    CALL shape_spotview.cpp_CSpotView_reset_FUN_005b9620 ; 00596a02
+        ;   XREF to: 005b9620 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_reset_FUN_005b9620(CSpotView * this_ptr, uint control_flags)
     MOV EDX,0x1                         ; 00596a07
     ADD ESP,0x8                         ; 00596a0c
     XOR EAX,EAX                         ; 00596a0f
@@ -428,8 +428,8 @@ section .text
         ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBuffer_FUN_005b3ed4()
     LEA EAX,[EBP + 0xfffffd32]          ; 00596bab
     PUSH EAX                            ; 00596bb1
-    CALL shape_spotview.cpp_CSpotView_FUN_005b9a20 ; 00596bb2
-        ;   XREF to: 005b9a20 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_FUN_005b9a20(CSpotView * this_ptr)
+    CALL shape_spotview.cpp_CSpotView_applyCamera_FUN_005b9a20 ; 00596bb2
+        ;   XREF to: 005b9a20 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_applyCamera_FUN_005b9a20(CSpotView * this_ptr)
     ADD ESP,0x4                         ; 00596bb7
     MOV EAX,[0x0067cf44]                ; 00596bba | g_CKeysPtr
     PUSH 0x1d                           ; 00596bbf
@@ -1764,8 +1764,8 @@ section .text
     PUSH 0x17                           ; 00597a9a
     LEA EAX,[EBP + 0xfffffd32]          ; 00597a9c
     PUSH EAX                            ; 00597aa2
-    CALL shape_spotview.cpp_CSpotView_FUN_005b9670 ; 00597aa3
-        ;   XREF to: 005b9670 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_FUN_005b9670(CSpotView * this_ptr)
+    CALL shape_spotview.cpp_CSpotView_handleInput_FUN_005b9670 ; 00597aa3
+        ;   XREF to: 005b9670 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_handleInput_FUN_005b9670(CSpotView * this_ptr, uint control_flags)
     MOV EAX,[0x0067b654]                ; 00597aa8 | g_CGamePtr
     ADD ESP,0x8                         ; 00597aad
     FLD float ptr [EAX + 0x264]         ; 00597ab0 | g_CGameInstance.delta_time_float
@@ -2336,8 +2336,8 @@ section .text
         ;   Label: LAB_0059810c
     LEA EAX,[EBP + 0xfffffd32]          ; 0059810e
     PUSH EAX                            ; 00598114
-    CALL shape_spotview.cpp_CSpotView_FUN_005b9670 ; 00598115
-        ;   XREF to: 005b9670 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_FUN_005b9670(CSpotView * this_ptr)
+    CALL shape_spotview.cpp_CSpotView_handleInput_FUN_005b9670 ; 00598115
+        ;   XREF to: 005b9670 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_handleInput_FUN_005b9670(CSpotView * this_ptr, uint control_flags)
     JMP 0x00597c1c                      ; 0059811a
         ;   XREF to: 00597c1c (UNCONDITIONAL_JUMP)  ; LAB_00597c1c
     PUSH 0x1d                           ; 0059811f

@@ -19,7 +19,7 @@ void __cdecl core_charactr_cpp_CCharacter_turnTowardPoint_FUN_00428d80(CCharacte
   
   pCVar1 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                      (&this_ptr->base,&local_24,target);
-  pCVar1 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_30,pCVar1);
+  pCVar1 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_30,pCVar1);
   local_c = pCVar1->y;
   local_10 = this_ptr->turn_speed;
   fVar2 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(local_c);

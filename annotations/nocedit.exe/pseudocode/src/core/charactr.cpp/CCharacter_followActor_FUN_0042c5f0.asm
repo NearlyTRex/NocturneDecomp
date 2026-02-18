@@ -45,7 +45,7 @@
 ;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0
-;   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 ;   engine_console.cpp_CConsole_printf_FUN_00441890
 ;
 ; *****************************************************************************
@@ -188,8 +188,8 @@ section .text
     PUSH EAX                            ; 0042c739
     LEA EAX,[ESP + 0x1c]                ; 0042c73a
     PUSH EAX                            ; 0042c73e
-    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 0042c73f
-        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 0042c73f
+        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     MOV EDX,dword ptr [EAX + 0x4]       ; 0042c744
     MOV dword ptr [ESI + 0x2418],EDX    ; 0042c747
     MOV EAX,dword ptr [EBX]             ; 0042c74d

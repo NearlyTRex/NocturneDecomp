@@ -1,0 +1,249 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 136,
+    "complexity_score": 115,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 8,
+    "pseudocode_lines": 50,
+    "suspect_count": 6,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 186
+  },
+  "cross_references": [
+    {
+      "addr": "004c4f60",
+      "from_addr": "004c5066",
+      "name": "core_fire.cpp_CGunFlame_process_FUN_004c4f60",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c4c00",
+    "address_range": [
+      [
+        "004c4c00",
+        "004c4d48"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_fire.cpp_CGunFlame_init_FUN_004c4c00",
+    "signature": "void __cdecl core_fire_cpp_CGunFlame_init_FUN_004c4c00(CGunFlame *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408f10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10"
+    },
+    {
+      "addr": "0042b5b0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0"
+    },
+    {
+      "addr": "004cb340",
+      "is_variadic": false,
+      "name": "core_flamecan.cpp_CFlameCan_FUN_004cb340"
+    },
+    {
+      "addr": "005a07a0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00629f23",
+      "name": "FLOAT_00629f23",
+      "type": "float",
+      "value": "25"
+    },
+    {
+      "addr": "00629f2b",
+      "name": "DOUBLE_00629f2b",
+      "type": "double",
+      "value": "25"
+    },
+    {
+      "addr": "02d13eb4",
+      "name": "DAT_02d13eb4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d13eb8",
+      "name": "DAT_02d13eb8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d13ebc",
+      "name": "DAT_02d13ebc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d13f80",
+      "name": "DAT_02d13f80",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d13f84",
+      "name": "DAT_02d13f84",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d13f88",
+      "name": "DAT_02d13f88",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.392857142857143,
+    "instruction_count": 112,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 6,
+      "BRANCH": 2,
+      "CALL": 4,
+      "CBRANCH": 8,
+      "COPY": 199,
+      "FLOAT2FLOAT": 14,
+      "FLOAT_ADD": 4,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_MULT": 6,
+      "FLOAT_NAN": 4,
+      "FLOAT_SUB": 6,
+      "INT_ADD": 43,
+      "INT_AND": 60,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 46,
+      "INT_LEFT": 8,
+      "INT_LESS": 6,
+      "INT_NOTEQUAL": 14,
+      "INT_OR": 10,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 23,
+      "INT_SUB": 25,
+      "INT_XOR": 3,
+      "INT_ZEXT": 8,
+      "LOAD": 29,
+      "POPCOUNT": 23,
+      "RETURN": 1,
+      "STORE": 22
+    },
+    "pcode_op_count": 604
+  },
+  "stack_frame": {
+    "frame_size": 72,
+    "local_size": 68,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGunFlame *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004c4c09",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_02d13eb4",
+      "text": "if (0 < DAT_02d13eb4) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_02d13eb8",
+      "text": "this_ptr_00 = *(CCharacter **)((int)&DAT_02d13eb8 + local_20);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 34,
+      "match": "DAT_02d13eb4",
+      "text": "} while (iVar4 < DAT_02d13eb4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 37,
+      "match": "DAT_02d13f80",
+      "text": "if (0 < DAT_02d13f80) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 41,
+      "match": "DAT_02d13f84",
+      "text": "this_ptr_01 = *(CFlameCan **)((int)&DAT_02d13f84 + iVar5);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 50,
+      "match": "DAT_02d13f80",
+      "text": "} while (iVar4 < DAT_02d13f80);",
+      "type": "undefined_data"
+    }
+  ]
+}

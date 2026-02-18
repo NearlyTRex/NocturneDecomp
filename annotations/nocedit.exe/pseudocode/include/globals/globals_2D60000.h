@@ -6,7 +6,6 @@
 #include "types/classes/CCrater.h"
 #include "types/classes/CExplosion.h"
 #include "types/classes/CFireball.h"
-#include "types/classes/CGlassParticle.h"
 #include "types/classes/CGunFlame.h"
 #include "types/classes/CLaserBeam.h"
 #include "types/classes/CRock.h"
@@ -16,20 +15,11 @@
 // GLOBAL VARIABLES - Range 0x2D60000
 // =============================================================================
 
-// CBulletTrail*
-extern CBulletTrail* g_BulletTrailActiveListHead;
-
 // CBulletTrail[10]
 extern CBulletTrail g_BulletTrailPool[10];
 
-// CCrater*
-extern CCrater* g_CraterActiveListHead;
-
 // CCrater[20]
 extern CCrater g_CraterPool[20];
-
-// CExplosion*
-extern CExplosion* g_ExplosionActiveListHead;
 
 // CExplosion[10]
 extern CExplosion g_ExplosionPool[10];
@@ -37,17 +27,11 @@ extern CExplosion g_ExplosionPool[10];
 // CFireball[64]
 extern CFireball g_FireballPool[64];
 
-// CGlassParticle*
-extern CGlassParticle* g_CFireEffectGlassParticlesEnd;
-
 // CGunFlame[500]
 extern CGunFlame g_GunFlamePool[500];
 
 // CLaserBeam[64]
 extern CLaserBeam g_LaserBeamPool[64];
-
-// CRock*
-extern CRock* g_CFireEffectRocksEnd;
 
 // CRock[64]
 extern CRock g_RockPool[64];
@@ -56,7 +40,12 @@ extern CRock g_RockPool[64];
 extern CToss g_TossPool[20];
 
 // int
-extern int INT_02d655a8;
+extern int g_BulletTrailAllocIndex;
+extern int g_FireballAllocIndex;
+extern int g_RockAllocIndex;
+extern int g_LaserBeamActiveCount;
 extern int g_ExplosionPoolIndex;
-extern int INT_02d6c6a0;
+extern int g_TossAllocIndex;
+extern int g_CraterAllocIndex;
+extern int g_GunFlameAllocIndex;
 

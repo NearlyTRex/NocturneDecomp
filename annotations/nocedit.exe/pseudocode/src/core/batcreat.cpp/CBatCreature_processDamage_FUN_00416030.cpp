@@ -28,7 +28,8 @@ void __cdecl core_batcreat_cpp_CBatCreature_processDamage_FUN_00416030(CBatCreat
               ((CDemonActor *)this_ptr,&local_30,&damage_info->impact_direction);
     do {
       iVar2 = iVar2 + 1;
-      core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);
+      core_fire_cpp_CFireEffect_createSpark_FUN_004c79d0
+                (g_CFireEffectPtr,&local_30,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
     } while (iVar2 < 5);
   }
   if (damage_info->damage_type == 0x6c) {

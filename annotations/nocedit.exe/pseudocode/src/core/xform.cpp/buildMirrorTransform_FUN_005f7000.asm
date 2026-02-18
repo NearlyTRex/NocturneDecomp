@@ -22,7 +22,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Called Functions:
-;   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 ;   core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
 ;   core_xform.cpp_buildZFlipMatrix_FUN_005f6fa0
 ;   core_xform.cpp_inverse_FUN_005f6210
@@ -61,8 +61,8 @@ section .text
     FMUL float ptr [ESP + 0x19c]        ; 005f705f
     PUSH EAX                            ; 005f7066
     FSTP float ptr [ESP + 0x190]        ; 005f7067
-    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 005f706e
-        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 005f706e
+        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 005f7073
     PUSH EAX                            ; 005f7076
     LEA EAX,[ESP + 0x184]               ; 005f7077

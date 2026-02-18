@@ -19,7 +19,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
-;   core_fire.cpp_CFireEffect_FUN_004c7f20
+;   core_fire.cpp_CFireEffect_createLaserSegment2_FUN_004c7f20
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
 ;
 ; *****************************************************************************
@@ -160,8 +160,8 @@ section .text
     PUSH EAX                            ; 004a7b5c
     MOV ECX,dword ptr [0x0067a3d0]      ; 004a7b5d | g_CFireEffectInstance | g_CFireEffectPtr
     PUSH ECX                            ; 004a7b63 | g_CFireEffectInstance
-    CALL core_fire.cpp_CFireEffect_FUN_004c7f20 ; 004a7b64
-        ;   XREF to: 004c7f20 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c7f20(CFireEffect * this_ptr)
+    CALL core_fire.cpp_CFireEffect_createLaserSegment2_FUN_004c7f20 ; 004a7b64
+        ;   XREF to: 004c7f20 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLaserSegment2_FUN_004c7f20(CFireEffect * this_ptr)
     ADD ESP,0x20                        ; 004a7b69
     MOV dword ptr [EBX + 0x57c],0x1     ; 004a7b6c
     FLD float ptr [ESP + 0x4c]          ; 004a7b76

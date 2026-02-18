@@ -471,7 +471,7 @@ LAB_005bd19f:
                         ((this_ptr->base).pushed_object,&CStack_174,(CVector3f *)auStack_168);
               core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                         ((CDemonActor *)this_ptr,aCStack_9c,&CStack_174);
-              pCVar18 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+              pCVar18 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                                   (aCStack_114,aCStack_9c);
               in_stack_fffffd14 = (UOrientationVector *)pCVar18->y;
               in_stack_fffffd10 = (UOrientationVector *)0x5bd021;
@@ -515,7 +515,7 @@ LAB_005bd19f:
             pCVar18 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                                 ((CDemonActor *)this_ptr,(CVector3f *)(auStack_168 + 4),
                                  &(pCVar11->location).position);
-            pCVar18 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+            pCVar18 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                                 ((CVector3f *)auStack_1dc,pCVar18);
             fStack_2d0 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar18->y);
             if (fStack_2d0 < (float)-1.57079632675) {
@@ -1164,8 +1164,8 @@ LAB_005bc1a6:
     }
   }
   core_stranger_cpp_CStranger_FUN_005c06b0(this_ptr);
-  core_stranger_cpp_CStranger_FUN_005c3960(this_ptr);
-  core_stranger_cpp_CStranger_FUN_005c3960(this_ptr);
+  core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(this_ptr);
+  core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(this_ptr);
   core_stranger_cpp_CStranger_FUN_005c5f10(this_ptr);
   core_inv_cpp_CInventory_updateInventory_FUN_004ffad0(&(this_ptr->base).inventory);
   core_stranger_cpp_CStranger_FUN_005c6590(this_ptr);

@@ -25,7 +25,7 @@ int __cdecl core_actor_cpp_CDemonActor_processFootstep_FUN_0040c830(CDemonActor 
   core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,this_ptr);
   core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
             (g_CDemonSetPtr,&position->position,0.0);
-  core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
+  core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
   iVar4 = (*((this_ptr->vtable)._ub)->handleFootstep)
                     (this_ptr,&position->position,g_CDemonSetPtr->ground_type,volume);
   return iVar4;

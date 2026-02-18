@@ -19,7 +19,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10
-;   core_fire.cpp_CFireEffect_FUN_004c79d0
+;   core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
@@ -121,8 +121,8 @@ section .text
     MOV EBP,dword ptr [0x0067a3d0]      ; 004f77ff | g_CFireEffectPtr
     PUSH EBP                            ; 004f7805 | g_CFireEffectInstance
     INC EBX                             ; 004f7806
-    CALL core_fire.cpp_CFireEffect_FUN_004c79d0 ; 004f7807
-        ;   XREF to: 004c79d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c79d0(CFireEffect * this_ptr)
+    CALL core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0 ; 004f7807
+        ;   XREF to: 004c79d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int intensity_target, ...)
     ADD ESP,0x1c                        ; 004f780c
     CMP EBX,0x5                         ; 004f780f
     JL 0x004f77e7                       ; 004f7812

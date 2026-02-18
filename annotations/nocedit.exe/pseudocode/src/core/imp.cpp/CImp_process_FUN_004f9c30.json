@@ -16,25 +16,25 @@
       {
         "category": "incompatible_types",
         "column": 28,
-        "line": 310,
+        "line": 309,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       },
       {
         "category": "incompatible_types",
         "column": 26,
-        "line": 350,
+        "line": 349,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       },
       {
         "category": "incompatible_types",
         "column": 20,
-        "line": 378,
+        "line": 377,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       },
       {
         "category": "undeclared_identifier",
         "column": 71,
-        "line": 387,
+        "line": 386,
         "message": "use of undeclared identifier 'stack0xfffffe60'; did you mean 'in_stack_fffffe60'?"
       }
     ],
@@ -43,11 +43,11 @@
   },
   "complexity": {
     "assembly_lines": 1167,
-    "complexity_score": 650,
+    "complexity_score": 649,
     "cross_reference_count": 0,
     "function_call_count": 28,
     "global_count": 34,
-    "pseudocode_lines": 500,
+    "pseudocode_lines": 499,
     "suspect_count": 13,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -55,7 +55,7 @@
       "stack_ref",
       "warning_type_propagation"
     ],
-    "total_lines": 1667
+    "total_lines": 1666
   },
   "cross_references": [],
   "function": {
@@ -190,7 +190,7 @@
     {
       "addr": "005e7830",
       "is_variadic": false,
-      "name": "core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830"
+      "name": "core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830"
     },
     {
       "addr": "005f4dc0",
@@ -981,28 +981,28 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 297,
+      "line": 296,
       "match": "ABS",
       "text": "if ((ABS(local_14) < (float)0.52359877558333301) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 321,
+      "line": 320,
       "match": "ABS",
       "text": "if (ABS(local_14) < (float)0.52359877558333301) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Direct stack address reference",
-      "line": 380,
+      "line": 379,
       "match": "&stack0xfffffe60",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffe60);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 502,
+      "line": 501,
       "match": "in_stack_fffffe60",
       "text": "((CCharacter *)this_ptr,delta_time,in_stack_fffffe60);",
       "type": "stack_param"

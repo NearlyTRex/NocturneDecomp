@@ -120,7 +120,7 @@ void __cdecl core_sound_cpp_CSound_process_FUN_005b2fd0(CSound *this_ptr)
     local_18 = g_CGamePtr->delta_time_float;
     if (g_CGamePtr->block_auto_save == 0) {
       if (g_TrainLastCameraIndex != g_CDemonSetPtr->selected_camera_index) {
-        core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
+        core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
         core_setcolid_cpp_CDemonSet_disableIgnore_FUN_00574210(g_CDemonSetPtr);
         local_54.x = g_SoundListenerPrev.x;
         local_54.y = g_SoundListenerPrev.y;
@@ -139,7 +139,7 @@ void __cdecl core_sound_cpp_CSound_process_FUN_005b2fd0(CSound *this_ptr)
         else {
           g_CurrentTrainMode = "int";
         }
-        core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
+        core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
         g_TrainLastCameraIndex = g_CDemonSetPtr->selected_camera_index;
       }
     }
@@ -189,7 +189,7 @@ void __cdecl core_sound_cpp_CSound_process_FUN_005b2fd0(CSound *this_ptr)
     g_TrainVelocityVector.z = 30.0;
     local_1c = (STrainNoise *)0x0;
     do {
-      iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(g_TrainNoiseArray[iVar4].sound_handle);
+      iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(g_TrainNoiseArray[iVar4].sfx_handle);
       pSVar3 = pSVar7;
       if (iVar5 != 0) {
         local_60 = g_TrainVelocityVector.x * local_18;
@@ -200,7 +200,7 @@ void __cdecl core_sound_cpp_CSound_process_FUN_005b2fd0(CSound *this_ptr)
         (pSVar7->position).z = (pSVar7->position).z + local_58;
         pSVar3 = local_1c;
         if ((float)510 < ABS(g_TrainNoiseArray[iVar4].position.z)) {
-          sound_sndmain_cpp_killSfx_FUN_005a9c40(g_TrainNoiseArray[iVar4].sound_handle);
+          sound_sndmain_cpp_killSfx_FUN_005a9c40(g_TrainNoiseArray[iVar4].sfx_handle);
           pSVar3 = local_1c;
         }
       }
@@ -259,7 +259,7 @@ void __cdecl core_sound_cpp_CSound_process_FUN_005b2fd0(CSound *this_ptr)
       _sprintf(local_134,"%s @ %g",local_d0,(double)local_140);
       uVar6 = core_sound_cpp_CSound_playTrackedActorSound_FUN_005b3a70
                         (g_CSoundPtr,(CDemonActor *)0x0,local_134,&local_1c->position);
-      local_1c->sound_handle = uVar6;
+      local_1c->sfx_handle = uVar6;
       sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
       return;
     }

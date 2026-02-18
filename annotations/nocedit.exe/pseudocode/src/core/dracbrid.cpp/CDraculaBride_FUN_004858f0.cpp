@@ -43,7 +43,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_FUN_004858f0(CDraculaBride *this_pt
       if (0 < local_24) {
         do {
           if ((in_stack_00000008 != (CVector3f *)0x0) && (0.0 < local_b0)) {
-            core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+            core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                       (&local_3c,in_stack_00000008);
             local_20 = -local_b0;
             local_18 = core_actor_cpp_getRandomFloat_FUN_0040cc10(local_20,local_b0);

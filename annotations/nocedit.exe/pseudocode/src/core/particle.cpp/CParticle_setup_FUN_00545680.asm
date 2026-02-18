@@ -12,8 +12,8 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[3]:
-;   core_fire.cpp_FUN_004c17c0 at 004c17d6
-;   core_fire.cpp_FUN_004c6170 at 004c6188
+;   core_fire.cpp_CRock_setup_FUN_004c17c0 at 004c17d6
+;   core_fire.cpp_CShell_setup_FUN_004c6170 at 004c6188
 ;   core_gore.cpp_CBloodParticle_setup_FUN_004eb9a0 at 004eb9c6
 ;
 ; Called Functions:

@@ -33,9 +33,9 @@
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SInteractionInfo.h"
 #include "types/structs/SInteractionState.h"
+#include "types/structs/SLaserInfo.h"
 #include "types/structs/SNetworkAddr.h"
 #include "types/structs/SSocketContext.h"
-#include "types/structs/SSurfaceInfo.h"
 #include "types/structs/SWaterVertex.h"
 
 // =============================================================================
@@ -48,7 +48,7 @@ void __cdecl core_trigger_cpp_CTrigger_archive_FUN_005e0690(CTrigger *this_ptr);
 int __cdecl core_trigger_cpp_CTrigger_hasCollision_FUN_005e0930(CTrigger *this_ptr,SCollisionInfo *collision_info);
 int __cdecl core_trigger_cpp_CTrigger_evaluateTriggerCondition_FUN_005e0980(CTrigger *this_ptr);
 int __cdecl core_trigger_cpp_CTrigger_processActionButton_FUN_005e0a20(CTrigger *this_ptr);
-void __cdecl core_trigger_cpp_CTrigger_getSurfaceProperties_FUN_005e0a50(CTrigger *this_ptr,SSurfaceInfo *surface_info);
+void __cdecl core_trigger_cpp_CTrigger_onLaserHit_FUN_005e0a50(CTrigger *this_ptr,SLaserInfo *laser_info);
 void __cdecl core_trigger_cpp_CTrigger_FUN_005e0aa0(CTrigger *this_ptr);
 int __cdecl core_trigger_cpp_CTrigger_FUN_005e0ac0(CTrigger *this_ptr);
 void __cdecl core_trigger_cpp_CTrigger_FUN_005e0b00(CTrigger *this_ptr);
@@ -162,8 +162,8 @@ void __cdecl core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_005e7510(CVam
 int __cdecl core_vampboss_cpp_CVampireBoss_hasCollision_FUN_005e75f0(CVampireBoss *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_vampboss_cpp_CVampireBoss_getPropertyList_FUN_005e7650(CVampireBoss *this_ptr,CActorPropertyList *property_list);
 CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_dtor_FUN_005e7700(CVampireBoss *this_ptr,uint flags);
-void __cdecl core_vehicle_cpp_staticInit_FUN_005e7810(void);
-CVector3f * __cdecl core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f *out_euler_angles,CVector3f *in_direction_vector);
+void __cdecl core_vecdir_cpp_staticInit_FUN_005e7810(void);
+CVector3f * __cdecl core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f *out_euler_angles,CVector3f *in_direction_vector);
 void __cdecl core_vehicle_cpp_staticInit_FUN_005e78d0(void);
 CVehicle * __cdecl core_vehicle_cpp_factoryFunc_FUN_005e7900(void);
 CDemonActorType * __cdecl core_vehicle_cpp_CVehicle_getActorType_FUN_005e7930(CVehicle *this_ptr);
@@ -226,7 +226,7 @@ void __cdecl core_wateract_cpp_CWaterActor_archive_FUN_005eb510(CWaterActor *thi
 int __cdecl core_wateract_cpp_CWaterActor_hasCollision_FUN_005eb710(CWaterActor *this_ptr,SCollisionInfo *collision_info);
 int __cdecl core_wateract_cpp_CWaterActor_getGroundType_FUN_005eb730(CWaterActor *this_ptr);
 float __cdecl core_wateract_cpp_CWaterActor_customRayIntersect_FUN_005eb740(CWaterActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction, CVector3f *out_normal);
-void __cdecl core_wateract_cpp_CWaterActor_getSurfaceProperties_FUN_005eb910(CWaterActor *this_ptr,SSurfaceInfo *surface_info);
+void __cdecl core_wateract_cpp_CWaterActor_onLaserHit_FUN_005eb910(CWaterActor *this_ptr,SLaserInfo *laser_info);
 void __cdecl core_wateract_cpp_CWaterActor_getPropertyList_FUN_005eb940(CWaterActor *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_wateract_cpp_CWaterActor_processInEditor_FUN_005ebab0(CWaterActor *this_ptr);
 void __cdecl core_wateract_cpp_CWaterActor_showEditorHelp_FUN_005ebc10(CWaterActor *this_ptr,int *y_pos);
@@ -306,12 +306,12 @@ CDemonGlobe * __cdecl core_weapon_cpp_CDemonGlobe_ctor_FUN_005eea80(CDemonGlobe 
 CDemonGlobe * __cdecl core_weapon_cpp_CDemonGlobe_dtor_FUN_005eea90(CDemonGlobe *this_ptr,uint flags);
 void __cdecl core_weather_cpp_staticInit_FUN_005eeaa0(void);
 CWeather * __cdecl core_weather_cpp_CWeather_ctor_FUN_005eead0(CWeather *this_ptr);
-void __cdecl core_weather_cpp_CWeather_FUN_005eeaf0(CWeather *this_ptr);
-void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_005eeeb0(CWeather *this_ptr,float param_2,int param_3);
-void __cdecl core_weather_cpp_CWeather_FUN_005ef140(CWeather *this_ptr);
-void __cdecl core_weather_cpp_CWeather_FUN_005ef190(CWeather *this_ptr);
+void __cdecl core_weather_cpp_CWeather_update_FUN_005eeaf0(CWeather *this_ptr);
+void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_005eeeb0(CWeather *this_ptr,float flash_timer,int play_sound);
+void __cdecl core_weather_cpp_CWeather_createThunder_FUN_005ef140(CWeather *this_ptr);
+void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_005ef190(CWeather *this_ptr);
 void __cdecl core_weather_cpp_CWeather_setWeatherType_FUN_005ef8c0(CWeather *this_ptr,int type);
-void __cdecl core_weather_cpp_CWeather_FUN_005ef940(CWeather *this_ptr,CVector3f *param_2,CVector3f *param_3);
+void __cdecl core_weather_cpp_CWeather_setOriginAndRotation_FUN_005ef940(CWeather *this_ptr,CVector3f *direction,CVector3f *rotation);
 CWeather * __cdecl core_weather_cpp_CWeather_dtor_FUN_005efb40(CWeather *this_ptr,uint flags);
 CVector3f * __cdecl core_weather_cpp_CVector3f_arrdtor_FUN_005efb50(CVector3f *objs,uint flags);
 void __cdecl core_werewolf_cpp_staticInit_FUN_005efb70(void);

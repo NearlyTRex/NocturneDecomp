@@ -201,7 +201,7 @@ LAB_004f9c99:
                           local_80.x * local_80.x + local_80.y * local_80.y);
           local_18 = local_20;
           if (local_20 < 2.0f) {
-            core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_e0,&local_80);
+            core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_e0,&local_80);
             local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                                  (local_e0.y - (this_ptr->base).base.base.orient.vec.y);
             if (ABS(local_14) < (float)0.52359877558333301) {
@@ -297,8 +297,7 @@ LAB_004f9c99:
                            (this_ptr->base).base.base.location.position.y;
               local_74.z = (pCVar9->location).position.z -
                            (this_ptr->base).base.base.location.position.z;
-              core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_ec,&local_74)
-              ;
+              core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_ec,&local_74);
               local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                                    (local_ec.y - (this_ptr->base).base.base.orient.vec.y);
               if ((ABS(local_14) < (float)0.52359877558333301) &&
@@ -321,8 +320,8 @@ LAB_004f9c99:
                            (this_ptr->base).base.base.location.position.y;
               local_d4.z = (pCVar9->location).position.z -
                            (this_ptr->base).base.base.location.position.z;
-              core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-                        (&local_11c,&local_d4);
+              core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_11c,&local_d4)
+              ;
               local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                                    (local_11c.y - (this_ptr->base).base.base.orient.vec.y);
               if (ABS(local_14) < (float)0.52359877558333301) {

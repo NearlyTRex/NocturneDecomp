@@ -34,7 +34,7 @@ CMatrix3x4f * __stack2_esi core_xform_cpp_buildMirrorTransform_FUN_005f7000(CVec
   local_24.x = axis_vector->x * local_c;
   local_24.y = axis_vector->y * local_c;
   local_24.z = axis_vector->z * local_c;
-  euler_angles = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+  euler_angles = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                            (&local_18,axis_vector);
   core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390(&local_84,&local_24,euler_angles);
   core_xform_cpp_inverse_FUN_005f6210(&local_84,&local_54);

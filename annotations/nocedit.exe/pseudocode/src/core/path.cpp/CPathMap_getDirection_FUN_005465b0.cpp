@@ -56,7 +56,7 @@ float __cdecl core_path_cpp_CPathMap_getDirection_FUN_005465b0(CPathMap *this_pt
   local_98.x = (this_ptr->current_position).x - dest_position->x;
   local_98.y = (this_ptr->current_position).y - dest_position->y;
   local_98.z = (this_ptr->current_position).z - dest_position->z;
-  pCVar1 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_68,&local_98);
+  pCVar1 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_68,&local_98);
   local_a4 = pCVar1->x / 100.0f;
   local_9c = 0.01f * pCVar1->z;
   local_18 = 1;
@@ -200,6 +200,6 @@ switchD_00546911_default:
   local_e0.x = local_50 * local_e0.z;
   local_e0.y = local_4c * local_e0.z;
   local_e0.z = local_48 * local_e0.z;
-  pCVar1 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_bc,&local_e0);
+  pCVar1 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_bc,&local_e0);
   return pCVar1->y + local_a0;
 }

@@ -24,7 +24,7 @@ int __cdecl core_turret_cpp_CTurret_FUN_005e3280(CTurret *this_ptr)
   local_24.x = *in_stack_00000008 - (this_ptr->base).base.location.position.x;
   local_24.y = in_stack_00000008[1] - (this_ptr->base).base.location.position.y;
   local_24.z = in_stack_00000008[2] - (this_ptr->base).base.location.position.z;
-  core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_30,&local_24);
+  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_30,&local_24);
   if (local_30.x < -0.5235988f) {
     local_30.x = -0.5235988f;
   }

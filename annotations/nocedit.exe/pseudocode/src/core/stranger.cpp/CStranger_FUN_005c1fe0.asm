@@ -39,7 +39,7 @@
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 ;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
-;   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 ;   engine_console.cpp_CConsole_printf_FUN_00441890
 ;
 ; *****************************************************************************
@@ -345,8 +345,8 @@ section .text
     LEA EAX,[ESP + 0x6c]                ; 005c23ab
     PUSH EAX                            ; 005c23af
     FSTP float ptr [ESP + 0x84]         ; 005c23b0
-    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 005c23b7
-        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 005c23b7
+        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 005c23bc
     PUSH ESI                            ; 005c23bf
     MOV EDX,dword ptr [0x0066e8e0]      ; 005c23c0 | g_CConsoleInstance | g_CConsolePtr

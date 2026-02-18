@@ -78,7 +78,7 @@ void __cdecl core_charactr_cpp_CCharacter_addDamageDecal_FUN_0042b190(CCharacter
     local_28.y = (g_CDemonSetPtr->collision_impact_position).y - local_30;
     local_28.z = (g_CDemonSetPtr->collision_impact_position).z - local_2c;
     local_14 = local_1c;
-    euler_angles = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+    euler_angles = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                              (&local_40,&local_4c);
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
               (&local_ac,&local_28,euler_angles);

@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 37,
+    "complexity_score": 11,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 6,
-    "pseudocode_lines": 12,
-    "suspect_count": 2,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 38
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 37
   },
   "cross_references": [],
   "function": {
@@ -28,7 +26,7 @@
     ],
     "convention": "__cdecl",
     "name": "wincore_winrun.cpp_addWindowsMessageHook_FUN_005f3100",
-    "signature": "void __cdecl wincore_winrun_cpp_addWindowsMessageHook_FUN_005f3100(void)"
+    "signature": "void __cdecl wincore_winrun_cpp_addWindowsMessageHook_FUN_005f3100(MessageHandler message_handler)"
   },
   "function_calls": [
     {
@@ -79,8 +77,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "estimated_params": 0
+    "declared_params": 1,
+    "estimated_params": 1
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.0,
@@ -108,27 +106,20 @@
     "pcode_op_count": 60
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "message_handler",
+        "offset": 4,
+        "size": 4,
+        "type": "MessageHandler"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 5,
-      "match": "in_stack_00000004",
-      "text": "MessageHandler in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000004",
-      "text": "g_WindowMessageHandlers[g_NumWindowMessageHandlers] = in_stack_00000004;",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

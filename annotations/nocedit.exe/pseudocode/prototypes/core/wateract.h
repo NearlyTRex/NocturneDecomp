@@ -59,9 +59,9 @@ int __cdecl CWaterActor::getGroundType(CWaterActor *this_ptr);
 // Address: 005eb740
 float __cdecl CWaterActor::customRayIntersect(CWaterActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal);
 
-// Original: core_wateract.cpp_CWaterActor_getSurfaceProperties_FUN_005eb910
+// Original: core_wateract.cpp_CWaterActor_onLaserHit_FUN_005eb910
 // Address: 005eb910
-void __cdecl CWaterActor::getSurfaceProperties(CWaterActor *this_ptr,SSurfaceInfo *surface_info);
+void __cdecl CWaterActor::onLaserHit(CWaterActor *this_ptr,SLaserInfo *laser_info);
 
 // Original: core_wateract.cpp_CWaterActor_getPropertyList_FUN_005eb940
 // Address: 005eb940

@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 12,
-    "complexity_score": 152,
+    "complexity_score": 88,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 87,
-    "suspect_count": 6,
-    "suspect_types": [
-      "unnamed_param"
-    ],
-    "total_lines": 99
+    "pseudocode_lines": 88,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 100
   },
   "cross_references": [
     {
@@ -33,7 +31,7 @@
     {
       "addr": "005eeaf0",
       "from_addr": "005eedc3",
-      "name": "core_weather.cpp_CWeather_FUN_005eeaf0",
+      "name": "core_weather.cpp_CWeather_update_FUN_005eeaf0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -48,7 +46,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_weather.cpp_CWeather_createLightningStrike_FUN_005eeeb0",
-    "signature": "void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_005eeeb0(CWeather *this_ptr,float param_2,int param_3)"
+    "signature": "void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_005eeeb0(CWeather *this_ptr,float flash_timer,int play_sound)"
   },
   "function_calls": [
     {
@@ -254,14 +252,14 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "flash_timer",
         "offset": 8,
         "size": 4,
         "type": "float"
       },
       {
         "is_param": true,
-        "name": "param_3",
+        "name": "play_sound",
         "offset": 12,
         "size": 4,
         "type": "int"
@@ -285,48 +283,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "text": "void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_005eeeb0(CWeather *this_ptr,float param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "text": "void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_005eeeb0(CWeather *this_ptr,float param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_2",
-      "text": "this_ptr->flash_timer = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 64,
-      "match": "param_3",
-      "text": "if (param_3 != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 80,
-      "match": "param_3",
-      "text": "if (param_3 == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 84,
-      "match": "param_3",
-      "text": "else if (param_3 == 0) {",
-      "type": "unnamed_param"
-    }
-  ]
+  "suspects": []
 }

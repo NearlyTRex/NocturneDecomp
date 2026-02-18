@@ -51,9 +51,9 @@ int __cdecl CTrigger::evaluateTriggerCondition(CTrigger *this_ptr);
 // Address: 005e0a20
 int __cdecl CTrigger::processActionButton(CTrigger *this_ptr);
 
-// Original: core_trigger.cpp_CTrigger_getSurfaceProperties_FUN_005e0a50
+// Original: core_trigger.cpp_CTrigger_onLaserHit_FUN_005e0a50
 // Address: 005e0a50
-void __cdecl CTrigger::getSurfaceProperties(CTrigger *this_ptr,SSurfaceInfo *surface_info);
+void __cdecl CTrigger::onLaserHit(CTrigger *this_ptr,SLaserInfo *laser_info);
 
 // Original: core_trigger.cpp_CTrigger_FUN_005e0aa0
 // Address: 005e0aa0

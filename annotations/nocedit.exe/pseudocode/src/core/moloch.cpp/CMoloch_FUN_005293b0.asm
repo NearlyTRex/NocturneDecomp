@@ -31,7 +31,7 @@
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 ;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0
 ;   core_path.cpp_CPathMap_findPathWithRetry_FUN_00547d00
-;   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 ;   crt_memory.c_memset_FUN_005fde40
 ;
 ; *****************************************************************************
@@ -205,8 +205,8 @@ section .text
     PUSH EAX                            ; 005295bd
     LEA EAX,[ESP + 0x44]                ; 005295be
     PUSH EAX                            ; 005295c2
-    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 005295c3
-        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 005295c3
+        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     MOV EDX,EAX                         ; 005295c8
     LEA EAX,[ESP + 0x24]                ; 005295ca
     ADD ESP,0x8                         ; 005295ce

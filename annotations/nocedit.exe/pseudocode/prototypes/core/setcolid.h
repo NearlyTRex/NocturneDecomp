@@ -79,9 +79,9 @@ void __cdecl CDemonSet::popRaytraceState(CDemonSet *this_ptr);
 // Address: 00574170
 void __cdecl CDemonSet(CDemonSet *this_ptr);
 
-// Original: core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180
+// Original: core_setcolid.cpp_CDemonSet_init_FUN_00574180
 // Address: 00574180
-void __cdecl CDemonSet::initMaybe(CDemonSet *this_ptr);
+void __cdecl CDemonSet::init(CDemonSet *this_ptr);
 
 // Original: core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0
 // Address: 005741b0

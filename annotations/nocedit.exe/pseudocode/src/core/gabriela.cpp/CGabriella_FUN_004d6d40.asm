@@ -27,7 +27,7 @@
 ;   core_gabriela.cpp_CGabriella_FUN_004d6f80
 ;   core_setcolid.cpp_CDemonSet_disableIgnore_FUN_00574210
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0
-;   core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180
+;   core_setcolid.cpp_CDemonSet_init_FUN_00574180
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
 ;
 ; *****************************************************************************
@@ -185,8 +185,8 @@ section .text
     ADD ESP,0x18                        ; 004d6eeb
     MOV EAX,[0x006810c8]                ; 004d6eee | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EAX                            ; 004d6ef3 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 004d6ef4
-        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_init_FUN_00574180 ; 004d6ef4
+        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00574180(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 004d6ef9
     ADD ESP,0x58                        ; 004d6efc
     POP EBP                             ; 004d6eff

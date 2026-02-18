@@ -142,7 +142,7 @@ LAB_00557b63:
     local_3c.y = local_78.y;
     local_3c.z = local_78.z;
   }
-  pCVar6 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_6c,&local_3c);
+  pCVar6 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_6c,&local_3c);
   if (&local_3c != pCVar6) {
     local_3c.x = pCVar6->x;
     local_3c.y = pCVar6->y;

@@ -34,7 +34,7 @@ int __cdecl core_hero_cpp_CHero_FUN_004f2f50(CHero *this_ptr)
                 ((CDemonActor *)this_ptr,&local_3c,&(this_ptr_00->base).location.position);
       if ((((ABS(local_3c.y) <= (float)5) && (0.0 <= (double)local_3c.z)) &&
           ((double)local_3c.z <= 3)) && (ABS(local_3c.x) <= (float)3)) {
-        pCVar1 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+        pCVar1 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                            (&local_30,&local_3c);
         if (ABS(pCVar1->y) <= (float)1.04719755116667) {
           iVar2 = core_lever_cpp_CLever_FUN_00505080(this_ptr_00);

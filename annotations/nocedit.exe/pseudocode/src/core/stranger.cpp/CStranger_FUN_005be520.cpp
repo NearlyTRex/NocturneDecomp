@@ -171,7 +171,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005be520(CStranger *this_ptr)
     local_190.x = local_160 - local_184.x;
     local_190.y = local_15c - local_184.y;
     local_190.z = local_158 - local_184.z;
-    core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_7c,&local_190);
+    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_7c,&local_190);
     local_1ee0 = (float)(this_ptr->base).base.model.motion_controller.current_frame_number;
     if ((float)13 <= local_1ee0) {
       local_1ee0 = 1.0 - (local_1ee0 + (float)-13) * (float)0.0769230769230769;
@@ -219,7 +219,7 @@ LAB_005be795:
     local_70.x = local_e8 - local_b8.x;
     local_70.y = local_e4 - local_b8.y;
     local_70.z = local_e0 - local_b8.z;
-    core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_4c,&local_70);
+    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_4c,&local_70);
     local_1ef4 = (float)(this_ptr->base).base.model.motion_controller.current_frame_number;
     if ((float)24 <= local_1ef4) {
       local_1ef4 = 1.0 - (local_1ef4 + (float)-24) * (float)0.10000000000000001;
@@ -294,7 +294,7 @@ LAB_005be795:
         local_ac.x = local_130;
         local_ac.y = local_12c;
         local_ac.z = local_128;
-        core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_148,&local_ac);
+        core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_148,&local_ac);
         local_1f04 = (float)(this_ptr->base).base.model.motion_controller.current_frame_number;
         if ((float)10 <= local_1f04) {
           if (15 <= (double)local_1f04) {
@@ -588,7 +588,7 @@ LAB_005be795:
     CStack_f4.x = CStack_124.x - CStack_dc.x;
     CStack_f4.y = CStack_124.y - CStack_dc.y;
     CStack_f4.z = CStack_124.z - CStack_dc.z;
-    core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(aCStack_118,&CStack_f4);
+    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(aCStack_118,&CStack_f4);
     fStack_1ed8 = (float)(this_ptr->base).base.model.motion_controller.current_frame_number;
     if ((float)21 <= fStack_1ed8) {
       fStack_1ed8 = 1.0 - (fStack_1ed8 + (float)-21) * (float)0.071428571428571397;

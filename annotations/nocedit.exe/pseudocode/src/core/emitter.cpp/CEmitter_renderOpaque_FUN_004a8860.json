@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 26,
-        "line": 46,
+        "line": 73,
         "message": "use of undeclared identifier 'PTR_02cf2b78'"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 47,
+        "line": 74,
         "message": "use of undeclared identifier 'PTR_02cf2b78'"
       }
     ],
@@ -19,16 +19,16 @@
   },
   "complexity": {
     "assembly_lines": 192,
-    "complexity_score": 88,
+    "complexity_score": 114,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 15,
-    "pseudocode_lines": 53,
+    "pseudocode_lines": 79,
     "suspect_count": 3,
     "suspect_types": [
       "unnamed_param"
     ],
-    "total_lines": 245
+    "total_lines": 271
   },
   "cross_references": [],
   "function": {
@@ -58,7 +58,7 @@
     {
       "addr": "004c8230",
       "is_variadic": false,
-      "name": "core_fire.cpp_CFireEffect_FUN_004c8230"
+      "name": "core_fire.cpp_CFireEffect_traceLaser_FUN_004c8230"
     },
     {
       "addr": "004c81f0",
@@ -73,7 +73,7 @@
     {
       "addr": "00574180",
       "is_variadic": false,
-      "name": "core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180"
+      "name": "core_setcolid.cpp_CDemonSet_init_FUN_00574180"
     },
     {
       "addr": "0048cae0",
@@ -563,23 +563,23 @@
   "suspects": [
     {
       "description": "Unnamed function parameter",
-      "line": 8,
+      "line": 9,
       "match": "param5",
       "text": "UOrientationVector *param5;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 41,
+      "line": 68,
       "match": "param5",
       "text": "param5 = &UNION_UOrientationVector_02cf2b6c;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 75,
       "match": "param5",
-      "text": "param5);",
+      "text": "(g_CEditorToolsPtr,0x3f800000,world_position,(CQuaternion4f *)pCVar2,param5);",
       "type": "unnamed_param"
     }
   ],

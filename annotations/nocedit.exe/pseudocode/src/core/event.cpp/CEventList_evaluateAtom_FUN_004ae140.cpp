@@ -970,7 +970,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
                   core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                             (pCVar10,&local_110,&(pCVar12->location).position);
                   local_110.y = 0.0;
-                  pCVar13 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+                  pCVar13 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                                       (&local_f8,&local_110);
                   if (local_a88 * (float)3.1415926535000001 * (float)0.0055555555555555497 < ABS(pCVar13->y))
                   {

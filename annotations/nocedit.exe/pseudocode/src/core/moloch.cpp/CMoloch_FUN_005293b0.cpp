@@ -118,8 +118,7 @@ void __cdecl core_moloch_cpp_CMoloch_FUN_005293b0(CMoloch *this_ptr)
       local_74.y = CStack_38.y;
       local_74.z = CStack_38.z;
     }
-    pCVar7 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_50,&local_74)
-    ;
+    pCVar7 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_50,&local_74);
     if (&local_74 != pCVar7) {
       local_74.x = pCVar7->x;
       local_74.y = pCVar7->y;

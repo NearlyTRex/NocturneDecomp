@@ -1,0 +1,181 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 65,
+    "complexity_score": 29,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 8,
+    "pseudocode_lines": 29,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 94
+  },
+  "cross_references": [
+    {
+      "addr": "004c1690",
+      "from_addr": "004c16be",
+      "name": "core_fire.cpp_CFireball_onCollision_FUN_004c1690",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c7db0",
+    "address_range": [
+      [
+        "004c7db0",
+        "004c7e58"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CFireEffect_createFireball_FUN_004c7db0",
+    "signature": "void __cdecl core_fire_cpp_CFireEffect_createFireball_FUN_004c7db0(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,int lighting_active,uint sfx_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cc70",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomInt_FUN_0040cc70"
+    },
+    {
+      "addr": "005a98b0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_005a98b0"
+    },
+    {
+      "addr": "005a9a00",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setSfxTrackedFloatVelocity_FUN_005a9a00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02d62ea4",
+      "name": "g_FireballAllocIndex",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d62ea8",
+      "name": "g_FireballPool",
+      "type": "CFireball[64]",
+      "value": null
+    },
+    {
+      "addr": "02d62edc",
+      "name": "DAT_02d62edc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d62ee0",
+      "name": "DAT_02d62ee0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d62ee4",
+      "name": "DAT_02d62ee4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d62ee8",
+      "name": "DAT_02d62ee8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d62eec",
+      "name": "DAT_02d62eec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d62f00",
+      "name": "DAT_02d62f00",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.290909090909091,
+    "instruction_count": 55,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 11,
+      "BRANCH": 1,
+      "CALL": 3,
+      "CALLIND": 1,
+      "CBRANCH": 2,
+      "COPY": 46,
+      "INT_ADD": 27,
+      "INT_AND": 46,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 26,
+      "INT_LEFT": 4,
+      "INT_LESS": 3,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 10,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 16,
+      "INT_SUB": 22,
+      "INT_XOR": 3,
+      "LOAD": 13,
+      "POPCOUNT": 12,
+      "RETURN": 1,
+      "STORE": 23
+    },
+    "pcode_op_count": 291
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireEffect *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "velocity",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "lighting_active",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "sfx_handle",
+        "offset": 20,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": []
+}

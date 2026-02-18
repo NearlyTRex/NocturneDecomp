@@ -122,7 +122,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
                           local_a4.x * local_a4.x + local_a4.y * local_a4.y);
           local_18 = local_1c;
           if (local_1c < 3.0f) {
-            core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_68,&local_a4);
+            core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_68,&local_a4);
             local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                                  (local_68.y - (this_ptr->base).base.base.orient.vec.y);
             if (ABS(local_14) < (float)0.52359877558333301) {
@@ -227,7 +227,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
                              (this_ptr->base).base.base.location.position.y;
                 local_50.z = (pCVar3->location).position.z -
                              (this_ptr->base).base.base.location.position.z;
-                core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+                core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                           (&local_c8,&local_50);
                 local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                                      (local_c8.y - (this_ptr->base).base.base.orient.vec.y);

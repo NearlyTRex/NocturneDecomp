@@ -43,7 +43,7 @@ extern CDemonGlobe CDemonGlobe_03f95d7c;
 extern CRITICAL_SECTION g_StaticCriticalSectionArray[64];
 
 // CVector3f[200]
-extern CVector3f DAT_03f95df8[200];
+extern CVector3f g_WeatherParticlePositions[200];
 
 // CVector3i
 extern CVector3i g_TempProjectedCoord;
@@ -133,6 +133,7 @@ extern char** g_EnvironmentBlock;
 extern char* g_ArgVector[128];
 
 // char[200]
+extern char g_WeatherParticleHitGround[200];
 extern char g_KeyNameBuffer[200];
 
 // char[256]
@@ -160,6 +161,9 @@ extern float FLOAT_03f96b4c;
 extern float FLOAT_03f96b50;
 extern float FLOAT_03f96b54;
 extern float FLOAT_03f96b58;
+
+// float[200]
+extern float g_WeatherParticleGroundHeights[200];
 
 // int
 extern int g_RenderingInProgress;
@@ -208,8 +212,6 @@ extern int g_MessageFlags[513];
 extern uint UINT_03f96b40;
 
 // undefined1
-extern undefined1 DAT_03f96a78;
-extern undefined1 DAT_03f96a79;
 extern undefined1 DAT_03f98ff1;
 extern undefined1 DAT_03f98ff2;
 extern undefined1 DAT_03f98ff3;
@@ -225,8 +227,6 @@ extern undefined4 DAT_03f90a98;
 extern undefined4 DAT_03f90a9c;
 extern undefined4 DAT_03f939a4;
 extern undefined4 DAT_03f939a8;
-extern undefined4 DAT_03f96758;
-extern undefined4 DAT_03f9675c;
 extern undefined4 g_FreeListHeadPointer;
 extern undefined4 DAT_03f9b210;
 

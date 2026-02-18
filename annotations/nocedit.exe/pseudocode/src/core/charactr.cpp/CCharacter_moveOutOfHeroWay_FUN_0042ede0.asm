@@ -46,7 +46,7 @@
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0
 ;   core_hero.cpp_closestHeroToPoint_FUN_004f2170
-;   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 ;   engine_console.cpp_CConsole_printf_FUN_00441890
 ;
 ; *****************************************************************************
@@ -131,8 +131,8 @@ section .text
     PUSH EAX                            ; 0042ee8b
     LEA EAX,[ESP + 0x60]                ; 0042ee8c
     PUSH EAX                            ; 0042ee90
-    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 0042ee91
-        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 0042ee91
+        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     FLD float ptr [EAX + 0x4]           ; 0042ee96
     FABS                                ; 0042ee99
     LEA EAX,[EBX + 0x20]                ; 0042ee9b
@@ -152,8 +152,8 @@ section .text
     FSTP float ptr [ESP + 0x8]          ; 0042eed0
     PUSH EAX                            ; 0042eed4
     FSTP float ptr [ESP + 0xe4]         ; 0042eed5
-    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 0042eedc
-        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 0042eedc
+        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 0042eee1
     MOV EAX,dword ptr [EAX + 0x4]       ; 0042eee4
     PUSH EBX                            ; 0042eee7

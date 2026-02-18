@@ -8,7 +8,7 @@
 ;
 ; XREF[7]:
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210 at 0040aa8b
-;   core_fire.cpp_CGunFlame_FUN_004c4c00 at 004c4d3c
+;   core_fire.cpp_CGunFlame_init_FUN_004c4c00 at 004c4d3c
 ;   core_flamecan.cpp_CFlameCan_process_FUN_004cb390 at 004cb3c1
 ;   core_gun.cpp_CGun_fire_FUN_004f0350 at 004f0814
 ;   core_set.cpp_CDemonSet_FUN_0056b810 at 0056bc89
@@ -20,7 +20,7 @@
 ;   CFireEffect g_CFireEffectInstance
 ;
 ; Called Functions:
-;   core_fire.cpp_CFireEffect_FUN_004c79d0
+;   core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0
 ;
 ; *****************************************************************************
 
@@ -44,8 +44,8 @@ section .text
     MOV EDX,dword ptr [0x0067a3d0]      ; 004cb36d | g_CFireEffectInstance | g_CFireEffectPtr
     PUSH EDX                            ; 004cb373 | g_CFireEffectInstance
     INC EBX                             ; 004cb374
-    CALL core_fire.cpp_CFireEffect_FUN_004c79d0 ; 004cb375
-        ;   XREF to: 004c79d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c79d0(CFireEffect * this_ptr)
+    CALL core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0 ; 004cb375
+        ;   XREF to: 004c79d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int intensity_target, ...)
     ADD ESP,0x1c                        ; 004cb37a
     CMP EBX,0x5                         ; 004cb37d
     JL 0x004cb359                       ; 004cb380

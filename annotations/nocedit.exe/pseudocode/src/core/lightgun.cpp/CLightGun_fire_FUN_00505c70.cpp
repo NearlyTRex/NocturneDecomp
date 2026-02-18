@@ -73,7 +73,7 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_00505c70(CLightGun *this_ptr)
   auStack_38._0_4_ = (float)auStack_6c._4_4_ - CStack_b0.max.x;
   auStack_38._4_4_ = fStack_64 - CStack_b0.max.y;
   auStack_38._8_4_ = fStack_60 - CStack_b0.max.z;
-  core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
+  core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
   core_setcolid_cpp_CDemonSet_setRayType_FUN_00574230(g_CDemonSetPtr,1);
   core_setcolid_cpp_CDemonSet_FUN_00574170(g_CDemonSetPtr);
   core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,(CDemonActor *)this_ptr);
@@ -108,7 +108,7 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_00505c70(CLightGun *this_ptr)
       if ((iVar4 != 0) && (iVar5 == 0)) {
         *(float *)(this_ptr->unk + 8) = 30.0f;
         core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00573fc0(this_ptr_01);
-        core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
+        core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
         return 0;
       }
       break;
@@ -137,7 +137,7 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_00505c70(CLightGun *this_ptr)
   iStack_20 = 0;
   do {
     if (g_CDemonSetPtr->character_count <= iStack_1c) {
-      core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
+      core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
       core_sound_cpp_CSound_playActorSound_FUN_005b3a40
                 (g_CSoundPtr,(CDemonActor *)this_ptr,"cre-fire.wav",
                  (CVector3f *)(auStack_6c + 4));

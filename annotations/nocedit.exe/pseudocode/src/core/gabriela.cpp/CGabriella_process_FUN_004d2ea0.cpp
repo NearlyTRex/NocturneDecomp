@@ -177,7 +177,7 @@ void __cdecl core_gabriela_cpp_CGabriella_process_FUN_004d2ea0(CGabriella *this_
       if ((this_ptr->base).base.grabbed_type == 0) {
         pCVar16 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                             ((CDemonActor *)this_ptr,&local_124,&(pCVar7->location).position);
-        pCVar16 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+        pCVar16 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                             (local_118,pCVar16);
         local_14 = (CCharacter_full_vtable *)
                    core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar16->y);
@@ -315,7 +315,7 @@ LAB_004d3af9:
                 ((this_ptr->base).pushed_object,&local_148,&local_a0);
       core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                 ((CDemonActor *)this_ptr,&local_b8,&local_148);
-      pCVar16 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+      pCVar16 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                           (&local_dc,&local_b8);
       local_14 = (CCharacter_full_vtable *)
                  core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar16->y);

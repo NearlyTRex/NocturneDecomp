@@ -32338,6 +32338,86 @@
             ]
           },
           "type":"CToss*"
+        },
+        {
+          "name":"toss_type",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"position",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"orientation",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"UOrientationVector*"
+        },
+        {
+          "name":"velocity",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"fuse_time",
+          "storage":{
+            "offset":24,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x18]",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ]
     }
@@ -32691,7 +32771,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_fire.cpp_CFireEffect_FUN_004c7a60",
+    "name":"core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60",
     "ret":"void",
     "vars":{
       "params":[
@@ -32725,7 +32805,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_fire.cpp_CFireEffect_FUN_004c7d60",
+    "name":"core_fire.cpp_CFireEffect_createBulletTrail_FUN_004c7d60",
     "ret":"void",
     "vars":{
       "params":[
@@ -32759,7 +32839,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_fire.cpp_CFireEffect_FUN_004c7e60",
+    "name":"core_fire.cpp_CFireEffect_createRock_FUN_004c7e60",
     "ret":"void",
     "vars":{
       "params":[
@@ -32793,8 +32873,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_fire.cpp_CFireEffect_FUN_004c9060",
-    "ret":"void",
+    "name":"core_fire.cpp_CFireEffect_createTrailSegment_FUN_004c9060",
+    "ret":"int",
     "vars":{
       "params":[
         {
@@ -32813,7 +32893,17 @@
           },
           "type":"CFireEffect*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -32827,7 +32917,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_fire.cpp_CFireEffect_FUN_004c91e0",
+    "name":"core_fire.cpp_CFireEffect_createShell_FUN_004c91e0",
     "ret":"void",
     "vars":{
       "params":[
@@ -32861,8 +32951,28 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_fire.cpp_FUN_004c9460",
-    "ret":"void"
+    "name":"core_fire.cpp_CBulletTrail_reset_FUN_004c9460",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CBulletTrail*"
+        }
+      ]
+    }
   },
   {
     "addr":"004c94e0",
@@ -39237,7 +39347,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_manpuz.cpp_CMansionPuzzleCircle_getSurfaceProperties_FUN_005097e0",
+    "name":"core_manpuz.cpp_CMansionPuzzleCircle_onLaserHit_FUN_005097e0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -39276,7 +39386,7 @@
           "type":"CMansionPuzzleCircle*"
         },
         {
-          "name":"surface_info",
+          "name":"laser_info",
           "storage":{
             "offset":8,
             "size":4,
@@ -39289,7 +39399,7 @@
               }
             ]
           },
-          "type":"SSurfaceInfo*"
+          "type":"SLaserInfo*"
         }
       ]
     }
@@ -63561,7 +63671,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_stranger.cpp_CStranger_FUN_005c3960",
+    "name":"core_stranger.cpp_CStranger_autoAimAtThreat_FUN_005c3960",
     "ret":"void",
     "vars":{
       "locals":[

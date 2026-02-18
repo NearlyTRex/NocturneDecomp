@@ -765,8 +765,8 @@ section .text
     LEA ESI,[EBX + 0x30]                ; 00484b7a
     PUSH EAX                            ; 00484b7d
     FSTP float ptr [EBP + -0x4a]        ; 00484b7e
-    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 00484b81
-        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 00484b81
+        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 00484b86
     CMP ESI,EAX                         ; 00484b89
     JZ 0x00484b9d                       ; 00484b8b
@@ -897,8 +897,8 @@ section .text
     MOV EDI,dword ptr [0x0067a3d0]      ; 00484cf4 | g_CFireEffectPtr
     PUSH EDI                            ; 00484cfa | g_CFireEffectInstance
     LEA ESI,[EBX + 0x30]                ; 00484cfb
-    CALL core_fire.cpp_CFireEffect_FUN_004c8ef0 ; 00484cfe
-        ;   XREF to: 004c8ef0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c8ef0(CFireEffect * this_ptr)
+    CALL core_fire.cpp_CFireEffect_createGunFlames_FUN_004c8ef0 ; 00484cfe
+        ;   XREF to: 004c8ef0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createGunFlames_FUN_004c8ef0(CFireEffect * this_ptr, CVector3f * position, CVector3f * euler_angles, int flame_count, ...)
     MOV EAX,dword ptr [ESI]             ; 00484d03
     MOV dword ptr [EBP + -0x16],EAX     ; 00484d05
     LEA EAX,[ESI + 0x4]                 ; 00484d08
@@ -919,8 +919,8 @@ section .text
     FADD float ptr [0x00621aee]         ; 00484d2f | FLOAT_00621aee
     PUSH EAX                            ; 00484d35 | g_CFireEffectInstance
     FSTP float ptr [EBP + -0x16]        ; 00484d36
-    CALL core_fire.cpp_CFireEffect_FUN_004c8ef0 ; 00484d39
-        ;   XREF to: 004c8ef0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c8ef0(CFireEffect * this_ptr)
+    CALL core_fire.cpp_CFireEffect_createGunFlames_FUN_004c8ef0 ; 00484d39
+        ;   XREF to: 004c8ef0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createGunFlames_FUN_004c8ef0(CFireEffect * this_ptr, CVector3f * position, CVector3f * euler_angles, int flame_count, ...)
     ADD ESP,0x14                        ; 00484d3e
     JMP 0x004846e0                      ; 00484d41
         ;   XREF to: 004846e0 (UNCONDITIONAL_JUMP)  ; default
@@ -1524,8 +1524,8 @@ section .text
     PUSH EAX                            ; 0048543b
     LEA EAX,[EBP + 0x1a]                ; 0048543c
     PUSH EAX                            ; 0048543f
-    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 00485440
-        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 00485440
+        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     FLD float ptr [EBP + 0x1e]          ; 00485445
     ADD ESP,0x8                         ; 00485448
     FSUB float ptr [EBX + 0x34]         ; 0048544b

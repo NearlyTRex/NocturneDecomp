@@ -39,7 +39,7 @@
 ;   core_charactr.cpp_CCharacter_renderTransparent_FUN_0042b0e0
 ;   core_dlight.cpp_renderConeLightGeometry_FUN_004760d0
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
-;   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 ;   core_xform.cpp_transformVector3x4_FUN_005f4dc0
 ;
 ; *****************************************************************************
@@ -151,8 +151,8 @@ section .text
     FSTP float ptr [EBP + 0x2e]         ; 005fbf78
     PUSH EAX                            ; 005fbf7b
     FSTP float ptr [EBP + 0x32]         ; 005fbf7c
-    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 005fbf7f
-        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 005fbf7f
+        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 005fbf84
     PUSH 0x40c00000                     ; 005fbf87
     LEA EAX,[EBP + 0x12]                ; 005fbf8c

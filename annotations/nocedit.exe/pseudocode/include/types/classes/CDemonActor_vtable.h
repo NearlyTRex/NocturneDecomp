@@ -14,7 +14,7 @@ struct SDamageInfo;
 struct SInteractionInfo;
 struct SInteractionState;
 struct SIntersectXZCylinder;
-struct SSurfaceInfo;
+struct SLaserInfo;
 struct _FILE;
 
 // Dependencies
@@ -42,7 +42,6 @@ struct _FILE;
 #include "types/funcdefs/CDemonActor_getInteractionInfo.h"
 #include "types/funcdefs/CDemonActor_getPathMap.h"
 #include "types/funcdefs/CDemonActor_getPropertyList.h"
-#include "types/funcdefs/CDemonActor_getSurfaceProperties.h"
 #include "types/funcdefs/CDemonActor_getTargetPoints.h"
 #include "types/funcdefs/CDemonActor_handleFootstep.h"
 #include "types/funcdefs/CDemonActor_hasCollision.h"
@@ -50,6 +49,7 @@ struct _FILE;
 #include "types/funcdefs/CDemonActor_onActorDeleted.h"
 #include "types/funcdefs/CDemonActor_onAreaDeleted.h"
 #include "types/funcdefs/CDemonActor_onDropped.h"
+#include "types/funcdefs/CDemonActor_onLaserHit.h"
 #include "types/funcdefs/CDemonActor_onPickup.h"
 #include "types/funcdefs/CDemonActor_pickup.h"
 #include "types/funcdefs/CDemonActor_playAmbientSound.h"
@@ -125,7 +125,7 @@ typedef struct CDemonActor_vtable {
     CDemonActor_spawnFlies* spawnFlies; // 0xa0
     CDemonActor_testCylinderCollision* testCylinderCollision; // 0xa4
     CDemonActor_testLineIntersection* testLineIntersection; // 0xa8
-    CDemonActor_getSurfaceProperties* getSurfaceProperties; // 0xac
+    CDemonActor_onLaserHit* getSurfaceProperties; // 0xac
     CDemonActor_customRayIntersect* customRayIntersect; // 0xb0
     CDemonActor_customIntersectCylinderXZ* customIntersectCylinderXZ; // 0xb4
     CDemonActor_customGetFloorHeight* customGetFloorHeight; // 0xb8

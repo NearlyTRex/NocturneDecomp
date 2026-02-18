@@ -29,7 +29,7 @@
 ; undefined1       Stack[-0x1c]:1  local_1c
 ;
 ; XREF[1]:
-;   core_fire.cpp_CFireEffect_FUN_004c76a0 at 004c7861
+;   core_fire.cpp_CFireEffect_createBulletImpact_FUN_004c76a0 at 004c7861
 ;
 ; Referenced Globals:
 ;   float g_BulletHoleNormalOffset = 0.1000000

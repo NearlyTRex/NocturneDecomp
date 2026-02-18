@@ -62,7 +62,7 @@ void __cdecl core_elephant_cpp_CElephantGun_fireProjectile_FUN_004a79f0(CElephan
     fStack_4c = fStack_4c * fVar1;
     fStack_48 = fStack_48 * fVar1;
   }
-  core_fire_cpp_CFireEffect_FUN_004c7f20(g_CFireEffectPtr);
+  core_fire_cpp_CFireEffect_createLaserSegment2_FUN_004c7f20(g_CFireEffectPtr);
   this_ptr->field2_0x57c = 1;
   this_ptr->field3_0x580 =
        (int)SQRT((fStack_24 - aCStack_68[0].z) * (fStack_24 - aCStack_68[0].z) +

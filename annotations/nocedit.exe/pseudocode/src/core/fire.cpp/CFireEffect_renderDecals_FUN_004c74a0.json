@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 175,
+    "complexity_score": 201,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 17,
-    "pseudocode_lines": 80,
-    "suspect_count": 9,
+    "pseudocode_lines": 76,
+    "suspect_count": 12,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 236
+    "total_lines": 232
   },
   "cross_references": [
     {
@@ -176,8 +176,8 @@
     },
     {
       "addr": "02d6cf64",
-      "name": "g_CraterActiveListHead",
-      "type": "CCrater*",
+      "name": "g_GunFlameAllocIndex",
+      "type": "int",
       "value": null
     }
   ],
@@ -286,65 +286,86 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(int *)((int)",
+      "text": "if (((*(int *)((int)&g_BulletHolePool[0].active + iVar1) != 0) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 17,
       "match": "(int *)((int)",
-      "text": "if (((*(int *)((int)&g_BulletHolePool[0].active + iVar2) != 0) &&",
+      "text": "(*(int *)((int)&g_BulletHolePool[0].actor_ptr + iVar1) == 0)) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 18,
-      "match": "(int *)((int)",
-      "text": "(*(int *)((int)&g_BulletHolePool[0].actor_ptr + iVar2) == 0)) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 20,
+      "line": 19,
       "match": "(CBulletHole *)((int)",
-      "text": "((CBulletHole *)((int)&g_BulletHolePool[0].position.x + iVar2)),",
+      "text": "((CBulletHole *)((int)&g_BulletHolePool[0].position.x + iVar1)),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 22,
+      "line": 21,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&g_BulletHolePool[0].active + iVar2) = 0;",
+      "text": "*(uint *)((int)&g_BulletHolePool[0].active + iVar1) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 33,
       "match": "(int *)((int)",
-      "text": "if (*(int *)((int)&g_BulletHolePool[0].actor_ptr + iVar2) == 0) {",
+      "text": "if (*(int *)((int)&g_BulletHolePool[0].actor_ptr + iVar1) == 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 35,
       "match": "(CBulletHole *)((int)",
-      "text": "((CBulletHole *)((int)&g_BulletHolePool[0].position.x + iVar2));",
+      "text": "((CBulletHole *)((int)&g_BulletHolePool[0].position.x + iVar1));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 48,
+      "line": 47,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar2 + -0x1c) = 1;",
+      "text": "*(uint *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar1 + -0x1c) = 1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 50,
       "match": "(CStake *)((int)",
-      "text": "((CStake *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar2 + -0x1c));",
+      "text": "((CStake *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar1 + -0x1c));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 52,
       "match": "(int *)((int)",
-      "text": "else if (*(int *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar2 + -0x1c) != 0)",
+      "text": "else if (*(int *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar1 + -0x1c) != 0)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 62,
+      "match": "(int *)((int)",
+      "text": "if ((*(int *)((int)(g_CraterPool[0].smoke_positions + -2) + iVar2) != 0) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 64,
+      "match": "(CCrater *)((int)",
+      "text": "((CCrater *)((int)g_CraterPool[0].smoke_positions + iVar2 + -0x1c)),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 66,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)(g_CraterPool[0].smoke_positions + -2) + iVar2) = 0;",
       "type": "pointer_cast"
     }
   ]

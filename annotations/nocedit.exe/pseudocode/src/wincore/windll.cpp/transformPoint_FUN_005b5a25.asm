@@ -17,7 +17,7 @@
 ;   core_fire.cpp_CShell_render_FUN_004c6200 at 004c6251
 ;   core_fire.cpp_CSmokeParticle_render_FUN_004bf4c0 at 004bf502
 ;   core_fire.cpp_CSpark_render_FUN_004c0420 at 004c0474
-;   core_fire.cpp_FUN_004c9400 at 004c9434
+;   core_fire.cpp_transformWorldToScreen_FUN_004c9400 at 004c9434
 ;   ... and 7 more
 ;
 ; Referenced Globals:

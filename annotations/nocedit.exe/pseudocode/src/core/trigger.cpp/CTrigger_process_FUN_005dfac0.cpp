@@ -129,7 +129,10 @@ LAB_005dfb52:
       fVar1 = (this_ptr->trigger_size).y;
       fVar2 = (this_ptr->trigger_size).z;
       local_1c = fVar2 * fVar2 + fVar1 * fVar1 + fVar4 * fVar4;
-      local_34 = core_fire_cpp_CFireEffect_FUN_004c8c90(g_CFireEffectPtr);
+      local_34 = core_fire_cpp_CFireEffect_checkExplosionDamage_FUN_004c8c90
+                           (g_CFireEffectPtr,&(this_ptr->base).location.position,
+                            (float)(((int)local_1c >> 1) + INT_02d7a7b8),(CVector3f *)0x0,(int *)0x0
+                           );
     }
     break;
   case 7:

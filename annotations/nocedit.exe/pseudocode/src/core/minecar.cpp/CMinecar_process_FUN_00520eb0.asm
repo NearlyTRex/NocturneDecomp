@@ -12,7 +12,7 @@
 ;   CFireEffect g_CFireEffectInstance
 ;
 ; Called Functions:
-;   core_fire.cpp_CFireEffect_FUN_004c79d0
+;   core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0
 ;   core_platfrm.cpp_CPlatform_process_FUN_0054cc30
 ;
 ; *****************************************************************************
@@ -58,8 +58,8 @@ section .text
     MOV dword ptr [EBX + 0x70c],0x3dcccccd ; 00520f04
     MOV EBX,dword ptr [0x0067a3d0]      ; 00520f0e | g_CFireEffectInstance | g_CFireEffectPtr
     PUSH EBX                            ; 00520f14 | g_CFireEffectInstance
-    CALL core_fire.cpp_CFireEffect_FUN_004c79d0 ; 00520f15
-        ;   XREF to: 004c79d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c79d0(CFireEffect * this_ptr)
+    CALL core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0 ; 00520f15
+        ;   XREF to: 004c79d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int intensity_target, ...)
     ADD ESP,0x1c                        ; 00520f1a
     POP EBX                             ; 00520f1d
     RET                                 ; 00520f1e

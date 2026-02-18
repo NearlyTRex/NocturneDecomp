@@ -151,7 +151,7 @@ LAB_00528e3a:
     if ((this_ptr->base).base.grabbed_type == 0) {
       pCVar8 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                          ((CDemonActor *)this_ptr,&local_5c,&(pCVar3->location).position);
-      pCVar8 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_50,pCVar8);
+      pCVar8 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_50,pCVar8);
       local_14 = (SMotion *)core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar8->y);
       in_stack_ffffe4e8 = (float)local_14;
       if ((float)local_14 < (float)-1.57079632675) {

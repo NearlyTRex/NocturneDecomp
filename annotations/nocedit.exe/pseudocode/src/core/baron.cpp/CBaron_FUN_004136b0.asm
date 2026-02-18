@@ -39,11 +39,11 @@
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
-;   core_fire.cpp_CFireEffect_FUN_004c8ea0
-;   core_fire.cpp_CFireEffect_FUN_004c8f50
-;   core_fire.cpp_CFireEffect_FUN_004c8fd0
+;   core_fire.cpp_CFireEffect_createCrater_FUN_004c8ea0
+;   core_fire.cpp_CFireEffect_createLightningBolt_FUN_004c8f50
+;   core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004c8fd0
 ;   core_hero.cpp_CHero_FUN_004f3960
-;   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 ;   core_xform.cpp_transformVector3x4_FUN_005f4dc0
 ;   crt_memory.c___arrinit_FUN_005fe667
 ;   crt_stdlib.c_rand_FUN_005feb5c
@@ -90,8 +90,8 @@ section .text
     PUSH EAX                            ; 004136fc
     LEA EAX,[ESP + 0xd8]                ; 004136fd
     PUSH EAX                            ; 00413704
-    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 00413705
-        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 00413705
+        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     MOV EDX,EAX                         ; 0041370a
     LEA EAX,[ESP + 0x118]               ; 0041370c
     ADD ESP,0x8                         ; 00413713
@@ -126,15 +126,15 @@ section .text
     PUSH EDI                            ; 00413779
     MOV EDX,dword ptr [0x0067a3d0]      ; 0041377a | g_CFireEffectInstance | g_CFireEffectPtr
     PUSH EDX                            ; 00413780 | g_CFireEffectInstance
-    CALL core_fire.cpp_CFireEffect_FUN_004c8f50 ; 00413781
-        ;   XREF to: 004c8f50 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c8f50(CFireEffect * this_ptr)
+    CALL core_fire.cpp_CFireEffect_createLightningBolt_FUN_004c8f50 ; 00413781
+        ;   XREF to: 004c8f50 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLightningBolt_FUN_004c8f50(CFireEffect * this_ptr, CVector3f * start_position, float start_width, int enable_camera_shake, ...)
     ADD ESP,0x14                        ; 00413786
     PUSH 0x40800000                     ; 00413789
     PUSH EDI                            ; 0041378e
     MOV ECX,dword ptr [0x0067a3d0]      ; 0041378f | g_CFireEffectInstance | g_CFireEffectPtr
     PUSH ECX                            ; 00413795 | g_CFireEffectInstance
-    CALL core_fire.cpp_CFireEffect_FUN_004c8ea0 ; 00413796
-        ;   XREF to: 004c8ea0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c8ea0(CFireEffect * this_ptr)
+    CALL core_fire.cpp_CFireEffect_createCrater_FUN_004c8ea0 ; 00413796
+        ;   XREF to: 004c8ea0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createCrater_FUN_004c8ea0(CFireEffect * this_ptr)
     ADD ESP,0xc                         ; 0041379b
     LEA EAX,[ESP + 0x80]                ; 0041379e
         ;   Label: LAB_0041379e
@@ -296,8 +296,8 @@ section .text
     PUSH EAX                            ; 004139a7
     MOV EDI,dword ptr [0x0067a3d0]      ; 004139a8 | g_CFireEffectPtr
     PUSH EDI                            ; 004139ae | g_CFireEffectInstance
-    CALL core_fire.cpp_CFireEffect_FUN_004c8fd0 ; 004139af
-        ;   XREF to: 004c8fd0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c8fd0(CFireEffect * this_ptr)
+    CALL core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004c8fd0 ; 004139af
+        ;   XREF to: 004c8fd0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004c8fd0(CFireEffect * this_ptr, CVector3f * start_position, CVector3f * end_position, int enable_camera_shake, ...)
     ADD ESP,0x18                        ; 004139b4
     PUSH 0x40800000                     ; 004139b7
     PUSH 0x3f000000                     ; 004139bc
@@ -308,8 +308,8 @@ section .text
     PUSH EAX                            ; 004139d2
     MOV EAX,[0x0067a3d0]                ; 004139d3 | g_CFireEffectInstance | g_CFireEffectPtr
     PUSH EAX                            ; 004139d8 | g_CFireEffectInstance
-    CALL core_fire.cpp_CFireEffect_FUN_004c8fd0 ; 004139d9
-        ;   XREF to: 004c8fd0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c8fd0(CFireEffect * this_ptr)
+    CALL core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004c8fd0 ; 004139d9
+        ;   XREF to: 004c8fd0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004c8fd0(CFireEffect * this_ptr, CVector3f * start_position, CVector3f * end_position, int enable_camera_shake, ...)
     ADD ESP,0x18                        ; 004139de
     PUSH 0x615041                       ; 004139e1 | = "baron-attack.wav"
     MOV EAX,dword ptr [EBX + 0x154]     ; 004139e6

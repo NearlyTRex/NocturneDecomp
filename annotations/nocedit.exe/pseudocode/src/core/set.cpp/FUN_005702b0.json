@@ -6,12 +6,12 @@
   },
   "complexity": {
     "assembly_lines": 340,
-    "complexity_score": 714,
+    "complexity_score": 722,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 17,
-    "pseudocode_lines": 169,
-    "suspect_count": 52,
+    "pseudocode_lines": 147,
+    "suspect_count": 55,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
@@ -19,7 +19,7 @@
       "stack_param",
       "undefined_data"
     ],
-    "total_lines": 509
+    "total_lines": 487
   },
   "cross_references": [
     {
@@ -526,306 +526,327 @@
       "description": "Unresolved stack parameter",
       "line": 49,
       "match": "in_stack_00000008",
-      "text": "SStack_118.vertex_index_1 = (uint)*in_stack_00000008;",
+      "text": "SStack_118.vertices[0].vertex_index = (uint)*in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 50,
       "match": "in_stack_00000008",
-      "text": "SStack_118.vertex_index_2 = (uint)in_stack_00000008[1];",
+      "text": "SStack_118.vertices[1].vertex_index = (uint)in_stack_00000008[1];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 51,
       "match": "in_stack_00000008",
-      "text": "SStack_118.vertex_index_3 = (uint)in_stack_00000008[2];",
+      "text": "SStack_118.vertices[2].vertex_index = (uint)in_stack_00000008[2];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 52,
       "match": "in_stack_00000008",
-      "text": "iVar3 = (uint)in_stack_00000008[3] << 8;",
+      "text": "SStack_118.vertices[0].texture_u = (uint)in_stack_00000008[3] << 8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 53,
+      "match": "in_stack_00000008",
+      "text": "SStack_118.vertices[1].texture_u = (uint)in_stack_00000008[4] << 8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 54,
+      "match": "in_stack_00000008",
+      "text": "SStack_118.vertices[2].texture_u = (uint)in_stack_00000008[5] << 8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 55,
+      "match": "in_stack_00000008",
+      "text": "SStack_118.vertices[0].texture_v = (uint)in_stack_00000008[6] << 8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 56,
+      "match": "in_stack_00000008",
+      "text": "SStack_118.vertices[1].texture_v = (uint)in_stack_00000008[7] << 8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 57,
       "match": "in_stack_00000008",
-      "text": "iVar3 = (uint)in_stack_00000008[4] << 8;",
+      "text": "SStack_118.vertices[2].texture_v = (uint)in_stack_00000008[8] << 8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 62,
-      "match": "in_stack_00000008",
-      "text": "iVar3 = (uint)in_stack_00000008[5] << 8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 67,
-      "match": "in_stack_00000008",
-      "text": "iVar3 = (uint)in_stack_00000008[6] << 8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 72,
-      "match": "in_stack_00000008",
-      "text": "iVar3 = (uint)in_stack_00000008[7] << 8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 77,
-      "match": "in_stack_00000008",
-      "text": "iVar3 = (uint)in_stack_00000008[8] << 8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 82,
+      "line": 58,
       "match": "in_stack_00000004",
       "text": "if (*(int *)(in_stack_00000004 + 0x15ae84) != 0) {",
       "type": "stack_param"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 66,
+      "match": "(int *)((int)",
+      "text": "iVar3 = *(int *)((int)&SStack_118.vertices[0].vertex_index + local_28[3]);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unresolved stack parameter",
-      "line": 91,
+      "line": 67,
       "match": "in_stack_00000004",
       "text": "if ((((*(int *)(in_stack_00000004 + 0x15ae84) == 0) ||",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 92,
+      "line": 68,
       "match": "ABS",
       "text": "(1.0 <= ABS(g_VertexNormalArray[iVar3].x))) ||",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 93,
+      "line": 69,
       "match": "ABS",
       "text": "(1.0 <= ABS(g_VertexNormalArray[iVar3].y))) ||",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 94,
+      "line": 70,
       "match": "ABS",
       "text": "(1.0 <= ABS(g_VertexNormalArray[iVar3].z))) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 95,
+      "line": 71,
       "match": "ROUND",
       "text": "local_2c = (int)ROUND(g_VertexNormalArray[iVar3].x);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 96,
+      "line": 72,
       "match": "ROUND",
       "text": "local_28[0] = (int)ROUND(g_VertexNormalArray[iVar3].y);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 97,
+      "line": 73,
       "match": "ROUND",
       "text": "local_28[1] = (int)ROUND(g_VertexNormalArray[iVar3].z);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 100,
+      "line": 76,
       "match": "ROUND",
       "text": "local_50.x = (int)ROUND(DAT_032c1c68 * 256.0f) -",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Undefined global data reference",
-      "line": 100,
+      "line": 76,
       "match": "DAT_032c1c68",
       "text": "local_50.x = (int)ROUND(DAT_032c1c68 * 256.0f) -",
       "type": "undefined_data"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 102,
+      "line": 78,
       "match": "ROUND",
       "text": "local_50.y = (int)ROUND(DAT_032c1c6c * 256.0f) -",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Undefined global data reference",
-      "line": 102,
+      "line": 78,
       "match": "DAT_032c1c6c",
       "text": "local_50.y = (int)ROUND(DAT_032c1c6c * 256.0f) -",
       "type": "undefined_data"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 104,
+      "line": 80,
       "match": "ROUND",
       "text": "local_50.z = (int)ROUND(DAT_032c1c70 * 256.0f) -",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Undefined global data reference",
-      "line": 104,
+      "line": 80,
       "match": "DAT_032c1c70",
       "text": "local_50.z = (int)ROUND(DAT_032c1c70 * 256.0f) -",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 108,
+      "line": 84,
       "match": "(int *)((int)",
       "text": "local_28[(uint)bVar6 * -2] = *(int *)((int)&local_38 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 110,
+      "line": 86,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&local_38 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 114,
+      "line": 90,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&local_d0 + local_28[5]) = local_2c + 0x8000;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 115,
+      "line": 91,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&local_90 + local_28[5]) = iVar3;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 124,
+      "line": 100,
       "match": "(int *)((int)",
       "text": "if ((0x8000 < local_d0) && (*(int *)((int)&local_d0 + iVar3) < -0x8000)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 125,
+      "line": 101,
       "match": "(short *)((int)",
       "text": "psVar1 = (short *)((int)&local_d0 + iVar3 + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 128,
+      "line": 104,
       "match": "(int *)((int)",
       "text": "if ((local_d0 < -0x8000) && (0x8000 < *(int *)((int)&local_d0 + iVar3))) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 129,
+      "line": 105,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&local_d0 + iVar3) = *(int *)((int)&local_d0 + iVar3) + -0x10000;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 129,
+      "line": 105,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&local_d0 + iVar3) = *(int *)((int)&local_d0 + iVar3) + -0x10000;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 131,
+      "line": 107,
       "match": "(int *)((int)",
       "text": "if ((0x8000 < local_90) && (*(int *)((int)&local_90 + iVar3) < -0x8000)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 132,
+      "line": 108,
       "match": "(short *)((int)",
       "text": "psVar1 = (short *)((int)&local_90 + iVar3 + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 135,
+      "line": 111,
       "match": "(int *)((int)",
       "text": "if ((local_90 < -0x8000) && (0x8000 < *(int *)((int)&local_90 + iVar3))) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 136,
+      "line": 112,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&local_90 + iVar3) = *(int *)((int)&local_90 + iVar3) + -0x10000;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 136,
+      "line": 112,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&local_90 + iVar3) = *(int *)((int)&local_90 + iVar3) + -0x10000;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 146,
+      "line": 122,
       "match": "(int *)((int)",
-      "text": "*(int *)(SStack_118.unk1 + iVar5) = *(int *)((int)&local_d0 + iVar4) << 8;",
+      "text": "*(int *)((int)&SStack_118.vertices[0].texture_u + iVar5) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 147,
+      "line": 123,
       "match": "(int *)((int)",
-      "text": "*(int *)(SStack_118.unk1 + iVar5 + 4) = *(int *)((int)&local_90 + iVar4) << 8;",
+      "text": "*(int *)((int)&local_d0 + iVar4) << 8;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 124,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&SStack_118.vertices[0].texture_v + iVar5) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 125,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&local_90 + iVar4) << 8;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 153,
+      "line": 131,
       "match": "in_stack_00000004",
       "text": "if (*(int *)(in_stack_00000004 + 0x15ae84) != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 159,
+      "line": 137,
       "match": "in_stack_00000010",
       "text": "if (in_stack_00000010 < 0xfde9) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 167,
+      "line": 145,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008 = in_stack_00000008 + 9;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 167,
+      "line": 145,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008 = in_stack_00000008 + 9;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 169,
+      "line": 147,
       "match": "in_stack_0000000c",
       "text": "} while (local_28[2] < in_stack_0000000c);",
       "type": "stack_param"

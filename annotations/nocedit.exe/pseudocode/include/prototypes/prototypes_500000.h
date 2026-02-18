@@ -34,15 +34,15 @@
 #include "types/structs/SInteractionInfo.h"
 #include "types/structs/SInteractionState.h"
 #include "types/structs/SIntersectXZCylinder.h"
+#include "types/structs/SLaserInfo.h"
 #include "types/structs/SMRGLHeaderExtended.h"
 #include "types/structs/SMRGLKeyframeModel.h"
+#include "types/structs/SMRGLPrimitiveTriangle.h"
+#include "types/structs/SMRGLPrimitiveTriangleIndex.h"
 #include "types/structs/SMemHead.h"
 #include "types/structs/SPanel.h"
 #include "types/structs/SProjectedVertex.h"
 #include "types/structs/SReflector.h"
-#include "types/structs/SSurfaceInfo.h"
-#include "types/structs/SSurfaceNormal.h"
-#include "types/structs/SSurfacePackedNormal.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x500000
@@ -72,8 +72,8 @@ void __cdecl core_keyactor_cpp_CKeyActor_onPickup_FUN_00501920(CKeyActor *this_p
 void __cdecl core_keyactor_cpp_CKeyActor_getPropertyList_FUN_00501940(CKeyActor *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_keyactor_cpp_CKeyActor_addFilesToExtract_FUN_00501990(CKeyActor *this_ptr,_FILE *file_handle);
 CKeyActor * __cdecl core_keyactor_cpp_CKeyActor_dtor_FUN_005019b0(CKeyActor *this_ptr,uint flags);
-void __cdecl engine_keyframe_c_calculatePackedSurfaceNormal_FUN_00501a00(CVector3i *vertex_data,SSurfacePackedNormal *data);
-void __cdecl engine_keyframe_c_calculateSurfaceNormal_FUN_00501bc0(CVector3i *vertex_data,SSurfaceNormal *output);
+void __cdecl engine_keyframe_c_calculatePackedSurfaceNormal_FUN_00501a00(CVector3i *vertex_data,SMRGLPrimitiveTriangleIndex *texture);
+void __cdecl engine_keyframe_c_calculateSurfaceNormal_FUN_00501bc0(CVector3i *vertex_data,SMRGLPrimitiveTriangle *texture);
 void __cdecl engine_keyframe_c_loadAndInterpolateKeyframes_FUN_00501d40(SMRGLKeyframeModel *keyframe_model);
 SMRGLHeaderExtended * __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_00501f30(SMRGLHeaderExtended *header);
 void __cdecl engine_keyframe_c_recomputeKeyFrameNormals_FUN_00502320(void);
@@ -206,7 +206,7 @@ int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_hasCollision_FUN_00509320(CMans
 float __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customRayIntersect_FUN_00509330(CMansionPuzzleCircle *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction, CVector3f *out_normal);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customIntersectCylinderXZ_FUN_00509720(CMansionPuzzleCircle *this_ptr,SIntersectXZCylinder *cylinder);
 int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customGetFloorHeight_FUN_005097d0(CMansionPuzzleCircle *this_ptr,float x_pos,float z_pos,float *out_floor_height);
-void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getSurfaceProperties_FUN_005097e0(CMansionPuzzleCircle *this_ptr,SSurfaceInfo *surface_info);
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_onLaserHit_FUN_005097e0(CMansionPuzzleCircle *this_ptr,SLaserInfo *laser_info);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_005098f0(CMansionPuzzleCircle *this_ptr);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_00509b20(CMansionPuzzleCircle *this_ptr);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_00509bf0(CMansionPuzzleCircle *this_ptr);
@@ -235,7 +235,7 @@ int __cdecl core_manpuz_cpp_CMirrorHack_renderOpaque_FUN_0050b180(CMirrorHack *t
 void __cdecl core_manpuz_cpp_CMirrorHack_process_FUN_0050b1d0(CMirrorHack *this_ptr,float delta_time);
 CBoundingBox3D * __cdecl core_manpuz_cpp_CMirrorHack_getBoundingBox_FUN_0050b260(CMirrorHack *this_ptr,CBoundingBox3D *out_box);
 int __cdecl core_manpuz_cpp_CMirrorHack_hasCollision_FUN_0050b2b0(CMirrorHack *this_ptr,SCollisionInfo *collision_info);
-void __cdecl core_manpuz_cpp_CMirrorHack_getSurfaceProperties_FUN_0050b2c0(CMirrorHack *this_ptr,SSurfaceInfo *surface_info);
+void __cdecl core_manpuz_cpp_CMirrorHack_onLaserHit_FUN_0050b2c0(CMirrorHack *this_ptr,SLaserInfo *laser_info);
 void __cdecl core_manpuz_cpp_CMirrorHack_getInteractionInfo_FUN_0050b2f0(CMirrorHack *this_ptr,SInteractionInfo *out_info);
 int __cdecl core_manpuz_cpp_CMirrorHack_startInteraction_FUN_0050b340(CMirrorHack *this_ptr,CDemonActor *user);
 int __cdecl core_manpuz_cpp_CMirrorHack_updateInteraction_FUN_0050b360(CMirrorHack *this_ptr,COrientation *user_orientation, SInteractionState *interaction_state);

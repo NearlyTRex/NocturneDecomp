@@ -1,0 +1,1403 @@
+======================================================================
+STRUCT QUALITY REPORT
+======================================================================
+
+SUMMARY
+----------------------------------------------------------------------
+Total structs:              683
+Fully clean structs:        504
+Structs with issues:        179
+Unreferenced structs:       152
+
+Total fields:               5013
+Clean fields:               4663
+Unknown (unk*) fields:      290
+Padding (pad*) fields:      36
+Reserved (reserved*) fields:24
+Overall field quality:      93.0%
+
+======================================================================
+UNREFERENCED STRUCTS (152)
+----------------------------------------------------------------------
+These structs are not referenced in any decompiled .cpp file.
+
+  CCameraTransformState                     /Nocturne/Class/Game
+  CClippedPoly                              /Nocturne/Class/Game
+  CColor3i                                  /Nocturne/Class/Game
+  CColor4f                                  /Nocturne/Class/Game
+  CFileList                                 /Nocturne/Class/Game
+  CFileListEntry                            /Nocturne/Class/Game
+  CHero_full_vtable                         /Nocturne/Class/Game
+  CLZWDecompress_vtable                     /Nocturne/Class/Game
+  CMemoryBitStream                          /Nocturne/Class/Game
+  CPackedBitmapGroup                        /Nocturne/Class/Game
+  CPartStatus                               /Nocturne/Class/Game
+  CPickListEntry                            /Nocturne/Class/Game
+  CPodFileEntry                             /Nocturne/Class/Game
+  CQuaternion4i                             /Nocturne/Class/Game
+  CScriptEditor                             /Nocturne/Class/Game
+  CSound_vtable                             /Nocturne/Class/Game
+  CVector2f                                 /Nocturne/Class/Game
+  CVector4f                                 /Nocturne/Class/Game
+  CWeapon_full_vtable                       /Nocturne/Class/Game
+  D3DVECTOR                                 /Nocturne/Struct/System/d3d.h
+  DDCOLORKEY                                /Nocturne/Struct/System/ddraw.h
+  DDPIXELFORMAT                             /Nocturne/Struct/System/ddraw.h
+  DS3DBUFFER                                /Nocturne/Struct/System/dsound.h
+  DS3DLISTENER                              /Nocturne/Struct/System/dsound.h
+  DSBCAPS                                   /Nocturne/Struct/System/dsound.h
+  DSCBCAPS                                  /Nocturne/Struct/System/dsound.h
+  DSCBUFFERDESC                             /Nocturne/Struct/System/dsound.h
+  DSCCAPS                                   /Nocturne/Struct/System/dsound.h
+  EXCEPTION_REGISTRATION_RECORD             /Nocturne/Typedef/System/winnt.h
+  FORMAT_OUTPUT_CONTEXT                     /Nocturne/Struct/System/stdio.h
+  FileBase                                  /Nocturne/Struct/System/stdio.h
+  FileContext                               /Nocturne/Struct/System/stdio.h
+  FileDescriptor                            /Nocturne/Struct/System/stdio.h
+  FormatSpec                                /Nocturne/Struct/System/stdio.h
+  HBITMAP__                                 /Nocturne/Struct/System/winuser.h
+  HBRUSH__                                  /Nocturne/Struct/System/winuser.h
+  HDC__                                     /Nocturne/Struct/System/wingdi.h
+  HFONT__                                   /Nocturne/Struct/System/winuser.h
+  HICON__                                   /Nocturne/Struct/System/winuser.h
+  HINSTANCE__                               /Nocturne/Struct/System/windef.h
+  HKEY__                                    /Nocturne/Struct/System/winnt.h
+  HMENU__                                   /Nocturne/Struct/System/winuser.h
+  HOSTENT                                   /Nocturne/Struct/System/winsock.h
+  HWAVEIN__                                 /Nocturne/Struct/System/mmsystem.h
+  HWAVEOUT__                                /Nocturne/Struct/System/mmsystem.h
+  HWND__                                    /Nocturne/Struct/System/winuser.h
+  HeapBlock                                 /Nocturne/Struct/System/stdlib.h
+  HeapState                                 /Nocturne/Struct/System/stdlib.h
+  IDirectDrawClipper                        /Nocturne/Struct/System/ddraw.h
+  IDirectDrawSurface_vtable                 /Nocturne/Struct/System/ddraw.h
+  IDirectDraw_vtable                        /Nocturne/Struct/System/ddraw.h
+  IDirectSound3DBuffer_vtable               /Nocturne/Struct/System/dsound.h
+  IDirectSound3DListener_vtable             /Nocturne/Struct/System/dsound.h
+  IDirectSoundBuffer_vtable                 /Nocturne/Struct/System/dsound.h
+  IDirectSoundCaptureBuffer                 /Nocturne/Struct/System/dsound.h
+  IDirectSoundCaptureBuffer_vtable          /Nocturne/Struct/System/dsound.h
+  IDirectSoundCapture_vtable                /Nocturne/Struct/System/dsound.h
+  IDirectSound_vtable                       /Nocturne/Struct/System/dsound.h
+  IKsPropertySet_vtable                     /Nocturne/Struct/System/ksproxy.h
+  IMAGE_DATA_DIRECTORY                      /PE
+  IMAGE_DOS_HEADER                          /DOS
+  IMAGE_FILE_HEADER                         /PE
+  IMAGE_OPTIONAL_HEADER32                   /PE
+  IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct  /
+  IMAGE_RESOURCE_DIRECTORY_ENTRY_NameStruct  /PE
+  IUnknown_vtable                           /Nocturne/Struct/System/unknwn.h
+  MathErrorContext                          /Nocturne/Struct/System/math.h
+  RGB_ENTRY                                 /Nocturne/Struct/System/ddraw.h
+  SActorVarBlock                            /Nocturne/Struct/Game
+  SAnimatedTexture                          /Nocturne/Struct/Game
+  SBoneData                                 /Nocturne/Struct/Game
+  SCPUInfo                                  /Nocturne/Struct/Game
+  SCharacterBitmap                          /Nocturne/Struct/Game
+  SConditionVariable                        /Nocturne/Struct/Game
+  SCounterBlock                             /Nocturne/Struct/Game
+  SERVENT                                   /Nocturne/Struct/System/winsock.h
+  SEdgeList                                 /Nocturne/Struct/Game
+  SFogGridPlane                             /Nocturne/Struct/Game
+  SGraphicsCardEnumeration                  /Nocturne/Struct/Game
+  SKFMBinaryHeader                          /Nocturne/Struct/Game
+  SKFMBinaryTexture                         /Nocturne/Struct/Game
+  SMRGLHeaderBasicTypeOnly                  /Nocturne/Struct/Game
+  SMRGLKeyframe                             /Nocturne/Struct/Game
+  SMRGLKeyframeModel                        /Nocturne/Struct/Game
+  SMRGLPrimitiveClippedIndex                /Nocturne/Struct/Game
+  SMRGLPrimitiveTriangleIndex               /Nocturne/Struct/Game
+  SMRGLVertex                               /Nocturne/Struct/Game
+  SMixResampleStereoParams                  /Nocturne/Struct/Game
+  SMorphPart                                /Nocturne/Struct/Game
+  SMpegLayer3Scalefactors                   /Nocturne/Struct/Game
+  SNetworkPacket                            /Nocturne/Struct/Game
+  SRGBColor                                 /Nocturne/Struct/Game
+  SScalefactorBandRange                     /Nocturne/Struct/Game
+  SScreenCoord                              /Nocturne/Struct/Game
+  SSfxBlock                                 /Nocturne/Struct/Game
+  SSpatialTreeNode                          /Nocturne/Struct/Game
+  SSuperOptVertex                           /Nocturne/Struct/Game
+  SSynthesisFilter                          /Nocturne/Struct/Game
+  STextureLoadConfig                        /Nocturne/Struct/Game
+  STexturePlacementQuery                    /Nocturne/Struct/Game
+  STimerBlock                               /Nocturne/Struct/Game
+  SVertexBatch                              /Nocturne/Struct/Game
+  SVertexPair                               /Nocturne/Struct/Game
+  SignalHandlerEntry                        /Nocturne/Struct/System/signal.h
+  StringInfo                                /PE
+  StringOutputContext                       /Nocturne/Struct/System/stdio.h
+  StringTable                               /PE
+  ThreadStartupInfo                         /Nocturne/Struct/System/watcom.h
+  Var                                       /PE
+  WatcomDestructorFlags                     /Nocturne/Struct/System/watcom.h
+  WatcomTypeArrayInfo                       /Nocturne/Struct/System/watcom.h
+  _CONTEXT                                  /Nocturne/Struct/System/winnt.h
+  _COORD                                    /Nocturne/Struct/System/wincon.h
+  _EXCEPTION_POINTERS                       /Nocturne/Struct/System/winnt.h
+  _EXCEPTION_RECORD                         /Nocturne/Struct/System/winnt.h
+  _FILETIME                                 /Nocturne/Struct/System/winbase.h
+  _FLOATING_SAVE_AREA                       /Nocturne/Struct/System/winnt.h
+  _FOCUS_EVENT_RECORD                       /Nocturne/Struct/System/wincon.h
+  _GUID                                     /Nocturne/Struct/System/winnt.h
+  _INPUT_RECORD                             /Nocturne/Struct/System/wincon.h
+  _KEY_EVENT_RECORD                         /Nocturne/Struct/System/wincon.h
+  _LIST_ENTRY                               /Nocturne/Struct/System/winnt.h
+  _MEMORY_BASIC_INFORMATION                 /Nocturne/Struct/System/winbase.h
+  _MENU_EVENT_RECORD                        /Nocturne/Struct/System/wincon.h
+  _MOUSE_EVENT_RECORD                       /Nocturne/Struct/System/wincon.h
+  _OVERLAPPED                               /Nocturne/Struct/System/winbase.h
+  _PROCESS_INFORMATION                      /Nocturne/Struct/System/winbase.h
+  _RTL_CRITICAL_SECTION                     /Nocturne/Struct/System/winnt.h
+  _RTL_CRITICAL_SECTION_DEBUG               /Nocturne/Struct/System/winnt.h
+  _SECURITY_ATTRIBUTES                      /Nocturne/Struct/System/winbase.h
+  _STARTUPINFOA                             /Nocturne/Struct/System/winbase.h
+  _SYSTEMTIME                               /Nocturne/Struct/System/winbase.h
+  _TIME_ZONE_INFORMATION                    /Nocturne/Struct/System/winbase.h
+  _WINDOW_BUFFER_SIZE_RECORD                /Nocturne/Struct/System/wincon.h
+  _cpinfo                                   /Nocturne/Struct/System/winnls.h
+  _find_t                                   /Nocturne/Struct/System/dos.h
+  _struct_20                                /Nocturne/Struct/System/winnt.h
+  _struct_519                               /Nocturne/Struct/System/winnt.h
+  fstreambase_core                          /Nocturne/Class/System/fstream.h
+  istream_core                              /Nocturne/Class/System/iostream.h
+  ostream_core                              /Nocturne/Class/System/iostream.h
+  scanf_state_t                             /Nocturne/Struct/System/stdio.h
+  strstreambase_core                        /Nocturne/Class/System/strstream.h
+  tWAVEFORMAT                               /Nocturne/Struct/System/dsound.h
+  tagBITMAPINFO                             /Nocturne/Struct/System/wingdi.h
+  tagBITMAPINFOHEADER                       /Nocturne/Struct/System/wingdi.h
+  tagLOGBRUSH                               /Nocturne/Struct/System/wingdi.h
+  tagPOINT                                  /Nocturne/Struct/System/windef.h
+  tagRGBQUAD                                /Nocturne/Struct/System/wingdi.h
+  tagWNDCLASSA                              /Nocturne/Struct/System/winuser.h
+  utimbuf                                   /Nocturne/Struct/System/utime.h
+  wavehdr_tag                               /Nocturne/Struct/System/mmsystem.h
+
+======================================================================
+STRUCTS WITH UNKNOWN/PADDING FIELDS (179)
+----------------------------------------------------------------------
+
+CFireEffect                                 0.0% complete  (0/1 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+CGore                                       0.0% complete  (0/1 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+CLeakChecker                                0.0% complete  (0/1 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+CPaletteManager                             0.0% complete  (0/4 fields clean)
+  Issues: 4 unknown
+  Fields: unk1, unk2, unk3, unk4
+
+CPartStatus                                 0.0% complete  (0/1 fields clean) [unreferenced]
+  Issues: 1 unknown
+  Fields: unk
+
+CPickListEntry                              0.0% complete  (0/1 fields clean) [unreferenced]
+  Issues: 1 unknown
+  Fields: unk
+
+CScriptEditor                               0.0% complete  (0/1 fields clean) [unreferenced]
+  Issues: 1 unknown
+  Fields: unk
+
+CSound                                      0.0% complete  (0/1 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+CTire                                       0.0% complete  (0/1 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+SChainVertex                                0.0% complete  (0/1 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+SChatHistory                                0.0% complete  (0/1 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+SFreaky                                     0.0% complete  (0/3 fields clean)
+  Issues: 3 unknown
+  Fields: unk1, unk2, unk3
+
+SGem                                        0.0% complete  (0/1 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+SKFMBinaryTexture                           0.0% complete  (0/1 fields clean) [unreferenced]
+  Issues: 1 unknown
+  Fields: unk
+
+SMixResampleStereoParams                    0.0% complete  (0/6 fields clean) [unreferenced]
+  Issues: 6 unknown
+  Fields: unk1, unk2, unk3, unk4, unk5, unk6
+
+SPanel                                      0.0% complete  (0/1 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+SPlayer                                     0.0% complete  (0/1 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+SPose                                       0.0% complete  (0/1 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+SRA4HQPoint                                 0.0% complete  (0/1 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+SReflector                                  0.0% complete  (0/1 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+STriangleRef                                0.0% complete  (0/1 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+SVoxelGridParams                            0.0% complete  (0/1 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+SWaterVertex                                0.0% complete  (0/1 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+SSynthesisFilter                           14.3% complete  (1/7 fields clean) [unreferenced]
+  Issues: 6 unknown
+  Fields: unk1, unk2, unk3, unk4, unk5, unk6
+
+CScat                                      18.2% complete  (2/11 fields clean)
+  Issues: 9 unknown
+  Fields: unk1, unk2, unk3, unk4, unk5, unk6, unk7, unk8, unk9
+
+CBride                                     25.0% complete  (1/4 fields clean)
+  Issues: 3 unknown
+  Fields: unk1, unk2, unk3
+
+COptimize                                  25.0% complete  (2/8 fields clean)
+  Issues: 6 unknown
+  Fields: unk1, unk2, unk3, unk4, unk5, unk6
+
+CSvetlana                                  30.0% complete  (3/10 fields clean)
+  Issues: 7 unknown
+  Fields: unk1, unk2, unk3, unk4, unk5, unk6, unk7
+
+CBassPlayer                                33.3% complete  (1/3 fields clean)
+  Issues: 2 unknown
+  Fields: unk1, unk2
+
+CCrossbow                                  33.3% complete  (1/3 fields clean)
+  Issues: 2 unknown
+  Fields: unk1, unk2
+
+CDrummer                                   33.3% complete  (1/3 fields clean)
+  Issues: 2 unknown
+  Fields: unk1, unk2
+
+CFileList                                  33.3% complete  (1/3 fields clean) [unreferenced]
+  Issues: 2 unknown
+  Fields: unk1, unk2
+
+CSentinel                                  33.3% complete  (1/3 fields clean)
+  Issues: 2 unknown
+  Fields: unk3, unk4
+
+CStranger                                  37.5% complete  (9/24 fields clean)
+  Issues: 15 unknown
+  Fields: unk1, unk2, unk3, unk4, unk5, unk6, unk7, unk8, unk9, unk10, unk11, unk12, unk13, unk14, unk15
+
+CTeleport                                  40.0% complete  (2/5 fields clean)
+  Issues: 3 unknown
+  Fields: unk1, unk2, unk3
+
+STriangleIndices                           42.9% complete  (3/7 fields clean)
+  Issues: 4 unknown
+  Fields: unk1, unk2, unk3, unk4
+
+SInteractionState                          45.5% complete  (5/11 fields clean)
+  Issues: 6 unknown
+  Fields: unk1, unk2, unk3, unk4, unk5, unk6
+
+CDrone                                     50.0% complete  (1/2 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+CDynamite                                  50.0% complete  (1/2 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+CFlameThrower                              50.0% complete  (1/2 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+CHighPriestOfGardath                       50.0% complete  (1/2 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+CHiram                                     50.0% complete  (1/2 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+CImp                                       50.0% complete  (1/2 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+CLarva                                     50.0% complete  (1/2 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+CLightGun                                  50.0% complete  (1/2 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+CMineCar                                   50.0% complete  (1/2 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+CMirrorHack                                50.0% complete  (1/2 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+CShotgun                                   50.0% complete  (1/2 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+CSmiley                                    50.0% complete  (2/4 fields clean)
+  Issues: 2 unknown
+  Fields: unk1, unk2
+
+CSuccubus                                  50.0% complete  (1/2 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+CTentacle                                  50.0% complete  (2/4 fields clean)
+  Issues: 2 unknown
+  Fields: unk1, unk2
+
+CTommyGun                                  50.0% complete  (2/4 fields clean)
+  Issues: 2 unknown
+  Fields: unk, unk2
+
+CZombieCow                                 50.0% complete  (1/2 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+SCollisionReturnInfo                       50.0% complete  (1/2 fields clean)
+  Issues: 1 reserved
+  Fields: reserved
+
+SLodSubmesh                                50.0% complete  (1/2 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+SMpegScalefactorBandData                   50.0% complete  (1/2 fields clean)
+  Issues: 1 reserved
+  Fields: reserved
+
+SMRGLTextureExtended                       50.0% complete  (1/2 fields clean)
+  Issues: 1 unknown
+  Fields: unknown
+
+SSuperOptVertex                            50.0% complete  (2/4 fields clean) [unreferenced]
+  Issues: 2 unknown
+  Fields: unk1, unk2
+
+CZombie                                    55.6% complete  (5/9 fields clean)
+  Issues: 4 unknown
+  Fields: unk1, unk2, unk3, unk4
+
+CGhoul                                     57.1% complete  (4/7 fields clean)
+  Issues: 3 unknown
+  Fields: unk1, unk2, unk3
+
+SBoneData                                  60.0% complete  (3/5 fields clean) [unreferenced]
+  Issues: 2 unknown
+  Fields: unk1, unk2
+
+CFrankenstienMachine                       63.6% complete  (7/11 fields clean)
+  Issues: 4 unknown
+  Fields: unk1, unk2, unk3, unk4
+
+CVehicle                                   63.6% complete  (7/11 fields clean)
+  Issues: 4 unknown
+  Fields: unk1, unk2, unk3, unk4
+
+CCryptVessel                               65.0% complete  (13/20 fields clean)
+  Issues: 7 unknown
+  Fields: unk2, unk3, unk4, unk5, unk6, unk7, unk8
+
+CCameraView                                66.7% complete  (4/6 fields clean)
+  Issues: 2 unknown
+  Fields: unk1, unk2
+
+CDemonCubeFrustum                          66.7% complete  (2/3 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+CFilmProjector                             66.7% complete  (2/3 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+CFilmReel                                  66.7% complete  (4/6 fields clean)
+  Issues: 2 unknown
+  Fields: unk1, unk2
+
+CGasMask                                   66.7% complete  (2/3 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+CHaystack                                  66.7% complete  (2/3 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+CIcePick                                   66.7% complete  (2/3 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+CMorph                                     66.7% complete  (2/3 fields clean)
+  Issues: 1 reserved
+  Fields: reserved
+
+CPodDependencyRecord                       66.7% complete  (2/3 fields clean)
+  Issues: 1 unknown
+  Fields: unknown
+
+CProceduralTexture                         66.7% complete  (4/6 fields clean)
+  Issues: 2 unknown
+  Fields: unk1, unk2
+
+CWayPoint                                  66.7% complete  (2/3 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+fstreambase                                66.7% complete  (2/3 fields clean)
+  Issues: 1 padding
+  Fields: padding_0x44
+
+SHuffmanTableSource                        66.7% complete  (4/6 fields clean)
+  Issues: 2 unknown
+  Fields: unk1, unk2
+
+SNetworkAddr                               66.7% complete  (2/3 fields clean)
+  Issues: 1 padding
+  Fields: padding
+
+SNetworkPacket                             66.7% complete  (2/3 fields clean) [unreferenced]
+  Issues: 1 unknown
+  Fields: unknown
+
+StringOutputContext                        66.7% complete  (2/3 fields clean) [unreferenced]
+  Issues: 1 unknown
+  Fields: unknown
+
+strstreambase                              66.7% complete  (2/3 fields clean)
+  Issues: 1 padding
+  Fields: padding
+
+CChain                                     68.2% complete  (15/22 fields clean)
+  Issues: 7 unknown
+  Fields: unk1, unk2, unk3, unk4, unk5, unk6, unk7
+
+FormatSpec                                 68.2% complete  (15/22 fields clean) [unreferenced]
+  Issues: 3 unknown, 4 padding
+  Fields: unknown_0x00, padding1, padding_char, padding2, unknown_0x17, unknown_0x1C, padding_needed
+
+CDraculaBride                              69.2% complete  (9/13 fields clean)
+  Issues: 4 unknown
+  Fields: unk1, unk2, unk3, unk4
+
+CPodFileEntry                              70.0% complete  (7/10 fields clean) [unreferenced]
+  Issues: 3 unknown
+  Fields: unk1, unk2, unk3
+
+SCramRectangle                             70.0% complete  (7/10 fields clean)
+  Issues: 3 unknown
+  Fields: unk1, unk2, unk3
+
+CActorDestination                          71.4% complete  (5/7 fields clean)
+  Issues: 2 unknown
+  Fields: unk1, unk4
+
+CGargoyle                                  71.4% complete  (5/7 fields clean)
+  Issues: 2 unknown
+  Fields: unk, unk2
+
+CMelee                                     71.4% complete  (10/14 fields clean)
+  Issues: 4 unknown
+  Fields: unk1, unk2, unk3, unk4
+
+STexturePlacementQuery                     71.4% complete  (5/7 fields clean) [unreferenced]
+  Issues: 2 unknown
+  Fields: unk1, unk2
+
+SVoxelCubeMetadata                         71.4% complete  (5/7 fields clean)
+  Issues: 2 unknown
+  Fields: unk1, unk2
+
+CBoneStructure                             75.0% complete  (3/4 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+CElephantGun                               75.0% complete  (3/4 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+CGabriella                                 75.0% complete  (12/16 fields clean)
+  Issues: 4 unknown
+  Fields: unk1, unk2, unk3, unk4
+
+CHostage                                   75.0% complete  (18/24 fields clean)
+  Issues: 6 unknown
+  Fields: unk1, unk2, unk3, unk4, unk5, unk6
+
+CKeyActor                                  75.0% complete  (3/4 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+CMarquee                                   75.0% complete  (6/8 fields clean)
+  Issues: 2 unknown
+  Fields: unk2, unk3
+
+CMimic                                     75.0% complete  (6/8 fields clean)
+  Issues: 2 unknown
+  Fields: unk3, unk4
+
+CMirror                                    75.0% complete  (3/4 fields clean)
+  Issues: 1 reserved
+  Fields: reserved
+
+CMoloch                                    75.0% complete  (6/8 fields clean)
+  Issues: 2 unknown
+  Fields: unk1, unk2
+
+CNetGame                                   75.0% complete  (6/8 fields clean)
+  Issues: 1 unknown, 1 padding
+  Fields: padding, unk
+
+CTrash                                     75.0% complete  (3/4 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+IMAGE_RESOURCE_DATA_ENTRY                  75.0% complete  (3/4 fields clean)
+  Issues: 1 reserved
+  Fields: Reserved
+
+istrstream                                 75.0% complete  (3/4 fields clean)
+  Issues: 1 padding
+  Fields: padding
+
+ostrstream                                 75.0% complete  (3/4 fields clean)
+  Issues: 1 padding
+  Fields: padding
+
+SAlphaEntry                                75.0% complete  (3/4 fields clean)
+  Issues: 1 padding
+  Fields: pad
+
+SCorona                                    75.0% complete  (3/4 fields clean)
+  Issues: 1 unknown
+  Fields: unknown
+
+SNetPlayer                                 75.0% complete  (6/8 fields clean)
+  Issues: 2 unknown
+  Fields: unk1, unk2
+
+SOCKADDR_IN                                75.0% complete  (3/4 fields clean)
+  Issues: 1 padding
+  Fields: padding_0x08
+
+SVersionControlSession                     75.0% complete  (6/8 fields clean)
+  Issues: 2 unknown
+  Fields: unk1, unk2
+
+ThreadData                                 75.0% complete  (12/16 fields clean)
+  Issues: 2 unknown, 2 padding
+  Fields: unknown_10, padding_0x52, padding_0xd4, unknown_E2
+
+SMpegLayer3Granule                         77.8% complete  (14/18 fields clean)
+  Issues: 4 unknown
+  Fields: unk1, unk2, unk3, unk4
+
+STimestampRecord                           77.8% complete  (7/9 fields clean)
+  Issues: 2 unknown
+  Fields: unk1, unk2
+
+CWerewolf                                  78.6% complete  (11/14 fields clean)
+  Issues: 3 unknown
+  Fields: unk3, unk4, unk6
+
+CDrip                                      80.0% complete  (12/15 fields clean)
+  Issues: 3 unknown
+  Fields: unk1, unk2, unk3
+
+CMP3Decoder                                80.0% complete  (12/15 fields clean)
+  Issues: 3 unknown
+  Fields: unk1, unk2, unk3
+
+FileListNode                               80.0% complete  (4/5 fields clean)
+  Issues: 1 reserved
+  Fields: reserved
+
+SFace                                      80.0% complete  (4/5 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+SFog                                       80.0% complete  (4/5 fields clean)
+  Issues: 1 reserved
+  Fields: reserved
+
+SHuffmanTable                              80.0% complete  (8/10 fields clean)
+  Issues: 2 unknown
+  Fields: unk1, unk2
+
+SPolygonScreenData                         80.0% complete  (4/5 fields clean)
+  Issues: 1 reserved
+  Fields: reserved1
+
+SRoom                                      80.0% complete  (4/5 fields clean)
+  Issues: 1 reserved
+  Fields: reserved
+
+SVDBox                                     80.0% complete  (4/5 fields clean)
+  Issues: 1 reserved
+  Fields: reserved
+
+SVertexBatch                               80.0% complete  (4/5 fields clean) [unreferenced]
+  Issues: 1 unknown
+  Fields: unk
+
+ThreadStartupInfo                          80.0% complete  (4/5 fields clean) [unreferenced]
+  Issues: 1 reserved
+  Fields: reserved
+
+CPodAuditRecord                            81.8% complete  (9/11 fields clean)
+  Issues: 1 padding, 1 reserved
+  Fields: padding, reserved
+
+CTrigger                                   81.8% complete  (18/22 fields clean)
+  Issues: 4 unknown
+  Fields: unk2, unk3, unk4, unk5
+
+CTurret                                    82.4% complete  (14/17 fields clean)
+  Issues: 3 unknown
+  Fields: unk1, unk4, unk5
+
+CFlameCan                                  83.3% complete  (5/6 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+CLadder                                    83.3% complete  (5/6 fields clean)
+  Issues: 1 unknown
+  Fields: unk1
+
+SAnimatedTexture                           83.3% complete  (5/6 fields clean) [unreferenced]
+  Issues: 1 unknown
+  Fields: unk
+
+STextureLoadConfig                         83.3% complete  (15/18 fields clean) [unreferenced]
+  Issues: 3 unknown
+  Fields: unk1, unk2, unk3
+
+CMansionPuzzleCircle                       84.6% complete  (11/13 fields clean)
+  Issues: 2 unknown
+  Fields: unk2, unk3
+
+CPendulum                                  85.0% complete  (17/20 fields clean)
+  Issues: 3 unknown
+  Fields: unk3, unk2, unk7
+
+_find_t                                    85.7% complete  (6/7 fields clean) [unreferenced]
+  Issues: 1 padding
+  Fields: padding_0x1
+
+CLZWCompress                               85.7% complete  (6/7 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+filebuf                                    85.7% complete  (6/7 fields clean)
+  Issues: 1 padding
+  Fields: padding_0x3E
+
+CVampireBoss                               86.4% complete  (19/22 fields clean)
+  Issues: 3 padding
+  Fields: padding1, padding2, padding3
+
+CPassenger                                 87.5% complete  (7/8 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+strstreambuf                               87.5% complete  (7/8 fields clean)
+  Issues: 1 padding
+  Fields: padding
+
+wavehdr_tag                                87.5% complete  (7/8 fields clean) [unreferenced]
+  Issues: 1 reserved
+  Fields: reserved
+
+scanf_state_t                              88.2% complete  (15/17 fields clean) [unreferenced]
+  Issues: 1 padding, 1 reserved
+  Fields: reserved, pad
+
+CPickList                                  88.5% complete  (23/26 fields clean)
+  Issues: 3 unknown
+  Fields: unk1, unk3, unk2
+
+CBitmap                                    88.9% complete  (8/9 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+CGrave                                     88.9% complete  (8/9 fields clean)
+  Issues: 1 unknown
+  Fields: unk1
+
+CStairs                                    88.9% complete  (8/9 fields clean)
+  Issues: 1 unknown
+  Fields: unk2
+
+CCramTex                                   89.5% complete  (17/19 fields clean)
+  Issues: 2 padding
+  Fields: padded_width, padded_height
+
+CSpike                                     89.5% complete  (17/19 fields clean)
+  Issues: 2 unknown
+  Fields: unk1, unk6
+
+CFlies                                     90.0% complete  (9/10 fields clean)
+  Issues: 1 reserved
+  Fields: reserved
+
+CGround                                    90.0% complete  (18/20 fields clean)
+  Issues: 2 reserved
+  Fields: reserved1, reserved2
+
+CExternalRenderer                          90.9% complete  (10/11 fields clean)
+  Issues: 1 padding
+  Fields: padding_206
+
+CFireball                                  90.9% complete  (10/11 fields clean)
+  Issues: 1 padding
+  Fields: padding
+
+CLevelLoader                               90.9% complete  (10/11 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+CScript                                    91.3% complete  (21/23 fields clean)
+  Issues: 2 unknown
+  Fields: unk1, unk2
+
+ios                                        91.7% complete  (11/12 fields clean)
+  Issues: 1 padding
+  Fields: padding
+
+SMpegFrameHeader                           91.7% complete  (11/12 fields clean)
+  Issues: 1 padding
+  Fields: padding
+
+streambuf_vtable                           92.3% complete  (12/13 fields clean)
+  Issues: 1 reserved
+  Fields: reserved
+
+CDeformableModelInstance                   92.9% complete  (13/14 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+SClothBone                                 92.9% complete  (13/14 fields clean)
+  Issues: 1 padding
+  Fields: padding
+
+CDoor                                      93.1% complete  (27/29 fields clean)
+  Issues: 2 unknown
+  Fields: unk3, unk4
+
+CDemonActor                                93.3% complete  (28/30 fields clean)
+  Issues: 2 reserved
+  Fields: reserved1, reserved2
+
+CSfxOptions                                93.3% complete  (14/15 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+VS_VERSION_INFO                            93.3% complete  (14/15 fields clean)
+  Issues: 1 padding
+  Fields: Padding
+
+CMobster                                   93.5% complete  (29/31 fields clean)
+  Issues: 2 unknown
+  Fields: unk1, unk2
+
+CLever                                     93.8% complete  (15/16 fields clean)
+  Issues: 1 unknown
+  Fields: unk1
+
+CBox                                       94.1% complete  (16/17 fields clean)
+  Issues: 1 padding
+  Fields: padding
+
+C3DSCamera                                 94.4% complete  (17/18 fields clean)
+  Issues: 1 padding
+  Fields: padding
+
+CWaterActor                                94.4% complete  (17/18 fields clean)
+  Issues: 1 unknown
+  Fields: unk5
+
+CColorQuantizer                            95.2% complete  (20/21 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+CCloth                                     95.7% complete  (22/23 fields clean)
+  Issues: 1 reserved
+  Fields: reserved
+
+CKeyFramedModel                            95.7% complete  (22/23 fields clean)
+  Issues: 1 padding
+  Fields: padding
+
+CDeformableModel                           95.8% complete  (23/24 fields clean)
+  Issues: 1 padding
+  Fields: padding
+
+CLodMesh                                   95.8% complete  (23/24 fields clean)
+  Issues: 1 reserved
+  Fields: reserved_attribute_count
+
+CBoxActor                                  96.0% complete  (24/25 fields clean)
+  Issues: 1 padding
+  Fields: padding
+
+C3DSLight                                  96.7% complete  (29/30 fields clean)
+  Issues: 1 padding
+  Fields: padding
+
+CPlatform                                  97.0% complete  (32/33 fields clean)
+  Issues: 1 unknown
+  Fields: unk3
+
+CGame                                      97.3% complete  (109/112 fields clean)
+  Issues: 3 unknown
+  Fields: unk9, unk10, unk11
+
+CDemonSet                                  97.8% complete  (91/93 fields clean)
+  Issues: 2 reserved
+  Fields: reserved1, reserved2
+
+CCharacter                                 98.7% complete  (76/77 fields clean)
+  Issues: 1 unknown
+  Fields: unk
+
+======================================================================
+FULLY CLEAN STRUCTS (504)
+----------------------------------------------------------------------
+  CActorProperty
+  CActorPropertyList
+  CAlphaBitmap
+  CAmmo
+  CAmmoBox
+  CAnvil
+  CArmour
+  CBackgroundActor
+  CBaron
+  CBaronWeapon
+  CBarrier
+  CBat
+  CBatCreature
+  CBatman
+  CBattery
+  CBeast
+  CBiggs
+  CBitFont
+  CBloodParticle
+  CBloodPool
+  CBloodSplat
+  CBodyPart
+  CBoneGuy
+  CBoundingBox3D
+  CBugs
+  CBulletHole
+  CBulletTrail
+  CCameraTransformState
+  CCameraView_vtable
+  CCharacter_full_vtable
+  CCharacter_vtable
+  CCheckOutItem
+  CCheckOutList
+  CClippedPoly
+  CClothList
+  CCmdParm
+  CCmdParse
+  CCodec
+  CCodec_vtable
+  CColonel
+  CColor3f
+  CColor3i
+  CColor4f
+  CConsole
+  CConveyor
+  CCourse
+  CCourseFrame
+  CCourseFrameList
+  CCrate
+  CCrater
+  CCurtain
+  CDSEModel
+  CDemonActorTransformState
+  CDemonActorType
+  CDemonActor_vtable
+  CDemonCamera
+  CDemonCube
+  CDemonCubeTriangle
+  CDemonFileManager
+  CDemonFilter
+  CDemonGlobe
+  CDemonImage
+  CDemonLight
+  CDemonMission
+  CDemonPart
+  CDemonPod
+  CDemonPod_vtable
+  CDemonRaytrace
+  CDemonRenderer
+  CDemonTriangle
+  CDirectSoundDevice
+  CDrawSurface
+  CEdButton
+  CEdCheck
+  CEdScrollBar
+  CEditorTools
+  CEmitter
+  CEnemy
+  CEnemy_full_vtable
+  CEnemy_vtable
+  CEventList
+  CExplosion
+  CExternalRendererBridge
+  CFileBitStream
+  CFileFinder
+  CFileListEntry
+  CFileManager
+  CFileManager_vtable
+  CFilterCache
+  CFilterFx
+  CFlame
+  CFlashlight
+  CFont
+  CFont_vtable
+  CFootstep
+  CGlass
+  CGlassParticle
+  CGun
+  CGunFlame
+  CHealthItem
+  CHero
+  CHeroPlaceholder
+  CHero_full_vtable
+  CHero_vtable
+  CHotDemon
+  CIni
+  CIniFile
+  CInputString
+  CInventory
+  CKeyFramedModelInstance
+  CKeyFramedModelPart
+  CKeys
+  CKeys_vtable
+  CLZWDecompress
+  CLZWDecompress_vtable
+  CLZWDictionary
+  CLZWDictionaryNode
+  CLaserBeam
+  CLightActor
+  CLightCone
+  CLightningBolt
+  CLocation
+  CLodEdge
+  CLodFace
+  CLodVert
+  CMatrix3x3d
+  CMatrix3x3f
+  CMatrix3x3i
+  CMatrix3x4f
+  CMemoryBitStream
+  CMirrorReflection
+  CMoon
+  CMorphModel
+  CMotionController
+  CMotionController_vtable
+  CMotionList
+  CMouse
+  CMultiCram
+  CMuzzleFlash
+  CNPC
+  CObj
+  CObj_vtable
+  COptimize_vtable
+  COrientation
+  CP2D
+  CP3D
+  CPackedBitmap
+  CPackedBitmapGroup
+  CPackedBitmapSet
+  CParticle
+  CParticle_vtable
+  CPathMap
+  CPathQueueNode
+  CPod
+  CPodDirectoryEntry
+  CPodFile
+  CPodSearchContext
+  CPod_vtable
+  CPoly
+  CPolyIntersectResult
+  CPoly_vtable
+  CPopcorn
+  CQuaternion4f
+  CQuaternion4i
+  CRainDrop
+  CRect
+  CRock
+  CRuleList
+  CSampleInfo
+  CSfxSample
+  CSfxSlot
+  CShell
+  CShovel
+  CSimBox
+  CSkeleton
+  CSlew
+  CSmokeParticle
+  CSoundDevice
+  CSoundDeviceBasic_vtable
+  CSoundDeviceFull_vtable
+  CSound_vtable
+  CSpark
+  CSpotView
+  CStake
+  CStrList
+  CStrList_vtable
+  CTVBat
+  CTeleportDest
+  CTempleStone
+  CTerrain
+  CTextureCache
+  CTextureList
+  CToss
+  CTrail
+  CTrap
+  CVec
+  CVector2d
+  CVector2f
+  CVector2i
+  CVector3d
+  CVector3f
+  CVector3i
+  CVector4f
+  CVector4i
+  CVert
+  CWater
+  CWavInDevice
+  CWavOutDevice
+  CWeapon
+  CWeapon_full_vtable
+  CWeapon_vtable
+  CWeather
+  CWinFont
+  CZThumb
+  CZombieDog
+  D3DVECTOR
+  DDCOLORKEY
+  DDPIXELFORMAT
+  DDSCAPS
+  DDSURFACEDESC
+  DS3DBUFFER
+  DS3DLISTENER
+  DSBCAPS
+  DSBUFFERDESC
+  DSCAPS
+  DSCBCAPS
+  DSCBUFFERDESC
+  DSCCAPS
+  EXCEPTION_REGISTRATION_RECORD
+  ExceptionFrame
+  FORMAT_OUTPUT_CONTEXT
+  FileBase
+  FileContext
+  FileDescriptor
+  FileEmbeddedData
+  FileTrackingEntry
+  HBITMAP__
+  HBRUSH__
+  HDC__
+  HFONT__
+  HICON__
+  HINSTANCE__
+  HKEY__
+  HMENU__
+  HOSTENT
+  HWAVEIN__
+  HWAVEOUT__
+  HWND__
+  Heap
+  HeapBlock
+  HeapState
+  IDirectDraw
+  IDirectDrawClipper
+  IDirectDrawPalette
+  IDirectDrawSurface
+  IDirectDrawSurface_vtable
+  IDirectDraw_vtable
+  IDirectSound
+  IDirectSound3DBuffer
+  IDirectSound3DBuffer_vtable
+  IDirectSound3DListener
+  IDirectSound3DListener_vtable
+  IDirectSoundBuffer
+  IDirectSoundBufferMetadata
+  IDirectSoundBuffer_vtable
+  IDirectSoundCapture
+  IDirectSoundCaptureBuffer
+  IDirectSoundCaptureBuffer_vtable
+  IDirectSoundCapture_vtable
+  IDirectSound_vtable
+  IKsPropertySet
+  IKsPropertySet_vtable
+  IMAGE_DATA_DIRECTORY
+  IMAGE_DOS_HEADER
+  IMAGE_FILE_HEADER
+  IMAGE_NT_HEADERS32
+  IMAGE_OPTIONAL_HEADER32
+  IMAGE_RESOURCE_DIRECTORY
+  IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct
+  IMAGE_RESOURCE_DIRECTORY_ENTRY_NameStruct
+  IMAGE_SECTION_HEADER
+  IUnknown
+  IUnknown_vtable
+  JOYINFOEX
+  MathErrorContext
+  PALETTEENTRY
+  RGB_ENTRY
+  ReentrantCriticalSection
+  RuntimeHandlerEntry
+  SActionKeyBindings
+  SActorVarBlock
+  SAudioFormatDescriptor
+  SBat
+  SBitAllocationTable
+  SBitBuffer
+  SBodyPartFire
+  SBodyPartModel
+  SBone
+  SBoneGuyBox
+  SBoneTransformData
+  SBug
+  SCPUInfo
+  SCameraViewportState
+  SCapsuleCollision
+  SCarryHand
+  SCharacterBitmap
+  SClipPlane
+  SClothVertex
+  SCollisionInfo
+  SColorBox
+  SConditionVariable
+  SCounterBlock
+  SCramConfig
+  SCurtainMeshData
+  SCurtainVertex
+  SDamageDecal
+  SDamageInfo
+  SDialogEntry
+  SDirectSoundDeviceInfo
+  SERVENT
+  SEdge
+  SEdgeData
+  SEdgeList
+  SEdgeTableEntry
+  SEnumPair
+  SEventNameBlock
+  SFire
+  SFly
+  SFogGrid
+  SFogGridPlane
+  SFogImagePlane
+  SFontGlyph
+  SFoundFileInfo
+  SGraphicsCardEnumeration
+  SHardwareEdge
+  SIOControlBlock
+  SInputFace
+  SInteractionInfo
+  SIntersectXZCylinder
+  SInventoryItemInfo
+  SKFMBinaryHeader
+  SLaserInfo
+  SLayerAction
+  SLineStrip
+  SLod
+  SLodSamplePoint
+  SMRGLHeaderBasic
+  SMRGLHeaderBasicTypeOnly
+  SMRGLHeaderExtended
+  SMRGLHeaderPrimitive
+  SMRGLKeyframe
+  SMRGLKeyframeModel
+  SMRGLLightPrimitive
+  SMRGLModelBounds
+  SMRGLPrimitiveClippedIndex
+  SMRGLPrimitiveQuad
+  SMRGLPrimitiveQuadIndex
+  SMRGLPrimitiveTriangle
+  SMRGLPrimitiveTriangleIndex
+  SMRGLTextureBasic
+  SMRGLVertex
+  SMemHead
+  SMixBuffer
+  SModelPartName
+  SMorphControlPoint
+  SMorphPart
+  SMotion
+  SMotionSignal
+  SMotionTransition
+  SMpegFrame
+  SMpegLayer3Scalefactors
+  SMpegStereoSubbandSamples
+  SMpegSubbandAllocation
+  SMpegSubbandQuantizedSamples
+  SMpegSubbandSCFSI
+  SMpegSubbandSamples
+  SMpegSubbandScalefactors
+  SOCKADDR
+  SPaletteEntry
+  SPart
+  SPartInstanceData
+  SPlatformAttachment
+  SPlayerControl
+  SPoint2i
+  SPoseData
+  SProjectedVertex
+  SQuadVertices
+  SRGBColor
+  SRGBColorPalette
+  SRaytraceState
+  SRecordingDeviceInfo
+  SRenderBufferEntry
+  SRenderVertex
+  SResolutionEntry
+  SScalefactorBandRange
+  SScrape
+  SScreenCoord
+  SScriptLine
+  SScriptXRef
+  SSfxBlock
+  SSfxEntry
+  SShapeEditorPolygon
+  SSocketContext
+  SSoftwareEdge
+  SSoundDeviceInfo
+  SSoundModeEntry
+  SSpatialGrid
+  SSpatialTreeNode
+  SStereoBuffers
+  SStereoGains
+  SSurfacePlane
+  SSwarmVertex
+  STextureAtlasEntry
+  STextureSet
+  STextureSlot
+  STimerBlock
+  STrainNoise
+  STreeNode
+  STrianglePackedIndices
+  STriangleVertices
+  SVert
+  SVertexData
+  SVertexPair
+  SVoxelGrid
+  SWindow
+  SignalHandlerEntry
+  StringFileInfo
+  StringInfo
+  StringTable
+  ThreadRegistryEntry
+  Var
+  VarFileInfo
+  WSADATA
+  WatcomDestructorCall
+  WatcomDestructorFlags
+  WatcomInheritanceLayout
+  WatcomStaticDestructorNode
+  WatcomThunkedDestructor
+  WatcomThunkedDestructorDirect
+  WatcomTypeArrayInfo
+  WatcomTypeInfo
+  WatcomVirtualBaseDescriptor
+  _CONTEXT
+  _COORD
+  _EXCEPTION_POINTERS
+  _EXCEPTION_RECORD
+  _FILE
+  _FILETIME
+  _FLOATING_SAVE_AREA
+  _FOCUS_EVENT_RECORD
+  _GUID
+  _INPUT_RECORD
+  _KEY_EVENT_RECORD
+  _LIST_ENTRY
+  _MEMORYSTATUS
+  _MEMORY_BASIC_INFORMATION
+  _MENU_EVENT_RECORD
+  _MOUSE_EVENT_RECORD
+  _OVERLAPPED
+  _PROCESS_INFORMATION
+  _RTL_CRITICAL_SECTION
+  _RTL_CRITICAL_SECTION_DEBUG
+  _SECURITY_ATTRIBUTES
+  _STARTUPINFOA
+  _SYSTEMTIME
+  _TIME_ZONE_INFORMATION
+  _WIN32_FIND_DATAA
+  _WINDOW_BUFFER_SIZE_RECORD
+  _cpinfo
+  _heapinfo
+  _stat
+  _struct_19
+  _struct_20
+  _struct_519
+  _tm
+  dst_rule
+  filebuf_vtable
+  fstreambase_core
+  ifstream
+  istream
+  istream_core
+  joyinfo_tag
+  ofstream
+  ostream
+  ostream_core
+  streambuf
+  strstreambase_core
+  strstreambuf_vtable
+  tWAVEFORMAT
+  tWAVEFORMATEX
+  tagBITMAPINFO
+  tagBITMAPINFOHEADER
+  tagJOYCAPSA
+  tagLOGBRUSH
+  tagMSG
+  tagPOINT
+  tagRECT
+  tagRGBQUAD
+  tagSIZE
+  tagWAVEINCAPSA
+  tagWAVEOUTCAPSA
+  tagWNDCLASSA
+  utimbuf
+  va_list_t

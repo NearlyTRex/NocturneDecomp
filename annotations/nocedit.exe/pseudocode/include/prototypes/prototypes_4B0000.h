@@ -185,7 +185,7 @@ void __cdecl core_filmreel_cpp_CFilmProjector_getPropertyList_FUN_004bee30(CFilm
 CFilmReel * __cdecl core_filmreel_cpp_CFilmReel_dtor_FUN_004bee80(CFilmReel *this_ptr,uint flags);
 CFilmProjector * __cdecl core_filmreel_cpp_CFilmProjector_dtor_FUN_004beed0(CFilmProjector *this_ptr,uint flags);
 void __cdecl core_fire_cpp_staticInit_FUN_004bef20(void);
-float __cdecl core_fire_cpp_FUN_004bf1a0(void);
+float __cdecl core_fire_cpp_safeAcos_FUN_004bf1a0(float value);
 int __cdecl core_fire_cpp_CSmokeParticle_setupRenderState_FUN_004bf1f0(CSmokeParticle *this_ptr);
 void __cdecl core_fire_cpp_CSmokeParticle_reset_FUN_004bf2e0(CSmokeParticle *this_ptr);
 void __cdecl core_fire_cpp_CSmokeParticle_init_FUN_004bf2f0(CSmokeParticle *this_ptr,CVector3f *position,float drag_factor, CVector3f *wind_influence,int alpha_value);

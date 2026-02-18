@@ -59,7 +59,7 @@ int __cdecl core_hero_cpp_CHero_FUN_004f3120(CHero *this_ptr)
           if (((CStack_38.z - SQRT(fStack_3c * fStack_3c + fStack_44 * fStack_44) <=
                 (float)1.2) && (1.0 <= (double)CStack_38.y)) &&
              ((double)CStack_38.y <= 5)) {
-            pCVar4 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+            pCVar4 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                                (&CStack_2c,&CStack_38);
             fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar4->y);
             if (ABS(fStack_14) <= (float)0.61086523818055505) {

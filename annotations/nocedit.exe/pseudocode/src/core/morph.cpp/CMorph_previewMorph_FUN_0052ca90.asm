@@ -34,9 +34,9 @@
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_fillRectColor_FUN_00403170
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-;   shape_spotview.cpp_CSpotView_FUN_005b9620
-;   shape_spotview.cpp_CSpotView_FUN_005b9670
-;   shape_spotview.cpp_CSpotView_FUN_005b9a20
+;   shape_spotview.cpp_CSpotView_applyCamera_FUN_005b9a20
+;   shape_spotview.cpp_CSpotView_handleInput_FUN_005b9670
+;   shape_spotview.cpp_CSpotView_reset_FUN_005b9620
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
 ;   wincore_windll.cpp_clearZBuffer_FUN_005b3ed4
 ;
@@ -58,8 +58,8 @@ section .text
     XOR EDX,EDX                         ; 0052caa7
     PUSH ECX                            ; 0052caa9 | g_CSpotViewInstance
     MOV dword ptr [ESP + 0xc],EDX       ; 0052caaa
-    CALL shape_spotview.cpp_CSpotView_FUN_005b9620 ; 0052caae
-        ;   XREF to: 005b9620 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_FUN_005b9620(CSpotView * this_ptr)
+    CALL shape_spotview.cpp_CSpotView_reset_FUN_005b9620 ; 0052caae
+        ;   XREF to: 005b9620 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_reset_FUN_005b9620(CSpotView * this_ptr, uint control_flags)
     ADD ESP,0x8                         ; 0052cab3
     MOV EBX,dword ptr [0x0067b654]      ; 0052cab6 | g_CGameInstance | g_CGamePtr
     PUSH EBX                            ; 0052cabc | g_CGameInstance
@@ -100,8 +100,8 @@ section .text
         ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBuffer_FUN_005b3ed4()
     MOV EDX,dword ptr [0x0068416c]      ; 0052cb0c | g_CSpotViewInstance | g_CSpotViewPtr
     PUSH EDX                            ; 0052cb12 | g_CSpotViewInstance
-    CALL shape_spotview.cpp_CSpotView_FUN_005b9a20 ; 0052cb13
-        ;   XREF to: 005b9a20 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_FUN_005b9a20(CSpotView * this_ptr)
+    CALL shape_spotview.cpp_CSpotView_applyCamera_FUN_005b9a20 ; 0052cb13
+        ;   XREF to: 005b9a20 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_applyCamera_FUN_005b9a20(CSpotView * this_ptr)
     ADD ESP,0x4                         ; 0052cb18
     PUSH 0x3f87558                      ; 0052cb1b | g_ZeroVector
     MOV ECX,dword ptr [0x006703ec]      ; 0052cb20 | g_CDemonRendererInstance | g_CDemonRendererPtr2
@@ -124,8 +124,8 @@ section .text
     PUSH 0x1f                           ; 0052cb50
     MOV EDI,dword ptr [0x0068416c]      ; 0052cb52 | g_CSpotViewPtr
     PUSH EDI                            ; 0052cb58 | g_CSpotViewInstance
-    CALL shape_spotview.cpp_CSpotView_FUN_005b9670 ; 0052cb59
-        ;   XREF to: 005b9670 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_FUN_005b9670(CSpotView * this_ptr)
+    CALL shape_spotview.cpp_CSpotView_handleInput_FUN_005b9670 ; 0052cb59
+        ;   XREF to: 005b9670 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_handleInput_FUN_005b9670(CSpotView * this_ptr, uint control_flags)
     ADD ESP,0x8                         ; 0052cb5e
     MOV EAX,[0x0067cf44]                ; 0052cb61 | g_CKeysPtr
     PUSH 0x1                            ; 0052cb66

@@ -1,0 +1,126 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 17,
+    "complexity_score": 31,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 3,
+    "pseudocode_lines": 16,
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 33
+  },
+  "cross_references": [
+    {
+      "addr": "0056c990",
+      "from_addr": "0056cbfc",
+      "name": "core_set.cpp_CDemonSet_FUN_0056c990",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c93d0",
+    "address_range": [
+      [
+        "004c93d0",
+        "004c93f9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CFireEffect_hasActiveMuzzleFlash_FUN_004c93d0",
+    "signature": "int __cdecl core_fire_cpp_CFireEffect_hasActiveMuzzleFlash_FUN_004c93d0(CFireEffect *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02d58a04",
+      "name": "g_MuzzleFlashPool",
+      "type": "CMuzzleFlash[20]",
+      "value": null
+    },
+    {
+      "addr": "02d58a60",
+      "name": "DAT_02d58a60",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d58abc",
+      "name": "DAT_02d58abc",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0056cbfc",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_FUN_0056c990",
+        "estimated_params": 1,
+        "instructions_analyzed": 10,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.363636363636363,
+    "instruction_count": 11,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CBRANCH": 3,
+      "COPY": 6,
+      "INT_ADD": 3,
+      "INT_AND": 10,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 11,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 5,
+      "INT_SUB": 3,
+      "INT_XOR": 1,
+      "LOAD": 2,
+      "POPCOUNT": 5,
+      "RETURN": 1
+    },
+    "pcode_op_count": 59
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireEffect *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 15,
+      "match": "(int *)((int)",
+      "text": "iVar1 = *(int *)((int)&g_MuzzleFlashPool[1].frames_remaining + iVar2);",
+      "type": "pointer_cast"
+    }
+  ]
+}

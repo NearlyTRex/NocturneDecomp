@@ -9,32 +9,32 @@
 void __cdecl core_fire_cpp_CCrater_load_FUN_004c4880(CCrater *this_ptr,_FILE *file_handle)
 
 {
-  int iVar1;
+  CVector3f *pCVar1;
   int iVar2;
-  char *pcVar3;
-  char *pcVar4;
+  float *pfVar3;
+  float *pfVar4;
   
-  _fscanf(file_handle,"%d,%d,%f,%f\n",this_ptr,this_ptr->unk + 4,this_ptr->unk + 8,
-             this_ptr->unk + 0x18);
-  _fscanf(file_handle,"%f,%f,%f\n",this_ptr->unk + 0xc,this_ptr->unk + 0x10,
-             this_ptr->unk + 0x14);
+  _fscanf(file_handle,"%d,%d,%f,%f\n",this_ptr,&this_ptr->has_smoke,&this_ptr->smoke_delay,
+             &this_ptr->smoke_spawn_timer);
+  _fscanf(file_handle,"%f,%f,%f\n",&this_ptr->center_position,&(this_ptr->center_position).y,
+             &(this_ptr->center_position).z);
   iVar2 = 0;
-  pcVar3 = this_ptr->unk + 0x24;
-  pcVar4 = this_ptr->unk + 0x20;
+  pfVar3 = &this_ptr->smoke_positions[0].z;
+  pfVar4 = &this_ptr->smoke_positions[0].y;
   do {
-    iVar1 = iVar2 * 0xc;
+    pCVar1 = this_ptr->smoke_positions + iVar2;
     iVar2 = iVar2 + 1;
-    _fscanf(file_handle,"%f,%f,%f\n",this_ptr->unk + iVar1 + 0x1c,pcVar4,pcVar3);
-    pcVar3 = pcVar3 + 0xc;
-    pcVar4 = pcVar4 + 0xc;
+    _fscanf(file_handle,"%f,%f,%f\n",pCVar1,pfVar4,pfVar3);
+    pfVar3 = pfVar3 + 3;
+    pfVar4 = pfVar4 + 3;
   } while (iVar2 < 3);
-  _fscanf(file_handle,"%f,%f,%f\n",this_ptr->unk + 0x40,this_ptr->unk + 0x44,
-             this_ptr->unk + 0x48);
-  _fscanf(file_handle,"%f,%f,%f\n",this_ptr->unk + 0x4c,this_ptr->unk + 0x50,
-             this_ptr->unk + 0x54);
-  _fscanf(file_handle,"%f,%f,%f\n",this_ptr->unk + 0x58,this_ptr->unk + 0x5c,
-             this_ptr->unk + 0x60);
-  _fscanf(file_handle,"%f,%f,%f\n",this_ptr->unk + 100,this_ptr->unk + 0x68,
-             this_ptr->unk + 0x6c);
+  _fscanf(file_handle,"%f,%f,%f\n",this_ptr->corner_positions,
+             &this_ptr->corner_positions[0].y,&this_ptr->corner_positions[0].z);
+  _fscanf(file_handle,"%f,%f,%f\n",this_ptr->corner_positions + 1,
+             &this_ptr->corner_positions[1].y,&this_ptr->corner_positions[1].z);
+  _fscanf(file_handle,"%f,%f,%f\n",this_ptr->corner_positions + 2,
+             &this_ptr->corner_positions[2].y,&this_ptr->corner_positions[2].z);
+  _fscanf(file_handle,"%f,%f,%f\n",this_ptr->corner_positions + 3,
+             &this_ptr->corner_positions[3].y,&this_ptr->corner_positions[3].z);
   return;
 }

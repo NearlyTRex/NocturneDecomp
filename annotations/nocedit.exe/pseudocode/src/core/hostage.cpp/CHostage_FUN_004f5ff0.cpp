@@ -28,7 +28,7 @@ int __cdecl core_hostage_cpp_CHostage_FUN_004f5ff0(CHostage *this_ptr,float delt
     local_20.x = (this_ptr->base).base.base.location.position.x - (pCVar2->location).position.x;
     local_20.y = (this_ptr->base).base.base.location.position.y - (pCVar2->location).position.y;
     local_20.z = (this_ptr->base).base.base.location.position.z - (pCVar2->location).position.z;
-    pCVar3 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_14,&local_20);
+    pCVar3 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_14,&local_20);
     local_8 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                         (pCVar3->y - (this_ptr->base).base.base.orient.vec.y);
     fVar1 = (this_ptr->base).base.turn_speed;

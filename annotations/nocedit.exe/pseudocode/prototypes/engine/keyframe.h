@@ -5,11 +5,11 @@
 
 // Original: engine_keyframe.c_calculatePackedSurfaceNormal_FUN_00501a00
 // Address: 00501a00
-void __cdecl calculatePackedSurfaceNormal(CVector3i *vertex_data,SSurfacePackedNormal *data);
+void __cdecl calculatePackedSurfaceNormal(CVector3i *vertex_data,SMRGLPrimitiveTriangleIndex *texture);
 
 // Original: engine_keyframe.c_calculateSurfaceNormal_FUN_00501bc0
 // Address: 00501bc0
-void __cdecl calculateSurfaceNormal(CVector3i *vertex_data,SSurfaceNormal *output);
+void __cdecl calculateSurfaceNormal(CVector3i *vertex_data,SMRGLPrimitiveTriangle *texture);
 
 // Original: engine_keyframe.c_loadAndInterpolateKeyframes_FUN_00501d40
 // Address: 00501d40

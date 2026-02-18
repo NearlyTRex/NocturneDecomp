@@ -65,7 +65,7 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00448f20(CCrossbow *this_ptr)
   CStack_90.x = CStack_6c.x - fStack_54;
   CStack_90.y = CStack_6c.y - fStack_50;
   CStack_90.z = CStack_6c.z - local_4c;
-  core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
+  core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
   core_setcolid_cpp_CDemonSet_setRayType_FUN_00574230(g_CDemonSetPtr,1);
   core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,(CDemonActor *)this_ptr);
   pCVar4 = (this_ptr->base).carried_by_actor;
@@ -125,7 +125,7 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00448f20(CCrossbow *this_ptr)
       if (iVar2 != 0) {
         if (CStack_20.z == 0.0) {
           (this_ptr->base).ammo_count = (this_ptr->base).ammo_count + 1;
-          core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(this_ptr_00);
+          core_setcolid_cpp_CDemonSet_init_FUN_00574180(this_ptr_00);
           return 0;
         }
         break;
@@ -170,7 +170,7 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00448f20(CCrossbow *this_ptr)
     }
     CStack_20.y = (float)((int)CStack_20.y + 1);
   } while ((int)CStack_20.y < 4);
-  core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
+  core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
   if (1.0 < grab_type) {
     grab_type = 1.0;
   }

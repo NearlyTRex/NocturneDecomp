@@ -24,7 +24,7 @@ CDemonGlobe CDemonGlobe_03f95d7c = {};
 CRITICAL_SECTION g_StaticCriticalSectionArray[64] = {};
 
 // CVector3f[200]
-CVector3f DAT_03f95df8[200] = {};
+CVector3f g_WeatherParticlePositions[200] = {};
 
 // CVector3i
 CVector3i g_TempProjectedCoord = {};
@@ -114,6 +114,7 @@ char** g_EnvironmentBlock = {};
 char* g_ArgVector[128] = {};
 
 // char[200]
+char g_WeatherParticleHitGround[200] = {};
 char g_KeyNameBuffer[200] = {};
 
 // char[256]
@@ -141,6 +142,9 @@ float FLOAT_03f96b4c = {};
 float FLOAT_03f96b50 = {};
 float FLOAT_03f96b54 = {};
 float FLOAT_03f96b58 = {};
+
+// float[200]
+float g_WeatherParticleGroundHeights[200] = {};
 
 // int
 int g_RenderingInProgress = {};
@@ -189,8 +193,6 @@ int g_MessageFlags[513] = {};
 uint UINT_03f96b40 = {};
 
 // undefined1
-undefined1 DAT_03f96a78 = {};
-undefined1 DAT_03f96a79 = {};
 undefined1 DAT_03f98ff1 = {};
 undefined1 DAT_03f98ff2 = {};
 undefined1 DAT_03f98ff3 = {};
@@ -206,8 +208,6 @@ undefined4 DAT_03f90a98 = {};
 undefined4 DAT_03f90a9c = {};
 undefined4 DAT_03f939a4 = {};
 undefined4 DAT_03f939a8 = {};
-undefined4 DAT_03f96758 = {};
-undefined4 DAT_03f9675c = {};
 undefined4 g_FreeListHeadPointer = {};
 undefined4 DAT_03f9b210 = {};
 

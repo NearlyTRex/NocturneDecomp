@@ -24,7 +24,7 @@
 ;   WatcomTypeInfo g_SVDBoxTypeInfo
 ;
 ; Called Functions:
-;   core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180
+;   core_setcolid.cpp_CDemonSet_init_FUN_00574180
 ;   crt_memory.c___arrinit_FUN_005fe667
 ;
 ; *****************************************************************************
@@ -108,8 +108,8 @@ section .text
     POP EDI                             ; 00569235
         ;   Label: LAB_00569235
     PUSH EBX                            ; 00569236
-    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 00569237
-        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_init_FUN_00574180 ; 00569237
+        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00574180(CDemonSet * this_ptr)
     MOV dword ptr [EBX + 0x15f6e0],0x0  ; 0056923c
     MOV dword ptr [EBX + 0x15acac],0x0  ; 00569246
     MOV dword ptr [EBX + 0x15f67c],0x2  ; 00569250

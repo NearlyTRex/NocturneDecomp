@@ -85,7 +85,7 @@ LAB_00510823:
     if (iVar1 != 0) goto LAB_005109f5;
     iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_RETURN);
   } while ((iVar1 == 0) &&
-          (iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x200), iVar1 == 0));
+          (iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIM_LBUTTON), iVar1 == 0));
   *sensitivity_value_ptr = iVar3;
 LAB_005109f5:
   shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);

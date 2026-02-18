@@ -62,7 +62,8 @@ void __cdecl core_dynamite_cpp_CDynamite_process_FUN_0049cfb0(CDynamite *this_pt
           CStack_30.y = pCVar4->y;
           CStack_30.z = pCVar4->z;
         }
-        core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);
+        core_fire_cpp_CFireEffect_createSpark_FUN_004c79d0
+                  (g_CFireEffectPtr,&CStack_30,(CVector3f *)0x0,0x4000,0x10000,0,0xffff);
         return;
       }
     }

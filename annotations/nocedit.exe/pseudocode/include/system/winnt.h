@@ -32,7 +32,7 @@ typedef FARPROC_FUNC* FARPROC;
 
 // Structure: HKEY__
 typedef struct HKEY__ {
-    int unused;
+    void* unused;
 } HKEY__;
 
 // Typedef: LPGUID

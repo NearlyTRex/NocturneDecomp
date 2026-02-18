@@ -12,11 +12,11 @@ void __cdecl core_fire_cpp_CFireEffect_createGlassParticle_FUN_004c7d00(CFireEff
   CGlassParticle *this_ptr_00;
   int iVar1;
   
-  iVar1 = g_GlassParticleNextIndex + 1;
-  this_ptr_00 = g_GlassParticlePool + g_GlassParticleNextIndex;
-  g_GlassParticleNextIndex = iVar1;
+  iVar1 = g_GlassParticleAllocIndex + 1;
+  this_ptr_00 = g_GlassParticlePool + g_GlassParticleAllocIndex;
+  g_GlassParticleAllocIndex = iVar1;
   if (0xff < iVar1) {
-    g_GlassParticleNextIndex = 0;
+    g_GlassParticleAllocIndex = 0;
   }
   core_fire_cpp_CGlassParticle_init_FUN_004c1c00
             (this_ptr_00,triangle_vertices,uv_u_per_vertex,uv_v_per_vertex,texture,lifetime);

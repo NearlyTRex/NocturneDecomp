@@ -384,7 +384,7 @@ section .text
     PUSH EAX                            ; 005706b0
     PUSH 0x32cd84c                      ; 005706b1 | g_TransformedVertexArray
     CALL engine_keyframe.c_calculateSurfaceNormal_FUN_00501bc0 ; 005706b6
-        ;   XREF to: 00501bc0 (UNCONDITIONAL_CALL)  ; void engine_keyframe.c_calculateSurfaceNormal_FUN_00501bc0(CVector3i * vertex_data, SSurfaceNormal * output)
+        ;   XREF to: 00501bc0 (UNCONDITIONAL_CALL)  ; void engine_keyframe.c_calculateSurfaceNormal_FUN_00501bc0(CVector3i * vertex_data, SMRGLPrimitiveTriangle * texture)
     ADD ESP,0x8                         ; 005706bb
     JMP 0x005703b4                      ; 005706be
         ;   XREF to: 005703b4 (UNCONDITIONAL_JUMP)  ; LAB_005703b4

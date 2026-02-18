@@ -1,0 +1,138 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 75,
+    "complexity_score": 29,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 9,
+    "pseudocode_lines": 29,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 104
+  },
+  "cross_references": [
+    {
+      "addr": "005b9670",
+      "from_addr": "005b9940",
+      "name": "shape_spotview.cpp_CSpotView_handleInput_FUN_005b9670",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005b9950",
+    "address_range": [
+      [
+        "005b9950",
+        "005b9a10"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_spotview.cpp_CSpotView_clampValues_FUN_005b9950",
+    "signature": "void __cdecl shape_spotview_cpp_CSpotView_clampValues_FUN_005b9950(CSpotView *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00652ffa",
+      "name": "DOUBLE_00652ffa",
+      "type": "double",
+      "value": "3.14159265350000"
+    },
+    {
+      "addr": "00653002",
+      "name": "FLOAT_00653002",
+      "type": "float",
+      "value": "6.283185"
+    },
+    {
+      "addr": "00653006",
+      "name": "FLOAT_00653006",
+      "type": "float",
+      "value": "-6.283185"
+    },
+    {
+      "addr": "0065300a",
+      "name": "DOUBLE_0065300a",
+      "type": "double",
+      "value": "-1.57079632675000"
+    },
+    {
+      "addr": "00653012",
+      "name": "DOUBLE_00653012",
+      "type": "double",
+      "value": "1.57079632675000"
+    },
+    {
+      "addr": "0065301a",
+      "name": "DOUBLE_0065301a",
+      "type": "double",
+      "value": "0.100000000000000"
+    },
+    {
+      "addr": "00653022",
+      "name": "DOUBLE_00653022",
+      "type": "double",
+      "value": "10000"
+    },
+    {
+      "addr": "0065302a",
+      "name": "DOUBLE_0065302a",
+      "type": "double",
+      "value": "0.0100000000000000"
+    },
+    {
+      "addr": "00653032",
+      "name": "DOUBLE_00653032",
+      "type": "double",
+      "value": "100"
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 9.178571428571429,
+    "instruction_count": 56,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 12,
+      "BRANCH": 1,
+      "CBRANCH": 8,
+      "COPY": 205,
+      "FLOAT2FLOAT": 22,
+      "FLOAT_ADD": 2,
+      "FLOAT_EQUAL": 8,
+      "FLOAT_LESS": 8,
+      "FLOAT_NAN": 16,
+      "INT_ADD": 21,
+      "INT_AND": 40,
+      "INT_LEFT": 32,
+      "INT_NOTEQUAL": 40,
+      "INT_OR": 40,
+      "INT_ZEXT": 32,
+      "LOAD": 13,
+      "RETURN": 2,
+      "STORE": 8
+    },
+    "pcode_op_count": 514
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSpotView *"
+      }
+    ]
+  },
+  "suspects": []
+}

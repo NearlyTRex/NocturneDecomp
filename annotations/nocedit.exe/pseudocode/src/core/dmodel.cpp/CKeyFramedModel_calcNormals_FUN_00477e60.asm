@@ -78,7 +78,7 @@ section .text
     MOV EAX,dword ptr [EDI + 0x10c]     ; 00477ece
     PUSH EAX                            ; 00477ed4
     CALL engine_keyframe.c_calculateSurfaceNormal_FUN_00501bc0 ; 00477ed5
-        ;   XREF to: 00501bc0 (UNCONDITIONAL_CALL)  ; void engine_keyframe.c_calculateSurfaceNormal_FUN_00501bc0(CVector3i * vertex_data, SSurfaceNormal * output)
+        ;   XREF to: 00501bc0 (UNCONDITIONAL_CALL)  ; void engine_keyframe.c_calculateSurfaceNormal_FUN_00501bc0(CVector3i * vertex_data, SMRGLPrimitiveTriangle * texture)
     ADD ESP,0x8                         ; 00477eda
     MOV ECX,dword ptr [EBX + 0x4]       ; 00477edd
     XOR EDX,EDX                         ; 00477ee0

@@ -92,7 +92,7 @@ LAB_004a9009:
       CStack_60.x = g_EmitterTarget.x - (pCVar1->position).x;
       CStack_60.y = g_EmitterTarget.y - (this_ptr->base).location.position.y;
       CStack_60.z = g_EmitterTarget.z - (this_ptr->base).location.position.z;
-      pCVar4 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+      pCVar4 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                          (&CStack_3c,&CStack_60);
       pUVar2 = &(this_ptr->base).orient;
       if ((CVector3f *)pUVar2 != pCVar4) {

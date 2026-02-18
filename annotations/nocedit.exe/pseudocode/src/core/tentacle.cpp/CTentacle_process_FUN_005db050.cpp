@@ -215,7 +215,7 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
           CStack_88.x = (pCVar8->location).position.x - ((CVector3f *)&local_20->x)->x;
           CStack_88.y = (pCVar8->location).position.y - local_20->y;
           CStack_88.z = (pCVar8->location).position.z - local_20->z;
-          pCVar9 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+          pCVar9 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                              (&CStack_70,&CStack_88);
           fStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                                 (pCVar9->y - (this_ptr->base).base.base.orient.vec.y);
@@ -267,7 +267,7 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
       CStack_64.x = (pCVar8->location).position.x - ((CVector3f *)&local_20->x)->x;
       CStack_64.y = (pCVar8->location).position.y - local_20->y;
       CStack_64.z = (pCVar8->location).position.z - local_20->z;
-      pCVar9 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+      pCVar9 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                          (&CStack_58,&CStack_64);
       fStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                             (pCVar9->y - (this_ptr->base).base.base.orient.vec.y);

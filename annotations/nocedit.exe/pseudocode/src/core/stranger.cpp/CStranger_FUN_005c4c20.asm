@@ -69,7 +69,7 @@
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0
-;   core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180
+;   core_setcolid.cpp_CDemonSet_init_FUN_00574180
 ;   core_setcolid.cpp_CDemonSet_raycast_FUN_00572530
 ;   core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
@@ -205,8 +205,8 @@ section .text
         ;   XREF to: 005c4c51 (UNCONDITIONAL_JUMP)  ; LAB_005c4c51
     PUSH EAX                            ; 005c4d62 | g_CDemonSetInstance
         ;   Label: LAB_005c4d62
-    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 005c4d63
-        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_init_FUN_00574180 ; 005c4d63
+        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00574180(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 005c4d68
     MOV ECX,dword ptr [EBP + 0x14]      ; 005c4d6b
     PUSH ECX                            ; 005c4d6e
@@ -450,8 +450,8 @@ section .text
     MOV ESI,dword ptr [0x006810c8]      ; 005c5098 | g_CDemonSetPtr
         ;   Label: LAB_005c5098
     PUSH ESI                            ; 005c509e | g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 005c509f
-        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_init_FUN_00574180 ; 005c509f
+        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00574180(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 005c50a4
     FLD float ptr [ESP + 0x18]          ; 005c50a7
         ;   Label: LAB_005c50a7

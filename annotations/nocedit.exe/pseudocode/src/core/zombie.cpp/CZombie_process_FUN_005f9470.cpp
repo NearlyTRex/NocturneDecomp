@@ -216,12 +216,12 @@ LAB_005f9541:
             local_158.x = (pCVar17->location).position.x;
             local_158.z = (pCVar17->location).position.z;
             local_158.y = local_230.y;
-            core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
+            core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
             core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,(CDemonActor *)this_ptr);
             core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,(this_ptr->base).victim);
             iVar6 = core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_00572460
                               (g_CDemonSetPtr,&local_230,&local_158);
-            core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
+            core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
             if ((iVar6 != 0) ||
                (pCVar3 = (CCharacter *)(this_ptr->base).victim,
                iVar9 = (*(((pCVar3->base).vtable._uc)->_uc).getGrabbed)
@@ -591,7 +591,7 @@ LAB_005fa85e:
                 pCVar10 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                                     ((CDemonActor *)this_ptr,&local_20c,
                                      &(((this_ptr->base).victim)->location).position);
-                pCVar10 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+                pCVar10 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                                     (&local_218,pCVar10);
                 if (((ABS(pCVar10->y) < (float)0.261799387791667) && (-1 < iVar6)) &&
                    (uVar8 = *(uint *)(this_ptr->unk1 + 0x14), 1 < uVar8)) {
@@ -819,7 +819,7 @@ LAB_005fa279:
             do {
               local_78 = (float)iVar6 * (float)6.2831853070000001 * (float)0.25;
               local_14 = (CVector3f *)iVar6;
-              core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
+              core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
               core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0
                         (g_CDemonSetPtr,(CDemonActor *)this_ptr);
               fVar22 = (float10)fcos((float10)local_78);
@@ -836,7 +836,7 @@ LAB_005fa279:
                                     (void *)((this_ptr->base).base.base.location.position.y +
                                             local_30));
               local_14 = local_18;
-              core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
+              core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
               if ((float)local_18 < 1.0) break;
               iVar6 = iVar6 + 1;
             } while (iVar6 < 4);
@@ -959,7 +959,7 @@ LAB_005fa14f:
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(pCVar17,&local_17c,&local_164);
           pCVar10 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                               ((CDemonActor *)this_ptr,&local_140,&local_17c);
-          pCVar10 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+          pCVar10 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                               (&local_128,pCVar10);
           if (ABS(pCVar10->y) < (float)0.34906585038888899) {
             iVar9 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);

@@ -16,11 +16,11 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00477e60(CKeyFramed
   double dVar3;
   double dVar4;
   CVector3i **ppCVar5;
-  SSurfaceNormal *pSVar6;
+  SMRGLPrimitiveTriangle *pSVar6;
   int iVar7;
   int iVar8;
   int *piVar9;
-  SSurfaceNormal *output;
+  SMRGLPrimitiveTriangle *texture;
   int local_18;
   int local_14;
   
@@ -35,20 +35,20 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00477e60(CKeyFramed
     if (0 < this_ptr->poly_count) {
       local_18 = 0;
       do {
-        output = (SSurfaceNormal *)((int)this_ptr->poly_vert_list + local_18);
+        texture = (SMRGLPrimitiveTriangle *)((int)this_ptr->poly_vert_list + local_18);
         engine_keyframe_c_calculateSurfaceNormal_FUN_00501bc0
-                  ((CVector3i *)this_ptr->vertex_list,output);
+                  ((CVector3i *)this_ptr->vertex_list,texture);
         iVar8 = 0;
-        pSVar6 = output;
-        if (0 < output->vertex_count) {
+        pSVar6 = texture;
+        if (0 < (texture->base).base.count) {
           do {
-            ppCVar5 = this_ptr->vertex_normal_list + pSVar6->vertex_index_1 * 3;
-            *ppCVar5 = (CVector3i *)((int)&(*ppCVar5)->x + output->normal_x);
-            ppCVar5[1] = (CVector3i *)((int)&ppCVar5[1]->x + output->normal_y);
-            ppCVar5[2] = (CVector3i *)((int)&ppCVar5[2]->x + output->normal_z);
+            ppCVar5 = this_ptr->vertex_normal_list + pSVar6->vertices[0].vertex_index * 3;
+            *ppCVar5 = (CVector3i *)((int)&(*ppCVar5)->x + (texture->base).surface_normal.A);
+            ppCVar5[1] = (CVector3i *)((int)&ppCVar5[1]->x + (texture->base).surface_normal.B);
+            ppCVar5[2] = (CVector3i *)((int)&ppCVar5[2]->x + (texture->base).surface_normal.C);
             iVar8 = iVar8 + 1;
-            pSVar6 = (SSurfaceNormal *)&pSVar6->normal_y;
-          } while (iVar8 < output->vertex_count);
+            pSVar6 = (SMRGLPrimitiveTriangle *)&(pSVar6->base).surface_normal.B;
+          } while (iVar8 < (texture->base).base.count);
         }
         local_18 = local_18 + 0x48;
         local_14 = local_14 + 1;

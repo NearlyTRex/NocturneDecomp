@@ -36,7 +36,7 @@
 ;   core_box.cpp_CBoundingBox3D_reset_FUN_00420fb0
 ;   core_turret.cpp_CTurret_FUN_005e3280
 ;   core_turret.cpp_CTurret_FUN_005e3560
-;   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 ;   crt_memory.c___arrinit_FUN_005fe667
 ;   engine_console.cpp_CConsole_printf_FUN_00441890
 ;
@@ -341,8 +341,8 @@ section .text
     PUSH EAX                            ; 005e30f1
     LEA EAX,[ESP + 0x118]               ; 005e30f2
     PUSH EAX                            ; 005e30f9
-    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 005e30fa
-        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 005e30fa
+        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 005e30ff
     FLD float ptr [ESP + 0x114]         ; 005e3102
     FCOMP float ptr [0x00664b6c]        ; 005e3109 | FLOAT_00664b6c

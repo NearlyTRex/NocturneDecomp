@@ -147,7 +147,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
         local_c8.z = (pCVar7->location).position.z - (this_ptr->base).base.base.location.position.z;
         if (SQRT(local_c8.z * local_c8.z + local_c8.x * local_c8.x + local_c8.y * local_c8.y) <
             3.5f) {
-          core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_80,&local_c8);
+          core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_80,&local_c8);
           local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                                (local_80.y - (this_ptr->base).base.base.orient.vec.y);
           if (ABS(local_14) < (float)0.52359877558333301) {
@@ -207,7 +207,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
                          (this_ptr->base).base.base.location.position.y;
             local_5c.z = (pCVar7->location).position.z -
                          (this_ptr->base).base.base.location.position.z;
-            core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_98,&local_5c);
+            core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_98,&local_5c);
             local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                                  (local_98.y - (this_ptr->base).base.base.orient.vec.y);
             if (ABS(local_14) < (float)0.52359877558333301) {
@@ -343,7 +343,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
             local_a4.z = (pCVar7->location).position.z -
                          (this_ptr->base).base.base.location.position.z;
             pUVar2 = &(this_ptr->base).base.base.orient;
-            pCVar12 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+            pCVar12 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                                 (&local_b0,&local_a4);
             if ((CVector3f *)pUVar2 != pCVar12) {
               (pUVar2->vec).x = pCVar12->x;

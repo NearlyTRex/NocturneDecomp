@@ -23,8 +23,8 @@
 ;   CSound g_CSoundInstance
 ;
 ; Called Functions:
-;   core_fire.cpp_CExplosion_FUN_004c3970
-;   core_fire.cpp_CFireEffect_FUN_004c8ea0
+;   core_fire.cpp_CExplosion_activate_FUN_004c3970
+;   core_fire.cpp_CFireEffect_createCrater_FUN_004c8ea0
 ;   core_sound.cpp_CSound_playActorSound_FUN_005b3a40
 ;
 ; *****************************************************************************
@@ -46,8 +46,8 @@ section .text
     PUSH EBX                            ; 004c8c2e
     ADD EAX,0x2d677b4                   ; 004c8c2f | g_ExplosionPool
     PUSH EAX                            ; 004c8c34
-    CALL core_fire.cpp_CExplosion_FUN_004c3970 ; 004c8c35
-        ;   XREF to: 004c3970 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CExplosion_FUN_004c3970(CExplosion * this_ptr)
+    CALL core_fire.cpp_CExplosion_activate_FUN_004c3970 ; 004c8c35
+        ;   XREF to: 004c3970 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CExplosion_activate_FUN_004c3970(CExplosion * this_ptr, CVector3f * position, float scale, int damage_amount)
     MOV EDX,dword ptr [0x02d677b0]      ; 004c8c3a | g_ExplosionPoolIndex
     INC EDX                             ; 004c8c40
     ADD ESP,0x10                        ; 004c8c41
@@ -72,8 +72,8 @@ section .text
     PUSH dword ptr [ESP + 0x20]         ; 004c8c73
     PUSH EBX                            ; 004c8c77
     PUSH EDI                            ; 004c8c78
-    CALL core_fire.cpp_CFireEffect_FUN_004c8ea0 ; 004c8c79
-        ;   XREF to: 004c8ea0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c8ea0(CFireEffect * this_ptr)
+    CALL core_fire.cpp_CFireEffect_createCrater_FUN_004c8ea0 ; 004c8c79
+        ;   XREF to: 004c8ea0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createCrater_FUN_004c8ea0(CFireEffect * this_ptr)
     ADD ESP,0xc                         ; 004c8c7e
     POP EBP                             ; 004c8c81
     POP EDI                             ; 004c8c82

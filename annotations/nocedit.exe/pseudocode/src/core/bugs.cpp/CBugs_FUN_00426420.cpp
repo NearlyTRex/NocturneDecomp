@@ -91,7 +91,7 @@ int __cdecl core_bugs_cpp_CBugs_FUN_00426420(CBugs *this_ptr)
       }
     }
   }
-  core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_80,&local_68);
+  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_80,&local_68);
   if (local_90 <= 0.0) {
     return 1;
   }

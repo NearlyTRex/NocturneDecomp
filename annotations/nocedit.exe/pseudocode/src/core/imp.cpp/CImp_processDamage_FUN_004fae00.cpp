@@ -25,7 +25,8 @@ void __cdecl core_imp_cpp_CImp_processDamage_FUN_004fae00(CImp *this_ptr,SDamage
               ((CDemonActor *)this_ptr,&local_24,&damage_info->impact_direction);
     do {
       iVar4 = iVar4 + 1;
-      core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);
+      core_fire_cpp_CFireEffect_createSpark_FUN_004c79d0
+                (g_CFireEffectPtr,&local_24,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
     } while (iVar4 < 5);
   }
   core_imp_cpp_CImp_FUN_004fab60(this_ptr);

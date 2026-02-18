@@ -27,7 +27,7 @@
 ;   core_dracbrid.cpp_CDraculaBride_FUN_00486020
 ;   core_dracbrid.cpp_CDraculaBride_FUN_004864c0
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10
-;   core_fire.cpp_CFireEffect_FUN_004c79d0
+;   core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
@@ -177,8 +177,8 @@ section .text
     MOV ECX,dword ptr [0x0067a3d0]      ; 004861ba | g_CFireEffectPtr | g_CFireEffectInstance
     PUSH ECX                            ; 004861c0 | g_CFireEffectInstance
     INC EBX                             ; 004861c1
-    CALL core_fire.cpp_CFireEffect_FUN_004c79d0 ; 004861c2
-        ;   XREF to: 004c79d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c79d0(CFireEffect * this_ptr)
+    CALL core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0 ; 004861c2
+        ;   XREF to: 004c79d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int intensity_target, ...)
     ADD ESP,0x1c                        ; 004861c7
     CMP EBX,0x5                         ; 004861ca
     JL 0x004861a4                       ; 004861cd

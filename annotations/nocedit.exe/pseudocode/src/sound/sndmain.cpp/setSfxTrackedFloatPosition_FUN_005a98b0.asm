@@ -8,8 +8,8 @@
 ; CVector3f *      Stack[0x8]:4   position_source_ptr
 ;
 ; XREF[2]:
-;   core_fire.cpp_CFireEffect_FUN_004c7db0 at 004c7e34
-;   core_fire.cpp_CFireEffect_FUN_004c8dd0 at 004c8e32
+;   core_fire.cpp_CFireEffect_createFireball_FUN_004c7db0 at 004c7e34
+;   core_fire.cpp_CFireEffect_createToss_FUN_004c8dd0 at 004c8e32
 ;
 ; Referenced Globals:
 ;   CSoundDevice* g_CSoundDevicePtr

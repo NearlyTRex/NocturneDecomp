@@ -26,6 +26,7 @@
 #include "types/classes/CWavInDevice.h"
 #include "types/classes/CWavOutDevice.h"
 #include "types/structs/SCollisionInfo.h"
+#include "types/structs/SEdgeData.h"
 #include "types/structs/SIntersectXZCylinder.h"
 #include "types/structs/SMRGLTextureBasic.h"
 #include "types/structs/SProjectedVertex.h"
@@ -33,7 +34,6 @@
 #include "types/structs/SRecordingDeviceInfo.h"
 #include "types/structs/SRenderVertex.h"
 #include "types/structs/SSoundDeviceInfo.h"
-#include "types/structs/STexturedVertex.h"
 #include "types/structs/STrainNoise.h"
 
 // =============================================================================
@@ -125,10 +125,10 @@ void __cdecl wincore_windll_cpp_clearScreen_FUN_005b3e70(void);
 void __cdecl wincore_windll_cpp_clearZBuffer_FUN_005b3ed4(void);
 void __cdecl wincore_windll_cpp_clearScreen_FUN_005b3f37(int color);
 void __cdecl wincore_windll_cpp_fillDepthRegion_FUN_005b3fc2(int left,int right,int top,int bottom);
-void __cdecl wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031(STexturedVertex *left_vertex,STexturedVertex *right_vertex,int scanline_y);
-void __cdecl wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823(STexturedVertex *left_vertex,STexturedVertex *right_vertex,int scanline_y);
-void __cdecl wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec(STexturedVertex *left_vertex,STexturedVertex *right_vertex,int scanline_y);
-void __cdecl wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322(STexturedVertex *left_vertex,STexturedVertex *right_vertex,int scanline_y);
+void __cdecl wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031(SEdgeData *left_vertex,SEdgeData *right_vertex,int scanline_y);
+void __cdecl wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823(SEdgeData *left_vertex,SEdgeData *right_vertex,int scanline_y);
+void __cdecl wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec(SEdgeData *left_vertex,SEdgeData *right_vertex,int scanline_y);
+void __cdecl wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322(SEdgeData *left_vertex,SEdgeData *right_vertex,int scanline_y);
 void __cdecl wincore_windll_cpp_renderAlphaRow32_FUN_005b555c(uint *destPixels,uchar *srcIndices,uchar *srcAlpha,int globalAlpha,int pixelCount);
 void __cdecl wincore_windll_cpp_renderAlphaRow16_FUN_005b55f7(ushort *destPixels,uchar *srcIndices,uchar *srcAlpha,int globalAlpha,int pixelCount);
 void __edi_esi_ebx wincore_windll_cpp_renderScanline_FUN_005b5710(void *left_data,void *right_data,int scanline_y);
@@ -217,10 +217,10 @@ int __cdecl core_spline_cpp_evaluateSplineTangentInt_FUN_005b9430(float *basis,i
 CVector3f * __cdecl core_spline_cpp_evaluateSplineTangent3D_FUN_005b9490(float *basis,CVector3f *out,CVector3f *p0,CVector3f *p1,CVector3f *p2,CVector3f *p3);
 void __cdecl shape_spotview_cpp_staticInit_FUN_005b95b0(void);
 CSpotView * __cdecl shape_spotview_cpp_CSpotView_ctor_FUN_005b95c0(CSpotView *this_ptr);
-void __cdecl shape_spotview_cpp_CSpotView_FUN_005b9620(CSpotView *this_ptr);
-void __cdecl shape_spotview_cpp_CSpotView_FUN_005b9670(CSpotView *this_ptr);
-void __cdecl shape_spotview_cpp_CSpotView_FUN_005b9950(CSpotView *this_ptr);
-void __cdecl shape_spotview_cpp_CSpotView_FUN_005b9a20(CSpotView *this_ptr);
+void __cdecl shape_spotview_cpp_CSpotView_reset_FUN_005b9620(CSpotView *this_ptr,uint control_flags);
+void __cdecl shape_spotview_cpp_CSpotView_handleInput_FUN_005b9670(CSpotView *this_ptr,uint control_flags);
+void __cdecl shape_spotview_cpp_CSpotView_clampValues_FUN_005b9950(CSpotView *this_ptr);
+void __cdecl shape_spotview_cpp_CSpotView_applyCamera_FUN_005b9a20(CSpotView *this_ptr);
 void __cdecl core_stairs_cpp_staticInit_FUN_005b9b00(void);
 CStairs * __cdecl core_stairs_cpp_factoryFunc_FUN_005b9b30(void);
 CDemonActorType * __cdecl core_stairs_cpp_CStairs_getActorType_FUN_005b9b60(CStairs *this_ptr);

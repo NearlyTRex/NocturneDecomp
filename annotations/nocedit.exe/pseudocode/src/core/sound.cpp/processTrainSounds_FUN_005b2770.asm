@@ -48,7 +48,7 @@
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
 ;   core_setcolid.cpp_CDemonSet_disableIgnore_FUN_00574210
-;   core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180
+;   core_setcolid.cpp_CDemonSet_init_FUN_00574180
 ;   core_setcolid.cpp_CDemonSet_testLineOcclusion_FUN_00572460
 ;   core_sound.cpp_CSound_playTrackedActorSound_FUN_005b3a70
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
@@ -88,8 +88,8 @@ section .text
     JZ 0x005b288e                       ; 005b27b0
         ;   XREF to: 005b288e (CONDITIONAL_JUMP)  ; LAB_005b288e
     PUSH EAX                            ; 005b27b6 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 005b27b7
-        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_init_FUN_00574180 ; 005b27b7
+        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00574180(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 005b27bc
     MOV EBX,dword ptr [0x006810c8]      ; 005b27bf | g_CDemonSetPtr | g_CDemonSetInstance
     PUSH EBX                            ; 005b27c5 | g_CDemonSetInstance
@@ -130,8 +130,8 @@ section .text
     MOV ESI,dword ptr [0x006810c8]      ; 005b286f | g_CDemonSetPtr
         ;   Label: LAB_005b286f
     PUSH ESI                            ; 005b2875 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 005b2876
-        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_init_FUN_00574180 ; 005b2876
+        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00574180(CDemonSet * this_ptr)
     MOV EAX,[0x006810c8]                ; 005b287b | g_CDemonSetPtr
     MOV EAX,dword ptr [EAX + 0x15aea4]  ; 005b2880 | g_CDemonSetInstance.selected_camera_index
     ADD ESP,0x4                         ; 005b2886

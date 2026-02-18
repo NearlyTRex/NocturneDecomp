@@ -48,7 +48,7 @@ int __cdecl core_scat_cpp_CScat_FUN_00558cf0(CScat *this_ptr)
     fStack_f0 = SQRT(fStack_3c * fStack_3c +
                      (float)auStack_48._4_4_ * (float)auStack_48._4_4_ + fStack_40 * fStack_40);
     fStack_14 = fStack_f0;
-    pCVar2 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+    pCVar2 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                        (&CStack_5c,(CVector3f *)(auStack_48 + 4));
     fStack_f4 = pCVar2->y;
     if (in_stack_0000000c == 0) {
@@ -90,7 +90,7 @@ int __cdecl core_scat_cpp_CScat_FUN_00558cf0(CScat *this_ptr)
     core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,(CDemonActor *)this_ptr);
     fVar4 = core_setcolid_cpp_CDemonSet_raycast_FUN_00572530
                       (g_CDemonSetPtr,(CVector3f *)auStack_48,&CStack_30);
-    core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
+    core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
     if ((fVar4 <= 1.0) && (in_stack_00000008 == g_CDemonSetPtr->collision_actor)) {
       return unaff_EDI;
     }

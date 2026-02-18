@@ -26,10 +26,12 @@
 #include "types/classes/CWerewolf.h"
 #include "types/classes/CWinFont.h"
 #include "types/classes/CZombie.h"
+#include "types/enums/EInputCodeType.h"
 #include "types/funcdefs/RenderScanlineFunc.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SEdgeData.h"
 #include "types/structs/SRenderVertex.h"
+#include "types/typedefs/MessageHandler.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x5F0000
@@ -73,12 +75,12 @@ void __cdecl wincore_winrun_cpp_plotClippedPixel_FUN_005f2f90(int x_coord,int y_
 void __cdecl wincore_winrun_cpp_drawCrosshair_FUN_005f2fd0(void);
 void __cdecl wincore_winrun_cpp_clearMouseClicks_FUN_005f30c0(void);
 void __cdecl wincore_winrun_cpp_setCursorPosition_FUN_005f30d0(int x,int y);
-void __cdecl wincore_winrun_cpp_addWindowsMessageHook_FUN_005f3100(void);
+void __cdecl wincore_winrun_cpp_addWindowsMessageHook_FUN_005f3100(MessageHandler message_handler);
 LRESULT __stdcall wincore_winrun_cpp_mainWindowProc_FUN_005f3150(HWND hWnd,UINT message,WPARAM wParam,LPARAM lParam);
 void __cdecl wincore_winrun_cpp_processWindowMessages_FUN_005f35e0(void);
 int __stdcall wincore_winrun_cpp_winMain_FUN_005f3680 (HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow1,int nCmdShow2);
 void __cdecl wincore_winrun_cpp_displayMessageBoxAndQuit_FUN_005f3920(char *message);
-char * __cdecl wincore_winrun_cpp_getKeyName_FUN_005f3980(int keycode);
+char * __cdecl wincore_winrun_cpp_getKeyName_FUN_005f3980(EInputCodeType keycode);
 HANDLE __cdecl wincore_winrun_cpp_createMutex_FUN_005f3fe0(void);
 int __cdecl wincore_winrun_cpp_waitForMutex_FUN_005f3ff0(HANDLE mutex_handle);
 int __cdecl wincore_winrun_cpp_waitForMutexTimeout_FUN_005f4010(HANDLE mutex_handle,double timeout_seconds);

@@ -9,14 +9,10 @@
 void __cdecl core_fire_cpp_CLightningBolt_process_FUN_004c56e0(CLightningBolt *this_ptr)
 
 {
-  if ((0.0 < *(float *)(this_ptr->unk + 0x14)) &&
-     (*(float *)(this_ptr->unk + 0x14) =
-           *(float *)(this_ptr->unk + 0x14) - g_CGamePtr->delta_time_float,
-     *(float *)(this_ptr->unk + 0x14) < 0.0)) {
-    this_ptr->unk[0x14] = '\0';
-    this_ptr->unk[0x15] = '\0';
-    this_ptr->unk[0x16] = '\0';
-    this_ptr->unk[0x17] = '\0';
+  if ((0.0 < this_ptr->lifetime) &&
+     (this_ptr->lifetime = this_ptr->lifetime - g_CGamePtr->delta_time_float,
+     this_ptr->lifetime < 0.0)) {
+    this_ptr->lifetime = 0.0;
     return;
   }
   return;

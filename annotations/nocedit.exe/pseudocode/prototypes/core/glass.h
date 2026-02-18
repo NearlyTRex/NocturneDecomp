@@ -63,9 +63,9 @@ void __cdecl CGlass::createShatterParticles(CGlass *this_ptr,SQuadVertices *quad
 // Address: 004eaef0
 void __cdecl CGlass::shatter(CGlass *this_ptr,CVector3f *location);
 
-// Original: core_glass.cpp_CGlass_getSurfaceProperties_FUN_004eb250
+// Original: core_glass.cpp_CGlass_onLaserHit_FUN_004eb250
 // Address: 004eb250
-void __cdecl CGlass::getSurfaceProperties(CGlass *this_ptr,SSurfaceInfo *surface_info);
+void __cdecl CGlass::onLaserHit(CGlass *this_ptr,SLaserInfo *laser_info);
 
 // Original: core_glass.cpp_CGlass_getGroundType_FUN_004eb390
 // Address: 004eb390

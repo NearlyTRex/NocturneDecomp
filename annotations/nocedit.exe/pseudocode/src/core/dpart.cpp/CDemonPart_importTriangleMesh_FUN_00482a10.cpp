@@ -77,7 +77,7 @@ int __cdecl core_dpart_cpp_CDemonPart_importTriangleMesh_FUN_00482a10(CDemonPart
         this_ptr->vertex_positions[local_2c].y = (int)ROUND(ROUND((double)pfVar5[4] * dVar3));
         local_14 = (int)ROUND(ROUND((double)pfVar5[5] * dVar3));
         this_ptr->vertex_positions[local_2c].z = local_14;
-        *(uint *)((int)&this_ptr->face_data->material + iVar7) = 0xffffffff;
+        *(uint *)((int)&this_ptr->face_data->vertex_index_4 + iVar7) = 0xffffffff;
         *(int *)((int)&this_ptr->face_data->vertex_index_1 + iVar7) = local_28;
         *(int *)((int)&this_ptr->face_data->vertex_index_2 + iVar7) = local_30;
         *(int *)((int)&this_ptr->face_data->vertex_index_3 + iVar7) = local_2c;

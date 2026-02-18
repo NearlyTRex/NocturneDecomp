@@ -30,7 +30,7 @@
 ; Called Functions:
 ;   core_actor.cpp_randomChance_FUN_0040cd10
 ;   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
-;   core_fire.cpp_CGunFlame_FUN_004c4c00
+;   core_fire.cpp_CGunFlame_init_FUN_004c4c00
 ;
 ; *****************************************************************************
 
@@ -141,8 +141,8 @@ section .text
     JZ 0x004c506e                       ; 004c5063
         ;   XREF to: 004c506e (CONDITIONAL_JUMP)  ; LAB_004c506e
     PUSH EBX                            ; 004c5065
-    CALL core_fire.cpp_CGunFlame_FUN_004c4c00 ; 004c5066
-        ;   XREF to: 004c4c00 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CGunFlame_FUN_004c4c00(CGunFlame * this_ptr)
+    CALL core_fire.cpp_CGunFlame_init_FUN_004c4c00 ; 004c5066
+        ;   XREF to: 004c4c00 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CGunFlame_init_FUN_004c4c00(CGunFlame * this_ptr)
     ADD ESP,0x4                         ; 004c506b
     FLD float ptr [ESP + 0x20]          ; 004c506e
         ;   Label: LAB_004c506e

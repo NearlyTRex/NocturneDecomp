@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 88,
+        "line": 92,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 16,
-        "line": 88,
+        "line": 92,
         "message": "expected expression"
       }
     ],
@@ -19,17 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 208,
-    "complexity_score": 111,
+    "complexity_score": 115,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 7,
-    "pseudocode_lines": 81,
+    "pseudocode_lines": 85,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
       "unresolved_funcptr"
     ],
-    "total_lines": 289
+    "total_lines": 293
   },
   "cross_references": [],
   "function": {
@@ -68,7 +68,7 @@
     {
       "addr": "004c79d0",
       "is_variadic": false,
-      "name": "core_fire.cpp_CFireEffect_FUN_004c79d0"
+      "name": "core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0"
     },
     {
       "addr": "00545760",
@@ -210,14 +210,14 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 76,
+      "line": 80,
       "match": "(int *)((int)",
       "text": "iVar1 = *(int *)((int)g_CDemonSetPtr->characters + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 81,
+      "line": 85,
       "match": "code *",
       "text": "(**(code **)(*(int *)(iVar1 + 0x154) + 0x114))(iVar1,this_ptr,local_14,&SStack_54);",
       "type": "unresolved_funcptr"

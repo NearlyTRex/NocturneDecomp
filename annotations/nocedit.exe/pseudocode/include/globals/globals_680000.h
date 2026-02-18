@@ -174,9 +174,9 @@ extern SMRGLTextureBasic SMRGLTextureBasic_00684178;
 extern SMRGLTextureBasic DAT_0068423C;
 extern SMRGLTextureBasic SMRGLTextureBasic_0068434c;
 extern SMRGLTextureBasic DAT_006843FC;
-extern SMRGLTextureBasic SMRGLTextureBasic_00684900;
-extern SMRGLTextureBasic SMRGLTextureBasic_00684918;
-extern SMRGLTextureBasic SMRGLTextureBasic_00684930;
+extern SMRGLTextureBasic g_RainDropTexture;
+extern SMRGLTextureBasic g_RainSplashTexture;
+extern SMRGLTextureBasic g_SnowflakeTexture;
 extern SMRGLTextureBasic SMRGLTextureBasic_0068495c;
 
 // SMRGLTextureBasic*

@@ -32,7 +32,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 ;   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
-;   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 ;   core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10
 ;
@@ -114,8 +114,8 @@ section .text
     PUSH EAX                            ; 0043a1e6
     LEA EAX,[EBP + 0x52]                ; 0043a1e7
     PUSH EAX                            ; 0043a1ea
-    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 0043a1eb
-        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 0043a1eb
+        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 0043a1f0
     LEA EAX,[EBP + 0x52]                ; 0043a1f3
     PUSH EAX                            ; 0043a1f6

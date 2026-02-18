@@ -82,7 +82,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d6d40(CGabriella *this_ptr)
       fStack_18 = local_2c;
     }
     core_gabriela_cpp_CGabriella_FUN_004d6f80(this_ptr);
-    core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
+    core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
     return;
   }
   this_ptr_00 = &(this_ptr->base).base.model;

@@ -84,7 +84,7 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter
   if ((((ABS(velocity->z) == 0.0) && (ABS(velocity->x) == 0.0)) && (velocity->y <= 0.0)) &&
      (((this_ptr->base).standing_platform == (CPlatform *)0x0 &&
       ((this_ptr->base).location.position.y == this_ptr->closest_distance_threshold)))) {
-    core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
+    core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
     (this_ptr->velocity).z = 0.0;
     (this_ptr->velocity).y = (this_ptr->velocity).z;
     (this_ptr->velocity).x = (this_ptr->velocity).y;
@@ -297,6 +297,6 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter
   pCVar6 = g_CDemonSetPtr;
   (this_ptr->velocity).y =
        ((this_ptr->base).location.position.y - local_b0) / g_CGamePtr->delta_time_float;
-  core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(pCVar6);
+  core_setcolid_cpp_CDemonSet_init_FUN_00574180(pCVar6);
   return;
 }

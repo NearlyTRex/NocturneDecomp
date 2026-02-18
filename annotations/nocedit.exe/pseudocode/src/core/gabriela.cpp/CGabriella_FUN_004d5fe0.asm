@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0
-;   core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180
+;   core_setcolid.cpp_CDemonSet_init_FUN_00574180
 ;
 ; *****************************************************************************
 
@@ -48,8 +48,8 @@ section .text
     MOV EBX,dword ptr [0x006810c8]      ; 004d602f | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_004d602f
     PUSH EBX                            ; 004d6035 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 004d6036
-        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_init_FUN_00574180 ; 004d6036
+        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00574180(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 004d603b
     MOV dword ptr [ESI + 0x1fbec],0x0   ; 004d603e
     POP ESI                             ; 004d6048

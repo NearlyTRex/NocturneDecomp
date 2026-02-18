@@ -167,9 +167,9 @@ void __cdecl FUN_005c3750(void);
 // Address: 005c37e0
 CVector3f * __cdecl FUN_005c37e0(void);
 
-// Original: core_stranger.cpp_CStranger_FUN_005c3960
+// Original: core_stranger.cpp_CStranger_autoAimAtThreat_FUN_005c3960
 // Address: 005c3960
-void __cdecl CStranger(CStranger *this_ptr);
+void __cdecl CStranger::autoAimAtThreat(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_CStranger_aimLeftPistol_FUN_005c4370
 // Address: 005c4370

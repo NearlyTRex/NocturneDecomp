@@ -2,13 +2,13 @@
 // Address: 00501a00
 // Address Range: [[00501a00, 00501bbb]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_keyframe_c_calculatePackedSurfaceNormal_FUN_00501a00(CVector3i *vertex_data,SSurfacePackedNormal *data)
+// Signature: void __cdecl engine_keyframe_c_calculatePackedSurfaceNormal_FUN_00501a00(CVector3i *vertex_data,SMRGLPrimitiveTriangleIndex *texture)
 
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
-void __cdecl engine_keyframe_c_calculatePackedSurfaceNormal_FUN_00501a00(CVector3i *vertex_data,SSurfacePackedNormal *data)
+void __cdecl engine_keyframe_c_calculatePackedSurfaceNormal_FUN_00501a00(CVector3i *vertex_data,SMRGLPrimitiveTriangleIndex *texture)
 
 {
   CVector3i *pCVar1;
@@ -24,9 +24,9 @@ void __cdecl engine_keyframe_c_calculatePackedSurfaceNormal_FUN_00501a00(CVector
   float fVar11;
   float local_30;
   
-  iVar2 = data->vertex_index_1;
-  pCVar1 = vertex_data + data->vertex_index_2;
-  iVar3 = data->vertex_index_3;
+  iVar2 = texture->vertices[0];
+  pCVar1 = vertex_data + texture->vertices[1];
+  iVar3 = texture->vertices[2];
   fVar10 = (float)(pCVar1->z - vertex_data[iVar2].z);
   fVar5 = (float)(vertex_data[iVar3].x - pCVar1->x);
   fVar9 = (float)(pCVar1->x - vertex_data[iVar2].x);
@@ -41,7 +41,7 @@ void __cdecl engine_keyframe_c_calculatePackedSurfaceNormal_FUN_00501a00(CVector
     local_30 = 65535.0;
   }
   local_30 = 1.0 / local_30;
-  iVar4 = data->vertex_index_1;
+  iVar4 = texture->vertices[0];
   fVar9 = (float)65535;
   fVar7 = fVar8 * local_30 * fVar9;
   fVar6 = fVar6 * local_30 * fVar9;
@@ -49,10 +49,10 @@ void __cdecl engine_keyframe_c_calculatePackedSurfaceNormal_FUN_00501a00(CVector
   iVar3 = vertex_data[iVar4].x;
   fVar9 = fVar5 * local_30 * fVar9;
   iVar4 = vertex_data[iVar4].z;
-  data->normal_x = (int)ROUND(ROUND(fVar7));
-  data->normal_y = (int)ROUND(ROUND(fVar6));
-  data->normal_z = (int)ROUND(ROUND(fVar9));
-  data->dot_product =
+  (texture->base).surface_normal.A = (int)ROUND(ROUND(fVar7));
+  (texture->base).surface_normal.B = (int)ROUND(ROUND(fVar6));
+  (texture->base).surface_normal.C = (int)ROUND(ROUND(fVar9));
+  (texture->base).surface_normal.D =
        (int)ROUND(ROUND((float)iVar4 * fVar9 + (float)iVar3 * fVar7 + (float)iVar2 * fVar6));
   return;
 }

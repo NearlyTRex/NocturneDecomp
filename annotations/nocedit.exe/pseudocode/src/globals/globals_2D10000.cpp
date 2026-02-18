@@ -56,14 +56,14 @@ int g_CurrentFileSize = {};
 int g_CurrentFileOffset = {};
 int g_CurrentFileCompressedSize = {};
 int g_AuditRecordCount = {};
+int g_TextureAnimCounter2 = {};
+int g_TextureAnimCounter1 = {};
 int g_SmokeParticleAllocIndex = {};
 
 // time_t
 time_t g_PodCreationTime = {};
 
 // undefined4
-undefined4 DAT_02d13560 = {};
-undefined4 DAT_02d13564 = {};
 undefined4 DAT_02d13eb4 = {};
 undefined4 DAT_02d13eb8 = {};
 undefined4 DAT_02d13f80 = {};

@@ -27,7 +27,8 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_processDamage_FUN_00486070(CDracula
               ((CDemonActor *)this_ptr,&local_30,&damage_info->impact_direction);
     do {
       iVar4 = iVar4 + 1;
-      core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);
+      core_fire_cpp_CFireEffect_createSpark_FUN_004c79d0
+                (g_CFireEffectPtr,&local_30,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
     } while (iVar4 < 5);
     bVar2 = true;
   }

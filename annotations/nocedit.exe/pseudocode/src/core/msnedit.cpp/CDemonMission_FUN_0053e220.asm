@@ -502,8 +502,8 @@ section .text
     FADD float ptr [0x0063d020]         ; 0053e7aa | FLOAT_0063d020
     MOV dword ptr [ESP + 0x3c],EAX      ; 0053e7b0
     FSTP float ptr [ESP + 0x38]         ; 0053e7b4
-    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 0053e7b8
-        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_init_FUN_00574180 ; 0053e7b8
+        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00574180(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0053e7bd
     LEA EAX,[ESP + 0x30]                ; 0053e7c0
     PUSH EAX                            ; 0053e7c4

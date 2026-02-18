@@ -22,6 +22,8 @@ import csv
 import math
 from collections import defaultdict
 from ghidra_annotations.util.log import log_info
+from ghidra_annotations.annotations.pseudocode.suspects import has_only_safe_suspects
+from ghidra_annotations.annotations.pseudocode.struct_report import generate_struct_report
 
 
 # =============================================================================
@@ -269,12 +271,14 @@ def create_overall_progress_svg(functions, compilation_results, output_path):
     if not functions:
         return
 
+    # Filter out CRT and entry functions
+    functions = [f for f in functions if not _is_crt_or_entry(f.get('_virtual_file', ''))]
     total = len(functions)
 
-    # Calculate decompilation stats
+    # Calculate decompilation stats (effectively clean = zero suspects or only safe intrinsics)
     clean_funcs = set()
     for f in functions:
-        if f.get('complexity', {}).get('suspect_count', 0) == 0:
+        if _is_effectively_clean(f):
             clean_funcs.add(f.get('function', {}).get('name', ''))
 
     # Calculate compilation stats
@@ -406,6 +410,9 @@ def create_all_files_decompilation_svg(files, output_path):
     """
     if not files:
         return
+
+    # Filter out CRT and entry files
+    files = {k: v for k, v in files.items() if not _is_crt_or_entry(k)}
 
     # Sort by clean percentage (descending), then by name
     sorted_files = sorted(
@@ -561,6 +568,9 @@ def create_all_files_compilation_svg(results, src_dir, output_path):
         else:
             virtual_files[rel_path]['failed'] += 1
 
+    # Filter out CRT and entry files
+    virtual_files = {k: v for k, v in virtual_files.items() if not _is_crt_or_entry(k)}
+
     if not virtual_files:
         return
 
@@ -692,6 +702,13 @@ def create_compilation_overview_svg(results, output_path):
         results: Dict from compile_all_functions() mapping func_name -> result dict
         output_path: Path to write compilation_progress.svg
     """
+    # Filter out CRT and entry functions by cpp_path
+    def _is_crt_or_entry_path(cpp_path):
+        parts = cpp_path.replace('\\', '/').split('/')
+        return 'crt' in parts or 'entry' in parts
+    results = {k: v for k, v in results.items()
+               if not _is_crt_or_entry_path(v.get('cpp_path', ''))}
+
     # Calculate statistics
     total = len(results)
     if total == 0:
@@ -899,6 +916,9 @@ def create_compilation_by_file_svg(results, src_dir, output_path):
         else:
             virtual_files[rel_path]['failed'] += 1
 
+    # Filter out CRT and entry files
+    virtual_files = {k: v for k, v in virtual_files.items() if not _is_crt_or_entry(k)}
+
     if not virtual_files:
         return
 
@@ -1050,7 +1070,7 @@ def generate_graphs(functions, files, output_path):
 
     # 1. Overall completion pie chart
     total_funcs = len(functions)
-    clean_funcs = sum(1 for f in functions if f.get('complexity', {}).get('suspect_count', 0) == 0)
+    clean_funcs = sum(1 for f in functions if _is_effectively_clean(f))
     suspect_funcs = total_funcs - clean_funcs
 
     completion_data = [
@@ -1150,7 +1170,7 @@ def analyze_by_virtual_file(functions):
         files[vfile]['total_count'] += 1
         files[vfile]['total_lines'] += complexity.get('pseudocode_lines', 0)
 
-        if complexity.get('suspect_count', 0) == 0:
+        if complexity.get('suspect_count', 0) == 0 or has_only_safe_suspects(suspects):
             files[vfile]['clean_count'] += 1
         else:
             files[vfile]['suspect_count'] += complexity.get('suspect_count', 0)
@@ -1168,11 +1188,28 @@ def analyze_by_virtual_file(functions):
     return dict(files)
 
 
+def _is_crt_or_entry(vfile):
+    """Check if a virtual file is a CRT or entry function (excluded from reports)."""
+    return vfile.startswith('crt/') or vfile == 'entry'
+
+
+def _is_effectively_clean(func):
+    """Check if a function is clean for reporting purposes.
+
+    A function is effectively clean if it has zero suspects, or if all its
+    suspects are safe decompiler intrinsics (e.g. ADJ, ROUND).
+    """
+    suspects = func.get('suspects', [])
+    if func.get('complexity', {}).get('suspect_count', 0) == 0:
+        return True
+    return has_only_safe_suspects(suspects)
+
+
 def generate_virtual_file_report(files, output_path):
     """Generate report showing virtual file completion status."""
 
     # Filter out CRT and entry files
-    files = {k: v for k, v in files.items() if not k.startswith('crt/') and k != 'entry'}
+    files = {k: v for k, v in files.items() if not _is_crt_or_entry(k)}
 
     lines = []
     lines.append("=" * 100)
@@ -1220,7 +1257,7 @@ def generate_virtual_file_report(files, output_path):
         lines.append("  %5.1f%% | %s" % (data['clean_percent'], vfile))
         lines.append("         %d/%d clean, %d remaining" % (data['clean_count'], data['total_count'], data['remaining']))
         for func in data['functions']:
-            if func.get('complexity', {}).get('suspect_count', 0) > 0:
+            if not _is_effectively_clean(func):
                 func_info = func.get('function', {})
                 complexity = func.get('complexity', {})
                 suspect_types = complexity.get('suspect_types', [])
@@ -1241,7 +1278,7 @@ def generate_virtual_file_report(files, output_path):
         lines.append("  %5.1f%% | %s" % (data['clean_percent'], vfile))
         lines.append("         %d/%d clean, %d remaining" % (data['clean_count'], data['total_count'], data['remaining']))
         for func in data['functions']:
-            if func.get('complexity', {}).get('suspect_count', 0) > 0:
+            if not _is_effectively_clean(func):
                 func_info = func.get('function', {})
                 complexity = func.get('complexity', {})
                 suspect_types = complexity.get('suspect_types', [])
@@ -1262,7 +1299,7 @@ def generate_virtual_file_report(files, output_path):
         lines.append("  %5.1f%% | %s" % (data['clean_percent'], vfile))
         lines.append("         %d/%d clean, %d remaining" % (data['clean_count'], data['total_count'], data['remaining']))
         for func in data['functions']:
-            if func.get('complexity', {}).get('suspect_count', 0) > 0:
+            if not _is_effectively_clean(func):
                 func_info = func.get('function', {})
                 complexity = func.get('complexity', {})
                 suspect_types = complexity.get('suspect_types', [])
@@ -1451,11 +1488,8 @@ def generate_easy_wins_list(functions, files, output_path):
     """Generate prioritized list of easy wins."""
 
     # Filter out CRT and entry functions and files
-    def is_excluded(vfile):
-        return vfile.startswith('crt/') or vfile == 'entry'
-
-    non_crt_functions = [f for f in functions if not is_excluded(f.get('_virtual_file', ''))]
-    non_crt_files = {k: v for k, v in files.items() if not is_excluded(k)}
+    non_crt_functions = [f for f in functions if not _is_crt_or_entry(f.get('_virtual_file', ''))]
+    non_crt_files = {k: v for k, v in files.items() if not _is_crt_or_entry(k)}
 
     lines = []
     lines.append("=" * 100)
@@ -1483,7 +1517,7 @@ def generate_easy_wins_list(functions, files, output_path):
         lines.append("  %s (%d remaining of %d)" % (vfile, data['remaining'], data['total_count']))
         # List the remaining functions
         for func in data['functions']:
-            if func.get('complexity', {}).get('suspect_count', 0) > 0:
+            if not _is_effectively_clean(func):
                 func_info = func.get('function', {})
                 suspects = func.get('suspects', [])
                 suspect_types = [s.get('type', '?') for s in suspects]
@@ -1497,7 +1531,8 @@ def generate_easy_wins_list(functions, files, output_path):
     lines.append("=" * 100)
     small_one_suspect = [
         f for f in non_crt_functions
-        if f.get('complexity', {}).get('suspect_count', 0) == 1
+        if not _is_effectively_clean(f)
+        and f.get('complexity', {}).get('suspect_count', 0) == 1
         and f.get('complexity', {}).get('pseudocode_lines', 0) < 50
     ]
     small_one_suspect.sort(key=lambda x: x.get('complexity', {}).get('pseudocode_lines', 0))
@@ -1531,7 +1566,7 @@ def generate_easy_wins_list(functions, files, output_path):
         lines.append("  %s (%.1f%% complete)" % (vfile, data['clean_percent']))
         lines.append("    %d functions remaining:" % data['remaining'])
         for func in data['functions']:
-            if func.get('complexity', {}).get('suspect_count', 0) > 0:
+            if not _is_effectively_clean(func):
                 func_info = func.get('function', {})
                 complexity = func.get('complexity', {})
                 suspect_types = complexity.get('suspect_types', [])
@@ -2153,6 +2188,10 @@ def generate_csv_data(functions, files, output_path):
 
 def generate_summary_report(functions, files, output_path):
     """Generate the main analysis summary report."""
+    # Filter out CRT and entry functions/files from report stats
+    functions = [f for f in functions if not _is_crt_or_entry(f.get('_virtual_file', ''))]
+    files = {k: v for k, v in files.items() if not _is_crt_or_entry(k)}
+
     # Calculate statistics
     total_functions = len(functions)
     if total_functions == 0:
@@ -2167,8 +2206,8 @@ def generate_summary_report(functions, files, output_path):
             suspect_type_counts[suspect.get('type', 'unknown')] += 1
             total_suspects += 1
 
-    zero_suspect_funcs = [f for f in functions if f.get('complexity', {}).get('suspect_count', 0) == 0]
-    zero_suspect_count = len(zero_suspect_funcs)
+    clean_funcs = [f for f in functions if _is_effectively_clean(f)]
+    clean_count = len(clean_funcs)
     line_counts = [f.get('complexity', {}).get('pseudocode_lines', 0) for f in functions]
     avg_lines = sum(line_counts) / len(line_counts) if line_counts else 0
     max_lines = max(line_counts) if line_counts else 0
@@ -2186,14 +2225,16 @@ def generate_summary_report(functions, files, output_path):
     report_lines.append("NOCTURNE DECOMPILATION ANALYSIS REPORT")
     report_lines.append("=" * 80)
     report_lines.append("")
+    report_lines.append("(CRT and entry functions excluded)")
+    report_lines.append("")
     report_lines.append("SUMMARY")
     report_lines.append("-" * 40)
     report_lines.append("Total functions: %d" % total_functions)
-    report_lines.append("Functions with zero suspects: %d (%.1f%%)" % (
-        zero_suspect_count, (zero_suspect_count * 100.0 / total_functions) if total_functions > 0 else 0))
+    report_lines.append("Clean functions: %d (%.1f%%)" % (
+        clean_count, (clean_count * 100.0 / total_functions) if total_functions > 0 else 0))
     report_lines.append("Functions with suspects: %d (%.1f%%)" % (
-        total_functions - zero_suspect_count,
-        ((total_functions - zero_suspect_count) * 100.0 / total_functions) if total_functions > 0 else 0))
+        total_functions - clean_count,
+        ((total_functions - clean_count) * 100.0 / total_functions) if total_functions > 0 else 0))
     report_lines.append("")
     report_lines.append("Total suspect patterns: %d" % total_suspects)
     report_lines.append("Average suspects per function: %.2f" % (total_suspects / total_functions if total_functions > 0 else 0))
@@ -2228,19 +2269,19 @@ def generate_summary_report(functions, files, output_path):
         report_lines.append("  %-25s %d" % (stype, count))
     report_lines.append("")
 
-    # Sort zero-suspect functions by line count
-    report_lines.append("EASIEST FUNCTIONS (Zero Suspects, Sorted by Size)")
+    # Sort clean functions by line count
+    report_lines.append("EASIEST FUNCTIONS (Clean, Sorted by Size)")
     report_lines.append("-" * 40)
-    zero_suspect_funcs.sort(key=lambda x: x.get('complexity', {}).get('pseudocode_lines', 0))
-    for func in zero_suspect_funcs[:50]:
+    clean_funcs.sort(key=lambda x: x.get('complexity', {}).get('pseudocode_lines', 0))
+    for func in clean_funcs[:50]:
         func_info = func.get('function', {})
         complexity = func.get('complexity', {})
         report_lines.append("  %s: %s (%d lines)" % (
             func_info.get('address', '?'),
             func_info.get('name', 'unknown'),
             complexity.get('pseudocode_lines', 0)))
-    if len(zero_suspect_funcs) > 50:
-        report_lines.append("  ... and %d more" % (len(zero_suspect_funcs) - 50))
+    if len(clean_funcs) > 50:
+        report_lines.append("  ... and %d more" % (len(clean_funcs) - 50))
     report_lines.append("")
 
     # Get top 30 by complexity score (reversed)
@@ -2296,13 +2337,13 @@ def generate_summary_report(functions, files, output_path):
             return os.path.relpath(abs_path, repo_root)
         return abs_path
 
-    # List of zero-suspect function .cpp paths (sorted by name for consistency)
+    # List of clean function .cpp paths (sorted by name for consistency)
     zero_suspect_list_path = os.path.join(output_path, "zero_suspect_functions.txt")
     try:
-        zero_suspect_funcs_sorted = sorted(zero_suspect_funcs,
+        clean_funcs_sorted = sorted(clean_funcs,
             key=lambda x: x.get('function', {}).get('name', ''))
         with open(zero_suspect_list_path, 'w') as f:
-            for func in zero_suspect_funcs_sorted:
+            for func in clean_funcs_sorted:
                 rel_path = make_relative(func.get('_cpp_path', ''))
                 f.write(rel_path + '\n')
         log_info("Wrote zero-suspect function list: %s" % zero_suspect_list_path)
@@ -2400,17 +2441,37 @@ def generate_analysis_report(pseudocode_src_dir, output_path):
     generate_pass_by_value_report(functions, output_path)
     generate_csv_data(functions, files, output_path)
 
+    # Generate struct quality report
+    log_info("Generating struct quality report...")
+    # Derive data_types.json path from pseudocode src dir
+    # pseudocode_src_dir is like .../pseudocode/src/core/... but we walk it,
+    # so the base is the annotations/nocedit.exe dir
+    annotations_base = pseudocode_src_dir
+    while annotations_base and os.path.basename(annotations_base) != 'pseudocode':
+        annotations_base = os.path.dirname(annotations_base)
+    if annotations_base:
+        exe_dir = os.path.dirname(annotations_base)
+        data_types_path = os.path.join(exe_dir, 'data_types', 'data_types.json')
+        if os.path.isfile(data_types_path):
+            generate_struct_report(data_types_path, pseudocode_src_dir, output_path)
+        else:
+            log_info("Skipping struct report: %s not found" % data_types_path)
+    else:
+        log_info("Skipping struct report: could not locate pseudocode base dir")
+
     # Generate SVG graphs for README
     log_info("Generating SVG graphs...")
     generate_graphs(functions, files, output_path)
 
-    # Print quick summary
-    total_funcs = len(functions)
-    clean_funcs = sum(1 for f in functions if f.get('complexity', {}).get('suspect_count', 0) == 0)
-    files_100 = sum(1 for f in files.values() if f['clean_percent'] == 100)
-    files_90 = sum(1 for f in files.values() if f['clean_percent'] >= 90)
+    # Print quick summary (excluding CRT/entry)
+    non_crt_functions = [f for f in functions if not _is_crt_or_entry(f.get('_virtual_file', ''))]
+    non_crt_files = {k: v for k, v in files.items() if not _is_crt_or_entry(k)}
+    total_funcs = len(non_crt_functions)
+    clean_funcs = sum(1 for f in non_crt_functions if _is_effectively_clean(f))
+    files_100 = sum(1 for f in non_crt_files.values() if f['clean_percent'] == 100)
+    files_90 = sum(1 for f in non_crt_files.values() if f['clean_percent'] >= 90)
     log_info("")
-    log_info("Analysis Summary:")
+    log_info("Analysis Summary (excluding CRT/entry):")
     log_info("  Total functions: %d" % total_funcs)
     log_info("  Clean functions: %d (%.1f%%)" % (clean_funcs, clean_funcs*100.0/total_funcs if total_funcs else 0))
     log_info("  Files at 100%%: %d" % files_100)

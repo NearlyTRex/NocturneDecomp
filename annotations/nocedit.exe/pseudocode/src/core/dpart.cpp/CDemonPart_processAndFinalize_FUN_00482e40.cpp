@@ -61,11 +61,11 @@ void __cdecl core_dpart_cpp_CDemonPart_processAndFinalize_FUN_00482e40(CDemonPar
       *(uint *)((int)&this_ptr->face_data->vertex_index_3 + iVar3) =
            *(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar4 + 8);
       if (*(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar4 + -0x14) == 4) {
-        *(uint *)((int)&this_ptr->face_data->material + iVar3) =
+        *(uint *)((int)&this_ptr->face_data->vertex_index_4 + iVar3) =
              *(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar4 + 0xc);
       }
       else {
-        *(uint *)((int)&this_ptr->face_data->material + iVar3) = 0xffffffff;
+        *(uint *)((int)&this_ptr->face_data->vertex_index_4 + iVar3) = 0xffffffff;
       }
       iVar3 = iVar3 + 0x20;
       iVar5 = iVar5 + 1;

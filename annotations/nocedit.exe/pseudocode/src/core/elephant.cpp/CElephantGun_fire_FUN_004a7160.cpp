@@ -97,7 +97,7 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_004a7160(CElephantGun *this_
       CStack_88.x = CStack_7c.x - fStack_70;
       CStack_88.y = CStack_7c.y - fStack_6c;
       CStack_88.z = CStack_7c.z - local_68;
-      core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
+      core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
       core_setcolid_cpp_CDemonSet_setRayType_FUN_00574230(g_CDemonSetPtr,1);
       core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,(CDemonActor *)this_ptr);
       pCVar6 = (this_ptr->base).carried_by_actor;
@@ -145,7 +145,10 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_004a7160(CElephantGun *this_
                 if (pCStack_38 == (CFlameCan *)0x0) {
                   in_stack_fffffec4 = (CDemonSet *)g_CDemonSetPtr->ground_type;
                   in_stack_fffffec0 = (CDemonActor *)&g_CDemonSetPtr->collision_normal;
-                  core_fire_cpp_CFireEffect_FUN_004c76a0(g_CFireEffectPtr);
+                  core_fire_cpp_CFireEffect_createBulletImpact_FUN_004c76a0
+                            (g_CFireEffectPtr,&g_CDemonSetPtr->collision_impact_position,
+                             (CVector3f *)in_stack_fffffec0,(int)in_stack_fffffec4,
+                             g_CDemonSetPtr->collision_actor);
                   break;
                 }
                 in_stack_fffffec4 = (CDemonSet *)0x4a7834;
@@ -231,7 +234,7 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_004a7160(CElephantGun *this_
   fStack_c4 = CStack_7c.x;
   fStack_bc = CStack_7c.z;
   fStack_c0 = CStack_7c.y + -0.125f;
-  core_fire_cpp_CFireEffect_FUN_004c7a60(g_CFireEffectPtr);
+  core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60(g_CFireEffectPtr);
   core_sound_cpp_CSound_playActorSound_FUN_005b3a40
             (g_CSoundPtr,(CDemonActor *)this_ptr,"elephantgun.wav",&CStack_7c);
   (this_ptr->base).fire_cooldown_timer = 1.0;

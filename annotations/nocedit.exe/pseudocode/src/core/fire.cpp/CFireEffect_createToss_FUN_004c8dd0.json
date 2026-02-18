@@ -1,0 +1,187 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 43,
+    "complexity_score": 28,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 3,
+    "pseudocode_lines": 13,
+    "suspect_count": 1,
+    "suspect_types": [
+      "param_count_too_few"
+    ],
+    "total_lines": 56
+  },
+  "cross_references": [
+    {
+      "addr": "0049ce70",
+      "from_addr": "0049cea8",
+      "name": "core_dynamite.cpp_CDynamite_fire_FUN_0049ce70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c8dd0",
+    "address_range": [
+      [
+        "004c8dd0",
+        "004c8e3e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CFireEffect_createToss_FUN_004c8dd0",
+    "signature": "void __cdecl core_fire_cpp_CFireEffect_createToss_FUN_004c8dd0(CFireEffect *this_ptr,CVector3f *position,UOrientationVector *orientation,CVector3f *velocity,float fuse_time,uint sfx_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c8e40",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_allocateToss_FUN_004c8e40"
+    },
+    {
+      "addr": "005a98b0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_005a98b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062a0b3",
+      "name": "DOUBLE_0062a0b3",
+      "type": "double",
+      "value": "0.000100000000000000"
+    },
+    {
+      "addr": "02d678d0",
+      "name": "g_TossPool",
+      "type": "CToss[20]",
+      "value": null
+    },
+    {
+      "addr": "02d67cb0",
+      "name": "DAT_02d67cb0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0049cea8",
+        "call_type": "direct",
+        "caller": "core_dynamite.cpp_CDynamite_fire_FUN_0049ce70",
+        "estimated_params": 7,
+        "instructions_analyzed": 13,
+        "reg_params": [],
+        "stack_params": 7
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 6,
+    "estimated_params": 7
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.894736842105263,
+    "instruction_count": 38,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CALL": 2,
+      "CBRANCH": 1,
+      "COPY": 50,
+      "FLOAT2FLOAT": 2,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "INT_ADD": 19,
+      "INT_AND": 13,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 8,
+      "INT_LEFT": 4,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 5,
+      "INT_SCARRY": 4,
+      "INT_SEXT": 3,
+      "INT_SLESS": 4,
+      "INT_SUB": 14,
+      "INT_ZEXT": 4,
+      "LOAD": 13,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 16,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 186
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireEffect *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "orientation",
+        "offset": 12,
+        "size": 4,
+        "type": "UOrientationVector *"
+      },
+      {
+        "is_param": true,
+        "name": "velocity",
+        "offset": 16,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "fuse_time",
+        "offset": 20,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "sfx_handle",
+        "offset": 24,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "call_site_count": 1,
+      "declared_params": 6,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 7,
+      "fix_type": "add_params",
+      "match": "declared:6 vs estimated:7",
+      "param_delta": 1,
+      "text": "Function declares 6 params but call sites push 7 (1 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

@@ -5,7 +5,6 @@
 #include "types/classes/CGlassParticle.h"
 #include "types/classes/CMuzzleFlash.h"
 #include "types/classes/CSpark.h"
-#include "types/classes/CStake.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x2D50000
@@ -20,10 +19,8 @@ extern CMuzzleFlash g_MuzzleFlashPool[20];
 // CSpark[256]
 extern CSpark g_SparkPool[256];
 
-// CStake*
-extern CStake* g_StakeActiveListHead;
-
 // int
-extern int g_SparkActiveCount;
-extern int g_GlassParticleNextIndex;
+extern int g_SparkAllocIndex;
+extern int g_MuzzleFlashAllocIndex;
+extern int g_GlassParticleAllocIndex;
 

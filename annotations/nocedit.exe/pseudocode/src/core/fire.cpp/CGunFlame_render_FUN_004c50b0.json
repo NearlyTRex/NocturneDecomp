@@ -566,30 +566,30 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 46,
+      "line": 48,
       "match": "ROUND",
-      "text": "local_28 = (float)(int)ROUND(ROUND(*(float *)(this_ptr->unk + 0x1c)));",
+      "text": "local_28 = (float)(int)ROUND(ROUND(this_ptr->anim_frame));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 46,
+      "line": 48,
       "match": "ROUND",
-      "text": "local_28 = (float)(int)ROUND(ROUND(*(float *)(this_ptr->unk + 0x1c)));",
+      "text": "local_28 = (float)(int)ROUND(ROUND(this_ptr->anim_frame));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 70,
+      "line": 74,
       "match": "ABS",
-      "text": "ABS((float10)local_94 * (float10)*(float *)(this_ptr->unk + 0x18) +",
+      "text": "ABS((float10)local_94 * (float10)(this_ptr->velocity).z +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 73,
+      "line": 77,
       "match": "SQRT",
-      "text": "(SQRT((float10)*(float *)(this_ptr->unk + 0x18) *",
+      "text": "(SQRT(fVar12 * fVar12 + fVar11 * fVar11 + fVar10 * fVar10) *",
       "type": "decompiler_intrinsic"
     },
     {

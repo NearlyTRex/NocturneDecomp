@@ -18,7 +18,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d5fe0(CGabriella *this_ptr)
   if ((iVar1 != 0) && (((this_ptr->base).inventory.selected_weapon)->fire_mode == 1)) {
     this_ptr->fire_cooldown_timer = 1.0;
   }
-  core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
+  core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
   this_ptr->fire_state = 0;
   return;
 }

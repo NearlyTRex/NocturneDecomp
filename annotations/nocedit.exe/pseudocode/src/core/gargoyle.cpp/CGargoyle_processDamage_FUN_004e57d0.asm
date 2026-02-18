@@ -19,7 +19,7 @@
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10
-;   core_fire.cpp_CFireEffect_FUN_004c79d0
+;   core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0
 ;   core_gargoyle.cpp_CGargoyle_FUN_004e5530
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -58,8 +58,8 @@ section .text
     MOV EDX,dword ptr [0x0067a3d0]      ; 004e580b | g_CFireEffectInstance | g_CFireEffectPtr
     PUSH EDX                            ; 004e5811 | g_CFireEffectInstance
     INC EBX                             ; 004e5812
-    CALL core_fire.cpp_CFireEffect_FUN_004c79d0 ; 004e5813
-        ;   XREF to: 004c79d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c79d0(CFireEffect * this_ptr)
+    CALL core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0 ; 004e5813
+        ;   XREF to: 004c79d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int intensity_target, ...)
     ADD ESP,0x1c                        ; 004e5818
     CMP EBX,0x3                         ; 004e581b
     JL 0x004e57f3                       ; 004e581e

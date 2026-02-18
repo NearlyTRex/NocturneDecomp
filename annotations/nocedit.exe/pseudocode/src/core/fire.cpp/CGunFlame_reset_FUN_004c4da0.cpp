@@ -9,9 +9,6 @@
 void __cdecl core_fire_cpp_CGunFlame_reset_FUN_004c4da0(CGunFlame *this_ptr)
 
 {
-  this_ptr->unk[0] = '\0';
-  this_ptr->unk[1] = '\0';
-  this_ptr->unk[2] = '\0';
-  this_ptr->unk[3] = '\0';
+  this_ptr->lifetime = 0.0;
   return;
 }

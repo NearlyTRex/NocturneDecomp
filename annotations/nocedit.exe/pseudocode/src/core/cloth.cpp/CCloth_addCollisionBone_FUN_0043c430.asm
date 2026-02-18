@@ -17,8 +17,8 @@
 ;   TerminatedCString s_Select_bone_to_add_00618656
 ;   TerminatedCString s_Enter_in_X_radius_00618669
 ;   TerminatedCString s_Enter_in_Y_radius_0061867e
-;   int INT_00838e40
-;   int INT_00838e4c
+;   CVector3f CVector3f_00838e40
+;   CVector3f CVector3f_00838e4c
 ;   CDeformableModelInstance g_CDeformableModelInstanceInstance
 ;
 ; Called Functions:
@@ -104,8 +104,8 @@ section .text
         ;   XREF to: 0043c51d (CONDITIONAL_JUMP)  ; LAB_0043c51d
     PUSH 0x838e58                       ; 0043c4c8 | g_CDeformableModelInstanceInstance
         ;   Label: LAB_0043c4c8
-    PUSH 0x838e4c                       ; 0043c4cd | INT_00838e4c
-    PUSH 0x838e40                       ; 0043c4d2 | INT_00838e40
+    PUSH 0x838e4c                       ; 0043c4cd | CVector3f_00838e4c
+    PUSH 0x838e40                       ; 0043c4d2 | CVector3f_00838e40
     MOV EAX,dword ptr [ESP + 0x4dc]     ; 0043c4d7
     PUSH EAX                            ; 0043c4de
     CALL core_cloth.cpp_CCloth_setup_FUN_00439710 ; 0043c4df

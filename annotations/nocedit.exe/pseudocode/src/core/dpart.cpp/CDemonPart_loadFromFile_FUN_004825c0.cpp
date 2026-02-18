@@ -71,10 +71,10 @@ void __cdecl core_dpart_cpp_CDemonPart_loadFromFile_FUN_004825c0(CDemonPart *thi
         *(uint *)((int)&this_ptr->face_data->vertex_index_3 + iVar8) =
              *(uint *)(g_PolyDataConversionBuffer + iVar9 + 0x30);
         if (*(int *)(g_PolyDataConversionBuffer + iVar9 + 4) == 3) {
-          *(uint *)((int)&this_ptr->face_data->material + iVar8) = 0xffffffff;
+          *(uint *)((int)&this_ptr->face_data->vertex_index_4 + iVar8) = 0xffffffff;
         }
         else {
-          *(uint *)((int)&this_ptr->face_data->material + iVar8) =
+          *(uint *)((int)&this_ptr->face_data->vertex_index_4 + iVar8) =
                *(uint *)(g_PolyDataConversionBuffer + iVar9 + 0x3c);
         }
         iVar8 = iVar8 + 0x20;

@@ -101,7 +101,7 @@ int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_00547320(CPathMap *
     in_direction_vector = &local_4c;
     pCVar1 = &local_d0;
 LAB_005473e0:
-    pCVar1 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+    pCVar1 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                        (pCVar1,in_direction_vector);
     if (pCVar1 != out_euler_angles) {
       out_euler_angles->x = pCVar1->x;
@@ -115,7 +115,7 @@ LAB_005473e0:
     local_64.x = (this_ptr->current_position).x - dest_position->x;
     local_64.y = (this_ptr->current_position).y - dest_position->y;
     local_64.z = (this_ptr->current_position).z - dest_position->z;
-    pCVar1 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_88,&local_64);
+    pCVar1 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_88,&local_64);
     if (pCVar1 == out_euler_angles) {
       return 2;
     }
@@ -133,7 +133,7 @@ LAB_005473e0:
     local_dc.x = (this_ptr->current_position).x - dest_position->x;
     local_dc.y = (this_ptr->current_position).y - dest_position->y;
     local_dc.z = (this_ptr->current_position).z - dest_position->z;
-    pCVar1 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_c4,&local_dc);
+    pCVar1 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_c4,&local_dc);
     if (pCVar1 == out_euler_angles) {
       return 2;
     }
@@ -146,7 +146,7 @@ LAB_005473e0:
     local_40.x = (this_ptr->current_position).x - dest_position->x;
     local_40.y = (this_ptr->current_position).y - dest_position->y;
     local_40.z = (this_ptr->current_position).z - dest_position->z;
-    pCVar1 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_70,&local_40);
+    pCVar1 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_70,&local_40);
     if (pCVar1 != out_euler_angles) {
       out_euler_angles->x = pCVar1->x;
       out_euler_angles->y = pCVar1->y;
@@ -178,7 +178,7 @@ LAB_005473e0:
     local_b8.x = (this_ptr->current_position).x - dest_position->x;
     local_b8.y = (this_ptr->current_position).y - dest_position->y;
     local_b8.z = (this_ptr->current_position).z - dest_position->z;
-    pCVar1 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_28,&local_b8);
+    pCVar1 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_28,&local_b8);
     if (pCVar1 != out_euler_angles) {
       out_euler_angles->x = pCVar1->x;
       out_euler_angles->y = pCVar1->y;
@@ -199,7 +199,7 @@ LAB_005473e0:
         local_94.x = (this_ptr->current_position).x - dest_position->x;
         local_94.y = (this_ptr->current_position).y - dest_position->y;
         local_94.z = (this_ptr->current_position).z - dest_position->z;
-        pCVar1 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+        pCVar1 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                            (&local_e8,&local_94);
         if (pCVar1 == out_euler_angles) {
           return 2;
@@ -218,7 +218,7 @@ LAB_005473e0:
         local_1c = local_18;
         local_18 = uVar5;
         if (uVar6 == 0) {
-          pCVar1 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+          pCVar1 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                              (&local_10c,(CVector3f *)&stack0xfffffee8);
           if (pCVar1 == out_euler_angles) {
             return 2;

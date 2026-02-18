@@ -151,7 +151,7 @@ LAB_005c17d2:
             iVar5 != 4 ||
             ((core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(pCVar8,&CStack_a0,local_24),
              ABS(CStack_a0.x) <= 1.0 &&
-             (pCVar7 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+             (pCVar7 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                                  (&CStack_88,&CStack_a0), ABS(pCVar7->y) <= (float)20))
             )))) {
           CStack_4c.x = 0.0;

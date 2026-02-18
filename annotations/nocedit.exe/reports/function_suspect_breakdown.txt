@@ -4,42 +4,42 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 3985 functions
-  1 suspects: 786 functions
-  2 suspects: 482 functions
-  3 suspects: 272 functions
-  4 suspects: 218 functions
-  5 suspects: 194 functions
-  6 suspects: 157 functions
+  0 suspects: 4001 functions
+  1 suspects: 791 functions
+  2 suspects: 479 functions
+  3 suspects: 271 functions
+  4 suspects: 220 functions
+  5 suspects: 195 functions
+  6 suspects: 154 functions
   7 suspects: 100 functions
-  8 suspects: 101 functions
-  9 suspects: 76 functions
-  10 suspects: 73 functions
-  11 suspects: 62 functions
-  12 suspects: 55 functions
-  13 suspects: 49 functions
-  14 suspects: 60 functions
+  8 suspects: 103 functions
+  9 suspects: 73 functions
+  10 suspects: 70 functions
+  11 suspects: 58 functions
+  12 suspects: 57 functions
+  13 suspects: 50 functions
+  14 suspects: 59 functions
   15 suspects: 31 functions
-  16 suspects: 32 functions
+  16 suspects: 30 functions
   17 suspects: 31 functions
   18 suspects: 30 functions
-  19 suspects: 26 functions
-  20 suspects: 27 functions
-  21 suspects: 22 functions
-  22 suspects: 16 functions
+  19 suspects: 27 functions
+  20 suspects: 25 functions
+  21 suspects: 21 functions
+  22 suspects: 15 functions
   23 suspects: 30 functions
-  24 suspects: 17 functions
-  25 suspects: 13 functions
-  26 suspects: 18 functions
-  27 suspects: 8 functions
-  28 suspects: 12 functions
+  24 suspects: 16 functions
+  25 suspects: 11 functions
+  26 suspects: 16 functions
+  27 suspects: 10 functions
+  28 suspects: 11 functions
   29 suspects: 12 functions
-  30 suspects: 6 functions
-  31 suspects: 6 functions
+  30 suspects: 5 functions
+  31 suspects: 7 functions
   32 suspects: 7 functions
   33 suspects: 5 functions
   34 suspects: 4 functions
-  35 suspects: 9 functions
+  35 suspects: 8 functions
   36 suspects: 8 functions
   37 suspects: 4 functions
   38 suspects: 2 functions
@@ -55,9 +55,9 @@ SUSPECT COUNT DISTRIBUTION
   48 suspects: 3 functions
   50 suspects: 2 functions
   52 suspects: 2 functions
-  53 suspects: 1 functions
-  54 suspects: 3 functions
-  55 suspects: 1 functions
+  53 suspects: 2 functions
+  54 suspects: 2 functions
+  55 suspects: 2 functions
   56 suspects: 2 functions
   57 suspects: 1 functions
   58 suspects: 3 functions
@@ -67,7 +67,6 @@ SUSPECT COUNT DISTRIBUTION
   62 suspects: 2 functions
   63 suspects: 1 functions
   64 suspects: 2 functions
-  65 suspects: 1 functions
   66 suspects: 1 functions
   68 suspects: 1 functions
   70 suspects: 2 functions
@@ -76,7 +75,7 @@ SUSPECT COUNT DISTRIBUTION
   73 suspects: 1 functions
   74 suspects: 1 functions
   75 suspects: 1 functions
-  76 suspects: 2 functions
+  76 suspects: 1 functions
   78 suspects: 1 functions
   79 suspects: 1 functions
   81 suspects: 3 functions
@@ -92,7 +91,7 @@ SUSPECT COUNT DISTRIBUTION
   114 suspects: 1 functions
   116 suspects: 1 functions
   121 suspects: 1 functions
-  146 suspects: 1 functions
+  144 suspects: 1 functions
   157 suspects: 1 functions
   159 suspects: 1 functions
   174 suspects: 1 functions
@@ -150,7 +149,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       CRT function (runtime support) at 00600790...
     ... and 259 more
 
-  [param_count_too_few] (142 functions)
+  [param_count_too_few] (149 functions)
   ------------------------------------------------------------
     cockpit_ckptutil.c_isLineClippingDisabled_FUN_0043 (  4 lines)
       Function declares 0 params but call sites push 4 (4 missing)...
@@ -192,9 +191,9 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       Function declares 3 params but call sites push 4 (1 missing)...
     cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAli (  6 lines)
       Function declares 4 params but call sites push 6 (2 missing)...
-    ... and 122 more
+    ... and 129 more
 
-  [pointer_cast] (110 functions)
+  [pointer_cast] (108 functions)
   ------------------------------------------------------------
     core_dlight.cpp_drawGrayscalePixel_FUN_00473360    (  5 lines)
       *(int *)((int)g_ScreenBufferArray[y] + x * 4) = grayscale_va...
@@ -222,12 +221,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       return (CLodFace *)((int)pvVar1 + -0x54);...
     core_fire.cpp_CGlassParticle_ctor_FUN_004c9630     (  9 lines)
       return (CGlassParticle *)((int)pvVar2 + -0x78);...
-    core_fire.cpp_CFireEffect_FUN_004c7f20             (  9 lines)
-      g_CFireEffectRocksEnd = (CRock *)((int)&(g_CFireEffectRocksE...
-    core_fire.cpp_CFireEffect_FUN_004c7eb0             (  9 lines)
-      g_CFireEffectRocksEnd = (CRock *)((int)&(g_CFireEffectRocksE...
-    core_fire.cpp_CFireEffect_FUN_004c7d60             ( 10 lines)
-      (CGlassParticle *)((int)&(g_CFireEffectGlassParticlesEnd->ba...
     shape_memdbg.cpp_getMemoryHeaderFromPtr_FUN_0050ef ( 10 lines)
       return (SMemHead *)((int)user_ptr + -0x28);...
     support_codec.cpp_readByteWithCount_FUN_0043e4c0   ( 12 lines)
@@ -235,10 +228,16 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_morph.cpp_countTrianglesFromPolygons_FUN_0052 ( 12 lines)
       poly_headers = (int *)((int)poly_headers + poly_stride);...
     core_sound.cpp_stopTrainSounds_FUN_005b2ca0        ( 14 lines)
-      puVar1 = (uint *)((int)&g_TrainNoiseArray[0].sound_handle + ...
-    ... and 90 more
+      puVar1 = (uint *)((int)&g_TrainNoiseArray[0].sfx_handle + iV...
+    shape_design.c_getVertexCountFromModel_FUN_0046808 ( 14 lines)
+      model_ptr = (SMRGLHeaderExtended *)((int)&(model_ptr->base)....
+    core_sound.cpp_CSound_shutdown_FUN_005b2f70        ( 16 lines)
+      puVar1 = (uint *)((int)&g_TrainNoiseArray[0].sfx_handle + iV...
+    core_fire.cpp_CFireEffect_hasActiveMuzzleFlash_FUN ( 16 lines)
+      iVar1 = *(int *)((int)&g_MuzzleFlashPool[1].frames_remaining...
+    ... and 88 more
 
-  [decompiler_intrinsic] (44 functions)
+  [decompiler_intrinsic] (45 functions)
   ------------------------------------------------------------
     core_actor.cpp_CVector3f_length_FUN_00410380       (  4 lines)
       return SQRT(this_ptr->z * this_ptr->z + this_ptr->x * this_p...
@@ -280,7 +279,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       0.0 < SQRT(fVar2 * fVar2 +...
     core_dglobe.cpp_CDemonGlobe_getAttenuationAtVertex ( 34 lines)
       return (int)ROUND(local_20);...
-    ... and 24 more
+    ... and 25 more
 
   [negative_offset] (39 functions)
   ------------------------------------------------------------
@@ -462,8 +461,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
   ------------------------------------------------------------
     core_msnedit.cpp_FUN_0053d3a0                      (  4 lines)
       return (int *)&DAT_0063cbe7;...
-    core_weather.cpp_staticInit_FUN_005eeaa0           (  6 lines)
-      __arrinit(DAT_03f95df8,200,&g_CVectorTypeInfo);...
     core_msnedit.cpp_staticInit_FUN_00535c30           (  7 lines)
       core_actor_cpp_CActorPropertyList_init_FUN_0040e130((CActorP...
     core_drip.cpp_staticInit_FUN_0048df80              (  8 lines)
@@ -500,6 +497,8 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       if (DAT_02f43978 != 0) {...
     core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_0 ( 71 lines)
       if (DAT_02f43978 != 0) {...
+    sound_snddx.cpp_getDirectSoundDevice_FUN_005b0440  ( 76 lines)
+      ((IUnknown *)g_DirectSoundPrimaryBuffer,&DAT_00686d58,&g_Dir...
     ... and 3 more
 
   [unresolved_funcptr] (12 functions)
@@ -619,10 +618,8 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     wincore_windll.cpp_transformPoint_FUN_005b5a25     (110 lines)
       Function uses MMX instructions...
 
-  [unknown_field] (3 functions)
+  [unknown_field] (2 functions)
   ------------------------------------------------------------
-    core_fire.cpp_CFireEffect_FUN_004c93d0             ( 16 lines)
-      iVar1 = g_MuzzleFlashPool[0].unk._0_4_;...
     engine_drender.cpp_CDemonRenderer_renderPerspectiv ( 20 lines)
       g_RenderStateFlags.dword._1_3_ = 0;...
     cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSe ( 24 lines)
@@ -732,9 +729,9 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/hero.cpp, Lines: 6, Types: ['stack_param']
   core_fire.cpp_FUN_004c9480
     File: core/fire.cpp, Lines: 6, Types: ['stack_param']
-  core_fire.cpp_FUN_004c9460
-    File: core/fire.cpp, Lines: 6, Types: ['stack_param']
   core_fire.cpp_FUN_004c9470
     File: core/fire.cpp, Lines: 6, Types: ['stack_param']
+  core_msnedit.cpp_CDemonMission_FUN_0053ca00
+    File: core/msnedit.cpp, Lines: 6, Types: ['stack_param']
 
-  ... and 704 more
+  ... and 700 more

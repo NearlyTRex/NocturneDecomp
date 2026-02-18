@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec(STexturedVertex *left_vertex,STexturedVertex *right_vertex,int scanline_y)
+; void __cdecl wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec(SEdgeData *left_vertex,SEdgeData *right_vertex,int scanline_y)
 ;
 ;
 ; XREF[57]:

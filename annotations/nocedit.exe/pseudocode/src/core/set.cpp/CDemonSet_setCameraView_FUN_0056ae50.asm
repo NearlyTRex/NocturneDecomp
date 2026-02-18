@@ -305,8 +305,8 @@ section .text
     PUSH EAX                            ; 0056b169
     MOV EDX,dword ptr [0x006848fc]      ; 0056b16a | g_CWeatherInstance | g_CWeatherPtr
     PUSH EDX                            ; 0056b170 | g_CWeatherInstance
-    CALL core_weather.cpp_CWeather_FUN_005ef940 ; 0056b171
-        ;   XREF to: 005ef940 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_FUN_005ef940(CWeather * this_ptr, CVector3f * param_2, CVector3f * param_3)
+    CALL core_weather.cpp_CWeather_setOriginAndRotation_FUN_005ef940 ; 0056b171
+        ;   XREF to: 005ef940 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setOriginAndRotation_FUN_005ef940(CWeather * this_ptr, CVector3f * direction, CVector3f * rotation)
     ADD ESP,0xc                         ; 0056b176
     MOV EAX,dword ptr [ESP + 0x188]     ; 0056b179
     MOV ECX,dword ptr [EAX + 0x14d154]  ; 0056b180

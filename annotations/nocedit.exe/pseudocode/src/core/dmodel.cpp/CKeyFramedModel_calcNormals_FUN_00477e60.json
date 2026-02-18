@@ -235,29 +235,29 @@
     {
       "description": "Complex pointer cast",
       "line": 31,
-      "match": "(SSurfaceNormal *)((int)",
-      "text": "output = (SSurfaceNormal *)((int)this_ptr->poly_vert_list + local_18);",
+      "match": "(SMRGLPrimitiveTriangle *)((int)",
+      "text": "texture = (SMRGLPrimitiveTriangle *)((int)this_ptr->poly_vert_list + local_18);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 39,
       "match": "(CVector3i *)((int)",
-      "text": "*ppCVar5 = (CVector3i *)((int)&(*ppCVar5)->x + output->normal_x);",
+      "text": "*ppCVar5 = (CVector3i *)((int)&(*ppCVar5)->x + (texture->base).surface_normal.A);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 40,
       "match": "(CVector3i *)((int)",
-      "text": "ppCVar5[1] = (CVector3i *)((int)&ppCVar5[1]->x + output->normal_y);",
+      "text": "ppCVar5[1] = (CVector3i *)((int)&ppCVar5[1]->x + (texture->base).surface_normal.B);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 41,
       "match": "(CVector3i *)((int)",
-      "text": "ppCVar5[2] = (CVector3i *)((int)&ppCVar5[2]->x + output->normal_z);",
+      "text": "ppCVar5[2] = (CVector3i *)((int)&ppCVar5[2]->x + (texture->base).surface_normal.C);",
       "type": "pointer_cast"
     },
     {

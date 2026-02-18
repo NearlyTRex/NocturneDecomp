@@ -61,7 +61,7 @@
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
 ;   core_setcolid.cpp_CDemonSet_disableIgnore_FUN_00574210
-;   core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180
+;   core_setcolid.cpp_CDemonSet_init_FUN_00574180
 ;   core_setcolid.cpp_CDemonSet_testLineOcclusion_FUN_00572460
 ;   core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80
 ;   core_sound.cpp_CSound_killSound_FUN_005b3b90
@@ -291,8 +291,8 @@ section .text
     JZ 0x005b3384                       ; 005b32a6
         ;   XREF to: 005b3384 (CONDITIONAL_JUMP)  ; LAB_005b3384
     PUSH EAX                            ; 005b32ac | g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 005b32ad
-        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_init_FUN_00574180 ; 005b32ad
+        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00574180(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 005b32b2
     MOV ESI,dword ptr [0x006810c8]      ; 005b32b5 | g_CDemonSetPtr
     PUSH ESI                            ; 005b32bb | g_CDemonSetInstance
@@ -333,8 +333,8 @@ section .text
     MOV EDI,dword ptr [0x006810c8]      ; 005b3365 | g_CDemonSetPtr
         ;   Label: LAB_005b3365
     PUSH EDI                            ; 005b336b | g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 005b336c
-        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_init_FUN_00574180 ; 005b336c
+        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00574180(CDemonSet * this_ptr)
     MOV EAX,[0x006810c8]                ; 005b3371 | g_CDemonSetPtr
     MOV EAX,dword ptr [EAX + 0x15aea4]  ; 005b3376 | g_CDemonSetInstance.selected_camera_index
     ADD ESP,0x4                         ; 005b337c

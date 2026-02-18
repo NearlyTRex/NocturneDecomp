@@ -32,7 +32,7 @@
 ;   core_actor.cpp_getRandomInt_FUN_0040cc70
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0
 ;   core_event.cpp_CEventList_executeCommands_FUN_004aabe0
-;   core_fire.cpp_CFireEffect_FUN_004c79d0
+;   core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0
 ;   core_inv.cpp_CInventory_findItemByName_FUN_004fe9d0
 ;   core_inv.cpp_CInventory_removeItem_FUN_004fea70
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70
@@ -138,8 +138,8 @@ section .text
     MOV ECX,dword ptr [0x0067a3d0]      ; 005e710e | g_CFireEffectInstance | g_CFireEffectPtr
     PUSH ECX                            ; 005e7114 | g_CFireEffectInstance
     INC EBX                             ; 005e7115
-    CALL core_fire.cpp_CFireEffect_FUN_004c79d0 ; 005e7116
-        ;   XREF to: 004c79d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c79d0(CFireEffect * this_ptr)
+    CALL core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0 ; 005e7116
+        ;   XREF to: 004c79d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int intensity_target, ...)
     ADD ESP,0x1c                        ; 005e711b
     CMP EBX,0x5                         ; 005e711e
     JL 0x005e70fe                       ; 005e7121

@@ -4,7 +4,6 @@
 #include "system/basetypes.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonLight.h"
-#include "types/classes/CGunFlame.h"
 #include "types/classes/CLightningBolt.h"
 #include "types/classes/CPopcorn.h"
 #include "types/classes/CRainDrop.h"
@@ -28,17 +27,8 @@ extern CDemonActorType g_CGabriellaClassInfo;
 // CDemonLight
 extern CDemonLight g_CDemonLightInstance;
 
-// CGunFlame*
-extern CGunFlame* g_GunFlameActiveListHead;
-
-// CLightningBolt*
-extern CLightningBolt* g_LightningBoltActiveListHead;
-
 // CLightningBolt[10]
 extern CLightningBolt g_LightningBoltPool[10];
-
-// CPopcorn*
-extern CPopcorn* g_CFireEffectPopcornsEnd;
 
 // CPopcorn[256]
 extern CPopcorn g_PopcornPool[256];
@@ -46,14 +36,8 @@ extern CPopcorn g_PopcornPool[256];
 // CRainDrop[256]
 extern CRainDrop g_RainDropPool[256];
 
-// CShell*
-extern CShell* g_CFireEffectShellsEnd;
-
 // CShell[50]
 extern CShell g_ShellPool[50];
-
-// CTrail*
-extern CTrail* g_TrailActiveListHead;
 
 // CTrail[100]
 extern CTrail g_TrailPool[100];
@@ -91,6 +75,11 @@ extern float FLOAT_02d7b844;
 extern float FLOAT_02d7c2e8;
 
 // int
+extern int g_LightningBoltAllocIndex;
+extern int g_TrailAllocIndex;
+extern int g_ShellAllocIndex;
+extern int g_PopcornAllocIndex;
+extern int g_RainDropAllocIndex;
 extern int INT_02d7a7b4;
 extern int INT_02d7a7b8;
 extern int g_LightAttenuationMax;

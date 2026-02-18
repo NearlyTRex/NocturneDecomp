@@ -2,13 +2,13 @@
 // Address: 005b4031
 // Address Range: [[005b4031, 005b41b1] [005b41c0, 005b427c] [005b4280, 005b430b] [005b4310, 005b4339] [005b4340, 005b4464] [005b4470, 005b44d9] [005b44e0, 005b44e5] [005b44f0, 005b45c8] [005b45d0, 005b45f3] [005b4600, 005b4669] [005b4670, 005b47a8] [005b47b6, 005b47cd] [005b47d0, 005b47db] [005b47e0, 005b4822]]
 // Convention: __cdecl
-// Signature: void __cdecl wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031(STexturedVertex *left_vertex,STexturedVertex *right_vertex,int scanline_y)
+// Signature: void __cdecl wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031(SEdgeData *left_vertex,SEdgeData *right_vertex,int scanline_y)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031(STexturedVertex *left_vertex,STexturedVertex *right_vertex,int scanline_y)
+void __cdecl wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031(SEdgeData *left_vertex,SEdgeData *right_vertex,int scanline_y)
 {
 __asm {
         mov EAX,dword ptr [ESI + 0x8]

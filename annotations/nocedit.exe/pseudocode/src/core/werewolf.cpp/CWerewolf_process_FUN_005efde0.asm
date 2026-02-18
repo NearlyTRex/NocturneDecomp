@@ -1346,8 +1346,8 @@ section .text
     PUSH EAX                            ; 005f0f1c
     LEA EAX,[EBP + 0xffffff1a]          ; 005f0f1d
     PUSH EAX                            ; 005f0f23
-    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 005f0f24
-        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 005f0f24
+        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     FLD float ptr [EBP + 0xffffff1e]    ; 005f0f29
     ADD ESP,0x8                         ; 005f0f2f
     FSUB float ptr [EBX + 0x34]         ; 005f0f32

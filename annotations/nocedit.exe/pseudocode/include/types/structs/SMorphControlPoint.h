@@ -7,7 +7,7 @@
 // Structure: SMorphControlPoint
 // Ghidra size: 0x20 (32 bytes)
 typedef struct SMorphControlPoint {
-    char unk1[8]; // 0x0
-    CVector3f unk2[2]; // 0x8
+    int vertex_index[2]; // 0x0
+    CVector3f position[2]; // 0x8
 } SMorphControlPoint;
 

@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 305,
-    "complexity_score": 144,
+    "complexity_score": 151,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 8,
-    "pseudocode_lines": 109,
+    "pseudocode_lines": 116,
     "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 414
+    "total_lines": 421
   },
   "cross_references": [],
   "function": {
@@ -47,14 +47,14 @@
       "name": "core_actor.cpp_CDemonActor_transformVector_FUN_00408e80"
     },
     {
-      "addr": "004c79d0",
-      "is_variadic": false,
-      "name": "core_fire.cpp_CFireEffect_FUN_004c79d0"
-    },
-    {
       "addr": "004c7f20",
       "is_variadic": false,
-      "name": "core_fire.cpp_CFireEffect_FUN_004c7f20"
+      "name": "core_fire.cpp_CFireEffect_createLaserSegment2_FUN_004c7f20"
+    },
+    {
+      "addr": "004c79d0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0"
     },
     {
       "addr": "0048cae0",
@@ -206,23 +206,23 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
+      "line": 53,
       "match": "SQRT",
       "text": "fVar1 = SQRT(fStack_2c * fStack_2c + fStack_34 * fStack_34 + fStack_30 * fStack_30);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 64,
+      "line": 65,
       "match": "fpatan",
       "text": "fpatan((float10)18 / (float10)112.0f,(float10)1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 81,
+      "line": 85,
       "match": "SQRT",
-      "text": "fStack_68 = SQRT(CStack_4c.z * CStack_4c.z +",
+      "text": "fVar1 = SQRT(fStack_68 * fStack_68 + fStack_70 * fStack_70 + fStack_6c * fStack_6c);",
       "type": "decompiler_intrinsic"
     }
   ],

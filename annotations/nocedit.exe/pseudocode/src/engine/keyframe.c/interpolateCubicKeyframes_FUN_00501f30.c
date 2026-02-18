@@ -27,7 +27,7 @@ SMRGLHeaderExtended * __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_00
   uint uVar14;
   int iVar15;
   int *piVar16;
-  SSurfaceNormal *output;
+  SMRGLPrimitiveTriangle *texture;
   int iVar17;
   int *piVar18;
   CVector3i *vertex_data;
@@ -132,22 +132,24 @@ SMRGLHeaderExtended * __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_00
     g_CurrentLineNumber = 0x1a6;
     core_main_c_displayErrorAndQuit_FUN_00506f10("ZBP not found!");
   }
-  output = (SSurfaceNormal *)(piVar12 + 3);
+  texture = (SMRGLPrimitiveTriangle *)(piVar12 + 3);
   vertex_data = (CVector3i *)(header[1].child_count + 0x14);
   do {
-    uVar11 = output->unknown;
+    uVar11 = (texture->base).base.type;
     if (0x17 < uVar11) {
       if (uVar11 < 0x19) {
-        engine_keyframe_c_calculateSurfaceNormal_FUN_00501bc0(vertex_data,output);
+        engine_keyframe_c_calculateSurfaceNormal_FUN_00501bc0(vertex_data,texture);
       }
       else if (uVar11 == 0x19) {
         engine_keyframe_c_calculatePackedSurfaceNormal_FUN_00501a00
-                  (vertex_data,(SSurfacePackedNormal *)output);
+                  (vertex_data,(SMRGLPrimitiveTriangleIndex *)texture);
       }
     }
-    uVar11 = engine_model_c_getMRGLSize_FUN_00528700((SMRGLHeaderExtended *)output);
-    output = (SSurfaceNormal *)(output->unk1 + ((uVar11 & 0xfffffffc) - 0x1c));
-  } while (output->unknown != 0);
+    uVar11 = engine_model_c_getMRGLSize_FUN_00528700((SMRGLHeaderExtended *)texture);
+    texture = (SMRGLPrimitiveTriangle *)
+              ((int)&(((SMRGLPrimitiveTriangle *)(texture->vertices + -2))->base).base.type +
+              (uVar11 & 0xfffffffc));
+  } while ((texture->base).base.type != 0);
   engine_3d_c_dispatchMRGLBlockChain_FUN_00407890((SMRGLHeaderExtended *)header[1].child_count);
   return (SMRGLHeaderExtended *)&header[0x1c].child_count;
 }

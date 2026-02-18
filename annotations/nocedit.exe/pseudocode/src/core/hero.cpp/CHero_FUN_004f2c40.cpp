@@ -42,7 +42,7 @@ int __cdecl core_hero_cpp_CHero_FUN_004f2c40(CHero *this_ptr)
         if (SQRT(local_20.z * local_20.z + local_20.x * local_20.x) <= (float)5) {
           pCVar2 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
                              ((CDemonActor *)this_ptr,&local_2c,&local_20);
-          pCVar2 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+          pCVar2 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                              (&local_44,pCVar2);
           if (ABS(pCVar2->y) <= (float)0.34906585038888899) {
             core_event_cpp_CEventList_executeCommands_FUN_004aabe0

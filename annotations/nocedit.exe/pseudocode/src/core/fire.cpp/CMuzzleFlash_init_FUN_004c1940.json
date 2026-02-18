@@ -1,0 +1,158 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 72,
+    "complexity_score": 28,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 2,
+    "pseudocode_lines": 28,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 100
+  },
+  "cross_references": [
+    {
+      "addr": "004c7a60",
+      "from_addr": "004c7a9f",
+      "name": "core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c1940",
+    "address_range": [
+      [
+        "004c1940",
+        "004c19f1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CMuzzleFlash_init_FUN_004c1940",
+    "signature": "void __cdecl core_fire_cpp_CMuzzleFlash_init_FUN_004c1940(CMuzzleFlash *this_ptr,CVector3f *position,CMatrix3x3f *rotation_matrix)"
+  },
+  "function_calls": [
+    {
+      "addr": "00471360",
+      "is_variadic": false,
+      "name": "core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360"
+    },
+    {
+      "addr": "00471310",
+      "is_variadic": false,
+      "name": "core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310"
+    },
+    {
+      "addr": "00472160",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160"
+    },
+    {
+      "addr": "0056d110",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_FUN_0056d110"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8253968253968256,
+    "instruction_count": 63,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 4,
+      "CBRANCH": 2,
+      "COPY": 55,
+      "INT_ADD": 34,
+      "INT_AND": 20,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 20,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 10,
+      "INT_SUB": 18,
+      "INT_XOR": 1,
+      "LOAD": 17,
+      "POPCOUNT": 10,
+      "RETURN": 2,
+      "STORE": 29
+    },
+    "pcode_op_count": 241
+  },
+  "stack_frame": {
+    "frame_size": 52,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMuzzleFlash *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "rotation_matrix",
+        "offset": 12,
+        "size": 4,
+        "type": "CMatrix3x3f *"
+      }
+    ]
+  },
+  "suspects": []
+}

@@ -761,8 +761,8 @@ section .text
         ;   XREF to: 00526004 (CONDITIONAL_JUMP)  ; LAB_00526004
     MOV EDX,dword ptr [0x006810c8]      ; 00525fb5 | g_CDemonSetPtr | g_CDemonSetInstance
     PUSH EDX                            ; 00525fbb | g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 00525fbc
-        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_init_FUN_00574180 ; 00525fbc
+        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00574180(CDemonSet * this_ptr)
     MOV EAX,dword ptr [ESI + 0x568]     ; 00525fc1
     ADD ESP,0x4                         ; 00525fc7
     MOV dword ptr [EBP + 0x56],EAX      ; 00525fca
@@ -796,8 +796,8 @@ section .text
         ;   XREF to: 00525f1f (CONDITIONAL_JUMP)  ; LAB_00525f1f
     MOV EDI,dword ptr [0x006810c8]      ; 00526027 | g_CDemonSetPtr
     PUSH EDI                            ; 0052602d | g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 0052602e
-        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_init_FUN_00574180 ; 0052602e
+        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00574180(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00526033
     MOV EAX,dword ptr [ESI + 0x154]     ; 00526036
     PUSH ESI                            ; 0052603c
@@ -1020,8 +1020,8 @@ section .text
     PUSH EAX                            ; 005262b6
     LEA EAX,[EBP + 0x1a]                ; 005262b7
     PUSH EAX                            ; 005262ba
-    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 005262bb
-        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 005262bb
+        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     FLD float ptr [EBP + 0x1e]          ; 005262c0
     ADD ESP,0x8                         ; 005262c3
     FSUB float ptr [EBX + 0x34]         ; 005262c6
@@ -1310,8 +1310,8 @@ section .text
     FSUB float ptr [EDX + 0x8]          ; 005265e2
     PUSH EAX                            ; 005265e5
     FSTP float ptr [EBP + -0x56]        ; 005265e6
-    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 005265e9
-        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 005265e9
+        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     FLD float ptr [EBP + 0x36]          ; 005265ee
     ADD ESP,0x8                         ; 005265f1
     FSUB float ptr [EBX + 0x34]         ; 005265f4
@@ -1439,8 +1439,8 @@ section .text
     FSUB float ptr [EDX + 0x8]          ; 0052672a
     PUSH EAX                            ; 0052672d
     FSTP float ptr [EBP + -0x26]        ; 0052672e
-    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 00526731
-        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 00526731
+        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     FLD float ptr [EBP + -0x66]         ; 00526736
     ADD ESP,0x8                         ; 00526739
     FSUB float ptr [EBX + 0x34]         ; 0052673c

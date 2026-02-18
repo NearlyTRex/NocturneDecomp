@@ -2554,7 +2554,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_actor.cpp_CDemonActor_getSurfaceProperties_FUN_00409840",
+    "name":"core_actor.cpp_CDemonActor_onLaserHit_FUN_00409840",
     "ret":"void",
     "vars":{
       "params":[
@@ -2575,7 +2575,7 @@
           "type":"CDemonActor*"
         },
         {
-          "name":"surface_info",
+          "name":"laser_info",
           "storage":{
             "offset":8,
             "size":4,
@@ -2588,7 +2588,7 @@
               }
             ]
           },
-          "type":"SSurfaceInfo*"
+          "type":"SLaserInfo*"
         }
       ]
     }
@@ -39575,8 +39575,76 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_fire.cpp_FUN_004c17c0",
-    "ret":"void"
+    "name":"core_fire.cpp_CRock_setup_FUN_004c17c0",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CRock*"
+        },
+        {
+          "name":"position",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"velocity",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"model_ptr",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"CKeyFramedModel*"
+        }
+      ]
+    }
   },
   {
     "addr":"004c1940",
@@ -39589,7 +39657,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_fire.cpp_FUN_004c1940",
+    "name":"core_fire.cpp_CMuzzleFlash_init_FUN_004c1940",
     "ret":"void",
     "vars":{
       "locals":[
@@ -39656,6 +39724,56 @@
             ]
           },
           "type":"undefined4"
+        }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CMuzzleFlash*"
+        },
+        {
+          "name":"position",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"rotation_matrix",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CMatrix3x3f*"
         }
       ]
     }
@@ -42617,7 +42735,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_fire.cpp_CLightningBolt_FUN_004c5640",
+    "name":"core_fire.cpp_CLightningBolt_activate_FUN_004c5640",
     "ret":"void",
     "vars":{
       "params":[
@@ -42636,6 +42754,54 @@
             ]
           },
           "type":"CLightningBolt*"
+        },
+        {
+          "name":"start_position",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"start_width",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"end_width",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ]
     }
@@ -43075,7 +43241,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_fire.cpp_CFireEffect_FUN_004c8e40",
+    "name":"core_fire.cpp_CFireEffect_allocateToss_FUN_004c8e40",
     "ret":"int",
     "vars":{
       "params":[
@@ -43094,6 +43260,86 @@
             ]
           },
           "type":"CFireEffect*"
+        },
+        {
+          "name":"toss_type",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"position",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"orientation",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"UOrientationVector*"
+        },
+        {
+          "name":"velocity",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"fuse_time",
+          "storage":{
+            "offset":24,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x18]",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ],
       "ret_storage":{
@@ -43119,7 +43365,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_fire.cpp_CFireEffect_FUN_004c90c0",
+    "name":"core_fire.cpp_CFireEffect_createTrailFromPoints_FUN_004c90c0",
     "ret":"int",
     "vars":{
       "locals":[
@@ -43293,7 +43539,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_fire.cpp_CFireEffect_FUN_004c9240",
+    "name":"core_fire.cpp_CFireEffect_createPopcorn_FUN_004c9240",
     "ret":"void",
     "vars":{
       "params":[
@@ -43312,6 +43558,38 @@
             ]
           },
           "type":"CFireEffect*"
+        },
+        {
+          "name":"position",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"velocity",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
         }
       ]
     }
@@ -51717,7 +51995,7 @@
           "type":"CVector3i*"
         },
         {
-          "name":"output",
+          "name":"texture",
           "storage":{
             "offset":8,
             "size":4,
@@ -51730,7 +52008,7 @@
               }
             ]
           },
-          "type":"SSurfaceNormal*"
+          "type":"SMRGLPrimitiveTriangle*"
         }
       ]
     }
@@ -52704,7 +52982,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_manpuz.cpp_CMirrorHack_getSurfaceProperties_FUN_0050b2c0",
+    "name":"core_manpuz.cpp_CMirrorHack_onLaserHit_FUN_0050b2c0",
     "ret":"void",
     "vars":{
       "params":[
@@ -52725,7 +53003,7 @@
           "type":"CMirrorHack*"
         },
         {
-          "name":"surface_info",
+          "name":"laser_info",
           "storage":{
             "offset":8,
             "size":4,
@@ -52738,7 +53016,7 @@
               }
             ]
           },
-          "type":"SSurfaceInfo*"
+          "type":"SLaserInfo*"
         }
       ]
     }
@@ -91471,7 +91749,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_weather.cpp_CWeather_FUN_005ef140",
+    "name":"core_weather.cpp_CWeather_createThunder_FUN_005ef140",
     "ret":"void",
     "vars":{
       "locals":[
@@ -91601,7 +91879,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_weather.cpp_CWeather_FUN_005ef940",
+    "name":"core_weather.cpp_CWeather_setOriginAndRotation_FUN_005ef940",
     "ret":"void",
     "vars":{
       "locals":[
@@ -91848,7 +92126,7 @@
           "type":"CWeather*"
         },
         {
-          "name":"param_2",
+          "name":"direction",
           "storage":{
             "offset":8,
             "size":4,
@@ -91864,7 +92142,7 @@
           "type":"CVector3f*"
         },
         {
-          "name":"param_3",
+          "name":"rotation",
           "storage":{
             "offset":12,
             "size":4,

@@ -36,7 +36,9 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_004c9c00(CFlame *this_ptr,float d
       iVar3 = 0;
       do {
         iVar3 = iVar3 + 1;
-        core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);
+        core_fire_cpp_CFireEffect_createSpark_FUN_004c79d0
+                  (g_CFireEffectPtr,&(this_ptr->base).location.position,(CVector3f *)0x0,0x4000,
+                   0x10000,1,0xffff);
       } while (iVar3 < 10);
     }
     this_ptr->is_visible = 1;

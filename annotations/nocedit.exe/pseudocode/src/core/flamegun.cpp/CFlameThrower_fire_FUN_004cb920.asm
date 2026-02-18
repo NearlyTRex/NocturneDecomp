@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-;   core_fire.cpp_CFireEffect_FUN_004c8ef0
+;   core_fire.cpp_CFireEffect_createGunFlames_FUN_004c8ef0
 ;
 ; *****************************************************************************
 
@@ -55,8 +55,8 @@ section .text
     PUSH EAX                            ; 004cb969
     MOV ECX,dword ptr [0x0067a3d0]      ; 004cb96a | g_CFireEffectInstance | g_CFireEffectPtr
     PUSH ECX                            ; 004cb970 | g_CFireEffectInstance
-    CALL core_fire.cpp_CFireEffect_FUN_004c8ef0 ; 004cb971
-        ;   XREF to: 004c8ef0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c8ef0(CFireEffect * this_ptr)
+    CALL core_fire.cpp_CFireEffect_createGunFlames_FUN_004c8ef0 ; 004cb971
+        ;   XREF to: 004c8ef0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createGunFlames_FUN_004c8ef0(CFireEffect * this_ptr, CVector3f * position, CVector3f * euler_angles, int flame_count, ...)
     MOV ESI,dword ptr [EBX + 0x580]     ; 004cb976
     ADD ESP,0x14                        ; 004cb97c
     TEST ESI,ESI                        ; 004cb97f

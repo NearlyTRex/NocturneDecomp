@@ -42,7 +42,7 @@
 ;   core_fire.cpp_CStake_process_FUN_004c0210
 ;   core_fire.cpp_CToss_process_FUN_004c4000
 ;   core_fire.cpp_CTrail_process_FUN_004c5e40
-;   core_fire.cpp_FUN_004c3870
+;   core_fire.cpp_updateTextureAnimCounts_FUN_004c3870
 ;
 ; *****************************************************************************
 
@@ -57,9 +57,9 @@ section .text
     AND ESP,0xfffffff8                  ; 004c6ec6
     XOR EDX,EDX                         ; 004c6ec9
     MOV EBX,0x2d141ec                   ; 004c6ecb | g_SmokeParticlePool
-    MOV dword ptr [0x02d667ac],EDX      ; 004c6ed0 | g_CFireEffectRocksEnd
-    CALL core_fire.cpp_FUN_004c3870     ; 004c6ed6
-        ;   XREF to: 004c3870 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_004c3870()
+    MOV dword ptr [0x02d667ac],EDX      ; 004c6ed0 | g_LaserBeamActiveCount
+    CALL core_fire.cpp_updateTextureAnimCounts_FUN_004c3870 ; 004c6ed6
+        ;   XREF to: 004c3870 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_updateTextureAnimCounts_FUN_004c3870()
     LEA ESI,[EBX + 0x16000]             ; 004c6edb | g_BulletHoleActiveCount
     MOV EAX,dword ptr [EBX]             ; 004c6ee1 | g_SmokeParticlePool | DAT_02d14218
         ;   Label: LAB_004c6ee1
@@ -72,7 +72,7 @@ section .text
     JNZ 0x004c6ee1                      ; 004c6ef0
         ;   XREF to: 004c6ee1 (CONDITIONAL_JUMP)  ; LAB_004c6ee1
     MOV EBX,0x2d53e00                   ; 004c6ef2 | g_SparkPool
-    LEA ESI,[EBX + 0x4c00]              ; 004c6ef7 | g_SparkActiveCount
+    LEA ESI,[EBX + 0x4c00]              ; 004c6ef7 | g_MuzzleFlashAllocIndex
     FLD float ptr [EBX + 0x18]          ; 004c6efd | DAT_02d53e18 | DAT_02d53e64
         ;   Label: LAB_004c6efd
     FLDZ                                ; 004c6f00
@@ -91,7 +91,7 @@ section .text
     JNZ 0x004c6efd                      ; 004c6f18
         ;   XREF to: 004c6efd (CONDITIONAL_JUMP)  ; LAB_004c6efd
     MOV EBX,0x2d58a04                   ; 004c6f1a | g_MuzzleFlashPool
-    LEA ESI,[EBX + 0x730]               ; 004c6f1f | g_GlassParticleNextIndex
+    LEA ESI,[EBX + 0x730]               ; 004c6f1f | g_GlassParticleAllocIndex
     MOV EAX,dword ptr [EBX]             ; 004c6f25 | g_MuzzleFlashPool | DAT_02d58a60
         ;   Label: LAB_004c6f25
     TEST EAX,EAX                        ; 004c6f27
@@ -130,7 +130,7 @@ section .text
         ;   XREF to: 004c6f4c (CONDITIONAL_JUMP)  ; LAB_004c6f4c
     MOV EBX,0x2d59138                   ; 004c6f70 | g_GlassParticlePool
         ;   Label: LAB_004c6f70
-    LEA ESI,[EBX + 0x9c00]              ; 004c6f75 | g_CFireEffectGlassParticlesEnd
+    LEA ESI,[EBX + 0x9c00]              ; 004c6f75 | g_BulletTrailAllocIndex
     FLD float ptr [EBX + 0x18]          ; 004c6f7b | DAT_02d59150 | DAT_02d591ec
         ;   Label: LAB_004c6f7b
     FLDZ                                ; 004c6f7e
@@ -149,7 +149,7 @@ section .text
     JNZ 0x004c6f7b                      ; 004c6f99
         ;   XREF to: 004c6f7b (CONDITIONAL_JUMP)  ; LAB_004c6f7b
     MOV EBX,0x2d62d3c                   ; 004c6f9b | g_BulletTrailPool
-    LEA ESI,[EBX + 0x168]               ; 004c6fa0 | g_BulletTrailActiveListHead
+    LEA ESI,[EBX + 0x168]               ; 004c6fa0 | g_FireballAllocIndex
     MOV EAX,dword ptr [EBX + 0x20]      ; 004c6fa6 | DAT_02d62d5c | DAT_02d62d80
         ;   Label: LAB_004c6fa6
     TEST EAX,EAX                        ; 004c6fa9
@@ -165,7 +165,7 @@ section .text
     JNZ 0x004c6fa6                      ; 004c6fbb
         ;   XREF to: 004c6fa6 (CONDITIONAL_JUMP)  ; LAB_004c6fa6
     MOV EBX,0x2d62ea8                   ; 004c6fbd | g_FireballPool
-    LEA ESI,[EBX + 0x2700]              ; 004c6fc2 | INT_02d655a8
+    LEA ESI,[EBX + 0x2700]              ; 004c6fc2 | g_RockAllocIndex
     FLD float ptr [EBX + 0x18]          ; 004c6fc8 | DAT_02d62ec0 | DAT_02d62f5c
         ;   Label: LAB_004c6fc8
     FLDZ                                ; 004c6fcb
@@ -184,7 +184,7 @@ section .text
     JNZ 0x004c6fc8                      ; 004c6fe6
         ;   XREF to: 004c6fc8 (CONDITIONAL_JUMP)  ; LAB_004c6fc8
     MOV EBX,0x2d655ac                   ; 004c6fe8 | g_RockPool
-    LEA ESI,[EBX + 0x1200]              ; 004c6fed | g_CFireEffectRocksEnd
+    LEA ESI,[EBX + 0x1200]              ; 004c6fed | g_LaserBeamActiveCount
     FLD float ptr [EBX + 0x18]          ; 004c6ff3 | DAT_02d655c4 | DAT_02d6560c
         ;   Label: LAB_004c6ff3
     FLDZ                                ; 004c6ff6
@@ -223,7 +223,7 @@ section .text
     LEA EDX,[EDX]                       ; 004c703d
     MOV EBX,0x2d677b4                   ; 004c7040 | g_ExplosionPool
         ;   Label: LAB_004c7040
-    LEA ESI,[EBX + 0x118]               ; 004c7045 | g_ExplosionActiveListHead
+    LEA ESI,[EBX + 0x118]               ; 004c7045 | g_TossAllocIndex
     PUSH EBX                            ; 004c704b | g_ExplosionPool | DAT_02d677d0
         ;   Label: LAB_004c704b
     CALL core_fire.cpp_CExplosion_process_FUN_004c3ac0 ; 004c704c
@@ -234,7 +234,7 @@ section .text
     JNZ 0x004c704b                      ; 004c7059
         ;   XREF to: 004c704b (CONDITIONAL_JUMP)  ; LAB_004c704b
     MOV EBX,0x2d678d0                   ; 004c705b | g_TossPool
-    LEA ESI,[EBX + 0x4dd0]              ; 004c7060 | INT_02d6c6a0
+    LEA ESI,[EBX + 0x4dd0]              ; 004c7060 | g_CraterAllocIndex
     PUSH EBX                            ; 004c7066 | g_TossPool | DAT_02d67cb4
         ;   Label: LAB_004c7066
     CALL core_fire.cpp_CToss_process_FUN_004c4000 ; 004c7067
@@ -245,7 +245,7 @@ section .text
     JNZ 0x004c7066                      ; 004c7077
         ;   XREF to: 004c7066 (CONDITIONAL_JUMP)  ; LAB_004c7066
     MOV EBX,0x2d6c6a4                   ; 004c7079 | g_CraterPool
-    LEA ESI,[EBX + 0x8c0]               ; 004c707e | g_CraterActiveListHead
+    LEA ESI,[EBX + 0x8c0]               ; 004c707e | g_GunFlameAllocIndex
     PUSH EBX                            ; 004c7084 | g_CraterPool | DAT_02d6c714
         ;   Label: LAB_004c7084
     CALL core_fire.cpp_CCrater_process_FUN_004c4550 ; 004c7085
@@ -257,7 +257,7 @@ section .text
         ;   XREF to: 004c7084 (CONDITIONAL_JUMP)  ; LAB_004c7084
     MOV EBX,0x2d6cf68                   ; 004c7094 | g_GunFlamePool
     XOR ESI,ESI                         ; 004c7099
-    LEA EDI,[EBX + 0x4650]              ; 004c709b | g_GunFlameActiveListHead
+    LEA EDI,[EBX + 0x4650]              ; 004c709b | g_LightningBoltAllocIndex
     TEST dword ptr [EBX],0x7fffffff     ; 004c70a1 | g_GunFlamePool | DAT_02d6cf8c
         ;   Label: LAB_004c70a1
     JZ 0x004c70c0                       ; 004c70a7
@@ -279,7 +279,7 @@ section .text
     JNZ 0x004c70a1                      ; 004c70c5
         ;   XREF to: 004c70a1 (CONDITIONAL_JUMP)  ; LAB_004c70a1
     MOV EBX,0x2d715bc                   ; 004c70c7 | g_LightningBoltPool
-    LEA ESI,[EBX + 0x1b8]               ; 004c70cc | g_LightningBoltActiveListHead
+    LEA ESI,[EBX + 0x1b8]               ; 004c70cc | g_TrailAllocIndex
     PUSH EBX                            ; 004c70d2 | g_LightningBoltPool | DAT_02d715e8
         ;   Label: LAB_004c70d2
     CALL core_fire.cpp_CLightningBolt_process_FUN_004c56e0 ; 004c70d3
@@ -290,7 +290,7 @@ section .text
     JNZ 0x004c70d2                      ; 004c70e0
         ;   XREF to: 004c70d2 (CONDITIONAL_JUMP)  ; LAB_004c70d2
     MOV EBX,0x2d71778                   ; 004c70e2 | g_TrailPool
-    LEA ESI,[EBX + 0xe10]               ; 004c70e7 | g_TrailActiveListHead
+    LEA ESI,[EBX + 0xe10]               ; 004c70e7 | g_ShellAllocIndex
     PUSH EBX                            ; 004c70ed | g_TrailPool | DAT_02d7179c
         ;   Label: LAB_004c70ed
     CALL core_fire.cpp_CTrail_process_FUN_004c5e40 ; 004c70ee
@@ -301,7 +301,7 @@ section .text
     JNZ 0x004c70ed                      ; 004c70fb
         ;   XREF to: 004c70ed (CONDITIONAL_JUMP)  ; LAB_004c70ed
     MOV EBX,0x2d7258c                   ; 004c70fd | g_ShellPool
-    LEA ESI,[EBX + 0x1130]              ; 004c7102 | g_CFireEffectShellsEnd
+    LEA ESI,[EBX + 0x1130]              ; 004c7102 | g_PopcornAllocIndex
     PUSH EBX                            ; 004c7108 | g_ShellPool | DAT_02d725e4
         ;   Label: LAB_004c7108
     MOV EAX,dword ptr [EBX + 0x34]      ; 004c7109 | DAT_02d725c0 | DAT_02d72618
@@ -312,7 +312,7 @@ section .text
     JNZ 0x004c7108                      ; 004c7117
         ;   XREF to: 004c7108 (CONDITIONAL_JUMP)  ; LAB_004c7108
     MOV EBX,0x2d736c0                   ; 004c7119 | g_PopcornPool
-    LEA ESI,[EBX + 0x3800]              ; 004c711e | g_CFireEffectPopcornsEnd
+    LEA ESI,[EBX + 0x3800]              ; 004c711e | g_RainDropAllocIndex
     FLD float ptr [EBX + 0x18]          ; 004c7124 | DAT_02d736d8 | DAT_02d73710
         ;   Label: LAB_004c7124
     FLDZ                                ; 004c7127

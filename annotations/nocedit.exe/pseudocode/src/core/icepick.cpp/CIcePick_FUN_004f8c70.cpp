@@ -176,7 +176,7 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004f8c70(CIcePick *this_ptr)
         }
       }
       if (bVar2) {
-        pCVar6 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+        pCVar6 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                            (&CStack_54,&local_6c);
         fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                               (pCVar6->y - (this_ptr->base).base.base.orient.vec.y);
@@ -218,8 +218,7 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004f8c70(CIcePick *this_ptr)
       local_6c.y = CStack_60.y;
       local_6c.z = CStack_60.z;
     }
-    pCVar6 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_84,&local_6c)
-    ;
+    pCVar6 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_84,&local_6c);
     if (&local_6c != pCVar6) {
       local_6c.x = pCVar6->x;
       local_6c.y = pCVar6->y;

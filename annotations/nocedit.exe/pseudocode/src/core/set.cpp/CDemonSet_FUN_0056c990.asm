@@ -52,7 +52,7 @@
 ;   core_dlight.cpp_CDemonLight_drawShadowDepthBuffer_FUN_00476670
 ;   core_dlight.cpp_CDemonLight_endScene_FUN_00472d30
 ;   core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0
-;   core_fire.cpp_CFireEffect_FUN_004c93d0
+;   core_fire.cpp_CFireEffect_hasActiveMuzzleFlash_FUN_004c93d0
 ;   core_fire.cpp_CFireEffect_render_FUN_004c7180
 ;   core_gore.cpp_CGore_renderParticles_FUN_004ed7b0
 ;   core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80
@@ -291,8 +291,8 @@ section .text
     MOV EDI,dword ptr [0x0067a3d0]      ; 0056cbf3 | g_CFireEffectPtr
     PUSH EDI                            ; 0056cbf9 | g_CFireEffectInstance
     MOV ESI,EAX                         ; 0056cbfa
-    CALL core_fire.cpp_CFireEffect_FUN_004c93d0 ; 0056cbfc
-        ;   XREF to: 004c93d0 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CFireEffect_FUN_004c93d0(CFireEffect * this_ptr)
+    CALL core_fire.cpp_CFireEffect_hasActiveMuzzleFlash_FUN_004c93d0 ; 0056cbfc
+        ;   XREF to: 004c93d0 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CFireEffect_hasActiveMuzzleFlash_FUN_004c93d0(CFireEffect * this_ptr)
     SHL EAX,0x7                         ; 0056cc01
     ADD ESI,EAX                         ; 0056cc04
     MOV EAX,[0x006848fc]                ; 0056cc06 | g_CWeatherPtr

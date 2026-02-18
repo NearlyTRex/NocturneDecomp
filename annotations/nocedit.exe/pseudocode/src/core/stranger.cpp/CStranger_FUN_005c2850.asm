@@ -70,7 +70,7 @@
 ;   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0
-;   core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180
+;   core_setcolid.cpp_CDemonSet_init_FUN_00574180
 ;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0
 ;   core_setcolid.cpp_CDemonSet_testCapsuleCollision_FUN_00573470
 ;   core_stranger.cpp_FUN_005bb010
@@ -597,8 +597,8 @@ section .text
     MOV EAX,[0x006810c8]                ; 005c2e9c | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EAX                            ; 005c2ea1 | g_CDemonSetInstance
     FSTP float ptr [ESP + 0xc4]         ; 005c2ea2
-    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 005c2ea9
-        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_init_FUN_00574180 ; 005c2ea9
+        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00574180(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 005c2eae
     FLD float ptr [ESP + 0xc0]          ; 005c2eb1
     FSUB float ptr [EBX + 0x24]         ; 005c2eb8
@@ -641,8 +641,8 @@ section .text
     MOV EDX,dword ptr [0x006810c8]      ; 005c2f1c | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_005c2f1c
     PUSH EDX                            ; 005c2f22 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 005c2f23
-        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_init_FUN_00574180 ; 005c2f23
+        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00574180(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 005c2f28
     JMP 0x005c2fab                      ; 005c2f2b
         ;   XREF to: 005c2fab (UNCONDITIONAL_JUMP)  ; LAB_005c2fab

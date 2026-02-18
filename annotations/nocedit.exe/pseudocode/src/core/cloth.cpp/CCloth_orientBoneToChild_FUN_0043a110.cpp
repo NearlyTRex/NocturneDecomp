@@ -52,7 +52,7 @@ void __cdecl core_cloth_cpp_CCloth_orientBoneToChild_FUN_0043a110(CCloth *this_p
     g_CurrentLineNumber = 0x2bf;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't orient bone with no children!");
   }
-  core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
             (&local_34,model_ptr->transformed_vertices + local_18);
   local_28.x = 0.0;
   local_28.y = 0.0;

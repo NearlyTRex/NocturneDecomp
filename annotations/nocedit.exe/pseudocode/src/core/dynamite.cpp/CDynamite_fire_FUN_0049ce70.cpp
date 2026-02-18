@@ -15,7 +15,10 @@ int __cdecl core_dynamite_cpp_CDynamite_fire_FUN_0049ce70(CDynamite *this_ptr)
   if (iVar1 == 0) {
     return 0;
   }
-  core_fire_cpp_CFireEffect_FUN_004c8dd0(g_CFireEffectPtr);
+  core_fire_cpp_CFireEffect_createToss_FUN_004c8dd0
+            (g_CFireEffectPtr,&(this_ptr->base).base.location.position,&(this_ptr->base).base.orient
+             ,(CVector3f *)(this_ptr->unk + 4),*(float *)this_ptr->unk,
+             *(uint *)(this_ptr->unk + 0x10));
   this_ptr->unk[0x10] = '\0';
   this_ptr->unk[0x11] = '\0';
   this_ptr->unk[0x12] = '\0';
@@ -29,6 +32,6 @@ int __cdecl core_dynamite_cpp_CDynamite_fire_FUN_0049ce70(CDynamite *this_ptr)
   this_ptr->unk[0xe] = '\0';
   this_ptr->unk[0xf] = '\0';
   *(uint *)(this_ptr->unk + 8) = *(uint *)(this_ptr->unk + 0xc);
-  *(uint *)(this_ptr->unk + 4) = *(uint *)(this_ptr->unk + 8);
+  ((CVector3f *)(this_ptr->unk + 4))->x = *(float *)(this_ptr->unk + 8);
   return 1;
 }

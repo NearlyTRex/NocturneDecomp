@@ -149,9 +149,9 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float d
       }
       if (this_ptr->new_attack == 0) {
         pCStack_c0 = &local_30;
-        core_fire_cpp_CFireEffect_FUN_004c90c0(g_CFireEffectPtr);
+        core_fire_cpp_CFireEffect_createTrailFromPoints_FUN_004c90c0(g_CFireEffectPtr);
         pCStack_c0 = &local_54;
-        core_fire_cpp_CFireEffect_FUN_004c90c0(g_CFireEffectPtr);
+        core_fire_cpp_CFireEffect_createTrailFromPoints_FUN_004c90c0(g_CFireEffectPtr);
       }
       if (&this_ptr->left_hand_pos != &local_30) {
         (this_ptr->left_hand_pos).x = local_30.x;

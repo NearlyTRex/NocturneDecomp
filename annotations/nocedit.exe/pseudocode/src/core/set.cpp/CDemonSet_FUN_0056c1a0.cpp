@@ -177,7 +177,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c1a0(CDemonSet *this_ptr)
       core_set_cpp_FUN_00570af0();
     } while (iVar7 < this_ptr->mirror_glass_actor_count);
   }
-  core_weather_cpp_CWeather_FUN_005ef190(g_CWeatherPtr);
+  core_weather_cpp_CWeather_renderParticles_FUN_005ef190(g_CWeatherPtr);
   local_2c = 0;
   if (0 < g_DynamicLightCount) {
     local_34 = 0;

@@ -43,7 +43,7 @@ void __cdecl core_particle_cpp_CParticle_process_FUN_00545760(CParticle *this_pt
       (this_ptr->previous_position).y = (this_ptr->position).y;
       (this_ptr->previous_position).z = (this_ptr->position).z;
     }
-    this_ptr->collision_result = this_ptr->collision_flag;
+    this_ptr->was_in_solid = this_ptr->is_in_solid;
     local_20 = g_CGamePtr->delta_time_float;
     (this_ptr->velocity).y = this_ptr->gravity_acceleration * local_20 + (this_ptr->velocity).y;
     local_98 = (this_ptr->velocity).x * local_20;
@@ -57,14 +57,14 @@ void __cdecl core_particle_cpp_CParticle_process_FUN_00545760(CParticle *this_pt
               (&g_CDemonRaytraceInstance,&this_ptr->position,in_stack_ffffff50);
     voxel_coords = &local_74;
     this_ptr_00 = &g_CDemonRaytraceInstance;
-    local_74.x = local_68.collision_result;
+    local_74.x = local_68.was_in_solid;
     *(uint *)((int)&local_74 + (uint)bVar5 * -8 + 4) =
          *(uint *)((int)&local_68 + (uint)bVar5 * -8 + 0x34);
     *(float *)((int)&local_74 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
          (&fStack_30)[(uint)bVar5 * -2 + (uint)bVar5 * -2];
     iVar4 = core_dtrace_cpp_CDemonRaytrace_testVoxelAtCoords_FUN_00499970(this_ptr_00,voxel_coords);
-    this_ptr->collision_flag = iVar4;
-    if ((iVar4 != 0) || (this_ptr->collision_result != 0)) {
+    this_ptr->is_in_solid = iVar4;
+    if ((iVar4 != 0) || (this_ptr->was_in_solid != 0)) {
       pCVar1 = &this_ptr->previous_position;
       local_a8 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
                            (&g_CDemonRaytraceInstance,pCVar1,&this_ptr->position,&local_2c,
@@ -73,9 +73,9 @@ void __cdecl core_particle_cpp_CParticle_process_FUN_00545760(CParticle *this_pt
         local_68.lifetime_remaining = (this_ptr->position).x - pCVar1->x;
         local_68.gravity_acceleration = (this_ptr->position).y - (this_ptr->previous_position).y;
         local_80 = local_68.lifetime_remaining * local_a8;
-        local_68.collision_flag = (int)((this_ptr->position).z - (this_ptr->previous_position).z);
+        local_68.is_in_solid = (int)((this_ptr->position).z - (this_ptr->previous_position).z);
         local_7c = local_68.gravity_acceleration * local_a8;
-        local_78 = (float)local_68.collision_flag * local_a8;
+        local_78 = (float)local_68.is_in_solid * local_a8;
         local_8c = local_80 * 0.8f;
         local_88 = local_7c * 0.8f;
         local_84 = local_78 * 0.8f;

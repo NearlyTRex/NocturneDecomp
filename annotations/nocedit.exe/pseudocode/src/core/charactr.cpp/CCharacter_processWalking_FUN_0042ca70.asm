@@ -37,7 +37,7 @@
 ;   core_charactr.cpp_CCharacter_followActor_FUN_0042c5f0
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0
 ;   core_door.cpp_CDoor_getOpenStandPos_FUN_00480e20
-;   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 ;   core_waypoint.cpp_CWayPoint_FUN_005ec320
 ;   engine_console.cpp_CConsole_printf_FUN_00441890
 ;
@@ -170,8 +170,8 @@ section .text
     PUSH EAX                            ; 0042cbc2
     LEA EAX,[ESP + 0x4]                 ; 0042cbc3
     PUSH EAX                            ; 0042cbc7
-    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 0042cbc8
-        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 0042cbc8
+        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     FLD float ptr [EAX + 0x4]           ; 0042cbcd
     ADD ESP,0x8                         ; 0042cbd0
     FST float ptr [EBX + 0x2418]        ; 0042cbd3

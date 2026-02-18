@@ -118,7 +118,7 @@ section .text
     JZ 0x004c75e6                       ; 004c7552
         ;   XREF to: 004c75e6 (CONDITIONAL_JUMP)  ; LAB_004c75e6
     MOV EBX,0x2d6c6a4                   ; 004c7558 | g_CraterPool
-    LEA ESI,[EBX + 0x8c0]               ; 004c755d | g_CraterActiveListHead
+    LEA ESI,[EBX + 0x8c0]               ; 004c755d | g_GunFlameAllocIndex
     PUSH EBX                            ; 004c7563 | g_CraterPool | DAT_02d6c714
         ;   Label: LAB_004c7563
     CALL core_fire.cpp_CCrater_render_FUN_004c4620 ; 004c7564

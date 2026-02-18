@@ -1,0 +1,191 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 42,
+    "complexity_score": 12,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 2,
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 54
+  },
+  "cross_references": [
+    {
+      "addr": "00484410",
+      "from_addr": "00484cfe",
+      "name": "core_dracbrid.cpp_CDraculaBride_process_FUN_00484410",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a8070",
+      "from_addr": "004a849e",
+      "name": "core_emitter.cpp_CEmitter_process_FUN_004a8070",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004cb920",
+      "from_addr": "004cb971",
+      "name": "core_flamegun.cpp_CFlameThrower_fire_FUN_004cb920",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c8ef0",
+    "address_range": [
+      [
+        "004c8ef0",
+        "004c8f48"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CFireEffect_createGunFlames_FUN_004c8ef0",
+    "signature": "void __cdecl core_fire_cpp_CFireEffect_createGunFlames_FUN_004c8ef0(CFireEffect *this_ptr,CVector3f *position,CVector3f *euler_angles,int flame_count,int flame_type)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c4db0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CGunFlame_activate_FUN_004c4db0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02d6cf64",
+      "name": "g_GunFlameAllocIndex",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d6cf68",
+      "name": "g_GunFlamePool",
+      "type": "CGunFlame[500]",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "004cb971",
+        "call_type": "direct",
+        "caller": "core_flamegun.cpp_CFlameThrower_fire_FUN_004cb920",
+        "estimated_params": 5,
+        "instructions_analyzed": 10,
+        "reg_params": [],
+        "stack_params": 5
+      },
+      {
+        "call_addr": "004a849e",
+        "call_type": "direct",
+        "caller": "core_emitter.cpp_CEmitter_process_FUN_004a8070",
+        "estimated_params": 5,
+        "instructions_analyzed": 10,
+        "reg_params": [],
+        "stack_params": 5
+      },
+      {
+        "call_addr": "00484cfe",
+        "call_type": "direct",
+        "caller": "core_dracbrid.cpp_CDraculaBride_process_FUN_00484410",
+        "estimated_params": 5,
+        "instructions_analyzed": 11,
+        "reg_params": [],
+        "stack_params": 5
+      },
+      {
+        "call_addr": "00484d39",
+        "call_type": "direct",
+        "caller": "core_dracbrid.cpp_CDraculaBride_process_FUN_00484410",
+        "estimated_params": 5,
+        "instructions_analyzed": 21,
+        "reg_params": [],
+        "stack_params": 5
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 5,
+    "estimated_params": 5
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.411764705882353,
+    "instruction_count": 34,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CALL": 1,
+      "CBRANCH": 3,
+      "COPY": 32,
+      "INT_ADD": 12,
+      "INT_AND": 18,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 17,
+      "INT_LESS": 1,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 3,
+      "INT_SEXT": 3,
+      "INT_SLESS": 8,
+      "INT_SUB": 11,
+      "INT_XOR": 1,
+      "LOAD": 9,
+      "POPCOUNT": 8,
+      "RETURN": 1,
+      "STORE": 9,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 150
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireEffect *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "euler_angles",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "flame_count",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "flame_type",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

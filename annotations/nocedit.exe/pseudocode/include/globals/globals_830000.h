@@ -6,6 +6,7 @@
 #include "types/classes/CCramTex.h"
 #include "types/classes/CDeformableModelInstance.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CVector3f.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x830000
@@ -25,13 +26,11 @@ extern CDemonActorType g_CColonelClassInfo;
 extern CDemonActorType g_CConveyorClassInfo;
 extern CDemonActorType g_CZombieCowClassInfo;
 
+// CVector3f
+extern CVector3f CVector3f_00838e40;
+extern CVector3f CVector3f_00838e4c;
+
 // int
-extern int INT_00838e40;
-extern int INT_00838e44;
-extern int INT_00838e48;
-extern int INT_00838e4c;
-extern int INT_00838e50;
-extern int INT_00838e54;
 extern int INT_0083b124;
 extern int INT_0083b128;
 extern int INT_0083b12c;

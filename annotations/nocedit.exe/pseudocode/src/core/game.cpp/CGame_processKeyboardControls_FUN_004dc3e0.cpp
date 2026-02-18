@@ -17,8 +17,8 @@ void __cdecl core_game_cpp_CGame_processKeyboardControls_FUN_004dc3e0(CGame *thi
   byte bVar5;
   
   if (this_ptr->screen_clear_condition != 0) {
-    (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x200);
-    (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x201);
+    (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIM_LBUTTON);
+    (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIM_RBUTTON);
   }
   player_control->strafe_speed = 0.0;
   pfVar1 = &player_control->strafe_speed;

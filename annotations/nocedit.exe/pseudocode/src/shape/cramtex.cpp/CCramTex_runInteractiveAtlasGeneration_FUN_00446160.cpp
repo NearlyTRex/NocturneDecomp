@@ -70,12 +70,12 @@ int __cdecl shape_cramtex_cpp_CCramTex_runInteractiveAtlasGeneration_FUN_0044616
     do {
       pSVar20->active_flag = 0;
       iVar21 = g_CramBestSolutionMetric1;
-      if ((pSVar20->reserved_0x18 == 0) &&
+      if ((pSVar20->unk1 == 0) &&
          ((*(int *)(in_stack_00000004 + 0xc) != *(int *)(in_stack_00000004 + 8) ||
           (pSVar20->orientation == 0)))) {
         if (pSVar20->orientation == 0) {
           iVar18 = pSVar20->top + *(int *)(in_stack_00000004 + 8);
-          pSVar20->reserved_0x1c = iVar18;
+          pSVar20->unk2 = iVar18;
           if (iVar18 < iVar21) {
             iVar21 = pSVar20->right + *(int *)(in_stack_00000004 + 0xc);
             goto LAB_00446547;
@@ -83,12 +83,12 @@ int __cdecl shape_cramtex_cpp_CCramTex_runInteractiveAtlasGeneration_FUN_0044616
         }
         else {
           iVar18 = pSVar20->top + *(int *)(in_stack_00000004 + 0xc);
-          pSVar20->reserved_0x1c = iVar18;
+          pSVar20->unk2 = iVar18;
           if (iVar18 < iVar21) {
             iVar21 = pSVar20->right + *(int *)(in_stack_00000004 + 8);
 LAB_00446547:
             iVar18 = g_CramBestSolutionMetric1;
-            pSVar20->reserved_0x20 = iVar21;
+            pSVar20->unk3 = iVar21;
             if (iVar21 < iVar18) {
               iVar21 = g_CramPlacedTextureCount + -1;
               if (-1 < iVar21) {
@@ -97,8 +97,8 @@ LAB_00446547:
                   if ((((pSVar20->left == pCVar10->assigned_map_number) &&
                        (pSVar20->top < pCVar10->working_top)) &&
                       (pSVar20->right < pCVar10->working_width)) &&
-                     ((pCVar10->placement_bottom < pSVar20->reserved_0x1c &&
-                      (pCVar10->working_right < pSVar20->reserved_0x20)))) goto LAB_004461b1;
+                     ((pCVar10->placement_bottom < pSVar20->unk2 &&
+                      (pCVar10->working_right < pSVar20->unk3)))) goto LAB_004461b1;
                   iVar21 = iVar21 + -1;
                   pCVar10 = pCVar10 + -1;
                 } while (-1 < iVar21);
@@ -179,13 +179,12 @@ LAB_004461b1:
             if (0 < g_CramRectangleCount) {
               pSVar20 = g_CramRectangles;
               do {
-                if ((((pSVar20->reserved_0x18 == 0) &&
-                     (pSVar20->left == *(int *)(in_stack_00000004 + 0x10))) &&
-                    (*(int *)(in_stack_00000004 + 0x1c) < pSVar20->bottom)) &&
+                if ((((pSVar20->unk1 == 0) && (pSVar20->left == *(int *)(in_stack_00000004 + 0x10)))
+                    && (*(int *)(in_stack_00000004 + 0x1c) < pSVar20->bottom)) &&
                    (((*(int *)(in_stack_00000004 + 0x20) < pSVar20->max_dimension &&
                      (pSVar20->top < *(int *)(in_stack_00000004 + 0x24))) &&
                     (pSVar20->right < *(int *)(in_stack_00000004 + 0x28))))) {
-                  pSVar20->reserved_0x18 = in_stack_00000004;
+                  pSVar20->unk1 = in_stack_00000004;
                 }
                 iVar21 = iVar21 + 1;
                 pSVar20 = pSVar20 + 1;
@@ -254,7 +253,7 @@ LAB_004461b1:
                           } while (-1 < iVar16);
                         }
                         if (iVar16 < 0) {
-                          local_54->reserved_0x18 = 0;
+                          local_54->unk1 = 0;
                           local_54->active_flag = 1;
                           local_54->left = iVar18;
                           local_54->top = iVar12;
@@ -308,7 +307,7 @@ LAB_00446d87:
                     } while (-1 < iVar17);
                   }
                   if (iVar17 < 0) {
-                    local_4c->reserved_0x18 = 0;
+                    local_4c->unk1 = 0;
                     local_4c->active_flag = 1;
                     local_4c->left = iVar18;
                     local_4c->top = local_80;
@@ -386,7 +385,7 @@ LAB_00446df8:
                           } while (-1 < iVar16);
                         }
                         if (iVar16 < 0) {
-                          local_48->reserved_0x18 = 0;
+                          local_48->unk1 = 0;
                           local_48->active_flag = 1;
                           local_48->left = iVar18;
                           local_48->top = iVar22;
@@ -440,7 +439,7 @@ LAB_00446f25:
                     } while (-1 < iVar17);
                   }
                   if (iVar17 < 0) {
-                    local_40->reserved_0x18 = 0;
+                    local_40->unk1 = 0;
                     local_40->active_flag = 1;
                     local_40->left = iVar18;
                     local_40->top = iVar22;
@@ -468,9 +467,8 @@ LAB_00446f96:
             if (0 < iVar21) {
               iVar22 = 0;
               do {
-                if (in_stack_00000004 == *(int *)((int)&g_CramRectangles[0].reserved_0x18 + iVar22))
-                {
-                  *(uint *)((int)&g_CramRectangles[0].reserved_0x18 + iVar22) = 0;
+                if (in_stack_00000004 == *(int *)((int)&g_CramRectangles[0].unk1 + iVar22)) {
+                  *(uint *)((int)&g_CramRectangles[0].unk1 + iVar22) = 0;
                 }
                 iVar22 = iVar22 + 0x28;
               } while (iVar22 < iVar21 * 0x28);
@@ -743,7 +741,7 @@ LAB_00447500:
                 goto joined_r0x00446b0b;
               }
 LAB_00446a27:
-              pSVar20->reserved_0x18 = g_CramInvalidMarker;
+              pSVar20->unk1 = g_CramInvalidMarker;
             }
             else {
               if (g_CramBestSolutionMetric1 <= pSVar20->top + g_CramMinPlacementY)

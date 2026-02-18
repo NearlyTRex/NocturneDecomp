@@ -8,7 +8,7 @@
 ; CVector3f *      Stack[0x8]:4   collision_normal
 ;
 ; XREF[1]:
-;   core_fire.cpp_CFireEffect_FUN_004c93d0 at 004c93e5
+;   core_fire.cpp_CFireEffect_hasActiveMuzzleFlash_FUN_004c93d0 at 004c93e5
 ;
 ; *****************************************************************************
 

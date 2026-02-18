@@ -70,9 +70,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00484410(CDraculaBride 
   CVector3f local_c4;
   CVector3f local_b8;
   CVector3f local_ac;
-  float local_a0;
-  float local_9c;
-  float local_98;
+  CVector3f local_a0;
   CVector3f local_94;
   CVector3f local_88;
   CVector3f local_7c;
@@ -296,11 +294,13 @@ LAB_004848f9:
                           (&(this_ptr->base).base.model,&local_d0,INT_02c6d0bc);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)this_ptr,&local_f4,pCVar12);
-      core_fire_cpp_CFireEffect_FUN_004c8ef0(g_CFireEffectPtr);
-      local_9c = (this_ptr->base).base.base.orient.vec.y;
-      local_98 = (this_ptr->base).base.base.orient.vec.z;
-      local_a0 = (this_ptr->base).base.base.orient.vec.x + -1.570796f;
-      core_fire_cpp_CFireEffect_FUN_004c8ef0(g_CFireEffectPtr);
+      core_fire_cpp_CFireEffect_createGunFlames_FUN_004c8ef0
+                (g_CFireEffectPtr,&local_f4,&(this_ptr->base).base.base.orient.vec,1,0);
+      local_a0.y = (this_ptr->base).base.base.orient.vec.y;
+      local_a0.z = (this_ptr->base).base.base.orient.vec.z;
+      local_a0.x = (this_ptr->base).base.base.orient.vec.x + -1.570796f;
+      core_fire_cpp_CFireEffect_createGunFlames_FUN_004c8ef0
+                (g_CFireEffectPtr,&local_f4,&local_a0,1,0);
     }
     break;
   case 8:
@@ -381,7 +381,7 @@ LAB_004848f9:
           }
           if ((float)10 <
               SQRT(local_7c.z * local_7c.z + local_7c.x * local_7c.x + local_7c.y * local_7c.y)) {
-            core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_70,&local_7c);
+            core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_70,&local_7c);
             local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                                  (local_70.y - (this_ptr->base).base.base.orient.vec.y);
             if (ABS(local_14) < (float)0.39269908168750001) {
@@ -641,7 +641,7 @@ LAB_004852f8:
           local_dc.z = (pCVar13->location).position.z -
                        (this_ptr->base).base.base.location.position.z;
           pUVar2 = &(this_ptr->base).base.base.orient;
-          pCVar12 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+          pCVar12 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                               (&local_190,&local_dc);
           if ((CVector3f *)pUVar2 != pCVar12) {
             (pUVar2->vec).x = pCVar12->x;

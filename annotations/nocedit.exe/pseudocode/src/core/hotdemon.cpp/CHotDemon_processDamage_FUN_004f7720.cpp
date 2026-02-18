@@ -24,7 +24,8 @@ void __cdecl core_hotdemon_cpp_CHotDemon_processDamage_FUN_004f7720(CHotDemon *t
               ((CDemonActor *)this_ptr,&local_24,&damage_info->impact_direction);
     do {
       iVar4 = iVar4 + 1;
-      core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);
+      core_fire_cpp_CFireEffect_createSpark_FUN_004c79d0
+                (g_CFireEffectPtr,&local_24,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
     } while (iVar4 < 5);
   }
   fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;

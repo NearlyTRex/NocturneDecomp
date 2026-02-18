@@ -46,7 +46,7 @@
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_scat.cpp_CScat_FUN_00558cf0
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-;   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 ;   crt_memory.c___arrinit_FUN_005fe667
 ;
 ; *****************************************************************************
@@ -369,8 +369,8 @@ section .text
     LEA EAX,[ESP + 0xf0]                ; 00558b78
     PUSH EAX                            ; 00558b7f
     FSTP float ptr [ESP + 0xcc]         ; 00558b80
-    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 00558b87
-        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 00558b87
+        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 00558b8c
     MOV EAX,dword ptr [ESP + 0xec]      ; 00558b8f
     MOV dword ptr [ESP + 0x4],EAX       ; 00558b96

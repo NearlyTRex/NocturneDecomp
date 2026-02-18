@@ -77,7 +77,7 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(CMobster *this_p
         fVar7 = 4.0f;
       }
       local_38.y = local_38.y + fVar7;
-      core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_2c,&local_38);
+      core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_2c,&local_38);
       local_18 = (CDeformableModelInstance *)
                  core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                            (local_2c.y - (this_ptr->base).base.base.orient.vec.y);

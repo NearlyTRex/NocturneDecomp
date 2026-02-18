@@ -13,7 +13,7 @@
 ;   core_fire.cpp_CShell_render_FUN_004c6200 at 004c6261
 ;   core_fire.cpp_CSmokeParticle_render_FUN_004bf4c0 at 004bf512
 ;   core_fire.cpp_CSpark_render_FUN_004c0420 at 004c0484
-;   core_weather.cpp_CWeather_FUN_005ef190 at 005ef33c
+;   core_weather.cpp_CWeather_renderParticles_FUN_005ef190 at 005ef33c
 ;
 ; Referenced Globals:
 ;   void*[1200] g_ScreenBufferArray

@@ -31,20 +31,8 @@ int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMe
   float local_3d8 [100];
   char local_248 [200];
   CLodMesh local_180;
-  byte local_10c [24];
-  float local_f4;
-  float local_f0;
-  float local_ec;
-  char local_e8 [8];
-  float local_e0;
-  char local_dc [12];
-  byte local_d0 [24];
-  float local_b8;
-  float local_b4;
-  float local_b0;
-  char local_a8 [4];
-  float local_a4;
-  char local_98 [4];
+  CSpotView local_10c;
+  CSpotView local_d0;
   CBoundingBox3D local_94;
   float local_7c;
   float local_78;
@@ -80,8 +68,8 @@ int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMe
   iVar3 = shape_meshlod_cpp_CLodMesh_countUnprocessedFaces_FUN_005164d0(this_ptr->next_lod);
   *in_stack_0000000c = iVar3;
   shape_meshlod_cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500(this_ptr,&local_94);
-  shape_spotview_cpp_CSpotView_ctor_FUN_005b95c0((CSpotView *)local_d0);
-  shape_spotview_cpp_CSpotView_FUN_005b9620((CSpotView *)local_d0);
+  shape_spotview_cpp_CSpotView_ctor_FUN_005b95c0(&local_d0);
+  shape_spotview_cpp_CSpotView_reset_FUN_005b9620(&local_d0,0x1f);
   pCVar4 = (CBoundingBox3D *)
            shape_meshlod_cpp_CLodMesh_worldToNormalizedSpace_FUN_0051b2e0
                      (this_ptr,&local_70,&local_94.min);
@@ -103,10 +91,10 @@ int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMe
   local_44 = local_94.min.z + local_94.max.z;
   local_78 = local_48 * 0.5f;
   local_74 = local_44 * 0.5f;
-  if (&local_b8 != &local_7c) {
-    local_b8 = local_7c;
-    local_b4 = local_78;
-    local_b0 = local_74;
+  if (&local_d0.loat_at != (CVector3f *)&local_7c) {
+    local_d0.loat_at.x = local_7c;
+    local_d0.loat_at.y = local_78;
+    local_d0.loat_at.z = local_74;
   }
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   shape_meshlod_cpp_CLodMesh_ctor_FUN_00515840(&local_180);
@@ -119,47 +107,32 @@ int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMe
     engine_2d_c_fillRectColor_FUN_00403170(0,0,g_WindowWidth + -1,g_WindowHeight + -1,0xfc);
     wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
     if (iVar3 == 0) {
-      local_a4 = local_3d8[0];
+      local_d0.distance = local_3d8[0];
     }
-    shape_spotview_cpp_CSpotView_ctor_FUN_005b95c0((CSpotView *)local_10c);
-    local_10c._0_4_ = local_d0._0_4_;
-    local_10c._4_4_ = local_d0._4_4_;
-    local_10c._8_4_ = local_d0._8_4_;
-    local_10c._12_4_ = local_d0._12_4_;
-    local_10c._16_4_ = local_d0._16_4_;
-    local_10c._20_4_ = local_d0._20_4_;
-    if (&local_f4 != &local_b8) {
-      local_f4 = local_b8;
-      local_f0 = local_b4;
-      local_ec = local_b0;
+    shape_spotview_cpp_CSpotView_ctor_FUN_005b95c0(&local_10c);
+    local_10c.default_distance = local_d0.default_distance;
+    local_10c.default_zoom = local_d0.default_zoom;
+    local_10c.default_pitch = local_d0.default_pitch;
+    local_10c.default_yaw = local_d0.default_yaw;
+    local_10c.default_pan_x = local_d0.default_pan_x;
+    local_10c.default_pan_y = local_d0.default_pan_y;
+    if (&local_10c.loat_at != &local_d0.loat_at) {
+      local_10c.loat_at.x = local_d0.loat_at.x;
+      local_10c.loat_at.y = local_d0.loat_at.y;
+      local_10c.loat_at.z = local_d0.loat_at.z;
     }
-    local_e8[4] = local_a8[0];
-    local_e8[5] = local_a8[1];
-    local_e8[6] = local_a8[2];
-    local_e8[7] = local_a8[3];
-    local_e0 = local_a4;
-    local_dc[8] = local_98[0];
-    local_dc[9] = local_98[1];
-    local_dc[10] = local_98[2];
-    local_dc[0xb] = local_98[3];
-    local_e8[0] = '\0';
-    local_e8[1] = '\0';
-    local_e8[2] = '\0';
-    local_e8[3] = '\0';
-    local_dc[0] = '\0';
-    local_dc[1] = '\0';
-    local_dc[2] = '\0';
-    local_dc[3] = '\0';
-    local_dc[4] = '\0';
-    local_dc[5] = '\0';
-    local_dc[6] = '\0';
-    local_dc[7] = '\0';
-    shape_spotview_cpp_CSpotView_FUN_005b9a20((CSpotView *)local_10c);
+    local_10c.yaw = local_d0.yaw;
+    local_10c.distance = local_d0.distance;
+    local_10c.zoom = local_d0.zoom;
+    local_10c.pitch = 0.0;
+    local_10c.pan_x = 0.0;
+    local_10c.pan_y = 0.0;
+    shape_spotview_cpp_CSpotView_applyCamera_FUN_005b9a20(&local_10c);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
               (g_CDemonRendererPtr2,&g_ZeroVector);
     local_14 = (int *)core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840(&local_94);
     local_34 = (int)ROUND(ROUND((float)local_14));
-    shape_spotview_cpp_CSpotView_FUN_005b9a20((CSpotView *)local_d0);
+    shape_spotview_cpp_CSpotView_applyCamera_FUN_005b9a20(&local_d0);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
               (g_CDemonRendererPtr2,&g_ZeroVector);
     if (iVar3 < 0) {
@@ -194,7 +167,7 @@ LAB_0051e453:
     if (0 < iVar3) {
       in_stack_0000000c[iVar3] = local_180.tri_count;
       in_stack_00000008[iVar3] = local_34;
-      local_3d8[iVar3] = local_a4;
+      local_3d8[iVar3] = local_d0.distance;
     }
     if (iVar3 < 0) {
       engine_2d_c_drawText_FUN_00401fd0("TEST MODE: Adjust view to test LODs.",0,0);
@@ -289,7 +262,7 @@ LAB_0051e453:
         in_stack_00000008[local_30] = local_34;
         pfVar1 = local_3d8 + local_30;
         local_30 = local_30 + 1;
-        *pfVar1 = local_a4;
+        *pfVar1 = local_d0.distance;
         iVar3 = iVar8;
       }
       else {
@@ -424,8 +397,8 @@ LAB_0051e453:
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff880,0);
     }
     if (-1 < iVar3) {
-      local_a4 = local_3d8[iVar3];
+      local_d0.distance = local_3d8[iVar3];
     }
-    shape_spotview_cpp_CSpotView_FUN_005b9670((CSpotView *)local_d0);
+    shape_spotview_cpp_CSpotView_handleInput_FUN_005b9670(&local_d0,0xf);
   } while( true );
 }

@@ -66,7 +66,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "engine_keyframe.c_calculateSurfaceNormal_FUN_00501bc0",
-    "signature": "void __cdecl engine_keyframe_c_calculateSurfaceNormal_FUN_00501bc0(CVector3i *vertex_data,SSurfaceNormal *output)"
+    "signature": "void __cdecl engine_keyframe_c_calculateSurfaceNormal_FUN_00501bc0(CVector3i *vertex_data,SMRGLPrimitiveTriangle *texture)"
   },
   "function_calls": [],
   "globals": [
@@ -191,10 +191,10 @@
       },
       {
         "is_param": true,
-        "name": "output",
+        "name": "texture",
         "offset": 8,
         "size": 4,
-        "type": "SSurfaceNormal *"
+        "type": "SMRGLPrimitiveTriangle *"
       }
     ]
   },
@@ -217,21 +217,21 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 43,
       "match": "ROUND",
-      "text": "output->normal_x = (int)ROUND(fVar6);",
+      "text": "(texture->base).surface_normal.A = (int)ROUND(fVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 44,
       "match": "ROUND",
-      "text": "output->normal_y = (int)ROUND(fVar5);",
+      "text": "(texture->base).surface_normal.B = (int)ROUND(fVar5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 45,
       "match": "ROUND",
-      "text": "output->normal_z = (int)ROUND(fVar8);",
+      "text": "(texture->base).surface_normal.C = (int)ROUND(fVar8);",
       "type": "decompiler_intrinsic"
     },
     {

@@ -135,7 +135,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4190(CGabriella *this_ptr)
                      (this_ptr->base).base.base.location.position.y;
         local_6c.z = (this_ptr_01->location).position.z -
                      (this_ptr->base).base.base.location.position.z;
-        pCVar3 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+        pCVar3 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                            (&local_e4,&local_6c);
         local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                              (pCVar3->y - (this_ptr->base).base.base.orient.vec.y);
@@ -202,7 +202,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4190(CGabriella *this_ptr)
           this_ptr_00 = g_CDemonSetPtr;
           g_CDemonSetPtr->collision_actor = (CDemonActor *)0x0;
           core_setcolid_cpp_CDemonSet_raycast_FUN_00572530(this_ptr_00,&CStack_78,&CStack_48);
-          core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
+          core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
           if (this_ptr_01 == g_CDemonSetPtr->collision_actor) {
             (this_ptr->base).player_control.action_states[3] = 1;
             return;

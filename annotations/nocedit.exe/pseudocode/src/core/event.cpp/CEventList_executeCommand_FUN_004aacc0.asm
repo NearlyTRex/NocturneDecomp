@@ -2570,7 +2570,7 @@ section .text
     PUSH 0x3dcccccd                     ; 004ac2b6
     PUSH EBX                            ; 004ac2bb | g_CWeatherInstance
     CALL core_weather.cpp_CWeather_createLightningStrike_FUN_005eeeb0 ; 004ac2bc
-        ;   XREF to: 005eeeb0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_createLightningStrike_FUN_005eeeb0(CWeather * this_ptr, float param_2, int param_3)
+        ;   XREF to: 005eeeb0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_createLightningStrike_FUN_005eeeb0(CWeather * this_ptr, float flash_timer, int play_sound)
     ADD ESP,0xc                         ; 004ac2c1
     JMP 0x004aaf1d                      ; 004ac2c4
         ;   XREF to: 004aaf1d (UNCONDITIONAL_JUMP)  ; LAB_004aaf1d

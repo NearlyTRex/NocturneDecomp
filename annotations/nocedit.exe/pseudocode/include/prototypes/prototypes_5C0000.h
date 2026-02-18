@@ -37,7 +37,7 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_005c3150(CStranger *thi
 int __cdecl core_stranger_cpp_CStranger_renderTransparent_FUN_005c3710(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_FUN_005c3750(void);
 CVector3f * __cdecl core_stranger_cpp_FUN_005c37e0(void);
-void __cdecl core_stranger_cpp_CStranger_FUN_005c3960(CStranger *this_ptr);
+void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_005c4370(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_005c48b0(CStranger *this_ptr,SDamageInfo *damage_info);
 void __cdecl core_stranger_cpp_CStranger_FUN_005c4c20(CStranger *this_ptr);

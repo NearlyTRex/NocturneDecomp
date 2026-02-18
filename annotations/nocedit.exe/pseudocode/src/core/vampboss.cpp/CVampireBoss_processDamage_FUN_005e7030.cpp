@@ -24,7 +24,8 @@ void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_005e7030(CVampireB
               ((CDemonActor *)this_ptr,&local_24,&damage_info->impact_direction);
     do {
       iVar2 = iVar2 + 1;
-      core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);
+      core_fire_cpp_CFireEffect_createSpark_FUN_004c79d0
+                (g_CFireEffectPtr,&local_24,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
     } while (iVar2 < 5);
   }
   if (this_ptr->form == 0) {

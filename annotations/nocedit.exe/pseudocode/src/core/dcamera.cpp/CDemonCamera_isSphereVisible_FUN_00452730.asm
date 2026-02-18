@@ -18,7 +18,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_fire.cpp_CFireEffect_FUN_004c76a0 at 004c7790
+;   core_fire.cpp_CFireEffect_createBulletImpact_FUN_004c76a0 at 004c7790
 ;
 ; Referenced Globals:
 ;   float g_CameraFixedPointScale_0065c63c = 256

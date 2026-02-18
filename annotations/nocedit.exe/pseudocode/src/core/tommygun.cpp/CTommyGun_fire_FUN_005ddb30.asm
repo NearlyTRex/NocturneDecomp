@@ -34,13 +34,13 @@
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
 ;   core_crate.cpp_CCrate_FUN_00448a70
-;   core_fire.cpp_CFireEffect_FUN_004c76a0
-;   core_fire.cpp_CFireEffect_FUN_004c7a60
+;   core_fire.cpp_CFireEffect_createBulletImpact_FUN_004c76a0
+;   core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60
 ;   core_flamecan.cpp_CFlameCan_FUN_004cb340
 ;   core_glass.cpp_CGlass_checkBreakableCondition_FUN_004eb3a0
 ;   core_glass.cpp_CGlass_shatter_FUN_004eaef0
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0
-;   core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180
+;   core_setcolid.cpp_CDemonSet_init_FUN_00574180
 ;   core_setcolid.cpp_CDemonSet_raycast_FUN_00572530
 ;   ... and 6 more
 ;
@@ -154,8 +154,8 @@ section .text
     FXCH                                ; 005ddcc2
     FSTP float ptr [ESP + 0xe0]         ; 005ddcc4
     FSTP float ptr [ESP + 0xe4]         ; 005ddccb
-    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 005ddcd2
-        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_init_FUN_00574180 ; 005ddcd2
+        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00574180(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 005ddcd7
     PUSH 0x1                            ; 005ddcda
     MOV EAX,[0x006810c8]                ; 005ddcdc | g_CDemonSetPtr | g_CDemonSetInstance
@@ -199,8 +199,8 @@ section .text
     MOV ECX,dword ptr [0x006810c8]      ; 005ddd4e | g_CDemonSetPtr | g_CDemonSetInstance
         ;   Label: LAB_005ddd4e
     PUSH ECX                            ; 005ddd54 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 005ddd55
-        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_init_FUN_00574180 ; 005ddd55
+        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00574180(CDemonSet * this_ptr)
     MOV ESI,dword ptr [EBX + 0x574]     ; 005ddd5a
     ADD ESP,0x4                         ; 005ddd60
     TEST ESI,ESI                        ; 005ddd63
@@ -221,8 +221,8 @@ section .text
     FADD float ptr [0x006554d9]         ; 005dddae | FLOAT_006554d9
     PUSH EDI                            ; 005dddb4 | g_CFireEffectInstance
     FSTP float ptr [ESP + 0xc4]         ; 005dddb5
-    CALL core_fire.cpp_CFireEffect_FUN_004c7a60 ; 005dddbc
-        ;   XREF to: 004c7a60 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c7a60(CFireEffect * this_ptr)
+    CALL core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60 ; 005dddbc
+        ;   XREF to: 004c7a60 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60(CFireEffect * this_ptr)
     ADD ESP,0xc                         ; 005dddc1
     MOV EAX,0x40a00000                  ; 005dddc4
     MOV EDX,0x40c00000                  ; 005dddc9
@@ -384,8 +384,8 @@ section .text
     INC EDX                             ; 005de068
     PUSH EAX                            ; 005de069 | g_CDemonSetInstance
     MOV dword ptr [EBX + 0x568],EDX     ; 005de06a
-    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 005de070
-        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_init_FUN_00574180 ; 005de070
+        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00574180(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 005de075
     XOR EAX,EAX                         ; 005de078
     MOV ESP,EBP                         ; 005de07a
@@ -587,8 +587,8 @@ section .text
     PUSH EAX                            ; 005de31b | DAT_032613b0
     MOV ECX,dword ptr [0x0067a3d0]      ; 005de31c | g_CFireEffectPtr | g_CFireEffectInstance
     PUSH ECX                            ; 005de322 | g_CFireEffectInstance
-    CALL core_fire.cpp_CFireEffect_FUN_004c76a0 ; 005de323
-        ;   XREF to: 004c76a0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c76a0(CFireEffect * this_ptr)
+    CALL core_fire.cpp_CFireEffect_createBulletImpact_FUN_004c76a0 ; 005de323
+        ;   XREF to: 004c76a0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createBulletImpact_FUN_004c76a0(CFireEffect * this_ptr, CVector3f * impact_pos, CVector3f * surface_normal, int ground_type, ...)
     ADD ESP,0x14                        ; 005de328
     JMP 0x005ddd4e                      ; 005de32b
         ;   XREF to: 005ddd4e (UNCONDITIONAL_JUMP)  ; LAB_005ddd4e

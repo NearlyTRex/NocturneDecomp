@@ -82,7 +82,7 @@
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0
-;   core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180
+;   core_setcolid.cpp_CDemonSet_init_FUN_00574180
 ;   core_setcolid.cpp_CDemonSet_testCapsuleCollision_FUN_00573470
 ;   crt_string.c_strnicmp_FUN_005ff070
 ;
@@ -406,8 +406,8 @@ section .text
     MOV EDI,dword ptr [0x006810c8]      ; 004293af | g_CDemonSetPtr
     PUSH EDI                            ; 004293b5 | g_CDemonSetInstance
     FSTP float ptr [EBX + 0x242c]       ; 004293b6
-    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 004293bc
-        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_init_FUN_00574180 ; 004293bc
+        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00574180(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 004293c1
     MOV ESP,EBP                         ; 004293c4
     POP EBP                             ; 004293c6
@@ -457,8 +457,8 @@ section .text
     MOV EDX,dword ptr [0x006810c8]      ; 0042944e | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_0042944e
     PUSH EDX                            ; 00429454 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 00429455
-        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_init_FUN_00574180 ; 00429455
+        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00574180(CDemonSet * this_ptr)
     MOV dword ptr [EBX + 0x2430],ESI    ; 0042945a
     ADD ESP,0x4                         ; 00429460
     MOV EAX,dword ptr [EBX + 0x2430]    ; 00429463

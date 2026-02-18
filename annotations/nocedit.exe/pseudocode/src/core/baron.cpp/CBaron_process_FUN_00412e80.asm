@@ -59,7 +59,7 @@
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 ;   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
-;   core_fire.cpp_CFireEffect_FUN_004c90c0
+;   core_fire.cpp_CFireEffect_createTrailFromPoints_FUN_004c90c0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 ;   core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
@@ -465,8 +465,8 @@ section .text
     PUSH EAX                            ; 0041332e
     MOV EDI,dword ptr [0x0067a3d0]      ; 0041332f | g_CFireEffectPtr
     PUSH EDI                            ; 00413335 | g_CFireEffectInstance
-    CALL core_fire.cpp_CFireEffect_FUN_004c90c0 ; 00413336
-        ;   XREF to: 004c90c0 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CFireEffect_FUN_004c90c0(CFireEffect * this_ptr)
+    CALL core_fire.cpp_CFireEffect_createTrailFromPoints_FUN_004c90c0 ; 00413336
+        ;   XREF to: 004c90c0 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CFireEffect_createTrailFromPoints_FUN_004c90c0(CFireEffect * this_ptr)
     ADD ESP,0x1c                        ; 0041333b
     PUSH 0x66e460                       ; 0041333e | SMRGLTextureBasic_0066e460
     PUSH 0x3f000000                     ; 00413343
@@ -478,8 +478,8 @@ section .text
     PUSH EAX                            ; 0041335d
     MOV EAX,[0x0067a3d0]                ; 0041335e | g_CFireEffectPtr | g_CFireEffectInstance
     PUSH EAX                            ; 00413363 | g_CFireEffectInstance
-    CALL core_fire.cpp_CFireEffect_FUN_004c90c0 ; 00413364
-        ;   XREF to: 004c90c0 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CFireEffect_FUN_004c90c0(CFireEffect * this_ptr)
+    CALL core_fire.cpp_CFireEffect_createTrailFromPoints_FUN_004c90c0 ; 00413364
+        ;   XREF to: 004c90c0 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CFireEffect_createTrailFromPoints_FUN_004c90c0(CFireEffect * this_ptr)
     ADD ESP,0x1c                        ; 00413369
     LEA EAX,[ESP + 0x78]                ; 0041336c
         ;   Label: LAB_0041336c

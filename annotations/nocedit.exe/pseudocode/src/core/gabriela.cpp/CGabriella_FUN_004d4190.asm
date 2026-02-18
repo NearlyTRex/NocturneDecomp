@@ -55,10 +55,10 @@
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_path.cpp_CPathMap_findPathWithRetry_FUN_00547d00
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0
-;   core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180
+;   core_setcolid.cpp_CDemonSet_init_FUN_00574180
 ;   core_setcolid.cpp_CDemonSet_raycast_FUN_00572530
 ;   core_setcolid.cpp_CDemonSet_setRayType_FUN_00574230
-;   core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 ;   crt_memory.c_memset_FUN_005fde40
 ;
 ; *****************************************************************************
@@ -175,8 +175,8 @@ section .text
     LEA EAX,[ESP + 0x48]                ; 004d42e3
     PUSH EAX                            ; 004d42e7
     FSTP float ptr [ESP + 0xcc]         ; 004d42e8
-    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 004d42ef
-        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 004d42ef
+        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     FLD float ptr [EAX + 0x4]           ; 004d42f4
     ADD ESP,0x8                         ; 004d42f7
     FSUB float ptr [EBX + 0x34]         ; 004d42fa
@@ -413,8 +413,8 @@ section .text
     ADD ESP,0xc                         ; 004d4656
     MOV EDI,dword ptr [0x006810c8]      ; 004d4659 | g_CDemonSetPtr
     PUSH EDI                            ; 004d465f | g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 004d4660
-        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_init_FUN_00574180 ; 004d4660
+        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00574180(CDemonSet * this_ptr)
     MOV EAX,[0x006810c8]                ; 004d4665 | g_CDemonSetInstance | g_CDemonSetPtr
     MOV EDX,dword ptr [EAX + 0x14d144]  ; 004d466a | DAT_032613bc
     ADD ESP,0x4                         ; 004d4670

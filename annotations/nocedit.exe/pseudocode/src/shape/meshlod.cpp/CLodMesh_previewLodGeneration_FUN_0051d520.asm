@@ -106,8 +106,8 @@ section .text
         ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBuffer_FUN_005b3ed4()
     MOV ECX,dword ptr [0x0068416c]      ; 0051d595 | g_CSpotViewInstance | g_CSpotViewPtr
     PUSH ECX                            ; 0051d59b | g_CSpotViewInstance
-    CALL shape_spotview.cpp_CSpotView_FUN_005b9a20 ; 0051d59c
-        ;   XREF to: 005b9a20 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_FUN_005b9a20(CSpotView * this_ptr)
+    CALL shape_spotview.cpp_CSpotView_applyCamera_FUN_005b9a20 ; 0051d59c
+        ;   XREF to: 005b9a20 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_applyCamera_FUN_005b9a20(CSpotView * this_ptr)
     ADD ESP,0x4                         ; 0051d5a1
     LEA EAX,[ESP + 0x94]                ; 0051d5a4
     PUSH EAX                            ; 0051d5ab
@@ -319,8 +319,8 @@ section .text
     PUSH 0x1f                           ; 0051d7c4
     MOV EAX,[0x0068416c]                ; 0051d7c6 | g_CSpotViewInstance | g_CSpotViewPtr
     PUSH EAX                            ; 0051d7cb | g_CSpotViewInstance
-    CALL shape_spotview.cpp_CSpotView_FUN_005b9670 ; 0051d7cc
-        ;   XREF to: 005b9670 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_FUN_005b9670(CSpotView * this_ptr)
+    CALL shape_spotview.cpp_CSpotView_handleInput_FUN_005b9670 ; 0051d7cc
+        ;   XREF to: 005b9670 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_handleInput_FUN_005b9670(CSpotView * this_ptr, uint control_flags)
     ADD ESP,0x8                         ; 0051d7d1
     MOV EAX,[0x0067cf44]                ; 0051d7d4 | g_CKeysPtr
     PUSH 0x1                            ; 0051d7d9

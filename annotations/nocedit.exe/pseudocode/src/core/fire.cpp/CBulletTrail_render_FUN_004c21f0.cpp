@@ -12,8 +12,9 @@ void __cdecl core_fire_cpp_CBulletTrail_render_FUN_004c21f0(CBulletTrail *this_p
 
 {
   int iVar1;
-  float fVar2;
-  int iVar3;
+  CKeyFramedModel *pCVar2;
+  float fVar3;
+  int iVar4;
   CVector3f local_78;
   float local_6c;
   float local_68;
@@ -32,19 +33,19 @@ void __cdecl core_fire_cpp_CBulletTrail_render_FUN_004c21f0(CBulletTrail *this_p
   float local_18;
   int local_14;
   
-  local_60.x = *(float *)(this_ptr->unk + 0xc) - *(float *)this_ptr->unk;
-  local_60.y = *(float *)(this_ptr->unk + 0x10) - *(float *)(this_ptr->unk + 4);
-  local_60.z = *(float *)(this_ptr->unk + 0x14) - *(float *)(this_ptr->unk + 8);
-  iVar3 = *(int *)(this_ptr->unk + 0x18);
-  local_6c = *(float *)(iVar3 + 0x5684) - *(float *)(iVar3 + 0x5678);
-  local_68 = *(float *)(iVar3 + 0x5688) - *(float *)(iVar3 + 0x567c);
-  local_64 = *(float *)(iVar3 + 0x568c) - *(float *)(iVar3 + 0x5680);
-  fVar2 = SQRT(local_60.z * local_60.z + local_60.x * local_60.x + local_60.y * local_60.y) -
+  local_60.x = (this_ptr->end_position).x - (this_ptr->start_position).x;
+  local_60.y = (this_ptr->end_position).y - (this_ptr->start_position).y;
+  local_60.z = (this_ptr->end_position).z - (this_ptr->start_position).z;
+  pCVar2 = this_ptr->model_ptr;
+  local_6c = (pCVar2->bounds_max).x - (pCVar2->bounds_min).x;
+  local_68 = (pCVar2->bounds_max).y - (pCVar2->bounds_min).y;
+  local_64 = (pCVar2->bounds_max).z - (pCVar2->bounds_min).z;
+  fVar3 = SQRT(local_60.z * local_60.z + local_60.x * local_60.x + local_60.y * local_60.y) -
           local_64;
-  if (0.0 < fVar2) {
+  if (0.0 < fVar3) {
     local_20 = 2;
-    if (0.0 < *(float *)(this_ptr->unk + 0x1c)) {
-      local_20 = (int)ROUND(ROUND(fVar2 / *(float *)(this_ptr->unk + 0x1c)));
+    if (0.0 < this_ptr->segment_length) {
+      local_20 = (int)ROUND(ROUND(fVar3 / this_ptr->segment_length));
       if (local_20 < 2) {
         local_20 = 2;
       }
@@ -58,21 +59,21 @@ void __cdecl core_fire_cpp_CBulletTrail_render_FUN_004c21f0(CBulletTrail *this_p
     local_54 = local_60.x * local_4c;
     local_50 = local_60.y * local_4c;
     local_4c = local_60.z * local_4c;
-    core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_78,&local_60);
-    iVar3 = 0;
+    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_78,&local_60);
+    iVar4 = 0;
     if (0 < local_20) {
       iVar1 = local_20 + -1;
       do {
         while( true ) {
-          local_18 = (float)iVar3;
-          fVar2 = ((float)iVar3 * 0.2f) / (float)iVar1;
-          if (fVar2 <= (float)0.01) break;
+          local_18 = (float)iVar4;
+          fVar3 = ((float)iVar4 * 0.2f) / (float)iVar1;
+          if (fVar3 <= (float)0.01) break;
           local_30 = local_54 * local_18;
           local_2c = local_50 * local_18;
           local_28 = local_4c * local_18;
-          local_3c.x = *(float *)this_ptr->unk + local_30;
-          local_3c.y = *(float *)(this_ptr->unk + 4) + local_2c;
-          local_3c.z = *(float *)(this_ptr->unk + 8) + local_28;
+          local_3c.x = (this_ptr->start_position).x + local_30;
+          local_3c.y = (this_ptr->start_position).y + local_2c;
+          local_3c.z = (this_ptr->start_position).z + local_28;
           local_14 = iVar1;
           engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                     (g_CDemonRendererPtr2,&local_3c);
@@ -81,18 +82,17 @@ void __cdecl core_fire_cpp_CBulletTrail_render_FUN_004c21f0(CBulletTrail *this_p
           local_48.z = 0;
           engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                     (g_CDemonRendererPtr2,(CVector3i *)&local_78,&local_48);
-          local_14 = (int)ROUND(ROUND(fVar2));
+          local_14 = (int)ROUND(ROUND(fVar3));
           core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
-                    (*(CKeyFramedModel **)(this_ptr->unk + 0x18),(CKeyFramedModelInstance *)0x0,0,
-                     local_14);
+                    (this_ptr->model_ptr,(CKeyFramedModelInstance *)0x0,0,local_14);
           engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
-          iVar3 = iVar3 + 1;
-          if (local_20 <= iVar3) {
+          iVar4 = iVar4 + 1;
+          if (local_20 <= iVar4) {
             return;
           }
         }
-        iVar3 = iVar3 + 1;
-      } while (iVar3 < local_20);
+        iVar4 = iVar4 + 1;
+      } while (iVar4 < local_20);
     }
   }
   return;

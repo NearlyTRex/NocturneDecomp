@@ -66,8 +66,7 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
   uint local_368;
   uint local_364;
   uint local_360;
-  byte local_35c [20];
-  float local_348;
+  CSpotView local_35c;
   CMatrix3x4f local_320;
   CMatrix3x4f local_2f0;
   CMatrix3x4f local_2c0;
@@ -177,31 +176,25 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
   local_bc = core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810(local_c0);
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   pCVar16 = in_stack_00000004;
-  shape_spotview_cpp_CSpotView_ctor_FUN_005b95c0((CSpotView *)local_35c);
-  local_35c[0] = '\0';
-  local_35c[1] = '\0';
-  local_35c[2] = 'p';
-  local_35c[3] = 'A';
-  local_35c[0xc] = -0x25;
-  local_35c[0xd] = '\x0f';
-  local_35c[0xe] = 'I';
-  local_35c[0xf] = '@';
+  shape_spotview_cpp_CSpotView_ctor_FUN_005b95c0(&local_35c);
+  local_35c.default_distance = 15.0;
+  local_35c.default_yaw = 3.1415927;
   local_f4 = (pCVar16->bounding_box).min.x + (pCVar16->bounding_box).max.x;
   local_f0 = (pCVar16->bounding_box).min.y + (pCVar16->bounding_box).max.y;
-  local_35c._16_4_ = local_f4 * 0.5f;
+  local_35c.default_pan_x = local_f4 * 0.5f;
   local_ec = (pCVar16->bounding_box).min.z + (pCVar16->bounding_box).max.z;
   local_e4 = local_f0 * 0.5f;
   local_e0 = local_ec * 0.5f;
   local_1b4 = (pCVar16->bounding_box).min.x + (pCVar16->bounding_box).max.x;
   local_1b0 = (pCVar16->bounding_box).min.y + (pCVar16->bounding_box).max.y;
   local_160 = local_1b4 * 0.5f;
-  local_348 = local_1b0 * 0.5f;
+  local_35c.default_pan_y = local_1b0 * 0.5f;
   local_1ac = (pCVar16->bounding_box).min.z + (pCVar16->bounding_box).max.z;
   local_158 = local_1ac * 0.5f;
   local_88 = -1;
-  local_15c = local_348;
-  local_e8 = (float)local_35c._16_4_;
-  shape_spotview_cpp_CSpotView_FUN_005b9620((CSpotView *)local_35c);
+  local_15c = local_35c.default_pan_y;
+  local_e8 = local_35c.default_pan_x;
+  shape_spotview_cpp_CSpotView_reset_FUN_005b9620(&local_35c,0x1f);
   local_b0 = -1;
   local_b8 = 0;
   local_48 = 0;
@@ -256,7 +249,7 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
     g_RenderedTriangleCount = 0;
     engine_2d_c_fillRectColor_FUN_00403170(0,0,g_WindowWidth,g_WindowHeight,0xf8);
     wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
-    shape_spotview_cpp_CSpotView_FUN_005b9a20((CSpotView *)local_35c);
+    shape_spotview_cpp_CSpotView_applyCamera_FUN_005b9a20(&local_35c);
     iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
     if (iVar7 == 0) {
       iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
@@ -682,10 +675,10 @@ LAB_005975b4:
         (iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL), iVar7 == 0)) ||
        (local_a0 == 0)) {
       if (local_98 == 0) {
-        shape_spotview_cpp_CSpotView_FUN_005b9670((CSpotView *)local_35c);
+        shape_spotview_cpp_CSpotView_handleInput_FUN_005b9670(&local_35c,0x1f);
       }
       else {
-        shape_spotview_cpp_CSpotView_FUN_005b9670((CSpotView *)local_35c);
+        shape_spotview_cpp_CSpotView_handleInput_FUN_005b9670(&local_35c,0x17);
         local_50 = g_CGamePtr->delta_time_float * (float)2;
         iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
         if (iVar7 != 0) {

@@ -49,11 +49,11 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter *th
   fVar6 = this_ptr->walk_step_speed;
   local_1c = this_ptr->turn_speed;
   fVar2 = SQRT(direction->x * direction->x + direction->z * direction->z);
-  pCVar4 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_b0,direction);
+  pCVar4 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_b0,direction);
   fVar7 = pCVar4->y;
   core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(&this_ptr->base,&local_bc,target_pos);
   fVar3 = SQRT(local_bc.x * local_bc.x + local_bc.z * local_bc.z);
-  pCVar4 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_d4,&local_bc);
+  pCVar4 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_d4,&local_bc);
   local_20 = pCVar4->y;
   local_4c = 0;
   local_fc = 0.0;
@@ -123,8 +123,8 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter *th
       local_9c = target_pos->z - pCVar4->z;
       local_98.y = local_a0 - local_8c.y;
       local_98.z = local_9c - local_8c.z;
-      pCVar4 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-                         (&local_ec,&local_98);
+      pCVar4 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_ec,&local_98)
+      ;
       fVar7 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                         (pCVar4->y - (this_ptr->base).orient.vec.y);
       fVar6 = -local_1c;
@@ -150,8 +150,8 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter *th
       local_80.x = local_bc.x - pCVar4->x;
       local_80.y = local_bc.y - (this_ptr->position_delta).y;
       local_80.z = local_bc.z - (this_ptr->position_delta).z;
-      pCVar4 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-                         (&local_c8,&local_80);
+      pCVar4 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_c8,&local_80)
+      ;
       fVar7 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar4->y - fVar7);
       fVar6 = -local_1c;
       if ((fVar6 <= fVar7) && (fVar6 = fVar7, local_1c < fVar7)) {

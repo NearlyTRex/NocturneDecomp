@@ -16,17 +16,8 @@ CDemonActorType g_CGabriellaClassInfo = {};
 // CDemonLight
 CDemonLight g_CDemonLightInstance = {};
 
-// CGunFlame*
-CGunFlame* g_GunFlameActiveListHead = {};
-
-// CLightningBolt*
-CLightningBolt* g_LightningBoltActiveListHead = {};
-
 // CLightningBolt[10]
 CLightningBolt g_LightningBoltPool[10] = {};
-
-// CPopcorn*
-CPopcorn* g_CFireEffectPopcornsEnd = {};
 
 // CPopcorn[256]
 CPopcorn g_PopcornPool[256] = {};
@@ -34,14 +25,8 @@ CPopcorn g_PopcornPool[256] = {};
 // CRainDrop[256]
 CRainDrop g_RainDropPool[256] = {};
 
-// CShell*
-CShell* g_CFireEffectShellsEnd = {};
-
 // CShell[50]
 CShell g_ShellPool[50] = {};
-
-// CTrail*
-CTrail* g_TrailActiveListHead = {};
 
 // CTrail[100]
 CTrail g_TrailPool[100] = {};
@@ -79,6 +64,11 @@ float FLOAT_02d7b844 = {};
 float FLOAT_02d7c2e8 = {};
 
 // int
+int g_LightningBoltAllocIndex = {};
+int g_TrailAllocIndex = {};
+int g_ShellAllocIndex = {};
+int g_PopcornAllocIndex = {};
+int g_RainDropAllocIndex = {};
 int INT_02d7a7b4 = {};
 int INT_02d7a7b8 = {};
 int g_LightAttenuationMax = {};

@@ -1,11 +1,19 @@
 #pragma once
 
+// Forward declarations
+struct CKeyFramedModel;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: CBulletTrail
 // Ghidra size: 0x24 (36 bytes)
 typedef struct CBulletTrail {
-    char unk[36]; // 0x0
+    CVector3f start_position; // 0x0
+    CVector3f end_position; // 0xc
+    struct CKeyFramedModel* model_ptr; // 0x18
+    float segment_length; // 0x1c
+    int frames_remaining; // 0x20
 } CBulletTrail;
 

@@ -51,9 +51,9 @@ void __cdecl CMansionPuzzleCircle::customIntersectCylinderXZ(CMansionPuzzleCircl
 // Address: 005097d0
 int __cdecl CMansionPuzzleCircle::customGetFloorHeight(CMansionPuzzleCircle *this_ptr,float x_pos,float z_pos,float *out_floor_height);
 
-// Original: core_manpuz.cpp_CMansionPuzzleCircle_getSurfaceProperties_FUN_005097e0
+// Original: core_manpuz.cpp_CMansionPuzzleCircle_onLaserHit_FUN_005097e0
 // Address: 005097e0
-void __cdecl CMansionPuzzleCircle::getSurfaceProperties(CMansionPuzzleCircle *this_ptr,SSurfaceInfo *surface_info);
+void __cdecl CMansionPuzzleCircle::onLaserHit(CMansionPuzzleCircle *this_ptr,SLaserInfo *laser_info);
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_FUN_005098f0
 // Address: 005098f0
@@ -167,9 +167,9 @@ CBoundingBox3D * __cdecl CMirrorHack::getBoundingBox(CMirrorHack *this_ptr,CBoun
 // Address: 0050b2b0
 int __cdecl CMirrorHack::hasCollision(CMirrorHack *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_manpuz.cpp_CMirrorHack_getSurfaceProperties_FUN_0050b2c0
+// Original: core_manpuz.cpp_CMirrorHack_onLaserHit_FUN_0050b2c0
 // Address: 0050b2c0
-void __cdecl CMirrorHack::getSurfaceProperties(CMirrorHack *this_ptr,SSurfaceInfo *surface_info);
+void __cdecl CMirrorHack::onLaserHit(CMirrorHack *this_ptr,SLaserInfo *laser_info);
 
 // Original: core_manpuz.cpp_CMirrorHack_getInteractionInfo_FUN_0050b2f0
 // Address: 0050b2f0

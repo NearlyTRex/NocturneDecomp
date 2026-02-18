@@ -205,7 +205,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053e220(CDemonMission *this_ptr
       CStack_9c.x = (float)local_bc._4_4_;
       CStack_9c.y = fStack_b4 + -100.0f;
       CStack_9c.z = fStack_b0;
-      core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
+      core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
       fStack_14 = core_setcolid_cpp_CDemonSet_raycast_FUN_00572530
                             (g_CDemonSetPtr,&CStack_78,&CStack_9c);
       if ((0.0 < fStack_14) && (fStack_14 < 1.0)) {

@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_keyframe_c_calculatePackedSurfaceNormal_FUN_00501a00(CVector3i *vertex_data,SSurfacePackedNormal *data)
+; void __cdecl engine_keyframe_c_calculatePackedSurfaceNormal_FUN_00501a00(CVector3i *vertex_data,SMRGLPrimitiveTriangleIndex *texture)
 ;
 ; Parameters:
 ; CVector3i *      Stack[0x4]:4   vertex_data
-; SSurfacePackedNormal * Stack[0x8]:4   data
+; SMRGLPrimitiveTriangleIndex * Stack[0x8]:4   texture
 ; Local Variables:
 ; undefined4       Stack[-0x4c]:4  local_4c
 ; undefined4       Stack[-0x44]:4  local_44

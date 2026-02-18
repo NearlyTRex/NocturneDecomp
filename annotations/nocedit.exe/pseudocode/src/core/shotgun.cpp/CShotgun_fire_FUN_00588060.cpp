@@ -99,7 +99,7 @@ int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_00588060(CShotgun *this_ptr)
       aCStack_64[0].x = CStack_b8.x - fStack_a0;
       aCStack_64[0].y = CStack_b8.y - fStack_9c;
       aCStack_64[0].z = CStack_b8.z - fStack_98;
-      core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
+      core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
       core_setcolid_cpp_CDemonSet_setRayType_FUN_00574230(g_CDemonSetPtr,1);
       core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,(CDemonActor *)this_ptr);
       pCVar6 = (this_ptr->base).carried_by_actor;
@@ -147,7 +147,10 @@ int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_00588060(CShotgun *this_ptr)
                 if (pCStack_3c == (CFlameCan *)0x0) {
                   in_stack_fffffec4 = (CDemonSet *)g_CDemonSetPtr->ground_type;
                   in_stack_fffffec0 = (CDemonActor *)&g_CDemonSetPtr->collision_normal;
-                  core_fire_cpp_CFireEffect_FUN_004c76a0(g_CFireEffectPtr);
+                  core_fire_cpp_CFireEffect_createBulletImpact_FUN_004c76a0
+                            (g_CFireEffectPtr,&g_CDemonSetPtr->collision_impact_position,
+                             (CVector3f *)in_stack_fffffec0,(int)in_stack_fffffec4,
+                             g_CDemonSetPtr->collision_actor);
                   break;
                 }
                 in_stack_fffffec4 = (CDemonSet *)0x588736;
@@ -229,11 +232,11 @@ int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_00588060(CShotgun *this_ptr)
       pCStack_3c = (CFlameCan *)((pCStack_3c->base).actor_name + 1);
     } while ((int)pCStack_3c < (int)fStack_34);
   }
-  core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
+  core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
   fStack_88 = CStack_b8.x;
   local_80 = CStack_b8.z;
   fStack_84 = CStack_b8.y + -0.125f;
-  core_fire_cpp_CFireEffect_FUN_004c7a60(g_CFireEffectPtr);
+  core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60(g_CFireEffectPtr);
   core_sound_cpp_CSound_playActorSound_FUN_005b3a40
             (g_CSoundPtr,(CDemonActor *)this_ptr,"shotgun.wav",&CStack_b8);
   (this_ptr->base).fire_cooldown_timer = 0.666;

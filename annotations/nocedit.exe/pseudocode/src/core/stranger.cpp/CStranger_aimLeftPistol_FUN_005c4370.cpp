@@ -60,7 +60,7 @@ void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_005c4370(CStranger *t
   fStack_bc = core_setcolid_cpp_CDemonSet_raycast_FUN_00572530(g_CDemonSetPtr,&CStack_a8,&CStack_90)
   ;
   fStack_14 = fStack_bc;
-  core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
+  core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
   if ((fStack_bc < 0.0) || (1.0 < fStack_bc)) {
     fStack_bc = 1.0;
   }
@@ -82,7 +82,7 @@ void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_005c4370(CStranger *t
   CStack_78.x = CStack_60.x - CStack_6c.x;
   CStack_78.y = CStack_60.y - CStack_6c.y;
   CStack_78.z = CStack_60.z - CStack_6c.z;
-  core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_54,&CStack_78);
+  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_54,&CStack_78);
   fVar1 = SQRT(CStack_78.z * CStack_78.z + CStack_78.x * CStack_78.x + CStack_78.y * CStack_78.y);
   if ((float)0.01 < fVar1) {
     fStack_20 = -local_9c.x;

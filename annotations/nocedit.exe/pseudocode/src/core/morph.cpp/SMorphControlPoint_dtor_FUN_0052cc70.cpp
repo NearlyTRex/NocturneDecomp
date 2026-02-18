@@ -11,6 +11,6 @@ SMorphControlPoint * __cdecl core_morph_cpp_SMorphControlPoint_dtor_FUN_0052cc70
 {
   CVector3f *pCVar1;
   
-  pCVar1 = core_morph_cpp_CVector3f_arrdtor_FUN_0052cc90(this_ptr->unk2,0);
+  pCVar1 = core_morph_cpp_CVector3f_arrdtor_FUN_0052cc90(this_ptr->position,0);
   return (SMorphControlPoint *)&pCVar1[-1].y;
 }

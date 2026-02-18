@@ -71,7 +71,7 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004f0350(CGun *this_ptr)
   CStack_e0.x = CStack_bc.x - fStack_44;
   CStack_e0.y = CStack_bc.y - fStack_40;
   CStack_e0.z = CStack_bc.z - fStack_3c;
-  core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
+  core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
   core_setcolid_cpp_CDemonSet_setRayType_FUN_00574230(g_CDemonSetPtr,1);
   core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,(CDemonActor *)this_ptr);
   pCVar4 = (this_ptr->base).carried_by_actor;
@@ -109,7 +109,10 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004f0350(CGun *this_ptr)
         if (this_ptr_02 == (CTrigger *)0x0) {
           if (pCStack_24 == (CCrate *)0x0) {
             if (this_ptr_03 == (CFlameCan *)0x0) {
-              core_fire_cpp_CFireEffect_FUN_004c76a0(g_CFireEffectPtr);
+              core_fire_cpp_CFireEffect_createBulletImpact_FUN_004c76a0
+                        (g_CFireEffectPtr,&g_CDemonSetPtr->collision_impact_position,
+                         &g_CDemonSetPtr->collision_normal,g_CDemonSetPtr->ground_type,
+                         g_CDemonSetPtr->collision_actor);
               break;
             }
             core_flamecan_cpp_CFlameCan_FUN_004cb340(this_ptr_03);
@@ -144,7 +147,7 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004f0350(CGun *this_ptr)
       if (iVar2 != 0) {
         if (iStack_1c == 0) {
           (this_ptr->base).ammo_count = (this_ptr->base).ammo_count + 1;
-          core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(this_ptr_00);
+          core_setcolid_cpp_CDemonSet_init_FUN_00574180(this_ptr_00);
           return 0;
         }
         break;
@@ -190,11 +193,11 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004f0350(CGun *this_ptr)
     }
     iStack_20 = iStack_20 + 1;
   } while (iStack_20 < 4);
-  core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
+  core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
   CStack_58.z = CStack_bc.x;
   fStack_48 = CStack_bc.z;
   fStack_4c = CStack_bc.y + -0.125f;
-  core_fire_cpp_CFireEffect_FUN_004c7a60(g_CFireEffectPtr);
+  core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60(g_CFireEffectPtr);
   core_sound_cpp_CSound_playActorSound_FUN_005b3a40
             (g_CSoundPtr,(CDemonActor *)this_ptr,"45.wav",&CStack_bc);
   (this_ptr->base).fire_cooldown_timer = 0.333;
@@ -217,6 +220,6 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004f0350(CGun *this_ptr)
     CStack_8c.z = pCVar1->z;
   }
   core_dmodel_cpp_loadModel_FUN_00478c00("gatbullet.kfm");
-  core_fire_cpp_CFireEffect_FUN_004c91e0(g_CFireEffectPtr);
+  core_fire_cpp_CFireEffect_createShell_FUN_004c91e0(g_CFireEffectPtr);
   return 1;
 }

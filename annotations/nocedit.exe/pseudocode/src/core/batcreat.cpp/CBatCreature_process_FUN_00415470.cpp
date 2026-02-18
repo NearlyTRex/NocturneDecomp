@@ -100,7 +100,7 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00415470(CBatCreature *t
       local_28 = SQRT(local_f4.z * local_f4.z + local_f4.x * local_f4.x + local_f4.y * local_f4.y);
       local_1c = local_28;
       if (local_28 < 3.5f) {
-        core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_b8,&local_f4);
+        core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_b8,&local_f4);
         local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                              (local_b8.y - (this_ptr->base).base.base.orient.vec.y);
         if (ABS(local_14) < (float)0.52359877558333301) {
@@ -132,7 +132,7 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00415470(CBatCreature *t
                        (this_ptr->base).base.base.location.position.y;
           local_e8.z = (pCVar4->location).position.z -
                        (this_ptr->base).base.base.location.position.z;
-          core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_64,&local_e8);
+          core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_64,&local_e8);
           local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                                (local_64.y - (this_ptr->base).base.base.orient.vec.y);
           if ((ABS(local_14) < (float)0.52359877558333301) &&
@@ -207,7 +207,7 @@ LAB_004158fb:
                          (this_ptr->base).base.base.location.position.y;
             local_94.z = (pCVar4->location).position.z -
                          (this_ptr->base).base.base.location.position.z;
-            core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_dc,&local_94);
+            core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_dc,&local_94);
             local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                                  (local_dc.y - (this_ptr->base).base.base.orient.vec.y);
             if ((ABS(local_14) < (float)0.52359877558333301) &&
@@ -235,7 +235,7 @@ LAB_004158fb:
                          (this_ptr->base).base.base.location.position.y;
             local_88.z = (pCVar4->location).position.z -
                          (this_ptr->base).base.base.location.position.z;
-            core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_d0,&local_88);
+            core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_d0,&local_88);
             local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                                  (local_d0.y - (this_ptr->base).base.base.orient.vec.y);
             if (ABS(local_14) < (float)0.52359877558333301) {

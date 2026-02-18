@@ -36,7 +36,7 @@
 ;   core_glass.cpp_CGlass_checkBreakableCondition_FUN_004eb3a0
 ;   core_glass.cpp_CGlass_shatter_FUN_004eaef0
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0
-;   core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180
+;   core_setcolid.cpp_CDemonSet_init_FUN_00574180
 ;   core_setcolid.cpp_CDemonSet_raycast_FUN_00572530
 ;   core_setcolid.cpp_CDemonSet_setRayType_FUN_00574230
 ;   core_sound.cpp_CSound_playActorSound_FUN_005b3a40
@@ -142,8 +142,8 @@ section .text
     FXCH                                ; 0044906c
     FSTP float ptr [ESP + 0x74]         ; 0044906e
     FSTP float ptr [ESP + 0x78]         ; 00449072
-    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 00449076
-        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_init_FUN_00574180 ; 00449076
+        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00574180(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0044907b
     PUSH 0x1                            ; 0044907e
     MOV EDI,dword ptr [0x006810c8]      ; 00449080 | g_CDemonSetPtr
@@ -188,8 +188,8 @@ section .text
     MOV ESI,dword ptr [0x006810c8]      ; 004490f5 | g_CDemonSetPtr
         ;   Label: LAB_004490f5
     PUSH ESI                            ; 004490fb | g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 004490fc
-        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_init_FUN_00574180 ; 004490fc
+        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00574180(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00449101
     FLD float ptr [ESP + 0x8]           ; 00449104
     FLD1                                ; 00449108
@@ -359,8 +359,8 @@ section .text
     INC ECX                             ; 004492fa
     PUSH EDX                            ; 004492fb | g_CDemonSetInstance
     MOV dword ptr [EBX + 0x568],ECX     ; 004492fc
-    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 00449302
-        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_init_FUN_00574180 ; 00449302
+        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00574180(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00449307
     XOR EAX,EAX                         ; 0044930a
     MOV ESP,EBP                         ; 0044930c

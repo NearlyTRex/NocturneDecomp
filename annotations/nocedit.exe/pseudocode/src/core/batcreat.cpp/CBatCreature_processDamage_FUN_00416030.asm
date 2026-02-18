@@ -24,7 +24,7 @@
 ;   core_batcreat.cpp_CBatCreature_FUN_00415dd0
 ;   core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10
-;   core_fire.cpp_CFireEffect_FUN_004c79d0
+;   core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
@@ -189,8 +189,8 @@ section .text
     MOV EAX,[0x0067a3d0]                ; 00416190 | g_CFireEffectInstance | g_CFireEffectPtr
     PUSH EAX                            ; 00416195 | g_CFireEffectInstance
     INC EBX                             ; 00416196
-    CALL core_fire.cpp_CFireEffect_FUN_004c79d0 ; 00416197
-        ;   XREF to: 004c79d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c79d0(CFireEffect * this_ptr)
+    CALL core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0 ; 00416197
+        ;   XREF to: 004c79d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int intensity_target, ...)
     ADD ESP,0x1c                        ; 0041619c
     CMP EBX,0x5                         ; 0041619f
     JL 0x00416180                       ; 004161a2
