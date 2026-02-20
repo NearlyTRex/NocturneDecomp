@@ -17,7 +17,7 @@ void __cdecl core_platfrm_cpp_CPlatform_setup_FUN_0054ca20(CPlatform *this_ptr)
     core_course_cpp_CCourse_load_FUN_00442580(&this_ptr->course,this_ptr->course_filename);
     (this_ptr->course).loop = 0;
   }
-  core_platfrm_cpp_CPlatform_FUN_0054cab0(this_ptr);
+  core_platfrm_cpp_CPlatform_evaluatePosition_FUN_0054cab0(this_ptr);
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&this_ptr->model);
   pCVar1 = (CPlatform *)((this_ptr->model).model_name + 0x38);
   pCVar2 = this_ptr;

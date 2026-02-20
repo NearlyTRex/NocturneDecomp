@@ -102,7 +102,7 @@ int __cdecl shape_quantize_cpp_CColorQuantizer_quantizeBitmaps_FUN_005563d0(CCol
 void __cdecl shape_quantize_cpp_CColorQuantizer_quantizeBitmap_FUN_00556470(CColorQuantizer *this_ptr,CBitmap **bitmap_ptr);
 int __cdecl shape_quantize_cpp_quantizeRawPixelData_FUN_00556490(uchar *src_pixel_data,uchar **out_pixel_data,uchar **out_palette,short width, short height,uint bit_depth,int line_number,int show_progress);
 int __cdecl shape_quantize_cpp_displayProgressBar_FUN_005568f0(char *label,int total_count,int current_index);
-CBitmap * __cdecl shape_quantize_cpp_CBitmap_ctor_FUN_00556a00(CBitmap *this_ptr);
+CBitmap * __cdecl shape_quantize_cpp_CBitmap_ctor_FUN_00556a00(CBitmap *this_ptr,int param_2,int param_3,int param_4);
 CBitmap * __cdecl shape_quantize_cpp_CBitmap_dtor_FUN_00556c20(CBitmap *this_ptr,uint flags);
 void __cdecl shape_quantize_cpp_showError_FUN_00556cb0(char *error);
 void __cdecl shape_quantize_cpp_showError_FUN_00556ce0(char *error);

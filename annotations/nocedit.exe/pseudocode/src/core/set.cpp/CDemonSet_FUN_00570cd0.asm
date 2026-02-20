@@ -15,9 +15,9 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_00662850 = 256
-;   undefined4 g_RenderVertexBuffer[0].light
-;   undefined4 g_RenderVertexBuffer[0].color
-;   undefined4 g_RenderVertexBuffer[0].fog
+;   undefined4 g_RenderVertexBuffer[0].z
+;   undefined4 g_RenderVertexBuffer[0].r
+;   undefined4 g_RenderVertexBuffer[0].g
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
@@ -58,12 +58,12 @@ section .text
     PUSH ESI                            ; 00570d1d
     CALL core_set.cpp_CDemonSet_lightVertexColor_FUN_0056ddb0 ; 00570d1e
         ;   XREF to: 0056ddb0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVertexColor_FUN_0056ddb0(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int vertex_index, ...)
-    MOV EBX,dword ptr [0x00688034]      ; 00570d23 | g_RenderVertexBuffer[0].light
+    MOV EBX,dword ptr [0x00688034]      ; 00570d23 | g_RenderVertexBuffer[0].z
     MOV dword ptr [ESI + 0x161658],0x1  ; 00570d29
-    MOV EAX,[0x0068803c]                ; 00570d33 | g_RenderVertexBuffer[0].fog
+    MOV EAX,[0x0068803c]                ; 00570d33 | g_RenderVertexBuffer[0].g
     MOV dword ptr [ESI + 0x16165c],EBX  ; 00570d38
     MOV dword ptr [ESI + 0x161664],EAX  ; 00570d3e
-    MOV EBX,dword ptr [0x00688038]      ; 00570d44 | g_RenderVertexBuffer[0].color
+    MOV EBX,dword ptr [0x00688038]      ; 00570d44 | g_RenderVertexBuffer[0].r
     ADD ESP,0x14                        ; 00570d4a
     MOV dword ptr [ESI + 0x161660],EBX  ; 00570d4d
     POP EBX                             ; 00570d53

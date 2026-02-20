@@ -36,7 +36,7 @@ void __cdecl core_actor_cpp_draw3DLineSegment_FUN_0040d330(CVector3i *start_poin
   float local_10;
   
   bVar5 = 0;
-  local_84.w_recip = (float)&local_54;
+  local_84.fog = (int)&local_54;
   local_24 = (float)start_point->x;
   local_20 = (float)start_point->y;
   local_1c = (float)start_point->z;
@@ -52,18 +52,18 @@ void __cdecl core_actor_cpp_draw3DLineSegment_FUN_0040d330(CVector3i *start_poin
   local_54.x = (int)ROUND(local_24 * 256.0f);
   local_54.y = (int)ROUND(local_20 * 256.0f);
   local_54.z = (int)ROUND(local_1c * 256.0f);
-  local_84.fog = (int)g_CDemonRendererPtr1->vertex_buffer_ptr;
-  local_84.color = 0x40d3f1;
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-            ((SProjectedVertex *)local_84.fog,&local_54);
+  local_84.g = (int)g_CDemonRendererPtr1->vertex_buffer_ptr;
+  local_84.r = 0x40d3f1;
+  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c((SProjectedVertex *)local_84.g,&local_54)
+  ;
   local_30.x = (int)ROUND(local_3c * 256.0f);
   local_30.y = (int)ROUND(local_38 * 256.0f);
   local_30.z = (int)ROUND(local_34 * 256.0f);
-  local_84.w_recip = (float)&local_30;
-  local_84.fog = (int)(g_CDemonRendererPtr1->vertex_buffer_ptr + 1);
-  local_84.color = 0x40d434;
+  local_84.fog = (int)&local_30;
+  local_84.g = (int)(g_CDemonRendererPtr1->vertex_buffer_ptr + 1);
+  local_84.r = 0x40d434;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-            ((SProjectedVertex *)local_84.fog,(CVector3i *)local_84.w_recip);
+            ((SProjectedVertex *)local_84.g,(CVector3i *)local_84.fog);
   pSVar3 = g_CDemonRendererPtr1->vertex_buffer_ptr;
   pSVar2 = pSVar3 + 1;
   pSVar4 = &local_84;
@@ -78,13 +78,13 @@ void __cdecl core_actor_cpp_draw3DLineSegment_FUN_0040d330(CVector3i *start_poin
     pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);
     pSVar2 = (SRenderVertex *)((int)pSVar2 + ((uint)bVar5 * -2 + 1) * 4);
   }
-  vertex2.color = local_84.color;
+  vertex2.r = local_84.r;
   vertex2.projected_vertex = local_84.projected_vertex;
   vertex2.u = local_84.u;
   vertex2.v = local_84.v;
-  vertex2.light = local_84.light;
+  vertex2.z = local_84.z;
+  vertex2.g = local_84.g;
   vertex2.fog = local_84.fog;
-  vertex2.w_recip = local_84.w_recip;
   engine_3d_c_clipAndDrawLine2D_FUN_00407d70(local_b4,vertex2);
   return;
 }

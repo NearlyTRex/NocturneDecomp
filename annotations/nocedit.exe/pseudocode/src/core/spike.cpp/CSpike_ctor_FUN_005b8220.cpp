@@ -10,80 +10,69 @@ CSpike * __cdecl core_spike_cpp_CSpike_ctor_FUN_005b8220(CSpike *this_ptr)
 
 {
   char cVar1;
-  CDemonActor *pCVar2;
-  CKeyFramedModelInstance *this_ptr_00;
+  CSpike *pCVar2;
+  CSpike_ptr_344 this_ptr_00;
+  char *pcVar2;
   char *pcVar3;
-  char *pcVar4;
-  int *piVar5;
   
-  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
-  this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
-                          ((CKeyFramedModelInstance *)(pCVar2 + 1));
-  pcVar3 = "none";
-  this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CSpikeVTable;
+  pCVar2 = (CSpike *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
+  this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&pCVar2->model);
+  pcVar2 = "none";
+  ADJ(this_ptr_00)->base.vtable._ub = &g_CSpikeVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (this_ptr_00,"bgate.kfm");
-  this_ptr_00[1].part_visibility_flags[0] = 0;
-  this_ptr_00[1].part_visibility_flags[1] = 0;
-  piVar5 = this_ptr_00[1].part_visibility_flags + 7;
-  this_ptr_00[1].part_visibility_flags[2] = 0;
+  ADJ(this_ptr_00)->spike_type = 0;
+  ADJ(this_ptr_00)->spike_state = 0;
+  pcVar3 = ADJ(this_ptr_00)->start_event;
+  ADJ(this_ptr_00)->are_we_active = 0;
   do {
-    cVar1 = *pcVar3;
-    *(char *)piVar5 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar1 = pcVar3[1];
-    pcVar3 = pcVar3 + 2;
-    *(char *)((int)piVar5 + 1) = cVar1;
-    piVar5 = (int *)((int)piVar5 + 2);
-  } while (cVar1 != '\0');
-  pcVar4 = "none";
-  pcVar3 = this_ptr_00[1].model_name + 8;
-  do {
-    cVar1 = *pcVar4;
+    cVar1 = *pcVar2;
     *pcVar3 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar4[1];
-    pcVar4 = pcVar4 + 2;
+    cVar1 = pcVar2[1];
+    pcVar2 = pcVar2 + 2;
     pcVar3[1] = cVar1;
     pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
-  pcVar4 = "none";
-  pcVar3 = this_ptr_00[1].animation_state + 8;
+  pcVar2 = "none";
+  pcVar3 = ADJ(this_ptr_00)->stop_event;
   do {
-    cVar1 = *pcVar4;
+    cVar1 = *pcVar2;
     *pcVar3 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar4[1];
-    pcVar4 = pcVar4 + 2;
+    cVar1 = pcVar2[1];
+    pcVar2 = pcVar2 + 2;
     pcVar3[1] = cVar1;
     pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
-  pcVar4 = "none";
-  pcVar3 = this_ptr_00[1].animation_state + 0x6c;
+  pcVar2 = "none";
+  pcVar3 = ADJ(this_ptr_00)->extend_event;
   do {
-    cVar1 = *pcVar4;
+    cVar1 = *pcVar2;
     *pcVar3 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar4[1];
-    pcVar4 = pcVar4 + 2;
+    cVar1 = pcVar2[1];
+    pcVar2 = pcVar2 + 2;
     pcVar3[1] = cVar1;
     pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
-  this_ptr_00[2].part_visibility_flags[0xc] = 0x3f800000;
-  this_ptr_00[2].part_visibility_flags[0xd] = 0x3f800000;
-  *(byte *)(this_ptr_00[2].part_visibility_flags + 0xf) = 0;
-  this_ptr_00[2].model_name[0x28] = '\0';
-  this_ptr_00[2].animation_state[0x28] = '\0';
-  this_ptr_00[2].animation_state[0x29] = '\0';
-  this_ptr_00[2].animation_state[0x2a] = -0x80;
-  this_ptr_00[2].animation_state[0x2b] = '?';
-  this_ptr_00[2].animation_state[0x2c] = -0x33;
-  this_ptr_00[2].animation_state[0x2d] = -0x34;
-  this_ptr_00[2].animation_state[0x2e] = -0x34;
-  this_ptr_00[2].animation_state[0x2f] = '=';
-  this_ptr_00[2].animation_state[0x30] = '\0';
-  this_ptr_00[2].animation_state[0x31] = '\0';
-  this_ptr_00[2].animation_state[0x32] = '\0';
-  this_ptr_00[2].animation_state[0x33] = '\0';
-  return (CSpike *)(this_ptr_00[-1].part_visibility_flags + 9);
+  pcVar2 = "none";
+  pcVar3 = ADJ(this_ptr_00)->retract_event;
+  do {
+    cVar1 = *pcVar2;
+    *pcVar3 = cVar1;
+    if (cVar1 == '\0') break;
+    cVar1 = pcVar2[1];
+    pcVar2 = pcVar2 + 2;
+    pcVar3[1] = cVar1;
+    pcVar3 = pcVar3 + 2;
+  } while (cVar1 != '\0');
+  ADJ(this_ptr_00)->extend_time = 1.0;
+  ADJ(this_ptr_00)->retract_time = 1.0;
+  ADJ(this_ptr_00)->extend_sound[0] = '\0';
+  ADJ(this_ptr_00)->retract_sound[0] = '\0';
+  ADJ(this_ptr_00)->period = 1.0;
+  ADJ(this_ptr_00)->damage_strength = 0.1;
+  ADJ(this_ptr_00)->param = 0.0;
+  return ADJ(this_ptr_00);
 }

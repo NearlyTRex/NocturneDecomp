@@ -10,13 +10,13 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr,float d
 
 {
   CLocation *position;
-  char *pcVar1;
-  char *pcVar2;
-  float fVar3;
-  bool bVar4;
-  CDemonSet *pCVar5;
-  int iVar6;
-  float fVar7;
+  float *pfVar1;
+  float fVar2;
+  bool bVar3;
+  CDemonSet *pCVar4;
+  int iVar5;
+  float fVar6;
+  CVector3f *pCVar7;
   CVector3f *pCVar8;
   CMatrix3x4f *pCVar9;
   CMatrix3x3f *pCVar10;
@@ -75,10 +75,10 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr,float d
   float local_14;
   
   bVar11 = 0;
-  iVar6 = core_hero_cpp_FUN_004f2220();
-  if (iVar6 == 0) {
-    iVar6 = core_hero_cpp_FUN_004f2220();
-    if (iVar6 != 0) {
+  iVar5 = core_hero_cpp_FUN_004f2220();
+  if (iVar5 == 0) {
+    iVar5 = core_hero_cpp_FUN_004f2220();
+    if (iVar5 != 0) {
       return;
     }
     (this_ptr->base).location.position.x = (this_ptr->home_pos).x;
@@ -87,151 +87,150 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr,float d
     return;
   }
   local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.05,0.05);
-  *(float *)(this_ptr->unk + 0x20) = local_14 + *(float *)(this_ptr->unk + 0x20);
+  (this_ptr->drift).x = local_14 + (this_ptr->drift).x;
   local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.05,0.05);
-  *(float *)(this_ptr->unk + 0x24) = local_14 + *(float *)(this_ptr->unk + 0x24);
+  pfVar1 = &(this_ptr->drift).y;
+  *pfVar1 = local_14 + *pfVar1;
   local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.05,0.05);
-  *(float *)(this_ptr->unk + 0x28) = local_14 + *(float *)(this_ptr->unk + 0x28);
-  pCVar5 = g_CDemonSetPtr;
+  pfVar1 = &(this_ptr->drift).z;
+  *pfVar1 = local_14 + *pfVar1;
+  pCVar4 = g_CDemonSetPtr;
   local_d0 = 0x40800000;
   local_cc = 0;
   pCVar8 = &(g_CDemonSetPtr->active_fog).scroll;
   local_c8 = 0;
   if (pCVar8 != (CVector3f *)&local_d0) {
     pCVar8->x = 4.0;
-    (pCVar5->active_fog).scroll.y = 0.0;
-    (pCVar5->active_fog).scroll.z = 0.0;
+    (pCVar4->active_fog).scroll.y = 0.0;
+    (pCVar4->active_fog).scroll.z = 0.0;
   }
-  fVar7 = *(float *)(this_ptr->unk + 0x34) - delta_time;
-  *(float *)(this_ptr->unk + 0x34) = fVar7;
-  pCVar5 = g_CDemonSetPtr;
-  if (fVar7 <= 0.0) {
+  fVar6 = this_ptr->animation_timer - delta_time;
+  this_ptr->animation_timer = fVar6;
+  pCVar4 = g_CDemonSetPtr;
+  if (fVar6 <= 0.0) {
     pCVar8 = &(g_CDemonSetPtr->active_fog).scroll;
-    if ((CVector3f *)(this_ptr->unk + 0x38) != pCVar8) {
-      *(float *)(this_ptr->unk + 0x38) = pCVar8->x;
-      *(float *)(this_ptr->unk + 0x3c) = (pCVar5->active_fog).scroll.y;
-      *(float *)(this_ptr->unk + 0x40) = (pCVar5->active_fog).scroll.z;
+    if (&this_ptr->fog_target != pCVar8) {
+      (this_ptr->fog_target).x = pCVar8->x;
+      (this_ptr->fog_target).y = (pCVar4->active_fog).scroll.y;
+      (this_ptr->fog_target).z = (pCVar4->active_fog).scroll.z;
     }
     local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-10.0,10.0);
-    *(float *)(this_ptr->unk + 0x38) = local_14 + *(float *)(this_ptr->unk + 0x38);
+    (this_ptr->fog_target).x = local_14 + (this_ptr->fog_target).x;
     local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(15.0,25.0);
-    *(float *)(this_ptr->unk + 0x3c) = local_14 + *(float *)(this_ptr->unk + 0x3c);
+    (this_ptr->fog_target).y = local_14 + (this_ptr->fog_target).y;
     local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-10.0,10.0);
-    *(float *)(this_ptr->unk + 0x40) = local_14 + *(float *)(this_ptr->unk + 0x40);
-    fVar7 = core_actor_cpp_getRandomFloat_FUN_0040cc10(6.0,20.0);
-    *(float *)(this_ptr->unk + 0x34) = fVar7;
+    (this_ptr->fog_target).z = local_14 + (this_ptr->fog_target).z;
+    fVar6 = core_actor_cpp_getRandomFloat_FUN_0040cc10(6.0,20.0);
+    this_ptr->animation_timer = fVar6;
   }
-  pcVar1 = this_ptr->unk + 0x38;
-  local_28 = (g_CDemonSetPtr->active_fog).scroll.x - *(float *)pcVar1;
-  local_24 = (g_CDemonSetPtr->active_fog).scroll.y - *(float *)(this_ptr->unk + 0x3c);
+  pCVar8 = &this_ptr->fog_target;
+  local_28 = (g_CDemonSetPtr->active_fog).scroll.x - pCVar8->x;
+  local_24 = (g_CDemonSetPtr->active_fog).scroll.y - (this_ptr->fog_target).y;
   local_ac = local_28 * 0.05f;
-  local_20 = (g_CDemonSetPtr->active_fog).scroll.z - *(float *)(this_ptr->unk + 0x40);
+  local_20 = (g_CDemonSetPtr->active_fog).scroll.z - (this_ptr->fog_target).z;
   local_a8 = local_24 * 0.05f;
   local_a4 = local_20 * 0.05f;
-  pCVar8 = (CVector3f *)(this_ptr->unk + 0x20);
-  *(float *)pcVar1 = *(float *)pcVar1 + local_ac;
-  *(float *)(this_ptr->unk + 0x3c) = *(float *)(this_ptr->unk + 0x3c) + local_a8;
-  *(float *)(this_ptr->unk + 0x40) = *(float *)(this_ptr->unk + 0x40) + local_a4;
-  local_94 = *(float *)pcVar1 - pCVar8->x;
-  local_90 = *(float *)(this_ptr->unk + 0x3c) - *(float *)(this_ptr->unk + 0x24);
+  pCVar7 = &this_ptr->drift;
+  pCVar8->x = pCVar8->x + local_ac;
+  (this_ptr->fog_target).y = (this_ptr->fog_target).y + local_a8;
+  (this_ptr->fog_target).z = (this_ptr->fog_target).z + local_a4;
+  local_94 = pCVar8->x - pCVar7->x;
+  local_90 = (this_ptr->fog_target).y - (this_ptr->drift).y;
   local_40 = local_94 * 0.07f;
-  local_8c = *(float *)(this_ptr->unk + 0x40) - *(float *)(this_ptr->unk + 0x28);
+  local_8c = (this_ptr->fog_target).z - (this_ptr->drift).z;
   local_3c = local_90 * 0.07f;
   local_38 = local_8c * 0.07f;
-  fVar7 = *(float *)(this_ptr->unk + 0x24);
-  pCVar8->x = pCVar8->x + local_40;
-  *(float *)(this_ptr->unk + 0x24) = fVar7 + local_3c;
-  *(float *)(this_ptr->unk + 0x28) = *(float *)(this_ptr->unk + 0x28) + local_38;
+  pCVar7->x = pCVar7->x + local_40;
+  (this_ptr->drift).y = (this_ptr->drift).y + local_3c;
+  (this_ptr->drift).z = (this_ptr->drift).z + local_38;
   local_c4 = (this_ptr->base).location.position.x;
   local_c0 = (this_ptr->base).location.position.y;
   local_bc = (this_ptr->base).location.position.z;
-  local_14 = -*(float *)(this_ptr->unk + 0x44);
-  pcVar1 = this_ptr->unk + 8;
-  local_e8 = pCVar8->x - *(float *)pcVar1;
-  local_e4 = *(float *)(this_ptr->unk + 0x24) - *(float *)(this_ptr->unk + 0xc);
-  pcVar2 = this_ptr->unk + 0x2c;
-  local_e0 = *(float *)(this_ptr->unk + 0x28) - *(float *)(this_ptr->unk + 0x10);
-  local_dc = local_e8 * *(float *)pcVar2;
-  local_48 = local_e4 * *(float *)pcVar2;
-  local_d4 = local_e0 * *(float *)pcVar2;
+  local_14 = -this_ptr->rotation_y;
+  pCVar8 = &this_ptr->velocity;
+  local_e8 = pCVar7->x - pCVar8->x;
+  local_e4 = (this_ptr->drift).y - (this_ptr->velocity).y;
+  pfVar1 = &this_ptr->damping_factor;
+  local_e0 = (this_ptr->drift).z - (this_ptr->velocity).z;
+  local_dc = local_e8 * *pfVar1;
+  local_48 = local_e4 * *pfVar1;
+  local_d4 = local_e0 * *pfVar1;
   local_d8 = local_14 + local_48;
   local_4c = local_dc;
   local_44 = local_d4;
-  pCVar8 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
-                     (&this_ptr->base,&local_70,pCVar8);
-  local_a0 = pCVar8->x * 0.5f;
-  local_9c = pCVar8->y * 0.5f;
-  local_98 = 0.5f * pCVar8->z;
-  pcVar2 = this_ptr->unk + 0x14;
-  fVar7 = *(float *)(this_ptr->unk + 0x18) * 0.8f;
-  fVar3 = *(float *)(this_ptr->unk + 0x1c) * 0.8f;
-  *(float *)pcVar2 = *(float *)pcVar2 * 0.8f;
-  *(float *)(this_ptr->unk + 0x18) = fVar7;
-  *(float *)(this_ptr->unk + 0x1c) = fVar3;
-  *(float *)pcVar2 = *(float *)pcVar2 + local_a0;
-  *(float *)(this_ptr->unk + 0x18) = *(float *)(this_ptr->unk + 0x18) + local_9c;
-  *(float *)(this_ptr->unk + 0x1c) = *(float *)(this_ptr->unk + 0x1c) + local_98;
+  pCVar7 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
+                     (&this_ptr->base,&local_70,pCVar7);
+  local_a0 = pCVar7->x * 0.5f;
+  local_9c = pCVar7->y * 0.5f;
+  local_98 = 0.5f * pCVar7->z;
+  pCVar7 = &this_ptr->acceleration;
+  fVar6 = (this_ptr->acceleration).y * 0.8f;
+  fVar2 = (this_ptr->acceleration).z * 0.8f;
+  pCVar7->x = pCVar7->x * 0.8f;
+  (this_ptr->acceleration).y = fVar6;
+  (this_ptr->acceleration).z = fVar2;
+  pCVar7->x = pCVar7->x + local_a0;
+  (this_ptr->acceleration).y = (this_ptr->acceleration).y + local_9c;
+  (this_ptr->acceleration).z = (this_ptr->acceleration).z + local_98;
   local_7c = local_dc * delta_time;
   local_78 = local_d8 * delta_time;
   local_74 = local_d4 * delta_time;
-  *(float *)pcVar1 = *(float *)pcVar1 + local_7c;
-  *(float *)(this_ptr->unk + 0xc) = *(float *)(this_ptr->unk + 0xc) + local_78;
-  *(float *)(this_ptr->unk + 0x10) = *(float *)(this_ptr->unk + 0x10) + local_74;
-  fVar7 = SQRT(*(float *)(this_ptr->unk + 0x1c) * *(float *)(this_ptr->unk + 0x1c) +
-               *(float *)pcVar2 * *(float *)pcVar2 +
-               *(float *)(this_ptr->unk + 0x18) * *(float *)(this_ptr->unk + 0x18)) *
-          (float)0.15915494309644401;
-  if (1.0 < fVar7) {
-    fVar7 = 1.0 / fVar7;
-    *(float *)pcVar2 = *(float *)pcVar2 * fVar7;
-    *(float *)(this_ptr->unk + 0x18) = *(float *)(this_ptr->unk + 0x18) * fVar7;
-    *(float *)(this_ptr->unk + 0x1c) = *(float *)(this_ptr->unk + 0x1c) * fVar7;
+  pCVar8->x = pCVar8->x + local_7c;
+  (this_ptr->velocity).y = (this_ptr->velocity).y + local_78;
+  (this_ptr->velocity).z = (this_ptr->velocity).z + local_74;
+  fVar6 = (this_ptr->acceleration).y;
+  fVar2 = (this_ptr->acceleration).z;
+  fVar6 = SQRT(fVar2 * fVar2 + pCVar7->x * pCVar7->x + fVar6 * fVar6) * (float)0.15915494309644401;
+  if (1.0 < fVar6) {
+    fVar6 = 1.0 / fVar6;
+    pCVar7->x = pCVar7->x * fVar6;
+    (this_ptr->acceleration).y = (this_ptr->acceleration).y * fVar6;
+    (this_ptr->acceleration).z = (this_ptr->acceleration).z * fVar6;
   }
-  local_58 = *(float *)(this_ptr->unk + 8) * delta_time;
-  local_54 = *(float *)(this_ptr->unk + 0xc) * delta_time;
-  local_50 = *(float *)(this_ptr->unk + 0x10) * delta_time;
-  local_34.x = *(float *)(this_ptr->unk + 0x14) * delta_time;
-  local_34.y = *(float *)(this_ptr->unk + 0x18) * delta_time;
-  local_34.z = delta_time * *(float *)(this_ptr->unk + 0x1c);
+  local_58 = (this_ptr->velocity).x * delta_time;
+  local_54 = (this_ptr->velocity).y * delta_time;
+  local_50 = (this_ptr->velocity).z * delta_time;
+  local_34.x = (this_ptr->acceleration).x * delta_time;
+  local_34.y = (this_ptr->acceleration).y * delta_time;
+  local_34.z = delta_time * (this_ptr->acceleration).z;
   local_14 = core_setcolid_cpp_CDemonSet_testCapsuleCollision_FUN_00573470
                        (g_CDemonSetPtr,(this_ptr->base).location.position.x,
                         (this_ptr->base).location.position.z,local_58,local_50,
-                        *(float *)(this_ptr->unk + 0x30),*(void **)this_ptr->unk,
-                        *(void **)(this_ptr->unk + 4));
-  bVar4 = false;
+                        this_ptr->collision_radius,this_ptr->unk,this_ptr->field4_0x2e4);
+  bVar3 = false;
   if ((0.0 <= local_14) && (local_14 < 1.0)) {
     local_58 = local_58 * local_14;
     local_54 = local_54 * local_14;
     local_50 = local_50 * local_14;
-    bVar4 = true;
+    bVar3 = true;
   }
   position = &(this_ptr->base).location;
-  fVar7 = (this_ptr->base).location.position.y;
+  fVar6 = (this_ptr->base).location.position.y;
   (position->position).x = (position->position).x + local_58;
-  fVar3 = (this_ptr->base).location.position.z;
-  (this_ptr->base).location.position.y = fVar7 + local_54;
-  (this_ptr->base).location.position.z = fVar3 + local_50;
+  fVar2 = (this_ptr->base).location.position.z;
+  (this_ptr->base).location.position.y = fVar6 + local_54;
+  (this_ptr->base).location.position.z = fVar2 + local_50;
   local_1c = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
                        (g_CDemonSetPtr,&position->position,
-                        *(float *)(this_ptr->unk + 0x30) * (float)0.90000000000000002);
+                        this_ptr->collision_radius * (float)0.90000000000000002);
   if (local_1c <= (this_ptr->base).location.position.y) {
-    if (!bVar4) goto LAB_005df3d0;
+    if (!bVar3) goto LAB_005df3d0;
   }
   else {
-    fVar7 = *(float *)(this_ptr->unk + 0x30);
-    fVar3 = (float)1.5;
+    fVar6 = this_ptr->collision_radius;
+    fVar2 = (float)1.5;
     (this_ptr->base).location.position.y = local_1c;
-    if (fVar7 * fVar3 + local_c0 < (this_ptr->base).location.position.y) {
+    if (fVar6 * fVar2 + local_c0 < (this_ptr->base).location.position.y) {
       (position->position).x = local_c4;
       (this_ptr->base).location.position.y = local_c0;
       (this_ptr->base).location.position.z = local_bc;
     }
   }
-  fVar7 = *(float *)(this_ptr->unk + 0x18) * 0.7f;
-  fVar3 = *(float *)(this_ptr->unk + 0x1c) * 0.7f;
-  *(float *)(this_ptr->unk + 0x14) = *(float *)(this_ptr->unk + 0x14) * 0.7f;
-  *(float *)(this_ptr->unk + 0x18) = fVar7;
-  *(float *)(this_ptr->unk + 0x1c) = fVar3;
+  fVar6 = (this_ptr->acceleration).y * 0.7f;
+  fVar2 = (this_ptr->acceleration).z * 0.7f;
+  (this_ptr->acceleration).x = (this_ptr->acceleration).x * 0.7f;
+  (this_ptr->acceleration).y = fVar6;
+  (this_ptr->acceleration).z = fVar2;
 LAB_005df3d0:
   local_64 = (this_ptr->base).location.position.x - local_c4;
   local_60 = (this_ptr->base).location.position.y - local_c0;
@@ -240,10 +239,10 @@ LAB_005df3d0:
   local_5c = (this_ptr->base).location.position.z - local_bc;
   local_b4 = local_60 * local_b0;
   local_b0 = local_5c * local_b0;
-  if ((float *)(this_ptr->unk + 8) != &local_b8) {
-    *(float *)(this_ptr->unk + 8) = local_b8;
-    *(float *)(this_ptr->unk + 0xc) = local_b4;
-    *(float *)(this_ptr->unk + 0x10) = local_b0;
+  if (&this_ptr->velocity != (CVector3f *)&local_b8) {
+    (this_ptr->velocity).x = local_b8;
+    (this_ptr->velocity).y = local_b4;
+    (this_ptr->velocity).z = local_b0;
   }
   local_18 = (CVector3f *)&(this_ptr->base).orient;
   local_14 = local_1c;
@@ -254,7 +253,7 @@ LAB_005df3d0:
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_118,&local_1a8,&local_178);
   pCVar9 = &local_178;
   pCVar10 = &local_148;
-  for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
+  for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {
     pCVar10->m[0].x = pCVar9->m[0].w;
     pCVar9 = (CMatrix3x4f *)((int)pCVar9 + ((uint)bVar11 * -2 + 1) * 4);
     pCVar10 = (CMatrix3x3f *)((int)pCVar10 + ((uint)bVar11 * -2 + 1) * 4);

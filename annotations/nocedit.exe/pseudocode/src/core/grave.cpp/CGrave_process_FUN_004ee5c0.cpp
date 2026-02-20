@@ -14,7 +14,7 @@ void __cdecl core_grave_cpp_CGrave_process_FUN_004ee5c0(CGrave *this_ptr,float d
   int iVar3;
   CKeyFramedModel *pCVar4;
   
-  if (*(int *)this_ptr->unk1 == 0) {
+  if (this_ptr->animation_started == 0) {
     if (this_ptr->grave_state == 0) {
       iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                         (g_CEventListPtr,this_ptr->start_condition);

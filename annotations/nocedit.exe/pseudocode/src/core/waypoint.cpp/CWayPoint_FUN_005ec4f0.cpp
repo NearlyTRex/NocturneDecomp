@@ -20,7 +20,7 @@ void __cdecl core_waypoint_cpp_CWayPoint_FUN_005ec4f0(CWayPoint *this_ptr)
   if (0 < this_ptr->num_adjacent_waypoints) {
     do {
       iVar2 = iVar2 + 1;
-      core_waypoint_cpp_CWayPoint_FUN_005ec640(*(CWayPoint **)pCVar3->unk);
+      core_waypoint_cpp_CWayPoint_FUN_005ec640(pCVar3->adjacency[0].waypoint);
       pCVar3 = (CWayPoint *)((pCVar3->base).base.actor_name + 8);
     } while (iVar2 < this_ptr->num_adjacent_waypoints);
   }

@@ -52,7 +52,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0
   float local_38;
   float local_34;
   float local_30;
-  float local_2c;
+  int local_2c;
   float local_28;
   float local_24;
   float local_20;
@@ -169,28 +169,28 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0
             local_12c.surface_normal.B = 0;
             local_12c.surface_normal.A = 0;
             local_114 = 0;
-            local_2c = (float)(int)ROUND(ROUND(((((this_ptr->base).max_distance - fVar2) *
-                                                (float)8192) /
-                                               (this_ptr->base).max_distance) * (1.0 - fVar1)));
-            g_CDemonRendererPtr2->vertex_buffer_ptr->w_recip = local_2c;
-            this_ptr_00->vertex_buffer_ptr->light = 0xffff;
-            this_ptr_00->vertex_buffer_ptr->color = 0xffff;
-            this_ptr_00->vertex_buffer_ptr->fog = 0xffff;
+            local_2c = (int)ROUND(ROUND(((((this_ptr->base).max_distance - fVar2) *
+                                         (float)8192) / (this_ptr->base).max_distance) *
+                                        (1.0 - fVar1)));
+            g_CDemonRendererPtr2->vertex_buffer_ptr->fog = local_2c;
+            this_ptr_00->vertex_buffer_ptr->z = 0xffff;
+            this_ptr_00->vertex_buffer_ptr->r = 0xffff;
+            this_ptr_00->vertex_buffer_ptr->g = 0xffff;
             local_110 = 1;
-            this_ptr_00->vertex_buffer_ptr[1].w_recip = local_2c;
-            this_ptr_00->vertex_buffer_ptr[1].light = 0xffff;
-            this_ptr_00->vertex_buffer_ptr[1].color = 0xffff;
-            this_ptr_00->vertex_buffer_ptr[1].fog = 0xffff;
+            this_ptr_00->vertex_buffer_ptr[1].fog = local_2c;
+            this_ptr_00->vertex_buffer_ptr[1].z = 0xffff;
+            this_ptr_00->vertex_buffer_ptr[1].r = 0xffff;
+            this_ptr_00->vertex_buffer_ptr[1].g = 0xffff;
             local_10c = 2;
-            this_ptr_00->vertex_buffer_ptr[2].w_recip = local_2c;
-            this_ptr_00->vertex_buffer_ptr[2].light = 0xffff;
-            this_ptr_00->vertex_buffer_ptr[2].color = 0xffff;
-            this_ptr_00->vertex_buffer_ptr[2].fog = 0xffff;
+            this_ptr_00->vertex_buffer_ptr[2].fog = local_2c;
+            this_ptr_00->vertex_buffer_ptr[2].z = 0xffff;
+            this_ptr_00->vertex_buffer_ptr[2].r = 0xffff;
+            this_ptr_00->vertex_buffer_ptr[2].g = 0xffff;
             local_108 = 3;
-            this_ptr_00->vertex_buffer_ptr[3].w_recip = local_2c;
-            this_ptr_00->vertex_buffer_ptr[3].light = 0xffff;
-            this_ptr_00->vertex_buffer_ptr[3].color = 0xffff;
-            this_ptr_00->vertex_buffer_ptr[3].fog = 0xffff;
+            this_ptr_00->vertex_buffer_ptr[3].fog = local_2c;
+            this_ptr_00->vertex_buffer_ptr[3].z = 0xffff;
+            this_ptr_00->vertex_buffer_ptr[3].r = 0xffff;
+            this_ptr_00->vertex_buffer_ptr[3].g = 0xffff;
             this_ptr_00->vertex_buffer_ptr->u = 0xf80000;
             this_ptr_00->vertex_buffer_ptr->v = 0xf80000;
             this_ptr_00->vertex_buffer_ptr[1].u = 0x80000;

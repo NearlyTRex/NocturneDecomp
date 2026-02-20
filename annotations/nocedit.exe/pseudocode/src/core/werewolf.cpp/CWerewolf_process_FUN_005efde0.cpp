@@ -27,8 +27,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
   CDemonActor *pCVar14;
   CPathMap *path_map;
   CDemonActor *pCVar15;
-  uint uVar16;
-  int iVar17;
+  int iVar16;
   ulonglong in_stack_fffffce4;
   CWerewolf *actor_ptr;
   float in_stack_fffffcec;
@@ -101,7 +100,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
   
   iVar9 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar9 == 0) {
-    sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk4 + 8));
+    sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->eat_sfx_handle);
     return;
   }
   if ((this_ptr->type == WEREWOLF_TYPE_FOREST) && (0.0 <= this_ptr->phase_timer)) {
@@ -121,7 +120,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
     }
     else if (uVar10 < 0xb) {
       pCVar11 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                          (pCVar1,&local_158,*(int *)(this_ptr->unk3 + 8));
+                          (pCVar1,&local_158,this_ptr->bone_jaw);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)this_ptr,&local_98,pCVar11);
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(8.0,12.0);
@@ -164,7 +163,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
                           (&local_e0,&g_ZeroVector,
                            (CMatrix3x4f *)
                            (this_ptr->base).base.model.bone_transform.bone_world_matrices
-                           [*(int *)(this_ptr->unk3 + 8)].m);
+                           [this_ptr->bone_jaw].m);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)this_ptr,&local_140,pCVar11);
       core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
@@ -176,7 +175,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
                           (&local_d4,&g_ZeroVector,
                            (CMatrix3x4f *)
                            (this_ptr->base).base.model.bone_transform.bone_world_matrices
-                           [*(int *)(this_ptr->unk3 + 4)].m);
+                           [this_ptr->bone_r_finger].m);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)this_ptr,&local_188,pCVar11);
       core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
@@ -188,7 +187,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
                           (&local_17c,&g_ZeroVector,
                            (CMatrix3x4f *)
                            (this_ptr->base).base.model.bone_transform.bone_world_matrices
-                           [*(int *)this_ptr->unk3].m);
+                           [this_ptr->bone_l_finger].m);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)this_ptr,&local_a4,pCVar11);
       core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
@@ -204,7 +203,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
                                 (&local_74,&g_ZeroVector,
                                  (CMatrix3x4f *)
                                  (this_ptr->base).base.model.bone_transform.bone_world_matrices
-                                 [*(int *)this_ptr->unk3].m);
+                                 [this_ptr->bone_l_finger].m);
             core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                       ((CDemonActor *)this_ptr,&local_14c,pCVar11);
             core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
@@ -376,7 +375,7 @@ LAB_005f0ae7:
                   core_werewolf_cpp_CWerewolf_FUN_005f11e0(this_ptr);
                 }
                 iVar9 = 0;
-                for (iVar17 = 0; iVar17 < g_CDemonSetPtr->enemy_count; iVar17 = iVar17 + 1) {
+                for (iVar16 = 0; iVar16 < g_CDemonSetPtr->enemy_count; iVar16 = iVar16 + 1) {
                   actor_ptr = *(CWerewolf **)((int)g_CDemonSetPtr->enemies + iVar9);
                   pCVar13 = (CWerewolf *)
                             core_actor_cpp_castToClassHash_FUN_0040c790
@@ -436,8 +435,8 @@ LAB_005f0ae7:
             }
           }
         }
-        fVar3 = *(float *)this_ptr->unk4 - delta_time;
-        *(float *)this_ptr->unk4 = fVar3;
+        fVar3 = this_ptr->howl_cooldown - delta_time;
+        this_ptr->howl_cooldown = fVar3;
         if (fVar3 < 0.0) {
           actor_ptr = (CWerewolf *)0x5f0cb7;
           core_werewolf_cpp_CWerewolf_FUN_005f11e0(this_ptr);
@@ -461,7 +460,7 @@ LAB_005f092a:
                             (&local_11c,&g_ZeroVector,
                              (CMatrix3x4f *)
                              (this_ptr->base).base.model.bone_transform.bone_world_matrices
-                             [*(int *)(this_ptr->unk3 + 4)].m);
+                             [this_ptr->bone_r_finger].m);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   ((CDemonActor *)this_ptr,&local_164,pCVar11);
         core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
@@ -497,7 +496,7 @@ LAB_005f092a:
                               (&local_1d0,&g_ZeroVector,
                                (CMatrix3x4f *)
                                (this_ptr->base).base.model.bone_transform.bone_world_matrices
-                               [*(int *)(this_ptr->unk3 + 8)].m);
+                               [this_ptr->bone_jaw].m);
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                     ((CDemonActor *)this_ptr,&local_8c,pCVar11);
           core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
@@ -505,7 +504,7 @@ LAB_005f092a:
                               (&local_68,&g_ZeroVector,
                                (CMatrix3x4f *)
                                (this_ptr->base).base.model.bone_transform.bone_world_matrices
-                               [*(int *)(this_ptr->unk3 + 4)].m);
+                               [this_ptr->bone_r_finger].m);
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                     ((CDemonActor *)this_ptr,&local_5c,pCVar11);
           core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
@@ -513,7 +512,7 @@ LAB_005f092a:
                               (&local_1a0,&g_ZeroVector,
                                (CMatrix3x4f *)
                                (this_ptr->base).base.model.bone_transform.bone_world_matrices
-                               [*(int *)this_ptr->unk3].m);
+                               [this_ptr->bone_l_finger].m);
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                     ((CDemonActor *)this_ptr,&local_c8,pCVar11);
           core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
@@ -535,7 +534,7 @@ LAB_005f04ff:
                               (&local_1f4,&g_ZeroVector,
                                (CMatrix3x4f *)
                                (this_ptr->base).base.model.bone_transform.bone_world_matrices
-                               [*(int *)(this_ptr->unk3 + 8)].m);
+                               [this_ptr->bone_jaw].m);
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                     ((CDemonActor *)this_ptr,&local_50,pCVar11);
           core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
@@ -646,15 +645,15 @@ LAB_005efff8:
        (this_ptr->base).base.model.accumulated_root_motion.y;
 LAB_005f0010:
   if ((local_18 == 0x13) && ((this_ptr->base).base.was_rendered_opaque != 0)) {
-    iVar9 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk4 + 8));
+    iVar9 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->eat_sfx_handle);
     if (iVar9 == 0) {
-      uVar16 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
+      uVar10 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                          ((CDemonActor *)this_ptr,"werewolf-eat.wav");
-      *(uint *)(this_ptr->unk4 + 8) = uVar16;
+      this_ptr->eat_sfx_handle = uVar10;
     }
   }
   else {
-    sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk4 + 8));
+    sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->eat_sfx_handle);
   }
   local_20 = 1.0;
   if (this_ptr->type == WEREWOLF_TYPE_TRAIN) {
@@ -708,6 +707,6 @@ LAB_005f0010:
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
             ((CCharacter *)this_ptr,delta_time,(float)actor_ptr);
   core_werewolf_cpp_CWerewolf_FUN_005f1e40(this_ptr);
-  this_ptr->unk6 = (int)(delta_time * (float)0.5 + (float)this_ptr->unk6);
+  this_ptr->eye_glow_phase = delta_time * (float)0.5 + this_ptr->eye_glow_phase;
   return;
 }

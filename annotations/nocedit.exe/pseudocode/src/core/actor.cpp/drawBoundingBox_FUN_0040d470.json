@@ -1,95 +1,23 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 108,
-        "message": "C-style cast from 'CVector3i *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 112,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3i *'"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 116,
-        "message": "C-style cast from 'CVector3i *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 120,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3i *'"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 170,
-        "message": "C-style cast from 'CVector3i *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 174,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3i *'"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 178,
-        "message": "C-style cast from 'CVector3i *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 182,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3i *'"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 232,
-        "message": "C-style cast from 'CVector3i *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 236,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3i *'"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 240,
-        "message": "C-style cast from 'CVector3i *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 244,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3i *'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 352,
-    "complexity_score": 569,
+    "complexity_score": 583,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 6,
-    "pseudocode_lines": 259,
-    "suspect_count": 30,
+    "pseudocode_lines": 258,
+    "suspect_count": 31,
     "suspect_types": [
+      "byvalue_struct_passing",
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 611
+    "total_lines": 610
   },
   "cross_references": [],
   "function": {
@@ -781,143 +709,150 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 160,
+      "line": 159,
       "match": "ROUND",
       "text": "local_28.x = (int)ROUND(local_7c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 161,
+      "line": 160,
       "match": "ROUND",
       "text": "local_28.y = (int)ROUND(local_78 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 162,
+      "line": 161,
       "match": "ROUND",
       "text": "local_28.z = (int)ROUND(local_74 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 168,
+      "line": 167,
       "match": "ROUND",
       "text": "local_b8.x = (int)ROUND(local_70 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 169,
+      "line": 168,
       "match": "ROUND",
       "text": "local_b8.y = (int)ROUND(local_6c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 170,
+      "line": 169,
       "match": "ROUND",
       "text": "local_b8.z = (int)ROUND(local_68 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 181,
+      "line": 180,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 182,
+      "line": 181,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar7 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 186,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 187,
       "match": "(SRenderVertex *)((int)",
-      "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar7 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 188,
-      "match": "(SRenderVertex *)((int)",
       "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 222,
+      "line": 221,
       "match": "ROUND",
       "text": "local_94.x = (int)ROUND(local_58 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 223,
+      "line": 222,
       "match": "ROUND",
       "text": "local_94.y = (int)ROUND(local_54 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 224,
+      "line": 223,
       "match": "ROUND",
       "text": "local_94.z = (int)ROUND(local_50 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 230,
+      "line": 229,
       "match": "ROUND",
       "text": "local_118.x = (int)ROUND(local_f4 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 231,
+      "line": 230,
       "match": "ROUND",
       "text": "local_118.y = (int)ROUND(local_f0 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 232,
+      "line": 231,
       "match": "ROUND",
       "text": "local_118.z = (int)ROUND(local_ec * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 243,
+      "line": 242,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 244,
+      "line": 243,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 250,
+      "line": 249,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 251,
+      "line": 250,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Calls clipAndDrawLine2D - decompiler cannot recognize by-value pattern",
+      "line": 1,
+      "match": "clipAndDrawLine2D",
+      "text": "Function calls by-value struct passing functions",
+      "type": "byvalue_struct_passing"
     }
   ]
 }

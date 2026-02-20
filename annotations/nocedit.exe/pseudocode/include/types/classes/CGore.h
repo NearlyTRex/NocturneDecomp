@@ -6,6 +6,6 @@
 // Structure: CGore
 // Ghidra size: 0x1 (1 bytes)
 typedef struct CGore {
-    char unk; // 0x0
+    char singleton; // 0x0
 } CGore;
 

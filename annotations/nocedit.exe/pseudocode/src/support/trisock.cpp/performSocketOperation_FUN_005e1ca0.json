@@ -35,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_trisock.cpp_performSocketOperation_FUN_005e1ca0",
-    "signature": "int __cdecl support_trisock_cpp_performSocketOperation_FUN_005e1ca0(SSocketContext *socket_ctx,char *buffer,int length,SNetworkAddr *dest_addr)"
+    "signature": "int __cdecl support_trisock_cpp_performSocketOperation_FUN_005e1ca0(SOCKET *socket,char *buffer,int length,SNetworkAddr *dest_addr)"
   },
   "function_calls": [
     {
@@ -121,10 +121,10 @@
       },
       {
         "is_param": true,
-        "name": "socket_ctx",
+        "name": "socket",
         "offset": 4,
         "size": 4,
-        "type": "SSocketContext *"
+        "type": "SOCKET *"
       },
       {
         "is_param": true,

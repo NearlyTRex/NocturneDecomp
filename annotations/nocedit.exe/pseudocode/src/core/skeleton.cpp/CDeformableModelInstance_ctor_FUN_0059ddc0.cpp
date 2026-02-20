@@ -9,21 +9,21 @@
 CDeformableModelInstance * __cdecl core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0059ddc0(CDeformableModelInstance *this_ptr)
 
 {
-  CMotionController *pCVar1;
-  void *pvVar2;
+  CDeformableModelInstance *pCVar1;
+  CDeformableModelInstance_ptr_88 pvVar2;
   
-  pCVar1 = core_motion_cpp_CMotionController_ctor_FUN_0052d570(&this_ptr->motion_controller);
-  pvVar2 = __arrinit
-                     (&pCVar1[1].current_motion_index,100,&g_CVectorTypeInfo);
-  *(CMotionController_vtable **)((int)pvVar2 + -8) = &g_CDeformableModelInstanceVTable;
-  *(byte *)((int)pvVar2 + 0x2208) = 0;
-  *(uint *)((int)pvVar2 + 0x2258) = 0;
-  *(uint *)((int)pvVar2 + 0x21dc) = 0;
-  *(uint *)((int)pvVar2 + 0x21d8) = 0xffffffff;
-  *(uint *)((int)pvVar2 + 0x21f8) = 0;
-  *(uint *)((int)pvVar2 + 0x2204) = 0;
-  *(uint *)((int)pvVar2 + 0x2200) = *(uint *)((int)pvVar2 + 0x2204);
-  *(uint *)((int)pvVar2 + 0x21fc) = *(uint *)((int)pvVar2 + 0x2200);
-  *(uint *)((int)pvVar2 + -4) = 0x3f800000;
-  return (CDeformableModelInstance *)((int)pvVar2 + -0x58);
+  pCVar1 = (CDeformableModelInstance *)
+           core_motion_cpp_CMotionController_ctor_FUN_0052d570(&this_ptr->motion_controller);
+  pvVar2 = __arrinit(pCVar1->transformed_vertices,100,&g_CVectorTypeInfo);
+  ADJ(pvVar2)->motion_controller.vtable = &g_CDeformableModelInstanceVTable;
+  ADJ(pvVar2)->model_name[0] = '\0';
+  ADJ(pvVar2)->model_ptr = (CDeformableModel *)0x0;
+  ADJ(pvVar2)->skinned_vertices_buffer = (CVector3i *)0x0;
+  ADJ(pvVar2)->cached_skinned_lod_index = -1;
+  ADJ(pvVar2)->unk = 0;
+  (ADJ(pvVar2)->accumulated_root_motion).z = 0.0;
+  (ADJ(pvVar2)->accumulated_root_motion).y = (ADJ(pvVar2)->accumulated_root_motion).z;
+  (ADJ(pvVar2)->accumulated_root_motion).x = (ADJ(pvVar2)->accumulated_root_motion).y;
+  ADJ(pvVar2)->scale_factor = 1.0;
+  return ADJ(pvVar2);
 }

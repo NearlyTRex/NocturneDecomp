@@ -24,7 +24,7 @@
 ;   double g_LightingScaleFactor = 65535
 ;   int g_ZBufferEnabled = 0x1
 ;   undefined4 g_RenderVertexBuffer[0].projected_vertex.transformed_z
-;   undefined4 g_RenderVertexBuffer[0].light
+;   undefined4 g_RenderVertexBuffer[0].z
 ;   int g_VertexCount
 ;   SVertexData[20000] g_LoadedVertices
 ;   undefined4 DAT_01626410
@@ -174,7 +174,7 @@ section .text
         ;   XREF to: 00505530 (UNCONDITIONAL_CALL)  ; int engine_light.cpp_calculatePhongLighting_FUN_00505530(int world_x, int world_y, int world_z)
     ADD ESP,0xc                         ; 0045d753
     IMUL EDX,dword ptr [EBP + -0xc],0x30 ; 0045d756
-    MOV dword ptr [EDX + 0x688034],EAX  ; 0045d75a | g_RenderVertexBuffer[0].light
+    MOV dword ptr [EDX + 0x688034],EAX  ; 0045d75a | g_RenderVertexBuffer[0].z
     JMP 0x0045d6e9                      ; 0045d760
         ;   XREF to: 0045d6e9 (UNCONDITIONAL_JUMP)  ; LAB_0045d6e9
     MOV dword ptr [EBP + -0xc],0x0      ; 0045d762

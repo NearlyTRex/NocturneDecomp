@@ -12,21 +12,14 @@ void __cdecl core_werewolf_cpp_CWerewolf_FUN_005f11e0(CWerewolf *this_ptr)
   int iVar1;
   uint uVar2;
   
-  uVar2 = this_ptr->sfx_handle;
-  this_ptr->unk4[0] = '\0';
-  this_ptr->unk4[1] = '\0';
-  this_ptr->unk4[2] = ' ';
-  this_ptr->unk4[3] = 'A';
-  iVar1 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(uVar2);
+  this_ptr->howl_cooldown = 10.0;
+  iVar1 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handle);
   if (iVar1 != 0) {
     return;
   }
   uVar2 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                     ((CDemonActor *)this_ptr,"were?.wav");
-  this_ptr->unk4[0] = '\0';
-  this_ptr->unk4[1] = '\0';
-  this_ptr->unk4[2] = -0x60;
-  this_ptr->unk4[3] = 'A';
+  this_ptr->howl_cooldown = 20.0;
   this_ptr->sfx_handle = uVar2;
   return;
 }

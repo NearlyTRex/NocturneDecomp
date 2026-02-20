@@ -6,19 +6,19 @@
   },
   "complexity": {
     "assembly_lines": 707,
-    "complexity_score": 458,
+    "complexity_score": 426,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 21,
-    "pseudocode_lines": 268,
-    "suspect_count": 17,
+    "pseudocode_lines": 266,
+    "suspect_count": 14,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
       "stack_param",
       "suspect_float"
     ],
-    "total_lines": 975
+    "total_lines": 973
   },
   "cross_references": [
     {
@@ -414,7 +414,7 @@
       "description": "Unresolved stack parameter",
       "line": 98,
       "match": "in_stack_0000000c",
-      "text": "(float)2 * in_stack_0000000c + *(float *)local_24;",
+      "text": "(float)2 * in_stack_0000000c + local_24->aim_pitch;",
       "type": "stack_param"
     },
     {
@@ -439,13 +439,6 @@
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 220,
-      "match": "1.4013e-45",
-      "text": "*(float *)(local_24 + 0x1c) = 1.4013e-45;",
-      "type": "suspect_float"
-    },
-    {
       "description": "Unresolved stack parameter",
       "line": 238,
       "match": "in_stack_0000000c",
@@ -453,32 +446,18 @@
       "type": "stack_param"
     },
     {
-      "description": "Likely misinterpreted integer as float",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 263,
+      "match": "ABS",
+      "text": "(ABS(local_24->target_yaw - fStack_38) < (float)0.01)) &&",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 264,
-      "match": "1.4013e-45",
-      "text": "if (((*(float *)(local_24 + 0x1c) == 1.4013e-45) &&",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 265,
       "match": "ABS",
-      "text": "(ABS(*(float *)(local_24 + 0xc) - fStack_38) < (float)0.01)) &&",
+      "text": "(ABS(local_24->target_pitch - fStack_34) < (float)0.01)) {",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 266,
-      "match": "ABS",
-      "text": "(ABS(*(float *)(local_24 + 8) - fStack_34) < (float)0.01)) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 267,
-      "match": "2.8026e-45",
-      "text": "*(float *)(local_24 + 0x1c) = 2.8026e-45;",
-      "type": "suspect_float"
     },
     {
       "call_site_count": 2,

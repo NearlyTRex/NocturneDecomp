@@ -3,9 +3,51 @@
     "errors": [
       {
         "category": "other",
-        "column": 45,
-        "line": 20,
-        "message": "C-style cast from 'CDemonActor_vtable *' to 'float' is not allowed"
+        "column": 9,
+        "line": 24,
+        "message": "type 'CSvetlana_ptr_391756' does not provide a subscript operator"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "type 'CSvetlana_ptr_391756' does not provide a subscript operator"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 26,
+        "message": "type 'CSvetlana_ptr_391756' does not provide a subscript operator"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 27,
+        "message": "type 'CSvetlana_ptr_391756' does not provide a subscript operator"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 28,
+        "message": "type 'CSvetlana_ptr_391756' does not provide a subscript operator"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 29,
+        "message": "type 'CSvetlana_ptr_391756' does not provide a subscript operator"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 30,
+        "message": "type 'CSvetlana_ptr_391756' does not provide a subscript operator"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 31,
+        "message": "type 'CSvetlana_ptr_391756' does not provide a subscript operator"
       }
     ],
     "success": false,
@@ -13,16 +55,16 @@
   },
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 86,
+    "complexity_score": 130,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
-    "pseudocode_lines": 31,
-    "suspect_count": 5,
+    "pseudocode_lines": 25,
+    "suspect_count": 10,
     "suspect_types": [
-      "negative_offset"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 68
+    "total_lines": 62
   },
   "cross_references": [
     {
@@ -130,39 +172,74 @@
   },
   "suspects": [
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 11,
+      "match": "ADJ",
+      "text": "pCVar4 = core_cloth_cpp_CCloth_ctor_FUN_00438ba0(&ADJ(pCVar2)->hair_cloth);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 12,
+      "match": "ADJ",
+      "text": "ADJ(pCVar4)->base.base.base.vtable._ub = &g_CSvetlanaVTable;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 13,
-      "match": "pCVar3[-2].",
-      "text": "pCVar3[-2].vertices[0x182].offset_pos.x = (float)&g_CSvetlanaVTable;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "ADJ(pCVar4)->unk1 = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 14,
-      "match": "pCVar3[-2].",
-      "text": "pCVar3[-2].last_position.z = 0.0;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "ADJ(pCVar4)->unk2 = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 15,
-      "match": "pCVar3[-2].",
-      "text": "pCVar3[-2].last_euler.x = 0.0;",
-      "type": "negative_offset"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 16,
+      "match": "ADJ",
+      "text": "(&ADJ(pCVar4)->base.base.model,\"svetlana.dfm\");",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 17,
-      "match": "pCVar3[-2].",
-      "text": "((CDeformableModelInstance *)&pCVar3[-2].vertices[0x182].offset_pos.y,",
-      "type": "negative_offset"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 25,
+      "match": "ADJ",
+      "text": "*(uint *)(ADJ(pCVar4)->unk6 + 4) = *(uint *)(ADJ(pCVar4)->unk6 + 8);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 33,
-      "match": "pCVar3[-2].",
-      "text": "return (CSvetlana *)(pCVar3[-2].vertices[0x181].rest_lengths + 4);",
-      "type": "negative_offset"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 25,
+      "match": "ADJ",
+      "text": "*(uint *)(ADJ(pCVar4)->unk6 + 4) = *(uint *)(ADJ(pCVar4)->unk6 + 8);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 26,
+      "match": "ADJ",
+      "text": "*(uint *)ADJ(pCVar4)->unk6 = *(uint *)(ADJ(pCVar4)->unk6 + 4);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 26,
+      "match": "ADJ",
+      "text": "*(uint *)ADJ(pCVar4)->unk6 = *(uint *)(ADJ(pCVar4)->unk6 + 4);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 27,
+      "match": "ADJ",
+      "text": "return ADJ(pCVar4);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

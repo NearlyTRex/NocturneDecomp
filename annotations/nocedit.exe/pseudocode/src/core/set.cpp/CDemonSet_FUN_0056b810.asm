@@ -54,7 +54,7 @@
 ;   core_glass.cpp_CGlass_shatter_FUN_004eaef0
 ;   core_path.cpp_CPathMap_updateIfNeeded_FUN_00546a60
 ;   core_setcolid.cpp_CDemonSet_FUN_005743e0
-;   core_trigger.cpp_CTrigger_FUN_005e0b00
+;   core_trigger.cpp_CTrigger_applyDamage_FUN_005e0b00
 ;   engine_console.cpp_CConsole_printf_FUN_00441890
 ;   wincore_winrun.cpp_getTime_FUN_005f2dc0
 ;
@@ -446,8 +446,8 @@ section .text
         ;   XREF to: 0056bc4f (CONDITIONAL_JUMP)  ; LAB_0056bc4f
     PUSH dword ptr [ESP + 0x60]         ; 0056bc42
     PUSH EBX                            ; 0056bc46
-    CALL core_trigger.cpp_CTrigger_FUN_005e0b00 ; 0056bc47
-        ;   XREF to: 005e0b00 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_CTrigger_FUN_005e0b00(CTrigger * this_ptr)
+    CALL core_trigger.cpp_CTrigger_applyDamage_FUN_005e0b00 ; 0056bc47
+        ;   XREF to: 005e0b00 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_CTrigger_applyDamage_FUN_005e0b00(CTrigger * this_ptr, float hit_points)
     ADD ESP,0x8                         ; 0056bc4c
     MOV EBX,dword ptr [0x02d7a738]      ; 0056bc4f | g_CFlameCanClassInfo.name_hash
         ;   Label: LAB_0056bc4f

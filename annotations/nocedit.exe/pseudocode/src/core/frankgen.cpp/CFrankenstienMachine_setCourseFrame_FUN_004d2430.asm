@@ -20,7 +20,7 @@
 ;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_course.cpp_CCourse_FUN_00442710
+;   core_course.cpp_CCourse_evaluate_FUN_00442710
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;
 ; *****************************************************************************
@@ -82,8 +82,8 @@ section .text
     ADD EBX,0x300                       ; 004d24a3
     PUSH dword ptr [ESP + 0x8]          ; 004d24a9
     PUSH EBX                            ; 004d24ad
-    CALL core_course.cpp_CCourse_FUN_00442710 ; 004d24ae
-        ;   XREF to: 00442710 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_FUN_00442710(CCourse * this_ptr)
+    CALL core_course.cpp_CCourse_evaluate_FUN_00442710 ; 004d24ae
+        ;   XREF to: 00442710 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_evaluate_FUN_00442710(CCourse * this_ptr, float time, CVector3f * out_pos, CVector3f * out_euler)
     ADD ESP,0x10                        ; 004d24b3
     MOV ESP,EBP                         ; 004d24b6
     POP EBP                             ; 004d24b8

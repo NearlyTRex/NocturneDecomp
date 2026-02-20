@@ -2,12 +2,12 @@
 // Address: 005e1b70
 // Address Range: [[005e1b70, 005e1b7f]]
 // Convention: __cdecl
-// Signature: int __cdecl support_trisock_cpp_isSocketValid_FUN_005e1b70(SSocketContext *socket_ctx)
+// Signature: int __cdecl support_trisock_cpp_isSocketValid_FUN_005e1b70(SOCKET *socket)
 
 #include "nocturne.h"
 
-int __cdecl support_trisock_cpp_isSocketValid_FUN_005e1b70(SSocketContext *socket_ctx)
+int __cdecl support_trisock_cpp_isSocketValid_FUN_005e1b70(SOCKET *socket)
 
 {
-  return (uint)(socket_ctx->socket != 0xffffffff);
+  return (uint)(*socket != 0xffffffff);
 }

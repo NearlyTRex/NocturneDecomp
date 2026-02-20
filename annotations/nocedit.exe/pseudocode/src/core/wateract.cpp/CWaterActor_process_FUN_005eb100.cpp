@@ -16,22 +16,19 @@ void __cdecl core_wateract_cpp_CWaterActor_process_FUN_005eb100(CWaterActor *thi
   int iVar2;
   int iVar3;
   
-  iVar2 = *(int *)(this_ptr->unk5 + 0x2af94) +
+  iVar2 = this_ptr->texture_anim_accum +
           (int)ROUND(ROUND(delta_time * (float)65536 * (float)8));
-  *(int *)(this_ptr->unk5 + 0x2af94) = iVar2;
+  this_ptr->texture_anim_accum = iVar2;
   if (0x10000 < iVar2) {
-    iVar3 = *(int *)(this_ptr->unk5 + 0x2af90) + 1;
-    *(int *)(this_ptr->unk5 + 0x2af94) = iVar2 + -0x10000;
-    *(int *)(this_ptr->unk5 + 0x2af90) = iVar3;
+    iVar3 = this_ptr->texture_frame + 1;
+    this_ptr->texture_anim_accum = iVar2 + -0x10000;
+    this_ptr->texture_frame = iVar3;
     if (0xf < iVar3) {
-      this_ptr->unk5[0x2af90] = '\0';
-      this_ptr->unk5[0x2af91] = '\0';
-      this_ptr->unk5[0x2af92] = '\0';
-      this_ptr->unk5[0x2af93] = '\0';
+      this_ptr->texture_frame = 0;
     }
   }
   this_ptr_00 = g_CEventListPtr;
-  *(float *)(this_ptr->unk5 + 0x7d04) = 1.0 / delta_time;
+  this_ptr->inv_delta_time = 1.0 / delta_time;
   iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0(this_ptr_00,this_ptr->move_event)
   ;
   if (iVar2 != 0) {
@@ -64,7 +61,7 @@ void __cdecl core_wateract_cpp_CWaterActor_process_FUN_005eb100(CWaterActor *thi
     g_CurrentLineNumber = 0x1a5;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CWaterActor::process - Bad state");
   }
-  (this_ptr->base).location.position.y =
-       this_ptr->height_delta * this_ptr->param + *(float *)(this_ptr->unk5 + 0x2af98);
+  (this_ptr->base).location.position.y = this_ptr->height_delta * this_ptr->param + this_ptr->base_y
+  ;
   return;
 }

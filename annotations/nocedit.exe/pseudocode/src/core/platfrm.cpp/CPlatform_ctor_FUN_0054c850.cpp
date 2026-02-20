@@ -9,86 +9,86 @@
 CPlatform * __cdecl core_platfrm_cpp_CPlatform_ctor_FUN_0054c850(CPlatform *this_ptr)
 
 {
-  CCourse *pCVar1;
-  int iVar2;
-  CDemonActor *pCVar3;
-  CKeyFramedModelInstance *pCVar4;
-  CCourse *pCVar5;
-  int *piVar6;
-  uint *puVar7;
+  CLocation *pCVar1;
+  CVector3f *pCVar2;
+  CPlatform *pCVar3;
+  CPlatform_ptr_344 pCVar4;
+  CPlatform_ptr_784 pCVar5;
+  CPlatform *pCVar6;
   uint *puVar8;
   uint *puVar9;
   uint *puVar10;
-  byte bVar11;
-  CCourseFrameList *apCStackY_17f0 [1523];
+  uint *puVar11;
+  byte bVar12;
+  float afStackY_17f0 [1523];
   CQuaternion4f local_14;
+  CPlatform *pCVar7;
   
-  bVar11 = 0;
-  pCVar3 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
-  pCVar4 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
-                     ((CKeyFramedModelInstance *)(pCVar3 + 1));
-  pCVar5 = core_course_cpp_CCourse_ctor_FUN_004424c0
-                     ((CCourse *)(pCVar4[1].part_visibility_flags + 0xf));
-  pCVar5[-0x25].len = (int)&g_CPlatformVTable;
+  bVar12 = 0;
+  pCVar3 = (CPlatform *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
+  pCVar4 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&pCVar3->model);
+  pCVar5 = core_course_cpp_CCourse_ctor_FUN_004424c0(&ADJ(pCVar4)->course);
+  ADJ(pCVar5)->base.vtable._ub = &g_CPlatformVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-            ((CKeyFramedModelInstance *)&pCVar5[-0x25].frame_list,"slider1.kfm");
-  *(byte *)&pCVar5[5].loop = 0;
-  *(byte *)&pCVar5[0xe].len = 0;
-  *(byte *)&pCVar5[0x16].frame_list = 0;
-  *(byte *)&pCVar5[0x1e].loop = 0;
-  *(byte *)&pCVar5[0x20].frame_list = 0;
-  *(byte *)&pCVar5[0x22].len = 0;
-  pCVar5[-5].len = 0;
-  pCVar5[-5].loop = 0;
-  pCVar5[-3].len = 0x40000000;
-  pCVar5[-4].loop = 0x40000000;
-  pCVar5[-5].frame_list = (CCourseFrameList *)0x0;
-  pCVar1 = pCVar5 + 2;
-  *(byte *)&pCVar5[-3].frame_list = 0;
-  if (pCVar1 != (CCourse *)&pCVar5[-0x3f].frame_list) {
-    pCVar1->len = (int)pCVar5[-0x3f].frame_list;
-    pCVar5[2].frame_list = (CCourseFrameList *)pCVar5[-0x3f].loop;
-    pCVar5[2].loop = pCVar5[-0x3e].len;
+            (&ADJ(pCVar5)->model,"slider1.kfm");
+  ADJ(pCVar5)->to_start_event[0] = '\0';
+  ADJ(pCVar5)->to_end_event[0] = '\0';
+  ADJ(pCVar5)->stop_event[0] = '\0';
+  ADJ(pCVar5)->start_sound[0] = '\0';
+  ADJ(pCVar5)->stop_sound[0] = '\0';
+  ADJ(pCVar5)->active_sound[0] = '\0';
+  ADJ(pCVar5)->state = PLATFORM_STATE_TYPE_AT_START;
+  ADJ(pCVar5)->param = 0.0;
+  ADJ(pCVar5)->travel_time_to_start = 2.0;
+  ADJ(pCVar5)->travel_time_to_end = 2.0;
+  ADJ(pCVar5)->ground_type = 0;
+  pCVar2 = &ADJ(pCVar5)->end_pos;
+  ADJ(pCVar5)->course_filename[0] = '\0';
+  pCVar1 = &ADJ(pCVar5)->base.location;
+  if ((CLocation *)pCVar2 != pCVar1) {
+    pCVar2->x = (pCVar1->position).x;
+    (ADJ(pCVar5)->end_pos).y = ADJ(pCVar5)->base.location.position.y;
+    (ADJ(pCVar5)->end_pos).z = ADJ(pCVar5)->base.location.position.z;
   }
-  if (pCVar5 + 1 != pCVar1) {
-    pCVar5[1].len = pCVar1->len;
-    pCVar5[1].frame_list = pCVar5[2].frame_list;
-    pCVar5[1].loop = pCVar5[2].loop;
+  if (&ADJ(pCVar5)->start_pos != pCVar2) {
+    (ADJ(pCVar5)->start_pos).x = pCVar2->x;
+    (ADJ(pCVar5)->start_pos).y = (ADJ(pCVar5)->end_pos).y;
+    (ADJ(pCVar5)->start_pos).z = (ADJ(pCVar5)->end_pos).z;
   }
-  core_xform_cpp_eulerToQuaternion_FUN_005f7b20((CVector3f *)&pCVar5[-0x3e].loop,&local_14);
-  puVar8 = (uint *)((int)pCVar5 + (uint)bVar11 * -8 + 0x38);
-  pCVar5[4].frame_list = (CCourseFrameList *)local_14.w;
-  puVar9 = puVar8 + (uint)bVar11 * -2 + 1;
-  puVar7 = (uint *)((int)&local_14 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
-  *puVar8 = *(uint *)((int)&local_14 + (uint)bVar11 * -8 + 4);
-  *puVar9 = *puVar7;
-  puVar9[(uint)bVar11 * -2 + 1] = puVar7[(uint)bVar11 * -2 + 1];
-  puVar9 = (uint *)((int)pCVar5 + (uint)bVar11 * -8 + 0x28);
-  puVar7 = (uint *)((int)pCVar5 + (uint)bVar11 * -8 + 0x38);
-  pCVar5[3].len = (int)pCVar5[4].frame_list;
-  puVar10 = puVar9 + (uint)bVar11 * -2 + 1;
-  puVar8 = puVar7 + (uint)bVar11 * -2 + 1;
-  *puVar9 = *puVar7;
+  core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&ADJ(pCVar5)->base.orient.vec,&local_14);
+  puVar9 = (uint *)((int)pCVar5 + (uint)bVar12 * -8 + 0x38);
+  (ADJ(pCVar5)->end_orient).w = local_14.w;
+  puVar10 = puVar9 + (uint)bVar12 * -2 + 1;
+  puVar8 = (uint *)((int)&local_14 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
+  *puVar9 = *(uint *)((int)&local_14 + (uint)bVar12 * -8 + 4);
   *puVar10 = *puVar8;
-  puVar10[(uint)bVar11 * -2 + 1] = puVar8[(uint)bVar11 * -2 + 1];
-  pCVar5[0x57].len = 0;
-  pCVar5[0x24].len = 0;
-  pCVar5[0x24].frame_list = (CCourseFrameList *)0x0;
-  pCVar5[0x24].loop = 0;
-  *(byte *)&pCVar5[0x25].len = 0;
-  pCVar5[0x57].frame_list = (CCourseFrameList *)0x0;
-  pCVar5[-0x39].len = 0x32;
-  pCVar5[0x2a].frame_list = (CCourseFrameList *)0x0;
-  pCVar5[-4].len = 0;
-  pCVar5[-4].frame_list = (CCourseFrameList *)0x0;
-  piVar6 = &pCVar5[-0x42].loop;
+  puVar10[(uint)bVar12 * -2 + 1] = puVar8[(uint)bVar12 * -2 + 1];
+  puVar10 = (uint *)((int)pCVar5 + (uint)bVar12 * -8 + 0x28);
+  puVar8 = (uint *)((int)pCVar5 + (uint)bVar12 * -8 + 0x38);
+  (ADJ(pCVar5)->orig_orient).w = (ADJ(pCVar5)->end_orient).w;
+  puVar11 = puVar10 + (uint)bVar12 * -2 + 1;
+  puVar9 = puVar8 + (uint)bVar12 * -2 + 1;
+  *puVar10 = *puVar8;
+  *puVar11 = *puVar9;
+  puVar11[(uint)bVar12 * -2 + 1] = puVar9[(uint)bVar12 * -2 + 1];
+  ADJ(pCVar5)->platform_type = PLATFORM_TYPE_DISABLED;
+  ADJ(pCVar5)->one_shot = 0;
+  ADJ(pCVar5)->block_virtual_director_flag = 0;
+  ADJ(pCVar5)->render_in_background_when_not_moving_flag = 0;
+  ADJ(pCVar5)->camera_while_moving[0] = '\0';
+  ADJ(pCVar5)->rendered_in_background = 0;
+  ADJ(pCVar5)->base.health = 0x32;
+  ADJ(pCVar5)->plot_as_box_in_shadow = 0;
+  ADJ(pCVar5)->goal_param = 0.0;
+  ADJ(pCVar5)->current_movement_rate = 0.0;
+  pCVar6 = ADJ(pCVar5);
   do {
-    iVar2 = (int)(piVar6 + 0xd);
-    piVar6[0x147] = 0;
-    piVar6 = (int *)iVar2;
-  } while ((CCourse *)iVar2 != pCVar5 + -0x16);
-  pCVar5[0x2b].len = 0;
-  pCVar5[0x2b].frame_list = (CCourseFrameList *)0x1;
-  pCVar5[0x2a].loop = 0;
-  return (CPlatform *)&pCVar5[-0x42].loop;
+    pCVar7 = (CPlatform *)((int)&(pCVar6->base).orient + 4);
+    pCVar6->attach_actors[0].actor = (CDemonActor *)0x0;
+    pCVar6 = pCVar7;
+  } while (pCVar7 != (CPlatform *)((ADJ(pCVar5)->model).model_name + 0x38));
+  ADJ(pCVar5)->recompute_fog = 0;
+  ADJ(pCVar5)->plot_in_shadow_flag = 1;
+  ADJ(pCVar5)->push_flag = 0;
+  return ADJ(pCVar5);
 }

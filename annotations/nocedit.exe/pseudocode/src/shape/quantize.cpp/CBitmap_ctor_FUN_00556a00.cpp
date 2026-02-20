@@ -2,11 +2,11 @@
 // Address: 00556a00
 // Address Range: [[00556a00, 00556c1d]]
 // Convention: __cdecl
-// Signature: CBitmap * __cdecl shape_quantize_cpp_CBitmap_ctor_FUN_00556a00(CBitmap *this_ptr)
+// Signature: CBitmap * __cdecl shape_quantize_cpp_CBitmap_ctor_FUN_00556a00(CBitmap *this_ptr,int param_2,int param_3,int param_4)
 
 #include "nocturne.h"
 
-CBitmap * __cdecl shape_quantize_cpp_CBitmap_ctor_FUN_00556a00(CBitmap *this_ptr)
+CBitmap * __cdecl shape_quantize_cpp_CBitmap_ctor_FUN_00556a00(CBitmap *this_ptr,int param_2,int param_3,int param_4)
 
 {
   void *pvVar1;
@@ -14,48 +14,44 @@ CBitmap * __cdecl shape_quantize_cpp_CBitmap_ctor_FUN_00556a00(CBitmap *this_ptr
   int iVar3;
   int iVar4;
   ushort uVar5;
-  short in_stack_00000008;
-  short in_stack_0000000c;
-  byte in_stack_00000010;
   char local_68 [92];
   
   memset(this_ptr,0,0x28);
-  if (in_stack_00000010 < 0x10) {
-    if (7 < in_stack_00000010) {
-      if (in_stack_00000010 < 9) {
+  if ((byte)param_4 < 0x10) {
+    if (7 < (byte)param_4) {
+      if ((byte)param_4 < 9) {
         this_ptr->bytes_per_pixel = '\x01';
         goto LAB_00556a6b;
       }
-      if (in_stack_00000010 == 0xf) goto LAB_00556b15;
+      if ((byte)param_4 == 0xf) goto LAB_00556b15;
     }
   }
   else {
-    if (in_stack_00000010 < 0x11) {
+    if ((byte)param_4 < 0x11) {
 LAB_00556b15:
       this_ptr->bytes_per_pixel = '\x02';
       goto LAB_00556a6b;
     }
-    if (0x17 < in_stack_00000010) {
-      if (in_stack_00000010 < 0x19) {
+    if (0x17 < (byte)param_4) {
+      if ((byte)param_4 < 0x19) {
         this_ptr->bytes_per_pixel = '\x03';
         goto LAB_00556a6b;
       }
-      if (in_stack_00000010 == 0x20) {
+      if ((byte)param_4 == 0x20) {
         this_ptr->bytes_per_pixel = '\x04';
         goto LAB_00556a6b;
       }
     }
   }
-  _sprintf
-            (local_68,"Invalid bit depth [%d] for bitmap",(uint)in_stack_00000010);
+  _sprintf(local_68,"Invalid bit depth [%d] for bitmap",param_4 & 0xff);
   g_CurrentFilename = "..\\shape\\quantize.cpp";
   g_CurrentLineNumber = 0x67;
   core_main_c_displayErrorAndQuit_FUN_00506f10(local_68);
 LAB_00556a6b:
-  this_ptr->height = in_stack_0000000c;
-  this_ptr->bit_depth = in_stack_00000010;
-  this_ptr->width = in_stack_00000008;
-  uVar5 = in_stack_00000008 * (ushort)(byte)this_ptr->bytes_per_pixel;
+  this_ptr->height = (short)param_3;
+  this_ptr->bit_depth = (byte)param_4;
+  this_ptr->width = (short)param_2;
+  uVar5 = (short)param_2 * (ushort)(byte)this_ptr->bytes_per_pixel;
   this_ptr->bytes_per_row = uVar5;
   pvVar1 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                      ((uint)(ushort)this_ptr->height * (uint)uVar5,"..\\shape\\quantize.cpp",

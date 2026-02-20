@@ -9,6 +9,6 @@
 void __cdecl engine_palette_cpp_CPaletteManager_FUN_00544fb0(CPaletteManager *this_ptr)
 
 {
-  this_ptr->unk1 = 0;
+  this_ptr->texture_count = 0;
   return;
 }

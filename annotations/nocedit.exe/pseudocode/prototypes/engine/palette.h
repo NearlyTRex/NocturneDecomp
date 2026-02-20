@@ -21,7 +21,7 @@ int __cdecl CFont::getLineSpacing(void);
 
 // Original: engine_palette.cpp_CPaletteManager_ctor_FUN_00544f10
 // Address: 00544f10
-CPaletteManager * __cdecl CPaletteManager::ctor(CPaletteManager *this_ptr);
+CPaletteManager * __cdecl CPaletteManager::ctor(CPaletteManager *this_ptr,int max_texture_count,int max_pixel_count);
 
 // Original: engine_palette.cpp_CPaletteManager_dtor_FUN_00544f80
 // Address: 00544f80

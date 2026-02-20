@@ -80,7 +80,7 @@ LAB_005c50a7:
   if (1.0 < local_f8) {
     local_f8 = 1.0;
   }
-  local_f4 = local_f8 - *(float *)(this_ptr->unk8 + 0x48);
+  local_f4 = local_f8 - this_ptr->arm_recoil_blend;
   if (0.0 <= local_f4) {
     if ((0.0 < local_f4) && (in_stack_00000008 / 0.05f < local_f4)) {
       local_f4 = in_stack_00000008 / 0.05f;
@@ -92,7 +92,7 @@ LAB_005c50a7:
       local_f4 = fVar1;
     }
   }
-  *(float *)(this_ptr->unk8 + 0x48) = *(float *)(this_ptr->unk8 + 0x48) + local_f4;
+  this_ptr->arm_recoil_blend = this_ptr->arm_recoil_blend + local_f4;
   return;
 LAB_005c4d62:
   core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);

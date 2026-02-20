@@ -14,8 +14,8 @@
 ;
 ; XREF[89]:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_saveToPBMFile_FUN_0054b520 at 0054b53e
-;   core_course.cpp_CCourse_FUN_00442bc0 at 00442be3
-;   core_course.cpp_CCourse_FUN_00442d70 at 00442d92
+;   core_course.cpp_CCourse_importBON_FUN_00442bc0 at 00442be3
+;   core_course.cpp_CCourse_importCRS_FUN_00442d70 at 00442d92
 ;   core_dmodel.cpp_CKeyFramedModel_backupModel_FUN_00479260 at 00479279
 ;   core_dmodel.cpp_CKeyFramedModel_exportToS3D_FUN_00479f30 at 00479f52
 ;   core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e10 at 00478e75

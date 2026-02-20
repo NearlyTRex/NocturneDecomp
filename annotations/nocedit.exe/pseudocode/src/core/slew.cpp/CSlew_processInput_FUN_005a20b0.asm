@@ -14,7 +14,7 @@
 ;
 ; XREF[13]:
 ;   core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040 at 0040d0fb
-;   core_course.cpp_CCourse_FUN_00443bc0 at 0044409c
+;   core_course.cpp_CCourse_preview_FUN_00443bc0 at 0044409c
 ;   core_game.cpp_CGame_processFrame_FUN_004da100 at 004da299
 ;   core_manpuz.cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440 at 0050b4c9
 ;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e57e

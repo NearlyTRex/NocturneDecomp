@@ -45,7 +45,7 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(CNetGame *this_pt
   }
   g_CurrentGameTime = g_CurrentGameTime + iVar3;
   g_LastPingTime = iVar2 / 0x12;
-  *(int *)(this_ptr->players[this_ptr->local_player_index].unk1 + 4) = sync_stage;
+  this_ptr->players[this_ptr->local_player_index].local_sync_stage = sync_stage;
   if (this_ptr->connection_type == 1) {
     local_24 = g_CurrentGameTime - 0x1e0000;
     local_20 = this_ptr->players;
@@ -60,16 +60,16 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(CNetGame *this_pt
       pCVar4 = this_ptr;
       if (0 < this_ptr->player_count) {
         do {
-          if (*(int *)(pCVar4->players[0].unk1 + 4) < sync_stage) {
+          if (pCVar4->players[0].local_sync_stage < sync_stage) {
             local_1c = 0.0;
             engine_2d_c_drawText_FUN_00401fd0(local_20[iVar2].name,0,local_18);
             _sprintf
-                      (local_194,"%d",*(uint *)(pCVar4->players[0].unk1 + 4));
+                      (local_194,"%d",pCVar4->players[0].local_sync_stage);
             engine_2d_c_drawText_FUN_00401fd0(local_194,200,local_18);
             local_18 = local_18 + 0xb;
           }
           iVar2 = iVar2 + 1;
-          pCVar4 = (CNetGame *)(pCVar4->players[0].unk1 + 0x20);
+          pCVar4 = (CNetGame *)(pCVar4->players[0].controls.action_states + 3);
         } while (iVar2 < this_ptr->player_count);
       }
       fVar1 = local_1c;
@@ -93,14 +93,14 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(CNetGame *this_pt
         pCVar4 = this_ptr;
         if (0 < this_ptr->player_count) {
           do {
-            if (*(int *)(pCVar4->players[0].unk1 + 4) < sync_stage) {
+            if (pCVar4->players[0].local_sync_stage < sync_stage) {
               core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,iVar2);
             }
             else {
               core_netgame_cpp_CNetGame_updatePing_FUN_00541c80(this_ptr,iVar2,2.0);
             }
             iVar2 = iVar2 + 1;
-            pCVar4 = (CNetGame *)(pCVar4->players[0].unk1 + 0x20);
+            pCVar4 = (CNetGame *)(pCVar4->players[0].controls.action_states + 3);
           } while (iVar2 < this_ptr->player_count);
         }
       }

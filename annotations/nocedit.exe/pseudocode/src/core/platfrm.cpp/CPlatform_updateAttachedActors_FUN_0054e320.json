@@ -1,0 +1,193 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 74,
+    "complexity_score": 79,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 0,
+    "pseudocode_lines": 44,
+    "suspect_count": 3,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 118
+  },
+  "cross_references": [
+    {
+      "addr": "0054cc30",
+      "from_addr": "0054d679",
+      "name": "core_platfrm.cpp_CPlatform_process_FUN_0054cc30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0054e320",
+    "address_range": [
+      [
+        "0054e320",
+        "0054e3e5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_platfrm.cpp_CPlatform_updateAttachedActors_FUN_0054e320",
+    "signature": "void __cdecl core_platfrm_cpp_CPlatform_updateAttachedActors_FUN_0054e320(CPlatform *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005f54c0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0"
+    },
+    {
+      "addr": "005f6110",
+      "is_variadic": false,
+      "name": "core_xform.cpp_getTranslation_FUN_005f6110"
+    },
+    {
+      "addr": "005f5690",
+      "is_variadic": false,
+      "name": "core_xform.cpp_matrixToEulerAngles_FUN_005f5690"
+    },
+    {
+      "addr": "005f4f10",
+      "is_variadic": false,
+      "name": "core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0054d679",
+        "call_type": "direct",
+        "caller": "core_platfrm.cpp_CPlatform_process_FUN_0054cc30",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.507936507936508,
+    "instruction_count": 63,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 2,
+      "CALL": 4,
+      "CALLIND": 1,
+      "CBRANCH": 3,
+      "COPY": 51,
+      "INT_ADD": 36,
+      "INT_AND": 28,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 29,
+      "INT_LESS": 3,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 10,
+      "INT_SEXT": 3,
+      "INT_SLESS": 14,
+      "INT_SUB": 27,
+      "INT_XOR": 1,
+      "INT_ZEXT": 2,
+      "LOAD": 12,
+      "POPCOUNT": 14,
+      "RETURN": 1,
+      "STORE": 23,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 284
+  },
+  "stack_frame": {
+    "frame_size": 196,
+    "local_size": 192,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_bc",
+        "offset": -188,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_8c",
+        "offset": -140,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPlatform *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 33,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 44,
+      "match": "(CPlatform *)((int)",
+      "text": "this_ptr = (CPlatform *)((int)&(this_ptr->base).orient + 4);",
+      "type": "pointer_cast"
+    }
+  ]
+}

@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 250,
-    "complexity_score": 338,
+    "complexity_score": 293,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 11,
     "pseudocode_lines": 98,
-    "suspect_count": 23,
+    "suspect_count": 19,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "suspect_float"
+      "decompiler_intrinsic"
     ],
     "total_lines": 348
   },
@@ -556,34 +555,6 @@
       "match": "ROUND",
       "text": "local_64.z = (int)ROUND(local_2c * 256.0f);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 83,
-      "match": "4.59177e-41",
-      "text": "this_ptr_00->vertex_buffer_ptr->w_recip = 4.59177e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 84,
-      "match": "4.59177e-41",
-      "text": "this_ptr_00->vertex_buffer_ptr[1].w_recip = 4.59177e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 85,
-      "match": "4.59177e-41",
-      "text": "this_ptr_00->vertex_buffer_ptr[2].w_recip = 4.59177e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 86,
-      "match": "4.59177e-41",
-      "text": "this_ptr_00->vertex_buffer_ptr[3].w_recip = 4.59177e-41;",
-      "type": "suspect_float"
     }
   ]
 }

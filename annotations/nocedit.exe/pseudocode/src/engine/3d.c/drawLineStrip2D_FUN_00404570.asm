@@ -12,7 +12,7 @@
 ; SRenderVertex    Stack[-0x40]:48  local_40
 ;
 ; XREF[1]:
-;   core_course.cpp_FUN_00443760 at 00443ac5
+;   core_course.cpp_renderCourseGizmo_FUN_00443760 at 00443ac5
 ;
 ; Referenced Globals:
 ;   SRenderVertex[16] g_RenderVertexBuffer

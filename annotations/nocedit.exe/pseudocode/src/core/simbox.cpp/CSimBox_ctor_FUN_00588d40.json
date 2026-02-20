@@ -1,29 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 40,
-        "line": 23,
-        "message": "C-style cast from 'CDemonActor_vtable *' to 'float' is not allowed"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 227,
+    "complexity_score": 210,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 6,
-    "pseudocode_lines": 37,
-    "suspect_count": 18,
+    "pseudocode_lines": 35,
+    "suspect_count": 17,
     "suspect_types": [
-      "negative_offset",
-      "pointer_cast"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 101
+    "total_lines": 99
   },
   "cross_references": [
     {
@@ -164,130 +156,123 @@
   },
   "suspects": [
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 16,
-      "match": "pCVar4[-1].",
-      "text": "pCVar4[-1].linear_velocity_local.z = (float)&g_CSimBoxVTable;",
-      "type": "negative_offset"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 14,
+      "match": "ADJ",
+      "text": "pCVar4 = core_box_cpp_CBox_ctor_FUN_0041dc50(&ADJ(pCVar3)->physics_box);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 18,
-      "match": "pCVar4[-1].",
-      "text": "((CKeyFramedModelInstance *)&pCVar4[-1].linear_velocity_temp,\"question.kfm\");",
-      "type": "negative_offset"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 15,
+      "match": "ADJ",
+      "text": "ADJ(pCVar4)->base.vtable._ub = &g_CSimBoxVTable;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 20,
-      "match": "pCVar4[-1].",
-      "text": "pfVar6 = &pCVar4[-1].scrape_points[5].raytrace_intersection;",
-      "type": "negative_offset"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 17,
+      "match": "ADJ",
+      "text": "(&ADJ(pCVar4)->model,\"question.kfm\");",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 27,
-      "match": "(char *)((int)",
-      "text": "*(char *)((int)pfVar6 + 1) = cVar1;",
-      "type": "pointer_cast"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 19,
+      "match": "ADJ",
+      "text": "pcVar3 = ADJ(pCVar4)->trigger_event;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 28,
-      "match": "(float *)((int)",
-      "text": "pfVar6 = (float *)((int)pfVar6 + 2);",
-      "type": "pointer_cast"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 29,
+      "match": "ADJ",
+      "text": "(ADJ(pCVar4)->initial_velocity).z = 0.0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 30,
-      "match": "pCVar4[-1].",
-      "text": "pCVar4[-1].scrape_points[7].raytrace_normal.x = 0.0;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "(ADJ(pCVar4)->initial_velocity).y = (ADJ(pCVar4)->initial_velocity).z;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 30,
+      "match": "ADJ",
+      "text": "(ADJ(pCVar4)->initial_velocity).y = (ADJ(pCVar4)->initial_velocity).z;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 31,
-      "match": "pCVar4[-1].",
-      "text": "pCVar4[-1].scrape_points[7].raytrace_intersection = pCVar4[-1].scrape_points[7].raytrace_normal.x;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "(ADJ(pCVar4)->initial_velocity).x = (ADJ(pCVar4)->initial_velocity).y;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 31,
-      "match": "pCVar4[-1].",
-      "text": "pCVar4[-1].scrape_points[7].raytrace_intersection = pCVar4[-1].scrape_points[7].raytrace_normal.x;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "(ADJ(pCVar4)->initial_velocity).x = (ADJ(pCVar4)->initial_velocity).y;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 32,
-      "match": "pCVar4[-1].",
-      "text": "pCVar4[-1].scrape_points[7].previous_position.z =",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "(ADJ(pCVar4)->init_rot_vel).z = 0.0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 33,
-      "match": "pCVar4[-1].",
-      "text": "pCVar4[-1].scrape_points[7].raytrace_intersection;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "(ADJ(pCVar4)->init_rot_vel).y = (ADJ(pCVar4)->init_rot_vel).z;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 33,
+      "match": "ADJ",
+      "text": "(ADJ(pCVar4)->init_rot_vel).y = (ADJ(pCVar4)->init_rot_vel).z;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 34,
-      "match": "pCVar4[-1].",
-      "text": "pCVar4[-1].is_valid = 0;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "(ADJ(pCVar4)->init_rot_vel).x = (ADJ(pCVar4)->init_rot_vel).y;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 34,
+      "match": "ADJ",
+      "text": "(ADJ(pCVar4)->init_rot_vel).x = (ADJ(pCVar4)->init_rot_vel).y;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 35,
-      "match": "pCVar4[-1].",
-      "text": "pCVar4[-1].scrape_points[7].raytrace_normal.z = (float)pCVar4[-1].is_valid;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "ADJ(pCVar4)->type = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 35,
-      "match": "pCVar4[-1].",
-      "text": "pCVar4[-1].scrape_points[7].raytrace_normal.z = (float)pCVar4[-1].is_valid;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 36,
-      "match": "pCVar4[-1].",
-      "text": "pCVar4[-1].scrape_points[7].raytrace_normal.y = pCVar4[-1].scrape_points[7].raytrace_normal.z;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "ADJ(pCVar4)->weight = 100.0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 36,
-      "match": "pCVar4[-1].",
-      "text": "pCVar4[-1].scrape_points[7].raytrace_normal.y = pCVar4[-1].scrape_points[7].raytrace_normal.z;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 37,
-      "match": "pCVar4[-1].",
-      "text": "pCVar4[-1].scrape_points[5].previous_position.y = 0.0;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 38,
-      "match": "pCVar4[-1].",
-      "text": "pCVar4[-1].scrape_points[5].previous_position.z = 100.0;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 39,
-      "match": "pCVar4[-2].",
-      "text": "return (CSimBox *)&pCVar4[-2].scrape_points[3].local_position.z;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "return ADJ(pCVar4);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

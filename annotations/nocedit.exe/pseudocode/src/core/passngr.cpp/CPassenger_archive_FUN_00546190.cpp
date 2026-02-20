@@ -30,7 +30,6 @@ void __cdecl core_passngr_cpp_CPassenger_archive_FUN_00546190(CPassenger *this_p
   if (g_CPassengerClassVersion < 6) {
     return;
   }
-  core_actor_cpp_archiveString_FUN_0040b5c0
-            ((char *)&this_ptr->transform_wav,"transformWav");
+  core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->transform_wav,"transformWav");
   return;
 }

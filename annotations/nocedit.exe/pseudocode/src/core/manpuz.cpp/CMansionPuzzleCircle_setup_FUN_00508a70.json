@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 13,
-    "complexity_score": 342,
+    "complexity_score": 328,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 262,
+    "pseudocode_lines": 248,
     "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 275
+    "total_lines": 261
   },
   "cross_references": [],
   "function": {
@@ -414,51 +414,51 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 79,
+      "line": 78,
       "match": "fcos",
-      "text": "fVar15 = (float10)fcos((float10)0.5235988f * (float10)0.5);",
+      "text": "fVar17 = (float10)fcos((float10)0.5235988f * (float10)0.5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 86,
+      "line": 84,
       "match": "SQRT",
       "text": "if (SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1) == 0.0) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 96,
+      "line": 94,
       "match": "SQRT",
       "text": "if (SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1) == 0.0) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 163,
+      "line": 148,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar11 = (CMatrix3x4f *)((int)pCVar11 + ((uint)bVar14 * -2 + 1) * 4);",
+      "text": "pCVar13 = (CMatrix3x4f *)((int)pCVar13 + ((uint)bVar16 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 164,
+      "line": 149,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar13 = (CMatrix3x4f *)((int)pCVar13 + ((uint)bVar14 * -2 + 1) * 4);",
+      "text": "pCVar15 = (CMatrix3x4f *)((int)pCVar15 + ((uint)bVar16 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 214,
+      "line": 199,
       "match": "fcos",
-      "text": "fVar15 = (float10)fcos((float10)0.5235988f);",
+      "text": "fVar17 = (float10)fcos((float10)0.5235988f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 215,
+      "line": 200,
       "match": "fsin",
-      "text": "fVar16 = (float10)fsin((float10)0.5235988f);",
+      "text": "fVar18 = (float10)fsin((float10)0.5235988f);",
       "type": "decompiler_intrinsic"
     }
   ],

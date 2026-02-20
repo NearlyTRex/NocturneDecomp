@@ -22,7 +22,7 @@ int __cdecl core_trash_cpp_CTrash_renderOpaque_FUN_005df550(CTrash *this_ptr)
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base);
     return 0;
   }
-  CStack_24.y = *(float *)(this_ptr->unk + 0x30);
+  CStack_24.y = this_ptr->collision_radius;
   CStack_24.x = 0.0;
   CStack_24.z = 0.0;
   core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0

@@ -15,9 +15,12 @@ int __cdecl core_marquee_cpp_CMarquee_renderTransparent_FUN_0050c050(CMarquee *t
   CVector3f *pCVar1;
   int iVar2;
   int iVar3;
-  CVector3f local_88 [2];
+  CVector3f local_94;
+  CVector3f local_88;
+  CVector3f local_7c;
   CVector3f local_70;
-  CVector3f local_64 [2];
+  CVector3f local_64;
+  CVector3f local_58;
   CVector3f local_4c;
   CVector3f local_40;
   CVector3f local_34;
@@ -45,13 +48,13 @@ int __cdecl core_marquee_cpp_CMarquee_renderTransparent_FUN_0050c050(CMarquee *t
           do {
             local_24 = (float)iVar3;
             local_c = iVar3;
-            core_course_cpp_CCourse_FUN_00442710(this_ptr_00);
+            core_course_cpp_CCourse_evaluate_FUN_00442710(this_ptr_00,local_24,&local_64,&local_7c);
             pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                               (&this_ptr->base,&local_70,local_64);
-            if (local_64 != pCVar1) {
-              local_64[0].x = pCVar1->x;
-              local_64[0].y = pCVar1->y;
-              local_64[0].z = pCVar1->z;
+                               (&this_ptr->base,&local_70,&local_64);
+            if (&local_64 != pCVar1) {
+              local_64.x = pCVar1->x;
+              local_64.y = pCVar1->y;
+              local_64.z = pCVar1->z;
             }
             iVar3 = iVar3 + 1;
             core_marquee_cpp_CMarquee_FUN_0050bec0(this_ptr);
@@ -68,13 +71,14 @@ int __cdecl core_marquee_cpp_CMarquee_renderTransparent_FUN_0050c050(CMarquee *t
             if (iVar2 % this_ptr->phase != 0) {
               local_20 = (float)iVar3;
               local_c = iVar3;
-              core_course_cpp_CCourse_FUN_00442710(this_ptr_00);
+              core_course_cpp_CCourse_evaluate_FUN_00442710
+                        (this_ptr_00,local_20,&local_88,&local_58);
               pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                                 (&this_ptr->base,&local_40,local_88);
-              if (local_88 != pCVar1) {
-                local_88[0].x = pCVar1->x;
-                local_88[0].y = pCVar1->y;
-                local_88[0].z = pCVar1->z;
+                                 (&this_ptr->base,&local_40,&local_88);
+              if (&local_88 != pCVar1) {
+                local_88.x = pCVar1->x;
+                local_88.y = pCVar1->y;
+                local_88.z = pCVar1->z;
               }
               core_marquee_cpp_CMarquee_FUN_0050bec0(this_ptr);
             }
@@ -92,7 +96,7 @@ int __cdecl core_marquee_cpp_CMarquee_renderTransparent_FUN_0050c050(CMarquee *t
           local_18 = this_ptr_00;
           local_28 = (float)iVar3;
           local_c = iVar3;
-          core_course_cpp_CCourse_FUN_00442710(local_18);
+          core_course_cpp_CCourse_evaluate_FUN_00442710(local_18,local_28,&local_4c,&local_94);
           pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                              (&this_ptr->base,&local_34,&local_4c);
           if (&local_4c != pCVar1) {

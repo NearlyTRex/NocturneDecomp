@@ -12,7 +12,7 @@
 ; XREF[7]:
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90 at 0041c169
 ;   core_course.cpp_CCourse_showEditorMenu_FUN_00443040 at 00443565
-;   core_platfrm.cpp_CPlatform_FUN_0054cab0 at 0054cbae
+;   core_platfrm.cpp_CPlatform_evaluatePosition_FUN_0054cab0 at 0054cbae
 ;   core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00 at 0054ee28
 ;   core_platfrm.cpp_CPlatform_renderOpaque_FUN_0054d720 at 0054d8a8
 ;   core_stranger.cpp_CStranger_FUN_005bf720 at 005bf77f

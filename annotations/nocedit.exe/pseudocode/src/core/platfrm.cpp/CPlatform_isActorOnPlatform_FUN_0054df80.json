@@ -1,0 +1,184 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 194,
+    "complexity_score": 93,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 2,
+    "pseudocode_lines": 68,
+    "suspect_count": 2,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
+    "total_lines": 262
+  },
+  "cross_references": [
+    {
+      "addr": "0054cc30",
+      "from_addr": "0054d4ce",
+      "name": "core_platfrm.cpp_CPlatform_process_FUN_0054cc30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0054df80",
+    "address_range": [
+      [
+        "0054df80",
+        "0054e178"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_platfrm.cpp_CPlatform_isActorOnPlatform_FUN_0054df80",
+    "signature": "int __cdecl core_platfrm_cpp_CPlatform_isActorOnPlatform_FUN_0054df80(CPlatform *this_ptr,CDemonActor *actor)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408f10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10"
+    },
+    {
+      "addr": "0040cd70",
+      "is_variadic": false,
+      "name": "core_actor.cpp_normalizeAngleToPi_FUN_0040cd70"
+    },
+    {
+      "addr": "004781d0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0"
+    },
+    {
+      "addr": "00478d80",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80"
+    },
+    {
+      "addr": "005743c0",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063f97e",
+      "name": "DOUBLE_0063f97e",
+      "type": "double",
+      "value": "0.0100000000000000"
+    },
+    {
+      "addr": "0063f986",
+      "name": "FLOAT_0063f986",
+      "type": "float",
+      "value": "-1"
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.4733727810650885,
+    "instruction_count": 169,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "BOOL_OR": 16,
+      "CALL": 7,
+      "CALLIND": 2,
+      "CBRANCH": 13,
+      "COPY": 362,
+      "FLOAT2FLOAT": 32,
+      "FLOAT_ABS": 2,
+      "FLOAT_ADD": 6,
+      "FLOAT_EQUAL": 10,
+      "FLOAT_LESS": 10,
+      "FLOAT_NAN": 20,
+      "FLOAT_SUB": 2,
+      "INT2FLOAT": 2,
+      "INT_ADD": 84,
+      "INT_AND": 93,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 40,
+      "INT_LEFT": 40,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 50,
+      "INT_OR": 50,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 20,
+      "INT_SUB": 32,
+      "INT_XOR": 4,
+      "INT_ZEXT": 40,
+      "LOAD": 54,
+      "POPCOUNT": 20,
+      "RETURN": 3,
+      "STORE": 44
+    },
+    "pcode_op_count": 1094
+  },
+  "stack_frame": {
+    "frame_size": 148,
+    "local_size": 140,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPlatform *"
+      },
+      {
+        "is_param": true,
+        "name": "actor",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0054df89",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 30,
+      "match": "ABS",
+      "text": "if ((ABS(fVar3) <= (float)0.01) &&",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 31,
+      "match": "ABS",
+      "text": "(ABS((this_ptr->base).orient.vec.z) <= (float)0.01)) {",
+      "type": "decompiler_intrinsic"
+    }
+  ]
+}

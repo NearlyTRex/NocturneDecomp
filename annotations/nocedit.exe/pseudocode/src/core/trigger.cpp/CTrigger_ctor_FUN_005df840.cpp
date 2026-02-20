@@ -50,22 +50,16 @@ CTrigger * __cdecl core_trigger_cpp_CTrigger_ctor_FUN_005df840(CTrigger *this_pt
   pCVar2->pressure_plate = 0;
   pCVar2->light_min = 0.25;
   pCVar2->light_max = 1.0;
-  pCVar2->unk2[0] = '\0';
-  pCVar2->unk2[1] = '\0';
-  pCVar2->unk2[2] = '\0';
-  pCVar2->unk2[3] = '\0';
-  pCVar2->unk2[4] = '\0';
-  pCVar2->unk2[5] = '\0';
-  pCVar2->unk2[6] = '\0';
-  pCVar2->unk2[7] = '\0';
+  pCVar2->prev_triggered = 0;
+  pCVar2->event_flag = 0;
   pCVar2->laser_type = 1;
   pCVar2->hit_points = 100.0;
   (pCVar2->base).health = 0x96;
-  pCVar2->unk4 = 0.0;
-  pCVar2->unk3 = 0;
+  pCVar2->cached_actor = (CDemonActor *)0x0;
+  pCVar2->triggering_actor = (CDemonActor *)0x0;
   pCVar2->test_radius = 99999.9;
   pCVar2->auto_aim_at_me = 1;
-  pCVar2->damage_actor_name_wildcard_name[0] = '\0';
-  pCVar2->unk5 = 0.0;
+  pCVar2->damage_actor_wildcard_name[0] = '\0';
+  pCVar2->damage_cooldown = 0.0;
   return pCVar2;
 }

@@ -9,8 +9,8 @@
 SVert * __cdecl core_skeleton_cpp_SVert_ctor_FUN_005a1f70(SVert *this_ptr)
 
 {
-  void *pvVar1;
+  SVert_ptr_16 pvVar1;
   
   pvVar1 = __arrinit(&this_ptr->position,3,&g_CVectorTypeInfo);
-  return (SVert *)((int)pvVar1 + -0x10);
+  return ADJ(pvVar1);
 }

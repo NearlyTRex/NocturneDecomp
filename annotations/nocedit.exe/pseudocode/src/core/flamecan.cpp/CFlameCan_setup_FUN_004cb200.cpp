@@ -9,49 +9,39 @@
 void __cdecl core_flamecan_cpp_CFlameCan_setup_FUN_004cb200(CFlameCan *this_ptr)
 
 {
-  float fVar1;
+  CVector3f *pCVar1;
   float fVar2;
-  CDemonActor_vtable *pCVar3;
+  float fVar3;
+  CDemonActor_vtable *pCVar4;
   CBoundingBox3D local_38;
   float afStack_20 [6];
   
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&this_ptr->model);
-  pCVar3 = (this_ptr->base).vtable._ub;
-  this_ptr->unk[0x1b4] = '\0';
-  this_ptr->unk[0x1b5] = '\0';
-  this_ptr->unk[0x1b6] = '\0';
-  this_ptr->unk[0x1b7] = '\0';
-  (*pCVar3->getBoundingBox)(&this_ptr->base,&local_38);
-  *(float *)(this_ptr->unk + 0x20) = (this_ptr->base).location.position.x;
-  *(float *)(this_ptr->unk + 0x24) = (this_ptr->base).location.position.y;
-  *(float *)(this_ptr->unk + 0x28) = (this_ptr->base).location.position.z;
-  *(int *)(this_ptr->unk + 0x2c) = (this_ptr->base).location.area_id;
-  *(float *)(this_ptr->unk + 0x24) =
-       (local_38.max.y - local_38.min.y) + *(float *)(this_ptr->unk + 0x24);
-  if ((float *)(this_ptr->unk + 0x158) != afStack_20) {
-    *(float *)(this_ptr->unk + 0x158) = local_38.max.x - local_38.min.x;
-    *(float *)(this_ptr->unk + 0x15c) = local_38.max.y - local_38.min.y;
-    *(float *)(this_ptr->unk + 0x160) = local_38.max.z - local_38.min.z;
+  pCVar4 = (this_ptr->base).vtable._ub;
+  (this_ptr->flame).flame_state = 0;
+  (*pCVar4->getBoundingBox)(&this_ptr->base,&local_38);
+  (this_ptr->flame).base.location.position.x = (this_ptr->base).location.position.x;
+  (this_ptr->flame).base.location.position.y = (this_ptr->base).location.position.y;
+  (this_ptr->flame).base.location.position.z = (this_ptr->base).location.position.z;
+  (this_ptr->flame).base.location.area_id = (this_ptr->base).location.area_id;
+  (this_ptr->flame).base.location.position.y =
+       (local_38.max.y - local_38.min.y) + (this_ptr->flame).base.location.position.y;
+  pCVar1 = &(this_ptr->flame).flame_size;
+  if (pCVar1 != (CVector3f *)afStack_20) {
+    pCVar1->x = local_38.max.x - local_38.min.x;
+    (this_ptr->flame).flame_size.y = local_38.max.y - local_38.min.y;
+    (this_ptr->flame).flame_size.z = local_38.max.z - local_38.min.z;
   }
-  fVar1 = *(float *)(this_ptr->unk + 0x158);
-  this_ptr->unk[0x1a8] = '\0';
-  this_ptr->unk[0x1a9] = '\0';
-  this_ptr->unk[0x1aa] = '\0';
-  this_ptr->unk[0x1ab] = '\0';
-  fVar1 = fVar1 * (float)2;
-  fVar2 = *(float *)(this_ptr->unk + 0x15c);
-  this_ptr->unk[0x1ac] = '\0';
-  this_ptr->unk[0x1ad] = '\0';
-  this_ptr->unk[0x1ae] = '\0';
-  this_ptr->unk[0x1af] = '\0';
-  if (fVar2 < fVar1) {
-    *(float *)(this_ptr->unk + 0x15c) = fVar1;
+  fVar2 = (this_ptr->flame).flame_size.x;
+  (this_ptr->flame).which_flame = 0;
+  fVar2 = fVar2 * (float)2;
+  fVar3 = (this_ptr->flame).flame_size.y;
+  (this_ptr->flame).globe_scalar = 0.0;
+  if (fVar3 < fVar2) {
+    (this_ptr->flame).flame_size.y = fVar2;
   }
-  this_ptr->unk[0x2a4] = '\0';
-  this_ptr->unk[0x2a5] = '\0';
-  this_ptr->unk[0x2a6] = '\0';
-  this_ptr->unk[0x2a7] = '\0';
+  this_ptr->unk = 0;
   (this_ptr->base).is_transparent = 1;
   return;
 }

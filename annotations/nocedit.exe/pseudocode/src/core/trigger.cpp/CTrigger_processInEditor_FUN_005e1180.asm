@@ -22,7 +22,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040
-;   core_trigger.cpp_CTrigger_FUN_005e0ba0
+;   core_trigger.cpp_CTrigger_calculateTestRadius_FUN_005e0ba0
 ;
 ; *****************************************************************************
 
@@ -72,8 +72,8 @@ section .text
     MOV dword ptr [EBX + 0x160],EAX     ; 005e11f4
     PUSH EBX                            ; 005e11fa
         ;   Label: LAB_005e11fa
-    CALL core_trigger.cpp_CTrigger_FUN_005e0ba0 ; 005e11fb
-        ;   XREF to: 005e0ba0 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_CTrigger_FUN_005e0ba0(CTrigger * this_ptr)
+    CALL core_trigger.cpp_CTrigger_calculateTestRadius_FUN_005e0ba0 ; 005e11fb
+        ;   XREF to: 005e0ba0 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_CTrigger_calculateTestRadius_FUN_005e0ba0(CTrigger * this_ptr)
     ADD ESP,0x4                         ; 005e1200
     ADD ESP,0x14                        ; 005e1203
     POP EBX                             ; 005e1206

@@ -2,10 +2,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/structs/SNetworkAddr.h"
 
 // Structure: SChatHistory
 // Ghidra size: 0x120 (288 bytes)
 typedef struct SChatHistory {
-    char unk[288]; // 0x0
+    SNetworkAddr sender_addr; // 0x0
+    int message_id; // 0x8
+    char sender_name[20]; // 0xc
+    char message[256]; // 0x20
 } SChatHistory;
 

@@ -654,7 +654,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         }
         if (local_25c == local_260) {
           g_InputHistory[1] = '\0';
-          this_ptr->unk10 = (uint)(this_ptr->unk10 == 0);
+          this_ptr->collision_render_enabled = (uint)(this_ptr->collision_render_enabled == 0);
         }
       }
       pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062bd39);
@@ -1781,7 +1781,7 @@ LAB_004df408:
         }
         if (iStack_110 == iStack_114) {
           g_InputHistory[1] = '\0';
-          this_ptr->unk9 = (uint)(this_ptr->unk9 == 0);
+          this_ptr->geometry_debug_enabled = (uint)(this_ptr->geometry_debug_enabled == 0);
         }
       }
       pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c744);

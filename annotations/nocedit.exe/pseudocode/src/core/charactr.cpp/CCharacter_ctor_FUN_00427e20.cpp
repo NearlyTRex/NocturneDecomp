@@ -75,7 +75,7 @@ CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00427e20(CCharacter *
   ADJ(pvVar4)->look_at_yaw = 0.0;
   ADJ(pvVar4)->look_at_pitch = 0.0;
   ADJ(pvVar4)->look_at_weight = 0.0;
-  ADJ(pvVar4)->unk = (CDemonActor *)0x0;
+  ADJ(pvVar4)->look_at_candidate = (CDemonActor *)0x0;
   ADJ(pvVar4)->look_at_target = (CDemonActor *)0x0;
   ADJ(pvVar4)->collision_layer = 0;
   ADJ(pvVar4)->is_fully_burned = 0;

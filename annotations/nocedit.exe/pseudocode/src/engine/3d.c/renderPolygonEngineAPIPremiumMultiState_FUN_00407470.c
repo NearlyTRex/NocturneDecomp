@@ -65,7 +65,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonEngineAPIPremiumMultiStat
           if (iVar5 < iVar2) {
             iVar2 = iVar5;
           }
-          pSVar3 = (SRenderBufferEntry *)&pSVar3->vertices[0].w_recip;
+          pSVar3 = (SRenderBufferEntry *)&pSVar3->vertices[0].fog;
           iVar6 = iVar6 + 1;
           vertex_indices = (SMRGLHeaderPrimitive *)&(vertex_indices->base).count;
         } while (iVar6 < (primitive->base).count);

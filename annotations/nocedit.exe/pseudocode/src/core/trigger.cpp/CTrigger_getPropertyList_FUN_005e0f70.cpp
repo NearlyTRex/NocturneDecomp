@@ -55,7 +55,7 @@ void __cdecl core_trigger_cpp_CTrigger_getPropertyList_FUN_005e0f70(CTrigger *th
                (CActorPropertyValidatorFunc *)0x0);
     core_actor_cpp_CActorPropertyList_addString_FUN_0040e290
               (property_list,"Damage actor name wildcard",
-               this_ptr->damage_actor_name_wildcard_name,100,(CActorPropertyValidatorFunc *)0x0);
+               this_ptr->damage_actor_wildcard_name,100,(CActorPropertyValidatorFunc *)0x0);
   }
   iVar1 = this_ptr->hero_triggers_me;
   if (((iVar1 == 1) || (iVar1 == 0)) || (iVar1 == 9)) {

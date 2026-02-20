@@ -77,18 +77,18 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_004bfac0(CBulletHole *this_ptr
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_28);
   if (this_ptr->actor_ptr == (CDemonActor *)0x0) {
-    g_RenderVertexBuffer[0].color = 0xffff;
-    g_RenderVertexBuffer[0].fog = 0xffff;
-    g_RenderVertexBuffer[1].light = 0xffff;
-    g_RenderVertexBuffer[1].color = 0xffff;
-    g_RenderVertexBuffer[1].fog = 0xffff;
-    g_RenderVertexBuffer[2].light = 0xffff;
-    g_RenderVertexBuffer[2].color = 0xffff;
-    g_RenderVertexBuffer[2].fog = 0xffff;
-    g_RenderVertexBuffer[3].light = 0xffff;
-    g_RenderVertexBuffer[3].color = 0xffff;
-    g_RenderVertexBuffer[3].fog = 0xffff;
-    g_RenderVertexBuffer[0].light = 0xffff;
+    g_RenderVertexBuffer[0].r = 0xffff;
+    g_RenderVertexBuffer[0].g = 0xffff;
+    g_RenderVertexBuffer[1].z = 0xffff;
+    g_RenderVertexBuffer[1].r = 0xffff;
+    g_RenderVertexBuffer[1].g = 0xffff;
+    g_RenderVertexBuffer[2].z = 0xffff;
+    g_RenderVertexBuffer[2].r = 0xffff;
+    g_RenderVertexBuffer[2].g = 0xffff;
+    g_RenderVertexBuffer[3].z = 0xffff;
+    g_RenderVertexBuffer[3].r = 0xffff;
+    g_RenderVertexBuffer[3].g = 0xffff;
+    g_RenderVertexBuffer[0].z = 0xffff;
   }
   else {
     core_actor_cpp_CDemonActor_transformVector_FUN_00408e80

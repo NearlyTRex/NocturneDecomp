@@ -6,16 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 289,
-    "complexity_score": 159,
+    "complexity_score": 185,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 6,
-    "pseudocode_lines": 104,
-    "suspect_count": 5,
+    "pseudocode_lines": 105,
+    "suspect_count": 7,
     "suspect_types": [
+      "decompiler_intrinsic",
       "stack_param"
     ],
-    "total_lines": 393
+    "total_lines": 394
   },
   "cross_references": [
     {
@@ -241,38 +242,52 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 16,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 17,
       "match": "in_stack_0000000c",
       "text": "float in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 28,
       "match": "in_stack_0000000c",
       "text": "local_28 = in_stack_0000000c * 255.0f;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 29,
+      "line": 30,
       "match": "in_stack_00000008",
-      "text": "pcVar10 = this_ptr->unk3 + in_stack_00000008 * 0xb8 + 0x458;",
+      "text": "pSVar11 = this_ptr->gems + in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 88,
+      "line": 89,
       "match": "in_stack_00000008",
-      "text": "(pcVar9 = this_ptr->unk2 + in_stack_00000008 * 100 + -4, *(int *)pcVar9 != 0)) &&",
+      "text": "(pSVar10 = this_ptr->panels + in_stack_00000008, pSVar10->exists != 0)) &&",
       "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 90,
+      "match": "ABS",
+      "text": "((ABS(pSVar10->anim_speed) == 0.0 && (ABS(pSVar10->anim_progress) == 0.0)))) &&",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 90,
+      "match": "ABS",
+      "text": "((ABS(pSVar10->anim_speed) == 0.0 && (ABS(pSVar10->anim_progress) == 0.0)))) &&",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

@@ -14,7 +14,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
-;   core_platfrm.cpp_CPlatform_FUN_0054cab0
+;   core_platfrm.cpp_CPlatform_evaluatePosition_FUN_0054cab0
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
     MOV dword ptr [EAX + 0x2dc],0x3f800000 ; 0054e781
     MOV dword ptr [EAX + 0x2d4],0x1     ; 0054e78b
     PUSH EDX                            ; 0054e795
-    CALL core_platfrm.cpp_CPlatform_FUN_0054cab0 ; 0054e796
-        ;   XREF to: 0054cab0 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_CPlatform_FUN_0054cab0(CPlatform * this_ptr)
+    CALL core_platfrm.cpp_CPlatform_evaluatePosition_FUN_0054cab0 ; 0054e796
+        ;   XREF to: 0054cab0 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_CPlatform_evaluatePosition_FUN_0054cab0(CPlatform * this_ptr)
     MOV EAX,0x1                         ; 0054e79b
     ADD ESP,0x4                         ; 0054e7a0
     POP EBX                             ; 0054e7a3
@@ -47,8 +47,8 @@ section .text
         ;   Label: LAB_0054e7a5
     MOV dword ptr [EAX + 0x2d4],0x0     ; 0054e7af
     PUSH EDX                            ; 0054e7b9
-    CALL core_platfrm.cpp_CPlatform_FUN_0054cab0 ; 0054e7ba
-        ;   XREF to: 0054cab0 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_CPlatform_FUN_0054cab0(CPlatform * this_ptr)
+    CALL core_platfrm.cpp_CPlatform_evaluatePosition_FUN_0054cab0 ; 0054e7ba
+        ;   XREF to: 0054cab0 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_CPlatform_evaluatePosition_FUN_0054cab0(CPlatform * this_ptr)
     MOV EAX,0x1                         ; 0054e7bf
     ADD ESP,0x4                         ; 0054e7c4
     POP EBX                             ; 0054e7c7

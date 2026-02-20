@@ -8,7 +8,7 @@
 // Ghidra size: 0xbec4 (48836 bytes)
 typedef struct CSentinel {
     CEnemy base; // 0x0
-    int unk3; // 0xbebc
-    int unk4; // 0xbec0
+    uint sfx_handle; // 0xbebc
+    float hover_timer; // 0xbec0
 } CSentinel;
 

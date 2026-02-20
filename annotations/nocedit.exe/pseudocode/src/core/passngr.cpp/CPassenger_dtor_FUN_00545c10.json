@@ -1,35 +1,23 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 33,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 16,
-        "line": 33,
-        "message": "expected expression"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 111,
-    "complexity_score": 95,
+    "complexity_score": 198,
     "cross_reference_count": 0,
     "function_call_count": 11,
     "global_count": 5,
-    "pseudocode_lines": 45,
-    "suspect_count": 4,
+    "pseudocode_lines": 53,
+    "suspect_count": 13,
     "suspect_types": [
       "negative_offset",
-      "unresolved_funcptr"
+      "stack_param",
+      "unaffected_reg"
     ],
-    "total_lines": 156
+    "total_lines": 164
   },
   "cross_references": [],
   "function": {
@@ -190,32 +178,95 @@
   },
   "suspects": [
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 26,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(iVar1 + 0x154) + 0xe4))(iVar1,2);",
-      "type": "unresolved_funcptr"
+      "description": "Unaffected register variable",
+      "line": 15,
+      "match": "unaff_EBX",
+      "text": "uint unaff_EBX;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 32,
-      "match": "pCVar3[-1].",
-      "text": "((CFlame *)(pCVar3[-1].height_cache_tags[0xb] + 0x39),0);",
-      "type": "negative_offset"
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_ESI",
+      "text": "uint unaff_ESI;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_0000000c",
+      "text": "uint in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000010",
+      "text": "uint in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_0000002c",
+      "text": "byte in_stack_0000002c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 33,
+      "match": "unaff_ESI",
+      "text": "(this_ptr_00,2,unaff_ESI,unaff_EBX,unaff_retaddr,(uint)this_ptr,flags,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 33,
+      "match": "unaff_EBX",
+      "text": "(this_ptr_00,2,unaff_ESI,unaff_EBX,unaff_retaddr,(uint)this_ptr,flags,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 34,
-      "match": "pCVar4[-2].",
-      "text": "((SFire *)(pCVar4[-2].base.create_event + 0x20),0);",
+      "match": "in_stack_0000000c",
+      "text": "in_stack_0000000c,in_stack_00000010);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 34,
+      "match": "in_stack_00000010",
+      "text": "in_stack_0000000c,in_stack_00000010);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 40,
+      "match": "pCVar2[-1].",
+      "text": "((CFlame *)(pCVar2[-1].height_cache_tags[0xb] + 0x39),0);",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 42,
-      "match": "pCVar8[-1].",
-      "text": "((CDemonActor *)(pCVar8[-1].part_data.visibility_flags + 7),1);",
+      "match": "pCVar3[-2].",
+      "text": "((SFire *)(pCVar3[-2].base.create_event + 0x20),0);",
       "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 50,
+      "match": "pCVar7[-1].",
+      "text": "((CDemonActor *)(pCVar7[-1].part_data.visibility_flags + 7),1);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 51,
+      "match": "in_stack_0000002c",
+      "text": "if ((in_stack_0000002c & 2) != 0) {",
+      "type": "stack_param"
     }
   ],
   "vtable_info": {

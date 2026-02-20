@@ -1,10 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CPaletteManager * __cdecl engine_palette_cpp_CPaletteManager_ctor_FUN_00544f10(CPaletteManager *this_ptr)
+; CPaletteManager * __cdecl engine_palette_cpp_CPaletteManager_ctor_FUN_00544f10(CPaletteManager *this_ptr,int max_texture_count,int max_pixel_count)
 ;
 ; Parameters:
 ; CPaletteManager * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   max_texture_count
+; int              Stack[0xc]:4   max_pixel_count
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_palette_cpp_0063e3ed

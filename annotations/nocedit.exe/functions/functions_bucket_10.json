@@ -13851,7 +13851,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_course.cpp_CCourse_FUN_00442710",
+    "name":"core_course.cpp_CCourse_evaluate_FUN_00442710",
     "ret":"void",
     "vars":{
       "locals":[
@@ -13936,6 +13936,54 @@
             ]
           },
           "type":"CCourse*"
+        },
+        {
+          "name":"time",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"out_pos",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"out_euler",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
         }
       ]
     }
@@ -14084,6 +14132,22 @@
             ]
           },
           "type":"CCourse*"
+        },
+        {
+          "name":"filename",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
         }
       ]
     }
@@ -54763,6 +54827,38 @@
             ]
           },
           "type":"CPaletteManager*"
+        },
+        {
+          "name":"max_texture_count",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"max_pixel_count",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ],
       "ret_storage":{
@@ -56686,7 +56782,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_platfrm.cpp_CPlatform_FUN_0054d690",
+    "name":"core_platfrm.cpp_CPlatform_startMovement_FUN_0054d690",
     "ret":"void",
     "vars":{
       "params":[
@@ -56705,6 +56801,38 @@
             ]
           },
           "type":"CPlatform*"
+        },
+        {
+          "name":"goal_param",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"movement_rate",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ]
     }
@@ -89629,6 +89757,38 @@
     "name":"core_trap.cpp_CTrap_ctor_FUN_005de690",
     "ret":"CTrap*",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CTrap*",
+          "use":6
+        },
+        {
+          "name":"this_ptr_00",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CTrap_ptr_344",
+          "use":20
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -90016,7 +90176,7 @@
     "vars":{
       "params":[
         {
-          "name":"socket_ctx",
+          "name":"socket",
           "storage":{
             "offset":4,
             "size":4,
@@ -90029,7 +90189,7 @@
               }
             ]
           },
-          "type":"SSocketContext*"
+          "type":"SOCKET*"
         }
       ],
       "ret_storage":{
@@ -91287,6 +91447,81 @@
           },
           "type":"CVampireBoss*",
           "use":6
+        },
+        {
+          "name":"pCVar4",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CVampireBoss_ptr_48828",
+          "use":20
+        },
+        {
+          "name":"pCVar5",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CVampireBoss_ptr_57712",
+          "use":34
+        },
+        {
+          "name":"pCVar6",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CVampireBoss_ptr_319456",
+          "use":48
+        },
+        {
+          "name":"pCVar7",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CVampireBoss_ptr_581200",
+          "use":62
+        },
+        {
+          "name":"pCVar8",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CVampireBoss_ptr_842948",
+          "use":76
         }
       ],
       "params":[

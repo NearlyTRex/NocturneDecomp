@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 154,
-    "complexity_score": 135,
+    "complexity_score": 114,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 5,
-    "pseudocode_lines": 90,
+    "pseudocode_lines": 69,
     "suspect_count": 4,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 244
+    "total_lines": 223
   },
   "cross_references": [
     {
@@ -155,14 +155,14 @@
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_00000008",
-      "text": "pcVar3 = this_ptr->unk2 + in_stack_00000008 * 100 + -4;",
+      "text": "pSVar3 = this_ptr->panels + in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_0000000c",
-      "text": "fVar1 = (*(float *)(pcVar3 + 8) * in_stack_0000000c) / 2.0f + *(float *)(pcVar3 + 4);",
+      "text": "fVar1 = (pSVar3->anim_speed * in_stack_0000000c) / 2.0f + pSVar3->anim_progress;",
       "type": "stack_param"
     }
   ]

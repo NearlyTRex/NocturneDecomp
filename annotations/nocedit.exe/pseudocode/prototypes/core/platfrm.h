@@ -23,17 +23,17 @@ CPlatform * __cdecl CPlatform::ctor(CPlatform *this_ptr);
 // Address: 0054ca20
 void __cdecl CPlatform::setup(CPlatform *this_ptr);
 
-// Original: core_platfrm.cpp_CPlatform_FUN_0054cab0
+// Original: core_platfrm.cpp_CPlatform_evaluatePosition_FUN_0054cab0
 // Address: 0054cab0
-void __cdecl CPlatform(CPlatform *this_ptr);
+void __cdecl CPlatform::evaluatePosition(CPlatform *this_ptr);
 
 // Original: core_platfrm.cpp_CPlatform_process_FUN_0054cc30
 // Address: 0054cc30
 void __cdecl CPlatform::process(CPlatform *this_ptr,float delta_time);
 
-// Original: core_platfrm.cpp_CPlatform_FUN_0054d690
+// Original: core_platfrm.cpp_CPlatform_startMovement_FUN_0054d690
 // Address: 0054d690
-void __cdecl CPlatform(CPlatform *this_ptr);
+void __cdecl CPlatform::startMovement(CPlatform *this_ptr,float goal_param,float movement_rate);
 
 // Original: core_platfrm.cpp_CPlatform_renderOpaque_FUN_0054d720
 // Address: 0054d720
@@ -51,9 +51,9 @@ CBoundingBox3D * __cdecl CPlatform::getBoundingBox(CPlatform *this_ptr,CBounding
 // Address: 0054dbc0
 void __cdecl CPlatform::archive(CPlatform *this_ptr);
 
-// Original: core_platfrm.cpp_CPlatform_FUN_0054df80
+// Original: core_platfrm.cpp_CPlatform_isActorOnPlatform_FUN_0054df80
 // Address: 0054df80
-int __cdecl CPlatform(CPlatform *this_ptr);
+int __cdecl CPlatform::isActorOnPlatform(CPlatform *this_ptr,CDemonActor *actor);
 
 // Original: core_platfrm.cpp_CPlatform_hasCollision_FUN_0054e180
 // Address: 0054e180
@@ -75,13 +75,13 @@ int __cdecl CPlatform::getBlockVirtualDirectorFlag(CPlatform *this_ptr);
 // Address: 0054e1e0
 void __cdecl CPlatform::attachActor(CPlatform *this_ptr);
 
-// Original: core_platfrm.cpp_CPlatform_FUN_0054e2e0
+// Original: core_platfrm.cpp_CPlatform_onActorDeleted_FUN_0054e2e0
 // Address: 0054e2e0
-void __cdecl CPlatform(CPlatform *this_ptr);
+void __cdecl CPlatform::onActorDeleted(CPlatform *this_ptr,CDemonActor *deleted_actor);
 
-// Original: core_platfrm.cpp_CPlatform_FUN_0054e320
+// Original: core_platfrm.cpp_CPlatform_updateAttachedActors_FUN_0054e320
 // Address: 0054e320
-void __cdecl CPlatform(CPlatform *this_ptr);
+void __cdecl CPlatform::updateAttachedActors(CPlatform *this_ptr);
 
 // Original: core_platfrm.cpp_CPlatform_propertyDisplaySlewCallback_FUN_0054e400
 // Address: 0054e400

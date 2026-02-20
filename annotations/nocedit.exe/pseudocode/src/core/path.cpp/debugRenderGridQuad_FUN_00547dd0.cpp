@@ -12,7 +12,7 @@ void __cdecl core_path_cpp_debugRenderGridQuad_FUN_00547dd0(int grid_x,int grid_
 
 {
   CDemonRenderer *this_ptr;
-  float fVar1;
+  int iVar1;
   int iVar2;
   int iVar3;
   int iVar4;
@@ -26,7 +26,7 @@ void __cdecl core_path_cpp_debugRenderGridQuad_FUN_00547dd0(int grid_x,int grid_
   local_24 = g_CDemonRaytraceInstance.adjusted_size.x * 256.0f;
   local_20 = g_CDemonRaytraceInstance.adjusted_size.y * 256.0f;
   local_1c = g_CDemonRaytraceInstance.adjusted_size.z * 256.0f;
-  fVar1 = (float)(in_stack_0000001c << 8);
+  iVar1 = in_stack_0000001c << 8;
   local_30.x = (int)ROUND(ROUND((float)grid_x * local_24));
   local_30.z = (int)ROUND(ROUND((float)grid_z * local_1c));
   local_30.y = (int)ROUND(ROUND(256 +
@@ -50,22 +50,22 @@ void __cdecl core_path_cpp_debugRenderGridQuad_FUN_00547dd0(int grid_x,int grid_
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_30);
   this_ptr = g_CDemonRendererPtr2;
-  g_CDemonRendererPtr2->vertex_buffer_ptr->light = iVar2;
-  this_ptr->vertex_buffer_ptr->color = iVar3;
-  this_ptr->vertex_buffer_ptr->fog = iVar4;
-  this_ptr->vertex_buffer_ptr->w_recip = fVar1;
-  this_ptr->vertex_buffer_ptr[1].light = iVar2;
-  this_ptr->vertex_buffer_ptr[1].color = iVar3;
-  this_ptr->vertex_buffer_ptr[1].fog = iVar4;
-  this_ptr->vertex_buffer_ptr[1].w_recip = fVar1;
-  this_ptr->vertex_buffer_ptr[2].light = iVar2;
-  this_ptr->vertex_buffer_ptr[2].color = iVar3;
-  this_ptr->vertex_buffer_ptr[2].fog = iVar4;
-  this_ptr->vertex_buffer_ptr[2].w_recip = fVar1;
-  this_ptr->vertex_buffer_ptr[3].light = iVar2;
-  this_ptr->vertex_buffer_ptr[3].color = iVar3;
-  this_ptr->vertex_buffer_ptr[3].fog = iVar4;
-  this_ptr->vertex_buffer_ptr[3].w_recip = fVar1;
+  g_CDemonRendererPtr2->vertex_buffer_ptr->z = iVar2;
+  this_ptr->vertex_buffer_ptr->r = iVar3;
+  this_ptr->vertex_buffer_ptr->g = iVar4;
+  this_ptr->vertex_buffer_ptr->fog = iVar1;
+  this_ptr->vertex_buffer_ptr[1].z = iVar2;
+  this_ptr->vertex_buffer_ptr[1].r = iVar3;
+  this_ptr->vertex_buffer_ptr[1].g = iVar4;
+  this_ptr->vertex_buffer_ptr[1].fog = iVar1;
+  this_ptr->vertex_buffer_ptr[2].z = iVar2;
+  this_ptr->vertex_buffer_ptr[2].r = iVar3;
+  this_ptr->vertex_buffer_ptr[2].g = iVar4;
+  this_ptr->vertex_buffer_ptr[2].fog = iVar1;
+  this_ptr->vertex_buffer_ptr[3].z = iVar2;
+  this_ptr->vertex_buffer_ptr[3].r = iVar3;
+  this_ptr->vertex_buffer_ptr[3].g = iVar4;
+  this_ptr->vertex_buffer_ptr[3].fog = iVar1;
   engine_drender_cpp_CDemonRenderer_renderMaximumQualityVariant_FUN_0048bba0
             (this_ptr,&SMRGLPrimitiveQuad_030d4fd0.base);
   return;

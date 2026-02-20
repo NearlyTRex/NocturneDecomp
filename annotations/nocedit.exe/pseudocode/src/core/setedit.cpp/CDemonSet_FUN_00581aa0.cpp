@@ -6,6 +6,9 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: core_slew.cpp_CSlew_init_FUN_005a2060 */
+/* WARNING: Restarted to delay deadcode elimination for space: stack */
+
 void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
 
 {
@@ -29,6 +32,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
   byte local_ec [16];
   float local_dc;
   float local_d8;
+  float fStack_d4;
   CVector3f local_d0;
   float local_c4;
   float local_c0;
@@ -68,7 +72,13 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
   this_ptr->actor_count = 0;
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_clearInputAndWait_FUN_00403260();
-  core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)local_108);
+  local_108._8_4_ = 0.0;
+  local_108._4_4_ = 0.0;
+  local_108._0_4_ = 0.0;
+  local_f4 = 0.0;
+  local_f8 = 0.0;
+  local_108._12_4_ = 0.0;
+  local_f0 = 28.0;
   local_a0 = 0.0;
   local_9c = 0.0;
   local_98 = 0.0;
@@ -179,7 +189,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
       } while (cVar1 != '\0');
     }
     else {
-      _sprintf(local_194,"Room size: %d");
+      _sprintf(local_194,"Room size: %d",local_18->reverb_preset);
     }
     engine_2d_c_drawText_FUN_00401fd0(local_194,0,0);
     core_dcamera_cpp_CDemonCamera_endScene_FUN_0044cb80(&g_CDemonCameraInstance,0);
@@ -252,13 +262,18 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
         local_28 = 0.5;
       }
       iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
-      pSVar2 = local_18;
       if (iVar6 == 0) {
-        core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)local_ec);
-        if ((SRoom *)local_ec != pSVar2) {
-          local_ec._0_4_ = (pSVar2->position).x;
-          local_ec._4_4_ = (pSVar2->position).y;
-          local_ec._8_4_ = (pSVar2->position).z;
+        local_ec._8_4_ = 0.0;
+        local_ec._4_4_ = 0.0;
+        local_ec._0_4_ = 0.0;
+        local_d8 = 0.0;
+        local_dc = 0.0;
+        local_ec._12_4_ = 0.0;
+        fStack_d4 = 28.0;
+        if ((SRoom *)local_ec != local_18) {
+          local_ec._0_4_ = (local_18->position).x;
+          local_ec._4_4_ = (local_18->position).y;
+          local_ec._8_4_ = (local_18->position).z;
         }
         pCVar3 = core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
                            (&local_18->rotation_matrix,&local_70);

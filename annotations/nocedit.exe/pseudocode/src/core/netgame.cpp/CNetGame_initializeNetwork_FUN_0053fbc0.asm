@@ -51,11 +51,11 @@ section .text
     LEA EBX,[ESI + 0x170]               ; 0053fbdb
     PUSH EBX                            ; 0053fbe1
     CALL support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20 ; 0053fbe2
-        ;   XREF to: 005e1d20 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20(SSocketContext * socket_ctx)
+        ;   XREF to: 005e1d20 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20(SOCKET * socket)
     ADD ESP,0x4                         ; 0053fbe7
     PUSH EBX                            ; 0053fbea
     CALL support_trisock.cpp_createUDPSocket_FUN_005e1b40 ; 0053fbeb
-        ;   XREF to: 005e1b40 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_createUDPSocket_FUN_005e1b40(SSocketContext * socket_ctx)
+        ;   XREF to: 005e1b40 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_createUDPSocket_FUN_005e1b40(SOCKET * socket)
     ADD ESP,0x4                         ; 0053fbf0
     TEST EAX,EAX                        ; 0053fbf3
     JZ 0x0053fc91                       ; 0053fbf5

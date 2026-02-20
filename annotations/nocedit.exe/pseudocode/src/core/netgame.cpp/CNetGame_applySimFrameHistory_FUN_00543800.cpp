@@ -24,7 +24,7 @@ void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800(CNetGam
     g_CurrentLineNumber = 0x9cd;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CNetGame::applySimFrameHistory - I'm not in the player list!");
   }
-  *(int *)(this_ptr->unk + 0x54) = in_stack_00000008[1];
+  this_ptr->random_seed = in_stack_00000008[1];
   core_game_cpp_CGame_slamDT_FUN_004e3080(g_CGamePtr,(float)in_stack_00000008[2]);
   iVar3 = 0;
   if (0 < this_ptr->player_count) {
@@ -44,6 +44,6 @@ void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800(CNetGam
       piVar1 = piVar1 + 0xb;
     } while (iVar3 < this_ptr->player_count);
   }
-  *(int *)(this_ptr->players[this_ptr->local_player_index].unk1 + 0x10) = *in_stack_00000008 + 1;
+  this_ptr->players[this_ptr->local_player_index].sim_frame_index = *in_stack_00000008 + 1;
   return;
 }

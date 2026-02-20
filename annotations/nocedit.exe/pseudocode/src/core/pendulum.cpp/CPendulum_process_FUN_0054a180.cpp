@@ -38,10 +38,10 @@ void __cdecl core_pendulum_cpp_CPendulum_process_FUN_0054a180(CPendulum *this_pt
   fVar6 = (float10)f2xm1(fVar5 - (fVar5 / fVar7) * fVar7);
   fVar7 = (float10)fscale(fVar6 + fVar7,fVar5);
   if (fVar7 <= (float10)0.10000000000000001) {
-    this_ptr->unk7 = 1;
+    this_ptr->is_stopped = 1;
     return;
   }
-  this_ptr->unk7 = 0;
+  this_ptr->is_stopped = 0;
   if ((this_ptr->kill_hero == 0) && (this_ptr->kill_enemy == 0)) {
     return;
   }

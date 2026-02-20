@@ -15721,7 +15721,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_course.cpp_CCourse_FUN_00442d70",
+    "name":"core_course.cpp_CCourse_importCRS_FUN_00442d70",
     "ret":"int",
     "vars":{
       "locals":[
@@ -78567,6 +78567,23 @@
     "name":"core_skeleton.cpp_SVert_ctor_FUN_005a1f70",
     "ret":"SVert*",
     "vars":{
+      "locals":[
+        {
+          "name":"pvVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"SVert_ptr_16",
+          "use":15
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -83965,6 +83982,23 @@
     "name":"core_stairs.cpp_CStairs_ctor_FUN_005b9b70",
     "ret":"CStairs*",
     "vars":{
+      "locals":[
+        {
+          "name":"pvVar2",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CStairs_ptr_368",
+          "use":26
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -87021,6 +87055,23 @@
     "name":"core_teleport.cpp_CTeleportDest_ctor_FUN_005da770",
     "ret":"CTeleportDest*",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CTeleportDest*",
+          "use":5
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -87659,6 +87710,38 @@
     "name":"core_trash.cpp_CTrash_ctor_FUN_005deb70",
     "ret":"CTrash*",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CTrash*",
+          "use":6
+        },
+        {
+          "name":"this_ptr_00",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CTrash_ptr_344",
+          "use":20
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -88904,11 +88987,11 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"support_trisock.cpp_bindSocketWrapper_FUN_005e1af0",
-    "ret":"SSocketContext*",
+    "ret":"SOCKET*",
     "vars":{
       "params":[
         {
-          "name":"socket_ctx",
+          "name":"socket",
           "storage":{
             "offset":4,
             "size":4,
@@ -88921,7 +89004,7 @@
               }
             ]
           },
-          "type":"SSocketContext*"
+          "type":"SOCKET*"
         }
       ],
       "ret_storage":{
@@ -88952,7 +89035,7 @@
     "vars":{
       "params":[
         {
-          "name":"socket_ctx",
+          "name":"socket",
           "storage":{
             "offset":4,
             "size":4,
@@ -88965,7 +89048,7 @@
               }
             ]
           },
-          "type":"SSocketContext*"
+          "type":"SOCKET*"
         }
       ],
       "ret_storage":{
@@ -92197,6 +92280,53 @@
     "name":"core_weapon.cpp_CWeapon_ctor_FUN_005ede70",
     "ret":"CWeapon*",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CWeapon*",
+          "use":6
+        },
+        {
+          "name":"pCVar2",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CWeapon_ptr_344",
+          "use":20
+        },
+        {
+          "name":"pCVar3",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CWeapon_ptr_776",
+          "use":34
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",

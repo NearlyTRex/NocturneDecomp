@@ -22,13 +22,14 @@ typedef struct CTrigger {
     float light_max; // 0x220
     char on_event[100]; // 0x224
     char off_event[100]; // 0x288
-    char unk2[8]; // 0x2ec
+    int prev_triggered; // 0x2ec
+    int event_flag; // 0x2f0
     int laser_type; // 0x2f4
     float hit_points; // 0x2f8
-    int unk3; // 0x2fc
+    struct CDemonActor* triggering_actor; // 0x2fc
     int auto_aim_at_me; // 0x300
-    char damage_actor_name_wildcard_name[100]; // 0x304
-    float unk4; // 0x368
-    float unk5; // 0x36c
+    char damage_actor_wildcard_name[100]; // 0x304
+    struct CDemonActor* cached_actor; // 0x368
+    float damage_cooldown; // 0x36c
 } CTrigger;
 

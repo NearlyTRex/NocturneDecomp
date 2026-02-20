@@ -6,12 +6,6 @@
         "column": 3,
         "line": 15,
         "message": "no matching function for call to '__STK'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 12,
-        "line": 17,
-        "message": "assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'"
       }
     ],
     "success": false,
@@ -19,14 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 24,
-    "complexity_score": 16,
+    "complexity_score": 90,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 1,
-    "pseudocode_lines": 16,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 40
+    "pseudocode_lines": 15,
+    "suspect_count": 7,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
+    "total_lines": 39
   },
   "cross_references": [],
   "function": {
@@ -111,7 +107,57 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 11,
+      "match": "ADJ",
+      "text": "ADJ(puVar1)->bone_count = 0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 12,
+      "match": "ADJ",
+      "text": "ADJ(puVar1)->frame_count = 0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 13,
+      "match": "ADJ",
+      "text": "ADJ(puVar1)->bone_angle_frames = (CQuaternion4f *)0x0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 14,
+      "match": "ADJ",
+      "text": "ADJ(puVar1)->frame_positions_1 = (CVector3f *)0x0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 15,
+      "match": "ADJ",
+      "text": "ADJ(puVar1)->frame_positions_2 = (CVector3f *)0x0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 16,
+      "match": "ADJ",
+      "text": "ADJ(puVar1)->bone_scales[0].x = -99999.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 17,
+      "match": "ADJ",
+      "text": "return ADJ(puVar1);",
+      "type": "decompiler_intrinsic"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

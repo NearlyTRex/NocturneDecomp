@@ -10,15 +10,15 @@ void __cdecl core_stranger_cpp_CStranger_onActorDeleted_FUN_005c68a0(CStranger *
 
 {
   core_charactr_cpp_CCharacter_onActorDeleted_FUN_0042f8a0((CCharacter *)this_ptr,deleted_actor);
-  if (deleted_actor == this_ptr->unk2) {
-    this_ptr->unk2 = (CDemonActor *)0x0;
-    if (deleted_actor != this_ptr->unk4) {
+  if (deleted_actor == (this_ptr->right_arm_aim).aim_target) {
+    (this_ptr->right_arm_aim).aim_target = (CDemonActor *)0x0;
+    if (deleted_actor != (this_ptr->left_arm_aim).aim_target) {
       return;
     }
   }
-  else if (deleted_actor != this_ptr->unk4) {
+  else if (deleted_actor != (this_ptr->left_arm_aim).aim_target) {
     return;
   }
-  this_ptr->unk4 = (CDemonActor *)0x0;
+  (this_ptr->left_arm_aim).aim_target = (CDemonActor *)0x0;
   return;
 }

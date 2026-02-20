@@ -493,13 +493,13 @@ section .text
         ;   XREF to: 004f0ac6 (UNCONDITIONAL_JUMP)  ; LAB_004f0ac6
     PUSH EDI                            ; 004f0a61
         ;   Label: LAB_004f0a61
-    CALL core_trigger.cpp_CTrigger_FUN_005e0aa0 ; 004f0a62
-        ;   XREF to: 005e0aa0 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_CTrigger_FUN_005e0aa0(CTrigger * this_ptr)
+    CALL core_trigger.cpp_CTrigger_onProjectileHit_FUN_005e0aa0 ; 004f0a62
+        ;   XREF to: 005e0aa0 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_CTrigger_onProjectileHit_FUN_005e0aa0(CTrigger * this_ptr)
     ADD ESP,0x4                         ; 004f0a67
     PUSH EBX                            ; 004f0a6a
     PUSH EDI                            ; 004f0a6b
-    CALL core_trigger.cpp_CTrigger_FUN_005e0ac0 ; 004f0a6c
-        ;   XREF to: 005e0ac0 (UNCONDITIONAL_CALL)  ; int core_trigger.cpp_CTrigger_FUN_005e0ac0(CTrigger * this_ptr)
+    CALL core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0 ; 004f0a6c
+        ;   XREF to: 005e0ac0 (UNCONDITIONAL_CALL)  ; int core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0(CTrigger * this_ptr, char * damage_actor_wildcard_name)
     ADD ESP,0x8                         ; 004f0a71
     TEST EAX,EAX                        ; 004f0a74
     JZ 0x004f0aa5                       ; 004f0a76
@@ -513,8 +513,8 @@ section .text
     SUB ESP,0x4                         ; 004f0a96
     FSTP float ptr [ESP]                ; 004f0a99
     PUSH EDI                            ; 004f0a9c
-    CALL core_trigger.cpp_CTrigger_FUN_005e0b00 ; 004f0a9d
-        ;   XREF to: 005e0b00 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_CTrigger_FUN_005e0b00(CTrigger * this_ptr)
+    CALL core_trigger.cpp_CTrigger_applyDamage_FUN_005e0b00 ; 004f0a9d
+        ;   XREF to: 005e0b00 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_CTrigger_applyDamage_FUN_005e0b00(CTrigger * this_ptr, float hit_points)
     ADD ESP,0x8                         ; 004f0aa2
     MOV EDI,dword ptr [ESP + 0x124]     ; 004f0aa5
         ;   Label: LAB_004f0aa5

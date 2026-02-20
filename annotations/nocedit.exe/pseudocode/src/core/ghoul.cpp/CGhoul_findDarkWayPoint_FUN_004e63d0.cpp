@@ -23,14 +23,14 @@ void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(CGhoul *this_pt
   int local_18;
   float local_14;
   
-  if ((*(int *)(this_ptr->unk3 + 0x44) == 0) &&
-     (fVar1 = *(float *)(this_ptr->unk3 + 0x40) - in_stack_00000008,
-     *(float *)(this_ptr->unk3 + 0x40) = fVar1, fVar1 <= 0.0)) {
+  if ((this_ptr->is_berserk == 0) &&
+     (fVar1 = this_ptr->heal_timer - in_stack_00000008, this_ptr->heal_timer = fVar1, fVar1 <= 0.0))
+  {
     local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(1.0,2.0);
     local_24 = &(this_ptr->base).base.base.location.position;
     local_18 = 0;
     local_1c = 0;
-    *(float *)(this_ptr->unk3 + 0x40) = local_14 + *(float *)(this_ptr->unk3 + 0x40);
+    this_ptr->heal_timer = local_14 + this_ptr->heal_timer;
     for (; local_18 < g_CDemonSetPtr->actor_count; local_18 = local_18 + 1) {
       this_ptr_00 = core_actor_cpp_castToClassHash_FUN_0040c790
                               (*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_1c),
@@ -47,7 +47,7 @@ void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(CGhoul *this_pt
                              (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar2),
                               g_CGhoulClassInfo.name_hash);
           if (((pCVar3 != (CGhoul *)0x0) && (pCVar3 != this_ptr)) &&
-             (this_ptr_00 == *(CDemonActor **)(pCVar3->unk3 + 0x3c))) goto LAB_004e646f;
+             (this_ptr_00 == pCVar3->dark_waypoint)) goto LAB_004e646f;
           iVar2 = iVar2 + 4;
         }
         if (local_20 != 0) {
@@ -67,7 +67,7 @@ void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(CGhoul *this_pt
                             (this_ptr_01,local_24,&CStack_30,
                              (this_ptr->base).base.base.direction_hint);
           if (0 < iVar2) {
-            *(CDemonActor **)(this_ptr->unk3 + 0x3c) = this_ptr_00;
+            this_ptr->dark_waypoint = this_ptr_00;
           }
         }
       }

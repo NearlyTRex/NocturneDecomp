@@ -14,14 +14,11 @@ void __cdecl core_grave_cpp_CGrave_renderBackground_FUN_004ee710(CGrave *this_pt
   CBoundingBox3D CStack_1c;
   
   if (layer_flag != 0) {
-    if (*(int *)this_ptr->unk1 == 0) {
+    if (this_ptr->animation_started == 0) {
       if (this_ptr->grave_state != 2) {
         return;
       }
-      this_ptr->unk1[0] = '\x01';
-      this_ptr->unk1[1] = '\0';
-      this_ptr->unk1[2] = '\0';
-      this_ptr->unk1[3] = '\0';
+      this_ptr->animation_started = 1;
     }
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
     this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_1c);

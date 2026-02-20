@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 9,
-    "complexity_score": 22,
+    "complexity_score": 21,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 7,
+    "pseudocode_lines": 6,
     "suspect_count": 1,
     "suspect_types": [
-      "negative_offset"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 16
+    "total_lines": 15
   },
   "cross_references": [],
   "function": {
@@ -85,11 +85,11 @@
   },
   "suspects": [
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 9,
-      "match": "pCVar1[-1].",
-      "text": "return (CTire *)(pCVar1[-1].animation_state + 0x8c);",
-      "type": "negative_offset"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 8,
+      "match": "ADJ",
+      "text": "return ADJ(pCVar1);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

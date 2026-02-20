@@ -528,13 +528,13 @@ section .text
         ;   XREF to: 005de2df (UNCONDITIONAL_JUMP)  ; LAB_005de2df
     PUSH EDI                            ; 005de27a
         ;   Label: LAB_005de27a
-    CALL core_trigger.cpp_CTrigger_FUN_005e0aa0 ; 005de27b
-        ;   XREF to: 005e0aa0 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_CTrigger_FUN_005e0aa0(CTrigger * this_ptr)
+    CALL core_trigger.cpp_CTrigger_onProjectileHit_FUN_005e0aa0 ; 005de27b
+        ;   XREF to: 005e0aa0 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_CTrigger_onProjectileHit_FUN_005e0aa0(CTrigger * this_ptr)
     ADD ESP,0x4                         ; 005de280
     PUSH EBX                            ; 005de283
     PUSH EDI                            ; 005de284
-    CALL core_trigger.cpp_CTrigger_FUN_005e0ac0 ; 005de285
-        ;   XREF to: 005e0ac0 (UNCONDITIONAL_CALL)  ; int core_trigger.cpp_CTrigger_FUN_005e0ac0(CTrigger * this_ptr)
+    CALL core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0 ; 005de285
+        ;   XREF to: 005e0ac0 (UNCONDITIONAL_CALL)  ; int core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0(CTrigger * this_ptr, char * damage_actor_wildcard_name)
     ADD ESP,0x8                         ; 005de28a
     TEST EAX,EAX                        ; 005de28d
     JZ 0x005de2be                       ; 005de28f
@@ -548,8 +548,8 @@ section .text
     SUB ESP,0x4                         ; 005de2af
     FSTP float ptr [ESP]                ; 005de2b2
     PUSH EDI                            ; 005de2b5
-    CALL core_trigger.cpp_CTrigger_FUN_005e0b00 ; 005de2b6
-        ;   XREF to: 005e0b00 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_CTrigger_FUN_005e0b00(CTrigger * this_ptr)
+    CALL core_trigger.cpp_CTrigger_applyDamage_FUN_005e0b00 ; 005de2b6
+        ;   XREF to: 005e0b00 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_CTrigger_applyDamage_FUN_005e0b00(CTrigger * this_ptr, float hit_points)
     ADD ESP,0x8                         ; 005de2bb
     MOV EDI,dword ptr [ESP + 0x128]     ; 005de2be
         ;   Label: LAB_005de2be

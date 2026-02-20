@@ -6,34 +6,23 @@
 ; Parameters:
 ; CCourse *        Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x4fc]:1  local_4fc
-; undefined1       Stack[-0x3f8]:1  local_3f8
-; undefined1       Stack[-0x2f4]:1  local_2f4
-; undefined1       Stack[-0x1f0]:1  local_1f0
-; undefined1       Stack[-0x1ef]:1  local_1ef
-; undefined1       Stack[-0xec]:1  local_ec
-; undefined4       Stack[-0x9c]:4  local_9c
-; undefined4       Stack[-0x98]:4  local_98
-; undefined4       Stack[-0x94]:4  local_94
-; undefined4       Stack[-0x90]:4  local_90
-; undefined4       Stack[-0x8c]:4  local_8c
-; undefined4       Stack[-0x88]:4  local_88
-; undefined1       Stack[-0x84]:1  local_84
-; undefined1       Stack[-0x74]:1  local_74
-; undefined1       Stack[-0x64]:1  local_64
-; undefined1       Stack[-0x54]:1  local_54
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined1       Stack[-0x38]:1  local_38
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined1       Stack[-0x20]:1  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[260]        Stack[-0x4fc]:260  local_4fc
+; char[260]        Stack[-0x3f8]:260  local_3f8
+; char[260]        Stack[-0x2f4]:260  local_2f4
+; char[260]        Stack[-0x1f0]:260  local_1f0
+; char[80]         Stack[-0xec]:80  local_ec
+; CBoundingBox3D   Stack[-0x9c]:24  local_9c
+; CQuaternion4f    Stack[-0x84]:16  local_84
+; CQuaternion4f    Stack[-0x74]:16  local_74
+; CQuaternion4f    Stack[-0x64]:16  local_64
+; CQuaternion4f    Stack[-0x54]:16  local_54
+; CVector3f        Stack[-0x44]:12  local_44
+; CVector3f        Stack[-0x38]:12  local_38
+; CVector3f        Stack[-0x2c]:12  local_2c
+; float            Stack[-0x20]:4  local_20
+; uint             Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_main.c_showDeveloperToolsMenu_FUN_005073a0 at 0050784a
@@ -58,10 +47,10 @@
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_expand_FUN_00420240
-;   core_course.cpp_CCourse_FUN_00442bc0
-;   core_course.cpp_CCourse_FUN_00442d70
-;   core_course.cpp_CCourse_FUN_00443bc0
+;   core_course.cpp_CCourse_importBON_FUN_00442bc0
+;   core_course.cpp_CCourse_importCRS_FUN_00442d70
 ;   core_course.cpp_CCourse_load_FUN_00442580
+;   core_course.cpp_CCourse_preview_FUN_00443bc0
 ;   core_course.cpp_CCourse_save_FUN_00442a90
 ;   core_dmodel.cpp_loadModel_FUN_00478c00
 ;   core_xform.cpp_eulerToQuaternion_FUN_005f7b20
@@ -260,7 +249,7 @@ section .text
     PUSH EAX                            ; 00443232
     PUSH EBP                            ; 00443233
     CALL core_course.cpp_CCourse_save_FUN_00442a90 ; 00443234
-        ;   XREF to: 00442a90 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_save_FUN_00442a90(CCourse * this_ptr)
+        ;   XREF to: 00442a90 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_save_FUN_00442a90(CCourse * this_ptr, char * filename)
     JMP 0x004431ba                      ; 00443239
         ;   XREF to: 004431ba (UNCONDITIONAL_JUMP)  ; LAB_004431ba
     MOV ECX,0x41                        ; 0044323e
@@ -285,8 +274,8 @@ section .text
     MOV EAX,ESP                         ; 00443274
     PUSH EAX                            ; 00443276
     PUSH EBP                            ; 00443277
-    CALL core_course.cpp_CCourse_FUN_00442d70 ; 00443278
-        ;   XREF to: 00442d70 (UNCONDITIONAL_CALL)  ; int core_course.cpp_CCourse_FUN_00442d70(CCourse * this_ptr, char * filename)
+    CALL core_course.cpp_CCourse_importCRS_FUN_00442d70 ; 00443278
+        ;   XREF to: 00442d70 (UNCONDITIONAL_CALL)  ; int core_course.cpp_CCourse_importCRS_FUN_00442d70(CCourse * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0044327d
     TEST EAX,EAX                        ; 00443280
     JZ 0x0044324c                       ; 00443282
@@ -360,8 +349,8 @@ section .text
     ADD ESP,0x4                         ; 0044332d
     PUSH EAX                            ; 00443330
     PUSH EBP                            ; 00443331
-    CALL core_course.cpp_CCourse_FUN_00443bc0 ; 00443332
-        ;   XREF to: 00443bc0 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_FUN_00443bc0(CCourse * this_ptr, CKeyFramedModel * param_2)
+    CALL core_course.cpp_CCourse_preview_FUN_00443bc0 ; 00443332
+        ;   XREF to: 00443bc0 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_preview_FUN_00443bc0(CCourse * this_ptr, CKeyFramedModel * model_ptr)
     JMP 0x004431ba                      ; 00443337
         ;   XREF to: 004431ba (UNCONDITIONAL_JUMP)  ; LAB_004431ba
     MOV EAX,dword ptr [EBP]             ; 0044333c
@@ -639,8 +628,8 @@ section .text
     LEA EAX,[ESP + 0x104]               ; 00443663
     PUSH EAX                            ; 0044366a
     PUSH EBP                            ; 0044366b
-    CALL core_course.cpp_CCourse_FUN_00442bc0 ; 0044366c
-        ;   XREF to: 00442bc0 (UNCONDITIONAL_CALL)  ; int core_course.cpp_CCourse_FUN_00442bc0(CCourse * this_ptr, char * filename)
+    CALL core_course.cpp_CCourse_importBON_FUN_00442bc0 ; 0044366c
+        ;   XREF to: 00442bc0 (UNCONDITIONAL_CALL)  ; int core_course.cpp_CCourse_importBON_FUN_00442bc0(CCourse * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00443671
     TEST EAX,EAX                        ; 00443674
     JZ 0x00443639                       ; 00443676

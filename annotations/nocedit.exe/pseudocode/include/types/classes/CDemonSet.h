@@ -77,8 +77,8 @@ typedef struct CDemonSet {
     int color_scale_factor; // 0x15ae8c
     int fog_scale_factor; // 0x15ae90
     float set_scale_factor; // 0x15ae94
-    int reserved1; // 0x15ae98
-    int reserved2; // 0x15ae9c
+    int unk1; // 0x15ae98
+    int unk2; // 0x15ae9c
     int camera_enabled_flag; // 0x15aea0
     int selected_camera_index; // 0x15aea4
     int previous_best_camera_index; // 0x15aea8

@@ -1,31 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 34,
-        "line": 45,
-        "message": "C-style cast from 'SRenderVertex *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 34,
-        "line": 51,
-        "message": "cannot cast from type 'float' to pointer type 'SRenderVertex *'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 142,
-    "complexity_score": 155,
+    "complexity_score": 170,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 3,
     "pseudocode_lines": 100,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
+      "byvalue_struct_passing",
       "pointer_cast"
     ],
     "total_lines": 242
@@ -224,6 +212,13 @@
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Calls clipAndDrawLine2D - decompiler cannot recognize by-value pattern",
+      "line": 1,
+      "match": "clipAndDrawLine2D",
+      "text": "Function calls by-value struct passing functions",
+      "type": "byvalue_struct_passing"
     }
   ]
 }

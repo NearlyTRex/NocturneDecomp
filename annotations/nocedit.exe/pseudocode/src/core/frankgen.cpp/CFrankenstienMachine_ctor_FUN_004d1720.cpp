@@ -18,16 +18,16 @@ CFrankenstienMachine * __cdecl core_frankgen_cpp_CFrankenstienMachine_ctor_FUN_0
   pCVar3 = core_course_cpp_CCourse_ctor_FUN_004424c0((CCourse *)(pCVar2 + 1));
   pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
                      ((CKeyFramedModelInstance *)(pCVar3 + 1));
-  *(CDemonActor_vtable **)(pCVar2[-2].animation_state + 100) = &g_CFrankenstienMachineVTable;
-  pCVar2[-0xffffffff00000002].animation_state[0x6c] = '\0';
-  pCVar2[-0xffffffff00000002].animation_state[0x6d] = '\0';
-  pCVar2[-0xffffffff00000002].animation_state[0x6e] = '\0';
-  pCVar2[-0xffffffff00000002].animation_state[0x6f] = '\0';
-  pCVar2[-2].animation_state[0x70] = '\0';
-  pCVar2[-0xffffffff00000002].animation_state[0x90] = '\0';
-  pCVar2[-0xffffffff00000002].animation_state[0x91] = '\0';
-  pCVar2[-0xffffffff00000002].animation_state[0x92] = '\0';
-  pCVar2[-0xffffffff00000002].animation_state[0x93] = '\0';
+  *(CDemonActor_vtable **)(pCVar2[-2].model_name + 200) = &g_CFrankenstienMachineVTable;
+  pCVar2[-0xffffffff00000002].model_name[0xd0] = '\0';
+  pCVar2[-0xffffffff00000002].model_name[0xd1] = '\0';
+  pCVar2[-0xffffffff00000002].model_name[0xd2] = '\0';
+  pCVar2[-0xffffffff00000002].model_name[0xd3] = '\0';
+  pCVar2[-2].model_name[0xd4] = '\0';
+  pCVar2[-0xffffffff00000002].model_name[0xf4] = '\0';
+  pCVar2[-0xffffffff00000002].model_name[0xf5] = '\0';
+  pCVar2[-0xffffffff00000002].model_name[0xf6] = '\0';
+  pCVar2[-0xffffffff00000002].model_name[0xf7] = '\0';
   pCVar2[1].part_visibility_flags[1] = 0;
-  return (CFrankenstienMachine *)(pCVar2[-3].animation_state + 0x8c);
+  return (CFrankenstienMachine *)(pCVar2[-3].model_name + 0xf0);
 }

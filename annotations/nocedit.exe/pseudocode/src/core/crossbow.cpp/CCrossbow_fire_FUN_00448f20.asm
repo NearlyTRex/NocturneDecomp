@@ -40,8 +40,8 @@
 ;   core_setcolid.cpp_CDemonSet_raycast_FUN_00572530
 ;   core_setcolid.cpp_CDemonSet_setRayType_FUN_00574230
 ;   core_sound.cpp_CSound_playActorSound_FUN_005b3a40
-;   core_trigger.cpp_CTrigger_FUN_005e0aa0
-;   core_trigger.cpp_CTrigger_FUN_005e0ac0
+;   core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0
+;   core_trigger.cpp_CTrigger_applyDamage_FUN_005e0b00
 ;   ... and 2 more
 ;
 ; *****************************************************************************
@@ -310,13 +310,13 @@ section .text
     JZ 0x0044950a                       ; 00449266
         ;   XREF to: 0044950a (CONDITIONAL_JUMP)  ; LAB_0044950a
     PUSH EDI                            ; 0044926c
-    CALL core_trigger.cpp_CTrigger_FUN_005e0aa0 ; 0044926d
-        ;   XREF to: 005e0aa0 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_CTrigger_FUN_005e0aa0(CTrigger * this_ptr)
+    CALL core_trigger.cpp_CTrigger_onProjectileHit_FUN_005e0aa0 ; 0044926d
+        ;   XREF to: 005e0aa0 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_CTrigger_onProjectileHit_FUN_005e0aa0(CTrigger * this_ptr)
     ADD ESP,0x4                         ; 00449272
     PUSH EBX                            ; 00449275
     PUSH EDI                            ; 00449276
-    CALL core_trigger.cpp_CTrigger_FUN_005e0ac0 ; 00449277
-        ;   XREF to: 005e0ac0 (UNCONDITIONAL_CALL)  ; int core_trigger.cpp_CTrigger_FUN_005e0ac0(CTrigger * this_ptr)
+    CALL core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0 ; 00449277
+        ;   XREF to: 005e0ac0 (UNCONDITIONAL_CALL)  ; int core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0(CTrigger * this_ptr, char * damage_actor_wildcard_name)
     ADD ESP,0x8                         ; 0044927c
     TEST EAX,EAX                        ; 0044927f
     JZ 0x004492b0                       ; 00449281
@@ -330,8 +330,8 @@ section .text
     SUB ESP,0x4                         ; 004492a1
     FSTP float ptr [ESP]                ; 004492a4
     PUSH EDI                            ; 004492a7
-    CALL core_trigger.cpp_CTrigger_FUN_005e0b00 ; 004492a8
-        ;   XREF to: 005e0b00 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_CTrigger_FUN_005e0b00(CTrigger * this_ptr)
+    CALL core_trigger.cpp_CTrigger_applyDamage_FUN_005e0b00 ; 004492a8
+        ;   XREF to: 005e0b00 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_CTrigger_applyDamage_FUN_005e0b00(CTrigger * this_ptr, float hit_points)
     ADD ESP,0x8                         ; 004492ad
     MOV ESI,dword ptr [ESP + 0xdc]      ; 004492b0
         ;   Label: LAB_004492b0

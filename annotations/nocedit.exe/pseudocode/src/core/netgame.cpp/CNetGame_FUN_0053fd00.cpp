@@ -36,7 +36,7 @@ void __cdecl core_netgame_cpp_CNetGame_FUN_0053fd00(CNetGame *this_ptr)
       uVar4 = uVar3 - 0x1e0000;
       g_LastPingTime = iVar1;
       g_CurrentGameTime = uVar3;
-      if (*(int *)this_ptr->padding < 0) {
+      if (this_ptr->server_player_index < 0) {
 LAB_0053fe74:
         shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
       }
@@ -87,7 +87,7 @@ LAB_0053fe74:
           core_netgame_cpp_CNetGame_FUN_00543930(this_ptr);
           uVar4 = g_CurrentGameTime;
           core_netgame_cpp_CNetGame_receivePackets_FUN_005405b0(this_ptr);
-        } while (-1 < *(int *)this_ptr->padding);
+        } while (-1 < this_ptr->server_player_index);
         shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
       }
     }
@@ -173,20 +173,14 @@ LAB_00540097:
   }
   this_ptr->network_mode = 0;
   this_ptr->local_player_index = -1;
-  this_ptr->padding[0] = -1;
-  this_ptr->padding[1] = -1;
-  this_ptr->padding[2] = -1;
-  this_ptr->padding[3] = -1;
-  this_ptr->unk[0] = '\0';
+  this_ptr->server_player_index = -1;
+  this_ptr->mission_name[0] = '\0';
   this_ptr->connection_type = 0;
   g_ChatHistoryCount = 0;
   DAT_02f98ad0 = 0;
   g_RemoteSyncStage = 0;
   this_ptr->player_count = 0;
   DAT_02f7c8c4 = 0;
-  this_ptr->unk[0x50] = '\0';
-  this_ptr->unk[0x51] = '\0';
-  this_ptr->unk[0x52] = '\0';
-  this_ptr->unk[0x53] = '\0';
+  this_ptr->has_pending_sim_frame = 0;
   return;
 }

@@ -1,12 +1,22 @@
-# MMX inline assembly transform for pseudocode export
+# Inline assembly transform for pseudocode export
 #
-# Replaces broken Ghidra pseudocode for MMX/SIMD functions with inline
-# assembly blocks sourced from the raw assembly data. Ghidra's decompiler
-# produces uncompilable nested CONCAT/SUB/uint7/int3 expressions for MMX
-# code, while clang++ with -fasm-blocks compiles MSVC-style __asm { }
-# blocks perfectly.
+# Replaces broken Ghidra pseudocode with inline assembly blocks sourced
+# from the raw assembly data. Handles two categories of broken decompilation:
+#
+# 1. MMX/SIMD functions: Ghidra produces uncompilable nested CONCAT/SUB/
+#    uint7/int3 expressions for MMX code.
+#
+# 2. By-value struct passing callers: Functions that call known by-value
+#    callees (clipAndDrawLine2D, clipAndDrawLine3D, calculateMainDataSize,
+#    CSfxSlot_mix). Watcom passes structs by value via REP MOVSD which
+#    Ghidra's decompiler cannot recognize, producing mangled pseudocode.
+#
+# Both cases are replaced with MSVC-style __asm { } blocks that clang++
+# with -fasm-blocks compiles correctly.
 
 import re
+
+from ghidra_annotations.annotations.pseudocode.pass_by_value import BYVALUE_CALLEES
 
 
 # MMX instruction detection pattern (same mnemonics as suspects.py)
@@ -49,12 +59,36 @@ _EPILOGUE_POP_REGS = {'EBP', 'ESI', 'EDI', 'EBX'}
 # Matches addresses that are at least 5 hex digits (to avoid matching small constants)
 _ADDR_IN_OPERAND = re.compile(r'0x0*([0-9a-fA-F]{5,})')
 
+# Ghidra writes FPU stack registers as ST0, ST1, etc.
+# MASM inline asm requires ST(0), ST(1), etc.
+_FPU_STn = re.compile(r'\bST(\d)\b', re.IGNORECASE)
+
 
 def _has_mmx_instructions(assembly_code):
     """Check if assembly code contains MMX instructions."""
     if not assembly_code:
         return False
     return bool(_MMX_PATTERN.search(assembly_code))
+
+
+def _calls_byvalue_function(func_calls):
+    """Check if function calls any known by-value struct passing function.
+
+    Matches against function addresses from BYVALUE_CALLEES (pass_by_value.py).
+
+    Args:
+        func_calls: List of dicts with 'addr' keys from DecompileResult
+
+    Returns:
+        True if any called function is in the known by-value set
+    """
+    if not func_calls:
+        return False
+    for call in func_calls:
+        addr = call.get('addr', '').lower().lstrip('0') or '0'
+        if addr in BYVALUE_CALLEES:
+            return True
+    return False
 
 
 def _parse_raw_assembly(assembly_code):
@@ -532,6 +566,10 @@ def _format_inline_asm(body_instructions, label_map, global_map):
         if operands:
             operands = _strip_segment_prefix(operands)
 
+        # Normalize FPU register names: ST0 -> ST(0), ST1 -> ST(1), etc.
+        if operands:
+            operands = _FPU_STn.sub(r'ST(\1)', operands)
+
         # Replace global addresses in operands and reorder for MASM
         if operands:
             operands = _rewrite_memory_operand_order(operands, global_map)
@@ -546,25 +584,21 @@ def _format_inline_asm(body_instructions, label_map, global_map):
     return '\n'.join(lines)
 
 
-def generate_inline_asm_cpp(result, decompiled_code):
-    """Replace MMX function pseudocode body with inline assembly.
+def _replace_body_with_asm(result, decompiled_code):
+    """Core logic: replace function body with inline assembly.
 
-    Only transforms functions that contain MMX instructions. Non-MMX functions
-    are returned unchanged.
+    Parses raw assembly, strips prologue/epilogue, resolves globals and labels,
+    and builds an __asm {} block to replace the decompiled function body.
 
     Args:
         result: DecompileResult with .assembly_code and .func_globals attributes
         decompiled_code: The transformed decompiled code string
 
     Returns:
-        Modified decompiled_code with inline asm body, or original if not MMX
+        Modified decompiled_code with inline asm body, or original on failure
     """
     assembly_code = getattr(result, 'assembly_code', None)
     if not assembly_code:
-        return decompiled_code
-
-    # Only transform functions with MMX instructions
-    if not _has_mmx_instructions(assembly_code):
         return decompiled_code
 
     func_globals = getattr(result, 'func_globals', None)
@@ -634,3 +668,49 @@ def generate_inline_asm_cpp(result, decompiled_code):
     new_code = signature_part + '\n{\n' + asm_block + '\n}'
 
     return new_code
+
+
+def generate_mmx_asm_cpp(result, decompiled_code):
+    """Replace MMX function pseudocode body with inline assembly.
+
+    Only transforms functions that contain MMX instructions. Non-MMX functions
+    are returned unchanged.
+
+    Args:
+        result: DecompileResult with .assembly_code and .func_globals attributes
+        decompiled_code: The transformed decompiled code string
+
+    Returns:
+        Modified decompiled_code with inline asm body, or original if not MMX
+    """
+    assembly_code = getattr(result, 'assembly_code', None)
+    if not assembly_code:
+        return decompiled_code
+
+    if not _has_mmx_instructions(assembly_code):
+        return decompiled_code
+
+    return _replace_body_with_asm(result, decompiled_code)
+
+
+def generate_byval_asm_cpp(result, decompiled_code):
+    """Replace by-value struct passing pseudocode body with inline assembly.
+
+    Only transforms functions that call one of the known by-value struct
+    passing functions (clipAndDrawLine2D, clipAndDrawLine3D,
+    calculateMainDataSize, CSfxSlot_mix). Functions that don't call any
+    of these are returned unchanged.
+
+    Args:
+        result: DecompileResult with .assembly_code, .func_globals, and
+                .func_calls attributes
+        decompiled_code: The transformed decompiled code string
+
+    Returns:
+        Modified decompiled_code with inline asm body, or original if no by-value
+    """
+    func_calls = getattr(result, 'func_calls', None)
+    if not _calls_byvalue_function(func_calls):
+        return decompiled_code
+
+    return _replace_body_with_asm(result, decompiled_code)

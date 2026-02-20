@@ -1,10 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CObj * __cdecl shape_superopt_cpp_CObj_ctor_FUN_005d2230(CObj *this_ptr)
+; CObj * __cdecl shape_superopt_cpp_CObj_ctor_FUN_005d2230(CObj *this_ptr,int poly_count,int vertex_count)
 ;
 ; Parameters:
 ; CObj *           Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   poly_count
+; int              Stack[0xc]:4   vertex_count
 ;
 ; XREF[2]:
 ;   shape_superopt.cpp_COptimize_ctor_FUN_005d6f90 at 005d6f9a

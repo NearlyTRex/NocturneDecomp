@@ -42,16 +42,16 @@ void __cdecl core_ladder_cpp_CLadder_FUN_00502b80(CLadder *this_ptr)
     local_24 = local_84.m[1].x;
     local_20 = local_84.m[2].y;
     local_1c = local_58;
-    if ((float *)this_ptr->unk1 != &local_24) {
-      *(float *)this_ptr->unk1 = local_84.m[1].x;
-      *(float *)(this_ptr->unk1 + 4) = local_84.m[2].y;
-      *(uint *)(this_ptr->unk1 + 8) = local_58;
+    if (&this_ptr->unk1 != &local_24) {
+      this_ptr->unk1 = local_84.m[1].x;
+      this_ptr->unk2 = local_84.m[2].y;
+      this_ptr->unk3 = local_58;
     }
     pCVar1 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_84,&local_18);
-    if ((CVector3f *)(this_ptr->unk1 + 0xc) != pCVar1) {
-      ((CVector3f *)(this_ptr->unk1 + 0xc))->x = pCVar1->x;
-      *(float *)(this_ptr->unk1 + 0x10) = pCVar1->y;
-      *(float *)(this_ptr->unk1 + 0x14) = pCVar1->z;
+    if (&this_ptr->cached_euler_angles != pCVar1) {
+      (this_ptr->cached_euler_angles).x = pCVar1->x;
+      (this_ptr->cached_euler_angles).y = pCVar1->y;
+      (this_ptr->cached_euler_angles).z = pCVar1->z;
       return;
     }
   }

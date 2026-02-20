@@ -51,16 +51,13 @@ CTurret * __cdecl core_turret_cpp_CTurret_ctor_FUN_005e20f0(CTurret *this_ptr)
   local_18.z = 1.0;
   pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                      ((CDemonActor *)ADJ(this_ptr_00),&local_24,&local_18);
-  if ((CVector3f *)ADJ(this_ptr_00)->unk4 != pCVar3) {
-    *(float *)ADJ(this_ptr_00)->unk4 = pCVar3->x;
-    *(float *)(ADJ(this_ptr_00)->unk4 + 4) = pCVar3->y;
-    *(float *)(ADJ(this_ptr_00)->unk4 + 8) = pCVar3->z;
+  if (&ADJ(this_ptr_00)->patrol_target != pCVar3) {
+    (ADJ(this_ptr_00)->patrol_target).x = pCVar3->x;
+    (ADJ(this_ptr_00)->patrol_target).y = pCVar3->y;
+    (ADJ(this_ptr_00)->patrol_target).z = pCVar3->z;
   }
   ADJ(this_ptr_00)->user = (CDemonActor *)0x0;
-  this_ptr_00[1].animation_state[0x90] = '\0';
-  this_ptr_00[1].animation_state[0x91] = '\0';
-  this_ptr_00[1].animation_state[0x92] = '\0';
-  this_ptr_00[1].animation_state[0x93] = '\0';
+  ADJ(this_ptr_00)->fire_sound_timer = 0.0;
   ADJ(this_ptr_00)->can_manual_aim = 0;
   return ADJ(this_ptr_00);
 }

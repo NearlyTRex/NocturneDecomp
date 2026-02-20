@@ -6,6 +6,6 @@
 // Structure: CFireEffect
 // Ghidra size: 0x4 (4 bytes)
 typedef struct CFireEffect {
-    int unk; // 0x0
+    int singleton; // 0x0
 } CFireEffect;
 

@@ -1,0 +1,214 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 53,
+    "complexity_score": 56,
+    "cross_reference_count": 9,
+    "function_call_count": 3,
+    "global_count": 0,
+    "pseudocode_lines": 31,
+    "suspect_count": 2,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 84
+  },
+  "cross_references": [
+    {
+      "addr": "00414ce0",
+      "from_addr": "00414d7f",
+      "name": "core_bat.cpp_CBat_FUN_00414ce0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00443bc0",
+      "from_addr": "00443c86",
+      "name": "core_course.cpp_CCourse_preview_FUN_00443bc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047cbc0",
+      "from_addr": "0047e268",
+      "name": "core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d2430",
+      "from_addr": "004d24ae",
+      "name": "core_frankgen.cpp_CFrankenstienMachine_setCourseFrame_FUN_004d2430",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050bc30",
+      "from_addr": "0050bca4",
+      "name": "core_marquee.cpp_CMarquee_FUN_0050bc30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050c050",
+      "from_addr": "0050c102",
+      "name": "core_marquee.cpp_CMarquee_renderTransparent_FUN_0050c050",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00529ed0",
+      "from_addr": "0052a036",
+      "name": "core_moon.cpp_CMoon_render_FUN_00529ed0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054cab0",
+      "from_addr": "0054cbed",
+      "name": "core_platfrm.cpp_CPlatform_evaluatePosition_FUN_0054cab0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005e7e80",
+      "from_addr": "005e7f48",
+      "name": "core_vehicle.cpp_CVehicle_process_FUN_005e7e80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00442710",
+    "address_range": [
+      [
+        "00442710",
+        "00442794"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_course.cpp_CCourse_evaluate_FUN_00442710",
+    "signature": "void __cdecl core_course_cpp_CCourse_evaluate_FUN_00442710(CCourse *this_ptr,float time,CVector3f *out_pos,CVector3f *out_euler)"
+  },
+  "function_calls": [
+    {
+      "addr": "004427a0",
+      "is_variadic": false,
+      "name": "core_course.cpp_CCourse_interpolate_FUN_004427a0"
+    },
+    {
+      "addr": "005f5690",
+      "is_variadic": false,
+      "name": "core_xform.cpp_matrixToEulerAngles_FUN_005f5690"
+    },
+    {
+      "addr": "005f73e0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_quaternionToMatrix3x4_FUN_005f73e0"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.127659574468085,
+    "instruction_count": 47,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 3,
+      "CBRANCH": 2,
+      "COPY": 43,
+      "INT_ADD": 30,
+      "INT_AND": 14,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 15,
+      "INT_LESS": 2,
+      "INT_MULT": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 7,
+      "INT_SUB": 18,
+      "INT_ZEXT": 2,
+      "LOAD": 16,
+      "POPCOUNT": 7,
+      "RETURN": 2,
+      "STORE": 17
+    },
+    "pcode_op_count": 194
+  },
+  "stack_frame": {
+    "frame_size": 156,
+    "local_size": 140,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCourse *"
+      },
+      {
+        "is_param": true,
+        "name": "time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "out_pos",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "out_euler",
+        "offset": 16,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 24,
+      "match": "(CMatrix3x3f *)((int)",
+      "text": "pCVar4 = (CMatrix3x3f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    }
+  ]
+}

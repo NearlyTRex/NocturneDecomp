@@ -1,19 +1,26 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 16,
+        "message": "assigning to 'CMouse *' from incompatible type 'void *'"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 67,
+    "complexity_score": 57,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 12,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
-      "pointer_cast"
+      "decompiler_intrinsic"
     ],
     "total_lines": 38
   },
@@ -109,39 +116,32 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 9,
-      "match": "(void *)((int)",
-      "text": "((void *)((int)pvVar1 + 0xa0),7,&g_CAlphaBitmapTypeInfo);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 11,
-      "match": "(void *)((int)",
-      "text": "((void *)((int)pvVar1 + 0x8c),0xf,&g_CAlphaBitmapTypeInfo);",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "pvVar3 = __arrinit(ADJ(pvVar2)->skulls,0xf,&g_CAlphaBitmapTypeInfo);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 12,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar1 + 300) = 0;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar3)->anim_timer = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 13,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar1 + 0x130) = 0;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar3)->effect_mode = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 14,
-      "match": "(CMouse *)((int)",
-      "text": "return (CMouse *)((int)pvVar1 + -300);",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "return ADJ(pvVar3);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

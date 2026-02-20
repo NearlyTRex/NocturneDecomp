@@ -110,6 +110,7 @@ extern CDemonActor_vtable g_CTriggerVTable;
 extern CDemonActor_vtable g_CTurretVTable;
 extern CDemonActor_vtable g_CTVBatVTable;
 extern CDemonActor_vtable g_CVampireBossVTable;
+extern CDemonActor_vtable g_CVehicleVTable;
 extern CDemonActor_vtable g_CCryptVesselVTable;
 extern CDemonActor_vtable g_CWaterActorVTable;
 extern CDemonActor_vtable g_CWayPointVTable;

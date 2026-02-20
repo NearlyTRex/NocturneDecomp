@@ -27,37 +27,34 @@ void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *thi
   float local_14;
   
   if (this_ptr->visual_type == 1) {
-    (this_ptr->unk3).base.location.position.x = (this_ptr->base).location.position.x;
-    (this_ptr->unk3).base.location.position.y = (this_ptr->base).location.position.y;
-    (this_ptr->unk3).base.location.position.z = (this_ptr->base).location.position.z;
-    (this_ptr->unk3).base.location.area_id = (this_ptr->base).location.area_id;
-    pUVar3 = &(this_ptr->unk3).base.orient;
+    (this_ptr->flame).base.location.position.x = (this_ptr->base).location.position.x;
+    (this_ptr->flame).base.location.position.y = (this_ptr->base).location.position.y;
+    (this_ptr->flame).base.location.position.z = (this_ptr->base).location.position.z;
+    (this_ptr->flame).base.location.area_id = (this_ptr->base).location.area_id;
+    pUVar3 = &(this_ptr->flame).base.orient;
     pUVar1 = &(this_ptr->base).orient;
-    (this_ptr->unk3).base.location.position.y =
-         (this_ptr->unk3).base.location.position.y + 1.7f;
+    (this_ptr->flame).base.location.position.y =
+         (this_ptr->flame).base.location.position.y + 1.7f;
     if (pUVar3 != pUVar1) {
       (pUVar3->vec).x = (pUVar1->vec).x;
-      (this_ptr->unk3).base.orient.vec.y = (this_ptr->base).orient.vec.y;
-      (this_ptr->unk3).base.orient.vec.z = (this_ptr->base).orient.vec.z;
+      (this_ptr->flame).base.orient.vec.y = (this_ptr->base).orient.vec.y;
+      (this_ptr->flame).base.orient.vec.z = (this_ptr->base).orient.vec.z;
     }
-    core_flame_cpp_CFlame_process_FUN_004c9c00(&this_ptr->unk3,delta_time);
+    core_flame_cpp_CFlame_process_FUN_004c9c00(&this_ptr->flame,delta_time);
   }
   else if (this_ptr->visual_type == 0) {
-    this_ptr->unk4 = (int)(delta_time * (float)3.1415926535000001 + (float)this_ptr->unk4);
+    this_ptr->spin_angle = delta_time * (float)3.1415926535000001 + this_ptr->spin_angle;
   }
   else {
-    fVar6 = delta_time * (float)8 + this_ptr->unk7;
-    this_ptr->unk7 = fVar6;
+    fVar6 = delta_time * (float)8 + this_ptr->water_anim_timer;
+    this_ptr->water_anim_timer = fVar6;
     if ((float)16 <= fVar6) {
-      this_ptr->unk7 = this_ptr->unk7 + -16.0f;
+      this_ptr->water_anim_timer = this_ptr->water_anim_timer + -16.0f;
     }
   }
   if (this_ptr->carrier == (CDemonActor *)0x0) {
-    if (*(int *)this_ptr->unk2 != 0) {
-      this_ptr->unk2[0] = '\0';
-      this_ptr->unk2[1] = '\0';
-      this_ptr->unk2[2] = '\0';
-      this_ptr->unk2[3] = '\0';
+    if (this_ptr->init_frame != 0) {
+      this_ptr->init_frame = 0;
       return;
     }
     pUVar1 = &(this_ptr->base).orient;
@@ -200,7 +197,7 @@ void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *thi
         core_event_cpp_CEventList_executeCommands_FUN_004aabe0(g_CEventListPtr,this_ptr->win_event);
         this_ptr->prey[5].previous_transform_state.orientation.y = 1.4013e-45;
         this_ptr->neutral[5].previous_transform_state.orientation.y = 1.4013e-45;
-        this_ptr->unk8 = 1;
+        this_ptr->puzzle_complete = 1;
         return;
       }
     }

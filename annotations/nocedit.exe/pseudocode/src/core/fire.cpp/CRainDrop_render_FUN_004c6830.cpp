@@ -32,7 +32,7 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_004c6830(CRainDrop *this_ptr)
   CVector3i local_38;
   CVector3i CStack_2c;
   CVector3i local_20;
-  float fStack_14;
+  int iStack_14;
   int iStack_10;
   
   bVar2 = 0;
@@ -100,17 +100,17 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_004c6830(CRainDrop *this_ptr)
   g_RenderVertexBuffer[2].u = 0x800000;
   g_RenderVertexBuffer[3].u = 0x800000;
   g_RenderVertexBuffer[2].v = (int)g_CameraLoadImageReadBuffer + 0x771b0;
-  g_RenderVertexBuffer[0].w_recip =
-       (float)(int)ROUND(ROUND((float)iStack_10 *
-                               (this_ptr->base).lifetime_remaining * (float)4));
+  g_RenderVertexBuffer[0].fog =
+       (int)ROUND(ROUND((float)iStack_10 *
+                        (this_ptr->base).lifetime_remaining * (float)4));
   g_RenderVertexBuffer[3].v = (int)g_CameraLoadImageReadBuffer + 0x771b0;
   CStack_2c.x = (int)ROUND((this_ptr->base).position.x * 256.0f);
   CStack_2c.y = (int)ROUND((this_ptr->base).position.y * 256.0f);
   CStack_2c.z = (int)ROUND((this_ptr->base).position.z * 256.0f);
-  g_RenderVertexBuffer[1].w_recip = g_RenderVertexBuffer[0].w_recip;
-  g_RenderVertexBuffer[2].w_recip = g_RenderVertexBuffer[0].w_recip;
-  g_RenderVertexBuffer[3].w_recip = g_RenderVertexBuffer[0].w_recip;
-  fStack_14 = g_RenderVertexBuffer[0].w_recip;
+  g_RenderVertexBuffer[1].fog = g_RenderVertexBuffer[0].fog;
+  g_RenderVertexBuffer[2].fog = g_RenderVertexBuffer[0].fog;
+  g_RenderVertexBuffer[3].fog = g_RenderVertexBuffer[0].fog;
+  iStack_14 = g_RenderVertexBuffer[0].fog;
   core_set_cpp_CDemonSet_computeLighting_FUN_0056e110
             (g_CDemonSetPtr,&CStack_2c,&g_BillboardCameraUp,0,4);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);

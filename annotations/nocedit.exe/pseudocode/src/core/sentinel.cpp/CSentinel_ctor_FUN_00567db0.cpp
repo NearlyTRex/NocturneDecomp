@@ -21,7 +21,7 @@ CSentinel * __cdecl core_sentinel_cpp_CSentinel_ctor_FUN_00567db0(CSentinel *thi
   (pCVar3->base).base.collision_cylinder_height = 0.6;
   fVar2 = 100.0f;
   (pCVar3->base).base.collision_cylinder_radius = 2.0;
-  pCVar3->unk4 = 0;
+  pCVar3->hover_timer = 0.0;
   (pCVar3->base).base.ai_detection_range_min = fVar1;
   (pCVar3->base).base.ai_detection_range_max = fVar2;
   return pCVar3;

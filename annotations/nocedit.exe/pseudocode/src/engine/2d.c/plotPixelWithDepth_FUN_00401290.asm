@@ -9,8 +9,8 @@
 ; uint             Stack[0xc]:4   depth_value
 ;
 ; XREF[3]:
-;   core_course.cpp_FUN_004436d0 at 0044374c
-;   core_course.cpp_FUN_00443760 at 00443ba7
+;   core_course.cpp_renderCourseGizmo_FUN_00443760 at 00443ba7
+;   core_course.cpp_renderCoursePoint_FUN_004436d0 at 0044374c
 ;   engine_2d.c_drawLine3D_FUN_00401320 at 004013aa
 ;
 ; Referenced Globals:

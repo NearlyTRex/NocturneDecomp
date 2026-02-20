@@ -132,18 +132,18 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c2400(CStranger *this_ptr)
               fStack_64 = pCVar3->x - (this_ptr->base).base.base.location.position.x;
               fStack_60 = pCVar3->y - (this_ptr->base).base.base.location.position.y;
               fStack_5c = pCVar3->z - (this_ptr->base).base.base.location.position.z;
-              if ((float *)&this_ptr->unk9 != &fStack_64) {
-                this_ptr->unk9 = (int)fStack_64;
-                this_ptr->unk10 = (int)fStack_60;
-                this_ptr->unk11 = (int)fStack_5c;
+              if (&this_ptr->ladder_offset != (CVector3f *)&fStack_64) {
+                (this_ptr->ladder_offset).x = fStack_64;
+                (this_ptr->ladder_offset).y = fStack_60;
+                (this_ptr->ladder_offset).z = fStack_5c;
               }
               CStack_4c.x = local_d0.x - (this_ptr->base).base.base.location.position.x;
               CStack_4c.y = local_d0.y - (this_ptr->base).base.base.location.position.y;
               CStack_4c.z = local_d0.z - (this_ptr->base).base.base.location.position.z;
               pCVar3 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                                  (&CStack_c4,&CStack_4c);
-              this_ptr->unk12 = (int)pCVar3->y;
-              this_ptr->unk13 = 0x3f800000;
+              this_ptr->ladder_facing_angle = pCVar3->y;
+              this_ptr->ladder_blend_time = 1.0;
               return 1;
             }
           }

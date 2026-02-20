@@ -51,7 +51,7 @@ void __cdecl core_sentinel_cpp_CSentinel_setup_FUN_00567e20(CSentinel *this_ptr)
   INT_03114238 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                            (this_ptr_01,"Bip01 Spine2");
   core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr_00);
-  this_ptr->unk4 = 0;
-  this_ptr->unk3 = 0;
+  this_ptr->hover_timer = 0.0;
+  this_ptr->sfx_handle = 0;
   return;
 }

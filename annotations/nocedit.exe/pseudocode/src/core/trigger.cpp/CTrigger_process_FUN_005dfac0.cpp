@@ -11,9 +11,9 @@ void __cdecl core_trigger_cpp_CTrigger_process_FUN_005dfac0(CTrigger *this_ptr,f
 {
   float fVar1;
   float fVar2;
+  float fVar3;
   CTrigger *actor_ptr;
-  int iVar3;
-  float fVar4;
+  int iVar4;
   CDemonActor *pCVar5;
   CBoundingBox3D *pCVar6;
   CVector3f *pCVar7;
@@ -38,7 +38,7 @@ void __cdecl core_trigger_cpp_CTrigger_process_FUN_005dfac0(CTrigger *this_ptr,f
   int iStack_18;
   
   local_34 = 0;
-  this_ptr->unk3 = 0;
+  this_ptr->triggering_actor = (CDemonActor *)0x0;
   switch(this_ptr->hero_triggers_me) {
   case 0:
     iVar8 = core_hero_cpp_FUN_004f2220();
@@ -48,10 +48,10 @@ void __cdecl core_trigger_cpp_CTrigger_process_FUN_005dfac0(CTrigger *this_ptr,f
       if (0 < g_HeroCount) {
         iVar9 = 0;
         do {
-          iVar3 = core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0
+          iVar4 = core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0
                             (this_ptr,*(CDemonActor **)((int)g_HeroActors + iVar9));
-          if (iVar3 != 0) {
-            fVar4 = *(float *)((int)g_HeroActors + iVar9);
+          if (iVar4 != 0) {
+            pCVar5 = *(CDemonActor **)((int)g_HeroActors + iVar9);
             goto LAB_005dfb52;
           }
           iVar8 = iVar8 + 1;
@@ -61,27 +61,27 @@ void __cdecl core_trigger_cpp_CTrigger_process_FUN_005dfac0(CTrigger *this_ptr,f
     }
     break;
   case 1:
-    if (this_ptr->unk4 == 0.0) {
+    if (this_ptr->cached_actor == (CDemonActor *)0x0) {
       pCVar5 = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030
                          (g_CDemonMissionPtr,this_ptr->actor_name);
-      this_ptr->unk4 = (float)pCVar5;
+      this_ptr->cached_actor = pCVar5;
     }
-    if ((CDemonActor *)this_ptr->unk4 != (CDemonActor *)0x0) {
+    if (this_ptr->cached_actor != (CDemonActor *)0x0) {
       core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-                ((CDemonActor *)this_ptr->unk4,"..\\core\\trigger.cpp",0xee);
-      pCVar5 = (CDemonActor *)this_ptr->unk4;
+                (this_ptr->cached_actor,"..\\core\\trigger.cpp",0xee);
+      pCVar5 = this_ptr->cached_actor;
       if (((pCVar5->was_created == 1) &&
-          (fVar4 = (this_ptr->base).location.position.x - (pCVar5->location).position.x,
-          fVar2 = (this_ptr->base).location.position.y - (pCVar5->location).position.y,
-          fVar1 = (this_ptr->base).location.position.z - (pCVar5->location).position.z,
-          fVar1 * fVar1 + fVar2 * fVar2 + fVar4 * fVar4 <=
+          (fVar1 = (this_ptr->base).location.position.x - (pCVar5->location).position.x,
+          fVar3 = (this_ptr->base).location.position.y - (pCVar5->location).position.y,
+          fVar2 = (this_ptr->base).location.position.z - (pCVar5->location).position.z,
+          fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 <=
           this_ptr->test_radius * this_ptr->test_radius)) &&
          (iVar8 = core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(this_ptr,pCVar5), iVar8 != 0)
          ) {
-        fVar4 = this_ptr->unk4;
+        pCVar5 = this_ptr->cached_actor;
 LAB_005dfb52:
         local_34 = 1;
-        this_ptr->unk3 = (int)fVar4;
+        this_ptr->triggering_actor = pCVar5;
       }
     }
     break;
@@ -116,19 +116,16 @@ LAB_005dfb52:
   case 3:
   case 4:
   case 5:
-    local_34 = *(int *)(this_ptr->unk2 + 4);
-    this_ptr->unk2[4] = '\0';
-    this_ptr->unk2[5] = '\0';
-    this_ptr->unk2[6] = '\0';
-    this_ptr->unk2[7] = '\0';
+    local_34 = this_ptr->event_flag;
+    this_ptr->event_flag = 0;
     break;
   case 6:
     iVar8 = core_hero_cpp_FUN_004f2220();
     if (iVar8 != 0) {
-      fVar4 = (this_ptr->trigger_size).x;
-      fVar1 = (this_ptr->trigger_size).y;
-      fVar2 = (this_ptr->trigger_size).z;
-      local_1c = fVar2 * fVar2 + fVar1 * fVar1 + fVar4 * fVar4;
+      fVar1 = (this_ptr->trigger_size).x;
+      fVar2 = (this_ptr->trigger_size).y;
+      fVar3 = (this_ptr->trigger_size).z;
+      local_1c = fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1;
       local_34 = core_fire_cpp_CFireEffect_checkExplosionDamage_FUN_004c8c90
                            (g_CFireEffectPtr,&(this_ptr->base).location.position,
                             (float)(((int)local_1c >> 1) + INT_02d7a7b8),(CVector3f *)0x0,(int *)0x0
@@ -136,10 +133,10 @@ LAB_005dfb52:
     }
     break;
   case 7:
-    fVar4 = this_ptr->unk5 - delta_time;
-    this_ptr->unk5 = fVar4;
-    if (fVar4 < 0.0) {
-      this_ptr->unk5 = 0.0;
+    fVar1 = this_ptr->damage_cooldown - delta_time;
+    this_ptr->damage_cooldown = fVar1;
+    if (fVar1 < 0.0) {
+      this_ptr->damage_cooldown = 0.0;
     }
     if (0.0 < this_ptr->hit_points) {
       local_34 = 0;
@@ -158,7 +155,7 @@ LAB_005dfb52:
         if ((iVar9 != 0) &&
            (iVar9 = core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(this_ptr,pCVar5),
            iVar9 != 0)) {
-          this_ptr->unk3 = (int)pCVar5;
+          this_ptr->triggering_actor = pCVar5;
           local_34 = 1;
           break;
         }
@@ -175,17 +172,17 @@ LAB_005dfb52:
       local_20 = &(this_ptr->base).location;
       for (iVar8 = 0; iVar8 < g_CDemonSetPtr->actor_count; iVar8 = iVar8 + 1) {
         actor_ptr = *(CTrigger **)((int)g_CDemonSetPtr->actors + local_24);
-        fVar4 = (actor_ptr->base).location.position.x - (local_20->position).x;
-        fVar2 = (actor_ptr->base).location.position.y - (local_20->position).y;
-        fVar1 = (actor_ptr->base).location.position.z - (local_20->position).z;
-        if ((((fVar1 * fVar1 + fVar2 * fVar2 + fVar4 * fVar4 <=
+        fVar1 = (actor_ptr->base).location.position.x - (local_20->position).x;
+        fVar3 = (actor_ptr->base).location.position.y - (local_20->position).y;
+        fVar2 = (actor_ptr->base).location.position.z - (local_20->position).z;
+        if ((((fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 <=
                this_ptr->test_radius * this_ptr->test_radius) && (actor_ptr != this_ptr)) &&
             (iVar9 = core_actor_cpp_isOfClass_FUN_0040c6d0(&actor_ptr->base,local_2c), iVar9 != 0))
            && ((iVar9 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20
                                   (local_30,(char *)actor_ptr,0), iVar9 != 0 &&
                (iVar9 = core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0
                                   (this_ptr,&actor_ptr->base), iVar9 != 0)))) {
-          this_ptr->unk3 = (int)actor_ptr;
+          this_ptr->triggering_actor = &actor_ptr->base;
           local_34 = 1;
           break;
         }
@@ -204,10 +201,10 @@ LAB_005dfb52:
     }
     break;
   case 2:
-    if ((*(int *)this_ptr->unk2 != 0) || (local_34 == 0)) goto LAB_005e0053;
+    if ((this_ptr->prev_triggered != 0) || (local_34 == 0)) goto LAB_005e0053;
     break;
   case 3:
-    if ((*(int *)this_ptr->unk2 == 1) && (local_34 == 0)) {
+    if ((this_ptr->prev_triggered == 1) && (local_34 == 0)) {
       this_ptr->trigger_state = 1;
       goto switchD_005dfb63_default;
     }
@@ -218,10 +215,10 @@ LAB_005e0053:
   }
   this_ptr->trigger_state = 1;
 switchD_005dfb63_default:
-  *(int *)this_ptr->unk2 = local_34;
+  this_ptr->prev_triggered = local_34;
   if (this_ptr->trigger_state == 0) {
     core_event_cpp_CEventList_executeCommands_FUN_004aabe0(g_CEventListPtr,this_ptr->off_event);
-    this_ptr->unk3 = 0;
+    this_ptr->triggering_actor = (CDemonActor *)0x0;
     return;
   }
   core_event_cpp_CEventList_executeCommands_FUN_004aabe0(g_CEventListPtr,this_ptr->on_event);

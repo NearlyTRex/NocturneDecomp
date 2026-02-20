@@ -247,7 +247,7 @@ LAB_00568089:
               if (iVar4 == 0) {
                 core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                           (&pCVar1->motion_controller,10,1);
-                this_ptr->unk4 = 0x40a00000;
+                this_ptr->hover_timer = 5.0;
               }
               else {
                 core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -364,8 +364,8 @@ LAB_0056878f:
       }
       break;
     case 10:
-      fVar11 = (float)this_ptr->unk4 - delta_time;
-      this_ptr->unk4 = (int)fVar11;
+      fVar11 = this_ptr->hover_timer - delta_time;
+      this_ptr->hover_timer = fVar11;
       if (fVar11 < 0.0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&(this_ptr->base).base.model.motion_controller,0xb,1);

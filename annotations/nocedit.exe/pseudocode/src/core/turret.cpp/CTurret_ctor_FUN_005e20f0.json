@@ -1,46 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 14,
-        "line": 60,
-        "message": "type 'CTurret_ptr_1412' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 61,
-        "message": "type 'CTurret_ptr_1412' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 62,
-        "message": "type 'CTurret_ptr_1412' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 63,
-        "message": "type 'CTurret_ptr_1412' does not provide a subscript operator"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 93,
-    "complexity_score": 271,
+    "complexity_score": 278,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 7,
-    "pseudocode_lines": 56,
-    "suspect_count": 21,
+    "pseudocode_lines": 53,
+    "suspect_count": 22,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 149
+    "total_lines": 146
   },
   "cross_references": [
     {
@@ -318,28 +293,28 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 47,
       "match": "ADJ",
-      "text": "if ((CVector3f *)ADJ(this_ptr_00)->unk4 != pCVar3) {",
+      "text": "if (&ADJ(this_ptr_00)->patrol_target != pCVar3) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 48,
       "match": "ADJ",
-      "text": "*(float *)ADJ(this_ptr_00)->unk4 = pCVar3->x;",
+      "text": "(ADJ(this_ptr_00)->patrol_target).x = pCVar3->x;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 49,
       "match": "ADJ",
-      "text": "*(float *)(ADJ(this_ptr_00)->unk4 + 4) = pCVar3->y;",
+      "text": "(ADJ(this_ptr_00)->patrol_target).y = pCVar3->y;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 50,
       "match": "ADJ",
-      "text": "*(float *)(ADJ(this_ptr_00)->unk4 + 8) = pCVar3->z;",
+      "text": "(ADJ(this_ptr_00)->patrol_target).z = pCVar3->z;",
       "type": "decompiler_intrinsic"
     },
     {
@@ -351,14 +326,21 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 57,
+      "line": 53,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->fire_sound_timer = 0.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 54,
       "match": "ADJ",
       "text": "ADJ(this_ptr_00)->can_manual_aim = 0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 58,
+      "line": 55,
       "match": "ADJ",
       "text": "return ADJ(this_ptr_00);",
       "type": "decompiler_intrinsic"

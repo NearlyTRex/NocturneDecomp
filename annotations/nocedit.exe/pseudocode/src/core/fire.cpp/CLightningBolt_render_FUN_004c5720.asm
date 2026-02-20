@@ -70,14 +70,14 @@
 ;   SMRGLTextureBasic[6] g_FireEffectLightningBoltTextures
 ;   undefined4 g_RenderVertexBuffer[0].u
 ;   undefined4 g_RenderVertexBuffer[0].v
-;   undefined4 g_RenderVertexBuffer[0].light
-;   undefined4 g_RenderVertexBuffer[0].color
-;   undefined4 g_RenderVertexBuffer[0].fog
+;   undefined4 g_RenderVertexBuffer[0].z
+;   undefined4 g_RenderVertexBuffer[0].r
+;   undefined4 g_RenderVertexBuffer[0].g
 ;   undefined4 g_RenderVertexBuffer[1].u
 ;   undefined4 g_RenderVertexBuffer[1].v
-;   undefined4 g_RenderVertexBuffer[1].light
-;   undefined4 g_RenderVertexBuffer[1].color
-;   undefined4 g_RenderVertexBuffer[1].fog
+;   undefined4 g_RenderVertexBuffer[1].z
+;   undefined4 g_RenderVertexBuffer[1].r
+;   undefined4 g_RenderVertexBuffer[1].g
 ;   ... and 12 more
 ;
 ; Called Functions:
@@ -163,19 +163,19 @@ section .text
     MOV dword ptr [0x0068802c],EDX      ; 004c57f2 | g_RenderVertexBuffer[0].u
     MOV EBX,0xffff                      ; 004c57f8
         ;   Label: LAB_004c57f8
-    MOV dword ptr [0x00688034],EBX      ; 004c57fd | g_RenderVertexBuffer[0].light
-    MOV dword ptr [0x00688038],EBX      ; 004c5803 | g_RenderVertexBuffer[0].color
-    MOV dword ptr [0x0068803c],EBX      ; 004c5809 | g_RenderVertexBuffer[0].fog
-    MOV dword ptr [0x00688064],EBX      ; 004c580f | g_RenderVertexBuffer[1].light
-    MOV dword ptr [0x00688068],EBX      ; 004c5815 | g_RenderVertexBuffer[1].color
-    MOV dword ptr [0x0068806c],EBX      ; 004c581b | g_RenderVertexBuffer[1].fog
-    MOV dword ptr [0x00688094],EBX      ; 004c5821 | g_RenderVertexBuffer[2].light
-    MOV dword ptr [0x00688098],EBX      ; 004c5827 | g_RenderVertexBuffer[2].color
-    MOV dword ptr [0x0068809c],EBX      ; 004c582d | g_RenderVertexBuffer[2].fog
-    MOV dword ptr [0x006880c4],EBX      ; 004c5833 | g_RenderVertexBuffer[3].light
-    MOV dword ptr [0x006880c8],EBX      ; 004c5839 | g_RenderVertexBuffer[3].color
+    MOV dword ptr [0x00688034],EBX      ; 004c57fd | g_RenderVertexBuffer[0].z
+    MOV dword ptr [0x00688038],EBX      ; 004c5803 | g_RenderVertexBuffer[0].r
+    MOV dword ptr [0x0068803c],EBX      ; 004c5809 | g_RenderVertexBuffer[0].g
+    MOV dword ptr [0x00688064],EBX      ; 004c580f | g_RenderVertexBuffer[1].z
+    MOV dword ptr [0x00688068],EBX      ; 004c5815 | g_RenderVertexBuffer[1].r
+    MOV dword ptr [0x0068806c],EBX      ; 004c581b | g_RenderVertexBuffer[1].g
+    MOV dword ptr [0x00688094],EBX      ; 004c5821 | g_RenderVertexBuffer[2].z
+    MOV dword ptr [0x00688098],EBX      ; 004c5827 | g_RenderVertexBuffer[2].r
+    MOV dword ptr [0x0068809c],EBX      ; 004c582d | g_RenderVertexBuffer[2].g
+    MOV dword ptr [0x006880c4],EBX      ; 004c5833 | g_RenderVertexBuffer[3].z
+    MOV dword ptr [0x006880c8],EBX      ; 004c5839 | g_RenderVertexBuffer[3].r
     PUSH EBX                            ; 004c583f
-    MOV dword ptr [0x006880cc],EBX      ; 004c5840 | g_RenderVertexBuffer[3].fog
+    MOV dword ptr [0x006880cc],EBX      ; 004c5840 | g_RenderVertexBuffer[3].g
     MOV EBX,dword ptr [0x006703ec]      ; 004c5846 | g_CDemonRendererPtr2
     PUSH EBX                            ; 004c584c | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 004c584d

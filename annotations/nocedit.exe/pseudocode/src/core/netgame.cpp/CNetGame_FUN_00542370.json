@@ -206,7 +206,7 @@
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_0000000c",
-      "text": "uint in_stack_0000000c;",
+      "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
     {
@@ -227,7 +227,7 @@
       "description": "Unresolved stack parameter",
       "line": 23,
       "match": "in_stack_00000008",
-      "text": "*(uint *)g_ChatHistory[g_ChatHistoryCount].unk = *in_stack_00000008;",
+      "text": "g_ChatHistory[g_ChatHistoryCount].sender_addr.ip_address = *in_stack_00000008;",
       "type": "stack_param"
     },
     {
@@ -241,7 +241,7 @@
       "description": "Unresolved stack parameter",
       "line": 25,
       "match": "in_stack_0000000c",
-      "text": "*(uint *)(g_ChatHistory[iVar2].unk + 8) = in_stack_0000000c;",
+      "text": "g_ChatHistory[iVar2].message_id = in_stack_0000000c;",
       "type": "stack_param"
     },
     {

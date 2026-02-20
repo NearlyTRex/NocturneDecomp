@@ -1,0 +1,703 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 15,
+        "line": 59,
+        "message": "member reference base type 'byte[32]' (aka 'unsigned char[32]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 48,
+        "line": 60,
+        "message": "member reference base type 'byte[32]' (aka 'unsigned char[32]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 15,
+        "line": 63,
+        "message": "member reference base type 'byte[32]' (aka 'unsigned char[32]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 64,
+        "message": "member reference base type 'byte[32]' (aka 'unsigned char[32]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 15,
+        "line": 80,
+        "message": "member reference base type 'byte[32]' (aka 'unsigned char[32]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 15,
+        "line": 81,
+        "message": "member reference base type 'byte[32]' (aka 'unsigned char[32]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 15,
+        "line": 82,
+        "message": "member reference base type 'byte[32]' (aka 'unsigned char[32]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 13,
+        "line": 96,
+        "message": "member reference base type 'byte[32]' (aka 'unsigned char[32]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 13,
+        "line": 97,
+        "message": "member reference base type 'byte[32]' (aka 'unsigned char[32]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 13,
+        "line": 98,
+        "message": "member reference base type 'byte[32]' (aka 'unsigned char[32]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 15,
+        "line": 100,
+        "message": "member reference base type 'byte[32]' (aka 'unsigned char[32]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 100,
+        "message": "member reference base type 'byte[32]' (aka 'unsigned char[32]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 15,
+        "line": 101,
+        "message": "member reference base type 'byte[32]' (aka 'unsigned char[32]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 101,
+        "message": "member reference base type 'byte[32]' (aka 'unsigned char[32]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 15,
+        "line": 102,
+        "message": "member reference base type 'byte[32]' (aka 'unsigned char[32]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 102,
+        "message": "member reference base type 'byte[32]' (aka 'unsigned char[32]') is not a structure or union"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 14,
+        "line": 112,
+        "message": "use of undeclared identifier 'stack0xffffff90'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 14,
+        "line": 113,
+        "message": "use of undeclared identifier 'stack0xffffff94'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 12,
+        "line": 115,
+        "message": "use of undeclared identifier 'stack0xffffff94'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 277,
+    "complexity_score": 501,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 1,
+    "pseudocode_lines": 131,
+    "suspect_count": 35,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "pointer_cast",
+      "stack_ref",
+      "unknown_field"
+    ],
+    "total_lines": 408
+  },
+  "cross_references": [
+    {
+      "addr": "00442710",
+      "from_addr": "00442739",
+      "name": "core_course.cpp_CCourse_evaluate_FUN_00442710",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054e530",
+      "from_addr": "0054e616",
+      "name": "core_platfrm.cpp_CPlatform_propertyActionTypeCallback_FUN_0054e530",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004427a0",
+    "address_range": [
+      [
+        "004427a0",
+        "00442a83"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_course.cpp_CCourse_interpolate_FUN_004427a0",
+    "signature": "void __cdecl core_course_cpp_CCourse_interpolate_FUN_004427a0(CCourse *this_ptr,float time,CVector3f *out_pos,CQuaternion4f *out_orient)"
+  },
+  "function_calls": [
+    {
+      "addr": "005f77e0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_slerpQuaternion_FUN_005f77e0"
+    },
+    {
+      "addr": "005feb90",
+      "is_variadic": false,
+      "name": "crt_math.c_floor_FUN_005feb90"
+    },
+    {
+      "addr": "005fe6b0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00618fab",
+      "name": "DOUBLE_00618fab",
+      "type": "double",
+      "value": "0.00100000000000000"
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.617283950617284,
+    "instruction_count": 243,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 38,
+      "BOOL_OR": 9,
+      "BRANCH": 5,
+      "CALL": 5,
+      "CBRANCH": 10,
+      "COPY": 703,
+      "FLOAT2FLOAT": 56,
+      "FLOAT_ADD": 5,
+      "FLOAT_DIV": 2,
+      "FLOAT_EQUAL": 5,
+      "FLOAT_LESS": 5,
+      "FLOAT_MULT": 8,
+      "FLOAT_NAN": 10,
+      "FLOAT_NEG": 1,
+      "FLOAT_SUB": 4,
+      "INT2FLOAT": 8,
+      "INT_ADD": 161,
+      "INT_AND": 174,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 77,
+      "INT_LEFT": 34,
+      "INT_LESS": 12,
+      "INT_MULT": 31,
+      "INT_NOTEQUAL": 40,
+      "INT_OR": 60,
+      "INT_SBORROW": 13,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 49,
+      "INT_SUB": 56,
+      "INT_XOR": 9,
+      "INT_ZEXT": 44,
+      "LOAD": 91,
+      "POPCOUNT": 35,
+      "RETURN": 2,
+      "ROUND": 2,
+      "STORE": 65,
+      "TRUNC": 2
+    },
+    "pcode_op_count": 1851
+  },
+  "stack_frame": {
+    "frame_size": 172,
+    "local_size": 156,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_98",
+        "offset": -152,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_90",
+        "offset": -144,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_80",
+        "offset": -128,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCourse *"
+      },
+      {
+        "is_param": true,
+        "name": "time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "out_pos",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "out_orient",
+        "offset": 16,
+        "size": 4,
+        "type": "CQuaternion4f *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004427ac",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 35,
+      "match": "ROUND",
+      "text": "local_18 = (int)ROUND(ROUND(time));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 35,
+      "match": "ROUND",
+      "text": "local_18 = (int)ROUND(ROUND(time));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 52,
+      "match": "._24_8_",
+      "text": "local_3c._24_8_ = floor((double)(time / fVar1));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 53,
+      "match": "._24_8_",
+      "text": "local_7c = time - (float)(double)local_3c._24_8_ * fVar1;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 56,
+      "match": "._24_8_",
+      "text": "local_3c._24_8_ = floor((double)(-time / fVar1));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 57,
+      "match": "._24_8_",
+      "text": "local_7c = (float)(double)local_3c._24_8_ * fVar1 + time;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 62,
+      "match": "ROUND",
+      "text": "local_18 = (int)ROUND(ROUND(local_7c));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 62,
+      "match": "ROUND",
+      "text": "local_18 = (int)ROUND(ROUND(local_7c));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 73,
+      "match": "._0_4_",
+      "text": "local_3c._0_4_ = (pCVar2->pos).x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 74,
+      "match": "._4_4_",
+      "text": "local_3c._4_4_ = (pCVar2->pos).y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 75,
+      "match": "._8_4_",
+      "text": "local_3c._8_4_ = (pCVar2->pos).z;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 89,
+      "match": "._12_4_",
+      "text": "local_3c._12_4_ = local_54 + local_48;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 90,
+      "match": "._16_4_",
+      "text": "local_3c._16_4_ = local_50 + local_44;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 91,
+      "match": "._20_4_",
+      "text": "local_3c._20_4_ = local_4c + local_40;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 93,
+      "match": "._0_4_",
+      "text": "local_3c._0_4_ = local_3c._12_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 93,
+      "match": "._12_4_",
+      "text": "local_3c._0_4_ = local_3c._12_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 94,
+      "match": "._4_4_",
+      "text": "local_3c._4_4_ = local_3c._16_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 94,
+      "match": "._16_4_",
+      "text": "local_3c._4_4_ = local_3c._16_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 95,
+      "match": "._8_4_",
+      "text": "local_3c._8_4_ = local_3c._20_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 95,
+      "match": "._20_4_",
+      "text": "local_3c._8_4_ = local_3c._20_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 102,
+      "match": "(uint *)((int)",
+      "text": "puVar6 = (uint *)((int)pCVar3 + ((uint)bVar7 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 105,
+      "match": "&stack0xffffff90",
+      "text": "*(uint *)(&stack0xffffff90 + (uint)bVar7 * -8) = *puVar6;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 106,
+      "match": "&stack0xffffff94",
+      "text": "*(uint *)(&stack0xffffff94 + (uint)bVar7 * -8 + (uint)bVar7 * -8) = *puVar4;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 108,
+      "match": "&stack0xffffff94",
+      "text": "((int)(&stack0xffffff94 + (uint)bVar7 * -8 + (uint)bVar7 * -8) + ((uint)bVar7 * -2 + 1) * 4) =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 111,
+      "match": "._0_4_",
+      "text": "out_pos->x = (float)local_3c._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 112,
+      "match": "._4_4_",
+      "text": "out_pos->y = (float)local_3c._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 113,
+      "match": "._8_4_",
+      "text": "out_pos->z = (float)local_3c._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 114,
+      "match": "(uint *)((int)",
+      "text": "puVar6 = (uint *)((int)out_orient + (uint)bVar7 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 117,
+      "match": "&stack0xffffff90",
+      "text": "*puVar6 = *(uint *)(&stack0xffffff90 + (uint)bVar7 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 118,
+      "match": "&stack0xffffff94",
+      "text": "*puVar4 = *(uint *)(&stack0xffffff94 + (uint)bVar7 * -8 + (uint)bVar7 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 121,
+      "match": "&stack0xffffff94",
+      "text": "((int)(&stack0xffffff94 + (uint)bVar7 * -8 + (uint)bVar7 * -8) +",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 125,
+      "match": "(uint *)((int)",
+      "text": "puVar6 = (uint *)((int)out_orient + (uint)bVar7 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 128,
+      "match": "&stack0xffffff90",
+      "text": "*puVar6 = *(uint *)(&stack0xffffff90 + (uint)bVar7 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 129,
+      "match": "&stack0xffffff94",
+      "text": "*puVar4 = *(uint *)(&stack0xffffff94 + (uint)bVar7 * -8 + (uint)bVar7 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 132,
+      "match": "&stack0xffffff94",
+      "text": "((int)(&stack0xffffff94 + (uint)bVar7 * -8 + (uint)bVar7 * -8) + ((uint)bVar7 * -2 + 1) * 4)",
+      "type": "stack_ref"
+    }
+  ]
+}

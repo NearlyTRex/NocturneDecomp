@@ -18,7 +18,7 @@
 ;   uint g_VertexProcessingEnabled = 0x1
 ;   SRenderVertex[16] g_RenderVertexBuffer
 ;   undefined4 DAT_00688024+3
-;   undefined4 g_RenderVertexBuffer[0].w_recip
+;   undefined4 g_RenderVertexBuffer[0].fog
 ;   uint g_ProcessedVertexOffset
 ;   uint g_ProcessedVertexBackupOffset
 ;   void* g_CurrentVertexData
@@ -72,7 +72,7 @@ section .text
     CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 004038a5
         ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     MOV EAX,[0x02d051f4]                ; 004038aa | g_PerspectiveReciprocal
-    MOV dword ptr [ESI + 0x2c],EAX      ; 004038af | g_RenderVertexBuffer[0].w_recip
+    MOV dword ptr [ESI + 0x2c],EAX      ; 004038af | g_RenderVertexBuffer[0].fog
     MOV AH,byte ptr [ESI + 0x13]        ; 004038b2 | DAT_00688024+3
     ADD ESP,0x8                         ; 004038b5
     TEST AH,0x80                        ; 004038b8

@@ -8,8 +8,8 @@
 ; int              Stack[0x8]:4   vertex_count
 ;
 ; XREF[11]:
-;   core_course.cpp_FUN_004436d0 at 00443732
-;   core_course.cpp_FUN_00443760 at 00443b8d
+;   core_course.cpp_renderCourseGizmo_FUN_00443760 at 00443b8d
+;   core_course.cpp_renderCoursePoint_FUN_004436d0 at 00443732
 ;   core_flies.cpp_CFlies_renderOpaque_FUN_004cc300 at 004cc6b0
 ;   engine_3d.c_rasterizePolygon_FUN_005fd4e0 at 005fd7c7
 ;   engine_3d.c_rasterizeTriangle_FUN_005fcfc0 at 005fd2e7

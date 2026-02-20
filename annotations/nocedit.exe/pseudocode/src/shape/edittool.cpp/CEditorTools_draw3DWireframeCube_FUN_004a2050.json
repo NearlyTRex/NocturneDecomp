@@ -1,97 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 23,
-        "line": 63,
-        "message": "C-style cast from 'WatcomTypeInfo *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 31,
-        "line": 98,
-        "message": "C-style cast from 'CVector3i *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 59,
-        "line": 101,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3i *'"
-      },
-      {
-        "category": "other",
-        "column": 31,
-        "line": 114,
-        "message": "C-style cast from 'CVector3i *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 59,
-        "line": 117,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3i *'"
-      },
-      {
-        "category": "other",
-        "column": 31,
-        "line": 144,
-        "message": "C-style cast from 'CVector3i *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 59,
-        "line": 147,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3i *'"
-      },
-      {
-        "category": "other",
-        "column": 31,
-        "line": 160,
-        "message": "C-style cast from 'CVector3i *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 59,
-        "line": 163,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3i *'"
-      },
-      {
-        "category": "other",
-        "column": 31,
-        "line": 190,
-        "message": "C-style cast from 'CVector3i *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 59,
-        "line": 193,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3i *'"
-      },
-      {
-        "category": "other",
-        "column": 31,
-        "line": 206,
-        "message": "C-style cast from 'CVector3i *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 59,
-        "line": 209,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3i *'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 322,
-    "complexity_score": 571,
+    "complexity_score": 586,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 9,
     "pseudocode_lines": 231,
-    "suspect_count": 33,
+    "suspect_count": 34,
     "suspect_types": [
+      "byvalue_struct_passing",
       "decompiler_intrinsic",
       "pointer_cast"
     ],
@@ -924,6 +846,13 @@
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Calls clipAndDrawLine2D - decompiler cannot recognize by-value pattern",
+      "line": 1,
+      "match": "clipAndDrawLine2D",
+      "text": "Function calls by-value struct passing functions",
+      "type": "byvalue_struct_passing"
     }
   ]
 }

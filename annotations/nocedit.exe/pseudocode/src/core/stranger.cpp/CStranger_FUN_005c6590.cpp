@@ -34,9 +34,8 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c6590(CStranger *this_ptr)
         (this_ptr->base).base.layer_action_index = 0;
         fVar1 = 10.0f;
         (this_ptr->base).base.layer_action_t = 0.0;
-        iVar2 = this_ptr->action_pending;
-        *(float *)(this_ptr->unk1 + 0xc) = fVar1;
-        if (iVar2 == 3) {
+        this_ptr->aim_speed_factor = fVar1;
+        if (this_ptr->action_pending == 3) {
           this_ptr->action_pending = 0;
           return;
         }

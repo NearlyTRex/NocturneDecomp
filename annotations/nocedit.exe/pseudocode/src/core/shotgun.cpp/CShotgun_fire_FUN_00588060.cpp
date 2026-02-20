@@ -67,7 +67,7 @@ int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_00588060(CShotgun *this_ptr)
               (g_CSoundPtr,(CDemonActor *)this_ptr,"shotgun-noammo.wav",&CStack_b8);
     return 0;
   }
-  fVar4 = (float10)fptan((float10)*(float *)this_ptr->unk * (float10)3.1415926535000001 *
+  fVar4 = (float10)fptan((float10)this_ptr->spread_angle * (float10)3.1415926535000001 *
                          (float10)0.0055555555555555497);
   pCStack_40 = (CDemonActor *)(float)(fVar4 * (float10)(this_ptr->base).bolt_velocity);
   fStack_34 = (float)core_actor_cpp_getRandomInt_FUN_0040cc70(10,0xf);
@@ -162,10 +162,11 @@ int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_00588060(CShotgun *this_ptr)
               }
             }
             else {
-              core_trigger_cpp_CTrigger_FUN_005e0aa0(this_ptr_01);
-              iVar2 = core_trigger_cpp_CTrigger_FUN_005e0ac0(this_ptr_01);
+              core_trigger_cpp_CTrigger_onProjectileHit_FUN_005e0aa0(this_ptr_01);
+              iVar2 = core_trigger_cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0
+                                (this_ptr_01,(char *)this_ptr);
               if (iVar2 != 0) {
-                core_trigger_cpp_CTrigger_FUN_005e0b00(this_ptr_01);
+                core_trigger_cpp_CTrigger_applyDamage_FUN_005e0b00(this_ptr_01,fStack_34);
               }
               in_stack_fffffec0 = (CDemonActor *)0x588538;
               in_stack_fffffec4 = g_CDemonSetPtr;

@@ -7,7 +7,7 @@
 ; SMRGLHeaderPrimitive * Stack[0x4]:4   polygon_info
 ;
 ; XREF[3]:
-;   core_course.cpp_FUN_00443760 at 00443aba
+;   core_course.cpp_renderCourseGizmo_FUN_00443760 at 00443aba
 ;   shape_design.c_renderEditorBackgroundOverlay_FUN_0045d920 at 0045d96a
 ;   shape_design.c_renderSinglePolygon_FUN_0045ce20 at 0045d163
 ;

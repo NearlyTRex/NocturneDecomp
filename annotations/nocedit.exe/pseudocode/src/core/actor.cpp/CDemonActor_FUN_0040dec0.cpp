@@ -45,10 +45,10 @@ void __cdecl core_actor_cpp_CDemonActor_FUN_0040dec0(CDemonActor *this_ptr)
                ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x +
                iVar1),&CStack_28);
     this_ptr_00 = g_CDemonRendererPtr2;
-    *(int *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->light + iVar1) = iStack_18;
-    *(int *)((int)&this_ptr_00->vertex_buffer_ptr->color + iVar1) = iStack_14;
-    *(int *)((int)&this_ptr_00->vertex_buffer_ptr->fog + iVar1) = in_stack_00000010 << 8;
-    *(int *)((int)&this_ptr_00->vertex_buffer_ptr->w_recip + iVar1) = iStack_1c;
+    *(int *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->z + iVar1) = iStack_18;
+    *(int *)((int)&this_ptr_00->vertex_buffer_ptr->r + iVar1) = iStack_14;
+    *(int *)((int)&this_ptr_00->vertex_buffer_ptr->g + iVar1) = in_stack_00000010 << 8;
+    *(int *)((int)&this_ptr_00->vertex_buffer_ptr->fog + iVar1) = iStack_1c;
     *(uint *)((int)&this_ptr_00->vertex_buffer_ptr->u + iVar1) = 0x800000;
     corner_index = corner_index + 1;
     *(uint *)((int)&this_ptr_00->vertex_buffer_ptr->v + iVar1) = 0x800000;

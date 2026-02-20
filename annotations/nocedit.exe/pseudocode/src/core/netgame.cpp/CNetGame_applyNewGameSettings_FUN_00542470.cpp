@@ -44,21 +44,21 @@ int __cdecl core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_00542470(CNetGame
   uint local_8c;
   int local_88;
   uint local_84;
-  uint local_80;
+  int local_80;
   uint local_7c;
-  uint local_78;
-  uint local_74;
-  uint local_70;
-  uint local_6c;
-  uint local_68;
-  uint local_64;
+  int local_78;
+  int local_74;
+  int local_70;
+  int local_6c;
+  int local_68;
+  int local_64;
   int local_60;
-  uint local_5c;
-  uint local_58;
-  uint local_54;
-  uint local_50;
-  uint local_4c;
-  uint local_48;
+  int local_5c;
+  int local_58;
+  int local_54;
+  float local_50;
+  float local_4c;
+  float local_48;
   int local_44 [6];
   char *local_2c;
   CNetGame *local_28;
@@ -82,7 +82,7 @@ int __cdecl core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_00542470(CNetGame
   }
   *(byte *)puVar8 = *(byte *)in_stack_00000008;
   iVar5 = -1;
-  *(uint *)(this_ptr->unk + 0x54) = local_167;
+  this_ptr->random_seed = local_167;
   local_44[5] = -1;
   iVar11 = 0;
   if (0 < local_113) {
@@ -93,8 +93,9 @@ int __cdecl core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_00542470(CNetGame
          (*piVar3 == *(int *)(this_ptr->players[this_ptr->local_player_index].name + 0x1c))) {
         iVar5 = iVar11;
       }
-      if (((short)piVar3[1] == *(short *)(this_ptr->players[*(int *)this_ptr->padding].name + 0x20))
-         && (*piVar3 == *(int *)(this_ptr->players[*(int *)this_ptr->padding].name + 0x1c))) {
+      if (((short)piVar3[1] ==
+           *(short *)(this_ptr->players[this_ptr->server_player_index].name + 0x20)) &&
+         (*piVar3 == *(int *)(this_ptr->players[this_ptr->server_player_index].name + 0x1c))) {
         local_44[5] = iVar11;
       }
       iVar11 = iVar11 + 1;
@@ -105,7 +106,7 @@ int __cdecl core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_00542470(CNetGame
     return 0;
   }
   pcVar7 = local_163;
-  pcVar12 = this_ptr->unk;
+  pcVar12 = this_ptr->mission_name;
   do {
     cVar1 = *pcVar7;
     *pcVar12 = cVar1;
@@ -150,7 +151,7 @@ int __cdecl core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_00542470(CNetGame
           if (iVar11 != 0) {
             DAT_00680a04 = 1;
           }
-          if (*(int *)(local_28->players[0].unk1 + 0xc) == aiStack_f3[iVar5 * 10 + 2]) {
+          if (local_28->players[0].ready_flag == aiStack_f3[iVar5 * 10 + 2]) {
             if (DAT_00680a04 == 0) goto LAB_005429ed;
           }
           else {
@@ -168,13 +169,13 @@ int __cdecl core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_00542470(CNetGame
             pSVar10->name[1] = cVar1;
             pSVar10 = (SNetPlayer *)(pSVar10->name + 2);
           } while (cVar1 != '\0');
-          *(int *)(this_ptr->players[local_44[3]].unk1 + 0xc) = aiStack_f3[iVar5 * 10 + 2];
+          this_ptr->players[local_44[3]].ready_flag = aiStack_f3[iVar5 * 10 + 2];
           *(int *)(this_ptr->players[local_44[3]].name + 0x14) = aiStack_f3[iVar5 * 10];
           *(int *)(this_ptr->players[local_44[3]].name + 0x18) = aiStack_f3[iVar5 * 10 + 1];
         }
 LAB_005429ed:
         local_24 = local_24 + 1;
-        local_28 = (CNetGame *)(local_28->players[0].unk1 + 0x20);
+        local_28 = (CNetGame *)(local_28->players[0].controls.action_states + 3);
         local_44[3] = local_44[3] + 1;
         local_10f[iVar5 * 0x28] = '\0';
         local_2c = local_2c + 0x78;
@@ -189,14 +190,13 @@ LAB_005429ed:
       if (local_10f[iVar11] == '\0') break;
       iStack_180 = (int)local_fb + iVar11;
       iVar4 = core_netgame_cpp_CNetGame_addPlayer_FUN_005412b0(this_ptr);
-      *(uint *)(this_ptr->players[iVar4].unk1 + 0xc) =
-           *(uint *)((int)aiStack_f3 + iVar11 + 8);
+      this_ptr->players[iVar4].ready_flag = *(int *)((int)aiStack_f3 + iVar11 + 8);
       local_44[iVar4] = iVar5;
       iVar5 = iVar5 + 1;
       iVar11 = iVar11 + 0x28;
     } while (iVar5 < local_113);
   }
-  *(int *)this_ptr->padding = local_44[*(int *)this_ptr->padding];
+  this_ptr->server_player_index = local_44[this_ptr->server_player_index];
   this_ptr->local_player_index = local_44[this_ptr->local_player_index];
   local_1c = this_ptr->player_count + -1;
   if (-1 < local_1c) {
@@ -235,22 +235,22 @@ LAB_005429ed:
             local_90 = pSVar14->last_ping_sent;
             local_8c = pSVar14->last_ping_response;
             local_88 = pSVar14->player_id;
-            local_84 = *(uint *)pSVar14->unk1;
-            local_80 = *(uint *)(pSVar14->unk1 + 4);
-            local_7c = *(uint *)(pSVar14->unk1 + 8);
-            local_78 = *(uint *)(pSVar14->unk1 + 0xc);
-            local_74 = *(uint *)(pSVar14->unk1 + 0x10);
-            local_70 = *(uint *)(pSVar10->unk1 + 0x14);
-            local_6c = *(uint *)(pSVar10->unk1 + 0x18);
-            local_68 = *(uint *)(pSVar10->unk1 + 0x1c);
-            local_64 = *(uint *)(pSVar10->unk1 + 0x20);
-            local_60 = pSVar10->sync_stage;
-            local_5c = *(uint *)pSVar10->unk2;
-            local_58 = *(uint *)(pSVar10->unk2 + 4);
-            local_54 = *(uint *)(pSVar10->unk2 + 8);
-            local_50 = *(uint *)(pSVar10->unk2 + 0xc);
-            local_4c = *(uint *)(pSVar10->unk2 + 0x10);
-            local_48 = *(uint *)(pSVar10->unk2 + 0x14);
+            local_84 = pSVar14->last_update_time;
+            local_80 = pSVar14->local_sync_stage;
+            local_7c = pSVar14->state_change_time;
+            local_78 = pSVar14->ready_flag;
+            local_74 = pSVar14->sim_frame_index;
+            local_70 = (pSVar10->controls).action_states[0];
+            local_6c = (pSVar10->controls).action_states[1];
+            local_68 = (pSVar10->controls).action_states[2];
+            local_64 = (pSVar10->controls).action_states[3];
+            local_60 = (pSVar10->controls).action_states[4];
+            local_5c = (pSVar10->controls).action_states[5];
+            local_58 = (pSVar10->controls).action_states[6];
+            local_54 = (pSVar10->controls).action_states[7];
+            local_50 = (pSVar10->controls).strafe_speed;
+            local_4c = (pSVar10->controls).turn_speed;
+            local_48 = (pSVar10->controls).look_up_down_speed;
             pSVar10 = pSVar6;
             for (iVar5 = 0x1e; iVar5 != 0; iVar5 = iVar5 + -1) {
               *(uint *)pSVar14->name = *(uint *)pSVar10->name;

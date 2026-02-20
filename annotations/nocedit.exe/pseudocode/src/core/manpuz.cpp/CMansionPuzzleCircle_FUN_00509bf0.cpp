@@ -9,15 +9,16 @@
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_00509bf0(CMansionPuzzleCircle *this_ptr)
 
 {
-  char *pcVar1;
+  SPanel *pSVar1;
   int in_stack_00000008;
   
-  pcVar1 = this_ptr->unk2 + in_stack_00000008 * 100 + -4;
-  if (*(int *)pcVar1 == 0) {
+  pSVar1 = this_ptr->panels + in_stack_00000008;
+  if (pSVar1->exists == 0) {
     return;
   }
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr2,(CVector3i *)(pcVar1 + 0x18),(CVector3i *)(pcVar1 + 0xc));
+            (g_CDemonRendererPtr2,(CVector3i *)&pSVar1->rotation,
+             (CVector3i *)&pSVar1->local_position);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
             (&this_ptr->panel_model,0.0,-1);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();

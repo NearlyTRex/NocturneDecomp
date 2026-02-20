@@ -43,10 +43,10 @@ void __cdecl core_charactr_cpp_CCharacter_renderEthereal_FUN_0042af60(CCharacter
   iVar2 = 0;
   do {
     pCVar1 = g_CDemonRendererPtr2;
-    *(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->light + iVar2) = 0xb332;
-    *(uint *)((int)&pCVar1->vertex_buffer_ptr->color + iVar2) = 0xb332;
+    *(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->z + iVar2) = 0xb332;
+    *(uint *)((int)&pCVar1->vertex_buffer_ptr->r + iVar2) = 0xb332;
     iVar3 = iVar2 + 0x30;
-    *(uint *)((int)&pCVar1->vertex_buffer_ptr->fog + iVar2) = 0xffff;
+    *(uint *)((int)&pCVar1->vertex_buffer_ptr->g + iVar2) = 0xffff;
     iVar2 = iVar3;
   } while (iVar3 != 96000);
   core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340(&this_ptr->model);

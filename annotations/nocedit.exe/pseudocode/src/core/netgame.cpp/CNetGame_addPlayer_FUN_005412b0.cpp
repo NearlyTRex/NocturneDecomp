@@ -44,18 +44,9 @@ int __cdecl core_netgame_cpp_CNetGame_addPlayer_FUN_005412b0(CNetGame *this_ptr)
   *(uint *)(dest->name + 0x1c) = *in_stack_00000008;
   *(uint *)((int)dest + (uint)bVar6 * -8 + 0x20) = in_stack_00000008[(uint)bVar6 * -2 + 1];
   dest->ping_quality = -1.0;
-  dest->unk1[0xc] = '\0';
-  dest->unk1[0xd] = '\0';
-  dest->unk1[0xe] = '\0';
-  dest->unk1[0xf] = '\0';
-  dest->unk1[8] = '\0';
-  dest->unk1[9] = '\0';
-  dest->unk1[10] = '\0';
-  dest->unk1[0xb] = '\0';
-  dest->unk1[4] = '\0';
-  dest->unk1[5] = '\0';
-  dest->unk1[6] = '\0';
-  dest->unk1[7] = '\0';
+  dest->ready_flag = 0;
+  dest->state_change_time = 0;
+  dest->local_sync_stage = 0;
   *(uint *)(dest->name + 0x14) = in_stack_00000010;
   *(uint *)(dest->name + 0x18) = in_stack_00000014;
   uVar4 = g_CurrentGameTime;
@@ -64,7 +55,7 @@ int __cdecl core_netgame_cpp_CNetGame_addPlayer_FUN_005412b0(CNetGame *this_ptr)
   dest->last_ping_sent = uVar4;
   dest->last_ping_response = uVar4;
   iVar3 = DAT_02f7c8c4;
-  *(uint *)dest->unk1 = uVar4;
+  dest->last_update_time = uVar4;
   dest->player_id = iVar3 + -1;
   return iVar2;
 }

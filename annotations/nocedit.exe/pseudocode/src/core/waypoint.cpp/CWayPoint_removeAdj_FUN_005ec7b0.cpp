@@ -19,6 +19,6 @@ void __cdecl core_waypoint_cpp_CWayPoint_removeAdj_FUN_005ec7b0(CWayPoint *this_
   iVar1 = this_ptr->num_adjacent_waypoints + -1;
   this_ptr->num_adjacent_waypoints = iVar1;
   memmove
-            (this_ptr->unk + index * 8,this_ptr->unk + index * 8 + 8,(iVar1 - index) * 8);
+            (this_ptr->adjacency + index,this_ptr->adjacency + index + 1,(iVar1 - index) * 8);
   return;
 }

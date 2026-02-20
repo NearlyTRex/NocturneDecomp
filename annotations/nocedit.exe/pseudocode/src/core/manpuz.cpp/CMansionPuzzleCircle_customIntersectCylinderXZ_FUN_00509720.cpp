@@ -10,7 +10,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customIntersectCylinderXZ_FUN_
 
 {
   CKeyFramedModel *pCVar1;
-  int *piVar2;
+  SPanel *pSVar2;
   float local_24;
   float local_20;
   float local_1c;
@@ -24,19 +24,20 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customIntersectCylinderXZ_FUN_
   local_1c = (pCVar1->bounds_min).z;
   local_18 = (pCVar1->bounds_max).x;
   local_14 = (pCVar1->bounds_max).y;
-  piVar2 = &this_ptr->exists;
+  pSVar2 = this_ptr->panels;
   local_10 = (pCVar1->bounds_max).z;
   do {
-    while (*piVar2 != 0) {
+    while (pSVar2->exists != 0) {
       core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140
                 (g_CDemonSetPtr,(CBoundingBox3D *)cylinder,(CMatrix3x3f *)&local_24,
-                 (SIntersectXZCylinder *)(piVar2 + 3),(SIntersectXZCylinder *)(piVar2 + 9));
-      piVar2 = piVar2 + 0x19;
-      if (piVar2 == (int *)(this_ptr->unk3 + 0x458)) {
+                 (SIntersectXZCylinder *)&pSVar2->local_position,
+                 (SIntersectXZCylinder *)&pSVar2->rotation_matrix);
+      pSVar2 = pSVar2 + 1;
+      if ((SGem *)pSVar2 == this_ptr->gems) {
         return;
       }
     }
-    piVar2 = piVar2 + 0x19;
-  } while (piVar2 != (int *)(this_ptr->unk3 + 0x458));
+    pSVar2 = pSVar2 + 1;
+  } while ((SGem *)pSVar2 != this_ptr->gems);
   return;
 }

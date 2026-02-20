@@ -78,10 +78,7 @@ void __cdecl core_turret_cpp_CTurret_FUN_005e2d50(CTurret *this_ptr)
           if ((this_ptr->base).fire_cooldown_timer <= 0.0) {
             (*(((this_ptr->base).base.vtable._uc)->_uc).isGrabbable)((CCharacter *)this_ptr);
           }
-          this_ptr->unk5[0xc] = '\0';
-          this_ptr->unk5[0xd] = '\0';
-          this_ptr->unk5[0xe] = -0x80;
-          this_ptr->unk5[0xf] = '?';
+          this_ptr->fire_sound_timer = 1.0;
           return;
         }
         core_turret_cpp_CTurret_FUN_005e3560(this_ptr);

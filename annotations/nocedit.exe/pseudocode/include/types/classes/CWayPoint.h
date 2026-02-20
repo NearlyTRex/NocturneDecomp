@@ -3,12 +3,14 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CTrigger.h"
+#include "types/structs/SWayPointAdjacency.h"
 
 // Structure: CWayPoint
 // Ghidra size: 0x558 (1368 bytes)
 typedef struct CWayPoint {
     CTrigger base; // 0x0
     int num_adjacent_waypoints; // 0x370
-    char unk[484]; // 0x374
+    SWayPointAdjacency adjacency[60]; // 0x374
+    float pathfind_cost; // 0x554
 } CWayPoint;
 

@@ -11,7 +11,7 @@ COptimize * __cdecl shape_superopt_cpp_COptimize_ctor_FUN_005d6f90(COptimize *th
 {
   COptimize *this_ptr_00;
   
-  this_ptr_00 = (COptimize *)shape_superopt_cpp_CObj_ctor_FUN_005d2230(&this_ptr->obj);
+  this_ptr_00 = (COptimize *)shape_superopt_cpp_CObj_ctor_FUN_005d2230(&this_ptr->obj,0,0);
   this_ptr_00->vtable = &g_COptimizeVTable;
   this_ptr_00->unk6 = (void *)0x0;
   this_ptr_00->unk5 = 0;

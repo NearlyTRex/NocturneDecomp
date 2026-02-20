@@ -13,7 +13,7 @@
     "pseudocode_lines": 87,
     "suspect_count": 52,
     "suspect_types": [
-      "pointer_cast"
+      "decompiler_intrinsic"
     ],
     "total_lines": 213
   },
@@ -182,368 +182,368 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 13,
-      "match": "(void *)((int)",
-      "text": "((void *)((int)pvVar2 + 0x19a2c),200,&g_C3DSLightTypeInfo);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 15,
-      "match": "(void *)((int)",
-      "text": "((void *)((int)pvVar2 + 0x141490),0x14,&g_SRoomTypeInfo);",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "pvVar3 = __arrinit(ADJ(pvVar2)->lights,200,&g_C3DSLightTypeInfo);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 16,
-      "match": "(void *)((int)",
-      "text": "pvVar2 = __arrinit((void *)((int)pvVar2 + 0x554),0xfa,&g_SVDBoxTypeInfo)",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "pvVar4 = __arrinit(ADJ(pvVar3)->rooms,0x14,&g_SRoomTypeInfo);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 17,
+      "match": "ADJ",
+      "text": "pvVar5 = __arrinit(ADJ(pvVar4)->vdir_boxes,0xfa,&g_SVDBoxTypeInfo);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 18,
-      "match": "(CDemonSet *)((int)",
-      "text": "this_ptr_00 = (CDemonSet *)((int)pvVar2 + -0x15b414);",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "this_ptr_00 = ADJ(pvVar5);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 20,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x1419e8) = 0;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->light_count = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 21,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x57c) = 0xffffffff;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->unk1 = -1;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 22,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x578) = 0xffffffff;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->unk2 = -1;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 23,
-      "match": "(byte *)((int)",
-      "text": "*(byte *)((int)pvVar2 + -0xe324) = 0;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->geometry_filename[0] = '\\0';",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 24,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0xe2c0) = 0;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->actor_count = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 25,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0xc37c) = 0;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->character_count = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 26,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0xa438) = 0;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->enemy_count = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 27,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x84f4) = 0;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->threat_count = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 28,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x65b0) = 0;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->waypoint_count = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 29,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + 0x42d0) = 0;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->sorted_render_actor_count = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 30,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x466c) = 0;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->collidable_actor_count = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 31,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x2728) = 0;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->renderable_actor_count = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 32,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x574) = 1;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->camera_enabled_flag = 1;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 33,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x570) = 0xffffffff;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->selected_camera_index = -1;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 34,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x56c) = 0xffffffff;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->previous_best_camera_index = -1;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 35,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x568) = 0;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->previous_best_camera_timer = 0.0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 36,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x55c) = 0;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->room_reverb_type = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 37,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x558) = 0;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->room_count = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 38,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x794) = 0;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->lighting_quality_mode = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 39,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x790) = 0;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->disable_spotlight_shadows = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 40,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x788) = 0;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->disable_water_rendering = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 42,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x784) = 0;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->disable_sky_rendering = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 43,
-      "match": "(char *)((int)",
-      "text": "pcVar4 = (char *)((int)pvVar2 + -0x77c);",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "pcVar3 = ADJ(pvVar5)->enviro_model_name;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 44,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x780) = 0;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->use_enviro_model = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 55,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + 0x42cc) = 0;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->directional_light_ratio_enabled = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 56,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x768) = 0;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->set_file_version = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 57,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + 17000) = 2;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->default_ground_type = 2;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 58,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x560) = 0;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->camera_switch_cooldown = 0.0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 59,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x764) = 0;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->actor_list_capacity = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 60,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + 0x6214) = 0;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->has_sky = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 61,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x760) = 0;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->mirror_glass_actor_count = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 62,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + 0x6240) = 0;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->mirror_camera_dirty = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 63,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -4) = 0;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->vdir_box_count = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 64,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x58c) = 0x10000;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->light_scale_factor = 0x10000;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 65,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x588) = 0x10000;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->color_scale_factor = 0x10000;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 67,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x584) = 0x10000;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->fog_scale_factor = 0x10000;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 68,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + 0x6244) = 0;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->mirror_lighting_cached = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 69,
-      "match": "(char *)((int)",
-      "text": "pcVar4 = (char *)((int)pvVar2 + -0x5c4);",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "pcVar3 = ADJ(pvVar5)->world_geometry_name;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 70,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x5c8) = 0;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->use_world_geometry_flag = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 80,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x78c) = 0;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->disable_directional_lighting = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 81,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x798) = 0;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->default_master_reverb = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 82,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x5a4) = 0;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->rendering_mode = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 83,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x5a0) = 0xffff6f78;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "(ADJ(pvVar5)->light_direction).x = -37000;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 84,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x59c) = 0xffff6f78;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "(ADJ(pvVar5)->light_direction).y = -37000;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 85,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x598) = 37000;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "(ADJ(pvVar5)->light_direction).z = 37000;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 86,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x594) = 0x280;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->ambient_base_quick = 0x280;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 87,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x590) = 0;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->skip_normal_normalization = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 88,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x79c) = 0;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar5)->per_pixel_lighting_enabled = 0;",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

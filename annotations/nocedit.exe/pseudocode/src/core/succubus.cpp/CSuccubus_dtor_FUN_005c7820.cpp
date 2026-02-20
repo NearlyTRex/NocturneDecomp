@@ -23,7 +23,7 @@ CSuccubus * __cdecl core_succubus_cpp_CSuccubus_dtor_FUN_005c7820(CSuccubus *thi
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  pCVar1 = core_morph_cpp_CMorph_dtor_FUN_0052b330((CMorph *)(this_ptr->unk + 0x2480),0);
+  pCVar1 = core_morph_cpp_CMorph_dtor_FUN_0052b330(&this_ptr->morph,0);
   pCVar2 = core_cloth_cpp_CClothList_dtor_FUN_0043bf80
                      ((CClothList *)(pCVar1[-1].models[1].textures + 0xe),0);
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40

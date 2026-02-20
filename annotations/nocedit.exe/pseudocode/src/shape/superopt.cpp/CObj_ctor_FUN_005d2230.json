@@ -6,17 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 19,
-    "complexity_score": 69,
+    "complexity_score": 7,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 1,
-    "pseudocode_lines": 9,
-    "suspect_count": 5,
-    "suspect_types": [
-      "param_count_too_few",
-      "stack_param"
-    ],
-    "total_lines": 28
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 26
   },
   "cross_references": [
     {
@@ -42,7 +39,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_superopt.cpp_CObj_ctor_FUN_005d2230",
-    "signature": "CObj * __cdecl shape_superopt_cpp_CObj_ctor_FUN_005d2230(CObj *this_ptr)"
+    "signature": "CObj * __cdecl shape_superopt_cpp_CObj_ctor_FUN_005d2230(CObj *this_ptr,int poly_count,int vertex_count)"
   },
   "function_calls": [
     {
@@ -86,8 +83,8 @@
         "stack_params": 4
       }
     ],
-    "confidence": "low",
-    "declared_params": 1,
+    "confidence": "medium",
+    "declared_params": 3,
     "estimated_params": 3
   },
   "pcode_summary": {
@@ -111,10 +108,10 @@
     "pcode_op_count": 59
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -123,48 +120,22 @@
         "offset": 4,
         "size": 4,
         "type": "CObj *"
+      },
+      {
+        "is_param": true,
+        "name": "poly_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 5,
-      "match": "in_stack_00000008",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 6,
-      "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000008",
-      "text": "shape_superopt_cpp_CObj_init_FUN_005d22d0(this_ptr,in_stack_00000008,in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_0000000c",
-      "text": "shape_superopt_cpp_CObj_init_FUN_005d22d0(this_ptr,in_stack_00000008,in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 1,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:1 vs estimated:3",
-      "param_delta": 2,
-      "text": "Function declares 1 params but call sites push 3 (2 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

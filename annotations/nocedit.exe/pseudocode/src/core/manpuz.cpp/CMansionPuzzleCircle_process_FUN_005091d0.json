@@ -6,14 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 123,
-    "complexity_score": 50,
+    "complexity_score": 80,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 2,
-    "pseudocode_lines": 50,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 173
+    "pseudocode_lines": 55,
+    "suspect_count": 2,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 178
   },
   "cross_references": [],
   "function": {
@@ -144,7 +146,22 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 49,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)&this_ptr->reflectors[1].rotation.y + 3) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 50,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)&this_ptr->reflectors[1].rotation.y + 3) ^ 0x80;",
+      "type": "pointer_cast"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

@@ -187,13 +187,13 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
                       core_actor_cpp_castToClassHash_FUN_0040c790
                                 (pCVar6->actors[0],g_CTriggerClassInfo.name_hash);
         if (((this_ptr_03 != (CTrigger *)0x0) && (this_ptr_03->hero_triggers_me == 7)) &&
-           (this_ptr_03->damage_actor_name_wildcard_name[0] == '\0')) {
+           (this_ptr_03->damage_actor_wildcard_name[0] == '\0')) {
           fStack_48 = 0.0;
           iVar7 = core_fire_cpp_CFireEffect_checkExplosionDamage_FUN_004c8c90
                             (g_CFireEffectPtr,&(this_ptr_03->base).location.position,0.0,
                              (CVector3f *)0x0,(int *)&fStack_48);
           if (iVar7 != 0) {
-            core_trigger_cpp_CTrigger_FUN_005e0b00(this_ptr_03);
+            core_trigger_cpp_CTrigger_applyDamage_FUN_005e0b00(this_ptr_03,fStack_48);
           }
         }
         this_ptr_04 = (CFlameCan *)

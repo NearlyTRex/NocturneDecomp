@@ -16,18 +16,18 @@ void __cdecl engine_palette_cpp_CPaletteManager_addTexture_FUN_00544fbe(CPalette
   char *pcVar5;
   
   iVar4 = 0;
-  if (0 < this_ptr->unk1) {
+  if (0 < this_ptr->texture_count) {
     iVar3 = 0;
     do {
-      iVar2 = strcmp((char *)(this_ptr->unk2 + iVar3),filename);
+      iVar2 = strcmp(this_ptr->texture_names + iVar3,filename);
       if (iVar2 == 0) {
         return;
       }
       iVar4 = iVar4 + 1;
       iVar3 = iVar3 + 0x40;
-    } while (iVar4 < this_ptr->unk1);
+    } while (iVar4 < this_ptr->texture_count);
   }
-  pcVar5 = (char *)(this_ptr->unk2 + this_ptr->unk1 * 0x40);
+  pcVar5 = this_ptr->texture_names + this_ptr->texture_count * 0x40;
   do {
     cVar1 = *filename;
     *pcVar5 = cVar1;
@@ -37,8 +37,8 @@ void __cdecl engine_palette_cpp_CPaletteManager_addTexture_FUN_00544fbe(CPalette
     pcVar5[1] = cVar1;
     pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
-  iVar4 = this_ptr->unk1 + 1;
-  this_ptr->unk1 = iVar4;
+  iVar4 = this_ptr->texture_count + 1;
+  this_ptr->texture_count = iVar4;
   if (iVar4 < 0x400) {
     return;
   }

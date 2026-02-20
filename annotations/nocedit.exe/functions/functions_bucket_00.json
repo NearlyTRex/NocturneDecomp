@@ -11407,6 +11407,22 @@
             ]
           },
           "type":"CCourse*"
+        },
+        {
+          "name":"count",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -55357,6 +55373,53 @@
     "name":"engine_ncursfx.cpp_CMouse_ctor_FUN_00544380",
     "ret":"CMouse*",
     "vars":{
+      "locals":[
+        {
+          "name":"pvVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CMouse*",
+          "use":12
+        },
+        {
+          "name":"pvVar2",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CMouse_ptr_160",
+          "use":33
+        },
+        {
+          "name":"pvVar3",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CMouse_ptr_300",
+          "use":54
+        }
+      ],
       "params":[
         {
           "name":"ptr",
@@ -56730,7 +56793,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_platfrm.cpp_CPlatform_FUN_0054df80",
+    "name":"core_platfrm.cpp_CPlatform_isActorOnPlatform_FUN_0054df80",
     "ret":"int",
     "vars":{
       "locals":[
@@ -56767,6 +56830,22 @@
             ]
           },
           "type":"CPlatform*"
+        },
+        {
+          "name":"actor",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonActor*"
         }
       ],
       "ret_storage":{
@@ -57567,6 +57646,23 @@
     "name":"core_podmain.cpp_CDemonPod_ctor_FUN_00551b00",
     "ret":"CDemonPod*",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonPod*",
+          "use":5
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -58069,6 +58165,54 @@
             ]
           },
           "type":"CBitmap*"
+        },
+        {
+          "name":"param_2",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"param_3",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"param_4",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ],
       "ret_storage":{
@@ -64262,6 +64406,38 @@
     "name":"core_skeleton.cpp_CSkeleton_ctor_FUN_00599880",
     "ret":"CSkeleton*",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CSkeleton*",
+          "use":15
+        },
+        {
+          "name":"puVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CSkeleton_ptr_168828",
+          "use":36
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -71073,6 +71249,68 @@
     "name":"core_succubus.cpp_CSuccubus_ctor_FUN_005c6a80",
     "ret":"CSuccubus*",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar6",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CSuccubus*",
+          "use":8
+        },
+        {
+          "name":"pCVar7",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CSuccubus_ptr_48828",
+          "use":22
+        },
+        {
+          "name":"pCVar8",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CSuccubus_ptr_57712",
+          "use":36
+        },
+        {
+          "name":"pCVar9",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CSuccubus_ptr_58172",
+          "use":50
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -75571,7 +75809,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_trigger.cpp_CTrigger_FUN_005e0b00",
+    "name":"core_trigger.cpp_CTrigger_applyDamage_FUN_005e0b00",
     "ret":"void",
     "vars":{
       "locals":[
@@ -75624,6 +75862,22 @@
             ]
           },
           "type":"CTrigger*"
+        },
+        {
+          "name":"hit_points",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ]
     }

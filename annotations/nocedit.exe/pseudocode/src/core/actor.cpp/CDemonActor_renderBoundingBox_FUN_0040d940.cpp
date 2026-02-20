@@ -57,39 +57,39 @@ void __cdecl core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonAct
   CBoundingBox3D *local_14;
   
   bVar8 = 0;
-  local_17c.w_recip = (float)this_ptr;
-  local_17c.fog = 0x40d957;
-  core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(this_ptr);
-  local_17c.w_recip = (float)&local_14c;
   local_17c.fog = (int)this_ptr;
-  local_17c.color = 0x40d975;
+  local_17c.g = 0x40d957;
+  core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(this_ptr);
+  local_17c.fog = (int)&local_14c;
+  local_17c.g = (int)this_ptr;
+  local_17c.r = 0x40d975;
   this_ptr_00 = (*((this_ptr->vtable)._ub)->getBoundingBox)(this_ptr,&local_14c);
   corner_index = 0.0;
   g_ActiveRenderColor = in_stack_00000010;
   do {
     local_14c.min.y = (float)((uint)corner_index ^ 1);
     local_14c.min.x = (float)&CStack_b4;
-    local_17c.fog = 0x40d9a8;
-    local_17c.w_recip = (float)this_ptr_00;
+    local_17c.g = 0x40d9a8;
+    local_17c.fog = (int)this_ptr_00;
     pCVar2 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
                        (this_ptr_00,(CVector3f *)local_14c.min.x,(uint)local_14c.min.y);
     local_14c.min.x = (float)&CStack_c0;
-    local_17c.fog = 0x40d9c3;
-    local_17c.w_recip = (float)this_ptr_00;
+    local_17c.g = 0x40d9c3;
+    local_17c.fog = (int)this_ptr_00;
     local_14c.min.y = corner_index;
     pCVar3 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
                        (this_ptr_00,(CVector3f *)local_14c.min.x,(uint)corner_index);
     local_14c.min.x = (float)&CStack_48;
-    local_17c.w_recip = 5.955617e-39;
+    local_17c.fog = 0x40d9d6;
     local_14c.min.y = (float)pCVar3;
     core_actor_cpp_copyFloat_FUN_004104f0((float *)local_14c.min.x,&pCVar3->x);
     local_14c.min.y = (float)&pCVar3->y;
     local_14c.min.x = (float)&CStack_48.y;
-    local_17c.w_recip = 5.955645e-39;
+    local_17c.fog = 0x40d9ea;
     core_actor_cpp_copyFloat_FUN_004104e0((float *)local_14c.min.x,(float *)local_14c.min.y);
     local_14c.min.y = (float)&pCVar3->z;
     local_14c.min.x = (float)&CStack_48.z;
-    local_17c.w_recip = 5.955673e-39;
+    local_17c.fog = 0x40d9fe;
     core_actor_cpp_copyFloat_FUN_004104d0((float *)local_14c.min.x,(float *)local_14c.min.y);
     local_14c.min.y = (float)&CStack_24;
     local_14c.min.x = 5.955695e-39;
@@ -112,23 +112,23 @@ void __cdecl core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonAct
     CStack_114.x = CStack_d8.x + CStack_24.x;
     CStack_114.y = CStack_d8.y + CStack_24.y;
     CStack_114.z = CStack_d8.z + CStack_24.z;
-    local_17c.w_recip = 5.95595e-39;
+    local_17c.fog = 0x40dac4;
     core_actor_cpp_CVector3f_toFixed8_FUN_004103d0
               ((CVector3f *)local_14c.min.x,(CVector3f *)local_14c.min.y);
     local_14c.min.y = (float)&CStack_3c;
     local_14c.min.x = (float)pCVar1->vertex_buffer_ptr;
-    local_17c.w_recip = 5.955977e-39;
+    local_17c.fog = 0x40dad7;
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               ((SProjectedVertex *)local_14c.min.x,(CVector3i *)local_14c.min.y);
     pCVar1 = g_CDemonRendererPtr1;
     local_14c.min.y = (float)&CStack_54;
     local_14c.min.x = (float)&CStack_114;
-    local_17c.w_recip = 5.956015e-39;
+    local_17c.fog = 0x40daf2;
     core_actor_cpp_CVector3f_toFixed8_FUN_004103d0
               ((CVector3f *)local_14c.min.x,(CVector3f *)local_14c.min.y);
     local_14c.min.y = (float)&CStack_54;
     local_14c.min.x = (float)(pCVar1->vertex_buffer_ptr + 1);
-    local_17c.w_recip = 5.956045e-39;
+    local_17c.fog = 0x40db08;
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               ((SProjectedVertex *)local_14c.min.x,(CVector3i *)local_14c.min.y);
     pSVar6 = g_CDemonRendererPtr1->vertex_buffer_ptr;
@@ -146,42 +146,42 @@ void __cdecl core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonAct
       piVar7 = piVar7 + (uint)bVar8 * -2 + 1;
     }
     local_1ac.projected_vertex.transformed_y = 0x40db35;
-    vertex2.v = local_17c.color;
+    vertex2.v = local_17c.r;
     vertex2.projected_vertex.transformed_x = local_17c.projected_vertex.transformed_z;
     vertex2.projected_vertex.transformed_y = local_17c.projected_vertex.inv_z;
     vertex2.projected_vertex.transformed_z = local_17c.projected_vertex.screen_x;
     vertex2.projected_vertex.inv_z = local_17c.projected_vertex.screen_y;
     vertex2.projected_vertex.screen_x = local_17c.u;
     vertex2.projected_vertex.screen_y = local_17c.v;
-    vertex2.u = local_17c.light;
-    vertex2.light = local_17c.fog;
-    vertex2.color = (int)local_17c.w_recip;
-    vertex2.fog = (int)local_14c.min.x;
-    vertex2.w_recip = local_14c.min.y;
+    vertex2.u = local_17c.z;
+    vertex2.z = local_17c.g;
+    vertex2.r = local_17c.fog;
+    vertex2.g = (int)local_14c.min.x;
+    vertex2.fog = (int)local_14c.min.y;
     engine_3d_c_clipAndDrawLine2D_FUN_00407d70(stack0xfffffe5c,vertex2);
     local_14c.min.y = (float)((uint)corner_index ^ 2);
     local_14c.min.x = (float)&CStack_e4;
-    local_17c.fog = 0x40db50;
-    local_17c.w_recip = (float)this_ptr_00;
+    local_17c.g = 0x40db50;
+    local_17c.fog = (int)this_ptr_00;
     pCVar2 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
                        (this_ptr_00,(CVector3f *)local_14c.min.x,(uint)local_14c.min.y);
     local_14c.min.x = (float)&CStack_120;
-    local_17c.fog = 0x40db68;
-    local_17c.w_recip = (float)this_ptr_00;
+    local_17c.g = 0x40db68;
+    local_17c.fog = (int)this_ptr_00;
     local_14c.min.y = corner_index;
     pCVar3 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
                        (this_ptr_00,(CVector3f *)local_14c.min.x,(uint)corner_index);
     local_14c.min.x = (float)&CStack_60;
-    local_17c.w_recip = 5.956207e-39;
+    local_17c.fog = 0x40db7b;
     local_14c.min.y = (float)pCVar3;
     core_actor_cpp_copyFloat_FUN_004104f0((float *)local_14c.min.x,&pCVar3->x);
     local_14c.min.y = (float)&pCVar3->y;
     local_14c.min.x = (float)&CStack_60.y;
-    local_17c.w_recip = 5.956235e-39;
+    local_17c.fog = 0x40db8f;
     core_actor_cpp_copyFloat_FUN_004104e0((float *)local_14c.min.x,(float *)local_14c.min.y);
     local_14c.min.y = (float)&pCVar3->z;
     local_14c.min.x = (float)&CStack_60.z;
-    local_17c.w_recip = 5.956263e-39;
+    local_17c.fog = 0x40dba3;
     core_actor_cpp_copyFloat_FUN_004104d0((float *)local_14c.min.x,(float *)local_14c.min.y);
     local_14c.min.y = (float)&CStack_6c;
     local_14c.min.x = 5.956285e-39;
@@ -204,23 +204,23 @@ void __cdecl core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonAct
     CStack_78.x = CStack_a8.x + CStack_6c.x;
     CStack_78.y = CStack_a8.y + CStack_6c.y;
     CStack_78.z = CStack_a8.z + CStack_6c.z;
-    local_17c.w_recip = 5.956585e-39;
+    local_17c.fog = 0x40dc89;
     core_actor_cpp_CVector3f_toFixed8_FUN_004103d0
               ((CVector3f *)local_14c.min.x,(CVector3f *)local_14c.min.y);
     local_14c.min.y = (float)&CStack_108;
     local_14c.min.x = (float)pCVar1->vertex_buffer_ptr;
-    local_17c.w_recip = 5.956607e-39;
+    local_17c.fog = 0x40dc99;
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               ((SProjectedVertex *)local_14c.min.x,(CVector3i *)local_14c.min.y);
     pCVar1 = g_CDemonRendererPtr1;
     local_14c.min.y = (float)&CStack_f0;
     local_14c.min.x = (float)&CStack_78;
-    local_17c.w_recip = 5.956645e-39;
+    local_17c.fog = 0x40dcb4;
     core_actor_cpp_CVector3f_toFixed8_FUN_004103d0
               ((CVector3f *)local_14c.min.x,(CVector3f *)local_14c.min.y);
     local_14c.min.y = (float)&CStack_f0;
     local_14c.min.x = (float)(pCVar1->vertex_buffer_ptr + 1);
-    local_17c.w_recip = 5.956672e-39;
+    local_17c.fog = 0x40dcc7;
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               ((SProjectedVertex *)local_14c.min.x,(CVector3i *)local_14c.min.y);
     pSVar6 = g_CDemonRendererPtr1->vertex_buffer_ptr;
@@ -238,42 +238,42 @@ void __cdecl core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonAct
       piVar7 = piVar7 + (uint)bVar8 * -2 + 1;
     }
     local_1ac.projected_vertex.transformed_y = 0x40dcf4;
-    vertex2_00.v = local_17c.color;
+    vertex2_00.v = local_17c.r;
     vertex2_00.projected_vertex.transformed_x = local_17c.projected_vertex.transformed_z;
     vertex2_00.projected_vertex.transformed_y = local_17c.projected_vertex.inv_z;
     vertex2_00.projected_vertex.transformed_z = local_17c.projected_vertex.screen_x;
     vertex2_00.projected_vertex.inv_z = local_17c.projected_vertex.screen_y;
     vertex2_00.projected_vertex.screen_x = local_17c.u;
     vertex2_00.projected_vertex.screen_y = local_17c.v;
-    vertex2_00.u = local_17c.light;
-    vertex2_00.light = local_17c.fog;
-    vertex2_00.color = (int)local_17c.w_recip;
-    vertex2_00.fog = (int)local_14c.min.x;
-    vertex2_00.w_recip = local_14c.min.y;
+    vertex2_00.u = local_17c.z;
+    vertex2_00.z = local_17c.g;
+    vertex2_00.r = local_17c.fog;
+    vertex2_00.g = (int)local_14c.min.x;
+    vertex2_00.fog = (int)local_14c.min.y;
     engine_3d_c_clipAndDrawLine2D_FUN_00407d70(stack0xfffffe5c,vertex2_00);
     local_14c.min.y = (float)((uint)corner_index ^ 4);
     local_14c.min.x = (float)&CStack_84;
-    local_17c.fog = 0x40dd12;
-    local_17c.w_recip = (float)this_ptr_00;
+    local_17c.g = 0x40dd12;
+    local_17c.fog = (int)this_ptr_00;
     pCVar2 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
                        (this_ptr_00,(CVector3f *)local_14c.min.x,(uint)local_14c.min.y);
     local_14c.min.x = (float)&CStack_90;
-    local_17c.fog = 0x40dd2d;
-    local_17c.w_recip = (float)this_ptr_00;
+    local_17c.g = 0x40dd2d;
+    local_17c.fog = (int)this_ptr_00;
     local_14c.min.y = corner_index;
     pCVar3 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
                        (this_ptr_00,(CVector3f *)local_14c.min.x,(uint)corner_index);
     local_14c.min.x = (float)&CStack_30;
-    local_17c.w_recip = 5.956841e-39;
+    local_17c.fog = 0x40dd40;
     local_14c.min.y = (float)pCVar3;
     core_actor_cpp_copyFloat_FUN_004104f0((float *)local_14c.min.x,&pCVar3->x);
     local_14c.min.y = (float)&pCVar3->y;
     local_14c.min.x = (float)&CStack_30.y;
-    local_17c.w_recip = 5.95687e-39;
+    local_17c.fog = 0x40dd54;
     core_actor_cpp_copyFloat_FUN_004104e0((float *)local_14c.min.x,(float *)local_14c.min.y);
     local_14c.min.y = (float)&pCVar3->z;
     local_14c.min.x = (float)&CStack_30.z;
-    local_17c.w_recip = 5.956897e-39;
+    local_17c.fog = 0x40dd68;
     core_actor_cpp_copyFloat_FUN_004104d0((float *)local_14c.min.x,(float *)local_14c.min.y);
     local_14c.min.y = (float)&CStack_fc;
     local_14c.min.x = 5.956916e-39;
@@ -295,23 +295,23 @@ void __cdecl core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonAct
     CStack_9c.x = CStack_12c.x + CStack_fc.x;
     CStack_9c.y = CStack_12c.y + CStack_fc.y;
     CStack_9c.z = CStack_12c.z + CStack_fc.z;
-    local_17c.w_recip = 5.957158e-39;
+    local_17c.fog = 0x40de22;
     local_14c.min.y = (float)&CStack_cc;
     core_actor_cpp_CVector3f_toFixed8_FUN_004103d0((CVector3f *)local_14c.min.x,&CStack_cc);
     local_14c.min.y = (float)&CStack_cc;
     local_14c.min.x = (float)pCVar1->vertex_buffer_ptr;
-    local_17c.w_recip = 5.95718e-39;
+    local_17c.fog = 0x40de32;
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               ((SProjectedVertex *)local_14c.min.x,(CVector3i *)local_14c.min.y);
     pCVar1 = g_CDemonRendererPtr1;
     local_14c.min.y = (float)&stack0xffffffe8;
     local_14c.min.x = (float)&CStack_9c;
-    local_17c.w_recip = 5.957222e-39;
+    local_17c.fog = 0x40de50;
     core_actor_cpp_CVector3f_toFixed8_FUN_004103d0
               ((CVector3f *)local_14c.min.x,(CVector3f *)local_14c.min.y);
     local_14c.min.y = (float)&stack0xffffffe8;
     local_14c.min.x = (float)(pCVar1->vertex_buffer_ptr + 1);
-    local_17c.w_recip = 5.957253e-39;
+    local_17c.fog = 0x40de66;
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               ((SProjectedVertex *)local_14c.min.x,(CVector3i *)local_14c.min.y);
     pSVar6 = g_CDemonRendererPtr1->vertex_buffer_ptr;
@@ -330,18 +330,18 @@ void __cdecl core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonAct
       piVar7 = piVar7 + (uint)bVar8 * -2 + 1;
     }
     local_1ac.projected_vertex.transformed_y = 0x40de94;
-    vertex2_01.v = local_17c.color;
+    vertex2_01.v = local_17c.r;
     vertex2_01.projected_vertex.transformed_x = local_17c.projected_vertex.transformed_z;
     vertex2_01.projected_vertex.transformed_y = local_17c.projected_vertex.inv_z;
     vertex2_01.projected_vertex.transformed_z = local_17c.projected_vertex.screen_x;
     vertex2_01.projected_vertex.inv_z = local_17c.projected_vertex.screen_y;
     vertex2_01.projected_vertex.screen_x = local_17c.u;
     vertex2_01.projected_vertex.screen_y = local_17c.v;
-    vertex2_01.u = local_17c.light;
-    vertex2_01.light = local_17c.fog;
-    vertex2_01.color = (int)local_17c.w_recip;
-    vertex2_01.fog = (int)local_14c.min.x;
-    vertex2_01.w_recip = local_14c.min.y;
+    vertex2_01.u = local_17c.z;
+    vertex2_01.z = local_17c.g;
+    vertex2_01.r = local_17c.fog;
+    vertex2_01.g = (int)local_14c.min.x;
+    vertex2_01.fog = (int)local_14c.min.y;
     engine_3d_c_clipAndDrawLine2D_FUN_00407d70(stack0xfffffe5c,vertex2_01);
   } while ((int)corner_index < 8);
   local_14c.min.x = 5.957353e-39;

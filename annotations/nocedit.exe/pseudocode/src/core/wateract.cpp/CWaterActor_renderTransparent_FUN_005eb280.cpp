@@ -14,8 +14,8 @@ int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_005eb280(CWaterA
   int iVar3;
   CBoundingBox3D *this_ptr_00;
   int *piVar4;
-  char *pcVar5;
-  SMRGLPrimitiveQuad *primitive_array;
+  SWaterVertex *pSVar5;
+  SMRGLHeaderPrimitive *primitive_array;
   int iVar6;
   CBoundingBox3D CStack_24;
   int iStack_c;
@@ -31,58 +31,59 @@ int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_005eb280(CWaterA
       engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
       iVar3 = 0;
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-                (g_CDemonRendererPtr2,
-                 SMRGLTextureBasic_ARRAY_006846f0 + *(int *)(this_ptr->unk5 + 0x2af90));
-      if (0 < *(int *)this_ptr->unk5) {
+                (g_CDemonRendererPtr2,SMRGLTextureBasic_ARRAY_006846f0 + this_ptr->texture_frame);
+      if (0 < this_ptr->vertex_count) {
         piVar4 = &DAT_03f90a88;
-        pcVar5 = this_ptr->unk5 + 4;
+        pSVar5 = this_ptr->vertices;
         do {
-          *piVar4 = (int)ROUND(*(float *)pcVar5 * 256.0f);
-          piVar4[1] = (int)ROUND(*(float *)(pcVar5 + 4) * 256.0f);
-          piVar4[2] = (int)ROUND(*(float *)(pcVar5 + 8) * 256.0f);
+          *piVar4 = (int)ROUND((pSVar5->local_position).x * 256.0f);
+          piVar4[1] = (int)ROUND((pSVar5->local_position).y * 256.0f);
+          piVar4[2] = (int)ROUND((pSVar5->local_position).z * 256.0f);
           iVar3 = iVar3 + 1;
-          pcVar5 = pcVar5 + 0x20;
+          pSVar5 = pSVar5 + 1;
           piVar4 = piVar4 + 3;
-        } while (iVar3 < *(int *)this_ptr->unk5);
+        } while (iVar3 < this_ptr->vertex_count);
       }
       iVar3 = 0;
       core_set_cpp_CDemonSet_rotateVertices_FUN_0056e7c0
-                (g_CDemonSetPtr,*(int *)this_ptr->unk5,&DAT_03f90a88);
-      if (0 < *(int *)this_ptr->unk5) {
+                (g_CDemonSetPtr,this_ptr->vertex_count,&DAT_03f90a88);
+      if (0 < this_ptr->vertex_count) {
         iVar6 = 0;
         do {
           core_set_cpp_CDemonSet_FUN_0056e3e0(g_CDemonSetPtr);
           pSVar1 = g_CDemonRendererPtr2->vertex_buffer_ptr;
-          lVar2 = (longlong)(this_ptr->col_r << 8) * (longlong)*(int *)((int)&pSVar1->light + iVar6)
+          lVar2 = (longlong)((this_ptr->color).r << 8) * (longlong)*(int *)((int)&pSVar1->z + iVar6)
           ;
-          *(uint *)((int)&pSVar1->light + iVar6) =
+          *(uint *)((int)&pSVar1->z + iVar6) =
                (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-          lVar2 = (longlong)(this_ptr->col_g << 8) * (longlong)*(int *)((int)&pSVar1->color + iVar6)
+          lVar2 = (longlong)((this_ptr->color).g << 8) * (longlong)*(int *)((int)&pSVar1->r + iVar6)
           ;
-          *(uint *)((int)&pSVar1->color + iVar6) =
+          *(uint *)((int)&pSVar1->r + iVar6) =
                (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-          lVar2 = (longlong)(this_ptr->col_b << 8) * (longlong)*(int *)((int)&pSVar1->fog + iVar6);
-          *(uint *)((int)&pSVar1->fog + iVar6) =
+          lVar2 = (longlong)((this_ptr->color).b << 8) * (longlong)*(int *)((int)&pSVar1->g + iVar6)
+          ;
+          *(uint *)((int)&pSVar1->g + iVar6) =
                (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
           iVar3 = iVar3 + 1;
           iVar6 = iVar6 + 0x30;
-        } while (iVar3 < *(int *)this_ptr->unk5);
+        } while (iVar3 < this_ptr->vertex_count);
       }
-      primitive_array = (SMRGLPrimitiveQuad *)(this_ptr->unk5 + 0x7d10);
+      primitive_array = &this_ptr->primitives[0].base;
       if (this_ptr->opacity < 0xfde9) {
         iVar3 = 0;
-        if (0 < *(int *)(this_ptr->unk5 + 0x2af9c)) {
+        if (0 < this_ptr->primitive_count) {
           do {
             iVar3 = iVar3 + 1;
             engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
-                      (g_CDemonRendererPtr2,&primitive_array->base,0x267);
-            primitive_array = primitive_array + 1;
-          } while (iVar3 < *(int *)(this_ptr->unk5 + 0x2af9c));
+                      (g_CDemonRendererPtr2,primitive_array,0x267);
+            primitive_array = primitive_array + 3;
+          } while (iVar3 < this_ptr->primitive_count);
         }
       }
       else {
         core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770
-                  (g_CDemonSetPtr,primitive_array,*(int *)(this_ptr->unk5 + 0x2af9c),-1);
+                  (g_CDemonSetPtr,(SMRGLPrimitiveQuad *)primitive_array,this_ptr->primitive_count,-1
+                  );
       }
       engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,0);
     }

@@ -129,7 +129,8 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor 
             }
           }
           else {
-            iVar4 = core_trigger_cpp_CTrigger_FUN_005e0ac0(pCVar5);
+            iVar4 = core_trigger_cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0
+                              (pCVar5,this_ptr->actor_name);
             if (iVar4 != 0) {
               core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                         ((CDemonActor *)pCVar5,&local_68,&local_bc);
@@ -145,7 +146,7 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor 
                 engine_console_cpp_CConsole_printf_FUN_00441890
                           (g_CConsolePtr,"%s causing %5.2f damage to %s\n",this_ptr,
                            (double)uStack_26c._4_4_,pCVar5);
-                core_trigger_cpp_CTrigger_FUN_005e0b00(pCVar5);
+                core_trigger_cpp_CTrigger_applyDamage_FUN_005e0b00(pCVar5,uStack_26c._4_4_);
                 in_stack_fffffd70 = (float *)0x40a607;
                 (*((this_ptr->vtable)._ub)->playAttackHitEffects)
                           (this_ptr,hit_type,(SDamageInfo *)&uStack_26c,(CDemonActor *)pCVar5);
@@ -231,7 +232,8 @@ LAB_0040a3e0:
             }
           }
           else {
-            iVar4 = core_trigger_cpp_CTrigger_FUN_005e0ac0(pCStack_14);
+            iVar4 = core_trigger_cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0
+                              (pCStack_14,this_ptr->actor_name);
             if (iVar4 != 0) {
               core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0
                         ((SDamageInfo *)&local_164.impact_point);
@@ -241,7 +243,8 @@ LAB_0040a3e0:
                         (g_CConsolePtr,"%s causing %5.2f damage to %s\n",this_ptr,
                          SUB84((double)local_164.impact_direction.y,0),
                          (int)((ulonglong)(double)local_164.impact_direction.y >> 0x20),pCVar5);
-              core_trigger_cpp_CTrigger_FUN_005e0b00(pCVar5);
+              core_trigger_cpp_CTrigger_applyDamage_FUN_005e0b00
+                        (pCVar5,local_164.impact_direction.y);
               (*((this_ptr->vtable)._ub)->playAttackHitEffects)
                         (this_ptr,hit_type,(SDamageInfo *)&local_164.impact_direction,unaff_retaddr)
               ;

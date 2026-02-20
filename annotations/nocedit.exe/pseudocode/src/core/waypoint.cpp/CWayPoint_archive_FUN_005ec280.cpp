@@ -22,7 +22,7 @@ void __cdecl core_waypoint_cpp_CWayPoint_archive_FUN_005ec280(CWayPoint *this_pt
     core_actor_cpp_archiveInteger_FUN_0040b7f0
               (&this_ptr->num_adjacent_waypoints,"adjCount");
     if (0 < this_ptr->num_adjacent_waypoints) {
-      actor_ptr = (CDemonActor *)this_ptr->unk;
+      actor_ptr = (CDemonActor *)this_ptr->adjacency;
       do {
         iVar1 = iVar1 + 1;
         core_actor_cpp_archiveActor_FUN_0040b870(actor_ptr,(char *)0x0);

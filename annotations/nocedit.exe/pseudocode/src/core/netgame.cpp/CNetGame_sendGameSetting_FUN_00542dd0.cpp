@@ -20,7 +20,7 @@ void __cdecl core_netgame_cpp_CNetGame_sendGameSetting_FUN_00542dd0(CNetGame *th
   char local_bb [80];
   int local_6b;
   char local_67 [20];
-  uint local_53 [15];
+  int local_53 [15];
   SNetPlayer *local_14;
   
   bVar8 = 0;
@@ -37,7 +37,7 @@ void __cdecl core_netgame_cpp_CNetGame_sendGameSetting_FUN_00542dd0(CNetGame *th
   __arrinit(local_67,2,&g_SPlayerTypeInfo);
   pcVar7 = local_bb;
   local_6b = this_ptr->player_count;
-  pcVar5 = this_ptr->unk;
+  pcVar5 = this_ptr->mission_name;
   do {
     cVar1 = *pcVar5;
     *pcVar7 = cVar1;
@@ -65,18 +65,17 @@ LAB_00542ef5:
         pcVar7 = pcVar7 + 2;
         if (cVar1 != '\0') goto LAB_00542ef5;
       }
-      local_53[iVar4 * 10] = *(uint *)(pCVar2->players[0].name + 0x1c);
-      local_53[iVar4 * 10 + (uint)bVar8 * -2 + 1] =
-           *(uint *)((int)pCVar2 + (uint)bVar8 * -8 + 0x40);
-      local_53[iVar4 * 10 + 4] = *(uint *)(pCVar2->players[0].unk1 + 0xc);
-      local_53[iVar4 * 10 + 2] = *(uint *)(pCVar2->players[0].name + 0x14);
+      local_53[iVar4 * 10] = *(int *)(pCVar2->players[0].name + 0x1c);
+      local_53[iVar4 * 10 + (uint)bVar8 * -2 + 1] = *(int *)((int)pCVar2 + (uint)bVar8 * -8 + 0x40);
+      local_53[iVar4 * 10 + 4] = pCVar2->players[0].ready_flag;
+      local_53[iVar4 * 10 + 2] = *(int *)(pCVar2->players[0].name + 0x14);
       pcVar7 = pcVar5 + 0x28;
-      local_53[iVar4 * 10 + 3] = *(uint *)(pCVar2->players[0].name + 0x18);
+      local_53[iVar4 * 10 + 3] = *(int *)(pCVar2->players[0].name + 0x18);
       iVar4 = iVar4 + 1;
       pSVar6 = local_14 + 1;
       local_14 = pSVar6;
       pcVar5 = pcVar7;
-      pCVar2 = (CNetGame *)(pCVar2->players[0].unk1 + 0x20);
+      pCVar2 = (CNetGame *)(pCVar2->players[0].controls.action_states + 3);
     } while (iVar4 < this_ptr->player_count);
   }
   core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,player_index);
@@ -90,6 +89,6 @@ LAB_00542ef5:
   }
   g_CurrentGameTime = g_CurrentGameTime + iVar3;
   g_LastPingTime = iVar4 / 0x12;
-  *(uint *)this_ptr->players[player_index].unk1 = g_CurrentGameTime;
+  this_ptr->players[player_index].last_update_time = g_CurrentGameTime;
   return;
 }

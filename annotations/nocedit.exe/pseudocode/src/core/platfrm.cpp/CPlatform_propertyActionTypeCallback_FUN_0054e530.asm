@@ -31,7 +31,7 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
 ;   core_course.cpp_CCourse_free_FUN_004426c0
-;   core_course.cpp_CCourse_FUN_004427a0
+;   core_course.cpp_CCourse_interpolate_FUN_004427a0
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
 ;   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
@@ -113,8 +113,8 @@ section .text
     LEA ESI,[EBX + 0x310]               ; 0054e5f1
     PUSH 0x0                            ; 0054e5f7
     PUSH ESI                            ; 0054e5f9
-    CALL core_course.cpp_CCourse_FUN_004427a0 ; 0054e5fa
-        ;   XREF to: 004427a0 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_FUN_004427a0(CCourse * this_ptr)
+    CALL core_course.cpp_CCourse_interpolate_FUN_004427a0 ; 0054e5fa
+        ;   XREF to: 004427a0 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_interpolate_FUN_004427a0(CCourse * this_ptr, float time, CVector3f * out_pos, CQuaternion4f * out_orient)
     ADD ESP,0x10                        ; 0054e5ff
     LEA EAX,[EBX + 0x344]               ; 0054e602
     PUSH EAX                            ; 0054e608
@@ -122,8 +122,8 @@ section .text
     PUSH EAX                            ; 0054e60f
     PUSH 0x3f7ff972                     ; 0054e610
     PUSH ESI                            ; 0054e615
-    CALL core_course.cpp_CCourse_FUN_004427a0 ; 0054e616
-        ;   XREF to: 004427a0 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_FUN_004427a0(CCourse * this_ptr)
+    CALL core_course.cpp_CCourse_interpolate_FUN_004427a0 ; 0054e616
+        ;   XREF to: 004427a0 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_interpolate_FUN_004427a0(CCourse * this_ptr, float time, CVector3f * out_pos, CQuaternion4f * out_orient)
     ADD ESP,0x10                        ; 0054e61b
     PUSH ESI                            ; 0054e61e
     CALL core_course.cpp_CCourse_free_FUN_004426c0 ; 0054e61f

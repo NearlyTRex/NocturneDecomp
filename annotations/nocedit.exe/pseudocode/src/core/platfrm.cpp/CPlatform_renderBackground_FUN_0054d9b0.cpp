@@ -48,7 +48,7 @@ void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_0054d9b0(CPlatform 
       this_ptr->one_shot = 3;
     }
     else {
-      this_ptr->unk3 = 1;
+      this_ptr->rendered_in_background = 1;
     }
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);

@@ -39,8 +39,8 @@ typedef struct CDemonActor {
     int blood_effect_timer; // 0x114
     uint blood_effect_color; // 0x118
     char footstep_sound_code[4]; // 0x11c
-    int reserved1; // 0x120
-    int reserved2; // 0x124
+    int unk1; // 0x120
+    int unk2; // 0x124
     CDemonActorTransformState previous_transform_state; // 0x128
     int render_needs_update; // 0x144
     int is_editor_hidden; // 0x148

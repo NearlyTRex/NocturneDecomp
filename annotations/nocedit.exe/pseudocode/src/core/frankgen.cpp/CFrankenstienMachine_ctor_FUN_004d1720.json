@@ -171,21 +171,21 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 14,
       "match": "pCVar2[-2].",
-      "text": "*(CDemonActor_vtable **)(pCVar2[-2].animation_state + 100) = &g_CFrankenstienMachineVTable;",
+      "text": "*(CDemonActor_vtable **)(pCVar2[-2].model_name + 200) = &g_CFrankenstienMachineVTable;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 19,
       "match": "pCVar2[-2].",
-      "text": "pCVar2[-2].animation_state[0x70] = '\\0';",
+      "text": "pCVar2[-2].model_name[0xd4] = '\\0';",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 25,
       "match": "pCVar2[-3].",
-      "text": "return (CFrankenstienMachine *)(pCVar2[-3].animation_state + 0x8c);",
+      "text": "return (CFrankenstienMachine *)(pCVar2[-3].model_name + 0xf0);",
       "type": "negative_offset"
     }
   ],

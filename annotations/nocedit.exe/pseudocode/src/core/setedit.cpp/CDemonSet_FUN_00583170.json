@@ -2,118 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 51,
-        "line": 133,
-        "message": "use of undeclared identifier 'stack0xfffffdbc'; did you mean 'in_stack_fffffdbc'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 161,
-        "message": "use of undeclared identifier 'stack0xfffffdc8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 34,
-        "line": 168,
-        "message": "use of undeclared identifier 'stack0xfffffd94'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 64,
-        "line": 168,
-        "message": "use of undeclared identifier 'stack0xfffffdc8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 43,
-        "line": 174,
-        "message": "use of undeclared identifier 'stack0xfffffd94'"
-      },
-      {
         "category": "other",
-        "column": 19,
-        "line": 176,
-        "message": "cannot cast from type 'float' to pointer type 'CKeys *'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 178,
-        "message": "use of undeclared identifier 'stack0xfffffdbc'; did you mean 'in_stack_fffffdbc'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 184,
-        "message": "use of undeclared identifier 'stack0x00000000'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 30,
-        "line": 192,
-        "message": "use of undeclared identifier 'stack0xfffffdc8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 376,
-        "message": "use of undeclared identifier 'stack0xfffffd68'; did you mean 'in_stack_fffffd68'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 382,
-        "message": "use of undeclared identifier 'stack0xfffffd38'; did you mean 'in_stack_fffffd38'?"
-      },
-      {
-        "category": "other",
-        "column": 69,
-        "line": 389,
-        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 69,
-        "line": 390,
-        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 69,
-        "line": 391,
-        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 392,
-        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 393,
-        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 29,
-        "line": 399,
-        "message": "C-style cast from 'CVector3i *' to 'float' is not allowed"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 404,
-        "message": "use of undeclared identifier 'stack0xfffffd68'; did you mean 'in_stack_fffffd68'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 411,
-        "message": "use of undeclared identifier 'stack0xfffffd38'; did you mean 'in_stack_fffffd38'?"
+        "column": 18,
+        "line": 1036,
+        "message": "use of undeclared label 'DAT_032758e8'"
       }
     ],
     "success": false,
@@ -121,19 +13,21 @@
   },
   "complexity": {
     "assembly_lines": 2005,
-    "complexity_score": 4125,
+    "complexity_score": 3895,
     "cross_reference_count": 1,
     "function_call_count": 41,
     "global_count": 52,
     "pseudocode_lines": 1015,
-    "suspect_count": 308,
+    "suspect_count": 284,
     "suspect_types": [
+      "byvalue_struct_passing",
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_param",
       "stack_ref",
       "suspect_float",
-      "unknown_field"
+      "unknown_field",
+      "warning_deadcode_restart"
     ],
     "total_lines": 3020
   },
@@ -1810,2076 +1704,1929 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_fffffd38",
-      "text": "SRenderVertex in_stack_fffffd38;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_fffffd68",
-      "text": "byte in_stack_fffffd68 [20];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_fffffd7c",
-      "text": "uint in_stack_fffffd7c;",
-      "type": "stack_param"
+      "description": "Deadcode elimination delayed",
+      "line": 3,
+      "match": "WARNING: Restarted to delay deadcode elimination",
+      "text": "/* WARNING: Restarted to delay deadcode elimination for space: stack */",
+      "type": "warning_deadcode_restart"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 34,
-      "match": "in_stack_fffffd80",
-      "text": "float *in_stack_fffffd80;",
+      "match": "in_stack_fffffd34",
+      "text": "SRenderVertex in_stack_fffffd34;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 35,
-      "match": "in_stack_fffffd84",
-      "text": "CVector3f *in_stack_fffffd84;",
+      "match": "in_stack_fffffd64",
+      "text": "byte in_stack_fffffd64 [20];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 40,
-      "match": "in_stack_fffffdbc",
-      "text": "float in_stack_fffffdbc;",
+      "line": 36,
+      "match": "in_stack_fffffd78",
+      "text": "uint in_stack_fffffd78;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
-      "match": "in_stack_fffffdc0",
-      "text": "CKeys *in_stack_fffffdc0;",
+      "line": 37,
+      "match": "in_stack_fffffd7c",
+      "text": "float *in_stack_fffffd7c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_fffffdc4",
-      "text": "float in_stack_fffffdc4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_fffffdcc",
-      "text": "float in_stack_fffffdcc;",
+      "line": 38,
+      "match": "in_stack_fffffd80",
+      "text": "CVector3f *in_stack_fffffd80;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 126,
-      "match": "&stack0xfffffdbc",
-      "text": "core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)&stack0xfffffdbc);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 154,
+      "line": 160,
       "match": "&stack0xfffffdc8",
       "text": "if ((float *)&stack0xfffffdc8 != &local_c8) {",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 155,
-      "match": "in_stack_fffffdcc",
-      "text": "in_stack_fffffdcc = local_c4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 159,
-      "match": "in_stack_fffffdcc",
-      "text": "in_stack_fffffdcc = in_stack_fffffdcc + pCVar3->y;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 159,
-      "match": "in_stack_fffffdcc",
-      "text": "in_stack_fffffdcc = in_stack_fffffdcc + pCVar3->y;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 161,
-      "match": "&stack0xfffffd94",
-      "text": "((CMatrix3x3f *)&stack0xfffffd94,(CVector3f *)&stack0xfffffdc8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 161,
-      "match": "&stack0xfffffdc8",
-      "text": "((CMatrix3x3f *)&stack0xfffffd94,(CVector3f *)&stack0xfffffdc8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 167,
       "match": "&stack0xfffffd94",
+      "text": "((CMatrix3x3f *)&stack0xfffffd94,(CVector3f *)&stack0xfffffdc8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 167,
+      "match": "&stack0xfffffdc8",
+      "text": "((CMatrix3x3f *)&stack0xfffffd94,(CVector3f *)&stack0xfffffdc8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 173,
+      "match": "&stack0xfffffd94",
       "text": "((CMatrix3x3f *)&stack0xfffffd94,&local_134,&local_1d0);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 171,
+      "line": 177,
       "match": "&stack0xfffffdbc",
-      "text": "if ((float *)&stack0xfffffdbc != &local_1c4) {",
+      "text": "if ((CKeys **)&stack0xfffffdbc != &local_1c4) {",
       "type": "stack_ref"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 172,
-      "match": "in_stack_fffffdbc",
-      "text": "in_stack_fffffdbc = local_1c4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 173,
-      "match": "in_stack_fffffdc0",
-      "text": "in_stack_fffffdc0 = local_1c0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 174,
-      "match": "in_stack_fffffdc4",
-      "text": "in_stack_fffffdc4 = local_1bc;",
-      "type": "stack_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 177,
+      "line": 183,
       "match": "&stack0x00000000",
       "text": "if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.rect_array[7].top) {",
       "type": "stack_ref"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 178,
-      "match": "in_stack_fffffdbc",
-      "text": "g_CDemonCameraInstance.base.position.x = (int)in_stack_fffffdbc;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 179,
-      "match": "in_stack_fffffdc0",
-      "text": "g_CDemonCameraInstance.base.position.y = (int)in_stack_fffffdc0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 180,
-      "match": "in_stack_fffffdc4",
-      "text": "g_CDemonCameraInstance.base.position.z = (int)in_stack_fffffdc4;",
-      "type": "stack_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 185,
+      "line": 191,
       "match": "&stack0xfffffdc8",
       "text": "(CVector3f *)&stack0xfffffdc8);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 211,
-      "match": "in_stack_fffffd80",
-      "text": "in_stack_fffffd80 = &local_158;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 215,
+      "line": 217,
       "match": "in_stack_fffffd7c",
-      "text": "in_stack_fffffd7c = 0x583519;",
+      "text": "in_stack_fffffd7c = &local_158;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 216,
+      "line": 221,
+      "match": "in_stack_fffffd78",
+      "text": "in_stack_fffffd78 = 0x583519;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 222,
+      "match": "in_stack_fffffd7c",
+      "text": "core_setedit_cpp_FUN_005817d0(in_stack_fffffd7c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 230,
       "match": "in_stack_fffffd80",
-      "text": "core_setedit_cpp_FUN_005817d0(in_stack_fffffd80);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 224,
-      "match": "in_stack_fffffd84",
-      "text": "in_stack_fffffd84 = (CVector3f *)0x583576;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 233,
-      "match": "in_stack_fffffd84",
-      "text": "in_stack_fffffd84 = pCVar3 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 235,
-      "match": "in_stack_fffffd80",
-      "text": "in_stack_fffffd80 = &local_f8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 236,
-      "match": "in_stack_fffffd84",
-      "text": "local_f8 = -in_stack_fffffd84->x;",
+      "text": "in_stack_fffffd80 = (CVector3f *)0x583576;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 239,
-      "match": "in_stack_fffffd7c",
-      "text": "in_stack_fffffd7c = 0x5835b5;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 240,
       "match": "in_stack_fffffd80",
-      "text": "core_setedit_cpp_FUN_005817d0(in_stack_fffffd80);",
+      "text": "in_stack_fffffd80 = pCVar3 + 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 241,
-      "match": "in_stack_fffffd84",
-      "text": "local_8c.x = -in_stack_fffffd84->x;",
+      "match": "in_stack_fffffd7c",
+      "text": "in_stack_fffffd7c = &local_f8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 242,
+      "match": "in_stack_fffffd80",
+      "text": "local_f8 = -in_stack_fffffd80->x;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 245,
+      "match": "in_stack_fffffd78",
+      "text": "in_stack_fffffd78 = 0x5835b5;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 246,
-      "match": "in_stack_fffffd84",
-      "text": "(g_CEditorToolsPtr,&local_8c,in_stack_fffffd84,2);",
+      "match": "in_stack_fffffd7c",
+      "text": "core_setedit_cpp_FUN_005817d0(in_stack_fffffd7c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 247,
-      "match": "in_stack_fffffd84",
-      "text": "in_stack_fffffd84 = pCVar3;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 250,
       "match": "in_stack_fffffd80",
-      "text": "in_stack_fffffd80 = &local_140;",
+      "text": "local_8c.x = -in_stack_fffffd80->x;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 251,
-      "match": "in_stack_fffffd84",
-      "text": "local_140 = -in_stack_fffffd84->x;",
+      "line": 252,
+      "match": "in_stack_fffffd80",
+      "text": "(g_CEditorToolsPtr,&local_8c,in_stack_fffffd80,2);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 254,
+      "line": 253,
+      "match": "in_stack_fffffd80",
+      "text": "in_stack_fffffd80 = pCVar3;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 256,
       "match": "in_stack_fffffd7c",
-      "text": "in_stack_fffffd7c = 0x583621;",
+      "text": "in_stack_fffffd7c = &local_140;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 255,
+      "line": 257,
       "match": "in_stack_fffffd80",
-      "text": "core_setedit_cpp_FUN_005817d0(in_stack_fffffd80);",
+      "text": "local_140 = -in_stack_fffffd80->x;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 260,
+      "match": "in_stack_fffffd78",
+      "text": "in_stack_fffffd78 = 0x583621;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 261,
+      "match": "in_stack_fffffd7c",
+      "text": "core_setedit_cpp_FUN_005817d0(in_stack_fffffd7c);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 261,
+      "line": 267,
       "match": "(CMatrix3x3f *)((int)",
       "text": "local_34 = (CMatrix3x3f *)((int)(pCVar2 + 1) + 0x20);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 287,
+      "line": 293,
       "match": "ROUND",
       "text": "local_e0.x = (int)ROUND(256.0f * -1.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 288,
+      "line": 294,
       "match": "ROUND",
       "text": "local_e0.y = (int)ROUND(256.0f * -1.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 289,
+      "line": 295,
       "match": "ROUND",
       "text": "local_e0.z = (int)ROUND(256.0f * 2.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 293,
+      "line": 299,
       "match": "ROUND",
       "text": "local_104.x = (int)ROUND(local_164 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 294,
+      "line": 300,
       "match": "ROUND",
       "text": "local_104.y = (int)ROUND(local_160 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 295,
+      "line": 301,
       "match": "ROUND",
       "text": "local_104.z = (int)ROUND(local_15c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 299,
+      "line": 305,
       "match": "ROUND",
       "text": "local_1b8.x = (int)ROUND(local_164 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 300,
+      "line": 306,
       "match": "ROUND",
       "text": "local_1b8.y = (int)ROUND(local_160 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 301,
+      "line": 307,
       "match": "ROUND",
       "text": "local_1b8.z = (int)ROUND(local_15c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 305,
+      "line": 311,
       "match": "ROUND",
       "text": "local_b0.x = (int)ROUND(local_164 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 306,
+      "line": 312,
       "match": "ROUND",
       "text": "local_b0.y = (int)ROUND(local_160 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 307,
+      "line": 313,
       "match": "ROUND",
       "text": "local_b0.z = (int)ROUND(local_15c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 313,
+      "line": 319,
       "match": "ROUND",
       "text": "local_1a0.x = (int)ROUND(256.0f * -0.3);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 314,
+      "line": 320,
       "match": "ROUND",
       "text": "local_1a0.y = (int)ROUND(256.0f * -0.3);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 315,
+      "line": 321,
       "match": "ROUND",
       "text": "local_1a0.z = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 319,
+      "line": 325,
       "match": "ROUND",
       "text": "local_170.x = (int)ROUND(local_164 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 320,
+      "line": 326,
       "match": "ROUND",
       "text": "local_170.y = (int)ROUND(local_160 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 321,
+      "line": 327,
       "match": "ROUND",
       "text": "local_170.z = (int)ROUND(local_15c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 325,
+      "line": 331,
       "match": "ROUND",
       "text": "local_14c.x = (int)ROUND(local_164 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 326,
+      "line": 332,
       "match": "ROUND",
       "text": "local_14c.y = (int)ROUND(local_160 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 327,
+      "line": 333,
       "match": "ROUND",
       "text": "local_14c.z = (int)ROUND(local_15c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 331,
+      "line": 337,
       "match": "ROUND",
       "text": "local_a4.x = (int)ROUND(local_164 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 332,
+      "line": 338,
       "match": "ROUND",
       "text": "local_a4.y = (int)ROUND(local_160 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 333,
+      "line": 339,
       "match": "ROUND",
       "text": "local_a4.z = (int)ROUND(local_15c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Direct stack address reference",
-      "line": 369,
-      "match": "&stack0xfffffd68",
-      "text": "piVar11 = (int *)&stack0xfffffd68;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 372,
-      "match": "(SRenderVertex *)((int)",
-      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar12 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
       "line": 375,
-      "match": "&stack0xfffffd38",
-      "text": "piVar11 = (int *)&stack0xfffffd38;",
+      "match": "&stack0xfffffd64",
+      "text": "piVar11 = (int *)&stack0xfffffd64;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
       "line": 378,
       "match": "(SRenderVertex *)((int)",
+      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar12 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 381,
+      "match": "&stack0xfffffd34",
+      "text": "piVar11 = (int *)&stack0xfffffd34;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 384,
+      "match": "(SRenderVertex *)((int)",
       "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 381,
-      "match": "in_stack_fffffd7c",
-      "text": "vertex2.projected_vertex.screen_y = in_stack_fffffd7c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 382,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 382,
-      "match": "._0_4_",
-      "text": "vertex2.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 383,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 383,
-      "match": "._4_4_",
-      "text": "vertex2.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 384,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 384,
-      "match": "._8_4_",
-      "text": "vertex2.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 385,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 385,
-      "match": "._12_4_",
-      "text": "vertex2.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 386,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 386,
-      "match": "._16_4_",
-      "text": "vertex2.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 387,
-      "match": "in_stack_fffffd80",
-      "text": "vertex2.u = (int)in_stack_fffffd80;",
+      "match": "in_stack_fffffd78",
+      "text": "vertex2.projected_vertex.screen_y = in_stack_fffffd78;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 388,
-      "match": "in_stack_fffffd84",
-      "text": "vertex2.v = (int)in_stack_fffffd84;",
+      "match": "in_stack_fffffd64",
+      "text": "vertex2.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 388,
+      "match": "._0_4_",
+      "text": "vertex2.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 389,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 389,
+      "match": "._4_4_",
+      "text": "vertex2.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 390,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 390,
+      "match": "._8_4_",
+      "text": "vertex2.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 391,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 391,
+      "match": "._12_4_",
+      "text": "vertex2.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 392,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 392,
+      "match": "._16_4_",
+      "text": "vertex2.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 393,
+      "match": "in_stack_fffffd7c",
+      "text": "vertex2.u = (int)in_stack_fffffd7c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 394,
-      "match": "in_stack_fffffd38",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2);",
+      "match": "in_stack_fffffd80",
+      "text": "vertex2.v = (int)in_stack_fffffd80;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 400,
+      "match": "in_stack_fffffd34",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd34,vertex2);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 397,
-      "match": "&stack0xfffffd68",
-      "text": "piVar11 = (int *)&stack0xfffffd68;",
+      "line": 403,
+      "match": "&stack0xfffffd64",
+      "text": "piVar11 = (int *)&stack0xfffffd64;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 400,
+      "line": 406,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 404,
-      "match": "&stack0xfffffd38",
-      "text": "piVar11 = (int *)&stack0xfffffd38;",
+      "line": 410,
+      "match": "&stack0xfffffd34",
+      "text": "piVar11 = (int *)&stack0xfffffd34;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 407,
+      "line": 413,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 410,
-      "match": "in_stack_fffffd7c",
-      "text": "vertex2_00.projected_vertex.screen_y = in_stack_fffffd7c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 411,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_00.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 411,
-      "match": "._0_4_",
-      "text": "vertex2_00.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 412,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_00.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 412,
-      "match": "._4_4_",
-      "text": "vertex2_00.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 413,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_00.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 413,
-      "match": "._8_4_",
-      "text": "vertex2_00.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 414,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_00.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 414,
-      "match": "._12_4_",
-      "text": "vertex2_00.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 415,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_00.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 415,
-      "match": "._16_4_",
-      "text": "vertex2_00.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 416,
-      "match": "in_stack_fffffd80",
-      "text": "vertex2_00.u = (int)in_stack_fffffd80;",
+      "match": "in_stack_fffffd78",
+      "text": "vertex2_00.projected_vertex.screen_y = in_stack_fffffd78;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 417,
-      "match": "in_stack_fffffd84",
-      "text": "vertex2_00.v = (int)in_stack_fffffd84;",
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_00.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 417,
+      "match": "._0_4_",
+      "text": "vertex2_00.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 418,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_00.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 418,
+      "match": "._4_4_",
+      "text": "vertex2_00.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 419,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_00.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 419,
+      "match": "._8_4_",
+      "text": "vertex2_00.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 420,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_00.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 420,
+      "match": "._12_4_",
+      "text": "vertex2_00.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 421,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_00.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 421,
+      "match": "._16_4_",
+      "text": "vertex2_00.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 422,
-      "match": "in_stack_fffffd38",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_00);",
+      "match": "in_stack_fffffd7c",
+      "text": "vertex2_00.u = (int)in_stack_fffffd7c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 423,
+      "match": "in_stack_fffffd80",
+      "text": "vertex2_00.v = (int)in_stack_fffffd80;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 428,
+      "match": "in_stack_fffffd34",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd34,vertex2_00);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 425,
-      "match": "&stack0xfffffd68",
-      "text": "piVar11 = (int *)&stack0xfffffd68;",
+      "line": 431,
+      "match": "&stack0xfffffd64",
+      "text": "piVar11 = (int *)&stack0xfffffd64;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 428,
+      "line": 434,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 432,
-      "match": "&stack0xfffffd38",
-      "text": "piVar11 = (int *)&stack0xfffffd38;",
+      "line": 438,
+      "match": "&stack0xfffffd34",
+      "text": "piVar11 = (int *)&stack0xfffffd34;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 435,
+      "line": 441,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 438,
-      "match": "in_stack_fffffd7c",
-      "text": "vertex2_01.projected_vertex.screen_y = in_stack_fffffd7c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 439,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_01.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 439,
-      "match": "._0_4_",
-      "text": "vertex2_01.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 440,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_01.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 440,
-      "match": "._4_4_",
-      "text": "vertex2_01.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 441,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_01.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 441,
-      "match": "._8_4_",
-      "text": "vertex2_01.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 442,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_01.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 442,
-      "match": "._12_4_",
-      "text": "vertex2_01.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 443,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_01.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 443,
-      "match": "._16_4_",
-      "text": "vertex2_01.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 444,
-      "match": "in_stack_fffffd80",
-      "text": "vertex2_01.u = (int)in_stack_fffffd80;",
+      "match": "in_stack_fffffd78",
+      "text": "vertex2_01.projected_vertex.screen_y = in_stack_fffffd78;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 445,
-      "match": "in_stack_fffffd84",
-      "text": "vertex2_01.v = (int)in_stack_fffffd84;",
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_01.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 445,
+      "match": "._0_4_",
+      "text": "vertex2_01.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 446,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_01.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 446,
+      "match": "._4_4_",
+      "text": "vertex2_01.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 447,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_01.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 447,
+      "match": "._8_4_",
+      "text": "vertex2_01.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 448,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_01.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 448,
+      "match": "._12_4_",
+      "text": "vertex2_01.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 449,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_01.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 449,
+      "match": "._16_4_",
+      "text": "vertex2_01.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 450,
-      "match": "in_stack_fffffd38",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_01);",
+      "match": "in_stack_fffffd7c",
+      "text": "vertex2_01.u = (int)in_stack_fffffd7c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 451,
+      "match": "in_stack_fffffd80",
+      "text": "vertex2_01.v = (int)in_stack_fffffd80;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 456,
+      "match": "in_stack_fffffd34",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd34,vertex2_01);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 453,
-      "match": "&stack0xfffffd68",
-      "text": "piVar11 = (int *)&stack0xfffffd68;",
+      "line": 459,
+      "match": "&stack0xfffffd64",
+      "text": "piVar11 = (int *)&stack0xfffffd64;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 456,
+      "line": 462,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 460,
-      "match": "&stack0xfffffd38",
-      "text": "piVar11 = (int *)&stack0xfffffd38;",
+      "line": 466,
+      "match": "&stack0xfffffd34",
+      "text": "piVar11 = (int *)&stack0xfffffd34;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 463,
+      "line": 469,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 466,
-      "match": "in_stack_fffffd7c",
-      "text": "vertex2_02.projected_vertex.screen_y = in_stack_fffffd7c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 467,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_02.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 467,
-      "match": "._0_4_",
-      "text": "vertex2_02.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 468,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_02.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 468,
-      "match": "._4_4_",
-      "text": "vertex2_02.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 469,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_02.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 469,
-      "match": "._8_4_",
-      "text": "vertex2_02.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 470,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_02.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 470,
-      "match": "._12_4_",
-      "text": "vertex2_02.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 471,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_02.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 471,
-      "match": "._16_4_",
-      "text": "vertex2_02.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 472,
-      "match": "in_stack_fffffd80",
-      "text": "vertex2_02.u = (int)in_stack_fffffd80;",
+      "match": "in_stack_fffffd78",
+      "text": "vertex2_02.projected_vertex.screen_y = in_stack_fffffd78;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 473,
-      "match": "in_stack_fffffd84",
-      "text": "vertex2_02.v = (int)in_stack_fffffd84;",
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_02.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 473,
+      "match": "._0_4_",
+      "text": "vertex2_02.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 474,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_02.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 474,
+      "match": "._4_4_",
+      "text": "vertex2_02.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 475,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_02.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 475,
+      "match": "._8_4_",
+      "text": "vertex2_02.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 476,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_02.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 476,
+      "match": "._12_4_",
+      "text": "vertex2_02.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 477,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_02.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 477,
+      "match": "._16_4_",
+      "text": "vertex2_02.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 478,
-      "match": "in_stack_fffffd38",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_02);",
+      "match": "in_stack_fffffd7c",
+      "text": "vertex2_02.u = (int)in_stack_fffffd7c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 479,
+      "match": "in_stack_fffffd80",
+      "text": "vertex2_02.v = (int)in_stack_fffffd80;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 484,
+      "match": "in_stack_fffffd34",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd34,vertex2_02);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 481,
-      "match": "&stack0xfffffd68",
-      "text": "piVar11 = (int *)&stack0xfffffd68;",
+      "line": 487,
+      "match": "&stack0xfffffd64",
+      "text": "piVar11 = (int *)&stack0xfffffd64;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 484,
+      "line": 490,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 488,
-      "match": "&stack0xfffffd38",
-      "text": "piVar11 = (int *)&stack0xfffffd38;",
+      "line": 494,
+      "match": "&stack0xfffffd34",
+      "text": "piVar11 = (int *)&stack0xfffffd34;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 491,
+      "line": 497,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 494,
-      "match": "in_stack_fffffd7c",
-      "text": "vertex2_03.projected_vertex.screen_y = in_stack_fffffd7c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 495,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_03.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 495,
-      "match": "._0_4_",
-      "text": "vertex2_03.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 496,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_03.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 496,
-      "match": "._4_4_",
-      "text": "vertex2_03.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 497,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_03.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 497,
-      "match": "._8_4_",
-      "text": "vertex2_03.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 498,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_03.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 498,
-      "match": "._12_4_",
-      "text": "vertex2_03.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 499,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_03.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 499,
-      "match": "._16_4_",
-      "text": "vertex2_03.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 500,
-      "match": "in_stack_fffffd80",
-      "text": "vertex2_03.u = (int)in_stack_fffffd80;",
+      "match": "in_stack_fffffd78",
+      "text": "vertex2_03.projected_vertex.screen_y = in_stack_fffffd78;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 501,
-      "match": "in_stack_fffffd84",
-      "text": "vertex2_03.v = (int)in_stack_fffffd84;",
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_03.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 501,
+      "match": "._0_4_",
+      "text": "vertex2_03.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 502,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_03.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 502,
+      "match": "._4_4_",
+      "text": "vertex2_03.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 503,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_03.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 503,
+      "match": "._8_4_",
+      "text": "vertex2_03.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 504,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_03.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 504,
+      "match": "._12_4_",
+      "text": "vertex2_03.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 505,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_03.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 505,
+      "match": "._16_4_",
+      "text": "vertex2_03.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 506,
-      "match": "in_stack_fffffd38",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_03);",
+      "match": "in_stack_fffffd7c",
+      "text": "vertex2_03.u = (int)in_stack_fffffd7c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 507,
+      "match": "in_stack_fffffd80",
+      "text": "vertex2_03.v = (int)in_stack_fffffd80;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 512,
+      "match": "in_stack_fffffd34",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd34,vertex2_03);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 509,
-      "match": "&stack0xfffffd68",
-      "text": "piVar11 = (int *)&stack0xfffffd68;",
+      "line": 515,
+      "match": "&stack0xfffffd64",
+      "text": "piVar11 = (int *)&stack0xfffffd64;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 512,
+      "line": 518,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 516,
-      "match": "&stack0xfffffd38",
-      "text": "piVar11 = (int *)&stack0xfffffd38;",
+      "line": 522,
+      "match": "&stack0xfffffd34",
+      "text": "piVar11 = (int *)&stack0xfffffd34;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 519,
+      "line": 525,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 522,
-      "match": "in_stack_fffffd7c",
-      "text": "vertex2_04.projected_vertex.screen_y = in_stack_fffffd7c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 523,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_04.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 523,
-      "match": "._0_4_",
-      "text": "vertex2_04.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 524,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_04.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 524,
-      "match": "._4_4_",
-      "text": "vertex2_04.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 525,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_04.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 525,
-      "match": "._8_4_",
-      "text": "vertex2_04.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 526,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_04.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 526,
-      "match": "._12_4_",
-      "text": "vertex2_04.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 527,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_04.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 527,
-      "match": "._16_4_",
-      "text": "vertex2_04.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 528,
-      "match": "in_stack_fffffd80",
-      "text": "vertex2_04.u = (int)in_stack_fffffd80;",
+      "match": "in_stack_fffffd78",
+      "text": "vertex2_04.projected_vertex.screen_y = in_stack_fffffd78;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 529,
-      "match": "in_stack_fffffd84",
-      "text": "vertex2_04.v = (int)in_stack_fffffd84;",
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_04.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 529,
+      "match": "._0_4_",
+      "text": "vertex2_04.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 530,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_04.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 530,
+      "match": "._4_4_",
+      "text": "vertex2_04.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 531,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_04.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 531,
+      "match": "._8_4_",
+      "text": "vertex2_04.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 532,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_04.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 532,
+      "match": "._12_4_",
+      "text": "vertex2_04.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 533,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_04.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 533,
+      "match": "._16_4_",
+      "text": "vertex2_04.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 534,
-      "match": "in_stack_fffffd38",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_04);",
+      "match": "in_stack_fffffd7c",
+      "text": "vertex2_04.u = (int)in_stack_fffffd7c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 535,
+      "match": "in_stack_fffffd80",
+      "text": "vertex2_04.v = (int)in_stack_fffffd80;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 540,
+      "match": "in_stack_fffffd34",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd34,vertex2_04);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 537,
-      "match": "&stack0xfffffd68",
-      "text": "piVar11 = (int *)&stack0xfffffd68;",
+      "line": 543,
+      "match": "&stack0xfffffd64",
+      "text": "piVar11 = (int *)&stack0xfffffd64;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 540,
+      "line": 546,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 544,
-      "match": "&stack0xfffffd38",
-      "text": "piVar11 = (int *)&stack0xfffffd38;",
+      "line": 550,
+      "match": "&stack0xfffffd34",
+      "text": "piVar11 = (int *)&stack0xfffffd34;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 547,
+      "line": 553,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 550,
-      "match": "in_stack_fffffd7c",
-      "text": "vertex2_05.projected_vertex.screen_y = in_stack_fffffd7c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 551,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_05.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 551,
-      "match": "._0_4_",
-      "text": "vertex2_05.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 552,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_05.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 552,
-      "match": "._4_4_",
-      "text": "vertex2_05.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 553,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_05.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 553,
-      "match": "._8_4_",
-      "text": "vertex2_05.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 554,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_05.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 554,
-      "match": "._12_4_",
-      "text": "vertex2_05.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 555,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_05.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 555,
-      "match": "._16_4_",
-      "text": "vertex2_05.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 556,
-      "match": "in_stack_fffffd80",
-      "text": "vertex2_05.u = (int)in_stack_fffffd80;",
+      "match": "in_stack_fffffd78",
+      "text": "vertex2_05.projected_vertex.screen_y = in_stack_fffffd78;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 557,
-      "match": "in_stack_fffffd84",
-      "text": "vertex2_05.v = (int)in_stack_fffffd84;",
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_05.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 557,
+      "match": "._0_4_",
+      "text": "vertex2_05.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 558,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_05.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 558,
+      "match": "._4_4_",
+      "text": "vertex2_05.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 559,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_05.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 559,
+      "match": "._8_4_",
+      "text": "vertex2_05.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 560,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_05.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 560,
+      "match": "._12_4_",
+      "text": "vertex2_05.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 561,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_05.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 561,
+      "match": "._16_4_",
+      "text": "vertex2_05.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 562,
-      "match": "in_stack_fffffd38",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_05);",
+      "match": "in_stack_fffffd7c",
+      "text": "vertex2_05.u = (int)in_stack_fffffd7c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 563,
+      "match": "in_stack_fffffd80",
+      "text": "vertex2_05.v = (int)in_stack_fffffd80;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 568,
+      "match": "in_stack_fffffd34",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd34,vertex2_05);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 565,
-      "match": "&stack0xfffffd68",
-      "text": "piVar11 = (int *)&stack0xfffffd68;",
+      "line": 571,
+      "match": "&stack0xfffffd64",
+      "text": "piVar11 = (int *)&stack0xfffffd64;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 568,
+      "line": 574,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 572,
-      "match": "&stack0xfffffd38",
-      "text": "piVar11 = (int *)&stack0xfffffd38;",
+      "line": 578,
+      "match": "&stack0xfffffd34",
+      "text": "piVar11 = (int *)&stack0xfffffd34;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 575,
+      "line": 581,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 578,
-      "match": "in_stack_fffffd7c",
-      "text": "vertex2_06.projected_vertex.screen_y = in_stack_fffffd7c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 579,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_06.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 579,
-      "match": "._0_4_",
-      "text": "vertex2_06.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 580,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_06.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 580,
-      "match": "._4_4_",
-      "text": "vertex2_06.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 581,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_06.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 581,
-      "match": "._8_4_",
-      "text": "vertex2_06.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 582,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_06.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 582,
-      "match": "._12_4_",
-      "text": "vertex2_06.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 583,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_06.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 583,
-      "match": "._16_4_",
-      "text": "vertex2_06.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 584,
-      "match": "in_stack_fffffd80",
-      "text": "vertex2_06.u = (int)in_stack_fffffd80;",
+      "match": "in_stack_fffffd78",
+      "text": "vertex2_06.projected_vertex.screen_y = in_stack_fffffd78;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 585,
-      "match": "in_stack_fffffd84",
-      "text": "vertex2_06.v = (int)in_stack_fffffd84;",
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_06.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 585,
+      "match": "._0_4_",
+      "text": "vertex2_06.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 586,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_06.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 586,
+      "match": "._4_4_",
+      "text": "vertex2_06.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 587,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_06.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 587,
+      "match": "._8_4_",
+      "text": "vertex2_06.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 588,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_06.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 588,
+      "match": "._12_4_",
+      "text": "vertex2_06.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 589,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_06.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 589,
+      "match": "._16_4_",
+      "text": "vertex2_06.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 590,
-      "match": "in_stack_fffffd38",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_06);",
+      "match": "in_stack_fffffd7c",
+      "text": "vertex2_06.u = (int)in_stack_fffffd7c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 591,
+      "match": "in_stack_fffffd80",
+      "text": "vertex2_06.v = (int)in_stack_fffffd80;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 596,
+      "match": "in_stack_fffffd34",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd34,vertex2_06);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 593,
-      "match": "&stack0xfffffd68",
-      "text": "piVar11 = (int *)&stack0xfffffd68;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 596,
-      "match": "(SRenderVertex *)((int)",
-      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar12 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
       "line": 599,
-      "match": "&stack0xfffffd38",
-      "text": "piVar11 = (int *)&stack0xfffffd38;",
+      "match": "&stack0xfffffd64",
+      "text": "piVar11 = (int *)&stack0xfffffd64;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
       "line": 602,
       "match": "(SRenderVertex *)((int)",
+      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar12 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 605,
+      "match": "&stack0xfffffd34",
+      "text": "piVar11 = (int *)&stack0xfffffd34;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 608,
+      "match": "(SRenderVertex *)((int)",
       "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 605,
-      "match": "in_stack_fffffd7c",
-      "text": "vertex2_07.projected_vertex.screen_y = in_stack_fffffd7c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 606,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_07.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 606,
-      "match": "._0_4_",
-      "text": "vertex2_07.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 607,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_07.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 607,
-      "match": "._4_4_",
-      "text": "vertex2_07.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 608,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_07.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 608,
-      "match": "._8_4_",
-      "text": "vertex2_07.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 609,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_07.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 609,
-      "match": "._12_4_",
-      "text": "vertex2_07.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 610,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_07.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 610,
-      "match": "._16_4_",
-      "text": "vertex2_07.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 611,
-      "match": "in_stack_fffffd80",
-      "text": "vertex2_07.u = (int)in_stack_fffffd80;",
+      "match": "in_stack_fffffd78",
+      "text": "vertex2_07.projected_vertex.screen_y = in_stack_fffffd78;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 612,
-      "match": "in_stack_fffffd84",
-      "text": "vertex2_07.v = (int)in_stack_fffffd84;",
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_07.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 612,
+      "match": "._0_4_",
+      "text": "vertex2_07.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 613,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_07.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 613,
+      "match": "._4_4_",
+      "text": "vertex2_07.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 614,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_07.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 614,
+      "match": "._8_4_",
+      "text": "vertex2_07.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 615,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_07.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 615,
+      "match": "._12_4_",
+      "text": "vertex2_07.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 616,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_07.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 616,
+      "match": "._16_4_",
+      "text": "vertex2_07.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 617,
-      "match": "in_stack_fffffd38",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_07);",
+      "match": "in_stack_fffffd7c",
+      "text": "vertex2_07.u = (int)in_stack_fffffd7c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 618,
+      "match": "in_stack_fffffd80",
+      "text": "vertex2_07.v = (int)in_stack_fffffd80;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 623,
+      "match": "in_stack_fffffd34",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd34,vertex2_07);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 620,
-      "match": "&stack0xfffffd68",
-      "text": "piVar11 = (int *)&stack0xfffffd68;",
+      "line": 626,
+      "match": "&stack0xfffffd64",
+      "text": "piVar11 = (int *)&stack0xfffffd64;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 623,
+      "line": 629,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 627,
-      "match": "&stack0xfffffd38",
-      "text": "piVar11 = (int *)&stack0xfffffd38;",
+      "line": 633,
+      "match": "&stack0xfffffd34",
+      "text": "piVar11 = (int *)&stack0xfffffd34;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 630,
+      "line": 636,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 633,
-      "match": "in_stack_fffffd7c",
-      "text": "vertex2_08.projected_vertex.screen_y = in_stack_fffffd7c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 634,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_08.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 634,
-      "match": "._0_4_",
-      "text": "vertex2_08.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 635,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_08.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 635,
-      "match": "._4_4_",
-      "text": "vertex2_08.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 636,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_08.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 636,
-      "match": "._8_4_",
-      "text": "vertex2_08.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 637,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_08.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 637,
-      "match": "._12_4_",
-      "text": "vertex2_08.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 638,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_08.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 638,
-      "match": "._16_4_",
-      "text": "vertex2_08.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 639,
-      "match": "in_stack_fffffd80",
-      "text": "vertex2_08.u = (int)in_stack_fffffd80;",
+      "match": "in_stack_fffffd78",
+      "text": "vertex2_08.projected_vertex.screen_y = in_stack_fffffd78;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 640,
-      "match": "in_stack_fffffd84",
-      "text": "vertex2_08.v = (int)in_stack_fffffd84;",
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_08.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 640,
+      "match": "._0_4_",
+      "text": "vertex2_08.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 641,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_08.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 641,
+      "match": "._4_4_",
+      "text": "vertex2_08.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 642,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_08.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 642,
+      "match": "._8_4_",
+      "text": "vertex2_08.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 643,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_08.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 643,
+      "match": "._12_4_",
+      "text": "vertex2_08.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 644,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_08.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 644,
+      "match": "._16_4_",
+      "text": "vertex2_08.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 645,
-      "match": "in_stack_fffffd38",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_08);",
+      "match": "in_stack_fffffd7c",
+      "text": "vertex2_08.u = (int)in_stack_fffffd7c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 646,
+      "match": "in_stack_fffffd80",
+      "text": "vertex2_08.v = (int)in_stack_fffffd80;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 651,
+      "match": "in_stack_fffffd34",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd34,vertex2_08);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 648,
-      "match": "&stack0xfffffd68",
-      "text": "piVar11 = (int *)&stack0xfffffd68;",
+      "line": 654,
+      "match": "&stack0xfffffd64",
+      "text": "piVar11 = (int *)&stack0xfffffd64;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 651,
+      "line": 657,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 655,
-      "match": "&stack0xfffffd38",
-      "text": "piVar11 = (int *)&stack0xfffffd38;",
+      "line": 661,
+      "match": "&stack0xfffffd34",
+      "text": "piVar11 = (int *)&stack0xfffffd34;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 658,
+      "line": 664,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 661,
-      "match": "in_stack_fffffd7c",
-      "text": "vertex2_09.projected_vertex.screen_y = in_stack_fffffd7c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 662,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_09.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 662,
-      "match": "._0_4_",
-      "text": "vertex2_09.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 663,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_09.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 663,
-      "match": "._4_4_",
-      "text": "vertex2_09.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 664,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_09.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 664,
-      "match": "._8_4_",
-      "text": "vertex2_09.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 665,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_09.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 665,
-      "match": "._12_4_",
-      "text": "vertex2_09.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 666,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_09.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 666,
-      "match": "._16_4_",
-      "text": "vertex2_09.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 667,
-      "match": "in_stack_fffffd80",
-      "text": "vertex2_09.u = (int)in_stack_fffffd80;",
+      "match": "in_stack_fffffd78",
+      "text": "vertex2_09.projected_vertex.screen_y = in_stack_fffffd78;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 668,
-      "match": "in_stack_fffffd84",
-      "text": "vertex2_09.v = (int)in_stack_fffffd84;",
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_09.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 668,
+      "match": "._0_4_",
+      "text": "vertex2_09.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 669,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_09.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 669,
+      "match": "._4_4_",
+      "text": "vertex2_09.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 670,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_09.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 670,
+      "match": "._8_4_",
+      "text": "vertex2_09.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 671,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_09.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 671,
+      "match": "._12_4_",
+      "text": "vertex2_09.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 672,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_09.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 672,
+      "match": "._16_4_",
+      "text": "vertex2_09.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 673,
-      "match": "in_stack_fffffd38",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_09);",
+      "match": "in_stack_fffffd7c",
+      "text": "vertex2_09.u = (int)in_stack_fffffd7c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 674,
+      "match": "in_stack_fffffd80",
+      "text": "vertex2_09.v = (int)in_stack_fffffd80;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 679,
+      "match": "in_stack_fffffd34",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd34,vertex2_09);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 676,
-      "match": "&stack0xfffffd68",
-      "text": "piVar11 = (int *)&stack0xfffffd68;",
+      "line": 682,
+      "match": "&stack0xfffffd64",
+      "text": "piVar11 = (int *)&stack0xfffffd64;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 679,
+      "line": 685,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 683,
-      "match": "&stack0xfffffd38",
-      "text": "piVar11 = (int *)&stack0xfffffd38;",
+      "line": 689,
+      "match": "&stack0xfffffd34",
+      "text": "piVar11 = (int *)&stack0xfffffd34;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 686,
+      "line": 692,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 689,
-      "match": "in_stack_fffffd7c",
-      "text": "vertex2_10.projected_vertex.screen_y = in_stack_fffffd7c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 690,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_10.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 690,
-      "match": "._0_4_",
-      "text": "vertex2_10.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 691,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_10.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 691,
-      "match": "._4_4_",
-      "text": "vertex2_10.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 692,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_10.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 692,
-      "match": "._8_4_",
-      "text": "vertex2_10.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 693,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_10.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 693,
-      "match": "._12_4_",
-      "text": "vertex2_10.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 694,
-      "match": "in_stack_fffffd68",
-      "text": "vertex2_10.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 694,
-      "match": "._16_4_",
-      "text": "vertex2_10.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 695,
-      "match": "in_stack_fffffd80",
-      "text": "vertex2_10.u = (int)in_stack_fffffd80;",
+      "match": "in_stack_fffffd78",
+      "text": "vertex2_10.projected_vertex.screen_y = in_stack_fffffd78;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 696,
-      "match": "in_stack_fffffd84",
-      "text": "vertex2_10.v = (int)in_stack_fffffd84;",
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_10.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 696,
+      "match": "._0_4_",
+      "text": "vertex2_10.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 697,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_10.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 697,
+      "match": "._4_4_",
+      "text": "vertex2_10.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 698,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_10.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 698,
+      "match": "._8_4_",
+      "text": "vertex2_10.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 699,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_10.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 699,
+      "match": "._12_4_",
+      "text": "vertex2_10.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 700,
+      "match": "in_stack_fffffd64",
+      "text": "vertex2_10.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 700,
+      "match": "._16_4_",
+      "text": "vertex2_10.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 701,
-      "match": "in_stack_fffffd38",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_10);",
+      "match": "in_stack_fffffd7c",
+      "text": "vertex2_10.u = (int)in_stack_fffffd7c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 702,
+      "match": "in_stack_fffffd80",
+      "text": "vertex2_10.v = (int)in_stack_fffffd80;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 707,
+      "match": "in_stack_fffffd34",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd34,vertex2_10);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 726,
+      "line": 732,
       "match": "&stack0xfffffdbc",
       "text": "core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)&stack0xfffffdbc);",
       "type": "stack_ref"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 755,
-      "match": "in_stack_fffffdbc",
-      "text": "in_stack_fffffdbc = 8.10605e-39;",
-      "type": "stack_param"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
-      "line": 755,
-      "match": "8.10605e-39",
-      "text": "in_stack_fffffdbc = 8.10605e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 756,
-      "match": "in_stack_fffffdc0",
-      "text": "in_stack_fffffdc0 = g_CKeysPtr;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 761,
-      "match": "in_stack_fffffdc4",
-      "text": "in_stack_fffffdc4 = 8.106091e-39;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 761,
+      "line": 766,
       "match": "8.106091e-39",
-      "text": "in_stack_fffffdc4 = 8.106091e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 766,
-      "match": "in_stack_fffffdcc",
-      "text": "in_stack_fffffdcc = 8.106132e-39;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 766,
-      "match": "8.106132e-39",
-      "text": "in_stack_fffffdcc = 8.106132e-39;",
+      "text": "fVar17 = 8.106091e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 786,
-      "match": "4.06377e-44",
-      "text": "fVar17 = 4.06377e-44;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 791,
-      "match": "&stack0xfffffdd8",
-      "text": "core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)&stack0xfffffdd8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 792,
-      "match": "&stack0xfffffdd8",
-      "text": "if ((SVDBox *)&stack0xfffffdd8 != pSVar6) {",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 796,
+      "line": 794,
       "match": "8.106946e-39",
-      "text": "fVar18 = 8.106946e-39;",
+      "text": "fVar20 = 8.106946e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Direct stack address reference",
-      "line": 800,
+      "line": 798,
       "match": "&stack0xfffffdd8",
-      "text": "core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)&stack0xfffffdd8);",
+      "text": "this_ptr_00 = (CSlew *)&stack0xfffffdd8;",
       "type": "stack_ref"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 799,
+      "match": "8.107024e-39",
+      "text": "fVar21 = 8.107024e-39;",
+      "type": "suspect_float"
     },
     {
       "description": "Direct stack address reference",
@@ -3903,67 +3650,46 @@
       "type": "stack_ref"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 873,
-      "match": "in_stack_fffffdbc",
-      "text": "(pSVar6->position).x = in_stack_fffffdbc;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 874,
-      "match": "in_stack_fffffdc0",
-      "text": "(pSVar6->position).y = (float)in_stack_fffffdc0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 875,
-      "match": "in_stack_fffffdc4",
-      "text": "(pSVar6->position).z = in_stack_fffffdc4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 879,
-      "match": "in_stack_fffffdcc",
-      "text": "local_bc.y = in_stack_fffffdcc;",
-      "type": "stack_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 996,
+      "line": 997,
       "match": "&stack0xfffffe0c",
-      "text": "(local_1c,&local_110,(CVector3f *)&stack0xfffffe0c);",
+      "text": "(CVector3f *)&stack0xfffffe0c);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 998,
+      "line": 999,
       "match": "&stack0xfffffe18",
       "text": "(local_1c,&local_98,(CVector3f *)&stack0xfffffe18);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 1003,
+      "line": 1004,
       "match": "&stack0xfffffdf4",
       "text": "((CBoundingBox3D *)&stack0xfffffdf4,&local_110,&local_98,",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1010,
+      "line": 1011,
       "match": "(CVector3f *)((int)",
       "text": "pCVar3 = (CVector3f *)((int)(pCVar3 + 5) + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1012,
+      "line": 1013,
       "match": "(CMatrix3x3f *)((int)",
       "text": "local_1c = (CMatrix3x3f *)((int)(local_1c + 1) + 0x20);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Calls clipAndDrawLine2D - decompiler cannot recognize by-value pattern",
+      "line": 1,
+      "match": "clipAndDrawLine2D",
+      "text": "Function calls by-value struct passing functions",
+      "type": "byvalue_struct_passing"
     }
   ]
 }

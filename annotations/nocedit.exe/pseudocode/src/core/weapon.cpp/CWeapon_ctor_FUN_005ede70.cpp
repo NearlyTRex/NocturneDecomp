@@ -9,35 +9,34 @@
 CWeapon * __cdecl core_weapon_cpp_CWeapon_ctor_FUN_005ede70(CWeapon *this_ptr)
 
 {
-  CDemonActor *pCVar1;
-  CKeyFramedModelInstance *pCVar2;
-  CBox *pCVar3;
+  CWeapon *pCVar1;
+  CWeapon_ptr_344 pCVar2;
+  CWeapon_ptr_776 pCVar3;
   
-  pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
-  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
-                     ((CKeyFramedModelInstance *)(pCVar1 + 1));
-  pCVar3 = core_box_cpp_CBox_ctor_FUN_0041dc50((CBox *)(pCVar2[1].part_visibility_flags + 0xd));
-  pCVar3[-1].extents.x = (float)&g_CWeaponVTable;
-  pCVar3[1].position.y = 5.0;
-  pCVar3[-1].scrape_points[7].raytrace_normal.z = 0.0;
-  pCVar3[-1].scrape_points[7].local_position.y = 0.0;
-  pCVar3[-1].is_valid = 0;
-  pCVar3[1].position.z = 2.8026e-44;
-  pCVar3[1].orientation.x = 0.0;
-  pCVar3[-1].linear_velocity_local.y = 1.4013e-45;
-  pCVar3[-1].scrape_points[7].local_position.z = 0.0;
-  pCVar3[-1].scrape_points[7].transformed_position.x = 0.0;
-  pCVar3[-1].scrape_points[7].transformed_position.y = 0.0;
-  pCVar3[-1].scrape_points[7].transformed_position.z = 0.0;
-  pCVar3[-1].scrape_points[7].previous_position.x = 200.0;
-  pCVar3[-1].scrape_points[7].previous_position.y = 0.0;
-  pCVar3[-1].scrape_points[7].previous_position.z = 1.4013e-45;
-  pCVar3[-1].scrape_points[7].raytrace_intersection = 3.57331e-43;
-  pCVar3[-1].scrape_points[7].raytrace_normal.x = 0.0;
-  pCVar3[-1].scrape_points[7].raytrace_normal.y = 0.0;
+  pCVar1 = (CWeapon *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
+  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&pCVar1->model);
+  pCVar3 = core_box_cpp_CBox_ctor_FUN_0041dc50(&ADJ(pCVar2)->physics_box);
+  ADJ(pCVar3)->base.vtable._ub = &g_CWeaponVTable;
+  ADJ(pCVar3)->weight = 5.0;
+  ADJ(pCVar3)->fire_cooldown_timer = 0.0;
+  ADJ(pCVar3)->weapon_state = 0;
+  ADJ(pCVar3)->carried_by_actor = (CDemonActor *)0x0;
+  ADJ(pCVar3)->ammo_count = 0x14;
+  ADJ(pCVar3)->ammo_type = 0;
+  ADJ(pCVar3)->base.collision_disabled = 1;
+  ADJ(pCVar3)->is_spread_weapon = 0;
+  ADJ(pCVar3)->fire_mode = 0;
+  ADJ(pCVar3)->weapon_type = 0;
+  ADJ(pCVar3)->can_penetrate = 0;
+  ADJ(pCVar3)->bolt_velocity = 200.0;
+  ADJ(pCVar3)->fire_cooldown = 0.0;
+  ADJ(pCVar3)->can_attach_light = 1;
+  (ADJ(pCVar3)->muzzle_flash_offset).x = 3.57331e-43;
+  (ADJ(pCVar3)->muzzle_flash_offset).y = 0.0;
+  (ADJ(pCVar3)->muzzle_flash_offset).z = 0.0;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-            ((CKeyFramedModelInstance *)&pCVar3[-1].extents.y,"gat.kfm");
-  pCVar3[1].orientation.y = 0.0;
-  pCVar3[1].orientation.z = 0.0;
-  return (CWeapon *)&pCVar3[-2].scrape_points[4].raytrace_intersection;
+            (&ADJ(pCVar3)->model,"gat.kfm");
+  ADJ(pCVar3)->sim_timer = 0.0;
+  ADJ(pCVar3)->is_rendered = 0;
+  return ADJ(pCVar3);
 }

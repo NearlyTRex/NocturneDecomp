@@ -6,7 +6,7 @@
 // Structure: CBitmap
 // Ghidra size: 0x28 (40 bytes)
 typedef struct CBitmap {
-    char unk[20]; // 0x0
+    char name[20]; // 0x0
     short width; // 0x14
     short height; // 0x16
     short bytes_per_row; // 0x18

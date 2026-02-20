@@ -16,7 +16,7 @@ extern CDemonActorType g_CDripClassInfo;
 extern CDemonActorType g_CDroneClassInfo;
 
 // CKeyFramedModelInstance
-extern CKeyFramedModelInstance DAT_02c9b170;
+extern CKeyFramedModelInstance CKeyFramedModelInstance_02c9b170;
 
 // SFace*[5000]
 extern SFace* g_CapturedFacePointers[5000];

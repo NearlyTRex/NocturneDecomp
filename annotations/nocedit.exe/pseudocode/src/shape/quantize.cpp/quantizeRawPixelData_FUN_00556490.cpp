@@ -30,7 +30,8 @@ int __cdecl shape_quantize_cpp_quantizeRawPixelData_FUN_00556490(uchar *src_pixe
   pCVar1 = (CBitmap *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x28,"..\\shape\\quantize.cpp",0x3ec);
   local_14 = (CBitmap *)0x0;
   if (pCVar1 != (CBitmap *)0x0) {
-    local_14 = shape_quantize_cpp_CBitmap_ctor_FUN_00556a00(pCVar1);
+    local_14 = shape_quantize_cpp_CBitmap_ctor_FUN_00556a00
+                         (pCVar1,(uint)(ushort)width,(uint)(ushort)height,bit_depth & 0xff);
   }
   if (local_14 == (CBitmap *)0x0) {
     _sprintf

@@ -1,0 +1,20 @@
+#pragma once
+
+// Forward declarations
+struct CPassenger;
+
+// Dependencies
+#include "system/basetypes.h"
+
+// Adjusted pointer: CPassenger_ptr_129044
+// 32-bit pointer to CPassenger
+struct CPassenger_ptr_129044 {
+    void *_raw;
+    CPassenger_ptr_129044() : _raw(0) {}
+    template<typename T> CPassenger_ptr_129044(T* p) : _raw((void*)p) {}
+    template<typename T> CPassenger_ptr_129044& operator=(T* p) { _raw = (void*)p; return *this; }
+    CPassenger* operator->() const { return (CPassenger*)_raw; }
+    template<typename T> operator T*() const { return (T*)_raw; }
+    explicit operator bool() const { return _raw != 0; }
+};
+

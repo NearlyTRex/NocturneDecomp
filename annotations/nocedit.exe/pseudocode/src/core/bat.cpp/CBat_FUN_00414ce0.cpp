@@ -27,6 +27,8 @@ void __cdecl core_bat_cpp_CBat_FUN_00414ce0(CBat *this_ptr)
     }
   }
   this_ptr->param = local_20;
-  core_course_cpp_CCourse_FUN_00442710(&this_ptr->course);
+  core_course_cpp_CCourse_evaluate_FUN_00442710
+            (&this_ptr->course,this_ptr->param,&(this_ptr->base).location.position,
+             &(this_ptr->base).orient.vec);
   return;
 }

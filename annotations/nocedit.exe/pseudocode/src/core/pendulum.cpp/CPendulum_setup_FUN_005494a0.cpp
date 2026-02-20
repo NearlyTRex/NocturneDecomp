@@ -29,17 +29,17 @@ void __cdecl core_pendulum_cpp_CPendulum_setup_FUN_005494a0(CPendulum *this_ptr)
     CStack_4c.max.y = (pCVar3->max).y;
     CStack_4c.max.z = (pCVar3->max).z;
   }
-  *(float *)this_ptr->unk3 =
+  this_ptr->period =
        SQRT((CStack_4c.max.y - CStack_4c.min.y) * (float)0.03125) * (float)6.2831853070000001;
   fVar1 = (CStack_4c.min.y + CStack_4c.max.y) * 0.5f;
   fVar2 = (CStack_4c.min.z + CStack_4c.max.z) * 0.5f;
-  if ((float *)this_ptr->unk2 == afStack_10) {
-    *(float *)(this_ptr->unk2 + 4) = CStack_4c.min.y;
+  if (&this_ptr->swing_tip_local == (CVector3f *)afStack_10) {
+    (this_ptr->swing_tip_local).y = CStack_4c.min.y;
     return;
   }
-  *(float *)this_ptr->unk2 = (CStack_4c.min.x + CStack_4c.max.x) * 0.5f;
-  *(float *)(this_ptr->unk2 + 4) = fVar1;
-  *(float *)(this_ptr->unk2 + 8) = fVar2;
-  *(float *)(this_ptr->unk2 + 4) = CStack_4c.min.y;
+  (this_ptr->swing_tip_local).x = (CStack_4c.min.x + CStack_4c.max.x) * 0.5f;
+  (this_ptr->swing_tip_local).y = fVar1;
+  (this_ptr->swing_tip_local).z = fVar2;
+  (this_ptr->swing_tip_local).y = CStack_4c.min.y;
   return;
 }

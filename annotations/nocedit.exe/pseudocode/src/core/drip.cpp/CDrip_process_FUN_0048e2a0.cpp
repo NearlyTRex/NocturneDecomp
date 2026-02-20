@@ -83,7 +83,8 @@ void __cdecl core_drip_cpp_CDrip_process_FUN_0048e2a0(CDrip *this_ptr,float delt
           fStack_38 = (float)(fVar9 * (float10)20.0f);
           fStack_3c = (float)(fVar6 * (float10)20.0f * (float10)fStack_18);
           fStack_34 = (float)(fVar8 * (float10)20.0f * (float10)fStack_18);
-          core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&DAT_02c9b170);
+          core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
+                    (&CKeyFramedModelInstance_02c9b170);
           iVar4 = iVar4 + 1;
           core_fire_cpp_CFireEffect_createRock_FUN_004c7e60(g_CFireEffectPtr);
         } while (iVar4 < 10);

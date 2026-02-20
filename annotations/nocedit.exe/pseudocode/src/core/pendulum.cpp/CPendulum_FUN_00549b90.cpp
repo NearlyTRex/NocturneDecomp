@@ -31,7 +31,7 @@ void __cdecl core_pendulum_cpp_CPendulum_FUN_00549b90(CPendulum *this_ptr)
   local_24 = (double)this_ptr->param;
   local_1c = floor(local_24);
   local_48 = (float)((float10)local_24 - (float10)local_1c);
-  this_ptr->param = in_stack_00000008 / *(float *)this_ptr->unk3 + this_ptr->param;
+  this_ptr->param = in_stack_00000008 / this_ptr->period + this_ptr->param;
   if ((this_ptr->one_shot != 0) && (1.0 < this_ptr->param)) {
     this_ptr->param = this_ptr->param + 0.5f;
   }
@@ -49,11 +49,11 @@ void __cdecl core_pendulum_cpp_CPendulum_FUN_00549b90(CPendulum *this_ptr)
   (this_ptr->base).orient.vec.z = (float)(fVar3 * fVar4 * (float10)this_ptr->max_angle);
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
   pCVar2 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                     (&this_ptr->base,&local_30,(CVector3f *)this_ptr->unk2);
-  if ((CVector3f *)(this_ptr->unk2 + 0xc) != pCVar2) {
-    ((CVector3f *)(this_ptr->unk2 + 0xc))->x = pCVar2->x;
-    *(float *)(this_ptr->unk2 + 0x10) = pCVar2->y;
-    *(float *)(this_ptr->unk2 + 0x14) = pCVar2->z;
+                     (&this_ptr->base,&local_30,&this_ptr->swing_tip_local);
+  if (&this_ptr->swing_tip_world != pCVar2) {
+    (this_ptr->swing_tip_world).x = pCVar2->x;
+    (this_ptr->swing_tip_world).y = pCVar2->y;
+    (this_ptr->swing_tip_world).z = pCVar2->z;
   }
   fVar3 = (float10)1;
   fVar6 = (float10)1.4426950408889634 *
@@ -109,8 +109,7 @@ void __cdecl core_pendulum_cpp_CPendulum_FUN_00549b90(CPendulum *this_ptr)
       }
       if (fVar1 < local_5c) {
         core_sound_cpp_CSound_playTrackedActorSound_FUN_005b3a70
-                  (g_CSoundPtr,&this_ptr->base,this_ptr->swoosh_sound,
-                   (CVector3f *)(this_ptr->unk2 + 0xc));
+                  (g_CSoundPtr,&this_ptr->base,this_ptr->swoosh_sound,&this_ptr->swing_tip_world);
       }
     }
     local_44 = local_3c;
@@ -162,8 +161,7 @@ void __cdecl core_pendulum_cpp_CPendulum_FUN_00549b90(CPendulum *this_ptr)
       }
       if (local_30.x < local_60) {
         core_sound_cpp_CSound_playTrackedActorSound_FUN_005b3a70
-                  (g_CSoundPtr,&this_ptr->base,this_ptr->swoosh_sound,
-                   (CVector3f *)(this_ptr->unk2 + 0xc));
+                  (g_CSoundPtr,&this_ptr->base,this_ptr->swoosh_sound,&this_ptr->swing_tip_world);
         return;
       }
     }

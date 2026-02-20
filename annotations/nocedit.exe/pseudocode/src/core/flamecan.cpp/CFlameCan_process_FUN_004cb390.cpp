@@ -35,7 +35,7 @@ void __cdecl core_flamecan_cpp_CFlameCan_process_FUN_004cb390(CFlameCan *this_pt
       return;
     }
   }
-  core_flame_cpp_CFlame_process_FUN_004c9c00((CFlame *)this_ptr->unk,delta_time);
+  core_flame_cpp_CFlame_process_FUN_004c9c00(&this_ptr->flame,delta_time);
   fVar1 = this_ptr->time_to_explode - delta_time;
   this_ptr->time_to_explode = fVar1;
   if (0.0 < fVar1) {
@@ -54,6 +54,6 @@ void __cdecl core_flamecan_cpp_CFlameCan_process_FUN_004cb390(CFlameCan *this_pt
   fStack_24 = (this_ptr->base).location.position.y + fStack_18;
   fStack_20 = (this_ptr->base).location.position.z + fStack_14;
   core_fire_cpp_CFireEffect_createExplosion_FUN_004c8c10
-            (g_CFireEffectPtr,(CVector3f *)(this_ptr->unk + 0x20));
+            (g_CFireEffectPtr,&(this_ptr->flame).base.location.position);
   return;
 }

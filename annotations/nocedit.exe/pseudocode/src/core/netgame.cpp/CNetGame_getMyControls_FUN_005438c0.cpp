@@ -15,7 +15,7 @@ void ** __cdecl core_netgame_cpp_CNetGame_getMyControls_FUN_005438c0(CNetGame *t
       g_CurrentLineNumber = 0xa0f;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CNetGame::getMyControls - I'm not in the player list!");
     }
-    return (void **)(this_ptr->players[this_ptr->local_player_index].unk1 + 0x14);
+    return (void **)&this_ptr->players[this_ptr->local_player_index].controls;
   }
   return (void **)&g_HeroActors[g_LocalHeroIndex]->player_control;
 }

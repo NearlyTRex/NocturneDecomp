@@ -10,18 +10,18 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c5f10(CStranger *this_ptr)
 
 {
   float fVar1;
-  char *pcVar2;
+  SArmAimData *pSVar2;
   CDemonActor *pCVar3;
   uint uVar4;
   uint uVar5;
   int iVar6;
-  char *pcVar7;
+  SArmAimData *pSVar7;
   uint uVar8;
   int iVar9;
   int unaff_EDI;
   
   iVar6 = (this_ptr->base).player_control.action_states[3];
-  this_ptr->unk7 = 0;
+  this_ptr->can_grab_weapon = 0;
   if (iVar6 == 0) {
     return;
   }
@@ -78,14 +78,14 @@ LAB_005c5f6e:
     return;
   }
   if (((this_ptr->base).aim_mode == 0) && (fVar1 == 0.0)) {
-    pcVar7 = this_ptr->unk1 + 0x10;
-    pcVar2 = this_ptr->unk3 + 4;
-    if (this_ptr->unk6 != 0) {
-      pcVar2 = pcVar7;
-      pcVar7 = this_ptr->unk3 + 4;
+    pSVar7 = &this_ptr->right_arm_aim;
+    pSVar2 = &this_ptr->left_arm_aim;
+    if (this_ptr->dual_wield_side != 0) {
+      pSVar2 = pSVar7;
+      pSVar7 = &this_ptr->left_arm_aim;
     }
-    if ((*(int *)(pcVar2 + 0x1c) == 2) && (*(int *)(pcVar7 + 0x1c) != 2)) {
-      this_ptr->unk6 = (uint)(this_ptr->unk6 == 0);
+    if ((pSVar2->aim_lock_state == 2) && (pSVar7->aim_lock_state != 2)) {
+      this_ptr->dual_wield_side = (uint)(this_ptr->dual_wield_side == 0);
     }
   }
   if (this_ptr->weapon == (CDemonActor *)0x0) {
@@ -117,22 +117,22 @@ switchD_005c5ffd_caseD_8:
            core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840
                      ((CCharacter *)this_ptr,iVar6);
   if ((float)0.98999999999999999 <= (float)pCVar3) {
-    pcVar7 = this_ptr->unk1 + 0x10;
-    if ((this_ptr->unk6 != 0) && (this_ptr->weapon[2].orient.vec.x == 0.0)) {
-      pcVar7 = this_ptr->unk3 + 4;
+    pSVar7 = &this_ptr->right_arm_aim;
+    if ((this_ptr->dual_wield_side != 0) && (this_ptr->weapon[2].orient.vec.x == 0.0)) {
+      pSVar7 = &this_ptr->left_arm_aim;
     }
-    if (((1.0 <= *(float *)(pcVar7 + 0x14)) && (*(float *)(pcVar7 + 0x10) <= 0.0)) &&
+    if (((1.0 <= pSVar7->kickback_factor) && (pSVar7->recoil_timer <= 0.0)) &&
        (iVar6 = (*(((((CCharacter *)this_ptr->weapon)->base).vtable._uc)->_uc).canBeGrabbed)
                           ((CCharacter *)this_ptr->weapon,pCVar3,unaff_EDI), iVar6 != 0)) {
       if (this_ptr->weapon[2].orient.vec.x == 0.0) {
         core_stranger_cpp_CStranger_FUN_005c06b0(this_ptr);
-        this_ptr->unk6 = (uint)(this_ptr->unk6 == 0);
+        this_ptr->dual_wield_side = (uint)(this_ptr->dual_wield_side == 0);
       }
-      this_ptr->unk7 = 0;
+      this_ptr->can_grab_weapon = 0;
       iVar6 = (*(((((CCharacter *)this_ptr->weapon)->base).vtable._uc)->_uc).isGrabbable)
                         ((CCharacter *)this_ptr->weapon);
       if (iVar6 != 0) {
-        this_ptr->unk7 = 1;
+        this_ptr->can_grab_weapon = 1;
       }
       core_stranger_cpp_CStranger_FUN_005c06b0(this_ptr);
       if (this_ptr->weapon[2].location.area_id == 2) {

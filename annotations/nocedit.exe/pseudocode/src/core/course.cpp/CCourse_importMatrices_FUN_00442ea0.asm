@@ -1,10 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_course_cpp_CCourse_importMatrices_FUN_00442ea0(CCourse *this_ptr)
+; void __cdecl core_course_cpp_CCourse_importMatrices_FUN_00442ea0(CCourse *this_ptr,_FILE *file_handle,int count)
 ;
 ; Parameters:
 ; CCourse *        Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file_handle
+; int              Stack[0xc]:4   count
 ; Local Variables:
 ; undefined4       Stack[-0x68]:4  local_68
 ; undefined4       Stack[-0x64]:4  local_64
@@ -27,8 +29,8 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[2]:
-;   core_course.cpp_CCourse_FUN_00442bc0 at 00442cd3
-;   core_course.cpp_CCourse_FUN_00442d70 at 00442e45
+;   core_course.cpp_CCourse_importBON_FUN_00442bc0 at 00442cd3
+;   core_course.cpp_CCourse_importCRS_FUN_00442d70 at 00442e45
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_f_f_f_00619123
@@ -64,7 +66,7 @@ section .text
     PUSH EBP                            ; 00442eae
     XOR EBX,EBX                         ; 00442eaf
     CALL core_course.cpp_CCourse_allocMemory_FUN_00442500 ; 00442eb1
-        ;   XREF to: 00442500 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_allocMemory_FUN_00442500(CCourse * this_ptr)
+        ;   XREF to: 00442500 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_allocMemory_FUN_00442500(CCourse * this_ptr, int count)
     ADD ESP,0x8                         ; 00442eb6
     CMP EBX,dword ptr [EBP]             ; 00442eb9
     JL 0x00442ec4                       ; 00442ebc

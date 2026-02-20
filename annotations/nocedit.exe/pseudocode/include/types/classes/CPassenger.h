@@ -1,7 +1,11 @@
 #pragma once
 
+// Forward declarations
+struct CDemonActor;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CMorph.h"
 #include "types/classes/CNPC.h"
 
 // Structure: CPassenger
@@ -11,8 +15,9 @@ typedef struct CPassenger {
     char transform_event[100]; // 0x1f708
     char wolf_model_name[32]; // 0x1f76c
     char name_of_wolf[32]; // 0x1f78c
-    char* transform_wav; // 0x1f7ac
-    char unk[3216]; // 0x1f7b0
+    char transform_wav[100]; // 0x1f7ac
+    struct CDemonActor* werewolf_actor; // 0x1f810
+    CMorph morph; // 0x1f814
     float morph_time; // 0x20440
     float wolf_size; // 0x20444
 } CPassenger;

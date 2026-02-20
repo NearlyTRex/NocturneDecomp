@@ -3,6 +3,7 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDemonActor.h"
+#include "types/classes/CDemonGlobe.h"
 #include "types/classes/CKeyFramedModelInstance.h"
 
 // Structure: CKeyActor
@@ -11,6 +12,7 @@ typedef struct CKeyActor {
     CDemonActor base; // 0x0
     CKeyFramedModelInstance model; // 0x158
     int key_mask; // 0x2d4
-    char unk[68]; // 0x2d8
+    float rotation_angle; // 0x2d8
+    CDemonGlobe globe; // 0x2dc
 } CKeyActor;
 

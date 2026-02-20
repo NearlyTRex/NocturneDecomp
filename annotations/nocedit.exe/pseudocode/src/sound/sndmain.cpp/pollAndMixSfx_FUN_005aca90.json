@@ -1,61 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 124,
-        "message": "use of undeclared identifier 'stack0xffffff68'; did you mean 'in_stack_ffffff68'?"
-      },
-      {
-        "category": "other",
-        "column": 69,
-        "line": 131,
-        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 69,
-        "line": 132,
-        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 69,
-        "line": 133,
-        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 69,
-        "line": 134,
-        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 69,
-        "line": 135,
-        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 43,
-        "line": 137,
-        "message": "assigning to 'float *' from incompatible type 'void *'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 265,
-    "complexity_score": 494,
+    "complexity_score": 509,
     "cross_reference_count": 2,
     "function_call_count": 7,
     "global_count": 22,
     "pseudocode_lines": 164,
-    "suspect_count": 31,
+    "suspect_count": 32,
     "suspect_types": [
+      "byvalue_struct_passing",
       "pointer_cast",
       "stack_param",
       "stack_ref",
@@ -645,6 +603,13 @@
       "match": "(int *)((int)",
       "text": "*(int *)((int)local_44 + iVar5 + 4) + block_align * iVar3;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Calls CSfxSlot_mix - decompiler cannot recognize by-value pattern",
+      "line": 1,
+      "match": "CSfxSlot_mix",
+      "text": "Function calls by-value struct passing functions",
+      "type": "byvalue_struct_passing"
     }
   ]
 }

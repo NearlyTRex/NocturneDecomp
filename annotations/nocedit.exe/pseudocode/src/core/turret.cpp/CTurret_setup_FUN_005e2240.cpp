@@ -25,24 +25,15 @@ void __cdecl core_turret_cpp_CTurret_setup_FUN_005e2240(CTurret *this_ptr)
   for (iVar3 = 0; iVar3 < this_ptr_00->vertex_count; iVar3 = iVar3 + 1) {
     fVar1 = (float)pCVar2->z + (float)pCVar2->y * (float)0.20000000000000001;
     if (local_18 < fVar1) {
-      *(float *)this_ptr->unk5 = (float)pCVar2->x * 0.00390625f;
-      *(float *)(this_ptr->unk5 + 4) = (float)pCVar2->y * 0.00390625f;
-      *(float *)(this_ptr->unk5 + 8) = (float)pCVar2->z * 0.00390625f;
+      (this_ptr->barrel_tip_pos).x = (float)pCVar2->x * 0.00390625f;
+      (this_ptr->barrel_tip_pos).y = (float)pCVar2->y * 0.00390625f;
+      (this_ptr->barrel_tip_pos).z = (float)pCVar2->z * 0.00390625f;
       local_18 = fVar1;
     }
     pCVar2 = pCVar2 + 1;
   }
-  this_ptr->unk5[0x54] = '\0';
-  this_ptr->unk5[0x55] = '\0';
-  this_ptr->unk5[0x56] = '\0';
-  this_ptr->unk5[0x57] = '\0';
-  this_ptr->unk5[0x58] = '\0';
-  this_ptr->unk5[0x59] = '\0';
-  this_ptr->unk5[0x5a] = '\0';
-  this_ptr->unk5[0x5b] = '\0';
-  this_ptr->unk5[0x50] = '\0';
-  this_ptr->unk5[0x51] = '\0';
-  this_ptr->unk5[0x52] = '\0';
-  this_ptr->unk5[0x53] = '\0';
+  this_ptr->loop_sfx_handle = 0;
+  this_ptr->anim_sfx_handle = 0;
+  this_ptr->fire_sound_frames = 0;
   return;
 }

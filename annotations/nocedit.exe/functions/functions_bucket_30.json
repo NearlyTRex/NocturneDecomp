@@ -56407,6 +56407,38 @@
     "name":"core_passngr.cpp_CPassenger_ctor_FUN_00545b30",
     "ret":"CPassenger*",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar2",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CPassenger*",
+          "use":8
+        },
+        {
+          "name":"pCVar3",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CPassenger_ptr_129044",
+          "use":27
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -58808,7 +58840,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_platfrm.cpp_CPlatform_FUN_0054cab0",
+    "name":"core_platfrm.cpp_CPlatform_evaluatePosition_FUN_0054cab0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -75883,9 +75915,24 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_stranger.cpp_CStranger_FUN_005c07b0",
-    "ret":"float*",
+    "ret":"void",
     "vars":{
       "locals":[
+        {
+          "name":"pCVar2",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CLightActor*",
+          "use":2076
+        },
         {
           "name":"local_c",
           "storage":{
@@ -77183,38 +77230,6 @@
           "type":"undefined4"
         },
         {
-          "name":"local_178",
-          "storage":{
-            "offset":-376,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x178]",
-                "offset":-376,
-                "size":4
-              }
-            ]
-          },
-          "type":"undefined4"
-        },
-        {
-          "name":"local_17c",
-          "storage":{
-            "offset":-380,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x17c]",
-                "offset":-380,
-                "size":4
-              }
-            ]
-          },
-          "type":"undefined4"
-        },
-        {
           "name":"local_180",
           "storage":{
             "offset":-384,
@@ -77228,7 +77243,7 @@
               }
             ]
           },
-          "type":"undefined4"
+          "type":"CWeapon*"
         },
         {
           "name":"local_184",
@@ -78896,17 +78911,7 @@
           },
           "type":"CStranger*"
         }
-      ],
-      "ret_storage":{
-        "reg":"EAX",
-        "size":4,
-        "varnodes":[
-          {
-            "addr":"register:00000000",
-            "size":4
-          }
-        ]
-      }
+      ]
     }
   },
   {
@@ -81215,6 +81220,38 @@
             ]
           },
           "type":"CObj*"
+        },
+        {
+          "name":"poly_count",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"vertex_count",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ],
       "ret_storage":{

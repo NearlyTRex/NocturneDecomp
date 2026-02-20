@@ -11,7 +11,7 @@ int __cdecl core_pendulum_cpp_CPendulum_hasCollision_FUN_0054a550(CPendulum *thi
 {
   CKeyFramedModel *pCVar1;
   
-  if (this_ptr->unk7 == 0) {
+  if (this_ptr->is_stopped == 0) {
     return 0;
   }
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);

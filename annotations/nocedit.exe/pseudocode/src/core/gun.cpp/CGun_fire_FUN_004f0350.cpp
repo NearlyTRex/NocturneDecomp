@@ -17,7 +17,7 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004f0350(CGun *this_ptr)
   CFlameCan *this_ptr_03;
   double dVar3;
   CDemonActor *pCVar4;
-  int in_stack_fffffebc;
+  float in_stack_fffffebc;
   byte auStack_130 [28];
   float fStack_114;
   float fStack_110;
@@ -122,13 +122,15 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004f0350(CGun *this_ptr)
           }
         }
         else {
-          core_trigger_cpp_CTrigger_FUN_005e0aa0(this_ptr_02);
-          iVar2 = core_trigger_cpp_CTrigger_FUN_005e0ac0(this_ptr_02);
+          core_trigger_cpp_CTrigger_onProjectileHit_FUN_005e0aa0(this_ptr_02);
+          iVar2 = core_trigger_cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0
+                            (this_ptr_02,(char *)this_ptr);
           if (iVar2 != 0) {
             in_stack_fffffebc =
-                 (*(((this_ptr->base).base.vtable._uc)->_uc).getGrabbed)
-                           ((CCharacter *)this_ptr,SUB84(dVar3,0),(int)((ulonglong)dVar3 >> 0x20));
-            core_trigger_cpp_CTrigger_FUN_005e0b00(this_ptr_02);
+                 (float)(*(((this_ptr->base).base.vtable._uc)->_uc).getGrabbed)
+                                  ((CCharacter *)this_ptr,SUB84(dVar3,0),
+                                   (int)((ulonglong)dVar3 >> 0x20));
+            core_trigger_cpp_CTrigger_applyDamage_FUN_005e0b00(this_ptr_02,in_stack_fffffebc);
           }
           core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,&pCStack_28->base);
         }
@@ -155,7 +157,7 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004f0350(CGun *this_ptr)
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffec0);
       auStack_130._0_4_ =
            (*(((this_ptr->base).base.vtable._uc)->_uc).getGrabbed)
-                     ((CCharacter *)this_ptr,pCVar4,in_stack_fffffebc);
+                     ((CCharacter *)this_ptr,pCVar4,(int)in_stack_fffffebc);
       auStack_130._4_4_ = 0.4;
       CStack_bc.y = (g_CDemonSetPtr->ray_target).x - (g_CDemonSetPtr->ray_origin).x;
       CStack_bc.z = (g_CDemonSetPtr->ray_target).y - (g_CDemonSetPtr->ray_origin).y;
@@ -184,7 +186,7 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004f0350(CGun *this_ptr)
       CStack_108.m[0].y = 1.41531e-43;
       CStack_108.m[1].y =
            (float)(*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);
-      in_stack_fffffebc = 0x4f0a08;
+      in_stack_fffffebc = 7.258603e-39;
       (*(((this_ptr_01->base).vtable._uc)->_uc).processDamage)
                 (this_ptr_01,(SDamageInfo *)auStack_130);
       if ((this_ptr->base).can_penetrate == 0) break;

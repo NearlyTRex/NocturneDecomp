@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl support_trisock_cpp_createSocket_FUN_005e1b10(SSocketContext *socket_ctx)
+; int __cdecl support_trisock_cpp_createSocket_FUN_005e1b10(SOCKET *socket)
 ;
 ; Parameters:
-; SSocketContext * Stack[0x4]:4   socket_ctx
+; SOCKET *         Stack[0x4]:4   socket
 ;
 ; Called Functions:
 ;   crt_wsock32.c_shutdown
@@ -19,7 +19,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 005e1b11
     PUSH EBX                            ; 005e1b15
     CALL support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20 ; 005e1b16
-        ;   XREF to: 005e1d20 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20(SSocketContext * socket_ctx)
+        ;   XREF to: 005e1d20 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20(SOCKET * socket)
     ADD ESP,0x4                         ; 005e1b1b
     PUSH 0x0                            ; 005e1b1e
     PUSH 0x1                            ; 005e1b20

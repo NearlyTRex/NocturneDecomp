@@ -19,7 +19,7 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToHost_FUN_0053f860(CNetG
   support_trisock_cpp_createNetworkAddr_FUN_005e1940(&local_10,(uint32_t *)g_AnyAddressIP,0x1ddf);
   iVar1 = core_netgame_cpp_CNetGame_addPlayer_FUN_005412b0(this_ptr);
   this_ptr->local_player_index = iVar1;
-  *(int *)this_ptr->padding = iVar1;
+  this_ptr->server_player_index = iVar1;
   iVar1 = core_netgame_cpp_CNetGame_initializeNetwork_FUN_0053fbc0(this_ptr);
   if (iVar1 == 0) {
     return 0;

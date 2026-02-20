@@ -13,7 +13,7 @@ void __cdecl core_netgame_cpp_CNetGame_FUN_00541230(CNetGame *this_ptr)
   int *in_stack_0000000c;
   
   support_trisock_cpp_performSocketOperation_FUN_005e1ca0
-            ((SSocketContext *)(this_ptr->unk + 0x58),(char *)(in_stack_0000000c + 1),
-             *in_stack_0000000c + -4,in_stack_00000008);
+            (&this_ptr->socket,(char *)(in_stack_0000000c + 1),*in_stack_0000000c + -4,
+             in_stack_00000008);
   return;
 }

@@ -10,6 +10,18 @@ import os
 import re
 from collections import namedtuple, defaultdict
 
+# Functions that take by-value struct parameters.
+# Ghidra cannot recognize the Watcom REP MOVSD by-value pattern, so callers
+# of these functions get broken decompilation and need inline asm replacement.
+# Keyed by address (lowercase, no 0x prefix) for reliable matching against
+# func_calls entries.
+BYVALUE_CALLEES = {
+    '407d70': 'clipAndDrawLine2D',
+    '408070': 'clipAndDrawLine3D',
+    '533c50': 'calculateMainDataSize',
+    '5a75e0': 'CSfxSlot_mix',
+}
+
 # Known struct sizes for labeling
 KNOWN_STRUCTS = {
     0x30: 'SRenderVertex',     # 48 bytes, 12 dwords

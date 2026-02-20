@@ -46,10 +46,10 @@
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 ;   core_box.cpp_CBoundingBox3D_clampPoint_FUN_00421550
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
-;   core_platfrm.cpp_CPlatform_FUN_0054cab0
-;   core_platfrm.cpp_CPlatform_FUN_0054d690
-;   core_platfrm.cpp_CPlatform_FUN_0054df80
-;   core_platfrm.cpp_CPlatform_FUN_0054e320
+;   core_platfrm.cpp_CPlatform_evaluatePosition_FUN_0054cab0
+;   core_platfrm.cpp_CPlatform_isActorOnPlatform_FUN_0054df80
+;   core_platfrm.cpp_CPlatform_startMovement_FUN_0054d690
+;   core_platfrm.cpp_CPlatform_updateAttachedActors_FUN_0054e320
 ;   core_set.cpp_CDemonSet_findCameraByName_FUN_0056b790
 ;   core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0
 ;   core_setdir.cpp_CDemonSet_clearCameraSwitchCooldown_FUN_00575b20
@@ -107,8 +107,8 @@ section .text
     PUSH 0x3f800000                     ; 0054ccaf
     PUSH EAX                            ; 0054ccb4
     MOV EBX,0x1                         ; 0054ccb5
-    CALL core_platfrm.cpp_CPlatform_FUN_0054d690 ; 0054ccba
-        ;   XREF to: 0054d690 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_CPlatform_FUN_0054d690(CPlatform * this_ptr)
+    CALL core_platfrm.cpp_CPlatform_startMovement_FUN_0054d690 ; 0054ccba
+        ;   XREF to: 0054d690 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_CPlatform_startMovement_FUN_0054d690(CPlatform * this_ptr, float goal_param, float movement_rate)
     ADD ESP,0xc                         ; 0054ccbf
     MOV EAX,dword ptr [EBP + 0x14]      ; 0054ccc2
         ;   Label: LAB_0054ccc2
@@ -246,8 +246,8 @@ section .text
     ADD ESP,0xc                         ; 0054ce46
     MOV EDI,dword ptr [EBP + 0x14]      ; 0054ce49
     PUSH EDI                            ; 0054ce4c
-    CALL core_platfrm.cpp_CPlatform_FUN_0054cab0 ; 0054ce4d
-        ;   XREF to: 0054cab0 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_CPlatform_FUN_0054cab0(CPlatform * this_ptr)
+    CALL core_platfrm.cpp_CPlatform_evaluatePosition_FUN_0054cab0 ; 0054ce4d
+        ;   XREF to: 0054cab0 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_CPlatform_evaluatePosition_FUN_0054cab0(CPlatform * this_ptr)
     ADD ESP,0x4                         ; 0054ce52
     PUSH EBX                            ; 0054ce55
     PUSH ESI                            ; 0054ce56
@@ -314,8 +314,8 @@ section .text
     PUSH 0x0                            ; 0054cf26
     PUSH EAX                            ; 0054cf28
     MOV EBX,0x1                         ; 0054cf29
-    CALL core_platfrm.cpp_CPlatform_FUN_0054d690 ; 0054cf2e
-        ;   XREF to: 0054d690 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_CPlatform_FUN_0054d690(CPlatform * this_ptr)
+    CALL core_platfrm.cpp_CPlatform_startMovement_FUN_0054d690 ; 0054cf2e
+        ;   XREF to: 0054d690 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_CPlatform_startMovement_FUN_0054d690(CPlatform * this_ptr, float goal_param, float movement_rate)
     ADD ESP,0xc                         ; 0054cf33
     MOV EAX,dword ptr [EBP + 0x14]      ; 0054cf36
         ;   Label: LAB_0054cf36
@@ -342,8 +342,8 @@ section .text
     FSTP float ptr [ESP]                ; 0054cf74
     PUSH 0x3f800000                     ; 0054cf77
     PUSH EAX                            ; 0054cf7c
-    CALL core_platfrm.cpp_CPlatform_FUN_0054d690 ; 0054cf7d
-        ;   XREF to: 0054d690 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_CPlatform_FUN_0054d690(CPlatform * this_ptr)
+    CALL core_platfrm.cpp_CPlatform_startMovement_FUN_0054d690 ; 0054cf7d
+        ;   XREF to: 0054d690 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_CPlatform_startMovement_FUN_0054d690(CPlatform * this_ptr, float goal_param, float movement_rate)
     ADD ESP,0xc                         ; 0054cf82
     JMP 0x0054cccf                      ; 0054cf85
         ;   XREF to: 0054cccf (UNCONDITIONAL_JUMP)  ; default
@@ -367,8 +367,8 @@ section .text
     FSTP float ptr [ESP]                ; 0054cfb9
     PUSH 0x0                            ; 0054cfbc
     PUSH EAX                            ; 0054cfbe
-    CALL core_platfrm.cpp_CPlatform_FUN_0054d690 ; 0054cfbf
-        ;   XREF to: 0054d690 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_CPlatform_FUN_0054d690(CPlatform * this_ptr)
+    CALL core_platfrm.cpp_CPlatform_startMovement_FUN_0054d690 ; 0054cfbf
+        ;   XREF to: 0054d690 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_CPlatform_startMovement_FUN_0054d690(CPlatform * this_ptr, float goal_param, float movement_rate)
     ADD ESP,0xc                         ; 0054cfc4
     JMP 0x0054cccf                      ; 0054cfc7
         ;   XREF to: 0054cccf (UNCONDITIONAL_JUMP)  ; default
@@ -735,8 +735,8 @@ section .text
     PUSH EBX                            ; 0054d4c9
     MOV ECX,dword ptr [EBP + 0x14]      ; 0054d4ca
     PUSH ECX                            ; 0054d4cd
-    CALL core_platfrm.cpp_CPlatform_FUN_0054df80 ; 0054d4ce
-        ;   XREF to: 0054df80 (UNCONDITIONAL_CALL)  ; int core_platfrm.cpp_CPlatform_FUN_0054df80(CPlatform * this_ptr)
+    CALL core_platfrm.cpp_CPlatform_isActorOnPlatform_FUN_0054df80 ; 0054d4ce
+        ;   XREF to: 0054df80 (UNCONDITIONAL_CALL)  ; int core_platfrm.cpp_CPlatform_isActorOnPlatform_FUN_0054df80(CPlatform * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0054d4d3
     TEST EAX,EAX                        ; 0054d4d6
     JZ 0x0054d4f3                       ; 0054d4d8
@@ -842,8 +842,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 0054d675
         ;   Label: LAB_0054d675
     PUSH EBX                            ; 0054d678
-    CALL core_platfrm.cpp_CPlatform_FUN_0054e320 ; 0054d679
-        ;   XREF to: 0054e320 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_CPlatform_FUN_0054e320(CPlatform * this_ptr)
+    CALL core_platfrm.cpp_CPlatform_updateAttachedActors_FUN_0054e320 ; 0054d679
+        ;   XREF to: 0054e320 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_CPlatform_updateAttachedActors_FUN_0054e320(CPlatform * this_ptr)
     ADD ESP,0x4                         ; 0054d67e
     MOV ESP,EBP                         ; 0054d681
         ;   Label: LAB_0054d681

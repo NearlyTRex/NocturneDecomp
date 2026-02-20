@@ -52,7 +52,7 @@ int __cdecl shape_superopt_cpp_CPoly_hasColinearEdge_FUN_005d12d0(CPoly *this_pt
 int __cdecl shape_superopt_cpp_CPoly_hasEdgeIntersection_FUN_005d1390(CPoly *this_ptr,CPoly *other);
 double __cdecl shape_superopt_cpp_CPoly_computePlaneDistance_FUN_005d1fa0(CPoly *this_ptr);
 int __cdecl shape_superopt_cpp_CPoly_isValid_FUN_005d1ff0(CPoly *this_ptr);
-CObj * __cdecl shape_superopt_cpp_CObj_ctor_FUN_005d2230(CObj *this_ptr);
+CObj * __cdecl shape_superopt_cpp_CObj_ctor_FUN_005d2230(CObj *this_ptr,int poly_count,int vertex_count);
 CObj * __cdecl shape_superopt_cpp_CObj_dtor_FUN_005d2260(CObj *this_ptr,uint flags);
 void __cdecl shape_superopt_cpp_CObj_reset_FUN_005d2280(CObj *this_ptr);
 int __cdecl shape_superopt_cpp_CObj_isValid_FUN_005d22b0(CObj *this_ptr);

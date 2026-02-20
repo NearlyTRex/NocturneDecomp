@@ -3,50 +3,50 @@
     "errors": [
       {
         "category": "format_error",
-        "column": 52,
-        "line": 44,
+        "column": 46,
+        "line": 43,
         "message": "format specifies type 'float *' but the argument has type 'CMatrix3x3f *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
-        "column": 41,
-        "line": 45,
+        "column": 24,
+        "line": 44,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
         "category": "format_error",
-        "column": 30,
-        "line": 55,
+        "column": 86,
+        "line": 53,
         "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "other",
-        "column": 39,
-        "line": 55,
+        "column": 31,
+        "line": 54,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
         "category": "format_error",
-        "column": 73,
-        "line": 57,
+        "column": 67,
+        "line": 56,
         "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 28,
-        "line": 58,
+        "column": 82,
+        "line": 56,
         "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "other",
-        "column": 37,
-        "line": 58,
+        "column": 28,
+        "line": 57,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
         "category": "format_error",
-        "column": 54,
-        "line": 60,
+        "column": 48,
+        "line": 59,
         "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
       }
     ],
@@ -55,31 +55,29 @@
   },
   "complexity": {
     "assembly_lines": 160,
-    "complexity_score": 265,
+    "complexity_score": 193,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 10,
-    "pseudocode_lines": 75,
-    "suspect_count": 17,
+    "pseudocode_lines": 73,
+    "suspect_count": 11,
     "suspect_types": [
-      "param_count_too_few",
       "pointer_cast",
-      "stack_param",
       "unaffected_reg"
     ],
-    "total_lines": 235
+    "total_lines": 233
   },
   "cross_references": [
     {
       "addr": "00442bc0",
       "from_addr": "00442cd3",
-      "name": "core_course.cpp_CCourse_FUN_00442bc0",
+      "name": "core_course.cpp_CCourse_importBON_FUN_00442bc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00442d70",
       "from_addr": "00442e45",
-      "name": "core_course.cpp_CCourse_FUN_00442d70",
+      "name": "core_course.cpp_CCourse_importCRS_FUN_00442d70",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -93,7 +91,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_course.cpp_CCourse_importMatrices_FUN_00442ea0",
-    "signature": "void __cdecl core_course_cpp_CCourse_importMatrices_FUN_00442ea0(CCourse *this_ptr)"
+    "signature": "void __cdecl core_course_cpp_CCourse_importMatrices_FUN_00442ea0(CCourse *this_ptr,_FILE *file_handle,int count)"
   },
   "function_calls": [
     {
@@ -195,7 +193,7 @@
       {
         "call_addr": "00442e45",
         "call_type": "direct",
-        "caller": "core_course.cpp_CCourse_FUN_00442d70",
+        "caller": "core_course.cpp_CCourse_importCRS_FUN_00442d70",
         "estimated_params": 3,
         "instructions_analyzed": 7,
         "reg_params": [],
@@ -204,15 +202,15 @@
       {
         "call_addr": "00442cd3",
         "call_type": "direct",
-        "caller": "core_course.cpp_CCourse_FUN_00442bc0",
+        "caller": "core_course.cpp_CCourse_importBON_FUN_00442bc0",
         "estimated_params": 3,
         "instructions_analyzed": 7,
         "reg_params": [],
         "stack_params": 3
       }
     ],
-    "confidence": "medium",
-    "declared_params": 1,
+    "confidence": "high",
+    "declared_params": 3,
     "estimated_params": 3
   },
   "pcode_summary": {
@@ -248,10 +246,10 @@
     "pcode_op_count": 688
   },
   "stack_frame": {
-    "frame_size": 112,
+    "frame_size": 120,
     "local_size": 108,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -393,6 +391,20 @@
         "offset": 4,
         "size": 4,
         "type": "CCourse *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
+      },
+      {
+        "is_param": true,
+        "name": "count",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
@@ -412,113 +424,67 @@
       "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000008",
-      "text": "_FILE *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
+      "description": "Unaffected register variable",
       "line": 37,
-      "match": "in_stack_00000008",
-      "text": "iVar2 = _fscanf(in_stack_00000008,\"%f,%f,%f\\n\",&local_58,&local_58.m[1].y,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 38,
       "match": "unaff_ESI",
-      "text": "&local_58.m[2].z,unaff_ESI,unaff_EDI);",
+      "text": "unaff_ESI,unaff_EDI);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 38,
+      "line": 37,
       "match": "unaff_EDI",
-      "text": "&local_58.m[2].z,unaff_ESI,unaff_EDI);",
+      "text": "unaff_ESI,unaff_EDI);",
       "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unaffected register variable",
       "line": 47,
-      "match": "in_stack_00000008",
-      "text": "iVar2 = _fscanf(in_stack_00000008,\"%f,%f,%f\\n\",&local_58.m[0].y,&local_58.m[1].z,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 48,
       "match": "unaff_ESI",
-      "text": "local_34,unaff_ESI,unaff_EDI);",
+      "text": ",unaff_ESI,unaff_EDI);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 48,
+      "line": 47,
       "match": "unaff_EDI",
-      "text": "local_34,unaff_ESI,unaff_EDI);",
+      "text": ",unaff_ESI,unaff_EDI);",
       "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unaffected register variable",
       "line": 50,
-      "match": "in_stack_00000008",
-      "text": "iVar2 = _fscanf(in_stack_00000008,\"%f,%f,%f\\n\",&local_58.m[0].z,local_58.m + 2,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 51,
       "match": "unaff_ESI",
-      "text": "local_30,unaff_ESI,unaff_EDI);",
+      "text": "unaff_ESI,unaff_EDI);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 51,
+      "line": 50,
       "match": "unaff_EDI",
-      "text": "local_30,unaff_ESI,unaff_EDI);",
+      "text": "unaff_ESI,unaff_EDI);",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 53,
-      "match": "in_stack_00000008",
-      "text": "iVar2 = _fscanf(in_stack_00000008,\"%f,%f,%f\\n\",local_58.m + 1,&local_58.m[2].y,",
-      "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 69,
+      "line": 67,
       "match": "(uint *)((int)",
       "text": "puVar6 = (uint *)((int)pCVar1 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 72,
+      "line": 70,
       "match": "(uint *)((int)",
       "text": "puVar5 = (uint *)((int)&local_28 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 73,
+      "line": 71,
       "match": "(uint *)((int)",
       "text": "*puVar6 = *(uint *)((int)&local_28 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 1,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:1 vs estimated:3",
-      "param_delta": 2,
-      "text": "Function declares 1 params but call sites push 3 (2 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

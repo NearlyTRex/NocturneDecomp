@@ -25,7 +25,7 @@
 
 void __cdecl core_stranger_cpp_CStranger_FUN_005c02b0(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_FUN_005c06b0(CStranger *this_ptr);
-float * __cdecl core_stranger_cpp_CStranger_FUN_005c07b0(CStranger *this_ptr);
+void __cdecl core_stranger_cpp_CStranger_FUN_005c07b0(CStranger *this_ptr);
 int __cdecl core_stranger_cpp_CStranger_FUN_005c1680(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_FUN_005c1f00(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_FUN_005c1f80(CStranger *this_ptr);

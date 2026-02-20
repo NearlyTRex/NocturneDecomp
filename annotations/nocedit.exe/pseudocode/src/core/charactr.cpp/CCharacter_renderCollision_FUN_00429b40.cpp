@@ -96,9 +96,9 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00429b40(CCharacte
     pCVar11 = local_20;
     do {
       pCVar5 = g_CDemonRendererPtr2;
-      *(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->light + iVar9) = 0;
-      *(uint *)((int)&pCVar5->vertex_buffer_ptr->color + iVar9) = 0xffff;
-      *(uint *)((int)&pCVar5->vertex_buffer_ptr->fog + iVar9) = 0;
+      *(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->z + iVar9) = 0;
+      *(uint *)((int)&pCVar5->vertex_buffer_ptr->r + iVar9) = 0xffff;
+      *(uint *)((int)&pCVar5->vertex_buffer_ptr->g + iVar9) = 0;
       pCVar7 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                          (&this_ptr->base,&local_90,pCVar11);
       if (&local_84 != pCVar7) {
@@ -131,9 +131,9 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00429b40(CCharacte
     pCVar11 = local_24;
     do {
       pCVar5 = g_CDemonRendererPtr2;
-      *(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->light + iVar9) = 0;
-      *(uint *)((int)&pCVar5->vertex_buffer_ptr->color + iVar9) = 0;
-      *(uint *)((int)&pCVar5->vertex_buffer_ptr->fog + iVar9) = 0xffff;
+      *(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->z + iVar9) = 0;
+      *(uint *)((int)&pCVar5->vertex_buffer_ptr->r + iVar9) = 0;
+      *(uint *)((int)&pCVar5->vertex_buffer_ptr->g + iVar9) = 0xffff;
       pCVar7 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                          (&this_ptr->base,&local_9c,pCVar11);
       if (&local_84 != pCVar7) {
@@ -188,9 +188,9 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00429b40(CCharacte
                ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x +
                iVar6),local_60);
     pCVar5 = g_CDemonRendererPtr2;
-    *(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->light + iVar6) = 0xffff;
-    *(uint *)((int)&pCVar5->vertex_buffer_ptr->color + iVar6) = 0;
-    *(uint *)((int)&pCVar5->vertex_buffer_ptr->fog + iVar6) = 0;
+    *(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->z + iVar6) = 0xffff;
+    *(uint *)((int)&pCVar5->vertex_buffer_ptr->r + iVar6) = 0;
+    *(uint *)((int)&pCVar5->vertex_buffer_ptr->g + iVar6) = 0;
     local_84.y = local_38;
     local_34 = iVar4 + 1;
     local_b4.x = (int)ROUND(local_84.x * 256.0f);
@@ -201,9 +201,9 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00429b40(CCharacte
                ((int)&(pCVar5->vertex_buffer_ptr->projected_vertex).transformed_x + iVar9),&local_b4
               );
     pCVar5 = g_CDemonRendererPtr2;
-    *(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->light + iVar9) = 0xffff;
-    *(uint *)((int)&pCVar5->vertex_buffer_ptr->color + iVar9) = 0;
-    *(uint *)((int)&pCVar5->vertex_buffer_ptr->fog + iVar9) = 0;
+    *(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->z + iVar9) = 0xffff;
+    *(uint *)((int)&pCVar5->vertex_buffer_ptr->r + iVar9) = 0;
+    *(uint *)((int)&pCVar5->vertex_buffer_ptr->g + iVar9) = 0;
     if (0 < local_1c) {
       local_d0 = iVar4 + -2;
       local_cc = iVar4 + -1;
@@ -224,12 +224,12 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00429b40(CCharacte
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_c0);
   pCVar5 = g_CDemonRendererPtr2;
-  g_CDemonRendererPtr2->vertex_buffer_ptr->light = 0xffff;
+  g_CDemonRendererPtr2->vertex_buffer_ptr->z = 0xffff;
   iVar6 = 0;
-  pCVar5->vertex_buffer_ptr->color = 0;
+  pCVar5->vertex_buffer_ptr->r = 0;
   iVar9 = 0x30;
   local_f0 = 0;
-  pCVar5->vertex_buffer_ptr->fog = 0;
+  pCVar5->vertex_buffer_ptr->g = 0;
   do {
     local_18 = local_f0;
     fVar12 = (float10)local_f0 * (float10)3.1415926535000001 * (float10)0.041666666666666699;
@@ -248,9 +248,9 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00429b40(CCharacte
                ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x +
                iVar9),&local_a8);
     pCVar5 = g_CDemonRendererPtr2;
-    *(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->light + iVar9) = 0xffff;
-    *(uint *)((int)&pCVar5->vertex_buffer_ptr->color + iVar9) = 0;
-    *(uint *)((int)&pCVar5->vertex_buffer_ptr->fog + iVar9) = 0;
+    *(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->z + iVar9) = 0xffff;
+    *(uint *)((int)&pCVar5->vertex_buffer_ptr->r + iVar9) = 0;
+    *(uint *)((int)&pCVar5->vertex_buffer_ptr->g + iVar9) = 0;
     if (0 < iVar6) {
       local_e8.base.count = 3;
       local_d0 = 0;

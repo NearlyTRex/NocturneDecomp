@@ -30,10 +30,10 @@
 ;   double g_SkyDomeWorldRadius = 256
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   float g_SkyDomeVertexScale = 5
-;   undefined4 g_RenderVertexBuffer[0].light
-;   undefined4 g_RenderVertexBuffer[0].color
+;   undefined4 g_RenderVertexBuffer[0].z
+;   undefined4 g_RenderVertexBuffer[0].r
+;   undefined4 g_RenderVertexBuffer[0].g
 ;   undefined4 g_RenderVertexBuffer[0].fog
-;   undefined4 g_RenderVertexBuffer[0].w_recip
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
@@ -132,12 +132,12 @@ section .text
     CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 0049019e
         ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     MOV EAX,dword ptr [EDI]             ; 004901a3
-    MOV dword ptr [ESI + 0x688034],EAX  ; 004901a5 | g_RenderVertexBuffer[0].light
-    MOV dword ptr [ESI + 0x688038],EAX  ; 004901ab | g_RenderVertexBuffer[0].color
+    MOV dword ptr [ESI + 0x688034],EAX  ; 004901a5 | g_RenderVertexBuffer[0].z
+    MOV dword ptr [ESI + 0x688038],EAX  ; 004901ab | g_RenderVertexBuffer[0].r
     XOR ECX,ECX                         ; 004901b1
-    MOV dword ptr [ESI + 0x68803c],EAX  ; 004901b3 | g_RenderVertexBuffer[0].fog
+    MOV dword ptr [ESI + 0x68803c],EAX  ; 004901b3 | g_RenderVertexBuffer[0].g
     ADD ESP,0x8                         ; 004901b9
-    MOV dword ptr [ESI + 0x688040],ECX  ; 004901bc | g_RenderVertexBuffer[0].w_recip
+    MOV dword ptr [ESI + 0x688040],ECX  ; 004901bc | g_RenderVertexBuffer[0].fog
     MOV ESP,EBP                         ; 004901c2
     POP EBP                             ; 004901c4
     POP EDI                             ; 004901c5

@@ -11,6 +11,7 @@ SGem * __cdecl core_manpuz_cpp_SGem_ctor_FUN_0050b940(SGem *this_ptr)
 {
   void *pvVar1;
   
-  pvVar1 = __arrinit(this_ptr->unk + 0x3c,2,&g_CDemonTriangleTypeInfo);
+  pvVar1 = __arrinit
+                     (&this_ptr->collision_tri_a,2,&g_CDemonTriangleTypeInfo);
   return (SGem *)((int)pvVar1 + -0x3c);
 }

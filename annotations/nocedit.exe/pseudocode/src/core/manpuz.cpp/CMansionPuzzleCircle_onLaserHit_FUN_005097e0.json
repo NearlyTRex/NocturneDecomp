@@ -6,13 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 114,
-    "complexity_score": 48,
+    "complexity_score": 63,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 2,
     "pseudocode_lines": 48,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
     "total_lines": 162
   },
   "cross_references": [],
@@ -146,7 +148,15 @@
     ],
     "severity": "medium"
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(CVector3f *)((int)",
+      "text": "pCVar4 = (CVector3f *)((int)(pCVar4 + 0xf) + 4);",
+      "type": "pointer_cast"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

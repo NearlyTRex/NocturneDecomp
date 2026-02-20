@@ -35,7 +35,6 @@
 #include "types/structs/SInteractionState.h"
 #include "types/structs/SLaserInfo.h"
 #include "types/structs/SNetworkAddr.h"
-#include "types/structs/SSocketContext.h"
 #include "types/structs/SWaterVertex.h"
 
 // =============================================================================
@@ -49,10 +48,10 @@ int __cdecl core_trigger_cpp_CTrigger_hasCollision_FUN_005e0930(CTrigger *this_p
 int __cdecl core_trigger_cpp_CTrigger_evaluateTriggerCondition_FUN_005e0980(CTrigger *this_ptr);
 int __cdecl core_trigger_cpp_CTrigger_processActionButton_FUN_005e0a20(CTrigger *this_ptr);
 void __cdecl core_trigger_cpp_CTrigger_onLaserHit_FUN_005e0a50(CTrigger *this_ptr,SLaserInfo *laser_info);
-void __cdecl core_trigger_cpp_CTrigger_FUN_005e0aa0(CTrigger *this_ptr);
-int __cdecl core_trigger_cpp_CTrigger_FUN_005e0ac0(CTrigger *this_ptr);
-void __cdecl core_trigger_cpp_CTrigger_FUN_005e0b00(CTrigger *this_ptr);
-void __cdecl core_trigger_cpp_CTrigger_FUN_005e0ba0(CTrigger *this_ptr);
+void __cdecl core_trigger_cpp_CTrigger_onProjectileHit_FUN_005e0aa0(CTrigger *this_ptr);
+int __cdecl core_trigger_cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0(CTrigger *this_ptr,char *damage_actor_wildcard_name);
+void __cdecl core_trigger_cpp_CTrigger_applyDamage_FUN_005e0b00(CTrigger *this_ptr,float hit_points);
+void __cdecl core_trigger_cpp_CTrigger_calculateTestRadius_FUN_005e0ba0(CTrigger *this_ptr);
 int __cdecl core_trigger_cpp_CTrigger_getTargetPoints_FUN_005e0c30(CTrigger *this_ptr,CVector3f *out_points_array);
 int __cdecl core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(CTrigger *this_ptr,CDemonActor *actor);
 void __cdecl core_trigger_cpp_CTrigger_getPropertyList_FUN_005e0f70(CTrigger *this_ptr,CActorPropertyList *property_list);
@@ -74,16 +73,16 @@ SOCKADDR_IN * __cdecl support_trisock_cpp_buildSockaddrIn_FUN_005e19d0(SNetworkA
 void __cdecl support_trisock_cpp_formatSocketAddress_FUN_005e1a30(char *output_buffer,SNetworkAddr *network_addr);
 int __cdecl support_trisock_cpp_shouldNeverBeCalled_FUN_005e1a80(int unknown1,int unknown2);
 int __cdecl support_trisock_cpp_shouldNeverBeCalled_FUN_005e1ab0(int unknown1,int unknown2);
-SSocketContext * __cdecl support_trisock_cpp_invalidateSocket_FUN_005e1ae0(SSocketContext *socket_ctx);
-SSocketContext * __cdecl support_trisock_cpp_bindSocketWrapper_FUN_005e1af0(SSocketContext *socket_ctx);
-int __cdecl support_trisock_cpp_createSocket_FUN_005e1b10(SSocketContext *socket_ctx);
-int __cdecl support_trisock_cpp_createUDPSocket_FUN_005e1b40(SSocketContext *socket_ctx);
-int __cdecl support_trisock_cpp_isSocketValid_FUN_005e1b70(SSocketContext *socket_ctx);
+SOCKET * __cdecl support_trisock_cpp_invalidateSocket_FUN_005e1ae0(SOCKET *socket);
+SOCKET * __cdecl support_trisock_cpp_bindSocketWrapper_FUN_005e1af0(SOCKET *socket);
+int __cdecl support_trisock_cpp_createSocket_FUN_005e1b10(SOCKET *socket);
+int __cdecl support_trisock_cpp_createUDPSocket_FUN_005e1b40(SOCKET *socket);
+int __cdecl support_trisock_cpp_isSocketValid_FUN_005e1b70(SOCKET *socket);
 int __cdecl support_trisock_cpp_bindSocket_FUN_005e1b80(uint16_t port,SOCKET *socket_handle);
 int __cdecl support_trisock_cpp_connectSocket_FUN_005e1bd0(SOCKET *socket_handle,SNetworkAddr *dest_addr);
-int __cdecl support_trisock_cpp_receiveSocketData_FUN_005e1c20(SSocketContext *socket_ctx,char *buffer,int length,SNetworkAddr *source_addr);
-int __cdecl support_trisock_cpp_performSocketOperation_FUN_005e1ca0(SSocketContext *socket_ctx,char *buffer,int length,SNetworkAddr *dest_addr);
-int __cdecl support_trisock_cpp_bindAndInvalidateSocket_FUN_005e1d20(SSocketContext *socket_ctx);
+int __cdecl support_trisock_cpp_receiveSocketData_FUN_005e1c20(SOCKET *socket,char *buffer,int length,SNetworkAddr *source_addr);
+int __cdecl support_trisock_cpp_performSocketOperation_FUN_005e1ca0(SOCKET *socket,char *buffer,int length,SNetworkAddr *dest_addr);
+int __cdecl support_trisock_cpp_bindAndInvalidateSocket_FUN_005e1d20(SOCKET *socket);
 int __cdecl support_trisock_cpp_listenSocket_FUN_005e1d60(SOCKET *socket_handle);
 int __cdecl support_trisock_cpp_acceptConnection_FUN_005e1d80(SOCKET *listen_socket,SNetworkAddr *client_addr,SOCKET *new_socket);
 int __cdecl support_trisock_cpp_getSocketName_FUN_005e1df0(SOCKET *socket_handle,SNetworkAddr *param_2);

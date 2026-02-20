@@ -31,15 +31,14 @@ void __cdecl core_dog_cpp_CZombieDog_processDamage_FUN_0047f820(CZombieDog *this
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
             (&this_ptr_00->motion_controller,iVar4,1);
 LAB_0047f855:
-  iVar4 = core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80
-                    (g_CSoundPtr,*(uint *)(this_ptr->field1_0xbebc + 8));
+  iVar4 = core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80(g_CSoundPtr,this_ptr->sfx_handle);
   if (iVar4 != 0) {
     core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(&this_ptr->base,damage_info);
     return;
   }
   uVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                     ((CDemonActor *)this_ptr,"dog2.wav");
-  *(uint *)(this_ptr->field1_0xbebc + 8) = uVar3;
+  this_ptr->sfx_handle = uVar3;
   core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(&this_ptr->base,damage_info);
   return;
 }

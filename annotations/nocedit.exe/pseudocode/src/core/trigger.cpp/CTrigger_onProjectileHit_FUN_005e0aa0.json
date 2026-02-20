@@ -1,0 +1,101 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 9,
+    "complexity_score": 8,
+    "cross_reference_count": 5,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 17
+  },
+  "cross_references": [
+    {
+      "addr": "00448f20",
+      "from_addr": "0044926d",
+      "name": "core_crossbow.cpp_CCrossbow_fire_FUN_00448f20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f0350",
+      "from_addr": "004f0a62",
+      "name": "core_gun.cpp_CGun_fire_FUN_004f0350",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00505c70",
+      "from_addr": "005061f3",
+      "name": "core_lightgun.cpp_CLightGun_fire_FUN_00505c70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ddb30",
+      "from_addr": "005de27b",
+      "name": "core_tommygun.cpp_CTommyGun_fire_FUN_005ddb30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005e3750",
+      "from_addr": "005e3b89",
+      "name": "core_turret.cpp_CTurret_fire_FUN_005e3750",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005e0aa0",
+    "address_range": [
+      [
+        "005e0aa0",
+        "005e0ab8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_trigger.cpp_CTrigger_onProjectileHit_FUN_005e0aa0",
+    "signature": "void __cdecl core_trigger_cpp_CTrigger_onProjectileHit_FUN_005e0aa0(CTrigger *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.166666666666667,
+    "instruction_count": 6,
+    "opcode_distribution": {
+      "CBRANCH": 1,
+      "COPY": 3,
+      "INT_ADD": 5,
+      "INT_AND": 2,
+      "INT_EQUAL": 2,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 1,
+      "LOAD": 4,
+      "POPCOUNT": 1,
+      "RETURN": 2,
+      "STORE": 1
+    },
+    "pcode_op_count": 25
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTrigger *"
+      }
+    ]
+  },
+  "suspects": []
+}

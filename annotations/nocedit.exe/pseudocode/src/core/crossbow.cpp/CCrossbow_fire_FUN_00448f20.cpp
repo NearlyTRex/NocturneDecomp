@@ -12,7 +12,7 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00448f20(CCrossbow *this_ptr)
   CDemonSet *this_ptr_00;
   CVector3f *pCVar1;
   int iVar2;
-  float grab_type;
+  float hit_points;
   CCharacter *this_ptr_01;
   CTrigger *this_ptr_02;
   double dVar3;
@@ -74,9 +74,9 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00448f20(CCrossbow *this_ptr)
   }
   CStack_20.y = 0.0;
   do {
-    grab_type = core_setcolid_cpp_CDemonSet_raycast_FUN_00572530
-                          (g_CDemonSetPtr,&CStack_90,&CStack_78);
-    dVar3 = (double)grab_type;
+    hit_points = core_setcolid_cpp_CDemonSet_raycast_FUN_00572530
+                           (g_CDemonSetPtr,&CStack_90,&CStack_78);
+    dVar3 = (double)hit_points;
     if ((dVar3 < 0.0) || (1.0 < dVar3)) break;
     this_ptr_01 = (CCharacter *)
                   core_actor_cpp_castToClassHash_FUN_0040c790
@@ -101,13 +101,14 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00448f20(CCrossbow *this_ptr)
                      g_CDemonSetPtr->ground_type);
           break;
         }
-        core_trigger_cpp_CTrigger_FUN_005e0aa0(this_ptr_02);
-        iVar2 = core_trigger_cpp_CTrigger_FUN_005e0ac0(this_ptr_02);
+        core_trigger_cpp_CTrigger_onProjectileHit_FUN_005e0aa0(this_ptr_02);
+        iVar2 = core_trigger_cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0
+                          (this_ptr_02,(char *)this_ptr);
         if (iVar2 != 0) {
-          grab_type = (float)(*(((this_ptr->base).base.vtable._uc)->_uc).getGrabbed)
-                                       ((CCharacter *)this_ptr,SUB84(dVar3,0),
-                                        (int)((ulonglong)dVar3 >> 0x20));
-          core_trigger_cpp_CTrigger_FUN_005e0b00(this_ptr_02);
+          hit_points = (float)(*(((this_ptr->base).base.vtable._uc)->_uc).getGrabbed)
+                                        ((CCharacter *)this_ptr,SUB84(dVar3,0),
+                                         (int)((ulonglong)dVar3 >> 0x20));
+          core_trigger_cpp_CTrigger_applyDamage_FUN_005e0b00(this_ptr_02,hit_points);
         }
         core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,(CDemonActor *)CStack_20.x);
       }
@@ -133,7 +134,7 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00448f20(CCrossbow *this_ptr)
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff14);
       auStack_dc._0_4_ =
            (*(((this_ptr->base).base.vtable._uc)->_uc).getGrabbed)
-                     ((CCharacter *)this_ptr,pCVar4,(int)grab_type);
+                     ((CCharacter *)this_ptr,pCVar4,(int)hit_points);
       auStack_dc._4_4_ = 0.4;
       CStack_9c.y = (g_CDemonSetPtr->ray_target).x - (g_CDemonSetPtr->ray_origin).x;
       CStack_9c.z = (g_CDemonSetPtr->ray_target).y - (g_CDemonSetPtr->ray_origin).y;
@@ -161,7 +162,7 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00448f20(CCrossbow *this_ptr)
       pCStack_ac = this_ptr;
       pCStack_b4 = (CDemonActor *)0x3e19999a;
       pCStack_a4 = (*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);
-      grab_type = 6.29812e-39;
+      hit_points = 6.29812e-39;
       (*(((this_ptr_01->base).vtable._uc)->_uc).processDamage)
                 (this_ptr_01,(SDamageInfo *)auStack_dc);
       if ((this_ptr->base).can_penetrate == 0) break;
@@ -171,12 +172,12 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00448f20(CCrossbow *this_ptr)
     CStack_20.y = (float)((int)CStack_20.y + 1);
   } while ((int)CStack_20.y < 4);
   core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
-  if (1.0 < grab_type) {
-    grab_type = 1.0;
+  if (1.0 < hit_points) {
+    hit_points = 1.0;
   }
-  fStack_60 = CStack_9c.x * grab_type;
-  fStack_5c = CStack_9c.y * grab_type;
-  fStack_58 = CStack_9c.z * grab_type;
+  fStack_60 = CStack_9c.x * hit_points;
+  fStack_5c = CStack_9c.y * hit_points;
+  fStack_58 = CStack_9c.z * hit_points;
   pCStack_b4 = (CDemonActor *)(CStack_90.x + fStack_60);
   fStack_b0 = CStack_90.y + fStack_5c;
   pCStack_ac = (CCrossbow *)(CStack_90.z + fStack_58);

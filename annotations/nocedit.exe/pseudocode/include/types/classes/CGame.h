@@ -80,9 +80,9 @@ typedef struct CGame {
     int profile_mode; // 0x20c
     int velocity_debug_enabled; // 0x210
     int head_of_horror_cheat; // 0x214
-    int unk9; // 0x218
-    int unk10; // 0x21c
-    int unk11; // 0x220
+    int geometry_debug_enabled; // 0x218
+    int collision_render_enabled; // 0x21c
+    int player_hit_flag; // 0x220
     int gamma; // 0x224
     int letterbox_mode; // 0x228
     int allow_damage_flag; // 0x22c

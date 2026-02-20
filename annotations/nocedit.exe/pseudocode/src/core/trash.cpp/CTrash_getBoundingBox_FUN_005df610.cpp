@@ -22,7 +22,7 @@ CBoundingBox3D * __cdecl core_trash_cpp_CTrash_getBoundingBox_FUN_005df610(CTras
   (out_box->max).x = pCVar1[1].x;
   (out_box->max).y = pCVar1[1].y;
   (out_box->max).z = pCVar1[1].z;
-  local_14.y = *(float *)(this_ptr->unk + 0x30);
+  local_14.y = this_ptr->collision_radius;
   local_14.x = 0.0;
   local_14.z = 0.0;
   core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0

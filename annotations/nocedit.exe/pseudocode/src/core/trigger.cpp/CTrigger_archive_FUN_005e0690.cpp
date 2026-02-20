@@ -53,7 +53,7 @@ void __cdecl core_trigger_cpp_CTrigger_archive_FUN_005e0690(CTrigger *this_ptr)
     core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->hit_points,"hitPoints");
     core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->pressure_plate,"pressurePlate");
     if (g_CTriggerClassVersion < 8) {
-      core_trigger_cpp_CTrigger_FUN_005e0ba0(this_ptr);
+      core_trigger_cpp_CTrigger_calculateTestRadius_FUN_005e0ba0(this_ptr);
     }
     else {
       core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->test_radius,"testRadius");
@@ -66,7 +66,7 @@ void __cdecl core_trigger_cpp_CTrigger_archive_FUN_005e0690(CTrigger *this_ptr)
     }
     if (10 < g_CTriggerClassVersion) {
       core_actor_cpp_archiveString_FUN_0040b5c0
-                (this_ptr->damage_actor_name_wildcard_name,"damageActorWildcard");
+                (this_ptr->damage_actor_wildcard_name,"damageActorWildcard");
       return;
     }
   }

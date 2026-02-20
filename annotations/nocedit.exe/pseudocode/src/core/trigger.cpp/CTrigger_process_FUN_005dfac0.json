@@ -1,47 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 24,
-        "line": 67,
-        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 9,
-        "line": 69,
-        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 71,
-        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 72,
-        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 509,
-    "complexity_score": 269,
+    "complexity_score": 251,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 21,
-    "pseudocode_lines": 219,
-    "suspect_count": 4,
+    "pseudocode_lines": 216,
+    "suspect_count": 3,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "pointer_cast"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 728
+    "total_lines": 725
   },
   "cross_references": [],
   "function": {
@@ -393,13 +367,6 @@
     "severity": "medium"
   },
   "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(float *)((int)",
-      "text": "fVar4 = *(float *)((int)g_HeroActors + iVar9);",
-      "type": "pointer_cast"
-    },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 98,

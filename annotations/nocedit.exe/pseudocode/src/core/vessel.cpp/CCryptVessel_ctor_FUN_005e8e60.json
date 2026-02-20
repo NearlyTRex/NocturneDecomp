@@ -2,117 +2,20 @@
   "compilation_status": {
     "errors": [],
     "success": true,
-    "warnings": [
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 28,
-        "message": "array index 4294967293 refers past the last possible element for an array in 32-bit address space containing 3040-bit (380-byte) elements (max possible 11302545 elements) [-Warray-bounds]"
-      },
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 29,
-        "message": "array index 4294967293 refers past the last possible element for an array in 32-bit address space containing 3040-bit (380-byte) elements (max possible 11302545 elements) [-Warray-bounds]"
-      },
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 30,
-        "message": "array index 4294967293 refers past the last possible element for an array in 32-bit address space containing 3040-bit (380-byte) elements (max possible 11302545 elements) [-Warray-bounds]"
-      },
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 31,
-        "message": "array index 4294967293 refers past the last possible element for an array in 32-bit address space containing 3040-bit (380-byte) elements (max possible 11302545 elements) [-Warray-bounds]"
-      },
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 32,
-        "message": "array index 4294967293 refers past the last possible element for an array in 32-bit address space containing 3040-bit (380-byte) elements (max possible 11302545 elements) [-Warray-bounds]"
-      },
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 33,
-        "message": "array index 4294967293 refers past the last possible element for an array in 32-bit address space containing 3040-bit (380-byte) elements (max possible 11302545 elements) [-Warray-bounds]"
-      },
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 34,
-        "message": "array index 4294967293 refers past the last possible element for an array in 32-bit address space containing 3040-bit (380-byte) elements (max possible 11302545 elements) [-Warray-bounds]"
-      },
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 35,
-        "message": "array index 4294967293 refers past the last possible element for an array in 32-bit address space containing 3040-bit (380-byte) elements (max possible 11302545 elements) [-Warray-bounds]"
-      },
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 37,
-        "message": "array index 4294967293 refers past the last possible element for an array in 32-bit address space containing 3040-bit (380-byte) elements (max possible 11302545 elements) [-Warray-bounds]"
-      },
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 38,
-        "message": "array index 4294967293 refers past the last possible element for an array in 32-bit address space containing 3040-bit (380-byte) elements (max possible 11302545 elements) [-Warray-bounds]"
-      },
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 39,
-        "message": "array index 4294967293 refers past the last possible element for an array in 32-bit address space containing 3040-bit (380-byte) elements (max possible 11302545 elements) [-Warray-bounds]"
-      },
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 40,
-        "message": "array index 4294967293 refers past the last possible element for an array in 32-bit address space containing 3040-bit (380-byte) elements (max possible 11302545 elements) [-Warray-bounds]"
-      },
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 71,
-        "message": "array index 4294967292 refers past the last possible element for an array in 32-bit address space containing 3040-bit (380-byte) elements (max possible 11302545 elements) [-Warray-bounds]"
-      },
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 72,
-        "message": "array index 4294967292 refers past the last possible element for an array in 32-bit address space containing 3040-bit (380-byte) elements (max possible 11302545 elements) [-Warray-bounds]"
-      },
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 73,
-        "message": "array index 4294967292 refers past the last possible element for an array in 32-bit address space containing 3040-bit (380-byte) elements (max possible 11302545 elements) [-Warray-bounds]"
-      },
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 74,
-        "message": "array index 4294967292 refers past the last possible element for an array in 32-bit address space containing 3040-bit (380-byte) elements (max possible 11302545 elements) [-Warray-bounds]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 94,
-    "complexity_score": 203,
+    "complexity_score": 282,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 11,
-    "pseudocode_lines": 68,
-    "suspect_count": 13,
+    "pseudocode_lines": 57,
+    "suspect_count": 22,
     "suspect_types": [
-      "negative_offset"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 162
+    "total_lines": 151
   },
   "cross_references": [
     {
@@ -283,95 +186,158 @@
   },
   "suspects": [
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 15,
+      "match": "ADJ",
+      "text": "pCVar4 = core_flame_cpp_CFlame_ctor_FUN_004c9aa0(&ADJ(pCVar3)->flame);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 16,
+      "match": "ADJ",
+      "text": "this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&ADJ(pCVar4)->orb_model);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 18,
-      "match": "pCVar3[-4].",
-      "text": "*(CDemonActor_vtable **)(pCVar3[-4].model_name + 0x60) = &g_CCryptVesselVTable;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->base.vtable._ub = &g_CCryptVesselVTable;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 20,
-      "match": "pCVar3[-4].",
-      "text": "((CKeyFramedModelInstance *)pCVar3[-4].animation_state,\"vsslbase.kfm\");",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "(&ADJ(this_ptr_00)->model,\"vsslbase.kfm\");",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 29,
-      "match": "pCVar3[-3].",
-      "text": "pcVar6 = pCVar3[-3].animation_state + 0xc;",
-      "type": "negative_offset"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 21,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->carrier = (CDemonActor *)0x0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 43,
-      "match": "pCVar3[-2].",
-      "text": "pCVar3[-2].part_visibility_flags[0xd] = 0;",
-      "type": "negative_offset"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 22,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->prey = (CDemonActor *)0x0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 44,
-      "match": "pCVar3[-2].",
-      "text": "pCVar3[-2].part_visibility_flags[0xe] = 0;",
-      "type": "negative_offset"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 23,
+      "match": "ADJ",
+      "text": "pcVar3 = ADJ(this_ptr_00)->destroyed_event;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 46,
-      "match": "pCVar3[-2].",
-      "text": "pCVar3[-2].part_visibility_flags[0x12] = 0;",
-      "type": "negative_offset"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 24,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->neutral = (CDemonActor *)0x0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 47,
-      "match": "pCVar3[-3].",
-      "text": "pcVar6 = pCVar3[-3].animation_state + 0x70;",
-      "type": "negative_offset"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 34,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->start_loc = (CDemonActor *)0x0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 48,
-      "match": "pCVar3[-2].",
-      "text": "pCVar3[-2].part_visibility_flags[0x11] = 0;",
-      "type": "negative_offset"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 35,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->end_loc = (CDemonActor *)0x0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 37,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->timer = 0.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 38,
+      "match": "ADJ",
+      "text": "pcVar3 = ADJ(this_ptr_00)->win_event;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 39,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->state = 0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 49,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->eat_distance = 10.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 50,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->init_frame = 1;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 51,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->visual_type = 0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 52,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->spin_angle = 0.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 55,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->is_visible = 1;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 56,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->base.is_transparent = 1;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 57,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->water_anim_timer = 0.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 58,
-      "match": "pCVar3[-2].",
-      "text": "pCVar3[-2].part_visibility_flags[0xf] = 0x41200000;",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->puzzle_complete = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 59,
-      "match": "pCVar3[-2].",
-      "text": "pCVar3[-2].part_visibility_flags[0x13] = 1;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 60,
-      "match": "pCVar3[-2].",
-      "text": "pCVar3[-2].part_visibility_flags[0x10] = 0;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 61,
-      "match": "pCVar3[-1].",
-      "text": "pCVar3[-1].model_ptr = (CKeyFramedModel *)0x0;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 70,
-      "match": "pCVar3[-5].",
-      "text": "return (CCryptVessel *)(pCVar3[-5].animation_state + 0x24);",
-      "type": "negative_offset"
+      "match": "ADJ",
+      "text": "return ADJ(this_ptr_00);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

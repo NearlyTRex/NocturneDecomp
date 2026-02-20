@@ -21,10 +21,7 @@ CZombieCow * __cdecl core_cow_cpp_CZombieCow_ctor_FUN_00444140(CZombieCow *this_
   (pCVar3->base).base.collision_cylinder_height = 1.75;
   fVar2 = 100.0f;
   (pCVar3->base).base.collision_cylinder_radius = 3.5;
-  pCVar3->unk[8] = '\0';
-  pCVar3->unk[9] = '\0';
-  pCVar3->unk[10] = '\0';
-  pCVar3->unk[0xb] = '\0';
+  pCVar3->sfx_handle = 0;
   (pCVar3->base).base.ai_detection_range_min = fVar1;
   (pCVar3->base).base.ai_detection_range_max = fVar2;
   return pCVar3;

@@ -6,17 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 152,
-    "complexity_score": 105,
+    "complexity_score": 121,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 5,
-    "pseudocode_lines": 65,
-    "suspect_count": 3,
+    "pseudocode_lines": 56,
+    "suspect_count": 5,
     "suspect_types": [
+      "decompiler_intrinsic",
       "param_count_too_few",
       "stack_param"
     ],
-    "total_lines": 217
+    "total_lines": 208
   },
   "cross_references": [
     {
@@ -190,8 +191,22 @@
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_00000008",
-      "text": "pcVar1 = this_ptr->unk2 + in_stack_00000008 * 100 + -4;",
+      "text": "pSVar1 = this_ptr->panels + in_stack_00000008;",
       "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 13,
+      "match": "ABS",
+      "text": "if ((((pSVar1->exists == 0) || (pSVar3->exists != 0)) || (ABS(pSVar1->anim_progress) != 0.0)) ||",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 14,
+      "match": "ABS",
+      "text": "(ABS(pSVar1->anim_speed) != 0.0)) {",
+      "type": "decompiler_intrinsic"
     },
     {
       "call_site_count": 1,

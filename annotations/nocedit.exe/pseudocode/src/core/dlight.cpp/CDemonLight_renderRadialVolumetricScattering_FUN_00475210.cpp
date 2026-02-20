@@ -44,8 +44,8 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
   float local_40;
   float local_3c;
   float local_38;
-  float local_34;
-  float local_30;
+  int local_34;
+  int local_30;
   float local_2c;
   float local_28;
   float local_24;
@@ -100,10 +100,10 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
           local_20 = (float)iVar2 * local_48 * local_50 * 0.25f;
           local_18 = iVar2 + 1;
           local_24 = (float)local_18 * local_48 * local_50 * 0.25f;
-          local_34 = (float)(int)ROUND(ROUND((local_50 - local_20) * (1.0 / local_50) *
-                                             (float)1024));
-          local_30 = (float)(int)ROUND(ROUND((local_50 - local_24) * (1.0 / local_50) *
-                                             (float)1024));
+          local_34 = (int)ROUND(ROUND((local_50 - local_20) * (1.0 / local_50) *
+                                      (float)1024));
+          local_30 = (int)ROUND(ROUND((local_50 - local_24) * (1.0 / local_50) *
+                                      (float)1024));
           local_98 = local_28;
           if (local_20 < local_28) {
             local_98 = local_20;
@@ -149,28 +149,28 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
           wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                     (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_88);
           this_ptr_00 = g_CDemonRendererPtr2;
-          g_CDemonRendererPtr2->vertex_buffer_ptr->w_recip = local_34;
-          this_ptr_00->vertex_buffer_ptr->fog = 0xffff;
-          this_ptr_00->vertex_buffer_ptr->color = 0xffff;
-          this_ptr_00->vertex_buffer_ptr->light = 0xffff;
+          g_CDemonRendererPtr2->vertex_buffer_ptr->fog = local_34;
+          this_ptr_00->vertex_buffer_ptr->g = 0xffff;
+          this_ptr_00->vertex_buffer_ptr->r = 0xffff;
+          this_ptr_00->vertex_buffer_ptr->z = 0xffff;
           this_ptr_00->vertex_buffer_ptr->u = 0xf80000;
           this_ptr_00->vertex_buffer_ptr->v = 0xf80000;
-          this_ptr_00->vertex_buffer_ptr[1].w_recip = local_34;
-          this_ptr_00->vertex_buffer_ptr[1].fog = 0xffff;
-          this_ptr_00->vertex_buffer_ptr[1].color = 0xffff;
-          this_ptr_00->vertex_buffer_ptr[1].light = 0xffff;
+          this_ptr_00->vertex_buffer_ptr[1].fog = local_34;
+          this_ptr_00->vertex_buffer_ptr[1].g = 0xffff;
+          this_ptr_00->vertex_buffer_ptr[1].r = 0xffff;
+          this_ptr_00->vertex_buffer_ptr[1].z = 0xffff;
           this_ptr_00->vertex_buffer_ptr[1].u = 0x80000;
           this_ptr_00->vertex_buffer_ptr[1].v = 0xf80000;
-          this_ptr_00->vertex_buffer_ptr[2].w_recip = local_30;
-          this_ptr_00->vertex_buffer_ptr[2].fog = 0xffff;
-          this_ptr_00->vertex_buffer_ptr[2].color = 0xffff;
-          this_ptr_00->vertex_buffer_ptr[2].light = 0xffff;
+          this_ptr_00->vertex_buffer_ptr[2].fog = local_30;
+          this_ptr_00->vertex_buffer_ptr[2].g = 0xffff;
+          this_ptr_00->vertex_buffer_ptr[2].r = 0xffff;
+          this_ptr_00->vertex_buffer_ptr[2].z = 0xffff;
           this_ptr_00->vertex_buffer_ptr[2].u = 0x80000;
           this_ptr_00->vertex_buffer_ptr[2].v = 0x80000;
-          this_ptr_00->vertex_buffer_ptr[3].w_recip = local_30;
-          this_ptr_00->vertex_buffer_ptr[3].fog = 0xffff;
-          this_ptr_00->vertex_buffer_ptr[3].color = 0xffff;
-          this_ptr_00->vertex_buffer_ptr[3].light = 0xffff;
+          this_ptr_00->vertex_buffer_ptr[3].fog = local_30;
+          this_ptr_00->vertex_buffer_ptr[3].g = 0xffff;
+          this_ptr_00->vertex_buffer_ptr[3].r = 0xffff;
+          this_ptr_00->vertex_buffer_ptr[3].z = 0xffff;
           this_ptr_00->vertex_buffer_ptr[3].u = 0xf80000;
           iVar2 = iVar2 + 1;
           this_ptr_00->vertex_buffer_ptr[3].v = 0x80000;

@@ -19,16 +19,15 @@
   },
   "complexity": {
     "assembly_lines": 451,
-    "complexity_score": 688,
+    "complexity_score": 643,
     "cross_reference_count": 4,
     "function_call_count": 17,
     "global_count": 39,
     "pseudocode_lines": 283,
-    "suspect_count": 39,
+    "suspect_count": 35,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
-      "suspect_float"
+      "pointer_cast"
     ],
     "total_lines": 734
   },
@@ -232,25 +231,25 @@
     },
     {
       "addr": "00688034",
-      "name": "g_RenderVertexBuffer[0].light",
+      "name": "g_RenderVertexBuffer[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00688038",
-      "name": "g_RenderVertexBuffer[0].color",
+      "name": "g_RenderVertexBuffer[0].r",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0068803c",
-      "name": "g_RenderVertexBuffer[0].fog",
+      "name": "g_RenderVertexBuffer[0].g",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00688040",
-      "name": "g_RenderVertexBuffer[0].w_recip",
+      "name": "g_RenderVertexBuffer[0].fog",
       "type": "undefined4",
       "value": null
     },
@@ -268,25 +267,25 @@
     },
     {
       "addr": "00688064",
-      "name": "g_RenderVertexBuffer[1].light",
+      "name": "g_RenderVertexBuffer[1].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00688068",
-      "name": "g_RenderVertexBuffer[1].color",
+      "name": "g_RenderVertexBuffer[1].r",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0068806c",
-      "name": "g_RenderVertexBuffer[1].fog",
+      "name": "g_RenderVertexBuffer[1].g",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00688070",
-      "name": "g_RenderVertexBuffer[1].w_recip",
+      "name": "g_RenderVertexBuffer[1].fog",
       "type": "undefined4",
       "value": null
     },
@@ -304,25 +303,25 @@
     },
     {
       "addr": "00688094",
-      "name": "g_RenderVertexBuffer[2].light",
+      "name": "g_RenderVertexBuffer[2].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00688098",
-      "name": "g_RenderVertexBuffer[2].color",
+      "name": "g_RenderVertexBuffer[2].r",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0068809c",
-      "name": "g_RenderVertexBuffer[2].fog",
+      "name": "g_RenderVertexBuffer[2].g",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "006880a0",
-      "name": "g_RenderVertexBuffer[2].w_recip",
+      "name": "g_RenderVertexBuffer[2].fog",
       "type": "undefined4",
       "value": null
     },
@@ -340,25 +339,25 @@
     },
     {
       "addr": "006880c4",
-      "name": "g_RenderVertexBuffer[3].light",
+      "name": "g_RenderVertexBuffer[3].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "006880c8",
-      "name": "g_RenderVertexBuffer[3].color",
+      "name": "g_RenderVertexBuffer[3].r",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "006880cc",
-      "name": "g_RenderVertexBuffer[3].fog",
+      "name": "g_RenderVertexBuffer[3].g",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "006880d0",
-      "name": "g_RenderVertexBuffer[3].w_recip",
+      "name": "g_RenderVertexBuffer[3].fog",
       "type": "undefined4",
       "value": null
     },
@@ -721,34 +720,6 @@
       "match": "ROUND",
       "text": "CStack_40.z = (int)ROUND(fStack_44 * 256.0f);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 255,
-      "match": "2.29589e-41",
-      "text": "g_CDemonRendererPtr2->vertex_buffer_ptr->w_recip = 2.29589e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 256,
-      "match": "2.29589e-41",
-      "text": "this_ptr_00->vertex_buffer_ptr[1].w_recip = 2.29589e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 257,
-      "match": "2.29589e-41",
-      "text": "this_ptr_00->vertex_buffer_ptr[2].w_recip = 2.29589e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 258,
-      "match": "2.29589e-41",
-      "text": "this_ptr_00->vertex_buffer_ptr[3].w_recip = 2.29589e-41;",
-      "type": "suspect_float"
     }
   ]
 }

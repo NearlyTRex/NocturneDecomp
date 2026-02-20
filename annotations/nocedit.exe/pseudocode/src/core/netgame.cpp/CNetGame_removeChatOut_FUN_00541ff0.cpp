@@ -99,7 +99,7 @@ void __cdecl core_netgame_cpp_CNetGame_removeChatOut_FUN_00541ff0(CNetGame *this
           }
           piVar4 = piVar4 + 1;
           local_20 = (int *)((int)local_20 + 1);
-          local_24 = (CNetGame *)(local_24->players[0].unk1 + 0x20);
+          local_24 = (CNetGame *)(local_24->players[0].controls.action_states + 3);
           local_1c = local_1c + 0x78;
           local_28 = local_28 + 1;
         } while (local_28 < this_ptr->player_count);

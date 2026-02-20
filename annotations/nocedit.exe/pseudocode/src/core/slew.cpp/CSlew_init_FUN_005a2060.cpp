@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: This is an inlined function */
+
 void __cdecl core_slew_cpp_CSlew_init_FUN_005a2060(CSlew *this_ptr)
 
 {

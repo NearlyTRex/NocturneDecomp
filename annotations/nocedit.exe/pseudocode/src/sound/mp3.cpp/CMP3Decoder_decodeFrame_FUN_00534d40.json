@@ -1,121 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 18,
-        "line": 312,
-        "message": "invalid operands to binary expression ('CFileBitStream *' and 'int')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 27,
-        "line": 321,
-        "message": "use of undeclared identifier 'stack0xffff9f14'; did you mean 'in_stack_ffff9f14'?"
-      },
-      {
-        "category": "other",
-        "column": 39,
-        "line": 333,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 39,
-        "line": 334,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 39,
-        "line": 335,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 28,
-        "line": 336,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 336,
-        "message": "cast from pointer to smaller type 'short' loses information"
-      },
-      {
-        "category": "other",
-        "column": 28,
-        "line": 337,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 20,
-        "line": 344,
-        "message": "invalid operands to binary expression ('CMP3Decoder *' and 'int')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 47,
-        "line": 366,
-        "message": "use of undeclared identifier '_local_4d8'; did you mean 'local_4d8'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 27,
-        "line": 378,
-        "message": "use of undeclared identifier 'stack0xffff9f14'; did you mean 'in_stack_ffff9f14'?"
-      },
-      {
-        "category": "other",
-        "column": 42,
-        "line": 390,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 42,
-        "line": 391,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 42,
-        "line": 392,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 31,
-        "line": 393,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 393,
-        "message": "cast from pointer to smaller type 'short' loses information"
-      },
-      {
-        "category": "other",
-        "column": 31,
-        "line": 394,
-        "message": "member reference base type 'int' is not a structure or union"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 1125,
-    "complexity_score": 1078,
+    "complexity_score": 1093,
     "cross_reference_count": 3,
     "function_call_count": 29,
     "global_count": 13,
     "pseudocode_lines": 543,
-    "suspect_count": 50,
+    "suspect_count": 51,
     "suspect_types": [
+      "byvalue_struct_passing",
       "decompiler_intrinsic",
       "format_string_mismatch",
       "pointer_cast",
@@ -1350,6 +1248,13 @@
       "match": "ROUND",
       "text": "local_60 = (int)ROUND(ROUND((((double)local_60cc /",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Calls calculateMainDataSize - decompiler cannot recognize by-value pattern",
+      "line": 1,
+      "match": "calculateMainDataSize",
+      "text": "Function calls by-value struct passing functions",
+      "type": "byvalue_struct_passing"
     },
     {
       "actual_args": 0,

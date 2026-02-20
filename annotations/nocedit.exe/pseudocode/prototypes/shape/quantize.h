@@ -73,7 +73,7 @@ int __cdecl displayProgressBar(char *label,int total_count,int current_index);
 
 // Original: shape_quantize.cpp_CBitmap_ctor_FUN_00556a00
 // Address: 00556a00
-CBitmap * __cdecl CBitmap::ctor(CBitmap *this_ptr);
+CBitmap * __cdecl CBitmap::ctor(CBitmap *this_ptr,int param_2,int param_3,int param_4);
 
 // Original: shape_quantize.cpp_CBitmap_dtor_FUN_00556c20
 // Address: 00556c20

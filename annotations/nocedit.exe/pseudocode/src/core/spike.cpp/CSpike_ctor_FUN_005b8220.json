@@ -6,17 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 109,
-    "complexity_score": 129,
+    "complexity_score": 233,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 18,
-    "pseudocode_lines": 79,
-    "suspect_count": 4,
+    "pseudocode_lines": 68,
+    "suspect_count": 16,
     "suspect_types": [
-      "negative_offset",
-      "pointer_cast"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 188
+    "total_lines": 177
   },
   "cross_references": [
     {
@@ -224,32 +223,116 @@
   },
   "suspects": [
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 16,
-      "match": "this_ptr_00[-1].",
-      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CSpikeVTable;",
-      "type": "negative_offset"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 14,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->base.vtable._ub = &g_CSpikeVTable;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 29,
-      "match": "(char *)((int)",
-      "text": "*(char *)((int)piVar5 + 1) = cVar1;",
-      "type": "pointer_cast"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 17,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->spike_type = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 30,
-      "match": "(int *)((int)",
-      "text": "piVar5 = (int *)((int)piVar5 + 2);",
-      "type": "pointer_cast"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 18,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->spike_state = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 81,
-      "match": "this_ptr_00[-1].",
-      "text": "return (CSpike *)(this_ptr_00[-1].part_visibility_flags + 9);",
-      "type": "negative_offset"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 19,
+      "match": "ADJ",
+      "text": "pcVar3 = ADJ(this_ptr_00)->start_event;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 20,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->are_we_active = 0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 31,
+      "match": "ADJ",
+      "text": "pcVar3 = ADJ(this_ptr_00)->stop_event;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 42,
+      "match": "ADJ",
+      "text": "pcVar3 = ADJ(this_ptr_00)->extend_event;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 53,
+      "match": "ADJ",
+      "text": "pcVar3 = ADJ(this_ptr_00)->retract_event;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 63,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->extend_time = 1.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 64,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->retract_time = 1.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 65,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->extend_sound[0] = '\\0';",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 66,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->retract_sound[0] = '\\0';",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 67,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->period = 1.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 68,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->damage_strength = 0.1;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 69,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->param = 0.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 70,
+      "match": "ADJ",
+      "text": "return ADJ(this_ptr_00);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

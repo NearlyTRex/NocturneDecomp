@@ -6,17 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 65,
+    "complexity_score": 49,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 6,
-    "pseudocode_lines": 35,
-    "suspect_count": 2,
+    "pseudocode_lines": 34,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "suspect_float"
+      "pointer_cast"
     ],
-    "total_lines": 127
+    "total_lines": 126
   },
   "cross_references": [
     {
@@ -65,25 +64,25 @@
     },
     {
       "addr": "00688034",
-      "name": "g_RenderVertexBuffer[0].light",
+      "name": "g_RenderVertexBuffer[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00688038",
-      "name": "g_RenderVertexBuffer[0].color",
+      "name": "g_RenderVertexBuffer[0].r",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0068803c",
-      "name": "g_RenderVertexBuffer[0].fog",
+      "name": "g_RenderVertexBuffer[0].g",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00688040",
-      "name": "g_RenderVertexBuffer[0].w_recip",
+      "name": "g_RenderVertexBuffer[0].fog",
       "type": "undefined4",
       "value": null
     }
@@ -179,17 +178,10 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 16,
+      "line": 15,
       "match": "(short *)((int)",
       "text": "(int)*(short *)((int)this_ptr->terrain_data +",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 33,
-      "match": "9.18341e-41",
-      "text": "g_RenderVertexBuffer[iVar2].w_recip = 9.18341e-41;",
-      "type": "suspect_float"
     }
   ]
 }

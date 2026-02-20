@@ -61,6 +61,6 @@ void __cdecl core_trigger_cpp_CTrigger_processInEditor_FUN_005e1180(CTrigger *th
     }
     (this_ptr->trigger_size).x = (this_ptr->trigger_size).z;
   }
-  core_trigger_cpp_CTrigger_FUN_005e0ba0(this_ptr);
+  core_trigger_cpp_CTrigger_calculateTestRadius_FUN_005e0ba0(this_ptr);
   return;
 }

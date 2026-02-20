@@ -1,43 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 22,
-        "line": 31,
-        "message": "C-style cast from 'CVector3i *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 34,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3i *'"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 41,
-        "message": "C-style cast from 'CVector3i *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 44,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3i *'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 167,
+    "complexity_score": 182,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 7,
     "pseudocode_lines": 57,
-    "suspect_count": 10,
+    "suspect_count": 11,
     "suspect_types": [
+      "byvalue_struct_passing",
       "decompiler_intrinsic",
       "pointer_cast"
     ],
@@ -365,6 +341,13 @@
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Calls clipAndDrawLine2D - decompiler cannot recognize by-value pattern",
+      "line": 1,
+      "match": "clipAndDrawLine2D",
+      "text": "Function calls by-value struct passing functions",
+      "type": "byvalue_struct_passing"
     }
   ]
 }

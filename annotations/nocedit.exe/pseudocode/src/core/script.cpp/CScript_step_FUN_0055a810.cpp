@@ -1825,7 +1825,9 @@ joined_r0x0055c026:
                                                     goto LAB_0055a97f;
                                                   }
                                                   if (g_ScriptEventsEnabled == 0) {
-                                                    core_platfrm_cpp_CPlatform_FUN_0054d690(pCVar9);
+                                                                                                        
+                                                  core_platfrm_cpp_CPlatform_startMovement_FUN_0054d690
+                                                            (pCVar9,local_3f78,local_3f74);
                                                   }
                                                   }
                                                   else {

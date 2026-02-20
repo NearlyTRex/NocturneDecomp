@@ -33,7 +33,7 @@ int __cdecl core_turret_cpp_CTurret_renderOpaque_FUN_005e2320(CTurret *this_ptr)
       engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                 (g_CDemonRendererPtr2,&(this_ptr->base).base.location.position);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                (g_CDemonRendererPtr2,(CVector3i *)this_ptr->unk1,(CVector3i *)0x0);
+                (g_CDemonRendererPtr2,(CVector3i *)&(this_ptr->home_orient).vec,(CVector3i *)0x0);
       iVar3 = -1;
       fStack_10 = core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30(this_ptr);
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20

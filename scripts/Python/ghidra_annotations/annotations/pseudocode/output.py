@@ -402,7 +402,8 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
                                      existing_pcode_overrides=None, resolved_suspects=None,
                                      is_ebp_frame=False, existing_proto_overrides=None,
                                      existing_decompiler_fixes=None, compilation_status=None,
-                                     mmx_decompiled_code=None):
+                                     mmx_decompiled_code=None,
+                                     byval_decompiled_code=None):
     """Generate file contents for a function without writing to disk.
 
     Args:
@@ -435,11 +436,15 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
         mmx_decompiled_code: Optional MMX inline asm version of the decompiled code.
             When provided, generates an additional .mmx.cpp/.mmx.c file alongside
             the regular .cpp (which keeps the original pseudocode).
+        byval_decompiled_code: Optional by-value struct passing inline asm version.
+            When provided, generates an additional .byval.cpp/.byval.c file alongside
+            the regular .cpp.
 
     Returns:
         Dictionary with paths and contents: {cpp_path, cpp_content, asm_path, asm_content,
                                             json_path, json_content, pcode_path, pcode_content,
-                                            mmx_cpp_path, mmx_cpp_content}
+                                            mmx_cpp_path, mmx_cpp_content,
+                                            byval_cpp_path, byval_cpp_content}
     """
     # Determine base path without extension
     if source_filename.endswith('.cpp'):
@@ -457,6 +462,9 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
     # Determine .mmx path if MMX content is provided
     mmx_ext = '.mmx.cpp' if source_filename.endswith('.cpp') else '.mmx.c'
     mmx_cpp_path = os.path.join(output_base_path, base_name + mmx_ext) if mmx_decompiled_code else None
+    # Determine .byval path if by-value struct passing content is provided
+    byval_ext = '.byval.cpp' if source_filename.endswith('.cpp') else '.byval.c'
+    byval_cpp_path = os.path.join(output_base_path, base_name + byval_ext) if byval_decompiled_code else None
     result = {
         'cpp_path': cpp_path,
         'cpp_content': None,
@@ -467,7 +475,9 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
         'pcode_path': pcode_path,
         'pcode_content': None,
         'mmx_cpp_path': mmx_cpp_path,
-        'mmx_cpp_content': None
+        'mmx_cpp_content': None,
+        'byval_cpp_path': byval_cpp_path,
+        'byval_cpp_content': None
     }
 
     # Generate lean .cpp content
@@ -489,6 +499,16 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
             result['mmx_cpp_content'] = mmx_cpp_content + "\n"
         except Exception as e:
             log_info("Failed to generate .mmx.cpp content for %s: %s" % (source_filename, str(e)))
+
+    # Generate .byval.cpp content if by-value struct passing inline asm version is provided
+    if byval_decompiled_code:
+        try:
+            byval_cpp_content = create_lean_cpp_content(
+                func_name, func_addr, func_addr_range, func_convention,
+                func_signature, byval_decompiled_code)
+            result['byval_cpp_content'] = byval_cpp_content + "\n"
+        except Exception as e:
+            log_info("Failed to generate .byval.cpp content for %s: %s" % (source_filename, str(e)))
 
     # Generate .asm content
     try:

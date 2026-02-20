@@ -71,8 +71,8 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonEngineAPIPremiumMultiStat
               piVar7 = piVar7 + (uint)bVar9 * -2 + 1;
               pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar9 * -2 + 1) * 4);
             }
-            *(ushort *)&g_RenderVertexBuffer[iVar3].w_recip =
-                 *(ushort *)&g_RenderVertexBuffer[iVar3].w_recip ^ 0xffff;
+            *(ushort *)&g_RenderVertexBuffer[iVar3].fog =
+                 (ushort)g_RenderVertexBuffer[iVar3].fog ^ 0xffff;
             *(int *)((int)g_ProcessedVertexIndices + iVar2) = iVar3;
             iVar3 = iVar3 + 1;
             piVar6 = piVar6 + 0xc;

@@ -121,7 +121,7 @@ void __cdecl CStranger(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_CStranger_FUN_005c07b0
 // Address: 005c07b0
-float * __cdecl CStranger(CStranger *this_ptr);
+void __cdecl CStranger(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_CStranger_FUN_005c1680
 // Address: 005c1680

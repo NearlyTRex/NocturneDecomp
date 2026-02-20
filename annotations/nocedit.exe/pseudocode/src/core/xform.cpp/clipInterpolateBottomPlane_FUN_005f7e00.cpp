@@ -50,9 +50,8 @@ void __cdecl core_xform_cpp_clipInterpolateBottomPlane_FUN_005f7e00(SRenderVerte
   if ((uVar2 & 4) == 0) {
     return;
   }
-  lVar1 = (longlong)(vertex_b->light - vertex_a->light) * (longlong)iVar5;
+  lVar1 = (longlong)(vertex_b->z - vertex_a->z) * (longlong)iVar5;
   uVar4 = (uint)lVar1;
-  vertex_out->light =
-       (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) + vertex_a->light;
+  vertex_out->z = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) + vertex_a->z;
   return;
 }

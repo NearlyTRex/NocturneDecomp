@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; Called Functions:
-;   core_course.cpp_CCourse_FUN_00442710
+;   core_course.cpp_CCourse_evaluate_FUN_00442710
 ;
 ; *****************************************************************************
 
@@ -52,8 +52,8 @@ section .text
     FSTP float ptr [ESP + 0x20]         ; 0050bc9b
     PUSH dword ptr [ESP + 0x20]         ; 0050bc9f
     PUSH EDI                            ; 0050bca3
-    CALL core_course.cpp_CCourse_FUN_00442710 ; 0050bca4
-        ;   XREF to: 00442710 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_FUN_00442710(CCourse * this_ptr)
+    CALL core_course.cpp_CCourse_evaluate_FUN_00442710 ; 0050bca4
+        ;   XREF to: 00442710 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_evaluate_FUN_00442710(CCourse * this_ptr, float time, CVector3f * out_pos, CVector3f * out_euler)
     ADD ESP,0x10                        ; 0050bca9
     FLD float ptr [ESP + 0xc]           ; 0050bcac
     FCOMP float ptr [EBX + 0x184]       ; 0050bcb0

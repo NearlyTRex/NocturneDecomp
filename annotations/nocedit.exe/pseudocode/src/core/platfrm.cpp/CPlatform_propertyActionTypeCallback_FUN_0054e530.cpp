@@ -36,8 +36,10 @@ int __cdecl core_platfrm_cpp_CPlatform_propertyActionTypeCallback_FUN_0054e530(C
   if (iVar1 != 0) {
     if (iVar1 == 1) {
       this_ptr_00 = &pCVar1->course;
-      core_course_cpp_CCourse_FUN_004427a0(this_ptr_00);
-      core_course_cpp_CCourse_FUN_004427a0(this_ptr_00);
+      core_course_cpp_CCourse_interpolate_FUN_004427a0
+                (this_ptr_00,0.0,&pCVar1->start_pos,&pCVar1->orig_orient);
+      core_course_cpp_CCourse_interpolate_FUN_004427a0
+                (this_ptr_00,0.9999,&pCVar1->end_pos,&pCVar1->end_orient);
       core_course_cpp_CCourse_free_FUN_004426c0(this_ptr_00);
       pCVar1->course_filename[0] = '\0';
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_544,0);

@@ -78,15 +78,11 @@ INT_ADD (unique,0x3300,4) = (register,0x8,4) /* EDX */, (const,0x18,4)
 COPY (unique,0x5180,4) = (const,0x41e00000,4)
 STORE (const,0x1a1,4), (unique,0x3300,4), (unique,0x5180,4)
 
-@005a2092 [ESP:+0]  # LEA EAX, [EAX]
-COPY (register,0x0,4) /* EAX */ = (register,0x0,4) /* EAX */
-
-@005a2098 [ESP:+0]  # LEA EDX, [EDX]
-COPY (register,0x8,4) /* EDX */ = (register,0x8,4) /* EDX */
-
-@005a209e [ESP:+0]  # MOV EAX, EAX
-COPY (register,0x0,4) /* EAX */ = (register,0x0,4) /* EAX */
+@005a2092 [ESP:+4](+4)  # RET
+LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+RETURN (register,0x284,4)
 
 # ============================================================================
-# Summary: 16 instructions, 39 P-code ops
+# Summary: 14 instructions, 39 P-code ops
 # ============================================================================

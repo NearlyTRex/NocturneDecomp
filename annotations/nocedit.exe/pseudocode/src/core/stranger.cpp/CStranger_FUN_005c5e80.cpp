@@ -23,6 +23,6 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c5e80(CStranger *this_ptr)
   }
   fVar1 = 10.0f;
   this_ptr->action_pending = 3;
-  *(float *)(this_ptr->unk1 + 0xc) = fVar1;
+  this_ptr->aim_speed_factor = fVar1;
   return 1;
 }

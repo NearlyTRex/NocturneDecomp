@@ -73,9 +73,9 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   this_ptr->show_customizable_keys = 0;
   this_ptr->block_auto_save = 0;
   this_ptr->auto_save_blocked = 0;
-  this_ptr->unk11 = 0;
-  this_ptr->unk9 = 0;
-  this_ptr->unk10 = 0;
+  this_ptr->player_hit_flag = 0;
+  this_ptr->geometry_debug_enabled = 0;
+  this_ptr->collision_render_enabled = 0;
   g_CheatSystemEnabled = 0;
   this_ptr->velocity_debug_enabled = 0;
   core_game_cpp_CGame_setGameRes_FUN_004dade0(this_ptr);
@@ -144,7 +144,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
       core_game_cpp_CGame_processFudge_FUN_004d8750(this_ptr,in_stack_fffff790,in_stack_fffff794);
       core_game_cpp_CGame_playerControls_FUN_004dbd80(this_ptr);
       if ((((this_ptr->is_game_active != 0) && (this_ptr->cutscene_skippable == 0)) &&
-          (*(int *)(g_CNetGamePtr->unk + 0x50) == 0)) && (this_ptr->block_auto_save == 0)) {
+          (g_CNetGamePtr->has_pending_sim_frame == 0)) && (this_ptr->block_auto_save == 0)) {
         iVar3 = core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
                           (g_CDemonSetPtr,g_CScriptPtr->focus_actor,g_CScriptPtr->unk2);
         if (iVar3 != 0) {
@@ -276,7 +276,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
           goto LAB_004db434;
         }
       }
-      if (((this_ptr->cutscene_skippable == 0) && (*(int *)(g_CNetGamePtr->unk + 0x50) == 0)) &&
+      if (((this_ptr->cutscene_skippable == 0) && (g_CNetGamePtr->has_pending_sim_frame == 0)) &&
          (iVar3 == 0)) {
         if (g_UseExternalRenderer == 0) {
           wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

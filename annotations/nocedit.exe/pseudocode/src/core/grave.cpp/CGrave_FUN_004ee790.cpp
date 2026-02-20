@@ -9,7 +9,7 @@
 void __cdecl core_grave_cpp_CGrave_FUN_004ee790(CGrave *this_ptr)
 
 {
-  if ((*(int *)this_ptr->unk1 == 0) && (this_ptr->grave_state == 0)) {
+  if ((this_ptr->animation_started == 0) && (this_ptr->grave_state == 0)) {
     this_ptr->grave_state = 1;
     this_ptr->cur_frame = 0.0;
     if (this_ptr->start_sound[0] != '\0') {

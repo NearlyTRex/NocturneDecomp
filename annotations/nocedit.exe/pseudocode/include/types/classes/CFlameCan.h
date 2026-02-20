@@ -3,6 +3,7 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDemonActor.h"
+#include "types/classes/CFlame.h"
 #include "types/classes/CKeyFramedModelInstance.h"
 
 // Structure: CFlameCan
@@ -13,6 +14,7 @@ typedef struct CFlameCan {
     int on_fire; // 0x2d4
     float time_to_explode; // 0x2d8
     char on_fire_condition[100]; // 0x2dc
-    char unk[680]; // 0x340
+    CFlame flame; // 0x340
+    int unk; // 0x5e4
 } CFlameCan;
 

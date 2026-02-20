@@ -21,8 +21,7 @@ void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004f6f20(CHotDemon *this_pt
   uint uVar8;
   CVector3f *pCVar9;
   CPathMap *path_map;
-  uint uVar10;
-  float fVar11;
+  float fVar10;
   float max_distance;
   float in_stack_fffffef4;
   CVector3f local_d0;
@@ -68,9 +67,9 @@ void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004f6f20(CHotDemon *this_pt
     core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,uVar8);
   }
   fVar3 = (this_ptr->base).speed;
-  fVar11 = (float)3.1415926535000001;
+  fVar10 = (float)3.1415926535000001;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  (this_ptr->base).base.turn_speed = delta_time * fVar11 * fVar3;
+  (this_ptr->base).base.turn_speed = delta_time * fVar10 * fVar3;
   pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                      (&pCVar1->motion_controller);
   iVar5 = pSVar6->state_index;
@@ -129,11 +128,11 @@ LAB_004f7178:
           }
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&(this_ptr->base).base.model.motion_controller,iVar5,1);
-          iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)this_ptr->field1_0xbebc);
+          iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->attack_sfx_handle);
           if (iVar5 == 0) {
-            uVar10 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
-                               ((CDemonActor *)this_ptr,"hotdemon-attack.wav");
-            *(uint *)this_ptr->field1_0xbebc = uVar10;
+            uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
+                              ((CDemonActor *)this_ptr,"hotdemon-attack.wav");
+            this_ptr->attack_sfx_handle = uVar8;
           }
         }
       }
@@ -164,7 +163,7 @@ LAB_004f7178:
     if ((this_ptr->base).victim != (CDemonActor *)0x0) {
       max_distance = 0.17453292;
       local_1c = 2.0f;
-      fVar11 = 0.5;
+      fVar10 = 0.5;
       (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
       (this_ptr->base).base.model.accumulated_root_motion.y =
            (this_ptr->base).base.model.accumulated_root_motion.z;
@@ -178,7 +177,7 @@ LAB_004f7178:
       path_map = (*((pCVar4->vtable)._ub)->getPathMap)(pCVar4);
       iVar7 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
                         ((CCharacter *)this_ptr,&(((this_ptr->base).victim)->location).position,
-                         path_map,pCVar9,fVar11,max_distance);
+                         path_map,pCVar9,fVar10,max_distance);
       if (-1 < iVar7) {
         pCVar4 = (this_ptr->base).victim;
         local_94 = (this_ptr->base).base.base.location.position.x - (pCVar4->location).position.x;
@@ -211,11 +210,11 @@ LAB_004f7178:
             }
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&(this_ptr->base).base.model.motion_controller,iVar7,1);
-            iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)this_ptr->field1_0xbebc);
+            iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->attack_sfx_handle);
             if (iVar7 == 0) {
-              uVar10 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
-                                 ((CDemonActor *)this_ptr,"hotdemon-attack.wav");
-              *(uint *)this_ptr->field1_0xbebc = uVar10;
+              uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
+                                ((CDemonActor *)this_ptr,"hotdemon-attack.wav");
+              this_ptr->attack_sfx_handle = uVar8;
             }
             (this_ptr->base).attack_cooldown = 2.0;
           }

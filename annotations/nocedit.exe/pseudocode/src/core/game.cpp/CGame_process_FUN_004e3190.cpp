@@ -25,7 +25,7 @@ void __cdecl core_game_cpp_CGame_process_FUN_004e3190(CGame *this_ptr)
     seed_value = rand();
   }
   else {
-    seed_value = *(uint *)(pCVar2->unk + 0x54);
+    seed_value = pCVar2->random_seed;
   }
   core_actor_cpp_setRandomSeed_FUN_0040cb90(seed_value);
   core_game_cpp_CGame_updateFadeTransition_FUN_004e09c0(this_ptr);

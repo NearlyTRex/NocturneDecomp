@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 37,
+    "complexity_score": 36,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
-    "pseudocode_lines": 12,
+    "pseudocode_lines": 11,
     "suspect_count": 2,
     "suspect_types": [
-      "negative_offset"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 35
+    "total_lines": 34
   },
   "cross_references": [
     {
@@ -123,18 +123,18 @@
   },
   "suspects": [
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 11,
-      "match": "this_ptr_00[-1].",
-      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CTrashVTable;",
-      "type": "negative_offset"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 10,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->base.vtable._ub = &g_CTrashVTable;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 14,
-      "match": "this_ptr_00[-1].",
-      "text": "return (CTrash *)(this_ptr_00[-1].part_visibility_flags + 9);",
-      "type": "negative_offset"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 13,
+      "match": "ADJ",
+      "text": "return ADJ(this_ptr_00);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

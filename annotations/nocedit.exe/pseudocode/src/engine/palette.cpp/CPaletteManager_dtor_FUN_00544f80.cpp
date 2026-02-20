@@ -11,6 +11,6 @@ CPaletteManager * __cdecl engine_palette_cpp_CPaletteManager_dtor_FUN_00544f80(C
 {
   g_CurrentDebugFilename = "..\\engine\\palette.cpp";
   g_CurrentDebugLine = 0x38;
-  shape_memdbg_cpp_free_FUN_005fe659((void *)this_ptr->unk2);
+  shape_memdbg_cpp_free_FUN_005fe659(this_ptr->texture_names);
   return this_ptr;
 }

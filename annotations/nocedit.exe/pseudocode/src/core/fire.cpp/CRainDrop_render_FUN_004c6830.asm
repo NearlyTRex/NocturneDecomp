@@ -35,13 +35,13 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   undefined4 g_RenderVertexBuffer[0].u
 ;   undefined4 g_RenderVertexBuffer[0].v
-;   undefined4 g_RenderVertexBuffer[0].w_recip
+;   undefined4 g_RenderVertexBuffer[0].fog
 ;   undefined4 g_RenderVertexBuffer[1].u
 ;   undefined4 g_RenderVertexBuffer[1].v
-;   undefined4 g_RenderVertexBuffer[1].w_recip
+;   undefined4 g_RenderVertexBuffer[1].fog
 ;   undefined4 g_RenderVertexBuffer[2].u
 ;   undefined4 g_RenderVertexBuffer[2].v
-;   undefined4 g_RenderVertexBuffer[2].w_recip
+;   undefined4 g_RenderVertexBuffer[2].fog
 ;   undefined4 g_RenderVertexBuffer[3].u
 ;   ... and 11 more
 ;
@@ -266,10 +266,10 @@ section .text
     FISTP dword ptr [ESP + 0x98]        ; 004c6ad4
     MOV EAX,dword ptr [ESP + 0x98]      ; 004c6adb
     MOV dword ptr [0x006880c0],EDX      ; 004c6ae2 | g_RenderVertexBuffer[3].v
-    MOV [0x00688040],EAX                ; 004c6ae8 | g_RenderVertexBuffer[0].w_recip
-    MOV [0x00688070],EAX                ; 004c6aed | g_RenderVertexBuffer[1].w_recip
-    MOV [0x006880a0],EAX                ; 004c6af2 | g_RenderVertexBuffer[2].w_recip
-    MOV [0x006880d0],EAX                ; 004c6af7 | g_RenderVertexBuffer[3].w_recip
+    MOV [0x00688040],EAX                ; 004c6ae8 | g_RenderVertexBuffer[0].fog
+    MOV [0x00688070],EAX                ; 004c6aed | g_RenderVertexBuffer[1].fog
+    MOV [0x006880a0],EAX                ; 004c6af2 | g_RenderVertexBuffer[2].fog
+    MOV [0x006880d0],EAX                ; 004c6af7 | g_RenderVertexBuffer[3].fog
     LEA EBX,[ESP + 0x80]                ; 004c6afc
     MOV EAX,EBP                         ; 004c6b03
     FLD float ptr [EAX]                 ; 004c6b05

@@ -21,10 +21,7 @@ CZombieDog * __cdecl core_dog_cpp_CZombieDog_ctor_FUN_0047f050(CZombieDog *this_
   (pCVar3->base).base.collision_cylinder_height = 0.75;
   fVar2 = 100.0f;
   (pCVar3->base).base.collision_cylinder_radius = 1.5;
-  pCVar3->field1_0xbebc[8] = '\0';
-  pCVar3->field1_0xbebc[9] = '\0';
-  pCVar3->field1_0xbebc[10] = '\0';
-  pCVar3->field1_0xbebc[0xb] = '\0';
+  pCVar3->sfx_handle = 0;
   (pCVar3->base).base.ai_detection_range_min = fVar1;
   (pCVar3->base).base.ai_detection_range_max = fVar2;
   return pCVar3;

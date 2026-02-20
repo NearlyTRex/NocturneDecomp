@@ -13,9 +13,10 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemo
 {
   CVector3i *world_position;
   longlong lVar1;
-  CDemonRenderer *this_ptr_00;
   float fVar2;
-  byte bVar3;
+  CDemonRenderer *this_ptr_00;
+  uint uVar3;
+  byte bVar4;
   int aiStackY_1064 [992];
   SMRGLHeaderPrimitive local_d4;
   uint local_bc;
@@ -49,7 +50,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemo
   int local_18;
   int local_14;
   
-  bVar3 = 0;
+  bVar4 = 0;
   if (this_ptr->volumetric_enabled == 0) {
     return;
   }
@@ -63,9 +64,9 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemo
   engine_drender_cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
             (g_CDemonRendererPtr2,&local_7c);
   local_64 = local_7c.x;
-  local_60[(uint)bVar3 * -2] = *(int *)((int)&local_7c + (uint)bVar3 * -8 + 4);
-  local_60[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
-       *(int *)((int)&local_7c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+  local_60[(uint)bVar4 * -2] = *(int *)((int)&local_7c + (uint)bVar4 * -8 + 4);
+  local_60[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
+       *(int *)((int)&local_7c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
   local_68 = (float)0.00390625;
   local_70 = (float)local_64 * local_68;
   local_14 = local_60[1];
@@ -97,7 +98,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemo
   local_1c = -(local_50 * local_44 + local_58 * local_4c + local_54 * local_48);
   local_18 = (int)ROUND(ROUND(local_1c * local_1c * local_1c * local_1c * (float)65536));
   lVar1 = (longlong)(0xffff - (int)g_PerspectiveReciprocal / 2) * (longlong)local_18;
-  fVar2 = (float)((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+  uVar3 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
   if (0.0 < local_1c) {
     local_ac = 0x3f000000;
     local_a8 = 0x3f000000;
@@ -134,28 +135,28 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemo
     this_ptr_00 = g_CDemonRendererPtr2;
     g_CDemonRendererPtr2->vertex_buffer_ptr->u = 0xf80000;
     this_ptr_00->vertex_buffer_ptr->v = 0xf80000;
-    this_ptr_00->vertex_buffer_ptr->w_recip = fVar2;
+    this_ptr_00->vertex_buffer_ptr->fog = uVar3;
     this_ptr_00->vertex_buffer_ptr[1].u = 0x80000;
     this_ptr_00->vertex_buffer_ptr[1].v = 0xf80000;
-    this_ptr_00->vertex_buffer_ptr[1].w_recip = fVar2;
+    this_ptr_00->vertex_buffer_ptr[1].fog = uVar3;
     this_ptr_00->vertex_buffer_ptr[2].u = 0x80000;
     this_ptr_00->vertex_buffer_ptr[2].v = 0x80000;
-    this_ptr_00->vertex_buffer_ptr[2].w_recip = fVar2;
+    this_ptr_00->vertex_buffer_ptr[2].fog = uVar3;
     this_ptr_00->vertex_buffer_ptr[3].u = 0xf80000;
     this_ptr_00->vertex_buffer_ptr[3].v = 0x80000;
-    this_ptr_00->vertex_buffer_ptr[3].w_recip = fVar2;
-    this_ptr_00->vertex_buffer_ptr->light = 0xffff;
-    this_ptr_00->vertex_buffer_ptr->color = 0xffff;
-    this_ptr_00->vertex_buffer_ptr->fog = 0xffff;
-    this_ptr_00->vertex_buffer_ptr[1].light = 0xffff;
-    this_ptr_00->vertex_buffer_ptr[1].color = 0xffff;
-    this_ptr_00->vertex_buffer_ptr[1].fog = 0xffff;
-    this_ptr_00->vertex_buffer_ptr[2].light = 0xffff;
-    this_ptr_00->vertex_buffer_ptr[2].color = 0xffff;
-    this_ptr_00->vertex_buffer_ptr[2].fog = 0xffff;
-    this_ptr_00->vertex_buffer_ptr[3].light = 0xffff;
-    this_ptr_00->vertex_buffer_ptr[3].color = 0xffff;
-    this_ptr_00->vertex_buffer_ptr[3].fog = 0xffff;
+    this_ptr_00->vertex_buffer_ptr[3].fog = uVar3;
+    this_ptr_00->vertex_buffer_ptr->z = 0xffff;
+    this_ptr_00->vertex_buffer_ptr->r = 0xffff;
+    this_ptr_00->vertex_buffer_ptr->g = 0xffff;
+    this_ptr_00->vertex_buffer_ptr[1].z = 0xffff;
+    this_ptr_00->vertex_buffer_ptr[1].r = 0xffff;
+    this_ptr_00->vertex_buffer_ptr[1].g = 0xffff;
+    this_ptr_00->vertex_buffer_ptr[2].z = 0xffff;
+    this_ptr_00->vertex_buffer_ptr[2].r = 0xffff;
+    this_ptr_00->vertex_buffer_ptr[2].g = 0xffff;
+    this_ptr_00->vertex_buffer_ptr[3].z = 0xffff;
+    this_ptr_00->vertex_buffer_ptr[3].r = 0xffff;
+    this_ptr_00->vertex_buffer_ptr[3].g = 0xffff;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(this_ptr_00,g_LightTextures + 1);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
     local_d4.base.count = 4;

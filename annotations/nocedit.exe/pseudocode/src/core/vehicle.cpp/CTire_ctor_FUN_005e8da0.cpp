@@ -9,9 +9,8 @@
 CTire * __cdecl core_vehicle_cpp_CTire_ctor_FUN_005e8da0(CTire *this_ptr)
 
 {
-  CKeyFramedModelInstance *pCVar1;
+  CTire_ptr_20 pCVar1;
   
-  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
-                     ((CKeyFramedModelInstance *)(this_ptr->unk + 0x14));
-  return (CTire *)(pCVar1[-1].animation_state + 0x8c);
+  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&this_ptr->model);
+  return ADJ(pCVar1);
 }

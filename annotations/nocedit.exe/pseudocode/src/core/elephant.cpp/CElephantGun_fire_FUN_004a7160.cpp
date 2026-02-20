@@ -160,10 +160,11 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_004a7160(CElephantGun *this_
               }
             }
             else {
-              core_trigger_cpp_CTrigger_FUN_005e0aa0(this_ptr_01);
-              iVar2 = core_trigger_cpp_CTrigger_FUN_005e0ac0(this_ptr_01);
+              core_trigger_cpp_CTrigger_onProjectileHit_FUN_005e0aa0(this_ptr_01);
+              iVar2 = core_trigger_cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0
+                                (this_ptr_01,(char *)this_ptr);
               if (iVar2 != 0) {
-                core_trigger_cpp_CTrigger_FUN_005e0b00(this_ptr_01);
+                core_trigger_cpp_CTrigger_applyDamage_FUN_005e0b00(this_ptr_01,fStack_34);
               }
               in_stack_fffffec0 = (CDemonActor *)0x4a7621;
               in_stack_fffffec4 = g_CDemonSetPtr;

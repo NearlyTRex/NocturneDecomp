@@ -63,7 +63,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c990(CDemonSet *this_ptr)
     g_CDemonCameraInstance.base.position.y = (int)local_2c.y;
     g_CDemonCameraInstance.base.position.z = (int)local_2c.z;
   }
-  if (g_CGamePtr->unk9 == 0) {
+  if (g_CGamePtr->geometry_debug_enabled == 0) {
     core_dlight_cpp_CDemonLight_beginScene_FUN_00472a80(local_14,0);
     core_dlight_cpp_CDemonLight_clearCircularShadowMapEdges_FUN_004735c0(this_ptr_01);
     g_RenderMirrorsFlag = 0;

@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 45,
-    "complexity_score": 89,
+    "complexity_score": 140,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
-    "pseudocode_lines": 34,
-    "suspect_count": 5,
+    "pseudocode_lines": 25,
+    "suspect_count": 11,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 79
+    "total_lines": 70
   },
   "cross_references": [
     {
@@ -103,37 +103,79 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 6,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 7,
       "match": "in_stack_0000000c",
       "text": "float in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000008",
+      "text": "if (this_ptr->panels[this_ptr->reflectors[in_stack_00000008].panel_index].exists == 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_0000000c",
+      "text": "fVar1 = in_stack_0000000c / 2.0f +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_00000008",
-      "text": "iVar3 = in_stack_00000008 * 0x60;",
+      "text": "this_ptr->reflectors[in_stack_00000008].interp_factor;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_0000000c",
-      "text": "fVar2 = in_stack_0000000c / 2.0f + *(float *)(this_ptr->unk3 + iVar3 + 0xd10);",
+      "line": 12,
+      "match": "in_stack_00000008",
+      "text": "this_ptr->reflectors[in_stack_00000008].interp_factor = fVar1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 14,
+      "match": "in_stack_00000008",
+      "text": "this_ptr->reflectors[in_stack_00000008].interp_factor = 1.0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000008",
+      "text": "fVar1 = this_ptr->reflectors[in_stack_00000008].interp_factor -",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
       "match": "in_stack_0000000c",
-      "text": "fVar2 = *(float *)(this_ptr->unk3 + iVar3 + 0xd10) - in_stack_0000000c / 2.0f;",
+      "text": "in_stack_0000000c / 2.0f;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_00000008",
+      "text": "this_ptr->reflectors[in_stack_00000008].interp_factor = fVar1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_00000008",
+      "text": "this_ptr->reflectors[in_stack_00000008].interp_factor = 0.0;",
       "type": "stack_param"
     }
   ]

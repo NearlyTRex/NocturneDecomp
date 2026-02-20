@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_course_cpp_CCourse_allocMemory_FUN_00442500(CCourse *this_ptr)
+; void __cdecl core_course_cpp_CCourse_allocMemory_FUN_00442500(CCourse *this_ptr,int count)
 ;
 ; Parameters:
 ; CCourse *        Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   count
 ;
 ; XREF[2]:
 ;   core_course.cpp_CCourse_importMatrices_FUN_00442ea0 at 00442eb1

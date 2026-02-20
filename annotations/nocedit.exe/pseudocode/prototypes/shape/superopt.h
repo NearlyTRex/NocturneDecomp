@@ -269,7 +269,7 @@ int __cdecl CPoly::isValid(CPoly *this_ptr);
 
 // Original: shape_superopt.cpp_CObj_ctor_FUN_005d2230
 // Address: 005d2230
-CObj * __cdecl CObj::ctor(CObj *this_ptr);
+CObj * __cdecl CObj::ctor(CObj *this_ptr,int poly_count,int vertex_count);
 
 // Original: shape_superopt.cpp_CObj_dtor_FUN_005d2260
 // Address: 005d2260

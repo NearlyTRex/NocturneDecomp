@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 6,
-        "line": 184,
+        "line": 183,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 185,
+        "line": 184,
         "message": "called object type 'void' is not a function or function pointer"
       }
     ],
@@ -31,17 +31,17 @@
   },
   "complexity": {
     "assembly_lines": 250,
-    "complexity_score": 492,
+    "complexity_score": 490,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 26,
-    "pseudocode_lines": 202,
+    "pseudocode_lines": 200,
     "suspect_count": 28,
     "suspect_types": [
       "decompiler_intrinsic",
       "warning_unreachable"
     ],
-    "total_lines": 452
+    "total_lines": 450
   },
   "cross_references": [],
   "function": {
@@ -141,97 +141,97 @@
     },
     {
       "addr": "00688034",
-      "name": "g_RenderVertexBuffer[0].light",
+      "name": "g_RenderVertexBuffer[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00688038",
-      "name": "g_RenderVertexBuffer[0].color",
+      "name": "g_RenderVertexBuffer[0].r",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0068803c",
-      "name": "g_RenderVertexBuffer[0].fog",
+      "name": "g_RenderVertexBuffer[0].g",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00688040",
-      "name": "g_RenderVertexBuffer[0].w_recip",
+      "name": "g_RenderVertexBuffer[0].fog",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00688064",
-      "name": "g_RenderVertexBuffer[1].light",
+      "name": "g_RenderVertexBuffer[1].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00688068",
-      "name": "g_RenderVertexBuffer[1].color",
+      "name": "g_RenderVertexBuffer[1].r",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0068806c",
-      "name": "g_RenderVertexBuffer[1].fog",
+      "name": "g_RenderVertexBuffer[1].g",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00688070",
-      "name": "g_RenderVertexBuffer[1].w_recip",
+      "name": "g_RenderVertexBuffer[1].fog",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00688094",
-      "name": "g_RenderVertexBuffer[2].light",
+      "name": "g_RenderVertexBuffer[2].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00688098",
-      "name": "g_RenderVertexBuffer[2].color",
+      "name": "g_RenderVertexBuffer[2].r",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0068809c",
-      "name": "g_RenderVertexBuffer[2].fog",
+      "name": "g_RenderVertexBuffer[2].g",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "006880a0",
-      "name": "g_RenderVertexBuffer[2].w_recip",
+      "name": "g_RenderVertexBuffer[2].fog",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "006880c4",
-      "name": "g_RenderVertexBuffer[3].light",
+      "name": "g_RenderVertexBuffer[3].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "006880c8",
-      "name": "g_RenderVertexBuffer[3].color",
+      "name": "g_RenderVertexBuffer[3].r",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "006880cc",
-      "name": "g_RenderVertexBuffer[3].fog",
+      "name": "g_RenderVertexBuffer[3].g",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "006880d0",
-      "name": "g_RenderVertexBuffer[3].w_recip",
+      "name": "g_RenderVertexBuffer[3].fog",
       "type": "undefined4",
       "value": null
     },
@@ -593,84 +593,84 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 145,
+      "line": 144,
       "match": "ROUND",
       "text": "CStack_58.x = (int)ROUND(local_b8 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 146,
+      "line": 145,
       "match": "ROUND",
       "text": "CStack_58.y = (int)ROUND(local_b8 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 147,
+      "line": 146,
       "match": "ROUND",
       "text": "CStack_58.z = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 155,
+      "line": 154,
       "match": "ROUND",
       "text": "aCStack_40[0].x = (int)ROUND(local_b8 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 156,
+      "line": 155,
       "match": "ROUND",
       "text": "aCStack_40[0].y = (int)ROUND(fStack_1c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 157,
+      "line": 156,
       "match": "ROUND",
       "text": "aCStack_40[0].z = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 164,
+      "line": 163,
       "match": "ROUND",
       "text": "CStack_c4.x = (int)ROUND(fStack_18 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 165,
+      "line": 164,
       "match": "ROUND",
       "text": "CStack_c4.y = (int)ROUND(fStack_18 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 166,
+      "line": 165,
       "match": "ROUND",
       "text": "CStack_c4.z = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 172,
+      "line": 171,
       "match": "ROUND",
       "text": "CStack_94.x = (int)ROUND(fStack_1c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 173,
+      "line": 172,
       "match": "ROUND",
       "text": "CStack_94.y = (int)ROUND(fStack_18 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 174,
+      "line": 173,
       "match": "ROUND",
       "text": "CStack_94.z = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"

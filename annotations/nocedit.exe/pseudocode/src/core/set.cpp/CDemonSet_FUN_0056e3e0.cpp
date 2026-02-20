@@ -59,8 +59,8 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056e3e0(CDemonSet *this_ptr)
   if ((float)255 < local_38) {
     local_38 = 255.0;
   }
-  g_RenderVertexBuffer[in_stack_00000010].light = (int)ROUND(ROUND(local_3c)) << 8;
-  g_RenderVertexBuffer[in_stack_00000010].color = (int)ROUND(ROUND(local_40)) << 8;
-  g_RenderVertexBuffer[in_stack_00000010].fog = (int)ROUND(ROUND(local_38)) << 8;
+  g_RenderVertexBuffer[in_stack_00000010].z = (int)ROUND(ROUND(local_3c)) << 8;
+  g_RenderVertexBuffer[in_stack_00000010].r = (int)ROUND(ROUND(local_40)) << 8;
+  g_RenderVertexBuffer[in_stack_00000010].g = (int)ROUND(ROUND(local_38)) << 8;
   return;
 }

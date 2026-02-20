@@ -95,14 +95,14 @@ void __cdecl core_fire_cpp_CPopcorn_render_FUN_004c64c0(CPopcorn *this_ptr)
   g_RenderVertexBuffer[2].u = 0xf80000;
   g_RenderVertexBuffer[2].v = 0x80000;
   g_RenderVertexBuffer[3].u = 0x80000;
-  g_RenderVertexBuffer[0].w_recip = (float)(0xffff - (int)g_PerspectiveReciprocal);
+  g_RenderVertexBuffer[0].fog = 0xffff - (int)g_PerspectiveReciprocal;
   g_RenderVertexBuffer[3].v = 0x80000;
   CStack_24.x = (int)ROUND((this_ptr->base).position.x * 256.0f);
   CStack_24.y = (int)ROUND((this_ptr->base).position.y * 256.0f);
   CStack_24.z = (int)ROUND((this_ptr->base).position.z * 256.0f);
-  g_RenderVertexBuffer[1].w_recip = g_RenderVertexBuffer[0].w_recip;
-  g_RenderVertexBuffer[2].w_recip = g_RenderVertexBuffer[0].w_recip;
-  g_RenderVertexBuffer[3].w_recip = g_RenderVertexBuffer[0].w_recip;
+  g_RenderVertexBuffer[1].fog = g_RenderVertexBuffer[0].fog;
+  g_RenderVertexBuffer[2].fog = g_RenderVertexBuffer[0].fog;
+  g_RenderVertexBuffer[3].fog = g_RenderVertexBuffer[0].fog;
   core_set_cpp_CDemonSet_computeLighting_FUN_0056e110
             (g_CDemonSetPtr,&CStack_24,&g_BillboardCameraUp,0,4);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);

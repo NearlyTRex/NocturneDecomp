@@ -9,7 +9,7 @@
 typedef struct CBoneStructure {
     int bone_count; // 0x0
     SBoneData bones[100]; // 0x4
-    char unk[4864]; // 0x3394
+    int shuffled_bone_indices[1216]; // 0x3394
     int new_bone_indices[100]; // 0x4694
 } CBoneStructure;
 

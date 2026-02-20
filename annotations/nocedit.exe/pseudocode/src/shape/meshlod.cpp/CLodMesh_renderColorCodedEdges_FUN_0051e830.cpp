@@ -42,13 +42,13 @@ void __cdecl shape_meshlod_cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830(CLodM
               iVar2 = piVar5[10];
               pCVar1 = this_ptr->tri_data;
               pSVar7 = g_CDemonRendererPtr2->vertex_buffer_ptr;
-              local_48.w_recip = (float)(pSVar7 + pCVar1[iVar2].vertex_idx_2);
-              local_48.fog = (int)(pSVar7 + pCVar1[iVar2].vertex_idx_1);
-              local_48.color = (int)(pSVar7 + pCVar1[iVar2].vertex_idx_0);
-              local_48.light = 0x51e8ca;
+              local_48.fog = (int)(pSVar7 + pCVar1[iVar2].vertex_idx_2);
+              local_48.g = (int)(pSVar7 + pCVar1[iVar2].vertex_idx_1);
+              local_48.r = (int)(pSVar7 + pCVar1[iVar2].vertex_idx_0);
+              local_48.z = 0x51e8ca;
               iVar2 = engine_prim_c_calculateTriangleWindingOrder_FUN_00552150
-                                ((SRenderVertex *)local_48.color,(SRenderVertex *)local_48.fog,
-                                 (SRenderVertex *)local_48.w_recip);
+                                ((SRenderVertex *)local_48.r,(SRenderVertex *)local_48.g,
+                                 (SRenderVertex *)local_48.fog);
               if (iVar2 == 0) break;
               iVar3 = iVar3 + 1;
               piVar5 = piVar5 + 1;
@@ -93,13 +93,13 @@ void __cdecl shape_meshlod_cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830(CLodM
           pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar9 * -2 + 1) * 4);
           pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar9 * -2 + 1) * 4);
         }
-        vertex2.light = local_48.light;
+        vertex2.z = local_48.z;
         vertex2.projected_vertex = local_48.projected_vertex;
         vertex2.u = local_48.u;
         vertex2.v = local_48.v;
-        vertex2.color = local_48.color;
+        vertex2.r = local_48.r;
+        vertex2.g = local_48.g;
         vertex2.fog = local_48.fog;
-        vertex2.w_recip = local_48.w_recip;
         engine_3d_c_clipAndDrawLine2D_FUN_00407d70(local_78,vertex2);
       }
 LAB_0051e85d:

@@ -1,28 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 52,
-        "line": 26,
-        "message": "use of undeclared identifier 'PTR_core_vehicle_cpp_FUN_00665064'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 133,
-    "complexity_score": 120,
+    "complexity_score": 611,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 12,
-    "pseudocode_lines": 75,
-    "suspect_count": 4,
+    "pseudocode_lines": 76,
+    "suspect_count": 53,
     "suspect_types": [
-      "pointer_cast"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 208
+    "total_lines": 209
   },
   "cross_references": [
     {
@@ -134,7 +127,7 @@
     },
     {
       "addr": "00665064",
-      "name": "PTR_core_vehicle.cpp_FUN_00665064",
+      "name": "g_CVehicleVTable",
       "type": "CDemonActor_vtable",
       "value": null
     },
@@ -204,32 +197,375 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 17,
-      "match": "(void *)((int)",
-      "text": "pvVar4 = __arrinit((void *)((int)pvVar4 + 0x668),4,&g_CTireTypeInfo);",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "(ADJ(pCVar3)->extra_models,4,&g_CKeyFramedModelInstanceTypeInfo);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 18,
-      "match": "(CCourse *)((int)",
-      "text": "pCVar5 = core_course_cpp_CCourse_ctor_FUN_004424c0((CCourse *)((int)pvVar4 + 0x6e4));",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "pvVar3 = __arrinit(ADJ(pvVar2)->tires,4,&g_CTireTypeInfo);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 71,
-      "match": "(char *)((int)",
-      "text": "*(char *)((int)piVar7 + 1) = cVar1;",
-      "type": "pointer_cast"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 19,
+      "match": "ADJ",
+      "text": "pCVar4 = core_course_cpp_CCourse_ctor_FUN_004424c0(&ADJ(pvVar3)->course);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 72,
-      "match": "(int *)((int)",
-      "text": "piVar7 = (int *)((int)piVar7 + 2);",
-      "type": "pointer_cast"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 20,
+      "match": "ADJ",
+      "text": "ADJ(pCVar4)->base.vtable._ub = &g_CVehicleVTable;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 22,
+      "match": "ADJ",
+      "text": "(&ADJ(pCVar4)->model,\"32ford.kfm\");",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 23,
+      "match": "ADJ",
+      "text": "ADJ(pCVar4)->tire_count = 4;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 25,
+      "match": "ADJ",
+      "text": "(&ADJ(pCVar4)->tires[0].model,\"32ltire.kfm\");",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 27,
+      "match": "ADJ",
+      "text": "(&ADJ(pCVar4)->tires[2].model,\"32ltire.kfm\");",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 29,
+      "match": "ADJ",
+      "text": "(&ADJ(pCVar4)->tires[1].model,\"32rtire.kfm\");",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 31,
+      "match": "ADJ",
+      "text": "(&ADJ(pCVar4)->tires[3].model,\"32rtire.kfm\");",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 32,
+      "match": "ADJ",
+      "text": "ADJ(pCVar4)->tires[0].static_bpos.x = -2.5;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 33,
+      "match": "ADJ",
+      "text": "ADJ(pCVar4)->tires[0].static_bpos.y = -2.5;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 34,
+      "match": "ADJ",
+      "text": "ADJ(pCVar4)->tires[0].static_bpos.z = 5.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 35,
+      "match": "ADJ",
+      "text": "ADJ(pCVar4)->tires[0].radius = 1.25;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 36,
+      "match": "ADJ",
+      "text": "ADJ(pCVar4)->tires[0].width = 0.25;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 37,
+      "match": "ADJ",
+      "text": "ADJ(pCVar4)->tires[1].static_bpos.x = 2.5;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 38,
+      "match": "ADJ",
+      "text": "ADJ(pCVar4)->tires[1].static_bpos.y = -2.5;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 39,
+      "match": "ADJ",
+      "text": "ADJ(pCVar4)->tires[1].static_bpos.z = 5.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 40,
+      "match": "ADJ",
+      "text": "ADJ(pCVar4)->tires[1].radius = 1.25;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 41,
+      "match": "ADJ",
+      "text": "ADJ(pCVar4)->tires[1].width = 0.25;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 42,
+      "match": "ADJ",
+      "text": "ADJ(pCVar4)->tires[2].static_bpos.x = -2.5;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 43,
+      "match": "ADJ",
+      "text": "ADJ(pCVar4)->tires[2].static_bpos.y = -2.5;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 44,
+      "match": "ADJ",
+      "text": "ADJ(pCVar4)->tires[2].static_bpos.z = -4.5;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 45,
+      "match": "ADJ",
+      "text": "ADJ(pCVar4)->tires[2].radius = 1.25;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 46,
+      "match": "ADJ",
+      "text": "ADJ(pCVar4)->tires[2].width = 0.25;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 47,
+      "match": "ADJ",
+      "text": "ADJ(pCVar4)->tires[3].static_bpos.x = 2.5;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 48,
+      "match": "ADJ",
+      "text": "ADJ(pCVar4)->tires[3].static_bpos.y = -2.5;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 49,
+      "match": "ADJ",
+      "text": "ADJ(pCVar4)->tires[3].static_bpos.z = -4.5;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 50,
+      "match": "ADJ",
+      "text": "ADJ(pCVar4)->tires[3].radius = 1.25;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 51,
+      "match": "ADJ",
+      "text": "ADJ(pCVar4)->tires[3].width = 0.25;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 52,
+      "match": "ADJ",
+      "text": "ADJ(pCVar4)->mass = 2000.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 53,
+      "match": "ADJ",
+      "text": "(ADJ(pCVar4)->local_velocity).z = 0.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 54,
+      "match": "ADJ",
+      "text": "(ADJ(pCVar4)->local_velocity).y = (ADJ(pCVar4)->local_velocity).z;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 54,
+      "match": "ADJ",
+      "text": "(ADJ(pCVar4)->local_velocity).y = (ADJ(pCVar4)->local_velocity).z;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 55,
+      "match": "ADJ",
+      "text": "(ADJ(pCVar4)->local_velocity).x = (ADJ(pCVar4)->local_velocity).y;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 55,
+      "match": "ADJ",
+      "text": "(ADJ(pCVar4)->local_velocity).x = (ADJ(pCVar4)->local_velocity).y;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 56,
+      "match": "ADJ",
+      "text": "(ADJ(pCVar4)->world_velocity).z = 0.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 57,
+      "match": "ADJ",
+      "text": "(ADJ(pCVar4)->world_velocity).y = (ADJ(pCVar4)->world_velocity).z;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 57,
+      "match": "ADJ",
+      "text": "(ADJ(pCVar4)->world_velocity).y = (ADJ(pCVar4)->world_velocity).z;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 58,
+      "match": "ADJ",
+      "text": "(ADJ(pCVar4)->world_velocity).x = (ADJ(pCVar4)->world_velocity).y;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 58,
+      "match": "ADJ",
+      "text": "(ADJ(pCVar4)->world_velocity).x = (ADJ(pCVar4)->world_velocity).y;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 59,
+      "match": "ADJ",
+      "text": "ADJ(pCVar4)->unk1[2].z = 0.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 61,
+      "match": "ADJ",
+      "text": "ADJ(pCVar4)->unk1[2].y = ADJ(pCVar4)->unk1[2].z;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 61,
+      "match": "ADJ",
+      "text": "ADJ(pCVar4)->unk1[2].y = ADJ(pCVar4)->unk1[2].z;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 62,
+      "match": "ADJ",
+      "text": "ADJ(pCVar4)->unk1[2].x = ADJ(pCVar4)->unk1[2].y;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 62,
+      "match": "ADJ",
+      "text": "ADJ(pCVar4)->unk1[2].x = ADJ(pCVar4)->unk1[2].y;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 63,
+      "match": "ADJ",
+      "text": "ADJ(pCVar4)->cur_time = 0.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 64,
+      "match": "ADJ",
+      "text": "pcVar3 = ADJ(pCVar4)->course_name;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 65,
+      "match": "ADJ",
+      "text": "ADJ(pCVar4)->total_time = 100.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 75,
+      "match": "ADJ",
+      "text": "ADJ(pCVar4)->is_visible = 0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 76,
+      "match": "ADJ",
+      "text": "ADJ(pCVar4)->last_mobster_left = (CDemonActor *)0x0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 77,
+      "match": "ADJ",
+      "text": "ADJ(pCVar4)->last_mobster_right = (CDemonActor *)0x0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 78,
+      "match": "ADJ",
+      "text": "return ADJ(pCVar4);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

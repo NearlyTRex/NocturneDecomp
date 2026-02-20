@@ -62,11 +62,8 @@ void __cdecl core_shotgun_cpp_CShotgun_FUN_005888f0(CShotgun *this_ptr)
     fStack_48 = fStack_48 * fVar1;
   }
   core_fire_cpp_CFireEffect_createLaserSegment2_FUN_004c7f20(g_CFireEffectPtr);
-  this_ptr->unk[4] = '\x01';
-  this_ptr->unk[5] = '\0';
-  this_ptr->unk[6] = '\0';
-  this_ptr->unk[7] = '\0';
-  *(float *)(this_ptr->unk + 8) =
+  this_ptr->muzzle_flash_active = 1;
+  this_ptr->muzzle_flash_distance =
        SQRT((fStack_24 - aCStack_68[0].z) * (fStack_24 - aCStack_68[0].z) +
             (fStack_2c - aCStack_68[0].x) * (fStack_2c - aCStack_68[0].x) +
             (fStack_28 - aCStack_68[0].y) * (fStack_28 - aCStack_68[0].y));

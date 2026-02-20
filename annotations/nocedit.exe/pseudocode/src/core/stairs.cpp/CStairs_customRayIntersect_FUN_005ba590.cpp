@@ -16,7 +16,7 @@ float __cdecl core_stairs_cpp_CStairs_customRayIntersect_FUN_005ba590(CStairs *t
   float local_14;
   
   local_18 = 1.01;
-  triangle = (CDemonTriangle *)this_ptr->unk2;
+  triangle = this_ptr->collision_triangles;
   for (iVar1 = 0; iVar1 < this_ptr->stair_count * 2; iVar1 = iVar1 + 1) {
     local_14 = core_dtri_cpp_rayTriangleIntersection_FUN_0049a800(triangle,ray_origin,ray_direction)
     ;

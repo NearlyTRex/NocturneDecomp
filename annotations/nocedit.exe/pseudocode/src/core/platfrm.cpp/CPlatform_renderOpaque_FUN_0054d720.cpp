@@ -40,7 +40,7 @@ int __cdecl core_platfrm_cpp_CPlatform_renderOpaque_FUN_0054d720(CPlatform *this
   if (((((this_ptr->render_in_background_when_not_moving_flag != 0) &&
         (g_CDemonMissionPtr->is_in_editor == 0)) &&
        (this_ptr->state != (PLATFORM_STATE_TYPE_WTF|PLATFORM_STATE_TYPE_AT_END))) &&
-      ((this_ptr->state != 4 && (this_ptr->unk3 != 0)))) &&
+      ((this_ptr->state != 4 && (this_ptr->rendered_in_background != 0)))) &&
      (iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
      iVar3 == 0)) {
     return 0;

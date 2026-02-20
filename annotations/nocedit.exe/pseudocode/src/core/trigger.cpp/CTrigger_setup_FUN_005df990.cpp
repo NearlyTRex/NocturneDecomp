@@ -30,11 +30,8 @@ void __cdecl core_trigger_cpp_CTrigger_setup_FUN_005df990(CTrigger *this_ptr)
   if (this_ptr->hero_triggers_me == 7) {
     (this_ptr->base).collision_disabled = 0;
   }
-  this_ptr->unk2[4] = '\0';
-  this_ptr->unk2[5] = '\0';
-  this_ptr->unk2[6] = '\0';
-  this_ptr->unk2[7] = '\0';
-  this_ptr->unk4 = 0.0;
+  this_ptr->event_flag = 0;
+  this_ptr->cached_actor = (CDemonActor *)0x0;
   iVar4 = stricmp(this_ptr->on_event,"none");
   if (iVar4 == 0) {
     this_ptr->on_event[0] = '\0';

@@ -6,13 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 33,
+    "complexity_score": 48,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 33,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
     "total_lines": 100
   },
   "cross_references": [],
@@ -133,5 +135,13 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(CVector3f *)((int)",
+      "text": "pCVar2 = (CVector3f *)((int)(pCVar2 + 2) + 8);",
+      "type": "pointer_cast"
+    }
+  ]
 }

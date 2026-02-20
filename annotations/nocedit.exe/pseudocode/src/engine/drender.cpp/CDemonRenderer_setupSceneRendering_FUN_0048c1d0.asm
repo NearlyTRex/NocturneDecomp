@@ -9,7 +9,7 @@
 ; undefined1       Stack[-0x28]:1  local_28
 ;
 ; XREF[11]:
-;   core_course.cpp_CCourse_FUN_00443bc0 at 00443cdf
+;   core_course.cpp_CCourse_preview_FUN_00443bc0 at 00443cdf
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047cd6b
 ;   core_inv.cpp_CInventory_renderItemModel_FUN_004fee00 at 004feffb
 ;   core_level.cpp_CLevelLoader_update_FUN_00504160 at 0050420d

@@ -9,9 +9,8 @@
 CNetGame * __cdecl core_netgame_cpp_CNetGame_dtor_FUN_0053f760(CNetGame *this_ptr,uint flags)
 
 {
-  SSocketContext *pSVar1;
+  CNetGame_ptr_368 pSVar1;
   
-  pSVar1 = support_trisock_cpp_bindSocketWrapper_FUN_005e1af0
-                     ((SSocketContext *)(this_ptr->unk + 0x58));
-  return (CNetGame *)pSVar1[-0xb].remote_addr.padding_0x08;
+  pSVar1 = support_trisock_cpp_bindSocketWrapper_FUN_005e1af0(&this_ptr->socket);
+  return ADJ(pSVar1);
 }

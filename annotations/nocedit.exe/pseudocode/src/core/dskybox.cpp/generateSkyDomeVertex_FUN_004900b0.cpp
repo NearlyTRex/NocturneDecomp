@@ -49,9 +49,9 @@ void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_004900b0(float *light_co
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[(int)uv_offset].projected_vertex,&local_44);
   fVar1 = *light_color;
-  g_RenderVertexBuffer[(int)uv_offset].light = (int)fVar1;
-  g_RenderVertexBuffer[(int)uv_offset].color = (int)fVar1;
-  g_RenderVertexBuffer[(int)uv_offset].fog = (int)fVar1;
-  g_RenderVertexBuffer[(int)uv_offset].w_recip = 0.0;
+  g_RenderVertexBuffer[(int)uv_offset].z = (int)fVar1;
+  g_RenderVertexBuffer[(int)uv_offset].r = (int)fVar1;
+  g_RenderVertexBuffer[(int)uv_offset].g = (int)fVar1;
+  g_RenderVertexBuffer[(int)uv_offset].fog = 0;
   return;
 }

@@ -4856,8 +4856,8 @@ section .text
     PUSH dword ptr [ESP + 0x34]         ; 0055dda9
     PUSH dword ptr [ESP + 0x34]         ; 0055ddad
     PUSH EDX                            ; 0055ddb1
-    CALL core_platfrm.cpp_CPlatform_FUN_0054d690 ; 0055ddb2
-        ;   XREF to: 0054d690 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_CPlatform_FUN_0054d690(CPlatform * this_ptr)
+    CALL core_platfrm.cpp_CPlatform_startMovement_FUN_0054d690 ; 0055ddb2
+        ;   XREF to: 0054d690 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_CPlatform_startMovement_FUN_0054d690(CPlatform * this_ptr, float goal_param, float movement_rate)
     ADD ESP,0xc                         ; 0055ddb7
     JMP 0x0055a8bb                      ; 0055ddba
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb

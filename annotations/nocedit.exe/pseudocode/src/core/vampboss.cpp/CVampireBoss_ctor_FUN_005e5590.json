@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 78,
+    "complexity_score": 282,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 3,
-    "pseudocode_lines": 63,
-    "suspect_count": 1,
+    "pseudocode_lines": 37,
+    "suspect_count": 24,
     "suspect_types": [
-      "negative_offset"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 128
+    "total_lines": 102
   },
   "cross_references": [
     {
@@ -139,11 +139,172 @@
   },
   "suspects": [
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 50,
-      "match": "pCVar6[-1].",
-      "text": "pCVar6[-1].rescale_enabled = 0;",
-      "type": "negative_offset"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 14,
+      "match": "ADJ",
+      "text": "pCVar5 = core_cloth_cpp_CCloth_ctor_FUN_00438ba0(&ADJ(pCVar4)->wing_cloth);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 15,
+      "match": "ADJ",
+      "text": "pCVar6 = core_cloth_cpp_CCloth_ctor_FUN_00438ba0(&ADJ(pCVar5)->cape_cloth);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 16,
+      "match": "ADJ",
+      "text": "pCVar7 = core_cloth_cpp_CCloth_ctor_FUN_00438ba0(&ADJ(pCVar6)->skirt_cloth);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 17,
+      "match": "ADJ",
+      "text": "pCVar8 = core_morph_cpp_CMorph_ctor_FUN_0052b310(&ADJ(pCVar7)->morph);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 18,
+      "match": "ADJ",
+      "text": "ADJ(pCVar8)->base.base.base.vtable._ub = &g_CVampireBossVTable;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 20,
+      "match": "ADJ",
+      "text": "(&ADJ(pCVar8)->base.base.model,\"nosfer.dfm\");",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 22,
+      "match": "ADJ",
+      "text": "(&ADJ(pCVar8)->model,\"batboss.dfm\");",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 23,
+      "match": "ADJ",
+      "text": "ADJ(pCVar8)->base.base.collision_cylinder_height = 2.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 24,
+      "match": "ADJ",
+      "text": "ADJ(pCVar8)->base.base.collision_cylinder_radius = 3.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 25,
+      "match": "ADJ",
+      "text": "ADJ(pCVar8)->base.base.ai_detection_range_min = 50.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 26,
+      "match": "ADJ",
+      "text": "ADJ(pCVar8)->base.base.ai_detection_range_max = 100.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 27,
+      "match": "ADJ",
+      "text": "ADJ(pCVar8)->action_timer = 0.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 28,
+      "match": "ADJ",
+      "text": "ADJ(pCVar8)->form = 0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 29,
+      "match": "ADJ",
+      "text": "ADJ(pCVar8)->morph_t = 0.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 30,
+      "match": "ADJ",
+      "text": "ADJ(pCVar8)->way_point_0 = (CDemonActor *)0x0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 31,
+      "match": "ADJ",
+      "text": "ADJ(pCVar8)->way_point_1 = (CDemonActor *)0x0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 32,
+      "match": "ADJ",
+      "text": "ADJ(pCVar8)->way_point_2 = (CDemonActor *)0x0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 33,
+      "match": "ADJ",
+      "text": "ADJ(pCVar8)->way_point_3 = (CDemonActor *)0x0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 34,
+      "match": "ADJ",
+      "text": "ADJ(pCVar8)->waypoint_index = 0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 35,
+      "match": "ADJ",
+      "text": "ADJ(pCVar8)->follow_result = 0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 36,
+      "match": "ADJ",
+      "text": "ADJ(pCVar8)->flee_timer = 10.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 37,
+      "match": "ADJ",
+      "text": "ADJ(pCVar8)->bat_ai_state = 1;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 38,
+      "match": "ADJ",
+      "text": "ADJ(pCVar8)->base.base.show_in_editor = 0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 39,
+      "match": "ADJ",
+      "text": "return ADJ(pCVar8);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

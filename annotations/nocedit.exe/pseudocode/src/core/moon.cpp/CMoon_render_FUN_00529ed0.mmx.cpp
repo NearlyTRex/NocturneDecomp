@@ -33,14 +33,14 @@ __asm {
         call engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0
         fld double ptr [DOUBLE_00639f99]
         fld float ptr [ESI + 0x4]
-        fadd ST0,ST1
+        fadd ST(0),ST(1)
         fld double ptr [DOUBLE_00639fa1]
         fxch
-        fmul ST1
+        fmul ST(1)
         lea EAX,[EBP + -0x4c]
         fstp float ptr [EBP + -0x4c]
         fld float ptr [ESI + 0x4]
-        faddp ST2,ST0
+        faddp ST(2),ST(0)
         add ESP,0x8
         fmulp
         push EAX
@@ -96,13 +96,13 @@ __asm {
         add EAX,ESI
         push dword ptr [DAT_02f38210 + EBX]
         push EAX
-        call core_course_cpp_CCourse_FUN_00442710
+        call core_course_cpp_CCourse_evaluate_FUN_00442710
         fld float ptr [EBP + -0x34]
         fld float ptr [EBP + -0x30]
         fld float ptr [EBP + -0x2c]
         mov EAX,0x2f3820c
         fld float ptr [EBP + -0x3c]
-        fxch ST3
+        fxch ST(3)
         fadd float ptr [EBX + EAX*0x1 + 0xc]
         mov EDI,dword ptr [g_CDemonRendererPtr2]
         fstp float ptr [EBP + -0x34]

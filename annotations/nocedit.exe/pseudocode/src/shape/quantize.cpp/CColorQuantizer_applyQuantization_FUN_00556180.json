@@ -4,19 +4,19 @@
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 48,
+        "line": 50,
         "message": "assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
         "column": 25,
-        "line": 59,
+        "line": 61,
         "message": "assigning to 'char *' from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
         "column": 25,
-        "line": 114,
+        "line": 116,
         "message": "assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'"
       }
     ],
@@ -25,17 +25,17 @@
   },
   "complexity": {
     "assembly_lines": 245,
-    "complexity_score": 369,
+    "complexity_score": 371,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 6,
-    "pseudocode_lines": 159,
+    "pseudocode_lines": 161,
     "suspect_count": 20,
     "suspect_types": [
       "pointer_cast",
       "warning_spacebase"
     ],
-    "total_lines": 404
+    "total_lines": 406
   },
   "cross_references": [
     {
@@ -250,28 +250,21 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 116,
+      "line": 118,
       "match": "(uint *)((int)",
       "text": "puVar10 = (uint *)((int)puVar10 + (uint)bVar15 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 117,
+      "line": 119,
       "match": "(uint *)((int)",
       "text": "puVar13 = (uint *)((int)puVar13 + (uint)bVar15 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 120,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)ppCVar9 + -4) = *(int *)((int)&this_ptr->current_pixel_index + 2) >> 0x10;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 120,
+      "line": 122,
       "match": "(int *)((int)",
       "text": "*(int *)((int)ppCVar9 + -4) = *(int *)((int)&this_ptr->current_pixel_index + 2) >> 0x10;",
       "type": "pointer_cast"
@@ -279,104 +272,111 @@
     {
       "description": "Complex pointer cast",
       "line": 122,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)ppCVar9 + -4) = *(int *)((int)&this_ptr->current_pixel_index + 2) >> 0x10;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 124,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)ppCVar9 + -8) = 0xffffffff;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 123,
+      "line": 125,
       "match": "(int *)((int)",
       "text": "*(int *)((int)ppCVar9 + -0xc) = (int)(short)(sVar1 + -1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 127,
+      "line": 129,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)ppCVar9 + -0x1c) = 0x556301;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 130,
+      "line": 132,
       "match": "(short *)((int)",
       "text": "*(uchar **)((int)ppCVar9 + -0x10),*(short *)((int)ppCVar9 + -0xc),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 131,
+      "line": 133,
       "match": "(short *)((int)",
       "text": "*(short *)((int)ppCVar9 + -8),*(short *)((int)ppCVar9 + -4));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 131,
+      "line": 133,
       "match": "(short *)((int)",
       "text": "*(short *)((int)ppCVar9 + -8),*(short *)((int)ppCVar9 + -4));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 134,
+      "line": 136,
       "match": "(int *)((int)",
       "text": "*(int *)((int)ppCVar9 + -4) = *(int *)((int)&this_ptr->current_pixel_index + 2) >> 0x10;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 134,
+      "line": 136,
       "match": "(int *)((int)",
       "text": "*(int *)((int)ppCVar9 + -4) = *(int *)((int)&this_ptr->current_pixel_index + 2) >> 0x10;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 135,
+      "line": 137,
       "match": "(int *)((int)",
       "text": "*(int *)((int)ppCVar9 + -8) = (int)(*bitmap_ptr)->width;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 136,
+      "line": 138,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)ppCVar9 + -0xc) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 140,
+      "line": 142,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)ppCVar9 + -0x1c) = 0x5562d6;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 143,
+      "line": 145,
       "match": "(short *)((int)",
       "text": "*(uchar **)((int)ppCVar9 + -0x10),*(short *)((int)ppCVar9 + -0xc),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 144,
+      "line": 146,
       "match": "(short *)((int)",
       "text": "*(short *)((int)ppCVar9 + -8),*(short *)((int)ppCVar9 + -4));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 144,
+      "line": 146,
       "match": "(short *)((int)",
       "text": "*(short *)((int)ppCVar9 + -8),*(short *)((int)ppCVar9 + -4));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 159,
+      "line": 161,
       "match": "(int *)((int)",
       "text": "local_1c = (uchar *)(*(int *)((int)ppCVar9 + -4) + (uint)(ushort)(*bitmap_ptr)->width);",
       "type": "pointer_cast"

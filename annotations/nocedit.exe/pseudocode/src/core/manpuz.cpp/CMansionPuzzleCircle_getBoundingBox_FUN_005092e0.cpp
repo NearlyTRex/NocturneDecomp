@@ -11,12 +11,12 @@ CBoundingBox3D * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getBoundingBox_FUN
 {
   float fVar1;
   
-  fVar1 = *(float *)(this_ptr->unk3 + 0xec0);
+  fVar1 = this_ptr->bbox_extent;
   (out_box->min).y = 0.0;
   (out_box->min).x = -fVar1;
-  (out_box->min).z = -*(float *)(this_ptr->unk3 + 0xec0);
-  (out_box->max).x = *(float *)(this_ptr->unk3 + 0xec0);
-  (out_box->max).y = *(float *)(this_ptr->unk3 + 0xec8);
-  (out_box->max).z = *(float *)(this_ptr->unk3 + 0xec0);
+  (out_box->min).z = -this_ptr->bbox_extent;
+  (out_box->max).x = this_ptr->bbox_extent;
+  (out_box->max).y = this_ptr->bbox_height;
+  (out_box->max).z = this_ptr->bbox_extent;
   return out_box;
 }

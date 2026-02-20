@@ -173,30 +173,31 @@ LAB_005c17d2:
     return 0;
   }
   pCVar6 = (*((pCVar8->vtable)._ub)->getBoundingBox)(pCVar8,&local_16c);
-  if ((CBoundingBox3D *)(this_ptr->unk8 + 0x60) != pCVar6) {
-    (((CBoundingBox3D *)(this_ptr->unk8 + 0x60))->min).x = (pCVar6->min).x;
-    *(float *)(this_ptr->unk8 + 100) = (pCVar6->min).y;
-    *(float *)(this_ptr->unk8 + 0x68) = (pCVar6->min).z;
+  if (&this_ptr->carry_object_bbox != pCVar6) {
+    (this_ptr->carry_object_bbox).min.x = (pCVar6->min).x;
+    (this_ptr->carry_object_bbox).min.y = (pCVar6->min).y;
+    (this_ptr->carry_object_bbox).min.z = (pCVar6->min).z;
   }
-  if ((CVector3f *)(this_ptr->unk8 + 0x6c) != &pCVar6->max) {
-    *(float *)(this_ptr->unk8 + 0x6c) = (pCVar6->max).x;
-    *(float *)(this_ptr->unk8 + 0x70) = (pCVar6->max).y;
-    *(float *)(this_ptr->unk8 + 0x74) = (pCVar6->max).z;
+  pCVar7 = &(this_ptr->carry_object_bbox).max;
+  if (pCVar7 != &pCVar6->max) {
+    pCVar7->x = (pCVar6->max).x;
+    (this_ptr->carry_object_bbox).max.y = (pCVar6->max).y;
+    (this_ptr->carry_object_bbox).max.z = (pCVar6->max).z;
   }
-  fStack_70 = *(float *)(this_ptr->unk8 + 0x60) + *(float *)(this_ptr->unk8 + 0x6c);
-  fStack_6c = *(float *)(this_ptr->unk8 + 100) + *(float *)(this_ptr->unk8 + 0x70);
+  fStack_70 = (this_ptr->carry_object_bbox).min.x + (this_ptr->carry_object_bbox).max.x;
+  fStack_6c = (this_ptr->carry_object_bbox).min.y + (this_ptr->carry_object_bbox).max.y;
   CStack_40.x = fStack_70 * 0.5f;
-  fStack_68 = *(float *)(this_ptr->unk8 + 0x68) + *(float *)(this_ptr->unk8 + 0x74);
+  fStack_68 = (this_ptr->carry_object_bbox).min.z + (this_ptr->carry_object_bbox).max.z;
   CStack_40.y = fStack_6c * 0.5f;
   CStack_40.z = fStack_68 * 0.5f;
   pCVar7 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                      ((this_ptr->base).object_to_pick_up,&CStack_e8,&CStack_40);
   pCVar7 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                      ((CDemonActor *)this_ptr,&CStack_dc,pCVar7);
-  if ((CVector3f *)(this_ptr->unk8 + 0x54) != pCVar7) {
-    ((CVector3f *)(this_ptr->unk8 + 0x54))->x = pCVar7->x;
-    *(float *)(this_ptr->unk8 + 0x58) = pCVar7->y;
-    *(float *)(this_ptr->unk8 + 0x5c) = pCVar7->z;
+  if (&this_ptr->carry_object_world_center != pCVar7) {
+    (this_ptr->carry_object_world_center).x = pCVar7->x;
+    (this_ptr->carry_object_world_center).y = pCVar7->y;
+    (this_ptr->carry_object_world_center).z = pCVar7->z;
   }
   switch(iStack_30) {
   case 1:
@@ -212,7 +213,7 @@ LAB_005c17d2:
     if ((pCVar8 == (CDemonActor *)0x0) ||
        (iVar5 = (*((pCVar8->vtable)._ub)->canPickup)(pCVar8,(CDemonActor *)this_ptr), iVar5 != 4)) {
       pCVar1 = &(this_ptr->base).base.model;
-      if (*(float *)(this_ptr->unk8 + 0x58) <= (float)2) {
+      if ((this_ptr->carry_object_world_center).y <= (float)2) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&pCVar1->motion_controller,0x13,1);
         pCVar8 = (this_ptr->base).object_to_pick_up;
@@ -226,9 +227,9 @@ LAB_005c17d2:
         fStack_60 = CStack_b8.y - CStack_ac.y;
         fStack_64 = CStack_b8.x - CStack_ac.x;
         fStack_5c = CStack_b8.z - CStack_ac.z;
-        fStack_124 = CStack_ac.x - *(float *)(this_ptr->unk8 + 0x54);
-        fStack_120 = CStack_ac.y - *(float *)(this_ptr->unk8 + 0x58);
-        fStack_11c = CStack_ac.z - *(float *)(this_ptr->unk8 + 0x5c);
+        fStack_124 = CStack_ac.x - (this_ptr->carry_object_world_center).x;
+        fStack_120 = CStack_ac.y - (this_ptr->carry_object_world_center).y;
+        fStack_11c = CStack_ac.z - (this_ptr->carry_object_world_center).z;
         if ((float)2 <
             ABS(SQRT(fStack_5c * fStack_5c + fStack_64 * fStack_64 + fStack_60 * fStack_60) -
                 SQRT(fStack_11c * fStack_11c + fStack_124 * fStack_124 + fStack_120 * fStack_120)))
@@ -249,18 +250,19 @@ LAB_005c17d2:
       pCVar7 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                          ((this_ptr->base).object_to_pick_up,&CStack_f4,
                           &(this_ptr->base).base.base.location.position);
+      fVar2 = (this_ptr->carry_object_world_center).y;
       pCVar1 = &(this_ptr->base).base.model;
-      *(uint *)(this_ptr->unk8 + 0x44) = (uint)(0.0 < pCVar7->z);
-      if ((float)2.5 < *(float *)(this_ptr->unk8 + 0x58)) {
+      this_ptr->unk3 = (uint)(0.0 < pCVar7->z);
+      if ((float)2.5 < fVar2) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&pCVar1->motion_controller,0x18,1);
         pCVar7 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                            ((CDemonActor *)this_ptr,&CStack_118,
                             &(((this_ptr->base).object_to_pick_up)->location).position);
-        if ((CVector3f *)(this_ptr->unk8 + 0x54) != pCVar7) {
-          ((CVector3f *)(this_ptr->unk8 + 0x54))->x = pCVar7->x;
-          *(float *)(this_ptr->unk8 + 0x58) = pCVar7->y;
-          *(float *)(this_ptr->unk8 + 0x5c) = pCVar7->z;
+        if (&this_ptr->carry_object_world_center != pCVar7) {
+          (this_ptr->carry_object_world_center).x = pCVar7->x;
+          (this_ptr->carry_object_world_center).y = pCVar7->y;
+          (this_ptr->carry_object_world_center).z = pCVar7->z;
         }
         pCVar8 = (this_ptr->base).object_to_pick_up;
         format = "Picking up heavy %s shelf\n";

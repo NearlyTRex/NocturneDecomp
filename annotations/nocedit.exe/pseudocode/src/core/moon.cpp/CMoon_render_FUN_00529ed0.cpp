@@ -19,7 +19,7 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
   ulonglong *puVar6;
   ulonglong uVar7;
   CVector3f local_5c;
-  CVector3i local_50;
+  CVector3f local_50;
   CVector3f local_44;
   double local_38;
   int local_30;
@@ -62,16 +62,17 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
     iVar5 = 0;
     do {
       if (0.0 <= *(float *)((int)&g_MoonBats[0].course_position + iVar5)) {
-        core_course_cpp_CCourse_FUN_00442710
-                  (g_MoonBatCourses + *(int *)((int)&g_MoonBats[0].course_index + iVar5));
+        core_course_cpp_CCourse_evaluate_FUN_00442710
+                  (g_MoonBatCourses + *(int *)((int)&g_MoonBats[0].course_index + iVar5),
+                   *(float *)((int)&g_MoonBats[0].course_position + iVar5),&local_44,&local_50);
         local_44.x = local_44.x + *(float *)((int)&g_MoonBats[0].random_offset.x + iVar5);
         local_44.y = local_44.y + *(float *)((int)&g_MoonBats[0].random_offset.y + iVar5);
         local_44.z = local_44.z + *(float *)((int)&g_MoonBats[0].random_offset.z + iVar5);
-        local_50.y = (int)((float)local_50.y + 1.570796f);
+        local_50.y = local_50.y + 1.570796f;
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                   (g_CDemonRendererPtr2,&local_44);
         engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                  (g_CDemonRendererPtr2,&local_50,(CVector3i *)0x0);
+                  (g_CDemonRendererPtr2,(CVector3i *)&local_50,(CVector3i *)0x0);
         local_14 = (CKeyFramedModelInstance *)
                    (int)ROUND(ROUND(*(float *)((int)&g_MoonBats[0].animation_frame + iVar5)));
         core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850(&g_MoonBatModel,local_14,0,-1)

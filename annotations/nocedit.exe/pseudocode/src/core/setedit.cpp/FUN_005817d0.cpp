@@ -65,11 +65,11 @@ void __cdecl core_setedit_cpp_FUN_005817d0(void *unk)
       this_ptr = g_CDemonRendererPtr2;
       *(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->u + iVar2) = 0x80000;
       *(uint *)((int)&this_ptr->vertex_buffer_ptr->v + iVar2) = 0x80000;
-      *(int *)((int)&this_ptr->vertex_buffer_ptr->light + iVar2) = local_20;
-      *(int *)((int)&this_ptr->vertex_buffer_ptr->color + iVar2) = local_1c;
-      *(int *)((int)&this_ptr->vertex_buffer_ptr->fog + iVar2) = local_18;
+      *(int *)((int)&this_ptr->vertex_buffer_ptr->z + iVar2) = local_20;
+      *(int *)((int)&this_ptr->vertex_buffer_ptr->r + iVar2) = local_1c;
+      *(int *)((int)&this_ptr->vertex_buffer_ptr->g + iVar2) = local_18;
       uVar3 = uVar3 + 1;
-      *(int *)((int)&this_ptr->vertex_buffer_ptr->w_recip + iVar2) = local_14;
+      *(int *)((int)&this_ptr->vertex_buffer_ptr->fog + iVar2) = local_14;
       if (7 < (int)uVar3) {
         engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
                   (this_ptr,&SMRGLTextureBasic_006816c0);

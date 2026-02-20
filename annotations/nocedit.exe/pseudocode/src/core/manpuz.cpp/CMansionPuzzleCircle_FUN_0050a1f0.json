@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 60,
-    "complexity_score": 48,
+    "complexity_score": 77,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 4,
-    "pseudocode_lines": 23,
-    "suspect_count": 2,
+    "pseudocode_lines": 22,
+    "suspect_count": 5,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 83
+    "total_lines": 82
   },
   "cross_references": [
     {
@@ -156,7 +156,7 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 7,
+      "line": 6,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
@@ -165,7 +165,28 @@
       "description": "Unresolved stack parameter",
       "line": 10,
       "match": "in_stack_00000008",
-      "text": "iVar1 = in_stack_00000008 * 0x60;",
+      "text": "(this_ptr->reflectors[in_stack_00000008].interp_factor <= 0.0)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000008",
+      "text": "(g_CDemonRendererPtr2,(CVector3i *)&this_ptr->reflectors[in_stack_00000008].rotation,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000008",
+      "text": "(CVector3i *)&this_ptr->reflectors[in_stack_00000008].position);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000008",
+      "text": "this_ptr->reflectors[in_stack_00000008].interp_factor,render_flags);",
       "type": "stack_param"
     }
   ]

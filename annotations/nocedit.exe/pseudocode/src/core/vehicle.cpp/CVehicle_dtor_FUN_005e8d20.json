@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 36,
+    "complexity_score": 37,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 1,
-    "pseudocode_lines": 21,
+    "pseudocode_lines": 22,
     "suspect_count": 1,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 74
+    "total_lines": 75
   },
   "cross_references": [],
   "function": {
@@ -127,9 +127,9 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 18,
+      "line": 19,
       "match": "pCVar2[-6].",
-      "text": "core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)(pCVar2[-6].unk + 0xfc),1);",
+      "text": "((CDemonActor *)(pCVar2[-6].model.model_name + 0x70),1);",
       "type": "negative_offset"
     }
   ],

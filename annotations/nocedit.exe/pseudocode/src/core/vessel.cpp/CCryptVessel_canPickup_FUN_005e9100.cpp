@@ -11,7 +11,7 @@ int __cdecl core_vessel_cpp_CCryptVessel_canPickup_FUN_005e9100(CCryptVessel *th
 {
   int iVar1;
   
-  if (((this_ptr->unk8 == 0) && (this_ptr->state == 0)) &&
+  if (((this_ptr->puzzle_complete == 0) && (this_ptr->state == 0)) &&
      (iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(picker,"CHero"), iVar1 != 0)) {
     return 4;
   }

@@ -25,7 +25,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040
-;   core_platfrm.cpp_CPlatform_FUN_0054cab0
+;   core_platfrm.cpp_CPlatform_evaluatePosition_FUN_0054cab0
 ;   core_platfrm.cpp_CPlatform_propertyActionSlewCallback_FUN_0054e480
 ;   core_slew.cpp_CSlew_processInput_FUN_005a20b0
 ;   core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
@@ -223,8 +223,8 @@ section .text
     FSTP float ptr [EBX + 0x2dc]        ; 0054ebe9
     PUSH EBX                            ; 0054ebef
         ;   Label: LAB_0054ebef
-    CALL core_platfrm.cpp_CPlatform_FUN_0054cab0 ; 0054ebf0
-        ;   XREF to: 0054cab0 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_CPlatform_FUN_0054cab0(CPlatform * this_ptr)
+    CALL core_platfrm.cpp_CPlatform_evaluatePosition_FUN_0054cab0 ; 0054ebf0
+        ;   XREF to: 0054cab0 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_CPlatform_evaluatePosition_FUN_0054cab0(CPlatform * this_ptr)
     ADD ESP,0x4                         ; 0054ebf5
     MOV ESP,EBP                         ; 0054ebf8
     POP EBP                             ; 0054ebfa

@@ -46,6 +46,6 @@ typedef struct CPlatform {
     int plot_in_shadow_flag; // 0x518
     SPlatformAttachment attach_actors[10]; // 0x51c
     EPlatformType platform_type; // 0x724
-    int unk3; // 0x728
+    int rendered_in_background; // 0x728
 } CPlatform;
 

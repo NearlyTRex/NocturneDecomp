@@ -16,7 +16,7 @@ void __cdecl core_netgame_cpp_CNetGame_FUN_00542370(CNetGame *this_ptr)
   char *pcVar5;
   byte bVar6;
   uint *in_stack_00000008;
-  uint in_stack_0000000c;
+  int in_stack_0000000c;
   char *in_stack_00000010;
   char *in_stack_00000014;
   
@@ -27,10 +27,10 @@ void __cdecl core_netgame_cpp_CNetGame_FUN_00542370(CNetGame *this_ptr)
   }
   iVar2 = g_ChatHistoryCount;
   iVar3 = g_ChatHistoryCount * 0x120;
-  *(uint *)g_ChatHistory[g_ChatHistoryCount].unk = *in_stack_00000008;
+  g_ChatHistory[g_ChatHistoryCount].sender_addr.ip_address = *in_stack_00000008;
   *(uint *)(iVar3 + 0x2f7c8d4 + (uint)bVar6 * -8) = in_stack_00000008[(uint)bVar6 * -2 + 1];
-  *(uint *)(g_ChatHistory[iVar2].unk + 8) = in_stack_0000000c;
-  pcVar4 = g_ChatHistory[iVar2].unk + 0xc;
+  g_ChatHistory[iVar2].message_id = in_stack_0000000c;
+  pcVar4 = g_ChatHistory[iVar2].sender_name;
   do {
     cVar1 = *in_stack_00000010;
     *pcVar4 = cVar1;
@@ -40,7 +40,7 @@ void __cdecl core_netgame_cpp_CNetGame_FUN_00542370(CNetGame *this_ptr)
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  pcVar5 = g_ChatHistory[g_ChatHistoryCount].unk + 0x20;
+  pcVar5 = g_ChatHistory[g_ChatHistoryCount].message;
   pcVar4 = in_stack_00000014;
   do {
     cVar1 = *pcVar4;

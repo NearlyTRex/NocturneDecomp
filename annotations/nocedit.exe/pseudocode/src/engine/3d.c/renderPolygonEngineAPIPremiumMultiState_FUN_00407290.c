@@ -78,7 +78,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonEngineAPIPremiumMultiStat
           if (iVar8 < local_14) {
             local_14 = iVar8;
           }
-          pSVar5 = (SRenderBufferEntry *)&pSVar5->vertices[0].w_recip;
+          pSVar5 = (SRenderBufferEntry *)&pSVar5->vertices[0].fog;
           iVar9 = iVar9 + 1;
           iVar3 = iVar3 + 4;
         } while (iVar9 < (polygon_info->base).count);

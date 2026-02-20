@@ -13,8 +13,8 @@
     "pseudocode_lines": 62,
     "suspect_count": 9,
     "suspect_types": [
-      "pointer_cast",
-      "suspect_float"
+      "byvalue_struct_passing",
+      "pointer_cast"
     ],
     "total_lines": 119
   },
@@ -22,7 +22,7 @@
     {
       "addr": "00443760",
       "from_addr": "00443ac5",
-      "name": "core_course.cpp_FUN_00443760",
+      "name": "core_course.cpp_renderCourseGizmo_FUN_00443760",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -70,7 +70,7 @@
       {
         "call_addr": "00443ac5",
         "call_type": "direct",
-        "caller": "core_course.cpp_FUN_00443760",
+        "caller": "core_course.cpp_renderCourseGizmo_FUN_00443760",
         "estimated_params": 1,
         "instructions_analyzed": 4,
         "reg_params": [],
@@ -79,7 +79,7 @@
       {
         "call_addr": "00443ae8",
         "call_type": "direct",
-        "caller": "core_course.cpp_FUN_00443760",
+        "caller": "core_course.cpp_renderCourseGizmo_FUN_00443760",
         "estimated_params": 1,
         "instructions_analyzed": 6,
         "reg_params": [],
@@ -88,7 +88,7 @@
       {
         "call_addr": "00443ad4",
         "call_type": "direct",
-        "caller": "core_course.cpp_FUN_00443760",
+        "caller": "core_course.cpp_renderCourseGizmo_FUN_00443760",
         "estimated_params": 1,
         "instructions_analyzed": 5,
         "reg_params": [],
@@ -209,13 +209,6 @@
   },
   "suspects": [
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 21,
-      "match": "5.902398e-39",
-      "text": "local_a0.w_recip = 5.902398e-39;",
-      "type": "suspect_float"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 30,
       "match": "(SRenderVertex *)((int)",
@@ -270,6 +263,13 @@
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Calls clipAndDrawLine2D - decompiler cannot recognize by-value pattern",
+      "line": 1,
+      "match": "clipAndDrawLine2D",
+      "text": "Function calls by-value struct passing functions",
+      "type": "byvalue_struct_passing"
     }
   ],
   "vtable_info": {

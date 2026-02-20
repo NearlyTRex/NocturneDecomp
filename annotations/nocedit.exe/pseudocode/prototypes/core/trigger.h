@@ -55,21 +55,21 @@ int __cdecl CTrigger::processActionButton(CTrigger *this_ptr);
 // Address: 005e0a50
 void __cdecl CTrigger::onLaserHit(CTrigger *this_ptr,SLaserInfo *laser_info);
 
-// Original: core_trigger.cpp_CTrigger_FUN_005e0aa0
+// Original: core_trigger.cpp_CTrigger_onProjectileHit_FUN_005e0aa0
 // Address: 005e0aa0
-void __cdecl CTrigger(CTrigger *this_ptr);
+void __cdecl CTrigger::onProjectileHit(CTrigger *this_ptr);
 
-// Original: core_trigger.cpp_CTrigger_FUN_005e0ac0
+// Original: core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0
 // Address: 005e0ac0
-int __cdecl CTrigger(CTrigger *this_ptr);
+int __cdecl CTrigger::acceptsDamageFrom(CTrigger *this_ptr,char *damage_actor_wildcard_name);
 
-// Original: core_trigger.cpp_CTrigger_FUN_005e0b00
+// Original: core_trigger.cpp_CTrigger_applyDamage_FUN_005e0b00
 // Address: 005e0b00
-void __cdecl CTrigger(CTrigger *this_ptr);
+void __cdecl CTrigger::applyDamage(CTrigger *this_ptr,float hit_points);
 
-// Original: core_trigger.cpp_CTrigger_FUN_005e0ba0
+// Original: core_trigger.cpp_CTrigger_calculateTestRadius_FUN_005e0ba0
 // Address: 005e0ba0
-void __cdecl CTrigger(CTrigger *this_ptr);
+void __cdecl CTrigger::calculateTestRadius(CTrigger *this_ptr);
 
 // Original: core_trigger.cpp_CTrigger_getTargetPoints_FUN_005e0c30
 // Address: 005e0c30

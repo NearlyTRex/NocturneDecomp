@@ -123,7 +123,7 @@ LAB_005bfd3a:
                        (&pCVar12->motion_controller,local_20,(this_ptr->base).base.layer_action_t);
   local_18 = local_24;
   if ((((this_ptr->base).base.layer_action_index == 9) &&
-      (1.0 <= (this_ptr->base).base.layer_action_t)) && (this_ptr->unk7 != 0)) {
+      (1.0 <= (this_ptr->base).base.layer_action_t)) && (this_ptr->can_grab_weapon != 0)) {
     pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(pCVar12);
     iVar5 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(&pCVar4->motion_list);
     local_20 = iVar5;
@@ -166,7 +166,7 @@ LAB_005bfd3a:
     puVar8[(uint)bVar10 * -2 + 1] = puVar6[(uint)bVar10 * -2 + 1];
   }
   if ((this_ptr->base).base.layer_action_index == 1) {
-    fVar2 = (*(float *)(this_ptr->unk1 + 0x18) + *(float *)(this_ptr->unk3 + 0xc)) *
+    fVar2 = ((this_ptr->right_arm_aim).target_pitch + (this_ptr->left_arm_aim).target_pitch) *
             (float)0.5;
     local_100 = 0.0;
     local_28 = 0x3e860a92;
@@ -225,7 +225,8 @@ LAB_005bfd3a:
     local_18 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840
                          ((CCharacter *)this_ptr,3);
     local_38 = (1.0 - local_18) * local_f8;
-    core_xform_cpp_quaternionFromAngleX_FUN_005f79b0(*(float *)(this_ptr->unk1 + 0x18),&local_80);
+    core_xform_cpp_quaternionFromAngleX_FUN_005f79b0
+              ((this_ptr->right_arm_aim).target_pitch,&local_80);
     fVar2 = local_38;
     pcVar15 = core_stranger_cpp_FUN_005baee0;
     pCVar14 = &local_e0;
@@ -242,7 +243,8 @@ LAB_005bfd3a:
     local_30 = pCVar12;
     core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
               (pCVar13,pCVar14,fVar2,iVar5,pcVar15);
-    core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(*(float *)(this_ptr->unk1 + 0x1c),&local_60);
+    core_xform_cpp_quaternionFromAngleY_FUN_005f79f0((this_ptr->right_arm_aim).target_yaw,&local_60)
+    ;
     local_50.w = local_60.w;
     puVar7 = (uint *)((int)&local_50 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
     puVar6 = (uint *)((int)&local_60 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
@@ -259,7 +261,7 @@ LAB_005bfd3a:
   else if ((this_ptr->base).base.layer_action_index != 0xe) {
     return;
   }
-  fVar11 = (float10)fpatan((float10)*(float *)(this_ptr->unk8 + 0x6c) / (float10)2.7f,
+  fVar11 = (float10)fpatan((float10)(this_ptr->carry_object_bbox).max.x / (float10)2.7f,
                            (float10)1);
   local_34 = (float)fVar11;
   core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(local_34,&local_d0);

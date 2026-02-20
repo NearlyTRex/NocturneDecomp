@@ -18,9 +18,9 @@ CMarquee * __cdecl core_marquee_cpp_CMarquee_ctor_FUN_0050bb60(CMarquee *this_pt
   pCVar2 = (CMarquee *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
   pCVar3 = core_course_cpp_CCourse_ctor_FUN_004424c0((CCourse *)pCVar2->unk3);
   pcVar4 = "menu1.pth";
-  pCVar3[-7].frame_list = (CCourseFrameList *)&g_CMarqueeVTable;
+  pCVar3[-7].frames = (CCourseFrame *)&g_CMarqueeVTable;
   piVar5 = &pCVar3[-7].loop;
-  pCVar3[-4].frame_list = (CCourseFrameList *)0x41200000;
+  pCVar3[-4].frames = (CCourseFrame *)0x41200000;
   do {
     cVar1 = *pcVar4;
     *(char *)piVar5 = cVar1;
@@ -32,10 +32,10 @@ CMarquee * __cdecl core_marquee_cpp_CMarquee_ctor_FUN_0050bb60(CMarquee *this_pt
   } while (cVar1 != '\0');
   pCVar3[-4].loop = 0;
   pCVar3[-3].len = 3;
-  pCVar3[-3].frame_list = (CCourseFrameList *)0x0;
+  pCVar3[-3].frames = (CCourseFrame *)0x0;
   pCVar3[-3].loop = 0;
   pCVar3[-2].len = 0;
-  pCVar3[-2].frame_list = (CCourseFrameList *)0x0;
+  pCVar3[-2].frames = (CCourseFrame *)0x0;
   pCVar3[-2].loop = 0;
   pCVar3[-1].len = 0;
   pCVar3[-0xe].len = 1;

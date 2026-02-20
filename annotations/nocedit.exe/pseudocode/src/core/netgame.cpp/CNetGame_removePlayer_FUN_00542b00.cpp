@@ -25,11 +25,8 @@ void __cdecl core_netgame_cpp_CNetGame_removePlayer_FUN_00542b00(CNetGame *this_
     g_CurrentLineNumber = 0x869;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CNetGame::removePlayer - tried to remove myself!");
   }
-  if (player_index == *(int *)this_ptr->padding) {
-    this_ptr->padding[0] = -1;
-    this_ptr->padding[1] = -1;
-    this_ptr->padding[2] = -1;
-    this_ptr->padding[3] = -1;
+  if (player_index == this_ptr->server_player_index) {
+    this_ptr->server_player_index = -1;
   }
   if (player_index == this_ptr->local_player_index) {
     this_ptr->local_player_index = -1;
@@ -55,8 +52,8 @@ void __cdecl core_netgame_cpp_CNetGame_removePlayer_FUN_00542b00(CNetGame *this_
       dest = dest + 0x114;
     } while (iVar1 < DAT_02f98ad0);
   }
-  if (player_index < *(int *)this_ptr->padding) {
-    *(int *)this_ptr->padding = *(int *)this_ptr->padding + -1;
+  if (player_index < this_ptr->server_player_index) {
+    this_ptr->server_player_index = this_ptr->server_player_index + -1;
   }
   if (player_index < this_ptr->local_player_index) {
     this_ptr->local_player_index = this_ptr->local_player_index + -1;

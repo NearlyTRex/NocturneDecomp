@@ -38,8 +38,8 @@ CGame * __cdecl core_game_cpp_CGame_ctor_FUN_004d7b40(CGame *this_ptr)
   this_ptr->profile_mode = 0;
   this_ptr->velocity_debug_enabled = 0;
   this_ptr->head_of_horror_cheat = 0;
-  this_ptr->unk9 = 0;
-  this_ptr->unk10 = 0;
+  this_ptr->geometry_debug_enabled = 0;
+  this_ptr->collision_render_enabled = 0;
   this_ptr->hero_number = 0;
   this_ptr->auto_use_health = 0;
   this_ptr->debug_fudge_target = (CVector3f *)0x0;
@@ -59,7 +59,7 @@ CGame * __cdecl core_game_cpp_CGame_ctor_FUN_004d7b40(CGame *this_ptr)
   this_ptr->show_customizable_keys = 0;
   this_ptr->block_auto_save = 0;
   this_ptr->auto_save_blocked = 0;
-  this_ptr->unk11 = 0;
+  this_ptr->player_hit_flag = 0;
   this_ptr->game_stat_1 = 0.0;
   this_ptr->total_play_time = 0.0;
   this_ptr->game_stat_2 = 0.0;

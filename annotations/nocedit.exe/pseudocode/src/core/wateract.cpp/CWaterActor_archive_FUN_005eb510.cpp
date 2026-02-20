@@ -40,8 +40,8 @@ void __cdecl core_wateract_cpp_CWaterActor_archive_FUN_005eb510(CWaterActor *thi
   if (g_CWaterActorVersion < 6) {
     return;
   }
-  core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->col_r,"colR");
-  core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->col_g,"colG");
-  core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->col_b,"colB");
+  core_actor_cpp_archiveInteger_FUN_0040b7f0(&(this_ptr->color).r,"colR");
+  core_actor_cpp_archiveInteger_FUN_0040b7f0(&(this_ptr->color).g,"colG");
+  core_actor_cpp_archiveInteger_FUN_0040b7f0(&(this_ptr->color).b,"colB");
   return;
 }

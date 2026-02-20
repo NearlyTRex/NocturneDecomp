@@ -1,139 +1,24 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 17,
-        "line": 35,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 24,
-        "line": 37,
-        "message": "C-style cast from 'const char *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 46,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 47,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 52,
-        "message": "C-style cast from 'CVector3i *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 54,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 55,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 55,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 56,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 59,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 60,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 61,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3i *'"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 63,
-        "message": "C-style cast from 'CVector3i *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 67,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 68,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 69,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3i *'"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 92,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 93,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 39,
-        "line": 93,
-        "message": "member reference base type 'int' is not a structure or union"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 170,
-    "complexity_score": 860,
+    "complexity_score": 839,
     "cross_reference_count": 8,
     "function_call_count": 8,
     "global_count": 27,
-    "pseudocode_lines": 200,
-    "suspect_count": 64,
+    "pseudocode_lines": 199,
+    "suspect_count": 62,
     "suspect_types": [
+      "byvalue_struct_passing",
       "decompiler_intrinsic",
       "pointer_cast",
-      "suspect_float",
       "unknown_field"
     ],
-    "total_lines": 370
+    "total_lines": 369
   },
   "cross_references": [
     {
@@ -574,56 +459,49 @@
       "description": "Unknown/mangled field access",
       "line": 28,
       "match": "._0_1_",
-      "text": "local_64.light._0_1_ = in_FPUControlWord;",
+      "text": "local_64.z._0_1_ = in_FPUControlWord;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 36,
-      "match": "1.48538e-43",
-      "text": "local_64.w_recip = 1.48538e-43;",
-      "type": "suspect_float"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 39,
       "match": "._0_2_",
-      "text": "local_64.color._0_2_ = 0x1ccd;",
+      "text": "local_64.r._0_2_ = 0x1ccd;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 40,
       "match": "._2_2_",
-      "text": "local_64.color._2_2_ = 0x4a;",
+      "text": "local_64.r._2_2_ = 0x4a;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 47,
       "match": "._2_2_",
-      "text": "local_64.color._2_2_ = (short)((uint)local_64.w_recip >> 0x10);",
+      "text": "local_64.r._2_2_ = (short)((uint)local_64.fog >> 0x10);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 48,
       "match": "._2_2_",
-      "text": "local_64.light._2_2_ = local_64.color._2_2_;",
+      "text": "local_64.z._2_2_ = local_64.r._2_2_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 48,
       "match": "._2_2_",
-      "text": "local_64.light._2_2_ = local_64.color._2_2_;",
+      "text": "local_64.z._2_2_ = local_64.r._2_2_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 49,
       "match": "._1_1_",
-      "text": "local_64.light._1_1_ = 0x1f;",
+      "text": "local_64.z._1_1_ = 0x1f;",
       "type": "unknown_field"
     },
     {
@@ -644,28 +522,28 @@
       "description": "Unknown/mangled field access",
       "line": 52,
       "match": "._0_2_",
-      "text": "local_64.color._0_2_ = 0x1d0a;",
+      "text": "local_64.r._0_2_ = 0x1d0a;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 53,
       "match": "._2_2_",
-      "text": "local_64.color._2_2_ = 0x4a;",
+      "text": "local_64.r._2_2_ = 0x4a;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 60,
       "match": "._0_2_",
-      "text": "local_64.color._0_2_ = 0x1d29;",
+      "text": "local_64.r._0_2_ = 0x1d29;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 61,
       "match": "._2_2_",
-      "text": "local_64.color._2_2_ = 0x4a;",
+      "text": "local_64.r._2_2_ = 0x4a;",
       "type": "unknown_field"
     },
     {
@@ -700,70 +578,70 @@
       "description": "Unknown/mangled field access",
       "line": 85,
       "match": "._0_1_",
-      "text": "vertex2.light._0_1_ = (byte)local_64.light;",
+      "text": "vertex2.z._0_1_ = (byte)local_64.z;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 86,
       "match": "._1_1_",
-      "text": "vertex2.light._1_1_ = local_64.light._1_1_;",
+      "text": "vertex2.z._1_1_ = local_64.z._1_1_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 86,
       "match": "._1_1_",
-      "text": "vertex2.light._1_1_ = local_64.light._1_1_;",
+      "text": "vertex2.z._1_1_ = local_64.z._1_1_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 87,
       "match": "._2_2_",
-      "text": "vertex2.light._2_2_ = local_64.light._2_2_;",
+      "text": "vertex2.z._2_2_ = local_64.z._2_2_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 87,
       "match": "._2_2_",
-      "text": "vertex2.light._2_2_ = local_64.light._2_2_;",
+      "text": "vertex2.z._2_2_ = local_64.z._2_2_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 88,
       "match": "._0_2_",
-      "text": "vertex2.color._0_2_ = (short)local_64.color;",
+      "text": "vertex2.r._0_2_ = (short)local_64.r;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 89,
       "match": "._2_2_",
-      "text": "vertex2.color._2_2_ = local_64.color._2_2_;",
+      "text": "vertex2.r._2_2_ = local_64.r._2_2_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 89,
       "match": "._2_2_",
-      "text": "vertex2.color._2_2_ = local_64.color._2_2_;",
+      "text": "vertex2.r._2_2_ = local_64.r._2_2_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 98,
       "match": "._0_2_",
-      "text": "local_64.color._0_2_ = 0x1d74;",
+      "text": "local_64.r._0_2_ = 0x1d74;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 99,
       "match": "._2_2_",
-      "text": "local_64.color._2_2_ = 0x4a;",
+      "text": "local_64.r._2_2_ = 0x4a;",
       "type": "unknown_field"
     },
     {
@@ -798,70 +676,70 @@
       "description": "Unknown/mangled field access",
       "line": 123,
       "match": "._0_1_",
-      "text": "vertex2_00.light._0_1_ = (byte)local_64.light;",
+      "text": "vertex2_00.z._0_1_ = (byte)local_64.z;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 124,
       "match": "._1_1_",
-      "text": "vertex2_00.light._1_1_ = local_64.light._1_1_;",
+      "text": "vertex2_00.z._1_1_ = local_64.z._1_1_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 124,
       "match": "._1_1_",
-      "text": "vertex2_00.light._1_1_ = local_64.light._1_1_;",
+      "text": "vertex2_00.z._1_1_ = local_64.z._1_1_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 125,
       "match": "._2_2_",
-      "text": "vertex2_00.light._2_2_ = local_64.light._2_2_;",
+      "text": "vertex2_00.z._2_2_ = local_64.z._2_2_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 125,
       "match": "._2_2_",
-      "text": "vertex2_00.light._2_2_ = local_64.light._2_2_;",
+      "text": "vertex2_00.z._2_2_ = local_64.z._2_2_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 126,
       "match": "._0_2_",
-      "text": "vertex2_00.color._0_2_ = (short)local_64.color;",
+      "text": "vertex2_00.r._0_2_ = (short)local_64.r;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 127,
       "match": "._2_2_",
-      "text": "vertex2_00.color._2_2_ = local_64.color._2_2_;",
+      "text": "vertex2_00.r._2_2_ = local_64.r._2_2_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 127,
       "match": "._2_2_",
-      "text": "vertex2_00.color._2_2_ = local_64.color._2_2_;",
+      "text": "vertex2_00.r._2_2_ = local_64.r._2_2_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 136,
       "match": "._0_2_",
-      "text": "local_64.color._0_2_ = 0x1dc1;",
+      "text": "local_64.r._0_2_ = 0x1dc1;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 137,
       "match": "._2_2_",
-      "text": "local_64.color._2_2_ = 0x4a;",
+      "text": "local_64.r._2_2_ = 0x4a;",
       "type": "unknown_field"
     },
     {
@@ -896,127 +774,120 @@
       "description": "Unknown/mangled field access",
       "line": 162,
       "match": "._0_1_",
-      "text": "vertex2_01.light._0_1_ = (byte)local_64.light;",
+      "text": "vertex2_01.z._0_1_ = (byte)local_64.z;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 163,
       "match": "._1_1_",
-      "text": "vertex2_01.light._1_1_ = local_64.light._1_1_;",
+      "text": "vertex2_01.z._1_1_ = local_64.z._1_1_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 163,
       "match": "._1_1_",
-      "text": "vertex2_01.light._1_1_ = local_64.light._1_1_;",
+      "text": "vertex2_01.z._1_1_ = local_64.z._1_1_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 164,
       "match": "._2_2_",
-      "text": "vertex2_01.light._2_2_ = local_64.light._2_2_;",
+      "text": "vertex2_01.z._2_2_ = local_64.z._2_2_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 164,
       "match": "._2_2_",
-      "text": "vertex2_01.light._2_2_ = local_64.light._2_2_;",
+      "text": "vertex2_01.z._2_2_ = local_64.z._2_2_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 165,
       "match": "._0_2_",
-      "text": "vertex2_01.color._0_2_ = (short)local_64.color;",
+      "text": "vertex2_01.r._0_2_ = (short)local_64.r;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 166,
       "match": "._2_2_",
-      "text": "vertex2_01.color._2_2_ = local_64.color._2_2_;",
+      "text": "vertex2_01.r._2_2_ = local_64.r._2_2_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 166,
       "match": "._2_2_",
-      "text": "vertex2_01.color._2_2_ = local_64.color._2_2_;",
+      "text": "vertex2_01.r._2_2_ = local_64.r._2_2_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 177,
       "match": "._0_1_",
-      "text": "local_64.light._0_1_ = 0x55;",
+      "text": "local_64.z._0_1_ = 0x55;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 178,
       "match": "._1_1_",
-      "text": "local_64.light._1_1_ = 0x1e;",
+      "text": "local_64.z._1_1_ = 0x1e;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 179,
       "match": "._2_2_",
-      "text": "local_64.light._2_2_ = 0x4a;",
+      "text": "local_64.z._2_2_ = 0x4a;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 182,
-      "match": "9.18341e-41",
-      "text": "local_64.w_recip = 9.18341e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 185,
-      "match": "NAN",
-      "text": "local_64.w_recip = -NAN;",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 187,
       "match": "._0_2_",
-      "text": "local_64.color._0_2_ = (short)((uint)uVar2 >> 0x10);",
+      "text": "local_64.r._0_2_ = (short)((uint)uVar2 >> 0x10);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 188,
       "match": "._2_2_",
-      "text": "local_64.color._2_2_ = (short)local_64.color >> 0xf;",
+      "text": "local_64.r._2_2_ = (short)local_64.r >> 0xf;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 189,
       "match": "._0_1_",
-      "text": "local_64.light._0_1_ = (byte)((uint)uVar1 >> 0x10);",
+      "text": "local_64.z._0_1_ = (byte)((uint)uVar1 >> 0x10);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 190,
       "match": "._1_1_",
-      "text": "local_64.light._1_1_ = (byte)((uint)uVar1 >> 0x18);",
+      "text": "local_64.z._1_1_ = (byte)((uint)uVar1 >> 0x18);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 192,
       "match": "._2_2_",
-      "text": "local_64.light._2_2_ = sVar3 >> 0xf;",
+      "text": "local_64.z._2_2_ = sVar3 >> 0xf;",
       "type": "unknown_field"
+    },
+    {
+      "description": "Calls clipAndDrawLine2D - decompiler cannot recognize by-value pattern",
+      "line": 1,
+      "match": "clipAndDrawLine2D",
+      "text": "Function calls by-value struct passing functions",
+      "type": "byvalue_struct_passing"
     }
   ]
 }

@@ -13,12 +13,12 @@
   },
   "complexity": {
     "assembly_lines": 413,
-    "complexity_score": 268,
+    "complexity_score": 278,
     "cross_reference_count": 2,
     "function_call_count": 10,
     "global_count": 30,
     "pseudocode_lines": 198,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
       "undefined_data"
@@ -484,6 +484,13 @@
       "line": 101,
       "match": "(int *)((int)",
       "text": "dest = (int *)((int)&g_SimFrameHistory + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 132,
+      "match": "(SPlayerControl *)((int)",
+      "text": "pSVar7 = (SPlayerControl *)((int)pSVar7 + (uint)bVar12 * -8 + 4);",
       "type": "pointer_cast"
     },
     {

@@ -6,13 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 77,
+    "complexity_score": 92,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "pseudocode_lines": 42,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
+      "byvalue_struct_passing",
       "pointer_cast"
     ],
     "total_lines": 79
@@ -209,6 +210,13 @@
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Calls clipAndDrawLine2D - decompiler cannot recognize by-value pattern",
+      "line": 1,
+      "match": "clipAndDrawLine2D",
+      "text": "Function calls by-value struct passing functions",
+      "type": "byvalue_struct_passing"
     }
   ]
 }

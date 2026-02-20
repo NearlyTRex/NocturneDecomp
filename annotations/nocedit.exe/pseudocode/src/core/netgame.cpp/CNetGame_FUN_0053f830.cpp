@@ -12,8 +12,7 @@ void __cdecl core_netgame_cpp_CNetGame_FUN_0053f830(CNetGame *this_ptr)
   LPWSADATA in_stack_00000008;
   
   core_netgame_cpp_CNetGame_FUN_0053fd00(this_ptr);
-  support_trisock_cpp_bindAndInvalidateSocket_FUN_005e1d20((SSocketContext *)(this_ptr->unk + 0x58))
-  ;
+  support_trisock_cpp_bindAndInvalidateSocket_FUN_005e1d20(&this_ptr->socket);
   support_trisock_cpp_cleanupWinsock_FUN_005e1ee0((WORD)this_ptr,in_stack_00000008);
   return;
 }

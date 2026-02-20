@@ -13,7 +13,10 @@ typedef struct CLadder {
     CKeyFramedModelInstance model; // 0x158
     CVector3f ladder_size; // 0x2d4
     struct CDemonActor* master_actor; // 0x2e0
-    char unk1[24]; // 0x2e4
+    float unk1; // 0x2e4
+    float unk2; // 0x2e8
+    uint unk3; // 0x2ec
+    CVector3f cached_euler_angles; // 0x2f0
     int ground_type; // 0x2fc
 } CLadder;
 

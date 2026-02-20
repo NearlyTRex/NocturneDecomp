@@ -29,7 +29,7 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_005e88c0(CVehicle *this_p
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
   pCVar1 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_60);
   iStack_18 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(pCVar1);
-  *(int *)(this_ptr->unk3 + 0x18) = iStack_18;
+  this_ptr->is_visible = iStack_18;
   if (iStack_18 != 0) {
     iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
     if ((iVar2 == 0) || (g_CGamePtr->block_auto_save != 0)) {
@@ -37,10 +37,10 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_005e88c0(CVehicle *this_p
                 (&this_ptr->model,0.0,-1);
       iVar2 = 0;
       if (0 < this_ptr->tire_count) {
-        this_ptr_00 = (CKeyFramedModelInstance *)(this_ptr->unk2 + 0x14);
-        pCStack_14 = (CVector3i *)(this_ptr->unk2 + 400);
-        position = (CVector3i *)(this_ptr->unk2 + 0x1a8);
-        rotation = (CVector3i *)(this_ptr->unk2 + 0x19c);
+        this_ptr_00 = &this_ptr->tires[0].model;
+        pCStack_14 = (CVector3i *)&this_ptr->tires[0].spin_angle;
+        position = (CVector3i *)&this_ptr->tires[0].runtime_rotation;
+        rotation = (CVector3i *)&this_ptr->tires[0].runtime_position;
         do {
           engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                     (g_CDemonRendererPtr2,position,rotation);
@@ -66,7 +66,7 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_005e88c0(CVehicle *this_p
     }
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base);
-  if ((*(int *)(this_ptr->unk3 + 0x18) != 0) &&
+  if ((this_ptr->is_visible != 0) &&
      (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
      iVar2 == 0)) {
     CStack_30.z = 6.0;

@@ -147,7 +147,7 @@
 ; Called Functions:
 ;   core_course.cpp_CCourse_ctor_FUN_004424c0
 ;   core_course.cpp_CCourse_dtor_FUN_004424e0
-;   core_course.cpp_CCourse_FUN_00442710
+;   core_course.cpp_CCourse_evaluate_FUN_00442710
 ;   core_course.cpp_CCourse_load_FUN_00442580
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0
@@ -2153,8 +2153,8 @@ section .text
     LEA EAX,[EBP + -0x62]               ; 0047e262
     PUSH 0x0                            ; 0047e265
     PUSH EAX                            ; 0047e267
-    CALL core_course.cpp_CCourse_FUN_00442710 ; 0047e268
-        ;   XREF to: 00442710 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_FUN_00442710(CCourse * this_ptr)
+    CALL core_course.cpp_CCourse_evaluate_FUN_00442710 ; 0047e268
+        ;   XREF to: 00442710 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_evaluate_FUN_00442710(CCourse * this_ptr, float time, CVector3f * out_pos, CVector3f * out_euler)
     ADD ESP,0x10                        ; 0047e26d
     LEA EAX,[EBP + -0xe]                ; 0047e270
     PUSH EAX                            ; 0047e273

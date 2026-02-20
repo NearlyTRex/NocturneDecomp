@@ -59,7 +59,7 @@ int __cdecl core_waypoint_cpp_CWaypoint_renderOpaque_FUN_005ebf70(CWayPoint *thi
     pCVar4 = this_ptr;
     if (0 < this_ptr->num_adjacent_waypoints) {
       do {
-        this_ptr_00 = *(CWayPoint **)pCVar4->unk;
+        this_ptr_00 = pCVar4->adjacency[0].waypoint;
         if (this_ptr <= this_ptr_00) {
           g_ActiveRenderColor = 2;
           if ((this_ptr == local_14) || (this_ptr_00 == local_14)) {

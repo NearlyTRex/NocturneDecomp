@@ -25,7 +25,7 @@ void __cdecl engine_3d_c_drawLineStrip3D_FUN_00404600(SLineStrip *line_strip)
   SRenderVertex local_40;
   
   bVar6 = 0;
-  local_a0.w_recip = 5.9026e-39;
+  local_a0.fog = 0x40460c;
   engine_3d_c_setActiveRenderColor_FUN_00404540();
   iVar3 = 0;
   pSVar2 = line_strip + 1;
@@ -60,13 +60,13 @@ void __cdecl engine_3d_c_drawLineStrip3D_FUN_00404600(SLineStrip *line_strip)
       pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -8 + 4);
       pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar6 * -2 + 1) * 4);
     }
-    vertex2.w_recip = local_a0.w_recip;
+    vertex2.fog = local_a0.fog;
     vertex2.projected_vertex = local_a0.projected_vertex;
     vertex2.u = local_a0.u;
     vertex2.v = local_a0.v;
-    vertex2.light = local_a0.light;
-    vertex2.color = local_a0.color;
-    vertex2.fog = local_a0.fog;
+    vertex2.z = local_a0.z;
+    vertex2.r = local_a0.r;
+    vertex2.g = local_a0.g;
     engine_3d_c_clipAndDrawLine3D_FUN_00408070(local_d0,vertex2);
   }
   return;

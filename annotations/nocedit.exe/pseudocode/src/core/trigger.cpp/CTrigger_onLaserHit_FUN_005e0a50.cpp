@@ -11,10 +11,7 @@ void __cdecl core_trigger_cpp_CTrigger_onLaserHit_FUN_005e0a50(CTrigger *this_pt
 {
   core_actor_cpp_CDemonActor_onLaserHit_FUN_00409840(&this_ptr->base,laser_info);
   if ((this_ptr->hero_triggers_me == 5) && (this_ptr->laser_type == laser_info->laser_type)) {
-    this_ptr->unk2[4] = '\x01';
-    this_ptr->unk2[5] = '\0';
-    this_ptr->unk2[6] = '\0';
-    this_ptr->unk2[7] = '\0';
+    this_ptr->event_flag = 1;
   }
   laser_info->transparency = 0.0;
   laser_info->reflectivity = 1.0;

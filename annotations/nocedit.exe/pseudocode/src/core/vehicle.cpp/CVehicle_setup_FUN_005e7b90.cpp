@@ -9,158 +9,109 @@
 void __cdecl core_vehicle_cpp_CVehicle_setup_FUN_005e7b90(CVehicle *this_ptr)
 
 {
-  CVector3f *pCVar1;
+  float fVar1;
   float fVar2;
   float fVar3;
-  CKeyFramedModel *pCVar4;
-  char *pcVar5;
-  char *pcVar6;
-  char *pcVar7;
+  float fVar4;
+  float fVar5;
+  float fVar6;
+  float fVar7;
+  float fVar8;
+  CKeyFramedModel *pCVar9;
+  CVector3f *pCVar10;
+  CTire *pCVar11;
+  CVector3f *pCVar12;
   CKeyFramedModelInstance *this_ptr_00;
-  int iVar8;
+  int iVar13;
   float local_1c;
   float local_18;
   float local_14;
   
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
-  iVar8 = 0;
+  iVar13 = 0;
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&this_ptr->model);
   if (0 < this_ptr->tire_count) {
-    this_ptr_00 = (CKeyFramedModelInstance *)(this_ptr->unk2 + 0x14);
+    this_ptr_00 = &this_ptr->tires[0].model;
     do {
       core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(this_ptr_00);
-      iVar8 = iVar8 + 1;
+      iVar13 = iVar13 + 1;
       this_ptr_00 = (CKeyFramedModelInstance *)(this_ptr_00[1].part_visibility_flags + 0xe);
-    } while (iVar8 < this_ptr->tire_count);
+    } while (iVar13 < this_ptr->tire_count);
   }
-  pCVar4 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
-  pCVar1 = pCVar4->frame_bounds;
-  local_1c = pCVar1[1].x - pCVar1->x;
-  local_18 = pCVar1[1].y - pCVar1->y;
-  local_14 = pCVar1[1].z - pCVar1->z;
-  if ((float *)(this_ptr->unk1 + 0x658) != &local_1c) {
-    *(float *)(this_ptr->unk1 + 0x658) = local_1c;
-    *(float *)(this_ptr->unk1 + 0x65c) = local_18;
-    *(float *)(this_ptr->unk1 + 0x660) = local_14;
+  pCVar9 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
+  pCVar12 = pCVar9->frame_bounds;
+  local_1c = pCVar12[1].x - pCVar12->x;
+  local_18 = pCVar12[1].y - pCVar12->y;
+  local_14 = pCVar12[1].z - pCVar12->z;
+  if (&this_ptr->bound_size != (CVector3f *)&local_1c) {
+    (this_ptr->bound_size).x = local_1c;
+    (this_ptr->bound_size).y = local_18;
+    (this_ptr->bound_size).z = local_14;
   }
-  fVar2 = *(float *)(this_ptr->unk1 + 0x644) * (float)0.03125;
-  *(float *)(this_ptr->unk1 + 0x648) = fVar2;
-  fVar3 = (float)0.083333333333333301;
-  *(float *)(this_ptr->unk1 + 0x64c) =
-       fVar2 * fVar3 *
-       (*(float *)(this_ptr->unk1 + 0x660) * *(float *)(this_ptr->unk1 + 0x660) +
-       *(float *)(this_ptr->unk1 + 0x65c) * *(float *)(this_ptr->unk1 + 0x65c));
-  *(float *)(this_ptr->unk1 + 0x650) =
-       *(float *)(this_ptr->unk1 + 0x648) * fVar3 *
-       (*(float *)(this_ptr->unk1 + 0x660) * *(float *)(this_ptr->unk1 + 0x660) +
-       *(float *)(this_ptr->unk1 + 0x658) * *(float *)(this_ptr->unk1 + 0x658));
-  *(float *)(this_ptr->unk1 + 0x654) =
-       (*(float *)(this_ptr->unk1 + 0x65c) * *(float *)(this_ptr->unk1 + 0x65c) +
-       *(float *)(this_ptr->unk1 + 0x658) * *(float *)(this_ptr->unk1 + 0x658)) *
-       *(float *)(this_ptr->unk1 + 0x648) * fVar3;
-  this_ptr->unk1[0x61c] = '\0';
-  this_ptr->unk1[0x61d] = '\0';
-  this_ptr->unk1[0x61e] = '\0';
-  this_ptr->unk1[0x61f] = '\0';
-  *(uint *)(this_ptr->unk1 + 0x618) = *(uint *)(this_ptr->unk1 + 0x61c);
-  *(uint *)(this_ptr->unk1 + 0x614) = *(uint *)(this_ptr->unk1 + 0x618);
-  this_ptr->unk1[0x640] = '\0';
-  this_ptr->unk1[0x641] = '\0';
-  this_ptr->unk1[0x642] = '\0';
-  this_ptr->unk1[0x643] = '\0';
-  *(uint *)(this_ptr->unk1 + 0x63c) = *(uint *)(this_ptr->unk1 + 0x640);
-  *(uint *)(this_ptr->unk1 + 0x638) = *(uint *)(this_ptr->unk1 + 0x63c);
-  this_ptr->unk1[0x604] = '\0';
-  this_ptr->unk1[0x605] = '\0';
-  this_ptr->unk1[0x606] = '\0';
-  this_ptr->unk1[0x607] = '\0';
-  *(uint *)(this_ptr->unk1 + 0x600) = *(uint *)(this_ptr->unk1 + 0x604);
-  *(uint *)(this_ptr->unk1 + 0x5fc) = *(uint *)(this_ptr->unk1 + 0x600);
-  this_ptr->unk1[0x628] = '\0';
-  this_ptr->unk1[0x629] = '\0';
-  this_ptr->unk1[0x62a] = '\0';
-  this_ptr->unk1[0x62b] = '\0';
-  *(uint *)(this_ptr->unk1 + 0x624) = *(uint *)(this_ptr->unk1 + 0x628);
-  *(uint *)(this_ptr->unk1 + 0x620) = *(uint *)(this_ptr->unk1 + 0x624);
-  this_ptr->unk1[0x610] = '\0';
-  this_ptr->unk1[0x611] = '\0';
-  this_ptr->unk1[0x612] = '\0';
-  this_ptr->unk1[0x613] = '\0';
-  *(uint *)(this_ptr->unk1 + 0x60c) = *(uint *)(this_ptr->unk1 + 0x610);
-  *(uint *)(this_ptr->unk1 + 0x608) = *(uint *)(this_ptr->unk1 + 0x60c);
-  this_ptr->unk1[0x634] = '\0';
-  this_ptr->unk1[0x635] = '\0';
-  this_ptr->unk1[0x636] = '\0';
-  this_ptr->unk1[0x637] = '\0';
-  *(uint *)(this_ptr->unk1 + 0x630) = *(uint *)(this_ptr->unk1 + 0x634);
-  *(uint *)(this_ptr->unk1 + 0x62c) = *(uint *)(this_ptr->unk1 + 0x630);
-  this_ptr->unk1[0x5f8] = '\0';
-  this_ptr->unk1[0x5f9] = '\0';
-  this_ptr->unk1[0x5fa] = '\0';
-  this_ptr->unk1[0x5fb] = '\0';
-  *(uint *)(this_ptr->unk1 + 0x5f4) = *(uint *)(this_ptr->unk1 + 0x5f8);
-  *(uint *)(this_ptr->unk1 + 0x5f0) = *(uint *)(this_ptr->unk1 + 0x5f4);
-  iVar8 = 0;
+  fVar7 = this_ptr->mass * (float)0.03125;
+  fVar1 = (this_ptr->bound_size).y;
+  fVar2 = (this_ptr->bound_size).x;
+  fVar3 = (this_ptr->bound_size).x;
+  fVar4 = (this_ptr->bound_size).z;
+  fVar5 = (this_ptr->bound_size).z;
+  fVar6 = (this_ptr->bound_size).y;
+  this_ptr->scaled_mass = fVar7;
+  fVar8 = (float)0.083333333333333301;
+  this_ptr->inertia_yz = fVar7 * fVar8 * (fVar4 * fVar4 + fVar1 * fVar1);
+  this_ptr->inertia_xz = this_ptr->scaled_mass * fVar8 * (fVar5 * fVar5 + fVar2 * fVar2);
+  this_ptr->inertia_xy = (fVar6 * fVar6 + fVar3 * fVar3) * this_ptr->scaled_mass * fVar8;
+  this_ptr->unk1[1].z = 0.0;
+  this_ptr->unk1[1].y = this_ptr->unk1[1].z;
+  this_ptr->unk1[1].x = this_ptr->unk1[1].y;
+  this_ptr->unk1[4].z = 0.0;
+  this_ptr->unk1[4].y = this_ptr->unk1[4].z;
+  this_ptr->unk1[4].x = this_ptr->unk1[4].y;
+  (this_ptr->local_velocity).z = 0.0;
+  (this_ptr->local_velocity).y = (this_ptr->local_velocity).z;
+  (this_ptr->local_velocity).x = (this_ptr->local_velocity).y;
+  this_ptr->unk1[2].z = 0.0;
+  this_ptr->unk1[2].y = this_ptr->unk1[2].z;
+  this_ptr->unk1[2].x = this_ptr->unk1[2].y;
+  this_ptr->unk1[0].z = 0.0;
+  this_ptr->unk1[0].y = this_ptr->unk1[0].z;
+  this_ptr->unk1[0].x = this_ptr->unk1[0].y;
+  this_ptr->unk1[3].z = 0.0;
+  this_ptr->unk1[3].y = this_ptr->unk1[3].z;
+  this_ptr->unk1[3].x = this_ptr->unk1[3].y;
+  (this_ptr->world_velocity).z = 0.0;
+  (this_ptr->world_velocity).y = (this_ptr->world_velocity).z;
+  (this_ptr->world_velocity).x = (this_ptr->world_velocity).y;
+  iVar13 = 0;
   if (0 < this_ptr->tire_count) {
-    pcVar7 = this_ptr->unk2 + 0x19c;
-    pcVar5 = this_ptr->unk2 + 400;
+    pCVar12 = &this_ptr->tires[0].runtime_position;
+    pCVar10 = &this_ptr->tires[0].spin_angle;
     do {
-      pcVar6 = this_ptr->unk2 + iVar8 * 0x1b4;
-      if (pcVar7 != pcVar6) {
-        *(uint *)pcVar7 = *(uint *)pcVar6;
-        *(uint *)(pcVar7 + 4) = *(uint *)(pcVar6 + 4);
-        *(uint *)(pcVar7 + 8) = *(uint *)(pcVar6 + 8);
+      pCVar11 = this_ptr->tires + iVar13;
+      if ((CTire *)pCVar12 != pCVar11) {
+        pCVar12->x = (pCVar11->static_bpos).x;
+        pCVar12->y = (pCVar11->static_bpos).y;
+        pCVar12->z = (pCVar11->static_bpos).z;
       }
-      pcVar5[8] = '\0';
-      pcVar5[9] = '\0';
-      pcVar5[10] = '\0';
-      pcVar5[0xb] = '\0';
-      pcVar7 = pcVar7 + 0x1b4;
-      pcVar5[0x20] = '\0';
-      pcVar5[0x21] = '\0';
-      pcVar5[0x22] = '\0';
-      pcVar5[0x23] = '\0';
-      iVar8 = iVar8 + 1;
-      *(uint *)(pcVar5 + 4) = *(uint *)(pcVar5 + 8);
-      *(uint *)(pcVar5 + 0x1c) = *(uint *)(pcVar5 + 0x20);
-      *(uint *)pcVar5 = *(uint *)(pcVar5 + 4);
-      *(uint *)(pcVar5 + 0x18) = *(uint *)(pcVar5 + 0x20);
-      pcVar5 = pcVar5 + 0x1b4;
-    } while (iVar8 < this_ptr->tire_count);
+      pCVar10->z = 0.0;
+      pCVar12 = (CVector3f *)((int)(pCVar12 + 0x24) + 4);
+      pCVar10[2].z = 0.0;
+      iVar13 = iVar13 + 1;
+      fVar1 = pCVar10[2].z;
+      pCVar10->y = pCVar10->z;
+      pCVar10[2].y = fVar1;
+      pCVar10->x = pCVar10->y;
+      pCVar10[2].x = fVar1;
+      pCVar10 = (CVector3f *)((int)(pCVar10 + 0x24) + 4);
+    } while (iVar13 < this_ptr->tire_count);
   }
-  this_ptr->unk2[0x6d0] = '\0';
-  this_ptr->unk2[0x6d1] = '\0';
-  this_ptr->unk2[0x6d2] = '\0';
-  this_ptr->unk2[0x6d3] = '\0';
-  this_ptr->unk2[0x6d4] = '\0';
-  this_ptr->unk2[0x6d5] = '\0';
-  this_ptr->unk2[0x6d6] = -0x80;
-  this_ptr->unk2[0x6d7] = '?';
-  this_ptr->unk2[0x6d8] = '\0';
-  this_ptr->unk2[0x6d9] = '\0';
-  this_ptr->unk2[0x6da] = '\0';
-  this_ptr->unk2[0x6db] = '\0';
-  this_ptr->unk2[0x6dc] = '\0';
-  this_ptr->unk2[0x6dd] = '\0';
-  this_ptr->unk2[0x6de] = '\0';
-  this_ptr->unk2[0x6df] = '\0';
-  core_course_cpp_CCourse_load_FUN_00442580
-            ((CCourse *)(this_ptr->unk2 + 0x6e4),this_ptr->course_name);
-  this_ptr->unk3[0x18] = '\x01';
-  this_ptr->unk3[0x19] = '\0';
-  this_ptr->unk3[0x1a] = '\0';
-  this_ptr->unk3[0x1b] = '\0';
-  this_ptr->unk3[0] = '\0';
-  this_ptr->unk3[1] = '\0';
-  this_ptr->unk3[2] = '\0';
-  this_ptr->unk3[3] = '\0';
-  this_ptr->unk3[4] = '\0';
-  this_ptr->unk3[5] = '\0';
-  this_ptr->unk3[6] = '\0';
-  this_ptr->unk3[7] = '\0';
-  this_ptr->unk3[8] = '\0';
-  this_ptr->unk3[9] = '\0';
-  this_ptr->unk3[10] = '\0';
-  this_ptr->unk3[0xb] = '\0';
+  this_ptr->unk2[0] = 0.0;
+  this_ptr->unk2[1] = 1.0;
+  this_ptr->unk2[2] = 0.0;
+  this_ptr->unk2[3] = 0.0;
+  core_course_cpp_CCourse_load_FUN_00442580(&this_ptr->course,this_ptr->course_name);
+  this_ptr->is_visible = 1;
+  this_ptr->sfx_horn_handle = 0;
+  this_ptr->sfx_engine_handle = 0;
+  this_ptr->sfx_screech_handle = 0;
   return;
 }

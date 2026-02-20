@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * __cdecl core_stranger_cpp_CStranger_FUN_005c07b0(CStranger *this_ptr)
+; void __cdecl core_stranger_cpp_CStranger_FUN_005c07b0(CStranger *this_ptr)
 ;
 ; Parameters:
 ; CStranger *      Stack[0x4]:4   this_ptr
@@ -109,9 +109,7 @@
 ; undefined4       Stack[-0x18c]:4  local_18c
 ; undefined4       Stack[-0x188]:4  local_188
 ; undefined4       Stack[-0x184]:4  local_184
-; undefined4       Stack[-0x180]:4  local_180
-; undefined4       Stack[-0x17c]:4  local_17c
-; undefined4       Stack[-0x178]:4  local_178
+; CWeapon *        Stack[-0x180]:4  local_180
 ; undefined4       Stack[-0x174]:4  local_174
 ; undefined4       Stack[-0x170]:4  local_170
 ; undefined4       Stack[-0x16c]:4  local_16c

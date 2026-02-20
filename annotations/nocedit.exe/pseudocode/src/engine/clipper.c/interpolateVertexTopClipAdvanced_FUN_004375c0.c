@@ -42,24 +42,23 @@ void __cdecl engine_clipper_c_interpolateVertexTopClipAdvanced_FUN_004375c0(SRen
   (output->projected_vertex).screen_x = -1;
   (output->projected_vertex).transformed_x =
        (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + iVar2;
-  lVar1 = (longlong)(v2->light - v1->light) * (longlong)iVar4;
+  lVar1 = (longlong)(v2->z - v1->z) * (longlong)iVar4;
   uVar3 = (uint)lVar1;
-  output->light = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->light;
-  lVar1 = (longlong)(v2->color - v1->color) * (longlong)iVar4;
+  output->z = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->z;
+  lVar1 = (longlong)(v2->r - v1->r) * (longlong)iVar4;
   uVar3 = (uint)lVar1;
-  output->color = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->color;
-  lVar1 = (longlong)(v2->fog - v1->fog) * (longlong)iVar4;
+  output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->r;
+  lVar1 = (longlong)(v2->g - v1->g) * (longlong)iVar4;
   uVar3 = (uint)lVar1;
-  output->fog = v1->fog + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);
+  output->g = v1->g + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);
   lVar1 = (longlong)(v2->u - v1->u) * (longlong)iVar4;
   uVar3 = (uint)lVar1;
   output->u = v1->u + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);
   lVar1 = (longlong)(v2->v - v1->v) * (longlong)iVar4;
   uVar3 = (uint)lVar1;
   output->v = v1->v + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);
-  lVar1 = (longlong)((int)v2->w_recip - (int)v1->w_recip) * (longlong)iVar4;
+  lVar1 = (longlong)(v2->fog - v1->fog) * (longlong)iVar4;
   uVar3 = (uint)lVar1;
-  output->w_recip =
-       (float)((int)v1->w_recip + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3));
+  output->fog = v1->fog + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);
   return;
 }

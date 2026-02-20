@@ -12064,7 +12064,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_course.cpp_CCourse_FUN_004427a0",
+    "name":"core_course.cpp_CCourse_interpolate_FUN_004427a0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -12469,6 +12469,54 @@
             ]
           },
           "type":"CCourse*"
+        },
+        {
+          "name":"time",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"out_pos",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"out_orient",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"CQuaternion4f*"
         }
       ]
     }
@@ -12809,6 +12857,38 @@
             ]
           },
           "type":"CCourse*"
+        },
+        {
+          "name":"file_handle",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"_FILE*"
+        },
+        {
+          "name":"count",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -58865,7 +58945,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_platfrm.cpp_CPlatform_FUN_0054e320",
+    "name":"core_platfrm.cpp_CPlatform_updateAttachedActors_FUN_0054e320",
     "ret":"void",
     "vars":{
       "locals":[
@@ -77285,6 +77365,38 @@
     "name":"core_spike.cpp_CSpike_ctor_FUN_005b8220",
     "ret":"CSpike*",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar2",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CSpike*",
+          "use":8
+        },
+        {
+          "name":"this_ptr_00",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CSpike_ptr_344",
+          "use":22
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -88656,7 +88768,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_trigger.cpp_CTrigger_FUN_005e0aa0",
+    "name":"core_trigger.cpp_CTrigger_onProjectileHit_FUN_005e0aa0",
     "ret":"void",
     "vars":{
       "params":[
@@ -88690,7 +88802,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_trigger.cpp_CTrigger_FUN_005e0ba0",
+    "name":"core_trigger.cpp_CTrigger_calculateTestRadius_FUN_005e0ba0",
     "ret":"void",
     "vars":{
       "params":[
@@ -88763,7 +88875,7 @@
       ],
       "params":[
         {
-          "name":"socket_ctx",
+          "name":"socket",
           "storage":{
             "offset":4,
             "size":4,
@@ -88776,7 +88888,7 @@
               }
             ]
           },
-          "type":"SSocketContext*"
+          "type":"SOCKET*"
         },
         {
           "name":"buffer",
@@ -88889,7 +89001,7 @@
       ],
       "params":[
         {
-          "name":"socket_ctx",
+          "name":"socket",
           "storage":{
             "offset":4,
             "size":4,
@@ -88902,7 +89014,7 @@
               }
             ]
           },
-          "type":"SSocketContext*"
+          "type":"SOCKET*"
         },
         {
           "name":"buffer",
@@ -88981,7 +89093,7 @@
     "vars":{
       "params":[
         {
-          "name":"socket_ctx",
+          "name":"socket",
           "storage":{
             "offset":4,
             "size":4,
@@ -88994,7 +89106,7 @@
               }
             ]
           },
-          "type":"SSocketContext*"
+          "type":"SOCKET*"
         }
       ],
       "ret_storage":{
@@ -89649,6 +89761,23 @@
     "name":"core_vehicle.cpp_CTire_ctor_FUN_005e8da0",
     "ret":"CTire*",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CTire_ptr_20",
+          "use":8
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -90381,6 +90510,38 @@
     "name":"core_wateract.cpp_CWaterActor_ctor_FUN_005ea8a0",
     "ret":"CWaterActor*",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar2",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CWaterActor*",
+          "use":7
+        },
+        {
+          "name":"pvVar2",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CWaterActor_ptr_668",
+          "use":31
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",

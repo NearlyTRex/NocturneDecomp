@@ -6,14 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 102,
+    "complexity_score": 112,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "pseudocode_lines": 17,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
-      "pointer_cast"
+      "decompiler_intrinsic"
     ],
     "total_lines": 40
   },
@@ -120,60 +120,67 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 11,
+      "match": "ADJ",
+      "text": "ADJ(pvVar2)->base.vtable._ub = &g_CStairsVTable;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 12,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x18) = 0x3f800000;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar2)->rise = 1.0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 13,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x14) = 0x3f800000;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar2)->run = 1.0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 14,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0x10) = 0x40400000;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar2)->width = 3.0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 15,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -4) = 5;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar2)->stair_count = 5;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 16,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -0xc) = 0x3f000000;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar2)->bevel_y = 0.5;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 17,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + -8) = 0x3e99999a;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar2)->bevel_z = 0.3;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 18,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pvVar2 + 0x8c0) = 0;",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "ADJ(pvVar2)->ground_type = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 19,
-      "match": "(CStairs *)((int)",
-      "text": "return (CStairs *)((int)pvVar2 + -0x170);",
-      "type": "pointer_cast"
+      "match": "ADJ",
+      "text": "return ADJ(pvVar2);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

@@ -9,34 +9,34 @@
 int __cdecl core_netgame_cpp_CNetGame_initializeNetwork_FUN_0053fbc0(CNetGame *this_ptr)
 
 {
-  SSocketContext *socket_ctx;
+  SOCKET *socket;
   int iVar1;
   
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Initializing network...");
-  socket_ctx = (SSocketContext *)(this_ptr->unk + 0x58);
-  support_trisock_cpp_bindAndInvalidateSocket_FUN_005e1d20(socket_ctx);
-  iVar1 = support_trisock_cpp_createUDPSocket_FUN_005e1b40(socket_ctx);
+  socket = &this_ptr->socket;
+  support_trisock_cpp_bindAndInvalidateSocket_FUN_005e1d20(socket);
+  iVar1 = support_trisock_cpp_createUDPSocket_FUN_005e1b40(socket);
   if (iVar1 == 0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't create datagram socket");
     return 0;
   }
-  iVar1 = support_trisock_cpp_setSocketBlocking_FUN_005e1e50((SOCKET *)socket_ctx,0);
+  iVar1 = support_trisock_cpp_setSocketBlocking_FUN_005e1e50(socket,0);
   if (iVar1 == 0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't turn off blocking mode for socket");
     return 0;
   }
-  iVar1 = support_trisock_cpp_bindSocket_FUN_005e1b80((uint16_t)socket_ctx,(SOCKET *)0x1ddf);
+  iVar1 = support_trisock_cpp_bindSocket_FUN_005e1b80((uint16_t)socket,(SOCKET *)0x1ddf);
   if (iVar1 == 0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't bind UDP socket");
     return 0;
   }
   iVar1 = support_trisock_cpp_getSocketName_FUN_005e1df0
-                    ((SOCKET *)socket_ctx,
-                     (SNetworkAddr *)(this_ptr->players[this_ptr->local_player_index].name + 0x1c));
+                    (socket,(SNetworkAddr *)
+                            (this_ptr->players[this_ptr->local_player_index].name + 0x1c));
   if (iVar1 != 0) {
     core_netgame_cpp_CNetGame_FUN_00540550(this_ptr);
     g_CurrentGameTime = 1;

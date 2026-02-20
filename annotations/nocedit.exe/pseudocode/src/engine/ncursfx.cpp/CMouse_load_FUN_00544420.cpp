@@ -44,6 +44,6 @@ void __cdecl engine_ncursfx_cpp_CMouse_load_FUN_00544420(CMouse *this_ptr)
   do {
     engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(pCVar2,"crsrskll7",0x36,0x37);
     pCVar2 = pCVar2 + 1;
-  } while (pCVar2 != (CAlphaBitmap *)&this_ptr->field_600);
+  } while (pCVar2 != (CAlphaBitmap *)&this_ptr->anim_timer);
   return;
 }

@@ -15,7 +15,7 @@ void __cdecl core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_00542ff0(CNetGame 
   SNetPlayer *pSVar4;
   char *pcVar5;
   char local_33 [20];
-  uint local_1f;
+  int local_1f;
   uint local_1b;
   uint local_17;
   
@@ -33,7 +33,7 @@ void __cdecl core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_00542ff0(CNetGame 
     iVar3 = 0x20000;
   }
   g_CurrentGameTime = g_CurrentGameTime + iVar3;
-  local_1f = *(uint *)(this_ptr->players[this_ptr->local_player_index].unk1 + 0xc);
+  local_1f = this_ptr->players[this_ptr->local_player_index].ready_flag;
   local_1b = *(uint *)(this_ptr->players[this_ptr->local_player_index].name + 0x14);
   local_17 = *(uint *)(this_ptr->players[this_ptr->local_player_index].name + 0x18);
   pcVar5 = local_33;
@@ -48,8 +48,8 @@ void __cdecl core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_00542ff0(CNetGame 
     pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
   g_LastPingTime = iVar2 / 0x12;
-  core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,*(int *)this_ptr->padding);
+  core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,this_ptr->server_player_index);
   DAT_00680a04 = 1;
-  *(uint *)(this_ptr->players[this_ptr->local_player_index].unk1 + 8) = g_CurrentGameTime;
+  this_ptr->players[this_ptr->local_player_index].state_change_time = g_CurrentGameTime;
   return;
 }

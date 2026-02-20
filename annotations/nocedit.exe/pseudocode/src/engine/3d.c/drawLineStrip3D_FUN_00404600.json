@@ -13,8 +13,8 @@
     "pseudocode_lines": 62,
     "suspect_count": 9,
     "suspect_types": [
-      "pointer_cast",
-      "suspect_float"
+      "byvalue_struct_passing",
+      "pointer_cast"
     ],
     "total_lines": 119
   },
@@ -174,13 +174,6 @@
   },
   "suspects": [
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 21,
-      "match": "5.9026e-39",
-      "text": "local_a0.w_recip = 5.9026e-39;",
-      "type": "suspect_float"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 30,
       "match": "(SRenderVertex *)((int)",
@@ -235,6 +228,13 @@
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Calls clipAndDrawLine3D - decompiler cannot recognize by-value pattern",
+      "line": 1,
+      "match": "clipAndDrawLine3D",
+      "text": "Function calls by-value struct passing functions",
+      "type": "byvalue_struct_passing"
     }
   ]
 }

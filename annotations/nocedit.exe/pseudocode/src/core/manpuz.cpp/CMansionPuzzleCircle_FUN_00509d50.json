@@ -6,17 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 348,
-    "complexity_score": 439,
+    "complexity_score": 394,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 13,
     "pseudocode_lines": 129,
-    "suspect_count": 29,
+    "suspect_count": 25,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
-      "stack_param",
-      "suspect_float"
+      "stack_param"
     ],
     "total_lines": 477
   },
@@ -505,35 +504,35 @@
       "description": "Unresolved stack parameter",
       "line": 39,
       "match": "in_stack_00000008",
-      "text": "pcVar4 = this_ptr->unk3 + in_stack_00000008 * 0xb8 + 0x458;",
+      "text": "pSVar4 = this_ptr->gems + in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 50,
       "match": "ROUND",
-      "text": "local_24 = (int)ROUND(ROUND(*(float *)(pcVar4 + 8) * 256.0f));",
+      "text": "local_24 = (int)ROUND(ROUND((pSVar4->color).b * 256.0f));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 50,
       "match": "ROUND",
-      "text": "local_24 = (int)ROUND(ROUND(*(float *)(pcVar4 + 8) * 256.0f));",
+      "text": "local_24 = (int)ROUND(ROUND((pSVar4->color).b * 256.0f));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 51,
       "match": "ROUND",
-      "text": "local_14 = (int)ROUND(ROUND(*(float *)pcVar4 * 256.0f));",
+      "text": "local_14 = (int)ROUND(ROUND((pSVar4->color).r * 256.0f));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 51,
       "match": "ROUND",
-      "text": "local_14 = (int)ROUND(ROUND(*(float *)pcVar4 * 256.0f));",
+      "text": "local_14 = (int)ROUND(ROUND((pSVar4->color).r * 256.0f));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -624,14 +623,14 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 103,
       "match": "ROUND",
-      "text": "local_20 = (int)ROUND(ROUND(*(float *)(pcVar4 + 0xc) * 256.0f));",
+      "text": "local_20 = (int)ROUND(ROUND((pSVar4->hum_color).r * 256.0f));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 103,
       "match": "ROUND",
-      "text": "local_20 = (int)ROUND(ROUND(*(float *)(pcVar4 + 0xc) * 256.0f));",
+      "text": "local_20 = (int)ROUND(ROUND((pSVar4->hum_color).r * 256.0f));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -661,34 +660,6 @@
       "match": "ROUND",
       "text": "local_18 = (int)ROUND(ROUND(fVar2));",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 109,
-      "match": "9.18341e-41",
-      "text": "this_ptr_00->vertex_buffer_ptr->w_recip = 9.18341e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 113,
-      "match": "9.18341e-41",
-      "text": "this_ptr_00->vertex_buffer_ptr[1].w_recip = 9.18341e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 117,
-      "match": "9.18341e-41",
-      "text": "this_ptr_00->vertex_buffer_ptr[2].w_recip = 9.18341e-41;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 121,
-      "match": "9.18341e-41",
-      "text": "this_ptr_00->vertex_buffer_ptr[3].w_recip = 9.18341e-41;",
-      "type": "suspect_float"
     },
     {
       "call_site_count": 1,

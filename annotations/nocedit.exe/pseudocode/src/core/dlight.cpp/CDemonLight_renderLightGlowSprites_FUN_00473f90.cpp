@@ -57,7 +57,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
   float local_28;
   float local_24;
   CVector3i *local_20;
-  float local_1c;
+  int local_1c;
   int local_18;
   float local_14;
   
@@ -110,7 +110,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
                               &local_8c);
           if (0.0 < (local_78 * pCVar3->z + local_80 * pCVar3->x + local_7c * pCVar3->y) * local_14
                     * 1.525902e-05f) {
-            local_1c = (float)(int)ROUND(ROUND((1.0 - fVar1) * (float)65535));
+            local_1c = (int)ROUND(ROUND((1.0 - fVar1) * (float)65535));
             engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
             local_18 = 0;
             texture = g_LightTextures;
@@ -180,31 +180,31 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
               local_120 = 0;
               g_CDemonRendererPtr2->vertex_buffer_ptr->u = *(int *)texture[1].texture_name << 0x10;
               this_ptr_00->vertex_buffer_ptr->v = *(int *)(texture[1].texture_name + 4) << 0x10;
-              this_ptr_00->vertex_buffer_ptr->w_recip = local_1c;
-              this_ptr_00->vertex_buffer_ptr->light = 0xffff;
-              this_ptr_00->vertex_buffer_ptr->color = 0xffff;
-              this_ptr_00->vertex_buffer_ptr->fog = 0xffff;
+              this_ptr_00->vertex_buffer_ptr->fog = local_1c;
+              this_ptr_00->vertex_buffer_ptr->z = 0xffff;
+              this_ptr_00->vertex_buffer_ptr->r = 0xffff;
+              this_ptr_00->vertex_buffer_ptr->g = 0xffff;
               local_11c = 1;
               this_ptr_00->vertex_buffer_ptr[1].u = *(int *)(texture[1].texture_name + 8) << 0x10;
               this_ptr_00->vertex_buffer_ptr[1].v = *(int *)(texture[1].texture_name + 4) << 0x10;
-              this_ptr_00->vertex_buffer_ptr[1].w_recip = local_1c;
-              this_ptr_00->vertex_buffer_ptr[1].light = 0xffff;
-              this_ptr_00->vertex_buffer_ptr[1].color = 0xffff;
-              this_ptr_00->vertex_buffer_ptr[1].fog = 0xffff;
+              this_ptr_00->vertex_buffer_ptr[1].fog = local_1c;
+              this_ptr_00->vertex_buffer_ptr[1].z = 0xffff;
+              this_ptr_00->vertex_buffer_ptr[1].r = 0xffff;
+              this_ptr_00->vertex_buffer_ptr[1].g = 0xffff;
               local_118 = 2;
               this_ptr_00->vertex_buffer_ptr[2].u = *(int *)(texture[1].texture_name + 8) << 0x10;
               this_ptr_00->vertex_buffer_ptr[2].v = *(int *)(texture[1].texture_name + 0xc) << 0x10;
-              this_ptr_00->vertex_buffer_ptr[2].w_recip = local_1c;
-              this_ptr_00->vertex_buffer_ptr[2].light = 0xffff;
-              this_ptr_00->vertex_buffer_ptr[2].color = 0xffff;
-              this_ptr_00->vertex_buffer_ptr[2].fog = 0xffff;
+              this_ptr_00->vertex_buffer_ptr[2].fog = local_1c;
+              this_ptr_00->vertex_buffer_ptr[2].z = 0xffff;
+              this_ptr_00->vertex_buffer_ptr[2].r = 0xffff;
+              this_ptr_00->vertex_buffer_ptr[2].g = 0xffff;
               local_114 = 3;
               this_ptr_00->vertex_buffer_ptr[3].u = *(int *)texture[1].texture_name << 0x10;
               this_ptr_00->vertex_buffer_ptr[3].v = *(int *)(texture[1].texture_name + 0xc) << 0x10;
-              this_ptr_00->vertex_buffer_ptr[3].w_recip = local_1c;
-              this_ptr_00->vertex_buffer_ptr[3].light = 0xffff;
-              this_ptr_00->vertex_buffer_ptr[3].color = 0xffff;
-              this_ptr_00->vertex_buffer_ptr[3].fog = 0xffff;
+              this_ptr_00->vertex_buffer_ptr[3].fog = local_1c;
+              this_ptr_00->vertex_buffer_ptr[3].z = 0xffff;
+              this_ptr_00->vertex_buffer_ptr[3].r = 0xffff;
+              this_ptr_00->vertex_buffer_ptr[3].g = 0xffff;
               engine_drender_cpp_CDemonRenderer_renderComplexMultiFeature_FUN_0048bf10
                         (this_ptr_00,&local_138);
               engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();

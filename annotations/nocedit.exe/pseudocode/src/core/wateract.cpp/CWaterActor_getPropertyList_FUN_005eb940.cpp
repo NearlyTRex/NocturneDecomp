@@ -41,13 +41,13 @@ void __cdecl core_wateract_cpp_CWaterActor_getPropertyList_FUN_005eb940(CWaterAc
   core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330
             (property_list,"Round",&this_ptr->round_flag);
   core_actor_cpp_CActorPropertyList_addInt_FUN_0040e1e0
-            (property_list,"Red value",&this_ptr->col_r,(CActorPropertyValidatorFunc *)0x0)
-  ;
-  core_actor_cpp_CActorPropertyList_addInt_FUN_0040e1e0
-            (property_list,"Green value",&this_ptr->col_g,
+            (property_list,"Red value",&(this_ptr->color).r,
              (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addInt_FUN_0040e1e0
-            (property_list,"Blue value",&this_ptr->col_b,(CActorPropertyValidatorFunc *)0x0
-            );
+            (property_list,"Green value",&(this_ptr->color).g,
+             (CActorPropertyValidatorFunc *)0x0);
+  core_actor_cpp_CActorPropertyList_addInt_FUN_0040e1e0
+            (property_list,"Blue value",&(this_ptr->color).b,
+             (CActorPropertyValidatorFunc *)0x0);
   return;
 }

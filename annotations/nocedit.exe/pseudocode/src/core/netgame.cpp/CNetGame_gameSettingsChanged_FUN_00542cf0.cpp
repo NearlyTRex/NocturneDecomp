@@ -38,10 +38,10 @@ void __cdecl core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_00542cf0(CNetGame
         pCVar4->players[0].player_id = DAT_02f7c8c4;
       }
       else {
-        *(uint *)pCVar4->players[0].unk1 = (g_CurrentGameTime + iVar2) - 0x1e0000;
+        pCVar4->players[0].last_update_time = (g_CurrentGameTime + iVar2) - 0x1e0000;
       }
       iVar3 = iVar3 + 1;
-      pCVar4 = (CNetGame *)(pCVar4->players[0].unk1 + 0x20);
+      pCVar4 = (CNetGame *)(pCVar4->players[0].controls.action_states + 3);
     } while (iVar3 < this_ptr->player_count);
   }
   g_CurrentGameTime = g_CurrentGameTime + iVar2;

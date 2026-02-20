@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl support_trisock_cpp_isSocketValid_FUN_005e1b70(SSocketContext *socket_ctx)
+; int __cdecl support_trisock_cpp_isSocketValid_FUN_005e1b70(SOCKET *socket)
 ;
 ; Parameters:
-; SSocketContext * Stack[0x4]:4   socket_ctx
+; SOCKET *         Stack[0x4]:4   socket
 ;
 ; XREF[3]:
 ;   core_netgame.cpp_CNetGame_FUN_00540550 at 0054055d

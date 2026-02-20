@@ -44,15 +44,15 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_0053f900(CNetG
   this_ptr->connection_type = 2;
   this_ptr_00 = g_CEditorToolsPtr;
   this_ptr->network_mode = 1;
-  *(int *)this_ptr->padding = iVar2;
+  this_ptr->server_player_index = iVar2;
   uVar4 = uVar4 - 0x50000;
   DAT_02f7c8bc = 0;
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (this_ptr_00,"Contacting server.  Press ESC to give up...");
   local_1c = g_ForceMessagePump;
   g_ForceMessagePump = 0;
-  if (-1 < *(int *)this_ptr->padding) {
-    local_18 = this_ptr->network_data;
+  if (-1 < this_ptr->server_player_index) {
+    local_18 = this_ptr->player_name;
     do {
       local_20 = g_CurrentGameTime - uVar4;
       local_60 = (float)(int)(g_CurrentGameTime - uVar4) * (float)1.52587890625e-05;
@@ -77,7 +77,7 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_0053f900(CNetG
           pcVar5[1] = cVar1;
           pcVar5 = pcVar5 + 2;
         } while (cVar1 != '\0');
-        core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,*(int *)this_ptr->padding);
+        core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,this_ptr->server_player_index);
         uVar4 = g_CurrentGameTime;
       }
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
@@ -113,7 +113,7 @@ LAB_0053fb81:
         core_netgame_cpp_CNetGame_FUN_0053fd00(this_ptr);
         return 0;
       }
-    } while (-1 < *(int *)this_ptr->padding);
+    } while (-1 < this_ptr->server_player_index);
   }
   core_netgame_cpp_CNetGame_FUN_0053fd00(this_ptr);
   return 0;

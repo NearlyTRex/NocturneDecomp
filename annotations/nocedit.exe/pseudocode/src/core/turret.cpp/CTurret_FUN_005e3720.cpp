@@ -9,10 +9,10 @@
 int __cdecl core_turret_cpp_CTurret_FUN_005e3720(CTurret *this_ptr)
 
 {
-  uint *in_stack_00000008;
+  float *in_stack_00000008;
   
-  *in_stack_00000008 = *(uint *)this_ptr->unk5;
-  in_stack_00000008[1] = *(uint *)(this_ptr->unk5 + 4);
-  in_stack_00000008[2] = *(uint *)(this_ptr->unk5 + 8);
+  *in_stack_00000008 = (this_ptr->barrel_tip_pos).x;
+  in_stack_00000008[1] = (this_ptr->barrel_tip_pos).y;
+  in_stack_00000008[2] = (this_ptr->barrel_tip_pos).z;
   return (int)in_stack_00000008;
 }

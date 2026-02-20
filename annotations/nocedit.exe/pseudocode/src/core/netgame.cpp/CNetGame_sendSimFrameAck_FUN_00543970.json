@@ -6,13 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 54,
+    "complexity_score": 69,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 12,
     "pseudocode_lines": 39,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "pointer_cast",
       "undefined_data"
     ],
     "total_lines": 140
@@ -199,6 +200,13 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(SPlayerControl *)((int)",
+      "text": "pSVar2 = (SPlayerControl *)((int)pSVar2 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
     {
       "description": "Undefined global data reference",
       "line": 40,

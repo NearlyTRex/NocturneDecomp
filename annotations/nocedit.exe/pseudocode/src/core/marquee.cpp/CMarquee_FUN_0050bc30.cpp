@@ -11,9 +11,10 @@ void __cdecl core_marquee_cpp_CMarquee_FUN_0050bc30(CMarquee *this_ptr)
 {
   char *this_ptr_00;
   int iVar1;
-  float local_20;
-  float local_1c;
-  float local_18;
+  CVector3f CStack_2c;
+  CVector3f local_20;
+  float local_14;
+  int local_10;
   
   this_ptr->unk2[4] = -0x66;
   this_ptr->unk2[5] = '?';
@@ -45,24 +46,27 @@ void __cdecl core_marquee_cpp_CMarquee_FUN_0050bc30(CMarquee *this_ptr)
     return;
   }
   do {
-    core_course_cpp_CCourse_FUN_00442710((CCourse *)this_ptr_00);
-    if (local_20 < *(float *)this_ptr->unk2) {
-      *(float *)this_ptr->unk2 = local_20;
+    local_14 = (float)iVar1;
+    local_10 = iVar1;
+    core_course_cpp_CCourse_evaluate_FUN_00442710
+              ((CCourse *)this_ptr_00,local_14,&local_20,&CStack_2c);
+    if (local_20.x < *(float *)this_ptr->unk2) {
+      *(float *)this_ptr->unk2 = local_20.x;
     }
-    if (*(float *)(this_ptr->unk2 + 0xc) < local_20) {
-      *(float *)(this_ptr->unk2 + 0xc) = local_20;
+    if (*(float *)(this_ptr->unk2 + 0xc) < local_20.x) {
+      *(float *)(this_ptr->unk2 + 0xc) = local_20.x;
     }
-    if (local_1c < *(float *)(this_ptr->unk2 + 4)) {
-      *(float *)(this_ptr->unk2 + 4) = local_1c;
+    if (local_20.y < *(float *)(this_ptr->unk2 + 4)) {
+      *(float *)(this_ptr->unk2 + 4) = local_20.y;
     }
-    if (*(float *)(this_ptr->unk2 + 0x10) < local_1c) {
-      *(float *)(this_ptr->unk2 + 0x10) = local_1c;
+    if (*(float *)(this_ptr->unk2 + 0x10) < local_20.y) {
+      *(float *)(this_ptr->unk2 + 0x10) = local_20.y;
     }
-    if (local_18 < *(float *)(this_ptr->unk2 + 8)) {
-      *(float *)(this_ptr->unk2 + 8) = local_18;
+    if (local_20.z < *(float *)(this_ptr->unk2 + 8)) {
+      *(float *)(this_ptr->unk2 + 8) = local_20.z;
     }
-    if (*(float *)(this_ptr->unk2 + 0x14) < local_18) {
-      *(float *)(this_ptr->unk2 + 0x14) = local_18;
+    if (*(float *)(this_ptr->unk2 + 0x14) < local_20.z) {
+      *(float *)(this_ptr->unk2 + 0x14) = local_20.z;
     }
     iVar1 = iVar1 + 1;
   } while (iVar1 < *(int *)this_ptr_00);

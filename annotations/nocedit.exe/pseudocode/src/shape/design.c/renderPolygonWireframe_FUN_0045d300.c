@@ -28,11 +28,11 @@ void __cdecl shape_design_c_renderPolygonWireframe_FUN_0045d300(SMRGLHeaderPrimi
   
   bVar5 = 0;
   pSVar1 = polygon_data + 1;
-  local_d8.w_recip = (float)&polygon_data->surface_normal;
-  local_d8.fog = 0x45d321;
-  iVar2 = engine_3d_c_isVisiblePlane_FUN_00403950((SClipPlane *)local_d8.w_recip);
+  local_d8.fog = (int)&polygon_data->surface_normal;
+  local_d8.g = 0x45d321;
+  iVar2 = engine_3d_c_isVisiblePlane_FUN_00403950((SClipPlane *)local_d8.fog);
   if (iVar2 != 0) {
-    local_d8.w_recip = 6.41241e-39;
+    local_d8.fog = 0x45d331;
     engine_3d_c_setActiveRenderColor_FUN_00404540();
     for (local_18 = 0; local_18 < (polygon_data->base).count + -1; local_18 = local_18 + 1) {
       pSVar3 = g_RenderVertexBuffer + (&(pSVar1->base).type)[local_18];
@@ -77,13 +77,13 @@ void __cdecl shape_design_c_renderPolygonWireframe_FUN_0045d300(SMRGLHeaderPrimi
         pSVar3 = (SRenderVertex *)((int)pSVar3 + (uint)bVar5 * -8 + 4);
         pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar5 * -2 + 1) * 4);
       }
-      vertex2.fog = local_d8.fog;
+      vertex2.g = local_d8.g;
       vertex2.projected_vertex = local_d8.projected_vertex;
       vertex2.u = local_d8.u;
       vertex2.v = local_d8.v;
-      vertex2.light = local_d8.light;
-      vertex2.color = local_d8.color;
-      vertex2.w_recip = local_d8.w_recip;
+      vertex2.z = local_d8.z;
+      vertex2.r = local_d8.r;
+      vertex2.fog = local_d8.fog;
       engine_3d_c_clipAndDrawLine2D_FUN_00407d70(local_108,vertex2);
     }
     pSVar3 = g_RenderVertexBuffer + *(int *)((int)pSVar1 + (polygon_data->base).count * 4 + -4);
@@ -128,13 +128,13 @@ void __cdecl shape_design_c_renderPolygonWireframe_FUN_0045d300(SMRGLHeaderPrimi
       pSVar3 = (SRenderVertex *)((int)pSVar3 + (uint)bVar5 * -8 + 4);
       pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar5 * -2 + 1) * 4);
     }
-    vertex2_00.fog = local_d8.fog;
+    vertex2_00.g = local_d8.g;
     vertex2_00.projected_vertex = local_d8.projected_vertex;
     vertex2_00.u = local_d8.u;
     vertex2_00.v = local_d8.v;
-    vertex2_00.light = local_d8.light;
-    vertex2_00.color = local_d8.color;
-    vertex2_00.w_recip = local_d8.w_recip;
+    vertex2_00.z = local_d8.z;
+    vertex2_00.r = local_d8.r;
+    vertex2_00.fog = local_d8.fog;
     engine_3d_c_clipAndDrawLine2D_FUN_00407d70(local_108,vertex2_00);
   }
   return;

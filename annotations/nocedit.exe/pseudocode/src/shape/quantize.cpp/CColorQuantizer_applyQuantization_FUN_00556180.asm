@@ -83,7 +83,7 @@ section .text
     PUSH EDX                            ; 005561e3
     PUSH EAX                            ; 005561e4
     CALL shape_quantize.cpp_CBitmap_ctor_FUN_00556a00 ; 005561e5
-        ;   XREF to: 00556a00 (UNCONDITIONAL_CALL)  ; CBitmap * shape_quantize.cpp_CBitmap_ctor_FUN_00556a00(CBitmap * this_ptr)
+        ;   XREF to: 00556a00 (UNCONDITIONAL_CALL)  ; CBitmap * shape_quantize.cpp_CBitmap_ctor_FUN_00556a00(CBitmap * this_ptr, int param_2, int param_3, int param_4)
     ADD ESP,0x10                        ; 005561ea
     MOV dword ptr [EBP + -0x10],EAX     ; 005561ed
         ;   Label: LAB_005561ed

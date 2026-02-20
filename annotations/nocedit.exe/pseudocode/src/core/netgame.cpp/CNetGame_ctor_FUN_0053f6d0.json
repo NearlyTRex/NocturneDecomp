@@ -2,81 +2,20 @@
   "compilation_status": {
     "errors": [],
     "success": true,
-    "warnings": [
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 34,
-        "message": "array index 4294967286 refers past the last possible element for an array in 32-bit address space containing 288-bit (36-byte) elements (max possible 119304647 elements) [-Warray-bounds]"
-      },
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 35,
-        "message": "array index 4294967286 refers past the last possible element for an array in 32-bit address space containing 288-bit (36-byte) elements (max possible 119304647 elements) [-Warray-bounds]"
-      },
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 36,
-        "message": "array index 4294967293 refers past the last possible element for an array in 32-bit address space containing 288-bit (36-byte) elements (max possible 119304647 elements) [-Warray-bounds]"
-      },
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 37,
-        "message": "array index 4294967293 refers past the last possible element for an array in 32-bit address space containing 288-bit (36-byte) elements (max possible 119304647 elements) [-Warray-bounds]"
-      },
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 38,
-        "message": "array index 4294967293 refers past the last possible element for an array in 32-bit address space containing 288-bit (36-byte) elements (max possible 119304647 elements) [-Warray-bounds]"
-      },
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 39,
-        "message": "array index 4294967293 refers past the last possible element for an array in 32-bit address space containing 288-bit (36-byte) elements (max possible 119304647 elements) [-Warray-bounds]"
-      },
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 55,
-        "message": "array index 4294967295 refers past the last possible element for an array in 32-bit address space containing 288-bit (36-byte) elements (max possible 119304647 elements) [-Warray-bounds]"
-      },
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 56,
-        "message": "array index 4294967295 refers past the last possible element for an array in 32-bit address space containing 288-bit (36-byte) elements (max possible 119304647 elements) [-Warray-bounds]"
-      },
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 57,
-        "message": "array index 4294967295 refers past the last possible element for an array in 32-bit address space containing 288-bit (36-byte) elements (max possible 119304647 elements) [-Warray-bounds]"
-      },
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 58,
-        "message": "array index 4294967295 refers past the last possible element for an array in 32-bit address space containing 288-bit (36-byte) elements (max possible 119304647 elements) [-Warray-bounds]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 45,
-    "complexity_score": 85,
+    "complexity_score": 123,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 5,
-    "pseudocode_lines": 50,
-    "suspect_count": 3,
+    "pseudocode_lines": 28,
+    "suspect_count": 9,
     "suspect_types": [
-      "pointer_cast"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 95
+    "total_lines": 73
   },
   "cross_references": [
     {
@@ -201,25 +140,67 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 15,
-      "match": "(SSocketContext *)((int)",
-      "text": "((SSocketContext *)((int)pvVar4 + 0x150));",
-      "type": "pointer_cast"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 12,
+      "match": "ADJ",
+      "text": "pSVar4 = support_trisock_cpp_invalidateSocket_FUN_005e1ae0(&ADJ(pvVar4)->socket);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 45,
-      "match": "(char *)((int)",
-      "text": "*(char *)((int)&pSVar7->socket + 1) = cVar2;",
-      "type": "pointer_cast"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 13,
+      "match": "ADJ",
+      "text": "ADJ(pSVar4)->connection_type = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 46,
-      "match": "(SSocketContext *)((int)",
-      "text": "pSVar7 = (SSocketContext *)((int)&pSVar7->socket + 2);",
-      "type": "pointer_cast"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 14,
+      "match": "ADJ",
+      "text": "ADJ(pSVar4)->network_mode = 0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 16,
+      "match": "ADJ",
+      "text": "ADJ(pSVar4)->player_count = 0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 17,
+      "match": "ADJ",
+      "text": "ADJ(pSVar4)->server_player_index = -1;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 18,
+      "match": "ADJ",
+      "text": "pcVar3 = ADJ(pSVar4)->player_name;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 19,
+      "match": "ADJ",
+      "text": "ADJ(pSVar4)->local_player_index = -1;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 29,
+      "match": "ADJ",
+      "text": "ADJ(pSVar4)->has_pending_sim_frame = 0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 30,
+      "match": "ADJ",
+      "text": "return ADJ(pSVar4);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

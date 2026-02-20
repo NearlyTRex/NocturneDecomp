@@ -6,149 +6,170 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: core_slew.cpp_CSlew_init_FUN_005a2060 */
+/* WARNING: Restarted to delay deadcode elimination for space: stack */
+
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440(CMansionPuzzleCircle *this_ptr)
 
 {
-  uint uVar1;
+  CVector3f *pCVar1;
   float fVar2;
-  uint uVar3;
-  uint uVar4;
+  float fVar3;
+  float fVar4;
   float fVar5;
-  uint uVar6;
-  uint uVar7;
+  float fVar6;
+  float fVar7;
   float fVar8;
-  byte auStack_74 [28];
-  byte auStack_58 [28];
-  byte auStack_3c [28];
-  float fStack_20;
-  float fStack_1c;
-  float fStack_18;
-  float fStack_14;
-  float fStack_10;
-  float fStack_c;
+  CSlew CStack_78;
+  CSlew local_5c;
+  CSlew local_40;
+  CSlew local_24;
   
   if (g_MansionPuzzleSlewType == 1) {
-    core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)(auStack_58 + 0x18));
-    if ((CVector3f *)auStack_3c != &this_ptr->emitter_pos) {
-      auStack_3c._0_4_ = (this_ptr->emitter_pos).x;
-      auStack_3c._4_4_ = (this_ptr->emitter_pos).y;
-      auStack_3c._8_4_ = (this_ptr->emitter_pos).z;
+    local_40.position.z = 0.0;
+    local_40.position.y = 0.0;
+    local_40.position.x = 0.0;
+    local_40.slew_rate = 28.0;
+    if (&local_40 != (CSlew *)&this_ptr->emitter_pos) {
+      local_40.position.x = (this_ptr->emitter_pos).x;
+      local_40.position.y = (this_ptr->emitter_pos).y;
+      local_40.position.z = (this_ptr->emitter_pos).z;
     }
-    auStack_3c._20_4_ = 0.0;
-    auStack_3c._16_4_ = 0.0;
-    auStack_3c._12_4_ = 0.0;
-    core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)auStack_3c);
-    if (&this_ptr->emitter_pos != (CVector3f *)auStack_3c) {
-      (this_ptr->emitter_pos).x = (float)auStack_3c._0_4_;
-      (this_ptr->emitter_pos).y = (float)auStack_3c._4_4_;
-      (this_ptr->emitter_pos).z = (float)auStack_3c._8_4_;
+    local_40.roll = 0.0;
+    local_40.yaw = 0.0;
+    local_40.pitch = 0.0;
+    core_slew_cpp_CSlew_processInput_FUN_005a20b0(&local_40);
+    if ((CSlew *)&this_ptr->emitter_pos != &local_40) {
+      (this_ptr->emitter_pos).x = local_40.position.x;
+      (this_ptr->emitter_pos).y = local_40.position.y;
+      (this_ptr->emitter_pos).z = local_40.position.z;
     }
   }
   else if (g_MansionPuzzleSlewType == 2) {
-    core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)(auStack_3c + 0x18));
-    if ((CVector3f *)&fStack_20 != &this_ptr->gem_pos) {
-      fStack_20 = (this_ptr->gem_pos).x;
-      fStack_1c = (this_ptr->gem_pos).y;
-      fStack_18 = (this_ptr->gem_pos).z;
+    local_24.position.z = 0.0;
+    local_24.position.y = 0.0;
+    local_24.position.x = 0.0;
+    local_24.roll = 0.0;
+    local_24.yaw = 0.0;
+    local_24.pitch = 0.0;
+    local_24.slew_rate = 28.0;
+    if (&local_24 != (CSlew *)&this_ptr->gem_pos) {
+      local_24.position.x = (this_ptr->gem_pos).x;
+      local_24.position.y = (this_ptr->gem_pos).y;
+      local_24.position.z = (this_ptr->gem_pos).z;
     }
-    if ((COrientation *)&fStack_14 != &this_ptr->gem_orient) {
-      fStack_14 = (this_ptr->gem_orient).pitch;
-      fStack_10 = (this_ptr->gem_orient).bank;
-      fStack_c = (this_ptr->gem_orient).heading;
+    if ((UOrientationVector *)&local_24.pitch != &this_ptr->gem_orient) {
+      local_24.pitch = (this_ptr->gem_orient).vec.x;
+      local_24.yaw = (this_ptr->gem_orient).vec.y;
+      local_24.roll = (this_ptr->gem_orient).vec.z;
     }
-    core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)&fStack_20);
-    if (&this_ptr->gem_pos != (CVector3f *)&fStack_20) {
-      (this_ptr->gem_pos).x = fStack_20;
-      (this_ptr->gem_pos).y = fStack_1c;
-      (this_ptr->gem_pos).z = fStack_18;
+    core_slew_cpp_CSlew_processInput_FUN_005a20b0(&local_24);
+    if ((CSlew *)&this_ptr->gem_pos != &local_24) {
+      (this_ptr->gem_pos).x = local_24.position.x;
+      (this_ptr->gem_pos).y = local_24.position.y;
+      (this_ptr->gem_pos).z = local_24.position.z;
     }
-    if (&this_ptr->gem_orient != (COrientation *)&fStack_14) {
-      (this_ptr->gem_orient).pitch = fStack_14;
-      (this_ptr->gem_orient).bank = fStack_10;
-      (this_ptr->gem_orient).heading = fStack_c;
+    if (&this_ptr->gem_orient != (UOrientationVector *)&local_24.pitch) {
+      (this_ptr->gem_orient).vec.x = local_24.pitch;
+      (this_ptr->gem_orient).vec.y = local_24.yaw;
+      (this_ptr->gem_orient).vec.z = local_24.roll;
     }
   }
   else if (g_MansionPuzzleSlewType == 3) {
-    core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)&stack0xffffff88);
-    if (auStack_74 != this_ptr->unk3 + 0xcf8) {
-      auStack_74._0_4_ = *(uint *)(this_ptr->unk3 + 0xcf8);
-      auStack_74._4_4_ = *(uint *)(this_ptr->unk3 + 0xcfc);
-      auStack_74._8_4_ = *(uint *)(this_ptr->unk3 + 0xd00);
+    CStack_78.position.z = 0.0;
+    CStack_78.position.y = 0.0;
+    CStack_78.position.x = 0.0;
+    CStack_78.roll = 0.0;
+    CStack_78.yaw = 0.0;
+    CStack_78.pitch = 0.0;
+    CStack_78.slew_rate = 28.0;
+    if ((SReflector *)&CStack_78 != this_ptr->reflectors) {
+      CStack_78.position.x = this_ptr->reflectors[0].start_position.x;
+      CStack_78.position.y = this_ptr->reflectors[0].start_position.y;
+      CStack_78.position.z = this_ptr->reflectors[0].start_position.z;
     }
-    if (auStack_74 + 0xc != this_ptr->unk3 + 0xd20) {
-      auStack_74._12_4_ = *(uint *)(this_ptr->unk3 + 0xd20);
-      auStack_74._16_4_ = *(uint *)(this_ptr->unk3 + 0xd24);
-      auStack_74._20_4_ = *(uint *)(this_ptr->unk3 + 0xd28);
+    pCVar1 = &this_ptr->reflectors[0].rotation;
+    if ((CVector3f *)&CStack_78.pitch != pCVar1) {
+      CStack_78.pitch = pCVar1->x;
+      CStack_78.yaw = this_ptr->reflectors[0].rotation.y;
+      CStack_78.roll = this_ptr->reflectors[0].rotation.z;
     }
-    core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)auStack_74);
-    if (this_ptr->unk3 + 0xcf8 != auStack_74) {
-      *(uint *)(this_ptr->unk3 + 0xcf8) = auStack_74._0_4_;
-      *(uint *)(this_ptr->unk3 + 0xcfc) = auStack_74._4_4_;
-      *(uint *)(this_ptr->unk3 + 0xd00) = auStack_74._8_4_;
+    core_slew_cpp_CSlew_processInput_FUN_005a20b0(&CStack_78);
+    if (this_ptr->reflectors != (SReflector *)&CStack_78) {
+      this_ptr->reflectors[0].start_position.x = CStack_78.position.x;
+      this_ptr->reflectors[0].start_position.y = CStack_78.position.y;
+      this_ptr->reflectors[0].start_position.z = CStack_78.position.z;
     }
-    if (this_ptr->unk3 + 0xd20 != auStack_74 + 0xc) {
-      *(uint *)(this_ptr->unk3 + 0xd20) = auStack_74._12_4_;
-      *(uint *)(this_ptr->unk3 + 0xd24) = auStack_74._16_4_;
-      *(uint *)(this_ptr->unk3 + 0xd28) = auStack_74._20_4_;
+    pCVar1 = &this_ptr->reflectors[0].rotation;
+    if (pCVar1 != (CVector3f *)&CStack_78.pitch) {
+      pCVar1->x = CStack_78.pitch;
+      this_ptr->reflectors[0].rotation.y = CStack_78.yaw;
+      this_ptr->reflectors[0].rotation.z = CStack_78.roll;
     }
-    this_ptr->unk3[0xd10] = '\0';
-    this_ptr->unk3[0xd11] = '\0';
-    this_ptr->unk3[0xd12] = '\0';
-    this_ptr->unk3[0xd13] = '\0';
-    *(uint *)(this_ptr->unk3 + 0xd04) = *(uint *)(this_ptr->unk3 + 0xcf8);
-    *(uint *)(this_ptr->unk3 + 0xd0c) = *(uint *)(this_ptr->unk3 + 0xd00);
+    this_ptr->reflectors[0].interp_factor = 0.0;
+    fVar2 = this_ptr->reflectors[0].start_position.z;
+    this_ptr->reflectors[0].target_position.x = this_ptr->reflectors[0].start_position.x;
+    this_ptr->reflectors[0].target_position.z = fVar2;
   }
   else if (g_MansionPuzzleSlewType == 4) {
-    core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)(auStack_74 + 0x18));
-    if (auStack_58 != this_ptr->unk3 + 0xd04) {
-      auStack_58._0_4_ = *(uint *)(this_ptr->unk3 + 0xd04);
-      auStack_58._4_4_ = *(uint *)(this_ptr->unk3 + 0xd08);
-      auStack_58._8_4_ = *(uint *)(this_ptr->unk3 + 0xd0c);
+    local_5c.position.z = 0.0;
+    local_5c.position.y = 0.0;
+    local_5c.position.x = 0.0;
+    local_5c.roll = 0.0;
+    local_5c.yaw = 0.0;
+    local_5c.pitch = 0.0;
+    local_5c.slew_rate = 28.0;
+    pCVar1 = &this_ptr->reflectors[0].target_position;
+    if (&local_5c != (CSlew *)pCVar1) {
+      local_5c.position.x = pCVar1->x;
+      local_5c.position.y = this_ptr->reflectors[0].target_position.y;
+      local_5c.position.z = this_ptr->reflectors[0].target_position.z;
     }
-    if (auStack_58 + 0xc != this_ptr->unk3 + 0xd20) {
-      auStack_58._12_4_ = *(uint *)(this_ptr->unk3 + 0xd20);
-      auStack_58._16_4_ = *(uint *)(this_ptr->unk3 + 0xd24);
-      auStack_58._20_4_ = *(uint *)(this_ptr->unk3 + 0xd28);
+    pCVar1 = &this_ptr->reflectors[0].rotation;
+    if ((CVector3f *)&local_5c.pitch != pCVar1) {
+      local_5c.pitch = pCVar1->x;
+      local_5c.yaw = this_ptr->reflectors[0].rotation.y;
+      local_5c.roll = this_ptr->reflectors[0].rotation.z;
     }
-    core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)auStack_58);
-    if (this_ptr->unk3 + 0xd04 != auStack_58) {
-      *(uint *)(this_ptr->unk3 + 0xd04) = auStack_58._0_4_;
-      *(uint *)(this_ptr->unk3 + 0xd08) = auStack_58._4_4_;
-      *(uint *)(this_ptr->unk3 + 0xd0c) = auStack_58._8_4_;
+    core_slew_cpp_CSlew_processInput_FUN_005a20b0(&local_5c);
+    pCVar1 = &this_ptr->reflectors[0].target_position;
+    if ((CSlew *)pCVar1 != &local_5c) {
+      pCVar1->x = local_5c.position.x;
+      this_ptr->reflectors[0].target_position.y = local_5c.position.y;
+      this_ptr->reflectors[0].target_position.z = local_5c.position.z;
     }
-    if (this_ptr->unk3 + 0xd20 != auStack_58 + 0xc) {
-      *(uint *)(this_ptr->unk3 + 0xd20) = auStack_58._12_4_;
-      *(uint *)(this_ptr->unk3 + 0xd24) = auStack_58._16_4_;
-      *(uint *)(this_ptr->unk3 + 0xd28) = auStack_58._20_4_;
+    pCVar1 = &this_ptr->reflectors[0].rotation;
+    if (pCVar1 != (CVector3f *)&local_5c.pitch) {
+      pCVar1->x = local_5c.pitch;
+      this_ptr->reflectors[0].rotation.y = local_5c.yaw;
+      this_ptr->reflectors[0].rotation.z = local_5c.roll;
     }
-    this_ptr->unk3[0xd10] = '\0';
-    this_ptr->unk3[0xd11] = '\0';
-    this_ptr->unk3[0xd12] = -0x80;
-    this_ptr->unk3[0xd13] = '?';
-    *(uint *)(this_ptr->unk3 + 0xcf8) = *(uint *)(this_ptr->unk3 + 0xd04);
-    *(uint *)(this_ptr->unk3 + 0xd00) = *(uint *)(this_ptr->unk3 + 0xd0c);
+    this_ptr->reflectors[0].interp_factor = 1.0;
+    fVar2 = this_ptr->reflectors[0].target_position.z;
+    this_ptr->reflectors[0].start_position.x = this_ptr->reflectors[0].target_position.x;
+    this_ptr->reflectors[0].start_position.z = fVar2;
   }
   else {
     g_MansionPuzzleSlewType = 0;
     core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base);
   }
-  uVar1 = *(uint *)(this_ptr->unk3 + 0xcfc);
-  fVar2 = *(float *)(this_ptr->unk3 + 0xcf8);
-  uVar3 = *(uint *)(this_ptr->unk3 + 0xd00);
-  uVar4 = *(uint *)(this_ptr->unk3 + 0xd08);
-  fVar5 = *(float *)(this_ptr->unk3 + 0xd04);
-  uVar6 = *(uint *)(this_ptr->unk3 + 0xd0c);
-  uVar7 = *(uint *)(this_ptr->unk3 + 0xd10);
+  fVar2 = this_ptr->reflectors[0].start_position.y;
+  fVar3 = this_ptr->reflectors[0].start_position.x;
+  fVar4 = this_ptr->reflectors[0].start_position.z;
+  fVar5 = this_ptr->reflectors[0].target_position.y;
+  fVar6 = this_ptr->reflectors[0].target_position.x;
+  fVar7 = this_ptr->reflectors[0].target_position.z;
+  fVar8 = this_ptr->reflectors[0].interp_factor;
   (this_ptr->base).orient.vec.z = 0.0;
-  *(uint *)(this_ptr->unk3 + 0xd5c) = uVar1;
-  *(uint *)(this_ptr->unk3 + 0xd60) = uVar3;
-  *(uint *)(this_ptr->unk3 + 0xd68) = uVar4;
-  *(uint *)(this_ptr->unk3 + 0xd6c) = uVar6;
-  *(uint *)(this_ptr->unk3 + 0xd70) = uVar7;
-  fVar8 = (this_ptr->base).orient.vec.z;
-  *(float *)(this_ptr->unk3 + 0xd58) = -fVar2;
-  *(float *)(this_ptr->unk3 + 0xd64) = -fVar5;
-  (this_ptr->base).orient.vec.x = fVar8;
+  this_ptr->reflectors[1].start_position.y = fVar2;
+  this_ptr->reflectors[1].start_position.z = fVar4;
+  this_ptr->reflectors[1].target_position.y = fVar5;
+  this_ptr->reflectors[1].target_position.z = fVar7;
+  this_ptr->reflectors[1].interp_factor = fVar8;
+  fVar2 = (this_ptr->base).orient.vec.z;
+  this_ptr->reflectors[1].start_position.x = -fVar3;
+  this_ptr->reflectors[1].target_position.x = -fVar6;
+  (this_ptr->base).orient.vec.x = fVar2;
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
   (*((this_ptr->base).vtable._ub)->setup)(&this_ptr->base);
   return;

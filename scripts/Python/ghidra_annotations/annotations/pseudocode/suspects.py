@@ -4,6 +4,8 @@
 import re
 from collections import defaultdict
 
+from ghidra_annotations.annotations.pseudocode.pass_by_value import BYVALUE_CALLEES
+
 # Safe decompiler intrinsics - these are detected as suspects but do NOT count
 # against a function's "clean" status in reports. These intrinsics have valid
 # C macro definitions in the intrinsics header and compile successfully.
@@ -180,7 +182,7 @@ def identify_suspect_lines(decompiled_code):
     return suspects
 
 
-def identify_assembly_suspects(assembly_code):
+def identify_assembly_suspects(assembly_code, func_calls=None):
     """Identify suspect patterns in assembly code.
 
     Currently detects:
@@ -188,9 +190,13 @@ def identify_assembly_suspects(assembly_code):
       may not decompile cleanly
     - CPU detection instructions (CPUID, PUSHFD, POPFD) which indicate
       CPU feature detection code that may have unusual decompilation
+    - By-value struct passing: detected by checking if the function calls
+      any known by-value callee (clipAndDrawLine2D, clipAndDrawLine3D,
+      calculateMainDataSize, CSfxSlot_mix)
 
     Args:
         assembly_code: The assembly code as a string
+        func_calls: Optional list of called function dicts with 'name' keys
 
     Returns:
         A list of suspect dictionaries with line, type, match, text, and description
@@ -281,6 +287,23 @@ def identify_assembly_suspects(assembly_code):
             'text': 'Function uses CPUID instruction',
             'description': desc + ' - expected unusual decompilation patterns'
         })
+
+    # Check for by-value struct passing by matching called function addresses
+    # against BYVALUE_CALLEES (pass_by_value.py).
+    if func_calls:
+        matched_callees = []
+        for call in func_calls:
+            addr = call.get('addr', '').lower().lstrip('0') or '0'
+            if addr in BYVALUE_CALLEES:
+                matched_callees.append(BYVALUE_CALLEES[addr])
+        if matched_callees:
+            suspects.append({
+                'line': 1,
+                'type': 'byvalue_struct_passing',
+                'match': ', '.join(sorted(set(matched_callees))),
+                'text': 'Function calls by-value struct passing functions',
+                'description': 'Calls %s - decompiler cannot recognize by-value pattern' % ', '.join(sorted(set(matched_callees)))
+            })
 
     return suspects
 

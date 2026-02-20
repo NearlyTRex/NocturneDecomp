@@ -27,7 +27,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x10]      ; 005d6f95
     PUSH EDX                            ; 005d6f99
     CALL shape_superopt.cpp_CObj_ctor_FUN_005d2230 ; 005d6f9a
-        ;   XREF to: 005d2230 (UNCONDITIONAL_CALL)  ; CObj * shape_superopt.cpp_CObj_ctor_FUN_005d2230(CObj * this_ptr)
+        ;   XREF to: 005d2230 (UNCONDITIONAL_CALL)  ; CObj * shape_superopt.cpp_CObj_ctor_FUN_005d2230(CObj * this_ptr, int poly_count, int vertex_count)
     MOV dword ptr [EAX + 0x40],0x663c44 ; 005d6f9f | g_COptimizeVTable
     ADD ESP,0xc                         ; 005d6fa6
     MOV dword ptr [EAX + 0x3c],0x0      ; 005d6fa9

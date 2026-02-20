@@ -1,0 +1,104 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 21,
+    "complexity_score": 41,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 16,
+    "suspect_count": 2,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 37
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0054e2e0",
+    "address_range": [
+      [
+        "0054e2e0",
+        "0054e311"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_platfrm.cpp_CPlatform_onActorDeleted_FUN_0054e2e0",
+    "signature": "void __cdecl core_platfrm_cpp_CPlatform_onActorDeleted_FUN_0054e2e0(CPlatform *this_ptr,CDemonActor *deleted_actor)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.333333333333333,
+    "instruction_count": 15,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CBRANCH": 3,
+      "COPY": 7,
+      "INT_ADD": 9,
+      "INT_AND": 12,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 12,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 6,
+      "INT_SUB": 3,
+      "LOAD": 5,
+      "POPCOUNT": 6,
+      "RETURN": 2,
+      "STORE": 1
+    },
+    "pcode_op_count": 80
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPlatform *"
+      },
+      {
+        "is_param": true,
+        "name": "deleted_actor",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 11,
+      "match": "(CPlatform *)((int)",
+      "text": "this_ptr = (CPlatform *)((int)&(this_ptr->base).orient + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(CPlatform *)((int)",
+      "text": "this_ptr = (CPlatform *)((int)&(this_ptr->base).orient + 4);",
+      "type": "pointer_cast"
+    }
+  ]
+}

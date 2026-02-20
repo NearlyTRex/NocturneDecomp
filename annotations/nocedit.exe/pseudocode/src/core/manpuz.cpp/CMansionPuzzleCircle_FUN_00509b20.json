@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 81,
+    "complexity_score": 196,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 1,
-    "pseudocode_lines": 46,
-    "suspect_count": 3,
+    "pseudocode_lines": 41,
+    "suspect_count": 15,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 127
+    "total_lines": 122
   },
   "cross_references": [
     {
@@ -171,14 +171,98 @@
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_00000008",
-      "text": "iVar3 = in_stack_00000008 * 100;",
+      "text": "fVar1 = ((float)in_stack_00000008 + this_ptr->panels[in_stack_00000008].anim_progress) *",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 14,
       "match": "in_stack_00000008",
-      "text": "fVar2 = ((float)in_stack_00000008 + *(float *)(this_ptr->unk2 + iVar3)) * 0.5235988f;",
+      "text": "fVar1 = ((float)in_stack_00000008 + this_ptr->panels[in_stack_00000008].anim_progress) *",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000008",
+      "text": "this_ptr->panels[in_stack_00000008].rotation.x = 0.0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000008",
+      "text": "this_ptr_00 = &this_ptr->panels[in_stack_00000008].rotation_matrix;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000008",
+      "text": "this_ptr->panels[in_stack_00000008].rotation.z = 0.0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000008",
+      "text": "this_ptr->panels[in_stack_00000008].rotation.y = fVar1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_00000008",
+      "text": "(this_ptr_00,&this_ptr->panels[in_stack_00000008].rotation);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_00000008",
+      "text": "pCVar3 = &this_ptr->panels[in_stack_00000008].local_position;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 30,
+      "match": "in_stack_00000008",
+      "text": "this_ptr->panels[in_stack_00000008].local_position.y = pCVar2->y;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_00000008",
+      "text": "this_ptr->panels[in_stack_00000008].local_position.z = pCVar2->z;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 33,
+      "match": "in_stack_00000008",
+      "text": "pCVar2 = &this_ptr->panels[in_stack_00000008].world_position;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 35,
+      "match": "in_stack_00000008",
+      "text": "(&this_ptr->base,&local_1c,&this_ptr->panels[in_stack_00000008].local_position)",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 41,
+      "match": "in_stack_00000008",
+      "text": "this_ptr->panels[in_stack_00000008].world_position.y = pCVar3->y;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 42,
+      "match": "in_stack_00000008",
+      "text": "this_ptr->panels[in_stack_00000008].world_position.z = pCVar3->z;",
       "type": "stack_param"
     }
   ]

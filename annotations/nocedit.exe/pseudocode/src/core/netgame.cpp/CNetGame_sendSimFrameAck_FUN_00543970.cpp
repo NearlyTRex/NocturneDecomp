@@ -10,10 +10,10 @@ void __cdecl core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00543970(CNetGame *th
 
 {
   int iVar1;
-  char *pcVar2;
-  uint *puVar3;
+  SPlayerControl *pSVar2;
+  int *piVar3;
   byte bVar4;
-  uint local_3f [11];
+  int local_3f [11];
   
   bVar4 = 0;
   if (this_ptr->connection_type != 2) {
@@ -26,7 +26,7 @@ void __cdecl core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00543970(CNetGame *th
     g_CurrentLineNumber = 0xa2a;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CNetGame::sendSimFrameAck - should only be called in the game loop");
   }
-  if (*(int *)this_ptr->padding < 0) {
+  if (this_ptr->server_player_index < 0) {
     g_CurrentFilename = "..\\core\\netgame.cpp";
     g_CurrentLineNumber = 0xa2b;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CNetGame::sendSimFrameAck - server not in player list");
@@ -36,14 +36,14 @@ void __cdecl core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00543970(CNetGame *th
     g_CurrentLineNumber = 0xa2c;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CNetGame::sendSimFrameAck - I'm not in player list");
   }
-  pcVar2 = this_ptr->players[this_ptr->local_player_index].unk1 + 0x14;
-  puVar3 = local_3f;
+  pSVar2 = &this_ptr->players[this_ptr->local_player_index].controls;
+  piVar3 = local_3f;
   for (iVar1 = 0xb; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = *(uint *)pcVar2;
-    pcVar2 = pcVar2 + ((uint)bVar4 * -2 + 1) * 4;
-    puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
+    *piVar3 = pSVar2->action_states[0];
+    pSVar2 = (SPlayerControl *)((int)pSVar2 + ((uint)bVar4 * -2 + 1) * 4);
+    piVar3 = piVar3 + (uint)bVar4 * -2 + 1;
   }
-  core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,*(int *)this_ptr->padding);
+  core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,this_ptr->server_player_index);
   DAT_02f7c8c8 = g_CurrentGameTime;
   return;
 }

@@ -146,16 +146,16 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c2850(CStranger *this_ptr)
                     (&(this_ptr->base).base.model.motion_controller,0x1a,1);
           pCVar7 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                              ((CDemonActor *)this_ptr,&CStack_60,&pCVar12->position);
-          if ((CVector3f *)(this_ptr->unk8 + 0x54) != pCVar7) {
-            ((CVector3f *)(this_ptr->unk8 + 0x54))->x = pCVar7->x;
-            *(float *)(this_ptr->unk8 + 0x58) = pCVar7->y;
-            *(float *)(this_ptr->unk8 + 0x5c) = pCVar7->z;
+          if (&this_ptr->carry_object_world_center != pCVar7) {
+            (this_ptr->carry_object_world_center).x = pCVar7->x;
+            (this_ptr->carry_object_world_center).y = pCVar7->y;
+            (this_ptr->carry_object_world_center).z = pCVar7->z;
           }
-          fStack_14 = *(float *)(this_ptr->unk8 + 0x70) - *(float *)(this_ptr->unk8 + 100);
+          fStack_14 = (this_ptr->carry_object_bbox).max.y - (this_ptr->carry_object_bbox).min.y;
           fVar9 = core_stranger_cpp_FUN_005bb010();
           iVar6 = this_ptr->action_pending;
-          *(float *)(this_ptr->unk8 + 0x58) =
-               (fStack_14 - fVar9) + *(float *)(this_ptr->unk8 + 0x58);
+          (this_ptr->carry_object_world_center).y =
+               (fStack_14 - fVar9) + (this_ptr->carry_object_world_center).y;
           if (iVar6 != 0) {
             shape_edittool_cpp_CEditorTools_showWarning_FUN_0049e6f0
                       (g_CEditorToolsPtr,"actionPending = %d\nstranger.cpp line %d",iVar6,0xe78);

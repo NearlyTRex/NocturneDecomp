@@ -9,33 +9,27 @@
 CSvetlana * __cdecl core_svetlana_cpp_CSvetlana_ctor_FUN_005d8850(CSvetlana *this_ptr)
 
 {
-  CHero *pCVar1;
-  CCloth *pCVar2;
-  CCloth *pCVar3;
+  CSvetlana *pCVar1;
+  CSvetlana_ptr_130012 pCVar2;
+  CSvetlana_ptr_391756 pCVar4;
   
-  pCVar1 = core_hero_cpp_CHero_ctor_FUN_004f2340(&this_ptr->base);
-  pCVar2 = core_cloth_cpp_CCloth_ctor_FUN_00438ba0((CCloth *)(pCVar1[1].base.base.actor_name + 8));
-  pCVar3 = core_cloth_cpp_CCloth_ctor_FUN_00438ba0((CCloth *)(pCVar2[1].model.model_filename + 0xc))
-  ;
-  pCVar3[-2].vertices[0x182].offset_pos.x = (float)&g_CSvetlanaVTable;
-  pCVar3[-2].last_position.z = 0.0;
-  pCVar3[-2].last_euler.x = 0.0;
+  pCVar1 = (CSvetlana *)core_hero_cpp_CHero_ctor_FUN_004f2340(&this_ptr->base);
+  pCVar2 = core_cloth_cpp_CCloth_ctor_FUN_00438ba0(&pCVar1->cape_cloth);
+  pCVar4 = core_cloth_cpp_CCloth_ctor_FUN_00438ba0(&ADJ(pCVar2)->hair_cloth);
+  ADJ(pCVar4)->base.base.base.vtable._ub = &g_CSvetlanaVTable;
+  ADJ(pCVar4)->unk1 = 0;
+  ADJ(pCVar4)->unk2 = 0;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
-            ((CDeformableModelInstance *)&pCVar3[-2].vertices[0x182].offset_pos.y,
-             "svetlana.dfm");
-  pCVar2 = pCVar3 + 1;
-  (pCVar2->model).model_filename[0x1c] = '\0';
-  (pCVar2->model).model_filename[0x1d] = '\0';
-  (pCVar2->model).model_filename[0x1e] = -0x80;
-  (pCVar2->model).model_filename[0x1f] = '?';
-  pCVar2 = pCVar3 + 1;
-  (pCVar2->model).model_filename[0x18] = '\0';
-  (pCVar2->model).model_filename[0x19] = '\0';
-  (pCVar2->model).model_filename[0x1a] = '\0';
-  (pCVar2->model).model_filename[0x1b] = '\0';
-  *(uint *)(pCVar3[1].model.model_filename + 0x14) =
-       *(uint *)(pCVar3[1].model.model_filename + 0x18);
-  *(uint *)(pCVar3[1].model.model_filename + 0x10) =
-       *(uint *)(pCVar3[1].model.model_filename + 0x14);
-  return (CSvetlana *)(pCVar3[-2].vertices[0x181].rest_lengths + 4);
+            (&ADJ(pCVar4)->base.base.model,"svetlana.dfm");
+  pCVar4[1].model.model_filename[0x1c] = '\0';
+  pCVar4[1].model.model_filename[0x1d] = '\0';
+  pCVar4[1].model.model_filename[0x1e] = -0x80;
+  pCVar4[1].model.model_filename[0x1f] = '?';
+  pCVar4[1].model.model_filename[0x18] = '\0';
+  pCVar4[1].model.model_filename[0x19] = '\0';
+  pCVar4[1].model.model_filename[0x1a] = '\0';
+  pCVar4[1].model.model_filename[0x1b] = '\0';
+  *(uint *)(ADJ(pCVar4)->unk6 + 4) = *(uint *)(ADJ(pCVar4)->unk6 + 8);
+  *(uint *)ADJ(pCVar4)->unk6 = *(uint *)(ADJ(pCVar4)->unk6 + 4);
+  return ADJ(pCVar4);
 }

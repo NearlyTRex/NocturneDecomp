@@ -4,7 +4,7 @@
       {
         "category": "undeclared_identifier",
         "column": 61,
-        "line": 286,
+        "line": 272,
         "message": "use of undeclared identifier 'DAT_02f7c640'"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 837,
-    "complexity_score": 382,
+    "complexity_score": 368,
     "cross_reference_count": 2,
     "function_call_count": 26,
     "global_count": 64,
-    "pseudocode_lines": 292,
+    "pseudocode_lines": 278,
     "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
       "undefined_data"
     ],
-    "total_lines": 1129
+    "total_lines": 1115
   },
   "cross_references": [
     {
@@ -505,7 +505,7 @@
     },
     {
       "addr": "02f7c7a4",
-      "name": "g_CNetGameInstance.players[0].unk1[12]",
+      "name": "g_CNetGameInstance.players[0].ready_flag",
       "type": "undefined4",
       "value": null
     },
@@ -729,56 +729,56 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 53,
+      "line": 45,
       "match": "DAT_02f7c8c4",
       "text": "_sprintf((char *)local_130,\"MyGameSettigsId: %d\",DAT_02f7c8c4)",
       "type": "undefined_data"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 105,
+      "line": 97,
       "match": "ROUND",
       "text": "local_18 = (int)ROUND(ROUND(*(float *)(local_1c + 0x28) * 1000.0f));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 105,
+      "line": 97,
       "match": "ROUND",
       "text": "local_18 = (int)ROUND(ROUND(*(float *)(local_1c + 0x28) * 1000.0f));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Undefined global data reference",
-      "line": 171,
+      "line": 156,
       "match": "DAT_02f7c8c4",
       "text": "this_ptr->players[this_ptr->local_player_index].player_id = DAT_02f7c8c4;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 180,
+      "line": 165,
       "match": "DAT_02f7c8c4",
       "text": "if (DAT_02f7c8c4 != pCVar5->players[0].player_id) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 242,
+      "line": 228,
       "match": "DAT_02f7c8c8",
       "text": "DAT_02f7c8c8 = g_CurrentGameTime - 0x1e0000;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 249,
+      "line": 235,
       "match": "DAT_00680a04",
       "text": "if ((this_ptr->connection_type == 2) && (DAT_00680a04 != 0)) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 279,
+      "line": 265,
       "match": "DAT_02f7c640",
       "text": "(g_CEditorToolsPtr,\"Send chat\",&DAT_02f7c640,0x100,1),",
       "type": "undefined_data"

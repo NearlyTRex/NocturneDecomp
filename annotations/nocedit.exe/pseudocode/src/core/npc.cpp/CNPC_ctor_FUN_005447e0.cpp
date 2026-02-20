@@ -9,21 +9,20 @@
 CNPC * __cdecl core_npc_cpp_CNPC_ctor_FUN_005447e0(CNPC *this_ptr)
 
 {
-  CCharacter *pCVar1;
-  CPathMap *pCVar2;
+  CNPC *pCVar1;
+  CNPC_ptr_48676 pCVar2;
   
-  pCVar1 = core_charactr_cpp_CCharacter_ctor_FUN_00427e20(&this_ptr->base);
-  pCVar2 = core_path_cpp_CPathMap_ctor_FUN_00546450((CPathMap *)(pCVar1 + 1));
-  pCVar2[-1].height_cache[0x4f][0x1b] = (int)&g_CNPCVTable;
-  pCVar2[-1].height_cache_tags[7][0x4d] = 0x3f19999a;
-  pCVar2[-1].height_cache_tags[7][0x4e] = 0x3f666666;
-  pCVar2[-1].height_cache_tags[7][0x51] = 0x3fcccccd;
-  pCVar2[-1].height_cache_tags[7][0x52] = -0x3b864000;
+  pCVar1 = (CNPC *)core_charactr_cpp_CCharacter_ctor_FUN_00427e20(&this_ptr->base);
+  pCVar2 = core_path_cpp_CPathMap_ctor_FUN_00546450(&pCVar1->path_map);
+  ADJ(pCVar2)->base.base.vtable._ub = &g_CNPCVTable;
+  ADJ(pCVar2)->base.collision_cylinder_height = 0.6;
+  ADJ(pCVar2)->base.collision_cylinder_radius = 0.9;
+  ADJ(pCVar2)->base.collision_cylinder_bottom = 1.6;
+  ADJ(pCVar2)->base.collision_cylinder_top = -999.0;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
-            ((CDeformableModelInstance *)(pCVar2[-1].height_cache[0x4f] + 0x1c),
-             "priest.dfm");
-  pCVar2[-1].height_cache_tags[2][0x53] = 0;
-  pCVar2[1].current_position.x = 0.0;
-  pCVar2[1].current_position.y = 0.0;
-  return (CNPC *)(pCVar2[-1].height_cache[0x4e] + 0x2a);
+            (&ADJ(pCVar2)->base.model,"priest.dfm");
+  ADJ(pCVar2)->base.show_in_editor = 0;
+  ADJ(pCVar2)->shoot_me = 0;
+  ADJ(pCVar2)->pool_me = 0;
+  return ADJ(pCVar2);
 }

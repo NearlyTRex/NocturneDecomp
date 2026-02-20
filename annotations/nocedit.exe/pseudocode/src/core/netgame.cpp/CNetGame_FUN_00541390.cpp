@@ -13,7 +13,7 @@ int __cdecl core_netgame_cpp_CNetGame_FUN_00541390(CNetGame *this_ptr)
 {
   uchar uVar1;
   bool bVar2;
-  SNetPlayer *pSVar3;
+  uint uVar3;
   int iVar4;
   CNetGame *pCVar5;
   char *pcVar6;
@@ -32,27 +32,19 @@ int __cdecl core_netgame_cpp_CNetGame_FUN_00541390(CNetGame *this_ptr)
   
   if (this_ptr->connection_type != 0) {
     local_30 = g_ForceMessagePump;
-    pSVar3 = this_ptr->players + this_ptr->local_player_index;
-    pSVar3->unk1[4] = '\x01';
-    pSVar3->unk1[5] = '\0';
-    pSVar3->unk1[6] = '\0';
-    pSVar3->unk1[7] = '\0';
-    pSVar3 = this_ptr->players + this_ptr->local_player_index;
-    pSVar3->unk1[0xc] = '\0';
-    pSVar3->unk1[0xd] = '\0';
-    pSVar3->unk1[0xe] = '\0';
-    pSVar3->unk1[0xf] = '\0';
+    this_ptr->players[this_ptr->local_player_index].local_sync_stage = 1;
+    this_ptr->players[this_ptr->local_player_index].ready_flag = 0;
     g_ForceMessagePump = 0;
     this_ptr->network_mode = 1;
     if (this_ptr->connection_type == 1) {
-      iVar4 = rand();
-      *(int *)(this_ptr->unk + 0x54) = iVar4;
+      uVar3 = rand();
+      this_ptr->random_seed = uVar3;
       core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_00542cf0(this_ptr);
     }
     else {
       core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_00542ff0(this_ptr);
     }
-    local_2c = this_ptr->unk;
+    local_2c = this_ptr->mission_name;
     while (this_ptr->connection_type != 0) {
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
       _sprintf((char *)local_130,"Mission: %s",local_2c);
@@ -146,8 +138,8 @@ LAB_005415cb:
       if (iVar7 < 0) {
         iVar7 = 0;
       }
-      local_28 = g_ChatHistory[iVar7].unk + 0x20;
-      pcVar6 = g_ChatHistory[iVar7].unk + 0xc;
+      local_28 = g_ChatHistory[iVar7].message;
+      pcVar6 = g_ChatHistory[iVar7].sender_name;
       for (; iVar7 < g_ChatHistoryCount; iVar7 = iVar7 + 1) {
         engine_2d_c_drawText_FUN_00401fd0(pcVar6,0,iVar4);
         engine_2d_c_drawText_FUN_00401fd0(local_28,100,iVar4);
@@ -161,31 +153,24 @@ LAB_005415cb:
       pCVar5 = this_ptr;
       if (0 < this_ptr->player_count) {
         do {
-          pCVar5->players[0].unk1[0x10] = '\0';
-          pCVar5->players[0].unk1[0x11] = '\0';
-          pCVar5->players[0].unk1[0x12] = '\0';
-          pCVar5->players[0].unk1[0x13] = '\0';
+          pCVar5->players[0].sim_frame_index = 0;
           iVar4 = iVar4 + 1;
-          pCVar5 = (CNetGame *)(pCVar5->players[0].unk1 + 0x20);
+          pCVar5 = (CNetGame *)(pCVar5->players[0].controls.action_states + 3);
         } while (iVar4 < this_ptr->player_count);
       }
-      iVar4 = this_ptr->connection_type;
-      this_ptr->unk[0x50] = '\0';
-      this_ptr->unk[0x51] = '\0';
-      this_ptr->unk[0x52] = '\0';
-      this_ptr->unk[0x53] = '\0';
-      if (iVar4 == 1) {
+      this_ptr->has_pending_sim_frame = 0;
+      if (this_ptr->connection_type == 1) {
         this_ptr->players[this_ptr->local_player_index].player_id = DAT_02f7c8c4;
         iVar4 = 0;
         bVar2 = true;
         pCVar5 = this_ptr;
         if (0 < this_ptr->player_count) {
           do {
-            if (*(int *)(pCVar5->players[0].unk1 + 0xc) == 0) {
+            if (pCVar5->players[0].ready_flag == 0) {
               bVar2 = false;
             }
             if (DAT_02f7c8c4 != pCVar5->players[0].player_id) {
-              local_18 = g_CurrentGameTime - *(int *)pCVar5->players[0].unk1;
+              local_18 = g_CurrentGameTime - pCVar5->players[0].last_update_time;
               local_138 = (float)local_18 * (float)1.52587890625e-05;
               if (local_138 < 0.0) {
                 local_138 = 0.0;
@@ -199,7 +184,7 @@ LAB_005415cb:
               bVar2 = false;
             }
             iVar4 = iVar4 + 1;
-            pCVar5 = (CNetGame *)(pCVar5->players[0].unk1 + 0x20);
+            pCVar5 = (CNetGame *)(pCVar5->players[0].controls.action_states + 3);
           } while (iVar4 < this_ptr->player_count);
         }
         if ((bVar2) && (1 < this_ptr->player_count)) {
@@ -210,8 +195,8 @@ LAB_005415cb:
           if (iVar4 != 0) {
             shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                       (g_CEditorToolsPtr,"Loading %s");
-            srand(*(uint *)(this_ptr->unk + 0x54));
-            core_actor_cpp_setRandomSeed_FUN_0040cb90(*(uint *)(this_ptr->unk + 0x54));
+            srand(this_ptr->random_seed);
+            core_actor_cpp_setRandomSeed_FUN_0040cb90(this_ptr->random_seed);
             core_mission_cpp_CDemonMission_load_FUN_00522d90(g_CDemonMissionPtr,pcVar6,0);
             iVar4 = core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(g_CDemonMissionPtr,0);
             if (iVar4 != 0) {
@@ -228,9 +213,10 @@ LAB_005415cb:
       if ((this_ptr->connection_type == 2) && (this_ptr->network_mode == 2)) {
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (g_CEditorToolsPtr,"Loading %s");
-        srand(*(uint *)(this_ptr->unk + 0x54));
-        core_actor_cpp_setRandomSeed_FUN_0040cb90(*(uint *)(this_ptr->unk + 0x54));
-        core_mission_cpp_CDemonMission_load_FUN_00522d90(g_CDemonMissionPtr,this_ptr->unk,0);
+        srand(this_ptr->random_seed);
+        core_actor_cpp_setRandomSeed_FUN_0040cb90(this_ptr->random_seed);
+        core_mission_cpp_CDemonMission_load_FUN_00522d90
+                  (g_CDemonMissionPtr,this_ptr->mission_name,0);
         iVar4 = core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(g_CDemonMissionPtr,0);
         if (iVar4 != 0) {
           core_mission_cpp_CDemonMission_FUN_00524760(g_CDemonMissionPtr);
@@ -255,7 +241,7 @@ LAB_005415cb:
       }
       if ((this_ptr->connection_type == 2) && (DAT_00680a04 != 0)) {
         local_18 = g_CurrentGameTime -
-                   *(int *)(this_ptr->players[this_ptr->local_player_index].unk1 + 8);
+                   this_ptr->players[this_ptr->local_player_index].state_change_time;
         local_134 = (float)local_18 * (float)1.52587890625e-05;
         if (local_134 < 0.0) {
           local_134 = 0.0;
@@ -271,8 +257,8 @@ LAB_005415cb:
       if (iVar4 != 0) goto LAB_005416d1;
       iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_RETURN);
       if (iVar4 != 0) {
-        *(uint *)(this_ptr->players[this_ptr->local_player_index].unk1 + 0xc) =
-             (uint)(*(int *)(this_ptr->players[this_ptr->local_player_index].unk1 + 0xc) == 0);
+        this_ptr->players[this_ptr->local_player_index].ready_flag =
+             (uint)(this_ptr->players[this_ptr->local_player_index].ready_flag == 0);
         if (this_ptr->connection_type == 1) {
           core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_00542cf0(this_ptr);
         }

@@ -2,8 +2,11 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CColor3i.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CVector3f.h"
+#include "types/structs/SMRGLPrimitiveQuad.h"
+#include "types/structs/SWaterVertex.h"
 
 // Structure: CWaterActor
 // Ghidra size: 0x2b238 (176696 bytes)
@@ -22,9 +25,16 @@ typedef struct CWaterActor {
     int state; // 0x280
     float patch_size; // 0x284
     int round_flag; // 0x288
-    int col_r; // 0x28c
-    int col_g; // 0x290
-    int col_b; // 0x294
-    char unk5[176032]; // 0x298
+    CColor3i color; // 0x28c
+    int vertex_count; // 0x298
+    SWaterVertex vertices[1000]; // 0x29c
+    float inv_delta_time; // 0x7f9c
+    int grid_cols; // 0x7fa0
+    int grid_rows; // 0x7fa4
+    SMRGLPrimitiveQuad primitives[2000]; // 0x7fa8
+    int texture_frame; // 0x2b228
+    int texture_anim_accum; // 0x2b22c
+    float base_y; // 0x2b230
+    int primitive_count; // 0x2b234
 } CWaterActor;
 

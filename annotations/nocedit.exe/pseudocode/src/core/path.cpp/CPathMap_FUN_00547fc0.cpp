@@ -31,7 +31,7 @@ void __cdecl core_path_cpp_CPathMap_FUN_00547fc0(CPathMap *this_ptr)
   int local_28;
   int local_24;
   int local_20;
-  float local_1c;
+  int local_1c;
   int local_18;
   int local_14;
   
@@ -72,7 +72,7 @@ void __cdecl core_path_cpp_CPathMap_FUN_00547fc0(CPathMap *this_ptr)
   local_24 = in_stack_00000010 << 8;
   local_58 = 0;
   local_2c = 0;
-  local_1c = (float)(in_stack_00000014 << 8);
+  local_1c = in_stack_00000014 << 8;
   do {
     local_54[1] = 0;
     local_18 = (int)(this_ptr->height_cache + -1) + 0x160 + local_2c;
@@ -110,22 +110,22 @@ void __cdecl core_path_cpp_CPathMap_FUN_00547fc0(CPathMap *this_ptr)
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_70);
         this_ptr_00 = g_CDemonRendererPtr2;
-        g_CDemonRendererPtr2->vertex_buffer_ptr->light = local_20;
-        this_ptr_00->vertex_buffer_ptr->color = local_28;
-        this_ptr_00->vertex_buffer_ptr->fog = local_24;
-        this_ptr_00->vertex_buffer_ptr->w_recip = local_1c;
-        this_ptr_00->vertex_buffer_ptr[1].light = local_20;
-        this_ptr_00->vertex_buffer_ptr[1].color = local_28;
-        this_ptr_00->vertex_buffer_ptr[1].fog = local_24;
-        this_ptr_00->vertex_buffer_ptr[1].w_recip = local_1c;
-        this_ptr_00->vertex_buffer_ptr[2].light = local_20;
-        this_ptr_00->vertex_buffer_ptr[2].color = local_28;
-        this_ptr_00->vertex_buffer_ptr[2].fog = local_24;
-        this_ptr_00->vertex_buffer_ptr[2].w_recip = local_1c;
-        this_ptr_00->vertex_buffer_ptr[3].light = local_20;
-        this_ptr_00->vertex_buffer_ptr[3].color = local_28;
-        this_ptr_00->vertex_buffer_ptr[3].fog = local_24;
-        this_ptr_00->vertex_buffer_ptr[3].w_recip = local_1c;
+        g_CDemonRendererPtr2->vertex_buffer_ptr->z = local_20;
+        this_ptr_00->vertex_buffer_ptr->r = local_28;
+        this_ptr_00->vertex_buffer_ptr->g = local_24;
+        this_ptr_00->vertex_buffer_ptr->fog = local_1c;
+        this_ptr_00->vertex_buffer_ptr[1].z = local_20;
+        this_ptr_00->vertex_buffer_ptr[1].r = local_28;
+        this_ptr_00->vertex_buffer_ptr[1].g = local_24;
+        this_ptr_00->vertex_buffer_ptr[1].fog = local_1c;
+        this_ptr_00->vertex_buffer_ptr[2].z = local_20;
+        this_ptr_00->vertex_buffer_ptr[2].r = local_28;
+        this_ptr_00->vertex_buffer_ptr[2].g = local_24;
+        this_ptr_00->vertex_buffer_ptr[2].fog = local_1c;
+        this_ptr_00->vertex_buffer_ptr[3].z = local_20;
+        this_ptr_00->vertex_buffer_ptr[3].r = local_28;
+        this_ptr_00->vertex_buffer_ptr[3].g = local_24;
+        this_ptr_00->vertex_buffer_ptr[3].fog = local_1c;
         engine_drender_cpp_CDemonRenderer_renderMaximumQualityVariant_FUN_0048bba0
                   (this_ptr_00,&SMRGLPrimitiveQuad_030d4fd0.base);
       }

@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[16]:
-;   core_course.cpp_CCourse_FUN_00443bc0 at 00443cf1
+;   core_course.cpp_CCourse_preview_FUN_00443bc0 at 00443cf1
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044c430 at 0044c615
 ;   core_dlight.cpp_CDemonLight_beginScene_FUN_00472a80 at 00472b18
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047cd58

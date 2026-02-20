@@ -22,15 +22,15 @@
 ;
 ; Referenced Globals:
 ;   SRenderVertex[16] g_RenderVertexBuffer
-;   undefined4 g_RenderVertexBuffer[0].light
-;   undefined4 g_RenderVertexBuffer[0].color
-;   undefined4 g_RenderVertexBuffer[0].fog
-;   undefined4 g_RenderVertexBuffer[1].light
-;   undefined4 g_RenderVertexBuffer[1].color
-;   undefined4 g_RenderVertexBuffer[1].fog
-;   undefined4 g_RenderVertexBuffer[2].light
-;   undefined4 g_RenderVertexBuffer[2].color
-;   undefined4 g_RenderVertexBuffer[2].fog
+;   undefined4 g_RenderVertexBuffer[0].z
+;   undefined4 g_RenderVertexBuffer[0].r
+;   undefined4 g_RenderVertexBuffer[0].g
+;   undefined4 g_RenderVertexBuffer[1].z
+;   undefined4 g_RenderVertexBuffer[1].r
+;   undefined4 g_RenderVertexBuffer[1].g
+;   undefined4 g_RenderVertexBuffer[2].z
+;   undefined4 g_RenderVertexBuffer[2].r
+;   undefined4 g_RenderVertexBuffer[2].g
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
@@ -67,15 +67,15 @@ section .text
     TEST EBX,EBX                        ; 0056e150
     JLE 0x0056e170                      ; 0056e152
         ;   XREF to: 0056e170 (CONDITIONAL_JUMP)  ; LAB_0056e170
-    MOV ECX,dword ptr [EDX + 0x20]      ; 0056e154 | g_RenderVertexBuffer[0].light
+    MOV ECX,dword ptr [EDX + 0x20]      ; 0056e154 | g_RenderVertexBuffer[0].z
         ;   Label: LAB_0056e154
-    MOV dword ptr [EAX + 0x20],ECX      ; 0056e157 | g_RenderVertexBuffer[1].light | g_RenderVertexBuffer[2].light
-    MOV ECX,dword ptr [EDX + 0x24]      ; 0056e15a | g_RenderVertexBuffer[0].color
-    MOV dword ptr [EAX + 0x24],ECX      ; 0056e15d | g_RenderVertexBuffer[1].color | g_RenderVertexBuffer[2].color
+    MOV dword ptr [EAX + 0x20],ECX      ; 0056e157 | g_RenderVertexBuffer[1].z | g_RenderVertexBuffer[2].z
+    MOV ECX,dword ptr [EDX + 0x24]      ; 0056e15a | g_RenderVertexBuffer[0].r
+    MOV dword ptr [EAX + 0x24],ECX      ; 0056e15d | g_RenderVertexBuffer[1].r | g_RenderVertexBuffer[2].r
     ADD EAX,0x30                        ; 0056e160
-    MOV ECX,dword ptr [EDX + 0x28]      ; 0056e163 | g_RenderVertexBuffer[0].fog
+    MOV ECX,dword ptr [EDX + 0x28]      ; 0056e163 | g_RenderVertexBuffer[0].g
     DEC EBX                             ; 0056e166
-    MOV dword ptr [EAX + -0x8],ECX      ; 0056e167 | g_RenderVertexBuffer[1].fog | g_RenderVertexBuffer[2].fog
+    MOV dword ptr [EAX + -0x8],ECX      ; 0056e167 | g_RenderVertexBuffer[1].g | g_RenderVertexBuffer[2].g
     TEST EBX,EBX                        ; 0056e16a
     JG 0x0056e154                       ; 0056e16c
         ;   XREF to: 0056e154 (CONDITIONAL_JUMP)  ; LAB_0056e154

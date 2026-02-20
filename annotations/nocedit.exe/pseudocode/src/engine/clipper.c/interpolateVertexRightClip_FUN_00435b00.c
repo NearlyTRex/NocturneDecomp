@@ -41,13 +41,12 @@ void __cdecl engine_clipper_c_interpolateVertexRightClip_FUN_00435b00(SRenderVer
   (output->projected_vertex).transformed_y =
        (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) +
        (v1->projected_vertex).transformed_y;
-  lVar1 = (longlong)(v2->light - v1->light) * (longlong)iVar4;
+  lVar1 = (longlong)(v2->z - v1->z) * (longlong)iVar4;
   uVar3 = (uint)lVar1;
-  output->light = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->light;
-  lVar1 = (longlong)((int)v2->w_recip - (int)v1->w_recip) * (longlong)iVar4;
+  output->z = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->z;
+  lVar1 = (longlong)(v2->fog - v1->fog) * (longlong)iVar4;
   uVar3 = (uint)lVar1;
-  output->w_recip =
-       (float)((int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + (int)v1->w_recip);
+  output->fog = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->fog;
   lVar1 = (longlong)(v2->u - v1->u) * (longlong)iVar4;
   uVar3 = (uint)lVar1;
   output->u = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->u;

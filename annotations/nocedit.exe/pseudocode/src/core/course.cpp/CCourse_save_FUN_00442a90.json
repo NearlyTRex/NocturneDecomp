@@ -4,13 +4,13 @@
       {
         "category": "other",
         "column": 19,
-        "line": 32,
+        "line": 31,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 34,
+        "line": 33,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -19,17 +19,16 @@
   },
   "complexity": {
     "assembly_lines": 115,
-    "complexity_score": 146,
+    "complexity_score": 120,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 12,
-    "pseudocode_lines": 46,
-    "suspect_count": 9,
+    "pseudocode_lines": 45,
+    "suspect_count": 7,
     "suspect_types": [
-      "pointer_cast",
-      "stack_param"
+      "pointer_cast"
     ],
-    "total_lines": 161
+    "total_lines": 160
   },
   "cross_references": [
     {
@@ -49,7 +48,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_course.cpp_CCourse_save_FUN_00442a90",
-    "signature": "void __cdecl core_course_cpp_CCourse_save_FUN_00442a90(CCourse *this_ptr)"
+    "signature": "void __cdecl core_course_cpp_CCourse_save_FUN_00442a90(CCourse *this_ptr,char *filename)"
   },
   "function_calls": [
     {
@@ -176,10 +175,10 @@
     "pcode_op_count": 559
   },
   "stack_frame": {
-    "frame_size": 80,
+    "frame_size": 84,
     "local_size": 76,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -237,71 +236,64 @@
         "offset": 4,
         "size": 4,
         "type": "CCourse *"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000008",
-      "text": "char *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000008",
-      "text": "file = engine_dosio_c_getFile_FUN_00481a50(\"data\",in_stack_00000008,\"wt\");",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 33,
+      "match": "(float *)((int)",
+      "text": "pfVar2 = (float *)((int)&(pCVar8->orient).z + iVar9);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 34,
       "match": "(float *)((int)",
-      "text": "pfVar2 = (float *)((int)&(pCVar8->frame1).orient.z + iVar9);",
+      "text": "pfVar3 = (float *)((int)&(pCVar8->orient).y + iVar9);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 35,
       "match": "(float *)((int)",
-      "text": "pfVar3 = (float *)((int)&(pCVar8->frame1).orient.y + iVar9);",
+      "text": "pfVar4 = (float *)((int)&(pCVar8->orient).x + iVar9);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 36,
       "match": "(float *)((int)",
-      "text": "pfVar4 = (float *)((int)&(pCVar8->frame1).orient.x + iVar9);",
+      "text": "pfVar5 = (float *)((int)&(pCVar8->orient).w + iVar9);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 37,
       "match": "(float *)((int)",
-      "text": "pfVar5 = (float *)((int)&(pCVar8->frame1).orient.w + iVar9);",
+      "text": "pfVar6 = (float *)((int)&(pCVar8->pos).z + iVar9);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 38,
       "match": "(float *)((int)",
-      "text": "pfVar6 = (float *)((int)&(pCVar8->frame1).pos.z + iVar9);",
+      "text": "pfVar7 = (float *)((int)&(pCVar8->pos).y + iVar9);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 39,
       "match": "(float *)((int)",
-      "text": "pfVar7 = (float *)((int)&(pCVar8->frame1).pos.y + iVar9);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 40,
-      "match": "(float *)((int)",
-      "text": "pfVar1 = (float *)((int)&(pCVar8->frame1).pos.x + iVar9);",
+      "text": "pfVar1 = (float *)((int)&(pCVar8->pos).x + iVar9);",
       "type": "pointer_cast"
     }
   ]

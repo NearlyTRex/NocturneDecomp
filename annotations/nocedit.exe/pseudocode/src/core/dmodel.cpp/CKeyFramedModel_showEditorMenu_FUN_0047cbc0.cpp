@@ -730,7 +730,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
             if (iVar8 != 0) {
               core_course_cpp_CCourse_ctor_FUN_004424c0(&local_f0);
               core_course_cpp_CCourse_load_FUN_00442580(&local_f0,local_340);
-              core_course_cpp_CCourse_FUN_00442710(&local_f0);
+              core_course_cpp_CCourse_evaluate_FUN_00442710(&local_f0,0.0,&local_fc,&local_9c);
               core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
                         (&local_214,&local_fc,&local_9c);
               iVar8 = 0;

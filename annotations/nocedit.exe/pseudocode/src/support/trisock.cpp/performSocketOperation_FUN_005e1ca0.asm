@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl support_trisock_cpp_performSocketOperation_FUN_005e1ca0(SSocketContext *socket_ctx,char *buffer,int length,SNetworkAddr *dest_addr)
+; int __cdecl support_trisock_cpp_performSocketOperation_FUN_005e1ca0(SOCKET *socket,char *buffer,int length,SNetworkAddr *dest_addr)
 ;
 ; Parameters:
-; SSocketContext * Stack[0x4]:4   socket_ctx
+; SOCKET *         Stack[0x4]:4   socket
 ; char *           Stack[0x8]:4   buffer
 ; int              Stack[0xc]:4   length
 ; SNetworkAddr *   Stack[0x10]:4   dest_addr

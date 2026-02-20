@@ -1,0 +1,633 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 351,
+    "complexity_score": 404,
+    "cross_reference_count": 1,
+    "function_call_count": 8,
+    "global_count": 9,
+    "pseudocode_lines": 149,
+    "suspect_count": 25,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
+    "total_lines": 500
+  },
+  "cross_references": [
+    {
+      "addr": "00443bc0",
+      "from_addr": "00443eb8",
+      "name": "core_course.cpp_CCourse_preview_FUN_00443bc0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00443760",
+    "address_range": [
+      [
+        "00443760",
+        "00443bb7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_course.cpp_renderCourseGizmo_FUN_00443760",
+    "signature": "void __cdecl core_course_cpp_renderCourseGizmo_FUN_00443760(CVector3f *position)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe6b0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "00401fd0",
+      "is_variadic": false,
+      "name": "engine_2d.c_drawText_FUN_00401fd0"
+    },
+    {
+      "addr": "00401290",
+      "is_variadic": false,
+      "name": "engine_2d.c_plotPixelWithDepth_FUN_00401290"
+    },
+    {
+      "addr": "00404570",
+      "is_variadic": false,
+      "name": "engine_3d.c_drawLineStrip2D_FUN_00404570"
+    },
+    {
+      "addr": "00403e30",
+      "is_variadic": false,
+      "name": "engine_3d.c_processPolygonColor_FUN_00403e30"
+    },
+    {
+      "addr": "0048c450",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450"
+    },
+    {
+      "addr": "00552110",
+      "is_variadic": false,
+      "name": "engine_prim.c_replaceWWithDepth_FUN_00552110"
+    },
+    {
+      "addr": "005b575c",
+      "is_variadic": false,
+      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061944f",
+      "name": "s_x_0061944f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00619451",
+      "name": "s_y_00619451",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065c060",
+      "name": "FLOAT_0065c060",
+      "type": "float",
+      "value": "256"
+    },
+    {
+      "addr": "0066ec54",
+      "name": "PTR_s_x_0066ec54",
+      "type": "void*",
+      "value": "0061944f"
+    },
+    {
+      "addr": "0066ec58",
+      "name": "PTR_s_y_0066ec58",
+      "type": "void*",
+      "value": "00619451"
+    },
+    {
+      "addr": "006703e8",
+      "name": "g_CDemonRendererPtr1",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02cf9020",
+      "name": "g_ColorCubeLookup",
+      "type": "uchar[32768]",
+      "value": null
+    },
+    {
+      "addr": "02d02570",
+      "name": "g_ActiveRenderColor",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00443eb8",
+        "call_type": "direct",
+        "caller": "core_course.cpp_CCourse_preview_FUN_00443bc0",
+        "estimated_params": 1,
+        "instructions_analyzed": 9,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.618589743589744,
+    "instruction_count": 312,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 125,
+      "BOOL_OR": 6,
+      "BOOL_XOR": 5,
+      "BRANCH": 2,
+      "CALL": 17,
+      "CBRANCH": 9,
+      "COPY": 654,
+      "FLOAT2FLOAT": 42,
+      "FLOAT_ADD": 3,
+      "FLOAT_MULT": 15,
+      "INT2FLOAT": 6,
+      "INT_ADD": 140,
+      "INT_AND": 410,
+      "INT_CARRY": 25,
+      "INT_EQUAL": 166,
+      "INT_LEFT": 20,
+      "INT_LESS": 18,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 64,
+      "INT_OR": 106,
+      "INT_SBORROW": 18,
+      "INT_SCARRY": 25,
+      "INT_SLESS": 91,
+      "INT_SRIGHT": 28,
+      "INT_SUB": 89,
+      "INT_XOR": 15,
+      "INT_ZEXT": 5,
+      "LOAD": 61,
+      "POPCOUNT": 71,
+      "RETURN": 1,
+      "ROUND": 18,
+      "STORE": 103,
+      "TRUNC": 18
+    },
+    "pcode_op_count": 2377
+  },
+  "stack_frame": {
+    "frame_size": 164,
+    "local_size": 160,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_9c",
+        "offset": -156,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_98",
+        "offset": -152,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_94",
+        "offset": -148,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_90",
+        "offset": -144,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8c",
+        "offset": -140,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_84",
+        "offset": -132,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_80",
+        "offset": -128,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 37,
+      "match": "ROUND",
+      "text": "iVar2 = (int)ROUND(ROUND(position->x)) >> 0x1f;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 37,
+      "match": "ROUND",
+      "text": "iVar2 = (int)ROUND(ROUND(position->x)) >> 0x1f;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 38,
+      "match": "ROUND",
+      "text": "local_18 = ((int)(((int)ROUND(ROUND(position->x)) + iVar2 * -0x10) - (uint)(iVar2 << 3 < 0)) >> 4)",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 38,
+      "match": "ROUND",
+      "text": "local_18 = ((int)(((int)ROUND(ROUND(position->x)) + iVar2 * -0x10) - (uint)(iVar2 << 3 < 0)) >> 4)",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 40,
+      "match": "ROUND",
+      "text": "iVar2 = (int)ROUND(ROUND(position->y)) >> 0x1f;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 40,
+      "match": "ROUND",
+      "text": "iVar2 = (int)ROUND(ROUND(position->y)) >> 0x1f;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 41,
+      "match": "ROUND",
+      "text": "local_14 = (int)ROUND(ROUND(position->z));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 41,
+      "match": "ROUND",
+      "text": "local_14 = (int)ROUND(ROUND(position->z));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 43,
+      "match": "ROUND",
+      "text": "position->y = (float)(((int)(((int)ROUND(ROUND(position->y)) + iVar2 * -0x10) -",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 43,
+      "match": "ROUND",
+      "text": "position->y = (float)(((int)(((int)ROUND(ROUND(position->y)) + iVar2 * -0x10) -",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 64,
+      "match": "ROUND",
+      "text": "local_3c.x = (int)ROUND(local_90 * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 65,
+      "match": "ROUND",
+      "text": "local_3c.y = (int)ROUND(local_8c * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 66,
+      "match": "ROUND",
+      "text": "local_3c.z = (int)ROUND(local_88 * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 102,
+      "match": "ROUND",
+      "text": "local_84.x = (int)ROUND(256.0f * 0.0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 103,
+      "match": "ROUND",
+      "text": "local_84.y = (int)ROUND(256.0f * 0.0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 104,
+      "match": "ROUND",
+      "text": "local_84.z = (int)ROUND(256.0f * 0.0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 110,
+      "match": "ROUND",
+      "text": "local_60.x = (int)ROUND(256.0f * 3.0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 111,
+      "match": "ROUND",
+      "text": "local_60.y = (int)ROUND(256.0f * 0.0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 112,
+      "match": "ROUND",
+      "text": "local_60.z = (int)ROUND(256.0f * 0.0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 118,
+      "match": "ROUND",
+      "text": "local_78.x = (int)ROUND(256.0f * 0.0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 119,
+      "match": "ROUND",
+      "text": "local_78.y = (int)ROUND(256.0f * 3.0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 120,
+      "match": "ROUND",
+      "text": "local_78.z = (int)ROUND(256.0f * 0.0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 126,
+      "match": "ROUND",
+      "text": "local_6c.x = (int)ROUND(256.0f * 0.0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 127,
+      "match": "ROUND",
+      "text": "local_6c.y = (int)ROUND(256.0f * 0.0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 128,
+      "match": "ROUND",
+      "text": "local_6c.z = (int)ROUND(256.0f * 3.0);",
+      "type": "decompiler_intrinsic"
+    }
+  ]
+}

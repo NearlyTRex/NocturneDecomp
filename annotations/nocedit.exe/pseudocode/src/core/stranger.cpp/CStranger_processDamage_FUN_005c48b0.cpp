@@ -15,7 +15,8 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_005c48b0(CStranger *t
   CGame *pCVar2;
   int iVar3;
   SMotion *pSVar4;
-  CDemonActor *pCVar5;
+  uint uVar5;
+  CDemonActor *pCVar6;
   float force_immediate;
   
   if (g_CGamePtr->debug_flag_1 != 0) {
@@ -75,11 +76,11 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_005c48b0(CStranger *t
         }
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&(this_ptr->base).base.model.motion_controller,iVar3,(int)force_immediate);
-        sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->unk14);
+        sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->hurt_sfx_handle);
         if (damage_info->damage_type != 1) {
-          iVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
+          uVar5 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                             ((CDemonActor *)this_ptr,"stranger_die??.wav");
-          this_ptr->unk14 = iVar3;
+          this_ptr->hurt_sfx_handle = uVar5;
         }
         core_gore_cpp_CGore_spawnFliesOnActor_FUN_004ee030
                   (g_CGorePtr,(CDemonActor *)this_ptr,0x32,50.0,(CVector3f *)0x0);
@@ -101,9 +102,9 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_005c48b0(CStranger *t
   if (((damage_info->damage_type != 0x69) &&
       ((this_ptr->base).ladder_to_climb == (CDemonActor *)0x0)) &&
      ((this_ptr->ladder_to_descend == (CDemonActor *)0x0 && (this_ptr->action_pending == 0)))) {
-    pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c790
+    pCVar6 = core_actor_cpp_castToClassHash_FUN_0040c790
                        (damage_info->attacker,g_CTommyGunClassInfo.name_hash);
-    if (pCVar5 != (CDemonActor *)0x0) {
+    if (pCVar6 != (CDemonActor *)0x0) {
       iVar3 = core_actor_cpp_randomChance_FUN_0040cd10(0.333);
       if (iVar3 == 0) goto LAB_005c4be2;
     }
@@ -111,11 +112,11 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_005c48b0(CStranger *t
               (&this_ptr_00->motion_controller,0x24,1);
   }
 LAB_005c4be2:
-  iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->unk14);
+  iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->hurt_sfx_handle);
   if (iVar3 == 0) {
-    iVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
+    uVar5 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                       ((CDemonActor *)this_ptr,"stranger_hit??.wav");
-    this_ptr->unk14 = iVar3;
+    this_ptr->hurt_sfx_handle = uVar5;
   }
 LAB_005c4ae0:
   if (0.0 < damage_info->damage_amount) {

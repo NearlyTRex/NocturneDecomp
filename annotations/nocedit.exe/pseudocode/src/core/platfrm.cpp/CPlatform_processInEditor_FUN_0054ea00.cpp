@@ -266,7 +266,7 @@ void __cdecl core_platfrm_cpp_CPlatform_processInEditor_FUN_0054ea00(CPlatform *
     if (iVar2 != 0) {
       this_ptr->param = this_ptr->param - local_2e8;
     }
-    core_platfrm_cpp_CPlatform_FUN_0054cab0(this_ptr);
+    core_platfrm_cpp_CPlatform_evaluatePosition_FUN_0054cab0(this_ptr);
     return;
   }
   core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base);

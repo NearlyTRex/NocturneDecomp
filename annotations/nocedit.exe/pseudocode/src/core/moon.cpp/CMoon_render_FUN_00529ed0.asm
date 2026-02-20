@@ -50,7 +50,7 @@
 ;   ... and 20 more
 ;
 ; Called Functions:
-;   core_course.cpp_CCourse_FUN_00442710
+;   core_course.cpp_CCourse_evaluate_FUN_00442710
 ;   core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850
 ;   core_set.cpp_CDemonSet_FUN_00570ca0
 ;   crt_math.c_round_FUN_005fe6b0
@@ -172,8 +172,8 @@ section .text
     ADD EAX,ESI                         ; 0052a02d
     PUSH dword ptr [EBX + 0x2f38210]    ; 0052a02f | DAT_02f38210 | DAT_02f38228
     PUSH EAX                            ; 0052a035
-    CALL core_course.cpp_CCourse_FUN_00442710 ; 0052a036
-        ;   XREF to: 00442710 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_FUN_00442710(CCourse * this_ptr)
+    CALL core_course.cpp_CCourse_evaluate_FUN_00442710 ; 0052a036
+        ;   XREF to: 00442710 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_evaluate_FUN_00442710(CCourse * this_ptr, float time, CVector3f * out_pos, CVector3f * out_euler)
     FLD float ptr [EBP + -0x34]         ; 0052a03b
     FLD float ptr [EBP + -0x30]         ; 0052a03e
     FLD float ptr [EBP + -0x2c]         ; 0052a041

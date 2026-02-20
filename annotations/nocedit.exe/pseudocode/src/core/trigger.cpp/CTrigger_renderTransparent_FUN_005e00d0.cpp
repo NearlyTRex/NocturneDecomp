@@ -113,10 +113,10 @@ int __cdecl core_trigger_cpp_CTrigger_renderTransparent_FUN_005e00d0(CTrigger *t
         fStack_60 = 0.0;
         fStack_64 = CStack_8c.min.y;
         iStack_28 = (int)ROUND(ROUND(fVar1 * 256.0f));
-        g_CDemonRendererPtr2->vertex_buffer_ptr->light = iStack_28;
-        pCVar2->vertex_buffer_ptr->color = iVar3 << 8;
-        pCVar2->vertex_buffer_ptr->fog = iVar4 << 8;
-        pCVar2->vertex_buffer_ptr->w_recip = (float)(iVar6 << 8);
+        g_CDemonRendererPtr2->vertex_buffer_ptr->z = iStack_28;
+        pCVar2->vertex_buffer_ptr->r = iVar3 << 8;
+        pCVar2->vertex_buffer_ptr->g = iVar4 << 8;
+        pCVar2->vertex_buffer_ptr->fog = iVar6 << 8;
         pCVar2->vertex_buffer_ptr->u = 0x800000;
         pCVar2->vertex_buffer_ptr->v = 0x800000;
         engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80

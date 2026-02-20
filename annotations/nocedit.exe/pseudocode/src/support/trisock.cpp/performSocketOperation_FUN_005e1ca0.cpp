@@ -2,11 +2,11 @@
 // Address: 005e1ca0
 // Address Range: [[005e1ca0, 005e1d1a]]
 // Convention: __cdecl
-// Signature: int __cdecl support_trisock_cpp_performSocketOperation_FUN_005e1ca0(SSocketContext *socket_ctx,char *buffer,int length,SNetworkAddr *dest_addr)
+// Signature: int __cdecl support_trisock_cpp_performSocketOperation_FUN_005e1ca0(SOCKET *socket,char *buffer,int length,SNetworkAddr *dest_addr)
 
 #include "nocturne.h"
 
-int __cdecl support_trisock_cpp_performSocketOperation_FUN_005e1ca0(SSocketContext *socket_ctx,char *buffer,int length,SNetworkAddr *dest_addr)
+int __cdecl support_trisock_cpp_performSocketOperation_FUN_005e1ca0(SOCKET *socket,char *buffer,int length,SNetworkAddr *dest_addr)
 
 {
   int iVar1;
@@ -19,7 +19,7 @@ int __cdecl support_trisock_cpp_performSocketOperation_FUN_005e1ca0(SSocketConte
   
   bVar4 = 0;
   if (dest_addr == (SNetworkAddr *)0x0) {
-    iVar1 = send(socket_ctx->socket,buffer,length,0);
+    iVar1 = send(*socket,buffer,length,0);
     return iVar1;
   }
   support_trisock_cpp_buildSockaddrIn_FUN_005e19d0(dest_addr,&local_2c);
@@ -31,6 +31,6 @@ int __cdecl support_trisock_cpp_performSocketOperation_FUN_005e1ca0(SSocketConte
        *(uint *)((int)&local_2c + (uint)bVar4 * -8 + 4);
   *puVar3 = *puVar2;
   puVar3[(uint)bVar4 * -2 + 1] = puVar2[(uint)bVar4 * -2 + 1];
-  iVar1 = sendto(socket_ctx->socket,buffer,length,0,(SOCKADDR *)&local_1c,0x10);
+  iVar1 = sendto(*socket,buffer,length,0,(SOCKADDR *)&local_1c,0x10);
   return iVar1;
 }

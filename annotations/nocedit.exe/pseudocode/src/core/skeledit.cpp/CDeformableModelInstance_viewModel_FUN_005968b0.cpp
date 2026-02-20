@@ -6,7 +6,9 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: core_slew.cpp_CSlew_init_FUN_005a2060 */
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+/* WARNING: Restarted to delay deadcode elimination for space: stack */
 
 void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(CDeformableModelInstance *this_ptr)
 
@@ -37,8 +39,8 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
   CDeformableModelInstance *in_stack_00000004;
   ushort uVar22;
   ushort uVar23;
-  CDeformableModel *in_stack_ffffccb0;
-  char *in_stack_ffffccb4;
+  CDeformableModel *in_stack_ffffccac;
+  char *in_stack_ffffccb0;
   CPickList local_1900;
   CPickList local_1558;
   byte local_11b0 [936];
@@ -76,6 +78,7 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
   byte local_200 [16];
   float local_1f0;
   float local_1ec;
+  float fStack_1e8;
   CBoundingBox3D local_1e4;
   float local_1cc;
   float local_1c8;
@@ -217,7 +220,13 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
   if (local_64 < 0) {
     local_64 = 0;
   }
-  core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)local_200);
+  local_200._8_4_ = 0.0;
+  local_200._4_4_ = 0.0;
+  local_200._0_4_ = 0.0;
+  local_1ec = 0.0;
+  local_1f0 = 0.0;
+  local_200._12_4_ = 0.0;
+  fStack_1e8 = 28.0;
   if ((DAT_0366b64c & 2) == 0) {
     DAT_0366b64c = DAT_0366b64c | 2;
     core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00476cf0(&DAT_03665f74);
@@ -747,11 +756,11 @@ LAB_005975b4:
         local_19c.z = pCVar12->z;
       }
     }
-    in_stack_ffffccb4 = (char *)0x30;
-    in_stack_ffffccb0 = (CDeformableModel *)g_CKeysPtr;
+    in_stack_ffffccb0 = (char *)0x30;
+    in_stack_ffffccac = (CDeformableModel *)g_CKeysPtr;
     iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_B);
     if (iVar7 != 0) {
-      in_stack_ffffccb4 = (char *)0x597c43;
+      in_stack_ffffccb0 = (char *)0x597c43;
       iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
       if (iVar7 == 0) {
         iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
@@ -766,7 +775,7 @@ LAB_005975b4:
         }
       }
       else {
-        in_stack_ffffccb4 = (char *)0x597c68;
+        in_stack_ffffccb0 = (char *)0x597c68;
         iVar7 = shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300
                           (g_CEditorToolsPtr,"Bias model x,y,z",&local_13c,0);
         if ((iVar7 != 0) &&
@@ -1163,7 +1172,7 @@ LAB_005975b4:
                       (g_CEditorToolsPtr,"Enter .DFM filename","models",0x64e099,
                        (int)local_860);
     if (iVar7 != 0) {
-      core_skeledit_cpp_CDeformableModel_save_FUN_0058f040(in_stack_ffffccb0,in_stack_ffffccb4);
+      core_skeledit_cpp_CDeformableModel_save_FUN_0058f040(in_stack_ffffccac,in_stack_ffffccb0);
     }
   }
   g_CDemonSetPtr->lighting_quality_mode = 0;

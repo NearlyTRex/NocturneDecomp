@@ -13,7 +13,7 @@ int __cdecl core_grave_cpp_CGrave_renderOpaque_FUN_004ee680(CGrave *this_ptr)
   int iVar1;
   CBoundingBox3D local_1c;
   
-  if ((*(int *)this_ptr->unk1 == 0) &&
+  if ((this_ptr->animation_started == 0) &&
      (((g_CDemonMissionPtr->is_in_editor != 0 || (this_ptr->hide_on_first_frame == 0)) ||
       (this_ptr->grave_state != 0)))) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);

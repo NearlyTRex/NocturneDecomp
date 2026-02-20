@@ -20,7 +20,7 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_005ddb30(CTommyGun *this_ptr)
   CDemonActor *pCVar5;
   double dVar6;
   CDemonActor *pCVar7;
-  int in_stack_fffffebc;
+  float in_stack_fffffebc;
   byte auStack_130 [28];
   float fStack_114;
   float fStack_110;
@@ -134,13 +134,15 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_005ddb30(CTommyGun *this_ptr)
           }
         }
         else {
-          core_trigger_cpp_CTrigger_FUN_005e0aa0(this_ptr_02);
-          iVar4 = core_trigger_cpp_CTrigger_FUN_005e0ac0(this_ptr_02);
+          core_trigger_cpp_CTrigger_onProjectileHit_FUN_005e0aa0(this_ptr_02);
+          iVar4 = core_trigger_cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0
+                            (this_ptr_02,(char *)this_ptr);
           if (iVar4 != 0) {
             in_stack_fffffebc =
-                 (*(((this_ptr->base).base.vtable._uc)->_uc).getGrabbed)
-                           ((CCharacter *)this_ptr,SUB84(dVar6,0),(int)((ulonglong)dVar6 >> 0x20));
-            core_trigger_cpp_CTrigger_FUN_005e0b00(this_ptr_02);
+                 (float)(*(((this_ptr->base).base.vtable._uc)->_uc).getGrabbed)
+                                  ((CCharacter *)this_ptr,SUB84(dVar6,0),
+                                   (int)((ulonglong)dVar6 >> 0x20));
+            core_trigger_cpp_CTrigger_applyDamage_FUN_005e0b00(this_ptr_02,in_stack_fffffebc);
           }
           core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,(CDemonActor *)CStack_28.y)
           ;
@@ -170,7 +172,7 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_005ddb30(CTommyGun *this_ptr)
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffec0);
       auStack_130._0_4_ =
            (*(((this_ptr->base).base.vtable._uc)->_uc).getGrabbed)
-                     ((CCharacter *)this_ptr,pCVar7,in_stack_fffffebc);
+                     ((CCharacter *)this_ptr,pCVar7,(int)in_stack_fffffebc);
       auStack_130._4_4_ = 0.4;
       fStack_40 = (g_CDemonSetPtr->ray_target).x - (g_CDemonSetPtr->ray_origin).x;
       fStack_3c = (g_CDemonSetPtr->ray_target).y - (g_CDemonSetPtr->ray_origin).y;
@@ -198,7 +200,7 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_005ddb30(CTommyGun *this_ptr)
       CStack_108.m[0].z = (float)this_ptr;
       CStack_108.m[1].y =
            (float)(*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);
-      in_stack_fffffebc = 0x5de221;
+      in_stack_fffffebc = 8.621821e-39;
       (*(((this_ptr_01->base).vtable._uc)->_uc).processDamage)
                 (this_ptr_01,(SDamageInfo *)auStack_130);
       if ((this_ptr->base).can_penetrate == 0) goto LAB_005ddd4e;

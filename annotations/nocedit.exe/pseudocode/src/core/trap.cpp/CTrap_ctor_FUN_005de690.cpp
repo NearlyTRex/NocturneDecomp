@@ -9,15 +9,14 @@
 CTrap * __cdecl core_trap_cpp_CTrap_ctor_FUN_005de690(CTrap *this_ptr)
 
 {
-  CDemonActor *pCVar1;
-  CKeyFramedModelInstance *this_ptr_00;
+  CTrap *pCVar1;
+  CTrap_ptr_344 this_ptr_00;
   
-  pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
-  this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
-                          ((CKeyFramedModelInstance *)(pCVar1 + 1));
-  this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CTrapVTable;
+  pCVar1 = (CTrap *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
+  this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&pCVar1->model);
+  ADJ(this_ptr_00)->base.vtable._ub = &g_CTrapVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (this_ptr_00,"beartrap.kfm");
-  this_ptr_00[1].part_visibility_flags[1] = 0;
-  return (CTrap *)(this_ptr_00[-1].part_visibility_flags + 9);
+  ADJ(this_ptr_00)->wolf_in_trap = 0;
+  return ADJ(this_ptr_00);
 }

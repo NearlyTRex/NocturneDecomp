@@ -28,8 +28,8 @@ void __cdecl core_stairs_cpp_CStairs_FUN_005ba700(CStairs *this_ptr)
   local_14 = -this_ptr->width * (float)0.5;
   iVar1 = 0;
   if (0 < this_ptr->stair_count) {
-    this_ptr_01 = (CDemonTriangle *)this_ptr->unk2;
-    this_ptr_00 = (CDemonTriangle *)(this_ptr->unk2 + 0x38);
+    this_ptr_01 = this_ptr->collision_triangles;
+    this_ptr_00 = this_ptr->collision_triangles + 1;
     do {
       iVar1 = iVar1 + 1;
       local_58.y = this_ptr->rise * (float)iVar1;

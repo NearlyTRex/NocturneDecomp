@@ -166,7 +166,7 @@
       "description": "Unresolved stack parameter",
       "line": 20,
       "match": "in_stack_00000008",
-      "text": "*(int *)(this_ptr->unk + 0x54) = in_stack_00000008[1];",
+      "text": "this_ptr->random_seed = in_stack_00000008[1];",
       "type": "stack_param"
     },
     {
@@ -194,7 +194,7 @@
       "description": "Unresolved stack parameter",
       "line": 40,
       "match": "in_stack_00000008",
-      "text": "*(int *)(this_ptr->players[this_ptr->local_player_index].unk1 + 0x10) = *in_stack_00000008 + 1;",
+      "text": "this_ptr->players[this_ptr->local_player_index].sim_frame_index = *in_stack_00000008 + 1;",
       "type": "stack_param"
     }
   ]

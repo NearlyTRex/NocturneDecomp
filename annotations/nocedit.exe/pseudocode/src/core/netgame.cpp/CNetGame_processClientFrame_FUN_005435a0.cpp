@@ -16,13 +16,13 @@ void __cdecl core_netgame_cpp_CNetGame_processClientFrame_FUN_005435a0(CNetGame 
   uint *local_18;
   
   if (((this_ptr->connection_type == 2) && (this_ptr->network_mode == 3)) &&
-     (-1 < *(int *)this_ptr->padding)) {
+     (-1 < this_ptr->server_player_index)) {
     if (this_ptr->local_player_index < 0) {
       g_CurrentFilename = "..\\core\\netgame.cpp";
       g_CurrentLineNumber = 0x97c;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CNetGame::processClientFrame - I'm not in player list!");
     }
-    core_netgame_cpp_CNetGame_updatePing_FUN_00541c80(this_ptr,*(int *)this_ptr->padding,10.0);
+    core_netgame_cpp_CNetGame_updatePing_FUN_00541c80(this_ptr,this_ptr->server_player_index,10.0);
     core_netgame_cpp_CNetGame_receivePackets_FUN_005405b0(this_ptr);
     if (this_ptr->connection_type == 2) {
 LAB_00543605:
@@ -30,13 +30,13 @@ LAB_00543605:
       if (0 < g_SimFrameCount) {
         iVar1 = 0;
         do {
-          if (*(int *)(this_ptr->players[this_ptr->local_player_index].unk1 + 0x10) ==
+          if (this_ptr->players[this_ptr->local_player_index].sim_frame_index ==
               *(int *)((int)&g_SimFrameHistory + iVar1)) {
             if (-1 < iVar2) {
               core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800(this_ptr);
               core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00543970(this_ptr);
               iVar1 = 0;
-              iVar2 = *(int *)(this_ptr->players[this_ptr->local_player_index].unk1 + 0x10);
+              iVar2 = this_ptr->players[this_ptr->local_player_index].sim_frame_index;
               if (0 < g_SimFrameCount) {
                 iVar3 = 0;
                 local_18 = &DAT_02f9c128;
@@ -54,31 +54,24 @@ LAB_00543605:
                   }
                 } while (iVar1 < g_SimFrameCount);
               }
-              iVar2 = this_ptr->local_player_index;
-              this_ptr->unk[0x50] = '\0';
-              this_ptr->unk[0x51] = '\0';
-              this_ptr->unk[0x52] = '\0';
-              this_ptr->unk[0x53] = '\0';
-              iVar1 = 0;
+              this_ptr->has_pending_sim_frame = 0;
+              iVar2 = 0;
               if (g_SimFrameCount < 1) {
                 return;
               }
-              iVar3 = 0;
-              while (*(int *)(this_ptr->players[iVar2].unk1 + 0x10) !=
-                     *(int *)((int)&g_SimFrameHistory + iVar3)) {
-                iVar3 = iVar3 + 100;
-                iVar1 = iVar1 + 1;
-                if (g_SimFrameCount * 100 <= iVar3) {
+              iVar1 = 0;
+              while (this_ptr->players[this_ptr->local_player_index].sim_frame_index !=
+                     *(int *)((int)&g_SimFrameHistory + iVar1)) {
+                iVar1 = iVar1 + 100;
+                iVar2 = iVar2 + 1;
+                if (g_SimFrameCount * 100 <= iVar1) {
                   return;
                 }
               }
-              if (iVar1 < 0) {
+              if (iVar2 < 0) {
                 return;
               }
-              this_ptr->unk[0x50] = '\x01';
-              this_ptr->unk[0x51] = '\0';
-              this_ptr->unk[0x52] = '\0';
-              this_ptr->unk[0x53] = '\0';
+              this_ptr->has_pending_sim_frame = 1;
               return;
             }
             break;

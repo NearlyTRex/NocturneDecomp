@@ -32,16 +32,16 @@
 ;   SMRGLTextureBasic g_FireEffectSparkTexture
 ;   SMRGLTextureBasic g_FireEffectBlueSparkTexture
 ;   SMRGLTextureBasic g_FireEffectGreenSparkTexture
-;   undefined4 g_RenderVertexBuffer[0].light
-;   undefined4 g_RenderVertexBuffer[0].color
+;   undefined4 g_RenderVertexBuffer[0].z
+;   undefined4 g_RenderVertexBuffer[0].r
+;   undefined4 g_RenderVertexBuffer[0].g
 ;   undefined4 g_RenderVertexBuffer[0].fog
-;   undefined4 g_RenderVertexBuffer[0].w_recip
-;   undefined4 g_RenderVertexBuffer[1].light
-;   undefined4 g_RenderVertexBuffer[1].color
+;   undefined4 g_RenderVertexBuffer[1].z
+;   undefined4 g_RenderVertexBuffer[1].r
+;   undefined4 g_RenderVertexBuffer[1].g
 ;   undefined4 g_RenderVertexBuffer[1].fog
-;   undefined4 g_RenderVertexBuffer[1].w_recip
-;   undefined4 g_RenderVertexBuffer[2].light
-;   undefined4 g_RenderVertexBuffer[2].color
+;   undefined4 g_RenderVertexBuffer[2].z
+;   undefined4 g_RenderVertexBuffer[2].r
 ;   ... and 11 more
 ;
 ; Called Functions:
@@ -129,24 +129,24 @@ section .text
     IMUL EDX                            ; 004c04d6
     SHRD EAX,EDX,0x10                   ; 004c04d8
     PUSH 0x1                            ; 004c04dc
-    MOV [0x00688040],EAX                ; 004c04de | g_RenderVertexBuffer[0].w_recip
-    MOV [0x00688070],EAX                ; 004c04e3 | g_RenderVertexBuffer[1].w_recip
-    MOV [0x006880a0],EAX                ; 004c04e8 | g_RenderVertexBuffer[2].w_recip
-    MOV [0x006880d0],EAX                ; 004c04ed | g_RenderVertexBuffer[3].w_recip
-    MOV dword ptr [0x00688034],EBX      ; 004c04f2 | g_RenderVertexBuffer[0].light
-    MOV dword ptr [0x00688038],EBX      ; 004c04f8 | g_RenderVertexBuffer[0].color
-    MOV dword ptr [0x0068803c],EBX      ; 004c04fe | g_RenderVertexBuffer[0].fog
-    MOV dword ptr [0x00688064],EBX      ; 004c0504 | g_RenderVertexBuffer[1].light
-    MOV dword ptr [0x00688068],EBX      ; 004c050a | g_RenderVertexBuffer[1].color
-    MOV dword ptr [0x0068806c],EBX      ; 004c0510 | g_RenderVertexBuffer[1].fog
-    MOV dword ptr [0x00688094],EBX      ; 004c0516 | g_RenderVertexBuffer[2].light
-    MOV dword ptr [0x00688098],EBX      ; 004c051c | g_RenderVertexBuffer[2].color
-    MOV dword ptr [0x0068809c],EBX      ; 004c0522 | g_RenderVertexBuffer[2].fog
+    MOV [0x00688040],EAX                ; 004c04de | g_RenderVertexBuffer[0].fog
+    MOV [0x00688070],EAX                ; 004c04e3 | g_RenderVertexBuffer[1].fog
+    MOV [0x006880a0],EAX                ; 004c04e8 | g_RenderVertexBuffer[2].fog
+    MOV [0x006880d0],EAX                ; 004c04ed | g_RenderVertexBuffer[3].fog
+    MOV dword ptr [0x00688034],EBX      ; 004c04f2 | g_RenderVertexBuffer[0].z
+    MOV dword ptr [0x00688038],EBX      ; 004c04f8 | g_RenderVertexBuffer[0].r
+    MOV dword ptr [0x0068803c],EBX      ; 004c04fe | g_RenderVertexBuffer[0].g
+    MOV dword ptr [0x00688064],EBX      ; 004c0504 | g_RenderVertexBuffer[1].z
+    MOV dword ptr [0x00688068],EBX      ; 004c050a | g_RenderVertexBuffer[1].r
+    MOV dword ptr [0x0068806c],EBX      ; 004c0510 | g_RenderVertexBuffer[1].g
+    MOV dword ptr [0x00688094],EBX      ; 004c0516 | g_RenderVertexBuffer[2].z
+    MOV dword ptr [0x00688098],EBX      ; 004c051c | g_RenderVertexBuffer[2].r
+    MOV dword ptr [0x0068809c],EBX      ; 004c0522 | g_RenderVertexBuffer[2].g
     MOV EAX,[0x006703ec]                ; 004c0528 | g_CDemonRendererPtr2
-    MOV dword ptr [0x006880c4],EBX      ; 004c052d | g_RenderVertexBuffer[3].light
+    MOV dword ptr [0x006880c4],EBX      ; 004c052d | g_RenderVertexBuffer[3].z
     PUSH EAX                            ; 004c0533 | g_CDemonRendererInstance
-    MOV dword ptr [0x006880c8],EBX      ; 004c0534 | g_RenderVertexBuffer[3].color
-    MOV dword ptr [0x006880cc],EBX      ; 004c053a | g_RenderVertexBuffer[3].fog
+    MOV dword ptr [0x006880c8],EBX      ; 004c0534 | g_RenderVertexBuffer[3].r
+    MOV dword ptr [0x006880cc],EBX      ; 004c053a | g_RenderVertexBuffer[3].g
     CALL engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50 ; 004c0540
         ;   XREF to: 0048ca50 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(CDemonRenderer * this_ptr, int blend_mode)
     ADD ESP,0x8                         ; 004c0545

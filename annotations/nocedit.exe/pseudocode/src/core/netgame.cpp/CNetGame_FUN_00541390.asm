@@ -276,7 +276,7 @@ section .text
         ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 005415f9
     MOV EAX,dword ptr [ESP + 0x11c]     ; 005415fc
-    CMP dword ptr [EAX + 0x44],0x0      ; 00541603 | g_CNetGameInstance.players[0].unk1[12]
+    CMP dword ptr [EAX + 0x44],0x0      ; 00541603 | g_CNetGameInstance.players[0].ready_flag
     JZ 0x00541769                       ; 00541607
         ;   XREF to: 00541769 (CONDITIONAL_JUMP)  ; LAB_00541769
     MOV ESI,0x63da0f                    ; 0054160d | = "Ready"

@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 181,
-    "complexity_score": 100,
+    "complexity_score": 99,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 10,
-    "pseudocode_lines": 85,
+    "pseudocode_lines": 84,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 266
+    "total_lines": 265
   },
   "cross_references": [
     {
@@ -261,9 +261,9 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 63,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pCVar2 + (uint)bVar8 * -8 + 0x40);",
+      "line": 62,
+      "match": "(int *)((int)",
+      "text": "local_53[iVar4 * 10 + (uint)bVar8 * -2 + 1] = *(int *)((int)pCVar2 + (uint)bVar8 * -8 + 0x40);",
       "type": "pointer_cast"
     }
   ]

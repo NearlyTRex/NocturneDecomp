@@ -12,7 +12,8 @@ void __cdecl core_platfrm_cpp_CPlatform_process_FUN_0054cc30(CPlatform *this_ptr
 
 {
   char cVar1;
-  int iVar2;
+  CCharacter *this_ptr_00;
+  float fVar2;
   char *name;
   int iVar3;
   uint uVar4;
@@ -28,8 +29,6 @@ void __cdecl core_platfrm_cpp_CPlatform_process_FUN_0054cc30(CPlatform *this_ptr
   CMatrix3x3f *pCVar12;
   bool bVar13;
   byte bVar14;
-  double dVar15;
-  float fVar16;
   char local_324 [256];
   CMatrix3x4f local_224;
   CMatrix3x3f CStack_1f4;
@@ -78,7 +77,8 @@ void __cdecl core_platfrm_cpp_CPlatform_process_FUN_0054cc30(CPlatform *this_ptr
                       (g_CEventListPtr,this_ptr->to_end_event);
     bVar13 = iVar3 != 0;
     if (bVar13) {
-      core_platfrm_cpp_CPlatform_FUN_0054d690(this_ptr);
+      core_platfrm_cpp_CPlatform_startMovement_FUN_0054d690
+                (this_ptr,1.0,1.0 / this_ptr->travel_time_to_end);
     }
     this_ptr->param = 0.0;
     break;
@@ -87,7 +87,8 @@ void __cdecl core_platfrm_cpp_CPlatform_process_FUN_0054cc30(CPlatform *this_ptr
                       (g_CEventListPtr,this_ptr->to_start_event);
     bVar13 = iVar3 != 0;
     if (bVar13) {
-      core_platfrm_cpp_CPlatform_FUN_0054d690(this_ptr);
+      core_platfrm_cpp_CPlatform_startMovement_FUN_0054d690
+                (this_ptr,0.0,1.0 / this_ptr->travel_time_to_start);
     }
     this_ptr->param = 1.0;
     break;
@@ -98,11 +99,13 @@ void __cdecl core_platfrm_cpp_CPlatform_process_FUN_0054cc30(CPlatform *this_ptr
       iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                         (g_CEventListPtr,this_ptr->to_start_event);
       if (iVar3 != 0) {
-        core_platfrm_cpp_CPlatform_FUN_0054d690(this_ptr);
+        core_platfrm_cpp_CPlatform_startMovement_FUN_0054d690
+                  (this_ptr,0.0,1.0 / this_ptr->travel_time_to_start);
       }
     }
     else {
-      core_platfrm_cpp_CPlatform_FUN_0054d690(this_ptr);
+      core_platfrm_cpp_CPlatform_startMovement_FUN_0054d690
+                (this_ptr,1.0,1.0 / this_ptr->travel_time_to_end);
     }
     break;
   case PLATFORM_STATE_TYPE_WTF|PLATFORM_STATE_TYPE_AT_END:
@@ -115,9 +118,9 @@ void __cdecl core_platfrm_cpp_CPlatform_process_FUN_0054cc30(CPlatform *this_ptr
       }
       break;
     }
-    fVar16 = delta_time * this_ptr->current_movement_rate + this_ptr->param;
-    this_ptr->param = fVar16;
-    if (fVar16 <= this_ptr->goal_param) {
+    fVar2 = delta_time * this_ptr->current_movement_rate + this_ptr->param;
+    this_ptr->param = fVar2;
+    if (fVar2 <= this_ptr->goal_param) {
 LAB_0054d0a2:
       local_2c = 1;
       break;
@@ -142,9 +145,9 @@ LAB_0054d0a2:
       }
       break;
     }
-    fVar16 = this_ptr->param - delta_time * this_ptr->current_movement_rate;
-    this_ptr->param = fVar16;
-    if (this_ptr->goal_param <= fVar16) goto LAB_0054d0a2;
+    fVar2 = this_ptr->param - delta_time * this_ptr->current_movement_rate;
+    this_ptr->param = fVar2;
+    if (this_ptr->goal_param <= fVar2) goto LAB_0054d0a2;
     this_ptr->param = this_ptr->goal_param;
     if (this_ptr->param <= 0.0) {
       this_ptr->state = PLATFORM_STATE_TYPE_AT_START;
@@ -179,7 +182,7 @@ joined_r0x0054cd19:
           iVar3 = core_set_cpp_CDemonSet_findCameraByName_FUN_0056b790(g_CDemonSetPtr,name);
           if ((iVar3 != -1) && (iVar3 != g_CDemonSetPtr->selected_camera_index)) {
             core_setdir_cpp_CDemonSet_setPendingCamera_FUN_00575b00(g_CDemonSetPtr,iVar3,999.0);
-            this_ptr->unk3 = 0;
+            this_ptr->rendered_in_background = 0;
             goto LAB_0054cd70;
           }
           pcVar6 = pcVar6 + 1;
@@ -196,7 +199,7 @@ LAB_0054cd70:
       iVar3 = core_set_cpp_CDemonSet_findCameraByName_FUN_0056b790(g_CDemonSetPtr,name);
       if ((iVar3 != -1) && (iVar3 != g_CDemonSetPtr->selected_camera_index)) {
         core_setdir_cpp_CDemonSet_setPendingCamera_FUN_00575b00(g_CDemonSetPtr,iVar3,999.0);
-        this_ptr->unk3 = 0;
+        this_ptr->rendered_in_background = 0;
       }
     }
     if (local_30 != 0) {
@@ -222,7 +225,7 @@ LAB_0054cd70:
   local_28 = (this_ptr->base).location.position.y;
   core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
             (&local_224,&position->position,&euler_angles->vec);
-  core_platfrm_cpp_CPlatform_FUN_0054cab0(this_ptr);
+  core_platfrm_cpp_CPlatform_evaluatePosition_FUN_0054cab0(this_ptr);
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
             (&local_104,&position->position,&euler_angles->vec);
   iVar3 = 0;
@@ -275,26 +278,28 @@ LAB_0054cd70:
           }
           iStack_24 = iStack_24 + 4;
         }
-        core_platfrm_cpp_CPlatform_FUN_0054e320(this_ptr);
+        core_platfrm_cpp_CPlatform_updateAttachedActors_FUN_0054e320(this_ptr);
         return;
       }
-      iVar2 = *(int *)((int)g_CDemonSetPtr->characters + iVar3);
-      iVar5 = (**(code **)(*(int *)(iVar2 + 0x154) + 0x120))(iVar2);
-      if ((iVar5 < 1) && (iVar5 = (**(code **)(*(int *)(iVar2 + 0x154) + 0x68))(iVar2), iVar5 == 0))
-      break;
+      this_ptr_00 = *(CCharacter **)((int)g_CDemonSetPtr->characters + iVar3);
+      iVar5 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00);
+      if ((iVar5 < 1) &&
+         (iVar5 = (*((this_ptr_00->base).vtable._ub)->shouldIgnoreForTargeting)(&this_ptr_00->base),
+         iVar5 == 0)) break;
 LAB_0054d4f3:
       iVar10 = iVar10 + 1;
       iVar3 = iVar3 + 4;
     }
     if (this_ptr->push_flag == 0) {
       if (((this_ptr->base).location.position.y < local_28) &&
-         (iVar5 = core_platfrm_cpp_CPlatform_FUN_0054df80(this_ptr), iVar5 != 0)) {
-        (**(code **)(*(int *)(iVar2 + 0x154) + 0xf0))(iVar2,8,0,0xbf800000);
+         (iVar5 = core_platfrm_cpp_CPlatform_isActorOnPlatform_FUN_0054df80
+                            (this_ptr,&this_ptr_00->base), iVar5 != 0)) {
+        (*(((this_ptr_00->base).vtable._uc)->_uc).kill)(this_ptr_00,8,(CVector3f *)0x0,-1.0);
       }
       goto LAB_0054d4f3;
     }
     core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-              (&this_ptr->base,&CStack_4c,(CVector3f *)(iVar2 + 0x20));
+              (&this_ptr->base,&CStack_4c,&(this_ptr_00->base).location.position);
     if ((local_ac.max.y < CStack_4c.y) || (CStack_4c.y < local_ac.min.y + (float)-20))
     goto LAB_0054d4f3;
     core_box_cpp_CBoundingBox3D_clampPoint_FUN_00421550(&local_ac,&CStack_70,&CStack_4c);
@@ -306,15 +311,13 @@ LAB_0054d4f3:
     fStack_3c = 0.0;
     core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&SStack_d4);
     SStack_d4.ray_type = 0;
-    iVar5 = (**(code **)(*(int *)(iVar2 + 0x154) + 0x34))(iVar2,&SStack_d4);
+    iVar5 = (*((this_ptr_00->base).vtable._ub)->hasCollision)(&this_ptr_00->base,&SStack_d4);
     if ((((iVar5 != 2) || (local_ac.max.y < CStack_4c.y + SStack_d4.cylinder_bottom_y)) ||
         (CStack_4c.y + SStack_d4.cylinder_top_y < local_ac.min.y)) ||
-       (fVar16 = fStack_40 * fStack_40 + fStack_38 * fStack_38,
-       SStack_d4.cylinder_radius * SStack_d4.cylinder_radius < fVar16)) goto LAB_0054d4f3;
-    fVar16 = SQRT(fVar16);
-    dVar15 = (double)fVar16;
-    if (dVar15 <= 0.0) goto LAB_0054d4f3;
-    fStack_1c = (SStack_d4.cylinder_radius + (float)0.050000000000000003) / fVar16;
+       ((fVar2 = fStack_40 * fStack_40 + fStack_38 * fStack_38,
+        SStack_d4.cylinder_radius * SStack_d4.cylinder_radius < fVar2 ||
+        (fVar2 = SQRT(fVar2), fVar2 <= 0.0)))) goto LAB_0054d4f3;
+    fStack_1c = (SStack_d4.cylinder_radius + (float)0.050000000000000003) / fVar2;
     fStack_40 = fStack_40 * fStack_1c;
     fStack_3c = fStack_3c * fStack_1c;
     fStack_38 = fStack_38 * fStack_1c;
@@ -323,8 +326,9 @@ LAB_0054d4f3:
     CStack_58.z = CStack_70.z + fStack_38;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(&this_ptr->base,&CStack_64,&CStack_58)
     ;
-    CStack_64.y = *(float *)(iVar2 + 0x24);
-    (**(code **)(*(int *)(iVar2 + 0x154) + 0x60))(iVar2,&CStack_64,iVar2 + 0x30,dVar15,fVar16);
+    CStack_64.y = (this_ptr_00->base).location.position.y;
+    (*((this_ptr_00->base).vtable._ub)->setPositionAndOrientation)
+              (&this_ptr_00->base,&CStack_64,(CVector3f *)&(this_ptr_00->base).orient);
     iVar10 = iVar10 + 1;
     iVar3 = iVar3 + 4;
   } while( true );

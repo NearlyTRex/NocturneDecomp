@@ -27,9 +27,9 @@ int __cdecl core_zombie_cpp_CZombie_canBeAttracted_FUN_005fc120(CZombie *this_pt
     return 0;
   }
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-            (this_ptr_00,&local_34,*(int *)(this_ptr->unk4 + 8));
+            (this_ptr_00,&local_34,this_ptr->bone_l_hand);
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-            (this_ptr_00,&local_4c,*(int *)(this_ptr->unk4 + 0xc));
+            (this_ptr_00,&local_4c,this_ptr->bone_r_hand);
   local_1c = local_34.x + local_4c.x;
   local_18 = local_34.y + local_4c.y;
   local_28.x = local_1c * 0.5f;

@@ -172,7 +172,7 @@ section .text
     LEA EAX,[ESP + 0x118]               ; 005d787a
     PUSH EAX                            ; 005d7881
     CALL shape_superopt.cpp_CObj_ctor_FUN_005d2230 ; 005d7882
-        ;   XREF to: 005d2230 (UNCONDITIONAL_CALL)  ; CObj * shape_superopt.cpp_CObj_ctor_FUN_005d2230(CObj * this_ptr)
+        ;   XREF to: 005d2230 (UNCONDITIONAL_CALL)  ; CObj * shape_superopt.cpp_CObj_ctor_FUN_005d2230(CObj * this_ptr, int poly_count, int vertex_count)
     ADD ESP,0xc                         ; 005d7887
     MOV ESI,dword ptr [0x01626408]      ; 005d788a | g_VertexCount
     PUSH ESI                            ; 005d7890

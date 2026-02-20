@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SSocketContext * __cdecl support_trisock_cpp_bindSocketWrapper_FUN_005e1af0(SSocketContext *socket_ctx)
+; SOCKET * __cdecl support_trisock_cpp_bindSocketWrapper_FUN_005e1af0(SOCKET *socket)
 ;
 ; Parameters:
-; SSocketContext * Stack[0x4]:4   socket_ctx
+; SOCKET *         Stack[0x4]:4   socket
 ;
 ; XREF[1]:
 ;   core_netgame.cpp_CNetGame_dtor_FUN_0053f760 at 0053f76c
@@ -21,7 +21,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 005e1af1
     PUSH EBX                            ; 005e1af5
     CALL support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20 ; 005e1af6
-        ;   XREF to: 005e1d20 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20(SSocketContext * socket_ctx)
+        ;   XREF to: 005e1d20 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20(SOCKET * socket)
     ADD ESP,0x4                         ; 005e1afb
     MOV EAX,EBX                         ; 005e1afe
     POP EBX                             ; 005e1b00

@@ -41,17 +41,17 @@
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   undefined4 g_RenderVertexBuffer[0].u
 ;   undefined4 g_RenderVertexBuffer[0].v
-;   undefined4 g_RenderVertexBuffer[0].light
-;   undefined4 g_RenderVertexBuffer[0].color
-;   undefined4 g_RenderVertexBuffer[0].fog
+;   undefined4 g_RenderVertexBuffer[0].z
+;   undefined4 g_RenderVertexBuffer[0].r
+;   undefined4 g_RenderVertexBuffer[0].g
 ;   undefined4 g_RenderVertexBuffer[1].u
 ;   undefined4 g_RenderVertexBuffer[1].v
-;   undefined4 g_RenderVertexBuffer[1].light
-;   undefined4 g_RenderVertexBuffer[1].color
-;   undefined4 g_RenderVertexBuffer[1].fog
+;   undefined4 g_RenderVertexBuffer[1].z
+;   undefined4 g_RenderVertexBuffer[1].r
+;   undefined4 g_RenderVertexBuffer[1].g
 ;   undefined4 g_RenderVertexBuffer[2].u
 ;   undefined4 g_RenderVertexBuffer[2].v
-;   undefined4 g_RenderVertexBuffer[2].light
+;   undefined4 g_RenderVertexBuffer[2].z
 ;   ... and 9 more
 ;
 ; Called Functions:
@@ -256,18 +256,18 @@ section .text
     MOV dword ptr [0x006880c0],ECX      ; 004c60e2 | g_RenderVertexBuffer[3].v
     MOV EBX,0xffff                      ; 004c60e8
     PUSH EDX                            ; 004c60ed | g_CDemonRendererInstance
-    MOV dword ptr [0x00688034],EBX      ; 004c60ee | g_RenderVertexBuffer[0].light
-    MOV dword ptr [0x00688038],EBX      ; 004c60f4 | g_RenderVertexBuffer[0].color
-    MOV dword ptr [0x0068803c],EBX      ; 004c60fa | g_RenderVertexBuffer[0].fog
-    MOV dword ptr [0x00688064],EBX      ; 004c6100 | g_RenderVertexBuffer[1].light
-    MOV dword ptr [0x00688068],EBX      ; 004c6106 | g_RenderVertexBuffer[1].color
-    MOV dword ptr [0x0068806c],EBX      ; 004c610c | g_RenderVertexBuffer[1].fog
-    MOV dword ptr [0x00688094],EBX      ; 004c6112 | g_RenderVertexBuffer[2].light
-    MOV dword ptr [0x00688098],EBX      ; 004c6118 | g_RenderVertexBuffer[2].color
-    MOV dword ptr [0x0068809c],EBX      ; 004c611e | g_RenderVertexBuffer[2].fog
-    MOV dword ptr [0x006880c4],EBX      ; 004c6124 | g_RenderVertexBuffer[3].light
-    MOV dword ptr [0x006880c8],EBX      ; 004c612a | g_RenderVertexBuffer[3].color
-    MOV dword ptr [0x006880cc],EBX      ; 004c6130 | g_RenderVertexBuffer[3].fog
+    MOV dword ptr [0x00688034],EBX      ; 004c60ee | g_RenderVertexBuffer[0].z
+    MOV dword ptr [0x00688038],EBX      ; 004c60f4 | g_RenderVertexBuffer[0].r
+    MOV dword ptr [0x0068803c],EBX      ; 004c60fa | g_RenderVertexBuffer[0].g
+    MOV dword ptr [0x00688064],EBX      ; 004c6100 | g_RenderVertexBuffer[1].z
+    MOV dword ptr [0x00688068],EBX      ; 004c6106 | g_RenderVertexBuffer[1].r
+    MOV dword ptr [0x0068806c],EBX      ; 004c610c | g_RenderVertexBuffer[1].g
+    MOV dword ptr [0x00688094],EBX      ; 004c6112 | g_RenderVertexBuffer[2].z
+    MOV dword ptr [0x00688098],EBX      ; 004c6118 | g_RenderVertexBuffer[2].r
+    MOV dword ptr [0x0068809c],EBX      ; 004c611e | g_RenderVertexBuffer[2].g
+    MOV dword ptr [0x006880c4],EBX      ; 004c6124 | g_RenderVertexBuffer[3].z
+    MOV dword ptr [0x006880c8],EBX      ; 004c612a | g_RenderVertexBuffer[3].r
+    MOV dword ptr [0x006880cc],EBX      ; 004c6130 | g_RenderVertexBuffer[3].g
     CALL engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0 ; 004c6136
         ;   XREF to: 0048bcf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)
     ADD ESP,0x8                         ; 004c613b

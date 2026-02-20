@@ -128,13 +128,10 @@ void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_005c4370(CStranger *t
   if (fStack_30 < fStack_1c) {
     fStack_1c = fStack_30;
   }
-  this_ptr->unk3[0x18] = '\0';
-  this_ptr->unk3[0x19] = '\0';
-  this_ptr->unk3[0x1a] = -0x80;
-  this_ptr->unk3[0x1b] = '?';
-  *(float *)(this_ptr->unk3 + 0x10) = fStack_1c;
-  *(float *)(this_ptr->unk3 + 0xc) = fStack_20;
-  *(float *)(this_ptr->unk3 + 8) = fStack_1c;
-  *(float *)(this_ptr->unk3 + 4) = fStack_20;
+  (this_ptr->left_arm_aim).kickback_factor = 1.0;
+  (this_ptr->left_arm_aim).target_yaw = fStack_1c;
+  (this_ptr->left_arm_aim).target_pitch = fStack_20;
+  (this_ptr->left_arm_aim).aim_yaw = fStack_1c;
+  (this_ptr->left_arm_aim).aim_pitch = fStack_20;
   return;
 }

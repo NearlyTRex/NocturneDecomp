@@ -26,9 +26,9 @@
 ; XREF[15]:
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90 at 0041c146
 ;   core_charactr.cpp_CCharacter_applyLookAt_FUN_0042dcd0 at 0042dd79
-;   core_course.cpp_CCourse_FUN_004427a0 at 004428e5
+;   core_course.cpp_CCourse_interpolate_FUN_004427a0 at 004428e5
 ;   core_gabriela.cpp_CGabriella_FUN_004d4d80 at 004d54c1
-;   core_platfrm.cpp_CPlatform_FUN_0054cab0 at 0054cb94
+;   core_platfrm.cpp_CPlatform_evaluatePosition_FUN_0054cab0 at 0054cb94
 ;   core_scat.cpp_CScat_FUN_005584a0 at 00558677
 ;   core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750 at 0059f802
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50 at 0059f085

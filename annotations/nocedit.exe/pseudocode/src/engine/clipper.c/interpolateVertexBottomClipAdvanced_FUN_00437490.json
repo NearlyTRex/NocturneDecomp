@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 134,
-    "complexity_score": 166,
+    "complexity_score": 165,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 56,
+    "pseudocode_lines": 55,
     "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few"
     ],
-    "total_lines": 190
+    "total_lines": 189
   },
   "cross_references": [
     {
@@ -208,21 +208,21 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 41,
       "match": "CARRY4",
-      "text": "output->light = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) + v1->light;",
+      "text": "output->z = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) + v1->z;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 44,
       "match": "CARRY4",
-      "text": "output->color = v1->color + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);",
+      "text": "output->r = v1->r + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 47,
       "match": "CARRY4",
-      "text": "output->fog = v1->fog + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);",
+      "text": "output->g = v1->g + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -241,9 +241,9 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 57,
+      "line": 56,
       "match": "CARRY4",
-      "text": "(float)((int)v1->w_recip + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4));",
+      "text": "output->fog = v1->fog + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);",
       "type": "decompiler_intrinsic"
     },
     {

@@ -112,7 +112,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
             }
             fStack_100 = ((float)20 / (SQRT(fVar6) + (float)20)) *
                          fStack_100;
-            if (pCVar4 == (CCharacter *)this_ptr->unk) {
+            if (pCVar4 == (CCharacter *)this_ptr->look_at_candidate) {
               fStack_100 = fStack_100 * (float)1.1000000000000001;
             }
             if (-1.0f <= fStack_100) {
@@ -137,7 +137,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
       this_ptr->look_at_search_timer = fStack_14;
     }
     else {
-      pCStack_20 = (CCharacter *)this_ptr->unk;
+      pCStack_20 = (CCharacter *)this_ptr->look_at_candidate;
       this_ptr->look_at_search_timer = this_ptr->look_at_search_timer - delta_time;
     }
   }
@@ -145,7 +145,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
     pCStack_20 = pCVar4;
     this_ptr->look_at_search_timer = 0.0;
   }
-  this_ptr->unk = &pCStack_20->base;
+  this_ptr->look_at_candidate = &pCStack_20->base;
   if (pCStack_20 != (CCharacter *)0x0) {
     CStack_c8.x = 0.0;
     CStack_c8.z = 0.0;
@@ -154,7 +154,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
     ;
     pCVar4 = (CCharacter *)
              core_actor_cpp_castToClassHash_FUN_0040c790
-                       (this_ptr->unk,g_CCharacterClassInfo.name_hash);
+                       (this_ptr->look_at_candidate,g_CCharacterClassInfo.name_hash);
     if (pCVar4 == (CCharacter *)0x0) {
       g_CurrentFilename = "..\\core\\charactr.cpp";
       g_CurrentLineNumber = 0xda0;
@@ -194,14 +194,14 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
       CStack_d4.z = pCVar5->z;
     }
     if ((float)1.3962634015555599 < ABS(CStack_d4.y)) {
-      this_ptr->unk = (CDemonActor *)0x0;
+      this_ptr->look_at_candidate = (CDemonActor *)0x0;
     }
     if ((float)0.78539816337500001 < ABS(CStack_d4.x)) {
-      this_ptr->unk = (CDemonActor *)0x0;
+      this_ptr->look_at_candidate = (CDemonActor *)0x0;
       goto LAB_0042d603;
     }
   }
-  if (this_ptr->unk != (CDemonActor *)0x0) {
+  if (this_ptr->look_at_candidate != (CDemonActor *)0x0) {
     fVar6 = delta_time / 0.5f + this_ptr->look_at_weight;
     this_ptr->look_at_weight = fVar6;
     if (1.0 < fVar6) {

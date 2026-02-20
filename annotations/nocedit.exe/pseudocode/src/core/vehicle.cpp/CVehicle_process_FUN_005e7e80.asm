@@ -51,7 +51,7 @@
 ;   core_actor.cpp_randomChance_FUN_0040cd10
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
-;   core_course.cpp_CCourse_FUN_00442710
+;   core_course.cpp_CCourse_evaluate_FUN_00442710
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_00524700
@@ -90,8 +90,8 @@ section .text
     FSTP float ptr [ESP + 0xe8]         ; 005e7ec8
     PUSH dword ptr [ESP + 0xe8]         ; 005e7ecf
     PUSH EAX                            ; 005e7ed6
-    CALL core_course.cpp_CCourse_FUN_00442710 ; 005e7ed7
-        ;   XREF to: 00442710 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_FUN_00442710(CCourse * this_ptr)
+    CALL core_course.cpp_CCourse_evaluate_FUN_00442710 ; 005e7ed7
+        ;   XREF to: 00442710 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_evaluate_FUN_00442710(CCourse * this_ptr, float time, CVector3f * out_pos, CVector3f * out_euler)
     ADD ESP,0x10                        ; 005e7edc
     FLD float ptr [EBX + 0x102c]        ; 005e7edf
     FADD float ptr [EBP + 0x18]         ; 005e7ee5
@@ -120,8 +120,8 @@ section .text
     FSTP float ptr [ESP + 0xe8]         ; 005e7f39
     PUSH dword ptr [ESP + 0xe8]         ; 005e7f40
     PUSH EAX                            ; 005e7f47
-    CALL core_course.cpp_CCourse_FUN_00442710 ; 005e7f48
-        ;   XREF to: 00442710 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_FUN_00442710(CCourse * this_ptr)
+    CALL core_course.cpp_CCourse_evaluate_FUN_00442710 ; 005e7f48
+        ;   XREF to: 00442710 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_evaluate_FUN_00442710(CCourse * this_ptr, float time, CVector3f * out_pos, CVector3f * out_euler)
     FLD float ptr [ESI]                 ; 005e7f4d
     ADD ESP,0x10                        ; 005e7f4f
     XOR EDX,EDX                         ; 005e7f52

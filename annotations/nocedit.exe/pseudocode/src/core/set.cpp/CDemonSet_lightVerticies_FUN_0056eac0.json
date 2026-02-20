@@ -4,19 +4,19 @@
       {
         "category": "other",
         "column": 30,
-        "line": 388,
+        "line": 387,
         "message": "cannot cast from type 'float' to pointer type 'CDemonSet *'"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 655,
+        "line": 650,
         "message": "C-style cast from 'CDemonSet *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 672,
+        "line": 667,
         "message": "C-style cast from 'CDemonSet *' to 'float' is not allowed"
       }
     ],
@@ -25,18 +25,18 @@
   },
   "complexity": {
     "assembly_lines": 1168,
-    "complexity_score": 1048,
+    "complexity_score": 1043,
     "cross_reference_count": 8,
     "function_call_count": 5,
     "global_count": 64,
-    "pseudocode_lines": 663,
+    "pseudocode_lines": 658,
     "suspect_count": 37,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "pointer_cast"
     ],
-    "total_lines": 1831
+    "total_lines": 1826
   },
   "cross_references": [
     {
@@ -203,25 +203,25 @@
     },
     {
       "addr": "00688034",
-      "name": "g_RenderVertexBuffer[0].light",
+      "name": "g_RenderVertexBuffer[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00688038",
-      "name": "g_RenderVertexBuffer[0].color",
+      "name": "g_RenderVertexBuffer[0].r",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0068803c",
-      "name": "g_RenderVertexBuffer[0].fog",
+      "name": "g_RenderVertexBuffer[0].g",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00688040",
-      "name": "g_RenderVertexBuffer[0].w_recip",
+      "name": "g_RenderVertexBuffer[0].fog",
       "type": "undefined4",
       "value": null
     },
@@ -245,25 +245,25 @@
     },
     {
       "addr": "00688064",
-      "name": "g_RenderVertexBuffer[1].light",
+      "name": "g_RenderVertexBuffer[1].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00688068",
-      "name": "g_RenderVertexBuffer[1].color",
+      "name": "g_RenderVertexBuffer[1].r",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0068806c",
-      "name": "g_RenderVertexBuffer[1].fog",
+      "name": "g_RenderVertexBuffer[1].g",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00688070",
-      "name": "g_RenderVertexBuffer[1].w_recip",
+      "name": "g_RenderVertexBuffer[1].fog",
       "type": "undefined4",
       "value": null
     },
@@ -1124,47 +1124,54 @@
       "description": "Complex pointer cast",
       "line": 132,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)&g_RenderVertexBuffer[0].w_recip + iVar15) =",
+      "text": "*(float *)((int)&g_RenderVertexBuffer[0].fog + iVar15) = g_PerspectiveReciprocal;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 158,
+      "line": 157,
       "match": "(uint *)((int)",
       "text": "puVar2 = (uint *)((int)&g_TransformedVertexArray[0].x + local_6c);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 336,
+      "line": 335,
       "match": "ROUND",
       "text": "local_100.x = (int)ROUND(pCVar18->x);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 337,
+      "line": 336,
       "match": "ROUND",
       "text": "local_100.y = (int)ROUND(pCVar18->y);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 338,
+      "line": 337,
       "match": "ROUND",
       "text": "local_100.z = (int)ROUND(pCVar18->z);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 345,
+      "line": 344,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)&g_RenderVertexBuffer[0].w_recip + local_64) =",
+      "text": "*(float *)((int)&g_RenderVertexBuffer[0].fog + local_64) =",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 360,
+      "line": 359,
+      "match": "ABS",
+      "text": "if (((1.0 <= ABS(pCVar18->x)) || (1.0 <= ABS(pCVar18->y))) ||",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 359,
       "match": "ABS",
       "text": "if (((1.0 <= ABS(pCVar18->x)) || (1.0 <= ABS(pCVar18->y))) ||",
       "type": "decompiler_intrinsic"
@@ -1172,183 +1179,176 @@
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 360,
-      "match": "ABS",
-      "text": "if (((1.0 <= ABS(pCVar18->x)) || (1.0 <= ABS(pCVar18->y))) ||",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 361,
       "match": "ABS",
       "text": "(1.0 <= ABS(pCVar18->z))) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 369,
+      "line": 368,
       "match": "ROUND",
       "text": "local_f4.x = (int)ROUND(pCVar18->x);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 370,
+      "line": 369,
       "match": "ROUND",
       "text": "local_f4.y = (int)ROUND(pCVar18->y);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 371,
+      "line": 370,
       "match": "ROUND",
       "text": "local_f4.z = (int)ROUND(pCVar18->z);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 384,
+      "line": 383,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)&g_RenderVertexBuffer[0].w_recip + local_58) =",
+      "text": "*(float *)((int)&g_RenderVertexBuffer[0].fog + local_58) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 412,
+      "line": 411,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_TransformedVertexArray[0].x + local_5c) = local_130;",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 417,
+      "line": 416,
       "match": "extraout_EAX_00",
       "text": "pCVar8 = extraout_EAX_00;",
       "type": "extra_output"
     },
     {
       "description": "Complex pointer cast",
-      "line": 526,
+      "line": 525,
       "match": "(CDemonSet *)((int)",
       "text": "pCVar8 = (CDemonSet *)((int)&pCVar8->camera_count + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 545,
+      "line": 544,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)&g_RenderVertexBuffer[0].w_recip + iVar13) = g_PerspectiveReciprocal",
+      "text": "*(float *)((int)&g_RenderVertexBuffer[0].fog + iVar13) = g_PerspectiveReciprocal;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 571,
+      "line": 569,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&local_178 + (uint)bVar19 * -8 + 4) = aiStack_150[(uint)bVar19 * -2 + 3];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 572,
+      "line": 570,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&local_178 + (uint)bVar19 * -8 + (uint)bVar19 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 578,
+      "line": 576,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)&g_RenderVertexBuffer[0].w_recip + iVar15) = g_PerspectiveReciprocal;",
+      "text": "*(float *)((int)&g_RenderVertexBuffer[0].fog + iVar15) = g_PerspectiveReciprocal;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 587,
+      "line": 585,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)&g_RenderVertexBuffer[0].light + (int)fVar10) =",
+      "text": "*(int *)((int)&g_RenderVertexBuffer[0].z + (int)fVar10) = this_ptr->mirror_cached_light;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 589,
+      "line": 586,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)&g_RenderVertexBuffer[0].color + (int)fVar10) =",
+      "text": "*(int *)((int)&g_RenderVertexBuffer[0].r + (int)fVar10) = this_ptr->mirror_cached_color;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 592,
+      "line": 588,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)&g_RenderVertexBuffer[0].fog + (int)fVar10) = this_ptr->mirror_cached_fog;",
+      "text": "*(int *)((int)&g_RenderVertexBuffer[0].g + (int)fVar10) = this_ptr->mirror_cached_fog;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 606,
+      "line": 602,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].w_recip + iVar13) = 0;",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].fog + iVar13) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 611,
+      "line": 607,
       "match": "extraout_EAX",
       "text": "pCVar8 = extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Complex pointer cast",
-      "line": 620,
+      "line": 616,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)&g_RenderVertexBuffer[0].light + (int)fVar10) =",
+      "text": "*(int *)((int)&g_RenderVertexBuffer[0].z + (int)fVar10) = this_ptr->light_scale_factor",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 618,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&g_RenderVertexBuffer[0].r + (int)fVar10) = this_ptr->color_scale_factor",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 621,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&g_RenderVertexBuffer[0].g + (int)fVar10) = this_ptr->fog_scale_factor;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 622,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)&g_RenderVertexBuffer[0].color + (int)fVar10) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 625,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)&g_RenderVertexBuffer[0].fog + (int)fVar10) = this_ptr->fog_scale_factor",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 627,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].w_recip + (int)fVar10) = 0;",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].fog + (int)fVar10) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 638,
+      "line": 633,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].light + (int)fVar10) = 0xffff;",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].z + (int)fVar10) = 0xffff;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 639,
+      "line": 634,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].color + (int)fVar10) = 0xffff;",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].r + (int)fVar10) = 0xffff;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 640,
+      "line": 635,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].fog + (int)fVar10) = 0xffff;",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].g + (int)fVar10) = 0xffff;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 641,
+      "line": 636,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].w_recip + (int)fVar10) = 0;",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].fog + (int)fVar10) = 0;",
       "type": "pointer_cast"
     }
   ]

@@ -336,7 +336,7 @@ section .text
     PUSH ECX                            ; 005567d7
     PUSH EAX                            ; 005567d8
     CALL shape_quantize.cpp_CBitmap_ctor_FUN_00556a00 ; 005567d9
-        ;   XREF to: 00556a00 (UNCONDITIONAL_CALL)  ; CBitmap * shape_quantize.cpp_CBitmap_ctor_FUN_00556a00(CBitmap * this_ptr)
+        ;   XREF to: 00556a00 (UNCONDITIONAL_CALL)  ; CBitmap * shape_quantize.cpp_CBitmap_ctor_FUN_00556a00(CBitmap * this_ptr, int param_2, int param_3, int param_4)
     ADD ESP,0x10                        ; 005567de
     JMP 0x005564d0                      ; 005567e1
         ;   XREF to: 005564d0 (UNCONDITIONAL_JUMP)  ; LAB_005564d0

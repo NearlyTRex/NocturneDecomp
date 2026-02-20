@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 20,
-    "complexity_score": 101,
+    "complexity_score": 80,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
-    "pseudocode_lines": 56,
+    "pseudocode_lines": 35,
     "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 76
+    "total_lines": 55
   },
   "cross_references": [
     {
@@ -134,28 +134,28 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 17,
       "match": "ROUND",
-      "text": "*(int *)(pCVar1->unk1 + 4) = (int)ROUND(ROUND(fVar2 * (float)65536));",
+      "text": "pCVar1->burp_timer = (int)ROUND(ROUND(fVar2 * (float)65536));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 17,
       "match": "ROUND",
-      "text": "*(int *)(pCVar1->unk1 + 4) = (int)ROUND(ROUND(fVar2 * (float)65536));",
+      "text": "pCVar1->burp_timer = (int)ROUND(ROUND(fVar2 * (float)65536));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
+      "line": 24,
       "match": "ROUND",
-      "text": "*(int *)(pCVar1->unk1 + 8) = (int)ROUND(ROUND(fVar3 * fVar2));",
+      "text": "pCVar1->spasm_timer = (int)ROUND(ROUND(fVar3 * fVar2));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
+      "line": 24,
       "match": "ROUND",
-      "text": "*(int *)(pCVar1->unk1 + 8) = (int)ROUND(ROUND(fVar3 * fVar2));",
+      "text": "pCVar1->spasm_timer = (int)ROUND(ROUND(fVar3 * fVar2));",
       "type": "decompiler_intrinsic"
     }
   ],

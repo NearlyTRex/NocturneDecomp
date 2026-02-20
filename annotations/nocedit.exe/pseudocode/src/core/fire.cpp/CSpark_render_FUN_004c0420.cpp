@@ -102,23 +102,22 @@ void __cdecl core_fire_cpp_CSpark_render_FUN_004c0420(CSpark *this_ptr)
 LAB_004c04af:
   (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)(g_CurrentSceneCamera,this_ptr,0);
   lVar2 = (longlong)this_ptr->intensity_current * (longlong)(0xffff - (int)g_PerspectiveReciprocal);
-  g_RenderVertexBuffer[0].w_recip =
-       (float)((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
-  g_RenderVertexBuffer[0].light = 0xffff;
-  g_RenderVertexBuffer[0].color = 0xffff;
-  g_RenderVertexBuffer[0].fog = 0xffff;
-  g_RenderVertexBuffer[1].light = 0xffff;
-  g_RenderVertexBuffer[1].color = 0xffff;
-  g_RenderVertexBuffer[1].fog = 0xffff;
-  g_RenderVertexBuffer[2].light = 0xffff;
-  g_RenderVertexBuffer[2].color = 0xffff;
-  g_RenderVertexBuffer[2].fog = 0xffff;
-  g_RenderVertexBuffer[3].light = 0xffff;
-  g_RenderVertexBuffer[3].color = 0xffff;
-  g_RenderVertexBuffer[3].fog = 0xffff;
-  g_RenderVertexBuffer[1].w_recip = g_RenderVertexBuffer[0].w_recip;
-  g_RenderVertexBuffer[2].w_recip = g_RenderVertexBuffer[0].w_recip;
-  g_RenderVertexBuffer[3].w_recip = g_RenderVertexBuffer[0].w_recip;
+  g_RenderVertexBuffer[0].fog = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
+  g_RenderVertexBuffer[0].z = 0xffff;
+  g_RenderVertexBuffer[0].r = 0xffff;
+  g_RenderVertexBuffer[0].g = 0xffff;
+  g_RenderVertexBuffer[1].z = 0xffff;
+  g_RenderVertexBuffer[1].r = 0xffff;
+  g_RenderVertexBuffer[1].g = 0xffff;
+  g_RenderVertexBuffer[2].z = 0xffff;
+  g_RenderVertexBuffer[2].r = 0xffff;
+  g_RenderVertexBuffer[2].g = 0xffff;
+  g_RenderVertexBuffer[3].z = 0xffff;
+  g_RenderVertexBuffer[3].r = 0xffff;
+  g_RenderVertexBuffer[3].g = 0xffff;
+  g_RenderVertexBuffer[1].fog = g_RenderVertexBuffer[0].fog;
+  g_RenderVertexBuffer[2].fog = g_RenderVertexBuffer[0].fog;
+  g_RenderVertexBuffer[3].fog = g_RenderVertexBuffer[0].fog;
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
   engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
             (g_CDemonRendererPtr2,&g_BillboardPrimitive.base);
@@ -185,23 +184,22 @@ LAB_004c04af:
               (g_CurrentSceneCamera,this_ptr,0);
     lVar2 = (longlong)this_ptr->intensity_current *
             (longlong)(0xffff - (int)g_PerspectiveReciprocal);
-    g_RenderVertexBuffer[0].w_recip =
-         (float)((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
-    g_RenderVertexBuffer[0].light = 0xffff;
-    g_RenderVertexBuffer[0].color = 0xffff;
-    g_RenderVertexBuffer[0].fog = 0xffff;
-    g_RenderVertexBuffer[1].light = 0xffff;
-    g_RenderVertexBuffer[1].color = 0xffff;
-    g_RenderVertexBuffer[1].fog = 0xffff;
-    g_RenderVertexBuffer[2].light = 0xffff;
-    g_RenderVertexBuffer[2].color = 0xffff;
-    g_RenderVertexBuffer[2].fog = 0xffff;
-    g_RenderVertexBuffer[3].light = 0xffff;
-    g_RenderVertexBuffer[3].color = 0xffff;
-    g_RenderVertexBuffer[3].fog = 0xffff;
-    g_RenderVertexBuffer[1].w_recip = g_RenderVertexBuffer[0].w_recip;
-    g_RenderVertexBuffer[2].w_recip = g_RenderVertexBuffer[0].w_recip;
-    g_RenderVertexBuffer[3].w_recip = g_RenderVertexBuffer[0].w_recip;
+    g_RenderVertexBuffer[0].fog = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
+    g_RenderVertexBuffer[0].z = 0xffff;
+    g_RenderVertexBuffer[0].r = 0xffff;
+    g_RenderVertexBuffer[0].g = 0xffff;
+    g_RenderVertexBuffer[1].z = 0xffff;
+    g_RenderVertexBuffer[1].r = 0xffff;
+    g_RenderVertexBuffer[1].g = 0xffff;
+    g_RenderVertexBuffer[2].z = 0xffff;
+    g_RenderVertexBuffer[2].r = 0xffff;
+    g_RenderVertexBuffer[2].g = 0xffff;
+    g_RenderVertexBuffer[3].z = 0xffff;
+    g_RenderVertexBuffer[3].r = 0xffff;
+    g_RenderVertexBuffer[3].g = 0xffff;
+    g_RenderVertexBuffer[1].fog = g_RenderVertexBuffer[0].fog;
+    g_RenderVertexBuffer[2].fog = g_RenderVertexBuffer[0].fog;
+    g_RenderVertexBuffer[3].fog = g_RenderVertexBuffer[0].fog;
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
     engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
               (g_CDemonRendererPtr2,&g_BillboardPrimitive.base);

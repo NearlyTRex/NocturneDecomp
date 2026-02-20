@@ -9,6 +9,7 @@ struct CDemonActor;
 #include "types/classes/CDeformableModelInstance.h"
 #include "types/classes/CEnemy.h"
 #include "types/classes/CMorph.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: CVampireBoss
 // Ghidra size: 0xce920 (846112 bytes)
@@ -16,11 +17,11 @@ typedef struct CVampireBoss {
     CEnemy base; // 0x0
     CDeformableModelInstance model; // 0xbebc
     CCloth wing_cloth; // 0xe170
-    char padding1[12]; // 0x4dfd4
+    CVector3f unk1; // 0x4dfd4
     CCloth cape_cloth; // 0x4dfe0
-    char padding2[12]; // 0x8de44
+    CVector3f unk2; // 0x8de44
     CCloth skirt_cloth; // 0x8de50
-    char padding3[12]; // 0xcdcb4
+    CVector3f unk3; // 0xcdcb4
     int form; // 0xcdcc0
     CMorph morph; // 0xcdcc4
     float morph_t; // 0xce8f0

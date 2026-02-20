@@ -11,90 +11,69 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processPanel_FUN_0050a290(CMan
 {
   float fVar1;
   int iVar2;
-  char *pcVar3;
-  char *pcVar4;
+  SPanel *pSVar3;
+  SPanel *pSVar4;
   int in_stack_00000008;
   float in_stack_0000000c;
   
-  pcVar3 = this_ptr->unk2 + in_stack_00000008 * 100 + -4;
-  if (*(int *)pcVar3 != 0) {
-    fVar1 = (*(float *)(pcVar3 + 8) * in_stack_0000000c) / 2.0f + *(float *)(pcVar3 + 4);
-    *(float *)(pcVar3 + 4) = fVar1;
+  pSVar3 = this_ptr->panels + in_stack_00000008;
+  if (pSVar3->exists != 0) {
+    fVar1 = (pSVar3->anim_speed * in_stack_0000000c) / 2.0f + pSVar3->anim_progress;
+    pSVar3->anim_progress = fVar1;
     if (fVar1 < 0.0) {
-      pcVar3[8] = '\0';
-      pcVar3[9] = '\0';
-      pcVar3[10] = '\0';
-      pcVar3[0xb] = '\0';
-      pcVar3[4] = '\0';
-      pcVar3[5] = '\0';
-      pcVar3[6] = '\0';
-      pcVar3[7] = '\0';
+      pSVar3->anim_speed = 0.0;
+      pSVar3->anim_progress = 0.0;
     }
-    if (1.0 <= *(float *)(pcVar3 + 4)) {
+    if (1.0 <= pSVar3->anim_progress) {
       iVar2 = core_manpuz_cpp_CMansionPuzzleCircle_FUN_0050aee0(this_ptr);
-      pcVar4 = this_ptr->unk2 + iVar2 * 100 + -4;
-      if (*(int *)pcVar4 != 0) {
+      pSVar4 = this_ptr->panels + iVar2;
+      if (pSVar4->exists != 0) {
         g_CurrentFilename = "..\\core\\manpuz.cpp";
         g_CurrentLineNumber = 0x45d;
         core_main_c_displayErrorAndQuit_FUN_00506f10("CMansionPuzzleCircle::processPanel - Panel collision!");
       }
-      *(int *)pcVar4 = *(int *)pcVar3;
-      *(int *)(pcVar4 + 4) = *(int *)(pcVar3 + 4);
-      *(int *)(pcVar4 + 8) = *(int *)(pcVar3 + 8);
-      if (pcVar4 + 0xc != pcVar3 + 0xc) {
-        *(int *)(pcVar4 + 0xc) = *(int *)(pcVar3 + 0xc);
-        *(int *)(pcVar4 + 0x10) = *(int *)(pcVar3 + 0x10);
-        *(int *)(pcVar4 + 0x14) = *(int *)(pcVar3 + 0x14);
+      pSVar4->exists = pSVar3->exists;
+      pSVar4->anim_progress = pSVar3->anim_progress;
+      pSVar4->anim_speed = pSVar3->anim_speed;
+      if (&pSVar4->local_position != &pSVar3->local_position) {
+        (pSVar4->local_position).x = (pSVar3->local_position).x;
+        (pSVar4->local_position).y = (pSVar3->local_position).y;
+        (pSVar4->local_position).z = (pSVar3->local_position).z;
       }
-      if (pcVar4 + 0x18 != pcVar3 + 0x18) {
-        *(int *)(pcVar4 + 0x18) = *(int *)(pcVar3 + 0x18);
-        *(int *)(pcVar4 + 0x1c) = *(int *)(pcVar3 + 0x1c);
-        *(int *)(pcVar4 + 0x20) = *(int *)(pcVar3 + 0x20);
+      if (&pSVar4->rotation != &pSVar3->rotation) {
+        (pSVar4->rotation).x = (pSVar3->rotation).x;
+        (pSVar4->rotation).y = (pSVar3->rotation).y;
+        (pSVar4->rotation).z = (pSVar3->rotation).z;
       }
-      *(int *)(pcVar4 + 0x24) = *(int *)(pcVar3 + 0x24);
-      *(int *)(pcVar4 + 0x28) = *(int *)(pcVar3 + 0x28);
-      *(int *)(pcVar4 + 0x2c) = *(int *)(pcVar3 + 0x2c);
-      *(int *)(pcVar4 + 0x30) = *(int *)(pcVar3 + 0x30);
-      *(int *)(pcVar4 + 0x34) = *(int *)(pcVar3 + 0x34);
-      *(int *)(pcVar4 + 0x38) = *(int *)(pcVar3 + 0x38);
-      *(int *)(pcVar4 + 0x3c) = *(int *)(pcVar3 + 0x3c);
-      *(int *)(pcVar4 + 0x40) = *(int *)(pcVar3 + 0x40);
-      *(int *)(pcVar4 + 0x44) = *(int *)(pcVar3 + 0x44);
-      *(int *)(pcVar4 + 0x48) = *(int *)(pcVar3 + 0x48);
-      *(int *)(pcVar4 + 0x4c) = *(int *)(pcVar3 + 0x4c);
-      *(int *)(pcVar4 + 0x50) = *(int *)(pcVar3 + 0x50);
-      *(int *)(pcVar4 + 0x54) = *(int *)(pcVar3 + 0x54);
-      if (pcVar4 + 0x58 != pcVar3 + 0x58) {
-        *(int *)(pcVar4 + 0x58) = *(int *)(pcVar3 + 0x58);
-        *(int *)(pcVar4 + 0x5c) = *(int *)(pcVar3 + 0x5c);
-        *(int *)(pcVar4 + 0x60) = *(int *)(pcVar3 + 0x60);
+      (pSVar4->rotation_matrix).m[0].x = (pSVar3->rotation_matrix).m[0].x;
+      (pSVar4->rotation_matrix).m[0].y = (pSVar3->rotation_matrix).m[0].y;
+      (pSVar4->rotation_matrix).m[0].z = (pSVar3->rotation_matrix).m[0].z;
+      (pSVar4->rotation_matrix).m[1].x = (pSVar3->rotation_matrix).m[1].x;
+      (pSVar4->rotation_matrix).m[1].y = (pSVar3->rotation_matrix).m[1].y;
+      (pSVar4->rotation_matrix).m[1].z = (pSVar3->rotation_matrix).m[1].z;
+      (pSVar4->rotation_matrix).m[2].x = (pSVar3->rotation_matrix).m[2].x;
+      (pSVar4->rotation_matrix).m[2].y = (pSVar3->rotation_matrix).m[2].y;
+      (pSVar4->rotation_matrix).m[2].z = (pSVar3->rotation_matrix).m[2].z;
+      pSVar4->unk = pSVar3->unk;
+      (pSVar4->color).r = (pSVar3->color).r;
+      (pSVar4->color).g = (pSVar3->color).g;
+      (pSVar4->color).b = (pSVar3->color).b;
+      if (&pSVar4->world_position != &pSVar3->world_position) {
+        (pSVar4->world_position).x = (pSVar3->world_position).x;
+        (pSVar4->world_position).y = (pSVar3->world_position).y;
+        (pSVar4->world_position).z = (pSVar3->world_position).z;
       }
-      pcVar4[8] = '\0';
-      pcVar4[9] = '\0';
-      pcVar4[10] = '\0';
-      pcVar4[0xb] = '\0';
-      pcVar4[4] = '\0';
-      pcVar4[5] = '\0';
-      pcVar4[6] = '\0';
-      pcVar4[7] = '\0';
-      pcVar3[0] = '\0';
-      pcVar3[1] = '\0';
-      pcVar3[2] = '\0';
-      pcVar3[3] = '\0';
+      pSVar4->anim_speed = 0.0;
+      pSVar4->anim_progress = 0.0;
+      pSVar3->exists = 0;
       goto LAB_0050a40b;
     }
   }
-  if (*(int *)pcVar3 != 0) {
+  if (pSVar3->exists != 0) {
     return;
   }
 LAB_0050a40b:
-  pcVar3[8] = '\0';
-  pcVar3[9] = '\0';
-  pcVar3[10] = '\0';
-  pcVar3[0xb] = '\0';
-  pcVar3[4] = '\0';
-  pcVar3[5] = '\0';
-  pcVar3[6] = '\0';
-  pcVar3[7] = '\0';
+  pSVar3->anim_speed = 0.0;
+  pSVar3->anim_progress = 0.0;
   return;
 }

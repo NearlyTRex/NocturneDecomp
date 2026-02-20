@@ -1,0 +1,219 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "format_error",
+        "column": 23,
+        "line": 29,
+        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 126,
+    "complexity_score": 36,
+    "cross_reference_count": 1,
+    "function_call_count": 9,
+    "global_count": 9,
+    "pseudocode_lines": 36,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 162
+  },
+  "cross_references": [
+    {
+      "addr": "00443040",
+      "from_addr": "00443278",
+      "name": "core_course.cpp_CCourse_showEditorMenu_FUN_00443040",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00442d70",
+    "address_range": [
+      [
+        "00442d70",
+        "00442e9f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_course.cpp_CCourse_importCRS_FUN_00442d70",
+    "signature": "int __cdecl core_course_cpp_CCourse_importCRS_FUN_00442d70(CCourse *this_ptr,char *filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "00442ea0",
+      "is_variadic": false,
+      "name": "core_course.cpp_CCourse_importMatrices_FUN_00442ea0"
+    },
+    {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "005fe840",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fgetc_FUN_005fe840"
+    },
+    {
+      "addr": "005fe7c0",
+      "is_variadic": true,
+      "name": "crt_stdio.c_fscanf_FUN_005fe7c0"
+    },
+    {
+      "addr": "004a0dd0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0"
+    },
+    {
+      "addr": "004a0430",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430"
+    },
+    {
+      "addr": "0049e740",
+      "is_variadic": true,
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740"
+    },
+    {
+      "addr": "0050f9b0",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0"
+    },
+    {
+      "addr": "0050f7a0",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006190d7",
+      "name": "s_core_course_cpp_006190d7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006190ea",
+      "name": "s_rt_006190ea",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006190ed",
+      "name": "s_Can_t_open_s_006190ed",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006190fb",
+      "name": "s_d_006190fb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006190ff",
+      "name": "s_d_006190ff",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00619103",
+      "name": "s_Importing_s_00619103",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00619110",
+      "name": "s_core_course_cpp_00619110",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00678a60",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "02cf1cd4"
+    },
+    {
+      "addr": "02cf1cd4",
+      "name": "g_CEditorToolsInstance",
+      "type": "CEditorTools",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.212121212121212,
+    "instruction_count": 99,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "CALL": 12,
+      "CBRANCH": 7,
+      "COPY": 75,
+      "INT_ADD": 30,
+      "INT_AND": 50,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 46,
+      "INT_LESS": 4,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 14,
+      "INT_SLESS": 23,
+      "INT_SUB": 49,
+      "INT_XOR": 1,
+      "LOAD": 12,
+      "POPCOUNT": 23,
+      "RETURN": 2,
+      "STORE": 45
+    },
+    "pcode_op_count": 417
+  },
+  "stack_frame": {
+    "frame_size": 392,
+    "local_size": 384,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_17c",
+        "offset": -380,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCourse *"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
+}

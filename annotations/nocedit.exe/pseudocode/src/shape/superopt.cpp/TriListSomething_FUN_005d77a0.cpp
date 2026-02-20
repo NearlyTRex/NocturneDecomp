@@ -54,7 +54,7 @@ void __cdecl shape_superopt_cpp_TriListSomething_FUN_005d77a0(void)
     _fprintf(local_1c,"// npoint, ntri\n");
     _fprintf(local_1c,"%d %d\n",g_VertexCount);
   }
-  shape_superopt_cpp_CObj_ctor_FUN_005d2230(&local_58);
+  shape_superopt_cpp_CObj_ctor_FUN_005d2230(&local_58,0,0);
   shape_superopt_cpp_CObj_init_FUN_005d22d0(&local_58,iVar6,g_VertexCount);
   if (local_1c != (_FILE *)0x0) {
     _fprintf(local_1c,"// pointList\n");

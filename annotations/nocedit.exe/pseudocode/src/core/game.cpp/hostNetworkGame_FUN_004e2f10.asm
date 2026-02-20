@@ -16,7 +16,7 @@
 ;   char g_CurrentSaveFile
 ;   CDemonMission g_CDemonMissionInstance
 ;   CNetGame g_CNetGameInstance
-;   undefined4 g_CNetGameInstance.unk[0]
+;   undefined4 g_CNetGameInstance.mission_name[0]
 ;
 ; Called Functions:
 ;   core_mission.cpp_CDemonMission_run_FUN_00524420
@@ -45,7 +45,7 @@ section .text
     MOV EAX,[0x00680a00]                ; 004e2f26 | g_CNetGamePtr
     PUSH 0x0                            ; 004e2f2b
     ADD EAX,0x118                       ; 004e2f2d
-    PUSH EAX                            ; 004e2f32 | g_CNetGameInstance.unk[0]
+    PUSH EAX                            ; 004e2f32 | g_CNetGameInstance.mission_name[0]
     PUSH 0x62d384                       ; 004e2f33 | = "*.msn"
     PUSH 0x62d38a                       ; 004e2f38 | = "world"
     PUSH 0x62d390                       ; 004e2f3d | = "Select mission to play"

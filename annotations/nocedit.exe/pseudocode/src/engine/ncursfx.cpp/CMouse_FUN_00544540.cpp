@@ -13,12 +13,12 @@ int __cdecl engine_ncursfx_cpp_CMouse_FUN_00544540(CMouse *this_ptr)
   int in_stack_0000000c;
   
   if ((g_MouseButtonFlags.dword & in_stack_00000008) != 0) {
-    if (this_ptr->field_604 == 0) {
+    if (this_ptr->effect_mode == 0) {
       if (in_stack_0000000c == 0) {
-        this_ptr->field_604 = 1;
+        this_ptr->effect_mode = 1;
       }
       else {
-        this_ptr->field_604 = 2;
+        this_ptr->effect_mode = 2;
       }
     }
     g_MouseButtonFlags.dword = g_MouseButtonFlags.dword & (in_stack_00000008 ^ 0xff);

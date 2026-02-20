@@ -9,7 +9,7 @@
 ;   int g_CDripClassVersion = 0x6
 ;   CDemonActorType g_CDemonActorClassInfo
 ;   CDemonActorType g_CDripClassInfo
-;   CKeyFramedModelInstance DAT_02c9b170
+;   CKeyFramedModelInstance CKeyFramedModelInstance_02c9b170
 ;
 ; Called Functions:
 ;   core_actor.cpp_registerActorClass_FUN_0040c2e0
@@ -29,7 +29,7 @@ section .text
     CALL core_actor.cpp_registerActorClass_FUN_0040c2e0 ; 0048df9b
         ;   XREF to: 0040c2e0 (UNCONDITIONAL_CALL)  ; CDemonActorType * core_actor.cpp_registerActorClass_FUN_0040c2e0(CDemonActorType * this_ptr, char * class_name, CDemonActor_FactoryFunc * factor_func, int * max_version, ...)
     ADD ESP,0x18                        ; 0048dfa0
-    PUSH 0x2c9b170                      ; 0048dfa3 | DAT_02c9b170
+    PUSH 0x2c9b170                      ; 0048dfa3 | CKeyFramedModelInstance_02c9b170
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0 ; 0048dfa8
         ;   XREF to: 00478ce0 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0048dfad

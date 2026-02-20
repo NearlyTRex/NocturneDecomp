@@ -6,19 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 469,
-    "complexity_score": 352,
+    "complexity_score": 335,
     "cross_reference_count": 5,
     "function_call_count": 18,
     "global_count": 17,
-    "pseudocode_lines": 162,
-    "suspect_count": 17,
+    "pseudocode_lines": 160,
+    "suspect_count": 16,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_many",
-      "pointer_cast",
-      "suspect_float"
+      "pointer_cast"
     ],
-    "total_lines": 631
+    "total_lines": 629
   },
   "cross_references": [
     {
@@ -651,114 +650,107 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 70,
+      "line": 69,
       "match": "ROUND",
       "text": "local_60.x = (int)ROUND(256.0f * 7.25);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 71,
+      "line": 70,
       "match": "ROUND",
       "text": "local_60.y = (int)ROUND(256.0f * 7.25);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 72,
+      "line": 71,
       "match": "ROUND",
       "text": "local_60.z = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 76,
+      "line": 75,
       "match": "ROUND",
       "text": "local_54.x = (int)ROUND(local_30 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 77,
+      "line": 76,
       "match": "ROUND",
       "text": "local_54.y = (int)ROUND(local_2c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 78,
+      "line": 77,
       "match": "ROUND",
       "text": "local_54.z = (int)ROUND(local_28 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 82,
+      "line": 81,
       "match": "ROUND",
       "text": "local_3c.x = (int)ROUND(local_30 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 83,
+      "line": 82,
       "match": "ROUND",
       "text": "local_3c.y = (int)ROUND(local_2c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 84,
+      "line": 83,
       "match": "ROUND",
       "text": "local_3c.z = (int)ROUND(local_28 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 88,
+      "line": 87,
       "match": "ROUND",
       "text": "local_48.x = (int)ROUND(local_30 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 89,
+      "line": 88,
       "match": "ROUND",
       "text": "local_48.y = (int)ROUND(local_2c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 90,
+      "line": 89,
       "match": "ROUND",
       "text": "local_48.z = (int)ROUND(local_28 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 105,
-      "match": "9.18341e-41",
-      "text": "fVar4 = 9.18341e-41;",
-      "type": "suspect_float"
+      "description": "Complex pointer cast",
+      "line": 113,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->z + iVar3) = (this_ptr->color).r << 8;",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 114,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->light + iVar3) =",
+      "text": "*(int *)((int)&pCVar1->vertex_buffer_ptr->r + iVar3) = (this_ptr->color).g << 8;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 116,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)&pCVar1->vertex_buffer_ptr->color + iVar3) = (this_ptr->color).g << 8;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 118,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)&pCVar1->vertex_buffer_ptr->fog + iVar3) = (this_ptr->color).b << 8;",
+      "text": "*(int *)((int)&pCVar1->vertex_buffer_ptr->g + iVar3) = (this_ptr->color).b << 8;",
       "type": "pointer_cast"
     },
     {

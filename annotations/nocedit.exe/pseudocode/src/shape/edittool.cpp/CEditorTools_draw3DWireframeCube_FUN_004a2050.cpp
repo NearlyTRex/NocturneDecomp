@@ -60,11 +60,11 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050(CE
   float local_14;
   
   bVar6 = 0;
-  local_140.w_recip = (float)&g_CVectorTypeInfo;
-  local_140.fog = 8;
-  local_140.color = (int)afStack_110;
-  local_140.light = 0x4a2079;
-  __arrinit((void *)local_140.color,8,&g_CVectorTypeInfo);
+  local_140.fog = (int)&g_CVectorTypeInfo;
+  local_140.g = 8;
+  local_140.r = (int)afStack_110;
+  local_140.z = 0x4a2079;
+  __arrinit((void *)local_140.r,8,&g_CVectorTypeInfo);
   pfVar3 = afStack_110;
   uVar1 = 0;
   do {
@@ -95,10 +95,10 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050(CE
           local_8c.x = (int)ROUND(*pfVar3 * 256.0f);
           local_8c.y = (int)ROUND(pfVar3[1] * 256.0f);
           local_8c.z = (int)ROUND(pfVar3[2] * 256.0f);
-          local_140.w_recip = (float)&local_8c;
-          local_140.fog = 0;
-          local_140.color = 0x4a213c;
-          engine_matrix_c_transformToCache_FUN_0050cd70(0,(CVector3i *)local_140.w_recip);
+          local_140.fog = (int)&local_8c;
+          local_140.g = 0;
+          local_140.r = 0x4a213c;
+          engine_matrix_c_transformToCache_FUN_0050cd70(0,(CVector3i *)local_140.fog);
           local_68 = afStack_110[uVar1 * 3] * 0.2f;
           local_64 = afStack_110[uVar1 * 3 + 1] * 0.2f;
           local_60 = afStack_110[uVar1 * 3 + 2] * 0.2f;
@@ -111,10 +111,10 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050(CE
           local_8c.x = (int)ROUND(local_44 * 256.0f);
           local_8c.y = (int)ROUND(local_40 * 256.0f);
           local_8c.z = (int)ROUND(local_3c * 256.0f);
-          local_140.w_recip = (float)&local_8c;
-          local_140.fog = 1;
-          local_140.color = 0x4a221b;
-          engine_matrix_c_transformToCache_FUN_0050cd70(1,(CVector3i *)local_140.w_recip);
+          local_140.fog = (int)&local_8c;
+          local_140.g = 1;
+          local_140.r = 0x4a221b;
+          engine_matrix_c_transformToCache_FUN_0050cd70(1,(CVector3i *)local_140.fog);
           pSVar4 = g_RenderVertexBuffer + 1;
           pSVar5 = &local_140;
           for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -129,22 +129,22 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050(CE
             pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);
             pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar6 * -2 + 1) * 4);
           }
-          vertex2.light = local_140.light;
+          vertex2.z = local_140.z;
           vertex2.projected_vertex = local_140.projected_vertex;
           vertex2.u = local_140.u;
           vertex2.v = local_140.v;
-          vertex2.color = local_140.color;
+          vertex2.r = local_140.r;
+          vertex2.g = local_140.g;
           vertex2.fog = local_140.fog;
-          vertex2.w_recip = local_140.w_recip;
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(local_170,vertex2);
           uVar1 = local_20 ^ 2;
           local_b0.x = (int)ROUND(*pfVar3 * 256.0f);
           local_b0.y = (int)ROUND(pfVar3[1] * 256.0f);
           local_b0.z = (int)ROUND(pfVar3[2] * 256.0f);
-          local_140.w_recip = (float)&local_b0;
-          local_140.fog = 0;
-          local_140.color = 0x4a228e;
-          engine_matrix_c_transformToCache_FUN_0050cd70(0,(CVector3i *)local_140.w_recip);
+          local_140.fog = (int)&local_b0;
+          local_140.g = 0;
+          local_140.r = 0x4a228e;
+          engine_matrix_c_transformToCache_FUN_0050cd70(0,(CVector3i *)local_140.fog);
           local_98 = afStack_110[uVar1 * 3] * 0.2f;
           local_94 = afStack_110[uVar1 * 3 + 1] * 0.2f;
           local_90 = afStack_110[uVar1 * 3 + 2] * 0.2f;
@@ -157,10 +157,10 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050(CE
           local_b0.x = (int)ROUND(local_2c * 256.0f);
           local_b0.y = (int)ROUND(local_28 * 256.0f);
           local_b0.z = (int)ROUND(local_24 * 256.0f);
-          local_140.w_recip = (float)&local_b0;
-          local_140.fog = 1;
-          local_140.color = 0x4a235b;
-          engine_matrix_c_transformToCache_FUN_0050cd70(1,(CVector3i *)local_140.w_recip);
+          local_140.fog = (int)&local_b0;
+          local_140.g = 1;
+          local_140.r = 0x4a235b;
+          engine_matrix_c_transformToCache_FUN_0050cd70(1,(CVector3i *)local_140.fog);
           pSVar4 = g_RenderVertexBuffer + 1;
           pSVar5 = &local_140;
           for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -175,22 +175,22 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050(CE
             pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);
             pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar6 * -2 + 1) * 4);
           }
-          vertex2_00.light = local_140.light;
+          vertex2_00.z = local_140.z;
           vertex2_00.projected_vertex = local_140.projected_vertex;
           vertex2_00.u = local_140.u;
           vertex2_00.v = local_140.v;
-          vertex2_00.color = local_140.color;
+          vertex2_00.r = local_140.r;
+          vertex2_00.g = local_140.g;
           vertex2_00.fog = local_140.fog;
-          vertex2_00.w_recip = local_140.w_recip;
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(local_170,vertex2_00);
           uVar1 = local_20 ^ 4;
           local_50.x = (int)ROUND(*pfVar3 * 256.0f);
           local_50.y = (int)ROUND(pfVar3[1] * 256.0f);
           local_50.z = (int)ROUND(pfVar3[2] * 256.0f);
-          local_140.w_recip = (float)&local_50;
-          local_140.fog = 0;
-          local_140.color = 0x4a23d2;
-          engine_matrix_c_transformToCache_FUN_0050cd70(0,(CVector3i *)local_140.w_recip);
+          local_140.fog = (int)&local_50;
+          local_140.g = 0;
+          local_140.r = 0x4a23d2;
+          engine_matrix_c_transformToCache_FUN_0050cd70(0,(CVector3i *)local_140.fog);
           local_80 = afStack_110[uVar1 * 3] * 0.2f;
           local_7c = afStack_110[uVar1 * 3 + 1] * 0.2f;
           local_78 = 0.2f * afStack_110[uVar1 * 3 + 2];
@@ -203,10 +203,10 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050(CE
           local_50.x = (int)ROUND(local_5c * 256.0f);
           local_50.y = (int)ROUND(local_58 * 256.0f);
           local_50.z = (int)ROUND(local_54 * 256.0f);
-          local_140.w_recip = (float)&local_50;
-          local_140.fog = 1;
-          local_140.color = 0x4a2492;
-          engine_matrix_c_transformToCache_FUN_0050cd70(1,(CVector3i *)local_140.w_recip);
+          local_140.fog = (int)&local_50;
+          local_140.g = 1;
+          local_140.r = 0x4a2492;
+          engine_matrix_c_transformToCache_FUN_0050cd70(1,(CVector3i *)local_140.fog);
           pSVar4 = g_RenderVertexBuffer + 1;
           pSVar5 = &local_140;
           for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -221,13 +221,13 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050(CE
             pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);
             pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar6 * -2 + 1) * 4);
           }
-          vertex2_01.light = local_140.light;
+          vertex2_01.z = local_140.z;
           vertex2_01.projected_vertex = local_140.projected_vertex;
           vertex2_01.u = local_140.u;
           vertex2_01.v = local_140.v;
-          vertex2_01.color = local_140.color;
+          vertex2_01.r = local_140.r;
+          vertex2_01.g = local_140.g;
           vertex2_01.fog = local_140.fog;
-          vertex2_01.w_recip = local_140.w_recip;
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(local_170,vertex2_01);
           local_20 = local_20 + 1;
           pfVar3 = pfVar3 + 3;

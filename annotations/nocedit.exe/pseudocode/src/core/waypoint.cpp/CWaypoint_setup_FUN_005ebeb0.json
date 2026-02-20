@@ -6,16 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 51,
+    "complexity_score": 67,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 6,
-    "pseudocode_lines": 36,
-    "suspect_count": 1,
+    "pseudocode_lines": 37,
+    "suspect_count": 2,
     "suspect_types": [
-      "decompiler_intrinsic"
+      "decompiler_intrinsic",
+      "warning_type_propagation"
     ],
-    "total_lines": 118
+    "total_lines": 119
   },
   "cross_references": [],
   "function": {
@@ -142,10 +143,17 @@
   },
   "suspects": [
     {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
+      "line": 25,
       "match": "SQRT",
-      "text": "*(float *)(pCVar5->unk + 4) = SQRT(fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2);",
+      "text": "pCVar5->adjacency[0].distance = SQRT(fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2);",
       "type": "decompiler_intrinsic"
     }
   ],

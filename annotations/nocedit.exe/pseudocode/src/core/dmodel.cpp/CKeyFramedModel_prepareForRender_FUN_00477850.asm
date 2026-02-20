@@ -10,7 +10,7 @@
 ; int              Stack[0x10]:4   render_flags
 ;
 ; XREF[11]:
-;   core_course.cpp_CCourse_FUN_00443bc0 at 00443f18
+;   core_course.cpp_CCourse_preview_FUN_00443bc0 at 00443f18
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20 at 00478d49
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047cddb
 ;   core_fire.cpp_CBulletTrail_render_FUN_004c21f0 at 004c23ed

@@ -9,12 +9,12 @@
 int __cdecl core_turret_cpp_CTurret_fire_FUN_005e3750(CTurret *this_ptr)
 
 {
-  float fVar1;
-  CVector3f *pCVar2;
+  CVector3f *pCVar1;
   CCharacter *this_ptr_00;
-  int iVar3;
+  int iVar2;
   CTrigger *this_ptr_01;
   CFlameCan *this_ptr_02;
+  float fVar3;
   CTrigger *actor;
   double dVar4;
   byte auStack_cc [28];
@@ -39,10 +39,10 @@ int __cdecl core_turret_cpp_CTurret_fire_FUN_005e3750(CTurret *this_ptr)
   CGlass *pCStack_1c;
   float fStack_14;
   
-  pCVar2 = (CVector3f *)(*(((this_ptr->base).base.vtable._uc)->_uc).canWalk)((CCharacter *)this_ptr)
+  pCVar1 = (CVector3f *)(*(((this_ptr->base).base.vtable._uc)->_uc).canWalk)((CCharacter *)this_ptr)
   ;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-            ((CDemonActor *)this_ptr,&CStack_a0,pCVar2);
+            ((CDemonActor *)this_ptr,&CStack_a0,pCVar1);
   aCStack_64[0].z = (this_ptr->base).bolt_velocity;
   aCStack_64[0].x = 0.0;
   aCStack_64[0].y = 0.0;
@@ -66,7 +66,7 @@ int __cdecl core_turret_cpp_CTurret_fire_FUN_005e3750(CTurret *this_ptr)
                   core_actor_cpp_castToClassHash_FUN_0040c790
                             (g_CDemonSetPtr->collision_actor,g_CCharacterClassInfo.name_hash);
     if ((this_ptr_00 != (CCharacter *)0x0) &&
-       (iVar3 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00), 0 < iVar3)) {
+       (iVar2 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00), 0 < iVar2)) {
       this_ptr_00 = (CCharacter *)0x0;
     }
     pCStack_1c = (CGlass *)
@@ -85,13 +85,15 @@ int __cdecl core_turret_cpp_CTurret_fire_FUN_005e3750(CTurret *this_ptr)
     if (this_ptr_00 == (CCharacter *)0x0) {
       if (pCStack_1c == (CGlass *)0x0) {
         if (this_ptr_01 != (CTrigger *)0x0) {
-          core_trigger_cpp_CTrigger_FUN_005e0aa0(this_ptr_01);
-          iVar3 = core_trigger_cpp_CTrigger_FUN_005e0ac0(this_ptr_01);
+          core_trigger_cpp_CTrigger_onProjectileHit_FUN_005e0aa0(this_ptr_01);
+          iVar2 = core_trigger_cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0
+                            (this_ptr_01,(char *)this_ptr);
           actor = pCStack_28;
-          if (iVar3 != 0) {
-            (*(((this_ptr->base).base.vtable._uc)->_uc).getGrabbed)
-                      ((CCharacter *)this_ptr,SUB84(dVar4,0),(int)((ulonglong)dVar4 >> 0x20));
-            core_trigger_cpp_CTrigger_FUN_005e0b00(this_ptr_01);
+          if (iVar2 != 0) {
+            fVar3 = (float)(*(((this_ptr->base).base.vtable._uc)->_uc).getGrabbed)
+                                     ((CCharacter *)this_ptr,SUB84(dVar4,0),
+                                      (int)((ulonglong)dVar4 >> 0x20));
+            core_trigger_cpp_CTrigger_applyDamage_FUN_005e0b00(this_ptr_01,fVar3);
             actor = pCStack_28;
           }
           goto LAB_005e3ae2;
@@ -111,8 +113,8 @@ int __cdecl core_turret_cpp_CTurret_fire_FUN_005e3750(CTurret *this_ptr)
         }
       }
       else {
-        iVar3 = core_glass_cpp_CGlass_checkBreakableCondition_FUN_004eb3a0(pCStack_1c);
-        if (iVar3 == 0) break;
+        iVar2 = core_glass_cpp_CGlass_checkBreakableCondition_FUN_004eb3a0(pCStack_1c);
+        if (iVar2 == 0) break;
         core_glass_cpp_CGlass_shatter_FUN_004eaef0
                   (pCStack_1c,&g_CDemonSetPtr->collision_impact_position);
       }
@@ -126,23 +128,23 @@ int __cdecl core_turret_cpp_CTurret_fire_FUN_005e3750(CTurret *this_ptr)
       fStack_7c = (g_CDemonSetPtr->ray_target).x - (g_CDemonSetPtr->ray_origin).x;
       fStack_78 = (g_CDemonSetPtr->ray_target).y - (g_CDemonSetPtr->ray_origin).y;
       fStack_74 = (g_CDemonSetPtr->ray_target).z - (g_CDemonSetPtr->ray_origin).z;
-      fVar1 = (float)10 /
+      fVar3 = (float)10 /
               SQRT(fStack_74 * fStack_74 + fStack_7c * fStack_7c + fStack_78 * fStack_78);
-      fStack_40 = fStack_7c * fVar1;
-      fStack_3c = fStack_78 * fVar1;
-      pCStack_38 = (CDemonActor *)(fStack_74 * fVar1);
+      fStack_40 = fStack_7c * fVar3;
+      fStack_3c = fStack_78 * fVar3;
+      pCStack_38 = (CDemonActor *)(fStack_74 * fVar3);
       if ((float *)(auStack_cc + 8) != &fStack_40) {
         auStack_cc._8_4_ = fStack_40;
         auStack_cc._12_4_ = fStack_3c;
         auStack_cc._16_4_ = pCStack_38;
       }
       actor = (CTrigger *)0x5e3a62;
-      pCVar2 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+      pCVar1 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                          (&this_ptr_00->base,&CStack_70,&g_CDemonSetPtr->collision_impact_position);
-      if ((CVector3f *)(auStack_cc + 0x18) != pCVar2) {
-        auStack_cc._24_4_ = pCVar2->x;
-        fStack_b0 = pCVar2->y;
-        fStack_ac = pCVar2->z;
+      if ((CVector3f *)(auStack_cc + 0x18) != pCVar1) {
+        auStack_cc._24_4_ = pCVar1->x;
+        fStack_b0 = pCVar1->y;
+        fStack_ac = pCVar1->z;
       }
       pCStack_a8 = (CDemonActor *)(this_ptr->base).ammo_type;
       pCStack_a4 = (CDemonActor *)0x3f800000;
@@ -162,11 +164,7 @@ LAB_005e3ae2:
   pCStack_38 = (CDemonActor *)CStack_a0.z;
   fStack_3c = CStack_a0.y + -0.125f;
   core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60(g_CFireEffectPtr);
-  fVar1 = this_ptr->fire_delay_time;
-  this_ptr->unk5[0x50] = '\x02';
-  this_ptr->unk5[0x51] = '\0';
-  this_ptr->unk5[0x52] = '\0';
-  this_ptr->unk5[0x53] = '\0';
-  (this_ptr->base).fire_cooldown_timer = fVar1;
+  this_ptr->fire_sound_frames = 2;
+  (this_ptr->base).fire_cooldown_timer = this_ptr->fire_delay_time;
   return 1;
 }

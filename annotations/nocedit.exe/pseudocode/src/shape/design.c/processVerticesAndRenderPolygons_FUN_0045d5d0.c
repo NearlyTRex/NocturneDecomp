@@ -49,7 +49,7 @@ void __cdecl shape_design_c_processVerticesAndRenderPolygons_FUN_0045d5d0(void)
                                         (float)65535)),
                        (int)ROUND(ROUND(g_VertexNormals[local_1c].vertex.z *
                                         (float)65535)));
-    g_RenderVertexBuffer[local_1c].light = iVar2;
+    g_RenderVertexBuffer[local_1c].z = iVar2;
   }
   for (local_1c = 0; local_1c < g_PolygonCount; local_1c = local_1c + 1) {
     g_PolygonIndices[local_1c] = local_1c;

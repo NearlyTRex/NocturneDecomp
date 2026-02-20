@@ -20,30 +20,24 @@ void __cdecl core_werewolf_cpp_CWerewolf_setup_FUN_005efcc0(CWerewolf *this_ptr)
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 Spine3");
   this_ptr->bone_index = iVar1;
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 L Finger1");
-  *(int *)this_ptr->unk3 = iVar1;
+  this_ptr->bone_l_finger = iVar1;
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 R Finger1");
-  *(int *)(this_ptr->unk3 + 4) = iVar1;
+  this_ptr->bone_r_finger = iVar1;
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01jaw2");
-  *(int *)(this_ptr->unk3 + 8) = iVar1;
+  this_ptr->bone_jaw = iVar1;
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 Head");
-  *(int *)(this_ptr->unk3 + 0xc) = iVar1;
+  this_ptr->bone_head = iVar1;
   core_enemy_cpp_CEnemy_setup_FUN_004a9650(&this_ptr->base);
   (this_ptr->base).base.base.is_transparent = this_ptr->light_up_eyes;
   fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
-  this_ptr->unk6 = (int)fVar2;
+  this_ptr->eye_glow_phase = fVar2;
   if (this_ptr->type == WEREWOLF_TYPE_TRAIN) {
     (this_ptr->base).base.collision_cylinder_radius = 1.5;
   }
   this_ptr->sfx_handle = 0;
   fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,30.0);
-  this_ptr->unk4[4] = '\0';
-  this_ptr->unk4[5] = '\0';
-  this_ptr->unk4[6] = '\0';
-  this_ptr->unk4[7] = '\0';
-  this_ptr->unk4[8] = '\0';
-  this_ptr->unk4[9] = '\0';
-  this_ptr->unk4[10] = '\0';
-  this_ptr->unk4[0xb] = '\0';
-  *(float *)this_ptr->unk4 = fVar2;
+  this_ptr->pain_sfx_handle = 0;
+  this_ptr->eat_sfx_handle = 0;
+  this_ptr->howl_cooldown = fVar2;
   return;
 }

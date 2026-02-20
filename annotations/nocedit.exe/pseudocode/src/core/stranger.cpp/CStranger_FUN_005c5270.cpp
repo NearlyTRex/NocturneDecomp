@@ -86,10 +86,10 @@ LAB_005c52fa:
                             ((CCharacter *)this_ptr,6);
       iVar11 = 6;
       if ((float)0.98999999999999999 < fStack_14) {
-        fVar2 = in_stack_00000008 * (float)25 + *(float *)(this_ptr->unk1 + 0xc);
-        *(float *)(this_ptr->unk1 + 0xc) = fVar2;
+        fVar2 = in_stack_00000008 * (float)25 + this_ptr->aim_speed_factor;
+        this_ptr->aim_speed_factor = fVar2;
         if (70.0f < fVar2) {
-          *(float *)(this_ptr->unk1 + 0xc) = 70.0f;
+          this_ptr->aim_speed_factor = 70.0f;
         }
         if ((this_ptr->base).player_control.action_states[3] != 0) {
           return;
@@ -224,7 +224,7 @@ joined_r0x005c57cf:
                     ((CCharacter *)this_ptr,1,&CStack_50);
         }
         this_ptr->action_pending = 0;
-        *(float *)(this_ptr->unk1 + 0xc) = 10.0f;
+        this_ptr->aim_speed_factor = 10.0f;
       }
       if (1.0 <= (this_ptr->base).base.layer_action_t) {
         (this_ptr->base).base.layer_action_index = 0;

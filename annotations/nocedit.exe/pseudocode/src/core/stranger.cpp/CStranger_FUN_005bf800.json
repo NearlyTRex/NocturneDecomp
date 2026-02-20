@@ -6,11 +6,11 @@
   },
   "complexity": {
     "assembly_lines": 253,
-    "complexity_score": 252,
+    "complexity_score": 210,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 7,
-    "pseudocode_lines": 132,
+    "pseudocode_lines": 90,
     "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -18,7 +18,7 @@
       "stack_param",
       "undefined_data"
     ],
-    "total_lines": 385
+    "total_lines": 343
   },
   "cross_references": [
     {
@@ -256,56 +256,56 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 44,
+      "line": 26,
       "match": "in_stack_00000008",
       "text": "fVar4 = (1.0 - fVar4) * in_stack_00000008 * (float)10;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 45,
+      "line": 27,
       "match": "ABS",
-      "text": "if (fVar4 <= ABS(*(float *)(this_ptr->unk8 + 0xc))) {",
+      "text": "if (fVar4 <= ABS(this_ptr->turn_angle)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Undefined global data reference",
-      "line": 61,
+      "line": 40,
       "match": "DAT_03f6bb1c",
-      "text": "*(uint *)(this_ptr->unk8 + 0x40) = DAT_03f6bb1c;",
+      "text": "this_ptr->turn_motion_index = DAT_03f6bb1c;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 63,
+      "line": 42,
       "match": "DAT_03f6bb20",
-      "text": "*(uint *)(this_ptr->unk8 + 0x40) = DAT_03f6bb20;",
+      "text": "this_ptr->turn_motion_index = DAT_03f6bb20;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 72,
+      "line": 48,
       "match": "in_stack_00000008",
-      "text": "*(float *)(this_ptr->unk8 + 0x18) = *(float *)(this_ptr->unk8 + 0x18) + in_stack_00000008;",
+      "text": "this_ptr->turn_elapsed = this_ptr->turn_elapsed + in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 80,
+      "line": 55,
       "match": "ABS",
-      "text": "local_34 = ABS(*(float *)(this_ptr->unk8 + 0xc) * (float)0.31830988619288902);",
+      "text": "local_34 = ABS(this_ptr->turn_angle * (float)0.31830988619288902);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 96,
+      "line": 71,
       "match": "in_stack_00000008",
       "text": "fVar2 = fVar4 - in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 99,
+      "line": 74,
       "match": "in_stack_00000008",
       "text": "fVar4 = in_stack_00000008 / fVar4;",
       "type": "stack_param"

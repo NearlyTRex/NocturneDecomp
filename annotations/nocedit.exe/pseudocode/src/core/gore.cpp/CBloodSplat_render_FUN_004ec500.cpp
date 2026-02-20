@@ -127,68 +127,68 @@ void __cdecl core_gore_cpp_CBloodSplat_render_FUN_004ec500(CBloodSplat *this_ptr
   uVar1 = this_ptr->blood_type;
   if (uVar1 == 0) {
 LAB_004ec747:
-    g_RenderVertexBuffer[0].light = 0x2000;
-    g_RenderVertexBuffer[0].color = 0;
+    g_RenderVertexBuffer[0].z = 0x2000;
+    g_RenderVertexBuffer[0].r = 0;
   }
   else if (uVar1 < 2) {
-    g_RenderVertexBuffer[0].color = 0x7f80;
-    g_RenderVertexBuffer[0].light = 0;
+    g_RenderVertexBuffer[0].r = 0x7f80;
+    g_RenderVertexBuffer[0].z = 0;
   }
   else {
     if (uVar1 != 2) goto LAB_004ec747;
-    g_RenderVertexBuffer[0].color = 0;
-    g_RenderVertexBuffer[0].light = 0;
+    g_RenderVertexBuffer[0].r = 0;
+    g_RenderVertexBuffer[0].z = 0;
   }
-  g_RenderVertexBuffer[0].fog = 0;
+  g_RenderVertexBuffer[0].g = 0;
   uVar1 = this_ptr->blood_type;
   if (uVar1 == 0) {
 LAB_004ec774:
-    g_RenderVertexBuffer[1].light = 0x2000;
-    g_RenderVertexBuffer[1].color = 0;
+    g_RenderVertexBuffer[1].z = 0x2000;
+    g_RenderVertexBuffer[1].r = 0;
   }
   else if (uVar1 < 2) {
-    g_RenderVertexBuffer[1].color = 0x7f80;
-    g_RenderVertexBuffer[1].light = 0;
+    g_RenderVertexBuffer[1].r = 0x7f80;
+    g_RenderVertexBuffer[1].z = 0;
   }
   else {
     if (uVar1 != 2) goto LAB_004ec774;
-    g_RenderVertexBuffer[1].color = 0;
-    g_RenderVertexBuffer[1].light = 0;
+    g_RenderVertexBuffer[1].r = 0;
+    g_RenderVertexBuffer[1].z = 0;
   }
-  g_RenderVertexBuffer[1].fog = 0;
+  g_RenderVertexBuffer[1].g = 0;
   uVar1 = this_ptr->blood_type;
   if (uVar1 == 0) {
 LAB_004ec7a1:
-    g_RenderVertexBuffer[2].light = 0x2000;
-    g_RenderVertexBuffer[2].color = 0;
+    g_RenderVertexBuffer[2].z = 0x2000;
+    g_RenderVertexBuffer[2].r = 0;
   }
   else if (uVar1 < 2) {
-    g_RenderVertexBuffer[2].color = 0x7f80;
-    g_RenderVertexBuffer[2].light = 0;
+    g_RenderVertexBuffer[2].r = 0x7f80;
+    g_RenderVertexBuffer[2].z = 0;
   }
   else {
     if (uVar1 != 2) goto LAB_004ec7a1;
-    g_RenderVertexBuffer[2].color = 0;
-    g_RenderVertexBuffer[2].light = 0;
+    g_RenderVertexBuffer[2].r = 0;
+    g_RenderVertexBuffer[2].z = 0;
   }
-  g_RenderVertexBuffer[2].fog = 0;
+  g_RenderVertexBuffer[2].g = 0;
   uVar1 = this_ptr->blood_type;
   if (uVar1 != 0) {
     if (uVar1 < 2) {
-      g_RenderVertexBuffer[3].color = 0x7f80;
-      g_RenderVertexBuffer[3].light = 0;
+      g_RenderVertexBuffer[3].r = 0x7f80;
+      g_RenderVertexBuffer[3].z = 0;
       goto LAB_004ec7e0;
     }
     if (uVar1 == 2) {
-      g_RenderVertexBuffer[3].color = 0;
-      g_RenderVertexBuffer[3].light = 0;
+      g_RenderVertexBuffer[3].r = 0;
+      g_RenderVertexBuffer[3].z = 0;
       goto LAB_004ec7e0;
     }
   }
-  g_RenderVertexBuffer[3].light = 0x2000;
-  g_RenderVertexBuffer[3].color = 0;
+  g_RenderVertexBuffer[3].z = 0x2000;
+  g_RenderVertexBuffer[3].r = 0;
 LAB_004ec7e0:
-  g_RenderVertexBuffer[3].fog = 0;
+  g_RenderVertexBuffer[3].g = 0;
   engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
             (g_CDemonRendererPtr2,&g_GoreQuadPrimitive.base);
   if (this_ptr->is_wall_splat == 1) {

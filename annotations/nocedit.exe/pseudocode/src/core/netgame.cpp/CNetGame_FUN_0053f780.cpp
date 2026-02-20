@@ -26,7 +26,7 @@ void __cdecl core_netgame_cpp_CNetGame_FUN_0053f780(CNetGame *this_ptr)
   if (pcVar3 == (char *)0x0) {
     pcVar3 = "MyComputer";
   }
-  pcVar4 = this_ptr->network_data;
+  pcVar4 = this_ptr->player_name;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;

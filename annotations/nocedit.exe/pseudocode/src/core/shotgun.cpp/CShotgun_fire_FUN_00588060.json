@@ -112,7 +112,7 @@
       {
         "category": "undeclared_identifier",
         "column": 23,
-        "line": 188,
+        "line": 189,
         "message": "use of undeclared identifier 'code'"
       }
     ],
@@ -121,11 +121,11 @@
   },
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 524,
+    "complexity_score": 525,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 11,
-    "pseudocode_lines": 234,
+    "pseudocode_lines": 235,
     "suspect_count": 27,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -133,7 +133,7 @@
       "unknown_field",
       "unresolved_funcptr"
     ],
-    "total_lines": 344
+    "total_lines": 345
   },
   "cross_references": [],
   "function": {
@@ -356,7 +356,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 63,
       "match": "fptan",
-      "text": "fVar4 = (float10)fptan((float10)*(float *)this_ptr->unk * (float10)3.1415926535000001 *",
+      "text": "fVar4 = (float10)fptan((float10)this_ptr->spread_angle * (float10)3.1415926535000001 *",
       "type": "decompiler_intrinsic"
     },
     {
@@ -438,91 +438,91 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 163,
+      "line": 164,
       "match": "in_stack_fffffec0",
       "text": "in_stack_fffffec0 = (CDemonActor *)0x588538;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 164,
+      "line": 165,
       "match": "in_stack_fffffec4",
       "text": "in_stack_fffffec4 = g_CDemonSetPtr;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 169,
+      "line": 170,
       "match": "in_stack_fffffec4",
       "text": "in_stack_fffffec4 = (CDemonSet *)0x5886f2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 173,
+      "line": 174,
       "match": "in_stack_fffffec0",
       "text": "in_stack_fffffec0 = (CDemonActor *)0x588715;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 174,
+      "line": 175,
       "match": "in_stack_fffffec4",
       "text": "in_stack_fffffec4 = pCStack_2c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 180,
+      "line": 181,
       "match": "in_stack_fffffec4",
       "text": "in_stack_fffffec4 = (CDemonSet *)0x58854d;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 181,
+      "line": 182,
       "match": "code *",
       "text": "iVar2 = (**(code **)(this_ptr_00->cameras[0].fog_enabled + 0xf4))",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 185,
+      "line": 186,
       "match": "._4_4_",
       "text": "auStack_124._4_4_ = uStack_30;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 186,
+      "line": 187,
       "match": "._0_4_",
       "text": "auStack_124._0_4_ = g_CDemonSetPtr->collision_part_index;",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 193,
+      "line": 194,
       "match": "SQRT",
       "text": "SQRT(fStack_98 * fStack_98 + fStack_a0 * fStack_a0 + fStack_9c * fStack_9c));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 202,
+      "line": 203,
       "match": "in_stack_fffffec0",
       "text": "in_stack_fffffec0 = (CDemonActor *)0x58865d;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 203,
+      "line": 204,
       "match": "in_stack_fffffec4",
       "text": "in_stack_fffffec4 = this_ptr_00;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 217,
+      "line": 218,
       "match": "code *",
       "text": "(**(code **)(this_ptr_00->cameras[0].fog_enabled + 0x11c))",
       "type": "unresolved_funcptr"

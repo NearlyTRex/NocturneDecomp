@@ -47,7 +47,7 @@ CBoundingBox3D * __cdecl core_turret_cpp_CTurret_getBoundingBox_FUN_005e2910(CTu
     return out_box;
   }
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-            (&local_70,&g_ZeroVector,(CVector3f *)this_ptr->unk1);
+            (&local_70,&g_ZeroVector,&(this_ptr->home_orient).vec);
   core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
             (&local_100,&g_ZeroVector,&(this_ptr->base).base.orient.vec);
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_70,&local_100,&local_a0);

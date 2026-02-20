@@ -20,6 +20,7 @@
 #include "types/classes/CKeyFramedModel.h"
 #include "types/classes/CMatrix3x3f.h"
 #include "types/classes/CPlatform.h"
+#include "types/classes/CQuaternion4f.h"
 #include "types/classes/CRect.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
@@ -85,19 +86,19 @@ float __cdecl core_conveyor_cpp_FUN_00442400(void);
 void __cdecl core_conveyor_cpp_FUN_004424a0(void);
 CCourse * __cdecl core_course_cpp_CCourse_ctor_FUN_004424c0(CCourse *this_ptr);
 CCourse * __cdecl core_course_cpp_CCourse_dtor_FUN_004424e0(CCourse *this_ptr,uint flags);
-void __cdecl core_course_cpp_CCourse_allocMemory_FUN_00442500(CCourse *this_ptr);
+void __cdecl core_course_cpp_CCourse_allocMemory_FUN_00442500(CCourse *this_ptr,int count);
 void __cdecl core_course_cpp_CCourse_load_FUN_00442580(CCourse *this_ptr,char *filename);
 void __cdecl core_course_cpp_CCourse_free_FUN_004426c0(CCourse *this_ptr);
-void __cdecl core_course_cpp_CCourse_FUN_00442710(CCourse *this_ptr);
-void __cdecl core_course_cpp_CCourse_FUN_004427a0(CCourse *this_ptr);
-void __cdecl core_course_cpp_CCourse_save_FUN_00442a90(CCourse *this_ptr);
-int __cdecl core_course_cpp_CCourse_FUN_00442bc0(CCourse *this_ptr,char *filename);
-int __cdecl core_course_cpp_CCourse_FUN_00442d70(CCourse *this_ptr,char *filename);
-void __cdecl core_course_cpp_CCourse_importMatrices_FUN_00442ea0(CCourse *this_ptr);
+void __cdecl core_course_cpp_CCourse_evaluate_FUN_00442710(CCourse *this_ptr,float time,CVector3f *out_pos,CVector3f *out_euler);
+void __cdecl core_course_cpp_CCourse_interpolate_FUN_004427a0(CCourse *this_ptr,float time,CVector3f *out_pos,CQuaternion4f *out_orient);
+void __cdecl core_course_cpp_CCourse_save_FUN_00442a90(CCourse *this_ptr,char *filename);
+int __cdecl core_course_cpp_CCourse_importBON_FUN_00442bc0(CCourse *this_ptr,char *filename);
+int __cdecl core_course_cpp_CCourse_importCRS_FUN_00442d70(CCourse *this_ptr,char *filename);
+void __cdecl core_course_cpp_CCourse_importMatrices_FUN_00442ea0(CCourse *this_ptr,_FILE *file_handle,int count);
 void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_ptr);
-void __cdecl core_course_cpp_FUN_004436d0(void);
-void __cdecl core_course_cpp_FUN_00443760(void);
-void __cdecl core_course_cpp_CCourse_FUN_00443bc0(CCourse *this_ptr,CKeyFramedModel *param_2);
+void __cdecl core_course_cpp_renderCoursePoint_FUN_004436d0(void);
+void __cdecl core_course_cpp_renderCourseGizmo_FUN_00443760(CVector3f *position);
+void __cdecl core_course_cpp_CCourse_preview_FUN_00443bc0(CCourse *this_ptr,CKeyFramedModel *model_ptr);
 void __cdecl core_cow_cpp_staticInit_FUN_004440d0(void);
 CZombieCow * __cdecl core_cow_cpp_factoryFunc_FUN_00444100(void);
 CDemonActorType * __cdecl core_cow_cpp_CZombieCow_getActorType_FUN_00444130(CZombieCow *this_ptr);

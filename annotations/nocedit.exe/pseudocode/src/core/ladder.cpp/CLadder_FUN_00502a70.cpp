@@ -30,7 +30,7 @@ void __cdecl core_ladder_cpp_CLadder_FUN_00502a70(CLadder *this_ptr)
     return;
   }
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-            (&local_dc,(CVector3f *)this_ptr->unk1,(CVector3f *)(this_ptr->unk1 + 0xc));
+            (&local_dc,(CVector3f *)&this_ptr->unk1,&this_ptr->cached_euler_angles);
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
             (&local_ac,&(this_ptr->master_actor->location).position,
              &(this_ptr->master_actor->orient).vec);

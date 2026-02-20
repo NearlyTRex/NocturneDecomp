@@ -1,36 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 18,
-        "line": 199,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 25,
-        "line": 199,
-        "message": "expected expression"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 686,
-    "complexity_score": 338,
+    "complexity_score": 330,
     "cross_reference_count": 0,
     "function_call_count": 18,
     "global_count": 33,
-    "pseudocode_lines": 273,
-    "suspect_count": 5,
+    "pseudocode_lines": 280,
+    "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
-      "unresolved_funcptr",
       "warning_type_propagation"
     ],
-    "total_lines": 959
+    "total_lines": 966
   },
   "cross_references": [],
   "function": {
@@ -80,7 +66,7 @@
     {
       "addr": "00442710",
       "is_variadic": false,
-      "name": "core_course.cpp_CCourse_FUN_00442710"
+      "name": "core_course.cpp_CCourse_evaluate_FUN_00442710"
     },
     {
       "addr": "00506f10",
@@ -565,30 +551,23 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 83,
+      "line": 91,
       "match": "SQRT",
-      "text": "local_24 = SQRT(*(float *)(this_ptr->unk1 + 0x5f8) * *(float *)(this_ptr->unk1 + 0x5f8) +",
+      "text": "local_24 = SQRT(fVar5 * fVar5 + fVar4 * fVar4 + fVar3 * fVar3);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 160,
+      "line": 166,
       "match": "SQRT",
       "text": "if ((SQRT(fStack_38 * fStack_38 + fStack_40 * fStack_40 + fStack_3c * fStack_3c) <=",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 192,
-      "match": "code *",
-      "text": "iVar13 = (**(code **)(*(int *)(iVar13 + 0x154) + 0x120))(iVar13);",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 269,
+      "line": 276,
       "match": "ABS",
-      "text": "if (((float)0.20000000000000001 < ABS(*(float *)(this_ptr->unk1 + 0x5fc))) &&",
+      "text": "if (((float)0.20000000000000001 < ABS((this_ptr->local_velocity).x)) &&",
       "type": "decompiler_intrinsic"
     }
   ],

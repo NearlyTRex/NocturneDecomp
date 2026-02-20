@@ -81,7 +81,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_0059b640(CDef
             puVar7 = puVar7 + (uint)bVar10 * -2 + 1;
             puVar9 = puVar9 + (uint)bVar10 * -2 + 1;
           }
-          vertex2.light = in_stack_ffffffa4;
+          vertex2.z = in_stack_ffffffa4;
           auVar11 = in_stack_ffffff84._0_24_;
           vertex2.projected_vertex.transformed_x = auVar11._0_4_;
           vertex2.projected_vertex.transformed_y = auVar11._4_4_;
@@ -91,9 +91,9 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_0059b640(CDef
           vertex2.projected_vertex.screen_y = auVar11._20_4_;
           vertex2.u = in_stack_ffffff84._24_4_;
           vertex2.v = in_stack_ffffff84._28_4_;
-          vertex2.color = in_stack_ffffffa8;
-          vertex2.fog = (int)output;
-          vertex2.w_recip = (float)this_ptr;
+          vertex2.r = in_stack_ffffffa8;
+          vertex2.g = (int)output;
+          vertex2.fog = (int)this_ptr;
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff54,vertex2);
         }
         iVar5 = iVar5 + 0x30;

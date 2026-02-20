@@ -21,15 +21,15 @@
 ;   SRenderVertex[16] g_RenderVertexBuffer
 ;   undefined4 g_RenderVertexBuffer[0].u
 ;   undefined4 g_RenderVertexBuffer[0].v
-;   undefined4 g_RenderVertexBuffer[0].light
-;   undefined4 g_RenderVertexBuffer[0].color
-;   undefined4 g_RenderVertexBuffer[0].fog
+;   undefined4 g_RenderVertexBuffer[0].z
+;   undefined4 g_RenderVertexBuffer[0].r
+;   undefined4 g_RenderVertexBuffer[0].g
 ;   undefined4 DAT_00688044
 ;   undefined4 g_RenderVertexBuffer[1].u
 ;   undefined4 g_RenderVertexBuffer[1].v
-;   undefined4 g_RenderVertexBuffer[1].light
-;   undefined4 g_RenderVertexBuffer[1].color
-;   undefined4 g_RenderVertexBuffer[1].fog
+;   undefined4 g_RenderVertexBuffer[1].z
+;   undefined4 g_RenderVertexBuffer[1].r
+;   undefined4 g_RenderVertexBuffer[1].g
 ;   ... and 22 more
 ;
 ; Called Functions:
@@ -118,56 +118,56 @@ section .text
     CMP dword ptr [EBX + 0x3c],0x0      ; 004ed4c7
     JZ 0x004ed5bc                       ; 004ed4cb
         ;   XREF to: 004ed5bc (CONDITIONAL_JUMP)  ; LAB_004ed5bc
-    MOV ESI,0x688034                    ; 004ed4d1 | g_RenderVertexBuffer[0].light
-    MOV EBP,0x688038                    ; 004ed4d6 | g_RenderVertexBuffer[0].color
+    MOV ESI,0x688034                    ; 004ed4d1 | g_RenderVertexBuffer[0].z
+    MOV EBP,0x688038                    ; 004ed4d6 | g_RenderVertexBuffer[0].r
     MOV EBX,dword ptr [EBX + 0x4]       ; 004ed4db
-    MOV EDI,0x68803c                    ; 004ed4de | g_RenderVertexBuffer[0].fog
+    MOV EDI,0x68803c                    ; 004ed4de | g_RenderVertexBuffer[0].g
     CMP EBX,0x1                         ; 004ed4e3
     JNC 0x004ed642                      ; 004ed4e6
         ;   XREF to: 004ed642 (CONDITIONAL_JUMP)  ; LAB_004ed642
-    MOV dword ptr [ESI],0x2000          ; 004ed4ec | g_RenderVertexBuffer[0].light
+    MOV dword ptr [ESI],0x2000          ; 004ed4ec | g_RenderVertexBuffer[0].z
         ;   Label: LAB_004ed4ec
-    MOV dword ptr [EBP],0x0             ; 004ed4f2 | g_RenderVertexBuffer[0].color
-    MOV dword ptr [EDI],0x0             ; 004ed4f9 | g_RenderVertexBuffer[0].fog
+    MOV dword ptr [EBP],0x0             ; 004ed4f2 | g_RenderVertexBuffer[0].r
+    MOV dword ptr [EDI],0x0             ; 004ed4f9 | g_RenderVertexBuffer[0].g
     MOV EBX,dword ptr [ESP + 0x20]      ; 004ed4ff
         ;   Label: LAB_004ed4ff
-    MOV ESI,0x688064                    ; 004ed503 | g_RenderVertexBuffer[1].light
-    MOV EBP,0x688068                    ; 004ed508 | g_RenderVertexBuffer[1].color
+    MOV ESI,0x688064                    ; 004ed503 | g_RenderVertexBuffer[1].z
+    MOV EBP,0x688068                    ; 004ed508 | g_RenderVertexBuffer[1].r
     MOV EBX,dword ptr [EBX + 0x4]       ; 004ed50d
-    MOV EDI,0x68806c                    ; 004ed510 | g_RenderVertexBuffer[1].fog
+    MOV EDI,0x68806c                    ; 004ed510 | g_RenderVertexBuffer[1].g
     CMP EBX,0x1                         ; 004ed515
     JNC 0x004ed682                      ; 004ed518
         ;   XREF to: 004ed682 (CONDITIONAL_JUMP)  ; LAB_004ed682
-    MOV dword ptr [ESI],0x2000          ; 004ed51e | g_RenderVertexBuffer[1].light
+    MOV dword ptr [ESI],0x2000          ; 004ed51e | g_RenderVertexBuffer[1].z
         ;   Label: LAB_004ed51e
-    MOV dword ptr [EBP],0x0             ; 004ed524 | g_RenderVertexBuffer[1].color
-    MOV dword ptr [EDI],0x0             ; 004ed52b | g_RenderVertexBuffer[1].fog
+    MOV dword ptr [EBP],0x0             ; 004ed524 | g_RenderVertexBuffer[1].r
+    MOV dword ptr [EDI],0x0             ; 004ed52b | g_RenderVertexBuffer[1].g
     MOV EBX,dword ptr [ESP + 0x20]      ; 004ed531
         ;   Label: LAB_004ed531
-    MOV EBP,0x688094                    ; 004ed535 | g_RenderVertexBuffer[2].light
-    MOV ESI,0x688098                    ; 004ed53a | g_RenderVertexBuffer[2].color
+    MOV EBP,0x688094                    ; 004ed535 | g_RenderVertexBuffer[2].z
+    MOV ESI,0x688098                    ; 004ed53a | g_RenderVertexBuffer[2].r
     MOV EBX,dword ptr [EBX + 0x4]       ; 004ed53f
-    MOV EDI,0x68809c                    ; 004ed542 | g_RenderVertexBuffer[2].fog
+    MOV EDI,0x68809c                    ; 004ed542 | g_RenderVertexBuffer[2].g
     CMP EBX,0x1                         ; 004ed547
     JNC 0x004ed6c5                      ; 004ed54a
         ;   XREF to: 004ed6c5 (CONDITIONAL_JUMP)  ; LAB_004ed6c5
-    MOV dword ptr [EBP],0x2000          ; 004ed550 | g_RenderVertexBuffer[2].light
+    MOV dword ptr [EBP],0x2000          ; 004ed550 | g_RenderVertexBuffer[2].z
         ;   Label: LAB_004ed550
-    MOV dword ptr [ESI],0x0             ; 004ed557 | g_RenderVertexBuffer[2].color
-    MOV dword ptr [EDI],0x0             ; 004ed55d | g_RenderVertexBuffer[2].fog
+    MOV dword ptr [ESI],0x0             ; 004ed557 | g_RenderVertexBuffer[2].r
+    MOV dword ptr [EDI],0x0             ; 004ed55d | g_RenderVertexBuffer[2].g
     MOV EBX,dword ptr [ESP + 0x20]      ; 004ed563
         ;   Label: LAB_004ed563
-    MOV EDI,0x6880c4                    ; 004ed567 | g_RenderVertexBuffer[3].light
-    MOV EBP,0x6880c8                    ; 004ed56c | g_RenderVertexBuffer[3].color
+    MOV EDI,0x6880c4                    ; 004ed567 | g_RenderVertexBuffer[3].z
+    MOV EBP,0x6880c8                    ; 004ed56c | g_RenderVertexBuffer[3].r
     MOV EBX,dword ptr [EBX + 0x4]       ; 004ed571
-    MOV ESI,0x6880cc                    ; 004ed574 | g_RenderVertexBuffer[3].fog
+    MOV ESI,0x6880cc                    ; 004ed574 | g_RenderVertexBuffer[3].g
     CMP EBX,0x1                         ; 004ed579
     JNC 0x004ed708                      ; 004ed57c
         ;   XREF to: 004ed708 (CONDITIONAL_JUMP)  ; LAB_004ed708
-    MOV dword ptr [EDI],0x2000          ; 004ed582 | g_RenderVertexBuffer[3].light
+    MOV dword ptr [EDI],0x2000          ; 004ed582 | g_RenderVertexBuffer[3].z
         ;   Label: LAB_004ed582
-    MOV dword ptr [EBP],0x0             ; 004ed588 | g_RenderVertexBuffer[3].color
-    MOV dword ptr [ESI],0x0             ; 004ed58f | g_RenderVertexBuffer[3].fog
+    MOV dword ptr [EBP],0x0             ; 004ed588 | g_RenderVertexBuffer[3].r
+    MOV dword ptr [ESI],0x0             ; 004ed58f | g_RenderVertexBuffer[3].g
     PUSH 0x2d833a8                      ; 004ed595 | g_FootstepPrimitive
         ;   Label: LAB_004ed595
     MOV ECX,dword ptr [0x006703ec]      ; 004ed59a | g_CDemonRendererInstance | g_CDemonRendererPtr2
@@ -186,33 +186,33 @@ section .text
     RET                                 ; 004ed5bb
     MOV ESI,0x7ff                       ; 004ed5bc
         ;   Label: LAB_004ed5bc
-    MOV dword ptr [0x00688038],ESI      ; 004ed5c1 | g_RenderVertexBuffer[0].color
-    MOV dword ptr [0x0068803c],ESI      ; 004ed5c7 | g_RenderVertexBuffer[0].fog
-    MOV dword ptr [0x00688064],ESI      ; 004ed5cd | g_RenderVertexBuffer[1].light
-    MOV dword ptr [0x00688068],ESI      ; 004ed5d3 | g_RenderVertexBuffer[1].color
-    MOV dword ptr [0x0068806c],ESI      ; 004ed5d9 | g_RenderVertexBuffer[1].fog
-    MOV dword ptr [0x00688094],ESI      ; 004ed5df | g_RenderVertexBuffer[2].light
-    MOV dword ptr [0x00688098],ESI      ; 004ed5e5 | g_RenderVertexBuffer[2].color
-    MOV dword ptr [0x0068809c],ESI      ; 004ed5eb | g_RenderVertexBuffer[2].fog
-    MOV dword ptr [0x006880c4],ESI      ; 004ed5f1 | g_RenderVertexBuffer[3].light
-    MOV dword ptr [0x006880c8],ESI      ; 004ed5f7 | g_RenderVertexBuffer[3].color
-    MOV dword ptr [0x006880cc],ESI      ; 004ed5fd | g_RenderVertexBuffer[3].fog
-    MOV dword ptr [0x00688034],ESI      ; 004ed603 | g_RenderVertexBuffer[0].light
+    MOV dword ptr [0x00688038],ESI      ; 004ed5c1 | g_RenderVertexBuffer[0].r
+    MOV dword ptr [0x0068803c],ESI      ; 004ed5c7 | g_RenderVertexBuffer[0].g
+    MOV dword ptr [0x00688064],ESI      ; 004ed5cd | g_RenderVertexBuffer[1].z
+    MOV dword ptr [0x00688068],ESI      ; 004ed5d3 | g_RenderVertexBuffer[1].r
+    MOV dword ptr [0x0068806c],ESI      ; 004ed5d9 | g_RenderVertexBuffer[1].g
+    MOV dword ptr [0x00688094],ESI      ; 004ed5df | g_RenderVertexBuffer[2].z
+    MOV dword ptr [0x00688098],ESI      ; 004ed5e5 | g_RenderVertexBuffer[2].r
+    MOV dword ptr [0x0068809c],ESI      ; 004ed5eb | g_RenderVertexBuffer[2].g
+    MOV dword ptr [0x006880c4],ESI      ; 004ed5f1 | g_RenderVertexBuffer[3].z
+    MOV dword ptr [0x006880c8],ESI      ; 004ed5f7 | g_RenderVertexBuffer[3].r
+    MOV dword ptr [0x006880cc],ESI      ; 004ed5fd | g_RenderVertexBuffer[3].g
+    MOV dword ptr [0x00688034],ESI      ; 004ed603 | g_RenderVertexBuffer[0].z
     JMP 0x004ed595                      ; 004ed609
         ;   XREF to: 004ed595 (UNCONDITIONAL_JUMP)  ; LAB_004ed595
     MOV EDI,0x7f80                      ; 004ed60b
         ;   Label: LAB_004ed60b
     XOR ESI,ESI                         ; 004ed610
-    MOV dword ptr [0x00688038],EDI      ; 004ed612 | g_RenderVertexBuffer[0].color
-    MOV dword ptr [0x0068803c],ESI      ; 004ed618 | g_RenderVertexBuffer[0].fog
-    MOV dword ptr [0x00688034],ESI      ; 004ed61e | g_RenderVertexBuffer[0].light
+    MOV dword ptr [0x00688038],EDI      ; 004ed612 | g_RenderVertexBuffer[0].r
+    MOV dword ptr [0x0068803c],ESI      ; 004ed618 | g_RenderVertexBuffer[0].g
+    MOV dword ptr [0x00688034],ESI      ; 004ed61e | g_RenderVertexBuffer[0].z
     JMP 0x004ed4ff                      ; 004ed624
         ;   XREF to: 004ed4ff (UNCONDITIONAL_JUMP)  ; LAB_004ed4ff
     XOR EDX,EDX                         ; 004ed629
         ;   Label: LAB_004ed629
-    MOV dword ptr [0x00688038],EDX      ; 004ed62b | g_RenderVertexBuffer[0].color
-    MOV dword ptr [0x0068803c],EDX      ; 004ed631 | g_RenderVertexBuffer[0].fog
-    MOV dword ptr [0x00688034],EDX      ; 004ed637 | g_RenderVertexBuffer[0].light
+    MOV dword ptr [0x00688038],EDX      ; 004ed62b | g_RenderVertexBuffer[0].r
+    MOV dword ptr [0x0068803c],EDX      ; 004ed631 | g_RenderVertexBuffer[0].g
+    MOV dword ptr [0x00688034],EDX      ; 004ed637 | g_RenderVertexBuffer[0].z
     JMP 0x004ed4ff                      ; 004ed63d
         ;   XREF to: 004ed4ff (UNCONDITIONAL_JUMP)  ; LAB_004ed4ff
     JBE 0x004ed60b                      ; 004ed642
@@ -226,16 +226,16 @@ section .text
     MOV ESI,0x7f80                      ; 004ed64e
         ;   Label: LAB_004ed64e
     XOR EBX,EBX                         ; 004ed653
-    MOV dword ptr [0x00688068],ESI      ; 004ed655 | g_RenderVertexBuffer[1].color
-    MOV dword ptr [0x0068806c],EBX      ; 004ed65b | g_RenderVertexBuffer[1].fog
-    MOV dword ptr [0x00688064],EBX      ; 004ed661 | g_RenderVertexBuffer[1].light
+    MOV dword ptr [0x00688068],ESI      ; 004ed655 | g_RenderVertexBuffer[1].r
+    MOV dword ptr [0x0068806c],EBX      ; 004ed65b | g_RenderVertexBuffer[1].g
+    MOV dword ptr [0x00688064],EBX      ; 004ed661 | g_RenderVertexBuffer[1].z
     JMP 0x004ed531                      ; 004ed667
         ;   XREF to: 004ed531 (UNCONDITIONAL_JUMP)  ; LAB_004ed531
     XOR EAX,EAX                         ; 004ed66c
         ;   Label: LAB_004ed66c
-    MOV [0x00688068],EAX                ; 004ed66e | g_RenderVertexBuffer[1].color
-    MOV [0x0068806c],EAX                ; 004ed673 | g_RenderVertexBuffer[1].fog
-    MOV [0x00688064],EAX                ; 004ed678 | g_RenderVertexBuffer[1].light
+    MOV [0x00688068],EAX                ; 004ed66e | g_RenderVertexBuffer[1].r
+    MOV [0x0068806c],EAX                ; 004ed673 | g_RenderVertexBuffer[1].g
+    MOV [0x00688064],EAX                ; 004ed678 | g_RenderVertexBuffer[1].z
     JMP 0x004ed531                      ; 004ed67d
         ;   XREF to: 004ed531 (UNCONDITIONAL_JUMP)  ; LAB_004ed531
     JBE 0x004ed64e                      ; 004ed682
@@ -249,16 +249,16 @@ section .text
     MOV EBX,0x7f80                      ; 004ed68e
         ;   Label: LAB_004ed68e
     XOR ECX,ECX                         ; 004ed693
-    MOV dword ptr [0x00688098],EBX      ; 004ed695 | g_RenderVertexBuffer[2].color
-    MOV dword ptr [0x0068809c],ECX      ; 004ed69b | g_RenderVertexBuffer[2].fog
-    MOV dword ptr [0x00688094],ECX      ; 004ed6a1 | g_RenderVertexBuffer[2].light
+    MOV dword ptr [0x00688098],EBX      ; 004ed695 | g_RenderVertexBuffer[2].r
+    MOV dword ptr [0x0068809c],ECX      ; 004ed69b | g_RenderVertexBuffer[2].g
+    MOV dword ptr [0x00688094],ECX      ; 004ed6a1 | g_RenderVertexBuffer[2].z
     JMP 0x004ed563                      ; 004ed6a7
         ;   XREF to: 004ed563 (UNCONDITIONAL_JUMP)  ; LAB_004ed563
     XOR EBP,EBP                         ; 004ed6ac
         ;   Label: LAB_004ed6ac
-    MOV dword ptr [0x00688098],EBP      ; 004ed6ae | g_RenderVertexBuffer[2].color
-    MOV dword ptr [0x0068809c],EBP      ; 004ed6b4 | g_RenderVertexBuffer[2].fog
-    MOV dword ptr [0x00688094],EBP      ; 004ed6ba | g_RenderVertexBuffer[2].light
+    MOV dword ptr [0x00688098],EBP      ; 004ed6ae | g_RenderVertexBuffer[2].r
+    MOV dword ptr [0x0068809c],EBP      ; 004ed6b4 | g_RenderVertexBuffer[2].g
+    MOV dword ptr [0x00688094],EBP      ; 004ed6ba | g_RenderVertexBuffer[2].z
     JMP 0x004ed563                      ; 004ed6c0
         ;   XREF to: 004ed563 (UNCONDITIONAL_JUMP)  ; LAB_004ed563
     JBE 0x004ed68e                      ; 004ed6c5
@@ -272,16 +272,16 @@ section .text
     MOV ECX,0x7f80                      ; 004ed6d1
         ;   Label: LAB_004ed6d1
     XOR EDX,EDX                         ; 004ed6d6
-    MOV dword ptr [0x006880c8],ECX      ; 004ed6d8 | g_RenderVertexBuffer[3].color
-    MOV dword ptr [0x006880cc],EDX      ; 004ed6de | g_RenderVertexBuffer[3].fog
-    MOV dword ptr [0x006880c4],EDX      ; 004ed6e4 | g_RenderVertexBuffer[3].light
+    MOV dword ptr [0x006880c8],ECX      ; 004ed6d8 | g_RenderVertexBuffer[3].r
+    MOV dword ptr [0x006880cc],EDX      ; 004ed6de | g_RenderVertexBuffer[3].g
+    MOV dword ptr [0x006880c4],EDX      ; 004ed6e4 | g_RenderVertexBuffer[3].z
     JMP 0x004ed595                      ; 004ed6ea
         ;   XREF to: 004ed595 (UNCONDITIONAL_JUMP)  ; LAB_004ed595
     XOR EDI,EDI                         ; 004ed6ef
         ;   Label: LAB_004ed6ef
-    MOV dword ptr [0x006880c8],EDI      ; 004ed6f1 | g_RenderVertexBuffer[3].color
-    MOV dword ptr [0x006880cc],EDI      ; 004ed6f7 | g_RenderVertexBuffer[3].fog
-    MOV dword ptr [0x006880c4],EDI      ; 004ed6fd | g_RenderVertexBuffer[3].light
+    MOV dword ptr [0x006880c8],EDI      ; 004ed6f1 | g_RenderVertexBuffer[3].r
+    MOV dword ptr [0x006880cc],EDI      ; 004ed6f7 | g_RenderVertexBuffer[3].g
+    MOV dword ptr [0x006880c4],EDI      ; 004ed6fd | g_RenderVertexBuffer[3].z
     JMP 0x004ed595                      ; 004ed703
         ;   XREF to: 004ed595 (UNCONDITIONAL_JUMP)  ; LAB_004ed595
     JBE 0x004ed6d1                      ; 004ed708

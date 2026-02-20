@@ -11,13 +11,13 @@ void __cdecl core_waypoint_cpp_CWayPoint_FUN_005ec640(CWayPoint *this_ptr)
 {
   int index;
   CWayPoint *pCVar1;
-  int in_stack_00000008;
+  CWayPoint *in_stack_00000008;
   
   index = 0;
   pCVar1 = this_ptr;
   if (0 < this_ptr->num_adjacent_waypoints) {
     do {
-      while (in_stack_00000008 == *(int *)pCVar1->unk) {
+      while (in_stack_00000008 == pCVar1->adjacency[0].waypoint) {
         core_waypoint_cpp_CWayPoint_removeAdj_FUN_005ec7b0(this_ptr,index);
         if (this_ptr->num_adjacent_waypoints <= index) {
           return;

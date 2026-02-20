@@ -55,7 +55,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c02b0(CStranger *this_ptr)
   CQuaternion4f *local_2c;
   int local_28;
   int local_24;
-  char *local_20;
+  SArmAimData *local_20;
   CDeformableModelInstance *local_1c;
   float local_18;
   
@@ -72,7 +72,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c02b0(CStranger *this_ptr)
     *puVar4 = *puVar3;
     puVar4[(uint)bVar7 * -2 + 1] = puVar3[(uint)bVar7 * -2 + 1];
     core_xform_cpp_quaternionFromAngleZ_FUN_005f7a30(1.5707964,&local_1ac);
-    local_20 = this_ptr->unk3 + 4;
+    local_20 = &this_ptr->left_arm_aim;
     pCVar2 = &local_1ac;
   }
   else {
@@ -87,7 +87,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c02b0(CStranger *this_ptr)
     *puVar4 = *puVar3;
     puVar4[(uint)bVar7 * -2 + 1] = puVar3[(uint)bVar7 * -2 + 1];
     core_xform_cpp_quaternionFromAngleZ_FUN_005f7a30(-1.5707964,&local_ec);
-    local_20 = this_ptr->unk1 + 0x10;
+    local_20 = &this_ptr->right_arm_aim;
     pCVar2 = &local_ec;
   }
   puVar3 = (uint *)((int)pCVar2 + ((uint)bVar7 * -2 + 1) * 4);
@@ -98,7 +98,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c02b0(CStranger *this_ptr)
   *puVar5 = *puVar4;
   puVar5[(uint)bVar7 * -2 + 1] = puVar4[(uint)bVar7 * -2 + 1];
   local_1e0 = (this_ptr->base).base.layer_action_t;
-  local_1e0 = (1.0 - (1.0 - *(float *)(local_20 + 0x14)) * local_1e0) * local_1e0;
+  local_1e0 = (1.0 - (1.0 - local_20->kickback_factor) * local_1e0) * local_1e0;
   if (0.0 < local_1e0) {
     local_1c = &(this_ptr->base).base.model;
     this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(local_1c);
@@ -110,7 +110,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c02b0(CStranger *this_ptr)
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
               (this_ptr_00,iVar1,local_34,local_1e0,local_24,
                core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
-    core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(*(float *)(local_20 + 0xc),&local_4c);
+    core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(local_20->target_yaw,&local_4c);
     pCVar2 = &local_16c;
     local_16c.w = local_4c.w;
     puVar4 = (uint *)((int)&local_16c + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
@@ -119,7 +119,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c02b0(CStranger *this_ptr)
          *(uint *)((int)&local_4c + (uint)bVar7 * -8 + 4);
     *puVar4 = *puVar3;
     puVar4[(uint)bVar7 * -2 + 1] = puVar3[(uint)bVar7 * -2 + 1];
-    core_xform_cpp_quaternionFromAngleX_FUN_005f79b0(*(float *)(local_20 + 8),&local_19c);
+    core_xform_cpp_quaternionFromAngleX_FUN_005f79b0(local_20->target_pitch,&local_19c);
     local_17c.w = local_19c.w;
     puVar4 = (uint *)((int)&local_17c + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
     puVar3 = (uint *)((int)&local_19c + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
@@ -187,7 +187,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c02b0(CStranger *this_ptr)
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
               (local_1c,&local_13c,local_1e0,local_28,
                core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
-    if ((float)0.0001 < *(float *)(this_ptr->unk8 + 0x48)) {
+    if ((float)0.0001 < this_ptr->arm_recoil_blend) {
       core_xform_cpp_quaternionFromAngleX_FUN_005f79b0(1.5707964,&local_5c);
       pCVar2 = &local_fc;
       local_fc.w = local_5c.w;
@@ -206,7 +206,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c02b0(CStranger *this_ptr)
       *puVar4 = *puVar3;
       puVar4[(uint)bVar7 * -2 + 1] = puVar3[(uint)bVar7 * -2 + 1];
       core_xform_cpp_slerpQuaternion_FUN_005f77e0
-                (local_2c,&local_10c,*(float *)(this_ptr->unk8 + 0x48),&local_cc);
+                (local_2c,&local_10c,this_ptr->arm_recoil_blend,&local_cc);
       pcVar6 = local_30 + (uint)bVar7 * -8 + 0x80c;
       *(float *)(local_30 + 0x808) = local_cc.w;
       puVar3 = (uint *)((int)&local_cc + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);

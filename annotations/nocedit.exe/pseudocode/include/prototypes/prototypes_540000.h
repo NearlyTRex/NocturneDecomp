@@ -7,6 +7,7 @@
 #include "types/classes/CActorPropertyList.h"
 #include "types/classes/CAlphaBitmap.h"
 #include "types/classes/CBoundingBox3D.h"
+#include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CFont.h"
 #include "types/classes/CLocation.h"
@@ -113,7 +114,7 @@ CFont * __cdecl engine_palette_cpp_CFont_ctor_FUN_00544eb0(CFont *this_ptr);
 CFont * __cdecl engine_palette_cpp_CFont_dtor_FUN_00544ec0(CFont *this_ptr,uint flags);
 int __cdecl engine_palette_cpp_CFont_drawText_FUN_00544ed0(CFont *this_ptr,char *text,int x,int y,int foreground_color,int background_color);
 int __cdecl engine_palette_cpp_CFont_getLineSpacing_FUN_00544f00(void);
-CPaletteManager * __cdecl engine_palette_cpp_CPaletteManager_ctor_FUN_00544f10(CPaletteManager *this_ptr);
+CPaletteManager * __cdecl engine_palette_cpp_CPaletteManager_ctor_FUN_00544f10(CPaletteManager *this_ptr,int max_texture_count,int max_pixel_count);
 CPaletteManager * __cdecl engine_palette_cpp_CPaletteManager_dtor_FUN_00544f80(CPaletteManager *this_ptr,uint flags);
 void __cdecl engine_palette_cpp_CPaletteManager_FUN_00544fb0(CPaletteManager *this_ptr);
 void __cdecl engine_palette_cpp_CPaletteManager_addTexture_FUN_00544fbe(CPaletteManager *this_ptr,char *filename);
@@ -245,21 +246,21 @@ CPlatform * __cdecl core_platfrm_cpp_factoryFunc_FUN_0054c810(void);
 CDemonActorType * __cdecl core_platfrm_cpp_CPlatform_getActorType_FUN_0054c840(CPlatform *this_ptr);
 CPlatform * __cdecl core_platfrm_cpp_CPlatform_ctor_FUN_0054c850(CPlatform *this_ptr);
 void __cdecl core_platfrm_cpp_CPlatform_setup_FUN_0054ca20(CPlatform *this_ptr);
-void __cdecl core_platfrm_cpp_CPlatform_FUN_0054cab0(CPlatform *this_ptr);
+void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_0054cab0(CPlatform *this_ptr);
 void __cdecl core_platfrm_cpp_CPlatform_process_FUN_0054cc30(CPlatform *this_ptr,float delta_time);
-void __cdecl core_platfrm_cpp_CPlatform_FUN_0054d690(CPlatform *this_ptr);
+void __cdecl core_platfrm_cpp_CPlatform_startMovement_FUN_0054d690(CPlatform *this_ptr,float goal_param,float movement_rate);
 int __cdecl core_platfrm_cpp_CPlatform_renderOpaque_FUN_0054d720(CPlatform *this_ptr);
 void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_0054d9b0(CPlatform *this_ptr,int layer_flag);
 CBoundingBox3D * __cdecl core_platfrm_cpp_CPlatform_getBoundingBox_FUN_0054db70(CPlatform *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_0054dbc0(CPlatform *this_ptr);
-int __cdecl core_platfrm_cpp_CPlatform_FUN_0054df80(CPlatform *this_ptr);
+int __cdecl core_platfrm_cpp_CPlatform_isActorOnPlatform_FUN_0054df80(CPlatform *this_ptr,CDemonActor *actor);
 int __cdecl core_platfrm_cpp_CPlatform_hasCollision_FUN_0054e180(CPlatform *this_ptr,SCollisionInfo *collision_info);
 int __cdecl core_platfrm_cpp_CPlatform_allowBulletHoles_FUN_0054e1a0(CPlatform *this_ptr);
 int __cdecl core_platfrm_cpp_CPlatform_getGroundType_FUN_0054e1c0(CPlatform *this_ptr);
 int __cdecl core_platfrm_cpp_CPlatform_getBlockVirtualDirectorFlag_FUN_0054e1d0(CPlatform *this_ptr);
 void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_0054e1e0(CPlatform *this_ptr);
-void __cdecl core_platfrm_cpp_CPlatform_FUN_0054e2e0(CPlatform *this_ptr);
-void __cdecl core_platfrm_cpp_CPlatform_FUN_0054e320(CPlatform *this_ptr);
+void __cdecl core_platfrm_cpp_CPlatform_onActorDeleted_FUN_0054e2e0(CPlatform *this_ptr,CDemonActor *deleted_actor);
+void __cdecl core_platfrm_cpp_CPlatform_updateAttachedActors_FUN_0054e320(CPlatform *this_ptr);
 void __cdecl core_platfrm_cpp_CPlatform_propertyDisplaySlewCallback_FUN_0054e400(CPlatform *this_ptr,CActorProperty *property,char *output_buffer);
 int __cdecl core_platfrm_cpp_CPlatform_propertyActionSlewCallback_FUN_0054e480(CPlatform *this_ptr);
 void __cdecl core_platfrm_cpp_CPlatform_propertyDisplayTypeCallback_FUN_0054e4e0(CPlatform *this_ptr,CActorProperty *property,char *output_buffer);

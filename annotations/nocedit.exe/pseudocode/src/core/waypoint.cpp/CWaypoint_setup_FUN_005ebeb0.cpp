@@ -6,10 +6,12 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 void __cdecl core_waypoint_cpp_CWaypoint_setup_FUN_005ebeb0(CWayPoint *this_ptr)
 
 {
-  int iVar1;
+  CWayPoint *pCVar1;
   float fVar2;
   float fVar3;
   float fVar4;
@@ -22,12 +24,12 @@ void __cdecl core_waypoint_cpp_CWaypoint_setup_FUN_005ebeb0(CWayPoint *this_ptr)
   if (0 < this_ptr->num_adjacent_waypoints) {
     pCVar5 = this_ptr;
     do {
-      iVar1 = *(int *)pCVar5->unk;
-      fVar2 = (this_ptr->base).base.location.position.x - *(float *)(iVar1 + 0x20);
-      fVar4 = (this_ptr->base).base.location.position.y - *(float *)(iVar1 + 0x24);
-      fVar3 = (this_ptr->base).base.location.position.z - *(float *)(iVar1 + 0x28);
+      pCVar1 = pCVar5->adjacency[0].waypoint;
+      fVar2 = (this_ptr->base).base.location.position.x - (pCVar1->base).base.location.position.x;
+      fVar4 = (this_ptr->base).base.location.position.y - (pCVar1->base).base.location.position.y;
+      fVar3 = (this_ptr->base).base.location.position.z - (pCVar1->base).base.location.position.z;
       iVar6 = iVar6 + 1;
-      *(float *)(pCVar5->unk + 4) = SQRT(fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2);
+      pCVar5->adjacency[0].distance = SQRT(fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2);
       pCVar5 = (CWayPoint *)((pCVar5->base).base.actor_name + 8);
     } while (iVar6 < this_ptr->num_adjacent_waypoints);
   }

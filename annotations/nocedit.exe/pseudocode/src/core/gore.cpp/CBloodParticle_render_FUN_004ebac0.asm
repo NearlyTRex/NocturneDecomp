@@ -38,14 +38,14 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   undefined4 g_RenderVertexBuffer[0].u
 ;   undefined4 g_RenderVertexBuffer[0].v
-;   undefined4 g_RenderVertexBuffer[0].light
-;   undefined4 g_RenderVertexBuffer[0].color
-;   undefined4 g_RenderVertexBuffer[0].fog
+;   undefined4 g_RenderVertexBuffer[0].z
+;   undefined4 g_RenderVertexBuffer[0].r
+;   undefined4 g_RenderVertexBuffer[0].g
 ;   undefined4 g_RenderVertexBuffer[1].u
 ;   undefined4 g_RenderVertexBuffer[1].v
-;   undefined4 g_RenderVertexBuffer[1].light
-;   undefined4 g_RenderVertexBuffer[1].color
-;   undefined4 g_RenderVertexBuffer[1].fog
+;   undefined4 g_RenderVertexBuffer[1].z
+;   undefined4 g_RenderVertexBuffer[1].r
+;   undefined4 g_RenderVertexBuffer[1].g
 ;   undefined4 g_RenderVertexBuffer[2].u
 ;   ... and 10 more
 ;
@@ -279,21 +279,21 @@ section .text
         ;   Label: LAB_004ebdb7
     MOV EAX,dword ptr [ESP + 0xd0]      ; 004ebdb9
         ;   Label: LAB_004ebdb9
-    MOV EDX,dword ptr [ECX + 0x688034]  ; 004ebdc0 | g_RenderVertexBuffer[0].light | g_RenderVertexBuffer[1].light
+    MOV EDX,dword ptr [ECX + 0x688034]  ; 004ebdc0 | g_RenderVertexBuffer[0].z | g_RenderVertexBuffer[1].z
     IMUL EDX                            ; 004ebdc6
     SHRD EAX,EDX,0x10                   ; 004ebdc8
-    MOV EDX,dword ptr [ECX + 0x688038]  ; 004ebdcc | g_RenderVertexBuffer[0].color | g_RenderVertexBuffer[1].color
-    MOV dword ptr [ECX + 0x688034],EAX  ; 004ebdd2 | g_RenderVertexBuffer[0].light | g_RenderVertexBuffer[1].light
+    MOV EDX,dword ptr [ECX + 0x688038]  ; 004ebdcc | g_RenderVertexBuffer[0].r | g_RenderVertexBuffer[1].r
+    MOV dword ptr [ECX + 0x688034],EAX  ; 004ebdd2 | g_RenderVertexBuffer[0].z | g_RenderVertexBuffer[1].z
     MOV EAX,dword ptr [ESP + 0xd8]      ; 004ebdd8
     IMUL EDX                            ; 004ebddf
     SHRD EAX,EDX,0x10                   ; 004ebde1
-    MOV EDX,dword ptr [ECX + 0x68803c]  ; 004ebde5 | g_RenderVertexBuffer[0].fog | g_RenderVertexBuffer[1].fog
-    MOV dword ptr [ECX + 0x688038],EAX  ; 004ebdeb | g_RenderVertexBuffer[0].color | g_RenderVertexBuffer[1].color
+    MOV EDX,dword ptr [ECX + 0x68803c]  ; 004ebde5 | g_RenderVertexBuffer[0].g | g_RenderVertexBuffer[1].g
+    MOV dword ptr [ECX + 0x688038],EAX  ; 004ebdeb | g_RenderVertexBuffer[0].r | g_RenderVertexBuffer[1].r
     MOV EAX,dword ptr [ESP + 0xd4]      ; 004ebdf1
     ADD ECX,0x30                        ; 004ebdf8
     IMUL EDX                            ; 004ebdfb
     SHRD EAX,EDX,0x10                   ; 004ebdfd
-    MOV dword ptr [ECX + 0x68800c],EAX  ; 004ebe01 | g_RenderVertexBuffer[0].fog | g_RenderVertexBuffer[1].fog
+    MOV dword ptr [ECX + 0x68800c],EAX  ; 004ebe01 | g_RenderVertexBuffer[0].g | g_RenderVertexBuffer[1].g
     CMP ECX,0xc0                        ; 004ebe07
     JNZ 0x004ebdb9                      ; 004ebe0d
         ;   XREF to: 004ebdb9 (CONDITIONAL_JUMP)  ; LAB_004ebdb9
