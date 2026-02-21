@@ -10,9 +10,9 @@ void __cdecl core_dcube_cpp_CDemonCubeTriangle_readFromFile_FUN_004551d0(CDemonC
 
 {
   _fread(g_TempTriangleIndices,3,4,file_handle);
-  this_ptr->vertices[0] = vertex_buffer_base + g_TempTriangleIndices[0];
-  this_ptr->vertices[1] = vertex_buffer_base + g_TempTriangleIndices[1];
-  this_ptr->vertices[2] = vertex_buffer_base + g_TempTriangleIndices[2];
-  _fread(&this_ptr->normal,0x14,1,file_handle);
+  (this_ptr->triangle).vertices[0] = vertex_buffer_base + g_TempTriangleIndices[0];
+  (this_ptr->triangle).vertices[1] = vertex_buffer_base + g_TempTriangleIndices[1];
+  (this_ptr->triangle).vertices[2] = vertex_buffer_base + g_TempTriangleIndices[2];
+  _fread(&(this_ptr->triangle).normal,0x14,1,file_handle);
   return;
 }

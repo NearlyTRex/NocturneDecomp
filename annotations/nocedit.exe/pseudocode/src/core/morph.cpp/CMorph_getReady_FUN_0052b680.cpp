@@ -81,9 +81,10 @@ void __cdecl core_morph_cpp_CMorph_getReady_FUN_0052b680(CMorph *this_ptr)
     iVar2 = local_2c;
     iVar7 = 0x10;
     for (iVar8 = 1;
-        iVar8 < *(int *)(this_ptr->models[0].textures[0].base.texture_name + iVar2 + -0x1c);
+        iVar8 < *(int *)(this_ptr->models[0].textures[0].textures[0].texture_name + iVar2 + -0x1c);
         iVar8 = iVar8 + 1) {
-      iVar4 = *(int *)(this_ptr->models[0].textures[0].base.texture_name + iVar2 + -0x18) + iVar7;
+      iVar4 = *(int *)(this_ptr->models[0].textures[0].textures[0].texture_name + iVar2 + -0x18) +
+              iVar7;
       iVar7 = iVar7 + 0x10;
       core_box_cpp_CBoundingBox3D_expand_FUN_00420240(pCVar5,(CVector3f *)(iVar4 + 4));
     }

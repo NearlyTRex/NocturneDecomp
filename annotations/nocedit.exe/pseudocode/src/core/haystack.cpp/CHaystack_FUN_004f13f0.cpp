@@ -178,14 +178,14 @@ void __cdecl core_haystack_cpp_CHaystack_FUN_004f13f0(CHaystack *this_ptr)
     if (local_50 < -local_20) {
       local_50 = -local_20;
     }
-    local_8c = local_50 - *(float *)(this_ptr->unk + 8);
+    local_8c = local_50 - (this_ptr->head_look_euler).y;
     if (in_stack_00000008 * (float)3.1415926535000001 < local_8c) {
       local_8c = in_stack_00000008 * (float)3.1415926535000001;
     }
     if (local_8c < in_stack_00000008 * (float)-3.1415926535000001) {
       local_8c = in_stack_00000008 * (float)-3.1415926535000001;
     }
-    *(float *)(this_ptr->unk + 8) = *(float *)(this_ptr->unk + 8) + local_8c;
+    (this_ptr->head_look_euler).y = (this_ptr->head_look_euler).y + local_8c;
   }
   return;
 }

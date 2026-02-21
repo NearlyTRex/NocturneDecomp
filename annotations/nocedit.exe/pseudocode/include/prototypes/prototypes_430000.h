@@ -155,8 +155,8 @@ void __cdecl core_cloth_cpp_CClothList_remove_FUN_0043c170(CClothList *this_ptr,
 void __cdecl core_cloth_cpp_CClothList_setup_FUN_0043c290(CClothList *this_ptr,CVector3f *position,CVector3f *euler, CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CClothList_process_FUN_0043c2d0(CClothList *this_ptr,CVector3f *position,CVector3f *euler,float delta_time, float floor_y,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CClothList_render_FUN_0043c320(CClothList *this_ptr,CDeformableModelInstance *model_ptr);
-void __cdecl core_cloth_cpp_CCloth_deleteCollisionBone_FUN_0043c3a0(CCloth *this_ptr);
-void __cdecl core_cloth_cpp_CCloth_editCollisionBone_FUN_0043c3e0(CCloth *this_ptr);
+void __cdecl core_cloth_cpp_CClothList_applyRotation_FUN_0043c3a0(CClothList *this_ptr,CVector3f *euler);
+void __cdecl core_cloth_cpp_CClothList_FUN_0043c3e0(CClothList *this_ptr,CVector3f *param_2);
 void __cdecl core_cloth_cpp_CCloth_addCollisionBone_FUN_0043c430(CCloth *this_ptr);
 void __cdecl core_cloth_cpp_plotPixelSafe_FUN_0043c6b0(int x,int y);
 void __cdecl core_cloth_cpp_drawVertexMarker_FUN_0043c6e0(int vert_index);

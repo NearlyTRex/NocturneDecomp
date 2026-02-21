@@ -153,7 +153,7 @@ section .text
     MOV EBP,EDI                         ; 0051aeec
     MOV EBX,0x1                         ; 0051aeee
     CALL shape_meshlod.cpp_CLodMesh_allocate_FUN_00515ac0 ; 0051aef3
-        ;   XREF to: 00515ac0 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_allocate_FUN_00515ac0(CLodMesh * this_ptr, int vertex_count, int tri_count, int submesh_count)
+        ;   XREF to: 00515ac0 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_allocate_FUN_00515ac0(CLodMesh * this_ptr, int vertex_count, int tri_count, int lod_texture_count)
     ADD ESP,0x10                        ; 0051aef8
     PUSH EBP                            ; 0051aefb
         ;   Label: LAB_0051aefb

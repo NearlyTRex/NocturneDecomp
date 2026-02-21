@@ -12,7 +12,7 @@
 ;   core_skeledit.cpp_CSkeleton_FUN_00592690 at 005954fc
 ;
 ; Called Functions:
-;   core_skeledit.cpp_FUN_0058ac80
+;   core_skeledit.cpp_CBoneStructure_FUN_0058ac80
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10
 ;   crt_stack.c___STK_FUN_005ff9f3
 ;
@@ -71,8 +71,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x44]      ; 0058afbe
         ;   Label: LAB_0058afbe
     PUSH EDX                            ; 0058afc2
-    CALL core_skeledit.cpp_FUN_0058ac80 ; 0058afc3
-        ;   XREF to: 0058ac80 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_FUN_0058ac80()
+    CALL core_skeledit.cpp_CBoneStructure_FUN_0058ac80 ; 0058afc3
+        ;   XREF to: 0058ac80 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_CBoneStructure_FUN_0058ac80(CBoneStructure * this_ptr)
     ADD ESP,0x4                         ; 0058afc8
     ADD ESP,0x38                        ; 0058afcb
     POP EBP                             ; 0058afce

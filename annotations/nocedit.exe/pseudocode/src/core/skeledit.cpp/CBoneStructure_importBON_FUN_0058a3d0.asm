@@ -4,8 +4,8 @@
 ; void __cdecl core_skeledit_cpp_CBoneStructure_importBON_FUN_0058a3d0(CBoneStructure *this_ptr,char *filename)
 ;
 ; Parameters:
-; CBoneStructure * Stack[0x8]:4   this_ptr
-; char *           Stack[0xc]:4   filename
+; CBoneStructure * Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   filename
 ; Local Variables:
 ; undefined        Stack[-0x14]:1  local_14
 ;

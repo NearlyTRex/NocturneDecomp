@@ -13,7 +13,7 @@ void __cdecl core_morph_cpp_CMorphModel_addPartFromKeyFramedModel_FUN_0052a8d0(C
   int poly_count;
   SMRGLPrimitiveQuad *poly_data;
   int poly_stride;
-  SMRGLTextureExtended *texture_list;
+  SMRGLTextureLod *texture_list;
   int *texture_index_list;
   
   texture_index_list = model_ptr->poly_texture_index_list;

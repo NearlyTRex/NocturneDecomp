@@ -14845,7 +14845,7 @@
               }
             ]
           },
-          "type":"uint"
+          "type":"int"
         },
         {
           "name":"texture_entries",
@@ -15162,13 +15162,13 @@
         {
           "name":"this_ptr",
           "storage":{
-            "offset":12,
+            "offset":4,
             "size":4,
             "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0xc]",
-                "offset":12,
+                "addr":"Stack[0x4]",
+                "offset":4,
                 "size":4
               }
             ]
@@ -49171,7 +49171,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_meshlod.cpp_CLodMesh_findOrAddSubmesh_FUN_00518790",
+    "name":"shape_meshlod.cpp_CLodMesh_findOrAddLodTexture_FUN_00518790",
     "ret":"int",
     "vars":{
       "params":[
@@ -57477,7 +57477,7 @@
               }
             ]
           },
-          "type":"STriangleIndices*"
+          "type":"SMRGLPrimitiveTriangle*"
         }
       ],
       "ret_storage":{
@@ -67254,7 +67254,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeledit.cpp_FUN_0058c190",
+    "name":"core_skeledit.cpp_CDeformableModel_FUN_0058c190",
     "ret":"int",
     "vars":{
       "locals":[
@@ -68691,6 +68691,40 @@
           "type":"undefined4"
         }
       ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModel*"
+        },
+        {
+          "name":"filename",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -68718,7 +68752,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeledit.cpp_FUN_0058d790",
+    "name":"core_skeledit.cpp_CDeformableModel_FUN_0058d790",
     "ret":"void",
     "vars":{
       "locals":[
@@ -69185,6 +69219,56 @@
             ]
           },
           "type":"undefined8"
+        }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModel*"
+        },
+        {
+          "name":"param_2",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"param_3",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CLodMesh*"
         }
       ]
     }
@@ -72805,6 +72889,22 @@
         {
           "name":"this_ptr",
           "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModel*"
+        },
+        {
+          "name":"filename",
+          "storage":{
             "offset":8,
             "size":4,
             "stack":true,
@@ -72816,7 +72916,7 @@
               }
             ]
           },
-          "type":"CDeformableModel*"
+          "type":"char*"
         }
       ],
       "ret_storage":{
@@ -77261,7 +77361,7 @@
               }
             ]
           },
-          "type":"SBoneTransformData*"
+          "type":"SPose*"
         }
       ]
     }
@@ -90176,7 +90276,7 @@
     "vars":{
       "params":[
         {
-          "name":"socket",
+          "name":"socket_handle",
           "storage":{
             "offset":4,
             "size":4,

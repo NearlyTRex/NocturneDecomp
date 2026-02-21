@@ -2,45 +2,21 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 19,
-        "line": 21,
-        "message": "type 'CCrossbow_ptr_1404' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 25,
+        "category": "missing_member",
+        "column": 12,
         "line": 22,
-        "message": "type 'CCrossbow_ptr_1404' does not provide a subscript operator"
+        "message": "no member named 'flame_size' in 'CCrossbow'"
       },
       {
-        "category": "other",
-        "column": 25,
+        "category": "missing_member",
+        "column": 12,
         "line": 23,
-        "message": "type 'CCrossbow_ptr_1404' does not provide a subscript operator"
+        "message": "no member named 'flame_size' in 'CCrossbow'"
       },
       {
-        "category": "other",
-        "column": 25,
+        "category": "missing_member",
+        "column": 12,
         "line": 24,
-        "message": "type 'CCrossbow_ptr_1404' does not provide a subscript operator"
-      },
-      {
-        "category": "missing_member",
-        "column": 12,
-        "line": 25,
-        "message": "no member named 'flame_size' in 'CCrossbow'"
-      },
-      {
-        "category": "missing_member",
-        "column": 12,
-        "line": 26,
-        "message": "no member named 'flame_size' in 'CCrossbow'"
-      },
-      {
-        "category": "missing_member",
-        "column": 12,
-        "line": 27,
         "message": "no member named 'flame_size' in 'CCrossbow'"
       }
     ],
@@ -49,17 +25,16 @@
   },
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 165,
+    "complexity_score": 137,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
-    "pseudocode_lines": 25,
-    "suspect_count": 13,
+    "pseudocode_lines": 22,
+    "suspect_count": 11,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "pointer_cast"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 59
+    "total_lines": 56
   },
   "cross_references": [
     {
@@ -188,71 +163,57 @@
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 15,
-      "match": "(char *)((int)",
-      "text": "*(char *)((int)&pCVar3[-0xffffffff00000001].render_corona + 1) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 16,
-      "match": "(char *)((int)",
-      "text": "*(char *)((int)&pCVar3[-0xffffffff00000001].render_corona + 2) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 17,
-      "match": "(char *)((int)",
-      "text": "*(char *)((int)&pCVar3[-0xffffffff00000001].render_corona + 3) = '\\0';",
-      "type": "pointer_cast"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 14,
+      "match": "ADJ",
+      "text": "ADJ(pCVar3)->flame_active = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 21,
+      "line": 18,
       "match": "ADJ",
       "text": "ADJ(pCVar3)->base.is_spread_weapon = 0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 22,
+      "line": 19,
       "match": "ADJ",
       "text": "ADJ(pCVar3)->base.fire_mode = 0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
+      "line": 20,
       "match": "ADJ",
       "text": "ADJ(pCVar3)->base.weapon_type = 1;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
+      "line": 21,
       "match": "ADJ",
       "text": "ADJ(pCVar3)->base.can_penetrate = 0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 25,
+      "line": 22,
       "match": "ADJ",
       "text": "ADJ(pCVar3)->base.bolt_velocity = 50.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 26,
+      "line": 23,
       "match": "ADJ",
       "text": "ADJ(pCVar3)->base.fire_cooldown = 0.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 27,
+      "line": 24,
       "match": "ADJ",
       "text": "return ADJ(pCVar3);",
       "type": "decompiler_intrinsic"

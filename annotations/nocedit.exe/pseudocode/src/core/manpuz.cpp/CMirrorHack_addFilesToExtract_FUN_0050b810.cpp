@@ -11,6 +11,6 @@ void __cdecl core_manpuz_cpp_CMirrorHack_addFilesToExtract_FUN_0050b810(CMirrorH
 {
   core_actor_cpp_CDemonActor_addFilesToExtract_FUN_0040cfd0(&this_ptr->base,file_handle);
   core_dmodel_cpp_CKeyFramedModelInstance_addFilesToExtract_FUN_0047edd0
-            ((CKeyFramedModelInstance *)this_ptr->unk,file_handle);
+            (&this_ptr->mirror_model,file_handle);
   return;
 }

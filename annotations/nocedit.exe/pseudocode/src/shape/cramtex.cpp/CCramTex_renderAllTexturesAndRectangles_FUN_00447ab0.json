@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 20,
+        "line": 18,
         "message": "no matching function for call to '__STK'"
       }
     ],
@@ -13,16 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 148,
-    "complexity_score": 70,
+    "complexity_score": 44,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 17,
-    "pseudocode_lines": 45,
-    "suspect_count": 2,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 193
+    "pseudocode_lines": 44,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 192
   },
   "cross_references": [],
   "function": {
@@ -123,7 +121,7 @@
     {
       "addr": "0084a854",
       "name": "g_CramTextureCount",
-      "type": "uint",
+      "type": "int",
       "value": null
     },
     {
@@ -272,20 +270,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_ffffffe8",
-      "text": "int in_stack_ffffffe8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_ffffffe8",
-      "text": "(this_ptr,x,y,width,height,in_stack_ffffffe8);",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

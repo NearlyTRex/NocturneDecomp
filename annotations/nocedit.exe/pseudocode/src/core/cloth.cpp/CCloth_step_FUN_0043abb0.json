@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 835,
-    "complexity_score": 528,
+    "complexity_score": 522,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 8,
-    "pseudocode_lines": 413,
+    "pseudocode_lines": 407,
     "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
       "pointer_cast"
     ],
-    "total_lines": 1248
+    "total_lines": 1242
   },
   "cross_references": [
     {
@@ -1004,49 +1004,49 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 280,
+      "line": 274,
       "match": "(CVector3f *)((int)",
       "text": "pCVar4 = (CVector3f *)((int)(pCVar4 + 0x17) + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 282,
+      "line": 276,
       "match": "(CVector3f *)((int)",
       "text": "local_4c = (CVector3f *)((int)(local_4c + 0x17) + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 300,
+      "line": 294,
       "match": "(int *)((int)",
       "text": "pSVar11 = local_74 + *(int *)((int)this_ptr->vertex_sort_buffer + local_58);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 406,
+      "line": 400,
       "match": "(int *)((int)",
       "text": "piVar8 = (int *)((int)(this_ptr->model).vertex_list + iVar7);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 408,
+      "line": 402,
       "match": "ROUND",
       "text": "*piVar8 = (int)ROUND((pSVar11->position).x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 409,
+      "line": 403,
       "match": "ROUND",
       "text": "piVar8[1] = (int)ROUND((pSVar11->position).y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 410,
+      "line": 404,
       "match": "ROUND",
       "text": "piVar8[2] = (int)ROUND((pSVar11->position).z * 256.0f);",
       "type": "decompiler_intrinsic"

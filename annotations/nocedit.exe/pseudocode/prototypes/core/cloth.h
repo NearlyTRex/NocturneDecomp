@@ -111,13 +111,13 @@ void __cdecl CClothList::process(CClothList *this_ptr,CVector3f *position,CVecto
 // Address: 0043c320
 void __cdecl CClothList::render(CClothList *this_ptr,CDeformableModelInstance *model_ptr);
 
-// Original: core_cloth.cpp_CCloth_deleteCollisionBone_FUN_0043c3a0
+// Original: core_cloth.cpp_CClothList_applyRotation_FUN_0043c3a0
 // Address: 0043c3a0
-void __cdecl CCloth::deleteCollisionBone(CCloth *this_ptr);
+void __cdecl CClothList::applyRotation(CClothList *this_ptr,CVector3f *euler);
 
-// Original: core_cloth.cpp_CCloth_editCollisionBone_FUN_0043c3e0
+// Original: core_cloth.cpp_CClothList_FUN_0043c3e0
 // Address: 0043c3e0
-void __cdecl CCloth::editCollisionBone(CCloth *this_ptr);
+void __cdecl CClothList(CClothList *this_ptr,CVector3f *param_2);
 
 // Original: core_cloth.cpp_CCloth_addCollisionBone_FUN_0043c430
 // Address: 0043c430

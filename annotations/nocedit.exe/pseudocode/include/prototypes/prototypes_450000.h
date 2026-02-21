@@ -6,7 +6,6 @@
 #include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CDemonCamera.h"
 #include "types/classes/CDemonCube.h"
-#include "types/classes/CDemonCubeFrustum.h"
 #include "types/classes/CDemonCubeTriangle.h"
 #include "types/classes/CDemonLight.h"
 #include "types/classes/CRect.h"
@@ -22,7 +21,6 @@
 #include "types/structs/SShapeEditorPolygon.h"
 #include "types/structs/STreeNode.h"
 #include "types/structs/SVertexData.h"
-#include "types/structs/SVoxelGridParams.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x450000
@@ -101,7 +99,7 @@ void __cdecl core_dcube_cpp_CDemonCube_allocVoxelMemory_FUN_004567b0(CDemonCube 
 void __cdecl core_dcube_cpp_CDemonCube_allocGeometryMemory_FUN_00456840(CDemonCube *this_ptr);
 void __cdecl core_dcube_cpp_CDemonCube_freeMemory_FUN_004569b0(CDemonCube *this_ptr);
 void __cdecl core_dcube_cpp_CDemonCube_setBounds_FUN_00456a90(CDemonCube *this_ptr,CVector3f *min_bounds,CVector3f *max_bounds);
-void __cdecl core_dcube_cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0(CDemonCubeFrustum *frustum,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3, uchar texture_id);
+void __cdecl core_dcube_cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0(CDemonCube *this_ptr,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3, uchar texture_id);
 void __cdecl core_dcube_cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0(CDemonCube *this_ptr);
 void __cdecl core_dcube_cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0(CDemonCube *this_ptr,void *triangle_data,int triangle_count,CVector3f *min_bounds, CVector3f *max_bounds,uchar *ground_types,uint *voxel_data);
 void __cdecl core_dcube_cpp_CDemonCube_save_FUN_00457430(CDemonCube *this_ptr,_FILE *file_handle);
@@ -111,7 +109,7 @@ float __cdecl core_dcube_cpp_CDemonCube_rayIntersectTriangles_FUN_004578f0(CDemo
 void __cdecl core_dcube_cpp_CDemonCube_testCapsuleCollision_FUN_00457a90(CDemonCube *this_ptr,SIntersectXZCylinder *capsule_data);
 int __cdecl core_dcube_cpp_CDemonCube_testCylinderGroundCollision_FUN_00457b60(CDemonCube *this_ptr,CVector3f *cylinder_position,float cylinder_radius, CVector3f *output_height,CVector3f *output_normal,uint *output_material);
 int __cdecl core_dcube_cpp_CDemonCube_testAABBIntersection_FUN_00457ca0(CDemonCube *this_ptr,CVector3f *aabb_min,CVector3f *aabb_max);
-void __cdecl core_dcube_cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0(SVoxelGridParams *params);
+void __cdecl core_dcube_cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0(CDemonCube *this_ptr);
 CVector3f * __cdecl core_dcube_cpp_CVector3f_arrdtor_FUN_00457eb0(CVector3f *objs,uint flags);
 STreeNode * __cdecl shape_design_c_allocateSpatialTreeNode_FUN_00457ed0(void);
 void __cdecl shape_design_c_showHelpFile_FUN_00457f00(char *help_filename);

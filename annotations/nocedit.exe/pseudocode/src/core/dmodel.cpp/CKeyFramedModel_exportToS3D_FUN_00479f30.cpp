@@ -64,7 +64,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_exportToS3D_FUN_00479f30(CKeyFramed
     p_Var5 = local_18;
     iVar6 = 0;
     if (0 < this_ptr->texture_count) {
-      pcVar9 = this_ptr->texture_list[0].base.texture_name;
+      pcVar9 = this_ptr->texture_list[0].textures[0].texture_name;
       do {
         _fprintf(p_Var5,"%s\n",pcVar9);
         iVar6 = iVar6 + 1;

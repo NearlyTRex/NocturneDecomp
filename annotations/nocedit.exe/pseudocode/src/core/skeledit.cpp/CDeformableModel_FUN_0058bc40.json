@@ -4,25 +4,25 @@
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 21,
+        "line": 20,
         "message": "no matching function for call to '__STK'"
       },
       {
         "category": "format_error",
-        "column": 54,
-        "line": 31,
+        "column": 48,
+        "line": 30,
         "message": "format specifies type 'float *' but the argument has type 'uint *' (aka 'unsigned int *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 64,
-        "line": 31,
+        "column": 58,
+        "line": 30,
         "message": "format specifies type 'float *' but the argument has type 'uint *' (aka 'unsigned int *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 74,
-        "line": 31,
+        "column": 68,
+        "line": 30,
         "message": "format specifies type 'float *' but the argument has type 'uint *' (aka 'unsigned int *') [-Werror,-Wformat]"
       }
     ],
@@ -31,17 +31,16 @@
   },
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 117,
+    "complexity_score": 81,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 1,
-    "pseudocode_lines": 37,
-    "suspect_count": 7,
+    "pseudocode_lines": 36,
+    "suspect_count": 4,
     "suspect_types": [
-      "pointer_cast",
-      "stack_param"
+      "pointer_cast"
     ],
-    "total_lines": 119
+    "total_lines": 118
   },
   "cross_references": [
     {
@@ -53,7 +52,7 @@
     {
       "addr": "0058c190",
       "from_addr": "0058c339",
-      "name": "core_skeledit.cpp_FUN_0058c190",
+      "name": "core_skeledit.cpp_CDeformableModel_FUN_0058c190",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -67,7 +66,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_skeledit.cpp_CDeformableModel_FUN_0058bc40",
-    "signature": "int __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058bc40(CDeformableModel *this_ptr)"
+    "signature": "int __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058bc40(CDeformableModel *this_ptr,_FILE *file_handle)"
   },
   "function_calls": [
     {
@@ -124,10 +123,10 @@
     "pcode_op_count": 310
   },
   "stack_frame": {
-    "frame_size": 36,
+    "frame_size": 40,
     "local_size": 32,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -157,55 +156,41 @@
         "offset": 4,
         "size": 4,
         "type": "CDeformableModel *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000008",
-      "text": "_FILE *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000008",
-      "text": "iVar2 = _fgetc(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_00000008",
-      "text": "iVar3 = _fscanf(in_stack_00000008,\"%f,%f,%f\\n\",&local_1c,&local_18,&local_14);",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 29,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pSVar1->bone_weights + iVar2 + 0xc) = local_1c;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 31,
+      "line": 30,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pSVar1->bone_weights + iVar2 + 0x10) = local_18;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 32,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pSVar1->bone_weights + iVar2) = 0x3f800000;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 33,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pSVar1->bone_weights + iVar2 + 0x14) = local_14;",
       "type": "pointer_cast"

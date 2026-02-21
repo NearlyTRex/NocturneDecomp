@@ -322,8 +322,8 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *
                   vertex1 = this_ptr->triangle_list + *piVar8;
                   iVar9 = iVar9 + 1;
                   core_dcube_cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0
-                            ((CDemonCubeFrustum *)local_1c,&vertex1->vertex1,&vertex1->vertex2,
-                             &vertex1->vertex3,this_ptr->triangle_flags[*piVar8]);
+                            (local_1c,&vertex1->vertex1,&vertex1->vertex2,&vertex1->vertex3,
+                             this_ptr->triangle_flags[*piVar8]);
                   piVar8 = piVar8 + 7;
                 } while (iVar9 < local_18);
               }

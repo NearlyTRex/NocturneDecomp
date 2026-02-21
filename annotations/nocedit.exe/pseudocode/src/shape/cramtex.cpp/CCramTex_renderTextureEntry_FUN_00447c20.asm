@@ -4,12 +4,12 @@
 ; void __cdecl shape_cramtex_cpp_CCramTex_renderTextureEntry_FUN_00447c20(CCramTex *this_ptr,int visualization_mode,int draw_x,int draw_y,int draw_width,int draw_height)
 ;
 ; Parameters:
-; CCramTex *       Stack[0x8]:4   this_ptr
-; int              Stack[0xc]:4   visualization_mode
-; int              Stack[0x10]:4   draw_x
-; int              Stack[0x14]:4   draw_y
-; int              Stack[0x18]:4   draw_width
-; int              Stack[0x1c]:4   draw_height
+; CCramTex *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   visualization_mode
+; int              Stack[0xc]:4   draw_x
+; int              Stack[0x10]:4   draw_y
+; int              Stack[0x14]:4   draw_width
+; int              Stack[0x18]:4   draw_height
 ; Local Variables:
 ; undefined4       Stack[-0x30]:4  local_30
 ; undefined4       Stack[-0x2c]:4  local_2c

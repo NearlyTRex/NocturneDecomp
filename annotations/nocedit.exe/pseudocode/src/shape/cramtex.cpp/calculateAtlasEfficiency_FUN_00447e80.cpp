@@ -16,14 +16,14 @@ double __cdecl shape_cramtex_cpp_calculateAtlasEfficiency_FUN_00447e80(void)
   __STK();
   iVar2 = 0;
   iVar3 = 0;
-  if (0 < (int)g_CramTextureCount) {
+  if (0 < g_CramTextureCount) {
     pCVar1 = g_CramSortedTextureEntries;
     do {
       iVar2 = iVar2 + 1;
       iVar3 = iVar3 + ((pCVar1->final_bottom - pCVar1->final_top) - g_CramPaddingCalculation) *
                       ((pCVar1->final_right - pCVar1->final_left) - g_CramPaddingCalculation);
       pCVar1 = pCVar1 + 1;
-    } while (iVar2 < (int)g_CramTextureCount);
+    } while (iVar2 < g_CramTextureCount);
   }
   return (double)CONCAT44(g_CramTextureCount,
                           ((float)iVar3 * (float)100) /

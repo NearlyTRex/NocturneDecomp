@@ -47,7 +47,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(CLo
         if ((-1 < atlas_texture_index) && (enable_texture_lookup != 0)) {
           atlas_texture_index =
                shape_design_c_findTextureByFilename_FUN_0046dfc0
-                         (this_ptr->submesh_data[atlas_texture_index].texture_filename);
+                         (this_ptr->lod_textures[atlas_texture_index].textures[0].texture_name);
         }
         local_14 = local_18 + 3;
         iVar3 = 0;
@@ -77,7 +77,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(CLo
         else {
           if (atlas_texture_index != local_24) {
             if (enable_texture_lookup == 0) {
-              texture = (SMRGLTextureBasic *)(this_ptr->submesh_data + atlas_texture_index);
+              texture = this_ptr->lod_textures[atlas_texture_index].textures;
             }
             else {
               iVar3 = shape_design_c_getAtlasMapIndex_FUN_0046e030(atlas_texture_index);

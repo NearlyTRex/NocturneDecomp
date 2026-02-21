@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 111,
-    "complexity_score": 198,
+    "complexity_score": 199,
     "cross_reference_count": 0,
     "function_call_count": 11,
     "global_count": 5,
-    "pseudocode_lines": 53,
+    "pseudocode_lines": 54,
     "suspect_count": 13,
     "suspect_types": [
       "negative_offset",
       "stack_param",
       "unaffected_reg"
     ],
-    "total_lines": 164
+    "total_lines": 165
   },
   "cross_references": [],
   "function": {
@@ -242,28 +242,28 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 40,
+      "line": 41,
       "match": "pCVar2[-1].",
       "text": "((CFlame *)(pCVar2[-1].height_cache_tags[0xb] + 0x39),0);",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 42,
+      "line": 43,
       "match": "pCVar3[-2].",
       "text": "((SFire *)(pCVar3[-2].base.create_event + 0x20),0);",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 50,
+      "line": 51,
       "match": "pCVar7[-1].",
       "text": "((CDemonActor *)(pCVar7[-1].part_data.visibility_flags + 7),1);",
       "type": "negative_offset"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 51,
+      "line": 52,
       "match": "in_stack_0000002c",
       "text": "if ((in_stack_0000002c & 2) != 0) {",
       "type": "stack_param"

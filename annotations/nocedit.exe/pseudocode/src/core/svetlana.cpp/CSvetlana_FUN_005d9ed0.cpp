@@ -9,5 +9,5 @@
 int __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9ed0(CSvetlana *this_ptr)
 
 {
-  return this_ptr->unk1;
+  return this_ptr->blades_drawn;
 }

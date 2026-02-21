@@ -9,11 +9,9 @@
 CColorQuantizer * __cdecl shape_quantize_cpp_CColorQuantizer_ctor_FUN_00554900(CColorQuantizer *this_ptr)
 
 {
-  CColorQuantizer *in_stack_00000004;
-  
   __STK();
-  memset(in_stack_00000004,0,0x4b44);
-  in_stack_00000004->num_colors = 0x100;
-  in_stack_00000004->status = -1;
-  return in_stack_00000004;
+  memset(this_ptr,0,0x4b44);
+  this_ptr->num_colors = 0x100;
+  this_ptr->status = -1;
+  return this_ptr;
 }

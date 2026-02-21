@@ -6,12 +6,12 @@
   },
   "complexity": {
     "assembly_lines": 107,
-    "complexity_score": 105,
+    "complexity_score": 85,
     "cross_reference_count": 0,
     "function_call_count": 11,
     "global_count": 1,
     "pseudocode_lines": 40,
-    "suspect_count": 6,
+    "suspect_count": 4,
     "suspect_types": [
       "negative_offset"
     ],
@@ -152,23 +152,9 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 22,
-      "match": "pCVar2[-2].",
-      "text": "pCVar2 = core_cloth_cpp_CCloth_dtor_FUN_00438c00((CCloth *)&pCVar2[-2].last_euler.y,0);",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 23,
-      "match": "pCVar2[-2].",
-      "text": "pCVar2 = core_cloth_cpp_CCloth_dtor_FUN_00438c00((CCloth *)&pCVar2[-2].last_euler.y,0);",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
       "line": 26,
       "match": "pCVar2[-1].",
-      "text": "&pCVar2[-1].collide_bones[0x13].world_matrix.m[1].x,0);",
+      "text": "(pCVar2[-1].collide_bones[0x13].world_matrix.m + 2),0);",
       "type": "negative_offset"
     },
     {

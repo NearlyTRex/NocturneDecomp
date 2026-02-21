@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
+;   core_skeledit.cpp_CDeformableModel_FUN_0058c190 at 0058d15d
 ;   core_skeledit.cpp_CLodMesh_FUN_00589c20 at 00589e78
-;   core_skeledit.cpp_FUN_00589bb0 at 00589bdf
-;   core_skeledit.cpp_FUN_0058c190 at 0058d15d
+;   core_skeledit.cpp_createMeshPrecomputeFile_FUN_00589bb0 at 00589bdf
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_version_0064a1af

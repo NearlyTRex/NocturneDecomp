@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 20,
+        "line": 18,
         "message": "no matching function for call to '__STK'"
       }
     ],
@@ -13,16 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 118,
+    "complexity_score": 40,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 12,
-    "pseudocode_lines": 43,
-    "suspect_count": 7,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 153
+    "pseudocode_lines": 40,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 150
   },
   "cross_references": [],
   "function": {
@@ -35,7 +33,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_skeledit.cpp_CDeformable_groundBias_FUN_0058e4e0",
-    "signature": "void __cdecl core_skeledit_cpp_CDeformable_groundBias_FUN_0058e4e0(CDeformableModel *this_ptr)"
+    "signature": "void __cdecl core_skeledit_cpp_CDeformable_groundBias_FUN_0058e4e0(CDeformableModel *this_ptr,int motion_index,float frame_number)"
   },
   "function_calls": [
     {
@@ -157,8 +155,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 1,
-    "estimated_params": 1
+    "declared_params": 3,
+    "estimated_params": 3
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.202247191011236,
@@ -194,10 +192,10 @@
     "pcode_op_count": 374
   },
   "stack_frame": {
-    "frame_size": 44,
+    "frame_size": 48,
     "local_size": 36,
     "param_offset": 4,
-    "param_size": 8,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -231,61 +229,25 @@
       {
         "is_param": true,
         "name": "this_ptr",
-        "offset": 8,
+        "offset": 4,
         "size": 4,
         "type": "CDeformableModel *"
+      },
+      {
+        "is_param": true,
+        "name": "motion_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "frame_number",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000004",
-      "text": "CDeformableModel *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_0000000c",
-      "text": "float in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_00000004",
-      "text": "(this_ptr_01,in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_0000000c",
-      "text": "(this_ptr_01,(int)this_ptr,in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_00000004",
-      "text": "if (0 < in_stack_00000004->vertex_count[0]) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 39,
-      "match": "in_stack_00000004",
-      "text": "} while (iVar3 < in_stack_00000004->vertex_count[0]);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 41,
-      "match": "in_stack_00000004",
-      "text": "core_skeledit_cpp_CDeformableModel_FUN_0058e600(in_stack_00000004);",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

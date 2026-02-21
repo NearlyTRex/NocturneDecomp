@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 159,
-    "complexity_score": 86,
+    "complexity_score": 77,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 9,
-    "pseudocode_lines": 61,
-    "suspect_count": 2,
+    "pseudocode_lines": 62,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 220
+    "total_lines": 221
   },
   "cross_references": [
     {
@@ -271,14 +271,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 23,
-      "match": "(CDemonCubeTriangle *)((int)",
-      "text": "((CDemonCubeTriangle *)((int)this_ptr->triangle_buffer->vertices + iVar6)",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 42,
+      "line": 43,
       "match": "(byte *)((int)",
       "text": "*hit_material = (uint)*(byte *)((int)this_ptr->ground_type_memory + local_20);",
       "type": "pointer_cast"

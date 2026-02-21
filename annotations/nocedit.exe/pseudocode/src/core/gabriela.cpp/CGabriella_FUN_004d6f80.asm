@@ -56,7 +56,7 @@ section .text
     ADD EBX,0x158                       ; 004d6f97
     PUSH EBX                            ; 004d6f9d
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510 ; 004d6f9e
-        ;   XREF to: 005a1510 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510(CDeformableModelInstance * this_ptr, SBoneTransformData * bone_transform)
+        ;   XREF to: 005a1510 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510(CDeformableModelInstance * this_ptr, SPose * bone_transform)
     ADD ESP,0x8                         ; 004d6fa3
     MOV EDX,dword ptr [EBP + 0x24]      ; 004d6fa6
     PUSH EDX                            ; 004d6fa9
@@ -102,7 +102,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x1b38]    ; 004d702d
     PUSH ESI                            ; 004d7034
     CALL core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0 ; 004d7035
-        ;   XREF to: 005a15e0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0(CDeformableModelInstance * this_ptr, SBoneTransformData * bone_transform)
+        ;   XREF to: 005a15e0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0(CDeformableModelInstance * this_ptr, SPose * bone_transform)
     ADD ESP,0x8                         ; 004d703a
     PUSH 0x59ddb0                       ; 004d703d
     MOV EDI,dword ptr [EBP + 0x24]      ; 004d7042

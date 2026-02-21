@@ -12,17 +12,17 @@ void __cdecl core_skeledit_cpp_CBoneStructure_importBON_FUN_0058a3d0(CBoneStruct
   CBoneStructure *this_ptr_00;
   int iVar1;
   int iVar2;
-  CBoneStructure *in_stack_ffffffe8;
+  int in_stack_ffffffe8;
+  int local_14;
   
   __STK();
   this_ptr_00 = (CBoneStructure *)
                 shape_memdbg_cpp_openFile_FUN_0050f7a0
-                          ((char *)this_ptr,(char *)0x0,"rt","..\\core\\skeledit.cpp",
-                           0x27c);
+                          (filename,(char *)0x0,"rt","..\\core\\skeledit.cpp",0x27c);
   if (this_ptr_00 == (CBoneStructure *)0x0) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
     g_CurrentLineNumber = 0x27d;
-    core_main_c_displayErrorAndQuit_FUN_00506f10("CBoneStructure::importBON can't open %s",this_ptr);
+    core_main_c_displayErrorAndQuit_FUN_00506f10("CBoneStructure::importBON can't open %s",filename);
   }
   iVar2 = 1;
   do {
@@ -31,10 +31,10 @@ void __cdecl core_skeledit_cpp_CBoneStructure_importBON_FUN_0058a3d0(CBoneStruct
   } while ((iVar1 != 10) || (iVar2 = iVar2 + -1, 0 < iVar2));
   _fscanf((_FILE *)this_ptr_00,"%d\n",&stack0xffffffe8);
   core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0
-            (this_ptr_00,(_FILE *)&stack0xffffffec,&in_stack_ffffffe8->bone_count);
+            (this_ptr,(_FILE *)this_ptr_00,&local_14);
   core_skeledit_cpp_CBoneStructure_readBONframe_FUN_0058aa10
-            (this_ptr_00,(_FILE *)0x0,(int)in_stack_ffffffe8);
+            (this_ptr_00,(_FILE *)0x0,in_stack_ffffffe8);
   shape_memdbg_cpp_closeFile_FUN_0050f9b0((_FILE *)this_ptr_00,"..\\core\\skeledit.cpp",0x290);
-  core_skeledit_cpp_CBoneStructure_fixupMatrices_FUN_0058adb0(in_stack_ffffffe8);
+  core_skeledit_cpp_CBoneStructure_fixupMatrices_FUN_0058adb0(this_ptr);
   return;
 }

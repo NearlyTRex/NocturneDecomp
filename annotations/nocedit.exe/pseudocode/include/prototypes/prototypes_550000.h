@@ -21,9 +21,9 @@
 #include "types/structs/SColorBox.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SFoundFileInfo.h"
+#include "types/structs/SMRGLPrimitiveTriangle.h"
 #include "types/structs/SRenderVertex.h"
 #include "types/structs/SSoftwareEdge.h"
-#include "types/structs/STriangleIndices.h"
 #include "types/structs/STrianglePackedIndices.h"
 
 // =============================================================================
@@ -71,8 +71,8 @@ void __cdecl engine_prim_c_normalizeTextureCoords_FUN_00552020(SRenderVertex *ve
 void __cdecl engine_prim_c_adjustNearPlaneTextureCoords_FUN_005520a0(SRenderVertex *vertices,int vertex_count);
 void __cdecl engine_prim_c_replaceWWithDepth_FUN_00552110(SRenderVertex *vertices,int vertex_count);
 int __cdecl engine_prim_c_calculateTriangleWindingOrder_FUN_00552150(SRenderVertex *v0,SRenderVertex *v1,SRenderVertex *v2);
-int __cdecl engine_prim_c_getTriangleWindingFromIndices_FUN_00552210(STriangleIndices *triangle);
-int __cdecl engine_prim_c_getTriangleWindingFromIndices_FUN_00552300(STriangleIndices *triangle_indices);
+int __cdecl engine_prim_c_getTriangleWindingFromIndices_FUN_00552210(SMRGLPrimitiveTriangle *triangle);
+int __cdecl engine_prim_c_getTriangleWindingFromIndices_FUN_00552300(SMRGLPrimitiveTriangle *triangle_indices);
 int __cdecl engine_prim_c_getTriangleWindingFromPackedIndices_FUN_005523f0(STrianglePackedIndices *triangle);
 void __cdecl engine_prim_c_renderPolygonSoftware_FUN_00552510(SRenderVertex *vertices,int vertex_count);
 void __cdecl engine_prim_c_renderIndexedPolygonSoftware_FUN_00552a40(int *vertex_indices,int vertex_count);

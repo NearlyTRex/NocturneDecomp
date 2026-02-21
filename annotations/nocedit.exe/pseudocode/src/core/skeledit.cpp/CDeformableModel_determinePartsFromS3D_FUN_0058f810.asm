@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformableModel *this_ptr)
+; int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformableModel *this_ptr,char *filename)
 ;
 ; Parameters:
-; CDeformableModel * Stack[0x8]:4   this_ptr
+; CDeformableModel * Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   filename
 ; Local Variables:
 ; undefined8       Stack[-0xa210]:8  local_a210
 ; undefined8       Stack[-0xa208]:8  local_a208
@@ -214,7 +215,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_skeledit.cpp_FUN_0058c190 at 0058c78d
+;   core_skeledit.cpp_CDeformableModel_FUN_0058c190 at 0058c78d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeledit_cpp_0064b4cb

@@ -9,7 +9,7 @@
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50(CDeformableModelInstance *this_ptr,int target_motion_index,float target_frame_number ,float blend_weight,int bone_index,CDeformableModel_MotionBlendWeightFunc *callback_func)
 
 {
-  SBoneTransformData *pSVar1;
+  SPose *pSVar1;
   float fVar2;
   float fVar3;
   float fVar4;
@@ -232,7 +232,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
       pSVar1 = &this_ptr->bone_transform;
       fVar7 = (this_ptr->bone_transform).root_position.y;
       fVar8 = (this_ptr->bone_transform).root_position.z;
-      if (pSVar1 != (SBoneTransformData *)afStack_68) {
+      if (pSVar1 != (SPose *)afStack_68) {
         (pSVar1->root_position).x =
              (pSVar1->root_position).x * fVar12 +
              (pCVar10[local_58[0]].x * fVar11 + pCVar9[local_5c].x * local_938) *

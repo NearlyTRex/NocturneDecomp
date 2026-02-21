@@ -20,13 +20,10 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004f93a0(CIcePick *this_ptr)
     uVar1 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&this_ptr_00->motion_controller);
     switch(uVar1) {
     case 100:
-      iVar2 = *(int *)this_ptr->unk + 1;
-      *(int *)this_ptr->unk = iVar2;
+      iVar2 = this_ptr->attack_count + 1;
+      this_ptr->attack_count = iVar2;
       if (4 < iVar2) {
-        this_ptr->unk[0] = '\0';
-        this_ptr->unk[1] = '\0';
-        this_ptr->unk[2] = '\0';
-        this_ptr->unk[3] = '\0';
+        this_ptr->attack_count = 0;
       }
       break;
     case 0x65:
@@ -43,12 +40,9 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004f93a0(CIcePick *this_ptr)
       }
       break;
     case 0x68:
-      object = *(CDemonActor **)(this_ptr->unk + 0x20);
+      object = this_ptr->pending_pickup_target;
       if (object != (CDemonActor *)0x0) {
-        this_ptr->unk[0x20] = '\0';
-        this_ptr->unk[0x21] = '\0';
-        this_ptr->unk[0x22] = '\0';
-        this_ptr->unk[0x23] = '\0';
+        this_ptr->pending_pickup_target = (CDemonActor *)0x0;
         core_charactr_cpp_CCharacter_pickupObjectNow_FUN_0042cdb0
                   ((CCharacter *)this_ptr,1,object,0.2);
       }

@@ -53,7 +53,7 @@ void __cdecl CLodMesh::free(CLodMesh *this_ptr);
 
 // Original: shape_meshlod.cpp_CLodMesh_allocate_FUN_00515ac0
 // Address: 00515ac0
-void __cdecl CLodMesh::allocate(CLodMesh *this_ptr,int vertex_count,int tri_count,int submesh_count);
+void __cdecl CLodMesh::allocate(CLodMesh *this_ptr,int vertex_count,int tri_count,int lod_texture_count);
 
 // Original: shape_meshlod.cpp_CLodMesh_buildEdges_FUN_00515ba0
 // Address: 00515ba0
@@ -183,9 +183,9 @@ int __cdecl CLodMesh::validateEdgeCollapse(CLodMesh *this_ptr,int vertex_idx_1,i
 // Address: 00518740
 int __cdecl CLodMesh::hasVertexBoundaryEdge(CLodMesh *this_ptr,int vertex_idx);
 
-// Original: shape_meshlod.cpp_CLodMesh_findOrAddSubmesh_FUN_00518790
+// Original: shape_meshlod.cpp_CLodMesh_findOrAddLodTexture_FUN_00518790
 // Address: 00518790
-int __cdecl CLodMesh::findOrAddSubmesh(CLodMesh *this_ptr,char *texture_filename);
+int __cdecl CLodMesh::findOrAddLodTexture(CLodMesh *this_ptr,char *texture_filename);
 
 // Original: shape_meshlod.cpp_CLodMesh_computeFaceCentroid_FUN_00518870
 // Address: 00518870

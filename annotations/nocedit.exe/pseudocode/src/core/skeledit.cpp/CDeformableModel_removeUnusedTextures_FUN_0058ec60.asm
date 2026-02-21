@@ -4,7 +4,7 @@
 ; void __cdecl core_skeledit_cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec60(CDeformableModel *this_ptr)
 ;
 ; Parameters:
-; CDeformableModel * Stack[0x8]:4   this_ptr
+; CDeformableModel * Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20
@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_skeledit.cpp_FUN_0058c190 at 0058c367
+;   core_skeledit.cpp_CDeformableModel_FUN_0058c190 at 0058c367
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeledit_cpp_0064b0ca

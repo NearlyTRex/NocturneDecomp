@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_manpuz_cpp_CMirrorHack_updateInteraction_FUN_0050b360(CMirrorHack *this_ptr,COrientation *user_orientation,SInteractionState *interaction_state)
+; int __cdecl core_manpuz_cpp_CMirrorHack_updateInteraction_FUN_0050b360(CMirrorHack *this_ptr,UOrientationVector *user_orientation,SPlayerControl *player_control)
 ;
 ; Parameters:
 ; CMirrorHack *    Stack[0x4]:4   this_ptr
-; COrientation *   Stack[0x8]:4   user_orientation
-; SInteractionState * Stack[0xc]:4   interaction_state
+; UOrientationVector * Stack[0x8]:4   user_orientation
+; SPlayerControl * Stack[0xc]:4   player_control
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10

@@ -16,7 +16,7 @@ CElephantGun * __cdecl core_elephant_cpp_CElephantGun_ctor_FUN_004a6fe0(CElephan
   (pCVar2->base).base.vtable._ub = &g_CElephantGunVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (&(pCVar2->base).model,"elephantgun.kfm");
-  pCVar2->unk = 0x41200000;
+  pCVar2->spread_angle = 10.0;
   (pCVar2->base).is_spread_weapon = 1;
   (pCVar2->base).fire_mode = 2;
   (pCVar2->base).weapon_type = 1;
@@ -24,7 +24,7 @@ CElephantGun * __cdecl core_elephant_cpp_CElephantGun_ctor_FUN_004a6fe0(CElephan
   (pCVar2->base).bolt_velocity = 15.0;
   fVar1 = 8.0f;
   (pCVar2->base).fire_cooldown = 0.0;
-  pCVar2->field2_0x57c = 0;
+  pCVar2->muzzle_flash_active = 0;
   (pCVar2->base).weight = fVar1;
   return pCVar2;
 }

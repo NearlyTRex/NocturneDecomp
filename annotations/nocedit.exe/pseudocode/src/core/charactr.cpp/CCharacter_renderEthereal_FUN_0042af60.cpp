@@ -17,7 +17,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderEthereal_FUN_0042af60(CCharacter
   CDeformableModel *this_ptr_01;
   int iVar3;
   CBoundingBox3D *bounding_box;
-  SBoneTransformData local_1aac;
+  SPose local_1aac;
   
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xc000);

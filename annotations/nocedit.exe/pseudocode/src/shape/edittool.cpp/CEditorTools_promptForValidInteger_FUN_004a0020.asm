@@ -23,7 +23,7 @@
 ;   core_script.cpp_CScript_processEditorInput_FUN_00565130 at 00565442
 ;   core_script.cpp_editParameterValue_FUN_00562920 at 005629a6
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 0059820d
-;   core_skeledit.cpp_FUN_0058c190 at 0058cb1a
+;   core_skeledit.cpp_CDeformableModel_FUN_0058c190 at 0058cb1a
 ;   shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 at 0051e148
 ;
 ; Referenced Globals:

@@ -24,7 +24,7 @@ int __cdecl core_filmreel_cpp_CFilmProjector_renderOpaque_FUN_004bed00(CFilmProj
     return 0;
   }
   CStack_18.x = 0;
-  CStack_18.z = *(int *)(this_ptr->unk + 0x68);
+  CStack_18.z = (int)this_ptr->reel_rotation;
   CStack_18.y = 0;
   CStack_24.x = 0;
   CStack_24.z = 0;

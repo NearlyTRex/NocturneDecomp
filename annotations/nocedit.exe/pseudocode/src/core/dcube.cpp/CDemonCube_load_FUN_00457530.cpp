@@ -30,8 +30,8 @@ void __cdecl core_dcube_cpp_CDemonCube_load_FUN_00457530(CDemonCube *this_ptr,_F
     do {
       iVar1 = iVar1 + 1;
       core_dcube_cpp_CDemonCubeTriangle_readFromFile_FUN_004551d0
-                ((CDemonCubeTriangle *)((int)this_ptr->triangle_buffer->vertices + iVar3),
-                 file_handle,this_ptr->vertex_buffer);
+                ((CDemonCubeTriangle *)((int)(this_ptr->triangle_buffer->triangle).vertices + iVar3)
+                 ,file_handle,this_ptr->vertex_buffer);
       iVar3 = iVar3 + 0x20;
     } while (iVar1 < this_ptr->triangle_count);
   }

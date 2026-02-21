@@ -15,7 +15,7 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_setup_FUN_004d17b0(CFrankens
   
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
   this_ptr->course_filename[0] = '\0';
-  this_ptr->unk2 = 0;
+  this_ptr->anchor_vertex_index = 0;
   switch(this_ptr->which_part) {
   case 0:
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
@@ -38,17 +38,17 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_setup_FUN_004d17b0(CFrankens
   case 1:
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
               (&this_ptr->bed_model,"frankxcrn1.kfm");
-    this_ptr->unk2 = 0xae;
+    this_ptr->anchor_vertex_index = 0xae;
     break;
   case 2:
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
               (&this_ptr->bed_model,"frankxcrn2.kfm");
-    this_ptr->unk2 = 0x8c;
+    this_ptr->anchor_vertex_index = 0x8c;
     break;
   case 3:
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
               (&this_ptr->bed_model,"frankxcrn3.kfm");
-    this_ptr->unk2 = 0x16a;
+    this_ptr->anchor_vertex_index = 0x16a;
     break;
   case 4:
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0

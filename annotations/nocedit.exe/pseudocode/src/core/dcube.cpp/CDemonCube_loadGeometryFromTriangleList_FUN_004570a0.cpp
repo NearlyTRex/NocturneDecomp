@@ -128,7 +128,8 @@ void __cdecl core_dcube_cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0
       do {
         pCVar3 = this_ptr->vertex_buffer;
         core_dcube_cpp_CDemonCubeTriangle_init_FUN_00455430
-                  ((CDemonCubeTriangle *)((int)this_ptr->triangle_buffer->vertices + iVar8),
+                  ((CDemonCubeTriangle *)
+                   ((int)(this_ptr->triangle_buffer->triangle).vertices + iVar8),
                    pCVar3 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar5),
                    pCVar3 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar5 + 4),
                    pCVar3 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar5 + 8));

@@ -65,23 +65,23 @@ int __cdecl shouldNeverBeCalled(int unknown1,int unknown2);
 
 // Original: support_trisock.cpp_invalidateSocket_FUN_005e1ae0
 // Address: 005e1ae0
-SOCKET * __cdecl invalidateSocket(SOCKET *socket);
+SOCKET * __cdecl invalidateSocket(SOCKET *socket_handle);
 
 // Original: support_trisock.cpp_bindSocketWrapper_FUN_005e1af0
 // Address: 005e1af0
-SOCKET * __cdecl bindSocketWrapper(SOCKET *socket);
+SOCKET * __cdecl bindSocketWrapper(SOCKET *socket_handle);
 
 // Original: support_trisock.cpp_createSocket_FUN_005e1b10
 // Address: 005e1b10
-int __cdecl createSocket(SOCKET *socket);
+int __cdecl createSocket(SOCKET *socket_handle);
 
 // Original: support_trisock.cpp_createUDPSocket_FUN_005e1b40
 // Address: 005e1b40
-int __cdecl createUDPSocket(SOCKET *socket);
+int __cdecl createUDPSocket(SOCKET *socket_handle);
 
 // Original: support_trisock.cpp_isSocketValid_FUN_005e1b70
 // Address: 005e1b70
-int __cdecl isSocketValid(SOCKET *socket);
+int __cdecl isSocketValid(SOCKET *socket_handle);
 
 // Original: support_trisock.cpp_bindSocket_FUN_005e1b80
 // Address: 005e1b80
@@ -93,15 +93,15 @@ int __cdecl connectSocket(SOCKET *socket_handle,SNetworkAddr *dest_addr);
 
 // Original: support_trisock.cpp_receiveSocketData_FUN_005e1c20
 // Address: 005e1c20
-int __cdecl receiveSocketData(SOCKET *socket,char *buffer,int length,SNetworkAddr *source_addr);
+int __cdecl receiveSocketData(SOCKET *socket_handle,char *buffer,int length,SNetworkAddr *source_addr);
 
 // Original: support_trisock.cpp_performSocketOperation_FUN_005e1ca0
 // Address: 005e1ca0
-int __cdecl performSocketOperation(SOCKET *socket,char *buffer,int length,SNetworkAddr *dest_addr);
+int __cdecl performSocketOperation(SOCKET *socket_handle,char *buffer,int length,SNetworkAddr *dest_addr);
 
 // Original: support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20
 // Address: 005e1d20
-int __cdecl bindAndInvalidateSocket(SOCKET *socket);
+int __cdecl bindAndInvalidateSocket(SOCKET *socket_handle);
 
 // Original: support_trisock.cpp_listenSocket_FUN_005e1d60
 // Address: 005e1d60

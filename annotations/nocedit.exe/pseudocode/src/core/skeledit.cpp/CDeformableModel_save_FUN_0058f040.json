@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 16,
+        "line": 15,
         "message": "no matching function for call to '__STK'"
       }
     ],
@@ -13,16 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 85,
+    "complexity_score": 26,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 15,
-    "pseudocode_lines": 30,
-    "suspect_count": 5,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 115
+    "pseudocode_lines": 26,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 111
   },
   "cross_references": [
     {
@@ -201,63 +199,27 @@
     "pcode_op_count": 253
   },
   "stack_frame": {
-    "frame_size": 20,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 16,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": true,
         "name": "this_ptr",
-        "offset": 12,
+        "offset": 4,
         "size": 4,
         "type": "CDeformableModel *"
       },
       {
         "is_param": true,
         "name": "filename",
-        "offset": 16,
+        "offset": 8,
         "size": 4,
         "type": "char *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 7,
-      "match": "in_stack_00000008",
-      "text": "char *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000008",
-      "text": "((CPod *)g_CDemonPodPtr,\"models\",in_stack_00000008,(int *)0x0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000008",
-      "text": "in_stack_00000008,pCVar1->filename);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000008",
-      "text": "(\"models\",in_stack_00000008,\"wt\");",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_00000008",
-      "text": "(\"CDeformableModel::save - Can't create %s\",in_stack_00000008);",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

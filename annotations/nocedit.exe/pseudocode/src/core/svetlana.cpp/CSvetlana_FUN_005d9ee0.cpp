@@ -11,6 +11,6 @@ void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9ee0(CSvetlana *this_ptr)
 {
   int in_stack_00000008;
   
-  this_ptr->unk1 = in_stack_00000008;
+  this_ptr->blades_drawn = in_stack_00000008;
   return;
 }

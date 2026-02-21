@@ -232,14 +232,14 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004f8c70(CIcePick *this_ptr)
     if (fStack_8c < -local_24) {
       fStack_8c = -local_24;
     }
-    fStack_98 = fStack_8c - *(float *)(this_ptr->unk + 0x10);
+    fStack_98 = fStack_8c - (this_ptr->head_look_euler).y;
     if (in_stack_00000008 * (float)3.1415926535000001 < fStack_98) {
       fStack_98 = in_stack_00000008 * (float)3.1415926535000001;
     }
     if (fStack_98 < in_stack_00000008 * (float)-3.1415926535000001) {
       fStack_98 = in_stack_00000008 * (float)-3.1415926535000001;
     }
-    *(float *)(this_ptr->unk + 0x10) = *(float *)(this_ptr->unk + 0x10) + fStack_98;
+    (this_ptr->head_look_euler).y = (this_ptr->head_look_euler).y + fStack_98;
   }
   return;
 }

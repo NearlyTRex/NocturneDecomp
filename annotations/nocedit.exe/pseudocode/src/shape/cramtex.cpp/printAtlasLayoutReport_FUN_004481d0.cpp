@@ -20,10 +20,9 @@ void __cdecl shape_cramtex_cpp_printAtlasLayoutReport_FUN_004481d0(_FILE *output
   CCramTex *pCVar9;
   int iVar10;
   int iVar11;
-  _FILE *in_stack_00000004;
   
   __STK();
-  if (0 < (int)g_CramTextureCount) {
+  if (0 < g_CramTextureCount) {
     pCVar9 = g_CramSortedTextureEntries;
     iVar10 = 0;
     do {
@@ -37,12 +36,12 @@ void __cdecl shape_cramtex_cpp_printAtlasLayoutReport_FUN_004481d0(_FILE *output
       piVar8 = &pCVar9->width;
       pCVar9 = pCVar9 + 1;
       iVar11 = iVar10 + 1;
-      _fprintf(in_stack_00000004,"%2d: %5dx%-5d  Page %d (%5d,%-5d)-(%5d,%-5d)    Rotated: %d\n",iVar10,*piVar8,*piVar7,
-                 *piVar6,*piVar5,*piVar4,*piVar3,*piVar2,*piVar1);
+      _fprintf(output_file,"%2d: %5dx%-5d  Page %d (%5d,%-5d)-(%5d,%-5d)    Rotated: %d\n",iVar10,*piVar8,*piVar7,*piVar6,
+                 *piVar5,*piVar4,*piVar3,*piVar2,*piVar1);
       iVar10 = iVar11;
-    } while (iVar11 < (int)g_CramTextureCount);
+    } while (iVar11 < g_CramTextureCount);
   }
-  _fprintf(in_stack_00000004,"%ux%u square found using %u padding.\n",g_CramCurrentAcceptableSize,
+  _fprintf(output_file,"%ux%u square found using %u padding.\n",g_CramCurrentAcceptableSize,
              g_CramCurrentAcceptableSize,g_CramPaddingCalculation);
   return;
 }

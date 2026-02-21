@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 21,
+        "line": 20,
         "message": "no matching function for call to '__STK'"
       }
     ],
@@ -13,16 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 216,
-    "complexity_score": 263,
+    "complexity_score": 65,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 3,
-    "pseudocode_lines": 68,
-    "suspect_count": 19,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 284
+    "pseudocode_lines": 65,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 281
   },
   "cross_references": [
     {
@@ -118,10 +116,10 @@
     "pcode_op_count": 1315
   },
   "stack_frame": {
-    "frame_size": 80,
+    "frame_size": 76,
     "local_size": 52,
     "param_offset": 4,
-    "param_size": 28,
+    "param_size": 24,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -183,180 +181,46 @@
       {
         "is_param": true,
         "name": "this_ptr",
-        "offset": 8,
+        "offset": 4,
         "size": 4,
         "type": "CCramTex *"
       },
       {
         "is_param": true,
         "name": "visualization_mode",
-        "offset": 12,
+        "offset": 8,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
         "name": "draw_x",
-        "offset": 16,
+        "offset": 12,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
         "name": "draw_y",
-        "offset": 20,
+        "offset": 16,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
         "name": "draw_width",
-        "offset": 24,
+        "offset": 20,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
         "name": "draw_height",
-        "offset": 28,
+        "offset": 24,
         "size": 4,
         "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000004",
-      "text": "int *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000004",
-      "text": "if (g_CramMapNumber != in_stack_00000004[4]) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000004",
-      "text": "local_18 = in_stack_00000004[9];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000004",
-      "text": "iVar5 = in_stack_00000004[8];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000004",
-      "text": "iVar4 = in_stack_00000004[10];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000004",
-      "text": "iVar6 = in_stack_00000004[7];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_00000004",
-      "text": "if (g_CramMapNumber != in_stack_00000004[0xb]) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_00000004",
-      "text": "local_18 = in_stack_00000004[0xe];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_00000004",
-      "text": "iVar5 = in_stack_00000004[0xd];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_00000004",
-      "text": "iVar4 = in_stack_00000004[0xf];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_00000004",
-      "text": "iVar6 = in_stack_00000004[0xc];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 48,
-      "match": "in_stack_00000004",
-      "text": "if (in_stack_00000004[0x11] == 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 49,
-      "match": "in_stack_00000004",
-      "text": "iVar4 = *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 52,
-      "match": "in_stack_00000004",
-      "text": "iVar4 = in_stack_00000004[1];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 54,
-      "match": "in_stack_00000004",
-      "text": "if (in_stack_00000004[0x11] == 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 55,
-      "match": "in_stack_00000004",
-      "text": "iVar1 = in_stack_00000004[1];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 58,
-      "match": "in_stack_00000004",
-      "text": "iVar1 = *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 64,
-      "match": "in_stack_00000004",
-      "text": "((g_CramPaddingCalculation + iVar4 + in_stack_00000004[0xc]) -",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 67,
-      "match": "in_stack_00000004",
-      "text": "((g_CramPaddingCalculation + iVar1 + in_stack_00000004[0xd]) -",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

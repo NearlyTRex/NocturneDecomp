@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058b9b0(CDeformableModel *this_ptr)
+; int __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058b9b0(CDeformableModel *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CDeformableModel * Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined8       Stack[-0x5c]:8  local_5c
 ; undefined4       Stack[-0x54]:4  local_54
@@ -26,7 +27,7 @@
 ;
 ; XREF[2]:
 ;   core_skeledit.cpp_CDeformableModel_FUN_0058b660 at 0058b874
-;   core_skeledit.cpp_FUN_0058c190 at 0058c327
+;   core_skeledit.cpp_CDeformableModel_FUN_0058c190 at 0058c327
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_d_f_f_d_f_f_d_f_f_0064a8cf

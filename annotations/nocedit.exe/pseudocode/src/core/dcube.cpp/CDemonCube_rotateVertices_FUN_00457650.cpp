@@ -79,11 +79,11 @@ void __cdecl core_dcube_cpp_CDemonCube_rotateVertices_FUN_00457650(CDemonCube *t
         return;
       }
       pCVar2 = this_ptr->triangle_buffer;
-      pfVar1 = (float *)((int)pCVar2->vertices + local_18 + 0xc);
+      pfVar1 = (float *)((int)(pCVar2->triangle).vertices + local_18 + 0xc);
       if (&local_3c != pfVar1) {
         local_3c = *pfVar1;
-        local_38 = *(float *)((int)pCVar2->vertices + local_18 + 0x10);
-        local_34 = *(float *)((int)pCVar2->vertices + local_18 + 0x14);
+        local_38 = *(float *)((int)(pCVar2->triangle).vertices + local_18 + 0x10);
+        local_34 = *(float *)((int)(pCVar2->triangle).vertices + local_18 + 0x14);
       }
       local_3c = local_3c * 127.0f;
       local_38 = local_38 * 127.0f;
@@ -96,7 +96,7 @@ void __cdecl core_dcube_cpp_CDemonCube_rotateVertices_FUN_00457650(CDemonCube *t
       iVar3 = local_18 + 0x20;
       iVar5 = local_14 + 1;
       core_dcube_cpp_buildAndRenderTrianglePrimitive_FUN_004566e0
-                ((CVector3f **)((int)this_ptr->triangle_buffer->vertices + local_18),
+                ((CVector3f **)((int)(this_ptr->triangle_buffer->triangle).vertices + local_18),
                  this_ptr->vertex_buffer);
       local_18 = iVar3;
       local_14 = iVar5;

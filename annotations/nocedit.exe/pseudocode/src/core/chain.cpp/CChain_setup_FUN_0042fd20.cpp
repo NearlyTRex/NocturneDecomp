@@ -19,9 +19,8 @@ void __cdecl core_chain_cpp_CChain_setup_FUN_0042fd20(CChain *this_ptr)
   float fVar8;
   CVector3f *pCVar9;
   int iVar10;
-  char *pcVar11;
+  CVector3f *pCVar11;
   SChainVertex *pSVar12;
-  char *pcVar13;
   float local_30;
   float local_2c;
   float local_28;
@@ -42,49 +41,38 @@ void __cdecl core_chain_cpp_CChain_setup_FUN_0042fd20(CChain *this_ptr)
     fVar8 = 1.0 / (float)(this_ptr->vertex_count + -1);
     iVar10 = 0;
     if (0 < this_ptr->vertex_count) {
-      pcVar13 = this_ptr->unk6[0].unk + 0x18;
-      pcVar11 = this_ptr->unk6[0].unk + 0xc;
+      pCVar9 = &this_ptr->vertices[0].prev_position;
+      pCVar11 = &this_ptr->vertices[0].velocity;
       do {
-        pSVar12 = this_ptr->unk6 + iVar10;
+        pSVar12 = this_ptr->vertices + iVar10;
         if (pSVar12 != (SChainVertex *)&local_30) {
-          *(float *)pSVar12->unk = local_30;
-          *(float *)(pSVar12->unk + 4) = local_2c;
-          *(float *)(pSVar12->unk + 8) = local_28;
+          (pSVar12->position).x = local_30;
+          (pSVar12->position).y = local_2c;
+          (pSVar12->position).z = local_28;
         }
         local_30 = local_30 + (fVar2 - fVar3) * fVar8;
         local_2c = local_2c + (fVar4 - fVar5) * fVar8;
         local_28 = local_28 + (fVar6 - fVar7) * fVar8;
-        pcVar11[8] = '\0';
-        pcVar11[9] = '\0';
-        pcVar11[10] = '\0';
-        pcVar11[0xb] = '\0';
-        *(uint *)(pcVar11 + 4) = *(uint *)(pcVar11 + 8);
-        pSVar12 = this_ptr->unk6 + iVar10;
-        *(uint *)pcVar11 = *(uint *)(pcVar11 + 4);
-        if ((SChainVertex *)pcVar13 != pSVar12) {
-          *(uint *)(pcVar11 + 0xc) = *(uint *)pSVar12->unk;
-          *(uint *)(pcVar11 + 0x10) = *(uint *)(pSVar12->unk + 4);
-          *(uint *)(pcVar11 + 0x14) = *(uint *)(pSVar12->unk + 8);
+        pCVar11->z = 0.0;
+        pCVar11->y = pCVar11->z;
+        pSVar12 = this_ptr->vertices + iVar10;
+        pCVar11->x = pCVar11->y;
+        if ((SChainVertex *)pCVar9 != pSVar12) {
+          pCVar11[1].x = (pSVar12->position).x;
+          pCVar11[1].y = (pSVar12->position).y;
+          pCVar11[1].z = (pSVar12->position).z;
         }
-        pcVar13 = pcVar13 + 0x24;
+        pCVar9 = pCVar9 + 3;
         iVar10 = iVar10 + 1;
-        pcVar11 = pcVar11 + 0x24;
+        pCVar11 = pCVar11 + 3;
       } while (iVar10 < this_ptr->vertex_count);
     }
   }
-  iVar10 = this_ptr->vertex_count;
-  fVar2 = this_ptr->chain_length;
   this_ptr->pull_wav_handle = 0;
   this_ptr->move_wav_handle = 0;
-  this_ptr->unk5 = 0.0;
-  this_ptr->unk7[0] = -0x66;
-  this_ptr->unk7[1] = '?';
-  this_ptr->unk7[2] = '\x1c';
-  this_ptr->unk7[3] = -0x3a;
-  this_ptr->unk7[8] = '\0';
-  this_ptr->unk7[9] = '\0';
-  this_ptr->unk7[10] = '\0';
-  this_ptr->unk7[0xb] = '\0';
-  this_ptr->unk1 = fVar2 / (float)(iVar10 + -1);
+  this_ptr->sound_cooldown = 0.0;
+  this_ptr->cached_distance = -9999.9;
+  this_ptr->is_visible = 0;
+  this_ptr->segment_length = this_ptr->chain_length / (float)(this_ptr->vertex_count + -1);
   return;
 }

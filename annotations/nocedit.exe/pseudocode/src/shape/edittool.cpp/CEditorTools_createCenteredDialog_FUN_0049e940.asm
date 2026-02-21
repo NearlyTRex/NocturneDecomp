@@ -8,8 +8,8 @@
 ; char *           Stack[0x8]:4   dialog_text
 ;
 ; XREF[4]:
+;   core_skeledit.cpp_CDeformableModel_FUN_0058c190 at 0058d20f
 ;   core_skeledit.cpp_FUN_00589b10 at 00589b3f
-;   core_skeledit.cpp_FUN_0058c190 at 0058d20f
 ;   core_texlist.cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0 at 005dc2f8
 ;   shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520 at 0051d7f1
 ;

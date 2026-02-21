@@ -8,7 +8,7 @@
 ; CLodMesh *       Stack[0x8]:4   source_mesh
 ;
 ; XREF[4]:
-;   core_skeledit.cpp_FUN_0058c190 at 0058d68d
+;   core_skeledit.cpp_CDeformableModel_FUN_0058c190 at 0058d68d
 ;   shape_meshlod.cpp_CLodMesh_copy_FUN_00515860 at 00515874
 ;   shape_meshlod.cpp_CLodMesh_createNextLOD_FUN_00516f50 at 00516fa0
 ;   shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920 at 0051b940
@@ -35,7 +35,7 @@ section .text
     PUSH ESI                            ; 0051a8d7
     PUSH EBX                            ; 0051a8d8
     CALL shape_meshlod.cpp_CLodMesh_allocate_FUN_00515ac0 ; 0051a8d9
-        ;   XREF to: 00515ac0 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_allocate_FUN_00515ac0(CLodMesh * this_ptr, int vertex_count, int tri_count, int submesh_count)
+        ;   XREF to: 00515ac0 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_allocate_FUN_00515ac0(CLodMesh * this_ptr, int vertex_count, int tri_count, int lod_texture_count)
     IMUL ECX,dword ptr [EBX],0x4c4      ; 0051a8de
     ADD ESP,0x10                        ; 0051a8e4
     MOV ESI,dword ptr [EBP + 0x4]       ; 0051a8e7

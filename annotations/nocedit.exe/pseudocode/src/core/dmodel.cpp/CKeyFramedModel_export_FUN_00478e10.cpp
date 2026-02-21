@@ -128,7 +128,7 @@ LAB_00478e7f:
   _fprintf(file,"// texture list\n");
   iVar7 = 0;
   if (0 < this_ptr->texture_count) {
-    pcVar9 = this_ptr->texture_list[0].base.texture_name;
+    pcVar9 = this_ptr->texture_list[0].textures[0].texture_name;
     do {
       _fprintf(file,"%s\n",pcVar9);
       iVar7 = iVar7 + 1;

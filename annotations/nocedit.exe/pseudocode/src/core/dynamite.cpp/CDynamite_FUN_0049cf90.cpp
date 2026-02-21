@@ -9,5 +9,5 @@
 int __cdecl core_dynamite_cpp_CDynamite_FUN_0049cf90(CDynamite *this_ptr)
 
 {
-  return (uint)((*(uint *)this_ptr->unk & 0x7fffffff) == 0);
+  return (uint)(ABS(this_ptr->fuse_timer) == 0.0);
 }

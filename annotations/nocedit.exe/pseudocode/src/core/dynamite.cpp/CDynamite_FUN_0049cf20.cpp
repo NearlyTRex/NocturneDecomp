@@ -12,9 +12,9 @@ void __cdecl core_dynamite_cpp_CDynamite_FUN_0049cf20(CDynamite *this_ptr)
   uint uVar1;
   char local_68 [100];
   
-  *(float *)this_ptr->unk = 3.5f;
+  this_ptr->fuse_timer = 3.5f;
   _sprintf(local_68,"fuse.wav");
   uVar1 = (*((this_ptr->base).base.vtable._ub)->playSound)((CDemonActor *)this_ptr,local_68);
-  *(uint *)(this_ptr->unk + 0x10) = uVar1;
+  this_ptr->sfx_handle = uVar1;
   return;
 }

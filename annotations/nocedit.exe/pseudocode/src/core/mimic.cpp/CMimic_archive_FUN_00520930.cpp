@@ -27,8 +27,7 @@ void __cdecl core_mimic_cpp_CMimic_archive_FUN_00520930(CMimic *this_ptr)
   else {
     core_actor_cpp_archiveMotionState_FUN_0040b9f0
               (&model_ptr->motion_controller,"motion state");
-    core_actor_cpp_archiveString_FUN_0040b5c0
-              ((char *)&this_ptr->morph_actor_type,"morphActorType");
+    core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->morph_actor_type,"morphActorType");
     if (g_CMimicClassVersion < 3) {
       return;
     }

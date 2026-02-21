@@ -9,27 +9,25 @@
 void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(CMimic *this_ptr)
 
 {
-  float fVar1;
-  int iVar2;
+  void *pvVar1;
+  float fVar2;
   int iVar3;
+  int iVar4;
   float in_stack_00000008;
   
-  if (*(int *)(this_ptr->unk4 + 0xc54) == 0) {
+  if (this_ptr->morph_target_actor == (CDemonActor *)0x0) {
     g_CurrentFilename = "..\\core\\mimic.cpp";
     g_CurrentLineNumber = 0x4c9;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMimic::processMorph - can't process morph unless we've started morph!");
   }
-  fVar1 = in_stack_00000008 / 1.0f + *(float *)(this_ptr->unk4 + 0xc50);
-  *(float *)(this_ptr->unk4 + 0xc50) = fVar1;
-  if (1.0 <= fVar1) {
+  fVar2 = in_stack_00000008 / 1.0f + this_ptr->morph_blend;
+  this_ptr->morph_blend = fVar2;
+  if (1.0 <= fVar2) {
     core_mission_cpp_CDemonMission_generateActorName_FUN_00524700
-              (g_CDemonMissionPtr,*(CDemonActor **)(this_ptr->unk4 + 0xc54));
+              (g_CDemonMissionPtr,this_ptr->morph_target_actor);
     core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70
-              (g_CDemonMissionPtr,*(CDemonActor **)(this_ptr->unk4 + 0xc54));
-    this_ptr->unk4[0xc54] = '\0';
-    this_ptr->unk4[0xc55] = '\0';
-    this_ptr->unk4[0xc56] = '\0';
-    this_ptr->unk4[0xc57] = '\0';
+              (g_CDemonMissionPtr,this_ptr->morph_target_actor);
+    this_ptr->morph_target_actor = (CDemonActor *)0x0;
     core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0
               (g_CDemonMissionPtr,(CDemonActor *)this_ptr,1);
   }
@@ -40,22 +38,21 @@ void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(CMimic *this_ptr)
     }
     while (0.0 < in_stack_00000008) {
       core_motion_cpp_CMotionController_advance_FUN_0052d610
-                ((CMotionController *)(*(int *)(this_ptr->unk4 + 0xc54) + 0x158));
+                ((CMotionController *)(this_ptr->morph_target_actor + 1));
     }
     core_morph_cpp_CMorph_updateModelFromDeformable_FUN_0052b600
-              ((CMorph *)(this_ptr->unk4 + 0x24),0,&(this_ptr->base).base.model,0);
+              (&this_ptr->morph,0,&(this_ptr->base).base.model,0);
     core_morph_cpp_CMorph_updateModelFromDeformable_FUN_0052b600
-              ((CMorph *)(this_ptr->unk4 + 0x24),1,
-               (CDeformableModelInstance *)(*(int *)(this_ptr->unk4 + 0xc54) + 0x158),0);
-    iVar2 = 0;
-    if (0 < *(int *)(this_ptr->unk4 + 0x78)) {
-      iVar3 = 0;
+              (&this_ptr->morph,1,(CDeformableModelInstance *)(this_ptr->morph_target_actor + 1),0);
+    iVar3 = 0;
+    if (0 < (this_ptr->morph).models[0].num_points) {
+      iVar4 = 0;
       do {
-        iVar2 = iVar2 + 1;
-        *(float *)(*(int *)(this_ptr->unk4 + 0x7c) + 4 + iVar3) =
-             -*(float *)(*(int *)(this_ptr->unk4 + 0x7c) + 4 + iVar3);
-        iVar3 = iVar3 + 0x10;
-      } while (iVar2 < *(int *)(this_ptr->unk4 + 0x78));
+        pvVar1 = (this_ptr->morph).models[0].points;
+        iVar3 = iVar3 + 1;
+        *(float *)((int)pvVar1 + iVar4 + 4) = -*(float *)((int)pvVar1 + iVar4 + 4);
+        iVar4 = iVar4 + 0x10;
+      } while (iVar3 < (this_ptr->morph).models[0].num_points);
       return;
     }
   }

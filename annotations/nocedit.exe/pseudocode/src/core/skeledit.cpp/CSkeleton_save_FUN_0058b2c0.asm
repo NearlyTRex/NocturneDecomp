@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_skeledit_cpp_CSkeleton_save_FUN_0058b2c0(CSkeleton *this_ptr,_FILE *file_handle)
+; void __cdecl core_skeledit_cpp_CSkeleton_save_FUN_0058b2c0(CSkeleton *this_ptr,char *filename)
 ;
 ; Parameters:
-; CSkeleton *      Stack[0xc]:4   this_ptr
-; _FILE *          Stack[0x10]:4   file_handle
+; CSkeleton *      Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   filename
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_s_already_exists_in_a__0064a0c6

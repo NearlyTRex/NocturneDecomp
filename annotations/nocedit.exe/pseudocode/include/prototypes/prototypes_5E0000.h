@@ -14,7 +14,6 @@
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonGlobe.h"
 #include "types/classes/CMatrix3x4f.h"
-#include "types/classes/COrientation.h"
 #include "types/classes/CTVBat.h"
 #include "types/classes/CTerrain.h"
 #include "types/classes/CTire.h"
@@ -32,10 +31,11 @@
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SInteractionInfo.h"
-#include "types/structs/SInteractionState.h"
 #include "types/structs/SLaserInfo.h"
 #include "types/structs/SNetworkAddr.h"
+#include "types/structs/SPlayerControl.h"
 #include "types/structs/SWaterVertex.h"
+#include "types/unions/UOrientationVector.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x5E0000
@@ -73,16 +73,16 @@ SOCKADDR_IN * __cdecl support_trisock_cpp_buildSockaddrIn_FUN_005e19d0(SNetworkA
 void __cdecl support_trisock_cpp_formatSocketAddress_FUN_005e1a30(char *output_buffer,SNetworkAddr *network_addr);
 int __cdecl support_trisock_cpp_shouldNeverBeCalled_FUN_005e1a80(int unknown1,int unknown2);
 int __cdecl support_trisock_cpp_shouldNeverBeCalled_FUN_005e1ab0(int unknown1,int unknown2);
-SOCKET * __cdecl support_trisock_cpp_invalidateSocket_FUN_005e1ae0(SOCKET *socket);
-SOCKET * __cdecl support_trisock_cpp_bindSocketWrapper_FUN_005e1af0(SOCKET *socket);
-int __cdecl support_trisock_cpp_createSocket_FUN_005e1b10(SOCKET *socket);
-int __cdecl support_trisock_cpp_createUDPSocket_FUN_005e1b40(SOCKET *socket);
-int __cdecl support_trisock_cpp_isSocketValid_FUN_005e1b70(SOCKET *socket);
+SOCKET * __cdecl support_trisock_cpp_invalidateSocket_FUN_005e1ae0(SOCKET *socket_handle);
+SOCKET * __cdecl support_trisock_cpp_bindSocketWrapper_FUN_005e1af0(SOCKET *socket_handle);
+int __cdecl support_trisock_cpp_createSocket_FUN_005e1b10(SOCKET *socket_handle);
+int __cdecl support_trisock_cpp_createUDPSocket_FUN_005e1b40(SOCKET *socket_handle);
+int __cdecl support_trisock_cpp_isSocketValid_FUN_005e1b70(SOCKET *socket_handle);
 int __cdecl support_trisock_cpp_bindSocket_FUN_005e1b80(uint16_t port,SOCKET *socket_handle);
 int __cdecl support_trisock_cpp_connectSocket_FUN_005e1bd0(SOCKET *socket_handle,SNetworkAddr *dest_addr);
-int __cdecl support_trisock_cpp_receiveSocketData_FUN_005e1c20(SOCKET *socket,char *buffer,int length,SNetworkAddr *source_addr);
-int __cdecl support_trisock_cpp_performSocketOperation_FUN_005e1ca0(SOCKET *socket,char *buffer,int length,SNetworkAddr *dest_addr);
-int __cdecl support_trisock_cpp_bindAndInvalidateSocket_FUN_005e1d20(SOCKET *socket);
+int __cdecl support_trisock_cpp_receiveSocketData_FUN_005e1c20(SOCKET *socket_handle,char *buffer,int length,SNetworkAddr *source_addr);
+int __cdecl support_trisock_cpp_performSocketOperation_FUN_005e1ca0(SOCKET *socket_handle,char *buffer,int length,SNetworkAddr *dest_addr);
+int __cdecl support_trisock_cpp_bindAndInvalidateSocket_FUN_005e1d20(SOCKET *socket_handle);
 int __cdecl support_trisock_cpp_listenSocket_FUN_005e1d60(SOCKET *socket_handle);
 int __cdecl support_trisock_cpp_acceptConnection_FUN_005e1d80(SOCKET *listen_socket,SNetworkAddr *client_addr,SOCKET *new_socket);
 int __cdecl support_trisock_cpp_getSocketName_FUN_005e1df0(SOCKET *socket_handle,SNetworkAddr *param_2);
@@ -108,7 +108,7 @@ void __cdecl core_turret_cpp_CTurret_FUN_005e2d50(CTurret *this_ptr);
 int __cdecl core_turret_cpp_CTurret_FUN_005e3280(CTurret *this_ptr);
 void __cdecl core_turret_cpp_CTurret_getInteractionInfo_FUN_005e3440(CTurret *this_ptr,SInteractionInfo *interaction_info);
 int __cdecl core_turret_cpp_CTurret_startInteraction_FUN_005e34b0(CTurret *this_ptr,CDemonActor *user);
-int __cdecl core_turret_cpp_CTurret_updateInteraction_FUN_005e34d0(CTurret *this_ptr,COrientation *user_orientation,SInteractionState *interaction_state );
+int __cdecl core_turret_cpp_CTurret_updateInteraction_FUN_005e34d0(CTurret *this_ptr,UOrientationVector *user_orientation,SPlayerControl *player_control );
 void __cdecl core_turret_cpp_CTurret_stopInteraction_FUN_005e3540(CTurret *this_ptr,CDemonActor *user);
 void __cdecl core_turret_cpp_CTurret_FUN_005e3560(CTurret *this_ptr);
 float __cdecl core_turret_cpp_CTurret_FUN_005e36f0(CTurret *this_ptr);

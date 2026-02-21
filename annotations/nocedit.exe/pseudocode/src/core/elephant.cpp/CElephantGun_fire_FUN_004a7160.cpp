@@ -65,7 +65,7 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_004a7160(CElephantGun *this_
               (g_CSoundPtr,(CDemonActor *)this_ptr,"shotgun-noammo.wav",&CStack_7c);
     return 0;
   }
-  fVar4 = (float10)fptan((float10)(float)this_ptr->unk * (float10)3.1415926535000001 *
+  fVar4 = (float10)fptan((float10)this_ptr->spread_angle * (float10)3.1415926535000001 *
                          (float10)0.0055555555555555497);
   pCStack_40 = (CDemonActor *)(float)(fVar4 * (float10)(this_ptr->base).bolt_velocity);
   fStack_34 = (float)core_actor_cpp_getRandomInt_FUN_0040cc70(10,0xf);

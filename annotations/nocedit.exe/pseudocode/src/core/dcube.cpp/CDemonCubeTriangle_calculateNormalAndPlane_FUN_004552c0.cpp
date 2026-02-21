@@ -10,52 +10,57 @@ void __cdecl core_dcube_cpp_CDemonCubeTriangle_calculateNormalAndPlane_FUN_00455
 
 {
   float fVar1;
-  CVector3f *pCVar2;
+  float fVar2;
   CVector3f *pCVar3;
-  float fVar4;
+  CVector3f *pCVar4;
   float fVar5;
   float fVar6;
   float fVar7;
   float fVar8;
   float fVar9;
+  float fVar10;
   float local_10;
   
-  pCVar2 = this_ptr->vertices[1];
-  pCVar3 = this_ptr->vertices[0];
-  fVar1 = pCVar2->x - pCVar3->x;
-  fVar5 = pCVar2->z - pCVar3->z;
-  fVar7 = pCVar2->y - pCVar3->y;
-  pCVar3 = this_ptr->vertices[2];
-  fVar9 = pCVar3->z - pCVar2->z;
-  fVar8 = pCVar3->y - pCVar2->y;
-  fVar6 = pCVar3->x - pCVar2->x;
-  fVar4 = fVar7 * fVar9 - fVar8 * fVar5;
-  fVar5 = fVar6 * fVar5 - fVar1 * fVar9;
-  (this_ptr->normal).x = fVar4;
-  (this_ptr->normal).y = fVar5;
-  fVar1 = fVar1 * fVar8 - fVar6 * fVar7;
-  (this_ptr->normal).z = fVar1;
-  local_10 = SQRT(fVar1 * (this_ptr->normal).z +
-                  fVar5 * (this_ptr->normal).y + fVar4 * (this_ptr->normal).x);
+  pCVar3 = (this_ptr->triangle).vertices[1];
+  pCVar4 = (this_ptr->triangle).vertices[0];
+  fVar5 = pCVar3->x - pCVar4->x;
+  fVar1 = pCVar3->z - pCVar4->z;
+  fVar9 = pCVar3->y - pCVar4->y;
+  pCVar4 = (this_ptr->triangle).vertices[2];
+  fVar2 = pCVar4->z - pCVar3->z;
+  fVar10 = pCVar4->y - pCVar3->y;
+  fVar8 = pCVar4->x - pCVar3->x;
+  fVar6 = fVar9 * fVar2 - fVar10 * fVar1;
+  fVar7 = fVar8 * fVar1 - fVar5 * fVar2;
+  (this_ptr->triangle).normal.x = fVar6;
+  fVar1 = (this_ptr->triangle).normal.x;
+  (this_ptr->triangle).normal.y = fVar7;
+  fVar2 = (this_ptr->triangle).normal.y;
+  fVar5 = fVar5 * fVar10 - fVar8 * fVar9;
+  (this_ptr->triangle).normal.z = fVar5;
+  local_10 = SQRT(fVar5 * (this_ptr->triangle).normal.z + fVar7 * fVar2 + fVar6 * fVar1);
   if (ABS(local_10) == 0.0) {
     local_10 = 1.0;
   }
   local_10 = 1.0 / local_10;
-  pCVar2 = this_ptr->vertices[0];
-  (this_ptr->normal).x = -(this_ptr->normal).x * local_10;
-  (this_ptr->normal).y = -(this_ptr->normal).y * local_10;
-  (this_ptr->normal).z = -(this_ptr->normal).z * local_10;
-  fVar4 = ABS((this_ptr->normal).x);
-  fVar1 = (this_ptr->normal).y;
-  this_ptr->plane_distance =
-       (-(pCVar2->x * (this_ptr->normal).x) - pCVar2->y * (this_ptr->normal).y) -
-       pCVar2->z * (this_ptr->normal).z;
-  if ((ABS(fVar1) < fVar4) && (ABS((this_ptr->normal).z) < fVar4)) {
+  fVar1 = (this_ptr->triangle).normal.y;
+  fVar2 = (this_ptr->triangle).normal.z;
+  pCVar3 = (this_ptr->triangle).vertices[0];
+  (this_ptr->triangle).normal.x = -(this_ptr->triangle).normal.x * local_10;
+  (this_ptr->triangle).normal.y = -fVar1 * local_10;
+  (this_ptr->triangle).normal.z = -fVar2 * local_10;
+  fVar2 = ABS((this_ptr->triangle).normal.x);
+  fVar1 = (this_ptr->triangle).normal.y;
+  (this_ptr->triangle).plane_distance =
+       (-(pCVar3->x * (this_ptr->triangle).normal.x) - pCVar3->y * (this_ptr->triangle).normal.y) -
+       pCVar3->z * (this_ptr->triangle).normal.z;
+  if ((ABS(fVar1) < fVar2) && (ABS((this_ptr->triangle).normal.z) < fVar2)) {
     this_ptr->dominant_axis = 0;
     return;
   }
-  fVar1 = ABS((this_ptr->normal).y);
-  if ((ABS((this_ptr->normal).x) < fVar1) && (ABS((this_ptr->normal).z) < fVar1)) {
+  fVar1 = ABS((this_ptr->triangle).normal.y);
+  if ((ABS((this_ptr->triangle).normal.x) < fVar1) && (ABS((this_ptr->triangle).normal.z) < fVar1))
+  {
     this_ptr->dominant_axis = 1;
     return;
   }

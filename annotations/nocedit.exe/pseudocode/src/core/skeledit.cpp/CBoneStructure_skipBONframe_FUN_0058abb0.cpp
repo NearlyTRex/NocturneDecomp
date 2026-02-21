@@ -2,23 +2,22 @@
 // Address: 0058abb0
 // Address Range: [[0058abb0, 0058ac24]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeledit_cpp_CBoneStructure_skipBONframe_FUN_0058abb0(CBoneStructure *this_ptr)
+// Signature: void __cdecl core_skeledit_cpp_CBoneStructure_skipBONframe_FUN_0058abb0(CBoneStructure *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
-void __cdecl core_skeledit_cpp_CBoneStructure_skipBONframe_FUN_0058abb0(CBoneStructure *this_ptr)
+void __cdecl core_skeledit_cpp_CBoneStructure_skipBONframe_FUN_0058abb0(CBoneStructure *this_ptr,_FILE *file_handle)
 
 {
   int iVar1;
   int iVar2;
   int iVar3;
-  int *in_stack_00000004;
   
   __STK();
   iVar3 = 0;
   do {
-    if (*in_stack_00000004 * 4 <= iVar3) {
-      if ((this_ptr->bones[0].name[8] & 0x20U) == 0) {
+    if (this_ptr->bone_count * 4 <= iVar3) {
+      if ((file_handle->_flag & 0x20) == 0) {
         return;
       }
       g_CurrentFilename = "..\\core\\skeledit.cpp";
@@ -28,7 +27,7 @@ void __cdecl core_skeledit_cpp_CBoneStructure_skipBONframe_FUN_0058abb0(CBoneStr
     }
     iVar2 = 1;
     do {
-      iVar1 = _fgetc((_FILE *)this_ptr);
+      iVar1 = _fgetc(file_handle);
       if (iVar1 < 0) break;
     } while ((iVar1 != 10) || (iVar2 = iVar2 + -1, 0 < iVar2));
     iVar3 = iVar3 + 1;

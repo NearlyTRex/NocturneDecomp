@@ -170,14 +170,14 @@ void __cdecl core_colonel_cpp_CColonel_FUN_0043ff20(CColonel *this_ptr)
     if (local_44 < -local_20) {
       local_44 = -local_20;
     }
-    local_8c = local_44 - *(float *)(this_ptr->field2_0x1fbd8 + 8);
+    local_8c = local_44 - (this_ptr->head_look_euler).y;
     if (in_stack_00000008 * (float)3.1415926535000001 < local_8c) {
       local_8c = in_stack_00000008 * (float)3.1415926535000001;
     }
     if (local_8c < in_stack_00000008 * (float)-3.1415926535000001) {
       local_8c = in_stack_00000008 * (float)-3.1415926535000001;
     }
-    *(float *)(this_ptr->field2_0x1fbd8 + 8) = *(float *)(this_ptr->field2_0x1fbd8 + 8) + local_8c;
+    (this_ptr->head_look_euler).y = (this_ptr->head_look_euler).y + local_8c;
   }
   return;
 }

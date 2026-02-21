@@ -164,7 +164,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00477110(CKeyFram
   } while ((iVar1 != 10) || (iVar4 = iVar4 + -1, 0 < iVar4));
   iVar4 = 0;
   if (0 < this_ptr->texture_count) {
-    pcVar5 = this_ptr->texture_list[0].base.texture_name;
+    pcVar5 = this_ptr->texture_list[0].textures[0].texture_name;
     do {
       _fscanf(file,"%[^\n]\n",pcVar5);
       iVar4 = iVar4 + 1;

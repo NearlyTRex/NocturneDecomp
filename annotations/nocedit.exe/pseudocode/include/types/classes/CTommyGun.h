@@ -8,8 +8,8 @@
 // Ghidra size: 0x584 (1412 bytes)
 typedef struct CTommyGun {
     CWeapon base; // 0x0
-    int unk; // 0x578
+    int fire_frames_remaining; // 0x578
     uint sfx_handle; // 0x57c
-    int unk2; // 0x580
+    uint sfx_handle_tail; // 0x580
 } CTommyGun;
 

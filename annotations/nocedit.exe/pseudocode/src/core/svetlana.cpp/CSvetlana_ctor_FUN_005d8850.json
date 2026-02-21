@@ -1,70 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 9,
-        "line": 24,
-        "message": "type 'CSvetlana_ptr_391756' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 9,
-        "line": 25,
-        "message": "type 'CSvetlana_ptr_391756' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 9,
-        "line": 26,
-        "message": "type 'CSvetlana_ptr_391756' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 9,
-        "line": 27,
-        "message": "type 'CSvetlana_ptr_391756' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 9,
-        "line": 28,
-        "message": "type 'CSvetlana_ptr_391756' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 9,
-        "line": 29,
-        "message": "type 'CSvetlana_ptr_391756' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 9,
-        "line": 30,
-        "message": "type 'CSvetlana_ptr_391756' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 9,
-        "line": 31,
-        "message": "type 'CSvetlana_ptr_391756' does not provide a subscript operator"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 130,
+    "complexity_score": 144,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
-    "pseudocode_lines": 25,
-    "suspect_count": 10,
+    "pseudocode_lines": 19,
+    "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 62
+    "total_lines": 56
   },
   "cross_references": [
     {
@@ -189,14 +140,14 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 13,
       "match": "ADJ",
-      "text": "ADJ(pCVar4)->unk1 = 0;",
+      "text": "ADJ(pCVar4)->blades_drawn = 0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 14,
       "match": "ADJ",
-      "text": "ADJ(pCVar4)->unk2 = 0;",
+      "text": "ADJ(pCVar4)->attack_hand = 0;",
       "type": "decompiler_intrinsic"
     },
     {
@@ -208,35 +159,49 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 25,
+      "line": 17,
       "match": "ADJ",
-      "text": "*(uint *)(ADJ(pCVar4)->unk6 + 4) = *(uint *)(ADJ(pCVar4)->unk6 + 8);",
+      "text": "ADJ(pCVar4)->head_blend_weight = 1.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 25,
+      "line": 18,
       "match": "ADJ",
-      "text": "*(uint *)(ADJ(pCVar4)->unk6 + 4) = *(uint *)(ADJ(pCVar4)->unk6 + 8);",
+      "text": "(ADJ(pCVar4)->head_euler_angles).z = 0.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 26,
+      "line": 19,
       "match": "ADJ",
-      "text": "*(uint *)ADJ(pCVar4)->unk6 = *(uint *)(ADJ(pCVar4)->unk6 + 4);",
+      "text": "(ADJ(pCVar4)->head_euler_angles).y = (ADJ(pCVar4)->head_euler_angles).z;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 26,
+      "line": 19,
       "match": "ADJ",
-      "text": "*(uint *)ADJ(pCVar4)->unk6 = *(uint *)(ADJ(pCVar4)->unk6 + 4);",
+      "text": "(ADJ(pCVar4)->head_euler_angles).y = (ADJ(pCVar4)->head_euler_angles).z;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 27,
+      "line": 20,
+      "match": "ADJ",
+      "text": "(ADJ(pCVar4)->head_euler_angles).x = (ADJ(pCVar4)->head_euler_angles).y;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 20,
+      "match": "ADJ",
+      "text": "(ADJ(pCVar4)->head_euler_angles).x = (ADJ(pCVar4)->head_euler_angles).y;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 21,
       "match": "ADJ",
       "text": "return ADJ(pCVar4);",
       "type": "decompiler_intrinsic"

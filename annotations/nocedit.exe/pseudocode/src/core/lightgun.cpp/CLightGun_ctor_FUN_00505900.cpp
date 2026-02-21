@@ -17,14 +17,8 @@ CLightGun * __cdecl core_lightgun_cpp_CLightGun_ctor_FUN_00505900(CLightGun *thi
   (pCVar3->base).base.vtable._ub = &g_CLightGunVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (&(pCVar3->base).model,"cre.kfm");
-  pCVar3->unk[4] = '\0';
-  pCVar3->unk[5] = '\0';
-  pCVar3->unk[6] = '\0';
-  pCVar3->unk[7] = '\0';
-  pCVar3->unk[0] = '\0';
-  pCVar3->unk[1] = '\0';
-  pCVar3->unk[2] = '\0';
-  pCVar3->unk[3] = '\0';
+  pCVar3->sfx_handle = 0;
+  pCVar3->fire_flash_pending = 0;
   (pCVar3->base).is_spread_weapon = 0;
   (pCVar3->base).fire_mode = 0;
   (pCVar3->base).weapon_type = 2;
@@ -34,15 +28,9 @@ CLightGun * __cdecl core_lightgun_cpp_CLightGun_ctor_FUN_00505900(CLightGun *thi
   fVar1 = 8.0f;
   (pCVar3->base).can_attach_light = 0;
   fVar2 = 30.0f;
-  pCVar3->unk[0x10] = '\0';
-  pCVar3->unk[0x11] = '\0';
-  pCVar3->unk[0x12] = '\0';
-  pCVar3->unk[0x13] = '\0';
-  pCVar3->unk[0xc] = '\0';
-  pCVar3->unk[0xd] = '\0';
-  pCVar3->unk[0xe] = -0x80;
-  pCVar3->unk[0xf] = '?';
+  pCVar3->hit_enemy = 0;
+  pCVar3->charge_ratio = 1.0;
   (pCVar3->base).weight = fVar1;
-  *(float *)(pCVar3->unk + 8) = fVar2;
+  pCVar3->charge_level = fVar2;
   return pCVar3;
 }

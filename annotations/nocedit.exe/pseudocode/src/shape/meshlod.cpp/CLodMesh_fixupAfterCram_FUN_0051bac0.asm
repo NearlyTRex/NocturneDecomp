@@ -17,7 +17,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_skeledit.cpp_FUN_0058c190 at 0058d376
+;   core_skeledit.cpp_CDeformableModel_FUN_0058c190 at 0058d376
 ;   shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 at 0051dd6e
 ;
 ; Referenced Globals:
@@ -37,7 +37,7 @@
 ;   shape_design.c_getAtlasMapIndex_FUN_0046e030
 ;   shape_design.c_getLastTextureProcessIndex_FUN_0046a860
 ;   shape_design.c_getTextureName_FUN_0046e060
-;   shape_meshlod.cpp_CLodMesh_findOrAddSubmesh_FUN_00518790
+;   shape_meshlod.cpp_CLodMesh_findOrAddLodTexture_FUN_00518790
 ;
 ; *****************************************************************************
 
@@ -233,8 +233,8 @@ section .text
     PUSH EAX                            ; 0051bcb0
     PUSH ESI                            ; 0051bcb1
     INC EBX                             ; 0051bcb2
-    CALL shape_meshlod.cpp_CLodMesh_findOrAddSubmesh_FUN_00518790 ; 0051bcb3
-        ;   XREF to: 00518790 (UNCONDITIONAL_CALL)  ; int shape_meshlod.cpp_CLodMesh_findOrAddSubmesh_FUN_00518790(CLodMesh * this_ptr, char * texture_filename)
+    CALL shape_meshlod.cpp_CLodMesh_findOrAddLodTexture_FUN_00518790 ; 0051bcb3
+        ;   XREF to: 00518790 (UNCONDITIONAL_CALL)  ; int shape_meshlod.cpp_CLodMesh_findOrAddLodTexture_FUN_00518790(CLodMesh * this_ptr, char * texture_filename)
     ADD ESP,0x8                         ; 0051bcb8
     JMP 0x0051bb22                      ; 0051bcbb
         ;   XREF to: 0051bb22 (UNCONDITIONAL_JUMP)  ; LAB_0051bb22

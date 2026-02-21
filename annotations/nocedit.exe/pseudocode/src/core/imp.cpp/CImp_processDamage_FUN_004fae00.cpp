@@ -17,7 +17,7 @@ void __cdecl core_imp_cpp_CImp_processDamage_FUN_004fae00(CImp *this_ptr,SDamage
   char *sound_name;
   CVector3f local_24;
   
-  sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)this_ptr->unk);
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handle);
   if (damage_info->ammo_type == 8) {
     iVar4 = 0;
     damage_info->damage_amount = damage_info->damage_amount * (float)2;
@@ -36,7 +36,7 @@ void __cdecl core_imp_cpp_CImp_processDamage_FUN_004fae00(CImp *this_ptr,SDamage
   if (0.0 < fVar1) {
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               (&this_ptr_00->motion_controller,5,1);
-    iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk + 4));
+    iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->hurt_sfx_handle);
     if (iVar4 != 0) goto LAB_004faefc;
     sound_name = "imp-hurt?.wav";
   }
@@ -47,11 +47,11 @@ void __cdecl core_imp_cpp_CImp_processDamage_FUN_004fae00(CImp *this_ptr,SDamage
     if ((pSVar2->state_index == 6) || (pSVar2->state_index == 7)) goto LAB_004faefc;
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               (&this_ptr_00->motion_controller,6,1);
-    sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->unk + 4));
+    sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->hurt_sfx_handle);
     sound_name = "imp-die?.wav";
   }
   uVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)((CDemonActor *)this_ptr,sound_name);
-  *(uint *)(this_ptr->unk + 4) = uVar3;
+  this_ptr->hurt_sfx_handle = uVar3;
 LAB_004faefc:
   core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(&this_ptr->base,damage_info);
   return;

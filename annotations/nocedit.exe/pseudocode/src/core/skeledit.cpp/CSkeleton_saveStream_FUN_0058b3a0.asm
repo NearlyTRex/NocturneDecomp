@@ -4,8 +4,8 @@
 ; void __cdecl core_skeledit_cpp_CSkeleton_saveStream_FUN_0058b3a0(CSkeleton *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
-; CSkeleton *      Stack[0x8]:4   this_ptr
-; _FILE *          Stack[0xc]:4   file_handle
+; CSkeleton *      Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined8       Stack[-0x40]:8  local_40
 ; undefined8       Stack[-0x38]:8  local_38

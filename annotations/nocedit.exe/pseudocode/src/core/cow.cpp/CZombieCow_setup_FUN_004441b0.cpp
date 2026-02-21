@@ -25,33 +25,33 @@ void __cdecl core_cow_cpp_CZombieCow_setup_FUN_004441b0(CZombieCow *this_ptr)
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr_00);
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"head01",1);
-  this_ptr->part_head = iVar1;
+  this_ptr->part_index_head = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"neck01",1);
-  this_ptr->part_neck = iVar1;
+  this_ptr->part_index_neck = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"lfrontleg01",1);
-  this_ptr->part_l_front_leg = iVar1;
+  this_ptr->part_index_lfrontleg = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"rfrontleg01",1);
-  this_ptr->part_r_front_leg = iVar1;
+  this_ptr->part_index_rfrontleg = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"rbackleg01",1);
-  this_ptr->part_r_back_leg = iVar1;
+  this_ptr->part_index_rbackleg = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"lbackleg01",1);
-  this_ptr->part_l_back_leg = iVar1;
+  this_ptr->part_index_lbackleg = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"torso01",1);
-  this_ptr->part_torso = iVar1;
+  this_ptr->part_index_torso = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"utter01",1);
-  this_ptr->part_udder = iVar1;
+  this_ptr->part_index_udder = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"back01",1);
-  this_ptr->part_back = iVar1;
+  this_ptr->part_index_back = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"tail01",1);
-  this_ptr->part_tail = iVar1;
+  this_ptr->part_index_tail = iVar1;
   return;
 }

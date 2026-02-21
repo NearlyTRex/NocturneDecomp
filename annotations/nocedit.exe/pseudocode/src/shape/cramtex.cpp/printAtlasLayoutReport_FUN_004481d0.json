@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 25,
+        "line": 24,
         "message": "no matching function for call to '__STK'"
       }
     ],
@@ -13,16 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 73,
+    "complexity_score": 37,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 21,
-    "pseudocode_lines": 38,
-    "suspect_count": 3,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 99
+    "pseudocode_lines": 37,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 98
   },
   "cross_references": [],
   "function": {
@@ -161,7 +159,7 @@
     {
       "addr": "0084a854",
       "name": "g_CramTextureCount",
-      "type": "uint",
+      "type": "int",
       "value": null
     },
     {
@@ -211,42 +209,20 @@
     "pcode_op_count": 190
   },
   "stack_frame": {
-    "frame_size": 16,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 12,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": true,
         "name": "output_file",
-        "offset": 12,
+        "offset": 4,
         "size": 4,
         "type": "_FILE *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000004",
-      "text": "_FILE *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_00000004",
-      "text": "_fprintf(in_stack_00000004,\"%2d: %5dx%-5d  Page %d (%5d,%-5d)-(%5d,%-5d)    Rotated: %d\\n\",iVar10,*piVar8,*piVar7,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 38,
-      "match": "in_stack_00000004",
-      "text": "_fprintf(in_stack_00000004,\"%ux%u square found using %u padding.\\n\",g_CramCurrentAcceptableSize,",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

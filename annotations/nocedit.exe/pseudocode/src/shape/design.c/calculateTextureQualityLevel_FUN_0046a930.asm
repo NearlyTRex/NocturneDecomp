@@ -11,7 +11,7 @@
 ;
 ; XREF[3]:
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047dbd8
-;   core_skeledit.cpp_FUN_0058c190 at 0058cb9e
+;   core_skeledit.cpp_CDeformableModel_FUN_0058c190 at 0058cb9e
 ;   shape_design.c_cramTextureList_FUN_0046bb80 at 0046cff8
 ;
 ; Referenced Globals:

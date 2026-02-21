@@ -12,8 +12,8 @@
 ;
 ; XREF[4]:
 ;   core_skeledit.cpp_CDeformableModel_FUN_0058b660 at 0058b7c3
-;   core_skeledit.cpp_FUN_0058c190 at 0058c304
-;   core_skeledit.cpp_FUN_0058d790 at 0058d7d6
+;   core_skeledit.cpp_CDeformableModel_FUN_0058c190 at 0058c304
+;   core_skeledit.cpp_CDeformableModel_FUN_0058d790 at 0058d7d6
 ;   core_skeleton.cpp_CDeformableModel_loadStream_FUN_0059b970 at 0059baea
 ;
 ; Referenced Globals:

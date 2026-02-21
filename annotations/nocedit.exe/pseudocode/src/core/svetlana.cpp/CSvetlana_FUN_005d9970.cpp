@@ -22,7 +22,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9970(CSvetlana *this_ptr)
     else {
       if (event_id < 0x65) {
         core_svetlana_cpp_CSvetlana_FUN_005d9a10(this_ptr);
-        iVar1 = this_ptr->unk2;
+        iVar1 = this_ptr->attack_hand;
       }
       else {
         if (event_id != 0x65) {
@@ -30,9 +30,9 @@ void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9970(CSvetlana *this_ptr)
           goto LAB_005d99be;
         }
         core_svetlana_cpp_CSvetlana_FUN_005d9a10(this_ptr);
-        iVar1 = this_ptr->unk2;
+        iVar1 = this_ptr->attack_hand;
       }
-      this_ptr->unk2 = (uint)(iVar1 == 0);
+      this_ptr->attack_hand = (uint)(iVar1 == 0);
     }
 LAB_005d99be:
     if (in_stack_00000008 <= 0.0) {

@@ -9,7 +9,7 @@
 // =============================================================================
 
 // CKeyFramedModel
-extern CKeyFramedModel DAT_03665f74;
+extern CKeyFramedModel CKeyFramedModel_03665f74;
 
 // undefined1
 extern undefined1 DAT_0366b64c;

@@ -61,7 +61,7 @@ int __cdecl CTurret::startInteraction(CTurret *this_ptr,CDemonActor *user);
 
 // Original: core_turret.cpp_CTurret_updateInteraction_FUN_005e34d0
 // Address: 005e34d0
-int __cdecl CTurret::updateInteraction(CTurret *this_ptr,COrientation *user_orientation,SInteractionState *interaction_state);
+int __cdecl CTurret::updateInteraction(CTurret *this_ptr,UOrientationVector *user_orientation,SPlayerControl *player_control);
 
 // Original: core_turret.cpp_CTurret_stopInteraction_FUN_005e3540
 // Address: 005e3540

@@ -2,11 +2,11 @@
 // Address: 0058e3e0
 // Address Range: [[0058e3e0, 0058e4df]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058e3e0(CDeformableModel *this_ptr)
+// Signature: void __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058e3e0(CDeformableModel *this_ptr,float param_2)
 
 #include "nocturne.h"
 
-void __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058e3e0(CDeformableModel *this_ptr)
+void __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058e3e0(CDeformableModel *this_ptr,float param_2)
 
 {
   float *pfVar1;
@@ -16,7 +16,6 @@ void __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058e3e0(CDeformableModel *t
   CVector3f *pCVar5;
   CVector3f *pCVar6;
   int iVar7;
-  float in_stack_00000008;
   int local_18;
   int local_14;
   
@@ -30,9 +29,9 @@ void __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058e3e0(CDeformableModel *t
         pbVar3 = (byte *)(*(int *)((int)this_ptr->vertex_data_ptr + local_14) + iVar7);
         pfVar1 = (float *)(pbVar3 + 0x10);
         for (iVar2 = 0; iVar2 < (int)(uint)*pbVar3; iVar2 = iVar2 + 1) {
-          pfVar1[1] = pfVar1[1] * in_stack_00000008;
-          pfVar1[2] = pfVar1[2] * in_stack_00000008;
-          *pfVar1 = *pfVar1 * in_stack_00000008;
+          pfVar1[1] = pfVar1[1] * param_2;
+          pfVar1[2] = pfVar1[2] * param_2;
+          *pfVar1 = *pfVar1 * param_2;
           pfVar1 = pfVar1 + 3;
         }
         iVar7 = iVar7 + 0x34;
@@ -44,13 +43,13 @@ void __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058e3e0(CDeformableModel *t
   pCVar5 = this_ptr->vertex_pool;
   do {
     pCVar6 = pCVar5 + 1;
-    pCVar5->y = pCVar5->y * in_stack_00000008;
-    pCVar5->z = pCVar5->z * in_stack_00000008;
-    pCVar5->x = pCVar5->x * in_stack_00000008;
+    pCVar5->y = pCVar5->y * param_2;
+    pCVar5->z = pCVar5->z * param_2;
+    pCVar5->x = pCVar5->x * param_2;
     pCVar5 = pCVar6;
   } while ((CBoundingBox3D *)pCVar6 != this_ptr->bbox_pool);
-  (this_ptr->model_scale).x = (this_ptr->model_scale).x * in_stack_00000008;
-  (this_ptr->model_scale).y = (this_ptr->model_scale).y * in_stack_00000008;
-  (this_ptr->model_scale).z = (this_ptr->model_scale).z * in_stack_00000008;
+  (this_ptr->model_scale).x = (this_ptr->model_scale).x * param_2;
+  (this_ptr->model_scale).y = (this_ptr->model_scale).y * param_2;
+  (this_ptr->model_scale).z = (this_ptr->model_scale).z * param_2;
   return;
 }

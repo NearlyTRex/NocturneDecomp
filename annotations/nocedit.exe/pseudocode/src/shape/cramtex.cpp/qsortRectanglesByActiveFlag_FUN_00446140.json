@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 15,
+        "line": 12,
         "message": "no matching function for call to '__STK'"
       }
     ],
@@ -13,16 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 11,
-    "complexity_score": 52,
+    "complexity_score": 5,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 7,
-    "suspect_count": 4,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 18
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 16
   },
   "cross_references": [
     {
@@ -42,7 +40,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_cramtex.cpp_qsortRectanglesByActiveFlag_FUN_00446140",
-    "signature": "int __cdecl shape_cramtex_cpp_qsortRectanglesByActiveFlag_FUN_00446140(SCramRectangle *rect_a,SCramRectangle *rect_b)"
+    "signature": "int __cdecl shape_cramtex_cpp_qsortRectanglesByActiveFlag_FUN_00446140(SCramRectangle **rect_a,SCramRectangle **rect_b)"
   },
   "function_calls": [
     {
@@ -80,56 +78,27 @@
     "pcode_op_count": 35
   },
   "stack_frame": {
-    "frame_size": 20,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 16,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": true,
         "name": "rect_a",
-        "offset": 12,
+        "offset": 4,
         "size": 4,
-        "type": "SCramRectangle *"
+        "type": "SCramRectangle * *"
       },
       {
         "is_param": true,
         "name": "rect_b",
-        "offset": 16,
+        "offset": 8,
         "size": 4,
-        "type": "SCramRectangle *"
+        "type": "SCramRectangle * *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 5,
-      "match": "in_stack_00000004",
-      "text": "int *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 6,
-      "match": "in_stack_00000008",
-      "text": "int *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000004",
-      "text": "return *(int *)(*in_stack_00000004 + 0x24) - *(int *)(*in_stack_00000008 + 0x24);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000008",
-      "text": "return *(int *)(*in_stack_00000004 + 0x24) - *(int *)(*in_stack_00000008 + 0x24);",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

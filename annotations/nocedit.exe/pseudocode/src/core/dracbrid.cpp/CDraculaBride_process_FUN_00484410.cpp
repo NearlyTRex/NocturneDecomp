@@ -99,11 +99,15 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00484410(CDraculaBride 
         fVar15 = (float)65535;
         pCVar10 = this_ptr;
         do {
-          iVar9 = *(int *)pCVar10->unk4;
-          *(uint *)(iVar9 + 0xfc) = 1;
-          *(uint *)(iVar9 + 0xcb4) = 1;
+          pCVar13 = pCVar10->part_list[0];
+          pCVar13->is_transparent = 1;
+          pCVar13[9].create_event[0x24] = '\x01';
+          pCVar13[9].create_event[0x25] = '\0';
+          pCVar13[9].create_event[0x26] = '\0';
+          pCVar13[9].create_event[0x27] = '\0';
           iVar6 = iVar6 + 1;
-          *(int *)(iVar9 + 0xcc0) = (int)ROUND(ROUND((this_ptr->fade_timer * fVar15) / fVar16));
+          *(int *)(pCVar13[9].create_event + 0x30) =
+               (int)ROUND(ROUND((this_ptr->fade_timer * fVar15) / fVar16));
           pCVar10 = (CDraculaBride *)((pCVar10->base).base.base.actor_name + 4);
         } while (iVar6 < this_ptr->part_count);
       }
@@ -116,7 +120,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00484410(CDraculaBride 
       pCVar10 = this_ptr;
       if (0 < this_ptr->part_count) {
         do {
-          *(uint *)(*(int *)pCVar10->unk4 + 0x70) = 2;
+          pCVar10->part_list[0]->was_created = 2;
           iVar6 = iVar6 + 1;
           pCVar10 = (CDraculaBride *)((pCVar10->base).base.base.actor_name + 4);
         } while (iVar6 < this_ptr->part_count);
@@ -128,8 +132,8 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00484410(CDraculaBride 
   if (iVar6 == 0) {
     return;
   }
-  if (0.0 <= *(float *)(this_ptr->unk2 + 4)) {
-    *(float *)(this_ptr->unk2 + 4) = *(float *)(this_ptr->unk2 + 4) - delta_time;
+  if (0.0 <= this_ptr->action_delay) {
+    this_ptr->action_delay = this_ptr->action_delay - delta_time;
   }
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.y =
@@ -248,9 +252,9 @@ LAB_004848f9:
         break;
       }
     }
-    if (*(float *)(this_ptr->unk2 + 4) < 0.0) {
+    if (this_ptr->action_delay < 0.0) {
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(2.0,20.0);
-      *(float *)(this_ptr->unk2 + 4) = local_14;
+      this_ptr->action_delay = local_14;
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&(this_ptr->base).base.model.motion_controller,0xd,1);
       break;
@@ -269,10 +273,7 @@ LAB_004848f9:
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               ((CDemonActor *)this_ptr,&local_100,pCVar12);
     core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
-    this_ptr->unk3[0] = '\x01';
-    this_ptr->unk3[1] = '\0';
-    this_ptr->unk3[2] = '\0';
-    this_ptr->unk3[3] = '\0';
+    this_ptr->attack_landed = 1;
     break;
   case 3:
     core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_304);
@@ -313,30 +314,26 @@ LAB_004848f9:
       }
     }
     else {
-      if (((this_ptr->base).base.hit_points < 20.0f) ||
-         (*(float *)(this_ptr->unk2 + 4) < 0.0)) {
+      if (((this_ptr->base).base.hit_points < 20.0f) || (this_ptr->action_delay < 0.0)) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&(this_ptr->base).base.model.motion_controller,0,1);
         local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(2.0,20.0);
-        *(float *)(this_ptr->unk2 + 4) = local_14;
+        this_ptr->action_delay = local_14;
       }
       pCVar3 = &(this_ptr->base).base.model;
-      if (*(int *)this_ptr->unk3 == 0) {
+      if (this_ptr->attack_landed == 0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&pCVar3->motion_controller,9,1);
       }
       else {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&pCVar3->motion_controller,0x19,1);
-        this_ptr->unk3[0] = '\0';
-        this_ptr->unk3[1] = '\0';
-        this_ptr->unk3[2] = '\0';
-        this_ptr->unk3[3] = '\0';
+        this_ptr->attack_landed = 0;
       }
     }
     break;
   case 9:
-    if (*(float *)this_ptr->unk2 <= 0.0) {
+    if (this_ptr->freaky_timer <= 0.0) {
       _sprintf
                 (local_3cc,"bride-%d?.wav",this_ptr->freaky_voice_number);
       core_dracbrid_cpp_CDraculaBride_FUN_004864c0(this_ptr);
@@ -348,7 +345,7 @@ LAB_004848f9:
     (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
     pCVar3 = &(this_ptr->base).base.model;
     if ((this_ptr->base).victim != (CDemonActor *)0x0) {
-      if (0.0 <= *(float *)(this_ptr->unk2 + 4)) {
+      if (0.0 <= this_ptr->action_delay) {
         fVar16 = 0.08726646;
         fVar15 = 0.5;
         local_58.x = 0.0;
@@ -403,7 +400,7 @@ LAB_004848f9:
       }
       else {
         local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(2.0,20.0);
-        *(float *)(this_ptr->unk2 + 4) = local_14;
+        this_ptr->action_delay = local_14;
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&pCVar3->motion_controller,0,1);
       }
@@ -426,7 +423,7 @@ LAB_004852f8:
     }
     break;
   case 0xe:
-    if (*(float *)this_ptr->unk2 <= 0.0) {
+    if (this_ptr->freaky_timer <= 0.0) {
       _sprintf
                 (local_368,"bride-%d?.wav",this_ptr->freaky_voice_number);
       core_dracbrid_cpp_CDraculaBride_FUN_004864c0(this_ptr);
@@ -531,10 +528,7 @@ LAB_004852f8:
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               ((CDemonActor *)this_ptr,&local_94,pCVar12);
     core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
-    this_ptr->unk3[0] = '\x01';
-    this_ptr->unk3[1] = '\0';
-    this_ptr->unk3[2] = '\0';
-    this_ptr->unk3[3] = '\0';
+    this_ptr->attack_landed = 1;
     break;
   case 0x14:
     core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_214);
@@ -549,10 +543,7 @@ LAB_004852f8:
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               ((CDemonActor *)this_ptr,&local_16c,pCVar12);
     core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
-    this_ptr->unk3[0] = '\x01';
-    this_ptr->unk3[1] = '\0';
-    this_ptr->unk3[2] = '\0';
-    this_ptr->unk3[3] = '\0';
+    this_ptr->attack_landed = 1;
     break;
   case 0x15:
     core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_250);
@@ -569,7 +560,7 @@ LAB_004852f8:
     core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
     break;
   case 0x17:
-    if (*(float *)this_ptr->unk2 <= 0.0) {
+    if (this_ptr->freaky_timer <= 0.0) {
       _sprintf
                 (&stack0xfffffb6c,"bride-%d?.wav",this_ptr->freaky_voice_number);
       core_dracbrid_cpp_CDraculaBride_FUN_004864c0(this_ptr);
@@ -681,7 +672,7 @@ LAB_004852f8:
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&pCVar3->motion_controller,0xe,1);
         local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(2.0,20.0);
-        *(float *)(this_ptr->unk2 + 4) = local_14;
+        this_ptr->action_delay = local_14;
       }
     }
     break;

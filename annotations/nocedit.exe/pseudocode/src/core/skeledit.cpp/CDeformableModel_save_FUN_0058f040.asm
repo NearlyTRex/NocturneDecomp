@@ -4,8 +4,8 @@
 ; void __cdecl core_skeledit_cpp_CDeformableModel_save_FUN_0058f040(CDeformableModel *this_ptr,char *filename)
 ;
 ; Parameters:
-; CDeformableModel * Stack[0xc]:4   this_ptr
-; char *           Stack[0x10]:4   filename
+; CDeformableModel * Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   filename
 ;
 ; XREF[1]:
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 00598ecb
@@ -93,7 +93,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x14]      ; 0058f0b9
     PUSH EAX                            ; 0058f0bd
     CALL core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120 ; 0058f0be
-        ;   XREF to: 0058f120 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120(CDeformableModel * this_ptr)
+        ;   XREF to: 0058f120 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120(CDeformableModel * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 0058f0c3
     PUSH 0xb2e                          ; 0058f0c6
     PUSH 0x64b1c5                       ; 0058f0cb | = "..\\core\\skeledit.cpp"

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl support_trisock_cpp_bindAndInvalidateSocket_FUN_005e1d20(SOCKET *socket)
+; int __cdecl support_trisock_cpp_bindAndInvalidateSocket_FUN_005e1d20(SOCKET *socket_handle)
 ;
 ; Parameters:
-; SOCKET *         Stack[0x4]:4   socket
+; SOCKET *         Stack[0x4]:4   socket_handle
 ;
 ; XREF[5]:
 ;   core_netgame.cpp_CNetGame_FUN_0053f830 at 0053f849
@@ -26,7 +26,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 005e1d21
     PUSH EBX                            ; 005e1d25
     CALL support_trisock.cpp_isSocketValid_FUN_005e1b70 ; 005e1d26
-        ;   XREF to: 005e1b70 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_isSocketValid_FUN_005e1b70(SOCKET * socket)
+        ;   XREF to: 005e1b70 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_isSocketValid_FUN_005e1b70(SOCKET * socket_handle)
     ADD ESP,0x4                         ; 005e1d2b
     TEST EAX,EAX                        ; 005e1d2e
     JNZ 0x005e1d39                      ; 005e1d30

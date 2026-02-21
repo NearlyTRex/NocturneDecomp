@@ -3,11 +3,13 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDemonActor.h"
+#include "types/classes/CKeyFramedModelInstance.h"
 
 // Structure: CMirrorHack
 // Ghidra size: 0x2d8 (728 bytes)
 typedef struct CMirrorHack {
     CDemonActor base; // 0x0
-    char unk[384]; // 0x158
+    CKeyFramedModelInstance mirror_model; // 0x158
+    struct CDemonActor* interacting_actor; // 0x2d4
 } CMirrorHack;
 

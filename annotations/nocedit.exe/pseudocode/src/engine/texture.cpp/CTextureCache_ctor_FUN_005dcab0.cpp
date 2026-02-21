@@ -22,7 +22,7 @@ CTextureCache * __cdecl engine_texture_cpp_CTextureCache_ctor_FUN_005dcab0(CText
     pCVar1->texture_palette_ptrs[0] = (byte *)0x0;
     pCVar1->texture_dimensions[0] = 0;
     pCVar1 = (CTextureCache *)piVar2;
-  } while (piVar2 != (int *)this_ptr->field_4096);
+  } while (piVar2 != this_ptr->texture_dimensions + 0x3fe);
   this_ptr->wrap_indicator = 0;
   return this_ptr;
 }

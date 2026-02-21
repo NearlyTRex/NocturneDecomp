@@ -1,5 +1,8 @@
 #pragma once
 
+// Forward declarations
+struct CDraculaBride;
+
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CVector3f.h"
@@ -7,8 +10,11 @@
 // Structure: SFreaky
 // Ghidra size: 0x54 (84 bytes)
 typedef struct SFreaky {
-    char unk1[32]; // 0x0
-    CVector3f unk2[4]; // 0x20
-    char unk3[4]; // 0x50
+    uint sfx_handle; // 0x0
+    CVector3f position; // 0x4
+    CVector3f tangent; // 0x10
+    float t; // 0x1c
+    CVector3f control_points[4]; // 0x20
+    struct CDraculaBride* owner; // 0x50
 } SFreaky;
 

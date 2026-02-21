@@ -13,12 +13,12 @@
   },
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 171,
+    "complexity_score": 181,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 0,
     "pseudocode_lines": 36,
-    "suspect_count": 12,
+    "suspect_count": 13,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -28,15 +28,15 @@
   },
   "cross_references": [
     {
-      "addr": "00592690",
-      "from_addr": "005929b5",
-      "name": "core_skeledit.cpp_CSkeleton_FUN_00592690",
+      "addr": "0058c190",
+      "from_addr": "0058c37c",
+      "name": "core_skeledit.cpp_CDeformableModel_FUN_0058c190",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0058c190",
-      "from_addr": "0058c37c",
-      "name": "core_skeledit.cpp_FUN_0058c190",
+      "addr": "00592690",
+      "from_addr": "005929b5",
+      "name": "core_skeledit.cpp_CSkeleton_FUN_00592690",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -56,7 +56,7 @@
     {
       "addr": "0058ac80",
       "is_variadic": false,
-      "name": "core_skeledit.cpp_FUN_0058ac80"
+      "name": "core_skeledit.cpp_CBoneStructure_FUN_0058ac80"
     },
     {
       "addr": "005f5370",
@@ -86,7 +86,7 @@
       {
         "call_addr": "0058c37c",
         "call_type": "direct",
-        "caller": "core_skeledit.cpp_FUN_0058c190",
+        "caller": "core_skeledit.cpp_CDeformableModel_FUN_0058c190",
         "estimated_params": 2,
         "instructions_analyzed": 6,
         "reg_params": [],
@@ -163,7 +163,7 @@
       "description": "Unresolved stack parameter",
       "line": 10,
       "match": "in_stack_00000004",
-      "text": "int *in_stack_00000004;",
+      "text": "CBoneStructure *in_stack_00000004;",
       "type": "stack_param"
     },
     {
@@ -177,14 +177,14 @@
       "description": "Unresolved stack parameter",
       "line": 19,
       "match": "in_stack_00000004",
-      "text": "if (0 < *in_stack_00000004) {",
+      "text": "if (0 < in_stack_00000004->bone_count) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 20,
       "match": "in_stack_00000004",
-      "text": "matrix_in = (float *)(in_stack_00000004 + 0x16);",
+      "text": "matrix_in = &in_stack_00000004->bones[0].world_matrix;",
       "type": "stack_param"
     },
     {
@@ -233,7 +233,14 @@
       "description": "Unresolved stack parameter",
       "line": 35,
       "match": "in_stack_00000004",
-      "text": "} while (local_8 < *in_stack_00000004);",
+      "text": "} while (local_8 < in_stack_00000004->bone_count);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 37,
+      "match": "in_stack_00000004",
+      "text": "core_skeledit_cpp_CBoneStructure_FUN_0058ac80(in_stack_00000004);",
       "type": "stack_param"
     },
     {

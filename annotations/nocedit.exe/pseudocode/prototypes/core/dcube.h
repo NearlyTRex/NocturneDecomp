@@ -113,7 +113,7 @@ void __cdecl CDemonCube::setBounds(CDemonCube *this_ptr,CVector3f *min_bounds,CV
 
 // Original: core_dcube.cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0
 // Address: 00456af0
-void __cdecl CDemonCube::clipTriangleToFrustum(CDemonCubeFrustum *frustum,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3,uchar texture_id);
+void __cdecl CDemonCube::clipTriangleToFrustum(CDemonCube *this_ptr,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3,uchar texture_id);
 
 // Original: core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0
 // Address: 00456ed0
@@ -153,7 +153,7 @@ int __cdecl CDemonCube::testAABBIntersection(CDemonCube *this_ptr,CVector3f *aab
 
 // Original: core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0
 // Address: 00457cf0
-void __cdecl CDemonCube::buildVoxelOccupancyGrid(SVoxelGridParams *params);
+void __cdecl CDemonCube::buildVoxelOccupancyGrid(CDemonCube *this_ptr);
 
 // Original: core_dcube.cpp_CVector3f_arrdtor_FUN_00457eb0
 // Address: 00457eb0

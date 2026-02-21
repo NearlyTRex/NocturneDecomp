@@ -4,49 +4,49 @@
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 38,
+        "line": 37,
         "message": "no matching function for call to '__STK'"
       },
       {
         "category": "format_error",
-        "column": 85,
-        "line": 49,
+        "column": 79,
+        "line": 48,
         "message": "format specifies type 'int *' but the argument has type 'ushort *' (aka 'unsigned short *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 46,
-        "line": 50,
+        "column": 36,
+        "line": 49,
         "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 55,
-        "line": 50,
+        "column": 45,
+        "line": 49,
         "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 64,
-        "line": 50,
+        "column": 54,
+        "line": 49,
         "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 73,
-        "line": 50,
+        "column": 63,
+        "line": 49,
         "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 82,
-        "line": 50,
+        "column": 72,
+        "line": 49,
         "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 91,
-        "line": 50,
+        "column": 81,
+        "line": 49,
         "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       }
     ],
@@ -55,18 +55,17 @@
   },
   "complexity": {
     "assembly_lines": 243,
-    "complexity_score": 216,
+    "complexity_score": 180,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 3,
-    "pseudocode_lines": 101,
-    "suspect_count": 10,
+    "pseudocode_lines": 100,
+    "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
-      "stack_param"
+      "pointer_cast"
     ],
-    "total_lines": 344
+    "total_lines": 343
   },
   "cross_references": [
     {
@@ -78,7 +77,7 @@
     {
       "addr": "0058c190",
       "from_addr": "0058c327",
-      "name": "core_skeledit.cpp_FUN_0058c190",
+      "name": "core_skeledit.cpp_CDeformableModel_FUN_0058c190",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -92,7 +91,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_skeledit.cpp_CDeformableModel_FUN_0058b9b0",
-    "signature": "int __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058b9b0(CDeformableModel *this_ptr)"
+    "signature": "int __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058b9b0(CDeformableModel *this_ptr,_FILE *file_handle)"
   },
   "function_calls": [
     {
@@ -189,10 +188,10 @@
     "pcode_op_count": 1026
   },
   "stack_frame": {
-    "frame_size": 100,
+    "frame_size": 104,
     "local_size": 96,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -320,76 +319,62 @@
         "offset": 4,
         "size": 4,
         "type": "CDeformableModel *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000008",
-      "text": "_FILE *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_00000008",
-      "text": "iVar2 = _fgetc(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_00000008",
-      "text": "iVar3 = _fscanf(in_stack_00000008,\"%d,%d,%f,%f,%d,%f,%f,%d,%f,%f\\n\",&local_28,local_3c,",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 72,
+      "line": 71,
       "match": "(int *)((int)",
       "text": "*(int *)((int)this_ptr->index_data_ptr[0] + iVar2) = local_28;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 74,
+      "line": 73,
       "match": "(ushort *)((int)",
       "text": "puVar4 = (ushort *)((int)&(pSVar1->vertex_indices).vertex_index_0 + iVar6);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 76,
+      "line": 75,
       "match": "(ushort *)((int)",
       "text": "*puVar4 = *(ushort *)((int)local_3c + iVar3);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 77,
+      "line": 76,
       "match": "ROUND",
       "text": "local_20 = (int)ROUND(ROUND((*(float *)(local_44 + iVar3 + -4) - local_24) *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 77,
+      "line": 76,
       "match": "ROUND",
       "text": "local_20 = (int)ROUND(ROUND((*(float *)(local_44 + iVar3 + -4) - local_24) *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 79,
+      "line": 78,
       "match": "ROUND",
       "text": "local_14 = (int)ROUND(ROUND((*(float *)(local_50 + iVar3 + -4) - local_18) *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 79,
+      "line": 78,
       "match": "ROUND",
       "text": "local_14 = (int)ROUND(ROUND((*(float *)(local_50 + iVar3 + -4) - local_18) *",
       "type": "decompiler_intrinsic"

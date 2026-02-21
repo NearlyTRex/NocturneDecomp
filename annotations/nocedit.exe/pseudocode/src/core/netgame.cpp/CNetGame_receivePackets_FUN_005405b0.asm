@@ -60,7 +60,7 @@ section .text
     PUSH EBX                            ; 005405f1
         ;   Label: LAB_005405f1
     CALL support_trisock.cpp_isSocketValid_FUN_005e1b70 ; 005405f2
-        ;   XREF to: 005e1b70 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_isSocketValid_FUN_005e1b70(SOCKET * socket)
+        ;   XREF to: 005e1b70 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_isSocketValid_FUN_005e1b70(SOCKET * socket_handle)
     ADD ESP,0x4                         ; 005405f7
     TEST EAX,EAX                        ; 005405fa
     JNZ 0x0054060f                      ; 005405fc
@@ -84,7 +84,7 @@ section .text
     PUSH 0x2fa88cc                      ; 00540617 | g_NetworkReceiveBuffer
     PUSH EBX                            ; 0054061c
     CALL support_trisock.cpp_receiveSocketData_FUN_005e1c20 ; 0054061d
-        ;   XREF to: 005e1c20 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_receiveSocketData_FUN_005e1c20(SOCKET * socket, char * buffer, int length, SNetworkAddr * source_addr)
+        ;   XREF to: 005e1c20 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_receiveSocketData_FUN_005e1c20(SOCKET * socket_handle, char * buffer, int length, SNetworkAddr * source_addr)
     ADD ESP,0x10                        ; 00540622
     TEST EAX,EAX                        ; 00540625
     JLE 0x00540644                      ; 00540627

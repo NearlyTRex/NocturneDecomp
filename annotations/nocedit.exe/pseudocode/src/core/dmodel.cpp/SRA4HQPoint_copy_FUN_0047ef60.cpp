@@ -9,8 +9,8 @@
 void __cdecl core_dmodel_cpp_SRA4HQPoint_copy_FUN_0047ef60(SRA4HQPoint *this_ptr,SRA4HQPoint *other)
 
 {
-  *(uint *)this_ptr->unk = *(uint *)other->unk;
-  *(uint *)(this_ptr->unk + 4) = *(uint *)(other->unk + 4);
-  *(uint *)(this_ptr->unk + 8) = *(uint *)(other->unk + 8);
+  (this_ptr->impl).vertex_index = (other->impl).vertex_index;
+  (this_ptr->impl).texture_u = (other->impl).texture_u;
+  (this_ptr->impl).texture_v = (other->impl).texture_v;
   return;
 }

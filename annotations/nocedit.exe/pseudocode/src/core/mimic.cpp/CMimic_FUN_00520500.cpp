@@ -15,31 +15,31 @@ void __cdecl core_mimic_cpp_CMimic_FUN_00520500(CMimic *this_ptr)
   uint uVar2;
   int iVar3;
   int *piVar4;
-  char *pcVar5;
+  SClothVertex *pSVar5;
   byte bVar6;
   float frame_number;
   
   bVar6 = 0;
   this_ptr->attack_mode = 2;
   core_cloth_cpp_CCloth_setup_FUN_00439710
-            ((CCloth *)this_ptr->unk3,&(this_ptr->base).base.base.location.position,
+            (&this_ptr->cloth,&(this_ptr->base).base.base.location.position,
              &(this_ptr->base).base.base.orient.vec,&(this_ptr->base).base.model);
   pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790
                      ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],g_CGabriellaClassInfo.name_hash)
   ;
   if (pCVar1 != (CDemonActor *)0x0) {
     piVar4 = &pCVar1[0x1ba].is_transparent;
-    pcVar5 = this_ptr->unk3 + 0x56d8;
-    for (uVar2 = *(int *)(this_ptr->unk3 + 0x104) * 0x47 & 0x3fffffff; uVar2 != 0; uVar2 = uVar2 - 1
-        ) {
-      *(int *)pcVar5 = *piVar4;
+    pSVar5 = (this_ptr->cloth).vertices;
+    for (uVar2 = (this_ptr->cloth).model.vertex_count * 0x47 & 0x3fffffff; uVar2 != 0;
+        uVar2 = uVar2 - 1) {
+      (pSVar5->position).x = (float)*piVar4;
       piVar4 = piVar4 + (uint)bVar6 * -2 + 1;
-      pcVar5 = pcVar5 + (uint)bVar6 * -8 + 4;
+      pSVar5 = (SClothVertex *)((int)pSVar5 + (uint)bVar6 * -8 + 4);
     }
     for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *pcVar5 = (char)*piVar4;
+      *(char *)&(pSVar5->position).x = (char)*piVar4;
       piVar4 = (int *)((int)piVar4 + (uint)bVar6 * -2 + 1);
-      pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
+      pSVar5 = (SClothVertex *)((int)pSVar5 + (uint)bVar6 * -2 + 1);
     }
   }
   frame_number = (float)(g_HeroActors[g_LocalHeroIndex]->base).model.motion_controller.

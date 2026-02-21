@@ -33,13 +33,10 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_FUN_004869a0(CDraculaBride *this_pt
   CVector3f *local_1c;
   float local_18;
   
-  fVar2 = *(float *)this_ptr->unk2 - in_stack_00000008;
-  *(float *)this_ptr->unk2 = fVar2;
+  fVar2 = this_ptr->freaky_timer - in_stack_00000008;
+  this_ptr->freaky_timer = fVar2;
   if (fVar2 < 0.0) {
-    this_ptr->unk2[0] = '\0';
-    this_ptr->unk2[1] = '\0';
-    this_ptr->unk2[2] = '\0';
-    this_ptr->unk2[3] = '\0';
+    this_ptr->freaky_timer = 0.0;
   }
   local_24 = &g_CDemonCameraInstance.base.position.y;
   local_28 = &g_CDemonCameraInstance.base.position.z;
@@ -49,37 +46,34 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_FUN_004869a0(CDraculaBride *this_pt
   local_38 = (SFreaky *)&g_DashAnimationAccumulator;
   do {
     local_20 = local_34;
-    if (this_ptr == *(CDraculaBride **)local_34->unk3) {
-      iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660((uint)*(float *)local_34->unk1);
+    if (this_ptr == local_34->owner) {
+      iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(local_34->sfx_handle);
       pSVar3 = local_34;
       if (iVar4 == 0) {
-        local_34->unk3[0] = '\0';
-        local_34->unk3[1] = '\0';
-        local_34->unk3[2] = '\0';
-        local_34->unk3[3] = '\0';
+        local_34->owner = (CDraculaBride *)0x0;
       }
       else {
-        pCVar5 = local_34->unk2 + 3;
-        pCVar1 = local_34->unk2 + 2;
-        p1 = local_34->unk2 + 1;
-        local_1c = local_34->unk2;
-        *(float *)(local_34->unk1 + 0x1c) = *(float *)(local_34->unk1 + 0x1c) + in_stack_00000008;
-        while (1.0 < *(float *)(local_20->unk1 + 0x1c)) {
-          *(float *)(local_20->unk1 + 0x1c) = *(float *)(local_20->unk1 + 0x1c) + -1.0f;
+        pCVar5 = local_34->control_points + 3;
+        pCVar1 = local_34->control_points + 2;
+        p1 = local_34->control_points + 1;
+        local_1c = local_34->control_points;
+        local_34->t = local_34->t + in_stack_00000008;
+        while (1.0 < local_20->t) {
+          local_20->t = local_20->t + -1.0f;
           if (p1 != local_1c) {
             local_1c->x = p1->x;
-            local_1c->y = pSVar3->unk2[1].y;
-            local_1c->z = pSVar3->unk2[1].z;
+            local_1c->y = pSVar3->control_points[1].y;
+            local_1c->z = pSVar3->control_points[1].z;
           }
           if (p1 != pCVar1) {
             p1->x = pCVar1->x;
-            pSVar3->unk2[1].y = pSVar3->unk2[2].y;
-            pSVar3->unk2[1].z = pSVar3->unk2[2].z;
+            pSVar3->control_points[1].y = pSVar3->control_points[2].y;
+            pSVar3->control_points[1].z = pSVar3->control_points[2].z;
           }
           if (pCVar1 != pCVar5) {
             pCVar1->x = pCVar5->x;
-            pSVar3->unk2[2].y = pSVar3->unk2[3].y;
-            pSVar3->unk2[2].z = pSVar3->unk2[3].z;
+            pSVar3->control_points[2].y = pSVar3->control_points[3].y;
+            pSVar3->control_points[2].z = pSVar3->control_points[3].z;
           }
           local_68 = (float)g_CDemonCameraInstance.base.position.x;
           local_64 = (float)*local_24;
@@ -95,29 +89,29 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_FUN_004869a0(CDraculaBride *this_pt
           local_44.z = *local_2c;
           if (pCVar5 != &local_44) {
             pCVar5->x = local_68;
-            pSVar3->unk2[3].y = local_44.y;
-            pSVar3->unk2[3].z = local_44.z;
+            pSVar3->control_points[3].y = local_44.y;
+            pSVar3->control_points[3].z = local_44.z;
           }
         }
-        core_spline_cpp_computeSplineBasis_FUN_005b90a0
-                  (local_88,*(float *)(local_20->unk1 + 0x1c),0.0);
+        core_spline_cpp_computeSplineBasis_FUN_005b90a0(local_88,local_20->t,0.0);
         pCVar5 = core_spline_cpp_evaluateSplinePoint3D_FUN_005b92d0
-                           (local_88,&local_50,local_1c,p1,local_20->unk2 + 2,local_20->unk2 + 3);
-        if ((CVector3f *)(local_20->unk1 + 4) != pCVar5) {
-          ((CVector3f *)(local_20->unk1 + 4))->x = pCVar5->x;
-          *(float *)(local_20->unk1 + 8) = pCVar5->y;
-          *(float *)(local_20->unk1 + 0xc) = pCVar5->z;
+                           (local_88,&local_50,local_1c,p1,local_20->control_points + 2,
+                            local_20->control_points + 3);
+        if (&local_20->position != pCVar5) {
+          (local_20->position).x = pCVar5->x;
+          (local_20->position).y = pCVar5->y;
+          (local_20->position).z = pCVar5->z;
         }
         engine_console_cpp_CConsole_printf_FUN_00441890
-                  (g_CConsolePtr,"%5.2f %5.2f %5.2f\n",(double)*(float *)(local_20->unk1 + 4),
-                   (double)*(float *)(local_20->unk1 + 8),(double)*(float *)(local_20->unk1 + 0xc));
+                  (g_CConsolePtr,"%5.2f %5.2f %5.2f\n",(double)(local_20->position).x,
+                   (double)(local_20->position).y,(double)(local_20->position).z);
         pCVar5 = core_spline_cpp_evaluateSplineTangent3D_FUN_005b9490
-                           (local_88,&local_5c,local_20->unk2,local_20->unk2 + 1,local_20->unk2 + 2,
-                            local_20->unk2 + 3);
-        if ((CVector3f *)(local_20->unk1 + 0x10) != pCVar5) {
-          ((CVector3f *)(local_20->unk1 + 0x10))->x = pCVar5->x;
-          *(float *)(local_20->unk1 + 0x14) = pCVar5->y;
-          *(float *)(local_20->unk1 + 0x18) = pCVar5->z;
+                           (local_88,&local_5c,local_20->control_points,local_20->control_points + 1
+                            ,local_20->control_points + 2,local_20->control_points + 3);
+        if (&local_20->tangent != pCVar5) {
+          (local_20->tangent).x = pCVar5->x;
+          (local_20->tangent).y = pCVar5->y;
+          (local_20->tangent).z = pCVar5->z;
         }
       }
     }

@@ -1949,10 +1949,10 @@
               }
             ]
           },
-          "type":"COrientation*"
+          "type":"UOrientationVector*"
         },
         {
-          "name":"interaction_state",
+          "name":"player_control",
           "storage":{
             "offset":12,
             "size":4,
@@ -1965,7 +1965,7 @@
               }
             ]
           },
-          "type":"SInteractionState*"
+          "type":"SPlayerControl*"
         }
       ],
       "ret_storage":{
@@ -13918,13 +13918,13 @@
         {
           "name":"this_ptr",
           "storage":{
-            "offset":12,
+            "offset":4,
             "size":4,
             "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0xc]",
-                "offset":12,
+                "addr":"Stack[0x4]",
+                "offset":4,
                 "size":4
               }
             ]
@@ -67184,8 +67184,28 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeledit.cpp_FUN_00589bb0",
-    "ret":"void"
+    "name":"core_skeledit.cpp_createMeshPrecomputeFile_FUN_00589bb0",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"mesh_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CLodMesh*"
+        }
+      ]
+    }
   },
   {
     "addr":"0058a1b0",
@@ -67381,6 +67401,22 @@
         {
           "name":"this_ptr",
           "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CBoneStructure*"
+        },
+        {
+          "name":"file_handle",
+          "storage":{
             "offset":8,
             "size":4,
             "stack":true,
@@ -67392,7 +67428,7 @@
               }
             ]
           },
-          "type":"CBoneStructure*"
+          "type":"_FILE*"
         }
       ]
     }
@@ -67541,13 +67577,13 @@
         {
           "name":"this_ptr",
           "storage":{
-            "offset":8,
+            "offset":4,
             "size":4,
             "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x8]",
-                "offset":8,
+                "addr":"Stack[0x4]",
+                "offset":4,
                 "size":4
               }
             ]
@@ -67911,6 +67947,22 @@
             ]
           },
           "type":"CDeformableModel*"
+        },
+        {
+          "name":"file_handle",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"_FILE*"
         }
       ],
       "ret_storage":{
@@ -70711,13 +70763,13 @@
         {
           "name":"this_ptr",
           "storage":{
-            "offset":8,
+            "offset":4,
             "size":4,
             "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x8]",
-                "offset":8,
+                "addr":"Stack[0x4]",
+                "offset":4,
                 "size":4
               }
             ]

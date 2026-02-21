@@ -1,47 +1,20 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 98,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 22,
-        "line": 98,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 27,
-        "line": 100,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 34,
-        "line": 100,
-        "message": "expected expression"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 415,
-    "complexity_score": 328,
+    "complexity_score": 288,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 12,
     "pseudocode_lines": 158,
-    "suspect_count": 15,
+    "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
-      "stack_param",
-      "unresolved_funcptr"
+      "stack_param"
     ],
     "total_lines": 573
   },
@@ -375,21 +348,21 @@
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
+      "text": "CDemonActor *in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 40,
       "match": "in_stack_0000000c",
-      "text": "if ((in_stack_0000000c == 0) &&",
+      "text": "if ((in_stack_0000000c == (CDemonActor *)0x0) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 44,
       "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c = 1;",
+      "text": "in_stack_0000000c = (CDemonActor *)0x1;",
       "type": "stack_param"
     },
     {
@@ -403,7 +376,7 @@
       "description": "Unresolved stack parameter",
       "line": 61,
       "match": "in_stack_0000000c",
-      "text": "if ((this_ptr->guns_drawn == 0) || (in_stack_0000000c != 0)) {",
+      "text": "if ((this_ptr->guns_drawn == 0) || (in_stack_0000000c != (CDemonActor *)0x0)) {",
       "type": "stack_param"
     },
     {
@@ -417,29 +390,8 @@
       "description": "Unresolved stack parameter",
       "line": 68,
       "match": "in_stack_0000000c",
-      "text": "for (local_20 = in_stack_0000000c; local_20 < g_CDemonSetPtr->actor_count;",
+      "text": "for (local_20 = in_stack_0000000c; (int)local_20 < g_CDemonSetPtr->actor_count;",
       "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 70,
-      "match": "(int *)((int)",
-      "text": "iVar1 = *(int *)((int)g_CDemonSetPtr->actors + iVar4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 91,
-      "match": "code *",
-      "text": "iVar4 = (**(code **)(*(int *)(this_ptr->unk8 + 0x154) + 0x4c))(this_ptr->unk8,local_138);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 93,
-      "match": "code *",
-      "text": "pfVar6 = (float *)(**(code **)(*(int *)(this_ptr->unk8 + 0x154) + 0x14))",
-      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
@@ -452,7 +404,7 @@
       "description": "Unresolved stack parameter",
       "line": 150,
       "match": "in_stack_0000000c",
-      "text": "if ((this_ptr->unk8 != 0) && (in_stack_0000000c == 0)) {",
+      "text": "if ((this_ptr->aim_target != (CDemonActor *)0x0) && (in_stack_0000000c == (CDemonActor *)0x0)) {",
       "type": "stack_param"
     },
     {

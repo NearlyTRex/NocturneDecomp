@@ -11,6 +11,6 @@ SFreaky * __cdecl core_dracbrid_cpp_SFreaky_ctor_FUN_00486d30(SFreaky *this_ptr)
 {
   void *pvVar1;
   
-  pvVar1 = __arrinit(this_ptr->unk2,4,&g_CVectorTypeInfo);
+  pvVar1 = __arrinit(this_ptr->control_points,4,&g_CVectorTypeInfo);
   return (SFreaky *)((int)pvVar1 + -0x20);
 }

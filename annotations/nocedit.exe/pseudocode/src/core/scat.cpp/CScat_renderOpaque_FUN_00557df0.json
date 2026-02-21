@@ -2,28 +2,16 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 21,
-        "message": "use of undeclared identifier 'code'"
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "statement requires expression of integer type ('float' invalid)"
       },
       {
-        "category": "syntax_error",
-        "column": 18,
-        "line": 21,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 35,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 20,
-        "line": 35,
-        "message": "expected expression"
+        "category": "other",
+        "column": 14,
+        "line": 29,
+        "message": "conversion from 'double' to 'int' is not allowed in a converted constant expression"
       }
     ],
     "success": false,
@@ -31,16 +19,16 @@
   },
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 58,
+    "complexity_score": 50,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
-    "pseudocode_lines": 33,
-    "suspect_count": 2,
+    "pseudocode_lines": 35,
+    "suspect_count": 1,
     "suspect_types": [
-      "unresolved_funcptr"
+      "suspect_float"
     ],
-    "total_lines": 110
+    "total_lines": 112
   },
   "cross_references": [],
   "function": {
@@ -144,18 +132,11 @@
   },
   "suspects": [
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 14,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(iVar2 + 0x154) + 8))(iVar2);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 28,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(this_ptr->unk4 + 0x154) + 0x104))(this_ptr->unk4);",
-      "type": "unresolved_funcptr"
+      "description": "Likely misinterpreted integer as float",
+      "line": 22,
+      "match": "1.12104e-44",
+      "text": "case 1.12104e-44:",
+      "type": "suspect_float"
     }
   ],
   "vtable_info": {

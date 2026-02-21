@@ -80,10 +80,10 @@ LAB_0058b7a0:
         if (iVar1 < 0) break;
       } while ((iVar1 != 10) || (iVar2 = iVar2 + -1, 0 < iVar2));
     }
-    iVar2 = core_skeledit_cpp_CDeformableModel_FUN_0058b8e0(this_ptr);
+    iVar2 = core_skeledit_cpp_CDeformableModel_FUN_0058b8e0(this_ptr,file);
     if (((iVar2 != 0) &&
-        (iVar2 = core_skeledit_cpp_CDeformableModel_FUN_0058b9b0(this_ptr), iVar2 != 0)) &&
-       (iVar2 = core_skeledit_cpp_CDeformableModel_FUN_0058bc40(this_ptr), iVar2 != 0)) {
+        (iVar2 = core_skeledit_cpp_CDeformableModel_FUN_0058b9b0(this_ptr,file), iVar2 != 0)) &&
+       (iVar2 = core_skeledit_cpp_CDeformableModel_FUN_0058bc40(this_ptr,file), iVar2 != 0)) {
       shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\skeledit.cpp",0x4e7);
       core_skeledit_cpp_CDeformableModel_FUN_0058f790(this_ptr);
       core_skeledit_cpp_CDeformableModel_FUN_0058e240(this_ptr);

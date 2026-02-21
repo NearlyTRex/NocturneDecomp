@@ -8,6 +8,9 @@
 // Ghidra size: 0x588 (1416 bytes)
 typedef struct CFlameThrower {
     CWeapon base; // 0x0
-    char unk[16]; // 0x578
+    int is_firing; // 0x578
+    uint sfx_handle; // 0x57c
+    int was_firing_prev_frame; // 0x580
+    float fire_rate_timer; // 0x584
 } CFlameThrower;
 

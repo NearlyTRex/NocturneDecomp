@@ -26,25 +26,25 @@ CBoundingBox3D * __cdecl core_chain_cpp_CChain_getBoundingBox_FUN_00430eb0(CChai
   local_1c.x = 9999.0;
   iVar4 = 0;
   if (0 < this_ptr->vertex_count) {
-    pSVar3 = this_ptr->unk6;
+    pSVar3 = this_ptr->vertices;
     do {
-      if (*(float *)pSVar3->unk < local_1c.x) {
-        local_1c.x = *(float *)pSVar3->unk;
+      if ((pSVar3->position).x < local_1c.x) {
+        local_1c.x = (pSVar3->position).x;
       }
-      if (*(float *)(pSVar3->unk + 4) < local_1c.y) {
-        local_1c.y = *(float *)(pSVar3->unk + 4);
+      if ((pSVar3->position).y < local_1c.y) {
+        local_1c.y = (pSVar3->position).y;
       }
-      if (*(float *)(pSVar3->unk + 8) < local_1c.z) {
-        local_1c.z = *(float *)(pSVar3->unk + 8);
+      if ((pSVar3->position).z < local_1c.z) {
+        local_1c.z = (pSVar3->position).z;
       }
-      if (local_40.x < *(float *)pSVar3->unk) {
-        local_40.x = *(float *)pSVar3->unk;
+      if (local_40.x < (pSVar3->position).x) {
+        local_40.x = (pSVar3->position).x;
       }
-      if (local_40.y < *(float *)(pSVar3->unk + 4)) {
-        local_40.y = *(float *)(pSVar3->unk + 4);
+      if (local_40.y < (pSVar3->position).y) {
+        local_40.y = (pSVar3->position).y;
       }
-      if (local_40.z < *(float *)(pSVar3->unk + 8)) {
-        local_40.z = *(float *)(pSVar3->unk + 8);
+      if (local_40.z < (pSVar3->position).z) {
+        local_40.z = (pSVar3->position).z;
       }
       iVar4 = iVar4 + 1;
       pSVar3 = pSVar3 + 1;

@@ -13,7 +13,7 @@
 ; XREF[5]:
 ;   core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0 at 0047a3fb
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047dbcc
-;   core_skeledit.cpp_FUN_0058c190 at 0058cb8e
+;   core_skeledit.cpp_CDeformableModel_FUN_0058c190 at 0058cb8e
 ;   core_skeledit.cpp_FUN_0058de70 at 0058de90
 ;   shape_design.c_initializeTextureManager_FUN_0046a880 at 0046a8c8
 ;

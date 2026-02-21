@@ -45,15 +45,12 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_00505c70(CLightGun *this_ptr)
   CCharacter *pCStack_18;
   uint uStack_14;
   
-  if (*(float *)(this_ptr->unk + 8) < 30.0f) {
+  if (this_ptr->charge_level < 30.0f) {
     return 0;
   }
   fVar2 = (this_ptr->base).bolt_velocity;
-  this_ptr->unk[8] = '\0';
-  this_ptr->unk[9] = '\0';
-  this_ptr->unk[10] = '\0';
-  this_ptr->unk[0xb] = '\0';
-  *(float *)(this_ptr->unk + 0x14) = fVar2;
+  this_ptr->charge_level = 0.0;
+  this_ptr->beam_length = fVar2;
   input_local_point =
        (CVector3f *)(*(((this_ptr->base).base.vtable._uc)->_uc).canWalk)((CCharacter *)this_ptr);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -88,7 +85,7 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_00505c70(CLightGun *this_ptr)
                       (g_CDemonSetPtr,(CVector3f *)auStack_38,&CStack_98);
     dVar6 = (double)fVar2;
     if ((dVar6 < 0.0) || (1.0 < dVar6)) break;
-    *(float *)(this_ptr->unk + 0x14) = (this_ptr->base).bolt_velocity * fVar2;
+    this_ptr->beam_length = (this_ptr->base).bolt_velocity * fVar2;
     pCStack_18 = (CCharacter *)
                  core_actor_cpp_castToClassHash_FUN_0040c790
                            (g_CDemonSetPtr->collision_actor,g_CCharacterClassInfo.name_hash);
@@ -106,7 +103,7 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_00505c70(CLightGun *this_ptr)
       iVar4 = (*(((pCStack_18->base).vtable._uc)->_uc).canWalk)(pCStack_18);
       this_ptr_01 = g_CDemonSetPtr;
       if ((iVar4 != 0) && (iVar5 == 0)) {
-        *(float *)(this_ptr->unk + 8) = 30.0f;
+        this_ptr->charge_level = 30.0f;
         core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00573fc0(this_ptr_01);
         core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
         return 0;
@@ -143,15 +140,9 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_00505c70(CLightGun *this_ptr)
       core_sound_cpp_CSound_playActorSound_FUN_005b3a40
                 (g_CSoundPtr,(CDemonActor *)this_ptr,"cre-fire.wav",
                  (CVector3f *)(auStack_6c + 4));
-      sound_sndmain_cpp_setSfxVolume_FUN_005a9ae0(*(uint *)(this_ptr->unk + 4),2.0f);
-      this_ptr->unk[0] = '\x01';
-      this_ptr->unk[1] = '\0';
-      this_ptr->unk[2] = '\0';
-      this_ptr->unk[3] = '\0';
-      this_ptr->unk[0x10] = '\x01';
-      this_ptr->unk[0x11] = '\0';
-      this_ptr->unk[0x12] = '\0';
-      this_ptr->unk[0x13] = '\0';
+      sound_sndmain_cpp_setSfxVolume_FUN_005a9ae0(this_ptr->sfx_handle,2.0f);
+      this_ptr->fire_flash_pending = 1;
+      this_ptr->hit_enemy = 1;
       return 1;
     }
     this_ptr_00 = *(CCharacter **)((int)g_CDemonSetPtr->characters + iStack_20);

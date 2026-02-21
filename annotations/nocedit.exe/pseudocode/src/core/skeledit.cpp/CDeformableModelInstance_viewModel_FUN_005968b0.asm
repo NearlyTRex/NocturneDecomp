@@ -4,7 +4,7 @@
 ; void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(CDeformableModelInstance *this_ptr)
 ;
 ; Parameters:
-; CDeformableModelInstance * Stack[0x8]:4   this_ptr
+; CDeformableModelInstance * Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined1       Stack[-0x339c]:1  local_339c
 ; undefined1       Stack[-0x1900]:1  local_1900
@@ -354,7 +354,7 @@ section .text
     TEST DH,0x2                         ; 00596a87
     JZ 0x00596cc3                       ; 00596a8a
         ;   XREF to: 00596cc3 (CONDITIONAL_JUMP)  ; LAB_00596cc3
-    PUSH 0x3665f74                      ; 00596a90 | DAT_03665f74
+    PUSH 0x3665f74                      ; 00596a90 | CKeyFramedModel_03665f74
         ;   Label: LAB_00596a90
     CALL core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690 ; 00596a95
         ;   XREF to: 00477690 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690(CKeyFramedModel * this_ptr)
@@ -531,7 +531,7 @@ section .text
     MOV BL,DH                           ; 00596cc3
         ;   Label: LAB_00596cc3
     OR BL,0x2                           ; 00596cc5
-    PUSH 0x3665f74                      ; 00596cc8 | DAT_03665f74
+    PUSH 0x3665f74                      ; 00596cc8 | CKeyFramedModel_03665f74
     MOV byte ptr [0x0366b64c],BL        ; 00596ccd | DAT_0366b64c
     CALL core_dmodel.cpp_CKeyFramedModel_ctor_FUN_00476cf0 ; 00596cd3
         ;   XREF to: 00476cf0 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModel_ctor_FUN_00476cf0(CKeyFramedModel * this_ptr)
@@ -1095,7 +1095,7 @@ section .text
     ADD ESI,0x30                        ; 005972c5
     JMP 0x005971ff                      ; 005972c8
         ;   XREF to: 005971ff (UNCONDITIONAL_JUMP)  ; LAB_005971ff
-    CMP dword ptr [0x03666084],0x1      ; 005972cd | DAT_03665f74.poly_count
+    CMP dword ptr [0x03666084],0x1      ; 005972cd | CKeyFramedModel_03665f74.poly_count
         ;   Label: LAB_005972cd
     JGE 0x0059786b                      ; 005972d4
         ;   XREF to: 0059786b (CONDITIONAL_JUMP)  ; LAB_0059786b
@@ -1108,12 +1108,12 @@ section .text
     MOV EBX,dword ptr [EBP + 0x92]      ; 005972e7
     PUSH EBX                            ; 005972ed
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510 ; 005972ee
-        ;   XREF to: 005a1510 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510(CDeformableModelInstance * this_ptr, SBoneTransformData * bone_transform)
+        ;   XREF to: 005a1510 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510(CDeformableModelInstance * this_ptr, SPose * bone_transform)
     ADD ESP,0x8                         ; 005972f3
     PUSH 0x36644d8                      ; 005972f6 | DAT_036644d8
     PUSH EBX                            ; 005972fb
     CALL core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0 ; 005972fc
-        ;   XREF to: 005a15e0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0(CDeformableModelInstance * this_ptr, SBoneTransformData * bone_transform)
+        ;   XREF to: 005a15e0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0(CDeformableModelInstance * this_ptr, SPose * bone_transform)
     ADD ESP,0x8                         ; 00597301
     PUSH 0x1                            ; 00597304
     MOV EDI,dword ptr [0x006703ec]      ; 00597306 | g_CDemonRendererPtr2
@@ -1144,7 +1144,7 @@ section .text
     PUSH EAX                            ; 00597351
     PUSH EBX                            ; 00597352
     CALL core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0 ; 00597353
-        ;   XREF to: 005a15e0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0(CDeformableModelInstance * this_ptr, SBoneTransformData * bone_transform)
+        ;   XREF to: 005a15e0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0(CDeformableModelInstance * this_ptr, SPose * bone_transform)
     ADD ESP,0x8                         ; 00597358
     PUSH 0x3e                           ; 0059735b
         ;   Label: LAB_0059735b
@@ -1536,7 +1536,7 @@ section .text
     PUSH EAX                            ; 005977ef
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 005977f0
         ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
-    MOV EDX,dword ptr [0x03666084]      ; 005977f5 | DAT_03665f74.poly_count
+    MOV EDX,dword ptr [0x03666084]      ; 005977f5 | CKeyFramedModel_03665f74.poly_count
     ADD ESP,0xc                         ; 005977fb
     CMP EDX,0x1                         ; 005977fe
     JGE 0x005979ab                      ; 00597801
@@ -1566,7 +1566,7 @@ section .text
         ;   XREF to: 00598e4d (CONDITIONAL_JUMP)  ; LAB_00598e4d
     MOV EAX,[0x006810c8]                ; 00597847 | g_CDemonSetPtr
         ;   Label: LAB_00597847
-    PUSH 0x3665f74                      ; 0059784c | DAT_03665f74
+    PUSH 0x3665f74                      ; 0059784c | CKeyFramedModel_03665f74
     MOV dword ptr [EAX + 0x15ac80],0x0  ; 00597851 | g_CDemonSetInstance.lighting_quality_mode
     CALL core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690 ; 0059785b
         ;   XREF to: 00477690 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690(CKeyFramedModel * this_ptr)
@@ -1652,7 +1652,7 @@ section .text
     PUSH -0x1                           ; 00597950
     PUSH 0x0                            ; 00597952
     PUSH 0x0                            ; 00597954
-    PUSH 0x3665f74                      ; 00597956 | DAT_03665f74
+    PUSH 0x3665f74                      ; 00597956 | CKeyFramedModel_03665f74
     CALL core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850 ; 0059795b
         ;   XREF to: 00477850 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850(CKeyFramedModel * this_ptr, CKeyFramedModelInstance * instance, int frame_index, int render_flags)
     ADD ESP,0x10                        ; 00597960
@@ -1753,7 +1753,7 @@ section .text
     CMP ESI,EDI                         ; 00597a7f
     JL 0x00597a5e                       ; 00597a81
         ;   XREF to: 00597a5e (CONDITIONAL_JUMP)  ; LAB_00597a5e
-    CMP dword ptr [0x03666084],0x1      ; 00597a83 | DAT_03665f74.poly_count
+    CMP dword ptr [0x03666084],0x1      ; 00597a83 | CKeyFramedModel_03665f74.poly_count
         ;   Label: LAB_00597a83
     JGE 0x0059800f                      ; 00597a8a
         ;   XREF to: 0059800f (CONDITIONAL_JUMP)  ; LAB_0059800f
@@ -2176,7 +2176,7 @@ section .text
     PUSH EBX                            ; 00597f42
     PUSH EDI                            ; 00597f43
     CALL core_skeledit.cpp_CDeformableModel_FUN_0058e3e0 ; 00597f44
-        ;   XREF to: 0058e3e0 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_CDeformableModel_FUN_0058e3e0(CDeformableModel * this_ptr)
+        ;   XREF to: 0058e3e0 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_CDeformableModel_FUN_0058e3e0(CDeformableModel * this_ptr, float param_2)
     MOV EDI,0x1                         ; 00597f49
     ADD ESP,0x8                         ; 00597f4e
     MOV dword ptr [EBP + -0x6],EDI      ; 00597f51
@@ -2618,7 +2618,7 @@ section .text
         ;   XREF to: 00598854 (CONDITIONAL_JUMP)  ; LAB_00598854
     XOR EDI,EDI                         ; 005983d2
         ;   Label: LAB_005983d2
-    MOV EAX,[0x03666084]                ; 005983d4 | DAT_03665f74.poly_count
+    MOV EAX,[0x03666084]                ; 005983d4 | CKeyFramedModel_03665f74.poly_count
     MOV dword ptr [EBP + 0x62],EDI      ; 005983d9
     CMP EAX,0x1                         ; 005983dc
     JGE 0x005986e2                      ; 005983df
@@ -2646,7 +2646,7 @@ section .text
         ;   XREF to: 00598847 (CONDITIONAL_JUMP)  ; LAB_00598847
     LEA EAX,[EBP + 0xfffffc86]          ; 00598420
     PUSH EAX                            ; 00598426
-    PUSH 0x3665f74                      ; 00598427 | DAT_03665f74
+    PUSH 0x3665f74                      ; 00598427 | CKeyFramedModel_03665f74
     CALL core_dmodel.cpp_CKeyFramedModel_load_FUN_00476db0 ; 0059842c
         ;   XREF to: 00476db0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_load_FUN_00476db0(CKeyFramedModel * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00598431
@@ -2877,7 +2877,7 @@ section .text
     CALL shape_edittool.cpp_CPickList_ctor_FUN_004a3b90 ; 005986e9
         ;   XREF to: 004a3b90 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_ctor_FUN_004a3b90(CPickList * this_ptr)
     ADD ESP,0x4                         ; 005986ee
-    PUSH 0x3665f74                      ; 005986f1 | DAT_03665f74
+    PUSH 0x3665f74                      ; 005986f1 | CKeyFramedModel_03665f74
     PUSH 0x64db41                       ; 005986f6 | = "Model:\t%s"
     LEA EAX,[EBP + 0xfffffc22]          ; 005986fb
     PUSH EAX                            ; 00598701
@@ -2981,7 +2981,7 @@ section .text
     ADD ESP,0x8                         ; 0059883f
     JMP 0x005983e5                      ; 00598842
         ;   XREF to: 005983e5 (UNCONDITIONAL_JUMP)  ; LAB_005983e5
-    CMP dword ptr [0x03666084],0x1      ; 00598847 | DAT_03665f74.poly_count
+    CMP dword ptr [0x03666084],0x1      ; 00598847 | CKeyFramedModel_03665f74.poly_count
         ;   Label: LAB_00598847
     JGE 0x00598434                      ; 0059884e
         ;   XREF to: 00598434 (CONDITIONAL_JUMP)  ; LAB_00598434
@@ -3068,7 +3068,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x92]      ; 0059892d
     PUSH EDX                            ; 00598933
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510 ; 00598934
-        ;   XREF to: 005a1510 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510(CDeformableModelInstance * this_ptr, SBoneTransformData * bone_transform)
+        ;   XREF to: 005a1510 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510(CDeformableModelInstance * this_ptr, SPose * bone_transform)
     MOV ECX,0x1                         ; 00598939
     ADD ESP,0x8                         ; 0059893e
     MOV dword ptr [EBP + 0x6],ECX       ; 00598941

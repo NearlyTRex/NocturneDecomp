@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058e3e0(CDeformableModel *this_ptr)
+; void __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058e3e0(CDeformableModel *this_ptr,float param_2)
 ;
 ; Parameters:
 ; CDeformableModel * Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   param_2
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14

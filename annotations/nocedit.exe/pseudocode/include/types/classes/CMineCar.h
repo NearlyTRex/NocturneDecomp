@@ -8,6 +8,6 @@
 // Ghidra size: 0x730 (1840 bytes)
 typedef struct CMineCar {
     CPlatform base; // 0x0
-    int unk; // 0x72c
+    float spark_timer; // 0x72c
 } CMineCar;
 

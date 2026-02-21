@@ -55,66 +55,51 @@ void __cdecl core_smiley_cpp_CSmiley_setup_FUN_005a24d0(CSmiley *this_ptr)
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr_00);
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"larm01",1);
-  *(int *)this_ptr->unk2 = iVar1;
+  this_ptr->part_index_larm = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"l4arm01",1);
-  *(int *)(this_ptr->unk2 + 4) = iVar1;
+  this_ptr->part_index_lforearm = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"rarm01",1);
-  *(int *)(this_ptr->unk2 + 8) = iVar1;
+  this_ptr->part_index_rarm = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"r4arm01",1);
-  *(int *)(this_ptr->unk2 + 0xc) = iVar1;
+  this_ptr->part_index_rforearm = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"rthigh01",1);
-  *(int *)(this_ptr->unk2 + 0x10) = iVar1;
+  this_ptr->part_index_rthigh = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"rshin01",1);
-  *(int *)(this_ptr->unk2 + 0x14) = iVar1;
+  this_ptr->part_index_rshin = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"lthigh01",1);
-  *(int *)(this_ptr->unk2 + 0x18) = iVar1;
+  this_ptr->part_index_lthigh = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"lshin01",1);
-  *(int *)(this_ptr->unk2 + 0x1c) = iVar1;
+  this_ptr->part_index_lshin = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"ass01",1);
-  *(int *)(this_ptr->unk2 + 0x20) = iVar1;
+  this_ptr->part_index_ass = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"torso01",1);
-  *(int *)(this_ptr->unk2 + 0x24) = iVar1;
+  this_ptr->part_index_torso = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"head01",1);
-  this_ptr->unk2[0x2c] = '\0';
-  this_ptr->unk2[0x2d] = '\0';
-  this_ptr->unk2[0x2e] = '\0';
-  this_ptr->unk2[0x2f] = '\0';
-  *(int *)(this_ptr->unk2 + 0x28) = iVar1;
-  this_ptr->unk2[0x30] = '\0';
-  this_ptr->unk2[0x31] = '\0';
-  this_ptr->unk2[0x32] = '\0';
-  this_ptr->unk2[0x33] = '\0';
-  this_ptr->unk2[0x38] = '\x01';
-  this_ptr->unk2[0x39] = '\0';
-  this_ptr->unk2[0x3a] = '\0';
-  this_ptr->unk2[0x3b] = '\0';
+  this_ptr->attack_hit_count = 0;
+  this_ptr->part_index_head = iVar1;
+  this_ptr->dismember_hit_count = 0;
+  this_ptr->model_variant = 1;
   iVar1 = stricmp
                     ((this_ptr->base).base.model.model_name,"smiley2.dfm");
   if (iVar1 == 0) {
-    this_ptr->unk2[0x38] = '\x02';
-    this_ptr->unk2[0x39] = '\0';
-    this_ptr->unk2[0x3a] = '\0';
-    this_ptr->unk2[0x3b] = '\0';
+    this_ptr->model_variant = 2;
   }
   iVar1 = stricmp
                     ((this_ptr->base).base.model.model_name,"smiley3.dfm");
   if (iVar1 != 0) {
     return;
   }
-  this_ptr->unk2[0x38] = '\x03';
-  this_ptr->unk2[0x39] = '\0';
-  this_ptr->unk2[0x3a] = '\0';
-  this_ptr->unk2[0x3b] = '\0';
+  this_ptr->model_variant = 3;
   (this_ptr->base).base.show_in_editor = 0;
   return;
 }

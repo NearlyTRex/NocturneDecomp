@@ -3657,7 +3657,7 @@ WatcomStaticDestructorNode WatcomStaticDestructorNode_00681850 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&WatcomDestructorCall_00662e30,
     .registration_type = 0x00000001,
-    .object_instance = (void *)0x03665F74
+    .object_instance = (void *)&CKeyFramedModel_03665f74
 };
 WatcomStaticDestructorNode g_DeformableModelPoolDestructorNode = {
     .next = nullptr,

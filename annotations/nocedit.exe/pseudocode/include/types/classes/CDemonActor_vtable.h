@@ -5,17 +5,17 @@ struct CActorPropertyList;
 struct CBoundingBox3D;
 struct CDemonActor;
 struct CDemonActorType;
-struct COrientation;
 struct CPathMap;
 struct CVector3f;
 struct SCollisionInfo;
 struct SCollisionReturnInfo;
 struct SDamageInfo;
 struct SInteractionInfo;
-struct SInteractionState;
 struct SIntersectXZCylinder;
 struct SLaserInfo;
+struct SPlayerControl;
 struct _FILE;
+union UOrientationVector;
 
 // Dependencies
 #include "system/basetypes.h"

@@ -71,11 +71,8 @@ void __cdecl core_lightgun_cpp_CLightGun_fireProjectile_FUN_005066b0(CLightGun *
     }
     fpatan((float10)18 / (float10)112.0f,(float10)1);
     core_fire_cpp_CFireEffect_createLaserSegment2_FUN_004c7f20(g_CFireEffectPtr);
-    if (*(int *)(this_ptr->unk + 0x10) != 0) {
-      this_ptr->unk[0x10] = '\0';
-      this_ptr->unk[0x11] = '\0';
-      this_ptr->unk[0x12] = '\0';
-      this_ptr->unk[0x13] = '\0';
+    if (this_ptr->hit_enemy != 0) {
+      this_ptr->hit_enemy = 0;
       iVar2 = 1;
       do {
         iVar3 = iVar2 + 1;
@@ -101,7 +98,7 @@ void __cdecl core_lightgun_cpp_CLightGun_fireProjectile_FUN_005066b0(CLightGun *
         fStack_70 = 0.0;
         fStack_68 = 0.0;
       }
-      fStack_1c = *(float *)(this_ptr->unk + 0x14) * (float)0.015625;
+      fStack_1c = this_ptr->beam_length * (float)0.015625;
       fStack_7c = fStack_70 * fStack_1c;
       fStack_78 = fStack_6c * fStack_1c;
       fStack_74 = fStack_68 * fStack_1c;

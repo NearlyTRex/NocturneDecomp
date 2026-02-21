@@ -11,7 +11,7 @@
 ; undefined        Stack[-0x320]:1  local_320
 ;
 ; XREF[1]:
-;   core_skeledit.cpp_FUN_0058c190 at 0058d2d0
+;   core_skeledit.cpp_CDeformableModel_FUN_0058c190 at 0058d2d0
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_dixie_wav_00649df5

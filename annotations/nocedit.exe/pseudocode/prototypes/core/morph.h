@@ -21,7 +21,7 @@ void __cdecl CMorphModel::free(CMorphModel *this_ptr);
 
 // Original: core_morph.cpp_CMorphModel_addPartFromPolygon_FUN_0052a580
 // Address: 0052a580
-void __cdecl CMorphModel::addPartFromPolygon(CMorphModel *this_ptr,int vertex_count,CVector3i *vertex_data,int poly_count,SMRGLPrimitiveQuad *poly_data,int poly_stride,SMRGLTextureExtended *texture_list,int *texture_index_list);
+void __cdecl CMorphModel::addPartFromPolygon(CMorphModel *this_ptr,int vertex_count,CVector3i *vertex_data,int poly_count,SMRGLPrimitiveQuad *poly_data,int poly_stride,SMRGLTextureLod *texture_list,int *texture_index_list);
 
 // Original: core_morph.cpp_CMorphModel_addPartFromVertexBuffer_FUN_0052a710
 // Address: 0052a710
@@ -53,7 +53,7 @@ void __cdecl CMorphModel::animateFromKeyframedModel(CMorphModel *this_ptr,int pa
 
 // Original: core_morph.cpp_CMorphModel_setFaceListFromPolygon_FUN_0052aac0
 // Address: 0052aac0
-void __cdecl CMorphModel::setFaceListFromPolygon(CMorphModel *this_ptr,int part_index,SMRGLPrimitiveQuad *poly_data,int poly_stride,SMRGLTextureExtended *texture_list,int *texture_index_list,int start_face,int poly_count);
+void __cdecl CMorphModel::setFaceListFromPolygon(CMorphModel *this_ptr,int part_index,SMRGLPrimitiveQuad *poly_data,int poly_stride,SMRGLTextureLod *texture_list,int *texture_index_list,int start_face,int poly_count);
 
 // Original: core_morph.cpp_CMorphModel_setFaceListFromTriangles_FUN_0052aca0
 // Address: 0052aca0

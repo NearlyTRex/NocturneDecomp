@@ -240,11 +240,11 @@
 ;   core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460
 ;   core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0
 ;   core_skeledit.cpp_CBoneStructure_fixupMatrices_FUN_0058adb0
+;   core_skeledit.cpp_CBoneStructure_FUN_0058ac80
 ;   core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0
 ;   core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10
 ;   core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0
 ;   core_skeledit.cpp_CBoneStructure_skipBONframe_FUN_0058abb0
-;   core_skeledit.cpp_FUN_0058ac80
 ;   core_skeledit.cpp_FUN_0058aeb0
 ;   core_skeledit.cpp_FUN_0058af40
 ;   core_skeledit.cpp_FUN_0058afe0
@@ -4461,7 +4461,7 @@ section .text
     PUSH EAX                            ; 005953f8
     INC EBX                             ; 005953f9
     CALL core_skeledit.cpp_CBoneStructure_skipBONframe_FUN_0058abb0 ; 005953fa
-        ;   XREF to: 0058abb0 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_CBoneStructure_skipBONframe_FUN_0058abb0(CBoneStructure * this_ptr)
+        ;   XREF to: 0058abb0 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_CBoneStructure_skipBONframe_FUN_0058abb0(CBoneStructure * this_ptr, _FILE * file_handle)
     MOV EDX,dword ptr [EBP + -0x2e]     ; 005953ff
     ADD ESP,0x8                         ; 00595402
     DEC EDX                             ; 00595405
@@ -4548,8 +4548,8 @@ section .text
     LEA EAX,[EBP + 0xffff8bfe]          ; 005954df
         ;   Label: LAB_005954df
     PUSH EAX                            ; 005954e5
-    CALL core_skeledit.cpp_FUN_0058ac80 ; 005954e6
-        ;   XREF to: 0058ac80 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_FUN_0058ac80()
+    CALL core_skeledit.cpp_CBoneStructure_FUN_0058ac80 ; 005954e6
+        ;   XREF to: 0058ac80 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_CBoneStructure_FUN_0058ac80(CBoneStructure * this_ptr)
     ADD ESP,0x4                         ; 005954eb
     LEA EAX,[EBP + 0xffffc122]          ; 005954ee
         ;   Label: LAB_005954ee

@@ -2,20 +2,20 @@
 // Address: 00457cf0
 // Address Range: [[00457cf0, 00457eaa]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcube_cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0(SVoxelGridParams *params)
+// Signature: void __cdecl core_dcube_cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0(CDemonCube *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_dcube_cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0(SVoxelGridParams *params)
+void __cdecl core_dcube_cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0(CDemonCube *this_ptr)
 
 {
-  byte *pbVar1;
+  uchar *puVar1;
   int iVar2;
   int iVar3;
   int iVar4;
   int iVar5;
-  uint *puVar6;
-  uint *puVar7;
+  SVoxelGrid *pSVar6;
+  SVoxelGrid *pSVar7;
   byte bVar8;
   float local_64;
   float local_60;
@@ -38,10 +38,10 @@ void __cdecl core_dcube_cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0(SVox
   int local_c;
   
   bVar8 = 0;
-  if (params->unk != 0) {
-    local_64 = (float)params[5].unk - (float)params[2].unk;
-    local_60 = (float)params[6].unk - (float)params[3].unk;
-    local_5c = (float)params[7].unk - (float)params[4].unk;
+  if (this_ptr->voxel_buffer1 != (SVoxelGrid *)0x0) {
+    local_64 = (this_ptr->max_bounds).x - (this_ptr->min_bounds).x;
+    local_60 = (this_ptr->max_bounds).y - (this_ptr->min_bounds).y;
+    local_5c = (this_ptr->max_bounds).z - (this_ptr->min_bounds).z;
     if (&local_40 != &local_64) {
       local_40 = local_64;
       local_3c = local_60;
@@ -59,25 +59,25 @@ void __cdecl core_dcube_cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0(SVox
     local_18 = 0;
     do {
       iVar5 = 0;
-      local_4c.z = (float)local_18 * local_20 + (float)params[4].unk;
+      local_4c.z = (float)local_18 * local_20 + (this_ptr->min_bounds).z;
       local_14 = local_1c;
       local_58.z = local_4c.z + local_20;
       local_10 = local_1c;
       do {
         iVar2 = local_14;
-        local_4c.y = (float)iVar5 * local_24 + (float)params[3].unk;
+        local_4c.y = (float)iVar5 * local_24 + (this_ptr->min_bounds).y;
         local_58.y = local_4c.y + local_24;
         iVar4 = 0;
-        *(byte *)(params->unk + local_10) = 0;
+        this_ptr->voxel_buffer1->voxels[0][local_10] = '\0';
         do {
-          local_4c.x = (float)iVar4 * local_28 + (float)params[2].unk;
+          local_4c.x = (float)iVar4 * local_28 + (this_ptr->min_bounds).x;
           local_58.x = local_4c.x + local_28;
           local_c = iVar4;
           iVar3 = core_dcube_cpp_CDemonCube_testAABBIntersection_FUN_00457ca0
-                            ((CDemonCube *)params,&local_4c,&local_58);
+                            (this_ptr,&local_4c,&local_58);
           if (iVar3 != 0) {
-            pbVar1 = (byte *)(iVar2 + params->unk);
-            *pbVar1 = *pbVar1 | g_VoxelGridBitmasks[iVar4];
+            puVar1 = this_ptr->voxel_buffer1->voxels[0] + iVar2;
+            *puVar1 = *puVar1 | g_VoxelGridBitmasks[iVar4];
           }
           iVar4 = iVar4 + 1;
         } while (iVar4 < 8);
@@ -88,17 +88,17 @@ void __cdecl core_dcube_cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0(SVox
       local_18 = local_18 + 1;
       local_1c = local_1c + 8;
     } while (local_18 < 8);
-    puVar6 = (uint *)params->unk;
-    puVar7 = (uint *)params[1].unk;
+    pSVar6 = this_ptr->voxel_buffer1;
+    pSVar7 = this_ptr->voxel_buffer2;
     for (iVar5 = 0x10; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *puVar7 = *puVar6;
-      puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
-      puVar7 = puVar7 + (uint)bVar8 * -2 + 1;
+      *(uint *)pSVar7->voxels[0] = *(uint *)pSVar6->voxels[0];
+      pSVar6 = (SVoxelGrid *)((int)pSVar6 + (uint)bVar8 * -8 + 4);
+      pSVar7 = (SVoxelGrid *)((int)pSVar7 + (uint)bVar8 * -8 + 4);
     }
     for (iVar5 = 0; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *(byte *)puVar7 = *(byte *)puVar6;
-      puVar6 = (uint *)((int)puVar6 + (uint)bVar8 * -2 + 1);
-      puVar7 = (uint *)((int)puVar7 + (uint)bVar8 * -2 + 1);
+      pSVar7->voxels[0][0] = pSVar6->voxels[0][0];
+      pSVar6 = (SVoxelGrid *)((int)pSVar6 + (uint)bVar8 * -2 + 1);
+      pSVar7 = (SVoxelGrid *)((int)pSVar7 + (uint)bVar8 * -2 + 1);
     }
   }
   return;

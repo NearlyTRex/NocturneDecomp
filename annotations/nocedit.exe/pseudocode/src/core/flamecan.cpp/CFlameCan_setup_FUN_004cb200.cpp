@@ -41,7 +41,7 @@ void __cdecl core_flamecan_cpp_CFlameCan_setup_FUN_004cb200(CFlameCan *this_ptr)
   if (fVar3 < fVar2) {
     (this_ptr->flame).flame_size.y = fVar2;
   }
-  this_ptr->unk = 0;
+  this_ptr->is_visible = 0;
   (this_ptr->base).is_transparent = 1;
   return;
 }

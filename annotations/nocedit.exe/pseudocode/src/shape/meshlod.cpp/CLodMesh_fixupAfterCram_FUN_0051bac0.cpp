@@ -31,7 +31,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_fixupAfterCram_FUN_0051bac0(CLodMesh *th
       piVar5 = (int *)((int)this_ptr->tri_data->attribute_indices + local_20);
       if ((piVar5[0x10] == 0) && (-1 < *piVar5)) {
         iVar2 = shape_design_c_findTextureByFilename_FUN_0046dfc0
-                          (this_ptr->submesh_data[*piVar5].texture_filename);
+                          (this_ptr->lod_textures[*piVar5].textures[0].texture_name);
         if (iVar2 < 0) {
           g_CurrentLineNumber = 0x12c0;
           g_CurrentFilename = "..\\shape\\meshlod.cpp";
@@ -73,13 +73,13 @@ void __cdecl shape_meshlod_cpp_CLodMesh_fixupAfterCram_FUN_0051bac0(CLodMesh *th
     } while (local_1c < this_ptr->tri_count);
   }
   iVar2 = 0;
-  this_ptr->submesh_count = 0;
+  this_ptr->lod_texture_count = 0;
   while( true ) {
     iVar1 = shape_design_c_getLastTextureProcessIndex_FUN_0046a860();
     if (iVar1 <= iVar2) break;
     texture_filename = shape_design_c_getTextureName_FUN_0046e060(iVar2);
     iVar2 = iVar2 + 1;
-    shape_meshlod_cpp_CLodMesh_findOrAddSubmesh_FUN_00518790(this_ptr,texture_filename);
+    shape_meshlod_cpp_CLodMesh_findOrAddLodTexture_FUN_00518790(this_ptr,texture_filename);
   }
   engine_texture_cpp_clearTextureCache_FUN_005dd8e0();
   return;

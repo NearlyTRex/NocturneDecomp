@@ -159,7 +159,7 @@ section .text
     PUSH EAX                            ; 0051ab94
     PUSH ESI                            ; 0051ab95
     CALL shape_meshlod.cpp_CLodMesh_allocate_FUN_00515ac0 ; 0051ab96
-        ;   XREF to: 00515ac0 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_allocate_FUN_00515ac0(CLodMesh * this_ptr, int vertex_count, int tri_count, int submesh_count)
+        ;   XREF to: 00515ac0 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_allocate_FUN_00515ac0(CLodMesh * this_ptr, int vertex_count, int tri_count, int lod_texture_count)
     ADD ESP,0x10                        ; 0051ab9b
     MOV EDI,dword ptr [ESP + 0x210]     ; 0051ab9e
     MOV EBP,EBX                         ; 0051aba5

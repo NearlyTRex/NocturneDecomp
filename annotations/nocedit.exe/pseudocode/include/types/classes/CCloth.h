@@ -8,7 +8,7 @@
 #include "types/structs/SClothVertex.h"
 
 // Structure: CCloth
-// Ghidra size: 0x3fe64 (261732 bytes)
+// Ghidra size: 0x3fe70 (261744 bytes)
 typedef struct CCloth {
     CKeyFramedModel model; // 0x0
     SClothVertex vertices[800]; // 0x56d8
@@ -33,5 +33,6 @@ typedef struct CCloth {
     CVector3f last_position; // 0x3fe48
     CVector3f last_euler; // 0x3fe54
     int version_num; // 0x3fe60
+    CVector3f unk; // 0x3fe64
 } CCloth;
 

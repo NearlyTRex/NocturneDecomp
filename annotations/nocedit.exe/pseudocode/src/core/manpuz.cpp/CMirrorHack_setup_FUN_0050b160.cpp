@@ -10,7 +10,6 @@ void __cdecl core_manpuz_cpp_CMirrorHack_setup_FUN_0050b160(CMirrorHack *this_pt
 
 {
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
-            ((CKeyFramedModelInstance *)this_ptr->unk);
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&this_ptr->mirror_model);
   return;
 }

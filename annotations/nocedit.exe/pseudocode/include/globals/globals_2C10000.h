@@ -20,6 +20,9 @@ extern CKeyFramedModel* g_KeyFrameModelPoolEnd;
 // FileSearchHandlerFunc*[5]
 extern FileSearchHandlerFunc* g_SearchHandlers[5];
 
+// char[20]
+extern char CHAR_ARRAY_02c14c88[20];
+
 // char[72]
 extern char g_PolyDataConversionBuffer[72];
 

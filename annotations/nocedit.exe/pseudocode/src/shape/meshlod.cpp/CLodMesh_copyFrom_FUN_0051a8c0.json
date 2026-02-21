@@ -6,22 +6,22 @@
   },
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 214,
+    "complexity_score": 215,
     "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 69,
+    "pseudocode_lines": 70,
     "suspect_count": 14,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 150
+    "total_lines": 151
   },
   "cross_references": [
     {
       "addr": "0058c190",
       "from_addr": "0058d68d",
-      "name": "core_skeledit.cpp_FUN_0058c190",
+      "name": "core_skeledit.cpp_CDeformableModel_FUN_0058c190",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -123,98 +123,98 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 24,
+      "line": 25,
       "match": "(CLodVert *)((int)",
       "text": "pCVar3 = (CLodVert *)((int)pCVar3 + (uint)bVar11 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 26,
       "match": "(CLodVert *)((int)",
       "text": "pCVar7 = (CLodVert *)((int)pCVar7 + (uint)bVar11 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 29,
+      "line": 30,
       "match": "(CLodVert *)((int)",
       "text": "pCVar3 = (CLodVert *)((int)pCVar3 + (uint)bVar11 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 31,
       "match": "(CLodVert *)((int)",
       "text": "pCVar7 = (CLodVert *)((int)pCVar7 + (uint)bVar11 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 37,
       "match": "(CLodFace *)((int)",
       "text": "pCVar4 = (CLodFace *)((int)pCVar4 + (uint)bVar11 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 38,
       "match": "(CLodFace *)((int)",
       "text": "pCVar8 = (CLodFace *)((int)pCVar8 + (uint)bVar11 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 42,
       "match": "(CLodFace *)((int)",
       "text": "pCVar4 = (CLodFace *)((int)pCVar4 + (uint)bVar11 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 42,
+      "line": 43,
       "match": "(CLodFace *)((int)",
       "text": "pCVar8 = (CLodFace *)((int)pCVar8 + (uint)bVar11 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 48,
-      "match": "(SLodSubmesh *)((int)",
-      "text": "pSVar5 = (SLodSubmesh *)((int)pSVar5 + (uint)bVar11 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 49,
-      "match": "(SLodSubmesh *)((int)",
-      "text": "pSVar9 = (SLodSubmesh *)((int)pSVar9 + (uint)bVar11 * -8 + 4);",
+      "match": "(SMRGLTextureLod *)((int)",
+      "text": "pSVar5 = (SMRGLTextureLod *)((int)pSVar5 + ((uint)bVar11 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 53,
-      "match": "(SLodSubmesh *)((int)",
-      "text": "pSVar5 = (SLodSubmesh *)((int)pSVar5 + (uint)bVar11 * -2 + 1);",
+      "line": 50,
+      "match": "(SMRGLTextureLod *)((int)",
+      "text": "pSVar9 = (SMRGLTextureLod *)((int)pSVar9 + ((uint)bVar11 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 54,
-      "match": "(SLodSubmesh *)((int)",
-      "text": "pSVar9 = (SLodSubmesh *)((int)pSVar9 + (uint)bVar11 * -2 + 1);",
+      "match": "(SMRGLTextureLod *)((int)",
+      "text": "pSVar5 = (SMRGLTextureLod *)((int)pSVar5 + (uint)bVar11 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 68,
+      "line": 55,
+      "match": "(SMRGLTextureLod *)((int)",
+      "text": "pSVar9 = (SMRGLTextureLod *)((int)pSVar9 + (uint)bVar11 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 69,
       "match": "(int *)((int)",
       "text": "piVar6 = (int *)((int)piVar6 + (uint)bVar11 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 69,
+      "line": 70,
       "match": "(int *)((int)",
       "text": "piVar10 = (int *)((int)piVar10 + (uint)bVar11 * -2 + 1);",
       "type": "pointer_cast"

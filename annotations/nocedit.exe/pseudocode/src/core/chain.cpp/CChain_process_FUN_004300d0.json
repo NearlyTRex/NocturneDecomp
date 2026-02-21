@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 659,
-    "complexity_score": 380,
+    "complexity_score": 354,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 6,
-    "pseudocode_lines": 280,
+    "pseudocode_lines": 254,
     "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
       "negative_offset"
     ],
-    "total_lines": 939
+    "total_lines": 913
   },
   "cross_references": [],
   "function": {
@@ -529,63 +529,63 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
+      "line": 64,
+      "match": "pSVar5[-1].",
+      "text": "local_7c = pSVar5[-1].position.x - (pSVar5->position).x;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 65,
+      "match": "pSVar5[-1].",
+      "text": "local_78 = pSVar5[-1].position.y - (pSVar5->position).y;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
       "line": 66,
-      "match": "pSVar6[-1].",
-      "text": "local_7c = *(float *)pSVar6[-1].unk - *(float *)pSVar6->unk;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 67,
-      "match": "pSVar6[-1].",
-      "text": "local_78 = *(float *)(pSVar6[-1].unk + 4) - *(float *)(pSVar6->unk + 4);",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 68,
-      "match": "pSVar6[-1].",
-      "text": "local_74 = *(float *)(pSVar6[-1].unk + 8) - *(float *)(pSVar6->unk + 8);",
+      "match": "pSVar5[-1].",
+      "text": "local_74 = pSVar5[-1].position.z - (pSVar5->position).z;",
       "type": "negative_offset"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 69,
+      "line": 67,
       "match": "SQRT",
       "text": "local_ec = SQRT(local_74 * local_74 + local_7c * local_7c + local_78 * local_78) + local_ec;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 234,
-      "match": "pSVar6[-1].",
-      "text": "local_c4 = *(float *)pSVar6[-1].unk - *(float *)pSVar6->unk;",
+      "line": 208,
+      "match": "pSVar5[-1].",
+      "text": "local_c4 = pSVar5[-1].position.x - (pSVar5->position).x;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 235,
-      "match": "pSVar6[-1].",
-      "text": "local_c0 = *(float *)(pSVar6[-1].unk + 4) - *(float *)(pSVar6->unk + 4);",
+      "line": 209,
+      "match": "pSVar5[-1].",
+      "text": "local_c0 = pSVar5[-1].position.y - (pSVar5->position).y;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 236,
-      "match": "pSVar6[-1].",
-      "text": "local_bc = *(float *)(pSVar6[-1].unk + 8) - *(float *)(pSVar6->unk + 8);",
+      "line": 210,
+      "match": "pSVar5[-1].",
+      "text": "local_bc = pSVar5[-1].position.z - (pSVar5->position).z;",
       "type": "negative_offset"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 237,
+      "line": 211,
       "match": "SQRT",
       "text": "local_f0 = SQRT(local_bc * local_bc + local_c4 * local_c4 + local_c0 * local_c0) + local_f0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 248,
+      "line": 222,
       "match": "SQRT",
       "text": "SQRT(local_98 * local_98 + local_a0 * local_a0 + local_9c * local_9c)) {",
       "type": "decompiler_intrinsic"

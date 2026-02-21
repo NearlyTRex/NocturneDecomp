@@ -14,7 +14,7 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_FUN_004d1f20(CFrankenstienMa
   
   if ((FLOAT_02d7b7f0 <= in_stack_00000008) && (in_stack_00000008 < this_ptr->master_frame)) {
     sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
-    sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_005a8940(&this_ptr->unk4);
+    sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_005a8940(&this_ptr->anchor_world_position);
     sound_sndmain_cpp_startSfx_FUN_005a8e90(in_stack_0000000c);
     sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
     return;

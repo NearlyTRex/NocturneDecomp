@@ -1,0 +1,787 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 3,
+        "line": 62,
+        "message": "no matching function for call to '__STK'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 18,
+        "line": 150,
+        "message": "assigning to 'int *' from incompatible type 'void *'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 505,
+    "complexity_score": 731,
+    "cross_reference_count": 1,
+    "function_call_count": 8,
+    "global_count": 10,
+    "pseudocode_lines": 241,
+    "suspect_count": 47,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "pointer_cast",
+      "stack_param",
+      "unnamed_param"
+    ],
+    "total_lines": 746
+  },
+  "cross_references": [
+    {
+      "addr": "0058c190",
+      "from_addr": "0058d419",
+      "name": "core_skeledit.cpp_CDeformableModel_FUN_0058c190",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0058d790",
+    "address_range": [
+      [
+        "0058d790",
+        "0058ddd5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_skeledit.cpp_CDeformableModel_FUN_0058d790",
+    "signature": "void __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058d790(CDeformableModel *this_ptr,int param_2,CLodMesh *param_3)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0059a510",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModel_allocLOD_FUN_0059a510"
+    },
+    {
+      "addr": "0059a810",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810"
+    },
+    {
+      "addr": "005f4dc0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_transformVector3x4_FUN_005f4dc0"
+    },
+    {
+      "addr": "005fe6b0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "005ff9f3",
+      "is_variadic": false,
+      "name": "crt_stack.c___STK_FUN_005ff9f3"
+    },
+    {
+      "addr": "0050f1f0",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1f0"
+    },
+    {
+      "addr": "0051bd30",
+      "is_variadic": false,
+      "name": "shape_meshlod.cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0064ae12",
+      "name": "s_core_skeledit_cpp_0064ae12",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064ae27",
+      "name": "s_Can_t_find_any_bones_inf_0064ae27",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064ae50",
+      "name": "s_core_skeledit_cpp_0064ae50",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064ae65",
+      "name": "s_BUG_Count_mismatch_0064ae65",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064ae7b",
+      "name": "s_core_skeledit_cpp_0064ae7b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064ae90",
+      "name": "s_core_skeledit_cpp_0064ae90",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064aea5",
+      "name": "s_Out_of_memory_0064aea5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064aeba",
+      "name": "DOUBLE_0064aeba",
+      "type": "double",
+      "value": "256"
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.582159624413146,
+    "instruction_count": 426,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 35,
+      "BOOL_OR": 8,
+      "BRANCH": 11,
+      "CALL": 13,
+      "CBRANCH": 26,
+      "COPY": 496,
+      "FLOAT2FLOAT": 12,
+      "FLOAT_ADD": 1,
+      "FLOAT_DIV": 1,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_MULT": 2,
+      "FLOAT_NAN": 4,
+      "INT2FLOAT": 1,
+      "INT_ADD": 262,
+      "INT_AND": 321,
+      "INT_CARRY": 50,
+      "INT_EQUAL": 251,
+      "INT_LEFT": 20,
+      "INT_LESS": 17,
+      "INT_MULT": 19,
+      "INT_NOTEQUAL": 38,
+      "INT_OR": 40,
+      "INT_SBORROW": 17,
+      "INT_SCARRY": 65,
+      "INT_SEXT": 15,
+      "INT_SLESS": 131,
+      "INT_SUB": 68,
+      "INT_XOR": 30,
+      "INT_ZEXT": 12,
+      "LOAD": 168,
+      "POPCOUNT": 119,
+      "RETURN": 1,
+      "ROUND": 2,
+      "STORE": 105,
+      "SUBPIECE": 10,
+      "TRUNC": 2
+    },
+    "pcode_op_count": 2378
+  },
+  "stack_frame": {
+    "frame_size": 1360,
+    "local_size": 1348,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_540",
+        "offset": -1344,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_538",
+        "offset": -1336,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_534",
+        "offset": -1332,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_530",
+        "offset": -1328,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_52c",
+        "offset": -1324,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_528",
+        "offset": -1320,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_140",
+        "offset": -320,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_13c",
+        "offset": -316,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_138",
+        "offset": -312,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModel *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "param_3",
+        "offset": 12,
+        "size": 4,
+        "type": "CLodMesh *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0058d7a6",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "text": "void __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058d790(CDeformableModel *this_ptr,int param_2,CLodMesh *param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_3",
+      "text": "void __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058d790(CDeformableModel *this_ptr,int param_2,CLodMesh *param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 29,
+      "match": "in_stack_00000010",
+      "text": "int in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 59,
+      "match": "param_2",
+      "text": "(this_ptr,param_2,param_3->vertex_count,param_3->tri_count,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 59,
+      "match": "param_3",
+      "text": "(this_ptr,param_2,param_3->vertex_count,param_3->tri_count,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 59,
+      "match": "param_3",
+      "text": "(this_ptr,param_2,param_3->vertex_count,param_3->tri_count,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 63,
+      "match": "param_2",
+      "text": "local_58 = param_2 * 4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 66,
+      "match": "(int *)((int)",
+      "text": "if (*(int *)((int)this_ptr->vertex_count + local_58) <= local_38) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 67,
+      "match": "param_3",
+      "text": "shape_meshlod_cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30(param_3,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 68,
+      "match": "param_3",
+      "text": "shape_meshlod_cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30(param_3,1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 69,
+      "match": "param_3",
+      "text": "shape_meshlod_cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30(param_3,2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 71,
+      "match": "param_2",
+      "text": "iVar16 = (int)this_ptr->lod_info + param_2 * 4 + -4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 80,
+      "match": "param_2",
+      "text": "this_ptr->tri_count[param_2] = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 81,
+      "match": "param_2",
+      "text": "this_ptr->cap_tri_count[param_2] = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 83,
+      "match": "param_3",
+      "text": "if (0 < param_3->tri_count) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 84,
+      "match": "param_2",
+      "text": "local_2c = param_2 * 4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 90,
+      "match": "(uint *)((int)",
+      "text": "puVar21 = (uint *)((int)param_3->tri_data->attribute_indices + local_50);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 90,
+      "match": "param_3",
+      "text": "puVar21 = (uint *)((int)param_3->tri_data->attribute_indices + local_50);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 99,
+      "match": "ROUND",
+      "text": "puVar7[3] = (short)(int)ROUND(ROUND((double)(float)puVar15[7] * dVar3));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 99,
+      "match": "ROUND",
+      "text": "puVar7[3] = (short)(int)ROUND(ROUND((double)(float)puVar15[7] * dVar3));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 103,
+      "match": "ROUND",
+      "text": "local_14 = (int)ROUND(ROUND((double)*pfVar18 * dVar3));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 103,
+      "match": "ROUND",
+      "text": "local_14 = (int)ROUND(ROUND((double)*pfVar18 * dVar3));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 109,
+      "match": "param_2",
+      "text": "piVar9 = this_ptr->parts[puVar21[1]].tri_counts + param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 111,
+      "match": "param_2",
+      "text": "this_ptr->tri_count[param_2] = this_ptr->tri_count[param_2] + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 111,
+      "match": "param_2",
+      "text": "this_ptr->tri_count[param_2] = this_ptr->tri_count[param_2] + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 114,
+      "match": "param_2",
+      "text": "piVar9 = this_ptr->parts[puVar21[1]].cap_tri_counts + param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 116,
+      "match": "param_2",
+      "text": "this_ptr->cap_tri_count[param_2] = this_ptr->cap_tri_count[param_2] + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 116,
+      "match": "param_2",
+      "text": "this_ptr->cap_tri_count[param_2] = this_ptr->cap_tri_count[param_2] + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 122,
+      "match": "param_3",
+      "text": "} while (local_30 < param_3->tri_count);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 127,
+      "match": "param_2",
+      "text": "iVar16 = (int)this_ptr->lod_info + param_2 * 4 + -4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 136,
+      "match": "param_2",
+      "text": "if ((iVar10 != this_ptr->tri_count[param_2]) || (iVar20 != this_ptr->cap_tri_count[param_2]))",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 136,
+      "match": "param_2",
+      "text": "if ((iVar10 != this_ptr->tri_count[param_2]) || (iVar20 != this_ptr->cap_tri_count[param_2]))",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 142,
+      "match": "param_2",
+      "text": "if (0 < this_ptr->cap_tri_count[param_2]) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 144,
+      "match": "param_2",
+      "text": "(this_ptr->cap_tri_count[param_2] * 4,\"..\\\\core\\\\skeledit.cpp\",0x8a1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 146,
+      "match": "param_2",
+      "text": "this_ptr->cap_index_ptr[param_2] = piVar9;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 154,
+      "match": "param_2",
+      "text": "iVar16 = this_ptr->tri_count[param_2];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 160,
+      "match": "param_2",
+      "text": "for (iVar11 = 0; iVar11 < local_44->parts[0].cap_tri_counts[param_2];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 163,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)this_ptr->cap_index_ptr[param_2] + iVar20) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 163,
+      "match": "param_2",
+      "text": "*(uint *)((int)this_ptr->cap_index_ptr[param_2] + iVar20) =",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 164,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)param_3->tri_data->attribute_indices + iVar10 + 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 164,
+      "match": "param_3",
+      "text": "*(uint *)((int)param_3->tri_data->attribute_indices + iVar10 + 0xc);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 176,
+      "match": "param_3",
+      "text": "pcVar13 = param_3->vertex_data->lod_workspace + local_3c + -0x10;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 196,
+      "match": "(int *)((int)",
+      "text": "pfVar18 = (float *)(*(int *)((int)this_ptr->vertex_data_ptr + iVar16) + local_4c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 207,
+      "match": "(float *)((int)",
+      "text": "if (local_538 < *(float *)((int)local_528 + iVar11)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 208,
+      "match": "(float *)((int)",
+      "text": "local_538 = *(float *)((int)local_528 + iVar11);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 216,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)pfVar18 + *(byte *)pfVar18 + 1) = (byte)iVar16;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 219,
+      "match": "in_stack_00000010",
+      "text": "(local_70,&local_534,(CMatrix3x4f *)(iVar16 * 0x30 + in_stack_00000010));",
+      "type": "stack_param"
+    }
+  ]
+}

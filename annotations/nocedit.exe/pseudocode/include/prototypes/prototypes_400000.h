@@ -35,15 +35,16 @@
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SEnumPair.h"
 #include "types/structs/SInteractionInfo.h"
-#include "types/structs/SInteractionState.h"
 #include "types/structs/SIntersectXZCylinder.h"
 #include "types/structs/SLaserInfo.h"
 #include "types/structs/SLineStrip.h"
 #include "types/structs/SMRGLHeaderExtended.h"
 #include "types/structs/SMRGLHeaderPrimitive.h"
+#include "types/structs/SPlayerControl.h"
 #include "types/structs/SRenderBufferEntry.h"
 #include "types/structs/SRenderVertex.h"
 #include "types/structs/SVertexBatch.h"
+#include "types/unions/UOrientationVector.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x400000
@@ -284,7 +285,7 @@ void __cdecl core_actor_cpp_CDemonActor_setPositionAndOrientation_FUN_00409fb0(C
 void __cdecl core_actor_cpp_CDemonActor_onPickup_FUN_0040a010(CDemonActor *this_ptr,CDemonActor *owner);
 void __cdecl core_actor_cpp_CDemonActor_getInteractionInfo_FUN_0040a030(CDemonActor *this_ptr,SInteractionInfo *out_info);
 int __cdecl core_actor_cpp_CDemonActor_startInteraction_FUN_0040a090(CDemonActor *this_ptr,CDemonActor *user);
-int __cdecl core_actor_cpp_CDemonActor_updateInteraction_FUN_0040a0b0(CDemonActor *this_ptr,COrientation *user_orientation, SInteractionState *interaction_state);
+int __cdecl core_actor_cpp_CDemonActor_updateInteraction_FUN_0040a0b0(CDemonActor *this_ptr,UOrientationVector *user_orientation, SPlayerControl *player_control);
 void __cdecl core_actor_cpp_CDemonActor_stopUsing_FUN_0040a0d0(CDemonActor *this_ptr,CDemonActor *user);
 int __cdecl core_actor_cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_0040a0f0(CDemonActor *this_ptr);
 int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor *this_ptr,int hit_type);

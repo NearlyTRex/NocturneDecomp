@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 17,
+        "line": 16,
         "message": "no matching function for call to '__STK'"
       }
     ],
@@ -13,16 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 80,
+    "complexity_score": 23,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 10,
-    "pseudocode_lines": 25,
-    "suspect_count": 5,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 76
+    "pseudocode_lines": 23,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 74
   },
   "cross_references": [
     {
@@ -115,7 +113,7 @@
     {
       "addr": "0084a854",
       "name": "g_CramTextureCount",
-      "type": "uint",
+      "type": "int",
       "value": null
     }
   ],
@@ -148,56 +146,20 @@
     "pcode_op_count": 189
   },
   "stack_frame": {
-    "frame_size": 16,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 12,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": true,
         "name": "this_ptr",
-        "offset": 12,
+        "offset": 4,
         "size": 4,
         "type": "CCramTex *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000004",
-      "text": "int in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000004",
-      "text": "if ((((*(int *)(in_stack_00000004 + 0x10) == pCVar1->assigned_map_number) &&",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000004",
-      "text": "(pCVar1->final_right <= *(int *)(in_stack_00000004 + 0x30))) &&",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000004",
-      "text": "((pCVar1->final_top < *(int *)(in_stack_00000004 + 0x3c) &&",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000004",
-      "text": "(*(int *)(in_stack_00000004 + 0x34) < pCVar1->final_bottom)))) {",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

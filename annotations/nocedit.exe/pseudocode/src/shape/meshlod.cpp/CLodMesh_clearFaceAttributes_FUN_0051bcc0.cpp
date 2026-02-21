@@ -14,7 +14,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_clearFaceAttributes_FUN_0051bcc0(CLodMes
   int iVar3;
   int iVar4;
   
-  this_ptr->submesh_count = 0;
+  this_ptr->lod_texture_count = 0;
   iVar4 = 0;
   if (0 < this_ptr->tri_count) {
     iVar3 = 0;

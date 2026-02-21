@@ -279,7 +279,7 @@ section .text
         ;   Label: LAB_0058b860
     PUSH ESI                            ; 0058b861
     CALL core_skeledit.cpp_CDeformableModel_FUN_0058b8e0 ; 0058b862
-        ;   XREF to: 0058b8e0 (UNCONDITIONAL_CALL)  ; int core_skeledit.cpp_CDeformableModel_FUN_0058b8e0(CDeformableModel * this_ptr)
+        ;   XREF to: 0058b8e0 (UNCONDITIONAL_CALL)  ; int core_skeledit.cpp_CDeformableModel_FUN_0058b8e0(CDeformableModel * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 0058b867
     TEST EAX,EAX                        ; 0058b86a
     JZ 0x0058b77d                       ; 0058b86c
@@ -287,7 +287,7 @@ section .text
     PUSH EBX                            ; 0058b872
     PUSH ESI                            ; 0058b873
     CALL core_skeledit.cpp_CDeformableModel_FUN_0058b9b0 ; 0058b874
-        ;   XREF to: 0058b9b0 (UNCONDITIONAL_CALL)  ; int core_skeledit.cpp_CDeformableModel_FUN_0058b9b0(CDeformableModel * this_ptr)
+        ;   XREF to: 0058b9b0 (UNCONDITIONAL_CALL)  ; int core_skeledit.cpp_CDeformableModel_FUN_0058b9b0(CDeformableModel * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 0058b879
     TEST EAX,EAX                        ; 0058b87c
     JZ 0x0058b77d                       ; 0058b87e
@@ -295,7 +295,7 @@ section .text
     PUSH EBX                            ; 0058b884
     PUSH ESI                            ; 0058b885
     CALL core_skeledit.cpp_CDeformableModel_FUN_0058bc40 ; 0058b886
-        ;   XREF to: 0058bc40 (UNCONDITIONAL_CALL)  ; int core_skeledit.cpp_CDeformableModel_FUN_0058bc40(CDeformableModel * this_ptr)
+        ;   XREF to: 0058bc40 (UNCONDITIONAL_CALL)  ; int core_skeledit.cpp_CDeformableModel_FUN_0058bc40(CDeformableModel * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 0058b88b
     TEST EAX,EAX                        ; 0058b88e
     JZ 0x0058b77d                       ; 0058b890

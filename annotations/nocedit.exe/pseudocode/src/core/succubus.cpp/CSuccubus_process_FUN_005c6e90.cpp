@@ -148,7 +148,7 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
                15.0f) && (this_ptr->morph_started == 0)) {
             this_ptr->morph_started = 1;
             this_ptr->morph_timer = 0.0;
-            sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->ambient_sfx_handle);
+            sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handle);
             pCVar6 = (this_ptr->base).base.base.vtable._ub;
             this_ptr->ambient_sfx_cooldown = 9999.9;
             (*pCVar6->playAmbientSound)((CDemonActor *)this_ptr,"succubus-morph.wav");
@@ -288,7 +288,7 @@ LAB_005c6fd0:
   iVar8 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                     (g_CEventListPtr,"succubusShutUp");
   if (iVar8 == 0) {
-    iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->ambient_sfx_handle);
+    iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handle);
     if ((iVar8 == 0) &&
        (fVar17 = this_ptr->ambient_sfx_cooldown - delta_time,
        this_ptr->ambient_sfx_cooldown = fVar17, fVar17 < 0.0)) {
@@ -296,11 +296,11 @@ LAB_005c6fd0:
       pCVar6 = (this_ptr->base).base.base.vtable._ub;
       this_ptr->ambient_sfx_cooldown = local_14;
       uVar11 = (*pCVar6->playSound)((CDemonActor *)this_ptr,"succubus-horny-?.wav");
-      this_ptr->ambient_sfx_handle = uVar11;
+      this_ptr->sfx_handle = uVar11;
       return;
     }
     return;
   }
-  sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->ambient_sfx_handle);
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handle);
   return;
 }

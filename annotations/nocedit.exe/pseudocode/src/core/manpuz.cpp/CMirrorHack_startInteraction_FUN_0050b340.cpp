@@ -9,9 +9,9 @@
 int __cdecl core_manpuz_cpp_CMirrorHack_startInteraction_FUN_0050b340(CMirrorHack *this_ptr,CDemonActor *user)
 
 {
-  if (*(int *)(this_ptr->unk + 0x17c) != 0) {
+  if (this_ptr->interacting_actor != (CDemonActor *)0x0) {
     return 0;
   }
-  *(CDemonActor **)(this_ptr->unk + 0x17c) = user;
+  this_ptr->interacting_actor = user;
   return 1;
 }

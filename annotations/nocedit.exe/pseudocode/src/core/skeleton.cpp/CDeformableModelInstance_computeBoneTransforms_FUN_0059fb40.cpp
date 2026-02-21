@@ -37,33 +37,33 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FU
     do {
       local_28 = iVar3 * 0x30;
       core_xform_cpp_quaternionToMatrix3x3_FUN_005f7280((CMatrix3x3f *)local_24,local_1c);
-      if ((pCVar2->bone_transform).current_pose_data[0] != 1.0) {
+      if ((pCVar2->bone_transform).bone_scales[0] != 1.0) {
         *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[0].w + local_28) =
-             (pCVar2->bone_transform).current_pose_data[0] *
+             (pCVar2->bone_transform).bone_scales[0] *
              *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[0].w + local_28);
         *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[0].x + local_28) =
-             (pCVar2->bone_transform).current_pose_data[0] *
+             (pCVar2->bone_transform).bone_scales[0] *
              *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[0].x + local_28);
         *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[0].y + local_28) =
-             (pCVar2->bone_transform).current_pose_data[0] *
+             (pCVar2->bone_transform).bone_scales[0] *
              *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[0].y + local_28);
         *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[1].w + local_28) =
-             (pCVar2->bone_transform).current_pose_data[0] *
+             (pCVar2->bone_transform).bone_scales[0] *
              *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[1].w + local_28);
         *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[1].x + local_28) =
-             (pCVar2->bone_transform).current_pose_data[0] *
+             (pCVar2->bone_transform).bone_scales[0] *
              *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[1].x + local_28);
         *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[1].y + local_28) =
-             (pCVar2->bone_transform).current_pose_data[0] *
+             (pCVar2->bone_transform).bone_scales[0] *
              *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[1].y + local_28);
         *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[2].w + local_28) =
-             (pCVar2->bone_transform).current_pose_data[0] *
+             (pCVar2->bone_transform).bone_scales[0] *
              *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[2].w + local_28);
         *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[2].x + local_28) =
-             (pCVar2->bone_transform).current_pose_data[0] *
+             (pCVar2->bone_transform).bone_scales[0] *
              *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[2].x + local_28);
         *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[2].y + local_28) =
-             (pCVar2->bone_transform).current_pose_data[0] *
+             (pCVar2->bone_transform).bone_scales[0] *
              *(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[2].y + local_28);
       }
       iVar1 = local_20->bone_list[0].parent_index;

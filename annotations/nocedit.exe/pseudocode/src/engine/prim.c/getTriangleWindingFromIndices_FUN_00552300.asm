@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_prim_c_getTriangleWindingFromIndices_FUN_00552300(STriangleIndices *triangle_indices)
+; int __cdecl engine_prim_c_getTriangleWindingFromIndices_FUN_00552300(SMRGLPrimitiveTriangle *triangle_indices)
 ;
 ; Parameters:
-; STriangleIndices * Stack[0x4]:4   triangle_indices
+; SMRGLPrimitiveTriangle * Stack[0x4]:4   triangle_indices
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20

@@ -9,12 +9,12 @@
 STriangleRef * __cdecl core_dtrace_cpp_STriangleRef_copy_FUN_0049a3b0(STriangleRef *this_ptr,STriangleRef *other)
 
 {
-  *(uint *)this_ptr->unk = *(uint *)other->unk;
-  *(uint *)(this_ptr->unk + 4) = *(uint *)(other->unk + 4);
-  *(uint *)(this_ptr->unk + 8) = *(uint *)(other->unk + 8);
-  *(uint *)(this_ptr->unk + 0xc) = *(uint *)(other->unk + 0xc);
-  *(uint *)(this_ptr->unk + 0x10) = *(uint *)(other->unk + 0x10);
-  *(uint *)(this_ptr->unk + 0x14) = *(uint *)(other->unk + 0x14);
-  *(uint *)(this_ptr->unk + 0x18) = *(uint *)(other->unk + 0x18);
+  this_ptr->vertices[0] = other->vertices[0];
+  this_ptr->vertices[1] = other->vertices[1];
+  this_ptr->vertices[2] = other->vertices[2];
+  (this_ptr->normal).x = (other->normal).x;
+  (this_ptr->normal).y = (other->normal).y;
+  (this_ptr->normal).z = (other->normal).z;
+  this_ptr->plane_distance = other->plane_distance;
   return this_ptr;
 }

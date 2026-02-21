@@ -15,9 +15,9 @@
 ;
 ; XREF[23]:
 ;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040f412
-;   core_dmodel.cpp_CKeyFramedModel_copyTextureFiles_FUN_0047ca50 at 0047cac7
 ;   core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330 at 0047976e
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047db3f
+;   core_dmodel.cpp_copyTextureFiles_FUN_0047ca50 at 0047cac7
 ;   core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20 at 004bda9f
 ;   core_fileman.cpp_preprocessMusicFiles_FUN_004bd750 at 004bd82b
 ;   core_mission.cpp_CDemonMission_loadScript_FUN_005235b0 at 005235cf

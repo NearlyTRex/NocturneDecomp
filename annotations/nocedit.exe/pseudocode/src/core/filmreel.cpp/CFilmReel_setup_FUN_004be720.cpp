@@ -21,7 +21,7 @@ void __cdecl core_filmreel_cpp_CFilmReel_setup_FUN_004be720(CFilmReel *this_ptr)
   if (fVar1 < fVar2) {
     fVar2 = fVar1;
   }
-  this_ptr->unk1 = fVar2;
+  this_ptr->pickup_radius = fVar2;
   this_ptr->carrier = (CDemonActor *)0x0;
   return;
 }

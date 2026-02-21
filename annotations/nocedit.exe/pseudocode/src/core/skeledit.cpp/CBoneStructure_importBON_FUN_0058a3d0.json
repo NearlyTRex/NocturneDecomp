@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 17,
+        "line": 18,
         "message": "no matching function for call to '__STK'"
       },
       {
@@ -12,12 +12,6 @@
         "column": 40,
         "line": 32,
         "message": "use of undeclared identifier 'stack0xffffffe8'; did you mean 'in_stack_ffffffe8'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 36,
-        "line": 34,
-        "message": "use of undeclared identifier 'stack0xffffffec'"
       }
     ],
     "success": false,
@@ -25,12 +19,12 @@
   },
   "complexity": {
     "assembly_lines": 90,
-    "complexity_score": 100,
+    "complexity_score": 70,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 8,
     "pseudocode_lines": 30,
-    "suspect_count": 6,
+    "suspect_count": 3,
     "suspect_types": [
       "stack_param",
       "stack_ref"
@@ -208,10 +202,10 @@
     "pcode_op_count": 285
   },
   "stack_frame": {
-    "frame_size": 36,
+    "frame_size": 32,
     "local_size": 24,
     "param_offset": 4,
-    "param_size": 12,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -224,14 +218,14 @@
       {
         "is_param": true,
         "name": "this_ptr",
-        "offset": 8,
+        "offset": 4,
         "size": 4,
         "type": "CBoneStructure *"
       },
       {
         "is_param": true,
         "name": "filename",
-        "offset": 12,
+        "offset": 8,
         "size": 4,
         "type": "char *"
       }
@@ -242,7 +236,7 @@
       "description": "Unresolved stack parameter",
       "line": 8,
       "match": "in_stack_ffffffe8",
-      "text": "CBoneStructure *in_stack_ffffffe8;",
+      "text": "int in_stack_ffffffe8;",
       "type": "stack_param"
     },
     {
@@ -254,30 +248,9 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_ffffffe8",
-      "text": "(this_ptr_00,(_FILE *)&stack0xffffffec,&in_stack_ffffffe8->bone_count);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 27,
-      "match": "&stack0xffffffec",
-      "text": "(this_ptr_00,(_FILE *)&stack0xffffffec,&in_stack_ffffffe8->bone_count);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 29,
       "match": "in_stack_ffffffe8",
-      "text": "(this_ptr_00,(_FILE *)0x0,(int)in_stack_ffffffe8);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_ffffffe8",
-      "text": "core_skeledit_cpp_CBoneStructure_fixupMatrices_FUN_0058adb0(in_stack_ffffffe8);",
+      "text": "(this_ptr_00,(_FILE *)0x0,in_stack_ffffffe8);",
       "type": "stack_param"
     }
   ]

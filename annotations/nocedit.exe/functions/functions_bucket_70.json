@@ -18366,7 +18366,7 @@
       ],
       "params":[
         {
-          "name":"frustum",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -18379,7 +18379,7 @@
               }
             ]
           },
-          "type":"CDemonCubeFrustum*"
+          "type":"CDemonCube*"
         },
         {
           "name":"vertex1",
@@ -19072,7 +19072,7 @@
       ],
       "params":[
         {
-          "name":"params",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -19085,7 +19085,7 @@
               }
             ]
           },
-          "type":"SVoxelGridParams*"
+          "type":"CDemonCube*"
         }
       ]
     }
@@ -75275,6 +75275,22 @@
         {
           "name":"buffer",
           "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"file",
+          "storage":{
             "offset":8,
             "size":4,
             "stack":true,
@@ -75286,10 +75302,10 @@
               }
             ]
           },
-          "type":"char*"
+          "type":"_FILE*"
         },
         {
-          "name":"file",
+          "name":"require_content",
           "storage":{
             "offset":12,
             "size":4,
@@ -75298,22 +75314,6 @@
               {
                 "addr":"Stack[0xc]",
                 "offset":12,
-                "size":4
-              }
-            ]
-          },
-          "type":"_FILE*"
-        },
-        {
-          "name":"require_content",
-          "storage":{
-            "offset":16,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x10]",
-                "offset":16,
                 "size":4
               }
             ]
@@ -78412,7 +78412,7 @@
               }
             ]
           },
-          "type":"SBoneTransformData*"
+          "type":"SPose*"
         },
         {
           "name":"bone_data_in",
@@ -78428,7 +78428,7 @@
               }
             ]
           },
-          "type":"SBoneTransformData*"
+          "type":"SPose*"
         },
         {
           "name":"blend_weight",
@@ -88991,7 +88991,7 @@
     "vars":{
       "params":[
         {
-          "name":"socket",
+          "name":"socket_handle",
           "storage":{
             "offset":4,
             "size":4,
@@ -89035,7 +89035,7 @@
     "vars":{
       "params":[
         {
-          "name":"socket",
+          "name":"socket_handle",
           "storage":{
             "offset":4,
             "size":4,

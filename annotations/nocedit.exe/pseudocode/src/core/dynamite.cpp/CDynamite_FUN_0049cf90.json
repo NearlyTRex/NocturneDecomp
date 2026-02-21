@@ -6,13 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 6,
-    "complexity_score": 4,
+    "complexity_score": 19,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 4,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
     "total_lines": 10
   },
   "cross_references": [
@@ -69,5 +71,13 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 5,
+      "match": "ABS",
+      "text": "return (uint)(ABS(this_ptr->fuse_timer) == 0.0);",
+      "type": "decompiler_intrinsic"
+    }
+  ]
 }

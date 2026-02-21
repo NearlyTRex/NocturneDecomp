@@ -21,7 +21,7 @@ void __cdecl core_mimic_cpp_CMimic_getPropertyList_FUN_00520d10(CMimic *this_ptr
             (property_list,"mirrorPlaneActor",&this_ptr->mirror_plane_actor,0,(char *)0x0,
              (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addString_FUN_0040e290
-            (property_list,"morphActorType",(char *)&this_ptr->morph_actor_type,0x28,
+            (property_list,"morphActorType",this_ptr->morph_actor_type,0x28,
              (CActorPropertyValidatorFunc *)0x0);
   return;
 }

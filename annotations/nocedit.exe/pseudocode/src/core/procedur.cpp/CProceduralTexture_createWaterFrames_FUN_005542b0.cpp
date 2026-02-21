@@ -40,7 +40,7 @@ void __cdecl core_procedur_cpp_CProceduralTexture_createWaterFrames_FUN_005542b0
     local_14 = (float)rand();
     pCVar10->wave_y[0] = (float)(int)local_14 * 3.051851e-05f * (float)256;
     local_14 = (float)rand();
-    piVar8 = &pCVar10->unk2;
+    piVar8 = &pCVar10->height;
     pCVar10->wave_radius[0] = (float)(int)local_14 * 3.051851e-05f * (float)128;
     pCVar10 = (CProceduralTexture *)piVar8;
   } while (piVar8 != (int *)(this_ptr->texture + 0x1f8));
@@ -60,7 +60,7 @@ void __cdecl core_procedur_cpp_CProceduralTexture_createWaterFrames_FUN_005542b0
                            (this_ptr,pCVar10->wave_radius[0],(float)local_1c);
       pfVar1 = pCVar10->wave_y;
       pfVar2 = pCVar10->wave_x;
-      pCVar10 = (CProceduralTexture *)&pCVar10->unk2;
+      pCVar10 = (CProceduralTexture *)&pCVar10->height;
       core_procedur_cpp_CProceduralTexture_applyRipple_FUN_00554670
                 (this_ptr,*pfVar2,*pfVar1,local_14);
       pCVar7 = this_ptr;
@@ -74,9 +74,9 @@ void __cdecl core_procedur_cpp_CProceduralTexture_createWaterFrames_FUN_005542b0
         if (0xff < uVar5) {
           uVar5 = 0xff;
         }
-        pCVar10 = (CProceduralTexture *)((int)&pCVar9->unk1 + 1);
+        pCVar10 = (CProceduralTexture *)((int)&pCVar9->width + 1);
         pCVar9->texture[0] = (uchar)uVar5;
-        pCVar7 = (CProceduralTexture *)((int)&pCVar7->unk1 + 1);
+        pCVar7 = (CProceduralTexture *)((int)&pCVar7->width + 1);
         pCVar9 = pCVar10;
       } while (pCVar10 != pCVar13);
       pCVar7 = (CProceduralTexture *)(pCVar12->texture + 0xf8);
@@ -116,7 +116,7 @@ void __cdecl core_procedur_cpp_CProceduralTexture_createWaterFrames_FUN_005542b0
       piVar8 = *(int **)((int)g_ScreenBufferArray + iVar11);
       do {
         bVar3 = pCVar10->texture[0];
-        pCVar10 = (CProceduralTexture *)((int)&pCVar10->unk1 + 1);
+        pCVar10 = (CProceduralTexture *)((int)&pCVar10->width + 1);
         *piVar8 = (uint)bVar3 * 0x10000 + (uint)CONCAT11(bVar3,bVar3);
         piVar8 = piVar8 + 1;
       } while (pCVar10 != local_18);

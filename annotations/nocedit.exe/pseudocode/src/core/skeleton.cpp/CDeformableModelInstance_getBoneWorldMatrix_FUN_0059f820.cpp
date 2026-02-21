@@ -70,16 +70,16 @@ CMatrix3x4f * __stack2_esi core_skeleton_cpp_CDeformableModelInstance_getBoneWor
     }
     core_xform_cpp_quaternionToMatrix3x3_FUN_005f7280
               ((CMatrix3x3f *)&local_7c,(this_ptr->bone_transform).bone_rotations + bone_index);
-    if ((this_ptr->bone_transform).current_pose_data[bone_index] != 1.0) {
-      local_7c = (int)((float)local_7c * (this_ptr->bone_transform).current_pose_data[bone_index]);
-      local_78 = local_78 * (this_ptr->bone_transform).current_pose_data[bone_index];
-      local_74 = local_74 * (this_ptr->bone_transform).current_pose_data[bone_index];
-      local_6c = local_6c * (this_ptr->bone_transform).current_pose_data[bone_index];
-      local_68 = local_68 * (this_ptr->bone_transform).current_pose_data[bone_index];
-      local_64 = local_64 * (this_ptr->bone_transform).current_pose_data[bone_index];
-      local_5c = local_5c * (this_ptr->bone_transform).current_pose_data[bone_index];
-      local_58 = local_58 * (this_ptr->bone_transform).current_pose_data[bone_index];
-      local_54 = local_54 * (this_ptr->bone_transform).current_pose_data[bone_index];
+    if ((this_ptr->bone_transform).bone_scales[bone_index] != 1.0) {
+      local_7c = (int)((float)local_7c * (this_ptr->bone_transform).bone_scales[bone_index]);
+      local_78 = local_78 * (this_ptr->bone_transform).bone_scales[bone_index];
+      local_74 = local_74 * (this_ptr->bone_transform).bone_scales[bone_index];
+      local_6c = local_6c * (this_ptr->bone_transform).bone_scales[bone_index];
+      local_68 = local_68 * (this_ptr->bone_transform).bone_scales[bone_index];
+      local_64 = local_64 * (this_ptr->bone_transform).bone_scales[bone_index];
+      local_5c = local_5c * (this_ptr->bone_transform).bone_scales[bone_index];
+      local_58 = local_58 * (this_ptr->bone_transform).bone_scales[bone_index];
+      local_54 = local_54 * (this_ptr->bone_transform).bone_scales[bone_index];
     }
   }
   pfVar4 = (float *)&local_7c;

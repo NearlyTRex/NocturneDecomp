@@ -2,11 +2,11 @@
 // Address: 005a15e0
 // Address Range: [[005a15e0, 005a16bc]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0(CDeformableModelInstance *this_ptr,SBoneTransformData *bone_transform)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0(CDeformableModelInstance *this_ptr,SPose *bone_transform)
 
 #include "nocturne.h"
 
-void __cdecl core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0(CDeformableModelInstance *this_ptr,SBoneTransformData *bone_transform)
+void __cdecl core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0(CDeformableModelInstance *this_ptr,SPose *bone_transform)
 
 {
   int iVar1;
@@ -22,8 +22,8 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005
   uint *puVar11;
   CMatrix3x4f *pCVar12;
   byte bVar13;
-  SBoneTransformData *local_14;
-  SBoneTransformData *local_10;
+  SPose *local_14;
+  SPose *local_10;
   CDeformableModelInstance *local_c;
   
   bVar13 = 0;
@@ -50,8 +50,8 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005
       *puVar10 = *puVar7;
       *puVar11 = *puVar8;
       puVar11[(uint)bVar13 * -2 + 1] = puVar8[(uint)bVar13 * -2 + 1];
-      (local_c->bone_transform).current_pose_data[0] = bone_transform->current_pose_data[0];
-      bone_transform = (SBoneTransformData *)&(bone_transform->root_position).y;
+      (local_c->bone_transform).bone_scales[0] = bone_transform->bone_scales[0];
+      bone_transform = (SPose *)&(bone_transform->root_position).y;
       pCVar6 = (CDeformableModelInstance *)&(pCVar6->motion_controller).tween_speed;
       pCVar9 = local_10->bone_world_matrices;
       pCVar12 = (pCVar3->bone_transform).bone_world_matrices;
@@ -61,9 +61,9 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005
         pCVar12 = (CMatrix3x4f *)((int)pCVar12 + (uint)bVar13 * -8 + 4);
       }
       iVar5 = iVar5 + 1;
-      local_10 = (SBoneTransformData *)&local_10->bone_rotations[2].x;
+      local_10 = (SPose *)&local_10->bone_rotations[2].x;
       local_c = (CDeformableModelInstance *)&(local_c->motion_controller).current_motion_index;
-      local_14 = (SBoneTransformData *)&local_14->bone_rotations[0].x;
+      local_14 = (SPose *)&local_14->bone_rotations[0].x;
       pCVar3 = (CDeformableModelInstance *)(pCVar3->motion_controller).current_motion_name;
     } while (iVar5 < iVar1);
   }

@@ -10,7 +10,7 @@
 ;
 ; XREF[5]:
 ;   core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0 at 0047a7a6
-;   core_skeledit.cpp_FUN_0058c190 at 0058d53a
+;   core_skeledit.cpp_CDeformableModel_FUN_0058c190 at 0058d53a
 ;   shape_design.c_tileTextureMaps_FUN_0046a180 at 0046a5cd
 ;   shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0 at 0051bca8
 ;   shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0 at 0051ec16

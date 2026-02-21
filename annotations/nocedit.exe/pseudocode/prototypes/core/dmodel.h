@@ -219,9 +219,9 @@ void __cdecl CKeyFramedModel::snapRotationToAxis(CKeyFramedModel *this_ptr,CVect
 // Address: 0047c930
 int __cdecl copyFile(char *source_filename,char *destination_filename,int show_error_if_missing);
 
-// Original: core_dmodel.cpp_CKeyFramedModel_copyTextureFiles_FUN_0047ca50
+// Original: core_dmodel.cpp_copyTextureFiles_FUN_0047ca50
 // Address: 0047ca50
-int __cdecl CKeyFramedModel::copyTextureFiles(CKeyFramedModel *this_ptr,char *source_drive,char *source_directory,char *destination_drive,char *destination_directory);
+int __cdecl copyTextureFiles(char *filename,char *source_drive,char *source_directory,char *destination_drive,char *destination_directory);
 
 // Original: core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0
 // Address: 0047cbc0

@@ -10,8 +10,8 @@
 ;
 ; XREF[3]:
 ;   core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0 at 0058a44b
+;   core_skeledit.cpp_CDeformableModel_FUN_0058c190 at 0058c245
 ;   core_skeledit.cpp_CSkeleton_FUN_00592690 at 0059548b
-;   core_skeledit.cpp_FUN_0058c190 at 0058c245
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_f_f_f_0064a3db
@@ -27,7 +27,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_skeledit.cpp_FUN_0058ac80
+;   core_skeledit.cpp_CBoneStructure_FUN_0058ac80
 ;   core_xform.cpp_hasNegativeDeterminant_FUN_005f6be0
 ;   core_xform.cpp_orthonormalizeMatrix3x3_FUN_005f6690
 ;   crt_stack.c___STK_FUN_005ff9f3
@@ -37,8 +37,12 @@
 
 section .text
 
-    PUSH 0x28                           ; 0058aa10
+    NOP                                 ; 0058aa10
         ;   Label: core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10
+    NOP                                 ; 0058aa11
+    NOP                                 ; 0058aa12
+    NOP                                 ; 0058aa13
+    NOP                                 ; 0058aa14
     CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058aa15
         ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
     PUSH EBX                            ; 0058aa1a
@@ -180,8 +184,8 @@ section .text
         ;   XREF to: 0058aa28 (UNCONDITIONAL_JUMP)  ; LAB_0058aa28
     PUSH EBP                            ; 0058ab6b
         ;   Label: LAB_0058ab6b
-    CALL core_skeledit.cpp_FUN_0058ac80 ; 0058ab6c
-        ;   XREF to: 0058ac80 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_FUN_0058ac80()
+    CALL core_skeledit.cpp_CBoneStructure_FUN_0058ac80 ; 0058ab6c
+        ;   XREF to: 0058ac80 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_CBoneStructure_FUN_0058ac80(CBoneStructure * this_ptr)
     MOV AH,byte ptr [EDI + 0xc]         ; 0058ab71
     ADD ESP,0x4                         ; 0058ab74
     TEST AH,0x20                        ; 0058ab77

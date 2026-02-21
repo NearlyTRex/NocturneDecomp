@@ -23,7 +23,7 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_pt
   float local_18;
   
   core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base,delta_time);
-  if (this_ptr->unk < 1) {
+  if (this_ptr->fire_frames_remaining < 1) {
     local_20 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,in_stack_fffffe10);
     fVar2 = (float)local_20;
     if (0.0 <= fVar2) {
@@ -43,9 +43,9 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_pt
         if (0.0 < (double)iVar3) {
           sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005a8be0((double)iVar3,0);
         }
-        iVar3 = (*((this_ptr->base).base.vtable._ub)->playSound)
+        uVar4 = (*((this_ptr->base).base.vtable._ub)->playSound)
                           ((CDemonActor *)this_ptr,"m-gun-t.wav");
-        this_ptr->unk2 = iVar3;
+        this_ptr->sfx_handle_tail = uVar4;
         sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
       }
       sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handle);
@@ -55,7 +55,7 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_pt
     sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handle);
     return;
   }
-  this_ptr->unk = this_ptr->unk + -1;
+  this_ptr->fire_frames_remaining = this_ptr->fire_frames_remaining + -1;
   fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9,1.1111112);
   local_18 = fVar2;
   iVar3 = sound_sndmain_cpp_setSfxBaseFrequency_FUN_005a9b40(this_ptr->sfx_handle,fVar2);
@@ -66,7 +66,7 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_pt
   _sprintf
             ((char *)&local_1dc.taken,"m-gun1.wav @ 2.3 * %f",0xe9,SUB82((double)fVar2,0),
              (int)((ulonglong)(double)fVar2 >> 0x20));
-  sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->unk2);
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handle_tail);
   uVar4 = (*((this_ptr->base).base.vtable._ub)->playAmbientSound)
                     ((CDemonActor *)this_ptr,(char *)&local_1dc.taken);
   this_ptr->sfx_handle = uVar4;

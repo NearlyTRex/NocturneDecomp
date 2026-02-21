@@ -4,7 +4,7 @@
 ; void __cdecl core_skeledit_cpp_CBoneStructure_fixupMatrices_FUN_0058adb0(CBoneStructure *this_ptr)
 ;
 ; Parameters:
-; CBoneStructure * Stack[0x8]:4   this_ptr
+; CBoneStructure * Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined8       Stack[-0x28]:8  local_28
 ; undefined8       Stack[-0x20]:8  local_20
@@ -24,7 +24,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_skeledit.cpp_FUN_0058ac80
+;   core_skeledit.cpp_CBoneStructure_FUN_0058ac80
 ;   core_xform.cpp_determinant_FUN_005f61c0
 ;   core_xform.cpp_orthonormalizeMatrix3x3_FUN_005f6690
 ;   crt_stack.c___STK_FUN_005ff9f3
@@ -116,8 +116,8 @@ section .text
     MOV EDX,dword ptr [EBP + 0x14]      ; 0058ae8f
         ;   Label: LAB_0058ae8f
     PUSH EDX                            ; 0058ae92
-    CALL core_skeledit.cpp_FUN_0058ac80 ; 0058ae93
-        ;   XREF to: 0058ac80 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_FUN_0058ac80()
+    CALL core_skeledit.cpp_CBoneStructure_FUN_0058ac80 ; 0058ae93
+        ;   XREF to: 0058ac80 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_CBoneStructure_FUN_0058ac80(CBoneStructure * this_ptr)
     ADD ESP,0x4                         ; 0058ae98
     MOV ESP,EBP                         ; 0058ae9b
     POP EBP                             ; 0058ae9d

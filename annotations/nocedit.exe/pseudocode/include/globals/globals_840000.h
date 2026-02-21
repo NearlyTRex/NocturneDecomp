@@ -12,6 +12,7 @@
 extern SCramRectangle g_CramRectangles[50];
 
 // int
+extern int g_CramTextureCount;
 extern int g_CramTotalMaps;
 extern int g_CramPlacedTextureCount;
 extern int g_CramRectangleCount;
@@ -34,7 +35,4 @@ extern int g_CramVisualizationMode;
 extern int g_CramMaxIterationsLimit;
 extern int g_CramStartTime;
 extern int g_CramIterationCount;
-
-// uint
-extern uint g_CramTextureCount;
 

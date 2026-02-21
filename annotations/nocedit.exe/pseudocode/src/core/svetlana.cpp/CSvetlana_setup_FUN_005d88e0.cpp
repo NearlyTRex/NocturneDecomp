@@ -65,7 +65,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_setup_FUN_005d88e0(CSvetlana *this_ptr)
   INT_03f6cbd4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                            (this_ptr_01,"Bipblade01");
   INT_03f6cbd8 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"BipR14");
-  this_ptr->unk1 = 0;
+  this_ptr->blades_drawn = 0;
   core_cloth_cpp_CCloth_load_FUN_00438cf0(&this_ptr->cape_cloth,"svetcape.cth");
   euler = &(this_ptr->base).base.base.orient;
   position = &(this_ptr->base).base.base.location;
@@ -77,10 +77,10 @@ void __cdecl core_svetlana_cpp_CSvetlana_setup_FUN_005d88e0(CSvetlana *this_ptr)
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr_00);
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"lblade01",1);
-  *(int *)(this_ptr->unk6 + 0x10) = iVar1;
+  this_ptr->part_l_blade = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"rblade02",1);
-  this_ptr->unk5 = 0;
-  this_ptr->unk7 = iVar1;
+  this_ptr->sfx_handle = 0;
+  this_ptr->part_r_blade = iVar1;
   return;
 }

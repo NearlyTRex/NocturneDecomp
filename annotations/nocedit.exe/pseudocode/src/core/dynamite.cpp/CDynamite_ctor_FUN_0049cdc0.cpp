@@ -16,16 +16,10 @@ CDynamite * __cdecl core_dynamite_cpp_CDynamite_ctor_FUN_0049cdc0(CDynamite *thi
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (&(pCVar1->base).model,"dynamitestick.kfm");
   (pCVar1->base).weight = 1.0;
-  pCVar1->unk[0xc] = '\0';
-  pCVar1->unk[0xd] = '\0';
-  pCVar1->unk[0xe] = '\0';
-  pCVar1->unk[0xf] = '\0';
-  *(uint *)(pCVar1->unk + 8) = *(uint *)(pCVar1->unk + 0xc);
-  *(uint *)(pCVar1->unk + 4) = *(uint *)(pCVar1->unk + 8);
-  pCVar1->unk[0] = '\0';
-  pCVar1->unk[1] = '\0';
-  pCVar1->unk[2] = -0x80;
-  pCVar1->unk[3] = -0x41;
+  (pCVar1->toss_velocity).z = 0.0;
+  (pCVar1->toss_velocity).y = (pCVar1->toss_velocity).z;
+  (pCVar1->toss_velocity).x = (pCVar1->toss_velocity).y;
+  pCVar1->fuse_timer = -1.0;
   (pCVar1->base).is_spread_weapon = 0;
   (pCVar1->base).fire_mode = 0;
   (pCVar1->base).weapon_type = 3;
@@ -33,9 +27,6 @@ CDynamite * __cdecl core_dynamite_cpp_CDynamite_ctor_FUN_0049cdc0(CDynamite *thi
   (pCVar1->base).bolt_velocity = 200.0;
   (pCVar1->base).fire_cooldown = 0.0;
   (pCVar1->base).can_attach_light = 0;
-  pCVar1->unk[0x10] = '\0';
-  pCVar1->unk[0x11] = '\0';
-  pCVar1->unk[0x12] = '\0';
-  pCVar1->unk[0x13] = '\0';
+  pCVar1->sfx_handle = 0;
   return pCVar1;
 }

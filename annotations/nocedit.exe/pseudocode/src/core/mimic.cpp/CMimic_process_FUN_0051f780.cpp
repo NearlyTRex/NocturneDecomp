@@ -22,7 +22,7 @@ void __cdecl core_mimic_cpp_CMimic_process_FUN_0051f780(CMimic *this_ptr,float d
   iVar3 = g_LocalHeroIndex;
   (this_ptr->base).base.base.scale.x = (g_HeroActors[g_LocalHeroIndex]->base).base.scale.x;
   (this_ptr->base).base.base.scale.y = (g_HeroActors[iVar3]->base).base.scale.y;
-  fVar1 = *(float *)(this_ptr->unk4 + 0xc50);
+  fVar1 = this_ptr->morph_blend;
   (this_ptr->base).base.base.scale.z = (g_HeroActors[iVar3]->base).base.scale.z;
   if (0.0 <= fVar1) {
     core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(this_ptr);

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dcube_cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0(SVoxelGridParams *params)
+; void __cdecl core_dcube_cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0(CDemonCube *this_ptr)
 ;
 ; Parameters:
-; SVoxelGridParams * Stack[0x4]:4   params
+; CDemonCube *     Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x64]:4  local_64
 ; undefined4       Stack[-0x60]:4  local_60

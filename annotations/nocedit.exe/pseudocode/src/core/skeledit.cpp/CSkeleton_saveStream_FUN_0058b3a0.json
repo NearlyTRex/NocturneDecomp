@@ -4,25 +4,31 @@
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 26,
+        "line": 24,
         "message": "no matching function for call to '__STK'"
       },
       {
         "category": "other",
-        "column": 32,
+        "column": 26,
+        "line": 26,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 29,
         "line": 28,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
-        "category": "other",
-        "column": 35,
-        "line": 30,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "category": "format_error",
+        "column": 43,
+        "line": 34,
+        "message": "format specifies type 'char *' but the argument has type 'SBone *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
-        "column": 44,
-        "line": 37,
+        "column": 38,
+        "line": 34,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -31,16 +37,16 @@
   },
   "complexity": {
     "assembly_lines": 262,
-    "complexity_score": 303,
+    "complexity_score": 162,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 19,
-    "pseudocode_lines": 98,
-    "suspect_count": 20,
+    "pseudocode_lines": 97,
+    "suspect_count": 6,
     "suspect_types": [
-      "stack_param"
+      "pointer_cast"
     ],
-    "total_lines": 360
+    "total_lines": 359
   },
   "cross_references": [
     {
@@ -230,10 +236,10 @@
     "pcode_op_count": 1246
   },
   "stack_frame": {
-    "frame_size": 80,
+    "frame_size": 76,
     "local_size": 68,
     "param_offset": 4,
-    "param_size": 12,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -295,14 +301,14 @@
       {
         "is_param": true,
         "name": "this_ptr",
-        "offset": 8,
+        "offset": 4,
         "size": 4,
         "type": "CSkeleton *"
       },
       {
         "is_param": true,
         "name": "file_handle",
-        "offset": 12,
+        "offset": 8,
         "size": 4,
         "type": "_FILE *"
       }
@@ -310,144 +316,46 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000004",
-      "text": "CMotionList *in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 59,
+      "match": "(float *)((int)",
+      "text": "_fprintf(file_handle,\"%g,%g,%g\\n\",(double)*(float *)((int)&pCVar7->x + iVar8),",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_00000004",
-      "text": "*(uint *)(in_stack_00000004[1].state_names[2] + 0x10));",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 60,
+      "match": "(float *)((int)",
+      "text": "(double)*(float *)((int)&pCVar7->y + iVar8),",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000004",
-      "text": "if (0 < *(int *)(in_stack_00000004[1].state_names[2] + 0x10)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_00000004",
-      "text": "pcVar6 = in_stack_00000004[1].state_names[2] + 0x14;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_00000004",
-      "text": "} while (iVar9 < *(int *)(in_stack_00000004[1].state_names[2] + 0x10));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 36,
-      "match": "in_stack_00000004",
-      "text": "pfVar7 = (float *)in_stack_00000004[1].motions[0].signals[0xb].frame_number;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 38,
-      "match": "in_stack_00000004",
-      "text": "if (0 < in_stack_00000004[1].motions[0].signals[10].value) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 41,
-      "match": "in_stack_00000004",
-      "text": "if (0 < *(int *)(in_stack_00000004[1].state_names[2] + 0x10)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 51,
-      "match": "in_stack_00000004",
-      "text": "} while (iVar9 < *(int *)(in_stack_00000004[1].state_names[2] + 0x10));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 54,
-      "match": "in_stack_00000004",
-      "text": "} while (local_18 < in_stack_00000004[1].motions[0].signals[10].value);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 58,
-      "match": "in_stack_00000004",
-      "text": "if (0 < in_stack_00000004[1].motions[0].signals[10].value) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
+      "description": "Complex pointer cast",
       "line": 61,
-      "match": "in_stack_00000004",
-      "text": "iVar5 = in_stack_00000004[1].motions[0].signals[0xb].value;",
-      "type": "stack_param"
+      "match": "(float *)((int)",
+      "text": "(double)*(float *)((int)&pCVar7->z + iVar8));",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 66,
-      "match": "in_stack_00000004",
-      "text": "} while (local_1c < in_stack_00000004[1].motions[0].signals[10].value);",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 72,
+      "match": "(float *)((int)",
+      "text": "_fprintf(file_handle,\"%g,%g,%g\\n\",(double)*(float *)((int)&pCVar7->x + iVar8),",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 70,
-      "match": "in_stack_00000004",
-      "text": "if (0 < in_stack_00000004[1].motions[0].signals[10].value) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
+      "description": "Complex pointer cast",
       "line": 73,
-      "match": "in_stack_00000004",
-      "text": "iVar5 = in_stack_00000004[1].motions[0].signals[0xc].frame_number;",
-      "type": "stack_param"
+      "match": "(float *)((int)",
+      "text": "(double)*(float *)((int)&pCVar7->y + iVar8),",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 78,
-      "match": "in_stack_00000004",
-      "text": "} while (local_14 < in_stack_00000004[1].motions[0].signals[10].value);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 80,
-      "match": "in_stack_00000004",
-      "text": "core_motion_cpp_CMotionList_save_FUN_0052d170(in_stack_00000004,(_FILE *)this_ptr);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 83,
-      "match": "in_stack_00000004",
-      "text": "if (0 < *(int *)(in_stack_00000004[1].state_names[2] + 0x10)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 84,
-      "match": "in_stack_00000004",
-      "text": "piVar8 = &in_stack_00000004[1].motions[0].signals[0xc].value;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 92,
-      "match": "in_stack_00000004",
-      "text": "} while (iVar9 < *(int *)(in_stack_00000004[1].state_names[2] + 0x10));",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 74,
+      "match": "(float *)((int)",
+      "text": "(double)*(float *)((int)&pCVar7->z + iVar8));",
+      "type": "pointer_cast"
     }
   ]
 }

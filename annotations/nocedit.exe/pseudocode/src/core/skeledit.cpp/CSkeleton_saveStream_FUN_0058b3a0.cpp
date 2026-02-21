@@ -12,93 +12,92 @@ void __cdecl core_skeledit_cpp_CSkeleton_saveStream_FUN_0058b3a0(CSkeleton *this
   float *pfVar1;
   float *pfVar2;
   float *pfVar3;
-  float fVar4;
-  int iVar5;
-  char *pcVar6;
-  float *pfVar7;
-  int *piVar8;
-  int iVar9;
-  CMotionList *in_stack_00000004;
+  float *pfVar4;
+  SBone *pSVar5;
+  CQuaternion4f *pCVar6;
+  CVector3f *pCVar7;
+  int iVar8;
   int local_1c;
   int local_18;
   int local_14;
   
   __STK();
-  _fprintf((_FILE *)this_ptr,"// skeleton version\n");
-  _fprintf((_FILE *)this_ptr,"%d\n");
-  _fprintf((_FILE *)this_ptr,"// bonecount, frameCount\n");
-  _fprintf((_FILE *)this_ptr,"%d,%d\n",
-             *(uint *)(in_stack_00000004[1].state_names[2] + 0x10));
-  iVar9 = 0;
-  _fprintf((_FILE *)this_ptr,"// boneList\n");
-  if (0 < *(int *)(in_stack_00000004[1].state_names[2] + 0x10)) {
-    pcVar6 = in_stack_00000004[1].state_names[2] + 0x14;
+  _fprintf(file_handle,"// skeleton version\n");
+  _fprintf(file_handle,"%d\n");
+  _fprintf(file_handle,"// bonecount, frameCount\n");
+  _fprintf(file_handle,"%d,%d\n",this_ptr->bone_count);
+  iVar8 = 0;
+  _fprintf(file_handle,"// boneList\n");
+  if (0 < this_ptr->bone_count) {
+    pSVar5 = this_ptr->bone_list;
     do {
-      _fprintf((_FILE *)this_ptr,"\"%s\", %d\n",pcVar6);
-      iVar9 = iVar9 + 1;
-      pcVar6 = pcVar6 + 0x24;
-    } while (iVar9 < *(int *)(in_stack_00000004[1].state_names[2] + 0x10));
+      _fprintf(file_handle,"\"%s\", %d\n",pSVar5);
+      iVar8 = iVar8 + 1;
+      pSVar5 = pSVar5 + 1;
+    } while (iVar8 < this_ptr->bone_count);
   }
-  _fprintf((_FILE *)this_ptr,"// angle list: w,x,y,z\n");
-  pfVar7 = (float *)in_stack_00000004[1].motions[0].signals[0xb].frame_number;
+  _fprintf(file_handle,"// angle list: w,x,y,z\n");
+  pCVar6 = this_ptr->bone_angle_frames;
   local_18 = 0;
-  if (0 < in_stack_00000004[1].motions[0].signals[10].value) {
+  if (0 < this_ptr->frame_count) {
     do {
-      iVar9 = 0;
-      if (0 < *(int *)(in_stack_00000004[1].state_names[2] + 0x10)) {
+      iVar8 = 0;
+      if (0 < this_ptr->bone_count) {
         do {
-          pfVar1 = pfVar7 + 3;
-          pfVar2 = pfVar7 + 2;
-          pfVar3 = pfVar7 + 1;
-          fVar4 = *pfVar7;
-          pfVar7 = pfVar7 + 4;
-          iVar9 = iVar9 + 1;
-          _fprintf((_FILE *)this_ptr,"%g,%g,%g,%g\n",(double)fVar4,(double)*pfVar3,
-                     (double)*pfVar2,(double)*pfVar1);
-        } while (iVar9 < *(int *)(in_stack_00000004[1].state_names[2] + 0x10));
+          pfVar1 = &pCVar6->z;
+          pfVar2 = &pCVar6->y;
+          pfVar3 = &pCVar6->x;
+          pfVar4 = &pCVar6->w;
+          pCVar6 = pCVar6 + 1;
+          iVar8 = iVar8 + 1;
+          _fprintf(file_handle,"%g,%g,%g,%g\n",(double)*pfVar4,(double)*pfVar3,(double)*pfVar2,
+                     (double)*pfVar1);
+        } while (iVar8 < this_ptr->bone_count);
       }
       local_18 = local_18 + 1;
-    } while (local_18 < in_stack_00000004[1].motions[0].signals[10].value);
+    } while (local_18 < this_ptr->frame_count);
   }
-  _fprintf((_FILE *)this_ptr,"// root offset list: x,y,z\n");
+  _fprintf(file_handle,"// root offset list: x,y,z\n");
   local_1c = 0;
-  if (0 < in_stack_00000004[1].motions[0].signals[10].value) {
-    iVar9 = 0;
+  if (0 < this_ptr->frame_count) {
+    iVar8 = 0;
     do {
-      iVar5 = in_stack_00000004[1].motions[0].signals[0xb].value;
-      _fprintf((_FILE *)this_ptr,"%g,%g,%g\n",(double)*(float *)(iVar9 + iVar5),
-                 (double)*(float *)(iVar9 + 4 + iVar5),(double)*(float *)(iVar9 + 8 + iVar5));
-      iVar9 = iVar9 + 0xc;
+      pCVar7 = this_ptr->frame_positions_1;
+      _fprintf(file_handle,"%g,%g,%g\n",(double)*(float *)((int)&pCVar7->x + iVar8),
+                 (double)*(float *)((int)&pCVar7->y + iVar8),
+                 (double)*(float *)((int)&pCVar7->z + iVar8));
+      iVar8 = iVar8 + 0xc;
       local_1c = local_1c + 1;
-    } while (local_1c < in_stack_00000004[1].motions[0].signals[10].value);
+    } while (local_1c < this_ptr->frame_count);
   }
-  _fprintf((_FILE *)this_ptr,"// canceled movement list: x,y,z\n");
+  _fprintf(file_handle,"// canceled movement list: x,y,z\n");
   local_14 = 0;
-  if (0 < in_stack_00000004[1].motions[0].signals[10].value) {
-    iVar9 = 0;
+  if (0 < this_ptr->frame_count) {
+    iVar8 = 0;
     do {
-      iVar5 = in_stack_00000004[1].motions[0].signals[0xc].frame_number;
-      _fprintf((_FILE *)this_ptr,"%g,%g,%g\n",(double)*(float *)(iVar9 + iVar5),
-                 (double)*(float *)(iVar9 + 4 + iVar5),(double)*(float *)(iVar9 + 8 + iVar5));
-      iVar9 = iVar9 + 0xc;
+      pCVar7 = this_ptr->frame_positions_2;
+      _fprintf(file_handle,"%g,%g,%g\n",(double)*(float *)((int)&pCVar7->x + iVar8),
+                 (double)*(float *)((int)&pCVar7->y + iVar8),
+                 (double)*(float *)((int)&pCVar7->z + iVar8));
+      iVar8 = iVar8 + 0xc;
       local_14 = local_14 + 1;
-    } while (local_14 < in_stack_00000004[1].motions[0].signals[10].value);
+    } while (local_14 < this_ptr->frame_count);
   }
-  core_motion_cpp_CMotionList_save_FUN_0052d170(in_stack_00000004,(_FILE *)this_ptr);
-  iVar9 = 0;
-  _fprintf((_FILE *)this_ptr,"// reference bone org list: x,y,z\n");
-  if (0 < *(int *)(in_stack_00000004[1].state_names[2] + 0x10)) {
-    piVar8 = &in_stack_00000004[1].motions[0].signals[0xc].value;
+  core_motion_cpp_CMotionList_save_FUN_0052d170(&this_ptr->motion_list,file_handle);
+  iVar8 = 0;
+  _fprintf(file_handle,"// reference bone org list: x,y,z\n");
+  if (0 < this_ptr->bone_count) {
+    pCVar7 = this_ptr->bone_scales;
     do {
-      pfVar7 = (float *)(piVar8 + 2);
-      pfVar1 = (float *)(piVar8 + 1);
-      fVar4 = (float)*piVar8;
-      piVar8 = piVar8 + 3;
-      iVar9 = iVar9 + 1;
-      _fprintf((_FILE *)this_ptr,"%g,%g,%g\n",(double)fVar4,(double)*pfVar1,(double)*pfVar7);
-    } while (iVar9 < *(int *)(in_stack_00000004[1].state_names[2] + 0x10));
+      pfVar1 = &pCVar7->z;
+      pfVar2 = &pCVar7->y;
+      pfVar3 = &pCVar7->x;
+      pCVar7 = pCVar7 + 1;
+      iVar8 = iVar8 + 1;
+      _fprintf(file_handle,"%g,%g,%g\n",(double)*pfVar3,(double)*pfVar2,(double)*pfVar1);
+    } while (iVar8 < this_ptr->bone_count);
   }
-  if (((this_ptr->motion_list).state_names[0][8] & 0x20U) != 0) {
+  if ((file_handle->_flag & 0x20) != 0) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
     g_CurrentLineNumber = 0x49f;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CSkeleton::saveStream - error writing file.");

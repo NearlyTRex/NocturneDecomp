@@ -6,16 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 139,
-    "complexity_score": 103,
+    "complexity_score": 102,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 0,
-    "pseudocode_lines": 68,
+    "pseudocode_lines": 67,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 207
+    "total_lines": 206
   },
   "cross_references": [],
   "function": {
@@ -28,7 +28,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_skeleton.cpp_blendBoneTransformData_FUN_005a1b70",
-    "signature": "void __cdecl core_skeleton_cpp_blendBoneTransformData_FUN_005a1b70(CVector3f *result_root_pos,SBoneTransformData *bone_data_out,SBoneTransformData *bone_data_in,float blend_weight,CDeformableModelInstance *instance_ptr)"
+    "signature": "void __cdecl core_skeleton_cpp_blendBoneTransformData_FUN_005a1b70(CVector3f *result_root_pos,SPose *bone_data_out,SPose *bone_data_in,float blend_weight,CDeformableModelInstance *instance_ptr)"
   },
   "function_calls": [
     {
@@ -212,14 +212,14 @@
         "name": "bone_data_out",
         "offset": 8,
         "size": 4,
-        "type": "SBoneTransformData *"
+        "type": "SPose *"
       },
       {
         "is_param": true,
         "name": "bone_data_in",
         "offset": 12,
         "size": 4,
-        "type": "SBoneTransformData *"
+        "type": "SPose *"
       },
       {
         "is_param": true,

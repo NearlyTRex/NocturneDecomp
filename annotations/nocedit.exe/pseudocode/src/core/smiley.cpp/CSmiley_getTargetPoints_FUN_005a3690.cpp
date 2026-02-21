@@ -16,7 +16,7 @@ int __cdecl core_smiley_cpp_CSmiley_getTargetPoints_FUN_005a3690(CSmiley *this_p
   CVector3f local_24;
   CVector3f local_18;
   
-  if (*(int *)(this_ptr->unk2 + 0x38) == 3) {
+  if (this_ptr->model_variant == 3) {
     return 0;
   }
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00

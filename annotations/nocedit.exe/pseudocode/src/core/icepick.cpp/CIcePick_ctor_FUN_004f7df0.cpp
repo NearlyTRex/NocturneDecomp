@@ -14,30 +14,15 @@ CIcePick * __cdecl core_icepick_cpp_CIcePick_ctor_FUN_004f7df0(CIcePick *this_pt
   pCVar1 = (CIcePick *)core_hero_cpp_CHero_ctor_FUN_004f2340(&this_ptr->base);
   (pCVar1->base).base.base.vtable._ub = &g_CIcePickVTable;
   pCVar1->guns_drawn = 0;
-  pCVar1->unk[0] = '\0';
-  pCVar1->unk[1] = '\0';
-  pCVar1->unk[2] = '\0';
-  pCVar1->unk[3] = '\0';
+  pCVar1->attack_count = 0;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(pCVar1->base).base.model,"icepick.dfm");
-  pCVar1->unk[0x18] = '\0';
-  pCVar1->unk[0x19] = '\0';
-  pCVar1->unk[0x1a] = -0x80;
-  pCVar1->unk[0x1b] = '?';
-  pCVar1->unk[0x14] = '\0';
-  pCVar1->unk[0x15] = '\0';
-  pCVar1->unk[0x16] = '\0';
-  pCVar1->unk[0x17] = '\0';
-  *(uint *)(pCVar1->unk + 0x10) = *(uint *)(pCVar1->unk + 0x14);
-  *(uint *)(pCVar1->unk + 0xc) = *(uint *)(pCVar1->unk + 0x10);
-  pCVar1->unk[0x1c] = '\0';
-  pCVar1->unk[0x1d] = '\0';
-  pCVar1->unk[0x1e] = '\0';
-  pCVar1->unk[0x1f] = '\0';
-  pCVar1->unk[0x20] = '\0';
-  pCVar1->unk[0x21] = '\0';
-  pCVar1->unk[0x22] = '\0';
-  pCVar1->unk[0x23] = '\0';
+  pCVar1->head_look_blend_weight = 1.0;
+  (pCVar1->head_look_euler).z = 0.0;
+  (pCVar1->head_look_euler).y = (pCVar1->head_look_euler).z;
+  (pCVar1->head_look_euler).x = (pCVar1->head_look_euler).y;
+  pCVar1->is_armed = 0;
+  pCVar1->pending_pickup_target = (CDemonActor *)0x0;
   (pCVar1->base).base.hit_points = 300.0;
   return pCVar1;
 }

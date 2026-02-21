@@ -6,12 +6,12 @@
   },
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 46,
+    "complexity_score": 36,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 1,
     "pseudocode_lines": 21,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
       "negative_offset"
     ],
@@ -122,16 +122,9 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 15,
-      "match": "pCVar1[-2].",
-      "text": "pCVar1 = core_cloth_cpp_CCloth_dtor_FUN_00438c00((CCloth *)&pCVar1[-2].last_euler.y,0);",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
       "line": 18,
       "match": "pCVar1[-1].",
-      "text": "((CHero *)(pCVar1[-1].vertices[0x181].rest_lengths + 7),1);",
+      "text": "((CHero *)(pCVar1[-1].vertices[0x181].rest_lengths + 10),1);",
       "type": "negative_offset"
     }
   ],

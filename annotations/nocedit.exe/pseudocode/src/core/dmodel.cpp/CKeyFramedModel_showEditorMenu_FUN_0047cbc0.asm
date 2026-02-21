@@ -155,11 +155,11 @@
 ;   core_dmodel.cpp_CKeyFramedModel_applyVertexBias_FUN_0047c2d0
 ;   core_dmodel.cpp_CKeyFramedModel_buildCollisionTriList_FUN_00478830
 ;   core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010
-;   core_dmodel.cpp_CKeyFramedModel_copyTextureFiles_FUN_0047ca50
 ;   core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e10
 ;   core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810
 ;   core_dmodel.cpp_CKeyFramedModel_exportToS3D_FUN_00479f30
 ;   core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690
+;   core_dmodel.cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10
 ;   ... and 56 more
 ;
 ; *****************************************************************************
@@ -945,12 +945,12 @@ section .text
     INC ECX                             ; 0047d560
     PUSH ECX                            ; 0047d561
     PUSH 0x62090d                       ; 0047d562 | = "noc%d.pcx"
-    PUSH 0x2c14c88                      ; 0047d567 | DAT_02c14c88
+    PUSH 0x2c14c88                      ; 0047d567 | CHAR_ARRAY_02c14c88
     MOV dword ptr [0x02c14c84],ECX      ; 0047d56c | g_KeyFrameModelPoolEnd
     CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0047d572
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0047d577
-    PUSH 0x2c14c88                      ; 0047d57a | DAT_02c14c88
+    PUSH 0x2c14c88                      ; 0047d57a | CHAR_ARRAY_02c14c88
     CALL engine_pcx.c_saveScreenshotGeneral_FUN_005490c0 ; 0047d57f
         ;   XREF to: 005490c0 (UNCONDITIONAL_CALL)  ; void engine_pcx.c_saveScreenshotGeneral_FUN_005490c0(char * filename)
     ADD ESP,0x4                         ; 0047d584
@@ -1408,8 +1408,8 @@ section .text
     LEA EAX,[EBP + 0x76]                ; 0047d9ef
     PUSH EAX                            ; 0047d9f2
     PUSH EBX                            ; 0047d9f3
-    CALL core_dmodel.cpp_CKeyFramedModel_copyTextureFiles_FUN_0047ca50 ; 0047d9f4
-        ;   XREF to: 0047ca50 (UNCONDITIONAL_CALL)  ; int core_dmodel.cpp_CKeyFramedModel_copyTextureFiles_FUN_0047ca50(CKeyFramedModel * this_ptr, char * source_drive, char * source_directory, char * destination_drive, ...)
+    CALL core_dmodel.cpp_copyTextureFiles_FUN_0047ca50 ; 0047d9f4
+        ;   XREF to: 0047ca50 (UNCONDITIONAL_CALL)  ; int core_dmodel.cpp_copyTextureFiles_FUN_0047ca50(char * filename, char * source_drive, char * source_directory, char * destination_drive, ...)
     ADD ESP,0x14                        ; 0047d9f9
     TEST EAX,EAX                        ; 0047d9fc
     JZ 0x0047da19                       ; 0047d9fe
@@ -1489,8 +1489,8 @@ section .text
     PUSH 0x620a41                       ; 0047dace | = "art"
     PUSH 0x0                            ; 0047dad3
     PUSH ESI                            ; 0047dad5
-    CALL core_dmodel.cpp_CKeyFramedModel_copyTextureFiles_FUN_0047ca50 ; 0047dad6
-        ;   XREF to: 0047ca50 (UNCONDITIONAL_CALL)  ; int core_dmodel.cpp_CKeyFramedModel_copyTextureFiles_FUN_0047ca50(CKeyFramedModel * this_ptr, char * source_drive, char * source_directory, char * destination_drive, ...)
+    CALL core_dmodel.cpp_copyTextureFiles_FUN_0047ca50 ; 0047dad6
+        ;   XREF to: 0047ca50 (UNCONDITIONAL_CALL)  ; int core_dmodel.cpp_copyTextureFiles_FUN_0047ca50(char * filename, char * source_drive, char * source_directory, char * destination_drive, ...)
     ADD ESP,0x14                        ; 0047dadb
     TEST EAX,EAX                        ; 0047dade
     JZ 0x0047daf6                       ; 0047dae0

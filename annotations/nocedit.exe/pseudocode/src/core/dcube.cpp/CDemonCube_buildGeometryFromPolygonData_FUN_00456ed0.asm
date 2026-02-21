@@ -204,7 +204,7 @@ section .text
     PUSH ESI                            ; 0045708d
         ;   Label: LAB_0045708d
     CALL core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0 ; 0045708e
-        ;   XREF to: 00457cf0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0(SVoxelGridParams * params)
+        ;   XREF to: 00457cf0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0(CDemonCube * this_ptr)
     ADD ESP,0x4                         ; 00457093
     POP EDI                             ; 00457096
     ADD ESP,0x18                        ; 00457097

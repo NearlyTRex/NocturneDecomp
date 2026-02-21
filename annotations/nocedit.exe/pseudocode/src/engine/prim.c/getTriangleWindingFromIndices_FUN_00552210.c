@@ -2,11 +2,11 @@
 // Address: 00552210
 // Address Range: [[00552210, 005522fb]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_prim_c_getTriangleWindingFromIndices_FUN_00552210(STriangleIndices *triangle)
+// Signature: int __cdecl engine_prim_c_getTriangleWindingFromIndices_FUN_00552210(SMRGLPrimitiveTriangle *triangle)
 
 #include "nocturne.h"
 
-int __cdecl engine_prim_c_getTriangleWindingFromIndices_FUN_00552210(STriangleIndices *triangle)
+int __cdecl engine_prim_c_getTriangleWindingFromIndices_FUN_00552210(SMRGLPrimitiveTriangle *triangle)
 
 {
   int iVar1;
@@ -18,9 +18,9 @@ int __cdecl engine_prim_c_getTriangleWindingFromIndices_FUN_00552210(STriangleIn
   int local_1c;
   int local_18;
   
-  iVar1 = triangle->vertex_index_0;
-  iVar3 = triangle->vertex_index_1;
-  iVar4 = triangle->vertex_index_2;
+  iVar1 = triangle->vertices[0].vertex_index;
+  iVar3 = triangle->vertices[1].vertex_index;
+  iVar4 = triangle->vertices[2].vertex_index;
   if (g_CullingMode == 1) {
     local_24 = g_RenderVertexBuffer[iVar3].projected_vertex.screen_x -
                g_RenderVertexBuffer[iVar1].projected_vertex.screen_x;

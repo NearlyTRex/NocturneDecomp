@@ -79,7 +79,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_exportToDSE_FUN_0047e810(CKeyFramed
         } while (iVar7 < *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar5 + -0x14));
       }
       pcVar8 = this_ptr->texture_list[*(int *)((int)this_ptr->poly_texture_index_list + local_20)].
-               base.texture_name;
+               textures[0].texture_name;
       local_20 = local_20 + 4;
       pcVar9 = g_ModelPolygonData[0].texture_name + iVar5;
       local_18 = local_18 + 0x48;

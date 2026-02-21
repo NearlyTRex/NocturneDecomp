@@ -81,7 +81,6 @@
 #include "types/classes/CDemonActor_vtable.h"
 #include "types/classes/CDemonCamera.h"
 #include "types/classes/CDemonCube.h"
-#include "types/classes/CDemonCubeFrustum.h"
 #include "types/classes/CDemonCubeTriangle.h"
 #include "types/classes/CDemonFileManager.h"
 #include "types/classes/CDemonFilter.h"

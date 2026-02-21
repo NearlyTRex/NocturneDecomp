@@ -4,9 +4,9 @@
 ; void __cdecl core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneStructure *this_ptr,_FILE *file,int *frame_count_out)
 ;
 ; Parameters:
-; CBoneStructure * Stack[0x8]:4   this_ptr
-; _FILE *          Stack[0xc]:4   file
-; int *            Stack[0x10]:4   frame_count_out
+; CBoneStructure * Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file
+; int *            Stack[0xc]:4   frame_count_out
 ; Local Variables:
 ; undefined4       Stack[-0x248]:4  local_248
 ; undefined4       Stack[-0x244]:4  local_244
@@ -48,8 +48,8 @@
 ;
 ; XREF[3]:
 ;   core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0 at 0058a43f
+;   core_skeledit.cpp_CDeformableModel_FUN_0058c190 at 0058c235
 ;   core_skeledit.cpp_CSkeleton_FUN_00592690 at 00592f26
-;   core_skeledit.cpp_FUN_0058c190 at 0058c235
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_d_0064a2e7

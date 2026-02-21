@@ -357,7 +357,7 @@ int __cdecl CDeformableModelInstance::findPatchToFrame(CMotionController *this_p
 
 // Original: core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0
 // Address: 005a0ad0
-void __cdecl CDeformableModelInstance::computeBoneTransformsForFrame(CDeformableModelInstance *this_ptr,int motion_index,float animation_time,SBoneTransformData *output_bone_data);
+void __cdecl CDeformableModelInstance::computeBoneTransformsForFrame(CDeformableModelInstance *this_ptr,int motion_index,float animation_time,SPose *output_bone_data);
 
 // Original: core_skeleton.cpp_CDeformableModelInstance_accumulateScaledRootMotion_FUN_005a0c90
 // Address: 005a0c90
@@ -393,11 +393,11 @@ void __cdecl CDeformableModelInstance::shatter(CDeformableModelInstance *this_pt
 
 // Original: core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510
 // Address: 005a1510
-void __cdecl CDeformableModelInstance::getBoneTransform(CDeformableModelInstance *this_ptr,SBoneTransformData *bone_transform);
+void __cdecl CDeformableModelInstance::getBoneTransform(CDeformableModelInstance *this_ptr,SPose *bone_transform);
 
 // Original: core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0
 // Address: 005a15e0
-void __cdecl CDeformableModelInstance::setBoneTransform(CDeformableModelInstance *this_ptr,SBoneTransformData *bone_transform);
+void __cdecl CDeformableModelInstance::setBoneTransform(CDeformableModelInstance *this_ptr,SPose *bone_transform);
 
 // Original: core_skeleton.cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a16c0
 // Address: 005a16c0
@@ -417,11 +417,11 @@ void __cdecl CDeformableModelInstance::computeCylindricalUVs(CDeformableModelIns
 
 // Original: core_skeleton.cpp_computeBoneWorldMatrices_FUN_005a1950
 // Address: 005a1950
-void __cdecl computeBoneWorldMatrices(SBoneTransformData *bone_data,CDeformableModelInstance *instance_ptr);
+void __cdecl computeBoneWorldMatrices(SPose *bone_data,CDeformableModelInstance *instance_ptr);
 
 // Original: core_skeleton.cpp_blendBoneTransformData_FUN_005a1b70
 // Address: 005a1b70
-void __cdecl blendBoneTransformData(CVector3f *result_root_pos,SBoneTransformData *bone_data_out,SBoneTransformData *bone_data_in,float blend_weight,CDeformableModelInstance *instance_ptr);
+void __cdecl blendBoneTransformData(CVector3f *result_root_pos,SPose *bone_data_out,SPose *bone_data_in,float blend_weight,CDeformableModelInstance *instance_ptr);
 
 // Original: core_skeleton.cpp_getDeformableModel_FUN_005a1cf0
 // Address: 005a1cf0

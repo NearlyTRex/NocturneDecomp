@@ -9,19 +9,19 @@
       },
       {
         "category": "format_error",
-        "column": 57,
+        "column": 26,
         "line": 71,
-        "message": "format specifies type 'int *' but the argument has type '_FILE *' [-Werror,-Wformat]"
+        "message": "format specifies type 'int *' but the argument has type 'CBoneStructure *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 51,
+        "column": 38,
         "line": 89,
-        "message": "format specifies type 'char *' but the argument has type 'int *' [-Werror,-Wformat]"
+        "message": "format specifies type 'char *' but the argument has type 'SBoneData *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
-        "column": 27,
+        "column": 28,
         "line": 140,
         "message": "assigning to 'uint *' (aka 'unsigned int *') from 'int *' converts between pointers to integer types with different sign"
       },
@@ -37,17 +37,16 @@
   },
   "complexity": {
     "assembly_lines": 419,
-    "complexity_score": 498,
+    "complexity_score": 315,
     "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 17,
-    "pseudocode_lines": 228,
-    "suspect_count": 26,
+    "pseudocode_lines": 230,
+    "suspect_count": 8,
     "suspect_types": [
-      "pointer_cast",
-      "stack_param"
+      "pointer_cast"
     ],
-    "total_lines": 647
+    "total_lines": 649
   },
   "cross_references": [
     {
@@ -57,15 +56,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00592690",
-      "from_addr": "00592f26",
-      "name": "core_skeledit.cpp_CSkeleton_FUN_00592690",
+      "addr": "0058c190",
+      "from_addr": "0058c235",
+      "name": "core_skeledit.cpp_CDeformableModel_FUN_0058c190",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0058c190",
-      "from_addr": "0058c235",
-      "name": "core_skeledit.cpp_FUN_0058c190",
+      "addr": "00592690",
+      "from_addr": "00592f26",
+      "name": "core_skeledit.cpp_CSkeleton_FUN_00592690",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -232,7 +231,7 @@
       {
         "call_addr": "0058c235",
         "call_type": "direct",
-        "caller": "core_skeledit.cpp_FUN_0058c190",
+        "caller": "core_skeledit.cpp_CDeformableModel_FUN_0058c190",
         "estimated_params": 3,
         "instructions_analyzed": 7,
         "reg_params": [],
@@ -295,10 +294,10 @@
     "pcode_op_count": 1523
   },
   "stack_frame": {
-    "frame_size": 604,
+    "frame_size": 600,
     "local_size": 588,
     "param_offset": 4,
-    "param_size": 16,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -563,21 +562,21 @@
       {
         "is_param": true,
         "name": "this_ptr",
-        "offset": 8,
+        "offset": 4,
         "size": 4,
         "type": "CBoneStructure *"
       },
       {
         "is_param": true,
         "name": "file",
-        "offset": 12,
+        "offset": 8,
         "size": 4,
         "type": "_FILE *"
       },
       {
         "is_param": true,
         "name": "frame_count_out",
-        "offset": 16,
+        "offset": 12,
         "size": 4,
         "type": "int *"
       }
@@ -585,186 +584,60 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000004",
-      "text": "int *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 64,
-      "match": "in_stack_00000004",
-      "text": "_fscanf((_FILE *)this_ptr,\"%d,%d\\n\",in_stack_00000004,file);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 65,
-      "match": "in_stack_00000004",
-      "text": "if (100 < *in_stack_00000004) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 76,
-      "match": "in_stack_00000004",
-      "text": "if (0 < *in_stack_00000004) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 77,
-      "match": "in_stack_00000004",
-      "text": "local_34 = in_stack_00000004 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 78,
-      "match": "in_stack_00000004",
-      "text": "local_2c = in_stack_00000004 + 9;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 88,
-      "match": "(char *)((int)",
-      "text": "cVar1 = *(char *)((int)piVar9 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 89,
-      "match": "(int *)((int)",
-      "text": "piVar9 = (int *)((int)piVar9 + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 96,
-      "match": "in_stack_00000004",
-      "text": "} while (iVar5 < *in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 109,
-      "match": "in_stack_00000004",
-      "text": "if (0 < *in_stack_00000004) {",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 112,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)local_248 + iVar4) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 113,
-      "match": "in_stack_00000004",
-      "text": "for (iVar2 = iVar5; -1 < iVar2; iVar2 = in_stack_00000004[iVar2 * 0x21 + 9]) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 114,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)local_248 + iVar4) = *(int *)((int)local_248 + iVar4) + 1;",
+      "text": "*(uint *)((int)local_248 + iVar5) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 114,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)local_248 + iVar4) = *(int *)((int)local_248 + iVar4) + 1;",
+      "text": "*(int *)((int)local_248 + iVar5) = *(int *)((int)local_248 + iVar5) + 1;",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 118,
-      "match": "in_stack_00000004",
-      "text": "} while (iVar5 < *in_stack_00000004);",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 114,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)local_248 + iVar5) = *(int *)((int)local_248 + iVar5) + 1;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 120,
-      "match": "in_stack_00000004",
-      "text": "local_24 = *in_stack_00000004 + -1;",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 144,
+      "match": "(SBoneData *)((int)",
+      "text": "pSVar11 = (SBoneData *)((int)pSVar11 + (uint)bVar15 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 121,
-      "match": "in_stack_00000004",
-      "text": "if (-1 < *in_stack_00000004 + -1) {",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 176,
+      "match": "(SBoneData *)((int)",
+      "text": "pSVar11 = (SBoneData *)((int)pSVar11 + (uint)bVar15 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 122,
-      "match": "in_stack_00000004",
-      "text": "local_30 = in_stack_00000004 + 1;",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 177,
+      "match": "(SBoneData *)((int)",
+      "text": "pSVar14 = (SBoneData *)((int)pSVar14 + (uint)bVar15 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 123,
-      "match": "in_stack_00000004",
-      "text": "local_28 = in_stack_00000004 + 1;",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 184,
+      "match": "(SBoneData *)((int)",
+      "text": "pSVar11 = (SBoneData *)((int)pSVar11 + (uint)bVar15 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 202,
-      "match": "in_stack_00000004",
-      "text": "piVar9 = in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 203,
-      "match": "in_stack_00000004",
-      "text": "if (0 < *in_stack_00000004) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 214,
-      "match": "in_stack_00000004",
-      "text": "} while (iVar5 < *in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 217,
-      "match": "in_stack_00000004",
-      "text": "piVar9 = in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 218,
-      "match": "in_stack_00000004",
-      "text": "if (0 < *in_stack_00000004) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 221,
-      "match": "in_stack_00000004",
-      "text": "(iVar4 = in_stack_00000004[piVar9[9] + 0xce5], piVar9[9] = iVar4, iVar5 <= iVar4)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 228,
-      "match": "in_stack_00000004",
-      "text": "} while (iVar5 < *in_stack_00000004);",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 190,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar8 = (CMatrix3x4f *)((int)(pCVar8 + 2) + 0x24);",
+      "type": "pointer_cast"
     }
   ]
 }

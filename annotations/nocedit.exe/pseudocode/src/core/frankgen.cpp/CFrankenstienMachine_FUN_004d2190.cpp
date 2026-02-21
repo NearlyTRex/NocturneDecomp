@@ -57,8 +57,8 @@ LAB_004d21b9:
     core_main_c_displayErrorAndQuit_FUN_00506f10("WTF!");
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
-  frame_index = (int)ROUND(ROUND(this_ptr->unk1));
-  iVar1 = this_ptr->unk2;
+  frame_index = (int)ROUND(ROUND(this_ptr->part_frame));
+  iVar1 = this_ptr->anchor_vertex_index;
   local_14 = frame_index;
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
                           (&this_ptr->bed_model);
@@ -72,10 +72,10 @@ LAB_004d21b9:
   local_20.z = (float)local_28[1] * 0.00390625f;
   pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                      (&this_ptr->base,&local_38,&local_20);
-  if (&this_ptr->unk4 != pCVar3) {
-    (this_ptr->unk4).x = pCVar3->x;
-    (this_ptr->unk4).y = pCVar3->y;
-    (this_ptr->unk4).z = pCVar3->z;
+  if (&this_ptr->anchor_world_position != pCVar3) {
+    (this_ptr->anchor_world_position).x = pCVar3->x;
+    (this_ptr->anchor_world_position).y = pCVar3->y;
+    (this_ptr->anchor_world_position).z = pCVar3->z;
     return pCVar3;
   }
   return pCVar3;

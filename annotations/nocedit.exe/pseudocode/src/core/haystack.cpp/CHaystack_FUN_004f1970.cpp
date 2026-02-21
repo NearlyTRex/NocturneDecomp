@@ -21,13 +21,13 @@ void __cdecl core_haystack_cpp_CHaystack_FUN_004f1970(CHaystack *this_ptr)
     switch(event_id) {
     case 0x65:
       core_haystack_cpp_CHaystack_FUN_004f1ab0(this_ptr);
-      iVar1 = *(int *)this_ptr->unk;
+      iVar1 = this_ptr->attack_side;
       goto LAB_004f19bc;
     case 0x66:
       core_haystack_cpp_CHaystack_FUN_004f1ab0(this_ptr);
-      iVar1 = *(int *)this_ptr->unk;
+      iVar1 = this_ptr->attack_side;
 LAB_004f19bc:
-      *(uint *)this_ptr->unk = (uint)(iVar1 == 0);
+      this_ptr->attack_side = (uint)(iVar1 == 0);
       break;
     case 0x67:
     case 0x69:

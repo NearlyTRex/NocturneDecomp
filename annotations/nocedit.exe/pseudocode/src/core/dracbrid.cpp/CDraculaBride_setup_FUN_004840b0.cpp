@@ -70,38 +70,35 @@ LAB_00484145:
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(pCVar1);
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_01,"larm01",1);
-  *(int *)this_ptr->unk1 = iVar2;
+  this_ptr->part_index_larm = iVar2;
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_01,"l4arm01",1);
-  *(int *)(this_ptr->unk1 + 4) = iVar2;
+  this_ptr->part_index_lforearm = iVar2;
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_01,"rarm01",1);
-  *(int *)(this_ptr->unk1 + 8) = iVar2;
+  this_ptr->part_index_rarm = iVar2;
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_01,"r4arm01",1);
-  *(int *)(this_ptr->unk1 + 0xc) = iVar2;
+  this_ptr->part_index_rforearm = iVar2;
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_01,"lshin01",1);
-  *(int *)(this_ptr->unk1 + 0x10) = iVar2;
+  this_ptr->part_index_lshin = iVar2;
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_01,"rshin01",1);
-  *(int *)(this_ptr->unk1 + 0x14) = iVar2;
+  this_ptr->part_index_rshin = iVar2;
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_01,"torso01",1);
-  *(int *)(this_ptr->unk1 + 0x18) = iVar2;
+  this_ptr->part_index_torso = iVar2;
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_01,"waist01",1);
-  *(int *)(this_ptr->unk1 + 0x1c) = iVar2;
+  this_ptr->part_index_waist = iVar2;
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_01,"head01",1);
-  *(int *)(this_ptr->unk1 + 0x20) = iVar2;
-  this_ptr->unk3[0] = '\0';
-  this_ptr->unk3[1] = '\0';
-  this_ptr->unk3[2] = '\0';
-  this_ptr->unk3[3] = '\0';
+  this_ptr->part_index_head = iVar2;
+  this_ptr->attack_landed = 0;
   fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(5.0,10.0);
-  *(float *)this_ptr->unk2 = fVar3;
+  this_ptr->freaky_timer = fVar3;
   fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(2.0,20.0);
-  *(float *)(this_ptr->unk2 + 4) = fVar3;
+  this_ptr->action_delay = fVar3;
   return;
 }

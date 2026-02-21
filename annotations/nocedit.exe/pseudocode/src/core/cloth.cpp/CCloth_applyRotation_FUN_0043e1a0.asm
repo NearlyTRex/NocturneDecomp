@@ -15,7 +15,7 @@
 ; undefined        Stack[-0x1c]:1  local_1c
 ;
 ; XREF[1]:
-;   core_cloth.cpp_CCloth_deleteCollisionBone_FUN_0043c3a0 at 0043c3c2
+;   core_cloth.cpp_CClothList_applyRotation_FUN_0043c3a0 at 0043c3c2
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30

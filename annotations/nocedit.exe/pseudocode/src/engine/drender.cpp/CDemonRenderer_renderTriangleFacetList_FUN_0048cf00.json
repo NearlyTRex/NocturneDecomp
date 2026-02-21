@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 19,
-        "line": 90,
+        "line": 92,
         "message": "no matching function for call to 'wincore_windll_cpp_drawPolyList_FUN_005b7640'"
       }
     ],
@@ -13,18 +13,18 @@
   },
   "complexity": {
     "assembly_lines": 245,
-    "complexity_score": 274,
+    "complexity_score": 276,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 11,
-    "pseudocode_lines": 119,
+    "pseudocode_lines": 121,
     "suspect_count": 14,
     "suspect_types": [
       "extra_output",
       "pointer_cast",
       "register_param"
     ],
-    "total_lines": 364
+    "total_lines": 366
   },
   "cross_references": [
     {
@@ -348,49 +348,49 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 79,
+      "line": 81,
       "match": "in_EAX",
       "text": "in_EAX = render_flags;",
       "type": "register_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 103,
+      "line": 105,
       "match": "(SMRGLHeaderPrimitive *)((int)",
       "text": "(SMRGLHeaderPrimitive *)((int)&(primitive_array->base).type + render_flags);",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred register parameter",
-      "line": 104,
+      "line": 106,
       "match": "in_EAX",
       "text": "in_EAX = engine_drender_cpp_renderTriangleSimple_FUN_004839f0(&local_28,pSVar1->count);",
       "type": "register_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 116,
+      "line": 118,
       "match": "(SMRGLHeaderPrimitive *)((int)",
       "text": "(SMRGLHeaderPrimitive *)((int)&(primitive_array->base).type + render_flags);",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 117,
+      "line": 119,
       "match": "extraout_EAX",
       "text": "in_EAX = extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred register parameter",
-      "line": 117,
+      "line": 119,
       "match": "in_EAX",
       "text": "in_EAX = extraout_EAX;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 121,
+      "line": 123,
       "match": "in_EAX",
       "text": "return in_EAX;",
       "type": "register_param"

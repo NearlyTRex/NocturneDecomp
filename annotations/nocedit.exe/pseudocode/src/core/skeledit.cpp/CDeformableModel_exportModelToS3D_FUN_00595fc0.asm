@@ -4,10 +4,10 @@
 ; void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CDeformableModel *this_ptr,char *output_filename,int lod_level,CMatrix3x4f *bone_matrices)
 ;
 ; Parameters:
-; CDeformableModel * Stack[0x8]:4   this_ptr
-; char *           Stack[0xc]:4   output_filename
-; int              Stack[0x10]:4   lod_level
-; CMatrix3x4f *    Stack[0x14]:4   bone_matrices
+; CDeformableModel * Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   output_filename
+; int              Stack[0xc]:4   lod_level
+; CMatrix3x4f *    Stack[0x10]:4   bone_matrices
 ; Local Variables:
 ; undefined8       Stack[-0x378]:8  local_378
 ; undefined8       Stack[-0x370]:8  local_370

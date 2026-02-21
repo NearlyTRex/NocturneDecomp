@@ -5,7 +5,7 @@
 // =============================================================================
 
 // CKeyFramedModel
-CKeyFramedModel DAT_03665f74 = {};
+CKeyFramedModel CKeyFramedModel_03665f74 = {};
 
 // undefined1
 undefined1 DAT_0366b64c = {};

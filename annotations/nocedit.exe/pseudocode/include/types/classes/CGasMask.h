@@ -10,6 +10,6 @@
 typedef struct CGasMask {
     CDemonActor base; // 0x0
     CKeyFramedModelInstance model; // 0x158
-    int unk; // 0x2d4
+    struct CDemonActor* carrier; // 0x2d4
 } CGasMask;
 

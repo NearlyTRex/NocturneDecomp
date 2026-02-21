@@ -19,14 +19,14 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_FUN_004d23a0(CFrankenstienMa
   iVar1 = pCVar3->frame_count;
   fVar2 = ((float)iVar1 * (this_ptr->master_frame - in_stack_00000008)) /
           (in_stack_0000000c - in_stack_00000008);
-  this_ptr->unk1 = fVar2;
+  this_ptr->part_frame = fVar2;
   if (fVar2 < 0.0) {
-    this_ptr->unk1 = 0.0;
+    this_ptr->part_frame = 0.0;
   }
   fVar2 = (float)(iVar1 + -1);
-  if (this_ptr->unk1 <= fVar2) {
+  if (this_ptr->part_frame <= fVar2) {
     return;
   }
-  this_ptr->unk1 = fVar2;
+  this_ptr->part_frame = fVar2;
   return;
 }

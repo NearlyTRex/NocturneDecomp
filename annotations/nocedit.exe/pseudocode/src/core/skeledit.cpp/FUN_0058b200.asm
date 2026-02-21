@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
+;   core_skeledit.cpp_CDeformableModel_FUN_0058c190 at 0058c274
 ;   core_skeledit.cpp_CSkeleton_FUN_00592690 at 00592f90
-;   core_skeledit.cpp_FUN_0058c190 at 0058c274
 ;
 ; Called Functions:
 ;   crt_stack.c___STK_FUN_005ff9f3

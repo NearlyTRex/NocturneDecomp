@@ -12,24 +12,22 @@ int __cdecl shape_cramtex_cpp_CCramTex_findRightmostOverlappingX_FUN_004479a0(CC
   CCramTex *pCVar1;
   int iVar2;
   int iVar3;
-  int in_stack_00000004;
   
   __STK();
   iVar2 = 0;
   iVar3 = 0;
-  if (0 < (int)g_CramTextureCount) {
+  if (0 < g_CramTextureCount) {
     pCVar1 = g_CramSortedTextureEntries;
     do {
-      if ((((*(int *)(in_stack_00000004 + 0x10) == pCVar1->assigned_map_number) &&
-           (iVar3 < pCVar1->final_right)) &&
-          (pCVar1->final_right <= *(int *)(in_stack_00000004 + 0x30))) &&
-         ((pCVar1->final_top < *(int *)(in_stack_00000004 + 0x3c) &&
-          (*(int *)(in_stack_00000004 + 0x34) < pCVar1->final_bottom)))) {
+      if ((((this_ptr->assigned_map_number == pCVar1->assigned_map_number) &&
+           (iVar3 < pCVar1->final_right)) && (pCVar1->final_right <= this_ptr->final_left)) &&
+         ((pCVar1->final_top < this_ptr->final_bottom &&
+          (this_ptr->final_top < pCVar1->final_bottom)))) {
         iVar3 = pCVar1->final_right;
       }
       iVar2 = iVar2 + 1;
       pCVar1 = pCVar1 + 1;
-    } while (iVar2 < (int)g_CramTextureCount);
+    } while (iVar2 < g_CramTextureCount);
   }
   return iVar3;
 }

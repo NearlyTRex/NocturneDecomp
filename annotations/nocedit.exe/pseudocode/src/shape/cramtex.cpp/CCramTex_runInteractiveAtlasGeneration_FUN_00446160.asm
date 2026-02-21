@@ -4,7 +4,7 @@
 ; int __cdecl shape_cramtex_cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160(CCramTex *this_ptr)
 ;
 ; Parameters:
-; CCramTex *       Stack[0xc]:4   this_ptr
+; CCramTex *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0xb0]:4  local_b0
 ; undefined4       Stack[-0xac]:4  local_ac

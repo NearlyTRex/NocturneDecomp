@@ -3,116 +3,74 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 17,
-        "line": 38,
-        "message": "use of undeclared identifier 'stack0xffffff24'; did you mean 'in_stack_ffffff24'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 51,
-        "line": 41,
-        "message": "use of undeclared identifier 'stack0xffffff24'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 69,
-        "message": "use of undeclared identifier 'stack0xffffff24'; did you mean 'in_stack_ffffff24'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 49,
-        "line": 72,
-        "message": "use of undeclared identifier 'stack0xffffff24'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 11,
-        "line": 74,
+        "line": 73,
         "message": "use of undeclared identifier '_width'; did you mean 'width'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 20,
-        "line": 74,
+        "line": 73,
         "message": "use of undeclared identifier '_height'; did you mean 'height'?"
       },
       {
         "category": "incompatible_types",
         "column": 12,
-        "line": 75,
+        "line": 74,
         "message": "assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 15,
-        "line": 87,
-        "message": "use of undeclared identifier 'stack0xffffff24'; did you mean 'in_stack_ffffff24'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 40,
-        "line": 88,
-        "message": "use of undeclared identifier 'stack0xffffff24'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 112,
-        "message": "use of undeclared identifier 'stack0xffffff24'; did you mean 'in_stack_ffffff24'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 42,
-        "line": 113,
-        "message": "use of undeclared identifier 'stack0xffffff24'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 25,
-        "line": 118,
+        "line": 117,
         "message": "use of undeclared identifier '_width'"
       },
       {
         "category": "undeclared_identifier",
         "column": 34,
-        "line": 118,
+        "line": 117,
         "message": "use of undeclared identifier '_height'"
       },
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 125,
+        "line": 124,
         "message": "assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'"
       },
       {
         "category": "undeclared_identifier",
         "column": 25,
-        "line": 127,
+        "line": 126,
         "message": "use of undeclared identifier '_width'; did you mean 'width'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 34,
-        "line": 127,
+        "line": 126,
         "message": "use of undeclared identifier '_height'; did you mean 'height'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 18,
-        "line": 132,
+        "line": 131,
         "message": "use of undeclared identifier '_width'; did you mean 'width'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 27,
-        "line": 132,
+        "line": 131,
         "message": "use of undeclared identifier '_height'; did you mean 'height'?"
       },
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 137,
+        "line": 136,
+        "message": "assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 24,
+        "line": 143,
         "message": "assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'"
       }
     ],
@@ -121,19 +79,18 @@
   },
   "complexity": {
     "assembly_lines": 373,
-    "complexity_score": 379,
+    "complexity_score": 273,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 25,
-    "pseudocode_lines": 159,
-    "suspect_count": 20,
+    "pseudocode_lines": 158,
+    "suspect_count": 10,
     "suspect_types": [
       "extra_output",
       "stack_param",
-      "stack_ref",
       "unaffected_reg"
     ],
-    "total_lines": 532
+    "total_lines": 531
   },
   "cross_references": [
     {
@@ -535,116 +492,46 @@
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_ffffff24",
-      "text": "CColorQuantizer *in_stack_ffffff24;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 31,
-      "match": "&stack0xffffff24",
-      "text": "(&stack0xffffff24,\"Unable to allocate %d-bit bitmap for color quantization\",bit_depth);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 34,
-      "match": "&stack0xffffff24",
-      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffff24);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 39,
+      "line": 38,
       "match": "unaff_ESI",
       "text": "unaff_ESI = 1;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 48,
+      "line": 47,
       "match": "unaff_ESI",
       "text": "unaff_ESI = 2;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 53,
+      "line": 52,
       "match": "unaff_ESI",
       "text": "unaff_ESI = 3;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 57,
+      "line": 56,
       "match": "unaff_ESI",
       "text": "unaff_ESI = 4;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 62,
-      "match": "&stack0xffffff24",
-      "text": "_sprintf(&stack0xffffff24,\"Invalid bit depth [%d] for bitmap\",bit_depth);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 65,
-      "match": "&stack0xffffff24",
-      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffff24);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 67,
+      "line": 66,
       "match": "unaff_ESI",
-      "text": "uVar5 = _width * _height * unaff_ESI;",
+      "text": "uVar4 = _width * _height * unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 80,
-      "match": "&stack0xffffff24",
-      "text": "_sprintf(&stack0xffffff24,\"%d-bit color                                                                  \",bit_depth);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 81,
-      "match": "&stack0xffffff24",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff24,0,line_number * 0xb);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 86,
-      "match": "in_stack_ffffff24",
-      "text": "pCVar3 = shape_quantize_cpp_CColorQuantizer_ctor_FUN_00554900(in_stack_ffffff24);",
-      "type": "stack_param"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 102,
+      "line": 101,
       "match": "extraout_EAX",
       "text": "if (extraout_EAX != 0) {",
       "type": "extra_output"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 105,
-      "match": "&stack0xffffff24",
-      "text": "(&stack0xffffff24,\"%d-color palette created                                                       \",pCVar3->num_colors);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 106,
-      "match": "&stack0xffffff24",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff24,0,(line_number + 2) * 0xb);",
-      "type": "stack_ref"
     }
   ]
 }

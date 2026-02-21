@@ -14,7 +14,7 @@ void __cdecl core_smiley_cpp_CSmiley_processDamage_FUN_005a3580(CSmiley *this_pt
   float fVar2;
   SMotion *pSVar3;
   
-  if (*(int *)(this_ptr->unk2 + 0x38) != 1) {
+  if (this_ptr->model_variant != 1) {
     damage_info->damage_type = 100;
     damage_info->damage_amount = 0.0;
     return;

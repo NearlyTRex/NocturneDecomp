@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl support_trisock_cpp_createUDPSocket_FUN_005e1b40(SOCKET *socket)
+; int __cdecl support_trisock_cpp_createUDPSocket_FUN_005e1b40(SOCKET *socket_handle)
 ;
 ; Parameters:
-; SOCKET *         Stack[0x4]:4   socket
+; SOCKET *         Stack[0x4]:4   socket_handle
 ;
 ; XREF[1]:
 ;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_0053fbc0 at 0053fbeb
@@ -22,7 +22,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 005e1b41
     PUSH EBX                            ; 005e1b45
     CALL support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20 ; 005e1b46
-        ;   XREF to: 005e1d20 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20(SOCKET * socket)
+        ;   XREF to: 005e1d20 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20(SOCKET * socket_handle)
     ADD ESP,0x4                         ; 005e1b4b
     PUSH 0x0                            ; 005e1b4e
     PUSH 0x2                            ; 005e1b50

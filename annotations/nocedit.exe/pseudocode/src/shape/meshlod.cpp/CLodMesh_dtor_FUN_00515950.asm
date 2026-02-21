@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[5]:
-;   core_skeledit.cpp_FUN_0058c190 at 0058c60b
+;   core_skeledit.cpp_CDeformableModel_FUN_0058c190 at 0058c60b
 ;   shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 at 0051e66b
 ;   shape_meshlod.cpp_CLodMesh_createNextLOD_FUN_00516f50 at 00516fae
 ;   shape_meshlod.cpp_CLodMesh_free_FUN_00515970 at 00515a96

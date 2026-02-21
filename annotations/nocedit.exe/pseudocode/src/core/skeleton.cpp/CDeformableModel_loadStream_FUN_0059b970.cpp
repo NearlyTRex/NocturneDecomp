@@ -215,8 +215,8 @@ LAB_0059b9d7:
     for (iVar1 = 0; iVar1 < this_ptr->num_texture_sets; iVar1 = iVar1 + 1) {
       for (local_18 = 0; local_18 < this_ptr->num_textures; local_18 = local_18 + 1) {
         iVar2 = _fscanf(file_handle,"%[^\n]\n",
-                           this_ptr->texture_sets[iVar1].textures[local_18].texture_variants[0].
-                           texture_name);
+                           this_ptr->texture_sets[iVar1].textures[local_18].textures[0].texture_name
+                          );
         if (iVar2 != 1) goto LAB_0059b9b4;
       }
     }

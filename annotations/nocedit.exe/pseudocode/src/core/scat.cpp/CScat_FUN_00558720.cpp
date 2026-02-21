@@ -9,18 +9,18 @@
 void __cdecl core_scat_cpp_CScat_FUN_00558720(CScat *this_ptr)
 
 {
-  int iVar1;
+  CDemonActor *pCVar1;
   float fVar2;
   SMotion *pSVar3;
   int iVar4;
   CVector3f *pCVar5;
-  float *pfVar6;
+  CBoundingBox3D *pCVar6;
   float fVar7;
   float in_stack_00000008;
-  int in_stack_0000000c;
+  CDemonActor *in_stack_0000000c;
   float local_13c;
   CVector3f local_138 [10];
-  byte auStack_c0 [24];
+  CBoundingBox3D CStack_c0;
   CVector3f CStack_a8;
   CVector3f CStack_9c;
   float fStack_90;
@@ -37,21 +37,21 @@ void __cdecl core_scat_cpp_CScat_FUN_00558720(CScat *this_ptr)
   float local_34;
   float local_30;
   float local_2c;
-  int local_28;
+  CDemonActor *local_28;
   float local_24;
-  int local_20;
+  CDemonActor *local_20;
   uint local_1c;
   float local_18;
   
-  this_ptr->unk9 = 0;
-  if ((in_stack_0000000c == 0) &&
+  this_ptr->aim_converged = 0;
+  if ((in_stack_0000000c == (CDemonActor *)0x0) &&
      (pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&(this_ptr->base).base.model.motion_controller), pSVar3->state_index == 2)
      ) {
-    in_stack_0000000c = 1;
+    in_stack_0000000c = (CDemonActor *)0x1;
   }
-  local_13c = (float)this_ptr->unk5;
-  local_2c = (float)this_ptr->unk6;
+  local_13c = this_ptr->aim_pitch;
+  local_2c = this_ptr->aim_yaw;
   if (((this_ptr->base).aim_mode != 0) && ((this_ptr->base).control_type != 2)) {
     local_13c = (this_ptr->base).player_control.look_up_down_speed * (float)3.1415926535000001 *
                 (float)2 * in_stack_00000008 + local_13c;
@@ -65,44 +65,44 @@ void __cdecl core_scat_cpp_CScat_FUN_00558720(CScat *this_ptr)
     local_2c = 0.0;
     goto LAB_005587bd;
   }
-  if ((this_ptr->guns_drawn == 0) || (in_stack_0000000c != 0)) {
-    this_ptr->unk8 = 0;
+  if ((this_ptr->guns_drawn == 0) || (in_stack_0000000c != (CDemonActor *)0x0)) {
+    this_ptr->aim_target = (CDemonActor *)0x0;
   }
   else if ((this_ptr->base).player_control.action_states[3] == 0) {
     local_28 = in_stack_0000000c;
     local_24 = 1e+30;
     iVar4 = 0;
-    for (local_20 = in_stack_0000000c; local_20 < g_CDemonSetPtr->actor_count;
-        local_20 = local_20 + 1) {
-      iVar1 = *(int *)((int)g_CDemonSetPtr->actors + iVar4);
+    for (local_20 = in_stack_0000000c; (int)local_20 < g_CDemonSetPtr->actor_count;
+        local_20 = (CDemonActor *)(local_20->actor_name + 1)) {
+      pCVar1 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar4);
       local_18 = (float)core_scat_cpp_CScat_FUN_00558cf0(this_ptr);
       if ((0.0 <= local_18) && (local_18 < local_24)) {
-        local_28 = iVar1;
+        local_28 = pCVar1;
         local_24 = local_18;
       }
       iVar4 = iVar4 + 4;
     }
-    this_ptr->unk8 = local_28;
+    this_ptr->aim_target = local_28;
   }
   if ((this_ptr->base).player_control.action_states[3] != 0) {
-    if (this_ptr->unk8 == 0) {
-      this_ptr->unk6 = 0;
-      this_ptr->unk5 = this_ptr->unk6;
-      local_13c = (float)this_ptr->unk5;
+    if (this_ptr->aim_target == (CDemonActor *)0x0) {
+      this_ptr->aim_yaw = 0.0;
+      this_ptr->aim_pitch = this_ptr->aim_yaw;
+      local_13c = this_ptr->aim_pitch;
       local_2c = local_13c;
     }
     goto LAB_005587bd;
   }
-  if (this_ptr->unk8 == 0) goto LAB_005587bd;
+  if (this_ptr->aim_target == (CDemonActor *)0x0) goto LAB_005587bd;
   __arrinit(local_138,10,&g_CVectorTypeInfo);
-  iVar4 = (**(code **)(*(int *)(this_ptr->unk8 + 0x154) + 0x4c))(this_ptr->unk8,local_138);
+  iVar4 = (*((this_ptr->aim_target->vtable)._ub)->getTargetPoints)(this_ptr->aim_target,local_138);
   if (iVar4 < 1) {
-    pfVar6 = (float *)(**(code **)(*(int *)(this_ptr->unk8 + 0x154) + 0x14))
-                                (this_ptr->unk8,auStack_c0);
-    fStack_90 = *pfVar6 + pfVar6[3];
-    fStack_8c = pfVar6[1] + pfVar6[4];
+    pCVar6 = (*((this_ptr->aim_target->vtable)._ub)->getBoundingBox)
+                       (this_ptr->aim_target,&CStack_c0);
+    fStack_90 = (pCVar6->min).x + (pCVar6->max).x;
+    fStack_8c = (pCVar6->min).y + (pCVar6->max).y;
     CStack_78.x = fStack_90 * 0.5f;
-    fStack_88 = pfVar6[2] + pfVar6[5];
+    fStack_88 = (pCVar6->min).z + (pCVar6->max).z;
     CStack_78.y = fStack_8c * 0.5f;
     local_138[0].z = fStack_88 * 0.5f;
     CStack_78.z = local_138[0].z;
@@ -121,7 +121,7 @@ LAB_00558aeb:
     CStack_60.z = local_138[0].z;
   }
   pCVar5 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                     ((CDemonActor *)this_ptr->unk8,&CStack_6c,&CStack_60);
+                     (this_ptr->aim_target,&CStack_6c,&CStack_60);
   core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
             ((CDemonActor *)this_ptr,&CStack_9c,pCVar5);
   pCVar5 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
@@ -133,9 +133,9 @@ LAB_00558aeb:
   local_13c = CStack_54.x;
   local_2c = CStack_54.y;
 LAB_005587bd:
-  local_38 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(local_2c - (float)this_ptr->unk6);
+  local_38 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(local_2c - this_ptr->aim_yaw);
   local_18 = local_38;
-  local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(local_13c - (float)this_ptr->unk5);
+  local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(local_13c - this_ptr->aim_pitch);
   local_30 = in_stack_00000008 * (float)3.1415926535000001 * (float)1.5;
   local_3c = -local_30;
   if (local_38 < local_3c) {
@@ -152,16 +152,16 @@ LAB_005587bd:
   if (local_30 < local_34) {
     local_34 = local_30;
   }
-  this_ptr->unk5 = (int)((float)this_ptr->unk5 + local_34);
-  this_ptr->unk6 = (int)((float)this_ptr->unk6 + local_38);
-  if ((this_ptr->unk8 != 0) && (in_stack_0000000c == 0)) {
-    local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70((float)this_ptr->unk6 - local_2c);
+  this_ptr->aim_pitch = this_ptr->aim_pitch + local_34;
+  this_ptr->aim_yaw = this_ptr->aim_yaw + local_38;
+  if ((this_ptr->aim_target != (CDemonActor *)0x0) && (in_stack_0000000c == (CDemonActor *)0x0)) {
+    local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(this_ptr->aim_yaw - local_2c);
     if (((float)0.02 <= ABS(local_18)) &&
-       (fVar7 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70((float)this_ptr->unk6 - local_2c),
+       (fVar7 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(this_ptr->aim_yaw - local_2c),
        (float)0.02 <= ABS(fVar7))) {
       return;
     }
-    this_ptr->unk9 = 1;
+    this_ptr->aim_converged = 1;
     return;
   }
   return;

@@ -32,26 +32,17 @@ CDraculaBride * __cdecl core_dracbrid_cpp_CDraculaBride_ctor_FUN_00483fc0(CDracu
   (pCVar3->new_pos).z = 0.0;
   (pCVar3->new_pos).y = (pCVar3->new_pos).z;
   (pCVar3->new_pos).x = (pCVar3->new_pos).y;
-  pCVar3->unk3[0] = '\0';
-  pCVar3->unk3[1] = '\0';
-  pCVar3->unk3[2] = '\0';
-  pCVar3->unk3[3] = '\0';
+  pCVar3->attack_landed = 0;
   pCVar3->freaky_voice_number = 1;
   pCVar4 = pCVar3;
   do {
     pCVar5 = (CDraculaBride *)((pCVar4->base).base.base.actor_name + 4);
-    pCVar4->unk4[0] = '\0';
-    pCVar4->unk4[1] = '\0';
-    pCVar4->unk4[2] = '\0';
-    pCVar4->unk4[3] = '\0';
+    pCVar4->part_list[0] = (CDemonActor *)0x0;
     pCVar4 = pCVar5;
   } while (pCVar5 != (CDraculaBride *)(pCVar3->base).base.base.create_event);
   pCVar3->part_count = 0;
   pCVar3->fade_timer = 0.0;
-  pCVar3->unk2[4] = '\0';
-  pCVar3->unk2[5] = '\0';
-  pCVar3->unk2[6] = '\0';
-  pCVar3->unk2[7] = '\0';
+  pCVar3->action_delay = 0.0;
   pCVar3->exploded = 0;
   return pCVar3;
 }

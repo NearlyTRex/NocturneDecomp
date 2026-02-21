@@ -130,7 +130,7 @@ void __cdecl core_haystack_cpp_CHaystack_process_FUN_004f0e40(CHaystack *this_pt
 LAB_004f11d6:
             if (!bVar3) goto LAB_004f11f7;
           }
-          iVar5 = *(int *)this_ptr->unk;
+          iVar5 = this_ptr->attack_side;
           (this_ptr->base).player_control.action_states[3] = 0;
           if (iVar5 == 0) {
             iVar5 = 0xf;
@@ -266,9 +266,9 @@ LAB_004f1054:
      (pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&pCStack_24->motion_controller), pSVar7->state_index != 0x13)) {
     blend_callback = core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0;
-    fVar14 = *(float *)(this_ptr->unk + 0x10);
+    fVar14 = this_ptr->head_look_blend_weight;
     iVar5 = INT_02db8700;
-    core_xform_cpp_eulerToQuaternion_FUN_005f7b20((CVector3f *)(this_ptr->unk + 4),&CStack_8c);
+    core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&this_ptr->head_look_euler,&CStack_8c);
     pCVar13 = pCStack_24;
     source_quaternions = &CStack_7c;
     CStack_7c.w = CStack_8c.w;

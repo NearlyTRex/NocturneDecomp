@@ -4,49 +4,49 @@
       {
         "category": "undeclared_identifier",
         "column": 69,
-        "line": 70,
+        "line": 67,
         "message": "use of undeclared identifier 'stack0xfffffe34'; did you mean 'in_stack_fffffe34'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 55,
-        "line": 72,
+        "line": 69,
         "message": "use of undeclared identifier 'stack0xfffffe34'; did you mean 'in_stack_fffffe34'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 118,
+        "line": 115,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 22,
-        "line": 118,
+        "line": 115,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 24,
-        "line": 118,
+        "line": 115,
         "message": "use of undeclared identifier 'iRam00000154'"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 233,
+        "line": 227,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 20,
-        "line": 233,
+        "line": 227,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 22,
-        "line": 233,
+        "line": 227,
         "message": "use of undeclared identifier 'iRam00000154'"
       }
     ],
@@ -55,11 +55,11 @@
   },
   "complexity": {
     "assembly_lines": 847,
-    "complexity_score": 502,
+    "complexity_score": 496,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 19,
-    "pseudocode_lines": 377,
+    "pseudocode_lines": 371,
     "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -68,7 +68,7 @@
       "unresolved_funcptr",
       "warning_type_propagation"
     ],
-    "total_lines": 1224
+    "total_lines": 1218
   },
   "cross_references": [],
   "function": {
@@ -761,56 +761,56 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 63,
+      "line": 60,
       "match": "&stack0xfffffe34",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffe34);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 65,
+      "line": 62,
       "match": "&stack0xfffffe34",
       "text": "((CCharacter *)this_ptr,(SDamageInfo *)&stack0xfffffe34);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 111,
+      "line": 108,
       "match": "code *",
       "text": "(**(code **)(iRam00000154 + 0x104))(0);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 153,
+      "line": 150,
       "match": "SQRT",
       "text": "local_20 = SQRT(local_58.z * local_58.z +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 160,
+      "line": 157,
       "match": "ABS",
       "text": "if (ABS(local_14) < (float)0.52359877558333301) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 211,
+      "line": 205,
       "match": "SQRT",
       "text": "if ((SQRT(local_98 * local_98 + local_a0 * local_a0 + local_9c * local_9c) <",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 226,
+      "line": 220,
       "match": "code *",
       "text": "(**(code **)(iRam00000154 + 0x104))(0);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 379,
+      "line": 373,
       "match": "in_stack_fffffe34",
       "text": "((CCharacter *)this_ptr,delta_time,in_stack_fffffe34);",
       "type": "stack_param"

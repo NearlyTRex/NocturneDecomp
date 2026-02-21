@@ -19,7 +19,7 @@ CHighPriestOfGardath * __cdecl core_hpriest_cpp_CHighPriestOfGardath_ctor_FUN_00
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(pCVar2->base).base.model,"priest.dfm");
   pcVar3 = "killPriest";
-  pcVar4 = pCVar2->unk;
+  pcVar4 = pCVar2->kill_event;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;

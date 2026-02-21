@@ -243,10 +243,9 @@ LAB_0043fc14:
   iVar5 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
   if (iVar5 == 0) {
     blend_callback = core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0;
-    fVar13 = *(float *)(this_ptr->field2_0x1fbd8 + 0x10);
+    fVar13 = this_ptr->head_look_blend_weight;
     iVar5 = INT_0083b124;
-    core_xform_cpp_eulerToQuaternion_FUN_005f7b20
-              ((CVector3f *)(this_ptr->field2_0x1fbd8 + 4),&CStack_94);
+    core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&this_ptr->head_look_euler,&CStack_94);
     pCVar12 = pCStack_18;
     source_quaternions = &CStack_84;
     CStack_84.w = CStack_94.w;

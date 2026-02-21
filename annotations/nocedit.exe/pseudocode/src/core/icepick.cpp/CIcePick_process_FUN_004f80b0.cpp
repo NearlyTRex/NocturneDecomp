@@ -17,16 +17,15 @@ void __cdecl core_icepick_cpp_CIcePick_process_FUN_004f80b0(CIcePick *this_ptr,f
   int iVar3;
   CVector3f *pCVar4;
   CDemonActor *pCVar5;
-  uint uVar6;
-  CCharacter *pCVar7;
-  int iVar8;
-  uint uVar9;
-  SMotion *pSVar10;
+  CCharacter *pCVar6;
+  int iVar7;
+  uint uVar8;
+  SMotion *pSVar9;
+  uint *puVar10;
   uint *puVar11;
-  uint *puVar12;
-  byte bVar13;
+  byte bVar12;
   float afStackY_1870 [1521];
-  float fVar14;
+  float fVar13;
   code *blend_callback;
   float in_stack_ffffff68;
   CQuaternion4f CStack_94;
@@ -47,7 +46,7 @@ void __cdecl core_icepick_cpp_CIcePick_process_FUN_004f80b0(CIcePick *this_ptr,f
   float local_18;
   CCharacter_full_vtable *local_14;
   
-  bVar13 = 0;
+  bVar12 = 0;
   iVar3 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar3 == 0) {
     return;
@@ -59,13 +58,13 @@ void __cdecl core_icepick_cpp_CIcePick_process_FUN_004f80b0(CIcePick *this_ptr,f
     core_icepick_cpp_CIcePick_FUN_004f8c70(this_ptr);
   }
   fVar2 = (float)12.566370614;
-  fVar14 = (float)(this_ptr->base).no_collision_flag;
-  *(uint *)(this_ptr->unk + 0x1c) =
+  fVar13 = (float)(this_ptr->base).no_collision_flag;
+  this_ptr->is_armed =
        (uint)((this_ptr->base).base.carry_hands[1].carry_actor != (CDemonActor *)0x0);
-  fVar14 = fVar14 - delta_time;
+  fVar13 = fVar13 - delta_time;
   (this_ptr->base).base.turn_speed = delta_time * fVar2;
-  (this_ptr->base).no_collision_flag = (int)fVar14;
-  if (fVar14 < 0.0) {
+  (this_ptr->base).no_collision_flag = (int)fVar13;
+  if (fVar13 < 0.0) {
     (this_ptr->base).no_collision_flag = 0;
   }
   pCVar4 = &(this_ptr->base).base.model.accumulated_root_motion;
@@ -79,22 +78,22 @@ void __cdecl core_icepick_cpp_CIcePick_process_FUN_004f80b0(CIcePick *this_ptr,f
                     ((CCharacter *)this_ptr,delta_time);
   this_ptr_00 = &(this_ptr->base).base.model;
   if (iVar3 == 0) {
-    pSVar10 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                        (&this_ptr_00->motion_controller);
-    uVar6 = pSVar10->state_index;
-    if (uVar6 < 9) {
-      if ((((uVar6 == 0) || (uVar6 < 2)) || (uVar6 < 3)) || (uVar6 == 3)) goto LAB_004f8427;
+    pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                       (&this_ptr_00->motion_controller);
+    uVar8 = pSVar9->state_index;
+    if (uVar8 < 9) {
+      if ((((uVar8 == 0) || (uVar8 < 2)) || (uVar8 < 3)) || (uVar8 == 3)) goto LAB_004f8427;
     }
     else {
-      if (uVar6 < 10) {
+      if (uVar8 < 10) {
         return;
       }
-      if (uVar6 < 0xf) {
-        if (uVar6 < 0xb) {
+      if (uVar8 < 0xf) {
+        if (uVar8 < 0xb) {
 LAB_004f8427:
           if ((this_ptr->base).base.is_on_ground != 0) {
             iVar3 = 0;
-            if ((this_ptr->guns_drawn != 0) && (*(int *)(this_ptr->unk + 0x1c) == 0)) {
+            if ((this_ptr->guns_drawn != 0) && (this_ptr->is_armed == 0)) {
               iVar3 = 10;
             }
             if ((this_ptr->base).player_control.action_states[0] != 0) {
@@ -111,9 +110,9 @@ LAB_004f8427:
             if ((this_ptr->base).player_control.action_states[6] != 0) {
               iVar3 = this_ptr->guns_drawn;
               (this_ptr->base).player_control.action_states[6] = 0;
-              uVar6 = (uint)(iVar3 == 0);
-              this_ptr->guns_drawn = uVar6;
-              if ((uVar6 == 0) || (*(int *)(this_ptr->unk + 0x1c) != 0)) {
+              uVar8 = (uint)(iVar3 == 0);
+              this_ptr->guns_drawn = uVar8;
+              if ((uVar8 == 0) || (this_ptr->is_armed != 0)) {
                 iVar3 = 0;
               }
               else {
@@ -123,18 +122,18 @@ LAB_004f8427:
             if ((this_ptr->base).player_control.action_states[3] != 0) {
               bVar1 = true;
               if ((this_ptr->guns_drawn == 0) && ((this_ptr->base).control_type != 2)) {
-                iVar8 = core_hero_cpp_CHero_FUN_004f2af0(&this_ptr->base);
+                iVar7 = core_hero_cpp_CHero_FUN_004f2af0(&this_ptr->base);
                 bVar1 = false;
-                if (iVar8 != 0) goto LAB_004f84cc;
+                if (iVar7 != 0) goto LAB_004f84cc;
                 local_24 = core_hero_cpp_CHero_FUN_004f2d70(&this_ptr->base);
                 if ((local_24 != 0) && (local_24 != 1)) {
                   core_hero_cpp_CHero_FUN_004f2ed0(&this_ptr->base);
                 }
                 if ((local_24 != 0) ||
-                   (iVar8 = core_hero_cpp_CHero_FUN_004f2c40(&this_ptr->base), iVar8 != 0))
+                   (iVar7 = core_hero_cpp_CHero_FUN_004f2c40(&this_ptr->base), iVar7 != 0))
                 goto LAB_004f84cc;
-                iVar8 = core_hero_cpp_CHero_FUN_004f2f50(&this_ptr->base);
-                if (iVar8 != 0) {
+                iVar7 = core_hero_cpp_CHero_FUN_004f2f50(&this_ptr->base);
+                if (iVar7 != 0) {
                   core_hero_cpp_CHero_FUN_004f30f0(&this_ptr->base);
                   goto LAB_004f84cc;
                 }
@@ -144,9 +143,9 @@ LAB_004f84cc:
                 if (!bVar1) goto switchD_004f8665_default;
               }
               if (this_ptr->guns_drawn != 0) {
-                if (*(int *)(this_ptr->unk + 0x1c) == 0) {
+                if (this_ptr->is_armed == 0) {
                   (this_ptr->base).player_control.action_states[3] = 0;
-                  switch(*(uint *)this_ptr->unk) {
+                  switch(this_ptr->attack_count) {
                   case 0:
                   case 2:
                     iVar3 = 0xe;
@@ -160,12 +159,12 @@ LAB_004f84cc:
                   }
                 }
                 else {
-                  pCVar7 = (CCharacter *)
+                  pCVar6 = (CCharacter *)
                            core_actor_cpp_castToClassHash_FUN_0040c790
                                      ((this_ptr->base).base.carry_hands[1].carry_actor,
                                       g_CWeaponClassInfo.name_hash);
-                  if (pCVar7 != (CCharacter *)0x0) {
-                    (*(((pCVar7->base).vtable._uc)->_uc).isGrabbable)(pCVar7);
+                  if (pCVar6 != (CCharacter *)0x0) {
+                    (*(((pCVar6->base).vtable._uc)->_uc).isGrabbable)(pCVar6);
                   }
                 }
               }
@@ -173,15 +172,15 @@ LAB_004f84cc:
 switchD_004f8665_default:
             (this_ptr->base).base.turn_angle_accumulator =
                  (this_ptr->base).player_control.turn_speed * (this_ptr->base).base.turn_speed;
-            pSVar10 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                                (&(this_ptr->base).base.model.motion_controller);
-            if (iVar3 != pSVar10->state_index) {
+            pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                               (&(this_ptr->base).base.model.motion_controller);
+            if (iVar3 != pSVar9->state_index) {
               if ((((iVar3 == 0xe) || (iVar3 == 0xf)) || (iVar3 == 0x10)) &&
-                 (iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->unk + 4)),
-                 iVar8 == 0)) {
-                uVar9 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
+                 (iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->swing_sfx_handle),
+                 iVar7 == 0)) {
+                uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                                   ((CDemonActor *)this_ptr,"icepick-miss?.wav");
-                *(uint *)(this_ptr->unk + 4) = uVar9;
+                this_ptr->swing_sfx_handle = uVar8;
               }
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         (&(this_ptr->base).base.model.motion_controller,iVar3,1);
@@ -193,7 +192,7 @@ switchD_004f8665_default:
           }
         }
       }
-      else if (((0xf < uVar6) && (0x10 < uVar6)) && (uVar6 == 0x15)) goto LAB_004f8427;
+      else if (((0xf < uVar8) && (0x10 < uVar8)) && (uVar8 == 0x15)) goto LAB_004f8427;
     }
   }
   else {
@@ -201,9 +200,9 @@ switchD_004f8665_default:
     (this_ptr->base).base.model.accumulated_root_motion.y =
          (this_ptr->base).base.model.accumulated_root_motion.z;
     pCVar4->x = (this_ptr->base).base.model.accumulated_root_motion.y;
-    uVar6 = (this_ptr->base).base.is_walking;
-    if (uVar6 < 2) {
-      if (uVar6 == 1) {
+    uVar8 = (this_ptr->base).base.is_walking;
+    if (uVar8 < 2) {
+      if (uVar8 == 1) {
         iVar3 = 1;
       }
       else {
@@ -212,8 +211,8 @@ LAB_004f8417:
       }
     }
     else {
-      if (2 < uVar6) {
-        if (uVar6 == 3) {
+      if (2 < uVar8) {
+        if (uVar8 == 3) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&this_ptr_00->motion_controller,0,1);
           engine_console_cpp_CConsole_printf_FUN_00441890
@@ -271,11 +270,11 @@ LAB_004f81b6:
          (this_ptr->base).base.base.orient.vec.y + in_stack_ffffff68;
     core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10((CDemonActor *)this_ptr);
   }
-  pCVar7 = (CCharacter *)(this_ptr->base).base.grabbed_by;
-  local_14 = (pCVar7->base).vtable._uc;
+  pCVar6 = (CCharacter *)(this_ptr->base).base.grabbed_by;
+  local_14 = (pCVar6->base).vtable._uc;
   pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                      (&(this_ptr->base).base.model,&local_74,0);
-  iVar3 = (*(local_14->_uc).attractActorToward)(pCVar7,(CDemonActor *)this_ptr,pCVar4);
+  iVar3 = (*(local_14->_uc).attractActorToward)(pCVar6,(CDemonActor *)this_ptr,pCVar4);
   if (iVar3 == 0) {
     (this_ptr->base).base.grabbed_by = (CDemonActor *)0x0;
 LAB_004f82e5:
@@ -306,18 +305,18 @@ LAB_004f82f8:
   iVar3 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
   if (iVar3 == 0) {
     blend_callback = core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0;
-    fVar14 = *(float *)(this_ptr->unk + 0x18);
+    fVar13 = this_ptr->head_look_blend_weight;
     iVar3 = INT_02db8970;
-    core_xform_cpp_eulerToQuaternion_FUN_005f7b20((CVector3f *)(this_ptr->unk + 0xc),&CStack_94);
+    core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&this_ptr->head_look_euler,&CStack_94);
     CStack_84.w = CStack_94.w;
-    puVar12 = (uint *)((int)&CStack_84 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
-    puVar11 = (uint *)((int)&CStack_94 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
-    *(uint *)((int)&CStack_84 + (uint)bVar13 * -8 + 4) =
-         *(uint *)((int)&CStack_94 + (uint)bVar13 * -8 + 4);
-    *puVar12 = *puVar11;
-    puVar12[(uint)bVar13 * -2 + 1] = puVar11[(uint)bVar13 * -2 + 1];
+    puVar11 = (uint *)((int)&CStack_84 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
+    puVar10 = (uint *)((int)&CStack_94 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
+    *(uint *)((int)&CStack_84 + (uint)bVar12 * -8 + 4) =
+         *(uint *)((int)&CStack_94 + (uint)bVar12 * -8 + 4);
+    *puVar11 = *puVar10;
+    puVar11[(uint)bVar12 * -2 + 1] = puVar10[(uint)bVar12 * -2 + 1];
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
-              (pCStack_20,&CStack_84,fVar14,iVar3,blend_callback);
+              (pCStack_20,&CStack_84,fVar13,iVar3,blend_callback);
   }
   core_icepick_cpp_CIcePick_FUN_004f8810(this_ptr);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0

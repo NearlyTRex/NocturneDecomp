@@ -80,9 +80,9 @@ void __cdecl core_scat_cpp_CScat_FUN_005578e0(CScat *this_ptr)
   if ((this_ptr->base).ai_task == 3) {
     local_7c = 0.0;
   }
-  if (this_ptr->unk4 == 0) goto LAB_00557b63;
+  if (this_ptr->weapon_actor == (CDemonActor *)0x0) goto LAB_00557b63;
   local_2c = 0;
-  if (*(int *)(this_ptr->unk4 + 0x2e0) == 8) {
+  if (this_ptr->weapon_actor[2].orient.vec.x == 1.12104e-44) {
     if (local_7c < (float)8) {
       pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&(this_ptr->base).base.model.motion_controller);
@@ -95,8 +95,8 @@ LAB_00557a94:
   }
   else if (local_7c < (float)15) {
     if ((this_ptr->guns_drawn != 0) && (iVar7 != 0)) {
-      if (((float)0.90000000000000002 < (this_ptr->base).base.layer_action_t) && (this_ptr->unk9 != 0))
-      {
+      if (((float)0.90000000000000002 < (this_ptr->base).base.layer_action_t) &&
+         (this_ptr->aim_converged != 0)) {
         (this_ptr->base).player_control.action_states[3] = 1;
       }
       core_charactr_cpp_CCharacter_turnTowardPoint_FUN_00428d80
@@ -156,13 +156,13 @@ LAB_00557b63:
   if (fStack_44 < -local_1c) {
     fStack_44 = -local_1c;
   }
-  fStack_80 = fStack_44 - *(float *)(this_ptr->unk1 + 4);
+  fStack_80 = fStack_44 - (this_ptr->head_euler_angles).y;
   if (in_stack_00000008 * (float)3.1415926535000001 < fStack_80) {
     fStack_80 = in_stack_00000008 * (float)3.1415926535000001;
   }
   if (fStack_80 < in_stack_00000008 * (float)-3.1415926535000001) {
     fStack_80 = in_stack_00000008 * (float)-3.1415926535000001;
   }
-  *(float *)(this_ptr->unk1 + 4) = *(float *)(this_ptr->unk1 + 4) + fStack_80;
+  (this_ptr->head_euler_angles).y = (this_ptr->head_euler_angles).y + fStack_80;
   return;
 }

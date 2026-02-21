@@ -22,7 +22,7 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr,floa
   SMotion *pSVar9;
   char *pcVar10;
   float in_stack_ffffe4e8;
-  SBoneTransformData SStack_1b10;
+  SPose SStack_1b10;
   float local_74;
   float local_70;
   float local_6c;

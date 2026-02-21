@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl shape_cramtex_cpp_qsortRectanglesByActiveFlag_FUN_00446140(SCramRectangle *rect_a,SCramRectangle *rect_b)
+; int __cdecl shape_cramtex_cpp_qsortRectanglesByActiveFlag_FUN_00446140(SCramRectangle **rect_a,SCramRectangle **rect_b)
 ;
 ; Parameters:
-; SCramRectangle * Stack[0xc]:4   rect_a
-; SCramRectangle * Stack[0x10]:4   rect_b
+; SCramRectangle * * Stack[0x4]:4   rect_a
+; SCramRectangle * * Stack[0x8]:4   rect_b
 ;
 ; XREF[1]:
 ;   shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 at 00446249

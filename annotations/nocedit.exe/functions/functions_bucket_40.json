@@ -15415,34 +15415,34 @@
         {
           "name":"rect_a",
           "storage":{
-            "offset":12,
+            "offset":4,
             "size":4,
             "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0xc]",
-                "offset":12,
+                "addr":"Stack[0x4]",
+                "offset":4,
                 "size":4
               }
             ]
           },
-          "type":"SCramRectangle*"
+          "type":"SCramRectangle**"
         },
         {
           "name":"rect_b",
           "storage":{
-            "offset":16,
+            "offset":8,
             "size":4,
             "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x10]",
-                "offset":16,
+                "addr":"Stack[0x8]",
+                "offset":8,
                 "size":4
               }
             ]
           },
-          "type":"SCramRectangle*"
+          "type":"SCramRectangle**"
         }
       ],
       "ret_storage":{
@@ -15475,13 +15475,13 @@
         {
           "name":"this_ptr",
           "storage":{
-            "offset":12,
+            "offset":4,
             "size":4,
             "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0xc]",
-                "offset":12,
+                "addr":"Stack[0x4]",
+                "offset":4,
                 "size":4
               }
             ]
@@ -54444,7 +54444,7 @@
           "type":"int"
         },
         {
-          "name":"submesh_count",
+          "name":"lod_texture_count",
           "storage":{
             "offset":16,
             "size":4,
@@ -60875,7 +60875,7 @@
               }
             ]
           },
-          "type":"SMRGLTextureExtended*"
+          "type":"SMRGLTextureLod*"
         },
         {
           "name":"texture_index_list",
@@ -75041,13 +75041,13 @@
         {
           "name":"this_ptr",
           "storage":{
-            "offset":12,
+            "offset":4,
             "size":4,
             "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0xc]",
-                "offset":12,
+                "addr":"Stack[0x4]",
+                "offset":4,
                 "size":4
               }
             ]
@@ -75055,20 +75055,20 @@
           "type":"CSkeleton*"
         },
         {
-          "name":"file_handle",
+          "name":"filename",
           "storage":{
-            "offset":16,
+            "offset":8,
             "size":4,
             "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x10]",
-                "offset":16,
+                "addr":"Stack[0x8]",
+                "offset":8,
                 "size":4
               }
             ]
           },
-          "type":"_FILE*"
+          "type":"char*"
         }
       ]
     }
@@ -75153,6 +75153,22 @@
             ]
           },
           "type":"CDeformableModel*"
+        },
+        {
+          "name":"file_handle",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"_FILE*"
         }
       ],
       "ret_storage":{
@@ -75413,13 +75429,13 @@
         {
           "name":"this_ptr",
           "storage":{
-            "offset":12,
+            "offset":4,
             "size":4,
             "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0xc]",
-                "offset":12,
+                "addr":"Stack[0x4]",
+                "offset":4,
                 "size":4
               }
             ]
@@ -75429,13 +75445,13 @@
         {
           "name":"filename",
           "storage":{
-            "offset":16,
+            "offset":8,
             "size":4,
             "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x10]",
-                "offset":16,
+                "addr":"Stack[0x8]",
+                "offset":8,
                 "size":4
               }
             ]
@@ -76277,6 +76293,22 @@
         {
           "name":"this_ptr",
           "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModel*"
+        },
+        {
+          "name":"output_filename",
+          "storage":{
             "offset":8,
             "size":4,
             "stack":true,
@@ -76288,10 +76320,10 @@
               }
             ]
           },
-          "type":"CDeformableModel*"
+          "type":"char*"
         },
         {
-          "name":"output_filename",
+          "name":"lod_level",
           "storage":{
             "offset":12,
             "size":4,
@@ -76304,10 +76336,10 @@
               }
             ]
           },
-          "type":"char*"
+          "type":"int"
         },
         {
-          "name":"lod_level",
+          "name":"bone_matrices",
           "storage":{
             "offset":16,
             "size":4,
@@ -76316,22 +76348,6 @@
               {
                 "addr":"Stack[0x10]",
                 "offset":16,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
-          "name":"bone_matrices",
-          "storage":{
-            "offset":20,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x14]",
-                "offset":20,
                 "size":4
               }
             ]
@@ -89757,7 +89773,7 @@
     "vars":{
       "params":[
         {
-          "name":"socket",
+          "name":"socket_handle",
           "storage":{
             "offset":4,
             "size":4,

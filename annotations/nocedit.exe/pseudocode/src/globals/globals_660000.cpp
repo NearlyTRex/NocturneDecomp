@@ -6629,7 +6629,7 @@ WatcomDestructorCall WatcomDestructorCall_00662a1c = {
 WatcomDestructorCall WatcomDestructorCall_00662e30 = {
     .delete_flags = 0x00000004,
     .destructor_func = (void *)core_dmodel_cpp_CKeyFramedModel_dtor_FUN_00476d90,
-    .object_instance = (void *)0x03665F74
+    .object_instance = (void *)&CKeyFramedModel_03665f74
 };
 WatcomDestructorCall WatcomDestructorCall_00662e80 = {
     .delete_flags = 0x00000004,

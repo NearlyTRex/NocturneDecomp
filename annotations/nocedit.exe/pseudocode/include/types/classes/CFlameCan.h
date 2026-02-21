@@ -15,6 +15,6 @@ typedef struct CFlameCan {
     float time_to_explode; // 0x2d8
     char on_fire_condition[100]; // 0x2dc
     CFlame flame; // 0x340
-    int unk; // 0x5e4
+    int is_visible; // 0x5e4
 } CFlameCan;
 

@@ -20,8 +20,8 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_scalePoseDataForHierarch
       iVar1 = core_skeleton_cpp_CSkeleton_getHierarchyDistance_FUN_0059a100
                         (this_ptr_00,start_bone_index,target_bone_index);
       if (-1 < iVar1) {
-        (this_ptr->bone_transform).current_pose_data[0] =
-             (this_ptr->bone_transform).current_pose_data[0] * scale_factor;
+        (this_ptr->bone_transform).bone_scales[0] =
+             (this_ptr->bone_transform).bone_scales[0] * scale_factor;
       }
       start_bone_index = start_bone_index + 1;
       this_ptr = (CDeformableModelInstance *)&(this_ptr->motion_controller).current_motion_index;

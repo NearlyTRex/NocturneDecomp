@@ -14,7 +14,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_captureTextures_FUN_00478190(CKeyFr
   
   iVar1 = 0;
   if (0 < this_ptr->texture_count) {
-    texture = &this_ptr->texture_list[0].base;
+    texture = this_ptr->texture_list[0].textures;
     do {
       iVar1 = iVar1 + 1;
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,texture);

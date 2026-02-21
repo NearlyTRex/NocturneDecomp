@@ -20,14 +20,14 @@ void __cdecl core_turret_cpp_CTurret_getInteractionInfo_FUN_005e3440(CTurret *th
   }
   interaction_info->can_interact = 1;
   pCVar2 = this_ptr->user;
-  interaction_info->yaw_min = 6.2831855;
-  interaction_info->yaw_max = -6.2831855;
-  interaction_info->reference_data = (int)pCVar2;
+  interaction_info->yaw_max = 6.2831855;
+  interaction_info->yaw_min = -6.2831855;
+  interaction_info->interacting_actor = pCVar2;
   fVar3 = -0.5235988f;
-  interaction_info->pitch_min = 1.22173f - (this_ptr->base).base.orient.vec.x;
+  interaction_info->pitch_max = 1.22173f - (this_ptr->base).base.orient.vec.x;
   fVar1 = (this_ptr->base).base.orient.vec.x;
-  interaction_info->distance_min = -4.0;
-  interaction_info->pitch_max = fVar3 - fVar1;
+  interaction_info->approach_offset = -4.0;
+  interaction_info->pitch_min = fVar3 - fVar1;
   interaction_info->distance_max = 0.0;
   return;
 }

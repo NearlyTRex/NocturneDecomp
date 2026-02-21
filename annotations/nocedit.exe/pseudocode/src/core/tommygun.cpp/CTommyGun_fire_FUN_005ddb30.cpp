@@ -51,7 +51,7 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_005ddb30(CTommyGun *this_ptr)
   float fStack_14;
   
   fVar1 = (this_ptr->base).fire_cooldown_timer;
-  this_ptr->unk = 2;
+  this_ptr->fire_frames_remaining = 2;
   if (0.0 < fVar1) {
     return 0;
   }
@@ -62,7 +62,7 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_005ddb30(CTommyGun *this_ptr)
             ((CDemonActor *)this_ptr,&CStack_80,pCVar3);
   iVar4 = core_weapon_cpp_CWeapon_fire_FUN_005ee6e0(&this_ptr->base);
   if (iVar4 == 0) {
-    this_ptr->unk = 0;
+    this_ptr->fire_frames_remaining = 0;
     (*((this_ptr->base).base.vtable._ub)->playSound)
               ((CDemonActor *)this_ptr,"45-dry-!.wav @2.0");
     sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handle);

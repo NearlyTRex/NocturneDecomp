@@ -9,7 +9,6 @@
 void __cdecl core_dynamite_cpp_CDynamite_process_FUN_0049cfb0(CDynamite *this_ptr,float delta_time)
 
 {
-  uint sfx_handle;
   float fVar1;
   CSound *this_ptr_00;
   int iVar2;
@@ -24,21 +23,14 @@ void __cdecl core_dynamite_cpp_CDynamite_process_FUN_0049cfb0(CDynamite *this_pt
   CVector3f CStack_18;
   
   core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base,delta_time);
-  if (0.0 <= *(float *)this_ptr->unk) {
-    fVar1 = *(float *)this_ptr->unk - delta_time;
-    *(float *)this_ptr->unk = fVar1;
+  if (0.0 <= this_ptr->fuse_timer) {
+    fVar1 = this_ptr->fuse_timer - delta_time;
+    this_ptr->fuse_timer = fVar1;
     this_ptr_00 = g_CSoundPtr;
     if (fVar1 < 0.0) {
-      sfx_handle = *(uint *)(this_ptr->unk + 0x10);
-      this_ptr->unk[0] = '\0';
-      this_ptr->unk[1] = '\0';
-      this_ptr->unk[2] = '\0';
-      this_ptr->unk[3] = '\0';
-      core_sound_cpp_CSound_killSound_FUN_005b3b90(this_ptr_00,sfx_handle);
-      this_ptr->unk[0x10] = '\0';
-      this_ptr->unk[0x11] = '\0';
-      this_ptr->unk[0x12] = '\0';
-      this_ptr->unk[0x13] = '\0';
+      this_ptr->fuse_timer = 0.0;
+      core_sound_cpp_CSound_killSound_FUN_005b3b90(this_ptr_00,this_ptr->sfx_handle);
+      this_ptr->sfx_handle = 0;
     }
     else {
       iVar2 = core_actor_cpp_randomChance_FUN_0040cd10

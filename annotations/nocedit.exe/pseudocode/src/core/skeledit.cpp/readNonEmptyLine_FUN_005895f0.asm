@@ -4,9 +4,9 @@
 ; int __cdecl core_skeledit_cpp_readNonEmptyLine_FUN_005895f0(char *buffer,_FILE *file,int require_content)
 ;
 ; Parameters:
-; char *           Stack[0x8]:4   buffer
-; _FILE *          Stack[0xc]:4   file
-; int              Stack[0x10]:4   require_content
+; char *           Stack[0x4]:4   buffer
+; _FILE *          Stack[0x8]:4   file
+; int              Stack[0xc]:4   require_content
 ;
 ; XREF[1]:
 ;   core_skeledit.cpp_CSkeleton_FUN_00592690 at 00592a7a

@@ -16,16 +16,16 @@ CScat * __cdecl core_scat_cpp_CScat_ctor_FUN_00556ed0(CScat *this_ptr)
   this_ptr_00->guns_drawn = 0;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(this_ptr_00->base).base.model,"scat.dfm");
-  this_ptr_00->unk3 = 1.0;
-  this_ptr_00->unk2 = 0;
-  *(int *)(this_ptr_00->unk1 + 4) = this_ptr_00->unk2;
-  *(uint *)this_ptr_00->unk1 = *(uint *)(this_ptr_00->unk1 + 4);
+  this_ptr_00->head_blend_weight = 1.0;
+  (this_ptr_00->head_euler_angles).z = 0.0;
+  (this_ptr_00->head_euler_angles).y = (this_ptr_00->head_euler_angles).z;
+  (this_ptr_00->head_euler_angles).x = (this_ptr_00->head_euler_angles).y;
   core_scat_cpp_CScat_createDefaultGun_FUN_00557150(this_ptr_00);
-  this_ptr_00->unk4 = 0;
-  this_ptr_00->unk6 = 0;
-  this_ptr_00->unk8 = 0;
-  this_ptr_00->unk9 = 0;
-  this_ptr_00->unk5 = this_ptr_00->unk6;
+  this_ptr_00->weapon_actor = (CDemonActor *)0x0;
+  this_ptr_00->aim_yaw = 0.0;
+  this_ptr_00->aim_target = (CDemonActor *)0x0;
+  this_ptr_00->aim_converged = 0;
+  this_ptr_00->aim_pitch = this_ptr_00->aim_yaw;
   core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0
             ((CCharacter *)this_ptr_00,0,1,"draw_stand2coatPocket",0);
   core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0

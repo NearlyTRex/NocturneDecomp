@@ -318,7 +318,7 @@ LAB_00520482:
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(pCVar14);
   core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(pCVar14);
   core_cloth_cpp_CCloth_process_FUN_0043ab80
-            ((CCloth *)this_ptr->unk3,&(this_ptr->base).base.base.location.position,
+            (&this_ptr->cloth,&(this_ptr->base).base.base.location.position,
              &(this_ptr->base).base.base.orient.vec,in_stack_00000008,
              (this_ptr->base).base.closest_distance_threshold,pCVar14);
   return;

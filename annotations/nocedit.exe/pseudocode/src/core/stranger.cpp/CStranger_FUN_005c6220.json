@@ -1,34 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 101,
-        "message": "use of undeclared identifier 'stack0xffffffd8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 120,
-        "message": "use of undeclared identifier 'stack0xffffffe4'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 346,
-    "complexity_score": 155,
+    "complexity_score": 109,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 20,
-    "pseudocode_lines": 130,
-    "suspect_count": 2,
-    "suspect_types": [
-      "stack_ref"
-    ],
-    "total_lines": 476
+    "pseudocode_lines": 109,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 455
   },
   "cross_references": [
     {
@@ -276,20 +261,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Direct stack address reference",
-      "line": 94,
-      "match": "&stack0xffffffd8",
-      "text": "if (pCVar8 != (CCloth *)&stack0xffffffd8) {",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 113,
-      "match": "&stack0xffffffe4",
-      "text": "if (pCVar8 != (CCloth *)&stack0xffffffe4) {",
-      "type": "stack_ref"
-    }
-  ]
+  "suspects": []
 }

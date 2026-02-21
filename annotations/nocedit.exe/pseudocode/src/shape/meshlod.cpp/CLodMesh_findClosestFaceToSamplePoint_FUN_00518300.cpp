@@ -15,12 +15,12 @@ void __cdecl shape_meshlod_cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_0051830
   double dVar2;
   CLodFace *face;
   double local_28;
-  SLodSubmesh *pSStack_24;
+  SMRGLTextureLod *pSStack_24;
   int local_18;
   
   this_ptr_00 = (CLodMesh *)(this_ptr->sample_points_ptr + sample_point_index);
-  this_ptr_00->submesh_count = 0x39a08ce9;
-  this_ptr_00->submesh_data = (SLodSubmesh *)0x46293e59;
+  this_ptr_00->lod_texture_count = 0x39a08ce9;
+  this_ptr_00->lod_textures = (SMRGLTextureLod *)0x46293e59;
   this_ptr_00->tri_data = (CLodFace *)0xffffffff;
   pCVar1 = (CLodFace *)0x0;
   if (0 < this_ptr->tri_count) {
@@ -31,12 +31,12 @@ void __cdecl shape_meshlod_cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_0051830
         dVar2 = shape_meshlod_cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400
                           (this_ptr_00,sample_point,face);
         local_28 = dVar2;
-        if (dVar2 < *(double *)&this_ptr_00->submesh_count) {
+        if (dVar2 < *(double *)&this_ptr_00->lod_texture_count) {
           face = SUB84(dVar2,0);
           this_ptr_00->tri_data = pCVar1;
-          this_ptr_00->submesh_count = (int)face;
-          pSStack_24 = (SLodSubmesh *)((ulonglong)dVar2 >> 0x20);
-          this_ptr_00->submesh_data = pSStack_24;
+          this_ptr_00->lod_texture_count = (int)face;
+          pSStack_24 = (SMRGLTextureLod *)((ulonglong)dVar2 >> 0x20);
+          this_ptr_00->lod_textures = pSStack_24;
         }
       }
       pCVar1 = (CLodFace *)((int)pCVar1->attribute_indices + 1);

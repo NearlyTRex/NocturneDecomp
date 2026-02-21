@@ -4,98 +4,80 @@
       {
         "category": "type_error",
         "column": 3,
-        "line": 34,
+        "line": 38,
         "message": "unknown type name 'code'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 26,
-        "line": 119,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 33,
-        "line": 119,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
+        "category": "other",
         "column": 15,
-        "line": 120,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 22,
-        "line": 120,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 41,
-        "line": 140,
-        "message": "use of undeclared identifier 'SUB14'"
-      },
-      {
-        "category": "other",
-        "column": 16,
         "line": 227,
-        "message": "cannot cast from type 'float' to pointer type 'CCharacter_full_vtable *'"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 228,
-        "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
+        "message": "cannot cast from type 'float' to pointer type 'CDeformableModelInstance *'"
       },
       {
         "category": "other",
         "column": 9,
         "line": 229,
-        "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
+        "message": "C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 46,
+        "line": 230,
+        "message": "C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 232,
+        "message": "C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 46,
+        "line": 233,
+        "message": "C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 235,
+        "message": "cannot cast from type 'float' to pointer type 'CDeformableModelInstance *'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 236,
+        "message": "C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 230,
-        "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
+        "line": 236,
+        "message": "C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed"
       },
       {
-        "category": "undeclared_identifier",
+        "category": "other",
+        "column": 46,
+        "line": 237,
+        "message": "C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
         "column": 9,
-        "line": 268,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 16,
-        "line": 268,
-        "message": "expected expression"
+        "line": 239,
+        "message": "C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed"
       },
       {
         "category": "other",
-        "column": 14,
-        "line": 273,
-        "message": "cannot cast from type 'float' to pointer type 'CCharacter_full_vtable *'"
+        "column": 28,
+        "line": 239,
+        "message": "C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed"
       },
       {
         "category": "other",
-        "column": 14,
-        "line": 276,
-        "message": "cannot cast from type 'float' to pointer type 'CCharacter_full_vtable *'"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 279,
-        "message": "cannot cast from type 'float' to pointer type 'CCharacter_full_vtable *'"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 282,
-        "message": "cannot cast from type 'float' to pointer type 'CCharacter_full_vtable *'"
+        "column": 52,
+        "line": 243,
+        "message": "C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed"
       }
     ],
     "success": false,
@@ -107,15 +89,16 @@
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 15,
-    "pseudocode_lines": 304,
+    "pseudocode_lines": 299,
     "suspect_count": 21,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "stack_param",
+      "suspect_float",
+      "unaffected_reg",
       "unresolved_funcptr"
     ],
-    "total_lines": 965
+    "total_lines": 960
   },
   "cross_references": [],
   "function": {
@@ -533,150 +516,150 @@
   },
   "suspects": [
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
+      "description": "Unaffected register variable",
+      "line": 21,
+      "match": "unaff_ESI",
+      "text": "CDeformableModelInstance *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 27,
+      "match": "in_stack_ffffff78",
+      "text": "CDemonActor *in_stack_ffffff78;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 28,
+      "match": "in_stack_ffffff7c",
+      "text": "int in_stack_ffffff7c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 31,
       "match": "code *",
       "text": "code *blend_callback;",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_ffffff78",
-      "text": "float in_stack_ffffff78;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 112,
-      "match": "code *",
-      "text": "(iVar11 = (**(code **)(*(int *)(iVar11 + 0x154) + 0xfc))(iVar11), iVar11 != 0)) {",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 113,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(this_ptr->unk4 + 0x154) + 0xf8))(this_ptr->unk4);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 133,
-      "match": "SUB14",
-      "text": "((CEnemy *)this_ptr,SUB14(this_ptr->guns_drawn == 0,0));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 221,
-      "match": "in_stack_ffffff78",
-      "text": "in_stack_ffffff78 = (float)local_14;",
+      "line": 32,
+      "match": "in_stack_ffffff90",
+      "text": "float in_stack_ffffff90;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 223,
+      "line": 111,
       "match": "in_stack_ffffff78",
-      "text": "in_stack_ffffff78 = (float)local_14 + 3.141593f;",
+      "text": "(pCVar9,in_stack_ffffff78,in_stack_ffffff7c), iVar13 != 0)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 225,
-      "match": "in_stack_ffffff78",
-      "text": "if ((float)1.57079632675 < in_stack_ffffff78) {",
+      "line": 111,
+      "match": "in_stack_ffffff7c",
+      "text": "(pCVar9,in_stack_ffffff78,in_stack_ffffff7c), iVar13 != 0)) {",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 226,
-      "match": "in_stack_ffffff78",
-      "text": "in_stack_ffffff78 = in_stack_ffffff78 + -3.141593f;",
-      "type": "stack_param"
+      "description": "Likely misinterpreted integer as float",
+      "line": 116,
+      "match": "1.12104e-44",
+      "text": "if (pCVar8[2].orient.vec.x == 1.12104e-44) {",
+      "type": "suspect_float"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 226,
-      "match": "in_stack_ffffff78",
-      "text": "in_stack_ffffff78 = in_stack_ffffff78 + -3.141593f;",
-      "type": "stack_param"
+      "description": "Unaffected register variable",
+      "line": 228,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI = (CDeformableModelInstance *)(delta_time * (float)3.1415926535000001);",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unaffected register variable",
+      "line": 229,
+      "match": "unaff_ESI",
+      "text": "if ((float)pCVar15 < -(float)unaff_ESI) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
       "line": 230,
-      "match": "in_stack_ffffff78",
-      "text": "if (in_stack_ffffff78 < local_1c) {",
-      "type": "stack_param"
+      "match": "unaff_ESI",
+      "text": "pCVar15 = (CDeformableModelInstance *)-(float)unaff_ESI;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 231,
-      "match": "in_stack_ffffff78",
-      "text": "in_stack_ffffff78 = local_1c;",
-      "type": "stack_param"
+      "description": "Unaffected register variable",
+      "line": 232,
+      "match": "unaff_ESI",
+      "text": "if ((float)unaff_ESI < (float)pCVar15) {",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unaffected register variable",
       "line": 233,
-      "match": "in_stack_ffffff78",
-      "text": "if (local_18 < in_stack_ffffff78) {",
-      "type": "stack_param"
+      "match": "unaff_ESI",
+      "text": "pCVar15 = unaff_ESI;",
+      "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 234,
-      "match": "in_stack_ffffff78",
-      "text": "in_stack_ffffff78 = local_18;",
+      "line": 253,
+      "match": "in_stack_ffffff90",
+      "text": "in_stack_ffffff90 = 1.4013e-45;",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 237,
-      "match": "in_stack_ffffff78",
-      "text": "(this_ptr->base).base.base.orient.vec.y + in_stack_ffffff78;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 261,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(iVar11 + 0x154) + 4))(iVar11,delta_time);",
-      "type": "unresolved_funcptr"
+      "description": "Likely misinterpreted integer as float",
+      "line": 253,
+      "match": "1.4013e-45",
+      "text": "in_stack_ffffff90 = 1.4013e-45;",
+      "type": "suspect_float"
     },
     {
       "description": "Complex pointer cast",
-      "line": 293,
+      "line": 288,
       "match": "(uint *)((int)",
-      "text": "puVar15 = (uint *)((int)&CStack_84 + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);",
+      "text": "puVar18 = (uint *)((int)&CStack_6c + (uint)bVar19 * -8 + (uint)bVar19 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 294,
+      "line": 289,
       "match": "(uint *)((int)",
-      "text": "puVar14 = (uint *)((int)&CStack_74 + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);",
+      "text": "puVar17 = (uint *)((int)&local_5c + (uint)bVar19 * -8 + (uint)bVar19 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
+      "line": 290,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&CStack_6c + (uint)bVar19 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 291,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_5c + (uint)bVar19 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
       "line": 295,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&CStack_84 + (uint)bVar16 * -8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 296,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&CStack_74 + (uint)bVar16 * -8 + 4);",
-      "type": "pointer_cast"
+      "match": "unaff_ESI",
+      "text": "(unaff_ESI,source_quaternions,fVar20,iVar13,blend_callback);",
+      "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 303,
-      "match": "in_stack_ffffff78",
-      "text": "((CCharacter *)this_ptr,delta_time,in_stack_ffffff78);",
+      "line": 298,
+      "match": "in_stack_ffffff90",
+      "text": "((CCharacter *)this_ptr,delta_time,in_stack_ffffff90);",
       "type": "stack_param"
     }
   ],

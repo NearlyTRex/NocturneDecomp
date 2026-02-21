@@ -3,7 +3,7 @@
     "errors": [
       {
         "category": "other",
-        "column": 48,
+        "column": 49,
         "line": 19,
         "message": "C-style cast from 'CDemonActor_vtable *' to 'float' is not allowed"
       }
@@ -13,16 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 55,
-    "complexity_score": 260,
+    "complexity_score": 261,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 4,
-    "pseudocode_lines": 35,
+    "pseudocode_lines": 36,
     "suspect_count": 22,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 90
+    "total_lines": 91
   },
   "cross_references": [
     {
@@ -152,154 +152,154 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 12,
       "match": "pCVar3[-1].",
-      "text": "pCVar3[-1].vertices[0x182].rest_lengths[7] = (float)&g_CGabriellaVTable;",
+      "text": "pCVar3[-1].vertices[0x182].rest_lengths[10] = (float)&g_CGabriellaVTable;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 13,
       "match": "pCVar3[-1].",
-      "text": "pCVar3[-1].locked_vertex_indices[0x37e] = 0;",
+      "text": "pCVar3[-1].locked_vertex_indices[0x381] = 0;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 14,
       "match": "pCVar3[-1].",
-      "text": "pCVar3[-1].locked_vertex_indices[0x37f] = 0;",
+      "text": "pCVar3[-1].locked_vertex_indices[0x382] = 0;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 15,
       "match": "pCVar3[-1].",
-      "text": "pCVar3[-1].locked_vertex_indices[0x380] = 0;",
+      "text": "pCVar3[-1].locked_vertex_indices[899] = 0;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 16,
       "match": "pCVar3[-1].",
-      "text": "pCVar3[-1].locked_vertex_indices[0x381] = 0;",
+      "text": "pCVar3[-1].vertex_sort_buffer = (int *)0x0;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 17,
       "match": "pCVar3[-1].",
-      "text": "pCVar3[-1].last_position.x = 0.0;",
+      "text": "pCVar3[-1].last_euler.x = 0.0;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 18,
       "match": "pCVar3[-1].",
-      "text": "pCVar3[-1].locked_vertex_indices[0x382] = 0;",
+      "text": "pCVar3[-1].inv_delta_time = 0.0;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 19,
       "match": "pCVar3[-1].",
-      "text": "pCVar3[-1].locked_vertex_indices[899] = -0x40f9f56e;",
+      "text": "pCVar3[-1].floor_y = -0.5235988;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 20,
       "match": "pCVar3[-1].",
-      "text": "pCVar3[-1].last_euler.z = 0.0;",
+      "text": "pCVar3[-1].unk.y = 0.0;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 21,
       "match": "pCVar3[-1].",
-      "text": "pCVar3[-1].last_euler.x = 0.0;",
+      "text": "pCVar3[-1].version_num = 0;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 22,
       "match": "pCVar3[-1].",
-      "text": "pCVar3[-1].last_position.y = 0.0;",
+      "text": "pCVar3[-1].last_euler.y = 0.0;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 23,
       "match": "pCVar3[-1].",
-      "text": "pCVar3[-1].version_num = 0;",
+      "text": "pCVar3[-1].unk.z = 0.0;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 25,
       "match": "pCVar3[-1].",
-      "text": "pCVar3[-1].vertex_sort_buffer = (int *)0x0;",
+      "text": "pCVar3[-1].last_position.x = 0.0;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 27,
       "match": "pCVar3[-1].",
-      "text": "pCVar3[-1].inv_delta_time = 0.0;",
+      "text": "pCVar3[-1].last_position.y = 0.0;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 28,
       "match": "pCVar3[-1].",
-      "text": "pCVar3[-1].floor_y = 0.0;",
+      "text": "pCVar3[-1].last_position.z = 0.0;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 29,
       "match": "pCVar3[-1].",
-      "text": "pCVar3[-1].last_euler.y = pCVar3[-1].last_euler.x;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 29,
-      "match": "pCVar3[-1].",
-      "text": "pCVar3[-1].last_euler.y = pCVar3[-1].last_euler.x;",
+      "text": "fVar1 = pCVar3[-1].last_euler.y;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 30,
       "match": "pCVar3[-1].",
-      "text": "pCVar3[-1].last_position.z = pCVar3[-1].last_position.y;",
+      "text": "pCVar3[-1].unk.x = (float)pCVar3[-1].version_num;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 30,
       "match": "pCVar3[-1].",
-      "text": "pCVar3[-1].last_position.z = pCVar3[-1].last_position.y;",
+      "text": "pCVar3[-1].unk.x = (float)pCVar3[-1].version_num;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 32,
+      "line": 31,
       "match": "pCVar3[-1].",
-      "text": "((CDeformableModelInstance *)(pCVar3[-1].vertices[0x182].rest_lengths + 8),",
+      "text": "pCVar3[-1].last_euler.z = fVar1;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 35,
+      "line": 33,
       "match": "pCVar3[-1].",
-      "text": "((CKeyFramedModelInstance *)(pCVar3[-1].locked_vertex_indices[0x323] + 0x158),",
+      "text": "((CDeformableModelInstance *)(pCVar3[-1].vertices[0x182].rest_lengths + 0xb),",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 37,
+      "line": 36,
       "match": "pCVar3[-1].",
-      "text": "return (CGabriella *)(pCVar3[-1].vertices[0x181].connected_indices + 10);",
+      "text": "((CKeyFramedModelInstance *)(pCVar3[-1].locked_vertex_indices[0x326] + 0x158),",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 38,
+      "match": "pCVar3[-1].",
+      "text": "return (CGabriella *)(pCVar3[-1].vertices[0x181].connected_indices + 0xd);",
       "type": "negative_offset"
     }
   ],

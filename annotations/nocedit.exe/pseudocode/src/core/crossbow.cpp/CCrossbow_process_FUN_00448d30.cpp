@@ -17,24 +17,18 @@ void __cdecl core_crossbow_cpp_CCrossbow_process_FUN_00448d30(CCrossbow *this_pt
   ;
   pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                      ((CDemonActor *)this_ptr,aCStack_1c,pCVar1);
-  (this_ptr->unk2).base.location.position.x = pCVar1->x;
-  (this_ptr->unk2).base.location.position.y = pCVar1->y;
-  (this_ptr->unk2).base.location.position.z = pCVar1->z;
+  (this_ptr->bolt_flame).base.location.position.x = pCVar1->x;
+  (this_ptr->bolt_flame).base.location.position.y = pCVar1->y;
+  (this_ptr->bolt_flame).base.location.position.z = pCVar1->z;
   if (((((this_ptr->base).weapon_state != 2) || ((this_ptr->base).ammo_count < 1)) ||
       ((this_ptr->base).ammo_type != 5)) || (0.0 < (this_ptr->base).fire_cooldown_timer)) {
-    core_flame_cpp_CFlame_FUN_004caa70(&this_ptr->unk2);
-    this_ptr->unk1[0] = '\0';
-    this_ptr->unk1[1] = '\0';
-    this_ptr->unk1[2] = '\0';
-    this_ptr->unk1[3] = '\0';
+    core_flame_cpp_CFlame_FUN_004caa70(&this_ptr->bolt_flame);
+    this_ptr->flame_active = 0;
   }
   else {
-    this_ptr->unk1[0] = '\x01';
-    this_ptr->unk1[1] = '\0';
-    this_ptr->unk1[2] = '\0';
-    this_ptr->unk1[3] = '\0';
+    this_ptr->flame_active = 1;
   }
-  core_flame_cpp_CFlame_process_FUN_004c9c00(&this_ptr->unk2,delta_time);
-  (this_ptr->base).base.is_transparent = *(int *)this_ptr->unk1;
+  core_flame_cpp_CFlame_process_FUN_004c9c00(&this_ptr->bolt_flame,delta_time);
+  (this_ptr->base).base.is_transparent = this_ptr->flame_active;
   return;
 }

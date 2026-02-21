@@ -4,19 +4,19 @@
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 320,
+        "line": 319,
         "message": "use of undeclared identifier 'stack0xfffffe10'; did you mean 'in_stack_fffffe10'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 52,
-        "line": 323,
+        "line": 322,
         "message": "use of undeclared identifier 'stack0xfffffe10'"
       },
       {
         "category": "other",
         "column": 48,
-        "line": 366,
+        "line": 365,
         "message": "C-style cast from 'CLarva *' to 'float' is not allowed"
       }
     ],
@@ -25,11 +25,11 @@
   },
   "complexity": {
     "assembly_lines": 637,
-    "complexity_score": 712,
+    "complexity_score": 711,
     "cross_reference_count": 0,
     "function_call_count": 22,
     "global_count": 17,
-    "pseudocode_lines": 357,
+    "pseudocode_lines": 356,
     "suspect_count": 33,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -38,7 +38,7 @@
       "unknown_type",
       "warning_unreachable"
     ],
-    "total_lines": 994
+    "total_lines": 993
   },
   "cross_references": [],
   "function": {
@@ -772,224 +772,224 @@
     },
     {
       "description": "Unknown/unresolved type",
-      "line": 26,
+      "line": 25,
       "match": "unkbyte10",
-      "text": "unkbyte10 Var17;",
+      "text": "unkbyte10 Var16;",
       "type": "unknown_type"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 26,
       "match": "in_stack_fffffe10",
       "text": "CLarva *in_stack_fffffe10;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 30,
+      "line": 29,
       "match": "in_stack_fffffe18",
       "text": "float in_stack_fffffe18;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 100,
+      "line": 99,
       "match": "fsin",
-      "text": "fVar14 = (float10)fsin((float10)-0.52359877558333301);",
+      "text": "fVar13 = (float10)fsin((float10)-0.52359877558333301);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 101,
+      "line": 100,
       "match": "fptan",
-      "text": "fVar15 = (float10)fptan((float10)0.52359877558333301);",
+      "text": "fVar14 = (float10)fptan((float10)0.52359877558333301);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 103,
+      "match": "fpatan",
+      "text": "Var16 = fpatan((float10)local_ec,(float10)local_14 + fVar15);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 104,
-      "match": "fpatan",
-      "text": "Var17 = fpatan((float10)local_ec,(float10)local_14 + fVar16);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 105,
       "match": "SQRT",
       "text": "fVar3 = SQRT(local_ec * local_ec + local_e4 * local_e4);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 106,
+      "line": 105,
       "match": "fcos",
-      "text": "fVar16 = (float10)fcos((float10)-0.52359877558333301);",
+      "text": "fVar15 = (float10)fcos((float10)-0.52359877558333301);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 106,
+      "match": "fsin",
+      "text": "fVar11 = (float10)fsin(Var16);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 107,
-      "match": "fsin",
-      "text": "fVar12 = (float10)fsin(Var17);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 108,
       "match": "fcos",
-      "text": "fVar13 = (float10)fcos(Var17);",
+      "text": "fVar12 = (float10)fcos(Var16);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 118,
+      "line": 117,
       "match": "SQRT",
       "text": "local_1c = SQRT(local_24 / local_20);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 155,
+      "line": 154,
       "match": "in_stack_fffffe10",
       "text": "in_stack_fffffe10 = this_ptr;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 158,
+      "line": 157,
       "match": "in_stack_fffffe10",
       "text": "in_stack_fffffe10 = (CLarva *)0x1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 173,
+      "line": 172,
       "match": "in_stack_fffffe10",
       "text": "in_stack_fffffe10 = (CLarva *)0x503624;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 176,
+      "line": 175,
       "match": "ABS",
       "text": "if (((float)0.39269908168750001 <= ABS(local_14)) || ((float)12 < local_2c)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 177,
+      "line": 176,
       "match": "in_stack_fffffe10",
       "text": "in_stack_fffffe10 = (CLarva *)0x1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 184,
+      "line": 183,
       "match": "in_stack_fffffe10",
       "text": "in_stack_fffffe10 = (CLarva *)0x41700000;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 195,
+      "line": 194,
       "match": "in_stack_fffffe10",
       "text": "in_stack_fffffe10 = this_ptr;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 200,
+      "line": 199,
       "match": "in_stack_fffffe10",
-      "text": "in_stack_fffffe10 = pCVar18;",
+      "text": "in_stack_fffffe10 = pCVar17;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 214,
+      "line": 213,
       "match": "in_stack_fffffe10",
       "text": "in_stack_fffffe10 = (CLarva *)0x3f000000;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 219,
+      "line": 218,
       "match": "in_stack_fffffe10",
-      "text": "path_map,(CVector3f *)in_stack_fffffe10,fVar19,in_stack_fffffe18);",
+      "text": "path_map,(CVector3f *)in_stack_fffffe10,fVar18,in_stack_fffffe18);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 219,
+      "line": 218,
       "match": "in_stack_fffffe18",
-      "text": "path_map,(CVector3f *)in_stack_fffffe10,fVar19,in_stack_fffffe18);",
+      "text": "path_map,(CVector3f *)in_stack_fffffe10,fVar18,in_stack_fffffe18);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 225,
+      "line": 224,
       "match": "in_stack_fffffe10",
-      "text": "in_stack_fffffe10 = pCVar9;",
+      "text": "in_stack_fffffe10 = pCVar8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 238,
+      "line": 237,
       "match": "in_stack_fffffe10",
       "text": "in_stack_fffffe10 = (CLarva *)0x5037db;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 251,
+      "line": 250,
       "match": "ABS",
       "text": "if (ABS(local_14) < (float)0.39269908168750001) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 252,
+      "line": 251,
       "match": "in_stack_fffffe10",
       "text": "in_stack_fffffe10 = (CLarva *)&(this_ptr->base).base.model;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 254,
+      "line": 253,
       "match": "in_stack_fffffe10",
       "text": "((CMotionController *)in_stack_fffffe10,2,1);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 313,
+      "line": 312,
       "match": "&stack0xfffffe10",
       "text": "(&stack0xfffffe10,\"slime.wav @%f *%f\",(double)(this_ptr->base).base.size_scale,",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 316,
+      "line": 315,
       "match": "&stack0xfffffe10",
       "text": "((CDemonActor *)this_ptr,&stack0xfffffe10);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 329,
+      "line": 328,
       "match": "in_stack_fffffe10",
       "text": "in_stack_fffffe10 = (CLarva *)(this_ptr->base).victim;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 331,
+      "line": 330,
       "match": "in_stack_fffffe10",
       "text": "(g_CDemonSetPtr,(CDemonActor *)in_stack_fffffe10);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 359,
+      "line": 358,
       "match": "in_stack_fffffe10",
       "text": "((CCharacter *)this_ptr,delta_time,(float)in_stack_fffffe10);",
       "type": "stack_param"

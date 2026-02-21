@@ -16,9 +16,9 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_FUN_004d1ec0(CFrankenstienMa
   float in_stack_00000008;
   float in_stack_0000000c;
   
-  fVar1 = in_stack_00000008 * in_stack_0000000c + (float)this_ptr->unk3;
-  this_ptr->unk3 = (int)fVar1;
+  fVar1 = in_stack_00000008 * in_stack_0000000c + this_ptr->particle_accumulator;
+  this_ptr->particle_accumulator = fVar1;
   dVar2 = floor((double)fVar1);
-  this_ptr->unk3 = (int)((float)this_ptr->unk3 - (float)(int)ROUND(ROUND(dVar2)));
+  this_ptr->particle_accumulator = this_ptr->particle_accumulator - (float)(int)ROUND(ROUND(dVar2));
   return;
 }

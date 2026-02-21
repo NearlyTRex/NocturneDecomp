@@ -23,15 +23,12 @@ int __cdecl core_flamegun_cpp_CFlameThrower_fire_FUN_004cb920(CFlameThrower *thi
             ((CDemonActor *)this_ptr,&CStack_10,input_local_point);
   core_fire_cpp_CFireEffect_createGunFlames_FUN_004c8ef0
             (g_CFireEffectPtr,&CStack_10,&(this_ptr->base).base.orient.vec,3,1);
-  if (*(int *)(this_ptr->unk + 8) == 0) {
+  if (this_ptr->was_firing_prev_frame == 0) {
     fVar2 = 1.0 / 4.0f;
     piVar1 = &(this_ptr->base).ammo_count;
     *piVar1 = *piVar1 + -1;
-    *(float *)(this_ptr->unk + 0xc) = fVar2;
+    this_ptr->fire_rate_timer = fVar2;
   }
-  this_ptr->unk[0] = '\x01';
-  this_ptr->unk[1] = '\0';
-  this_ptr->unk[2] = '\0';
-  this_ptr->unk[3] = '\0';
+  this_ptr->is_firing = 1;
   return 1;
 }

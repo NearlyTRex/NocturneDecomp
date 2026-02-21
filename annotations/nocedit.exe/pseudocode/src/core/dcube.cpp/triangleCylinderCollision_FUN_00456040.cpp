@@ -26,16 +26,16 @@ uint __cdecl core_dcube_cpp_triangleCylinderCollision_FUN_00456040(CDemonCubeTri
   CVector3f local_40;
   CVector3f local_34 [3];
   
-  if ((triangle->normal).y <= (float)-0.34000000000000002) {
-    fVar1 = triangle->vertices[0]->x - cylinder_center->x;
-    fVar9 = triangle->vertices[0]->y;
-    fVar2 = triangle->vertices[0]->z - cylinder_center->z;
-    local_4c.x = triangle->vertices[1]->x - cylinder_center->x;
-    local_4c.y = triangle->vertices[1]->y;
-    local_4c.z = triangle->vertices[1]->z - cylinder_center->z;
-    local_40.x = triangle->vertices[2]->x - cylinder_center->x;
-    local_40.y = triangle->vertices[2]->y;
-    local_40.z = triangle->vertices[2]->z - cylinder_center->z;
+  if ((triangle->triangle).normal.y <= (float)-0.34000000000000002) {
+    fVar1 = (triangle->triangle).vertices[0]->x - cylinder_center->x;
+    fVar9 = (triangle->triangle).vertices[0]->y;
+    fVar2 = (triangle->triangle).vertices[0]->z - cylinder_center->z;
+    local_4c.x = (triangle->triangle).vertices[1]->x - cylinder_center->x;
+    local_4c.y = (triangle->triangle).vertices[1]->y;
+    local_4c.z = (triangle->triangle).vertices[1]->z - cylinder_center->z;
+    local_40.x = (triangle->triangle).vertices[2]->x - cylinder_center->x;
+    local_40.y = (triangle->triangle).vertices[2]->y;
+    local_40.z = (triangle->triangle).vertices[2]->z - cylinder_center->z;
     local_58.x = fVar1;
     local_58.y = fVar9;
     local_58.z = fVar2;
@@ -102,8 +102,8 @@ uint __cdecl core_dcube_cpp_triangleCylinderCollision_FUN_00456040(CDemonCubeTri
                           (&local_4c,&local_40,cylinder_radius,out_height);
         uVar8 = core_dcube_cpp_intersectVerticalCylinderSegment_FUN_00455ed0
                           (&local_40,&local_58,cylinder_radius,out_height);
-        fVar9 = (triangle->normal).x;
-        fVar1 = (triangle->normal).z;
+        fVar9 = (triangle->triangle).normal.x;
+        fVar1 = (triangle->triangle).normal.z;
         uVar8 = uVar6 | uVar7 | uVar8;
         fVar9 = SQRT(fVar1 * fVar1 + fVar9 * fVar9);
         if ((g_DownwardRayInitialized & 1) == 0) {
@@ -114,8 +114,8 @@ uint __cdecl core_dcube_cpp_triangleCylinderCollision_FUN_00456040(CDemonCubeTri
         }
         if (0.01 <= (double)fVar9) {
           fVar9 = cylinder_radius / fVar9;
-          local_34[0].x = (triangle->normal).x * fVar9 + cylinder_center->x;
-          local_34[0].z = fVar9 * (triangle->normal).z + cylinder_center->z;
+          local_34[0].x = (triangle->triangle).normal.x * fVar9 + cylinder_center->x;
+          local_34[0].z = fVar9 * (triangle->triangle).normal.z + cylinder_center->z;
           local_34[0].y = cylinder_center->y;
           fVar9 = core_dcube_cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00455460
                             (triangle,local_34,&g_DownwardRayDirection);

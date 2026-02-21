@@ -16,12 +16,12 @@
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   TerminatedCString s_skeledit_ini_00681868
 ;   CEditorTools g_CEditorToolsInstance
-;   undefined1 DAT_03670848
-;   undefined1 DAT_03670849
-;   undefined1 DAT_03670950
-;   undefined1 DAT_03670951
-;   undefined1 DAT_03670a58
-;   undefined1 DAT_03670a59
+;   undefined4 DAT_03670848
+;   undefined4 DAT_03670849
+;   undefined4 DAT_03670950
+;   undefined4 DAT_03670951
+;   undefined4 DAT_03670a58
+;   undefined4 DAT_03670a59
 ;
 ; Called Functions:
 ;   crt_stack.c___STK_FUN_005ff9f3

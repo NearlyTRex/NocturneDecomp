@@ -133,9 +133,9 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 18,
+      "line": 19,
       "match": "pCVar1[-3].",
-      "text": "((CDeformableModelInstance *)&pCVar1[-3].models[0].textures[2].base.base.count,",
+      "text": "&pCVar1[-3].models[0].textures[2].textures[0].base.count,0);",
       "type": "negative_offset"
     }
   ],

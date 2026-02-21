@@ -15,10 +15,10 @@
 ; XREF[34]:
 ;   core_cloth.cpp_CCloth_showMenu_FUN_0043ddf0 at 0043e04f
 ;   core_course.cpp_CCourse_showEditorMenu_FUN_00443040 at 0044368e
-;   core_dmodel.cpp_CKeyFramedModel_copyTextureFiles_FUN_0047ca50 at 0047ca8c
 ;   core_dmodel.cpp_CKeyFramedModel_exportToS3D_FUN_00479f30 at 0047a013
 ;   core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330 at 00479750
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047da85
+;   core_dmodel.cpp_copyTextureFiles_FUN_0047ca50 at 0047ca8c
 ;   core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20 at 004bde9a
 ;   core_fileman.cpp_preprocessMusicFiles_FUN_004bd750 at 004bd7fe
 ;   core_game.cpp_CGame_loadGame_FUN_004e12b0 at 004e12eb

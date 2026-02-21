@@ -22,10 +22,7 @@ CFilmProjector * __cdecl core_filmreel_cpp_CFilmProjector_ctor_FUN_004bea40(CFil
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (this_ptr_00,"filmreel.kfm");
   pcVar3 = ADJ(this_ptr_00)->base.dest_class;
-  *(char *)(this_ptr_00[1].part_visibility_flags + 0x1a) = '\0';
-  *(char *)((int)(this_ptr_00[1].part_visibility_flags + 0x1a) + 1) = '\0';
-  *(char *)((int)(this_ptr_00[1].part_visibility_flags + 0x1a) + 2) = '\0';
-  *(char *)((int)(this_ptr_00[1].part_visibility_flags + 0x1a) + 3) = '\0';
+  ADJ(this_ptr_00)->reel_rotation = 0.0;
   do {
     cVar1 = *pcVar2;
     *pcVar3 = cVar1;
@@ -36,15 +33,9 @@ CFilmProjector * __cdecl core_filmreel_cpp_CFilmProjector_ctor_FUN_004bea40(CFil
     pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
   pcVar2 = "none";
-  *(char *)(this_ptr_00[1].part_visibility_flags + 0x1b) = '\0';
-  *(char *)((int)(this_ptr_00[1].part_visibility_flags + 0x1b) + 1) = '\0';
-  *(char *)((int)(this_ptr_00[1].part_visibility_flags + 0x1b) + 2) = '\0';
-  *(char *)((int)(this_ptr_00[1].part_visibility_flags + 0x1b) + 3) = '\0';
-  pcVar3 = ADJ(this_ptr_00)->unk + 4;
-  *(char *)(this_ptr_00[1].part_visibility_flags + 0) = '\0';
-  *(char *)((int)(this_ptr_00[1].part_visibility_flags + 0) + 1) = '\0';
-  *(char *)((int)(this_ptr_00[1].part_visibility_flags + 0) + 2) = '\0';
-  *(char *)((int)(this_ptr_00[1].part_visibility_flags + 0) + 3) = '\0';
+  ADJ(this_ptr_00)->prev_dest_state = 0;
+  pcVar3 = ADJ(this_ptr_00)->key_event;
+  ADJ(this_ptr_00)->key_reel = (CDemonActor *)0x0;
   do {
     cVar1 = *pcVar2;
     *pcVar3 = cVar1;
@@ -54,9 +45,6 @@ CFilmProjector * __cdecl core_filmreel_cpp_CFilmProjector_ctor_FUN_004bea40(CFil
     pcVar3[1] = cVar1;
     pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
-  *(char *)(this_ptr_00[1].part_visibility_flags + 0x1c) = '\0';
-  *(char *)((int)(this_ptr_00[1].part_visibility_flags + 0x1c) + 1) = '\0';
-  *(char *)((int)(this_ptr_00[1].part_visibility_flags + 0x1c) + 2) = '\0';
-  *(char *)((int)(this_ptr_00[1].part_visibility_flags + 0x1c) + 3) = '\0';
+  ADJ(this_ptr_00)->sfx_handle = 0;
   return ADJ(this_ptr_00);
 }

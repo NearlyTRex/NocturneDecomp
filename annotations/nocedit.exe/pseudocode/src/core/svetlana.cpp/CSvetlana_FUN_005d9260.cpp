@@ -68,7 +68,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9260(CSvetlana *this_ptr)
       fStack_3c = 9999.9;
       pCVar5 = (CHero *)core_hero_cpp_CHero_FUN_004f3960(&this_ptr->base);
       if ((pCVar5 == (CHero *)0x0) || (local_28 <= fStack_3c)) {
-        if (this_ptr->unk1 != 0) {
+        if (this_ptr->blades_drawn != 0) {
           (this_ptr->base).player_control.action_states[6] = 1;
         }
       }
@@ -143,7 +143,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9260(CSvetlana *this_ptr)
     else {
       this_ptr_00 = &(this_ptr->base).base.model;
       if (bVar2) {
-        if (this_ptr->unk1 == 0) {
+        if (this_ptr->blades_drawn == 0) {
           (this_ptr->base).player_control.action_states[6] = 1;
         }
         else {
@@ -158,7 +158,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9260(CSvetlana *this_ptr)
       else {
         pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                            (&this_ptr_00->motion_controller);
-        if ((pSVar7->state_index == 10) && (this_ptr->unk1 != 0)) {
+        if ((pSVar7->state_index == 10) && (this_ptr->blades_drawn != 0)) {
           (this_ptr->base).player_control.action_states[6] = 1;
         }
         iVar4 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._ue)->_ue).randomize)
@@ -232,14 +232,14 @@ void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9260(CSvetlana *this_ptr)
     if (fStack_8c < -local_24) {
       fStack_8c = -local_24;
     }
-    fStack_98 = fStack_8c - *(float *)(this_ptr->unk6 + 4);
+    fStack_98 = fStack_8c - (this_ptr->head_euler_angles).y;
     if (in_stack_00000008 * (float)3.1415926535000001 < fStack_98) {
       fStack_98 = in_stack_00000008 * (float)3.1415926535000001;
     }
     if (fStack_98 < in_stack_00000008 * (float)-3.1415926535000001) {
       fStack_98 = in_stack_00000008 * (float)-3.1415926535000001;
     }
-    *(float *)(this_ptr->unk6 + 4) = *(float *)(this_ptr->unk6 + 4) + fStack_98;
+    (this_ptr->head_euler_angles).y = (this_ptr->head_euler_angles).y + fStack_98;
   }
   return;
 }

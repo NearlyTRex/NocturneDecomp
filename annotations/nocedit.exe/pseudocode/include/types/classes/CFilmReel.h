@@ -12,7 +12,7 @@ typedef struct CFilmReel {
     CKeyFramedModelInstance model; // 0x158
     struct CDemonActor* carrier; // 0x2d4
     char movie_name[32]; // 0x2d8
-    float unk1; // 0x2f8
-    char unk2[32]; // 0x2fc
+    float pickup_radius; // 0x2f8
+    char dead[32]; // 0x2fc
 } CFilmReel;
 

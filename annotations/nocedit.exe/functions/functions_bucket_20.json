@@ -10634,7 +10634,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_cloth.cpp_CCloth_deleteCollisionBone_FUN_0043c3a0",
+    "name":"core_cloth.cpp_CClothList_applyRotation_FUN_0043c3a0",
     "ret":"void",
     "vars":{
       "params":[
@@ -10652,7 +10652,23 @@
               }
             ]
           },
-          "type":"CCloth*"
+          "type":"CClothList*"
+        },
+        {
+          "name":"euler",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
         }
       ]
     }
@@ -13171,13 +13187,13 @@
         {
           "name":"this_ptr",
           "storage":{
-            "offset":12,
+            "offset":4,
             "size":4,
             "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0xc]",
-                "offset":12,
+                "addr":"Stack[0x4]",
+                "offset":4,
                 "size":4
               }
             ]
@@ -13345,6 +13361,22 @@
         {
           "name":"this_ptr",
           "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CCramTex*"
+        },
+        {
+          "name":"visualization_mode",
+          "storage":{
             "offset":8,
             "size":4,
             "stack":true,
@@ -13356,10 +13388,10 @@
               }
             ]
           },
-          "type":"CCramTex*"
+          "type":"int"
         },
         {
-          "name":"visualization_mode",
+          "name":"draw_x",
           "storage":{
             "offset":12,
             "size":4,
@@ -13375,7 +13407,7 @@
           "type":"int"
         },
         {
-          "name":"draw_x",
+          "name":"draw_y",
           "storage":{
             "offset":16,
             "size":4,
@@ -13391,7 +13423,7 @@
           "type":"int"
         },
         {
-          "name":"draw_y",
+          "name":"draw_width",
           "storage":{
             "offset":20,
             "size":4,
@@ -13407,7 +13439,7 @@
           "type":"int"
         },
         {
-          "name":"draw_width",
+          "name":"draw_height",
           "storage":{
             "offset":24,
             "size":4,
@@ -13416,22 +13448,6 @@
               {
                 "addr":"Stack[0x18]",
                 "offset":24,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
-          "name":"draw_height",
-          "storage":{
-            "offset":28,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x1c]",
-                "offset":28,
                 "size":4
               }
             ]
@@ -69282,6 +69298,22 @@
         {
           "name":"this_ptr",
           "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CBoneStructure*"
+        },
+        {
+          "name":"file",
+          "storage":{
             "offset":8,
             "size":4,
             "stack":true,
@@ -69293,10 +69325,10 @@
               }
             ]
           },
-          "type":"CBoneStructure*"
+          "type":"_FILE*"
         },
         {
-          "name":"file",
+          "name":"frame_count_out",
           "storage":{
             "offset":12,
             "size":4,
@@ -69305,22 +69337,6 @@
               {
                 "addr":"Stack[0xc]",
                 "offset":12,
-                "size":4
-              }
-            ]
-          },
-          "type":"_FILE*"
-        },
-        {
-          "name":"frame_count_out",
-          "storage":{
-            "offset":16,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x10]",
-                "offset":16,
                 "size":4
               }
             ]
@@ -69478,13 +69494,13 @@
         {
           "name":"this_ptr",
           "storage":{
-            "offset":8,
+            "offset":4,
             "size":4,
             "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x8]",
-                "offset":8,
+                "addr":"Stack[0x4]",
+                "offset":4,
                 "size":4
               }
             ]
@@ -69494,13 +69510,13 @@
         {
           "name":"file_handle",
           "storage":{
-            "offset":12,
+            "offset":8,
             "size":4,
             "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0xc]",
-                "offset":12,
+                "addr":"Stack[0x8]",
+                "offset":8,
                 "size":4
               }
             ]
@@ -69996,6 +70012,22 @@
         {
           "name":"this_ptr",
           "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModel*"
+        },
+        {
+          "name":"file_handle",
+          "storage":{
             "offset":8,
             "size":4,
             "stack":true,
@@ -70007,7 +70039,7 @@
               }
             ]
           },
-          "type":"CDeformableModel*"
+          "type":"_FILE*"
         }
       ]
     }
@@ -88875,7 +88907,7 @@
       ],
       "params":[
         {
-          "name":"socket",
+          "name":"socket_handle",
           "storage":{
             "offset":4,
             "size":4,
@@ -89001,7 +89033,7 @@
       ],
       "params":[
         {
-          "name":"socket",
+          "name":"socket_handle",
           "storage":{
             "offset":4,
             "size":4,
@@ -89093,7 +89125,7 @@
     "vars":{
       "params":[
         {
-          "name":"socket",
+          "name":"socket_handle",
           "storage":{
             "offset":4,
             "size":4,

@@ -4,7 +4,7 @@
 ; int __cdecl shape_cramtex_cpp_CCramTex_addTextureEntry_FUN_00446100(CCramTex *this_ptr)
 ;
 ; Parameters:
-; CCramTex *       Stack[0xc]:4   this_ptr
+; CCramTex *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   CCramTex[1] g_CramSortedTextureEntries

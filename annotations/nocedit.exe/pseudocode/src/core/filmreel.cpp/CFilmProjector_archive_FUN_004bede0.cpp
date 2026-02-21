@@ -13,7 +13,7 @@ void __cdecl core_filmreel_cpp_CFilmProjector_archive_FUN_004bede0(CFilmProjecto
   if (g_CFilmProjectorClassVersion < 2) {
     return;
   }
-  core_actor_cpp_archiveActor_FUN_0040b870((CDemonActor *)this_ptr->unk,"keyReel");
-  core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->unk + 4,"keyEvent");
+  core_actor_cpp_archiveActor_FUN_0040b870((CDemonActor *)&this_ptr->key_reel,"keyReel");
+  core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->key_event,"keyEvent");
   return;
 }

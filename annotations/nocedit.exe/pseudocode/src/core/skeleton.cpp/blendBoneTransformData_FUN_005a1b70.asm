@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_skeleton_cpp_blendBoneTransformData_FUN_005a1b70(CVector3f *result_root_pos,SBoneTransformData *bone_data_out,SBoneTransformData *bone_data_in,float blend_weight,CDeformableModelInstance *instance_ptr)
+; void __cdecl core_skeleton_cpp_blendBoneTransformData_FUN_005a1b70(CVector3f *result_root_pos,SPose *bone_data_out,SPose *bone_data_in,float blend_weight,CDeformableModelInstance *instance_ptr)
 ;
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   result_root_pos
-; SBoneTransformData * Stack[0x8]:4   bone_data_out
-; SBoneTransformData * Stack[0xc]:4   bone_data_in
+; SPose *          Stack[0x8]:4   bone_data_out
+; SPose *          Stack[0xc]:4   bone_data_in
 ; float            Stack[0x10]:4   blend_weight
 ; CDeformableModelInstance * Stack[0x14]:4   instance_ptr
 ; Local Variables:
@@ -160,7 +160,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x5c]      ; 005a1cc5
     PUSH EBX                            ; 005a1cc9
     CALL core_skeleton.cpp_computeBoneWorldMatrices_FUN_005a1950 ; 005a1cca
-        ;   XREF to: 005a1950 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_computeBoneWorldMatrices_FUN_005a1950(SBoneTransformData * bone_data, CDeformableModelInstance * instance_ptr)
+        ;   XREF to: 005a1950 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_computeBoneWorldMatrices_FUN_005a1950(SPose * bone_data, CDeformableModelInstance * instance_ptr)
     ADD ESP,0x8                         ; 005a1ccf
     ADD ESP,0x44                        ; 005a1cd2
     POP EBP                             ; 005a1cd5

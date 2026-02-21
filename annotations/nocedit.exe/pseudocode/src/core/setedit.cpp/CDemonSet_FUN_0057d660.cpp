@@ -409,7 +409,7 @@ LAB_0057db4e:
         }
       }
       else if (uVar6 < 0x47) {
-        if (*(int *)(unaff_EDI->texture_list[0].unknown + 8) == 0) {
+        if (*(int *)unaff_EDI->texture_list[0].textures[1].texture_name == 0) {
           shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
                     (g_CEditorToolsPtr,"Enter FOV",(float *)((int)PTR_DAT_00681ab8 + 0x18),
                      0,0.0,0.0,1);

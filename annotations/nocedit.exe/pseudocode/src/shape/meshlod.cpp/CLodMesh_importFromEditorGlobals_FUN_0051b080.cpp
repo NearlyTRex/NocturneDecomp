@@ -25,7 +25,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_importFromEditorGlobals_FUN_0051b080(CLo
     do {
       iVar4 = iVar4 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar1 + -0x14) + -2;
       if (g_ModelPolygonData[0].texture_name[iVar1] != '\0') {
-        shape_meshlod_cpp_CLodMesh_findOrAddSubmesh_FUN_00518790
+        shape_meshlod_cpp_CLodMesh_findOrAddLodTexture_FUN_00518790
                   (this_ptr,g_ModelPolygonData[0].texture_name + iVar1);
       }
       iVar3 = iVar3 + 1;
@@ -33,7 +33,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_importFromEditorGlobals_FUN_0051b080(CLo
     } while (iVar3 < g_PolygonCount);
   }
   shape_meshlod_cpp_CLodMesh_allocate_FUN_00515ac0
-            (this_ptr,g_VertexCount,iVar4,this_ptr->submesh_count);
+            (this_ptr,g_VertexCount,iVar4,this_ptr->lod_texture_count);
   iVar3 = 0;
   if (0 < this_ptr->vertex_count) {
     iVar4 = 0;
@@ -53,7 +53,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_importFromEditorGlobals_FUN_0051b080(CLo
   iVar3 = g_PolygonCount;
   local_18 = 0;
   local_1c = 0;
-  this_ptr->submesh_count = 0;
+  this_ptr->lod_texture_count = 0;
   if (0 < iVar3) {
     do {
       iVar3 = local_18 * 0x8c;
@@ -68,7 +68,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_importFromEditorGlobals_FUN_0051b080(CLo
             *piVar2 = -1;
           }
           else {
-            iVar1 = shape_meshlod_cpp_CLodMesh_findOrAddSubmesh_FUN_00518790
+            iVar1 = shape_meshlod_cpp_CLodMesh_findOrAddLodTexture_FUN_00518790
                               (this_ptr,g_ModelPolygonData[local_1c].texture_name);
             *piVar2 = iVar1;
           }

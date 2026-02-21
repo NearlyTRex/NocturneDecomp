@@ -2,31 +2,30 @@
 // Address: 0058b8e0
 // Address Range: [[0058b8e0, 0058b9a7]]
 // Convention: __cdecl
-// Signature: int __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058b8e0(CDeformableModel *this_ptr)
+// Signature: int __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058b8e0(CDeformableModel *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
-int __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058b8e0(CDeformableModel *this_ptr)
+int __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058b8e0(CDeformableModel *this_ptr,_FILE *file_handle)
 
 {
   int iVar1;
   int iVar2;
   char *path_buffer;
-  _FILE *in_stack_00000008;
   char local_214 [260];
   char local_110 [256];
   
   __STK();
   iVar2 = 1;
   do {
-    iVar1 = _fgetc(in_stack_00000008);
+    iVar1 = _fgetc(file_handle);
     if (iVar1 < 0) break;
   } while ((iVar1 != 10) || (iVar2 = iVar2 + -1, 0 < iVar2));
   iVar2 = 0;
   if (0 < this_ptr->num_textures) {
-    path_buffer = this_ptr->texture_sets[0].textures[0].texture_variants[0].texture_name;
+    path_buffer = this_ptr->texture_sets[0].textures[0].textures[0].texture_name;
     do {
-      iVar1 = _fscanf(in_stack_00000008,"%[^\n]\n",local_214);
+      iVar1 = _fscanf(file_handle,"%[^\n]\n",local_214);
       if (iVar1 != 1) {
         return 0;
       }

@@ -5,29 +5,29 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6494
-Successful: 5487 (84.5%)
-Failed: 1007
+Successful: 5493 (84.6%)
+Failed: 1001
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           1660
-  undeclared_identifier            894
+  other                           1631
+  undeclared_identifier            887
   incompatible_types               677
-  format_error                     596
-  syntax_error                      93
+  format_error                     584
+  syntax_error                      82
   missing_member                    27
-  lvalue_required                   26
+  lvalue_required                   27
   type_error                        18
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (1660 errors)
+CATEGORY: other (1631 errors)
 ====================================================================================================
 
   core_hero.cpp_CHero_FUN_004f3960
     Line 66: C-style cast from 'CCharacter *' to 'float' is not allowed
   core_imp.cpp_CImp_process_FUN_004f9c30
-    Line 268: C-style cast from 'CDemonActor *' to 'float' is not allowed
+    Line 267: C-style cast from 'CDemonActor *' to 'float' is not allowed
   core_gabriela.cpp_CGabriella_ctor_FUN_004d2b20
     Line 19: C-style cast from 'CDemonActor_vtable *' to 'float' is not allowed
   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
@@ -43,7 +43,7 @@ CATEGORY: other (1660 errors)
   core_msnedit.cpp_CDemonMission_FUN_0053e220
     Line 113: C-style cast from 'CKeys *' to 'float' is not allowed
   core_larva.cpp_CLarva_process_FUN_00503080
-    Line 366: C-style cast from 'CLarva *' to 'float' is not allowed
+    Line 365: C-style cast from 'CLarva *' to 'float' is not allowed
   core_ghoul.cpp_CGhoul_process_FUN_004e6600
     Line 170: C-style cast from 'CPlatform *' to 'float' is not allowed
   core_crossbow.cpp_CCrossbow_fire_FUN_00448f20
@@ -82,6 +82,8 @@ CATEGORY: other (1660 errors)
     Line 112: C-style cast from 'float *' to 'float' is not allowed
   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0
     Line 152: C-style cast from 'float *' to 'float' is not allowed
+  core_hero.cpp_CHero_FUN_004f33b0
+    Line 57: C-style cast from 'struct CDemonActor *' to 'float' is not allowed
   core_msnedit.cpp_CDemonMission_FUN_0053d3b0
     Line 52: C-style cast from 'struct CDemonActor *' to 'float' is not allowed
   core_setcolid.cpp_CDemonSet_testCapsuleCollision_FUN_00573470
@@ -167,15 +169,15 @@ CATEGORY: other (1660 errors)
   core_haystack.cpp_CHaystack_process_FUN_004f0e40
     Line 221: cannot cast from type 'float' to pointer type 'CCharacter_full_vtable *'
   core_icepick.cpp_CIcePick_process_FUN_004f80b0
-    Line 254: cannot cast from type 'float' to pointer type 'CCharacter_full_vtable *'
-  core_scat.cpp_CScat_process_FUN_005571f0
-    Line 227: cannot cast from type 'float' to pointer type 'CCharacter_full_vtable *'
+    Line 253: cannot cast from type 'float' to pointer type 'CCharacter_full_vtable *'
   core_svetlana.cpp_CSvetlana_process_FUN_005d8ba0
     Line 238: cannot cast from type 'float' to pointer type 'CCharacter_full_vtable *'
   core_gabriela.cpp_CGabriella_FUN_004d4d80
     Line 110: cannot cast from type 'float' to pointer type 'CDeformableModelInstance *'
   core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0
     Line 81: cannot cast from type 'float' to pointer type 'CDeformableModelInstance *'
+  core_scat.cpp_CScat_process_FUN_005571f0
+    Line 227: cannot cast from type 'float' to pointer type 'CDeformableModelInstance *'
   core_stranger.cpp_CStranger_FUN_005be520
     Line 138: cannot cast from type 'float' to pointer type 'CDeformableModelInstance *'
   core_stranger.cpp_CStranger_FUN_005bfb60
@@ -299,7 +301,7 @@ CATEGORY: other (1660 errors)
   core_script.cpp_CScript_loadState_FUN_00560820
     Line 45: data argument not used by format string [-Werror,-Wformat-extra-args]
   core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
-    Line 153: data argument not used by format string [-Werror,-Wformat-extra-args]
+    Line 150: data argument not used by format string [-Werror,-Wformat-extra-args]
   core_tommygun.cpp_CTommyGun_process_FUN_005de360
     Line 67: data argument not used by format string [-Werror,-Wformat-extra-args]
   shape_edittool.cpp_CEditorTools_promptForValidDouble_FUN_004a01f0
@@ -367,7 +369,7 @@ CATEGORY: other (1660 errors)
   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
     Line 231: member reference base type 'EActorPropertyType' (aka 'int') is not a structure or union
   core_lightgun.cpp_CLightGun_fire_FUN_00505c70
-    Line 61: member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union
+    Line 58: member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union
   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
     Line 151: member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union
   shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0
@@ -383,7 +385,7 @@ CATEGORY: other (1660 errors)
   core_setedit.cpp_CDemonSet_FUN_00581aa0
     Line 75: member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
-    Line 223: member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union
+    Line 218: member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union
   shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a2590
     Line 23: member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union
   engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
@@ -392,8 +394,6 @@ CATEGORY: other (1660 errors)
     Line 190: member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union
   core_gun.cpp_CGun_fire_FUN_004f0350
     Line 158: member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union
-  core_skeledit.cpp_FUN_0058c190
-    Line 172: member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union
   core_turret.cpp_CTurret_fire_FUN_005e3750
     Line 124: member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union
   sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0
@@ -577,13 +577,13 @@ CATEGORY: other (1660 errors)
   core_setutil.cpp_C3DSLight_save_FUN_00587090
     Line 16: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
-    Line 276: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+    Line 283: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120
-    Line 50: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+    Line 49: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_skeledit.cpp_CSkeleton_FUN_00592690
-    Line 227: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+    Line 236: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_skeledit.cpp_CSkeleton_saveStream_FUN_0058b3a0
-    Line 28: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+    Line 26: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_sound.cpp_CSound_process_FUN_005b2fd0
     Line 230: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_sound.cpp_playSfxInternal_FUN_005b1fd0
@@ -706,6 +706,8 @@ CATEGORY: other (1660 errors)
     Line 99: no matching literal operator for call to 'operator""_4_4_' with argument of type 'long double' or 'const char *', and no matching literal operator template
   core_scat.cpp_CScat_FUN_00558060
     Line 55: statement requires expression of integer type ('float' invalid)
+  core_scat.cpp_CScat_renderOpaque_FUN_00557df0
+    Line 25: statement requires expression of integer type ('float' invalid)
   core_stranger.cpp_CStranger_FUN_005c5270
     Line 123: statement requires expression of integer type ('float' invalid)
   core_stranger.cpp_CStranger_FUN_005c5f10
@@ -720,16 +722,10 @@ CATEGORY: other (1660 errors)
     Line 40: too many arguments to function call, expected 0, have 2
   sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005a80e0
     Line 19: too many arguments to function call, expected 2, have 3
-  core_crossbow.cpp_CCrossbow_ctor_FUN_00448c70
-    Line 21: type 'CCrossbow_ptr_1404' does not provide a subscript operator
   core_door.cpp_CDoor_ctor_FUN_0047fad0
     Line 79: type 'CDoor_ptr_344' does not provide a subscript operator
   core_drip.cpp_CDrip_ctor_FUN_0048e000
     Line 30: type 'CDrip_ptr_344' does not provide a subscript operator
-  core_filmreel.cpp_CFilmProjector_ctor_FUN_004bea40
-    Line 25: type 'CFilmProjector_ptr_500' does not provide a subscript operator
-  core_svetlana.cpp_CSvetlana_ctor_FUN_005d8850
-    Line 24: type 'CSvetlana_ptr_391756' does not provide a subscript operator
   core_dstrender.cpp_renderPerspectiveTexturedScanline_FUN_004940e9
     Line 37: use of undeclared label 'DAT_02d02584'
   core_dstrender.cpp_renderTexturedAlphaMMXScanline_FUN_004907e7
@@ -746,7 +742,7 @@ CATEGORY: other (1660 errors)
     Line 1036: use of undeclared label 'DAT_032758e8'
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (894 errors)
+CATEGORY: undeclared_identifier (887 errors)
 ====================================================================================================
 
   core_game.cpp_CGame_saveGame_FUN_004e0cd0
@@ -778,13 +774,11 @@ CATEGORY: undeclared_identifier (894 errors)
   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880
     Line 165: use of undeclared identifier 'DAT_0083b110'; did you mean 'DAT_0083b10c'?
   shape_cramtex.cpp_generateTextureAtlasLayout_FUN_00444d90
-    Line 98: use of undeclared identifier 'DAT_0084a8b0'; did you mean 'DAT_00823a80'?
+    Line 96: use of undeclared identifier 'DAT_0084a8b0'; did you mean 'DAT_00823a80'?
   shape_cramtex.cpp_generateTextureAtlas_FUN_00445820
-    Line 74: use of undeclared identifier 'DAT_0084a8b0'; did you mean 'DAT_00823a80'?
+    Line 72: use of undeclared identifier 'DAT_0084a8b0'; did you mean 'DAT_00823a80'?
   core_inv.cpp_drawWeaponIconBackground_FUN_00500050
     Line 31: use of undeclared identifier 'DAT_00a00000'; did you mean 'DAT_00400080'?
-  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0
-    Line 418: use of undeclared identifier 'DAT_02c14c88'
   core_fire.cpp_CShell_onCollision_FUN_004c6380
     Line 33: use of undeclared identifier 'DAT_02d141dc'; did you mean 'DAT_02d141e0'?
   core_flies.cpp_CFlies_renderOpaque_FUN_004cc300
@@ -841,14 +835,18 @@ CATEGORY: undeclared_identifier (894 errors)
     Line 41: use of undeclared identifier 'DAT_03654370'; did you mean 'DAT_03659190'?
   core_skeledit.cpp_FUN_0058bd00
     Line 71: use of undeclared identifier 'DAT_0365a3e8'
-  core_skeledit.cpp_CSkeleton_FUN_00592690
-    Line 317: use of undeclared identifier 'DAT_0365caf8'
   core_skeledit.cpp_FUN_0058afe0
     Line 50: use of undeclared identifier 'DAT_0366b650'; did you mean 'DAT_0366b64c'?
+  core_skeledit.cpp_CDeformableModel_FUN_0058c190
+    Line 106: use of undeclared identifier 'DAT_03670650'
   core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
-    Line 287: use of undeclared identifier 'DAT_03670650'; did you mean 'DAT_03670950'?
-  core_skeledit.cpp_FUN_0058c190
-    Line 106: use of undeclared identifier 'DAT_03670650'; did you mean 'DAT_03670950'?
+    Line 294: use of undeclared identifier 'DAT_03670650'
+  core_skeledit.cpp_FUN_005897b0
+    Line 43: use of undeclared identifier 'DAT_03670848'
+  core_skeledit.cpp_FUN_00589a40
+    Line 24: use of undeclared identifier 'DAT_03670848'
+  core_skeledit.cpp_viewModel_FUN_00598fc0
+    Line 47: use of undeclared identifier 'DAT_03670848'
   shape_superopt.cpp_BonesAndPointsCheck_FUN_005d7e00
     Line 85: use of undeclared identifier 'DAT_03f6bbf0'
   shape_superopt.cpp_FUN_005d7750
@@ -905,6 +903,8 @@ CATEGORY: undeclared_identifier (894 errors)
     Line 712: use of undeclared identifier 'PTR_s_thrust_0066e310'
   core_script.cpp_CScript_step_FUN_0055a810
     Line 1527: use of undeclared identifier 'SUB14'
+  core_skeledit.cpp_CSkeleton_FUN_00592690
+    Line 313: use of undeclared identifier '_DAT_03670b5c'
   sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a5e70
     Line 39: use of undeclared identifier '_in_stack_00000010'; did you mean 'in_stack_00000010'?
   sound_sndmain.cpp_mixResampleStereoToStereo_FUN_005a5fb0
@@ -933,6 +933,8 @@ CATEGORY: undeclared_identifier (894 errors)
     Line 22: use of undeclared identifier '_port'
   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0054b190
     Line 37: use of undeclared identifier '_transparency_color'; did you mean 'transparency_color'?
+  shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
+    Line 73: use of undeclared identifier '_width'; did you mean 'width'?
   engine_dosio.c_reopenFileStream_FUN_00481b50
     Line 17: use of undeclared identifier 'clear_and_preserve_state'
   core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50
@@ -966,11 +968,7 @@ CATEGORY: undeclared_identifier (894 errors)
   core_inv.cpp_CInventory_addItem_FUN_004fd600
     Line 53: use of undeclared identifier 'code'
   core_lightgun.cpp_CLightGun_fire_FUN_00505c70
-    Line 227: use of undeclared identifier 'code'
-  core_mimic.cpp_CMimic_dtor_FUN_0051f2c0
-    Line 33: use of undeclared identifier 'code'
-  core_mimic.cpp_CMimic_setup_FUN_0051f3e0
-    Line 92: use of undeclared identifier 'code'
+    Line 218: use of undeclared identifier 'code'
   core_mission.cpp_CDemonMission_createOneHero_FUN_00524920
     Line 49: use of undeclared identifier 'code'
   core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0
@@ -981,14 +979,6 @@ CATEGORY: undeclared_identifier (894 errors)
     Line 21: use of undeclared identifier 'code'
   core_pendulum.cpp_CPendulum_FUN_005495c0
     Line 51: use of undeclared identifier 'code'
-  core_scat.cpp_CScat_FUN_00558720
-    Line 98: use of undeclared identifier 'code'
-  core_scat.cpp_CScat_FUN_00558fd0
-    Line 68: use of undeclared identifier 'code'
-  core_scat.cpp_CScat_process_FUN_005571f0
-    Line 119: use of undeclared identifier 'code'
-  core_scat.cpp_CScat_renderOpaque_FUN_00557df0
-    Line 21: use of undeclared identifier 'code'
   core_set.cpp_CDemonSet_FUN_0056cd60
     Line 35: use of undeclared identifier 'code'
   core_set.cpp_CDemonSet_FUN_0056cf00
@@ -1156,11 +1146,13 @@ CATEGORY: undeclared_identifier (894 errors)
   engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950
     Line 41: use of undeclared identifier 'stack0x0000002c'
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
-    Line 539: use of undeclared identifier 'stack0xffffcc64'
+    Line 522: use of undeclared identifier 'stack0xffffcc64'
   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
     Line 110: use of undeclared identifier 'stack0xffffe790'
   core_event.cpp_CEventList_executeCommand_FUN_004aacc0
     Line 381: use of undeclared identifier 'stack0xffffe9c4'
+  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0
+    Line 540: use of undeclared identifier 'stack0xfffff150'
   engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
     Line 65: use of undeclared identifier 'stack0xfffff17c'; did you mean 'in_stack_fffff17c'?
   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
@@ -1178,7 +1170,7 @@ CATEGORY: undeclared_identifier (894 errors)
   core_cloth.cpp_CCloth_addCollisionBone_FUN_0043c430
     Line 32: use of undeclared identifier 'stack0xfffffb34'; did you mean 'in_stack_fffffb34'?
   core_dracbrid.cpp_CDraculaBride_process_FUN_00484410
-    Line 574: use of undeclared identifier 'stack0xfffffb6c'; did you mean 'in_stack_fffffb6c'?
+    Line 565: use of undeclared identifier 'stack0xfffffb6c'; did you mean 'in_stack_fffffb6c'?
   engine_font.cpp_CBitFont_loadBitmap_FUN_004ccff0
     Line 47: use of undeclared identifier 'stack0xfffffbc4'; did you mean 'in_stack_fffffbc4'?
   sound_sndmain.cpp_readIni_FUN_005abf20
@@ -1198,17 +1190,17 @@ CATEGORY: undeclared_identifier (894 errors)
   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_004529b0
     Line 57: use of undeclared identifier 'stack0xfffffd8c'; did you mean 'in_stack_fffffd8c'?
   core_bride.cpp_CBride_process_FUN_00423a30
-    Line 204: use of undeclared identifier 'stack0xfffffe0c'; did you mean 'in_stack_fffffe0c'?
+    Line 203: use of undeclared identifier 'stack0xfffffe0c'; did you mean 'in_stack_fffffe0c'?
   core_larva.cpp_CLarva_process_FUN_00503080
-    Line 320: use of undeclared identifier 'stack0xfffffe10'; did you mean 'in_stack_fffffe10'?
+    Line 319: use of undeclared identifier 'stack0xfffffe10'; did you mean 'in_stack_fffffe10'?
   core_smiley.cpp_CSmiley_process_FUN_005a2800
-    Line 70: use of undeclared identifier 'stack0xfffffe34'; did you mean 'in_stack_fffffe34'?
+    Line 67: use of undeclared identifier 'stack0xfffffe34'; did you mean 'in_stack_fffffe34'?
   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90
     Line 348: use of undeclared identifier 'stack0xfffffe44'; did you mean 'in_stack_fffffe44'?
   core_game.cpp_CGame_processHotkeys_FUN_004dcee0
     Line 228: use of undeclared identifier 'stack0xfffffe54'
   core_imp.cpp_CImp_process_FUN_004f9c30
-    Line 386: use of undeclared identifier 'stack0xfffffe60'; did you mean 'in_stack_fffffe60'?
+    Line 377: use of undeclared identifier 'stack0xfffffe60'; did you mean 'in_stack_fffffe60'?
   core_sentinel.cpp_CSentinel_process_FUN_00568030
     Line 337: use of undeclared identifier 'stack0xfffffe60'; did you mean 'in_stack_fffffe60'?
   core_mobster.cpp_CMobster_process_FUN_00525840
@@ -1239,8 +1231,6 @@ CATEGORY: undeclared_identifier (894 errors)
     Line 172: use of undeclared identifier 'stack0xfffffec0'
   core_batcreat.cpp_CBatCreature_process_FUN_00415470
     Line 264: use of undeclared identifier 'stack0xfffffec4'; did you mean 'in_stack_fffffec4'?
-  core_skeledit.cpp_viewModel_FUN_00598fc0
-    Line 148: use of undeclared identifier 'stack0xfffffee8'
   core_path.cpp_CPathMap_findPathToDestination_FUN_00547320
     Line 222: use of undeclared identifier 'stack0xfffffee8'; did you mean 'in_stack_fffffee8'?
   core_main.c_finalizeGameSystems_FUN_00508570
@@ -1253,8 +1243,6 @@ CATEGORY: undeclared_identifier (894 errors)
     Line 256: use of undeclared identifier 'stack0xfffffef4'; did you mean 'in_stack_fffffef4'?
   core_gargoyle.cpp_CGargoyle_process_FUN_004e4a00
     Line 266: use of undeclared identifier 'stack0xfffffefc'; did you mean 'in_stack_fffffefc'?
-  shape_cramtex.cpp_CCramTex_visualizeTextureAtlas_FUN_00447f20
-    Line 55: use of undeclared identifier 'stack0xffffff00'; did you mean 'in_stack_ffffff00'?
   core_crossbow.cpp_CCrossbow_fire_FUN_00448f20
     Line 134: use of undeclared identifier 'stack0xffffff14'
   core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0
@@ -1264,9 +1252,7 @@ CATEGORY: undeclared_identifier (894 errors)
   core_turret.cpp_CTurret_fire_FUN_005e3750
     Line 123: use of undeclared identifier 'stack0xffffff24'
   core_drone.cpp_CDrone_process_FUN_0048ec70
-    Line 144: use of undeclared identifier 'stack0xffffff24'; did you mean 'in_stack_ffffff24'?
-  shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
-    Line 38: use of undeclared identifier 'stack0xffffff24'; did you mean 'in_stack_ffffff24'?
+    Line 143: use of undeclared identifier 'stack0xffffff24'; did you mean 'in_stack_ffffff24'?
   core_cow.cpp_CZombieCow_process_FUN_00444310
     Line 135: use of undeclared identifier 'stack0xffffff40'; did you mean 'in_stack_ffffff40'?
   shape_meshlod.cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30
@@ -1359,8 +1345,6 @@ CATEGORY: undeclared_identifier (894 errors)
     Line 63: use of undeclared identifier 'stack0xffffffd4'
   core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070
     Line 40: use of undeclared identifier 'stack0xffffffd4'
-  core_stranger.cpp_CStranger_FUN_005c6220
-    Line 101: use of undeclared identifier 'stack0xffffffd8'
   core_path.cpp_FUN_00548680
     Line 30: use of undeclared identifier 'stack0xffffffdc'
   shape_design.c_applyVertexCentering_FUN_004680f0
@@ -1381,6 +1365,8 @@ CATEGORY: undeclared_identifier (894 errors)
     Line 36: use of undeclared identifier 'stack0xffffffe8'
   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880
     Line 36: use of undeclared identifier 'stack0xffffffe8'
+  core_mimic.cpp_CMimic_setup_FUN_0051f3e0
+    Line 116: use of undeclared identifier 'stack0xffffffe8'
   core_path.cpp_CPathMap_updateIfNeeded_FUN_00546a60
     Line 52: use of undeclared identifier 'stack0xffffffe8'
   support_codec.cpp_CLZWDecompress_processBuffer_FUN_0043f5d0
@@ -1500,8 +1486,8 @@ CATEGORY: incompatible_types (677 errors)
     Line 110: assigning to 'SDialogEntry *' from incompatible type 'void *'
   core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004947a0
     Line 78: assigning to 'SIZE_T *' (aka 'unsigned long *') from incompatible type 'void *'
-  shape_meshlod.cpp_CLodMesh_findOrAddSubmesh_FUN_00518790
-    Line 32: assigning to 'SLodSubmesh *' from incompatible type 'void *'
+  shape_meshlod.cpp_CLodMesh_findOrAddLodTexture_FUN_00518790
+    Line 32: assigning to 'SMRGLTextureLod *' from incompatible type 'void *'
   shape_memdbg.cpp_debugCalloc_FUN_0050f350
     Line 27: assigning to 'SMemHead *' from incompatible type 'void *'
   shape_memdbg.cpp_debugMalloc_FUN_0050f250
@@ -1692,10 +1678,6 @@ CATEGORY: incompatible_types (677 errors)
     Line 63: assigning to 'int' from incompatible type 'void'
   core_svetlana.cpp_CSvetlana_FUN_005d9260
     Line 62: assigning to 'int' from incompatible type 'void'
-  core_svetlana.cpp_CSvetlana_processDamage_FUN_005d9d30
-    Line 44: assigning to 'int' from incompatible type 'void'
-  core_tommygun.cpp_CTommyGun_process_FUN_005de360
-    Line 46: assigning to 'int' from incompatible type 'void'
   wincore_windll.cpp_clear_FUN_005b7a30
     Line 17: assigning to 'int' from incompatible type 'void'
   wincore_windll.cpp_setColorTable16_FUN_005b7579
@@ -1727,7 +1709,7 @@ CATEGORY: incompatible_types (677 errors)
   shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180
     Line 50: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
   shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
-    Line 75: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
+    Line 74: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
   cockpit_ckptutil.c_copyScreenRegion_FUN_00432d90
     Line 24: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
   core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50
@@ -1775,7 +1757,7 @@ CATEGORY: incompatible_types (677 errors)
   core_bride.cpp_CBride_processDamage_FUN_00424830
     Line 74: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_bride.cpp_CBride_process_FUN_00423a30
-    Line 83: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+    Line 82: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_charactr.cpp_CCharacter_processFire_FUN_0042a830
     Line 103: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_cow.cpp_CZombieCow_processDamage_FUN_00444b40
@@ -1789,7 +1771,7 @@ CATEGORY: incompatible_types (677 errors)
   core_drone.cpp_CDrone_processDamage_FUN_0048f360
     Line 26: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_drone.cpp_CDrone_process_FUN_0048ec70
-    Line 136: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+    Line 135: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_dynamite.cpp_CDynamite_FUN_0049cf20
     Line 17: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_emitter.cpp_CEmitter_process_FUN_004a8070
@@ -1799,7 +1781,7 @@ CATEGORY: incompatible_types (677 errors)
   core_filmreel.cpp_CFilmProjector_archive_FUN_004beb40
     Line 22: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_flamegun.cpp_CFlameThrower_process_FUN_004cb9b0
-    Line 31: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+    Line 27: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_gargoyle.cpp_CGargoyle_processDamage_FUN_004e57d0
     Line 37: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_gargoyle.cpp_CGargoyle_process_FUN_004e4a00
@@ -1817,11 +1799,11 @@ CATEGORY: incompatible_types (677 errors)
   core_icepick.cpp_CIcePick_processDamage_FUN_004f95b0
     Line 66: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_icepick.cpp_CIcePick_process_FUN_004f80b0
-    Line 182: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+    Line 181: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_imp.cpp_CImp_processDamage_FUN_004fae00
     Line 53: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_imp.cpp_CImp_process_FUN_004f9c30
-    Line 309: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+    Line 308: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_larva.cpp_CLarva_processDamage_FUN_00503a20
     Line 41: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_mobster.cpp_CMobster_FUN_005279f0
@@ -1834,6 +1816,10 @@ CATEGORY: incompatible_types (677 errors)
     Line 50: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_stranger.cpp_CStranger_processDamage_FUN_005c48b0
     Line 81: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_svetlana.cpp_CSvetlana_processDamage_FUN_005d9d30
+    Line 45: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_tommygun.cpp_CTommyGun_process_FUN_005de360
+    Line 46: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_turret.cpp_CTurret_process_FUN_005e2430
     Line 108: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_tvbat.cpp_CTVBat_process_FUN_005e4210
@@ -1866,8 +1852,6 @@ CATEGORY: incompatible_types (677 errors)
     Line 116: incompatible integer to pointer conversion assigning to 'CWerewolf *' from 'uint32_t' (aka 'unsigned int')
   core_texlist.cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0
     Line 32: incompatible integer to pointer conversion assigning to 'HANDLE' (aka 'void *') from 'long'
-  core_mimic.cpp_CMimic_FUN_0051f930
-    Line 109: incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'CVector3i *'
   engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0
     Line 172: incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'SRenderVertex *'
   core_set.cpp_CDemonSet_addLightFilter_FUN_00570f10
@@ -1945,7 +1929,7 @@ CATEGORY: incompatible_types (677 errors)
   core_hostage.cpp_CHostage_process_FUN_004f4bd0
     Line 407: invalid operands to binary expression ('double' and 'int')
   core_lightgun.cpp_CLightGun_fire_FUN_00505c70
-    Line 123: invalid operands to binary expression ('double' and 'int')
+    Line 120: invalid operands to binary expression ('double' and 'int')
   core_motion.cpp_CMotionList_save_FUN_0052d170
     Line 53: invalid operands to binary expression ('double' and 'int')
   core_msnedit.cpp_CDemonMission_FUN_0053e220
@@ -2036,36 +2020,42 @@ CATEGORY: incompatible_types (677 errors)
     Line 163: invalid operands to binary expression ('float' and 'int')
   sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00
     Line 31: invalid operands to binary expression ('float' and 'int')
+  core_skeledit.cpp_CBoneStructure_FUN_0058ac80
+    Line 24: no matching function for call to '__STK'
   core_skeledit.cpp_CBoneStructure_fixupMatrices_FUN_0058adb0
-    Line 19: no matching function for call to '__STK'
-  core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0
     Line 17: no matching function for call to '__STK'
+  core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0
+    Line 18: no matching function for call to '__STK'
   core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10
     Line 19: no matching function for call to '__STK'
   core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0
     Line 65: no matching function for call to '__STK'
   core_skeledit.cpp_CBoneStructure_skipBONframe_FUN_0058abb0
-    Line 17: no matching function for call to '__STK'
+    Line 16: no matching function for call to '__STK'
   core_skeledit.cpp_CDeformableModelInstance_addFilesToExtract_FUN_0058a260
     Line 14: no matching function for call to '__STK'
   core_skeledit.cpp_CDeformableModelInstance_exportModelToS3D_FUN_00598ee0
     Line 16: no matching function for call to '__STK'
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
-    Line 174: no matching function for call to '__STK'
+    Line 170: no matching function for call to '__STK'
   core_skeledit.cpp_CDeformableModel_FUN_0058a2b0
     Line 22: no matching function for call to '__STK'
   core_skeledit.cpp_CDeformableModel_FUN_0058b660
     Line 29: no matching function for call to '__STK'
   core_skeledit.cpp_CDeformableModel_FUN_0058b8e0
-    Line 19: no matching function for call to '__STK'
+    Line 18: no matching function for call to '__STK'
   core_skeledit.cpp_CDeformableModel_FUN_0058b9b0
-    Line 38: no matching function for call to '__STK'
+    Line 37: no matching function for call to '__STK'
   core_skeledit.cpp_CDeformableModel_FUN_0058bc40
-    Line 21: no matching function for call to '__STK'
+    Line 20: no matching function for call to '__STK'
+  core_skeledit.cpp_CDeformableModel_FUN_0058c190
+    Line 105: no matching function for call to '__STK'
+  core_skeledit.cpp_CDeformableModel_FUN_0058d790
+    Line 62: no matching function for call to '__STK'
   core_skeledit.cpp_CDeformableModel_FUN_0058e240
     Line 43: no matching function for call to '__STK'
   core_skeledit.cpp_CDeformableModel_FUN_0058e3e0
-    Line 23: no matching function for call to '__STK'
+    Line 22: no matching function for call to '__STK'
   core_skeledit.cpp_CDeformableModel_FUN_0058e600
     Line 18: no matching function for call to '__STK'
   core_skeledit.cpp_CDeformableModel_FUN_0058ede0
@@ -2075,17 +2065,17 @@ CATEGORY: incompatible_types (677 errors)
   core_skeledit.cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690
     Line 33: no matching function for call to '__STK'
   core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
-    Line 245: no matching function for call to '__STK'
+    Line 252: no matching function for call to '__STK'
   core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
-    Line 61: no matching function for call to '__STK'
+    Line 60: no matching function for call to '__STK'
   core_skeledit.cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec60
     Line 23: no matching function for call to '__STK'
   core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120
-    Line 46: no matching function for call to '__STK'
+    Line 45: no matching function for call to '__STK'
   core_skeledit.cpp_CDeformableModel_save_FUN_0058f040
-    Line 16: no matching function for call to '__STK'
+    Line 15: no matching function for call to '__STK'
   core_skeledit.cpp_CDeformable_groundBias_FUN_0058e4e0
-    Line 20: no matching function for call to '__STK'
+    Line 18: no matching function for call to '__STK'
   core_skeledit.cpp_CLodMesh_FUN_00589c20
     Line 21: no matching function for call to '__STK'
   core_skeledit.cpp_CLodVert_copy_FUN_00599550
@@ -2093,11 +2083,11 @@ CATEGORY: incompatible_types (677 errors)
   core_skeledit.cpp_CLodVert_dtor_FUN_005995c0
     Line 12: no matching function for call to '__STK'
   core_skeledit.cpp_CSkeleton_FUN_00592690
-    Line 208: no matching function for call to '__STK'
+    Line 217: no matching function for call to '__STK'
   core_skeledit.cpp_CSkeleton_saveStream_FUN_0058b3a0
-    Line 26: no matching function for call to '__STK'
+    Line 24: no matching function for call to '__STK'
   core_skeledit.cpp_CSkeleton_save_FUN_0058b2c0
-    Line 17: no matching function for call to '__STK'
+    Line 15: no matching function for call to '__STK'
   core_skeledit.cpp_FUN_00589450
     Line 20: no matching function for call to '__STK'
   core_skeledit.cpp_FUN_005894c0
@@ -2116,8 +2106,6 @@ CATEGORY: incompatible_types (677 errors)
     Line 14: no matching function for call to '__STK'
   core_skeledit.cpp_FUN_00589b10
     Line 17: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_00589bb0
-    Line 15: no matching function for call to '__STK'
   core_skeledit.cpp_FUN_00589f40
     Line 16: no matching function for call to '__STK'
   core_skeledit.cpp_FUN_00589fa0
@@ -2132,8 +2120,6 @@ CATEGORY: incompatible_types (677 errors)
     Line 16: no matching function for call to '__STK'
   core_skeledit.cpp_FUN_0058ac30
     Line 18: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_0058ac80
-    Line 26: no matching function for call to '__STK'
   core_skeledit.cpp_FUN_0058ad30
     Line 23: no matching function for call to '__STK'
   core_skeledit.cpp_FUN_0058aeb0
@@ -2150,10 +2136,6 @@ CATEGORY: incompatible_types (677 errors)
     Line 18: no matching function for call to '__STK'
   core_skeledit.cpp_FUN_0058bd00
     Line 50: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_0058c190
-    Line 105: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_0058d790
-    Line 65: no matching function for call to '__STK'
   core_skeledit.cpp_FUN_0058dde0
     Line 21: no matching function for call to '__STK'
   core_skeledit.cpp_FUN_0058de70
@@ -2171,7 +2153,7 @@ CATEGORY: incompatible_types (677 errors)
   core_skeledit.cpp_FUN_00596860
     Line 17: no matching function for call to '__STK'
   core_skeledit.cpp_FUN_00598f10
-    Line 17: no matching function for call to '__STK'
+    Line 16: no matching function for call to '__STK'
   core_skeledit.cpp_FUN_00599480
     Line 20: no matching function for call to '__STK'
   core_skeledit.cpp_FUN_005995d0
@@ -2180,8 +2162,10 @@ CATEGORY: incompatible_types (677 errors)
     Line 15: no matching function for call to '__STK'
   core_skeledit.cpp_FUN_00599650
     Line 15: no matching function for call to '__STK'
+  core_skeledit.cpp_createMeshPrecomputeFile_FUN_00589bb0
+    Line 14: no matching function for call to '__STK'
   core_skeledit.cpp_readNonEmptyLine_FUN_005895f0
-    Line 16: no matching function for call to '__STK'
+    Line 15: no matching function for call to '__STK'
   core_skeledit.cpp_viewModel_FUN_00598fc0
     Line 24: no matching function for call to '__STK'
   core_skeleton.cpp_CSkeleton_ctor_FUN_00599880
@@ -2189,23 +2173,23 @@ CATEGORY: incompatible_types (677 errors)
   core_skeleton.cpp_CSkeleton_dtor_FUN_005998e0
     Line 14: no matching function for call to '__STK'
   shape_cramtex.cpp_CCramTex_addTextureEntry_FUN_00446100
-    Line 15: no matching function for call to '__STK'
+    Line 14: no matching function for call to '__STK'
   shape_cramtex.cpp_CCramTex_findHighestOverlappingY_FUN_004478c0
-    Line 17: no matching function for call to '__STK'
+    Line 16: no matching function for call to '__STK'
   shape_cramtex.cpp_CCramTex_findLeftmostOverlappingX_FUN_00447a10
-    Line 17: no matching function for call to '__STK'
+    Line 16: no matching function for call to '__STK'
   shape_cramtex.cpp_CCramTex_findLowestOverlappingY_FUN_00447930
-    Line 17: no matching function for call to '__STK'
+    Line 16: no matching function for call to '__STK'
   shape_cramtex.cpp_CCramTex_findRightmostOverlappingX_FUN_004479a0
-    Line 17: no matching function for call to '__STK'
+    Line 16: no matching function for call to '__STK'
   shape_cramtex.cpp_CCramTex_renderAllTexturesAndRectangles_FUN_00447ab0
-    Line 20: no matching function for call to '__STK'
+    Line 18: no matching function for call to '__STK'
   shape_cramtex.cpp_CCramTex_renderTextureEntry_FUN_00447c20
-    Line 21: no matching function for call to '__STK'
+    Line 20: no matching function for call to '__STK'
   shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160
-    Line 63: no matching function for call to '__STK'
+    Line 59: no matching function for call to '__STK'
   shape_cramtex.cpp_CCramTex_visualizeTextureAtlas_FUN_00447f20
-    Line 31: no matching function for call to '__STK'
+    Line 33: no matching function for call to '__STK'
   shape_cramtex.cpp_calculateAtlasEfficiency_FUN_00447e80
     Line 16: no matching function for call to '__STK'
   shape_cramtex.cpp_mapCoordinateToAtlas_FUN_00447a80
@@ -2213,13 +2197,13 @@ CATEGORY: incompatible_types (677 errors)
   shape_cramtex.cpp_maxInt_FUN_00448440
     Line 15: no matching function for call to '__STK'
   shape_cramtex.cpp_performGapFillingOptimization_FUN_00447590
-    Line 26: no matching function for call to '__STK'
+    Line 23: no matching function for call to '__STK'
   shape_cramtex.cpp_printAtlasLayoutReport_FUN_004481d0
-    Line 25: no matching function for call to '__STK'
+    Line 24: no matching function for call to '__STK'
   shape_cramtex.cpp_qsortRectanglesByActiveFlag_FUN_00446140
-    Line 15: no matching function for call to '__STK'
+    Line 12: no matching function for call to '__STK'
   shape_quantize.cpp_CColorQuantizer_ctor_FUN_00554900
-    Line 14: no matching function for call to '__STK'
+    Line 12: no matching function for call to '__STK'
   core_main.c_displayErrorAndQuit_FUN_00506f10
     Line 60: no matching function for call to '_errno'
   sound_mp3.cpp_testMP3DecoderBenchmark_FUN_00534210
@@ -2299,10 +2283,10 @@ CATEGORY: incompatible_types (677 errors)
   engine_3d.c_flushRenderQueue_FUN_00407a30
     Line 18: no matching function for call to 'wincore_windll_cpp_drawPolyList_FUN_005b7640'
   engine_drender.cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00
-    Line 90: no matching function for call to 'wincore_windll_cpp_drawPolyList_FUN_005b7640'
+    Line 92: no matching function for call to 'wincore_windll_cpp_drawPolyList_FUN_005b7640'
 
 ====================================================================================================
-CATEGORY: format_error (596 errors)
+CATEGORY: format_error (584 errors)
 ====================================================================================================
 
   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
@@ -2387,6 +2371,8 @@ CATEGORY: format_error (596 errors)
     Line 32: format specifies type 'char *' but the argument has type 'FileTrackingEntry *' [-Werror,-Wformat]
   core_charactr.cpp_CCharacter_propertyActionCallback_FUN_0042f3e0
     Line 60: format specifies type 'char *' but the argument has type 'SBone *' [-Werror,-Wformat]
+  core_skeledit.cpp_CSkeleton_saveStream_FUN_0058b3a0
+    Line 34: format specifies type 'char *' but the argument has type 'SBone *' [-Werror,-Wformat]
   core_skeleton.cpp_CSkeleton_loadStream_FUN_00599bb0
     Line 62: format specifies type 'char *' but the argument has type 'SBone *' [-Werror,-Wformat]
   core_cloth.cpp_CCloth_load_FUN_00438cf0
@@ -2518,7 +2504,7 @@ CATEGORY: format_error (596 errors)
   core_gore.cpp_CBloodPool_save_FUN_004ed1c0
     Line 18: format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]
   core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
-    Line 151: format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]
+    Line 148: format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]
   shape_meshlod.cpp_CLodMesh_exportToS3D_FUN_0051c100
     Line 43: format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]
   core_dtri.cpp_CDemonTriangle_readDataCSV_FUN_0049a4e0
@@ -2528,7 +2514,7 @@ CATEGORY: format_error (596 errors)
   core_course.cpp_CCourse_importMatrices_FUN_00442ea0
     Line 43: format specifies type 'float *' but the argument has type 'CMatrix3x3f *' [-Werror,-Wformat]
   core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10
-    Line 24: format specifies type 'float *' but the argument has type 'CMatrix3x4f *' [-Werror,-Wformat]
+    Line 23: format specifies type 'float *' but the argument has type 'CMatrix3x4f *' [-Werror,-Wformat]
   core_actor.cpp_archiveQuaternion_FUN_0040b520
     Line 15: format specifies type 'float *' but the argument has type 'CQuaternion4f *' [-Werror,-Wformat]
   core_event.cpp_parseVectorLocation_FUN_004aa530
@@ -2552,11 +2538,13 @@ CATEGORY: format_error (596 errors)
   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80
     Line 372: format specifies type 'float *' but the argument has type 'int *' [-Werror,-Wformat]
   core_skeledit.cpp_CDeformableModel_FUN_0058bc40
-    Line 31: format specifies type 'float *' but the argument has type 'uint *' (aka 'unsigned int *') [-Werror,-Wformat]
+    Line 30: format specifies type 'float *' but the argument has type 'uint *' (aka 'unsigned int *') [-Werror,-Wformat]
   core_setutil.cpp_C3DSLight_import3DS_FUN_005874d0
     Line 69: format specifies type 'int *' but the argument has type 'C3DSLight *' [-Werror,-Wformat]
   core_setutil.cpp_C3DSLight_importS3D_FUN_00587710
     Line 15: format specifies type 'int *' but the argument has type 'C3DSLight *' [-Werror,-Wformat]
+  core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0
+    Line 71: format specifies type 'int *' but the argument has type 'CBoneStructure *' [-Werror,-Wformat]
   core_fire.cpp_CCrater_load_FUN_004c4880
     Line 17: format specifies type 'int *' but the argument has type 'CCrater *' [-Werror,-Wformat]
   core_event.cpp_CEventList_loadState_FUN_004b0fc0
@@ -2575,8 +2563,6 @@ CATEGORY: format_error (596 errors)
     Line 110: format specifies type 'int *' but the argument has type 'SLod *' [-Werror,-Wformat]
   core_actor.cpp_archivePartStatus_FUN_0040bae0
     Line 57: format specifies type 'int *' but the argument has type 'SPartInstanceData *' [-Werror,-Wformat]
-  core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0
-    Line 71: format specifies type 'int *' but the argument has type '_FILE *' [-Werror,-Wformat]
   core_box.cpp_CBox_loadFromFile_FUN_0041fe90
     Line 22: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
   core_course.cpp_CCourse_importBON_FUN_00442bc0
@@ -2591,10 +2577,10 @@ CATEGORY: format_error (596 errors)
     Line 66: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
   core_skeledit.cpp_CDeformableModel_FUN_0058b660
     Line 59: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
+  core_skeledit.cpp_CDeformableModel_FUN_0058c190
+    Line 122: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
   core_skeledit.cpp_FUN_00589fe0
     Line 19: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
-  core_skeledit.cpp_FUN_0058c190
-    Line 123: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
   shape_design.c_createPolygonFromVertexList_FUN_0045cc80
     Line 35: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
   shape_design.c_createRotationalSweepGeometry_FUN_0045e070
@@ -2608,7 +2594,7 @@ CATEGORY: format_error (596 errors)
   core_game.cpp_CGame_loadGame_FUN_004e12b0
     Line 311: format specifies type 'int *' but the argument has type 'float *' [-Werror,-Wformat]
   core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
-    Line 296: format specifies type 'int *' but the argument has type 'float *' [-Werror,-Wformat]
+    Line 302: format specifies type 'int *' but the argument has type 'float *' [-Werror,-Wformat]
   core_bodypart.cpp_CBodyPart_archive_FUN_00419880
     Line 38: format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]
   core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00477110
@@ -2622,7 +2608,7 @@ CATEGORY: format_error (596 errors)
   shape_meshlod.cpp_CLodMesh_parseS3DFileVariant_FUN_0051adf0
     Line 77: format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]
   core_skeledit.cpp_CDeformableModel_FUN_0058b9b0
-    Line 49: format specifies type 'int *' but the argument has type 'ushort *' (aka 'unsigned short *') [-Werror,-Wformat]
+    Line 48: format specifies type 'int *' but the argument has type 'ushort *' (aka 'unsigned short *') [-Werror,-Wformat]
   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0
     Line 216: format specifies type 'int' but the argument has type 'CKeyFramedModelInstance *' [-Werror,-Wformat]
   core_menu.cpp_calibrateGamepad_FUN_005104d0
@@ -2655,7 +2641,7 @@ CATEGORY: format_error (596 errors)
     Line 36: format specifies type 'unsigned long' but the argument has type 'int' [-Werror,-Wformat]
 
 ====================================================================================================
-CATEGORY: syntax_error (93 errors)
+CATEGORY: syntax_error (82 errors)
 ====================================================================================================
 
   core_dskybox.cpp_renderSkyDome_FUN_004901f0
@@ -2691,11 +2677,7 @@ CATEGORY: syntax_error (93 errors)
   core_inv.cpp_CInventory_addItem_FUN_004fd600
     Line 53: expected expression
   core_lightgun.cpp_CLightGun_fire_FUN_00505c70
-    Line 227: expected expression
-  core_mimic.cpp_CMimic_dtor_FUN_0051f2c0
-    Line 33: expected expression
-  core_mimic.cpp_CMimic_setup_FUN_0051f3e0
-    Line 92: expected expression
+    Line 218: expected expression
   core_mission.cpp_CDemonMission_createOneHero_FUN_00524920
     Line 49: expected expression
   core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0
@@ -2706,16 +2688,6 @@ CATEGORY: syntax_error (93 errors)
     Line 21: expected expression
   core_pendulum.cpp_CPendulum_FUN_005495c0
     Line 51: expected expression
-  core_scat.cpp_CScat_FUN_00558060
-    Line 87: expected expression
-  core_scat.cpp_CScat_FUN_00558720
-    Line 98: expected expression
-  core_scat.cpp_CScat_FUN_00558fd0
-    Line 68: expected expression
-  core_scat.cpp_CScat_process_FUN_005571f0
-    Line 119: expected expression
-  core_scat.cpp_CScat_renderOpaque_FUN_00557df0
-    Line 21: expected expression
   core_set.cpp_CDemonSet_FUN_0056cd60
     Line 35: expected expression
   core_set.cpp_CDemonSet_FUN_0056cf00
@@ -2731,7 +2703,7 @@ CATEGORY: syntax_error (93 errors)
   core_shotgun.cpp_CShotgun_fire_FUN_00588060
     Line 122: expected expression
   core_smiley.cpp_CSmiley_process_FUN_005a2800
-    Line 118: expected expression
+    Line 115: expected expression
   core_stranger.cpp_CStranger_FUN_005bdd20
     Line 104: expected expression
   core_stranger.cpp_FUN_005bafe0
@@ -2792,7 +2764,7 @@ CATEGORY: missing_member (27 errors)
   engine_dosio.c_reopenFileStream_FUN_00481b50
     Line 19: no member named '__unbuffered_get_area' in 'filebuf'
   core_crossbow.cpp_CCrossbow_ctor_FUN_00448c70
-    Line 25: no member named 'flame_size' in 'CCrossbow'
+    Line 22: no member named 'flame_size' in 'CCrossbow'
   core_boxactor.cpp_CBoxActor_ctor_FUN_00421700
     Line 38: no member named 'is_valid' in 'CBoxActor'
   core_boxactor.cpp_CLightActor_ctor_FUN_00422990
@@ -2801,7 +2773,7 @@ CATEGORY: missing_member (27 errors)
     Line 20: no member named 'unk15' in 'CDemonActor'; did you mean 'unk1'?
 
 ====================================================================================================
-CATEGORY: lvalue_required (26 errors)
+CATEGORY: lvalue_required (27 errors)
 ====================================================================================================
 
   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0
@@ -2815,7 +2787,9 @@ CATEGORY: lvalue_required (26 errors)
   core_scat.cpp_CScat_FUN_005584a0
     Line 114: cannot take the address of an rvalue of type 'float'
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
-    Line 565: cannot take the address of an rvalue of type 'float'
+    Line 548: cannot take the address of an rvalue of type 'float'
+  core_skeledit.cpp_CSkeleton_FUN_00592690
+    Line 491: cannot take the address of an rvalue of type 'float'
   core_stranger.cpp_CStranger_FUN_005c02b0
     Line 141: cannot take the address of an rvalue of type 'float'
   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
@@ -2846,11 +2820,11 @@ CATEGORY: type_error (18 errors)
   core_icepick.cpp_CIcePick_FUN_004f8810
     Line 21: unknown type name 'code'
   core_icepick.cpp_CIcePick_process_FUN_004f80b0
-    Line 30: unknown type name 'code'
+    Line 29: unknown type name 'code'
   core_scat.cpp_CScat_FUN_005584a0
     Line 22: unknown type name 'code'
   core_scat.cpp_CScat_process_FUN_005571f0
-    Line 34: unknown type name 'code'
+    Line 38: unknown type name 'code'
   core_stranger.cpp_CStranger_FUN_005be520
     Line 34: unknown type name 'code'
   core_stranger.cpp_CStranger_FUN_005bf720

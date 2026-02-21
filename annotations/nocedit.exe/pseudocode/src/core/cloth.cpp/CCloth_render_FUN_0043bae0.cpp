@@ -37,7 +37,7 @@ void __cdecl core_cloth_cpp_CCloth_render_FUN_0043bae0(CCloth *this_ptr,int use_
   if (iVar9 < 63000) {
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,iVar9);
   }
-  engine_texture_cpp_ensureTextureLoaded_FUN_005dd800(&(this_ptr->model).texture_list[0].base);
+  engine_texture_cpp_ensureTextureLoaded_FUN_005dd800((this_ptr->model).texture_list[0].textures);
   if (this_ptr->double_sided == 0) {
     core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
               (g_CDemonSetPtr,(this_ptr->model).vertex_count,(this_ptr->model).poly_count / 2,

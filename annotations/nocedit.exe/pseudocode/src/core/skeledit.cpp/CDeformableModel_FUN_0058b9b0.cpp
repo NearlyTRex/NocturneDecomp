@@ -2,13 +2,13 @@
 // Address: 0058b9b0
 // Address Range: [[0058b9b0, 0058bc30]]
 // Convention: __cdecl
-// Signature: int __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058b9b0(CDeformableModel *this_ptr)
+// Signature: int __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058b9b0(CDeformableModel *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
-int __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058b9b0(CDeformableModel *this_ptr)
+int __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058b9b0(CDeformableModel *this_ptr,_FILE *file_handle)
 
 {
   SInputFace *pSVar1;
@@ -17,7 +17,6 @@ int __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058b9b0(CDeformableModel *th
   ushort *puVar4;
   int iVar5;
   int iVar6;
-  _FILE *in_stack_00000008;
   float local_54;
   byte local_50 [4];
   byte local_4c [4];
@@ -38,7 +37,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058b9b0(CDeformableModel *th
   __STK();
   iVar5 = 1;
   do {
-    iVar2 = _fgetc(in_stack_00000008);
+    iVar2 = _fgetc(file_handle);
     if (iVar2 < 0) break;
   } while ((iVar2 != 10) || (iVar5 = iVar5 + -1, 0 < iVar5));
   iVar5 = 0;
@@ -46,8 +45,8 @@ int __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058b9b0(CDeformableModel *th
     iVar2 = 0;
     iVar6 = 0;
     do {
-      iVar3 = _fscanf(in_stack_00000008,"%d,%d,%f,%f,%d,%f,%f,%d,%f,%f\n",&local_28,local_3c,
-                         &local_48,&local_54,local_38,local_44,local_50,local_34,local_40,local_4c);
+      iVar3 = _fscanf(file_handle,"%d,%d,%f,%f,%d,%f,%f,%d,%f,%f\n",&local_28,local_3c,&local_48,
+                         &local_54,local_38,local_44,local_50,local_34,local_40,local_4c);
       if (iVar3 != 10) {
         return 0;
       }

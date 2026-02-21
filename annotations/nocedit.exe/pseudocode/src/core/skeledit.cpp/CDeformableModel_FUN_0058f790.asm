@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_skeledit.cpp_CDeformableModel_FUN_0058b660 at 0058b8aa
-;   core_skeledit.cpp_FUN_0058c190 at 0058c35e
+;   core_skeledit.cpp_CDeformableModel_FUN_0058c190 at 0058c35e
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_TheOnlyPart_0064b4bf

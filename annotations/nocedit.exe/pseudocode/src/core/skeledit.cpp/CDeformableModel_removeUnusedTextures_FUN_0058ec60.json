@@ -13,22 +13,22 @@
   },
   "complexity": {
     "assembly_lines": 162,
-    "complexity_score": 216,
+    "complexity_score": 88,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 4,
-    "pseudocode_lines": 71,
-    "suspect_count": 14,
+    "pseudocode_lines": 73,
+    "suspect_count": 1,
     "suspect_types": [
-      "stack_param"
+      "pointer_cast"
     ],
-    "total_lines": 233
+    "total_lines": 235
   },
   "cross_references": [
     {
       "addr": "0058c190",
       "from_addr": "0058c367",
-      "name": "core_skeledit.cpp_FUN_0058c190",
+      "name": "core_skeledit.cpp_CDeformableModel_FUN_0058c190",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -93,7 +93,7 @@
       {
         "call_addr": "0058c367",
         "call_type": "direct",
-        "caller": "core_skeledit.cpp_FUN_0058c190",
+        "caller": "core_skeledit.cpp_CDeformableModel_FUN_0058c190",
         "estimated_params": 1,
         "instructions_analyzed": 3,
         "reg_params": [],
@@ -136,10 +136,10 @@
     "pcode_op_count": 617
   },
   "stack_frame": {
-    "frame_size": 48,
+    "frame_size": 44,
     "local_size": 40,
     "param_offset": 4,
-    "param_size": 8,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -180,7 +180,7 @@
       {
         "is_param": true,
         "name": "this_ptr",
-        "offset": 8,
+        "offset": 4,
         "size": 4,
         "type": "CDeformableModel *"
       }
@@ -188,102 +188,11 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000004",
-      "text": "int *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000004",
-      "text": "if (in_stack_00000004[0x2e] != 1) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_00000004",
-      "text": "if (0 < in_stack_00000004[0x2f]) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_00000004",
-      "text": "local_1c = in_stack_00000004 + 0x30;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_00000004",
-      "text": "local_20 = in_stack_00000004 + 0x42;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_00000004",
-      "text": "if (0 < *in_stack_00000004) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_00000004",
-      "text": "local_18 = in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_00000004",
-      "text": "} while (iVar4 < *in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 45,
-      "match": "in_stack_00000004",
-      "text": "iVar4 = in_stack_00000004[0x2f];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 46,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[0x2f] = iVar4 + -1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 49,
-      "match": "in_stack_00000004",
-      "text": "piVar5 = in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 50,
-      "match": "in_stack_00000004",
-      "text": "if (0 < *in_stack_00000004) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 68,
-      "match": "in_stack_00000004",
-      "text": "} while (local_14 < *in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 71,
-      "match": "in_stack_00000004",
-      "text": "} while (iVar3 < in_stack_00000004[0x2f]);",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 56,
+      "match": "(int *)((int)",
+      "text": "piVar1 = (int *)((int)pCVar6->index_data_ptr[0] + iVar2);",
+      "type": "pointer_cast"
     }
   ]
 }

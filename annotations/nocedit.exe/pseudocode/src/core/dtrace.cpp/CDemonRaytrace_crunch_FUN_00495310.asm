@@ -605,7 +605,7 @@ section .text
     ADD EBX,0x1c                        ; 004957cd
     INC ESI                             ; 004957d0
     CALL core_dcube.cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0 ; 004957d1
-        ;   XREF to: 00456af0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0(CDemonCubeFrustum * frustum, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3, ...)
+        ;   XREF to: 00456af0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0(CDemonCube * this_ptr, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3, ...)
     MOV EDX,dword ptr [EBP + 0x72]      ; 004957d6
     ADD ESP,0x14                        ; 004957d9
     CMP ESI,EDX                         ; 004957dc

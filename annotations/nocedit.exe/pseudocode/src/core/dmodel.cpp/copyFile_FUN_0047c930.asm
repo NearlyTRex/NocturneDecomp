@@ -9,8 +9,8 @@
 ; int              Stack[0xc]:4   show_error_if_missing
 ;
 ; XREF[2]:
-;   core_dmodel.cpp_CKeyFramedModel_copyTextureFiles_FUN_0047ca50 at 0047cb95
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047d975
+;   core_dmodel.cpp_copyTextureFiles_FUN_0047ca50 at 0047cb95
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dmodel_cpp_006205bb

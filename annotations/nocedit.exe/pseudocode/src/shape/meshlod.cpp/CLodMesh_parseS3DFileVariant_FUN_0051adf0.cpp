@@ -10,8 +10,8 @@ void __cdecl shape_meshlod_cpp_CLodMesh_parseS3DFileVariant_FUN_0051adf0(CLodMes
 
 {
   int iVar1;
-  char *pcVar2;
-  int iVar3;
+  int iVar2;
+  char *pcVar3;
   int iVar4;
   char local_224 [260];
   char local_120 [256];
@@ -51,16 +51,16 @@ LAB_0051ae8f:
     if (iVar1 < 0) break;
   } while ((iVar1 != 10) || (iVar4 = iVar4 + -1, 0 < iVar4));
   iVar4 = 0;
-  if (0 < this_ptr->submesh_count) {
+  if (0 < this_ptr->lod_texture_count) {
     iVar1 = 0;
     do {
       _fscanf(file_handle,"%[^\n]\n",local_224);
       splitpath(local_224,(char *)0x0,(char *)0x0,local_120,(char *)0x0);
-      pcVar2 = this_ptr->submesh_data->texture_filename + iVar1;
+      pcVar3 = this_ptr->lod_textures->textures[0].texture_name + iVar1;
       iVar4 = iVar4 + 1;
       iVar1 = iVar1 + 0x48;
-      makepath(pcVar2,(char *)0x0,(char *)0x0,local_120,"raw");
-    } while (iVar4 < this_ptr->submesh_count);
+      makepath(pcVar3,(char *)0x0,(char *)0x0,local_120,"raw");
+    } while (iVar4 < this_ptr->lod_texture_count);
   }
   iVar4 = 1;
   do {
@@ -71,12 +71,12 @@ LAB_0051ae8f:
   if (0 < this_ptr->tri_count) {
     iVar1 = 0;
     do {
-      iVar3 = (int)this_ptr->tri_data->attribute_indices + iVar1;
+      iVar2 = (int)this_ptr->tri_data->attribute_indices + iVar1;
       iVar4 = iVar4 + 1;
       iVar1 = iVar1 + 0x8c;
-      _fscanf(file_handle,"%d, %d,%f,%f, %d,%f,%f, %d,%f,%f\n",iVar3,iVar3 + 0x10,iVar3 + 0x1c,
-                 iVar3 + 0x20,iVar3 + 0x14,iVar3 + 0x24,iVar3 + 0x28,iVar3 + 0x18,iVar3 + 0x2c,
-                 iVar3 + 0x30);
+      _fscanf(file_handle,"%d, %d,%f,%f, %d,%f,%f, %d,%f,%f\n",iVar2,iVar2 + 0x10,iVar2 + 0x1c,
+                 iVar2 + 0x20,iVar2 + 0x14,iVar2 + 0x24,iVar2 + 0x28,iVar2 + 0x18,iVar2 + 0x2c,
+                 iVar2 + 0x30);
     } while (iVar4 < this_ptr->tri_count);
   }
   iVar4 = 1;
@@ -88,10 +88,10 @@ LAB_0051ae8f:
   if (0 < this_ptr->vertex_count) {
     iVar1 = 0;
     do {
-      pcVar2 = this_ptr->vertex_data->lod_workspace + iVar1 + -0x10;
+      pcVar3 = this_ptr->vertex_data->lod_workspace + iVar1 + -0x10;
       iVar4 = iVar4 + 1;
       iVar1 = iVar1 + 0x4c4;
-      _fscanf(file_handle,"%f,%f,%f\n",pcVar2,pcVar2 + 4,pcVar2 + 8);
+      _fscanf(file_handle,"%f,%f,%f\n",pcVar3,pcVar3 + 4,pcVar3 + 8);
     } while (iVar4 < this_ptr->vertex_count);
   }
   this_ptr->active_attribute_count = 1;

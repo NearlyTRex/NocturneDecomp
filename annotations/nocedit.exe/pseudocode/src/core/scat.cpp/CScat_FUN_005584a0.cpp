@@ -84,7 +84,7 @@ void __cdecl core_scat_cpp_CScat_FUN_005584a0(CScat *this_ptr)
   if (local_160 <= 0.0) {
     return;
   }
-  core_xform_cpp_quaternionFromAngleY_FUN_005f79f0((float)this_ptr->unk6,&local_7c);
+  core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(this_ptr->aim_yaw,&local_7c);
   local_10c.w = local_7c.w;
   puVar4 = (uint *)((int)&local_10c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
   puVar3 = (uint *)((int)&local_7c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
@@ -93,7 +93,7 @@ void __cdecl core_scat_cpp_CScat_FUN_005584a0(CScat *this_ptr)
   *puVar4 = *puVar3;
   puVar4[(uint)bVar6 * -2 + 1] = puVar3[(uint)bVar6 * -2 + 1];
   pCVar2 = &local_10c;
-  core_xform_cpp_quaternionFromAngleX_FUN_005f79b0((float)this_ptr->unk5,&local_14c);
+  core_xform_cpp_quaternionFromAngleX_FUN_005f79b0(this_ptr->aim_pitch,&local_14c);
   local_11c.w = local_14c.w;
   puVar4 = (uint *)((int)&local_11c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
   puVar3 = (uint *)((int)&local_14c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);

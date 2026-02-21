@@ -6,10 +6,10 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6494
-Clean functions: 4286 (66.0%)
+Clean functions: 4306 (66.3%)
 Files at 100%: 20
 Files at 90%+: 39
-Files at 50%+: 192
+Files at 50%+: 193
 
 ====================================================================================================
 FILES AT 100% (COMPLETE)
@@ -40,6 +40,10 @@ Total: 20 files
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
 ====================================================================================================
+   96.4% | core/filmreel.cpp
+         27/28 clean, 1 remaining
+           - core_filmreel.cpp_CFilmProjector_archive_FUN_004beb40 (52 lines) [stack_param]
+
    95.7% | core/teleport.cpp
          22/23 clean, 1 remaining
            - core_teleport.cpp_FUN_005da850 (6 lines) [stack_param]
@@ -71,11 +75,6 @@ FILES AT 90-99% (ALMOST COMPLETE)
    92.9% | core/beast.cpp
          13/14 clean, 1 remaining
            - core_beast.cpp_CBeast_dtor_FUN_00418490 (30 lines) [negative_offset]
-
-   92.9% | core/filmreel.cpp
-         26/28 clean, 2 remaining
-           - core_filmreel.cpp_CFilmProjector_ctor_FUN_004bea40 (52 lines) [decompiler_intrinsic, pointer_cast]
-           - core_filmreel.cpp_CFilmProjector_archive_FUN_004beb40 (52 lines) [stack_param]
 
    92.9% | core/gasmask.cpp
          13/14 clean, 1 remaining
@@ -110,7 +109,7 @@ FILES AT 90-99% (ALMOST COMPLETE)
 
    90.0% | core/flamegun.cpp
          9/10 clean, 1 remaining
-           - core_flamegun.cpp_CFlameThrower_ctor_FUN_004cb880 (34 lines) [suspect_float]
+           - core_flamegun.cpp_CFlameThrower_ctor_FUN_004cb880 (22 lines) [suspect_float]
 
    90.0% | core/hiram.cpp
          9/10 clean, 1 remaining
@@ -164,7 +163,7 @@ FILES AT 50-89%
    85.7% | core/biggs.cpp
          12/14 clean, 2 remaining
            - core_biggs.cpp_CBiggs_renderOpaque_FUN_004189b0 (46 lines) [undefined_data]
-           - core_biggs.cpp_CBiggs_dtor_FUN_00418d10 (34 lines) [negative_offset]
+           - core_biggs.cpp_CBiggs_dtor_FUN_00418d10 (35 lines) [negative_offset]
    85.7% | core/dirmat.cpp
          6/7 clean, 1 remaining
            - core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160 (129 lines) [decompiler_intrinsic]
@@ -207,7 +206,7 @@ FILES AT 50-89%
    84.6% | core/drone.cpp
          11/13 clean, 2 remaining
            - core_drone.cpp_CDrone_dtor_FUN_0048f5a0 (31 lines) [negative_offset]
-           - core_drone.cpp_CDrone_process_FUN_0048ec70 (257 lines) [stack_param, stack_ref, warning_type_propagation]
+           - core_drone.cpp_CDrone_process_FUN_0048ec70 (256 lines) [stack_param, stack_ref, warning_type_propagation]
    84.6% | shape/memdbg.cpp
          22/26 clean, 4 remaining
            - shape_memdbg.cpp_debugRealloc_FUN_0050f540 (55 lines) [pointer_cast]
@@ -408,7 +407,7 @@ FILES AT 50-89%
          14/18 clean, 4 remaining
            - core_colonel.cpp_CColonel_FUN_0043ff20 (172 lines) [decompiler_intrinsic, stack_param, warning_type_propagation]
            - core_colonel.cpp_FUN_00440650 (7 lines) [stack_param]
-           - core_colonel.cpp_CColonel_process_FUN_0043fa00 (255 lines) [pointer_cast, stack_param, unknown_field, unresolved_funcptr, warning_type_propagation]
+           - core_colonel.cpp_CColonel_process_FUN_0043fa00 (254 lines) [pointer_cast, stack_param, unknown_field, unresolved_funcptr, warning_type_propagation]
            - core_colonel.cpp_CColonel_FUN_00440430 (20 lines) [decompiler_intrinsic, stack_param]
    77.8% | core/gore.cpp
          42/54 clean, 12 remaining
@@ -465,7 +464,7 @@ FILES AT 50-89%
          10/13 clean, 3 remaining
            - core_larva.cpp_CLarva_dtor_FUN_00503cc0 (30 lines) [negative_offset]
            - core_larva.cpp_FUN_005039d0 (11 lines) [stack_param]
-           - core_larva.cpp_CLarva_process_FUN_00503080 (357 lines) [decompiler_intrinsic, stack_param, stack_ref, unknown_type, warning_unreachable]
+           - core_larva.cpp_CLarva_process_FUN_00503080 (356 lines) [decompiler_intrinsic, stack_param, stack_ref, unknown_type, warning_unreachable]
    76.8% | core/event.cpp
          43/56 clean, 13 remaining
            - core_event.cpp_CEventList_updateSfxEntries_FUN_004b0db0 (53 lines) [decompiler_intrinsic, pointer_cast, stack_param, stack_ref]
@@ -556,6 +555,11 @@ FILES AT 50-89%
            - core_setutil.cpp_C3DSCamera_apply_FUN_00585870 (53 lines) [pointer_cast]
            - core_setutil.cpp_FUN_00585210 (5 lines) [stack_param]
            - core_setutil.cpp_C3DSLight_load_FUN_00586310 (185 lines) [pointer_cast]
+   75.0% | core/crossbow.cpp
+         9/12 clean, 3 remaining
+           - core_crossbow.cpp_CCrossbow_FUN_00449540 (5 lines) [param_count_too_few]
+           - core_crossbow.cpp_CCrossbow_dtor_FUN_004495a0 (20 lines) [negative_offset]
+           - core_crossbow.cpp_CCrossbow_fire_FUN_00448f20 (178 lines) [decompiler_intrinsic, stack_ref, suspect_float, unknown_field]
    75.0% | core/door.cpp
          21/28 clean, 7 remaining
            - core_door.cpp_CDoor_process_FUN_004800c0 (188 lines) [decompiler_intrinsic, pointer_cast, unresolved_funcptr]
@@ -570,9 +574,9 @@ FILES AT 50-89%
            - core_dskybox.cpp_renderSkyDome_FUN_004901f0 (185 lines) [decompiler_intrinsic, pointer_cast, unknown_field]
    75.0% | core/smiley.cpp
          12/16 clean, 4 remaining
-           - core_smiley.cpp_CSmiley_process_FUN_005a2800 (377 lines) [decompiler_intrinsic, stack_param, stack_ref, unresolved_funcptr, warning_type_propagation]
+           - core_smiley.cpp_CSmiley_process_FUN_005a2800 (371 lines) [decompiler_intrinsic, stack_param, stack_ref, unresolved_funcptr, warning_type_propagation]
            - core_smiley.cpp_CSmiley_dtor_FUN_005a3880 (31 lines) [negative_offset]
-           - core_smiley.cpp_CSmiley_FUN_005a32a0 (104 lines) [stack_param, warning_type_propagation]
+           - core_smiley.cpp_CSmiley_FUN_005a32a0 (103 lines) [stack_param, warning_type_propagation]
            - core_smiley.cpp_CSmiley_attractActorToward_FUN_005a3160 (25 lines) [warning_type_propagation]
    75.0% | core/water.cpp
          6/8 clean, 2 remaining
@@ -706,10 +710,27 @@ FILES AT 50-89%
            - core_script.cpp_CScript_editorAction_FUN_00564820 (423 lines) [format_string_mismatch]
            - core_script.cpp_CScript_collectSoundReferences_FUN_00567bc0 (45 lines) [pointer_cast]
            - core_script.cpp_CScript_loadState_FUN_00560820 (76 lines) [extra_output]
+   72.7% | core/cloth.cpp
+         40/55 clean, 15 remaining
+           - core_cloth.cpp_CCloth_ctor_FUN_00438ba0 (13 lines) [pointer_cast]
+           - core_cloth.cpp_CCloth_free_FUN_00438cb0 (11 lines) [param_count_too_few]
+           - core_cloth.cpp_CCloth_setup_FUN_00439710 (347 lines) [decompiler_intrinsic, pointer_cast]
+           - core_cloth.cpp_CCloth_computeBoneTransform_FUN_0043a2b0 (64 lines) [pointer_cast]
+           - core_cloth.cpp_CCloth_render_FUN_0043bae0 (146 lines) [decompiler_intrinsic, undefined_data]
+           - core_cloth.cpp_CCloth_createFromKFM_FUN_0043dcc0 (52 lines) [pointer_cast]
+           - core_cloth.cpp_CCloth_load_FUN_00438cf0 (150 lines) [pointer_cast]
+           - core_cloth.cpp_CClothList_FUN_0043c3e0 (27 lines) [unnamed_param]
+           - core_cloth.cpp_CCloth_applyConstraints_FUN_0043a420 (213 lines) [pointer_cast]
+           - core_cloth.cpp_SClothVertex_ctor_FUN_0043e420 (6 lines) [pointer_cast]
+           - core_cloth.cpp_CCloth_orientBoneToChild_FUN_0043a110 (69 lines) [decompiler_intrinsic, pointer_cast]
+           - core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590 (291 lines) [pointer_cast]
+           - core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 (372 lines) [decompiler_intrinsic, pointer_cast, stack_param, stack_ref, suspect_float, unaffected_reg, undefined_data, warning_deadcode_restart]
+           - core_cloth.cpp_CCloth_addCollisionBone_FUN_0043c430 (85 lines) [stack_param, stack_ref]
+           - core_cloth.cpp_CCloth_step_FUN_0043abb0 (407 lines) [decompiler_intrinsic, param_count_too_few, pointer_cast]
    72.7% | core/passngr.cpp
          8/11 clean, 3 remaining
            - core_passngr.cpp_CPassenger_setup_FUN_00545d30 (67 lines) [warning_type_propagation]
-           - core_passngr.cpp_CPassenger_dtor_FUN_00545c10 (53 lines) [negative_offset, stack_param, unaffected_reg]
+           - core_passngr.cpp_CPassenger_dtor_FUN_00545c10 (54 lines) [negative_offset, stack_param, unaffected_reg]
            - core_passngr.cpp_CPassenger_process_FUN_00545ef0 (81 lines) [warning_type_propagation]
    72.7% | engine/ncursfx.cpp
          8/11 clean, 3 remaining
@@ -757,14 +778,14 @@ FILES AT 50-89%
            - core_hostage.cpp_CHostage_dtor_FUN_004f6b60 (34 lines) [negative_offset]
    71.8% | core/dcube.cpp
          28/39 clean, 11 remaining
-           - core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0 (87 lines) [pointer_cast]
-           - core_dcube.cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0 (145 lines) [pointer_cast]
-           - core_dcube.cpp_CDemonCube_testCylinderGroundCollision_FUN_00457b60 (58 lines) [pointer_cast]
+           - core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0 (88 lines) [pointer_cast]
+           - core_dcube.cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0 (146 lines) [pointer_cast]
+           - core_dcube.cpp_CDemonCube_testCylinderGroundCollision_FUN_00457b60 (59 lines) [pointer_cast]
            - core_dcube.cpp_CDemonCube_load_FUN_00457530 (48 lines) [pointer_cast]
            - core_dcube.cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0 (154 lines) [pointer_cast]
            - core_dcube.cpp_CDemonCube_freeMemory_FUN_004569b0 (32 lines) [negative_offset, param_count_too_few]
            - core_dcube.cpp_clipEdgeToPlane_FUN_004547d0 (38 lines) [decompiler_intrinsic, unknown_field]
-           - core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_004578f0 (61 lines) [pointer_cast]
+           - core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_004578f0 (62 lines) [pointer_cast]
            - core_dcube.cpp_CDemonCube_save_FUN_00457430 (44 lines) [pointer_cast]
            - core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0 (95 lines) [pointer_cast]
            - core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650 (98 lines) [decompiler_intrinsic, pointer_cast, unresolved_funcptr, warning_indirect_jump, warning_jumptable]
@@ -788,24 +809,6 @@ FILES AT 50-89%
            - engine_prim.c_calculateTriangleWindingOrder_FUN_00552150 (29 lines) [decompiler_intrinsic]
            - engine_prim.c_getTriangleWindingFromIndices_FUN_00552300 (40 lines) [decompiler_intrinsic]
            - engine_prim.c_getTriangleWindingFromPackedIndices_FUN_005523f0 (43 lines) [decompiler_intrinsic]
-   70.9% | core/cloth.cpp
-         39/55 clean, 16 remaining
-           - core_cloth.cpp_CCloth_ctor_FUN_00438ba0 (13 lines) [pointer_cast]
-           - core_cloth.cpp_CCloth_editCollisionBone_FUN_0043c3e0 (28 lines) [stack_param]
-           - core_cloth.cpp_CCloth_free_FUN_00438cb0 (11 lines) [param_count_too_few]
-           - core_cloth.cpp_CCloth_deleteCollisionBone_FUN_0043c3a0 (17 lines) [stack_param]
-           - core_cloth.cpp_CCloth_setup_FUN_00439710 (353 lines) [decompiler_intrinsic, pointer_cast]
-           - core_cloth.cpp_CCloth_computeBoneTransform_FUN_0043a2b0 (64 lines) [pointer_cast]
-           - core_cloth.cpp_CCloth_render_FUN_0043bae0 (146 lines) [decompiler_intrinsic, undefined_data]
-           - core_cloth.cpp_CCloth_createFromKFM_FUN_0043dcc0 (52 lines) [pointer_cast]
-           - core_cloth.cpp_CCloth_load_FUN_00438cf0 (150 lines) [pointer_cast]
-           - core_cloth.cpp_CCloth_applyConstraints_FUN_0043a420 (213 lines) [pointer_cast]
-           - core_cloth.cpp_SClothVertex_ctor_FUN_0043e420 (6 lines) [pointer_cast]
-           - core_cloth.cpp_CCloth_orientBoneToChild_FUN_0043a110 (69 lines) [decompiler_intrinsic, pointer_cast]
-           - core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590 (291 lines) [pointer_cast]
-           - core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 (372 lines) [decompiler_intrinsic, pointer_cast, stack_param, stack_ref, suspect_float, unaffected_reg, undefined_data, warning_deadcode_restart]
-           - core_cloth.cpp_CCloth_addCollisionBone_FUN_0043c430 (85 lines) [stack_param, stack_ref]
-           - core_cloth.cpp_CCloth_step_FUN_0043abb0 (413 lines) [decompiler_intrinsic, param_count_too_few, pointer_cast]
    70.0% | core/box.cpp
          21/30 clean, 9 remaining
            - core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420680 (80 lines) [decompiler_intrinsic, param_count_too_few, pointer_cast]
@@ -1021,15 +1024,9 @@ FILES AT 50-89%
            - core_chain.cpp_CChain_FUN_0042fcc0 (15 lines) [stack_param]
            - core_chain.cpp_CChain_FUN_0042fed0 (54 lines) [stack_param]
            - core_chain.cpp_FUN_00431350 (5 lines) [stack_param]
-           - core_chain.cpp_CChain_process_FUN_004300d0 (280 lines) [decompiler_intrinsic, negative_offset]
+           - core_chain.cpp_CChain_process_FUN_004300d0 (254 lines) [decompiler_intrinsic, negative_offset]
            - core_chain.cpp_CChain_ctor_FUN_0042fb80 (59 lines) [pointer_cast]
            - core_chain.cpp_FUN_00431330 (5 lines) [stack_param]
-   66.7% | core/crossbow.cpp
-         8/12 clean, 4 remaining
-           - core_crossbow.cpp_CCrossbow_ctor_FUN_00448c70 (25 lines) [decompiler_intrinsic, pointer_cast]
-           - core_crossbow.cpp_CCrossbow_FUN_00449540 (5 lines) [param_count_too_few]
-           - core_crossbow.cpp_CCrossbow_dtor_FUN_004495a0 (20 lines) [negative_offset]
-           - core_crossbow.cpp_CCrossbow_fire_FUN_00448f20 (178 lines) [decompiler_intrinsic, stack_ref, suspect_float, unknown_field]
    66.7% | core/dglobe.cpp
          4/6 clean, 2 remaining
            - core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_00471400 (75 lines) [decompiler_intrinsic, pointer_cast]
@@ -1068,7 +1065,7 @@ FILES AT 50-89%
          10/15 clean, 5 remaining
            - core_moloch.cpp_CMoloch_FUN_005293b0 (134 lines) [decompiler_intrinsic, stack_param, warning_type_propagation]
            - core_moloch.cpp_CMoloch_renderOpaque_FUN_00529750 (45 lines) [undefined_data]
-           - core_moloch.cpp_CMoloch_ctor_FUN_00528b30 (57 lines) [negative_offset, pointer_cast]
+           - core_moloch.cpp_CMoloch_ctor_FUN_00528b30 (59 lines) [negative_offset, pointer_cast]
            - core_moloch.cpp_CMoloch_dtor_FUN_00528bf0 (25 lines) [negative_offset]
            - core_moloch.cpp_CMoloch_process_FUN_00528d20 (251 lines) [pointer_cast, stack_param]
    66.7% | core/platfrm.cpp
@@ -1089,7 +1086,7 @@ FILES AT 50-89%
            - core_tentacle.cpp_CTentacle_FUN_005db900 (37 lines) [decompiler_intrinsic, stack_param, warning_type_propagation]
            - core_tentacle.cpp_CTentacle_FUN_005dbb70 (45 lines) [param_count_too_few, pointer_cast, unaffected_reg, warning_type_propagation]
            - core_tentacle.cpp_CTentacle_FUN_005db9d0 (77 lines) [pointer_cast, stack_param]
-           - core_tentacle.cpp_CTentacle_process_FUN_005db050 (288 lines) [decompiler_intrinsic, pointer_cast, stack_param, warning_type_propagation]
+           - core_tentacle.cpp_CTentacle_process_FUN_005db050 (262 lines) [decompiler_intrinsic, pointer_cast, stack_param, warning_type_propagation]
    66.7% | core/turret.cpp
          16/24 clean, 8 remaining
            - core_turret.cpp_CTurret_FUN_005e2d50 (130 lines) [decompiler_intrinsic, param_count_too_few]
@@ -1110,6 +1107,19 @@ FILES AT 50-89%
            - engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440 (136 lines) [param_count_too_few, pointer_cast, stack_param]
            - engine_winfont.cpp_CWinFont_createTextBackground_FUN_005f2860 (60 lines) [param_count_too_few]
            - engine_winfont.cpp_CWinFont_ctor_FUN_005f22e0 (22 lines) [stack_param]
+   66.7% | shape/quantize.cpp
+         22/33 clean, 11 remaining
+           - shape_quantize.cpp_CColorQuantizer_errorDiffusionBuffers_FUN_00555500 (67 lines) [param_count_too_few]
+           - shape_quantize.cpp_CBitmap_ctor_FUN_00556a00 (83 lines) [pointer_cast, unnamed_param]
+           - shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180 (161 lines) [pointer_cast, warning_spacebase]
+           - shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40 (190 lines) [pointer_cast, unknown_field]
+           - shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090 (120 lines) [decompiler_intrinsic, pointer_cast, unknown_field]
+           - shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50 (96 lines) [decompiler_intrinsic, pointer_cast]
+           - shape_quantize.cpp_CColorQuantizer_mapScanlineToPalette_FUN_005556f0 (115 lines) [unaffected_reg]
+           - shape_quantize.cpp_getAbsoluteValue_FUN_00556df0 (7 lines) [param_count_too_few]
+           - shape_quantize.cpp_quantizeRawPixelData_FUN_00556490 (158 lines) [extra_output, stack_param, unaffected_reg]
+           - shape_quantize.cpp_CColorQuantizer_splitBox_FUN_00554e70 (46 lines) [pointer_cast]
+           - shape_quantize.cpp_CColorQuantizer_getPixelSortKey_FUN_00554ff0 (23 lines) [unknown_field]
    66.3% | engine/3d.c
          67/101 clean, 34 remaining
            - engine_3d.c_drawLineStrip3D_FUN_00404600 (62 lines) [byvalue_struct_passing, pointer_cast]
@@ -1174,14 +1184,14 @@ FILES AT 50-89%
            - engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190 (213 lines) [pointer_cast, stack_param]
    65.2% | core/icepick.cpp
          15/23 clean, 8 remaining
-           - core_icepick.cpp_CIcePick_process_FUN_004f80b0 (315 lines) [pointer_cast, stack_param, unresolved_funcptr, warning_unreachable]
+           - core_icepick.cpp_CIcePick_process_FUN_004f80b0 (314 lines) [pointer_cast, stack_param, unresolved_funcptr, warning_unreachable]
            - core_icepick.cpp_CIcePick_FUN_004f8c70 (234 lines) [decompiler_intrinsic, param_count_too_few, stack_param, warning_type_propagation]
            - core_icepick.cpp_CIcePick_FUN_004f9490 (52 lines) [param_count_too_few, stack_param]
-           - core_icepick.cpp_CIcePick_FUN_004f93a0 (55 lines) [stack_param]
-           - core_icepick.cpp_CIcePick_FUN_004f8810 (74 lines) [param_count_too_few, pointer_cast, stack_param, unresolved_funcptr]
+           - core_icepick.cpp_CIcePick_FUN_004f93a0 (49 lines) [stack_param]
+           - core_icepick.cpp_CIcePick_FUN_004f8810 (62 lines) [param_count_too_few, pointer_cast, stack_param, unresolved_funcptr]
            - core_icepick.cpp_FUN_004f8b00 (11 lines) [stack_param]
            - core_icepick.cpp_CIcePick_getCarryObjToBodyXForm_FUN_004f8b20 (49 lines) [pointer_cast, warning_type_propagation]
-           - core_icepick.cpp_CIcePick_FUN_004f8970 (55 lines) [decompiler_intrinsic, warning_type_propagation]
+           - core_icepick.cpp_CIcePick_FUN_004f8970 (52 lines) [decompiler_intrinsic, warning_type_propagation]
    64.9% | core/dlight.cpp
          24/37 clean, 13 remaining
            - core_dlight.cpp_CDemonLight_init_FUN_004727c0 (31 lines) [decompiler_intrinsic, pointer_cast]
@@ -1199,7 +1209,7 @@ FILES AT 50-89%
            - core_dlight.cpp_drawGrayscalePixel_FUN_00473360 (5 lines) [pointer_cast]
    64.7% | core/imp.cpp
          11/17 clean, 6 remaining
-           - core_imp.cpp_CImp_process_FUN_004f9c30 (499 lines) [decompiler_intrinsic, stack_param, stack_ref, warning_type_propagation]
+           - core_imp.cpp_CImp_process_FUN_004f9c30 (490 lines) [decompiler_intrinsic, stack_param, stack_ref, warning_type_propagation]
            - core_imp.cpp_CImp_getTargetPoints_FUN_004faf40 (68 lines) [warning_type_propagation]
            - core_imp.cpp_CImp_dtor_FUN_004fb180 (30 lines) [negative_offset]
            - core_imp.cpp_CImp_FUN_004fab60 (94 lines) [stack_param]
@@ -1208,21 +1218,10 @@ FILES AT 50-89%
    64.3% | core/lightgun.cpp
          9/14 clean, 5 remaining
            - core_lightgun.cpp_CLightGun_FUN_00505ac0 (26 lines) [stack_ref, unaffected_reg]
-           - core_lightgun.cpp_CLightGun_ctor_FUN_00505900 (38 lines) [suspect_float]
-           - core_lightgun.cpp_CLightGun_process_FUN_00506450 (65 lines) [decompiler_intrinsic, unaffected_reg]
-           - core_lightgun.cpp_CLightGun_fire_FUN_00505c70 (226 lines) [decompiler_intrinsic, suspect_float, unknown_field, unresolved_funcptr]
+           - core_lightgun.cpp_CLightGun_ctor_FUN_00505900 (26 lines) [suspect_float]
+           - core_lightgun.cpp_CLightGun_process_FUN_00506450 (57 lines) [decompiler_intrinsic, unaffected_reg]
+           - core_lightgun.cpp_CLightGun_fire_FUN_00505c70 (217 lines) [decompiler_intrinsic, suspect_float, unknown_field, unresolved_funcptr]
            - core_lightgun.cpp_CLightGun_FUN_00505b70 (39 lines) [stack_param, stack_ref]
-   64.0% | core/scat.cpp
-         16/25 clean, 9 remaining
-           - core_scat.cpp_CScat_FUN_005578e0 (157 lines) [decompiler_intrinsic, stack_param, warning_type_propagation]
-           - core_scat.cpp_CScat_renderOpaque_FUN_00557df0 (33 lines) [unresolved_funcptr]
-           - core_scat.cpp_CScat_FUN_00557d20 (27 lines) [stack_param]
-           - core_scat.cpp_CScat_FUN_00558720 (158 lines) [decompiler_intrinsic, pointer_cast, stack_param, unresolved_funcptr]
-           - core_scat.cpp_CScat_process_FUN_005571f0 (304 lines) [decompiler_intrinsic, pointer_cast, stack_param, unresolved_funcptr]
-           - core_scat.cpp_CScat_FUN_00558cf0 (89 lines) [decompiler_intrinsic, stack_param, unaffected_reg, unknown_field]
-           - core_scat.cpp_CScat_FUN_00558060 (109 lines) [param_count_too_few, stack_param, stack_ref, suspect_float, unaffected_reg, unresolved_funcptr]
-           - core_scat.cpp_CScat_FUN_00558fd0 (61 lines) [pointer_cast, unresolved_funcptr, warning_type_propagation]
-           - core_scat.cpp_CScat_FUN_005584a0 (153 lines) [param_count_too_few, pointer_cast, stack_param, unresolved_funcptr, warning_type_propagation]
    63.8% | shape/design.c
          104/163 clean, 59 remaining
            - shape_design.c_renderEditorBackgroundOverlay_FUN_0045d920 (19 lines) [stack_ref]
@@ -1291,7 +1290,7 @@ FILES AT 50-89%
            - core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0 (128 lines) [param_count_too_many]
            - core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810 (91 lines) [pointer_cast]
            - core_dmodel.cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc0 (84 lines) [pointer_cast]
-           - core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_00477980 (82 lines) [decompiler_intrinsic, pointer_cast]
+           - core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_00477980 (83 lines) [decompiler_intrinsic, pointer_cast]
            - core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 (892 lines) [decompiler_intrinsic, negative_offset, pointer_cast, stack_ref, undefined_data]
            - core_dmodel.cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0 (116 lines) [decompiler_intrinsic, pointer_cast, stack_ref]
            - core_dmodel.cpp_safeAcos_FUN_0047b170 (21 lines) [decompiler_intrinsic, stack_param]
@@ -1317,20 +1316,6 @@ FILES AT 50-89%
            - engine_palette.cpp_CFont_ctor_FUN_00544eb0 (5 lines) [param_count_too_few]
            - engine_palette.cpp_CPaletteManager_FUN_00545060 (54 lines) [extra_output, pointer_cast, register_param]
            - engine_palette.cpp_CPaletteManager_createOutputPalette_FUN_00545180 (234 lines) [pointer_cast, stack_param, undefined_data]
-   63.6% | shape/quantize.cpp
-         21/33 clean, 12 remaining
-           - shape_quantize.cpp_CColorQuantizer_errorDiffusionBuffers_FUN_00555500 (67 lines) [param_count_too_few]
-           - shape_quantize.cpp_CBitmap_ctor_FUN_00556a00 (83 lines) [pointer_cast, unnamed_param]
-           - shape_quantize.cpp_CColorQuantizer_ctor_FUN_00554900 (9 lines) [stack_param]
-           - shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180 (161 lines) [pointer_cast, warning_spacebase]
-           - shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40 (190 lines) [pointer_cast, unknown_field]
-           - shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090 (120 lines) [decompiler_intrinsic, pointer_cast, unknown_field]
-           - shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50 (96 lines) [decompiler_intrinsic, pointer_cast]
-           - shape_quantize.cpp_CColorQuantizer_mapScanlineToPalette_FUN_005556f0 (115 lines) [unaffected_reg]
-           - shape_quantize.cpp_getAbsoluteValue_FUN_00556df0 (7 lines) [param_count_too_few]
-           - shape_quantize.cpp_quantizeRawPixelData_FUN_00556490 (159 lines) [extra_output, stack_param, stack_ref, unaffected_reg]
-           - shape_quantize.cpp_CColorQuantizer_splitBox_FUN_00554e70 (46 lines) [pointer_cast]
-           - shape_quantize.cpp_CColorQuantizer_getPixelSortKey_FUN_00554ff0 (23 lines) [unknown_field]
    63.2% | core/skeleton.cpp
          74/117 clean, 43 remaining
            - core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0 (71 lines) [pointer_cast, stack_param]
@@ -1356,7 +1341,7 @@ FILES AT 50-89%
            - core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800 (67 lines) [decompiler_intrinsic, pointer_cast, unnamed_param]
            - core_skeleton.cpp_computeBoneWorldMatrices_FUN_005a1950 (88 lines) [pointer_cast]
            - core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0 (71 lines) [pointer_cast, stack_ref]
-           - core_skeleton.cpp_blendBoneTransformData_FUN_005a1b70 (68 lines) [pointer_cast]
+           - core_skeleton.cpp_blendBoneTransformData_FUN_005a1b70 (67 lines) [pointer_cast]
            - core_skeleton.cpp_CDeformableModel_rotateVertices_FUN_0059ab20 (6 lines) [param_count_too_many]
            - core_skeleton.cpp_CSkeleton_free_FUN_00599a50 (22 lines) [negative_offset, param_count_too_few]
            - core_skeleton.cpp_CDeformableModel_shatter_FUN_0059cec0 (178 lines) [param_count_too_many, pointer_cast]
@@ -1374,7 +1359,7 @@ FILES AT 50-89%
            - core_skeleton.cpp_SVert_dtor_FUN_005a1f90 (6 lines) [negative_offset]
            - core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0 (27 lines) [param_count_too_few, stack_param]
            - core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0059ce40 (30 lines) [decompiler_intrinsic, param_count_too_many]
-           - core_skeleton.cpp_CDeformableModel_renderParts_FUN_0059abf0 (243 lines) [decompiler_intrinsic, param_count_too_many, pointer_cast]
+           - core_skeleton.cpp_CDeformableModel_renderParts_FUN_0059abf0 (242 lines) [decompiler_intrinsic, param_count_too_many, pointer_cast]
            - core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810 (10 lines) [param_count_too_few]
    63.2% | core/svetlana.cpp
          12/19 clean, 7 remaining
@@ -1488,6 +1473,18 @@ FILES AT 50-89%
            - core_ground.cpp_CGround_transformAndStoreVertices_FUN_004ef490 (184 lines) [pointer_cast]
            - core_ground.cpp_CGround_getHeightAtPosition_FUN_004efd30 (82 lines) [pointer_cast]
            - core_ground.cpp_CGround_transformAndStoreVertex_FUN_004ef3a0 (34 lines) [pointer_cast]
+   60.0% | core/scat.cpp
+         15/25 clean, 10 remaining
+           - core_scat.cpp_CScat_FUN_005578e0 (157 lines) [decompiler_intrinsic, stack_param, suspect_float, warning_type_propagation]
+           - core_scat.cpp_CScat_renderOpaque_FUN_00557df0 (35 lines) [suspect_float]
+           - core_scat.cpp_CScat_FUN_00557d20 (27 lines) [stack_param]
+           - core_scat.cpp_CScat_FUN_00558720 (158 lines) [decompiler_intrinsic, stack_param]
+           - core_scat.cpp_CScat_FUN_00558010 (8 lines) [suspect_float]
+           - core_scat.cpp_CScat_process_FUN_005571f0 (299 lines) [pointer_cast, stack_param, suspect_float, unaffected_reg, unresolved_funcptr]
+           - core_scat.cpp_CScat_FUN_00558cf0 (89 lines) [decompiler_intrinsic, stack_param, unaffected_reg, unknown_field]
+           - core_scat.cpp_CScat_FUN_00558060 (110 lines) [param_count_too_few, stack_param, stack_ref, suspect_float, unaffected_reg]
+           - core_scat.cpp_CScat_FUN_00558fd0 (64 lines) [pointer_cast, suspect_float, warning_type_propagation]
+           - core_scat.cpp_CScat_FUN_005584a0 (153 lines) [param_count_too_few, pointer_cast, stack_param, unresolved_funcptr, warning_type_propagation]
    60.0% | engine/matrix.c
          18/30 clean, 12 remaining
            - engine_matrix.c_setCameraOrigin_FUN_0050e270 (7 lines) [param_count_too_few]
@@ -1535,7 +1532,7 @@ FILES AT 50-89%
          51/88 clean, 37 remaining
            - engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00 (4 lines) [param_count_too_few]
            - engine_drender.cpp_CDemonRenderer_renderStandardTextured_FUN_0048aa50 (46 lines) [pointer_cast]
-           - engine_drender.cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00 (119 lines) [extra_output, pointer_cast, register_param]
+           - engine_drender.cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00 (121 lines) [extra_output, pointer_cast, register_param]
            - engine_drender.cpp_CDemonRenderer_renderPerspectiveLit_FUN_0048b550 (44 lines) [pointer_cast]
            - engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0 (68 lines) [pointer_cast]
            - engine_drender.cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0 (57 lines) [pointer_cast]
@@ -1606,7 +1603,7 @@ FILES AT 50-89%
          28/49 clean, 21 remaining
            - core_morph.cpp_CMorphModel_animateFromKeyframedModel_FUN_0052aa80 (13 lines) [param_count_too_few]
            - core_morph.cpp_CMorph_addPartToModel_FUN_0052b4b0 (13 lines) [stack_param]
-           - core_morph.cpp_CMorphModel_setFaceListFromTriangles_FUN_0052aca0 (65 lines) [pointer_cast]
+           - core_morph.cpp_CMorphModel_setFaceListFromTriangles_FUN_0052aca0 (64 lines) [pointer_cast]
            - core_morph.cpp_countTrianglesFromPolygons_FUN_0052a490 (12 lines) [pointer_cast]
            - core_morph.cpp_SMorphControlPoint_dtor_FUN_0052cc70 (6 lines) [negative_offset]
            - core_morph.cpp_CMorphModel_setFaceListFromPolygon_FUN_0052aac0 (102 lines) [pointer_cast]
@@ -1619,7 +1616,7 @@ FILES AT 50-89%
            - core_morph.cpp_SMorphControlPoint_ctor_FUN_0052cc50 (6 lines) [pointer_cast]
            - core_morph.cpp_CMorph_editMorph_FUN_0052bcb0 (429 lines) [pointer_cast]
            - core_morph.cpp_CMorphModel_animateFromPartVertexBuffer_FUN_0052aa00 (6 lines) [param_count_too_many]
-           - core_morph.cpp_CMorph_getReady_FUN_0052b680 (148 lines) [pointer_cast, warning_type_propagation]
+           - core_morph.cpp_CMorph_getReady_FUN_0052b680 (149 lines) [pointer_cast, warning_type_propagation]
            - core_morph.cpp_CMorphModel_free_FUN_0052a510 (16 lines) [param_count_too_few]
            - core_morph.cpp_CMorphModel_animateFromVertexBuffer_FUN_0052a920 (32 lines) [pointer_cast]
            - core_morph.cpp_CMorphModel_rotatePoints_FUN_0052af70 (70 lines) [decompiler_intrinsic, param_count_too_few, pointer_cast, stack_param, undefined_data]
@@ -1648,6 +1645,17 @@ FILES AT 50-89%
            - engine_font.cpp_CBitFont_printF_FUN_004cdd20 (8 lines) [stack_ref]
            - engine_font.cpp_CBitFont_remapPalette_FUN_004d02a0 (56 lines) [pointer_cast, warning_unreachable]
            - engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550 (151 lines) [param_count_too_many]
+   57.1% | shape/cramtex.cpp
+         12/21 clean, 9 remaining
+           - shape_cramtex.cpp_CCramTex_visualizeTextureAtlas_FUN_00447f20 (105 lines) [pointer_cast]
+           - shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 (815 lines) [pointer_cast, stack_param]
+           - shape_cramtex.cpp_generateTextureAtlas_FUN_00445820 (345 lines) [pointer_cast, stack_param, undefined_data]
+           - shape_cramtex.cpp_calculateAtlasEfficiency_FUN_00447e80 (22 lines) [decompiler_intrinsic]
+           - shape_cramtex.cpp_placementCollisionCheck_FUN_00448260 (58 lines) [pointer_cast]
+           - shape_cramtex.cpp_maxInt_FUN_00448440 (10 lines) [stack_param]
+           - shape_cramtex.cpp_performGapFillingOptimization_FUN_00447590 (138 lines) [register_param]
+           - shape_cramtex.cpp_generateTextureAtlasLayout_FUN_00444d90 (397 lines) [pointer_cast, undefined_data]
+           - shape_cramtex.cpp_mapCoordinateToAtlas_FUN_00447a80 (8 lines) [stack_param]
    56.2% | support/trisock.cpp
          18/32 clean, 14 remaining
            - support_trisock.cpp_receiveSocketData_FUN_005e1c20 (30 lines) [pointer_cast, stack_ref]
@@ -1668,14 +1676,14 @@ FILES AT 50-89%
          14/25 clean, 11 remaining
            - core_dracbrid.cpp_SFreaky_dtor_FUN_00486d50 (6 lines) [negative_offset]
            - core_dracbrid.cpp_CDraculaBride_FUN_00485b20 (21 lines) [stack_param, warning_type_propagation]
-           - core_dracbrid.cpp_CDraculaBride_FUN_004864c0 (147 lines) [stack_param]
+           - core_dracbrid.cpp_CDraculaBride_FUN_004864c0 (141 lines) [stack_param]
            - core_dracbrid.cpp_FUN_00486430 (16 lines) [stack_param]
-           - core_dracbrid.cpp_CDraculaBride_FUN_004869a0 (117 lines) [stack_param]
+           - core_dracbrid.cpp_CDraculaBride_FUN_004869a0 (111 lines) [stack_param]
            - core_dracbrid.cpp_CDraculaBride_FUN_004858f0 (75 lines) [decompiler_intrinsic, param_count_too_few, stack_param]
            - core_dracbrid.cpp_CDraculaBride_dtor_FUN_00486d70 (31 lines) [negative_offset]
            - core_dracbrid.cpp_CDraculaBride_FUN_00486020 (13 lines) [param_count_too_few, stack_param]
            - core_dracbrid.cpp_SFreaky_ctor_FUN_00486d30 (6 lines) [pointer_cast]
-           - core_dracbrid.cpp_CDraculaBride_process_FUN_00484410 (739 lines) [decompiler_intrinsic, stack_param, stack_ref, warning_type_propagation]
+           - core_dracbrid.cpp_CDraculaBride_process_FUN_00484410 (730 lines) [decompiler_intrinsic, stack_param, stack_ref, warning_type_propagation]
            - core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00485be0 (71 lines) [undefined_data]
    55.6% | core/ghoul.cpp
          10/18 clean, 8 remaining
@@ -1709,7 +1717,7 @@ FILES AT 50-89%
            - core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120 (152 lines) [pointer_cast, warning_type_propagation]
            - core_gabriela.cpp_CGabriella_FUN_004d4190 (204 lines) [decompiler_intrinsic, param_count_too_few, warning_type_propagation]
            - core_gabriela.cpp_FUN_004d2a30 (14 lines) [stack_param]
-           - core_gabriela.cpp_CGabriella_ctor_FUN_004d2b20 (35 lines) [negative_offset]
+           - core_gabriela.cpp_CGabriella_ctor_FUN_004d2b20 (36 lines) [negative_offset]
            - core_gabriela.cpp_CGabriella_FUN_004d5c60 (107 lines) [decompiler_intrinsic, warning_type_propagation]
            - core_gabriela.cpp_CGabriella_FUN_004d4d80 (348 lines) [pointer_cast, undefined_data, unresolved_funcptr, warning_type_propagation]
    55.0% | support/codec.cpp
@@ -1792,17 +1800,17 @@ FILES AT 50-89%
            - cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0054b000 (16 lines) [param_count_too_many]
    54.2% | core/mimic.cpp
          13/24 clean, 11 remaining
-           - core_mimic.cpp_CMimic_FUN_0051f930 (184 lines) [pointer_cast, warning_type_propagation]
-           - core_mimic.cpp_CMimic_setup_FUN_0051f3e0 (144 lines) [stack_ref, unresolved_funcptr]
+           - core_mimic.cpp_CMimic_FUN_0051f930 (185 lines) [pointer_cast, warning_type_propagation]
+           - core_mimic.cpp_CMimic_setup_FUN_0051f3e0 (141 lines) [pointer_cast, stack_ref]
            - core_mimic.cpp_CMimic_FUN_0051fcc0 (314 lines) [decompiler_intrinsic, pointer_cast, stack_param, unknown_field, warning_type_propagation]
-           - core_mimic.cpp_CMimic_ctor_FUN_0051f1d0 (61 lines) [negative_offset]
-           - core_mimic.cpp_CMimic_processMorph_FUN_00520ba0 (53 lines) [param_count_too_few, stack_param]
+           - core_mimic.cpp_CMimic_ctor_FUN_0051f1d0 (58 lines) [negative_offset]
+           - core_mimic.cpp_CMimic_processMorph_FUN_00520ba0 (50 lines) [param_count_too_few, pointer_cast, stack_param]
            - core_mimic.cpp_CMimic_hasCollision_FUN_00520a00 (23 lines) [warning_type_propagation]
-           - core_mimic.cpp_CMimic_dtor_FUN_0051f2c0 (49 lines) [negative_offset, unresolved_funcptr]
+           - core_mimic.cpp_CMimic_dtor_FUN_0051f2c0 (54 lines) [negative_offset, stack_param, unaffected_reg]
            - core_mimic.cpp_FUN_00520e00 (10 lines) [stack_param]
            - core_mimic.cpp_CMimic_FUN_00520500 (47 lines) [pointer_cast]
-           - core_mimic.cpp_CMimic_beginMorph_FUN_00520a80 (40 lines) [warning_type_propagation]
-           - core_mimic.cpp_CMimic_FUN_005205f0 (95 lines) [pointer_cast, undefined_data, warning_type_propagation]
+           - core_mimic.cpp_CMimic_beginMorph_FUN_00520a80 (37 lines) [suspect_float, warning_type_propagation]
+           - core_mimic.cpp_CMimic_FUN_005205f0 (94 lines) [pointer_cast, undefined_data, warning_type_propagation]
    54.0% | core/manpuz.cpp
          34/63 clean, 29 remaining
            - core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40 (20 lines) [decompiler_intrinsic, stack_param]
@@ -1869,7 +1877,7 @@ FILES AT 50-89%
            - shape_meshlod.cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300 (43 lines) [decompiler_intrinsic, pointer_cast]
            - shape_meshlod.cpp_computeDistanceSquaredToEdge_FUN_00515110 (15 lines) [stack_param]
            - shape_meshlod.cpp_CLodMesh_exportToS3D_FUN_0051c100 (62 lines) [decompiler_intrinsic, pointer_cast]
-           - shape_meshlod.cpp_CLodMesh_copyFrom_FUN_0051a8c0 (69 lines) [pointer_cast]
+           - shape_meshlod.cpp_CLodMesh_copyFrom_FUN_0051a8c0 (70 lines) [pointer_cast]
            - shape_meshlod.cpp_CLodMesh_gridSave_FUN_0051d420 (22 lines) [pointer_cast]
            - shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0 (106 lines) [decompiler_intrinsic, pointer_cast, unknown_field]
            - shape_meshlod.cpp_CLodVert_copy_FUN_0051ee70 (17 lines) [pointer_cast]
@@ -1964,7 +1972,7 @@ FILES AT 50-89%
            - engine_pcx.c_writePCXScanline_FUN_00548c50 (50 lines) [pointer_cast]
            - engine_pcx.c_saveScreenshotGeneral_FUN_005490c0 (104 lines) [pointer_cast]
 
-Total: 153 files
+Total: 154 files
 
 ====================================================================================================
 FILES BELOW 50%
@@ -2024,8 +2032,8 @@ FILES BELOW 50%
            - core_game.cpp_FUN_004e4460 (7 lines) [stack_param]
    46.7% | core/bride.cpp
          7/15 clean, 8 remaining
-           - core_bride.cpp_CBride_FUN_00424600 (80 lines) [param_count_too_few, stack_param, warning_type_propagation]
-           - core_bride.cpp_CBride_getTargetPoints_FUN_00424a10 (28 lines) [warning_type_propagation]
+           - core_bride.cpp_CBride_FUN_00424600 (79 lines) [param_count_too_few, stack_param, warning_type_propagation]
+           - core_bride.cpp_CBride_getTargetPoints_FUN_00424a10 (27 lines) [warning_type_propagation]
            - core_bride.cpp_CBride_getPropertyList_FUN_00424b10 (10 lines) [stack_param]
            - core_bride.cpp_CBride_processDamage_FUN_00424830 (68 lines) [warning_type_propagation]
            - core_bride.cpp_FUN_00424800 (7 lines) [fpu_register_input, unaffected_reg]
@@ -2042,8 +2050,8 @@ FILES BELOW 50%
            - core_course.cpp_CCourse_interpolate_FUN_004427a0 (131 lines) [decompiler_intrinsic, pointer_cast, stack_ref, unknown_field]
            - core_course.cpp_CCourse_allocMemory_FUN_00442500 (23 lines) [warning_unreachable]
            - core_course.cpp_CCourse_preview_FUN_00443bc0 (247 lines) [byvalue_struct_passing, decompiler_intrinsic, pointer_cast, stack_param, stack_ref, unknown_field, warning_deadcode_restart]
-   44.9% | core/stranger.cpp
-         31/69 clean, 38 remaining
+   46.4% | core/stranger.cpp
+         32/69 clean, 37 remaining
            - core_stranger.cpp_CStranger_FUN_005bdd20 (287 lines) [decompiler_intrinsic, param_count_too_few, stack_param, stack_ref, unaffected_reg, unresolved_funcptr]
            - core_stranger.cpp_CStranger_FUN_005c6590 (36 lines) [param_count_too_few, stack_param]
            - core_stranger.cpp_FUN_005bafe0 (10 lines) [stack_param, unresolved_funcptr]
@@ -2058,7 +2066,6 @@ FILES BELOW 50%
            - core_stranger.cpp_CStranger_aimLeftPistol_FUN_005c4370 (127 lines) [decompiler_intrinsic, suspect_float]
            - core_stranger.cpp_CStranger_FUN_005c07b0 (588 lines) [pointer_cast, stack_param, unaffected_reg, warning_type_propagation]
            - core_stranger.cpp_FUN_005c695e (5 lines) [stack_param]
-           - core_stranger.cpp_CStranger_FUN_005c6220 (130 lines) [stack_ref]
            - core_stranger.cpp_CStranger_FUN_005be520 (660 lines) [decompiler_intrinsic, pointer_cast, stack_ref, undefined_data, unknown_field, unresolved_funcptr]
            - core_stranger.cpp_CStranger_FUN_005bf800 (90 lines) [decompiler_intrinsic, param_count_too_few, stack_param, undefined_data]
            - core_stranger.cpp_CStranger_FUN_005c5270 (362 lines) [stack_param, stack_ref, suspect_float, warning_unreachable]
@@ -2068,7 +2075,7 @@ FILES BELOW 50%
            - core_stranger.cpp_CStranger_FUN_005c2850 (246 lines) [decompiler_intrinsic, stack_param]
            - core_stranger.cpp_FUN_005c6970 (12 lines) [stack_param]
            - core_stranger.cpp_FUN_005bafa0 (20 lines) [stack_param]
-           - core_stranger.cpp_CStranger_FUN_005bb960 (1133 lines) [decompiler_intrinsic, format_string_mismatch, pointer_cast, stack_param, suspect_float, unknown_field]
+           - core_stranger.cpp_CStranger_FUN_005bb960 (1132 lines) [decompiler_intrinsic, format_string_mismatch, pointer_cast, stack_param, suspect_float, unknown_field]
            - core_stranger.cpp_CStranger_FUN_005c2400 (146 lines) [decompiler_intrinsic, warning_type_propagation]
            - core_stranger.cpp_FUN_005bb010 (44 lines) [pointer_cast, stack_param]
            - core_stranger.cpp_FUN_005c69a0 (8 lines) [stack_param]
@@ -2169,7 +2176,7 @@ FILES BELOW 50%
            - core_zombie.cpp_CZombie_dtor_FUN_005fcc50 (31 lines) [negative_offset]
            - core_zombie.cpp_FUN_005fcd10 (7 lines) [stack_param]
            - core_zombie.cpp_FUN_005f8cc0 (10 lines) [stack_param, unresolved_funcptr]
-           - core_zombie.cpp_CZombie_process_FUN_005f9470 (1019 lines) [decompiler_intrinsic, pointer_cast, stack_param, stack_ref, unresolved_funcptr, warning_type_propagation, warning_unreachable]
+           - core_zombie.cpp_CZombie_process_FUN_005f9470 (1023 lines) [decompiler_intrinsic, pointer_cast, stack_param, stack_ref, unresolved_funcptr, warning_type_propagation, warning_unreachable]
            - core_zombie.cpp_CZombie_setup_FUN_005f9140 (97 lines) [warning_type_propagation]
            - core_zombie.cpp_CZombie_FUN_005fc220 (101 lines) [param_count_too_few, stack_param, warning_type_propagation]
            - core_zombie.cpp_FUN_005fce40 (72 lines) [stack_param]
@@ -2183,7 +2190,7 @@ FILES BELOW 50%
            - core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0 (137 lines) [pointer_cast, warning_type_propagation]
            - core_zombie.cpp_CZombie_canBeAttracted_FUN_005fc120 (37 lines) [unnamed_param]
            - core_zombie.cpp_FUN_005fcf80 (19 lines) [stack_param]
-           - core_zombie.cpp_CZombie_processDamage_FUN_005fc4f0 (76 lines) [warning_type_propagation]
+           - core_zombie.cpp_CZombie_processDamage_FUN_005fc4f0 (77 lines) [warning_type_propagation]
            - core_zombie.cpp_CZombie_isGrabbable_FUN_005fc920 (10 lines) [unnamed_param]
            - core_zombie.cpp_FUN_005fcd20 (60 lines) [stack_param]
    36.8% | core/set.cpp
@@ -2524,26 +2531,69 @@ FILES BELOW 50%
            - core_setedit.cpp_FUN_00578210 (26 lines) [stack_param, undefined_data]
            - core_setedit.cpp_CDemonSet_FUN_0057a940 (138 lines) [pointer_cast, stack_ref, unaffected_reg]
            - core_setedit.cpp_FUN_0057b910 (121 lines) [param_count_too_few, stack_param]
-   14.3% | shape/cramtex.cpp
-         3/21 clean, 18 remaining
-           - shape_cramtex.cpp_CCramTex_visualizeTextureAtlas_FUN_00447f20 (100 lines) [pointer_cast, stack_param, stack_ref]
-           - shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 (824 lines) [pointer_cast, stack_param]
-           - shape_cramtex.cpp_CCramTex_addTextureEntry_FUN_00446100 (11 lines) [stack_param]
-           - shape_cramtex.cpp_generateTextureAtlas_FUN_00445820 (346 lines) [pointer_cast, stack_param, undefined_data]
-           - shape_cramtex.cpp_calculateAtlasEfficiency_FUN_00447e80 (22 lines) [decompiler_intrinsic]
-           - shape_cramtex.cpp_CCramTex_findHighestOverlappingY_FUN_004478c0 (25 lines) [stack_param]
-           - shape_cramtex.cpp_qsortRectanglesByActiveFlag_FUN_00446140 (7 lines) [stack_param]
-           - shape_cramtex.cpp_placementCollisionCheck_FUN_00448260 (58 lines) [pointer_cast]
-           - shape_cramtex.cpp_maxInt_FUN_00448440 (10 lines) [stack_param]
-           - shape_cramtex.cpp_CCramTex_findRightmostOverlappingX_FUN_004479a0 (25 lines) [stack_param]
-           - shape_cramtex.cpp_printAtlasLayoutReport_FUN_004481d0 (38 lines) [stack_param]
-           - shape_cramtex.cpp_CCramTex_renderAllTexturesAndRectangles_FUN_00447ab0 (45 lines) [stack_param]
-           - shape_cramtex.cpp_performGapFillingOptimization_FUN_00447590 (146 lines) [register_param, stack_param]
-           - shape_cramtex.cpp_CCramTex_findLeftmostOverlappingX_FUN_00447a10 (25 lines) [stack_param]
-           - shape_cramtex.cpp_generateTextureAtlasLayout_FUN_00444d90 (398 lines) [pointer_cast, undefined_data]
-           - shape_cramtex.cpp_CCramTex_renderTextureEntry_FUN_00447c20 (68 lines) [stack_param]
-           - shape_cramtex.cpp_mapCoordinateToAtlas_FUN_00447a80 (8 lines) [stack_param]
-           - shape_cramtex.cpp_CCramTex_findLowestOverlappingY_FUN_00447930 (24 lines) [stack_param]
+   17.6% | core/skeledit.cpp
+         13/74 clean, 61 remaining
+           - core_skeledit.cpp_FUN_00589740 (40 lines) [stack_param]
+           - core_skeledit.cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec60 (73 lines) [pointer_cast]
+           - core_skeledit.cpp_CDeformableModel_FUN_0058c190 (687 lines) [pointer_cast, stack_param, stack_ref, undefined_data]
+           - core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0 (268 lines) [decompiler_intrinsic, param_count_too_many, pointer_cast]
+           - core_skeledit.cpp_FUN_00596860 (12 lines) [stack_param]
+           - core_skeledit.cpp_FUN_0058e0b0 (56 lines) [stack_param]
+           - core_skeledit.cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690 (151 lines) [pointer_cast]
+           - core_skeledit.cpp_FUN_00589530 (24 lines) [stack_param]
+           - core_skeledit.cpp_viewModel_FUN_00598fc0 (177 lines) [undefined_data]
+           - core_skeledit.cpp_CSkeleton_saveStream_FUN_0058b3a0 (97 lines) [pointer_cast]
+           - core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0 (230 lines) [pointer_cast]
+           - core_skeledit.cpp_CDeformableModel_FUN_0058e3e0 (45 lines) [pointer_cast, unnamed_param]
+           - core_skeledit.cpp_FUN_0058ad30 (42 lines) [pointer_cast, stack_param]
+           - core_skeledit.cpp_CBoneStructure_fixupMatrices_FUN_0058adb0 (33 lines) [decompiler_intrinsic]
+           - core_skeledit.cpp_FUN_00589500 (9 lines) [stack_param]
+           - core_skeledit.cpp_CBoneStructure_FUN_0058ac80 (49 lines) [pointer_cast]
+           - core_skeledit.cpp_FUN_00595f30 (30 lines) [param_count_too_few, stack_param]
+           - core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0 (30 lines) [stack_param, stack_ref]
+           - core_skeledit.cpp_CDeformableModel_FUN_0058d790 (241 lines) [decompiler_intrinsic, pointer_cast, stack_param, unnamed_param]
+           - core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (1142 lines) [decompiler_intrinsic, pointer_cast, stack_ref, suspect_float, undefined_data, unknown_field, warning_deadcode_restart]
+           - core_skeledit.cpp_FUN_0058aeb0 (36 lines) [param_count_too_few, pointer_cast, stack_param]
+           - core_skeledit.cpp_FUN_005896b0 (22 lines) [stack_param]
+           - core_skeledit.cpp_FUN_00589b10 (32 lines) [stack_param]
+           - core_skeledit.cpp_FUN_00589a40 (21 lines) [undefined_data]
+           - core_skeledit.cpp_FUN_0058a0f0 (17 lines) [stack_param]
+           - core_skeledit.cpp_CDeformableModel_FUN_0058e600 (29 lines) [stack_param]
+           - core_skeledit.cpp_FUN_00589f40 (16 lines) [stack_param]
+           - core_skeledit.cpp_FUN_00589fa0 (7 lines) [stack_param]
+           - core_skeledit.cpp_CDeformableModel_FUN_0058e240 (114 lines) [pointer_cast]
+           - core_skeledit.cpp_FUN_00589450 (34 lines) [stack_param]
+           - core_skeledit.cpp_FUN_005894c0 (19 lines) [stack_param]
+           - core_skeledit.cpp_FUN_0058af40 (36 lines) [param_count_too_few, pointer_cast, stack_param]
+           - core_skeledit.cpp_CLodMesh_FUN_00589c20 (99 lines) [param_count_too_few, stack_param]
+           - core_skeledit.cpp_FUN_0058b200 (24 lines) [stack_param]
+           - core_skeledit.cpp_FUN_005897b0 (111 lines) [undefined_data]
+           - core_skeledit.cpp_FUN_0058b160 (47 lines) [param_count_too_few, pointer_cast, stack_param]
+           - core_skeledit.cpp_FUN_0058ac30 (22 lines) [stack_param]
+           - core_skeledit.cpp_FUN_00599480 (45 lines) [stack_param]
+           - core_skeledit.cpp_CDeformableModel_FUN_0058bc40 (36 lines) [pointer_cast]
+           - core_skeledit.cpp_FUN_0058afe0 (54 lines) [pointer_cast, stack_param, undefined_data]
+           - core_skeledit.cpp_FUN_00599650 (8 lines) [stack_param]
+           - core_skeledit.cpp_CDeformableModel_FUN_0058a2b0 (62 lines) [param_count_too_many]
+           - core_skeledit.cpp_FUN_0058bd00 (154 lines) [pointer_cast, stack_param, undefined_data]
+           - core_skeledit.cpp_FUN_005995d0 (19 lines) [stack_param]
+           - core_skeledit.cpp_FUN_0058b260 (22 lines) [stack_param]
+           - core_skeledit.cpp_FUN_00598f10 (27 lines) [stack_param]
+           - core_skeledit.cpp_CDeformableModel_FUN_0058ede0 (82 lines) [pointer_cast]
+           - core_skeledit.cpp_CDeformableModel_FUN_0058b9b0 (100 lines) [decompiler_intrinsic, pointer_cast]
+           - core_skeledit.cpp_FUN_00589fe0 (25 lines) [param_count_too_few, stack_param]
+           - core_skeledit.cpp_FUN_00592520 (31 lines) [stack_param]
+           - core_skeledit.cpp_FUN_00589fc0 (7 lines) [param_count_too_few, stack_param]
+           - core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (1462 lines) [decompiler_intrinsic, negative_offset, pointer_cast, undefined_data, warning_type_propagation]
+           - core_skeledit.cpp_FUN_0058a1b0 (26 lines) [stack_param]
+           - core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120 (186 lines) [pointer_cast]
+           - core_skeledit.cpp_FUN_0058dde0 (30 lines) [param_count_too_few, stack_param]
+           - core_skeledit.cpp_FUN_00599630 (8 lines) [stack_param]
+           - core_skeledit.cpp_FUN_0058de70 (90 lines) [pointer_cast, stack_param]
+           - core_skeledit.cpp_CSkeleton_FUN_00592690 (1905 lines) [decompiler_intrinsic, format_string_mismatch, pointer_cast, stack_param, stack_ref, undefined_data, unknown_field, warning_overlapping_globals]
+           - core_skeledit.cpp_CDeformableModel_FUN_0058f790 (41 lines) [decompiler_intrinsic, register_param, undefined_type]
+           - core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10 (72 lines) [pointer_cast]
+           - core_skeledit.cpp_FUN_0058eaa0 (85 lines) [pointer_cast, stack_param]
    12.9% | core/dstrender.cpp
          4/31 clean, 27 remaining
            - core_dstrender.cpp_blendLightmapToTexture64BitOutput_FUN_004924a9 (165 lines) [decompiler_intrinsic, mmx_assembly, nonstandard_int]
@@ -2573,76 +2623,6 @@ FILES BELOW 50%
            - core_dstrender.cpp_blendLightmapToTextureMMX_FUN_00492f03 (120 lines) [decompiler_intrinsic, mmx_assembly, nonstandard_int]
            - core_dstrender.cpp_renderDepthOnlyStandard_FUN_0049072f (45 lines) [pointer_cast]
            - core_dstrender.cpp_verticalBlur3TapMMXStride320_FUN_00492042 (156 lines) [decompiler_intrinsic, mmx_assembly, unknown_field]
-    8.1% | core/skeledit.cpp
-         6/74 clean, 68 remaining
-           - core_skeledit.cpp_FUN_00589740 (40 lines) [stack_param]
-           - core_skeledit.cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec60 (71 lines) [stack_param]
-           - core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0 (273 lines) [decompiler_intrinsic, param_count_too_many, pointer_cast, stack_param]
-           - core_skeledit.cpp_FUN_00596860 (12 lines) [stack_param]
-           - core_skeledit.cpp_FUN_0058e0b0 (56 lines) [stack_param]
-           - core_skeledit.cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690 (151 lines) [pointer_cast]
-           - core_skeledit.cpp_FUN_00589530 (24 lines) [stack_param]
-           - core_skeledit.cpp_CDeformableModel_save_FUN_0058f040 (30 lines) [stack_param]
-           - core_skeledit.cpp_viewModel_FUN_00598fc0 (177 lines) [stack_param, stack_ref, undefined_data]
-           - core_skeledit.cpp_CSkeleton_saveStream_FUN_0058b3a0 (98 lines) [stack_param]
-           - core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0 (228 lines) [pointer_cast, stack_param]
-           - core_skeledit.cpp_CDeformableModel_FUN_0058e3e0 (46 lines) [pointer_cast, stack_param]
-           - core_skeledit.cpp_FUN_0058ad30 (42 lines) [pointer_cast, stack_param]
-           - core_skeledit.cpp_CBoneStructure_fixupMatrices_FUN_0058adb0 (36 lines) [decompiler_intrinsic, stack_param]
-           - core_skeledit.cpp_FUN_00589500 (9 lines) [stack_param]
-           - core_skeledit.cpp_FUN_00589bb0 (16 lines) [stack_param]
-           - core_skeledit.cpp_FUN_00595f30 (30 lines) [param_count_too_few, stack_param]
-           - core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0 (30 lines) [stack_param, stack_ref]
-           - core_skeledit.cpp_FUN_0058ac80 (53 lines) [pointer_cast, stack_param]
-           - core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (1170 lines) [decompiler_intrinsic, pointer_cast, stack_param, stack_ref, suspect_float, undefined_data, unknown_field, warning_deadcode_restart]
-           - core_skeledit.cpp_FUN_0058aeb0 (36 lines) [param_count_too_few, pointer_cast, stack_param]
-           - core_skeledit.cpp_FUN_005896b0 (22 lines) [stack_param]
-           - core_skeledit.cpp_FUN_00589b10 (32 lines) [stack_param]
-           - core_skeledit.cpp_FUN_00589a40 (21 lines) [undefined_data]
-           - core_skeledit.cpp_FUN_0058a0f0 (17 lines) [stack_param]
-           - core_skeledit.cpp_CBoneStructure_skipBONframe_FUN_0058abb0 (26 lines) [stack_param]
-           - core_skeledit.cpp_CDeformableModel_FUN_0058e600 (29 lines) [stack_param]
-           - core_skeledit.cpp_FUN_00589f40 (16 lines) [stack_param]
-           - core_skeledit.cpp_FUN_00589fa0 (7 lines) [stack_param]
-           - core_skeledit.cpp_CDeformableModel_FUN_0058e240 (114 lines) [pointer_cast]
-           - core_skeledit.cpp_FUN_00589450 (34 lines) [stack_param]
-           - core_skeledit.cpp_FUN_0058d790 (248 lines) [decompiler_intrinsic, pointer_cast, stack_param]
-           - core_skeledit.cpp_FUN_005894c0 (19 lines) [stack_param]
-           - core_skeledit.cpp_FUN_0058af40 (37 lines) [param_count_too_few, pointer_cast, stack_param]
-           - core_skeledit.cpp_CLodMesh_FUN_00589c20 (99 lines) [param_count_too_few, stack_param]
-           - core_skeledit.cpp_FUN_0058b200 (24 lines) [stack_param]
-           - core_skeledit.cpp_CDeformableModel_FUN_0058b8e0 (31 lines) [param_count_too_few, stack_param]
-           - core_skeledit.cpp_FUN_005897b0 (111 lines) [undefined_data]
-           - core_skeledit.cpp_FUN_0058b160 (47 lines) [param_count_too_few, pointer_cast, stack_param]
-           - core_skeledit.cpp_FUN_0058ac30 (22 lines) [stack_param]
-           - core_skeledit.cpp_CDeformable_groundBias_FUN_0058e4e0 (43 lines) [stack_param]
-           - core_skeledit.cpp_FUN_00599480 (45 lines) [stack_param]
-           - core_skeledit.cpp_CDeformableModel_FUN_0058bc40 (37 lines) [pointer_cast, stack_param]
-           - core_skeledit.cpp_FUN_0058afe0 (54 lines) [pointer_cast, stack_param, undefined_data]
-           - core_skeledit.cpp_FUN_00599650 (8 lines) [stack_param]
-           - core_skeledit.cpp_CDeformableModel_FUN_0058a2b0 (62 lines) [param_count_too_many]
-           - core_skeledit.cpp_FUN_0058bd00 (154 lines) [pointer_cast, stack_param, undefined_data]
-           - core_skeledit.cpp_FUN_005995d0 (19 lines) [stack_param]
-           - core_skeledit.cpp_FUN_0058c190 (708 lines) [pointer_cast, stack_param, stack_ref, undefined_data, unknown_field, warning_type_propagation]
-           - core_skeledit.cpp_FUN_0058b260 (22 lines) [stack_param]
-           - core_skeledit.cpp_FUN_00598f10 (28 lines) [stack_param, unaffected_reg]
-           - core_skeledit.cpp_readNonEmptyLine_FUN_005895f0 (35 lines) [stack_param]
-           - core_skeledit.cpp_CDeformableModel_FUN_0058ede0 (82 lines) [pointer_cast]
-           - core_skeledit.cpp_CDeformableModel_FUN_0058b9b0 (101 lines) [decompiler_intrinsic, pointer_cast, stack_param]
-           - core_skeledit.cpp_FUN_00589fe0 (25 lines) [param_count_too_few, stack_param]
-           - core_skeledit.cpp_FUN_00592520 (31 lines) [stack_param]
-           - core_skeledit.cpp_FUN_00589fc0 (7 lines) [param_count_too_few, stack_param]
-           - core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (1439 lines) [decompiler_intrinsic, negative_offset, param_count_too_few, pointer_cast, stack_param, undefined_data, warning_type_propagation]
-           - core_skeledit.cpp_FUN_0058a1b0 (26 lines) [stack_param]
-           - core_skeledit.cpp_CSkeleton_save_FUN_0058b2c0 (31 lines) [stack_param, unaffected_reg]
-           - core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120 (190 lines) [pointer_cast, stack_param]
-           - core_skeledit.cpp_FUN_0058dde0 (30 lines) [param_count_too_few, stack_param]
-           - core_skeledit.cpp_FUN_00599630 (8 lines) [stack_param]
-           - core_skeledit.cpp_FUN_0058de70 (90 lines) [pointer_cast, stack_param]
-           - core_skeledit.cpp_CSkeleton_FUN_00592690 (1861 lines) [decompiler_intrinsic, format_string_mismatch, pointer_cast, stack_param, stack_ref, suspect_float, undefined_data, unknown_field, warning_type_propagation]
-           - core_skeledit.cpp_CDeformableModel_FUN_0058f790 (41 lines) [decompiler_intrinsic, register_param, undefined_type]
-           - core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10 (76 lines) [pointer_cast, stack_param]
-           - core_skeledit.cpp_FUN_0058eaa0 (85 lines) [pointer_cast, stack_param]
     0.0% | core/mmx.c
          0/4 clean, 4 remaining
            - core_mmx.c_detectMMXSupport_FUN_00524ff9 (7 lines) [special_cpu_detection]
@@ -2667,4 +2647,4 @@ FILES BELOW 50%
            - engine_colquant.c_FUN_004406c0 (190 lines) [decompiler_intrinsic, pointer_cast, stack_param, unknown_field]
            - engine_colquant.c_FUN_00441110 (50 lines) [decompiler_intrinsic, extra_output, param_count_too_few, stack_param]
 
-Total: 22 files
+Total: 21 files

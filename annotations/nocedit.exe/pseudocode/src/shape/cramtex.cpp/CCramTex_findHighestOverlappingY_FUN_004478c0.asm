@@ -4,7 +4,7 @@
 ; int __cdecl shape_cramtex_cpp_CCramTex_findHighestOverlappingY_FUN_004478c0(CCramTex *this_ptr)
 ;
 ; Parameters:
-; CCramTex *       Stack[0xc]:4   this_ptr
+; CCramTex *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 at 0044677b
@@ -20,7 +20,7 @@
 ;   undefined4 DAT_0083c258
 ;   undefined4 DAT_0083c260
 ;   undefined4 DAT_0083c264
-;   uint g_CramTextureCount
+;   int g_CramTextureCount
 ;
 ; Called Functions:
 ;   crt_stack.c___STK_FUN_005ff9f3

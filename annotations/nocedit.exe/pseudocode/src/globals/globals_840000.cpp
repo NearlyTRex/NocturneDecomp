@@ -8,6 +8,7 @@
 SCramRectangle g_CramRectangles[50] = {};
 
 // int
+int g_CramTextureCount = {};
 int g_CramTotalMaps = {};
 int g_CramPlacedTextureCount = {};
 int g_CramRectangleCount = {};
@@ -30,7 +31,4 @@ int g_CramVisualizationMode = {};
 int g_CramMaxIterationsLimit = {};
 int g_CramStartTime = {};
 int g_CramIterationCount = {};
-
-// uint
-uint g_CramTextureCount = {};
 

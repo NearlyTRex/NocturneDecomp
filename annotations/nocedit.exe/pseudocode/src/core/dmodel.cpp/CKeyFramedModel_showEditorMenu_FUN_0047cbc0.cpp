@@ -19,13 +19,12 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
   uint uVar6;
   CVector3f *pCVar7;
   int iVar8;
-  CKeyFramedModel *pCVar9;
+  char *pcVar9;
   int iVar10;
   char *pcVar11;
   uint *puVar12;
   int x;
-  char *pcVar13;
-  CKeyFramedModel *pCVar14;
+  CKeyFramedModel *pCVar13;
   byte bVar15;
   int local_ca8;
   char local_c9c [260];
@@ -115,8 +114,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
   int local_50;
   int local_4c;
   float local_48;
-  SMRGLTextureExtended *local_44;
-  SMRGLTextureExtended *local_40;
+  SMRGLTextureLod *local_44;
+  SMRGLTextureLod *local_40;
   int local_3c;
   int local_38;
   float local_34;
@@ -125,6 +124,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
   CKeyFramedModelInstance *local_1c;
   char local_18 [4];
   char local_14 [4];
+  CKeyFramedModel *pCVar14;
   
   bVar15 = 0;
   local_84 = 0;
@@ -233,12 +233,12 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
       uVar6 = local_6c;
       engine_2d_c_drawText_FUN_00401fd0("B.  Bias model using manual value",0,0xbb);
       if (uVar6 == 0) {
-        pcVar13 = "INACTIVE";
+        pcVar9 = "INACTIVE";
       }
       else {
-        pcVar13 = "ACTIVE";
+        pcVar9 = "ACTIVE";
       }
-      _sprintf(local_408,"I.  Interactive bias is now %s",pcVar13);
+      _sprintf(local_408,"I.  Interactive bias is now %s",pcVar9);
       engine_2d_c_drawText_FUN_00401fd0(local_408,0,0xc6);
       engine_2d_c_drawText_FUN_00401fd0("S.  Scale",0,0xd1);
       engine_2d_c_drawText_FUN_00401fd0("X.  Reorient model",0,0xe7);
@@ -247,20 +247,20 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
       engine_2d_c_drawText_FUN_00401fd0("D.  Demented(TM) Shape Editor",0,0x11e);
       engine_2d_c_drawText_FUN_00401fd0("Model options:",0,0x134);
       if (this_ptr->collision_triangle_list == (CDemonTriangle *)0x0) {
-        pcVar13 = "DISABLED";
+        pcVar9 = "DISABLED";
       }
       else {
-        pcVar13 = "ENABLED";
+        pcVar9 = "ENABLED";
       }
-      _sprintf(local_408,"E.  Exact collision (currently %s)",pcVar13);
+      _sprintf(local_408,"E.  Exact collision (currently %s)",pcVar9);
       engine_2d_c_drawText_FUN_00401fd0(local_408,0,0x13f);
       if (this_ptr->transparent_pixel_flag == 0) {
-        pcVar13 = "DISABLED";
+        pcVar9 = "DISABLED";
       }
       else {
-        pcVar13 = "ENABLED";
+        pcVar9 = "ENABLED";
       }
-      _sprintf(local_408,"T.  Transparent pixel (currently %s)",pcVar13);
+      _sprintf(local_408,"T.  Transparent pixel (currently %s)",pcVar9);
       engine_2d_c_drawText_FUN_00401fd0(local_408,0,0x14a);
       _sprintf(local_408,"Vertex count: %d",this_ptr->vertex_count);
       engine_2d_c_drawText_FUN_00401fd0(local_408,0,g_WindowHeight + -0x2c);
@@ -415,8 +415,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
     iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F4);
     if (iVar8 != 0) {
       g_KeyFrameModelPoolEnd = (CKeyFramedModel *)(g_KeyFrameModelPoolEnd->model_filename + 1);
-      _sprintf(&DAT_02c14c88,"noc%d.pcx");
-      engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(&DAT_02c14c88);
+      _sprintf(CHAR_ARRAY_02c14c88,"noc%d.pcx");
+      engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(CHAR_ARRAY_02c14c88);
     }
     iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD5);
     if (iVar8 != 0) {
@@ -488,15 +488,15 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
             }
             else if (local_84 < 0x34) {
               pcVar11 = "models\\";
-              pcVar13 = local_408;
+              pcVar9 = local_408;
               do {
                 cVar1 = *pcVar11;
-                *pcVar13 = cVar1;
+                *pcVar9 = cVar1;
                 if (cVar1 == '\0') break;
                 cVar1 = pcVar11[1];
                 pcVar11 = pcVar11 + 2;
-                pcVar13[1] = cVar1;
-                pcVar13 = pcVar13 + 2;
+                pcVar9[1] = cVar1;
+                pcVar9 = pcVar9 + 2;
               } while (cVar1 != '\0');
               iVar8 = shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
                                 (g_CEditorToolsPtr,"Import Keyframed model",0x6209a0,
@@ -506,24 +506,24 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                 local_64 = 0;
                 splitpath
                           (local_408,(char *)0x0,(char *)0x0,this_ptr->model_filename,(char *)0x0);
-                pcVar13 = ".kfm";
+                pcVar9 = ".kfm";
                 iVar8 = -1;
-                pCVar9 = this_ptr;
+                pCVar14 = this_ptr;
                 do {
-                  pCVar14 = pCVar9;
+                  pCVar13 = pCVar14;
                   if (iVar8 == 0) break;
                   iVar8 = iVar8 + -1;
-                  pCVar14 = (CKeyFramedModel *)((int)pCVar9 + (uint)bVar15 * -2 + 1);
-                  pcVar11 = pCVar9->model_filename;
-                  pCVar9 = pCVar14;
+                  pCVar13 = (CKeyFramedModel *)((int)pCVar14 + (uint)bVar15 * -2 + 1);
+                  pcVar11 = pCVar14->model_filename;
+                  pCVar14 = pCVar13;
                 } while (*pcVar11 != '\0');
-                pcVar11 = (char *)((int)&pCVar14[-1].padding + 3);
+                pcVar11 = (char *)((int)&pCVar13[-1].padding + 3);
                 do {
-                  cVar1 = *pcVar13;
+                  cVar1 = *pcVar9;
                   *pcVar11 = cVar1;
                   if (cVar1 == '\0') break;
-                  cVar1 = pcVar13[1];
-                  pcVar13 = pcVar13 + 2;
+                  cVar1 = pcVar9[1];
+                  pcVar9 = pcVar9 + 2;
                   pcVar11[1] = cVar1;
                   pcVar11 = pcVar11 + 2;
                 } while (cVar1 != '\0');
@@ -548,16 +548,16 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                     core_dmodel_cpp_CKeyFramedModel_load_FUN_00476db0(this_ptr,local_408);
                     local_64 = 1;
                     if (0 < this_ptr->texture_count) {
-                      pCVar9 = (CKeyFramedModel *)(local_44->base).texture_name;
+                      pcVar9 = local_44->textures[0].texture_name;
                       do {
-                        iVar10 = core_dmodel_cpp_CKeyFramedModel_copyTextureFiles_FUN_0047ca50
-                                           (pCVar9,local_18,local_998,(char *)0x0,"art");
+                        iVar10 = core_dmodel_cpp_copyTextureFiles_FUN_0047ca50
+                                           (pcVar9,local_18,local_998,(char *)0x0,"art");
                         if (iVar10 == 0) {
                           core_dmodel_cpp_CKeyFramedModel_free_FUN_00477690(this_ptr);
                           break;
                         }
                         iVar8 = iVar8 + 1;
-                        pCVar9 = (CKeyFramedModel *)(pCVar9->model_filename + 0x48);
+                        pcVar9 = pcVar9 + 0x48;
                       } while (iVar8 < this_ptr->texture_count);
                     }
                   }
@@ -590,13 +590,13 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                 core_dmodel_cpp_CKeyFramedModel_export_FUN_00478e10(this_ptr,"t:\\");
                 iVar8 = 0;
                 if (0 < this_ptr->texture_count) {
-                  pCVar9 = (CKeyFramedModel *)(local_40->base).texture_name;
+                  pcVar9 = local_40->textures[0].texture_name;
                   do {
-                    iVar10 = core_dmodel_cpp_CKeyFramedModel_copyTextureFiles_FUN_0047ca50
-                                       (pCVar9,(char *)0x0,"art",local_14,local_a98);
+                    iVar10 = core_dmodel_cpp_copyTextureFiles_FUN_0047ca50
+                                       (pcVar9,(char *)0x0,"art",local_14,local_a98);
                     if (iVar10 == 0) break;
                     iVar8 = iVar8 + 1;
-                    pCVar9 = (CKeyFramedModel *)(pCVar9->model_filename + 0x48);
+                    pcVar9 = pcVar9 + 0x48;
                   } while (iVar8 < this_ptr->texture_count);
                 }
               } while (iVar8 < this_ptr->texture_count);
@@ -839,11 +839,11 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
               local_118 = local_16c;
               _sprintf(local_4d0,"Current dimensions on frame %d\nX: (%6.2f ... %6.2f), size = %g\nY: (%6.2f ... %6.2f), size = %g\nZ: (%6.2f ... %6.2f), size = %g\n\nEnter uniform scale factor, or x,y,z scale factor\n");
               puVar12 = &DAT_00670210;
-              pcVar13 = local_278;
+              pcVar9 = local_278;
               for (iVar8 = 0x19; iVar8 != 0; iVar8 = iVar8 + -1) {
-                *(uint *)pcVar13 = *puVar12;
+                *(uint *)pcVar9 = *puVar12;
                 puVar12 = puVar12 + (uint)bVar15 * -2 + 1;
-                pcVar13 = pcVar13 + ((uint)bVar15 * -2 + 1) * 4;
+                pcVar9 = pcVar9 + ((uint)bVar15 * -2 + 1) * 4;
               }
               while (iVar8 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                                        (g_CEditorToolsPtr,local_4d0,local_278,100,1), iVar8 != 0) {

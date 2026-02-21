@@ -52,10 +52,10 @@ int __cdecl core_hero_cpp_CHero_FUN_004f33b0(CHero *this_ptr)
             pCVar4->z <= 0.0)) &&
            (((*((this_ptr_00->base).base.vtable._ub)->getInteractionInfo)
                        ((CDemonActor *)this_ptr_00,&SStack_80), SStack_80.can_interact != 0 &&
-            ((float)SStack_80.reference_data == 0.0)))) {
-          CStack_48.z = SStack_80.distance_min;
-          CStack_48.x = (float)SStack_80.reference_data;
-          CStack_48.y = (float)SStack_80.reference_data;
+            (SStack_80.interacting_actor == (CDemonActor *)0x0)))) {
+          CStack_48.z = SStack_80.approach_offset;
+          CStack_48.x = (float)SStack_80.interacting_actor;
+          CStack_48.y = (float)SStack_80.interacting_actor;
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                     ((CDemonActor *)this_ptr_00,&CStack_54,&CStack_48);
           fVar1 = CStack_54.x - (input_world_point->position).x;

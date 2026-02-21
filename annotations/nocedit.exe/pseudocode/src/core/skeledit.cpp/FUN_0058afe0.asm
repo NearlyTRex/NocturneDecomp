@@ -11,8 +11,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
+;   core_skeledit.cpp_CDeformableModel_FUN_0058c190 at 0058c74a
 ;   core_skeledit.cpp_CSkeleton_FUN_00592690 at 0059386d
-;   core_skeledit.cpp_FUN_0058c190 at 0058c74a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_no_parent_0064a562

@@ -22,7 +22,6 @@ typedef struct CGabriella {
     float fire_cooldown_timer; // 0x1fc0c
     int unk3; // 0x1fc10
     CCloth coat; // 0x1fc14
-    char unk4[12]; // 0x5fa78
     float dynamite_charge_power; // 0x5fa84
 } CGabriella;
 

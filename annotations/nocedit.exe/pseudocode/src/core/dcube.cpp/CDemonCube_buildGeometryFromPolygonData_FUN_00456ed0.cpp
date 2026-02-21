@@ -71,7 +71,8 @@ void __cdecl core_dcube_cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0
           do {
             pCVar1 = this_ptr->vertex_buffer;
             core_dcube_cpp_CDemonCubeTriangle_init_FUN_00455430
-                      ((CDemonCubeTriangle *)((int)this_ptr->triangle_buffer->vertices + local_10),
+                      ((CDemonCubeTriangle *)
+                       ((int)(this_ptr->triangle_buffer->triangle).vertices + local_10),
                        pCVar1 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + local_1c),
                        pCVar1 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar5 + -4),
                        pCVar1 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar5));
@@ -88,7 +89,7 @@ void __cdecl core_dcube_cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0
         local_20 = local_20 + 1;
       } while (local_20 < g_PolygonCount);
     }
-    core_dcube_cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0((SVoxelGridParams *)this_ptr);
+    core_dcube_cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0(this_ptr);
     return;
   }
   this_ptr->vertex_count = 0;

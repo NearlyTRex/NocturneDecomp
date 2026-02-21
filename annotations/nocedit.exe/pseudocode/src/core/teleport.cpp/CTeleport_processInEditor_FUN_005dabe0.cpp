@@ -35,36 +35,36 @@ void __cdecl core_teleport_cpp_CTeleport_processInEditor_FUN_005dabe0(CTeleport 
     fVar1 = g_CGamePtr->delta_time_float * (float)4;
     iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD4);
     if (iVar2 != 0) {
-      this_ptr->unk1 = (int)((float)this_ptr->unk1 - fVar1);
+      (this_ptr->trigger_extents).x = (this_ptr->trigger_extents).x - fVar1;
     }
     iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD6);
     if (iVar2 != 0) {
-      this_ptr->unk1 = (int)((float)this_ptr->unk1 + fVar1);
+      (this_ptr->trigger_extents).x = (this_ptr->trigger_extents).x + fVar1;
     }
     iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_A);
     if (iVar2 != 0) {
-      this_ptr->unk2 = (int)((float)this_ptr->unk2 - fVar1);
+      (this_ptr->trigger_extents).y = (this_ptr->trigger_extents).y - fVar1;
     }
     iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_Q);
     if (iVar2 != 0) {
-      this_ptr->unk2 = (int)((float)this_ptr->unk2 + fVar1);
+      (this_ptr->trigger_extents).y = (this_ptr->trigger_extents).y + fVar1;
     }
     iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD2);
     if (iVar2 != 0) {
-      this_ptr->unk3 = (int)((float)this_ptr->unk3 - fVar1);
+      (this_ptr->trigger_extents).z = (this_ptr->trigger_extents).z - fVar1;
     }
     iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD8);
     if (iVar2 != 0) {
-      this_ptr->unk3 = (int)((float)this_ptr->unk3 + fVar1);
+      (this_ptr->trigger_extents).z = (this_ptr->trigger_extents).z + fVar1;
     }
-    if (this_ptr->unk1 < 0x3f000000) {
-      this_ptr->unk1 = 0x3f000000;
+    if ((int)(this_ptr->trigger_extents).x < 0x3f000000) {
+      (this_ptr->trigger_extents).x = 0.5;
     }
-    if ((float)this_ptr->unk2 < 0.5) {
-      this_ptr->unk2 = 0x3f000000;
+    if ((this_ptr->trigger_extents).y < 0.5) {
+      (this_ptr->trigger_extents).y = 0.5;
     }
-    if ((float)this_ptr->unk3 < 0.5) {
-      this_ptr->unk3 = 0x3f000000;
+    if ((this_ptr->trigger_extents).z < 0.5) {
+      (this_ptr->trigger_extents).z = 0.5;
       return;
     }
   }

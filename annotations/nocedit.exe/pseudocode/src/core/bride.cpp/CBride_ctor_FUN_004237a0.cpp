@@ -21,7 +21,7 @@ CBride * __cdecl core_bride_cpp_CBride_ctor_FUN_004237a0(CBride *this_ptr)
   (pCVar3->base).base.collision_cylinder_height = 0.75;
   fVar2 = 100.0f;
   (pCVar3->base).base.collision_cylinder_radius = 1.5;
-  pCVar3->unk2 = 0;
+  pCVar3->action_timer = 0.0;
   (pCVar3->base).base.ai_detection_range_min = fVar1;
   (pCVar3->base).base.ai_detection_range_max = fVar2;
   return pCVar3;

@@ -1,119 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 24,
-        "line": 25,
-        "message": "type 'CFilmProjector_ptr_500' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 26,
-        "message": "type 'CFilmProjector_ptr_500' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 27,
-        "message": "type 'CFilmProjector_ptr_500' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 28,
-        "message": "type 'CFilmProjector_ptr_500' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 24,
-        "line": 39,
-        "message": "type 'CFilmProjector_ptr_500' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 40,
-        "message": "type 'CFilmProjector_ptr_500' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 41,
-        "message": "type 'CFilmProjector_ptr_500' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 42,
-        "message": "type 'CFilmProjector_ptr_500' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 24,
-        "line": 44,
-        "message": "type 'CFilmProjector_ptr_500' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 45,
-        "message": "type 'CFilmProjector_ptr_500' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 46,
-        "message": "type 'CFilmProjector_ptr_500' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 47,
-        "message": "type 'CFilmProjector_ptr_500' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 24,
-        "line": 57,
-        "message": "type 'CFilmProjector_ptr_500' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 58,
-        "message": "type 'CFilmProjector_ptr_500' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 59,
-        "message": "type 'CFilmProjector_ptr_500' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 60,
-        "message": "type 'CFilmProjector_ptr_500' does not provide a subscript operator"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 222,
+    "complexity_score": 125,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 10,
-    "pseudocode_lines": 52,
-    "suspect_count": 16,
+    "pseudocode_lines": 40,
+    "suspect_count": 8,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "pointer_cast"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 119
+    "total_lines": 107
   },
   "cross_references": [
     {
@@ -287,99 +189,43 @@
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 19,
-      "match": "(char *)((int)",
-      "text": "*(char *)((int)(this_ptr_00[1].part_visibility_flags + 0x1a) + 1) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 20,
-      "match": "(char *)((int)",
-      "text": "*(char *)((int)(this_ptr_00[1].part_visibility_flags + 0x1a) + 2) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 21,
-      "match": "(char *)((int)",
-      "text": "*(char *)((int)(this_ptr_00[1].part_visibility_flags + 0x1a) + 3) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 33,
-      "match": "(char *)((int)",
-      "text": "*(char *)((int)(this_ptr_00[1].part_visibility_flags + 0x1b) + 1) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 34,
-      "match": "(char *)((int)",
-      "text": "*(char *)((int)(this_ptr_00[1].part_visibility_flags + 0x1b) + 2) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 35,
-      "match": "(char *)((int)",
-      "text": "*(char *)((int)(this_ptr_00[1].part_visibility_flags + 0x1b) + 3) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 36,
+      "line": 18,
       "match": "ADJ",
-      "text": "pcVar3 = ADJ(this_ptr_00)->unk + 4;",
+      "text": "ADJ(this_ptr_00)->reel_rotation = 0.0;",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 38,
-      "match": "(char *)((int)",
-      "text": "*(char *)((int)(this_ptr_00[1].part_visibility_flags + 0) + 1) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 39,
-      "match": "(char *)((int)",
-      "text": "*(char *)((int)(this_ptr_00[1].part_visibility_flags + 0) + 2) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 40,
-      "match": "(char *)((int)",
-      "text": "*(char *)((int)(this_ptr_00[1].part_visibility_flags + 0) + 3) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 51,
-      "match": "(char *)((int)",
-      "text": "*(char *)((int)(this_ptr_00[1].part_visibility_flags + 0x1c) + 1) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 52,
-      "match": "(char *)((int)",
-      "text": "*(char *)((int)(this_ptr_00[1].part_visibility_flags + 0x1c) + 2) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 53,
-      "match": "(char *)((int)",
-      "text": "*(char *)((int)(this_ptr_00[1].part_visibility_flags + 0x1c) + 3) = '\\0';",
-      "type": "pointer_cast"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 29,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->prev_dest_state = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 54,
+      "line": 30,
+      "match": "ADJ",
+      "text": "pcVar3 = ADJ(this_ptr_00)->key_event;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 31,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->key_reel = (CDemonActor *)0x0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 41,
+      "match": "ADJ",
+      "text": "ADJ(this_ptr_00)->sfx_handle = 0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 42,
       "match": "ADJ",
       "text": "return ADJ(this_ptr_00);",
       "type": "decompiler_intrinsic"

@@ -25,7 +25,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0(
   float fStack_bc;
   SCramConfig local_b8;
   int iStack_40;
-  SMRGLTextureExtended *local_3c;
+  SMRGLTextureLod *local_3c;
   int iStack_34;
   char *pcStack_30;
   int iStack_2c;
@@ -40,7 +40,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0(
   shape_design_c_setTextureQualityParameter_FUN_0046a8e0(0x40);
   local_24 = 0;
   if (0 < model_ptr->texture_count) {
-    local_3c = (SMRGLTextureExtended *)model_ptr->texture_list[0].base.texture_name;
+    local_3c = (SMRGLTextureLod *)model_ptr->texture_list[0].textures[0].texture_name;
     do {
       iVar8 = 0x7fffffff;
       max_u = -0x7fffffff;
@@ -114,7 +114,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0(
       }
       local_24 = shape_design_c_findTextureByFilename_FUN_0046dfc0
                            (local_3c[*(int *)((int)model_ptr->poly_texture_index_list + iStack_28)].
-                            base.texture_name);
+                            textures[0].texture_name);
       iVar6 = (int)model_ptr->poly_vert_list + iStack_34;
       iVar8 = 0;
       iVar5 = iVar6;
@@ -156,7 +156,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0(
   iVar6 = 0;
   model_ptr->texture_count = iVar5;
   if (0 < iVar5) {
-    pcStack_30 = model_ptr->texture_list[0].base.texture_name;
+    pcStack_30 = model_ptr->texture_list[0].textures[0].texture_name;
     do {
       pcVar4 = shape_design_c_getTextureName_FUN_0046e060(iVar6);
       pcVar10 = pcStack_30;

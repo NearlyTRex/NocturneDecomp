@@ -65,13 +65,13 @@ LAB_0051abcf:
       iVar1 = _fgetc(file_handle);
       if (iVar1 < 0) break;
     } while ((iVar1 != 10) || (iVar4 = iVar4 + -1, 0 < iVar4));
-    for (iVar4 = 0; iVar4 < this_ptr->submesh_count; iVar4 = iVar4 + 1) {
+    for (iVar4 = 0; iVar4 < this_ptr->lod_texture_count; iVar4 = iVar4 + 1) {
       iVar1 = _fscanf(file_handle,"%[^\n]\n",local_234);
       if (iVar1 != 1) goto LAB_0051aab1;
       splitpath(local_234,(char *)0x0,(char *)0x0,local_130,(char *)0x0);
       makepath
-                (this_ptr->submesh_data[iVar4].texture_filename,(char *)0x0,(char *)0x0,local_130,
-                 "raw");
+                (this_ptr->lod_textures[iVar4].textures[0].texture_name,(char *)0x0,(char *)0x0,
+                 local_130,"raw");
     }
     iVar4 = 1;
     do {

@@ -34,7 +34,7 @@
 ;
 ; Called Functions:
 ;   shape_meshlod.cpp_CLodMesh_allocate_FUN_00515ac0
-;   shape_meshlod.cpp_CLodMesh_findOrAddSubmesh_FUN_00518790
+;   shape_meshlod.cpp_CLodMesh_findOrAddLodTexture_FUN_00518790
 ;   shape_meshlod.cpp_CLodMesh_free_FUN_00515970
 ;   shape_meshlod.cpp_CLodMesh_postprocessMesh_FUN_0051b330
 ;
@@ -73,8 +73,8 @@ section .text
     PUSH EAX                            ; 0051b0c2 | DAT_016e9914 | DAT_016e9a98
     MOV EBP,dword ptr [ESP + 0x28]      ; 0051b0c3
     PUSH EBP                            ; 0051b0c7
-    CALL shape_meshlod.cpp_CLodMesh_findOrAddSubmesh_FUN_00518790 ; 0051b0c8
-        ;   XREF to: 00518790 (UNCONDITIONAL_CALL)  ; int shape_meshlod.cpp_CLodMesh_findOrAddSubmesh_FUN_00518790(CLodMesh * this_ptr, char * texture_filename)
+    CALL shape_meshlod.cpp_CLodMesh_findOrAddLodTexture_FUN_00518790 ; 0051b0c8
+        ;   XREF to: 00518790 (UNCONDITIONAL_CALL)  ; int shape_meshlod.cpp_CLodMesh_findOrAddLodTexture_FUN_00518790(CLodMesh * this_ptr, char * texture_filename)
     ADD ESP,0x8                         ; 0051b0cd
     MOV EBP,dword ptr [0x016e990c]      ; 0051b0d0 | g_PolygonCount
         ;   Label: LAB_0051b0d0
@@ -93,7 +93,7 @@ section .text
     PUSH EAX                            ; 0051b0f1
     MOV EBX,EAX                         ; 0051b0f2
     CALL shape_meshlod.cpp_CLodMesh_allocate_FUN_00515ac0 ; 0051b0f4
-        ;   XREF to: 00515ac0 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_allocate_FUN_00515ac0(CLodMesh * this_ptr, int vertex_count, int tri_count, int submesh_count)
+        ;   XREF to: 00515ac0 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_allocate_FUN_00515ac0(CLodMesh * this_ptr, int vertex_count, int tri_count, int lod_texture_count)
     MOV EAX,EBX                         ; 0051b0f9
     XOR ESI,ESI                         ; 0051b0fb
     MOV EDI,dword ptr [EAX]             ; 0051b0fd
@@ -218,8 +218,8 @@ section .text
     PUSH EAX                            ; 0051b28e
     MOV EDX,dword ptr [ESP + 0x28]      ; 0051b28f
     PUSH EDX                            ; 0051b293
-    CALL shape_meshlod.cpp_CLodMesh_findOrAddSubmesh_FUN_00518790 ; 0051b294
-        ;   XREF to: 00518790 (UNCONDITIONAL_CALL)  ; int shape_meshlod.cpp_CLodMesh_findOrAddSubmesh_FUN_00518790(CLodMesh * this_ptr, char * texture_filename)
+    CALL shape_meshlod.cpp_CLodMesh_findOrAddLodTexture_FUN_00518790 ; 0051b294
+        ;   XREF to: 00518790 (UNCONDITIONAL_CALL)  ; int shape_meshlod.cpp_CLodMesh_findOrAddLodTexture_FUN_00518790(CLodMesh * this_ptr, char * texture_filename)
     ADD ESP,0x8                         ; 0051b299
     MOV dword ptr [EBX],EAX             ; 0051b29c
     JMP 0x0051b1d6                      ; 0051b29e

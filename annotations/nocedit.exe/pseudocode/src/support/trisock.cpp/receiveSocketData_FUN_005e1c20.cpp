@@ -2,11 +2,11 @@
 // Address: 005e1c20
 // Address Range: [[005e1c20, 005e1c9a]]
 // Convention: __cdecl
-// Signature: int __cdecl support_trisock_cpp_receiveSocketData_FUN_005e1c20(SOCKET *socket,char *buffer,int length,SNetworkAddr *source_addr)
+// Signature: int __cdecl support_trisock_cpp_receiveSocketData_FUN_005e1c20(SOCKET *socket_handle,char *buffer,int length,SNetworkAddr *source_addr)
 
 #include "nocturne.h"
 
-int __cdecl support_trisock_cpp_receiveSocketData_FUN_005e1c20(SOCKET *socket,char *buffer,int length,SNetworkAddr *source_addr)
+int __cdecl support_trisock_cpp_receiveSocketData_FUN_005e1c20(SOCKET *socket_handle,char *buffer,int length,SNetworkAddr *source_addr)
 
 {
   uint uVar1;
@@ -19,11 +19,11 @@ int __cdecl support_trisock_cpp_receiveSocketData_FUN_005e1c20(SOCKET *socket,ch
   
   bVar5 = 0;
   if (source_addr == (SNetworkAddr *)0x0) {
-    iVar3 = recv(*socket,buffer,length,0);
+    iVar3 = recv(*socket_handle,buffer,length,0);
   }
   else {
     local_14 = 0x10;
-    iVar3 = recvfrom(*socket,buffer,length,0,&local_2c,&local_14);
+    iVar3 = recvfrom(*socket_handle,buffer,length,0,&local_2c,&local_14);
     if (0 < iVar3) {
       pSVar4 = support_trisock_cpp_convertSockAddr_FUN_005e1960
                          ((SOCKADDR_IN *)&stack0xffffffe4,&local_2c);

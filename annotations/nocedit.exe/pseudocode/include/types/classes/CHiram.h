@@ -8,6 +8,6 @@
 // Ghidra size: 0x1f76c (128876 bytes)
 typedef struct CHiram {
     CNPC base; // 0x0
-    char unk[100]; // 0x1f708
+    char kill_event[100]; // 0x1f708
 } CHiram;
 

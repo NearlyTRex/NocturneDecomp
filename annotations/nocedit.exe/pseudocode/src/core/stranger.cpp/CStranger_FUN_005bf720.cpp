@@ -16,11 +16,11 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005bf720(CStranger *this_ptr)
   uint *puVar2;
   uint *puVar3;
   byte bVar4;
-  SBoneTransformData *in_stack_00000008;
+  SPose *in_stack_00000008;
   float blend_weight;
   int bone_index;
   code *blend_callback;
-  SBoneTransformData SStack_1ad8;
+  SPose SStack_1ad8;
   CQuaternion4f local_3c;
   CQuaternion4f local_2c;
   CQuaternion4f local_1c;

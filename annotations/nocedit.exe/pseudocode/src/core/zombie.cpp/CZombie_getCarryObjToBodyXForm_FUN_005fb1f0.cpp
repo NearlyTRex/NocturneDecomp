@@ -99,7 +99,7 @@ void __stack2_esi core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0(CZ
       local_64.z = local_7c.z;
     }
   }
-  if (local_10 == this_ptr->bone_l_hand) {
+  if (local_10 == this_ptr->bone_index_lhand) {
     pCVar3 = &local_70;
     output_vector = &local_88;
     local_70.x = -0.4;

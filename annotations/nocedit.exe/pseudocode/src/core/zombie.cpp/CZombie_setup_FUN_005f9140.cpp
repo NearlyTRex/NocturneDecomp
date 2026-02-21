@@ -22,74 +22,74 @@ void __cdecl core_zombie_cpp_CZombie_setup_FUN_005f9140(CZombie *this_ptr)
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr_00);
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr_00);
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 Head");
-  this_ptr->bone_head = iVar1;
+  this_ptr->bone_index_head = iVar1;
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 L ForeArm");
-  this_ptr->bone_l_forearm = iVar1;
+  this_ptr->bone_index_lforearm = iVar1;
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 R ForeArm");
-  this_ptr->bone_r_forearm = iVar1;
+  this_ptr->bone_index_rforearm = iVar1;
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 L UpperArm")
   ;
-  this_ptr->bone_l_upperarm = iVar1;
+  this_ptr->bone_index_lupperarm = iVar1;
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 R UpperArm")
   ;
-  this_ptr->bone_r_upperarm = iVar1;
+  this_ptr->bone_index_rupperarm = iVar1;
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 L Foot");
-  this_ptr->bone_l_foot = iVar1;
+  this_ptr->bone_index_lfoot = iVar1;
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 R Foot");
-  this_ptr->bone_r_foot = iVar1;
+  this_ptr->bone_index_rfoot = iVar1;
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 L Hand");
-  this_ptr->bone_l_hand = iVar1;
+  this_ptr->bone_index_lhand = iVar1;
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 R Hand");
-  this_ptr->bone_r_hand = iVar1;
+  this_ptr->bone_index_rhand = iVar1;
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 Spine");
-  this_ptr->bone_spine = iVar1;
+  this_ptr->bone_index_spine = iVar1;
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 Spine2");
-  this_ptr->bone_spine2 = iVar1;
+  this_ptr->bone_index_spine2 = iVar1;
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr_00);
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"larm01",1);
-  this_ptr->part_l_arm = iVar1;
+  this_ptr->part_index_larm = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"l4arm01",1);
-  this_ptr->part_l_forearm = iVar1;
+  this_ptr->part_index_lforearm = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"rarm01",1);
-  this_ptr->part_r_arm = iVar1;
+  this_ptr->part_index_rarm = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"r4arm01",0);
-  this_ptr->part_r_forearm = iVar1;
+  this_ptr->part_index_rforearm = iVar1;
   if (iVar1 < 0) {
-    this_ptr->part_r_forearm = 0x1d;
+    this_ptr->part_index_rforearm = 0x1d;
   }
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"waist01",0);
-  this_ptr->part_waist = iVar1;
+  this_ptr->part_index_waist = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"torso01",1);
-  this_ptr->part_torso = iVar1;
+  this_ptr->part_index_torso = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"head01",1);
-  this_ptr->part_head = iVar1;
+  this_ptr->part_index_head = iVar1;
   (this_ptr->base).base.model.part_data.visibility_flags[0x1d] = 0;
   iVar1 = stricmp
                     ((this_ptr->base).base.model.model_name,"newzomb1.dfm");
   if (iVar1 == 0) {
-    iVar1 = this_ptr->part_l_arm;
-    this_ptr->part_l_arm = this_ptr->part_r_arm;
-    this_ptr->part_r_arm = iVar1;
-    iVar1 = this_ptr->part_l_forearm;
-    this_ptr->part_l_forearm = this_ptr->part_r_forearm;
-    this_ptr->part_r_forearm = iVar1;
+    iVar1 = this_ptr->part_index_larm;
+    this_ptr->part_index_larm = this_ptr->part_index_rarm;
+    this_ptr->part_index_rarm = iVar1;
+    iVar1 = this_ptr->part_index_lforearm;
+    this_ptr->part_index_lforearm = this_ptr->part_index_rforearm;
+    this_ptr->part_index_rforearm = iVar1;
   }
-  (this_ptr->base).base.carry_hands[0].bone_index = this_ptr->bone_l_hand;
-  (this_ptr->base).base.carry_hands[0].secondary_bone_index = this_ptr->part_l_forearm;
-  (this_ptr->base).base.carry_hands[1].bone_index = this_ptr->bone_r_hand;
-  (this_ptr->base).base.carry_hands[1].secondary_bone_index = this_ptr->part_r_forearm;
+  (this_ptr->base).base.carry_hands[0].bone_index = this_ptr->bone_index_lhand;
+  (this_ptr->base).base.carry_hands[0].secondary_bone_index = this_ptr->part_index_lforearm;
+  (this_ptr->base).base.carry_hands[1].bone_index = this_ptr->bone_index_rhand;
+  (this_ptr->base).base.carry_hands[1].secondary_bone_index = this_ptr->part_index_rforearm;
   core_enemy_cpp_CEnemy_setup_FUN_004a9650(&this_ptr->base);
   (this_ptr->base).base.base.is_transparent = (uint)(this_ptr->is_miner_zombie != 0);
   fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
   this_ptr->rise_delay = fVar2;
-  if ((-1 < this_ptr->part_waist) && ((this_ptr->base).base.collision_cylinder_top < 0.0)) {
+  if ((-1 < this_ptr->part_index_waist) && ((this_ptr->base).base.collision_cylinder_top < 0.0)) {
     (this_ptr->base).base.collision_cylinder_top =
          (this_ptr->base).base.model.bounding_box.max.y + (float)-0.75;
   }

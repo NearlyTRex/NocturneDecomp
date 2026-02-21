@@ -10,11 +10,11 @@ void __cdecl core_skeledit_cpp_FUN_0058aeb0(void)
 
 {
   int iVar1;
-  float *matrix_in;
+  CMatrix3x4f *matrix_in;
   CMatrix3x4f *pCVar2;
   CMatrix3x4f *pCVar3;
   byte bVar4;
-  int *in_stack_00000004;
+  CBoneStructure *in_stack_00000004;
   CMatrix3x4f *in_stack_00000008;
   CMatrix3x4f local_38;
   int local_8;
@@ -23,10 +23,10 @@ void __cdecl core_skeledit_cpp_FUN_0058aeb0(void)
   local_8 = 0x58aeba;
   __STK();
   local_8 = 0;
-  if (0 < *in_stack_00000004) {
-    matrix_in = (float *)(in_stack_00000004 + 0x16);
+  if (0 < in_stack_00000004->bone_count) {
+    matrix_in = &in_stack_00000004->bones[0].world_matrix;
     do {
-      core_xform_cpp_inverse_FUN_005f6210((CMatrix3x4f *)matrix_in,&local_38);
+      core_xform_cpp_inverse_FUN_005f6210(matrix_in,&local_38);
       pCVar2 = &local_38;
       pCVar3 = in_stack_00000008;
       for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -35,12 +35,12 @@ void __cdecl core_skeledit_cpp_FUN_0058aeb0(void)
         pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
       }
       core_xform_cpp_clearTranslation_FUN_005f5370(in_stack_00000008);
-      core_xform_cpp_setRotationScaleIdentity_FUN_005f5190((CMatrix3x4f *)matrix_in);
+      core_xform_cpp_setRotationScaleIdentity_FUN_005f5190(matrix_in);
       in_stack_00000008 = in_stack_00000008 + 1;
-      matrix_in = matrix_in + 0x21;
+      matrix_in = (CMatrix3x4f *)&matrix_in[2].m[2].x;
       local_8 = local_8 + 1;
-    } while (local_8 < *in_stack_00000004);
+    } while (local_8 < in_stack_00000004->bone_count);
   }
-  core_skeledit_cpp_FUN_0058ac80();
+  core_skeledit_cpp_CBoneStructure_FUN_0058ac80(in_stack_00000004);
   return;
 }

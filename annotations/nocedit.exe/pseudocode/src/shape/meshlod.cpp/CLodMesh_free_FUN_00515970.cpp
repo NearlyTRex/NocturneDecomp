@@ -34,9 +34,9 @@ void __cdecl shape_meshlod_cpp_CLodMesh_free_FUN_00515970(CLodMesh *this_ptr)
     shape_memdbg_cpp_debugFree_FUN_0050f460
               (this_ptr->lod_levels_ptr,"..\\shape\\meshlod.cpp",0x21c);
   }
-  if (this_ptr->submesh_data != (SLodSubmesh *)0x0) {
+  if (this_ptr->lod_textures != (SMRGLTextureLod *)0x0) {
     shape_memdbg_cpp_debugFree_FUN_0050f460
-              (this_ptr->submesh_data,"..\\shape\\meshlod.cpp",0x21d);
+              (this_ptr->lod_textures,"..\\shape\\meshlod.cpp",0x21d);
   }
   g_CurrentDebugLine = 0x21f;
   g_CurrentDebugFilename = "..\\shape\\meshlod.cpp";

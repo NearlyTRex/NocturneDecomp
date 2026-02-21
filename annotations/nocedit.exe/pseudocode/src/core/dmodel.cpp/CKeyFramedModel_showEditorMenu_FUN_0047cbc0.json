@@ -14,16 +14,10 @@
         "message": "format specifies type 'int' but the argument has type 'CKeyFramedModelInstance *' [-Werror,-Wformat]"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 17,
+        "category": "other",
+        "column": 41,
         "line": 418,
-        "message": "use of undeclared identifier 'DAT_02c14c88'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 56,
-        "line": 419,
-        "message": "use of undeclared identifier 'DAT_02c14c88'"
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "undeclared_identifier",
@@ -67,12 +61,12 @@
   },
   "complexity": {
     "assembly_lines": 2429,
-    "complexity_score": 1307,
+    "complexity_score": 1287,
     "cross_reference_count": 2,
     "function_call_count": 71,
     "global_count": 126,
     "pseudocode_lines": 892,
-    "suspect_count": 39,
+    "suspect_count": 37,
     "suspect_types": [
       "decompiler_intrinsic",
       "negative_offset",
@@ -169,11 +163,6 @@
       "name": "core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010"
     },
     {
-      "addr": "0047ca50",
-      "is_variadic": false,
-      "name": "core_dmodel.cpp_CKeyFramedModel_copyTextureFiles_FUN_0047ca50"
-    },
-    {
       "addr": "00478e10",
       "is_variadic": false,
       "name": "core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e10"
@@ -257,6 +246,11 @@
       "addr": "0047c930",
       "is_variadic": false,
       "name": "core_dmodel.cpp_copyFile_FUN_0047c930"
+    },
+    {
+      "addr": "0047ca50",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_copyTextureFiles_FUN_0047ca50"
     },
     {
       "addr": "00478cb0",
@@ -1155,8 +1149,8 @@
     },
     {
       "addr": "02c14c88",
-      "name": "DAT_02c14c88",
-      "type": "undefined4",
+      "name": "CHAR_ARRAY_02c14c88",
+      "type": "char[20]",
       "value": null
     },
     {
@@ -2199,20 +2193,6 @@
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 411,
-      "match": "DAT_02c14c88",
-      "text": "_sprintf(&DAT_02c14c88,\"noc%d.pcx\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 412,
-      "match": "DAT_02c14c88",
-      "text": "engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(&DAT_02c14c88);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
       "line": 436,
       "match": "local_1c[-1].",
@@ -2230,21 +2210,21 @@
       "description": "Complex pointer cast",
       "line": 509,
       "match": "(CKeyFramedModel *)((int)",
-      "text": "pCVar14 = (CKeyFramedModel *)((int)pCVar9 + (uint)bVar15 * -2 + 1);",
+      "text": "pCVar13 = (CKeyFramedModel *)((int)pCVar14 + (uint)bVar15 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 513,
-      "match": "pCVar14[-1].",
-      "text": "pcVar11 = (char *)((int)&pCVar14[-1].padding + 3);",
+      "match": "pCVar13[-1].",
+      "text": "pcVar11 = (char *)((int)&pCVar13[-1].padding + 3);",
       "type": "negative_offset"
     },
     {
       "description": "Complex pointer cast",
       "line": 513,
       "match": "(char *)((int)",
-      "text": "pcVar11 = (char *)((int)&pCVar14[-1].padding + 3);",
+      "text": "pcVar11 = (char *)((int)&pCVar13[-1].padding + 3);",
       "type": "pointer_cast"
     },
     {

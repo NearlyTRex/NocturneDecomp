@@ -560,7 +560,7 @@ section .text
     PUSH ESI                            ; 005292ae
     MOV dword ptr [EBX + 0x21e90],0x0   ; 005292af
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510 ; 005292b9
-        ;   XREF to: 005a1510 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510(CDeformableModelInstance * this_ptr, SBoneTransformData * bone_transform)
+        ;   XREF to: 005a1510 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510(CDeformableModelInstance * this_ptr, SPose * bone_transform)
     ADD ESP,0x8                         ; 005292be
     PUSH ESI                            ; 005292c1
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0 ; 005292c2

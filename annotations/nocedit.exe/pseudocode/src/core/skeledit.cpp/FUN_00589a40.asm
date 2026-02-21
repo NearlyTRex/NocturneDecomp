@@ -17,9 +17,9 @@
 ;   TerminatedCString s_s_00649dda
 ;   TerminatedCString s_core_skeledit_cpp_00649de0
 ;   TerminatedCString s_skeledit_ini_00681868
-;   undefined1 DAT_03670848
-;   undefined1 DAT_03670950
-;   undefined1 DAT_03670a58
+;   undefined4 DAT_03670848
+;   undefined4 DAT_03670950
+;   undefined4 DAT_03670a58
 ;
 ; Called Functions:
 ;   crt_stack.c___STK_FUN_005ff9f3

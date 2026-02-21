@@ -27,7 +27,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 30,
+        "column": 17,
         "line": 68,
         "message": "use of undeclared identifier 'stack0xffffffc0'"
       }
@@ -68,7 +68,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0",
-    "signature": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0(CDeformableModelInstance *this_ptr,int motion_index,float animation_time,SBoneTransformData *output_bone_data)"
+    "signature": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0(CDeformableModelInstance *this_ptr,int motion_index,float animation_time,SPose *output_bone_data)"
   },
   "function_calls": [
     {
@@ -275,7 +275,7 @@
         "name": "output_bone_data",
         "offset": 16,
         "size": 4,
-        "type": "SBoneTransformData *"
+        "type": "SPose *"
       }
     ]
   },
@@ -336,7 +336,7 @@
       "description": "Direct stack address reference",
       "line": 61,
       "match": "&stack0xffffffc0",
-      "text": "if ((SBoneTransformData *)&stack0xffffffc0 != output_bone_data) {",
+      "text": "if ((SPose *)&stack0xffffffc0 != output_bone_data) {",
       "type": "stack_ref"
     }
   ]

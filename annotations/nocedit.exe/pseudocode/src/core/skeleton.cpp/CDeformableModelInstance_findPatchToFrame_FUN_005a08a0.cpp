@@ -16,8 +16,8 @@ int __cdecl core_skeleton_cpp_CDeformableModelInstance_findPatchToFrame_FUN_005a
   int iVar5;
   CMatrix3x4f *pCVar6;
   int iVar7;
-  SBoneTransformData local_3598;
-  SBoneTransformData local_1afc;
+  SPose local_3598;
+  SPose local_1afc;
   float local_60;
   float local_5c;
   float local_58;

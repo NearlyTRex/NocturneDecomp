@@ -15,64 +15,61 @@ void __cdecl shape_cramtex_cpp_CCramTex_renderTextureEntry_FUN_00447c20(CCramTex
   int iVar4;
   int iVar5;
   int iVar6;
-  int *in_stack_00000004;
   int local_18;
   
   __STK();
-  if (this_ptr == (CCramTex *)0x0) {
-    if (g_CramMapNumber != in_stack_00000004[4]) {
+  if (visualization_mode == 0) {
+    if (g_CramMapNumber != this_ptr->assigned_map_number) {
       return;
     }
-    local_18 = in_stack_00000004[9];
-    iVar5 = in_stack_00000004[8];
-    iVar4 = in_stack_00000004[10];
-    iVar6 = in_stack_00000004[7];
+    local_18 = this_ptr->working_top;
+    iVar5 = this_ptr->working_right;
+    iVar4 = this_ptr->working_width;
+    iVar6 = this_ptr->placement_bottom;
   }
   else {
-    if (g_CramMapNumber != in_stack_00000004[0xb]) {
+    if (g_CramMapNumber != this_ptr->working_map_id) {
       return;
     }
-    local_18 = in_stack_00000004[0xe];
-    iVar5 = in_stack_00000004[0xd];
-    iVar4 = in_stack_00000004[0xf];
-    iVar6 = in_stack_00000004[0xc];
+    local_18 = this_ptr->final_right;
+    iVar5 = this_ptr->final_top;
+    iVar4 = this_ptr->final_bottom;
+    iVar6 = this_ptr->final_left;
   }
-  iVar1 = draw_y - visualization_mode;
-  iVar2 = draw_width - draw_x;
+  iVar1 = draw_width - draw_x;
+  iVar2 = draw_height - draw_y;
   engine_2d_c_fillRectColor_FUN_00403170
-            ((iVar1 * iVar6) / g_CramCurrentAcceptableSize + visualization_mode,
-             draw_x + (iVar2 * iVar5) / g_CramCurrentAcceptableSize,
-             (local_18 * iVar1) / g_CramCurrentAcceptableSize + visualization_mode + -1,
-             (iVar4 * iVar2) / g_CramCurrentAcceptableSize + draw_x + -1,0xf8);
+            ((iVar1 * iVar6) / g_CramCurrentAcceptableSize + draw_x,
+             draw_y + (iVar2 * iVar5) / g_CramCurrentAcceptableSize,
+             (local_18 * iVar1) / g_CramCurrentAcceptableSize + draw_x + -1,
+             (iVar4 * iVar2) / g_CramCurrentAcceptableSize + draw_y + -1,0xf8);
   iVar3 = g_CramPaddingCalculation / 2;
-  iVar6 = (iVar1 * (iVar6 + iVar3)) / g_CramCurrentAcceptableSize + visualization_mode;
-  iVar5 = draw_x + (iVar2 * (iVar5 + iVar3)) / g_CramCurrentAcceptableSize;
+  iVar6 = (iVar1 * (iVar6 + iVar3)) / g_CramCurrentAcceptableSize + draw_x;
+  iVar5 = draw_y + (iVar2 * (iVar5 + iVar3)) / g_CramCurrentAcceptableSize;
   engine_2d_c_fillRectColor_FUN_00403170
-            (iVar6,iVar5,
-             ((local_18 - iVar3) * iVar1) / g_CramCurrentAcceptableSize + visualization_mode + -1,
-             ((iVar4 - iVar3) * iVar2) / g_CramCurrentAcceptableSize + draw_x + -1,2);
-  if (this_ptr != (CCramTex *)0x0) {
-    if (in_stack_00000004[0x11] == 0) {
-      iVar4 = *in_stack_00000004;
+            (iVar6,iVar5,((local_18 - iVar3) * iVar1) / g_CramCurrentAcceptableSize + draw_x + -1,
+             ((iVar4 - iVar3) * iVar2) / g_CramCurrentAcceptableSize + draw_y + -1,2);
+  if (visualization_mode != 0) {
+    if (this_ptr->rotation_applied == 0) {
+      iVar4 = this_ptr->width;
     }
     else {
-      iVar4 = in_stack_00000004[1];
+      iVar4 = this_ptr->height;
     }
-    if (in_stack_00000004[0x11] == 0) {
-      iVar1 = in_stack_00000004[1];
+    if (this_ptr->rotation_applied == 0) {
+      iVar1 = this_ptr->height;
     }
     else {
-      iVar1 = *in_stack_00000004;
+      iVar1 = this_ptr->width;
     }
     engine_2d_c_fillRectColor_FUN_00403170
               (iVar6,iVar5,
-               visualization_mode +
-               ((draw_y - visualization_mode) *
-               ((g_CramPaddingCalculation + iVar4 + in_stack_00000004[0xc]) -
-               g_CramPaddingCalculation / 2)) / g_CramCurrentAcceptableSize + -1,
-               ((draw_width - draw_x) *
-               ((g_CramPaddingCalculation + iVar1 + in_stack_00000004[0xd]) -
-               g_CramPaddingCalculation / 2)) / g_CramCurrentAcceptableSize + draw_x + -1,0xfa);
+               draw_x + ((draw_width - draw_x) *
+                        ((g_CramPaddingCalculation + iVar4 + this_ptr->final_left) -
+                        g_CramPaddingCalculation / 2)) / g_CramCurrentAcceptableSize + -1,
+               ((draw_height - draw_y) *
+               ((g_CramPaddingCalculation + iVar1 + this_ptr->final_top) -
+               g_CramPaddingCalculation / 2)) / g_CramCurrentAcceptableSize + draw_y + -1,0xfa);
   }
   return;
 }

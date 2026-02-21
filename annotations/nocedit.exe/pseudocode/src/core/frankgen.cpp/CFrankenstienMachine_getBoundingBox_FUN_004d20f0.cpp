@@ -15,7 +15,7 @@ CBoundingBox3D * __cdecl core_frankgen_cpp_CFrankenstienMachine_getBoundingBox_F
   CKeyFramedModel *pCVar2;
   CVector3f *pCVar3;
   
-  fVar1 = this_ptr->unk1;
+  fVar1 = this_ptr->part_frame;
   pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->bed_model);
   pCVar3 = pCVar2->frame_bounds + (int)ROUND(ROUND(fVar1)) * 2;
   (out_box->min).x = pCVar3->x;

@@ -24,7 +24,6 @@
 #include "types/classes/CMarquee.h"
 #include "types/classes/CMelee.h"
 #include "types/classes/CMirrorHack.h"
-#include "types/classes/COrientation.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/enums/EInputCodeType.h"
@@ -32,7 +31,6 @@
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SGem.h"
 #include "types/structs/SInteractionInfo.h"
-#include "types/structs/SInteractionState.h"
 #include "types/structs/SIntersectXZCylinder.h"
 #include "types/structs/SLaserInfo.h"
 #include "types/structs/SMRGLHeaderExtended.h"
@@ -41,8 +39,10 @@
 #include "types/structs/SMRGLPrimitiveTriangleIndex.h"
 #include "types/structs/SMemHead.h"
 #include "types/structs/SPanel.h"
+#include "types/structs/SPlayerControl.h"
 #include "types/structs/SProjectedVertex.h"
 #include "types/structs/SReflector.h"
+#include "types/unions/UOrientationVector.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x500000
@@ -238,7 +238,7 @@ int __cdecl core_manpuz_cpp_CMirrorHack_hasCollision_FUN_0050b2b0(CMirrorHack *t
 void __cdecl core_manpuz_cpp_CMirrorHack_onLaserHit_FUN_0050b2c0(CMirrorHack *this_ptr,SLaserInfo *laser_info);
 void __cdecl core_manpuz_cpp_CMirrorHack_getInteractionInfo_FUN_0050b2f0(CMirrorHack *this_ptr,SInteractionInfo *out_info);
 int __cdecl core_manpuz_cpp_CMirrorHack_startInteraction_FUN_0050b340(CMirrorHack *this_ptr,CDemonActor *user);
-int __cdecl core_manpuz_cpp_CMirrorHack_updateInteraction_FUN_0050b360(CMirrorHack *this_ptr,COrientation *user_orientation, SInteractionState *interaction_state);
+int __cdecl core_manpuz_cpp_CMirrorHack_updateInteraction_FUN_0050b360(CMirrorHack *this_ptr,UOrientationVector *user_orientation, SPlayerControl *player_control);
 void __cdecl core_manpuz_cpp_CMirrorHack_stopUsing_FUN_0050b3c0(CMirrorHack *this_ptr,CDemonActor *user);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getPropertyList_FUN_0050b3e0(CMansionPuzzleCircle *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440(CMansionPuzzleCircle *this_ptr);

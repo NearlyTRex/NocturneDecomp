@@ -23,14 +23,8 @@ CLarva * __cdecl core_larva_cpp_CLarva_ctor_FUN_00502f90(CLarva *this_ptr)
   fVar1 = 20.0f;
   (pCVar3->base).base.hit_points = 15.0;
   fVar2 = 100.0f;
-  pCVar3->unk[4] = '\0';
-  pCVar3->unk[5] = '\0';
-  pCVar3->unk[6] = '\0';
-  pCVar3->unk[7] = '\0';
-  pCVar3->unk[8] = '\0';
-  pCVar3->unk[9] = '\0';
-  pCVar3->unk[10] = '\0';
-  pCVar3->unk[0xb] = '\0';
+  pCVar3->sfx_handle = 0;
+  pCVar3->slime_sfx_handle = 0;
   (pCVar3->base).base.ai_detection_range_min = fVar1;
   (pCVar3->base).base.ai_detection_range_max = fVar2;
   return pCVar3;

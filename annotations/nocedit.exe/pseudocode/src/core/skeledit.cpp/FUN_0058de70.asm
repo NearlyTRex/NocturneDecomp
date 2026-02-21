@@ -22,7 +22,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_skeledit.cpp_FUN_0058c190 at 0058c512
+;   core_skeledit.cpp_CDeformableModel_FUN_0058c190 at 0058c512
 ;
 ; Called Functions:
 ;   crt_stack.c___STK_FUN_005ff9f3

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_0052a580(CMorphModel *this_ptr,int vertex_count,CVector3i *vertex_data,int poly_count,SMRGLPrimitiveQuad *poly_data,int poly_stride,SMRGLTextureExtended *texture_list,int *texture_index_list)
+; void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_0052a580(CMorphModel *this_ptr,int vertex_count,CVector3i *vertex_data,int poly_count,SMRGLPrimitiveQuad *poly_data,int poly_stride,SMRGLTextureLod *texture_list,int *texture_index_list)
 ;
 ; Parameters:
 ; CMorphModel *    Stack[0x4]:4   this_ptr
@@ -10,7 +10,7 @@
 ; int              Stack[0x10]:4   poly_count
 ; SMRGLPrimitiveQuad * Stack[0x14]:4   poly_data
 ; int              Stack[0x18]:4   poly_stride
-; SMRGLTextureExtended * Stack[0x1c]:4   texture_list
+; SMRGLTextureLod * Stack[0x1c]:4   texture_list
 ; int *            Stack[0x20]:4   texture_index_list
 ;
 ; XREF[5]:

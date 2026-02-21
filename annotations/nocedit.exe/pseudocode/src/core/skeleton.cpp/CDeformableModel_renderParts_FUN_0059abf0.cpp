@@ -192,8 +192,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_0059abf0(CDeform
               }
               if (iVar2 != local_68) {
                 engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-                          (g_CDemonRendererPtr2,local_94[*local_98].textures[iVar2].texture_variants
-                          );
+                          (g_CDemonRendererPtr2,local_94[*local_98].textures[iVar2].textures);
                 local_68 = iVar2;
               }
               core_set_cpp_CDemonSet_FUN_00570870(g_CDemonSetPtr);
@@ -232,7 +231,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_0059abf0(CDeform
                (iVar7 = *(int *)((int)this_ptr->index_data_ptr[lod_index] + local_4c),
                iVar7 != local_64)) {
               engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-                        (g_CDemonRendererPtr2,local_a4[*local_9c].textures[iVar7].texture_variants);
+                        (g_CDemonRendererPtr2,local_a4[*local_9c].textures[iVar7].textures);
               local_64 = iVar7;
             }
             core_set_cpp_CDemonSet_FUN_00570870(g_CDemonSetPtr);

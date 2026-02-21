@@ -66,7 +66,7 @@ int __cdecl engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf
           local_18 = 0;
           do {
             iVar2 = engine_prim_c_getTriangleWindingFromIndices_FUN_00552210
-                              ((STriangleIndices *)primitive_array);
+                              ((SMRGLPrimitiveTriangle *)primitive_array);
             if (iVar2 != 0) {
               iVar3 = iVar3 + 1;
               iVar2 = local_18 + 4;
@@ -82,7 +82,9 @@ int __cdecl engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf
             local_14 = local_14 + 1;
             primitive_array =
                  (SMRGLHeaderPrimitive *)
-                 (((STriangleIndices *)primitive_array)->unk1 + render_flags);
+                 ((int)&(((SMRGLPrimitiveTriangle *)
+                         (((SMRGLPrimitiveTriangle *)primitive_array)->vertices + -2))->base).base.
+                        type + render_flags);
             in_EAX = render_flags;
           } while (local_14 < primitive_count);
         }

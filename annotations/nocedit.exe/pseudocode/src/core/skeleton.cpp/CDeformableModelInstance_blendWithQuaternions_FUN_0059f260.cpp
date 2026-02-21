@@ -151,7 +151,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN
       fVar7 = 1.0 - blend_weight;
       fVar3 = (this_ptr->bone_transform).root_position.y;
       fVar4 = (this_ptr->bone_transform).root_position.z;
-      if (&this_ptr->bone_transform != (SBoneTransformData *)afStack_44) {
+      if (&this_ptr->bone_transform != (SPose *)afStack_44) {
         (this_ptr->bone_transform).root_position.x =
              (this_ptr->bone_transform).root_position.x * fVar7 +
              (this_ptr->scaled_model_dimensions).x * source_position->x * blend_weight;

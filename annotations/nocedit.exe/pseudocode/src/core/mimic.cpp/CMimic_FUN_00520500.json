@@ -6,12 +6,12 @@
   },
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 62,
+    "complexity_score": 82,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 6,
     "pseudocode_lines": 47,
-    "suspect_count": 1,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -166,9 +166,23 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(SClothVertex *)((int)",
+      "text": "pSVar5 = (SClothVertex *)((int)pSVar5 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 34,
       "match": "(int *)((int)",
       "text": "piVar4 = (int *)((int)piVar4 + (uint)bVar6 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(SClothVertex *)((int)",
+      "text": "pSVar5 = (SClothVertex *)((int)pSVar5 + (uint)bVar6 * -2 + 1);",
       "type": "pointer_cast"
     }
   ]

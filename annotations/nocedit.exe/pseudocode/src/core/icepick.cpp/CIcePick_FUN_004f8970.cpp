@@ -22,10 +22,7 @@ int __cdecl core_icepick_cpp_CIcePick_FUN_004f8970(CIcePick *this_ptr)
   float local_1c;
   float fStack_18;
   
-  this_ptr->unk[0x20] = '\0';
-  this_ptr->unk[0x21] = '\0';
-  this_ptr->unk[0x22] = '\0';
-  this_ptr->unk[0x23] = '\0';
+  this_ptr->pending_pickup_target = (CDemonActor *)0x0;
   local_1c = 4.0;
   local_28.x = 1.0;
   local_28.y = 0.0;
@@ -44,21 +41,21 @@ int __cdecl core_icepick_cpp_CIcePick_FUN_004f8970(CIcePick *this_ptr)
         fVar2 = (this_ptr_00->location).position.z - local_34.z;
         if ((ABS((this_ptr_00->location).position.y - local_34.y) <= (float)2) &&
            (fStack_18 = fVar1 * fVar1 + fVar2 * fVar2, fStack_18 <= local_1c)) {
-          *(CDemonActor **)(this_ptr->unk + 0x20) = this_ptr_00;
+          this_ptr->pending_pickup_target = this_ptr_00;
           local_1c = fStack_18;
         }
       }
     }
     iVar5 = iVar5 + 4;
   }
-  if (*(int *)(this_ptr->unk + 0x20) == 0) {
+  if (this_ptr->pending_pickup_target == (CDemonActor *)0x0) {
     return 0;
   }
   (this_ptr->base).base.base.location.position.x =
-       (*(float *)(*(int *)(this_ptr->unk + 0x20) + 0x20) - local_34.x) +
+       ((this_ptr->pending_pickup_target->location).position.x - local_34.x) +
        (this_ptr->base).base.base.location.position.x;
   (this_ptr->base).base.base.location.position.z =
-       (*(float *)(*(int *)(this_ptr->unk + 0x20) + 0x28) - local_34.z) +
+       ((this_ptr->pending_pickup_target->location).position.z - local_34.z) +
        (this_ptr->base).base.base.location.position.z;
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
             (&(this_ptr->base).base.model.motion_controller,0x13,1);

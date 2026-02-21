@@ -2,11 +2,11 @@
 // Address: 005a0ad0
 // Address Range: [[005a0ad0, 005a0c8f]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0(CDeformableModelInstance *this_ptr,int motion_index,float animation_time,SBoneTransformData *output_bone_data)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0(CDeformableModelInstance *this_ptr,int motion_index,float animation_time,SPose *output_bone_data)
 
 #include "nocturne.h"
 
-void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0(CDeformableModelInstance *this_ptr,int motion_index,float animation_time,SBoneTransformData *output_bone_data)
+void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0(CDeformableModelInstance *this_ptr,int motion_index,float animation_time,SPose *output_bone_data)
 
 {
   float fVar1;
@@ -27,8 +27,8 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransformsFor
   float local_28;
   float local_24 [2];
   CSkeleton *local_1c;
-  SBoneTransformData *local_18;
-  SBoneTransformData *local_14;
+  SPose *local_18;
+  SPose *local_14;
   
   bVar11 = 0;
   pCVar8 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
@@ -53,9 +53,9 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransformsFor
            *(uint *)
             ((int)(&stack0xffffffac + (uint)bVar11 * -8 + (uint)bVar11 * -8) +
             ((uint)bVar11 * -2 + 1) * 4);
-      local_14->current_pose_data[0] = 1.0;
-      local_18 = (SBoneTransformData *)&local_18->bone_rotations[0].x;
-      local_14 = (SBoneTransformData *)&(local_14->root_position).y;
+      local_14->bone_scales[0] = 1.0;
+      local_18 = (SPose *)&local_18->bone_rotations[0].x;
+      local_14 = (SPose *)&(local_14->root_position).y;
     } while (bone_index < local_1c->bone_count);
   }
   pCVar5 = local_1c->frame_positions_1;
@@ -65,7 +65,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransformsFor
   pCVar6 = local_1c->frame_positions_1;
   fVar3 = pCVar6[(int)local_28].y;
   fVar4 = pCVar6[(int)local_28].z;
-  if ((SBoneTransformData *)&stack0xffffffc0 != output_bone_data) {
+  if ((SPose *)&stack0xffffffc0 != output_bone_data) {
     (output_bone_data->root_position).x =
          pCVar6[(int)local_28].x * fVar7 + pCVar5[(int)local_24[0]].x * local_60;
     (output_bone_data->root_position).y = fVar3 * fVar7 + fVar1 * local_60;

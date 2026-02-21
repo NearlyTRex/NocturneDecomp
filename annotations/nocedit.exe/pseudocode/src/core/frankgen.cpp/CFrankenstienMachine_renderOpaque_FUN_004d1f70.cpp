@@ -29,7 +29,7 @@ int __cdecl core_frankgen_cpp_CFrankenstienMachine_renderOpaque_FUN_004d1f70(CFr
   iVar3 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
   if (iVar3 != 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
-              (&this_ptr->bed_model,this_ptr->unk1,-1);
+              (&this_ptr->bed_model,this_ptr->part_frame,-1);
     if ((this_ptr->body_model).model_name[0] != '\0') {
       fVar1 = this_ptr->master_frame;
       if ((int)fVar1 < 0x4400c000) {

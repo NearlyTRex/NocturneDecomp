@@ -56,17 +56,14 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005a2800(CSmiley *this_ptr,floa
   float local_18;
   float local_14;
   
-  fVar12 = *(float *)(this_ptr->unk2 + 0x34) - delta_time;
-  *(float *)(this_ptr->unk2 + 0x34) = fVar12;
+  fVar12 = this_ptr->dismember_cooldown - delta_time;
+  this_ptr->dismember_cooldown = fVar12;
   if (fVar12 < 0.0) {
-    this_ptr->unk2[0x34] = '\0';
-    this_ptr->unk2[0x35] = '\0';
-    this_ptr->unk2[0x36] = '\0';
-    this_ptr->unk2[0x37] = '\0';
+    this_ptr->dismember_cooldown = 0.0;
   }
-  if (((this_ptr->base).base.model.part_data.visibility_flags[*(int *)(this_ptr->unk2 + 0x28)] == 0)
-     && (iVar5 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)
-                           ((CCharacter *)this_ptr), iVar5 == 0)) {
+  if (((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_index_head] == 0) &&
+     (iVar5 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)
+                        ((CCharacter *)this_ptr), iVar5 == 0)) {
     core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffe34);
     (*(((this_ptr->base).base.base.vtable._uc)->_uc).processDamage)
               ((CCharacter *)this_ptr,(SDamageInfo *)&stack0xfffffe34);
@@ -111,8 +108,8 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005a2800(CSmiley *this_ptr,floa
       }
     }
     else if (uVar6 == 0x67) {
-      iVar5 = *(int *)(this_ptr->unk2 + 0x2c) + 1;
-      *(int *)(this_ptr->unk2 + 0x2c) = iVar5;
+      iVar5 = this_ptr->attack_hit_count + 1;
+      this_ptr->attack_hit_count = iVar5;
       if (2 < iVar5) {
         if ((this_ptr->base).victim == (CDemonActor *)0x0) {
           (**(code **)(iRam00000154 + 0x104))(0);
@@ -165,10 +162,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005a2800(CSmiley *this_ptr,floa
             local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                                  (local_c4.y - (this_ptr->base).base.base.orient.vec.y);
             if (ABS(local_14) < (float)0.52359877558333301) {
-              this_ptr->unk2[0x2c] = '\0';
-              this_ptr->unk2[0x2d] = '\0';
-              this_ptr->unk2[0x2e] = '\0';
-              this_ptr->unk2[0x2f] = '\0';
+              this_ptr->attack_hit_count = 0;
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         (&pCVar2->motion_controller,9,1);
             }
@@ -216,10 +210,10 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005a2800(CSmiley *this_ptr,floa
             local_98 = (pCVar4->location).position.z -
                        (this_ptr->base).base.base.location.position.z;
             if ((SQRT(local_98 * local_98 + local_a0 * local_a0 + local_9c * local_9c) <
-                 local_1c + 1.0) && ((float)this_ptr->unk1 <= 0.0)) {
+                 local_1c + 1.0) && (this_ptr->attack_cooldown <= 0.0)) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         (&(this_ptr->base).base.model.motion_controller,6,1);
-              this_ptr->unk1 = 0x3f800000;
+              this_ptr->attack_cooldown = 1.0;
             }
           }
           break;
@@ -329,8 +323,8 @@ LAB_005a2b8e:
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
 switchD_005a3055_caseD_7:
-  if (0.0 < (float)this_ptr->unk1) {
-    this_ptr->unk1 = (int)((float)this_ptr->unk1 - delta_time);
+  if (0.0 < this_ptr->attack_cooldown) {
+    this_ptr->attack_cooldown = this_ptr->attack_cooldown - delta_time;
   }
   if (local_24 == 0xb) {
     pCVar10 = &(this_ptr->base).base.model.accumulated_root_motion;

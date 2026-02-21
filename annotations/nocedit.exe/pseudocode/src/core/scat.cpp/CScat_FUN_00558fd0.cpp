@@ -11,13 +11,14 @@
 void __cdecl core_scat_cpp_CScat_FUN_00558fd0(CScat *this_ptr)
 
 {
-  int iVar1;
-  CVector3f *pCVar2;
-  CVector3f *pCVar3;
-  int iVar4;
-  CMatrix3x4f *pCVar5;
-  CMatrix3x4f *pCVar6;
-  byte bVar7;
+  CDemonActor *this_ptr_00;
+  CDemonActor_vtable *pCVar1;
+  CVector3f *new_orientation;
+  CVector3f *new_position;
+  int iVar2;
+  CMatrix3x4f *pCVar3;
+  CMatrix3x4f *pCVar4;
+  byte bVar5;
   CMatrix3x4f local_160;
   CMatrix3x4f local_130;
   CMatrix3x4f local_100;
@@ -29,8 +30,9 @@ void __cdecl core_scat_cpp_CScat_FUN_00558fd0(CScat *this_ptr)
   CVector3f local_28;
   CVector3f local_1c;
   
-  bVar7 = 0;
-  if ((this_ptr->unk4 != 0) && (*(int *)(this_ptr->unk4 + 0x2e0) != 8)) {
+  bVar5 = 0;
+  if ((this_ptr->weapon_actor != (CDemonActor *)0x0) &&
+     (this_ptr->weapon_actor[2].orient.vec.x != 1.12104e-44)) {
     local_40.x = 0.0;
     local_40.z = 1.5707964;
     local_40.y = 1.5707964;
@@ -43,29 +45,30 @@ void __cdecl core_scat_cpp_CScat_FUN_00558fd0(CScat *this_ptr)
               (&local_130,
                (this_ptr->base).base.model.bone_transform.bone_world_matrices + INT_03106194,
                &local_d0);
-    pCVar5 = &local_d0;
-    pCVar6 = &local_70;
-    for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-      pCVar6->m[0].w = pCVar5->m[0].w;
-      pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);
-      pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);
+    pCVar3 = &local_d0;
+    pCVar4 = &local_70;
+    for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+      pCVar4->m[0].w = pCVar3->m[0].w;
+      pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
+      pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
     }
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
               (&local_160,&(this_ptr->base).base.base.location.position,
                &(this_ptr->base).base.base.orient.vec);
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_70,&local_160,&local_100);
-    pCVar5 = &local_100;
-    pCVar6 = &local_a0;
-    for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-      pCVar6->m[0].w = pCVar5->m[0].w;
-      pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);
-      pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);
+    pCVar3 = &local_100;
+    pCVar4 = &local_a0;
+    for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+      pCVar4->m[0].w = pCVar3->m[0].w;
+      pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
+      pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
     }
-    iVar4 = this_ptr->unk4;
-    iVar1 = *(int *)(iVar4 + 0x154);
-    pCVar2 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CMatrix3x3f *)&local_a0,&local_34);
-    pCVar3 = core_xform_cpp_getTranslation_FUN_005f6110(&local_a0,&local_1c);
-    (**(code **)(iVar1 + 0x60))(iVar4,pCVar3,pCVar2);
+    this_ptr_00 = this_ptr->weapon_actor;
+    pCVar1 = (this_ptr_00->vtable)._ub;
+    new_orientation =
+         core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CMatrix3x3f *)&local_a0,&local_34);
+    new_position = core_xform_cpp_getTranslation_FUN_005f6110(&local_a0,&local_1c);
+    (*pCVar1->setPositionAndOrientation)(this_ptr_00,new_position,new_orientation);
     return;
   }
   return;

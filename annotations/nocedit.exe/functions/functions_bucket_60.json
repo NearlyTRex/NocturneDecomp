@@ -12947,7 +12947,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_cloth.cpp_CCloth_editCollisionBone_FUN_0043c3e0",
+    "name":"core_cloth.cpp_CClothList_FUN_0043c3e0",
     "ret":"void",
     "vars":{
       "params":[
@@ -12965,7 +12965,23 @@
               }
             ]
           },
-          "type":"CCloth*"
+          "type":"CClothList*"
+        },
+        {
+          "name":"param_2",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
         }
       ]
     }
@@ -15208,13 +15224,13 @@
         {
           "name":"this_ptr",
           "storage":{
-            "offset":12,
+            "offset":4,
             "size":4,
             "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0xc]",
-                "offset":12,
+                "addr":"Stack[0x4]",
+                "offset":4,
                 "size":4
               }
             ]
@@ -39758,10 +39774,10 @@
               }
             ]
           },
-          "type":"COrientation*"
+          "type":"UOrientationVector*"
         },
         {
-          "name":"interaction_state",
+          "name":"player_control",
           "storage":{
             "offset":12,
             "size":4,
@@ -39774,7 +39790,7 @@
               }
             ]
           },
-          "type":"SInteractionState*"
+          "type":"SPlayerControl*"
         }
       ],
       "ret_storage":{
@@ -54819,6 +54835,22 @@
             ]
           },
           "type":"CDeformableModel*"
+        },
+        {
+          "name":"file_handle",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"_FILE*"
         }
       ],
       "ret_storage":{
@@ -55027,6 +55059,22 @@
             ]
           },
           "type":"CDeformableModel*"
+        },
+        {
+          "name":"param_2",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ]
     }
@@ -55115,6 +55163,22 @@
         {
           "name":"this_ptr",
           "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModel*"
+        },
+        {
+          "name":"motion_index",
+          "storage":{
             "offset":8,
             "size":4,
             "stack":true,
@@ -55126,7 +55190,23 @@
               }
             ]
           },
-          "type":"CDeformableModel*"
+          "type":"int"
+        },
+        {
+          "name":"frame_number",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ]
     }
@@ -55231,13 +55311,13 @@
         {
           "name":"this_ptr",
           "storage":{
-            "offset":8,
+            "offset":4,
             "size":4,
             "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x8]",
-                "offset":8,
+                "addr":"Stack[0x4]",
+                "offset":4,
                 "size":4
               }
             ]
@@ -59216,7 +59296,7 @@
               }
             ]
           },
-          "type":"SBoneTransformData*"
+          "type":"SPose*"
         }
       ]
     }
@@ -68386,7 +68466,7 @@
     "vars":{
       "params":[
         {
-          "name":"socket",
+          "name":"socket_handle",
           "storage":{
             "offset":4,
             "size":4,

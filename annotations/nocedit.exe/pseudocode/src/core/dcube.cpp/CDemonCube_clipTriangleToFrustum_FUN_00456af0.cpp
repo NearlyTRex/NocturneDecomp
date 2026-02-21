@@ -2,11 +2,11 @@
 // Address: 00456af0
 // Address Range: [[00456af0, 00456ec2]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcube_cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0(CDemonCubeFrustum *frustum,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3,uchar texture_id)
+// Signature: void __cdecl core_dcube_cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0(CDemonCube *this_ptr,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3,uchar texture_id)
 
 #include "nocturne.h"
 
-void __cdecl core_dcube_cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0(CDemonCubeFrustum *frustum,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3,uchar texture_id)
+void __cdecl core_dcube_cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0(CDemonCube *this_ptr,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3,uchar texture_id)
 
 {
   uint uVar1;
@@ -42,20 +42,20 @@ void __cdecl core_dcube_cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0(CDemon
   local_14 = 0;
   pCVar8 = g_CubeInputTriangleBuffer;
   do {
-    bVar6 = (frustum->max).x < pCVar8->x;
-    if ((frustum->max).y < pCVar8->y) {
+    bVar6 = (this_ptr->max_bounds).x < pCVar8->x;
+    if ((this_ptr->max_bounds).y < pCVar8->y) {
       bVar6 = bVar6 | 2;
     }
-    if ((frustum->max).z < pCVar8->z) {
+    if ((this_ptr->max_bounds).z < pCVar8->z) {
       bVar6 = bVar6 | 4;
     }
-    if (pCVar8->x < (frustum->min).x) {
+    if (pCVar8->x < (this_ptr->min_bounds).x) {
       bVar6 = bVar6 | 8;
     }
-    if (pCVar8->y < (frustum->min).y) {
+    if (pCVar8->y < (this_ptr->min_bounds).y) {
       bVar6 = bVar6 | 0x10;
     }
-    if (pCVar8->z < (frustum->min).z) {
+    if (pCVar8->z < (this_ptr->min_bounds).z) {
       bVar6 = bVar6 | 0x20;
     }
     pCVar8 = pCVar8 + 1;
@@ -92,27 +92,27 @@ void __cdecl core_dcube_cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0(CDemon
     g_CubeClipStage4Count = uVar7;
     g_CubeClipStage5Count = uVar7;
     g_CubeClippedTriangleCount = uVar7;
-    core_dcube_cpp_clipPolygonAgainstMaxY_FUN_00454970((frustum->max).y);
+    core_dcube_cpp_clipPolygonAgainstMaxY_FUN_00454970((this_ptr->max_bounds).y);
     if ((int)g_CubeClipStage1Count < 3) {
       return;
     }
-    core_dcube_cpp_clipPolygonAgainstMinY_FUN_00454ad0((frustum->min).y);
+    core_dcube_cpp_clipPolygonAgainstMinY_FUN_00454ad0((this_ptr->min_bounds).y);
     if ((int)g_CubeClipStage2Count < 3) {
       return;
     }
-    core_dcube_cpp_clipPolygonAgainstMaxX_FUN_00454c40((frustum->max).x);
+    core_dcube_cpp_clipPolygonAgainstMaxX_FUN_00454c40((this_ptr->max_bounds).x);
     if ((int)g_CubeClipStage3Count < 3) {
       return;
     }
-    core_dcube_cpp_clipPolygonAgainstMinX_FUN_00454da0((frustum->min).x);
+    core_dcube_cpp_clipPolygonAgainstMinX_FUN_00454da0((this_ptr->min_bounds).x);
     if ((int)g_CubeClipStage4Count < 3) {
       return;
     }
-    core_dcube_cpp_clipPolygonAgainstMinZ_FUN_00454f00((frustum->min).z);
+    core_dcube_cpp_clipPolygonAgainstMinZ_FUN_00454f00((this_ptr->min_bounds).z);
     if ((int)g_CubeClipStage5Count < 3) {
       return;
     }
-    core_dcube_cpp_clipPolygonAgainstMaxZ_FUN_00455070((frustum->max).z);
+    core_dcube_cpp_clipPolygonAgainstMaxZ_FUN_00455070((this_ptr->max_bounds).z);
     if ((int)g_CubeClippedTriangleCount < 3) {
       return;
     }

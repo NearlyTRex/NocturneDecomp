@@ -2,11 +2,11 @@
 // Address: 005a1b70
 // Address Range: [[005a1b70, 005a1ce4]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeleton_cpp_blendBoneTransformData_FUN_005a1b70(CVector3f *result_root_pos,SBoneTransformData *bone_data_out,SBoneTransformData *bone_data_in,float blend_weight,CDeformableModelInstance *instance_ptr)
+// Signature: void __cdecl core_skeleton_cpp_blendBoneTransformData_FUN_005a1b70(CVector3f *result_root_pos,SPose *bone_data_out,SPose *bone_data_in,float blend_weight,CDeformableModelInstance *instance_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_skeleton_cpp_blendBoneTransformData_FUN_005a1b70(CVector3f *result_root_pos,SBoneTransformData *bone_data_out,SBoneTransformData *bone_data_in,float blend_weight,CDeformableModelInstance *instance_ptr)
+void __cdecl core_skeleton_cpp_blendBoneTransformData_FUN_005a1b70(CVector3f *result_root_pos,SPose *bone_data_out,SPose *bone_data_in,float blend_weight,CDeformableModelInstance *instance_ptr)
 
 {
   CVector3f *pCVar1;
@@ -72,7 +72,6 @@ void __cdecl core_skeleton_cpp_blendBoneTransformData_FUN_005a1b70(CVector3f *re
       pCVar1 = (CVector3f *)&pCVar1[1].y;
     } while (iVar2 < local_1c->bone_count);
   }
-  core_skeleton_cpp_computeBoneWorldMatrices_FUN_005a1950
-            ((SBoneTransformData *)result_root_pos,instance_ptr);
+  core_skeleton_cpp_computeBoneWorldMatrices_FUN_005a1950((SPose *)result_root_pos,instance_ptr);
   return;
 }

@@ -6,16 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 55,
+    "complexity_score": 67,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 7,
-    "pseudocode_lines": 40,
-    "suspect_count": 1,
+    "pseudocode_lines": 37,
+    "suspect_count": 2,
     "suspect_types": [
+      "suspect_float",
       "warning_type_propagation"
     ],
-    "total_lines": 121
+    "total_lines": 118
   },
   "cross_references": [
     {
@@ -150,6 +151,13 @@
       "match": "WARNING: Type propagation algorithm not settling",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 19,
+      "match": "1.4013e-45",
+      "text": "this_ptr->morph_target_actor[0x8d].previous_transform_state.orientation.x = 1.4013e-45;",
+      "type": "suspect_float"
     }
   ]
 }

@@ -12,7 +12,8 @@ void __cdecl core_svetlana_cpp_CSvetlana_processDamage_FUN_005d9d30(CSvetlana *t
   CDeformableModelInstance *this_ptr_00;
   float fVar1;
   SMotion *pSVar2;
-  int iVar3;
+  uint uVar3;
+  int iVar4;
   
   if (((this_ptr->base).no_collision_flag & 0x7fffffffU) != 0) {
     damage_info->damage_amount = 0.0;
@@ -40,29 +41,29 @@ void __cdecl core_svetlana_cpp_CSvetlana_processDamage_FUN_005d9d30(CSvetlana *t
                   (&this_ptr_00->motion_controller,8,1);
         core_gore_cpp_CGore_spawnFliesOnActor_FUN_004ee030
                   (g_CGorePtr,(CDemonActor *)this_ptr,0x32,50.0,(CVector3f *)0x0);
-        sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->unk5);
-        iVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
+        sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handle);
+        uVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                           ((CDemonActor *)this_ptr,"svet-die.wav");
-        this_ptr->unk5 = iVar3;
+        this_ptr->sfx_handle = uVar3;
         core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0((CCharacter *)this_ptr,damage_info);
         return;
       }
     }
   }
   else if (0.0 < damage_info->damage_amount) {
-    if (this_ptr->unk1 == 0) {
-      iVar3 = 4;
+    if (this_ptr->blades_drawn == 0) {
+      iVar4 = 4;
     }
     else {
-      iVar3 = 0xb;
+      iVar4 = 0xb;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&this_ptr_00->motion_controller,iVar3,1);
-    iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->unk5);
-    if (iVar3 == 0) {
-      iVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
+              (&this_ptr_00->motion_controller,iVar4,1);
+    iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handle);
+    if (iVar4 == 0) {
+      uVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                         ((CDemonActor *)this_ptr,"svet-hurt?.wav");
-      this_ptr->unk5 = iVar3;
+      this_ptr->sfx_handle = uVar3;
       core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0((CCharacter *)this_ptr,damage_info);
       return;
     }

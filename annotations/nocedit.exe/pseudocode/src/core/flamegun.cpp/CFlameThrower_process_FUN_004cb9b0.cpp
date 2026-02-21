@@ -15,40 +15,33 @@ void __cdecl core_flamegun_cpp_CFlameThrower_process_FUN_004cb9b0(CFlameThrower 
   uint uVar4;
   
   core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base,delta_time);
-  if (*(int *)this_ptr->unk == 0) {
-    if (*(uint *)(this_ptr->unk + 4) != 0) {
-      core_sound_cpp_CSound_killSound_FUN_005b3b90(g_CSoundPtr,*(uint *)(this_ptr->unk + 4));
-      this_ptr->unk[4] = '\0';
-      this_ptr->unk[5] = '\0';
-      this_ptr->unk[6] = '\0';
-      this_ptr->unk[7] = '\0';
+  if (this_ptr->is_firing == 0) {
+    if (this_ptr->sfx_handle != 0) {
+      core_sound_cpp_CSound_killSound_FUN_005b3b90(g_CSoundPtr,this_ptr->sfx_handle);
+      this_ptr->sfx_handle = 0;
     }
   }
   else {
-    iVar3 = core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80
-                      (g_CSoundPtr,*(uint *)(this_ptr->unk + 4));
+    iVar3 = core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80(g_CSoundPtr,this_ptr->sfx_handle);
     if (iVar3 == 0) {
       uVar4 = (*((this_ptr->base).base.vtable._ub)->playSound)
                         ((CDemonActor *)this_ptr,"fl-throw.wav");
-      *(uint *)(this_ptr->unk + 4) = uVar4;
+      this_ptr->sfx_handle = uVar4;
     }
-    fVar1 = *(float *)(this_ptr->unk + 0xc) - delta_time;
-    *(float *)(this_ptr->unk + 0xc) = fVar1;
+    fVar1 = this_ptr->fire_rate_timer - delta_time;
+    this_ptr->fire_rate_timer = fVar1;
     if (fVar1 < 0.0) {
       fVar2 = 1.0 / 4.0f;
       iVar3 = (this_ptr->base).ammo_count + -1;
       (this_ptr->base).ammo_count = iVar3;
-      *(float *)(this_ptr->unk + 0xc) = fVar2 + fVar1;
+      this_ptr->fire_rate_timer = fVar2 + fVar1;
       if (iVar3 < 0) {
         (this_ptr->base).ammo_count = 0;
       }
     }
   }
-  uVar4 = *(uint *)this_ptr->unk;
-  this_ptr->unk[0] = '\0';
-  this_ptr->unk[1] = '\0';
-  this_ptr->unk[2] = '\0';
-  this_ptr->unk[3] = '\0';
-  *(uint *)(this_ptr->unk + 8) = uVar4;
+  iVar3 = this_ptr->is_firing;
+  this_ptr->is_firing = 0;
+  this_ptr->was_firing_prev_frame = iVar3;
   return;
 }

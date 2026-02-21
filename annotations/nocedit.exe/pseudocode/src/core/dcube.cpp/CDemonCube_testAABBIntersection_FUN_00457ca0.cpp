@@ -18,8 +18,8 @@ int __cdecl core_dcube_cpp_CDemonCube_testAABBIntersection_FUN_00457ca0(CDemonCu
     iVar2 = 0;
     do {
       uVar1 = core_dcube_cpp_clipTriangleToAABB_FUN_00456400
-                        ((CVector3f **)((int)this_ptr->triangle_buffer->vertices + iVar2),aabb_min,
-                         aabb_max);
+                        ((CVector3f **)((int)(this_ptr->triangle_buffer->triangle).vertices + iVar2)
+                         ,aabb_min,aabb_max);
       if (uVar1 != 0) {
         return 1;
       }

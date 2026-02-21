@@ -26,11 +26,11 @@ CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_dtor_FUN_005e7700(CVampire
   }
   pCVar1 = core_morph_cpp_CMorph_dtor_FUN_0052b330(&this_ptr->morph,0);
   pCVar2 = core_cloth_cpp_CCloth_dtor_FUN_00438c00((CCloth *)&pCVar1[-0x55].rescale_enabled,0);
-  pCVar2 = core_cloth_cpp_CCloth_dtor_FUN_00438c00((CCloth *)&pCVar2[-2].last_euler.y,0);
-  pCVar2 = core_cloth_cpp_CCloth_dtor_FUN_00438c00((CCloth *)&pCVar2[-2].last_euler.y,0);
+  pCVar2 = core_cloth_cpp_CCloth_dtor_FUN_00438c00(pCVar2 + -1,0);
+  pCVar2 = core_cloth_cpp_CCloth_dtor_FUN_00438c00(pCVar2 + -1,0);
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
                      ((CDeformableModelInstance *)
-                      &pCVar2[-1].collide_bones[0x13].world_matrix.m[1].x,0);
+                      (pCVar2[-1].collide_bones[0x13].world_matrix.m + 2),0);
   pCVar4 = core_armour_cpp_CFlame_arrdtor_FUN_00412720((CFlame *)(pCVar3[-5].model_name + 0x34),0);
   pSVar5 = core_armour_cpp_SFire_arrdtor_FUN_00412700
                      ((SFire *)(pCVar4[-2].base.create_event + 0x20),0);

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dcube_cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0(CDemonCubeFrustum *frustum,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3,uchar texture_id)
+; void __cdecl core_dcube_cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0(CDemonCube *this_ptr,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3,uchar texture_id)
 ;
 ; Parameters:
-; CDemonCubeFrustum * Stack[0x4]:4   frustum
+; CDemonCube *     Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   vertex1
 ; CVector3f *      Stack[0xc]:4   vertex2
 ; CVector3f *      Stack[0x10]:4   vertex3

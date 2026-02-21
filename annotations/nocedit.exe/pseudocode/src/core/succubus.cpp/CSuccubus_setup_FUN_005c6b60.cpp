@@ -98,7 +98,7 @@ void __cdecl core_succubus_cpp_CSuccubus_setup_FUN_005c6b60(CSuccubus *this_ptr)
   core_morph_cpp_CMorph_getReady_FUN_0052b680(this_ptr_01);
   this_ptr->morph_started = 0;
   this_ptr->morph_timer = 0.0;
-  this_ptr->ambient_sfx_handle = 0;
+  this_ptr->sfx_handle = 0;
   this_ptr->ambient_sfx_cooldown = 5.0;
   core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000(this_ptr_00);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000(pCVar1);

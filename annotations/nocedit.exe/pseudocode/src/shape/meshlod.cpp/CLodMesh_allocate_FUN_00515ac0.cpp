@@ -2,23 +2,23 @@
 // Address: 00515ac0
 // Address Range: [[00515ac0, 00515b93]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_meshlod_cpp_CLodMesh_allocate_FUN_00515ac0(CLodMesh *this_ptr,int vertex_count,int tri_count,int submesh_count)
+// Signature: void __cdecl shape_meshlod_cpp_CLodMesh_allocate_FUN_00515ac0(CLodMesh *this_ptr,int vertex_count,int tri_count,int lod_texture_count)
 
 #include "nocturne.h"
 
-void __cdecl shape_meshlod_cpp_CLodMesh_allocate_FUN_00515ac0(CLodMesh *this_ptr,int vertex_count,int tri_count,int submesh_count)
+void __cdecl shape_meshlod_cpp_CLodMesh_allocate_FUN_00515ac0(CLodMesh *this_ptr,int vertex_count,int tri_count,int lod_texture_count)
 
 {
   CLodVert *pCVar1;
   CLodFace *pCVar2;
-  SLodSubmesh *pSVar3;
+  SMRGLTextureLod *pSVar3;
   
   shape_meshlod_cpp_CLodMesh_free_FUN_00515970(this_ptr);
   this_ptr->max_vertex_count = vertex_count;
   this_ptr->vertex_count = vertex_count;
   this_ptr->max_tri_count = tri_count;
   this_ptr->tri_count = tri_count;
-  this_ptr->submesh_count = submesh_count;
+  this_ptr->lod_texture_count = lod_texture_count;
   pCVar1 = shape_memdbg_cpp_debugCalloc_FUN_0050f350
                      (this_ptr->max_vertex_count,0x4c4,"..\\shape\\meshlod.cpp",0x231);
   this_ptr->vertex_data = pCVar1;
@@ -26,11 +26,11 @@ void __cdecl shape_meshlod_cpp_CLodMesh_allocate_FUN_00515ac0(CLodMesh *this_ptr
                      (this_ptr->max_tri_count,0x8c,"..\\shape\\meshlod.cpp",0x232);
   this_ptr->tri_data = pCVar2;
   pSVar3 = shape_memdbg_cpp_debugCalloc_FUN_0050f350
-                     (this_ptr->submesh_count,0x48,"..\\shape\\meshlod.cpp",0x233);
-  this_ptr->submesh_data = pSVar3;
+                     (this_ptr->lod_texture_count,0x48,"..\\shape\\meshlod.cpp",0x233);
+  this_ptr->lod_textures = pSVar3;
   if ((((this_ptr->max_vertex_count < 1) || (this_ptr->vertex_data != (CLodVert *)0x0)) &&
       ((this_ptr->max_tri_count < 1 || (this_ptr->tri_data != (CLodFace *)0x0)))) &&
-     ((this_ptr->submesh_count < 1 || (this_ptr->submesh_data != (SLodSubmesh *)0x0)))) {
+     ((this_ptr->lod_texture_count < 1 || (this_ptr->lod_textures != (SMRGLTextureLod *)0x0)))) {
     return;
   }
   g_CurrentFilename = "..\\shape\\meshlod.cpp";

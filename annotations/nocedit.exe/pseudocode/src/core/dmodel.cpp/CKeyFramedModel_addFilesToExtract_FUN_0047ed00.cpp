@@ -19,7 +19,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_addFilesToExtract_FUN_0047ed00(CKey
   
   iVar3 = 0;
   if (0 < this_ptr->texture_count) {
-    pcVar4 = this_ptr->texture_list[0].base.texture_name;
+    pcVar4 = this_ptr->texture_list[0].textures[0].texture_name;
     pcVar6 = local_d8;
     pcVar2 = pcVar4;
 LAB_0047ed2e:

@@ -15,8 +15,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
+;   core_skeledit.cpp_CDeformableModel_FUN_0058c190 at 0058d17d
 ;   core_skeledit.cpp_CLodMesh_FUN_00589c20 at 00589e84
-;   core_skeledit.cpp_FUN_0058c190 at 0058d17d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Mesh_degredation_in_prog_00637615

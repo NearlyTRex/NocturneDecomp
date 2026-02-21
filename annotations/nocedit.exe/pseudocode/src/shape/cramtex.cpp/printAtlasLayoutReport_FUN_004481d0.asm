@@ -4,7 +4,7 @@
 ; void __cdecl shape_cramtex_cpp_printAtlasLayoutReport_FUN_004481d0(_FILE *output_file)
 ;
 ; Parameters:
-; _FILE *          Stack[0xc]:4   output_file
+; _FILE *          Stack[0x4]:4   output_file
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_2d_5dx_5d_Page_d_5d_5d_00619753

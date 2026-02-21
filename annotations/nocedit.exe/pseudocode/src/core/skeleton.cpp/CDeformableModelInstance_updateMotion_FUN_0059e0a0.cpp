@@ -125,7 +125,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a
         *puVar14 = auStack_248[(uint)bVar19 * -2 + (uint)bVar19 * -2 + 1];
         puVar14[(uint)bVar19 * -2 + 1] =
              (auStack_248 + (uint)bVar19 * -2 + (uint)bVar19 * -2 + 1)[(uint)bVar19 * -2 + 1];
-        (pCVar8->bone_transform).current_pose_data[0] = pCVar8->rest_pose_data[0];
+        (pCVar8->bone_transform).bone_scales[0] = pCVar8->rest_pose_data[0];
         local_34 = local_34 + 1;
         local_5c = (CDeformableModelInstance *)&(local_5c->motion_controller).tween_speed;
       } while (local_34 < this_ptr_00->bone_count);
@@ -137,7 +137,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a
     pCVar6 = this_ptr_00->frame_positions_1;
     fVar3 = pCVar6[local_84].y;
     fVar4 = pCVar6[local_84].z;
-    if (&this_ptr->bone_transform != (SBoneTransformData *)local_94) {
+    if (&this_ptr->bone_transform != (SPose *)local_94) {
       (this_ptr->bone_transform).root_position.x =
            pCVar6[local_84].x * fVar7 + pCVar5[local_88].x * local_1870;
       (this_ptr->bone_transform).root_position.y = fVar3 * fVar7 + fVar1 * local_1870;

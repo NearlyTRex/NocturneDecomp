@@ -2,7 +2,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "types/structs/SMRGLTextureExtended.h"
+#include "types/structs/SMRGLTextureLod.h"
 #include "types/structs/SMorphPart.h"
 
 // Structure: CMorphModel
@@ -15,6 +15,6 @@ typedef struct CMorphModel {
     int num_faces; // 0x5c
     void* faces; // 0x60
     int num_textures; // 0x64
-    SMRGLTextureExtended textures[20]; // 0x68
+    SMRGLTextureLod textures[20]; // 0x68
 } CMorphModel;
 

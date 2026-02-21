@@ -49,7 +49,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00477980(CKeyF
           if ((this_ptr->texture_count < 2) || (iVar4 != 0)) {
             if (iVar4 == 0) {
               engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-                        (g_CDemonRendererPtr2,&this_ptr->texture_list[0].base);
+                        (g_CDemonRendererPtr2,this_ptr->texture_list[0].textures);
             }
             core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770
                       (g_CDemonSetPtr,
@@ -61,7 +61,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00477980(CKeyF
               if (iVar9 != this_ptr->poly_texture_index_list[iVar8]) {
                 engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
                           (g_CDemonRendererPtr2,
-                           &this_ptr->texture_list[this_ptr->poly_texture_index_list[iVar8]].base);
+                           this_ptr->texture_list[this_ptr->poly_texture_index_list[iVar8]].textures
+                          );
                 iVar9 = this_ptr->poly_texture_index_list[iVar8];
               }
               iVar6 = iVar8 * 4;

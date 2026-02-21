@@ -8,7 +8,7 @@
 ;
 ; XREF[3]:
 ;   core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0 at 0047a784
-;   core_skeledit.cpp_FUN_0058c190 at 0058c51a
+;   core_skeledit.cpp_CDeformableModel_FUN_0058c190 at 0058c51a
 ;   shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0 at 0051bb22
 ;
 ; Referenced Globals:

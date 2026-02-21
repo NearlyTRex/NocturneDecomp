@@ -261,8 +261,8 @@ LAB_0047983f:
       }
 LAB_004797c3:
       makepath
-                (this_ptr->texture_list[iVar11].base.texture_name,(char *)0x0,(char *)0x0,local_3a0,
-                 "raw");
+                (this_ptr->texture_list[iVar11].textures[0].texture_name,(char *)0x0,(char *)0x0,
+                 local_3a0,"raw");
     }
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_drawText_FUN_00401fd0("Importing polygons",0,0);

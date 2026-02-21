@@ -9,7 +9,7 @@
 int __cdecl core_dynamite_cpp_CDynamite_FUN_0049cf70(CDynamite *this_ptr)
 
 {
-  if (0.0 < *(float *)this_ptr->unk) {
+  if (0.0 < this_ptr->fuse_timer) {
     return 1;
   }
   return 0;

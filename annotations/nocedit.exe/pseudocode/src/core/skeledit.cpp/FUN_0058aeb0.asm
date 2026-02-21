@@ -8,11 +8,11 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[2]:
+;   core_skeledit.cpp_CDeformableModel_FUN_0058c190 at 0058c37c
 ;   core_skeledit.cpp_CSkeleton_FUN_00592690 at 005929b5
-;   core_skeledit.cpp_FUN_0058c190 at 0058c37c
 ;
 ; Called Functions:
-;   core_skeledit.cpp_FUN_0058ac80
+;   core_skeledit.cpp_CBoneStructure_FUN_0058ac80
 ;   core_xform.cpp_clearTranslation_FUN_005f5370
 ;   core_xform.cpp_inverse_FUN_005f6210
 ;   core_xform.cpp_setRotationScaleIdentity_FUN_005f5190
@@ -74,8 +74,8 @@ section .text
     MOV EBP,dword ptr [ESP + 0x3c]      ; 0058af23
         ;   Label: LAB_0058af23
     PUSH EBP                            ; 0058af27
-    CALL core_skeledit.cpp_FUN_0058ac80 ; 0058af28
-        ;   XREF to: 0058ac80 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_FUN_0058ac80()
+    CALL core_skeledit.cpp_CBoneStructure_FUN_0058ac80 ; 0058af28
+        ;   XREF to: 0058ac80 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_CBoneStructure_FUN_0058ac80(CBoneStructure * this_ptr)
     ADD ESP,0x4                         ; 0058af2d
     ADD ESP,0x34                        ; 0058af30
     POP EBP                             ; 0058af33

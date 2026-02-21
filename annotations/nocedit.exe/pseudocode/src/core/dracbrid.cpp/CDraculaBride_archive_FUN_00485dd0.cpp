@@ -66,7 +66,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_archive_FUN_00485dd0(CDraculaBride 
     iVar1 = 0;
     core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->fade_timer,"fadeTimer");
     if (0 < this_ptr->part_count) {
-      actor_ptr = (CDemonActor *)this_ptr->unk4;
+      actor_ptr = (CDemonActor *)this_ptr->part_list;
       do {
         iVar1 = iVar1 + 1;
         core_actor_cpp_archiveActor_FUN_0040b870(actor_ptr,"partList");

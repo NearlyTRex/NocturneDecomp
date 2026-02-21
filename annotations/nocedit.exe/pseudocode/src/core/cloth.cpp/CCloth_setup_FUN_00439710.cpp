@@ -350,14 +350,8 @@ void __cdecl core_cloth_cpp_CCloth_setup_FUN_00439710(CCloth *this_ptr,CVector3f
       pCVar11 = (CCloth *)&(pCVar11->model).env_map_opac_list;
     } while (iVar8 < (this_ptr->model).vertex_count);
   }
-  pCVar11 = this_ptr + 1;
-  (pCVar11->model).model_filename[8] = '\0';
-  (pCVar11->model).model_filename[9] = '\0';
-  (pCVar11->model).model_filename[10] = '\0';
-  (pCVar11->model).model_filename[0xb] = '\0';
-  *(uint *)(this_ptr[1].model.model_filename + 4) =
-       *(uint *)(this_ptr[1].model.model_filename + 8);
-  *(uint *)this_ptr[1].model.model_filename =
-       *(uint *)(this_ptr[1].model.model_filename + 4);
+  (this_ptr->unk).z = 0.0;
+  (this_ptr->unk).y = (this_ptr->unk).z;
+  (this_ptr->unk).x = (this_ptr->unk).y;
   return;
 }

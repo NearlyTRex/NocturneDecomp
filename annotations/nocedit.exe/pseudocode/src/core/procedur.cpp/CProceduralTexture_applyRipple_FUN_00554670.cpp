@@ -83,10 +83,10 @@ void __cdecl core_procedur_cpp_CProceduralTexture_applyRipple_FUN_00554670(CProc
       if (0xff < uVar3) {
         uVar3 = 0xff;
       }
-      pCVar8 = (CProceduralTexture *)((int)&pCVar8->unk1 + 1);
+      pCVar8 = (CProceduralTexture *)((int)&pCVar8->width + 1);
       iVar7 = iVar7 + 1;
       pCVar5->texture[0] = (uchar)uVar3;
-      pCVar5 = (CProceduralTexture *)((int)&pCVar5->unk1 + 1);
+      pCVar5 = (CProceduralTexture *)((int)&pCVar5->width + 1);
     } while (iVar7 < 0x100);
     local_28 = local_28 + 1;
     local_30 = (CProceduralTexture *)(local_30->texture + 0xf8);

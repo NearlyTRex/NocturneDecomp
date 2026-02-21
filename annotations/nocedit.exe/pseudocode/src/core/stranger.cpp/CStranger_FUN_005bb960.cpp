@@ -609,8 +609,7 @@ LAB_005bd19f:
           in_stack_fffffd10 = &UStack_1c8;
           pCVar10 = (this_ptr->base).nearby_interactive_actor;
           iVar20 = (*((pCVar10->vtable)._ub)->updateInteraction)
-                             (pCVar10,&in_stack_fffffd10->orient,
-                              (SInteractionState *)&(this_ptr->base).player_control);
+                             (pCVar10,in_stack_fffffd10,&(this_ptr->base).player_control);
           pUStack_24 = (UOrientationVector *)&(this_ptr->base).base.model;
           if (iVar20 == 0) {
             in_stack_fffffd14 = (UOrientationVector *)0x5bceaf;

@@ -13,9 +13,9 @@ CTeleport * __cdecl core_teleport_cpp_CTeleport_ctor_FUN_005da9e0(CTeleport *thi
   
   pCVar1 = (CTeleport *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
   (pCVar1->base).vtable._ub = &g_CTeleportVTable;
-  pCVar1->unk1 = 0x40a00000;
-  pCVar1->unk2 = 0x41100000;
-  pCVar1->unk3 = 0x40a00000;
+  (pCVar1->trigger_extents).x = 5.0;
+  (pCVar1->trigger_extents).y = 9.0;
+  (pCVar1->trigger_extents).z = 5.0;
   pCVar1->destination = (CDemonActor *)0x0;
   return pCVar1;
 }

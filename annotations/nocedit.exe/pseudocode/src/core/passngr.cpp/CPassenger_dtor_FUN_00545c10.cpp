@@ -42,7 +42,8 @@ CPassenger * __cdecl core_passngr_cpp_CPassenger_dtor_FUN_00545c10(CPassenger *t
   }
   pCVar1 = core_morph_cpp_CMorph_dtor_FUN_0052b330(&this_ptr->morph,0);
   pCVar2 = core_path_cpp_CPathMap_dtor_FUN_005464d0
-                     ((CPathMap *)(pCVar1[-0x1a].models[0].textures[7].unknown + 0x10),0);
+                     ((CPathMap *)(pCVar1[-0x1a].models[0].textures[7].textures[1].texture_name + 8)
+                      ,0);
   pCVar3 = core_armour_cpp_CFlame_arrdtor_FUN_00412720
                      ((CFlame *)(pCVar2[-1].height_cache_tags[0xb] + 0x39),0);
   pSVar4 = core_armour_cpp_SFire_arrdtor_FUN_00412700

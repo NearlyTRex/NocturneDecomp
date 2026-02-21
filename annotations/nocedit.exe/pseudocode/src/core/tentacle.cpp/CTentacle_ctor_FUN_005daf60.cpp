@@ -17,14 +17,8 @@ CTentacle * __cdecl core_tentacle_cpp_CTentacle_ctor_FUN_005daf60(CTentacle *thi
             (&(pCVar1->base).base.model,"tentacle.dfm");
   (pCVar1->base).base.ai_detection_range_min = 50.0;
   (pCVar1->base).base.ai_detection_range_max = 100.0;
-  pCVar1->unk1[0] = '\0';
-  pCVar1->unk1[1] = '\0';
-  pCVar1->unk1[2] = '\0';
-  pCVar1->unk1[3] = '\0';
-  pCVar1->unk1[4] = '\0';
-  pCVar1->unk1[5] = '\0';
-  pCVar1->unk1[6] = '\0';
-  pCVar1->unk1[7] = '\0';
+  pCVar1->wait_timer = 0.0;
+  pCVar1->chase_timer = 0.0;
   pCVar1->grave_actor = (CDemonActor *)0x0;
   return pCVar1;
 }

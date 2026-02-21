@@ -22,7 +22,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d6f80(CGabriella *this_ptr)
   int in_stack_00000014;
   CVector3f *in_stack_00000018;
   float local_1b48;
-  SBoneTransformData local_1b44;
+  SPose local_1b44;
   CMatrix3x4f local_a8;
   CMatrix3x4f local_78;
   CVector3f local_48;

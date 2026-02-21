@@ -20,7 +20,7 @@
 ;   undefined4 DAT_0083c25c
 ;   undefined4 DAT_0083c260
 ;   undefined4 DAT_0083c264
-;   uint g_CramTextureCount
+;   int g_CramTextureCount
 ;   int g_CramTotalMaps
 ;   int g_CramPaddingCalculation
 ;   int g_CramCurrentAcceptableSize

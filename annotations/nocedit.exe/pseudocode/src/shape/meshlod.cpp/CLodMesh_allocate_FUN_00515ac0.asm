@@ -1,16 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_meshlod_cpp_CLodMesh_allocate_FUN_00515ac0(CLodMesh *this_ptr,int vertex_count,int tri_count,int submesh_count)
+; void __cdecl shape_meshlod_cpp_CLodMesh_allocate_FUN_00515ac0(CLodMesh *this_ptr,int vertex_count,int tri_count,int lod_texture_count)
 ;
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   vertex_count
 ; int              Stack[0xc]:4   tri_count
-; int              Stack[0x10]:4   submesh_count
+; int              Stack[0x10]:4   lod_texture_count
 ;
 ; XREF[5]:
-;   core_skeledit.cpp_FUN_0058c190 at 0058c552
+;   core_skeledit.cpp_CDeformableModel_FUN_0058c190 at 0058c552
 ;   shape_meshlod.cpp_CLodMesh_copyFrom_FUN_0051a8c0 at 0051a8d9
 ;   shape_meshlod.cpp_CLodMesh_importFromEditorGlobals_FUN_0051b080 at 0051b0f4
 ;   shape_meshlod.cpp_CLodMesh_parseS3DFileVariant_FUN_0051adf0 at 0051aef3

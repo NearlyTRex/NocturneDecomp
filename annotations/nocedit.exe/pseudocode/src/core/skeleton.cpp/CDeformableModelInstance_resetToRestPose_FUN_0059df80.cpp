@@ -22,7 +22,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059
     do {
       core_xform_cpp_setIdentityQuaternion_FUN_005f7620(quaternion);
       iVar3 = iVar3 + 1;
-      (pCVar2->bone_transform).current_pose_data[0] = pCVar2->rest_pose_data[0];
+      (pCVar2->bone_transform).bone_scales[0] = pCVar2->rest_pose_data[0];
       quaternion = quaternion + 1;
       pCVar2 = (CDeformableModelInstance *)&(pCVar2->motion_controller).current_motion_index;
     } while (iVar3 < pCVar1->bone_count);

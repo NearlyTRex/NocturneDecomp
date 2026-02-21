@@ -5,7 +5,7 @@ struct CLodEdge;
 struct CLodFace;
 struct CLodVert;
 struct SLodSamplePoint;
-struct SLodSubmesh;
+struct SMRGLTextureLod;
 struct SSpatialGrid;
 struct _FILE;
 
@@ -20,8 +20,8 @@ typedef struct CLodMesh {
     struct CLodVert* vertex_data; // 0x4
     int tri_count; // 0x8
     struct CLodFace* tri_data; // 0xc
-    int submesh_count; // 0x10
-    struct SLodSubmesh* submesh_data; // 0x14
+    int lod_texture_count; // 0x10
+    struct SMRGLTextureLod* lod_textures; // 0x14
     int active_attribute_count; // 0x18
     int sort_attribute_count; // 0x1c
     int reserved_attribute_count; // 0x20

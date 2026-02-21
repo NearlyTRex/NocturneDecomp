@@ -20,21 +20,15 @@
         "message": "use of undeclared identifier 'stack0x00000008'; did you mean 'in_stack_00000008'?"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 87,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 24,
-        "line": 87,
-        "message": "expected expression"
+        "category": "other",
+        "column": 80,
+        "line": 88,
+        "message": "C-style cast from 'CMotionController *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 101,
+        "line": 102,
         "message": "C-style cast from 'CMotionController *' to 'float' is not allowed"
       }
     ],
@@ -43,21 +37,20 @@
   },
   "complexity": {
     "assembly_lines": 243,
-    "complexity_score": 279,
+    "complexity_score": 275,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 1,
-    "pseudocode_lines": 109,
+    "pseudocode_lines": 110,
     "suspect_count": 14,
     "suspect_types": [
       "param_count_too_few",
       "stack_param",
       "stack_ref",
       "suspect_float",
-      "unaffected_reg",
-      "unresolved_funcptr"
+      "unaffected_reg"
     ],
-    "total_lines": 352
+    "total_lines": 353
   },
   "cross_references": [
     {
@@ -297,29 +290,29 @@
       "type": "suspect_float"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 80,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(this_ptr->unk4 + 0x154) + 0xf0))(this_ptr->unk4,1);",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
-      "line": 85,
+      "line": 86,
       "match": "1.12104e-44",
       "text": "((this_ptr_00->model).transformed_vertices[0x19].y == 1.12104e-44)) {",
       "type": "suspect_float"
     },
     {
+      "description": "Likely misinterpreted integer as float",
+      "line": 96,
+      "match": "1.12104e-44",
+      "text": "this_ptr->weapon_actor[2].orient.vec.x == 1.12104e-44)) {",
+      "type": "suspect_float"
+    },
+    {
       "description": "Unaffected register variable",
-      "line": 97,
+      "line": 98,
       "match": "unaff_EDI",
       "text": "this_ptr_01 = unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 98,
+      "line": 99,
       "match": "unaff_EDI",
       "text": "core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(unaff_EDI,6,1);",
       "type": "unaffected_reg"

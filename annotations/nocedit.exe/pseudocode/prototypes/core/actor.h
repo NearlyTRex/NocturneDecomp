@@ -245,7 +245,7 @@ int __cdecl CDemonActor::startInteraction(CDemonActor *this_ptr,CDemonActor *use
 
 // Original: core_actor.cpp_CDemonActor_updateInteraction_FUN_0040a0b0
 // Address: 0040a0b0
-int __cdecl CDemonActor::updateInteraction(CDemonActor *this_ptr,COrientation *user_orientation,SInteractionState *interaction_state);
+int __cdecl CDemonActor::updateInteraction(CDemonActor *this_ptr,UOrientationVector *user_orientation,SPlayerControl *player_control);
 
 // Original: core_actor.cpp_CDemonActor_stopUsing_FUN_0040a0d0
 // Address: 0040a0d0

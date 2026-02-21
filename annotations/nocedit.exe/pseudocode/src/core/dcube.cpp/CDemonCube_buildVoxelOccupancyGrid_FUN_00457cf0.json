@@ -6,12 +6,12 @@
   },
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 120,
+    "complexity_score": 140,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
     "pseudocode_lines": 95,
-    "suspect_count": 2,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -35,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0",
-    "signature": "void __cdecl core_dcube_cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0(SVoxelGridParams *params)"
+    "signature": "void __cdecl core_dcube_cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0(CDemonCube *this_ptr)"
   },
   "function_calls": [
     {
@@ -271,26 +271,40 @@
       },
       {
         "is_param": true,
-        "name": "params",
+        "name": "this_ptr",
         "offset": 4,
         "size": 4,
-        "type": "SVoxelGridParams *"
+        "type": "CDemonCube *"
       }
     ]
   },
   "suspects": [
     {
       "description": "Complex pointer cast",
+      "line": 88,
+      "match": "(SVoxelGrid *)((int)",
+      "text": "pSVar6 = (SVoxelGrid *)((int)pSVar6 + (uint)bVar8 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 89,
+      "match": "(SVoxelGrid *)((int)",
+      "text": "pSVar7 = (SVoxelGrid *)((int)pSVar7 + (uint)bVar8 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 93,
-      "match": "(uint *)((int)",
-      "text": "puVar6 = (uint *)((int)puVar6 + (uint)bVar8 * -2 + 1);",
+      "match": "(SVoxelGrid *)((int)",
+      "text": "pSVar6 = (SVoxelGrid *)((int)pSVar6 + (uint)bVar8 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 94,
-      "match": "(uint *)((int)",
-      "text": "puVar7 = (uint *)((int)puVar7 + (uint)bVar8 * -2 + 1);",
+      "match": "(SVoxelGrid *)((int)",
+      "text": "pSVar7 = (SVoxelGrid *)((int)pSVar7 + (uint)bVar8 * -2 + 1);",
       "type": "pointer_cast"
     }
   ]

@@ -12,227 +12,229 @@ void __cdecl core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneSt
   char cVar1;
   int iVar2;
   uint uVar3;
-  int iVar4;
+  int *piVar4;
   int iVar5;
-  char *pcVar6;
-  int *piVar7;
-  uint *puVar8;
-  int *piVar9;
-  int *piVar10;
-  char *pcVar11;
-  int *piVar12;
-  int *piVar13;
-  byte bVar14;
-  int *in_stack_00000004;
+  int iVar6;
+  char *pcVar7;
+  CMatrix3x4f *pCVar8;
+  CBoneStructure *pCVar9;
+  uint *puVar10;
+  SBoneData *pSVar11;
+  uint *puVar12;
+  char *pcVar13;
+  SBoneData *pSVar14;
+  byte bVar15;
   int local_248 [100];
-  int local_b8 [8];
+  uint local_b8 [8];
   int local_98;
-  int local_94;
-  int local_90;
-  int local_8c;
-  int local_88;
-  int local_84;
-  int local_80;
-  int local_7c;
-  int local_78;
-  int local_74;
-  int local_70;
-  int local_6c;
-  int local_68;
-  int local_64;
-  int local_60;
-  int local_5c;
-  int local_58;
-  int local_54;
-  int local_50;
-  int local_4c;
-  int local_48;
-  int local_44;
-  int local_40;
-  int local_3c;
-  int local_38;
-  int *local_34;
-  int *local_30;
+  float local_94;
+  float local_90;
+  float local_8c;
+  float local_88;
+  float local_84;
+  float local_80;
+  float local_7c;
+  float local_78;
+  float local_74;
+  float local_70;
+  float local_6c;
+  float local_68;
+  float local_64;
+  float local_60;
+  float local_5c;
+  float local_58;
+  float local_54;
+  float local_50;
+  float local_4c;
+  float local_48;
+  float local_44;
+  float local_40;
+  float local_3c;
+  float local_38;
+  SBoneData *local_34;
+  SBoneData *local_30;
   int *local_2c;
-  int *local_28;
+  SBoneData *local_28;
   int local_24;
-  int *local_20;
-  int *local_1c;
-  int *local_18;
+  SBoneData *local_20;
+  SBoneData *local_1c;
+  SBoneData *local_18;
   int local_14;
   
-  bVar14 = 0;
+  bVar15 = 0;
   __STK();
-  iVar5 = 1;
+  iVar6 = 1;
   do {
-    iVar4 = _fgetc((_FILE *)this_ptr);
-    if (iVar4 < 0) break;
-  } while ((iVar4 != 10) || (iVar5 = iVar5 + -1, 0 < iVar5));
-  _fscanf((_FILE *)this_ptr,"%d,%d\n",in_stack_00000004,file);
-  if (100 < *in_stack_00000004) {
+    iVar5 = _fgetc(file);
+    if (iVar5 < 0) break;
+  } while ((iVar5 != 10) || (iVar6 = iVar6 + -1, 0 < iVar6));
+  _fscanf(file,"%d,%d\n",this_ptr,frame_count_out);
+  if (100 < this_ptr->bone_count) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
     g_CurrentLineNumber = 0x2a6;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Too bony!");
   }
-  iVar5 = 1;
+  iVar6 = 1;
   do {
-    iVar4 = _fgetc((_FILE *)this_ptr);
-    if (iVar4 < 0) break;
-  } while ((iVar4 != 10) || (iVar5 = iVar5 + -1, 0 < iVar5));
-  iVar5 = 0;
-  if (0 < *in_stack_00000004) {
-    local_34 = in_stack_00000004 + 1;
-    local_2c = in_stack_00000004 + 9;
-    pcVar11 = g_BoneNameBuffer[0];
+    iVar5 = _fgetc(file);
+    if (iVar5 < 0) break;
+  } while ((iVar5 != 10) || (iVar6 = iVar6 + -1, 0 < iVar6));
+  iVar6 = 0;
+  if (0 < this_ptr->bone_count) {
+    local_34 = this_ptr->bones;
+    local_2c = &this_ptr->bones[0].parent_index;
+    pcVar13 = g_BoneNameBuffer[0];
     do {
-      piVar9 = local_34 + iVar5 * 0x21;
-      _fscanf((_FILE *)this_ptr,"\"%[^\"]\",%d\n",piVar9,local_2c);
-      pcVar6 = pcVar11 + 0x1e;
+      pSVar11 = local_34 + iVar6;
+      _fscanf(file,"\"%[^\"]\",%d\n",pSVar11,local_2c);
+      pcVar7 = pcVar13 + 0x1e;
       do {
-        iVar4 = *piVar9;
-        *pcVar11 = (char)iVar4;
-        if ((char)iVar4 == '\0') break;
-        cVar1 = *(char *)((int)piVar9 + 1);
-        piVar9 = (int *)((int)piVar9 + 2);
-        pcVar11[1] = cVar1;
-        pcVar11 = pcVar11 + 2;
+        cVar1 = pSVar11->name[0];
+        *pcVar13 = cVar1;
+        if (cVar1 == '\0') break;
+        cVar1 = pSVar11->name[1];
+        pSVar11 = (SBoneData *)(pSVar11->name + 2);
+        pcVar13[1] = cVar1;
+        pcVar13 = pcVar13 + 2;
       } while (cVar1 != '\0');
-      iVar5 = iVar5 + 1;
+      iVar6 = iVar6 + 1;
       local_2c = local_2c + 0x21;
-      pcVar11 = pcVar6;
-    } while (iVar5 < *in_stack_00000004);
+      pcVar13 = pcVar7;
+    } while (iVar6 < this_ptr->bone_count);
   }
-  iVar5 = 1;
+  iVar6 = 1;
   do {
-    iVar4 = _fgetc((_FILE *)this_ptr);
-    if (iVar4 < 0) break;
-  } while ((iVar4 != 10) || (iVar5 = iVar5 + -1, 0 < iVar5));
-  if ((this_ptr->bones[0].name[8] & 0x20U) != 0) {
+    iVar5 = _fgetc(file);
+    if (iVar5 < 0) break;
+  } while ((iVar5 != 10) || (iVar6 = iVar6 + -1, 0 < iVar6));
+  if ((file->_flag & 0x20) != 0) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
     g_CurrentLineNumber = 699;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CBoneStructure::readBONheader - error reading file!");
   }
-  iVar5 = 0;
-  if (0 < *in_stack_00000004) {
-    iVar4 = 0;
+  iVar6 = 0;
+  if (0 < this_ptr->bone_count) {
+    iVar5 = 0;
     do {
-      *(uint *)((int)local_248 + iVar4) = 0;
-      for (iVar2 = iVar5; -1 < iVar2; iVar2 = in_stack_00000004[iVar2 * 0x21 + 9]) {
-        *(int *)((int)local_248 + iVar4) = *(int *)((int)local_248 + iVar4) + 1;
+      *(uint *)((int)local_248 + iVar5) = 0;
+      for (iVar2 = iVar6; -1 < iVar2; iVar2 = this_ptr->bones[iVar2].parent_index) {
+        *(int *)((int)local_248 + iVar5) = *(int *)((int)local_248 + iVar5) + 1;
       }
-      iVar5 = iVar5 + 1;
-      iVar4 = iVar4 + 4;
-    } while (iVar5 < *in_stack_00000004);
+      iVar6 = iVar6 + 1;
+      iVar5 = iVar5 + 4;
+    } while (iVar6 < this_ptr->bone_count);
   }
-  local_24 = *in_stack_00000004 + -1;
-  if (-1 < *in_stack_00000004 + -1) {
-    local_30 = in_stack_00000004 + 1;
-    local_28 = in_stack_00000004 + 1;
+  local_24 = this_ptr->bone_count + -1;
+  if (-1 < local_24) {
+    local_30 = this_ptr->bones;
+    local_28 = this_ptr->bones;
     do {
       local_14 = 0;
       if (0 < local_24) {
         local_20 = local_30;
-        local_1c = local_30 + 0x21;
-        piVar7 = local_28 + 9;
-        local_18 = local_28 + 0x21;
-        piVar9 = local_248;
+        local_1c = local_30 + 1;
+        pCVar8 = &local_28->local_matrix;
+        local_18 = local_28 + 1;
+        piVar4 = local_248;
         do {
-          puVar8 = piVar9 + 1;
-          iVar5 = local_248[local_14] - local_248[local_14 + 1];
-          if (iVar5 == 0) {
-            iVar5 = stricmp((char *)local_20,(char *)local_1c);
+          puVar10 = piVar4 + 1;
+          iVar6 = local_248[local_14] - local_248[local_14 + 1];
+          if (iVar6 == 0) {
+            iVar6 = stricmp(local_20->name,local_1c->name);
           }
-          if (0 < iVar5) {
-            piVar13 = local_28 + local_14 * 0x21;
-            piVar10 = piVar13;
-            piVar12 = local_b8;
-            for (iVar5 = 7; iVar5 != 0; iVar5 = iVar5 + -1) {
-              *piVar12 = *piVar10;
-              piVar10 = piVar10 + (uint)bVar14 * -2 + 1;
-              piVar12 = piVar12 + (uint)bVar14 * -2 + 1;
+          if (0 < iVar6) {
+            pSVar14 = local_28 + local_14;
+            pSVar11 = pSVar14;
+            puVar12 = local_b8;
+            for (iVar6 = 7; iVar6 != 0; iVar6 = iVar6 + -1) {
+              *puVar12 = *(uint *)pSVar11->name;
+              pSVar11 = (SBoneData *)((int)pSVar11 + (uint)bVar15 * -8 + 4);
+              puVar12 = puVar12 + (uint)bVar15 * -2 + 1;
             }
-            *(short *)piVar12 = (short)*piVar10;
-            local_98 = piVar13[8];
-            local_94 = *piVar7;
-            local_90 = piVar7[1];
-            local_8c = piVar7[2];
-            local_88 = piVar7[3];
-            local_84 = piVar7[4];
-            local_80 = piVar7[5];
-            local_7c = piVar7[6];
-            local_78 = piVar7[7];
-            local_74 = piVar7[8];
-            local_70 = piVar7[9];
-            local_6c = piVar7[10];
-            local_68 = piVar7[0xb];
-            local_64 = piVar7[0xc];
-            local_60 = piVar7[0xd];
-            local_5c = piVar7[0xe];
-            local_58 = piVar7[0xf];
-            local_54 = piVar7[0x10];
-            local_50 = piVar7[0x11];
-            local_4c = piVar7[0x12];
-            local_48 = piVar7[0x13];
-            local_44 = piVar7[0x14];
-            local_40 = piVar7[0x15];
-            local_3c = piVar7[0x16];
-            local_38 = piVar7[0x17];
-            piVar10 = local_18;
-            for (iVar5 = 0x21; iVar5 != 0; iVar5 = iVar5 + -1) {
-              *piVar13 = *piVar10;
-              piVar10 = piVar10 + (uint)bVar14 * -2 + 1;
-              piVar13 = piVar13 + (uint)bVar14 * -2 + 1;
+            *(ushort *)puVar12 = *(ushort *)pSVar11->name;
+            local_98 = pSVar14->parent_index;
+            local_94 = pCVar8->m[0].w;
+            local_90 = pCVar8->m[0].x;
+            local_8c = pCVar8->m[0].y;
+            local_88 = pCVar8->m[0].z;
+            local_84 = pCVar8->m[1].w;
+            local_80 = pCVar8->m[1].x;
+            local_7c = pCVar8->m[1].y;
+            local_78 = pCVar8->m[1].z;
+            local_74 = pCVar8->m[2].w;
+            local_70 = pCVar8->m[2].x;
+            local_6c = pCVar8->m[2].y;
+            local_68 = pCVar8->m[2].z;
+            local_64 = pCVar8[1].m[0].w;
+            local_60 = pCVar8[1].m[0].x;
+            local_5c = pCVar8[1].m[0].y;
+            local_58 = pCVar8[1].m[0].z;
+            local_54 = pCVar8[1].m[1].w;
+            local_50 = pCVar8[1].m[1].x;
+            local_4c = pCVar8[1].m[1].y;
+            local_48 = pCVar8[1].m[1].z;
+            local_44 = pCVar8[1].m[2].w;
+            local_40 = pCVar8[1].m[2].x;
+            local_3c = pCVar8[1].m[2].y;
+            local_38 = pCVar8[1].m[2].z;
+            pSVar11 = local_18;
+            for (iVar6 = 0x21; iVar6 != 0; iVar6 = iVar6 + -1) {
+              *(uint *)pSVar14->name = *(uint *)pSVar11->name;
+              pSVar11 = (SBoneData *)((int)pSVar11 + (uint)bVar15 * -8 + 4);
+              pSVar14 = (SBoneData *)((int)pSVar14 + (uint)bVar15 * -8 + 4);
             }
-            piVar10 = local_b8;
-            piVar13 = local_18;
-            for (iVar5 = 0x21; iVar5 != 0; iVar5 = iVar5 + -1) {
-              *piVar13 = *piVar10;
-              piVar10 = piVar10 + (uint)bVar14 * -2 + 1;
-              piVar13 = piVar13 + (uint)bVar14 * -2 + 1;
+            puVar12 = local_b8;
+            pSVar11 = local_18;
+            for (iVar6 = 0x21; iVar6 != 0; iVar6 = iVar6 + -1) {
+              *(uint *)pSVar11->name = *puVar12;
+              puVar12 = puVar12 + (uint)bVar15 * -2 + 1;
+              pSVar11 = (SBoneData *)((int)pSVar11 + (uint)bVar15 * -8 + 4);
             }
-            uVar3 = *piVar9;
-            *piVar9 = *puVar8;
-            *puVar8 = uVar3;
+            uVar3 = *piVar4;
+            *piVar4 = *puVar10;
+            *puVar10 = uVar3;
           }
-          piVar7 = piVar7 + 0x21;
+          pCVar8 = (CMatrix3x4f *)((int)(pCVar8 + 2) + 0x24);
           local_14 = local_14 + 1;
-          local_20 = local_20 + 0x21;
-          local_1c = local_1c + 0x21;
-          local_18 = local_18 + 0x21;
-          piVar9 = puVar8;
+          local_20 = local_20 + 1;
+          local_1c = local_1c + 1;
+          local_18 = local_18 + 1;
+          piVar4 = puVar10;
         } while (local_14 < local_24);
       }
       local_24 = local_24 + -1;
     } while (-1 < local_24);
   }
-  iVar5 = 0;
-  piVar9 = in_stack_00000004;
-  if (0 < *in_stack_00000004) {
+  iVar6 = 0;
+  pCVar9 = this_ptr;
+  if (0 < this_ptr->bone_count) {
     do {
-      iVar4 = core_skeledit_cpp_FUN_0058ac30();
-      piVar9[0xce5] = iVar4;
-      if (iVar4 < 0) {
+      iVar5 = core_skeledit_cpp_FUN_0058ac30();
+      pCVar9->shuffled_bone_indices[0] = iVar5;
+      if (iVar5 < 0) {
         g_CurrentFilename = "..\\core\\skeledit.cpp";
         g_CurrentLineNumber = 0x2e8;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze while shuffling bones...");
       }
-      iVar5 = iVar5 + 1;
-      piVar9 = piVar9 + 1;
-    } while (iVar5 < *in_stack_00000004);
+      iVar6 = iVar6 + 1;
+      pCVar9 = (CBoneStructure *)pCVar9->bones;
+    } while (iVar6 < this_ptr->bone_count);
   }
-  iVar5 = 0;
-  piVar9 = in_stack_00000004;
-  if (0 < *in_stack_00000004) {
+  iVar6 = 0;
+  pCVar9 = this_ptr;
+  if (0 < this_ptr->bone_count) {
     do {
-      if ((-1 < piVar9[9]) &&
-         (iVar4 = in_stack_00000004[piVar9[9] + 0xce5], piVar9[9] = iVar4, iVar5 <= iVar4)) {
+      iVar5 = pCVar9->bones[0].parent_index;
+      if ((-1 < iVar5) &&
+         (iVar5 = this_ptr->shuffled_bone_indices[iVar5], pCVar9->bones[0].parent_index = iVar5,
+         iVar6 <= iVar5)) {
         g_CurrentFilename = "..\\core\\skeledit.cpp";
         g_CurrentLineNumber = 0x2f0;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze while shuffling parent bones...");
       }
-      iVar5 = iVar5 + 1;
-      piVar9 = piVar9 + 0x21;
-    } while (iVar5 < *in_stack_00000004);
+      iVar6 = iVar6 + 1;
+      pCVar9 = (CBoneStructure *)&pCVar9->bones[0].world_matrix.m[2].z;
+    } while (iVar6 < this_ptr->bone_count);
   }
   return;
 }

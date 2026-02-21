@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0(CDeformableModelInstance *this_ptr,int motion_index,float animation_time,SBoneTransformData *output_bone_data)
+; void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0(CDeformableModelInstance *this_ptr,int motion_index,float animation_time,SPose *output_bone_data)
 ;
 ; Parameters:
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   motion_index
 ; float            Stack[0xc]:4   animation_time
-; SBoneTransformData * Stack[0x10]:4   output_bone_data
+; SPose *          Stack[0x10]:4   output_bone_data
 ; Local Variables:
 ; undefined4       Stack[-0x60]:4  local_60
 ; undefined1       Stack[-0x5c]:1  local_5c

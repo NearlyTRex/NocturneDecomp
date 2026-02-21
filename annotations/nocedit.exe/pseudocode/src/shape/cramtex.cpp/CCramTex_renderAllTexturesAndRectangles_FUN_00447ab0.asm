@@ -25,7 +25,7 @@
 ;   undefined4 DAT_00840c40
 ;   undefined4 DAT_00840c44
 ;   undefined4 DAT_00840c60
-;   uint g_CramTextureCount
+;   int g_CramTextureCount
 ;   int g_CramPlacedTextureCount
 ;   int g_CramRectangleCount
 ;   int g_CramCurrentAcceptableSize

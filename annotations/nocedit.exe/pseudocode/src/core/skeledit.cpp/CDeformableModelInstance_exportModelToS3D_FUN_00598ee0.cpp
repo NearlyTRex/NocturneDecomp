@@ -9,15 +9,15 @@
 void __cdecl core_skeledit_cpp_CDeformableModelInstance_exportModelToS3D_FUN_00598ee0(CDeformableModelInstance *this_ptr,char *filename)
 
 {
-  CMatrix3x4f *unaff_retaddr;
-  char *output_filename;
-  CMatrix3x4f *lod_level;
+  CDeformableModel *this_ptr_00;
+  int lod_level;
+  CMatrix3x4f *bone_matrices;
   
   __STK();
-  lod_level = (this_ptr->bone_transform).bone_world_matrices;
-  output_filename = (char *)0x0;
-  core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr);
+  bone_matrices = (this_ptr->bone_transform).bone_world_matrices;
+  lod_level = 0;
+  this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr);
   core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
-            ((CDeformableModel *)filename,output_filename,(int)lod_level,unaff_retaddr);
+            (this_ptr_00,filename,lod_level,bone_matrices);
   return;
 }

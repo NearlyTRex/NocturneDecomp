@@ -4,7 +4,7 @@
 ; int __cdecl shape_cramtex_cpp_CCramTex_findLeftmostOverlappingX_FUN_00447a10(CCramTex *this_ptr)
 ;
 ; Parameters:
-; CCramTex *       Stack[0xc]:4   this_ptr
+; CCramTex *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 at 004466af
@@ -20,7 +20,7 @@
 ;   undefined4 DAT_0083c258
 ;   undefined4 DAT_0083c25c
 ;   undefined4 DAT_0083c264
-;   uint g_CramTextureCount
+;   int g_CramTextureCount
 ;   int g_CramCurrentAcceptableSize
 ;
 ; Called Functions:

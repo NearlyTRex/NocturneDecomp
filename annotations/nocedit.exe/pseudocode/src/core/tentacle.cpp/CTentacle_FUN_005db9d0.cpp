@@ -36,8 +36,8 @@ int __cdecl core_tentacle_cpp_CTentacle_FUN_005db9d0(CTentacle *this_ptr)
     return 0;
   }
   core_xform_cpp_lerpMatrix3x4_FUN_005f7140
-            ((CMatrix3x4f *)(this_ptr->unk2 + 4),(CMatrix3x4f *)(this_ptr->unk2 + 0x34),
-             *(float *)this_ptr->unk2,&local_1cc);
+            (&this_ptr->target_matrix,&this_ptr->prev_target_matrix,this_ptr->target_blend,
+             &local_1cc);
   pCVar6 = &local_1cc;
   pCVar5 = &local_16c;
   for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {

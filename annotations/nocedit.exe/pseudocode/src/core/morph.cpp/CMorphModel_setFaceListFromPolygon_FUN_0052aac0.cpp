@@ -2,11 +2,11 @@
 // Address: 0052aac0
 // Address Range: [[0052aac0, 0052ac97]]
 // Convention: __cdecl
-// Signature: void __cdecl core_morph_cpp_CMorphModel_setFaceListFromPolygon_FUN_0052aac0(CMorphModel *this_ptr,int part_index,SMRGLPrimitiveQuad *poly_data,int poly_stride,SMRGLTextureExtended *texture_list,int *texture_index_list,int start_face,int poly_count)
+// Signature: void __cdecl core_morph_cpp_CMorphModel_setFaceListFromPolygon_FUN_0052aac0(CMorphModel *this_ptr,int part_index,SMRGLPrimitiveQuad *poly_data,int poly_stride,SMRGLTextureLod *texture_list,int *texture_index_list,int start_face,int poly_count)
 
 #include "nocturne.h"
 
-void __cdecl core_morph_cpp_CMorphModel_setFaceListFromPolygon_FUN_0052aac0(CMorphModel *this_ptr,int part_index,SMRGLPrimitiveQuad *poly_data,int poly_stride,SMRGLTextureExtended *texture_list,int *texture_index_list,int start_face,int poly_count)
+void __cdecl core_morph_cpp_CMorphModel_setFaceListFromPolygon_FUN_0052aac0(CMorphModel *this_ptr,int part_index,SMRGLPrimitiveQuad *poly_data,int poly_stride,SMRGLTextureLod *texture_list,int *texture_index_list,int start_face,int poly_count)
 
 {
   void *pvVar1;
@@ -42,7 +42,7 @@ void __cdecl core_morph_cpp_CMorphModel_setFaceListFromPolygon_FUN_0052aac0(CMor
     local_24 = texture_index_list;
     do {
       iVar4 = core_morph_cpp_CMorphModel_findOrAddTexture_FUN_0052ae60
-                        (this_ptr,texture_list[*local_24].base.texture_name);
+                        (this_ptr,texture_list[*local_24].textures[0].texture_name);
       iVar6 = 2;
       if (2 < (poly_data->base).base.count) {
         pSVar7 = (SMRGLPrimitiveQuad *)poly_data->vertices;

@@ -13,17 +13,18 @@ CLodMesh * __cdecl shape_meshlod_cpp_CLodMesh_copyFrom_FUN_0051a8c0(CLodMesh *th
   int iVar2;
   CLodVert *pCVar3;
   CLodFace *pCVar4;
-  SLodSubmesh *pSVar5;
+  SMRGLTextureLod *pSVar5;
   int *piVar6;
   CLodVert *pCVar7;
   CLodFace *pCVar8;
-  SLodSubmesh *pSVar9;
+  SMRGLTextureLod *pSVar9;
   int *piVar10;
   byte bVar11;
   
   bVar11 = 0;
   shape_meshlod_cpp_CLodMesh_allocate_FUN_00515ac0
-            (this_ptr,source_mesh->vertex_count,source_mesh->tri_count,source_mesh->submesh_count);
+            (this_ptr,source_mesh->vertex_count,source_mesh->tri_count,
+             source_mesh->lod_texture_count);
   pCVar3 = source_mesh->vertex_data;
   pCVar7 = this_ptr->vertex_data;
   for (uVar1 = (uint)(this_ptr->vertex_count * 0x4c4) >> 2; uVar1 != 0; uVar1 = uVar1 - 1) {
@@ -48,17 +49,17 @@ CLodMesh * __cdecl shape_meshlod_cpp_CLodMesh_copyFrom_FUN_0051a8c0(CLodMesh *th
     pCVar4 = (CLodFace *)((int)pCVar4 + (uint)bVar11 * -2 + 1);
     pCVar8 = (CLodFace *)((int)pCVar8 + (uint)bVar11 * -2 + 1);
   }
-  pSVar5 = source_mesh->submesh_data;
-  pSVar9 = this_ptr->submesh_data;
-  for (uVar1 = (uint)(this_ptr->submesh_count * 0x48) >> 2; uVar1 != 0; uVar1 = uVar1 - 1) {
-    *(uint *)pSVar9->unk = *(uint *)pSVar5->unk;
-    pSVar5 = (SLodSubmesh *)((int)pSVar5 + (uint)bVar11 * -8 + 4);
-    pSVar9 = (SLodSubmesh *)((int)pSVar9 + (uint)bVar11 * -8 + 4);
+  pSVar5 = source_mesh->lod_textures;
+  pSVar9 = this_ptr->lod_textures;
+  for (uVar1 = (uint)(this_ptr->lod_texture_count * 0x48) >> 2; uVar1 != 0; uVar1 = uVar1 - 1) {
+    pSVar9->textures[0].base.type = pSVar5->textures[0].base.type;
+    pSVar5 = (SMRGLTextureLod *)((int)pSVar5 + ((uint)bVar11 * -2 + 1) * 4);
+    pSVar9 = (SMRGLTextureLod *)((int)pSVar9 + ((uint)bVar11 * -2 + 1) * 4);
   }
   for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {
-    pSVar9->unk[0] = pSVar5->unk[0];
-    pSVar5 = (SLodSubmesh *)((int)pSVar5 + (uint)bVar11 * -2 + 1);
-    pSVar9 = (SLodSubmesh *)((int)pSVar9 + (uint)bVar11 * -2 + 1);
+    *(char *)&pSVar9->textures[0].base.type = (char)pSVar5->textures[0].base.type;
+    pSVar5 = (SMRGLTextureLod *)((int)pSVar5 + (uint)bVar11 * -2 + 1);
+    pSVar9 = (SMRGLTextureLod *)((int)pSVar9 + (uint)bVar11 * -2 + 1);
   }
   this_ptr->active_attribute_count = source_mesh->active_attribute_count;
   this_ptr->sort_attribute_count = source_mesh->sort_attribute_count;

@@ -57,24 +57,12 @@ void __cdecl core_icepick_cpp_CIcePick_setup_FUN_004f7e80(CIcePick *this_ptr)
   (this_ptr->base).base.carry_hands[0].bone_index = INT_02db89a4;
   (this_ptr->base).base.carry_hands[1].bone_index = INT_02db89a8;
   iVar1 = g_LocalHeroIndex;
-  this_ptr->unk[0x20] = '\0';
-  this_ptr->unk[0x21] = '\0';
-  this_ptr->unk[0x22] = '\0';
-  this_ptr->unk[0x23] = '\0';
+  this_ptr->pending_pickup_target = (CDemonActor *)0x0;
   if (this_ptr == (CIcePick *)g_HeroActors[iVar1]) {
     (((CIcePick *)g_HeroActors[iVar1])->base).base.collision_cylinder_radius = 1.5;
   }
-  this_ptr->unk[8] = '\0';
-  this_ptr->unk[9] = '\0';
-  this_ptr->unk[10] = '\0';
-  this_ptr->unk[0xb] = '\0';
-  this_ptr->unk[4] = '\0';
-  this_ptr->unk[5] = '\0';
-  this_ptr->unk[6] = '\0';
-  this_ptr->unk[7] = '\0';
-  this_ptr->unk[0x28] = '\0';
-  this_ptr->unk[0x29] = '\0';
-  this_ptr->unk[0x2a] = '\0';
-  this_ptr->unk[0x2b] = '\0';
+  this_ptr->injured_sfx_handle = 0;
+  this_ptr->swing_sfx_handle = 0;
+  this_ptr->aim_pitch = 0.0;
   return;
 }

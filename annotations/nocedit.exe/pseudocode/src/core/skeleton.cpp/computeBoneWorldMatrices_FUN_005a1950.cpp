@@ -2,17 +2,17 @@
 // Address: 005a1950
 // Address Range: [[005a1950, 005a1b60]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeleton_cpp_computeBoneWorldMatrices_FUN_005a1950(SBoneTransformData *bone_data,CDeformableModelInstance *instance_ptr)
+// Signature: void __cdecl core_skeleton_cpp_computeBoneWorldMatrices_FUN_005a1950(SPose *bone_data,CDeformableModelInstance *instance_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_skeleton_cpp_computeBoneWorldMatrices_FUN_005a1950(SBoneTransformData *bone_data,CDeformableModelInstance *instance_ptr)
+void __cdecl core_skeleton_cpp_computeBoneWorldMatrices_FUN_005a1950(SPose *bone_data,CDeformableModelInstance *instance_ptr)
 
 {
   int iVar1;
-  SBoneTransformData *pSVar2;
+  SPose *pSVar2;
   int iVar3;
-  SBoneTransformData *pSVar4;
+  SPose *pSVar4;
   CVector3f local_3c;
   CVector3f *local_30;
   CSkeleton *local_2c;
@@ -37,33 +37,33 @@ void __cdecl core_skeleton_cpp_computeBoneWorldMatrices_FUN_005a1950(SBoneTransf
     do {
       local_24 = local_14 * 0x30;
       core_xform_cpp_quaternionToMatrix3x3_FUN_005f7280((CMatrix3x3f *)local_1c,local_18);
-      if (pSVar2->current_pose_data[0] != 1.0) {
+      if (pSVar2->bone_scales[0] != 1.0) {
         *(float *)((int)&bone_data->bone_world_matrices[0].m[0].w + local_24) =
-             pSVar2->current_pose_data[0] *
+             pSVar2->bone_scales[0] *
              *(float *)((int)&bone_data->bone_world_matrices[0].m[0].w + local_24);
         *(float *)((int)&bone_data->bone_world_matrices[0].m[0].x + local_24) =
-             pSVar2->current_pose_data[0] *
+             pSVar2->bone_scales[0] *
              *(float *)((int)&bone_data->bone_world_matrices[0].m[0].x + local_24);
         *(float *)((int)&bone_data->bone_world_matrices[0].m[0].y + local_24) =
-             pSVar2->current_pose_data[0] *
+             pSVar2->bone_scales[0] *
              *(float *)((int)&bone_data->bone_world_matrices[0].m[0].y + local_24);
         *(float *)((int)&bone_data->bone_world_matrices[0].m[1].w + local_24) =
-             pSVar2->current_pose_data[0] *
+             pSVar2->bone_scales[0] *
              *(float *)((int)&bone_data->bone_world_matrices[0].m[1].w + local_24);
         *(float *)((int)&bone_data->bone_world_matrices[0].m[1].x + local_24) =
-             pSVar2->current_pose_data[0] *
+             pSVar2->bone_scales[0] *
              *(float *)((int)&bone_data->bone_world_matrices[0].m[1].x + local_24);
         *(float *)((int)&bone_data->bone_world_matrices[0].m[1].y + local_24) =
-             pSVar2->current_pose_data[0] *
+             pSVar2->bone_scales[0] *
              *(float *)((int)&bone_data->bone_world_matrices[0].m[1].y + local_24);
         *(float *)((int)&bone_data->bone_world_matrices[0].m[2].w + local_24) =
-             pSVar2->current_pose_data[0] *
+             pSVar2->bone_scales[0] *
              *(float *)((int)&bone_data->bone_world_matrices[0].m[2].w + local_24);
         *(float *)((int)&bone_data->bone_world_matrices[0].m[2].x + local_24) =
-             pSVar2->current_pose_data[0] *
+             pSVar2->bone_scales[0] *
              *(float *)((int)&bone_data->bone_world_matrices[0].m[2].x + local_24);
         *(float *)((int)&bone_data->bone_world_matrices[0].m[2].y + local_24) =
-             pSVar2->current_pose_data[0] *
+             pSVar2->bone_scales[0] *
              *(float *)((int)&bone_data->bone_world_matrices[0].m[2].y + local_24);
       }
       iVar1 = local_20->bone_list[0].parent_index;
@@ -85,8 +85,8 @@ void __cdecl core_skeleton_cpp_computeBoneWorldMatrices_FUN_005a1950(SBoneTransf
         pSVar4->bone_world_matrices[0].m[1].z = local_3c.y;
         pSVar4->bone_world_matrices[0].m[2].z = local_3c.z;
       }
-      pSVar2 = (SBoneTransformData *)&(pSVar2->root_position).y;
-      pSVar4 = (SBoneTransformData *)&pSVar4->bone_rotations[2].x;
+      pSVar2 = (SPose *)&(pSVar2->root_position).y;
+      pSVar4 = (SPose *)&pSVar4->bone_rotations[2].x;
       iVar3 = iVar3 + 0xc;
       local_1c = local_1c + 1;
       local_18 = local_18 + 1;

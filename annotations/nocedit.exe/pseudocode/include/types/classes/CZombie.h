@@ -20,29 +20,28 @@ typedef struct CZombie {
     int object_shape_class; // 0xbed0
     struct CDemonActor* grave_actor; // 0xbed4
     struct CDoor* target_door; // 0xbed8
-    char rise_from_grave_condition[32]; // 0xbedc
-    char unk3[68]; // 0xbefc
+    char rise_from_grave_condition[100]; // 0xbedc
     int is_miner_zombie; // 0xbf40
     int always_chase_fast; // 0xbf44
     int is_female; // 0xbf48
-    int bone_head; // 0xbf4c
-    int bone_l_hand; // 0xbf50
-    int bone_r_hand; // 0xbf54
-    int bone_l_forearm; // 0xbf58
-    int bone_r_forearm; // 0xbf5c
-    int bone_l_upperarm; // 0xbf60
-    int bone_r_upperarm; // 0xbf64
-    int bone_l_foot; // 0xbf68
-    int bone_r_foot; // 0xbf6c
-    int bone_spine; // 0xbf70
-    int bone_spine2; // 0xbf74
-    int part_l_arm; // 0xbf78
-    int part_l_forearm; // 0xbf7c
-    int part_r_arm; // 0xbf80
-    int part_r_forearm; // 0xbf84
-    int part_waist; // 0xbf88
-    int part_torso; // 0xbf8c
-    int part_head; // 0xbf90
+    int bone_index_head; // 0xbf4c
+    int bone_index_lhand; // 0xbf50
+    int bone_index_rhand; // 0xbf54
+    int bone_index_lforearm; // 0xbf58
+    int bone_index_rforearm; // 0xbf5c
+    int bone_index_lupperarm; // 0xbf60
+    int bone_index_rupperarm; // 0xbf64
+    int bone_index_lfoot; // 0xbf68
+    int bone_index_rfoot; // 0xbf6c
+    int bone_index_spine; // 0xbf70
+    int bone_index_spine2; // 0xbf74
+    int part_index_larm; // 0xbf78
+    int part_index_lforearm; // 0xbf7c
+    int part_index_rarm; // 0xbf80
+    int part_index_rforearm; // 0xbf84
+    int part_index_waist; // 0xbf88
+    int part_index_torso; // 0xbf8c
+    int part_index_head; // 0xbf90
     float pain_sfx_cooldown; // 0xbf94
     float bleedout_timer; // 0xbf98
     uint pain_sfx_handle; // 0xbf9c

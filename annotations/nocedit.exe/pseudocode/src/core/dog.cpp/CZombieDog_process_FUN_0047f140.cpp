@@ -182,7 +182,7 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_0047f140(CZombieDog *this_ptr,f
       pCVar9 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                          (&local_98,&g_ZeroVector,
                           (this_ptr->base).base.model.bone_transform.bone_world_matrices +
-                          this_ptr->bone_head);
+                          this_ptr->bone_index_head);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)this_ptr,&local_8c,pCVar9);
       core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);

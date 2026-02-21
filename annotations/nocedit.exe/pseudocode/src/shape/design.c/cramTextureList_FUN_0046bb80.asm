@@ -1073,7 +1073,7 @@ section .text
     PUSH EAX                            ; 0046c6e7 | g_TextureAtlasEntries
     PUSH dword ptr [0x01e8d260]         ; 0046c6e8 | g_TextureProcessedCount
     CALL shape_cramtex.cpp_generateTextureAtlasLayout_FUN_00444d90 ; 0046c6ee
-        ;   XREF to: 00444d90 (UNCONDITIONAL_CALL)  ; int shape_cramtex.cpp_generateTextureAtlasLayout_FUN_00444d90(uint texture_count, STextureAtlasEntry * texture_entries, int atlas_width, int atlas_height, ...)
+        ;   XREF to: 00444d90 (UNCONDITIONAL_CALL)  ; int shape_cramtex.cpp_generateTextureAtlasLayout_FUN_00444d90(int texture_count, STextureAtlasEntry * texture_entries, int atlas_width, int atlas_height, ...)
     ADD ESP,0x30                        ; 0046c6f3
     CALL wincore_winrun.cpp_getTime_FUN_005f2dc0 ; 0046c6f6
         ;   XREF to: 005f2dc0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005f2dc0()

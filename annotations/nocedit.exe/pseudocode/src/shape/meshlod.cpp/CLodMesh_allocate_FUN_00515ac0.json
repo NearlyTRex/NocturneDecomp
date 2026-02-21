@@ -17,7 +17,7 @@
         "category": "incompatible_types",
         "column": 12,
         "line": 28,
-        "message": "assigning to 'SLodSubmesh *' from incompatible type 'void *'"
+        "message": "assigning to 'SMRGLTextureLod *' from incompatible type 'void *'"
       }
     ],
     "success": false,
@@ -38,7 +38,7 @@
     {
       "addr": "0058c190",
       "from_addr": "0058c552",
-      "name": "core_skeledit.cpp_FUN_0058c190",
+      "name": "core_skeledit.cpp_CDeformableModel_FUN_0058c190",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -76,7 +76,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_meshlod.cpp_CLodMesh_allocate_FUN_00515ac0",
-    "signature": "void __cdecl shape_meshlod_cpp_CLodMesh_allocate_FUN_00515ac0(CLodMesh *this_ptr,int vertex_count,int tri_count,int submesh_count)"
+    "signature": "void __cdecl shape_meshlod_cpp_CLodMesh_allocate_FUN_00515ac0(CLodMesh *this_ptr,int vertex_count,int tri_count,int lod_texture_count)"
   },
   "function_calls": [
     {
@@ -194,7 +194,7 @@
       },
       {
         "is_param": true,
-        "name": "submesh_count",
+        "name": "lod_texture_count",
         "offset": 16,
         "size": 4,
         "type": "int"

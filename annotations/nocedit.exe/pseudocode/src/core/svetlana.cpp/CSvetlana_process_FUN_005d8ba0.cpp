@@ -89,7 +89,7 @@ switchD_005d8f77_caseD_9:
     case 10:
       if ((this_ptr->base).base.is_on_ground != 0) {
         iVar4 = 0;
-        if (this_ptr->unk1 != 0) {
+        if (this_ptr->blades_drawn != 0) {
           iVar4 = 10;
         }
         if ((this_ptr->base).player_control.action_states[0] != 0) {
@@ -104,10 +104,10 @@ switchD_005d8f77_caseD_9:
           iVar4 = 3;
         }
         if ((this_ptr->base).player_control.action_states[6] != 0) {
-          iVar4 = this_ptr->unk1;
+          iVar4 = this_ptr->blades_drawn;
           (this_ptr->base).player_control.action_states[6] = 0;
           uVar7 = (uint)(iVar4 == 0);
-          this_ptr->unk1 = uVar7;
+          this_ptr->blades_drawn = uVar7;
           if (uVar7 == 0) {
             iVar4 = 0;
           }
@@ -117,7 +117,7 @@ switchD_005d8f77_caseD_9:
         }
         if ((this_ptr->base).player_control.action_states[3] != 0) {
           bVar2 = true;
-          if ((this_ptr->unk1 == 0) && ((this_ptr->base).control_type != 2)) {
+          if ((this_ptr->blades_drawn == 0) && ((this_ptr->base).control_type != 2)) {
             iVar8 = core_hero_cpp_CHero_FUN_004f2af0(&this_ptr->base);
             bVar2 = false;
             if (iVar8 != 0) goto LAB_005d9011;
@@ -138,7 +138,7 @@ switchD_005d8f77_caseD_9:
 LAB_005d9011:
             if (!bVar2) goto LAB_005d9032;
           }
-          iVar4 = this_ptr->unk2;
+          iVar4 = this_ptr->attack_hand;
           (this_ptr->base).player_control.action_states[3] = 0;
           if (iVar4 == 0) {
             iVar4 = 0xf;
@@ -279,9 +279,9 @@ LAB_005d8e27:
   iVar4 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
   if (iVar4 == 0) {
     blend_callback = core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0;
-    fVar12 = *(float *)(this_ptr->unk6 + 0xc);
+    fVar12 = this_ptr->head_blend_weight;
     iVar4 = INT_03f6cb90;
-    core_xform_cpp_eulerToQuaternion_FUN_005f7b20((CVector3f *)this_ptr->unk6,&CStack_84);
+    core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&this_ptr->head_euler_angles,&CStack_84);
     CStack_94.w = CStack_84.w;
     puVar10 = (uint *)((int)&CStack_94 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
     puVar9 = (uint *)((int)&CStack_84 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);

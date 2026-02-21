@@ -20,22 +20,22 @@ void __cdecl core_zombie_cpp_CZombie_FUN_005fc220(CZombie *this_ptr)
     iVar1 = rand();
     switch(iVar1 % 6) {
     case 0:
-      iVar1 = this_ptr->part_l_arm;
+      iVar1 = this_ptr->part_index_larm;
       break;
     case 1:
-      iVar1 = this_ptr->part_l_forearm;
+      iVar1 = this_ptr->part_index_lforearm;
       break;
     case 2:
-      iVar1 = this_ptr->part_r_arm;
+      iVar1 = this_ptr->part_index_rarm;
       break;
     case 3:
-      iVar1 = this_ptr->part_r_forearm;
+      iVar1 = this_ptr->part_index_rforearm;
       break;
     case 4:
-      iVar1 = this_ptr->part_head;
+      iVar1 = this_ptr->part_index_head;
       break;
     case 5:
-      iVar1 = this_ptr->part_torso;
+      iVar1 = this_ptr->part_index_torso;
       break;
     default:
       goto switchD_005fc256_default;
@@ -44,15 +44,15 @@ void __cdecl core_zombie_cpp_CZombie_FUN_005fc220(CZombie *this_ptr)
   }
 switchD_005fc256_default:
   iVar1 = *in_stack_00000008;
-  if (((((iVar1 == this_ptr->part_l_arm) || (iVar1 == this_ptr->part_l_forearm)) ||
-       (iVar1 == this_ptr->part_r_arm)) ||
-      ((iVar1 == this_ptr->part_r_forearm || (iVar1 == this_ptr->part_torso)))) ||
-     (iVar1 == this_ptr->part_head)) {
+  if (((((iVar1 == this_ptr->part_index_larm) || (iVar1 == this_ptr->part_index_lforearm)) ||
+       (iVar1 == this_ptr->part_index_rarm)) ||
+      ((iVar1 == this_ptr->part_index_rforearm || (iVar1 == this_ptr->part_index_torso)))) ||
+     (iVar1 == this_ptr->part_index_head)) {
     local_14 = (float)in_stack_00000008[0xb];
-    if (this_ptr->part_head == *in_stack_00000008) {
+    if (this_ptr->part_index_head == *in_stack_00000008) {
       local_14 = 0.05;
     }
-    if (this_ptr->part_torso == *in_stack_00000008) {
+    if (this_ptr->part_index_torso == *in_stack_00000008) {
       local_14 = 0.02;
     }
     if (g_CGamePtr->gratuitous_dismemberment != 0) {
@@ -66,44 +66,44 @@ switchD_005fc256_default:
       body_part = core_bodypart_cpp_createBodyPart_FUN_00418e10();
       core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
                 ((CCharacter *)this_ptr,body_part,*in_stack_00000008,0);
-      if (*in_stack_00000008 == this_ptr->part_l_arm) {
+      if (*in_stack_00000008 == this_ptr->part_index_larm) {
         core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
-                  ((CCharacter *)this_ptr,body_part,this_ptr->part_l_forearm,0);
+                  ((CCharacter *)this_ptr,body_part,this_ptr->part_index_lforearm,0);
       }
-      if (this_ptr->part_r_arm == *in_stack_00000008) {
+      if (this_ptr->part_index_rarm == *in_stack_00000008) {
         core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
-                  ((CCharacter *)this_ptr,body_part,this_ptr->part_r_forearm,0);
+                  ((CCharacter *)this_ptr,body_part,this_ptr->part_index_rforearm,0);
       }
-      if (this_ptr->part_torso == *in_stack_00000008) {
+      if (this_ptr->part_index_torso == *in_stack_00000008) {
         core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
-                  ((CCharacter *)this_ptr,this_ptr->part_r_arm);
+                  ((CCharacter *)this_ptr,this_ptr->part_index_rarm);
         core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
-                  ((CCharacter *)this_ptr,this_ptr->part_r_forearm);
+                  ((CCharacter *)this_ptr,this_ptr->part_index_rforearm);
         core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
-                  ((CCharacter *)this_ptr,this_ptr->part_l_arm);
+                  ((CCharacter *)this_ptr,this_ptr->part_index_larm);
         core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
-                  ((CCharacter *)this_ptr,this_ptr->part_l_forearm);
+                  ((CCharacter *)this_ptr,this_ptr->part_index_lforearm);
         core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
-                  ((CCharacter *)this_ptr,this_ptr->part_head);
+                  ((CCharacter *)this_ptr,this_ptr->part_index_head);
       }
       core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_0042f300
                 ((CCharacter *)this_ptr,"limb?.wav");
       core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_0041a050(body_part);
-      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_head] == 0) {
+      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_index_head] == 0) {
         in_stack_00000008[1] = 0x461c3c00;
       }
       in_stack_00000008[2] = (int)((float)in_stack_00000008[2] * (float)7);
-      if (this_ptr->part_waist < 0) {
+      if (this_ptr->part_index_waist < 0) {
         in_stack_00000008[1] = 0x4479c000;
       }
     }
   }
   iVar1 = *in_stack_00000008;
-  if (iVar1 == this_ptr->part_head) {
+  if (iVar1 == this_ptr->part_index_head) {
     in_stack_00000008[1] = (int)((float)in_stack_00000008[1] * (float)2.5);
     return;
   }
-  if ((iVar1 != this_ptr->part_waist) && (iVar1 != this_ptr->part_torso)) {
+  if ((iVar1 != this_ptr->part_index_waist) && (iVar1 != this_ptr->part_index_torso)) {
     in_stack_00000008[1] = (int)((float)in_stack_00000008[1] * (float)0.5);
     return;
   }

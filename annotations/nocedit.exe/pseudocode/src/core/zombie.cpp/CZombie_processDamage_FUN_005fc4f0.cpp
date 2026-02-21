@@ -22,7 +22,7 @@ void __cdecl core_zombie_cpp_CZombie_processDamage_FUN_005fc4f0(CZombie *this_pt
   
   core_zombie_cpp_CZombie_FUN_005fc220(this_ptr);
   (*(((this_ptr->base).base.base.vtable._uc)->_uc).releaseVictim)((CCharacter *)this_ptr);
-  iVar5 = this_ptr->part_head;
+  iVar5 = this_ptr->part_index_head;
   (this_ptr->base).base.hit_points = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   if ((this_ptr->base).base.model.part_data.visibility_flags[iVar5] == 0) {
     (this_ptr->base).base.hit_points = 0.0;
@@ -59,9 +59,10 @@ void __cdecl core_zombie_cpp_CZombie_processDamage_FUN_005fc4f0(CZombie *this_pt
     if ((pSVar2->state_index != 8) && (pSVar2->state_index != 7)) {
       core_zombie_cpp_CZombie_FUN_005fbde0(this_ptr);
       iVar5 = 6;
-      if (((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_head] == 0) &&
-         (((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_r_arm] != 0 ||
-          ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_l_arm] != 0)))) {
+      if (((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_index_head] == 0)
+         && (((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_index_rarm] != 0
+             || ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_index_larm]
+                 != 0)))) {
         this_ptr_01 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                                 (&(this_ptr->base).base.model.motion_controller);
         iVar3 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr_01);

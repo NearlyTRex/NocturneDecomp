@@ -13,7 +13,7 @@ void __cdecl core_morph_cpp_CMorph_setupModelFromPolygons_FUN_0052b3d0(CMorph *t
   CVector3i *in_stack_00000010;
   int in_stack_00000014;
   SMRGLPrimitiveQuad *in_stack_00000018;
-  SMRGLTextureExtended *in_stack_0000001c;
+  SMRGLTextureLod *in_stack_0000001c;
   int *in_stack_00000020;
   
   core_morph_cpp_CMorphModel_free_FUN_0052a510(this_ptr->models + model_index);
