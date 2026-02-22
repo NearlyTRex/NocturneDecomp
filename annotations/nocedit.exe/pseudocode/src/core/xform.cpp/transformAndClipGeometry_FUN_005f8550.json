@@ -125,6 +125,7 @@
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 53,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 487,
     "suspect_count": 85,
     "suspect_types": [
@@ -619,6 +620,7 @@
       "description": "Unreachable code block removed",
       "line": 2,
       "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x005f8bef) */",
       "type": "warning_unreachable"
     },
@@ -626,6 +628,7 @@
       "description": "Unreachable code block removed",
       "line": 3,
       "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x005f8b55) */",
       "type": "warning_unreachable"
     },
@@ -633,6 +636,7 @@
       "description": "Unreachable code block removed",
       "line": 4,
       "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x005f8abb) */",
       "type": "warning_unreachable"
     },
@@ -640,6 +644,7 @@
       "description": "Unreachable code block removed",
       "line": 5,
       "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x005f8a21) */",
       "type": "warning_unreachable"
     },
@@ -647,6 +652,7 @@
       "description": "Unreachable code block removed",
       "line": 6,
       "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x005f85b8) */",
       "type": "warning_unreachable"
     },
@@ -654,6 +660,7 @@
       "description": "Unreachable code block removed",
       "line": 7,
       "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x005f8641) */",
       "type": "warning_unreachable"
     },
@@ -661,6 +668,7 @@
       "description": "Unreachable code block removed",
       "line": 8,
       "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x005f86f8) */",
       "type": "warning_unreachable"
     },
@@ -668,6 +676,7 @@
       "description": "Unreachable code block removed",
       "line": 9,
       "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x005f87c2) */",
       "type": "warning_unreachable"
     },
@@ -675,6 +684,7 @@
       "description": "Unreachable code block removed",
       "line": 10,
       "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x005f8887) */",
       "type": "warning_unreachable"
     },
@@ -682,6 +692,7 @@
       "description": "Unreachable code block removed",
       "line": 11,
       "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x005f8952) */",
       "type": "warning_unreachable"
     },
@@ -689,6 +700,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 29,
       "match": "extraout_EAX",
+      "severity": "moderate",
       "text": "SRenderVertex *extraout_EAX;",
       "type": "extra_output"
     },
@@ -696,6 +708,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 30,
       "match": "extraout_EAX_00",
+      "severity": "moderate",
       "text": "SRenderVertex *extraout_EAX_00;",
       "type": "extra_output"
     },
@@ -703,6 +716,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 31,
       "match": "extraout_EAX_01",
+      "severity": "moderate",
       "text": "SRenderVertex *extraout_EAX_01;",
       "type": "extra_output"
     },
@@ -710,6 +724,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 32,
       "match": "extraout_EAX_02",
+      "severity": "moderate",
       "text": "SRenderVertex *extraout_EAX_02;",
       "type": "extra_output"
     },
@@ -717,6 +732,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 33,
       "match": "extraout_EAX_03",
+      "severity": "moderate",
       "text": "SRenderVertex *extraout_EAX_03;",
       "type": "extra_output"
     },
@@ -724,6 +740,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 34,
       "match": "extraout_EAX_04",
+      "severity": "moderate",
       "text": "SRenderVertex *extraout_EAX_04;",
       "type": "extra_output"
     },
@@ -731,6 +748,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 35,
       "match": "extraout_EAX_05",
+      "severity": "moderate",
       "text": "SRenderVertex *extraout_EAX_05;",
       "type": "extra_output"
     },
@@ -738,6 +756,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 36,
       "match": "extraout_EAX_06",
+      "severity": "moderate",
       "text": "SRenderVertex *extraout_EAX_06;",
       "type": "extra_output"
     },
@@ -745,6 +764,7 @@
       "description": "Complex pointer cast",
       "line": 62,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "local_28 = (int *)((int)&(((SRenderVertex *)local_28)->projected_vertex).transformed_x + 1);",
       "type": "pointer_cast"
     },
@@ -752,6 +772,7 @@
       "description": "Unknown/mangled field access",
       "line": 76,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "lVar1._0_4_ = (pSVar19->projected_vertex).transformed_x;",
       "type": "unknown_field"
     },
@@ -759,6 +780,7 @@
       "description": "Unknown/mangled field access",
       "line": 77,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "lVar1._4_4_ = (pSVar19->projected_vertex).transformed_y;",
       "type": "unknown_field"
     },
@@ -766,6 +788,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 79,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(pSVar20->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar1);",
       "type": "decompiler_intrinsic"
     },
@@ -773,6 +796,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 81,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar1) >> 0x20);",
       "type": "decompiler_intrinsic"
     },
@@ -780,6 +804,7 @@
       "description": "Complex pointer cast",
       "line": 92,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "local_28 = (int *)((int)&(local_24->projected_vertex).transformed_x + 1);",
       "type": "pointer_cast"
     },
@@ -787,6 +812,7 @@
       "description": "Unknown/mangled field access",
       "line": 113,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "lVar2._0_4_ = (pSVar19->projected_vertex).transformed_x;",
       "type": "unknown_field"
     },
@@ -794,6 +820,7 @@
       "description": "Unknown/mangled field access",
       "line": 114,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "lVar2._4_4_ = (pSVar19->projected_vertex).transformed_y;",
       "type": "unknown_field"
     },
@@ -801,6 +828,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 116,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(pSVar20->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar2);",
       "type": "decompiler_intrinsic"
     },
@@ -808,6 +836,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 118,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar2) >> 0x20);",
       "type": "decompiler_intrinsic"
     },
@@ -815,6 +844,7 @@
       "description": "Unknown/mangled field access",
       "line": 155,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "lVar3._0_4_ = (pSVar20->projected_vertex).transformed_x;",
       "type": "unknown_field"
     },
@@ -822,6 +852,7 @@
       "description": "Unknown/mangled field access",
       "line": 156,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "lVar3._4_4_ = (pSVar20->projected_vertex).transformed_y;",
       "type": "unknown_field"
     },
@@ -829,6 +860,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 158,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(pSVar19->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar3);",
       "type": "decompiler_intrinsic"
     },
@@ -836,6 +868,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 160,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar3) >> 0x20);",
       "type": "decompiler_intrinsic"
     },
@@ -843,6 +876,7 @@
       "description": "Complex pointer cast",
       "line": 167,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4) =",
       "type": "pointer_cast"
     },
@@ -850,6 +884,7 @@
       "description": "Complex pointer cast",
       "line": 168,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pSVar20 + (uint)bVar22 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -857,6 +892,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 177,
       "match": "extraout_EAX",
+      "severity": "moderate",
       "text": "local_28 = (int *)extraout_EAX;",
       "type": "extra_output"
     },
@@ -864,6 +900,7 @@
       "description": "Unknown/mangled field access",
       "line": 184,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "lVar7._0_4_ = (pSVar19->projected_vertex).transformed_x;",
       "type": "unknown_field"
     },
@@ -871,6 +908,7 @@
       "description": "Unknown/mangled field access",
       "line": 185,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "lVar7._4_4_ = (pSVar19->projected_vertex).transformed_y;",
       "type": "unknown_field"
     },
@@ -878,6 +916,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 187,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(pSVar21->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar7);",
       "type": "decompiler_intrinsic"
     },
@@ -885,6 +924,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 189,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar7) >> 0x20);",
       "type": "decompiler_intrinsic"
     },
@@ -892,6 +932,7 @@
       "description": "Complex pointer cast",
       "line": 196,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pSVar21 + (uint)bVar22 * -8 + 4) =",
       "type": "pointer_cast"
     },
@@ -899,6 +940,7 @@
       "description": "Complex pointer cast",
       "line": 197,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -906,6 +948,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 204,
       "match": "extraout_EAX_00",
+      "severity": "moderate",
       "text": "local_28 = (int *)extraout_EAX_00;",
       "type": "extra_output"
     },
@@ -913,6 +956,7 @@
       "description": "Unknown/mangled field access",
       "line": 234,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "lVar4._0_4_ = (pSVar20->projected_vertex).transformed_x;",
       "type": "unknown_field"
     },
@@ -920,6 +964,7 @@
       "description": "Unknown/mangled field access",
       "line": 235,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "lVar4._4_4_ = (pSVar20->projected_vertex).transformed_y;",
       "type": "unknown_field"
     },
@@ -927,6 +972,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 237,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(pSVar19->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar4);",
       "type": "decompiler_intrinsic"
     },
@@ -934,6 +980,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 239,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar4) >> 0x20);",
       "type": "decompiler_intrinsic"
     },
@@ -941,6 +988,7 @@
       "description": "Complex pointer cast",
       "line": 246,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4) =",
       "type": "pointer_cast"
     },
@@ -948,6 +996,7 @@
       "description": "Complex pointer cast",
       "line": 247,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pSVar20 + (uint)bVar22 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -955,6 +1004,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 256,
       "match": "extraout_EAX_01",
+      "severity": "moderate",
       "text": "local_28 = (int *)extraout_EAX_01;",
       "type": "extra_output"
     },
@@ -962,6 +1012,7 @@
       "description": "Unknown/mangled field access",
       "line": 263,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "lVar8._0_4_ = (pSVar19->projected_vertex).transformed_x;",
       "type": "unknown_field"
     },
@@ -969,6 +1020,7 @@
       "description": "Unknown/mangled field access",
       "line": 264,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "lVar8._4_4_ = (pSVar19->projected_vertex).transformed_y;",
       "type": "unknown_field"
     },
@@ -976,6 +1028,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 266,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(pSVar21->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar8);",
       "type": "decompiler_intrinsic"
     },
@@ -983,6 +1036,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 268,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar8) >> 0x20);",
       "type": "decompiler_intrinsic"
     },
@@ -990,6 +1044,7 @@
       "description": "Complex pointer cast",
       "line": 275,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pSVar21 + (uint)bVar22 * -8 + 4) =",
       "type": "pointer_cast"
     },
@@ -997,6 +1052,7 @@
       "description": "Complex pointer cast",
       "line": 276,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -1004,6 +1060,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 283,
       "match": "extraout_EAX_02",
+      "severity": "moderate",
       "text": "local_28 = (int *)extraout_EAX_02;",
       "type": "extra_output"
     },
@@ -1011,6 +1068,7 @@
       "description": "Unknown/mangled field access",
       "line": 311,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "lVar5._0_4_ = (pSVar20->projected_vertex).transformed_x;",
       "type": "unknown_field"
     },
@@ -1018,6 +1076,7 @@
       "description": "Unknown/mangled field access",
       "line": 312,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "lVar5._4_4_ = (pSVar20->projected_vertex).transformed_y;",
       "type": "unknown_field"
     },
@@ -1025,6 +1084,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 314,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(pSVar19->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar5);",
       "type": "decompiler_intrinsic"
     },
@@ -1032,6 +1092,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 316,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar5) >> 0x20);",
       "type": "decompiler_intrinsic"
     },
@@ -1039,6 +1100,7 @@
       "description": "Complex pointer cast",
       "line": 324,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4) =",
       "type": "pointer_cast"
     },
@@ -1046,6 +1108,7 @@
       "description": "Complex pointer cast",
       "line": 325,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pSVar20 + (uint)bVar22 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -1053,6 +1116,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 335,
       "match": "extraout_EAX_03",
+      "severity": "moderate",
       "text": "local_28 = (int *)extraout_EAX_03;",
       "type": "extra_output"
     },
@@ -1060,6 +1124,7 @@
       "description": "Unknown/mangled field access",
       "line": 342,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "lVar9._0_4_ = (pSVar20->projected_vertex).transformed_x;",
       "type": "unknown_field"
     },
@@ -1067,6 +1132,7 @@
       "description": "Unknown/mangled field access",
       "line": 343,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "lVar9._4_4_ = (pSVar20->projected_vertex).transformed_y;",
       "type": "unknown_field"
     },
@@ -1074,6 +1140,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 345,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(pSVar19->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar9);",
       "type": "decompiler_intrinsic"
     },
@@ -1081,6 +1148,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 347,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar9) >> 0x20);",
       "type": "decompiler_intrinsic"
     },
@@ -1088,6 +1156,7 @@
       "description": "Complex pointer cast",
       "line": 355,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4) =",
       "type": "pointer_cast"
     },
@@ -1095,6 +1164,7 @@
       "description": "Complex pointer cast",
       "line": 356,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pSVar20 + (uint)bVar22 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -1102,6 +1172,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 364,
       "match": "extraout_EAX_04",
+      "severity": "moderate",
       "text": "local_28 = (int *)extraout_EAX_04;",
       "type": "extra_output"
     },
@@ -1109,6 +1180,7 @@
       "description": "Unknown/mangled field access",
       "line": 392,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "lVar6._0_4_ = (pSVar20->projected_vertex).transformed_x;",
       "type": "unknown_field"
     },
@@ -1116,6 +1188,7 @@
       "description": "Unknown/mangled field access",
       "line": 393,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "lVar6._4_4_ = (pSVar20->projected_vertex).transformed_y;",
       "type": "unknown_field"
     },
@@ -1123,6 +1196,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 395,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(pSVar19->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar6);",
       "type": "decompiler_intrinsic"
     },
@@ -1130,6 +1204,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 397,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar6) >> 0x20);",
       "type": "decompiler_intrinsic"
     },
@@ -1137,6 +1212,7 @@
       "description": "Complex pointer cast",
       "line": 405,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4) =",
       "type": "pointer_cast"
     },
@@ -1144,6 +1220,7 @@
       "description": "Complex pointer cast",
       "line": 406,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pSVar20 + (uint)bVar22 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -1151,6 +1228,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 416,
       "match": "extraout_EAX_05",
+      "severity": "moderate",
       "text": "local_28 = (int *)extraout_EAX_05;",
       "type": "extra_output"
     },
@@ -1158,6 +1236,7 @@
       "description": "Unknown/mangled field access",
       "line": 423,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "lVar10._0_4_ = (pSVar20->projected_vertex).transformed_x;",
       "type": "unknown_field"
     },
@@ -1165,6 +1244,7 @@
       "description": "Unknown/mangled field access",
       "line": 424,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "lVar10._4_4_ = (pSVar20->projected_vertex).transformed_y;",
       "type": "unknown_field"
     },
@@ -1172,6 +1252,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 426,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(pSVar19->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar10);",
       "type": "decompiler_intrinsic"
     },
@@ -1179,6 +1260,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 428,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar10) >> 0x20);",
       "type": "decompiler_intrinsic"
     },
@@ -1186,6 +1268,7 @@
       "description": "Complex pointer cast",
       "line": 436,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4) =",
       "type": "pointer_cast"
     },
@@ -1193,6 +1276,7 @@
       "description": "Complex pointer cast",
       "line": 437,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pSVar20 + (uint)bVar22 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -1200,6 +1284,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 445,
       "match": "extraout_EAX_06",
+      "severity": "moderate",
       "text": "local_28 = (int *)extraout_EAX_06;",
       "type": "extra_output"
     },
@@ -1207,6 +1292,7 @@
       "description": "Complex pointer cast",
       "line": 482,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "local_28 = (int *)((int)local_28 + 0x30);",
       "type": "pointer_cast"
     }

@@ -125,6 +125,7 @@
     "cross_reference_count": 3,
     "function_call_count": 23,
     "global_count": 35,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 186,
     "suspect_count": 84,
     "suspect_types": [
@@ -203,12 +204,12 @@
     {
       "addr": "0056b7e0",
       "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_0056b7e0"
+      "name": "core_set.cpp_CDemonSet_reinitCamera_FUN_0056b7e0"
     },
     {
       "addr": "0056c1a0",
       "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0"
+      "name": "core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0"
     },
     {
       "addr": "0056ae50",
@@ -599,6 +600,7 @@
       "description": "Unaffected register variable",
       "line": 11,
       "match": "unaff_EBX",
+      "severity": "moderate",
       "text": "int unaff_EBX;",
       "type": "unaffected_reg"
     },
@@ -606,6 +608,7 @@
       "description": "Unaffected register variable",
       "line": 12,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "int unaff_ESI;",
       "type": "unaffected_reg"
     },
@@ -613,6 +616,7 @@
       "description": "Unaffected register variable",
       "line": 14,
       "match": "unaff_EDI",
+      "severity": "moderate",
       "text": "int unaff_EDI;",
       "type": "unaffected_reg"
     },
@@ -620,6 +624,7 @@
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
@@ -627,6 +632,7 @@
       "description": "Unresolved stack parameter",
       "line": 18,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "uint in_stack_0000000c;",
       "type": "stack_param"
     },
@@ -634,6 +640,7 @@
       "description": "Unresolved stack parameter",
       "line": 19,
       "match": "in_stack_00000010",
+      "severity": "moderate",
       "text": "int in_stack_00000010;",
       "type": "stack_param"
     },
@@ -641,6 +648,7 @@
       "description": "Unresolved stack parameter",
       "line": 29,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "local_20 = *(uint *)(in_stack_00000008 + 0x11e0);",
       "type": "stack_param"
     },
@@ -648,6 +656,7 @@
       "description": "Unresolved stack parameter",
       "line": 33,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "*(uint *)(in_stack_00000008 + 0x11e0) = 0;",
       "type": "stack_param"
     },
@@ -655,6 +664,7 @@
       "description": "Complex pointer cast",
       "line": 39,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pvVar2 + 8) = 0;",
       "type": "pointer_cast"
     },
@@ -662,6 +672,7 @@
       "description": "Complex pointer cast",
       "line": 40,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pvVar2 + 4) = *(uint *)((int)pvVar2 + 8);",
       "type": "pointer_cast"
     },
@@ -669,6 +680,7 @@
       "description": "Complex pointer cast",
       "line": 40,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pvVar2 + 4) = *(uint *)((int)pvVar2 + 8);",
       "type": "pointer_cast"
     },
@@ -676,6 +688,7 @@
       "description": "Complex pointer cast",
       "line": 41,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)pvVar2 = *(uint *)((int)pvVar2 + 4);",
       "type": "pointer_cast"
     },
@@ -683,6 +696,7 @@
       "description": "Complex pointer cast",
       "line": 42,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pvVar2 + 0x14) = 0;",
       "type": "pointer_cast"
     },
@@ -690,6 +704,7 @@
       "description": "Complex pointer cast",
       "line": 43,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pvVar2 + 0x10) = *(uint *)((int)pvVar2 + 0x14);",
       "type": "pointer_cast"
     },
@@ -697,6 +712,7 @@
       "description": "Complex pointer cast",
       "line": 43,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pvVar2 + 0x10) = *(uint *)((int)pvVar2 + 0x14);",
       "type": "pointer_cast"
     },
@@ -704,6 +720,7 @@
       "description": "Complex pointer cast",
       "line": 44,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pvVar2 + 0xc) = *(uint *)((int)pvVar2 + 0x10);",
       "type": "pointer_cast"
     },
@@ -711,6 +728,7 @@
       "description": "Complex pointer cast",
       "line": 44,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pvVar2 + 0xc) = *(uint *)((int)pvVar2 + 0x10);",
       "type": "pointer_cast"
     },
@@ -718,6 +736,7 @@
       "description": "Complex pointer cast",
       "line": 45,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pvVar2 + 0x18) = 0x41e00000;",
       "type": "pointer_cast"
     },
@@ -725,6 +744,7 @@
       "description": "Unresolved stack parameter",
       "line": 48,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "if (PTR_DAT_00681ab8 != (uint *)(in_stack_00000008 + 0x104)) {",
       "type": "stack_param"
     },
@@ -732,6 +752,7 @@
       "description": "Unresolved stack parameter",
       "line": 49,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "*(uint *)PTR_DAT_00681ab8 = *(uint *)(in_stack_00000008 + 0x104);",
       "type": "stack_param"
     },
@@ -739,6 +760,7 @@
       "description": "Unresolved stack parameter",
       "line": 50,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "*(uint *)((int)pvVar2 + 4) = *(uint *)(in_stack_00000008 + 0x108);",
       "type": "stack_param"
     },
@@ -746,6 +768,7 @@
       "description": "Complex pointer cast",
       "line": 50,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pvVar2 + 4) = *(uint *)(in_stack_00000008 + 0x108);",
       "type": "pointer_cast"
     },
@@ -753,6 +776,7 @@
       "description": "Unresolved stack parameter",
       "line": 51,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "*(uint *)((int)pvVar2 + 8) = *(uint *)(in_stack_00000008 + 0x10c);",
       "type": "stack_param"
     },
@@ -760,6 +784,7 @@
       "description": "Complex pointer cast",
       "line": 51,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pvVar2 + 8) = *(uint *)(in_stack_00000008 + 0x10c);",
       "type": "pointer_cast"
     },
@@ -767,6 +792,7 @@
       "description": "Unresolved stack parameter",
       "line": 54,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "if ((uint *)((int)PTR_DAT_00681ab8 + 0xc) != (uint *)(in_stack_00000008 + 0x110)) {",
       "type": "stack_param"
     },
@@ -774,6 +800,7 @@
       "description": "Complex pointer cast",
       "line": 54,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "if ((uint *)((int)PTR_DAT_00681ab8 + 0xc) != (uint *)(in_stack_00000008 + 0x110)) {",
       "type": "pointer_cast"
     },
@@ -781,6 +808,7 @@
       "description": "Unresolved stack parameter",
       "line": 55,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "*(uint *)((int)PTR_DAT_00681ab8 + 0xc) = *(uint *)(in_stack_00000008 + 0x110);",
       "type": "stack_param"
     },
@@ -788,6 +816,7 @@
       "description": "Complex pointer cast",
       "line": 55,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)PTR_DAT_00681ab8 + 0xc) = *(uint *)(in_stack_00000008 + 0x110);",
       "type": "pointer_cast"
     },
@@ -795,6 +824,7 @@
       "description": "Unresolved stack parameter",
       "line": 56,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "*(uint *)((int)pvVar2 + 0x10) = *(uint *)(in_stack_00000008 + 0x114);",
       "type": "stack_param"
     },
@@ -802,6 +832,7 @@
       "description": "Complex pointer cast",
       "line": 56,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pvVar2 + 0x10) = *(uint *)(in_stack_00000008 + 0x114);",
       "type": "pointer_cast"
     },
@@ -809,6 +840,7 @@
       "description": "Unresolved stack parameter",
       "line": 57,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "*(uint *)((int)pvVar2 + 0x14) = *(uint *)(in_stack_00000008 + 0x118);",
       "type": "stack_param"
     },
@@ -816,6 +848,7 @@
       "description": "Complex pointer cast",
       "line": 57,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pvVar2 + 0x14) = *(uint *)(in_stack_00000008 + 0x118);",
       "type": "pointer_cast"
     },
@@ -823,6 +856,7 @@
       "description": "Unresolved stack parameter",
       "line": 60,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "pcVar4 = (char *)(in_stack_00000008 + 4);",
       "type": "stack_param"
     },
@@ -830,6 +864,7 @@
       "description": "Unresolved stack parameter",
       "line": 61,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "*(uint *)((int)PTR_DAT_00681ab8 + 0x18) = *(uint *)(in_stack_00000008 + 0x11c);",
       "type": "stack_param"
     },
@@ -837,6 +872,7 @@
       "description": "Complex pointer cast",
       "line": 61,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)PTR_DAT_00681ab8 + 0x18) = *(uint *)(in_stack_00000008 + 0x11c);",
       "type": "pointer_cast"
     },
@@ -844,6 +880,7 @@
       "description": "Complex pointer cast",
       "line": 83,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "g_CDemonLightInstance.base.base.position.z = *(int *)((int)PTR_DAT_00681ab8 + 8);",
       "type": "pointer_cast"
     },
@@ -851,6 +888,7 @@
       "description": "Complex pointer cast",
       "line": 84,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "g_CDemonLightInstance.base.base.position.y = *(int *)((int)PTR_DAT_00681ab8 + 4);",
       "type": "pointer_cast"
     },
@@ -858,6 +896,7 @@
       "description": "Complex pointer cast",
       "line": 88,
       "match": "(CVector3f *)((int)",
+      "severity": "mild",
       "text": "(CVector3f *)((int)PTR_DAT_00681ab8 + 0xc));",
       "type": "pointer_cast"
     },
@@ -865,6 +904,7 @@
       "description": "Complex pointer cast",
       "line": 89,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "g_CDemonLightInstance.base.base.projection_scale = *(float *)((int)PTR_DAT_00681ab8 + 0x18);",
       "type": "pointer_cast"
     },
@@ -872,6 +912,7 @@
       "description": "Unresolved stack parameter",
       "line": 91,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "(int)ROUND(ROUND(*(float *)(in_stack_00000008 + 0x120) * (float)65536));",
       "type": "stack_param"
     },
@@ -879,6 +920,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 91,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND(*(float *)(in_stack_00000008 + 0x120) * (float)65536));",
       "type": "decompiler_intrinsic"
     },
@@ -886,6 +928,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 91,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND(*(float *)(in_stack_00000008 + 0x120) * (float)65536));",
       "type": "decompiler_intrinsic"
     },
@@ -893,6 +936,7 @@
       "description": "Unresolved stack parameter",
       "line": 93,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "(&g_CDemonLightInstance,*(float *)(in_stack_00000008 + 0x124));",
       "type": "stack_param"
     },
@@ -900,6 +944,7 @@
       "description": "Unaffected register variable",
       "line": 99,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "unaff_ESI = unaff_ESI + 1;",
       "type": "unaffected_reg"
     },
@@ -907,6 +952,7 @@
       "description": "Unaffected register variable",
       "line": 99,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "unaff_ESI = unaff_ESI + 1;",
       "type": "unaffected_reg"
     },
@@ -914,6 +960,7 @@
       "description": "Unaffected register variable",
       "line": 100,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "if (this_ptr->camera_count <= unaff_ESI) {",
       "type": "unaffected_reg"
     },
@@ -921,6 +968,7 @@
       "description": "Unaffected register variable",
       "line": 101,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "unaff_ESI = 0;",
       "type": "unaffected_reg"
     },
@@ -928,6 +976,7 @@
       "description": "Unaffected register variable",
       "line": 103,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(this_ptr,unaff_ESI);",
       "type": "unaffected_reg"
     },
@@ -935,6 +984,7 @@
       "description": "Unaffected register variable",
       "line": 106,
       "match": "unaff_EDI",
+      "severity": "moderate",
       "text": "if ((unaff_EDI == 0) || (0xf0 < g_WindowHeight)) {",
       "type": "unaffected_reg"
     },
@@ -942,6 +992,7 @@
       "description": "Unaffected register variable",
       "line": 115,
       "match": "unaff_EBX",
+      "severity": "moderate",
       "text": "if ((iVar3 != 0) && (unaff_EBX = 1 - unaff_EBX, unaff_EBX != 0)) {",
       "type": "unaffected_reg"
     },
@@ -949,6 +1000,7 @@
       "description": "Unaffected register variable",
       "line": 115,
       "match": "unaff_EBX",
+      "severity": "moderate",
       "text": "if ((iVar3 != 0) && (unaff_EBX = 1 - unaff_EBX, unaff_EBX != 0)) {",
       "type": "unaffected_reg"
     },
@@ -956,6 +1008,7 @@
       "description": "Unaffected register variable",
       "line": 115,
       "match": "unaff_EBX",
+      "severity": "moderate",
       "text": "if ((iVar3 != 0) && (unaff_EBX = 1 - unaff_EBX, unaff_EBX != 0)) {",
       "type": "unaffected_reg"
     },
@@ -963,6 +1016,7 @@
       "description": "Direct stack address reference",
       "line": 121,
       "match": "&stack0xfffffe90",
+      "severity": "moderate",
       "text": "(&stack0xfffffe90,\"%f\",(double)(1.0 / g_CGamePtr->delta_time_float));",
       "type": "stack_ref"
     },
@@ -970,6 +1024,7 @@
       "description": "Direct stack address reference",
       "line": 122,
       "match": "&stack0xfffffe90",
+      "severity": "moderate",
       "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe90,0,g_WindowHeight + -0xb);",
       "type": "stack_ref"
     },
@@ -977,6 +1032,7 @@
       "description": "Direct stack address reference",
       "line": 124,
       "match": "&stack0xfffffe90",
+      "severity": "moderate",
       "text": "(&stack0xfffffe90,\"pos: %4.1f %4.1f %4.1f   pbh: %3.1f %3.1f %6.3f   fov : %2.1f\",(double)*(float *)PTR_DAT_00681ab8",
       "type": "stack_ref"
     },
@@ -984,6 +1040,7 @@
       "description": "Complex pointer cast",
       "line": 125,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": ",(double)*(float *)((int)PTR_DAT_00681ab8 + 4),",
       "type": "pointer_cast"
     },
@@ -991,6 +1048,7 @@
       "description": "Complex pointer cast",
       "line": 126,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "(double)*(float *)((int)PTR_DAT_00681ab8 + 8),",
       "type": "pointer_cast"
     },
@@ -998,6 +1056,7 @@
       "description": "Complex pointer cast",
       "line": 127,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "180 * (double)*(float *)((int)PTR_DAT_00681ab8 + 0xc) * 0.31830988619288902,",
       "type": "pointer_cast"
     },
@@ -1005,6 +1064,7 @@
       "description": "Complex pointer cast",
       "line": 128,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "(double)*(float *)((int)PTR_DAT_00681ab8 + 0x14) * 0.31830988619288902 * 180,",
       "type": "pointer_cast"
     },
@@ -1012,6 +1072,7 @@
       "description": "Complex pointer cast",
       "line": 129,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "(double)*(float *)((int)PTR_DAT_00681ab8 + 0x10) * 0.31830988619288902 * 180,",
       "type": "pointer_cast"
     },
@@ -1019,6 +1080,7 @@
       "description": "Complex pointer cast",
       "line": 130,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "(double)*(float *)((int)PTR_DAT_00681ab8 + 0x18));",
       "type": "pointer_cast"
     },
@@ -1026,6 +1088,7 @@
       "description": "Direct stack address reference",
       "line": 131,
       "match": "&stack0xfffffe90",
+      "severity": "moderate",
       "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe90,0,0x16);",
       "type": "stack_ref"
     },
@@ -1033,6 +1096,7 @@
       "description": "Complex pointer cast",
       "line": 150,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "(g_CEditorToolsPtr,\"Edit FOV\",(float *)((int)PTR_DAT_00681ab8 + 0x18),1,0.0,",
       "type": "pointer_cast"
     },
@@ -1040,6 +1104,7 @@
       "description": "Unresolved stack parameter",
       "line": 160,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "if ((uint *)(in_stack_00000008 + 0x104) != PTR_DAT_00681ab8) {",
       "type": "stack_param"
     },
@@ -1047,6 +1112,7 @@
       "description": "Unresolved stack parameter",
       "line": 161,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "*(uint *)(in_stack_00000008 + 0x104) = *(uint *)PTR_DAT_00681ab8;",
       "type": "stack_param"
     },
@@ -1054,6 +1120,7 @@
       "description": "Unresolved stack parameter",
       "line": 162,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "*(uint *)(in_stack_00000008 + 0x108) = *(uint *)((int)pvVar2 + 4);",
       "type": "stack_param"
     },
@@ -1061,6 +1128,7 @@
       "description": "Complex pointer cast",
       "line": 162,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)(in_stack_00000008 + 0x108) = *(uint *)((int)pvVar2 + 4);",
       "type": "pointer_cast"
     },
@@ -1068,6 +1136,7 @@
       "description": "Unresolved stack parameter",
       "line": 163,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "*(uint *)(in_stack_00000008 + 0x10c) = *(uint *)((int)pvVar2 + 8);",
       "type": "stack_param"
     },
@@ -1075,6 +1144,7 @@
       "description": "Complex pointer cast",
       "line": 163,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)(in_stack_00000008 + 0x10c) = *(uint *)((int)pvVar2 + 8);",
       "type": "pointer_cast"
     },
@@ -1082,6 +1152,7 @@
       "description": "Unresolved stack parameter",
       "line": 166,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "if ((uint *)(in_stack_00000008 + 0x110) != (uint *)((int)PTR_DAT_00681ab8 + 0xc)) {",
       "type": "stack_param"
     },
@@ -1089,6 +1160,7 @@
       "description": "Complex pointer cast",
       "line": 166,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "if ((uint *)(in_stack_00000008 + 0x110) != (uint *)((int)PTR_DAT_00681ab8 + 0xc)) {",
       "type": "pointer_cast"
     },
@@ -1096,6 +1168,7 @@
       "description": "Unresolved stack parameter",
       "line": 167,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "*(uint *)(in_stack_00000008 + 0x110) = *(uint *)((int)PTR_DAT_00681ab8 + 0xc);",
       "type": "stack_param"
     },
@@ -1103,6 +1176,7 @@
       "description": "Complex pointer cast",
       "line": 167,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)(in_stack_00000008 + 0x110) = *(uint *)((int)PTR_DAT_00681ab8 + 0xc);",
       "type": "pointer_cast"
     },
@@ -1110,6 +1184,7 @@
       "description": "Unresolved stack parameter",
       "line": 168,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "*(uint *)(in_stack_00000008 + 0x114) = *(uint *)((int)pvVar2 + 0x10);",
       "type": "stack_param"
     },
@@ -1117,6 +1192,7 @@
       "description": "Complex pointer cast",
       "line": 168,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)(in_stack_00000008 + 0x114) = *(uint *)((int)pvVar2 + 0x10);",
       "type": "pointer_cast"
     },
@@ -1124,6 +1200,7 @@
       "description": "Unresolved stack parameter",
       "line": 169,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "*(uint *)(in_stack_00000008 + 0x118) = *(uint *)((int)pvVar2 + 0x14);",
       "type": "stack_param"
     },
@@ -1131,6 +1208,7 @@
       "description": "Complex pointer cast",
       "line": 169,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)(in_stack_00000008 + 0x118) = *(uint *)((int)pvVar2 + 0x14);",
       "type": "pointer_cast"
     },
@@ -1138,6 +1216,7 @@
       "description": "Unresolved stack parameter",
       "line": 172,
       "match": "in_stack_00000010",
+      "severity": "moderate",
       "text": "in_stack_00000010 = 1;",
       "type": "stack_param"
     },
@@ -1145,6 +1224,7 @@
       "description": "Unresolved stack parameter",
       "line": 173,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "pcVar4 = (char *)(in_stack_00000008 + 4);",
       "type": "stack_param"
     },
@@ -1152,6 +1232,7 @@
       "description": "Unresolved stack parameter",
       "line": 174,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "*(uint *)(in_stack_00000008 + 0x11c) = *(uint *)((int)PTR_DAT_00681ab8 + 0x18);",
       "type": "stack_param"
     },
@@ -1159,6 +1240,7 @@
       "description": "Complex pointer cast",
       "line": 174,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)(in_stack_00000008 + 0x11c) = *(uint *)((int)PTR_DAT_00681ab8 + 0x18);",
       "type": "pointer_cast"
     },
@@ -1166,6 +1248,7 @@
       "description": "Unresolved stack parameter",
       "line": 188,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "*(uint *)(in_stack_00000008 + 0x11e0) = in_stack_0000000c;",
       "type": "stack_param"
     },
@@ -1173,6 +1256,7 @@
       "description": "Unresolved stack parameter",
       "line": 188,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "*(uint *)(in_stack_00000008 + 0x11e0) = in_stack_0000000c;",
       "type": "stack_param"
     },
@@ -1180,6 +1264,7 @@
       "description": "Unresolved stack parameter",
       "line": 189,
       "match": "in_stack_00000010",
+      "severity": "moderate",
       "text": "return in_stack_00000010;",
       "type": "stack_param"
     }

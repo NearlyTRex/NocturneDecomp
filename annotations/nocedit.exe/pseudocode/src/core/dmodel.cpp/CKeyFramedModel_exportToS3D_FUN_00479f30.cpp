@@ -9,13 +9,13 @@
 void __cdecl core_dmodel_cpp_CKeyFramedModel_exportToS3D_FUN_00479f30(CKeyFramedModel *this_ptr,char *filename)
 
 {
-  CVector3i **ppCVar1;
+  CVector3i *pCVar1;
   double dVar2;
   double dVar3;
   double dVar4;
   _FILE *p_Var5;
   int iVar6;
-  SMRGLPrimitiveQuad **ppSVar7;
+  SMRGLPrimitiveQuad *pSVar7;
   int iVar8;
   char *pcVar9;
   int *piVar10;
@@ -46,11 +46,11 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_exportToS3D_FUN_00479f30(CKeyFramed
     iVar8 = 0;
     iVar6 = 0;
     if (0 < this_ptr->poly_count) {
-      ppSVar7 = this_ptr->poly_vert_list;
+      pSVar7 = this_ptr->poly_vert_list;
       do {
-        iVar8 = (int)&ppSVar7[1][-1].vertices[3].texture_v + iVar8 + 2;
+        iVar8 = iVar8 + (pSVar7->base).base.count + -2;
         iVar6 = iVar6 + 1;
-        ppSVar7 = ppSVar7 + 0x12;
+        pSVar7 = pSVar7 + 1;
       } while (iVar6 < this_ptr->poly_count);
     }
     _fprintf(local_18,"// numTextures,numTris,numVerts,numParts,numFrames,numLights,numCameras\n");
@@ -77,7 +77,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_exportToS3D_FUN_00479f30(CKeyFramed
       local_24 = 0;
       local_28 = 0;
       do {
-        local_14 = local_28 + (int)this_ptr->poly_vert_list;
+        local_14 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).
+                         base.type + local_28;
         iVar6 = 2;
         if (2 < *(int *)(local_14 + 4)) {
           local_1c = local_24;
@@ -118,10 +119,10 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_exportToS3D_FUN_00479f30(CKeyFramed
     iVar6 = 0;
     for (iVar8 = 0; p_Var5 = local_18, iVar8 < this_ptr->vertex_count * this_ptr->frame_count;
         iVar8 = iVar8 + 1) {
-      ppCVar1 = this_ptr->vertex_list;
-      dVar2 = (double)*(int *)(iVar6 + 8 + (int)ppCVar1) * 0.00390625;
-      dVar3 = (double)*(int *)(iVar6 + 4 + (int)ppCVar1) * 0.00390625;
-      dVar4 = (double)*(int *)(iVar6 + (int)ppCVar1) * 0.00390625;
+      pCVar1 = this_ptr->vertex_list;
+      dVar2 = (double)*(int *)((int)&pCVar1->z + iVar6) * 0.00390625;
+      dVar3 = (double)*(int *)((int)&pCVar1->y + iVar6) * 0.00390625;
+      dVar4 = (double)*(int *)((int)&pCVar1->x + iVar6) * 0.00390625;
       iVar6 = iVar6 + 0xc;
       _fprintf(local_18,"%g,%g,%g\n",SUB84(dVar4,0),(int)((ulonglong)dVar4 >> 0x20),
                  SUB84(dVar3,0),(int)((ulonglong)dVar3 >> 0x20),SUB84(dVar2,0),

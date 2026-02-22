@@ -12,6 +12,9 @@ CVector3f g_VDTempVector = {};
 // CZThumb[1500]
 CZThumb g_CZThumbPool[1500] = {};
 
+// SDisplayListSortEntry[2000]
+SDisplayListSortEntry g_SetDisplayListSortBuffer[2000] = {};
+
 // SRaytraceState[5]
 SRaytraceState g_RaytraceStateStack[5] = {};
 
@@ -22,12 +25,7 @@ float g_SavedProjectionFactor = {};
 float g_VDCameraScores[250] = {};
 
 // int
+int g_SetDisplayListCount = {};
 int g_RaytraceStateStackDepth = {};
 int g_VDCameraIndex = {};
-
-// undefined4
-undefined4 DAT_03342b4c = {};
-undefined4 DAT_03342b50 = {};
-undefined4 DAT_03342b54 = {};
-undefined4 DAT_03342b58 = {};
 

@@ -16,9 +16,9 @@ void __cdecl core_tentacle_cpp_CTentacle_setup_FUN_005dafc0(CTentacle *this_ptr)
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr_01);
   core_enemy_cpp_CEnemy_setup_FUN_004a9650(&this_ptr->base);
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr_01);
-  INT_03f6cd08 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"bipp02");
-  INT_03f6cd0c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"bipp05");
-  INT_03f6cd10 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"bipp06");
-  INT_03f6cd14 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"bipp09");
+  INT_03f6cd08 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"bipp02",1);
+  INT_03f6cd0c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"bipp05",1);
+  INT_03f6cd10 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"bipp06",1);
+  INT_03f6cd14 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,"bipp09",1);
   return;
 }

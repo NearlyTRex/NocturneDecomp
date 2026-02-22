@@ -31,12 +31,13 @@
   },
   "complexity": {
     "assembly_lines": 540,
-    "complexity_score": 255,
+    "complexity_score": 265,
     "cross_reference_count": 2,
     "function_call_count": 31,
     "global_count": 53,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 175,
-    "suspect_count": 7,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "undefined_data"
@@ -93,7 +94,7 @@
     {
       "addr": "00571170",
       "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_00571170"
+      "name": "core_set.cpp_CDemonSet_saveLightState_FUN_00571170"
     },
     {
       "addr": "005711b0",
@@ -753,13 +754,23 @@
       "description": "Complex pointer cast",
       "line": 100,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar1 = (uint *)((int)g_HeroActors + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
+      "line": 110,
+      "match": "DAT_02d82d84",
+      "severity": "mild",
+      "text": "core_set_cpp_CDemonSet_saveLightState_FUN_00571170(g_CDemonSetPtr,&DAT_02d82d84);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
       "line": 112,
       "match": "DAT_02d82d84",
+      "severity": "mild",
       "text": "_fprintf(file,\"%d\\n\",DAT_02d82d84);",
       "type": "undefined_data"
     },
@@ -767,6 +778,7 @@
       "description": "Undefined global data reference",
       "line": 113,
       "match": "DAT_02d82d84",
+      "severity": "mild",
       "text": "if (0 < DAT_02d82d84) {",
       "type": "undefined_data"
     },
@@ -774,6 +786,7 @@
       "description": "Complex pointer cast",
       "line": 116,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar1 = (uint *)((int)&DAT_02d82d84 + iVar4);",
       "type": "pointer_cast"
     },
@@ -781,6 +794,7 @@
       "description": "Undefined global data reference",
       "line": 116,
       "match": "DAT_02d82d84",
+      "severity": "mild",
       "text": "puVar1 = (uint *)((int)&DAT_02d82d84 + iVar4);",
       "type": "undefined_data"
     },
@@ -788,6 +802,7 @@
       "description": "Undefined global data reference",
       "line": 120,
       "match": "DAT_02d82d84",
+      "severity": "mild",
       "text": "} while (iVar3 <= DAT_02d82d84);",
       "type": "undefined_data"
     },
@@ -795,6 +810,7 @@
       "description": "Undefined global data reference",
       "line": 129,
       "match": "DAT_0062ca5b",
+      "severity": "mild",
       "text": "local_18 = engine_dosio_c_getFileSize_FUN_00481880(&DAT_0062ca5b,\"save\\\\$$SAVE$$.TMP\");",
       "type": "undefined_data"
     }

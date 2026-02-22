@@ -13,14 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 338,
-    "complexity_score": 410,
+    "complexity_score": 425,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 26,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 175,
-    "suspect_count": 23,
+    "suspect_count": 24,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "stack_alignment_array"
     ],
     "total_lines": 513
   },
@@ -479,9 +481,18 @@
   },
   "suspects": [
     {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 16,
+      "match": "aiStackY_106c",
+      "severity": "moderate",
+      "text": "int aiStackY_106c [1014];",
+      "type": "stack_alignment_array"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 56,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_60 + (uint)bVar11 * -8 + 4) =",
       "type": "pointer_cast"
     },
@@ -489,6 +500,7 @@
       "description": "Complex pointer cast",
       "line": 57,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_84 + (uint)bVar11 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -496,6 +508,7 @@
       "description": "Complex pointer cast",
       "line": 58,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_60 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =",
       "type": "pointer_cast"
     },
@@ -503,6 +516,7 @@
       "description": "Complex pointer cast",
       "line": 59,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_84 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);",
       "type": "pointer_cast"
     },
@@ -510,6 +524,7 @@
       "description": "Complex pointer cast",
       "line": 66,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "aiStack_68[(uint)bVar11 * -2] = *(int *)((int)&local_54 + (uint)bVar11 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -517,6 +532,7 @@
       "description": "Complex pointer cast",
       "line": 68,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)&local_54 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);",
       "type": "pointer_cast"
     },
@@ -524,6 +540,7 @@
       "description": "Complex pointer cast",
       "line": 70,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)&g_TempWorldPositionRow[0].x + local_30) = local_54.x;",
       "type": "pointer_cast"
     },
@@ -531,6 +548,7 @@
       "description": "Complex pointer cast",
       "line": 71,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*puVar8 = *(uint *)((int)&local_54 + (uint)bVar11 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -538,6 +556,7 @@
       "description": "Complex pointer cast",
       "line": 73,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_54 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);",
       "type": "pointer_cast"
     },
@@ -545,6 +564,7 @@
       "description": "Complex pointer cast",
       "line": 78,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "aiStack_68[(uint)bVar11 * -2] = *(int *)((int)&local_78 + (uint)bVar11 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -552,6 +572,7 @@
       "description": "Complex pointer cast",
       "line": 80,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)&local_78 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);",
       "type": "pointer_cast"
     },
@@ -559,6 +580,7 @@
       "description": "Complex pointer cast",
       "line": 83,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)&g_PrecomputedWorldPositions[0].x + iVar5) = local_6c;",
       "type": "pointer_cast"
     },
@@ -566,6 +588,7 @@
       "description": "Complex pointer cast",
       "line": 86,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)g_PrecomputedDepthBuffer + local_2c) = local_60.z;",
       "type": "pointer_cast"
     },
@@ -573,6 +596,7 @@
       "description": "Complex pointer cast",
       "line": 94,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)&g_PrecomputedSurfaceNormals[0].x + iVar5) =",
       "type": "pointer_cast"
     },
@@ -580,6 +604,7 @@
       "description": "Complex pointer cast",
       "line": 96,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)&g_PrecomputedSurfaceNormals[0].y + iVar5) =",
       "type": "pointer_cast"
     },
@@ -587,6 +612,7 @@
       "description": "Complex pointer cast",
       "line": 98,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)&g_PrecomputedSurfaceNormals[0].z + iVar5) =",
       "type": "pointer_cast"
     },
@@ -594,6 +620,7 @@
       "description": "Complex pointer cast",
       "line": 128,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "iVar5 = *(int *)(*(int *)((int)g_ZBufferScanlineArray + local_48) + local_34);",
       "type": "pointer_cast"
     },
@@ -601,6 +628,7 @@
       "description": "Complex pointer cast",
       "line": 149,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)g_CameraEdgeOffsetY + iVar6)) * 0x140 +",
       "type": "pointer_cast"
     },
@@ -608,6 +636,7 @@
       "description": "Complex pointer cast",
       "line": 151,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)g_CameraEdgeOffsetX + iVar6)] >> 0x1f;",
       "type": "pointer_cast"
     },
@@ -615,6 +644,7 @@
       "description": "Complex pointer cast",
       "line": 154,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)g_CameraEdgeOffsetY + iVar6)) * 0x140 +",
       "type": "pointer_cast"
     },
@@ -622,6 +652,7 @@
       "description": "Complex pointer cast",
       "line": 156,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)g_CameraEdgeOffsetX + iVar6)] ^ uVar4) - uVar4;",
       "type": "pointer_cast"
     },
@@ -629,6 +660,7 @@
       "description": "Complex pointer cast",
       "line": 159,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)g_CameraEdgeOffsetX + iVar6) +",
       "type": "pointer_cast"
     },
@@ -636,6 +668,7 @@
       "description": "Complex pointer cast",
       "line": 160,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)g_CameraEdgeOffsetY + iVar6) * 0x140;",
       "type": "pointer_cast"
     }

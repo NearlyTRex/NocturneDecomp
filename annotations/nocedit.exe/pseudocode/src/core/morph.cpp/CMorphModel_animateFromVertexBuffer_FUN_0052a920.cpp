@@ -9,7 +9,7 @@
 void __cdecl core_morph_cpp_CMorphModel_animateFromVertexBuffer_FUN_0052a920(CMorphModel *this_ptr,int part_index,CVector3i *vertex_buffer,int start_offset,int vertex_count)
 
 {
-  void *pvVar1;
+  SMorphPoint *pSVar1;
   int iVar2;
   int iVar3;
   
@@ -29,11 +29,11 @@ void __cdecl core_morph_cpp_CMorphModel_animateFromVertexBuffer_FUN_0052a920(CMo
   if (0 < vertex_count) {
     iVar3 = iVar3 * 0x10;
     do {
-      pvVar1 = this_ptr->points;
+      pSVar1 = this_ptr->points;
       iVar2 = iVar2 + 1;
-      *(float *)((int)pvVar1 + iVar3 + 4) = (float)vertex_buffer->x * 0.00390625f;
-      *(float *)((int)pvVar1 + iVar3 + 8) = (float)vertex_buffer->y * 0.00390625f;
-      *(float *)((int)pvVar1 + iVar3 + 0xc) = (float)vertex_buffer->z * 0.00390625f;
+      *(float *)((int)&(pSVar1->position).x + iVar3) = (float)vertex_buffer->x * 0.00390625f;
+      *(float *)((int)&(pSVar1->position).y + iVar3) = (float)vertex_buffer->y * 0.00390625f;
+      *(float *)((int)&(pSVar1->position).z + iVar3) = (float)vertex_buffer->z * 0.00390625f;
       iVar3 = iVar3 + 0x10;
       vertex_buffer = vertex_buffer + 1;
     } while (iVar2 < vertex_count);

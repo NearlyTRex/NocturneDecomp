@@ -17,6 +17,7 @@
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 9,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 43,
     "suspect_count": 2,
     "suspect_types": [
@@ -224,6 +225,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 13,
       "match": "collision_triangle_list[-1].",
+      "severity": "mild",
       "text": "shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->collision_triangle_list[-1].area);",
       "type": "negative_offset"
     },
@@ -231,7 +233,8 @@
       "description": "Complex pointer cast",
       "line": 25,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)this_ptr->poly_vert_list + iVar1 + 4) + -2;",
+      "severity": "mild",
+      "text": "*(int *)((int)this_ptr->poly_vert_list->vertices + iVar1 + -0x14) + -2;",
       "type": "pointer_cast"
     }
   ]

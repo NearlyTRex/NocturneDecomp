@@ -91,7 +91,7 @@
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0
 ;   core_game.cpp_CGame_saveClockTime_FUN_004d7d80
 ;   core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90
-;   core_set.cpp_CDemonSet_FUN_0056d2d0
+;   core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0
 ;   core_set.cpp_CDemonSet_initScene_FUN_0056aa10
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190
 ;   core_setedit.cpp_FUN_005817d0
@@ -1462,8 +1462,8 @@ section .text
     MOV ECX,dword ptr [EBP + 0x92]      ; 005828e1
         ;   Label: LAB_005828e1
     PUSH ECX                            ; 005828e7
-    CALL core_set.cpp_CDemonSet_FUN_0056d2d0 ; 005828e8
-        ;   XREF to: 0056d2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d2d0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0 ; 005828e8
+        ;   XREF to: 0056d2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 005828ed
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 005828f0
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()

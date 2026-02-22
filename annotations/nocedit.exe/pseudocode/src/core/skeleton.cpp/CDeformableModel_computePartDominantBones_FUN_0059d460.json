@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 9,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 196,
     "suspect_count": 5,
     "suspect_types": [
@@ -471,6 +472,7 @@
       "description": "Unresolved stack parameter",
       "line": 20,
       "match": "in_stack_fffffdd0",
+      "severity": "moderate",
       "text": "CVector3f *in_stack_fffffdd0;",
       "type": "stack_param"
     },
@@ -478,6 +480,7 @@
       "description": "Complex pointer cast",
       "line": 98,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)afStack_22c + iVar12 + -4) = 0;",
       "type": "pointer_cast"
     },
@@ -485,6 +488,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 145,
       "match": "SQRT",
+      "severity": "mild",
       "text": "local_14 = SQRT(local_5c * local_5c + local_64 * local_64 + local_60 * local_60);",
       "type": "decompiler_intrinsic"
     },
@@ -492,6 +496,7 @@
       "description": "Complex pointer cast",
       "line": 167,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "if (afStack_22c[iVar9 + -1] < *(float *)((int)afStack_22c + iVar10 + -4)) {",
       "type": "pointer_cast"
     },
@@ -499,6 +504,7 @@
       "description": "Unresolved stack parameter",
       "line": 190,
       "match": "in_stack_fffffdd0",
+      "severity": "moderate",
       "text": "(this_ptr,iVar9,in_stack_fffffdd0);",
       "type": "stack_param"
     }

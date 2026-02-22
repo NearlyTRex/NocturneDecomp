@@ -61,14 +61,16 @@
   },
   "complexity": {
     "assembly_lines": 1482,
-    "complexity_score": 885,
+    "complexity_score": 910,
     "cross_reference_count": 1,
     "function_call_count": 45,
     "global_count": 63,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 750,
-    "suspect_count": 12,
+    "suspect_count": 14,
     "suspect_types": [
       "decompiler_intrinsic",
+      "double_reconstruction",
       "pointer_cast",
       "unknown_field"
     ],
@@ -1039,6 +1041,7 @@
       "description": "Complex pointer cast",
       "line": 72,
       "match": "(char *)((int)",
+      "severity": "mild",
       "text": "*(char *)((int)pacVar8 + 1) = cVar1;",
       "type": "pointer_cast"
     },
@@ -1046,6 +1049,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 118,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_14 = (float)(int)ROUND(ROUND((fVar4 * 100.0f) / 0.25f +",
       "type": "decompiler_intrinsic"
     },
@@ -1053,6 +1057,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 118,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_14 = (float)(int)ROUND(ROUND((fVar4 * 100.0f) / 0.25f +",
       "type": "decompiler_intrinsic"
     },
@@ -1060,6 +1065,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 185,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_14 = (float)(int)ROUND(ROUND((fVar4 * 100.0f) / 1.0f +",
       "type": "decompiler_intrinsic"
     },
@@ -1067,6 +1073,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 185,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_14 = (float)(int)ROUND(ROUND((fVar4 * 100.0f) / 1.0f +",
       "type": "decompiler_intrinsic"
     },
@@ -1074,6 +1081,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 253,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_14 = (float)(int)ROUND(ROUND((fVar4 * 100.0f) / 0.25f +",
       "type": "decompiler_intrinsic"
     },
@@ -1081,20 +1089,39 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 253,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_14 = (float)(int)ROUND(ROUND((fVar4 * 100.0f) / 0.25f +",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 515,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "fVar16 = (float10)(double)CONCAT44(local_a40,uStack_a44) * (float10)dVar17;",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 515,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "fVar16 = (float10)(double)CONCAT44(local_a40,uStack_a44) * (float10)dVar17;",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 518,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(iVar7,(float)(double)CONCAT44(local_a40,uStack_a44),",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 518,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(iVar7,(float)(double)CONCAT44(local_a40,uStack_a44),",
       "type": "decompiler_intrinsic"
     },
@@ -1102,6 +1129,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 520,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_18 = (int)ROUND(ROUND((float)g_WindowHeight -",
       "type": "decompiler_intrinsic"
     },
@@ -1109,6 +1137,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 520,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_18 = (int)ROUND(ROUND((float)g_WindowHeight -",
       "type": "decompiler_intrinsic"
     },
@@ -1116,6 +1145,7 @@
       "description": "Unknown/mangled field access",
       "line": 525,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_a40 = uStack_4c._4_4_;",
       "type": "unknown_field"
     }

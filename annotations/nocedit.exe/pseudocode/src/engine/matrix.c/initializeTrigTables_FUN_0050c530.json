@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 5,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 26,
     "suspect_count": 8,
     "suspect_types": [
@@ -163,6 +164,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 22,
       "match": "fsin",
+      "severity": "mild",
       "text": "fVar7 = (float10)fsin(fVar6);",
       "type": "decompiler_intrinsic"
     },
@@ -170,6 +172,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 23,
       "match": "fcos",
+      "severity": "mild",
       "text": "fVar6 = (float10)fcos(fVar6);",
       "type": "decompiler_intrinsic"
     },
@@ -177,6 +180,7 @@
       "description": "Complex pointer cast",
       "line": 24,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)g_SinTable + iVar2) = (int)ROUND(ROUND(fVar7 * fVar3));",
       "type": "pointer_cast"
     },
@@ -184,6 +188,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 24,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*(int *)((int)g_SinTable + iVar2) = (int)ROUND(ROUND(fVar7 * fVar3));",
       "type": "decompiler_intrinsic"
     },
@@ -191,6 +196,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 24,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*(int *)((int)g_SinTable + iVar2) = (int)ROUND(ROUND(fVar7 * fVar3));",
       "type": "decompiler_intrinsic"
     },
@@ -198,6 +204,7 @@
       "description": "Complex pointer cast",
       "line": 26,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)g_CosTable + iVar2) = (int)ROUND(ROUND(fVar6 * fVar3));",
       "type": "pointer_cast"
     },
@@ -205,6 +212,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 26,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*(int *)((int)g_CosTable + iVar2) = (int)ROUND(ROUND(fVar6 * fVar3));",
       "type": "decompiler_intrinsic"
     },
@@ -212,6 +220,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 26,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*(int *)((int)g_CosTable + iVar2) = (int)ROUND(ROUND(fVar6 * fVar3));",
       "type": "decompiler_intrinsic"
     }

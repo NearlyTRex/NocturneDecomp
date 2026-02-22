@@ -6,16 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 182,
+    "complexity_score": 207,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 7,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 57,
-    "suspect_count": 11,
+    "suspect_count": 13,
     "suspect_types": [
       "byvalue_struct_passing",
       "decompiler_intrinsic",
-      "pointer_cast"
+      "pointer_cast",
+      "warning_unmapped_variable"
     ],
     "total_lines": 145
   },
@@ -273,9 +275,26 @@
   },
   "suspects": [
     {
+      "description": "Variable defined which should be unmapped",
+      "line": 2,
+      "match": "WARNING: Variable defined which should be unmapped",
+      "severity": "moderate",
+      "text": "/* WARNING: Variable defined which should be unmapped: local_6c */",
+      "type": "warning_unmapped_variable"
+    },
+    {
+      "description": "Variable defined which should be unmapped",
+      "line": 3,
+      "match": "WARNING: Variable defined which should be unmapped",
+      "severity": "moderate",
+      "text": "/* WARNING: Variable defined which should be unmapped: local_9c */",
+      "type": "warning_unmapped_variable"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 21,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_24.x = (int)ROUND(start_point->x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -283,6 +302,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 22,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_24.y = (int)ROUND(start_point->y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -290,6 +310,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 23,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_24.z = (int)ROUND(start_point->z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -297,6 +318,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 31,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_24.x = (int)ROUND(local_18 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -304,6 +326,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 32,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_24.y = (int)ROUND(local_14 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -311,6 +334,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 33,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_24.z = (int)ROUND(local_10 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -318,6 +342,7 @@
       "description": "Complex pointer cast",
       "line": 42,
       "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
       "text": "pSVar2 = (SRenderVertex *)((int)pSVar2 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -325,6 +350,7 @@
       "description": "Complex pointer cast",
       "line": 43,
       "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
       "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -332,6 +358,7 @@
       "description": "Complex pointer cast",
       "line": 49,
       "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
       "text": "pSVar2 = (SRenderVertex *)((int)pSVar2 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -339,6 +366,7 @@
       "description": "Complex pointer cast",
       "line": 50,
       "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
       "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },

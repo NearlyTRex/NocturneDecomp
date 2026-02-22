@@ -1,16 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_ptr,int vertex_count,int tri_count,SInputFace *tri_data_ptr,int render_flags,int lighting_mode,int flags)
+; void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_ptr,int vertex_count,int tri_count,void *face_data,CVector3i *vertex_positions,int vertices_per_face,CVector3i *vertex_normals)
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   vertex_count
 ; int              Stack[0xc]:4   tri_count
-; SInputFace *     Stack[0x10]:4   tri_data_ptr
-; int              Stack[0x14]:4   render_flags
-; int              Stack[0x18]:4   lighting_mode
-; int              Stack[0x1c]:4   flags
+; void *           Stack[0x10]:4   face_data
+; CVector3i *      Stack[0x14]:4   vertex_positions
+; int              Stack[0x18]:4   vertices_per_face
+; CVector3i *      Stack[0x1c]:4   vertex_normals
 ; Local Variables:
 ; undefined1       Stack[-0x178]:1  local_178
 ; undefined4       Stack[-0x16c]:4  local_16c
@@ -109,7 +109,7 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_set.cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
-;   core_set.cpp_FUN_0056e890
+;   core_set.cpp_transformToWorldSpace_FUN_0056e890
 ;   crt_memory.c_memset_FUN_005fde40
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
 ;
@@ -339,8 +339,8 @@ section .text
     LEA EAX,[ESP + 0x6c]                ; 0056ed0b
     PUSH EAX                            ; 0056ed0f
     LEA ESI,[ESP + 0x34]                ; 0056ed10
-    CALL core_set.cpp_FUN_0056e890      ; 0056ed14
-        ;   XREF to: 0056e890 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0056e890()
+    CALL core_set.cpp_transformToWorldSpace_FUN_0056e890 ; 0056ed14
+        ;   XREF to: 0056e890 (UNCONDITIONAL_CALL)  ; CVector3i * core_set.cpp_transformToWorldSpace_FUN_0056e890(CVector3i * input, CVector3i * output)
     ADD ESP,0x4                         ; 0056ed19
     PUSH 0x0                            ; 0056ed1c
     MOV ECX,dword ptr [ESP + 0x13c]     ; 0056ed1e
@@ -457,8 +457,8 @@ section .text
     LEA EAX,[ESP + 0x90]                ; 0056ee58
     PUSH EAX                            ; 0056ee5f
     LEA ESI,[ESP + 0x4c]                ; 0056ee60
-    CALL core_set.cpp_FUN_0056e890      ; 0056ee64
-        ;   XREF to: 0056e890 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0056e890()
+    CALL core_set.cpp_transformToWorldSpace_FUN_0056e890 ; 0056ee64
+        ;   XREF to: 0056e890 (UNCONDITIONAL_CALL)  ; CVector3i * core_set.cpp_transformToWorldSpace_FUN_0056e890(CVector3i * input, CVector3i * output)
     ADD ESP,0x4                         ; 0056ee69
     MOV EDI,dword ptr [ESP + 0x11c]     ; 0056ee6c
     LEA ESI,[ESP + 0x48]                ; 0056ee73
@@ -614,8 +614,8 @@ section .text
     PUSH EAX                            ; 0056f076
     LEA ESI,[ESP + 0x28]                ; 0056f077
     LEA EDI,[ESP + 0x1c]                ; 0056f07b
-    CALL core_set.cpp_FUN_0056e890      ; 0056f07f
-        ;   XREF to: 0056e890 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0056e890()
+    CALL core_set.cpp_transformToWorldSpace_FUN_0056e890 ; 0056f07f
+        ;   XREF to: 0056e890 (UNCONDITIONAL_CALL)  ; CVector3i * core_set.cpp_transformToWorldSpace_FUN_0056e890(CVector3i * input, CVector3i * output)
     LEA ESI,[ESP + 0x28]                ; 0056f084
     ADD ESP,0x4                         ; 0056f088
     MOVSD ES:EDI,ESI                    ; 0056f08b
@@ -663,8 +663,8 @@ section .text
     LEA EAX,[ESP + 0x3c]                ; 0056f107
     PUSH EAX                            ; 0056f10b
     LEA ESI,[ESP + 0x64]                ; 0056f10c
-    CALL core_set.cpp_FUN_0056e890      ; 0056f110
-        ;   XREF to: 0056e890 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0056e890()
+    CALL core_set.cpp_transformToWorldSpace_FUN_0056e890 ; 0056f110
+        ;   XREF to: 0056e890 (UNCONDITIONAL_CALL)  ; CVector3i * core_set.cpp_transformToWorldSpace_FUN_0056e890(CVector3i * input, CVector3i * output)
     ADD ESP,0x4                         ; 0056f115
     ADD EBX,0x30                        ; 0056f118
     MOV EDI,dword ptr [ESP + 0x10c]     ; 0056f11b

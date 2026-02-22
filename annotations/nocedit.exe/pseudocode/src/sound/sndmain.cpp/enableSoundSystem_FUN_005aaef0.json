@@ -121,14 +121,16 @@
   },
   "complexity": {
     "assembly_lines": 209,
-    "complexity_score": 493,
+    "complexity_score": 628,
     "cross_reference_count": 9,
     "function_call_count": 9,
     "global_count": 47,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 78,
-    "suspect_count": 40,
+    "suspect_count": 53,
     "suspect_types": [
       "decompiler_intrinsic",
+      "double_reconstruction",
       "pointer_cast",
       "unknown_field"
     ],
@@ -579,6 +581,7 @@
       "description": "Complex pointer cast",
       "line": 31,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar1 = (uint *)((int)g_ChannelPrimaryBuffers + iVar4);",
       "type": "pointer_cast"
     },
@@ -586,6 +589,7 @@
       "description": "Unknown/mangled field access",
       "line": 41,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "(double)CONCAT44(g_Cached3DListenerPos.x._4_4_,g_Cached3DListenerPos.x._0_4_),",
       "type": "unknown_field"
     },
@@ -593,13 +597,23 @@
       "description": "Unknown/mangled field access",
       "line": 41,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "(double)CONCAT44(g_Cached3DListenerPos.x._4_4_,g_Cached3DListenerPos.x._0_4_),",
       "type": "unknown_field"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 41,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(double)CONCAT44(g_Cached3DListenerPos.x._4_4_,g_Cached3DListenerPos.x._0_4_),",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 41,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(double)CONCAT44(g_Cached3DListenerPos.x._4_4_,g_Cached3DListenerPos.x._0_4_),",
       "type": "decompiler_intrinsic"
     },
@@ -607,6 +621,7 @@
       "description": "Unknown/mangled field access",
       "line": 42,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "(double)CONCAT44(g_Cached3DListenerPos.y._4_4_,g_Cached3DListenerPos.y._0_4_),",
       "type": "unknown_field"
     },
@@ -614,13 +629,23 @@
       "description": "Unknown/mangled field access",
       "line": 42,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "(double)CONCAT44(g_Cached3DListenerPos.y._4_4_,g_Cached3DListenerPos.y._0_4_),",
       "type": "unknown_field"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 42,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(double)CONCAT44(g_Cached3DListenerPos.y._4_4_,g_Cached3DListenerPos.y._0_4_),",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 42,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(double)CONCAT44(g_Cached3DListenerPos.y._4_4_,g_Cached3DListenerPos.y._0_4_),",
       "type": "decompiler_intrinsic"
     },
@@ -628,6 +653,7 @@
       "description": "Unknown/mangled field access",
       "line": 43,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "(double)CONCAT44(g_Cached3DListenerPos.z._4_4_,g_Cached3DListenerPos.z._0_4_));",
       "type": "unknown_field"
     },
@@ -635,13 +661,23 @@
       "description": "Unknown/mangled field access",
       "line": 43,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "(double)CONCAT44(g_Cached3DListenerPos.z._4_4_,g_Cached3DListenerPos.z._0_4_));",
       "type": "unknown_field"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 43,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(double)CONCAT44(g_Cached3DListenerPos.z._4_4_,g_Cached3DListenerPos.z._0_4_));",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 43,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(double)CONCAT44(g_Cached3DListenerPos.z._4_4_,g_Cached3DListenerPos.z._0_4_));",
       "type": "decompiler_intrinsic"
     },
@@ -649,13 +685,23 @@
       "description": "Unknown/mangled field access",
       "line": 46,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "(double)CONCAT44(g_Cached3DListenerOrientFront.x._4_4_,",
       "type": "unknown_field"
     },
     {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 46,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(double)CONCAT44(g_Cached3DListenerOrientFront.x._4_4_,",
+      "type": "double_reconstruction"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 46,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(double)CONCAT44(g_Cached3DListenerOrientFront.x._4_4_,",
       "type": "decompiler_intrinsic"
     },
@@ -663,6 +709,7 @@
       "description": "Unknown/mangled field access",
       "line": 47,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "g_Cached3DListenerOrientFront.x._0_4_),",
       "type": "unknown_field"
     },
@@ -670,13 +717,23 @@
       "description": "Unknown/mangled field access",
       "line": 48,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "(double)CONCAT44(g_Cached3DListenerOrientFront.y._4_4_,",
       "type": "unknown_field"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 48,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(double)CONCAT44(g_Cached3DListenerOrientFront.y._4_4_,",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 48,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(double)CONCAT44(g_Cached3DListenerOrientFront.y._4_4_,",
       "type": "decompiler_intrinsic"
     },
@@ -684,6 +741,7 @@
       "description": "Unknown/mangled field access",
       "line": 49,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "g_Cached3DListenerOrientFront.y._0_4_),",
       "type": "unknown_field"
     },
@@ -691,13 +749,23 @@
       "description": "Unknown/mangled field access",
       "line": 50,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "(double)CONCAT44(g_Cached3DListenerOrientFront.z._4_4_,",
       "type": "unknown_field"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 50,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(double)CONCAT44(g_Cached3DListenerOrientFront.z._4_4_,",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 50,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(double)CONCAT44(g_Cached3DListenerOrientFront.z._4_4_,",
       "type": "decompiler_intrinsic"
     },
@@ -705,6 +773,7 @@
       "description": "Unknown/mangled field access",
       "line": 51,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "g_Cached3DListenerOrientFront.z._0_4_),",
       "type": "unknown_field"
     },
@@ -712,13 +781,23 @@
       "description": "Unknown/mangled field access",
       "line": 52,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "(double)CONCAT44(g_Cached3DListenerOrientUp.x._4_4_,",
       "type": "unknown_field"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 52,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(double)CONCAT44(g_Cached3DListenerOrientUp.x._4_4_,",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 52,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(double)CONCAT44(g_Cached3DListenerOrientUp.x._4_4_,",
       "type": "decompiler_intrinsic"
     },
@@ -726,6 +805,7 @@
       "description": "Unknown/mangled field access",
       "line": 53,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "g_Cached3DListenerOrientUp.x._0_4_),",
       "type": "unknown_field"
     },
@@ -733,13 +813,23 @@
       "description": "Unknown/mangled field access",
       "line": 54,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "(double)CONCAT44(g_Cached3DListenerOrientUp.y._4_4_,",
       "type": "unknown_field"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 54,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(double)CONCAT44(g_Cached3DListenerOrientUp.y._4_4_,",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 54,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(double)CONCAT44(g_Cached3DListenerOrientUp.y._4_4_,",
       "type": "decompiler_intrinsic"
     },
@@ -747,6 +837,7 @@
       "description": "Unknown/mangled field access",
       "line": 55,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "g_Cached3DListenerOrientUp.y._0_4_),",
       "type": "unknown_field"
     },
@@ -754,13 +845,23 @@
       "description": "Unknown/mangled field access",
       "line": 56,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "(double)CONCAT44(g_Cached3DListenerOrientUp.z._4_4_,",
       "type": "unknown_field"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 56,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(double)CONCAT44(g_Cached3DListenerOrientUp.z._4_4_,",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 56,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(double)CONCAT44(g_Cached3DListenerOrientUp.z._4_4_,",
       "type": "decompiler_intrinsic"
     },
@@ -768,6 +869,7 @@
       "description": "Unknown/mangled field access",
       "line": 57,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "g_Cached3DListenerOrientUp.z._0_4_));",
       "type": "unknown_field"
     },
@@ -775,13 +877,23 @@
       "description": "Unknown/mangled field access",
       "line": 60,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "(double)CONCAT44(g_Cached3DListenerVelocity.x._4_4_,",
       "type": "unknown_field"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 60,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(double)CONCAT44(g_Cached3DListenerVelocity.x._4_4_,",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 60,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(double)CONCAT44(g_Cached3DListenerVelocity.x._4_4_,",
       "type": "decompiler_intrinsic"
     },
@@ -789,6 +901,7 @@
       "description": "Unknown/mangled field access",
       "line": 61,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "g_Cached3DListenerVelocity.x._0_4_),",
       "type": "unknown_field"
     },
@@ -796,13 +909,23 @@
       "description": "Unknown/mangled field access",
       "line": 62,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "(double)CONCAT44(g_Cached3DListenerVelocity.y._4_4_,",
       "type": "unknown_field"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 62,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(double)CONCAT44(g_Cached3DListenerVelocity.y._4_4_,",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 62,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(double)CONCAT44(g_Cached3DListenerVelocity.y._4_4_,",
       "type": "decompiler_intrinsic"
     },
@@ -810,6 +933,7 @@
       "description": "Unknown/mangled field access",
       "line": 63,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "g_Cached3DListenerVelocity.y._0_4_),",
       "type": "unknown_field"
     },
@@ -817,13 +941,23 @@
       "description": "Unknown/mangled field access",
       "line": 64,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "(double)CONCAT44(g_Cached3DListenerVelocity.z._4_4_,",
       "type": "unknown_field"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 64,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(double)CONCAT44(g_Cached3DListenerVelocity.z._4_4_,",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 64,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(double)CONCAT44(g_Cached3DListenerVelocity.z._4_4_,",
       "type": "decompiler_intrinsic"
     },
@@ -831,6 +965,7 @@
       "description": "Unknown/mangled field access",
       "line": 65,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "g_Cached3DListenerVelocity.z._0_4_));",
       "type": "unknown_field"
     },
@@ -838,6 +973,7 @@
       "description": "Unknown/mangled field access",
       "line": 67,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "(g_CSoundDevicePtr,(double)CONCAT44(DOUBLE_00681b30._4_4_,DOUBLE_00681b30._0_4_));",
       "type": "unknown_field"
     },
@@ -845,13 +981,23 @@
       "description": "Unknown/mangled field access",
       "line": 67,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "(g_CSoundDevicePtr,(double)CONCAT44(DOUBLE_00681b30._4_4_,DOUBLE_00681b30._0_4_));",
       "type": "unknown_field"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 67,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(g_CSoundDevicePtr,(double)CONCAT44(DOUBLE_00681b30._4_4_,DOUBLE_00681b30._0_4_));",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 67,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(g_CSoundDevicePtr,(double)CONCAT44(DOUBLE_00681b30._4_4_,DOUBLE_00681b30._0_4_));",
       "type": "decompiler_intrinsic"
     }

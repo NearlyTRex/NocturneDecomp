@@ -10,6 +10,7 @@
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 5,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 61,
     "suspect_count": 2,
     "suspect_types": [
@@ -203,6 +204,7 @@
       "description": "Complex pointer cast",
       "line": 47,
       "match": "(SScriptXRef *)((int)",
+      "severity": "mild",
       "text": "xref_data = (SScriptXRef *)((int)xref_data + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -210,6 +212,7 @@
       "description": "Complex pointer cast",
       "line": 48,
       "match": "(SScriptXRef *)((int)",
+      "severity": "mild",
       "text": "pSVar5 = (SScriptXRef *)((int)pSVar5 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     }

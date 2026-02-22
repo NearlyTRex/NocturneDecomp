@@ -41,6 +41,7 @@
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 22,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 150,
     "suspect_count": 25,
     "suspect_types": [
@@ -581,6 +582,7 @@
       "description": "Unresolved stack parameter",
       "line": 8,
       "match": "in_stack_00000018",
+      "severity": "moderate",
       "text": "int in_stack_00000018;",
       "type": "stack_param"
     },
@@ -588,6 +590,7 @@
       "description": "Unresolved stack parameter",
       "line": 9,
       "match": "in_stack_fffffe7c",
+      "severity": "moderate",
       "text": "byte *in_stack_fffffe7c;",
       "type": "stack_param"
     },
@@ -595,6 +598,7 @@
       "description": "Unresolved stack parameter",
       "line": 10,
       "match": "in_stack_fffffe80",
+      "severity": "moderate",
       "text": "byte *in_stack_fffffe80;",
       "type": "stack_param"
     },
@@ -602,6 +606,7 @@
       "description": "Complex pointer cast",
       "line": 88,
       "match": "(char *)((int)",
+      "severity": "mild",
       "text": "iVar1 - local_44 != 0 && local_44 <= iVar1 && (*(char *)((int)local_24 + local_44) == '\\0'));",
       "type": "pointer_cast"
     },
@@ -609,6 +614,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 96,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_38 = (int)ROUND(ROUND(((double)g_TextureAtlasDimension * (double)config_ptr->src_x2) /",
       "type": "decompiler_intrinsic"
     },
@@ -616,6 +622,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 96,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_38 = (int)ROUND(ROUND(((double)g_TextureAtlasDimension * (double)config_ptr->src_x2) /",
       "type": "decompiler_intrinsic"
     },
@@ -623,6 +630,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 98,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_34 = (int)ROUND(ROUND(((double)g_TextureAtlasDimension * (double)config_ptr->src_y2) /",
       "type": "decompiler_intrinsic"
     },
@@ -630,6 +638,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 98,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_34 = (int)ROUND(ROUND(((double)g_TextureAtlasDimension * (double)config_ptr->src_y2) /",
       "type": "decompiler_intrinsic"
     },
@@ -637,6 +646,7 @@
       "description": "Unresolved stack parameter",
       "line": 99,
       "match": "in_stack_00000018",
+      "severity": "moderate",
       "text": "(double)in_stack_00000018 + 0.5));",
       "type": "stack_param"
     },
@@ -644,6 +654,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 102,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_30 = (int)ROUND(ROUND(((double)g_TextureAtlasDimension * (double)config_ptr->src_x1) /",
       "type": "decompiler_intrinsic"
     },
@@ -651,6 +662,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 102,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_30 = (int)ROUND(ROUND(((double)g_TextureAtlasDimension * (double)config_ptr->src_x1) /",
       "type": "decompiler_intrinsic"
     },
@@ -658,6 +670,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 104,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_2c = (int)ROUND(ROUND(((double)g_TextureAtlasDimension * (double)config_ptr->src_y1) /",
       "type": "decompiler_intrinsic"
     },
@@ -665,6 +678,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 104,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_2c = (int)ROUND(ROUND(((double)g_TextureAtlasDimension * (double)config_ptr->src_y1) /",
       "type": "decompiler_intrinsic"
     },
@@ -672,6 +686,7 @@
       "description": "Unresolved stack parameter",
       "line": 105,
       "match": "in_stack_00000018",
+      "severity": "moderate",
       "text": "(double)in_stack_00000018 + 0.5));",
       "type": "stack_param"
     },
@@ -679,6 +694,7 @@
       "description": "Direct stack address reference",
       "line": 135,
       "match": "&stack0xfffffe7c",
+      "severity": "moderate",
       "text": "local_168,local_170,local_178,(int)&stack0xfffffe7c,(int)&stack0xfffffe80,local_154",
       "type": "stack_ref"
     },
@@ -686,6 +702,7 @@
       "description": "Direct stack address reference",
       "line": 135,
       "match": "&stack0xfffffe80",
+      "severity": "moderate",
       "text": "local_168,local_170,local_178,(int)&stack0xfffffe7c,(int)&stack0xfffffe80,local_154",
       "type": "stack_ref"
     },
@@ -693,6 +710,7 @@
       "description": "Unresolved stack parameter",
       "line": 136,
       "match": "in_stack_fffffe7c",
+      "severity": "moderate",
       "text": ",local_17c,in_stack_fffffe7c,in_stack_fffffe80);",
       "type": "stack_param"
     },
@@ -700,6 +718,7 @@
       "description": "Unresolved stack parameter",
       "line": 136,
       "match": "in_stack_fffffe80",
+      "severity": "moderate",
       "text": ",local_17c,in_stack_fffffe7c,in_stack_fffffe80);",
       "type": "stack_param"
     },
@@ -707,6 +726,7 @@
       "description": "Unresolved stack parameter",
       "line": 145,
       "match": "in_stack_fffffe7c",
+      "severity": "moderate",
       "text": "*(char *)((int)rgb_buffer + local_14c) = (char)in_stack_fffffe7c;",
       "type": "stack_param"
     },
@@ -714,6 +734,7 @@
       "description": "Complex pointer cast",
       "line": 145,
       "match": "(char *)((int)",
+      "severity": "mild",
       "text": "*(char *)((int)rgb_buffer + local_14c) = (char)in_stack_fffffe7c;",
       "type": "pointer_cast"
     },
@@ -721,6 +742,7 @@
       "description": "Unresolved stack parameter",
       "line": 146,
       "match": "in_stack_fffffe80",
+      "severity": "moderate",
       "text": "*(char *)((int)rgb_buffer + local_14c + 1) = (char)in_stack_fffffe80;",
       "type": "stack_param"
     },
@@ -728,6 +750,7 @@
       "description": "Complex pointer cast",
       "line": 146,
       "match": "(char *)((int)",
+      "severity": "mild",
       "text": "*(char *)((int)rgb_buffer + local_14c + 1) = (char)in_stack_fffffe80;",
       "type": "pointer_cast"
     },
@@ -735,6 +758,7 @@
       "description": "Complex pointer cast",
       "line": 147,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)rgb_buffer + local_14c + 2) = local_154[0];",
       "type": "pointer_cast"
     },
@@ -742,6 +766,7 @@
       "description": "Complex pointer cast",
       "line": 148,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)alpha_buffer + local_150) = local_17c[0];",
       "type": "pointer_cast"
     },

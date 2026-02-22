@@ -17,6 +17,7 @@
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 42,
     "suspect_count": 5,
     "suspect_types": [
@@ -117,6 +118,7 @@
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "int *in_stack_00000004;",
       "type": "stack_param"
     },
@@ -124,6 +126,7 @@
       "description": "Unresolved stack parameter",
       "line": 18,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "if (0 < *in_stack_00000004) {",
       "type": "stack_param"
     },
@@ -131,6 +134,7 @@
       "description": "Unresolved stack parameter",
       "line": 19,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "piVar2 = in_stack_00000004 + 1;",
       "type": "stack_param"
     },
@@ -138,6 +142,7 @@
       "description": "Complex pointer cast",
       "line": 37,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -145,6 +150,7 @@
       "description": "Unresolved stack parameter",
       "line": 42,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "} while (iVar3 < *in_stack_00000004);",
       "type": "stack_param"
     }

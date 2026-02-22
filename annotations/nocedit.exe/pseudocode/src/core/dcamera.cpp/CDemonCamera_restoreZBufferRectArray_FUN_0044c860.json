@@ -10,6 +10,7 @@
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 10,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 134,
     "suspect_count": 15,
     "suspect_types": [
@@ -27,7 +28,7 @@
     {
       "addr": "0056c1a0",
       "from_addr": "0056c1f5",
-      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0",
+      "name": "core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -137,7 +138,7 @@
       {
         "call_addr": "0056c1f5",
         "call_type": "direct",
-        "caller": "core_set.cpp_CDemonSet_FUN_0056c1a0",
+        "caller": "core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0",
         "estimated_params": 1,
         "instructions_analyzed": 3,
         "reg_params": [],
@@ -266,6 +267,7 @@
       "description": "Complex pointer cast",
       "line": 87,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if ((*(int *)((int)g_ScanlineSpanLeft + iVar7) <= pCVar6->top) &&",
       "type": "pointer_cast"
     },
@@ -273,6 +275,7 @@
       "description": "Complex pointer cast",
       "line": 88,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "(pCVar6->left <= *(int *)((int)g_ScanlineSpanRight + iVar7))) {",
       "type": "pointer_cast"
     },
@@ -280,6 +283,7 @@
       "description": "Complex pointer cast",
       "line": 89,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if ((*(int *)((int)g_ScanlineSpanLeft + iVar7) <= pCVar6->left) &&",
       "type": "pointer_cast"
     },
@@ -287,6 +291,7 @@
       "description": "Complex pointer cast",
       "line": 90,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "(pCVar6->top <= *(int *)((int)g_ScanlineSpanRight + iVar7))) goto LAB_0044c9e6;",
       "type": "pointer_cast"
     },
@@ -294,6 +299,7 @@
       "description": "Complex pointer cast",
       "line": 91,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (pCVar6->left < *(int *)((int)g_ScanlineSpanLeft + iVar7)) {",
       "type": "pointer_cast"
     },
@@ -301,6 +307,7 @@
       "description": "Complex pointer cast",
       "line": 93,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)g_ScanlineSpanLeft + iVar7) = pCVar6->left;",
       "type": "pointer_cast"
     },
@@ -308,6 +315,7 @@
       "description": "Complex pointer cast",
       "line": 95,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (*(int *)((int)g_ScanlineSpanRight + iVar7) < pCVar6->top) {",
       "type": "pointer_cast"
     },
@@ -315,6 +323,7 @@
       "description": "Complex pointer cast",
       "line": 96,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)g_ScanlineSpanRight + iVar7) = pCVar6->top;",
       "type": "pointer_cast"
     },
@@ -322,6 +331,7 @@
       "description": "Complex pointer cast",
       "line": 105,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)g_ScanlineSpanLeft + iVar9) = pCVar6->left;",
       "type": "pointer_cast"
     },
@@ -329,6 +339,7 @@
       "description": "Complex pointer cast",
       "line": 107,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)g_ScanlineSpanRight + iVar9) = pCVar6->top;",
       "type": "pointer_cast"
     },
@@ -336,6 +347,7 @@
       "description": "Complex pointer cast",
       "line": 120,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "piVar1 = (int *)((int)g_ScanlineSpanLeft + iVar10);",
       "type": "pointer_cast"
     },
@@ -343,6 +355,7 @@
       "description": "Complex pointer cast",
       "line": 121,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "piVar2 = (int *)((int)g_ScanlineSpanLeft + iVar10);",
       "type": "pointer_cast"
     },
@@ -350,6 +363,7 @@
       "description": "Complex pointer cast",
       "line": 122,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "piVar3 = (int *)((int)g_ScanlineSpanLeft + iVar10);",
       "type": "pointer_cast"
     },
@@ -357,6 +371,7 @@
       "description": "Complex pointer cast",
       "line": 123,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "piVar4 = (int *)((int)g_ScanlineSpanRight + iVar10);",
       "type": "pointer_cast"
     },
@@ -364,6 +379,7 @@
       "description": "Complex pointer cast",
       "line": 127,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "((void *)(*(int *)((int)g_ZBufferScanlineArray + iVar8) + *piVar1 * 4),",
       "type": "pointer_cast"
     }

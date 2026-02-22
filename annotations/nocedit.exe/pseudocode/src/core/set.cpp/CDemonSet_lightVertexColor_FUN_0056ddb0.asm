@@ -15,7 +15,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   core_set.cpp_CDemonSet_FUN_00570cd0 at 00570d1e
+;   core_set.cpp_CDemonSet_cacheMirrorLighting_FUN_00570cd0 at 00570d1e
 ;   core_set.cpp_CDemonSet_computeLighting_FUN_0056e110 at 0056e12d
 ;   core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0 at 0056f0a6
 ;
@@ -133,7 +133,7 @@ section .text
         ;   XREF to: 0056e03e (CONDITIONAL_JUMP)  ; LAB_0056e03e
     MOV ECX,0xffff                      ; 0056dea7
     MOV dword ptr [ESP + 0x20],EDX      ; 0056deac
-    CMP dword ptr [0x032c1940],0x0      ; 0056deb0 | g_ColorCorrectionEnabled
+    CMP dword ptr [0x032c1940],0x0      ; 0056deb0 | g_ColorCorrectionCount
         ;   Label: LAB_0056deb0
     JLE 0x0056e0dc                      ; 0056deb7
         ;   XREF to: 0056e0dc (CONDITIONAL_JUMP)  ; LAB_0056e0dc

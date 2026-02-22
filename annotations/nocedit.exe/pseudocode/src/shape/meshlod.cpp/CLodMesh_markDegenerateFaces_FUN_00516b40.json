@@ -10,6 +10,7 @@
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 28,
     "suspect_count": 5,
     "suspect_types": [
@@ -128,6 +129,7 @@
       "description": "Complex pointer cast",
       "line": 17,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (*(int *)((int)pCVar1->edge_perpendiculars + iVar6 + -0x14) == 0) {",
       "type": "pointer_cast"
     },
@@ -135,6 +137,7 @@
       "description": "Complex pointer cast",
       "line": 18,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "iVar2 = *(int *)((int)(pCVar1->uv_coords + -1) + iVar6);",
       "type": "pointer_cast"
     },
@@ -142,6 +145,7 @@
       "description": "Complex pointer cast",
       "line": 19,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "iVar3 = *(int *)((int)(pCVar1->uv_coords + -2) + iVar6 + 4);",
       "type": "pointer_cast"
     },
@@ -149,6 +153,7 @@
       "description": "Complex pointer cast",
       "line": 21,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "(iVar4 = *(int *)((int)(pCVar1->uv_coords + -1) + iVar6 + 4), iVar3 == iVar4)) ||",
       "type": "pointer_cast"
     },
@@ -156,6 +161,7 @@
       "description": "Complex pointer cast",
       "line": 23,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pCVar1->edge_perpendiculars + iVar6 + -0x14) = 1;",
       "type": "pointer_cast"
     }

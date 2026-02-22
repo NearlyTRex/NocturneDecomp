@@ -5,6 +5,7 @@
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 3,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 22,
     "suspect_count": 3,
     "suspect_types": [
@@ -162,6 +163,7 @@
       "description": "Undefined global data reference",
       "line": 10,
       "match": "DAT_00665e68",
+      "severity": "mild",
       "text": "(this_ptr->_istream_core).layout_info = &DAT_00665e68;",
       "type": "undefined_data"
     },
@@ -169,6 +171,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 12,
       "match": "piVar3[-1].",
+      "severity": "mild",
       "text": "this_ptr = (istream *)&piVar3[-1].__xalloc_list;",
       "type": "negative_offset"
     },

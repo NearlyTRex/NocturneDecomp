@@ -23,6 +23,7 @@
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 22,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 58,
     "suspect_count": 4,
     "suspect_types": [
@@ -285,6 +286,7 @@
       "description": "Complex pointer cast",
       "line": 48,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "(void *)((int)g_PrimaryMixBuffer + g_MixBufferSize * iVar4 * g_NumMixBuffers * 4);",
       "type": "pointer_cast"
     },
@@ -292,6 +294,7 @@
       "description": "Complex pointer cast",
       "line": 49,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)g_ChannelTertiaryBuffers + iVar2) = (int)g_TertiaryMixBuffer + iVar3;",
       "type": "pointer_cast"
     },
@@ -299,6 +302,7 @@
       "description": "Complex pointer cast",
       "line": 51,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)g_ChannelSecondaryBuffersA + iVar2) = (int)g_SecondaryMixBuffer + iVar6;",
       "type": "pointer_cast"
     },
@@ -306,6 +310,7 @@
       "description": "Complex pointer cast",
       "line": 52,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)g_ChannelSecondaryBuffersB + iVar2) = (int)pfVar1 + iVar5;",
       "type": "pointer_cast"
     }

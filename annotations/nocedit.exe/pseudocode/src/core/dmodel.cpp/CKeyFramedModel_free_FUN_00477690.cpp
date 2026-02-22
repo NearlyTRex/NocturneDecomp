@@ -14,15 +14,15 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_free_FUN_00477690(CKeyFramedModel *
   shape_memdbg_cpp_free_FUN_005fe659(this_ptr->vertex_list);
   g_CurrentDebugFilename = "..\\core\\dmodel.cpp";
   g_CurrentDebugLine = 0x1a8;
-  this_ptr->vertex_list = (CVector3i **)0x0;
+  this_ptr->vertex_list = (CVector3i *)0x0;
   shape_memdbg_cpp_free_FUN_005fe659(this_ptr->vertex_normal_list);
-  this_ptr->vertex_normal_list = (CVector3i **)0x0;
+  this_ptr->vertex_normal_list = (CVector3i *)0x0;
   g_CurrentDebugFilename = "..\\core\\dmodel.cpp";
   g_CurrentDebugLine = 0x1ab;
   shape_memdbg_cpp_free_FUN_005fe659(this_ptr->poly_vert_list);
   g_CurrentDebugFilename = "..\\core\\dmodel.cpp";
   g_CurrentDebugLine = 0x1ae;
-  this_ptr->poly_vert_list = (SMRGLPrimitiveQuad **)0x0;
+  this_ptr->poly_vert_list = (SMRGLPrimitiveQuad *)0x0;
   shape_memdbg_cpp_free_FUN_005fe659(this_ptr->poly_texture_index_list);
   this_ptr->poly_texture_index_list = (int *)0x0;
   g_CurrentDebugFilename = "..\\core\\dmodel.cpp";

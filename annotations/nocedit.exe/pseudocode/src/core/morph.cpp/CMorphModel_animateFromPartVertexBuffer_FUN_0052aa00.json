@@ -10,10 +10,11 @@
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 6,
     "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_many"
+      "param_count_too_few"
     ],
     "total_lines": 26
   },
@@ -35,7 +36,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_morph.cpp_CMorphModel_animateFromPartVertexBuffer_FUN_0052aa00",
-    "signature": "void __cdecl core_morph_cpp_CMorphModel_animateFromPartVertexBuffer_FUN_0052aa00(CMorphModel *this_ptr,int part_index,CVector3i *vertex_buffer,int start_offset,int vertex_count)"
+    "signature": "void __cdecl core_morph_cpp_CMorphModel_animateFromPartVertexBuffer_FUN_0052aa00(CMorphModel *this_ptr,int part_index,CVector3i *vertex_buffer)"
   },
   "function_calls": [
     {
@@ -59,7 +60,7 @@
       }
     ],
     "confidence": "low",
-    "declared_params": 5,
+    "declared_params": 3,
     "estimated_params": 4
   },
   "pcode_summary": {
@@ -89,10 +90,10 @@
     "pcode_op_count": 96
   },
   "stack_frame": {
-    "frame_size": 24,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 20,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -115,34 +116,20 @@
         "offset": 12,
         "size": 4,
         "type": "CVector3i *"
-      },
-      {
-        "is_param": true,
-        "name": "start_offset",
-        "offset": 16,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": true,
-        "name": "vertex_count",
-        "offset": 20,
-        "size": 4,
-        "type": "int"
       }
     ]
   },
   "suspects": [
     {
       "call_site_count": 1,
-      "declared_params": 5,
-      "description": "Signature has too many params - likely wrong calling convention",
+      "declared_params": 3,
+      "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 4,
-      "fix_type": "remove_params",
-      "match": "declared:5 vs estimated:4",
-      "param_delta": -1,
-      "text": "Function declares 5 params but call sites push 4 (1 extra)",
-      "type": "param_count_too_many"
+      "fix_type": "add_params",
+      "match": "declared:3 vs estimated:4",
+      "param_delta": 1,
+      "text": "Function declares 3 params but call sites push 4 (1 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

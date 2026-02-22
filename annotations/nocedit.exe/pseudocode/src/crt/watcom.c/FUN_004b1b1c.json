@@ -5,6 +5,7 @@
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 9,
     "suspect_count": 11,
     "suspect_types": [
@@ -61,6 +62,7 @@
       "description": "Inferred register parameter",
       "line": 5,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "uint *in_ECX;",
       "type": "register_param"
     },
@@ -68,6 +70,7 @@
       "description": "Inferred register parameter",
       "line": 6,
       "match": "in_EDX",
+      "severity": "mild",
       "text": "uint *in_EDX;",
       "type": "register_param"
     },
@@ -75,6 +78,7 @@
       "description": "Inferred register parameter",
       "line": 8,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "*(byte *)((int)in_ECX + 6) = *(byte *)((int)in_EDX + 6);",
       "type": "register_param"
     },
@@ -82,6 +86,7 @@
       "description": "Inferred register parameter",
       "line": 8,
       "match": "in_EDX",
+      "severity": "mild",
       "text": "*(byte *)((int)in_ECX + 6) = *(byte *)((int)in_EDX + 6);",
       "type": "register_param"
     },
@@ -89,6 +94,7 @@
       "description": "Complex pointer cast",
       "line": 8,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)in_ECX + 6) = *(byte *)((int)in_EDX + 6);",
       "type": "pointer_cast"
     },
@@ -96,6 +102,7 @@
       "description": "Complex pointer cast",
       "line": 8,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)in_ECX + 6) = *(byte *)((int)in_EDX + 6);",
       "type": "pointer_cast"
     },
@@ -103,6 +110,7 @@
       "description": "Inferred register parameter",
       "line": 9,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "*(ushort *)(in_ECX + 1) = *(ushort *)(in_EDX + 1);",
       "type": "register_param"
     },
@@ -110,6 +118,7 @@
       "description": "Inferred register parameter",
       "line": 9,
       "match": "in_EDX",
+      "severity": "mild",
       "text": "*(ushort *)(in_ECX + 1) = *(ushort *)(in_EDX + 1);",
       "type": "register_param"
     },
@@ -117,6 +126,7 @@
       "description": "Inferred register parameter",
       "line": 10,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "*in_ECX = *in_EDX;",
       "type": "register_param"
     },
@@ -124,6 +134,7 @@
       "description": "Inferred register parameter",
       "line": 10,
       "match": "in_EDX",
+      "severity": "mild",
       "text": "*in_ECX = *in_EDX;",
       "type": "register_param"
     },

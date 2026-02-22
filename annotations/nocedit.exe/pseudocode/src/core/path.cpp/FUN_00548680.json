@@ -31,14 +31,16 @@
   },
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 191,
+    "complexity_score": 206,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 8,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 46,
-    "suspect_count": 13,
+    "suspect_count": 14,
     "suspect_types": [
       "pointer_cast",
+      "stack_alignment_array",
       "stack_param",
       "stack_ref"
     ],
@@ -203,6 +205,7 @@
       "description": "Unresolved stack parameter",
       "line": 9,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "CVector3f *in_stack_00000004;",
       "type": "stack_param"
     },
@@ -210,13 +213,23 @@
       "description": "Unresolved stack parameter",
       "line": 10,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "uint in_stack_0000000c;",
       "type": "stack_param"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 11,
+      "match": "aiStackY_1010",
+      "severity": "moderate",
+      "text": "int aiStackY_1010 [1013];",
+      "type": "stack_alignment_array"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_ffffffd8",
+      "severity": "moderate",
       "text": "CVector3i *in_stack_ffffffd8;",
       "type": "stack_param"
     },
@@ -224,6 +237,7 @@
       "description": "Unresolved stack parameter",
       "line": 22,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "(&g_CDemonRaytraceInstance,in_stack_00000004,in_stack_ffffffd8);",
       "type": "stack_param"
     },
@@ -231,6 +245,7 @@
       "description": "Unresolved stack parameter",
       "line": 22,
       "match": "in_stack_ffffffd8",
+      "severity": "moderate",
       "text": "(&g_CDemonRaytraceInstance,in_stack_00000004,in_stack_ffffffd8);",
       "type": "stack_param"
     },
@@ -238,6 +253,7 @@
       "description": "Direct stack address reference",
       "line": 23,
       "match": "&stack0xffffffdc",
+      "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffdc + (uint)bVar3 * -8) =",
       "type": "stack_ref"
     },
@@ -245,6 +261,7 @@
       "description": "Complex pointer cast",
       "line": 23,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&stack0xffffffdc + (uint)bVar3 * -8) =",
       "type": "pointer_cast"
     },
@@ -252,6 +269,7 @@
       "description": "Direct stack address reference",
       "line": 24,
       "match": "&stack0xffffffe8",
+      "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffe8 + (uint)bVar3 * -8);",
       "type": "stack_ref"
     },
@@ -259,6 +277,7 @@
       "description": "Direct stack address reference",
       "line": 25,
       "match": "&stack0xffffffe0",
+      "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffe0 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
       "type": "stack_ref"
     },
@@ -266,6 +285,7 @@
       "description": "Complex pointer cast",
       "line": 25,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&stack0xffffffe0 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
       "type": "pointer_cast"
     },
@@ -273,6 +293,7 @@
       "description": "Direct stack address reference",
       "line": 26,
       "match": "&stack0xffffffec",
+      "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffec + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
       "type": "stack_ref"
     },
@@ -280,6 +301,7 @@
       "description": "Complex pointer cast",
       "line": 32,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (*(int *)((int)g_PathMapList + iVar1) == 0) {",
       "type": "pointer_cast"
     },
@@ -287,6 +309,7 @@
       "description": "Unresolved stack parameter",
       "line": 41,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "uStack_34 = in_stack_0000000c;",
       "type": "stack_param"
     }

@@ -1,14 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 90,
-    "complexity_score": 286,
+    "complexity_score": 311,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 51,
-    "suspect_count": 21,
+    "suspect_count": 23,
     "suspect_types": [
       "decompiler_intrinsic",
+      "double_reconstruction",
       "param_count_too_few",
       "special_math_intrinsic",
       "stack_param",
@@ -180,6 +182,7 @@
       "description": "Unresolved stack parameter",
       "line": 7,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
@@ -187,6 +190,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 14,
       "match": "SUB82",
+      "severity": "mild",
       "text": "local_20 = SUB82(x,0);",
       "type": "decompiler_intrinsic"
     },
@@ -194,6 +198,7 @@
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "if ((((ulonglong)x & 0x7fffffff) != 0) || (in_stack_00000004 != 0)) {",
       "type": "stack_param"
     },
@@ -201,6 +206,7 @@
       "description": "Unknown/mangled field access",
       "line": 18,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "if (x._4_4_ < -16000) {",
       "type": "unknown_field"
     },
@@ -208,6 +214,7 @@
       "description": "Unknown/mangled field access",
       "line": 19,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "x._4_4_ = -16000;",
       "type": "unknown_field"
     },
@@ -215,6 +222,7 @@
       "description": "Unknown/mangled field access",
       "line": 23,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "x._4_4_ = 16000;",
       "type": "unknown_field"
     },
@@ -222,6 +230,7 @@
       "description": "Unknown/mangled field access",
       "line": 25,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "iVar2 = ((int)(short)(uStack_1e & 0x7ff0) >> 4) + x._4_4_;",
       "type": "unknown_field"
     },
@@ -229,6 +238,7 @@
       "description": "Unknown/mangled field access",
       "line": 35,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "dVar1 = -(double)CONCAT44(INFINITY._4_4_,INFINITY._0_4_);",
       "type": "unknown_field"
     },
@@ -236,13 +246,23 @@
       "description": "Unknown/mangled field access",
       "line": 35,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "dVar1 = -(double)CONCAT44(INFINITY._4_4_,INFINITY._0_4_);",
       "type": "unknown_field"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 35,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "dVar1 = -(double)CONCAT44(INFINITY._4_4_,INFINITY._0_4_);",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 35,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "dVar1 = -(double)CONCAT44(INFINITY._4_4_,INFINITY._0_4_);",
       "type": "decompiler_intrinsic"
     },
@@ -250,6 +270,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 36,
       "match": "SUB82",
+      "severity": "mild",
       "text": "local_1c = SUB82(dVar1,0);",
       "type": "decompiler_intrinsic"
     },
@@ -257,6 +278,7 @@
       "description": "Unknown/mangled field access",
       "line": 41,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_1c = (ushort)INFINITY._0_4_;",
       "type": "unknown_field"
     },
@@ -264,6 +286,7 @@
       "description": "Unknown/mangled field access",
       "line": 42,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "uStack_1a = (ushort)((uint)INFINITY._0_4_ >> 0x10);",
       "type": "unknown_field"
     },
@@ -271,6 +294,7 @@
       "description": "Unknown/mangled field access",
       "line": 43,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "uStack_18 = INFINITY._4_4_;",
       "type": "unknown_field"
     },
@@ -278,6 +302,7 @@
       "description": "Unresolved stack parameter",
       "line": 49,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "local_1c = (ushort)in_stack_00000004;",
       "type": "stack_param"
     },
@@ -285,6 +310,7 @@
       "description": "Unresolved stack parameter",
       "line": 50,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "uStack_1a = (ushort)((uint)in_stack_00000004 >> 0x10);",
       "type": "stack_param"
     },
@@ -292,13 +318,23 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 51,
       "match": "CONCAT22",
+      "severity": "mild",
       "text": "uStack_18 = CONCAT22(uStack_1e,local_20);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 53,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "return (double)CONCAT44(uStack_18,CONCAT22(uStack_1a,local_1c));",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 53,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "return (double)CONCAT44(uStack_18,CONCAT22(uStack_1a,local_1c));",
       "type": "decompiler_intrinsic"
     },
@@ -306,6 +342,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 53,
       "match": "CONCAT22",
+      "severity": "mild",
       "text": "return (double)CONCAT44(uStack_18,CONCAT22(uStack_1a,local_1c));",
       "type": "decompiler_intrinsic"
     },

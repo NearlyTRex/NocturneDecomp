@@ -38,14 +38,14 @@ section .text
     PUSH EAX                            ; 0047f0e5
     MOV EBX,EAX                         ; 0047f0e6
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0 ; 0047f0e8
-        ;   XREF to: 00599fc0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton * this_ptr, char * bone_name)
+        ;   XREF to: 00599fc0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0047f0ed
     PUSH 0x1                            ; 0047f0f0
     PUSH 0x620fb1                       ; 0047f0f2 | = "Bip01 Head"
     PUSH EBX                            ; 0047f0f7
     MOV dword ptr [ESI + 0xbebc],EAX    ; 0047f0f8
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0 ; 0047f0fe
-        ;   XREF to: 00599fc0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton * this_ptr, char * bone_name)
+        ;   XREF to: 00599fc0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0047f103
     PUSH ESI                            ; 0047f106
     MOV dword ptr [ESI + 0xbec0],EAX    ; 0047f107

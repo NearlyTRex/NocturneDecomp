@@ -17,6 +17,7 @@
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 7,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 31,
     "suspect_count": 5,
     "suspect_types": [
@@ -144,6 +145,7 @@
       "description": "Unresolved stack parameter",
       "line": 8,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
@@ -151,6 +153,7 @@
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "if (in_stack_00000004 == *(int *)((int)&g_SimFrameHistory + iVar1)) {",
       "type": "stack_param"
     },
@@ -158,6 +161,7 @@
       "description": "Complex pointer cast",
       "line": 14,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (in_stack_00000004 == *(int *)((int)&g_SimFrameHistory + iVar1)) {",
       "type": "pointer_cast"
     },
@@ -165,6 +169,7 @@
       "description": "Complex pointer cast",
       "line": 16,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "return (int *)((int)&g_SimFrameHistory + iVar1);",
       "type": "pointer_cast"
     },
@@ -172,6 +177,7 @@
       "description": "Unresolved stack parameter",
       "line": 32,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "*dest = in_stack_00000004;",
       "type": "stack_param"
     }

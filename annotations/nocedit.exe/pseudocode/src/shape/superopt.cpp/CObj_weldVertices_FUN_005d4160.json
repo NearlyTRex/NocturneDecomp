@@ -13,15 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 310,
-    "complexity_score": 337,
+    "complexity_score": 352,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 1,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 127,
-    "suspect_count": 20,
+    "suspect_count": 21,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast"
+      "pointer_cast",
+      "sub84_truncation"
     ],
     "total_lines": 437
   },
@@ -214,9 +216,18 @@
   },
   "suspects": [
     {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 49,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "local_108 = SUB84(weld_tolerance,0);",
+      "type": "sub84_truncation"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 49,
       "match": "SUB84",
+      "severity": "mild",
       "text": "local_108 = SUB84(weld_tolerance,0);",
       "type": "decompiler_intrinsic"
     },
@@ -224,6 +235,7 @@
       "description": "Complex pointer cast",
       "line": 50,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar3 = (double *)((int)&(this_ptr->vertex_data->position).x + iStack_24);",
       "type": "pointer_cast"
     },
@@ -231,6 +243,7 @@
       "description": "Complex pointer cast",
       "line": 52,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "if ((*(byte *)((int)pdVar3 + 0x35) & 0x80) == 0) {",
       "type": "pointer_cast"
     },
@@ -238,6 +251,7 @@
       "description": "Complex pointer cast",
       "line": 60,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar6 = (double *)((int)pdVar6 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -245,6 +259,7 @@
       "description": "Complex pointer cast",
       "line": 61,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar7 = (double *)((int)pdVar7 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -252,6 +267,7 @@
       "description": "Complex pointer cast",
       "line": 70,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar6 = (double *)((int)pdVar6 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -259,6 +275,7 @@
       "description": "Complex pointer cast",
       "line": 71,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar7 = (double *)((int)pdVar7 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -266,6 +283,7 @@
       "description": "Complex pointer cast",
       "line": 73,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)pdVar3 + 0x35) = *(byte *)((int)pdVar3 + 0x35) | 0x80;",
       "type": "pointer_cast"
     },
@@ -273,6 +291,7 @@
       "description": "Complex pointer cast",
       "line": 73,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)pdVar3 + 0x35) = *(byte *)((int)pdVar3 + 0x35) | 0x80;",
       "type": "pointer_cast"
     },
@@ -280,6 +299,7 @@
       "description": "Complex pointer cast",
       "line": 78,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar3 = (double *)((int)&(this_ptr->vertex_data->position).x + iStack_2c);",
       "type": "pointer_cast"
     },
@@ -287,6 +307,7 @@
       "description": "Complex pointer cast",
       "line": 79,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "if ((*(byte *)((int)pdVar3 + 0x35) & 0x80) == 0) {",
       "type": "pointer_cast"
     },
@@ -294,6 +315,7 @@
       "description": "Complex pointer cast",
       "line": 89,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "if (uVar4 == *(uint *)((int)pCVar1->uv_coords + iVar2 + -0xc)) {",
       "type": "pointer_cast"
     },
@@ -301,6 +323,7 @@
       "description": "Complex pointer cast",
       "line": 90,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pCVar1->uv_coords + iVar2 + -0xc) = uStack_18;",
       "type": "pointer_cast"
     },
@@ -308,6 +331,7 @@
       "description": "Complex pointer cast",
       "line": 92,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "if (uVar4 == *(uint *)((int)pCVar1->uv_coords + iVar2 + -8)) {",
       "type": "pointer_cast"
     },
@@ -315,6 +339,7 @@
       "description": "Complex pointer cast",
       "line": 93,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pCVar1->uv_coords + iVar2 + -8) = uStack_18;",
       "type": "pointer_cast"
     },
@@ -322,6 +347,7 @@
       "description": "Complex pointer cast",
       "line": 95,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "if (uVar4 == *(uint *)((int)pCVar1->uv_coords + iVar2 + -4)) {",
       "type": "pointer_cast"
     },
@@ -329,6 +355,7 @@
       "description": "Complex pointer cast",
       "line": 96,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pCVar1->uv_coords + iVar2 + -4) = uStack_18;",
       "type": "pointer_cast"
     },
@@ -336,6 +363,7 @@
       "description": "Complex pointer cast",
       "line": 103,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)pdVar3 + 0x35) = *(byte *)((int)pdVar3 + 0x35) | 0x80;",
       "type": "pointer_cast"
     },
@@ -343,6 +371,7 @@
       "description": "Complex pointer cast",
       "line": 103,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)pdVar3 + 0x35) = *(byte *)((int)pdVar3 + 0x35) | 0x80;",
       "type": "pointer_cast"
     },
@@ -350,6 +379,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 110,
       "match": "SQRT",
+      "severity": "mild",
       "text": "(SQRT((pdVar3[2] - pdStack_1c[2]) * (pdVar3[2] - pdStack_1c[2]) +",
       "type": "decompiler_intrinsic"
     }

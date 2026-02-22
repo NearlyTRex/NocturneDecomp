@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 13,
     "suspect_count": 9,
     "suspect_types": [
@@ -117,6 +118,7 @@
       "description": "Unaffected register variable",
       "line": 7,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "double *unaff_ESI;",
       "type": "unaffected_reg"
     },
@@ -124,6 +126,7 @@
       "description": "Unresolved stack parameter",
       "line": 8,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "double *in_stack_00000004;",
       "type": "stack_param"
     },
@@ -131,6 +134,7 @@
       "description": "Unresolved stack parameter",
       "line": 9,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "double *in_stack_00000008;",
       "type": "stack_param"
     },
@@ -138,6 +142,7 @@
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "dVar1 = in_stack_00000004[1];",
       "type": "stack_param"
     },
@@ -145,6 +150,7 @@
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "dVar2 = in_stack_00000008[1];",
       "type": "stack_param"
     },
@@ -152,6 +158,7 @@
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "*unaff_ESI = *in_stack_00000004 - *in_stack_00000008;",
       "type": "stack_param"
     },
@@ -159,6 +166,7 @@
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "*unaff_ESI = *in_stack_00000004 - *in_stack_00000008;",
       "type": "stack_param"
     },
@@ -166,6 +174,7 @@
       "description": "Unaffected register variable",
       "line": 13,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "*unaff_ESI = *in_stack_00000004 - *in_stack_00000008;",
       "type": "unaffected_reg"
     },
@@ -173,6 +182,7 @@
       "description": "Unaffected register variable",
       "line": 14,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "unaff_ESI[1] = dVar1 - dVar2;",
       "type": "unaffected_reg"
     }

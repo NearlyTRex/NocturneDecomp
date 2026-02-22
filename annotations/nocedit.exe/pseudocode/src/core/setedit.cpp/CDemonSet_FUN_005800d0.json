@@ -6,15 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 281,
+    "complexity_score": 296,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 3,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 56,
-    "suspect_count": 21,
+    "suspect_count": 22,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
+      "stack_alignment_array",
       "stack_param"
     ],
     "total_lines": 166
@@ -194,6 +196,7 @@
       "description": "Unresolved stack parameter",
       "line": 9,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
@@ -201,6 +204,7 @@
       "description": "Unresolved stack parameter",
       "line": 10,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
@@ -208,6 +212,7 @@
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_00000010",
+      "severity": "moderate",
       "text": "int *in_stack_00000010;",
       "type": "stack_param"
     },
@@ -215,13 +220,23 @@
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_00000014",
+      "severity": "moderate",
       "text": "int in_stack_00000014;",
       "type": "stack_param"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 13,
+      "match": "aiStackY_1028",
+      "severity": "moderate",
+      "text": "int aiStackY_1028 [1015];",
+      "type": "stack_alignment_array"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 21,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "if ((((0 < in_stack_00000008) && (0 < in_stack_0000000c)) &&",
       "type": "stack_param"
     },
@@ -229,6 +244,7 @@
       "description": "Unresolved stack parameter",
       "line": 21,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "if ((((0 < in_stack_00000008) && (0 < in_stack_0000000c)) &&",
       "type": "stack_param"
     },
@@ -236,6 +252,7 @@
       "description": "Unresolved stack parameter",
       "line": 22,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "(in_stack_00000008 <= g_CDemonCameraInstance.framebuffer_width + -1)) &&",
       "type": "stack_param"
     },
@@ -243,6 +260,7 @@
       "description": "Unresolved stack parameter",
       "line": 23,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "(in_stack_0000000c <= g_CDemonCameraInstance.framebuffer_height + -1)) {",
       "type": "stack_param"
     },
@@ -250,6 +268,7 @@
       "description": "Unresolved stack parameter",
       "line": 25,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "(&g_CDemonCameraInstance,in_stack_00000008,in_stack_0000000c,&local_28);",
       "type": "stack_param"
     },
@@ -257,6 +276,7 @@
       "description": "Unresolved stack parameter",
       "line": 25,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "(&g_CDemonCameraInstance,in_stack_00000008,in_stack_0000000c,&local_28);",
       "type": "stack_param"
     },
@@ -264,6 +284,7 @@
       "description": "Complex pointer cast",
       "line": 27,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_1c + (uint)bVar4 * -8 + 4) =",
       "type": "pointer_cast"
     },
@@ -271,6 +292,7 @@
       "description": "Complex pointer cast",
       "line": 28,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_28 + (uint)bVar4 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -278,6 +300,7 @@
       "description": "Complex pointer cast",
       "line": 29,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_1c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =",
       "type": "pointer_cast"
     },
@@ -285,6 +308,7 @@
       "description": "Complex pointer cast",
       "line": 30,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_28 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
       "type": "pointer_cast"
     },
@@ -292,6 +316,7 @@
       "description": "Complex pointer cast",
       "line": 35,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "aiStack_30[(uint)bVar4 * -2] = *(int *)((int)&local_40 + (uint)bVar4 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -299,6 +324,7 @@
       "description": "Complex pointer cast",
       "line": 37,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)&local_40 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
       "type": "pointer_cast"
     },
@@ -306,6 +332,7 @@
       "description": "Unresolved stack parameter",
       "line": 42,
       "match": "in_stack_00000014",
+      "severity": "moderate",
       "text": "while ((iVar2 != in_stack_00000014 &&",
       "type": "stack_param"
     },
@@ -313,6 +340,7 @@
       "description": "Unresolved stack parameter",
       "line": 45,
       "match": "in_stack_00000010",
+      "severity": "moderate",
       "text": "*in_stack_00000010 = iVar2;",
       "type": "stack_param"
     },
@@ -320,6 +348,7 @@
       "description": "Unresolved stack parameter",
       "line": 47,
       "match": "in_stack_00000010",
+      "severity": "moderate",
       "text": "in_stack_00000010 = in_stack_00000010 + 1;",
       "type": "stack_param"
     },
@@ -327,6 +356,7 @@
       "description": "Unresolved stack parameter",
       "line": 47,
       "match": "in_stack_00000010",
+      "severity": "moderate",
       "text": "in_stack_00000010 = in_stack_00000010 + 1;",
       "type": "stack_param"
     },

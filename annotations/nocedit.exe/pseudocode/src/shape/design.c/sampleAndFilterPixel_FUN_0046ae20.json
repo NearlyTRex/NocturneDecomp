@@ -37,16 +37,19 @@
   },
   "complexity": {
     "assembly_lines": 204,
-    "complexity_score": 443,
+    "complexity_score": 533,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 1,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 68,
-    "suspect_count": 36,
+    "suspect_count": 44,
     "suspect_types": [
       "decompiler_intrinsic",
+      "double_reconstruction",
       "param_count_too_many",
-      "stack_param"
+      "stack_param",
+      "sub84_truncation"
     ],
     "total_lines": 272
   },
@@ -394,6 +397,7 @@
       "description": "Unresolved stack parameter",
       "line": 9,
       "match": "in_stack_ffffff98",
+      "severity": "moderate",
       "text": "uint in_stack_ffffff98;",
       "type": "stack_param"
     },
@@ -401,6 +405,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 29,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_24 = (int)ROUND(ROUND(dVar1));",
       "type": "decompiler_intrinsic"
     },
@@ -408,6 +413,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 29,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_24 = (int)ROUND(ROUND(dVar1));",
       "type": "decompiler_intrinsic"
     },
@@ -415,6 +421,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 31,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_20 = (int)ROUND(ROUND(dVar1));",
       "type": "decompiler_intrinsic"
     },
@@ -422,6 +429,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 31,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_20 = (int)ROUND(ROUND(dVar1));",
       "type": "decompiler_intrinsic"
     },
@@ -429,6 +437,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 33,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_1c = (int)ROUND(ROUND(dVar1));",
       "type": "decompiler_intrinsic"
     },
@@ -436,6 +445,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 33,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_1c = (int)ROUND(ROUND(dVar1));",
       "type": "decompiler_intrinsic"
     },
@@ -443,6 +453,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 35,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_18 = (int)ROUND(ROUND(dVar1));",
       "type": "decompiler_intrinsic"
     },
@@ -450,13 +461,31 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 35,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_18 = (int)ROUND(ROUND(dVar1));",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 38,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "((double)CONCAT44(SUB84(coord_y1,0),(int)((ulonglong)(double)local_14 >> 0x20)",
+      "type": "double_reconstruction"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 38,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "((double)CONCAT44(SUB84(coord_y1,0),(int)((ulonglong)(double)local_14 >> 0x20)",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 38,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "((double)CONCAT44(SUB84(coord_y1,0),(int)((ulonglong)(double)local_14 >> 0x20)",
       "type": "decompiler_intrinsic"
     },
@@ -464,6 +493,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 38,
       "match": "SUB84",
+      "severity": "mild",
       "text": "((double)CONCAT44(SUB84(coord_y1,0),(int)((ulonglong)(double)local_14 >> 0x20)",
       "type": "decompiler_intrinsic"
     },
@@ -471,6 +501,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 40,
       "match": "CONCAT26",
+      "severity": "mild",
       "text": "(double)CONCAT26((short)((ulonglong)coord_y2 >> 0x10),",
       "type": "decompiler_intrinsic"
     },
@@ -478,6 +509,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 41,
       "match": "CONCAT24",
+      "severity": "mild",
       "text": "CONCAT24(SUB82(coord_y2,0),",
       "type": "decompiler_intrinsic"
     },
@@ -485,6 +517,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 41,
       "match": "SUB82",
+      "severity": "mild",
       "text": "CONCAT24(SUB82(coord_y2,0),",
       "type": "decompiler_intrinsic"
     },
@@ -492,20 +525,47 @@
       "description": "Unresolved stack parameter",
       "line": 43,
       "match": "in_stack_ffffff98",
+      "severity": "moderate",
       "text": "(double)CONCAT44(in_stack_ffffff98,(int)((ulonglong)coord_y2 >> 0x20)));",
       "type": "stack_param"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 43,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(double)CONCAT44(in_stack_ffffff98,(int)((ulonglong)coord_y2 >> 0x20)));",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 43,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(double)CONCAT44(in_stack_ffffff98,(int)((ulonglong)coord_y2 >> 0x20)));",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 46,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "((double)CONCAT44(SUB84(coord_x1,0),",
+      "type": "double_reconstruction"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 46,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "((double)CONCAT44(SUB84(coord_x1,0),",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 46,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "((double)CONCAT44(SUB84(coord_x1,0),",
       "type": "decompiler_intrinsic"
     },
@@ -513,6 +573,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 46,
       "match": "SUB84",
+      "severity": "mild",
       "text": "((double)CONCAT44(SUB84(coord_x1,0),",
       "type": "decompiler_intrinsic"
     },
@@ -520,6 +581,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 48,
       "match": "CONCAT26",
+      "severity": "mild",
       "text": "(double)CONCAT26((short)((ulonglong)coord_x2 >> 0x10),",
       "type": "decompiler_intrinsic"
     },
@@ -527,6 +589,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 49,
       "match": "CONCAT24",
+      "severity": "mild",
       "text": "CONCAT24(SUB82(coord_x2,0),",
       "type": "decompiler_intrinsic"
     },
@@ -534,6 +597,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 49,
       "match": "SUB82",
+      "severity": "mild",
       "text": "CONCAT24(SUB82(coord_x2,0),",
       "type": "decompiler_intrinsic"
     },
@@ -541,13 +605,23 @@
       "description": "Unresolved stack parameter",
       "line": 51,
       "match": "in_stack_ffffff98",
+      "severity": "moderate",
       "text": "(double)CONCAT44(in_stack_ffffff98,(int)((ulonglong)coord_x2 >> 0x20)));",
       "type": "stack_param"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 51,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(double)CONCAT44(in_stack_ffffff98,(int)((ulonglong)coord_x2 >> 0x20)));",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 51,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(double)CONCAT44(in_stack_ffffff98,(int)((ulonglong)coord_x2 >> 0x20)));",
       "type": "decompiler_intrinsic"
     },
@@ -555,13 +629,23 @@
       "description": "Unresolved stack parameter",
       "line": 53,
       "match": "in_stack_ffffff98",
+      "severity": "moderate",
       "text": "in_stack_ffffff98 = SUB84(dVar2,0);",
       "type": "stack_param"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 53,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "in_stack_ffffff98 = SUB84(dVar2,0);",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 53,
       "match": "SUB84",
+      "severity": "mild",
       "text": "in_stack_ffffff98 = SUB84(dVar2,0);",
       "type": "decompiler_intrinsic"
     },
@@ -569,13 +653,23 @@
       "description": "Unresolved stack parameter",
       "line": 58,
       "match": "in_stack_ffffff98",
+      "severity": "moderate",
       "text": "local_2c = local_2c + (double)CONCAT44(uStack_64,in_stack_ffffff98);",
       "type": "stack_param"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 58,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "local_2c = local_2c + (double)CONCAT44(uStack_64,in_stack_ffffff98);",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 58,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "local_2c = local_2c + (double)CONCAT44(uStack_64,in_stack_ffffff98);",
       "type": "decompiler_intrinsic"
     },
@@ -583,6 +677,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 67,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*(int *)atlas_width = (int)ROUND(ROUND(local_4c + 0.5));",
       "type": "decompiler_intrinsic"
     },
@@ -590,6 +685,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 67,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*(int *)atlas_width = (int)ROUND(ROUND(local_4c + 0.5));",
       "type": "decompiler_intrinsic"
     },
@@ -597,6 +693,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 68,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*(int *)atlas_height = (int)ROUND(ROUND(local_44 + 0.5));",
       "type": "decompiler_intrinsic"
     },
@@ -604,6 +701,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 68,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*(int *)atlas_height = (int)ROUND(ROUND(local_44 + 0.5));",
       "type": "decompiler_intrinsic"
     },
@@ -611,6 +709,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 69,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*(int *)red_out = (int)ROUND(ROUND(local_3c + 0.5));",
       "type": "decompiler_intrinsic"
     },
@@ -618,6 +717,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 69,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*(int *)red_out = (int)ROUND(ROUND(local_3c + 0.5));",
       "type": "decompiler_intrinsic"
     },
@@ -625,6 +725,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 70,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*(int *)green_out = (int)ROUND(ROUND(local_34 + 0.5));",
       "type": "decompiler_intrinsic"
     },
@@ -632,6 +733,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 70,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*(int *)green_out = (int)ROUND(ROUND(local_34 + 0.5));",
       "type": "decompiler_intrinsic"
     },

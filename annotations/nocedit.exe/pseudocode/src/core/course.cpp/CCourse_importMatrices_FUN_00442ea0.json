@@ -55,14 +55,16 @@
   },
   "complexity": {
     "assembly_lines": 160,
-    "complexity_score": 193,
+    "complexity_score": 208,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 10,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 73,
-    "suspect_count": 11,
+    "suspect_count": 12,
     "suspect_types": [
       "pointer_cast",
+      "stack_alignment_array",
       "unaffected_reg"
     ],
     "total_lines": 233
@@ -413,6 +415,7 @@
       "description": "Unaffected register variable",
       "line": 9,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "uint unaff_ESI;",
       "type": "unaffected_reg"
     },
@@ -420,13 +423,23 @@
       "description": "Unaffected register variable",
       "line": 11,
       "match": "unaff_EDI",
+      "severity": "moderate",
       "text": "uint unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 15,
+      "match": "auStackY_1804",
+      "severity": "moderate",
+      "text": "uint auStackY_1804 [1508];",
+      "type": "stack_alignment_array"
+    },
+    {
       "description": "Unaffected register variable",
       "line": 37,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "unaff_ESI,unaff_EDI);",
       "type": "unaffected_reg"
     },
@@ -434,6 +447,7 @@
       "description": "Unaffected register variable",
       "line": 37,
       "match": "unaff_EDI",
+      "severity": "moderate",
       "text": "unaff_ESI,unaff_EDI);",
       "type": "unaffected_reg"
     },
@@ -441,6 +455,7 @@
       "description": "Unaffected register variable",
       "line": 47,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": ",unaff_ESI,unaff_EDI);",
       "type": "unaffected_reg"
     },
@@ -448,6 +463,7 @@
       "description": "Unaffected register variable",
       "line": 47,
       "match": "unaff_EDI",
+      "severity": "moderate",
       "text": ",unaff_ESI,unaff_EDI);",
       "type": "unaffected_reg"
     },
@@ -455,6 +471,7 @@
       "description": "Unaffected register variable",
       "line": 50,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "unaff_ESI,unaff_EDI);",
       "type": "unaffected_reg"
     },
@@ -462,6 +479,7 @@
       "description": "Unaffected register variable",
       "line": 50,
       "match": "unaff_EDI",
+      "severity": "moderate",
       "text": "unaff_ESI,unaff_EDI);",
       "type": "unaffected_reg"
     },
@@ -469,6 +487,7 @@
       "description": "Complex pointer cast",
       "line": 67,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar6 = (uint *)((int)pCVar1 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -476,6 +495,7 @@
       "description": "Complex pointer cast",
       "line": 70,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar5 = (uint *)((int)&local_28 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);",
       "type": "pointer_cast"
     },
@@ -483,6 +503,7 @@
       "description": "Complex pointer cast",
       "line": 71,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*puVar6 = *(uint *)((int)&local_28 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"
     }

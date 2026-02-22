@@ -17,6 +17,7 @@
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 13,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 52,
     "suspect_count": 15,
     "suspect_types": [
@@ -207,6 +208,7 @@
       "description": "Unaffected register variable",
       "line": 9,
       "match": "unaff_EBX",
+      "severity": "moderate",
       "text": "int unaff_EBX;",
       "type": "unaffected_reg"
     },
@@ -214,6 +216,7 @@
       "description": "Unaffected register variable",
       "line": 10,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "int unaff_ESI;",
       "type": "unaffected_reg"
     },
@@ -221,6 +224,7 @@
       "description": "Unaffected register variable",
       "line": 12,
       "match": "unaff_EDI",
+      "severity": "moderate",
       "text": "int unaff_EDI;",
       "type": "unaffected_reg"
     },
@@ -228,6 +232,7 @@
       "description": "Unaffected register variable",
       "line": 14,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "uVar3 = *(uint *)(unaff_ESI + 8);",
       "type": "unaffected_reg"
     },
@@ -235,6 +240,7 @@
       "description": "Unaffected register variable",
       "line": 15,
       "match": "unaff_EDI",
+      "severity": "moderate",
       "text": "uVar4 = *(uint *)(unaff_EDI + 8);",
       "type": "unaffected_reg"
     },
@@ -242,6 +248,7 @@
       "description": "Unaffected register variable",
       "line": 17,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "iVar5 = unaff_ESI;",
       "type": "unaffected_reg"
     },
@@ -249,6 +256,7 @@
       "description": "Unaffected register variable",
       "line": 21,
       "match": "unaff_EDI",
+      "severity": "moderate",
       "text": "iVar5 = unaff_EDI;",
       "type": "unaffected_reg"
     },
@@ -256,6 +264,7 @@
       "description": "Unaffected register variable",
       "line": 22,
       "match": "unaff_EDI",
+      "severity": "moderate",
       "text": "unaff_EDI = unaff_ESI;",
       "type": "unaffected_reg"
     },
@@ -263,6 +272,7 @@
       "description": "Unaffected register variable",
       "line": 22,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "unaff_EDI = unaff_ESI;",
       "type": "unaffected_reg"
     },
@@ -270,6 +280,7 @@
       "description": "Unaffected register variable",
       "line": 27,
       "match": "unaff_EBX",
+      "severity": "moderate",
       "text": "g_PerspectiveScanlineColorPtr = (void *)((int)g_ScreenBufferArray[unaff_EBX] + uVar1 * 4);",
       "type": "unaffected_reg"
     },
@@ -277,6 +288,7 @@
       "description": "Complex pointer cast",
       "line": 27,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "g_PerspectiveScanlineColorPtr = (void *)((int)g_ScreenBufferArray[unaff_EBX] + uVar1 * 4);",
       "type": "pointer_cast"
     },
@@ -284,6 +296,7 @@
       "description": "Unaffected register variable",
       "line": 32,
       "match": "unaff_EDI",
+      "severity": "moderate",
       "text": "((longlong)(int)(*(int *)(unaff_EDI + 0x18) - uVar3) *",
       "type": "unaffected_reg"
     },
@@ -291,6 +304,7 @@
       "description": "Unaffected register variable",
       "line": 37,
       "match": "unaff_EDI",
+      "severity": "moderate",
       "text": "((longlong)(int)(*(int *)(unaff_EDI + 0x20) - uVar4) *",
       "type": "unaffected_reg"
     },
@@ -298,6 +312,7 @@
       "description": "Complex pointer cast",
       "line": 43,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)g_PerspectiveScanlineColorPtr + uVar1) =",
       "type": "pointer_cast"
     },

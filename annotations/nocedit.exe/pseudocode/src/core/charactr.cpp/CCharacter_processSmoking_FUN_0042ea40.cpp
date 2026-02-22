@@ -39,7 +39,7 @@ void __cdecl core_charactr_cpp_CCharacter_processSmoking_FUN_0042ea40(CCharacter
         ;
         pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
                            (&this_ptr->model);
-        iVar4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(pCVar3,"Bip01 head");
+        iVar4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(pCVar3,"Bip01 head",0);
         if (iVar4 != -1) {
           local_64.x = 0.0;
           local_64.z = 0.5;
@@ -59,7 +59,7 @@ void __cdecl core_charactr_cpp_CCharacter_processSmoking_FUN_0042ea40(CCharacter
         this_ptr->smoke_check_timer = this_ptr->smoke_check_timer + 1.5f;
         pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
                            (&this_ptr->model);
-        iVar4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(pCVar3,"Bip01 head");
+        iVar4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(pCVar3,"Bip01 head",0);
         if (iVar4 != -1) {
           local_40.x = 0.0;
           local_40.y = 0.2;

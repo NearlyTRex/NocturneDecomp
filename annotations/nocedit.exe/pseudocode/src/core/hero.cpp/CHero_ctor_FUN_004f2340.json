@@ -10,6 +10,7 @@
     "cross_reference_count": 9,
     "function_call_count": 5,
     "global_count": 1,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 36,
     "suspect_count": 4,
     "suspect_types": [
@@ -253,6 +254,7 @@
       "description": "Complex pointer cast",
       "line": 11,
       "match": "(CPathMap *)((int)",
+      "severity": "mild",
       "text": "pCVar2 = core_path_cpp_CPathMap_ctor_FUN_00546450((CPathMap *)((int)&pCVar1[1].base.orient + 4));",
       "type": "pointer_cast"
     },
@@ -260,6 +262,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 24,
       "match": "2.8026e-45",
+      "severity": "mild",
       "text": "pCVar3[-0x48].item_angles[0x15] = 2.8026e-45;",
       "type": "suspect_float"
     },
@@ -267,6 +270,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 25,
       "match": "pCVar3[-1].",
+      "severity": "mild",
       "text": "pCVar3[-1].cached_ammo_count = 0;",
       "type": "negative_offset"
     },

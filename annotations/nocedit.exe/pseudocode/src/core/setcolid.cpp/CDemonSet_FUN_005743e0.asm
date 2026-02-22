@@ -11,7 +11,7 @@
 ;   core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60 at 00523eb8
 ;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e559
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 005399c3
-;   core_set.cpp_CDemonSet_FUN_0056b810 at 0056b8a7
+;   core_set.cpp_CDemonSet_processActors_FUN_0056b810 at 0056b8a7
 ;
 ; *****************************************************************************
 

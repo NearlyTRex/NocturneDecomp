@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 9,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 70,
     "suspect_count": 2,
     "suspect_types": [
@@ -224,6 +225,7 @@
       "description": "Complex pointer cast",
       "line": 53,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (*(int *)((int)puVar2 + iVar16 + (iVar14 << bVar4) * 4) < iVar5) {",
       "type": "pointer_cast"
     },
@@ -231,6 +233,7 @@
       "description": "Complex pointer cast",
       "line": 54,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "piVar1 = (int *)((int)g_DitherPatternTable + g_DitherPatternOffset);",
       "type": "pointer_cast"
     }

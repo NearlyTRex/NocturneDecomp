@@ -8,8 +8,8 @@
 ; int              Stack[0x8]:4   alpha_mask
 ;
 ; XREF[2]:
+;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_00570af0 at 00570b4a
 ;   core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005709e0 at 00570aca
-;   core_set.cpp_FUN_00570af0 at 00570b4a
 ;
 ; *****************************************************************************
 

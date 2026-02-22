@@ -76,7 +76,7 @@ int __cdecl core_setedit_cpp_CDemonSet_FUN_0057ae50(CDemonSet *this_ptr)
     pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
   if (0x1df < g_WindowHeight) {
-    core_set_cpp_CDemonSet_FUN_0056b7e0(this_ptr,0,0,0xf0);
+    core_set_cpp_CDemonSet_reinitCamera_FUN_0056b7e0(this_ptr,0,0,0xf0);
   }
 LAB_0057af67:
   if (0x1df < g_WindowHeight) {
@@ -100,7 +100,7 @@ LAB_0057af67:
               (&g_CDemonLightInstance,*(float *)(in_stack_00000008 + 0x124));
     g_CDemonLightInstance.base.max_distance = 255.0;
     g_CDemonLightInstance.light_enabled_flag = 1;
-    core_set_cpp_CDemonSet_FUN_0056c1a0(this_ptr);
+    core_set_cpp_CDemonSet_renderScene_FUN_0056c1a0(this_ptr,0);
     iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_C);
     if (iVar3 != 0) {
       unaff_ESI = unaff_ESI + 1;

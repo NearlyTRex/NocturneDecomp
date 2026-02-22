@@ -6,16 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 347,
-    "complexity_score": 201,
+    "complexity_score": 203,
     "cross_reference_count": 4,
     "function_call_count": 17,
     "global_count": 86,
-    "pseudocode_lines": 156,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 158,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 503
+    "total_lines": 505
   },
   "cross_references": [
     {
@@ -25,21 +26,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0056be80",
-      "from_addr": "0056c072",
-      "name": "core_set.cpp_CDemonSet_FUN_0056be80",
+      "addr": "0056c990",
+      "from_addr": "0056cb86",
+      "name": "core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0056c1a0",
       "from_addr": "0056c511",
-      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0",
+      "name": "core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0056c990",
-      "from_addr": "0056cb86",
-      "name": "core_set.cpp_CDemonSet_FUN_0056c990",
+      "addr": "0056be80",
+      "from_addr": "0056c072",
+      "name": "core_set.cpp_CDemonSet_renderStaticLights_FUN_0056be80",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -135,7 +136,7 @@
     {
       "addr": "0056d380",
       "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_0056d380"
+      "name": "core_set.cpp_CDemonSet_setLightingParameters_FUN_0056d380"
     },
     {
       "addr": "0048cae0",
@@ -667,7 +668,7 @@
       {
         "call_addr": "0056cb86",
         "call_type": "direct",
-        "caller": "core_set.cpp_CDemonSet_FUN_0056c990",
+        "caller": "core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990",
         "estimated_params": 1,
         "instructions_analyzed": 4,
         "reg_params": [],
@@ -676,7 +677,7 @@
       {
         "call_addr": "0056c511",
         "call_type": "direct",
-        "caller": "core_set.cpp_CDemonSet_FUN_0056c1a0",
+        "caller": "core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0",
         "estimated_params": 1,
         "instructions_analyzed": 5,
         "reg_params": [],
@@ -685,7 +686,7 @@
       {
         "call_addr": "0056c072",
         "call_type": "direct",
-        "caller": "core_set.cpp_CDemonSet_FUN_0056be80",
+        "caller": "core_set.cpp_CDemonSet_renderStaticLights_FUN_0056be80",
         "estimated_params": 1,
         "instructions_analyzed": 4,
         "reg_params": [],
@@ -703,7 +704,7 @@
       {
         "call_addr": "0056c536",
         "call_type": "direct",
-        "caller": "core_set.cpp_CDemonSet_FUN_0056c1a0",
+        "caller": "core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0",
         "estimated_params": 1,
         "instructions_analyzed": 4,
         "reg_params": [],
@@ -712,7 +713,7 @@
       {
         "call_addr": "0056c11b",
         "call_type": "direct",
-        "caller": "core_set.cpp_CDemonSet_FUN_0056be80",
+        "caller": "core_set.cpp_CDemonSet_renderStaticLights_FUN_0056be80",
         "estimated_params": 1,
         "instructions_analyzed": 4,
         "reg_params": [],
@@ -798,6 +799,7 @@
       "description": "Complex pointer cast",
       "line": 28,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (*(int *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar1 + -0x1c) == 0) {",
       "type": "pointer_cast"
     },
@@ -805,20 +807,23 @@
       "description": "Complex pointer cast",
       "line": 30,
       "match": "(CStake *)((int)",
+      "severity": "mild",
       "text": "((CStake *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar1 + -0x1c));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 64,
+      "line": 66,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (*(int *)((int)&g_BulletHolePool[0].actor_ptr + iVar1) != 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 66,
+      "line": 68,
       "match": "(CBulletHole *)((int)",
+      "severity": "mild",
       "text": "((CBulletHole *)((int)&g_BulletHolePool[0].position.x + iVar1));",
       "type": "pointer_cast"
     }

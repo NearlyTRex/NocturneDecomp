@@ -5,6 +5,7 @@
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 2,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 16,
     "suspect_count": 5,
     "suspect_types": [
@@ -126,6 +127,7 @@
       "description": "Unresolved stack parameter",
       "line": 8,
       "match": "in_stack_fffffff8",
+      "severity": "moderate",
       "text": "DWORD in_stack_fffffff8;",
       "type": "stack_param"
     },
@@ -133,6 +135,7 @@
       "description": "Direct stack address reference",
       "line": 16,
       "match": "&stack0xfffffff8",
+      "severity": "moderate",
       "text": "(LPDWORD)&stack0xfffffff8,(LPOVERLAPPED)0x0);",
       "type": "stack_ref"
     },
@@ -140,6 +143,7 @@
       "description": "Subroutine marked as non-returning",
       "line": 17,
       "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
       "text": "/* WARNING: Subroutine does not return */",
       "type": "warning_noreturn"
     },
@@ -147,6 +151,7 @@
       "description": "Unresolved stack parameter",
       "line": 18,
       "match": "in_stack_fffffff8",
+      "severity": "moderate",
       "text": "ExitProcess(in_stack_fffffff8);",
       "type": "stack_param"
     },

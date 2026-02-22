@@ -88,9 +88,9 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_0056aa10(CDemonSet *this_ptr)
   this_ptr->previous_best_camera_index = -1;
   iVar6 = 0;
   g_ActiveLightCount = 0;
-  DAT_03277d80 = 0;
+  g_OmniLightCount = 0;
   g_CoronaGlobeCount = 0;
-  DAT_0327785c = 0;
+  g_QueuedCoronaGlobeCount = 0;
   this_ptr->previous_best_camera_timer = 0.0;
   core_setdir_cpp_CDemonSet_FUN_00576710(this_ptr);
   pCVar5 = this_ptr;

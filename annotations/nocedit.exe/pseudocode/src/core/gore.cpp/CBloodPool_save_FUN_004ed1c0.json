@@ -61,14 +61,16 @@
   },
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 51,
+    "complexity_score": 86,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 16,
-    "suspect_count": 3,
+    "suspect_count": 6,
     "suspect_types": [
-      "decompiler_intrinsic"
+      "decompiler_intrinsic",
+      "sub84_truncation"
     ],
     "total_lines": 67
   },
@@ -188,23 +190,50 @@
   },
   "suspects": [
     {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 11,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "_fprintf(file_handle,\"%f,%f,%f\\n\",SUB84(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),",
+      "type": "sub84_truncation"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 11,
       "match": "SUB84",
+      "severity": "mild",
       "text": "_fprintf(file_handle,\"%f,%f,%f\\n\",SUB84(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 12,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "SUB84(dVar1,0),(int)((ulonglong)dVar1 >> 0x20),(double)(this_ptr->position).z);",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 12,
       "match": "SUB84",
+      "severity": "mild",
       "text": "SUB84(dVar1,0),(int)((ulonglong)dVar1 >> 0x20),(double)(this_ptr->position).z);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 15,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "SUB84((double)this_ptr->age,0),(int)((ulonglong)(double)this_ptr->age >> 0x20),",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 15,
       "match": "SUB84",
+      "severity": "mild",
       "text": "SUB84((double)this_ptr->age,0),(int)((ulonglong)(double)this_ptr->age >> 0x20),",
       "type": "decompiler_intrinsic"
     }

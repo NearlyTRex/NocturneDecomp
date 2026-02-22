@@ -8,6 +8,7 @@
 #include "types/classes/CDemonMission.h"
 #include "types/classes/CKeyFramedModel.h"
 #include "types/classes/CVector3f.h"
+#include "types/classes/CVector3i.h"
 #include "types/structs/SBat.h"
 #include "types/structs/SMRGLPrimitiveQuadIndex.h"
 #include "types/structs/SMRGLTextureBasic.h"
@@ -43,6 +44,9 @@ extern CVector3f g_MirrorOutputVertices[32];
 
 // CVector3f[400]
 extern CVector3f g_SamplePointArray[400];
+
+// CVector3i[2000]
+extern CVector3i g_MorphVertexBuffer[2000];
 
 // SBat[30]
 extern SBat g_MoonBats[30];
@@ -112,9 +116,4 @@ extern int g_MobsterTauntCounters[5];
 
 // uchar
 extern uchar g_TempFacesInitGuard;
-
-// undefined4
-extern undefined4 DAT_02f3dbb4;
-extern undefined4 DAT_02f3dbb8;
-extern undefined4 DAT_02f3dbbc;
 

@@ -32,7 +32,7 @@ void __cdecl core_elephant_cpp_CElephantGun_process_FUN_004a7070(CElephantGun *t
     g_CDemonLightInstance.base.base.projection_scale = 112.0;
     core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0(&g_CDemonLightInstance,1.0);
     g_CDemonLightInstance.antialiasing_enabled = 0;
-    core_set_cpp_CDemonSet_FUN_0056d090(g_CDemonSetPtr);
+    core_set_cpp_CDemonSet_addDynamicLight_FUN_0056d090(g_CDemonSetPtr,&g_CDemonLightInstance);
   }
   this_ptr->muzzle_flash_active = 0;
   core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base,in_stack_0000000c);

@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 22,
     "suspect_count": 4,
     "suspect_types": [
@@ -147,6 +148,7 @@
       "description": "Unresolved stack parameter",
       "line": 8,
       "match": "in_stack_00000020",
+      "severity": "moderate",
       "text": "int in_stack_00000020;",
       "type": "stack_param"
     },
@@ -154,6 +156,7 @@
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_00000020",
+      "severity": "moderate",
       "text": "dest_buffer_00 = (void *)((int)src_buffer + in_stack_00000020 * src_stride + src_y);",
       "type": "stack_param"
     },
@@ -161,6 +164,7 @@
       "description": "Complex pointer cast",
       "line": 12,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "dest_buffer_00 = (void *)((int)src_buffer + in_stack_00000020 * src_stride + src_y);",
       "type": "pointer_cast"
     },
@@ -168,6 +172,7 @@
       "description": "Complex pointer cast",
       "line": 19,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "dest_buffer_00 = (void *)((int)dest_buffer_00 + src_stride);",
       "type": "pointer_cast"
     }

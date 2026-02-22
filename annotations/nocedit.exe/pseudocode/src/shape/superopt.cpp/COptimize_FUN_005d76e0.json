@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 27,
     "suspect_count": 9,
     "suspect_types": [
@@ -105,6 +106,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 8,
       "match": "extraout_EAX",
+      "severity": "moderate",
       "text": "int extraout_EAX;",
       "type": "extra_output"
     },
@@ -112,6 +114,7 @@
       "description": "Unresolved stack parameter",
       "line": 9,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
@@ -119,6 +122,7 @@
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "if (in_stack_00000008 == 0) {",
       "type": "stack_param"
     },
@@ -126,6 +130,7 @@
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "in_stack_00000008 = 0;",
       "type": "stack_param"
     },
@@ -133,6 +138,7 @@
       "description": "Unresolved stack parameter",
       "line": 18,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "in_stack_00000008 = extraout_EAX;",
       "type": "stack_param"
     },
@@ -140,6 +146,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 18,
       "match": "extraout_EAX",
+      "severity": "moderate",
       "text": "in_stack_00000008 = extraout_EAX;",
       "type": "extra_output"
     },
@@ -147,6 +154,7 @@
       "description": "Unresolved stack parameter",
       "line": 20,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "if (in_stack_00000008 == 0) {",
       "type": "stack_param"
     },
@@ -154,6 +162,7 @@
       "description": "Unresolved stack parameter",
       "line": 27,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "*(int *)((int)this_ptr->unk6 + iVar1 * 4) = in_stack_00000008;",
       "type": "stack_param"
     },
@@ -161,6 +170,7 @@
       "description": "Complex pointer cast",
       "line": 27,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)this_ptr->unk6 + iVar1 * 4) = in_stack_00000008;",
       "type": "pointer_cast"
     }

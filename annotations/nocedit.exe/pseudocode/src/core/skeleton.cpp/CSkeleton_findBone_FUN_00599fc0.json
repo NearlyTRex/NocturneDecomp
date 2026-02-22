@@ -6,17 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 63,
-    "complexity_score": 67,
+    "complexity_score": 26,
     "cross_reference_count": 39,
     "function_call_count": 2,
     "global_count": 4,
-    "pseudocode_lines": 27,
-    "suspect_count": 3,
-    "suspect_types": [
-      "param_count_too_few",
-      "stack_param"
-    ],
-    "total_lines": 90
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 26,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 89
   },
   "cross_references": [
     {
@@ -184,7 +182,7 @@
     {
       "addr": "0056c990",
       "from_addr": "0056c9c8",
-      "name": "core_set.cpp_CDemonSet_FUN_0056c990",
+      "name": "core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -264,7 +262,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0",
-    "signature": "int __cdecl core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton *this_ptr,char *bone_name)"
+    "signature": "int __cdecl core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton *this_ptr,char *bone_name,int assert_if_not_found)"
   },
   "function_calls": [
     {
@@ -399,7 +397,7 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 2,
+    "declared_params": 3,
     "estimated_params": 3
   },
   "pcode_summary": {
@@ -430,10 +428,10 @@
     "pcode_op_count": 212
   },
   "stack_frame": {
-    "frame_size": 12,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 8,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -449,34 +447,15 @@
         "offset": 8,
         "size": 4,
         "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "assert_if_not_found",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_0000000c",
-      "text": "if (in_stack_0000000c == 0) {",
-      "type": "stack_param"
-    },
-    {
-      "call_site_count": 50,
-      "declared_params": 2,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:2 vs estimated:3",
-      "param_delta": 1,
-      "text": "Function declares 2 params but call sites push 3 (1 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

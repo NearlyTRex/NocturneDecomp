@@ -2,7 +2,7 @@
 
 // Forward declarations
 struct CVector3i;
-struct SInputFace;
+struct SMRGLPrimitiveTriangle;
 
 // Dependencies
 #include "system/basetypes.h"
@@ -24,7 +24,7 @@ typedef struct CBodyPart {
     struct CVector3i* vertices; // 0x178
     struct CVector3i* normals; // 0x17c
     int tri_count; // 0x180
-    struct SInputFace* faces; // 0x184
+    struct SMRGLPrimitiveTriangle* faces; // 0x184
     int* face_texture_indices; // 0x188
     int texture_count; // 0x18c
     SMRGLTextureBasic textures[10]; // 0x190

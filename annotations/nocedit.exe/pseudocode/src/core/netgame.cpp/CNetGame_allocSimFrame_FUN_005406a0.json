@@ -17,6 +17,7 @@
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 43,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 401,
     "suspect_count": 17,
     "suspect_types": [
@@ -696,6 +697,7 @@
       "description": "Unreachable code block removed",
       "line": 2,
       "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x0054104d) */",
       "type": "warning_unreachable"
     },
@@ -703,6 +705,7 @@
       "description": "Complex pointer cast",
       "line": 113,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)this_ptr + (uint)bVar12 * -8 + iVar5 * 0x78 + 0x40) =",
       "type": "pointer_cast"
     },
@@ -710,6 +713,7 @@
       "description": "Undefined global data reference",
       "line": 125,
       "match": "DAT_02f7c8bc",
+      "severity": "mild",
       "text": "DAT_02f7c8bc = 1;",
       "type": "undefined_data"
     },
@@ -717,6 +721,7 @@
       "description": "Complex pointer cast",
       "line": 137,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)this_ptr + (uint)bVar12 * -8 + iVar5 * 0x78 + 0x40) =",
       "type": "pointer_cast"
     },
@@ -724,6 +729,7 @@
       "description": "Undefined global data reference",
       "line": 139,
       "match": "DAT_02f7c8c4",
+      "severity": "mild",
       "text": "DAT_02f7c8c4 = 0xffffffff;",
       "type": "undefined_data"
     },
@@ -731,6 +737,7 @@
       "description": "Undefined global data reference",
       "line": 146,
       "match": "DAT_02f7c8bc",
+      "severity": "mild",
       "text": "DAT_02f7c8bc = *(uint *)(packet_data + 5);",
       "type": "undefined_data"
     },
@@ -738,6 +745,7 @@
       "description": "Undefined global data reference",
       "line": 212,
       "match": "DAT_02f98ad0",
+      "severity": "mild",
       "text": "if (((this_ptr->connection_type != 0) && (-1 < (int)uVar2)) && (0 < DAT_02f98ad0)) {",
       "type": "undefined_data"
     },
@@ -745,6 +753,7 @@
       "description": "Undefined global data reference",
       "line": 214,
       "match": "DAT_02f98ad0",
+      "severity": "mild",
       "text": "iVar4 = DAT_02f98ad0 * 0x114;",
       "type": "undefined_data"
     },
@@ -752,6 +761,7 @@
       "description": "Complex pointer cast",
       "line": 216,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "while (*(int *)((int)&DAT_02f98ad8 + iVar5) == *(int *)(packet_data + 5)) {",
       "type": "pointer_cast"
     },
@@ -759,6 +769,7 @@
       "description": "Undefined global data reference",
       "line": 216,
       "match": "DAT_02f98ad8",
+      "severity": "mild",
       "text": "while (*(int *)((int)&DAT_02f98ad8 + iVar5) == *(int *)(packet_data + 5)) {",
       "type": "undefined_data"
     },
@@ -766,6 +777,7 @@
       "description": "Undefined global data reference",
       "line": 217,
       "match": "DAT_02f98adc",
+      "severity": "mild",
       "text": "(&DAT_02f98adc)[iVar5 + uVar2] = 1;",
       "type": "undefined_data"
     },
@@ -773,6 +785,7 @@
       "description": "Undefined global data reference",
       "line": 294,
       "match": "DAT_02f7c8c4",
+      "severity": "mild",
       "text": "if (DAT_02f7c8c4 < *(int *)(packet_data + 5)) {",
       "type": "undefined_data"
     },
@@ -780,6 +793,7 @@
       "description": "Undefined global data reference",
       "line": 299,
       "match": "DAT_02f7c8c4",
+      "severity": "mild",
       "text": "DAT_02f7c8c4 = *(int *)(packet_data + 5);",
       "type": "undefined_data"
     },
@@ -787,6 +801,7 @@
       "description": "Undefined global data reference",
       "line": 303,
       "match": "DAT_02f7c8c4",
+      "severity": "mild",
       "text": "local_5f = DAT_02f7c8c4;",
       "type": "undefined_data"
     },
@@ -794,6 +809,7 @@
       "description": "Complex pointer cast",
       "line": 342,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (local_2c == *(int *)((int)&g_SimFrameHistory + iVar5)) {",
       "type": "pointer_cast"
     },
@@ -801,6 +817,7 @@
       "description": "Complex pointer cast",
       "line": 344,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "piVar3 = (int *)((int)&g_SimFrameHistory + iVar5);",
       "type": "pointer_cast"
     },
@@ -808,6 +825,7 @@
       "description": "Complex pointer cast",
       "line": 399,
       "match": "(SPlayerControl *)((int)",
+      "severity": "mild",
       "text": "pSVar11 = (SPlayerControl *)((int)pSVar11 + (uint)bVar12 * -8 + 4);",
       "type": "pointer_cast"
     }

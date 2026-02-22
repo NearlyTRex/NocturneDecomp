@@ -626,7 +626,7 @@ LAB_0057a07e:
               (&g_CDemonRaytraceInstance,this_ptr->geometry_filename);
   }
   if (local_64 != 0) {
-    core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(this_ptr);
+    core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(this_ptr,-1);
   }
   if ((local_78 != 0) || (local_6c != 0)) {
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790

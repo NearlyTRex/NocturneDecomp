@@ -107,7 +107,7 @@ typedef struct CDemonSet {
     struct CDemonActor* sorted_render_actors[2000]; // 0x15f6e8
     int has_sky; // 0x161628
     char sky_texture_name[32]; // 0x16162c
-    int sky_type; // 0x16164c
+    int sky_brightness; // 0x16164c
     struct CMirror* active_mirror; // 0x161650
     int mirror_camera_dirty; // 0x161654
     int mirror_lighting_cached; // 0x161658

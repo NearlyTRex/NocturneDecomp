@@ -30,9 +30,9 @@
 ; Called Functions:
 ;   core_game.cpp_CGame_setGameRes_FUN_004dade0
 ;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0
-;   core_set.cpp_CDemonSet_FUN_0056c1a0
-;   core_set.cpp_CDemonSet_FUN_0056d2d0
+;   core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0
 ;   core_set.cpp_CDemonSet_initScene_FUN_0056aa10
+;   core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_remove_FUN_005ff9d0
@@ -134,8 +134,8 @@ section .text
     ADD ESP,0x8                         ; 0058067a
     PUSH 0x0                            ; 0058067d
     PUSH ESI                            ; 0058067f
-    CALL core_set.cpp_CDemonSet_FUN_0056c1a0 ; 00580680
-        ;   XREF to: 0056c1a0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056c1a0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0 ; 00580680
+        ;   XREF to: 0056c1a0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0(CDemonSet * this_ptr, int skip_prerender)
     ADD ESP,0x8                         ; 00580685
     MOV EDI,dword ptr [ESI]             ; 00580688
     PUSH EDI                            ; 0058068a
@@ -180,8 +180,8 @@ section .text
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
         ;   Label: LAB_005806ec
     PUSH ESI                            ; 005806f1
-    CALL core_set.cpp_CDemonSet_FUN_0056d2d0 ; 005806f2
-        ;   XREF to: 0056d2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d2d0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0 ; 005806f2
+        ;   XREF to: 0056d2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 005806f7
     MOV EDX,dword ptr [0x0067b654]      ; 005806fa | g_CGameInstance | g_CGamePtr
     PUSH EDX                            ; 00580700 | g_CGameInstance

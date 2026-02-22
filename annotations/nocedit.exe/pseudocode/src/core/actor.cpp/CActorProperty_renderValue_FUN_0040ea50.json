@@ -71,6 +71,7 @@
     "cross_reference_count": 6,
     "function_call_count": 5,
     "global_count": 44,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 273,
     "suspect_count": 13,
     "suspect_types": [
@@ -514,6 +515,7 @@
       "description": "Complex pointer cast",
       "line": 76,
       "match": "(char *)((int)",
+      "severity": "mild",
       "text": "cVar1 = *(char *)((int)&pCVar4->state_count + 1);",
       "type": "pointer_cast"
     },
@@ -521,6 +523,7 @@
       "description": "Complex pointer cast",
       "line": 77,
       "match": "(CMotionList *)((int)",
+      "severity": "mild",
       "text": "pCVar4 = (CMotionList *)((int)&pCVar4->state_count + 2);",
       "type": "pointer_cast"
     },
@@ -528,6 +531,7 @@
       "description": "Unnamed function parameter",
       "line": 164,
       "match": "param1",
+      "severity": "mild",
       "text": "if ((this_ptr->param1).v_int < ((this_ptr->data).v_kfm_ptr)->part_visibility_flags[0]) {",
       "type": "unnamed_param"
     },
@@ -535,6 +539,7 @@
       "description": "Unnamed function parameter",
       "line": 166,
       "match": "param1",
+      "severity": "mild",
       "text": "(this_ptr->param1).v_int * 10 + 1;",
       "type": "unnamed_param"
     },
@@ -542,6 +547,7 @@
       "description": "Complex pointer cast",
       "line": 173,
       "match": "(char *)((int)",
+      "severity": "mild",
       "text": "cVar1 = *(char *)((int)piVar7 + 1);",
       "type": "pointer_cast"
     },
@@ -549,6 +555,7 @@
       "description": "Complex pointer cast",
       "line": 174,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "piVar7 = (int *)((int)piVar7 + 2);",
       "type": "pointer_cast"
     },
@@ -556,6 +563,7 @@
       "description": "Unnamed function parameter",
       "line": 196,
       "match": "param1",
+      "severity": "mild",
       "text": "if (0 < (this_ptr->param1).v_int) {",
       "type": "unnamed_param"
     },
@@ -563,6 +571,7 @@
       "description": "Unnamed function parameter",
       "line": 197,
       "match": "param2",
+      "severity": "mild",
       "text": "puVar8 = (this_ptr->param2).v_ptr;",
       "type": "unnamed_param"
     },
@@ -570,6 +579,7 @@
       "description": "Unnamed function parameter",
       "line": 205,
       "match": "param1",
+      "severity": "mild",
       "text": "} while (iVar11 < (this_ptr->param1).v_int);",
       "type": "unnamed_param"
     },
@@ -577,6 +587,7 @@
       "description": "Unnamed function parameter",
       "line": 221,
       "match": "param1",
+      "severity": "mild",
       "text": "iVar11 = (this_ptr->param1).v_int;",
       "type": "unnamed_param"
     },
@@ -584,6 +595,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 241,
       "match": "code *",
+      "severity": "moderate",
       "text": "(*(code *)this_ptr->data)();",
       "type": "unresolved_funcptr"
     },
@@ -591,6 +603,7 @@
       "description": "Complex pointer cast",
       "line": 258,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "if ((*(this_ptr->data).v_uint_ptr & *(uint *)((int)&0x00000001 + iVar11)) != 0) {",
       "type": "pointer_cast"
     },

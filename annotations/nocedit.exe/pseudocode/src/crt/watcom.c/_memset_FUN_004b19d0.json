@@ -5,6 +5,7 @@
     "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 3,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 58,
     "suspect_count": 16,
     "suspect_types": [
@@ -199,6 +200,7 @@
       "description": "Complex pointer cast",
       "line": 18,
       "match": "(longlong *)((int)",
+      "severity": "mild",
       "text": "plVar4 = (longlong *)((int)dest + uVar6);",
       "type": "pointer_cast"
     },
@@ -206,6 +208,7 @@
       "description": "Complex pointer cast",
       "line": 26,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)plVar4 + -1) = uVar5;",
       "type": "pointer_cast"
     },
@@ -213,6 +216,7 @@
       "description": "Complex pointer cast",
       "line": 29,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)plVar4 + -3) = uVar5;",
       "type": "pointer_cast"
     },
@@ -220,6 +224,7 @@
       "description": "Complex pointer cast",
       "line": 31,
       "match": "(short *)((int)",
+      "severity": "mild",
       "text": "*(short *)((int)plVar4 + -2) = (short)uVar2;",
       "type": "pointer_cast"
     },
@@ -227,6 +232,7 @@
       "description": "Complex pointer cast",
       "line": 34,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)plVar4 + -5) = uVar5;",
       "type": "pointer_cast"
     },
@@ -234,6 +240,7 @@
       "description": "Complex pointer cast",
       "line": 35,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)plVar4 + -4) = uVar2;",
       "type": "pointer_cast"
     },
@@ -241,6 +248,7 @@
       "description": "Complex pointer cast",
       "line": 40,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)plVar4 + -7) = uVar5;",
       "type": "pointer_cast"
     },
@@ -248,6 +256,7 @@
       "description": "Complex pointer cast",
       "line": 42,
       "match": "(short *)((int)",
+      "severity": "mild",
       "text": "*(short *)((int)plVar4 + -6) = (short)uVar2;",
       "type": "pointer_cast"
     },
@@ -255,6 +264,7 @@
       "description": "Complex pointer cast",
       "line": 44,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)plVar4 + -4) = uVar2;",
       "type": "pointer_cast"
     },
@@ -262,6 +272,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 50,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*plVar4 = (longlong)ROUND((float10)lVar1);",
       "type": "decompiler_intrinsic"
     },
@@ -269,6 +280,7 @@
       "description": "Jump table recovery failed",
       "line": 57,
       "match": "WARNING: Could not recover jumptable",
+      "severity": "mild",
       "text": "/* WARNING: Could not recover jumptable at 0x004b1a19. Too many branches */",
       "type": "warning_jumptable"
     },
@@ -276,6 +288,7 @@
       "description": "Indirect jump treated as call",
       "line": 58,
       "match": "WARNING: Treating indirect jump as call",
+      "severity": "mild",
       "text": "/* WARNING: Treating indirect jump as call */",
       "type": "warning_indirect_jump"
     },
@@ -283,6 +296,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 59,
       "match": "code *",
+      "severity": "moderate",
       "text": "(**(code **)(&DAT_00679d50 + uVar3 * 4))();",
       "type": "unresolved_funcptr"
     },
@@ -290,6 +304,7 @@
       "description": "Undefined global data reference",
       "line": 59,
       "match": "DAT_00679d50",
+      "severity": "mild",
       "text": "(**(code **)(&DAT_00679d50 + uVar3 * 4))();",
       "type": "undefined_data"
     },

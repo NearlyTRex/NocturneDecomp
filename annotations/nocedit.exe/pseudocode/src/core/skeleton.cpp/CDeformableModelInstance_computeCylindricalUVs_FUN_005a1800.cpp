@@ -2,14 +2,14 @@
 // Address: 005a1800
 // Address Range: [[005a1800, 005a194d]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800(CDeformableModelInstance *this_ptr,int param_2,int param_3)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800(CDeformableModelInstance *this_ptr,int u_offset,int v_offset)
 
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
-void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800(CDeformableModelInstance *this_ptr,int param_2,int param_3)
+void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800(CDeformableModelInstance *this_ptr,int u_offset,int v_offset)
 
 {
   int iVar1;
@@ -59,17 +59,17 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FU
       piVar7 = (int *)((int)&this_ptr->skinned_vertices_buffer->x + iVar10);
       if ((*piVar7 == 0) && (piVar7[2] == 0)) {
         pSVar4 = g_CDemonRendererPtr2->vertex_buffer_ptr;
-        iVar6 = param_2;
+        iVar6 = u_offset;
       }
       else {
         fVar11 = (float10)fpatan((float10)*piVar7,(float10)piVar7[2]);
-        iVar6 = param_2 + (int)ROUND(ROUND(fVar11 * (float10)2670176.8577967598));
+        iVar6 = u_offset + (int)ROUND(ROUND(fVar11 * (float10)2670176.8577967598));
         pSVar4 = g_CDemonRendererPtr2->vertex_buffer_ptr;
       }
       *(int *)((int)&pSVar4->u + iVar5) = iVar6;
       iVar6 = iVar5 + 0x30;
       *(int *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->v + iVar5) =
-           param_3 + (int)(((longlong)(piVar7[1] - iVar9) * 0x1000000) / (longlong)iVar8);
+           v_offset + (int)(((longlong)(piVar7[1] - iVar9) * 0x1000000) / (longlong)iVar8);
       iVar10 = iVar10 + 0xc;
       iVar5 = iVar6;
     } while (iVar6 < iVar1 * 0x30);

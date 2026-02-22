@@ -13,15 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 113,
+    "complexity_score": 128,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 4,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 23,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
-      "stack_param"
+      "stack_param",
+      "sub84_truncation"
     ],
     "total_lines": 85
   },
@@ -138,6 +140,7 @@
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
@@ -145,6 +148,7 @@
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
@@ -152,6 +156,7 @@
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
@@ -159,6 +164,7 @@
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "pbVar6 = (byte *)(in_stack_0000000c * 4 + *(int *)(in_stack_00000004 + 0x2004));",
       "type": "stack_param"
     },
@@ -166,6 +172,7 @@
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "pbVar6 = (byte *)(in_stack_0000000c * 4 + *(int *)(in_stack_00000004 + 0x2004));",
       "type": "stack_param"
     },
@@ -173,6 +180,7 @@
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "iVar5 = in_stack_00000008 * 0x40 + in_stack_00000004;",
       "type": "stack_param"
     },
@@ -180,13 +188,23 @@
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "iVar5 = in_stack_00000008 * 0x40 + in_stack_00000004;",
       "type": "stack_param"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 22,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "local_24 = SUB84(dVar1 * dVar1 * 0.69999999999999996 +",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 22,
       "match": "SUB84",
+      "severity": "mild",
       "text": "local_24 = SUB84(dVar1 * dVar1 * 0.69999999999999996 +",
       "type": "decompiler_intrinsic"
     }

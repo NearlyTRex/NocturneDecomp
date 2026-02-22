@@ -125,6 +125,7 @@
     "cross_reference_count": 1,
     "function_call_count": 42,
     "global_count": 75,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 429,
     "suspect_count": 92,
     "suspect_types": [
@@ -960,6 +961,7 @@
       "description": "Unaffected register variable",
       "line": 16,
       "match": "unaff_EBX",
+      "severity": "moderate",
       "text": "int unaff_EBX;",
       "type": "unaffected_reg"
     },
@@ -967,6 +969,7 @@
       "description": "Unaffected register variable",
       "line": 19,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "void *unaff_ESI;",
       "type": "unaffected_reg"
     },
@@ -974,6 +977,7 @@
       "description": "Unaffected register variable",
       "line": 25,
       "match": "unaff_EDI",
+      "severity": "moderate",
       "text": "CKeyFramedModel *unaff_EDI;",
       "type": "unaffected_reg"
     },
@@ -981,6 +985,7 @@
       "description": "Unresolved stack parameter",
       "line": 30,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
@@ -988,6 +993,7 @@
       "description": "Complex pointer cast",
       "line": 103,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)PTR_DAT_00681ab8 + 8) = 0;",
       "type": "pointer_cast"
     },
@@ -995,6 +1001,7 @@
       "description": "Complex pointer cast",
       "line": 104,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pvVar3 + 4) = *(uint *)((int)pvVar3 + 8);",
       "type": "pointer_cast"
     },
@@ -1002,6 +1009,7 @@
       "description": "Complex pointer cast",
       "line": 104,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pvVar3 + 4) = *(uint *)((int)pvVar3 + 8);",
       "type": "pointer_cast"
     },
@@ -1009,6 +1017,7 @@
       "description": "Complex pointer cast",
       "line": 105,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)pvVar3 = *(uint *)((int)pvVar3 + 4);",
       "type": "pointer_cast"
     },
@@ -1016,6 +1025,7 @@
       "description": "Complex pointer cast",
       "line": 106,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pvVar3 + 0x14) = 0;",
       "type": "pointer_cast"
     },
@@ -1023,6 +1033,7 @@
       "description": "Complex pointer cast",
       "line": 107,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pvVar3 + 0x10) = *(uint *)((int)pvVar3 + 0x14);",
       "type": "pointer_cast"
     },
@@ -1030,6 +1041,7 @@
       "description": "Complex pointer cast",
       "line": 107,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pvVar3 + 0x10) = *(uint *)((int)pvVar3 + 0x14);",
       "type": "pointer_cast"
     },
@@ -1037,6 +1049,7 @@
       "description": "Complex pointer cast",
       "line": 108,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pvVar3 + 0xc) = *(uint *)((int)pvVar3 + 0x10);",
       "type": "pointer_cast"
     },
@@ -1044,6 +1057,7 @@
       "description": "Complex pointer cast",
       "line": 108,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pvVar3 + 0xc) = *(uint *)((int)pvVar3 + 0x10);",
       "type": "pointer_cast"
     },
@@ -1051,6 +1065,7 @@
       "description": "Complex pointer cast",
       "line": 109,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pvVar3 + 0x18) = 0x41e00000;",
       "type": "pointer_cast"
     },
@@ -1058,6 +1073,7 @@
       "description": "Unresolved stack parameter",
       "line": 111,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "pCVar7 = &this_ptr->cameras[in_stack_00000008].position;",
       "type": "stack_param"
     },
@@ -1065,6 +1081,7 @@
       "description": "Unresolved stack parameter",
       "line": 114,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "*(float *)((int)pvVar3 + 4) = this_ptr->cameras[in_stack_00000008].position.y;",
       "type": "stack_param"
     },
@@ -1072,6 +1089,7 @@
       "description": "Complex pointer cast",
       "line": 114,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)pvVar3 + 4) = this_ptr->cameras[in_stack_00000008].position.y;",
       "type": "pointer_cast"
     },
@@ -1079,6 +1097,7 @@
       "description": "Unresolved stack parameter",
       "line": 115,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "*(float *)((int)pvVar3 + 8) = this_ptr->cameras[in_stack_00000008].position.z;",
       "type": "stack_param"
     },
@@ -1086,6 +1105,7 @@
       "description": "Complex pointer cast",
       "line": 115,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)pvVar3 + 8) = this_ptr->cameras[in_stack_00000008].position.z;",
       "type": "pointer_cast"
     },
@@ -1093,6 +1113,7 @@
       "description": "Unresolved stack parameter",
       "line": 118,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "pCVar7 = &this_ptr->cameras[in_stack_00000008].orientation;",
       "type": "stack_param"
     },
@@ -1100,6 +1121,7 @@
       "description": "Complex pointer cast",
       "line": 119,
       "match": "(CVector3f *)((int)",
+      "severity": "mild",
       "text": "if ((CVector3f *)((int)PTR_DAT_00681ab8 + 0xc) != pCVar7) {",
       "type": "pointer_cast"
     },
@@ -1107,6 +1129,7 @@
       "description": "Complex pointer cast",
       "line": 120,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)PTR_DAT_00681ab8 + 0xc) = pCVar7->x;",
       "type": "pointer_cast"
     },
@@ -1114,6 +1137,7 @@
       "description": "Unresolved stack parameter",
       "line": 121,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "*(float *)((int)pvVar3 + 0x10) = this_ptr->cameras[in_stack_00000008].orientation.y;",
       "type": "stack_param"
     },
@@ -1121,6 +1145,7 @@
       "description": "Complex pointer cast",
       "line": 121,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)pvVar3 + 0x10) = this_ptr->cameras[in_stack_00000008].orientation.y;",
       "type": "pointer_cast"
     },
@@ -1128,6 +1153,7 @@
       "description": "Unresolved stack parameter",
       "line": 122,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "*(float *)((int)pvVar3 + 0x14) = this_ptr->cameras[in_stack_00000008].orientation.z;",
       "type": "stack_param"
     },
@@ -1135,6 +1161,7 @@
       "description": "Complex pointer cast",
       "line": 122,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)pvVar3 + 0x14) = this_ptr->cameras[in_stack_00000008].orientation.z;",
       "type": "pointer_cast"
     },
@@ -1142,6 +1169,7 @@
       "description": "Unresolved stack parameter",
       "line": 124,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "*(float *)((int)PTR_DAT_00681ab8 + 0x18) = this_ptr->cameras[in_stack_00000008].projection_scale;",
       "type": "stack_param"
     },
@@ -1149,6 +1177,7 @@
       "description": "Complex pointer cast",
       "line": 124,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)PTR_DAT_00681ab8 + 0x18) = this_ptr->cameras[in_stack_00000008].projection_scale;",
       "type": "pointer_cast"
     },
@@ -1156,6 +1185,7 @@
       "description": "Unresolved stack parameter",
       "line": 127,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "(acStack_f0,\"%s.raw\",this_ptr->cameras + in_stack_00000008);",
       "type": "stack_param"
     },
@@ -1163,6 +1193,7 @@
       "description": "Unresolved stack parameter",
       "line": 138,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "(acStack_f0,\"%s.act\",this_ptr->cameras + in_stack_00000008);",
       "type": "stack_param"
     },
@@ -1170,6 +1201,7 @@
       "description": "Complex pointer cast",
       "line": 158,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)auStack_d80 + iVar16) = uVar12 | uVar8;",
       "type": "pointer_cast"
     },
@@ -1177,6 +1209,7 @@
       "description": "Direct stack address reference",
       "line": 160,
       "match": "&stack0xffffee80",
+      "severity": "moderate",
       "text": "*(int *)(&stack0xffffee80 + iVar16) = (int)uVar6 / 3 + (int)fStack_50 + iStack_4c;",
       "type": "stack_ref"
     },
@@ -1184,6 +1217,7 @@
       "description": "Unresolved stack parameter",
       "line": 178,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "piStack_30 = &this_ptr->cameras[in_stack_00000008 + -1].enabled;",
       "type": "stack_param"
     },
@@ -1191,6 +1225,7 @@
       "description": "Complex pointer cast",
       "line": 188,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "uStack_90 = *(uint *)((int)PTR_DAT_00681ab8 + 4);",
       "type": "pointer_cast"
     },
@@ -1198,6 +1233,7 @@
       "description": "Complex pointer cast",
       "line": 189,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "fStack_8c = *(float *)((int)PTR_DAT_00681ab8 + 8);",
       "type": "pointer_cast"
     },
@@ -1205,6 +1241,7 @@
       "description": "Complex pointer cast",
       "line": 190,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "fStack_88 = *(float *)((int)PTR_DAT_00681ab8 + 0xc);",
       "type": "pointer_cast"
     },
@@ -1212,6 +1249,7 @@
       "description": "Complex pointer cast",
       "line": 191,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "fStack_84 = *(float *)((int)PTR_DAT_00681ab8 + 0x10);",
       "type": "pointer_cast"
     },
@@ -1219,6 +1257,7 @@
       "description": "Complex pointer cast",
       "line": 192,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "fStack_80 = *(float *)((int)PTR_DAT_00681ab8 + 0x14);",
       "type": "pointer_cast"
     },
@@ -1226,6 +1265,7 @@
       "description": "Complex pointer cast",
       "line": 193,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "fStack_7c = *(float *)((int)PTR_DAT_00681ab8 + 0x18);",
       "type": "pointer_cast"
     },
@@ -1233,6 +1273,7 @@
       "description": "Complex pointer cast",
       "line": 197,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "g_CDemonCameraInstance.base.position.z = *(int *)((int)PTR_DAT_00681ab8 + 8);",
       "type": "pointer_cast"
     },
@@ -1240,6 +1281,7 @@
       "description": "Complex pointer cast",
       "line": 198,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "g_CDemonCameraInstance.base.position.y = *(int *)((int)PTR_DAT_00681ab8 + 4);",
       "type": "pointer_cast"
     },
@@ -1247,6 +1289,7 @@
       "description": "Complex pointer cast",
       "line": 202,
       "match": "(CVector3f *)((int)",
+      "severity": "mild",
       "text": "(CVector3f *)((int)PTR_DAT_00681ab8 + 0xc));",
       "type": "pointer_cast"
     },
@@ -1254,6 +1297,7 @@
       "description": "Complex pointer cast",
       "line": 203,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "g_CDemonCameraInstance.base.projection_scale = *(float *)((int)PTR_DAT_00681ab8 + 0x18);",
       "type": "pointer_cast"
     },
@@ -1261,6 +1305,7 @@
       "description": "Unresolved stack parameter",
       "line": 218,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "pCVar7 = &this_ptr->cameras[in_stack_00000008].position;",
       "type": "stack_param"
     },
@@ -1268,6 +1313,7 @@
       "description": "Unresolved stack parameter",
       "line": 221,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "this_ptr->cameras[in_stack_00000008].position.y = *(float *)((int)pvVar3 + 4);",
       "type": "stack_param"
     },
@@ -1275,6 +1321,7 @@
       "description": "Complex pointer cast",
       "line": 221,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "this_ptr->cameras[in_stack_00000008].position.y = *(float *)((int)pvVar3 + 4);",
       "type": "pointer_cast"
     },
@@ -1282,6 +1329,7 @@
       "description": "Unresolved stack parameter",
       "line": 222,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "this_ptr->cameras[in_stack_00000008].position.z = *(float *)((int)pvVar3 + 8);",
       "type": "stack_param"
     },
@@ -1289,6 +1337,7 @@
       "description": "Complex pointer cast",
       "line": 222,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "this_ptr->cameras[in_stack_00000008].position.z = *(float *)((int)pvVar3 + 8);",
       "type": "pointer_cast"
     },
@@ -1296,6 +1345,7 @@
       "description": "Unresolved stack parameter",
       "line": 225,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "pCVar7 = &this_ptr->cameras[in_stack_00000008].orientation;",
       "type": "stack_param"
     },
@@ -1303,6 +1353,7 @@
       "description": "Complex pointer cast",
       "line": 226,
       "match": "(CVector3f *)((int)",
+      "severity": "mild",
       "text": "if (pCVar7 != (CVector3f *)((int)PTR_DAT_00681ab8 + 0xc)) {",
       "type": "pointer_cast"
     },
@@ -1310,6 +1361,7 @@
       "description": "Complex pointer cast",
       "line": 227,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "pCVar7->x = *(float *)((int)PTR_DAT_00681ab8 + 0xc);",
       "type": "pointer_cast"
     },
@@ -1317,6 +1369,7 @@
       "description": "Unresolved stack parameter",
       "line": 228,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "this_ptr->cameras[in_stack_00000008].orientation.y = *(float *)((int)pvVar3 + 0x10);",
       "type": "stack_param"
     },
@@ -1324,6 +1377,7 @@
       "description": "Complex pointer cast",
       "line": 228,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "this_ptr->cameras[in_stack_00000008].orientation.y = *(float *)((int)pvVar3 + 0x10);",
       "type": "pointer_cast"
     },
@@ -1331,6 +1385,7 @@
       "description": "Unresolved stack parameter",
       "line": 229,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "this_ptr->cameras[in_stack_00000008].orientation.z = *(float *)((int)pvVar3 + 0x14);",
       "type": "stack_param"
     },
@@ -1338,6 +1393,7 @@
       "description": "Complex pointer cast",
       "line": 229,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "this_ptr->cameras[in_stack_00000008].orientation.z = *(float *)((int)pvVar3 + 0x14);",
       "type": "pointer_cast"
     },
@@ -1345,6 +1401,7 @@
       "description": "Complex pointer cast",
       "line": 231,
       "match": "(CVector3f *)((int)",
+      "severity": "mild",
       "text": "pCVar7 = (CVector3f *)((int)PTR_DAT_00681ab8 + 0xc);",
       "type": "pointer_cast"
     },
@@ -1352,6 +1409,7 @@
       "description": "Unresolved stack parameter",
       "line": 232,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "this_ptr->cameras[in_stack_00000008].projection_scale =",
       "type": "stack_param"
     },
@@ -1359,6 +1417,7 @@
       "description": "Complex pointer cast",
       "line": 233,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)PTR_DAT_00681ab8 + 0x18);",
       "type": "pointer_cast"
     },
@@ -1366,6 +1425,7 @@
       "description": "Unresolved stack parameter",
       "line": 235,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "(&this_ptr->cameras[in_stack_00000008].rotation_matrix,pCVar7);",
       "type": "stack_param"
     },
@@ -1373,6 +1433,7 @@
       "description": "Unresolved stack parameter",
       "line": 239,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "fStack_58 = this_ptr->cameras[in_stack_00000008].position.x + -500.0f;",
       "type": "stack_param"
     },
@@ -1380,6 +1441,7 @@
       "description": "Unresolved stack parameter",
       "line": 240,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "local_54 = this_ptr->cameras[in_stack_00000008].position.y + -500.0f;",
       "type": "stack_param"
     },
@@ -1387,6 +1449,7 @@
       "description": "Unresolved stack parameter",
       "line": 241,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "pCVar7 = &this_ptr->cameras[in_stack_00000008].box_min;",
       "type": "stack_param"
     },
@@ -1394,6 +1457,7 @@
       "description": "Unresolved stack parameter",
       "line": 242,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "fStack_50 = -500.0f + this_ptr->cameras[in_stack_00000008].position.z;",
       "type": "stack_param"
     },
@@ -1401,6 +1465,7 @@
       "description": "Unresolved stack parameter",
       "line": 245,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "this_ptr->cameras[in_stack_00000008].box_min.y = local_54;",
       "type": "stack_param"
     },
@@ -1408,6 +1473,7 @@
       "description": "Unresolved stack parameter",
       "line": 246,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "this_ptr->cameras[in_stack_00000008].box_min.z = fStack_50;",
       "type": "stack_param"
     },
@@ -1415,6 +1481,7 @@
       "description": "Unresolved stack parameter",
       "line": 248,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "fStack_64 = this_ptr->cameras[in_stack_00000008].position.x + 500.0;",
       "type": "stack_param"
     },
@@ -1422,6 +1489,7 @@
       "description": "Unresolved stack parameter",
       "line": 249,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "local_60 = this_ptr->cameras[in_stack_00000008].position.y + 500.0;",
       "type": "stack_param"
     },
@@ -1429,6 +1497,7 @@
       "description": "Unresolved stack parameter",
       "line": 250,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "pCVar7 = &this_ptr->cameras[in_stack_00000008].box_max;",
       "type": "stack_param"
     },
@@ -1436,6 +1505,7 @@
       "description": "Unresolved stack parameter",
       "line": 251,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "local_5c = this_ptr->cameras[in_stack_00000008].position.z + 500.0;",
       "type": "stack_param"
     },
@@ -1443,6 +1513,7 @@
       "description": "Unresolved stack parameter",
       "line": 254,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "this_ptr->cameras[in_stack_00000008].box_max.y = local_60;",
       "type": "stack_param"
     },
@@ -1450,6 +1521,7 @@
       "description": "Unresolved stack parameter",
       "line": 255,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "this_ptr->cameras[in_stack_00000008].box_max.z = local_5c;",
       "type": "stack_param"
     },
@@ -1457,6 +1529,7 @@
       "description": "Unaffected register variable",
       "line": 266,
       "match": "unaff_EDI",
+      "severity": "moderate",
       "text": "if (unaff_EDI != (CKeyFramedModel *)0x0) {",
       "type": "unaffected_reg"
     },
@@ -1464,6 +1537,7 @@
       "description": "Unaffected register variable",
       "line": 267,
       "match": "unaff_EDI",
+      "severity": "moderate",
       "text": "ptr = core_dmodel_cpp_CKeyFramedModel_dtor_FUN_00476d90(unaff_EDI,0);",
       "type": "unaffected_reg"
     },
@@ -1471,6 +1545,7 @@
       "description": "Unaffected register variable",
       "line": 273,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "if (unaff_ESI != (void *)0x0) {",
       "type": "unaffected_reg"
     },
@@ -1478,6 +1553,7 @@
       "description": "Unaffected register variable",
       "line": 274,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "shape_memdbg_cpp_debugFree_FUN_0050f460(unaff_ESI,\"..\\\\core\\\\setedit.cpp\",0xd8c);",
       "type": "unaffected_reg"
     },
@@ -1485,6 +1561,7 @@
       "description": "Complex pointer cast",
       "line": 280,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "(fStack_88 != *(float *)((int)PTR_DAT_00681ab8 + 4))) ||",
       "type": "pointer_cast"
     },
@@ -1492,6 +1569,7 @@
       "description": "Complex pointer cast",
       "line": 281,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "((fStack_84 != *(float *)((int)PTR_DAT_00681ab8 + 8) ||",
       "type": "pointer_cast"
     },
@@ -1499,6 +1577,7 @@
       "description": "Complex pointer cast",
       "line": 282,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "((fStack_80 != *(float *)((int)PTR_DAT_00681ab8 + 0xc) ||",
       "type": "pointer_cast"
     },
@@ -1506,6 +1585,7 @@
       "description": "Complex pointer cast",
       "line": 283,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "(fStack_7c != *(float *)((int)PTR_DAT_00681ab8 + 0x10))))))) ||",
       "type": "pointer_cast"
     },
@@ -1513,6 +1593,7 @@
       "description": "Complex pointer cast",
       "line": 284,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "(fStack_78 != *(float *)((int)PTR_DAT_00681ab8 + 0x14))) ||",
       "type": "pointer_cast"
     },
@@ -1520,6 +1601,7 @@
       "description": "Complex pointer cast",
       "line": 285,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "(fStack_74 != *(float *)((int)PTR_DAT_00681ab8 + 0x18))) {",
       "type": "pointer_cast"
     },
@@ -1527,6 +1609,7 @@
       "description": "Unaffected register variable",
       "line": 286,
       "match": "unaff_EBX",
+      "severity": "moderate",
       "text": "unaff_EBX = 0;",
       "type": "unaffected_reg"
     },
@@ -1534,6 +1617,7 @@
       "description": "Unaffected register variable",
       "line": 289,
       "match": "unaff_EBX",
+      "severity": "moderate",
       "text": "if (unaff_EBX == 0) {",
       "type": "unaffected_reg"
     },
@@ -1541,6 +1625,7 @@
       "description": "Unaffected register variable",
       "line": 291,
       "match": "unaff_EBX",
+      "severity": "moderate",
       "text": "unaff_EBX = 1;",
       "type": "unaffected_reg"
     },
@@ -1548,6 +1633,7 @@
       "description": "Complex pointer cast",
       "line": 299,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "piVar1 = (int *)((int)auStack_96c + iVar9);",
       "type": "pointer_cast"
     },
@@ -1555,6 +1641,7 @@
       "description": "Complex pointer cast",
       "line": 311,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (*(int *)((int)pvStack_1c + 0x144) == 0) {",
       "type": "pointer_cast"
     },
@@ -1562,6 +1649,7 @@
       "description": "Complex pointer cast",
       "line": 314,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "(double)*(float *)PTR_DAT_00681ab8,(double)*(float *)((int)PTR_DAT_00681ab8 + 4),",
       "type": "pointer_cast"
     },
@@ -1569,6 +1657,7 @@
       "description": "Complex pointer cast",
       "line": 315,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "(double)*(float *)((int)PTR_DAT_00681ab8 + 8),",
       "type": "pointer_cast"
     },
@@ -1576,6 +1665,7 @@
       "description": "Complex pointer cast",
       "line": 317,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "(double)*(float *)((int)PTR_DAT_00681ab8 + 0xc) * 0.31830988619288902);",
       "type": "pointer_cast"
     },
@@ -1583,6 +1673,7 @@
       "description": "Direct stack address reference",
       "line": 345,
       "match": "&stack0xffffee8c",
+      "severity": "moderate",
       "text": "uStack_38 = *(uint *)(&stack0xffffee8c + (uint)*pbVar14 * 4);",
       "type": "stack_ref"
     },
@@ -1590,6 +1681,7 @@
       "description": "Unaffected register variable",
       "line": 405,
       "match": "unaff_EDI",
+      "severity": "moderate",
       "text": "if (*(int *)unaff_EDI->texture_list[0].textures[1].texture_name == 0) {",
       "type": "unaffected_reg"
     },
@@ -1597,6 +1689,7 @@
       "description": "Complex pointer cast",
       "line": 407,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "(g_CEditorToolsPtr,\"Enter FOV\",(float *)((int)PTR_DAT_00681ab8 + 0x18),",
       "type": "pointer_cast"
     }

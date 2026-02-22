@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_skeleton_cpp_CDeformableModel_lightVertices_FUN_0059ab50(CDeformableModel *this_ptr,int lod_index,int render_flags)
+; void __cdecl core_skeleton_cpp_CDeformableModel_lightVertices_FUN_0059ab50(CDeformableModel *this_ptr,int lod_index,CVector3i *skinned_vertices)
 ;
 ; Parameters:
 ; CDeformableModel * Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   lod_index
-; int              Stack[0xc]:4   render_flags
+; CVector3i *      Stack[0xc]:4   skinned_vertices
 ;
 ; XREF[1]:
 ;   core_skeleton.cpp_CDeformableModelInstance_skinAndLightVertices_FUN_005a02a0 at 005a02ca
@@ -44,7 +44,7 @@ section .text
     MOV EBP,dword ptr [0x006810c8]      ; 0059ab76 | g_CDemonSetPtr
     PUSH EBP                            ; 0059ab7c | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0 ; 0059ab7d
-        ;   XREF to: 0056eac0 (UNCONDITIONAL_CALL)  ; float core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet * this_ptr, int vertex_count, int tri_count, SInputFace * tri_data_ptr, ...)
+        ;   XREF to: 0056eac0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet * this_ptr, int vertex_count, int tri_count, void * face_data, ...)
     ADD ESP,0x1c                        ; 0059ab82
     POP EBP                             ; 0059ab85
     POP EDI                             ; 0059ab86

@@ -69,7 +69,8 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_
     (pCVar2->light_direction).z =
          (uint)((longlong)iVar3 * 37000) >> 0x10 |
          (int)((ulonglong)((longlong)iVar3 * 37000) >> 0x20) << 0x10;
-    core_set_cpp_CDemonSet_FUN_00570ca0(pCVar2);
+    core_set_cpp_CDemonSet_setScaleFactors_FUN_00570ca0
+              (pCVar2,(this_ptr->color).r << 8,(this_ptr->color).g << 8,(this_ptr->color).b << 8);
     local_30 = 7.25;
     local_2c = 7.25;
     local_28 = 0.0;
@@ -139,7 +140,7 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_
               (g_CDemonRendererPtr2,&local_88,0x327);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
     core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
-              (&g_LoadingMoonModel,(CKeyFramedModelInstance *)0x0,0,0x205);
+              (&g_LoadingMoonModel,0,(CKeyFramedModelInstance *)0x0,0x205);
     if (this_ptr->use_custom_viewport != 0) {
       engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480();
     }

@@ -1,16 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 247,
-    "complexity_score": 282,
+    "complexity_score": 327,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 127,
-    "suspect_count": 13,
+    "suspect_count": 17,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "special_crt_function",
+      "stack_alignment_array",
       "stack_param",
       "stack_ref"
     ],
@@ -196,9 +198,18 @@
   },
   "suspects": [
     {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 16,
+      "match": "uStackY_44",
+      "severity": "moderate",
+      "text": "uint uStackY_44;",
+      "type": "stack_alignment_array"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_ffffffc0",
+      "severity": "moderate",
       "text": "byte *in_stack_ffffffc0;",
       "type": "stack_param"
     },
@@ -206,6 +217,7 @@
       "description": "Unresolved stack parameter",
       "line": 18,
       "match": "in_stack_ffffffc4",
+      "severity": "moderate",
       "text": "ulonglong *in_stack_ffffffc4;",
       "type": "stack_param"
     },
@@ -213,6 +225,7 @@
       "description": "Direct stack address reference",
       "line": 56,
       "match": "&stack0xffffffc0",
+      "severity": "moderate",
       "text": "(&stack0xffffffc0)[iVar9] = bVar1;",
       "type": "stack_ref"
     },
@@ -220,13 +233,23 @@
       "description": "Complex pointer cast",
       "line": 93,
       "match": "(char *)((int)",
+      "severity": "mild",
       "text": "for (; (0 < iVar9 && (*(char *)((int)&uStackY_44 + iVar9 + 3) == '0')); iVar9 = iVar9 + -1) {",
       "type": "pointer_cast"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 93,
+      "match": "uStackY_44",
+      "severity": "moderate",
+      "text": "for (; (0 < iVar9 && (*(char *)((int)&uStackY_44 + iVar9 + 3) == '0')); iVar9 = iVar9 + -1) {",
+      "type": "stack_alignment_array"
     },
     {
       "description": "Complex pointer cast",
       "line": 97,
       "match": "(ushort *)((int)",
+      "severity": "mild",
       "text": "*(ushort *)((int)result + 8) = 0;",
       "type": "pointer_cast"
     },
@@ -234,6 +257,7 @@
       "description": "Complex pointer cast",
       "line": 98,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)result + 4) = 0;",
       "type": "pointer_cast"
     },
@@ -241,13 +265,23 @@
       "description": "Direct stack address reference",
       "line": 103,
       "match": "&stack0xffffffc0",
+      "severity": "moderate",
       "text": "(&stack0xffffffc0)[iVar9] = 0;",
       "type": "stack_ref"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 104,
+      "match": "uStackY_44",
+      "severity": "moderate",
+      "text": "uStackY_44 = 0x605d00;",
+      "type": "stack_alignment_array"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 105,
       "match": "in_stack_ffffffc0",
+      "severity": "moderate",
       "text": "FUN_0060b586(in_stack_ffffffc0,in_stack_ffffffc4);",
       "type": "stack_param"
     },
@@ -255,13 +289,23 @@
       "description": "Unresolved stack parameter",
       "line": 105,
       "match": "in_stack_ffffffc4",
+      "severity": "moderate",
       "text": "FUN_0060b586(in_stack_ffffffc0,in_stack_ffffffc4);",
       "type": "stack_param"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 107,
+      "match": "uStackY_44",
+      "severity": "moderate",
+      "text": "uStackY_44 = iVar10;",
+      "type": "stack_alignment_array"
     },
     {
       "description": "Complex pointer cast",
       "line": 113,
       "match": "(ushort *)((int)",
+      "severity": "mild",
       "text": "*(ushort *)((int)result + 8) = local_24;",
       "type": "pointer_cast"
     },
@@ -269,6 +313,7 @@
       "description": "Complex pointer cast",
       "line": 114,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)result + 4) = local_28;",
       "type": "pointer_cast"
     },

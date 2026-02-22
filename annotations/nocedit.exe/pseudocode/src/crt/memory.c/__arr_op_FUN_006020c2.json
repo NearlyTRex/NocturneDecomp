@@ -5,6 +5,7 @@
     "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 0,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 11,
     "suspect_count": 3,
     "suspect_types": [
@@ -135,6 +136,7 @@
       "description": "Complex pointer cast",
       "line": 10,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "source = (void *)((int)source + element_size);",
       "type": "pointer_cast"
     },
@@ -142,6 +144,7 @@
       "description": "Complex pointer cast",
       "line": 11,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "pvVar1 = (void *)((int)pvVar1 + element_size);",
       "type": "pointer_cast"
     },

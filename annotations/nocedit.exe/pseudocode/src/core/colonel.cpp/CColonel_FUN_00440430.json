@@ -13,14 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 55,
-    "complexity_score": 100,
+    "complexity_score": 130,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
+    "max_suspect_severity": "severe",
     "pseudocode_lines": 20,
-    "suspect_count": 7,
+    "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
+      "fnstsw_flag_artifact",
+      "nan_function_artifact",
       "stack_param"
     ],
     "total_lines": 75
@@ -132,6 +135,7 @@
       "description": "Unresolved stack parameter",
       "line": 6,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "float in_stack_00000008;",
       "type": "stack_param"
     },
@@ -139,13 +143,23 @@
       "description": "Unresolved stack parameter",
       "line": 19,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "} while (0.0 < in_stack_00000008);",
       "type": "stack_param"
+    },
+    {
+      "description": "FNSTSW flag reconstruction (floating-point comparison artifact)",
+      "line": 20,
+      "match": "CONCAT22((short)(event_id >> 0x10",
+      "severity": "severe",
+      "text": "return CONCAT22((short)(event_id >> 0x10),",
+      "type": "fnstsw_flag_artifact"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 20,
       "match": "CONCAT22",
+      "severity": "mild",
       "text": "return CONCAT22((short)(event_id >> 0x10),",
       "type": "decompiler_intrinsic"
     },
@@ -153,6 +167,7 @@
       "description": "Unresolved stack parameter",
       "line": 21,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "(ushort)(0.0 < in_stack_00000008) << 8 | (ushort)NAN(in_stack_00000008) << 10 |",
       "type": "stack_param"
     },
@@ -160,13 +175,23 @@
       "description": "Unresolved stack parameter",
       "line": 21,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "(ushort)(0.0 < in_stack_00000008) << 8 | (ushort)NAN(in_stack_00000008) << 10 |",
       "type": "stack_param"
+    },
+    {
+      "description": "NAN() function call (FNSTSW comparison artifact)",
+      "line": 21,
+      "match": "NAN(",
+      "severity": "severe",
+      "text": "(ushort)(0.0 < in_stack_00000008) << 8 | (ushort)NAN(in_stack_00000008) << 10 |",
+      "type": "nan_function_artifact"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 21,
       "match": "NAN",
+      "severity": "mild",
       "text": "(ushort)(0.0 < in_stack_00000008) << 8 | (ushort)NAN(in_stack_00000008) << 10 |",
       "type": "decompiler_intrinsic"
     },
@@ -174,6 +199,7 @@
       "description": "Unresolved stack parameter",
       "line": 22,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "(ushort)(in_stack_00000008 == 0.0) << 0xe);",
       "type": "stack_param"
     }

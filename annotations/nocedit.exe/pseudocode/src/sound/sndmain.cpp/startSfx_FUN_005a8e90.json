@@ -23,6 +23,7 @@
     "cross_reference_count": 23,
     "function_call_count": 27,
     "global_count": 49,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 275,
     "suspect_count": 9,
     "suspect_types": [
@@ -764,6 +765,7 @@
       "description": "Complex pointer cast",
       "line": 59,
       "match": "(CSfxOptions *)((int)",
+      "severity": "mild",
       "text": "pCVar13 = (CSfxOptions *)((int)pCVar13 + ((uint)bVar19 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -771,6 +773,7 @@
       "description": "Complex pointer cast",
       "line": 60,
       "match": "(CSfxOptions *)((int)",
+      "severity": "mild",
       "text": "pCVar17 = (CSfxOptions *)((int)pCVar17 + ((uint)bVar19 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -778,6 +781,7 @@
       "description": "Complex pointer cast",
       "line": 81,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "iVar3 = *(int *)((int)g_SfxSlots[1].distance_to_speakers + iVar6 + -0xc);",
       "type": "pointer_cast"
     },
@@ -785,6 +789,7 @@
       "description": "Complex pointer cast",
       "line": 94,
       "match": "(CSfxOptions *)((int)",
+      "severity": "mild",
       "text": "pCVar13 = (CSfxOptions *)((int)pCVar13 + ((uint)bVar19 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -792,6 +797,7 @@
       "description": "Complex pointer cast",
       "line": 95,
       "match": "(CSfxSlot *)((int)",
+      "severity": "mild",
       "text": "pCVar4 = (CSfxSlot *)((int)pCVar4 + (uint)bVar19 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -799,6 +805,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 173,
       "match": "ROUND",
+      "severity": "mild",
       "text": "pCVar11->streaming_buffer_size = (int)ROUND(ROUND(fVar1));",
       "type": "decompiler_intrinsic"
     },
@@ -806,6 +813,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 173,
       "match": "ROUND",
+      "severity": "mild",
       "text": "pCVar11->streaming_buffer_size = (int)ROUND(ROUND(fVar1));",
       "type": "decompiler_intrinsic"
     },
@@ -813,6 +821,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 211,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_18->streaming_buffer_size = (int)ROUND(ROUND(fVar1));",
       "type": "decompiler_intrinsic"
     },
@@ -820,6 +829,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 211,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_18->streaming_buffer_size = (int)ROUND(ROUND(fVar1));",
       "type": "decompiler_intrinsic"
     }

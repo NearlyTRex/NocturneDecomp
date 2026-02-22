@@ -77,6 +77,7 @@
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 7,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 91,
     "suspect_count": 6,
     "suspect_types": [
@@ -314,6 +315,7 @@
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "CLodMesh *in_stack_00000004;",
       "type": "stack_param"
     },
@@ -321,6 +323,7 @@
       "description": "Unresolved stack parameter",
       "line": 19,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "pCVar5 = in_stack_00000004->vertex_data;",
       "type": "stack_param"
     },
@@ -328,6 +331,7 @@
       "description": "Complex pointer cast",
       "line": 21,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "local_38 = pCVar5 + *(int *)((int)&sample_point->distance_to_triangle + 4);",
       "type": "pointer_cast"
     },
@@ -335,6 +339,7 @@
       "description": "Complex pointer cast",
       "line": 28,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "(float)this_ptr->tri_count * *(float *)((int)&sample_point[3].distance_to_triangle + 4) +",
       "type": "pointer_cast"
     },
@@ -342,6 +347,7 @@
       "description": "Complex pointer cast",
       "line": 42,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "((float)this_ptr->tri_count * *(float *)((int)&sample_point[2].distance_to_triangle + 4)",
       "type": "pointer_cast"
     },
@@ -349,6 +355,7 @@
       "description": "Unresolved stack parameter",
       "line": 88,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "(in_stack_00000004,&local_80,(CLodFace *)sample_point);",
       "type": "stack_param"
     }

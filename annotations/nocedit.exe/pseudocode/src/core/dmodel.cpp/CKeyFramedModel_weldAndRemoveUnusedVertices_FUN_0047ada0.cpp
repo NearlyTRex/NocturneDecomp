@@ -77,9 +77,9 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_weldAndRemoveUnusedVertices_FUN_004
               local_1c = iVar9 * 0xc;
               piVar7 = ptr + iVar9;
               do {
-                piVar6 = (int *)(local_1c + (int)this_ptr->vertex_list);
+                piVar6 = (int *)((int)&this_ptr->vertex_list->x + local_1c);
                 if (iVar9 == *piVar7) {
-                  piVar4 = (int *)((int)this_ptr->vertex_list + local_34);
+                  piVar4 = (int *)((int)&this_ptr->vertex_list->x + local_34);
                   iVar5 = 0;
                   if (0 < this_ptr->frame_count) {
                     do {
@@ -120,7 +120,8 @@ LAB_0047b0cc:
     if (0 < this_ptr->poly_count) {
       local_40 = 0;
       do {
-        iVar8 = (int)this_ptr->poly_vert_list + local_40;
+        iVar8 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).base
+                      .type + local_40;
         iVar5 = 0;
         iVar9 = iVar8;
         if (0 < *(int *)(iVar8 + 4)) {

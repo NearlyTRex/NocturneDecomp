@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 6,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 35,
     "suspect_count": 5,
     "suspect_types": [
@@ -175,6 +176,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 24,
       "match": "ROUND",
+      "severity": "mild",
       "text": "((int)this_ptr->movie_data + (int)ROUND(ROUND((float)this_ptr->current_frame)) * 0x2000",
       "type": "decompiler_intrinsic"
     },
@@ -182,6 +184,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 24,
       "match": "ROUND",
+      "severity": "mild",
       "text": "((int)this_ptr->movie_data + (int)ROUND(ROUND((float)this_ptr->current_frame)) * 0x2000",
       "type": "decompiler_intrinsic"
     },
@@ -189,6 +192,7 @@
       "description": "Complex pointer cast",
       "line": 26,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar4 = (uint *)((int)pCVar1->data_buffer + 0x1000);",
       "type": "pointer_cast"
     },
@@ -196,6 +200,7 @@
       "description": "Complex pointer cast",
       "line": 34,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar3 = (uint *)((int)puVar3 + (uint)bVar5 * -2 + 1);",
       "type": "pointer_cast"
     },
@@ -203,6 +208,7 @@
       "description": "Complex pointer cast",
       "line": 35,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar4 = (uint *)((int)puVar4 + (uint)bVar5 * -2 + 1);",
       "type": "pointer_cast"
     }

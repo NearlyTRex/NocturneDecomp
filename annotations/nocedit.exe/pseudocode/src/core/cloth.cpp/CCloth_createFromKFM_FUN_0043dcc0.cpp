@@ -49,7 +49,7 @@ void __cdecl core_cloth_cpp_CCloth_createFromKFM_FUN_0043dcc0(CCloth *this_ptr,c
     pCVar10 = &this_ptr->vertices[0].offset_pos;
     iVar11 = 0;
     do {
-      piVar8 = (int *)((int)(this_ptr->model).vertex_list + iVar11);
+      piVar8 = (int *)((int)&((this_ptr->model).vertex_list)->x + iVar11);
       iVar9 = iVar9 + 1;
       pCVar10->x = (float)*piVar8 * 0.00390625f;
       pCVar10->y = (float)piVar8[1] * 0.00390625f;

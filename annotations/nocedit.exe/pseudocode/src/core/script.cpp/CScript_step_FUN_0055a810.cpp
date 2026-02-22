@@ -162,7 +162,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,float *t
   int local_b8;
   int local_b4;
   int local_b0;
-  byte local_ac [4];
+  int local_ac;
   int local_a8;
   float local_a4;
   int local_a0;
@@ -1000,11 +1000,11 @@ joined_r0x0055f6da:
                                                     return -1;
                                                   }
                                                   if (g_ScriptEventsEnabled == 0) {
-                                                                                                        
+                                                    iVar18 = 
                                                   core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                                                             (g_CEventListPtr,local_2d5c);
-                                                  core_set_cpp_CDemonSet_FUN_00570ea0
-                                                            (g_CDemonSetPtr);
+                                                  core_set_cpp_CDemonSet_setCameraEnabled_FUN_00570ea0
+                                                            (g_CDemonSetPtr,iVar6,iVar18);
                                                   }
                                                   else {
                                                     pcVar17 = 
@@ -1039,7 +1039,7 @@ joined_r0x0055f6da:
                                                             (pcVar17 + 0x11);
                                                   local_48 = -1;
                                                   sscanf
-                                                            (local_11c,"(%d , %[^)])%n",local_ac,
+                                                            (local_11c,"(%d , %[^)])%n",&local_ac,
                                                              local_1dbc,&local_48);
                                                   if (local_48 < 3) {
                                                     _sprintf
@@ -1051,11 +1051,11 @@ joined_r0x0055f6da:
                                                   core_script_cpp_trimString_FUN_00559360
                                                             (local_1dbc);
                                                   if (g_ScriptEventsEnabled == 0) {
-                                                                                                        
+                                                    iVar6 = 
                                                   core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                                                             (g_CEventListPtr,local_1dbc);
-                                                  core_set_cpp_CDemonSet_FUN_00570ec0
-                                                            (g_CDemonSetPtr);
+                                                  core_set_cpp_CDemonSet_setCameraEnabledByGroup_FUN_00570ec0
+                                                            (g_CDemonSetPtr,local_ac,iVar6);
                                                   }
                                                   else {
                                                     pcVar17 = 

@@ -18,7 +18,7 @@
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
-;   core_set.cpp_CDemonSet_FUN_0056b7e0
+;   core_set.cpp_CDemonSet_reinitCamera_FUN_0056b7e0
 ;
 ; *****************************************************************************
 
@@ -51,8 +51,8 @@ section .text
     PUSH 0x0                            ; 005390a0
     MOV EDI,dword ptr [0x006810c8]      ; 005390a2 | g_CDemonSetPtr
     PUSH EDI                            ; 005390a8 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_0056b7e0 ; 005390a9
-        ;   XREF to: 0056b7e0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056b7e0(CDemonSet * this_ptr, uint param_2, uint param_3, int param_4)
+    CALL core_set.cpp_CDemonSet_reinitCamera_FUN_0056b7e0 ; 005390a9
+        ;   XREF to: 0056b7e0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_reinitCamera_FUN_0056b7e0(CDemonSet * this_ptr, uint param_2, uint param_3, int screen_height)
     ADD ESP,0x10                        ; 005390ae
     POP EBX                             ; 005390b1
     POP ESI                             ; 005390b2

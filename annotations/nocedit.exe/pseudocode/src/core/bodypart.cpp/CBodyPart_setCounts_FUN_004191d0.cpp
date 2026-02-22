@@ -10,7 +10,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_setCounts_FUN_004191d0(CBodyPart *this_
 
 {
   CVector3i *pCVar1;
-  SInputFace *pSVar2;
+  SMRGLPrimitiveTriangle *pSVar2;
   int *piVar3;
   
   this_ptr->vertex_count = vertex_count;
@@ -38,7 +38,8 @@ void __cdecl core_bodypart_cpp_CBodyPart_setCounts_FUN_004191d0(CBodyPart *this_
               ("CBodyPart::setCounts - out of memory for vertices - vertexCount = %d",this_ptr->vertex_count);
   }
   if ((0 < this_ptr->tri_count) &&
-     ((this_ptr->faces == (SInputFace *)0x0 || (this_ptr->face_texture_indices == (int *)0x0)))) {
+     ((this_ptr->faces == (SMRGLPrimitiveTriangle *)0x0 ||
+      (this_ptr->face_texture_indices == (int *)0x0)))) {
     g_CurrentFilename = "..\\core\\bodypart.cpp";
     g_CurrentLineNumber = 0xb7;
     core_main_c_displayErrorAndQuit_FUN_00506f10

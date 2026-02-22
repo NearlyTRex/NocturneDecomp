@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_morph_cpp_CMorphModel_setFaceListFromPolygon_FUN_0052aac0(CMorphModel *this_ptr,int part_index,SMRGLPrimitiveQuad *poly_data,int poly_stride,SMRGLTextureLod *texture_list,int *texture_index_list,int start_face,int poly_count)
+; void __cdecl core_morph_cpp_CMorphModel_setFaceListFromPolygon_FUN_0052aac0(CMorphModel *this_ptr,int part_index,SMRGLHeaderPrimitive *poly_data,int poly_stride ,SMRGLTextureLod *texture_list,int *texture_index_list,int start_face,int poly_count)
 ;
 ; Parameters:
 ; CMorphModel *    Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   part_index
-; SMRGLPrimitiveQuad * Stack[0xc]:4   poly_data
+; SMRGLHeaderPrimitive * Stack[0xc]:4   poly_data
 ; int              Stack[0x10]:4   poly_stride
 ; SMRGLTextureLod * Stack[0x14]:4   texture_list
 ; int *            Stack[0x18]:4   texture_index_list

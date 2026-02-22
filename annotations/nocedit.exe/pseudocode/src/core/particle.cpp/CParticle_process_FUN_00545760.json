@@ -6,14 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 268,
-    "complexity_score": 173,
+    "complexity_score": 188,
     "cross_reference_count": 5,
     "function_call_count": 3,
     "global_count": 6,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 113,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
+      "stack_alignment_array",
       "stack_param"
     ],
     "total_lines": 381
@@ -354,9 +356,18 @@
   },
   "suspects": [
     {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 10,
+      "match": "afStackY_105c",
+      "severity": "moderate",
+      "text": "float afStackY_105c [998];",
+      "type": "stack_alignment_array"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_ffffff50",
+      "severity": "moderate",
       "text": "CVector3i *in_stack_ffffff50;",
       "type": "stack_param"
     },
@@ -364,6 +375,7 @@
       "description": "Unresolved stack parameter",
       "line": 50,
       "match": "in_stack_ffffff50",
+      "severity": "moderate",
       "text": "(&g_CDemonRaytraceInstance,&this_ptr->position,in_stack_ffffff50);",
       "type": "stack_param"
     },
@@ -371,6 +383,7 @@
       "description": "Complex pointer cast",
       "line": 54,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_74 + (uint)bVar5 * -8 + 4) =",
       "type": "pointer_cast"
     },
@@ -378,6 +391,7 @@
       "description": "Complex pointer cast",
       "line": 55,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_68 + (uint)bVar5 * -8 + 0x34);",
       "type": "pointer_cast"
     },
@@ -385,6 +399,7 @@
       "description": "Complex pointer cast",
       "line": 56,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)&local_74 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
       "type": "pointer_cast"
     }

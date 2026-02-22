@@ -35,6 +35,7 @@
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 14,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 77,
     "suspect_count": 8,
     "suspect_types": [
@@ -342,6 +343,7 @@
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_fffffbc4",
+      "severity": "moderate",
       "text": "int in_stack_fffffbc4;",
       "type": "stack_param"
     },
@@ -349,6 +351,7 @@
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_fffffbc8",
+      "severity": "moderate",
       "text": "int in_stack_fffffbc8;",
       "type": "stack_param"
     },
@@ -356,6 +359,7 @@
       "description": "Direct stack address reference",
       "line": 40,
       "match": "&stack0xfffffbc4",
+      "severity": "moderate",
       "text": "_sprintf(&stack0xfffffbc4,\"Invalid font file size (%s).\",filename)",
       "type": "stack_ref"
     },
@@ -363,6 +367,7 @@
       "description": "Direct stack address reference",
       "line": 44,
       "match": "&stack0xfffffbc4",
+      "severity": "moderate",
       "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xfffffbc4);",
       "type": "stack_ref"
     },
@@ -370,6 +375,7 @@
       "description": "Direct stack address reference",
       "line": 49,
       "match": "&stack0xfffffbc4",
+      "severity": "moderate",
       "text": "_sprintf(&stack0xfffffbc4,\"Unable to allocate memory for font bitmap (%s).\",filename)",
       "type": "stack_ref"
     },
@@ -377,6 +383,7 @@
       "description": "Direct stack address reference",
       "line": 53,
       "match": "&stack0xfffffbc4",
+      "severity": "moderate",
       "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xfffffbc4);",
       "type": "stack_ref"
     },
@@ -384,6 +391,7 @@
       "description": "Unresolved stack parameter",
       "line": 75,
       "match": "in_stack_fffffbc4",
+      "severity": "moderate",
       "text": "(this_ptr,this_ptr->bitmap_count,width,height,first_char,in_stack_fffffbc4,",
       "type": "stack_param"
     },
@@ -391,6 +399,7 @@
       "description": "Unresolved stack parameter",
       "line": 76,
       "match": "in_stack_fffffbc8",
+      "severity": "moderate",
       "text": "in_stack_fffffbc8);",
       "type": "stack_param"
     }

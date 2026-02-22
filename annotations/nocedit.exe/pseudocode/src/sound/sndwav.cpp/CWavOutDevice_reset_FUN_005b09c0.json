@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 6,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 27,
     "suspect_count": 2,
     "suspect_types": [
@@ -145,6 +146,7 @@
       "description": "Complex pointer cast",
       "line": 19,
       "match": "(LPWAVEHDR *)((int)",
+      "severity": "mild",
       "text": "if (*(LPWAVEHDR *)((int)g_WaveOutHeaders + iVar2) != (LPWAVEHDR)0x0) {",
       "type": "pointer_cast"
     },
@@ -152,6 +154,7 @@
       "description": "Complex pointer cast",
       "line": 21,
       "match": "(LPWAVEHDR *)((int)",
+      "severity": "mild",
       "text": "(g_WaveOutHandle,*(LPWAVEHDR *)((int)g_WaveOutHeaders + iVar2),0x20);",
       "type": "pointer_cast"
     }

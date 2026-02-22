@@ -65,6 +65,7 @@
     "cross_reference_count": 0,
     "function_call_count": 65,
     "global_count": 65,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 687,
     "suspect_count": 25,
     "suspect_types": [
@@ -1516,6 +1517,7 @@
       "description": "Unresolved stack parameter",
       "line": 29,
       "match": "in_stack_ffff5dd8",
+      "severity": "moderate",
       "text": "int in_stack_ffff5dd8;",
       "type": "stack_param"
     },
@@ -1523,6 +1525,7 @@
       "description": "Undefined global data reference",
       "line": 99,
       "match": "DAT_03670650",
+      "severity": "mild",
       "text": "DAT_03670650 = 0;",
       "type": "undefined_data"
     },
@@ -1530,6 +1533,7 @@
       "description": "Undefined global data reference",
       "line": 105,
       "match": "DAT_03670650",
+      "severity": "mild",
       "text": "_sprintf(&DAT_03670650,\"Can't open %s\",filename);",
       "type": "undefined_data"
     },
@@ -1537,6 +1541,7 @@
       "description": "Direct stack address reference",
       "line": 117,
       "match": "&stack0xffff5dd8",
+      "severity": "moderate",
       "text": "((CBoneStructure *)&stack0xffff5dd8,(_FILE *)this_ptr_00,&local_b4);",
       "type": "stack_ref"
     },
@@ -1544,6 +1549,7 @@
       "description": "Unresolved stack parameter",
       "line": 119,
       "match": "in_stack_ffff5dd8",
+      "severity": "moderate",
       "text": "(this_ptr_00,(_FILE *)0x0,in_stack_ffff5dd8);",
       "type": "stack_param"
     },
@@ -1551,6 +1557,7 @@
       "description": "Undefined global data reference",
       "line": 125,
       "match": "DAT_03670650",
+      "severity": "mild",
       "text": "(&DAT_03670650,\"Heirarchy in %s does not match that in skeleton %s\",filename,this_ptr->model_name);",
       "type": "undefined_data"
     },
@@ -1558,6 +1565,7 @@
       "description": "Undefined global data reference",
       "line": 135,
       "match": "DAT_03670650",
+      "severity": "mild",
       "text": "(&local_1260,&DAT_03670650,iVar12,0);",
       "type": "undefined_data"
     },
@@ -1565,6 +1573,7 @@
       "description": "Direct stack address reference",
       "line": 138,
       "match": "&stack0xffff5dd8",
+      "severity": "moderate",
       "text": "core_skeledit_cpp_FUN_0058afe0(&stack0xffff5dd8);",
       "type": "stack_ref"
     },
@@ -1572,6 +1581,7 @@
       "description": "Undefined global data reference",
       "line": 156,
       "match": "DAT_03670650",
+      "severity": "mild",
       "text": "_sprintf(&DAT_03670650,\"%s is corrupt!\",filename);",
       "type": "undefined_data"
     },
@@ -1579,6 +1589,7 @@
       "description": "Unresolved stack parameter",
       "line": 183,
       "match": "in_stack_ffff5dd8",
+      "severity": "moderate",
       "text": "if (0 < in_stack_ffff5dd8) {",
       "type": "stack_param"
     },
@@ -1586,6 +1597,7 @@
       "description": "Complex pointer cast",
       "line": 188,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "pfVar19 = (float *)((int)local_2520 + iVar12);",
       "type": "pointer_cast"
     },
@@ -1593,6 +1605,7 @@
       "description": "Complex pointer cast",
       "line": 193,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar14 = (CMatrix3x4f *)((int)pCVar14 + ((uint)bVar22 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -1600,6 +1613,7 @@
       "description": "Complex pointer cast",
       "line": 197,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "local_70 = &((CMatrix3x4f *)((int)local_70 + 0x60))->m[2].x;",
       "type": "pointer_cast"
     },
@@ -1607,6 +1621,7 @@
       "description": "Unresolved stack parameter",
       "line": 198,
       "match": "in_stack_ffff5dd8",
+      "severity": "moderate",
       "text": "} while (local_28 < in_stack_ffff5dd8);",
       "type": "stack_param"
     },
@@ -1614,6 +1629,7 @@
       "description": "Complex pointer cast",
       "line": 347,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)pcVar20 = *(uint *)((int)pSVar2->bone_weights + local_68 + 0xc);",
       "type": "pointer_cast"
     },
@@ -1621,6 +1637,7 @@
       "description": "Complex pointer cast",
       "line": 348,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)(pcVar20 + 4) = *(uint *)((int)pSVar2->bone_weights + local_68 + 0x10);",
       "type": "pointer_cast"
     },
@@ -1628,6 +1645,7 @@
       "description": "Complex pointer cast",
       "line": 349,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)(pcVar20 + 8) = *(uint *)((int)pSVar2->bone_weights + local_68 + 0x14);",
       "type": "pointer_cast"
     },
@@ -1635,6 +1653,7 @@
       "description": "Unresolved stack parameter",
       "line": 360,
       "match": "in_stack_ffff5dd8",
+      "severity": "moderate",
       "text": "if (((iVar6 != 1) || (local_94 < 1)) || (in_stack_ffff5dd8 < local_94)) {",
       "type": "stack_param"
     },
@@ -1642,6 +1661,7 @@
       "description": "Complex pointer cast",
       "line": 393,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar13 = (uint *)((int)(local_1f4.tri_data)->attribute_indices + local_58);",
       "type": "pointer_cast"
     },
@@ -1649,6 +1669,7 @@
       "description": "Complex pointer cast",
       "line": 397,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "uVar3 = *(uint *)((int)this_ptr->index_data_ptr[0] + local_60);",
       "type": "pointer_cast"
     },
@@ -1656,6 +1677,7 @@
       "description": "Complex pointer cast",
       "line": 435,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar13 = (uint *)((int)(local_1f4.tri_data)->attribute_indices + local_48);",
       "type": "pointer_cast"
     },
@@ -1663,6 +1685,7 @@
       "description": "Complex pointer cast",
       "line": 439,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "uVar3 = *(uint *)((int)this_ptr->index_data_ptr[0] + local_50);",
       "type": "pointer_cast"
     },
@@ -1670,6 +1693,7 @@
       "description": "Complex pointer cast",
       "line": 480,
       "match": "(STextureSet *)((int)",
+      "severity": "mild",
       "text": "pSVar17 = (STextureSet *)((int)pSVar17 + (uint)bVar22 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -1677,6 +1701,7 @@
       "description": "Complex pointer cast",
       "line": 481,
       "match": "(SMRGLTextureLod *)((int)",
+      "severity": "mild",
       "text": "pSVar21 = (SMRGLTextureLod *)((int)pSVar21 + ((uint)bVar22 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -1684,6 +1709,7 @@
       "description": "Complex pointer cast",
       "line": 564,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "iVar7 = *(int *)((int)local_d8 + iVar12);",
       "type": "pointer_cast"
     }

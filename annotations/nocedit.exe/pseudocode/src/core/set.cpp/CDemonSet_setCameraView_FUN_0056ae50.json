@@ -4,14 +4,8 @@
       {
         "category": "format_error",
         "column": 33,
-        "line": 140,
+        "line": 143,
         "message": "format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 164,
-        "message": "assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between pointers to integer types with different sign"
       }
     ],
     "success": false,
@@ -19,18 +13,18 @@
   },
   "complexity": {
     "assembly_lines": 724,
-    "complexity_score": 483,
+    "complexity_score": 403,
     "cross_reference_count": 13,
     "function_call_count": 36,
     "global_count": 47,
-    "pseudocode_lines": 298,
-    "suspect_count": 17,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 303,
+    "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
-      "undefined_data"
+      "pointer_cast"
     ],
-    "total_lines": 1022
+    "total_lines": 1027
   },
   "cross_references": [
     {
@@ -72,7 +66,7 @@
     {
       "addr": "0056b7e0",
       "from_addr": "0056b7fe",
-      "name": "core_set.cpp_CDemonSet_FUN_0056b7e0",
+      "name": "core_set.cpp_CDemonSet_reinitCamera_FUN_0056b7e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -251,24 +245,9 @@
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
-      "addr": "0056aca0",
-      "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_0056aca0"
-    },
-    {
-      "addr": "0056ade0",
-      "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_0056ade0"
-    },
-    {
-      "addr": "0056be80",
-      "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_0056be80"
-    },
-    {
       "addr": "0056fbd0",
       "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_0056fbd0"
+      "name": "core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0"
     },
     {
       "addr": "0056f940",
@@ -276,9 +255,24 @@
       "name": "core_set.cpp_CDemonSet_process_FUN_0056f940"
     },
     {
+      "addr": "0056aca0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_renderBackgroundActors_FUN_0056aca0"
+    },
+    {
       "addr": "0056a190",
       "is_variadic": false,
       "name": "core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190"
+    },
+    {
+      "addr": "0056be80",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_renderStaticLights_FUN_0056be80"
+    },
+    {
+      "addr": "0056ade0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_0056ade0"
     },
     {
       "addr": "00585870",
@@ -483,8 +477,8 @@
     },
     {
       "addr": "032770b4",
-      "name": "DAT_032770b4",
-      "type": "CRect",
+      "name": "g_ActiveLightBounds",
+      "type": "CRect[96]",
       "value": null
     },
     {
@@ -531,8 +525,8 @@
     },
     {
       "addr": "0327785c",
-      "name": "DAT_0327785c",
-      "type": "undefined4",
+      "name": "g_QueuedCoronaGlobeCount",
+      "type": "int",
       "value": null
     },
     {
@@ -543,14 +537,14 @@
     },
     {
       "addr": "03277d80",
-      "name": "DAT_03277d80",
-      "type": "undefined4",
+      "name": "g_OmniLightCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "03277d84",
-      "name": "DAT_03277d84",
-      "type": "undefined4",
+      "name": "g_OmniLights",
+      "type": "C3DSLight*[200]",
       "value": null
     },
     {
@@ -809,121 +803,74 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 54,
       "match": "(uint *)((int)",
-      "text": "puVar1 = (uint *)((int)g_DynamicLights + iVar7);",
+      "severity": "mild",
+      "text": "puVar1 = (uint *)((int)g_DynamicLights + iVar8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 63,
+      "line": 64,
       "match": "(uint *)((int)",
-      "text": "puVar1 = (uint *)((int)g_ActiveLightList + iVar7);",
+      "severity": "mild",
+      "text": "puVar1 = (uint *)((int)g_ActiveLightList + iVar8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 73,
+      "line": 74,
       "match": "(uint *)((int)",
-      "text": "puVar1 = (uint *)((int)g_ActiveLightList + iVar7);",
+      "severity": "mild",
+      "text": "puVar1 = (uint *)((int)g_ActiveLightList + iVar8);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 86,
-      "match": "DAT_03277d80",
-      "text": "DAT_03277d80 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 89,
-      "match": "DAT_0327785c",
-      "text": "DAT_0327785c = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 156,
-      "match": "DAT_03277d80",
-      "text": "iVar11 = DAT_03277d80 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 157,
-      "match": "DAT_03277d84",
-      "text": "piVar14 = &DAT_03277d84 + DAT_03277d80;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 157,
-      "match": "DAT_03277d80",
-      "text": "piVar14 = &DAT_03277d84 + DAT_03277d80;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 158,
-      "match": "DAT_03277d80",
-      "text": "DAT_03277d80 = iVar11;",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 171,
-      "match": "(int *)((int)",
-      "text": "piVar14 = (int *)((int)&pCVar6->lights[0].camera_light_bounds[0].left + local_20);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 174,
-      "match": "DAT_032770b4",
-      "text": "(&DAT_032770b4)[iVar3].left = *piVar14;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 189,
-      "match": "DAT_032770b4",
-      "text": "rect = &DAT_032770b4;",
-      "type": "undefined_data"
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "piVar15 = (int *)((int)&pCVar7->lights[0].camera_light_bounds[0].left + local_20);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 251,
+      "line": 254,
       "match": "(CMatrix3x3i *)((int)",
-      "text": "pCVar8 = (CMatrix3x3i *)((int)pCVar8 + ((uint)bVar16 * -2 + 1) * 4);",
+      "severity": "mild",
+      "text": "pCVar9 = (CMatrix3x3i *)((int)pCVar9 + ((uint)bVar17 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 259,
+      "line": 262,
       "match": "(CMatrix3x3f *)((int)",
-      "text": "pCVar13 = (CMatrix3x3f *)((int)pCVar13 + ((uint)bVar16 * -2 + 1) * 4);",
+      "severity": "mild",
+      "text": "pCVar14 = (CMatrix3x3f *)((int)pCVar14 + ((uint)bVar17 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 289,
+      "line": 294,
       "match": "ROUND",
-      "text": "*piVar14 = (int)ROUND(CStack_54.x * 256.0f);",
+      "severity": "mild",
+      "text": "*piVar15 = (int)ROUND(CStack_54.x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 290,
+      "line": 295,
       "match": "ROUND",
-      "text": "piVar14[1] = (int)ROUND(CStack_54.y * 256.0f);",
+      "severity": "mild",
+      "text": "piVar15[1] = (int)ROUND(CStack_54.y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 291,
+      "line": 296,
       "match": "ROUND",
-      "text": "piVar14[2] = (int)ROUND(CStack_54.z * 256.0f);",
+      "severity": "mild",
+      "text": "piVar15[2] = (int)ROUND(CStack_54.z * 256.0f);",
       "type": "decompiler_intrinsic"
     }
   ]

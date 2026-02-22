@@ -19,14 +19,16 @@
   },
   "complexity": {
     "assembly_lines": 539,
-    "complexity_score": 455,
+    "complexity_score": 480,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 210,
-    "suspect_count": 23,
+    "suspect_count": 25,
     "suspect_types": [
       "decompiler_intrinsic",
+      "double_reconstruction",
       "pointer_cast",
       "unknown_field"
     ],
@@ -704,6 +706,7 @@
       "description": "Complex pointer cast",
       "line": 91,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar8 = (double *)((int)pdVar8 + 4);",
       "type": "pointer_cast"
     },
@@ -711,6 +714,7 @@
       "description": "Complex pointer cast",
       "line": 92,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar9 = (double *)((int)pdVar9 + 4);",
       "type": "pointer_cast"
     },
@@ -718,6 +722,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 94,
       "match": "SQRT",
+      "severity": "mild",
       "text": "local_190 = 1.0 / SQRT(local_238 * local_238 + local_248 * local_248 + local_240 * local_240);",
       "type": "decompiler_intrinsic"
     },
@@ -725,6 +730,7 @@
       "description": "Complex pointer cast",
       "line": 105,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar8 = (double *)((int)pdVar8 + 4);",
       "type": "pointer_cast"
     },
@@ -732,6 +738,7 @@
       "description": "Complex pointer cast",
       "line": 106,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar9 = (double *)((int)pdVar9 + 4);",
       "type": "pointer_cast"
     },
@@ -739,6 +746,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 108,
       "match": "SQRT",
+      "severity": "mild",
       "text": "local_250 = 1.0 / SQRT(local_178 * local_178 + local_188 * local_188 + local_180 * local_180);",
       "type": "decompiler_intrinsic"
     },
@@ -746,6 +754,7 @@
       "description": "Unknown/mangled field access",
       "line": 118,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "uStack_2ec = local_2d8._4_4_;",
       "type": "unknown_field"
     },
@@ -753,6 +762,7 @@
       "description": "Complex pointer cast",
       "line": 133,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar8 = (double *)((int)pdVar8 + 4);",
       "type": "pointer_cast"
     },
@@ -760,6 +770,7 @@
       "description": "Complex pointer cast",
       "line": 134,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar9 = (double *)((int)pdVar9 + 4);",
       "type": "pointer_cast"
     },
@@ -767,6 +778,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 136,
       "match": "SQRT",
+      "severity": "mild",
       "text": "dVar3 = 1.0 / SQRT(local_160 * local_160 + local_170 * local_170 + local_168 * local_168);",
       "type": "decompiler_intrinsic"
     },
@@ -774,6 +786,7 @@
       "description": "Complex pointer cast",
       "line": 147,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar8 = (double *)((int)pdVar8 + 4);",
       "type": "pointer_cast"
     },
@@ -781,6 +794,7 @@
       "description": "Complex pointer cast",
       "line": 148,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar9 = (double *)((int)pdVar9 + 4);",
       "type": "pointer_cast"
     },
@@ -788,13 +802,23 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 150,
       "match": "SQRT",
+      "severity": "mild",
       "text": "local_118 = 1.0 / SQRT(local_1f0 * local_1f0 + local_200 * local_200 + local_1f8 * local_1f8);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 158,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "if (local_2e8 < (double)CONCAT44(uStack_2ec,local_2f0)) {",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 158,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "if (local_2e8 < (double)CONCAT44(uStack_2ec,local_2f0)) {",
       "type": "decompiler_intrinsic"
     },
@@ -802,6 +826,7 @@
       "description": "Unknown/mangled field access",
       "line": 160,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "uStack_2ec = local_2e8._4_4_;",
       "type": "unknown_field"
     },
@@ -809,6 +834,7 @@
       "description": "Complex pointer cast",
       "line": 175,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar8 = (double *)((int)pdVar8 + 4);",
       "type": "pointer_cast"
     },
@@ -816,6 +842,7 @@
       "description": "Complex pointer cast",
       "line": 176,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar9 = (double *)((int)pdVar9 + 4);",
       "type": "pointer_cast"
     },
@@ -823,6 +850,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 178,
       "match": "SQRT",
+      "severity": "mild",
       "text": "dVar3 = 1.0 / SQRT(local_220 * local_220 + local_230 * local_230 + local_228 * local_228);",
       "type": "decompiler_intrinsic"
     },
@@ -830,6 +858,7 @@
       "description": "Complex pointer cast",
       "line": 189,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar8 = (double *)((int)pdVar8 + 4);",
       "type": "pointer_cast"
     },
@@ -837,6 +866,7 @@
       "description": "Complex pointer cast",
       "line": 190,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar9 = (double *)((int)pdVar9 + 4);",
       "type": "pointer_cast"
     },
@@ -844,13 +874,23 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 192,
       "match": "SQRT",
+      "severity": "mild",
       "text": "dVar5 = 1.0 / SQRT(local_280 * local_280 + local_290 * local_290 + local_288 * local_288);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 200,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "if (local_2a8 < (double)CONCAT44(uStack_2ec,local_2f0)) {",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 200,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "if (local_2a8 < (double)CONCAT44(uStack_2ec,local_2f0)) {",
       "type": "decompiler_intrinsic"
     },
@@ -858,6 +898,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 208,
       "match": "SQRT",
+      "severity": "mild",
       "text": "dVar3 = 1.0 / SQRT(dVar5 * dVar5 + dVar4 * dVar4 + dVar3 * dVar3);",
       "type": "decompiler_intrinsic"
     }

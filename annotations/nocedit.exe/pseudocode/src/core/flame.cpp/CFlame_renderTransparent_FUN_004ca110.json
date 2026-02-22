@@ -19,15 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 451,
-    "complexity_score": 643,
+    "complexity_score": 658,
     "cross_reference_count": 4,
     "function_call_count": 17,
     "global_count": 39,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 283,
-    "suspect_count": 35,
+    "suspect_count": 36,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast"
+      "pointer_cast",
+      "stack_alignment_array"
     ],
     "total_lines": 734
   },
@@ -110,7 +112,7 @@
     {
       "addr": "0056d140",
       "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_0056d140"
+      "name": "core_set.cpp_CDemonSet_addQueuedCoronaGlobe_FUN_0056d140"
     },
     {
       "addr": "005fe6b0",
@@ -477,9 +479,18 @@
   },
   "suspects": [
     {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 16,
+      "match": "auStackY_1088",
+      "severity": "moderate",
+      "text": "uint auStackY_1088 [973];",
+      "type": "stack_alignment_array"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 71,
       "match": "SQRT",
+      "severity": "mild",
       "text": "1.0 < SQRT(fVar4 * fVar4 + fVar3 * fVar3 + fVar2 * fVar2) * this_ptr->globe_scalar)) {",
       "type": "decompiler_intrinsic"
     },
@@ -487,6 +498,7 @@
       "description": "Complex pointer cast",
       "line": 78,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&CStack_58 + (uint)bVar6 * -8 + 4) =",
       "type": "pointer_cast"
     },
@@ -494,6 +506,7 @@
       "description": "Complex pointer cast",
       "line": 79,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&CStack_64 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -501,6 +514,7 @@
       "description": "Complex pointer cast",
       "line": 80,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&CStack_58 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
       "type": "pointer_cast"
     },
@@ -508,6 +522,7 @@
       "description": "Complex pointer cast",
       "line": 81,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&CStack_64 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
       "type": "pointer_cast"
     },
@@ -515,6 +530,7 @@
       "description": "Complex pointer cast",
       "line": 93,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&CStack_58 + (uint)bVar6 * -8 + 4) =",
       "type": "pointer_cast"
     },
@@ -522,6 +538,7 @@
       "description": "Complex pointer cast",
       "line": 94,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&CStack_a0 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -529,6 +546,7 @@
       "description": "Complex pointer cast",
       "line": 95,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&CStack_58 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
       "type": "pointer_cast"
     },
@@ -536,6 +554,7 @@
       "description": "Complex pointer cast",
       "line": 96,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&CStack_a0 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
       "type": "pointer_cast"
     },
@@ -543,6 +562,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 108,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_dc.x = (int)ROUND(fStack_7c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -550,6 +570,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 109,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_dc.y = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
     },
@@ -557,6 +578,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 110,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_dc.z = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
     },
@@ -564,6 +586,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 114,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_d0.x = (int)ROUND(fStack_7c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -571,6 +594,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 115,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_d0.y = (int)ROUND(fStack_78 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -578,6 +602,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 116,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_d0.z = (int)ROUND(fStack_74 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -585,6 +610,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 120,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_b8.x = (int)ROUND(fStack_7c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -592,6 +618,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 121,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_b8.y = (int)ROUND(fStack_78 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -599,6 +626,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 122,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_b8.z = (int)ROUND(fStack_74 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -606,6 +634,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 126,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_34.x = (int)ROUND(fStack_7c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -613,6 +642,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 127,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_34.y = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
     },
@@ -620,6 +650,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 128,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_34.z = (int)ROUND(fStack_74 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -627,6 +658,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 171,
       "match": "ROUND",
+      "severity": "mild",
       "text": "fStack_10 = (float)(int)ROUND(ROUND(this_ptr->animation_time));",
       "type": "decompiler_intrinsic"
     },
@@ -634,6 +666,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 171,
       "match": "ROUND",
+      "severity": "mild",
       "text": "fStack_10 = (float)(int)ROUND(ROUND(this_ptr->animation_time));",
       "type": "decompiler_intrinsic"
     },
@@ -641,6 +674,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 213,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_c4.x = (int)ROUND(fStack_4c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -648,6 +682,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 214,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_c4.y = (int)ROUND(fStack_4c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -655,6 +690,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 215,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_c4.z = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
     },
@@ -662,6 +698,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 220,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_70.x = (int)ROUND(fStack_4c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -669,6 +706,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 221,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_70.y = (int)ROUND(fStack_48 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -676,6 +714,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 222,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_70.z = (int)ROUND(fStack_44 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -683,6 +722,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 226,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_94.x = (int)ROUND(fStack_4c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -690,6 +730,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 227,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_94.y = (int)ROUND(fStack_48 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -697,6 +738,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 228,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_94.z = (int)ROUND(fStack_44 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -704,6 +746,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 232,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_40.x = (int)ROUND(fStack_4c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -711,6 +754,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 233,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_40.y = (int)ROUND(fStack_48 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -718,6 +762,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 234,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_40.z = (int)ROUND(fStack_44 * 256.0f);",
       "type": "decompiler_intrinsic"
     }

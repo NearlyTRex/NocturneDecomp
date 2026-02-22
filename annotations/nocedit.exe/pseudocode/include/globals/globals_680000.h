@@ -454,6 +454,10 @@ extern int g_HeapFlags;
 extern int* g_CurrentScreenPtr;
 extern int* g_CurrentZBufferPtr;
 
+// int[96]
+extern int g_LightDebugScreenX[96];
+extern int g_LightDebugScreenY[96];
+
 // int[9]
 extern int g_PathfindingDeltaX[9];
 extern int g_PathfindingDeltaZ[9];
@@ -482,8 +486,6 @@ extern undefined4 DAT_00680974;
 extern undefined4 DAT_00680a04;
 extern undefined4 DAT_00680bd8;
 extern undefined4 DAT_00680bdc;
-extern undefined4 DAT_0068125c;
-extern undefined4 DAT_00681260;
 extern undefined4 DAT_00684edc;
 extern undefined4 DAT_00684fd0;
 extern undefined4 DAT_00685094;

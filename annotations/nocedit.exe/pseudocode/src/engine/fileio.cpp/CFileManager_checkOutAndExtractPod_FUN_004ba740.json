@@ -23,6 +23,7 @@
     "cross_reference_count": 0,
     "function_call_count": 35,
     "global_count": 40,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 305,
     "suspect_count": 4,
     "suspect_types": [
@@ -650,6 +651,7 @@
       "description": "Complex pointer cast",
       "line": 54,
       "match": "(char *)((int)",
+      "severity": "mild",
       "text": "cVar1 = *(char *)((int)&p_Var6->_ptr + 1);",
       "type": "pointer_cast"
     },
@@ -657,6 +659,7 @@
       "description": "Complex pointer cast",
       "line": 55,
       "match": "(_FILE *)((int)",
+      "severity": "mild",
       "text": "p_Var6 = (_FILE *)((int)&p_Var6->_ptr + 2);",
       "type": "pointer_cast"
     },
@@ -664,6 +667,7 @@
       "description": "Direct stack address reference",
       "line": 104,
       "match": "&stack0xfffff964",
+      "severity": "moderate",
       "text": "(&stack0xfffff964,\"A writable copy of %s exists.  Replace it?\",local_340);",
       "type": "stack_ref"
     },
@@ -671,6 +675,7 @@
       "description": "Direct stack address reference",
       "line": 106,
       "match": "&stack0xfffff964",
+      "severity": "moderate",
       "text": "((int *)&stack0xfffff964,g_VersionControlSession.unk1 + 4);",
       "type": "stack_ref"
     }

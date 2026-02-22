@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemonSet *this_ptr)
+; void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemonSet *this_ptr,int param_2)
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   param_2
 ; Local Variables:
 ; undefined8       Stack[-0x1a4]:8  local_1a4
 ; undefined8       Stack[-0x19c]:8  local_19c
@@ -12,7 +13,7 @@
 ; undefined8       Stack[-0x18c]:8  local_18c
 ; undefined8       Stack[-0x184]:8  local_184
 ; undefined8       Stack[-0x17c]:8  local_17c
-; undefined1       Stack[-0x174]:1  local_174
+; char[256]        Stack[-0x174]:256  local_174
 ; undefined1       Stack[-0x74]:1  local_74
 ; undefined1       Stack[-0x5c]:1  local_5c
 ; undefined4       Stack[-0x4c]:4  local_4c
@@ -54,7 +55,7 @@
 ;   int g_ActiveLightCount
 ;   int g_DynamicLightCount
 ;   CDemonRaytrace g_CDemonRaytraceInstance
-;   undefined4 DAT_03277d80
+;   int g_OmniLightCount
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044c430
@@ -65,7 +66,7 @@
 ;   core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10
 ;   core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_set.cpp_CDemonSet_FUN_0056d2d0
+;   core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0
 ;   core_set.cpp_CDemonSet_initScene_FUN_0056aa10
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190
 ;   core_setutil.cpp_C3DSCamera_apply_FUN_00585870
@@ -94,7 +95,7 @@ section .text
         ;   Label: LAB_0056a491
     MOV EAX,dword ptr [ESP + 0x178]     ; 0056a493
     MOV dword ptr [0x032776b4],EDI      ; 0056a49a | g_DynamicLightCount
-    MOV dword ptr [0x03277d80],EDI      ; 0056a4a0 | DAT_03277d80
+    MOV dword ptr [0x03277d80],EDI      ; 0056a4a0 | g_OmniLightCount
     MOV dword ptr [ESP + 0x154],EDI     ; 0056a4a6
     MOV ECX,dword ptr [EAX]             ; 0056a4ad
     MOV dword ptr [0x03276f30],EDI      ; 0056a4af | g_ActiveLightCount
@@ -301,7 +302,7 @@ section .text
     PUSH 0x32758e4                      ; 0056a7bf | g_CDemonCameraInstance
     MOV EDI,EBX                         ; 0056a7c4
     CALL core_dcamera.cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454060 ; 0056a7c6
-        ;   XREF to: 00454060 (UNCONDITIONAL_CALL)  ; CVector3f * core_dcamera.cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454060(CDemonCamera * this_ptr, CVector3f * output_vectors, CBoundingBox3D * bounding_box)
+        ;   XREF to: 00454060 (UNCONDITIONAL_CALL)  ; CVector3f * core_dcamera.cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454060(CDemonCamera * this_ptr, CVector3f * output_bounds)
     ADD ESP,0x8                         ; 0056a7cb
     MOV ESI,EAX                         ; 0056a7ce
     CMP EBX,EAX                         ; 0056a7d0
@@ -465,8 +466,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x178]     ; 0056a9de
         ;   Label: LAB_0056a9de
     PUSH EBX                            ; 0056a9e5
-    CALL core_set.cpp_CDemonSet_FUN_0056d2d0 ; 0056a9e6
-        ;   XREF to: 0056d2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d2d0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0 ; 0056a9e6
+        ;   XREF to: 0056d2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0056a9eb
     XOR EBP,EBP                         ; 0056a9ee
     MOV dword ptr [0x03277d14],EBP      ; 0056a9f0 | g_CDemonRaytraceInstance

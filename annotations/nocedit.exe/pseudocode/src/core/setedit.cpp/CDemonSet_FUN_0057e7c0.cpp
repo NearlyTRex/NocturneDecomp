@@ -520,7 +520,7 @@ LAB_0057eb3b:
       this_ptr->disable_spotlight_shadows = 0;
       this_ptr->disable_water_rendering = 0;
       this_ptr->disable_sky_rendering = 0;
-      core_set_cpp_CDemonSet_FUN_0056d2d0(this_ptr);
+      core_set_cpp_CDemonSet_clearLights_FUN_0056d2d0(this_ptr);
       break;
     case 0x39:
       iVar9 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270

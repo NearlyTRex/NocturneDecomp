@@ -562,7 +562,7 @@ section .text
     MOV ECX,dword ptr [0x006810c8]      ; 0053875b | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH ECX                            ; 00538761 | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470 ; 00538762
-        ;   XREF to: 0056a470 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemonSet * this_ptr)
+        ;   XREF to: 0056a470 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemonSet * this_ptr, int param_2)
     ADD ESP,0x8                         ; 00538767
     CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0053876a
         ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()

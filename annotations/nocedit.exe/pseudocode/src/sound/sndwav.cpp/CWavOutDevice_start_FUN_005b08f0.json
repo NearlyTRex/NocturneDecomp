@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 9,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 34,
     "suspect_count": 3,
     "suspect_types": [
@@ -178,6 +179,7 @@
       "description": "Complex pointer cast",
       "line": 16,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)g_WaveOutBuffers + iVar3);",
       "type": "pointer_cast"
     },
@@ -185,6 +187,7 @@
       "description": "Complex pointer cast",
       "line": 17,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)(*(int *)((int)g_WaveOutHeaders + iVar3) + 0xc) = buffer_index;",
       "type": "pointer_cast"
     },
@@ -192,6 +195,7 @@
       "description": "Complex pointer cast",
       "line": 18,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)(*(int *)((int)g_WaveOutHeaders + iVar3) + 4) =",
       "type": "pointer_cast"
     }

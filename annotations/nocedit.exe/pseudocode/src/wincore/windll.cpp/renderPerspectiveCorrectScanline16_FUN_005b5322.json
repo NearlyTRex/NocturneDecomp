@@ -10,6 +10,7 @@
     "cross_reference_count": 57,
     "function_call_count": 0,
     "global_count": 22,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 121,
     "suspect_count": 7,
     "suspect_types": [
@@ -566,6 +567,7 @@
       "description": "Complex pointer cast",
       "line": 29,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "g_CurrentScreenPtr = (int *)((int)g_ScreenBufferArray[scanline_y] + uVar3 * 2);",
       "type": "pointer_cast"
     },
@@ -573,6 +575,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 54,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /",
       "type": "decompiler_intrinsic"
     },
@@ -580,6 +583,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 60,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "((int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /",
       "type": "decompiler_intrinsic"
     },
@@ -587,6 +591,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 65,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /",
       "type": "decompiler_intrinsic"
     },
@@ -594,6 +599,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 71,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "((int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /",
       "type": "decompiler_intrinsic"
     },
@@ -601,6 +607,7 @@
       "description": "Complex pointer cast",
       "line": 104,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "[*(byte *)((int)g_CurrentTextureData +",
       "type": "pointer_cast"
     },
@@ -608,6 +615,7 @@
       "description": "Complex pointer cast",
       "line": 112,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)g_CurrentZBufferPtr + uVar10) = iVar8;",
       "type": "pointer_cast"
     }

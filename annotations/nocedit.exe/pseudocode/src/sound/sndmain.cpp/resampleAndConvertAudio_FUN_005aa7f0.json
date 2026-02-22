@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 281,
     "suspect_count": 66,
     "suspect_types": [
@@ -323,6 +324,7 @@
       "description": "Complex pointer cast",
       "line": 32,
       "match": "(short *)((int)",
+      "severity": "mild",
       "text": "src_buffer = (short *)((int)src_buffer + 1);",
       "type": "pointer_cast"
     },
@@ -330,6 +332,7 @@
       "description": "Complex pointer cast",
       "line": 33,
       "match": "(short *)((int)",
+      "severity": "mild",
       "text": "psVar8 = (short *)((int)psVar8 + 1);",
       "type": "pointer_cast"
     },
@@ -337,6 +340,7 @@
       "description": "Complex pointer cast",
       "line": 50,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)ROUND(ROUND(fVar3 * fVar2)) + (int)src_buffer);",
       "type": "pointer_cast"
     },
@@ -344,6 +348,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 50,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*(byte *)((int)ROUND(ROUND(fVar3 * fVar2)) + (int)src_buffer);",
       "type": "decompiler_intrinsic"
     },
@@ -351,6 +356,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 50,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*(byte *)((int)ROUND(ROUND(fVar3 * fVar2)) + (int)src_buffer);",
       "type": "decompiler_intrinsic"
     },
@@ -358,6 +364,7 @@
       "description": "Complex pointer cast",
       "line": 51,
       "match": "(short *)((int)",
+      "severity": "mild",
       "text": "psVar8 = (short *)((int)psVar8 + 1);",
       "type": "pointer_cast"
     },
@@ -365,6 +372,7 @@
       "description": "Complex pointer cast",
       "line": 60,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "uVar1 = *(byte *)((int)ROUND(ROUND((float)iVar7 * fVar2)) + (int)src_buffer)",
       "type": "pointer_cast"
     },
@@ -372,6 +380,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 60,
       "match": "ROUND",
+      "severity": "mild",
       "text": "uVar1 = *(byte *)((int)ROUND(ROUND((float)iVar7 * fVar2)) + (int)src_buffer)",
       "type": "decompiler_intrinsic"
     },
@@ -379,6 +388,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 60,
       "match": "ROUND",
+      "severity": "mild",
       "text": "uVar1 = *(byte *)((int)ROUND(ROUND((float)iVar7 * fVar2)) + (int)src_buffer)",
       "type": "decompiler_intrinsic"
     },
@@ -386,6 +396,7 @@
       "description": "Complex pointer cast",
       "line": 62,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)psVar8 + 1) = uVar1;",
       "type": "pointer_cast"
     },
@@ -393,6 +404,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 76,
       "match": "ROUND",
+      "severity": "mild",
       "text": "((int)(char)src_buffer[(int)ROUND(ROUND((float)iVar7 * fVar2))] +",
       "type": "decompiler_intrinsic"
     },
@@ -400,6 +412,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 76,
       "match": "ROUND",
+      "severity": "mild",
       "text": "((int)(char)src_buffer[(int)ROUND(ROUND((float)iVar7 * fVar2))] +",
       "type": "decompiler_intrinsic"
     },
@@ -407,6 +420,7 @@
       "description": "Complex pointer cast",
       "line": 77,
       "match": "(char *)((int)",
+      "severity": "mild",
       "text": "(int)*(char *)((int)src_buffer +",
       "type": "pointer_cast"
     },
@@ -414,6 +428,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 78,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND((float)iVar7 * fVar2)) * 2 + 1) >> 1);",
       "type": "decompiler_intrinsic"
     },
@@ -421,6 +436,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 78,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND((float)iVar7 * fVar2)) * 2 + 1) >> 1);",
       "type": "decompiler_intrinsic"
     },
@@ -428,6 +444,7 @@
       "description": "Complex pointer cast",
       "line": 81,
       "match": "(short *)((int)",
+      "severity": "mild",
       "text": "psVar8 = (short *)((int)psVar8 + 1);",
       "type": "pointer_cast"
     },
@@ -435,6 +452,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 91,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*(char *)psVar8 = (char)src_buffer[(int)ROUND(ROUND(fVar3 * fVar2))];",
       "type": "decompiler_intrinsic"
     },
@@ -442,6 +460,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 91,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*(char *)psVar8 = (char)src_buffer[(int)ROUND(ROUND(fVar3 * fVar2))];",
       "type": "decompiler_intrinsic"
     },
@@ -449,6 +468,7 @@
       "description": "Complex pointer cast",
       "line": 93,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)psVar8 + 1) =",
       "type": "pointer_cast"
     },
@@ -456,6 +476,7 @@
       "description": "Complex pointer cast",
       "line": 94,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)src_buffer + (int)ROUND(ROUND(fVar3 * fVar2)) * 2 + 1);",
       "type": "pointer_cast"
     },
@@ -463,6 +484,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 94,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*(byte *)((int)src_buffer + (int)ROUND(ROUND(fVar3 * fVar2)) * 2 + 1);",
       "type": "decompiler_intrinsic"
     },
@@ -470,6 +492,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 94,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*(byte *)((int)src_buffer + (int)ROUND(ROUND(fVar3 * fVar2)) * 2 + 1);",
       "type": "decompiler_intrinsic"
     },
@@ -477,6 +500,7 @@
       "description": "Complex pointer cast",
       "line": 108,
       "match": "(char *)((int)",
+      "severity": "mild",
       "text": "*psVar8 = (short)*(char *)((int)ROUND(ROUND(fVar3 * fVar2)) + (int)src_buffer) << 8;",
       "type": "pointer_cast"
     },
@@ -484,6 +508,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 108,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*psVar8 = (short)*(char *)((int)ROUND(ROUND(fVar3 * fVar2)) + (int)src_buffer) << 8;",
       "type": "decompiler_intrinsic"
     },
@@ -491,6 +516,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 108,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*psVar8 = (short)*(char *)((int)ROUND(ROUND(fVar3 * fVar2)) + (int)src_buffer) << 8;",
       "type": "decompiler_intrinsic"
     },
@@ -498,6 +524,7 @@
       "description": "Complex pointer cast",
       "line": 118,
       "match": "(char *)((int)",
+      "severity": "mild",
       "text": "sVar4 = (short)*(char *)((int)ROUND(ROUND((float)iVar7 * fVar2)) + (int)src_buffer)",
       "type": "pointer_cast"
     },
@@ -505,6 +532,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 118,
       "match": "ROUND",
+      "severity": "mild",
       "text": "sVar4 = (short)*(char *)((int)ROUND(ROUND((float)iVar7 * fVar2)) + (int)src_buffer)",
       "type": "decompiler_intrinsic"
     },
@@ -512,6 +540,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 118,
       "match": "ROUND",
+      "severity": "mild",
       "text": "sVar4 = (short)*(char *)((int)ROUND(ROUND((float)iVar7 * fVar2)) + (int)src_buffer)",
       "type": "decompiler_intrinsic"
     },
@@ -519,6 +548,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 135,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*psVar8 = (char)src_buffer[(int)ROUND(ROUND(fVar3 * fVar2))] * 0x80 +",
       "type": "decompiler_intrinsic"
     },
@@ -526,6 +556,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 135,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*psVar8 = (char)src_buffer[(int)ROUND(ROUND(fVar3 * fVar2))] * 0x80 +",
       "type": "decompiler_intrinsic"
     },
@@ -533,6 +564,7 @@
       "description": "Complex pointer cast",
       "line": 136,
       "match": "(char *)((int)",
+      "severity": "mild",
       "text": "*(char *)((int)src_buffer + (int)ROUND(ROUND(fVar3 * fVar2)) * 2 + 1) * 0x80",
       "type": "pointer_cast"
     },
@@ -540,6 +572,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 136,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*(char *)((int)src_buffer + (int)ROUND(ROUND(fVar3 * fVar2)) * 2 + 1) * 0x80",
       "type": "decompiler_intrinsic"
     },
@@ -547,6 +580,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 136,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*(char *)((int)src_buffer + (int)ROUND(ROUND(fVar3 * fVar2)) * 2 + 1) * 0x80",
       "type": "decompiler_intrinsic"
     },
@@ -554,6 +588,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 148,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*psVar8 = (short)(char)src_buffer[(int)ROUND(ROUND(fVar3 * fVar2))] << 8;",
       "type": "decompiler_intrinsic"
     },
@@ -561,6 +596,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 148,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*psVar8 = (short)(char)src_buffer[(int)ROUND(ROUND(fVar3 * fVar2))] << 8;",
       "type": "decompiler_intrinsic"
     },
@@ -568,6 +604,7 @@
       "description": "Complex pointer cast",
       "line": 150,
       "match": "(char *)((int)",
+      "severity": "mild",
       "text": "psVar8[1] = (short)*(char *)((int)src_buffer +",
       "type": "pointer_cast"
     },
@@ -575,6 +612,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 151,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND(fVar3 * fVar2)) * 2 + 1) << 8;",
       "type": "decompiler_intrinsic"
     },
@@ -582,6 +620,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 151,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND(fVar3 * fVar2)) * 2 + 1) << 8;",
       "type": "decompiler_intrinsic"
     },
@@ -589,6 +628,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 166,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*(char *)psVar8 = (char)((ushort)src_buffer[(int)ROUND(ROUND(fVar3 * fVar2))] >> 8);",
       "type": "decompiler_intrinsic"
     },
@@ -596,6 +636,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 166,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*(char *)psVar8 = (char)((ushort)src_buffer[(int)ROUND(ROUND(fVar3 * fVar2))] >> 8);",
       "type": "decompiler_intrinsic"
     },
@@ -603,6 +644,7 @@
       "description": "Complex pointer cast",
       "line": 167,
       "match": "(short *)((int)",
+      "severity": "mild",
       "text": "psVar8 = (short *)((int)psVar8 + 1);",
       "type": "pointer_cast"
     },
@@ -610,6 +652,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 177,
       "match": "ROUND",
+      "severity": "mild",
       "text": "((ushort)src_buffer[(int)ROUND(ROUND((float)iVar7 * fVar2))] >> 8);",
       "type": "decompiler_intrinsic"
     },
@@ -617,6 +660,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 177,
       "match": "ROUND",
+      "severity": "mild",
       "text": "((ushort)src_buffer[(int)ROUND(ROUND((float)iVar7 * fVar2))] >> 8);",
       "type": "decompiler_intrinsic"
     },
@@ -624,6 +668,7 @@
       "description": "Complex pointer cast",
       "line": 178,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)psVar8 + 1) = local_18;",
       "type": "pointer_cast"
     },
@@ -631,6 +676,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 194,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(char)((int)src_buffer[(int)ROUND(ROUND(fVar3 * fVar2)) * 2] +",
       "type": "decompiler_intrinsic"
     },
@@ -638,6 +684,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 194,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(char)((int)src_buffer[(int)ROUND(ROUND(fVar3 * fVar2)) * 2] +",
       "type": "decompiler_intrinsic"
     },
@@ -645,6 +692,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 195,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(*(int *)(src_buffer + (int)ROUND(ROUND(fVar3 * fVar2)) * 2) >> 0x10) >> 9",
       "type": "decompiler_intrinsic"
     },
@@ -652,6 +700,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 195,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(*(int *)(src_buffer + (int)ROUND(ROUND(fVar3 * fVar2)) * 2) >> 0x10) >> 9",
       "type": "decompiler_intrinsic"
     },
@@ -659,6 +708,7 @@
       "description": "Complex pointer cast",
       "line": 197,
       "match": "(short *)((int)",
+      "severity": "mild",
       "text": "psVar8 = (short *)((int)psVar8 + 1);",
       "type": "pointer_cast"
     },
@@ -666,6 +716,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 207,
       "match": "ROUND",
+      "severity": "mild",
       "text": "((ushort)src_buffer[(int)ROUND(ROUND((float)iVar7 * fVar2)) * 2] >> 8);",
       "type": "decompiler_intrinsic"
     },
@@ -673,6 +724,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 207,
       "match": "ROUND",
+      "severity": "mild",
       "text": "((ushort)src_buffer[(int)ROUND(ROUND((float)iVar7 * fVar2)) * 2] >> 8);",
       "type": "decompiler_intrinsic"
     },
@@ -680,6 +732,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 211,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(src_buffer + (int)ROUND(ROUND((float)iVar7 * fVar2)) * 2) >> 0x18)",
       "type": "decompiler_intrinsic"
     },
@@ -687,6 +740,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 211,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(src_buffer + (int)ROUND(ROUND((float)iVar7 * fVar2)) * 2) >> 0x18)",
       "type": "decompiler_intrinsic"
     },
@@ -694,6 +748,7 @@
       "description": "Complex pointer cast",
       "line": 214,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)psVar8 + 1) = local_18;",
       "type": "pointer_cast"
     },
@@ -701,6 +756,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 228,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*psVar8 = src_buffer[(int)ROUND(ROUND(fVar3 * fVar2))];",
       "type": "decompiler_intrinsic"
     },
@@ -708,6 +764,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 228,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*psVar8 = src_buffer[(int)ROUND(ROUND(fVar3 * fVar2))];",
       "type": "decompiler_intrinsic"
     },
@@ -715,6 +772,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 238,
       "match": "ROUND",
+      "severity": "mild",
       "text": "sVar4 = src_buffer[(int)ROUND(ROUND((float)iVar7 * fVar2))];",
       "type": "decompiler_intrinsic"
     },
@@ -722,6 +780,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 238,
       "match": "ROUND",
+      "severity": "mild",
       "text": "sVar4 = src_buffer[(int)ROUND(ROUND((float)iVar7 * fVar2))];",
       "type": "decompiler_intrinsic"
     },
@@ -729,6 +788,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 254,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*psVar8 = (short)((int)src_buffer[(int)ROUND(ROUND(fVar3 * fVar2)) * 2] +",
       "type": "decompiler_intrinsic"
     },
@@ -736,6 +796,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 254,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*psVar8 = (short)((int)src_buffer[(int)ROUND(ROUND(fVar3 * fVar2)) * 2] +",
       "type": "decompiler_intrinsic"
     },
@@ -743,6 +804,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 255,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(*(int *)(src_buffer + (int)ROUND(ROUND(fVar3 * fVar2)) * 2) >> 0x10)",
       "type": "decompiler_intrinsic"
     },
@@ -750,6 +812,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 255,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(*(int *)(src_buffer + (int)ROUND(ROUND(fVar3 * fVar2)) * 2) >> 0x10)",
       "type": "decompiler_intrinsic"
     },
@@ -757,6 +820,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 267,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*psVar8 = src_buffer[(int)ROUND(ROUND(fVar3 * fVar2)) * 2];",
       "type": "decompiler_intrinsic"
     },
@@ -764,6 +828,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 267,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*psVar8 = src_buffer[(int)ROUND(ROUND(fVar3 * fVar2)) * 2];",
       "type": "decompiler_intrinsic"
     },
@@ -771,6 +836,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 269,
       "match": "ROUND",
+      "severity": "mild",
       "text": "psVar8[1] = src_buffer[(int)ROUND(ROUND(fVar3 * fVar2)) * 2 + 1];",
       "type": "decompiler_intrinsic"
     },
@@ -778,6 +844,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 269,
       "match": "ROUND",
+      "severity": "mild",
       "text": "psVar8[1] = src_buffer[(int)ROUND(ROUND(fVar3 * fVar2)) * 2 + 1];",
       "type": "decompiler_intrinsic"
     }

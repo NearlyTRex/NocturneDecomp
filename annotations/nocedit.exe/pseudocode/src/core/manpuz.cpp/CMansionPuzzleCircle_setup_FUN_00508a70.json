@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 248,
     "suspect_count": 7,
     "suspect_types": [
@@ -416,6 +417,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 78,
       "match": "fcos",
+      "severity": "mild",
       "text": "fVar17 = (float10)fcos((float10)0.5235988f * (float10)0.5);",
       "type": "decompiler_intrinsic"
     },
@@ -423,6 +425,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 84,
       "match": "SQRT",
+      "severity": "mild",
       "text": "if (SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1) == 0.0) {",
       "type": "decompiler_intrinsic"
     },
@@ -430,6 +433,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 94,
       "match": "SQRT",
+      "severity": "mild",
       "text": "if (SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1) == 0.0) {",
       "type": "decompiler_intrinsic"
     },
@@ -437,6 +441,7 @@
       "description": "Complex pointer cast",
       "line": 148,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar13 = (CMatrix3x4f *)((int)pCVar13 + ((uint)bVar16 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -444,6 +449,7 @@
       "description": "Complex pointer cast",
       "line": 149,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar15 = (CMatrix3x4f *)((int)pCVar15 + ((uint)bVar16 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -451,6 +457,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 199,
       "match": "fcos",
+      "severity": "mild",
       "text": "fVar17 = (float10)fcos((float10)0.5235988f);",
       "type": "decompiler_intrinsic"
     },
@@ -458,6 +465,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 200,
       "match": "fsin",
+      "severity": "mild",
       "text": "fVar18 = (float10)fsin((float10)0.5235988f);",
       "type": "decompiler_intrinsic"
     }

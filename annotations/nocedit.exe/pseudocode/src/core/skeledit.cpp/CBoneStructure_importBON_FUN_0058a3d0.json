@@ -23,6 +23,7 @@
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 8,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 30,
     "suspect_count": 3,
     "suspect_types": [
@@ -236,6 +237,7 @@
       "description": "Unresolved stack parameter",
       "line": 8,
       "match": "in_stack_ffffffe8",
+      "severity": "moderate",
       "text": "int in_stack_ffffffe8;",
       "type": "stack_param"
     },
@@ -243,6 +245,7 @@
       "description": "Direct stack address reference",
       "line": 25,
       "match": "&stack0xffffffe8",
+      "severity": "moderate",
       "text": "_fscanf((_FILE *)this_ptr_00,\"%d\\n\",&stack0xffffffe8);",
       "type": "stack_ref"
     },
@@ -250,6 +253,7 @@
       "description": "Unresolved stack parameter",
       "line": 29,
       "match": "in_stack_ffffffe8",
+      "severity": "moderate",
       "text": "(this_ptr_00,(_FILE *)0x0,in_stack_ffffffe8);",
       "type": "stack_param"
     }

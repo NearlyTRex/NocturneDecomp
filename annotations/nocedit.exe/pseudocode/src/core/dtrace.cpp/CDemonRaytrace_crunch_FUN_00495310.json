@@ -17,6 +17,7 @@
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 13,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 338,
     "suspect_count": 10,
     "suspect_types": [
@@ -699,6 +700,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 75,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND(((this_ptr->bbox_max).x - (this_ptr->bbox_min).x) * fVar6)) + 1;",
       "type": "decompiler_intrinsic"
     },
@@ -706,6 +708,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 75,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND(((this_ptr->bbox_max).x - (this_ptr->bbox_min).x) * fVar6)) + 1;",
       "type": "decompiler_intrinsic"
     },
@@ -713,6 +716,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 79,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND(((this_ptr->bbox_max).y - (this_ptr->bbox_min).y) * fVar6)) + 1;",
       "type": "decompiler_intrinsic"
     },
@@ -720,6 +724,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 79,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND(((this_ptr->bbox_max).y - (this_ptr->bbox_min).y) * fVar6)) + 1;",
       "type": "decompiler_intrinsic"
     },
@@ -727,6 +732,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 81,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_14 = (float *)(int)ROUND(ROUND(((this_ptr->bbox_max).z - (this_ptr->bbox_min).z) * fVar6));",
       "type": "decompiler_intrinsic"
     },
@@ -734,6 +740,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 81,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_14 = (float *)(int)ROUND(ROUND(((this_ptr->bbox_max).z - (this_ptr->bbox_min).z) * fVar6));",
       "type": "decompiler_intrinsic"
     },
@@ -741,6 +748,7 @@
       "description": "Complex pointer cast",
       "line": 116,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "piVar11 = (int *)((int)&(this_ptr->triangle_list->vertex1).x + local_68);",
       "type": "pointer_cast"
     },
@@ -748,6 +756,7 @@
       "description": "Complex pointer cast",
       "line": 303,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "local_14 = (float *)((int)((int)local_3c * iVar9 + (int)local_38) * iVar1 + local_20);",
       "type": "pointer_cast"
     },
@@ -755,6 +764,7 @@
       "description": "Complex pointer cast",
       "line": 327,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "local_38 = (float *)((int)local_38 + 1);",
       "type": "pointer_cast"
     },
@@ -762,6 +772,7 @@
       "description": "Complex pointer cast",
       "line": 330,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "local_3c = (float *)((int)local_3c + 1);",
       "type": "pointer_cast"
     }

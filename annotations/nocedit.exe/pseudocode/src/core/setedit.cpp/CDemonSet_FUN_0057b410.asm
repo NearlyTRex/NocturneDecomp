@@ -17,7 +17,7 @@
 ;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
-;   core_set.cpp_CDemonSet_FUN_0056d2d0
+;   core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0
 ;   core_set.cpp_CDemonSet_initScene_FUN_0056aa10
 ;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470
 ;   core_setedit.cpp_CDemonSet_FUN_0057ae50
@@ -87,8 +87,8 @@ section .text
         ;   XREF to: 0057b47e (CONDITIONAL_JUMP)  ; LAB_0057b47e
     PUSH EDI                            ; 0057b4a4
         ;   Label: LAB_0057b4a4
-    CALL core_set.cpp_CDemonSet_FUN_0056d2d0 ; 0057b4a5
-        ;   XREF to: 0056d2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d2d0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0 ; 0057b4a5
+        ;   XREF to: 0056d2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0057b4aa
     PUSH 0x6477c8                       ; 0057b4ad | = "Precompute light visibility?"
     MOV EBX,dword ptr [0x00678a60]      ; 0057b4b2 | g_CEditorToolsInstance | g_CEditorToolsPtr
@@ -102,7 +102,7 @@ section .text
     PUSH -0x1                           ; 0057b4c5
     PUSH EDI                            ; 0057b4c7
     CALL core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470 ; 0057b4c8
-        ;   XREF to: 0056a470 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemonSet * this_ptr)
+        ;   XREF to: 0056a470 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemonSet * this_ptr, int param_2)
     ADD ESP,0x8                         ; 0057b4cd
     PUSH EDI                            ; 0057b4d0
         ;   Label: LAB_0057b4d0

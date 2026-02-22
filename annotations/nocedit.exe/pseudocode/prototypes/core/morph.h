@@ -5,7 +5,7 @@
 
 // Original: core_morph.cpp_countTrianglesFromPolygons_FUN_0052a490
 // Address: 0052a490
-int __cdecl countTrianglesFromPolygons(int poly_count,int *poly_headers,int poly_stride);
+int __cdecl countTrianglesFromPolygons(int poly_count,SMRGLHeaderPrimitive *poly_headers,int poly_stride);
 
 // Original: core_morph.cpp_CMorphModel_ctor_FUN_0052a4c0
 // Address: 0052a4c0
@@ -21,7 +21,7 @@ void __cdecl CMorphModel::free(CMorphModel *this_ptr);
 
 // Original: core_morph.cpp_CMorphModel_addPartFromPolygon_FUN_0052a580
 // Address: 0052a580
-void __cdecl CMorphModel::addPartFromPolygon(CMorphModel *this_ptr,int vertex_count,CVector3i *vertex_data,int poly_count,SMRGLPrimitiveQuad *poly_data,int poly_stride,SMRGLTextureLod *texture_list,int *texture_index_list);
+void __cdecl CMorphModel::addPartFromPolygon(CMorphModel *this_ptr,int vertex_count,CVector3i *vertex_data,int poly_count,SMRGLHeaderPrimitive *poly_data,int poly_stride,SMRGLTextureLod *texture_list,int *texture_index_list);
 
 // Original: core_morph.cpp_CMorphModel_addPartFromVertexBuffer_FUN_0052a710
 // Address: 0052a710
@@ -41,7 +41,7 @@ void __cdecl CMorphModel::animateFromVertexBuffer(CMorphModel *this_ptr,int part
 
 // Original: core_morph.cpp_CMorphModel_animateFromPartVertexBuffer_FUN_0052aa00
 // Address: 0052aa00
-void __cdecl CMorphModel::animateFromPartVertexBuffer(CMorphModel *this_ptr,int part_index,CVector3i *vertex_buffer,int start_offset,int vertex_count);
+void __cdecl CMorphModel::animateFromPartVertexBuffer(CMorphModel *this_ptr,int part_index,CVector3i *vertex_buffer);
 
 // Original: core_morph.cpp_CMorphModel_animateFromDeformableModel_FUN_0052aa30
 // Address: 0052aa30
@@ -53,7 +53,7 @@ void __cdecl CMorphModel::animateFromKeyframedModel(CMorphModel *this_ptr,int pa
 
 // Original: core_morph.cpp_CMorphModel_setFaceListFromPolygon_FUN_0052aac0
 // Address: 0052aac0
-void __cdecl CMorphModel::setFaceListFromPolygon(CMorphModel *this_ptr,int part_index,SMRGLPrimitiveQuad *poly_data,int poly_stride,SMRGLTextureLod *texture_list,int *texture_index_list,int start_face,int poly_count);
+void __cdecl CMorphModel::setFaceListFromPolygon(CMorphModel *this_ptr,int part_index,SMRGLHeaderPrimitive *poly_data,int poly_stride ,SMRGLTextureLod *texture_list,int *texture_index_list,int start_face,int poly_count);
 
 // Original: core_morph.cpp_CMorphModel_setFaceListFromTriangles_FUN_0052aca0
 // Address: 0052aca0
@@ -65,11 +65,11 @@ int __cdecl CMorphModel::findOrAddTexture(CMorphModel *this_ptr,char *filename);
 
 // Original: core_morph.cpp_CMorphModel_render_FUN_0052af30
 // Address: 0052af30
-void __cdecl CMorphModel::render(CMorphModel *this_ptr,float morph_t);
+void __cdecl CMorphModel::render(CMorphModel *this_ptr,float morph_t,SMorphPoint *ref_points);
 
 // Original: core_morph.cpp_CMorphModel_rotatePoints_FUN_0052af70
 // Address: 0052af70
-void __cdecl CMorphModel::rotatePoints(CMorphModel *this_ptr);
+void __cdecl CMorphModel::rotatePoints(CMorphModel *this_ptr,float blend_factor,SMorphPoint *ref_points);
 
 // Original: core_morph.cpp_CMorphModel_renderFaces_FUN_0052b160
 // Address: 0052b160
@@ -91,13 +91,13 @@ CMorph * __cdecl CMorph::dtor(CMorph *this_ptr,uint flags);
 // Address: 0052b350
 void __cdecl CMorph::free(CMorph *this_ptr);
 
-// Original: core_morph.cpp_CMorph_setupModelFromPolygons_FUN_0052b370
+// Original: core_morph.cpp_CMorph_setupModelFromTriPolygons_FUN_0052b370
 // Address: 0052b370
-void __cdecl CMorph::setupModelFromPolygons(CMorph *this_ptr,int model_index);
+void __cdecl CMorph::setupModelFromTriPolygons(CMorph *this_ptr,int model_index,int vertex_count,CVector3i *vertices,int face_count ,SMRGLHeaderPrimitive *faces,SMRGLTextureLod *texture_lod,int *texture_index_list);
 
-// Original: core_morph.cpp_CMorph_setupModelFromPolygons_FUN_0052b3d0
+// Original: core_morph.cpp_CMorph_setupModelFromQuadPolygons_FUN_0052b3d0
 // Address: 0052b3d0
-void __cdecl CMorph::setupModelFromPolygons(CMorph *this_ptr,int model_index);
+void __cdecl CMorph::setupModelFromQuadPolygons(CMorph *this_ptr,int model_index,int vertex_count,CVector3i *vertices,int face_count ,SMRGLHeaderPrimitive *faces,SMRGLTextureLod *texture_lod,int *texture_index_list);
 
 // Original: core_morph.cpp_CMorph_setupModelFromDeformable_FUN_0052b430
 // Address: 0052b430
@@ -107,13 +107,13 @@ void __cdecl CMorph::setupModelFromDeformable(CMorph *this_ptr,int model_index,C
 // Address: 0052b470
 void __cdecl CMorph::setupModelFromKeyframed(CMorph *this_ptr,int model_index,CKeyFramedModel *model_ptr,int frame_index);
 
-// Original: core_morph.cpp_CMorph_addPartToModel_FUN_0052b4b0
+// Original: core_morph.cpp_CMorph_addTriPartToModel_FUN_0052b4b0
 // Address: 0052b4b0
-void __cdecl CMorph::addPartToModel(CMorph *this_ptr,int model_index);
+void __cdecl CMorph::addTriPartToModel(CMorph *this_ptr,int model_index,int vertex_count,CVector3i *vertices,int face_count ,SMRGLHeaderPrimitive *faces,SMRGLTextureLod *texture_lod,int *texture_index_list);
 
-// Original: core_morph.cpp_CMorph_addPartToModel_FUN_0052b500
+// Original: core_morph.cpp_CMorph_addQuadPartToModel_FUN_0052b500
 // Address: 0052b500
-void __cdecl CMorph::addPartToModel(CMorph *this_ptr,int model_index);
+void __cdecl CMorph::addQuadPartToModel(CMorph *this_ptr,int model_index,int vertex_count,CVector3i *vertices,int face_count ,SMRGLHeaderPrimitive *faces,SMRGLTextureLod *texture_lod,int *texture_index_list);
 
 // Original: core_morph.cpp_CMorph_addPartFromDeformableModel_FUN_0052b550
 // Address: 0052b550
@@ -125,7 +125,7 @@ void __cdecl CMorph::addPartFromKeyframedModel(CMorph *this_ptr,int model_index,
 
 // Original: core_morph.cpp_CMorph_updateModelVertices_FUN_0052b5c0
 // Address: 0052b5c0
-void __cdecl CMorph::updateModelVertices(CMorph *this_ptr,int model_index);
+void __cdecl CMorph::updateModelVertices(CMorph *this_ptr,int model_index,CVector3i *vertices,int part_index);
 
 // Original: core_morph.cpp_CMorph_updateModelFromDeformable_FUN_0052b600
 // Address: 0052b600

@@ -23,6 +23,7 @@
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 26,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 323,
     "suspect_count": 9,
     "suspect_types": [
@@ -516,6 +517,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 69,
       "match": "3.58732e-43",
+      "severity": "mild",
       "text": "3.58732e-43,8);",
       "type": "suspect_float"
     },
@@ -523,6 +525,7 @@
       "description": "Complex pointer cast",
       "line": 257,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)local_20 + local_18 * 4) = local_14[local_1c * 3];",
       "type": "pointer_cast"
     },
@@ -530,6 +533,7 @@
       "description": "Complex pointer cast",
       "line": 269,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)local_20 + local_1c * 4) =",
       "type": "pointer_cast"
     },
@@ -537,6 +541,7 @@
       "description": "Complex pointer cast",
       "line": 270,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)local_20 + local_1c * 4 + 4);",
       "type": "pointer_cast"
     },
@@ -544,6 +549,7 @@
       "description": "Complex pointer cast",
       "line": 271,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)local_20 + local_1c * 4 + 4) = uVar1;",
       "type": "pointer_cast"
     },
@@ -551,6 +557,7 @@
       "description": "Complex pointer cast",
       "line": 282,
       "match": "(SShapeEditorPolygon *)((int)",
+      "severity": "mild",
       "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -558,6 +565,7 @@
       "description": "Complex pointer cast",
       "line": 283,
       "match": "(SShapeEditorPolygon *)((int)",
+      "severity": "mild",
       "text": "pSVar8 = (SShapeEditorPolygon *)((int)pSVar8 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -565,6 +573,7 @@
       "description": "Complex pointer cast",
       "line": 287,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (*(int *)((int)local_20 + local_48 * 4 + -8) < selected_polygon_index) {",
       "type": "pointer_cast"
     },
@@ -572,6 +581,7 @@
       "description": "Complex pointer cast",
       "line": 288,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "selected_polygon_index = *(int *)((int)local_20 + local_48 * 4 + -8);",
       "type": "pointer_cast"
     }

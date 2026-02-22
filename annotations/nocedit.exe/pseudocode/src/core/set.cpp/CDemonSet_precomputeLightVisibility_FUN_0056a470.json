@@ -2,40 +2,16 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 86,
-        "message": "use of undeclared identifier 'stack0xfffffe8c'; did you mean 'in_stack_fffffe8c'?"
-      },
-      {
-        "category": "undeclared_identifier",
+        "category": "other",
         "column": 44,
-        "line": 90,
-        "message": "use of undeclared identifier 'stack0xfffffe8c'"
+        "line": 143,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 27,
-        "line": 144,
-        "message": "use of undeclared identifier 'stack0xfffffe8c'; did you mean 'in_stack_fffffe8c'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 52,
-        "line": 146,
-        "message": "use of undeclared identifier 'stack0xfffffe8c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 174,
-        "message": "use of undeclared identifier 'stack0xfffffe8c'; did you mean 'in_stack_fffffe8c'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 42,
-        "line": 175,
-        "message": "use of undeclared identifier 'stack0xfffffe8c'"
+        "category": "other",
+        "column": 62,
+        "line": 173,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
     "success": false,
@@ -43,19 +19,19 @@
   },
   "complexity": {
     "assembly_lines": 398,
-    "complexity_score": 400,
+    "complexity_score": 314,
     "cross_reference_count": 6,
     "function_call_count": 17,
     "global_count": 15,
-    "pseudocode_lines": 180,
-    "suspect_count": 20,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 179,
+    "suspect_count": 12,
     "suspect_types": [
       "pointer_cast",
-      "stack_param",
-      "stack_ref",
-      "undefined_data"
+      "stack_alignment_array",
+      "unnamed_param"
     ],
-    "total_lines": 578
+    "total_lines": 577
   },
   "cross_references": [
     {
@@ -105,7 +81,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470",
-    "signature": "void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemonSet *this_ptr)"
+    "signature": "void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemonSet *this_ptr,int param_2)"
   },
   "function_calls": [
     {
@@ -151,7 +127,7 @@
     {
       "addr": "0056d2d0",
       "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_0056d2d0"
+      "name": "core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0"
     },
     {
       "addr": "0056aa10",
@@ -281,8 +257,8 @@
     },
     {
       "addr": "03277d80",
-      "name": "DAT_03277d80",
-      "type": "undefined4",
+      "name": "g_OmniLightCount",
+      "type": "int",
       "value": null
     }
   ],
@@ -320,10 +296,10 @@
     "pcode_op_count": 1559
   },
   "stack_frame": {
-    "frame_size": 428,
+    "frame_size": 432,
     "local_size": 424,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -372,8 +348,8 @@
         "is_param": false,
         "name": "local_174",
         "offset": -372,
-        "size": 1,
-        "type": "undefined1"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
@@ -500,149 +476,112 @@
         "offset": 4,
         "size": 4,
         "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemonSet *this_ptr,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
       "line": 18,
-      "match": "in_stack_00000008",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
+      "match": "auStackY_1838",
+      "severity": "moderate",
+      "text": "uint auStackY_1838 [1443];",
+      "type": "stack_alignment_array"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_fffffe8c",
-      "text": "CBoundingBox3D *in_stack_fffffe8c;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 51,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "local_48 = param_2 + 1;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_03277d80",
-      "text": "DAT_03277d80 = 0;",
-      "type": "undefined_data"
+      "description": "Unnamed function parameter",
+      "line": 87,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_2 != -1) {",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 52,
-      "match": "in_stack_00000008",
-      "text": "local_48 = in_stack_00000008 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 67,
-      "match": "in_stack_fffffe8c",
-      "text": "(&g_CDemonCameraInstance,local_74,in_stack_fffffe8c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 79,
-      "match": "&stack0xfffffe8c",
-      "text": "(&stack0xfffffe8c,\"Camera box (%7.2f, %7.2f, %7.2f) - (%7.2f, %7.2f, %7.2f)\",",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 83,
-      "match": "&stack0xfffffe8c",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe8c,0,0x16);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 88,
-      "match": "in_stack_00000008",
-      "text": "if (in_stack_00000008 != -1) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 90,
-      "match": "in_stack_00000008",
-      "text": "local_14 = in_stack_00000008;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 89,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "local_14 = param_2;",
+      "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 108,
+      "line": 107,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "((char *)(*(int *)((int)g_MasterLightList + iVar6) + 0x40),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 131,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "puVar7 = (uint *)((int)&local_5c + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 132,
       "match": "(uint *)((int)",
-      "text": "puVar7 = (uint *)((int)&local_5c + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 133,
-      "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*puVar8 = *(uint *)((int)&local_5c + (uint)bVar11 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 137,
-      "match": "&stack0xfffffe8c",
-      "text": "_sprintf(&stack0xfffffe8c,\"Light %d, Box : %d,%d,%d,%d\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 139,
-      "match": "&stack0xfffffe8c",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe8c,0,local_1c);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 149,
+      "line": 148,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&this_ptr->lights[iVar6].camera_light_bounds[0].left + local_2c) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 151,
+      "line": 150,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&this_ptr->lights[iVar6].camera_light_bounds[0].top + local_2c) = 0",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 153,
+      "line": 152,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&this_ptr->lights[iVar6].camera_light_bounds[0].right + local_2c) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 155,
+      "line": 154,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&this_ptr->lights[iVar6].camera_light_bounds[0].bottom + local_2c)",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 167,
-      "match": "&stack0xfffffe8c",
-      "text": "_sprintf(&stack0xfffffe8c,\"Precomputing lights from camera : %d\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 168,
-      "match": "&stack0xfffffe8c",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe8c,0,0);",
-      "type": "stack_ref"
     }
   ]
 }

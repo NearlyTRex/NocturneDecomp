@@ -40,9 +40,9 @@
 #include "types/structs/SMRGLHeaderExtended.h"
 #include "types/structs/SMRGLHeaderPrimitive.h"
 #include "types/structs/SMRGLModelBounds.h"
-#include "types/structs/SMRGLPrimitiveQuad.h"
 #include "types/structs/SMRGLTextureLod.h"
 #include "types/structs/SMorphControlPoint.h"
+#include "types/structs/SMorphPoint.h"
 #include "types/structs/SMotion.h"
 #include "types/structs/SMotionTransition.h"
 #include "types/structs/SMpegFrame.h"
@@ -208,37 +208,37 @@ SBat * __cdecl core_moon_cpp_SBat_dtor_FUN_0052a420(SBat *this_ptr,uint flags);
 SBat * __cdecl core_moon_cpp_SBat_arrdtor_FUN_0052a430(SBat *objs,uint flags);
 CCourse * __cdecl core_moon_cpp_CCourse_arrdtor_FUN_0052a450(CCourse *objs,uint flags);
 CAlphaBitmap * __cdecl core_moon_cpp_CAlphaBitmap_arrdtor_FUN_0052a470(CAlphaBitmap *objs,uint flags);
-int __cdecl core_morph_cpp_countTrianglesFromPolygons_FUN_0052a490(int poly_count,int *poly_headers,int poly_stride);
+int __cdecl core_morph_cpp_countTrianglesFromPolygons_FUN_0052a490(int poly_count,SMRGLHeaderPrimitive *poly_headers,int poly_stride);
 CMorphModel * __cdecl core_morph_cpp_CMorphModel_ctor_FUN_0052a4c0(CMorphModel *this_ptr);
 CMorphModel * __cdecl core_morph_cpp_CMorphModel_dtor_FUN_0052a4f0(CMorphModel *this_ptr,uint flags);
 void __cdecl core_morph_cpp_CMorphModel_free_FUN_0052a510(CMorphModel *this_ptr);
-void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_0052a580(CMorphModel *this_ptr,int vertex_count,CVector3i *vertex_data,int poly_count, SMRGLPrimitiveQuad *poly_data,int poly_stride,SMRGLTextureLod *texture_list, int *texture_index_list);
+void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_0052a580(CMorphModel *this_ptr,int vertex_count,CVector3i *vertex_data,int poly_count, SMRGLHeaderPrimitive *poly_data,int poly_stride,SMRGLTextureLod *texture_list, int *texture_index_list);
 void __cdecl core_morph_cpp_CMorphModel_addPartFromVertexBuffer_FUN_0052a710(CMorphModel *this_ptr,int vertex_count,CVector3i *skinned_vertices,int tri_count, SInputFace *tri_data,STextureSet *texture_sets,int *index_data);
 void __cdecl core_morph_cpp_CMorphModel_addPartFromDeformableModel_FUN_0052a870(CMorphModel *this_ptr,CDeformableModelInstance *model_ptr);
 void __cdecl core_morph_cpp_CMorphModel_addPartFromKeyFramedModel_FUN_0052a8d0(CMorphModel *this_ptr,CKeyFramedModel *model_ptr,int frame_index);
 void __cdecl core_morph_cpp_CMorphModel_animateFromVertexBuffer_FUN_0052a920(CMorphModel *this_ptr,int part_index,CVector3i *vertex_buffer,int start_offset, int vertex_count);
-void __cdecl core_morph_cpp_CMorphModel_animateFromPartVertexBuffer_FUN_0052aa00(CMorphModel *this_ptr,int part_index,CVector3i *vertex_buffer,int start_offset, int vertex_count);
+void __cdecl core_morph_cpp_CMorphModel_animateFromPartVertexBuffer_FUN_0052aa00(CMorphModel *this_ptr,int part_index,CVector3i *vertex_buffer);
 void __cdecl core_morph_cpp_CMorphModel_animateFromDeformableModel_FUN_0052aa30(CMorphModel *this_ptr,int part_index,CDeformableModelInstance *model_ptr);
 void __cdecl core_morph_cpp_CMorphModel_animateFromKeyframedModel_FUN_0052aa80(CMorphModel *this_ptr,int part_index,CKeyFramedModel *model_ptr,int frame_index);
-void __cdecl core_morph_cpp_CMorphModel_setFaceListFromPolygon_FUN_0052aac0(CMorphModel *this_ptr,int part_index,SMRGLPrimitiveQuad *poly_data,int poly_stride, SMRGLTextureLod *texture_list,int *texture_index_list,int start_face,int poly_count);
+void __cdecl core_morph_cpp_CMorphModel_setFaceListFromPolygon_FUN_0052aac0(CMorphModel *this_ptr,int part_index,SMRGLHeaderPrimitive *poly_data,int poly_stride ,SMRGLTextureLod *texture_list,int *texture_index_list,int start_face,int poly_count);
 void __cdecl core_morph_cpp_CMorphModel_setFaceListFromTriangles_FUN_0052aca0(CMorphModel *this_ptr,int part_index,SInputFace *face_data,STextureSet *texture_sets ,int *index_data,int start_face,int face_count);
 int __cdecl core_morph_cpp_CMorphModel_findOrAddTexture_FUN_0052ae60(CMorphModel *this_ptr,char *filename);
-void __cdecl core_morph_cpp_CMorphModel_render_FUN_0052af30(CMorphModel *this_ptr,float morph_t);
-void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_0052af70(CMorphModel *this_ptr);
+void __cdecl core_morph_cpp_CMorphModel_render_FUN_0052af30(CMorphModel *this_ptr,float morph_t,SMorphPoint *ref_points);
+void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_0052af70(CMorphModel *this_ptr,float blend_factor,SMorphPoint *ref_points);
 void __cdecl core_morph_cpp_CMorphModel_renderFaces_FUN_0052b160(CMorphModel *this_ptr,float morph_t);
 int __cdecl core_morph_cpp_CMorphModel_findNearestPoint_FUN_0052b280(CMorphModel *this_ptr,CVector3f *position);
 CMorph * __cdecl core_morph_cpp_CMorph_ctor_FUN_0052b310(CMorph *this_ptr);
 CMorph * __cdecl core_morph_cpp_CMorph_dtor_FUN_0052b330(CMorph *this_ptr,uint flags);
 void __cdecl core_morph_cpp_CMorph_free_FUN_0052b350(CMorph *this_ptr);
-void __cdecl core_morph_cpp_CMorph_setupModelFromPolygons_FUN_0052b370(CMorph *this_ptr,int model_index);
-void __cdecl core_morph_cpp_CMorph_setupModelFromPolygons_FUN_0052b3d0(CMorph *this_ptr,int model_index);
+void __cdecl core_morph_cpp_CMorph_setupModelFromTriPolygons_FUN_0052b370(CMorph *this_ptr,int model_index,int vertex_count,CVector3i *vertices,int face_count ,SMRGLHeaderPrimitive *faces,SMRGLTextureLod *texture_lod,int *texture_index_list);
+void __cdecl core_morph_cpp_CMorph_setupModelFromQuadPolygons_FUN_0052b3d0(CMorph *this_ptr,int model_index,int vertex_count,CVector3i *vertices,int face_count ,SMRGLHeaderPrimitive *faces,SMRGLTextureLod *texture_lod,int *texture_index_list);
 void __cdecl core_morph_cpp_CMorph_setupModelFromDeformable_FUN_0052b430(CMorph *this_ptr,int model_index,CDeformableModelInstance *model_ptr);
 void __cdecl core_morph_cpp_CMorph_setupModelFromKeyframed_FUN_0052b470(CMorph *this_ptr,int model_index,CKeyFramedModel *model_ptr,int frame_index);
-void __cdecl core_morph_cpp_CMorph_addPartToModel_FUN_0052b4b0(CMorph *this_ptr,int model_index);
-void __cdecl core_morph_cpp_CMorph_addPartToModel_FUN_0052b500(CMorph *this_ptr,int model_index);
+void __cdecl core_morph_cpp_CMorph_addTriPartToModel_FUN_0052b4b0(CMorph *this_ptr,int model_index,int vertex_count,CVector3i *vertices,int face_count ,SMRGLHeaderPrimitive *faces,SMRGLTextureLod *texture_lod,int *texture_index_list);
+void __cdecl core_morph_cpp_CMorph_addQuadPartToModel_FUN_0052b500(CMorph *this_ptr,int model_index,int vertex_count,CVector3i *vertices,int face_count ,SMRGLHeaderPrimitive *faces,SMRGLTextureLod *texture_lod,int *texture_index_list);
 void __cdecl core_morph_cpp_CMorph_addPartFromDeformableModel_FUN_0052b550(CMorph *this_ptr,int model_index,CDeformableModelInstance *model_ptr);
 void __cdecl core_morph_cpp_CMorph_addPartFromKeyframedModel_FUN_0052b580(CMorph *this_ptr,int model_index,CKeyFramedModel *model_ptr,int frame_index);
-void __cdecl core_morph_cpp_CMorph_updateModelVertices_FUN_0052b5c0(CMorph *this_ptr,int model_index);
+void __cdecl core_morph_cpp_CMorph_updateModelVertices_FUN_0052b5c0(CMorph *this_ptr,int model_index,CVector3i *vertices,int part_index);
 void __cdecl core_morph_cpp_CMorph_updateModelFromDeformable_FUN_0052b600(CMorph *this_ptr,int model_index,CDeformableModelInstance *model_ptr,int part_index);
 void __cdecl core_morph_cpp_CMorph_updateModelFromKeyframed_FUN_0052b640(CMorph *this_ptr,int model_index,CKeyFramedModel *model_ptr,int frame_index, int part_index);
 void __cdecl core_morph_cpp_CMorph_getReady_FUN_0052b680(CMorph *this_ptr);

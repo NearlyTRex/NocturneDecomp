@@ -32,6 +32,9 @@ CVector3f g_MirrorOutputVertices[32] = {};
 // CVector3f[400]
 CVector3f g_SamplePointArray[400] = {};
 
+// CVector3i[2000]
+CVector3i g_MorphVertexBuffer[2000] = {};
+
 // SBat[30]
 SBat g_MoonBats[30] = {};
 
@@ -100,9 +103,4 @@ int g_MobsterTauntCounters[5] = {};
 
 // uchar
 uchar g_TempFacesInitGuard = {};
-
-// undefined4
-undefined4 DAT_02f3dbb4 = {};
-undefined4 DAT_02f3dbb8 = {};
-undefined4 DAT_02f3dbbc = {};
 

@@ -5,6 +5,7 @@
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 44,
     "suspect_count": 11,
     "suspect_types": [
@@ -124,6 +125,7 @@
       "description": "Complex pointer cast",
       "line": 13,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if ((*(int *)((int)&stream->_handle + *(int *)(stream->_ptr + 4)) == 0) &&",
       "type": "pointer_cast"
     },
@@ -131,6 +133,7 @@
       "description": "Complex pointer cast",
       "line": 14,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "(((*(int *)((int)&stream->_link + *(int *)(stream->_ptr + 4)) == 0 &&",
       "type": "pointer_cast"
     },
@@ -138,6 +141,7 @@
       "description": "Complex pointer cast",
       "line": 15,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "((*(uint *)((int)&stream->_flag + *(int *)(stream->_ptr + 4)) & 0x4000) == 0)) ||",
       "type": "pointer_cast"
     },
@@ -145,6 +149,7 @@
       "description": "Complex pointer cast",
       "line": 18,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "iVar1 = *(int *)((int)&stream->_cnt + *(int *)(stream->_ptr + 4));",
       "type": "pointer_cast"
     },
@@ -152,6 +157,7 @@
       "description": "Complex pointer cast",
       "line": 23,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "buffer = (uint *)((int)buffer + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -159,6 +165,7 @@
       "description": "Complex pointer cast",
       "line": 28,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "buffer = (uint *)((int)buffer + (uint)bVar6 * -2 + 1);",
       "type": "pointer_cast"
     },
@@ -166,6 +173,7 @@
       "description": "Complex pointer cast",
       "line": 29,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar6 * -2 + 1);",
       "type": "pointer_cast"
     },
@@ -173,6 +181,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 35,
       "match": "code *",
+      "severity": "moderate",
       "text": "SVar3 = (**(code **)(*(int *)(iVar1 + 0x28) + 4))(iVar1,buffer,count);",
       "type": "unresolved_funcptr"
     },
@@ -180,6 +189,7 @@
       "description": "Complex pointer cast",
       "line": 39,
       "match": "(FileEmbeddedData *)((int)",
+      "severity": "mild",
       "text": "((FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4)),2);",
       "type": "pointer_cast"
     },
@@ -187,6 +197,7 @@
       "description": "Complex pointer cast",
       "line": 42,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "if ((*(uint *)((int)&stream->_flag + *(int *)(stream->_ptr + 4)) & 0x2000) != 0) {",
       "type": "pointer_cast"
     },

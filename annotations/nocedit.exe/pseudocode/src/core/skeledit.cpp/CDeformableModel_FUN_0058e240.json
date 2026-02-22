@@ -19,13 +19,15 @@
   },
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 169,
+    "complexity_score": 184,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 114,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
+      "bare_stack_ref",
       "pointer_cast"
     ],
     "total_lines": 267
@@ -238,6 +240,7 @@
       "description": "Complex pointer cast",
       "line": 58,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "piVar1 = (int *)((int)local_14->index_data_ptr[0] + iVar7);",
       "type": "pointer_cast"
     },
@@ -245,6 +248,7 @@
       "description": "Complex pointer cast",
       "line": 60,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "piVar6 = (int *)((int)local_14->index_data_ptr[0] + iVar7 + 4);",
       "type": "pointer_cast"
     },
@@ -252,13 +256,23 @@
       "description": "Complex pointer cast",
       "line": 73,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "stack0xffffffba = *(uint *)((int)puVar9 + 6);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Bare stack address reference (hidden stack variable)",
+      "line": 73,
+      "match": "stack0xffffffba",
+      "severity": "moderate",
+      "text": "stack0xffffffba = *(uint *)((int)puVar9 + 6);",
+      "type": "bare_stack_ref"
     },
     {
       "description": "Complex pointer cast",
       "line": 74,
       "match": "(ushort *)((int)",
+      "severity": "mild",
       "text": "*(ushort *)((int)&uStack_44 + (uint)bVar13 * -8 + 2) =",
       "type": "pointer_cast"
     },
@@ -266,6 +280,7 @@
       "description": "Complex pointer cast",
       "line": 75,
       "match": "(ushort *)((int)",
+      "severity": "mild",
       "text": "*(ushort *)((int)puVar9 + (uint)bVar13 * -8 + 10);",
       "type": "pointer_cast"
     }

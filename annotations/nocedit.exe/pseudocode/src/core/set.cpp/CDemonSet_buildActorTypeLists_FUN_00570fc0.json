@@ -1,0 +1,150 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 112,
+    "complexity_score": 59,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 4,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 59,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 171
+  },
+  "cross_references": [
+    {
+      "addr": "00524120",
+      "from_addr": "0052417b",
+      "name": "core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_00524120",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00523e60",
+      "from_addr": "00523ec7",
+      "name": "core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00570fc0",
+    "address_range": [
+      [
+        "00570fc0",
+        "0057112f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_set.cpp_CDemonSet_buildActorTypeLists_FUN_00570fc0",
+    "signature": "void __cdecl core_set_cpp_CDemonSet_buildActorTypeLists_FUN_00570fc0(CDemonSet *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c790",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00823c4c",
+      "name": "g_CCharacterClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf2bf0",
+      "name": "g_CEnemyClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f87490",
+      "name": "g_CTriggerClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f9591c",
+      "name": "g_CWayPointClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00523ec7",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60",
+        "estimated_params": 1,
+        "instructions_analyzed": 4,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0052417b",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_00524120",
+        "estimated_params": 1,
+        "instructions_analyzed": 4,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.590909090909091,
+    "instruction_count": 88,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 4,
+      "CBRANCH": 10,
+      "COPY": 72,
+      "INT_ADD": 59,
+      "INT_AND": 47,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 42,
+      "INT_LESS": 5,
+      "INT_MULT": 8,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 21,
+      "INT_SUB": 21,
+      "INT_XOR": 1,
+      "LOAD": 35,
+      "POPCOUNT": 21,
+      "RETURN": 1,
+      "STORE": 31
+    },
+    "pcode_op_count": 404
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      }
+    ]
+  },
+  "suspects": []
+}

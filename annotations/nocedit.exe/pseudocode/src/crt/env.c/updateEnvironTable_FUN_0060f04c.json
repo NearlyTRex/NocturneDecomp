@@ -5,6 +5,7 @@
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 2,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 91,
     "suspect_count": 11,
     "suspect_types": [
@@ -175,6 +176,7 @@
       "description": "Inferred register parameter",
       "line": 6,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "char *in_EAX;",
       "type": "register_param"
     },
@@ -182,6 +184,7 @@
       "description": "Inferred register parameter",
       "line": 24,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "in_EAX = envstr + 1;",
       "type": "register_param"
     },
@@ -189,6 +192,7 @@
       "description": "Inferred register parameter",
       "line": 25,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "cVar1 = *in_EAX;",
       "type": "register_param"
     },
@@ -196,6 +200,7 @@
       "description": "Inferred register parameter",
       "line": 26,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "for (; (cVar1 != '\\0' && (*in_EAX != '=')); in_EAX = in_EAX + 1) {",
       "type": "register_param"
     },
@@ -203,6 +208,7 @@
       "description": "Inferred register parameter",
       "line": 26,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "for (; (cVar1 != '\\0' && (*in_EAX != '=')); in_EAX = in_EAX + 1) {",
       "type": "register_param"
     },
@@ -210,6 +216,7 @@
       "description": "Inferred register parameter",
       "line": 26,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "for (; (cVar1 != '\\0' && (*in_EAX != '=')); in_EAX = in_EAX + 1) {",
       "type": "register_param"
     },
@@ -217,6 +224,7 @@
       "description": "Inferred register parameter",
       "line": 27,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "cVar1 = in_EAX[1];",
       "type": "register_param"
     },
@@ -224,6 +232,7 @@
       "description": "Inferred register parameter",
       "line": 30,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "if (*in_EAX == '\\0') {",
       "type": "register_param"
     },
@@ -231,6 +240,7 @@
       "description": "Inferred register parameter",
       "line": 33,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "bVar7 = in_EAX[1] == '\\0';",
       "type": "register_param"
     },
@@ -238,6 +248,7 @@
       "description": "Complex pointer cast",
       "line": 92,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)g_EnvironStringArea + n) = 0;",
       "type": "pointer_cast"
     },

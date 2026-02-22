@@ -24,7 +24,7 @@
 ;   core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360
 ;   core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310
 ;   core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
-;   core_set.cpp_CDemonSet_FUN_0056d110
+;   core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0056d110
 ;
 ; *****************************************************************************
 
@@ -54,8 +54,8 @@ section .text
     MOV EDX,dword ptr [0x006810c8]      ; 004c1975 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EDX                            ; 004c197b | g_CDemonSetInstance
     MOV dword ptr [EBX + 0x20],0x0      ; 004c197c
-    CALL core_set.cpp_CDemonSet_FUN_0056d110 ; 004c1983
-        ;   XREF to: 0056d110 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d110(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0056d110 ; 004c1983
+        ;   XREF to: 0056d110 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0056d110(CDemonSet * this_ptr, CDemonGlobe * globe)
     ADD ESP,0x8                         ; 004c1988
     XOR ECX,ECX                         ; 004c198b
     LEA EAX,[EDI + 0x4]                 ; 004c198d

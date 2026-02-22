@@ -22,7 +22,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc
   int local_2c;
   int local_24;
   int local_20;
-  SMRGLPrimitiveQuad **local_1c;
+  SMRGLPrimitiveQuad *local_1c;
   int local_18;
   
   core_dmodel_cpp_CKeyFramedModel_validatePartList_FUN_0047bf40(this_ptr);
@@ -37,11 +37,12 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc
       while (local_20 < iVar3 + local_38->part_list[0].poly_count) {
         bVar2 = false;
         local_18 = iVar3;
-        iVar5 = local_24 + (int)this_ptr->poly_vert_list;
+        iVar5 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).base
+                      .type + local_24;
         if (iVar3 < local_20) {
-          local_1c = this_ptr->poly_vert_list + iVar3 * 0x12;
+          local_1c = this_ptr->poly_vert_list + iVar3;
           do {
-            if (*(SMRGLPrimitiveQuad **)(iVar5 + 4) == local_1c[1]) {
+            if (*(int *)(iVar5 + 4) == (local_1c->base).base.count) {
               iVar6 = 0;
               if (0 < *(int *)(iVar5 + 4)) {
                 do {
@@ -66,7 +67,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc
               }
               if (bVar2) break;
             }
-            local_1c = local_1c + 0x12;
+            local_1c = local_1c + 1;
             local_18 = local_18 + 1;
           } while (local_18 < local_20);
         }
@@ -74,8 +75,12 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc
           iVar5 = this_ptr->poly_count + -1;
           this_ptr->poly_count = iVar5;
           memmove
-                    ((void *)((int)this_ptr->poly_vert_list + local_24),
-                     (void *)(local_2c + (int)this_ptr->poly_vert_list),(iVar5 - local_20) * 0x48);
+                    ((void *)((int)&(((SMRGLPrimitiveQuad *)
+                                     (this_ptr->poly_vert_list->vertices + -2))->base).base.type +
+                             local_24),
+                     (void *)((int)&(((SMRGLPrimitiveQuad *)
+                                     (this_ptr->poly_vert_list->vertices + -2))->base).base.type +
+                             local_2c),(iVar5 - local_20) * 0x48);
           piVar1 = &local_38->part_list[0].poly_count;
           *piVar1 = *piVar1 + -1;
         }

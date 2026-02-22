@@ -5,6 +5,7 @@
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 32,
     "suspect_count": 14,
     "suspect_types": [
@@ -106,6 +107,7 @@
       "description": "Unnamed function parameter",
       "line": 2,
       "match": "param_1",
+      "severity": "mild",
       "text": "uint FUN_0060d576(_FILE *param_1)",
       "type": "unnamed_param"
     },
@@ -113,6 +115,7 @@
       "description": "Unnamed function parameter",
       "line": 10,
       "match": "param_1",
+      "severity": "mild",
       "text": "iVar2 = stream_valid(param_1,1);",
       "type": "unnamed_param"
     },
@@ -120,6 +123,7 @@
       "description": "Unnamed function parameter",
       "line": 12,
       "match": "param_1",
+      "severity": "mild",
       "text": "param_1->_cnt = 0;",
       "type": "unnamed_param"
     },
@@ -127,6 +131,7 @@
       "description": "Complex pointer cast",
       "line": 15,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "iVar2 = *(int *)((int)&param_1->_cnt + *(int *)(param_1->_ptr + 4));",
       "type": "pointer_cast"
     },
@@ -134,6 +139,7 @@
       "description": "Unnamed function parameter",
       "line": 15,
       "match": "param_1",
+      "severity": "mild",
       "text": "iVar2 = *(int *)((int)&param_1->_cnt + *(int *)(param_1->_ptr + 4));",
       "type": "unnamed_param"
     },
@@ -141,6 +147,7 @@
       "description": "Unnamed function parameter",
       "line": 15,
       "match": "param_1",
+      "severity": "mild",
       "text": "iVar2 = *(int *)((int)&param_1->_cnt + *(int *)(param_1->_ptr + 4));",
       "type": "unnamed_param"
     },
@@ -148,6 +155,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 17,
       "match": "code *",
+      "severity": "moderate",
       "text": "iVar4 = (**(code **)(*(int *)(iVar2 + 0x28) + 0x10))(iVar2);",
       "type": "unresolved_funcptr"
     },
@@ -155,6 +163,7 @@
       "description": "Unnamed function parameter",
       "line": 28,
       "match": "param_1",
+      "severity": "mild",
       "text": "param_1->_cnt = 1;",
       "type": "unnamed_param"
     },
@@ -162,6 +171,7 @@
       "description": "Complex pointer cast",
       "line": 32,
       "match": "(FileEmbeddedData *)((int)",
+      "severity": "mild",
       "text": "((FileEmbeddedData *)((int)&param_1->_ptr + *(int *)(param_1->_ptr + 4)),4);",
       "type": "pointer_cast"
     },
@@ -169,6 +179,7 @@
       "description": "Unnamed function parameter",
       "line": 32,
       "match": "param_1",
+      "severity": "mild",
       "text": "((FileEmbeddedData *)((int)&param_1->_ptr + *(int *)(param_1->_ptr + 4)),4);",
       "type": "unnamed_param"
     },
@@ -176,6 +187,7 @@
       "description": "Unnamed function parameter",
       "line": 32,
       "match": "param_1",
+      "severity": "mild",
       "text": "((FileEmbeddedData *)((int)&param_1->_ptr + *(int *)(param_1->_ptr + 4)),4);",
       "type": "unnamed_param"
     },
@@ -183,6 +195,7 @@
       "description": "Unnamed function parameter",
       "line": 33,
       "match": "param_1",
+      "severity": "mild",
       "text": "param_1->_cnt = 0;",
       "type": "unnamed_param"
     },

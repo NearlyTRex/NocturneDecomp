@@ -32,7 +32,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 ;   core_box.cpp_CBox_process_FUN_0041e2f0
-;   core_set.cpp_CDemonSet_FUN_0056d090
+;   core_set.cpp_CDemonSet_addDynamicLight_FUN_0056d090
 ;
 ; *****************************************************************************
 
@@ -149,8 +149,8 @@ section .text
     PUSH 0x2d7eaf0                      ; 005ee235 | g_CDemonLightInstance
     MOV EAX,[0x006810c8]                ; 005ee23a | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EAX                            ; 005ee23f | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_0056d090 ; 005ee240
-        ;   XREF to: 0056d090 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d090(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_addDynamicLight_FUN_0056d090 ; 005ee240
+        ;   XREF to: 0056d090 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addDynamicLight_FUN_0056d090(CDemonSet * this_ptr, CDemonLight * light)
     ADD ESP,0x8                         ; 005ee245
     POP ESI                             ; 005ee248
     POP EBX                             ; 005ee249

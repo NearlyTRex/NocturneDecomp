@@ -5,6 +5,7 @@
 // =============================================================================
 
 // CDemonActor*
+CDemonActor* g_CurrentProcessingActor = {};
 CDemonActor* g_CurrentActorBeingProcessed = {};
 
 // CDemonActorType
@@ -51,6 +52,9 @@ SEdge g_TracedEdgeBuffer[512] = {};
 // SMRGLHeaderPrimitive*[2000]
 SMRGLHeaderPrimitive* g_RenderFaceArray[2000] = {};
 
+// SMRGLPrimitiveQuad[1000]
+SMRGLPrimitiveQuad g_ClothBackfaceBuffer[1000] = {};
+
 // SRenderVertex*[16]
 SRenderVertex* g_ClipperCullingPointers[16] = {};
 
@@ -68,8 +72,8 @@ SRenderVertex g_ClipperIntermediateBuffer[16] = {};
 // _FILE*
 _FILE* g_ActorDataFile = {};
 
-// char[50]
-char g_ActorDebugBuffer[50] = {};
+// char[52]
+char g_ActorDebugBuffer[52] = {};
 
 // float
 float FLOAT_008224dc = {};
@@ -177,12 +181,4 @@ undefined4 DAT_00822f4c = {};
 undefined4 DAT_00822f50 = {};
 undefined4 DAT_00823c54 = {};
 undefined4 DAT_00823c58 = {};
-undefined4 DAT_00827504 = {};
-undefined4 DAT_00827518 = {};
-undefined4 DAT_0082751c = {};
-undefined4 DAT_00827520 = {};
-undefined4 DAT_00827524 = {};
-undefined4 DAT_00827528 = {};
-undefined4 DAT_0082752c = {};
-undefined4 DAT_0082754c = {};
 

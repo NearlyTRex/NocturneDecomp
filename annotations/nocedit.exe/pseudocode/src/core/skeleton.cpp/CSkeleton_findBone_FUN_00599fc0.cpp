@@ -2,17 +2,16 @@
 // Address: 00599fc0
 // Address Range: [[00599fc0, 0059a045]]
 // Convention: __cdecl
-// Signature: int __cdecl core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton *this_ptr,char *bone_name)
+// Signature: int __cdecl core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton *this_ptr,char *bone_name,int assert_if_not_found)
 
 #include "nocturne.h"
 
-int __cdecl core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton *this_ptr,char *bone_name)
+int __cdecl core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton *this_ptr,char *bone_name,int assert_if_not_found)
 
 {
   int iVar1;
   int iVar2;
   SBone *str1;
-  int in_stack_0000000c;
   
   iVar2 = 0;
   if (0 < this_ptr->bone_count) {
@@ -26,7 +25,7 @@ int __cdecl core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton *this_pt
       str1 = str1 + 1;
     } while (iVar2 < this_ptr->bone_count);
   }
-  if (in_stack_0000000c == 0) {
+  if (assert_if_not_found == 0) {
     return -1;
   }
   g_CurrentFilename = "..\\core\\skeleton.cpp";

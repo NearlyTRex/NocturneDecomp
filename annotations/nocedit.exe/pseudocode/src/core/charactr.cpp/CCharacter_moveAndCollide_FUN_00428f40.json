@@ -37,15 +37,17 @@
   },
   "complexity": {
     "assembly_lines": 652,
-    "complexity_score": 342,
+    "complexity_score": 357,
     "cross_reference_count": 36,
     "function_call_count": 7,
     "global_count": 27,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 292,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast"
+      "pointer_cast",
+      "stack_alignment_array"
     ],
     "total_lines": 944
   },
@@ -835,9 +837,18 @@
   },
   "suspects": [
     {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 20,
+      "match": "afStackY_106c",
+      "severity": "moderate",
+      "text": "float afStackY_106c [991];",
+      "type": "stack_alignment_array"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 77,
       "match": "ABS",
+      "severity": "mild",
       "text": "if ((((ABS(velocity->z) == 0.0) && (ABS(velocity->x) == 0.0)) && (velocity->y <= 0.0)) &&",
       "type": "decompiler_intrinsic"
     },
@@ -845,6 +856,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 77,
       "match": "ABS",
+      "severity": "mild",
       "text": "if ((((ABS(velocity->z) == 0.0) && (ABS(velocity->x) == 0.0)) && (velocity->y <= 0.0)) &&",
       "type": "decompiler_intrinsic"
     },
@@ -852,6 +864,7 @@
       "description": "Complex pointer cast",
       "line": 95,
       "match": "(SMotion *)((int)",
+      "severity": "mild",
       "text": "pSVar12 = (SMotion *)((int)pSVar12 + (uint)bVar14 * -2 + 1);",
       "type": "pointer_cast"
     },
@@ -859,6 +872,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 231,
       "match": "SQRT",
+      "severity": "mild",
       "text": "fVar3 = SQRT(afStack_80[4] * afStack_80[4] + afStack_80[2] * afStack_80[2]);",
       "type": "decompiler_intrinsic"
     }

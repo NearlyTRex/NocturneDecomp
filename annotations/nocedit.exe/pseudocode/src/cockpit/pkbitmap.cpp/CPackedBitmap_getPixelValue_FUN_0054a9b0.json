@@ -17,6 +17,7 @@
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 16,
     "suspect_count": 3,
     "suspect_types": [
@@ -110,6 +111,7 @@
       "description": "Complex pointer cast",
       "line": 9,
       "match": "(ushort *)((int)",
+      "severity": "mild",
       "text": "for (puVar1 = (ushort *)((int)this_ptr->row_pointers[row_index] + (int)this_ptr->packed_data);",
       "type": "pointer_cast"
     },
@@ -117,6 +119,7 @@
       "description": "Complex pointer cast",
       "line": 12,
       "match": "(ushort *)((int)",
+      "severity": "mild",
       "text": "puVar1 = (ushort *)((int)puVar1 + (puVar1[1] + 3 & 0xfffffffc) + 4)) {",
       "type": "pointer_cast"
     },
@@ -124,6 +127,7 @@
       "description": "Complex pointer cast",
       "line": 14,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "return (uint)*(byte *)((int)puVar1 + (x_coordinate - uVar2) + 4);",
       "type": "pointer_cast"
     }

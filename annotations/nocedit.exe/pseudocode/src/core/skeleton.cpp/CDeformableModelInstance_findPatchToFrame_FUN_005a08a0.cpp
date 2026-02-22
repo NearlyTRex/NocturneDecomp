@@ -2,11 +2,11 @@
 // Address: 005a08a0
 // Address Range: [[005a08a0, 005a0ac3]]
 // Convention: __cdecl
-// Signature: int __cdecl core_skeleton_cpp_CDeformableModelInstance_findPatchToFrame_FUN_005a08a0(CMotionController *this_ptr,int source_motion_index,float source_frame,int target_motion_index)
+// Signature: int __cdecl core_skeleton_cpp_CDeformableModelInstance_findPatchToFrame_FUN_005a08a0(CDeformableModelInstance *this_ptr,int source_motion_index,float source_frame,int target_motion_index)
 
 #include "nocturne.h"
 
-int __cdecl core_skeleton_cpp_CDeformableModelInstance_findPatchToFrame_FUN_005a08a0(CMotionController *this_ptr,int source_motion_index,float source_frame,int target_motion_index)
+int __cdecl core_skeleton_cpp_CDeformableModelInstance_findPatchToFrame_FUN_005a08a0(CDeformableModelInstance *this_ptr,int source_motion_index,float source_frame,int target_motion_index)
 
 {
   int iVar1;
@@ -36,25 +36,23 @@ int __cdecl core_skeleton_cpp_CDeformableModelInstance_findPatchToFrame_FUN_005a
   float local_18;
   int local_14;
   
-  pCVar2 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0(this_ptr);
+  pCVar2 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
+                     (&this_ptr->motion_controller);
   local_20 = pCVar2->motions[target_motion_index].frame_count;
-  pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
-                     ((CDeformableModelInstance *)this_ptr);
+  pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
   iVar1 = pCVar3->bone_count;
   core_skeleton_cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0
-            ((CDeformableModelInstance *)this_ptr,source_motion_index,source_frame,&local_1afc);
+            (this_ptr,source_motion_index,source_frame,&local_1afc);
   iVar7 = 0;
-  core_skeleton_cpp_computeBoneWorldMatrices_FUN_005a1950
-            (&local_1afc,(CDeformableModelInstance *)this_ptr);
+  core_skeleton_cpp_computeBoneWorldMatrices_FUN_005a1950(&local_1afc,this_ptr);
   local_24 = -1;
   local_1c = 1e+30;
   if (0 < local_20) {
     do {
       local_14 = iVar7;
       core_skeleton_cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0
-                ((CDeformableModelInstance *)this_ptr,target_motion_index,(float)iVar7,&local_3598);
-      core_skeleton_cpp_computeBoneWorldMatrices_FUN_005a1950
-                (&local_3598,(CDeformableModelInstance *)this_ptr);
+                (this_ptr,target_motion_index,(float)iVar7,&local_3598);
+      core_skeleton_cpp_computeBoneWorldMatrices_FUN_005a1950(&local_3598,this_ptr);
       iVar5 = 0;
       local_18 = 0.0;
       if (0 < iVar1) {

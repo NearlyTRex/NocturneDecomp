@@ -9,7 +9,7 @@
 ; XREF[3]:
 ;   core_dcamera.cpp_CDemonCamera_dtor_FUN_0044c090 at 0044c0a4
 ;   core_dcamera.cpp_CDemonCamera_init_FUN_0044c190 at 0044c19c
-;   core_set.cpp_CDemonSet_FUN_0056d2d0 at 0056d35a
+;   core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0 at 0056d35a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dcamera_cpp_00619f8a

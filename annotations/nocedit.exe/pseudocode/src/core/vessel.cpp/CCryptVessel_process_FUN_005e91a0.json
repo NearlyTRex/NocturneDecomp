@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 11,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 195,
     "suspect_count": 6,
     "suspect_types": [
@@ -282,6 +283,7 @@
       "description": "Type propagation did not converge",
       "line": 2,
       "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
     },
@@ -289,6 +291,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 167,
       "match": "SQRT",
+      "severity": "mild",
       "text": "local_18 = SQRT(fVar11 * fVar11 + fVar9 * fVar9 + fVar10 * fVar10);",
       "type": "decompiler_intrinsic"
     },
@@ -296,6 +299,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 174,
       "match": "SQRT",
+      "severity": "mild",
       "text": "local_14 = SQRT(fVar11 * fVar11 + fVar9 * fVar9 + fVar10 * fVar10);",
       "type": "decompiler_intrinsic"
     },
@@ -303,6 +307,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 177,
       "match": "SQRT",
+      "severity": "mild",
       "text": "(this_ptr->eat_distance < SQRT(fVar8 * fVar8 + fVar6 * fVar6 + fVar7 * fVar7))) &&",
       "type": "decompiler_intrinsic"
     },
@@ -310,14 +315,16 @@
       "description": "Likely misinterpreted integer as float",
       "line": 191,
       "match": "1.4013e-45",
-      "text": "this_ptr->prey[5].previous_transform_state.orientation.y = 1.4013e-45;",
+      "severity": "mild",
+      "text": "this_ptr->prey[5].previous_transform_state.orientation.vec.y = 1.4013e-45;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
       "line": 192,
       "match": "1.4013e-45",
-      "text": "this_ptr->neutral[5].previous_transform_state.orientation.y = 1.4013e-45;",
+      "severity": "mild",
+      "text": "this_ptr->neutral[5].previous_transform_state.orientation.vec.y = 1.4013e-45;",
       "type": "suspect_float"
     }
   ],

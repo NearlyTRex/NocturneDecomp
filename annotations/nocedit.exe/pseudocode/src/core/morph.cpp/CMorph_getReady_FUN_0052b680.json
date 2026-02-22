@@ -6,17 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 307,
-    "complexity_score": 269,
+    "complexity_score": 220,
     "cross_reference_count": 8,
     "function_call_count": 4,
     "global_count": 5,
-    "pseudocode_lines": 149,
-    "suspect_count": 11,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 150,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "warning_type_propagation"
     ],
-    "total_lines": 456
+    "total_lines": 457
   },
   "cross_references": [
     {
@@ -572,76 +573,47 @@
       "description": "Type propagation did not converge",
       "line": 2,
       "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
     },
     {
       "description": "Complex pointer cast",
-      "line": 62,
-      "match": "(CBoundingBox3D *)((int)",
-      "text": "pCVar3 = (CBoundingBox3D *)((int)pvVar1 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 65,
-      "match": "(float *)((int)",
-      "text": "(pCVar5->min).y = *(float *)((int)pvVar1 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 66,
-      "match": "(float *)((int)",
-      "text": "(pCVar5->min).z = *(float *)((int)pvVar1 + 0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 70,
-      "match": "(float *)((int)",
-      "text": "(pCVar5->max).y = *(float *)((int)pvVar1 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 71,
-      "match": "(float *)((int)",
-      "text": "(pCVar5->max).z = *(float *)((int)pvVar1 + 0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 126,
-      "match": "(float *)((int)",
-      "text": "local_50.x = *(float *)((int)pvVar1 + iVar4 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 127,
       "match": "(float *)((int)",
-      "text": "local_50.y = *(float *)((int)pvVar1 + iVar4 + 8);",
+      "severity": "mild",
+      "text": "local_50.x = *(float *)((int)&(pSVar1->position).x + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 128,
       "match": "(float *)((int)",
-      "text": "local_50.z = *(float *)((int)pvVar1 + iVar4 + 0xc);",
+      "severity": "mild",
+      "text": "local_50.y = *(float *)((int)&(pSVar1->position).y + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 141,
+      "line": 129,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "local_50.z = *(float *)((int)&(pSVar1->position).z + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 142,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)local_14->models[0].points + iVar4) = iVar6;",
+      "severity": "mild",
+      "text": "*(int *)((int)&(local_14->models[0].points)->vertex_index + iVar4) = iVar6;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 148,
+      "line": 149,
       "match": "(CMorph *)((int)",
+      "severity": "mild",
       "text": "local_34 = (CMorph *)((int)(local_34 + 0xffffffff) + 0x624);",
       "type": "pointer_cast"
     }

@@ -24,7 +24,8 @@ void __cdecl core_msnedit_cpp_CDemonMission_editActorProperties_FUN_00539060(CDe
       (this_ptr->viewport).bottom = 0xf0;
       (this_ptr->viewport).right = 0x140;
     }
-    core_set_cpp_CDemonSet_FUN_0056b7e0(g_CDemonSetPtr,0,0,(this_ptr->viewport).bottom);
+    core_set_cpp_CDemonSet_reinitCamera_FUN_0056b7e0(g_CDemonSetPtr,0,0,(this_ptr->viewport).bottom)
+    ;
   }
   return;
 }

@@ -29,7 +29,7 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
   ulonglong *local_20;
   int local_1c;
   float local_18;
-  CKeyFramedModelInstance *local_14;
+  int local_14;
   
   sound_sndmain_cpp_processAudio_FUN_005abe20();
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
@@ -49,9 +49,9 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
   (pCVar2->light_direction).y = -37000;
   (pCVar2->light_direction).z = 37000;
   pCVar2->ambient_base_quick = 0x280;
-  core_set_cpp_CDemonSet_FUN_00570ca0(pCVar2);
+  core_set_cpp_CDemonSet_setScaleFactors_FUN_00570ca0(pCVar2,0x10000,0x10000,0x10000);
   core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
-            (&this_ptr->moon,(CKeyFramedModelInstance *)0x0,0,0x205);
+            (&this_ptr->moon,0,(CKeyFramedModelInstance *)0x0,0x205);
   pCVar2 = g_CDemonSetPtr;
   (g_CDemonSetPtr->light_direction).x = -0x4844;
   (pCVar2->light_direction).y = -0x4844;
@@ -73,10 +73,9 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
                   (g_CDemonRendererPtr2,&local_44);
         engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                   (g_CDemonRendererPtr2,(CVector3i *)&local_50,(CVector3i *)0x0);
-        local_14 = (CKeyFramedModelInstance *)
-                   (int)ROUND(ROUND(*(float *)((int)&g_MoonBats[0].animation_frame + iVar5)));
-        core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850(&g_MoonBatModel,local_14,0,-1)
-        ;
+        local_14 = (int)ROUND(ROUND(*(float *)((int)&g_MoonBats[0].animation_frame + iVar5)));
+        core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
+                  (&g_MoonBatModel,local_14,(CKeyFramedModelInstance *)0x0,-1);
         engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
         local_18 = *(float *)((int)&g_MoonBats[0].course_position + iVar5) /
                    (float)g_MoonBatCourses[*(int *)((int)&g_MoonBats[0].course_index + iVar5)].len;
@@ -87,8 +86,8 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
         else {
           dVar1 = (double)8192.0f - (double)local_18 * (double)16384.0f;
         }
-        local_14 = (CKeyFramedModelInstance *)(int)ROUND(ROUND(dVar1));
-        g_CDemonSetPtr->ambient_base_quick = (int)local_14;
+        local_14 = (int)ROUND(ROUND(dVar1));
+        g_CDemonSetPtr->ambient_base_quick = local_14;
       }
       iVar5 = iVar5 + 0x18;
     } while (iVar5 != 0x2d0);

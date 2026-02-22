@@ -5,6 +5,7 @@
     "cross_reference_count": 142,
     "function_call_count": 1,
     "global_count": 0,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 8,
     "suspect_count": 3,
     "suspect_types": [
@@ -938,6 +939,7 @@
       "description": "Complex pointer cast",
       "line": 8,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "__arrfini(object_ptr,*(int *)((int)object_ptr + -4),type_info);",
       "type": "pointer_cast"
     },
@@ -945,6 +947,7 @@
       "description": "Complex pointer cast",
       "line": 9,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "return (int *)((int)object_ptr + -4);",
       "type": "pointer_cast"
     },

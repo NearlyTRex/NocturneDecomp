@@ -1,0 +1,208 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 195,
+    "complexity_score": 91,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 7,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 91,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 286
+  },
+  "cross_references": [
+    {
+      "addr": "0052af70",
+      "from_addr": "0052b109",
+      "name": "core_morph.cpp_CMorphModel_rotatePoints_FUN_0052af70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056e7c0",
+      "from_addr": "0056e83a",
+      "name": "core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056e5d0",
+    "address_range": [
+      [
+        "0056e5d0",
+        "0056e7b2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_set.cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0056e5d0",
+    "signature": "void __cdecl core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0056e5d0(CDemonSet *this_ptr,int vertex_count)"
+  },
+  "function_calls": [
+    {
+      "addr": "0044c740",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_CDemonCamera_pushRect_FUN_0044c740"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr2",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "00902f70",
+      "name": "g_SkipClearBuffersSceneCamera",
+      "type": "CDemonCamera*",
+      "value": null
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02d02548",
+      "name": "g_ViewportCenterXFixed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0254c",
+      "name": "g_ViewportCenterYFixed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02550",
+      "name": "g_ViewportRightFixed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02554",
+      "name": "g_ViewportBottomFixed",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.13375796178344,
+    "instruction_count": 157,
+    "opcode_distribution": {
+      "BOOL_AND": 2,
+      "BOOL_NEGATE": 22,
+      "BOOL_OR": 5,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 20,
+      "COPY": 120,
+      "INT_2COMP": 4,
+      "INT_ADD": 57,
+      "INT_AND": 134,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 102,
+      "INT_LEFT": 2,
+      "INT_LESS": 23,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 26,
+      "INT_OR": 18,
+      "INT_SBORROW": 27,
+      "INT_SCARRY": 10,
+      "INT_SDIV": 2,
+      "INT_SEXT": 8,
+      "INT_SLESS": 44,
+      "INT_SREM": 2,
+      "INT_SRIGHT": 8,
+      "INT_SUB": 37,
+      "INT_XOR": 1,
+      "INT_ZEXT": 4,
+      "LOAD": 36,
+      "POPCOUNT": 44,
+      "RETURN": 1,
+      "STORE": 26,
+      "SUBPIECE": 8
+    },
+    "pcode_op_count": 806
+  },
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

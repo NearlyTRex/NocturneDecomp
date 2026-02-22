@@ -10,6 +10,7 @@
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 21,
     "suspect_count": 5,
     "suspect_types": [
@@ -96,6 +97,7 @@
       "description": "Complex pointer cast",
       "line": 14,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)&this_ptr->node_table->code + iVar1) = iVar2;",
       "type": "pointer_cast"
     },
@@ -103,6 +105,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 14,
       "match": "code",
+      "severity": "moderate",
       "text": "*(int *)((int)&this_ptr->node_table->code + iVar1) = iVar2;",
       "type": "unresolved_funcptr"
     },
@@ -110,6 +113,7 @@
       "description": "Complex pointer cast",
       "line": 15,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&this_ptr->node_table->prefix_code + iVar1) = 0xffffffff;",
       "type": "pointer_cast"
     },
@@ -117,6 +121,7 @@
       "description": "Complex pointer cast",
       "line": 16,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&this_ptr->node_table->suffix_char + iVar1) = 0xffffffff;",
       "type": "pointer_cast"
     },
@@ -124,6 +129,7 @@
       "description": "Complex pointer cast",
       "line": 17,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&this_ptr->node_table->next_link + iVar1) = 0xffffffff;",
       "type": "pointer_cast"
     }

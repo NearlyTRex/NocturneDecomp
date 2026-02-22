@@ -6,14 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 125,
-    "complexity_score": 390,
+    "complexity_score": 435,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 50,
-    "suspect_count": 32,
+    "suspect_count": 36,
     "suspect_types": [
       "decompiler_intrinsic",
+      "double_reconstruction",
       "extra_output",
       "param_count_too_few",
       "stack_param"
@@ -193,6 +195,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 9,
       "match": "extraout_EDX",
+      "severity": "moderate",
       "text": "uint extraout_EDX;",
       "type": "extra_output"
     },
@@ -200,6 +203,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 10,
       "match": "extraout_EDX_00",
+      "severity": "moderate",
       "text": "uint extraout_EDX_00;",
       "type": "extra_output"
     },
@@ -207,6 +211,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 11,
       "match": "extraout_EDX_01",
+      "severity": "moderate",
       "text": "uint extraout_EDX_01;",
       "type": "extra_output"
     },
@@ -214,6 +219,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 12,
       "match": "extraout_EDX_02",
+      "severity": "moderate",
       "text": "uint extraout_EDX_02;",
       "type": "extra_output"
     },
@@ -221,6 +227,7 @@
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
@@ -228,6 +235,7 @@
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
@@ -235,6 +243,7 @@
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
@@ -242,6 +251,7 @@
       "description": "Unresolved stack parameter",
       "line": 20,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "iVar6 = *(int *)(in_stack_00000004 + 0x4040 + in_stack_00000008 * 0x40);",
       "type": "stack_param"
     },
@@ -249,6 +259,7 @@
       "description": "Unresolved stack parameter",
       "line": 20,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "iVar6 = *(int *)(in_stack_00000004 + 0x4040 + in_stack_00000008 * 0x40);",
       "type": "stack_param"
     },
@@ -256,6 +267,7 @@
       "description": "Unresolved stack parameter",
       "line": 21,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "iVar5 = *(int *)(in_stack_00000004 + 0x4044 + in_stack_00000008 * 0x40) + iVar6 + -1;",
       "type": "stack_param"
     },
@@ -263,6 +275,7 @@
       "description": "Unresolved stack parameter",
       "line": 21,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "iVar5 = *(int *)(in_stack_00000004 + 0x4044 + in_stack_00000008 * 0x40) + iVar6 + -1;",
       "type": "stack_param"
     },
@@ -270,6 +283,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 27,
       "match": "extraout_EDX_00",
+      "severity": "moderate",
       "text": "if ((double)CONCAT44(extraout_EDX_00,iVar3) < (double)CONCAT44(extraout_EDX,iVar2)) {",
       "type": "extra_output"
     },
@@ -277,13 +291,31 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 27,
       "match": "extraout_EDX",
+      "severity": "moderate",
       "text": "if ((double)CONCAT44(extraout_EDX_00,iVar3) < (double)CONCAT44(extraout_EDX,iVar2)) {",
       "type": "extra_output"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 27,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "if ((double)CONCAT44(extraout_EDX_00,iVar3) < (double)CONCAT44(extraout_EDX,iVar2)) {",
+      "type": "double_reconstruction"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 27,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "if ((double)CONCAT44(extraout_EDX_00,iVar3) < (double)CONCAT44(extraout_EDX,iVar2)) {",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 27,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "if ((double)CONCAT44(extraout_EDX_00,iVar3) < (double)CONCAT44(extraout_EDX,iVar2)) {",
       "type": "decompiler_intrinsic"
     },
@@ -291,6 +323,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 27,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "if ((double)CONCAT44(extraout_EDX_00,iVar3) < (double)CONCAT44(extraout_EDX,iVar2)) {",
       "type": "decompiler_intrinsic"
     },
@@ -298,6 +331,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 31,
       "match": "extraout_EDX_01",
+      "severity": "moderate",
       "text": "if ((double)CONCAT44(extraout_EDX_01,iVar2) <= (double)CONCAT44(extraout_EDX_02,iVar3))",
       "type": "extra_output"
     },
@@ -305,13 +339,31 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 31,
       "match": "extraout_EDX_02",
+      "severity": "moderate",
       "text": "if ((double)CONCAT44(extraout_EDX_01,iVar2) <= (double)CONCAT44(extraout_EDX_02,iVar3))",
       "type": "extra_output"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 31,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "if ((double)CONCAT44(extraout_EDX_01,iVar2) <= (double)CONCAT44(extraout_EDX_02,iVar3))",
+      "type": "double_reconstruction"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 31,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "if ((double)CONCAT44(extraout_EDX_01,iVar2) <= (double)CONCAT44(extraout_EDX_02,iVar3))",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 31,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "if ((double)CONCAT44(extraout_EDX_01,iVar2) <= (double)CONCAT44(extraout_EDX_02,iVar3))",
       "type": "decompiler_intrinsic"
     },
@@ -319,6 +371,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 31,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "if ((double)CONCAT44(extraout_EDX_01,iVar2) <= (double)CONCAT44(extraout_EDX_02,iVar3))",
       "type": "decompiler_intrinsic"
     },
@@ -326,6 +379,7 @@
       "description": "Unresolved stack parameter",
       "line": 34,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "puVar4 = (uint *)(local_14 + *(int *)(in_stack_00000004 + 0x2004));",
       "type": "stack_param"
     },
@@ -333,6 +387,7 @@
       "description": "Unresolved stack parameter",
       "line": 36,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "*puVar4 = *(uint *)(*(int *)(in_stack_00000004 + 0x2004) + iVar5 * 4);",
       "type": "stack_param"
     },
@@ -340,6 +395,7 @@
       "description": "Unresolved stack parameter",
       "line": 37,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "*(uint *)(iVar5 * 4 + *(int *)(in_stack_00000004 + 0x2004)) = uVar1;",
       "type": "stack_param"
     },
@@ -347,6 +403,7 @@
       "description": "Unresolved stack parameter",
       "line": 43,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "iVar6 = in_stack_00000008 * 0x40;",
       "type": "stack_param"
     },
@@ -354,6 +411,7 @@
       "description": "Unresolved stack parameter",
       "line": 44,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "*(int *)(in_stack_0000000c * 0x40 + 0x4040 + in_stack_00000004) = iVar5;",
       "type": "stack_param"
     },
@@ -361,6 +419,7 @@
       "description": "Unresolved stack parameter",
       "line": 44,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "*(int *)(in_stack_0000000c * 0x40 + 0x4040 + in_stack_00000004) = iVar5;",
       "type": "stack_param"
     },
@@ -368,6 +427,7 @@
       "description": "Unresolved stack parameter",
       "line": 45,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "*(int *)(in_stack_0000000c * 0x40 + 0x4044 + in_stack_00000004) =",
       "type": "stack_param"
     },
@@ -375,6 +435,7 @@
       "description": "Unresolved stack parameter",
       "line": 45,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "*(int *)(in_stack_0000000c * 0x40 + 0x4044 + in_stack_00000004) =",
       "type": "stack_param"
     },
@@ -382,6 +443,7 @@
       "description": "Unresolved stack parameter",
       "line": 46,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "*(int *)(in_stack_00000004 + 0x4044 + iVar6) -",
       "type": "stack_param"
     },
@@ -389,6 +451,7 @@
       "description": "Unresolved stack parameter",
       "line": 47,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "(iVar5 - *(int *)(in_stack_00000004 + 0x4040 + iVar6));",
       "type": "stack_param"
     },
@@ -396,6 +459,7 @@
       "description": "Unresolved stack parameter",
       "line": 48,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "*(int *)(in_stack_00000004 + 0x4044 + iVar6) =",
       "type": "stack_param"
     },
@@ -403,6 +467,7 @@
       "description": "Unresolved stack parameter",
       "line": 49,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "iVar5 - *(int *)(in_stack_00000004 + 0x4040 + iVar6);",
       "type": "stack_param"
     },

@@ -5,6 +5,7 @@
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 33,
     "suspect_count": 25,
     "suspect_types": [
@@ -78,6 +79,7 @@
       "description": "Inferred register parameter",
       "line": 8,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "uint in_ECX;",
       "type": "register_param"
     },
@@ -85,6 +87,7 @@
       "description": "Unaffected register variable",
       "line": 10,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "uint *unaff_ESI;",
       "type": "unaffected_reg"
     },
@@ -92,6 +95,7 @@
       "description": "Unaffected register variable",
       "line": 11,
       "match": "unaff_EDI",
+      "severity": "moderate",
       "text": "uint *unaff_EDI;",
       "type": "unaffected_reg"
     },
@@ -99,6 +103,7 @@
       "description": "Inferred register parameter",
       "line": 13,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "for (uVar4 = in_ECX >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {",
       "type": "register_param"
     },
@@ -106,6 +111,7 @@
       "description": "Unaffected register variable",
       "line": 15,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "uVar2 = *unaff_ESI;",
       "type": "unaffected_reg"
     },
@@ -113,6 +119,7 @@
       "description": "Unaffected register variable",
       "line": 16,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "*unaff_ESI = *unaff_EDI;",
       "type": "unaffected_reg"
     },
@@ -120,6 +127,7 @@
       "description": "Unaffected register variable",
       "line": 16,
       "match": "unaff_EDI",
+      "severity": "moderate",
       "text": "*unaff_ESI = *unaff_EDI;",
       "type": "unaffected_reg"
     },
@@ -127,6 +135,7 @@
       "description": "Unaffected register variable",
       "line": 18,
       "match": "unaff_EDI",
+      "severity": "moderate",
       "text": "*unaff_EDI = uVar2;",
       "type": "unaffected_reg"
     },
@@ -134,6 +143,7 @@
       "description": "Unaffected register variable",
       "line": 19,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "unaff_ESI = unaff_ESI + 1;",
       "type": "unaffected_reg"
     },
@@ -141,6 +151,7 @@
       "description": "Unaffected register variable",
       "line": 19,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "unaff_ESI = unaff_ESI + 1;",
       "type": "unaffected_reg"
     },
@@ -148,6 +159,7 @@
       "description": "Unaffected register variable",
       "line": 20,
       "match": "unaff_EDI",
+      "severity": "moderate",
       "text": "unaff_EDI = unaff_EDI + 1;",
       "type": "unaffected_reg"
     },
@@ -155,6 +167,7 @@
       "description": "Unaffected register variable",
       "line": 20,
       "match": "unaff_EDI",
+      "severity": "moderate",
       "text": "unaff_EDI = unaff_EDI + 1;",
       "type": "unaffected_reg"
     },
@@ -162,6 +175,7 @@
       "description": "Inferred register parameter",
       "line": 22,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "uVar4 = (uint)((byte)in_ECX & 3);",
       "type": "register_param"
     },
@@ -169,6 +183,7 @@
       "description": "Inferred register parameter",
       "line": 23,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "uVar3 = in_ECX & 3;",
       "type": "register_param"
     },
@@ -176,6 +191,7 @@
       "description": "Unaffected register variable",
       "line": 26,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "uVar1 = *(byte *)unaff_ESI;",
       "type": "unaffected_reg"
     },
@@ -183,6 +199,7 @@
       "description": "Unaffected register variable",
       "line": 27,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "*(byte *)unaff_ESI = *(byte *)unaff_EDI;",
       "type": "unaffected_reg"
     },
@@ -190,6 +207,7 @@
       "description": "Unaffected register variable",
       "line": 27,
       "match": "unaff_EDI",
+      "severity": "moderate",
       "text": "*(byte *)unaff_ESI = *(byte *)unaff_EDI;",
       "type": "unaffected_reg"
     },
@@ -197,6 +215,7 @@
       "description": "Unaffected register variable",
       "line": 29,
       "match": "unaff_EDI",
+      "severity": "moderate",
       "text": "*(byte *)unaff_EDI = uVar1;",
       "type": "unaffected_reg"
     },
@@ -204,6 +223,7 @@
       "description": "Unaffected register variable",
       "line": 30,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "unaff_ESI = (uint *)((int)unaff_ESI + 1);",
       "type": "unaffected_reg"
     },
@@ -211,6 +231,7 @@
       "description": "Unaffected register variable",
       "line": 30,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "unaff_ESI = (uint *)((int)unaff_ESI + 1);",
       "type": "unaffected_reg"
     },
@@ -218,6 +239,7 @@
       "description": "Complex pointer cast",
       "line": 30,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "unaff_ESI = (uint *)((int)unaff_ESI + 1);",
       "type": "pointer_cast"
     },
@@ -225,6 +247,7 @@
       "description": "Unaffected register variable",
       "line": 32,
       "match": "unaff_EDI",
+      "severity": "moderate",
       "text": "unaff_EDI = (uint *)((int)unaff_EDI + 1);",
       "type": "unaffected_reg"
     },
@@ -232,6 +255,7 @@
       "description": "Unaffected register variable",
       "line": 32,
       "match": "unaff_EDI",
+      "severity": "moderate",
       "text": "unaff_EDI = (uint *)((int)unaff_EDI + 1);",
       "type": "unaffected_reg"
     },
@@ -239,6 +263,7 @@
       "description": "Complex pointer cast",
       "line": 32,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "unaff_EDI = (uint *)((int)unaff_EDI + 1);",
       "type": "pointer_cast"
     },

@@ -23,6 +23,7 @@
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 13,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 84,
     "suspect_count": 11,
     "suspect_types": [
@@ -64,7 +65,7 @@
     {
       "addr": "0056e3e0",
       "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_0056e3e0"
+      "name": "core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_0056e3e0"
     },
     {
       "addr": "00570770",
@@ -254,6 +255,7 @@
       "description": "Undefined global data reference",
       "line": 29,
       "match": "DAT_03f90a88",
+      "severity": "mild",
       "text": "piVar4 = &DAT_03f90a88;",
       "type": "undefined_data"
     },
@@ -261,6 +263,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 32,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*piVar4 = (int)ROUND((pSVar5->local_position).x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -268,6 +271,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 33,
       "match": "ROUND",
+      "severity": "mild",
       "text": "piVar4[1] = (int)ROUND((pSVar5->local_position).y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -275,6 +279,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 34,
       "match": "ROUND",
+      "severity": "mild",
       "text": "piVar4[2] = (int)ROUND((pSVar5->local_position).z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -282,6 +287,7 @@
       "description": "Undefined global data reference",
       "line": 42,
       "match": "DAT_03f90a88",
+      "severity": "mild",
       "text": "(g_CDemonSetPtr,this_ptr->vertex_count,&DAT_03f90a88);",
       "type": "undefined_data"
     },
@@ -289,6 +295,7 @@
       "description": "Complex pointer cast",
       "line": 48,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "lVar2 = (longlong)((this_ptr->color).r << 8) * (longlong)*(int *)((int)&pSVar1->z + iVar6)",
       "type": "pointer_cast"
     },
@@ -296,6 +303,7 @@
       "description": "Complex pointer cast",
       "line": 50,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&pSVar1->z + iVar6) =",
       "type": "pointer_cast"
     },
@@ -303,6 +311,7 @@
       "description": "Complex pointer cast",
       "line": 52,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "lVar2 = (longlong)((this_ptr->color).g << 8) * (longlong)*(int *)((int)&pSVar1->r + iVar6)",
       "type": "pointer_cast"
     },
@@ -310,6 +319,7 @@
       "description": "Complex pointer cast",
       "line": 54,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&pSVar1->r + iVar6) =",
       "type": "pointer_cast"
     },
@@ -317,6 +327,7 @@
       "description": "Complex pointer cast",
       "line": 56,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "lVar2 = (longlong)((this_ptr->color).b << 8) * (longlong)*(int *)((int)&pSVar1->g + iVar6)",
       "type": "pointer_cast"
     },
@@ -324,6 +335,7 @@
       "description": "Complex pointer cast",
       "line": 58,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&pSVar1->g + iVar6) =",
       "type": "pointer_cast"
     }

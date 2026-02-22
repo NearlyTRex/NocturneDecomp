@@ -219,7 +219,7 @@ section .text
     PUSH 0x656b01                       ; 005e5894 | = "Bip01 Spine2"
     PUSH EAX                            ; 005e5899
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0 ; 005e589a
-        ;   XREF to: 00599fc0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton * this_ptr, char * bone_name)
+        ;   XREF to: 00599fc0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     MOV dword ptr [EBX + 0x24b0],0x0    ; 005e589f
     MOV dword ptr [EBX + 0xce900],0x0   ; 005e58a9
     ADD ESP,0xc                         ; 005e58b3

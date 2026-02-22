@@ -464,7 +464,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
             iVar9 = 0xf0;
             this_ptr->screen_clear_enabled = 1;
           }
-          core_set_cpp_CDemonSet_FUN_0056b7e0(this_ptr_03,0,0,iVar9);
+          core_set_cpp_CDemonSet_reinitCamera_FUN_0056b7e0(this_ptr_03,0,0,iVar9);
           core_sound_cpp_CSound_playSound_FUN_005b3a20
                     (g_CSoundPtr,(void *)0x0,"cheat-1.wav");
         }
@@ -1676,8 +1676,8 @@ LAB_004df408:
             pCVar17 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
                                 (pCStack_140);
             pCStack_13c = pCVar17;
-            iVar9 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(pCVar17,"Bip01 head")
-            ;
+            iVar9 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+                              (pCVar17,"Bip01 head",0);
             if (iVar9 != -1) {
               pCStack_138 = pCStack_140;
               fStack_134 = fStack_144;
@@ -1696,7 +1696,7 @@ LAB_004df408:
               }
             }
             iVar9 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                              (pCStack_13c,"bipltit02");
+                              (pCStack_13c,"bipltit02",0);
             pCVar17 = pCStack_13c;
             if (iVar9 != -1) {
               pCStack_12c = pCStack_140;
@@ -1716,7 +1716,7 @@ LAB_004df408:
               }
             }
             iVar9 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                              (pCStack_13c,"biprtit02");
+                              (pCStack_13c,"biprtit02",0);
             pCVar17 = pCStack_13c;
             if (iVar9 != -1) {
               pCStack_120 = pCStack_140;

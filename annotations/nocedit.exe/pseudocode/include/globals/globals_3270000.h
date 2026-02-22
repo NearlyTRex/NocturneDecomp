@@ -2,6 +2,7 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "types/classes/C3DSLight.h"
 #include "types/classes/CDemonCamera.h"
 #include "types/classes/CDemonGlobe.h"
 #include "types/classes/CDemonLight.h"
@@ -13,11 +14,16 @@
 // GLOBAL VARIABLES - Range 0x3270000
 // =============================================================================
 
+// C3DSLight*[200]
+extern C3DSLight* g_OmniLights[200];
+
 // CDemonCamera
 extern CDemonCamera g_CDemonCameraInstance;
 
 // CDemonGlobe*[100]
 extern CDemonGlobe* g_CoronaGlobes[100];
+extern CDemonGlobe* g_QueuedCoronaGlobes[100];
+extern CDemonGlobe* g_VisibleCoronaGlobes[100];
 
 // CDemonLight*[4]
 extern CDemonLight* g_DynamicLights[4];
@@ -32,28 +38,21 @@ extern CDemonRaytrace g_CDemonRaytraceInstance;
 // CKeyFramedModel
 extern CKeyFramedModel g_CKeyFramedModelInstance;
 
-// CRect
-extern CRect DAT_032770b4;
+// CRect[96]
+extern CRect g_ActiveLightBounds[96];
 
 // int
 extern int g_MasterLightCount;
 extern int g_ActiveLightCount;
 extern int g_DynamicLightCount;
 extern int g_CoronaGlobeCount;
+extern int g_QueuedCoronaGlobeCount;
+extern int g_VisibleCoronaGlobeCount;
+extern int g_OmniLightCount;
+
+// int[100]
+extern int g_QueuedCoronaGlobeAlphaMasks[100];
 
 // int[65536]
 extern int g_IntensityToValueLookupTable[65536];
-
-// undefined4
-extern undefined4 DAT_0327785c;
-extern undefined4 DAT_03277860;
-extern undefined4 DAT_03277864;
-extern undefined4 DAT_032779f0;
-extern undefined4 DAT_032779f4;
-extern undefined4 DAT_03277b80;
-extern undefined4 DAT_03277b84;
-extern undefined4 DAT_03277b88;
-extern undefined4 DAT_03277d80;
-extern undefined4 DAT_03277d84;
-extern undefined4 DAT_03277d88;
 

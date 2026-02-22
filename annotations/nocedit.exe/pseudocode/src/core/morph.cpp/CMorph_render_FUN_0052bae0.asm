@@ -55,7 +55,7 @@ section .text
     FSTP float ptr [ESP]                ; 0052bb19
     PUSH EBX                            ; 0052bb1c
     CALL core_morph.cpp_CMorphModel_render_FUN_0052af30 ; 0052bb1d
-        ;   XREF to: 0052af30 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_render_FUN_0052af30(CMorphModel * this_ptr, float morph_t)
+        ;   XREF to: 0052af30 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_render_FUN_0052af30(CMorphModel * this_ptr, float morph_t, SMorphPoint * ref_points)
     ADD ESP,0xc                         ; 0052bb22
     MOV EDI,dword ptr [EBX + 0x58]      ; 0052bb25
     PUSH EDI                            ; 0052bb28
@@ -63,7 +63,7 @@ section .text
     PUSH dword ptr [ESP + 0x18]         ; 0052bb2f
     PUSH EBX                            ; 0052bb33
     CALL core_morph.cpp_CMorphModel_render_FUN_0052af30 ; 0052bb34
-        ;   XREF to: 0052af30 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_render_FUN_0052af30(CMorphModel * this_ptr, float morph_t)
+        ;   XREF to: 0052af30 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_render_FUN_0052af30(CMorphModel * this_ptr, float morph_t, SMorphPoint * ref_points)
     ADD ESP,0xc                         ; 0052bb39
     POP EDI                             ; 0052bb3c
     POP ESI                             ; 0052bb3d

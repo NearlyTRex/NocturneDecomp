@@ -5,6 +5,7 @@
     "cross_reference_count": 23,
     "function_call_count": 7,
     "global_count": 3,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 113,
     "suspect_count": 14,
     "suspect_types": [
@@ -303,6 +304,7 @@
       "description": "Unaffected register variable",
       "line": 12,
       "match": "unaff_EBP",
+      "severity": "moderate",
       "text": "uint unaff_EBP;",
       "type": "unaffected_reg"
     },
@@ -310,6 +312,7 @@
       "description": "Complex pointer cast",
       "line": 41,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "bVar7 = *(byte *)((int)&file->_flag + 1);",
       "type": "pointer_cast"
     },
@@ -317,6 +320,7 @@
       "description": "Complex pointer cast",
       "line": 45,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)&file->_flag + 1) = bVar7;",
       "type": "pointer_cast"
     },
@@ -324,6 +328,7 @@
       "description": "Complex pointer cast",
       "line": 46,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)&file->_flag + 1) = bVar7 | 1;",
       "type": "pointer_cast"
     },
@@ -331,6 +336,7 @@
       "description": "Complex pointer cast",
       "line": 59,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "bVar7 = *(byte *)((int)&file->_flag + 1) & 0xfa;",
       "type": "pointer_cast"
     },
@@ -338,6 +344,7 @@
       "description": "Complex pointer cast",
       "line": 60,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)&file->_flag + 1) = bVar7;",
       "type": "pointer_cast"
     },
@@ -345,6 +352,7 @@
       "description": "Complex pointer cast",
       "line": 61,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)&file->_flag + 1) = bVar7 | 4;",
       "type": "pointer_cast"
     },
@@ -352,6 +360,7 @@
       "description": "Complex pointer cast",
       "line": 98,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "bVar1 = *(byte *)((int)&file->_flag + 1);",
       "type": "pointer_cast"
     },
@@ -359,6 +368,7 @@
       "description": "Complex pointer cast",
       "line": 101,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)&file->_flag + 1) = bVar1 | 0x10;",
       "type": "pointer_cast"
     },
@@ -366,6 +376,7 @@
       "description": "Unaffected register variable",
       "line": 108,
       "match": "unaff_EBP",
+      "severity": "moderate",
       "text": "unaff_EBP = uVar9 - uVar4;",
       "type": "unaffected_reg"
     },
@@ -373,6 +384,7 @@
       "description": "Unaffected register variable",
       "line": 109,
       "match": "unaff_EBP",
+      "severity": "moderate",
       "text": "} while ((unaff_EBP != 0) && (uVar9 = unaff_EBP, (file->_flag & 0x20) == 0));",
       "type": "unaffected_reg"
     },
@@ -380,6 +392,7 @@
       "description": "Unaffected register variable",
       "line": 109,
       "match": "unaff_EBP",
+      "severity": "moderate",
       "text": "} while ((unaff_EBP != 0) && (uVar9 = unaff_EBP, (file->_flag & 0x20) == 0));",
       "type": "unaffected_reg"
     },
@@ -387,6 +400,7 @@
       "description": "Unaffected register variable",
       "line": 113,
       "match": "unaff_EBP",
+      "severity": "moderate",
       "text": "SVar3 = unaff_EBP / (uint)file;",
       "type": "unaffected_reg"
     },

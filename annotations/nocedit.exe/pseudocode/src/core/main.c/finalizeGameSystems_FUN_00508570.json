@@ -29,6 +29,7 @@
     "cross_reference_count": 1,
     "function_call_count": 32,
     "global_count": 27,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 83,
     "suspect_count": 2,
     "suspect_types": [
@@ -459,6 +460,7 @@
       "description": "Direct stack address reference",
       "line": 21,
       "match": "&stack0xfffffef0",
+      "severity": "moderate",
       "text": "_sprintf(&stack0xfffffef0,\"load%d\",(uVar2 & 3) + 1);",
       "type": "stack_ref"
     },
@@ -466,6 +468,7 @@
       "description": "Direct stack address reference",
       "line": 23,
       "match": "&stack0xfffffef0",
+      "severity": "moderate",
       "text": "(&g_LoadingScreenBitmap1,&stack0xfffffef0,0x280,0x1e0);",
       "type": "stack_ref"
     }

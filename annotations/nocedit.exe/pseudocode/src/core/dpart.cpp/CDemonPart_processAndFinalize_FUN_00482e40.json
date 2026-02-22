@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 17,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 66,
     "suspect_count": 22,
     "suspect_types": [
@@ -254,6 +255,7 @@
       "description": "Complex pointer cast",
       "line": 31,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)&this_ptr->vertex_positions->x + iVar4) =",
       "type": "pointer_cast"
     },
@@ -261,6 +263,7 @@
       "description": "Complex pointer cast",
       "line": 32,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND((double)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar3) * dVar2))",
       "type": "pointer_cast"
     },
@@ -268,6 +271,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 32,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND((double)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar3) * dVar2))",
       "type": "decompiler_intrinsic"
     },
@@ -275,6 +279,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 32,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND((double)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar3) * dVar2))",
       "type": "decompiler_intrinsic"
     },
@@ -282,6 +287,7 @@
       "description": "Complex pointer cast",
       "line": 34,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)&this_ptr->vertex_positions->y + iVar4) =",
       "type": "pointer_cast"
     },
@@ -289,6 +295,7 @@
       "description": "Complex pointer cast",
       "line": 35,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND((double)*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar3) * dVar2))",
       "type": "pointer_cast"
     },
@@ -296,6 +303,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 35,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND((double)*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar3) * dVar2))",
       "type": "decompiler_intrinsic"
     },
@@ -303,6 +311,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 35,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND((double)*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar3) * dVar2))",
       "type": "decompiler_intrinsic"
     },
@@ -310,6 +319,7 @@
       "description": "Complex pointer cast",
       "line": 37,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "pfVar1 = (float *)((int)&g_LoadedVertices[0].vertex.z + iVar3);",
       "type": "pointer_cast"
     },
@@ -317,6 +327,7 @@
       "description": "Complex pointer cast",
       "line": 39,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)&this_ptr->vertex_positions->z + iVar4) =",
       "type": "pointer_cast"
     },
@@ -324,6 +335,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 40,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND((double)*pfVar1 * dVar2));",
       "type": "decompiler_intrinsic"
     },
@@ -331,6 +343,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 40,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND((double)*pfVar1 * dVar2));",
       "type": "decompiler_intrinsic"
     },
@@ -338,6 +351,7 @@
       "description": "Complex pointer cast",
       "line": 50,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&this_ptr->face_data->vertex_index_1 + iVar3) =",
       "type": "pointer_cast"
     },
@@ -345,6 +359,7 @@
       "description": "Complex pointer cast",
       "line": 51,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar4);",
       "type": "pointer_cast"
     },
@@ -352,6 +367,7 @@
       "description": "Complex pointer cast",
       "line": 52,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&this_ptr->face_data->vertex_index_2 + iVar3) =",
       "type": "pointer_cast"
     },
@@ -359,6 +375,7 @@
       "description": "Complex pointer cast",
       "line": 53,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar4 + 4);",
       "type": "pointer_cast"
     },
@@ -366,6 +383,7 @@
       "description": "Complex pointer cast",
       "line": 54,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&this_ptr->face_data->vertex_index_3 + iVar3) =",
       "type": "pointer_cast"
     },
@@ -373,6 +391,7 @@
       "description": "Complex pointer cast",
       "line": 55,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar4 + 8);",
       "type": "pointer_cast"
     },
@@ -380,6 +399,7 @@
       "description": "Complex pointer cast",
       "line": 56,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (*(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar4 + -0x14) == 4) {",
       "type": "pointer_cast"
     },
@@ -387,6 +407,7 @@
       "description": "Complex pointer cast",
       "line": 57,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&this_ptr->face_data->vertex_index_4 + iVar3) =",
       "type": "pointer_cast"
     },
@@ -394,6 +415,7 @@
       "description": "Complex pointer cast",
       "line": 58,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar4 + 0xc);",
       "type": "pointer_cast"
     },
@@ -401,6 +423,7 @@
       "description": "Complex pointer cast",
       "line": 61,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&this_ptr->face_data->vertex_index_4 + iVar3) = 0xffffffff;",
       "type": "pointer_cast"
     }

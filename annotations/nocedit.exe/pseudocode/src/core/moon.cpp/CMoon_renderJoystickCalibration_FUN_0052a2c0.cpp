@@ -44,7 +44,7 @@ void __cdecl core_moon_cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0(CMoon *t
   (pCVar1->light_direction).z = local_28.z;
   pCVar1->ambient_base_quick = 0x280;
   core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
-            (&this_ptr->moon,(CKeyFramedModelInstance *)0x0,0,0x205);
+            (&this_ptr->moon,0,(CKeyFramedModelInstance *)0x0,0x205);
   g_CDemonSetPtr->rendering_mode = 0;
   return;
 }

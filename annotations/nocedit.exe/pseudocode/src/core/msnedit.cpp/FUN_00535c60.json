@@ -6,15 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 352,
+    "complexity_score": 367,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 6,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 47,
-    "suspect_count": 29,
+    "suspect_count": 30,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
+      "stack_alignment_array",
       "unnamed_param"
     ],
     "total_lines": 184
@@ -301,6 +303,7 @@
       "description": "Unnamed function parameter",
       "line": 2,
       "match": "param_1",
+      "severity": "mild",
       "text": "float * __cdecl core_msnedit_cpp_FUN_00535c60(float *param_1,int param_2,int param_3)",
       "type": "unnamed_param"
     },
@@ -308,6 +311,7 @@
       "description": "Unnamed function parameter",
       "line": 2,
       "match": "param_2",
+      "severity": "mild",
       "text": "float * __cdecl core_msnedit_cpp_FUN_00535c60(float *param_1,int param_2,int param_3)",
       "type": "unnamed_param"
     },
@@ -315,13 +319,23 @@
       "description": "Unnamed function parameter",
       "line": 2,
       "match": "param_3",
+      "severity": "mild",
       "text": "float * __cdecl core_msnedit_cpp_FUN_00535c60(float *param_1,int param_2,int param_3)",
       "type": "unnamed_param"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 10,
+      "match": "afStackY_1044",
+      "severity": "moderate",
+      "text": "float afStackY_1044 [1015];",
+      "type": "stack_alignment_array"
     },
     {
       "description": "Unnamed function parameter",
       "line": 19,
       "match": "param_2",
+      "severity": "mild",
       "text": "(&g_CDemonCameraInstance,param_2,param_3,local_5c);",
       "type": "unnamed_param"
     },
@@ -329,6 +343,7 @@
       "description": "Unnamed function parameter",
       "line": 19,
       "match": "param_3",
+      "severity": "mild",
       "text": "(&g_CDemonCameraInstance,param_2,param_3,local_5c);",
       "type": "unnamed_param"
     },
@@ -336,6 +351,7 @@
       "description": "Complex pointer cast",
       "line": 22,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "local_2c[(uint)bVar5 * -2 + -2] = *(float *)((int)local_5c + (uint)bVar5 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -343,6 +359,7 @@
       "description": "Complex pointer cast",
       "line": 24,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)local_5c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);",
       "type": "pointer_cast"
     },
@@ -350,6 +367,7 @@
       "description": "Complex pointer cast",
       "line": 28,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "local_2c[(uint)bVar5 * -2 + -2] = *(float *)((int)&local_20 + (uint)bVar5 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -357,6 +375,7 @@
       "description": "Complex pointer cast",
       "line": 30,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)&local_20 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);",
       "type": "pointer_cast"
     },
@@ -364,6 +383,7 @@
       "description": "Unnamed function parameter",
       "line": 31,
       "match": "param_1",
+      "severity": "mild",
       "text": "*param_1 = (float)local_38.x * 0.00390625f;",
       "type": "unnamed_param"
     },
@@ -371,6 +391,7 @@
       "description": "Unnamed function parameter",
       "line": 32,
       "match": "param_1",
+      "severity": "mild",
       "text": "param_1[1] = (float)local_38.y * 0.00390625f;",
       "type": "unnamed_param"
     },
@@ -378,6 +399,7 @@
       "description": "Unnamed function parameter",
       "line": 33,
       "match": "param_1",
+      "severity": "mild",
       "text": "param_1[2] = (float)local_38.z * 0.00390625f;",
       "type": "unnamed_param"
     },
@@ -385,6 +407,7 @@
       "description": "Unnamed function parameter",
       "line": 34,
       "match": "param_1",
+      "severity": "mild",
       "text": "if (10000.0f < SQRT(param_1[2] * param_1[2] + *param_1 * *param_1 + param_1[1] * param_1[1])",
       "type": "unnamed_param"
     },
@@ -392,6 +415,7 @@
       "description": "Unnamed function parameter",
       "line": 34,
       "match": "param_1",
+      "severity": "mild",
       "text": "if (10000.0f < SQRT(param_1[2] * param_1[2] + *param_1 * *param_1 + param_1[1] * param_1[1])",
       "type": "unnamed_param"
     },
@@ -399,6 +423,7 @@
       "description": "Unnamed function parameter",
       "line": 34,
       "match": "param_1",
+      "severity": "mild",
       "text": "if (10000.0f < SQRT(param_1[2] * param_1[2] + *param_1 * *param_1 + param_1[1] * param_1[1])",
       "type": "unnamed_param"
     },
@@ -406,6 +431,7 @@
       "description": "Unnamed function parameter",
       "line": 34,
       "match": "param_1",
+      "severity": "mild",
       "text": "if (10000.0f < SQRT(param_1[2] * param_1[2] + *param_1 * *param_1 + param_1[1] * param_1[1])",
       "type": "unnamed_param"
     },
@@ -413,6 +439,7 @@
       "description": "Unnamed function parameter",
       "line": 34,
       "match": "param_1",
+      "severity": "mild",
       "text": "if (10000.0f < SQRT(param_1[2] * param_1[2] + *param_1 * *param_1 + param_1[1] * param_1[1])",
       "type": "unnamed_param"
     },
@@ -420,6 +447,7 @@
       "description": "Unnamed function parameter",
       "line": 34,
       "match": "param_1",
+      "severity": "mild",
       "text": "if (10000.0f < SQRT(param_1[2] * param_1[2] + *param_1 * *param_1 + param_1[1] * param_1[1])",
       "type": "unnamed_param"
     },
@@ -427,6 +455,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 34,
       "match": "SQRT",
+      "severity": "mild",
       "text": "if (10000.0f < SQRT(param_1[2] * param_1[2] + *param_1 * *param_1 + param_1[1] * param_1[1])",
       "type": "decompiler_intrinsic"
     },
@@ -434,6 +463,7 @@
       "description": "Unnamed function parameter",
       "line": 36,
       "match": "param_1",
+      "severity": "mild",
       "text": "fVar1 = *param_1 - (float)g_CDemonCameraInstance.base.position.x;",
       "type": "unnamed_param"
     },
@@ -441,6 +471,7 @@
       "description": "Unnamed function parameter",
       "line": 37,
       "match": "param_1",
+      "severity": "mild",
       "text": "fVar2 = param_1[1] - (float)g_CDemonCameraInstance.base.position.y;",
       "type": "unnamed_param"
     },
@@ -448,6 +479,7 @@
       "description": "Unnamed function parameter",
       "line": 38,
       "match": "param_1",
+      "severity": "mild",
       "text": "fVar3 = param_1[2] - (float)g_CDemonCameraInstance.base.position.z;",
       "type": "unnamed_param"
     },
@@ -455,6 +487,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 39,
       "match": "SQRT",
+      "severity": "mild",
       "text": "fVar4 = 10000.0f / SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2);",
       "type": "decompiler_intrinsic"
     },
@@ -462,6 +495,7 @@
       "description": "Unnamed function parameter",
       "line": 42,
       "match": "param_1",
+      "severity": "mild",
       "text": "if (param_1 != local_2c) {",
       "type": "unnamed_param"
     },
@@ -469,6 +503,7 @@
       "description": "Unnamed function parameter",
       "line": 43,
       "match": "param_1",
+      "severity": "mild",
       "text": "*param_1 = (float)g_CDemonCameraInstance.base.position.x + fVar1 * fVar4;",
       "type": "unnamed_param"
     },
@@ -476,6 +511,7 @@
       "description": "Unnamed function parameter",
       "line": 44,
       "match": "param_1",
+      "severity": "mild",
       "text": "param_1[1] = fVar2;",
       "type": "unnamed_param"
     },
@@ -483,6 +519,7 @@
       "description": "Unnamed function parameter",
       "line": 45,
       "match": "param_1",
+      "severity": "mild",
       "text": "param_1[2] = fVar3;",
       "type": "unnamed_param"
     },
@@ -490,6 +527,7 @@
       "description": "Unnamed function parameter",
       "line": 46,
       "match": "param_1",
+      "severity": "mild",
       "text": "return param_1;",
       "type": "unnamed_param"
     },
@@ -497,6 +535,7 @@
       "description": "Unnamed function parameter",
       "line": 49,
       "match": "param_1",
+      "severity": "mild",
       "text": "return param_1;",
       "type": "unnamed_param"
     }

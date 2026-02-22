@@ -17,6 +17,7 @@
     "cross_reference_count": 1,
     "function_call_count": 21,
     "global_count": 23,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 242,
     "suspect_count": 9,
     "suspect_types": [
@@ -499,6 +500,7 @@
       "description": "Undefined global data reference",
       "line": 34,
       "match": "DAT_02cee5ac",
+      "severity": "mild",
       "text": "DAT_02cee5ac = 0;",
       "type": "undefined_data"
     },
@@ -506,6 +508,7 @@
       "description": "Complex pointer cast",
       "line": 67,
       "match": "(SIZE_T *)((int)",
+      "severity": "mild",
       "text": "buffer = (SIZE_T *)((int)this_ptr->cube_list->voxel_data + local_24 + -0x14);",
       "type": "pointer_cast"
     },
@@ -513,6 +516,7 @@
       "description": "Complex pointer cast",
       "line": 123,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "piVar10 = (int *)((int)this_ptr->cube_list->voxel_data + iVar11 + -0x14);",
       "type": "pointer_cast"
     },
@@ -520,6 +524,7 @@
       "description": "Complex pointer cast",
       "line": 158,
       "match": "(CDemonTriangle *)((int)",
+      "severity": "mild",
       "text": "((CDemonTriangle *)((int)&(this_ptr->triangle_list->vertex1).x + iVar11),",
       "type": "pointer_cast"
     },
@@ -527,6 +532,7 @@
       "description": "Complex pointer cast",
       "line": 169,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "piVar10 = (int *)((int)this_ptr->cube_list->voxel_data + iVar12 + -0x14);",
       "type": "pointer_cast"
     },
@@ -534,6 +540,7 @@
       "description": "Complex pointer cast",
       "line": 198,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "piVar10 = (int *)((int)pSVar2->voxel_data + iVar9 + -0x14);",
       "type": "pointer_cast"
     },
@@ -541,6 +548,7 @@
       "description": "Complex pointer cast",
       "line": 203,
       "match": "(CDemonCube *)((int)",
+      "severity": "mild",
       "text": "((CDemonCube *)((int)&this_ptr->cube_data->voxel_buffer1 + local_20),",
       "type": "pointer_cast"
     },
@@ -548,6 +556,7 @@
       "description": "Undefined global data reference",
       "line": 225,
       "match": "DAT_02cee5ac",
+      "severity": "mild",
       "text": "DAT_02cee5ac = 1;",
       "type": "undefined_data"
     },
@@ -555,6 +564,7 @@
       "description": "Complex pointer cast",
       "line": 234,
       "match": "(CDemonCube *)((int)",
+      "severity": "mild",
       "text": "((CDemonCube *)((int)&this_ptr->cube_data->voxel_buffer1 + iVar9),file_handle);",
       "type": "pointer_cast"
     }

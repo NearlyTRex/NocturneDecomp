@@ -21,7 +21,7 @@ CCrossbow * __cdecl core_crossbow_cpp_CCrossbow_dtor_FUN_004495a0(CCrossbow *thi
   pCVar1 = core_actor_cpp_CDemonActor_dtor_FUN_00408a30(&(this_ptr->bolt_flame).base,1);
   ptr = (CCrossbow *)
         core_weapon_cpp_CWeapon_dtor_FUN_005edf80
-                  ((CWeapon *)&pCVar1[-5].previous_transform_state.orientation.z,1);
+                  ((CWeapon *)((int)&pCVar1[-5].previous_transform_state.orientation + 8),1);
   if ((flags & 2) == 0) {
     return ptr;
   }

@@ -17,6 +17,7 @@
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 11,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 121,
     "suspect_count": 14,
     "suspect_types": [
@@ -301,6 +302,7 @@
       "description": "Inferred register parameter",
       "line": 6,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "int in_EAX;",
       "type": "register_param"
     },
@@ -308,6 +310,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 7,
       "match": "extraout_EAX",
+      "severity": "moderate",
       "text": "int extraout_EAX;",
       "type": "extra_output"
     },
@@ -315,6 +318,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 8,
       "match": "extraout_EAX_00",
+      "severity": "moderate",
       "text": "int extraout_EAX_00;",
       "type": "extra_output"
     },
@@ -322,6 +326,7 @@
       "description": "Inferred register parameter",
       "line": 26,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "in_EAX = 6;",
       "type": "register_param"
     },
@@ -329,6 +334,7 @@
       "description": "Complex pointer cast",
       "line": 51,
       "match": "(SMRGLHeaderPrimitive *)((int)",
+      "severity": "mild",
       "text": "(SMRGLHeaderPrimitive *)((int)&(primitive_array->base).type + render_flags);",
       "type": "pointer_cast"
     },
@@ -336,6 +342,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 52,
       "match": "extraout_EAX_00",
+      "severity": "moderate",
       "text": "in_EAX = extraout_EAX_00;",
       "type": "extra_output"
     },
@@ -343,6 +350,7 @@
       "description": "Inferred register parameter",
       "line": 52,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "in_EAX = extraout_EAX_00;",
       "type": "register_param"
     },
@@ -350,6 +358,7 @@
       "description": "Inferred register parameter",
       "line": 81,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "in_EAX = render_flags;",
       "type": "register_param"
     },
@@ -357,6 +366,7 @@
       "description": "Complex pointer cast",
       "line": 105,
       "match": "(SMRGLHeaderPrimitive *)((int)",
+      "severity": "mild",
       "text": "(SMRGLHeaderPrimitive *)((int)&(primitive_array->base).type + render_flags);",
       "type": "pointer_cast"
     },
@@ -364,6 +374,7 @@
       "description": "Inferred register parameter",
       "line": 106,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "in_EAX = engine_drender_cpp_renderTriangleSimple_FUN_004839f0(&local_28,pSVar1->count);",
       "type": "register_param"
     },
@@ -371,6 +382,7 @@
       "description": "Complex pointer cast",
       "line": 118,
       "match": "(SMRGLHeaderPrimitive *)((int)",
+      "severity": "mild",
       "text": "(SMRGLHeaderPrimitive *)((int)&(primitive_array->base).type + render_flags);",
       "type": "pointer_cast"
     },
@@ -378,6 +390,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 119,
       "match": "extraout_EAX",
+      "severity": "moderate",
       "text": "in_EAX = extraout_EAX;",
       "type": "extra_output"
     },
@@ -385,6 +398,7 @@
       "description": "Inferred register parameter",
       "line": 119,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "in_EAX = extraout_EAX;",
       "type": "register_param"
     },
@@ -392,6 +406,7 @@
       "description": "Inferred register parameter",
       "line": 123,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "return in_EAX;",
       "type": "register_param"
     }

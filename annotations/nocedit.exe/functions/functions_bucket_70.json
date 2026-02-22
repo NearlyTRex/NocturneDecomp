@@ -30676,7 +30676,7 @@
               }
             ]
           },
-          "type":"float"
+          "type":"int"
         }
       ]
     }
@@ -58433,6 +58433,38 @@
             ]
           },
           "type":"CMorphModel*"
+        },
+        {
+          "name":"blend_factor",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"ref_points",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"SMorphPoint*"
         }
       ]
     }
@@ -58448,7 +58480,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_morph.cpp_CMorph_setupModelFromPolygons_FUN_0052b370",
+    "name":"core_morph.cpp_CMorph_setupModelFromTriPolygons_FUN_0052b370",
     "ret":"void",
     "vars":{
       "params":[
@@ -58483,6 +58515,102 @@
             ]
           },
           "type":"int"
+        },
+        {
+          "name":"vertex_count",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"vertices",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3i*"
+        },
+        {
+          "name":"face_count",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"faces",
+          "storage":{
+            "offset":24,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x18]",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"SMRGLHeaderPrimitive*"
+        },
+        {
+          "name":"texture_lod",
+          "storage":{
+            "offset":28,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x1c]",
+                "offset":28,
+                "size":4
+              }
+            ]
+          },
+          "type":"SMRGLTextureLod*"
+        },
+        {
+          "name":"texture_index_list",
+          "storage":{
+            "offset":32,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x20]",
+                "offset":32,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
         }
       ]
     }
@@ -69427,17 +69555,17 @@
           "name":"local_174",
           "storage":{
             "offset":-372,
-            "size":1,
+            "size":256,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0x174]",
                 "offset":-372,
-                "size":1
+                "size":256
               }
             ]
           },
-          "type":"undefined1"
+          "type":"char[256]"
         },
         {
           "name":"local_17c",
@@ -69552,6 +69680,22 @@
             ]
           },
           "type":"CDemonSet*"
+        },
+        {
+          "name":"param_2",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -69811,7 +69955,89 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_set.cpp_CDemonSet_FUN_00570870",
+    "name":"core_set.cpp_CDemonSet_renderFaceListOrEnvMap_FUN_00570870",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonSet*"
+        },
+        {
+          "name":"faces",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SInputFace*"
+        },
+        {
+          "name":"count",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"flags",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
+    }
+  },
+  {
+    "addr":"00570af0",
+    "body":[
+      {
+        "end":"00570b63",
+        "size":116,
+        "start":"00570af0"
+      }
+    ],
+    "conv":"__cdecl",
+    "importable":true,
+    "name":"core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_00570af0",
     "ret":"void",
     "vars":{
       "params":[
@@ -69833,20 +70059,6 @@
         }
       ]
     }
-  },
-  {
-    "addr":"00570af0",
-    "body":[
-      {
-        "end":"00570b63",
-        "size":116,
-        "start":"00570af0"
-      }
-    ],
-    "conv":"__cdecl",
-    "importable":true,
-    "name":"core_set.cpp_FUN_00570af0",
-    "ret":"void"
   },
   {
     "addr":"00570b70",
@@ -69932,7 +70144,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_set.cpp_CDemonSet_FUN_00570df0",
+    "name":"core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_00570df0",
     "ret":"int",
     "vars":{
       "params":[
@@ -69953,7 +70165,7 @@
           "type":"CDemonSet*"
         },
         {
-          "name":"primitive",
+          "name":"prim",
           "storage":{
             "offset":8,
             "size":4,
@@ -69992,7 +70204,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_set.cpp_CDemonSet_FUN_00571170",
+    "name":"core_set.cpp_CDemonSet_saveLightState_FUN_00571170",
     "ret":"int",
     "vars":{
       "params":[
@@ -70011,6 +70223,22 @@
             ]
           },
           "type":"CDemonSet*"
+        },
+        {
+          "name":"param_2",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"void*"
         }
       ],
       "ret_storage":{
@@ -76878,7 +77106,7 @@
               }
             ]
           },
-          "type":"byte*"
+          "type":"int*"
         },
         {
           "name":"texture_set_indices",
@@ -76913,7 +77141,7 @@
           "type":"int"
         },
         {
-          "name":"special_render_mode",
+          "name":"skip_texture_capture",
           "storage":{
             "offset":24,
             "size":4,

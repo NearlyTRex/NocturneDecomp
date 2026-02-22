@@ -23,6 +23,7 @@
     "cross_reference_count": 1,
     "function_call_count": 24,
     "global_count": 26,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 143,
     "suspect_count": 2,
     "suspect_types": [
@@ -469,6 +470,7 @@
       "description": "Complex pointer cast",
       "line": 97,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar2 = (uint *)((int)&this_ptr->parsed_lines->text + iVar10);",
       "type": "pointer_cast"
     },
@@ -476,6 +478,7 @@
       "description": "Complex pointer cast",
       "line": 98,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar1 = (uint *)((int)&this_ptr->parsed_lines->line_number + iVar10);",
       "type": "pointer_cast"
     }

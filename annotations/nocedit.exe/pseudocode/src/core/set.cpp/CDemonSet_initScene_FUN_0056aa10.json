@@ -6,15 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 226,
-    "complexity_score": 137,
+    "complexity_score": 112,
     "cross_reference_count": 16,
     "function_call_count": 17,
     "global_count": 22,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 97,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "undefined_data"
+      "pointer_cast"
     ],
     "total_lines": 323
   },
@@ -332,14 +332,14 @@
     },
     {
       "addr": "0327785c",
-      "name": "DAT_0327785c",
-      "type": "undefined4",
+      "name": "g_QueuedCoronaGlobeCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "03277d80",
-      "name": "DAT_03277d80",
-      "type": "undefined4",
+      "name": "g_OmniLightCount",
+      "type": "int",
       "value": null
     },
     {
@@ -408,22 +408,9 @@
       "description": "Complex pointer cast",
       "line": 40,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (*(int *)((int)g_MasterLightList + iVar6) != 0) {",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 84,
-      "match": "DAT_03277d80",
-      "text": "DAT_03277d80 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 86,
-      "match": "DAT_0327785c",
-      "text": "DAT_0327785c = 0;",
-      "type": "undefined_data"
     }
   ]
 }

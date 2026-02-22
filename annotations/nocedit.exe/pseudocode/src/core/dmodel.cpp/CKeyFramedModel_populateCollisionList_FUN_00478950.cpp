@@ -9,7 +9,7 @@
 void __cdecl core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_00478950(CKeyFramedModel *this_ptr,CVector3f *transform_vector)
 
 {
-  CVector3i **ppCVar1;
+  CVector3i *pCVar1;
   CVector3f *pCVar2;
   CMatrix3x3f *this_ptr_00;
   CDemonTriangle *this_ptr_01;
@@ -27,7 +27,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_00478950(
   int local_24;
   int local_20;
   CMatrix3x3f *local_1c;
-  CVector3i **local_18;
+  CVector3i *local_18;
   int local_14;
   
   if (&this_ptr->transform_vector != transform_vector) {
@@ -45,20 +45,21 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_00478950(
   local_1c = this_ptr_00;
   if (0 < this_ptr->frame_count) {
     do {
-      local_18 = this_ptr->vertex_list + this_ptr->vertex_count * local_30 * 3;
+      local_18 = this_ptr->vertex_list + this_ptr->vertex_count * local_30;
       local_20 = 0;
       if (0 < this_ptr->poly_count) {
         local_24 = 0;
         do {
-          local_14 = local_24 + (int)this_ptr->poly_vert_list;
-          ppCVar1 = local_18 + *(int *)(local_14 + 0x18) * 3;
-          local_48.x = (float)(int)*ppCVar1 * 0.00390625f;
-          local_48.y = (float)(int)ppCVar1[1] * 0.00390625f;
-          local_48.z = (float)(int)ppCVar1[2] * 0.00390625f;
-          ppCVar1 = local_18 + *(int *)(local_14 + 0x24) * 3;
-          local_54.x = (float)(int)*ppCVar1 * 0.00390625f;
-          local_54.y = (float)(int)ppCVar1[1] * 0.00390625f;
-          local_54.z = (float)(int)ppCVar1[2] * 0.00390625f;
+          local_14 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base)
+                           .base.type + local_24;
+          pCVar1 = local_18 + *(int *)(local_14 + 0x18);
+          local_48.x = (float)pCVar1->x * 0.00390625f;
+          local_48.y = (float)pCVar1->y * 0.00390625f;
+          local_48.z = (float)pCVar1->z * 0.00390625f;
+          pCVar1 = local_18 + *(int *)(local_14 + 0x24);
+          local_54.x = (float)pCVar1->x * 0.00390625f;
+          local_54.y = (float)pCVar1->y * 0.00390625f;
+          local_54.z = (float)pCVar1->z * 0.00390625f;
           pCVar2 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                              (local_28,&local_3c,&local_48);
           if (&local_48 != pCVar2) {
@@ -77,10 +78,10 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_00478950(
           if (2 < *(int *)(local_14 + 4)) {
             iVar3 = local_14 + 0x18;
             do {
-              ppCVar1 = local_18 + *(int *)(iVar3 + 0x18) * 3;
-              local_60.x = (float)(int)*ppCVar1 * 0.00390625f;
-              local_60.y = (float)(int)ppCVar1[1] * 0.00390625f;
-              local_60.z = (float)(int)ppCVar1[2] * 0.00390625f;
+              pCVar1 = local_18 + *(int *)(iVar3 + 0x18);
+              local_60.x = (float)pCVar1->x * 0.00390625f;
+              local_60.y = (float)pCVar1->y * 0.00390625f;
+              local_60.z = (float)pCVar1->z * 0.00390625f;
               pCVar2 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                                  (local_1c,&local_6c,&local_60);
               if (&local_60 != pCVar2) {

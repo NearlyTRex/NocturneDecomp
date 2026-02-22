@@ -80,7 +80,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
     }
     if (this_ptr->block_auto_save == 0) {
-      core_set_cpp_CDemonSet_FUN_0056c1a0(g_CDemonSetPtr);
+      core_set_cpp_CDemonSet_renderScene_FUN_0056c1a0(g_CDemonSetPtr,1);
     }
     core_netgame_cpp_CNetGame_processClientFrame_FUN_005435a0(g_CNetGamePtr);
     if (this_ptr->is_paused == 0) {
@@ -141,7 +141,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(this_ptr);
     core_netgame_cpp_CNetGame_processServerFrame_FUN_00543150(g_CNetGamePtr);
     if (this_ptr->block_auto_save == 0) {
-      core_set_cpp_CDemonSet_FUN_0056be80(g_CDemonSetPtr);
+      core_set_cpp_CDemonSet_renderStaticLights_FUN_0056be80(g_CDemonSetPtr);
     }
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xffff);
     if (this_ptr->profile_mode != 0) {
@@ -153,7 +153,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
     if (this_ptr->skip_frame_render == 0) {
       wincore_windll_cpp_lockFrame_FUN_005b7210();
       if (this_ptr->block_auto_save != 0) {
-        core_set_cpp_CDemonSet_FUN_0056c990(g_CDemonSetPtr);
+        core_set_cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990(g_CDemonSetPtr);
       }
       if (((this_ptr->velocity_debug_enabled != 0) ||
           (pcVar15 = getenv("SPOOKHOUSE"), pcVar15 != (char *)0x0))
@@ -165,7 +165,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
       core_inv_cpp_CInventory_renderAllItems_FUN_00500690
                 (&g_HeroActors[g_LocalHeroIndex]->inventory);
       if (this_ptr->screen_clear_enabled != 0) {
-        core_set_cpp_CDemonSet_FUN_0056d190(g_CDemonSetPtr);
+        core_set_cpp_CDemonSet_renderLightDebugView_FUN_0056d190(g_CDemonSetPtr);
       }
       core_game_cpp_CGame_drawScreenBorder_FUN_004d7e50(this_ptr);
       if (g_CheatFlags != 0) {

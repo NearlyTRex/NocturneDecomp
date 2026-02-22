@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 3,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 27,
     "suspect_count": 12,
     "suspect_types": [
@@ -175,6 +176,7 @@
       "description": "Unresolved stack parameter",
       "line": 9,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "float *in_stack_00000004;",
       "type": "stack_param"
     },
@@ -182,6 +184,7 @@
       "description": "Unresolved stack parameter",
       "line": 10,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "float in_stack_00000008;",
       "type": "stack_param"
     },
@@ -189,6 +192,7 @@
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "float in_stack_0000000c;",
       "type": "stack_param"
     },
@@ -196,6 +200,7 @@
       "description": "Complex pointer cast",
       "line": 16,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "iVar1 = *(int *)((int)g_HeroActors + iVar4);",
       "type": "pointer_cast"
     },
@@ -203,6 +208,7 @@
       "description": "Unresolved stack parameter",
       "line": 18,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "fVar2 = *(float *)(iVar1 + 0x20) - *in_stack_00000004;",
       "type": "stack_param"
     },
@@ -210,6 +216,7 @@
       "description": "Unresolved stack parameter",
       "line": 19,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "fVar3 = *(float *)(iVar1 + 0x28) - in_stack_00000004[2];",
       "type": "stack_param"
     },
@@ -217,6 +224,7 @@
       "description": "Unresolved stack parameter",
       "line": 20,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "if (ABS(*(float *)(iVar1 + 0x24) - in_stack_00000004[1]) <= in_stack_0000000c) {",
       "type": "stack_param"
     },
@@ -224,6 +232,7 @@
       "description": "Unresolved stack parameter",
       "line": 20,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "if (ABS(*(float *)(iVar1 + 0x24) - in_stack_00000004[1]) <= in_stack_0000000c) {",
       "type": "stack_param"
     },
@@ -231,6 +240,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 20,
       "match": "ABS",
+      "severity": "mild",
       "text": "if (ABS(*(float *)(iVar1 + 0x24) - in_stack_00000004[1]) <= in_stack_0000000c) {",
       "type": "decompiler_intrinsic"
     },
@@ -238,6 +248,7 @@
       "description": "Unresolved stack parameter",
       "line": 21,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "if (fVar2 * fVar2 + fVar3 * fVar3 < in_stack_00000008 * in_stack_00000008) {",
       "type": "stack_param"
     },
@@ -245,6 +256,7 @@
       "description": "Unresolved stack parameter",
       "line": 21,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "if (fVar2 * fVar2 + fVar3 * fVar3 < in_stack_00000008 * in_stack_00000008) {",
       "type": "stack_param"
     },

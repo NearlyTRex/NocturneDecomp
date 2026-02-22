@@ -5,6 +5,7 @@
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 9,
     "suspect_count": 9,
     "suspect_types": [
@@ -71,6 +72,7 @@
       "description": "Inferred register parameter",
       "line": 5,
       "match": "in_AL",
+      "severity": "mild",
       "text": "char in_AL;",
       "type": "register_param"
     },
@@ -78,6 +80,7 @@
       "description": "Inferred register parameter",
       "line": 6,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "ushort *in_ECX;",
       "type": "register_param"
     },
@@ -85,6 +88,7 @@
       "description": "Inferred register parameter",
       "line": 7,
       "match": "in_DX",
+      "severity": "mild",
       "text": "ushort in_DX;",
       "type": "register_param"
     },
@@ -92,6 +96,7 @@
       "description": "Inferred register parameter",
       "line": 9,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "*(char *)(in_ECX + 1) = (char)in_DX;",
       "type": "register_param"
     },
@@ -99,6 +104,7 @@
       "description": "Inferred register parameter",
       "line": 9,
       "match": "in_DX",
+      "severity": "mild",
       "text": "*(char *)(in_ECX + 1) = (char)in_DX;",
       "type": "register_param"
     },
@@ -106,6 +112,7 @@
       "description": "Inferred register parameter",
       "line": 10,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "*in_ECX = in_DX;",
       "type": "register_param"
     },
@@ -113,6 +120,7 @@
       "description": "Inferred register parameter",
       "line": 10,
       "match": "in_DX",
+      "severity": "mild",
       "text": "*in_ECX = in_DX;",
       "type": "register_param"
     },
@@ -120,6 +128,7 @@
       "description": "Inferred register parameter",
       "line": 11,
       "match": "in_AL",
+      "severity": "mild",
       "text": "return in_AL + -0x77;",
       "type": "register_param"
     },

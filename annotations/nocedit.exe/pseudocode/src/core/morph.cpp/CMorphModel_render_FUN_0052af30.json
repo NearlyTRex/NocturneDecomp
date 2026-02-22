@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 9,
     "suspect_count": 0,
     "suspect_types": [],
@@ -33,7 +34,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_morph.cpp_CMorphModel_render_FUN_0052af30",
-    "signature": "void __cdecl core_morph_cpp_CMorphModel_render_FUN_0052af30(CMorphModel *this_ptr,float morph_t)"
+    "signature": "void __cdecl core_morph_cpp_CMorphModel_render_FUN_0052af30(CMorphModel *this_ptr,float morph_t,SMorphPoint *ref_points)"
   },
   "function_calls": [
     {
@@ -87,10 +88,10 @@
     "pcode_op_count": 119
   },
   "stack_frame": {
-    "frame_size": 12,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 8,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -106,6 +107,13 @@
         "offset": 8,
         "size": 4,
         "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "ref_points",
+        "offset": 12,
+        "size": 4,
+        "type": "SMorphPoint *"
       }
     ]
   },

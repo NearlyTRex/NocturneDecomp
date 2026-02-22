@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 81,
     "suspect_count": 3,
     "suspect_types": [
@@ -154,6 +155,7 @@
       "description": "Complex pointer cast",
       "line": 25,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pcVar4 + 0xb7e4) = 0x501502f9;",
       "type": "pointer_cast"
     },
@@ -161,6 +163,7 @@
       "description": "Complex pointer cast",
       "line": 56,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pCVar5->motion_transition_costs[0] + iVar7) = 0;",
       "type": "pointer_cast"
     },
@@ -168,6 +171,7 @@
       "description": "Complex pointer cast",
       "line": 70,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "fVar1 = local_18->motion_transition_costs[0][0] + *(float *)((int)pcVar4 + 0xb7e4);",
       "type": "pointer_cast"
     }

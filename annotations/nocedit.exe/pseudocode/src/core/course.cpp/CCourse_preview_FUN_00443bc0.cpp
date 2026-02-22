@@ -205,7 +205,7 @@ LAB_00443c68:
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                 (g_CDemonRendererPtr2,(CVector3i *)&local_98,(CVector3i *)0x0);
       core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
-                (model_ptr,(CKeyFramedModelInstance *)0x0,0,-1);
+                (model_ptr,0,(CKeyFramedModelInstance *)0x0,-1);
       engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
     }
     dVar9 = (double)local_98.x;

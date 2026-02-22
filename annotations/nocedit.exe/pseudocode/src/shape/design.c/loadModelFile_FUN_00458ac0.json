@@ -77,6 +77,7 @@
     "cross_reference_count": 2,
     "function_call_count": 18,
     "global_count": 66,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 290,
     "suspect_count": 2,
     "suspect_types": [
@@ -746,6 +747,7 @@
       "description": "Complex pointer cast",
       "line": 227,
       "match": "(char *)((int)",
+      "severity": "mild",
       "text": "*(char *)((int)pSVar8 + 1) = cVar2;",
       "type": "pointer_cast"
     },
@@ -753,6 +755,7 @@
       "description": "Complex pointer cast",
       "line": 228,
       "match": "(SModelPartName *)((int)",
+      "severity": "mild",
       "text": "pSVar8 = (SModelPartName *)((int)pSVar8 + 2);",
       "type": "pointer_cast"
     }

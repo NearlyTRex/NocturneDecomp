@@ -6,15 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 53,
+    "complexity_score": 68,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 23,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
       "param_count_too_many",
-      "pointer_cast"
+      "pointer_cast",
+      "stack_alignment_array"
     ],
     "total_lines": 61
   },
@@ -138,9 +140,18 @@
   },
   "suspects": [
     {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 9,
+      "match": "auStackY_17f4",
+      "severity": "moderate",
+      "text": "uint auStackY_17f4 [1524];",
+      "type": "stack_alignment_array"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 17,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar2 = (uint *)((int)dest_buffer + (uint)bVar4 * -8 + 4);",
       "type": "pointer_cast"
     },

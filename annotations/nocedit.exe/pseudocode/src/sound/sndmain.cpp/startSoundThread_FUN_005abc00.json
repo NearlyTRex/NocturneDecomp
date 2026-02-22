@@ -55,15 +55,18 @@
   },
   "complexity": {
     "assembly_lines": 72,
-    "complexity_score": 165,
+    "complexity_score": 205,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 5,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 40,
-    "suspect_count": 11,
+    "suspect_count": 14,
     "suspect_types": [
       "decompiler_intrinsic",
+      "double_reconstruction",
       "extra_output",
+      "sub84_truncation",
       "unknown_field"
     ],
     "total_lines": 112
@@ -221,6 +224,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 8,
       "match": "extraout_EAX",
+      "severity": "moderate",
       "text": "int extraout_EAX;",
       "type": "extra_output"
     },
@@ -228,6 +232,7 @@
       "description": "Unknown/mangled field access",
       "line": 11,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "dVar1 = (double)CONCAT44(g_AudioLatencySeconds._4_4_,g_AudioLatencySeconds._0_4_);",
       "type": "unknown_field"
     },
@@ -235,13 +240,23 @@
       "description": "Unknown/mangled field access",
       "line": 11,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "dVar1 = (double)CONCAT44(g_AudioLatencySeconds._4_4_,g_AudioLatencySeconds._0_4_);",
       "type": "unknown_field"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 11,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "dVar1 = (double)CONCAT44(g_AudioLatencySeconds._4_4_,g_AudioLatencySeconds._0_4_);",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 11,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "dVar1 = (double)CONCAT44(g_AudioLatencySeconds._4_4_,g_AudioLatencySeconds._0_4_);",
       "type": "decompiler_intrinsic"
     },
@@ -249,6 +264,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 26,
       "match": "extraout_EAX",
+      "severity": "moderate",
       "text": "if (extraout_EAX != 0) {",
       "type": "extra_output"
     },
@@ -256,6 +272,7 @@
       "description": "Unknown/mangled field access",
       "line": 34,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "g_AudioLatencySeconds._4_4_ = (uint)((ulonglong)dVar1 >> 0x20);",
       "type": "unknown_field"
     },
@@ -263,13 +280,23 @@
       "description": "Unknown/mangled field access",
       "line": 35,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "g_AudioLatencySeconds._0_4_ = SUB84(dVar1,0);",
       "type": "unknown_field"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 35,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "g_AudioLatencySeconds._0_4_ = SUB84(dVar1,0);",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 35,
       "match": "SUB84",
+      "severity": "mild",
       "text": "g_AudioLatencySeconds._0_4_ = SUB84(dVar1,0);",
       "type": "decompiler_intrinsic"
     },
@@ -277,6 +304,7 @@
       "description": "Unknown/mangled field access",
       "line": 40,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "g_AudioLatencySeconds._4_4_ = (uint)((ulonglong)dVar1 >> 0x20);",
       "type": "unknown_field"
     },
@@ -284,13 +312,23 @@
       "description": "Unknown/mangled field access",
       "line": 41,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "g_AudioLatencySeconds._0_4_ = SUB84(dVar1,0);",
       "type": "unknown_field"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 41,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "g_AudioLatencySeconds._0_4_ = SUB84(dVar1,0);",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 41,
       "match": "SUB84",
+      "severity": "mild",
       "text": "g_AudioLatencySeconds._0_4_ = SUB84(dVar1,0);",
       "type": "decompiler_intrinsic"
     }

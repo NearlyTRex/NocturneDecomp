@@ -1,12 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CVector3f * __cdecl core_dcamera_cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454060(CDemonCamera *this_ptr,CVector3f *output_vectors,CBoundingBox3D *bounding_box)
+; CVector3f * __cdecl core_dcamera_cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454060(CDemonCamera *this_ptr,CVector3f *output_bounds)
 ;
 ; Parameters:
 ; CDemonCamera *   Stack[0x4]:4   this_ptr
-; CVector3f *      Stack[0x8]:4   output_vectors
-; CBoundingBox3D * Stack[0xc]:4   bounding_box
+; CVector3f *      Stack[0x8]:4   output_bounds
 ; Local Variables:
 ; undefined1       Stack[-0xec]:1  local_ec
 ; undefined1       Stack[-0xe0]:1  local_e0

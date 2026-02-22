@@ -6,17 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 229,
-    "complexity_score": 113,
+    "complexity_score": 111,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 5,
-    "pseudocode_lines": 83,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 81,
     "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 312
+    "total_lines": 310
   },
   "cross_references": [
     {
@@ -36,7 +37,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_00477980",
-    "signature": "void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00477980(CKeyFramedModel *this_ptr,int frame_index,int render_flags)"
+    "signature": "void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00477980(CKeyFramedModel *this_ptr,CKeyFramedModelInstance *instance,int render_flags)"
   },
   "function_calls": [
     {
@@ -247,10 +248,10 @@
       },
       {
         "is_param": true,
-        "name": "frame_index",
+        "name": "instance",
         "offset": 8,
         "size": 4,
-        "type": "int"
+        "type": "CKeyFramedModelInstance *"
       },
       {
         "is_param": true,
@@ -266,13 +267,15 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 24,
       "match": "SQRT",
+      "severity": "mild",
       "text": "(float)250 < SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2))) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 67,
+      "line": 66,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "} while (iVar9 == *(int *)((int)this_ptr->poly_texture_index_list + iVar6));",
       "type": "pointer_cast"
     }

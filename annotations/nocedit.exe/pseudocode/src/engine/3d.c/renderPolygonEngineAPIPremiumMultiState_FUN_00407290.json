@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 27,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 90,
     "suspect_count": 5,
     "suspect_types": [
@@ -305,6 +306,7 @@
       "description": "Complex pointer cast",
       "line": 63,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "pSVar10 = g_RenderVertexBuffer + *(int *)((int)g_ProcessedVertexIndices + iVar3);",
       "type": "pointer_cast"
     },
@@ -312,6 +314,7 @@
       "description": "Complex pointer cast",
       "line": 67,
       "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
       "text": "pSVar10 = (SRenderVertex *)((int)pSVar10 + ((uint)bVar13 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -319,6 +322,7 @@
       "description": "Complex pointer cast",
       "line": 68,
       "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
       "text": "pSVar11 = (SRenderVertex *)((int)pSVar11 + ((uint)bVar13 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -326,6 +330,7 @@
       "description": "Complex pointer cast",
       "line": 84,
       "match": "(SMRGLTextureBasic *)((int)",
+      "severity": "mild",
       "text": "pSVar6 = (SMRGLTextureBasic *)((int)pSVar6 + (uint)bVar13 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -333,6 +338,7 @@
       "description": "Complex pointer cast",
       "line": 92,
       "match": "(SMRGLHeaderExtended *)((int)",
+      "severity": "mild",
       "text": "return (SMRGLHeaderExtended *)((int)&polygon_info[1].base + (polygon_info->base).count * 0xc);",
       "type": "pointer_cast"
     }

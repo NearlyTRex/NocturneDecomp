@@ -4,6 +4,7 @@
 #include "system/basetypes.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CZThumb.h"
+#include "types/structs/SDisplayListSortEntry.h"
 #include "types/structs/SRaytraceState.h"
 
 // =============================================================================
@@ -18,6 +19,9 @@ extern CVector3f g_VDTempVector;
 // CZThumb[1500]
 extern CZThumb g_CZThumbPool[1500];
 
+// SDisplayListSortEntry[2000]
+extern SDisplayListSortEntry g_SetDisplayListSortBuffer[2000];
+
 // SRaytraceState[5]
 extern SRaytraceState g_RaytraceStateStack[5];
 
@@ -28,12 +32,7 @@ extern float g_SavedProjectionFactor;
 extern float g_VDCameraScores[250];
 
 // int
+extern int g_SetDisplayListCount;
 extern int g_RaytraceStateStackDepth;
 extern int g_VDCameraIndex;
-
-// undefined4
-extern undefined4 DAT_03342b4c;
-extern undefined4 DAT_03342b50;
-extern undefined4 DAT_03342b54;
-extern undefined4 DAT_03342b58;
 

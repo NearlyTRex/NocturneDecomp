@@ -1,16 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 105,
+    "complexity_score": 130,
     "cross_reference_count": 85,
     "function_call_count": 0,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 20,
-    "suspect_count": 7,
+    "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
       "special_crt_function",
-      "unnamed_param"
+      "unnamed_param",
+      "warning_unmapped_variable"
     ],
     "total_lines": 56
   },
@@ -620,9 +622,26 @@
   },
   "suspects": [
     {
+      "description": "Variable defined which should be unmapped",
+      "line": 2,
+      "match": "WARNING: Variable defined which should be unmapped",
+      "severity": "moderate",
+      "text": "/* WARNING: Variable defined which should be unmapped: loop_counter */",
+      "type": "warning_unmapped_variable"
+    },
+    {
+      "description": "Variable defined which should be unmapped",
+      "line": 3,
+      "match": "WARNING: Variable defined which should be unmapped",
+      "severity": "moderate",
+      "text": "/* WARNING: Variable defined which should be unmapped: temp_type_info */",
+      "type": "warning_unmapped_variable"
+    },
+    {
       "description": "Unnamed function parameter",
       "line": 10,
       "match": "param0",
+      "severity": "mild",
       "text": "void *param0;",
       "type": "unnamed_param"
     },
@@ -630,6 +649,7 @@
       "description": "Unnamed function parameter",
       "line": 18,
       "match": "param0",
+      "severity": "mild",
       "text": "param0 = array_start;",
       "type": "unnamed_param"
     },
@@ -637,6 +657,7 @@
       "description": "Unnamed function parameter",
       "line": 20,
       "match": "param0",
+      "severity": "mild",
       "text": "(*pWVar1)(param0);",
       "type": "unnamed_param"
     },
@@ -644,6 +665,7 @@
       "description": "Complex pointer cast",
       "line": 21,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "param0 = (void *)((int)param0 + iVar2);",
       "type": "pointer_cast"
     },
@@ -651,6 +673,7 @@
       "description": "Unnamed function parameter",
       "line": 21,
       "match": "param0",
+      "severity": "mild",
       "text": "param0 = (void *)((int)param0 + iVar2);",
       "type": "unnamed_param"
     },
@@ -658,6 +681,7 @@
       "description": "Unnamed function parameter",
       "line": 21,
       "match": "param0",
+      "severity": "mild",
       "text": "param0 = (void *)((int)param0 + iVar2);",
       "type": "unnamed_param"
     },

@@ -37,14 +37,16 @@
   },
   "complexity": {
     "assembly_lines": 121,
-    "complexity_score": 124,
+    "complexity_score": 149,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 4,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 49,
-    "suspect_count": 6,
+    "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
+      "double_reconstruction",
       "pointer_cast",
       "unknown_field"
     ],
@@ -262,20 +264,39 @@
       "description": "Complex pointer cast",
       "line": 20,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)result_ptr + 4));",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 41,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "((local_40 <= (double)CONCAT44(uStack_44,local_48) &&",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 41,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "((local_40 <= (double)CONCAT44(uStack_44,local_48) &&",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 42,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "((double)CONCAT44(uStack_44,local_48) <= local_38)))) break;",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 42,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "((double)CONCAT44(uStack_44,local_48) <= local_38)))) break;",
       "type": "decompiler_intrinsic"
     },
@@ -283,6 +304,7 @@
       "description": "Unknown/mangled field access",
       "line": 44,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "(this_ptr,\"Please enter a valid integer between %.15g and %.15g.\",(uint)local_40,local_40._4_4_,",
       "type": "unknown_field"
     },
@@ -290,6 +312,7 @@
       "description": "Unknown/mangled field access",
       "line": 45,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "(uint)local_38,local_38._4_4_);",
       "type": "unknown_field"
     },
@@ -297,6 +320,7 @@
       "description": "Complex pointer cast",
       "line": 50,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)result_ptr + 4) = uStack_44;",
       "type": "pointer_cast"
     }

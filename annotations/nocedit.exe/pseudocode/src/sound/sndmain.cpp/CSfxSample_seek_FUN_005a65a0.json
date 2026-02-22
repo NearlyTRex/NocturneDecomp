@@ -19,15 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 120,
+    "complexity_score": 135,
     "cross_reference_count": 4,
     "function_call_count": 6,
     "global_count": 10,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 50,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
-      "stack_param"
+      "stack_param",
+      "sub84_truncation"
     ],
     "total_lines": 187
   },
@@ -252,13 +254,23 @@
       "description": "Unresolved stack parameter",
       "line": 10,
       "match": "in_stack_ffffffe4",
+      "severity": "moderate",
       "text": "ulonglong in_stack_ffffffe4;",
       "type": "stack_param"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 18,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "(SUB84((double)playback_position,0),",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 18,
       "match": "SUB84",
+      "severity": "mild",
       "text": "(SUB84((double)playback_position,0),",
       "type": "decompiler_intrinsic"
     },
@@ -266,6 +278,7 @@
       "description": "Unresolved stack parameter",
       "line": 19,
       "match": "in_stack_ffffffe4",
+      "severity": "moderate",
       "text": "(double)((ulonglong)(double)playback_position >> 0x20),(uint)in_stack_ffffffe4,",
       "type": "stack_param"
     },
@@ -273,6 +286,7 @@
       "description": "Unresolved stack parameter",
       "line": 20,
       "match": "in_stack_ffffffe4",
+      "severity": "moderate",
       "text": "(uint)((ulonglong)in_stack_ffffffe4 >> 0x20));",
       "type": "stack_param"
     },
@@ -280,6 +294,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 21,
       "match": "ROUND",
+      "severity": "mild",
       "text": "this_ptr->stream_read_position = (int)ROUND(ROUND(dVar2));",
       "type": "decompiler_intrinsic"
     },
@@ -287,6 +302,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 21,
       "match": "ROUND",
+      "severity": "mild",
       "text": "this_ptr->stream_read_position = (int)ROUND(ROUND(dVar2));",
       "type": "decompiler_intrinsic"
     }

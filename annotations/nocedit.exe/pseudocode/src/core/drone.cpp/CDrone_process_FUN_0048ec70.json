@@ -29,6 +29,7 @@
     "cross_reference_count": 0,
     "function_call_count": 28,
     "global_count": 18,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 256,
     "suspect_count": 4,
     "suspect_types": [
@@ -591,6 +592,7 @@
       "description": "Type propagation did not converge",
       "line": 2,
       "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
     },
@@ -598,6 +600,7 @@
       "description": "Unresolved stack parameter",
       "line": 22,
       "match": "in_stack_ffffff24",
+      "severity": "moderate",
       "text": "float in_stack_ffffff24;",
       "type": "stack_param"
     },
@@ -605,6 +608,7 @@
       "description": "Direct stack address reference",
       "line": 136,
       "match": "&stack0xffffff24",
+      "severity": "moderate",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff24);",
       "type": "stack_ref"
     },
@@ -612,6 +616,7 @@
       "description": "Unresolved stack parameter",
       "line": 258,
       "match": "in_stack_ffffff24",
+      "severity": "moderate",
       "text": "((CCharacter *)this_ptr,delta_time,in_stack_ffffff24);",
       "type": "stack_param"
     }

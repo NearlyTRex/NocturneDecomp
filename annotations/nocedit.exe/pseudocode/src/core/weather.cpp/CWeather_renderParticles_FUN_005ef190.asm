@@ -63,7 +63,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   core_set.cpp_CDemonSet_FUN_0056c1a0 at 0056c567
+;   core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0 at 0056c567
 ;
 ; Referenced Globals:
 ;   float FLOAT_00665700 = 256
@@ -85,7 +85,7 @@
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_computeLighting_FUN_0056e110
-;   core_set.cpp_CDemonSet_FUN_0056d380
+;   core_set.cpp_CDemonSet_setLightingParameters_FUN_0056d380
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 ;   engine_drender.cpp_CDemonRenderer_depthTest_FUN_0048dc50
@@ -166,8 +166,8 @@ section .text
     PUSH 0x0                            ; 005ef253
     MOV EDX,dword ptr [0x006810c8]      ; 005ef255 | g_CDemonSetPtr | g_CDemonSetInstance
     PUSH EDX                            ; 005ef25b | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_0056d380 ; 005ef25c
-        ;   XREF to: 0056d380 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d380(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_setLightingParameters_FUN_0056d380 ; 005ef25c
+        ;   XREF to: 0056d380 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setLightingParameters_FUN_0056d380(CDemonSet * this_ptr, CVector3f * position, UOrientationVector * orientation, CVector3f * aabb_min, ...)
     ADD ESP,0x18                        ; 005ef261
     MOV ECX,0x3dcccccd                  ; 005ef264
     MOV EAX,dword ptr [ESP + 0xf4]      ; 005ef269

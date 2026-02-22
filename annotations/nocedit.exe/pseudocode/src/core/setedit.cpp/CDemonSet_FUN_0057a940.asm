@@ -37,7 +37,7 @@
 ;   core_game.cpp_CGame_saveClockTime_FUN_004d7d80
 ;   core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_set.cpp_CDemonSet_FUN_0056d2d0
+;   core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0
 ;   core_set.cpp_CDemonSet_initScene_FUN_0056aa10
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190
 ;   core_setedit.cpp_CDemonSet_FUN_0057fd00
@@ -456,8 +456,8 @@ section .text
     ADD ESP,0x4                         ; 0057ae22
     MOV ESI,dword ptr [EBP + 0x14]      ; 0057ae25
     PUSH ESI                            ; 0057ae28
-    CALL core_set.cpp_CDemonSet_FUN_0056d2d0 ; 0057ae29
-        ;   XREF to: 0056d2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d2d0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0 ; 0057ae29
+        ;   XREF to: 0056d2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0057ae2e
     XOR EDI,EDI                         ; 0057ae31
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 0057ae33

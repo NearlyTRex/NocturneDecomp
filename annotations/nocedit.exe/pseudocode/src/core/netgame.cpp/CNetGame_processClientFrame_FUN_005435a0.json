@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 13,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 90,
     "suspect_count": 6,
     "suspect_types": [
@@ -257,6 +258,7 @@
       "description": "Complex pointer cast",
       "line": 27,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)&g_SimFrameHistory + iVar1)) {",
       "type": "pointer_cast"
     },
@@ -264,6 +266,7 @@
       "description": "Undefined global data reference",
       "line": 35,
       "match": "DAT_02f9c128",
+      "severity": "mild",
       "text": "local_18 = &DAT_02f9c128;",
       "type": "undefined_data"
     },
@@ -271,6 +274,7 @@
       "description": "Complex pointer cast",
       "line": 37,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (*(int *)((int)&g_SimFrameHistory + iVar3) < iVar2) {",
       "type": "pointer_cast"
     },
@@ -278,6 +282,7 @@
       "description": "Complex pointer cast",
       "line": 40,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "((void *)((int)&g_SimFrameHistory + iVar3),local_18,",
       "type": "pointer_cast"
     },
@@ -285,6 +290,7 @@
       "description": "Complex pointer cast",
       "line": 57,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)&g_SimFrameHistory + iVar1)) {",
       "type": "pointer_cast"
     },
@@ -292,6 +298,7 @@
       "description": "Undefined global data reference",
       "line": 78,
       "match": "DAT_02f7c8c8",
+      "severity": "mild",
       "text": "local_20 = (float)(int)(g_CurrentGameTime - DAT_02f7c8c8) * (float)1.52587890625e-05;",
       "type": "undefined_data"
     }

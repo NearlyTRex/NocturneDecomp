@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 9,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 53,
     "suspect_count": 5,
     "suspect_types": [
@@ -255,6 +256,7 @@
       "description": "Complex pointer cast",
       "line": 22,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "iVar2 = *(int *)((int)g_CDemonSetPtr->actors + iVar3);",
       "type": "pointer_cast"
     },
@@ -262,6 +264,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 26,
       "match": "SQRT",
+      "severity": "mild",
       "text": "if ((SQRT(local_24 * local_24 + local_2c * local_2c + local_28 * local_28) <",
       "type": "decompiler_intrinsic"
     },
@@ -269,6 +272,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 42,
       "match": "ABS",
+      "severity": "mild",
       "text": "if ((((float)0.25 <= ABS(local_20)) || ((float)0.25 <= ABS(local_1c))) ||",
       "type": "decompiler_intrinsic"
     },
@@ -276,6 +280,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 42,
       "match": "ABS",
+      "severity": "mild",
       "text": "if ((((float)0.25 <= ABS(local_20)) || ((float)0.25 <= ABS(local_1c))) ||",
       "type": "decompiler_intrinsic"
     },
@@ -283,6 +288,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 43,
       "match": "ABS",
+      "severity": "mild",
       "text": "((float)0.25 <= ABS(local_18))) {",
       "type": "decompiler_intrinsic"
     }

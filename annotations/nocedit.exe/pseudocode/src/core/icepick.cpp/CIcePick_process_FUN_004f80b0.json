@@ -43,14 +43,16 @@
   },
   "complexity": {
     "assembly_lines": 682,
-    "complexity_score": 514,
+    "complexity_score": 529,
     "cross_reference_count": 0,
     "function_call_count": 30,
     "global_count": 14,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 314,
-    "suspect_count": 18,
+    "suspect_count": 19,
     "suspect_types": [
       "pointer_cast",
+      "stack_alignment_array",
       "stack_param",
       "unresolved_funcptr",
       "warning_unreachable"
@@ -523,13 +525,23 @@
       "description": "Unreachable code block removed",
       "line": 2,
       "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x004f86be) */",
       "type": "warning_unreachable"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 20,
+      "match": "afStackY_1870",
+      "severity": "moderate",
+      "text": "float afStackY_1870 [1521];",
+      "type": "stack_alignment_array"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 22,
       "match": "code *",
+      "severity": "moderate",
       "text": "code *blend_callback;",
       "type": "unresolved_funcptr"
     },
@@ -537,6 +549,7 @@
       "description": "Unresolved stack parameter",
       "line": 23,
       "match": "in_stack_ffffff68",
+      "severity": "moderate",
       "text": "float in_stack_ffffff68;",
       "type": "stack_param"
     },
@@ -544,6 +557,7 @@
       "description": "Unresolved stack parameter",
       "line": 247,
       "match": "in_stack_ffffff68",
+      "severity": "moderate",
       "text": "in_stack_ffffff68 = (float)local_14;",
       "type": "stack_param"
     },
@@ -551,6 +565,7 @@
       "description": "Unresolved stack parameter",
       "line": 249,
       "match": "in_stack_ffffff68",
+      "severity": "moderate",
       "text": "in_stack_ffffff68 = (float)local_14 + 3.141593f;",
       "type": "stack_param"
     },
@@ -558,6 +573,7 @@
       "description": "Unresolved stack parameter",
       "line": 251,
       "match": "in_stack_ffffff68",
+      "severity": "moderate",
       "text": "if ((float)1.57079632675 < in_stack_ffffff68) {",
       "type": "stack_param"
     },
@@ -565,6 +581,7 @@
       "description": "Unresolved stack parameter",
       "line": 252,
       "match": "in_stack_ffffff68",
+      "severity": "moderate",
       "text": "in_stack_ffffff68 = in_stack_ffffff68 + -3.141593f;",
       "type": "stack_param"
     },
@@ -572,6 +589,7 @@
       "description": "Unresolved stack parameter",
       "line": 252,
       "match": "in_stack_ffffff68",
+      "severity": "moderate",
       "text": "in_stack_ffffff68 = in_stack_ffffff68 + -3.141593f;",
       "type": "stack_param"
     },
@@ -579,6 +597,7 @@
       "description": "Unresolved stack parameter",
       "line": 256,
       "match": "in_stack_ffffff68",
+      "severity": "moderate",
       "text": "if (in_stack_ffffff68 < local_1c) {",
       "type": "stack_param"
     },
@@ -586,6 +605,7 @@
       "description": "Unresolved stack parameter",
       "line": 257,
       "match": "in_stack_ffffff68",
+      "severity": "moderate",
       "text": "in_stack_ffffff68 = local_1c;",
       "type": "stack_param"
     },
@@ -593,6 +613,7 @@
       "description": "Unresolved stack parameter",
       "line": 259,
       "match": "in_stack_ffffff68",
+      "severity": "moderate",
       "text": "if (local_18 < in_stack_ffffff68) {",
       "type": "stack_param"
     },
@@ -600,6 +621,7 @@
       "description": "Unresolved stack parameter",
       "line": 260,
       "match": "in_stack_ffffff68",
+      "severity": "moderate",
       "text": "in_stack_ffffff68 = local_18;",
       "type": "stack_param"
     },
@@ -607,6 +629,7 @@
       "description": "Unresolved stack parameter",
       "line": 263,
       "match": "in_stack_ffffff68",
+      "severity": "moderate",
       "text": "(this_ptr->base).base.base.orient.vec.y + in_stack_ffffff68;",
       "type": "stack_param"
     },
@@ -614,6 +637,7 @@
       "description": "Complex pointer cast",
       "line": 305,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar11 = (uint *)((int)&CStack_84 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);",
       "type": "pointer_cast"
     },
@@ -621,6 +645,7 @@
       "description": "Complex pointer cast",
       "line": 306,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar10 = (uint *)((int)&CStack_94 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);",
       "type": "pointer_cast"
     },
@@ -628,6 +653,7 @@
       "description": "Complex pointer cast",
       "line": 307,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&CStack_84 + (uint)bVar12 * -8 + 4) =",
       "type": "pointer_cast"
     },
@@ -635,6 +661,7 @@
       "description": "Complex pointer cast",
       "line": 308,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&CStack_94 + (uint)bVar12 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -642,6 +669,7 @@
       "description": "Unresolved stack parameter",
       "line": 316,
       "match": "in_stack_ffffff68",
+      "severity": "moderate",
       "text": "((CCharacter *)this_ptr,delta_time,in_stack_ffffff68);",
       "type": "stack_param"
     }

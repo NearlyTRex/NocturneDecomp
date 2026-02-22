@@ -23,6 +23,7 @@
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 16,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 80,
     "suspect_count": 12,
     "suspect_types": [
@@ -308,6 +309,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 24,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_28.x = (int)ROUND(local_34.x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -315,6 +317,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 25,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_28.y = (int)ROUND(local_34.y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -322,6 +325,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 26,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_28.z = (int)ROUND(local_34.z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -329,6 +333,7 @@
       "description": "Complex pointer cast",
       "line": 31,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "if ((*(byte *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).screen_x +",
       "type": "pointer_cast"
     },
@@ -336,6 +341,7 @@
       "description": "Complex pointer cast",
       "line": 36,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "uVar4 = uVar4 & *(uint *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).",
       "type": "pointer_cast"
     },
@@ -343,6 +349,7 @@
       "description": "Complex pointer cast",
       "line": 47,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "iVar2 = *(int *)((int)&(pSVar1->projected_vertex).transformed_x + iVar5);",
       "type": "pointer_cast"
     },
@@ -350,6 +357,7 @@
       "description": "Complex pointer cast",
       "line": 48,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "local_18 = *(int *)((int)&(pSVar1->projected_vertex).transformed_y + iVar5);",
       "type": "pointer_cast"
     },
@@ -357,6 +365,7 @@
       "description": "Complex pointer cast",
       "line": 49,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "local_14 = *(int *)((int)&(pSVar1->projected_vertex).transformed_z + iVar5);",
       "type": "pointer_cast"
     },
@@ -364,6 +373,7 @@
       "description": "Complex pointer cast",
       "line": 51,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)local_94 + iVar6) =",
       "type": "pointer_cast"
     },
@@ -371,6 +381,7 @@
       "description": "Complex pointer cast",
       "line": 60,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)local_94 + iVar6 + 4) =",
       "type": "pointer_cast"
     },
@@ -378,6 +389,7 @@
       "description": "Complex pointer cast",
       "line": 69,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)local_94 + iVar6 + 8) =",
       "type": "pointer_cast"
     },

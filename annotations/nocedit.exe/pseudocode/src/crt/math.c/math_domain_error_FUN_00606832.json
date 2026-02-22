@@ -1,18 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 309,
+    "complexity_score": 379,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 49,
-    "suspect_count": 23,
+    "suspect_count": 29,
     "suspect_types": [
       "decompiler_intrinsic",
+      "double_reconstruction",
       "pointer_cast",
       "special_crt_function",
       "stack_param",
       "stack_ref",
+      "sub84_truncation",
       "unknown_field"
     ],
     "total_lines": 136
@@ -152,6 +155,7 @@
       "description": "Unresolved stack parameter",
       "line": 7,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "uint in_stack_00000004;",
       "type": "stack_param"
     },
@@ -159,6 +163,7 @@
       "description": "Unknown/mangled field access",
       "line": 12,
       "match": "._4_1_",
+      "severity": "mild",
       "text": "if (y._4_1_ < 2) {",
       "type": "unknown_field"
     },
@@ -166,6 +171,7 @@
       "description": "Unknown/mangled field access",
       "line": 13,
       "match": "._4_1_",
+      "severity": "mild",
       "text": "if (y._4_1_ == 0) {",
       "type": "unknown_field"
     },
@@ -173,6 +179,7 @@
       "description": "Unknown/mangled field access",
       "line": 14,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "if (0.0 < (double)CONCAT44(y._0_4_,x._4_4_)) {",
       "type": "unknown_field"
     },
@@ -180,13 +187,23 @@
       "description": "Unknown/mangled field access",
       "line": 14,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "if (0.0 < (double)CONCAT44(y._0_4_,x._4_4_)) {",
       "type": "unknown_field"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 14,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "if (0.0 < (double)CONCAT44(y._0_4_,x._4_4_)) {",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 14,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "if (0.0 < (double)CONCAT44(y._0_4_,x._4_4_)) {",
       "type": "decompiler_intrinsic"
     },
@@ -194,6 +211,7 @@
       "description": "Unknown/mangled field access",
       "line": 19,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "if (0.0 <= (double)CONCAT44(y._0_4_,x._4_4_)) {",
       "type": "unknown_field"
     },
@@ -201,13 +219,23 @@
       "description": "Unknown/mangled field access",
       "line": 19,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "if (0.0 <= (double)CONCAT44(y._0_4_,x._4_4_)) {",
       "type": "unknown_field"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 19,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "if (0.0 <= (double)CONCAT44(y._0_4_,x._4_4_)) {",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 19,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "if (0.0 <= (double)CONCAT44(y._0_4_,x._4_4_)) {",
       "type": "decompiler_intrinsic"
     },
@@ -215,6 +243,7 @@
       "description": "Unknown/mangled field access",
       "line": 31,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "if ((double)CONCAT44(y._0_4_,x._4_4_) <= 0.0) {",
       "type": "unknown_field"
     },
@@ -222,13 +251,23 @@
       "description": "Unknown/mangled field access",
       "line": 31,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "if ((double)CONCAT44(y._0_4_,x._4_4_) <= 0.0) {",
       "type": "unknown_field"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 31,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "if ((double)CONCAT44(y._0_4_,x._4_4_) <= 0.0) {",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 31,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "if ((double)CONCAT44(y._0_4_,x._4_4_) <= 0.0) {",
       "type": "decompiler_intrinsic"
     },
@@ -236,6 +275,7 @@
       "description": "Unresolved stack parameter",
       "line": 36,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "if ((double)CONCAT44(x._0_4_,in_stack_00000004) <= 0.0) {",
       "type": "stack_param"
     },
@@ -243,13 +283,23 @@
       "description": "Unknown/mangled field access",
       "line": 36,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "if ((double)CONCAT44(x._0_4_,in_stack_00000004) <= 0.0) {",
       "type": "unknown_field"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 36,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "if ((double)CONCAT44(x._0_4_,in_stack_00000004) <= 0.0) {",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 36,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "if ((double)CONCAT44(x._0_4_,in_stack_00000004) <= 0.0) {",
       "type": "decompiler_intrinsic"
     },
@@ -257,6 +307,7 @@
       "description": "Direct stack address reference",
       "line": 44,
       "match": "&stack0x00000004",
+      "severity": "moderate",
       "text": "(errorFlags,(double *)&stack0x00000004,(double *)((int)&x + 4));",
       "type": "stack_ref"
     },
@@ -264,6 +315,7 @@
       "description": "Complex pointer cast",
       "line": 44,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "(errorFlags,(double *)&stack0x00000004,(double *)((int)&x + 4));",
       "type": "pointer_cast"
     },
@@ -271,13 +323,23 @@
       "description": "Unknown/mangled field access",
       "line": 45,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_10._0_4_ = SUB84(dVar1,0);",
       "type": "unknown_field"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 45,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "local_10._0_4_ = SUB84(dVar1,0);",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 45,
       "match": "SUB84",
+      "severity": "mild",
       "text": "local_10._0_4_ = SUB84(dVar1,0);",
       "type": "decompiler_intrinsic"
     },
@@ -285,6 +347,7 @@
       "description": "Unknown/mangled field access",
       "line": 47,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_10._4_4_ = (uint)((ulonglong)dVar1 >> 0x20);",
       "type": "unknown_field"
     },
@@ -292,13 +355,23 @@
       "description": "Unknown/mangled field access",
       "line": 48,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_14 = local_10._4_4_;",
       "type": "unknown_field"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 50,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "local_10 = (double)CONCAT44(local_14,local_18);",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 50,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "local_10 = (double)CONCAT44(local_14,local_18);",
       "type": "decompiler_intrinsic"
     },

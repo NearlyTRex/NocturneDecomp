@@ -52,7 +52,7 @@
 ;   core_fire.cpp_CFireEffect_save_FUN_004c9380
 ;   core_mission.cpp_CDemonMission_writeFile_FUN_00523600
 ;   core_script.cpp_CScript_saveState_FUN_00560b50
-;   core_set.cpp_CDemonSet_FUN_00571170
+;   core_set.cpp_CDemonSet_saveLightState_FUN_00571170
 ;   core_set.cpp_CDemonSet_SetStateVersionCameraCountInStrings_FUN_005711b0
 ;   crt_fstream.cpp_ifstream_ctor_FUN_005ff8f0
 ;   crt_fstream.cpp_ifstream_dtor_FUN_005ff856
@@ -243,8 +243,8 @@ section .text
     PUSH 0x2d82d84                      ; 004e0e8e | DAT_02d82d84
     MOV EAX,[0x006810c8]                ; 004e0e93 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EAX                            ; 004e0e98 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_00571170 ; 004e0e99
-        ;   XREF to: 00571170 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_FUN_00571170(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_saveLightState_FUN_00571170 ; 004e0e99
+        ;   XREF to: 00571170 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_saveLightState_FUN_00571170(CDemonSet * this_ptr, void * param_2)
     ADD ESP,0x8                         ; 004e0e9e
     MOV EDX,dword ptr [0x02d82d84]      ; 004e0ea1 | DAT_02d82d84
     PUSH EDX                            ; 004e0ea7

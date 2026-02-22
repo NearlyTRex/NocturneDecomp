@@ -13,15 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 169,
-    "complexity_score": 231,
+    "complexity_score": 246,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 9,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 101,
-    "suspect_count": 12,
+    "suspect_count": 13,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast"
+      "pointer_cast",
+      "sub84_truncation"
     ],
     "total_lines": 270
   },
@@ -279,6 +281,7 @@
       "description": "Complex pointer cast",
       "line": 30,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "dVar5 = 1.0 / SQRT(*(double *)((int)g_Mp3AntiAliasCSSource + iVar11) *",
       "type": "pointer_cast"
     },
@@ -286,6 +289,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 30,
       "match": "SQRT",
+      "severity": "mild",
       "text": "dVar5 = 1.0 / SQRT(*(double *)((int)g_Mp3AntiAliasCSSource + iVar11) *",
       "type": "decompiler_intrinsic"
     },
@@ -293,13 +297,23 @@
       "description": "Complex pointer cast",
       "line": 31,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "*(double *)((int)g_Mp3AntiAliasCSSource + iVar11) + 1.0);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 33,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "local_48 = SUB84(dVar5,0);",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 33,
       "match": "SUB84",
+      "severity": "mild",
       "text": "local_48 = SUB84(dVar5,0);",
       "type": "decompiler_intrinsic"
     },
@@ -307,6 +321,7 @@
       "description": "Complex pointer cast",
       "line": 34,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)g_Mp3AntiAliasCA + iVar11) = local_48;",
       "type": "pointer_cast"
     },
@@ -314,6 +329,7 @@
       "description": "Complex pointer cast",
       "line": 36,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "*(double *)((int)g_Mp3AntiAliasCS + iVar11) =",
       "type": "pointer_cast"
     },
@@ -321,6 +337,7 @@
       "description": "Complex pointer cast",
       "line": 37,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "*(double *)((int)g_Mp3AntiAliasCSSource + iVar11) * dVar5;",
       "type": "pointer_cast"
     },
@@ -328,6 +345,7 @@
       "description": "Complex pointer cast",
       "line": 38,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)g_Mp3AntiAliasCA + iVar11 + 4) = uStack_44;",
       "type": "pointer_cast"
     },
@@ -335,6 +353,7 @@
       "description": "Complex pointer cast",
       "line": 83,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "*pfVar12 = fVar3 * (float)*(double *)((int)g_Mp3AntiAliasCA + iVar11) -",
       "type": "pointer_cast"
     },
@@ -342,6 +361,7 @@
       "description": "Complex pointer cast",
       "line": 84,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "fVar4 * (float)*(double *)((int)g_Mp3AntiAliasCS + iVar11);",
       "type": "pointer_cast"
     },
@@ -349,6 +369,7 @@
       "description": "Complex pointer cast",
       "line": 85,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar1 = (double *)((int)g_Mp3AntiAliasCA + iVar11);",
       "type": "pointer_cast"
     },
@@ -356,6 +377,7 @@
       "description": "Complex pointer cast",
       "line": 86,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar2 = (double *)((int)g_Mp3AntiAliasCS + iVar11);",
       "type": "pointer_cast"
     }

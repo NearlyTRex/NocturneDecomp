@@ -47,6 +47,7 @@
     "cross_reference_count": 0,
     "function_call_count": 43,
     "global_count": 63,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 476,
     "suspect_count": 4,
     "suspect_types": [
@@ -1054,6 +1055,7 @@
       "description": "Unreachable code block removed",
       "line": 2,
       "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x004b4aea) */",
       "type": "warning_unreachable"
     },
@@ -1061,6 +1063,7 @@
       "description": "Complex pointer cast",
       "line": 83,
       "match": "(SFoundFileInfo *)((int)",
+      "severity": "mild",
       "text": "pSVar8 = (SFoundFileInfo *)((int)pSVar9 + (uint)bVar12 * -2 + 1);",
       "type": "pointer_cast"
     },
@@ -1068,6 +1071,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 87,
       "match": "pSVar8[-1].",
+      "severity": "mild",
       "text": "pcVar10 = (char *)((int)&pSVar8[-1].container_size + 3);",
       "type": "negative_offset"
     },
@@ -1075,6 +1079,7 @@
       "description": "Complex pointer cast",
       "line": 87,
       "match": "(char *)((int)",
+      "severity": "mild",
       "text": "pcVar10 = (char *)((int)&pSVar8[-1].container_size + 3);",
       "type": "pointer_cast"
     }

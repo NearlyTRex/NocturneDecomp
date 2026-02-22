@@ -6,16 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 109,
-    "complexity_score": 151,
+    "complexity_score": 152,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 13,
-    "pseudocode_lines": 46,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 47,
     "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 155
+    "total_lines": 156
   },
   "cross_references": [
     {
@@ -36,7 +37,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_dskybox.cpp_generateSkyDomeVertex_FUN_004900b0",
-    "signature": "void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_004900b0(float *light_color,int u_coord,int v_coord,float *uv_offset)"
+    "signature": "void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_004900b0(SMRGLTextureBasic *sky_texture,int u_coord,int v_coord,int vertex_index)"
   },
   "function_calls": [
     {
@@ -249,10 +250,10 @@
       },
       {
         "is_param": true,
-        "name": "light_color",
+        "name": "sky_texture",
         "offset": 4,
         "size": 4,
-        "type": "float *"
+        "type": "SMRGLTextureBasic *"
       },
       {
         "is_param": true,
@@ -270,10 +271,10 @@
       },
       {
         "is_param": true,
-        "name": "uv_offset",
+        "name": "vertex_index",
         "offset": 16,
         "size": 4,
-        "type": "float *"
+        "type": "int"
       }
     ]
   },
@@ -299,70 +300,80 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 31,
       "match": "fsin",
+      "severity": "mild",
       "text": "fVar2 = (float10)fsin((float10)local_48);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
-      "match": "fsin",
-      "text": "fVar3 = (float10)fsin((float10)local_1c + (float10)light_color[7]);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
       "line": 33,
-      "match": "fcos",
-      "text": "fVar4 = (float10)fcos((float10)local_48);",
+      "match": "fsin",
+      "severity": "mild",
+      "text": "fVar4 = (float10)fsin(fVar3);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 34,
       "match": "fcos",
-      "text": "fVar5 = (float10)fcos((float10)local_1c + (float10)light_color[7]);",
+      "severity": "mild",
+      "text": "fVar5 = (float10)fcos((float10)local_48);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 38,
-      "match": "ROUND",
-      "text": "local_44.y = (int)ROUND(ROUND(fVar2 * fVar6 * fVar4));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 38,
-      "match": "ROUND",
-      "text": "local_44.y = (int)ROUND(ROUND(fVar2 * fVar6 * fVar4));",
+      "line": 35,
+      "match": "fcos",
+      "severity": "mild",
+      "text": "fVar3 = (float10)fcos(fVar3);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 39,
       "match": "ROUND",
-      "text": "local_44.x = (int)ROUND(ROUND(fVar3 * fVar6 * (float10)local_38 * fVar4));",
+      "severity": "mild",
+      "text": "local_44.y = (int)ROUND(ROUND(fVar2 * fVar6 * fVar5));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 39,
       "match": "ROUND",
-      "text": "local_44.x = (int)ROUND(ROUND(fVar3 * fVar6 * (float10)local_38 * fVar4));",
+      "severity": "mild",
+      "text": "local_44.y = (int)ROUND(ROUND(fVar2 * fVar6 * fVar5));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 40,
       "match": "ROUND",
-      "text": "local_44.z = (int)ROUND(ROUND(fVar5 * fVar6 * (float10)local_38 * fVar4));",
+      "severity": "mild",
+      "text": "local_44.x = (int)ROUND(ROUND(fVar4 * fVar6 * (float10)local_38 * fVar5));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 40,
       "match": "ROUND",
-      "text": "local_44.z = (int)ROUND(ROUND(fVar5 * fVar6 * (float10)local_38 * fVar4));",
+      "severity": "mild",
+      "text": "local_44.x = (int)ROUND(ROUND(fVar4 * fVar6 * (float10)local_38 * fVar5));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 41,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_44.z = (int)ROUND(ROUND(fVar3 * fVar6 * (float10)local_38 * fVar5));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 41,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_44.z = (int)ROUND(ROUND(fVar3 * fVar6 * (float10)local_38 * fVar5));",
       "type": "decompiler_intrinsic"
     }
   ]

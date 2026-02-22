@@ -23,6 +23,7 @@
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 1,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 37,
     "suspect_count": 4,
     "suspect_types": [
@@ -171,6 +172,7 @@
       "description": "Unresolved stack parameter",
       "line": 6,
       "match": "in_stack_fffffef0",
+      "severity": "moderate",
       "text": "void *in_stack_fffffef0;",
       "type": "stack_param"
     },
@@ -178,6 +180,7 @@
       "description": "Direct stack address reference",
       "line": 14,
       "match": "&stack0xfffffef0",
+      "severity": "moderate",
       "text": "((ifstream *)&stack0xfffffef0,0,(int)input_file_path,(char *)0x101,",
       "type": "stack_ref"
     },
@@ -185,6 +188,7 @@
       "description": "Unresolved stack parameter",
       "line": 19,
       "match": "in_stack_fffffef0",
+      "severity": "moderate",
       "text": "(SIZE_T)in_stack_fffffef0);",
       "type": "stack_param"
     },
@@ -192,6 +196,7 @@
       "description": "Direct stack address reference",
       "line": 38,
       "match": "&stack0xfffffef0",
+      "severity": "moderate",
       "text": "crt_fstream_cpp_ifstream_dtor_FUN_005ff856((ifstream *)&stack0xfffffef0,0);",
       "type": "stack_ref"
     }

@@ -10,6 +10,7 @@
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 6,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 59,
     "suspect_count": 2,
     "suspect_types": [
@@ -21,13 +22,13 @@
     {
       "addr": "00570040",
       "from_addr": "0057021f",
-      "name": "core_set.cpp_CDemonSet_FUN_00570040",
+      "name": "core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005702b0",
       "from_addr": "00570640",
-      "name": "core_set.cpp_FUN_005702b0",
+      "name": "core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -171,6 +172,7 @@
       "description": "Complex pointer cast",
       "line": 23,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)g_VertexIndexBuffer + iVar2) = iVar1;",
       "type": "pointer_cast"
     },
@@ -178,6 +180,7 @@
       "description": "Complex pointer cast",
       "line": 36,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)g_VertexIndexBuffer + iVar2) = pSVar3[1].base.type;",
       "type": "pointer_cast"
     }

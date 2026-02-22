@@ -25,7 +25,7 @@
 ;   core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_00524120
 ;   core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0
 ;   core_mission.cpp_CDemonMission_removeActor_FUN_00523f20
-;   core_set.cpp_CDemonSet_FUN_0056d2d0
+;   core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0
 ;   core_set.cpp_CDemonSet_initScene_FUN_0056aa10
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
@@ -138,8 +138,8 @@ section .text
     ADD ESP,0x8                         ; 0052436b
     MOV EAX,[0x006810c8]                ; 0052436e | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EAX                            ; 00524373 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_0056d2d0 ; 00524374
-        ;   XREF to: 0056d2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d2d0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0 ; 00524374
+        ;   XREF to: 0056d2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00524379
     MOV EDX,dword ptr [0x006810c8]      ; 0052437c | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EDX                            ; 00524382 | g_CDemonSetInstance

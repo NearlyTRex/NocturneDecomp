@@ -40,7 +40,8 @@ void __cdecl core_cloth_cpp_CCloth_initializeConnections_FUN_004394e0(CCloth *th
         pSVar8 = pSVar4 + local_14;
         local_20 = 0;
         do {
-          iVar11 = (int)(this_ptr->model).poly_vert_list + local_20;
+          iVar11 = (int)&(((SMRGLPrimitiveQuad *)(((this_ptr->model).poly_vert_list)->vertices + -2)
+                          )->base).base.type + local_20;
           iVar5 = 0;
           iVar10 = iVar11;
           if (0 < *(int *)(iVar11 + 4)) {

@@ -10,8 +10,8 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[4]:
-;   core_set.cpp_CDemonSet_FUN_00570040 at 0057021f
-;   core_set.cpp_FUN_005702b0 at 00570640
+;   core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040 at 0057021f
+;   core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0 at 00570640
 ;   core_water.cpp_CWater_render_FUN_005ea320 at 005ea7c8
 ;   shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0 at 0051ec5a
 ;

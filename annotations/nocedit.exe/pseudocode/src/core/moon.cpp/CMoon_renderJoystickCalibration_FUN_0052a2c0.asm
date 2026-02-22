@@ -121,7 +121,7 @@ section .text
     PUSH EAX                            ; 0052a3b7
     MOV dword ptr [EDX + 0x15ae80],0x280 ; 0052a3b8 | DAT_0326f0f8
     CALL core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850 ; 0052a3c2
-        ;   XREF to: 00477850 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850(CKeyFramedModel * this_ptr, CKeyFramedModelInstance * instance, int frame_index, int render_flags)
+        ;   XREF to: 00477850 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850(CKeyFramedModel * this_ptr, int frame_index, CKeyFramedModelInstance * instance, int render_flags)
     MOV EAX,[0x006810c8]                ; 0052a3c7 | g_CDemonSetInstance | g_CDemonSetPtr
     ADD ESP,0x10                        ; 0052a3cc
     MOV dword ptr [EAX + 0x15ae70],0x0  ; 0052a3cf | DAT_0326f0e8

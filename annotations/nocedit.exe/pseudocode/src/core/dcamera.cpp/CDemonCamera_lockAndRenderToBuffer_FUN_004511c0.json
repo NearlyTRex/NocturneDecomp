@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 6,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 31,
     "suspect_count": 2,
     "suspect_types": [
@@ -21,7 +22,7 @@
     {
       "addr": "0056c1a0",
       "from_addr": "0056c437",
-      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0",
+      "name": "core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -118,7 +119,7 @@
       {
         "call_addr": "0056c437",
         "call_type": "direct",
-        "caller": "core_set.cpp_CDemonSet_FUN_0056c1a0",
+        "caller": "core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0",
         "estimated_params": 1,
         "instructions_analyzed": 3,
         "reg_params": [],
@@ -178,6 +179,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 6,
       "match": "extraout_EAX",
+      "severity": "moderate",
       "text": "int extraout_EAX;",
       "type": "extra_output"
     },
@@ -185,6 +187,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 23,
       "match": "extraout_EAX",
+      "severity": "moderate",
       "text": "return extraout_EAX;",
       "type": "extra_output"
     }

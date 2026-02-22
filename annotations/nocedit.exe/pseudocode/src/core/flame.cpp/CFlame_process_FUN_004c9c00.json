@@ -55,14 +55,16 @@
   },
   "complexity": {
     "assembly_lines": 346,
-    "complexity_score": 232,
+    "complexity_score": 247,
     "cross_reference_count": 4,
     "function_call_count": 10,
     "global_count": 17,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 137,
-    "suspect_count": 9,
+    "suspect_count": 10,
     "suspect_types": [
-      "decompiler_intrinsic"
+      "decompiler_intrinsic",
+      "sub84_truncation"
     ],
     "total_lines": 483
   },
@@ -380,9 +382,18 @@
   },
   "suspects": [
     {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 68,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "((char *)&local_f8,\"torch.wav * %f\",SUB84((double)local_14,0),",
+      "type": "sub84_truncation"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 68,
       "match": "SUB84",
+      "severity": "mild",
       "text": "((char *)&local_f8,\"torch.wav * %f\",SUB84((double)local_14,0),",
       "type": "decompiler_intrinsic"
     },
@@ -390,6 +401,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 94,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(float)(int)ROUND(ROUND(((this_ptr->flame_size).x + (this_ptr->flame_size).z) *",
       "type": "decompiler_intrinsic"
     },
@@ -397,6 +409,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 94,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(float)(int)ROUND(ROUND(((this_ptr->flame_size).x + (this_ptr->flame_size).z) *",
       "type": "decompiler_intrinsic"
     },
@@ -404,6 +417,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 97,
       "match": "ABS",
+      "severity": "mild",
       "text": "if ((ABS(fStack_34) < fVar2) && (ABS(fStack_2c) < fVar2)) {",
       "type": "decompiler_intrinsic"
     },
@@ -411,6 +425,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 97,
       "match": "ABS",
+      "severity": "mild",
       "text": "if ((ABS(fStack_34) < fVar2) && (ABS(fStack_2c) < fVar2)) {",
       "type": "decompiler_intrinsic"
     },
@@ -418,6 +433,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 125,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_14 = (float)(int)ROUND(ROUND(((this_ptr->flame_size).x + (this_ptr->flame_size).z)",
       "type": "decompiler_intrinsic"
     },
@@ -425,6 +441,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 125,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_14 = (float)(int)ROUND(ROUND(((this_ptr->flame_size).x + (this_ptr->flame_size).z)",
       "type": "decompiler_intrinsic"
     },
@@ -432,6 +449,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 129,
       "match": "ABS",
+      "severity": "mild",
       "text": "if ((ABS(fStack_28) < fVar2) && (ABS(fStack_20) < fVar2)) {",
       "type": "decompiler_intrinsic"
     },
@@ -439,6 +457,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 129,
       "match": "ABS",
+      "severity": "mild",
       "text": "if ((ABS(fStack_28) < fVar2) && (ABS(fStack_20) < fVar2)) {",
       "type": "decompiler_intrinsic"
     }

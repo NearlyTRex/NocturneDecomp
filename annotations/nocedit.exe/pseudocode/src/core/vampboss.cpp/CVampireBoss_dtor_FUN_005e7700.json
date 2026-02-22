@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 11,
     "global_count": 1,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 40,
     "suspect_count": 4,
     "suspect_types": [
@@ -154,6 +155,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 26,
       "match": "pCVar2[-1].",
+      "severity": "mild",
       "text": "(pCVar2[-1].collide_bones[0x13].world_matrix.m + 2),0);",
       "type": "negative_offset"
     },
@@ -161,6 +163,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 27,
       "match": "pCVar3[-5].",
+      "severity": "mild",
       "text": "pCVar4 = core_armour_cpp_CFlame_arrdtor_FUN_00412720((CFlame *)(pCVar3[-5].model_name + 0x34),0);",
       "type": "negative_offset"
     },
@@ -168,6 +171,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 29,
       "match": "pCVar4[-2].",
+      "severity": "mild",
       "text": "((SFire *)(pCVar4[-2].base.create_event + 0x20),0);",
       "type": "negative_offset"
     },
@@ -175,6 +179,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 37,
       "match": "pCVar3[-1].",
+      "severity": "mild",
       "text": "((CDemonActor *)(pCVar3[-1].part_data.visibility_flags + 7),1);",
       "type": "negative_offset"
     }

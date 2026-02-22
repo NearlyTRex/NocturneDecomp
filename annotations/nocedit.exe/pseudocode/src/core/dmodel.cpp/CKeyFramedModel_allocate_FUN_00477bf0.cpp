@@ -10,8 +10,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_allocate_FUN_00477bf0(CKeyFramedMod
 
 {
   float fVar1;
-  CVector3i **ppCVar2;
-  SMRGLPrimitiveQuad **ppSVar3;
+  CVector3i *pCVar2;
+  SMRGLPrimitiveQuad *pSVar3;
   int *piVar4;
   CVector3f *pCVar5;
   CVector3f *pCVar6;
@@ -32,13 +32,13 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_allocate_FUN_00477bf0(CKeyFramedMod
     g_CurrentLineNumber = 0x2c1;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Too many parts!");
   }
-  ppCVar2 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
-                      (this_ptr->frame_count * this_ptr->vertex_count * 0xc,
-                       "..\\core\\dmodel.cpp",0x2c5);
-  this_ptr->vertex_list = ppCVar2;
-  ppSVar3 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
-                      (this_ptr->poly_count * 0x48,"..\\core\\dmodel.cpp",0x2c6);
-  this_ptr->poly_vert_list = ppSVar3;
+  pCVar2 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+                     (this_ptr->frame_count * this_ptr->vertex_count * 0xc,
+                      "..\\core\\dmodel.cpp",0x2c5);
+  this_ptr->vertex_list = pCVar2;
+  pSVar3 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+                     (this_ptr->poly_count * 0x48,"..\\core\\dmodel.cpp",0x2c6);
+  this_ptr->poly_vert_list = pSVar3;
   piVar4 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                      (this_ptr->poly_count << 2,"..\\core\\dmodel.cpp",0x2c7);
   fVar1 = (float)this_ptr->frame_count;
@@ -51,8 +51,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_allocate_FUN_00477bf0(CKeyFramedMod
     pCVar5->x = fVar1;
   }
   this_ptr->frame_bounds = pCVar6;
-  if ((((this_ptr->vertex_list == (CVector3i **)0x0) ||
-       ((0 < this_ptr->poly_count && (this_ptr->poly_vert_list == (SMRGLPrimitiveQuad **)0x0)))) ||
+  if ((((this_ptr->vertex_list == (CVector3i *)0x0) ||
+       ((0 < this_ptr->poly_count && (this_ptr->poly_vert_list == (SMRGLPrimitiveQuad *)0x0)))) ||
       ((0 < this_ptr->poly_count && (this_ptr->poly_texture_index_list == (int *)0x0)))) ||
      (this_ptr->frame_bounds == (CVector3f *)0x0)) {
     core_dmodel_cpp_CKeyFramedModel_free_FUN_00477690(this_ptr);
@@ -68,10 +68,10 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_allocate_FUN_00477bf0(CKeyFramedMod
   else if (this_ptr->frame_count != 1) {
     return;
   }
-  ppCVar2 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
-                      (this_ptr->vertex_count * 0xc,"..\\core\\dmodel.cpp",0x2d9);
-  this_ptr->vertex_normal_list = ppCVar2;
-  if (ppCVar2 != (CVector3i **)0x0) {
+  pCVar2 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+                     (this_ptr->vertex_count * 0xc,"..\\core\\dmodel.cpp",0x2d9);
+  this_ptr->vertex_normal_list = pCVar2;
+  if (pCVar2 != (CVector3i *)0x0) {
     return;
   }
   g_CurrentFilename = "..\\core\\dmodel.cpp";

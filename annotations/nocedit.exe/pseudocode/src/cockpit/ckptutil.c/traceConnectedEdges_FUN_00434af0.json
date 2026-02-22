@@ -17,6 +17,7 @@
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 19,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 353,
     "suspect_count": 30,
     "suspect_types": [
@@ -683,6 +684,7 @@
       "description": "Unresolved stack parameter",
       "line": 22,
       "match": "in_stack_00000020",
+      "severity": "moderate",
       "text": "int in_stack_00000020;",
       "type": "stack_param"
     },
@@ -690,6 +692,7 @@
       "description": "Unresolved stack parameter",
       "line": 23,
       "match": "in_stack_00000024",
+      "severity": "moderate",
       "text": "int in_stack_00000024;",
       "type": "stack_param"
     },
@@ -697,6 +700,7 @@
       "description": "Complex pointer cast",
       "line": 97,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "local_34 = (int *)((int)output_buffer + local_dc * 0x84);",
       "type": "pointer_cast"
     },
@@ -704,6 +708,7 @@
       "description": "Complex pointer cast",
       "line": 103,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "for (local_20 = 0; piVar2 = (int *)((int)output_buffer + local_cc), local_20 < *piVar2;",
       "type": "pointer_cast"
     },
@@ -711,6 +716,7 @@
       "description": "Complex pointer cast",
       "line": 105,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "iVar1 = *(int *)((int)piVar2 + local_e0 + 4);",
       "type": "pointer_cast"
     },
@@ -718,6 +724,7 @@
       "description": "Complex pointer cast",
       "line": 106,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "iVar14 = *(int *)((int)piVar2 + local_e0 + 0x44) + iVar1;",
       "type": "pointer_cast"
     },
@@ -725,6 +732,7 @@
       "description": "Complex pointer cast",
       "line": 126,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "iVar4 = *(int *)((int)piVar2 + local_c4 + 4);",
       "type": "pointer_cast"
     },
@@ -732,6 +740,7 @@
       "description": "Complex pointer cast",
       "line": 127,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "local_74 = *(int *)((int)piVar2 + local_c4 + 0x44) + iVar4 + -1;",
       "type": "pointer_cast"
     },
@@ -739,6 +748,7 @@
       "description": "Complex pointer cast",
       "line": 154,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =",
       "type": "pointer_cast"
     },
@@ -746,6 +756,7 @@
       "description": "Complex pointer cast",
       "line": 155,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) & 0x7f;",
       "type": "pointer_cast"
     },
@@ -753,6 +764,7 @@
       "description": "Complex pointer cast",
       "line": 171,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =",
       "type": "pointer_cast"
     },
@@ -760,6 +772,7 @@
       "description": "Complex pointer cast",
       "line": 172,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) & 0x7f;",
       "type": "pointer_cast"
     },
@@ -767,6 +780,7 @@
       "description": "Unresolved stack parameter",
       "line": 189,
       "match": "in_stack_00000024",
+      "severity": "moderate",
       "text": "if ((local_bc == 0) && ((iVar4 - iVar1) + 1 <= in_stack_00000024)) {",
       "type": "stack_param"
     },
@@ -774,6 +788,7 @@
       "description": "Complex pointer cast",
       "line": 202,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =",
       "type": "pointer_cast"
     },
@@ -781,6 +796,7 @@
       "description": "Complex pointer cast",
       "line": 203,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) & 0x7f;",
       "type": "pointer_cast"
     },
@@ -788,6 +804,7 @@
       "description": "Unresolved stack parameter",
       "line": 209,
       "match": "in_stack_00000020",
+      "severity": "moderate",
       "text": "if ((local_bc == 0) || (in_stack_00000020 < (iVar4 - local_18) + -1))",
       "type": "stack_param"
     },
@@ -795,6 +812,7 @@
       "description": "Complex pointer cast",
       "line": 224,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =",
       "type": "pointer_cast"
     },
@@ -802,6 +820,7 @@
       "description": "Complex pointer cast",
       "line": 225,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) & 0x7f;",
       "type": "pointer_cast"
     },
@@ -809,6 +828,7 @@
       "description": "Complex pointer cast",
       "line": 255,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "local_40 = *(int *)((int)piVar2 + local_50 + 4);",
       "type": "pointer_cast"
     },
@@ -816,6 +836,7 @@
       "description": "Complex pointer cast",
       "line": 257,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "local_44 = *(int *)((int)output_buffer + local_cc) + -1;",
       "type": "pointer_cast"
     },
@@ -823,6 +844,7 @@
       "description": "Complex pointer cast",
       "line": 258,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "iVar4 = local_40 + *(int *)((int)piVar2 + local_50 + 0x44) + -1;",
       "type": "pointer_cast"
     },
@@ -830,6 +852,7 @@
       "description": "Complex pointer cast",
       "line": 260,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "(*(int *)((int)output_buffer + local_cc + local_e0 + 8) < iVar4)) {",
       "type": "pointer_cast"
     },
@@ -837,6 +860,7 @@
       "description": "Complex pointer cast",
       "line": 274,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =",
       "type": "pointer_cast"
     },
@@ -844,6 +868,7 @@
       "description": "Complex pointer cast",
       "line": 275,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) & 0x7f;",
       "type": "pointer_cast"
     },
@@ -851,6 +876,7 @@
       "description": "Complex pointer cast",
       "line": 286,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if ((local_b4 < local_44) && (*(int *)((int)piVar2 + local_50 + 8) < iVar15)) {",
       "type": "pointer_cast"
     },
@@ -858,6 +884,7 @@
       "description": "Unresolved stack parameter",
       "line": 291,
       "match": "in_stack_00000024",
+      "severity": "moderate",
       "text": "((local_c8 == 0 && ((iVar15 - iVar4) + 1 <= in_stack_00000024)))) {",
       "type": "stack_param"
     },
@@ -865,6 +892,7 @@
       "description": "Complex pointer cast",
       "line": 303,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =",
       "type": "pointer_cast"
     },
@@ -872,6 +900,7 @@
       "description": "Complex pointer cast",
       "line": 304,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) & 0x7f;",
       "type": "pointer_cast"
     },
@@ -879,6 +908,7 @@
       "description": "Complex pointer cast",
       "line": 351,
       "match": "(SEdge *)((int)",
+      "severity": "mild",
       "text": "pSVar3 = (SEdge *)((int)pSVar3 + (uint)bVar17 * -2 + 1);",
       "type": "pointer_cast"
     },
@@ -886,6 +916,7 @@
       "description": "Complex pointer cast",
       "line": 352,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar16 = (uint *)((int)puVar16 + (uint)bVar17 * -2 + 1);",
       "type": "pointer_cast"
     }

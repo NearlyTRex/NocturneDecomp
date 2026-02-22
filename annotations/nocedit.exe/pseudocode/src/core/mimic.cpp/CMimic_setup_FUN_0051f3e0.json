@@ -4,49 +4,49 @@
       {
         "category": "undeclared_identifier",
         "column": 18,
-        "line": 116,
+        "line": 118,
         "message": "use of undeclared identifier 'stack0xffffffe8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 18,
-        "line": 117,
+        "line": 119,
         "message": "use of undeclared identifier 'stack0xffffffec'"
       },
       {
         "category": "undeclared_identifier",
         "column": 18,
-        "line": 122,
+        "line": 124,
         "message": "use of undeclared identifier 'stack0xffffffdc'"
       },
       {
         "category": "undeclared_identifier",
         "column": 18,
-        "line": 123,
+        "line": 125,
         "message": "use of undeclared identifier 'stack0xffffffe0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 28,
-        "line": 128,
+        "line": 130,
         "message": "use of undeclared identifier 'stack0xffffffe8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 23,
-        "line": 130,
+        "line": 132,
         "message": "use of undeclared identifier 'stack0xffffffec'"
       },
       {
         "category": "undeclared_identifier",
         "column": 28,
-        "line": 134,
+        "line": 136,
         "message": "use of undeclared identifier 'stack0xffffffdc'"
       },
       {
         "category": "undeclared_identifier",
         "column": 23,
-        "line": 136,
+        "line": 138,
         "message": "use of undeclared identifier 'stack0xffffffe0'"
       }
     ],
@@ -55,17 +55,19 @@
   },
   "complexity": {
     "assembly_lines": 329,
-    "complexity_score": 251,
+    "complexity_score": 308,
     "cross_reference_count": 0,
     "function_call_count": 15,
     "global_count": 47,
-    "pseudocode_lines": 141,
-    "suspect_count": 10,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 143,
+    "suspect_count": 15,
     "suspect_types": [
       "pointer_cast",
+      "stack_alignment_array",
       "stack_ref"
     ],
-    "total_lines": 470
+    "total_lines": 472
   },
   "cross_references": [],
   "function": {
@@ -525,73 +527,123 @@
   },
   "suspects": [
     {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 15,
+      "match": "auStackY_1010",
+      "severity": "moderate",
+      "text": "uint auStackY_1010 [1014];",
+      "type": "stack_alignment_array"
+    },
+    {
       "description": "Complex pointer cast",
-      "line": 97,
+      "line": 98,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)pvVar3 + iVar5 + 4) = -*(float *)((int)pvVar3 + iVar5 + 4);",
+      "severity": "mild",
+      "text": "*(float *)((int)&(pSVar3->position).x + iVar6) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 97,
+      "line": 99,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)pvVar3 + iVar5 + 4) = -*(float *)((int)pvVar3 + iVar5 + 4);",
+      "severity": "mild",
+      "text": "-*(float *)((int)&(pSVar3->position).x + iVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 108,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "puVar2 = (uint *)((int)&pSVar4->vertices[2].vertex_index + iVar6);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 109,
+      "line": 111,
       "match": "&stack0xffffffe8",
-      "text": "*(uint *)(&stack0xffffffe8 + (uint)bVar8 * -8) = *puVar7;",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffffe8 + (uint)bVar9 * -8) = *puVar8;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 110,
+      "line": 112,
       "match": "&stack0xffffffec",
-      "text": "*(uint *)(&stack0xffffffec + (uint)bVar8 * -8 + (uint)bVar8 * -8) =",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffffec + (uint)bVar9 * -8 + (uint)bVar9 * -8) =",
       "type": "stack_ref"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 114,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "puVar2 = (uint *)((int)&pSVar4->vertices[0].vertex_index + iVar6);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Direct stack address reference",
-      "line": 115,
+      "line": 117,
       "match": "&stack0xffffffdc",
-      "text": "*(uint *)(&stack0xffffffdc + (uint)bVar8 * -8) = *puVar7;",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffffdc + (uint)bVar9 * -8) = *puVar8;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 116,
+      "line": 118,
       "match": "&stack0xffffffe0",
-      "text": "*(uint *)(&stack0xffffffe0 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffffe0 + (uint)bVar9 * -8 + (uint)bVar9 * -8) =",
       "type": "stack_ref"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 121,
-      "match": "&stack0xffffffe8",
-      "text": "*puVar7 = *(uint *)(&stack0xffffffe8 + (uint)bVar8 * -8);",
-      "type": "stack_ref"
+      "description": "Complex pointer cast",
+      "line": 120,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "puVar2 = (uint *)((int)&pSVar4->vertices[0].vertex_index + iVar6);",
+      "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
       "line": 123,
-      "match": "&stack0xffffffec",
-      "text": "*(uint *)(&stack0xffffffec + (uint)bVar8 * -8 + (uint)bVar8 * -8);",
+      "match": "&stack0xffffffe8",
+      "severity": "moderate",
+      "text": "*puVar8 = *(uint *)(&stack0xffffffe8 + (uint)bVar9 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 127,
-      "match": "&stack0xffffffdc",
-      "text": "*puVar7 = *(uint *)(&stack0xffffffdc + (uint)bVar8 * -8);",
+      "line": 125,
+      "match": "&stack0xffffffec",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffffec + (uint)bVar9 * -8 + (uint)bVar9 * -8);",
       "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 126,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "puVar2 = (uint *)((int)&pSVar4->vertices[2].vertex_index + iVar6);",
+      "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
       "line": 129,
+      "match": "&stack0xffffffdc",
+      "severity": "moderate",
+      "text": "*puVar8 = *(uint *)(&stack0xffffffdc + (uint)bVar9 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 131,
       "match": "&stack0xffffffe0",
-      "text": "*(uint *)(&stack0xffffffe0 + (uint)bVar8 * -8 + (uint)bVar8 * -8);",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffffe0 + (uint)bVar9 * -8 + (uint)bVar9 * -8);",
       "type": "stack_ref"
     }
   ],

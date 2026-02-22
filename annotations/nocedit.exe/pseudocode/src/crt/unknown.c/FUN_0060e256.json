@@ -5,6 +5,7 @@
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 25,
     "suspect_count": 28,
     "suspect_types": [
@@ -102,6 +103,7 @@
       "description": "Inferred register parameter",
       "line": 5,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "uint in_EAX;",
       "type": "register_param"
     },
@@ -109,6 +111,7 @@
       "description": "Inferred register parameter",
       "line": 6,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "uint in_ECX;",
       "type": "register_param"
     },
@@ -116,6 +119,7 @@
       "description": "Inferred register parameter",
       "line": 7,
       "match": "in_EDX",
+      "severity": "mild",
       "text": "uint in_EDX;",
       "type": "register_param"
     },
@@ -123,6 +127,7 @@
       "description": "Unaffected register variable",
       "line": 8,
       "match": "unaff_EBX",
+      "severity": "moderate",
       "text": "uint unaff_EBX;",
       "type": "unaffected_reg"
     },
@@ -130,6 +135,7 @@
       "description": "Inferred register parameter",
       "line": 11,
       "match": "in_EDX",
+      "severity": "mild",
       "text": "if ((in_EDX & 0x7ff00000) == 0) {",
       "type": "register_param"
     },
@@ -137,6 +143,7 @@
       "description": "Inferred register parameter",
       "line": 12,
       "match": "in_EDX",
+      "severity": "mild",
       "text": "in_EDX = 0;",
       "type": "register_param"
     },
@@ -144,6 +151,7 @@
       "description": "Inferred register parameter",
       "line": 14,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "if ((in_ECX & 0x7ff00000) == 0) {",
       "type": "register_param"
     },
@@ -151,6 +159,7 @@
       "description": "Inferred register parameter",
       "line": 15,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "in_ECX = 0;",
       "type": "register_param"
     },
@@ -158,6 +167,7 @@
       "description": "Inferred register parameter",
       "line": 17,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "if (-1 < (int)(in_ECX ^ in_EDX)) {",
       "type": "register_param"
     },
@@ -165,6 +175,7 @@
       "description": "Inferred register parameter",
       "line": 17,
       "match": "in_EDX",
+      "severity": "mild",
       "text": "if (-1 < (int)(in_ECX ^ in_EDX)) {",
       "type": "register_param"
     },
@@ -172,6 +183,7 @@
       "description": "Inferred register parameter",
       "line": 18,
       "match": "in_EDX",
+      "severity": "mild",
       "text": "bVar1 = in_EDX < in_ECX;",
       "type": "register_param"
     },
@@ -179,6 +191,7 @@
       "description": "Inferred register parameter",
       "line": 18,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "bVar1 = in_EDX < in_ECX;",
       "type": "register_param"
     },
@@ -186,6 +199,7 @@
       "description": "Inferred register parameter",
       "line": 19,
       "match": "in_EDX",
+      "severity": "mild",
       "text": "if (in_EDX == in_ECX) {",
       "type": "register_param"
     },
@@ -193,6 +207,7 @@
       "description": "Inferred register parameter",
       "line": 19,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "if (in_EDX == in_ECX) {",
       "type": "register_param"
     },
@@ -200,6 +215,7 @@
       "description": "Inferred register parameter",
       "line": 20,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "bVar1 = in_EAX < unaff_EBX;",
       "type": "register_param"
     },
@@ -207,6 +223,7 @@
       "description": "Unaffected register variable",
       "line": 20,
       "match": "unaff_EBX",
+      "severity": "moderate",
       "text": "bVar1 = in_EAX < unaff_EBX;",
       "type": "unaffected_reg"
     },
@@ -214,6 +231,7 @@
       "description": "Inferred register parameter",
       "line": 22,
       "match": "in_EDX",
+      "severity": "mild",
       "text": "if (in_EDX == in_ECX && in_EAX == unaff_EBX) {",
       "type": "register_param"
     },
@@ -221,6 +239,7 @@
       "description": "Inferred register parameter",
       "line": 22,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "if (in_EDX == in_ECX && in_EAX == unaff_EBX) {",
       "type": "register_param"
     },
@@ -228,6 +247,7 @@
       "description": "Inferred register parameter",
       "line": 22,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "if (in_EDX == in_ECX && in_EAX == unaff_EBX) {",
       "type": "register_param"
     },
@@ -235,6 +255,7 @@
       "description": "Unaffected register variable",
       "line": 22,
       "match": "unaff_EBX",
+      "severity": "moderate",
       "text": "if (in_EDX == in_ECX && in_EAX == unaff_EBX) {",
       "type": "unaffected_reg"
     },
@@ -242,6 +263,7 @@
       "description": "Inferred register parameter",
       "line": 25,
       "match": "in_EDX",
+      "severity": "mild",
       "text": "in_EDX = in_EDX ^ (in_ECX >> 1 | (uint)bVar1 << 0x1f);",
       "type": "register_param"
     },
@@ -249,6 +271,7 @@
       "description": "Inferred register parameter",
       "line": 25,
       "match": "in_EDX",
+      "severity": "mild",
       "text": "in_EDX = in_EDX ^ (in_ECX >> 1 | (uint)bVar1 << 0x1f);",
       "type": "register_param"
     },
@@ -256,6 +279,7 @@
       "description": "Inferred register parameter",
       "line": 25,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "in_EDX = in_EDX ^ (in_ECX >> 1 | (uint)bVar1 << 0x1f);",
       "type": "register_param"
     },
@@ -263,6 +287,7 @@
       "description": "Inferred register parameter",
       "line": 27,
       "match": "in_EDX",
+      "severity": "mild",
       "text": "return (uint)CARRY4(in_EDX,in_EDX) * -2 + 1;",
       "type": "register_param"
     },
@@ -270,6 +295,7 @@
       "description": "Inferred register parameter",
       "line": 27,
       "match": "in_EDX",
+      "severity": "mild",
       "text": "return (uint)CARRY4(in_EDX,in_EDX) * -2 + 1;",
       "type": "register_param"
     },
@@ -277,6 +303,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 27,
       "match": "CARRY4",
+      "severity": "mild",
       "text": "return (uint)CARRY4(in_EDX,in_EDX) * -2 + 1;",
       "type": "decompiler_intrinsic"
     },

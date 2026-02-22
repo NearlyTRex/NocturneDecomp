@@ -6,16 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 51,
+    "complexity_score": 25,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 0,
-    "pseudocode_lines": 26,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unaffected_reg"
-    ],
-    "total_lines": 101
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 25,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 100
   },
   "cross_references": [
     {
@@ -126,20 +125,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 8,
-      "match": "unaff_ESI",
-      "text": "CVector3i *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 26,
-      "match": "unaff_ESI",
-      "text": "(this_ptr->part_data).texture_set_indices[part_index],unaff_ESI);",
-      "type": "unaffected_reg"
-    }
-  ]
+  "suspects": []
 }

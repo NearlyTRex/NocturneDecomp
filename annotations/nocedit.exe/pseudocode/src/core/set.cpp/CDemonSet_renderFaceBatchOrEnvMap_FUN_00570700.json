@@ -1,0 +1,156 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 52,
+    "complexity_score": 16,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 6,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 16,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 68
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00570700",
+    "address_range": [
+      [
+        "00570700",
+        "0057076f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_set.cpp_CDemonSet_renderFaceBatchOrEnvMap_FUN_00570700",
+    "signature": "void __cdecl core_set_cpp_CDemonSet_renderFaceBatchOrEnvMap_FUN_00570700(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prims,int count,int flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "0056ffe0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_renderEnvMapBatchTri_FUN_0056ffe0"
+    },
+    {
+      "addr": "0048cae0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0"
+    },
+    {
+      "addr": "0048ce20",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_renderFaceBatch_FUN_0048ce20"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr2",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02d81a9c",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "02d81c8c",
+      "name": "DAT_02d81c8c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d81c90",
+      "name": "DAT_02d81c90",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 4,
+    "estimated_params": 4
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.880952380952381,
+    "instruction_count": 42,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 3,
+      "CBRANCH": 3,
+      "COPY": 38,
+      "INT_ADD": 19,
+      "INT_AND": 13,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 12,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 6,
+      "INT_SUB": 18,
+      "LOAD": 16,
+      "POPCOUNT": 6,
+      "RETURN": 2,
+      "STORE": 16
+    },
+    "pcode_op_count": 163
+  },
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "prims",
+        "offset": 8,
+        "size": 4,
+        "type": "SMRGLHeaderPrimitive *"
+      },
+      {
+        "is_param": true,
+        "name": "count",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

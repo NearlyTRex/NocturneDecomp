@@ -9,10 +9,11 @@
 void __cdecl core_fire_cpp_CFireball_process_FUN_004c0b30(CFireball *this_ptr)
 
 {
+  CDemonGlobe *this_ptr_00;
   int iVar1;
   longlong lVar2;
-  CFireEffect *this_ptr_00;
-  CDemonSet *this_ptr_01;
+  CFireEffect *this_ptr_01;
+  CDemonSet *this_ptr_02;
   int iVar3;
   int iVar4;
   SDamageInfo SStack_54;
@@ -40,24 +41,25 @@ void __cdecl core_fire_cpp_CFireball_process_FUN_004c0b30(CFireball *this_ptr)
              (uint)((g_GlobalDeltaTimeInt >> 0x1f) << 1 < 0)) >> 2);
   this_ptr->rotation_angle2 = this_ptr->rotation_angle2 + iVar3;
   if (this_ptr->lighting_active == 0) {
-    core_dglobe_cpp_CDemonGlobe_setColor_FUN_00471310(&this_ptr->light_globe,(CColor3f *)this_ptr);
+    this_ptr_00 = &this_ptr->light_globe;
+    core_dglobe_cpp_CDemonGlobe_setColor_FUN_00471310(this_ptr_00,(CColor3f *)this_ptr);
     iVar3 = this_ptr->timer;
     (this_ptr->light_globe).intensity_multiplier = iVar3;
     iVar3 = (iVar3 + (iVar3 >> 0x1f) * -0x100) - (uint)((iVar3 >> 0x1f) << 7 < 0);
     iVar4 = iVar3 >> 0x1f;
     (this_ptr->light_globe).intensity.bytes[0] =
          (uchar)((int)(((iVar3 >> 8) + iVar4 * -4) - (uint)(iVar4 << 1 < 0)) >> 2);
-    core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360(&this_ptr->light_globe,8.0);
-    this_ptr_01 = g_CDemonSetPtr;
+    core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360(this_ptr_00,8.0);
+    this_ptr_02 = g_CDemonSetPtr;
     (this_ptr->light_globe).corona_mode = 0;
-    core_set_cpp_CDemonSet_FUN_0056d110(this_ptr_01);
+    core_set_cpp_CDemonSet_addCoronaGlobe_FUN_0056d110(this_ptr_02,this_ptr_00);
     iVar3 = this_ptr->spawn_timer + g_GlobalDeltaTimeInt;
     this_ptr->spawn_timer = iVar3;
-    this_ptr_00 = g_CFireEffectPtr;
+    this_ptr_01 = g_CFireEffectPtr;
     if (0x1000 < iVar3) {
       this_ptr->spawn_timer = iVar3 + -0x1000;
       core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
-                (this_ptr_00,(CVector3f *)this_ptr,2.0,(CVector3f *)0x0,0xffff);
+                (this_ptr_01,(CVector3f *)this_ptr,2.0,(CVector3f *)0x0,0xffff);
       core_fire_cpp_CFireEffect_createSpark_FUN_004c79d0
                 (g_CFireEffectPtr,(CVector3f *)this_ptr,(CVector3f *)0x0,0x20000,0x10000,0,0xffff);
       core_fire_cpp_CFireEffect_createSpark_FUN_004c79d0

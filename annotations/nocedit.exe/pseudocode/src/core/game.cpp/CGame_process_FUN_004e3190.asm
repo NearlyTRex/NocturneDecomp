@@ -41,8 +41,8 @@
 ;   core_gore.cpp_CGore_process_FUN_004ed9e0
 ;   core_mission.cpp_CDemonMission_process_FUN_00524250
 ;   core_script.cpp_CScript_process_FUN_00559960
-;   core_set.cpp_CDemonSet_FUN_0056b810
 ;   core_set.cpp_CDemonSet_process_FUN_0056f940
+;   core_set.cpp_CDemonSet_processActors_FUN_0056b810
 ;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
 ;   core_sound.cpp_CSound_init_FUN_005b2dd0
 ;   core_terrain.cpp_CTerrain_process_FUN_005e2050
@@ -358,8 +358,8 @@ section .text
     ADD ESP,0x4                         ; 004e356c
     MOV EDI,dword ptr [0x006810c8]      ; 004e356f | g_CDemonSetPtr
     PUSH EDI                            ; 004e3575 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_0056b810 ; 004e3576
-        ;   XREF to: 0056b810 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_FUN_0056b810(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_processActors_FUN_0056b810 ; 004e3576
+        ;   XREF to: 0056b810 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet * this_ptr)
     MOV EAX,[0x0067b654]                ; 004e357b | g_CGameInstance | g_CGamePtr
     MOV EBP,dword ptr [EAX + 0x20c]     ; 004e3580 | DAT_02d81ca8
     ADD ESP,0x4                         ; 004e3586

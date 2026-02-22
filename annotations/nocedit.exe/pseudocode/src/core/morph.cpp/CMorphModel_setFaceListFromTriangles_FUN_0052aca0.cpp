@@ -40,31 +40,33 @@ void __cdecl core_morph_cpp_CMorphModel_setFaceListFromTriangles_FUN_0052aca0(CM
       iVar2 = core_morph_cpp_CMorphModel_findOrAddTexture_FUN_0052ae60
                         (this_ptr,texture_sets->textures[*local_20].textures[0].texture_name);
       iVar5 = 0;
-      *(uint *)((int)this_ptr->faces + local_14 + 4) = 3;
+      *(uint *)((int)this_ptr->faces->vertices + local_14 + -0x14) = 3;
       pSVar3 = local_24;
       do {
         iVar4 = iVar5;
         if (INT_02f43974 != 0) {
           iVar4 = 2 - iVar5;
         }
-        iVar4 = iVar4 * 0xc;
-        *(uint *)((int)this_ptr->faces + iVar4 + 0x18 + local_14) =
+        *(uint *)((int)&this_ptr->faces->vertices[iVar4].vertex_index + local_14) =
              (uint)(pSVar3->vertex_indices).vertex_index_0;
         iVar5 = iVar5 + 1;
-        *(uint *)((int)this_ptr->faces + iVar4 + 0x1c + local_14) = (uint)pSVar3->u_coord_0 << 8;
-        *(uint *)((int)this_ptr->faces + iVar4 + local_14 + 0x20) = (uint)pSVar3->v_coord_0 << 8;
+        *(uint *)((int)&this_ptr->faces->vertices[iVar4].texture_u + local_14) =
+             (uint)pSVar3->u_coord_0 << 8;
+        *(uint *)((int)&this_ptr->faces->vertices[iVar4].texture_v + local_14) =
+             (uint)pSVar3->v_coord_0 << 8;
         pSVar3 = (SInputFace *)&(pSVar3->vertex_indices).vertex_index_1;
       } while (iVar5 < 3);
-      *(int *)(local_14 + (int)this_ptr->faces) = iVar2;
-      piVar1 = (int *)(local_14 + 0x18 + (int)this_ptr->faces);
+      *(int *)((int)&(((SMRGLPrimitiveTriangle *)(this_ptr->faces->vertices + -2))->base).base.type
+              + local_14) = iVar2;
+      piVar1 = (int *)((int)&this_ptr->faces->vertices[0].vertex_index + local_14);
       *piVar1 = *piVar1 + this_ptr->parts[part_index].start_vertex;
-      *(int *)(local_14 + 0x24 + (int)this_ptr->faces) =
-           *(int *)(local_14 + 0x24 + (int)this_ptr->faces) +
+      *(int *)((int)&this_ptr->faces->vertices[1].vertex_index + local_14) =
+           *(int *)((int)&this_ptr->faces->vertices[1].vertex_index + local_14) +
            this_ptr->parts[part_index].start_vertex;
       local_20 = local_20 + 1;
       local_1c = local_1c + 1;
-      *(int *)((int)this_ptr->faces + local_14 + 0x30) =
-           *(int *)((int)this_ptr->faces + local_14 + 0x30) +
+      *(int *)((int)&this_ptr->faces->vertices[2].vertex_index + local_14) =
+           *(int *)((int)&this_ptr->faces->vertices[2].vertex_index + local_14) +
            this_ptr->parts[part_index].start_vertex;
       local_24 = local_24 + 1;
       local_14 = local_14 + 0x3c;

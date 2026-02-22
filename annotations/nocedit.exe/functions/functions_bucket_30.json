@@ -24988,7 +24988,7 @@
       ],
       "params":[
         {
-          "name":"light_color",
+          "name":"sky_texture",
           "storage":{
             "offset":4,
             "size":4,
@@ -25001,7 +25001,7 @@
               }
             ]
           },
-          "type":"float*"
+          "type":"SMRGLTextureBasic*"
         },
         {
           "name":"u_coord",
@@ -25036,7 +25036,7 @@
           "type":"int"
         },
         {
-          "name":"uv_offset",
+          "name":"vertex_index",
           "storage":{
             "offset":16,
             "size":4,
@@ -25049,7 +25049,7 @@
               }
             ]
           },
-          "type":"float*"
+          "type":"int"
         }
       ]
     }
@@ -51255,6 +51255,22 @@
             ]
           },
           "type":"float"
+        },
+        {
+          "name":"ref_points",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"SMorphPoint*"
         }
       ]
     }
@@ -51396,7 +51412,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_morph.cpp_CMorph_addPartToModel_FUN_0052b4b0",
+    "name":"core_morph.cpp_CMorph_addTriPartToModel_FUN_0052b4b0",
     "ret":"void",
     "vars":{
       "params":[
@@ -51431,6 +51447,102 @@
             ]
           },
           "type":"int"
+        },
+        {
+          "name":"vertex_count",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"vertices",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3i*"
+        },
+        {
+          "name":"face_count",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"faces",
+          "storage":{
+            "offset":24,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x18]",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"SMRGLHeaderPrimitive*"
+        },
+        {
+          "name":"texture_lod",
+          "storage":{
+            "offset":28,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x1c]",
+                "offset":28,
+                "size":4
+              }
+            ]
+          },
+          "type":"SMRGLTextureLod*"
+        },
+        {
+          "name":"texture_index_list",
+          "storage":{
+            "offset":32,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x20]",
+                "offset":32,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
         }
       ]
     }
@@ -62562,7 +62674,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_set.cpp_FUN_0056e2b0",
+    "name":"core_set.cpp_computeTriangleNormalIndexed_FUN_0056e2b0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -62724,7 +62836,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_set.cpp_FUN_005702b0",
+    "name":"core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -63176,6 +63288,72 @@
           },
           "type":"undefined4"
         }
+      ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonSet*"
+        },
+        {
+          "name":"param_2",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"void*"
+        },
+        {
+          "name":"count",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"alpha",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
       ]
     }
   },
@@ -63190,7 +63368,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_set.cpp_CDemonSet_FUN_00571130",
+    "name":"core_set.cpp_CDemonSet_restoreLightState_FUN_00571130",
     "ret":"void",
     "vars":{
       "params":[
@@ -63209,6 +63387,22 @@
             ]
           },
           "type":"CDemonSet*"
+        },
+        {
+          "name":"param_2",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"void*"
         }
       ]
     }

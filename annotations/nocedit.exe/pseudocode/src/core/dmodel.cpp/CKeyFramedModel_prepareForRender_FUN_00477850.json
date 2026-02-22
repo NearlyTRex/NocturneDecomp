@@ -10,6 +10,7 @@
     "cross_reference_count": 11,
     "function_call_count": 2,
     "global_count": 0,
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 10,
     "suspect_count": 0,
     "suspect_types": [],
@@ -93,7 +94,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850",
-    "signature": "void __cdecl core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850(CKeyFramedModel *this_ptr,CKeyFramedModelInstance *instance,int frame_index,int render_flags)"
+    "signature": "void __cdecl core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850(CKeyFramedModel *this_ptr,int frame_index,CKeyFramedModelInstance *instance,int render_flags)"
   },
   "function_calls": [
     {
@@ -245,17 +246,17 @@
       },
       {
         "is_param": true,
-        "name": "instance",
+        "name": "frame_index",
         "offset": 8,
         "size": 4,
-        "type": "CKeyFramedModelInstance *"
+        "type": "int"
       },
       {
         "is_param": true,
-        "name": "frame_index",
+        "name": "instance",
         "offset": 12,
         "size": 4,
-        "type": "int"
+        "type": "CKeyFramedModelInstance *"
       },
       {
         "is_param": true,

@@ -13,15 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 417,
-    "complexity_score": 308,
+    "complexity_score": 323,
     "cross_reference_count": 2,
     "function_call_count": 7,
     "global_count": 34,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 203,
-    "suspect_count": 9,
+    "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
+      "stack_alignment_array",
       "stack_ref"
     ],
     "total_lines": 620
@@ -822,9 +824,18 @@
   },
   "suspects": [
     {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 14,
+      "match": "aiStackY_10cc",
+      "severity": "moderate",
+      "text": "int aiStackY_10cc [965];",
+      "type": "stack_alignment_array"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 63,
       "match": "SQRT",
+      "severity": "mild",
       "text": "if (SQRT(local_64 * local_64 + local_6c * local_6c + local_68 * local_68) <",
       "type": "decompiler_intrinsic"
     },
@@ -832,6 +843,7 @@
       "description": "Complex pointer cast",
       "line": 140,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_e4 + (uint)bVar9 * -8 + 4) =",
       "type": "pointer_cast"
     },
@@ -839,6 +851,7 @@
       "description": "Complex pointer cast",
       "line": 141,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_3c + (uint)bVar9 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -846,6 +859,7 @@
       "description": "Complex pointer cast",
       "line": 142,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_e4 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =",
       "type": "pointer_cast"
     },
@@ -853,6 +867,7 @@
       "description": "Complex pointer cast",
       "line": 143,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_3c + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
       "type": "pointer_cast"
     },
@@ -860,6 +875,7 @@
       "description": "Complex pointer cast",
       "line": 153,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "local_8c[(uint)bVar9 * -2] = *(int *)((int)&local_54 + (uint)bVar9 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -867,6 +883,7 @@
       "description": "Complex pointer cast",
       "line": 155,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)&local_54 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
       "type": "pointer_cast"
     },
@@ -874,6 +891,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 163,
       "match": "SQRT",
+      "severity": "mild",
       "text": "fVar1 = SQRT(local_94 * local_94 + local_9c * local_9c + local_98 * local_98);",
       "type": "decompiler_intrinsic"
     },
@@ -881,6 +899,7 @@
       "description": "Direct stack address reference",
       "line": 199,
       "match": "&stack0x00000000",
+      "severity": "moderate",
       "text": "if (&stack0x00000000 == (byte *)0x3f6b03c) {",
       "type": "stack_ref"
     }

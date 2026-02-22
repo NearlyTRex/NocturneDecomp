@@ -5,6 +5,7 @@
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 1,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 65,
     "suspect_count": 11,
     "suspect_types": [
@@ -165,6 +166,7 @@
       "description": "Unaffected register variable",
       "line": 9,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "byte *unaff_ESI;",
       "type": "unaffected_reg"
     },
@@ -172,6 +174,7 @@
       "description": "Unaffected register variable",
       "line": 28,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "unaff_ESI = *(byte **)pcVar3;",
       "type": "unaffected_reg"
     },
@@ -179,6 +182,7 @@
       "description": "Unaffected register variable",
       "line": 33,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "unaff_ESI = *(byte **)pcVar3;",
       "type": "unaffected_reg"
     },
@@ -186,6 +190,7 @@
       "description": "Cast to undefined pointer type",
       "line": 39,
       "match": "(undefined6 *)",
+      "severity": "moderate",
       "text": "unaff_ESI = (byte *)*(undefined6 *)pcVar3;",
       "type": "undefined_ptr_cast"
     },
@@ -193,6 +198,7 @@
       "description": "Unaffected register variable",
       "line": 39,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "unaff_ESI = (byte *)*(undefined6 *)pcVar3;",
       "type": "unaffected_reg"
     },
@@ -200,6 +206,7 @@
       "description": "Unaffected register variable",
       "line": 48,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "*unaff_ESI = 0;",
       "type": "unaffected_reg"
     },
@@ -207,6 +214,7 @@
       "description": "Undefined global data reference",
       "line": 56,
       "match": "DAT_00685030",
+      "severity": "mild",
       "text": "if ((((&DAT_00685030)[local_18 & 7] & abStack_40[(int)local_18 >> 3]) == 0) != local_1c) {",
       "type": "undefined_data"
     },
@@ -214,6 +222,7 @@
       "description": "Unaffected register variable",
       "line": 64,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "*unaff_ESI = (byte)local_18;",
       "type": "unaffected_reg"
     },
@@ -221,6 +230,7 @@
       "description": "Unaffected register variable",
       "line": 65,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "unaff_ESI = unaff_ESI + 1;",
       "type": "unaffected_reg"
     },
@@ -228,6 +238,7 @@
       "description": "Unaffected register variable",
       "line": 65,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "unaff_ESI = unaff_ESI + 1;",
       "type": "unaffected_reg"
     },

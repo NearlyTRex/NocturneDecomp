@@ -47,6 +47,7 @@
     "cross_reference_count": 2,
     "function_call_count": 8,
     "global_count": 9,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 54,
     "suspect_count": 8,
     "suspect_types": [
@@ -252,6 +253,7 @@
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "uint in_stack_00000008;",
       "type": "stack_param"
     },
@@ -259,6 +261,7 @@
       "description": "Complex pointer cast",
       "line": 24,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "iVar1 = *(int *)((int)pvVar6 + 0x24);",
       "type": "pointer_cast"
     },
@@ -266,6 +269,7 @@
       "description": "Complex pointer cast",
       "line": 30,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "pvVar6 = (void *)((int)pvVar6 + 0x84);",
       "type": "pointer_cast"
     },
@@ -273,6 +277,7 @@
       "description": "Unresolved stack parameter",
       "line": 37,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "_sprintf(local_dc,\"Viewing bone heirarchy for %s.\",in_stack_00000008);",
       "type": "stack_param"
     },
@@ -280,6 +285,7 @@
       "description": "Unresolved stack parameter",
       "line": 43,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "(&DAT_0366b650,\"Heirarchy for %s\\r\\n\\r\\n\",in_stack_00000008);",
       "type": "stack_param"
     },
@@ -287,6 +293,7 @@
       "description": "Undefined global data reference",
       "line": 43,
       "match": "DAT_0366b650",
+      "severity": "mild",
       "text": "(&DAT_0366b650,\"Heirarchy for %s\\r\\n\\r\\n\",in_stack_00000008);",
       "type": "undefined_data"
     },
@@ -294,6 +301,7 @@
       "description": "Undefined global data reference",
       "line": 44,
       "match": "DAT_0366b650",
+      "severity": "mild",
       "text": "pcVar3 = &DAT_0366b650 + iVar4;",
       "type": "undefined_data"
     },
@@ -301,6 +309,7 @@
       "description": "Undefined global data reference",
       "line": 53,
       "match": "DAT_0366b650",
+      "severity": "mild",
       "text": "shape_edittool_cpp_CEditorTools_setClipboardText_FUN_004a1bc0(g_CEditorToolsPtr,&DAT_0366b650);",
       "type": "undefined_data"
     }

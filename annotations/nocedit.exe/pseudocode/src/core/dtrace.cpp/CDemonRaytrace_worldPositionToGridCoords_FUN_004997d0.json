@@ -19,16 +19,18 @@
   },
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 204,
+    "complexity_score": 219,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 29,
-    "suspect_count": 15,
+    "suspect_count": 16,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
       "pointer_cast",
+      "stack_alignment_array",
       "stack_ref",
       "unaffected_reg"
     ],
@@ -198,13 +200,23 @@
       "description": "Unaffected register variable",
       "line": 8,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "int *unaff_ESI;",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 10,
+      "match": "aiStackY_1004",
+      "severity": "moderate",
+      "text": "int aiStackY_1004 [1016];",
+      "type": "stack_alignment_array"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 19,
       "match": "ROUND",
+      "severity": "mild",
       "text": "dVar1 = ROUND(local_10);",
       "type": "decompiler_intrinsic"
     },
@@ -212,6 +224,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 23,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_18 = (int)ROUND(ROUND(local_10));",
       "type": "decompiler_intrinsic"
     },
@@ -219,6 +232,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 23,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_18 = (int)ROUND(ROUND(local_10));",
       "type": "decompiler_intrinsic"
     },
@@ -226,6 +240,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 27,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_14 = (int)ROUND(ROUND(local_10));",
       "type": "decompiler_intrinsic"
     },
@@ -233,6 +248,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 27,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_14 = (int)ROUND(ROUND(local_10));",
       "type": "decompiler_intrinsic"
     },
@@ -240,6 +256,7 @@
       "description": "Unaffected register variable",
       "line": 28,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "*unaff_ESI = (int)ROUND(dVar1);",
       "type": "unaffected_reg"
     },
@@ -247,6 +264,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 28,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*unaff_ESI = (int)ROUND(dVar1);",
       "type": "decompiler_intrinsic"
     },
@@ -254,6 +272,7 @@
       "description": "Direct stack address reference",
       "line": 29,
       "match": "&stack0xffffffe8",
+      "severity": "moderate",
       "text": "unaff_ESI[(uint)bVar2 * -2 + 1] = *(int *)((int)&stack0xffffffe8 + (uint)bVar2 * -8);",
       "type": "stack_ref"
     },
@@ -261,6 +280,7 @@
       "description": "Unaffected register variable",
       "line": 29,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "unaff_ESI[(uint)bVar2 * -2 + 1] = *(int *)((int)&stack0xffffffe8 + (uint)bVar2 * -8);",
       "type": "unaffected_reg"
     },
@@ -268,6 +288,7 @@
       "description": "Complex pointer cast",
       "line": 29,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "unaff_ESI[(uint)bVar2 * -2 + 1] = *(int *)((int)&stack0xffffffe8 + (uint)bVar2 * -8);",
       "type": "pointer_cast"
     },
@@ -275,6 +296,7 @@
       "description": "Unaffected register variable",
       "line": 30,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "(unaff_ESI + (uint)bVar2 * -2 + 1)[(uint)bVar2 * -2 + 1] =",
       "type": "unaffected_reg"
     },
@@ -282,6 +304,7 @@
       "description": "Direct stack address reference",
       "line": 31,
       "match": "&stack0xffffffec",
+      "severity": "moderate",
       "text": "*(int *)((int)&stack0xffffffec + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
       "type": "stack_ref"
     },
@@ -289,6 +312,7 @@
       "description": "Complex pointer cast",
       "line": 31,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)&stack0xffffffec + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
       "type": "pointer_cast"
     },

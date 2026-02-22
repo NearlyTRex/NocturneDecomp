@@ -45,39 +45,39 @@ void __cdecl core_succubus_cpp_CSuccubus_setup_FUN_005c6b60(CSuccubus *this_ptr)
              (this_ptr->base).base.closest_distance_threshold,this_ptr_00);
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(pCVar1);
   INT_03f6bb68 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_02,"Bip01 Head");
+                           (this_ptr_02,"Bip01 Head",1);
   INT_03f6bb74 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_02,"Bip01 L ForeArm");
+                           (this_ptr_02,"Bip01 L ForeArm",1);
   INT_03f6bb78 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_02,"Bip01 R ForeArm");
+                           (this_ptr_02,"Bip01 R ForeArm",1);
   INT_03f6bb7c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_02,"Bip01 L UpperArm");
+                           (this_ptr_02,"Bip01 L UpperArm",1);
   INT_03f6bb80 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_02,"Bip01 R UpperArm");
+                           (this_ptr_02,"Bip01 R UpperArm",1);
   INT_03f6bb84 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_02,"Bip01 L Foot");
+                           (this_ptr_02,"Bip01 L Foot",1);
   INT_03f6bb88 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_02,"Bip01 R Foot");
+                           (this_ptr_02,"Bip01 R Foot",1);
   INT_03f6bb6c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_02,"Bip01 L Hand");
+                           (this_ptr_02,"Bip01 L Hand",1);
   INT_03f6bb70 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_02,"Bip01 R Hand");
+                           (this_ptr_02,"Bip01 R Hand",1);
   INT_03f6bb8c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_02,"Bip01 Spine");
+                           (this_ptr_02,"Bip01 Spine",1);
   INT_03f6bb90 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_02,"Bip01 Spine1");
+                           (this_ptr_02,"Bip01 Spine1",1);
   INT_03f6bb94 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_02,"Bip01 Spine2");
+                           (this_ptr_02,"Bip01 Spine2",1);
   INT_03f6bb68 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_02,"Bip01 Head");
+                           (this_ptr_02,"Bip01 Head",1);
   INT_03f6bb7c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_02,"Bip01 L UpperArm");
+                           (this_ptr_02,"Bip01 L UpperArm",1);
   INT_03f6bb80 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_02,"Bip01 R UpperArm");
+                           (this_ptr_02,"Bip01 R UpperArm",1);
   INT_03f6bb8c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_02,"Bip01 Spine");
+                           (this_ptr_02,"Bip01 Spine",1);
   INT_03f6bb94 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_02,"Bip01 Spine2");
+                           (this_ptr_02,"Bip01 Spine2",1);
   core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(this_ptr_00);
   core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(pCVar1);
   (this_ptr->base).base.model.bone_transform.root_position.z =

@@ -5,6 +5,7 @@
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 0,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 26,
     "suspect_count": 4,
     "suspect_types": [
@@ -128,6 +129,7 @@
       "description": "Complex pointer cast",
       "line": 11,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)(stream_obj->_fstreambase_core).layout_info + 4) + -0x38);",
       "type": "pointer_cast"
     },
@@ -135,6 +137,7 @@
       "description": "Complex pointer cast",
       "line": 19,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)(stream_obj->_fstreambase_core).layout_info + 4) + -0x38),0);",
       "type": "pointer_cast"
     },
@@ -142,6 +145,7 @@
       "description": "Complex pointer cast",
       "line": 25,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)(stream_obj->_fstreambase_core).layout_info + 4) + -0x38);",
       "type": "pointer_cast"
     },

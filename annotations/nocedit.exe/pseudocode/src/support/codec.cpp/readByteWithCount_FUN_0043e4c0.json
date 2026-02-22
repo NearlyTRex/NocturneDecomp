@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 12,
     "suspect_count": 1,
     "suspect_types": [
@@ -105,6 +106,7 @@
       "description": "Complex pointer cast",
       "line": 9,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (*(int *)((int)&file->_handle + *(int *)(file->_ptr + 4)) == 0) {",
       "type": "pointer_cast"
     }

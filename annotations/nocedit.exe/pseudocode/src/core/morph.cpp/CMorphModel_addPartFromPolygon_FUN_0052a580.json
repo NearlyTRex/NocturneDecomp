@@ -1,18 +1,34 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 37,
+        "message": "assigning to 'SMorphPoint *' from incompatible type 'void *'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 40,
+        "message": "assigning to 'SMRGLPrimitiveTriangle *' from incompatible type 'void *'"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 163,
-    "complexity_score": 51,
+    "complexity_score": 66,
     "cross_reference_count": 5,
     "function_call_count": 4,
     "global_count": 8,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 51,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
     "total_lines": 214
   },
   "cross_references": [
@@ -23,27 +39,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0052b4b0",
-      "from_addr": "0052b4f0",
-      "name": "core_morph.cpp_CMorph_addPartToModel_FUN_0052b4b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0052b500",
       "from_addr": "0052b540",
-      "name": "core_morph.cpp_CMorph_addPartToModel_FUN_0052b500",
+      "name": "core_morph.cpp_CMorph_addQuadPartToModel_FUN_0052b500",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0052b370",
-      "from_addr": "0052b3b9",
-      "name": "core_morph.cpp_CMorph_setupModelFromPolygons_FUN_0052b370",
+      "addr": "0052b4b0",
+      "from_addr": "0052b4f0",
+      "name": "core_morph.cpp_CMorph_addTriPartToModel_FUN_0052b4b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0052b3d0",
       "from_addr": "0052b419",
-      "name": "core_morph.cpp_CMorph_setupModelFromPolygons_FUN_0052b3d0",
+      "name": "core_morph.cpp_CMorph_setupModelFromQuadPolygons_FUN_0052b3d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052b370",
+      "from_addr": "0052b3b9",
+      "name": "core_morph.cpp_CMorph_setupModelFromTriPolygons_FUN_0052b370",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -57,7 +73,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_morph.cpp_CMorphModel_addPartFromPolygon_FUN_0052a580",
-    "signature": "void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_0052a580(CMorphModel *this_ptr,int vertex_count,CVector3i *vertex_data,int poly_count,SMRGLPrimitiveQuad *poly_data,int poly_stride,SMRGLTextureLod *texture_list,int *texture_index_list)"
+    "signature": "void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_0052a580(CMorphModel *this_ptr,int vertex_count,CVector3i *vertex_data,int poly_count,SMRGLHeaderPrimitive *poly_data,int poly_stride,SMRGLTextureLod *texture_list,int *texture_index_list)"
   },
   "function_calls": [
     {
@@ -146,7 +162,7 @@
       {
         "call_addr": "0052b3b9",
         "call_type": "direct",
-        "caller": "core_morph.cpp_CMorph_setupModelFromPolygons_FUN_0052b370",
+        "caller": "core_morph.cpp_CMorph_setupModelFromTriPolygons_FUN_0052b370",
         "estimated_params": 8,
         "instructions_analyzed": 16,
         "reg_params": [],
@@ -155,7 +171,7 @@
       {
         "call_addr": "0052b4f0",
         "call_type": "direct",
-        "caller": "core_morph.cpp_CMorph_addPartToModel_FUN_0052b4b0",
+        "caller": "core_morph.cpp_CMorph_addTriPartToModel_FUN_0052b4b0",
         "estimated_params": 12,
         "instructions_analyzed": 26,
         "reg_params": [],
@@ -164,7 +180,7 @@
       {
         "call_addr": "0052b540",
         "call_type": "direct",
-        "caller": "core_morph.cpp_CMorph_addPartToModel_FUN_0052b500",
+        "caller": "core_morph.cpp_CMorph_addQuadPartToModel_FUN_0052b500",
         "estimated_params": 12,
         "instructions_analyzed": 26,
         "reg_params": [],
@@ -173,7 +189,7 @@
       {
         "call_addr": "0052b419",
         "call_type": "direct",
-        "caller": "core_morph.cpp_CMorph_setupModelFromPolygons_FUN_0052b3d0",
+        "caller": "core_morph.cpp_CMorph_setupModelFromQuadPolygons_FUN_0052b3d0",
         "estimated_params": 8,
         "instructions_analyzed": 16,
         "reg_params": [],
@@ -256,7 +272,7 @@
         "name": "poly_data",
         "offset": 20,
         "size": 4,
-        "type": "SMRGLPrimitiveQuad *"
+        "type": "SMRGLHeaderPrimitive *"
       },
       {
         "is_param": true,
@@ -281,5 +297,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(SMRGLHeaderPrimitive *)((int)",
+      "severity": "mild",
+      "text": "pSVar6 = (SMRGLHeaderPrimitive *)((int)&(pSVar6->base).type + poly_stride);",
+      "type": "pointer_cast"
+    }
+  ]
 }

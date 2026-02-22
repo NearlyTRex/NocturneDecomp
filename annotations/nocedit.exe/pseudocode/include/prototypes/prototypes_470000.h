@@ -113,10 +113,10 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_load_FUN_00476db0(CKeyFramedModel *
 void __cdecl core_dmodel_cpp_CKeyFramedModel_readBinaryModel_FUN_00476f20(CKeyFramedModel *this_ptr,_FILE *file);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00477110(CKeyFramedModel *this_ptr,_FILE *file);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_free_FUN_00477690(CKeyFramedModel *this_ptr);
-void __cdecl core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850(CKeyFramedModel *this_ptr,CKeyFramedModelInstance *instance,int frame_index, int render_flags);
+void __cdecl core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850(CKeyFramedModel *this_ptr,int frame_index,CKeyFramedModelInstance *instance, int render_flags);
 CVector3i * __cdecl core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_00477890(CKeyFramedModel *this_ptr,int frame_index);
-void __cdecl core_dmodel_cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004778d0(CKeyFramedModel *this_ptr,CKeyFramedModelInstance *instance,int frame_index);
-void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00477980(CKeyFramedModel *this_ptr,int frame_index,int render_flags);
+void __cdecl core_dmodel_cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004778d0(CKeyFramedModel *this_ptr,int frame_index,CKeyFramedModelInstance *instance);
+void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00477980(CKeyFramedModel *this_ptr,CKeyFramedModelInstance *instance,int render_flags);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_allocate_FUN_00477bf0(CKeyFramedModel *this_ptr,int vertex_count,int poly_count,int texture_count, int part_count,int frame_count);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00477e60(CKeyFramedModel *this_ptr);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(CKeyFramedModel *model_ptr);

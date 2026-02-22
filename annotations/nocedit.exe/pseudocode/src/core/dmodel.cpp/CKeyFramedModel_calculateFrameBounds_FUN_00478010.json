@@ -53,6 +53,7 @@
     "cross_reference_count": 8,
     "function_call_count": 1,
     "global_count": 1,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 61,
     "suspect_count": 5,
     "suspect_types": [
@@ -234,6 +235,7 @@
       "description": "Complex pointer cast",
       "line": 16,
       "match": "(CBoundingBox3D *)((int)",
+      "severity": "mild",
       "text": "this_ptr_00 = (CBoundingBox3D *)((int)&model_ptr->frame_bounds->x + (int)local_28.max.x);",
       "type": "pointer_cast"
     },
@@ -241,6 +243,7 @@
       "description": "Complex pointer cast",
       "line": 50,
       "match": "(CBoundingBox3D *)((int)",
+      "severity": "mild",
       "text": "if ((CBoundingBox3D *)((int)local_28.max.z + 0xc) != this_ptr_00) {",
       "type": "pointer_cast"
     },
@@ -248,6 +251,7 @@
       "description": "Complex pointer cast",
       "line": 51,
       "match": "(CVector3f *)((int)",
+      "severity": "mild",
       "text": "((CVector3f *)((int)local_28.max.z + 0xc))->x = (this_ptr_00->min).x;",
       "type": "pointer_cast"
     },
@@ -255,6 +259,7 @@
       "description": "Complex pointer cast",
       "line": 52,
       "match": "(CVector3f *)((int)",
+      "severity": "mild",
       "text": "((CVector3f *)((int)local_28.max.z + 0xc))->y = (this_ptr_00->min).y;",
       "type": "pointer_cast"
     },
@@ -262,6 +267,7 @@
       "description": "Complex pointer cast",
       "line": 53,
       "match": "(CVector3f *)((int)",
+      "severity": "mild",
       "text": "((CVector3f *)((int)local_28.max.z + 0xc))->z = (this_ptr_00->min).z;",
       "type": "pointer_cast"
     }

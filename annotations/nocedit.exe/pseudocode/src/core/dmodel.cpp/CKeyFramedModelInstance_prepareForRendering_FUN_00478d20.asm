@@ -50,7 +50,7 @@ section .text
     ADD ESP,0x4                         ; 00478d45
     PUSH EAX                            ; 00478d48
     CALL core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850 ; 00478d49
-        ;   XREF to: 00477850 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850(CKeyFramedModel * this_ptr, CKeyFramedModelInstance * instance, int frame_index, int render_flags)
+        ;   XREF to: 00477850 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850(CKeyFramedModel * this_ptr, int frame_index, CKeyFramedModelInstance * instance, int render_flags)
     ADD ESP,0x10                        ; 00478d4e
     ADD ESP,0x4                         ; 00478d51
     RET                                 ; 00478d54

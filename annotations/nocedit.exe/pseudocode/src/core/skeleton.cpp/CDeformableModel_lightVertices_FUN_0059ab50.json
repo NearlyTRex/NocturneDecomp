@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 7,
     "suspect_count": 1,
     "suspect_types": [
@@ -35,7 +36,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_skeleton.cpp_CDeformableModel_lightVertices_FUN_0059ab50",
-    "signature": "void __cdecl core_skeleton_cpp_CDeformableModel_lightVertices_FUN_0059ab50(CDeformableModel *this_ptr,int lod_index,int render_flags)"
+    "signature": "void __cdecl core_skeleton_cpp_CDeformableModel_lightVertices_FUN_0059ab50(CDeformableModel *this_ptr,int lod_index,CVector3i *skinned_vertices)"
   },
   "function_calls": [
     {
@@ -123,10 +124,10 @@
       },
       {
         "is_param": true,
-        "name": "render_flags",
+        "name": "skinned_vertices",
         "offset": 12,
         "size": 4,
-        "type": "int"
+        "type": "CVector3i *"
       }
     ]
   },

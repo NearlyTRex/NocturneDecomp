@@ -15,13 +15,13 @@ SUMMARY
 --------------------------------------------------
 Functions with parameter estimates: 5101
 Functions with no callers: 3242
-Parameter mismatches detected: 539
-Signature accuracy rate: 71.0%
+Parameter mismatches detected: 529
+Signature accuracy rate: 71.5%
 
 Mismatches by confidence:
-  High confidence:   29 (multiple call sites agree)
-  Medium confidence: 77 (some agreement)
-  Low confidence:    433 (limited data)
+  High confidence:   25 (multiple call sites agree)
+  Medium confidence: 75 (some agreement)
+  Low confidence:    429 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -173,8 +173,8 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     File: core/dlight.cpp
     Signature: void __cdecl core_dlight_cpp_CDemonLight_endScene_FUN_00472d30(CDemonLight *this_ptr)
     Sample call sites:
-      core_set.cpp_CDemonSet_FUN_005 at 0056c081: 0 reg [], 2 stack
-      core_set.cpp_CDemonSet_FUN_005 at 0056c131: 0 reg [], 2 stack
+      core_set.cpp_CDemonSet_renderS at 0056c081: 0 reg [], 2 stack
+      core_set.cpp_CDemonSet_renderS at 0056c131: 0 reg [], 2 stack
       core_set.cpp_CDemonSet_initSce at 0056ab93: 0 reg [], 2 stack
 
   core_enemy.cpp_CEnemy_FUN_004a9880
@@ -196,46 +196,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_mission.cpp_CDemonMission at 00523d21: 0 reg [], 2 stack
       core_mission.cpp_CDemonMission at 00524801: 0 reg [], 2 stack
       core_set.cpp_CDemonSet_load_FU at 00569d63: 0 reg [], 2 stack
-
-  core_set.cpp_CDemonSet_FUN_0056aca0
-    Declared: 1 params, Estimated: 2 params (+1)
-    Call sites: 8, Confidence: high
-    File: core/set.cpp
-    Signature: void __cdecl core_set_cpp_CDemonSet_FUN_0056aca0(CDemonSet *this_ptr)
-    Sample call sites:
-      core_set.cpp_CDemonSet_setCame at 0056b600: 0 reg [], 2 stack
-      core_set.cpp_CDemonSet_setCame at 0056b3e4: 0 reg [], 2 stack
-      core_set.cpp_CDemonSet_setCame at 0056b445: 0 reg [], 2 stack
-
-  core_set.cpp_CDemonSet_FUN_0056d110
-    Declared: 1 params, Estimated: 2 params (+1)
-    Call sites: 6, Confidence: high
-    File: core/set.cpp
-    Signature: void __cdecl core_set_cpp_CDemonSet_FUN_0056d110(CDemonSet *this_ptr)
-    Sample call sites:
-      core_fire.cpp_CFireball_proces at 004c0be1: 0 reg [], 2 stack
-      core_weapon.cpp_CWeapon_update at 005ee621: 0 reg [], 2 stack
-      core_fire.cpp_CMuzzleFlash_ini at 004c1983: 0 reg [], 2 stack
-
-  core_set.cpp_FUN_00570af0
-    Declared: 0 params, Estimated: 1 params (+1)
-    Call sites: 12, Confidence: high
-    File: core/set.cpp
-    Signature: void __cdecl core_set_cpp_FUN_00570af0(void)
-    Sample call sites:
-      core_set.cpp_CDemonSet_FUN_005 at 0056c540: 0 reg [], 1 stack
-      core_set.cpp_CDemonSet_FUN_005 at 0056c943: 0 reg [], 1 stack
-      core_set.cpp_CDemonSet_FUN_005 at 0056c024: 0 reg [], 1 stack
-
-  core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
-    Declared: 2 params, Estimated: 3 params (+1)
-    Call sites: 50, Confidence: high
-    File: core/skeleton.cpp
-    Signature: int __cdecl core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton *this_ptr,char *bone_name)
-    Sample call sites:
-      core_baron.cpp_CBaron_setup_FU at 00412d80: 0 reg [], 3 stack
-      core_batcreat.cpp_CBatCreature at 00415200: 0 reg [], 3 stack
-      core_batman.cpp_CBatman_setup_ at 004165c0: 0 reg [], 3 stack
 
   crt_process.c_spawn_FUN_006105a0
     Declared: 4 params, Estimated: 5 params (+1)
@@ -295,7 +255,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     Sample call sites:
       core_setdir.cpp_CZThumb_pushRe at 00574ee3: 0 reg [], 2 stack
       shape_spotview.cpp_CSpotView_a at 005b9ae6: 0 reg [], 2 stack
-      core_set.cpp_FUN_00570af0 at 00570b28: 0 reg [], 2 stack
+      core_set.cpp_CDemonSet_restore at 00570b28: 0 reg [], 2 stack
 
   shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0
     Declared: 3 params, Estimated: 2 params (-1)
@@ -324,7 +284,6 @@ MEDIUM CONFIDENCE MISMATCHES
   sound_sndmain.cpp_set3DListenerOrient_FUN_005aa0a0 declared:9 est:18 (+9) [5 calls]
   core_setedit.cpp_FUN_0057ce80                      declared:0 est:8 (+8) [7 calls]
   core_script.cpp_parseCommandWithDefaultTemplates_F declared:7 est:1 (-6) [2 calls]
-  core_set.cpp_CDemonSet_FUN_00570040                declared:1 est:7 (+6) [2 calls]
   core_gabriela.cpp_CGabriella_FUN_004d6f80          declared:1 est:6 (+5) [2 calls]
   crt_unknown.c_FUN_0060d480                         declared:0 est:5 (+5) [2 calls]
   core_charactr.cpp_CCharacter_isCarryingAnything_FU declared:1 est:5 (+4) [2 calls]
@@ -344,7 +303,7 @@ MEDIUM CONFIDENCE MISMATCHES
   core_box.cpp_CBoundingBox3D_doesSphereIntersect_FU declared:3 est:1 (-2) [2 calls]
   core_dmodel.cpp_CKeyFramedModel_addFilesToExtract_ declared:3 est:1 (-2) [10 calls]
   core_fire.cpp_CFireEffect_createCrater_FUN_004c8ea declared:1 est:3 (+2) [2 calls]
-  core_set.cpp_CDemonSet_FUN_00570ea0                declared:1 est:3 (+2) [2 calls]
+  core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_ declared:5 est:7 (+2) [2 calls]
   core_setedit.cpp_CDemonSet_FUN_0057fd00            declared:1 est:3 (+2) [2 calls]
   core_skeledit.cpp_CLodMesh_FUN_00589c20            declared:1 est:3 (+2) [2 calls]
   core_skeledit.cpp_FUN_0058aeb0                     declared:0 est:2 (+2) [2 calls]
@@ -371,14 +330,15 @@ MEDIUM CONFIDENCE MISMATCHES
   core_dimage.cpp_CDemonImage_freeMemory_FUN_00471a4 declared:1 est:2 (+1) [2 calls]
   core_haystack.cpp_CHaystack_FUN_004f1ab0           declared:1 est:2 (+1) [2 calls]
   core_icepick.cpp_CIcePick_FUN_004f9490             declared:1 est:2 (+1) [2 calls]
+  core_manpuz.cpp_CMansionPuzzleCircle_panelOccupied declared:1 est:2 (+1) [2 calls]
 
-  ... and 27 more
+  ... and 25 more
 
 ====================================================================================================
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  433 functions with low-confidence mismatches
+  429 functions with low-confidence mismatches
   Sample:
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_F declared:1 est:5 (+4)
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_ declared:1 est:3 (+2)
@@ -395,10 +355,10 @@ LOW CONFIDENCE MISMATCHES (limited data)
 MISMATCH DIRECTION ANALYSIS
 ====================================================================================================
 
-Functions where declaration has MORE params than estimated: 90
+Functions where declaration has MORE params than estimated: 87
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 449
+Functions where declaration has FEWER params than estimated: 442
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
@@ -410,13 +370,13 @@ Distribution of differences (estimated - declared):
   -4 params: 3 functions
   -3 params: 9 functions
   -2 params: 17 functions
-  -1 params: 54 functions
-  +1 params: 203 functions
-  +2 params: 95 functions
-  +3 params: 56 functions
+  -1 params: 51 functions
+  +1 params: 199 functions
+  +2 params: 96 functions
+  +3 params: 55 functions
   +4 params: 74 functions
-  +5 params: 7 functions
-  +6 params: 6 functions
+  +5 params: 6 functions
+  +6 params: 4 functions
   +7 params: 4 functions
   +8 params: 2 functions
   +9 params: 2 functions

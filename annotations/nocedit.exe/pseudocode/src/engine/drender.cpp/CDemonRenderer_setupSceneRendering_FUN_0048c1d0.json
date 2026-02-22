@@ -10,6 +10,7 @@
     "cross_reference_count": 11,
     "function_call_count": 2,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 8,
     "suspect_count": 3,
     "suspect_types": [
@@ -58,13 +59,13 @@
     {
       "addr": "0056c990",
       "from_addr": "0056ccd4",
-      "name": "core_set.cpp_CDemonSet_FUN_0056c990",
+      "name": "core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00570af0",
       "from_addr": "00570b28",
-      "name": "core_set.cpp_FUN_00570af0",
+      "name": "core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_00570af0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -135,7 +136,7 @@
       {
         "call_addr": "00570b28",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00570af0",
+        "caller": "core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_00570af0",
         "estimated_params": 2,
         "instructions_analyzed": 5,
         "reg_params": [],
@@ -162,7 +163,7 @@
       {
         "call_addr": "0056ccd4",
         "call_type": "direct",
-        "caller": "core_set.cpp_CDemonSet_FUN_0056c990",
+        "caller": "core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990",
         "estimated_params": 2,
         "instructions_analyzed": 6,
         "reg_params": [],
@@ -259,6 +260,7 @@
       "description": "Unresolved stack parameter",
       "line": 5,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "CVector3f *in_stack_00000008;",
       "type": "stack_param"
     },
@@ -266,6 +268,7 @@
       "description": "Unresolved stack parameter",
       "line": 8,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&local_28,in_stack_00000008);",
       "type": "stack_param"
     },

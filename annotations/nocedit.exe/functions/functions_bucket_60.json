@@ -18290,7 +18290,7 @@
           "type":"CDemonCamera*"
         },
         {
-          "name":"output_vectors",
+          "name":"output_bounds",
           "storage":{
             "offset":8,
             "size":4,
@@ -18304,22 +18304,6 @@
             ]
           },
           "type":"CVector3f*"
-        },
-        {
-          "name":"bounding_box",
-          "storage":{
-            "offset":12,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0xc]",
-                "offset":12,
-                "size":4
-              }
-            ]
-          },
-          "type":"CBoundingBox3D*"
         }
       ],
       "ret_storage":{
@@ -51915,7 +51899,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_set.cpp_CDemonSet_FUN_0056ade0",
+    "name":"core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_0056ade0",
     "ret":"void",
     "vars":{
       "params":[
@@ -51934,6 +51918,22 @@
             ]
           },
           "type":"CDemonSet*"
+        },
+        {
+          "name":"actor",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonActor*"
         }
       ]
     }
@@ -51949,7 +51949,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_set.cpp_CDemonSet_FUN_0056b7e0",
+    "name":"core_set.cpp_CDemonSet_reinitCamera_FUN_0056b7e0",
     "ret":"void",
     "vars":{
       "params":[
@@ -52002,7 +52002,7 @@
           "type":"uint"
         },
         {
-          "name":"param_4",
+          "name":"screen_height",
           "storage":{
             "offset":16,
             "size":4,
@@ -52031,7 +52031,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_set.cpp_CDemonSet_FUN_0056cd60",
+    "name":"core_set.cpp_CDemonSet_renderOpaqueActors_FUN_0056cd60",
     "ret":"void",
     "vars":{
       "locals":[
@@ -52083,7 +52083,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_set.cpp_CDemonSet_FUN_0056e3e0",
+    "name":"core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_0056e3e0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -52311,7 +52311,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_set.cpp_FUN_0056e960",
+    "name":"core_set.cpp_transformNormalFixedPoint_FUN_0056e960",
     "ret":"void",
     "vars":{
       "locals":[
@@ -52425,7 +52425,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_set.cpp_CDemonSet_FUN_0056ffe0",
+    "name":"core_set.cpp_CDemonSet_renderEnvMapBatchTri_FUN_0056ffe0",
     "ret":"void",
     "vars":{
       "params":[
@@ -52444,6 +52444,54 @@
             ]
           },
           "type":"CDemonSet*"
+        },
+        {
+          "name":"param_2",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"void*"
+        },
+        {
+          "name":"count",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"alpha",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -52525,7 +52573,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_set.cpp_CDemonSet_FUN_00570960",
+    "name":"core_set.cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_00570960",
     "ret":"void",
     "vars":{
       "params":[
@@ -52691,7 +52739,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_set.cpp_CDemonSet_FUN_00570c60",
+    "name":"core_set.cpp_CDemonSet_markMirrorCameraDirty_FUN_00570c60",
     "ret":"void",
     "vars":{
       "params":[
@@ -56551,7 +56599,7 @@
           "type":"int"
         },
         {
-          "name":"num_parts_to_dismember",
+          "name":"skinned_vertices",
           "storage":{
             "offset":20,
             "size":4,
@@ -56564,7 +56612,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"CVector3i*"
         },
         {
           "name":"texture_set_index",
@@ -56581,22 +56629,6 @@
             ]
           },
           "type":"int"
-        },
-        {
-          "name":"skinned_vertices",
-          "storage":{
-            "offset":28,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x1c]",
-                "offset":28,
-                "size":4
-              }
-            ]
-          },
-          "type":"CVector3i*"
         }
       ]
     }

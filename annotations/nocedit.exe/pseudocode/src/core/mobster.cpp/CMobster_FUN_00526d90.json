@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 8,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 148,
     "suspect_count": 3,
     "suspect_types": [
@@ -268,6 +269,7 @@
       "description": "Type propagation did not converge",
       "line": 2,
       "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
     },
@@ -275,6 +277,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 73,
       "match": "SQRT",
+      "severity": "mild",
       "text": "fVar2 = SQRT(fStack_54 * fStack_54 + fStack_5c * fStack_5c + fStack_58 * fStack_58);",
       "type": "decompiler_intrinsic"
     },
@@ -282,6 +285,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 107,
       "match": "SQRT",
+      "severity": "mild",
       "text": "SQRT(fVar3 * fVar3 + fVar2 * fVar2) * (float)0.33333333333333298;",
       "type": "decompiler_intrinsic"
     }

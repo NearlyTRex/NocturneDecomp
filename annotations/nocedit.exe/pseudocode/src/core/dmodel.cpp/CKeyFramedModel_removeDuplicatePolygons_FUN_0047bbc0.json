@@ -6,16 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 185,
-    "complexity_score": 99,
+    "complexity_score": 114,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 84,
-    "suspect_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 89,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 269
+    "total_lines": 274
   },
   "cross_references": [
     {
@@ -215,9 +216,18 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 70,
+      "line": 71,
       "match": "(void *)((int)",
-      "text": "((void *)((int)this_ptr->poly_vert_list + local_24),",
+      "severity": "mild",
+      "text": "((void *)((int)&(((SMRGLPrimitiveQuad *)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 74,
+      "match": "(void *)((int)",
+      "severity": "mild",
+      "text": "(void *)((int)&(((SMRGLPrimitiveQuad *)",
       "type": "pointer_cast"
     }
   ]

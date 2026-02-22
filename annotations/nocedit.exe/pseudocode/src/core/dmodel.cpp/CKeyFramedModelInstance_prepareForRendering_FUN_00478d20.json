@@ -10,6 +10,7 @@
     "cross_reference_count": 52,
     "function_call_count": 3,
     "global_count": 0,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 11,
     "suspect_count": 2,
     "suspect_types": [
@@ -428,14 +429,16 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 10,
       "match": "ROUND",
-      "text": "instance = (CKeyFramedModelInstance *)(int)ROUND(ROUND(animation_frame));",
+      "severity": "mild",
+      "text": "frame_index = (int)ROUND(ROUND(animation_frame));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 10,
       "match": "ROUND",
-      "text": "instance = (CKeyFramedModelInstance *)(int)ROUND(ROUND(animation_frame));",
+      "severity": "mild",
+      "text": "frame_index = (int)ROUND(ROUND(animation_frame));",
       "type": "decompiler_intrinsic"
     }
   ]

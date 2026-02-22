@@ -19,13 +19,16 @@
   },
   "complexity": {
     "assembly_lines": 609,
-    "complexity_score": 211,
+    "complexity_score": 226,
     "cross_reference_count": 1,
     "function_call_count": 49,
     "global_count": 58,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 211,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "stack_alignment_array"
+    ],
     "total_lines": 820
   },
   "cross_references": [
@@ -773,5 +776,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 16,
+      "match": "aiStackY_1008",
+      "severity": "moderate",
+      "text": "int aiStackY_1008 [690];",
+      "type": "stack_alignment_array"
+    }
+  ]
 }

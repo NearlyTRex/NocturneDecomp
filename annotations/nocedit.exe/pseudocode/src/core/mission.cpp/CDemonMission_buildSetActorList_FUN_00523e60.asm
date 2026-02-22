@@ -33,7 +33,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_set.cpp_CDemonSet_FUN_00570fc0
+;   core_set.cpp_CDemonSet_buildActorTypeLists_FUN_00570fc0
 ;   core_setcolid.cpp_CDemonSet_FUN_005743e0
 ;
 ; *****************************************************************************
@@ -79,8 +79,8 @@ section .text
     ADD ESP,0x4                         ; 00523ebd
     MOV EBX,dword ptr [0x006810c8]      ; 00523ec0 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EBX                            ; 00523ec6 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_00570fc0 ; 00523ec7
-        ;   XREF to: 00570fc0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_00570fc0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_buildActorTypeLists_FUN_00570fc0 ; 00523ec7
+        ;   XREF to: 00570fc0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_buildActorTypeLists_FUN_00570fc0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00523ecc
     POP EBP                             ; 00523ecf
     POP EDI                             ; 00523ed0

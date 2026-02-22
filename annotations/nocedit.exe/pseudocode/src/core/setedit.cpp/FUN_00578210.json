@@ -17,6 +17,7 @@
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 4,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 26,
     "suspect_count": 6,
     "suspect_types": [
@@ -131,6 +132,7 @@
       "description": "Unresolved stack parameter",
       "line": 8,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "char *in_stack_00000004;",
       "type": "stack_param"
     },
@@ -138,6 +140,7 @@
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "(in_stack_00000004,(char *)0x0,(char *)0x0,local_10c,(char *)0x0);",
       "type": "stack_param"
     },
@@ -145,6 +148,7 @@
       "description": "Undefined global data reference",
       "line": 14,
       "match": "DAT_03654368",
+      "severity": "mild",
       "text": "if (0 < DAT_03654368) {",
       "type": "undefined_data"
     },
@@ -152,6 +156,7 @@
       "description": "Undefined global data reference",
       "line": 15,
       "match": "DAT_03654370",
+      "severity": "mild",
       "text": "str1 = &DAT_03654370;",
       "type": "undefined_data"
     },
@@ -159,6 +164,7 @@
       "description": "Undefined global data reference",
       "line": 22,
       "match": "DAT_03659190",
+      "severity": "mild",
       "text": "return (uint)(byte)(&DAT_03659190)[iVar2];",
       "type": "undefined_data"
     },
@@ -166,6 +172,7 @@
       "description": "Undefined global data reference",
       "line": 26,
       "match": "DAT_03654368",
+      "severity": "mild",
       "text": "} while (iVar2 < DAT_03654368);",
       "type": "undefined_data"
     }

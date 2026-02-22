@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 2,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 35,
     "suspect_count": 3,
     "suspect_types": [
@@ -155,6 +156,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 22,
       "match": "pCVar1[-1].",
+      "severity": "mild",
       "text": "((CFlame *)(pCVar1[-1].height_cache_tags[0xb] + 0x39),0);",
       "type": "negative_offset"
     },
@@ -162,6 +164,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 24,
       "match": "pCVar2[-2].",
+      "severity": "mild",
       "text": "((SFire *)(pCVar2[-2].base.create_event + 0x20),0);",
       "type": "negative_offset"
     },
@@ -169,6 +172,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 32,
       "match": "pCVar6[-1].",
+      "severity": "mild",
       "text": "((CDemonActor *)(pCVar6[-1].part_data.visibility_flags + 7),1);",
       "type": "negative_offset"
     }

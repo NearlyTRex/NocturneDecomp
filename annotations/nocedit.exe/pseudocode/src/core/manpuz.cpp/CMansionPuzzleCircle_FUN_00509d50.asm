@@ -60,7 +60,7 @@
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
-;   core_set.cpp_CDemonSet_FUN_00570ca0
+;   core_set.cpp_CDemonSet_setScaleFactors_FUN_00570ca0
 ;   crt_math.c_round_FUN_005fe6b0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
@@ -160,8 +160,8 @@ section .text
     PUSH EBP                            ; 00509e3f
     MOV EAX,[0x006810c8]                ; 00509e40 | g_CDemonSetPtr | g_CDemonSetInstance
     PUSH EAX                            ; 00509e45 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_00570ca0 ; 00509e46
-        ;   XREF to: 00570ca0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_00570ca0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_setScaleFactors_FUN_00570ca0 ; 00509e46
+        ;   XREF to: 00570ca0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setScaleFactors_FUN_00570ca0(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
     ADD ESP,0x10                        ; 00509e4b
     PUSH -0x1                           ; 00509e4e
     LEA EAX,[EDI + 0x2d4]               ; 00509e50
@@ -175,8 +175,8 @@ section .text
     PUSH 0x10000                        ; 00509e6b
     MOV EDX,dword ptr [0x006810c8]      ; 00509e70 | g_CDemonSetPtr | g_CDemonSetInstance
     PUSH EDX                            ; 00509e76 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_00570ca0 ; 00509e77
-        ;   XREF to: 00570ca0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_00570ca0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_setScaleFactors_FUN_00570ca0 ; 00509e77
+        ;   XREF to: 00570ca0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setScaleFactors_FUN_00570ca0(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
     ADD ESP,0x10                        ; 00509e7c
     MOV ECX,dword ptr [0x006703ec]      ; 00509e7f | g_CDemonRendererPtr2
     PUSH ECX                            ; 00509e85 | g_CDemonRendererInstance

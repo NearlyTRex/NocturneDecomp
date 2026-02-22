@@ -10,6 +10,7 @@
     "cross_reference_count": 4,
     "function_call_count": 5,
     "global_count": 12,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 89,
     "suspect_count": 6,
     "suspect_types": [
@@ -19,27 +20,27 @@
   },
   "cross_references": [
     {
+      "addr": "00571380",
+      "from_addr": "00571390",
+      "name": "core_set.cpp_CDemonSet_expireDecals_FUN_00571380",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005713c0",
+      "from_addr": "005713eb",
+      "name": "core_set.cpp_CDemonSet_renderDecals_FUN_005713c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0056c1a0",
       "from_addr": "0056c5c9",
-      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0",
+      "name": "core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0056ae50",
       "from_addr": "0056b724",
       "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00571380",
-      "from_addr": "00571390",
-      "name": "core_set.cpp_FUN_00571380",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005713c0",
-      "from_addr": "005713eb",
-      "name": "core_set.cpp_FUN_005713c0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -171,7 +172,7 @@
       {
         "call_addr": "0056c5c9",
         "call_type": "direct",
-        "caller": "core_set.cpp_CDemonSet_FUN_0056c1a0",
+        "caller": "core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0",
         "estimated_params": 3,
         "instructions_analyzed": 6,
         "reg_params": [],
@@ -180,7 +181,7 @@
       {
         "call_addr": "00571390",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00571380",
+        "caller": "core_set.cpp_CDemonSet_expireDecals_FUN_00571380",
         "estimated_params": 5,
         "instructions_analyzed": 7,
         "reg_params": [],
@@ -189,7 +190,7 @@
       {
         "call_addr": "005713eb",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_005713c0",
+        "caller": "core_set.cpp_CDemonSet_renderDecals_FUN_005713c0",
         "estimated_params": 3,
         "instructions_analyzed": 6,
         "reg_params": [],
@@ -263,6 +264,7 @@
       "description": "Complex pointer cast",
       "line": 18,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (*(int *)((int)&g_BloodSplats[0].expired + iVar1) == 0) {",
       "type": "pointer_cast"
     },
@@ -270,6 +272,7 @@
       "description": "Complex pointer cast",
       "line": 20,
       "match": "(CBloodSplat *)((int)",
+      "severity": "mild",
       "text": "((CBloodSplat *)((int)&g_BloodSplats[0].expired + iVar1),expire_flag);",
       "type": "pointer_cast"
     },
@@ -277,6 +280,7 @@
       "description": "Complex pointer cast",
       "line": 44,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (*(int *)((int)&g_BloodPools[0].expired + iVar1) == 0) {",
       "type": "pointer_cast"
     },
@@ -284,6 +288,7 @@
       "description": "Complex pointer cast",
       "line": 46,
       "match": "(CBloodPool *)((int)",
+      "severity": "mild",
       "text": "((CBloodPool *)((int)&g_BloodPools[0].expired + iVar1),expire_flag);",
       "type": "pointer_cast"
     },
@@ -291,6 +296,7 @@
       "description": "Complex pointer cast",
       "line": 69,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (*(int *)((int)g_Footsteps[0].corners + iVar1 + -8) == 0) {",
       "type": "pointer_cast"
     },
@@ -298,6 +304,7 @@
       "description": "Complex pointer cast",
       "line": 71,
       "match": "(CFootstep *)((int)",
+      "severity": "mild",
       "text": "((CFootstep *)((int)g_Footsteps[0].corners + iVar1 + -8),expire_flag);",
       "type": "pointer_cast"
     }

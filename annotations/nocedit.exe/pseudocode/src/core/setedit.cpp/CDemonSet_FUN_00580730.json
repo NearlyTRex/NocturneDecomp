@@ -125,6 +125,7 @@
     "cross_reference_count": 1,
     "function_call_count": 36,
     "global_count": 55,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 381,
     "suspect_count": 26,
     "suspect_types": [
@@ -878,6 +879,7 @@
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_fffffa18",
+      "severity": "moderate",
       "text": "char *in_stack_fffffa18;",
       "type": "stack_param"
     },
@@ -885,6 +887,7 @@
       "description": "Complex pointer cast",
       "line": 96,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)&DAT_03659388 + iVar6) = pCVar3->cameras[0].fog_enabled;",
       "type": "pointer_cast"
     },
@@ -892,6 +895,7 @@
       "description": "Undefined global data reference",
       "line": 96,
       "match": "DAT_03659388",
+      "severity": "mild",
       "text": "*(int *)((int)&DAT_03659388 + iVar6) = pCVar3->cameras[0].fog_enabled;",
       "type": "undefined_data"
     },
@@ -899,6 +903,7 @@
       "description": "Unresolved stack parameter",
       "line": 198,
       "match": "in_stack_fffffa18",
+      "severity": "moderate",
       "text": "local_40 = _strtod(in_stack_fffffa18);",
       "type": "stack_param"
     },
@@ -906,6 +911,7 @@
       "description": "Unresolved stack parameter",
       "line": 215,
       "match": "in_stack_fffffa18",
+      "severity": "moderate",
       "text": "local_40 = _strtod(in_stack_fffffa18);",
       "type": "stack_param"
     },
@@ -913,6 +919,7 @@
       "description": "Complex pointer cast",
       "line": 242,
       "match": "(SFog *)((int)",
+      "severity": "mild",
       "text": "pSVar7 = (SFog *)((int)(pSVar7 + 0xb) + 0x18);",
       "type": "pointer_cast"
     },
@@ -920,6 +927,7 @@
       "description": "Unresolved stack parameter",
       "line": 319,
       "match": "in_stack_fffffa18",
+      "severity": "moderate",
       "text": "local_40 = _strtod(in_stack_fffffa18);",
       "type": "stack_param"
     },
@@ -927,6 +935,7 @@
       "description": "Direct stack address reference",
       "line": 334,
       "match": "&stack0xfffffa18",
+      "severity": "moderate",
       "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffffa18);",
       "type": "stack_ref"
     },
@@ -934,6 +943,7 @@
       "description": "Direct stack address reference",
       "line": 336,
       "match": "&stack0xfffffa18",
+      "severity": "moderate",
       "text": "((CStrList *)&stack0xfffffa18,\"45.wav\");",
       "type": "stack_ref"
     },
@@ -941,6 +951,7 @@
       "description": "Direct stack address reference",
       "line": 338,
       "match": "&stack0xfffffa18",
+      "severity": "moderate",
       "text": "((CStrList *)&stack0xfffffa18,\"cre-fire.wav\");",
       "type": "stack_ref"
     },
@@ -948,6 +959,7 @@
       "description": "Direct stack address reference",
       "line": 340,
       "match": "&stack0xfffffa18",
+      "severity": "moderate",
       "text": "((CStrList *)&stack0xfffffa18,\"shotgun.wav\");",
       "type": "stack_ref"
     },
@@ -955,6 +967,7 @@
       "description": "Direct stack address reference",
       "line": 342,
       "match": "&stack0xfffffa18",
+      "severity": "moderate",
       "text": "((CStrList *)&stack0xfffffa18,\"zom-s04.wav\");",
       "type": "stack_ref"
     },
@@ -962,6 +975,7 @@
       "description": "Direct stack address reference",
       "line": 344,
       "match": "&stack0xfffffa18",
+      "severity": "moderate",
       "text": "((CStrList *)&stack0xfffffa18,\"stranger_hit01.wav\");",
       "type": "stack_ref"
     },
@@ -969,6 +983,7 @@
       "description": "Direct stack address reference",
       "line": 346,
       "match": "&stack0xfffffa18",
+      "severity": "moderate",
       "text": "((CStrList *)&stack0xfffffa18,\"xplode1.wav\");",
       "type": "stack_ref"
     },
@@ -976,6 +991,7 @@
       "description": "Direct stack address reference",
       "line": 348,
       "match": "&stack0xfffffa18",
+      "severity": "moderate",
       "text": "((CStrList *)&stack0xfffffa18,\"limb1.wav\");",
       "type": "stack_ref"
     },
@@ -983,6 +999,7 @@
       "description": "Direct stack address reference",
       "line": 350,
       "match": "&stack0xfffffa18",
+      "severity": "moderate",
       "text": "((CStrList *)&stack0xfffffa18,\"footstep-str-0-ct-1.wav\");",
       "type": "stack_ref"
     },
@@ -990,6 +1007,7 @@
       "description": "Direct stack address reference",
       "line": 352,
       "match": "&stack0xfffffa18",
+      "severity": "moderate",
       "text": "((CStrList *)&stack0xfffffa18,\"footstep-str-0-wd-1.wav\");",
       "type": "stack_ref"
     },
@@ -997,6 +1015,7 @@
       "description": "Direct stack address reference",
       "line": 354,
       "match": "&stack0xfffffa18",
+      "severity": "moderate",
       "text": "((CStrList *)&stack0xfffffa18,\"footstep-str-0-mt-1.wav\");",
       "type": "stack_ref"
     },
@@ -1004,6 +1023,7 @@
       "description": "Direct stack address reference",
       "line": 356,
       "match": "&stack0xfffffa18",
+      "severity": "moderate",
       "text": "((CStrList *)&stack0xfffffa18,\"footstep-str-0-mb-1.wav\");",
       "type": "stack_ref"
     },
@@ -1011,6 +1031,7 @@
       "description": "Direct stack address reference",
       "line": 358,
       "match": "&stack0xfffffa18",
+      "severity": "moderate",
       "text": "((CStrList *)&stack0xfffffa18,\"footstep-str-0-gr-1.wav\");",
       "type": "stack_ref"
     },
@@ -1018,6 +1039,7 @@
       "description": "Direct stack address reference",
       "line": 360,
       "match": "&stack0xfffffa18",
+      "severity": "moderate",
       "text": "((CStrList *)&stack0xfffffa18,\"ric-mt0a.wav\");",
       "type": "stack_ref"
     },
@@ -1025,6 +1047,7 @@
       "description": "Direct stack address reference",
       "line": 362,
       "match": "&stack0xfffffa18",
+      "severity": "moderate",
       "text": "((CStrList *)&stack0xfffffa18,\"ric-ct0a.wav\");",
       "type": "stack_ref"
     },
@@ -1032,6 +1055,7 @@
       "description": "Direct stack address reference",
       "line": 366,
       "match": "&stack0xfffffa18",
+      "severity": "moderate",
       "text": "((CPickList *)&stack0xfffffa18,pcVar4,iVar6,config_param2);",
       "type": "stack_ref"
     },
@@ -1039,6 +1063,7 @@
       "description": "Direct stack address reference",
       "line": 371,
       "match": "&stack0xfffffa18",
+      "severity": "moderate",
       "text": "((CStrList *)&stack0xfffffa18,iVar6);",
       "type": "stack_ref"
     },
@@ -1046,6 +1071,7 @@
       "description": "Direct stack address reference",
       "line": 374,
       "match": "&stack0xfffffa18",
+      "severity": "moderate",
       "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffffa18,0);",
       "type": "stack_ref"
     },
@@ -1053,6 +1079,7 @@
       "description": "Direct stack address reference",
       "line": 376,
       "match": "&stack0xfffffa18",
+      "severity": "moderate",
       "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffffa18,0);",
       "type": "stack_ref"
     }

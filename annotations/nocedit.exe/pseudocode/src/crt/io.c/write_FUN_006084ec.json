@@ -5,6 +5,7 @@
     "cross_reference_count": 3,
     "function_call_count": 9,
     "global_count": 8,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 168,
     "suspect_count": 20,
     "suspect_types": [
@@ -270,6 +271,7 @@
       "description": "Subroutine marked as non-returning",
       "line": 45,
       "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
       "text": "/* WARNING: Subroutine does not return */",
       "type": "warning_noreturn"
     },
@@ -277,6 +279,7 @@
       "description": "Direct stack address reference",
       "line": 52,
       "match": "&stack0xfffffff0",
+      "severity": "moderate",
       "text": "puVar6 = &stack0xfffffff0;",
       "type": "stack_ref"
     },
@@ -284,6 +287,7 @@
       "description": "Complex pointer cast",
       "line": 57,
       "match": "(char *)((int)",
+      "severity": "mild",
       "text": "if (*(char *)((int)buffer + (int)puVar9) == '\\n') {",
       "type": "pointer_cast"
     },
@@ -291,6 +295,7 @@
       "description": "Direct stack address reference",
       "line": 58,
       "match": "&stack0xfffffff0",
+      "severity": "moderate",
       "text": "(&stack0xfffffff0)[(int)puVar8] = 0xd;",
       "type": "stack_ref"
     },
@@ -298,6 +303,7 @@
       "description": "Direct stack address reference",
       "line": 63,
       "match": "&stack0xffffffdc",
+      "severity": "moderate",
       "text": "puVar8 = &stack0xffffffdc;",
       "type": "stack_ref"
     },
@@ -305,6 +311,7 @@
       "description": "Direct stack address reference",
       "line": 64,
       "match": "&stack0xfffffff0",
+      "severity": "moderate",
       "text": "puVar9 = &stack0xfffffff0;",
       "type": "stack_ref"
     },
@@ -312,6 +319,7 @@
       "description": "Direct stack address reference",
       "line": 66,
       "match": "&stack0xfffffff0",
+      "severity": "moderate",
       "text": "BVar5 = (*g_WriteFileFunc)(puVar8,&stack0xfffffff0,(DWORD)puVar7,(LPDWORD)puVar8,",
       "type": "stack_ref"
     },
@@ -319,6 +327,7 @@
       "description": "Direct stack address reference",
       "line": 77,
       "match": "&stack0xfffffff0",
+      "severity": "moderate",
       "text": "(*g_SpecialDeviceWriteFuncPtr)(iVar3,&stack0xfffffff0,(int)puVar7);",
       "type": "stack_ref"
     },
@@ -326,6 +335,7 @@
       "description": "Direct stack address reference",
       "line": 87,
       "match": "&stack0xfffffff0",
+      "severity": "moderate",
       "text": "puVar8[(int)&stack0xfffffff0] = *(byte *)((int)buffer + (int)puVar9);",
       "type": "stack_ref"
     },
@@ -333,6 +343,7 @@
       "description": "Complex pointer cast",
       "line": 87,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "puVar8[(int)&stack0xfffffff0] = *(byte *)((int)buffer + (int)puVar9);",
       "type": "pointer_cast"
     },
@@ -340,6 +351,7 @@
       "description": "Direct stack address reference",
       "line": 93,
       "match": "&stack0xffffffdc",
+      "severity": "moderate",
       "text": "puVar8 = &stack0xffffffdc;",
       "type": "stack_ref"
     },
@@ -347,6 +359,7 @@
       "description": "Direct stack address reference",
       "line": 94,
       "match": "&stack0xfffffff0",
+      "severity": "moderate",
       "text": "puVar9 = &stack0xfffffff0;",
       "type": "stack_ref"
     },
@@ -354,6 +367,7 @@
       "description": "Direct stack address reference",
       "line": 96,
       "match": "&stack0xfffffff0",
+      "severity": "moderate",
       "text": "BVar5 = (*g_WriteFileFunc)(puVar8,&stack0xfffffff0,(DWORD)puVar7,(LPDWORD)puVar8,",
       "type": "stack_ref"
     },
@@ -361,6 +375,7 @@
       "description": "Direct stack address reference",
       "line": 107,
       "match": "&stack0xfffffff0",
+      "severity": "moderate",
       "text": "(*g_SpecialDeviceWriteFuncPtr)(iVar3,&stack0xfffffff0,(int)puVar7);",
       "type": "stack_ref"
     },
@@ -368,6 +383,7 @@
       "description": "Direct stack address reference",
       "line": 122,
       "match": "&stack0xffffffe0",
+      "severity": "moderate",
       "text": "puVar8 = &stack0xffffffe0;",
       "type": "stack_ref"
     },
@@ -375,6 +391,7 @@
       "description": "Direct stack address reference",
       "line": 123,
       "match": "&stack0xfffffff0",
+      "severity": "moderate",
       "text": "BVar5 = (*g_WriteFileFunc)(puVar8,&stack0xfffffff0,(DWORD)puVar7,(LPDWORD)puVar8,",
       "type": "stack_ref"
     },
@@ -382,6 +399,7 @@
       "description": "Direct stack address reference",
       "line": 134,
       "match": "&stack0xfffffff0",
+      "severity": "moderate",
       "text": "(*g_SpecialDeviceWriteFuncPtr)(iVar3,&stack0xfffffff0,(int)puVar8);",
       "type": "stack_ref"
     },
@@ -389,6 +407,7 @@
       "description": "Direct stack address reference",
       "line": 147,
       "match": "&stack0xffffffe4",
+      "severity": "moderate",
       "text": "BVar5 = (*g_WriteFileFunc)(&stack0xffffffe4,buffer,count,(LPDWORD)&stack0xffffffe4,",
       "type": "stack_ref"
     },
@@ -396,6 +415,7 @@
       "description": "Direct stack address reference",
       "line": 147,
       "match": "&stack0xffffffe4",
+      "severity": "moderate",
       "text": "BVar5 = (*g_WriteFileFunc)(&stack0xffffffe4,buffer,count,(LPDWORD)&stack0xffffffe4,",
       "type": "stack_ref"
     },

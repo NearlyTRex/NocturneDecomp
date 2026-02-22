@@ -527,8 +527,8 @@ section .text
     MOV ECX,dword ptr [0x006810c8]      ; 004ddfcc | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH ECX                            ; 004ddfd2 | g_CDemonSetInstance
     MOV dword ptr [EBX + 0x278],0x1     ; 004ddfd3
-    CALL core_set.cpp_CDemonSet_FUN_0056b7e0 ; 004ddfdd
-        ;   XREF to: 0056b7e0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056b7e0(CDemonSet * this_ptr, uint param_2, uint param_3, int param_4) | g_CDemonSetInstance
+    CALL core_set.cpp_CDemonSet_reinitCamera_FUN_0056b7e0 ; 004ddfdd
+        ;   XREF to: 0056b7e0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_reinitCamera_FUN_0056b7e0(CDemonSet * this_ptr, uint param_2, uint param_3, int screen_height) | g_CDemonSetInstance
         ;   Label: LAB_004ddfdd
     ADD ESP,0x10                        ; 004ddfe2
     PUSH 0x62bbb8                       ; 004ddfe5 | = "cheat-1.wav"
@@ -3331,7 +3331,7 @@ section .text
     MOV ESI,EAX                         ; 004dff8f
     MOV dword ptr [ESP + 0x330],EAX     ; 004dff91
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0 ; 004dff98
-        ;   XREF to: 00599fc0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton * this_ptr, char * bone_name)
+        ;   XREF to: 00599fc0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 004dff9d
     CMP EAX,-0x1                        ; 004dffa0
     JZ 0x004e002f                       ; 004dffa3
@@ -3379,7 +3379,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x32c]     ; 004e0036
     PUSH EBX                            ; 004e003d
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0 ; 004e003e
-        ;   XREF to: 00599fc0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton * this_ptr, char * bone_name)
+        ;   XREF to: 00599fc0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 004e0043
     CMP EAX,-0x1                        ; 004e0046
     JZ 0x004e00dc                       ; 004e0049
@@ -3428,7 +3428,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x32c]     ; 004e00e3
     PUSH EBX                            ; 004e00ea
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0 ; 004e00eb
-        ;   XREF to: 00599fc0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton * this_ptr, char * bone_name)
+        ;   XREF to: 00599fc0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 004e00f0
     CMP EAX,-0x1                        ; 004e00f3
     JZ 0x004dfed9                       ; 004e00f6

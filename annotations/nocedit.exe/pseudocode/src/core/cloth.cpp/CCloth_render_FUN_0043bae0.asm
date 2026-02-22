@@ -26,7 +26,7 @@
 ;   double DOUBLE_0061855a = 65535
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   undefined4 DAT_00827500
+;   SMRGLPrimitiveQuad[1000] g_ClothBackfaceBuffer
 ;   undefined4 DAT_00827504
 ;   undefined4 DAT_00827518
 ;   undefined4 DAT_0082751c
@@ -128,7 +128,7 @@ section .text
     MOV EDX,dword ptr [0x006810c8]      ; 0043bbb5 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EDX                            ; 0043bbbb | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0 ; 0043bbbc
-        ;   XREF to: 0056eac0 (UNCONDITIONAL_CALL)  ; float core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet * this_ptr, int vertex_count, int tri_count, SInputFace * tri_data_ptr, ...)
+        ;   XREF to: 0056eac0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet * this_ptr, int vertex_count, int tri_count, void * face_data, ...)
     ADD ESP,0x1c                        ; 0043bbc1
     TEST EBX,EBX                        ; 0043bbc4
     JZ 0x0043bc20                       ; 0043bbc6
@@ -204,7 +204,7 @@ section .text
     MOV EAX,[0x006810c8]                ; 0043bc8f | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EAX                            ; 0043bc94 | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0 ; 0043bc95
-        ;   XREF to: 0056eac0 (UNCONDITIONAL_CALL)  ; float core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet * this_ptr, int vertex_count, int tri_count, SInputFace * tri_data_ptr, ...)
+        ;   XREF to: 0056eac0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet * this_ptr, int vertex_count, int tri_count, void * face_data, ...)
     ADD ESP,0x1c                        ; 0043bc9a
     CMP dword ptr [ESP + 0x4],0xf618    ; 0043bc9d
     JGE 0x0043bd45                      ; 0043bca5
@@ -305,7 +305,7 @@ section .text
     MOV EDX,dword ptr [0x006810c8]      ; 0043bd96 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EDX                            ; 0043bd9c | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0 ; 0043bd9d
-        ;   XREF to: 0056eac0 (UNCONDITIONAL_CALL)  ; float core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet * this_ptr, int vertex_count, int tri_count, SInputFace * tri_data_ptr, ...)
+        ;   XREF to: 0056eac0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet * this_ptr, int vertex_count, int tri_count, void * face_data, ...)
     ADD ESP,0x1c                        ; 0043bda2
     TEST EBX,EBX                        ; 0043bda5
     JZ 0x0043be00                       ; 0043bda7
@@ -367,7 +367,7 @@ section .text
     TEST EBX,EBX                        ; 0043be53
     JLE 0x0043bebf                      ; 0043be55
         ;   XREF to: 0043bebf (CONDITIONAL_JUMP)  ; LAB_0043bebf
-    MOV dword ptr [ESP + 0x10],0x827500 ; 0043be57 | DAT_00827500
+    MOV dword ptr [ESP + 0x10],0x827500 ; 0043be57 | g_ClothBackfaceBuffer
     IMUL EAX,dword ptr [ESP + 0xc],0x48 ; 0043be5f
         ;   Label: LAB_0043be5f
     MOV EDX,dword ptr [EBP + 0x114]     ; 0043be64
@@ -414,7 +414,7 @@ section .text
     PUSH 0x4                            ; 0043bec1
     MOV ECX,dword ptr [EBP + 0x10c]     ; 0043bec3
     PUSH ECX                            ; 0043bec9
-    PUSH 0x827500                       ; 0043beca | DAT_00827500
+    PUSH 0x827500                       ; 0043beca | g_ClothBackfaceBuffer
     MOV EBX,dword ptr [ESP + 0x18]      ; 0043becf
     PUSH EBX                            ; 0043bed3
     MOV ESI,dword ptr [EBP + 0x104]     ; 0043bed4
@@ -422,14 +422,14 @@ section .text
     MOV EDI,dword ptr [0x006810c8]      ; 0043bedb | g_CDemonSetPtr
     PUSH EDI                            ; 0043bee1 | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0 ; 0043bee2
-        ;   XREF to: 0056eac0 (UNCONDITIONAL_CALL)  ; float core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet * this_ptr, int vertex_count, int tri_count, SInputFace * tri_data_ptr, ...)
+        ;   XREF to: 0056eac0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet * this_ptr, int vertex_count, int tri_count, void * face_data, ...)
     ADD ESP,0x1c                        ; 0043bee7
     CMP dword ptr [ESP + 0x4],0xf618    ; 0043beea
     JGE 0x0043bf20                      ; 0043bef2
         ;   XREF to: 0043bf20 (CONDITIONAL_JUMP)  ; LAB_0043bf20
     PUSH 0x267                          ; 0043bef4
     PUSH EBX                            ; 0043bef9
-    PUSH 0x827500                       ; 0043befa | DAT_00827500
+    PUSH 0x827500                       ; 0043befa | g_ClothBackfaceBuffer
     JMP 0x0043bcd3                      ; 0043beff
         ;   XREF to: 0043bcd3 (UNCONDITIONAL_JUMP)  ; LAB_0043bcd3
     PUSH -0x1                           ; 0043bf04
@@ -445,7 +445,7 @@ section .text
     PUSH -0x1                           ; 0043bf20
         ;   Label: LAB_0043bf20
     PUSH EBX                            ; 0043bf22
-    PUSH 0x827500                       ; 0043bf23 | DAT_00827500
+    PUSH 0x827500                       ; 0043bf23 | g_ClothBackfaceBuffer
     MOV EDX,dword ptr [0x006810c8]      ; 0043bf28 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EDX                            ; 0043bf2e | g_CDemonSetInstance
     JMP 0x0043bcda                      ; 0043bf2f

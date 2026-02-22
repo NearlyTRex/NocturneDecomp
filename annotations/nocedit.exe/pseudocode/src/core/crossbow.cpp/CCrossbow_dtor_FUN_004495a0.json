@@ -6,14 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 35,
+    "complexity_score": 50,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 1,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 20,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "negative_offset"
+      "negative_offset",
+      "pointer_cast"
     ],
     "total_lines": 67
   },
@@ -122,8 +124,17 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 17,
       "match": "pCVar1[-5].",
-      "text": "((CWeapon *)&pCVar1[-5].previous_transform_state.orientation.z,1);",
+      "severity": "mild",
+      "text": "((CWeapon *)((int)&pCVar1[-5].previous_transform_state.orientation + 8),1);",
       "type": "negative_offset"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(CWeapon *)((int)",
+      "severity": "mild",
+      "text": "((CWeapon *)((int)&pCVar1[-5].previous_transform_state.orientation + 8),1);",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

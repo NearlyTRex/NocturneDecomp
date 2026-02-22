@@ -8,9 +8,9 @@
 ;
 ; XREF[4]:
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053a384
-;   core_set.cpp_CDemonSet_FUN_0056be80 at 0056c063
-;   core_set.cpp_CDemonSet_FUN_0056c1a0 at 0056c484
-;   core_set.cpp_CDemonSet_FUN_0056c990 at 0056cb77
+;   core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990 at 0056cb77
+;   core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0 at 0056c484
+;   core_set.cpp_CDemonSet_renderStaticLights_FUN_0056be80 at 0056c063
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
@@ -30,7 +30,7 @@
 ;
 ; Called Functions:
 ;   core_gore.cpp_CBloodParticle_setupRenderState_FUN_004eb9d0
-;   core_set.cpp_CDemonSet_FUN_0056d380
+;   core_set.cpp_CDemonSet_setLightingParameters_FUN_0056d380
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
 ;
 ; *****************************************************************************
@@ -69,8 +69,8 @@ section .text
     PUSH EAX                            ; 004ed7e0
     MOV EBX,dword ptr [0x006810c8]      ; 004ed7e1 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EBX                            ; 004ed7e7 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_0056d380 ; 004ed7e8
-        ;   XREF to: 0056d380 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d380(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_setLightingParameters_FUN_0056d380 ; 004ed7e8
+        ;   XREF to: 0056d380 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setLightingParameters_FUN_0056d380(CDemonSet * this_ptr, CVector3f * position, UOrientationVector * orientation, CVector3f * aabb_min, ...)
     ADD ESP,0x18                        ; 004ed7ed
     PUSH 0x2d833d4                      ; 004ed7f0 | g_BloodParticles
     MOV EBX,0x2d833d4                   ; 004ed7f5 | g_BloodParticles

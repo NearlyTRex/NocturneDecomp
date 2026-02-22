@@ -119,7 +119,8 @@ void __cdecl core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_0041a050(CBodyPart
       local_24 = 0;
       do {
         texture = (SMRGLPrimitiveTriangle *)
-                  ((int)&(this_ptr->faces->vertex_indices).vertex_index_0 + local_24);
+                  ((int)&(((SMRGLPrimitiveTriangle *)(this_ptr->faces->vertices + -2))->base).base.
+                         type + local_24);
         (texture->base).base.count = 3;
         engine_keyframe_c_calculateSurfaceNormal_FUN_00501bc0(this_ptr->vertices,texture);
         iVar10 = 0;

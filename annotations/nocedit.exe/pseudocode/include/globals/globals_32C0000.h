@@ -2,8 +2,10 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "types/classes/C3DSLight.h"
 #include "types/classes/CDemonGlobe.h"
 #include "types/classes/CDemonLight.h"
+#include "types/classes/CMatrix3x3f.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 
@@ -11,14 +13,26 @@
 // GLOBAL VARIABLES - Range 0x32C0000
 // =============================================================================
 
-// CDemonGlobe*
-extern CDemonGlobe* g_GlobeLights;
+// C3DSLight*[200]
+extern C3DSLight* g_VisibleOmniLights[200];
 
-// CDemonLight*
-extern CDemonLight* g_PrimaryDirectionalLights;
+// CDemonGlobe*[100]
+extern CDemonGlobe* g_GlobeLights[100];
 
 // CDemonLight*[32]
 extern CDemonLight* g_SecondaryDirectionalLights[32];
+
+// CDemonLight*[4]
+extern CDemonLight* g_PrimaryDirectionalLights[4];
+
+// CMatrix3x3f
+extern CMatrix3x3f g_LightingRotationMatrix;
+
+// CVector3f
+extern CVector3f g_LightingReferencePosition;
+extern CVector3f g_LightingOrientation;
+extern CVector3f g_LightingAABBMin;
+extern CVector3f g_LightingAABBMax;
 
 // CVector3f[4000]
 extern CVector3f g_FaceNormalArray[4000];
@@ -26,40 +40,13 @@ extern CVector3f g_FaceNormalArray[4000];
 // CVector3i[20000]
 extern CVector3i g_TransformedVertexArray[20000];
 
-// float
-extern float FLOAT_032c1c74;
-extern float FLOAT_032c1c78;
-extern float FLOAT_032c1c7c;
-extern float FLOAT_032c1c80;
-extern float FLOAT_032c1c84;
-extern float FLOAT_032c1c88;
-extern float FLOAT_032c1c8c;
-extern float FLOAT_032c1c90;
-extern float FLOAT_032c1c94;
-extern float FLOAT_032c1ca0;
-extern float FLOAT_032c1ca4;
-extern float FLOAT_032c1ca8;
-extern float FLOAT_032c1cac;
-extern float FLOAT_032c1cb0;
-extern float FLOAT_032c1cb4;
-extern float FLOAT_032c1cb8;
-
 // int
 extern int g_SecondaryDirectionalLightCount;
 extern int g_PrimaryDirectionalLightCount;
 extern int g_GlobeLightCount;
-extern int g_ColorCorrectionEnabled;
+extern int g_ColorCorrectionCount;
 extern int g_LightingSystemDirty;
 extern int g_ColorCorrectionLightMultiplier;
 extern int g_ColorCorrectionColorMultiplier;
 extern int g_ColorCorrectionFogMultiplier;
-
-// undefined4
-extern undefined4 DAT_032c1944;
-extern undefined4 DAT_032c1948;
-extern undefined4 DAT_032c1c68;
-extern undefined4 DAT_032c1c6c;
-extern undefined4 DAT_032c1c70;
-extern undefined4 DAT_032c1c98;
-extern undefined4 DAT_032c1c9c;
 

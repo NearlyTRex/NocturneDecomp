@@ -329,7 +329,7 @@ void __cdecl CDemonCamera::initCameraShake(CDemonCamera *this_ptr,float peak_int
 
 // Original: core_dcamera.cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454060
 // Address: 00454060
-CVector3f * __cdecl CDemonCamera::computeVisibleFrustumBounds(CDemonCamera *this_ptr,CVector3f *output_vectors,CBoundingBox3D *bounding_box);
+CVector3f * __cdecl CDemonCamera::computeVisibleFrustumBounds(CDemonCamera *this_ptr,CVector3f *output_bounds);
 
 // Original: core_dcamera.cpp_CDemonCamera_saveZBufferScanlines_FUN_00454450
 // Address: 00454450

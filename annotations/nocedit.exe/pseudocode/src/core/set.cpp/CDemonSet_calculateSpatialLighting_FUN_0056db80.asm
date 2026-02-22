@@ -16,8 +16,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   core_set.cpp_CDemonSet_FUN_0056c990 at 0056cbde
 ;   core_set.cpp_CDemonSet_lightVertexColor_FUN_0056ddb0 at 0056e045
+;   core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990 at 0056cbde
 ;   core_trigger.cpp_CTrigger_process_FUN_005dfac0 at 005dfd62
 ;
 ; Referenced Globals:
@@ -29,13 +29,13 @@
 ;   CDemonLight*[32] g_SecondaryDirectionalLights
 ;   undefined4 DAT_032c161c
 ;   int g_PrimaryDirectionalLightCount
-;   CDemonLight* g_PrimaryDirectionalLights
+;   CDemonLight*[4] g_PrimaryDirectionalLights
 ;   undefined4 DAT_032c17a0
 ;   int g_GlobeLightCount
-;   CDemonGlobe* g_GlobeLights
+;   CDemonGlobe*[100] g_GlobeLights
 ;   undefined4 DAT_032c17b4
 ;   int g_LightingSystemDirty
-;   undefined4 DAT_032c1c68
+;   CVector3f g_LightingReferencePosition
 ;   ... and 4 more
 ;
 ; Called Functions:
@@ -43,7 +43,7 @@
 ;   core_dglobe.cpp_CDemonGlobe_getAttenuationAtVertex_FUN_00471850
 ;   core_mirror.cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_00522a50
 ;   core_mirror.cpp_CMirrorReflection_transformMirrorVertex_FUN_005229b0
-;   core_set.cpp_CDemonSet_FUN_0056d4a0
+;   core_set.cpp_CDemonSet_gatherVisibleLights_FUN_0056d4a0
 ;
 ; *****************************************************************************
 
@@ -70,8 +70,8 @@ section .text
     PUSH 0x0                            ; 0056dba6
     MOV ESI,dword ptr [ESP + 0x60]      ; 0056dba8
     PUSH ESI                            ; 0056dbac
-    CALL core_set.cpp_CDemonSet_FUN_0056d4a0 ; 0056dbad
-        ;   XREF to: 0056d4a0 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_FUN_0056d4a0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_gatherVisibleLights_FUN_0056d4a0 ; 0056dbad
+        ;   XREF to: 0056d4a0 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_gatherVisibleLights_FUN_0056d4a0(CDemonSet * this_ptr, CVector3f * position, CVector3f * orientation, CVector3f * aabb_min, ...)
         ;   Label: LAB_0056dbad
     ADD ESP,0x18                        ; 0056dbb2
     XOR EDI,EDI                         ; 0056dbb5
@@ -233,12 +233,12 @@ section .text
     POP ESI                             ; 0056dd40
     POP EBX                             ; 0056dd41
     RET                                 ; 0056dd42
-    PUSH 0x32c1c98                      ; 0056dd43 | DAT_032c1c98
+    PUSH 0x32c1c98                      ; 0056dd43 | g_LightingRotationMatrix
         ;   Label: LAB_0056dd43
-    PUSH 0x32c1c8c                      ; 0056dd48 | FLOAT_032c1c8c
-    PUSH 0x32c1c80                      ; 0056dd4d | FLOAT_032c1c80
-    PUSH 0x32c1c74                      ; 0056dd52 | FLOAT_032c1c74
-    PUSH 0x32c1c68                      ; 0056dd57 | DAT_032c1c68
+    PUSH 0x32c1c8c                      ; 0056dd48 | g_LightingAABBMax
+    PUSH 0x32c1c80                      ; 0056dd4d | g_LightingAABBMin
+    PUSH 0x32c1c74                      ; 0056dd52 | g_LightingOrientation
+    PUSH 0x32c1c68                      ; 0056dd57 | g_LightingReferencePosition
     MOV EBX,dword ptr [ESP + 0x60]      ; 0056dd5c
     PUSH EBX                            ; 0056dd60
     JMP 0x0056dbad                      ; 0056dd61

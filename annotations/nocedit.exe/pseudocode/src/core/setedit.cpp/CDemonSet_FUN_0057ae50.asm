@@ -41,8 +41,8 @@
 ;   core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0
 ;   core_game.cpp_CGame_saveClockTime_FUN_004d7d80
 ;   core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90
-;   core_set.cpp_CDemonSet_FUN_0056b7e0
-;   core_set.cpp_CDemonSet_FUN_0056c1a0
+;   core_set.cpp_CDemonSet_reinitCamera_FUN_0056b7e0
+;   core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
 ;   core_setedit.cpp_CDemonSet_FUN_00577af0
 ;   core_slew.cpp_CSlew_free_FUN_005a20a0
@@ -206,8 +206,8 @@ section .text
     PUSH ESI                            ; 0057b026
     MOV dword ptr [0x02d7ec30],EBX      ; 0057b027 | g_CDemonLightInstance.base.max_distance
     MOV dword ptr [0x02d807a4],ECX      ; 0057b02d | g_CDemonLightInstance.light_enabled_flag
-    CALL core_set.cpp_CDemonSet_FUN_0056c1a0 ; 0057b033
-        ;   XREF to: 0056c1a0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056c1a0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0 ; 0057b033
+        ;   XREF to: 0056c1a0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0(CDemonSet * this_ptr, int skip_prerender)
     ADD ESP,0x8                         ; 0057b038
     MOV EAX,[0x0067cf44]                ; 0057b03b | g_CKeysPtr
     PUSH 0x2e                           ; 0057b040
@@ -472,8 +472,8 @@ section .text
     PUSH 0x0                            ; 0057b2fc
     MOV EBX,dword ptr [EBP + 0x14]      ; 0057b2fe
     PUSH EBX                            ; 0057b301
-    CALL core_set.cpp_CDemonSet_FUN_0056b7e0 ; 0057b302
-        ;   XREF to: 0056b7e0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056b7e0(CDemonSet * this_ptr, uint param_2, uint param_3, int param_4)
+    CALL core_set.cpp_CDemonSet_reinitCamera_FUN_0056b7e0 ; 0057b302
+        ;   XREF to: 0056b7e0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_reinitCamera_FUN_0056b7e0(CDemonSet * this_ptr, uint param_2, uint param_3, int screen_height)
     ADD ESP,0x10                        ; 0057b307
     JMP 0x0057af62                      ; 0057b30a
         ;   XREF to: 0057af62 (UNCONDITIONAL_JUMP)  ; LAB_0057af62

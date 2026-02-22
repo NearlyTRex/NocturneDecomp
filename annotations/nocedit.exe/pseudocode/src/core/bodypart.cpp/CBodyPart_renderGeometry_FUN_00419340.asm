@@ -65,7 +65,7 @@ section .text
     MOV EBX,dword ptr [0x006810c8]      ; 0041938d | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EBX                            ; 00419393 | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0 ; 00419394
-        ;   XREF to: 0056eac0 (UNCONDITIONAL_CALL)  ; float core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet * this_ptr, int vertex_count, int tri_count, SInputFace * tri_data_ptr, ...)
+        ;   XREF to: 0056eac0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet * this_ptr, int vertex_count, int tri_count, void * face_data, ...)
     MOV EDI,dword ptr [ESI + 0x18c]     ; 00419399
     ADD ESP,0x1c                        ; 0041939f
     CMP EDI,0x1                         ; 004193a2

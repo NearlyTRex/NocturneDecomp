@@ -6,15 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 155,
-    "complexity_score": 111,
+    "complexity_score": 126,
     "cross_reference_count": 4,
     "function_call_count": 8,
     "global_count": 7,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 71,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast"
+      "pointer_cast",
+      "stack_alignment_array"
     ],
     "total_lines": 226
   },
@@ -254,9 +256,18 @@
   },
   "suspects": [
     {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 13,
+      "match": "aiStackY_1014",
+      "severity": "moderate",
+      "text": "int aiStackY_1014 [1012];",
+      "type": "stack_alignment_array"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 53,
       "match": "ROUND",
+      "severity": "mild",
       "text": "frame_index = (int)ROUND(ROUND(this_ptr->part_frame));",
       "type": "decompiler_intrinsic"
     },
@@ -264,6 +275,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 53,
       "match": "ROUND",
+      "severity": "mild",
       "text": "frame_index = (int)ROUND(ROUND(this_ptr->part_frame));",
       "type": "decompiler_intrinsic"
     },
@@ -271,6 +283,7 @@
       "description": "Complex pointer cast",
       "line": 59,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "piVar4 = (int *)((int)(pCVar2 + iVar1) + (uint)bVar5 * -8 + 4);",
       "type": "pointer_cast"
     }

@@ -5,6 +5,7 @@
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 6,
     "suspect_count": 3,
     "suspect_types": [
@@ -92,6 +93,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 6,
       "match": "this_ptr[-1].",
+      "severity": "mild",
       "text": "((istream *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags);",
       "type": "negative_offset"
     },
@@ -99,6 +101,7 @@
       "description": "Complex pointer cast",
       "line": 6,
       "match": "(istream *)((int)",
+      "severity": "mild",
       "text": "((istream *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags);",
       "type": "pointer_cast"
     },

@@ -25,15 +25,18 @@
   },
   "complexity": {
     "assembly_lines": 705,
-    "complexity_score": 872,
+    "complexity_score": 972,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 7,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 332,
-    "suspect_count": 53,
+    "suspect_count": 62,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast"
+      "double_reconstruction",
+      "pointer_cast",
+      "sub84_truncation"
     ],
     "total_lines": 1037
   },
@@ -468,6 +471,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 117,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_60 = (int)ROUND(ROUND(local_84));",
       "type": "decompiler_intrinsic"
     },
@@ -475,6 +479,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 117,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_60 = (int)ROUND(ROUND(local_84));",
       "type": "decompiler_intrinsic"
     },
@@ -482,13 +487,23 @@
       "description": "Complex pointer cast",
       "line": 124,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "uVar13 = *(uint *)((int)&this_ptr->prev_hardware_playback_pos + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 128,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "hardware_playback_pos = (double)CONCAT44(uVar13,uVar12);",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 128,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "hardware_playback_pos = (double)CONCAT44(uVar13,uVar12);",
       "type": "decompiler_intrinsic"
     },
@@ -496,6 +511,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 129,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_48 = (int)ROUND(ROUND(local_84));",
       "type": "decompiler_intrinsic"
     },
@@ -503,6 +519,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 129,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_48 = (int)ROUND(ROUND(local_84));",
       "type": "decompiler_intrinsic"
     },
@@ -510,6 +527,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 130,
       "match": "ROUND",
+      "severity": "mild",
       "text": "if ((int)ROUND(ROUND(local_84)) < 1) {",
       "type": "decompiler_intrinsic"
     },
@@ -517,13 +535,23 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 130,
       "match": "ROUND",
+      "severity": "mild",
       "text": "if ((int)ROUND(ROUND(local_84)) < 1) {",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 131,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "hardware_playback_pos = (double)CONCAT44(uVar13,uVar12) - dVar5;",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 131,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "hardware_playback_pos = (double)CONCAT44(uVar13,uVar12) - dVar5;",
       "type": "decompiler_intrinsic"
     },
@@ -531,6 +559,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 136,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_48 = (int)ROUND(ROUND(local_84));",
       "type": "decompiler_intrinsic"
     },
@@ -538,13 +567,23 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 136,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_48 = (int)ROUND(ROUND(local_84));",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 140,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "channel_buffers = SUB84(dVar14,0);",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 140,
       "match": "SUB84",
+      "severity": "mild",
       "text": "channel_buffers = SUB84(dVar14,0);",
       "type": "decompiler_intrinsic"
     },
@@ -552,6 +591,7 @@
       "description": "Complex pointer cast",
       "line": 158,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "local_7c[2] = (float)(int)(*(byte *)((int)this_ptr->sample->sample_data +",
       "type": "pointer_cast"
     },
@@ -559,6 +599,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 159,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND(hardware_playback_pos)) * 2) -",
       "type": "decompiler_intrinsic"
     },
@@ -566,6 +607,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 159,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND(hardware_playback_pos)) * 2) -",
       "type": "decompiler_intrinsic"
     },
@@ -573,6 +615,7 @@
       "description": "Complex pointer cast",
       "line": 161,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "local_14 = *(byte *)((int)this_ptr->sample->sample_data +",
       "type": "pointer_cast"
     },
@@ -580,6 +623,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 162,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND(hardware_playback_pos)) * 2 + 1) - 0x80;",
       "type": "decompiler_intrinsic"
     },
@@ -587,6 +631,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 162,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND(hardware_playback_pos)) * 2 + 1) - 0x80;",
       "type": "decompiler_intrinsic"
     },
@@ -594,6 +639,7 @@
       "description": "Complex pointer cast",
       "line": 171,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)*ppfVar3 + local_20) =",
       "type": "pointer_cast"
     },
@@ -601,6 +647,7 @@
       "description": "Complex pointer cast",
       "line": 173,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)*ppfVar3 + local_20);",
       "type": "pointer_cast"
     },
@@ -608,6 +655,7 @@
       "description": "Complex pointer cast",
       "line": 186,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "local_14 = *(byte *)((int)this_ptr->sample->sample_data +",
       "type": "pointer_cast"
     },
@@ -615,6 +663,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 187,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND(hardware_playback_pos))) - 0x80;",
       "type": "decompiler_intrinsic"
     },
@@ -622,6 +671,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 187,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND(hardware_playback_pos))) - 0x80;",
       "type": "decompiler_intrinsic"
     },
@@ -629,6 +679,7 @@
       "description": "Complex pointer cast",
       "line": 195,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)*ppfVar3 + iVar11) =",
       "type": "pointer_cast"
     },
@@ -636,13 +687,31 @@
       "description": "Complex pointer cast",
       "line": 196,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "local_18 * pCVar8->channel_volumes[0] + *(float *)((int)*ppfVar3 + iVar11);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 209,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(double)CONCAT44(SUB84(hardware_playback_pos,0),local_a8),",
+      "type": "double_reconstruction"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 209,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "(double)CONCAT44(SUB84(hardware_playback_pos,0),local_a8),",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 209,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(double)CONCAT44(SUB84(hardware_playback_pos,0),local_a8),",
       "type": "decompiler_intrinsic"
     },
@@ -650,13 +719,23 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 209,
       "match": "SUB84",
+      "severity": "mild",
       "text": "(double)CONCAT44(SUB84(hardware_playback_pos,0),local_a8),",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 210,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(double)CONCAT44(channel_buffers,sample_data),(int)channel_gains);",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 210,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(double)CONCAT44(channel_buffers,sample_data),(int)channel_gains);",
       "type": "decompiler_intrinsic"
     },
@@ -664,6 +743,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 217,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_14 = (int)ROUND(ROUND(hardware_playback_pos));",
       "type": "decompiler_intrinsic"
     },
@@ -671,6 +751,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 217,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_14 = (int)ROUND(ROUND(hardware_playback_pos));",
       "type": "decompiler_intrinsic"
     },
@@ -678,6 +759,7 @@
       "description": "Complex pointer cast",
       "line": 218,
       "match": "(short *)((int)",
+      "severity": "mild",
       "text": "local_7c[0] = (float)*(short *)((int)this_ptr->sample->sample_data + local_14 * 4);",
       "type": "pointer_cast"
     },
@@ -685,6 +767,7 @@
       "description": "Complex pointer cast",
       "line": 219,
       "match": "(short *)((int)",
+      "severity": "mild",
       "text": "local_7c[1] = (float)*(short *)((int)this_ptr->sample->sample_data + local_14 * 4 + 2)",
       "type": "pointer_cast"
     },
@@ -692,6 +775,7 @@
       "description": "Complex pointer cast",
       "line": 228,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)*ppfVar3 + local_24) =",
       "type": "pointer_cast"
     },
@@ -699,13 +783,31 @@
       "description": "Complex pointer cast",
       "line": 230,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)*ppfVar3 + local_24);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 242,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(double)CONCAT44(SUB84(hardware_playback_pos,0),local_a8),",
+      "type": "double_reconstruction"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 242,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "(double)CONCAT44(SUB84(hardware_playback_pos,0),local_a8),",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 242,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(double)CONCAT44(SUB84(hardware_playback_pos,0),local_a8),",
       "type": "decompiler_intrinsic"
     },
@@ -713,13 +815,23 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 242,
       "match": "SUB84",
+      "severity": "mild",
       "text": "(double)CONCAT44(SUB84(hardware_playback_pos,0),local_a8),",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 243,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(double)CONCAT44(channel_buffers,sample_data),(int)channel_gains);",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 243,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(double)CONCAT44(channel_buffers,sample_data),(int)channel_gains);",
       "type": "decompiler_intrinsic"
     },
@@ -727,6 +839,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 250,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_14 = (int)ROUND(ROUND(hardware_playback_pos));",
       "type": "decompiler_intrinsic"
     },
@@ -734,6 +847,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 250,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_14 = (int)ROUND(ROUND(hardware_playback_pos));",
       "type": "decompiler_intrinsic"
     },
@@ -741,6 +855,7 @@
       "description": "Complex pointer cast",
       "line": 251,
       "match": "(short *)((int)",
+      "severity": "mild",
       "text": "local_1c = (float)*(short *)((int)this_ptr->sample->sample_data +",
       "type": "pointer_cast"
     },
@@ -748,6 +863,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 252,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND(hardware_playback_pos)) * 2);",
       "type": "decompiler_intrinsic"
     },
@@ -755,6 +871,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 252,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND(hardware_playback_pos)) * 2);",
       "type": "decompiler_intrinsic"
     },
@@ -762,6 +879,7 @@
       "description": "Complex pointer cast",
       "line": 259,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)*ppfVar3 + iVar11) =",
       "type": "pointer_cast"
     },
@@ -769,6 +887,7 @@
       "description": "Complex pointer cast",
       "line": 260,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "local_1c * pCVar8->channel_volumes[0] + *(float *)((int)*ppfVar3 + iVar11);",
       "type": "pointer_cast"
     },
@@ -776,6 +895,7 @@
       "description": "Complex pointer cast",
       "line": 295,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "piVar2 = (int *)((int)mix_buffer.channel_buffers + iVar11);",
       "type": "pointer_cast"
     },
@@ -783,6 +903,7 @@
       "description": "Complex pointer cast",
       "line": 308,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (*(int *)((int)aiStack_a4 + local_4c) != 0) {",
       "type": "pointer_cast"
     },
@@ -790,6 +911,7 @@
       "description": "Complex pointer cast",
       "line": 312,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "local_30 = (local_5c + *(int *)((int)this_ptr->channel_target_buffer_offsets + local_4c))",
       "type": "pointer_cast"
     },
@@ -797,6 +919,7 @@
       "description": "Complex pointer cast",
       "line": 313,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "- *(int *)((int)this_ptr->channel_current_buffer_offsets + local_4c);",
       "type": "pointer_cast"
     },
@@ -804,6 +927,7 @@
       "description": "Complex pointer cast",
       "line": 319,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "pfVar1 = (float *)(*(int *)((int)aiStack_a4 + local_4c) + iVar11);",
       "type": "pointer_cast"
     },
@@ -811,6 +935,7 @@
       "description": "Complex pointer cast",
       "line": 321,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(float *)(*(int *)((int)aiStack_a4 + local_4c) + -4 + iVar11) =",
       "type": "pointer_cast"
     },
@@ -818,6 +943,7 @@
       "description": "Complex pointer cast",
       "line": 322,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(float *)(*(int *)((int)g_ChannelTertiaryBuffers + local_4c) + local_14) +",
       "type": "pointer_cast"
     },
@@ -825,6 +951,7 @@
       "description": "Complex pointer cast",
       "line": 327,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)this_ptr->channel_current_buffer_offsets + local_4c) =",
       "type": "pointer_cast"
     },
@@ -832,6 +959,7 @@
       "description": "Complex pointer cast",
       "line": 328,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)this_ptr->channel_target_buffer_offsets + local_4c);",
       "type": "pointer_cast"
     }

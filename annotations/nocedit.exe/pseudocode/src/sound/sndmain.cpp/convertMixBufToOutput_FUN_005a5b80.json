@@ -17,6 +17,7 @@
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 8,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 62,
     "suspect_count": 4,
     "suspect_types": [
@@ -269,6 +270,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 30,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_28 = (byte)(int)ROUND(fVar1 * 127.0f + 128.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -276,6 +278,7 @@
       "description": "Complex pointer cast",
       "line": 36,
       "match": "(ushort *)((int)",
+      "severity": "mild",
       "text": "local_30 = (ushort *)((int)local_30 + output_stride);",
       "type": "pointer_cast"
     },
@@ -283,6 +286,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 52,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_20 = (ushort)(int)ROUND(fVar1 * 32766.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -290,6 +294,7 @@
       "description": "Complex pointer cast",
       "line": 58,
       "match": "(ushort *)((int)",
+      "severity": "mild",
       "text": "local_30 = (ushort *)((int)local_30 + output_stride);",
       "type": "pointer_cast"
     }

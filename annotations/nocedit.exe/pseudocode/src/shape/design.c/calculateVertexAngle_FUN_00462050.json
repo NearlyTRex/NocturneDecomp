@@ -6,14 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 156,
+    "complexity_score": 171,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 6,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 56,
-    "suspect_count": 9,
+    "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
+      "double_reconstruction",
       "stack_param"
     ],
     "total_lines": 141
@@ -287,6 +289,7 @@
       "description": "Unresolved stack parameter",
       "line": 6,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
@@ -294,6 +297,7 @@
       "description": "Unresolved stack parameter",
       "line": 7,
       "match": "in_stack_ffffff74",
+      "severity": "moderate",
       "text": "uint in_stack_ffffff74;",
       "type": "stack_param"
     },
@@ -301,6 +305,7 @@
       "description": "Unresolved stack parameter",
       "line": 30,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "local_2c = g_LoadedVertices[in_stack_00000004].vertex.x;",
       "type": "stack_param"
     },
@@ -308,6 +313,7 @@
       "description": "Unresolved stack parameter",
       "line": 31,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "local_28 = g_LoadedVertices[in_stack_00000004].vertex.y;",
       "type": "stack_param"
     },
@@ -315,6 +321,7 @@
       "description": "Unresolved stack parameter",
       "line": 32,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "local_24 = g_LoadedVertices[in_stack_00000004].vertex.z;",
       "type": "stack_param"
     },
@@ -322,6 +329,7 @@
       "description": "Unresolved stack parameter",
       "line": 33,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "fStack_20 = g_LoadedVertices[in_stack_00000004].u;",
       "type": "stack_param"
     },
@@ -329,6 +337,7 @@
       "description": "Unresolved stack parameter",
       "line": 34,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "fStack_1c = g_LoadedVertices[in_stack_00000004].v;",
       "type": "stack_param"
     },
@@ -336,13 +345,23 @@
       "description": "Unresolved stack parameter",
       "line": 54,
       "match": "in_stack_ffffff74",
+      "severity": "moderate",
       "text": "((double)CONCAT44(in_stack_ffffff74,",
       "type": "stack_param"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 54,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "((double)CONCAT44(in_stack_ffffff74,",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 54,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "((double)CONCAT44(in_stack_ffffff74,",
       "type": "decompiler_intrinsic"
     }

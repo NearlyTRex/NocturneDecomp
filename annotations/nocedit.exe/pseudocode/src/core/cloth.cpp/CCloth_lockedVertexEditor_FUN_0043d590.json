@@ -6,16 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 657,
-    "complexity_score": 336,
+    "complexity_score": 337,
     "cross_reference_count": 1,
     "function_call_count": 24,
     "global_count": 31,
-    "pseudocode_lines": 291,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 292,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 948
+    "total_lines": 949
   },
   "cross_references": [
     {
@@ -602,28 +603,32 @@
       "description": "Complex pointer cast",
       "line": 92,
       "match": "(CVector3i *)((int)",
-      "text": "+ iVar8),(CVector3i *)((int)(this_ptr->model).vertex_list + iVar6));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 152,
-      "match": "(byte *)((int)",
-      "text": "if ((*(byte *)((int)&(pSVar2->projected_vertex).screen_x + iVar8 + 3) & 0x80) == 0) {",
+      "severity": "mild",
+      "text": "+ iVar8),(CVector3i *)((int)&((this_ptr->model).vertex_list)->x + iVar7));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 153,
-      "match": "(int *)((int)",
-      "text": "iVar4 = *(int *)((int)&(pSVar2->projected_vertex).screen_x + iVar8) >> 0x10;",
+      "match": "(byte *)((int)",
+      "severity": "mild",
+      "text": "if ((*(byte *)((int)&(pSVar2->projected_vertex).screen_x + iVar8 + 3) & 0x80) == 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 154,
       "match": "(int *)((int)",
-      "text": "iVar7 = *(int *)((int)&(pSVar2->projected_vertex).screen_y + iVar8) >> 0x10;",
+      "severity": "mild",
+      "text": "iVar5 = *(int *)((int)&(pSVar2->projected_vertex).screen_x + iVar8) >> 0x10;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 155,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "iVar4 = *(int *)((int)&(pSVar2->projected_vertex).screen_y + iVar8) >> 0x10;",
       "type": "pointer_cast"
     }
   ]

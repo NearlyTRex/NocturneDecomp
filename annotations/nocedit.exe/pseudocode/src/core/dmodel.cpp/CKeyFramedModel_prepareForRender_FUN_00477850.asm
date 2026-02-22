@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850(CKeyFramedModel *this_ptr,CKeyFramedModelInstance *instance,int frame_index,int render_flags)
+; void __cdecl core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850(CKeyFramedModel *this_ptr,int frame_index,CKeyFramedModelInstance *instance,int render_flags)
 ;
 ; Parameters:
 ; CKeyFramedModel * Stack[0x4]:4   this_ptr
-; CKeyFramedModelInstance * Stack[0x8]:4   instance
-; int              Stack[0xc]:4   frame_index
+; int              Stack[0x8]:4   frame_index
+; CKeyFramedModelInstance * Stack[0xc]:4   instance
 ; int              Stack[0x10]:4   render_flags
 ;
 ; XREF[11]:
@@ -49,7 +49,7 @@ section .text
     PUSH ESI                            ; 0047786d
     PUSH EBX                            ; 0047786e
     CALL core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004778d0 ; 0047786f
-        ;   XREF to: 004778d0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004778d0(CKeyFramedModel * this_ptr, CKeyFramedModelInstance * instance, int frame_index)
+        ;   XREF to: 004778d0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004778d0(CKeyFramedModel * this_ptr, int frame_index, CKeyFramedModelInstance * instance)
     ADD ESP,0xc                         ; 00477874
     MOV EDI,dword ptr [ESP + 0x20]      ; 00477877
     PUSH EDI                            ; 0047787b
@@ -57,7 +57,7 @@ section .text
     PUSH EBP                            ; 00477880
     PUSH EBX                            ; 00477881
     CALL core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_00477980 ; 00477882
-        ;   XREF to: 00477980 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_00477980(CKeyFramedModel * this_ptr, int frame_index, int render_flags)
+        ;   XREF to: 00477980 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_00477980(CKeyFramedModel * this_ptr, CKeyFramedModelInstance * instance, int render_flags)
     ADD ESP,0xc                         ; 00477887
     POP ESI                             ; 0047788a
     POP EDI                             ; 0047788b

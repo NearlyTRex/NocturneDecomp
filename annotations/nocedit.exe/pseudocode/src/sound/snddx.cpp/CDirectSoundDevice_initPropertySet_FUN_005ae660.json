@@ -119,6 +119,7 @@
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 6,
+    "max_suspect_severity": "severe",
     "pseudocode_lines": 57,
     "suspect_count": 14,
     "suspect_types": [
@@ -277,6 +278,7 @@
       "description": "Decompiler iteration limit exceeded",
       "line": 2,
       "match": "WARNING: Exceeded maximum restarts with more pending",
+      "severity": "severe",
       "text": "/* WARNING: Exceeded maximum restarts with more pending */",
       "type": "warning_max_restarts"
     },
@@ -284,6 +286,7 @@
       "description": "Unknown/mangled field access",
       "line": 23,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_2c._0_4_ = (int *)0x10001;",
       "type": "unknown_field"
     },
@@ -291,6 +294,7 @@
       "description": "Unknown/mangled field access",
       "line": 24,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_2c._4_4_ = 0x5622;",
       "type": "unknown_field"
     },
@@ -298,6 +302,7 @@
       "description": "Unknown/mangled field access",
       "line": 26,
       "match": "._8_4_",
+      "severity": "mild",
       "text": "local_2c._8_4_ = (int *)0xac44;",
       "type": "unknown_field"
     },
@@ -305,6 +310,7 @@
       "description": "Unknown/mangled field access",
       "line": 37,
       "match": "._8_4_",
+      "severity": "mild",
       "text": "if ((int *)local_2c._8_4_ != (int *)0x0) {",
       "type": "unknown_field"
     },
@@ -312,6 +318,7 @@
       "description": "Unknown/mangled field access",
       "line": 38,
       "match": "._8_4_",
+      "severity": "mild",
       "text": "(**(code **)(*(int *)local_2c._8_4_ + 8))(local_2c._8_4_);",
       "type": "unknown_field"
     },
@@ -319,6 +326,7 @@
       "description": "Unknown/mangled field access",
       "line": 38,
       "match": "._8_4_",
+      "severity": "mild",
       "text": "(**(code **)(*(int *)local_2c._8_4_ + 8))(local_2c._8_4_);",
       "type": "unknown_field"
     },
@@ -326,6 +334,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 38,
       "match": "code *",
+      "severity": "moderate",
       "text": "(**(code **)(*(int *)local_2c._8_4_ + 8))(local_2c._8_4_);",
       "type": "unresolved_funcptr"
     },
@@ -333,6 +342,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 42,
       "match": "code *",
+      "severity": "moderate",
       "text": "(**(code **)*puStack_20)(puStack_20,&g_IID_IKsPropertySet,&g_DirectSoundPropertySet);",
       "type": "unresolved_funcptr"
     },
@@ -340,6 +350,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 44,
       "match": "code *",
+      "severity": "moderate",
       "text": "(**(code **)(*(int *)DStack_40.lpwfxFormat + 8))(DStack_40.lpwfxFormat);",
       "type": "unresolved_funcptr"
     },
@@ -347,6 +358,7 @@
       "description": "Unknown/mangled field access",
       "line": 47,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "if ((int *)local_2c._0_4_ != (int *)0x0) {",
       "type": "unknown_field"
     },
@@ -354,6 +366,7 @@
       "description": "Unknown/mangled field access",
       "line": 48,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "(**(code **)(*(int *)local_2c._0_4_ + 8))(local_2c._0_4_);",
       "type": "unknown_field"
     },
@@ -361,6 +374,7 @@
       "description": "Unknown/mangled field access",
       "line": 48,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "(**(code **)(*(int *)local_2c._0_4_ + 8))(local_2c._0_4_);",
       "type": "unknown_field"
     },
@@ -368,6 +382,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 48,
       "match": "code *",
+      "severity": "moderate",
       "text": "(**(code **)(*(int *)local_2c._0_4_ + 8))(local_2c._0_4_);",
       "type": "unresolved_funcptr"
     }

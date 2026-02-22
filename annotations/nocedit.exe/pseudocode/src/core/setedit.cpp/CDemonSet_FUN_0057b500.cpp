@@ -35,11 +35,11 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_0057b500(CDemonSet *this_ptr)
       iVar3 = core_setedit_cpp_CDemonSet_FUN_0057ae50(this_ptr);
       *(uint *)(unaff_EDI + 0x1cb4) = 1;
       if (iVar3 != 0) {
-        core_set_cpp_CDemonSet_FUN_0056d2d0(this_ptr);
+        core_set_cpp_CDemonSet_clearLights_FUN_0056d2d0(this_ptr);
         iVar3 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                           (g_CEditorToolsPtr,"Precompute light visibility?");
         if (iVar3 != 0) {
-          core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(this_ptr);
+          core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(this_ptr,in_stack_00000008);
         }
         core_set_cpp_CDemonSet_initScene_FUN_0056aa10(this_ptr);
         return;

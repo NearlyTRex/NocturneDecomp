@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 65,
     "suspect_count": 7,
     "suspect_types": [
@@ -280,6 +281,7 @@
       "description": "Complex pointer cast",
       "line": 13,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "if ((*(float *)((int)bounds_struct + 0x14) < cylinder->bottom_y) &&",
       "type": "pointer_cast"
     },
@@ -287,6 +289,7 @@
       "description": "Complex pointer cast",
       "line": 14,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "(cylinder->top_y < *(float *)((int)bounds_struct + 0x18))) {",
       "type": "pointer_cast"
     },
@@ -294,6 +297,7 @@
       "description": "Complex pointer cast",
       "line": 17,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "fVar2 = *(float *)((int)bounds_struct + 0x1c) + cylinder->radius;",
       "type": "pointer_cast"
     },
@@ -301,6 +305,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 31,
       "match": "SQRT",
+      "severity": "mild",
       "text": "fVar3 = SQRT(fVar5 - fVar3);",
       "type": "decompiler_intrinsic"
     },
@@ -308,6 +313,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 34,
       "match": "ABS",
+      "severity": "mild",
       "text": "if (ABS(cylinder->dir_x) <= ABS(cylinder->dir_z)) {",
       "type": "decompiler_intrinsic"
     },
@@ -315,6 +321,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 34,
       "match": "ABS",
+      "severity": "mild",
       "text": "if (ABS(cylinder->dir_x) <= ABS(cylinder->dir_z)) {",
       "type": "decompiler_intrinsic"
     },
@@ -322,6 +329,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 54,
       "match": "SQRT",
+      "severity": "mild",
       "text": "fVar2 = SQRT(fVar1) - fVar2;",
       "type": "decompiler_intrinsic"
     }

@@ -125,6 +125,7 @@
     "cross_reference_count": 2,
     "function_call_count": 91,
     "global_count": 146,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 1142,
     "suspect_count": 44,
     "suspect_types": [
@@ -2720,6 +2721,7 @@
       "description": "Deadcode elimination delayed",
       "line": 4,
       "match": "WARNING: Restarted to delay deadcode elimination",
+      "severity": "mild",
       "text": "/* WARNING: Restarted to delay deadcode elimination for space: stack */",
       "type": "warning_deadcode_restart"
     },
@@ -2727,6 +2729,7 @@
       "description": "Undefined global data reference",
       "line": 204,
       "match": "DAT_0366b64c",
+      "severity": "mild",
       "text": "if ((DAT_0366b64c & 1) == 0) {",
       "type": "undefined_data"
     },
@@ -2734,6 +2737,7 @@
       "description": "Undefined global data reference",
       "line": 205,
       "match": "DAT_0366b64c",
+      "severity": "mild",
       "text": "DAT_0366b64c = DAT_0366b64c | 1;",
       "type": "undefined_data"
     },
@@ -2741,6 +2745,7 @@
       "description": "Undefined global data reference",
       "line": 205,
       "match": "DAT_0366b64c",
+      "severity": "mild",
       "text": "DAT_0366b64c = DAT_0366b64c | 1;",
       "type": "undefined_data"
     },
@@ -2748,6 +2753,7 @@
       "description": "Unknown/mangled field access",
       "line": 211,
       "match": "._8_4_",
+      "severity": "mild",
       "text": "local_200._8_4_ = 0.0;",
       "type": "unknown_field"
     },
@@ -2755,6 +2761,7 @@
       "description": "Unknown/mangled field access",
       "line": 212,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_200._4_4_ = 0.0;",
       "type": "unknown_field"
     },
@@ -2762,6 +2769,7 @@
       "description": "Unknown/mangled field access",
       "line": 213,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_200._0_4_ = 0.0;",
       "type": "unknown_field"
     },
@@ -2769,6 +2777,7 @@
       "description": "Unknown/mangled field access",
       "line": 216,
       "match": "._12_4_",
+      "severity": "mild",
       "text": "local_200._12_4_ = 0.0;",
       "type": "unknown_field"
     },
@@ -2776,6 +2785,7 @@
       "description": "Undefined global data reference",
       "line": 218,
       "match": "DAT_0366b64c",
+      "severity": "mild",
       "text": "if ((DAT_0366b64c & 2) == 0) {",
       "type": "undefined_data"
     },
@@ -2783,6 +2793,7 @@
       "description": "Undefined global data reference",
       "line": 219,
       "match": "DAT_0366b64c",
+      "severity": "mild",
       "text": "DAT_0366b64c = DAT_0366b64c | 2;",
       "type": "undefined_data"
     },
@@ -2790,6 +2801,7 @@
       "description": "Undefined global data reference",
       "line": 219,
       "match": "DAT_0366b64c",
+      "severity": "mild",
       "text": "DAT_0366b64c = DAT_0366b64c | 2;",
       "type": "undefined_data"
     },
@@ -2797,6 +2809,7 @@
       "description": "Complex pointer cast",
       "line": 466,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "if ((*(byte *)((int)&(pSVar3->projected_vertex).screen_x + iVar15 + 3) & 0x80) == 0) {",
       "type": "pointer_cast"
     },
@@ -2804,6 +2817,7 @@
       "description": "Complex pointer cast",
       "line": 467,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "iVar4 = *(int *)((int)&(pSVar3->projected_vertex).screen_x + iVar15);",
       "type": "pointer_cast"
     },
@@ -2811,6 +2825,7 @@
       "description": "Complex pointer cast",
       "line": 468,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "local_68 = *(int *)((int)&(pSVar3->projected_vertex).screen_y + iVar15) >> 0x10;",
       "type": "pointer_cast"
     },
@@ -2818,6 +2833,7 @@
       "description": "Complex pointer cast",
       "line": 491,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar16 = (CMatrix3x4f *)((int)pCVar16 + ((uint)bVar20 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -2825,6 +2841,7 @@
       "description": "Complex pointer cast",
       "line": 492,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar18 = (CMatrix3x4f *)((int)pCVar18 + ((uint)bVar20 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -2832,6 +2849,7 @@
       "description": "Unknown/mangled field access",
       "line": 496,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_200._0_4_ = pCVar12->x;",
       "type": "unknown_field"
     },
@@ -2839,6 +2857,7 @@
       "description": "Unknown/mangled field access",
       "line": 497,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_200._4_4_ = pCVar12->y;",
       "type": "unknown_field"
     },
@@ -2846,6 +2865,7 @@
       "description": "Unknown/mangled field access",
       "line": 498,
       "match": "._8_4_",
+      "severity": "mild",
       "text": "local_200._8_4_ = pCVar12->z;",
       "type": "unknown_field"
     },
@@ -2853,6 +2873,7 @@
       "description": "Unknown/mangled field access",
       "line": 503,
       "match": "._12_4_",
+      "severity": "mild",
       "text": "local_200._12_4_ = pCVar12->x;",
       "type": "unknown_field"
     },
@@ -2860,6 +2881,7 @@
       "description": "Direct stack address reference",
       "line": 515,
       "match": "&stack0xffffcc64",
+      "severity": "moderate",
       "text": "(this_ptr,(SPose *)&stack0xffffcc64);",
       "type": "stack_ref"
     },
@@ -2867,6 +2889,7 @@
       "description": "Undefined global data reference",
       "line": 517,
       "match": "DAT_036644d8",
+      "severity": "mild",
       "text": "(this_ptr,(SPose *)&DAT_036644d8);",
       "type": "undefined_data"
     },
@@ -2874,6 +2897,7 @@
       "description": "Direct stack address reference",
       "line": 524,
       "match": "&stack0xffffcc64",
+      "severity": "moderate",
       "text": "(this_ptr,(SPose *)&stack0xffffcc64);",
       "type": "stack_ref"
     },
@@ -2881,6 +2905,7 @@
       "description": "Undefined global data reference",
       "line": 528,
       "match": "DAT_036712e0",
+      "severity": "mild",
       "text": "DAT_036712e0 = DAT_036712e0 + 1;",
       "type": "undefined_data"
     },
@@ -2888,6 +2913,7 @@
       "description": "Undefined global data reference",
       "line": 528,
       "match": "DAT_036712e0",
+      "severity": "mild",
       "text": "DAT_036712e0 = DAT_036712e0 + 1;",
       "type": "undefined_data"
     },
@@ -2895,6 +2921,7 @@
       "description": "Undefined global data reference",
       "line": 529,
       "match": "DAT_036712e8",
+      "severity": "mild",
       "text": "_sprintf(&DAT_036712e8,\"noc%d.pcx\");",
       "type": "undefined_data"
     },
@@ -2902,6 +2929,7 @@
       "description": "Undefined global data reference",
       "line": 530,
       "match": "DAT_036712e8",
+      "severity": "mild",
       "text": "engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(&DAT_036712e8);",
       "type": "undefined_data"
     },
@@ -2909,6 +2937,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 538,
       "match": "NAN",
+      "severity": "mild",
       "text": "local_154.x = (int)NAN;",
       "type": "decompiler_intrinsic"
     },
@@ -2916,6 +2945,7 @@
       "description": "Complex pointer cast",
       "line": 539,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)&local_154 + (uint)bVar20 * -8 + 4) = (&FLOAT_00681a00)[(uint)bVar20 * -2];",
       "type": "pointer_cast"
     },
@@ -2923,6 +2953,7 @@
       "description": "Complex pointer cast",
       "line": 540,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)&local_154 + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8) =",
       "type": "pointer_cast"
     },
@@ -2930,6 +2961,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 541,
       "match": "NAN",
+      "severity": "mild",
       "text": "(&NAN)[(uint)bVar20 * -2 + (uint)bVar20 * -2];",
       "type": "decompiler_intrinsic"
     },
@@ -2937,6 +2969,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 591,
       "match": "3.57331e-43",
+      "severity": "mild",
       "text": "fVar9 = 3.57331e-43;",
       "type": "suspect_float"
     },
@@ -2944,6 +2977,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 592,
       "match": "SUB42",
+      "severity": "mild",
       "text": "uVar21 = SUB42(g_CEditorToolsPtr,0);",
       "type": "decompiler_intrinsic"
     },
@@ -2951,6 +2985,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 600,
       "match": "SUB42",
+      "severity": "mild",
       "text": "uVar21 = SUB42(g_CEditorToolsPtr,0);",
       "type": "decompiler_intrinsic"
     },
@@ -2958,6 +2993,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 604,
       "match": "CONCAT22",
+      "severity": "mild",
       "text": "((CEditorTools *)CONCAT22(uVar22,uVar21),2.0,(int)fVar9);",
       "type": "decompiler_intrinsic"
     },
@@ -2965,6 +3001,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 627,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_18 = (float)(int)ROUND(ROUND(fVar9));",
       "type": "decompiler_intrinsic"
     },
@@ -2972,6 +3009,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 627,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_18 = (float)(int)ROUND(ROUND(fVar9));",
       "type": "decompiler_intrinsic"
     },
@@ -2979,6 +3017,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 701,
       "match": "SQRT",
+      "severity": "mild",
       "text": "if (0.0 < SQRT(local_110 * local_110 + local_118 * local_118 + local_114 * local_114)) {",
       "type": "decompiler_intrinsic"
     },
@@ -2986,6 +3025,7 @@
       "description": "Complex pointer cast",
       "line": 716,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar16 = (CMatrix3x4f *)((int)pCVar16 + ((uint)bVar20 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -2993,6 +3033,7 @@
       "description": "Complex pointer cast",
       "line": 717,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar18 = (CMatrix3x4f *)((int)pCVar18 + ((uint)bVar20 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -3000,6 +3041,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 752,
       "match": "SQRT",
+      "severity": "mild",
       "text": "(0.0 < SQRT(local_13c.z * local_13c.z +",
       "type": "decompiler_intrinsic"
     },
@@ -3007,6 +3049,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 854,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_38 = (float)(int)ROUND(ROUND(pSVar10->exit_forward_to_frame));",
       "type": "decompiler_intrinsic"
     },
@@ -3014,6 +3057,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 854,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_38 = (float)(int)ROUND(ROUND(pSVar10->exit_forward_to_frame));",
       "type": "decompiler_intrinsic"
     },
@@ -3021,6 +3065,7 @@
       "description": "Undefined global data reference",
       "line": 1048,
       "match": "DAT_036644d8",
+      "severity": "mild",
       "text": "(this_ptr,(SPose *)&DAT_036644d8);",
       "type": "undefined_data"
     }

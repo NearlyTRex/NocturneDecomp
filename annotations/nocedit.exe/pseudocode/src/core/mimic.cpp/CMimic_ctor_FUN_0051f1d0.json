@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 7,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 58,
     "suspect_count": 8,
     "suspect_types": [
@@ -161,6 +162,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 20,
       "match": "pCVar7[-100].",
+      "severity": "mild",
       "text": "*(CDemonActor_vtable **)pCVar7[-100].models[0].textures[0xe].textures[0].texture_name =",
       "type": "negative_offset"
     },
@@ -168,6 +170,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 31,
       "match": "pCVar7[-1].",
+      "severity": "mild",
       "text": "pCVar7[-1].models[1].textures[0x13].textures[2].base.count = 0;",
       "type": "negative_offset"
     },
@@ -175,6 +178,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 32,
       "match": "pCVar7[-1].",
+      "severity": "mild",
       "text": "pcVar9 = pCVar7[-1].models[1].textures[0x13].textures[2].texture_name + 4;",
       "type": "negative_offset"
     },
@@ -182,6 +186,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 33,
       "match": "pCVar7[-1].",
+      "severity": "mild",
       "text": "pSVar2 = pCVar7[-1].models[1].textures + 0x13;",
       "type": "negative_offset"
     },
@@ -189,6 +194,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 49,
       "match": "pCVar7[-100].",
+      "severity": "mild",
       "text": "pCVar7[-100].models[0].textures[0xd].textures[0].base.count = 0x10000;",
       "type": "negative_offset"
     },
@@ -196,6 +202,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 50,
       "match": "pCVar7[-100].",
+      "severity": "mild",
       "text": "pSVar2 = pCVar7[-100].models[0].textures;",
       "type": "negative_offset"
     },
@@ -203,6 +210,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 55,
       "match": "pCVar7[-100].",
+      "severity": "mild",
       "text": "pSVar2 = pCVar7[-100].models[0].textures + 0xd;",
       "type": "negative_offset"
     },
@@ -210,6 +218,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 60,
       "match": "pCVar7[-100].",
+      "severity": "mild",
       "text": "return (CMimic *)&pCVar7[-100].models[0].textures[9].textures[1].base.count;",
       "type": "negative_offset"
     }

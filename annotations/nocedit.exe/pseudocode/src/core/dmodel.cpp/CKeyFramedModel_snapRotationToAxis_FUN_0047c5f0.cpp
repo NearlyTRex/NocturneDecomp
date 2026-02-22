@@ -95,7 +95,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0(CKe
   iVar2 = 0;
   while (iVar1 = this_ptr->vertex_count * this_ptr->frame_count,
         iVar1 - local_24 != 0 && local_24 <= iVar1) {
-    piVar3 = (int *)((int)this_ptr->vertex_list + iVar2);
+    piVar3 = (int *)((int)&this_ptr->vertex_list->x + iVar2);
     piVar4 = piVar3 + (uint)bVar5 * -2 + 1;
     local_88 = *piVar3;
     *(int *)((int)&stack0xffffff7c + (uint)bVar5 * -8) = *piVar4;
@@ -110,17 +110,17 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0(CKe
                                    (float)local_88 * local_28 + (float)local_84 * local_40 +
                                   (float)0.5));
     local_20 = (int)ROUND(ROUND(local_7c));
-    *(int *)((int)this_ptr->vertex_list + iVar2) = local_20;
+    *(int *)((int)&this_ptr->vertex_list->x + iVar2) = local_20;
     local_7c = floor
                          ((double)(local_1c * local_30 + local_64 * local_18 + local_68 * local_44 +
                                   (float)0.5));
     local_20 = (int)ROUND(ROUND(local_7c));
-    *(int *)((int)this_ptr->vertex_list + iVar2 + 4) = local_20;
+    *(int *)((int)&this_ptr->vertex_list->y + iVar2) = local_20;
     local_7c = floor
                          ((double)(local_1c * local_38 + local_64 * local_2c + local_68 * local_34 +
                                   (float)0.5));
     local_24 = local_24 + 1;
-    *(int *)((int)this_ptr->vertex_list + iVar2 + 8) = (int)ROUND(ROUND(local_7c));
+    *(int *)((int)&this_ptr->vertex_list->z + iVar2) = (int)ROUND(ROUND(local_7c));
     iVar2 = iVar2 + 0xc;
   }
   return;

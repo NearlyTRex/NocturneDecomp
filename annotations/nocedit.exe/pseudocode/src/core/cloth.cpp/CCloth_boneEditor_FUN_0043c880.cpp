@@ -125,7 +125,7 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
         iVar5 = 0;
         pCVar8 = &local_60->offset_pos;
         do {
-          piVar6 = (int *)((int)(this_ptr->model).vertex_list + iVar5);
+          piVar6 = (int *)((int)&((this_ptr->model).vertex_list)->x + iVar5);
           iVar2 = iVar2 + 1;
           *piVar6 = (int)ROUND(pCVar8->x * 256.0f);
           piVar6[1] = (int)ROUND(pCVar8->y * 256.0f);

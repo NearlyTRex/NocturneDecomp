@@ -84,7 +84,7 @@
 ;
 ; XREF[2]:
 ;   core_lightgun.cpp_CLightGun_fire_FUN_00505c70 at 00505f4c
-;   core_set.cpp_CDemonSet_FUN_0056d4a0 at 0056d664
+;   core_set.cpp_CDemonSet_gatherVisibleLights_FUN_0056d4a0 at 0056d664
 ;
 ; Referenced Globals:
 ;   double g_CameraFixedPointScale_0061a332 = 256

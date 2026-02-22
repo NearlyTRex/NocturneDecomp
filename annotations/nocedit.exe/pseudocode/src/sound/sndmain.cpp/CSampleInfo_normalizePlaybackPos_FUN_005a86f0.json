@@ -31,15 +31,18 @@
   },
   "complexity": {
     "assembly_lines": 90,
-    "complexity_score": 143,
+    "complexity_score": 173,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 28,
-    "suspect_count": 10,
+    "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
+      "double_reconstruction",
       "stack_param",
+      "sub84_truncation",
       "unknown_field"
     ],
     "total_lines": 118
@@ -181,6 +184,7 @@
       "description": "Unresolved stack parameter",
       "line": 8,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "CSfxSample *in_stack_00000004;",
       "type": "stack_param"
     },
@@ -188,6 +192,7 @@
       "description": "Unresolved stack parameter",
       "line": 9,
       "match": "in_stack_ffffffe0",
+      "severity": "moderate",
       "text": "uint in_stack_ffffffe0;",
       "type": "stack_param"
     },
@@ -195,6 +200,7 @@
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_ffffffe0",
+      "severity": "moderate",
       "text": "(this_ptr,position,2,in_stack_ffffffe0);",
       "type": "stack_param"
     },
@@ -202,6 +208,7 @@
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "iVar1 = sound_sndmain_cpp_CSfxSample_getLoopMode_FUN_005a87d0(in_stack_00000004);",
       "type": "stack_param"
     },
@@ -209,13 +216,23 @@
       "description": "Unknown/mangled field access",
       "line": 26,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "position._0_4_ = (uint)((ulonglong)dVar2 >> 0x20);",
       "type": "unknown_field"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 27,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "this_ptr = SUB84(dVar2,0);",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 27,
       "match": "SUB84",
+      "severity": "mild",
       "text": "this_ptr = SUB84(dVar2,0);",
       "type": "decompiler_intrinsic"
     },
@@ -223,6 +240,7 @@
       "description": "Unresolved stack parameter",
       "line": 29,
       "match": "in_stack_ffffffe0",
+      "severity": "moderate",
       "text": "(this_ptr,(double)CONCAT44(2,position._0_4_),position._4_4_,in_stack_ffffffe0);",
       "type": "stack_param"
     },
@@ -230,6 +248,7 @@
       "description": "Unknown/mangled field access",
       "line": 29,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "(this_ptr,(double)CONCAT44(2,position._0_4_),position._4_4_,in_stack_ffffffe0);",
       "type": "unknown_field"
     },
@@ -237,13 +256,23 @@
       "description": "Unknown/mangled field access",
       "line": 29,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "(this_ptr,(double)CONCAT44(2,position._0_4_),position._4_4_,in_stack_ffffffe0);",
       "type": "unknown_field"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 29,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(this_ptr,(double)CONCAT44(2,position._0_4_),position._4_4_,in_stack_ffffffe0);",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 29,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(this_ptr,(double)CONCAT44(2,position._0_4_),position._4_4_,in_stack_ffffffe0);",
       "type": "decompiler_intrinsic"
     }

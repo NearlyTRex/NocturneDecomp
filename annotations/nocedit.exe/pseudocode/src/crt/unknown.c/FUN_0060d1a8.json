@@ -5,6 +5,7 @@
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 7,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 22,
     "suspect_count": 6,
     "suspect_types": [
@@ -131,6 +132,7 @@
       "description": "Inferred register parameter",
       "line": 8,
       "match": "in_DS",
+      "severity": "mild",
       "text": "ushort in_DS;",
       "type": "register_param"
     },
@@ -138,6 +140,7 @@
       "description": "Complex pointer cast",
       "line": 16,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pTVar1->signal_handlers + iVar2 + -4) =",
       "type": "pointer_cast"
     },
@@ -145,6 +148,7 @@
       "description": "Complex pointer cast",
       "line": 17,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)g_GlobalSignalHandlers + iVar2);",
       "type": "pointer_cast"
     },
@@ -152,6 +156,7 @@
       "description": "Complex pointer cast",
       "line": 18,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pTVar1 + (uint)bVar4 * -8 + iVar2 + 0x5c) =",
       "type": "pointer_cast"
     },
@@ -159,6 +164,7 @@
       "description": "Inferred register parameter",
       "line": 24,
       "match": "in_DS",
+      "severity": "mild",
       "text": "return in_DS;",
       "type": "register_param"
     },

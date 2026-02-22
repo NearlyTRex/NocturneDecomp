@@ -23,7 +23,7 @@
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
 ;   core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850
-;   core_set.cpp_CDemonSet_FUN_0056d380
+;   core_set.cpp_CDemonSet_setLightingParameters_FUN_0056d380
 ;   engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0
 ;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
@@ -95,8 +95,8 @@ section .text
     PUSH EBX                            ; 004c1911
     MOV ESI,dword ptr [0x006810c8]      ; 004c1912 | g_CDemonSetPtr
     PUSH ESI                            ; 004c1918 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_0056d380 ; 004c1919
-        ;   XREF to: 0056d380 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d380(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_setLightingParameters_FUN_0056d380 ; 004c1919
+        ;   XREF to: 0056d380 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setLightingParameters_FUN_0056d380(CDemonSet * this_ptr, CVector3f * position, UOrientationVector * orientation, CVector3f * aabb_min, ...)
     ADD ESP,0x18                        ; 004c191e
     PUSH -0x1                           ; 004c1921
     PUSH 0x0                            ; 004c1923
@@ -104,7 +104,7 @@ section .text
     MOV EDI,dword ptr [EBX + 0x44]      ; 004c1927
     PUSH EDI                            ; 004c192a
     CALL core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850 ; 004c192b
-        ;   XREF to: 00477850 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850(CKeyFramedModel * this_ptr, CKeyFramedModelInstance * instance, int frame_index, int render_flags)
+        ;   XREF to: 00477850 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850(CKeyFramedModel * this_ptr, int frame_index, CKeyFramedModelInstance * instance, int render_flags)
     ADD ESP,0x10                        ; 004c1930
     POP ESI                             ; 004c1933
     POP EDI                             ; 004c1934

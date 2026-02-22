@@ -55,7 +55,7 @@ void __cdecl core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(CDemonSet *this_ptr,ch
     _fprintf(file,"0,none\n");
   }
   else {
-    _fprintf(file,"%d,%s\n",this_ptr->sky_type);
+    _fprintf(file,"%d,%s\n",this_ptr->sky_brightness);
   }
   _fprintf(file,"useWorldGeometryFlag,worldGeometryName\n");
   if (this_ptr->use_world_geometry_flag == 0) {

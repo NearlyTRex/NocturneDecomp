@@ -17,6 +17,7 @@
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 16,
+    "max_suspect_severity": "severe",
     "pseudocode_lines": 82,
     "suspect_count": 2,
     "suspect_types": [
@@ -259,6 +260,7 @@
       "description": "Decompiler iteration limit exceeded",
       "line": 2,
       "match": "WARNING: Exceeded maximum restarts with more pending",
+      "severity": "severe",
       "text": "/* WARNING: Exceeded maximum restarts with more pending */",
       "type": "warning_max_restarts"
     },
@@ -266,6 +268,7 @@
       "description": "Complex pointer cast",
       "line": 59,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar5 = (uint *)((int)device_guid + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     }

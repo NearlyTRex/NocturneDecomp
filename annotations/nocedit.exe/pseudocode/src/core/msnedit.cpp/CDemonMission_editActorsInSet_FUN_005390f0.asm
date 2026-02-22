@@ -446,13 +446,13 @@ section .text
     AND EBX,0xff                        ; 00539518
     PUSH EAX                            ; 0053951e | g_CDemonSetInstance
     MOV dword ptr [EAX + 0x15ac90],EBX  ; 0053951f | g_CDemonSetInstance.disable_sky_rendering
-    CALL core_set.cpp_CDemonSet_FUN_0056c1a0 ; 00539525
-        ;   XREF to: 0056c1a0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056c1a0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0 ; 00539525
+        ;   XREF to: 0056c1a0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0(CDemonSet * this_ptr, int skip_prerender)
     ADD ESP,0x8                         ; 0053952a
     MOV EBX,dword ptr [0x006810c8]      ; 0053952d | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EBX                            ; 00539533 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_0056be80 ; 00539534
-        ;   XREF to: 0056be80 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056be80(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_renderStaticLights_FUN_0056be80 ; 00539534
+        ;   XREF to: 0056be80 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderStaticLights_FUN_0056be80(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00539539
     PUSH 0x32758e4                      ; 0053953c | g_CDemonCameraInstance
     CALL core_dcamera.cpp_CDemonCamera_restoreZBufferRectArray_FUN_0044c860 ; 00539541
@@ -1312,8 +1312,8 @@ section .text
     MOV EDX,dword ptr [0x006810c8]      ; 00539e00 | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_00539e00
     PUSH EDX                            ; 00539e06 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_0056d2d0 ; 00539e07
-        ;   XREF to: 0056d2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d2d0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0 ; 00539e07
+        ;   XREF to: 0056d2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00539e0c
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 00539e0f
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
@@ -1716,18 +1716,18 @@ section .text
     PUSH -0x1                           ; 0053a340
     MOV EDI,dword ptr [0x006810c8]      ; 0053a342 | g_CDemonSetPtr
     PUSH EDI                            ; 0053a348 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_0056fbd0 ; 0053a349
-        ;   XREF to: 0056fbd0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056fbd0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0 ; 0053a349
+        ;   XREF to: 0056fbd0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0(CDemonSet * this_ptr, uint dirty_flags_mask)
     ADD ESP,0x8                         ; 0053a34e
     MOV EAX,[0x006810c8]                ; 0053a351 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EAX                            ; 0053a356 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_0056cd60 ; 0053a357
-        ;   XREF to: 0056cd60 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056cd60(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_renderOpaqueActors_FUN_0056cd60 ; 0053a357
+        ;   XREF to: 0056cd60 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderOpaqueActors_FUN_0056cd60(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0053a35c
     MOV EDX,dword ptr [0x006810c8]      ; 0053a35f | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EDX                            ; 0053a365 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_0056cf00 ; 0053a366
-        ;   XREF to: 0056cf00 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056cf00(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_renderTransparentActors_FUN_0056cf00 ; 0053a366
+        ;   XREF to: 0056cf00 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderTransparentActors_FUN_0056cf00(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0053a36b
     MOV ECX,dword ptr [0x0067a3d0]      ; 0053a36e | g_CFireEffectInstance | g_CFireEffectPtr
     PUSH ECX                            ; 0053a374 | g_CFireEffectInstance

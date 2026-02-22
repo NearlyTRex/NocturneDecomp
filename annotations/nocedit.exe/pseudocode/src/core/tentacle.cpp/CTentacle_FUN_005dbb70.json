@@ -10,6 +10,7 @@
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 4,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 45,
     "suspect_count": 11,
     "suspect_types": [
@@ -192,6 +193,7 @@
       "description": "Type propagation did not converge",
       "line": 2,
       "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
     },
@@ -199,6 +201,7 @@
       "description": "Unaffected register variable",
       "line": 8,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "float *unaff_ESI;",
       "type": "unaffected_reg"
     },
@@ -206,6 +209,7 @@
       "description": "Complex pointer cast",
       "line": 27,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -213,6 +217,7 @@
       "description": "Complex pointer cast",
       "line": 28,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -220,6 +225,7 @@
       "description": "Complex pointer cast",
       "line": 38,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -227,6 +233,7 @@
       "description": "Complex pointer cast",
       "line": 39,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -234,6 +241,7 @@
       "description": "Unaffected register variable",
       "line": 44,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "*unaff_ESI = pCVar2->m[0].w;",
       "type": "unaffected_reg"
     },
@@ -241,6 +249,7 @@
       "description": "Complex pointer cast",
       "line": 45,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -248,6 +257,7 @@
       "description": "Unaffected register variable",
       "line": 46,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar4 * -2 + 1;",
       "type": "unaffected_reg"
     },
@@ -255,6 +265,7 @@
       "description": "Unaffected register variable",
       "line": 46,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar4 * -2 + 1;",
       "type": "unaffected_reg"
     },

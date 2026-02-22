@@ -26,13 +26,13 @@ void __cdecl core_mimic_cpp_CMimic_FUN_0051f930(CMimic *this_ptr)
   SPose *pSVar13;
   UOrientationVector *pUVar14;
   CMimic *pCVar15;
-  CVector3i **ppCVar16;
+  CVector3i *pCVar16;
   uint *puVar17;
   uint *puVar18;
   CMatrix3x4f *pCVar19;
   CMatrix3x4f *pCVar20;
   CMatrix3x4f *pCVar21;
-  CVector3i **ppCVar22;
+  CVector3i *pCVar22;
   uint *puVar23;
   uint *puVar24;
   CMatrix3x4f *pCVar25;
@@ -104,17 +104,17 @@ void __cdecl core_mimic_cpp_CMimic_FUN_0051f930(CMimic *this_ptr)
   }
   (this_ptr->base).base.model.cached_skinned_lod_index = -1;
   pCVar3 = (g_HeroActors[g_LocalHeroIndex]->base).cloth_list.cloths[0];
-  ppCVar16 = (pCVar3->model).vertex_list;
-  ppCVar22 = (this_ptr->cloth).model.vertex_list;
+  pCVar16 = (pCVar3->model).vertex_list;
+  pCVar22 = (this_ptr->cloth).model.vertex_list;
   for (uVar10 = (uint)((pCVar3->model).vertex_count * 0xc) >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
-    *ppCVar22 = *ppCVar16;
-    ppCVar16 = ppCVar16 + (uint)bVar26 * -2 + 1;
-    ppCVar22 = ppCVar22 + (uint)bVar26 * -2 + 1;
+    pCVar22->x = pCVar16->x;
+    pCVar16 = (CVector3i *)((int)pCVar16 + ((uint)bVar26 * -2 + 1) * 4);
+    pCVar22 = (CVector3i *)((int)pCVar22 + (uint)bVar26 * -8 + 4);
   }
   for (iVar7 = 0; iVar7 != 0; iVar7 = iVar7 + -1) {
-    *(byte *)ppCVar22 = *(byte *)ppCVar16;
-    ppCVar16 = (CVector3i **)((int)ppCVar16 + (uint)bVar26 * -2 + 1);
-    ppCVar22 = (CVector3i **)((int)ppCVar22 + (uint)bVar26 * -2 + 1);
+    *(char *)&pCVar22->x = (char)pCVar16->x;
+    pCVar16 = (CVector3i *)((int)pCVar16 + (uint)bVar26 * -2 + 1);
+    pCVar22 = (CVector3i *)((int)pCVar22 + (uint)bVar26 * -2 + 1);
   }
   pCVar4 = this_ptr->mirror_plane_actor;
   if (pCVar4 != (CDemonActor *)0x0) {

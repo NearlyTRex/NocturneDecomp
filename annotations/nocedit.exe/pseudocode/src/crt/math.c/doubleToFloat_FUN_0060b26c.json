@@ -1,16 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 127,
+    "complexity_score": 142,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 22,
-    "suspect_count": 9,
+    "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
-      "special_crt_function"
+      "special_crt_function",
+      "sub84_truncation"
     ],
     "total_lines": 59
   },
@@ -97,9 +99,18 @@
   },
   "suspects": [
     {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 11,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "uVar4 = SUB84(val,0);",
+      "type": "sub84_truncation"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 11,
       "match": "SUB84",
+      "severity": "mild",
       "text": "uVar4 = SUB84(val,0);",
       "type": "decompiler_intrinsic"
     },
@@ -107,6 +118,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 13,
       "match": "CARRY4",
+      "severity": "mild",
       "text": "uVar1 = (uint)(CARRY4(uVar3,uVar3) || CARRY4(uVar3 * 2,(uint)CARRY4(uVar4,uVar4))) << 0x1f;",
       "type": "decompiler_intrinsic"
     },
@@ -114,6 +126,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 13,
       "match": "CARRY4",
+      "severity": "mild",
       "text": "uVar1 = (uint)(CARRY4(uVar3,uVar3) || CARRY4(uVar3 * 2,(uint)CARRY4(uVar4,uVar4))) << 0x1f;",
       "type": "decompiler_intrinsic"
     },
@@ -121,6 +134,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 13,
       "match": "CARRY4",
+      "severity": "mild",
       "text": "uVar1 = (uint)(CARRY4(uVar3,uVar3) || CARRY4(uVar3 * 2,(uint)CARRY4(uVar4,uVar4))) << 0x1f;",
       "type": "decompiler_intrinsic"
     },
@@ -128,6 +142,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 15,
       "match": "CARRY4",
+      "severity": "mild",
       "text": "uVar4 = uVar3 * 2 + (uint)CARRY4(uVar4,uVar4) + (uint)(0xdfffffff < uVar4 * 2);",
       "type": "decompiler_intrinsic"
     },
@@ -135,6 +150,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 20,
       "match": "CARRY4",
+      "severity": "mild",
       "text": "return (float)(((uVar4 + 0x90000000) * 2 + (uint)CARRY4(uVar2,uVar2)) * 2 +",
       "type": "decompiler_intrinsic"
     },
@@ -142,6 +158,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 21,
       "match": "CARRY4",
+      "severity": "mild",
       "text": "(uint)CARRY4(uVar2 * 2,uVar2 * 2) | uVar1);",
       "type": "decompiler_intrinsic"
     },

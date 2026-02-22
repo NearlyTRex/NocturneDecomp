@@ -1,0 +1,917 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 340,
+    "complexity_score": 678,
+    "cross_reference_count": 1,
+    "function_call_count": 8,
+    "global_count": 17,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 143,
+    "suspect_count": 51,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "param_count_too_few",
+      "pointer_cast",
+      "stack_alignment_array",
+      "unnamed_param"
+    ],
+    "total_lines": 483
+  },
+  "cross_references": [
+    {
+      "addr": "00570870",
+      "from_addr": "005708d3",
+      "name": "core_set.cpp_CDemonSet_renderFaceListOrEnvMap_FUN_00570870",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005702b0",
+    "address_range": [
+      [
+        "005702b0",
+        "005706f4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0",
+    "signature": "void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0(CDemonSet *this_ptr,void *param_2,int count,int alpha)"
+  },
+  "function_calls": [
+    {
+      "addr": "0048db80",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80"
+    },
+    {
+      "addr": "0048c760",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760"
+    },
+    {
+      "addr": "0048b1e0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_renderPremium_FUN_0048b1e0"
+    },
+    {
+      "addr": "0048b970",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_renderUltraPremium_FUN_0048b970"
+    },
+    {
+      "addr": "0048ca50",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50"
+    },
+    {
+      "addr": "0048ca60",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60"
+    },
+    {
+      "addr": "00501bc0",
+      "is_variadic": false,
+      "name": "engine_keyframe.c_calculateSurfaceNormal_FUN_00501bc0"
+    },
+    {
+      "addr": "0050d9f0",
+      "is_variadic": false,
+      "name": "engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00662850",
+      "name": "FLOAT_00662850",
+      "type": "float",
+      "value": "256"
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr2",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "006793b4",
+      "name": "g_CurrentAlphaValue",
+      "type": "int",
+      "value": "0xff"
+    },
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "006813e4",
+      "name": "SMRGLTextureBasic_006813e4",
+      "type": "SMRGLTextureBasic",
+      "value": null
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02d051f4",
+      "name": "g_PerspectiveReciprocal",
+      "type": "float",
+      "value": null
+    },
+    {
+      "addr": "02d81c90",
+      "name": "DAT_02d81c90",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032c1c68",
+      "name": "g_LightingReferencePosition",
+      "type": "CVector3f",
+      "value": null
+    },
+    {
+      "addr": "032c1c6c",
+      "name": "g_LightingReferencePosition.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032c1c70",
+      "name": "g_LightingReferencePosition.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032cd84c",
+      "name": "g_TransformedVertexArray",
+      "type": "CVector3i[20000]",
+      "value": null
+    },
+    {
+      "addr": "032cd850",
+      "name": "DAT_032cd850",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032cd854",
+      "name": "DAT_032cd854",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "033081cc",
+      "name": "g_VertexNormalArray",
+      "type": "CVector3f[20000]",
+      "value": null
+    },
+    {
+      "addr": "033081d0",
+      "name": "DAT_033081d0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "033081d4",
+      "name": "DAT_033081d4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005708d3",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_renderFaceListOrEnvMap_FUN_00570870",
+        "estimated_params": 6,
+        "instructions_analyzed": 10,
+        "reg_params": [],
+        "stack_params": 6
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 4,
+    "estimated_params": 6
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.819148936170213,
+    "instruction_count": 282,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 57,
+      "BOOL_OR": 15,
+      "BRANCH": 4,
+      "CALL": 8,
+      "CBRANCH": 24,
+      "COPY": 438,
+      "FLOAT2FLOAT": 12,
+      "FLOAT_ABS": 3,
+      "FLOAT_EQUAL": 3,
+      "FLOAT_LESS": 3,
+      "FLOAT_MULT": 3,
+      "FLOAT_NAN": 6,
+      "INT2FLOAT": 3,
+      "INT_2COMP": 1,
+      "INT_ADD": 156,
+      "INT_AND": 294,
+      "INT_CARRY": 16,
+      "INT_EQUAL": 167,
+      "INT_LEFT": 33,
+      "INT_LESS": 22,
+      "INT_MULT": 23,
+      "INT_NOTEQUAL": 54,
+      "INT_OR": 71,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 23,
+      "INT_SCARRY": 21,
+      "INT_SEXT": 6,
+      "INT_SLESS": 98,
+      "INT_SUB": 66,
+      "INT_XOR": 27,
+      "INT_ZEXT": 18,
+      "LOAD": 79,
+      "POPCOUNT": 76,
+      "RETURN": 1,
+      "ROUND": 6,
+      "STORE": 74,
+      "SUBPIECE": 4,
+      "TRUNC": 6
+    },
+    "pcode_op_count": 1923
+  },
+  "stack_frame": {
+    "frame_size": 296,
+    "local_size": 280,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_114",
+        "offset": -276,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_110",
+        "offset": -272,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10c",
+        "offset": -268,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_108",
+        "offset": -264,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_104",
+        "offset": -260,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_100",
+        "offset": -256,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_fc",
+        "offset": -252,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_f8",
+        "offset": -248,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_f4",
+        "offset": -244,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_f0",
+        "offset": -240,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_ec",
+        "offset": -236,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_e8",
+        "offset": -232,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_e4",
+        "offset": -228,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_e0",
+        "offset": -224,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_d0",
+        "offset": -208,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_90",
+        "offset": -144,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "count",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "alpha",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005702bc",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0(CDemonSet *this_ptr,void *param_2,int count,int alpha)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 11,
+      "match": "aiStackY_1020",
+      "severity": "moderate",
+      "text": "int aiStackY_1020 [960];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "SStack_118.vertices[0].vertex_index = (uint)*(ushort *)param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(ushort *)((int)",
+      "severity": "mild",
+      "text": "SStack_118.vertices[1].vertex_index = (uint)*(ushort *)((int)param_2 + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 46,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "SStack_118.vertices[1].vertex_index = (uint)*(ushort *)((int)param_2 + 2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(ushort *)((int)",
+      "severity": "mild",
+      "text": "SStack_118.vertices[2].vertex_index = (uint)*(ushort *)((int)param_2 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "SStack_118.vertices[2].vertex_index = (uint)*(ushort *)((int)param_2 + 4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(ushort *)((int)",
+      "severity": "mild",
+      "text": "SStack_118.vertices[0].texture_u = (uint)*(ushort *)((int)param_2 + 6) << 8;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "SStack_118.vertices[0].texture_u = (uint)*(ushort *)((int)param_2 + 6) << 8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 49,
+      "match": "(ushort *)((int)",
+      "severity": "mild",
+      "text": "SStack_118.vertices[1].texture_u = (uint)*(ushort *)((int)param_2 + 8) << 8;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 49,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "SStack_118.vertices[1].texture_u = (uint)*(ushort *)((int)param_2 + 8) << 8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 50,
+      "match": "(ushort *)((int)",
+      "severity": "mild",
+      "text": "SStack_118.vertices[2].texture_u = (uint)*(ushort *)((int)param_2 + 10) << 8;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 50,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "SStack_118.vertices[2].texture_u = (uint)*(ushort *)((int)param_2 + 10) << 8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 51,
+      "match": "(ushort *)((int)",
+      "severity": "mild",
+      "text": "SStack_118.vertices[0].texture_v = (uint)*(ushort *)((int)param_2 + 0xc) << 8;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 51,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "SStack_118.vertices[0].texture_v = (uint)*(ushort *)((int)param_2 + 0xc) << 8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 52,
+      "match": "(ushort *)((int)",
+      "severity": "mild",
+      "text": "SStack_118.vertices[1].texture_v = (uint)*(ushort *)((int)param_2 + 0xe) << 8;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 52,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "SStack_118.vertices[1].texture_v = (uint)*(ushort *)((int)param_2 + 0xe) << 8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 53,
+      "match": "(ushort *)((int)",
+      "severity": "mild",
+      "text": "SStack_118.vertices[2].texture_v = (uint)*(ushort *)((int)param_2 + 0x10) << 8;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 53,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "SStack_118.vertices[2].texture_v = (uint)*(ushort *)((int)param_2 + 0x10) << 8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 62,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "iVar3 = *(int *)((int)&SStack_118.vertices[0].vertex_index + local_28[3]);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 64,
+      "match": "ABS",
+      "severity": "mild",
+      "text": "(1.0 <= ABS(g_VertexNormalArray[iVar3].x))) ||",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 65,
+      "match": "ABS",
+      "severity": "mild",
+      "text": "(1.0 <= ABS(g_VertexNormalArray[iVar3].y))) ||",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 66,
+      "match": "ABS",
+      "severity": "mild",
+      "text": "(1.0 <= ABS(g_VertexNormalArray[iVar3].z))) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 67,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_2c = (int)ROUND(g_VertexNormalArray[iVar3].x);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 68,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_28[0] = (int)ROUND(g_VertexNormalArray[iVar3].y);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 69,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_28[1] = (int)ROUND(g_VertexNormalArray[iVar3].z);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 72,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_50.x = (int)ROUND(g_LightingReferencePosition.x * 256.0f) -",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 74,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_50.y = (int)ROUND(g_LightingReferencePosition.y * 256.0f) -",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 76,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_50.z = (int)ROUND(g_LightingReferencePosition.z * 256.0f) -",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 80,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "local_28[(uint)bVar6 * -2] = *(int *)((int)&local_38 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 82,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "*(int *)((int)&local_38 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 86,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "*(int *)((int)&local_d0 + local_28[5]) = local_2c + 0x8000;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 87,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "*(int *)((int)&local_90 + local_28[5]) = iVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 96,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "if ((0x8000 < local_d0) && (*(int *)((int)&local_d0 + iVar3) < -0x8000)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 97,
+      "match": "(short *)((int)",
+      "severity": "mild",
+      "text": "psVar1 = (short *)((int)&local_d0 + iVar3 + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 100,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "if ((local_d0 < -0x8000) && (0x8000 < *(int *)((int)&local_d0 + iVar3))) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 101,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "*(int *)((int)&local_d0 + iVar3) = *(int *)((int)&local_d0 + iVar3) + -0x10000;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 101,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "*(int *)((int)&local_d0 + iVar3) = *(int *)((int)&local_d0 + iVar3) + -0x10000;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 103,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "if ((0x8000 < local_90) && (*(int *)((int)&local_90 + iVar3) < -0x8000)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 104,
+      "match": "(short *)((int)",
+      "severity": "mild",
+      "text": "psVar1 = (short *)((int)&local_90 + iVar3 + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 107,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "if ((local_90 < -0x8000) && (0x8000 < *(int *)((int)&local_90 + iVar3))) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 108,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "*(int *)((int)&local_90 + iVar3) = *(int *)((int)&local_90 + iVar3) + -0x10000;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 108,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "*(int *)((int)&local_90 + iVar3) = *(int *)((int)&local_90 + iVar3) + -0x10000;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 118,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "*(int *)((int)&SStack_118.vertices[0].texture_u + iVar5) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 119,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "*(int *)((int)&local_d0 + iVar4) << 8;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 120,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "*(int *)((int)&SStack_118.vertices[0].texture_v + iVar5) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 121,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "*(int *)((int)&local_90 + iVar4) << 8;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 141,
+      "match": "(void *)((int)",
+      "severity": "mild",
+      "text": "param_2 = (void *)((int)param_2 + 0x12);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 141,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = (void *)((int)param_2 + 0x12);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 141,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = (void *)((int)param_2 + 0x12);",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 4,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 6,
+      "fix_type": "add_params",
+      "match": "declared:4 vs estimated:6",
+      "param_delta": 2,
+      "text": "Function declares 4 params but call sites push 6 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

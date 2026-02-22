@@ -30,13 +30,16 @@ void __cdecl core_morph_cpp_CMorphModel_renderFaces_FUN_0052b160(CMorphModel *th
   if (0 < this_ptr->num_faces) {
     iVar3 = 0;
     do {
-      iVar1 = *(int *)(iVar3 + (int)this_ptr->faces);
+      iVar1 = *(int *)((int)&(((SMRGLPrimitiveTriangle *)(this_ptr->faces->vertices + -2))->base).
+                             base.type + iVar3);
       if (iVar1 != local_14) {
         engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
                   (g_CDemonRendererPtr2,this_ptr->textures[iVar1].textures);
         local_14 = iVar1;
       }
-      polygon_info = (SMRGLHeaderPrimitive *)((int)this_ptr->faces + iVar3);
+      polygon_info = (SMRGLHeaderPrimitive *)
+                     ((int)&(((SMRGLPrimitiveTriangle *)(this_ptr->faces->vertices + -2))->base).
+                            base.type + iVar3);
       iVar4 = iVar4 + 1;
       iVar3 = iVar3 + 0x3c;
       engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0

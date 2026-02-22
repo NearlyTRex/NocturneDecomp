@@ -17,6 +17,7 @@
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 19,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 86,
     "suspect_count": 2,
     "suspect_types": [
@@ -420,6 +421,7 @@
       "description": "Direct stack address reference",
       "line": 67,
       "match": "&stack0x00000000",
+      "severity": "moderate",
       "text": "if ((SLod *)&stack0x00000000 != g_DeformableModelPool[0].lod_info + 3) {",
       "type": "stack_ref"
     },

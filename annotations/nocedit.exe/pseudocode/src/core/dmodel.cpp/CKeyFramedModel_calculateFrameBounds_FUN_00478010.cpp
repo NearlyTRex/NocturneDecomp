@@ -10,7 +10,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(C
 
 {
   float this_ptr;
-  CVector3i **ppCVar1;
+  CVector3i *pCVar1;
   int iVar2;
   CBoundingBox3D *this_ptr_00;
   CBoundingBox3D local_28;
@@ -21,11 +21,11 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(C
     local_28.max.x = 0.0;
     do {
       this_ptr_00 = (CBoundingBox3D *)((int)&model_ptr->frame_bounds->x + (int)local_28.max.x);
-      ppCVar1 = model_ptr->vertex_list + (int)local_28.max.y * model_ptr->vertex_count * 3;
+      pCVar1 = model_ptr->vertex_list + (int)local_28.max.y * model_ptr->vertex_count;
       local_28.min.z = (float)0.00390625;
-      local_28.min.x = (float)(int)*ppCVar1 * local_28.min.z;
-      local_28.min.y = (float)(int)ppCVar1[1] * local_28.min.z;
-      local_28.min.z = (float)(int)ppCVar1[2] * local_28.min.z;
+      local_28.min.x = (float)pCVar1->x * local_28.min.z;
+      local_28.min.y = (float)pCVar1->y * local_28.min.z;
+      local_28.min.z = (float)pCVar1->z * local_28.min.z;
       if (this_ptr_00 != &local_28) {
         (this_ptr_00->min).x = local_28.min.x;
         (this_ptr_00->min).y = local_28.min.y;
@@ -39,10 +39,10 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(C
       iVar2 = 1;
       if (1 < model_ptr->vertex_count) {
         do {
-          local_28.min.x = (float)(int)ppCVar1[3] * (float)0.00390625;
-          local_28.min.y = (float)(int)ppCVar1[4] * (float)0.00390625;
-          local_28.min.z = (float)(int)ppCVar1[5] * (float)0.00390625;
-          ppCVar1 = ppCVar1 + 3;
+          local_28.min.x = (float)pCVar1[1].x * (float)0.00390625;
+          local_28.min.y = (float)pCVar1[1].y * (float)0.00390625;
+          local_28.min.z = (float)pCVar1[1].z * (float)0.00390625;
+          pCVar1 = pCVar1 + 1;
           iVar2 = iVar2 + 1;
           core_box_cpp_CBoundingBox3D_expand_FUN_00420240(this_ptr_00,&local_28.min);
         } while (iVar2 < model_ptr->vertex_count);

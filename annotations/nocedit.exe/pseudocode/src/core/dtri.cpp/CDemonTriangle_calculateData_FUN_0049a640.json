@@ -10,6 +10,7 @@
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 51,
     "suspect_count": 10,
     "suspect_types": [
@@ -159,6 +160,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 26,
       "match": "SQRT",
+      "severity": "mild",
       "text": "local_c = SQRT(fVar1 * (triangle->normal).z +",
       "type": "decompiler_intrinsic"
     },
@@ -166,6 +168,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 28,
       "match": "ABS",
+      "severity": "mild",
       "text": "if (ABS(local_c) == 0.0) {",
       "type": "decompiler_intrinsic"
     },
@@ -173,6 +176,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 36,
       "match": "ABS",
+      "severity": "mild",
       "text": "fVar3 = ABS(fVar3);",
       "type": "decompiler_intrinsic"
     },
@@ -180,6 +184,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 43,
       "match": "ABS",
+      "severity": "mild",
       "text": "if ((ABS(fVar4) < fVar3) && (ABS((triangle->normal).z) < fVar3)) {",
       "type": "decompiler_intrinsic"
     },
@@ -187,6 +192,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 43,
       "match": "ABS",
+      "severity": "mild",
       "text": "if ((ABS(fVar4) < fVar3) && (ABS((triangle->normal).z) < fVar3)) {",
       "type": "decompiler_intrinsic"
     },
@@ -194,6 +200,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 47,
       "match": "ABS",
+      "severity": "mild",
       "text": "fVar1 = ABS((triangle->normal).y);",
       "type": "decompiler_intrinsic"
     },
@@ -201,6 +208,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 48,
       "match": "ABS",
+      "severity": "mild",
       "text": "if ((ABS((triangle->normal).x) < fVar1) && (ABS((triangle->normal).z) < fVar1)) {",
       "type": "decompiler_intrinsic"
     },
@@ -208,6 +216,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 48,
       "match": "ABS",
+      "severity": "mild",
       "text": "if ((ABS((triangle->normal).x) < fVar1) && (ABS((triangle->normal).z) < fVar1)) {",
       "type": "decompiler_intrinsic"
     },
@@ -215,6 +224,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 49,
       "match": "1.4013e-45",
+      "severity": "mild",
       "text": "triangle->area = 1.4013e-45;",
       "type": "suspect_float"
     },
@@ -222,6 +232,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 52,
       "match": "2.8026e-45",
+      "severity": "mild",
       "text": "triangle->area = 2.8026e-45;",
       "type": "suspect_float"
     }

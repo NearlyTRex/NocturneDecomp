@@ -182,7 +182,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showLightEditor_FUN_0057c5d0(CDemonSet *
             iVar5 = this_ptr->lights[iVar5].light_type;
             core_setedit_cpp_FUN_0057b910();
             if (iVar5 == 0) {
-              core_set_cpp_CDemonSet_FUN_0056d2d0(this_ptr);
+              core_set_cpp_CDemonSet_clearLights_FUN_0056d2d0(this_ptr);
               core_set_cpp_CDemonSet_initScene_FUN_0056aa10(this_ptr);
             }
           }
@@ -190,11 +190,11 @@ void __cdecl core_setedit_cpp_CDemonSet_showLightEditor_FUN_0057c5d0(CDemonSet *
         }
       }
       else if (local_28 < 0x35) {
-        core_set_cpp_CDemonSet_FUN_0056d2d0(this_ptr);
+        core_set_cpp_CDemonSet_clearLights_FUN_0056d2d0(this_ptr);
         iVar5 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                           (g_CEditorToolsPtr,"Precompute light visibility?");
         if (iVar5 != 0) {
-          core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(this_ptr);
+          core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(this_ptr,-1);
         }
         core_set_cpp_CDemonSet_initScene_FUN_0056aa10(this_ptr);
       }
@@ -300,7 +300,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showLightEditor_FUN_0057c5d0(CDemonSet *
     }
     if (local_28 == 0x1b) {
       engine_2d_c_clearInputAndWait_FUN_00403260();
-      core_set_cpp_CDemonSet_FUN_0056d2d0(this_ptr);
+      core_set_cpp_CDemonSet_clearLights_FUN_0056d2d0(this_ptr);
       core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0(g_CGamePtr);
       g_CDemonLightInstance.light_enabled_flag = 0;
       return;

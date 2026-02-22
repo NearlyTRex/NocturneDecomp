@@ -10,6 +10,7 @@
     "cross_reference_count": 9,
     "function_call_count": 8,
     "global_count": 1,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 347,
     "suspect_count": 13,
     "suspect_types": [
@@ -606,6 +607,7 @@
       "description": "Complex pointer cast",
       "line": 87,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)this_ptr->vertex_sort_buffer + iVar13) = iVar8;",
       "type": "pointer_cast"
     },
@@ -613,6 +615,7 @@
       "description": "Complex pointer cast",
       "line": 148,
       "match": "(CVector3f *)((int)",
+      "severity": "mild",
       "text": "pCVar10 = (CVector3f *)((int)(pCVar10 + 0x17) + 8);",
       "type": "pointer_cast"
     },
@@ -620,6 +623,7 @@
       "description": "Complex pointer cast",
       "line": 156,
       "match": "(CVector3f *)((int)",
+      "severity": "mild",
       "text": "pCVar12 = (CVector3f *)((int)(pCVar12 + 0x17) + 8);",
       "type": "pointer_cast"
     },
@@ -627,6 +631,7 @@
       "description": "Complex pointer cast",
       "line": 157,
       "match": "(CVector3f *)((int)",
+      "severity": "mild",
       "text": "pCVar9 = (CVector3f *)((int)(pCVar9 + 0x17) + 8);",
       "type": "pointer_cast"
     },
@@ -634,13 +639,15 @@
       "description": "Complex pointer cast",
       "line": 188,
       "match": "(int *)((int)",
-      "text": "piVar20 = (int *)((int)(this_ptr->model).vertex_list + iVar13);",
+      "severity": "mild",
+      "text": "piVar14 = (int *)((int)&((this_ptr->model).vertex_list)->x + iVar13);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 189,
       "match": "(CVector3f *)((int)",
+      "severity": "mild",
       "text": "pCVar12 = (CVector3f *)((int)(pCVar12 + 0x17) + 8);",
       "type": "pointer_cast"
     },
@@ -648,27 +655,31 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 190,
       "match": "ROUND",
-      "text": "*piVar20 = (int)ROUND((pSVar17->position).x * 256.0f);",
+      "severity": "mild",
+      "text": "*piVar14 = (int)ROUND((pSVar18->position).x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 191,
       "match": "ROUND",
-      "text": "piVar20[1] = (int)ROUND((pSVar17->position).y * 256.0f);",
+      "severity": "mild",
+      "text": "piVar14[1] = (int)ROUND((pSVar18->position).y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 192,
       "match": "ROUND",
-      "text": "piVar20[2] = (int)ROUND((pSVar17->position).z * 256.0f);",
+      "severity": "mild",
+      "text": "piVar14[2] = (int)ROUND((pSVar18->position).z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
       "line": 296,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "for (local_24 = 0; local_24 < *(int *)((int)local_84->vertex_count + local_50);",
       "type": "pointer_cast"
     },
@@ -676,21 +687,24 @@
       "description": "Complex pointer cast",
       "line": 298,
       "match": "(int *)((int)",
-      "text": "pfVar18 = (float *)(local_44 + *(int *)((int)local_84->vertex_data_ptr + local_50));",
+      "severity": "mild",
+      "text": "pfVar19 = (float *)(local_44 + *(int *)((int)local_84->vertex_data_ptr + local_50));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 308,
       "match": "(byte *)((int)",
-      "text": "(&local_d8,pCVar12,local_58 + *(byte *)((int)pfVar18 + 1));",
+      "severity": "mild",
+      "text": "(&local_d8,pCVar12,local_58 + *(byte *)((int)pfVar19 + 1));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 309,
       "match": "(float *)((int)",
-      "text": "pfVar18 = (float *)((int)pfVar18 + 1);",
+      "severity": "mild",
+      "text": "pfVar19 = (float *)((int)pfVar19 + 1);",
       "type": "pointer_cast"
     }
   ]

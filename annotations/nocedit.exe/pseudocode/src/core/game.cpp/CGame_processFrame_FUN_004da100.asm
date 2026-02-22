@@ -190,8 +190,8 @@ section .text
     PUSH 0x1                            ; 004da208
     MOV EDI,dword ptr [0x006810c8]      ; 004da20a | g_CDemonSetPtr
     PUSH EDI                            ; 004da210 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_0056c1a0 ; 004da211
-        ;   XREF to: 0056c1a0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056c1a0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0 ; 004da211
+        ;   XREF to: 0056c1a0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0(CDemonSet * this_ptr, int skip_prerender)
     ADD ESP,0x8                         ; 004da216
     MOV EAX,[0x00680a00]                ; 004da219 | g_CNetGameInstance | g_CNetGamePtr
         ;   Label: LAB_004da219
@@ -324,8 +324,8 @@ section .text
         ;   XREF to: 004da3aa (CONDITIONAL_JUMP)  ; LAB_004da3aa
     MOV EBX,dword ptr [0x006810c8]      ; 004da39b | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EBX                            ; 004da3a1 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_0056be80 ; 004da3a2
-        ;   XREF to: 0056be80 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056be80(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_renderStaticLights_FUN_0056be80 ; 004da3a2
+        ;   XREF to: 0056be80 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderStaticLights_FUN_0056be80(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 004da3a7
     PUSH 0xffff                         ; 004da3aa
         ;   Label: LAB_004da3aa
@@ -373,8 +373,8 @@ section .text
         ;   XREF to: 004da44f (CONDITIONAL_JUMP)  ; LAB_004da44f
     MOV EDI,dword ptr [0x006810c8]      ; 004da440 | g_CDemonSetPtr
     PUSH EDI                            ; 004da446 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_0056c990 ; 004da447
-        ;   XREF to: 0056c990 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056c990(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990 ; 004da447
+        ;   XREF to: 0056c990 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 004da44c
     MOV EAX,dword ptr [EBP + 0x92]      ; 004da44f
         ;   Label: LAB_004da44f
@@ -419,8 +419,8 @@ section .text
         ;   XREF to: 004da4dc (CONDITIONAL_JUMP)  ; LAB_004da4dc
     MOV EDI,dword ptr [0x006810c8]      ; 004da4cd | g_CDemonSetPtr
     PUSH EDI                            ; 004da4d3 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_0056d190 ; 004da4d4
-        ;   XREF to: 0056d190 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d190(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_renderLightDebugView_FUN_0056d190 ; 004da4d4
+        ;   XREF to: 0056d190 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderLightDebugView_FUN_0056d190(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 004da4d9
     MOV EAX,dword ptr [EBP + 0x92]      ; 004da4dc
         ;   Label: LAB_004da4dc

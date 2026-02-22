@@ -37,14 +37,16 @@
   },
   "complexity": {
     "assembly_lines": 154,
-    "complexity_score": 141,
+    "complexity_score": 156,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 71,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
+      "stack_alignment_array",
       "stack_ref"
     ],
     "total_lines": 225
@@ -298,9 +300,18 @@
   },
   "suspects": [
     {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 17,
+      "match": "afStackY_1838",
+      "severity": "moderate",
+      "text": "float afStackY_1838 [1520];",
+      "type": "stack_alignment_array"
+    },
+    {
       "description": "Direct stack address reference",
       "line": 31,
       "match": "&stack0xffffffa0",
+      "severity": "moderate",
       "text": "(int *)local_24,&stack0xffffffa0);",
       "type": "stack_ref"
     },
@@ -308,6 +319,7 @@
       "description": "Complex pointer cast",
       "line": 40,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar9 = (uint *)((int)local_18 + (uint)bVar11 * -8 + 0x10);",
       "type": "pointer_cast"
     },
@@ -315,6 +327,7 @@
       "description": "Direct stack address reference",
       "line": 43,
       "match": "&stack0xffffffa8",
+      "severity": "moderate",
       "text": "*puVar9 = *(uint *)(&stack0xffffffa8 + (uint)bVar11 * -8);",
       "type": "stack_ref"
     },
@@ -322,6 +335,7 @@
       "description": "Direct stack address reference",
       "line": 44,
       "match": "&stack0xffffffac",
+      "severity": "moderate",
       "text": "*puVar10 = *(uint *)(&stack0xffffffac + (uint)bVar11 * -8 + (uint)bVar11 * -8);",
       "type": "stack_ref"
     },
@@ -329,6 +343,7 @@
       "description": "Direct stack address reference",
       "line": 47,
       "match": "&stack0xffffffac",
+      "severity": "moderate",
       "text": "((int)(&stack0xffffffac + (uint)bVar11 * -8 + (uint)bVar11 * -8) +",
       "type": "stack_ref"
     },
@@ -336,6 +351,7 @@
       "description": "Direct stack address reference",
       "line": 61,
       "match": "&stack0xffffffc0",
+      "severity": "moderate",
       "text": "if ((SPose *)&stack0xffffffc0 != output_bone_data) {",
       "type": "stack_ref"
     }

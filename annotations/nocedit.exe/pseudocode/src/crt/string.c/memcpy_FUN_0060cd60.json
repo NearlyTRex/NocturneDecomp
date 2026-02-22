@@ -5,6 +5,7 @@
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 0,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 17,
     "suspect_count": 4,
     "suspect_types": [
@@ -119,6 +120,7 @@
       "description": "Complex pointer cast",
       "line": 11,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "src = (uint *)((int)src + 4);",
       "type": "pointer_cast"
     },
@@ -126,6 +128,7 @@
       "description": "Complex pointer cast",
       "line": 16,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "src = (uint *)((int)src + 1);",
       "type": "pointer_cast"
     },
@@ -133,6 +136,7 @@
       "description": "Complex pointer cast",
       "line": 17,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar2 = (uint *)((int)puVar2 + 1);",
       "type": "pointer_cast"
     },

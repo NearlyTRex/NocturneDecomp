@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 10,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 22,
     "suspect_count": 2,
     "suspect_types": [
@@ -177,6 +178,7 @@
       "description": "Complex pointer cast",
       "line": 16,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&(this_ptr->options).delay_remaining + 4) = 0;",
       "type": "pointer_cast"
     },
@@ -184,6 +186,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 23,
       "match": "SQRT",
+      "severity": "mild",
       "text": "(SQRT(dVar2 * dVar2 + dVar3 * dVar3 + dVar1 * dVar1) * DOUBLE_00681b30) / 1116.4000000000001;",
       "type": "decompiler_intrinsic"
     }

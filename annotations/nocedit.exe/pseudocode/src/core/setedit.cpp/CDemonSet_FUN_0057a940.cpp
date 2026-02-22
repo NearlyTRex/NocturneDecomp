@@ -142,7 +142,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_0057a940(CDemonSet *this_ptr)
   shape_memdbg_cpp_free_FUN_005fe659(pCStack_14);
   core_setedit_cpp_CDemonSet_FUN_00580560(this_ptr);
   core_slew_cpp_CSlew_free_FUN_005a20a0();
-  core_set_cpp_CDemonSet_FUN_0056d2d0(this_ptr);
+  core_set_cpp_CDemonSet_clearLights_FUN_0056d2d0(this_ptr);
   engine_2d_c_clearInputAndWait_FUN_00403260();
   g_CDemonRaytraceInstance.rendering_mode = 0;
   return;

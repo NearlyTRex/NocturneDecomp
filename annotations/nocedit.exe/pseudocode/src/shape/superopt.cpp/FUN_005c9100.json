@@ -13,15 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 138,
+    "complexity_score": 153,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 1,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 48,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
-      "stack_param"
+      "stack_param",
+      "sub84_truncation"
     ],
     "total_lines": 131
   },
@@ -154,6 +156,7 @@
       "description": "Unresolved stack parameter",
       "line": 18,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
@@ -161,6 +164,7 @@
       "description": "Unresolved stack parameter",
       "line": 19,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
@@ -168,6 +172,7 @@
       "description": "Unresolved stack parameter",
       "line": 28,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "if (in_stack_0000000c != 0) {",
       "type": "stack_param"
     },
@@ -175,6 +180,7 @@
       "description": "Unresolved stack parameter",
       "line": 29,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "pdVar13 = (double *)(in_stack_00000008 + 0x10);",
       "type": "stack_param"
     },
@@ -182,6 +188,7 @@
       "description": "Unresolved stack parameter",
       "line": 47,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "} while (pdVar13 < (double *)(in_stack_0000000c * 0x60 + 0x10 + in_stack_00000008));",
       "type": "stack_param"
     },
@@ -189,13 +196,23 @@
       "description": "Unresolved stack parameter",
       "line": 47,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "} while (pdVar13 < (double *)(in_stack_0000000c * 0x60 + 0x10 + in_stack_00000008));",
       "type": "stack_param"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 49,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "local_10 = SUB84(SQRT(local_18 * local_18 + local_28 * local_28 + local_20 * local_20),0);",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 49,
       "match": "SUB84",
+      "severity": "mild",
       "text": "local_10 = SUB84(SQRT(local_18 * local_18 + local_28 * local_28 + local_20 * local_20),0);",
       "type": "decompiler_intrinsic"
     },
@@ -203,6 +220,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 49,
       "match": "SQRT",
+      "severity": "mild",
       "text": "local_10 = SUB84(SQRT(local_18 * local_18 + local_28 * local_28 + local_20 * local_20),0);",
       "type": "decompiler_intrinsic"
     }

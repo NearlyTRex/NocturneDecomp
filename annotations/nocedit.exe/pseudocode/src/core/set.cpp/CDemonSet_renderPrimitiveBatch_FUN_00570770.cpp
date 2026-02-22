@@ -21,7 +21,8 @@ void __cdecl core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770(CDemonSet 
     if ((g_CGamePtr->render_mode != 0) &&
        (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
        iVar2 == 0)) {
-      core_set_cpp_CDemonSet_FUN_00570010(this_ptr);
+      core_set_cpp_CDemonSet_renderEnvMapBatchQuad_FUN_00570010
+                (this_ptr,primitive_array,primitive_count,0xffff);
       return;
     }
     if ((this_ptr->per_pixel_lighting_enabled != 0) &&

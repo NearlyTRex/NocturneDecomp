@@ -38,7 +38,7 @@ section .text
     ADD ESP,0x4                         ; 005a02c6
     PUSH EAX                            ; 005a02c9
     CALL core_skeleton.cpp_CDeformableModel_lightVertices_FUN_0059ab50 ; 005a02ca
-        ;   XREF to: 0059ab50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_lightVertices_FUN_0059ab50(CDeformableModel * this_ptr, int lod_index, int render_flags)
+        ;   XREF to: 0059ab50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_lightVertices_FUN_0059ab50(CDeformableModel * this_ptr, int lod_index, CVector3i * skinned_vertices)
     ADD ESP,0xc                         ; 005a02cf
     POP ESI                             ; 005a02d2
     POP EBX                             ; 005a02d3

@@ -15,8 +15,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
-;   core_set.cpp_CDemonSet_FUN_0056c1a0 at 0056c500
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190 at 0056a2d3
+;   core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0 at 0056c500
 ;
 ; Referenced Globals:
 ;   double DOUBLE_006565a0 = 256

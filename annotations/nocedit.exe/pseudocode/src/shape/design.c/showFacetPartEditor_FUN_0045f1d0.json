@@ -115,15 +115,17 @@
   },
   "complexity": {
     "assembly_lines": 1620,
-    "complexity_score": 740,
+    "complexity_score": 755,
     "cross_reference_count": 1,
     "function_call_count": 39,
     "global_count": 135,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 590,
-    "suspect_count": 14,
+    "suspect_count": 15,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast"
+      "pointer_cast",
+      "sub84_truncation"
     ],
     "total_lines": 2210
   },
@@ -1497,6 +1499,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 42,
       "match": "fptan",
+      "severity": "mild",
       "text": "fVar8 = (float10)fptan((float10)60.0 * (float10)3.1415926535000001 * (float10)0.0055555555555555497",
       "type": "decompiler_intrinsic"
     },
@@ -1504,6 +1507,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 45,
       "match": "fptan",
+      "severity": "mild",
       "text": "fVar8 = (float10)fptan((float10)60.0 * (float10)3.1415926535000001 * (float10)0.0055555555555555497",
       "type": "decompiler_intrinsic"
     },
@@ -1511,6 +1515,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 114,
       "match": "ROUND",
+      "severity": "mild",
       "text": "iVar4 = (int)ROUND(ROUND(local_20));",
       "type": "decompiler_intrinsic"
     },
@@ -1518,6 +1523,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 114,
       "match": "ROUND",
+      "severity": "mild",
       "text": "iVar4 = (int)ROUND(ROUND(local_20));",
       "type": "decompiler_intrinsic"
     },
@@ -1525,6 +1531,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 115,
       "match": "ROUND",
+      "severity": "mild",
       "text": "iVar1 = (int)ROUND(ROUND(local_48));",
       "type": "decompiler_intrinsic"
     },
@@ -1532,13 +1539,23 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 115,
       "match": "ROUND",
+      "severity": "mild",
       "text": "iVar1 = (int)ROUND(ROUND(local_48));",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 293,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "local_d8 = SUB84((double)local_2c,0);",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 293,
       "match": "SUB84",
+      "severity": "mild",
       "text": "local_d8 = SUB84((double)local_2c,0);",
       "type": "decompiler_intrinsic"
     },
@@ -1546,6 +1563,7 @@
       "description": "Complex pointer cast",
       "line": 474,
       "match": "(SShapeEditorPolygon *)((int)",
+      "severity": "mild",
       "text": "pSVar5 = (SShapeEditorPolygon *)((int)pSVar5 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -1553,6 +1571,7 @@
       "description": "Complex pointer cast",
       "line": 475,
       "match": "(SShapeEditorPolygon *)((int)",
+      "severity": "mild",
       "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -1560,6 +1579,7 @@
       "description": "Complex pointer cast",
       "line": 480,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)g_ModelPolygonData +",
       "type": "pointer_cast"
     },
@@ -1567,6 +1587,7 @@
       "description": "Complex pointer cast",
       "line": 483,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)g_ModelPolygonData +",
       "type": "pointer_cast"
     },
@@ -1574,6 +1595,7 @@
       "description": "Complex pointer cast",
       "line": 486,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)g_ModelPolygonData +",
       "type": "pointer_cast"
     },
@@ -1581,6 +1603,7 @@
       "description": "Complex pointer cast",
       "line": 545,
       "match": "(SShapeEditorPolygon *)((int)",
+      "severity": "mild",
       "text": "pSVar5 = (SShapeEditorPolygon *)((int)pSVar5 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -1588,6 +1611,7 @@
       "description": "Complex pointer cast",
       "line": 546,
       "match": "(SShapeEditorPolygon *)((int)",
+      "severity": "mild",
       "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     }

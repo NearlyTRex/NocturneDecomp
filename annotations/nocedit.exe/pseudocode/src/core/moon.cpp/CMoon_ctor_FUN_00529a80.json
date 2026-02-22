@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 10,
     "suspect_count": 2,
     "suspect_types": [
@@ -105,6 +106,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 9,
       "match": "pCVar1[-1].",
+      "severity": "mild",
       "text": "pfVar2 = &pCVar1[-1].rotation_matrix_workspace.m[2].z;",
       "type": "negative_offset"
     },
@@ -112,6 +114,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 10,
       "match": "pCVar1[-1].",
+      "severity": "mild",
       "text": "pCVar1[-1].padding = 0;",
       "type": "negative_offset"
     }

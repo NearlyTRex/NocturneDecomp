@@ -85,15 +85,17 @@
   },
   "complexity": {
     "assembly_lines": 397,
-    "complexity_score": 290,
+    "complexity_score": 315,
     "cross_reference_count": 0,
     "function_call_count": 17,
     "global_count": 22,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 160,
-    "suspect_count": 11,
+    "suspect_count": 13,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_ref",
+      "sub84_truncation",
       "suspect_float",
       "unknown_field"
     ],
@@ -425,9 +427,18 @@
   },
   "suspects": [
     {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 87,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "((CCharacter *)this_ptr,SUB84(dVar4,0),",
+      "type": "sub84_truncation"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 87,
       "match": "SUB84",
+      "severity": "mild",
       "text": "((CCharacter *)this_ptr,SUB84(dVar4,0),",
       "type": "decompiler_intrinsic"
     },
@@ -435,6 +446,7 @@
       "description": "Direct stack address reference",
       "line": 116,
       "match": "&stack0xffffff24",
+      "severity": "moderate",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff24);",
       "type": "stack_ref"
     },
@@ -442,13 +454,23 @@
       "description": "Unknown/mangled field access",
       "line": 117,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "auStack_cc._0_4_ =",
       "type": "unknown_field"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 119,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "((CCharacter *)this_ptr,SUB84(dVar4,0),(int)((ulonglong)dVar4 >> 0x20));",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 119,
       "match": "SUB84",
+      "severity": "mild",
       "text": "((CCharacter *)this_ptr,SUB84(dVar4,0),(int)((ulonglong)dVar4 >> 0x20));",
       "type": "decompiler_intrinsic"
     },
@@ -456,6 +478,7 @@
       "description": "Unknown/mangled field access",
       "line": 120,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "auStack_cc._4_4_ = 0.4;",
       "type": "unknown_field"
     },
@@ -463,6 +486,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 125,
       "match": "SQRT",
+      "severity": "mild",
       "text": "SQRT(fStack_74 * fStack_74 + fStack_7c * fStack_7c + fStack_78 * fStack_78);",
       "type": "decompiler_intrinsic"
     },
@@ -470,6 +494,7 @@
       "description": "Unknown/mangled field access",
       "line": 130,
       "match": "._8_4_",
+      "severity": "mild",
       "text": "auStack_cc._8_4_ = fStack_40;",
       "type": "unknown_field"
     },
@@ -477,6 +502,7 @@
       "description": "Unknown/mangled field access",
       "line": 131,
       "match": "._12_4_",
+      "severity": "mild",
       "text": "auStack_cc._12_4_ = fStack_3c;",
       "type": "unknown_field"
     },
@@ -484,6 +510,7 @@
       "description": "Unknown/mangled field access",
       "line": 132,
       "match": "._16_4_",
+      "severity": "mild",
       "text": "auStack_cc._16_4_ = pCStack_38;",
       "type": "unknown_field"
     },
@@ -491,6 +518,7 @@
       "description": "Unknown/mangled field access",
       "line": 138,
       "match": "._24_4_",
+      "severity": "mild",
       "text": "auStack_cc._24_4_ = pCVar1->x;",
       "type": "unknown_field"
     },
@@ -498,6 +526,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 145,
       "match": "1.41531e-43",
+      "severity": "mild",
       "text": "CStack_a0.x = 1.41531e-43;",
       "type": "suspect_float"
     }

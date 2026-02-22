@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 33,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 105,
     "suspect_count": 10,
     "suspect_types": [
@@ -324,6 +325,7 @@
       "description": "Complex pointer cast",
       "line": 26,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&g_HuffmanTables[0].table_size + iVar3) =",
       "type": "pointer_cast"
     },
@@ -331,6 +333,7 @@
       "description": "Complex pointer cast",
       "line": 27,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&g_HuffmanTableSources[0].table_size + local_14);",
       "type": "pointer_cast"
     },
@@ -338,6 +341,7 @@
       "description": "Complex pointer cast",
       "line": 29,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&g_HuffmanTableSources[0].unk1 + local_14);",
       "type": "pointer_cast"
     },
@@ -345,6 +349,7 @@
       "description": "Complex pointer cast",
       "line": 31,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&g_HuffmanTableSources[0].unk2 + local_14);",
       "type": "pointer_cast"
     },
@@ -352,6 +357,7 @@
       "description": "Complex pointer cast",
       "line": 33,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&g_HuffmanTableSources[0].bits + local_14);",
       "type": "pointer_cast"
     },
@@ -359,6 +365,7 @@
       "description": "Complex pointer cast",
       "line": 43,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "iVar2 = *(int *)((int)&g_HuffmanTableSources[0].reference_index + local_14);",
       "type": "pointer_cast"
     },
@@ -366,6 +373,7 @@
       "description": "Complex pointer cast",
       "line": 51,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "uVar5 = *(uint *)((int)&g_HuffmanTables[0].table_size + iVar3);",
       "type": "pointer_cast"
     },
@@ -373,6 +381,7 @@
       "description": "Complex pointer cast",
       "line": 66,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (*(int *)((int)&g_HuffmanTables[0].table_size + iVar3) != 0) {",
       "type": "pointer_cast"
     },
@@ -380,6 +389,7 @@
       "description": "Complex pointer cast",
       "line": 73,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "} while (uVar5 < *(uint *)((int)&g_HuffmanTables[0].table_size + iVar3));",
       "type": "pointer_cast"
     },
@@ -387,6 +397,7 @@
       "description": "Complex pointer cast",
       "line": 90,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)&g_HuffmanTables[0].table_size + iVar3) = g_HuffmanTables[iVar2].table_size;",
       "type": "pointer_cast"
     }

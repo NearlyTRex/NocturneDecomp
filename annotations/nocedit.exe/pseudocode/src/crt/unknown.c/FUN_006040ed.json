@@ -5,6 +5,7 @@
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 18,
     "suspect_count": 20,
     "suspect_types": [
@@ -120,6 +121,7 @@
       "description": "Unaffected register variable",
       "line": 2,
       "match": "unaff_EBX",
+      "severity": "moderate",
       "text": "void __cdecl FUN_006040ed(uint param_1,uint param_2,char *unaff_EBX,uint param_4,char *param_5)",
       "type": "unaffected_reg"
     },
@@ -127,6 +129,7 @@
       "description": "Unnamed function parameter",
       "line": 2,
       "match": "param_1",
+      "severity": "mild",
       "text": "void __cdecl FUN_006040ed(uint param_1,uint param_2,char *unaff_EBX,uint param_4,char *param_5)",
       "type": "unnamed_param"
     },
@@ -134,6 +137,7 @@
       "description": "Unnamed function parameter",
       "line": 2,
       "match": "param_2",
+      "severity": "mild",
       "text": "void __cdecl FUN_006040ed(uint param_1,uint param_2,char *unaff_EBX,uint param_4,char *param_5)",
       "type": "unnamed_param"
     },
@@ -141,6 +145,7 @@
       "description": "Unnamed function parameter",
       "line": 2,
       "match": "param_4",
+      "severity": "mild",
       "text": "void __cdecl FUN_006040ed(uint param_1,uint param_2,char *unaff_EBX,uint param_4,char *param_5)",
       "type": "unnamed_param"
     },
@@ -148,6 +153,7 @@
       "description": "Unnamed function parameter",
       "line": 2,
       "match": "param_5",
+      "severity": "mild",
       "text": "void __cdecl FUN_006040ed(uint param_1,uint param_2,char *unaff_EBX,uint param_4,char *param_5)",
       "type": "unnamed_param"
     },
@@ -155,6 +161,7 @@
       "description": "Inferred register parameter",
       "line": 6,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "uint in_EAX;",
       "type": "register_param"
     },
@@ -162,6 +169,7 @@
       "description": "Inferred register parameter",
       "line": 10,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "if (99 < in_EAX) {",
       "type": "register_param"
     },
@@ -169,6 +177,7 @@
       "description": "Inferred register parameter",
       "line": 11,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "in_EAX = (in_EAX & 0xffff) % 100;",
       "type": "register_param"
     },
@@ -176,6 +185,7 @@
       "description": "Inferred register parameter",
       "line": 11,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "in_EAX = (in_EAX & 0xffff) % 100;",
       "type": "register_param"
     },
@@ -183,6 +193,7 @@
       "description": "Inferred register parameter",
       "line": 13,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "FUN_00604104((ushort)in_EAX,unaff_retaddr,(char *)param_1);",
       "type": "register_param"
     },
@@ -190,6 +201,7 @@
       "description": "Unnamed function parameter",
       "line": 13,
       "match": "param_1",
+      "severity": "mild",
       "text": "FUN_00604104((ushort)in_EAX,unaff_retaddr,(char *)param_1);",
       "type": "unnamed_param"
     },
@@ -197,6 +209,7 @@
       "description": "Inferred register parameter",
       "line": 14,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "uVar1 = (ushort)CONCAT31((int3)in_EAX,(char)(in_EAX >> 8));",
       "type": "register_param"
     },
@@ -204,6 +217,7 @@
       "description": "Inferred register parameter",
       "line": 14,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "uVar1 = (ushort)CONCAT31((int3)in_EAX,(char)(in_EAX >> 8));",
       "type": "register_param"
     },
@@ -211,6 +225,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 14,
       "match": "CONCAT31",
+      "severity": "mild",
       "text": "uVar1 = (ushort)CONCAT31((int3)in_EAX,(char)(in_EAX >> 8));",
       "type": "decompiler_intrinsic"
     },
@@ -218,6 +233,7 @@
       "description": "Non-standard integer size (decompiler artifact)",
       "line": 14,
       "match": "int3",
+      "severity": "mild",
       "text": "uVar1 = (ushort)CONCAT31((int3)in_EAX,(char)(in_EAX >> 8));",
       "type": "nonstandard_int"
     },
@@ -225,6 +241,7 @@
       "description": "Inferred register parameter",
       "line": 15,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "if (9 < (byte)in_EAX) {",
       "type": "register_param"
     },
@@ -232,6 +249,7 @@
       "description": "Inferred register parameter",
       "line": 16,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "uVar1 = CONCAT11((char)((ushort)in_EAX % 10),(char)((ushort)in_EAX / 10));",
       "type": "register_param"
     },
@@ -239,6 +257,7 @@
       "description": "Inferred register parameter",
       "line": 16,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "uVar1 = CONCAT11((char)((ushort)in_EAX % 10),(char)((ushort)in_EAX / 10));",
       "type": "register_param"
     },
@@ -246,6 +265,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 16,
       "match": "CONCAT11",
+      "severity": "mild",
       "text": "uVar1 = CONCAT11((char)((ushort)in_EAX % 10),(char)((ushort)in_EAX / 10));",
       "type": "decompiler_intrinsic"
     },

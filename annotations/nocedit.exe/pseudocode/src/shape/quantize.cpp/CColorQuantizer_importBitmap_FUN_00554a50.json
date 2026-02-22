@@ -17,6 +17,7 @@
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 8,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 96,
     "suspect_count": 9,
     "suspect_types": [
@@ -255,6 +256,7 @@
       "description": "Complex pointer cast",
       "line": 66,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar9 = (uint *)((int)puVar9 + (uint)bVar13 * -2 + 1);",
       "type": "pointer_cast"
     },
@@ -262,6 +264,7 @@
       "description": "Complex pointer cast",
       "line": 67,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar12 = (uint *)((int)puVar12 + (uint)bVar13 * -2 + 1);",
       "type": "pointer_cast"
     },
@@ -269,6 +272,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 75,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND(SQRT((double)((uint)bVar3 * (uint)bVar3 +",
       "type": "decompiler_intrinsic"
     },
@@ -276,6 +280,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 75,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND(SQRT((double)((uint)bVar3 * (uint)bVar3 +",
       "type": "decompiler_intrinsic"
     },
@@ -283,6 +288,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 75,
       "match": "SQRT",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND(SQRT((double)((uint)bVar3 * (uint)bVar3 +",
       "type": "decompiler_intrinsic"
     },
@@ -290,6 +296,7 @@
       "description": "Complex pointer cast",
       "line": 78,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4) = bVar1;",
       "type": "pointer_cast"
     },
@@ -297,6 +304,7 @@
       "description": "Complex pointer cast",
       "line": 79,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 1) = bVar2;",
       "type": "pointer_cast"
     },
@@ -304,6 +312,7 @@
       "description": "Complex pointer cast",
       "line": 80,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 2) = bVar3;",
       "type": "pointer_cast"
     },
@@ -311,6 +320,7 @@
       "description": "Complex pointer cast",
       "line": 81,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 3) =",
       "type": "pointer_cast"
     }

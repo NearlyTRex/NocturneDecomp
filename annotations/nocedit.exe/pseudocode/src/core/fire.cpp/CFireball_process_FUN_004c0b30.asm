@@ -26,7 +26,7 @@
 ;   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0
 ;   core_particle.cpp_CParticle_process_FUN_00545760
-;   core_set.cpp_CDemonSet_FUN_0056d110
+;   core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0056d110
 ;
 ; *****************************************************************************
 
@@ -99,8 +99,8 @@ section .text
     MOV EDX,dword ptr [0x006810c8]      ; 004c0bd3 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EDX                            ; 004c0bd9 | g_CDemonSetInstance
     MOV dword ptr [EBX + 0x20],0x0      ; 004c0bda
-    CALL core_set.cpp_CDemonSet_FUN_0056d110 ; 004c0be1
-        ;   XREF to: 0056d110 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d110(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0056d110 ; 004c0be1
+        ;   XREF to: 0056d110 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0056d110(CDemonSet * this_ptr, CDemonGlobe * globe)
     MOV EAX,[0x02cf6a80]                ; 004c0be6 | g_GlobalDeltaTimeInt
     MOV ECX,dword ptr [EBP + 0x48]      ; 004c0beb
     ADD ECX,EAX                         ; 004c0bee

@@ -37,16 +37,19 @@
   },
   "complexity": {
     "assembly_lines": 846,
-    "complexity_score": 691,
+    "complexity_score": 751,
     "cross_reference_count": 2,
     "function_call_count": 10,
     "global_count": 48,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 381,
-    "suspect_count": 29,
+    "suspect_count": 34,
     "suspect_types": [
       "decompiler_intrinsic",
+      "double_reconstruction",
       "pointer_cast",
       "stack_param",
+      "sub84_truncation",
       "unknown_field"
     ],
     "total_lines": 1227
@@ -936,6 +939,7 @@
       "description": "Unresolved stack parameter",
       "line": 18,
       "match": "in_stack_fffffed8",
+      "severity": "moderate",
       "text": "double in_stack_fffffed8;",
       "type": "stack_param"
     },
@@ -943,13 +947,23 @@
       "description": "Unresolved stack parameter",
       "line": 74,
       "match": "in_stack_fffffed8",
+      "severity": "moderate",
       "text": "SUB84(in_stack_fffffed8,0));",
       "type": "stack_param"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 74,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "SUB84(in_stack_fffffed8,0));",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 74,
       "match": "SUB84",
+      "severity": "mild",
       "text": "SUB84(in_stack_fffffed8,0));",
       "type": "decompiler_intrinsic"
     },
@@ -957,6 +971,7 @@
       "description": "Complex pointer cast",
       "line": 105,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (*(int *)((int)pCVar6->adjacent_edge_indices + local_60 + -4) <= local_50) break;",
       "type": "pointer_cast"
     },
@@ -964,6 +979,7 @@
       "description": "Complex pointer cast",
       "line": 106,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "iVar10 = *(int *)((int)pCVar6->adjacent_edge_indices + local_48 + local_60);",
       "type": "pointer_cast"
     },
@@ -971,6 +987,7 @@
       "description": "Complex pointer cast",
       "line": 122,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)g_MaxNeighborVerts + local_38) = iVar10;",
       "type": "pointer_cast"
     },
@@ -978,6 +995,7 @@
       "description": "Complex pointer cast",
       "line": 149,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)(g_TempNeighborFaces[0].uv_coords + -2) + iVar10 + 4) = local_1c;",
       "type": "pointer_cast"
     },
@@ -985,6 +1003,7 @@
       "description": "Complex pointer cast",
       "line": 151,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)(g_TempNeighborFaces[0].uv_coords + -1) + iVar10) =",
       "type": "pointer_cast"
     },
@@ -992,6 +1011,7 @@
       "description": "Complex pointer cast",
       "line": 155,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)(g_TempNeighborFaces[0].uv_coords + -1) + iVar10 + 4) = iVar7;",
       "type": "pointer_cast"
     },
@@ -999,6 +1019,7 @@
       "description": "Complex pointer cast",
       "line": 159,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)(g_TempNeighborFaces[0].uv_coords + -1) + iVar10) =",
       "type": "pointer_cast"
     },
@@ -1006,6 +1027,7 @@
       "description": "Complex pointer cast",
       "line": 165,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)(g_TempNeighborFaces[0].uv_coords + -1) + iVar10) =",
       "type": "pointer_cast"
     },
@@ -1013,6 +1035,7 @@
       "description": "Complex pointer cast",
       "line": 176,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)g_TempNeighborFaces[0].edge_dot_products + iVar10 + 0xc) =",
       "type": "pointer_cast"
     },
@@ -1020,6 +1043,7 @@
       "description": "Complex pointer cast",
       "line": 229,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "pCVar8 = this_ptr->vertex_data + *(int *)((int)g_MaxNeighborVerts + iVar10);",
       "type": "pointer_cast"
     },
@@ -1027,6 +1051,7 @@
       "description": "Complex pointer cast",
       "line": 278,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "pfVar12 = (float *)((int)&g_SamplePointArray[0].x + iVar7);",
       "type": "pointer_cast"
     },
@@ -1034,6 +1059,7 @@
       "description": "Complex pointer cast",
       "line": 281,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)&g_SamplePointArray[0].y + iVar7) = local_b8;",
       "type": "pointer_cast"
     },
@@ -1041,6 +1067,7 @@
       "description": "Complex pointer cast",
       "line": 282,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)&g_SamplePointArray[0].z + iVar7) = local_b4;",
       "type": "pointer_cast"
     },
@@ -1048,6 +1075,7 @@
       "description": "Unresolved stack parameter",
       "line": 291,
       "match": "in_stack_fffffed8",
+      "severity": "moderate",
       "text": "in_stack_fffffed8 = (double)((0.75f * 1e+10) / (float)g_SamplePointCount);",
       "type": "stack_param"
     },
@@ -1055,6 +1083,7 @@
       "description": "Unresolved stack parameter",
       "line": 293,
       "match": "in_stack_fffffed8",
+      "severity": "moderate",
       "text": "(this_ptr->next_lod,in_stack_fffffed8);",
       "type": "stack_param"
     },
@@ -1062,6 +1091,7 @@
       "description": "Complex pointer cast",
       "line": 297,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar1 = (double *)((int)g_SampleDistances + iVar10);",
       "type": "pointer_cast"
     },
@@ -1069,6 +1099,7 @@
       "description": "Unresolved stack parameter",
       "line": 299,
       "match": "in_stack_fffffed8",
+      "severity": "moderate",
       "text": "local_110 = *pdVar1 * in_stack_fffffed8 + local_110;",
       "type": "stack_param"
     },
@@ -1076,6 +1107,7 @@
       "description": "Complex pointer cast",
       "line": 311,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "iVar7 = *(int *)((int)g_TempNeighborFaces[0].edge_dot_products + local_18 + 0xc);",
       "type": "pointer_cast"
     },
@@ -1083,6 +1115,7 @@
       "description": "Complex pointer cast",
       "line": 317,
       "match": "(CVector3f *)((int)",
+      "severity": "mild",
       "text": "pCVar5 = (CVector3f *)((int)(pCVar5 + 0xb) + 8);",
       "type": "pointer_cast"
     },
@@ -1090,34 +1123,71 @@
       "description": "Unresolved stack parameter",
       "line": 340,
       "match": "in_stack_fffffed8",
+      "severity": "moderate",
       "text": "SUB84(in_stack_fffffed8,0));",
       "type": "stack_param"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 340,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "SUB84(in_stack_fffffed8,0));",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 340,
       "match": "SUB84",
+      "severity": "mild",
       "text": "SUB84(in_stack_fffffed8,0));",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 341,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "if (local_8c < (double)CONCAT44(uStack_114,local_118)) {",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 341,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "if (local_8c < (double)CONCAT44(uStack_114,local_118)) {",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 342,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "local_108 = SUB84(local_8c,0);",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 342,
       "match": "SUB84",
+      "severity": "mild",
       "text": "local_108 = SUB84(local_8c,0);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 353,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(float)(double)CONCAT44(uStack_114,local_118) + fVar2;",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 353,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(float)(double)CONCAT44(uStack_114,local_118) + fVar2;",
       "type": "decompiler_intrinsic"
     },
@@ -1125,6 +1195,7 @@
       "description": "Complex pointer cast",
       "line": 366,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_58->collapse_cost + 4) = local_110._4_4_;",
       "type": "pointer_cast"
     },
@@ -1132,6 +1203,7 @@
       "description": "Unknown/mangled field access",
       "line": 366,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_58->collapse_cost + 4) = local_110._4_4_;",
       "type": "unknown_field"
     }

@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 2,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 70,
     "suspect_count": 8,
     "suspect_types": [
@@ -336,6 +337,7 @@
       "description": "Complex pointer cast",
       "line": 30,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "local_54 = *(float *)((int)light_data + 4) - end_position->y;",
       "type": "pointer_cast"
     },
@@ -343,6 +345,7 @@
       "description": "Complex pointer cast",
       "line": 31,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "local_50 = *(float *)((int)light_data + 8) - end_position->z;",
       "type": "pointer_cast"
     },
@@ -350,6 +353,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 33,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_28 = (int)ROUND(ROUND((local_58 / (this_ptr->adjusted_size).x) * fVar3 + 1.0));",
       "type": "decompiler_intrinsic"
     },
@@ -357,6 +361,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 33,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_28 = (int)ROUND(ROUND((local_58 / (this_ptr->adjusted_size).x) * fVar3 + 1.0));",
       "type": "decompiler_intrinsic"
     },
@@ -364,6 +369,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 35,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_24 = (int)ROUND(ROUND((local_54 / (this_ptr->adjusted_size).y) * fVar3 + 1.0));",
       "type": "decompiler_intrinsic"
     },
@@ -371,6 +377,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 35,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_24 = (int)ROUND(ROUND((local_54 / (this_ptr->adjusted_size).y) * fVar3 + 1.0));",
       "type": "decompiler_intrinsic"
     },
@@ -378,6 +385,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 37,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_1c = (int)ROUND(ROUND((local_50 / (this_ptr->adjusted_size).z) * fVar3 + 1.0));",
       "type": "decompiler_intrinsic"
     },
@@ -385,6 +393,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 37,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_1c = (int)ROUND(ROUND((local_50 / (this_ptr->adjusted_size).z) * fVar3 + 1.0));",
       "type": "decompiler_intrinsic"
     }

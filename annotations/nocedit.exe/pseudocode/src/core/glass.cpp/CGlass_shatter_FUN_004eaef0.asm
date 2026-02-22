@@ -53,7 +53,7 @@
 ;   core_glass.cpp_CGlass_process_FUN_004e98e0 at 004e9919
 ;   core_gun.cpp_CGun_fire_FUN_004f0350 at 004f0a57
 ;   core_hiram.cpp_CHiram_process_FUN_004f4550 at 004f4644
-;   core_set.cpp_CDemonSet_FUN_0056b810 at 0056bbe7
+;   core_set.cpp_CDemonSet_processActors_FUN_0056b810 at 0056bbe7
 ;   core_tommygun.cpp_CTommyGun_fire_FUN_005ddb30 at 005de270
 ;   core_turret.cpp_CTurret_fire_FUN_005e3750 at 005e3c02
 ;
@@ -76,7 +76,7 @@
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0
 ;   core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0
-;   core_set.cpp_CDemonSet_FUN_00570c60
+;   core_set.cpp_CDemonSet_markMirrorCameraDirty_FUN_00570c60
 ;   crt_memory.c___arrinit_FUN_005fe667
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 ;
@@ -314,8 +314,8 @@ section .text
         ;   Label: LAB_004eb1ef
     MOV ESI,dword ptr [0x006810c8]      ; 004eb1f0 | g_CDemonSetPtr
     PUSH ESI                            ; 004eb1f6 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_00570c60 ; 004eb1f7
-        ;   XREF to: 00570c60 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_00570c60(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_markMirrorCameraDirty_FUN_00570c60 ; 004eb1f7
+        ;   XREF to: 00570c60 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_markMirrorCameraDirty_FUN_00570c60(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 004eb1fc
     JMP 0x004eaf26                      ; 004eb1ff
         ;   XREF to: 004eaf26 (UNCONDITIONAL_JUMP)  ; LAB_004eaf26

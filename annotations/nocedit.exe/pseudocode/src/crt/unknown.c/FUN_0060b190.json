@@ -1,14 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 21,
-    "complexity_score": 78,
+    "complexity_score": 103,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
+    "max_suspect_severity": "severe",
     "pseudocode_lines": 18,
-    "suspect_count": 5,
+    "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
+      "nan_function_artifact",
       "special_crt_function"
     ],
     "total_lines": 39
@@ -80,9 +82,26 @@
   },
   "suspects": [
     {
+      "description": "NAN() function call (FNSTSW comparison artifact)",
+      "line": 12,
+      "match": "NAN(",
+      "severity": "severe",
+      "text": "bVar2 = fVar3 < fVar4 | (byte)((ushort)((ushort)(NAN(fVar3) || NAN(fVar4)) << 10) >> 8) |",
+      "type": "nan_function_artifact"
+    },
+    {
+      "description": "NAN() function call (FNSTSW comparison artifact)",
+      "line": 12,
+      "match": "NAN(",
+      "severity": "severe",
+      "text": "bVar2 = fVar3 < fVar4 | (byte)((ushort)((ushort)(NAN(fVar3) || NAN(fVar4)) << 10) >> 8) |",
+      "type": "nan_function_artifact"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 12,
       "match": "NAN",
+      "severity": "mild",
       "text": "bVar2 = fVar3 < fVar4 | (byte)((ushort)((ushort)(NAN(fVar3) || NAN(fVar4)) << 10) >> 8) |",
       "type": "decompiler_intrinsic"
     },
@@ -90,6 +109,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 12,
       "match": "NAN",
+      "severity": "mild",
       "text": "bVar2 = fVar3 < fVar4 | (byte)((ushort)((ushort)(NAN(fVar3) || NAN(fVar4)) << 10) >> 8) |",
       "type": "decompiler_intrinsic"
     },
@@ -97,6 +117,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 14,
       "match": "CONCAT11",
+      "severity": "mild",
       "text": "uVar1 = CONCAT11(bVar2,2);",
       "type": "decompiler_intrinsic"
     },
@@ -104,6 +125,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 16,
       "match": "CONCAT11",
+      "severity": "mild",
       "text": "uVar1 = CONCAT11(bVar2,3);",
       "type": "decompiler_intrinsic"
     },

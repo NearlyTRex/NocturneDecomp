@@ -13,14 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 37,
+    "complexity_score": 52,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 15,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 22,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "decompiler_intrinsic"
+      "decompiler_intrinsic",
+      "double_reconstruction"
     ],
     "total_lines": 78
   },
@@ -226,9 +228,18 @@
   },
   "suspects": [
     {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 21,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "return (double)CONCAT44(g_CramTextureCount,",
+      "type": "double_reconstruction"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 21,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "return (double)CONCAT44(g_CramTextureCount,",
       "type": "decompiler_intrinsic"
     }

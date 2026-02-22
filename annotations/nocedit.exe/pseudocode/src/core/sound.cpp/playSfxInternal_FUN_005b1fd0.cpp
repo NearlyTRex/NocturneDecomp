@@ -141,7 +141,7 @@ LAB_005b20b2:
         local_48 = y + position_tracker->y;
         local_44 = z + position_tracker->z;
       }
-      local_18 = core_set_cpp_CDemonSet_FUN_0056fac0(g_CDemonSetPtr);
+      local_18 = core_set_cpp_CDemonSet_getReverbPresetAtPosition_FUN_0056fac0(g_CDemonSetPtr);
       local_1c = local_18;
       local_40 = (int)local_18 + 5;
       do {

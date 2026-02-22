@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00477980(CKeyFramedModel *this_ptr,int frame_index,int render_flags)
+; void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00477980(CKeyFramedModel *this_ptr,CKeyFramedModelInstance *instance,int render_flags)
 ;
 ; Parameters:
 ; CKeyFramedModel * Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   frame_index
+; CKeyFramedModelInstance * Stack[0x8]:4   instance
 ; int              Stack[0xc]:4   render_flags
 ; Local Variables:
 ; undefined4       Stack[-0x34]:4  local_34

@@ -1,0 +1,122 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 22,
+    "complexity_score": 12,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 3,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 34
+  },
+  "cross_references": [
+    {
+      "addr": "004544f0",
+      "from_addr": "004546e3",
+      "name": "core_dcamera.cpp_CDemonCamera_testBoxOcclusion_FUN_004544f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00476a60",
+      "from_addr": "00476b4a",
+      "name": "core_dlight.cpp_CDemonLight_testLightVolumeVisibility_FUN_00476a60",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00570df0",
+    "address_range": [
+      [
+        "00570df0",
+        "00570e1f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_00570df0",
+    "signature": "int __cdecl core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_00570df0(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prim)"
+  },
+  "function_calls": [
+    {
+      "addr": "005225a0",
+      "is_variadic": false,
+      "name": "core_mirror.cpp_CMirror_renderReflectedPrimitive_FUN_005225a0"
+    },
+    {
+      "addr": "0048ab50",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr2",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02c6d590",
+      "name": "DAT_02c6d590",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.823529411764706,
+    "instruction_count": 17,
+    "opcode_distribution": {
+      "CALL": 2,
+      "CBRANCH": 1,
+      "COPY": 11,
+      "INT_ADD": 8,
+      "INT_AND": 7,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 3,
+      "INT_SUB": 6,
+      "LOAD": 6,
+      "POPCOUNT": 3,
+      "RETURN": 2,
+      "STORE": 6
+    },
+    "pcode_op_count": 65
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "prim",
+        "offset": 8,
+        "size": 4,
+        "type": "SMRGLHeaderPrimitive *"
+      }
+    ]
+  },
+  "suspects": []
+}

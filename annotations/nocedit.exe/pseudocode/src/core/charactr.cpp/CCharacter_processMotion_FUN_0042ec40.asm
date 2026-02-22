@@ -72,7 +72,7 @@ section .text
     ADD ESP,0x4                         ; 0042ec7f
     PUSH EAX                            ; 0042ec82
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0 ; 0042ec83
-        ;   XREF to: 00599fc0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton * this_ptr, char * bone_name)
+        ;   XREF to: 00599fc0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0042ec88
     TEST EAX,EAX                        ; 0042ec8b
     JL 0x0042ec6b                       ; 0042ec8d
@@ -107,7 +107,7 @@ section .text
     ADD ESP,0x4                         ; 0042ecce
     PUSH EAX                            ; 0042ecd1
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0 ; 0042ecd2
-        ;   XREF to: 00599fc0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton * this_ptr, char * bone_name)
+        ;   XREF to: 00599fc0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0042ecd7
     TEST EAX,EAX                        ; 0042ecda
     JL 0x0042ec6b                       ; 0042ecdc
@@ -142,7 +142,7 @@ section .text
     ADD ESP,0x4                         ; 0042ed21
     PUSH EAX                            ; 0042ed24
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0 ; 0042ed25
-        ;   XREF to: 00599fc0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton * this_ptr, char * bone_name)
+        ;   XREF to: 00599fc0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0042ed2a
     TEST EAX,EAX                        ; 0042ed2d
     JL 0x0042ec6b                       ; 0042ed2f
@@ -177,7 +177,7 @@ section .text
     ADD ESP,0x4                         ; 0042ed78
     PUSH EAX                            ; 0042ed7b
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0 ; 0042ed7c
-        ;   XREF to: 00599fc0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton * this_ptr, char * bone_name)
+        ;   XREF to: 00599fc0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0042ed81
     TEST EAX,EAX                        ; 0042ed84
     JL 0x0042ec6b                       ; 0042ed86

@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 12,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 41,
     "suspect_count": 3,
     "suspect_types": [
@@ -258,6 +259,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 25,
       "match": "ABS",
+      "severity": "mild",
       "text": "fVar3 = ABS(SQRT((float)blue * (float)blue +",
       "type": "decompiler_intrinsic"
     },
@@ -265,6 +267,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 25,
       "match": "SQRT",
+      "severity": "mild",
       "text": "fVar3 = ABS(SQRT((float)blue * (float)blue +",
       "type": "decompiler_intrinsic"
     },
@@ -272,6 +275,7 @@
       "description": "Complex pointer cast",
       "line": 28,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)g_PaletteLuminanceCache + iVar7));",
       "type": "pointer_cast"
     }

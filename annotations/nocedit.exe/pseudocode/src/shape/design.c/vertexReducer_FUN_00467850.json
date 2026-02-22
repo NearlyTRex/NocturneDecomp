@@ -17,6 +17,7 @@
     "cross_reference_count": 4,
     "function_call_count": 14,
     "global_count": 25,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 214,
     "suspect_count": 17,
     "suspect_types": [
@@ -518,6 +519,7 @@
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_fffffebc",
+      "severity": "moderate",
       "text": "char *in_stack_fffffebc;",
       "type": "stack_param"
     },
@@ -525,6 +527,7 @@
       "description": "Unresolved stack parameter",
       "line": 51,
       "match": "in_stack_fffffebc",
+      "severity": "moderate",
       "text": "dVar9 = _strtod(in_stack_fffffebc);",
       "type": "stack_param"
     },
@@ -532,6 +535,7 @@
       "description": "Unresolved stack parameter",
       "line": 79,
       "match": "in_stack_fffffebc",
+      "severity": "moderate",
       "text": "dVar9 = _strtod(in_stack_fffffebc);",
       "type": "stack_param"
     },
@@ -539,6 +543,7 @@
       "description": "Complex pointer cast",
       "line": 101,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)local_18 + local_34 * 8) = local_34;",
       "type": "pointer_cast"
     },
@@ -546,6 +551,7 @@
       "description": "Complex pointer cast",
       "line": 102,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)local_18 + local_34 * 8 + 4) = local_34;",
       "type": "pointer_cast"
     },
@@ -553,6 +559,7 @@
       "description": "Complex pointer cast",
       "line": 121,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)local_14 + local_2c->vertex_indices[local_30] * 4) = local_34;",
       "type": "pointer_cast"
     },
@@ -560,6 +567,7 @@
       "description": "Complex pointer cast",
       "line": 126,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (*(int *)((int)local_18 + local_34 * 8 + 4) == *(int *)((int)local_18 + local_34 * 8)) {",
       "type": "pointer_cast"
     },
@@ -567,6 +575,7 @@
       "description": "Complex pointer cast",
       "line": 126,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (*(int *)((int)local_18 + local_34 * 8 + 4) == *(int *)((int)local_18 + local_34 * 8)) {",
       "type": "pointer_cast"
     },
@@ -574,6 +583,7 @@
       "description": "Complex pointer cast",
       "line": 132,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (*(int *)((int)local_18 + local_30 * 8 + 4) == *(int *)((int)local_18 + local_30 * 8)",
       "type": "pointer_cast"
     },
@@ -581,6 +591,7 @@
       "description": "Complex pointer cast",
       "line": 132,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (*(int *)((int)local_18 + local_30 * 8 + 4) == *(int *)((int)local_18 + local_30 * 8)",
       "type": "pointer_cast"
     },
@@ -588,6 +599,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 137,
       "match": "ABS",
+      "severity": "mild",
       "text": "if (((ABS(g_LoadedVertices[iVar2].vertex.x - g_LoadedVertices[iVar3].vertex.x) <",
       "type": "decompiler_intrinsic"
     },
@@ -595,6 +607,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 139,
       "match": "ABS",
+      "severity": "mild",
       "text": "(ABS(g_LoadedVertices[iVar2].vertex.y - g_LoadedVertices[iVar3].vertex.y) <",
       "type": "decompiler_intrinsic"
     },
@@ -602,6 +615,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 141,
       "match": "ABS",
+      "severity": "mild",
       "text": "(ABS(g_LoadedVertices[iVar2].vertex.z - g_LoadedVertices[iVar3].vertex.z) <",
       "type": "decompiler_intrinsic"
     },
@@ -609,6 +623,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 144,
       "match": "fcos",
+      "severity": "mild",
       "text": "fVar8 = (float10)fcos((float10)angle_tolerance *",
       "type": "decompiler_intrinsic"
     },
@@ -616,6 +631,7 @@
       "description": "Complex pointer cast",
       "line": 155,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)local_18 + local_30 * 8 + 4) =",
       "type": "pointer_cast"
     },
@@ -623,6 +639,7 @@
       "description": "Complex pointer cast",
       "line": 156,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)local_18 + local_34 * 8);",
       "type": "pointer_cast"
     },
@@ -630,6 +647,7 @@
       "description": "Complex pointer cast",
       "line": 171,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)local_18 + local_2c->vertex_indices[local_30] * 8 + 4);",
       "type": "pointer_cast"
     }

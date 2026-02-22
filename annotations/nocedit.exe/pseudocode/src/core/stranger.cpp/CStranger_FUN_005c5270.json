@@ -65,6 +65,7 @@
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 16,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 362,
     "suspect_count": 23,
     "suspect_types": [
@@ -456,6 +457,7 @@
       "description": "Unreachable code block removed",
       "line": 2,
       "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x005c5793) */",
       "type": "warning_unreachable"
     },
@@ -463,6 +465,7 @@
       "description": "Unresolved stack parameter",
       "line": 18,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "float in_stack_00000008;",
       "type": "stack_param"
     },
@@ -470,6 +473,7 @@
       "description": "Unresolved stack parameter",
       "line": 19,
       "match": "in_stack_ffffffa4",
+      "severity": "moderate",
       "text": "CVector3f *in_stack_ffffffa4;",
       "type": "stack_param"
     },
@@ -477,6 +481,7 @@
       "description": "Unresolved stack parameter",
       "line": 20,
       "match": "in_stack_ffffffa8",
+      "severity": "moderate",
       "text": "float in_stack_ffffffa8;",
       "type": "stack_param"
     },
@@ -484,6 +489,7 @@
       "description": "Unresolved stack parameter",
       "line": 66,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "if (in_stack_00000008 <= 0.0) {",
       "type": "stack_param"
     },
@@ -491,6 +497,7 @@
       "description": "Unresolved stack parameter",
       "line": 82,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "fVar2 = in_stack_00000008 * (float)25 + this_ptr->aim_speed_factor;",
       "type": "stack_param"
     },
@@ -498,6 +505,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 118,
       "match": "7.00649e-45",
+      "severity": "mild",
       "text": "case 7.00649e-45:",
       "type": "suspect_float"
     },
@@ -505,6 +513,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 121,
       "match": "1.4013e-45",
+      "severity": "mild",
       "text": "case 1.4013e-45:",
       "type": "suspect_float"
     },
@@ -512,6 +521,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 124,
       "match": "2.8026e-45",
+      "severity": "mild",
       "text": "case 2.8026e-45:",
       "type": "suspect_float"
     },
@@ -519,6 +529,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 129,
       "match": "5.60519e-45",
+      "severity": "mild",
       "text": "case 5.60519e-45:",
       "type": "suspect_float"
     },
@@ -526,6 +537,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 132,
       "match": "9.80909e-45",
+      "severity": "mild",
       "text": "case 9.80909e-45:",
       "type": "suspect_float"
     },
@@ -533,6 +545,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 144,
       "match": "1.12104e-44",
+      "severity": "mild",
       "text": "if (((7 < (uint)fVar2) && (fVar2 != 1.12104e-44)) ||",
       "type": "suspect_float"
     },
@@ -540,6 +553,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 160,
       "match": "1.12104e-44",
+      "severity": "mild",
       "text": "if (((7 < (uint)fVar2) && (fVar2 != 1.12104e-44)) ||",
       "type": "suspect_float"
     },
@@ -547,6 +561,7 @@
       "description": "Direct stack address reference",
       "line": 177,
       "match": "&stack0x00000008",
+      "severity": "moderate",
       "text": "((CCharacter *)this_ptr,&stack0x00000008,iVar11);",
       "type": "stack_ref"
     },
@@ -554,6 +569,7 @@
       "description": "Direct stack address reference",
       "line": 205,
       "match": "&stack0xffffffa4",
+      "severity": "moderate",
       "text": "((CDemonActor *)this_ptr,(CVector3f *)&stack0xffffffa4,&CStack_50);",
       "type": "stack_ref"
     },
@@ -561,6 +577,7 @@
       "description": "Unresolved stack parameter",
       "line": 232,
       "match": "in_stack_ffffffa4",
+      "severity": "moderate",
       "text": "((CCharacter *)this_ptr->weapon,(int)in_stack_ffffffa4,in_stack_ffffffa8);",
       "type": "stack_param"
     },
@@ -568,6 +585,7 @@
       "description": "Unresolved stack parameter",
       "line": 232,
       "match": "in_stack_ffffffa8",
+      "severity": "moderate",
       "text": "((CCharacter *)this_ptr->weapon,(int)in_stack_ffffffa4,in_stack_ffffffa8);",
       "type": "stack_param"
     },
@@ -575,6 +593,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 260,
       "match": "1.12104e-44",
+      "severity": "mild",
       "text": "else if (((uint)fVar2 < 8) || (fVar2 == 1.12104e-44)) {",
       "type": "suspect_float"
     },
@@ -582,6 +601,7 @@
       "description": "Unresolved stack parameter",
       "line": 275,
       "match": "in_stack_ffffffa4",
+      "severity": "moderate",
       "text": "((CCharacter *)this_ptr->weapon,1,in_stack_ffffffa4,in_stack_ffffffa8);",
       "type": "stack_param"
     },
@@ -589,6 +609,7 @@
       "description": "Unresolved stack parameter",
       "line": 275,
       "match": "in_stack_ffffffa8",
+      "severity": "moderate",
       "text": "((CCharacter *)this_ptr->weapon,1,in_stack_ffffffa4,in_stack_ffffffa8);",
       "type": "stack_param"
     },
@@ -596,6 +617,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 294,
       "match": "1.12104e-44",
+      "severity": "mild",
       "text": "else if (((uint)fVar2 < 8) || (fVar2 == 1.12104e-44)) {",
       "type": "suspect_float"
     },
@@ -603,6 +625,7 @@
       "description": "Unresolved stack parameter",
       "line": 308,
       "match": "in_stack_ffffffa4",
+      "severity": "moderate",
       "text": "(local_18,2,in_stack_ffffffa4,in_stack_ffffffa8);",
       "type": "stack_param"
     },
@@ -610,6 +633,7 @@
       "description": "Unresolved stack parameter",
       "line": 308,
       "match": "in_stack_ffffffa8",
+      "severity": "moderate",
       "text": "(local_18,2,in_stack_ffffffa4,in_stack_ffffffa8);",
       "type": "stack_param"
     }

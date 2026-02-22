@@ -112,10 +112,10 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *
       pcVar3[1] = cVar2;
       pcVar3 = pcVar3 + 2;
     } while (cVar2 != '\0');
-    this_ptr->sky_type = 0x4000;
+    this_ptr->sky_brightness = 0x4000;
   }
   else {
-    _fscanf(p_Var4,"%d,%s\n",&this_ptr->sky_type,pcVar3);
+    _fscanf(p_Var4,"%d,%s\n",&this_ptr->sky_brightness,pcVar3);
   }
   pcVar3 = this_ptr->world_geometry_name;
   if (this_ptr->set_file_version < 0xd) {

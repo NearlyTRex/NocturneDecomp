@@ -19,14 +19,16 @@
   },
   "complexity": {
     "assembly_lines": 72,
-    "complexity_score": 86,
+    "complexity_score": 101,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 26,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
+      "stack_alignment_array",
       "stack_ref"
     ],
     "total_lines": 98
@@ -185,9 +187,18 @@
   },
   "suspects": [
     {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 7,
+      "match": "aiStackY_1010",
+      "severity": "moderate",
+      "text": "int aiStackY_1010 [1017];",
+      "type": "stack_alignment_array"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 18,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar1 = (uint *)((int)(local_14 + reference_vertex_id) + (uint)bVar2 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -195,6 +206,7 @@
       "description": "Direct stack address reference",
       "line": 20,
       "match": "&stack0xffffffdc",
+      "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffdc + (uint)bVar2 * -8) = *puVar1;",
       "type": "stack_ref"
     },
@@ -202,6 +214,7 @@
       "description": "Complex pointer cast",
       "line": 20,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&stack0xffffffdc + (uint)bVar2 * -8) = *puVar1;",
       "type": "pointer_cast"
     },
@@ -209,6 +222,7 @@
       "description": "Direct stack address reference",
       "line": 21,
       "match": "&stack0xffffffe0",
+      "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffe0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =",
       "type": "stack_ref"
     },
@@ -216,6 +230,7 @@
       "description": "Complex pointer cast",
       "line": 21,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&stack0xffffffe0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =",
       "type": "pointer_cast"
     }

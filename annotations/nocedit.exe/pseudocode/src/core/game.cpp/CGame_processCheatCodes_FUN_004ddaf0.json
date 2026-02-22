@@ -121,16 +121,18 @@
   },
   "complexity": {
     "assembly_lines": 3947,
-    "complexity_score": 2649,
+    "complexity_score": 2664,
     "cross_reference_count": 1,
     "function_call_count": 39,
     "global_count": 200,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 2004,
-    "suspect_count": 61,
+    "suspect_count": 62,
     "suspect_types": [
       "decompiler_intrinsic",
       "nonstandard_int",
       "pointer_cast",
+      "sub84_truncation",
       "undefined_data",
       "unknown_field",
       "unresolved_funcptr",
@@ -258,7 +260,7 @@
     {
       "addr": "0056b7e0",
       "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_0056b7e0"
+      "name": "core_set.cpp_CDemonSet_reinitCamera_FUN_0056b7e0"
     },
     {
       "addr": "005a0820",
@@ -1918,6 +1920,7 @@
       "description": "Type propagation did not converge",
       "line": 2,
       "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
     },
@@ -1925,6 +1928,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 226,
       "match": "code",
+      "severity": "moderate",
       "text": "pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(\"Enter cheat code\");",
       "type": "unresolved_funcptr"
     },
@@ -1932,6 +1936,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 250,
       "match": "CONCAT31",
+      "severity": "mild",
       "text": "iVar9 = CONCAT31((int3)((uint)iVar12 >> 8),g_InputHistory[iVar18]);",
       "type": "decompiler_intrinsic"
     },
@@ -1939,6 +1944,7 @@
       "description": "Non-standard integer size (decompiler artifact)",
       "line": 250,
       "match": "int3",
+      "severity": "mild",
       "text": "iVar9 = CONCAT31((int3)((uint)iVar12 >> 8),g_InputHistory[iVar18]);",
       "type": "nonstandard_int"
     },
@@ -1946,6 +1952,7 @@
       "description": "Undefined global data reference",
       "line": 254,
       "match": "DAT_0062ba32",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062ba32);",
       "type": "undefined_data"
     },
@@ -1953,6 +1960,7 @@
       "description": "Undefined global data reference",
       "line": 290,
       "match": "DAT_0062ba90",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062ba90);",
       "type": "undefined_data"
     },
@@ -1960,6 +1968,7 @@
       "description": "Unknown/mangled field access",
       "line": 328,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_2b4._4_4_ = (uint)((ulonglong)dVar6 >> 0x20);",
       "type": "unknown_field"
     },
@@ -1967,6 +1976,7 @@
       "description": "Unknown/mangled field access",
       "line": 329,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "uVar7 = local_2b4._4_4_;",
       "type": "unknown_field"
     },
@@ -1974,13 +1984,23 @@
       "description": "Unknown/mangled field access",
       "line": 330,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_2b4._0_4_ = SUB84(dVar6,0);",
       "type": "unknown_field"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 330,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "local_2b4._0_4_ = SUB84(dVar6,0);",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 330,
       "match": "SUB84",
+      "severity": "mild",
       "text": "local_2b4._0_4_ = SUB84(dVar6,0);",
       "type": "decompiler_intrinsic"
     },
@@ -1988,6 +2008,7 @@
       "description": "Undefined global data reference",
       "line": 338,
       "match": "DAT_0062bad0",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062bad0);",
       "type": "undefined_data"
     },
@@ -1995,6 +2016,7 @@
       "description": "Undefined global data reference",
       "line": 372,
       "match": "DAT_0062bb05",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062bb05);",
       "type": "undefined_data"
     },
@@ -2002,6 +2024,7 @@
       "description": "Undefined global data reference",
       "line": 414,
       "match": "DAT_0062bb63",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062bb63);",
       "type": "undefined_data"
     },
@@ -2009,6 +2032,7 @@
       "description": "Undefined global data reference",
       "line": 466,
       "match": "DAT_0062bbc4",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062bbc4);",
       "type": "undefined_data"
     },
@@ -2016,6 +2040,7 @@
       "description": "Undefined global data reference",
       "line": 507,
       "match": "DAT_0062bc2d",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062bc2d);",
       "type": "undefined_data"
     },
@@ -2023,6 +2048,7 @@
       "description": "Undefined global data reference",
       "line": 541,
       "match": "DAT_0062bc80",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062bc80);",
       "type": "undefined_data"
     },
@@ -2030,6 +2056,7 @@
       "description": "Undefined global data reference",
       "line": 576,
       "match": "DAT_0062bccf",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062bccf);",
       "type": "undefined_data"
     },
@@ -2037,6 +2064,7 @@
       "description": "Undefined global data reference",
       "line": 624,
       "match": "DAT_0062bd02",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062bd02);",
       "type": "undefined_data"
     },
@@ -2044,6 +2072,7 @@
       "description": "Undefined global data reference",
       "line": 653,
       "match": "DAT_0062bd39",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062bd39);",
       "type": "undefined_data"
     },
@@ -2051,6 +2080,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 685,
       "match": "NAN",
+      "severity": "mild",
       "text": "this_ptr_01[2].location.position.y = -NAN;",
       "type": "decompiler_intrinsic"
     },
@@ -2058,6 +2088,7 @@
       "description": "Undefined global data reference",
       "line": 706,
       "match": "DAT_0062bdbc",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062bdbc);",
       "type": "undefined_data"
     },
@@ -2065,6 +2096,7 @@
       "description": "Undefined global data reference",
       "line": 749,
       "match": "DAT_0062be21",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062be21);",
       "type": "undefined_data"
     },
@@ -2072,6 +2104,7 @@
       "description": "Undefined global data reference",
       "line": 790,
       "match": "DAT_0062be9e",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062be9e);",
       "type": "undefined_data"
     },
@@ -2079,6 +2112,7 @@
       "description": "Undefined global data reference",
       "line": 825,
       "match": "DAT_0062bef3",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062bef3);",
       "type": "undefined_data"
     },
@@ -2086,6 +2120,7 @@
       "description": "Undefined global data reference",
       "line": 859,
       "match": "DAT_0062bf3e",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062bf3e);",
       "type": "undefined_data"
     },
@@ -2093,6 +2128,7 @@
       "description": "Undefined global data reference",
       "line": 893,
       "match": "DAT_0062bf92",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062bf92);",
       "type": "undefined_data"
     },
@@ -2100,6 +2136,7 @@
       "description": "Undefined global data reference",
       "line": 928,
       "match": "DAT_0062bfe9",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062bfe9);",
       "type": "undefined_data"
     },
@@ -2107,6 +2144,7 @@
       "description": "Undefined global data reference",
       "line": 963,
       "match": "DAT_0062c04b",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c04b);",
       "type": "undefined_data"
     },
@@ -2114,6 +2152,7 @@
       "description": "Undefined global data reference",
       "line": 998,
       "match": "DAT_0062c0a8",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c0a8);",
       "type": "undefined_data"
     },
@@ -2121,6 +2160,7 @@
       "description": "Undefined global data reference",
       "line": 1033,
       "match": "DAT_0062c10c",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c10c);",
       "type": "undefined_data"
     },
@@ -2128,6 +2168,7 @@
       "description": "Undefined global data reference",
       "line": 1066,
       "match": "DAT_0062c141",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c141);",
       "type": "undefined_data"
     },
@@ -2135,6 +2176,7 @@
       "description": "Undefined global data reference",
       "line": 1114,
       "match": "DAT_0062c203",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c203);",
       "type": "undefined_data"
     },
@@ -2142,6 +2184,7 @@
       "description": "Undefined global data reference",
       "line": 1153,
       "match": "DAT_0062c263",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c263);",
       "type": "undefined_data"
     },
@@ -2149,6 +2192,7 @@
       "description": "Undefined global data reference",
       "line": 1189,
       "match": "DAT_0067b5f0",
+      "severity": "mild",
       "text": "(g_CEditorToolsPtr,\"Raise an event\",&DAT_0067b5f0,100,1),",
       "type": "undefined_data"
     },
@@ -2156,6 +2200,7 @@
       "description": "Undefined global data reference",
       "line": 1192,
       "match": "DAT_0067b5f0",
+      "severity": "mild",
       "text": "(g_CEventListPtr,&DAT_0067b5f0);",
       "type": "undefined_data"
     },
@@ -2163,6 +2208,7 @@
       "description": "Undefined global data reference",
       "line": 1194,
       "match": "DAT_0067b5f0",
+      "severity": "mild",
       "text": "core_event_cpp_CEventList_executeCommands_FUN_004aabe0(g_CEventListPtr,&DAT_0067b5f0);",
       "type": "undefined_data"
     },
@@ -2170,6 +2216,7 @@
       "description": "Undefined global data reference",
       "line": 1201,
       "match": "DAT_0062c2b1",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c2b1);",
       "type": "undefined_data"
     },
@@ -2177,6 +2224,7 @@
       "description": "Complex pointer cast",
       "line": 1231,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "iVar18 = *(int *)((int)g_CDemonSetPtr->enemies + iStack_74);",
       "type": "pointer_cast"
     },
@@ -2184,6 +2232,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 1236,
       "match": "SQRT",
+      "severity": "mild",
       "text": "if (SQRT(fStack_2b8 * fStack_2b8 + fStack_2c0 * fStack_2c0 + fStack_2bc * fStack_2bc) <=",
       "type": "decompiler_intrinsic"
     },
@@ -2191,6 +2240,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 1240,
       "match": "code *",
+      "severity": "moderate",
       "text": "(**(code **)(*(int *)(iVar18 + 0x154) + 0x11c))(iVar18,&SStack_2fc);",
       "type": "unresolved_funcptr"
     },
@@ -2198,6 +2248,7 @@
       "description": "Undefined global data reference",
       "line": 1245,
       "match": "DAT_0062c2f2",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c2f2);",
       "type": "undefined_data"
     },
@@ -2205,6 +2256,7 @@
       "description": "Undefined global data reference",
       "line": 1286,
       "match": "DAT_0062c377",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c377);",
       "type": "undefined_data"
     },
@@ -2212,6 +2264,7 @@
       "description": "Undefined global data reference",
       "line": 1318,
       "match": "DAT_0062c3c7",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c3c7);",
       "type": "undefined_data"
     },
@@ -2219,6 +2272,7 @@
       "description": "Undefined global data reference",
       "line": 1348,
       "match": "DAT_0062c406",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c406);",
       "type": "undefined_data"
     },
@@ -2226,6 +2280,7 @@
       "description": "Undefined global data reference",
       "line": 1378,
       "match": "DAT_0062c445",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c445);",
       "type": "undefined_data"
     },
@@ -2233,6 +2288,7 @@
       "description": "Undefined global data reference",
       "line": 1432,
       "match": "DAT_0062c4f0",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c4f0);",
       "type": "undefined_data"
     },
@@ -2240,6 +2296,7 @@
       "description": "Undefined global data reference",
       "line": 1465,
       "match": "DAT_0062c52f",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c52f);",
       "type": "undefined_data"
     },
@@ -2247,6 +2304,7 @@
       "description": "Undefined global data reference",
       "line": 1497,
       "match": "DAT_0062c561",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c561);",
       "type": "undefined_data"
     },
@@ -2254,6 +2312,7 @@
       "description": "Undefined global data reference",
       "line": 1536,
       "match": "DAT_0062c5bc",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c5bc);",
       "type": "undefined_data"
     },
@@ -2261,6 +2320,7 @@
       "description": "Undefined global data reference",
       "line": 1570,
       "match": "DAT_0062c61a",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c61a);",
       "type": "undefined_data"
     },
@@ -2268,6 +2328,7 @@
       "description": "Undefined global data reference",
       "line": 1598,
       "match": "DAT_0062c654",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c654);",
       "type": "undefined_data"
     },
@@ -2275,6 +2336,7 @@
       "description": "Undefined global data reference",
       "line": 1626,
       "match": "DAT_0062c68b",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c68b);",
       "type": "undefined_data"
     },
@@ -2282,6 +2344,7 @@
       "description": "Complex pointer cast",
       "line": 1666,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "iVar9 = *(int *)((int)g_CDemonSetPtr->characters + iStack_40);",
       "type": "pointer_cast"
     },
@@ -2289,6 +2352,7 @@
       "description": "Undefined global data reference",
       "line": 1751,
       "match": "DAT_0062c710",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c710);",
       "type": "undefined_data"
     },
@@ -2296,6 +2360,7 @@
       "description": "Undefined global data reference",
       "line": 1780,
       "match": "DAT_0062c744",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c744);",
       "type": "undefined_data"
     },
@@ -2303,6 +2368,7 @@
       "description": "Undefined global data reference",
       "line": 1822,
       "match": "DAT_0062c7a0",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c7a0);",
       "type": "undefined_data"
     },
@@ -2310,6 +2376,7 @@
       "description": "Undefined global data reference",
       "line": 1853,
       "match": "DAT_0062c7e5",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c7e5);",
       "type": "undefined_data"
     },
@@ -2317,6 +2384,7 @@
       "description": "Undefined global data reference",
       "line": 1891,
       "match": "DAT_0062c830",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c830);",
       "type": "undefined_data"
     },
@@ -2324,6 +2392,7 @@
       "description": "Undefined global data reference",
       "line": 1919,
       "match": "DAT_0062c869",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c869);",
       "type": "undefined_data"
     },
@@ -2331,6 +2400,7 @@
       "description": "Undefined global data reference",
       "line": 1947,
       "match": "DAT_0062c8a0",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c8a0);",
       "type": "undefined_data"
     },
@@ -2338,6 +2408,7 @@
       "description": "Undefined global data reference",
       "line": 1976,
       "match": "DAT_0062c8da",
+      "severity": "mild",
       "text": "pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(DAT_0062c8da);",
       "type": "undefined_data"
     }

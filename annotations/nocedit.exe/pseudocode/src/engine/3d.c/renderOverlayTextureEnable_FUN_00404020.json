@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 10,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 37,
     "suspect_count": 1,
     "suspect_types": [
@@ -164,6 +165,7 @@
       "description": "Complex pointer cast",
       "line": 39,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "return (void *)((int)&polygon_info[1].base + (polygon_info->base).count * 0xc);",
       "type": "pointer_cast"
     }

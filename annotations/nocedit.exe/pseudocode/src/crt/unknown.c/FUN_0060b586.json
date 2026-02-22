@@ -5,6 +5,7 @@
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 51,
     "suspect_count": 31,
     "suspect_types": [
@@ -117,6 +118,7 @@
       "description": "Unnamed function parameter",
       "line": 2,
       "match": "param_1",
+      "severity": "mild",
       "text": "void __cdecl FUN_0060b586(byte *param_1,ulonglong *param_2)",
       "type": "unnamed_param"
     },
@@ -124,6 +126,7 @@
       "description": "Unnamed function parameter",
       "line": 2,
       "match": "param_2",
+      "severity": "mild",
       "text": "void __cdecl FUN_0060b586(byte *param_1,ulonglong *param_2)",
       "type": "unnamed_param"
     },
@@ -131,6 +134,7 @@
       "description": "Inferred register parameter",
       "line": 10,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "byte *in_EAX;",
       "type": "register_param"
     },
@@ -138,6 +142,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 11,
       "match": "extraout_EAX",
+      "severity": "moderate",
       "text": "uint extraout_EAX;",
       "type": "extra_output"
     },
@@ -145,6 +150,7 @@
       "description": "Inferred register parameter",
       "line": 17,
       "match": "in_EDX",
+      "severity": "mild",
       "text": "uint *in_EDX;",
       "type": "register_param"
     },
@@ -152,6 +158,7 @@
       "description": "Inferred register parameter",
       "line": 27,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "for (; *in_EAX != 0; in_EAX = in_EAX + 1) {",
       "type": "register_param"
     },
@@ -159,6 +166,7 @@
       "description": "Inferred register parameter",
       "line": 27,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "for (; *in_EAX != 0; in_EAX = in_EAX + 1) {",
       "type": "register_param"
     },
@@ -166,6 +174,7 @@
       "description": "Inferred register parameter",
       "line": 27,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "for (; *in_EAX != 0; in_EAX = in_EAX + 1) {",
       "type": "register_param"
     },
@@ -173,6 +182,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 28,
       "match": "CARRY4",
+      "severity": "mild",
       "text": "bVar13 = CARRY4(uVar12,uVar12);",
       "type": "decompiler_intrinsic"
     },
@@ -180,6 +190,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 29,
       "match": "CARRY4",
+      "severity": "mild",
       "text": "bVar14 = CARRY4(uVar6,uVar6);",
       "type": "decompiler_intrinsic"
     },
@@ -187,6 +198,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 32,
       "match": "CARRY4",
+      "severity": "mild",
       "text": "uVar1 = (uint)CARRY4(uVar12 * 2,uVar12 * 2);",
       "type": "decompiler_intrinsic"
     },
@@ -194,6 +206,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 34,
       "match": "CARRY4",
+      "severity": "mild",
       "text": "uVar2 = (uint)CARRY4(uVar12 * 4,uVar12);",
       "type": "decompiler_intrinsic"
     },
@@ -201,6 +214,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 35,
       "match": "CARRY4",
+      "severity": "mild",
       "text": "bVar15 = CARRY4(uVar8,uVar6);",
       "type": "decompiler_intrinsic"
     },
@@ -208,6 +222,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 39,
       "match": "CARRY4",
+      "severity": "mild",
       "text": "uVar3 = (uint)CARRY4(uVar12 * 5,uVar12 * 5);",
       "type": "decompiler_intrinsic"
     },
@@ -215,6 +230,7 @@
       "description": "Inferred register parameter",
       "line": 41,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "uVar12 = uVar6 + (*in_EAX & 0xffffff0f);",
       "type": "register_param"
     },
@@ -222,6 +238,7 @@
       "description": "Inferred register parameter",
       "line": 42,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "uVar4 = (uint)CARRY4(uVar6,*in_EAX & 0xffffff0f);",
       "type": "register_param"
     },
@@ -229,6 +246,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 42,
       "match": "CARRY4",
+      "severity": "mild",
       "text": "uVar4 = (uint)CARRY4(uVar6,*in_EAX & 0xffffff0f);",
       "type": "decompiler_intrinsic"
     },
@@ -236,6 +254,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 44,
       "match": "CARRY4",
+      "severity": "mild",
       "text": "uVar11 = (uVar11 * 5 + (uint)(bVar14 || CARRY4(uVar5,(uint)bVar13)) * 2 +",
       "type": "decompiler_intrinsic"
     },
@@ -243,6 +262,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 45,
       "match": "CARRY4",
+      "severity": "mild",
       "text": "(uint)(CARRY4(uVar7,uVar7) || CARRY4(uVar7 * 2,uVar1)) +",
       "type": "decompiler_intrinsic"
     },
@@ -250,6 +270,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 45,
       "match": "CARRY4",
+      "severity": "mild",
       "text": "(uint)(CARRY4(uVar7,uVar7) || CARRY4(uVar7 * 2,uVar1)) +",
       "type": "decompiler_intrinsic"
     },
@@ -257,6 +278,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 46,
       "match": "CARRY4",
+      "severity": "mild",
       "text": "(uint)(bVar15 || CARRY4(uVar8,uVar2))) * 2 +",
       "type": "decompiler_intrinsic"
     },
@@ -264,6 +286,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 47,
       "match": "CARRY4",
+      "severity": "mild",
       "text": "(uint)(CARRY4(uVar9,uVar9) || CARRY4(uVar9 * 2,uVar3)) + (uint)CARRY4(uVar10,uVar4);",
       "type": "decompiler_intrinsic"
     },
@@ -271,6 +294,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 47,
       "match": "CARRY4",
+      "severity": "mild",
       "text": "(uint)(CARRY4(uVar9,uVar9) || CARRY4(uVar9 * 2,uVar3)) + (uint)CARRY4(uVar10,uVar4);",
       "type": "decompiler_intrinsic"
     },
@@ -278,6 +302,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 47,
       "match": "CARRY4",
+      "severity": "mild",
       "text": "(uint)(CARRY4(uVar9,uVar9) || CARRY4(uVar9 * 2,uVar3)) + (uint)CARRY4(uVar10,uVar4);",
       "type": "decompiler_intrinsic"
     },
@@ -285,6 +310,7 @@
       "description": "Inferred register parameter",
       "line": 50,
       "match": "in_EDX",
+      "severity": "mild",
       "text": "in_EDX[1] = uVar11;",
       "type": "register_param"
     },
@@ -292,6 +318,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 51,
       "match": "extraout_EAX",
+      "severity": "moderate",
       "text": "*in_EDX = extraout_EAX;",
       "type": "extra_output"
     },
@@ -299,6 +326,7 @@
       "description": "Inferred register parameter",
       "line": 51,
       "match": "in_EDX",
+      "severity": "mild",
       "text": "*in_EDX = extraout_EAX;",
       "type": "register_param"
     },
@@ -306,6 +334,7 @@
       "description": "Inferred register parameter",
       "line": 52,
       "match": "in_EDX",
+      "severity": "mild",
       "text": "*(short *)(in_EDX + 2) = (short)in_EAX;",
       "type": "register_param"
     },
@@ -313,6 +342,7 @@
       "description": "Inferred register parameter",
       "line": 52,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "*(short *)(in_EDX + 2) = (short)in_EAX;",
       "type": "register_param"
     },

@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 15,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 136,
     "suspect_count": 4,
     "suspect_types": [
@@ -285,6 +286,7 @@
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_0000002c",
+      "severity": "moderate",
       "text": "int in_stack_0000002c;",
       "type": "stack_param"
     },
@@ -292,6 +294,7 @@
       "description": "Unresolved stack parameter",
       "line": 55,
       "match": "in_stack_0000002c",
+      "severity": "moderate",
       "text": "if (in_stack_0000002c != -1) {",
       "type": "stack_param"
     },
@@ -299,6 +302,7 @@
       "description": "Complex pointer cast",
       "line": 89,
       "match": "(ushort *)((int)",
+      "severity": "mild",
       "text": "puVar8 = (ushort *)((int)g_ScreenBufferArray[(int)pcVar7] + y_position * 2);",
       "type": "pointer_cast"
     },

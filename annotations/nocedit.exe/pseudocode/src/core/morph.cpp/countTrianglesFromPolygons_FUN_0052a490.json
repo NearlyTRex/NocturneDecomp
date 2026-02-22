@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 12,
     "suspect_count": 1,
     "suspect_types": [
@@ -28,7 +29,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_morph.cpp_countTrianglesFromPolygons_FUN_0052a490",
-    "signature": "int __cdecl core_morph_cpp_countTrianglesFromPolygons_FUN_0052a490(int poly_count,int *poly_headers,int poly_stride)"
+    "signature": "int __cdecl core_morph_cpp_countTrianglesFromPolygons_FUN_0052a490(int poly_count,SMRGLHeaderPrimitive *poly_headers,int poly_stride)"
   },
   "function_calls": [],
   "globals": [],
@@ -85,7 +86,7 @@
         "name": "poly_headers",
         "offset": 8,
         "size": 4,
-        "type": "int *"
+        "type": "SMRGLHeaderPrimitive *"
       },
       {
         "is_param": true,
@@ -100,8 +101,9 @@
     {
       "description": "Complex pointer cast",
       "line": 11,
-      "match": "(int *)((int)",
-      "text": "poly_headers = (int *)((int)poly_headers + poly_stride);",
+      "match": "(SMRGLHeaderPrimitive *)((int)",
+      "severity": "mild",
+      "text": "poly_headers = (SMRGLHeaderPrimitive *)((int)&(poly_headers->base).type + poly_stride);",
       "type": "pointer_cast"
     }
   ]

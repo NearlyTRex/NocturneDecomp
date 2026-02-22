@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 6,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 37,
     "suspect_count": 2,
     "suspect_types": [
@@ -146,6 +147,7 @@
       "description": "Type propagation did not converge",
       "line": 2,
       "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
     },
@@ -153,6 +155,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 25,
       "match": "SQRT",
+      "severity": "mild",
       "text": "pCVar5->adjacency[0].distance = SQRT(fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2);",
       "type": "decompiler_intrinsic"
     }

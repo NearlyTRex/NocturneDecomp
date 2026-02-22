@@ -18,7 +18,7 @@ void __cdecl core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_00524120
   do {
     if (this_ptr_00 == (CDemonActor *)0x0) {
       core_setcolid_cpp_CDemonSet_FUN_005743e0(g_CDemonSetPtr);
-      core_set_cpp_CDemonSet_FUN_00570fc0(g_CDemonSetPtr);
+      core_set_cpp_CDemonSet_buildActorTypeLists_FUN_00570fc0(g_CDemonSetPtr);
       return;
     }
     core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80

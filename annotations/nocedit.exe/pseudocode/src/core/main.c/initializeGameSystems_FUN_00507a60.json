@@ -95,6 +95,7 @@
     "cross_reference_count": 1,
     "function_call_count": 39,
     "global_count": 96,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 513,
     "suspect_count": 12,
     "suspect_types": [
@@ -1066,6 +1067,7 @@
       "description": "Direct stack address reference",
       "line": 49,
       "match": "&stack0xfffff8d8",
+      "severity": "moderate",
       "text": "pcVar6 = &stack0xfffff8d8;",
       "type": "stack_ref"
     },
@@ -1073,6 +1075,7 @@
       "description": "Direct stack address reference",
       "line": 327,
       "match": "&stack0xfffff8d8",
+      "severity": "moderate",
       "text": "pcVar8 = &stack0xfffff8d8;",
       "type": "stack_ref"
     },
@@ -1080,6 +1083,7 @@
       "description": "Direct stack address reference",
       "line": 349,
       "match": "&stack0xfffff8d8",
+      "severity": "moderate",
       "text": "pcVar6 = &stack0xfffff8d8;",
       "type": "stack_ref"
     },
@@ -1087,6 +1091,7 @@
       "description": "Direct stack address reference",
       "line": 370,
       "match": "&stack0xfffff8d8",
+      "severity": "moderate",
       "text": "pcVar6 = &stack0xfffff8d8;",
       "type": "stack_ref"
     },
@@ -1094,6 +1099,7 @@
       "description": "Direct stack address reference",
       "line": 392,
       "match": "&stack0xfffff8d8",
+      "severity": "moderate",
       "text": "pcVar6 = &stack0xfffff8d8;",
       "type": "stack_ref"
     },
@@ -1101,6 +1107,7 @@
       "description": "Direct stack address reference",
       "line": 413,
       "match": "&stack0xfffff8d8",
+      "severity": "moderate",
       "text": "pcVar6 = &stack0xfffff8d8;",
       "type": "stack_ref"
     },
@@ -1108,6 +1115,7 @@
       "description": "Direct stack address reference",
       "line": 435,
       "match": "&stack0xfffff8d8",
+      "severity": "moderate",
       "text": "pcVar6 = &stack0xfffff8d8;",
       "type": "stack_ref"
     },
@@ -1115,6 +1123,7 @@
       "description": "Direct stack address reference",
       "line": 454,
       "match": "&stack0xfffff8d8",
+      "severity": "moderate",
       "text": "shape_edittool_cpp_CEditorTools_showWarning_FUN_0049e6f0(g_CEditorToolsPtr,&stack0xfffff8d8);",
       "type": "stack_ref"
     },
@@ -1122,6 +1131,7 @@
       "description": "Complex pointer cast",
       "line": 491,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar1 = (uint *)((int)&g_GlobalFilters + iVar11);",
       "type": "pointer_cast"
     },
@@ -1129,6 +1139,7 @@
       "description": "Complex pointer cast",
       "line": 503,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(uint *)(*(int *)((int)&g_PlayerFilters + iVar9) + 4) = 0x100;",
       "type": "pointer_cast"
     },
@@ -1136,6 +1147,7 @@
       "description": "Complex pointer cast",
       "line": 504,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar1 = (uint *)((int)&g_PlayerFilters + iVar9);",
       "type": "pointer_cast"
     },

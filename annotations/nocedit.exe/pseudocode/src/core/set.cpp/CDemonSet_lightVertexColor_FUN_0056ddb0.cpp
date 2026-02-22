@@ -90,7 +90,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0(CDemonSet *thi
     iVar8 = 0xffff;
     local_14 = 0;
   }
-  if (g_ColorCorrectionEnabled < 1) {
+  if (g_ColorCorrectionCount < 1) {
     iVar8 = iVar8 + local_14;
     lVar1 = (longlong)iVar8 * (longlong)this_ptr->light_scale_factor;
     local_18 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;

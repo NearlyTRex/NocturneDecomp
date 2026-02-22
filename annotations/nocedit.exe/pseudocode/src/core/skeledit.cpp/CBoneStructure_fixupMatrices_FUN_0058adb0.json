@@ -19,14 +19,16 @@
   },
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 48,
+    "complexity_score": 63,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 6,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 33,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "decompiler_intrinsic"
+      "decompiler_intrinsic",
+      "sub84_truncation"
     ],
     "total_lines": 125
   },
@@ -242,9 +244,18 @@
   },
   "suspects": [
     {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 22,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "local_28 = SUB84(dVar2,0);",
+      "type": "sub84_truncation"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 22,
       "match": "SUB84",
+      "severity": "mild",
       "text": "local_28 = SUB84(dVar2,0);",
       "type": "decompiler_intrinsic"
     }

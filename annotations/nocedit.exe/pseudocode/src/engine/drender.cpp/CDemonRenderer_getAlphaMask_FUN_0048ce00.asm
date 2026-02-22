@@ -14,7 +14,7 @@
 ;   core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0 at 0044d7e7
 ;   core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00485be0 at 00485bf6
 ;   core_moloch.cpp_CMoloch_renderOpaque_FUN_00529750 at 0052975f
-;   core_set.cpp_CDemonSet_FUN_0056d140 at 0056d16b
+;   core_set.cpp_CDemonSet_addQueuedCoronaGlobe_FUN_0056d140 at 0056d16b
 ;   core_succubus.cpp_CSuccubus_renderOpaque_FUN_005c7590 at 005c75a0
 ;
 ; *****************************************************************************

@@ -23,6 +23,7 @@
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 5,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 71,
     "suspect_count": 5,
     "suspect_types": [
@@ -36,7 +37,7 @@
     {
       "addr": "0056c1a0",
       "from_addr": "0056c26e",
-      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0",
+      "name": "core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -209,6 +210,7 @@
       "description": "Deadcode elimination delayed",
       "line": 2,
       "match": "WARNING: Restarted to delay deadcode elimination",
+      "severity": "mild",
       "text": "/* WARNING: Restarted to delay deadcode elimination for space: stack */",
       "type": "warning_deadcode_restart"
     },
@@ -216,6 +218,7 @@
       "description": "Complex pointer cast",
       "line": 29,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar3 = (uint *)((int)light_source->corona_visibility_buffers +",
       "type": "pointer_cast"
     },
@@ -223,6 +226,7 @@
       "description": "Complex pointer cast",
       "line": 33,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "piVar4 = (int *)((int)light_source->corona_lightmap_indices +",
       "type": "pointer_cast"
     },
@@ -230,6 +234,7 @@
       "description": "Undefined global data reference",
       "line": 36,
       "match": "DAT_015c2eac",
+      "severity": "mild",
       "text": "DAT_015c2eac = light_source->precomputed_lighting_textures;",
       "type": "undefined_data"
     },
@@ -237,6 +242,7 @@
       "description": "Undefined global data reference",
       "line": 57,
       "match": "DAT_015c2eac",
+      "severity": "mild",
       "text": "*pcVar9 = *pcVar9 + DAT_015c2eac[*piVar4];",
       "type": "undefined_data"
     }

@@ -17,6 +17,7 @@
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 4,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 19,
     "suspect_count": 3,
     "suspect_types": [
@@ -137,6 +138,7 @@
       "description": "Unresolved stack parameter",
       "line": 6,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "LPCSTR in_stack_00000004;",
       "type": "stack_param"
     },
@@ -144,6 +146,7 @@
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "LVar1 = (*g_RegOpenKeyExAFunc)((HKEY)&DAT_80000002,in_stack_00000004,0,1,&pHStack_10);",
       "type": "stack_param"
     },
@@ -151,6 +154,7 @@
       "description": "Undefined global data reference",
       "line": 12,
       "match": "DAT_80000002",
+      "severity": "mild",
       "text": "LVar1 = (*g_RegOpenKeyExAFunc)((HKEY)&DAT_80000002,in_stack_00000004,0,1,&pHStack_10);",
       "type": "undefined_data"
     }

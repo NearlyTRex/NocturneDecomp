@@ -103,7 +103,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   }
   else {
     DAT_02d82d80 = 0;
-    core_set_cpp_CDemonSet_FUN_00571130(g_CDemonSetPtr);
+    core_set_cpp_CDemonSet_restoreLightState_FUN_00571130(g_CDemonSetPtr,&DAT_02d82d84);
   }
   if (this_ptr->gamma < 0x8000) {
     this_ptr->gamma = 0x8000;
@@ -359,7 +359,7 @@ LAB_004db434:
   core_sound_cpp_CSound_shutdown_FUN_005b2f70(g_CSoundPtr);
   core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0(this_ptr);
   (*g_CKeysPtr->vtable->clearKeyPresses)(g_CKeysPtr);
-  core_set_cpp_CDemonSet_FUN_0056d2d0(g_CDemonSetPtr);
+  core_set_cpp_CDemonSet_clearLights_FUN_0056d2d0(g_CDemonSetPtr);
   this_ptr->time_scale_factor = 1.0;
   shape_edittool_cpp_CPickList_clear_FUN_004a5770(&g_CPickList);
   core_inv_cpp_freeInventory_FUN_004fd510();

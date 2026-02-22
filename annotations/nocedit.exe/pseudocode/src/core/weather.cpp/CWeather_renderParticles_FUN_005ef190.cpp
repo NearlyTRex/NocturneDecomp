@@ -70,7 +70,9 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_005ef190(CWeather *th
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
               (g_CDemonRendererPtr2,&g_SnowflakeTexture);
   }
-  core_set_cpp_CDemonSet_FUN_0056d380(g_CDemonSetPtr);
+  core_set_cpp_CDemonSet_setLightingParameters_FUN_0056d380
+            (g_CDemonSetPtr,(CVector3f *)0x0,(UOrientationVector *)0x0,(CVector3f *)0x0,
+             (CVector3f *)0x0,(CMatrix3x3f *)0x0);
   local_14 = 0.1;
   local_10 = 0.1;
   if (this_ptr->weather_type == 1) {

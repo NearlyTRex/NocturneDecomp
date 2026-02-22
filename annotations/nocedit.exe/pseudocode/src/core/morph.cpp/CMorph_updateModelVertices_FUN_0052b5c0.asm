@@ -1,11 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_morph_cpp_CMorph_updateModelVertices_FUN_0052b5c0(CMorph *this_ptr,int model_index)
+; void __cdecl core_morph_cpp_CMorph_updateModelVertices_FUN_0052b5c0(CMorph *this_ptr,int model_index,CVector3i *vertices,int part_index)
 ;
 ; Parameters:
 ; CMorph *         Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   model_index
+; CVector3i *      Stack[0xc]:4   vertices
+; int              Stack[0x10]:4   part_index
 ;
 ; Called Functions:
 ;   core_morph.cpp_CMorphModel_animateFromPartVertexBuffer_FUN_0052aa00
@@ -30,7 +32,7 @@ section .text
     ADD EAX,EBX                         ; 0052b5e4
     PUSH EAX                            ; 0052b5e6
     CALL core_morph.cpp_CMorphModel_animateFromPartVertexBuffer_FUN_0052aa00 ; 0052b5e7
-        ;   XREF to: 0052aa00 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_animateFromPartVertexBuffer_FUN_0052aa00(CMorphModel * this_ptr, int part_index, CVector3i * vertex_buffer, int start_offset, ...)
+        ;   XREF to: 0052aa00 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_animateFromPartVertexBuffer_FUN_0052aa00(CMorphModel * this_ptr, int part_index, CVector3i * vertex_buffer)
     ADD ESP,0xc                         ; 0052b5ec
     POP EBX                             ; 0052b5ef
     RET                                 ; 0052b5f0

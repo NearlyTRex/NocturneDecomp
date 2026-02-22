@@ -19,7 +19,7 @@
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
-;   core_set.cpp_CDemonSet_FUN_00570cd0
+;   core_set.cpp_CDemonSet_cacheMirrorLighting_FUN_00570cd0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
 ;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720
@@ -122,8 +122,8 @@ section .text
     PUSH EAX                            ; 004252a8
     MOV EAX,[0x006810c8]                ; 004252a9 | g_CDemonSetPtr | g_CDemonSetInstance
     PUSH EAX                            ; 004252ae | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_00570cd0 ; 004252af
-        ;   XREF to: 00570cd0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_00570cd0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_cacheMirrorLighting_FUN_00570cd0 ; 004252af
+        ;   XREF to: 00570cd0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_cacheMirrorLighting_FUN_00570cd0(CDemonSet * this_ptr, CVector3f * position)
     ADD ESP,0x8                         ; 004252b4
     PUSH 0xffff                         ; 004252b7
     MOV EDX,dword ptr [0x006703ec]      ; 004252bc | g_CDemonRendererPtr2
@@ -149,8 +149,8 @@ section .text
         ;   Label: LAB_00425314
     MOV ECX,dword ptr [0x006810c8]      ; 00425316 | g_CDemonSetPtr | g_CDemonSetInstance
     PUSH ECX                            ; 0042531c | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_00570cd0 ; 0042531d
-        ;   XREF to: 00570cd0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_00570cd0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_cacheMirrorLighting_FUN_00570cd0 ; 0042531d
+        ;   XREF to: 00570cd0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_cacheMirrorLighting_FUN_00570cd0(CDemonSet * this_ptr, CVector3f * position)
     ADD ESP,0x8                         ; 00425322
     POP ESI                             ; 00425325
     POP EDI                             ; 00425326

@@ -15,9 +15,13 @@ int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80(CDemonS
   int iVar4;
   int iVar5;
   byte bVar6;
-  uint *apuStackY_1030 [1012];
-  uint *puStack_5c;
+  float afStackY_1030 [1012];
+  CVector3f *position;
+  CVector3f *orientation;
+  CVector3f *aabb_min;
+  CVector3f *aabb_max;
   CDemonLight *light_source;
+  CMatrix3x3f *rotation_matrix;
   CVector3i *light_direction;
   CVector3i local_48;
   CVector3f local_3c;
@@ -29,12 +33,21 @@ int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80(CDemonS
   bVar6 = 0;
   if (g_LightingSystemDirty != 0) {
     if (g_LightingSystemDirty == 1) {
-      puStack_5c = (uint *)0x0;
+      rotation_matrix = (CMatrix3x3f *)0x0;
+      aabb_max = (CVector3f *)0x0;
+      aabb_min = (CVector3f *)0x0;
+      orientation = (CVector3f *)0x0;
+      position = (CVector3f *)0x0;
     }
     else {
-      puStack_5c = &DAT_032c1c68;
+      rotation_matrix = &g_LightingRotationMatrix;
+      aabb_max = &g_LightingAABBMax;
+      aabb_min = &g_LightingAABBMin;
+      orientation = &g_LightingOrientation;
+      position = &g_LightingReferencePosition;
     }
-    core_set_cpp_CDemonSet_FUN_0056d4a0(this_ptr);
+    core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0056d4a0
+              (this_ptr,position,orientation,aabb_min,aabb_max,rotation_matrix);
     g_LightingSystemDirty = 0;
   }
   iVar4 = 0;
@@ -42,10 +55,9 @@ int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80(CDemonS
   if (0 < g_PrimaryDirectionalLightCount) {
     iVar5 = 0;
     do {
-      puVar1 = (uint *)((int)&g_PrimaryDirectionalLights + iVar5);
+      puVar1 = (uint *)((int)g_PrimaryDirectionalLights + iVar5);
       iVar5 = iVar5 + 4;
       iVar4 = iVar4 + 1;
-      puStack_5c = (uint *)0x56dbe7;
       iVar2 = core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044edf0
                         (&g_CDemonCameraInstance,world_position,(CDemonLight *)*puVar1,
                          surface_normal);
@@ -59,7 +71,6 @@ int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80(CDemonS
       puVar1 = (uint *)((int)g_SecondaryDirectionalLights + iVar5);
       iVar5 = iVar5 + 4;
       iVar4 = iVar4 + 1;
-      puStack_5c = (uint *)0x56dc29;
       iVar2 = core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044edf0
                         (&g_CDemonCameraInstance,world_position,(CDemonLight *)*puVar1,
                          surface_normal);
@@ -70,7 +81,7 @@ int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80(CDemonS
   if (0 < g_GlobeLightCount) {
     iVar5 = 0;
     do {
-      puVar1 = (uint *)((int)&g_GlobeLights + iVar5);
+      puVar1 = (uint *)((int)g_GlobeLights + iVar5);
       iVar5 = iVar5 + 4;
       iVar4 = iVar4 + 1;
       iVar2 = core_dglobe_cpp_CDemonGlobe_getAttenuationAtVertex_FUN_00471850
@@ -112,7 +123,6 @@ int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80(CDemonS
             light_direction = &local_24;
             light_source = *(CDemonLight **)((int)g_DynamicLights + iVar5);
           }
-          puStack_5c = (uint *)0x56dd00;
           iVar2 = core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044edf0
                             (&g_CDemonCameraInstance,&local_48,light_source,light_direction);
           iVar3 = iVar3 + iVar2;

@@ -6,17 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 159,
-    "complexity_score": 202,
+    "complexity_score": 163,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 5,
-    "pseudocode_lines": 72,
-    "suspect_count": 12,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 73,
+    "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 231
+    "total_lines": 232
   },
   "cross_references": [
     {
@@ -234,57 +235,25 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 31,
-      "match": "(SMRGLPrimitiveTriangle *)((int)",
-      "text": "texture = (SMRGLPrimitiveTriangle *)((int)this_ptr->poly_vert_list + local_18);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 39,
-      "match": "(CVector3i *)((int)",
-      "text": "*ppCVar5 = (CVector3i *)((int)&(*ppCVar5)->x + (texture->base).surface_normal.A);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 40,
-      "match": "(CVector3i *)((int)",
-      "text": "ppCVar5[1] = (CVector3i *)((int)&ppCVar5[1]->x + (texture->base).surface_normal.B);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 41,
-      "match": "(CVector3i *)((int)",
-      "text": "ppCVar5[2] = (CVector3i *)((int)&ppCVar5[2]->x + (texture->base).surface_normal.C);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 54,
+      "line": 55,
       "match": "(int *)((int)",
-      "text": "piVar9 = (int *)((int)this_ptr->vertex_normal_list + iVar7);",
+      "severity": "mild",
+      "text": "piVar9 = (int *)((int)&this_ptr->vertex_normal_list->x + iVar7);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 58,
+      "line": 59,
       "match": "SQRT",
+      "severity": "mild",
       "text": "dVar2 = SQRT(dVar3 * dVar3 + dVar4 * dVar4 + dVar1 * dVar1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
+      "line": 62,
       "match": "ROUND",
-      "text": "*piVar9 = (int)ROUND(ROUND(dVar1 * dVar2));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
-      "match": "ROUND",
+      "severity": "mild",
       "text": "*piVar9 = (int)ROUND(ROUND(dVar1 * dVar2));",
       "type": "decompiler_intrinsic"
     },
@@ -292,13 +261,15 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 62,
       "match": "ROUND",
-      "text": "piVar9[1] = (int)ROUND(ROUND(dVar4 * dVar2));",
+      "severity": "mild",
+      "text": "*piVar9 = (int)ROUND(ROUND(dVar1 * dVar2));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 62,
+      "line": 63,
       "match": "ROUND",
+      "severity": "mild",
       "text": "piVar9[1] = (int)ROUND(ROUND(dVar4 * dVar2));",
       "type": "decompiler_intrinsic"
     },
@@ -306,13 +277,23 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 63,
       "match": "ROUND",
+      "severity": "mild",
+      "text": "piVar9[1] = (int)ROUND(ROUND(dVar4 * dVar2));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 64,
+      "match": "ROUND",
+      "severity": "mild",
       "text": "piVar9[2] = (int)ROUND(ROUND(dVar3 * dVar2));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 63,
+      "line": 64,
       "match": "ROUND",
+      "severity": "mild",
       "text": "piVar9[2] = (int)ROUND(ROUND(dVar3 * dVar2));",
       "type": "decompiler_intrinsic"
     }

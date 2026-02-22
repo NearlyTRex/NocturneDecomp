@@ -26,7 +26,7 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ;
 ; XREF[2]:
-;   core_set.cpp_CDemonSet_FUN_0056b810 at 0056bbc8
+;   core_set.cpp_CDemonSet_processActors_FUN_0056b810 at 0056bbc8
 ;   core_trigger.cpp_CTrigger_process_FUN_005dfac0 at 005dfe7d
 ;
 ; Referenced Globals:

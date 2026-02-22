@@ -19,7 +19,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_renderGeometry_FUN_00419340(CBodyPart *
             (g_CDemonSetPtr,this_ptr->vertex_count,&this_ptr->vertices->x);
   core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
             (g_CDemonSetPtr,this_ptr->vertex_count,this_ptr->tri_count,this_ptr->faces,
-             (int)this_ptr->vertices,3,(int)this_ptr->normals);
+             this_ptr->vertices,3,this_ptr->normals);
   if ((this_ptr->texture_count == 1) ||
      (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
      iVar2 != 0)) {
@@ -29,8 +29,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_renderGeometry_FUN_00419340(CBodyPart *
                 (g_CDemonRendererPtr2,this_ptr->textures);
     }
     engine_drender_cpp_CDemonRenderer_renderFaceBatch_FUN_0048ce20
-              (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)this_ptr->faces,this_ptr->tri_count,
-               render_flags);
+              (g_CDemonRendererPtr2,&this_ptr->faces->base,this_ptr->tri_count,render_flags);
   }
   else {
     iVar2 = 0;
@@ -48,7 +47,8 @@ void __cdecl core_bodypart_cpp_CBodyPart_renderGeometry_FUN_00419340(CBodyPart *
         engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
                   (g_CDemonRendererPtr2,
                    (SMRGLHeaderPrimitive *)
-                   ((int)&(this_ptr->faces->vertex_indices).vertex_index_0 + iVar3),render_flags);
+                   ((int)&(((SMRGLPrimitiveTriangle *)(this_ptr->faces->vertices + -2))->base).base.
+                          type + iVar3),render_flags);
         iVar2 = iVar2 + 1;
         iVar3 = iVar3 + 0x3c;
         local_14 = local_14 + 4;

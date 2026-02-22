@@ -17,6 +17,7 @@
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 11,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 55,
     "suspect_count": 3,
     "suspect_types": [
@@ -235,6 +236,7 @@
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_ffffffc8",
+      "severity": "moderate",
       "text": "CFrankenstienMachine *in_stack_ffffffc8;",
       "type": "stack_param"
     },
@@ -242,6 +244,7 @@
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_ffffffc8",
+      "severity": "moderate",
       "text": "pCVar2 = core_frankgen_cpp_CFrankenstienMachine_findLeader_FUN_004d2330(in_stack_ffffffc8);",
       "type": "stack_param"
     },
@@ -249,6 +252,7 @@
       "description": "Direct stack address reference",
       "line": 21,
       "match": "&stack0xffffffcc",
+      "severity": "moderate",
       "text": "(&this_ptr->base,(CBoundingBox3D *)&stack0xffffffcc);",
       "type": "stack_ref"
     }

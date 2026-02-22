@@ -27,13 +27,15 @@ void __cdecl core_fire_cpp_CShell_render_FUN_004c6200(CShell *this_ptr)
         (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)
                   (g_CurrentSceneCamera,this_ptr,0);
       }
-      core_set_cpp_CDemonSet_FUN_0056d380(g_CDemonSetPtr);
+      core_set_cpp_CDemonSet_setLightingParameters_FUN_0056d380
+                (g_CDemonSetPtr,(CVector3f *)this_ptr,(UOrientationVector *)&this_ptr->euler_angles,
+                 &g_ZeroVector,&g_ZeroVector,(CMatrix3x3f *)0x0);
       engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                 (g_CDemonRendererPtr2,(CVector3f *)this_ptr);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                 (g_CDemonRendererPtr2,(CVector3i *)&this_ptr->euler_angles,(CVector3i *)0x0);
       core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
-                (this_ptr->model_ptr,(CKeyFramedModelInstance *)0x0,0,-1);
+                (this_ptr->model_ptr,0,(CKeyFramedModelInstance *)0x0,-1);
       engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
       return;
     }

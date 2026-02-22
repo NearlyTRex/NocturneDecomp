@@ -23,6 +23,7 @@
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 7,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 45,
     "suspect_count": 2,
     "suspect_types": [
@@ -178,6 +179,7 @@
       "description": "Complex pointer cast",
       "line": 31,
       "match": "(CPodAuditRecord *)((int)",
+      "severity": "mild",
       "text": "pCVar6 = (CPodAuditRecord *)((int)pCVar6 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -185,6 +187,7 @@
       "description": "Direct stack address reference",
       "line": 34,
       "match": "&stack0x0000002c",
+      "severity": "moderate",
       "text": "pcVar5 = &stack0x0000002c;",
       "type": "stack_ref"
     }

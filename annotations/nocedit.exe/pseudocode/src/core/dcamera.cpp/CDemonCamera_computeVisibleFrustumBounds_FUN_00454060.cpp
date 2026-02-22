@@ -2,11 +2,11 @@
 // Address: 00454060
 // Address Range: [[00454060, 00454441]]
 // Convention: __cdecl
-// Signature: CVector3f * __cdecl core_dcamera_cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454060(CDemonCamera *this_ptr,CVector3f *output_vectors,CBoundingBox3D *bounding_box)
+// Signature: CVector3f * __cdecl core_dcamera_cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454060(CDemonCamera *this_ptr,CVector3f *output_bounds)
 
 #include "nocturne.h"
 
-CVector3f * __cdecl core_dcamera_cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454060(CDemonCamera *this_ptr,CVector3f *output_vectors,CBoundingBox3D *bounding_box)
+CVector3f * __cdecl core_dcamera_cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454060(CDemonCamera *this_ptr,CVector3f *output_bounds)
 
 {
   CVector3f *pCVar1;
@@ -46,16 +46,16 @@ CVector3f * __cdecl core_dcamera_cpp_CDemonCamera_computeVisibleFrustumBounds_FU
   int local_14;
   
   bVar3 = 0;
-  pCVar1 = output_vectors + 1;
+  pCVar1 = output_bounds + 1;
   if (pCVar1 != &g_ZeroVector) {
     pCVar1->x = g_ZeroVector.x;
-    output_vectors[1].y = g_ZeroVector.y;
-    output_vectors[1].z = g_ZeroVector.z;
+    output_bounds[1].y = g_ZeroVector.y;
+    output_bounds[1].z = g_ZeroVector.z;
   }
-  if (pCVar1 != output_vectors) {
-    output_vectors->x = pCVar1->x;
-    output_vectors->y = output_vectors[1].y;
-    output_vectors->z = output_vectors[1].z;
+  if (pCVar1 != output_bounds) {
+    output_bounds->x = pCVar1->x;
+    output_bounds->y = output_bounds[1].y;
+    output_bounds->z = output_bounds[1].z;
   }
   local_20 = &(this_ptr->base).position;
   local_38 = 0;
@@ -63,7 +63,7 @@ CVector3f * __cdecl core_dcamera_cpp_CDemonCamera_computeVisibleFrustumBounds_FU
   local_18 = 1;
   do {
     if (this_ptr->framebuffer_height + -1 <= local_18) {
-      return output_vectors;
+      return output_bounds;
     }
     local_2c = local_18 + 1;
     local_28 = local_38;
@@ -94,7 +94,7 @@ LAB_00454218:
         local_5c.z = local_9c - (float)local_20->z;
         core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
                   ((CMatrix3x3f *)local_34,&local_50,&local_5c);
-        core_box_cpp_CBoundingBox3D_expand_FUN_00420240((CBoundingBox3D *)output_vectors,&local_50);
+        core_box_cpp_CBoundingBox3D_expand_FUN_00420240((CBoundingBox3D *)output_bounds,&local_50);
       }
       else {
         uVar2 = 0;

@@ -5,6 +5,7 @@
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 1,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 47,
     "suspect_count": 5,
     "suspect_types": [
@@ -103,6 +104,7 @@
       "description": "Inferred register parameter",
       "line": 7,
       "match": "in_DS",
+      "severity": "mild",
       "text": "short in_DS;",
       "type": "register_param"
     },
@@ -110,6 +112,7 @@
       "description": "Complex pointer cast",
       "line": 21,
       "match": "(Heap *)((int)",
+      "severity": "mild",
       "text": "((Heap *)((int)&heap_ptr->heap_size + heap_ptr->heap_size) <= pHVar1))))) {",
       "type": "pointer_cast"
     },
@@ -117,6 +120,7 @@
       "description": "Complex pointer cast",
       "line": 25,
       "match": "(Heap *)((int)",
+      "severity": "mild",
       "text": "pHVar2 = (Heap *)((int)&pHVar1->heap_size + (pHVar1->heap_size & 0xfffffffeU));",
       "type": "pointer_cast"
     },
@@ -124,6 +128,7 @@
       "description": "Inferred register parameter",
       "line": 33,
       "match": "in_DS",
+      "severity": "mild",
       "text": "heap_state_ptr->segment_selector = in_DS;",
       "type": "register_param"
     },

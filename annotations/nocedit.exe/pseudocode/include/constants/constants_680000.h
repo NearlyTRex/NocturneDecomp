@@ -354,10 +354,6 @@ const undefined2 DAT_0068546c = 0x127F;
 
 // undefined4 constants
 const undefined4 DAT_00680970 = 0x0000002A;
-const undefined4 DAT_006810dc = 0x00000180;
-const undefined4 DAT_006810e0 = 0x00000200;
-const undefined4 DAT_006810e4 = 0x00000180;
-const undefined4 DAT_00681264 = 0x00000080;
 const undefined4 DAT_006844f4 = 0x00002000;
 const undefined4 DAT_006850a4 = 0x00000005;
 const undefined4 DAT_006850a8 = 0x00000009;
@@ -366,7 +362,6 @@ const undefined4 DAT_006854f0 = 0x00000001;
 const undefined4 DAT_006855d8 = 0x0FFFFFFF;
 
 // void* constants
-const void* DAT_006810EE = (void*)0x00800000; // DAT_00800000
 const void* DAT_006817E8 = (void*)s_Off_00649199;
 const void* DAT_006817EC = (void*)s_On_0064919d;
 const void* DAT_006817F4 = (void*)s_Rain_Lightning_006491a5;

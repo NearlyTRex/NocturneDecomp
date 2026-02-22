@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 8,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 84,
     "suspect_count": 11,
     "suspect_types": [
@@ -293,6 +294,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 40,
       "match": "fsin",
+      "severity": "mild",
       "text": "fVar10 = (float10)fsin(((float10)wave_offset - (float10)SQRT(fVar1)) *",
       "type": "decompiler_intrinsic"
     },
@@ -300,6 +302,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 40,
       "match": "SQRT",
+      "severity": "mild",
       "text": "fVar10 = (float10)fsin(((float10)wave_offset - (float10)SQRT(fVar1)) *",
       "type": "decompiler_intrinsic"
     },
@@ -307,6 +310,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 42,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_14 = (uchar)(int)ROUND(ROUND(((float10)128 - (float10)wave_offset) *",
       "type": "decompiler_intrinsic"
     },
@@ -314,6 +318,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 42,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_14 = (uchar)(int)ROUND(ROUND(((float10)128 - (float10)wave_offset) *",
       "type": "decompiler_intrinsic"
     },
@@ -321,6 +326,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 61,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_1c = (int)ROUND(ROUND((float)iVar7 - wave_x));",
       "type": "decompiler_intrinsic"
     },
@@ -328,6 +334,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 61,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_1c = (int)ROUND(ROUND((float)iVar7 - wave_x));",
       "type": "decompiler_intrinsic"
     },
@@ -335,6 +342,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 62,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_20 = (int)ROUND(ROUND((float)local_28 - wave_y));",
       "type": "decompiler_intrinsic"
     },
@@ -342,6 +350,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 62,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_20 = (int)ROUND(ROUND((float)local_28 - wave_y));",
       "type": "decompiler_intrinsic"
     },
@@ -349,6 +358,7 @@
       "description": "Complex pointer cast",
       "line": 79,
       "match": "(CProceduralTexture *)((int)",
+      "severity": "mild",
       "text": "pCVar8 = (CProceduralTexture *)((int)&pCVar8->width + 1);",
       "type": "pointer_cast"
     },
@@ -356,6 +366,7 @@
       "description": "Complex pointer cast",
       "line": 82,
       "match": "(CProceduralTexture *)((int)",
+      "severity": "mild",
       "text": "pCVar5 = (CProceduralTexture *)((int)&pCVar5->width + 1);",
       "type": "pointer_cast"
     },

@@ -8,9 +8,9 @@
 ;
 ; XREF[4]:
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053a375
-;   core_set.cpp_CDemonSet_FUN_0056be80 at 0056c072
-;   core_set.cpp_CDemonSet_FUN_0056c1a0 at 0056c511
-;   core_set.cpp_CDemonSet_FUN_0056c990 at 0056cb86
+;   core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990 at 0056cb86
+;   core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0 at 0056c511
+;   core_set.cpp_CDemonSet_renderStaticLights_FUN_0056be80 at 0056c072
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
@@ -145,8 +145,8 @@ section .text
     PUSH EAX                            ; 004c724b
     MOV EDX,dword ptr [0x006810c8]      ; 004c724c | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EDX                            ; 004c7252 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_0056d380 ; 004c7253
-        ;   XREF to: 0056d380 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d380(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_setLightingParameters_FUN_0056d380 ; 004c7253
+        ;   XREF to: 0056d380 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setLightingParameters_FUN_0056d380(CDemonSet * this_ptr, CVector3f * position, UOrientationVector * orientation, CVector3f * aabb_min, ...)
     ADD ESP,0x18                        ; 004c7258
     PUSH 0x2d2a1f4                      ; 004c725b | g_BulletHolePool
     XOR ESI,ESI                         ; 004c7260

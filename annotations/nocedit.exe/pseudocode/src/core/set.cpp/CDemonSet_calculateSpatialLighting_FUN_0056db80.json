@@ -6,29 +6,30 @@
   },
   "complexity": {
     "assembly_lines": 219,
-    "complexity_score": 248,
+    "complexity_score": 258,
     "cross_reference_count": 3,
     "function_call_count": 5,
     "global_count": 19,
-    "pseudocode_lines": 118,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 128,
     "suspect_count": 12,
     "suspect_types": [
       "pointer_cast",
-      "undefined_data"
+      "stack_alignment_array"
     ],
-    "total_lines": 337
+    "total_lines": 347
   },
   "cross_references": [
-    {
-      "addr": "0056c990",
-      "from_addr": "0056cbde",
-      "name": "core_set.cpp_CDemonSet_FUN_0056c990",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "0056ddb0",
       "from_addr": "0056e045",
       "name": "core_set.cpp_CDemonSet_lightVertexColor_FUN_0056ddb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056c990",
+      "from_addr": "0056cbde",
+      "name": "core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -74,7 +75,7 @@
     {
       "addr": "0056d4a0",
       "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_0056d4a0"
+      "name": "core_set.cpp_CDemonSet_gatherVisibleLights_FUN_0056d4a0"
     }
   ],
   "globals": [
@@ -129,7 +130,7 @@
     {
       "addr": "032c179c",
       "name": "g_PrimaryDirectionalLights",
-      "type": "CDemonLight*",
+      "type": "CDemonLight*[4]",
       "value": null
     },
     {
@@ -147,7 +148,7 @@
     {
       "addr": "032c17b0",
       "name": "g_GlobeLights",
-      "type": "CDemonGlobe*",
+      "type": "CDemonGlobe*[100]",
       "value": null
     },
     {
@@ -164,32 +165,32 @@
     },
     {
       "addr": "032c1c68",
-      "name": "DAT_032c1c68",
-      "type": "undefined4",
+      "name": "g_LightingReferencePosition",
+      "type": "CVector3f",
       "value": null
     },
     {
       "addr": "032c1c74",
-      "name": "FLOAT_032c1c74",
-      "type": "float",
+      "name": "g_LightingOrientation",
+      "type": "CVector3f",
       "value": null
     },
     {
       "addr": "032c1c80",
-      "name": "FLOAT_032c1c80",
-      "type": "float",
+      "name": "g_LightingAABBMin",
+      "type": "CVector3f",
       "value": null
     },
     {
       "addr": "032c1c8c",
-      "name": "FLOAT_032c1c8c",
-      "type": "float",
+      "name": "g_LightingAABBMax",
+      "type": "CVector3f",
       "value": null
     },
     {
       "addr": "032c1c98",
-      "name": "DAT_032c1c98",
-      "type": "undefined4",
+      "name": "g_LightingRotationMatrix",
+      "type": "CMatrix3x3f",
       "value": null
     }
   ],
@@ -297,86 +298,98 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_032c1c68",
-      "text": "puStack_5c = &DAT_032c1c68;",
-      "type": "undefined_data"
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 11,
+      "match": "afStackY_1030",
+      "severity": "moderate",
+      "text": "float afStackY_1030 [1012];",
+      "type": "stack_alignment_array"
     },
     {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 51,
       "match": "(uint *)((int)",
-      "text": "puVar1 = (uint *)((int)&g_PrimaryDirectionalLights + iVar5);",
+      "severity": "mild",
+      "text": "puVar1 = (uint *)((int)g_PrimaryDirectionalLights + iVar5);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 64,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar1 = (uint *)((int)g_SecondaryDirectionalLights + iVar5);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 66,
+      "line": 77,
       "match": "(uint *)((int)",
-      "text": "puVar1 = (uint *)((int)&g_GlobeLights + iVar5);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 82,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&local_48 + (uint)bVar6 * -8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 83,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&local_3c + (uint)bVar6 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 84,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&local_48 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 85,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&local_3c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 91,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&local_24 + (uint)bVar6 * -8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 92,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&local_30 + (uint)bVar6 * -8 + 4);",
+      "severity": "mild",
+      "text": "puVar1 = (uint *)((int)g_GlobeLights + iVar5);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 93,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&local_24 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
+      "severity": "mild",
+      "text": "*(uint *)((int)&local_48 + (uint)bVar6 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 94,
       "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&local_3c + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 95,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&local_48 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 96,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&local_3c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 102,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&local_24 + (uint)bVar6 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 103,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&local_30 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 104,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&local_24 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 105,
+      "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_30 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
       "type": "pointer_cast"
     }

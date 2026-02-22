@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 8,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 102,
     "suspect_count": 24,
     "suspect_types": [
@@ -214,6 +215,7 @@
       "description": "Type propagation did not converge",
       "line": 2,
       "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
     },
@@ -221,6 +223,7 @@
       "description": "Unresolved stack parameter",
       "line": 18,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "CDemonActor *in_stack_00000008;",
       "type": "stack_param"
     },
@@ -228,6 +231,7 @@
       "description": "Unresolved stack parameter",
       "line": 23,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c790(in_stack_00000008,class_name_hash);",
       "type": "stack_param"
     },
@@ -235,6 +239,7 @@
       "description": "Unresolved stack parameter",
       "line": 29,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "(in_stack_00000008,g_CEnemyClassInfo.name_hash);",
       "type": "stack_param"
     },
@@ -242,6 +247,7 @@
       "description": "Unresolved stack parameter",
       "line": 35,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "this_ptr->swarm_target = in_stack_00000008;",
       "type": "stack_param"
     },
@@ -249,6 +255,7 @@
       "description": "Complex pointer cast",
       "line": 55,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)&DAT_00822f48 + iVar8) = iVar6;",
       "type": "pointer_cast"
     },
@@ -256,6 +263,7 @@
       "description": "Undefined global data reference",
       "line": 55,
       "match": "DAT_00822f48",
+      "severity": "mild",
       "text": "*(int *)((int)&DAT_00822f48 + iVar8) = iVar6;",
       "type": "undefined_data"
     },
@@ -263,6 +271,7 @@
       "description": "Complex pointer cast",
       "line": 64,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (*(int *)(*(int *)((int)&DAT_00822f4c + iVar8) * 0xc + 4 + iVar1) <",
       "type": "pointer_cast"
     },
@@ -270,6 +279,7 @@
       "description": "Undefined global data reference",
       "line": 64,
       "match": "DAT_00822f4c",
+      "severity": "mild",
       "text": "if (*(int *)(*(int *)((int)&DAT_00822f4c + iVar8) * 0xc + 4 + iVar1) <",
       "type": "undefined_data"
     },
@@ -277,6 +287,7 @@
       "description": "Complex pointer cast",
       "line": 65,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)(*(int *)((int)&DAT_00822f48 + iVar8) * 0xc + 4 + iVar1)) {",
       "type": "pointer_cast"
     },
@@ -284,6 +295,7 @@
       "description": "Undefined global data reference",
       "line": 65,
       "match": "DAT_00822f48",
+      "severity": "mild",
       "text": "*(int *)(*(int *)((int)&DAT_00822f48 + iVar8) * 0xc + 4 + iVar1)) {",
       "type": "undefined_data"
     },
@@ -291,6 +303,7 @@
       "description": "Complex pointer cast",
       "line": 66,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "uVar2 = *(uint *)((int)&DAT_00822f48 + iVar8);",
       "type": "pointer_cast"
     },
@@ -298,6 +311,7 @@
       "description": "Undefined global data reference",
       "line": 66,
       "match": "DAT_00822f48",
+      "severity": "mild",
       "text": "uVar2 = *(uint *)((int)&DAT_00822f48 + iVar8);",
       "type": "undefined_data"
     },
@@ -305,6 +319,7 @@
       "description": "Complex pointer cast",
       "line": 67,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&DAT_00822f48 + iVar8) =",
       "type": "pointer_cast"
     },
@@ -312,6 +327,7 @@
       "description": "Undefined global data reference",
       "line": 67,
       "match": "DAT_00822f48",
+      "severity": "mild",
       "text": "*(uint *)((int)&DAT_00822f48 + iVar8) =",
       "type": "undefined_data"
     },
@@ -319,6 +335,7 @@
       "description": "Complex pointer cast",
       "line": 68,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&DAT_00822f4c + iVar8);",
       "type": "pointer_cast"
     },
@@ -326,6 +343,7 @@
       "description": "Undefined global data reference",
       "line": 68,
       "match": "DAT_00822f4c",
+      "severity": "mild",
       "text": "*(uint *)((int)&DAT_00822f4c + iVar8);",
       "type": "undefined_data"
     },
@@ -333,6 +351,7 @@
       "description": "Complex pointer cast",
       "line": 69,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&DAT_00822f4c + iVar8) = uVar2;",
       "type": "pointer_cast"
     },
@@ -340,6 +359,7 @@
       "description": "Undefined global data reference",
       "line": 69,
       "match": "DAT_00822f4c",
+      "severity": "mild",
       "text": "*(uint *)((int)&DAT_00822f4c + iVar8) = uVar2;",
       "type": "undefined_data"
     },
@@ -347,6 +367,7 @@
       "description": "Undefined global data reference",
       "line": 75,
       "match": "DAT_00822f48",
+      "severity": "mild",
       "text": "iVar6 = *(int *)(iVar1 + 4 + DAT_00822f48 * 0xc);",
       "type": "undefined_data"
     },
@@ -354,6 +375,7 @@
       "description": "Undefined global data reference",
       "line": 84,
       "match": "DAT_00822f48",
+      "severity": "mild",
       "text": "pCVar10->bugs[0].dest_vertex = (&DAT_00822f48)[iVar9];",
       "type": "undefined_data"
     },
@@ -361,6 +383,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 86,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(0,(int)(CONCAT44(this_ptr->swarm_vertex_count >> 0x1f,",
       "type": "decompiler_intrinsic"
     },
@@ -368,6 +391,7 @@
       "description": "Undefined global data reference",
       "line": 91,
       "match": "DAT_00822f48",
+      "severity": "mild",
       "text": "(iVar6 + 0x2a < *(int *)(iVar1 + 4 + (&DAT_00822f48)[iVar9] * 0xc))) {",
       "type": "undefined_data"
     },

@@ -1,15 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 163,
-    "complexity_score": 283,
+    "complexity_score": 328,
     "cross_reference_count": 5,
     "function_call_count": 4,
     "global_count": 1,
+    "max_suspect_severity": "severe",
     "pseudocode_lines": 83,
-    "suspect_count": 18,
+    "suspect_count": 22,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
+      "nan_function_artifact",
       "special_math_intrinsic",
       "undefined_type"
     ],
@@ -175,6 +177,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 7,
       "match": "extraout_AL",
+      "severity": "moderate",
       "text": "char extraout_AL;",
       "type": "extra_output"
     },
@@ -182,6 +185,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 12,
       "match": "extraout_ST0",
+      "severity": "moderate",
       "text": "float10 extraout_ST0;",
       "type": "extra_output"
     },
@@ -189,13 +193,31 @@
       "description": "Unresolved type",
       "line": 15,
       "match": "undefined6 uVar7",
+      "severity": "moderate",
       "text": "undefined6 uVar7;",
       "type": "undefined_type"
+    },
+    {
+      "description": "NAN() function call (FNSTSW comparison artifact)",
+      "line": 21,
+      "match": "NAN(",
+      "severity": "severe",
+      "text": "exponent = (ushort)(base < fVar3) << 8 | (ushort)(NAN(base) || NAN(fVar3)) << 10 |",
+      "type": "nan_function_artifact"
+    },
+    {
+      "description": "NAN() function call (FNSTSW comparison artifact)",
+      "line": 21,
+      "match": "NAN(",
+      "severity": "severe",
+      "text": "exponent = (ushort)(base < fVar3) << 8 | (ushort)(NAN(base) || NAN(fVar3)) << 10 |",
+      "type": "nan_function_artifact"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 21,
       "match": "NAN",
+      "severity": "mild",
       "text": "exponent = (ushort)(base < fVar3) << 8 | (ushort)(NAN(base) || NAN(fVar3)) << 10 |",
       "type": "decompiler_intrinsic"
     },
@@ -203,6 +225,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 21,
       "match": "NAN",
+      "severity": "mild",
       "text": "exponent = (ushort)(base < fVar3) << 8 | (ushort)(NAN(base) || NAN(fVar3)) << 10 |",
       "type": "decompiler_intrinsic"
     },
@@ -210,13 +233,31 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 26,
       "match": "ROUND",
+      "severity": "mild",
       "text": "fVar4 = ROUND(exp);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "NAN() function call (FNSTSW comparison artifact)",
+      "line": 31,
+      "match": "NAN(",
+      "severity": "severe",
+      "text": "if ((!NAN(fVar4) && !NAN(exp)) &&",
+      "type": "nan_function_artifact"
+    },
+    {
+      "description": "NAN() function call (FNSTSW comparison artifact)",
+      "line": 31,
+      "match": "NAN(",
+      "severity": "severe",
+      "text": "if ((!NAN(fVar4) && !NAN(exp)) &&",
+      "type": "nan_function_artifact"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 31,
       "match": "NAN",
+      "severity": "mild",
       "text": "if ((!NAN(fVar4) && !NAN(exp)) &&",
       "type": "decompiler_intrinsic"
     },
@@ -224,6 +265,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 31,
       "match": "NAN",
+      "severity": "mild",
       "text": "if ((!NAN(fVar4) && !NAN(exp)) &&",
       "type": "decompiler_intrinsic"
     },
@@ -231,6 +273,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 37,
       "match": "SUB86",
+      "severity": "mild",
       "text": "uVar7 = SUB86((double)exp,0);",
       "type": "decompiler_intrinsic"
     },
@@ -238,6 +281,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 40,
       "match": "ROUND",
+      "severity": "mild",
       "text": "uStack_6 = (ushort)((uint)(int)ROUND(exp) >> 0x10);",
       "type": "decompiler_intrinsic"
     },
@@ -245,6 +289,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 42,
       "match": "CONCAT64",
+      "severity": "mild",
       "text": "fVar3 = integer_power((float10)CONCAT64(uVar7,uVar6),exponent);",
       "type": "decompiler_intrinsic"
     },
@@ -252,6 +297,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 46,
       "match": "ROUND",
+      "severity": "mild",
       "text": "if ((uStack_6 != -1) || (sStack_8 = (short)(int)ROUND(exp), sStack_8 == 0))",
       "type": "decompiler_intrinsic"
     },
@@ -259,6 +305,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 48,
       "match": "CONCAT64",
+      "severity": "mild",
       "text": "fVar4 = integer_power((float10)CONCAT64(uVar7,uVar6),exponent);",
       "type": "decompiler_intrinsic"
     },
@@ -266,6 +313,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 55,
       "match": "extraout_ST0",
+      "severity": "moderate",
       "text": "fVar3 = extraout_ST0;",
       "type": "extra_output"
     },
@@ -273,6 +321,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 61,
       "match": "SUB82",
+      "severity": "mild",
       "text": "if (((SUB82(dVar1,0) != 0 || sStack_a != 0) || sStack_8 != 0) ||",
       "type": "decompiler_intrinsic"
     },
@@ -280,6 +329,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 68,
       "match": "ABS",
+      "severity": "mild",
       "text": "fVar3 = exp((float10)0.6931471805599453 * exp * ABS(base));",
       "type": "decompiler_intrinsic"
     },
@@ -287,6 +337,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 69,
       "match": "extraout_AL",
+      "severity": "moderate",
       "text": "if (extraout_AL == '\\0') {",
       "type": "extra_output"
     },

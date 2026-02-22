@@ -10,6 +10,7 @@
     "cross_reference_count": 50,
     "function_call_count": 2,
     "global_count": 17,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 107,
     "suspect_count": 10,
     "suspect_types": [
@@ -311,7 +312,7 @@
     {
       "addr": "0056b810",
       "from_addr": "0056b841",
-      "name": "core_set.cpp_CDemonSet_FUN_0056b810",
+      "name": "core_set.cpp_CDemonSet_processActors_FUN_0056b810",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -428,7 +429,7 @@
     {
       "addr": "00821fc0",
       "name": "g_ActorDebugBuffer",
-      "type": "char[50]",
+      "type": "char[52]",
       "value": null
     },
     {
@@ -560,6 +561,7 @@
       "description": "Complex pointer cast",
       "line": 39,
       "match": "(CDemonActor *)((int)",
+      "severity": "mild",
       "text": "pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -567,6 +569,7 @@
       "description": "Complex pointer cast",
       "line": 44,
       "match": "(CDemonActor *)((int)",
+      "severity": "mild",
       "text": "pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
       "type": "pointer_cast"
     },
@@ -574,6 +577,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 52,
       "match": "SQRT",
+      "severity": "mild",
       "text": "if (99999.0f < SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1)) {",
       "type": "decompiler_intrinsic"
     },
@@ -581,6 +585,7 @@
       "description": "Complex pointer cast",
       "line": 63,
       "match": "(CDemonActor *)((int)",
+      "severity": "mild",
       "text": "pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -588,6 +593,7 @@
       "description": "Complex pointer cast",
       "line": 68,
       "match": "(CDemonActor *)((int)",
+      "severity": "mild",
       "text": "pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
       "type": "pointer_cast"
     },
@@ -595,6 +601,7 @@
       "description": "Complex pointer cast",
       "line": 92,
       "match": "(CDemonActor *)((int)",
+      "severity": "mild",
       "text": "pCVar7 = (CDemonActor *)((int)pCVar7 + (uint)bVar9 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -602,6 +609,7 @@
       "description": "Complex pointer cast",
       "line": 97,
       "match": "(CDemonActor *)((int)",
+      "severity": "mild",
       "text": "pCVar7 = (CDemonActor *)((int)pCVar7 + (uint)bVar9 * -2 + 1);",
       "type": "pointer_cast"
     },

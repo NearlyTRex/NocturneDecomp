@@ -84,7 +84,7 @@ void __cdecl core_fire_cpp_CBulletTrail_render_FUN_004c21f0(CBulletTrail *this_p
                     (g_CDemonRendererPtr2,(CVector3i *)&local_78,&local_48);
           local_14 = (int)ROUND(ROUND(fVar3));
           core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
-                    (this_ptr->model_ptr,(CKeyFramedModelInstance *)0x0,0,local_14);
+                    (this_ptr->model_ptr,0,(CKeyFramedModelInstance *)0x0,local_14);
           engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
           iVar4 = iVar4 + 1;
           if (local_20 <= iVar4) {

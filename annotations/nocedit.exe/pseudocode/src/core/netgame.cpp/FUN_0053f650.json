@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 4,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 26,
     "suspect_count": 5,
     "suspect_types": [
@@ -116,6 +117,7 @@
       "description": "Unresolved stack parameter",
       "line": 8,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
@@ -123,6 +125,7 @@
       "description": "Undefined global data reference",
       "line": 13,
       "match": "DAT_02f9c128",
+      "severity": "mild",
       "text": "src = &DAT_02f9c128;",
       "type": "undefined_data"
     },
@@ -130,6 +133,7 @@
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "while (*(int *)((int)&g_SimFrameHistory + iVar2) < in_stack_00000004) {",
       "type": "stack_param"
     },
@@ -137,6 +141,7 @@
       "description": "Complex pointer cast",
       "line": 15,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "while (*(int *)((int)&g_SimFrameHistory + iVar2) < in_stack_00000004) {",
       "type": "pointer_cast"
     },
@@ -144,6 +149,7 @@
       "description": "Complex pointer cast",
       "line": 18,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "((void *)((int)&g_SimFrameHistory + iVar2),src,(g_SimFrameCount - iVar1) * 100);",
       "type": "pointer_cast"
     }

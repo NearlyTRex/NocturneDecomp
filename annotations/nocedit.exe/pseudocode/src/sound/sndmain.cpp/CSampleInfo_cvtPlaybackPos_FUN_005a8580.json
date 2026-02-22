@@ -121,16 +121,19 @@
   },
   "complexity": {
     "assembly_lines": 134,
-    "complexity_score": 530,
+    "complexity_score": 690,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 10,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 70,
-    "suspect_count": 44,
+    "suspect_count": 59,
     "suspect_types": [
       "decompiler_intrinsic",
+      "double_reconstruction",
       "format_string_mismatch",
       "stack_param",
+      "sub84_truncation",
       "unknown_field"
     ],
     "total_lines": 204
@@ -341,6 +344,7 @@
       "description": "Unresolved stack parameter",
       "line": 6,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
@@ -348,6 +352,7 @@
       "description": "Unknown/mangled field access",
       "line": 8,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "if (position._4_4_ != input_type) {",
       "type": "unknown_field"
     },
@@ -355,6 +360,7 @@
       "description": "Unknown/mangled field access",
       "line": 9,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "if (position._4_4_ != 0) {",
       "type": "unknown_field"
     },
@@ -362,6 +368,7 @@
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "dVar1 = (double)*(int *)(in_stack_00000004 + 0x10c) *",
       "type": "stack_param"
     },
@@ -369,20 +376,39 @@
       "description": "Unknown/mangled field access",
       "line": 12,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "(double)CONCAT44(position._0_4_,this_ptr);",
       "type": "unknown_field"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 12,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(double)CONCAT44(position._0_4_,this_ptr);",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 12,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(double)CONCAT44(position._0_4_,this_ptr);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 13,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "this_ptr = SUB84(dVar1,0);",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 13,
       "match": "SUB84",
+      "severity": "mild",
       "text": "this_ptr = SUB84(dVar1,0);",
       "type": "decompiler_intrinsic"
     },
@@ -390,6 +416,7 @@
       "description": "Unknown/mangled field access",
       "line": 14,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "position._0_4_ = (uint)((ulonglong)dVar1 >> 0x20);",
       "type": "unknown_field"
     },
@@ -397,6 +424,7 @@
       "description": "Unknown/mangled field access",
       "line": 16,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "else if (position._4_4_ == 2) {",
       "type": "unknown_field"
     },
@@ -404,6 +432,7 @@
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "if (*(int *)(in_stack_00000004 + 0x110) < 1) {",
       "type": "stack_param"
     },
@@ -411,6 +440,7 @@
       "description": "Unresolved stack parameter",
       "line": 21,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "dVar1 = (double)*(int *)(in_stack_00000004 + 0x110) *",
       "type": "stack_param"
     },
@@ -418,20 +448,39 @@
       "description": "Unknown/mangled field access",
       "line": 22,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "(double)CONCAT44(position._0_4_,this_ptr);",
       "type": "unknown_field"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 22,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(double)CONCAT44(position._0_4_,this_ptr);",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 22,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(double)CONCAT44(position._0_4_,this_ptr);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 23,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "this_ptr = SUB84(dVar1,0);",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 23,
       "match": "SUB84",
+      "severity": "mild",
       "text": "this_ptr = SUB84(dVar1,0);",
       "type": "decompiler_intrinsic"
     },
@@ -439,6 +488,7 @@
       "description": "Unknown/mangled field access",
       "line": 24,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "position._0_4_ = (uint)((ulonglong)dVar1 >> 0x20);",
       "type": "unknown_field"
     },
@@ -446,13 +496,23 @@
       "description": "Unknown/mangled field access",
       "line": 25,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "position = (double)CONCAT44(2,position._0_4_);",
       "type": "unknown_field"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 25,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "position = (double)CONCAT44(2,position._0_4_);",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 25,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "position = (double)CONCAT44(2,position._0_4_);",
       "type": "decompiler_intrinsic"
     },
@@ -460,6 +520,7 @@
       "description": "Unresolved stack parameter",
       "line": 28,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "dVar1 = (double)*(int *)(in_stack_00000004 + 0x110) *",
       "type": "stack_param"
     },
@@ -467,20 +528,39 @@
       "description": "Unknown/mangled field access",
       "line": 29,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "(double)CONCAT44(position._0_4_,this_ptr);",
       "type": "unknown_field"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 29,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(double)CONCAT44(position._0_4_,this_ptr);",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 29,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(double)CONCAT44(position._0_4_,this_ptr);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 30,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "this_ptr = SUB84(dVar1,0);",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 30,
       "match": "SUB84",
+      "severity": "mild",
       "text": "this_ptr = SUB84(dVar1,0);",
       "type": "decompiler_intrinsic"
     },
@@ -488,6 +568,7 @@
       "description": "Unknown/mangled field access",
       "line": 31,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "position._0_4_ = (uint)((ulonglong)dVar1 >> 0x20);",
       "type": "unknown_field"
     },
@@ -495,13 +576,23 @@
       "description": "Unknown/mangled field access",
       "line": 32,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "position = (double)CONCAT44(2,position._0_4_);",
       "type": "unknown_field"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 32,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "position = (double)CONCAT44(2,position._0_4_);",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 32,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "position = (double)CONCAT44(2,position._0_4_);",
       "type": "decompiler_intrinsic"
     },
@@ -509,13 +600,23 @@
       "description": "Unknown/mangled field access",
       "line": 43,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "dVar1 = (double)CONCAT44(position._0_4_,this_ptr) /",
       "type": "unknown_field"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 43,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "dVar1 = (double)CONCAT44(position._0_4_,this_ptr) /",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 43,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "dVar1 = (double)CONCAT44(position._0_4_,this_ptr) /",
       "type": "decompiler_intrinsic"
     },
@@ -523,13 +624,23 @@
       "description": "Unresolved stack parameter",
       "line": 44,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "(double)*(int *)(in_stack_00000004 + 0x10c);",
       "type": "stack_param"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 45,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "this_ptr = SUB84(dVar1,0);",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 45,
       "match": "SUB84",
+      "severity": "mild",
       "text": "this_ptr = SUB84(dVar1,0);",
       "type": "decompiler_intrinsic"
     },
@@ -537,6 +648,7 @@
       "description": "Unknown/mangled field access",
       "line": 46,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "position._0_4_ = (uint)((ulonglong)dVar1 >> 0x20);",
       "type": "unknown_field"
     },
@@ -544,6 +656,7 @@
       "description": "Unresolved stack parameter",
       "line": 49,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "if (*(int *)(in_stack_00000004 + 0x110) < 1) {",
       "type": "stack_param"
     },
@@ -551,13 +664,23 @@
       "description": "Unknown/mangled field access",
       "line": 53,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "dVar1 = (double)CONCAT44(position._0_4_,this_ptr) /",
       "type": "unknown_field"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 53,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "dVar1 = (double)CONCAT44(position._0_4_,this_ptr) /",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 53,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "dVar1 = (double)CONCAT44(position._0_4_,this_ptr) /",
       "type": "decompiler_intrinsic"
     },
@@ -565,13 +688,23 @@
       "description": "Unresolved stack parameter",
       "line": 54,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "(double)*(int *)(in_stack_00000004 + 0x110);",
       "type": "stack_param"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 55,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "this_ptr = SUB84(dVar1,0);",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 55,
       "match": "SUB84",
+      "severity": "mild",
       "text": "this_ptr = SUB84(dVar1,0);",
       "type": "decompiler_intrinsic"
     },
@@ -579,6 +712,7 @@
       "description": "Unknown/mangled field access",
       "line": 56,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "position._0_4_ = (uint)((ulonglong)dVar1 >> 0x20);",
       "type": "unknown_field"
     },
@@ -586,13 +720,23 @@
       "description": "Unknown/mangled field access",
       "line": 59,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "dVar1 = (double)CONCAT44(position._0_4_,this_ptr) /",
       "type": "unknown_field"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 59,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "dVar1 = (double)CONCAT44(position._0_4_,this_ptr) /",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 59,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "dVar1 = (double)CONCAT44(position._0_4_,this_ptr) /",
       "type": "decompiler_intrinsic"
     },
@@ -600,13 +744,23 @@
       "description": "Unresolved stack parameter",
       "line": 60,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "(double)*(int *)(in_stack_00000004 + 0x110);",
       "type": "stack_param"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 61,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "this_ptr = SUB84(dVar1,0);",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 61,
       "match": "SUB84",
+      "severity": "mild",
       "text": "this_ptr = SUB84(dVar1,0);",
       "type": "decompiler_intrinsic"
     },
@@ -614,6 +768,7 @@
       "description": "Unknown/mangled field access",
       "line": 62,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "position._0_4_ = (uint)((ulonglong)dVar1 >> 0x20);",
       "type": "unknown_field"
     },
@@ -621,13 +776,23 @@
       "description": "Unknown/mangled field access",
       "line": 72,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "return (double)CONCAT44(position._0_4_,this_ptr);",
       "type": "unknown_field"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 72,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "return (double)CONCAT44(position._0_4_,this_ptr);",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 72,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "return (double)CONCAT44(position._0_4_,this_ptr);",
       "type": "decompiler_intrinsic"
     },

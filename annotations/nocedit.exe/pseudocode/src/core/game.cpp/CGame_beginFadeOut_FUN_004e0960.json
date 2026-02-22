@@ -13,14 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 235,
+    "complexity_score": 250,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 6,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 55,
-    "suspect_count": 16,
+    "suspect_count": 17,
     "suspect_types": [
       "decompiler_intrinsic",
+      "stack_alignment_array",
       "stack_param",
       "stack_ref",
       "undefined_data"
@@ -131,9 +133,18 @@
   },
   "suspects": [
     {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 8,
+      "match": "aiStackY_1018",
+      "severity": "moderate",
+      "text": "int aiStackY_1018 [1000];",
+      "type": "stack_alignment_array"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 9,
       "match": "in_stack_ffffff94",
+      "severity": "moderate",
       "text": "CVector3i *in_stack_ffffff94;",
       "type": "stack_param"
     },
@@ -141,6 +152,7 @@
       "description": "Undefined global data reference",
       "line": 20,
       "match": "DAT_02d831ec",
+      "severity": "mild",
       "text": "DAT_02d831ec = 3;",
       "type": "undefined_data"
     },
@@ -148,6 +160,7 @@
       "description": "Undefined global data reference",
       "line": 21,
       "match": "DAT_02d831f4",
+      "severity": "mild",
       "text": "DAT_02d831f4 = g_WindowWidth / 2;",
       "type": "undefined_data"
     },
@@ -155,6 +168,7 @@
       "description": "Undefined global data reference",
       "line": 22,
       "match": "DAT_02d831f8",
+      "severity": "mild",
       "text": "DAT_02d831f8 = g_WindowHeight / 2;",
       "type": "undefined_data"
     },
@@ -162,6 +176,7 @@
       "description": "Undefined global data reference",
       "line": 23,
       "match": "DAT_02d831f0",
+      "severity": "mild",
       "text": "DAT_02d831f0 = (float)g_WindowWidth;",
       "type": "undefined_data"
     },
@@ -169,6 +184,7 @@
       "description": "Direct stack address reference",
       "line": 27,
       "match": "&stack0xffffff94",
+      "severity": "moderate",
       "text": "(this_ptr_00,(CBoundingBox3D *)&stack0xffffff94);",
       "type": "stack_ref"
     },
@@ -176,6 +192,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 36,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_54.x = (int)ROUND(CStack_48.x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -183,6 +200,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 37,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_54.y = (int)ROUND(CStack_48.y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -190,6 +208,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 38,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_54.z = (int)ROUND(CStack_48.z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -197,6 +216,7 @@
       "description": "Unresolved stack parameter",
       "line": 40,
       "match": "in_stack_ffffff94",
+      "severity": "moderate",
       "text": "(&g_CDemonCameraInstance,&CStack_54,in_stack_ffffff94);",
       "type": "stack_param"
     },
@@ -204,6 +224,7 @@
       "description": "Undefined global data reference",
       "line": 46,
       "match": "DAT_02d831f4",
+      "severity": "mild",
       "text": "DAT_02d831f4 = (int)((iStack_30 + (iStack_30 >> 0x1f) * -0x10000) -",
       "type": "undefined_data"
     },
@@ -211,6 +232,7 @@
       "description": "Undefined global data reference",
       "line": 48,
       "match": "DAT_02d831f8",
+      "severity": "mild",
       "text": "DAT_02d831f8 = (int)((aiStack_2c[0] + (aiStack_2c[0] >> 0x1f) * -0x10000) -",
       "type": "undefined_data"
     },
@@ -218,6 +240,7 @@
       "description": "Undefined global data reference",
       "line": 51,
       "match": "DAT_02d831f4",
+      "severity": "mild",
       "text": "DAT_02d831f4 = (DAT_02d831f4 * g_WindowWidth) / 0x280;",
       "type": "undefined_data"
     },
@@ -225,6 +248,7 @@
       "description": "Undefined global data reference",
       "line": 51,
       "match": "DAT_02d831f4",
+      "severity": "mild",
       "text": "DAT_02d831f4 = (DAT_02d831f4 * g_WindowWidth) / 0x280;",
       "type": "undefined_data"
     },
@@ -232,6 +256,7 @@
       "description": "Undefined global data reference",
       "line": 52,
       "match": "DAT_02d831f8",
+      "severity": "mild",
       "text": "DAT_02d831f8 = (DAT_02d831f8 * g_WindowHeight) / 0x1e0;",
       "type": "undefined_data"
     },
@@ -239,6 +264,7 @@
       "description": "Undefined global data reference",
       "line": 52,
       "match": "DAT_02d831f8",
+      "severity": "mild",
       "text": "DAT_02d831f8 = (DAT_02d831f8 * g_WindowHeight) / 0x1e0;",
       "type": "undefined_data"
     }

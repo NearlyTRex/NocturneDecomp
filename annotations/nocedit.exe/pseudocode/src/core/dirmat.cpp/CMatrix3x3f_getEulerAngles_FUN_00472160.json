@@ -25,14 +25,17 @@
   },
   "complexity": {
     "assembly_lines": 366,
-    "complexity_score": 204,
+    "complexity_score": 274,
     "cross_reference_count": 13,
     "function_call_count": 2,
     "global_count": 7,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 129,
-    "suspect_count": 7,
+    "suspect_count": 13,
     "suspect_types": [
-      "decompiler_intrinsic"
+      "decompiler_intrinsic",
+      "double_reconstruction",
+      "sub84_truncation"
     ],
     "total_lines": 495
   },
@@ -396,48 +399,103 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 28,
       "match": "SQRT",
+      "severity": "mild",
       "text": "fVar4 = SQRT((float10)1 - fVar4 * fVar4);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 31,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "uStack_94 = SUB84(dVar6,0);",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 31,
       "match": "SUB84",
+      "severity": "mild",
       "text": "uStack_94 = SUB84(dVar6,0);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 36,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "uStack_84 = SUB84(dVar6,0);",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 36,
       "match": "SUB84",
+      "severity": "mild",
       "text": "uStack_84 = SUB84(dVar6,0);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 39,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "uStack_5c = SUB84(dVar1,0);",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 39,
       "match": "SUB84",
+      "severity": "mild",
       "text": "uStack_5c = SUB84(dVar1,0);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 46,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "if ((double)CONCAT44(uStack_84,local_68) < 0.0) {",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 46,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "if ((double)CONCAT44(uStack_84,local_68) < 0.0) {",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 54,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "if ((double)CONCAT44(uStack_5c,local_80) < 0.0) {",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 54,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "if ((double)CONCAT44(uStack_5c,local_80) < 0.0) {",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 65,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "fVar3 = 1.0 / (float)(double)CONCAT44(uStack_94,local_98);",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 65,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "fVar3 = 1.0 / (float)(double)CONCAT44(uStack_94,local_98);",
       "type": "decompiler_intrinsic"
     }

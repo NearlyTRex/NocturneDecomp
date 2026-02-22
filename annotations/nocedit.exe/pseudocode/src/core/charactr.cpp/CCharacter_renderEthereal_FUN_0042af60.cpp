@@ -49,7 +49,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderEthereal_FUN_0042af60(CCharacter
     *(uint *)((int)&pCVar1->vertex_buffer_ptr->g + iVar2) = 0xffff;
     iVar2 = iVar3;
   } while (iVar3 != 96000);
-  core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340(&this_ptr->model);
+  core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340(&this_ptr->model,0x267,1);
   g_CDemonRendererPtr2->skip_uv_extraction = 0;
   core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0
             (&this_ptr->model,&local_1aac);

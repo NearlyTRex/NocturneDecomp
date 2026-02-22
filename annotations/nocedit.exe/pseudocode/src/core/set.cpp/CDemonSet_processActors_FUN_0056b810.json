@@ -1,0 +1,687 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 17,
+        "line": 63,
+        "message": "cannot cast from type 'float' to pointer type 'CPathMap *'"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 67,
+        "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 75,
+        "line": 67,
+        "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 68,
+        "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 13,
+        "line": 69,
+        "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 70,
+        "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 15,
+        "line": 81,
+        "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 53,
+        "line": 101,
+        "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 129,
+        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 49,
+        "line": 166,
+        "message": "use of undeclared identifier 'DAT_00000004'"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 260,
+        "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 26,
+        "line": 270,
+        "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 576,
+    "complexity_score": 484,
+    "cross_reference_count": 1,
+    "function_call_count": 13,
+    "global_count": 25,
+    "max_suspect_severity": "severe",
+    "pseudocode_lines": 274,
+    "suspect_count": 18,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "fnstsw_flag_artifact",
+      "nan_function_artifact",
+      "pointer_cast",
+      "undefined_data",
+      "warning_unmapped_variable"
+    ],
+    "total_lines": 850
+  },
+  "cross_references": [
+    {
+      "addr": "004e3190",
+      "from_addr": "004e3576",
+      "name": "core_game.cpp_CGame_process_FUN_004e3190",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056b810",
+    "address_range": [
+      [
+        "0056b810",
+        "0056be76"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_set.cpp_CDemonSet_processActors_FUN_0056b810",
+    "signature": "int __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c790",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
+    },
+    {
+      "addr": "0040ac80",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80"
+    },
+    {
+      "addr": "00408c10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10"
+    },
+    {
+      "addr": "00427db0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0"
+    },
+    {
+      "addr": "004c8c90",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_checkExplosionDamage_FUN_004c8c90"
+    },
+    {
+      "addr": "004cb340",
+      "is_variadic": false,
+      "name": "core_flamecan.cpp_CFlameCan_FUN_004cb340"
+    },
+    {
+      "addr": "004eb3a0",
+      "is_variadic": false,
+      "name": "core_glass.cpp_CGlass_checkBreakableCondition_FUN_004eb3a0"
+    },
+    {
+      "addr": "004eaef0",
+      "is_variadic": false,
+      "name": "core_glass.cpp_CGlass_shatter_FUN_004eaef0"
+    },
+    {
+      "addr": "00546a60",
+      "is_variadic": false,
+      "name": "core_path.cpp_CPathMap_updateIfNeeded_FUN_00546a60"
+    },
+    {
+      "addr": "005743e0",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_FUN_005743e0"
+    },
+    {
+      "addr": "005e0b00",
+      "is_variadic": false,
+      "name": "core_trigger.cpp_CTrigger_applyDamage_FUN_005e0b00"
+    },
+    {
+      "addr": "00441890",
+      "is_variadic": true,
+      "name": "engine_console.cpp_CConsole_printf_FUN_00441890"
+    },
+    {
+      "addr": "005f2dc0",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_getTime_FUN_005f2dc0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00645cbf",
+      "name": "s_core_set_cpp_00645cbf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00645ccf",
+      "name": "s_d_s_3_2f_ms_00645ccf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00645ce2",
+      "name": "s_Process_time_d_actors_3__00645ce2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00645d07",
+      "name": "s_core_set_cpp_00645d07",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00645d1b",
+      "name": "DOUBLE_00645d1b",
+      "type": "double",
+      "value": "0.0555555555555556"
+    },
+    {
+      "addr": "00645d23",
+      "name": "DOUBLE_00645d23",
+      "type": "double",
+      "value": "0.0000152587890625"
+    },
+    {
+      "addr": "00645d2b",
+      "name": "DOUBLE_00645d2b",
+      "type": "double",
+      "value": "1000"
+    },
+    {
+      "addr": "0066e8e0",
+      "name": "g_CConsolePtr",
+      "type": "CConsole*",
+      "value": "0083b1a4"
+    },
+    {
+      "addr": "0067a3d0",
+      "name": "g_CFireEffectPtr",
+      "type": "CFireEffect*",
+      "value": "02d12db0"
+    },
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "00821ff4",
+      "name": "g_CurrentProcessingActor",
+      "type": "CDemonActor*",
+      "value": null
+    },
+    {
+      "addr": "00823c4c",
+      "name": "g_CCharacterClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0083b1a4",
+      "name": "g_CConsoleInstance",
+      "type": "CConsole",
+      "value": null
+    },
+    {
+      "addr": "02d12db0",
+      "name": "g_CFireEffectInstance",
+      "type": "CFireEffect",
+      "value": null
+    },
+    {
+      "addr": "02d7a738",
+      "name": "g_CFlameCanClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d81ca8",
+      "name": "DAT_02d81ca8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d81d00",
+      "name": "g_CGameInstance.delta_time_float",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d83360",
+      "name": "g_CGlassClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032776b4",
+      "name": "g_DynamicLightCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "032776c8",
+      "name": "g_CoronaGlobeCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "032bd794",
+      "name": "g_ActorProfileTimes",
+      "type": "int[2000]",
+      "value": null
+    },
+    {
+      "addr": "032bd798",
+      "name": "DAT_032bd798",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032bf6d4",
+      "name": "g_ActorProfileActors",
+      "type": "CDemonActor*[2000]",
+      "value": null
+    },
+    {
+      "addr": "032bf6d8",
+      "name": "DAT_032bf6d8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f87490",
+      "name": "g_CTriggerClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004e3576",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_process_FUN_004e3190",
+        "estimated_params": 1,
+        "instructions_analyzed": 4,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.8524945770065075,
+    "instruction_count": 461,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 22,
+      "BOOL_OR": 13,
+      "BRANCH": 5,
+      "CALL": 24,
+      "CALLIND": 4,
+      "CBRANCH": 48,
+      "COPY": 509,
+      "FLOAT2FLOAT": 18,
+      "FLOAT_DIV": 2,
+      "FLOAT_EQUAL": 5,
+      "FLOAT_LESS": 5,
+      "FLOAT_MULT": 6,
+      "FLOAT_NAN": 10,
+      "INT2FLOAT": 4,
+      "INT_ADD": 186,
+      "INT_AND": 289,
+      "INT_CARRY": 37,
+      "INT_EQUAL": 229,
+      "INT_LEFT": 24,
+      "INT_LESS": 28,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 45,
+      "INT_OR": 35,
+      "INT_SBORROW": 29,
+      "INT_SCARRY": 47,
+      "INT_SLESS": 115,
+      "INT_SUB": 122,
+      "INT_XOR": 15,
+      "INT_ZEXT": 20,
+      "LOAD": 99,
+      "POPCOUNT": 111,
+      "RETURN": 1,
+      "STORE": 129
+    },
+    "pcode_op_count": 2237
+  },
+  "stack_frame": {
+    "frame_size": 176,
+    "local_size": 172,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_a8",
+        "offset": -168,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a4",
+        "offset": -164,
+        "size": 60,
+        "type": "SDamageInfo"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0056b81c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Variable defined which should be unmapped",
+      "line": 2,
+      "match": "WARNING: Variable defined which should be unmapped",
+      "severity": "moderate",
+      "text": "/* WARNING: Variable defined which should be unmapped: local_a4 */",
+      "type": "warning_unmapped_variable"
+    },
+    {
+      "description": "FNSTSW flag reconstruction (floating-point comparison artifact)",
+      "line": 59,
+      "match": "CONCAT22((short)((uint)damage_info >> 0x10",
+      "severity": "severe",
+      "text": "CONCAT22((short)((uint)damage_info >> 0x10),",
+      "type": "fnstsw_flag_artifact"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 59,
+      "match": "CONCAT22",
+      "severity": "mild",
+      "text": "CONCAT22((short)((uint)damage_info >> 0x10),",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "NAN() function call (FNSTSW comparison artifact)",
+      "line": 60,
+      "match": "NAN(",
+      "severity": "severe",
+      "text": "(ushort)(0.0 < (float)damage_info) << 8 | (ushort)NAN((float)damage_info) << 10",
+      "type": "nan_function_artifact"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 60,
+      "match": "NAN",
+      "severity": "mild",
+      "text": "(ushort)(0.0 < (float)damage_info) << 8 | (ushort)NAN((float)damage_info) << 10",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 98,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "*(int *)((int)g_ActorProfileTimes + iVar7) = iVar8 - local_3c;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 159,
+      "match": "DAT_00000004",
+      "severity": "mild",
+      "text": "local_a4.attacker = (CDemonActor *)&DAT_00000004;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 221,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "iVar7 = *(int *)((int)g_ActorProfileTimes + local_2c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 222,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "if (iVar7 < *(int *)((int)g_ActorProfileTimes + iVar9)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 223,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)g_ActorProfileTimes + local_2c) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 224,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)g_ActorProfileTimes + iVar9);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 225,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "*(int *)((int)g_ActorProfileTimes + iVar9) = iVar7;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 226,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "uVar4 = *(uint *)((int)g_ActorProfileActors + local_2c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 227,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)g_ActorProfileActors + local_2c) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 228,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)g_ActorProfileActors + iVar9);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 229,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)g_ActorProfileActors + iVar9) = uVar4;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 246,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "piVar1 = (int *)((int)g_ActorProfileTimes + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 247,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "puVar2 = (uint *)((int)g_ActorProfileActors + iVar8);",
+      "type": "pointer_cast"
+    }
+  ]
+}

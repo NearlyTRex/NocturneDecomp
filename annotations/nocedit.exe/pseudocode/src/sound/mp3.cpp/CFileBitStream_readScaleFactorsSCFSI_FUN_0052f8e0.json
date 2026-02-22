@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 118,
     "suspect_count": 7,
     "suspect_types": [
@@ -213,6 +214,7 @@
       "description": "Complex pointer cast",
       "line": 24,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "piVar8 = (int *)((int)allocation_array->granules + local_28);",
       "type": "pointer_cast"
     },
@@ -220,6 +222,7 @@
       "description": "Complex pointer cast",
       "line": 28,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)scfsi_array[iVar4].scfsi + local_28) = uVar2 & 0xff;",
       "type": "pointer_cast"
     },
@@ -227,6 +230,7 @@
       "description": "Complex pointer cast",
       "line": 42,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar7 = (uint *)((int)scfsi_array->scfsi + iVar4);",
       "type": "pointer_cast"
     },
@@ -234,6 +238,7 @@
       "description": "Complex pointer cast",
       "line": 57,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "local_14 = (int *)((int)allocation_array->granules + local_24);",
       "type": "pointer_cast"
     },
@@ -241,6 +246,7 @@
       "description": "Complex pointer cast",
       "line": 58,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar6 = (uint *)((int)scalefactor_array->codes[0] + local_24);",
       "type": "pointer_cast"
     },
@@ -248,6 +254,7 @@
       "description": "Complex pointer cast",
       "line": 66,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "switch(*(uint *)((int)scfsi_array[iVar4].scfsi + local_24)) {",
       "type": "pointer_cast"
     },
@@ -255,6 +262,7 @@
       "description": "Complex pointer cast",
       "line": 108,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar7 = (uint *)((int)scalefactor_array->codes[0] + iVar3);",
       "type": "pointer_cast"
     }

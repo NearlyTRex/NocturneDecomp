@@ -26,12 +26,12 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_applyBias_FUN_0047c370(CKeyFramedMo
                     ((double)(bias_offset->z * (float)256 + (float)0.5));
   iVar3 = 0;
   for (iVar2 = 0; iVar2 < this_ptr->frame_count * this_ptr->vertex_count; iVar2 = iVar2 + 1) {
-    piVar1 = (int *)(iVar3 + (int)this_ptr->vertex_list);
+    piVar1 = (int *)((int)&this_ptr->vertex_list->x + iVar3);
     *piVar1 = *piVar1 + (int)ROUND(ROUND(dVar4));
-    piVar1 = (int *)(iVar3 + 4 + (int)this_ptr->vertex_list);
+    piVar1 = (int *)((int)&this_ptr->vertex_list->y + iVar3);
     *piVar1 = *piVar1 + (int)ROUND(ROUND(dVar5));
-    *(int *)(iVar3 + 8 + (int)this_ptr->vertex_list) =
-         *(int *)(iVar3 + 8 + (int)this_ptr->vertex_list) + (int)ROUND(ROUND(dVar6));
+    *(int *)((int)&this_ptr->vertex_list->z + iVar3) =
+         *(int *)((int)&this_ptr->vertex_list->z + iVar3) + (int)ROUND(ROUND(dVar6));
     iVar3 = iVar3 + 0xc;
   }
   core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(this_ptr);

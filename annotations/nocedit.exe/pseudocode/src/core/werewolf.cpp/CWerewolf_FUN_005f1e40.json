@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 4,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 58,
     "suspect_count": 4,
     "suspect_types": [
@@ -341,6 +342,7 @@
       "description": "Type propagation did not converge",
       "line": 2,
       "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
     },
@@ -348,6 +350,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 43,
       "match": "SQRT",
+      "severity": "mild",
       "text": "local_1c = SQRT(fVar2 * fVar2 + fVar1 * fVar1 + fVar3 * fVar3);",
       "type": "decompiler_intrinsic"
     },
@@ -355,6 +358,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 49,
       "match": "SQRT",
+      "severity": "mild",
       "text": "local_20 = SQRT(local_20);",
       "type": "decompiler_intrinsic"
     },
@@ -362,6 +366,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 50,
       "match": "SQRT",
+      "severity": "mild",
       "text": "local_14 = SQRT(fVar2 * fVar2 + fVar1 * fVar1);",
       "type": "decompiler_intrinsic"
     }

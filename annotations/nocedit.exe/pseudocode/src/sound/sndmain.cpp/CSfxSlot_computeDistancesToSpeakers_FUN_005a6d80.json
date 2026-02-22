@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 7,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 28,
     "suspect_count": 6,
     "suspect_types": [
@@ -152,6 +153,7 @@
       "description": "Inferred register parameter",
       "line": 5,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "int in_EAX;",
       "type": "register_param"
     },
@@ -159,6 +161,7 @@
       "description": "Complex pointer cast",
       "line": 19,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "(float10)*(double *)((int)g_VirtualSpeakerXPositions + iVar2);",
       "type": "pointer_cast"
     },
@@ -166,6 +169,7 @@
       "description": "Complex pointer cast",
       "line": 21,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "(float10)*(double *)((int)g_VirtualSpeakerYPositions + iVar2);",
       "type": "pointer_cast"
     },
@@ -173,6 +177,7 @@
       "description": "Complex pointer cast",
       "line": 23,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "(float10)*(double *)((int)g_VirtualSpeakerZPositions + iVar2);",
       "type": "pointer_cast"
     },
@@ -180,6 +185,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 26,
       "match": "SQRT",
+      "severity": "mild",
       "text": "pCVar1->distance_to_speakers[0] = (float)SQRT(fVar6 * fVar6 + fVar5 * fVar5 + fVar4 * fVar4);",
       "type": "decompiler_intrinsic"
     },
@@ -187,6 +193,7 @@
       "description": "Inferred register parameter",
       "line": 30,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "return in_EAX;",
       "type": "register_param"
     }

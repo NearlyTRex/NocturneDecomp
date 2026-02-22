@@ -5,6 +5,7 @@
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 21,
     "suspect_count": 8,
     "suspect_types": [
@@ -78,6 +79,7 @@
       "description": "Unreachable code block removed",
       "line": 2,
       "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x00600ac1) */",
       "type": "warning_unreachable"
     },
@@ -85,6 +87,7 @@
       "description": "Unnamed function parameter",
       "line": 4,
       "match": "param_1",
+      "severity": "mild",
       "text": "uint FUN_00600a64(byte *param_1)",
       "type": "unnamed_param"
     },
@@ -92,6 +95,7 @@
       "description": "Unnamed function parameter",
       "line": 11,
       "match": "param_1",
+      "severity": "mild",
       "text": "INT_03f9b1f0 = (int)param_1;",
       "type": "unnamed_param"
     },
@@ -99,6 +103,7 @@
       "description": "Unnamed function parameter",
       "line": 12,
       "match": "param_1",
+      "severity": "mild",
       "text": "if ((*param_1 & 1) != 0) {",
       "type": "unnamed_param"
     },
@@ -106,6 +111,7 @@
       "description": "Unnamed function parameter",
       "line": 15,
       "match": "param_1",
+      "severity": "mild",
       "text": "iVar1 = *(int *)(param_1 + 8);",
       "type": "unnamed_param"
     },
@@ -113,6 +119,7 @@
       "description": "Unnamed function parameter",
       "line": 16,
       "match": "param_1",
+      "severity": "mild",
       "text": "uVar2 = *(uint *)(param_1 + 4);",
       "type": "unnamed_param"
     },
@@ -120,6 +127,7 @@
       "description": "Unnamed function parameter",
       "line": 17,
       "match": "param_1",
+      "severity": "mild",
       "text": "if ((param_1 == *(byte **)(iVar1 + 4)) && (*(byte **)(iVar1 + 4) == *(byte **)(uVar2 + 8))) {",
       "type": "unnamed_param"
     },

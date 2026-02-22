@@ -47,7 +47,7 @@
 ;   core_dlight.cpp_CDemonLight_renderShadowMapDebugView_FUN_00473390
 ;   core_game.cpp_CGame_setGameRes_FUN_004dade0
 ;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0
-;   core_set.cpp_CDemonSet_FUN_0056d2d0
+;   core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0
 ;   core_set.cpp_CDemonSet_initScene_FUN_0056aa10
 ;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470
 ;   core_setedit.cpp_CDemonSet_FUN_00576da0
@@ -448,8 +448,8 @@ section .text
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 0057ca22
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
     PUSH EBX                            ; 0057ca27
-    CALL core_set.cpp_CDemonSet_FUN_0056d2d0 ; 0057ca28
-        ;   XREF to: 0056d2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d2d0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0 ; 0057ca28
+        ;   XREF to: 0056d2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0057ca2d
     MOV ESI,dword ptr [0x0067b654]      ; 0057ca30 | g_CGamePtr
     PUSH ESI                            ; 0057ca36 | g_CGameInstance
@@ -531,8 +531,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 0057caeb
         ;   Label: LAB_0057caeb
     PUSH EBX                            ; 0057caee
-    CALL core_set.cpp_CDemonSet_FUN_0056d2d0 ; 0057caef
-        ;   XREF to: 0056d2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d2d0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0 ; 0057caef
+        ;   XREF to: 0056d2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0057caf4
     PUSH 0x647c25                       ; 0057caf7 | = "Precompute light visibility?"
     MOV ESI,dword ptr [0x00678a60]      ; 0057cafc | g_CEditorToolsPtr
@@ -546,7 +546,7 @@ section .text
     PUSH -0x1                           ; 0057cb0f
     PUSH EBX                            ; 0057cb11
     CALL core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470 ; 0057cb12
-        ;   XREF to: 0056a470 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemonSet * this_ptr)
+        ;   XREF to: 0056a470 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemonSet * this_ptr, int param_2)
     ADD ESP,0x8                         ; 0057cb17
     MOV EAX,dword ptr [EBP + 0x14]      ; 0057cb1a
         ;   Label: LAB_0057cb1a
@@ -867,8 +867,8 @@ section .text
         ;   XREF to: 0057ce5b (CONDITIONAL_JUMP)  ; LAB_0057ce5b
     MOV EDI,dword ptr [EBP + 0x14]      ; 0057ce46
     PUSH EDI                            ; 0057ce49
-    CALL core_set.cpp_CDemonSet_FUN_0056d2d0 ; 0057ce4a
-        ;   XREF to: 0056d2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d2d0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0 ; 0057ce4a
+        ;   XREF to: 0056d2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0057ce4f
     PUSH EDI                            ; 0057ce52
     CALL core_set.cpp_CDemonSet_initScene_FUN_0056aa10 ; 0057ce53

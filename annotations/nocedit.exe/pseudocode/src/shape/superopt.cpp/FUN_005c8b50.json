@@ -6,14 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 332,
-    "complexity_score": 429,
+    "complexity_score": 534,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 139,
-    "suspect_count": 27,
+    "suspect_count": 37,
     "suspect_types": [
       "decompiler_intrinsic",
+      "double_reconstruction",
       "extra_output",
       "pointer_cast",
       "stack_param"
@@ -365,6 +367,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 7,
       "match": "extraout_EDX",
+      "severity": "moderate",
       "text": "uint extraout_EDX;",
       "type": "extra_output"
     },
@@ -372,6 +375,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 8,
       "match": "extraout_EDX_00",
+      "severity": "moderate",
       "text": "uint extraout_EDX_00;",
       "type": "extra_output"
     },
@@ -379,6 +383,7 @@
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
@@ -386,6 +391,7 @@
       "description": "Unresolved stack parameter",
       "line": 52,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "if (*(int *)(in_stack_00000004 + 0x2c) != 0) {",
       "type": "stack_param"
     },
@@ -393,6 +399,7 @@
       "description": "Unresolved stack parameter",
       "line": 54,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "local_14 = (double *)(in_stack_00000004 + 0x14);",
       "type": "stack_param"
     },
@@ -400,6 +407,7 @@
       "description": "Unresolved stack parameter",
       "line": 56,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "iVar3 = local_24 + *(int *)(in_stack_00000004 + 0x30);",
       "type": "stack_param"
     },
@@ -407,48 +415,103 @@
       "description": "Complex pointer cast",
       "line": 72,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar5 = (double *)((int)pdVar5 + (uint)bVar7 * -8 + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 75,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "local_9c = (double)CONCAT44(uStack_c0,local_c4) * local_14[2] -",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 75,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "local_9c = (double)CONCAT44(uStack_c0,local_c4) * local_14[2] -",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 76,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(double)CONCAT44(uStack_b8,local_bc) * local_14[1];",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 76,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(double)CONCAT44(uStack_b8,local_bc) * local_14[1];",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 77,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "local_94 = (double)CONCAT44(uStack_b8,local_bc) * *local_14 -",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 77,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "local_94 = (double)CONCAT44(uStack_b8,local_bc) * *local_14 -",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 78,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(double)CONCAT44(uStack_c8,local_cc) * local_14[2];",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 78,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(double)CONCAT44(uStack_c8,local_cc) * local_14[2];",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 79,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "local_8c = (double)CONCAT44(uStack_c8,local_cc) * local_14[1] -",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 79,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "local_8c = (double)CONCAT44(uStack_c8,local_cc) * local_14[1] -",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 80,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(double)CONCAT44(uStack_c0,local_c4) * *local_14;",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 80,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(double)CONCAT44(uStack_c0,local_c4) * *local_14;",
       "type": "decompiler_intrinsic"
     },
@@ -456,6 +519,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 81,
       "match": "SQRT",
+      "severity": "mild",
       "text": "dVar1 = 1.0 / SQRT(local_8c * local_8c + local_9c * local_9c + local_94 * local_94);",
       "type": "decompiler_intrinsic"
     },
@@ -463,6 +527,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 115,
       "match": "extraout_EDX_00",
+      "severity": "moderate",
       "text": "local_38 = extraout_EDX_00;",
       "type": "extra_output"
     },
@@ -470,6 +535,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 117,
       "match": "extraout_EDX_00",
+      "severity": "moderate",
       "text": "uStack_50 = extraout_EDX_00;",
       "type": "extra_output"
     },
@@ -477,13 +543,31 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 118,
       "match": "extraout_EDX_00",
+      "severity": "moderate",
       "text": "if ((double)CONCAT44(uStack_40,local_44) < (double)CONCAT44(extraout_EDX_00,local_3c)) {",
       "type": "extra_output"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 118,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "if ((double)CONCAT44(uStack_40,local_44) < (double)CONCAT44(extraout_EDX_00,local_3c)) {",
+      "type": "double_reconstruction"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 118,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "if ((double)CONCAT44(uStack_40,local_44) < (double)CONCAT44(extraout_EDX_00,local_3c)) {",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 118,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "if ((double)CONCAT44(uStack_40,local_44) < (double)CONCAT44(extraout_EDX_00,local_3c)) {",
       "type": "decompiler_intrinsic"
     },
@@ -491,6 +575,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 118,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "if ((double)CONCAT44(uStack_40,local_44) < (double)CONCAT44(extraout_EDX_00,local_3c)) {",
       "type": "decompiler_intrinsic"
     },
@@ -498,6 +583,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 120,
       "match": "extraout_EDX_00",
+      "severity": "moderate",
       "text": "uStack_40 = extraout_EDX_00;",
       "type": "extra_output"
     },
@@ -505,6 +591,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 126,
       "match": "extraout_EDX",
+      "severity": "moderate",
       "text": "local_38 = extraout_EDX;",
       "type": "extra_output"
     },
@@ -512,6 +599,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 128,
       "match": "extraout_EDX",
+      "severity": "moderate",
       "text": "uStack_30 = extraout_EDX;",
       "type": "extra_output"
     },
@@ -519,13 +607,31 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 129,
       "match": "extraout_EDX",
+      "severity": "moderate",
       "text": "if ((double)CONCAT44(uStack_40,local_44) < (double)CONCAT44(extraout_EDX,local_3c)) {",
       "type": "extra_output"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 129,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "if ((double)CONCAT44(uStack_40,local_44) < (double)CONCAT44(extraout_EDX,local_3c)) {",
+      "type": "double_reconstruction"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 129,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "if ((double)CONCAT44(uStack_40,local_44) < (double)CONCAT44(extraout_EDX,local_3c)) {",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 129,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "if ((double)CONCAT44(uStack_40,local_44) < (double)CONCAT44(extraout_EDX,local_3c)) {",
       "type": "decompiler_intrinsic"
     },
@@ -533,6 +639,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 129,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "if ((double)CONCAT44(uStack_40,local_44) < (double)CONCAT44(extraout_EDX,local_3c)) {",
       "type": "decompiler_intrinsic"
     },
@@ -540,6 +647,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 131,
       "match": "extraout_EDX",
+      "severity": "moderate",
       "text": "uStack_40 = extraout_EDX;",
       "type": "extra_output"
     },
@@ -547,6 +655,7 @@
       "description": "Unresolved stack parameter",
       "line": 139,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "} while (local_20 < *(uint *)(in_stack_00000004 + 0x2c));",
       "type": "stack_param"
     }

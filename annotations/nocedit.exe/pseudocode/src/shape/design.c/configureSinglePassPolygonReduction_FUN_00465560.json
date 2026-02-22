@@ -17,6 +17,7 @@
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 14,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 115,
     "suspect_count": 3,
     "suspect_types": [
@@ -329,6 +330,7 @@
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_ffffff84",
+      "severity": "moderate",
       "text": "char *in_stack_ffffff84;",
       "type": "stack_param"
     },
@@ -336,6 +338,7 @@
       "description": "Unresolved stack parameter",
       "line": 42,
       "match": "in_stack_ffffff84",
+      "severity": "moderate",
       "text": "dVar8 = _strtod(in_stack_ffffff84);",
       "type": "stack_param"
     },
@@ -343,6 +346,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 58,
       "match": "fcos",
+      "severity": "mild",
       "text": "fVar7 = (float10)fcos((float10)local_14 * (float10)0.01745329252);",
       "type": "decompiler_intrinsic"
     }

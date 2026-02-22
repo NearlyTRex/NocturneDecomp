@@ -10,6 +10,7 @@
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 3,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 44,
     "suspect_count": 4,
     "suspect_types": [
@@ -147,6 +148,7 @@
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "CDemonActor *in_stack_00000004;",
       "type": "stack_param"
     },
@@ -154,6 +156,7 @@
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "(in_stack_00000004,g_CBoxActorClassInfo.name_hash);",
       "type": "stack_param"
     },
@@ -161,6 +164,7 @@
       "description": "Unresolved stack parameter",
       "line": 23,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "(in_stack_00000004,g_CCryptVesselClassInfo.name_hash);",
       "type": "stack_param"
     },
@@ -168,7 +172,8 @@
       "description": "Complex pointer cast",
       "line": 34,
       "match": "(int *)((int)",
-      "text": "piVar2 = (int *)((int)pCVar5->vertex_list + iVar4);",
+      "severity": "mild",
+      "text": "piVar2 = (int *)((int)&pCVar5->vertex_list->x + iVar4);",
       "type": "pointer_cast"
     }
   ]

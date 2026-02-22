@@ -6,15 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 60,
-    "complexity_score": 92,
+    "complexity_score": 107,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 32,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast"
+      "pointer_cast",
+      "stack_alignment_array"
     ],
     "total_lines": 92
   },
@@ -184,9 +186,18 @@
   },
   "suspects": [
     {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 8,
+      "match": "afStackY_100c",
+      "severity": "moderate",
+      "text": "float afStackY_100c [1009];",
+      "type": "stack_alignment_array"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 27,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_24 = (float)(int)ROUND(local_30.x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -194,6 +205,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 28,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_20 = (float)(int)ROUND(local_30.y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -201,6 +213,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 29,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_1c = (int)ROUND(local_30.z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -208,6 +221,7 @@
       "description": "Complex pointer cast",
       "line": 30,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "pfVar2 = (float *)((int)output_vertex + (uint)bVar3 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -215,6 +229,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 31,
       "match": "ROUND",
+      "severity": "mild",
       "text": "output_vertex->x = (float)(int)ROUND(local_30.x * 256.0f);",
       "type": "decompiler_intrinsic"
     }

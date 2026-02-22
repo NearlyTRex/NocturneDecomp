@@ -19,14 +19,16 @@
   },
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 128,
+    "complexity_score": 143,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 33,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
+      "double_reconstruction",
       "pointer_cast",
       "unknown_field"
     ],
@@ -161,6 +163,7 @@
       "description": "Unknown/mangled field access",
       "line": 13,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_20 = 9.9999999999999997e+34._0_4_;",
       "type": "unknown_field"
     },
@@ -168,6 +171,7 @@
       "description": "Unknown/mangled field access",
       "line": 15,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "uStack_1c = 9.9999999999999997e+34._4_4_;",
       "type": "unknown_field"
     },
@@ -175,6 +179,7 @@
       "description": "Complex pointer cast",
       "line": 19,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + iVar2 + -0x14) == 0) {",
       "type": "pointer_cast"
     },
@@ -182,6 +187,7 @@
       "description": "Complex pointer cast",
       "line": 20,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + iVar2 + -8) != 0) {",
       "type": "pointer_cast"
     },
@@ -189,13 +195,23 @@
       "description": "Complex pointer cast",
       "line": 24,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "if (*(double *)((int)pCVar1->adjacent_tri_indices + iVar2 + -0x20) <",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 25,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(double)CONCAT44(uStack_1c,local_20)) {",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 25,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(double)CONCAT44(uStack_1c,local_20)) {",
       "type": "decompiler_intrinsic"
     },
@@ -203,6 +219,7 @@
       "description": "Complex pointer cast",
       "line": 26,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_20 = *(uint *)((int)pCVar1->adjacent_tri_indices + iVar2 + -0x20);",
       "type": "pointer_cast"
     },
@@ -210,6 +227,7 @@
       "description": "Complex pointer cast",
       "line": 27,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "uStack_1c = *(uint *)((int)pCVar1->adjacent_tri_indices + iVar2 + -0x1c);",
       "type": "pointer_cast"
     }

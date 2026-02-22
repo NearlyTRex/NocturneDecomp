@@ -17,6 +17,7 @@
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 90,
     "suspect_count": 17,
     "suspect_types": [
@@ -241,6 +242,7 @@
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
@@ -248,6 +250,7 @@
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "char *in_stack_00000008;",
       "type": "stack_param"
     },
@@ -255,6 +258,7 @@
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_00000014",
+      "severity": "moderate",
       "text": "int in_stack_00000014;",
       "type": "stack_param"
     },
@@ -262,6 +266,7 @@
       "description": "Unresolved stack parameter",
       "line": 28,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "if (0 < *(int *)(in_stack_00000004 + 0xbc)) {",
       "type": "stack_param"
     },
@@ -269,6 +274,7 @@
       "description": "Unresolved stack parameter",
       "line": 29,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "local_24 = (char *)(in_stack_00000004 + in_stack_00000014 * 0x1680 + 200);",
       "type": "stack_param"
     },
@@ -276,6 +282,7 @@
       "description": "Unresolved stack parameter",
       "line": 29,
       "match": "in_stack_00000014",
+      "severity": "moderate",
       "text": "local_24 = (char *)(in_stack_00000004 + in_stack_00000014 * 0x1680 + 200);",
       "type": "stack_param"
     },
@@ -283,6 +290,7 @@
       "description": "Unresolved stack parameter",
       "line": 38,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "local_1c < *(int *)(in_stack_00000004 + 0x54) + *(int *)(in_stack_00000004 + 0x68);",
       "type": "stack_param"
     },
@@ -290,6 +298,7 @@
       "description": "Unresolved stack parameter",
       "line": 38,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "local_1c < *(int *)(in_stack_00000004 + 0x54) + *(int *)(in_stack_00000004 + 0x68);",
       "type": "stack_param"
     },
@@ -297,6 +306,7 @@
       "description": "Unresolved stack parameter",
       "line": 40,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "iVar4 = *(int *)(in_stack_00000004 + 0x7c) + local_18;",
       "type": "stack_param"
     },
@@ -304,6 +314,7 @@
       "description": "Unresolved stack parameter",
       "line": 41,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "if (local_20 == *(int *)(*(int *)(in_stack_00000004 + 0x90) + local_14)) {",
       "type": "stack_param"
     },
@@ -311,6 +322,7 @@
       "description": "Unresolved stack parameter",
       "line": 68,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "} while (local_20 < *(int *)(in_stack_00000004 + 0xbc));",
       "type": "stack_param"
     },
@@ -318,6 +330,7 @@
       "description": "Unresolved stack parameter",
       "line": 72,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "cVar1 = *in_stack_00000008;",
       "type": "stack_param"
     },
@@ -325,6 +338,7 @@
       "description": "Unresolved stack parameter",
       "line": 75,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "cVar1 = in_stack_00000008[1];",
       "type": "stack_param"
     },
@@ -332,6 +346,7 @@
       "description": "Unresolved stack parameter",
       "line": 76,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "in_stack_00000008 = in_stack_00000008 + 2;",
       "type": "stack_param"
     },
@@ -339,6 +354,7 @@
       "description": "Unresolved stack parameter",
       "line": 76,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "in_stack_00000008 = in_stack_00000008 + 2;",
       "type": "stack_param"
     },
@@ -346,6 +362,7 @@
       "description": "Complex pointer cast",
       "line": 77,
       "match": "(char *)((int)",
+      "severity": "mild",
       "text": "*(char *)((int)pSVar8 + 1) = cVar1;",
       "type": "pointer_cast"
     },
@@ -353,6 +370,7 @@
       "description": "Complex pointer cast",
       "line": 78,
       "match": "(SCramConfig *)((int)",
+      "severity": "mild",
       "text": "pSVar8 = (SCramConfig *)((int)pSVar8 + 2);",
       "type": "pointer_cast"
     }

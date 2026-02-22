@@ -15,7 +15,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00477e60(CKeyFramed
   double dVar2;
   double dVar3;
   double dVar4;
-  CVector3i **ppCVar5;
+  CVector3i *pCVar5;
   SMRGLPrimitiveTriangle *pSVar6;
   int iVar7;
   int iVar8;
@@ -25,7 +25,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00477e60(CKeyFramed
   int local_14;
   
   if (this_ptr->frame_count == 1) {
-    if (this_ptr->vertex_normal_list == (CVector3i **)0x0) {
+    if (this_ptr->vertex_normal_list == (CVector3i *)0x0) {
       g_CurrentFilename = "..\\core\\dmodel.cpp";
       g_CurrentLineNumber = 0x2f1;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CKeyFramedModel::calcNormals() - vertexNormalList not allocated!");
@@ -35,17 +35,18 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00477e60(CKeyFramed
     if (0 < this_ptr->poly_count) {
       local_18 = 0;
       do {
-        texture = (SMRGLPrimitiveTriangle *)((int)this_ptr->poly_vert_list + local_18);
-        engine_keyframe_c_calculateSurfaceNormal_FUN_00501bc0
-                  ((CVector3i *)this_ptr->vertex_list,texture);
+        texture = (SMRGLPrimitiveTriangle *)
+                  ((int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).
+                         base.type + local_18);
+        engine_keyframe_c_calculateSurfaceNormal_FUN_00501bc0(this_ptr->vertex_list,texture);
         iVar8 = 0;
         pSVar6 = texture;
         if (0 < (texture->base).base.count) {
           do {
-            ppCVar5 = this_ptr->vertex_normal_list + pSVar6->vertices[0].vertex_index * 3;
-            *ppCVar5 = (CVector3i *)((int)&(*ppCVar5)->x + (texture->base).surface_normal.A);
-            ppCVar5[1] = (CVector3i *)((int)&ppCVar5[1]->x + (texture->base).surface_normal.B);
-            ppCVar5[2] = (CVector3i *)((int)&ppCVar5[2]->x + (texture->base).surface_normal.C);
+            pCVar5 = this_ptr->vertex_normal_list + pSVar6->vertices[0].vertex_index;
+            pCVar5->x = pCVar5->x + (texture->base).surface_normal.A;
+            pCVar5->y = pCVar5->y + (texture->base).surface_normal.B;
+            pCVar5->z = pCVar5->z + (texture->base).surface_normal.C;
             iVar8 = iVar8 + 1;
             pSVar6 = (SMRGLPrimitiveTriangle *)&(pSVar6->base).surface_normal.B;
           } while (iVar8 < (texture->base).base.count);
@@ -58,7 +59,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00477e60(CKeyFramed
     if (0 < this_ptr->vertex_count) {
       iVar7 = 0;
       do {
-        piVar9 = (int *)((int)this_ptr->vertex_normal_list + iVar7);
+        piVar9 = (int *)((int)&this_ptr->vertex_normal_list->x + iVar7);
         dVar1 = (double)*piVar9;
         dVar4 = (double)piVar9[1];
         dVar3 = (double)piVar9[2];

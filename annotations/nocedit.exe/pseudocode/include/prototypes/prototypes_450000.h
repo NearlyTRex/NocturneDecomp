@@ -3,7 +3,6 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "system/stdio.h"
-#include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CDemonCamera.h"
 #include "types/classes/CDemonCube.h"
 #include "types/classes/CDemonCubeTriangle.h"
@@ -67,7 +66,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_blendLightmapPixel16_FUN_00453db0(CDe
 void __cdecl core_dcamera_cpp_loadCameraFog_FUN_00453e50(SFog *fog,_FILE *file_handle,int file_version);
 void __cdecl core_dcamera_cpp_saveCameraFog_FUN_00453f10(SFog *fog,_FILE *file_handle);
 void __cdecl core_dcamera_cpp_CDemonCamera_initCameraShake_FUN_00453fc0(CDemonCamera *this_ptr,float peak_intensity,float attack_time,float sustain_duration ,float decay_time);
-CVector3f * __cdecl core_dcamera_cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454060(CDemonCamera *this_ptr,CVector3f *output_vectors,CBoundingBox3D *bounding_box);
+CVector3f * __cdecl core_dcamera_cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454060(CDemonCamera *this_ptr,CVector3f *output_bounds);
 void __cdecl core_dcamera_cpp_CDemonCamera_saveZBufferScanlines_FUN_00454450(CDemonCamera *this_ptr);
 void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferScanlines_FUN_004544a0(CDemonCamera *this_ptr);
 int __cdecl core_dcamera_cpp_CDemonCamera_testBoxOcclusion_FUN_004544f0(CDemonCamera *this_ptr,CVector3i *corners);

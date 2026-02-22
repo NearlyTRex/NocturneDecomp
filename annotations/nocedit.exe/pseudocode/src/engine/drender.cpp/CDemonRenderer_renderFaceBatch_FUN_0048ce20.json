@@ -10,6 +10,7 @@
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 25,
     "suspect_count": 5,
     "suspect_types": [
@@ -28,7 +29,7 @@
     {
       "addr": "00570700",
       "from_addr": "00570742",
-      "name": "core_set.cpp_FUN_00570700",
+      "name": "core_set.cpp_CDemonSet_renderFaceBatchOrEnvMap_FUN_00570700",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -126,6 +127,7 @@
       "description": "Inferred register parameter",
       "line": 5,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "int in_EAX;",
       "type": "register_param"
     },
@@ -133,6 +135,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 6,
       "match": "extraout_EAX",
+      "severity": "moderate",
       "text": "int extraout_EAX;",
       "type": "extra_output"
     },
@@ -140,6 +143,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 24,
       "match": "extraout_EAX",
+      "severity": "moderate",
       "text": "in_EAX = extraout_EAX;",
       "type": "extra_output"
     },
@@ -147,6 +151,7 @@
       "description": "Inferred register parameter",
       "line": 24,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "in_EAX = extraout_EAX;",
       "type": "register_param"
     },
@@ -154,6 +159,7 @@
       "description": "Inferred register parameter",
       "line": 27,
       "match": "in_EAX",
+      "severity": "mild",
       "text": "return in_EAX;",
       "type": "register_param"
     }

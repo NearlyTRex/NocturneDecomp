@@ -13,14 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 494,
-    "complexity_score": 334,
+    "complexity_score": 349,
     "cross_reference_count": 0,
     "function_call_count": 18,
     "global_count": 19,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 234,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
+      "stack_alignment_array",
       "unaffected_reg",
       "unresolved_funcptr",
       "warning_type_propagation"
@@ -478,6 +480,7 @@
       "description": "Type propagation did not converge",
       "line": 2,
       "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
     },
@@ -485,13 +488,23 @@
       "description": "Unaffected register variable",
       "line": 13,
       "match": "unaff_EDI",
+      "severity": "moderate",
       "text": "float unaff_EDI;",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 16,
+      "match": "apCStackY_1880",
+      "severity": "moderate",
+      "text": "CVector3f *apCStackY_1880 [1519];",
+      "type": "stack_alignment_array"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 21,
       "match": "code *",
+      "severity": "moderate",
       "text": "code *blend_callback;",
       "type": "unresolved_funcptr"
     },
@@ -499,6 +512,7 @@
       "description": "Complex pointer cast",
       "line": 211,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar7 = (uint *)((int)&local_94 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);",
       "type": "pointer_cast"
     },
@@ -506,6 +520,7 @@
       "description": "Complex pointer cast",
       "line": 212,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar6 = (uint *)((int)&local_a4 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);",
       "type": "pointer_cast"
     },
@@ -513,6 +528,7 @@
       "description": "Complex pointer cast",
       "line": 213,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_94 + (uint)bVar8 * -8 + 4) =",
       "type": "pointer_cast"
     },
@@ -520,6 +536,7 @@
       "description": "Complex pointer cast",
       "line": 214,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_a4 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -527,6 +544,7 @@
       "description": "Unaffected register variable",
       "line": 222,
       "match": "unaff_EDI",
+      "severity": "moderate",
       "text": "((CCharacter *)this_ptr,delta_time,unaff_EDI);",
       "type": "unaffected_reg"
     }

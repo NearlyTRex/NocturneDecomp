@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 80,
     "suspect_count": 6,
     "suspect_types": [
@@ -292,6 +293,7 @@
       "description": "Unresolved stack parameter",
       "line": 8,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "int *in_stack_00000008;",
       "type": "stack_param"
     },
@@ -299,6 +301,7 @@
       "description": "Unresolved stack parameter",
       "line": 70,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "piVar2 = in_stack_00000008;",
       "type": "stack_param"
     },
@@ -306,6 +309,7 @@
       "description": "Complex pointer cast",
       "line": 74,
       "match": "(CNetGame *)((int)",
+      "severity": "mild",
       "text": "this_ptr = (CNetGame *)((int)this_ptr + (uint)bVar3 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -313,6 +317,7 @@
       "description": "Unresolved stack parameter",
       "line": 78,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "*in_stack_00000008 = *piVar2;",
       "type": "stack_param"
     },
@@ -320,6 +325,7 @@
       "description": "Unresolved stack parameter",
       "line": 80,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "in_stack_00000008 = in_stack_00000008 + (uint)bVar3 * -2 + 1;",
       "type": "stack_param"
     },
@@ -327,6 +333,7 @@
       "description": "Unresolved stack parameter",
       "line": 80,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "in_stack_00000008 = in_stack_00000008 + (uint)bVar3 * -2 + 1;",
       "type": "stack_param"
     }

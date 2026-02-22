@@ -17,6 +17,7 @@
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 10,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 34,
     "suspect_count": 9,
     "suspect_types": [
@@ -212,6 +213,7 @@
       "description": "Unresolved stack parameter",
       "line": 7,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
@@ -219,6 +221,7 @@
       "description": "Unresolved stack parameter",
       "line": 8,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
@@ -226,6 +229,7 @@
       "description": "Unresolved stack parameter",
       "line": 9,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
@@ -233,6 +237,7 @@
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "local_1c = in_stack_0000000c << 2;",
       "type": "stack_param"
     },
@@ -240,6 +245,7 @@
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "local_18 = in_stack_00000004 * 0x3000;",
       "type": "stack_param"
     },
@@ -247,6 +253,7 @@
       "description": "Unresolved stack parameter",
       "line": 20,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "local_24 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_1c) + in_stack_00000008 * 2);",
       "type": "stack_param"
     },
@@ -254,6 +261,7 @@
       "description": "Complex pointer cast",
       "line": 20,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "local_24 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_1c) + in_stack_00000008 * 2);",
       "type": "pointer_cast"
     },
@@ -261,6 +269,7 @@
       "description": "Unresolved stack parameter",
       "line": 21,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "iVar2 = in_stack_00000004 * 0x3000 + local_14 * 0x100;",
       "type": "stack_param"
     },
@@ -268,6 +277,7 @@
       "description": "Undefined global data reference",
       "line": 24,
       "match": "DAT_03365cc0",
+      "severity": "mild",
       "text": "uVar1 = *(uint *)(&DAT_03365cc0 + iVar2);",
       "type": "undefined_data"
     }

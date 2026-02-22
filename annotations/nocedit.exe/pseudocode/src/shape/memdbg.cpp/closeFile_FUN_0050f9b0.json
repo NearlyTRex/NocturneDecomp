@@ -10,6 +10,7 @@
     "cross_reference_count": 181,
     "function_call_count": 7,
     "global_count": 23,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 59,
     "suspect_count": 2,
     "suspect_types": [
@@ -1367,6 +1368,7 @@
       "description": "Complex pointer cast",
       "line": 33,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&g_FileRegistry[0].line_number + iVar1));",
       "type": "pointer_cast"
     },
@@ -1374,6 +1376,7 @@
       "description": "Complex pointer cast",
       "line": 39,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "iVar1 + 0x2f0db68,*(uint *)((int)&g_FileRegistry[0].line_number + iVar1))",
       "type": "pointer_cast"
     }

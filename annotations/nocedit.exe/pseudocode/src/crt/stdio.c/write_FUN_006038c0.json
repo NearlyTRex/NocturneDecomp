@@ -5,6 +5,7 @@
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 8,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 48,
     "suspect_count": 10,
     "suspect_types": [
@@ -187,6 +188,7 @@
       "description": "Unaffected register variable",
       "line": 10,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "int unaff_ESI;",
       "type": "unaffected_reg"
     },
@@ -194,6 +196,7 @@
       "description": "Unaffected register variable",
       "line": 11,
       "match": "unaff_EDI",
+      "severity": "moderate",
       "text": "DWORD unaff_EDI;",
       "type": "unaffected_reg"
     },
@@ -201,6 +204,7 @@
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_00000010",
+      "severity": "moderate",
       "text": "void *in_stack_00000010;",
       "type": "stack_param"
     },
@@ -208,6 +212,7 @@
       "description": "Unaffected register variable",
       "line": 16,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "unaff_ESI = -1;",
       "type": "unaffected_reg"
     },
@@ -215,6 +220,7 @@
       "description": "Unresolved stack parameter",
       "line": 33,
       "match": "in_stack_00000010",
+      "severity": "moderate",
       "text": "iVar3 = (*g_SpecialDeviceWriteFuncPtr)(iVar3,in_stack_00000010,bytes_to_write);",
       "type": "stack_param"
     },
@@ -222,6 +228,7 @@
       "description": "Unresolved stack parameter",
       "line": 38,
       "match": "in_stack_00000010",
+      "severity": "moderate",
       "text": "BVar4 = (*g_WriteFileFunc)(hFile,in_stack_00000010,bytes_to_write,(LPDWORD)&stack0xfffffff4,",
       "type": "stack_param"
     },
@@ -229,6 +236,7 @@
       "description": "Direct stack address reference",
       "line": 38,
       "match": "&stack0xfffffff4",
+      "severity": "moderate",
       "text": "BVar4 = (*g_WriteFileFunc)(hFile,in_stack_00000010,bytes_to_write,(LPDWORD)&stack0xfffffff4,",
       "type": "stack_ref"
     },
@@ -236,6 +244,7 @@
       "description": "Unaffected register variable",
       "line": 45,
       "match": "unaff_EDI",
+      "severity": "moderate",
       "text": "if (bytes_to_write != unaff_EDI) {",
       "type": "unaffected_reg"
     },
@@ -243,6 +252,7 @@
       "description": "Unaffected register variable",
       "line": 50,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "return unaff_ESI;",
       "type": "unaffected_reg"
     },

@@ -91,15 +91,17 @@
   },
   "complexity": {
     "assembly_lines": 510,
-    "complexity_score": 679,
+    "complexity_score": 694,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 5,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 264,
-    "suspect_count": 40,
+    "suspect_count": 41,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
+      "stack_alignment_array",
       "unknown_field"
     ],
     "total_lines": 774
@@ -346,9 +348,18 @@
   },
   "suspects": [
     {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 15,
+      "match": "afStackY_18a8",
+      "severity": "moderate",
+      "text": "float afStackY_18a8 [1387];",
+      "type": "stack_alignment_array"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 58,
       "match": "SQRT",
+      "severity": "mild",
       "text": "local_2e8 = SQRT(local_44 * local_44 + local_4c * local_4c + local_48 * local_48);",
       "type": "decompiler_intrinsic"
     },
@@ -356,6 +367,7 @@
       "description": "Complex pointer cast",
       "line": 81,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar6 = (uint *)((int)this_ptr + (uint)bVar10 * -8 + 0x348);",
       "type": "pointer_cast"
     },
@@ -363,6 +375,7 @@
       "description": "Complex pointer cast",
       "line": 84,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar4 = (uint *)((int)&CStack_9c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);",
       "type": "pointer_cast"
     },
@@ -370,6 +383,7 @@
       "description": "Complex pointer cast",
       "line": 85,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*puVar6 = *(uint *)((int)&CStack_9c + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -377,6 +391,7 @@
       "description": "Complex pointer cast",
       "line": 88,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar7 = (uint *)((int)this_ptr + (uint)bVar10 * -8 + 0x338);",
       "type": "pointer_cast"
     },
@@ -384,6 +399,7 @@
       "description": "Complex pointer cast",
       "line": 89,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar4 = (uint *)((int)this_ptr + (uint)bVar10 * -8 + 0x348);",
       "type": "pointer_cast"
     },
@@ -391,6 +407,7 @@
       "description": "Unknown/mangled field access",
       "line": 104,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "auStack_104._0_4_ = (this_ptr->start_pos).x;",
       "type": "unknown_field"
     },
@@ -398,6 +415,7 @@
       "description": "Unknown/mangled field access",
       "line": 105,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "auStack_104._4_4_ = (this_ptr->start_pos).y;",
       "type": "unknown_field"
     },
@@ -405,6 +423,7 @@
       "description": "Unknown/mangled field access",
       "line": 106,
       "match": "._8_4_",
+      "severity": "mild",
       "text": "auStack_104._8_4_ = (this_ptr->start_pos).z;",
       "type": "unknown_field"
     },
@@ -412,6 +431,7 @@
       "description": "Unknown/mangled field access",
       "line": 112,
       "match": "._12_4_",
+      "severity": "mild",
       "text": "auStack_104._12_4_ = pCVar3->x;",
       "type": "unknown_field"
     },
@@ -419,6 +439,7 @@
       "description": "Unknown/mangled field access",
       "line": 118,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "(this_ptr->start_pos).x = (float)auStack_104._0_4_;",
       "type": "unknown_field"
     },
@@ -426,6 +447,7 @@
       "description": "Unknown/mangled field access",
       "line": 119,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "(this_ptr->start_pos).y = (float)auStack_104._4_4_;",
       "type": "unknown_field"
     },
@@ -433,6 +455,7 @@
       "description": "Unknown/mangled field access",
       "line": 120,
       "match": "._8_4_",
+      "severity": "mild",
       "text": "(this_ptr->start_pos).z = (float)auStack_104._8_4_;",
       "type": "unknown_field"
     },
@@ -440,6 +463,7 @@
       "description": "Complex pointer cast",
       "line": 123,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar6 = (uint *)((int)this_ptr + (uint)bVar10 * -8 + 0x338);",
       "type": "pointer_cast"
     },
@@ -447,6 +471,7 @@
       "description": "Complex pointer cast",
       "line": 126,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar4 = (uint *)((int)&CStack_bc + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);",
       "type": "pointer_cast"
     },
@@ -454,6 +479,7 @@
       "description": "Complex pointer cast",
       "line": 127,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*puVar6 = *(uint *)((int)&CStack_bc + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -461,6 +487,7 @@
       "description": "Unknown/mangled field access",
       "line": 133,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "auStack_e8._0_4_ = (this_ptr->end_pos).x;",
       "type": "unknown_field"
     },
@@ -468,6 +495,7 @@
       "description": "Unknown/mangled field access",
       "line": 134,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "auStack_e8._4_4_ = (this_ptr->end_pos).y;",
       "type": "unknown_field"
     },
@@ -475,6 +503,7 @@
       "description": "Unknown/mangled field access",
       "line": 135,
       "match": "._8_4_",
+      "severity": "mild",
       "text": "auStack_e8._8_4_ = (this_ptr->end_pos).z;",
       "type": "unknown_field"
     },
@@ -482,6 +511,7 @@
       "description": "Unknown/mangled field access",
       "line": 140,
       "match": "._12_4_",
+      "severity": "mild",
       "text": "auStack_e8._12_4_ = pCVar3->x;",
       "type": "unknown_field"
     },
@@ -489,6 +519,7 @@
       "description": "Unknown/mangled field access",
       "line": 146,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "(this_ptr->end_pos).x = (float)auStack_e8._0_4_;",
       "type": "unknown_field"
     },
@@ -496,6 +527,7 @@
       "description": "Unknown/mangled field access",
       "line": 147,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "(this_ptr->end_pos).y = (float)auStack_e8._4_4_;",
       "type": "unknown_field"
     },
@@ -503,6 +535,7 @@
       "description": "Unknown/mangled field access",
       "line": 148,
       "match": "._8_4_",
+      "severity": "mild",
       "text": "(this_ptr->end_pos).z = (float)auStack_e8._8_4_;",
       "type": "unknown_field"
     },
@@ -510,6 +543,7 @@
       "description": "Complex pointer cast",
       "line": 151,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar6 = (uint *)((int)this_ptr + (uint)bVar10 * -8 + 0x348);",
       "type": "pointer_cast"
     },
@@ -517,6 +551,7 @@
       "description": "Complex pointer cast",
       "line": 154,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar4 = (uint *)((int)&CStack_ac + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);",
       "type": "pointer_cast"
     },
@@ -524,6 +559,7 @@
       "description": "Complex pointer cast",
       "line": 155,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*puVar6 = *(uint *)((int)&CStack_ac + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -531,6 +567,7 @@
       "description": "Complex pointer cast",
       "line": 174,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -538,6 +575,7 @@
       "description": "Complex pointer cast",
       "line": 175,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar9 = (CMatrix3x4f *)((int)pCVar9 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -545,6 +583,7 @@
       "description": "Complex pointer cast",
       "line": 186,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -552,6 +591,7 @@
       "description": "Complex pointer cast",
       "line": 187,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar9 = (CMatrix3x4f *)((int)pCVar9 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -559,6 +599,7 @@
       "description": "Complex pointer cast",
       "line": 197,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -566,6 +607,7 @@
       "description": "Complex pointer cast",
       "line": 198,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar9 = (CMatrix3x4f *)((int)pCVar9 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -573,6 +615,7 @@
       "description": "Complex pointer cast",
       "line": 209,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar6 = (uint *)((int)this_ptr + (uint)bVar10 * -8 + 0x338);",
       "type": "pointer_cast"
     },
@@ -580,6 +623,7 @@
       "description": "Complex pointer cast",
       "line": 212,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar4 = (uint *)((int)&CStack_8c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);",
       "type": "pointer_cast"
     },
@@ -587,6 +631,7 @@
       "description": "Complex pointer cast",
       "line": 213,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*puVar6 = *(uint *)((int)&CStack_8c + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -594,6 +639,7 @@
       "description": "Complex pointer cast",
       "line": 221,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -601,6 +647,7 @@
       "description": "Complex pointer cast",
       "line": 222,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar9 = (CMatrix3x4f *)((int)pCVar9 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -608,6 +655,7 @@
       "description": "Complex pointer cast",
       "line": 233,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar6 = (uint *)((int)this_ptr + (uint)bVar10 * -8 + 0x348);",
       "type": "pointer_cast"
     },
@@ -615,6 +663,7 @@
       "description": "Complex pointer cast",
       "line": 236,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar4 = (uint *)((int)&CStack_cc + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);",
       "type": "pointer_cast"
     },
@@ -622,6 +671,7 @@
       "description": "Complex pointer cast",
       "line": 237,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*puVar6 = *(uint *)((int)&CStack_cc + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     }

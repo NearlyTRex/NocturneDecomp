@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 49,
     "suspect_count": 3,
     "suspect_types": [
@@ -163,6 +164,7 @@
       "description": "Complex pointer cast",
       "line": 27,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)((this_ptr->transform_state).saved_source_matrix.m + -10) + alpha_index * 4)",
       "type": "pointer_cast"
     },
@@ -170,6 +172,7 @@
       "description": "Complex pointer cast",
       "line": 32,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)(this_ptr->transform_state).saved_source_matrix.m + alpha_index * 4 + -0x58)",
       "type": "pointer_cast"
     },
@@ -177,6 +180,7 @@
       "description": "Complex pointer cast",
       "line": 38,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)(this_ptr->transform_state).saved_source_matrix.m + alpha_index * 4 + -0x38",
       "type": "pointer_cast"
     }

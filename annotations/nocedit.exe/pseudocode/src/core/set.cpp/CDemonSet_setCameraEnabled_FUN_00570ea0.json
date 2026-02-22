@@ -1,0 +1,126 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 6,
+    "complexity_score": 5,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 11
+  },
+  "cross_references": [
+    {
+      "addr": "0055a810",
+      "from_addr": "0055cc94",
+      "name": "core_script.cpp_CScript_step_FUN_0055a810",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00570ec0",
+      "from_addr": "00570ef7",
+      "name": "core_set.cpp_CDemonSet_setCameraEnabledByGroup_FUN_00570ec0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00570ea0",
+    "address_range": [
+      [
+        "00570ea0",
+        "00570eb6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_set.cpp_CDemonSet_setCameraEnabled_FUN_00570ea0",
+    "signature": "void __cdecl core_set_cpp_CDemonSet_setCameraEnabled_FUN_00570ea0(CDemonSet *this_ptr,int camera_index,int enabled)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00570ef7",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_setCameraEnabledByGroup_FUN_00570ec0",
+        "estimated_params": 3,
+        "instructions_analyzed": 5,
+        "reg_params": [],
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0055cc94",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_step_FUN_0055a810",
+        "estimated_params": 3,
+        "instructions_analyzed": 6,
+        "reg_params": [],
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "estimated_params": 3
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.4,
+    "instruction_count": 5,
+    "opcode_distribution": {
+      "COPY": 3,
+      "INT_ADD": 6,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 1,
+      "INT_SCARRY": 1,
+      "INT_SEXT": 3,
+      "INT_SLESS": 1,
+      "LOAD": 6,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 1,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 32
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "camera_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "enabled",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

@@ -38,6 +38,6 @@ void __cdecl core_set_cpp_CDemonSet_rotateVertices_FUN_0056e7c0(CDemonSet *this_
   if (local_14 == vertex_count) {
     engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr2,0);
   }
-  core_set_cpp_CDemonSet_FUN_0056e5d0(this_ptr);
+  core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0056e5d0(this_ptr,vertex_count);
   return;
 }

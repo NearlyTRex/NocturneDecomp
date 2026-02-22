@@ -27,6 +27,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_00
     core_skeleton_cpp_CDeformableModelInstance_skinAndLightVertices_FUN_005a02a0(this_ptr,lod_index)
     ;
   }
-  core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340(this_ptr);
+  core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340
+            (this_ptr,render_flags,render_pass);
   return;
 }

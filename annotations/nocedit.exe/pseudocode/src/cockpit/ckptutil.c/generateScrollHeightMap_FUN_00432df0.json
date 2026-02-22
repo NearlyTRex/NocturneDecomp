@@ -17,6 +17,7 @@
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 10,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 87,
     "suspect_count": 2,
     "suspect_types": [
@@ -302,6 +303,7 @@
       "description": "Complex pointer cast",
       "line": 35,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "for (pbVar3 = (byte *)((int)bitmap_data + iVar5 + (start_x + -1) * end_x);",
       "type": "pointer_cast"
     },
@@ -309,6 +311,7 @@
       "description": "Complex pointer cast",
       "line": 54,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "for (pbVar3 = (byte *)((int)bitmap_data + local_14 + iVar5 + (start_x + -1) * end_x);",
       "type": "pointer_cast"
     }

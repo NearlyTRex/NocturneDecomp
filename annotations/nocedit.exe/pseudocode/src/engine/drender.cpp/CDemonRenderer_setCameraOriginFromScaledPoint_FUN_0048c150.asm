@@ -20,7 +20,7 @@
 ;   core_mirror.cpp_CMirrorReflection_setupMirrorCamera_FUN_00521480 at 00521490
 ;   core_moon.cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0 at 0052a2dd
 ;   core_moon.cpp_CMoon_render_FUN_00529ed0 at 00529ef7
-;   core_set.cpp_CDemonSet_FUN_0056c990 at 0056ccae
+;   core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990 at 0056ccae
 ;   ... and 6 more
 ;
 ; Referenced Globals:

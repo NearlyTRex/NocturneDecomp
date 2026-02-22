@@ -25,15 +25,17 @@
   },
   "complexity": {
     "assembly_lines": 115,
-    "complexity_score": 624,
+    "complexity_score": 639,
     "cross_reference_count": 4,
     "function_call_count": 5,
     "global_count": 2,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 84,
-    "suspect_count": 53,
+    "suspect_count": 54,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast"
+      "pointer_cast",
+      "stack_alignment_array"
     ],
     "total_lines": 199
   },
@@ -212,9 +214,18 @@
   },
   "suspects": [
     {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 16,
+      "match": "afStackY_17f0",
+      "severity": "moderate",
+      "text": "float afStackY_17f0 [1523];",
+      "type": "stack_alignment_array"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 23,
       "match": "ADJ",
+      "severity": "mild",
       "text": "pCVar5 = core_course_cpp_CCourse_ctor_FUN_004424c0(&ADJ(pCVar4)->course);",
       "type": "decompiler_intrinsic"
     },
@@ -222,6 +233,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 24,
       "match": "ADJ",
+      "severity": "mild",
       "text": "ADJ(pCVar5)->base.vtable._ub = &g_CPlatformVTable;",
       "type": "decompiler_intrinsic"
     },
@@ -229,6 +241,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 26,
       "match": "ADJ",
+      "severity": "mild",
       "text": "(&ADJ(pCVar5)->model,\"slider1.kfm\");",
       "type": "decompiler_intrinsic"
     },
@@ -236,6 +249,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 27,
       "match": "ADJ",
+      "severity": "mild",
       "text": "ADJ(pCVar5)->to_start_event[0] = '\\0';",
       "type": "decompiler_intrinsic"
     },
@@ -243,6 +257,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 28,
       "match": "ADJ",
+      "severity": "mild",
       "text": "ADJ(pCVar5)->to_end_event[0] = '\\0';",
       "type": "decompiler_intrinsic"
     },
@@ -250,6 +265,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 29,
       "match": "ADJ",
+      "severity": "mild",
       "text": "ADJ(pCVar5)->stop_event[0] = '\\0';",
       "type": "decompiler_intrinsic"
     },
@@ -257,6 +273,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 30,
       "match": "ADJ",
+      "severity": "mild",
       "text": "ADJ(pCVar5)->start_sound[0] = '\\0';",
       "type": "decompiler_intrinsic"
     },
@@ -264,6 +281,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 31,
       "match": "ADJ",
+      "severity": "mild",
       "text": "ADJ(pCVar5)->stop_sound[0] = '\\0';",
       "type": "decompiler_intrinsic"
     },
@@ -271,6 +289,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 32,
       "match": "ADJ",
+      "severity": "mild",
       "text": "ADJ(pCVar5)->active_sound[0] = '\\0';",
       "type": "decompiler_intrinsic"
     },
@@ -278,6 +297,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 33,
       "match": "ADJ",
+      "severity": "mild",
       "text": "ADJ(pCVar5)->state = PLATFORM_STATE_TYPE_AT_START;",
       "type": "decompiler_intrinsic"
     },
@@ -285,6 +305,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 34,
       "match": "ADJ",
+      "severity": "mild",
       "text": "ADJ(pCVar5)->param = 0.0;",
       "type": "decompiler_intrinsic"
     },
@@ -292,6 +313,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 35,
       "match": "ADJ",
+      "severity": "mild",
       "text": "ADJ(pCVar5)->travel_time_to_start = 2.0;",
       "type": "decompiler_intrinsic"
     },
@@ -299,6 +321,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 36,
       "match": "ADJ",
+      "severity": "mild",
       "text": "ADJ(pCVar5)->travel_time_to_end = 2.0;",
       "type": "decompiler_intrinsic"
     },
@@ -306,6 +329,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 37,
       "match": "ADJ",
+      "severity": "mild",
       "text": "ADJ(pCVar5)->ground_type = 0;",
       "type": "decompiler_intrinsic"
     },
@@ -313,6 +337,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 38,
       "match": "ADJ",
+      "severity": "mild",
       "text": "pCVar2 = &ADJ(pCVar5)->end_pos;",
       "type": "decompiler_intrinsic"
     },
@@ -320,6 +345,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 39,
       "match": "ADJ",
+      "severity": "mild",
       "text": "ADJ(pCVar5)->course_filename[0] = '\\0';",
       "type": "decompiler_intrinsic"
     },
@@ -327,6 +353,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 40,
       "match": "ADJ",
+      "severity": "mild",
       "text": "pCVar1 = &ADJ(pCVar5)->base.location;",
       "type": "decompiler_intrinsic"
     },
@@ -334,6 +361,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 43,
       "match": "ADJ",
+      "severity": "mild",
       "text": "(ADJ(pCVar5)->end_pos).y = ADJ(pCVar5)->base.location.position.y;",
       "type": "decompiler_intrinsic"
     },
@@ -341,6 +369,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 43,
       "match": "ADJ",
+      "severity": "mild",
       "text": "(ADJ(pCVar5)->end_pos).y = ADJ(pCVar5)->base.location.position.y;",
       "type": "decompiler_intrinsic"
     },
@@ -348,6 +377,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 44,
       "match": "ADJ",
+      "severity": "mild",
       "text": "(ADJ(pCVar5)->end_pos).z = ADJ(pCVar5)->base.location.position.z;",
       "type": "decompiler_intrinsic"
     },
@@ -355,6 +385,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 44,
       "match": "ADJ",
+      "severity": "mild",
       "text": "(ADJ(pCVar5)->end_pos).z = ADJ(pCVar5)->base.location.position.z;",
       "type": "decompiler_intrinsic"
     },
@@ -362,6 +393,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 46,
       "match": "ADJ",
+      "severity": "mild",
       "text": "if (&ADJ(pCVar5)->start_pos != pCVar2) {",
       "type": "decompiler_intrinsic"
     },
@@ -369,6 +401,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 47,
       "match": "ADJ",
+      "severity": "mild",
       "text": "(ADJ(pCVar5)->start_pos).x = pCVar2->x;",
       "type": "decompiler_intrinsic"
     },
@@ -376,6 +409,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 48,
       "match": "ADJ",
+      "severity": "mild",
       "text": "(ADJ(pCVar5)->start_pos).y = (ADJ(pCVar5)->end_pos).y;",
       "type": "decompiler_intrinsic"
     },
@@ -383,6 +417,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 48,
       "match": "ADJ",
+      "severity": "mild",
       "text": "(ADJ(pCVar5)->start_pos).y = (ADJ(pCVar5)->end_pos).y;",
       "type": "decompiler_intrinsic"
     },
@@ -390,6 +425,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 49,
       "match": "ADJ",
+      "severity": "mild",
       "text": "(ADJ(pCVar5)->start_pos).z = (ADJ(pCVar5)->end_pos).z;",
       "type": "decompiler_intrinsic"
     },
@@ -397,6 +433,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 49,
       "match": "ADJ",
+      "severity": "mild",
       "text": "(ADJ(pCVar5)->start_pos).z = (ADJ(pCVar5)->end_pos).z;",
       "type": "decompiler_intrinsic"
     },
@@ -404,6 +441,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 51,
       "match": "ADJ",
+      "severity": "mild",
       "text": "core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&ADJ(pCVar5)->base.orient.vec,&local_14);",
       "type": "decompiler_intrinsic"
     },
@@ -411,6 +449,7 @@
       "description": "Complex pointer cast",
       "line": 52,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar9 = (uint *)((int)pCVar5 + (uint)bVar12 * -8 + 0x38);",
       "type": "pointer_cast"
     },
@@ -418,6 +457,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 53,
       "match": "ADJ",
+      "severity": "mild",
       "text": "(ADJ(pCVar5)->end_orient).w = local_14.w;",
       "type": "decompiler_intrinsic"
     },
@@ -425,6 +465,7 @@
       "description": "Complex pointer cast",
       "line": 55,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar8 = (uint *)((int)&local_14 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);",
       "type": "pointer_cast"
     },
@@ -432,6 +473,7 @@
       "description": "Complex pointer cast",
       "line": 56,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*puVar9 = *(uint *)((int)&local_14 + (uint)bVar12 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -439,6 +481,7 @@
       "description": "Complex pointer cast",
       "line": 59,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar10 = (uint *)((int)pCVar5 + (uint)bVar12 * -8 + 0x28);",
       "type": "pointer_cast"
     },
@@ -446,6 +489,7 @@
       "description": "Complex pointer cast",
       "line": 60,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar8 = (uint *)((int)pCVar5 + (uint)bVar12 * -8 + 0x38);",
       "type": "pointer_cast"
     },
@@ -453,6 +497,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 61,
       "match": "ADJ",
+      "severity": "mild",
       "text": "(ADJ(pCVar5)->orig_orient).w = (ADJ(pCVar5)->end_orient).w;",
       "type": "decompiler_intrinsic"
     },
@@ -460,6 +505,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 61,
       "match": "ADJ",
+      "severity": "mild",
       "text": "(ADJ(pCVar5)->orig_orient).w = (ADJ(pCVar5)->end_orient).w;",
       "type": "decompiler_intrinsic"
     },
@@ -467,6 +513,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 67,
       "match": "ADJ",
+      "severity": "mild",
       "text": "ADJ(pCVar5)->platform_type = PLATFORM_TYPE_DISABLED;",
       "type": "decompiler_intrinsic"
     },
@@ -474,6 +521,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 68,
       "match": "ADJ",
+      "severity": "mild",
       "text": "ADJ(pCVar5)->one_shot = 0;",
       "type": "decompiler_intrinsic"
     },
@@ -481,6 +529,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 69,
       "match": "ADJ",
+      "severity": "mild",
       "text": "ADJ(pCVar5)->block_virtual_director_flag = 0;",
       "type": "decompiler_intrinsic"
     },
@@ -488,6 +537,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 70,
       "match": "ADJ",
+      "severity": "mild",
       "text": "ADJ(pCVar5)->render_in_background_when_not_moving_flag = 0;",
       "type": "decompiler_intrinsic"
     },
@@ -495,6 +545,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 71,
       "match": "ADJ",
+      "severity": "mild",
       "text": "ADJ(pCVar5)->camera_while_moving[0] = '\\0';",
       "type": "decompiler_intrinsic"
     },
@@ -502,6 +553,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 72,
       "match": "ADJ",
+      "severity": "mild",
       "text": "ADJ(pCVar5)->rendered_in_background = 0;",
       "type": "decompiler_intrinsic"
     },
@@ -509,6 +561,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 73,
       "match": "ADJ",
+      "severity": "mild",
       "text": "ADJ(pCVar5)->base.health = 0x32;",
       "type": "decompiler_intrinsic"
     },
@@ -516,6 +569,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 74,
       "match": "ADJ",
+      "severity": "mild",
       "text": "ADJ(pCVar5)->plot_as_box_in_shadow = 0;",
       "type": "decompiler_intrinsic"
     },
@@ -523,6 +577,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 75,
       "match": "ADJ",
+      "severity": "mild",
       "text": "ADJ(pCVar5)->goal_param = 0.0;",
       "type": "decompiler_intrinsic"
     },
@@ -530,6 +585,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 76,
       "match": "ADJ",
+      "severity": "mild",
       "text": "ADJ(pCVar5)->current_movement_rate = 0.0;",
       "type": "decompiler_intrinsic"
     },
@@ -537,6 +593,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 77,
       "match": "ADJ",
+      "severity": "mild",
       "text": "pCVar6 = ADJ(pCVar5);",
       "type": "decompiler_intrinsic"
     },
@@ -544,6 +601,7 @@
       "description": "Complex pointer cast",
       "line": 79,
       "match": "(CPlatform *)((int)",
+      "severity": "mild",
       "text": "pCVar7 = (CPlatform *)((int)&(pCVar6->base).orient + 4);",
       "type": "pointer_cast"
     },
@@ -551,6 +609,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 82,
       "match": "ADJ",
+      "severity": "mild",
       "text": "} while (pCVar7 != (CPlatform *)((ADJ(pCVar5)->model).model_name + 0x38));",
       "type": "decompiler_intrinsic"
     },
@@ -558,6 +617,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 83,
       "match": "ADJ",
+      "severity": "mild",
       "text": "ADJ(pCVar5)->recompute_fog = 0;",
       "type": "decompiler_intrinsic"
     },
@@ -565,6 +625,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 84,
       "match": "ADJ",
+      "severity": "mild",
       "text": "ADJ(pCVar5)->plot_in_shadow_flag = 1;",
       "type": "decompiler_intrinsic"
     },
@@ -572,6 +633,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 85,
       "match": "ADJ",
+      "severity": "mild",
       "text": "ADJ(pCVar5)->push_flag = 0;",
       "type": "decompiler_intrinsic"
     },
@@ -579,6 +641,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 86,
       "match": "ADJ",
+      "severity": "mild",
       "text": "return ADJ(pCVar5);",
       "type": "decompiler_intrinsic"
     }

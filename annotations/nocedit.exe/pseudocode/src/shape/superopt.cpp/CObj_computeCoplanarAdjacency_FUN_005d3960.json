@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 153,
     "suspect_count": 4,
     "suspect_types": [
@@ -183,6 +184,7 @@
       "description": "Complex pointer cast",
       "line": 61,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar13 = (uint *)((int)(pCVar12->uv_coords + 4) + local_64 + 8);",
       "type": "pointer_cast"
     },
@@ -190,6 +192,7 @@
       "description": "Complex pointer cast",
       "line": 62,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdStack_1c = (double *)((int)&((CVector3d *)(pCVar12->uv_coords + 3))->x + local_64);",
       "type": "pointer_cast"
     },
@@ -197,6 +200,7 @@
       "description": "Complex pointer cast",
       "line": 63,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "piVar15 = (int *)((int)pCVar12->uv_coords + local_64 + -0xc);",
       "type": "pointer_cast"
     },
@@ -204,6 +208,7 @@
       "description": "Complex pointer cast",
       "line": 146,
       "match": "(CVector3d *)((int)",
+      "severity": "mild",
       "text": "pCStack_60 = (CVector3d *)((int)(pCStack_60 + 4) + 8);",
       "type": "pointer_cast"
     }

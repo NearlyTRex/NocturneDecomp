@@ -41,6 +41,7 @@
     "cross_reference_count": 3,
     "function_call_count": 12,
     "global_count": 19,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 133,
     "suspect_count": 3,
     "suspect_types": [
@@ -444,6 +445,7 @@
       "description": "Complex pointer cast",
       "line": 75,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "else if (*(int *)((int)&(local_a08.directory_entries)->timestamp + iVar2) + 2U <",
       "type": "pointer_cast"
     },
@@ -451,6 +453,7 @@
       "description": "Complex pointer cast",
       "line": 82,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)&(local_a08.directory_entries)->timestamp + iVar2) - 2U) {",
       "type": "pointer_cast"
     },
@@ -458,6 +461,7 @@
       "description": "Complex pointer cast",
       "line": 87,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "else if (local_234.file_size == *(uint *)((int)&(local_a08.directory_entries)->size + iVar2))",
       "type": "pointer_cast"
     }

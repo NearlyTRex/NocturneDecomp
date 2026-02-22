@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 38,
     "suspect_count": 2,
     "suspect_types": [
@@ -180,6 +181,7 @@
       "description": "Complex pointer cast",
       "line": 19,
       "match": "(CLodFace *)((int)",
+      "severity": "mild",
       "text": "triangle_ptr = (CLodFace *)((int)this_ptr->tri_data->attribute_indices + iVar5);",
       "type": "pointer_cast"
     },
@@ -187,6 +189,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 26,
       "match": "SQRT",
+      "severity": "mild",
       "text": "fVar1 = SQRT(fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1);",
       "type": "decompiler_intrinsic"
     }

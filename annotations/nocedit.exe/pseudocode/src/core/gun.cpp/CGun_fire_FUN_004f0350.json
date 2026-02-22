@@ -67,16 +67,18 @@
   },
   "complexity": {
     "assembly_lines": 509,
-    "complexity_score": 402,
+    "complexity_score": 417,
     "cross_reference_count": 0,
     "function_call_count": 21,
     "global_count": 27,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 217,
-    "suspect_count": 16,
+    "suspect_count": 17,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param",
       "stack_ref",
+      "sub84_truncation",
       "suspect_float",
       "unknown_field"
     ],
@@ -465,6 +467,7 @@
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_fffffebc",
+      "severity": "moderate",
       "text": "float in_stack_fffffebc;",
       "type": "stack_param"
     },
@@ -472,13 +475,23 @@
       "description": "Unresolved stack parameter",
       "line": 122,
       "match": "in_stack_fffffebc",
+      "severity": "moderate",
       "text": "in_stack_fffffebc =",
       "type": "stack_param"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 124,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "((CCharacter *)this_ptr,SUB84(dVar3,0),",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 124,
       "match": "SUB84",
+      "severity": "mild",
       "text": "((CCharacter *)this_ptr,SUB84(dVar3,0),",
       "type": "decompiler_intrinsic"
     },
@@ -486,6 +499,7 @@
       "description": "Unresolved stack parameter",
       "line": 126,
       "match": "in_stack_fffffebc",
+      "severity": "moderate",
       "text": "core_trigger_cpp_CTrigger_applyDamage_FUN_005e0b00(this_ptr_02,in_stack_fffffebc);",
       "type": "stack_param"
     },
@@ -493,6 +507,7 @@
       "description": "Direct stack address reference",
       "line": 150,
       "match": "&stack0xfffffec0",
+      "severity": "moderate",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffec0);",
       "type": "stack_ref"
     },
@@ -500,6 +515,7 @@
       "description": "Unknown/mangled field access",
       "line": 151,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "auStack_130._0_4_ =",
       "type": "unknown_field"
     },
@@ -507,6 +523,7 @@
       "description": "Unresolved stack parameter",
       "line": 153,
       "match": "in_stack_fffffebc",
+      "severity": "moderate",
       "text": "((CCharacter *)this_ptr,pCVar4,(int)in_stack_fffffebc);",
       "type": "stack_param"
     },
@@ -514,6 +531,7 @@
       "description": "Unknown/mangled field access",
       "line": 154,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "auStack_130._4_4_ = 0.4;",
       "type": "unknown_field"
     },
@@ -521,6 +539,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 159,
       "match": "SQRT",
+      "severity": "mild",
       "text": "SQRT(CStack_b0.x * CStack_b0.x +",
       "type": "decompiler_intrinsic"
     },
@@ -528,6 +547,7 @@
       "description": "Unknown/mangled field access",
       "line": 165,
       "match": "._8_4_",
+      "severity": "mild",
       "text": "auStack_130._8_4_ = CStack_8c.y;",
       "type": "unknown_field"
     },
@@ -535,6 +555,7 @@
       "description": "Unknown/mangled field access",
       "line": 166,
       "match": "._12_4_",
+      "severity": "mild",
       "text": "auStack_130._12_4_ = CStack_8c.z;",
       "type": "unknown_field"
     },
@@ -542,6 +563,7 @@
       "description": "Unknown/mangled field access",
       "line": 167,
       "match": "._16_4_",
+      "severity": "mild",
       "text": "auStack_130._16_4_ = CStack_80.x;",
       "type": "unknown_field"
     },
@@ -549,6 +571,7 @@
       "description": "Unknown/mangled field access",
       "line": 172,
       "match": "._24_4_",
+      "severity": "mild",
       "text": "auStack_130._24_4_ = pCVar1->x;",
       "type": "unknown_field"
     },
@@ -556,6 +579,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 179,
       "match": "1.41531e-43",
+      "severity": "mild",
       "text": "CStack_108.m[0].y = 1.41531e-43;",
       "type": "suspect_float"
     },
@@ -563,6 +587,7 @@
       "description": "Unresolved stack parameter",
       "line": 182,
       "match": "in_stack_fffffebc",
+      "severity": "moderate",
       "text": "in_stack_fffffebc = 7.258603e-39;",
       "type": "stack_param"
     },
@@ -570,6 +595,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 182,
       "match": "7.258603e-39",
+      "severity": "mild",
       "text": "in_stack_fffffebc = 7.258603e-39;",
       "type": "suspect_float"
     }

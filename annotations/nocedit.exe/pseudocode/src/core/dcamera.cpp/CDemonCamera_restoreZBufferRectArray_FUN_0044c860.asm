@@ -18,7 +18,7 @@
 ;
 ; XREF[2]:
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 00539541
-;   core_set.cpp_CDemonSet_FUN_0056c1a0 at 0056c1f5
+;   core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0 at 0056c1f5
 ;
 ; Referenced Globals:
 ;   int g_WindowWidth = 0x140

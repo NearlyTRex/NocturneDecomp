@@ -59,6 +59,7 @@
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 1,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 23,
     "suspect_count": 3,
     "suspect_types": [
@@ -171,6 +172,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 14,
       "match": "pCVar2[-2].",
+      "severity": "mild",
       "text": "*(CDemonActor_vtable **)(pCVar2[-2].model_name + 200) = &g_CFrankenstienMachineVTable;",
       "type": "negative_offset"
     },
@@ -178,6 +180,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 19,
       "match": "pCVar2[-2].",
+      "severity": "mild",
       "text": "pCVar2[-2].model_name[0xd4] = '\\0';",
       "type": "negative_offset"
     },
@@ -185,6 +188,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 25,
       "match": "pCVar2[-3].",
+      "severity": "mild",
       "text": "return (CFrankenstienMachine *)(pCVar2[-3].model_name + 0xf0);",
       "type": "negative_offset"
     }

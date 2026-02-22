@@ -10,10 +10,10 @@ CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00476cf0(CKey
 
 {
   this_ptr->vertex_count = 0;
-  this_ptr->vertex_list = (CVector3i **)0x0;
-  this_ptr->vertex_normal_list = (CVector3i **)0x0;
+  this_ptr->vertex_list = (CVector3i *)0x0;
+  this_ptr->vertex_normal_list = (CVector3i *)0x0;
   this_ptr->poly_count = 0;
-  this_ptr->poly_vert_list = (SMRGLPrimitiveQuad **)0x0;
+  this_ptr->poly_vert_list = (SMRGLPrimitiveQuad *)0x0;
   this_ptr->poly_texture_index_list = (int *)0x0;
   this_ptr->env_map_opac_list = (uchar *)0x0;
   this_ptr->texture_count = 0;

@@ -8,17 +8,15 @@
 ; float            Stack[0x8]:4   frustum_param
 ; int              Stack[0xc]:4   render_mode
 ; Local Variables:
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CVector3f        Stack[-0x1c]:12  local_1c
 ;
 ; XREF[14]:
 ;   core_course.cpp_CCourse_preview_FUN_00443bc0 at 00443d1d
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053a338
-;   core_set.cpp_CDemonSet_FUN_0056be80 at 0056bfae
-;   core_set.cpp_CDemonSet_FUN_0056c990 at 0056caf7
 ;   core_set.cpp_CDemonSet_initScene_FUN_0056aa10 at 0056ab84
 ;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470 at 0056a78e
+;   core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990 at 0056caf7
+;   core_set.cpp_CDemonSet_renderStaticLights_FUN_0056be80 at 0056bfae
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50 at 0056b46c
 ;   core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910 at 00574a69
 ;   core_setedit.cpp_CDemonSet_FUN_0057a940 at 0057aac9
@@ -49,8 +47,8 @@
 ;   core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9ca0
 ;   core_mirror.cpp_CMirror_renderMirrorQuadDepth_FUN_00522800
 ;   core_set.cpp_CDemonSet_buildMirrorList_FUN_00570b70
+;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_00570af0
 ;   core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005709e0
-;   core_set.cpp_FUN_00570af0
 ;   core_terrain.cpp_CTerrain_render_FUN_005e1f50
 ;   core_water.cpp_CWater_calculateVisibleTiles_FUN_005e9e70
 ;   core_water.cpp_CWater_render_FUN_005ea320
@@ -160,7 +158,7 @@ section .text
     PUSH ESI                            ; 0056a299
     PUSH 0x32780a4                      ; 0056a29a | g_CKeyFramedModelInstance
     CALL core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850 ; 0056a29f
-        ;   XREF to: 00477850 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850(CKeyFramedModel * this_ptr, CKeyFramedModelInstance * instance, int frame_index, int render_flags)
+        ;   XREF to: 00477850 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850(CKeyFramedModel * this_ptr, int frame_index, CKeyFramedModelInstance * instance, int render_flags)
     ADD ESP,0x10                        ; 0056a2a4
     CMP dword ptr [EBX + 0x15ac90],0x0  ; 0056a2a7
         ;   Label: LAB_0056a2a7
@@ -219,8 +217,8 @@ section .text
     PUSH EBX                            ; 0056a335
     ADD ESI,0x4                         ; 0056a336
     INC EDI                             ; 0056a339
-    CALL core_set.cpp_FUN_00570af0      ; 0056a33a
-        ;   XREF to: 00570af0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_00570af0()
+    CALL core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_00570af0 ; 0056a33a
+        ;   XREF to: 00570af0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_00570af0(CDemonSet * this_ptr)
     MOV ECX,dword ptr [EBX + 0x15acb4]  ; 0056a33f
     ADD ESP,0x4                         ; 0056a345
     CMP EDI,ECX                         ; 0056a348
@@ -262,7 +260,7 @@ section .text
     MOV EDI,dword ptr [0x0067235c]      ; 0056a39c | g_SkyDomeTexturePtr
     PUSH EDI                            ; 0056a3a2 | g_SkyDomeTextureData
     CALL core_dskybox.cpp_renderSkyDome_FUN_004901f0 ; 0056a3a3
-        ;   XREF to: 004901f0 (UNCONDITIONAL_CALL)  ; void core_dskybox.cpp_renderSkyDome_FUN_004901f0(SMRGLTextureBasic * sky_texture, char * texture_name, float brightness_factor)
+        ;   XREF to: 004901f0 (UNCONDITIONAL_CALL)  ; void core_dskybox.cpp_renderSkyDome_FUN_004901f0(SMRGLTextureBasic * sky_texture, char * texture_name, int brightness_factor)
     ADD ESP,0xc                         ; 0056a3a8
     JMP 0x0056a2b4                      ; 0056a3ab
         ;   XREF to: 0056a2b4 (UNCONDITIONAL_JUMP)  ; LAB_0056a2b4
@@ -326,8 +324,8 @@ section .text
     PUSH EBX                            ; 0056a448
     ADD ESI,0x4                         ; 0056a449
     INC EDI                             ; 0056a44c
-    CALL core_set.cpp_FUN_00570af0      ; 0056a44d
-        ;   XREF to: 00570af0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_00570af0()
+    CALL core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_00570af0 ; 0056a44d
+        ;   XREF to: 00570af0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_00570af0(CDemonSet * this_ptr)
     MOV EAX,dword ptr [EBX + 0x15acb4]  ; 0056a452
     ADD ESP,0x4                         ; 0056a458
     CMP EDI,EAX                         ; 0056a45b

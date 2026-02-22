@@ -121,17 +121,20 @@
   },
   "complexity": {
     "assembly_lines": 2746,
-    "complexity_score": 2322,
+    "complexity_score": 2352,
     "cross_reference_count": 1,
     "function_call_count": 50,
     "global_count": 68,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 1132,
-    "suspect_count": 116,
+    "suspect_count": 118,
     "suspect_types": [
       "decompiler_intrinsic",
+      "double_reconstruction",
       "format_string_mismatch",
       "pointer_cast",
       "stack_param",
+      "sub84_truncation",
       "suspect_float",
       "unknown_field"
     ],
@@ -918,6 +921,7 @@
       "description": "Unresolved stack parameter",
       "line": 29,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "float in_stack_00000008;",
       "type": "stack_param"
     },
@@ -925,6 +929,7 @@
       "description": "Unresolved stack parameter",
       "line": 30,
       "match": "in_stack_fffffd10",
+      "severity": "moderate",
       "text": "UOrientationVector *in_stack_fffffd10;",
       "type": "stack_param"
     },
@@ -932,6 +937,7 @@
       "description": "Unresolved stack parameter",
       "line": 31,
       "match": "in_stack_fffffd14",
+      "severity": "moderate",
       "text": "UOrientationVector *in_stack_fffffd14;",
       "type": "stack_param"
     },
@@ -939,6 +945,7 @@
       "description": "Unknown/mangled field access",
       "line": 126,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "auStack_c0._4_4_ = CStack_fc.y * 0.5f;",
       "type": "unknown_field"
     },
@@ -946,6 +953,7 @@
       "description": "Unresolved stack parameter",
       "line": 141,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "core_charactr_cpp_CCharacter_processSmoking_FUN_0042ea40((CCharacter *)this_ptr,in_stack_00000008)",
       "type": "stack_param"
     },
@@ -953,6 +961,7 @@
       "description": "Unresolved stack parameter",
       "line": 143,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "core_game_cpp_CGame_slamDT_FUN_004e3080(g_CGamePtr,in_stack_00000008);",
       "type": "stack_param"
     },
@@ -960,6 +969,7 @@
       "description": "Unresolved stack parameter",
       "line": 144,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "fVar18 = (float)(this_ptr->base).no_collision_flag - in_stack_00000008;",
       "type": "stack_param"
     },
@@ -967,6 +977,7 @@
       "description": "Unresolved stack parameter",
       "line": 149,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "fVar18 = this_ptr->action_timer - in_stack_00000008;",
       "type": "stack_param"
     },
@@ -974,6 +985,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 164,
       "match": "1.4013e-45",
+      "severity": "mild",
       "text": "UStack_84.vec.y = 1.4013e-45;",
       "type": "suspect_float"
     },
@@ -981,6 +993,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 259,
       "match": "1.4013e-45",
+      "severity": "mild",
       "text": "UStack_84.vec.y = 1.4013e-45;",
       "type": "suspect_float"
     },
@@ -988,6 +1001,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 263,
       "match": "1.4013e-45",
+      "severity": "mild",
       "text": "UStack_84.vec.y = 1.4013e-45;",
       "type": "suspect_float"
     },
@@ -995,6 +1009,7 @@
       "description": "Unresolved stack parameter",
       "line": 269,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "(this_ptr->base).base.turn_speed = in_stack_00000008 * fVar18;",
       "type": "stack_param"
     },
@@ -1002,6 +1017,7 @@
       "description": "Unresolved stack parameter",
       "line": 278,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "fVar18 = this_ptr->interact_blend - in_stack_00000008 * (float)2;",
       "type": "stack_param"
     },
@@ -1009,6 +1025,7 @@
       "description": "Unresolved stack parameter",
       "line": 285,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "fVar18 = in_stack_00000008 * (float)2 + this_ptr->interact_blend;",
       "type": "stack_param"
     },
@@ -1016,6 +1033,7 @@
       "description": "Unresolved stack parameter",
       "line": 300,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "((CCharacter *)this_ptr,in_stack_00000008);",
       "type": "stack_param"
     },
@@ -1023,6 +1041,7 @@
       "description": "Unresolved stack parameter",
       "line": 369,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "fVar18 * in_stack_00000008 * (fVar21 + UStack_84.vec.z) + fVar4;",
       "type": "stack_param"
     },
@@ -1030,6 +1049,7 @@
       "description": "Unknown/mangled field access",
       "line": 453,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "auStack_168._0_4_ = fStack_1b0 * 0.5f;",
       "type": "unknown_field"
     },
@@ -1037,6 +1057,7 @@
       "description": "Unknown/mangled field access",
       "line": 454,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "auStack_168._4_4_ = CStack_1ac.x * 0.5f;",
       "type": "unknown_field"
     },
@@ -1044,6 +1065,7 @@
       "description": "Unresolved stack parameter",
       "line": 463,
       "match": "in_stack_fffffd14",
+      "severity": "moderate",
       "text": "in_stack_fffffd14 = (UOrientationVector *)pCVar17->y;",
       "type": "stack_param"
     },
@@ -1051,6 +1073,7 @@
       "description": "Unresolved stack parameter",
       "line": 464,
       "match": "in_stack_fffffd10",
+      "severity": "moderate",
       "text": "in_stack_fffffd10 = (UOrientationVector *)0x5bd021;",
       "type": "stack_param"
     },
@@ -1058,6 +1081,7 @@
       "description": "Unresolved stack parameter",
       "line": 466,
       "match": "in_stack_fffffd14",
+      "severity": "moderate",
       "text": "((float)in_stack_fffffd14);",
       "type": "stack_param"
     },
@@ -1065,6 +1089,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 473,
       "match": "SQRT",
+      "severity": "mild",
       "text": "if ((((aCStack_9c[0].z - SQRT(CStack_fc.z * CStack_fc.z + CStack_fc.x * CStack_fc.x) <",
       "type": "decompiler_intrinsic"
     },
@@ -1072,6 +1097,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 476,
       "match": "ABS",
+      "severity": "mild",
       "text": "(ABS((float)pfStack_2c4) < (float)0.78539816337500001)) {",
       "type": "decompiler_intrinsic"
     },
@@ -1079,6 +1105,7 @@
       "description": "Unresolved stack parameter",
       "line": 477,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "pfStack_2c = (float *)(in_stack_00000008 * (float)3.1415926535000001);",
       "type": "stack_param"
     },
@@ -1086,6 +1113,7 @@
       "description": "Unresolved stack parameter",
       "line": 484,
       "match": "in_stack_fffffd14",
+      "severity": "moderate",
       "text": "in_stack_fffffd14 = &(this_ptr->base).base.base.orient;",
       "type": "stack_param"
     },
@@ -1093,6 +1121,7 @@
       "description": "Unresolved stack parameter",
       "line": 487,
       "match": "in_stack_fffffd10",
+      "severity": "moderate",
       "text": "in_stack_fffffd10 = (UOrientationVector *)this_ptr;",
       "type": "stack_param"
     },
@@ -1100,6 +1129,7 @@
       "description": "Unresolved stack parameter",
       "line": 489,
       "match": "in_stack_fffffd14",
+      "severity": "moderate",
       "text": "((CCharacter *)this_ptr,in_stack_fffffd14);",
       "type": "stack_param"
     },
@@ -1107,6 +1137,7 @@
       "description": "Unresolved stack parameter",
       "line": 514,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "fStack_48 = in_stack_00000008 * (float)3.1415926535000001;",
       "type": "stack_param"
     },
@@ -1114,6 +1145,7 @@
       "description": "Unresolved stack parameter",
       "line": 538,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "fVar18 = this_ptr->grab_timer + in_stack_00000008;",
       "type": "stack_param"
     },
@@ -1121,6 +1153,7 @@
       "description": "Unresolved stack parameter",
       "line": 544,
       "match": "in_stack_fffffd10",
+      "severity": "moderate",
       "text": "in_stack_fffffd10 = (UOrientationVector *)0x5bc90d;",
       "type": "stack_param"
     },
@@ -1128,6 +1161,7 @@
       "description": "Unresolved stack parameter",
       "line": 545,
       "match": "in_stack_fffffd14",
+      "severity": "moderate",
       "text": "in_stack_fffffd14 = pUStack_24;",
       "type": "stack_param"
     },
@@ -1135,6 +1169,7 @@
       "description": "Unresolved stack parameter",
       "line": 549,
       "match": "in_stack_fffffd14",
+      "severity": "moderate",
       "text": "in_stack_fffffd14 = (UOrientationVector *)0x5bceeb;",
       "type": "stack_param"
     },
@@ -1142,6 +1177,7 @@
       "description": "Unresolved stack parameter",
       "line": 554,
       "match": "in_stack_fffffd14",
+      "severity": "moderate",
       "text": "in_stack_fffffd14 = (UOrientationVector *)0x23;",
       "type": "stack_param"
     },
@@ -1149,6 +1185,7 @@
       "description": "Unresolved stack parameter",
       "line": 555,
       "match": "in_stack_fffffd10",
+      "severity": "moderate",
       "text": "in_stack_fffffd10 = pUStack_24;",
       "type": "stack_param"
     },
@@ -1156,6 +1193,7 @@
       "description": "Unresolved stack parameter",
       "line": 563,
       "match": "in_stack_fffffd14",
+      "severity": "moderate",
       "text": "in_stack_fffffd14 = (UOrientationVector *)0x0;",
       "type": "stack_param"
     },
@@ -1163,6 +1201,7 @@
       "description": "Unresolved stack parameter",
       "line": 564,
       "match": "in_stack_fffffd10",
+      "severity": "moderate",
       "text": "in_stack_fffffd10 = (UOrientationVector *)&(this_ptr->base).base.model;",
       "type": "stack_param"
     },
@@ -1170,6 +1209,7 @@
       "description": "Unresolved stack parameter",
       "line": 566,
       "match": "in_stack_fffffd10",
+      "severity": "moderate",
       "text": "((CMotionController *)in_stack_fffffd10,0,1);",
       "type": "stack_param"
     },
@@ -1177,6 +1217,7 @@
       "description": "Unknown/mangled field access",
       "line": 571,
       "match": "._8_4_",
+      "severity": "mild",
       "text": "if (((float)auStack_280._8_4_ == 0.0) || (this_ptr != (CStranger *)auStack_280._12_4_)) {",
       "type": "unknown_field"
     },
@@ -1184,6 +1225,7 @@
       "description": "Unknown/mangled field access",
       "line": 571,
       "match": "._12_4_",
+      "severity": "mild",
       "text": "if (((float)auStack_280._8_4_ == 0.0) || (this_ptr != (CStranger *)auStack_280._12_4_)) {",
       "type": "unknown_field"
     },
@@ -1191,6 +1233,7 @@
       "description": "Unresolved stack parameter",
       "line": 572,
       "match": "in_stack_fffffd10",
+      "severity": "moderate",
       "text": "in_stack_fffffd10 = (UOrientationVector *)0x5bce6e;",
       "type": "stack_param"
     },
@@ -1198,6 +1241,7 @@
       "description": "Unresolved stack parameter",
       "line": 573,
       "match": "in_stack_fffffd14",
+      "severity": "moderate",
       "text": "in_stack_fffffd14 = (UOrientationVector *)this_ptr;",
       "type": "stack_param"
     },
@@ -1205,6 +1249,7 @@
       "description": "Unknown/mangled field access",
       "line": 577,
       "match": "._12_4_",
+      "severity": "mild",
       "text": "pCVar10 = ((CHero *)auStack_280._12_4_)->nearby_interactive_actor;",
       "type": "unknown_field"
     },
@@ -1212,6 +1257,7 @@
       "description": "Unresolved stack parameter",
       "line": 583,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "(float)0.5 * in_stack_00000008);",
       "type": "stack_param"
     },
@@ -1219,6 +1265,7 @@
       "description": "Unknown/mangled field access",
       "line": 587,
       "match": "._24_4_",
+      "severity": "mild",
       "text": "if ((float)auStack_280._24_4_ < (float)pUStack_24) {",
       "type": "unknown_field"
     },
@@ -1226,6 +1273,7 @@
       "description": "Unknown/mangled field access",
       "line": 588,
       "match": "._24_4_",
+      "severity": "mild",
       "text": "pUStack_24 = (UOrientationVector *)auStack_280._24_4_;",
       "type": "unknown_field"
     },
@@ -1233,6 +1281,7 @@
       "description": "Unresolved stack parameter",
       "line": 593,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "(float)0.5 * in_stack_00000008;",
       "type": "stack_param"
     },
@@ -1240,6 +1289,7 @@
       "description": "Unresolved stack parameter",
       "line": 602,
       "match": "in_stack_fffffd10",
+      "severity": "moderate",
       "text": "in_stack_fffffd10 = &UStack_1c8;",
       "type": "stack_param"
     },
@@ -1247,6 +1297,7 @@
       "description": "Unresolved stack parameter",
       "line": 605,
       "match": "in_stack_fffffd10",
+      "severity": "moderate",
       "text": "(pCVar10,in_stack_fffffd10,&(this_ptr->base).player_control);",
       "type": "stack_param"
     },
@@ -1254,6 +1305,7 @@
       "description": "Unresolved stack parameter",
       "line": 608,
       "match": "in_stack_fffffd14",
+      "severity": "moderate",
       "text": "in_stack_fffffd14 = (UOrientationVector *)0x5bceaf;",
       "type": "stack_param"
     },
@@ -1261,6 +1313,7 @@
       "description": "Unknown/mangled field access",
       "line": 638,
       "match": "._8_4_",
+      "severity": "mild",
       "text": "auStack_1dc._8_4_ = 0.0;",
       "type": "unknown_field"
     },
@@ -1268,6 +1321,7 @@
       "description": "Unresolved stack parameter",
       "line": 639,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "in_stack_00000008 = fStack_264 + (float)-1;",
       "type": "stack_param"
     },
@@ -1275,6 +1329,7 @@
       "description": "Unresolved stack parameter",
       "line": 641,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "fStack_1cc = in_stack_00000008;",
       "type": "stack_param"
     },
@@ -1282,6 +1337,7 @@
       "description": "Unknown/mangled field access",
       "line": 645,
       "match": "._8_4_",
+      "severity": "mild",
       "text": "auStack_134._8_4_ = CStack_fc.x - (this_ptr->base).base.base.location.position.x;",
       "type": "unknown_field"
     },
@@ -1289,6 +1345,7 @@
       "description": "Unresolved stack parameter",
       "line": 649,
       "match": "in_stack_fffffd14",
+      "severity": "moderate",
       "text": "in_stack_fffffd14 = (UOrientationVector *)0x5bcdfe;",
       "type": "stack_param"
     },
@@ -1296,6 +1353,7 @@
       "description": "Unresolved stack parameter",
       "line": 681,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "if (this_ptr->ladder_blend_time <= in_stack_00000008) {",
       "type": "stack_param"
     },
@@ -1303,6 +1361,7 @@
       "description": "Unresolved stack parameter",
       "line": 686,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "fStack_2c0 = in_stack_00000008 / this_ptr->ladder_blend_time;",
       "type": "stack_param"
     },
@@ -1310,6 +1369,7 @@
       "description": "Unresolved stack parameter",
       "line": 687,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "this_ptr->ladder_blend_time = this_ptr->ladder_blend_time - in_stack_00000008;",
       "type": "stack_param"
     },
@@ -1317,6 +1377,7 @@
       "description": "Unknown/mangled field access",
       "line": 692,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "auStack_c0._0_4_ = (this_ptr->ladder_offset).z * fStack_2c0;",
       "type": "unknown_field"
     },
@@ -1324,6 +1385,7 @@
       "description": "Unknown/mangled field access",
       "line": 699,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "(this_ptr->base).base.base.location.position.z = fVar4 + (float)auStack_c0._0_4_;",
       "type": "unknown_field"
     },
@@ -1331,6 +1393,7 @@
       "description": "Unresolved stack parameter",
       "line": 730,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "if (this_ptr->ladder_blend_time <= in_stack_00000008) {",
       "type": "stack_param"
     },
@@ -1338,6 +1401,7 @@
       "description": "Unresolved stack parameter",
       "line": 735,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "fStack_2d8 = in_stack_00000008 / this_ptr->ladder_blend_time;",
       "type": "stack_param"
     },
@@ -1345,6 +1409,7 @@
       "description": "Unresolved stack parameter",
       "line": 736,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "this_ptr->ladder_blend_time = this_ptr->ladder_blend_time - in_stack_00000008;",
       "type": "stack_param"
     },
@@ -1352,6 +1417,7 @@
       "description": "Unresolved stack parameter",
       "line": 788,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "fStack_44 = 18.0f * in_stack_00000008;",
       "type": "stack_param"
     },
@@ -1359,6 +1425,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 796,
       "match": "9.80909e-45",
+      "severity": "mild",
       "text": "if (fStack_20 == 9.80909e-45) {",
       "type": "suspect_float"
     },
@@ -1366,6 +1433,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 804,
       "match": "1.12104e-44",
+      "severity": "mild",
       "text": "if (fStack_20 == 1.12104e-44) {",
       "type": "suspect_float"
     },
@@ -1373,6 +1441,7 @@
       "description": "Unresolved stack parameter",
       "line": 808,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "fVar18 = fVar18 - in_stack_00000008 * fVar4;",
       "type": "stack_param"
     },
@@ -1380,6 +1449,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 813,
       "match": "1.26117e-44",
+      "severity": "mild",
       "text": "if (fStack_20 == 1.26117e-44) {",
       "type": "suspect_float"
     },
@@ -1387,6 +1457,7 @@
       "description": "Unresolved stack parameter",
       "line": 818,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "CStack_218.z = this_ptr->jump_speed * in_stack_00000008;",
       "type": "stack_param"
     },
@@ -1394,6 +1465,7 @@
       "description": "Unresolved stack parameter",
       "line": 821,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "this_ptr->jump_speed = this_ptr->jump_speed - fVar4 * in_stack_00000008;",
       "type": "stack_param"
     },
@@ -1401,6 +1473,7 @@
       "description": "Unresolved stack parameter",
       "line": 823,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "(this_ptr->base).base.velocity.y = fVar18 - in_stack_00000008 * fVar5;",
       "type": "stack_param"
     },
@@ -1408,6 +1481,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 829,
       "match": "1.4013e-44",
+      "severity": "mild",
       "text": "else if (fStack_20 == 1.4013e-44) {",
       "type": "suspect_float"
     },
@@ -1415,6 +1489,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 834,
       "match": "1.54143e-44",
+      "severity": "mild",
       "text": "else if (fStack_20 == 1.54143e-44) {",
       "type": "suspect_float"
     },
@@ -1422,6 +1497,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 838,
       "match": "1.68156e-44",
+      "severity": "mild",
       "text": "else if (fStack_20 == 1.68156e-44) {",
       "type": "suspect_float"
     },
@@ -1429,6 +1505,7 @@
       "description": "Unresolved stack parameter",
       "line": 839,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "CStack_218.z = 10.0f * in_stack_00000008;",
       "type": "stack_param"
     },
@@ -1436,6 +1513,7 @@
       "description": "Unresolved stack parameter",
       "line": 843,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "fVar18 = fVar18 - in_stack_00000008 * fVar4;",
       "type": "stack_param"
     },
@@ -1443,6 +1521,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 851,
       "match": "1.82169e-44",
+      "severity": "mild",
       "text": "else if (fStack_20 == 1.82169e-44) {",
       "type": "suspect_float"
     },
@@ -1450,6 +1529,7 @@
       "description": "Unresolved stack parameter",
       "line": 856,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "CStack_218.z = this_ptr->jump_speed * in_stack_00000008;",
       "type": "stack_param"
     },
@@ -1457,6 +1537,7 @@
       "description": "Unresolved stack parameter",
       "line": 859,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "this_ptr->jump_speed = this_ptr->jump_speed - fVar4 * in_stack_00000008;",
       "type": "stack_param"
     },
@@ -1464,6 +1545,7 @@
       "description": "Unresolved stack parameter",
       "line": 861,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "(this_ptr->base).base.velocity.y = fVar18 - in_stack_00000008 * fVar5;",
       "type": "stack_param"
     },
@@ -1471,6 +1553,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 868,
       "match": "1.96182e-44",
+      "severity": "mild",
       "text": "if (fStack_20 != 1.96182e-44) {",
       "type": "suspect_float"
     },
@@ -1478,6 +1561,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 869,
       "match": "2.10195e-44",
+      "severity": "mild",
       "text": "if (fStack_20 == 2.10195e-44) {",
       "type": "suspect_float"
     },
@@ -1485,6 +1569,7 @@
       "description": "Unresolved stack parameter",
       "line": 871,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "fVar18 = (this_ptr->base).base.velocity.y - in_stack_00000008 * (float)32;",
       "type": "stack_param"
     },
@@ -1492,6 +1577,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 875,
       "match": "2.24208e-44",
+      "severity": "mild",
       "text": "if (fStack_20 == 2.24208e-44) {",
       "type": "suspect_float"
     },
@@ -1499,6 +1585,7 @@
       "description": "Unresolved stack parameter",
       "line": 879,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "fVar18 = (this_ptr->base).base.velocity.y - in_stack_00000008 * (float)32;",
       "type": "stack_param"
     },
@@ -1506,6 +1593,7 @@
       "description": "Unresolved stack parameter",
       "line": 882,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "fVar18 = (this_ptr->base).base.velocity.y - in_stack_00000008 * (float)32;",
       "type": "stack_param"
     },
@@ -1513,6 +1601,7 @@
       "description": "Unresolved stack parameter",
       "line": 891,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "fStack_158 = (this_ptr->base).base.velocity.x * in_stack_00000008;",
       "type": "stack_param"
     },
@@ -1520,6 +1609,7 @@
       "description": "Unresolved stack parameter",
       "line": 892,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "fStack_154 = (this_ptr->base).base.velocity.y * in_stack_00000008;",
       "type": "stack_param"
     },
@@ -1527,6 +1617,7 @@
       "description": "Unresolved stack parameter",
       "line": 893,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "fStack_150 = in_stack_00000008 * (this_ptr->base).base.velocity.z;",
       "type": "stack_param"
     },
@@ -1534,6 +1625,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 906,
       "match": "2.10195e-44",
+      "severity": "mild",
       "text": "if (((fStack_20 == 2.10195e-44) || (fStack_20 == 1.26117e-44)) || (fStack_20 == 1.82169e-44)) {",
       "type": "suspect_float"
     },
@@ -1541,6 +1633,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 906,
       "match": "1.26117e-44",
+      "severity": "mild",
       "text": "if (((fStack_20 == 2.10195e-44) || (fStack_20 == 1.26117e-44)) || (fStack_20 == 1.82169e-44)) {",
       "type": "suspect_float"
     },
@@ -1548,13 +1641,23 @@
       "description": "Likely misinterpreted integer as float",
       "line": 906,
       "match": "1.82169e-44",
+      "severity": "mild",
       "text": "if (((fStack_20 == 2.10195e-44) || (fStack_20 == 1.26117e-44)) || (fStack_20 == 1.82169e-44)) {",
       "type": "suspect_float"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 912,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "uVar23 = SUB84((double)fVar18,0);",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 912,
       "match": "SUB84",
+      "severity": "mild",
       "text": "uVar23 = SUB84((double)fVar18,0);",
       "type": "decompiler_intrinsic"
     },
@@ -1562,6 +1665,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 915,
       "match": "1.82169e-44",
+      "severity": "mild",
       "text": "if (((fStack_20 == 1.82169e-44) || (fStack_20 == 1.26117e-44)) ||",
       "type": "suspect_float"
     },
@@ -1569,6 +1673,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 915,
       "match": "1.26117e-44",
+      "severity": "mild",
       "text": "if (((fStack_20 == 1.82169e-44) || (fStack_20 == 1.26117e-44)) ||",
       "type": "suspect_float"
     },
@@ -1576,13 +1681,23 @@
       "description": "Likely misinterpreted integer as float",
       "line": 916,
       "match": "2.10195e-44",
+      "severity": "mild",
       "text": "(fStack_20 == 2.10195e-44)) goto LAB_005bd763;",
       "type": "suspect_float"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 922,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(float)(((float10)(double)CONCAT44(uStack_2dc,uVar23) + (float10)-20) *",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 922,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(float)(((float10)(double)CONCAT44(uStack_2dc,uVar23) + (float10)-20) *",
       "type": "decompiler_intrinsic"
     },
@@ -1590,6 +1705,7 @@
       "description": "Unresolved stack parameter",
       "line": 934,
       "match": "in_stack_fffffd10",
+      "severity": "moderate",
       "text": "in_stack_fffffd10 = (UOrientationVector *)this_ptr;",
       "type": "stack_param"
     },
@@ -1597,6 +1713,7 @@
       "description": "Unresolved stack parameter",
       "line": 941,
       "match": "in_stack_fffffd14",
+      "severity": "moderate",
       "text": "in_stack_fffffd14 = (UOrientationVector *)0x1;",
       "type": "stack_param"
     },
@@ -1604,6 +1721,7 @@
       "description": "Unresolved stack parameter",
       "line": 942,
       "match": "in_stack_fffffd10",
+      "severity": "moderate",
       "text": "in_stack_fffffd10 = (UOrientationVector *)0x11;",
       "type": "stack_param"
     },
@@ -1611,6 +1729,7 @@
       "description": "Unresolved stack parameter",
       "line": 945,
       "match": "in_stack_fffffd10",
+      "severity": "moderate",
       "text": "(&(this_ptr->base).base.model.motion_controller,(int)in_stack_fffffd10,",
       "type": "stack_param"
     },
@@ -1618,6 +1737,7 @@
       "description": "Unresolved stack parameter",
       "line": 946,
       "match": "in_stack_fffffd14",
+      "severity": "moderate",
       "text": "(int)in_stack_fffffd14);",
       "type": "stack_param"
     },
@@ -1625,6 +1745,7 @@
       "description": "Unresolved stack parameter",
       "line": 961,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "this_ptr->airborne_timer = this_ptr->airborne_timer + in_stack_00000008;",
       "type": "stack_param"
     },
@@ -1632,6 +1753,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 962,
       "match": "4.2039e-45",
+      "severity": "mild",
       "text": "if (fStack_20 == 4.2039e-45) {",
       "type": "suspect_float"
     },
@@ -1639,6 +1761,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 967,
       "match": "2.10195e-44",
+      "severity": "mild",
       "text": "if (fStack_20 != 2.10195e-44) {",
       "type": "suspect_float"
     },
@@ -1646,6 +1769,7 @@
       "description": "Complex pointer cast",
       "line": 986,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)UStack_84.vec.z + 8) = 0.0;",
       "type": "pointer_cast"
     },
@@ -1653,6 +1777,7 @@
       "description": "Complex pointer cast",
       "line": 987,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)UStack_84.vec.z + 4) = *(float *)((int)UStack_84.vec.z + 8);",
       "type": "pointer_cast"
     },
@@ -1660,6 +1785,7 @@
       "description": "Complex pointer cast",
       "line": 987,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)UStack_84.vec.z + 4) = *(float *)((int)UStack_84.vec.z + 8);",
       "type": "pointer_cast"
     },
@@ -1667,6 +1793,7 @@
       "description": "Complex pointer cast",
       "line": 988,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)UStack_84.vec.z = *(float *)((int)UStack_84.vec.z + 4);",
       "type": "pointer_cast"
     },
@@ -1674,6 +1801,7 @@
       "description": "Unresolved stack parameter",
       "line": 1033,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "fVar18 = this_ptr->guns_drawn_blend - in_stack_00000008 / 1.2f;",
       "type": "stack_param"
     },
@@ -1681,6 +1809,7 @@
       "description": "Unresolved stack parameter",
       "line": 1040,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "fVar18 = in_stack_00000008 / 1.1f + this_ptr->guns_drawn_blend;",
       "type": "stack_param"
     },
@@ -1688,6 +1817,7 @@
       "description": "Unresolved stack parameter",
       "line": 1046,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "fVar18 = (this_ptr->right_arm_aim).recoil_timer - in_stack_00000008 / 0.2f;",
       "type": "stack_param"
     },
@@ -1695,6 +1825,7 @@
       "description": "Unresolved stack parameter",
       "line": 1052,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "fVar18 = (this_ptr->left_arm_aim).recoil_timer - in_stack_00000008 / 0.2f;",
       "type": "stack_param"
     },
@@ -1702,6 +1833,7 @@
       "description": "Unresolved stack parameter",
       "line": 1072,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "((CCharacter *)this_ptr,in_stack_00000008,(float)in_stack_fffffd10);",
       "type": "stack_param"
     },
@@ -1709,6 +1841,7 @@
       "description": "Unresolved stack parameter",
       "line": 1072,
       "match": "in_stack_fffffd10",
+      "severity": "moderate",
       "text": "((CCharacter *)this_ptr,in_stack_00000008,(float)in_stack_fffffd10);",
       "type": "stack_param"
     },

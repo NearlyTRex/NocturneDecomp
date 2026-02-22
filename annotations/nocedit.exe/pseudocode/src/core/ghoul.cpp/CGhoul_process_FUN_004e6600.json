@@ -22,97 +22,97 @@
       {
         "category": "incompatible_types",
         "column": 22,
-        "line": 378,
+        "line": 379,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 384,
+        "line": 385,
         "message": "C-style cast from 'float' to 'char[4]' is not allowed"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 392,
+        "line": 393,
         "message": "C-style cast from 'char *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 39,
-        "line": 392,
+        "line": 393,
         "message": "C-style cast from 'char *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 466,
+        "line": 467,
         "message": "cannot cast from type 'float' to pointer type 'CMotionController_vtable *'"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 474,
+        "line": 475,
         "message": "C-style cast from 'CGhoul *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 538,
+        "line": 539,
         "message": "C-style cast from 'CGhoul *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 600,
+        "line": 601,
         "message": "C-style cast from 'char *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 600,
+        "line": 601,
         "message": "C-style cast from 'CGore *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 648,
+        "line": 649,
         "message": "cannot cast from type 'float' to pointer type 'CMotionController_vtable *'"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 725,
+        "line": 726,
         "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 728,
+        "line": 729,
         "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 37,
-        "line": 756,
+        "line": 757,
         "message": "cannot cast from type 'float' to pointer type 'void *'"
       },
       {
         "category": "other",
         "column": 37,
-        "line": 758,
+        "line": 759,
         "message": "cannot cast from type 'float' to pointer type 'void *'"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 799,
+        "line": 800,
         "message": "cannot cast from type 'float' to pointer type 'CMotionController_vtable *'"
       },
       {
         "category": "undeclared_identifier",
         "column": 25,
-        "line": 804,
+        "line": 805,
         "message": "use of undeclared identifier 'code'"
       }
     ],
@@ -121,19 +121,21 @@
   },
   "complexity": {
     "assembly_lines": 2368,
-    "complexity_score": 2036,
+    "complexity_score": 2052,
     "cross_reference_count": 0,
     "function_call_count": 40,
     "global_count": 71,
-    "pseudocode_lines": 1046,
-    "suspect_count": 97,
+    "max_suspect_severity": "severe",
+    "pseudocode_lines": 1047,
+    "suspect_count": 98,
     "suspect_types": [
       "decompiler_intrinsic",
+      "fnstsw_flag_artifact",
       "stack_param",
       "stack_ref",
       "unresolved_funcptr"
     ],
-    "total_lines": 3414
+    "total_lines": 3415
   },
   "cross_references": [],
   "function": {
@@ -1684,6 +1686,7 @@
       "description": "Unresolved stack parameter",
       "line": 31,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "char *in_stack_fffffc88;",
       "type": "stack_param"
     },
@@ -1691,6 +1694,7 @@
       "description": "Unresolved stack parameter",
       "line": 32,
       "match": "in_stack_fffffc8c",
+      "severity": "moderate",
       "text": "CGore *in_stack_fffffc8c;",
       "type": "stack_param"
     },
@@ -1698,6 +1702,7 @@
       "description": "Unresolved stack parameter",
       "line": 34,
       "match": "in_stack_fffffc94",
+      "severity": "moderate",
       "text": "CGhoul *in_stack_fffffc94;",
       "type": "stack_param"
     },
@@ -1705,6 +1710,7 @@
       "description": "Unresolved stack parameter",
       "line": 143,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "in_stack_fffffc88 = ((this_ptr->base).victim)->actor_name;",
       "type": "stack_param"
     },
@@ -1712,6 +1718,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 144,
       "match": "code *",
+      "severity": "moderate",
       "text": "pCVar13 = (**(code **)((int)(&((UOrientationVector *)",
       "type": "unresolved_funcptr"
     },
@@ -1719,6 +1726,7 @@
       "description": "Unresolved stack parameter",
       "line": 145,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "((CPathMap *)in_stack_fffffc88)->height_cache)->vec)[0x18].y +",
       "type": "stack_param"
     },
@@ -1726,6 +1734,7 @@
       "description": "Unresolved stack parameter",
       "line": 146,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "0x108))((CCharacter *)in_stack_fffffc88);",
       "type": "stack_param"
     },
@@ -1733,6 +1742,7 @@
       "description": "Unresolved stack parameter",
       "line": 148,
       "match": "in_stack_fffffc8c",
+      "severity": "moderate",
       "text": "in_stack_fffffc8c = (CGore *)0x0;",
       "type": "stack_param"
     },
@@ -1740,6 +1750,7 @@
       "description": "Unresolved stack parameter",
       "line": 150,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)this_ptr;",
       "type": "stack_param"
     },
@@ -1747,6 +1758,7 @@
       "description": "Unresolved stack parameter",
       "line": 155,
       "match": "in_stack_fffffc94",
+      "severity": "moderate",
       "text": "in_stack_fffffc94 = (CGhoul *)&local_1c8;",
       "type": "stack_param"
     },
@@ -1754,6 +1766,7 @@
       "description": "Unresolved stack parameter",
       "line": 158,
       "match": "in_stack_fffffc8c",
+      "severity": "moderate",
       "text": "in_stack_fffffc8c = (CGore *)0x4e6aec;",
       "type": "stack_param"
     },
@@ -1761,6 +1774,7 @@
       "description": "Unresolved stack parameter",
       "line": 160,
       "match": "in_stack_fffffc94",
+      "severity": "moderate",
       "text": "((CDemonActor *)this_ptr,(CVector3f *)in_stack_fffffc94,&local_174);",
       "type": "stack_param"
     },
@@ -1768,6 +1782,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 164,
       "match": "SQRT",
+      "severity": "mild",
       "text": "bVar5 = SQRT(fVar1 * fVar1 + fVar22 * fVar22) <= 1.0;",
       "type": "decompiler_intrinsic"
     },
@@ -1775,6 +1790,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 166,
       "match": "ABS",
+      "severity": "mild",
       "text": "if (ABS(local_1c4 - (pCVar3->base).location.position.y) <= (float)4) {",
       "type": "decompiler_intrinsic"
     },
@@ -1782,6 +1798,7 @@
       "description": "Unresolved stack parameter",
       "line": 168,
       "match": "in_stack_fffffc8c",
+      "severity": "moderate",
       "text": "in_stack_fffffc8c = (CGore *)0x4e6b5b;",
       "type": "stack_param"
     },
@@ -1789,573 +1806,663 @@
       "description": "Unresolved stack parameter",
       "line": 169,
       "match": "in_stack_fffffc94",
+      "severity": "moderate",
       "text": "in_stack_fffffc94 = this_ptr;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 207,
+      "line": 208,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)0x4e6c71;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 216,
+      "line": 217,
       "match": "in_stack_fffffc94",
+      "severity": "moderate",
       "text": "in_stack_fffffc94 = (CGhoul *)&local_29c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 220,
+      "line": 221,
       "match": "in_stack_fffffc8c",
+      "severity": "moderate",
       "text": "in_stack_fffffc8c = (CGore *)0x4e6cc0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 222,
+      "line": 223,
       "match": "in_stack_fffffc94",
+      "severity": "moderate",
       "text": "(pCVar3,(SDamageInfo *)in_stack_fffffc94);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 226,
+      "line": 227,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND(local_ac * 2.5 * 0.25));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 226,
+      "line": 227,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND(local_ac * 2.5 * 0.25));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 227,
+      "line": 228,
       "match": "in_stack_fffffc94",
+      "severity": "moderate",
       "text": "in_stack_fffffc94 = (CGhoul *)0x0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 228,
+      "line": 229,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)0x4e6d0a;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 229,
+      "line": 230,
       "match": "in_stack_fffffc8c",
+      "severity": "moderate",
       "text": "in_stack_fffffc8c = g_CGorePtr;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 236,
+      "line": 237,
       "match": "in_stack_fffffc94",
+      "severity": "moderate",
       "text": "in_stack_fffffc94 = (CGhoul *)0x4e6d3f;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 246,
+      "line": 247,
       "match": "in_stack_fffffc8c",
+      "severity": "moderate",
       "text": "in_stack_fffffc8c = (CGore *)0x1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 249,
+      "line": 250,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)pCVar11;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 253,
+      "line": 254,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)0x1;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 272,
+      "line": 273,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_58 = (float)(int)ROUND(ROUND(local_14 * (float)0.25));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 272,
+      "line": 273,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_58 = (float)(int)ROUND(ROUND(local_14 * (float)0.25));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 286,
+      "line": 287,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_54 = (float)(int)ROUND(ROUND(local_14 * (float)0.25));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 286,
+      "line": 287,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_54 = (float)(int)ROUND(ROUND(local_14 * (float)0.25));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 304,
+      "line": 305,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_84 = (float)(int)ROUND(ROUND(local_14 * (float)0.25));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 304,
+      "line": 305,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_84 = (float)(int)ROUND(ROUND(local_14 * (float)0.25));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 366,
+      "line": 367,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)0x4e75e4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 370,
+      "line": 371,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)this_ptr;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 384,
+      "line": 385,
       "match": "SQRT",
+      "severity": "mild",
       "text": "if (SQRT(local_178 * local_178 +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 435,
+      "line": 436,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)0x4e77fa;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 438,
+      "line": 439,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)&(this_ptr->base).base.model;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 440,
+      "line": 441,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "((CMotionController *)in_stack_fffffc88,0,1);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 462,
+      "line": 463,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)(*((pCVar13->vtable)._ub)->getPathMap)(pCVar13);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 466,
-      "match": "in_stack_fffffc88",
-      "text": "(CPathMap *)in_stack_fffffc88,pCVar12,fVar22,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 467,
-      "match": "in_stack_fffffc94",
-      "text": "(float)in_stack_fffffc94);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 469,
       "match": "in_stack_fffffc88",
-      "text": "in_stack_fffffc88 = (char *)0x4e7a07;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 478,
-      "match": "SQRT",
-      "text": "local_48 = SQRT(local_1f0 * local_1f0 +",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 485,
-      "match": "ABS",
-      "text": "local_24 = (1.0 - ABS(local_48 - 3.4f) / 3.4f) *",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 490,
-      "match": "ABS",
-      "text": "local_40 = (1.0 - ABS(local_48 - 2.5f) / 2.5f) *",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 498,
-      "match": "ABS",
-      "text": "local_38 = (1.0 - ABS(local_48 - 2.5f) / 2.5f) *",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 526,
-      "match": "in_stack_fffffc88",
-      "text": "in_stack_fffffc88 = (char *)(*((pCVar13->vtable)._ub)->getPathMap)(pCVar13);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 530,
-      "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "(CPathMap *)in_stack_fffffc88,pCVar12,fVar22,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 531,
+      "line": 468,
       "match": "in_stack_fffffc94",
+      "severity": "moderate",
       "text": "(float)in_stack_fffffc94);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 533,
+      "line": 470,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
+      "text": "in_stack_fffffc88 = (char *)0x4e7a07;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 479,
+      "match": "SQRT",
+      "severity": "mild",
+      "text": "local_48 = SQRT(local_1f0 * local_1f0 +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 486,
+      "match": "ABS",
+      "severity": "mild",
+      "text": "local_24 = (1.0 - ABS(local_48 - 3.4f) / 3.4f) *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 491,
+      "match": "ABS",
+      "severity": "mild",
+      "text": "local_40 = (1.0 - ABS(local_48 - 2.5f) / 2.5f) *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 499,
+      "match": "ABS",
+      "severity": "mild",
+      "text": "local_38 = (1.0 - ABS(local_48 - 2.5f) / 2.5f) *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 527,
+      "match": "in_stack_fffffc88",
+      "severity": "moderate",
+      "text": "in_stack_fffffc88 = (char *)(*((pCVar13->vtable)._ub)->getPathMap)(pCVar13);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 531,
+      "match": "in_stack_fffffc88",
+      "severity": "moderate",
+      "text": "(CPathMap *)in_stack_fffffc88,pCVar12,fVar22,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 532,
+      "match": "in_stack_fffffc94",
+      "severity": "moderate",
+      "text": "(float)in_stack_fffffc94);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 534,
+      "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)0x4e777f;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 543,
+      "line": 544,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)0x4e77bc;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 579,
+      "line": 580,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)0x3db2b8c2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 593,
+      "line": 594,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "(float)in_stack_fffffc88,(float)in_stack_fffffc8c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 593,
+      "line": 594,
       "match": "in_stack_fffffc8c",
+      "severity": "moderate",
       "text": "(float)in_stack_fffffc88,(float)in_stack_fffffc8c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 595,
+      "line": 596,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)0x4e7b00;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 599,
+      "line": 600,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)&(this_ptr->base).base.model;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 601,
+      "line": 602,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "((CMotionController *)in_stack_fffffc88,this_ptr->pending_eat_state,1);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 605,
+      "line": 606,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)this_ptr;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 614,
+      "line": 615,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)0x1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 630,
+      "line": 631,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)0x3f000000;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 638,
+      "line": 639,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)pCVar11;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 648,
+      "line": 649,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)&local_2d8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 660,
+      "line": 661,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "in_stack_fffffc88 = \"gh-hits?.wav\";",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 668,
+      "line": 669,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)0x1;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 693,
+      "line": 694,
       "match": "ROUND",
+      "severity": "mild",
       "text": "this_ptr->spasm_timer = (int)ROUND(ROUND(local_14 * (float)65536));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 693,
+      "line": 694,
       "match": "ROUND",
+      "severity": "mild",
       "text": "this_ptr->spasm_timer = (int)ROUND(ROUND(local_14 * (float)65536));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 741,
-      "match": "fcos",
-      "text": "fVar19 = (float10)fcos((float10)local_68);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 742,
+      "match": "fcos",
+      "severity": "mild",
+      "text": "fVar19 = (float10)fcos((float10)local_68);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 743,
       "match": "fsin",
+      "severity": "mild",
       "text": "fVar20 = (float10)fsin((float10)local_68);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 777,
+      "line": 778,
       "match": "ROUND",
+      "severity": "mild",
       "text": "this_ptr->arise_timer = (int)ROUND(ROUND(-local_14 * 65536.0f));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 777,
+      "line": 778,
       "match": "ROUND",
+      "severity": "mild",
       "text": "this_ptr->arise_timer = (int)ROUND(ROUND(-local_14 * 65536.0f));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 795,
+      "line": 796,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "in_stack_fffffc88 = ((this_ptr->base).victim)->actor_name;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 797,
+      "line": 798,
       "match": "code *",
+      "severity": "moderate",
       "text": "(**(code **)((int)(&((UOrientationVector *)",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 798,
+      "line": 799,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "((CPathMap *)in_stack_fffffc88)->height_cache)->vec)[0x18].y",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 799,
+      "line": 800,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "+ 0x108))((CCharacter *)in_stack_fffffc88);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 801,
+      "line": 802,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)0x1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 813,
+      "line": 814,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)0x3f000000;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 821,
+      "line": 822,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)pCVar11;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 832,
+      "line": 833,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)&local_314;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 844,
+      "line": 845,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "in_stack_fffffc88 = \"gh-hits?.wav\";",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 860,
+      "line": 861,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)CONCAT22((short)((uint)local_14 >> 0x10),in_FPUControlWord);",
       "type": "stack_param"
     },
     {
+      "description": "FNSTSW flag reconstruction (floating-point comparison artifact)",
+      "line": 861,
+      "match": "CONCAT22((short)((uint)local_14 >> 0x10",
+      "severity": "severe",
+      "text": "in_stack_fffffc88 = (char *)CONCAT22((short)((uint)local_14 >> 0x10),in_FPUControlWord);",
+      "type": "fnstsw_flag_artifact"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 860,
+      "line": 861,
       "match": "CONCAT22",
+      "severity": "mild",
       "text": "in_stack_fffffc88 = (char *)CONCAT22((short)((uint)local_14 >> 0x10),in_FPUControlWord);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 861,
+      "line": 862,
       "match": "ROUND",
+      "severity": "mild",
       "text": "this_ptr->burp_timer = (int)ROUND(ROUND(local_14 * (float)65536));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 861,
+      "line": 862,
       "match": "ROUND",
+      "severity": "mild",
       "text": "this_ptr->burp_timer = (int)ROUND(ROUND(local_14 * (float)65536));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 865,
+      "line": 866,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)0x0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 885,
+      "line": 886,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "(float)in_stack_fffffc88);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 887,
+      "line": 888,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "in_stack_fffffc88 = (char *)0x1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 935,
+      "line": 936,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "in_stack_fffffc88 = ((this_ptr->base).victim)->actor_name;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 937,
+      "line": 938,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "(g_CDemonSetPtr,(CDemonActor *)in_stack_fffffc88);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 981,
+      "line": 982,
       "match": "in_stack_fffffc88",
+      "severity": "moderate",
       "text": "((CCharacter *)this_ptr,delta_time,(float)in_stack_fffffc88);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 982,
+      "line": 983,
       "match": "ABS",
+      "severity": "mild",
       "text": "if (((float)0.01 < ABS((this_ptr->base).base.turn_angle_accumulator)) ||",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 985,
+      "line": 986,
       "match": "SQRT",
+      "severity": "mild",
       "text": "(float)0.01 < SQRT(fVar2 * fVar2 + fVar1 * fVar1 + fVar22 * fVar22))) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Direct stack address reference",
-      "line": 990,
+      "line": 991,
       "match": "&stack0xfffffc88",
+      "severity": "moderate",
       "text": "(&stack0xfffffc88,\"ghoul-walk-?.wav *%f\",(double)(this_ptr->base).speed);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 992,
+      "line": 993,
       "match": "&stack0xfffffc88",
+      "severity": "moderate",
       "text": "((CDemonActor *)this_ptr,&stack0xfffffc88);",
       "type": "stack_ref"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 1029,
+      "line": 1030,
       "match": "SQRT",
+      "severity": "mild",
       "text": "if (delta_time * (float)0.5 <= SQRT(fVar1 * fVar1 + fVar22 * fVar22)) {",
       "type": "decompiler_intrinsic"
     }

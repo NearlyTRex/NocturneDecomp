@@ -6,17 +6,19 @@
   },
   "complexity": {
     "assembly_lines": 170,
-    "complexity_score": 839,
+    "complexity_score": 864,
     "cross_reference_count": 8,
     "function_call_count": 8,
     "global_count": 27,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 199,
-    "suspect_count": 62,
+    "suspect_count": 64,
     "suspect_types": [
       "byvalue_struct_passing",
       "decompiler_intrinsic",
       "pointer_cast",
-      "unknown_field"
+      "unknown_field",
+      "warning_unmapped_variable"
     ],
     "total_lines": 369
   },
@@ -456,9 +458,26 @@
   },
   "suspects": [
     {
+      "description": "Variable defined which should be unmapped",
+      "line": 3,
+      "match": "WARNING: Variable defined which should be unmapped",
+      "severity": "moderate",
+      "text": "/* WARNING: Variable defined which should be unmapped: local_64 */",
+      "type": "warning_unmapped_variable"
+    },
+    {
+      "description": "Variable defined which should be unmapped",
+      "line": 4,
+      "match": "WARNING: Variable defined which should be unmapped",
+      "severity": "moderate",
+      "text": "/* WARNING: Variable defined which should be unmapped: local_94 */",
+      "type": "warning_unmapped_variable"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 28,
       "match": "._0_1_",
+      "severity": "mild",
       "text": "local_64.z._0_1_ = in_FPUControlWord;",
       "type": "unknown_field"
     },
@@ -466,6 +485,7 @@
       "description": "Unknown/mangled field access",
       "line": 39,
       "match": "._0_2_",
+      "severity": "mild",
       "text": "local_64.r._0_2_ = 0x1ccd;",
       "type": "unknown_field"
     },
@@ -473,6 +493,7 @@
       "description": "Unknown/mangled field access",
       "line": 40,
       "match": "._2_2_",
+      "severity": "mild",
       "text": "local_64.r._2_2_ = 0x4a;",
       "type": "unknown_field"
     },
@@ -480,6 +501,7 @@
       "description": "Unknown/mangled field access",
       "line": 47,
       "match": "._2_2_",
+      "severity": "mild",
       "text": "local_64.r._2_2_ = (short)((uint)local_64.fog >> 0x10);",
       "type": "unknown_field"
     },
@@ -487,6 +509,7 @@
       "description": "Unknown/mangled field access",
       "line": 48,
       "match": "._2_2_",
+      "severity": "mild",
       "text": "local_64.z._2_2_ = local_64.r._2_2_;",
       "type": "unknown_field"
     },
@@ -494,6 +517,7 @@
       "description": "Unknown/mangled field access",
       "line": 48,
       "match": "._2_2_",
+      "severity": "mild",
       "text": "local_64.z._2_2_ = local_64.r._2_2_;",
       "type": "unknown_field"
     },
@@ -501,6 +525,7 @@
       "description": "Unknown/mangled field access",
       "line": 49,
       "match": "._1_1_",
+      "severity": "mild",
       "text": "local_64.z._1_1_ = 0x1f;",
       "type": "unknown_field"
     },
@@ -508,6 +533,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 51,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_14 = (int)ROUND(ROUND(scale_factor * (float)256));",
       "type": "decompiler_intrinsic"
     },
@@ -515,6 +541,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 51,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_14 = (int)ROUND(ROUND(scale_factor * (float)256));",
       "type": "decompiler_intrinsic"
     },
@@ -522,6 +549,7 @@
       "description": "Unknown/mangled field access",
       "line": 52,
       "match": "._0_2_",
+      "severity": "mild",
       "text": "local_64.r._0_2_ = 0x1d0a;",
       "type": "unknown_field"
     },
@@ -529,6 +557,7 @@
       "description": "Unknown/mangled field access",
       "line": 53,
       "match": "._2_2_",
+      "severity": "mild",
       "text": "local_64.r._2_2_ = 0x4a;",
       "type": "unknown_field"
     },
@@ -536,6 +565,7 @@
       "description": "Unknown/mangled field access",
       "line": 60,
       "match": "._0_2_",
+      "severity": "mild",
       "text": "local_64.r._0_2_ = 0x1d29;",
       "type": "unknown_field"
     },
@@ -543,6 +573,7 @@
       "description": "Unknown/mangled field access",
       "line": 61,
       "match": "._2_2_",
+      "severity": "mild",
       "text": "local_64.r._2_2_ = 0x4a;",
       "type": "unknown_field"
     },
@@ -550,6 +581,7 @@
       "description": "Complex pointer cast",
       "line": 67,
       "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
       "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -557,6 +589,7 @@
       "description": "Complex pointer cast",
       "line": 68,
       "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
       "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -564,6 +597,7 @@
       "description": "Complex pointer cast",
       "line": 74,
       "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
       "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -571,6 +605,7 @@
       "description": "Complex pointer cast",
       "line": 75,
       "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
       "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -578,6 +613,7 @@
       "description": "Unknown/mangled field access",
       "line": 85,
       "match": "._0_1_",
+      "severity": "mild",
       "text": "vertex2.z._0_1_ = (byte)local_64.z;",
       "type": "unknown_field"
     },
@@ -585,6 +621,7 @@
       "description": "Unknown/mangled field access",
       "line": 86,
       "match": "._1_1_",
+      "severity": "mild",
       "text": "vertex2.z._1_1_ = local_64.z._1_1_;",
       "type": "unknown_field"
     },
@@ -592,6 +629,7 @@
       "description": "Unknown/mangled field access",
       "line": 86,
       "match": "._1_1_",
+      "severity": "mild",
       "text": "vertex2.z._1_1_ = local_64.z._1_1_;",
       "type": "unknown_field"
     },
@@ -599,6 +637,7 @@
       "description": "Unknown/mangled field access",
       "line": 87,
       "match": "._2_2_",
+      "severity": "mild",
       "text": "vertex2.z._2_2_ = local_64.z._2_2_;",
       "type": "unknown_field"
     },
@@ -606,6 +645,7 @@
       "description": "Unknown/mangled field access",
       "line": 87,
       "match": "._2_2_",
+      "severity": "mild",
       "text": "vertex2.z._2_2_ = local_64.z._2_2_;",
       "type": "unknown_field"
     },
@@ -613,6 +653,7 @@
       "description": "Unknown/mangled field access",
       "line": 88,
       "match": "._0_2_",
+      "severity": "mild",
       "text": "vertex2.r._0_2_ = (short)local_64.r;",
       "type": "unknown_field"
     },
@@ -620,6 +661,7 @@
       "description": "Unknown/mangled field access",
       "line": 89,
       "match": "._2_2_",
+      "severity": "mild",
       "text": "vertex2.r._2_2_ = local_64.r._2_2_;",
       "type": "unknown_field"
     },
@@ -627,6 +669,7 @@
       "description": "Unknown/mangled field access",
       "line": 89,
       "match": "._2_2_",
+      "severity": "mild",
       "text": "vertex2.r._2_2_ = local_64.r._2_2_;",
       "type": "unknown_field"
     },
@@ -634,6 +677,7 @@
       "description": "Unknown/mangled field access",
       "line": 98,
       "match": "._0_2_",
+      "severity": "mild",
       "text": "local_64.r._0_2_ = 0x1d74;",
       "type": "unknown_field"
     },
@@ -641,6 +685,7 @@
       "description": "Unknown/mangled field access",
       "line": 99,
       "match": "._2_2_",
+      "severity": "mild",
       "text": "local_64.r._2_2_ = 0x4a;",
       "type": "unknown_field"
     },
@@ -648,6 +693,7 @@
       "description": "Complex pointer cast",
       "line": 105,
       "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
       "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -655,6 +701,7 @@
       "description": "Complex pointer cast",
       "line": 106,
       "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
       "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -662,6 +709,7 @@
       "description": "Complex pointer cast",
       "line": 112,
       "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
       "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -669,6 +717,7 @@
       "description": "Complex pointer cast",
       "line": 113,
       "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
       "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -676,6 +725,7 @@
       "description": "Unknown/mangled field access",
       "line": 123,
       "match": "._0_1_",
+      "severity": "mild",
       "text": "vertex2_00.z._0_1_ = (byte)local_64.z;",
       "type": "unknown_field"
     },
@@ -683,6 +733,7 @@
       "description": "Unknown/mangled field access",
       "line": 124,
       "match": "._1_1_",
+      "severity": "mild",
       "text": "vertex2_00.z._1_1_ = local_64.z._1_1_;",
       "type": "unknown_field"
     },
@@ -690,6 +741,7 @@
       "description": "Unknown/mangled field access",
       "line": 124,
       "match": "._1_1_",
+      "severity": "mild",
       "text": "vertex2_00.z._1_1_ = local_64.z._1_1_;",
       "type": "unknown_field"
     },
@@ -697,6 +749,7 @@
       "description": "Unknown/mangled field access",
       "line": 125,
       "match": "._2_2_",
+      "severity": "mild",
       "text": "vertex2_00.z._2_2_ = local_64.z._2_2_;",
       "type": "unknown_field"
     },
@@ -704,6 +757,7 @@
       "description": "Unknown/mangled field access",
       "line": 125,
       "match": "._2_2_",
+      "severity": "mild",
       "text": "vertex2_00.z._2_2_ = local_64.z._2_2_;",
       "type": "unknown_field"
     },
@@ -711,6 +765,7 @@
       "description": "Unknown/mangled field access",
       "line": 126,
       "match": "._0_2_",
+      "severity": "mild",
       "text": "vertex2_00.r._0_2_ = (short)local_64.r;",
       "type": "unknown_field"
     },
@@ -718,6 +773,7 @@
       "description": "Unknown/mangled field access",
       "line": 127,
       "match": "._2_2_",
+      "severity": "mild",
       "text": "vertex2_00.r._2_2_ = local_64.r._2_2_;",
       "type": "unknown_field"
     },
@@ -725,6 +781,7 @@
       "description": "Unknown/mangled field access",
       "line": 127,
       "match": "._2_2_",
+      "severity": "mild",
       "text": "vertex2_00.r._2_2_ = local_64.r._2_2_;",
       "type": "unknown_field"
     },
@@ -732,6 +789,7 @@
       "description": "Unknown/mangled field access",
       "line": 136,
       "match": "._0_2_",
+      "severity": "mild",
       "text": "local_64.r._0_2_ = 0x1dc1;",
       "type": "unknown_field"
     },
@@ -739,6 +797,7 @@
       "description": "Unknown/mangled field access",
       "line": 137,
       "match": "._2_2_",
+      "severity": "mild",
       "text": "local_64.r._2_2_ = 0x4a;",
       "type": "unknown_field"
     },
@@ -746,6 +805,7 @@
       "description": "Complex pointer cast",
       "line": 143,
       "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
       "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -753,6 +813,7 @@
       "description": "Complex pointer cast",
       "line": 144,
       "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
       "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -760,6 +821,7 @@
       "description": "Complex pointer cast",
       "line": 151,
       "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
       "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -767,6 +829,7 @@
       "description": "Complex pointer cast",
       "line": 152,
       "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
       "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -774,6 +837,7 @@
       "description": "Unknown/mangled field access",
       "line": 162,
       "match": "._0_1_",
+      "severity": "mild",
       "text": "vertex2_01.z._0_1_ = (byte)local_64.z;",
       "type": "unknown_field"
     },
@@ -781,6 +845,7 @@
       "description": "Unknown/mangled field access",
       "line": 163,
       "match": "._1_1_",
+      "severity": "mild",
       "text": "vertex2_01.z._1_1_ = local_64.z._1_1_;",
       "type": "unknown_field"
     },
@@ -788,6 +853,7 @@
       "description": "Unknown/mangled field access",
       "line": 163,
       "match": "._1_1_",
+      "severity": "mild",
       "text": "vertex2_01.z._1_1_ = local_64.z._1_1_;",
       "type": "unknown_field"
     },
@@ -795,6 +861,7 @@
       "description": "Unknown/mangled field access",
       "line": 164,
       "match": "._2_2_",
+      "severity": "mild",
       "text": "vertex2_01.z._2_2_ = local_64.z._2_2_;",
       "type": "unknown_field"
     },
@@ -802,6 +869,7 @@
       "description": "Unknown/mangled field access",
       "line": 164,
       "match": "._2_2_",
+      "severity": "mild",
       "text": "vertex2_01.z._2_2_ = local_64.z._2_2_;",
       "type": "unknown_field"
     },
@@ -809,6 +877,7 @@
       "description": "Unknown/mangled field access",
       "line": 165,
       "match": "._0_2_",
+      "severity": "mild",
       "text": "vertex2_01.r._0_2_ = (short)local_64.r;",
       "type": "unknown_field"
     },
@@ -816,6 +885,7 @@
       "description": "Unknown/mangled field access",
       "line": 166,
       "match": "._2_2_",
+      "severity": "mild",
       "text": "vertex2_01.r._2_2_ = local_64.r._2_2_;",
       "type": "unknown_field"
     },
@@ -823,6 +893,7 @@
       "description": "Unknown/mangled field access",
       "line": 166,
       "match": "._2_2_",
+      "severity": "mild",
       "text": "vertex2_01.r._2_2_ = local_64.r._2_2_;",
       "type": "unknown_field"
     },
@@ -830,6 +901,7 @@
       "description": "Unknown/mangled field access",
       "line": 177,
       "match": "._0_1_",
+      "severity": "mild",
       "text": "local_64.z._0_1_ = 0x55;",
       "type": "unknown_field"
     },
@@ -837,6 +909,7 @@
       "description": "Unknown/mangled field access",
       "line": 178,
       "match": "._1_1_",
+      "severity": "mild",
       "text": "local_64.z._1_1_ = 0x1e;",
       "type": "unknown_field"
     },
@@ -844,6 +917,7 @@
       "description": "Unknown/mangled field access",
       "line": 179,
       "match": "._2_2_",
+      "severity": "mild",
       "text": "local_64.z._2_2_ = 0x4a;",
       "type": "unknown_field"
     },
@@ -851,6 +925,7 @@
       "description": "Unknown/mangled field access",
       "line": 187,
       "match": "._0_2_",
+      "severity": "mild",
       "text": "local_64.r._0_2_ = (short)((uint)uVar2 >> 0x10);",
       "type": "unknown_field"
     },
@@ -858,6 +933,7 @@
       "description": "Unknown/mangled field access",
       "line": 188,
       "match": "._2_2_",
+      "severity": "mild",
       "text": "local_64.r._2_2_ = (short)local_64.r >> 0xf;",
       "type": "unknown_field"
     },
@@ -865,6 +941,7 @@
       "description": "Unknown/mangled field access",
       "line": 189,
       "match": "._0_1_",
+      "severity": "mild",
       "text": "local_64.z._0_1_ = (byte)((uint)uVar1 >> 0x10);",
       "type": "unknown_field"
     },
@@ -872,6 +949,7 @@
       "description": "Unknown/mangled field access",
       "line": 190,
       "match": "._1_1_",
+      "severity": "mild",
       "text": "local_64.z._1_1_ = (byte)((uint)uVar1 >> 0x18);",
       "type": "unknown_field"
     },
@@ -879,6 +957,7 @@
       "description": "Unknown/mangled field access",
       "line": 192,
       "match": "._2_2_",
+      "severity": "mild",
       "text": "local_64.z._2_2_ = sVar3 >> 0xf;",
       "type": "unknown_field"
     },

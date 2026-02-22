@@ -5,6 +5,7 @@
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 16,
     "suspect_count": 5,
     "suspect_types": [
@@ -155,6 +156,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 6,
       "match": "extraout_EAX",
+      "severity": "moderate",
       "text": "int extraout_EAX;",
       "type": "extra_output"
     },
@@ -162,6 +164,7 @@
       "description": "Complex pointer cast",
       "line": 9,
       "match": "(FileEmbeddedData *)((int)",
+      "severity": "mild",
       "text": "embedded_data = (FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4));",
       "type": "pointer_cast"
     },
@@ -169,6 +172,7 @@
       "description": "Complex pointer cast",
       "line": 15,
       "match": "(FileEmbeddedData *)((int)",
+      "severity": "mild",
       "text": "embedded_data = (FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4));",
       "type": "pointer_cast"
     },
@@ -176,6 +180,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 18,
       "match": "extraout_EAX",
+      "severity": "moderate",
       "text": "return extraout_EAX;",
       "type": "extra_output"
     },

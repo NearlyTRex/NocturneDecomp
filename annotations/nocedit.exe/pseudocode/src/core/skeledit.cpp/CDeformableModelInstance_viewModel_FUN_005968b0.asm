@@ -338,7 +338,7 @@ section .text
     MOV ESI,dword ptr [EBP + -0x2e]     ; 00596a5b
     PUSH ESI                            ; 00596a5e
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0 ; 00596a5f
-        ;   XREF to: 00599fc0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton * this_ptr, char * bone_name)
+        ;   XREF to: 00599fc0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 00596a64
     MOV dword ptr [EBP + 0x2a],EAX      ; 00596a67
     TEST EAX,EAX                        ; 00596a6a
@@ -1654,7 +1654,7 @@ section .text
     PUSH 0x0                            ; 00597954
     PUSH 0x3665f74                      ; 00597956 | CKeyFramedModel_03665f74
     CALL core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850 ; 0059795b
-        ;   XREF to: 00477850 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850(CKeyFramedModel * this_ptr, CKeyFramedModelInstance * instance, int frame_index, int render_flags)
+        ;   XREF to: 00477850 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850(CKeyFramedModel * this_ptr, int frame_index, CKeyFramedModelInstance * instance, int render_flags)
     ADD ESP,0x10                        ; 00597960
     MOV EDX,dword ptr [0x006703ec]      ; 00597963 | g_CDemonRendererPtr2
     PUSH EDX                            ; 00597969 | g_CDemonRendererInstance

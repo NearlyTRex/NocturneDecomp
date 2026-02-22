@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 2,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 45,
     "suspect_count": 12,
     "suspect_types": [
@@ -119,6 +120,7 @@
       "description": "Complex pointer cast",
       "line": 11,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "output_buffer = (void *)((int)output_buffer + 2);",
       "type": "pointer_cast"
     },
@@ -126,6 +128,7 @@
       "description": "Complex pointer cast",
       "line": 12,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "indexed_input_buffer = (void *)((int)indexed_input_buffer + 1);",
       "type": "pointer_cast"
     },
@@ -133,6 +136,7 @@
       "description": "Complex pointer cast",
       "line": 18,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "CONCAT22(g_Hardware16BitPalette[*(byte *)((int)indexed_input_buffer + 1)],",
       "type": "pointer_cast"
     },
@@ -140,6 +144,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 18,
       "match": "CONCAT22",
+      "severity": "mild",
       "text": "CONCAT22(g_Hardware16BitPalette[*(byte *)((int)indexed_input_buffer + 1)],",
       "type": "decompiler_intrinsic"
     },
@@ -147,6 +152,7 @@
       "description": "Complex pointer cast",
       "line": 20,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "indexed_input_buffer = (void *)((int)indexed_input_buffer + 2);",
       "type": "pointer_cast"
     },
@@ -154,6 +160,7 @@
       "description": "Complex pointer cast",
       "line": 21,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "output_buffer = (void *)((int)output_buffer + 4);",
       "type": "pointer_cast"
     },
@@ -161,6 +168,7 @@
       "description": "Complex pointer cast",
       "line": 31,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "output_buffer = (void *)((int)output_buffer + 2);",
       "type": "pointer_cast"
     },
@@ -168,6 +176,7 @@
       "description": "Complex pointer cast",
       "line": 32,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "indexed_input_buffer = (void *)((int)indexed_input_buffer + 1);",
       "type": "pointer_cast"
     },
@@ -175,6 +184,7 @@
       "description": "Complex pointer cast",
       "line": 36,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "pbVar1 = (byte *)((int)indexed_input_buffer + 1);",
       "type": "pointer_cast"
     },
@@ -182,6 +192,7 @@
       "description": "Complex pointer cast",
       "line": 38,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "indexed_input_buffer = (void *)((int)indexed_input_buffer + 2);",
       "type": "pointer_cast"
     },
@@ -189,6 +200,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 39,
       "match": "CONCAT22",
+      "severity": "mild",
       "text": "*(uint *)output_buffer = CONCAT22(g_Hardware16BitPalette[*pbVar1],g_Hardware16BitPalette[bVar2])",
       "type": "decompiler_intrinsic"
     },
@@ -196,6 +208,7 @@
       "description": "Complex pointer cast",
       "line": 41,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "output_buffer = (void *)((int)output_buffer + 4);",
       "type": "pointer_cast"
     }

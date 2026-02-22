@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 30,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 64,
     "suspect_count": 23,
     "suspect_types": [
@@ -404,6 +405,7 @@
       "description": "Complex pointer cast",
       "line": 25,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "local_28 = (float)*(int *)((int)&g_CoronaVertexPositions[0].x + iVar3) *",
       "type": "pointer_cast"
     },
@@ -411,6 +413,7 @@
       "description": "Complex pointer cast",
       "line": 27,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "local_24 = (float)*(int *)((int)&g_CoronaVertexPositions[0].y + iVar3) *",
       "type": "pointer_cast"
     },
@@ -418,6 +421,7 @@
       "description": "Complex pointer cast",
       "line": 29,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "local_20 = (float)*(int *)((int)&g_CoronaVertexPositions[0].z + iVar3) *",
       "type": "pointer_cast"
     },
@@ -425,6 +429,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 31,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_1c.x = (int)ROUND(local_28 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -432,6 +437,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 32,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_1c.y = (int)ROUND(local_24 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -439,6 +445,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 33,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_1c.z = (int)ROUND(local_20 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -446,6 +453,7 @@
       "description": "Complex pointer cast",
       "line": 39,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&g_CDemonRendererPtr1->vertex_buffer_ptr->u + iVar2) = 0x800000;",
       "type": "pointer_cast"
     },
@@ -453,6 +461,7 @@
       "description": "Complex pointer cast",
       "line": 40,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->v + iVar2) = 0x800000;",
       "type": "pointer_cast"
     },
@@ -460,6 +469,7 @@
       "description": "Complex pointer cast",
       "line": 41,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->fog + iVar2) = 0x8000;",
       "type": "pointer_cast"
     },
@@ -467,6 +477,7 @@
       "description": "Complex pointer cast",
       "line": 42,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->z + iVar2) = 0xffff;",
       "type": "pointer_cast"
     },
@@ -474,6 +485,7 @@
       "description": "Complex pointer cast",
       "line": 43,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->r + iVar2) = 0xffff;",
       "type": "pointer_cast"
     },
@@ -481,6 +493,7 @@
       "description": "Complex pointer cast",
       "line": 45,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->g + iVar2) = 0xffff;",
       "type": "pointer_cast"
     },
@@ -488,6 +501,7 @@
       "description": "Complex pointer cast",
       "line": 51,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "SStack_50.base.count = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + -0x14);",
       "type": "pointer_cast"
     },
@@ -495,6 +509,7 @@
       "description": "Complex pointer cast",
       "line": 52,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "SStack_50.surface_normal.A = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + -0x10);",
       "type": "pointer_cast"
     },
@@ -502,6 +517,7 @@
       "description": "Complex pointer cast",
       "line": 53,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "SStack_50.surface_normal.B = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + -0xc);",
       "type": "pointer_cast"
     },
@@ -509,6 +525,7 @@
       "description": "Complex pointer cast",
       "line": 54,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "SStack_50.surface_normal.C = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + -8);",
       "type": "pointer_cast"
     },
@@ -516,6 +533,7 @@
       "description": "Complex pointer cast",
       "line": 56,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_38 = *(uint *)((int)g_CoronaFacePrimitives[0].vertices + iVar2);",
       "type": "pointer_cast"
     },
@@ -523,6 +541,7 @@
       "description": "Complex pointer cast",
       "line": 57,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_34 = *(uint *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + 4);",
       "type": "pointer_cast"
     },
@@ -530,6 +549,7 @@
       "description": "Complex pointer cast",
       "line": 58,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_30 = *(uint *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + 8);",
       "type": "pointer_cast"
     },
@@ -537,6 +557,7 @@
       "description": "Complex pointer cast",
       "line": 59,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_2c = *(uint *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + 0xc);",
       "type": "pointer_cast"
     },
@@ -544,6 +565,7 @@
       "description": "Complex pointer cast",
       "line": 62,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND((float)*(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar3) *",
       "type": "pointer_cast"
     },
@@ -551,6 +573,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 62,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND((float)*(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar3) *",
       "type": "decompiler_intrinsic"
     },
@@ -558,6 +581,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 62,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND((float)*(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar3) *",
       "type": "decompiler_intrinsic"
     }

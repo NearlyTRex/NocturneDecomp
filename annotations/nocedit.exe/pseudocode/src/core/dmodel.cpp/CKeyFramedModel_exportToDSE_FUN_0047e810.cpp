@@ -9,15 +9,16 @@
 void __cdecl core_dmodel_cpp_CKeyFramedModel_exportToDSE_FUN_0047e810(CKeyFramedModel *this_ptr)
 
 {
-  char cVar1;
-  float fVar2;
-  int iVar3;
+  int *piVar1;
+  char cVar2;
+  float fVar3;
   int iVar4;
   int iVar5;
   int iVar6;
   int iVar7;
-  char *pcVar8;
+  int iVar8;
   char *pcVar9;
+  char *pcVar10;
   int local_20;
   int local_1c;
   int local_18;
@@ -29,71 +30,73 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_exportToDSE_FUN_0047e810(CKeyFramed
   }
   g_VertexCount = this_ptr->vertex_count;
   if (0 < g_VertexCount) {
-    fVar2 = (float)0.00390625;
-    iVar4 = 0;
-    iVar7 = g_VertexCount * 0xc;
+    fVar3 = (float)0.00390625;
     iVar5 = 0;
+    iVar8 = g_VertexCount * 0xc;
+    iVar6 = 0;
     do {
-      *(float *)((int)&g_LoadedVertices[0].vertex.x + iVar5) =
-           (float)*(int *)((int)this_ptr->vertex_list + iVar4) * fVar2;
-      *(float *)((int)&g_LoadedVertices[0].vertex.y + iVar5) =
-           (float)*(int *)((int)this_ptr->vertex_list + iVar4 + 4) * fVar2;
-      iVar6 = iVar4 + 8;
-      iVar4 = iVar4 + 0xc;
-      *(float *)((int)&g_LoadedVertices[0].vertex.z + iVar5) =
-           (float)*(int *)((int)this_ptr->vertex_list + iVar6) * fVar2;
-      iVar5 = iVar5 + 0x14;
-    } while (iVar4 < iVar7);
+      *(float *)((int)&g_LoadedVertices[0].vertex.x + iVar6) =
+           (float)*(int *)((int)&this_ptr->vertex_list->x + iVar5) * fVar3;
+      *(float *)((int)&g_LoadedVertices[0].vertex.y + iVar6) =
+           (float)*(int *)((int)&this_ptr->vertex_list->y + iVar5) * fVar3;
+      piVar1 = (int *)((int)&this_ptr->vertex_list->z + iVar5);
+      iVar5 = iVar5 + 0xc;
+      *(float *)((int)&g_LoadedVertices[0].vertex.z + iVar6) = (float)*piVar1 * fVar3;
+      iVar6 = iVar6 + 0x14;
+    } while (iVar5 < iVar8);
   }
   g_PolygonCount = this_ptr->poly_count;
   local_1c = 0;
   if (0 < g_PolygonCount) {
     local_18 = 0;
     local_20 = 0;
-    iVar5 = 0;
+    iVar6 = 0;
     do {
-      iVar7 = 0;
-      *(uint *)((int)g_ModelPolygonData[0].uv_v + iVar5 + 0x40) = 0;
-      pcVar8 = g_ModelPolygonData[0].texture_name + iVar5 + -4;
-      pcVar8[0] = '\x02';
-      pcVar8[1] = '\0';
-      pcVar8[2] = '\0';
-      pcVar8[3] = '\0';
-      *(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar5 + -0x14) =
-           *(uint *)((int)this_ptr->poly_vert_list + local_18 + 4);
-      iVar4 = 0;
-      if (0 < *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar5 + -0x14)) {
-        fVar2 = (float)1.52587890625e-05;
-        iVar6 = iVar5;
+      iVar8 = 0;
+      *(uint *)((int)g_ModelPolygonData[0].uv_v + iVar6 + 0x40) = 0;
+      pcVar9 = g_ModelPolygonData[0].texture_name + iVar6 + -4;
+      pcVar9[0] = '\x02';
+      pcVar9[1] = '\0';
+      pcVar9[2] = '\0';
+      pcVar9[3] = '\0';
+      *(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar6 + -0x14) =
+           *(uint *)((int)this_ptr->poly_vert_list->vertices + local_18 + -0x14);
+      iVar5 = 0;
+      if (0 < *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar6 + -0x14)) {
+        fVar3 = (float)1.52587890625e-05;
+        iVar7 = iVar6;
         do {
-          *(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar6) =
-               *(uint *)((int)this_ptr->poly_vert_list + iVar4 + local_18 + 0x18);
-          *(float *)((int)g_ModelPolygonData[0].uv_u + iVar6) =
-               (float)*(int *)((int)this_ptr->poly_vert_list + iVar4 + local_18 + 0x1c) * fVar2;
-          iVar3 = iVar4 + local_18 + 0x20;
-          iVar4 = iVar4 + 0xc;
-          iVar7 = iVar7 + 1;
-          *(float *)((int)g_ModelPolygonData[0].uv_v + iVar6) =
-               (float)*(int *)((int)this_ptr->poly_vert_list + iVar3) * fVar2;
-          iVar6 = iVar6 + 4;
-        } while (iVar7 < *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar5 + -0x14));
+          *(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar7) =
+               *(uint *)
+                ((int)&this_ptr->poly_vert_list->vertices[0].vertex_index + iVar5 + local_18);
+          *(float *)((int)g_ModelPolygonData[0].uv_u + iVar7) =
+               (float)*(int *)((int)&this_ptr->poly_vert_list->vertices[0].texture_u +
+                              iVar5 + local_18) * fVar3;
+          iVar4 = iVar5 + local_18;
+          iVar5 = iVar5 + 0xc;
+          iVar8 = iVar8 + 1;
+          *(float *)((int)g_ModelPolygonData[0].uv_v + iVar7) =
+               (float)*(int *)((int)&this_ptr->poly_vert_list->vertices[0].texture_v + iVar4) *
+               fVar3;
+          iVar7 = iVar7 + 4;
+        } while (iVar8 < *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar6 + -0x14));
       }
-      pcVar8 = this_ptr->texture_list[*(int *)((int)this_ptr->poly_texture_index_list + local_20)].
+      pcVar9 = this_ptr->texture_list[*(int *)((int)this_ptr->poly_texture_index_list + local_20)].
                textures[0].texture_name;
       local_20 = local_20 + 4;
-      pcVar9 = g_ModelPolygonData[0].texture_name + iVar5;
+      pcVar10 = g_ModelPolygonData[0].texture_name + iVar6;
       local_18 = local_18 + 0x48;
       do {
-        cVar1 = *pcVar8;
-        *pcVar9 = cVar1;
-        if (cVar1 == '\0') break;
-        cVar1 = pcVar8[1];
-        pcVar8 = pcVar8 + 2;
-        pcVar9[1] = cVar1;
+        cVar2 = *pcVar9;
+        *pcVar10 = cVar2;
+        if (cVar2 == '\0') break;
+        cVar2 = pcVar9[1];
         pcVar9 = pcVar9 + 2;
-      } while (cVar1 != '\0');
+        pcVar10[1] = cVar2;
+        pcVar10 = pcVar10 + 2;
+      } while (cVar2 != '\0');
       local_1c = local_1c + 1;
-      iVar5 = iVar5 + 0x184;
+      iVar6 = iVar6 + 0x184;
     } while (local_1c < g_PolygonCount);
   }
   g_PartsCount = 1;

@@ -41,6 +41,7 @@
     "cross_reference_count": 1,
     "function_call_count": 18,
     "global_count": 41,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 199,
     "suspect_count": 14,
     "suspect_types": [
@@ -653,6 +654,7 @@
       "description": "Unresolved stack parameter",
       "line": 18,
       "match": "in_stack_fffffd8c",
+      "severity": "moderate",
       "text": "int *in_stack_fffffd8c;",
       "type": "stack_param"
     },
@@ -660,6 +662,7 @@
       "description": "Direct stack address reference",
       "line": 50,
       "match": "&stack0xfffffd8c",
+      "severity": "moderate",
       "text": "_sprintf(&stack0xfffffd8c,\"%s.fog\",this_ptr->camera_name);",
       "type": "stack_ref"
     },
@@ -667,6 +670,7 @@
       "description": "Direct stack address reference",
       "line": 51,
       "match": "&stack0xfffffd8c",
+      "severity": "moderate",
       "text": "file_ptr = engine_dosio_c_getFile_FUN_00481a50(\"backdrop\",&stack0xfffffd8c,\"rb\")",
       "type": "stack_ref"
     },
@@ -674,6 +678,7 @@
       "description": "Direct stack address reference",
       "line": 57,
       "match": "&stack0xfffffd8c",
+      "severity": "moderate",
       "text": "_sprintf(local_f8,\"backdrop\\\\%s\",&stack0xfffffd8c);",
       "type": "stack_ref"
     },
@@ -681,6 +686,7 @@
       "description": "Unresolved stack parameter",
       "line": 60,
       "match": "in_stack_fffffd8c",
+      "severity": "moderate",
       "text": "(SIZE_T)in_stack_fffffd8c);",
       "type": "stack_param"
     },
@@ -688,6 +694,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 74,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_5c.x = (int)ROUND(ROUND((double)(float)(this_ptr->base).position.x *",
       "type": "decompiler_intrinsic"
     },
@@ -695,6 +702,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 74,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_5c.x = (int)ROUND(ROUND((double)(float)(this_ptr->base).position.x *",
       "type": "decompiler_intrinsic"
     },
@@ -702,6 +710,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 76,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_5c.y = (int)ROUND(ROUND((double)(float)(this_ptr->base).position.y *",
       "type": "decompiler_intrinsic"
     },
@@ -709,6 +718,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 76,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_5c.y = (int)ROUND(ROUND((double)(float)(this_ptr->base).position.y *",
       "type": "decompiler_intrinsic"
     },
@@ -716,6 +726,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 78,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_5c.z = (int)ROUND(ROUND(256 *",
       "type": "decompiler_intrinsic"
     },
@@ -723,6 +734,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 78,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_5c.z = (int)ROUND(ROUND(256 *",
       "type": "decompiler_intrinsic"
     },
@@ -730,6 +742,7 @@
       "description": "Complex pointer cast",
       "line": 94,
       "match": "(CVector3i *)((int)",
+      "severity": "mild",
       "text": "end_pos = (CVector3i *)((int)&g_PrecomputedWorldPositions[0].x + local_34);",
       "type": "pointer_cast"
     },
@@ -737,6 +750,7 @@
       "description": "Complex pointer cast",
       "line": 95,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "piVar5 = (int *)((int)g_PrecomputedDepthBuffer + local_30);",
       "type": "pointer_cast"
     },
@@ -744,6 +758,7 @@
       "description": "Unresolved stack parameter",
       "line": 174,
       "match": "in_stack_fffffd8c",
+      "severity": "moderate",
       "text": "local_174 + 0x44,in_stack_fffffd8c);",
       "type": "stack_param"
     }

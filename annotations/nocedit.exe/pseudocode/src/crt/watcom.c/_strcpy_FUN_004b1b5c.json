@@ -5,6 +5,7 @@
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 60,
     "suspect_count": 35,
     "suspect_types": [
@@ -103,6 +104,7 @@
       "description": "Inferred register parameter",
       "line": 9,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "uint *in_ECX;",
       "type": "register_param"
     },
@@ -110,6 +112,7 @@
       "description": "Inferred register parameter",
       "line": 10,
       "match": "in_EDX",
+      "severity": "mild",
       "text": "uint *in_EDX;",
       "type": "register_param"
     },
@@ -117,6 +120,7 @@
       "description": "Inferred register parameter",
       "line": 12,
       "match": "in_EDX",
+      "severity": "mild",
       "text": "cVar2 = (char)*in_EDX;",
       "type": "register_param"
     },
@@ -124,6 +128,7 @@
       "description": "Inferred register parameter",
       "line": 13,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "for (; ((uint)in_ECX & 7) != 0; in_ECX = (uint *)((int)in_ECX + 1)) {",
       "type": "register_param"
     },
@@ -131,6 +136,7 @@
       "description": "Inferred register parameter",
       "line": 13,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "for (; ((uint)in_ECX & 7) != 0; in_ECX = (uint *)((int)in_ECX + 1)) {",
       "type": "register_param"
     },
@@ -138,6 +144,7 @@
       "description": "Inferred register parameter",
       "line": 13,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "for (; ((uint)in_ECX & 7) != 0; in_ECX = (uint *)((int)in_ECX + 1)) {",
       "type": "register_param"
     },
@@ -145,6 +152,7 @@
       "description": "Complex pointer cast",
       "line": 13,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "for (; ((uint)in_ECX & 7) != 0; in_ECX = (uint *)((int)in_ECX + 1)) {",
       "type": "pointer_cast"
     },
@@ -152,6 +160,7 @@
       "description": "Inferred register parameter",
       "line": 14,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "*(char *)in_ECX = cVar2;",
       "type": "register_param"
     },
@@ -159,6 +168,7 @@
       "description": "Inferred register parameter",
       "line": 18,
       "match": "in_EDX",
+      "severity": "mild",
       "text": "cVar2 = *(char *)((int)in_EDX + 1);",
       "type": "register_param"
     },
@@ -166,6 +176,7 @@
       "description": "Complex pointer cast",
       "line": 18,
       "match": "(char *)((int)",
+      "severity": "mild",
       "text": "cVar2 = *(char *)((int)in_EDX + 1);",
       "type": "pointer_cast"
     },
@@ -173,6 +184,7 @@
       "description": "Inferred register parameter",
       "line": 19,
       "match": "in_EDX",
+      "severity": "mild",
       "text": "in_EDX = (uint *)((int)in_EDX + 1);",
       "type": "register_param"
     },
@@ -180,6 +192,7 @@
       "description": "Inferred register parameter",
       "line": 19,
       "match": "in_EDX",
+      "severity": "mild",
       "text": "in_EDX = (uint *)((int)in_EDX + 1);",
       "type": "register_param"
     },
@@ -187,6 +200,7 @@
       "description": "Complex pointer cast",
       "line": 19,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "in_EDX = (uint *)((int)in_EDX + 1);",
       "type": "pointer_cast"
     },
@@ -194,6 +208,7 @@
       "description": "Inferred register parameter",
       "line": 22,
       "match": "in_EDX",
+      "severity": "mild",
       "text": "lVar1 = *(longlong *)in_EDX;",
       "type": "register_param"
     },
@@ -201,6 +216,7 @@
       "description": "Inferred register parameter",
       "line": 23,
       "match": "in_EDX",
+      "severity": "mild",
       "text": "uVar3 = *in_EDX;",
       "type": "register_param"
     },
@@ -208,6 +224,7 @@
       "description": "Inferred register parameter",
       "line": 25,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "*(char *)in_ECX = (char)uVar3;",
       "type": "register_param"
     },
@@ -215,6 +232,7 @@
       "description": "Inferred register parameter",
       "line": 30,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "*(byte *)((int)in_ECX + 2) = 0;",
       "type": "register_param"
     },
@@ -222,6 +240,7 @@
       "description": "Complex pointer cast",
       "line": 30,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)in_ECX + 2) = 0;",
       "type": "pointer_cast"
     },
@@ -229,6 +248,7 @@
       "description": "Inferred register parameter",
       "line": 35,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "*in_ECX = uVar3;",
       "type": "register_param"
     },
@@ -236,6 +256,7 @@
       "description": "Inferred register parameter",
       "line": 38,
       "match": "in_EDX",
+      "severity": "mild",
       "text": "uVar4 = in_EDX[1];",
       "type": "register_param"
     },
@@ -243,6 +264,7 @@
       "description": "Inferred register parameter",
       "line": 39,
       "match": "in_EDX",
+      "severity": "mild",
       "text": "in_EDX = in_EDX + 2;",
       "type": "register_param"
     },
@@ -250,6 +272,7 @@
       "description": "Inferred register parameter",
       "line": 39,
       "match": "in_EDX",
+      "severity": "mild",
       "text": "in_EDX = in_EDX + 2;",
       "type": "register_param"
     },
@@ -257,6 +280,7 @@
       "description": "Inferred register parameter",
       "line": 41,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "*(char *)(in_ECX + 1) = (char)uVar4;",
       "type": "register_param"
     },
@@ -264,6 +288,7 @@
       "description": "Inferred register parameter",
       "line": 46,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "*(short *)(in_ECX + 1) = (short)uVar4;",
       "type": "register_param"
     },
@@ -271,6 +296,7 @@
       "description": "Inferred register parameter",
       "line": 47,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "*in_ECX = uVar3;",
       "type": "register_param"
     },
@@ -278,6 +304,7 @@
       "description": "Inferred register parameter",
       "line": 51,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "*(byte *)((int)in_ECX + 6) = 0;",
       "type": "register_param"
     },
@@ -285,6 +312,7 @@
       "description": "Complex pointer cast",
       "line": 51,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)in_ECX + 6) = 0;",
       "type": "pointer_cast"
     },
@@ -292,6 +320,7 @@
       "description": "Inferred register parameter",
       "line": 55,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "*(longlong *)in_ECX = (longlong)ROUND((float10)lVar1);",
       "type": "register_param"
     },
@@ -299,6 +328,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 55,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*(longlong *)in_ECX = (longlong)ROUND((float10)lVar1);",
       "type": "decompiler_intrinsic"
     },
@@ -306,6 +336,7 @@
       "description": "Inferred register parameter",
       "line": 58,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "*(longlong *)in_ECX = (longlong)ROUND((float10)lVar1);",
       "type": "register_param"
     },
@@ -313,6 +344,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 58,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*(longlong *)in_ECX = (longlong)ROUND((float10)lVar1);",
       "type": "decompiler_intrinsic"
     },
@@ -320,6 +352,7 @@
       "description": "Inferred register parameter",
       "line": 59,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "in_ECX = in_ECX + 2;",
       "type": "register_param"
     },
@@ -327,6 +360,7 @@
       "description": "Inferred register parameter",
       "line": 59,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "in_ECX = in_ECX + 2;",
       "type": "register_param"
     },
@@ -334,6 +368,7 @@
       "description": "Inferred register parameter",
       "line": 61,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "*(short *)in_ECX = (short)uVar3;",
       "type": "register_param"
     },

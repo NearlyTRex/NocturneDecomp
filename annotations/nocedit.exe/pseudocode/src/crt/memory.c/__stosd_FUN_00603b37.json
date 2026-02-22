@@ -5,6 +5,7 @@
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 53,
     "suspect_count": 16,
     "suspect_types": [
@@ -73,6 +74,7 @@
       "description": "Inferred register parameter",
       "line": 6,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "uint in_ECX;",
       "type": "register_param"
     },
@@ -80,6 +82,7 @@
       "description": "Inferred register parameter",
       "line": 10,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "if (in_ECX != 0) {",
       "type": "register_param"
     },
@@ -87,6 +90,7 @@
       "description": "Complex pointer cast",
       "line": 14,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "dest = (void *)((int)dest + 4);",
       "type": "pointer_cast"
     },
@@ -94,6 +98,7 @@
       "description": "Inferred register parameter",
       "line": 15,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "in_ECX = in_ECX - 1;",
       "type": "register_param"
     },
@@ -101,6 +106,7 @@
       "description": "Inferred register parameter",
       "line": 15,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "in_ECX = in_ECX - 1;",
       "type": "register_param"
     },
@@ -108,6 +114,7 @@
       "description": "Inferred register parameter",
       "line": 16,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "} while (in_ECX != 0);",
       "type": "register_param"
     },
@@ -115,6 +122,7 @@
       "description": "Inferred register parameter",
       "line": 17,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "if (in_ECX >> 2 != 0) {",
       "type": "register_param"
     },
@@ -122,6 +130,7 @@
       "description": "Inferred register parameter",
       "line": 18,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "iVar2 = (in_ECX >> 2) - 1;",
       "type": "register_param"
     },
@@ -129,6 +138,7 @@
       "description": "Complex pointer cast",
       "line": 39,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)dest + 4) = replicated_value;",
       "type": "pointer_cast"
     },
@@ -136,6 +146,7 @@
       "description": "Complex pointer cast",
       "line": 40,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)dest + 8) = replicated_value;",
       "type": "pointer_cast"
     },
@@ -143,6 +154,7 @@
       "description": "Complex pointer cast",
       "line": 41,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)dest + 0xc) = replicated_value;",
       "type": "pointer_cast"
     },
@@ -150,6 +162,7 @@
       "description": "Complex pointer cast",
       "line": 42,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "dest = (void *)((int)dest + 0x10);",
       "type": "pointer_cast"
     },
@@ -157,6 +170,7 @@
       "description": "Inferred register parameter",
       "line": 44,
       "match": "in_ECX",
+      "severity": "mild",
       "text": "uVar3 = in_ECX & 3;",
       "type": "register_param"
     },
@@ -164,6 +178,7 @@
       "description": "Complex pointer cast",
       "line": 48,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)dest + 4) = replicated_value;",
       "type": "pointer_cast"
     },
@@ -171,6 +186,7 @@
       "description": "Complex pointer cast",
       "line": 50,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)dest + 8) = replicated_value;",
       "type": "pointer_cast"
     },

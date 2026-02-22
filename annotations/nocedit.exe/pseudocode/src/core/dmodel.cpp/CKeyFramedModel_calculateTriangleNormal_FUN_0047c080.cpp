@@ -9,60 +9,44 @@
 CVector3f * __cdecl core_dmodel_cpp_CKeyFramedModel_calculateTriangleNormal_FUN_0047c080(CKeyFramedModel *this_ptr,CVector3f *output_normal,int frame_index,int poly_index)
 
 {
-  CVector3i **ppCVar1;
-  SMRGLPrimitiveQuad **ppSVar2;
-  SMRGLPrimitiveQuad *pSVar3;
-  CVector3i *pCVar4;
-  CVector3i *pCVar5;
-  CVector3i *pCVar6;
-  CVector3i *pCVar7;
-  CVector3i *pCVar8;
-  CVector3i *pCVar9;
-  CVector3i *pCVar10;
-  CVector3i *pCVar11;
-  CVector3i *pCVar12;
+  CVector3i *pCVar1;
+  SMRGLPrimitiveQuad *pSVar2;
+  CVector3i *pCVar3;
+  int iVar4;
+  float fVar5;
+  float fVar6;
+  float fVar7;
+  float fVar8;
+  float fVar9;
+  float fVar10;
+  float fVar11;
+  int iVar12;
   CVector3i *pCVar13;
-  CVector3i *pCVar14;
-  CVector3i *pCVar15;
-  float fVar16;
-  float fVar17;
-  float fVar18;
-  int iVar19;
-  CVector3i **ppCVar20;
   
-  ppSVar2 = this_ptr->poly_vert_list;
-  iVar19 = frame_index * this_ptr->vertex_count;
-  ppCVar20 = this_ptr->vertex_list;
-  ppCVar1 = ppCVar20 + iVar19 * 3 + (int)ppSVar2[poly_index * 0x12 + 9] * 3;
-  pSVar3 = ppSVar2[poly_index * 0x12 + 6];
-  pCVar4 = *ppCVar1;
-  pCVar5 = ppCVar20[iVar19 * 3 + (int)pSVar3 * 3];
-  pCVar6 = ppCVar1[1];
-  pCVar7 = ppCVar20[iVar19 * 3 + (int)pSVar3 * 3 + 1];
-  pCVar8 = ppCVar1[2];
-  pCVar9 = ppCVar20[iVar19 * 3 + (int)pSVar3 * 3 + 2];
-  ppCVar20 = ppCVar20 + iVar19 * 3 + (int)ppSVar2[poly_index * 0x12 + 0xc] * 3;
-  pCVar10 = *ppCVar1;
-  pCVar11 = *ppCVar20;
-  pCVar12 = ppCVar1[1];
-  pCVar13 = ppCVar20[1];
-  pCVar14 = ppCVar20[2];
-  pCVar15 = ppCVar1[2];
-  fVar16 = (float)((int)pCVar11 - (int)pCVar10) * (float)((int)pCVar8 - (int)pCVar9) -
-           (float)((int)pCVar4 - (int)pCVar5) * (float)((int)pCVar14 - (int)pCVar15);
-  output_normal->y = fVar16;
-  fVar18 = (float)((int)pCVar6 - (int)pCVar7) * (float)((int)pCVar14 - (int)pCVar15) -
-           (float)((int)pCVar13 - (int)pCVar12) * (float)((int)pCVar8 - (int)pCVar9);
-  output_normal->x = fVar18;
-  fVar17 = (float)((int)pCVar4 - (int)pCVar5) * (float)((int)pCVar13 - (int)pCVar12) -
-           (float)((int)pCVar11 - (int)pCVar10) * (float)((int)pCVar6 - (int)pCVar7);
-  output_normal->z = fVar17;
-  fVar16 = SQRT(fVar17 * output_normal->z + fVar16 * output_normal->y + fVar18 * output_normal->x);
-  if (0.0 < fVar16) {
-    fVar16 = 1.0 / fVar16;
-    output_normal->x = output_normal->x * fVar16;
-    output_normal->y = output_normal->y * fVar16;
-    output_normal->z = output_normal->z * fVar16;
+  pSVar2 = this_ptr->poly_vert_list;
+  iVar12 = frame_index * this_ptr->vertex_count;
+  pCVar3 = this_ptr->vertex_list;
+  pCVar1 = pCVar3 + iVar12 + pSVar2[poly_index].vertices[1].vertex_index;
+  iVar4 = pSVar2[poly_index].vertices[0].vertex_index;
+  pCVar13 = pCVar3 + iVar12 + pSVar2[poly_index].vertices[2].vertex_index;
+  fVar5 = (float)(pCVar1->z - pCVar3[iVar12 + iVar4].z);
+  fVar10 = (float)(pCVar13->x - pCVar1->x);
+  fVar8 = (float)(pCVar1->x - pCVar3[iVar12 + iVar4].x);
+  fVar11 = (float)(pCVar13->y - pCVar1->y);
+  fVar9 = (float)(pCVar1->y - pCVar3[iVar12 + iVar4].y);
+  fVar7 = (float)(pCVar13->z - pCVar1->z);
+  fVar6 = fVar10 * fVar5 - fVar8 * fVar7;
+  output_normal->y = fVar6;
+  fVar7 = fVar9 * fVar7 - fVar11 * fVar5;
+  output_normal->x = fVar7;
+  fVar5 = fVar8 * fVar11 - fVar10 * fVar9;
+  output_normal->z = fVar5;
+  fVar5 = SQRT(fVar5 * output_normal->z + fVar6 * output_normal->y + fVar7 * output_normal->x);
+  if (0.0 < fVar5) {
+    fVar5 = 1.0 / fVar5;
+    output_normal->x = output_normal->x * fVar5;
+    output_normal->y = output_normal->y * fVar5;
+    output_normal->z = output_normal->z * fVar5;
     return output_normal;
   }
   output_normal->z = 0.0;

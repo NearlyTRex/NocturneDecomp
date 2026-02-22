@@ -17,6 +17,7 @@
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 36,
     "suspect_count": 13,
     "suspect_types": [
@@ -163,6 +164,7 @@
       "description": "Unresolved stack parameter",
       "line": 10,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "CBoneStructure *in_stack_00000004;",
       "type": "stack_param"
     },
@@ -170,6 +172,7 @@
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "CMatrix3x4f *in_stack_00000008;",
       "type": "stack_param"
     },
@@ -177,6 +180,7 @@
       "description": "Unresolved stack parameter",
       "line": 19,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "if (0 < in_stack_00000004->bone_count) {",
       "type": "stack_param"
     },
@@ -184,6 +188,7 @@
       "description": "Unresolved stack parameter",
       "line": 20,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "matrix_in = &in_stack_00000004->bones[0].world_matrix;",
       "type": "stack_param"
     },
@@ -191,6 +196,7 @@
       "description": "Unresolved stack parameter",
       "line": 24,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "pCVar3 = in_stack_00000008;",
       "type": "stack_param"
     },
@@ -198,6 +204,7 @@
       "description": "Complex pointer cast",
       "line": 27,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -205,6 +212,7 @@
       "description": "Complex pointer cast",
       "line": 28,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -212,6 +220,7 @@
       "description": "Unresolved stack parameter",
       "line": 30,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "core_xform_cpp_clearTranslation_FUN_005f5370(in_stack_00000008);",
       "type": "stack_param"
     },
@@ -219,6 +228,7 @@
       "description": "Unresolved stack parameter",
       "line": 32,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "in_stack_00000008 = in_stack_00000008 + 1;",
       "type": "stack_param"
     },
@@ -226,6 +236,7 @@
       "description": "Unresolved stack parameter",
       "line": 32,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "in_stack_00000008 = in_stack_00000008 + 1;",
       "type": "stack_param"
     },
@@ -233,6 +244,7 @@
       "description": "Unresolved stack parameter",
       "line": 35,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "} while (local_8 < in_stack_00000004->bone_count);",
       "type": "stack_param"
     },
@@ -240,6 +252,7 @@
       "description": "Unresolved stack parameter",
       "line": 37,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "core_skeledit_cpp_CBoneStructure_FUN_0058ac80(in_stack_00000004);",
       "type": "stack_param"
     },

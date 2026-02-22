@@ -107,6 +107,7 @@
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 11,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 70,
     "suspect_count": 5,
     "suspect_types": [
@@ -285,6 +286,7 @@
       "description": "Complex pointer cast",
       "line": 22,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": ",*(uint *)((int)&(options->position).x + 4),",
       "type": "pointer_cast"
     },
@@ -292,6 +294,7 @@
       "description": "Complex pointer cast",
       "line": 24,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&(options->position).y + 4),",
       "type": "pointer_cast"
     },
@@ -299,6 +302,7 @@
       "description": "Complex pointer cast",
       "line": 41,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": ",*(uint *)((int)&(options->velocity).x + 4),",
       "type": "pointer_cast"
     },
@@ -306,6 +310,7 @@
       "description": "Complex pointer cast",
       "line": 43,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&(options->velocity).y + 4),",
       "type": "pointer_cast"
     },
@@ -313,6 +318,7 @@
       "description": "Complex pointer cast",
       "line": 71,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&options->delay_remaining + 4));",
       "type": "pointer_cast"
     }

@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 3,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 82,
     "suspect_count": 5,
     "suspect_types": [
@@ -397,6 +398,7 @@
       "description": "Type propagation did not converge",
       "line": 2,
       "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
     },
@@ -404,6 +406,7 @@
       "description": "Complex pointer cast",
       "line": 69,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -411,6 +414,7 @@
       "description": "Complex pointer cast",
       "line": 70,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -418,6 +422,7 @@
       "description": "Complex pointer cast",
       "line": 82,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -425,6 +430,7 @@
       "description": "Complex pointer cast",
       "line": 83,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "pointer_cast"
     }

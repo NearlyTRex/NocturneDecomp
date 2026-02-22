@@ -23,6 +23,7 @@
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 45,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 140,
     "suspect_count": 13,
     "suspect_types": [
@@ -476,6 +477,7 @@
       "description": "Unresolved stack parameter",
       "line": 20,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
@@ -483,6 +485,7 @@
       "description": "Unresolved stack parameter",
       "line": 32,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "if (*(int *)(in_stack_00000004 + 0x38) != 0) {",
       "type": "stack_param"
     },
@@ -490,6 +493,7 @@
       "description": "Complex pointer cast",
       "line": 52,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar10) =",
       "type": "pointer_cast"
     },
@@ -497,6 +501,7 @@
       "description": "Complex pointer cast",
       "line": 54,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar10) =",
       "type": "pointer_cast"
     },
@@ -504,6 +509,7 @@
       "description": "Complex pointer cast",
       "line": 56,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar10) =",
       "type": "pointer_cast"
     },
@@ -511,6 +517,7 @@
       "description": "Unresolved stack parameter",
       "line": 63,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "uVar9 = *(int *)(in_stack_00000004 + 0x34) - 1;",
       "type": "stack_param"
     },
@@ -518,6 +525,7 @@
       "description": "Undefined global data reference",
       "line": 78,
       "match": "DAT_03f6bbf0",
+      "severity": "mild",
       "text": "pcVar13 = &DAT_03f6bbf0 + iVar7 * 0x50;",
       "type": "undefined_data"
     },
@@ -525,6 +533,7 @@
       "description": "Undefined global data reference",
       "line": 89,
       "match": "DAT_03f6bbf0",
+      "severity": "mild",
       "text": "pcVar13 = &DAT_03f6bbf0 + iVar7 * 0x50;",
       "type": "undefined_data"
     },
@@ -532,6 +541,7 @@
       "description": "Complex pointer cast",
       "line": 112,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar8 + 4) = iVar10;",
       "type": "pointer_cast"
     },
@@ -539,6 +549,7 @@
       "description": "Complex pointer cast",
       "line": 113,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)g_ModelPolygonData[0].uv_u + iVar8 + 4) =",
       "type": "pointer_cast"
     },
@@ -546,6 +557,7 @@
       "description": "Complex pointer cast",
       "line": 119,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)g_ModelPolygonData[0].uv_v + iVar8 + 4) =",
       "type": "pointer_cast"
     },
@@ -553,6 +565,7 @@
       "description": "Unresolved stack parameter",
       "line": 127,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "uVar9 = uVar11 + *(int *)(in_stack_00000004 + 0x34) + -2;",
       "type": "stack_param"
     },
@@ -560,6 +573,7 @@
       "description": "Unresolved stack parameter",
       "line": 133,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "} while (local_34 < *(uint *)(in_stack_00000004 + 0x38));",
       "type": "stack_param"
     }

@@ -17,6 +17,7 @@
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 11,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 128,
     "suspect_count": 5,
     "suspect_types": [
@@ -321,6 +322,7 @@
       "description": "Complex pointer cast",
       "line": 58,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar5 = (uint *)((int)&(this_ptr->sample_points_ptr->position).x + local_24);",
       "type": "pointer_cast"
     },
@@ -328,6 +330,7 @@
       "description": "Complex pointer cast",
       "line": 77,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "piVar2 = (int *)((int)pCVar1->edges_ptr->adjacent_tri_indices + local_28 + -0x28);",
       "type": "pointer_cast"
     },
@@ -335,6 +338,7 @@
       "description": "Complex pointer cast",
       "line": 78,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "pfVar11 = (float *)((int)&(this_ptr->sample_points_ptr->position).x + local_20);",
       "type": "pointer_cast"
     },
@@ -342,6 +346,7 @@
       "description": "Complex pointer cast",
       "line": 107,
       "match": "(CVector3f *)((int)",
+      "severity": "mild",
       "text": "pCVar9 = (CVector3f *)((int)&(this_ptr->sample_points_ptr->position).x + local_2c);",
       "type": "pointer_cast"
     },
@@ -349,6 +354,7 @@
       "description": "Complex pointer cast",
       "line": 110,
       "match": "(CLodFace *)((int)",
+      "severity": "mild",
       "text": "(CLodFace *)((int)pCVar1->tri_data->attribute_indices + iVar7));",
       "type": "pointer_cast"
     }

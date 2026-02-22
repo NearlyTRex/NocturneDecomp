@@ -13,14 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 86,
+    "complexity_score": 101,
     "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 1,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 31,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
-      "decompiler_intrinsic"
+      "decompiler_intrinsic",
+      "sub84_truncation"
     ],
     "total_lines": 118
   },
@@ -40,7 +42,7 @@
     {
       "addr": "005702b0",
       "from_addr": "005704b8",
-      "name": "core_set.cpp_FUN_005702b0",
+      "name": "core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -189,13 +191,23 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 17,
       "match": "SQRT",
+      "severity": "mild",
       "text": "dVar4 = SQRT(dVar3 * dVar3 + dVar2 * dVar2 + dVar1 * dVar1);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 18,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "local_38 = SUB84(dVar4,0);",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 18,
       "match": "SUB84",
+      "severity": "mild",
       "text": "local_38 = SUB84(dVar4,0);",
       "type": "decompiler_intrinsic"
     },
@@ -203,6 +215,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 30,
       "match": "ROUND",
+      "severity": "mild",
       "text": "output_vector->x = (int)ROUND(local_30);",
       "type": "decompiler_intrinsic"
     },
@@ -210,6 +223,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 31,
       "match": "ROUND",
+      "severity": "mild",
       "text": "output_vector->y = (int)ROUND(local_28);",
       "type": "decompiler_intrinsic"
     },
@@ -217,6 +231,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 32,
       "match": "ROUND",
+      "severity": "mild",
       "text": "output_vector->z = (int)ROUND(local_20);",
       "type": "decompiler_intrinsic"
     }

@@ -10,6 +10,7 @@
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 26,
     "suspect_count": 2,
     "suspect_types": [
@@ -111,6 +112,7 @@
       "description": "Complex pointer cast",
       "line": 21,
       "match": "(CPlatform *)((int)",
+      "severity": "mild",
       "text": "pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);",
       "type": "pointer_cast"
     },
@@ -118,6 +120,7 @@
       "description": "Complex pointer cast",
       "line": 26,
       "match": "(CPlatform *)((int)",
+      "severity": "mild",
       "text": "pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);",
       "type": "pointer_cast"
     }

@@ -6,17 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 79,
+    "complexity_score": 82,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 5,
-    "pseudocode_lines": 39,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 42,
     "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 144
+    "total_lines": 147
   },
   "cross_references": [
     {
@@ -216,6 +217,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 17,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(longlong)(int)ROUND(ROUND(morph_t * (float)65535 * (2.0f - morph_t)))",
       "type": "decompiler_intrinsic"
     },
@@ -223,14 +225,16 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 17,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(longlong)(int)ROUND(ROUND(morph_t * (float)65535 * (2.0f - morph_t)))",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 32,
-      "match": "(SMRGLHeaderPrimitive *)((int)",
-      "text": "polygon_info = (SMRGLHeaderPrimitive *)((int)this_ptr->faces + iVar3);",
+      "line": 26,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "iVar1 = *(int *)((int)&(((SMRGLPrimitiveTriangle *)(this_ptr->faces->vertices + -2))->base).",
       "type": "pointer_cast"
     }
   ]

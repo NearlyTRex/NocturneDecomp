@@ -71,6 +71,7 @@
     "cross_reference_count": 1,
     "function_call_count": 33,
     "global_count": 85,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 747,
     "suspect_count": 9,
     "suspect_types": [
@@ -1091,6 +1092,7 @@
       "description": "Complex pointer cast",
       "line": 184,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "uVar2 = *(uint *)((int)&g_CScriptPtr->xref_entries->type + iVar8);",
       "type": "pointer_cast"
     },
@@ -1098,6 +1100,7 @@
       "description": "Complex pointer cast",
       "line": 297,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "uVar2 = *(uint *)((int)&g_CScriptPtr->xref_entries->type + iVar8);",
       "type": "pointer_cast"
     },
@@ -1105,6 +1108,7 @@
       "description": "Complex pointer cast",
       "line": 330,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "uVar2 = *(uint *)((int)&g_CScriptPtr->xref_entries->type + iVar8);",
       "type": "pointer_cast"
     },
@@ -1112,6 +1116,7 @@
       "description": "Complex pointer cast",
       "line": 422,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "iVar5 = *(int *)((int)&g_CScriptPtr->xref_entries->type + iVar8);",
       "type": "pointer_cast"
     },
@@ -1119,6 +1124,7 @@
       "description": "Complex pointer cast",
       "line": 442,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "iVar5 = *(int *)((int)&g_CScriptPtr->xref_entries->type + iVar8);",
       "type": "pointer_cast"
     },
@@ -1126,6 +1132,7 @@
       "description": "Complex pointer cast",
       "line": 613,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "iVar5 = *(int *)((int)&g_CScriptPtr->xref_entries->type + iVar8);",
       "type": "pointer_cast"
     },
@@ -1133,6 +1140,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 630,
       "match": "code",
+      "severity": "moderate",
       "text": "(g_CEditorToolsPtr,\"WARNING! chooseParm - unknown parm type %d (code needs to be updated)\");",
       "type": "unresolved_funcptr"
     },
@@ -1140,6 +1148,7 @@
       "description": "Complex pointer cast",
       "line": 676,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (*(int *)((int)local_a8 + local_14) != 0) {",
       "type": "pointer_cast"
     },
@@ -1147,6 +1156,7 @@
       "description": "Complex pointer cast",
       "line": 730,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "switch(*(uint *)((int)&g_CScriptPtr->xref_entries->type + iVar8)) {",
       "type": "pointer_cast"
     }

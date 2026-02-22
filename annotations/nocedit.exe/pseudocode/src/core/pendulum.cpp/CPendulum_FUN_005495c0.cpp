@@ -14,7 +14,7 @@ void __cdecl core_pendulum_cpp_CPendulum_FUN_005495c0(CPendulum *this_ptr)
   CVector3f *pCVar3;
   CBoundingBox3D *pCVar4;
   CKeyFramedModel *pCVar5;
-  CVector3i **ppCVar6;
+  CVector3i *pCVar6;
   int in_stack_00000008;
   int in_stack_0000000c;
   int in_stack_00000010;
@@ -84,15 +84,15 @@ void __cdecl core_pendulum_cpp_CPendulum_FUN_005495c0(CPendulum *this_ptr)
       pCVar5 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
       fStack_24 = SStack_110.cylinder_radius * SStack_110.cylinder_radius;
       iStack_20 = pCVar5->vertex_count;
-      ppCVar6 = pCVar5->vertex_list;
+      pCVar6 = pCVar5->vertex_list;
       iStack_1c = 0;
       if (0 < iStack_20) {
         pfStack_18 = (float *)(in_stack_00000008 + 0x20);
         pCStack_28 = &(this_ptr->base).orient_matrix;
         while( true ) {
-          CStack_a0.x = (float)(int)*ppCVar6 * 0.00390625f;
-          CStack_a0.y = (float)(int)ppCVar6[1] * 0.00390625f;
-          CStack_a0.z = (float)(int)ppCVar6[2] * 0.00390625f;
+          CStack_a0.x = (float)pCVar6->x * 0.00390625f;
+          CStack_a0.y = (float)pCVar6->y * 0.00390625f;
+          CStack_a0.z = (float)pCVar6->z * 0.00390625f;
           pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                              (pCStack_28,&CStack_64,&CStack_a0);
           if (&CStack_a0 != pCVar3) {
@@ -107,7 +107,7 @@ void __cdecl core_pendulum_cpp_CPendulum_FUN_005495c0(CPendulum *this_ptr)
               (CStack_a0.y <= SStack_110.cylinder_top_y + 1.0)) &&
              (CStack_a0.x * CStack_a0.x + CStack_a0.z * CStack_a0.z <= fStack_24)) break;
           iStack_1c = iStack_1c + 1;
-          ppCVar6 = ppCVar6 + 3;
+          pCVar6 = pCVar6 + 1;
           if (iStack_20 <= iStack_1c) {
             return;
           }

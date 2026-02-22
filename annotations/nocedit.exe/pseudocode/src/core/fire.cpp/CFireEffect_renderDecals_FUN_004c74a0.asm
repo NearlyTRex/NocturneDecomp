@@ -9,10 +9,10 @@
 ; int              Stack[0xc]:4   render_completeness
 ;
 ; XREF[4]:
-;   core_set.cpp_CDemonSet_FUN_0056c1a0 at 0056c5dc
+;   core_set.cpp_CDemonSet_expireDecals_FUN_00571380 at 005713a6
+;   core_set.cpp_CDemonSet_renderDecals_FUN_005713c0 at 005713fe
+;   core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0 at 0056c5dc
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50 at 0056b737
-;   core_set.cpp_FUN_00571380 at 005713a6
-;   core_set.cpp_FUN_005713c0 at 005713fe
 ;
 ; Referenced Globals:
 ;   int g_BulletHoleActiveCount

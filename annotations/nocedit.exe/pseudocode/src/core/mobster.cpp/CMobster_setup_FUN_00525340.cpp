@@ -18,39 +18,39 @@ void __cdecl core_mobster_cpp_CMobster_setup_FUN_00525340(CMobster *this_ptr)
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr_00);
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr_00);
   INT_02f37ec8 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_01,"Bip01 Head");
+                           (this_ptr_01,"Bip01 Head",1);
   INT_02f37ed4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_01,"Bip01 L ForeArm");
+                           (this_ptr_01,"Bip01 L ForeArm",1);
   INT_02f37ed8 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_01,"Bip01 R ForeArm");
+                           (this_ptr_01,"Bip01 R ForeArm",1);
   INT_02f37edc = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_01,"Bip01 L UpperArm");
+                           (this_ptr_01,"Bip01 L UpperArm",1);
   INT_02f37ee0 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_01,"Bip01 R UpperArm");
+                           (this_ptr_01,"Bip01 R UpperArm",1);
   INT_02f37ee4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_01,"Bip01 L Foot");
+                           (this_ptr_01,"Bip01 L Foot",1);
   INT_02f37ee8 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_01,"Bip01 R Foot");
+                           (this_ptr_01,"Bip01 R Foot",1);
   INT_02f37ecc = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_01,"Bip01 L Hand");
+                           (this_ptr_01,"Bip01 L Hand",1);
   INT_02f37ed0 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_01,"Bip01 R Hand");
+                           (this_ptr_01,"Bip01 R Hand",1);
   INT_02f37eec = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_01,"Bip01 Spine");
+                           (this_ptr_01,"Bip01 Spine",1);
   INT_02f37ef0 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_01,"Bip01 Spine1");
+                           (this_ptr_01,"Bip01 Spine1",1);
   INT_02f37ef4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_01,"Bip01 Spine2");
+                           (this_ptr_01,"Bip01 Spine2",1);
   INT_02f37ec8 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_01,"Bip01 Head");
+                           (this_ptr_01,"Bip01 Head",1);
   INT_02f37edc = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_01,"Bip01 L UpperArm");
+                           (this_ptr_01,"Bip01 L UpperArm",1);
   INT_02f37ee0 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_01,"Bip01 R UpperArm");
+                           (this_ptr_01,"Bip01 R UpperArm",1);
   INT_02f37eec = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_01,"Bip01 Spine");
+                           (this_ptr_01,"Bip01 Spine",1);
   INT_02f37ef4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_01,"Bip01 Spine2");
+                           (this_ptr_01,"Bip01 Spine2",1);
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr_00);
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"larm01",1);

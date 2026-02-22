@@ -1629,10 +1629,6 @@
       "type":"struct"
     },
     {
-      "name":"CDemonActorTransformState",
-      "type":"struct"
-    },
-    {
       "name":"CDemonTriangle",
       "type":"struct"
     },
@@ -3917,6 +3913,10 @@
       "type":"struct"
     },
     {
+      "name":"SMorphPoint",
+      "type":"struct"
+    },
+    {
       "name":"CMorphModel",
       "type":"struct"
     },
@@ -4177,6 +4177,22 @@
       "type":"struct"
     },
     {
+      "name":"CBodyPart",
+      "type":"struct"
+    },
+    {
+      "name":"CBodyPart_ptr_1872",
+      "type":"typedef"
+    },
+    {
+      "name":"CBodyPart_ptr_3276",
+      "type":"typedef"
+    },
+    {
+      "name":"CBodyPart_ptr_656",
+      "type":"typedef"
+    },
+    {
       "name":"CBoxActor",
       "type":"struct"
     },
@@ -4203,6 +4219,18 @@
     {
       "name":"CToss",
       "type":"struct"
+    },
+    {
+      "name":"SBoneGuyBox",
+      "type":"struct"
+    },
+    {
+      "name":"CBoneGuy",
+      "type":"struct"
+    },
+    {
+      "name":"CBoneGuy_ptr_48956",
+      "type":"typedef"
     },
     {
       "name":"SScrape_ptr_1020",
@@ -4331,34 +4359,6 @@
     {
       "name":"SInputFace",
       "type":"struct"
-    },
-    {
-      "name":"CBodyPart",
-      "type":"struct"
-    },
-    {
-      "name":"CBodyPart_ptr_1872",
-      "type":"typedef"
-    },
-    {
-      "name":"CBodyPart_ptr_3276",
-      "type":"typedef"
-    },
-    {
-      "name":"CBodyPart_ptr_656",
-      "type":"typedef"
-    },
-    {
-      "name":"SBoneGuyBox",
-      "type":"struct"
-    },
-    {
-      "name":"CBoneGuy",
-      "type":"struct"
-    },
-    {
-      "name":"CBoneGuy_ptr_48956",
-      "type":"typedef"
     },
     {
       "name":"STriangleRef",
@@ -4715,6 +4715,10 @@
     {
       "name":"CCrate_ptr_344",
       "type":"typedef"
+    },
+    {
+      "name":"CDemonActorTransformState",
+      "type":"struct"
     },
     {
       "name":"UPDATE_WINDOW_FUNC",
@@ -6410,6 +6414,10 @@
     },
     {
       "name":"SDamageInfo",
+      "type":"struct"
+    },
+    {
+      "name":"SDisplayListSortEntry",
       "type":"struct"
     },
     {
@@ -24204,7 +24212,7 @@
           "len":4,
           "name":"faces",
           "offset":388,
-          "type":"SInputFace*"
+          "type":"SMRGLPrimitiveTriangle*"
         },
         {
           "len":4,
@@ -28303,7 +28311,7 @@
           "len":12,
           "name":"orientation",
           "offset":12,
-          "type":"CVector3f"
+          "type":"UOrientationVector"
         },
         {
           "len":4,
@@ -30031,7 +30039,7 @@
         },
         {
           "len":4,
-          "name":"sky_type",
+          "name":"sky_brightness",
           "offset":1447500,
           "type":"int"
         },
@@ -35267,13 +35275,13 @@
           "len":4,
           "name":"vertex_normal_list",
           "offset":264,
-          "type":"CVector3i**"
+          "type":"CVector3i*"
         },
         {
           "len":4,
           "name":"vertex_list",
           "offset":268,
-          "type":"CVector3i**"
+          "type":"CVector3i*"
         },
         {
           "comment":"max=2000",
@@ -35286,7 +35294,7 @@
           "len":4,
           "name":"poly_vert_list",
           "offset":276,
-          "type":"SMRGLPrimitiveQuad**"
+          "type":"SMRGLPrimitiveQuad*"
         },
         {
           "len":4,
@@ -37640,7 +37648,7 @@
           "len":4,
           "name":"points",
           "offset":88,
-          "type":"void*"
+          "type":"SMorphPoint*"
         },
         {
           "len":4,
@@ -37652,7 +37660,7 @@
           "len":4,
           "name":"faces",
           "offset":96,
-          "type":"void*"
+          "type":"SMRGLPrimitiveTriangle*"
         },
         {
           "len":4,
@@ -52144,6 +52152,30 @@
       "desc":"",
       "fields":[
         {
+          "len":4,
+          "name":"actor",
+          "offset":0,
+          "type":"CDemonActor*"
+        },
+        {
+          "len":4,
+          "name":"distance_sq",
+          "offset":4,
+          "type":"float"
+        }
+      ],
+      "importable":true,
+      "len":8,
+      "name":"SDisplayListSortEntry",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":2,
           "name":"x0",
           "offset":0,
@@ -53797,6 +53829,30 @@
       "importable":true,
       "len":16,
       "name":"SMorphPart",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"vertex_index",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":12,
+          "name":"position",
+          "offset":4,
+          "type":"CVector3f"
+        }
+      ],
+      "importable":true,
+      "len":16,
+      "name":"SMorphPoint",
       "pack":false,
       "type":"struct"
     },

@@ -21,7 +21,7 @@
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850
-;   core_set.cpp_CDemonSet_FUN_0056d380
+;   core_set.cpp_CDemonSet_setLightingParameters_FUN_0056d380
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
 ;   engine_drender.cpp_CDemonRenderer_depthTest_FUN_0048dc50
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
@@ -107,8 +107,8 @@ section .text
     PUSH ESI                            ; 004c62a2
     MOV EDI,dword ptr [0x006810c8]      ; 004c62a3 | g_CDemonSetPtr
     PUSH EDI                            ; 004c62a9 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_0056d380 ; 004c62aa
-        ;   XREF to: 0056d380 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d380(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_setLightingParameters_FUN_0056d380 ; 004c62aa
+        ;   XREF to: 0056d380 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setLightingParameters_FUN_0056d380(CDemonSet * this_ptr, CVector3f * position, UOrientationVector * orientation, CVector3f * aabb_min, ...)
     ADD ESP,0x18                        ; 004c62af
     PUSH ESI                            ; 004c62b2
     MOV EBP,dword ptr [0x006703ec]      ; 004c62b3 | g_CDemonRendererPtr2
@@ -129,7 +129,7 @@ section .text
     MOV EDX,dword ptr [ESI + 0x54]      ; 004c62d9
     PUSH EDX                            ; 004c62dc
     CALL core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850 ; 004c62dd
-        ;   XREF to: 00477850 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850(CKeyFramedModel * this_ptr, CKeyFramedModelInstance * instance, int frame_index, int render_flags)
+        ;   XREF to: 00477850 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850(CKeyFramedModel * this_ptr, int frame_index, CKeyFramedModelInstance * instance, int render_flags)
     ADD ESP,0x10                        ; 004c62e2
     MOV ECX,dword ptr [0x006703ec]      ; 004c62e5 | g_CDemonRendererPtr2
     PUSH ECX                            ; 004c62eb | g_CDemonRendererInstance

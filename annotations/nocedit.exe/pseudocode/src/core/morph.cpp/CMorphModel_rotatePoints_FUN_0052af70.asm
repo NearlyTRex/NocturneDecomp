@@ -1,10 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_0052af70(CMorphModel *this_ptr)
+; void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_0052af70(CMorphModel *this_ptr,float blend_factor,SMorphPoint *ref_points)
 ;
 ; Parameters:
 ; CMorphModel *    Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   blend_factor
+; SMorphPoint *    Stack[0xc]:4   ref_points
 ; Local Variables:
 ; undefined4       Stack[-0x44]:4  local_44
 ; undefined4       Stack[-0x40]:4  local_40
@@ -32,7 +34,7 @@
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_02f3dbb4
+;   CVector3i[2000] g_MorphVertexBuffer
 ;   undefined4 DAT_02f3dbb8
 ;   undefined4 DAT_02f3dbbc
 ;   undefined4 DAT_02f3dbc0
@@ -42,8 +44,8 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_set.cpp_CDemonSet_FUN_0056e5d0
 ;   core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0
+;   core_set.cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0056e5d0
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0
 ;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
 ;
@@ -76,7 +78,7 @@ section .text
     TEST EDX,EDX                        ; 0052afae
     JLE 0x0052b0ba                      ; 0052afb0
         ;   XREF to: 0052b0ba (CONDITIONAL_JUMP)  ; LAB_0052b0ba
-    MOV ESI,0x2f3dbb4                   ; 0052afb6 | DAT_02f3dbb4
+    MOV ESI,0x2f3dbb4                   ; 0052afb6 | g_MorphVertexBuffer
     XOR EBP,EBP                         ; 0052afbb
     XOR EDI,EDI                         ; 0052afbd
     MOV EAX,dword ptr [ESP + 0x48]      ; 0052afbf
@@ -105,7 +107,7 @@ section .text
     FMUL ST1                            ; 0052b008
     FSTP float ptr [ESP + 0x1c]         ; 0052b00a
     FMUL float ptr [EAX + EBP*0x1 + 0xc] ; 0052b00e
-    MOV EBX,ESI                         ; 0052b012 | DAT_02f3dbb4 | DAT_02f3dbc0
+    MOV EBX,ESI                         ; 0052b012 | g_MorphVertexBuffer | DAT_02f3dbc0
     FLD float ptr [ESP + 0x18]          ; 0052b014
     FADD float ptr [ESP + 0xc]          ; 0052b018
     FLD float ptr [ESP + 0x1c]          ; 0052b01c
@@ -121,7 +123,7 @@ section .text
     FSTP float ptr [ESP + 0x8]          ; 0052b03b
     FLD float ptr [EAX]                 ; 0052b03f
     FMUL float ptr [0x00661b40]         ; 0052b041 | FLOAT_00661b40
-    FISTP dword ptr [EBX]               ; 0052b047 | DAT_02f3dbb4 | DAT_02f3dbc0
+    FISTP dword ptr [EBX]               ; 0052b047 | g_MorphVertexBuffer | DAT_02f3dbc0
     FLD float ptr [EAX + 0x4]           ; 0052b049
     FMUL float ptr [0x00661b40]         ; 0052b04c | FLOAT_00661b40
     FISTP dword ptr [EBX + 0x4]         ; 0052b052 | DAT_02f3dbb8 | DAT_02f3dbc4
@@ -130,7 +132,7 @@ section .text
     FISTP dword ptr [EBX + 0x8]         ; 0052b05e | DAT_02f3dbbc | DAT_02f3dbc8
     MOV EAX,[0x006703ec]                ; 0052b061 | g_CDemonRendererPtr2
     MOV EAX,dword ptr [EAX]             ; 0052b066 | g_CDemonRendererInstance
-    PUSH ESI                            ; 0052b068 | DAT_02f3dbb4 | DAT_02f3dbc0
+    PUSH ESI                            ; 0052b068 | g_MorphVertexBuffer | DAT_02f3dbc0
     ADD EAX,EDI                         ; 0052b069
     PUSH EAX                            ; 0052b06b
     CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 0052b06c
@@ -192,13 +194,13 @@ section .text
     PUSH EDI                            ; 0052b101
     MOV EBP,dword ptr [0x006810c8]      ; 0052b102 | g_CDemonSetPtr
     PUSH EBP                            ; 0052b108 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_0056e5d0 ; 0052b109
-        ;   XREF to: 0056e5d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056e5d0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0056e5d0 ; 0052b109
+        ;   XREF to: 0056e5d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0056e5d0(CDemonSet * this_ptr, int vertex_count)
     ADD ESP,0x8                         ; 0052b10e
     PUSH ESI                            ; 0052b111
     PUSH 0x3                            ; 0052b112
     MOV EAX,dword ptr [ESP + 0x50]      ; 0052b114
-    PUSH 0x2f3dbb4                      ; 0052b118 | DAT_02f3dbb4
+    PUSH 0x2f3dbb4                      ; 0052b118 | g_MorphVertexBuffer
     MOV EDX,dword ptr [EAX + 0x60]      ; 0052b11d
     PUSH EDX                            ; 0052b120
     MOV ECX,dword ptr [EAX + 0x5c]      ; 0052b121
@@ -208,7 +210,7 @@ section .text
     MOV ESI,dword ptr [0x006810c8]      ; 0052b129 | g_CDemonSetPtr
     PUSH ESI                            ; 0052b12f | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0 ; 0052b130
-        ;   XREF to: 0056eac0 (UNCONDITIONAL_CALL)  ; float core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet * this_ptr, int vertex_count, int tri_count, SInputFace * tri_data_ptr, ...)
+        ;   XREF to: 0056eac0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet * this_ptr, int vertex_count, int tri_count, void * face_data, ...)
     ADD ESP,0x1c                        ; 0052b135
     MOV EDI,dword ptr [ESP + 0x24]      ; 0052b138
     PUSH EDI                            ; 0052b13c

@@ -5,6 +5,7 @@
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
+    "max_suspect_severity": "severe",
     "pseudocode_lines": 63,
     "suspect_count": 8,
     "suspect_types": [
@@ -66,6 +67,7 @@
       "description": "Stack frame tracking failed",
       "line": 2,
       "match": "WARNING: Unable to track spacebase fully for stack",
+      "severity": "severe",
       "text": "/* WARNING: Unable to track spacebase fully for stack */",
       "type": "warning_spacebase"
     },
@@ -73,6 +75,7 @@
       "description": "Complex pointer cast",
       "line": 23,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)aiStack_1c + iVar5 + 4) = 0;",
       "type": "pointer_cast"
     },
@@ -80,6 +83,7 @@
       "description": "Complex pointer cast",
       "line": 25,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&uStack_20 + iVar5) = 0x609e9e;",
       "type": "pointer_cast"
     },
@@ -87,6 +91,7 @@
       "description": "Complex pointer cast",
       "line": 27,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "(*(void **)((int)aiStack_1c + iVar5),*(int *)((int)aiStack_1c + iVar5 + 4),",
       "type": "pointer_cast"
     },
@@ -94,6 +99,7 @@
       "description": "Direct stack address reference",
       "line": 30,
       "match": "&stack0x000000e0",
+      "severity": "moderate",
       "text": "*(DWORD *)(&stack0x000000e0 + iVar5) = g_RuntimeBufferSize;",
       "type": "stack_ref"
     },
@@ -101,6 +107,7 @@
       "description": "Complex pointer cast",
       "line": 32,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)aiStack_1c + iVar5) = 0x609eb6;",
       "type": "pointer_cast"
     },
@@ -108,6 +115,7 @@
       "description": "Complex pointer cast",
       "line": 40,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)aiStack_1c + iVar5 + 4) = 0x609ed4;",
       "type": "pointer_cast"
     },

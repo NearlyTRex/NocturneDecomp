@@ -5,6 +5,7 @@
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 31,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 97,
     "suspect_count": 12,
     "suspect_types": [
@@ -339,6 +340,7 @@
       "description": "Unaffected register variable",
       "line": 12,
       "match": "unaff_EBP",
+      "severity": "moderate",
       "text": "void *unaff_EBP;",
       "type": "unaffected_reg"
     },
@@ -346,6 +348,7 @@
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
@@ -353,6 +356,7 @@
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "HMODULE in_stack_0000000c;",
       "type": "stack_param"
     },
@@ -360,6 +364,7 @@
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "g_EmergencyExitFlag = in_stack_00000004;",
       "type": "stack_param"
     },
@@ -367,6 +372,7 @@
       "description": "Unaffected register variable",
       "line": 17,
       "match": "unaff_EBP",
+      "severity": "moderate",
       "text": "g_CurrentThreadTlsBlock = crt_startup_cpp_GetOrCreateThreadData_FUN_0060a23c(unaff_EBP);",
       "type": "unaffected_reg"
     },
@@ -374,6 +380,7 @@
       "description": "Unresolved stack parameter",
       "line": 19,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "if (in_stack_00000004 == 0) {",
       "type": "stack_param"
     },
@@ -381,6 +388,7 @@
       "description": "Complex pointer cast",
       "line": 83,
       "match": "(char *)((int)",
+      "severity": "mild",
       "text": "(*(WCHAR *)pcVar5 != L'\\0')); pcVar5 = (char *)((int)pcVar5 + 2)) {",
       "type": "pointer_cast"
     },
@@ -388,6 +396,7 @@
       "description": "Complex pointer cast",
       "line": 87,
       "match": "(char *)((int)",
+      "severity": "mild",
       "text": "pcVar5 = (char *)((int)pcVar5 + 2);",
       "type": "pointer_cast"
     },
@@ -395,6 +404,7 @@
       "description": "Unresolved stack parameter",
       "line": 91,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "if (in_stack_00000004 != 0) {",
       "type": "stack_param"
     },
@@ -402,6 +412,7 @@
       "description": "Unresolved stack parameter",
       "line": 92,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "(*g_GetModuleFileNameAFunc)(in_stack_0000000c,g_DllFileNameBuffer_A,0x104);",
       "type": "stack_param"
     },
@@ -409,6 +420,7 @@
       "description": "Unresolved stack parameter",
       "line": 95,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "(in_stack_0000000c,g_DllFileNameBuffer_W,0x208);",
       "type": "stack_param"
     },

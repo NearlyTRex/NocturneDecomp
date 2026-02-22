@@ -10,6 +10,7 @@
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 4,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 35,
     "suspect_count": 13,
     "suspect_types": [
@@ -206,6 +207,7 @@
       "description": "Unresolved stack parameter",
       "line": 7,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "CLocation *in_stack_00000008;",
       "type": "stack_param"
     },
@@ -213,6 +215,7 @@
       "description": "Unresolved stack parameter",
       "line": 8,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
@@ -220,6 +223,7 @@
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "local_24 = *(float *)(this_ptr->base).base.actor_name - (in_stack_00000008->position).x;",
       "type": "stack_param"
     },
@@ -227,6 +231,7 @@
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "local_20 = *(float *)((this_ptr->base).base.actor_name + 4) - (in_stack_00000008->position).y;",
       "type": "stack_param"
     },
@@ -234,6 +239,7 @@
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "local_1c = *(float *)((this_ptr->base).base.actor_name + 8) - (in_stack_00000008->position).z;",
       "type": "stack_param"
     },
@@ -241,6 +247,7 @@
       "description": "Unresolved stack parameter",
       "line": 18,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "if (in_stack_0000000c == 0) {",
       "type": "stack_param"
     },
@@ -248,6 +255,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 19,
       "match": "ABS",
+      "severity": "mild",
       "text": "if ((ABS(local_20) <= (float)10) && (ABS(local_24) <= (float)30)) {",
       "type": "decompiler_intrinsic"
     },
@@ -255,6 +263,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 19,
       "match": "ABS",
+      "severity": "mild",
       "text": "if ((ABS(local_20) <= (float)10) && (ABS(local_24) <= (float)30)) {",
       "type": "decompiler_intrinsic"
     },
@@ -262,6 +271,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 20,
       "match": "ABS",
+      "severity": "mild",
       "text": "if ((float)30 < ABS(local_1c)) {",
       "type": "decompiler_intrinsic"
     },
@@ -269,6 +279,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 26,
       "match": "ABS",
+      "severity": "mild",
       "text": "else if (((ABS(local_20) <= (float)8) && (ABS(local_24) <= (float)25))",
       "type": "decompiler_intrinsic"
     },
@@ -276,6 +287,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 26,
       "match": "ABS",
+      "severity": "mild",
       "text": "else if (((ABS(local_20) <= (float)8) && (ABS(local_24) <= (float)25))",
       "type": "decompiler_intrinsic"
     },
@@ -283,6 +295,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 27,
       "match": "ABS",
+      "severity": "mild",
       "text": "&& (ABS(local_1c) <= (float)25)) {",
       "type": "decompiler_intrinsic"
     },
@@ -290,6 +303,7 @@
       "description": "Unresolved stack parameter",
       "line": 32,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "this_ptr_00 = core_path_cpp_FUN_00548500(in_stack_00000008);",
       "type": "stack_param"
     }

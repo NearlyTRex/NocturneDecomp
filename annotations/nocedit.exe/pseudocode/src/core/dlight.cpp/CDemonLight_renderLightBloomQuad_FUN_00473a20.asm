@@ -54,7 +54,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_set.cpp_CDemonSet_FUN_0056c1a0 at 0056c8a3
+;   core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0 at 0056c8a3
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0061f14b = 0.00390625

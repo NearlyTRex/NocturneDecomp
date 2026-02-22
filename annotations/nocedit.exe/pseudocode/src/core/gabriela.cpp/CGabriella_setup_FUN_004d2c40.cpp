@@ -23,39 +23,39 @@ void __cdecl core_gabriela_cpp_CGabriella_setup_FUN_004d2c40(CGabriella *this_pt
              &(this_ptr->base).base.base.orient.vec,this_ptr_00);
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr_00);
   INT_02d7b848 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_01,"Bip01 head");
+                           (this_ptr_01,"Bip01 head",1);
   INT_02d7b84c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_01,"Bip01 L Clavicle");
+                           (this_ptr_01,"Bip01 L Clavicle",1);
   INT_02d7b850 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_01,"Bip01 R Clavicle");
+                           (this_ptr_01,"Bip01 R Clavicle",1);
   INT_02d7b854 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_01,"Bip01 L UpperArm");
+                           (this_ptr_01,"Bip01 L UpperArm",1);
   INT_02d7b858 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_01,"Bip01 R UpperArm");
+                           (this_ptr_01,"Bip01 R UpperArm",1);
   INT_02d7b85c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_01,"Bip01 L ForeArm");
+                           (this_ptr_01,"Bip01 L ForeArm",1);
   INT_02d7b860 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_01,"Bip01 R ForeArm");
+                           (this_ptr_01,"Bip01 R ForeArm",1);
   INT_02d7b864 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_01,"Bip01 L Foot");
+                           (this_ptr_01,"Bip01 L Foot",1);
   INT_02d7b868 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_01,"Bip01 R Foot");
+                           (this_ptr_01,"Bip01 R Foot",1);
   INT_02d7b86c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_01,"Bip01 L Thigh");
+                           (this_ptr_01,"Bip01 L Thigh",1);
   INT_02d7b870 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_01,"Bip01 R Thigh");
+                           (this_ptr_01,"Bip01 R Thigh",1);
   INT_02d7b874 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_01,"Bip01 L Calf");
+                           (this_ptr_01,"Bip01 L Calf",1);
   INT_02d7b878 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_01,"Bip01 R Calf");
+                           (this_ptr_01,"Bip01 R Calf",1);
   INT_02d7b888 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_01,"Bip01 L Hand");
+                           (this_ptr_01,"Bip01 L Hand",1);
   INT_02d7b88c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_01,"Bip01 R Hand");
+                           (this_ptr_01,"Bip01 R Hand",1);
   INT_02d7b890 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_01,"Bip01 Spine2");
+                           (this_ptr_01,"Bip01 Spine2",1);
   INT_02d7b894 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
-                           (this_ptr_01,"Bip01 Spine");
+                           (this_ptr_01,"Bip01 Spine",1);
   pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                      (&this_ptr_00->motion_controller);
   INT_02d7b87c = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(pCVar1);

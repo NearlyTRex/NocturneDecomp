@@ -121,15 +121,17 @@
   },
   "complexity": {
     "assembly_lines": 620,
-    "complexity_score": 2460,
+    "complexity_score": 2475,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 335,
-    "suspect_count": 211,
+    "suspect_count": 212,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
+      "sub84_truncation",
       "unknown_field"
     ],
     "total_lines": 955
@@ -1012,9 +1014,18 @@
   },
   "suspects": [
     {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 113,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "p3 = SUB84(dVar3,0);",
+      "type": "sub84_truncation"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 113,
       "match": "SUB84",
+      "severity": "mild",
       "text": "p3 = SUB84(dVar3,0);",
       "type": "decompiler_intrinsic"
     },
@@ -1022,6 +1033,7 @@
       "description": "Unknown/mangled field access",
       "line": 125,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_1a8.x._0_4_ = *(uint *)&pCVar2[iVar1].position.x;",
       "type": "unknown_field"
     },
@@ -1029,6 +1041,7 @@
       "description": "Complex pointer cast",
       "line": 126,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_1a8.x._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.x + 4);",
       "type": "pointer_cast"
     },
@@ -1036,6 +1049,7 @@
       "description": "Unknown/mangled field access",
       "line": 126,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_1a8.x._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.x + 4);",
       "type": "unknown_field"
     },
@@ -1043,6 +1057,7 @@
       "description": "Unknown/mangled field access",
       "line": 127,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_1a8.y._0_4_ = *(uint *)&pCVar2[iVar1].position.y;",
       "type": "unknown_field"
     },
@@ -1050,6 +1065,7 @@
       "description": "Complex pointer cast",
       "line": 128,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_1a8.y._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.y + 4);",
       "type": "pointer_cast"
     },
@@ -1057,6 +1073,7 @@
       "description": "Unknown/mangled field access",
       "line": 128,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_1a8.y._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.y + 4);",
       "type": "unknown_field"
     },
@@ -1064,6 +1081,7 @@
       "description": "Unknown/mangled field access",
       "line": 130,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_178.x._0_4_ = *(uint *)&pCVar2[iVar1].position.x;",
       "type": "unknown_field"
     },
@@ -1071,6 +1089,7 @@
       "description": "Complex pointer cast",
       "line": 131,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_178.x._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.x + 4);",
       "type": "pointer_cast"
     },
@@ -1078,6 +1097,7 @@
       "description": "Unknown/mangled field access",
       "line": 131,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_178.x._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.x + 4);",
       "type": "unknown_field"
     },
@@ -1085,6 +1105,7 @@
       "description": "Unknown/mangled field access",
       "line": 132,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_178.y._0_4_ = *(uint *)&pCVar2[iVar1].position.y;",
       "type": "unknown_field"
     },
@@ -1092,6 +1113,7 @@
       "description": "Complex pointer cast",
       "line": 133,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_178.y._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.y + 4);",
       "type": "pointer_cast"
     },
@@ -1099,6 +1121,7 @@
       "description": "Unknown/mangled field access",
       "line": 133,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_178.y._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.y + 4);",
       "type": "unknown_field"
     },
@@ -1106,6 +1129,7 @@
       "description": "Unknown/mangled field access",
       "line": 135,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_198.x._0_4_ = *(uint *)&pCVar2[iVar1].position.x;",
       "type": "unknown_field"
     },
@@ -1113,6 +1137,7 @@
       "description": "Complex pointer cast",
       "line": 136,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_198.x._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.x + 4);",
       "type": "pointer_cast"
     },
@@ -1120,6 +1145,7 @@
       "description": "Unknown/mangled field access",
       "line": 136,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_198.x._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.x + 4);",
       "type": "unknown_field"
     },
@@ -1127,6 +1153,7 @@
       "description": "Unknown/mangled field access",
       "line": 137,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_198.y._0_4_ = *(uint *)&pCVar2[iVar1].position.y;",
       "type": "unknown_field"
     },
@@ -1134,6 +1161,7 @@
       "description": "Complex pointer cast",
       "line": 138,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_198.y._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.y + 4);",
       "type": "pointer_cast"
     },
@@ -1141,6 +1169,7 @@
       "description": "Unknown/mangled field access",
       "line": 138,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_198.y._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.y + 4);",
       "type": "unknown_field"
     },
@@ -1148,6 +1177,7 @@
       "description": "Unknown/mangled field access",
       "line": 139,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_138 = local_1a8.x._0_4_;",
       "type": "unknown_field"
     },
@@ -1155,6 +1185,7 @@
       "description": "Unknown/mangled field access",
       "line": 140,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_134 = local_1a8.x._4_4_;",
       "type": "unknown_field"
     },
@@ -1162,6 +1193,7 @@
       "description": "Unknown/mangled field access",
       "line": 141,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_118 = local_178.x._0_4_;",
       "type": "unknown_field"
     },
@@ -1169,6 +1201,7 @@
       "description": "Unknown/mangled field access",
       "line": 142,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_114 = local_178.x._4_4_;",
       "type": "unknown_field"
     },
@@ -1176,6 +1209,7 @@
       "description": "Unknown/mangled field access",
       "line": 143,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_b0 = local_178.y._0_4_;",
       "type": "unknown_field"
     },
@@ -1183,6 +1217,7 @@
       "description": "Unknown/mangled field access",
       "line": 144,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_ac = local_178.y._4_4_;",
       "type": "unknown_field"
     },
@@ -1190,6 +1225,7 @@
       "description": "Unknown/mangled field access",
       "line": 145,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_60 = local_1a8.y._0_4_;",
       "type": "unknown_field"
     },
@@ -1197,6 +1233,7 @@
       "description": "Unknown/mangled field access",
       "line": 146,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_5c = local_1a8.y._4_4_;",
       "type": "unknown_field"
     },
@@ -1204,6 +1241,7 @@
       "description": "Unknown/mangled field access",
       "line": 147,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_38 = local_198.y._0_4_;",
       "type": "unknown_field"
     },
@@ -1211,6 +1249,7 @@
       "description": "Unknown/mangled field access",
       "line": 148,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_34 = local_198.y._4_4_;",
       "type": "unknown_field"
     },
@@ -1218,6 +1257,7 @@
       "description": "Unknown/mangled field access",
       "line": 149,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_20 = local_198.x._0_4_;",
       "type": "unknown_field"
     },
@@ -1225,6 +1265,7 @@
       "description": "Unknown/mangled field access",
       "line": 150,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_1c = local_198.x._4_4_;",
       "type": "unknown_field"
     },
@@ -1232,6 +1273,7 @@
       "description": "Unknown/mangled field access",
       "line": 154,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_198.x._0_4_ = *(uint *)&pCVar2[iVar1].position.x;",
       "type": "unknown_field"
     },
@@ -1239,6 +1281,7 @@
       "description": "Complex pointer cast",
       "line": 155,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_198.x._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.x + 4);",
       "type": "pointer_cast"
     },
@@ -1246,6 +1289,7 @@
       "description": "Unknown/mangled field access",
       "line": 155,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_198.x._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.x + 4);",
       "type": "unknown_field"
     },
@@ -1253,6 +1297,7 @@
       "description": "Unknown/mangled field access",
       "line": 156,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_198.y._0_4_ = *(uint *)&pCVar2[iVar1].position.y;",
       "type": "unknown_field"
     },
@@ -1260,6 +1305,7 @@
       "description": "Complex pointer cast",
       "line": 157,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_198.y._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.y + 4);",
       "type": "pointer_cast"
     },
@@ -1267,6 +1313,7 @@
       "description": "Unknown/mangled field access",
       "line": 157,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_198.y._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.y + 4);",
       "type": "unknown_field"
     },
@@ -1274,6 +1321,7 @@
       "description": "Unknown/mangled field access",
       "line": 159,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_178.x._0_4_ = *(uint *)&pCVar2[iVar1].position.x;",
       "type": "unknown_field"
     },
@@ -1281,6 +1329,7 @@
       "description": "Complex pointer cast",
       "line": 160,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_178.x._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.x + 4);",
       "type": "pointer_cast"
     },
@@ -1288,6 +1337,7 @@
       "description": "Unknown/mangled field access",
       "line": 160,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_178.x._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.x + 4);",
       "type": "unknown_field"
     },
@@ -1295,6 +1345,7 @@
       "description": "Unknown/mangled field access",
       "line": 161,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_178.y._0_4_ = *(uint *)&pCVar2[iVar1].position.y;",
       "type": "unknown_field"
     },
@@ -1302,6 +1353,7 @@
       "description": "Complex pointer cast",
       "line": 162,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_178.y._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.y + 4);",
       "type": "pointer_cast"
     },
@@ -1309,6 +1361,7 @@
       "description": "Unknown/mangled field access",
       "line": 162,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_178.y._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.y + 4);",
       "type": "unknown_field"
     },
@@ -1316,6 +1369,7 @@
       "description": "Unknown/mangled field access",
       "line": 164,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_1a8.x._0_4_ = *(uint *)&(pCVar2->position).x;",
       "type": "unknown_field"
     },
@@ -1323,6 +1377,7 @@
       "description": "Complex pointer cast",
       "line": 165,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_1a8.x._4_4_ = *(uint *)((int)&(pCVar2->position).x + 4);",
       "type": "pointer_cast"
     },
@@ -1330,6 +1385,7 @@
       "description": "Unknown/mangled field access",
       "line": 165,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_1a8.x._4_4_ = *(uint *)((int)&(pCVar2->position).x + 4);",
       "type": "unknown_field"
     },
@@ -1337,6 +1393,7 @@
       "description": "Unknown/mangled field access",
       "line": 166,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_1a8.y._0_4_ = *(uint *)&(pCVar2->position).y;",
       "type": "unknown_field"
     },
@@ -1344,6 +1401,7 @@
       "description": "Complex pointer cast",
       "line": 167,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_1a8.y._4_4_ = *(uint *)((int)&(pCVar2->position).y + 4);",
       "type": "pointer_cast"
     },
@@ -1351,6 +1409,7 @@
       "description": "Unknown/mangled field access",
       "line": 167,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_1a8.y._4_4_ = *(uint *)((int)&(pCVar2->position).y + 4);",
       "type": "unknown_field"
     },
@@ -1358,6 +1417,7 @@
       "description": "Unknown/mangled field access",
       "line": 168,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_160 = local_178.x._0_4_;",
       "type": "unknown_field"
     },
@@ -1365,6 +1425,7 @@
       "description": "Unknown/mangled field access",
       "line": 169,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_15c = local_178.x._4_4_;",
       "type": "unknown_field"
     },
@@ -1372,6 +1433,7 @@
       "description": "Unknown/mangled field access",
       "line": 170,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_158 = local_1a8.x._0_4_;",
       "type": "unknown_field"
     },
@@ -1379,6 +1441,7 @@
       "description": "Unknown/mangled field access",
       "line": 171,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_154 = local_1a8.x._4_4_;",
       "type": "unknown_field"
     },
@@ -1386,6 +1449,7 @@
       "description": "Unknown/mangled field access",
       "line": 172,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_b8 = local_198.y._0_4_;",
       "type": "unknown_field"
     },
@@ -1393,6 +1457,7 @@
       "description": "Unknown/mangled field access",
       "line": 173,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_b4 = local_198.y._4_4_;",
       "type": "unknown_field"
     },
@@ -1400,6 +1465,7 @@
       "description": "Unknown/mangled field access",
       "line": 174,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_a0 = local_178.y._0_4_;",
       "type": "unknown_field"
     },
@@ -1407,6 +1473,7 @@
       "description": "Unknown/mangled field access",
       "line": 175,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_9c = local_178.y._4_4_;",
       "type": "unknown_field"
     },
@@ -1414,6 +1481,7 @@
       "description": "Unknown/mangled field access",
       "line": 176,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_80 = local_1a8.y._0_4_;",
       "type": "unknown_field"
     },
@@ -1421,6 +1489,7 @@
       "description": "Unknown/mangled field access",
       "line": 177,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_7c = local_1a8.y._4_4_;",
       "type": "unknown_field"
     },
@@ -1428,6 +1497,7 @@
       "description": "Unknown/mangled field access",
       "line": 178,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_28 = local_198.x._0_4_;",
       "type": "unknown_field"
     },
@@ -1435,6 +1505,7 @@
       "description": "Unknown/mangled field access",
       "line": 179,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_24 = local_198.x._4_4_;",
       "type": "unknown_field"
     },
@@ -1442,6 +1513,7 @@
       "description": "Unknown/mangled field access",
       "line": 181,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_188.x._0_4_ = *(uint *)&point->x;",
       "type": "unknown_field"
     },
@@ -1449,6 +1521,7 @@
       "description": "Complex pointer cast",
       "line": 182,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_188.x._4_4_ = *(uint *)((int)&point->x + 4);",
       "type": "pointer_cast"
     },
@@ -1456,6 +1529,7 @@
       "description": "Unknown/mangled field access",
       "line": 182,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_188.x._4_4_ = *(uint *)((int)&point->x + 4);",
       "type": "unknown_field"
     },
@@ -1463,6 +1537,7 @@
       "description": "Unknown/mangled field access",
       "line": 183,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_188.y._0_4_ = *(uint *)&point->y;",
       "type": "unknown_field"
     },
@@ -1470,6 +1545,7 @@
       "description": "Complex pointer cast",
       "line": 184,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_188.y._4_4_ = *(uint *)((int)&point->y + 4);",
       "type": "pointer_cast"
     },
@@ -1477,6 +1553,7 @@
       "description": "Unknown/mangled field access",
       "line": 184,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_188.y._4_4_ = *(uint *)((int)&point->y + 4);",
       "type": "unknown_field"
     },
@@ -1484,6 +1561,7 @@
       "description": "Unknown/mangled field access",
       "line": 185,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_e0 = local_188.y._0_4_;",
       "type": "unknown_field"
     },
@@ -1491,6 +1569,7 @@
       "description": "Unknown/mangled field access",
       "line": 186,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_dc = local_188.y._4_4_;",
       "type": "unknown_field"
     },
@@ -1498,6 +1577,7 @@
       "description": "Unknown/mangled field access",
       "line": 187,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_88 = local_188.x._0_4_;",
       "type": "unknown_field"
     },
@@ -1505,6 +1585,7 @@
       "description": "Unknown/mangled field access",
       "line": 188,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_84 = local_188.x._4_4_;",
       "type": "unknown_field"
     },
@@ -1512,6 +1593,7 @@
       "description": "Unknown/mangled field access",
       "line": 193,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_1a8.x._0_4_ = *(uint *)&pCVar2[iVar1].position.x;",
       "type": "unknown_field"
     },
@@ -1519,6 +1601,7 @@
       "description": "Complex pointer cast",
       "line": 194,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_1a8.x._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.x + 4);",
       "type": "pointer_cast"
     },
@@ -1526,6 +1609,7 @@
       "description": "Unknown/mangled field access",
       "line": 194,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_1a8.x._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.x + 4);",
       "type": "unknown_field"
     },
@@ -1533,6 +1617,7 @@
       "description": "Unknown/mangled field access",
       "line": 195,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_1a8.y._0_4_ = *(uint *)&pCVar2[iVar1].position.z;",
       "type": "unknown_field"
     },
@@ -1540,6 +1625,7 @@
       "description": "Complex pointer cast",
       "line": 196,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_1a8.y._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.z + 4);",
       "type": "pointer_cast"
     },
@@ -1547,6 +1633,7 @@
       "description": "Unknown/mangled field access",
       "line": 196,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_1a8.y._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.z + 4);",
       "type": "unknown_field"
     },
@@ -1554,6 +1641,7 @@
       "description": "Unknown/mangled field access",
       "line": 198,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_178.x._0_4_ = *(uint *)&pCVar2[iVar1].position.x;",
       "type": "unknown_field"
     },
@@ -1561,6 +1649,7 @@
       "description": "Complex pointer cast",
       "line": 199,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_178.x._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.x + 4);",
       "type": "pointer_cast"
     },
@@ -1568,6 +1657,7 @@
       "description": "Unknown/mangled field access",
       "line": 199,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_178.x._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.x + 4);",
       "type": "unknown_field"
     },
@@ -1575,6 +1665,7 @@
       "description": "Unknown/mangled field access",
       "line": 200,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_178.y._0_4_ = *(uint *)&pCVar2[iVar1].position.z;",
       "type": "unknown_field"
     },
@@ -1582,6 +1673,7 @@
       "description": "Complex pointer cast",
       "line": 201,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_178.y._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.z + 4);",
       "type": "pointer_cast"
     },
@@ -1589,6 +1681,7 @@
       "description": "Unknown/mangled field access",
       "line": 201,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_178.y._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.z + 4);",
       "type": "unknown_field"
     },
@@ -1596,6 +1689,7 @@
       "description": "Unknown/mangled field access",
       "line": 203,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_198.x._0_4_ = *(uint *)&(pCVar2->position).x;",
       "type": "unknown_field"
     },
@@ -1603,6 +1697,7 @@
       "description": "Complex pointer cast",
       "line": 204,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_198.x._4_4_ = *(uint *)((int)&(pCVar2->position).x + 4);",
       "type": "pointer_cast"
     },
@@ -1610,6 +1705,7 @@
       "description": "Unknown/mangled field access",
       "line": 204,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_198.x._4_4_ = *(uint *)((int)&(pCVar2->position).x + 4);",
       "type": "unknown_field"
     },
@@ -1617,6 +1713,7 @@
       "description": "Unknown/mangled field access",
       "line": 205,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_198.y._0_4_ = *(uint *)&(pCVar2->position).z;",
       "type": "unknown_field"
     },
@@ -1624,6 +1721,7 @@
       "description": "Complex pointer cast",
       "line": 206,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_198.y._4_4_ = *(uint *)((int)&(pCVar2->position).z + 4);",
       "type": "pointer_cast"
     },
@@ -1631,6 +1729,7 @@
       "description": "Unknown/mangled field access",
       "line": 206,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_198.y._4_4_ = *(uint *)((int)&(pCVar2->position).z + 4);",
       "type": "unknown_field"
     },
@@ -1638,6 +1737,7 @@
       "description": "Unknown/mangled field access",
       "line": 207,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_108 = local_178.x._0_4_;",
       "type": "unknown_field"
     },
@@ -1645,6 +1745,7 @@
       "description": "Unknown/mangled field access",
       "line": 208,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_104 = local_178.x._4_4_;",
       "type": "unknown_field"
     },
@@ -1652,6 +1753,7 @@
       "description": "Unknown/mangled field access",
       "line": 209,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_98 = local_178.y._0_4_;",
       "type": "unknown_field"
     },
@@ -1659,6 +1761,7 @@
       "description": "Unknown/mangled field access",
       "line": 210,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_94 = local_178.y._4_4_;",
       "type": "unknown_field"
     },
@@ -1666,6 +1769,7 @@
       "description": "Unknown/mangled field access",
       "line": 211,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_78 = local_198.y._0_4_;",
       "type": "unknown_field"
     },
@@ -1673,6 +1777,7 @@
       "description": "Unknown/mangled field access",
       "line": 212,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_74 = local_198.y._4_4_;",
       "type": "unknown_field"
     },
@@ -1680,6 +1785,7 @@
       "description": "Unknown/mangled field access",
       "line": 213,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_68 = local_1a8.y._0_4_;",
       "type": "unknown_field"
     },
@@ -1687,6 +1793,7 @@
       "description": "Unknown/mangled field access",
       "line": 214,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_64 = local_1a8.y._4_4_;",
       "type": "unknown_field"
     },
@@ -1694,6 +1801,7 @@
       "description": "Unknown/mangled field access",
       "line": 215,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_58 = local_1a8.x._0_4_;",
       "type": "unknown_field"
     },
@@ -1701,6 +1809,7 @@
       "description": "Unknown/mangled field access",
       "line": 216,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_54 = local_1a8.x._4_4_;",
       "type": "unknown_field"
     },
@@ -1708,6 +1817,7 @@
       "description": "Unknown/mangled field access",
       "line": 217,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_40 = local_198.x._0_4_;",
       "type": "unknown_field"
     },
@@ -1715,6 +1825,7 @@
       "description": "Unknown/mangled field access",
       "line": 218,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_3c = local_198.x._4_4_;",
       "type": "unknown_field"
     },
@@ -1722,6 +1833,7 @@
       "description": "Unknown/mangled field access",
       "line": 222,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_198.x._0_4_ = *(uint *)&pCVar2[iVar1].position.x;",
       "type": "unknown_field"
     },
@@ -1729,6 +1841,7 @@
       "description": "Complex pointer cast",
       "line": 223,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_198.x._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.x + 4);",
       "type": "pointer_cast"
     },
@@ -1736,6 +1849,7 @@
       "description": "Unknown/mangled field access",
       "line": 223,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_198.x._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.x + 4);",
       "type": "unknown_field"
     },
@@ -1743,6 +1857,7 @@
       "description": "Unknown/mangled field access",
       "line": 224,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_198.y._0_4_ = *(uint *)&pCVar2[iVar1].position.z;",
       "type": "unknown_field"
     },
@@ -1750,6 +1865,7 @@
       "description": "Complex pointer cast",
       "line": 225,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_198.y._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.z + 4);",
       "type": "pointer_cast"
     },
@@ -1757,6 +1873,7 @@
       "description": "Unknown/mangled field access",
       "line": 225,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_198.y._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.z + 4);",
       "type": "unknown_field"
     },
@@ -1764,6 +1881,7 @@
       "description": "Unknown/mangled field access",
       "line": 227,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_178.x._0_4_ = *(uint *)&pCVar2[iVar1].position.x;",
       "type": "unknown_field"
     },
@@ -1771,6 +1889,7 @@
       "description": "Complex pointer cast",
       "line": 228,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_178.x._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.x + 4);",
       "type": "pointer_cast"
     },
@@ -1778,6 +1897,7 @@
       "description": "Unknown/mangled field access",
       "line": 228,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_178.x._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.x + 4);",
       "type": "unknown_field"
     },
@@ -1785,6 +1905,7 @@
       "description": "Unknown/mangled field access",
       "line": 229,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_178.y._0_4_ = *(uint *)&pCVar2[iVar1].position.z;",
       "type": "unknown_field"
     },
@@ -1792,6 +1913,7 @@
       "description": "Complex pointer cast",
       "line": 230,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_178.y._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.z + 4);",
       "type": "pointer_cast"
     },
@@ -1799,6 +1921,7 @@
       "description": "Unknown/mangled field access",
       "line": 230,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_178.y._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.z + 4);",
       "type": "unknown_field"
     },
@@ -1806,6 +1929,7 @@
       "description": "Unknown/mangled field access",
       "line": 232,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_1a8.x._0_4_ = *(uint *)&(pCVar2->position).x;",
       "type": "unknown_field"
     },
@@ -1813,6 +1937,7 @@
       "description": "Complex pointer cast",
       "line": 233,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_1a8.x._4_4_ = *(uint *)((int)&(pCVar2->position).x + 4);",
       "type": "pointer_cast"
     },
@@ -1820,6 +1945,7 @@
       "description": "Unknown/mangled field access",
       "line": 233,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_1a8.x._4_4_ = *(uint *)((int)&(pCVar2->position).x + 4);",
       "type": "unknown_field"
     },
@@ -1827,6 +1953,7 @@
       "description": "Unknown/mangled field access",
       "line": 234,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_1a8.y._0_4_ = *(uint *)&(pCVar2->position).z;",
       "type": "unknown_field"
     },
@@ -1834,6 +1961,7 @@
       "description": "Complex pointer cast",
       "line": 235,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_1a8.y._4_4_ = *(uint *)((int)&(pCVar2->position).z + 4);",
       "type": "pointer_cast"
     },
@@ -1841,6 +1969,7 @@
       "description": "Unknown/mangled field access",
       "line": 235,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_1a8.y._4_4_ = *(uint *)((int)&(pCVar2->position).z + 4);",
       "type": "unknown_field"
     },
@@ -1848,6 +1977,7 @@
       "description": "Unknown/mangled field access",
       "line": 236,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_168 = local_198.x._0_4_;",
       "type": "unknown_field"
     },
@@ -1855,6 +1985,7 @@
       "description": "Unknown/mangled field access",
       "line": 237,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_164 = local_198.x._4_4_;",
       "type": "unknown_field"
     },
@@ -1862,6 +1993,7 @@
       "description": "Unknown/mangled field access",
       "line": 238,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_140 = local_198.y._0_4_;",
       "type": "unknown_field"
     },
@@ -1869,6 +2001,7 @@
       "description": "Unknown/mangled field access",
       "line": 239,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_13c = local_198.y._4_4_;",
       "type": "unknown_field"
     },
@@ -1876,6 +2009,7 @@
       "description": "Unknown/mangled field access",
       "line": 240,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_120 = local_1a8.y._0_4_;",
       "type": "unknown_field"
     },
@@ -1883,6 +2017,7 @@
       "description": "Unknown/mangled field access",
       "line": 241,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_11c = local_1a8.y._4_4_;",
       "type": "unknown_field"
     },
@@ -1890,6 +2025,7 @@
       "description": "Unknown/mangled field access",
       "line": 242,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_f0 = local_178.y._0_4_;",
       "type": "unknown_field"
     },
@@ -1897,6 +2033,7 @@
       "description": "Unknown/mangled field access",
       "line": 243,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_ec = local_178.y._4_4_;",
       "type": "unknown_field"
     },
@@ -1904,6 +2041,7 @@
       "description": "Unknown/mangled field access",
       "line": 244,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_90 = local_178.x._0_4_;",
       "type": "unknown_field"
     },
@@ -1911,6 +2049,7 @@
       "description": "Unknown/mangled field access",
       "line": 245,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_8c = local_178.x._4_4_;",
       "type": "unknown_field"
     },
@@ -1918,6 +2057,7 @@
       "description": "Unknown/mangled field access",
       "line": 246,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_70 = local_1a8.x._0_4_;",
       "type": "unknown_field"
     },
@@ -1925,6 +2065,7 @@
       "description": "Unknown/mangled field access",
       "line": 247,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_6c = local_1a8.x._4_4_;",
       "type": "unknown_field"
     },
@@ -1932,6 +2073,7 @@
       "description": "Unknown/mangled field access",
       "line": 249,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_188.x._0_4_ = *(uint *)&point->x;",
       "type": "unknown_field"
     },
@@ -1939,6 +2081,7 @@
       "description": "Complex pointer cast",
       "line": 250,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_188.x._4_4_ = *(uint *)((int)&point->x + 4);",
       "type": "pointer_cast"
     },
@@ -1946,6 +2089,7 @@
       "description": "Unknown/mangled field access",
       "line": 250,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_188.x._4_4_ = *(uint *)((int)&point->x + 4);",
       "type": "unknown_field"
     },
@@ -1953,6 +2097,7 @@
       "description": "Unknown/mangled field access",
       "line": 251,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_188.y._0_4_ = *(uint *)&point[1].x;",
       "type": "unknown_field"
     },
@@ -1960,6 +2105,7 @@
       "description": "Complex pointer cast",
       "line": 252,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_188.y._4_4_ = *(uint *)((int)&point[1].x + 4);",
       "type": "pointer_cast"
     },
@@ -1967,6 +2113,7 @@
       "description": "Unknown/mangled field access",
       "line": 252,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_188.y._4_4_ = *(uint *)((int)&point[1].x + 4);",
       "type": "unknown_field"
     },
@@ -1974,6 +2121,7 @@
       "description": "Unknown/mangled field access",
       "line": 253,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_a8 = local_188.y._0_4_;",
       "type": "unknown_field"
     },
@@ -1981,6 +2129,7 @@
       "description": "Unknown/mangled field access",
       "line": 254,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_a4 = local_188.y._4_4_;",
       "type": "unknown_field"
     },
@@ -1988,6 +2137,7 @@
       "description": "Unknown/mangled field access",
       "line": 255,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_30 = local_188.x._0_4_;",
       "type": "unknown_field"
     },
@@ -1995,6 +2145,7 @@
       "description": "Unknown/mangled field access",
       "line": 256,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_2c = local_188.x._4_4_;",
       "type": "unknown_field"
     },
@@ -2002,6 +2153,7 @@
       "description": "Unknown/mangled field access",
       "line": 262,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_1a8.x._0_4_ = *(uint *)&pCVar2[iVar1].position.y;",
       "type": "unknown_field"
     },
@@ -2009,6 +2161,7 @@
       "description": "Complex pointer cast",
       "line": 263,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_1a8.x._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.y + 4);",
       "type": "pointer_cast"
     },
@@ -2016,6 +2169,7 @@
       "description": "Unknown/mangled field access",
       "line": 263,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_1a8.x._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.y + 4);",
       "type": "unknown_field"
     },
@@ -2023,6 +2177,7 @@
       "description": "Unknown/mangled field access",
       "line": 264,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_1a8.y._0_4_ = *(uint *)&pCVar2[iVar1].position.z;",
       "type": "unknown_field"
     },
@@ -2030,6 +2185,7 @@
       "description": "Complex pointer cast",
       "line": 265,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_1a8.y._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.z + 4);",
       "type": "pointer_cast"
     },
@@ -2037,6 +2193,7 @@
       "description": "Unknown/mangled field access",
       "line": 265,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_1a8.y._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.z + 4);",
       "type": "unknown_field"
     },
@@ -2044,6 +2201,7 @@
       "description": "Unknown/mangled field access",
       "line": 267,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_178.x._0_4_ = *(uint *)&pCVar2[iVar1].position.y;",
       "type": "unknown_field"
     },
@@ -2051,6 +2209,7 @@
       "description": "Complex pointer cast",
       "line": 268,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_178.x._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.y + 4);",
       "type": "pointer_cast"
     },
@@ -2058,6 +2217,7 @@
       "description": "Unknown/mangled field access",
       "line": 268,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_178.x._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.y + 4);",
       "type": "unknown_field"
     },
@@ -2065,6 +2225,7 @@
       "description": "Unknown/mangled field access",
       "line": 269,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_178.y._0_4_ = *(uint *)&pCVar2[iVar1].position.z;",
       "type": "unknown_field"
     },
@@ -2072,6 +2233,7 @@
       "description": "Complex pointer cast",
       "line": 270,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_178.y._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.z + 4);",
       "type": "pointer_cast"
     },
@@ -2079,6 +2241,7 @@
       "description": "Unknown/mangled field access",
       "line": 270,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_178.y._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.z + 4);",
       "type": "unknown_field"
     },
@@ -2086,6 +2249,7 @@
       "description": "Unknown/mangled field access",
       "line": 272,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_198.x._0_4_ = *(uint *)&pCVar2[iVar1].position.y;",
       "type": "unknown_field"
     },
@@ -2093,6 +2257,7 @@
       "description": "Complex pointer cast",
       "line": 273,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_198.x._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.y + 4);",
       "type": "pointer_cast"
     },
@@ -2100,6 +2265,7 @@
       "description": "Unknown/mangled field access",
       "line": 273,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_198.x._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.y + 4);",
       "type": "unknown_field"
     },
@@ -2107,6 +2273,7 @@
       "description": "Unknown/mangled field access",
       "line": 274,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_198.y._0_4_ = *(uint *)&pCVar2[iVar1].position.z;",
       "type": "unknown_field"
     },
@@ -2114,6 +2281,7 @@
       "description": "Complex pointer cast",
       "line": 275,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_198.y._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.z + 4);",
       "type": "pointer_cast"
     },
@@ -2121,6 +2289,7 @@
       "description": "Unknown/mangled field access",
       "line": 275,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_198.y._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.z + 4);",
       "type": "unknown_field"
     },
@@ -2128,6 +2297,7 @@
       "description": "Unknown/mangled field access",
       "line": 276,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_110 = local_1a8.y._0_4_;",
       "type": "unknown_field"
     },
@@ -2135,6 +2305,7 @@
       "description": "Unknown/mangled field access",
       "line": 277,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_10c = local_1a8.y._4_4_;",
       "type": "unknown_field"
     },
@@ -2142,6 +2313,7 @@
       "description": "Unknown/mangled field access",
       "line": 278,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_e8 = local_178.y._0_4_;",
       "type": "unknown_field"
     },
@@ -2149,6 +2321,7 @@
       "description": "Unknown/mangled field access",
       "line": 279,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_e4 = local_178.y._4_4_;",
       "type": "unknown_field"
     },
@@ -2156,6 +2329,7 @@
       "description": "Unknown/mangled field access",
       "line": 280,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_d8 = local_198.x._0_4_;",
       "type": "unknown_field"
     },
@@ -2163,6 +2337,7 @@
       "description": "Unknown/mangled field access",
       "line": 281,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_d4 = local_198.x._4_4_;",
       "type": "unknown_field"
     },
@@ -2170,6 +2345,7 @@
       "description": "Unknown/mangled field access",
       "line": 282,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_d0 = local_198.y._0_4_;",
       "type": "unknown_field"
     },
@@ -2177,6 +2353,7 @@
       "description": "Unknown/mangled field access",
       "line": 283,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_cc = local_198.y._4_4_;",
       "type": "unknown_field"
     },
@@ -2184,6 +2361,7 @@
       "description": "Unknown/mangled field access",
       "line": 284,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_50 = local_1a8.x._0_4_;",
       "type": "unknown_field"
     },
@@ -2191,6 +2369,7 @@
       "description": "Unknown/mangled field access",
       "line": 285,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_4c = local_1a8.x._4_4_;",
       "type": "unknown_field"
     },
@@ -2198,6 +2377,7 @@
       "description": "Unknown/mangled field access",
       "line": 286,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_48 = local_178.x._0_4_;",
       "type": "unknown_field"
     },
@@ -2205,6 +2385,7 @@
       "description": "Unknown/mangled field access",
       "line": 287,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_44 = local_178.x._4_4_;",
       "type": "unknown_field"
     },
@@ -2212,6 +2393,7 @@
       "description": "Unknown/mangled field access",
       "line": 291,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_198.x._0_4_ = *(uint *)&pCVar2[iVar1].position.y;",
       "type": "unknown_field"
     },
@@ -2219,6 +2401,7 @@
       "description": "Complex pointer cast",
       "line": 292,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_198.x._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.y + 4);",
       "type": "pointer_cast"
     },
@@ -2226,6 +2409,7 @@
       "description": "Unknown/mangled field access",
       "line": 292,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_198.x._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.y + 4);",
       "type": "unknown_field"
     },
@@ -2233,6 +2417,7 @@
       "description": "Unknown/mangled field access",
       "line": 293,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_198.y._0_4_ = *(uint *)&pCVar2[iVar1].position.z;",
       "type": "unknown_field"
     },
@@ -2240,6 +2425,7 @@
       "description": "Complex pointer cast",
       "line": 294,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_198.y._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.z + 4);",
       "type": "pointer_cast"
     },
@@ -2247,6 +2433,7 @@
       "description": "Unknown/mangled field access",
       "line": 294,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_198.y._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.z + 4);",
       "type": "unknown_field"
     },
@@ -2254,6 +2441,7 @@
       "description": "Unknown/mangled field access",
       "line": 296,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_178.x._0_4_ = *(uint *)&pCVar2[iVar1].position.y;",
       "type": "unknown_field"
     },
@@ -2261,6 +2449,7 @@
       "description": "Complex pointer cast",
       "line": 297,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_178.x._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.y + 4);",
       "type": "pointer_cast"
     },
@@ -2268,6 +2457,7 @@
       "description": "Unknown/mangled field access",
       "line": 297,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_178.x._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.y + 4);",
       "type": "unknown_field"
     },
@@ -2275,6 +2465,7 @@
       "description": "Unknown/mangled field access",
       "line": 298,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_178.y._0_4_ = *(uint *)&pCVar2[iVar1].position.z;",
       "type": "unknown_field"
     },
@@ -2282,6 +2473,7 @@
       "description": "Complex pointer cast",
       "line": 299,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_178.y._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.z + 4);",
       "type": "pointer_cast"
     },
@@ -2289,6 +2481,7 @@
       "description": "Unknown/mangled field access",
       "line": 299,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_178.y._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.z + 4);",
       "type": "unknown_field"
     },
@@ -2296,6 +2489,7 @@
       "description": "Unknown/mangled field access",
       "line": 301,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_1a8.x._0_4_ = *(uint *)&pCVar2[iVar1].position.y;",
       "type": "unknown_field"
     },
@@ -2303,6 +2497,7 @@
       "description": "Complex pointer cast",
       "line": 302,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_1a8.x._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.y + 4);",
       "type": "pointer_cast"
     },
@@ -2310,6 +2505,7 @@
       "description": "Unknown/mangled field access",
       "line": 302,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_1a8.x._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.y + 4);",
       "type": "unknown_field"
     },
@@ -2317,6 +2513,7 @@
       "description": "Unknown/mangled field access",
       "line": 303,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_1a8.y._0_4_ = *(uint *)&pCVar2[iVar1].position.z;",
       "type": "unknown_field"
     },
@@ -2324,6 +2521,7 @@
       "description": "Complex pointer cast",
       "line": 304,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_1a8.y._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.z + 4);",
       "type": "pointer_cast"
     },
@@ -2331,6 +2529,7 @@
       "description": "Unknown/mangled field access",
       "line": 304,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_1a8.y._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.z + 4);",
       "type": "unknown_field"
     },
@@ -2338,6 +2537,7 @@
       "description": "Unknown/mangled field access",
       "line": 305,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_150 = local_178.x._0_4_;",
       "type": "unknown_field"
     },
@@ -2345,6 +2545,7 @@
       "description": "Unknown/mangled field access",
       "line": 306,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_14c = local_178.x._4_4_;",
       "type": "unknown_field"
     },
@@ -2352,6 +2553,7 @@
       "description": "Unknown/mangled field access",
       "line": 307,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_148 = local_178.y._0_4_;",
       "type": "unknown_field"
     },
@@ -2359,6 +2561,7 @@
       "description": "Unknown/mangled field access",
       "line": 308,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_144 = local_178.y._4_4_;",
       "type": "unknown_field"
     },
@@ -2366,6 +2569,7 @@
       "description": "Unknown/mangled field access",
       "line": 309,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_130 = local_1a8.x._0_4_;",
       "type": "unknown_field"
     },
@@ -2373,6 +2577,7 @@
       "description": "Unknown/mangled field access",
       "line": 310,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_12c = local_1a8.x._4_4_;",
       "type": "unknown_field"
     },
@@ -2380,6 +2585,7 @@
       "description": "Unknown/mangled field access",
       "line": 311,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_128 = local_1a8.y._0_4_;",
       "type": "unknown_field"
     },
@@ -2387,6 +2593,7 @@
       "description": "Unknown/mangled field access",
       "line": 312,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_124 = local_1a8.y._4_4_;",
       "type": "unknown_field"
     },
@@ -2394,6 +2601,7 @@
       "description": "Unknown/mangled field access",
       "line": 313,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_100 = local_198.x._0_4_;",
       "type": "unknown_field"
     },
@@ -2401,6 +2609,7 @@
       "description": "Unknown/mangled field access",
       "line": 314,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_fc = local_198.x._4_4_;",
       "type": "unknown_field"
     },
@@ -2408,6 +2617,7 @@
       "description": "Unknown/mangled field access",
       "line": 315,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_f8 = local_198.y._0_4_;",
       "type": "unknown_field"
     },
@@ -2415,6 +2625,7 @@
       "description": "Unknown/mangled field access",
       "line": 316,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_f4 = local_198.y._4_4_;",
       "type": "unknown_field"
     },
@@ -2422,6 +2633,7 @@
       "description": "Unknown/mangled field access",
       "line": 318,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_188.x._0_4_ = *(uint *)&point->y;",
       "type": "unknown_field"
     },
@@ -2429,6 +2641,7 @@
       "description": "Complex pointer cast",
       "line": 319,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_188.x._4_4_ = *(uint *)((int)&point->y + 4);",
       "type": "pointer_cast"
     },
@@ -2436,6 +2649,7 @@
       "description": "Unknown/mangled field access",
       "line": 319,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_188.x._4_4_ = *(uint *)((int)&point->y + 4);",
       "type": "unknown_field"
     },
@@ -2443,6 +2657,7 @@
       "description": "Unknown/mangled field access",
       "line": 320,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_188.y._0_4_ = *(uint *)&point[1].x;",
       "type": "unknown_field"
     },
@@ -2450,6 +2665,7 @@
       "description": "Complex pointer cast",
       "line": 321,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_188.y._4_4_ = *(uint *)((int)&point[1].x + 4);",
       "type": "pointer_cast"
     },
@@ -2457,6 +2673,7 @@
       "description": "Unknown/mangled field access",
       "line": 321,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_188.y._4_4_ = *(uint *)((int)&point[1].x + 4);",
       "type": "unknown_field"
     },
@@ -2464,6 +2681,7 @@
       "description": "Unknown/mangled field access",
       "line": 322,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_c8 = local_188.x._0_4_;",
       "type": "unknown_field"
     },
@@ -2471,6 +2689,7 @@
       "description": "Unknown/mangled field access",
       "line": 323,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_c4 = local_188.x._4_4_;",
       "type": "unknown_field"
     },
@@ -2478,6 +2697,7 @@
       "description": "Unknown/mangled field access",
       "line": 324,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_c0 = local_188.y._0_4_;",
       "type": "unknown_field"
     },
@@ -2485,6 +2705,7 @@
       "description": "Unknown/mangled field access",
       "line": 325,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_bc = local_188.y._4_4_;",
       "type": "unknown_field"
     }

@@ -5,6 +5,7 @@
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 3,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 28,
     "suspect_count": 2,
     "suspect_types": [
@@ -133,6 +134,7 @@
       "description": "Complex pointer cast",
       "line": 20,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "ptr->shouldFreeData = (uint)*(byte *)((int)thread_param + 0x52);",
       "type": "pointer_cast"
     },

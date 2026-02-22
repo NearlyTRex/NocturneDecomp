@@ -5,6 +5,7 @@
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 10,
     "suspect_count": 7,
     "suspect_types": [
@@ -65,6 +66,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 5,
       "match": "code *",
+      "severity": "moderate",
       "text": "code *pcVar1;",
       "type": "unresolved_funcptr"
     },
@@ -72,6 +74,7 @@
       "description": "FPU register input (calling convention issue)",
       "line": 6,
       "match": "in_ST1",
+      "severity": "mild",
       "text": "float10 in_ST1;",
       "type": "fpu_register_input"
     },
@@ -79,6 +82,7 @@
       "description": "FPU register input (calling convention issue)",
       "line": 7,
       "match": "in_ST3",
+      "severity": "mild",
       "text": "float10 in_ST3;",
       "type": "fpu_register_input"
     },
@@ -86,6 +90,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 9,
       "match": "code *",
+      "severity": "moderate",
       "text": "pcVar1 = (code *)swi(6);",
       "type": "unresolved_funcptr"
     },
@@ -93,6 +98,7 @@
       "description": "FPU register input (calling convention issue)",
       "line": 11,
       "match": "in_ST1",
+      "severity": "mild",
       "text": "fdiv(in_ST1,in_ST3);",
       "type": "fpu_register_input"
     },
@@ -100,6 +106,7 @@
       "description": "FPU register input (calling convention issue)",
       "line": 11,
       "match": "in_ST3",
+      "severity": "mild",
       "text": "fdiv(in_ST1,in_ST3);",
       "type": "fpu_register_input"
     },

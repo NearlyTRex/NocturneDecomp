@@ -35,7 +35,7 @@
 ;   undefined4 DAT_02d81c90
 ;
 ; Called Functions:
-;   core_set.cpp_CDemonSet_FUN_00570010
+;   core_set.cpp_CDemonSet_renderEnvMapBatchQuad_FUN_00570010
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
 ;   engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0
 ;   engine_drender.cpp_CDemonRenderer_renderPrimitiveBatch_FUN_0048ce90
@@ -133,8 +133,8 @@ section .text
     PUSH EDI                            ; 0057085a
     PUSH EBP                            ; 0057085b
     PUSH EBX                            ; 0057085c
-    CALL core_set.cpp_CDemonSet_FUN_00570010 ; 0057085d
-        ;   XREF to: 00570010 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_00570010(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_renderEnvMapBatchQuad_FUN_00570010 ; 0057085d
+        ;   XREF to: 00570010 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderEnvMapBatchQuad_FUN_00570010(CDemonSet * this_ptr, void * param_2, int count, int alpha)
     ADD ESP,0x10                        ; 00570862
     ADD ESP,0x28                        ; 00570865
     POP EBP                             ; 00570868

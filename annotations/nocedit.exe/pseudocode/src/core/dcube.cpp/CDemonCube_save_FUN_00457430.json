@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 44,
     "suspect_count": 2,
     "suspect_types": [
@@ -122,6 +123,7 @@
       "description": "Complex pointer cast",
       "line": 17,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "ptr = (void *)((int)&this_ptr->vertex_buffer->x + iVar2);",
       "type": "pointer_cast"
     },
@@ -129,6 +131,7 @@
       "description": "Complex pointer cast",
       "line": 29,
       "match": "(CDemonCubeTriangle *)((int)",
+      "severity": "mild",
       "text": "((CDemonCubeTriangle *)((int)(this_ptr->triangle_buffer->triangle).vertices + iVar2)",
       "type": "pointer_cast"
     }

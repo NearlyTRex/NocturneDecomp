@@ -17,6 +17,7 @@
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 14,
     "suspect_count": 2,
     "suspect_types": [
@@ -152,6 +153,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 7,
       "match": "SQRT",
+      "severity": "mild",
       "text": "local_18 = SQRT(*(double *)&vertex[1].y * *(double *)&vertex[1].y +",
       "type": "decompiler_intrinsic"
     },
@@ -159,6 +161,7 @@
       "description": "Unknown/mangled field access",
       "line": 10,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "if ((((ulonglong)local_18 & 0x7fffffff00000000) == 0) && (local_18._0_4_ == 0)) {",
       "type": "unknown_field"
     }

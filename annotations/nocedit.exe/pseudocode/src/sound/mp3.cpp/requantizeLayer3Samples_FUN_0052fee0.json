@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 2,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 99,
     "suspect_count": 2,
     "suspect_types": [
@@ -294,6 +295,7 @@
       "description": "Complex pointer cast",
       "line": 34,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_24 = (uint *)((int)dequantized_output + local_40 + local_54);",
       "type": "pointer_cast"
     },
@@ -301,6 +303,7 @@
       "description": "Complex pointer cast",
       "line": 48,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "[*(int *)((int)quantized_samples + local_54 + local_1c * 0x80) * 4];",
       "type": "pointer_cast"
     }

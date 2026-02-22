@@ -6,14 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 249,
-    "complexity_score": 261,
+    "complexity_score": 276,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 111,
-    "suspect_count": 14,
+    "suspect_count": 15,
     "suspect_types": [
       "pointer_cast",
+      "stack_alignment_array",
       "unaffected_reg"
     ],
     "total_lines": 360
@@ -217,13 +219,23 @@
       "description": "Unaffected register variable",
       "line": 10,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "int *unaff_ESI;",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 15,
+      "match": "aiStackY_1024",
+      "severity": "moderate",
+      "text": "int aiStackY_1024 [1008];",
+      "type": "stack_alignment_array"
     },
     {
       "description": "Complex pointer cast",
       "line": 43,
       "match": "(short *)((int)",
+      "severity": "mild",
       "text": "local_24 = (int)*(short *)((int)pvVar2 + ((int)local_1c + uVar8) * 4) * this_ptr->height_scale",
       "type": "pointer_cast"
     },
@@ -231,6 +243,7 @@
       "description": "Complex pointer cast",
       "line": 45,
       "match": "(short *)((int)",
+      "severity": "mild",
       "text": "local_3c.z = (int)*(short *)((int)pvVar2 +",
       "type": "pointer_cast"
     },
@@ -238,6 +251,7 @@
       "description": "Complex pointer cast",
       "line": 52,
       "match": "(short *)((int)",
+      "severity": "mild",
       "text": "(int)*(short *)((int)pvVar2 +",
       "type": "pointer_cast"
     },
@@ -245,6 +259,7 @@
       "description": "Complex pointer cast",
       "line": 95,
       "match": "(short *)((int)",
+      "severity": "mild",
       "text": "local_3c.z = (int)*(short *)((int)pvVar2 + ((int)local_18 + iVar5) * 4) * this_ptr->height_scale",
       "type": "pointer_cast"
     },
@@ -252,6 +267,7 @@
       "description": "Complex pointer cast",
       "line": 97,
       "match": "(short *)((int)",
+      "severity": "mild",
       "text": "local_3c.x = (int)*(short *)((int)pvVar2 + (iVar5 + uVar8) * 4) * this_ptr->height_scale -",
       "type": "pointer_cast"
     },
@@ -259,6 +275,7 @@
       "description": "Complex pointer cast",
       "line": 104,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar7 = (uint *)((int)pCVar6 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -266,6 +283,7 @@
       "description": "Complex pointer cast",
       "line": 106,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_3c + (uint)bVar9 * -8 + 4) = *puVar7;",
       "type": "pointer_cast"
     },
@@ -273,6 +291,7 @@
       "description": "Complex pointer cast",
       "line": 107,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_3c + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =",
       "type": "pointer_cast"
     },
@@ -280,6 +299,7 @@
       "description": "Unaffected register variable",
       "line": 109,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "*unaff_ESI = local_3c.x;",
       "type": "unaffected_reg"
     },
@@ -287,6 +307,7 @@
       "description": "Unaffected register variable",
       "line": 110,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "unaff_ESI[(uint)bVar9 * -2 + 1] = *(int *)((int)&local_3c + (uint)bVar9 * -8 + 4);",
       "type": "unaffected_reg"
     },
@@ -294,6 +315,7 @@
       "description": "Complex pointer cast",
       "line": 110,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "unaff_ESI[(uint)bVar9 * -2 + 1] = *(int *)((int)&local_3c + (uint)bVar9 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -301,6 +323,7 @@
       "description": "Unaffected register variable",
       "line": 111,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "(unaff_ESI + (uint)bVar9 * -2 + 1)[(uint)bVar9 * -2 + 1] =",
       "type": "unaffected_reg"
     },
@@ -308,6 +331,7 @@
       "description": "Complex pointer cast",
       "line": 112,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)&local_3c + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
       "type": "pointer_cast"
     }

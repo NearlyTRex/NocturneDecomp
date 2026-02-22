@@ -10,6 +10,7 @@
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 27,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 62,
     "suspect_count": 1,
     "suspect_types": [
@@ -21,7 +22,7 @@
     {
       "addr": "0056c1a0",
       "from_addr": "0056c5b6",
-      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0",
+      "name": "core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -280,6 +281,7 @@
       "description": "Complex pointer cast",
       "line": 48,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "(void *)((int)this_ptr->framebuffer_aligned + this_ptr->framebuffer_width * iVar2 * 4);",
       "type": "pointer_cast"
     }

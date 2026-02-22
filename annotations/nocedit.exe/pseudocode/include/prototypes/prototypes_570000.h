@@ -15,6 +15,7 @@
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SCollisionReturnInfo.h"
 #include "types/structs/SDamageInfo.h"
+#include "types/structs/SInputFace.h"
 #include "types/structs/SIntersectXZCylinder.h"
 #include "types/structs/SMRGLHeaderPrimitive.h"
 #include "types/structs/SMRGLPrimitiveQuad.h"
@@ -26,45 +27,45 @@
 // FUNCTION PROTOTYPES - Range 0x570000
 // =============================================================================
 
-void __cdecl core_set_cpp_CDemonSet_FUN_00570010(CDemonSet *this_ptr);
-void __cdecl core_set_cpp_CDemonSet_FUN_00570040(CDemonSet *this_ptr);
-void __cdecl core_set_cpp_FUN_005702b0(void);
-void __cdecl core_set_cpp_FUN_00570700(void);
+void __cdecl core_set_cpp_CDemonSet_renderEnvMapBatchQuad_FUN_00570010(CDemonSet *this_ptr,void *param_2,int count,int alpha);
+void __cdecl core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040(CDemonSet *this_ptr,void *param_2,int count,int alpha,int stride);
+void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0(CDemonSet *this_ptr,void *param_2,int count,int alpha);
+void __cdecl core_set_cpp_CDemonSet_renderFaceBatchOrEnvMap_FUN_00570700(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prims,int count,int flags);
 void __cdecl core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770(CDemonSet *this_ptr,SMRGLPrimitiveQuad *primitive_array,int primitive_count, int render_flags);
-void __cdecl core_set_cpp_CDemonSet_FUN_00570870(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_renderFaceListOrEnvMap_FUN_00570870(CDemonSet *this_ptr,SInputFace *faces,int count,int flags);
 void __cdecl core_set_cpp_CDemonSet_renderPrimitiveList_FUN_005708e0(CDemonSet *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count);
-void __cdecl core_set_cpp_CDemonSet_FUN_00570960(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prim,int count);
+void __cdecl core_set_cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_00570960(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prim,int count);
 void __cdecl core_set_cpp_CDemonSet_setupMirrorRendering_FUN_005709e0(CDemonSet *this_ptr,int mirror_index,int enable_flag);
-void __cdecl core_set_cpp_FUN_00570af0(void);
+void __cdecl core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_00570af0(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_buildMirrorList_FUN_00570b70(CDemonSet *this_ptr);
-void __cdecl core_set_cpp_CDemonSet_FUN_00570c60(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_markMirrorCameraDirty_FUN_00570c60(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_00570c70(CDemonSet *this_ptr);
-void __cdecl core_set_cpp_CDemonSet_FUN_00570ca0(CDemonSet *this_ptr);
-void __cdecl core_set_cpp_CDemonSet_FUN_00570cd0(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_setScaleFactors_FUN_00570ca0(CDemonSet *this_ptr,int light_scale,int color_scale,int fog_scale);
+void __cdecl core_set_cpp_CDemonSet_cacheMirrorLighting_FUN_00570cd0(CDemonSet *this_ptr,CVector3f *position);
 void __cdecl core_set_cpp_CDemonSet_setGamma_FUN_00570d60(CDemonSet *this_ptr,int gamma);
-int __cdecl core_set_cpp_CDemonSet_FUN_00570df0(CDemonSet *this_ptr,SMRGLHeaderPrimitive *primitive);
+int __cdecl core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_00570df0(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prim);
 void __cdecl core_set_cpp_CDemonSet_setCameraAmbientValue_FUN_00570e20(CDemonSet *this_ptr,int index,float value);
 void __cdecl core_set_cpp_CDemonSet_setCameraAmbientValueById_FUN_00570e60(CDemonSet *this_ptr,int id,float value);
-void __cdecl core_set_cpp_CDemonSet_FUN_00570ea0(CDemonSet *this_ptr);
-void __cdecl core_set_cpp_CDemonSet_FUN_00570ec0(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_setCameraEnabled_FUN_00570ea0(CDemonSet *this_ptr,int camera_index,int enabled);
+void __cdecl core_set_cpp_CDemonSet_setCameraEnabledByGroup_FUN_00570ec0(CDemonSet *this_ptr,int group_id,int enabled);
 void __cdecl core_set_cpp_CDemonSet_addLightFilter_FUN_00570f10(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_initCameraShake_FUN_00570fa0(CDemonSet *this_ptr,float peak,float attack,float sustain,float decay);
-void __cdecl core_set_cpp_CDemonSet_FUN_00570fc0(CDemonSet *this_ptr);
-void __cdecl core_set_cpp_CDemonSet_FUN_00571130(CDemonSet *this_ptr);
-int __cdecl core_set_cpp_CDemonSet_FUN_00571170(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_buildActorTypeLists_FUN_00570fc0(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_restoreLightState_FUN_00571130(CDemonSet *this_ptr,void *param_2);
+int __cdecl core_set_cpp_CDemonSet_saveLightState_FUN_00571170(CDemonSet *this_ptr,void *param_2);
 void __cdecl core_set_cpp_CDemonSet_SetStateVersionCameraCountInStrings_FUN_005711b0(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_saveStateInfo_FUN_00571230(CDemonSet *this_ptr);
 int __cdecl core_set_cpp_CDemonSet_isCameraPanning_FUN_00571320(CDemonSet *this_ptr);
-void __cdecl core_set_cpp_FUN_00571380(void);
-void __cdecl core_set_cpp_FUN_005713c0(void);
-int __cdecl core_set_cpp_FUN_00571410(void);
-int __cdecl core_set_cpp_FUN_00571440(void);
+void __cdecl core_set_cpp_CDemonSet_expireDecals_FUN_00571380(CDemonSet *this_ptr,int expire_flag);
+void __cdecl core_set_cpp_CDemonSet_renderDecals_FUN_005713c0(CDemonSet *this_ptr);
+int __cdecl core_set_cpp_CVector3f_equals_FUN_00571410(CVector3f *a,CVector3f *b);
+int __cdecl core_set_cpp_CVector3f_notEquals_FUN_00571440(CVector3f *a,CVector3f *b);
 SRoom * __cdecl core_set_cpp_SRoom_ctor_FUN_00571470(SRoom *this_ptr);
 SRoom * __cdecl core_set_cpp_SRoom_dtor_FUN_00571480(SRoom *this_ptr,uint flags);
 SVDBox * __cdecl core_set_cpp_SVDBox_ctor_FUN_00571490(SVDBox *this_ptr);
 SVDBox * __cdecl core_set_cpp_SVDBox_dtor_FUN_005714a0(SVDBox *this_ptr,uint flags);
 C3DSLight * __cdecl core_set_cpp_C3DSLight_dtor_FUN_005714b0(C3DSLight *this_ptr,uint flags);
-void __cdecl core_set_cpp_FUN_005714c0(void);
+CVector3f * __cdecl core_set_cpp_CVector3f_copy_FUN_005714c0(CVector3f *a,CVector3f *b);
 CVector3f * __cdecl core_set_cpp_CVector3f_arrdtor_FUN_00571510(CVector3f *objs,uint flags);
 C3DSCamera * __cdecl core_set_cpp_C3DSCamera_arrdtor_FUN_00571530(C3DSCamera *objs,uint flags);
 C3DSLight * __cdecl core_set_cpp_C3DSLight_arrdtor_FUN_00571550(C3DSLight *objs,uint flags);

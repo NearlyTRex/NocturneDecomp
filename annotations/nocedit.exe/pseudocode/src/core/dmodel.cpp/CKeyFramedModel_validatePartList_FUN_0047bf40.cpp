@@ -34,8 +34,9 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_validatePartList_FUN_0047bf40(CKeyF
         do {
           iVar6 = 0;
           iVar3 = 0;
-          while (iVar3 < *(int *)((int)this_ptr->poly_vert_list + local_18 + 4)) {
-            iVar1 = *(int *)((int)this_ptr->poly_vert_list + iVar6 + 0x18 + local_18);
+          while (iVar3 < *(int *)((int)this_ptr->poly_vert_list->vertices + local_18 + -0x14)) {
+            iVar1 = *(int *)((int)&this_ptr->poly_vert_list->vertices[0].vertex_index +
+                            iVar6 + local_18);
             if ((iVar1 < iVar5) || (iVar4 <= iVar1)) {
               g_CurrentFilename = "..\\core\\dmodel.cpp";
               g_CurrentLineNumber = 0xab6;

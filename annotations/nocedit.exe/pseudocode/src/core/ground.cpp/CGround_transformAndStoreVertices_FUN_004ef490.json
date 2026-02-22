@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 9,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 184,
     "suspect_count": 2,
     "suspect_types": [
@@ -322,6 +323,7 @@
       "description": "Complex pointer cast",
       "line": 137,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "iVar1 = *(int *)((int)local_6c + iVar4) / local_20;",
       "type": "pointer_cast"
     },
@@ -329,6 +331,7 @@
       "description": "Complex pointer cast",
       "line": 138,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "iVar2 = *(int *)((int)local_6c + iVar4 + 8) / local_20;",
       "type": "pointer_cast"
     }

@@ -5,6 +5,7 @@
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 8,
     "suspect_count": 3,
     "suspect_types": [
@@ -138,6 +139,7 @@
       "description": "Direct stack address reference",
       "line": 8,
       "match": "&stack0x00000010",
+      "severity": "moderate",
       "text": "variadic_args.value[0] = (char * [1])&stack0x00000010;",
       "type": "stack_ref"
     },

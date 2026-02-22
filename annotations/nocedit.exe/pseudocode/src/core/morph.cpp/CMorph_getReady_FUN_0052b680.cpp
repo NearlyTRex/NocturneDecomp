@@ -11,14 +11,15 @@
 void __cdecl core_morph_cpp_CMorph_getReady_FUN_0052b680(CMorph *this_ptr)
 
 {
-  void *pvVar1;
+  SMorphPoint *pSVar1;
   int iVar2;
-  CBoundingBox3D *pCVar3;
+  CVector3f *pCVar3;
   int iVar4;
   CBoundingBox3D *pCVar5;
   int iVar6;
   int iVar7;
   int iVar8;
+  CBoundingBox3D *pCVar9;
   CBoundingBox3D local_c8;
   float local_a4 [3];
   float local_98;
@@ -65,17 +66,17 @@ void __cdecl core_morph_cpp_CMorph_getReady_FUN_0052b680(CMorph *this_ptr)
   local_24 = &local_c8;
   do {
     pCVar5 = local_24;
-    pvVar1 = local_38->models[0].points;
-    pCVar3 = (CBoundingBox3D *)((int)pvVar1 + 4);
-    if (pCVar3 != local_24) {
-      (local_24->min).x = (pCVar3->min).x;
-      (pCVar5->min).y = *(float *)((int)pvVar1 + 8);
-      (pCVar5->min).z = *(float *)((int)pvVar1 + 0xc);
+    pSVar1 = local_38->models[0].points;
+    pCVar3 = &pSVar1->position;
+    if ((CBoundingBox3D *)pCVar3 != local_24) {
+      (local_24->min).x = pCVar3->x;
+      (pCVar5->min).y = (pSVar1->position).y;
+      (pCVar5->min).z = (pSVar1->position).z;
     }
-    if ((CBoundingBox3D *)&pCVar5->max != pCVar3) {
-      (pCVar5->max).x = (pCVar3->min).x;
-      (pCVar5->max).y = *(float *)((int)pvVar1 + 8);
-      (pCVar5->max).z = *(float *)((int)pvVar1 + 0xc);
+    if (&pCVar5->max != pCVar3) {
+      (pCVar5->max).x = pCVar3->x;
+      (pCVar5->max).y = (pSVar1->position).y;
+      (pCVar5->max).z = (pSVar1->position).z;
     }
     pCVar5 = local_24;
     iVar2 = local_2c;
@@ -102,8 +103,8 @@ void __cdecl core_morph_cpp_CMorph_getReady_FUN_0052b680(CMorph *this_ptr)
     local_14 = local_30;
     iVar7 = 1 - local_28;
     local_18 = local_34;
-    pCVar3 = &local_c8 + iVar7;
-    local_8c = *local_1c - (pCVar3->min).x;
+    pCVar9 = &local_c8 + iVar7;
+    local_8c = *local_1c - (pCVar9->min).x;
     local_88 = local_1c[1] - (&local_c8)[iVar7].min.y;
     pCVar5 = &local_c8 + local_28;
     local_84 = local_1c[2] - (&local_c8)[iVar7].min.z;
@@ -111,14 +112,14 @@ void __cdecl core_morph_cpp_CMorph_getReady_FUN_0052b680(CMorph *this_ptr)
     local_58 = local_20->y - (&local_c8)[local_28].min.y;
     local_54 = local_20->z - (&local_c8)[local_28].min.z;
     local_68 = local_8c / local_5c;
-    local_44 = *local_1c - (pCVar3->min).x;
+    local_44 = *local_1c - (pCVar9->min).x;
     local_40 = local_1c[1] - (&local_c8)[iVar7].min.y;
     local_3c = local_1c[2] - (&local_c8)[iVar7].min.z;
     local_74 = local_20->x - (pCVar5->min).x;
     local_70 = local_20->y - (&local_c8)[local_28].min.y;
     local_6c = local_20->z - (&local_c8)[local_28].min.z;
     local_64 = local_40 / local_70;
-    local_98 = *local_1c - (pCVar3->min).x;
+    local_98 = *local_1c - (pCVar9->min).x;
     local_94 = local_1c[1] - (&local_c8)[iVar7].min.y;
     local_90 = local_1c[2] - (&local_c8)[iVar7].min.z;
     local_80 = local_20->x - (pCVar5->min).x;
@@ -129,23 +130,23 @@ void __cdecl core_morph_cpp_CMorph_getReady_FUN_0052b680(CMorph *this_ptr)
     if (0 < local_30->models[0].num_points) {
       iVar4 = 0;
       do {
-        pvVar1 = local_14->models[0].points;
-        local_50.x = *(float *)((int)pvVar1 + iVar4 + 4);
-        local_50.y = *(float *)((int)pvVar1 + iVar4 + 8);
-        local_50.z = *(float *)((int)pvVar1 + iVar4 + 0xc);
+        pSVar1 = local_14->models[0].points;
+        local_50.x = *(float *)((int)&(pSVar1->position).x + iVar4);
+        local_50.y = *(float *)((int)&(pSVar1->position).y + iVar4);
+        local_50.z = *(float *)((int)&(pSVar1->position).z + iVar4);
         if (this_ptr->rescale_enabled != 0) {
           local_50.x = local_50.x - (pCVar5->min).x;
           local_50.x = local_50.x * local_68;
           local_50.y = local_50.y - (&local_c8)[iVar2].min.y;
           local_50.y = local_50.y * local_64;
           local_50.z = (local_50.z - (&local_c8)[iVar2].min.z) * local_60;
-          local_50.x = local_50.x + (pCVar3->min).x;
+          local_50.x = local_50.x + (pCVar9->min).x;
           local_50.y = local_50.y + (&local_c8)[iVar7].min.y;
           local_50.z = local_50.z + (&local_c8)[iVar7].min.z;
         }
         iVar6 = core_morph_cpp_CMorphModel_findNearestPoint_FUN_0052b280(local_18->models,&local_50)
         ;
-        *(int *)((int)local_14->models[0].points + iVar4) = iVar6;
+        *(int *)((int)&(local_14->models[0].points)->vertex_index + iVar4) = iVar6;
         iVar8 = iVar8 + 1;
         iVar4 = iVar4 + 0x10;
       } while (iVar8 < local_14->models[0].num_points);

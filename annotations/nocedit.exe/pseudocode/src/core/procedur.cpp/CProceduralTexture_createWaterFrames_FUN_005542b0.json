@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 19,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 122,
     "suspect_count": 4,
     "suspect_types": [
@@ -352,6 +353,7 @@
       "description": "Complex pointer cast",
       "line": 70,
       "match": "(CProceduralTexture *)((int)",
+      "severity": "mild",
       "text": "pCVar10 = (CProceduralTexture *)((int)&pCVar9->width + 1);",
       "type": "pointer_cast"
     },
@@ -359,6 +361,7 @@
       "description": "Complex pointer cast",
       "line": 72,
       "match": "(CProceduralTexture *)((int)",
+      "severity": "mild",
       "text": "pCVar7 = (CProceduralTexture *)((int)&pCVar7->width + 1);",
       "type": "pointer_cast"
     },
@@ -366,6 +369,7 @@
       "description": "Complex pointer cast",
       "line": 112,
       "match": "(CProceduralTexture *)((int)",
+      "severity": "mild",
       "text": "pCVar10 = (CProceduralTexture *)((int)&pCVar10->width + 1);",
       "type": "pointer_cast"
     },
@@ -373,6 +377,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 113,
       "match": "CONCAT11",
+      "severity": "mild",
       "text": "*piVar8 = (uint)bVar3 * 0x10000 + (uint)CONCAT11(bVar3,bVar3);",
       "type": "decompiler_intrinsic"
     }

@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 44,
     "suspect_count": 5,
     "suspect_types": [
@@ -107,6 +108,7 @@
       "description": "Complex pointer cast",
       "line": 39,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar6 = (uint *)((int)pvVar1 + (uint)bVar7 * -8 + 0x28);",
       "type": "pointer_cast"
     },
@@ -114,6 +116,7 @@
       "description": "Complex pointer cast",
       "line": 40,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar4 = (uint *)((int)other + (uint)bVar7 * -8 + 0x7c);",
       "type": "pointer_cast"
     },
@@ -121,6 +124,7 @@
       "description": "Complex pointer cast",
       "line": 41,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)pvVar1 + 0x24) = other->edge_dot_products[0];",
       "type": "pointer_cast"
     },
@@ -128,6 +132,7 @@
       "description": "Complex pointer cast",
       "line": 44,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)pvVar1 + 0x30) = other->visited_stamp;",
       "type": "pointer_cast"
     },
@@ -135,6 +140,7 @@
       "description": "Complex pointer cast",
       "line": 45,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)pvVar1 + 0x34) = other->affected_by_edge_stamp;",
       "type": "pointer_cast"
     }

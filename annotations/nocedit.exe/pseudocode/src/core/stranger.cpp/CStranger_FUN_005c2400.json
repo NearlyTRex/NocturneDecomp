@@ -13,14 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 330,
-    "complexity_score": 216,
+    "complexity_score": 231,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 13,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 146,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
+      "sub84_truncation",
       "warning_type_propagation"
     ],
     "total_lines": 476
@@ -316,6 +318,7 @@
       "description": "Type propagation did not converge",
       "line": 2,
       "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
     },
@@ -323,6 +326,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 62,
       "match": "ABS",
+      "severity": "mild",
       "text": "(ABS((this_ptr->base).base.base.location.position.y -",
       "type": "decompiler_intrinsic"
     },
@@ -330,6 +334,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 66,
       "match": "ABS",
+      "severity": "mild",
       "text": "if ((ABS(local_d0.z) <= (float)4) && (local_d0.z <= 0.0)) {",
       "type": "decompiler_intrinsic"
     },
@@ -337,6 +342,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 97,
       "match": "fcos",
+      "severity": "mild",
       "text": "fVar4 = (float10)fcos((float10)0.261799387791667);",
       "type": "decompiler_intrinsic"
     },
@@ -344,13 +350,23 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 98,
       "match": "ABS",
+      "severity": "mild",
       "text": "fVar2 = ABS(fStack_a4 * fStack_b0 + fStack_ac * fStack_b8 + fStack_a8 * fStack_b4);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 112,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "uStack_f8 = SUB84(dVar1,0);",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 112,
       "match": "SUB84",
+      "severity": "mild",
       "text": "uStack_f8 = SUB84(dVar1,0);",
       "type": "decompiler_intrinsic"
     }

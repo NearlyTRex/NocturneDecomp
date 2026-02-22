@@ -35,6 +35,7 @@
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 47,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 234,
     "suspect_count": 26,
     "suspect_types": [
@@ -505,6 +506,7 @@
       "description": "Unresolved stack parameter",
       "line": 19,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "int *in_stack_00000004;",
       "type": "stack_param"
     },
@@ -512,6 +514,7 @@
       "description": "Unresolved stack parameter",
       "line": 20,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "char *in_stack_00000008;",
       "type": "stack_param"
     },
@@ -519,6 +522,7 @@
       "description": "Unresolved stack parameter",
       "line": 37,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "(in_stack_00000004[2],4,\"..\\\\engine\\\\palette.cpp\",0xbb);",
       "type": "stack_param"
     },
@@ -526,6 +530,7 @@
       "description": "Unresolved stack parameter",
       "line": 41,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "if (0 < *in_stack_00000004) {",
       "type": "stack_param"
     },
@@ -533,6 +538,7 @@
       "description": "Unresolved stack parameter",
       "line": 45,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "pcVar9 = (char *)(in_stack_00000004[1] + local_10);",
       "type": "stack_param"
     },
@@ -540,6 +546,7 @@
       "description": "Undefined global data reference",
       "line": 103,
       "match": "DAT_02fd8d20",
+      "severity": "mild",
       "text": "puVar12 = (uchar *)&DAT_02fd8d20;",
       "type": "undefined_data"
     },
@@ -547,6 +554,7 @@
       "description": "Undefined global data reference",
       "line": 116,
       "match": "DAT_02fd8d20",
+      "severity": "mild",
       "text": "_fread(&DAT_02fd8d20,0x300,1,p_Var5);",
       "type": "undefined_data"
     },
@@ -554,6 +562,7 @@
       "description": "Unresolved stack parameter",
       "line": 119,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "pcVar11 = (char *)(in_stack_00000004[1] + local_10);",
       "type": "stack_param"
     },
@@ -561,6 +570,7 @@
       "description": "Unresolved stack parameter",
       "line": 131,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "iVar6 = in_stack_00000004[1];",
       "type": "stack_param"
     },
@@ -568,6 +578,7 @@
       "description": "Unresolved stack parameter",
       "line": 135,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "iVar6 = in_stack_00000004[1];",
       "type": "stack_param"
     },
@@ -575,6 +586,7 @@
       "description": "Unresolved stack parameter",
       "line": 139,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "pcVar11 = (char *)(in_stack_00000004[1] + local_10);",
       "type": "stack_param"
     },
@@ -582,6 +594,7 @@
       "description": "Unresolved stack parameter",
       "line": 151,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "iVar3 = in_stack_00000004[1];",
       "type": "stack_param"
     },
@@ -589,6 +602,7 @@
       "description": "Unresolved stack parameter",
       "line": 156,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "iVar3 = in_stack_00000004[1];",
       "type": "stack_param"
     },
@@ -596,6 +610,7 @@
       "description": "Complex pointer cast",
       "line": 179,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "bVar2 = *(byte *)((int)&DAT_02fd8d20 + iVar3 + 1);",
       "type": "pointer_cast"
     },
@@ -603,6 +618,7 @@
       "description": "Undefined global data reference",
       "line": 179,
       "match": "DAT_02fd8d20",
+      "severity": "mild",
       "text": "bVar2 = *(byte *)((int)&DAT_02fd8d20 + iVar3 + 1);",
       "type": "undefined_data"
     },
@@ -610,6 +626,7 @@
       "description": "Complex pointer cast",
       "line": 181,
       "match": "(char *)((int)",
+      "severity": "mild",
       "text": "cVar1 = *(char *)((int)&DAT_02fd8d20 + iVar3 + 2);",
       "type": "pointer_cast"
     },
@@ -617,6 +634,7 @@
       "description": "Undefined global data reference",
       "line": 181,
       "match": "DAT_02fd8d20",
+      "severity": "mild",
       "text": "cVar1 = *(char *)((int)&DAT_02fd8d20 + iVar3 + 2);",
       "type": "undefined_data"
     },
@@ -624,6 +642,7 @@
       "description": "Complex pointer cast",
       "line": 182,
       "match": "(char *)((int)",
+      "severity": "mild",
       "text": "if (((*(char *)((int)&DAT_02fd8d20 + iVar3) != '\\0') || (local_c != 0)) || (cVar1 != '\\0')",
       "type": "pointer_cast"
     },
@@ -631,6 +650,7 @@
       "description": "Undefined global data reference",
       "line": 182,
       "match": "DAT_02fd8d20",
+      "severity": "mild",
       "text": "if (((*(char *)((int)&DAT_02fd8d20 + iVar3) != '\\0') || (local_c != 0)) || (cVar1 != '\\0')",
       "type": "undefined_data"
     },
@@ -638,6 +658,7 @@
       "description": "Complex pointer cast",
       "line": 184,
       "match": "(char *)((int)",
+      "severity": "mild",
       "text": "*pcVar11 = *(char *)((int)&DAT_02fd8d20 + iVar3);",
       "type": "pointer_cast"
     },
@@ -645,6 +666,7 @@
       "description": "Undefined global data reference",
       "line": 184,
       "match": "DAT_02fd8d20",
+      "severity": "mild",
       "text": "*pcVar11 = *(char *)((int)&DAT_02fd8d20 + iVar3);",
       "type": "undefined_data"
     },
@@ -652,6 +674,7 @@
       "description": "Unresolved stack parameter",
       "line": 191,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "if ((uint)in_stack_00000004[2] < uVar8) {",
       "type": "stack_param"
     },
@@ -659,6 +682,7 @@
       "description": "Unresolved stack parameter",
       "line": 200,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "} while (local_1c < *in_stack_00000004);",
       "type": "stack_param"
     },
@@ -666,6 +690,7 @@
       "description": "Unresolved stack parameter",
       "line": 203,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "pcVar11 = in_stack_00000008;",
       "type": "stack_param"
     },
@@ -673,6 +698,7 @@
       "description": "Undefined global data reference",
       "line": 220,
       "match": "DAT_0063e68c",
+      "severity": "mild",
       "text": "pcVar11 = &DAT_0063e68c;",
       "type": "undefined_data"
     },
@@ -680,6 +706,7 @@
       "description": "Unresolved stack parameter",
       "line": 222,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "p_Var5 = engine_dosio_c_getFile_FUN_00481a50(pcVar11,in_stack_00000008,pcVar9);",
       "type": "stack_param"
     }

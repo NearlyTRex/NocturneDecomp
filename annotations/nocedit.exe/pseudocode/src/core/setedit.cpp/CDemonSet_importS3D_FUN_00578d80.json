@@ -85,14 +85,16 @@
   },
   "complexity": {
     "assembly_lines": 1595,
-    "complexity_score": 1122,
+    "complexity_score": 1137,
     "cross_reference_count": 1,
     "function_call_count": 45,
     "global_count": 77,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 657,
-    "suspect_count": 45,
+    "suspect_count": 46,
     "suspect_types": [
       "pointer_cast",
+      "stack_alignment_array",
       "stack_param",
       "undefined_data"
     ],
@@ -1452,13 +1454,23 @@
       "description": "Unresolved stack parameter",
       "line": 31,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "_FILE *in_stack_00000008;",
       "type": "stack_param"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 32,
+      "match": "aiStackY_3a30",
+      "severity": "moderate",
+      "text": "int aiStackY_3a30 [1378];",
+      "type": "stack_alignment_array"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 115,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "iVar1 = _fgetc(in_stack_00000008);",
       "type": "stack_param"
     },
@@ -1466,6 +1478,7 @@
       "description": "Unresolved stack parameter",
       "line": 118,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "_fscanf(in_stack_00000008,\"%d\\n\",&local_5c);",
       "type": "stack_param"
     },
@@ -1473,6 +1486,7 @@
       "description": "Unresolved stack parameter",
       "line": 125,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "iVar1 = _fgetc(in_stack_00000008);",
       "type": "stack_param"
     },
@@ -1480,6 +1494,7 @@
       "description": "Unresolved stack parameter",
       "line": 128,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "_fscanf(in_stack_00000008,\"%d,%d,%d,%d,%d,%d,%d\\n\",&local_58,&local_54,&local_50,&local_48,",
       "type": "stack_param"
     },
@@ -1487,6 +1502,7 @@
       "description": "Unresolved stack parameter",
       "line": 143,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "iVar1 = _fgetc(in_stack_00000008);",
       "type": "stack_param"
     },
@@ -1494,6 +1510,7 @@
       "description": "Unresolved stack parameter",
       "line": 150,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "iVar2 = _fgetc(in_stack_00000008);",
       "type": "stack_param"
     },
@@ -1501,6 +1518,7 @@
       "description": "Unresolved stack parameter",
       "line": 158,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "iVar1 = _fgetc(in_stack_00000008);",
       "type": "stack_param"
     },
@@ -1508,6 +1526,7 @@
       "description": "Unresolved stack parameter",
       "line": 162,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "local_34 = _ftell(in_stack_00000008);",
       "type": "stack_param"
     },
@@ -1515,6 +1534,7 @@
       "description": "Undefined global data reference",
       "line": 165,
       "match": "DAT_03654368",
+      "severity": "mild",
       "text": "DAT_03654368 = 0;",
       "type": "undefined_data"
     },
@@ -1522,6 +1542,7 @@
       "description": "Unresolved stack parameter",
       "line": 183,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "_fgets(local_5a4,0x104,in_stack_00000008);",
       "type": "stack_param"
     },
@@ -1529,6 +1550,7 @@
       "description": "Undefined global data reference",
       "line": 212,
       "match": "DAT_03654368",
+      "severity": "mild",
       "text": "if (0 < DAT_03654368) {",
       "type": "undefined_data"
     },
@@ -1536,6 +1558,7 @@
       "description": "Undefined global data reference",
       "line": 213,
       "match": "DAT_03654370",
+      "severity": "mild",
       "text": "pcVar11 = &DAT_03654370;",
       "type": "undefined_data"
     },
@@ -1543,6 +1566,7 @@
       "description": "Undefined global data reference",
       "line": 218,
       "match": "DAT_03659190",
+      "severity": "mild",
       "text": "uVar4 = (uint)(byte)(&DAT_03659190)[iVar8];",
       "type": "undefined_data"
     },
@@ -1550,6 +1574,7 @@
       "description": "Undefined global data reference",
       "line": 225,
       "match": "DAT_03654368",
+      "severity": "mild",
       "text": "} while (iVar8 < DAT_03654368);",
       "type": "undefined_data"
     },
@@ -1557,6 +1582,7 @@
       "description": "Complex pointer cast",
       "line": 229,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&DAT_03364d18 + iVar2) = uVar4;",
       "type": "pointer_cast"
     },
@@ -1564,6 +1590,7 @@
       "description": "Undefined global data reference",
       "line": 229,
       "match": "DAT_03364d18",
+      "severity": "mild",
       "text": "*(uint *)((int)&DAT_03364d18 + iVar2) = uVar4;",
       "type": "undefined_data"
     },
@@ -1571,6 +1598,7 @@
       "description": "Undefined global data reference",
       "line": 235,
       "match": "DAT_03365cb8",
+      "severity": "mild",
       "text": "if (DAT_03365cb8 == 0) {",
       "type": "undefined_data"
     },
@@ -1578,6 +1606,7 @@
       "description": "Undefined global data reference",
       "line": 238,
       "match": "DAT_03365cb8",
+      "severity": "mild",
       "text": "DAT_03365cb8 = 1;",
       "type": "undefined_data"
     },
@@ -1585,6 +1614,7 @@
       "description": "Complex pointer cast",
       "line": 248,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&DAT_03364d18 + iVar2) = 0;",
       "type": "pointer_cast"
     },
@@ -1592,6 +1622,7 @@
       "description": "Undefined global data reference",
       "line": 248,
       "match": "DAT_03364d18",
+      "severity": "mild",
       "text": "*(uint *)((int)&DAT_03364d18 + iVar2) = 0;",
       "type": "undefined_data"
     },
@@ -1599,6 +1630,7 @@
       "description": "Unresolved stack parameter",
       "line": 274,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "shape_memdbg_cpp_closeFile_FUN_0050f9b0(in_stack_00000008,\"..\\\\core\\\\setedit.cpp\",0x516)",
       "type": "stack_param"
     },
@@ -1606,6 +1638,7 @@
       "description": "Unresolved stack parameter",
       "line": 281,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "_fseek(in_stack_00000008,local_34,0);",
       "type": "stack_param"
     },
@@ -1613,6 +1646,7 @@
       "description": "Unresolved stack parameter",
       "line": 291,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "iVar2 = _fgetc(in_stack_00000008);",
       "type": "stack_param"
     },
@@ -1620,6 +1654,7 @@
       "description": "Unresolved stack parameter",
       "line": 302,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "iVar1 = _fgetc(in_stack_00000008);",
       "type": "stack_param"
     },
@@ -1627,6 +1662,7 @@
       "description": "Unresolved stack parameter",
       "line": 305,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "local_3c = _ftell(in_stack_00000008);",
       "type": "stack_param"
     },
@@ -1634,6 +1670,7 @@
       "description": "Unresolved stack parameter",
       "line": 310,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "iVar2 = _fgetc(in_stack_00000008);",
       "type": "stack_param"
     },
@@ -1641,6 +1678,7 @@
       "description": "Unresolved stack parameter",
       "line": 322,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "iVar1 = _fgetc(in_stack_00000008);",
       "type": "stack_param"
     },
@@ -1648,6 +1686,7 @@
       "description": "Unresolved stack parameter",
       "line": 329,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "iVar2 = _fgetc(in_stack_00000008);",
       "type": "stack_param"
     },
@@ -1655,6 +1694,7 @@
       "description": "Unresolved stack parameter",
       "line": 357,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "iVar1 = _fgetc(in_stack_00000008);",
       "type": "stack_param"
     },
@@ -1662,6 +1702,7 @@
       "description": "Unresolved stack parameter",
       "line": 365,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "iVar2 = _fscanf(in_stack_00000008,\"%f,%f,%f\\n\",local_38 + iVar1 * 3,piVar20,piVar5);",
       "type": "stack_param"
     },
@@ -1669,6 +1710,7 @@
       "description": "Unresolved stack parameter",
       "line": 380,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "iVar1 = _fgetc(in_stack_00000008);",
       "type": "stack_param"
     },
@@ -1676,6 +1718,7 @@
       "description": "Unresolved stack parameter",
       "line": 387,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "iVar2 = _fgetc(in_stack_00000008);",
       "type": "stack_param"
     },
@@ -1683,6 +1726,7 @@
       "description": "Unresolved stack parameter",
       "line": 428,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "iVar1 = _fgetc(in_stack_00000008);",
       "type": "stack_param"
     },
@@ -1690,6 +1734,7 @@
       "description": "Unresolved stack parameter",
       "line": 436,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "core_setutil_cpp_C3DSLight_importS3D_FUN_00587710(&local_2478,in_stack_00000008);",
       "type": "stack_param"
     },
@@ -1697,6 +1742,7 @@
       "description": "Complex pointer cast",
       "line": 483,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar16 = (uint *)((int)pCVar9 + (uint)bVar22 * -8 + 0x228);",
       "type": "pointer_cast"
     },
@@ -1704,6 +1750,7 @@
       "description": "Complex pointer cast",
       "line": 486,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar12 = (uint *)((int)&local_2478 + (uint)bVar22 * -8 + (uint)bVar22 * -8 + 0x22c)",
       "type": "pointer_cast"
     },
@@ -1711,6 +1758,7 @@
       "description": "Complex pointer cast",
       "line": 488,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*puVar16 = *(uint *)((int)&local_2478 + (uint)bVar22 * -8 + 0x228);",
       "type": "pointer_cast"
     },
@@ -1718,6 +1766,7 @@
       "description": "Unresolved stack parameter",
       "line": 548,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "iVar1 = _fgetc(in_stack_00000008);",
       "type": "stack_param"
     },
@@ -1725,6 +1774,7 @@
       "description": "Unresolved stack parameter",
       "line": 555,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "iVar2 = _fgetc(in_stack_00000008);",
       "type": "stack_param"
     },
@@ -1732,6 +1782,7 @@
       "description": "Unresolved stack parameter",
       "line": 567,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "iVar1 = _fgetc(in_stack_00000008);",
       "type": "stack_param"
     },
@@ -1739,6 +1790,7 @@
       "description": "Unresolved stack parameter",
       "line": 574,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "core_setutil_cpp_C3DSCamera_importS3D_FUN_00585ff0(pCVar6,in_stack_00000008);",
       "type": "stack_param"
     },
@@ -1746,6 +1798,7 @@
       "description": "Unresolved stack parameter",
       "line": 584,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "_fseek(in_stack_00000008,local_3c,0);",
       "type": "stack_param"
     },
@@ -1753,6 +1806,7 @@
       "description": "Unresolved stack parameter",
       "line": 588,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "iVar2 = _fscanf(in_stack_00000008,\"%d, %d,%f,%f, %d,%f,%f, %d,%f,%f\\n\",&local_18,&local_88,",
       "type": "stack_param"
     },
@@ -1760,6 +1814,7 @@
       "description": "Undefined global data reference",
       "line": 599,
       "match": "DAT_03364d18",
+      "severity": "mild",
       "text": "triangle_flags = (uchar)(&DAT_03364d18)[local_18];",
       "type": "undefined_data"
     }

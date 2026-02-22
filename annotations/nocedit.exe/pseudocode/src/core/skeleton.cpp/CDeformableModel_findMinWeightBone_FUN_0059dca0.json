@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 46,
     "suspect_count": 3,
     "suspect_types": [
@@ -144,6 +145,7 @@
       "description": "Complex pointer cast",
       "line": 20,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)local_1a4 + iVar5) = 0;",
       "type": "pointer_cast"
     },
@@ -151,6 +153,7 @@
       "description": "Complex pointer cast",
       "line": 42,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "if (local_1a4[iVar5] < *(float *)((int)local_1a4 + iVar3)) {",
       "type": "pointer_cast"
     },

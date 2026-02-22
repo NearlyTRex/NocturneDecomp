@@ -41,7 +41,7 @@
 ;   float g_MaxValidPosition = 99999
 ;   uchar[257] g_CharacterClassificationTable
 ;   int g_ActorMagicNumber
-;   char[50] g_ActorDebugBuffer
+;   char[52] g_ActorDebugBuffer
 ;   undefined4 CHAR_ARRAY_00821fc4
 ;   ... and 2 more
 ;

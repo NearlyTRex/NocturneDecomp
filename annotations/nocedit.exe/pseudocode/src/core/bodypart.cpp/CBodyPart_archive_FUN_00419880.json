@@ -27,19 +27,7 @@
       },
       {
         "category": "format_error",
-        "column": 64,
-        "line": 48,
-        "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
         "column": 20,
-        "line": 49,
-        "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 54,
         "line": 49,
         "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
       },
@@ -63,12 +51,6 @@
       },
       {
         "category": "format_error",
-        "column": 54,
-        "line": 52,
-        "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
         "column": 20,
         "line": 53,
         "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
@@ -78,6 +60,24 @@
         "column": 20,
         "line": 54,
         "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 20,
+        "line": 55,
+        "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 20,
+        "line": 56,
+        "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 20,
+        "line": 57,
+        "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -85,16 +85,17 @@
   },
   "complexity": {
     "assembly_lines": 322,
-    "complexity_score": 264,
+    "complexity_score": 267,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 19,
-    "pseudocode_lines": 129,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 132,
     "suspect_count": 13,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 451
+    "total_lines": 454
   },
   "cross_references": [],
   "function": {
@@ -335,93 +336,106 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 52,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&(pSVar5->vertex_indices).vertex_index_2 + iVar6) = 3;",
+      "severity": "mild",
+      "text": "*(uint *)((int)pSVar5->vertices + iVar6 + -0x14) = 3;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 71,
+      "line": 74,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar2 = (uint *)((int)&pCVar4->z + iVar9);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 72,
+      "line": 75,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar3 = (uint *)((int)&pCVar4->y + iVar9);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 73,
+      "line": 76,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar1 = (uint *)((int)&pCVar4->x + iVar9);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 87,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&pSVar5[1].u_coord_0 + local_18),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 88,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&pSVar5[1].u_coord_2 + local_18),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 89,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&pSVar5[1].v_coord_1 + local_18),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 90,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&pSVar5[2].vertex_indices.vertex_index_0 + local_18),",
+      "severity": "mild",
+      "text": "*(uint *)((int)&pSVar5->vertices[0].vertex_index + local_18),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 91,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&pSVar5[2].vertex_indices.vertex_index_2 + local_18),",
+      "severity": "mild",
+      "text": "*(uint *)((int)&pSVar5->vertices[0].texture_u + local_18),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 92,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&pSVar5[2].u_coord_1 + local_18),",
+      "severity": "mild",
+      "text": "*(uint *)((int)&pSVar5->vertices[0].texture_v + local_18),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 93,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&pSVar5[2].v_coord_0 + local_18),",
+      "severity": "mild",
+      "text": "*(uint *)((int)&pSVar5->vertices[1].vertex_index + local_18),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 94,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&pSVar5[2].v_coord_2 + local_18),",
+      "severity": "mild",
+      "text": "*(uint *)((int)&pSVar5->vertices[1].texture_u + local_18),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 95,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&pSVar5[3].vertex_indices.vertex_index_1 + local_18));",
+      "severity": "mild",
+      "text": "*(uint *)((int)&pSVar5->vertices[1].texture_v + local_18),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 96,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&pSVar5->vertices[2].vertex_index + local_18),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 97,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&pSVar5->vertices[2].texture_u + local_18),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 98,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&pSVar5->vertices[2].texture_v + local_18));",
       "type": "pointer_cast"
     }
   ],

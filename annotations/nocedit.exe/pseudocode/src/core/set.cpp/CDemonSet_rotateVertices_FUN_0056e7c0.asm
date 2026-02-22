@@ -33,7 +33,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_set.cpp_CDemonSet_FUN_0056e5d0
+;   core_set.cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0056e5d0
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0
 ;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
 ;
@@ -97,8 +97,8 @@ section .text
     PUSH EDX                            ; 0056e834
     MOV ECX,dword ptr [ESP + 0x1c]      ; 0056e835
     PUSH ECX                            ; 0056e839
-    CALL core_set.cpp_CDemonSet_FUN_0056e5d0 ; 0056e83a
-        ;   XREF to: 0056e5d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056e5d0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0056e5d0 ; 0056e83a
+        ;   XREF to: 0056e5d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0056e5d0(CDemonSet * this_ptr, int vertex_count)
     ADD ESP,0x8                         ; 0056e83f
     ADD ESP,0x4                         ; 0056e842
     POP EBP                             ; 0056e845

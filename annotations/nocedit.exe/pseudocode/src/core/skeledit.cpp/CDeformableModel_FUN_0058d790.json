@@ -23,6 +23,7 @@
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 10,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 241,
     "suspect_count": 47,
     "suspect_types": [
@@ -458,6 +459,7 @@
       "description": "Unnamed function parameter",
       "line": 4,
       "match": "param_2",
+      "severity": "mild",
       "text": "void __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058d790(CDeformableModel *this_ptr,int param_2,CLodMesh *param_3)",
       "type": "unnamed_param"
     },
@@ -465,6 +467,7 @@
       "description": "Unnamed function parameter",
       "line": 4,
       "match": "param_3",
+      "severity": "mild",
       "text": "void __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058d790(CDeformableModel *this_ptr,int param_2,CLodMesh *param_3)",
       "type": "unnamed_param"
     },
@@ -472,6 +475,7 @@
       "description": "Unresolved stack parameter",
       "line": 29,
       "match": "in_stack_00000010",
+      "severity": "moderate",
       "text": "int in_stack_00000010;",
       "type": "stack_param"
     },
@@ -479,6 +483,7 @@
       "description": "Unnamed function parameter",
       "line": 59,
       "match": "param_2",
+      "severity": "mild",
       "text": "(this_ptr,param_2,param_3->vertex_count,param_3->tri_count,0);",
       "type": "unnamed_param"
     },
@@ -486,6 +491,7 @@
       "description": "Unnamed function parameter",
       "line": 59,
       "match": "param_3",
+      "severity": "mild",
       "text": "(this_ptr,param_2,param_3->vertex_count,param_3->tri_count,0);",
       "type": "unnamed_param"
     },
@@ -493,6 +499,7 @@
       "description": "Unnamed function parameter",
       "line": 59,
       "match": "param_3",
+      "severity": "mild",
       "text": "(this_ptr,param_2,param_3->vertex_count,param_3->tri_count,0);",
       "type": "unnamed_param"
     },
@@ -500,6 +507,7 @@
       "description": "Unnamed function parameter",
       "line": 63,
       "match": "param_2",
+      "severity": "mild",
       "text": "local_58 = param_2 * 4;",
       "type": "unnamed_param"
     },
@@ -507,6 +515,7 @@
       "description": "Complex pointer cast",
       "line": 66,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (*(int *)((int)this_ptr->vertex_count + local_58) <= local_38) {",
       "type": "pointer_cast"
     },
@@ -514,6 +523,7 @@
       "description": "Unnamed function parameter",
       "line": 67,
       "match": "param_3",
+      "severity": "mild",
       "text": "shape_meshlod_cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30(param_3,0);",
       "type": "unnamed_param"
     },
@@ -521,6 +531,7 @@
       "description": "Unnamed function parameter",
       "line": 68,
       "match": "param_3",
+      "severity": "mild",
       "text": "shape_meshlod_cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30(param_3,1);",
       "type": "unnamed_param"
     },
@@ -528,6 +539,7 @@
       "description": "Unnamed function parameter",
       "line": 69,
       "match": "param_3",
+      "severity": "mild",
       "text": "shape_meshlod_cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30(param_3,2);",
       "type": "unnamed_param"
     },
@@ -535,6 +547,7 @@
       "description": "Unnamed function parameter",
       "line": 71,
       "match": "param_2",
+      "severity": "mild",
       "text": "iVar16 = (int)this_ptr->lod_info + param_2 * 4 + -4;",
       "type": "unnamed_param"
     },
@@ -542,6 +555,7 @@
       "description": "Unnamed function parameter",
       "line": 80,
       "match": "param_2",
+      "severity": "mild",
       "text": "this_ptr->tri_count[param_2] = 0;",
       "type": "unnamed_param"
     },
@@ -549,6 +563,7 @@
       "description": "Unnamed function parameter",
       "line": 81,
       "match": "param_2",
+      "severity": "mild",
       "text": "this_ptr->cap_tri_count[param_2] = 0;",
       "type": "unnamed_param"
     },
@@ -556,6 +571,7 @@
       "description": "Unnamed function parameter",
       "line": 83,
       "match": "param_3",
+      "severity": "mild",
       "text": "if (0 < param_3->tri_count) {",
       "type": "unnamed_param"
     },
@@ -563,6 +579,7 @@
       "description": "Unnamed function parameter",
       "line": 84,
       "match": "param_2",
+      "severity": "mild",
       "text": "local_2c = param_2 * 4;",
       "type": "unnamed_param"
     },
@@ -570,6 +587,7 @@
       "description": "Complex pointer cast",
       "line": 90,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar21 = (uint *)((int)param_3->tri_data->attribute_indices + local_50);",
       "type": "pointer_cast"
     },
@@ -577,6 +595,7 @@
       "description": "Unnamed function parameter",
       "line": 90,
       "match": "param_3",
+      "severity": "mild",
       "text": "puVar21 = (uint *)((int)param_3->tri_data->attribute_indices + local_50);",
       "type": "unnamed_param"
     },
@@ -584,6 +603,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 99,
       "match": "ROUND",
+      "severity": "mild",
       "text": "puVar7[3] = (short)(int)ROUND(ROUND((double)(float)puVar15[7] * dVar3));",
       "type": "decompiler_intrinsic"
     },
@@ -591,6 +611,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 99,
       "match": "ROUND",
+      "severity": "mild",
       "text": "puVar7[3] = (short)(int)ROUND(ROUND((double)(float)puVar15[7] * dVar3));",
       "type": "decompiler_intrinsic"
     },
@@ -598,6 +619,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 103,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_14 = (int)ROUND(ROUND((double)*pfVar18 * dVar3));",
       "type": "decompiler_intrinsic"
     },
@@ -605,6 +627,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 103,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_14 = (int)ROUND(ROUND((double)*pfVar18 * dVar3));",
       "type": "decompiler_intrinsic"
     },
@@ -612,6 +635,7 @@
       "description": "Unnamed function parameter",
       "line": 109,
       "match": "param_2",
+      "severity": "mild",
       "text": "piVar9 = this_ptr->parts[puVar21[1]].tri_counts + param_2;",
       "type": "unnamed_param"
     },
@@ -619,6 +643,7 @@
       "description": "Unnamed function parameter",
       "line": 111,
       "match": "param_2",
+      "severity": "mild",
       "text": "this_ptr->tri_count[param_2] = this_ptr->tri_count[param_2] + 1;",
       "type": "unnamed_param"
     },
@@ -626,6 +651,7 @@
       "description": "Unnamed function parameter",
       "line": 111,
       "match": "param_2",
+      "severity": "mild",
       "text": "this_ptr->tri_count[param_2] = this_ptr->tri_count[param_2] + 1;",
       "type": "unnamed_param"
     },
@@ -633,6 +659,7 @@
       "description": "Unnamed function parameter",
       "line": 114,
       "match": "param_2",
+      "severity": "mild",
       "text": "piVar9 = this_ptr->parts[puVar21[1]].cap_tri_counts + param_2;",
       "type": "unnamed_param"
     },
@@ -640,6 +667,7 @@
       "description": "Unnamed function parameter",
       "line": 116,
       "match": "param_2",
+      "severity": "mild",
       "text": "this_ptr->cap_tri_count[param_2] = this_ptr->cap_tri_count[param_2] + 1;",
       "type": "unnamed_param"
     },
@@ -647,6 +675,7 @@
       "description": "Unnamed function parameter",
       "line": 116,
       "match": "param_2",
+      "severity": "mild",
       "text": "this_ptr->cap_tri_count[param_2] = this_ptr->cap_tri_count[param_2] + 1;",
       "type": "unnamed_param"
     },
@@ -654,6 +683,7 @@
       "description": "Unnamed function parameter",
       "line": 122,
       "match": "param_3",
+      "severity": "mild",
       "text": "} while (local_30 < param_3->tri_count);",
       "type": "unnamed_param"
     },
@@ -661,6 +691,7 @@
       "description": "Unnamed function parameter",
       "line": 127,
       "match": "param_2",
+      "severity": "mild",
       "text": "iVar16 = (int)this_ptr->lod_info + param_2 * 4 + -4;",
       "type": "unnamed_param"
     },
@@ -668,6 +699,7 @@
       "description": "Unnamed function parameter",
       "line": 136,
       "match": "param_2",
+      "severity": "mild",
       "text": "if ((iVar10 != this_ptr->tri_count[param_2]) || (iVar20 != this_ptr->cap_tri_count[param_2]))",
       "type": "unnamed_param"
     },
@@ -675,6 +707,7 @@
       "description": "Unnamed function parameter",
       "line": 136,
       "match": "param_2",
+      "severity": "mild",
       "text": "if ((iVar10 != this_ptr->tri_count[param_2]) || (iVar20 != this_ptr->cap_tri_count[param_2]))",
       "type": "unnamed_param"
     },
@@ -682,6 +715,7 @@
       "description": "Unnamed function parameter",
       "line": 142,
       "match": "param_2",
+      "severity": "mild",
       "text": "if (0 < this_ptr->cap_tri_count[param_2]) {",
       "type": "unnamed_param"
     },
@@ -689,6 +723,7 @@
       "description": "Unnamed function parameter",
       "line": 144,
       "match": "param_2",
+      "severity": "mild",
       "text": "(this_ptr->cap_tri_count[param_2] * 4,\"..\\\\core\\\\skeledit.cpp\",0x8a1)",
       "type": "unnamed_param"
     },
@@ -696,6 +731,7 @@
       "description": "Unnamed function parameter",
       "line": 146,
       "match": "param_2",
+      "severity": "mild",
       "text": "this_ptr->cap_index_ptr[param_2] = piVar9;",
       "type": "unnamed_param"
     },
@@ -703,6 +739,7 @@
       "description": "Unnamed function parameter",
       "line": 154,
       "match": "param_2",
+      "severity": "mild",
       "text": "iVar16 = this_ptr->tri_count[param_2];",
       "type": "unnamed_param"
     },
@@ -710,6 +747,7 @@
       "description": "Unnamed function parameter",
       "line": 160,
       "match": "param_2",
+      "severity": "mild",
       "text": "for (iVar11 = 0; iVar11 < local_44->parts[0].cap_tri_counts[param_2];",
       "type": "unnamed_param"
     },
@@ -717,6 +755,7 @@
       "description": "Complex pointer cast",
       "line": 163,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)this_ptr->cap_index_ptr[param_2] + iVar20) =",
       "type": "pointer_cast"
     },
@@ -724,6 +763,7 @@
       "description": "Unnamed function parameter",
       "line": 163,
       "match": "param_2",
+      "severity": "mild",
       "text": "*(uint *)((int)this_ptr->cap_index_ptr[param_2] + iVar20) =",
       "type": "unnamed_param"
     },
@@ -731,6 +771,7 @@
       "description": "Complex pointer cast",
       "line": 164,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)param_3->tri_data->attribute_indices + iVar10 + 0xc);",
       "type": "pointer_cast"
     },
@@ -738,6 +779,7 @@
       "description": "Unnamed function parameter",
       "line": 164,
       "match": "param_3",
+      "severity": "mild",
       "text": "*(uint *)((int)param_3->tri_data->attribute_indices + iVar10 + 0xc);",
       "type": "unnamed_param"
     },
@@ -745,6 +787,7 @@
       "description": "Unnamed function parameter",
       "line": 176,
       "match": "param_3",
+      "severity": "mild",
       "text": "pcVar13 = param_3->vertex_data->lod_workspace + local_3c + -0x10;",
       "type": "unnamed_param"
     },
@@ -752,6 +795,7 @@
       "description": "Complex pointer cast",
       "line": 196,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "pfVar18 = (float *)(*(int *)((int)this_ptr->vertex_data_ptr + iVar16) + local_4c);",
       "type": "pointer_cast"
     },
@@ -759,6 +803,7 @@
       "description": "Complex pointer cast",
       "line": 207,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "if (local_538 < *(float *)((int)local_528 + iVar11)) {",
       "type": "pointer_cast"
     },
@@ -766,6 +811,7 @@
       "description": "Complex pointer cast",
       "line": 208,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "local_538 = *(float *)((int)local_528 + iVar11);",
       "type": "pointer_cast"
     },
@@ -773,6 +819,7 @@
       "description": "Complex pointer cast",
       "line": 216,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)pfVar18 + *(byte *)pfVar18 + 1) = (byte)iVar16;",
       "type": "pointer_cast"
     },
@@ -780,6 +827,7 @@
       "description": "Unresolved stack parameter",
       "line": 219,
       "match": "in_stack_00000010",
+      "severity": "moderate",
       "text": "(local_70,&local_534,(CMatrix3x4f *)(iVar16 * 0x30 + in_stack_00000010));",
       "type": "stack_param"
     }

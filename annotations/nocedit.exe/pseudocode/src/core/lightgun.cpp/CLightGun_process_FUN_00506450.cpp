@@ -58,7 +58,7 @@ void __cdecl core_lightgun_cpp_CLightGun_process_FUN_00506450(CLightGun *this_pt
       core_dlight_cpp_CDemonLight_applyFilter_FUN_00474770(&g_CDemonLightInstance,filter_ptr,0,0,0);
       core_weather_cpp_CWeather_createLightningStrike_FUN_005eeeb0(g_CWeatherPtr,0.1,0);
     }
-    core_set_cpp_CDemonSet_FUN_0056d090(g_CDemonSetPtr);
+    core_set_cpp_CDemonSet_addDynamicLight_FUN_0056d090(g_CDemonSetPtr,&g_CDemonLightInstance);
     this_ptr->fire_flash_pending = 0;
     return;
   }

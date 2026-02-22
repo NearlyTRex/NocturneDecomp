@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 12,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 97,
     "suspect_count": 8,
     "suspect_types": [
@@ -21,7 +22,7 @@
     {
       "addr": "0056c1a0",
       "from_addr": "0056c7ae",
-      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0",
+      "name": "core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -265,6 +266,7 @@
       "description": "Complex pointer cast",
       "line": 25,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)g_VDCameraSortIndices + iVar5) = iVar3;",
       "type": "pointer_cast"
     },
@@ -272,6 +274,7 @@
       "description": "Complex pointer cast",
       "line": 36,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (g_VDCameraScores[*(int *)((int)g_VDCameraSortIndices + local_28)] <",
       "type": "pointer_cast"
     },
@@ -279,6 +282,7 @@
       "description": "Complex pointer cast",
       "line": 37,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "g_VDCameraScores[*(int *)((int)g_VDCameraSortIndices + iVar4)]) {",
       "type": "pointer_cast"
     },
@@ -286,6 +290,7 @@
       "description": "Complex pointer cast",
       "line": 38,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "uVar1 = *(uint *)((int)g_VDCameraSortIndices + local_28);",
       "type": "pointer_cast"
     },
@@ -293,6 +298,7 @@
       "description": "Complex pointer cast",
       "line": 39,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)g_VDCameraSortIndices + local_28) =",
       "type": "pointer_cast"
     },
@@ -300,6 +306,7 @@
       "description": "Complex pointer cast",
       "line": 40,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)g_VDCameraSortIndices + iVar4);",
       "type": "pointer_cast"
     },
@@ -307,6 +314,7 @@
       "description": "Complex pointer cast",
       "line": 41,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)g_VDCameraSortIndices + iVar4) = uVar1;",
       "type": "pointer_cast"
     },
@@ -314,6 +322,7 @@
       "description": "Complex pointer cast",
       "line": 62,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "iVar4 = *(int *)((int)g_VDCameraSortIndices + local_1c);",
       "type": "pointer_cast"
     }

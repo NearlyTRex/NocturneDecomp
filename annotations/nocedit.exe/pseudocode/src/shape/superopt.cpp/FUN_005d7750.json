@@ -17,6 +17,7 @@
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 3,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 20,
     "suspect_count": 5,
     "suspect_types": [
@@ -111,6 +112,7 @@
       "description": "Unresolved stack parameter",
       "line": 8,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "char *in_stack_00000004;",
       "type": "stack_param"
     },
@@ -118,6 +120,7 @@
       "description": "Undefined global data reference",
       "line": 11,
       "match": "DAT_03f6bbe8",
+      "severity": "mild",
       "text": "if (0 < DAT_03f6bbe8) {",
       "type": "undefined_data"
     },
@@ -125,6 +128,7 @@
       "description": "Undefined global data reference",
       "line": 12,
       "match": "DAT_03f6bbf0",
+      "severity": "mild",
       "text": "str1 = &DAT_03f6bbf0;",
       "type": "undefined_data"
     },
@@ -132,6 +136,7 @@
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "iVar1 = stricmp(str1,in_stack_00000004);",
       "type": "stack_param"
     },
@@ -139,6 +144,7 @@
       "description": "Undefined global data reference",
       "line": 20,
       "match": "DAT_03f6bbe8",
+      "severity": "mild",
       "text": "} while (iVar2 < DAT_03f6bbe8);",
       "type": "undefined_data"
     }

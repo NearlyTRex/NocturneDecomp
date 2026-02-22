@@ -5,6 +5,7 @@
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 11,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 42,
     "suspect_count": 24,
     "suspect_types": [
@@ -222,6 +223,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 7,
       "match": "extraout_ST0",
+      "severity": "moderate",
       "text": "float10 extraout_ST0;",
       "type": "extra_output"
     },
@@ -229,6 +231,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 8,
       "match": "extraout_ST0_00",
+      "severity": "moderate",
       "text": "float10 extraout_ST0_00;",
       "type": "extra_output"
     },
@@ -236,6 +239,7 @@
       "description": "Unknown/unresolved type",
       "line": 17,
       "match": "unkuint10",
+      "severity": "mild",
       "text": "uStack_20 = (uint)((unkuint10)y >> 0x20);",
       "type": "unknown_type"
     },
@@ -243,6 +247,7 @@
       "description": "Unknown/unresolved type",
       "line": 18,
       "match": "unkuint10",
+      "severity": "mild",
       "text": "uStack_1c = (ushort)((unkuint10)y >> 0x40);",
       "type": "unknown_type"
     },
@@ -250,6 +255,7 @@
       "description": "Unknown/unresolved type",
       "line": 19,
       "match": "unkuint10",
+      "severity": "mild",
       "text": "uStack_2c = (uint)((unkuint10)x >> 0x20);",
       "type": "unknown_type"
     },
@@ -257,6 +263,7 @@
       "description": "Unknown/unresolved type",
       "line": 20,
       "match": "unkuint10",
+      "severity": "mild",
       "text": "uStack_28 = (ushort)((unkuint10)x >> 0x40);",
       "type": "unknown_type"
     },
@@ -264,6 +271,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 21,
       "match": "CARRY4",
+      "severity": "mild",
       "text": "if ((((CARRY4(uStack_2c,uStack_2c)) && (CARRY4(uStack_20,uStack_20))) &&",
       "type": "decompiler_intrinsic"
     },
@@ -271,6 +279,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 21,
       "match": "CARRY4",
+      "severity": "mild",
       "text": "if ((((CARRY4(uStack_2c,uStack_2c)) && (CARRY4(uStack_20,uStack_20))) &&",
       "type": "decompiler_intrinsic"
     },
@@ -278,6 +287,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 25,
       "match": "ABS",
+      "severity": "mild",
       "text": "uVar2 = (uint)(ABS(y) <= ABS(x));",
       "type": "decompiler_intrinsic"
     },
@@ -285,6 +295,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 25,
       "match": "ABS",
+      "severity": "mild",
       "text": "uVar2 = (uint)(ABS(y) <= ABS(x));",
       "type": "decompiler_intrinsic"
     },
@@ -292,6 +303,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 27,
       "match": "extraout_ST0",
+      "severity": "moderate",
       "text": "iVar1 = (int)ROUND((float10)16.0f * extraout_ST0) << 4;",
       "type": "extra_output"
     },
@@ -299,6 +311,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 27,
       "match": "ROUND",
+      "severity": "mild",
       "text": "iVar1 = (int)ROUND((float10)16.0f * extraout_ST0) << 4;",
       "type": "decompiler_intrinsic"
     },
@@ -306,6 +319,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 29,
       "match": "extraout_ST0_00",
+      "severity": "moderate",
       "text": "fVar3 = extraout_ST0_00 * extraout_ST0_00;",
       "type": "extra_output"
     },
@@ -313,6 +327,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 29,
       "match": "extraout_ST0_00",
+      "severity": "moderate",
       "text": "fVar3 = extraout_ST0_00 * extraout_ST0_00;",
       "type": "extra_output"
     },
@@ -320,6 +335,7 @@
       "description": "Undefined global data reference",
       "line": 32,
       "match": "DAT_0068755c",
+      "severity": "mild",
       "text": "fVar3 = *(float10 *)(&DAT_0068755c + iVar1) +",
       "type": "undefined_data"
     },
@@ -327,6 +343,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 35,
       "match": "extraout_ST0_00",
+      "severity": "moderate",
       "text": "-0.33333333f * fVar3) * extraout_ST0_00 + extraout_ST0_00;",
       "type": "extra_output"
     },
@@ -334,6 +351,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 35,
       "match": "extraout_ST0_00",
+      "severity": "moderate",
       "text": "-0.33333333f * fVar3) * extraout_ST0_00 + extraout_ST0_00;",
       "type": "extra_output"
     },
@@ -341,6 +359,7 @@
       "description": "Jump table recovery failed",
       "line": 36,
       "match": "WARNING: Could not recover jumptable",
+      "severity": "mild",
       "text": "/* WARNING: Could not recover jumptable at 0x0060c599. Too many branches */",
       "type": "warning_jumptable"
     },
@@ -348,6 +367,7 @@
       "description": "Indirect jump treated as call",
       "line": 37,
       "match": "WARNING: Treating indirect jump as call",
+      "severity": "mild",
       "text": "/* WARNING: Treating indirect jump as call */",
       "type": "warning_indirect_jump"
     },
@@ -355,6 +375,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 39,
       "match": "CARRY4",
+      "severity": "mild",
       "text": "[(uVar2 * 2 + (uint)CARRY4((uint)uStack_1c << 0x10,(uint)uStack_1c << 0x10)) * 2 +",
       "type": "decompiler_intrinsic"
     },
@@ -362,6 +383,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 40,
       "match": "CARRY4",
+      "severity": "mild",
       "text": "(uint)CARRY4((uint)uStack_28 << 0x10,(uint)uStack_28 << 0x10)])();",
       "type": "decompiler_intrinsic"
     },
@@ -369,6 +391,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 43,
       "match": "fpatan",
+      "severity": "mild",
       "text": "fVar3 = (float10)fpatan(x,y);",
       "type": "decompiler_intrinsic"
     },

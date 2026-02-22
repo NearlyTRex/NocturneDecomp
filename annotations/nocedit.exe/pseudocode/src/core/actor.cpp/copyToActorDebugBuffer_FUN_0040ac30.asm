@@ -7,7 +7,7 @@
 ; char *           Stack[0x4]:4   source_string
 ;
 ; Referenced Globals:
-;   char[50] g_ActorDebugBuffer
+;   char[52] g_ActorDebugBuffer
 ;   undefined4 CHAR_ARRAY_00821fc4
 ;
 ; Called Functions:

@@ -9,7 +9,7 @@
 void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(CMimic *this_ptr)
 
 {
-  void *pvVar1;
+  SMorphPoint *pSVar1;
   float fVar2;
   int iVar3;
   int iVar4;
@@ -48,9 +48,10 @@ void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(CMimic *this_ptr)
     if (0 < (this_ptr->morph).models[0].num_points) {
       iVar4 = 0;
       do {
-        pvVar1 = (this_ptr->morph).models[0].points;
+        pSVar1 = (this_ptr->morph).models[0].points;
         iVar3 = iVar3 + 1;
-        *(float *)((int)pvVar1 + iVar4 + 4) = -*(float *)((int)pvVar1 + iVar4 + 4);
+        *(float *)((int)&(pSVar1->position).x + iVar4) =
+             -*(float *)((int)&(pSVar1->position).x + iVar4);
         iVar4 = iVar4 + 0x10;
       } while (iVar3 < (this_ptr->morph).models[0].num_points);
       return;

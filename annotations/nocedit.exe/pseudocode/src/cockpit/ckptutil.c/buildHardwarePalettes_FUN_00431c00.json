@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 11,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 41,
     "suspect_count": 3,
     "suspect_types": [
@@ -174,6 +175,7 @@
       "description": "Unreachable code block removed",
       "line": 2,
       "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x00431c6d) */",
       "type": "warning_unreachable"
     },
@@ -181,6 +183,7 @@
       "description": "Complex pointer cast",
       "line": 22,
       "match": "(ushort *)((int)",
+      "severity": "mild",
       "text": "*(ushort *)((int)g_Hardware16BitPalette + iVar4) =",
       "type": "pointer_cast"
     },
@@ -188,6 +191,7 @@
       "description": "Complex pointer cast",
       "line": 38,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)g_Hardware32BitPalette + iVar4) =",
       "type": "pointer_cast"
     }

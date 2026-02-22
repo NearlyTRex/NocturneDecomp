@@ -10,6 +10,7 @@
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 6,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 24,
     "suspect_count": 6,
     "suspect_types": [
@@ -19,15 +20,15 @@
   },
   "cross_references": [
     {
-      "addr": "0056c1a0",
-      "from_addr": "0056c500",
-      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0056a190",
       "from_addr": "0056a2d3",
       "name": "core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056c1a0",
+      "from_addr": "0056c500",
+      "name": "core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -230,6 +231,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 19,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_24.x = local_24.x + (int)ROUND(ROUND((double)(float)local_30.x * 256));",
       "type": "decompiler_intrinsic"
     },
@@ -237,6 +239,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 19,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_24.x = local_24.x + (int)ROUND(ROUND((double)(float)local_30.x * 256));",
       "type": "decompiler_intrinsic"
     },
@@ -244,6 +247,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 20,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_24.y = (int)ROUND(ROUND((double)(float)local_30.y * 256)) + local_24.y;",
       "type": "decompiler_intrinsic"
     },
@@ -251,6 +255,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 20,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_24.y = (int)ROUND(ROUND((double)(float)local_30.y * 256)) + local_24.y;",
       "type": "decompiler_intrinsic"
     },
@@ -258,6 +263,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 21,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_18 = (int)ROUND(ROUND((double)(float)local_30.z * 256));",
       "type": "decompiler_intrinsic"
     },
@@ -265,6 +271,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 21,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_18 = (int)ROUND(ROUND((double)(float)local_30.z * 256));",
       "type": "decompiler_intrinsic"
     }

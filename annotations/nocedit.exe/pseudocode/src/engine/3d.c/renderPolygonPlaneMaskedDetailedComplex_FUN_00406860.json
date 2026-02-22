@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 13,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 77,
     "suspect_count": 2,
     "suspect_types": [
@@ -188,6 +189,7 @@
       "description": "Complex pointer cast",
       "line": 39,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)g_ProcessedVertexIndices + iVar6) = (pSVar4->base).type;",
       "type": "pointer_cast"
     },
@@ -195,6 +197,7 @@
       "description": "Complex pointer cast",
       "line": 79,
       "match": "(SMRGLHeaderExtended *)((int)",
+      "severity": "mild",
       "text": "return (SMRGLHeaderExtended *)((int)&polygon_info[1].base + (polygon_info->base).count * 0xc);",
       "type": "pointer_cast"
     }

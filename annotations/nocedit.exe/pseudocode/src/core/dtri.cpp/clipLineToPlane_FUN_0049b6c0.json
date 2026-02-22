@@ -67,14 +67,16 @@
   },
   "complexity": {
     "assembly_lines": 176,
-    "complexity_score": 150,
+    "complexity_score": 165,
     "cross_reference_count": 7,
     "function_call_count": 1,
     "global_count": 4,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 40,
-    "suspect_count": 10,
+    "suspect_count": 11,
     "suspect_types": [
       "decompiler_intrinsic",
+      "sub84_truncation",
       "unknown_field"
     ],
     "total_lines": 216
@@ -284,9 +286,18 @@
   },
   "suspects": [
     {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 13,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "local_28 = SUB84(dVar1,0);",
+      "type": "sub84_truncation"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 13,
       "match": "SUB84",
+      "severity": "mild",
       "text": "local_28 = SUB84(dVar1,0);",
       "type": "decompiler_intrinsic"
     },
@@ -294,6 +305,7 @@
       "description": "Unknown/mangled field access",
       "line": 25,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "if ((((((ulonglong)plane_nx & 0x7fffffff00000000) != 0) || (plane_nx._0_4_ != 0)) &&",
       "type": "unknown_field"
     },
@@ -301,6 +313,7 @@
       "description": "Unknown/mangled field access",
       "line": 27,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "(((plane_ny._0_4_ == 0 && (((ulonglong)plane_nz & 0x7fffffff00000000) == 0)) &&",
       "type": "unknown_field"
     },
@@ -308,6 +321,7 @@
       "description": "Unknown/mangled field access",
       "line": 28,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "(plane_nz._0_4_ == 0)))) {",
       "type": "unknown_field"
     },
@@ -315,6 +329,7 @@
       "description": "Unknown/mangled field access",
       "line": 31,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "if (((((ulonglong)plane_nx & 0x7fffffff00000000) == 0) && (plane_nx._0_4_ == 0)) &&",
       "type": "unknown_field"
     },
@@ -322,6 +337,7 @@
       "description": "Unknown/mangled field access",
       "line": 32,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "(((((ulonglong)plane_ny & 0x7fffffff00000000) != 0 || (plane_ny._0_4_ != 0)) &&",
       "type": "unknown_field"
     },
@@ -329,6 +345,7 @@
       "description": "Unknown/mangled field access",
       "line": 33,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "((((ulonglong)plane_nz & 0x7fffffff00000000) == 0 && (plane_nz._0_4_ == 0)))))) {",
       "type": "unknown_field"
     },
@@ -336,6 +353,7 @@
       "description": "Unknown/mangled field access",
       "line": 36,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "if (((((((ulonglong)plane_nx & 0x7fffffff00000000) == 0) && (plane_nx._0_4_ == 0)) &&",
       "type": "unknown_field"
     },
@@ -343,6 +361,7 @@
       "description": "Unknown/mangled field access",
       "line": 37,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "(((ulonglong)plane_ny & 0x7fffffff00000000) == 0)) && (plane_ny._0_4_ == 0)) &&",
       "type": "unknown_field"
     },
@@ -350,6 +369,7 @@
       "description": "Unknown/mangled field access",
       "line": 38,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "((((ulonglong)plane_nz & 0x7fffffff00000000) != 0 || (plane_nz._0_4_ != 0)))) {",
       "type": "unknown_field"
     }

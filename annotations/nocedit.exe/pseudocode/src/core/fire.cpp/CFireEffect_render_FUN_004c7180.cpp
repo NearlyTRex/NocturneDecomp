@@ -62,7 +62,9 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_004c7180(CFireEffect *this_ptr
   } while (this_ptr_02 != (CShell *)&g_PopcornAllocIndex);
   iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
   if (iVar2 == 0) {
-    core_set_cpp_CDemonSet_FUN_0056d380(g_CDemonSetPtr);
+    core_set_cpp_CDemonSet_setLightingParameters_FUN_0056d380
+              (g_CDemonSetPtr,(CVector3f *)0x0,(UOrientationVector *)0x0,(CVector3f *)0x0,
+               (CVector3f *)0x0,(CMatrix3x3f *)0x0);
     iVar2 = 0;
     core_fire_cpp_CBulletHole_setupRenderState_FUN_004bfa40(g_BulletHolePool);
     if (0 < g_BulletHoleActiveCount) {

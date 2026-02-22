@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 52,
     "suspect_count": 2,
     "suspect_types": [
@@ -183,6 +184,7 @@
       "description": "Complex pointer cast",
       "line": 38,
       "match": "(char *)((int)",
+      "severity": "mild",
       "text": "cVar1 = *(char *)((int)piVar6 + 1);",
       "type": "pointer_cast"
     },
@@ -190,6 +192,7 @@
       "description": "Complex pointer cast",
       "line": 39,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "piVar6 = (int *)((int)piVar6 + 2);",
       "type": "pointer_cast"
     }

@@ -179,6 +179,7 @@
     "cross_reference_count": 76,
     "function_call_count": 4,
     "global_count": 3,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 66,
     "suspect_count": 4,
     "suspect_types": [
@@ -743,6 +744,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 16,
       "match": "pCVar4[-4].",
+      "severity": "mild",
       "text": "*(CStrList_vtable **)(pCVar4[-4].button_text + 0xc0) = &g_CPickListVTable;",
       "type": "negative_offset"
     },
@@ -750,6 +752,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 39,
       "match": "pCVar4[-3].",
+      "severity": "mild",
       "text": "pcVar6 = pCVar4[-3].button_text + 0x14;",
       "type": "negative_offset"
     },
@@ -757,6 +760,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 50,
       "match": "pCVar4[-3].",
+      "severity": "mild",
       "text": "pcVar6 = pCVar4[-3].button_text + 0x78;",
       "type": "negative_offset"
     },
@@ -764,6 +768,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 68,
       "match": "pCVar4[-4].",
+      "severity": "mild",
       "text": "return (CPickList *)(pCVar4[-4].button_text + 0xb4);",
       "type": "negative_offset"
     }

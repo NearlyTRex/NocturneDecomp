@@ -17,6 +17,7 @@
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 9,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 94,
     "suspect_count": 2,
     "suspect_types": [
@@ -312,6 +313,7 @@
       "description": "Complex pointer cast",
       "line": 49,
       "match": "(char *)((int)",
+      "severity": "mild",
       "text": "pcVar2 = (char *)((int)pcVar2 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -319,6 +321,7 @@
       "description": "Direct stack address reference",
       "line": 67,
       "match": "&stack0x00000014",
+      "severity": "moderate",
       "text": "time_ptr = _localtime((time_t *)&stack0x00000014);",
       "type": "stack_ref"
     }

@@ -57,7 +57,7 @@ void __cdecl core_emitter_cpp_CEmitter_process_FUN_004a8070(CEmitter *this_ptr,f
     iVar8 = 1;
     this_ptr->emitter_state = 1;
     this_ptr->state_timer = this_ptr->max_emit_time;
-    core_set_cpp_CDemonSet_FUN_0056ade0(pCVar3);
+    core_set_cpp_CDemonSet_snapshotActorTransformState_FUN_0056ade0(pCVar3,&this_ptr->base);
   }
   iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                     (g_CEventListPtr,this_ptr->event_off);
@@ -191,7 +191,7 @@ LAB_004a81e2:
     core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360(&this_ptr->globe,fVar13);
     pCVar3 = g_CDemonSetPtr;
     (this_ptr->globe).corona_mode = 0;
-    core_set_cpp_CDemonSet_FUN_0056d110(pCVar3);
+    core_set_cpp_CDemonSet_addCoronaGlobe_FUN_0056d110(pCVar3,&this_ptr->globe);
     break;
   case 8:
     core_fire_cpp_CFireEffect_createSpark_FUN_004c79d0

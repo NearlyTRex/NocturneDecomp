@@ -10,6 +10,7 @@
     "cross_reference_count": 6,
     "function_call_count": 4,
     "global_count": 7,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 23,
     "suspect_count": 2,
     "suspect_types": [
@@ -187,6 +188,7 @@
       "description": "Complex pointer cast",
       "line": 17,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (channel_index == *(int *)((int)g_SfxSlots[0].options.userdata + iVar1 + -0x54)) {",
       "type": "pointer_cast"
     },
@@ -194,6 +196,7 @@
       "description": "Complex pointer cast",
       "line": 19,
       "match": "(CSfxSlot *)((int)",
+      "severity": "mild",
       "text": "((CSfxSlot *)((int)g_SfxSlots[0].options.userdata + iVar1 + -0x54));",
       "type": "pointer_cast"
     }

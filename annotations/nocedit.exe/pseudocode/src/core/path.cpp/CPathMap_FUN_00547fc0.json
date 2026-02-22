@@ -6,14 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 308,
-    "complexity_score": 339,
+    "complexity_score": 354,
     "cross_reference_count": 3,
     "function_call_count": 7,
     "global_count": 30,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 129,
-    "suspect_count": 20,
+    "suspect_count": 21,
     "suspect_types": [
       "decompiler_intrinsic",
+      "stack_alignment_array",
       "stack_param"
     ],
     "total_lines": 437
@@ -501,6 +503,7 @@
       "description": "Unresolved stack parameter",
       "line": 10,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
@@ -508,6 +511,7 @@
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
@@ -515,6 +519,7 @@
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_00000010",
+      "severity": "moderate",
       "text": "int in_stack_00000010;",
       "type": "stack_param"
     },
@@ -522,13 +527,23 @@
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_00000014",
+      "severity": "moderate",
       "text": "int in_stack_00000014;",
       "type": "stack_param"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 14,
+      "match": "aiStackY_1040",
+      "severity": "moderate",
+      "text": "int aiStackY_1040 [1010];",
+      "type": "stack_alignment_array"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 63,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "local_20 = in_stack_00000008 << 8;",
       "type": "stack_param"
     },
@@ -536,6 +551,7 @@
       "description": "Unresolved stack parameter",
       "line": 64,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "local_28 = in_stack_0000000c << 8;",
       "type": "stack_param"
     },
@@ -543,6 +559,7 @@
       "description": "Unresolved stack parameter",
       "line": 65,
       "match": "in_stack_00000010",
+      "severity": "moderate",
       "text": "local_24 = in_stack_00000010 << 8;",
       "type": "stack_param"
     },
@@ -550,6 +567,7 @@
       "description": "Unresolved stack parameter",
       "line": 68,
       "match": "in_stack_00000014",
+      "severity": "moderate",
       "text": "local_1c = in_stack_00000014 << 8;",
       "type": "stack_param"
     },
@@ -557,6 +575,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 80,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_70.x = (int)ROUND(ROUND((float)local_54[2] *",
       "type": "decompiler_intrinsic"
     },
@@ -564,6 +583,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 80,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_70.x = (int)ROUND(ROUND((float)local_54[2] *",
       "type": "decompiler_intrinsic"
     },
@@ -571,6 +591,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 82,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_70.z = (int)ROUND(ROUND((float)local_44 *",
       "type": "decompiler_intrinsic"
     },
@@ -578,6 +599,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 82,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_70.z = (int)ROUND(ROUND((float)local_44 *",
       "type": "decompiler_intrinsic"
     },
@@ -585,6 +607,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 84,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_70.y = (int)ROUND(ROUND(g_CDemonRaytraceInstance.bbox_min.y * (float)256 +",
       "type": "decompiler_intrinsic"
     },
@@ -592,6 +615,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 84,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_70.y = (int)ROUND(ROUND(g_CDemonRaytraceInstance.bbox_min.y * (float)256 +",
       "type": "decompiler_intrinsic"
     },
@@ -599,6 +623,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 94,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_70.x = (int)ROUND(ROUND((float)local_70.x + local_40));",
       "type": "decompiler_intrinsic"
     },
@@ -606,6 +631,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 94,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_70.x = (int)ROUND(ROUND((float)local_70.x + local_40));",
       "type": "decompiler_intrinsic"
     },
@@ -613,6 +639,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 98,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_70.z = (int)ROUND(ROUND((float)local_70.z + local_38));",
       "type": "decompiler_intrinsic"
     },
@@ -620,6 +647,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 98,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_70.z = (int)ROUND(ROUND((float)local_70.z + local_38));",
       "type": "decompiler_intrinsic"
     },
@@ -627,6 +655,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 102,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_70.x = (int)ROUND(ROUND((float)local_70.x - local_40));",
       "type": "decompiler_intrinsic"
     },
@@ -634,6 +663,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 102,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_70.x = (int)ROUND(ROUND((float)local_70.x - local_40));",
       "type": "decompiler_intrinsic"
     }

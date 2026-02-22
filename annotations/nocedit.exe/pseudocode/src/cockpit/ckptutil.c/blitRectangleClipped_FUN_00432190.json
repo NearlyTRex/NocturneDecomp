@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 5,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 51,
     "suspect_count": 6,
     "suspect_types": [
@@ -207,6 +208,7 @@
       "description": "Complex pointer cast",
       "line": 26,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "(*pCVar3)((void *)(iVar7 + iVar5),(void *)((int)sprite_data + iVar5),(iVar4 - iVar5) + 1);",
       "type": "pointer_cast"
     },
@@ -214,6 +216,7 @@
       "description": "Complex pointer cast",
       "line": 29,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "sprite_data = (void *)((int)sprite_data + width);",
       "type": "pointer_cast"
     },
@@ -221,6 +224,7 @@
       "description": "Complex pointer cast",
       "line": 35,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "pvVar8 = (void *)((int)g_ScreenBufferArray[dest_y] + dest_x * 2);",
       "type": "pointer_cast"
     },
@@ -228,6 +232,7 @@
       "description": "Complex pointer cast",
       "line": 42,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "(*pCVar3)((void *)(iVar5 * 2 + (int)pvVar8),(void *)((int)sprite_data + iVar5),",
       "type": "pointer_cast"
     },
@@ -235,6 +240,7 @@
       "description": "Complex pointer cast",
       "line": 45,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "pvVar8 = (void *)((int)pvVar8 + (iVar2 / 2) * 2);",
       "type": "pointer_cast"
     },
@@ -242,6 +248,7 @@
       "description": "Complex pointer cast",
       "line": 46,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "sprite_data = (void *)((int)sprite_data + width);",
       "type": "pointer_cast"
     }

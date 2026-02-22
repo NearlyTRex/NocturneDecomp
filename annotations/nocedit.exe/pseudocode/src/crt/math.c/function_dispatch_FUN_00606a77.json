@@ -5,6 +5,7 @@
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 1,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 7,
     "suspect_count": 3,
     "suspect_types": [
@@ -80,6 +81,7 @@
       "description": "Jump table recovery failed",
       "line": 5,
       "match": "WARNING: Could not recover jumptable",
+      "severity": "mild",
       "text": "/* WARNING: Could not recover jumptable at 0x00606a7a. Too many branches */",
       "type": "warning_jumptable"
     },
@@ -87,6 +89,7 @@
       "description": "Indirect jump treated as call",
       "line": 6,
       "match": "WARNING: Treating indirect jump as call",
+      "severity": "mild",
       "text": "/* WARNING: Treating indirect jump as call */",
       "type": "warning_indirect_jump"
     },

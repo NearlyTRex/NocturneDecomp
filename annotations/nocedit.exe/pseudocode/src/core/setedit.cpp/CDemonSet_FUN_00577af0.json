@@ -29,6 +29,7 @@
     "cross_reference_count": 4,
     "function_call_count": 9,
     "global_count": 18,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 208,
     "suspect_count": 12,
     "suspect_types": [
@@ -546,6 +547,7 @@
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "int *in_stack_00000008;",
       "type": "stack_param"
     },
@@ -553,6 +555,7 @@
       "description": "Undefined global data reference",
       "line": 56,
       "match": "DAT_03364d14",
+      "severity": "mild",
       "text": "if ((DAT_03364d14 & 1) == 0) {",
       "type": "undefined_data"
     },
@@ -560,6 +563,7 @@
       "description": "Undefined global data reference",
       "line": 57,
       "match": "DAT_03364d14",
+      "severity": "mild",
       "text": "DAT_03364d14 = DAT_03364d14 | 1;",
       "type": "undefined_data"
     },
@@ -567,6 +571,7 @@
       "description": "Undefined global data reference",
       "line": 57,
       "match": "DAT_03364d14",
+      "severity": "mild",
       "text": "DAT_03364d14 = DAT_03364d14 | 1;",
       "type": "undefined_data"
     },
@@ -574,6 +579,7 @@
       "description": "Unresolved stack parameter",
       "line": 78,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "local_8c = in_stack_00000008;",
       "type": "stack_param"
     },
@@ -581,6 +587,7 @@
       "description": "Unresolved stack parameter",
       "line": 96,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "if ((in_stack_00000008 != (int *)0x0) && (*local_8c != 0)) {",
       "type": "stack_param"
     },
@@ -588,6 +595,7 @@
       "description": "Complex pointer cast",
       "line": 114,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "puVar8 = (uchar *)(*(int *)((int)g_ScreenBufferArray + local_20) + iVar9);",
       "type": "pointer_cast"
     },
@@ -595,6 +603,7 @@
       "description": "Undefined global data reference",
       "line": 118,
       "match": "DAT_03365cc0",
+      "severity": "mild",
       "text": "uVar4 = *(uint *)(&DAT_03365cc0 + iVar10);",
       "type": "undefined_data"
     },
@@ -602,6 +611,7 @@
       "description": "Complex pointer cast",
       "line": 135,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "(*(int *)((int)g_ScreenBufferArray + local_2c) + iVar9 * 2);",
       "type": "pointer_cast"
     },
@@ -609,6 +619,7 @@
       "description": "Undefined global data reference",
       "line": 139,
       "match": "DAT_03365cc0",
+      "severity": "mild",
       "text": "uVar4 = *(uint *)(&DAT_03365cc0 + iVar10);",
       "type": "undefined_data"
     },
@@ -616,6 +627,7 @@
       "description": "Complex pointer cast",
       "line": 154,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "puVar5 = (uint *)(*(int *)((int)g_ScreenBufferArray + local_24) + iVar9 * 4)",
       "type": "pointer_cast"
     },
@@ -623,6 +635,7 @@
       "description": "Undefined global data reference",
       "line": 159,
       "match": "DAT_03365cc0",
+      "severity": "mild",
       "text": "uVar4 = *(uint *)(&DAT_03365cc0 + iVar10);",
       "type": "undefined_data"
     }

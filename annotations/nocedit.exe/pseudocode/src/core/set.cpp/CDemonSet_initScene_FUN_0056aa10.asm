@@ -216,9 +216,9 @@ section .text
     XOR ECX,ECX                         ; 0056abc5
     XOR ESI,ESI                         ; 0056abc7
     MOV dword ptr [0x03276f30],ECX      ; 0056abc9 | g_ActiveLightCount
-    MOV dword ptr [0x03277d80],ECX      ; 0056abcf | DAT_03277d80
+    MOV dword ptr [0x03277d80],ECX      ; 0056abcf | g_OmniLightCount
     MOV dword ptr [0x032776c8],ECX      ; 0056abd5 | g_CoronaGlobeCount
-    MOV dword ptr [0x0327785c],ECX      ; 0056abdb | DAT_0327785c
+    MOV dword ptr [0x0327785c],ECX      ; 0056abdb | g_QueuedCoronaGlobeCount
     MOV dword ptr [EBX + 0x15aeac],ECX  ; 0056abe1
     CALL core_setdir.cpp_CDemonSet_FUN_00576710 ; 0056abe7
         ;   XREF to: 00576710 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_FUN_00576710(CDemonSet * this_ptr)

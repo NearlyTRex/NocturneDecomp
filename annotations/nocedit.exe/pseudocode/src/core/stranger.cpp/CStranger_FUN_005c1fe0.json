@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 13,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 141,
     "suspect_count": 5,
     "suspect_types": [
@@ -292,6 +293,7 @@
       "description": "Type propagation did not converge",
       "line": 2,
       "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
     },
@@ -299,6 +301,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 60,
       "match": "ABS",
+      "severity": "mild",
       "text": "(ABS((this_ptr->base).base.base.location.position.y - (this_ptr_01->location).position.y)",
       "type": "decompiler_intrinsic"
     },
@@ -306,6 +309,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 63,
       "match": "ABS",
+      "severity": "mild",
       "text": "if ((ABS(local_a4.z) <= (float)4) && (0.0 <= local_a4.z)) {",
       "type": "decompiler_intrinsic"
     },
@@ -313,6 +317,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 93,
       "match": "fcos",
+      "severity": "mild",
       "text": "fVar2 = (float10)fcos((float10)0.261799387791667);",
       "type": "decompiler_intrinsic"
     },
@@ -320,6 +325,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 100,
       "match": "ABS",
+      "severity": "mild",
       "text": "if (fVar2 <= ABS((float10)fStack_a8 * (float10)fStack_3c +",
       "type": "decompiler_intrinsic"
     }

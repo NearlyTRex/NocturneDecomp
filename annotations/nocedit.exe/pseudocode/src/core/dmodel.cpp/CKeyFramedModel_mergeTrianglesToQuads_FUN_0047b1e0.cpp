@@ -21,12 +21,12 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0(
   CVector3f *pCVar10;
   CVector3f *pCVar11;
   int iVar12;
-  CVector3i **ppCVar13;
+  CVector3i *pCVar13;
   int iVar14;
   int iVar15;
   uint *puVar16;
   uint *puVar17;
-  CVector3i **ppCVar18;
+  CVector3i *pCVar18;
   byte bVar19;
   float10 fVar20;
   double dVar21;
@@ -47,7 +47,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0(
   float local_a4;
   float local_a0;
   CVector3f local_9c;
-  CVector3i **local_90;
+  CVector3i *local_90;
   int local_8c;
   int local_88;
   int local_84;
@@ -74,7 +74,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0(
   int local_30;
   int local_2c;
   int local_28;
-  CVector3i **local_24;
+  CVector3i *local_24;
   int local_20;
   float local_1c;
   uint *local_18;
@@ -111,7 +111,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0(
           local_6c = (int)puVar16 * 0x48;
           local_70 = (int)puVar16 << 2;
           do {
-            local_34 = local_6c + (int)this_ptr->poly_vert_list;
+            local_34 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->
+                             base).base.type + local_6c;
             if (*(int *)(local_34 + 4) == 3) {
               if ((local_78 != 0) && ((char)local_50 == '\0')) {
                 local_18 = local_50;
@@ -124,7 +125,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0(
                 local_58 = local_48 * 0x48;
                 local_5c = local_48 * 4;
                 do {
-                  local_28 = local_58 + (int)this_ptr->poly_vert_list;
+                  local_28 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2)
+                                    )->base).base.type + local_58;
                   if (((*(int *)(local_28 + 4) == 3) &&
                       (*(int *)(local_68 + (int)this_ptr->poly_texture_index_list) ==
                        *(int *)(local_5c + (int)this_ptr->poly_texture_index_list))) &&
@@ -203,19 +205,18 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0(
                           local_20 = 0;
                           iVar9 = 2;
                           iVar14 = 0;
-                          local_24 = this_ptr->vertex_list + local_38 * this_ptr->vertex_count * 3;
+                          local_24 = this_ptr->vertex_list + local_38 * this_ptr->vertex_count;
                           do {
                             uStack_104 = (uint)((ulonglong)dVar21 >> 0x20);
                             local_108 = SUB84(dVar21,0);
-                            local_90 = local_24 + *(int *)((int)&stack0xffffff10 + local_20) * 3;
-                            ppCVar13 = local_24 +
-                                       *(int *)((int)&stack0xffffff10 + ((iVar14 + 1) % 4) * 0xc) *
-                                       3;
-                            ppCVar18 = local_24 +
-                                       *(int *)((int)&stack0xffffff10 + (iVar9 % 4) * 0xc) * 3;
-                            fVar5 = (float)((int)*local_90 - (int)*ppCVar13);
-                            fVar6 = (float)((int)local_90[1] - (int)ppCVar13[1]);
-                            fVar8 = (float)((int)local_90[2] - (int)ppCVar13[2]);
+                            local_90 = local_24 + *(int *)((int)&stack0xffffff10 + local_20);
+                            pCVar13 = local_24 +
+                                      *(int *)((int)&stack0xffffff10 + ((iVar14 + 1) % 4) * 0xc);
+                            pCVar18 = local_24 + *(int *)((int)&stack0xffffff10 + (iVar9 % 4) * 0xc)
+                            ;
+                            fVar5 = (float)(local_90->x - pCVar13->x);
+                            fVar6 = (float)(local_90->y - pCVar13->y);
+                            fVar8 = (float)(local_90->z - pCVar13->z);
                             fVar7 = SQRT(fVar8 * fVar8 + fVar5 * fVar5 + fVar6 * fVar6);
                             if (fVar7 <= 0.0) {
                               local_a4 = 0.0;
@@ -228,10 +229,10 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0(
                               local_a4 = fVar6 * fVar7;
                               local_a0 = fVar8 * fVar7;
                             }
-                            fVar5 = (float)((int)*ppCVar18 - (int)*ppCVar13);
-                            fVar6 = (float)((int)ppCVar18[1] - (int)ppCVar13[1]);
-                            local_18 = (uint *)((int)ppCVar18[2] - (int)ppCVar13[2]);
-                            fVar8 = (float)((int)ppCVar18[2] - (int)ppCVar13[2]);
+                            fVar5 = (float)(pCVar18->x - pCVar13->x);
+                            fVar6 = (float)(pCVar18->y - pCVar13->y);
+                            local_18 = (uint *)(pCVar18->z - pCVar13->z);
+                            fVar8 = (float)(int)local_18;
                             fVar7 = SQRT(fVar8 * fVar8 + fVar5 * fVar5 + fVar6 * fVar6);
                             if (fVar7 <= 0.0) {
                               local_b0 = 0.0;
@@ -335,10 +336,14 @@ LAB_0047b55a:
       local_88 = 0;
       iVar15 = 0;
       do {
-        puVar16 = (uint *)(local_88 + (int)this_ptr->poly_vert_list);
+        puVar16 = (uint *)
+                  ((int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).
+                         base.type + local_88);
         if (2 < (int)puVar16[1]) {
           if (iVar14 < iVar9) {
-            puVar17 = (uint *)(local_8c + (int)this_ptr->poly_vert_list);
+            puVar17 = (uint *)
+                      ((int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->
+                             base).base.type + local_8c);
             for (iVar12 = 0x12; iVar12 != 0; iVar12 = iVar12 + -1) {
               *puVar17 = *puVar16;
               puVar16 = puVar16 + (uint)bVar19 * -2 + 1;

@@ -1,14 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 81,
+    "complexity_score": 96,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 3,
+    "max_suspect_severity": "severe",
     "pseudocode_lines": 16,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
+      "fnstsw_flag_artifact",
       "register_param",
       "special_crt_function"
     ],
@@ -146,6 +148,7 @@
       "description": "Inferred register parameter",
       "line": 7,
       "match": "in_DS",
+      "severity": "mild",
       "text": "ushort in_DS;",
       "type": "register_param"
     },
@@ -153,6 +156,7 @@
       "description": "Inferred register parameter",
       "line": 11,
       "match": "in_DS",
+      "severity": "mild",
       "text": "(in_DS,(void *)CONCAT22((short)(new_size >> 0x10),in_DS),(ulong)ptr,pExtraNeeded",
       "type": "register_param"
     },
@@ -160,13 +164,23 @@
       "description": "Inferred register parameter",
       "line": 11,
       "match": "in_DS",
+      "severity": "mild",
       "text": "(in_DS,(void *)CONCAT22((short)(new_size >> 0x10),in_DS),(ulong)ptr,pExtraNeeded",
       "type": "register_param"
+    },
+    {
+      "description": "FNSTSW flag reconstruction (floating-point comparison artifact)",
+      "line": 11,
+      "match": "CONCAT22((short)(new_size >> 0x10",
+      "severity": "severe",
+      "text": "(in_DS,(void *)CONCAT22((short)(new_size >> 0x10),in_DS),(ulong)ptr,pExtraNeeded",
+      "type": "fnstsw_flag_artifact"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 11,
       "match": "CONCAT22",
+      "severity": "mild",
       "text": "(in_DS,(void *)CONCAT22((short)(new_size >> 0x10),in_DS),(ulong)ptr,pExtraNeeded",
       "type": "decompiler_intrinsic"
     },

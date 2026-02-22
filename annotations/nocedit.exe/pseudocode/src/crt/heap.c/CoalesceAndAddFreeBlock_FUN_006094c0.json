@@ -5,6 +5,7 @@
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 96,
     "suspect_count": 6,
     "suspect_types": [
@@ -103,6 +104,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 15,
       "match": "CONCAT22",
+      "severity": "mild",
       "text": "iVar7 = CONCAT22(unaff_0000000e,segment);",
       "type": "decompiler_intrinsic"
     },
@@ -110,6 +112,7 @@
       "description": "Complex pointer cast",
       "line": 19,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar1 = (uint *)((int)ptr - 4);",
       "type": "pointer_cast"
     },
@@ -117,6 +120,7 @@
       "description": "Complex pointer cast",
       "line": 24,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "pbVar2 = (byte *)((int)puVar1 + uVar6);",
       "type": "pointer_cast"
     },
@@ -124,6 +128,7 @@
       "description": "Complex pointer cast",
       "line": 60,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar4 = (uint *)((int)puVar4 + (uVar6 & 0xfffffffe));",
       "type": "pointer_cast"
     },

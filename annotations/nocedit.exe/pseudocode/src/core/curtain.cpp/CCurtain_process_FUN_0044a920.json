@@ -23,6 +23,7 @@
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 19,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 280,
     "suspect_count": 4,
     "suspect_types": [
@@ -324,6 +325,7 @@
       "description": "Complex pointer cast",
       "line": 107,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "iVar10 = *(int *)((int)g_CDemonSetPtr->characters + iStack_28);",
       "type": "pointer_cast"
     },
@@ -331,6 +333,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 115,
       "match": "code *",
+      "severity": "moderate",
       "text": "iVar7 = (**(code **)(*(int *)(iVar10 + 0x154) + 0x34))(iVar10,pSVar11);",
       "type": "unresolved_funcptr"
     },
@@ -338,6 +341,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 142,
       "match": "SQRT",
+      "severity": "mild",
       "text": "if ((float)0.10000000000000001 < SQRT(fVar4 * fVar4 + fVar3 * fVar3 + fVar5 * fVar5)) {",
       "type": "decompiler_intrinsic"
     },
@@ -345,6 +349,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 150,
       "match": "SQRT",
+      "severity": "mild",
       "text": "SQRT(fStack_b0 * fStack_b0 + fStack_b8 * fStack_b8 + fStack_b4 * fStack_b4)) {",
       "type": "decompiler_intrinsic"
     }

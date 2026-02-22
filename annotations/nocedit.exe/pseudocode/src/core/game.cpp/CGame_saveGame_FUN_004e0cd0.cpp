@@ -114,7 +114,7 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *sav
   core_script_cpp_CScript_saveState_FUN_00560b50(g_CScriptPtr,file);
   core_fire_cpp_CFireEffect_save_FUN_004c9380(g_CFireEffectPtr,file);
   _fprintf(file,"Light state\n");
-  core_set_cpp_CDemonSet_FUN_00571170(g_CDemonSetPtr);
+  core_set_cpp_CDemonSet_saveLightState_FUN_00571170(g_CDemonSetPtr,&DAT_02d82d84);
   iVar3 = 1;
   _fprintf(file,"%d\n",DAT_02d82d84);
   if (0 < DAT_02d82d84) {

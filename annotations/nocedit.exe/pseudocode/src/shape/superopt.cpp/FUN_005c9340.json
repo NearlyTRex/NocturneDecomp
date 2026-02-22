@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 102,
     "suspect_count": 35,
     "suspect_types": [
@@ -245,6 +246,7 @@
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
@@ -252,6 +254,7 @@
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "uint *in_stack_0000000c;",
       "type": "stack_param"
     },
@@ -259,6 +262,7 @@
       "description": "Unresolved stack parameter",
       "line": 33,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "if (*in_stack_0000000c != 0) {",
       "type": "stack_param"
     },
@@ -266,6 +270,7 @@
       "description": "Unresolved stack parameter",
       "line": 35,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "pvVar6 = (void *)(uVar7 * 0x60 + in_stack_00000008);",
       "type": "stack_param"
     },
@@ -273,6 +278,7 @@
       "description": "Complex pointer cast",
       "line": 36,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "dVar1 = *(double *)((int)pvVar6 + 0x28) - *(double *)((int)pvVar6 + 0x10);",
       "type": "pointer_cast"
     },
@@ -280,6 +286,7 @@
       "description": "Complex pointer cast",
       "line": 36,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "dVar1 = *(double *)((int)pvVar6 + 0x28) - *(double *)((int)pvVar6 + 0x10);",
       "type": "pointer_cast"
     },
@@ -287,6 +294,7 @@
       "description": "Complex pointer cast",
       "line": 37,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "dVar3 = *(double *)((int)pvVar6 + 0x30) - *(double *)((int)pvVar6 + 0x18);",
       "type": "pointer_cast"
     },
@@ -294,6 +302,7 @@
       "description": "Complex pointer cast",
       "line": 37,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "dVar3 = *(double *)((int)pvVar6 + 0x30) - *(double *)((int)pvVar6 + 0x18);",
       "type": "pointer_cast"
     },
@@ -301,6 +310,7 @@
       "description": "Complex pointer cast",
       "line": 38,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "dVar2 = *(double *)((int)pvVar6 + 0x38) - *(double *)((int)pvVar6 + 0x20);",
       "type": "pointer_cast"
     },
@@ -308,6 +318,7 @@
       "description": "Complex pointer cast",
       "line": 38,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "dVar2 = *(double *)((int)pvVar6 + 0x38) - *(double *)((int)pvVar6 + 0x20);",
       "type": "pointer_cast"
     },
@@ -315,6 +326,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 39,
       "match": "SQRT",
+      "severity": "mild",
       "text": "if (SQRT(dVar2 * dVar2 + dVar3 * dVar3 + dVar1 * dVar1) < 1e-10) {",
       "type": "decompiler_intrinsic"
     },
@@ -322,6 +334,7 @@
       "description": "Unresolved stack parameter",
       "line": 41,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "(pvVar6,(void *)((uVar7 + 1) * 0x60 + in_stack_00000008),",
       "type": "stack_param"
     },
@@ -329,6 +342,7 @@
       "description": "Unresolved stack parameter",
       "line": 42,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "((*in_stack_0000000c - uVar7) + -1) * 0x60);",
       "type": "stack_param"
     },
@@ -336,6 +350,7 @@
       "description": "Unresolved stack parameter",
       "line": 44,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "*in_stack_0000000c = *in_stack_0000000c - 1;",
       "type": "stack_param"
     },
@@ -343,6 +358,7 @@
       "description": "Unresolved stack parameter",
       "line": 44,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "*in_stack_0000000c = *in_stack_0000000c - 1;",
       "type": "stack_param"
     },
@@ -350,6 +366,7 @@
       "description": "Unresolved stack parameter",
       "line": 47,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "} while (uVar7 < *in_stack_0000000c);",
       "type": "stack_param"
     },
@@ -357,6 +374,7 @@
       "description": "Unresolved stack parameter",
       "line": 50,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "while ((local_18 < *in_stack_0000000c - 1 && (2 < *in_stack_0000000c))) {",
       "type": "stack_param"
     },
@@ -364,6 +382,7 @@
       "description": "Unresolved stack parameter",
       "line": 50,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "while ((local_18 < *in_stack_0000000c - 1 && (2 < *in_stack_0000000c))) {",
       "type": "stack_param"
     },
@@ -371,6 +390,7 @@
       "description": "Unresolved stack parameter",
       "line": 51,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "pvVar6 = (void *)(local_18 * 0x60 + in_stack_00000008);",
       "type": "stack_param"
     },
@@ -378,6 +398,7 @@
       "description": "Complex pointer cast",
       "line": 53,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar8 = (uint *)((int)pvVar6 + 0x10);",
       "type": "pointer_cast"
     },
@@ -385,6 +406,7 @@
       "description": "Complex pointer cast",
       "line": 58,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar9 = (double *)((int)pdVar9 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -392,6 +414,7 @@
       "description": "Complex pointer cast",
       "line": 60,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar8 = (uint *)((int)pvVar6 + 0x28);",
       "type": "pointer_cast"
     },
@@ -399,6 +422,7 @@
       "description": "Complex pointer cast",
       "line": 65,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar9 = (double *)((int)pdVar9 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -406,6 +430,7 @@
       "description": "Unresolved stack parameter",
       "line": 67,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "iVar4 = iVar4 * 0x60 + in_stack_00000008;",
       "type": "stack_param"
     },
@@ -413,6 +438,7 @@
       "description": "Complex pointer cast",
       "line": 73,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar9 = (double *)((int)pdVar9 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -420,6 +446,7 @@
       "description": "Complex pointer cast",
       "line": 83,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar9 = (double *)((int)pdVar9 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -427,6 +454,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 85,
       "match": "SQRT",
+      "severity": "mild",
       "text": "if ((1e-10 < SQRT(dVar2 * dVar2 + dVar3 * dVar3 + dVar1 * dVar1)) ||",
       "type": "decompiler_intrinsic"
     },
@@ -434,6 +462,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 87,
       "match": "SQRT",
+      "severity": "mild",
       "text": "SQRT((local_80 - local_b0) * (local_80 - local_b0) +",
       "type": "decompiler_intrinsic"
     },
@@ -441,6 +470,7 @@
       "description": "Unresolved stack parameter",
       "line": 94,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "(pvVar6,(void *)((local_18 + 2) * 0x60 + in_stack_00000008),",
       "type": "stack_param"
     },
@@ -448,6 +478,7 @@
       "description": "Unresolved stack parameter",
       "line": 95,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "((*in_stack_0000000c - local_18) + -2) * 0x60);",
       "type": "stack_param"
     },
@@ -455,6 +486,7 @@
       "description": "Unresolved stack parameter",
       "line": 96,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "*in_stack_0000000c = *in_stack_0000000c - 2;",
       "type": "stack_param"
     },
@@ -462,6 +494,7 @@
       "description": "Unresolved stack parameter",
       "line": 96,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "*in_stack_0000000c = *in_stack_0000000c - 2;",
       "type": "stack_param"
     },
@@ -469,6 +502,7 @@
       "description": "Unresolved stack parameter",
       "line": 100,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "if (2 < *in_stack_0000000c) {",
       "type": "stack_param"
     },
@@ -476,6 +510,7 @@
       "description": "Unresolved stack parameter",
       "line": 103,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "*in_stack_0000000c = 0;",
       "type": "stack_param"
     },

@@ -79,14 +79,16 @@
   },
   "complexity": {
     "assembly_lines": 309,
-    "complexity_score": 463,
+    "complexity_score": 528,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 128,
-    "suspect_count": 32,
+    "suspect_count": 38,
     "suspect_types": [
       "decompiler_intrinsic",
+      "double_reconstruction",
       "pointer_cast",
       "unknown_field"
     ],
@@ -518,6 +520,7 @@
       "description": "Complex pointer cast",
       "line": 43,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "uVar1 = *(uint *)((int)&segStart->x + 4);",
       "type": "pointer_cast"
     },
@@ -525,6 +528,7 @@
       "description": "Complex pointer cast",
       "line": 47,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "uVar1 = *(uint *)((int)&segEnd->x + 4);",
       "type": "pointer_cast"
     },
@@ -532,6 +536,7 @@
       "description": "Complex pointer cast",
       "line": 51,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "uVar2 = *(uint *)((int)&segEnd->y + 4);",
       "type": "pointer_cast"
     },
@@ -539,6 +544,7 @@
       "description": "Complex pointer cast",
       "line": 55,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "uVar2 = *(uint *)((int)&segStart->y + 4);",
       "type": "pointer_cast"
     },
@@ -546,6 +552,7 @@
       "description": "Complex pointer cast",
       "line": 59,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "uVar3 = *(uint *)((int)&segEnd->z + 4);",
       "type": "pointer_cast"
     },
@@ -553,6 +560,7 @@
       "description": "Complex pointer cast",
       "line": 63,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "uVar3 = *(uint *)((int)&segStart->z + 4);",
       "type": "pointer_cast"
     },
@@ -560,6 +568,7 @@
       "description": "Complex pointer cast",
       "line": 67,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "uVar4 = *(uint *)((int)&segEnd->x + 4);",
       "type": "pointer_cast"
     },
@@ -567,6 +576,7 @@
       "description": "Complex pointer cast",
       "line": 71,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "uVar4 = *(uint *)((int)&segStart->x + 4);",
       "type": "pointer_cast"
     },
@@ -574,6 +584,7 @@
       "description": "Complex pointer cast",
       "line": 75,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "uVar5 = *(uint *)((int)&segEnd->y + 4);",
       "type": "pointer_cast"
     },
@@ -581,6 +592,7 @@
       "description": "Complex pointer cast",
       "line": 79,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "uVar5 = *(uint *)((int)&segStart->y + 4);",
       "type": "pointer_cast"
     },
@@ -588,6 +600,7 @@
       "description": "Complex pointer cast",
       "line": 83,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "uVar6 = *(uint *)((int)&segEnd->z + 4);",
       "type": "pointer_cast"
     },
@@ -595,48 +608,103 @@
       "description": "Complex pointer cast",
       "line": 87,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "uVar6 = *(uint *)((int)&segStart->z + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 89,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "if ((((double)CONCAT44(uVar1,local_b0) + -0.0001 <= point->x) &&",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 89,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "if ((((double)CONCAT44(uVar1,local_b0) + -0.0001 <= point->x) &&",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 90,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(point->x <= (double)CONCAT44(uVar4,local_a8) + 0.0001)) &&",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 90,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(point->x <= (double)CONCAT44(uVar4,local_a8) + 0.0001)) &&",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 91,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(((double)CONCAT44(uVar2,local_c0) + -0.0001 <= point->y &&",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 91,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(((double)CONCAT44(uVar2,local_c0) + -0.0001 <= point->y &&",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 92,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(((point->y <= (double)CONCAT44(uVar5,local_f0) + 0.0001 &&",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 92,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(((point->y <= (double)CONCAT44(uVar5,local_f0) + 0.0001 &&",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 93,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "((double)CONCAT44(uVar3,local_f8) + -0.0001 <= point->z)) &&",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 93,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "((double)CONCAT44(uVar3,local_f8) + -0.0001 <= point->z)) &&",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 94,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(point->z <= (double)CONCAT44(uVar6,local_b8) + 0.0001)))))) {",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 94,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(point->z <= (double)CONCAT44(uVar6,local_b8) + 0.0001)))))) {",
       "type": "decompiler_intrinsic"
     },
@@ -644,6 +712,7 @@
       "description": "Complex pointer cast",
       "line": 102,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar8 = (double *)((int)pdVar8 + 4);",
       "type": "pointer_cast"
     },
@@ -651,6 +720,7 @@
       "description": "Unknown/mangled field access",
       "line": 105,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_88.x._0_4_ = local_58[0];",
       "type": "unknown_field"
     },
@@ -658,6 +728,7 @@
       "description": "Unknown/mangled field access",
       "line": 106,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_88.x._4_4_ = local_58[1];",
       "type": "unknown_field"
     },
@@ -665,6 +736,7 @@
       "description": "Unknown/mangled field access",
       "line": 107,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_88.y._0_4_ = local_58[2];",
       "type": "unknown_field"
     },
@@ -672,6 +744,7 @@
       "description": "Unknown/mangled field access",
       "line": 108,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_88.y._4_4_ = local_58[3];",
       "type": "unknown_field"
     },
@@ -679,6 +752,7 @@
       "description": "Unknown/mangled field access",
       "line": 109,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_88.z._0_4_ = local_48;",
       "type": "unknown_field"
     },
@@ -686,6 +760,7 @@
       "description": "Unknown/mangled field access",
       "line": 110,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_88.z._4_4_ = local_44;",
       "type": "unknown_field"
     },
@@ -693,6 +768,7 @@
       "description": "Complex pointer cast",
       "line": 118,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar8 = (double *)((int)pdVar8 + 4);",
       "type": "pointer_cast"
     },
@@ -700,6 +776,7 @@
       "description": "Unknown/mangled field access",
       "line": 121,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_28.x._0_4_ = local_70[0];",
       "type": "unknown_field"
     },
@@ -707,6 +784,7 @@
       "description": "Unknown/mangled field access",
       "line": 122,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_28.x._4_4_ = local_70[1];",
       "type": "unknown_field"
     },
@@ -714,6 +792,7 @@
       "description": "Unknown/mangled field access",
       "line": 123,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_28.y._0_4_ = local_70[2];",
       "type": "unknown_field"
     },
@@ -721,6 +800,7 @@
       "description": "Unknown/mangled field access",
       "line": 124,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_28.y._4_4_ = local_70[3];",
       "type": "unknown_field"
     },
@@ -728,6 +808,7 @@
       "description": "Unknown/mangled field access",
       "line": 125,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_28.z._0_4_ = local_60;",
       "type": "unknown_field"
     },
@@ -735,6 +816,7 @@
       "description": "Unknown/mangled field access",
       "line": 126,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_28.z._4_4_ = local_5c;",
       "type": "unknown_field"
     }

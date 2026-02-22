@@ -43,14 +43,16 @@
   },
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 180,
+    "complexity_score": 195,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 45,
-    "suspect_count": 12,
+    "suspect_count": 13,
     "suspect_types": [
       "pointer_cast",
+      "stack_alignment_array",
       "stack_ref",
       "unaffected_reg"
     ],
@@ -225,13 +227,23 @@
       "description": "Unaffected register variable",
       "line": 8,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "CQuaternion4f *unaff_ESI;",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 12,
+      "match": "auStackY_180c",
+      "severity": "moderate",
+      "text": "uint auStackY_180c [1520];",
+      "type": "stack_alignment_array"
     },
     {
       "description": "Complex pointer cast",
       "line": 30,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar3 = (uint *)((int)pCVar2 + (uint)bVar5 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -239,6 +251,7 @@
       "description": "Direct stack address reference",
       "line": 33,
       "match": "&stack0xffffffd4",
+      "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffd4 + (uint)bVar5 * -8) = *puVar3;",
       "type": "stack_ref"
     },
@@ -246,6 +259,7 @@
       "description": "Direct stack address reference",
       "line": 34,
       "match": "&stack0xffffffd8",
+      "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffd8 + (uint)bVar5 * -8 + (uint)bVar5 * -8) = *puVar4;",
       "type": "stack_ref"
     },
@@ -253,6 +267,7 @@
       "description": "Direct stack address reference",
       "line": 36,
       "match": "&stack0xffffffd8",
+      "severity": "moderate",
       "text": "((int)(&stack0xffffffd8 + (uint)bVar5 * -8 + (uint)bVar5 * -8) + ((uint)bVar5 * -2 + 1) * 4) =",
       "type": "stack_ref"
     },
@@ -260,6 +275,7 @@
       "description": "Unaffected register variable",
       "line": 38,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "puVar3 = (uint *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);",
       "type": "unaffected_reg"
     },
@@ -267,6 +283,7 @@
       "description": "Complex pointer cast",
       "line": 38,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar3 = (uint *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -274,6 +291,7 @@
       "description": "Unaffected register variable",
       "line": 39,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "unaff_ESI->w = fVar1;",
       "type": "unaffected_reg"
     },
@@ -281,6 +299,7 @@
       "description": "Direct stack address reference",
       "line": 41,
       "match": "&stack0xffffffd4",
+      "severity": "moderate",
       "text": "*puVar3 = *(uint *)(&stack0xffffffd4 + (uint)bVar5 * -8);",
       "type": "stack_ref"
     },
@@ -288,6 +307,7 @@
       "description": "Direct stack address reference",
       "line": 42,
       "match": "&stack0xffffffd8",
+      "severity": "moderate",
       "text": "*puVar4 = *(uint *)(&stack0xffffffd8 + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
       "type": "stack_ref"
     },
@@ -295,6 +315,7 @@
       "description": "Direct stack address reference",
       "line": 45,
       "match": "&stack0xffffffd8",
+      "severity": "moderate",
       "text": "((int)(&stack0xffffffd8 + (uint)bVar5 * -8 + (uint)bVar5 * -8) + ((uint)bVar5 * -2 + 1) * 4)",
       "type": "stack_ref"
     },
@@ -302,6 +323,7 @@
       "description": "Unaffected register variable",
       "line": 47,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "return unaff_ESI;",
       "type": "unaffected_reg"
     }

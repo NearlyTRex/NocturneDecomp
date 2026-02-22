@@ -17,9 +17,9 @@ void __cdecl core_drone_cpp_CDrone_setup_FUN_0048ebc0(CDrone *this_ptr)
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr_00);
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr_00);
   this_ptr->unk = 0;
-  iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bipn04");
+  iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bipn04",1);
   this_ptr->bone_index_attack1 = iVar1;
-  iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bipn09");
+  iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bipn09",1);
   this_ptr->bone_index_attack2 = iVar1;
   core_enemy_cpp_CEnemy_setup_FUN_004a9650(&this_ptr->base);
   this_ptr->hurt_sfx_handle = 0;

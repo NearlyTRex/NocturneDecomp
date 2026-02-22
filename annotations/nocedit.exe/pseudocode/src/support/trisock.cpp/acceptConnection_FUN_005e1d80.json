@@ -17,6 +17,7 @@
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 23,
     "suspect_count": 2,
     "suspect_types": [
@@ -134,6 +135,7 @@
       "description": "Direct stack address reference",
       "line": 22,
       "match": "&stack0xfffffff0",
+      "severity": "moderate",
       "text": "((SOCKADDR_IN *)&stack0xfffffff0,&local_20);",
       "type": "stack_ref"
     },
@@ -141,6 +143,7 @@
       "description": "Complex pointer cast",
       "line": 24,
       "match": "(SOCKET *)((int)",
+      "severity": "mild",
       "text": "new_socket[(uint)bVar3 * -2 + 1] = *(SOCKET *)((int)pSVar2 + (uint)bVar3 * -8 + 4);",
       "type": "pointer_cast"
     }

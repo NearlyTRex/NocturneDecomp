@@ -43,17 +43,19 @@
   },
   "complexity": {
     "assembly_lines": 1402,
-    "complexity_score": 891,
+    "complexity_score": 906,
     "cross_reference_count": 0,
     "function_call_count": 31,
     "global_count": 37,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 701,
-    "suspect_count": 17,
+    "suspect_count": 18,
     "suspect_types": [
       "decompiler_intrinsic",
       "format_string_mismatch",
       "stack_param",
-      "stack_ref"
+      "stack_ref",
+      "sub84_truncation"
     ],
     "total_lines": 2103
   },
@@ -1184,6 +1186,7 @@
       "description": "Unresolved stack parameter",
       "line": 24,
       "match": "in_stack_fffffce4",
+      "severity": "moderate",
       "text": "ulonglong in_stack_fffffce4;",
       "type": "stack_param"
     },
@@ -1191,6 +1194,7 @@
       "description": "Unresolved stack parameter",
       "line": 26,
       "match": "in_stack_fffffcec",
+      "severity": "moderate",
       "text": "float in_stack_fffffcec;",
       "type": "stack_param"
     },
@@ -1198,13 +1202,23 @@
       "description": "Unresolved stack parameter",
       "line": 109,
       "match": "in_stack_fffffce4",
+      "severity": "moderate",
       "text": "while (actor_ptr = SUB84(in_stack_fffffce4,4), 0.0 < local_3c) {",
       "type": "stack_param"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 109,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "while (actor_ptr = SUB84(in_stack_fffffce4,4), 0.0 < local_3c) {",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 109,
       "match": "SUB84",
+      "severity": "mild",
       "text": "while (actor_ptr = SUB84(in_stack_fffffce4,4), 0.0 < local_3c) {",
       "type": "decompiler_intrinsic"
     },
@@ -1212,6 +1226,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 120,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_34 = (int)ROUND(ROUND(local_14 * (float)0.25));",
       "type": "decompiler_intrinsic"
     },
@@ -1219,6 +1234,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 120,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_34 = (int)ROUND(ROUND(local_14 * (float)0.25));",
       "type": "decompiler_intrinsic"
     },
@@ -1226,6 +1242,7 @@
       "description": "Direct stack address reference",
       "line": 193,
       "match": "&stack0xfffffce0",
+      "severity": "moderate",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffce0);",
       "type": "stack_ref"
     },
@@ -1233,6 +1250,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 231,
       "match": "SQRT",
+      "severity": "mild",
       "text": "local_24 = SQRT(local_fc * local_fc + local_104 * local_104 + local_100 * local_100);",
       "type": "decompiler_intrinsic"
     },
@@ -1240,6 +1258,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 271,
       "match": "SQRT",
+      "severity": "mild",
       "text": "if (SQRT(local_108 * local_108 + local_110 * local_110 + local_10c * local_10c) <",
       "type": "decompiler_intrinsic"
     },
@@ -1247,6 +1266,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 272,
       "match": "SQRT",
+      "severity": "mild",
       "text": "SQRT(local_1d4 * local_1d4 + local_1dc * local_1dc + local_1d8 * local_1d8))",
       "type": "decompiler_intrinsic"
     },
@@ -1254,6 +1274,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 293,
       "match": "SQRT",
+      "severity": "mild",
       "text": "if (SQRT(local_12c * local_12c + local_134 * local_134 + local_130 * local_130) <",
       "type": "decompiler_intrinsic"
     },
@@ -1261,6 +1282,7 @@
       "description": "Unresolved stack parameter",
       "line": 321,
       "match": "in_stack_fffffcec",
+      "severity": "moderate",
       "text": "(float)actor_ptr,in_stack_fffffcec);",
       "type": "stack_param"
     },
@@ -1268,6 +1290,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 345,
       "match": "SQRT",
+      "severity": "mild",
       "text": "local_28 = SQRT(local_bc.z * local_bc.z +",
       "type": "decompiler_intrinsic"
     },
@@ -1275,6 +1298,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 361,
       "match": "ABS",
+      "severity": "mild",
       "text": "if (ABS(local_14) < (float)0.39269908168750001) {",
       "type": "decompiler_intrinsic"
     },
@@ -1282,6 +1306,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 564,
       "match": "SQRT",
+      "severity": "mild",
       "text": "local_2c = SQRT(local_a8 * local_a8 + local_b0 * local_b0 + local_ac * local_ac);",
       "type": "decompiler_intrinsic"
     },
@@ -1289,6 +1314,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 620,
       "match": "ABS",
+      "severity": "mild",
       "text": "if ((this_ptr->base).base.turn_speed <= ABS((this_ptr->base).base.turn_angle_accumulator)) {",
       "type": "decompiler_intrinsic"
     },

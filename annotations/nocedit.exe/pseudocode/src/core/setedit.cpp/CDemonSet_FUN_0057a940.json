@@ -125,6 +125,7 @@
     "cross_reference_count": 1,
     "function_call_count": 29,
     "global_count": 41,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 138,
     "suspect_count": 33,
     "suspect_types": [
@@ -189,7 +190,7 @@
     {
       "addr": "0056d2d0",
       "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_0056d2d0"
+      "name": "core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0"
     },
     {
       "addr": "0056aa10",
@@ -660,6 +661,7 @@
       "description": "Unaffected register variable",
       "line": 11,
       "match": "unaff_EBP",
+      "severity": "moderate",
       "text": "int unaff_EBP;",
       "type": "unaffected_reg"
     },
@@ -667,6 +669,7 @@
       "description": "Complex pointer cast",
       "line": 30,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pvVar2 + 8) = 0;",
       "type": "pointer_cast"
     },
@@ -674,6 +677,7 @@
       "description": "Complex pointer cast",
       "line": 31,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pvVar2 + 4) = *(uint *)((int)pvVar2 + 8);",
       "type": "pointer_cast"
     },
@@ -681,6 +685,7 @@
       "description": "Complex pointer cast",
       "line": 31,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pvVar2 + 4) = *(uint *)((int)pvVar2 + 8);",
       "type": "pointer_cast"
     },
@@ -688,6 +693,7 @@
       "description": "Complex pointer cast",
       "line": 32,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)pvVar2 = *(uint *)((int)pvVar2 + 4);",
       "type": "pointer_cast"
     },
@@ -695,6 +701,7 @@
       "description": "Complex pointer cast",
       "line": 33,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pvVar2 + 0x14) = 0;",
       "type": "pointer_cast"
     },
@@ -702,6 +709,7 @@
       "description": "Complex pointer cast",
       "line": 34,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pvVar2 + 0x10) = *(uint *)((int)pvVar2 + 0x14);",
       "type": "pointer_cast"
     },
@@ -709,6 +717,7 @@
       "description": "Complex pointer cast",
       "line": 34,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pvVar2 + 0x10) = *(uint *)((int)pvVar2 + 0x14);",
       "type": "pointer_cast"
     },
@@ -716,6 +725,7 @@
       "description": "Complex pointer cast",
       "line": 35,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pvVar2 + 0xc) = *(uint *)((int)pvVar2 + 0x10);",
       "type": "pointer_cast"
     },
@@ -723,6 +733,7 @@
       "description": "Complex pointer cast",
       "line": 35,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pvVar2 + 0xc) = *(uint *)((int)pvVar2 + 0x10);",
       "type": "pointer_cast"
     },
@@ -730,6 +741,7 @@
       "description": "Complex pointer cast",
       "line": 36,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pvVar2 + 0x18) = 0x41e00000;",
       "type": "pointer_cast"
     },
@@ -737,6 +749,7 @@
       "description": "Complex pointer cast",
       "line": 51,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "fStack_34 = *(float *)((int)PTR_DAT_00681ab8 + 4);",
       "type": "pointer_cast"
     },
@@ -744,6 +757,7 @@
       "description": "Complex pointer cast",
       "line": 52,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "fStack_30 = *(float *)((int)PTR_DAT_00681ab8 + 8);",
       "type": "pointer_cast"
     },
@@ -751,6 +765,7 @@
       "description": "Complex pointer cast",
       "line": 53,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "fStack_2c = *(float *)((int)PTR_DAT_00681ab8 + 0xc);",
       "type": "pointer_cast"
     },
@@ -758,6 +773,7 @@
       "description": "Complex pointer cast",
       "line": 54,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "fStack_28 = *(float *)((int)PTR_DAT_00681ab8 + 0x10);",
       "type": "pointer_cast"
     },
@@ -765,6 +781,7 @@
       "description": "Complex pointer cast",
       "line": 55,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "fStack_24 = *(float *)((int)PTR_DAT_00681ab8 + 0x14);",
       "type": "pointer_cast"
     },
@@ -772,6 +789,7 @@
       "description": "Complex pointer cast",
       "line": 60,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "g_CDemonCameraInstance.base.position.z = *(int *)((int)PTR_DAT_00681ab8 + 8);",
       "type": "pointer_cast"
     },
@@ -779,6 +797,7 @@
       "description": "Complex pointer cast",
       "line": 61,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "g_CDemonCameraInstance.base.position.y = *(int *)((int)PTR_DAT_00681ab8 + 4);",
       "type": "pointer_cast"
     },
@@ -786,6 +805,7 @@
       "description": "Complex pointer cast",
       "line": 65,
       "match": "(CVector3f *)((int)",
+      "severity": "mild",
       "text": "(CVector3f *)((int)PTR_DAT_00681ab8 + 0xc));",
       "type": "pointer_cast"
     },
@@ -793,6 +813,7 @@
       "description": "Complex pointer cast",
       "line": 66,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "g_CDemonCameraInstance.base.projection_scale = *(float *)((int)PTR_DAT_00681ab8 + 0x18);",
       "type": "pointer_cast"
     },
@@ -800,6 +821,7 @@
       "description": "Complex pointer cast",
       "line": 76,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "(fStack_34 != *(float *)((int)PTR_DAT_00681ab8 + 4))) ||",
       "type": "pointer_cast"
     },
@@ -807,6 +829,7 @@
       "description": "Complex pointer cast",
       "line": 77,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "(fStack_30 != *(float *)((int)PTR_DAT_00681ab8 + 8))) ||",
       "type": "pointer_cast"
     },
@@ -814,6 +837,7 @@
       "description": "Complex pointer cast",
       "line": 78,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "(((fStack_2c != *(float *)((int)PTR_DAT_00681ab8 + 0xc) ||",
       "type": "pointer_cast"
     },
@@ -821,6 +845,7 @@
       "description": "Complex pointer cast",
       "line": 79,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "(fStack_28 != *(float *)((int)PTR_DAT_00681ab8 + 0x10))) ||",
       "type": "pointer_cast"
     },
@@ -828,6 +853,7 @@
       "description": "Complex pointer cast",
       "line": 80,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "((fStack_24 != *(float *)((int)PTR_DAT_00681ab8 + 0x14) ||",
       "type": "pointer_cast"
     },
@@ -835,6 +861,7 @@
       "description": "Complex pointer cast",
       "line": 81,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "((float)pvStack_20 != *(float *)((int)PTR_DAT_00681ab8 + 0x18))))))) {",
       "type": "pointer_cast"
     },
@@ -842,6 +869,7 @@
       "description": "Direct stack address reference",
       "line": 95,
       "match": "&stack0xfffffae0",
+      "severity": "moderate",
       "text": "piVar1 = (int *)(&stack0xfffffae0 + iVar4);",
       "type": "stack_ref"
     },
@@ -849,6 +877,7 @@
       "description": "Unaffected register variable",
       "line": 97,
       "match": "unaff_EBP",
+      "severity": "moderate",
       "text": "engine_2d_c_drawTextXY_FUN_00402130(0,y,(char *)(*piVar1 * 0x1a4 + unaff_EBP));",
       "type": "unaffected_reg"
     },
@@ -856,6 +885,7 @@
       "description": "Complex pointer cast",
       "line": 109,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "(double)*(float *)((int)PTR_DAT_00681ab8 + 4),",
       "type": "pointer_cast"
     },
@@ -863,6 +893,7 @@
       "description": "Complex pointer cast",
       "line": 110,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "(double)*(float *)((int)PTR_DAT_00681ab8 + 8),",
       "type": "pointer_cast"
     },
@@ -870,6 +901,7 @@
       "description": "Complex pointer cast",
       "line": 111,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "(double)*(float *)((int)PTR_DAT_00681ab8 + 0xc),",
       "type": "pointer_cast"
     },
@@ -877,6 +909,7 @@
       "description": "Complex pointer cast",
       "line": 112,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "(double)*(float *)((int)PTR_DAT_00681ab8 + 0x14),",
       "type": "pointer_cast"
     },
@@ -884,6 +917,7 @@
       "description": "Complex pointer cast",
       "line": 113,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "(double)*(float *)((int)PTR_DAT_00681ab8 + 0x10));",
       "type": "pointer_cast"
     }

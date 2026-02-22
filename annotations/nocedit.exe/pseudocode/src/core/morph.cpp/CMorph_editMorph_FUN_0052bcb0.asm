@@ -981,7 +981,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x4da0]    ; 0052c8a3
     PUSH ECX                            ; 0052c8aa
     CALL core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340 ; 0052c8ab
-        ;   XREF to: 005a0340 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340(CDeformableModelInstance * this_ptr)
+        ;   XREF to: 005a0340 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340(CDeformableModelInstance * this_ptr, int render_flags, int skip_texture_capture)
     ADD ESP,0xc                         ; 0052c8b0
     JMP 0x0052c29a                      ; 0052c8b3
         ;   XREF to: 0052c29a (UNCONDITIONAL_JUMP)  ; LAB_0052c29a

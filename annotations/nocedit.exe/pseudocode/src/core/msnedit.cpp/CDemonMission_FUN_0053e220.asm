@@ -285,8 +285,8 @@ section .text
     AND EBX,0xff                        ; 0053e4fb
     PUSH EAX                            ; 0053e501 | g_CDemonSetInstance
     MOV dword ptr [EAX + 0x15ac90],EBX  ; 0053e502 | g_CDemonSetInstance.disable_sky_rendering
-    CALL core_set.cpp_CDemonSet_FUN_0056c1a0 ; 0053e508
-        ;   XREF to: 0056c1a0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056c1a0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0 ; 0053e508
+        ;   XREF to: 0056c1a0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0(CDemonSet * this_ptr, int skip_prerender)
     ADD ESP,0x8                         ; 0053e50d
     MOV EAX,[0x0067a3d0]                ; 0053e510 | g_CFireEffectInstance | g_CFireEffectPtr
     PUSH EAX                            ; 0053e515 | g_CFireEffectInstance
@@ -657,8 +657,8 @@ section .text
     ADD ESP,0x4                         ; 0053e981
     MOV EAX,[0x006810c8]                ; 0053e984 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EAX                            ; 0053e989 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_0056d2d0 ; 0053e98a
-        ;   XREF to: 0056d2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d2d0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0 ; 0053e98a
+        ;   XREF to: 0056d2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0053e98f
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 0053e992
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()

@@ -6,14 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 268,
-    "complexity_score": 305,
+    "complexity_score": 350,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 90,
-    "suspect_count": 19,
+    "suspect_count": 23,
     "suspect_types": [
       "decompiler_intrinsic",
+      "double_reconstruction",
       "extra_output",
       "param_count_too_few",
       "pointer_cast",
@@ -378,6 +380,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 7,
       "match": "extraout_EDX",
+      "severity": "moderate",
       "text": "uint extraout_EDX;",
       "type": "extra_output"
     },
@@ -385,6 +388,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 8,
       "match": "extraout_EDX_00",
+      "severity": "moderate",
       "text": "uint extraout_EDX_00;",
       "type": "extra_output"
     },
@@ -392,6 +396,7 @@
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
@@ -399,6 +404,7 @@
       "description": "Unresolved stack parameter",
       "line": 39,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "if (*(int *)(in_stack_00000004 + 0x2c) != 0) {",
       "type": "stack_param"
     },
@@ -406,6 +412,7 @@
       "description": "Unresolved stack parameter",
       "line": 41,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "local_1c = in_stack_00000004 + 0x14;",
       "type": "stack_param"
     },
@@ -413,6 +420,7 @@
       "description": "Unresolved stack parameter",
       "line": 43,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "iVar2 = local_28 + *(int *)(in_stack_00000004 + 0x30);",
       "type": "stack_param"
     },
@@ -420,6 +428,7 @@
       "description": "Complex pointer cast",
       "line": 58,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar4 = (double *)((int)pdVar4 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -427,13 +436,31 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 72,
       "match": "extraout_EDX",
+      "severity": "moderate",
       "text": "if ((double)CONCAT44(uStack_38,local_3c) < (double)CONCAT44(extraout_EDX,local_44)) {",
       "type": "extra_output"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 72,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "if ((double)CONCAT44(uStack_38,local_3c) < (double)CONCAT44(extraout_EDX,local_44)) {",
+      "type": "double_reconstruction"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 72,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "if ((double)CONCAT44(uStack_38,local_3c) < (double)CONCAT44(extraout_EDX,local_44)) {",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 72,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "if ((double)CONCAT44(uStack_38,local_3c) < (double)CONCAT44(extraout_EDX,local_44)) {",
       "type": "decompiler_intrinsic"
     },
@@ -441,6 +468,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 72,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "if ((double)CONCAT44(uStack_38,local_3c) < (double)CONCAT44(extraout_EDX,local_44)) {",
       "type": "decompiler_intrinsic"
     },
@@ -448,6 +476,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 75,
       "match": "extraout_EDX",
+      "severity": "moderate",
       "text": "uStack_38 = extraout_EDX;",
       "type": "extra_output"
     },
@@ -455,6 +484,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 79,
       "match": "extraout_EDX_00",
+      "severity": "moderate",
       "text": "local_30 = extraout_EDX_00;",
       "type": "extra_output"
     },
@@ -462,6 +492,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 81,
       "match": "extraout_EDX_00",
+      "severity": "moderate",
       "text": "uStack_50 = extraout_EDX_00;",
       "type": "extra_output"
     },
@@ -469,13 +500,31 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 82,
       "match": "extraout_EDX_00",
+      "severity": "moderate",
       "text": "if ((double)CONCAT44(uStack_38,local_3c) < (double)CONCAT44(extraout_EDX_00,local_34)) {",
       "type": "extra_output"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 82,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "if ((double)CONCAT44(uStack_38,local_3c) < (double)CONCAT44(extraout_EDX_00,local_34)) {",
+      "type": "double_reconstruction"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 82,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "if ((double)CONCAT44(uStack_38,local_3c) < (double)CONCAT44(extraout_EDX_00,local_34)) {",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 82,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "if ((double)CONCAT44(uStack_38,local_3c) < (double)CONCAT44(extraout_EDX_00,local_34)) {",
       "type": "decompiler_intrinsic"
     },
@@ -483,6 +532,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 82,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "if ((double)CONCAT44(uStack_38,local_3c) < (double)CONCAT44(extraout_EDX_00,local_34)) {",
       "type": "decompiler_intrinsic"
     },
@@ -490,6 +540,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 84,
       "match": "extraout_EDX_00",
+      "severity": "moderate",
       "text": "uStack_38 = extraout_EDX_00;",
       "type": "extra_output"
     },
@@ -497,6 +548,7 @@
       "description": "Unresolved stack parameter",
       "line": 90,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "} while (local_24 < *(uint *)(in_stack_00000004 + 0x2c));",
       "type": "stack_param"
     },

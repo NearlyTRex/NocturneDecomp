@@ -6,18 +6,21 @@
   },
   "complexity": {
     "assembly_lines": 442,
-    "complexity_score": 594,
+    "complexity_score": 664,
     "cross_reference_count": 9,
     "function_call_count": 10,
     "global_count": 5,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 339,
-    "suspect_count": 23,
+    "suspect_count": 29,
     "suspect_types": [
+      "bare_stack_ref",
       "byvalue_struct_passing",
       "pointer_cast",
       "stack_param",
       "stack_ref",
-      "suspect_float"
+      "suspect_float",
+      "warning_unmapped_variable"
     ],
     "total_lines": 781
   },
@@ -310,9 +313,34 @@
   },
   "suspects": [
     {
+      "description": "Variable defined which should be unmapped",
+      "line": 2,
+      "match": "WARNING: Variable defined which should be unmapped",
+      "severity": "moderate",
+      "text": "/* WARNING: Variable defined which should be unmapped: local_17c */",
+      "type": "warning_unmapped_variable"
+    },
+    {
+      "description": "Variable defined which should be unmapped",
+      "line": 3,
+      "match": "WARNING: Variable defined which should be unmapped",
+      "severity": "moderate",
+      "text": "/* WARNING: Variable defined which should be unmapped: local_14c */",
+      "type": "warning_unmapped_variable"
+    },
+    {
+      "description": "Variable defined which should be unmapped",
+      "line": 4,
+      "match": "WARNING: Variable defined which should be unmapped",
+      "severity": "moderate",
+      "text": "/* WARNING: Variable defined which should be unmapped: local_1ac */",
+      "type": "warning_unmapped_variable"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 22,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "CDemonActor *in_stack_0000000c;",
       "type": "stack_param"
     },
@@ -320,6 +348,7 @@
       "description": "Unresolved stack parameter",
       "line": 23,
       "match": "in_stack_00000010",
+      "severity": "moderate",
       "text": "int in_stack_00000010;",
       "type": "stack_param"
     },
@@ -327,6 +356,7 @@
       "description": "Unresolved stack parameter",
       "line": 61,
       "match": "in_stack_00000010",
+      "severity": "moderate",
       "text": "g_ActiveRenderColor = in_stack_00000010;",
       "type": "stack_param"
     },
@@ -334,6 +364,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 88,
       "match": "5.955695e-39",
+      "severity": "mild",
       "text": "local_14c.min.x = 5.955695e-39;",
       "type": "suspect_float"
     },
@@ -341,6 +372,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 94,
       "match": "5.955771e-39",
+      "severity": "mild",
       "text": "local_14c.min.x = 5.955771e-39;",
       "type": "suspect_float"
     },
@@ -348,6 +380,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 100,
       "match": "5.955831e-39",
+      "severity": "mild",
       "text": "local_14c.min.x = 5.955831e-39;",
       "type": "suspect_float"
     },
@@ -355,6 +388,7 @@
       "description": "Complex pointer cast",
       "line": 132,
       "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
       "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -362,13 +396,23 @@
       "description": "Complex pointer cast",
       "line": 138,
       "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
       "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Bare stack address reference (hidden stack variable)",
+      "line": 154,
+      "match": "stack0xfffffe5c",
+      "severity": "moderate",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(stack0xfffffe5c,vertex2);",
+      "type": "bare_stack_ref"
     },
     {
       "description": "Likely misinterpreted integer as float",
       "line": 180,
       "match": "5.956285e-39",
+      "severity": "mild",
       "text": "local_14c.min.x = 5.956285e-39;",
       "type": "suspect_float"
     },
@@ -376,6 +420,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 186,
       "match": "5.956365e-39",
+      "severity": "mild",
       "text": "local_14c.min.x = 5.956365e-39;",
       "type": "suspect_float"
     },
@@ -383,6 +428,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 192,
       "match": "5.956445e-39",
+      "severity": "mild",
       "text": "local_14c.min.x = 5.956445e-39;",
       "type": "suspect_float"
     },
@@ -390,6 +436,7 @@
       "description": "Complex pointer cast",
       "line": 224,
       "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
       "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -397,13 +444,23 @@
       "description": "Complex pointer cast",
       "line": 230,
       "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
       "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Bare stack address reference (hidden stack variable)",
+      "line": 246,
+      "match": "stack0xfffffe5c",
+      "severity": "moderate",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(stack0xfffffe5c,vertex2_00);",
+      "type": "bare_stack_ref"
     },
     {
       "description": "Likely misinterpreted integer as float",
       "line": 272,
       "match": "5.956916e-39",
+      "severity": "mild",
       "text": "local_14c.min.x = 5.956916e-39;",
       "type": "suspect_float"
     },
@@ -411,6 +468,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 278,
       "match": "5.956979e-39",
+      "severity": "mild",
       "text": "local_14c.min.x = 5.956979e-39;",
       "type": "suspect_float"
     },
@@ -418,6 +476,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 284,
       "match": "5.957049e-39",
+      "severity": "mild",
       "text": "local_14c.min.x = 5.957049e-39;",
       "type": "suspect_float"
     },
@@ -425,6 +484,7 @@
       "description": "Direct stack address reference",
       "line": 300,
       "match": "&stack0xffffffe8",
+      "severity": "moderate",
       "text": "local_14c.min.y = (float)&stack0xffffffe8;",
       "type": "stack_ref"
     },
@@ -432,6 +492,7 @@
       "description": "Direct stack address reference",
       "line": 305,
       "match": "&stack0xffffffe8",
+      "severity": "moderate",
       "text": "local_14c.min.y = (float)&stack0xffffffe8;",
       "type": "stack_ref"
     },
@@ -439,6 +500,7 @@
       "description": "Complex pointer cast",
       "line": 315,
       "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
       "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -446,13 +508,23 @@
       "description": "Complex pointer cast",
       "line": 322,
       "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
       "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Bare stack address reference (hidden stack variable)",
+      "line": 338,
+      "match": "stack0xfffffe5c",
+      "severity": "moderate",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(stack0xfffffe5c,vertex2_01);",
+      "type": "bare_stack_ref"
     },
     {
       "description": "Likely misinterpreted integer as float",
       "line": 340,
       "match": "5.957353e-39",
+      "severity": "mild",
       "text": "local_14c.min.x = 5.957353e-39;",
       "type": "suspect_float"
     },
@@ -460,6 +532,7 @@
       "description": "Unresolved stack parameter",
       "line": 341,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_0000000c);",
       "type": "stack_param"
     },

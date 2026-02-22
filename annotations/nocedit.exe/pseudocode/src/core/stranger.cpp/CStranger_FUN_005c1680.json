@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 26,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 279,
     "suspect_count": 10,
     "suspect_types": [
@@ -401,6 +402,7 @@
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "char *in_stack_00000008;",
       "type": "stack_param"
     },
@@ -408,6 +410,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 79,
       "match": "SQRT",
+      "severity": "mild",
       "text": "fVar2 = SQRT(CStack_7c.z * CStack_7c.z +",
       "type": "decompiler_intrinsic"
     },
@@ -415,6 +418,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 130,
       "match": "ABS",
+      "severity": "mild",
       "text": "if (((ABS(fStack_fc) <= (float)5) &&",
       "type": "decompiler_intrinsic"
     },
@@ -422,6 +426,7 @@
       "description": "Unresolved stack parameter",
       "line": 132,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "&& (iVar5 = core_actor_cpp_isOfClass_FUN_0040c6d0(pCVar8,in_stack_00000008), iVar5 != 0",
       "type": "stack_param"
     },
@@ -429,6 +434,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 146,
       "match": "ABS",
+      "severity": "mild",
       "text": "ABS(CStack_a0.x) <= 1.0 &&",
       "type": "decompiler_intrinsic"
     },
@@ -436,6 +442,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 148,
       "match": "ABS",
+      "severity": "mild",
       "text": "(&CStack_88,&CStack_a0), ABS(pCVar7->y) <= (float)20))",
       "type": "decompiler_intrinsic"
     },
@@ -443,6 +450,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 227,
       "match": "ABS",
+      "severity": "mild",
       "text": "ABS(SQRT(fStack_5c * fStack_5c + fStack_64 * fStack_64 + fStack_60 * fStack_60) -",
       "type": "decompiler_intrinsic"
     },
@@ -450,6 +458,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 227,
       "match": "SQRT",
+      "severity": "mild",
       "text": "ABS(SQRT(fStack_5c * fStack_5c + fStack_64 * fStack_64 + fStack_60 * fStack_60) -",
       "type": "decompiler_intrinsic"
     },
@@ -457,6 +466,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 228,
       "match": "SQRT",
+      "severity": "mild",
       "text": "SQRT(fStack_11c * fStack_11c + fStack_124 * fStack_124 + fStack_120 * fStack_120)))",
       "type": "decompiler_intrinsic"
     },

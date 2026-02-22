@@ -5,6 +5,7 @@
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 12,
     "suspect_count": 5,
     "suspect_types": [
@@ -142,6 +143,7 @@
       "description": "Complex pointer cast",
       "line": 8,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "((*(uint *)((int)&stream->_flag + *(int *)(stream->_ptr + 4)) & 1) == 0)) &&",
       "type": "pointer_cast"
     },
@@ -149,6 +151,7 @@
       "description": "Complex pointer cast",
       "line": 9,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "(*(int *)((int)&stream->_handle + *(int *)(stream->_ptr + 4)) == 0)) &&",
       "type": "pointer_cast"
     },
@@ -156,6 +159,7 @@
       "description": "Complex pointer cast",
       "line": 10,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "(*(int *)((int)&stream->_link + *(int *)(stream->_ptr + 4)) == 0)) {",
       "type": "pointer_cast"
     },

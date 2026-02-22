@@ -93,7 +93,7 @@ OMIT_SUSPECT_TYPES = {
     'callind_preserve', 'callind_preserve_lost', 'callind_anchor',
     'variadic_preserve', 'variadic_preserve_ebp', 'variadic_anchor',
     'stack_align_anchor', 'lea_esp_stack_addr',
-    'unnamed_local', 'float10_type',
+    'unnamed_local',
 }
 
 

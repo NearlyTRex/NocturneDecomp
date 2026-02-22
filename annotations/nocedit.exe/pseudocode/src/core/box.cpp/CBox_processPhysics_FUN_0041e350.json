@@ -10,6 +10,7 @@
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 10,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 786,
     "suspect_count": 13,
     "suspect_types": [
@@ -1888,6 +1889,7 @@
       "description": "Complex pointer cast",
       "line": 148,
       "match": "(CVector3f *)((int)",
+      "severity": "mild",
       "text": "pCVar10 = (CVector3f *)((int)(pCVar10 + 4) + 4);",
       "type": "pointer_cast"
     },
@@ -1895,6 +1897,7 @@
       "description": "Complex pointer cast",
       "line": 149,
       "match": "(CVector3f *)((int)",
+      "severity": "mild",
       "text": "pCVar9 = (CVector3f *)((int)(pCVar9 + 4) + 4);",
       "type": "pointer_cast"
     },
@@ -1902,6 +1905,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 212,
       "match": "SQRT",
+      "severity": "mild",
       "text": "fVar2 = SQRT(fVar3 * (this_ptr->angular_velocity).z +",
       "type": "decompiler_intrinsic"
     },
@@ -1909,6 +1913,7 @@
       "description": "Complex pointer cast",
       "line": 266,
       "match": "(CMatrix3x3f *)((int)",
+      "severity": "mild",
       "text": "pCVar16 = (CMatrix3x3f *)((int)pCVar16 + (uint)bVar18 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -1916,6 +1921,7 @@
       "description": "Complex pointer cast",
       "line": 294,
       "match": "(CVector3f *)((int)",
+      "severity": "mild",
       "text": "pCVar10 = (CVector3f *)((int)(pCVar10 + 4) + 4);",
       "type": "pointer_cast"
     },
@@ -1923,6 +1929,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 312,
       "match": "SQRT",
+      "severity": "mild",
       "text": "SQRT(local_78 * local_78 + local_80 * local_80 + local_7c * local_7c)) {",
       "type": "decompiler_intrinsic"
     },
@@ -1930,6 +1937,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 511,
       "match": "SQRT",
+      "severity": "mild",
       "text": "if (SQRT(local_344.scrape_points[4].previous_position.y *",
       "type": "decompiler_intrinsic"
     },
@@ -1937,6 +1945,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 517,
       "match": "SQRT",
+      "severity": "mild",
       "text": "SQRT(local_9c * local_9c + local_a4 * local_a4 + local_a0 * local_a0)) {",
       "type": "decompiler_intrinsic"
     },
@@ -1944,6 +1953,7 @@
       "description": "Complex pointer cast",
       "line": 690,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "iVar17 = *(int *)((int)local_3d0 + iVar11);",
       "type": "pointer_cast"
     },
@@ -1951,6 +1961,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 703,
       "match": "SQRT",
+      "severity": "mild",
       "text": "local_2c = SQRT(local_344.scrape_points[6].local_position.z *",
       "type": "decompiler_intrinsic"
     },
@@ -1958,6 +1969,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 768,
       "match": "SQRT",
+      "severity": "mild",
       "text": "SQRT(fVar4 * fVar4 + fVar3 * fVar3 + fVar2 * fVar2) < 1.0)) {",
       "type": "decompiler_intrinsic"
     },
@@ -1965,6 +1977,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 774,
       "match": "ABS",
+      "severity": "mild",
       "text": "if (ABS(pCVar14->scrape_points[0].transformed_position.y - this_ptr[1].position.x) <",
       "type": "decompiler_intrinsic"
     },

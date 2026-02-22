@@ -35,6 +35,7 @@
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 19,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 131,
     "suspect_count": 16,
     "suspect_types": [
@@ -248,6 +249,7 @@
       "description": "Unreachable code block removed",
       "line": 2,
       "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x004365c2) */",
       "type": "warning_unreachable"
     },
@@ -255,6 +257,7 @@
       "description": "Unreachable code block removed",
       "line": 3,
       "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x0043653c) */",
       "type": "warning_unreachable"
     },
@@ -262,6 +265,7 @@
       "description": "Complex pointer cast",
       "line": 28,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "iVar3 = *(int *)((int)&g_ClippedVertexBuffer[0].projected_vertex.transformed_z + iVar5);",
       "type": "pointer_cast"
     },
@@ -269,6 +273,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 47,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*(longlong *)piVar10 = (longlong)ROUND((float10)lVar1);",
       "type": "decompiler_intrinsic"
     },
@@ -276,6 +281,7 @@
       "description": "Unknown/mangled field access",
       "line": 77,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "lVar2._0_4_ = (pSVar9->projected_vertex).transformed_x;",
       "type": "unknown_field"
     },
@@ -283,6 +289,7 @@
       "description": "Unknown/mangled field access",
       "line": 78,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "lVar2._4_4_ = (pSVar9->projected_vertex).transformed_y;",
       "type": "unknown_field"
     },
@@ -290,6 +297,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 80,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(pSVar11->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar2);",
       "type": "decompiler_intrinsic"
     },
@@ -297,6 +305,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 82,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar2) >> 0x20);",
       "type": "decompiler_intrinsic"
     },
@@ -304,6 +313,7 @@
       "description": "Complex pointer cast",
       "line": 89,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pSVar11 + (uint)bVar12 * -8 + 4) =",
       "type": "pointer_cast"
     },
@@ -311,6 +321,7 @@
       "description": "Complex pointer cast",
       "line": 90,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pSVar9 + (uint)bVar12 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -318,6 +329,7 @@
       "description": "Unknown/mangled field access",
       "line": 106,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "lVar1._0_4_ = (pSVar9->projected_vertex).transformed_x;",
       "type": "unknown_field"
     },
@@ -325,6 +337,7 @@
       "description": "Unknown/mangled field access",
       "line": 107,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "lVar1._4_4_ = (pSVar9->projected_vertex).transformed_y;",
       "type": "unknown_field"
     },
@@ -332,6 +345,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 109,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(pSVar11->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar1);",
       "type": "decompiler_intrinsic"
     },
@@ -339,6 +353,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 111,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar1) >> 0x20);",
       "type": "decompiler_intrinsic"
     },
@@ -346,6 +361,7 @@
       "description": "Complex pointer cast",
       "line": 118,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pSVar11 + (uint)bVar12 * -8 + 4) =",
       "type": "pointer_cast"
     },
@@ -353,6 +369,7 @@
       "description": "Complex pointer cast",
       "line": 119,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pSVar9 + (uint)bVar12 * -8 + 4);",
       "type": "pointer_cast"
     }

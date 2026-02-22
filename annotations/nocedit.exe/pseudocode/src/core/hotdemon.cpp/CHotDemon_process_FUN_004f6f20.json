@@ -29,6 +29,7 @@
     "cross_reference_count": 0,
     "function_call_count": 24,
     "global_count": 16,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 301,
     "suspect_count": 8,
     "suspect_types": [
@@ -639,6 +640,7 @@
       "description": "Type propagation did not converge",
       "line": 2,
       "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
     },
@@ -646,6 +648,7 @@
       "description": "Unresolved stack parameter",
       "line": 19,
       "match": "in_stack_fffffef4",
+      "severity": "moderate",
       "text": "float in_stack_fffffef4;",
       "type": "stack_param"
     },
@@ -653,6 +656,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 109,
       "match": "SQRT",
+      "severity": "mild",
       "text": "local_28 = SQRT(local_c4.z * local_c4.z + local_c4.x * local_c4.x + local_c4.y * local_c4.y);",
       "type": "decompiler_intrinsic"
     },
@@ -660,6 +664,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 115,
       "match": "ABS",
+      "severity": "mild",
       "text": "if (ABS(local_14) < (float)0.52359877558333301) {",
       "type": "decompiler_intrinsic"
     },
@@ -667,6 +672,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 179,
       "match": "SQRT",
+      "severity": "mild",
       "text": "local_20 = SQRT(local_8c * local_8c + local_94 * local_94);",
       "type": "decompiler_intrinsic"
     },
@@ -674,6 +680,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 197,
       "match": "ABS",
+      "severity": "mild",
       "text": "if (ABS(local_14) < (float)0.52359877558333301) {",
       "type": "decompiler_intrinsic"
     },
@@ -681,6 +688,7 @@
       "description": "Direct stack address reference",
       "line": 249,
       "match": "&stack0xfffffef4",
+      "severity": "moderate",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffef4);",
       "type": "stack_ref"
     },
@@ -688,6 +696,7 @@
       "description": "Unresolved stack parameter",
       "line": 303,
       "match": "in_stack_fffffef4",
+      "severity": "moderate",
       "text": "((CCharacter *)this_ptr,delta_time,in_stack_fffffef4);",
       "type": "stack_param"
     }

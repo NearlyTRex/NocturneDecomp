@@ -19,7 +19,7 @@
 ; Called Functions:
 ;   core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360
 ;   core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310
-;   core_set.cpp_CDemonSet_FUN_0056d110
+;   core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0056d110
 ;   crt_math.c_round_FUN_005fe6b0
 ;
 ; *****************************************************************************
@@ -74,8 +74,8 @@ section .text
     MOV EDX,dword ptr [0x006810c8]      ; 00501798 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EDX                            ; 0050179e | g_CDemonSetInstance
     MOV dword ptr [EBX + 0x20],0x0      ; 0050179f
-    CALL core_set.cpp_CDemonSet_FUN_0056d110 ; 005017a6
-        ;   XREF to: 0056d110 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d110(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0056d110 ; 005017a6
+        ;   XREF to: 0056d110 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0056d110(CDemonSet * this_ptr, CDemonGlobe * globe)
     ADD ESP,0x8                         ; 005017ab
     ADD ESP,0xc                         ; 005017ae
     POP ESI                             ; 005017b1

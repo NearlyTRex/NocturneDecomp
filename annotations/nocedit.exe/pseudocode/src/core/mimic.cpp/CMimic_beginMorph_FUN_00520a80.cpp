@@ -23,7 +23,7 @@ void __cdecl core_mimic_cpp_CMimic_beginMorph_FUN_00520a80(CMimic *this_ptr)
   (this_ptr->morph_target_actor->scale).x = (this_ptr->base).base.base.scale.x;
   (this_ptr->morph_target_actor->scale).y = (this_ptr->base).base.base.scale.y;
   (this_ptr->morph_target_actor->scale).z = (this_ptr->base).base.base.scale.z;
-  this_ptr->morph_target_actor[0x8d].previous_transform_state.orientation.x = 1.4013e-45;
+  this_ptr->morph_target_actor[0x8d].previous_transform_state.orientation.vec.x = 1.4013e-45;
   pCVar2 = this_ptr->morph_target_actor;
   (pCVar2->location).position.x = (this_ptr->base).base.base.location.position.x;
   (pCVar2->location).position.y = (this_ptr->base).base.base.location.position.y;

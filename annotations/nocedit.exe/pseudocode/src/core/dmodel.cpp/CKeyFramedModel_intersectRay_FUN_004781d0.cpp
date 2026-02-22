@@ -54,7 +54,8 @@ float __cdecl core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_004781d0(CKeyFram
       if (0 < this_ptr->poly_count) {
         local_28 = 0;
         do {
-          local_24 = local_28 + (int)this_ptr->poly_vert_list;
+          local_24 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base)
+                           .base.type + local_28;
           pCVar1 = local_38 + *(int *)(local_24 + 0x18);
           local_68.x = (float)pCVar1->x * 0.00390625f;
           local_68.y = (float)pCVar1->y * 0.00390625f;

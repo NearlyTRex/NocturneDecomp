@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 15,
     "suspect_count": 4,
     "suspect_types": [
@@ -99,6 +100,7 @@
       "description": "Complex pointer cast",
       "line": 9,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "src_ptr = (uint *)((int)src_ptr + 4);",
       "type": "pointer_cast"
     },
@@ -106,6 +108,7 @@
       "description": "Complex pointer cast",
       "line": 10,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "dest_ptr = (uint *)((int)dest_ptr + 4);",
       "type": "pointer_cast"
     },
@@ -113,6 +116,7 @@
       "description": "Complex pointer cast",
       "line": 14,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "src_ptr = (uint *)((int)src_ptr + 1);",
       "type": "pointer_cast"
     },
@@ -120,6 +124,7 @@
       "description": "Complex pointer cast",
       "line": 15,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "dest_ptr = (uint *)((int)dest_ptr + 1);",
       "type": "pointer_cast"
     }

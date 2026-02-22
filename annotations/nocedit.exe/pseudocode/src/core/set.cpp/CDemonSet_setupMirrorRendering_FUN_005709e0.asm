@@ -12,11 +12,11 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[5]:
-;   core_set.cpp_CDemonSet_FUN_0056be80 at 0056c007
-;   core_set.cpp_CDemonSet_FUN_0056c1a0 at 0056c365
-;   core_set.cpp_CDemonSet_FUN_0056cd60 at 0056ce92
-;   core_set.cpp_CDemonSet_FUN_0056cf00 at 0056d01e
+;   core_set.cpp_CDemonSet_renderOpaqueActors_FUN_0056cd60 at 0056ce92
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190 at 0056a42d
+;   core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0 at 0056c365
+;   core_set.cpp_CDemonSet_renderStaticLights_FUN_0056be80 at 0056c007
+;   core_set.cpp_CDemonSet_renderTransparentActors_FUN_0056cf00 at 0056d01e
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578

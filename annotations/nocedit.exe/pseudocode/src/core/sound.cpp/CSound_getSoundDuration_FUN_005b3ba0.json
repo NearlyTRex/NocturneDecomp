@@ -29,6 +29,7 @@
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 1,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 26,
     "suspect_count": 5,
     "suspect_types": [
@@ -163,6 +164,7 @@
       "description": "Unresolved stack parameter",
       "line": 9,
       "match": "in_stack_fffffea0",
+      "severity": "moderate",
       "text": "CSampleInfo *in_stack_fffffea0;",
       "type": "stack_param"
     },
@@ -170,6 +172,7 @@
       "description": "Direct stack address reference",
       "line": 11,
       "match": "&stack0xfffffea0",
+      "severity": "moderate",
       "text": "sound_sndmain_cpp_CSfxSample_init_FUN_005a8480((CSfxSample *)&stack0xfffffea0);",
       "type": "stack_ref"
     },
@@ -177,6 +180,7 @@
       "description": "Direct stack address reference",
       "line": 12,
       "match": "&stack0xfffffea0",
+      "severity": "moderate",
       "text": "pcVar3 = &stack0xfffffea0;",
       "type": "stack_ref"
     },
@@ -184,6 +188,7 @@
       "description": "Direct stack address reference",
       "line": 23,
       "match": "&stack0xfffffea0",
+      "severity": "moderate",
       "text": "iVar2 = sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0((CSfxSample *)&stack0xfffffea0);",
       "type": "stack_ref"
     },
@@ -191,6 +196,7 @@
       "description": "Unresolved stack parameter",
       "line": 27,
       "match": "in_stack_fffffea0",
+      "severity": "moderate",
       "text": "dVar4 = sound_sndmain_cpp_CSampleInfo_getSampleDuration_FUN_005a84d0(in_stack_fffffea0);",
       "type": "stack_param"
     }

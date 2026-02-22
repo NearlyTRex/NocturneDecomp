@@ -27,8 +27,8 @@
 void __cdecl shape_dsemodel_cpp_CDSEModel_doNothing_FUN_00490020(CDSEModel *this_ptr);
 void __cdecl core_dskybox_cpp_staticInit_FUN_00490040(void);
 SMRGLTextureBasic * __cdecl core_dskybox_cpp_initializeSkyboxTexture_FUN_00490070(SMRGLTextureBasic *texture);
-void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_004900b0(float *light_color,int u_coord,int v_coord,float *uv_offset);
-void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0(SMRGLTextureBasic *sky_texture,char *texture_name,float brightness_factor);
+void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_004900b0(SMRGLTextureBasic *sky_texture,int u_coord,int v_coord,int vertex_index);
+void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0(SMRGLTextureBasic *sky_texture,char *texture_name,int brightness_factor);
 void __mmx_save core_dstrender_cpp_saveMMXRegisters_FUN_004906b0 (ulonglong mm0,ulonglong mm1,ulonglong mm2,ulonglong mm3,ulonglong mm4,ulonglong mm5, ulonglong mm6,ulonglong mm7);
 void __cdecl core_dstrender_cpp_renderDepthOnlyReversed_FUN_004906e9(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y);
 void __cdecl core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y);

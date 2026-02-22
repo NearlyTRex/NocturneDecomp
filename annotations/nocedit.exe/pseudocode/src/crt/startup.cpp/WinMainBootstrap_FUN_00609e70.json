@@ -5,6 +5,7 @@
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 5,
+    "max_suspect_severity": "severe",
     "pseudocode_lines": 74,
     "suspect_count": 9,
     "suspect_types": [
@@ -189,6 +190,7 @@
       "description": "Stack frame tracking failed",
       "line": 2,
       "match": "WARNING: Unable to track spacebase fully for stack",
+      "severity": "severe",
       "text": "/* WARNING: Unable to track spacebase fully for stack */",
       "type": "warning_spacebase"
     },
@@ -196,6 +198,7 @@
       "description": "Complex pointer cast",
       "line": 26,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)aiStack_1c + runtimeBufferOffset + 4) = 0;",
       "type": "pointer_cast"
     },
@@ -203,6 +206,7 @@
       "description": "Complex pointer cast",
       "line": 28,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&uStack_20 + runtimeBufferOffset) = 0x609e9e;",
       "type": "pointer_cast"
     },
@@ -210,6 +214,7 @@
       "description": "Complex pointer cast",
       "line": 31,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)aiStack_1c + runtimeBufferOffset + 4),",
       "type": "pointer_cast"
     },
@@ -217,6 +222,7 @@
       "description": "Direct stack address reference",
       "line": 35,
       "match": "&stack0x000000e0",
+      "severity": "moderate",
       "text": "*(DWORD *)(&stack0x000000e0 + runtimeBufferOffset) = g_RuntimeBufferSize;",
       "type": "stack_ref"
     },
@@ -224,6 +230,7 @@
       "description": "Complex pointer cast",
       "line": 37,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)aiStack_1c + runtimeBufferOffset) = 0x609eb6;",
       "type": "pointer_cast"
     },
@@ -231,6 +238,7 @@
       "description": "Complex pointer cast",
       "line": 49,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)aiStack_1c + runtimeBufferOffset + 4) = 0x609ed4;",
       "type": "pointer_cast"
     },
@@ -238,6 +246,7 @@
       "description": "Complex pointer cast",
       "line": 59,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "g_CrtStackBuffer = (void *)((int)pStackBuffer + g_StackAllocSize);",
       "type": "pointer_cast"
     },

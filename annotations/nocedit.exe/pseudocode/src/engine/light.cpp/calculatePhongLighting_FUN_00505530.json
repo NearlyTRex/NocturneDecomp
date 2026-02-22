@@ -6,15 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 147,
+    "complexity_score": 162,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 16,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 97,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
       "param_count_too_few",
-      "pointer_cast"
+      "pointer_cast",
+      "stack_alignment_array"
     ],
     "total_lines": 297
   },
@@ -282,9 +284,18 @@
   },
   "suspects": [
     {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 11,
+      "match": "aiStackY_100c",
+      "severity": "moderate",
+      "text": "int aiStackY_100c [1017];",
+      "type": "stack_alignment_array"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 60,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&g_NormalizedViewVector + (uint)bVar6 * -8 + 4) =",
       "type": "pointer_cast"
     },
@@ -292,6 +303,7 @@
       "description": "Complex pointer cast",
       "line": 61,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_24 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -299,6 +311,7 @@
       "description": "Complex pointer cast",
       "line": 63,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_24 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
       "type": "pointer_cast"
     },

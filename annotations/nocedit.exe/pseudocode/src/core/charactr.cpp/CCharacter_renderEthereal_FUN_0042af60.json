@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 12,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 47,
     "suspect_count": 5,
     "suspect_types": [
@@ -253,6 +254,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 18,
       "match": "ROUND",
+      "severity": "mild",
       "text": "INT_00823a90 = (int)ROUND(ROUND((float)INT_00823a90 +",
       "type": "decompiler_intrinsic"
     },
@@ -260,6 +262,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 18,
       "match": "ROUND",
+      "severity": "mild",
       "text": "INT_00823a90 = (int)ROUND(ROUND((float)INT_00823a90 +",
       "type": "decompiler_intrinsic"
     },
@@ -267,6 +270,7 @@
       "description": "Complex pointer cast",
       "line": 39,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->z + iVar2) = 0xb332;",
       "type": "pointer_cast"
     },
@@ -274,6 +278,7 @@
       "description": "Complex pointer cast",
       "line": 40,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->r + iVar2) = 0xb332;",
       "type": "pointer_cast"
     },
@@ -281,6 +286,7 @@
       "description": "Complex pointer cast",
       "line": 42,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->g + iVar2) = 0xffff;",
       "type": "pointer_cast"
     }

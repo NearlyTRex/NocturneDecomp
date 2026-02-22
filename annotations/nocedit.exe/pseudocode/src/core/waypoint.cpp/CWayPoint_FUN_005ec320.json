@@ -10,6 +10,7 @@
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 7,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 84,
     "suspect_count": 16,
     "suspect_types": [
@@ -194,6 +195,7 @@
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
@@ -201,6 +203,7 @@
       "description": "Unresolved stack parameter",
       "line": 19,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "if (in_stack_00000008 != 0) {",
       "type": "stack_param"
     },
@@ -208,6 +211,7 @@
       "description": "Unresolved stack parameter",
       "line": 22,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "return in_stack_00000008;",
       "type": "stack_param"
     },
@@ -215,6 +219,7 @@
       "description": "Unresolved stack parameter",
       "line": 24,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "if (0 < *(int *)(in_stack_00000008 + 0x370)) {",
       "type": "stack_param"
     },
@@ -222,6 +227,7 @@
       "description": "Complex pointer cast",
       "line": 27,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "piVar1 = (int *)((int)g_CDemonSetPtr->waypoints + iVar4);",
       "type": "pointer_cast"
     },
@@ -229,6 +235,7 @@
       "description": "Unresolved stack parameter",
       "line": 32,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "DAT_03f939a4 = in_stack_00000008;",
       "type": "stack_param"
     },
@@ -236,6 +243,7 @@
       "description": "Undefined global data reference",
       "line": 32,
       "match": "DAT_03f939a4",
+      "severity": "mild",
       "text": "DAT_03f939a4 = in_stack_00000008;",
       "type": "undefined_data"
     },
@@ -243,6 +251,7 @@
       "description": "Unresolved stack parameter",
       "line": 33,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "*(uint *)(in_stack_00000008 + 0x554) = 0;",
       "type": "stack_param"
     },
@@ -250,6 +259,7 @@
       "description": "Undefined global data reference",
       "line": 35,
       "match": "DAT_03f939a4",
+      "severity": "mild",
       "text": "iVar8 = DAT_03f939a4;",
       "type": "undefined_data"
     },
@@ -257,6 +267,7 @@
       "description": "Undefined global data reference",
       "line": 38,
       "match": "DAT_03f939a4",
+      "severity": "mild",
       "text": "memmove(&DAT_03f939a4,&DAT_03f939a8,n);",
       "type": "undefined_data"
     },
@@ -264,6 +275,7 @@
       "description": "Undefined global data reference",
       "line": 38,
       "match": "DAT_03f939a8",
+      "severity": "mild",
       "text": "memmove(&DAT_03f939a4,&DAT_03f939a8,n);",
       "type": "undefined_data"
     },
@@ -271,6 +283,7 @@
       "description": "Complex pointer cast",
       "line": 52,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (iVar2 == *(int *)((int)&DAT_03f939a4 + iVar5)) break;",
       "type": "pointer_cast"
     },
@@ -278,6 +291,7 @@
       "description": "Undefined global data reference",
       "line": 52,
       "match": "DAT_03f939a4",
+      "severity": "mild",
       "text": "if (iVar2 == *(int *)((int)&DAT_03f939a4 + iVar5)) break;",
       "type": "undefined_data"
     },
@@ -285,6 +299,7 @@
       "description": "Complex pointer cast",
       "line": 60,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)&DAT_03f939a4 + n) = iVar2;",
       "type": "pointer_cast"
     },
@@ -292,6 +307,7 @@
       "description": "Undefined global data reference",
       "line": 60,
       "match": "DAT_03f939a4",
+      "severity": "mild",
       "text": "*(int *)((int)&DAT_03f939a4 + n) = iVar2;",
       "type": "undefined_data"
     },
@@ -299,6 +315,7 @@
       "description": "Complex pointer cast",
       "line": 73,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "iVar2 = *(int *)((int)g_CDemonSetPtr->waypoints + iVar8);",
       "type": "pointer_cast"
     }

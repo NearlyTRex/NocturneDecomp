@@ -17,6 +17,7 @@
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 12,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 30,
     "suspect_count": 3,
     "suspect_types": [
@@ -57,7 +58,7 @@
     {
       "addr": "0056d090",
       "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_0056d090"
+      "name": "core_set.cpp_CDemonSet_addDynamicLight_FUN_0056d090"
     },
     {
       "addr": "005ee110",
@@ -209,6 +210,7 @@
       "description": "Unresolved stack parameter",
       "line": 6,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "float in_stack_0000000c;",
       "type": "stack_param"
     },
@@ -216,6 +218,7 @@
       "description": "Direct stack address reference",
       "line": 16,
       "match": "&stack0x00000000",
+      "severity": "moderate",
       "text": "if ((int *)&stack0x00000000 != &g_CDemonLightInstance.base.base.rotation_matrix.m[1].y) {",
       "type": "stack_ref"
     },
@@ -223,6 +226,7 @@
       "description": "Unresolved stack parameter",
       "line": 31,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base,in_stack_0000000c);",
       "type": "stack_param"
     }

@@ -10,6 +10,7 @@
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 9,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 135,
     "suspect_count": 13,
     "suspect_types": [
@@ -21,7 +22,7 @@
     {
       "addr": "0056c1a0",
       "from_addr": "0056c6d7",
-      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0",
+      "name": "core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -232,6 +233,7 @@
       "description": "Complex pointer cast",
       "line": 87,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if ((*(int *)((int)g_DirtySpanStarts + iVar7) <= pCVar4->top) &&",
       "type": "pointer_cast"
     },
@@ -239,6 +241,7 @@
       "description": "Complex pointer cast",
       "line": 88,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "(pCVar4->left <= *(int *)((int)g_DirtySpanEnds + iVar7))) {",
       "type": "pointer_cast"
     },
@@ -246,6 +249,7 @@
       "description": "Complex pointer cast",
       "line": 89,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if ((*(int *)((int)g_DirtySpanStarts + iVar7) <= pCVar4->left) &&",
       "type": "pointer_cast"
     },
@@ -253,6 +257,7 @@
       "description": "Complex pointer cast",
       "line": 90,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "(pCVar4->top <= *(int *)((int)g_DirtySpanEnds + iVar7))) goto LAB_004730f9;",
       "type": "pointer_cast"
     },
@@ -260,6 +265,7 @@
       "description": "Complex pointer cast",
       "line": 91,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (pCVar4->left < *(int *)((int)g_DirtySpanStarts + iVar7)) {",
       "type": "pointer_cast"
     },
@@ -267,6 +273,7 @@
       "description": "Complex pointer cast",
       "line": 93,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)g_DirtySpanStarts + iVar7) = pCVar4->left;",
       "type": "pointer_cast"
     },
@@ -274,6 +281,7 @@
       "description": "Complex pointer cast",
       "line": 95,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (*(int *)((int)g_DirtySpanEnds + iVar7) < pCVar4->top) {",
       "type": "pointer_cast"
     },
@@ -281,6 +289,7 @@
       "description": "Complex pointer cast",
       "line": 96,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)g_DirtySpanEnds + iVar7) = pCVar4->top;",
       "type": "pointer_cast"
     },
@@ -288,6 +297,7 @@
       "description": "Complex pointer cast",
       "line": 105,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)g_DirtySpanStarts + local_14) = pCVar4->left;",
       "type": "pointer_cast"
     },
@@ -295,6 +305,7 @@
       "description": "Complex pointer cast",
       "line": 106,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)g_DirtySpanEnds + local_14) = pCVar4->top;",
       "type": "pointer_cast"
     },
@@ -302,6 +313,7 @@
       "description": "Complex pointer cast",
       "line": 120,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "piVar1 = (int *)((int)g_DirtySpanStarts + iVar7);",
       "type": "pointer_cast"
     },
@@ -309,6 +321,7 @@
       "description": "Complex pointer cast",
       "line": 121,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "iVar5 = local_18 * this_ptr->shadow_map_width + *(int *)((int)g_DirtySpanStarts + iVar7)",
       "type": "pointer_cast"
     },
@@ -316,6 +329,7 @@
       "description": "Complex pointer cast",
       "line": 123,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "piVar2 = (int *)((int)g_DirtySpanEnds + iVar7);",
       "type": "pointer_cast"
     }

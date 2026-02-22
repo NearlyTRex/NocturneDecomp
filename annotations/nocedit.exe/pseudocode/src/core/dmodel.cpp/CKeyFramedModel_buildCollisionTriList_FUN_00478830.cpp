@@ -29,7 +29,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_buildCollisionTriList_FUN_00478830(
         iVar4 = iVar4 + 1;
         this_ptr->collision_triangle_count =
              this_ptr->collision_triangle_count +
-             *(int *)((int)this_ptr->poly_vert_list + iVar1 + 4) + -2;
+             *(int *)((int)this_ptr->poly_vert_list->vertices + iVar1 + -0x14) + -2;
         iVar1 = iVar1 + 0x48;
       } while (iVar4 < this_ptr->poly_count);
     }

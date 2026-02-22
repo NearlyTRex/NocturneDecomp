@@ -16,7 +16,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_set.cpp_CDemonSet_FUN_00570870 at 005708b2
+;   core_set.cpp_CDemonSet_renderFaceListOrEnvMap_FUN_00570870 at 005708b2
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_drender_cpp_006220ea

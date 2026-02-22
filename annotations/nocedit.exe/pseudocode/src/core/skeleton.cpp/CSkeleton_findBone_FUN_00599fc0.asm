@@ -1,11 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton *this_ptr,char *bone_name)
+; int __cdecl core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton *this_ptr,char *bone_name,int assert_if_not_found)
 ;
 ; Parameters:
 ; CSkeleton *      Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   bone_name
+; int              Stack[0xc]:4   assert_if_not_found
 ;
 ; XREF[39]:
 ;   core_baron.cpp_CBaron_setup_FUN_00412cb0 at 00412d80

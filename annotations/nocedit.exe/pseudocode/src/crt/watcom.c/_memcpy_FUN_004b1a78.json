@@ -5,6 +5,7 @@
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 2,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 77,
     "suspect_count": 41,
     "suspect_types": [
@@ -144,6 +145,7 @@
       "description": "Complex pointer cast",
       "line": 16,
       "match": "(longlong *)((int)",
+      "severity": "mild",
       "text": "plVar3 = (longlong *)((int)dest + uVar5);",
       "type": "pointer_cast"
     },
@@ -151,6 +153,7 @@
       "description": "Complex pointer cast",
       "line": 17,
       "match": "(longlong *)((int)",
+      "severity": "mild",
       "text": "plVar4 = (longlong *)((int)src + uVar5);",
       "type": "pointer_cast"
     },
@@ -158,6 +161,7 @@
       "description": "Complex pointer cast",
       "line": 23,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)plVar3 + -1) = *(byte *)((int)plVar4 + -1);",
       "type": "pointer_cast"
     },
@@ -165,6 +169,7 @@
       "description": "Complex pointer cast",
       "line": 23,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)plVar3 + -1) = *(byte *)((int)plVar4 + -1);",
       "type": "pointer_cast"
     },
@@ -172,6 +177,7 @@
       "description": "Jump table recovery failed",
       "line": 25,
       "match": "WARNING: Could not recover jumptable",
+      "severity": "mild",
       "text": "/* WARNING: Could not recover jumptable at 0x004b1b0d. Too many branches */",
       "type": "warning_jumptable"
     },
@@ -179,6 +185,7 @@
       "description": "Indirect jump treated as call",
       "line": 26,
       "match": "WARNING: Treating indirect jump as call",
+      "severity": "mild",
       "text": "/* WARNING: Treating indirect jump as call */",
       "type": "warning_indirect_jump"
     },
@@ -186,6 +193,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 27,
       "match": "code *",
+      "severity": "moderate",
       "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))();",
       "type": "unresolved_funcptr"
     },
@@ -193,6 +201,7 @@
       "description": "Undefined global data reference",
       "line": 27,
       "match": "DAT_00679d94",
+      "severity": "mild",
       "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))();",
       "type": "undefined_data"
     },
@@ -200,6 +209,7 @@
       "description": "Complex pointer cast",
       "line": 32,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)plVar3 + -3) = *(byte *)((int)plVar4 + -3);",
       "type": "pointer_cast"
     },
@@ -207,6 +217,7 @@
       "description": "Complex pointer cast",
       "line": 32,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)plVar3 + -3) = *(byte *)((int)plVar4 + -3);",
       "type": "pointer_cast"
     },
@@ -214,6 +225,7 @@
       "description": "Complex pointer cast",
       "line": 34,
       "match": "(ushort *)((int)",
+      "severity": "mild",
       "text": "*(ushort *)((int)plVar3 + -2) = *(ushort *)((int)plVar4 + -2);",
       "type": "pointer_cast"
     },
@@ -221,6 +233,7 @@
       "description": "Complex pointer cast",
       "line": 34,
       "match": "(ushort *)((int)",
+      "severity": "mild",
       "text": "*(ushort *)((int)plVar3 + -2) = *(ushort *)((int)plVar4 + -2);",
       "type": "pointer_cast"
     },
@@ -228,6 +241,7 @@
       "description": "Jump table recovery failed",
       "line": 36,
       "match": "WARNING: Could not recover jumptable",
+      "severity": "mild",
       "text": "/* WARNING: Could not recover jumptable at 0x004b1afd. Too many branches */",
       "type": "warning_jumptable"
     },
@@ -235,6 +249,7 @@
       "description": "Indirect jump treated as call",
       "line": 37,
       "match": "WARNING: Treating indirect jump as call",
+      "severity": "mild",
       "text": "/* WARNING: Treating indirect jump as call */",
       "type": "warning_indirect_jump"
     },
@@ -242,6 +257,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 38,
       "match": "code *",
+      "severity": "moderate",
       "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))();",
       "type": "unresolved_funcptr"
     },
@@ -249,6 +265,7 @@
       "description": "Undefined global data reference",
       "line": 38,
       "match": "DAT_00679d94",
+      "severity": "mild",
       "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))();",
       "type": "undefined_data"
     },
@@ -256,6 +273,7 @@
       "description": "Complex pointer cast",
       "line": 43,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)plVar3 + -5) = *(byte *)((int)plVar4 + -5);",
       "type": "pointer_cast"
     },
@@ -263,6 +281,7 @@
       "description": "Complex pointer cast",
       "line": 43,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)plVar3 + -5) = *(byte *)((int)plVar4 + -5);",
       "type": "pointer_cast"
     },
@@ -270,6 +289,7 @@
       "description": "Complex pointer cast",
       "line": 44,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)plVar3 + -4) = *(uint *)((int)plVar4 + -4);",
       "type": "pointer_cast"
     },
@@ -277,6 +297,7 @@
       "description": "Complex pointer cast",
       "line": 44,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)plVar3 + -4) = *(uint *)((int)plVar4 + -4);",
       "type": "pointer_cast"
     },
@@ -284,6 +305,7 @@
       "description": "Jump table recovery failed",
       "line": 46,
       "match": "WARNING: Could not recover jumptable",
+      "severity": "mild",
       "text": "/* WARNING: Could not recover jumptable at 0x004b1ae3. Too many branches */",
       "type": "warning_jumptable"
     },
@@ -291,6 +313,7 @@
       "description": "Indirect jump treated as call",
       "line": 47,
       "match": "WARNING: Treating indirect jump as call",
+      "severity": "mild",
       "text": "/* WARNING: Treating indirect jump as call */",
       "type": "warning_indirect_jump"
     },
@@ -298,6 +321,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 48,
       "match": "code *",
+      "severity": "moderate",
       "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))();",
       "type": "unresolved_funcptr"
     },
@@ -305,6 +329,7 @@
       "description": "Undefined global data reference",
       "line": 48,
       "match": "DAT_00679d94",
+      "severity": "mild",
       "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))();",
       "type": "undefined_data"
     },
@@ -312,6 +337,7 @@
       "description": "Complex pointer cast",
       "line": 53,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)plVar3 + -7) = *(byte *)((int)plVar4 + -7);",
       "type": "pointer_cast"
     },
@@ -319,6 +345,7 @@
       "description": "Complex pointer cast",
       "line": 53,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)plVar3 + -7) = *(byte *)((int)plVar4 + -7);",
       "type": "pointer_cast"
     },
@@ -326,6 +353,7 @@
       "description": "Complex pointer cast",
       "line": 55,
       "match": "(ushort *)((int)",
+      "severity": "mild",
       "text": "*(ushort *)((int)plVar3 + -6) = *(ushort *)((int)plVar4 + -6);",
       "type": "pointer_cast"
     },
@@ -333,6 +361,7 @@
       "description": "Complex pointer cast",
       "line": 55,
       "match": "(ushort *)((int)",
+      "severity": "mild",
       "text": "*(ushort *)((int)plVar3 + -6) = *(ushort *)((int)plVar4 + -6);",
       "type": "pointer_cast"
     },
@@ -340,6 +369,7 @@
       "description": "Complex pointer cast",
       "line": 57,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)plVar3 + -4) = *(uint *)((int)plVar4 + -4);",
       "type": "pointer_cast"
     },
@@ -347,6 +377,7 @@
       "description": "Complex pointer cast",
       "line": 57,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)plVar3 + -4) = *(uint *)((int)plVar4 + -4);",
       "type": "pointer_cast"
     },
@@ -354,6 +385,7 @@
       "description": "Jump table recovery failed",
       "line": 59,
       "match": "WARNING: Could not recover jumptable",
+      "severity": "mild",
       "text": "/* WARNING: Could not recover jumptable at 0x004b1acb. Too many branches */",
       "type": "warning_jumptable"
     },
@@ -361,6 +393,7 @@
       "description": "Indirect jump treated as call",
       "line": 60,
       "match": "WARNING: Treating indirect jump as call",
+      "severity": "mild",
       "text": "/* WARNING: Treating indirect jump as call */",
       "type": "warning_indirect_jump"
     },
@@ -368,6 +401,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 61,
       "match": "code *",
+      "severity": "moderate",
       "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))();",
       "type": "unresolved_funcptr"
     },
@@ -375,6 +409,7 @@
       "description": "Undefined global data reference",
       "line": 61,
       "match": "DAT_00679d94",
+      "severity": "mild",
       "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))();",
       "type": "undefined_data"
     },
@@ -382,6 +417,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 71,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*plVar3 = (longlong)ROUND((float10)lVar1);",
       "type": "decompiler_intrinsic"
     },
@@ -389,6 +425,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 74,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*plVar3 = (longlong)ROUND((float10)lVar1);",
       "type": "decompiler_intrinsic"
     },
@@ -396,6 +433,7 @@
       "description": "Jump table recovery failed",
       "line": 76,
       "match": "WARNING: Could not recover jumptable",
+      "severity": "mild",
       "text": "/* WARNING: Could not recover jumptable at 0x004b1aac. Too many branches */",
       "type": "warning_jumptable"
     },
@@ -403,6 +441,7 @@
       "description": "Indirect jump treated as call",
       "line": 77,
       "match": "WARNING: Treating indirect jump as call",
+      "severity": "mild",
       "text": "/* WARNING: Treating indirect jump as call */",
       "type": "warning_indirect_jump"
     },
@@ -410,6 +449,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 78,
       "match": "code *",
+      "severity": "moderate",
       "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))();",
       "type": "unresolved_funcptr"
     },
@@ -417,6 +457,7 @@
       "description": "Undefined global data reference",
       "line": 78,
       "match": "DAT_00679d94",
+      "severity": "mild",
       "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))();",
       "type": "undefined_data"
     },

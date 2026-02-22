@@ -25,7 +25,7 @@
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
-;   core_set.cpp_CDemonSet_FUN_0056e3e0
+;   core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_0056e3e0
 ;   core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770
 ;   core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
@@ -150,8 +150,8 @@ section .text
     PUSH EBP                            ; 005eb3a9
     MOV EDX,dword ptr [0x006810c8]      ; 005eb3aa | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EDX                            ; 005eb3b0 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_0056e3e0 ; 005eb3b1
-        ;   XREF to: 0056e3e0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056e3e0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_0056e3e0 ; 005eb3b1
+        ;   XREF to: 0056e3e0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_0056e3e0(CDemonSet * this_ptr)
     MOV ECX,dword ptr [0x006703ec]      ; 005eb3b6 | g_CDemonRendererPtr2
     ADD ESP,0x10                        ; 005eb3bc
     MOV EAX,dword ptr [ESI + 0x28c]     ; 005eb3bf

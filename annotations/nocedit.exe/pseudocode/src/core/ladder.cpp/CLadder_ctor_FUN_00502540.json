@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 23,
     "suspect_count": 2,
     "suspect_types": [
@@ -126,6 +127,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 11,
       "match": "this_ptr_00[-1].",
+      "severity": "mild",
       "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CLadderVTable;",
       "type": "negative_offset"
     },
@@ -133,6 +135,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 25,
       "match": "this_ptr_00[-1].",
+      "severity": "mild",
       "text": "return (CLadder *)(this_ptr_00[-1].part_visibility_flags + 9);",
       "type": "negative_offset"
     }

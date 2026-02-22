@@ -46,7 +46,7 @@ void __cdecl core_skeleton_cpp_CSkeleton_allocMemory_FUN_00599910(CSkeleton *thi
 void __cdecl core_skeleton_cpp_CSkeleton_free_FUN_00599a50(CSkeleton *this_ptr);
 void __cdecl core_skeleton_cpp_CSkeleton_load_FUN_00599b10(CSkeleton *this_ptr,char *filename);
 void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_00599bb0(CSkeleton *this_ptr,_FILE *file_handle);
-int __cdecl core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton *this_ptr,char *bone_name);
+int __cdecl core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton *this_ptr,char *bone_name,int assert_if_not_found);
 CQuaternion4f * __cdecl core_skeleton_cpp_CSkeleton_getBoneAngleAtFrame_FUN_0059a050(CSkeleton *this_ptr,int bone_index,int frame_index);
 CQuaternion4f * __cdecl core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070(CSkeleton *this_ptr,int bone_index,int frame_index_1,int frame_index_2, float interpolation);
 int __cdecl core_skeleton_cpp_CSkeleton_getHierarchyDistance_FUN_0059a100(CSkeleton *this_ptr,int start_bone_index,int target_bone_index);
@@ -63,9 +63,9 @@ CVector3f * __cdecl core_skeleton_cpp_CDeformableModel_getVertexPoolPtr_FUN_0059
 void __cdecl core_skeleton_cpp_CDeformableModel_skinVertices_FUN_0059a880(CDeformableModel *this_ptr,int lod_index,CMatrix3x4f *bone_matrices, int *output_buffer);
 CVector3f * __cdecl core_skeleton_cpp_CDeformableModel_skinSingleVertex_FUN_0059aa00(CDeformableModel *this_ptr,CVector3f *output_pos,int lod_index,int vertex_index, CMatrix3x4f *bone_matrices);
 void __cdecl core_skeleton_cpp_CDeformableModel_rotateVertices_FUN_0059ab20(CDeformableModel *this_ptr,int lod_index,int *input_vertices);
-void __cdecl core_skeleton_cpp_CDeformableModel_lightVertices_FUN_0059ab50(CDeformableModel *this_ptr,int lod_index,int render_flags);
+void __cdecl core_skeleton_cpp_CDeformableModel_lightVertices_FUN_0059ab50(CDeformableModel *this_ptr,int lod_index,CVector3i *skinned_vertices);
 void __cdecl core_skeleton_cpp_CDeformableModel_initVertexWRecip_FUN_0059ab90(CDeformableModel *this_ptr,int lod_index);
-void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_0059abf0(CDeformableModel *this_ptr,int lod_index,byte *part_visibility_flags, int *texture_set_indices,int render_flags,int special_render_mode);
+void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_0059abf0(CDeformableModel *this_ptr,int lod_index,int *part_visibility_flags, int *texture_set_indices,int render_flags,int skip_texture_capture);
 void __cdecl core_skeleton_cpp_CDeformableModel_renderWireframe_FUN_0059b5a0(CDeformableModel *this_ptr,int lod_level);
 void __cdecl core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_0059b640(CDeformableModel *this_ptr,int color,CMatrix3x4f *bone_matrices,int render_flags);
 void __cdecl core_skeleton_cpp_CDeformableModel_renderBones_FUN_0059b800(CDeformableModel *this_ptr,CMatrix3x4f *bone_matrices);
@@ -76,7 +76,7 @@ SPart * __cdecl core_skeleton_cpp_CDeformableModel_getPartPtr_FUN_0059c220(CDefo
 int __cdecl core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240(CDeformableModel *this_ptr,char *part_name,int error_if_not_found);
 int __cdecl core_skeleton_cpp_CDeformableModel_getBonePart_FUN_0059c2d0(CDeformableModel *this_ptr,int bone_index);
 int __cdecl core_skeleton_cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0(CDeformableModel *this_ptr,int bone_index,CVector3f *reference_position);
-void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0(CDeformableModel *this_ptr,int lod_index,CBodyPart *body_part_ptr,int part_index, int num_parts_to_dismember,int texture_set_index,CVector3i *skinned_vertices);
+void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0(CDeformableModel *this_ptr,int lod_index,CBodyPart *body_part_ptr,int part_index, CVector3i *skinned_vertices,int texture_set_index);
 float __cdecl core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0059cba0(CDeformableModel *this_ptr,int lod_index,CVector3f *ray_origin, CVector3f *ray_direction,CVector3i *skinned_vertices,byte *part_visibility_flags);
 int __cdecl core_skeleton_cpp_CDeformableModel_selectLOD_FUN_0059ce40(CDeformableModel *this_ptr,CBoundingBox3D *bounding_box);
 void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_0059cec0(CDeformableModel *this_ptr,CVector3f *center_position,CVector3f *orientation_vector, int lod_index,CVector3i *skinned_vertices,int *part_visibility_flags, int *texture_set_indices,int particle_lifetime);

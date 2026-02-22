@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 10,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 192,
     "suspect_count": 15,
     "suspect_types": [
@@ -790,6 +791,7 @@
       "description": "Complex pointer cast",
       "line": 47,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "(fVar7 = *(float *)((int)&CVector3f_ARRAY_008879c0[0].y + iVar11) +",
       "type": "pointer_cast"
     },
@@ -797,6 +799,7 @@
       "description": "Complex pointer cast",
       "line": 50,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "((vertex->world_position).y <= *(float *)((int)&CVector3f_ARRAY_008879c0[0].y + iVar11)))",
       "type": "pointer_cast"
     },
@@ -804,6 +807,7 @@
       "description": "Complex pointer cast",
       "line": 52,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)&CVector3f_ARRAY_008879c0[0].x + iVar11),",
       "type": "pointer_cast"
     },
@@ -811,6 +815,7 @@
       "description": "Complex pointer cast",
       "line": 54,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)&CVector3f_ARRAY_008879c0[0].z + iVar11),",
       "type": "pointer_cast"
     },
@@ -818,6 +823,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 56,
       "match": "SQRT",
+      "severity": "mild",
       "text": "SQRT(fVar3 * fVar3 + fVar5 * fVar5))) {",
       "type": "decompiler_intrinsic"
     },
@@ -825,6 +831,7 @@
       "description": "Complex pointer cast",
       "line": 57,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "if ((*(float *)((int)&CVector3f_ARRAY_008879c0[0].y + iVar11) <= (vertex->world_position).y)",
       "type": "pointer_cast"
     },
@@ -832,6 +839,7 @@
       "description": "Complex pointer cast",
       "line": 58,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "&& (fVar7 = *(float *)((int)&CVector3f_ARRAY_008879c0[0].y + iVar11) +",
       "type": "pointer_cast"
     },
@@ -839,6 +847,7 @@
       "description": "Complex pointer cast",
       "line": 62,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)&CVector3f_ARRAY_008879c0[0].x + iVar11);",
       "type": "pointer_cast"
     },
@@ -846,6 +855,7 @@
       "description": "Complex pointer cast",
       "line": 64,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)&CVector3f_ARRAY_008879c0[0].z + iVar11);",
       "type": "pointer_cast"
     },
@@ -853,6 +863,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 65,
       "match": "SQRT",
+      "severity": "mild",
       "text": "fVar5 = SQRT(local_104[0] * local_104[0] + local_fc * local_fc);",
       "type": "decompiler_intrinsic"
     },
@@ -860,6 +871,7 @@
       "description": "Complex pointer cast",
       "line": 68,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "if (*(float *)((int)&CVector3f_ARRAY_008879c0[0].y + iVar11) <",
       "type": "pointer_cast"
     },
@@ -867,6 +879,7 @@
       "description": "Complex pointer cast",
       "line": 79,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)&CVector3f_ARRAY_008879c0[0].x + iVar11);",
       "type": "pointer_cast"
     },
@@ -874,6 +887,7 @@
       "description": "Complex pointer cast",
       "line": 82,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)&CVector3f_ARRAY_008879c0[0].z + iVar11);",
       "type": "pointer_cast"
     },
@@ -881,6 +895,7 @@
       "description": "Complex pointer cast",
       "line": 100,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "fVar9 = *(float *)((int)&CVector3f_ARRAY_008879c0[0].y + iVar11);",
       "type": "pointer_cast"
     },
@@ -888,6 +903,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 158,
       "match": "SQRT",
+      "severity": "mild",
       "text": "fVar5 = SQRT(local_d8 * local_d8 + local_e0 * local_e0 + local_dc * local_dc);",
       "type": "decompiler_intrinsic"
     }

@@ -5,6 +5,7 @@
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 28,
     "suspect_count": 8,
     "suspect_types": [
@@ -110,6 +111,7 @@
       "description": "Unaffected register variable",
       "line": 6,
       "match": "unaff_EAX",
+      "severity": "moderate",
       "text": "byte *unaff_EAX;",
       "type": "unaffected_reg"
     },
@@ -117,6 +119,7 @@
       "description": "Direct stack address reference",
       "line": 12,
       "match": "&stack0xfffffffc",
+      "severity": "moderate",
       "text": "if (unaff_EAX < &stack0xfffffffc) {",
       "type": "stack_ref"
     },
@@ -124,6 +127,7 @@
       "description": "Unaffected register variable",
       "line": 12,
       "match": "unaff_EAX",
+      "severity": "moderate",
       "text": "if (unaff_EAX < &stack0xfffffffc) {",
       "type": "unaffected_reg"
     },
@@ -131,6 +135,7 @@
       "description": "Direct stack address reference",
       "line": 13,
       "match": "&stack0xfffffffc",
+      "severity": "moderate",
       "text": "iVar2 = (int)unaff_EAX - (int)&stack0xfffffffc;",
       "type": "stack_ref"
     },
@@ -138,6 +143,7 @@
       "description": "Unaffected register variable",
       "line": 13,
       "match": "unaff_EAX",
+      "severity": "moderate",
       "text": "iVar2 = (int)unaff_EAX - (int)&stack0xfffffffc;",
       "type": "unaffected_reg"
     },
@@ -145,6 +151,7 @@
       "description": "Unaffected register variable",
       "line": 16,
       "match": "unaff_EAX",
+      "severity": "moderate",
       "text": "ProbeStackSpace((uint)unaff_EAX);",
       "type": "unaffected_reg"
     },
@@ -152,6 +159,7 @@
       "description": "Direct stack address reference",
       "line": 24,
       "match": "&stack0xfffffff0",
+      "severity": "moderate",
       "text": "*(int *)(&stack0xfffffff0 + iVar5) = iVar5;",
       "type": "stack_ref"
     },

@@ -59,6 +59,7 @@
     "cross_reference_count": 1,
     "function_call_count": 49,
     "global_count": 101,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 681,
     "suspect_count": 4,
     "suspect_types": [
@@ -97,7 +98,7 @@
     {
       "addr": "0056d2d0",
       "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_0056d2d0"
+      "name": "core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0"
     },
     {
       "addr": "0056aa10",
@@ -1488,6 +1489,7 @@
       "description": "Complex pointer cast",
       "line": 352,
       "match": "(C3DSCamera *)((int)",
+      "severity": "mild",
       "text": "pCVar10 = (C3DSCamera *)((int)pCVar10 + (uint)bVar19 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -1495,6 +1497,7 @@
       "description": "Complex pointer cast",
       "line": 353,
       "match": "(C3DSCamera *)((int)",
+      "severity": "mild",
       "text": "pCVar18 = (C3DSCamera *)((int)pCVar18 + (uint)bVar19 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -1502,6 +1505,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 564,
       "match": "SQRT",
+      "severity": "mild",
       "text": "SQRT(local_88 * local_88 + local_90 * local_90 + local_8c * local_8c))",
       "type": "decompiler_intrinsic"
     },
@@ -1509,6 +1513,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 570,
       "match": "SQRT",
+      "severity": "mild",
       "text": "SQRT(local_94 * local_94 + local_9c * local_9c + local_98 * local_98))",
       "type": "decompiler_intrinsic"
     }

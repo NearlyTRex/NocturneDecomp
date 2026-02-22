@@ -267,7 +267,7 @@ LAB_0057c056:
                  (int)((ulonglong)uVar10 >> 0x20));
     }
     if (local_30 == 0x1b) {
-      core_set_cpp_CDemonSet_FUN_0056d2d0(this_ptr);
+      core_set_cpp_CDemonSet_clearLights_FUN_0056d2d0(this_ptr);
       core_set_cpp_CDemonSet_initScene_FUN_0056aa10(this_ptr);
       return;
     }

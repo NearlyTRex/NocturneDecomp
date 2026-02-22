@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 10,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 59,
     "suspect_count": 7,
     "suspect_types": [
@@ -184,6 +185,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 25,
       "match": "pCVar5[-1].",
+      "severity": "mild",
       "text": "pcVar7 = pCVar5[-1].models[1].textures[0x11].textures[1].texture_name + 0xc;",
       "type": "negative_offset"
     },
@@ -191,6 +193,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 36,
       "match": "pCVar5[-1].",
+      "severity": "mild",
       "text": "pSVar8 = pCVar5[-1].models[1].textures + 0x13;",
       "type": "negative_offset"
     },
@@ -198,6 +201,7 @@
       "description": "Complex pointer cast",
       "line": 43,
       "match": "(char *)((int)",
+      "severity": "mild",
       "text": "*(char *)((int)&pSVar8->textures[0].base.type + 1) = cVar1;",
       "type": "pointer_cast"
     },
@@ -205,6 +209,7 @@
       "description": "Complex pointer cast",
       "line": 44,
       "match": "(SMRGLTextureLod *)((int)",
+      "severity": "mild",
       "text": "pSVar8 = (SMRGLTextureLod *)((int)&pSVar8->textures[0].base.type + 2);",
       "type": "pointer_cast"
     },
@@ -212,6 +217,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 46,
       "match": "pCVar5[-1].",
+      "severity": "mild",
       "text": "pSVar8 = pCVar5[-1].models[1].textures + 0x11;",
       "type": "negative_offset"
     },
@@ -219,6 +225,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 51,
       "match": "pCVar5[-1].",
+      "severity": "mild",
       "text": "pSVar2 = pCVar5[-1].models[1].textures[0x11].textures;",
       "type": "negative_offset"
     },
@@ -226,6 +233,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 56,
       "match": "pCVar5[-1].",
+      "severity": "mild",
       "text": "pSVar2 = pCVar5[-1].models[1].textures[0x11].textures;",
       "type": "negative_offset"
     }

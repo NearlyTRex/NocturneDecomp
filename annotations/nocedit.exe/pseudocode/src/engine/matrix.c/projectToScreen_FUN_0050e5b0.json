@@ -6,15 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 93,
+    "complexity_score": 108,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 23,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast"
+      "pointer_cast",
+      "stack_alignment_array"
     ],
     "total_lines": 81
   },
@@ -191,9 +193,18 @@
   },
   "suspects": [
     {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 8,
+      "match": "aiStackY_1038",
+      "severity": "moderate",
+      "text": "int aiStackY_1038 [1017];",
+      "type": "stack_alignment_array"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 18,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)local_44 + (uint)bVar1 * -8 + -8) =",
       "type": "pointer_cast"
     },
@@ -201,6 +212,7 @@
       "description": "Complex pointer cast",
       "line": 19,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)local_44 + (uint)bVar1 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -208,6 +220,7 @@
       "description": "Complex pointer cast",
       "line": 20,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)local_44 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + -4) =",
       "type": "pointer_cast"
     },
@@ -215,6 +228,7 @@
       "description": "Complex pointer cast",
       "line": 21,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)local_44 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);",
       "type": "pointer_cast"
     },
@@ -222,6 +236,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 23,
       "match": "ROUND",
+      "severity": "mild",
       "text": "return (int)ROUND(ROUND(((-(float10)input_value * (float10)g_ViewportCenterYFixed) /",
       "type": "decompiler_intrinsic"
     },
@@ -229,6 +244,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 23,
       "match": "ROUND",
+      "severity": "mild",
       "text": "return (int)ROUND(ROUND(((-(float10)input_value * (float10)g_ViewportCenterYFixed) /",
       "type": "decompiler_intrinsic"
     }

@@ -125,6 +125,7 @@
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 11,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 235,
     "suspect_count": 27,
     "suspect_types": [
@@ -342,6 +343,7 @@
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_fffffec0",
+      "severity": "moderate",
       "text": "CDemonActor *in_stack_fffffec0;",
       "type": "stack_param"
     },
@@ -349,6 +351,7 @@
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_fffffec4",
+      "severity": "moderate",
       "text": "CDemonSet *in_stack_fffffec4;",
       "type": "stack_param"
     },
@@ -356,6 +359,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 63,
       "match": "fptan",
+      "severity": "mild",
       "text": "fVar4 = (float10)fptan((float10)this_ptr->spread_angle * (float10)3.1415926535000001 *",
       "type": "decompiler_intrinsic"
     },
@@ -363,6 +367,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 73,
       "match": "fcos",
+      "severity": "mild",
       "text": "fVar4 = (float10)fcos((float10)(float)pCStack_48);",
       "type": "decompiler_intrinsic"
     },
@@ -370,6 +375,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 74,
       "match": "fsin",
+      "severity": "mild",
       "text": "fVar5 = (float10)fsin((float10)(float)pCStack_48);",
       "type": "decompiler_intrinsic"
     },
@@ -377,6 +383,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 115,
       "match": "code *",
+      "severity": "moderate",
       "text": "iVar2 = (**(code **)(this_ptr_00->cameras[0].fog_enabled + 0x120))",
       "type": "unresolved_funcptr"
     },
@@ -384,6 +391,7 @@
       "description": "Unresolved stack parameter",
       "line": 133,
       "match": "in_stack_fffffec0",
+      "severity": "moderate",
       "text": "((CCharacter *)this_ptr,in_stack_fffffec0,(int)in_stack_fffffec4);",
       "type": "stack_param"
     },
@@ -391,6 +399,7 @@
       "description": "Unresolved stack parameter",
       "line": 133,
       "match": "in_stack_fffffec4",
+      "severity": "moderate",
       "text": "((CCharacter *)this_ptr,in_stack_fffffec0,(int)in_stack_fffffec4);",
       "type": "stack_param"
     },
@@ -398,6 +407,7 @@
       "description": "Unresolved stack parameter",
       "line": 141,
       "match": "in_stack_fffffec4",
+      "severity": "moderate",
       "text": "in_stack_fffffec4 = (CDemonSet *)g_CDemonSetPtr->ground_type;",
       "type": "stack_param"
     },
@@ -405,6 +415,7 @@
       "description": "Unresolved stack parameter",
       "line": 142,
       "match": "in_stack_fffffec0",
+      "severity": "moderate",
       "text": "in_stack_fffffec0 = (CDemonActor *)&g_CDemonSetPtr->collision_normal;",
       "type": "stack_param"
     },
@@ -412,6 +423,7 @@
       "description": "Unresolved stack parameter",
       "line": 145,
       "match": "in_stack_fffffec0",
+      "severity": "moderate",
       "text": "(CVector3f *)in_stack_fffffec0,(int)in_stack_fffffec4,",
       "type": "stack_param"
     },
@@ -419,6 +431,7 @@
       "description": "Unresolved stack parameter",
       "line": 145,
       "match": "in_stack_fffffec4",
+      "severity": "moderate",
       "text": "(CVector3f *)in_stack_fffffec0,(int)in_stack_fffffec4,",
       "type": "stack_param"
     },
@@ -426,6 +439,7 @@
       "description": "Unresolved stack parameter",
       "line": 149,
       "match": "in_stack_fffffec4",
+      "severity": "moderate",
       "text": "in_stack_fffffec4 = (CDemonSet *)0x588736;",
       "type": "stack_param"
     },
@@ -433,6 +447,7 @@
       "description": "Unresolved stack parameter",
       "line": 153,
       "match": "in_stack_fffffec4",
+      "severity": "moderate",
       "text": "in_stack_fffffec4 = (CDemonSet *)0x588741;",
       "type": "stack_param"
     },
@@ -440,6 +455,7 @@
       "description": "Unresolved stack parameter",
       "line": 164,
       "match": "in_stack_fffffec0",
+      "severity": "moderate",
       "text": "in_stack_fffffec0 = (CDemonActor *)0x588538;",
       "type": "stack_param"
     },
@@ -447,6 +463,7 @@
       "description": "Unresolved stack parameter",
       "line": 165,
       "match": "in_stack_fffffec4",
+      "severity": "moderate",
       "text": "in_stack_fffffec4 = g_CDemonSetPtr;",
       "type": "stack_param"
     },
@@ -454,6 +471,7 @@
       "description": "Unresolved stack parameter",
       "line": 170,
       "match": "in_stack_fffffec4",
+      "severity": "moderate",
       "text": "in_stack_fffffec4 = (CDemonSet *)0x5886f2;",
       "type": "stack_param"
     },
@@ -461,6 +479,7 @@
       "description": "Unresolved stack parameter",
       "line": 174,
       "match": "in_stack_fffffec0",
+      "severity": "moderate",
       "text": "in_stack_fffffec0 = (CDemonActor *)0x588715;",
       "type": "stack_param"
     },
@@ -468,6 +487,7 @@
       "description": "Unresolved stack parameter",
       "line": 175,
       "match": "in_stack_fffffec4",
+      "severity": "moderate",
       "text": "in_stack_fffffec4 = pCStack_2c;",
       "type": "stack_param"
     },
@@ -475,6 +495,7 @@
       "description": "Unresolved stack parameter",
       "line": 181,
       "match": "in_stack_fffffec4",
+      "severity": "moderate",
       "text": "in_stack_fffffec4 = (CDemonSet *)0x58854d;",
       "type": "stack_param"
     },
@@ -482,6 +503,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 182,
       "match": "code *",
+      "severity": "moderate",
       "text": "iVar2 = (**(code **)(this_ptr_00->cameras[0].fog_enabled + 0xf4))",
       "type": "unresolved_funcptr"
     },
@@ -489,6 +511,7 @@
       "description": "Unknown/mangled field access",
       "line": 186,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "auStack_124._4_4_ = uStack_30;",
       "type": "unknown_field"
     },
@@ -496,6 +519,7 @@
       "description": "Unknown/mangled field access",
       "line": 187,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "auStack_124._0_4_ = g_CDemonSetPtr->collision_part_index;",
       "type": "unknown_field"
     },
@@ -503,6 +527,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 194,
       "match": "SQRT",
+      "severity": "mild",
       "text": "SQRT(fStack_98 * fStack_98 + fStack_a0 * fStack_a0 + fStack_9c * fStack_9c));",
       "type": "decompiler_intrinsic"
     },
@@ -510,6 +535,7 @@
       "description": "Unresolved stack parameter",
       "line": 203,
       "match": "in_stack_fffffec0",
+      "severity": "moderate",
       "text": "in_stack_fffffec0 = (CDemonActor *)0x58865d;",
       "type": "stack_param"
     },
@@ -517,6 +543,7 @@
       "description": "Unresolved stack parameter",
       "line": 204,
       "match": "in_stack_fffffec4",
+      "severity": "moderate",
       "text": "in_stack_fffffec4 = this_ptr_00;",
       "type": "stack_param"
     },
@@ -524,6 +551,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 218,
       "match": "code *",
+      "severity": "moderate",
       "text": "(**(code **)(this_ptr_00->cameras[0].fog_enabled + 0x11c))",
       "type": "unresolved_funcptr"
     }

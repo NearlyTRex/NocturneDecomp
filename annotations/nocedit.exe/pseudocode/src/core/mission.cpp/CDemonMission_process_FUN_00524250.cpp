@@ -44,7 +44,7 @@ void __cdecl core_mission_cpp_CDemonMission_process_FUN_00524250(CDemonMission *
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       core_mission_cpp_CDemonMission_loadSet_FUN_00523fb0
                 (this_ptr,(this_ptr->pending_teleport).area_id);
-      core_set_cpp_CDemonSet_FUN_0056d2d0(g_CDemonSetPtr);
+      core_set_cpp_CDemonSet_clearLights_FUN_0056d2d0(g_CDemonSetPtr);
       core_set_cpp_CDemonSet_initScene_FUN_0056aa10(g_CDemonSetPtr);
       g_CScriptPtr->unk2 = 2;
     }

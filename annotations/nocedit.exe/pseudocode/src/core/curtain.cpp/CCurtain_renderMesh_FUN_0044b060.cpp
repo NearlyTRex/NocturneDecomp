@@ -65,8 +65,8 @@ LAB_0044b1a4:
     pSVar7 = &(this_ptr->mesh).front_faces[0].base;
     core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
               (g_CDemonSetPtr,this_ptr->vertex_count,
-               (this_ptr->mesh).grid_cols * (this_ptr->mesh).grid_rows * 2,(SInputFace *)pSVar7,
-               (int)(this_ptr->mesh).vertex_positions_fixed,4,0);
+               (this_ptr->mesh).grid_cols * (this_ptr->mesh).grid_rows * 2,pSVar7,
+               (CVector3i *)(this_ptr->mesh).vertex_positions_fixed,4,(CVector3i *)0x0);
     if (this_ptr->opacity < 0xfde9) {
       for (iVar4 = 0; iVar4 < (this_ptr->mesh).grid_cols * (this_ptr->mesh).grid_rows * 2;
           iVar4 = iVar4 + 1) {
@@ -86,8 +86,8 @@ LAB_0044b1a4:
     pSVar7 = &(this_ptr->mesh).back_faces[0].base;
     core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
               (g_CDemonSetPtr,this_ptr->vertex_count,
-               (this_ptr->mesh).grid_cols * (this_ptr->mesh).grid_rows * 2,(SInputFace *)pSVar7,
-               (int)(this_ptr->mesh).vertex_positions_fixed,4,0);
+               (this_ptr->mesh).grid_cols * (this_ptr->mesh).grid_rows * 2,pSVar7,
+               (CVector3i *)(this_ptr->mesh).vertex_positions_fixed,4,(CVector3i *)0x0);
     if (this_ptr->opacity < 0xfde9) {
       for (iVar4 = 0; iVar4 < (this_ptr->mesh).grid_cols * (this_ptr->mesh).grid_rows * 2;
           iVar4 = iVar4 + 1) {

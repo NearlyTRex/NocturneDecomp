@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 18,
     "global_count": 18,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 57,
     "suspect_count": 4,
     "suspect_types": [
@@ -55,7 +56,7 @@
     {
       "addr": "0056d090",
       "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_0056d090"
+      "name": "core_set.cpp_CDemonSet_addDynamicLight_FUN_0056d090"
     },
     {
       "addr": "005ee110",
@@ -330,6 +331,7 @@
       "description": "Unaffected register variable",
       "line": 12,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "int unaff_ESI;",
       "type": "unaffected_reg"
     },
@@ -337,6 +339,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 24,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(this_ptr->base).ammo_count = (int)ROUND(ROUND(fVar1 * (float)100));",
       "type": "decompiler_intrinsic"
     },
@@ -344,6 +347,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 24,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(this_ptr->base).ammo_count = (int)ROUND(ROUND(fVar1 * (float)100));",
       "type": "decompiler_intrinsic"
     },
@@ -351,6 +355,7 @@
       "description": "Unaffected register variable",
       "line": 50,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "(g_CFilterCachePtr,\"lgunmask.raw\",(char *)0x0,unaff_ESI);",
       "type": "unaffected_reg"
     }

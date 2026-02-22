@@ -121,14 +121,16 @@
   },
   "complexity": {
     "assembly_lines": 3277,
-    "complexity_score": 1101,
+    "complexity_score": 1126,
     "cross_reference_count": 3,
     "function_call_count": 34,
     "global_count": 172,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 1056,
-    "suspect_count": 4,
+    "suspect_count": 6,
     "suspect_types": [
-      "decompiler_intrinsic"
+      "decompiler_intrinsic",
+      "stack_alignment_array"
     ],
     "total_lines": 4333
   },
@@ -1862,9 +1864,26 @@
   },
   "suspects": [
     {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 19,
+      "match": "acStackY_146e",
+      "severity": "moderate",
+      "text": "char acStackY_146e [1018];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 20,
+      "match": "auStackY_1074",
+      "severity": "moderate",
+      "text": "ushort auStackY_1074 [630];",
+      "type": "stack_alignment_array"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 164,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND((double)(int)g_TextureAtlasEntries[local_5c].original_width *",
       "type": "decompiler_intrinsic"
     },
@@ -1872,6 +1891,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 164,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND((double)(int)g_TextureAtlasEntries[local_5c].original_width *",
       "type": "decompiler_intrinsic"
     },
@@ -1879,6 +1899,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 168,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_980 = (int)ROUND(ROUND((double)(int)g_TextureAtlasEntries[local_5c].original_height *",
       "type": "decompiler_intrinsic"
     },
@@ -1886,6 +1907,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 168,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_980 = (int)ROUND(ROUND((double)(int)g_TextureAtlasEntries[local_5c].original_height *",
       "type": "decompiler_intrinsic"
     }

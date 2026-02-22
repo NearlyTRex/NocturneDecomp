@@ -24,7 +24,7 @@ CBodyPart * __cdecl core_bodypart_cpp_CBodyPart_ctor_FUN_00419010(CBodyPart *thi
   ADJ(pCVar2)->vertices = (CVector3i *)0x0;
   ADJ(pCVar2)->normals = (CVector3i *)0x0;
   ADJ(pCVar2)->tri_count = 0;
-  ADJ(pCVar2)->faces = (SInputFace *)0x0;
+  ADJ(pCVar2)->faces = (SMRGLPrimitiveTriangle *)0x0;
   ADJ(pCVar2)->face_texture_indices = (int *)0x0;
   ADJ(pCVar2)->texture_count = 0;
   ADJ(pCVar2)->render_in_background = 0;

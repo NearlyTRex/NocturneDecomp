@@ -132,7 +132,7 @@ section .text
     PUSH EDI                            ; 0042b05f
     PUSH EBX                            ; 0042b060
     CALL core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800 ; 0042b061
-        ;   XREF to: 005a1800 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800(CDeformableModelInstance * this_ptr, int param_2, int param_3)
+        ;   XREF to: 005a1800 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800(CDeformableModelInstance * this_ptr, int u_offset, int v_offset)
     ADD ESP,0xc                         ; 0042b066
     XOR EAX,EAX                         ; 0042b069
     MOV EBX,0xb332                      ; 0042b06b
@@ -154,7 +154,7 @@ section .text
     LEA EBX,[ESI + 0x158]               ; 0042b09e
     PUSH EBX                            ; 0042b0a4
     CALL core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340 ; 0042b0a5
-        ;   XREF to: 005a0340 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340(CDeformableModelInstance * this_ptr)
+        ;   XREF to: 005a0340 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340(CDeformableModelInstance * this_ptr, int render_flags, int skip_texture_capture)
     MOV EAX,[0x006703ec]                ; 0042b0aa | g_CDemonRendererPtr2
     ADD ESP,0xc                         ; 0042b0af
     MOV dword ptr [EAX + 0x20],0x0      ; 0042b0b2 | DAT_02c6d598

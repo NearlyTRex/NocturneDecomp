@@ -5,6 +5,7 @@
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 5,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 38,
     "suspect_count": 19,
     "suspect_types": [
@@ -141,6 +142,7 @@
       "description": "Unnamed function parameter",
       "line": 2,
       "match": "param_1",
+      "severity": "mild",
       "text": "void SetStdHandleToSomething(HANDLE param_1,uint param_2)",
       "type": "unnamed_param"
     },
@@ -148,6 +150,7 @@
       "description": "Unnamed function parameter",
       "line": 2,
       "match": "param_2",
+      "severity": "mild",
       "text": "void SetStdHandleToSomething(HANDLE param_1,uint param_2)",
       "type": "unnamed_param"
     },
@@ -155,6 +158,7 @@
       "description": "Unnamed function parameter",
       "line": 8,
       "match": "param_2",
+      "severity": "mild",
       "text": "if ((int)param_2 < 0) {",
       "type": "unnamed_param"
     },
@@ -162,6 +166,7 @@
       "description": "Unnamed function parameter",
       "line": 12,
       "match": "param_2",
+      "severity": "mild",
       "text": "if (param_2 == 0) {",
       "type": "unnamed_param"
     },
@@ -169,6 +174,7 @@
       "description": "Unnamed function parameter",
       "line": 15,
       "match": "param_2",
+      "severity": "mild",
       "text": "else if (param_2 < 2) {",
       "type": "unnamed_param"
     },
@@ -176,6 +182,7 @@
       "description": "Unnamed function parameter",
       "line": 19,
       "match": "param_2",
+      "severity": "mild",
       "text": "if (param_2 != 2) goto LAB_00608a6a;",
       "type": "unnamed_param"
     },
@@ -183,6 +190,7 @@
       "description": "Unnamed function parameter",
       "line": 22,
       "match": "param_1",
+      "severity": "mild",
       "text": "(*g_SetStdHandleFunc)(nStdHandle,param_1);",
       "type": "unnamed_param"
     },
@@ -190,6 +198,7 @@
       "description": "Unnamed function parameter",
       "line": 24,
       "match": "param_2",
+      "severity": "mild",
       "text": "if ((int)param_2 < g_CurrentHandleCount) {",
       "type": "unnamed_param"
     },
@@ -197,6 +206,7 @@
       "description": "Unnamed function parameter",
       "line": 25,
       "match": "param_2",
+      "severity": "mild",
       "text": "g_IOControlBlock->standard_handles[param_2] = param_1;",
       "type": "unnamed_param"
     },
@@ -204,6 +214,7 @@
       "description": "Unnamed function parameter",
       "line": 25,
       "match": "param_1",
+      "severity": "mild",
       "text": "g_IOControlBlock->standard_handles[param_2] = param_1;",
       "type": "unnamed_param"
     },
@@ -211,6 +222,7 @@
       "description": "Unnamed function parameter",
       "line": 28,
       "match": "param_2",
+      "severity": "mild",
       "text": "g_IOControlBlock = realloc(g_IOControlBlock,param_2 * 4 + 4);",
       "type": "unnamed_param"
     },
@@ -218,6 +230,7 @@
       "description": "Unnamed function parameter",
       "line": 29,
       "match": "param_2",
+      "severity": "mild",
       "text": "if (g_CurrentHandleCount < (int)param_2) {",
       "type": "unnamed_param"
     },
@@ -225,6 +238,7 @@
       "description": "Complex pointer cast",
       "line": 32,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)g_IOControlBlock->standard_handles + iVar1) = 0;",
       "type": "pointer_cast"
     },
@@ -232,6 +246,7 @@
       "description": "Unnamed function parameter",
       "line": 34,
       "match": "param_2",
+      "severity": "mild",
       "text": "} while (iVar1 < (int)(param_2 * 4));",
       "type": "unnamed_param"
     },
@@ -239,6 +254,7 @@
       "description": "Unnamed function parameter",
       "line": 36,
       "match": "param_2",
+      "severity": "mild",
       "text": "g_CurrentHandleCount = param_2 + 1;",
       "type": "unnamed_param"
     },
@@ -246,6 +262,7 @@
       "description": "Unnamed function parameter",
       "line": 37,
       "match": "param_2",
+      "severity": "mild",
       "text": "g_IOControlBlock->standard_handles[param_2] = param_1;",
       "type": "unnamed_param"
     },
@@ -253,6 +270,7 @@
       "description": "Unnamed function parameter",
       "line": 37,
       "match": "param_1",
+      "severity": "mild",
       "text": "g_IOControlBlock->standard_handles[param_2] = param_1;",
       "type": "unnamed_param"
     },

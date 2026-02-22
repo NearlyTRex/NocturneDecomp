@@ -29,6 +29,7 @@
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 11,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 132,
     "suspect_count": 2,
     "suspect_types": [
@@ -313,6 +314,7 @@
       "description": "Complex pointer cast",
       "line": 40,
       "match": "(char *)((int)",
+      "severity": "mild",
       "text": "cVar1 = *(char *)((int)&pFVar4->dwLowDateTime + 1);",
       "type": "pointer_cast"
     },
@@ -320,6 +322,7 @@
       "description": "Complex pointer cast",
       "line": 41,
       "match": "(FILETIME *)((int)",
+      "severity": "mild",
       "text": "pFVar4 = (FILETIME *)((int)&pFVar4->dwLowDateTime + 2);",
       "type": "pointer_cast"
     }

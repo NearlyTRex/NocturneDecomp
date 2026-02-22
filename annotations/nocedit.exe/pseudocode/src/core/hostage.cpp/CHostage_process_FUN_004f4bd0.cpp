@@ -547,10 +547,11 @@ switchD_004f5c7d_caseD_5:
   if (((0.0 < (this_ptr->base).base.hit_points) && (*(int *)this_ptr->unk2 == 1)) &&
      (iVar13 = core_actor_cpp_randomChance_FUN_0040cd10(delta_time * 0.2f), iVar13 != 0))
   {
+    iVar13 = 0;
     bone_name = "Bip01 L Forearm";
     pCVar2 = &(this_ptr->base).base.model;
     this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(pCVar2);
-    iVar13 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,bone_name);
+    iVar13 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,bone_name,iVar13);
     if (-1 < iVar13) {
       pCVar16 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                           (pCVar2,&local_bc,iVar13);

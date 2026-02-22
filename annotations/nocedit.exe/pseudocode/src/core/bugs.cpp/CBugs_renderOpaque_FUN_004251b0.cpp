@@ -16,12 +16,8 @@ int __cdecl core_bugs_cpp_CBugs_renderOpaque_FUN_004251b0(CBugs *this_ptr)
   CVector3i *rotation;
   CVector3i *position;
   CBoundingBox3D local_44;
-  float fStack_2c;
-  float fStack_28;
-  float fStack_24;
-  float fStack_20;
-  float fStack_1c;
-  float fStack_18;
+  CVector3f CStack_2c;
+  CVector3f CStack_20;
   int iStack_14;
   CKeyFramedModelInstance *pCStack_10;
   SBug *pSStack_c;
@@ -45,15 +41,15 @@ int __cdecl core_bugs_cpp_CBugs_renderOpaque_FUN_004251b0(CBugs *this_ptr)
             pSStack_8 = pSStack_c + iVar1;
             engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                       (g_CDemonRendererPtr2,position,rotation);
-            fStack_20 = (this_ptr->base).base.base.location.position.x + (float)rotation->x;
-            fStack_1c = (this_ptr->base).base.base.location.position.y + (float)rotation->y;
-            fStack_18 = (this_ptr->base).base.base.location.position.z + (float)rotation->z;
-            if (&fStack_2c != &fStack_20) {
-              fStack_2c = fStack_20;
-              fStack_28 = fStack_1c;
-              fStack_24 = fStack_18;
+            CStack_20.x = (this_ptr->base).base.base.location.position.x + (float)rotation->x;
+            CStack_20.y = (this_ptr->base).base.base.location.position.y + (float)rotation->y;
+            CStack_20.z = (this_ptr->base).base.base.location.position.z + (float)rotation->z;
+            if (&CStack_2c != &CStack_20) {
+              CStack_2c.x = CStack_20.x;
+              CStack_2c.y = CStack_20.y;
+              CStack_2c.z = CStack_20.z;
             }
-            core_set_cpp_CDemonSet_FUN_00570cd0(g_CDemonSetPtr);
+            core_set_cpp_CDemonSet_cacheMirrorLighting_FUN_00570cd0(g_CDemonSetPtr,&CStack_2c);
             engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
                       (g_CDemonRendererPtr2,0xffff);
             core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
@@ -64,7 +60,7 @@ int __cdecl core_bugs_cpp_CBugs_renderOpaque_FUN_004251b0(CBugs *this_ptr)
             rotation = (CVector3i *)&rotation[5].y;
           } while (iVar1 < this_ptr->count);
         }
-        core_set_cpp_CDemonSet_FUN_00570cd0(g_CDemonSetPtr);
+        core_set_cpp_CDemonSet_cacheMirrorLighting_FUN_00570cd0(g_CDemonSetPtr,(CVector3f *)0x0);
       }
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
       return iStack_14;

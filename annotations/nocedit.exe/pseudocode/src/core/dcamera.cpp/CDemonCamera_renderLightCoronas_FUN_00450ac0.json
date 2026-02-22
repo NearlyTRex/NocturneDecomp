@@ -19,15 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 272,
-    "complexity_score": 318,
+    "complexity_score": 333,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 35,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 128,
-    "suspect_count": 17,
+    "suspect_count": 18,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
+      "stack_alignment_array",
       "stack_param",
       "stack_ref"
     ],
@@ -37,7 +39,7 @@
     {
       "addr": "0056c1a0",
       "from_addr": "0056c2e9",
-      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0",
+      "name": "core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -486,9 +488,18 @@
   },
   "suspects": [
     {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 16,
+      "match": "aiStackY_1048",
+      "severity": "moderate",
+      "text": "int aiStackY_1048 [1016];",
+      "type": "stack_alignment_array"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_ffffffa0",
+      "severity": "moderate",
       "text": "CVector3i *in_stack_ffffffa0;",
       "type": "stack_param"
     },
@@ -496,6 +507,7 @@
       "description": "Complex pointer cast",
       "line": 45,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)g_DitherPatternTable + iVar3) = uVar2 & 0xff;",
       "type": "pointer_cast"
     },
@@ -503,6 +515,7 @@
       "description": "Complex pointer cast",
       "line": 52,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)g_CoronaLeftExtent + iVar3) = this_ptr->display_width;",
       "type": "pointer_cast"
     },
@@ -510,6 +523,7 @@
       "description": "Complex pointer cast",
       "line": 53,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)g_CoronaRightExtent + iVar3) = 0;",
       "type": "pointer_cast"
     },
@@ -517,6 +531,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 61,
       "match": "ROUND",
+      "severity": "mild",
       "text": "g_CoronaDepthShift = (int)ROUND(ROUND(fVar1 * 0.30103 * (float)3.3219280948900001));",
       "type": "decompiler_intrinsic"
     },
@@ -524,6 +539,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 61,
       "match": "ROUND",
+      "severity": "mild",
       "text": "g_CoronaDepthShift = (int)ROUND(ROUND(fVar1 * 0.30103 * (float)3.3219280948900001));",
       "type": "decompiler_intrinsic"
     },
@@ -531,6 +547,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 62,
       "match": "ROUND",
+      "severity": "mild",
       "text": "g_CoronaMaxDepth = (int)ROUND(ROUND(fVar1));",
       "type": "decompiler_intrinsic"
     },
@@ -538,6 +555,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 62,
       "match": "ROUND",
+      "severity": "mild",
       "text": "g_CoronaMaxDepth = (int)ROUND(ROUND(fVar1));",
       "type": "decompiler_intrinsic"
     },
@@ -545,6 +563,7 @@
       "description": "Complex pointer cast",
       "line": 71,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (this_ptr->display_width != *(int *)((int)g_CoronaLeftExtent + local_2c)) {",
       "type": "pointer_cast"
     },
@@ -552,6 +571,7 @@
       "description": "Complex pointer cast",
       "line": 72,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "local_18 = *(int *)((int)g_CoronaLeftExtent + local_2c);",
       "type": "pointer_cast"
     },
@@ -559,6 +579,7 @@
       "description": "Complex pointer cast",
       "line": 73,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "local_28 = *(int *)((int)g_CoronaRightExtent + local_2c);",
       "type": "pointer_cast"
     },
@@ -566,6 +587,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 81,
       "match": "SBORROW4",
+      "severity": "mild",
       "text": "bVar9 = SBORROW4(local_18,local_28);",
       "type": "decompiler_intrinsic"
     },
@@ -573,6 +595,7 @@
       "description": "Unresolved stack parameter",
       "line": 88,
       "match": "in_stack_ffffffa0",
+      "severity": "moderate",
       "text": "(&g_CurrentLightForCorona->base,local_1c,in_stack_ffffffa0);",
       "type": "stack_param"
     },
@@ -580,6 +603,7 @@
       "description": "Unresolved stack parameter",
       "line": 89,
       "match": "in_stack_ffffffa0",
+      "severity": "moderate",
       "text": "local_54 = in_stack_ffffffa0;",
       "type": "stack_param"
     },
@@ -587,6 +611,7 @@
       "description": "Direct stack address reference",
       "line": 90,
       "match": "&stack0xffffffa4",
+      "severity": "moderate",
       "text": "local_50[(uint)bVar8 * -2] = *(int *)(&stack0xffffffa4 + (uint)bVar8 * -8);",
       "type": "stack_ref"
     },
@@ -594,6 +619,7 @@
       "description": "Direct stack address reference",
       "line": 92,
       "match": "&stack0xffffffa8",
+      "severity": "moderate",
       "text": "*(int *)(&stack0xffffffa8 + (uint)bVar8 * -8 + (uint)bVar8 * -8);",
       "type": "stack_ref"
     },
@@ -601,6 +627,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 119,
       "match": "SBORROW4",
+      "severity": "mild",
       "text": "bVar9 = SBORROW4(local_18,local_28);",
       "type": "decompiler_intrinsic"
     }

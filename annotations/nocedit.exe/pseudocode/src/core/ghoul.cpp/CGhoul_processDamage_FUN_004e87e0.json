@@ -23,6 +23,7 @@
     "cross_reference_count": 0,
     "function_call_count": 14,
     "global_count": 6,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 137,
     "suspect_count": 4,
     "suspect_types": [
@@ -248,6 +249,7 @@
       "description": "Type propagation did not converge",
       "line": 3,
       "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
     },
@@ -255,6 +257,7 @@
       "description": "Complex pointer cast",
       "line": 90,
       "match": "(CGhoul *)((int)",
+      "severity": "mild",
       "text": "pCVar5 = (CGhoul *)((int)&(pCVar5->base).base.base.orient + 8);",
       "type": "pointer_cast"
     },
@@ -262,6 +265,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 106,
       "match": "ROUND",
+      "severity": "mild",
       "text": "this_ptr->spasm_timer = (int)ROUND(ROUND(local_14 * fVar4));",
       "type": "decompiler_intrinsic"
     },
@@ -269,6 +273,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 106,
       "match": "ROUND",
+      "severity": "mild",
       "text": "this_ptr->spasm_timer = (int)ROUND(ROUND(local_14 * fVar4));",
       "type": "decompiler_intrinsic"
     }

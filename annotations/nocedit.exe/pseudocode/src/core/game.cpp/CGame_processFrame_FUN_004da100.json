@@ -121,17 +121,20 @@
   },
   "complexity": {
     "assembly_lines": 1136,
-    "complexity_score": 703,
+    "complexity_score": 763,
     "cross_reference_count": 1,
     "function_call_count": 53,
     "global_count": 77,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 368,
-    "suspect_count": 30,
+    "suspect_count": 35,
     "suspect_types": [
       "decompiler_intrinsic",
       "format_string_mismatch",
       "pointer_cast",
+      "stack_alignment_array",
       "stack_ref",
+      "sub84_truncation",
       "undefined_data",
       "unknown_field",
       "warning_deadcode_restart"
@@ -236,24 +239,24 @@
       "name": "core_script.cpp_CScript_renderSubtitles_FUN_00559b20"
     },
     {
-      "addr": "0056be80",
-      "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_0056be80"
-    },
-    {
-      "addr": "0056c1a0",
-      "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0"
-    },
-    {
       "addr": "0056c990",
       "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_0056c990"
+      "name": "core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990"
     },
     {
       "addr": "0056d190",
       "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_0056d190"
+      "name": "core_set.cpp_CDemonSet_renderLightDebugView_FUN_0056d190"
+    },
+    {
+      "addr": "0056c1a0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0"
+    },
+    {
+      "addr": "0056be80",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_renderStaticLights_FUN_0056be80"
     },
     {
       "addr": "005a1ed0",
@@ -1243,13 +1246,23 @@
       "description": "Deadcode elimination delayed",
       "line": 3,
       "match": "WARNING: Restarted to delay deadcode elimination",
+      "severity": "mild",
       "text": "/* WARNING: Restarted to delay deadcode elimination for space: stack */",
       "type": "warning_deadcode_restart"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 25,
+      "match": "auStackY_107c",
+      "severity": "moderate",
+      "text": "uint auStackY_107c [651];",
+      "type": "stack_alignment_array"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 84,
       "match": "._8_4_",
+      "severity": "mild",
       "text": "local_b0._8_4_ = 0.0;",
       "type": "unknown_field"
     },
@@ -1257,6 +1270,7 @@
       "description": "Unknown/mangled field access",
       "line": 85,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_b0._4_4_ = 0.0;",
       "type": "unknown_field"
     },
@@ -1264,6 +1278,7 @@
       "description": "Unknown/mangled field access",
       "line": 86,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_b0._0_4_ = 0.0;",
       "type": "unknown_field"
     },
@@ -1271,6 +1286,7 @@
       "description": "Unknown/mangled field access",
       "line": 89,
       "match": "._12_4_",
+      "severity": "mild",
       "text": "local_b0._12_4_ = 0.0;",
       "type": "unknown_field"
     },
@@ -1278,6 +1294,7 @@
       "description": "Unknown/mangled field access",
       "line": 94,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_b0._0_4_ = (pCVar10->position).x;",
       "type": "unknown_field"
     },
@@ -1285,6 +1302,7 @@
       "description": "Unknown/mangled field access",
       "line": 95,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_b0._4_4_ = (pCVar4->base).base.location.position.y;",
       "type": "unknown_field"
     },
@@ -1292,6 +1310,7 @@
       "description": "Unknown/mangled field access",
       "line": 96,
       "match": "._8_4_",
+      "severity": "mild",
       "text": "local_b0._8_4_ = (pCVar4->base).base.location.position.z;",
       "type": "unknown_field"
     },
@@ -1299,6 +1318,7 @@
       "description": "Unknown/mangled field access",
       "line": 101,
       "match": "._12_4_",
+      "severity": "mild",
       "text": "local_b0._12_4_ = (pUVar11->vec).x;",
       "type": "unknown_field"
     },
@@ -1306,6 +1326,7 @@
       "description": "Complex pointer cast",
       "line": 114,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_70 + ((uint)bVar16 * -2 + -1) * 4 + 8) =",
       "type": "pointer_cast"
     },
@@ -1313,6 +1334,7 @@
       "description": "Complex pointer cast",
       "line": 115,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_88 + (uint)bVar16 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -1320,6 +1342,7 @@
       "description": "Complex pointer cast",
       "line": 116,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_70 + ((uint)bVar16 * -2 + (uint)bVar16 * -2) * 4 + 8) =",
       "type": "pointer_cast"
     },
@@ -1327,6 +1350,7 @@
       "description": "Complex pointer cast",
       "line": 117,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_88 + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);",
       "type": "pointer_cast"
     },
@@ -1334,6 +1358,7 @@
       "description": "Complex pointer cast",
       "line": 121,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_70 + ((uint)bVar16 * -2 + -1) * 4 + 8) =",
       "type": "pointer_cast"
     },
@@ -1341,6 +1366,7 @@
       "description": "Complex pointer cast",
       "line": 122,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_94 + (uint)bVar16 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -1348,6 +1374,7 @@
       "description": "Complex pointer cast",
       "line": 123,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_70 + ((uint)bVar16 * -2 + (uint)bVar16 * -2) * 4 + 8) =",
       "type": "pointer_cast"
     },
@@ -1355,6 +1382,7 @@
       "description": "Complex pointer cast",
       "line": 124,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_94 + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);",
       "type": "pointer_cast"
     },
@@ -1362,6 +1390,7 @@
       "description": "Undefined global data reference",
       "line": 154,
       "match": "DAT_02d82568",
+      "severity": "mild",
       "text": "DAT_02d82568 = DAT_02d82568 + 1;",
       "type": "undefined_data"
     },
@@ -1369,6 +1398,7 @@
       "description": "Undefined global data reference",
       "line": 154,
       "match": "DAT_02d82568",
+      "severity": "mild",
       "text": "DAT_02d82568 = DAT_02d82568 + 1;",
       "type": "undefined_data"
     },
@@ -1376,6 +1406,7 @@
       "description": "Undefined global data reference",
       "line": 155,
       "match": "DAT_02d82570",
+      "severity": "mild",
       "text": "_sprintf(&DAT_02d82570,\"demon%d.pcx\");",
       "type": "undefined_data"
     },
@@ -1383,6 +1414,7 @@
       "description": "Undefined global data reference",
       "line": 156,
       "match": "DAT_02d82570",
+      "severity": "mild",
       "text": "engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(&DAT_02d82570);",
       "type": "undefined_data"
     },
@@ -1390,34 +1422,71 @@
       "description": "Complex pointer cast",
       "line": 205,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)g_ScreenBufferArray + local_24));",
       "type": "pointer_cast"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 261,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "(double)(pCVar4->base).base.location.position.x,SUB84(dVar2,0),",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 261,
       "match": "SUB84",
+      "severity": "mild",
       "text": "(double)(pCVar4->base).base.location.position.x,SUB84(dVar2,0),",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 262,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "(int)((ulonglong)dVar2 >> 0x20),SUB84(dVar1,0),(int)((ulonglong)dVar1 >> 0x20),",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 262,
       "match": "SUB84",
+      "severity": "mild",
       "text": "(int)((ulonglong)dVar2 >> 0x20),SUB84(dVar1,0),(int)((ulonglong)dVar1 >> 0x20),",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 263,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "SUB84(180 *",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 263,
       "match": "SUB84",
+      "severity": "mild",
       "text": "SUB84(180 *",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 271,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "SUB84((double)this_ptr->debug_fudge_target->x,0));",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 271,
       "match": "SUB84",
+      "severity": "mild",
       "text": "SUB84((double)this_ptr->debug_fudge_target->x,0));",
       "type": "decompiler_intrinsic"
     },
@@ -1425,6 +1494,7 @@
       "description": "Direct stack address reference",
       "line": 300,
       "match": "&stack0xfffff9d4",
+      "severity": "moderate",
       "text": "sound_sndmain_cpp_CSfxSample_init_FUN_005a8480((CSfxSample *)&stack0xfffff9d4);",
       "type": "stack_ref"
     },
@@ -1432,6 +1502,7 @@
       "description": "Direct stack address reference",
       "line": 302,
       "match": "&stack0xfffff9d4",
+      "severity": "moderate",
       "text": "(uVar6,(CSfxSample *)&stack0xfffff9d4);",
       "type": "stack_ref"
     },
@@ -1439,6 +1510,7 @@
       "description": "Direct stack address reference",
       "line": 304,
       "match": "&stack0xfffff9d4",
+      "severity": "moderate",
       "text": "engine_2d_c_drawTextXY_FUN_00402130(0,iVar5,&stack0xfffff9d4);",
       "type": "stack_ref"
     },

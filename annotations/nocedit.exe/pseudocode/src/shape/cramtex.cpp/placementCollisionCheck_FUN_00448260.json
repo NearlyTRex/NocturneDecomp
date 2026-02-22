@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 26,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 58,
     "suspect_count": 3,
     "suspect_types": [
@@ -291,6 +292,7 @@
       "description": "Complex pointer cast",
       "line": 15,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (((layer_id == *(int *)((int)&g_CramRectangles[0].left + iVar1)) &&",
       "type": "pointer_cast"
     },
@@ -298,6 +300,7 @@
       "description": "Complex pointer cast",
       "line": 16,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "(start_x == *(int *)((int)&g_CramRectangles[0].top + iVar1))) &&",
       "type": "pointer_cast"
     },
@@ -305,6 +308,7 @@
       "description": "Complex pointer cast",
       "line": 17,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "(start_y == *(int *)((int)&g_CramRectangles[0].right + iVar1))) {",
       "type": "pointer_cast"
     }

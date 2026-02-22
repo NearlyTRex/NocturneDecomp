@@ -38,7 +38,7 @@ float __cdecl core_stranger_cpp_FUN_005bb010(void)
     iVar4 = 0;
     local_14 = 0;
     for (iVar3 = 0; iVar3 < pCVar5->vertex_count; iVar3 = iVar3 + 1) {
-      piVar2 = (int *)((int)pCVar5->vertex_list + iVar4);
+      piVar2 = (int *)((int)&pCVar5->vertex_list->x + iVar4);
       if (iVar7 < *piVar2) {
         local_14 = piVar2[1];
         iVar7 = *piVar2;

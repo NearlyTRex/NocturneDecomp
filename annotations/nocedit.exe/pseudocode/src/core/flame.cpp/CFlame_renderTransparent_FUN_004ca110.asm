@@ -38,7 +38,7 @@
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
 ;   core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_FUN_004715e0
-;   core_set.cpp_CDemonSet_FUN_0056d140
+;   core_set.cpp_CDemonSet_addQueuedCoronaGlobe_FUN_0056d140
 ;   crt_math.c_round_FUN_005fe6b0
 ;   engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
@@ -141,8 +141,8 @@ section .text
     PUSH EAX                            ; 004ca1e0
     MOV ECX,dword ptr [0x006810c8]      ; 004ca1e1 | g_CDemonSetPtr | g_CDemonSetInstance
     PUSH ECX                            ; 004ca1e7 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_0056d140 ; 004ca1e8
-        ;   XREF to: 0056d140 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d140(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_addQueuedCoronaGlobe_FUN_0056d140 ; 004ca1e8
+        ;   XREF to: 0056d140 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addQueuedCoronaGlobe_FUN_0056d140(CDemonSet * this_ptr, CDemonGlobe * globe)
     ADD ESP,0x8                         ; 004ca1ed
     PUSH ESI                            ; 004ca1f0
         ;   Label: LAB_004ca1f0

@@ -404,7 +404,7 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_0043abb0(CCloth *this_ptr,CVector3f 
     pSVar11 = this_ptr->vertices;
     iVar7 = 0;
     do {
-      piVar8 = (int *)((int)(this_ptr->model).vertex_list + iVar7);
+      piVar8 = (int *)((int)&((this_ptr->model).vertex_list)->x + iVar7);
       iVar6 = iVar6 + 1;
       *piVar8 = (int)ROUND((pSVar11->position).x * 256.0f);
       piVar8[1] = (int)ROUND((pSVar11->position).y * 256.0f);

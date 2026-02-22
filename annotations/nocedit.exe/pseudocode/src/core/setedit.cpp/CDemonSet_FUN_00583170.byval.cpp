@@ -1803,7 +1803,7 @@ __asm {
     LAB_005848b2:
         mov EDX,dword ptr [EBP + 0x92]
         push EDX
-        call core_set_cpp_CDemonSet_FUN_0056d2d0
+        call core_set_cpp_CDemonSet_clearLights_FUN_0056d2d0
         add ESP,0x4
         call engine_2d_c_clearInputAndWait_FUN_00403260
         mov EAX,dword ptr [EBP + 0x92]

@@ -8,7 +8,7 @@
 ; SCollisionInfo * Stack[0x8]:4   collision_info
 ;
 ; Referenced Globals:
-;   CDemonActor* PTR_00821ff4
+;   CDemonActor* g_CurrentProcessingActor
 ;
 ; Called Functions:
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0
@@ -38,7 +38,7 @@ section .text
     ADD EAX,0x168                       ; 004143c2
         ;   Label: LAB_004143c2
     PUSH EAX                            ; 004143c7
-    MOV EBX,dword ptr [0x00821ff4]      ; 004143c8 | PTR_00821ff4
+    MOV EBX,dword ptr [0x00821ff4]      ; 004143c8 | g_CurrentProcessingActor
     PUSH EBX                            ; 004143ce
     CALL core_actor.cpp_isOfClass_FUN_0040c6d0 ; 004143cf
         ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c6d0(CDemonActor * actor_ptr, char * class_name)

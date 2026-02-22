@@ -1,16 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0(CDeformableModel *this_ptr,int lod_index,CBodyPart *body_part_ptr,int part_index,int num_parts_to_dismember,int texture_set_index,CVector3i *skinned_vertices)
+; void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0(CDeformableModel *this_ptr,int lod_index,CBodyPart *body_part_ptr,int part_index,CVector3i *skinned_vertices,int texture_set_index)
 ;
 ; Parameters:
 ; CDeformableModel * Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   lod_index
 ; CBodyPart *      Stack[0xc]:4   body_part_ptr
 ; int              Stack[0x10]:4   part_index
-; int              Stack[0x14]:4   num_parts_to_dismember
+; CVector3i *      Stack[0x14]:4   skinned_vertices
 ; int              Stack[0x18]:4   texture_set_index
-; CVector3i *      Stack[0x1c]:4   skinned_vertices
 ; Local Variables:
 ; undefined4       Stack[-0x54]:4  local_54
 ; undefined4       Stack[-0x50]:4  local_50

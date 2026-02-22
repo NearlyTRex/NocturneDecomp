@@ -61,7 +61,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_setup_FUN_005e56c0(CVampireBoss *thi
   core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000(this_ptr_01);
   (this_ptr->base).base.base.is_transparent = 1;
   this_ptr_06 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr_00);
-  iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_06,"Bip01 Spine2");
+  iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_06,"Bip01 Spine2",1);
   (this_ptr->base).base.carry_hands[0].secondary_bone_index = 0;
   this_ptr->sfx_handle = 0;
   (this_ptr->base).base.carry_hands[0].bone_index = iVar1;

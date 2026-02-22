@@ -20,7 +20,7 @@
 ;   core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0 at 00474b0c
 ;   core_fire.cpp_CGunFlame_render_FUN_004c50b0 at 004c5190
 ;   core_fire.cpp_CLaserBeam_render_FUN_004c25c0 at 004c268a
-;   core_set.cpp_CDemonSet_FUN_0056fbd0 at 0056fc15
+;   core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0 at 0056fc15
 ;   core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005709e0 at 005709f7
 ;   core_terrain.cpp_CTerrain_render_FUN_005e1f50 at 005e1f76
 ;

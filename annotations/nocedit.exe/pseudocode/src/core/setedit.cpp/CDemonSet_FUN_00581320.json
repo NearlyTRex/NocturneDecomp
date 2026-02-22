@@ -17,6 +17,7 @@
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 10,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 44,
     "suspect_count": 12,
     "suspect_types": [
@@ -57,19 +58,19 @@
       "name": "core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0"
     },
     {
-      "addr": "0056c1a0",
-      "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0"
-    },
-    {
       "addr": "0056d2d0",
       "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_0056d2d0"
+      "name": "core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0"
     },
     {
       "addr": "0056aa10",
       "is_variadic": false,
       "name": "core_set.cpp_CDemonSet_initScene_FUN_0056aa10"
+    },
+    {
+      "addr": "0056c1a0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0"
     },
     {
       "addr": "0056ae50",
@@ -249,6 +250,7 @@
       "description": "Unresolved stack parameter",
       "line": 6,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
@@ -256,6 +258,7 @@
       "description": "Unresolved stack parameter",
       "line": 18,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "(local_110,\"backdrop\\\\%s.fog\",this_ptr->cameras + in_stack_00000008);",
       "type": "stack_param"
     },
@@ -263,6 +266,7 @@
       "description": "Unresolved stack parameter",
       "line": 21,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(this_ptr,in_stack_00000008);",
       "type": "stack_param"
     },
@@ -270,6 +274,7 @@
       "description": "Unresolved stack parameter",
       "line": 35,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "in_stack_00000008 = in_stack_00000008 + 1;",
       "type": "stack_param"
     },
@@ -277,6 +282,7 @@
       "description": "Unresolved stack parameter",
       "line": 35,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "in_stack_00000008 = in_stack_00000008 + 1;",
       "type": "stack_param"
     },
@@ -284,6 +290,7 @@
       "description": "Unresolved stack parameter",
       "line": 36,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "if (this_ptr->camera_count <= in_stack_00000008) {",
       "type": "stack_param"
     },
@@ -291,6 +298,7 @@
       "description": "Unresolved stack parameter",
       "line": 37,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "in_stack_00000008 = 0;",
       "type": "stack_param"
     },
@@ -298,6 +306,7 @@
       "description": "Unresolved stack parameter",
       "line": 41,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "in_stack_00000008 = in_stack_00000008 + -1;",
       "type": "stack_param"
     },
@@ -305,6 +314,7 @@
       "description": "Unresolved stack parameter",
       "line": 41,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "in_stack_00000008 = in_stack_00000008 + -1;",
       "type": "stack_param"
     },
@@ -312,6 +322,7 @@
       "description": "Unresolved stack parameter",
       "line": 42,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "if (in_stack_00000008 < 0) {",
       "type": "stack_param"
     },
@@ -319,6 +330,7 @@
       "description": "Unresolved stack parameter",
       "line": 43,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "in_stack_00000008 = this_ptr->camera_count + -1;",
       "type": "stack_param"
     },

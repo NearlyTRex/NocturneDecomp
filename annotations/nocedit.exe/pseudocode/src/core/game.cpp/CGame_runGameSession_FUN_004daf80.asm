@@ -217,8 +217,8 @@ section .text
     MOV dword ptr [0x02d82d80],ESI      ; 004db20c | DAT_02d82d80
     MOV ESI,dword ptr [0x006810c8]      ; 004db212 | g_CDemonSetPtr
     PUSH ESI                            ; 004db218 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_00571130 ; 004db219
-        ;   XREF to: 00571130 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_00571130(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_restoreLightState_FUN_00571130 ; 004db219
+        ;   XREF to: 00571130 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_restoreLightState_FUN_00571130(CDemonSet * this_ptr, void * param_2)
     ADD ESP,0x8                         ; 004db21e
     MOV EAX,dword ptr [EBP + 0x14]      ; 004db221
         ;   Label: LAB_004db221
@@ -506,8 +506,8 @@ section .text
     ADD ESP,0x4                         ; 004db55a
     MOV EDX,dword ptr [0x006810c8]      ; 004db55d | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EDX                            ; 004db563 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_0056d2d0 ; 004db564
-        ;   XREF to: 0056d2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d2d0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0 ; 004db564
+        ;   XREF to: 0056d2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 004db569
     MOV EAX,dword ptr [EBP + 0x14]      ; 004db56c
     PUSH 0x2d828d4                      ; 004db56f | g_CPickList

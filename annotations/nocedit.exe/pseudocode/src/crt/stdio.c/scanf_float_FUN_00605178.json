@@ -1,14 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 344,
-    "complexity_score": 569,
+    "complexity_score": 584,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 2,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 174,
-    "suspect_count": 35,
+    "suspect_count": 36,
     "suspect_types": [
       "decompiler_intrinsic",
+      "double_reconstruction",
       "nonstandard_int",
       "register_param",
       "special_crt_function",
@@ -279,6 +281,7 @@
       "description": "Inferred register parameter",
       "line": 16,
       "match": "in_ES",
+      "severity": "mild",
       "text": "ushort in_ES;",
       "type": "register_param"
     },
@@ -286,6 +289,7 @@
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_00000014",
+      "severity": "moderate",
       "text": "int *in_stack_00000014;",
       "type": "stack_param"
     },
@@ -293,6 +297,7 @@
       "description": "Unresolved stack parameter",
       "line": 18,
       "match": "in_stack_ffffff80",
+      "severity": "moderate",
       "text": "char *in_stack_ffffff80;",
       "type": "stack_param"
     },
@@ -300,6 +305,7 @@
       "description": "Inferred register parameter",
       "line": 29,
       "match": "in_ES",
+      "severity": "mild",
       "text": "fStack_10 = (float)CONCAT22(fStack_10._2_2_,in_ES);",
       "type": "register_param"
     },
@@ -307,6 +313,7 @@
       "description": "Unknown/mangled field access",
       "line": 29,
       "match": "._2_2_",
+      "severity": "mild",
       "text": "fStack_10 = (float)CONCAT22(fStack_10._2_2_,in_ES);",
       "type": "unknown_field"
     },
@@ -314,6 +321,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 29,
       "match": "CONCAT22",
+      "severity": "mild",
       "text": "fStack_10 = (float)CONCAT22(fStack_10._2_2_,in_ES);",
       "type": "decompiler_intrinsic"
     },
@@ -321,6 +329,7 @@
       "description": "Direct stack address reference",
       "line": 30,
       "match": "&stack0xffffff80",
+      "severity": "moderate",
       "text": "pcVar8 = &stack0xffffff80;",
       "type": "stack_ref"
     },
@@ -328,6 +337,7 @@
       "description": "Direct stack address reference",
       "line": 41,
       "match": "&stack0xffffff80",
+      "severity": "moderate",
       "text": "pcVar8 = &stack0xffffff80;",
       "type": "stack_ref"
     },
@@ -335,6 +345,7 @@
       "description": "Direct stack address reference",
       "line": 43,
       "match": "&stack0xffffff80",
+      "severity": "moderate",
       "text": "if ((character == 0x2b) || (pcVar8 = &stack0xffffff80, character == 0x2d)) {",
       "type": "stack_ref"
     },
@@ -342,6 +353,7 @@
       "description": "Unresolved stack parameter",
       "line": 44,
       "match": "in_stack_ffffff80",
+      "severity": "moderate",
       "text": "in_stack_ffffff80 = (char *)CONCAT31((int3)((uint)in_stack_ffffff80 >> 8),(char)character);",
       "type": "stack_param"
     },
@@ -349,6 +361,7 @@
       "description": "Unresolved stack parameter",
       "line": 44,
       "match": "in_stack_ffffff80",
+      "severity": "moderate",
       "text": "in_stack_ffffff80 = (char *)CONCAT31((int3)((uint)in_stack_ffffff80 >> 8),(char)character);",
       "type": "stack_param"
     },
@@ -356,6 +369,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 44,
       "match": "CONCAT31",
+      "severity": "mild",
       "text": "in_stack_ffffff80 = (char *)CONCAT31((int3)((uint)in_stack_ffffff80 >> 8),(char)character);",
       "type": "decompiler_intrinsic"
     },
@@ -363,6 +377,7 @@
       "description": "Non-standard integer size (decompiler artifact)",
       "line": 44,
       "match": "int3",
+      "severity": "mild",
       "text": "in_stack_ffffff80 = (char *)CONCAT31((int3)((uint)in_stack_ffffff80 >> 8),(char)character);",
       "type": "nonstandard_int"
     },
@@ -370,6 +385,7 @@
       "description": "Direct stack address reference",
       "line": 46,
       "match": "&stack0xffffff81",
+      "severity": "moderate",
       "text": "pcVar8 = &stack0xffffff81;",
       "type": "stack_ref"
     },
@@ -377,6 +393,7 @@
       "description": "Unknown/mangled field access",
       "line": 52,
       "match": "._0_2_",
+      "severity": "mild",
       "text": "local_1c._0_2_ = 0;",
       "type": "unknown_field"
     },
@@ -384,6 +401,7 @@
       "description": "Unknown/mangled field access",
       "line": 53,
       "match": "._2_2_",
+      "severity": "mild",
       "text": "local_1c._2_2_ = 0;",
       "type": "unknown_field"
     },
@@ -391,6 +409,7 @@
       "description": "Unknown/mangled field access",
       "line": 61,
       "match": "._2_2_",
+      "severity": "mild",
       "text": "local_1c._2_2_ = (short)character + local_1c._2_2_ * 10 + -0x30;",
       "type": "unknown_field"
     },
@@ -398,6 +417,7 @@
       "description": "Unknown/mangled field access",
       "line": 61,
       "match": "._2_2_",
+      "severity": "mild",
       "text": "local_1c._2_2_ = (short)character + local_1c._2_2_ * 10 + -0x30;",
       "type": "unknown_field"
     },
@@ -405,6 +425,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 95,
       "match": "1.4013e-44",
+      "severity": "mild",
       "text": "local_20 = 1.4013e-44;",
       "type": "suspect_float"
     },
@@ -412,6 +433,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 96,
       "match": "CONCAT12",
+      "severity": "mild",
       "text": "uVar5 = CONCAT12(*pcVar1 + -0x30,local_18) / 10;",
       "type": "decompiler_intrinsic"
     },
@@ -419,6 +441,7 @@
       "description": "Unknown/mangled field access",
       "line": 100,
       "match": "._0_2_",
+      "severity": "mild",
       "text": "local_1c._0_2_ = local_18;",
       "type": "unknown_field"
     },
@@ -426,6 +449,7 @@
       "description": "Unresolved stack parameter",
       "line": 143,
       "match": "in_stack_ffffff80",
+      "severity": "moderate",
       "text": "((double *)&stack0xffffff80,&local_30,in_stack_ffffff80);",
       "type": "stack_param"
     },
@@ -433,6 +457,7 @@
       "description": "Direct stack address reference",
       "line": 143,
       "match": "&stack0xffffff80",
+      "severity": "moderate",
       "text": "((double *)&stack0xffffff80,&local_30,in_stack_ffffff80);",
       "type": "stack_ref"
     },
@@ -440,6 +465,7 @@
       "description": "Unresolved stack parameter",
       "line": 145,
       "match": "in_stack_ffffff80",
+      "severity": "moderate",
       "text": "else if ((char)in_stack_ffffff80 == '-') {",
       "type": "stack_param"
     },
@@ -447,6 +473,7 @@
       "description": "Unknown/mangled field access",
       "line": 146,
       "match": "._2_2_",
+      "severity": "mild",
       "text": "local_1c = -CONCAT22(local_1c._2_2_,(ushort)local_1c);",
       "type": "unknown_field"
     },
@@ -454,6 +481,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 146,
       "match": "CONCAT22",
+      "severity": "mild",
       "text": "local_1c = -CONCAT22(local_1c._2_2_,(ushort)local_1c);",
       "type": "decompiler_intrinsic"
     },
@@ -461,6 +489,7 @@
       "description": "Unresolved stack parameter",
       "line": 150,
       "match": "in_stack_00000014",
+      "severity": "moderate",
       "text": "puVar4 = (uint *)*in_stack_00000014;",
       "type": "stack_param"
     },
@@ -468,6 +497,7 @@
       "description": "Unresolved stack parameter",
       "line": 151,
       "match": "in_stack_00000014",
+      "severity": "moderate",
       "text": "*in_stack_00000014 = (int)(puVar4 + 1);",
       "type": "stack_param"
     },
@@ -475,6 +505,7 @@
       "description": "Unresolved stack parameter",
       "line": 155,
       "match": "in_stack_00000014",
+      "severity": "moderate",
       "text": "puVar4 = (uint *)*in_stack_00000014;",
       "type": "stack_param"
     },
@@ -482,6 +513,7 @@
       "description": "Unresolved stack parameter",
       "line": 156,
       "match": "in_stack_00000014",
+      "severity": "moderate",
       "text": "*in_stack_00000014 = (int)(puVar4 + 1);",
       "type": "stack_param"
     },
@@ -489,6 +521,7 @@
       "description": "Unresolved stack parameter",
       "line": 161,
       "match": "in_stack_00000014",
+      "severity": "moderate",
       "text": "puVar3 = (undefined6 *)*in_stack_00000014;",
       "type": "stack_param"
     },
@@ -496,6 +529,7 @@
       "description": "Cast to undefined pointer type",
       "line": 161,
       "match": "(undefined6 *)",
+      "severity": "moderate",
       "text": "puVar3 = (undefined6 *)*in_stack_00000014;",
       "type": "undefined_ptr_cast"
     },
@@ -503,13 +537,23 @@
       "description": "Unresolved stack parameter",
       "line": 162,
       "match": "in_stack_00000014",
+      "severity": "moderate",
       "text": "*in_stack_00000014 = (int)(puVar3 + 1);",
       "type": "stack_param"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 172,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "fStack_10 = doubleToFloat((double)CONCAT44(local_20,local_24));",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 172,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "fStack_10 = doubleToFloat((double)CONCAT44(local_20,local_24));",
       "type": "decompiler_intrinsic"
     },

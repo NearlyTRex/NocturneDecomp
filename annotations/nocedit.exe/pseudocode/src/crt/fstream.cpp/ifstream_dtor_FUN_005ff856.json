@@ -5,6 +5,7 @@
     "cross_reference_count": 5,
     "function_call_count": 6,
     "global_count": 4,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 35,
     "suspect_count": 5,
     "suspect_types": [
@@ -266,6 +267,7 @@
       "description": "Complex pointer cast",
       "line": 11,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "iVar1 = *(int *)((int)(this_ptr->_fstreambase_core).layout_info + 4);",
       "type": "pointer_cast"
     },
@@ -273,6 +275,7 @@
       "description": "Complex pointer cast",
       "line": 19,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)pvVar3 + 4) + -0x10) = &g_IFStream_IOSDestructor;",
       "type": "pointer_cast"
     },
@@ -280,6 +283,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 23,
       "match": "piVar2[-2].",
+      "severity": "mild",
       "text": "((fstreambase *)&piVar2[-2]._ios.__i_lock,1);",
       "type": "negative_offset"
     },
@@ -287,6 +291,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 26,
       "match": "piVar4[-2].",
+      "severity": "mild",
       "text": "this_ptr = (ifstream *)&piVar4[-2].__tied_stream;",
       "type": "negative_offset"
     },

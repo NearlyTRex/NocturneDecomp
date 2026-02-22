@@ -29,6 +29,7 @@
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 9,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 59,
     "suspect_count": 5,
     "suspect_types": [
@@ -249,6 +250,7 @@
       "description": "Unknown/mangled field access",
       "line": 31,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "(\"SfxSlot::updatePlaybackPos - stepped too much: %f-%f=%f, sample=%d (%s)\",hardware_playback_pos._0_4_,",
       "type": "unknown_field"
     },
@@ -256,6 +258,7 @@
       "description": "Unknown/mangled field access",
       "line": 32,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "hardware_playback_pos._4_4_,*(uint *)&this_ptr->prev_hardware_playback_pos,",
       "type": "unknown_field"
     },
@@ -263,6 +266,7 @@
       "description": "Complex pointer cast",
       "line": 33,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&this_ptr->prev_hardware_playback_pos + 4),(uint)local_28,",
       "type": "pointer_cast"
     },
@@ -270,6 +274,7 @@
       "description": "Unknown/mangled field access",
       "line": 34,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_28._4_4_,this_ptr->sample->streaming_buffer_size);",
       "type": "unknown_field"
     },
@@ -277,6 +282,7 @@
       "description": "Complex pointer cast",
       "line": 45,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&(this_ptr->options).trigger_time + 4) = 0;",
       "type": "pointer_cast"
     }

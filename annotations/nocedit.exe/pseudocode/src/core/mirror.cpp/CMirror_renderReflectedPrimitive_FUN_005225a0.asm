@@ -8,7 +8,7 @@
 ; SMRGLHeaderPrimitive * Stack[0x8]:4   prim
 ;
 ; XREF[1]:
-;   core_set.cpp_CDemonSet_FUN_00570df0 at 00570e0c
+;   core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_00570df0 at 00570e0c
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578

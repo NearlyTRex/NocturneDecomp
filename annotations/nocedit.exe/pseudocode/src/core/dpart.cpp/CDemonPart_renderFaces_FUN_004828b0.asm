@@ -25,7 +25,7 @@
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
-;   core_set.cpp_CDemonSet_FUN_00570960
+;   core_set.cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_00570960
 ;   core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0
 ;   engine_3d.c_isVisiblePlane_FUN_00403950
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0
@@ -169,8 +169,8 @@ section .text
     PUSH EAX                            ; 004829ea
     MOV EDX,dword ptr [0x006810c8]      ; 004829eb | g_CDemonSetPtr | g_CDemonSetInstance
     PUSH EDX                            ; 004829f1 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_00570960 ; 004829f2
-        ;   XREF to: 00570960 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_00570960(CDemonSet * this_ptr, SMRGLHeaderPrimitive * prim, int count)
+    CALL core_set.cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_00570960 ; 004829f2
+        ;   XREF to: 00570960 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_00570960(CDemonSet * this_ptr, SMRGLHeaderPrimitive * prim, int count)
     ADD ESP,0xc                         ; 004829f7
     JMP 0x00482941                      ; 004829fa
         ;   XREF to: 00482941 (UNCONDITIONAL_JUMP)  ; LAB_00482941

@@ -11,15 +11,15 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_skinAndLightVertices_FUN
 {
   CDeformableModel *this_ptr_00;
   int lod_index_00;
-  CVector3i *render_flags;
+  CVector3i *skinned_vertices;
   
   if (lod_index != this_ptr->cached_skinned_lod_index) {
     core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0(this_ptr,lod_index);
   }
-  render_flags = this_ptr->skinned_vertices_buffer;
+  skinned_vertices = this_ptr->skinned_vertices_buffer;
   lod_index_00 = this_ptr->cached_skinned_lod_index;
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr);
   core_skeleton_cpp_CDeformableModel_lightVertices_FUN_0059ab50
-            (this_ptr_00,lod_index_00,(int)render_flags);
+            (this_ptr_00,lod_index_00,skinned_vertices);
   return;
 }

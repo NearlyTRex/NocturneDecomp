@@ -6,14 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 93,
+    "complexity_score": 138,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 2,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 28,
-    "suspect_count": 6,
+    "suspect_count": 10,
     "suspect_types": [
-      "decompiler_intrinsic"
+      "decompiler_intrinsic",
+      "pointer_cast"
     ],
     "total_lines": 111
   },
@@ -168,9 +170,18 @@
   },
   "suspects": [
     {
+      "description": "Complex pointer cast",
+      "line": 22,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "piVar1 = (int *)((int)&this_ptr->vertex_list->x + iVar3);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 23,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*piVar1 = *piVar1 + (int)ROUND(ROUND(dVar4));",
       "type": "decompiler_intrinsic"
     },
@@ -178,13 +189,23 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 23,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*piVar1 = *piVar1 + (int)ROUND(ROUND(dVar4));",
       "type": "decompiler_intrinsic"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 24,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "piVar1 = (int *)((int)&this_ptr->vertex_list->y + iVar3);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 25,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*piVar1 = *piVar1 + (int)ROUND(ROUND(dVar5));",
       "type": "decompiler_intrinsic"
     },
@@ -192,21 +213,40 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 25,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*piVar1 = *piVar1 + (int)ROUND(ROUND(dVar5));",
       "type": "decompiler_intrinsic"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "*(int *)((int)&this_ptr->vertex_list->z + iVar3) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "*(int *)((int)&this_ptr->vertex_list->z + iVar3) + (int)ROUND(ROUND(dVar6));",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 27,
       "match": "ROUND",
-      "text": "*(int *)(iVar3 + 8 + (int)this_ptr->vertex_list) + (int)ROUND(ROUND(dVar6));",
+      "severity": "mild",
+      "text": "*(int *)((int)&this_ptr->vertex_list->z + iVar3) + (int)ROUND(ROUND(dVar6));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 27,
       "match": "ROUND",
-      "text": "*(int *)(iVar3 + 8 + (int)this_ptr->vertex_list) + (int)ROUND(ROUND(dVar6));",
+      "severity": "mild",
+      "text": "*(int *)((int)&this_ptr->vertex_list->z + iVar3) + (int)ROUND(ROUND(dVar6));",
       "type": "decompiler_intrinsic"
     }
   ]

@@ -195,8 +195,8 @@ void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *thi
           ((*(int *)(this_ptr->prey[2].is_transparent + 0x184) != 0 &&
            (*(int *)(this_ptr->neutral[2].is_transparent + 0x184) != 0)))))) {
         core_event_cpp_CEventList_executeCommands_FUN_004aabe0(g_CEventListPtr,this_ptr->win_event);
-        this_ptr->prey[5].previous_transform_state.orientation.y = 1.4013e-45;
-        this_ptr->neutral[5].previous_transform_state.orientation.y = 1.4013e-45;
+        this_ptr->prey[5].previous_transform_state.orientation.vec.y = 1.4013e-45;
+        this_ptr->neutral[5].previous_transform_state.orientation.vec.y = 1.4013e-45;
         this_ptr->puzzle_complete = 1;
         return;
       }

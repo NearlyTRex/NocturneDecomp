@@ -125,6 +125,7 @@
     "cross_reference_count": 0,
     "function_call_count": 36,
     "global_count": 58,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 464,
     "suspect_count": 39,
     "suspect_types": [
@@ -189,7 +190,7 @@
     {
       "addr": "0056d2d0",
       "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_0056d2d0"
+      "name": "core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0"
     },
     {
       "addr": "0056aa10",
@@ -1162,6 +1163,7 @@
       "description": "Deadcode elimination delayed",
       "line": 3,
       "match": "WARNING: Restarted to delay deadcode elimination",
+      "severity": "mild",
       "text": "/* WARNING: Restarted to delay deadcode elimination for space: stack */",
       "type": "warning_deadcode_restart"
     },
@@ -1169,6 +1171,7 @@
       "description": "Unknown/mangled field access",
       "line": 68,
       "match": "._8_4_",
+      "severity": "mild",
       "text": "local_108._8_4_ = 0.0;",
       "type": "unknown_field"
     },
@@ -1176,6 +1179,7 @@
       "description": "Unknown/mangled field access",
       "line": 69,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_108._4_4_ = 0.0;",
       "type": "unknown_field"
     },
@@ -1183,6 +1187,7 @@
       "description": "Unknown/mangled field access",
       "line": 70,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_108._0_4_ = 0.0;",
       "type": "unknown_field"
     },
@@ -1190,6 +1195,7 @@
       "description": "Unknown/mangled field access",
       "line": 73,
       "match": "._12_4_",
+      "severity": "mild",
       "text": "local_108._12_4_ = 0.0;",
       "type": "unknown_field"
     },
@@ -1197,6 +1203,7 @@
       "description": "Unknown/mangled field access",
       "line": 96,
       "match": "._12_4_",
+      "severity": "mild",
       "text": "local_108._12_4_ = local_a0;",
       "type": "unknown_field"
     },
@@ -1204,6 +1211,7 @@
       "description": "Unknown/mangled field access",
       "line": 115,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_108._0_4_ = local_58;",
       "type": "unknown_field"
     },
@@ -1211,6 +1219,7 @@
       "description": "Unknown/mangled field access",
       "line": 116,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_108._4_4_ = local_54;",
       "type": "unknown_field"
     },
@@ -1218,6 +1227,7 @@
       "description": "Unknown/mangled field access",
       "line": 117,
       "match": "._8_4_",
+      "severity": "mild",
       "text": "local_108._8_4_ = local_50;",
       "type": "unknown_field"
     },
@@ -1225,6 +1235,7 @@
       "description": "Direct stack address reference",
       "line": 121,
       "match": "&stack0x00000000",
+      "severity": "moderate",
       "text": "if (&stack0x00000000 != g_CDemonCameraInstance.camera_name + 0xcc) {",
       "type": "stack_ref"
     },
@@ -1232,6 +1243,7 @@
       "description": "Unknown/mangled field access",
       "line": 122,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "g_CDemonCameraInstance.base.position.x = local_108._0_4_;",
       "type": "unknown_field"
     },
@@ -1239,6 +1251,7 @@
       "description": "Unknown/mangled field access",
       "line": 123,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "g_CDemonCameraInstance.base.position.y = local_108._4_4_;",
       "type": "unknown_field"
     },
@@ -1246,6 +1259,7 @@
       "description": "Unknown/mangled field access",
       "line": 124,
       "match": "._8_4_",
+      "severity": "mild",
       "text": "g_CDemonCameraInstance.base.position.z = local_108._8_4_;",
       "type": "unknown_field"
     },
@@ -1253,6 +1267,7 @@
       "description": "Complex pointer cast",
       "line": 166,
       "match": "(CMatrix3x3f *)((int)",
+      "severity": "mild",
       "text": "local_14 = (CMatrix3x3f *)((int)(local_14 + 1) + 0x20);",
       "type": "pointer_cast"
     },
@@ -1260,6 +1275,7 @@
       "description": "Unknown/mangled field access",
       "line": 259,
       "match": "._8_4_",
+      "severity": "mild",
       "text": "local_ec._8_4_ = 0.0;",
       "type": "unknown_field"
     },
@@ -1267,6 +1283,7 @@
       "description": "Unknown/mangled field access",
       "line": 260,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_ec._4_4_ = 0.0;",
       "type": "unknown_field"
     },
@@ -1274,6 +1291,7 @@
       "description": "Unknown/mangled field access",
       "line": 261,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_ec._0_4_ = 0.0;",
       "type": "unknown_field"
     },
@@ -1281,6 +1299,7 @@
       "description": "Unknown/mangled field access",
       "line": 264,
       "match": "._12_4_",
+      "severity": "mild",
       "text": "local_ec._12_4_ = 0.0;",
       "type": "unknown_field"
     },
@@ -1288,6 +1307,7 @@
       "description": "Unknown/mangled field access",
       "line": 267,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_ec._0_4_ = (local_18->position).x;",
       "type": "unknown_field"
     },
@@ -1295,6 +1315,7 @@
       "description": "Unknown/mangled field access",
       "line": 268,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_ec._4_4_ = (local_18->position).y;",
       "type": "unknown_field"
     },
@@ -1302,6 +1323,7 @@
       "description": "Unknown/mangled field access",
       "line": 269,
       "match": "._8_4_",
+      "severity": "mild",
       "text": "local_ec._8_4_ = (local_18->position).z;",
       "type": "unknown_field"
     },
@@ -1309,6 +1331,7 @@
       "description": "Unknown/mangled field access",
       "line": 275,
       "match": "._12_4_",
+      "severity": "mild",
       "text": "local_ec._12_4_ = pCVar3->x;",
       "type": "unknown_field"
     },
@@ -1316,6 +1339,7 @@
       "description": "Unknown/mangled field access",
       "line": 281,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "(pSVar2->position).x = (float)local_ec._0_4_;",
       "type": "unknown_field"
     },
@@ -1323,6 +1347,7 @@
       "description": "Unknown/mangled field access",
       "line": 282,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "(pSVar2->position).y = (float)local_ec._4_4_;",
       "type": "unknown_field"
     },
@@ -1330,6 +1355,7 @@
       "description": "Unknown/mangled field access",
       "line": 283,
       "match": "._8_4_",
+      "severity": "mild",
       "text": "(pSVar2->position).z = (float)local_ec._8_4_;",
       "type": "unknown_field"
     },
@@ -1337,6 +1363,7 @@
       "description": "Undefined global data reference",
       "line": 373,
       "match": "DAT_03365cbc",
+      "severity": "mild",
       "text": "(&local_53c,\"Create new room\",DAT_03365cbc,0);",
       "type": "undefined_data"
     },
@@ -1344,6 +1371,7 @@
       "description": "Undefined global data reference",
       "line": 378,
       "match": "DAT_03365cbc",
+      "severity": "mild",
       "text": "DAT_03365cbc = iVar6;",
       "type": "undefined_data"
     },
@@ -1351,6 +1379,7 @@
       "description": "Unknown/mangled field access",
       "line": 383,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "(local_18->position).x = (float)local_108._0_4_;",
       "type": "unknown_field"
     },
@@ -1358,6 +1387,7 @@
       "description": "Unknown/mangled field access",
       "line": 384,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "(local_18->position).y = (float)local_108._4_4_;",
       "type": "unknown_field"
     },
@@ -1365,6 +1395,7 @@
       "description": "Unknown/mangled field access",
       "line": 385,
       "match": "._8_4_",
+      "severity": "mild",
       "text": "(local_18->position).z = (float)local_108._8_4_;",
       "type": "unknown_field"
     },
@@ -1372,6 +1403,7 @@
       "description": "Undefined global data reference",
       "line": 395,
       "match": "DAT_03365cbc",
+      "severity": "mild",
       "text": "local_18->reverb_preset = DAT_03365cbc;",
       "type": "undefined_data"
     },
@@ -1379,6 +1411,7 @@
       "description": "Direct stack address reference",
       "line": 426,
       "match": "&stack0xfffff374",
+      "severity": "moderate",
       "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff374);",
       "type": "stack_ref"
     },
@@ -1386,6 +1419,7 @@
       "description": "Direct stack address reference",
       "line": 427,
       "match": "&stack0xfffff374",
+      "severity": "moderate",
       "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff374,\"Outside\");",
       "type": "stack_ref"
     },
@@ -1393,6 +1427,7 @@
       "description": "Direct stack address reference",
       "line": 428,
       "match": "&stack0xfffff374",
+      "severity": "moderate",
       "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff374,\"Small\");",
       "type": "stack_ref"
     },
@@ -1400,6 +1435,7 @@
       "description": "Direct stack address reference",
       "line": 430,
       "match": "&stack0xfffff374",
+      "severity": "moderate",
       "text": "((CStrList *)&stack0xfffff374,\"Medium (e.g. Mausoleum)\");",
       "type": "stack_ref"
     },
@@ -1407,6 +1443,7 @@
       "description": "Direct stack address reference",
       "line": 432,
       "match": "&stack0xfffff374",
+      "severity": "moderate",
       "text": "((CStrList *)&stack0xfffff374,\"Large (e.g. Warehouse)\");",
       "type": "stack_ref"
     },
@@ -1414,6 +1451,7 @@
       "description": "Direct stack address reference",
       "line": 434,
       "match": "&stack0xfffff374",
+      "severity": "moderate",
       "text": "((CStrList *)&stack0xfffff374,\"Humongous\");",
       "type": "stack_ref"
     },
@@ -1421,6 +1459,7 @@
       "description": "Direct stack address reference",
       "line": 436,
       "match": "&stack0xfffff374",
+      "severity": "moderate",
       "text": "((CPickList *)&stack0xfffff374,\"Choose room size\",",
       "type": "stack_ref"
     },
@@ -1428,6 +1467,7 @@
       "description": "Direct stack address reference",
       "line": 441,
       "match": "&stack0xfffff374",
+      "severity": "moderate",
       "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff374,0);",
       "type": "stack_ref"
     }

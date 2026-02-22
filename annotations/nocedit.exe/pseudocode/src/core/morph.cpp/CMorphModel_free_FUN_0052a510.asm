@@ -11,8 +11,8 @@
 ;   core_morph.cpp_CMorph_free_FUN_0052b350 at 0052b367
 ;   core_morph.cpp_CMorph_setupModelFromDeformable_FUN_0052b430 at 0052b44d
 ;   core_morph.cpp_CMorph_setupModelFromKeyframed_FUN_0052b470 at 0052b48d
-;   core_morph.cpp_CMorph_setupModelFromPolygons_FUN_0052b370 at 0052b390
-;   core_morph.cpp_CMorph_setupModelFromPolygons_FUN_0052b3d0 at 0052b3f0
+;   core_morph.cpp_CMorph_setupModelFromQuadPolygons_FUN_0052b3d0 at 0052b3f0
+;   core_morph.cpp_CMorph_setupModelFromTriPolygons_FUN_0052b370 at 0052b390
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_morph_cpp_0063a0df

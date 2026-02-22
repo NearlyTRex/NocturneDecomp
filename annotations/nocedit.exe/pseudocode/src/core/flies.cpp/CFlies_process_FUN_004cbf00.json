@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 2,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 119,
     "suspect_count": 2,
     "suspect_types": [
@@ -237,6 +238,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 26,
       "match": "SQRT",
+      "severity": "mild",
       "text": "if (0.0 < SQRT(local_38.z * local_38.z + local_38.x * local_38.x + local_38.y * local_38.y)) {",
       "type": "decompiler_intrinsic"
     },
@@ -244,6 +246,7 @@
       "description": "Complex pointer cast",
       "line": 59,
       "match": "(CVector3f *)((int)",
+      "severity": "mild",
       "text": "pCVar4 = (CVector3f *)((int)(pCVar4 + 4) + 4);",
       "type": "pointer_cast"
     }

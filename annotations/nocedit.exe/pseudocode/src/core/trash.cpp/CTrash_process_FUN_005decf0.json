@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 259,
     "suspect_count": 3,
     "suspect_types": [
@@ -531,6 +532,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 176,
       "match": "SQRT",
+      "severity": "mild",
       "text": "fVar6 = SQRT(fVar2 * fVar2 + pCVar7->x * pCVar7->x + fVar6 * fVar6) * (float)0.15915494309644401;",
       "type": "decompiler_intrinsic"
     },
@@ -538,6 +540,7 @@
       "description": "Complex pointer cast",
       "line": 251,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar9 = (CMatrix3x4f *)((int)pCVar9 + ((uint)bVar11 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -545,6 +548,7 @@
       "description": "Complex pointer cast",
       "line": 252,
       "match": "(CMatrix3x3f *)((int)",
+      "severity": "mild",
       "text": "pCVar10 = (CMatrix3x3f *)((int)pCVar10 + ((uint)bVar11 * -2 + 1) * 4);",
       "type": "pointer_cast"
     }

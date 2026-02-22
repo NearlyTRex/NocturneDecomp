@@ -41,7 +41,7 @@ void __cdecl CKeyFramedModel::free(CKeyFramedModel *this_ptr);
 
 // Original: core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850
 // Address: 00477850
-void __cdecl CKeyFramedModel::prepareForRender(CKeyFramedModel *this_ptr,CKeyFramedModelInstance *instance,int frame_index,int render_flags);
+void __cdecl CKeyFramedModel::prepareForRender(CKeyFramedModel *this_ptr,int frame_index,CKeyFramedModelInstance *instance,int render_flags);
 
 // Original: core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_00477890
 // Address: 00477890
@@ -49,11 +49,11 @@ CVector3i * __cdecl CKeyFramedModel::getFrameVertices(CKeyFramedModel *this_ptr,
 
 // Original: core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004778d0
 // Address: 004778d0
-void __cdecl CKeyFramedModel::rotateAndLightVertices(CKeyFramedModel *this_ptr,CKeyFramedModelInstance *instance,int frame_index);
+void __cdecl CKeyFramedModel::rotateAndLightVertices(CKeyFramedModel *this_ptr,int frame_index,CKeyFramedModelInstance *instance);
 
 // Original: core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_00477980
 // Address: 00477980
-void __cdecl CKeyFramedModel::submitToRenderer(CKeyFramedModel *this_ptr,int frame_index,int render_flags);
+void __cdecl CKeyFramedModel::submitToRenderer(CKeyFramedModel *this_ptr,CKeyFramedModelInstance *instance,int render_flags);
 
 // Original: core_dmodel.cpp_CKeyFramedModel_allocate_FUN_00477bf0
 // Address: 00477bf0

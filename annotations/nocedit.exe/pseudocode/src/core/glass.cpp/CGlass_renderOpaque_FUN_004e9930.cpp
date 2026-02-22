@@ -9,7 +9,7 @@
 int __cdecl core_glass_cpp_CGlass_renderOpaque_FUN_004e9930(CGlass *this_ptr)
 
 {
-  CVector3i *input_vertices;
+  CVector3i *vertex_positions;
   longlong lVar1;
   CDemonRenderer *this_ptr_00;
   int iVar2;
@@ -32,9 +32,9 @@ int __cdecl core_glass_cpp_CGlass_renderOpaque_FUN_004e9930(CGlass *this_ptr)
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
               (g_CDemonRendererPtr2,&this_ptr->glass_texture);
     pCVar4 = this_ptr->broken_vertices;
-    input_vertices = this_ptr->render_vertices;
+    vertex_positions = this_ptr->render_vertices;
     iVar2 = 0;
-    pCVar3 = input_vertices;
+    pCVar3 = vertex_positions;
     if (0 < this_ptr->broken_vertex_count) {
       do {
         pCVar3->x = (int)ROUND(pCVar4->x * 256.0f);
@@ -46,7 +46,7 @@ int __cdecl core_glass_cpp_CGlass_renderOpaque_FUN_004e9930(CGlass *this_ptr)
       } while (iVar2 < this_ptr->broken_vertex_count);
     }
     core_set_cpp_CDemonSet_rotateVertices_FUN_0056e7c0
-              (g_CDemonSetPtr,this_ptr->broken_vertex_count,&input_vertices->x);
+              (g_CDemonSetPtr,this_ptr->broken_vertex_count,&vertex_positions->x);
     lVar1 = (longlong)(0xffff - (int)g_PerspectiveReciprocal) * (longlong)this_ptr->opacity;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
               (g_CDemonRendererPtr2,(uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
@@ -54,7 +54,7 @@ int __cdecl core_glass_cpp_CGlass_renderOpaque_FUN_004e9930(CGlass *this_ptr)
     iVar2 = 0;
     core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
               (g_CDemonSetPtr,this_ptr->broken_vertex_count,this_ptr->broken_polygon_count,
-               (SInputFace *)polygon_info,(int)input_vertices,4,0);
+               polygon_info,vertex_positions,4,(CVector3i *)0x0);
     pCVar5 = this_ptr;
     if (0 < this_ptr->broken_polygon_count) {
       do {

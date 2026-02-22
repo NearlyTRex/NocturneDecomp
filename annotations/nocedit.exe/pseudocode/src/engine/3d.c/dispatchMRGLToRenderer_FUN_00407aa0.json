@@ -35,6 +35,7 @@
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 12,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 111,
     "suspect_count": 7,
     "suspect_types": [
@@ -257,6 +258,7 @@
       "description": "Unresolved stack parameter",
       "line": 10,
       "match": "in_stack_fffffef0",
+      "severity": "moderate",
       "text": "SVertexBatch *in_stack_fffffef0;",
       "type": "stack_param"
     },
@@ -264,6 +266,7 @@
       "description": "Complex pointer cast",
       "line": 22,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar1 = (uint *)((int)g_RenderFaceArray + iVar4);",
       "type": "pointer_cast"
     },
@@ -271,6 +274,7 @@
       "description": "Unresolved stack parameter",
       "line": 43,
       "match": "in_stack_fffffef0",
+      "severity": "moderate",
       "text": "engine_3d_c_transformAndBufferVertices_FUN_00403840(cmd,in_stack_fffffef0);",
       "type": "stack_param"
     },
@@ -278,6 +282,7 @@
       "description": "Direct stack address reference",
       "line": 52,
       "match": "&stack0xfffffef0",
+      "severity": "moderate",
       "text": "(&stack0xfffffef0,\"Unknown primitive : %d\",(uint)(byte)cmd->primitive_type",
       "type": "stack_ref"
     },
@@ -285,6 +290,7 @@
       "description": "Direct stack address reference",
       "line": 56,
       "match": "&stack0xfffffef0",
+      "severity": "moderate",
       "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xfffffef0);",
       "type": "stack_ref"
     },
@@ -292,6 +298,7 @@
       "description": "Complex pointer cast",
       "line": 70,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar1 = (uint *)((int)g_RenderFaceArray + iVar5);",
       "type": "pointer_cast"
     },
@@ -299,6 +306,7 @@
       "description": "Complex pointer cast",
       "line": 111,
       "match": "(SVertexBatch *)((int)",
+      "severity": "mild",
       "text": "cmd = (SVertexBatch *)((int)&cmd->primitive_type + iVar4);",
       "type": "pointer_cast"
     }

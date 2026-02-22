@@ -5,6 +5,7 @@
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 8,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 112,
     "suspect_count": 12,
     "suspect_types": [
@@ -279,6 +280,7 @@
       "description": "Unaffected register variable",
       "line": 10,
       "match": "unaff_EBX",
+      "severity": "moderate",
       "text": "DWORD unaff_EBX;",
       "type": "unaffected_reg"
     },
@@ -286,6 +288,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 29,
       "match": "code *",
+      "severity": "moderate",
       "text": "if ((DAT_0068528c == (code *)0x0) ||",
       "type": "unresolved_funcptr"
     },
@@ -293,6 +296,7 @@
       "description": "Undefined global data reference",
       "line": 29,
       "match": "DAT_0068528c",
+      "severity": "mild",
       "text": "if ((DAT_0068528c == (code *)0x0) ||",
       "type": "undefined_data"
     },
@@ -300,6 +304,7 @@
       "description": "Undefined global data reference",
       "line": 45,
       "match": "DAT_006854ec",
+      "severity": "mild",
       "text": "extra_parameter = uVar4 & ~DAT_006854ec;",
       "type": "undefined_data"
     },
@@ -307,6 +312,7 @@
       "description": "Unaffected register variable",
       "line": 51,
       "match": "unaff_EBX",
+      "severity": "moderate",
       "text": "unaff_EBX = 4;",
       "type": "unaffected_reg"
     },
@@ -314,6 +320,7 @@
       "description": "Unaffected register variable",
       "line": 54,
       "match": "unaff_EBX",
+      "severity": "moderate",
       "text": "unaff_EBX = 2;",
       "type": "unaffected_reg"
     },
@@ -321,6 +328,7 @@
       "description": "Unaffected register variable",
       "line": 58,
       "match": "unaff_EBX",
+      "severity": "moderate",
       "text": "unaff_EBX = 1;",
       "type": "unaffected_reg"
     },
@@ -328,6 +336,7 @@
       "description": "Direct stack address reference",
       "line": 64,
       "match": "&stack0xffffffd8",
+      "severity": "moderate",
       "text": "(LPSECURITY_ATTRIBUTES)&stack0xffffffd8,dwCreationDisposition,",
       "type": "stack_ref"
     },
@@ -335,6 +344,7 @@
       "description": "Unaffected register variable",
       "line": 70,
       "match": "unaff_EBX",
+      "severity": "moderate",
       "text": "unaff_EBX,dwFlagsAndAttributes,(HANDLE)0x0);",
       "type": "unaffected_reg"
     },
@@ -342,6 +352,7 @@
       "description": "Undefined global data reference",
       "line": 93,
       "match": "DAT_0068528c",
+      "severity": "mild",
       "text": "(*DAT_0068528c)(0,handle_index);",
       "type": "undefined_data"
     },

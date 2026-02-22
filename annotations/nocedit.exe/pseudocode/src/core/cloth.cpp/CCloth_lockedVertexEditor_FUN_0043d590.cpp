@@ -13,10 +13,10 @@ void __cdecl core_cloth_cpp_CCloth_lockedVertexEditor_FUN_0043d590(CCloth *this_
   SRenderVertex *pSVar2;
   CSpotView *pCVar3;
   int iVar4;
-  CCloth *pCVar5;
-  int iVar6;
-  CVector3f *point;
+  int iVar5;
+  CCloth *pCVar6;
   int iVar7;
+  CVector3f *point;
   int iVar8;
   char *text;
   CBoundingBox3D local_84;
@@ -60,14 +60,14 @@ void __cdecl core_cloth_cpp_CCloth_lockedVertexEditor_FUN_0043d590(CCloth *this_
     local_84.max.y = this_ptr->vertices[0].position.y;
     local_84.max.z = this_ptr->vertices[0].position.z;
   }
-  iVar6 = 1;
+  iVar7 = 1;
   if (1 < (this_ptr->model).vertex_count) {
     point = &this_ptr->vertices[1].position;
     do {
-      iVar6 = iVar6 + 1;
+      iVar7 = iVar7 + 1;
       core_box_cpp_CBoundingBox3D_expand_FUN_00420240(&local_84,point);
       point = (CVector3f *)&point[0x17].z;
-    } while (iVar6 < (this_ptr->model).vertex_count);
+    } while (iVar7 < (this_ptr->model).vertex_count);
   }
   pCVar3 = g_CSpotViewPtr;
   local_4c = local_84.min.x + local_84.max.x;
@@ -90,14 +90,14 @@ void __cdecl core_cloth_cpp_CCloth_lockedVertexEditor_FUN_0043d590(CCloth *this_
               (g_CDemonRendererPtr2,&g_ZeroVector);
     local_18 = 0;
     if (0 < (this_ptr->model).vertex_count) {
-      iVar6 = 0;
+      iVar7 = 0;
       iVar8 = 0;
       do {
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   ((SProjectedVertex *)
                    ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x
-                   + iVar8),(CVector3i *)((int)(this_ptr->model).vertex_list + iVar6));
-        iVar6 = iVar6 + 0xc;
+                   + iVar8),(CVector3i *)((int)&((this_ptr->model).vertex_list)->x + iVar7));
+        iVar7 = iVar7 + 0xc;
         iVar8 = iVar8 + 0x30;
         local_18 = local_18 + 1;
       } while (local_18 < (this_ptr->model).vertex_count);
@@ -108,17 +108,18 @@ void __cdecl core_cloth_cpp_CCloth_lockedVertexEditor_FUN_0043d590(CCloth *this_
     if (0 < (this_ptr->model).poly_count) {
       local_1c = 0;
       do {
-        iVar7 = (int)(this_ptr->model).poly_vert_list + local_1c;
-        iVar6 = 0;
-        iVar8 = iVar7;
-        if (0 < *(int *)(iVar7 + 4)) {
+        iVar4 = (int)&(((SMRGLPrimitiveQuad *)(((this_ptr->model).poly_vert_list)->vertices + -2))->
+                      base).base.type + local_1c;
+        iVar7 = 0;
+        iVar8 = iVar4;
+        if (0 < *(int *)(iVar4 + 4)) {
           do {
-            iVar6 = iVar6 + 1;
+            iVar7 = iVar7 + 1;
             engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0
                       (g_CDemonRendererPtr2,*(int *)(iVar8 + 0x18),
-                       *(int *)((iVar6 % *(int *)(iVar7 + 4)) * 0xc + 0x18 + iVar7));
+                       *(int *)((iVar7 % *(int *)(iVar4 + 4)) * 0xc + 0x18 + iVar4));
             iVar8 = iVar8 + 0xc;
-          } while (iVar6 < *(int *)(iVar7 + 4));
+          } while (iVar7 < *(int *)(iVar4 + 4));
         }
         local_1c = local_1c + 0x48;
         local_14 = local_14 + 1;
@@ -144,12 +145,12 @@ void __cdecl core_cloth_cpp_CCloth_lockedVertexEditor_FUN_0043d590(CCloth *this_
         local_2c = g_MouseY;
       }
     }
-    iVar6 = 0;
+    iVar7 = 0;
     if (0 < (this_ptr->model).vertex_count) {
       iVar8 = 0;
-      pCVar5 = this_ptr;
+      pCVar6 = this_ptr;
       do {
-        if (pCVar5->vertices[0].locked == 0) {
+        if (pCVar6->vertices[0].locked == 0) {
           g_ActiveRenderColor = 4;
         }
         else {
@@ -157,14 +158,14 @@ void __cdecl core_cloth_cpp_CCloth_lockedVertexEditor_FUN_0043d590(CCloth *this_
         }
         pSVar2 = g_CDemonRendererPtr2->vertex_buffer_ptr;
         if ((*(byte *)((int)&(pSVar2->projected_vertex).screen_x + iVar8 + 3) & 0x80) == 0) {
-          iVar4 = *(int *)((int)&(pSVar2->projected_vertex).screen_x + iVar8) >> 0x10;
-          iVar7 = *(int *)((int)&(pSVar2->projected_vertex).screen_y + iVar8) >> 0x10;
-          if ((((local_24 <= iVar4) && (iVar4 <= local_28)) && (local_2c <= iVar7)) &&
-             (iVar7 <= local_20)) {
+          iVar5 = *(int *)((int)&(pSVar2->projected_vertex).screen_x + iVar8) >> 0x10;
+          iVar4 = *(int *)((int)&(pSVar2->projected_vertex).screen_y + iVar8) >> 0x10;
+          if ((((local_24 <= iVar5) && (iVar5 <= local_28)) && (local_2c <= iVar4)) &&
+             (iVar4 <= local_20)) {
             if (g_MouseButtonFlags.dword == 0) {
-              pCVar5->vertices[0].locked = local_30;
+              pCVar6->vertices[0].locked = local_30;
             }
-            if (pCVar5->vertices[0].locked == 0) {
+            if (pCVar6->vertices[0].locked == 0) {
               g_ActiveRenderColor = 0xfc;
             }
             else {
@@ -172,56 +173,56 @@ void __cdecl core_cloth_cpp_CCloth_lockedVertexEditor_FUN_0043d590(CCloth *this_
             }
           }
         }
-        core_cloth_cpp_drawVertexMarker_FUN_0043c6e0(iVar6);
+        core_cloth_cpp_drawVertexMarker_FUN_0043c6e0(iVar7);
         iVar8 = iVar8 + 0x30;
-        pCVar5 = (CCloth *)&(pCVar5->model).env_map_opac_list;
-        iVar6 = iVar6 + 1;
-      } while (iVar6 < (this_ptr->model).vertex_count);
+        pCVar6 = (CCloth *)&(pCVar6->model).env_map_opac_list;
+        iVar7 = iVar7 + 1;
+      } while (iVar7 < (this_ptr->model).vertex_count);
     }
-    if ((local_3c != 0) && (iVar6 = 0, 0 < (this_ptr->model).vertex_count)) {
+    if ((local_3c != 0) && (iVar7 = 0, 0 < (this_ptr->model).vertex_count)) {
       iVar8 = 0;
       do {
-        iVar7 = *(int *)(iVar8 + (int)this_ptr->vertex_sort_buffer);
+        iVar4 = *(int *)(iVar8 + (int)this_ptr->vertex_sort_buffer);
         pSVar2 = g_CDemonRendererPtr2->vertex_buffer_ptr;
-        if ((int)(pSVar2[iVar7].projected_vertex.screen_x & -0x80000000) == 0) {
-          iVar4 = pSVar2[iVar7].projected_vertex.screen_x;
-          local_40 = pSVar2[iVar7].projected_vertex.screen_y >> 0x10;
-          _sprintf(local_6c,"%d",iVar6);
-          engine_2d_c_drawText_FUN_00401fd0(local_6c,iVar4 >> 0x10,local_40);
+        if ((int)(pSVar2[iVar4].projected_vertex.screen_x & -0x80000000) == 0) {
+          iVar5 = pSVar2[iVar4].projected_vertex.screen_x;
+          local_40 = pSVar2[iVar4].projected_vertex.screen_y >> 0x10;
+          _sprintf(local_6c,"%d",iVar7);
+          engine_2d_c_drawText_FUN_00401fd0(local_6c,iVar5 >> 0x10,local_40);
         }
-        iVar6 = iVar6 + 1;
+        iVar7 = iVar7 + 1;
         iVar8 = iVar8 + 4;
-      } while (iVar6 < (this_ptr->model).vertex_count);
+      } while (iVar7 < (this_ptr->model).vertex_count);
     }
     if ((g_MouseButtonFlags.dword == 0) && (-1 < local_24)) {
       iVar8 = 0;
-      iVar6 = 0;
-      pCVar5 = this_ptr;
+      iVar7 = 0;
+      pCVar6 = this_ptr;
       if (0 < (this_ptr->model).vertex_count) {
         do {
-          if (pCVar5->vertices[0].locked != 0) {
-            iVar6 = iVar6 + 1;
+          if (pCVar6->vertices[0].locked != 0) {
+            iVar7 = iVar7 + 1;
           }
           iVar8 = iVar8 + 1;
-          pCVar5 = (CCloth *)&(pCVar5->model).env_map_opac_list;
+          pCVar6 = (CCloth *)&(pCVar6->model).env_map_opac_list;
         } while (iVar8 < (this_ptr->model).vertex_count);
       }
-      if (iVar6 < 0x65) {
+      if (iVar7 < 0x65) {
         iVar8 = (this_ptr->model).vertex_count;
         this_ptr->locked_vertex_count = 0;
-        iVar7 = 0;
-        pCVar5 = this_ptr;
+        iVar4 = 0;
+        pCVar6 = this_ptr;
         if (0 < iVar8) {
           do {
-            if (pCVar5->vertices[0].locked != 0) {
-              this_ptr->locked_vertex_indices[this_ptr->locked_vertex_count] = iVar7;
+            if (pCVar6->vertices[0].locked != 0) {
+              this_ptr->locked_vertex_indices[this_ptr->locked_vertex_count] = iVar4;
               this_ptr->locked_vertex_count = this_ptr->locked_vertex_count + 1;
             }
-            iVar7 = iVar7 + 1;
-            pCVar5 = (CCloth *)&(pCVar5->model).env_map_opac_list;
-          } while (iVar7 < (this_ptr->model).vertex_count);
+            iVar4 = iVar4 + 1;
+            pCVar6 = (CCloth *)&(pCVar6->model).env_map_opac_list;
+          } while (iVar4 < (this_ptr->model).vertex_count);
         }
-        if (iVar6 != this_ptr->locked_vertex_count) {
+        if (iVar7 != this_ptr->locked_vertex_count) {
           g_CurrentFilename = "..\\core\\cloth.cpp";
           g_CurrentLineNumber = 0x8ec;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Bug!");
@@ -230,23 +231,23 @@ void __cdecl core_cloth_cpp_CCloth_lockedVertexEditor_FUN_0043d590(CCloth *this_
       else {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                   (g_CEditorToolsPtr,"Can't lock this many vertices!");
-        iVar6 = 0;
-        pCVar5 = this_ptr;
+        iVar7 = 0;
+        pCVar6 = this_ptr;
         if (0 < (this_ptr->model).vertex_count) {
           do {
-            pCVar5->vertices[0].locked = 0;
-            iVar6 = iVar6 + 1;
-            pCVar5 = (CCloth *)&(pCVar5->model).env_map_opac_list;
-          } while (iVar6 < (this_ptr->model).vertex_count);
+            pCVar6->vertices[0].locked = 0;
+            iVar7 = iVar7 + 1;
+            pCVar6 = (CCloth *)&(pCVar6->model).env_map_opac_list;
+          } while (iVar7 < (this_ptr->model).vertex_count);
         }
-        iVar6 = 0;
-        pCVar5 = this_ptr;
+        iVar7 = 0;
+        pCVar6 = this_ptr;
         if (0 < this_ptr->locked_vertex_count) {
           do {
-            this_ptr->vertices[pCVar5->locked_vertex_indices[0]].locked = 1;
-            iVar6 = iVar6 + 1;
-            pCVar5 = (CCloth *)((pCVar5->model).model_filename + 4);
-          } while (iVar6 < this_ptr->locked_vertex_count);
+            this_ptr->vertices[pCVar6->locked_vertex_indices[0]].locked = 1;
+            iVar7 = iVar7 + 1;
+            pCVar6 = (CCloth *)((pCVar6->model).model_filename + 4);
+          } while (iVar7 < this_ptr->locked_vertex_count);
         }
       }
       local_34 = -1;
@@ -265,14 +266,14 @@ void __cdecl core_cloth_cpp_CCloth_lockedVertexEditor_FUN_0043d590(CCloth *this_
     if (-1 < local_24) {
       g_ActiveRenderColor =
            shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(g_CEditorToolsPtr);
-      iVar7 = local_20;
+      iVar4 = local_20;
       engine_2d_c_drawLine_FUN_004011b0(local_24,local_2c,local_24,local_20);
       iVar8 = local_28;
-      iVar6 = local_2c;
-      engine_2d_c_drawLine_FUN_004011b0(local_28,local_2c,local_28,iVar7);
-      iVar7 = local_24;
-      engine_2d_c_drawLine_FUN_004011b0(local_24,iVar6,iVar8,iVar6);
-      engine_2d_c_drawLine_FUN_004011b0(iVar7,local_20,iVar8,local_20);
+      iVar7 = local_2c;
+      engine_2d_c_drawLine_FUN_004011b0(local_28,local_2c,local_28,iVar4);
+      iVar4 = local_24;
+      engine_2d_c_drawLine_FUN_004011b0(local_24,iVar7,iVar8,iVar7);
+      engine_2d_c_drawLine_FUN_004011b0(iVar4,local_20,iVar8,local_20);
     }
     if ((local_34 < 0) && (g_MouseButtonFlags.dword != 0)) {
       local_34 = g_MouseX;
@@ -280,14 +281,14 @@ void __cdecl core_cloth_cpp_CCloth_lockedVertexEditor_FUN_0043d590(CCloth *this_
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
-    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_L);
-    if (iVar6 != 0) {
+    iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_L);
+    if (iVar7 != 0) {
       local_30 = (uint)(local_30 == 0);
     }
-    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
-    if (iVar6 != 0) break;
-    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_N);
-    if (iVar6 != 0) {
+    iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
+    if (iVar7 != 0) break;
+    iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_N);
+    if (iVar7 != 0) {
       local_3c = (uint)(local_3c == 0);
     }
   }

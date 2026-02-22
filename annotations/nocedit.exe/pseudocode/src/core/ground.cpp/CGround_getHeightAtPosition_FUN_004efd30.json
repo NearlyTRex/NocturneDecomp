@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 82,
     "suspect_count": 5,
     "suspect_types": [
@@ -163,6 +164,7 @@
       "description": "Complex pointer cast",
       "line": 49,
       "match": "(short *)((int)",
+      "severity": "mild",
       "text": "iVar10 = this_ptr->height_scale * (int)*(short *)((int)pvVar1 + (iVar9 + uVar11) * 4);",
       "type": "pointer_cast"
     },
@@ -170,6 +172,7 @@
       "description": "Complex pointer cast",
       "line": 52,
       "match": "(short *)((int)",
+      "severity": "mild",
       "text": "((int)*(short *)((int)pvVar1 + (uVar12 + iVar9) * 4) * this_ptr->height_scale - iVar10);",
       "type": "pointer_cast"
     },
@@ -177,6 +180,7 @@
       "description": "Complex pointer cast",
       "line": 60,
       "match": "(short *)((int)",
+      "severity": "mild",
       "text": "iVar9 = this_ptr->height_scale * (int)*(short *)((int)pvVar1 + (uVar12 + iVar8) * 4);",
       "type": "pointer_cast"
     },
@@ -184,6 +188,7 @@
       "description": "Complex pointer cast",
       "line": 61,
       "match": "(short *)((int)",
+      "severity": "mild",
       "text": "iVar8 = (int)*(short *)((int)pvVar1 + ((this_ptr->width_minus_1 & uVar11) + iVar8) * 4) *",
       "type": "pointer_cast"
     },
@@ -191,6 +196,7 @@
       "description": "Complex pointer cast",
       "line": 67,
       "match": "(short *)((int)",
+      "severity": "mild",
       "text": "(int)*(short *)((int)pvVar1 +",
       "type": "pointer_cast"
     }

@@ -13,7 +13,7 @@ CVector3f * __cdecl core_lever_cpp_CLever_FUN_00504dd0(CLever *this_ptr)
 {
   CKeyFramedModelInstance *this_ptr_00;
   CKeyFramedModel *pCVar1;
-  CVector3i **ppCVar2;
+  CVector3i *pCVar2;
   CVector3f *in_stack_00000008;
   CVector3f local_24;
   int local_18;
@@ -21,15 +21,15 @@ CVector3f * __cdecl core_lever_cpp_CLever_FUN_00504dd0(CLever *this_ptr)
   
   this_ptr_00 = &this_ptr->model;
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(this_ptr_00);
-  ppCVar2 = pCVar1->vertex_list;
+  pCVar2 = pCVar1->vertex_list;
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(this_ptr_00);
   local_14 = pCVar1->frame_count + -1;
   local_18 = (int)ROUND(ROUND((float)local_14 * this_ptr->param));
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(this_ptr_00);
-  ppCVar2 = ppCVar2 + (this_ptr->end_vertex_index + pCVar1->vertex_count * local_18) * 3;
-  local_24.x = (float)(int)*ppCVar2 * 0.00390625f;
-  local_24.y = (float)(int)ppCVar2[1] * 0.00390625f;
-  local_24.z = (float)(int)ppCVar2[2] * 0.00390625f;
+  pCVar2 = pCVar2 + this_ptr->end_vertex_index + pCVar1->vertex_count * local_18;
+  local_24.x = (float)pCVar2->x * 0.00390625f;
+  local_24.y = (float)pCVar2->y * 0.00390625f;
+  local_24.z = (float)pCVar2->z * 0.00390625f;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
             (&this_ptr->base,in_stack_00000008,&local_24);
   return in_stack_00000008;

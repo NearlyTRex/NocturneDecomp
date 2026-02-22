@@ -69,7 +69,7 @@
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
-;   core_set.cpp_CDemonSet_FUN_0056d380
+;   core_set.cpp_CDemonSet_setLightingParameters_FUN_0056d380
 ;   engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0
 ;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
@@ -159,8 +159,8 @@ section .text
     PUSH ESI                            ; 004c0f46
     MOV EAX,[0x006810c8]                ; 004c0f47 | g_CDemonSetPtr | g_CDemonSetInstance
     PUSH EAX                            ; 004c0f4c | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_0056d380 ; 004c0f4d
-        ;   XREF to: 0056d380 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d380(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_setLightingParameters_FUN_0056d380 ; 004c0f4d
+        ;   XREF to: 0056d380 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setLightingParameters_FUN_0056d380(CDemonSet * this_ptr, CVector3f * position, UOrientationVector * orientation, CVector3f * aabb_min, ...)
     ADD ESP,0x18                        ; 004c0f52
     PUSH -0x1                           ; 004c0f55
     PUSH 0x0                            ; 004c0f57

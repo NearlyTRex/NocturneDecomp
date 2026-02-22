@@ -13,15 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 245,
+    "complexity_score": 260,
     "cross_reference_count": 2,
     "function_call_count": 13,
     "global_count": 15,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 110,
-    "suspect_count": 12,
+    "suspect_count": 13,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
+      "stack_alignment_array",
       "stack_param"
     ],
     "total_lines": 310
@@ -370,6 +372,7 @@
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "void *in_stack_00000008;",
       "type": "stack_param"
     },
@@ -377,13 +380,23 @@
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "int in_stack_0000000c;",
       "type": "stack_param"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 13,
+      "match": "aiStackY_1038",
+      "severity": "moderate",
+      "text": "int aiStackY_1038 [1015];",
+      "type": "stack_alignment_array"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 27,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "memset(in_stack_00000008,0,g_WindowWidth * g_WindowHeight);",
       "type": "stack_param"
     },
@@ -391,6 +404,7 @@
       "description": "Complex pointer cast",
       "line": 45,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_44 + (uint)bVar6 * -8 + 4) =",
       "type": "pointer_cast"
     },
@@ -398,6 +412,7 @@
       "description": "Complex pointer cast",
       "line": 46,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_38 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -405,6 +420,7 @@
       "description": "Complex pointer cast",
       "line": 47,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_44 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
       "type": "pointer_cast"
     },
@@ -412,6 +428,7 @@
       "description": "Complex pointer cast",
       "line": 48,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_38 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
       "type": "pointer_cast"
     },
@@ -419,6 +436,7 @@
       "description": "Complex pointer cast",
       "line": 53,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "piVar4[(uint)bVar6 * -2 + 1] = *(int *)((int)&local_50 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -426,6 +444,7 @@
       "description": "Complex pointer cast",
       "line": 55,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)&local_50 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
       "type": "pointer_cast"
     },
@@ -433,6 +452,7 @@
       "description": "Unresolved stack parameter",
       "line": 70,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "if (local_14 != in_stack_0000000c) {",
       "type": "stack_param"
     },
@@ -440,6 +460,7 @@
       "description": "Unresolved stack parameter",
       "line": 90,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "pcVar3 = (char *)(g_WindowWidth * iVar1 + iVar5 + (int)in_stack_00000008);",
       "type": "stack_param"
     },

@@ -5,6 +5,7 @@
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 1,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 6,
     "suspect_count": 2,
     "suspect_types": [
@@ -93,6 +94,7 @@
       "description": "Direct stack address reference",
       "line": 8,
       "match": "&stack0xfffffffc",
+      "severity": "moderate",
       "text": "return (int)(&stack0xfffffffc + -pTVar1->stack_limit);",
       "type": "stack_ref"
     },

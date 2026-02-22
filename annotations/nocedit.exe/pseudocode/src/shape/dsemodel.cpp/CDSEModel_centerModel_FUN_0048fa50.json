@@ -13,14 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 217,
-    "complexity_score": 109,
+    "complexity_score": 159,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 64,
-    "suspect_count": 4,
+    "suspect_count": 8,
     "suspect_types": [
-      "decompiler_intrinsic"
+      "decompiler_intrinsic",
+      "double_reconstruction",
+      "sub84_truncation"
     ],
     "total_lines": 281
   },
@@ -207,30 +210,66 @@
   },
   "suspects": [
     {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 42,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "local_34 = SUB84(dVar3,0);",
+      "type": "sub84_truncation"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 42,
       "match": "SUB84",
+      "severity": "mild",
       "text": "local_34 = SUB84(dVar3,0);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 47,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "if (dVar3 < (double)CONCAT44(uStack_48,local_4c)) {",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 47,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "if (dVar3 < (double)CONCAT44(uStack_48,local_4c)) {",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 63,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "((dVar6 - (double)CONCAT44(uStack_48,local_4c)) * 0.5 +",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 63,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "((dVar6 - (double)CONCAT44(uStack_48,local_4c)) * 0.5 +",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 64,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(double)CONCAT44(uStack_48,local_4c)));",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 64,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(double)CONCAT44(uStack_48,local_4c)));",
       "type": "decompiler_intrinsic"
     }

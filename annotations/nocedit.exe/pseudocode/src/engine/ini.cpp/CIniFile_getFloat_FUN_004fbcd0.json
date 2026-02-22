@@ -29,6 +29,7 @@
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 9,
     "suspect_count": 5,
     "suspect_types": [
@@ -186,6 +187,7 @@
       "description": "Unresolved stack parameter",
       "line": 5,
       "match": "in_stack_ffffff98",
+      "severity": "moderate",
       "text": "char *in_stack_ffffff98;",
       "type": "stack_param"
     },
@@ -193,6 +195,7 @@
       "description": "Direct stack address reference",
       "line": 7,
       "match": "&stack0xffffff98",
+      "severity": "moderate",
       "text": "_sprintf(&stack0xffffff98,\"%g\",(double)*output);",
       "type": "stack_ref"
     },
@@ -200,6 +203,7 @@
       "description": "Unresolved stack parameter",
       "line": 9,
       "match": "in_stack_ffffff98",
+      "severity": "moderate",
       "text": "(this_ptr,key,&stack0xffffff98,100,in_stack_ffffff98);",
       "type": "stack_param"
     },
@@ -207,6 +211,7 @@
       "description": "Direct stack address reference",
       "line": 9,
       "match": "&stack0xffffff98",
+      "severity": "moderate",
       "text": "(this_ptr,key,&stack0xffffff98,100,in_stack_ffffff98);",
       "type": "stack_ref"
     },
@@ -214,6 +219,7 @@
       "description": "Direct stack address reference",
       "line": 10,
       "match": "&stack0xffffff98",
+      "severity": "moderate",
       "text": "sscanf(&stack0xffffff98,\"%f\");",
       "type": "stack_ref"
     }

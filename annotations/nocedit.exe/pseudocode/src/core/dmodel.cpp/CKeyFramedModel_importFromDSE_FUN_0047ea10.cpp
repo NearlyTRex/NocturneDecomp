@@ -36,15 +36,15 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10(CKeyFram
     iVar4 = 0;
     iVar5 = 0;
     do {
-      *(int *)((int)this_ptr->vertex_list + iVar5) =
+      *(int *)((int)&this_ptr->vertex_list->x + iVar5) =
            (int)ROUND(ROUND((double)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar4) * dVar3))
       ;
-      *(int *)((int)this_ptr->vertex_list + iVar5 + 4) =
+      *(int *)((int)&this_ptr->vertex_list->y + iVar5) =
            (int)ROUND(ROUND((double)*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar4) * dVar3))
       ;
       pfVar1 = (float *)((int)&g_LoadedVertices[0].vertex.z + iVar4);
       iVar4 = iVar4 + 0x14;
-      *(int *)((int)this_ptr->vertex_list + iVar5 + 8) = (int)ROUND(ROUND((double)*pfVar1 * dVar3));
+      *(int *)((int)&this_ptr->vertex_list->z + iVar5) = (int)ROUND(ROUND((double)*pfVar1 * dVar3));
       iVar6 = iVar6 + 1;
       iVar5 = iVar5 + 0xc;
     } while (iVar6 < this_ptr->vertex_count);
@@ -58,18 +58,19 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10(CKeyFram
     do {
       iVar6 = local_10 * 0x184;
       iVar5 = 0;
-      *(uint *)((int)this_ptr->poly_vert_list + local_14 + 4) =
+      *(uint *)((int)this_ptr->poly_vert_list->vertices + local_14 + -0x14) =
            g_ModelPolygonData[local_10].vertex_indices_count;
       dVar3 = 65536;
       iVar4 = 0;
       if (0 < (int)g_ModelPolygonData[local_10].vertex_indices_count) {
         do {
-          *(uint *)((int)this_ptr->poly_vert_list + iVar4 + local_14 + 0x18) =
+          *(uint *)
+           ((int)&this_ptr->poly_vert_list->vertices[0].vertex_index + iVar4 + local_14) =
                *(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar6);
-          *(int *)((int)this_ptr->poly_vert_list + iVar4 + local_14 + 0x1c) =
+          *(int *)((int)&this_ptr->poly_vert_list->vertices[0].texture_u + iVar4 + local_14) =
                (int)ROUND(ROUND((double)*(float *)((int)g_ModelPolygonData[0].uv_u + iVar6) * dVar3)
                          );
-          *(int *)((int)this_ptr->poly_vert_list + iVar4 + local_14 + 0x20) =
+          *(int *)((int)&this_ptr->poly_vert_list->vertices[0].texture_v + iVar4 + local_14) =
                (int)ROUND(ROUND((double)*(float *)((int)g_ModelPolygonData[0].uv_v + iVar6) * dVar3)
                          );
           iVar6 = iVar6 + 4;

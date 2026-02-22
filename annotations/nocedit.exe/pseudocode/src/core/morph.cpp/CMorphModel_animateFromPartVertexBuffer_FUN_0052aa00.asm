@@ -1,14 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_morph_cpp_CMorphModel_animateFromPartVertexBuffer_FUN_0052aa00(CMorphModel *this_ptr,int part_index,CVector3i *vertex_buffer,int start_offset,int vertex_count)
+; void __cdecl core_morph_cpp_CMorphModel_animateFromPartVertexBuffer_FUN_0052aa00(CMorphModel *this_ptr,int part_index,CVector3i *vertex_buffer)
 ;
 ; Parameters:
 ; CMorphModel *    Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   part_index
 ; CVector3i *      Stack[0xc]:4   vertex_buffer
-; int              Stack[0x10]:4   start_offset
-; int              Stack[0x14]:4   vertex_count
 ;
 ; XREF[1]:
 ;   core_morph.cpp_CMorph_updateModelVertices_FUN_0052b5c0 at 0052b5e7

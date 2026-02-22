@@ -13,15 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 177,
+    "complexity_score": 192,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 19,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 52,
-    "suspect_count": 11,
+    "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
+      "stack_alignment_array",
       "stack_ref"
     ],
     "total_lines": 119
@@ -275,9 +277,18 @@
   },
   "suspects": [
     {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 13,
+      "match": "aiStackY_1000",
+      "severity": "moderate",
+      "text": "int aiStackY_1000 [997];",
+      "type": "stack_alignment_array"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 33,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&g_BillboardCameraRight + (uint)bVar6 * -8 + 4) =",
       "type": "pointer_cast"
     },
@@ -285,6 +296,7 @@
       "description": "Complex pointer cast",
       "line": 34,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_18 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -292,6 +304,7 @@
       "description": "Complex pointer cast",
       "line": 36,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_18 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
       "type": "pointer_cast"
     },
@@ -299,6 +312,7 @@
       "description": "Complex pointer cast",
       "line": 42,
       "match": "(CMatrix3x3i *)((int)",
+      "severity": "mild",
       "text": "pCVar3 = (CMatrix3x3i *)((int)pCVar3 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -306,6 +320,7 @@
       "description": "Direct stack address reference",
       "line": 46,
       "match": "&stack0xffffff98",
+      "severity": "moderate",
       "text": "piVar5 = (int *)&stack0xffffff98;",
       "type": "stack_ref"
     },
@@ -313,6 +328,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 52,
       "match": "ROUND",
+      "severity": "mild",
       "text": "g_BillboardCameraUp.x = (int)ROUND(ROUND((double)local_60 * -65536));",
       "type": "decompiler_intrinsic"
     },
@@ -320,6 +336,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 52,
       "match": "ROUND",
+      "severity": "mild",
       "text": "g_BillboardCameraUp.x = (int)ROUND(ROUND((double)local_60 * -65536));",
       "type": "decompiler_intrinsic"
     },
@@ -327,6 +344,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 53,
       "match": "ROUND",
+      "severity": "mild",
       "text": "g_BillboardCameraUp.y = (int)ROUND(ROUND((double)local_54 * -65536));",
       "type": "decompiler_intrinsic"
     },
@@ -334,6 +352,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 53,
       "match": "ROUND",
+      "severity": "mild",
       "text": "g_BillboardCameraUp.y = (int)ROUND(ROUND((double)local_54 * -65536));",
       "type": "decompiler_intrinsic"
     },
@@ -341,6 +360,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 54,
       "match": "ROUND",
+      "severity": "mild",
       "text": "g_BillboardCameraUp.z = (int)ROUND(ROUND((double)local_48 * -65536));",
       "type": "decompiler_intrinsic"
     },
@@ -348,6 +368,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 54,
       "match": "ROUND",
+      "severity": "mild",
       "text": "g_BillboardCameraUp.z = (int)ROUND(ROUND((double)local_48 * -65536));",
       "type": "decompiler_intrinsic"
     }

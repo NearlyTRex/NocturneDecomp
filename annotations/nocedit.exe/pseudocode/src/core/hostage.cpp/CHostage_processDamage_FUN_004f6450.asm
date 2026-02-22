@@ -8,7 +8,7 @@
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
-;   CDemonActor* PTR_00821ff4
+;   CDemonActor* g_CurrentProcessingActor
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -55,7 +55,7 @@ section .text
     PUSH EDX                            ; 004f64a0
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00 ; 004f64a1
         ;   XREF to: 0052db00 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00(CMotionController * this_ptr, int desired_state_index, int force_immediate)
-    MOV EAX,[0x00821ff4]                ; 004f64a6 | PTR_00821ff4
+    MOV EAX,[0x00821ff4]                ; 004f64a6 | g_CurrentProcessingActor
     MOV dword ptr [EBX + 0x1faec],0x40400000 ; 004f64ab
     ADD ESP,0xc                         ; 004f64b5
     MOV dword ptr [EBX + 0x1fae8],EAX   ; 004f64b8

@@ -10,6 +10,7 @@
     "cross_reference_count": 5,
     "function_call_count": 1,
     "global_count": 7,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 32,
     "suspect_count": 3,
     "suspect_types": [
@@ -194,21 +195,24 @@
       "description": "Complex pointer cast",
       "line": 27,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)pvVar1 + iVar3 + 4) = (float)vertex_buffer->x * 0.00390625f;",
+      "severity": "mild",
+      "text": "*(float *)((int)&(pSVar1->position).x + iVar3) = (float)vertex_buffer->x * 0.00390625f;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 28,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)pvVar1 + iVar3 + 8) = (float)vertex_buffer->y * 0.00390625f;",
+      "severity": "mild",
+      "text": "*(float *)((int)&(pSVar1->position).y + iVar3) = (float)vertex_buffer->y * 0.00390625f;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 29,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)pvVar1 + iVar3 + 0xc) = (float)vertex_buffer->z * 0.00390625f;",
+      "severity": "mild",
+      "text": "*(float *)((int)&(pSVar1->position).z + iVar3) = (float)vertex_buffer->z * 0.00390625f;",
       "type": "pointer_cast"
     }
   ]

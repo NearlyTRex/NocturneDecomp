@@ -205,8 +205,8 @@ section .text
     MOV EDX,dword ptr [0x006810c8]      ; 004a81eb | g_CDemonSetPtr | g_CDemonSetInstance
     PUSH EDX                            ; 004a81f1 | g_CDemonSetInstance
     MOV dword ptr [ESI + 0x20],0x0      ; 004a81f2
-    CALL core_set.cpp_CDemonSet_FUN_0056d110 ; 004a81f9
-        ;   XREF to: 0056d110 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d110(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0056d110 ; 004a81f9
+        ;   XREF to: 0056d110 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0056d110(CDemonSet * this_ptr, CDemonGlobe * globe)
     ADD ESP,0x8                         ; 004a81fe
     CMP byte ptr [EBX + 0x3d4],0x0      ; 004a8201
         ;   Label: caseD_2
@@ -262,8 +262,8 @@ section .text
     MOV dword ptr [EBX + 0x168],0x1     ; 004a8294
     PUSH ECX                            ; 004a829e | g_CDemonSetInstance
     FSTP float ptr [EBX + 0x448]        ; 004a829f
-    CALL core_set.cpp_CDemonSet_FUN_0056ade0 ; 004a82a5
-        ;   XREF to: 0056ade0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056ade0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_0056ade0 ; 004a82a5
+        ;   XREF to: 0056ade0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_0056ade0(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004a82aa
     JMP 0x004a80a4                      ; 004a82ad
         ;   XREF to: 004a80a4 (UNCONDITIONAL_JUMP)  ; LAB_004a80a4

@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 4,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 57,
     "suspect_count": 10,
     "suspect_types": [
@@ -156,6 +157,7 @@
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "CDemonActor *in_stack_00000008;",
       "type": "stack_param"
     },
@@ -163,6 +165,7 @@
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "if (in_stack_00000008 != (CDemonActor *)0x0) {",
       "type": "stack_param"
     },
@@ -170,6 +173,7 @@
       "description": "Unresolved stack parameter",
       "line": 21,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "while (in_stack_00000008 != pCVar1) {",
       "type": "stack_param"
     },
@@ -177,6 +181,7 @@
       "description": "Unresolved stack parameter",
       "line": 30,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "(&local_a0,&(in_stack_00000008->location).position,",
       "type": "stack_param"
     },
@@ -184,6 +189,7 @@
       "description": "Unresolved stack parameter",
       "line": 31,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "&(in_stack_00000008->orient).vec);",
       "type": "stack_param"
     },
@@ -191,6 +197,7 @@
       "description": "Unresolved stack parameter",
       "line": 34,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "pCVar2->attach_actors[0].actor = in_stack_00000008;",
       "type": "stack_param"
     },
@@ -198,6 +205,7 @@
       "description": "Complex pointer cast",
       "line": 40,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -205,6 +213,7 @@
       "description": "Complex pointer cast",
       "line": 41,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -212,6 +221,7 @@
       "description": "Complex pointer cast",
       "line": 48,
       "match": "(CPlatform *)((int)",
+      "severity": "mild",
       "text": "pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);",
       "type": "pointer_cast"
     },
@@ -219,6 +229,7 @@
       "description": "Complex pointer cast",
       "line": 56,
       "match": "(CPlatform *)((int)",
+      "severity": "mild",
       "text": "pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);",
       "type": "pointer_cast"
     }

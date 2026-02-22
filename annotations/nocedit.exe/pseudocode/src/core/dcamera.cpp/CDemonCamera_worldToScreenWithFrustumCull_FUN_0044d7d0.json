@@ -67,14 +67,16 @@
   },
   "complexity": {
     "assembly_lines": 233,
-    "complexity_score": 341,
+    "complexity_score": 356,
     "cross_reference_count": 5,
     "function_call_count": 1,
     "global_count": 5,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 106,
-    "suspect_count": 22,
+    "suspect_count": 23,
     "suspect_types": [
       "pointer_cast",
+      "stack_alignment_array",
       "stack_ref",
       "unaffected_reg"
     ],
@@ -317,13 +319,23 @@
       "description": "Unaffected register variable",
       "line": 9,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "CVector3i *unaff_ESI;",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 12,
+      "match": "aiStackY_1018",
+      "severity": "moderate",
+      "text": "int aiStackY_1018 [1017];",
+      "type": "stack_alignment_array"
     },
     {
       "description": "Direct stack address reference",
       "line": 56,
       "match": "&stack0xffffffd4",
+      "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffd4 + (uint)bVar6 * -8) =",
       "type": "stack_ref"
     },
@@ -331,6 +343,7 @@
       "description": "Direct stack address reference",
       "line": 57,
       "match": "&stack0xffffffec",
+      "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffec + (uint)bVar6 * -8);",
       "type": "stack_ref"
     },
@@ -338,6 +351,7 @@
       "description": "Complex pointer cast",
       "line": 57,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&stack0xffffffec + (uint)bVar6 * -8);",
       "type": "pointer_cast"
     },
@@ -345,6 +359,7 @@
       "description": "Direct stack address reference",
       "line": 58,
       "match": "&stack0xffffffd8",
+      "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =",
       "type": "stack_ref"
     },
@@ -352,6 +367,7 @@
       "description": "Direct stack address reference",
       "line": 59,
       "match": "&stack0xfffffff0",
+      "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
       "type": "stack_ref"
     },
@@ -359,6 +375,7 @@
       "description": "Complex pointer cast",
       "line": 59,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
       "type": "pointer_cast"
     },
@@ -366,6 +383,7 @@
       "description": "Unaffected register variable",
       "line": 60,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "puVar5 = (uint *)((int)unaff_ESI + (uint)bVar6 * -8 + 4);",
       "type": "unaffected_reg"
     },
@@ -373,6 +391,7 @@
       "description": "Complex pointer cast",
       "line": 60,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar5 = (uint *)((int)unaff_ESI + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -380,6 +399,7 @@
       "description": "Unaffected register variable",
       "line": 61,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "unaff_ESI->x = iStack_30;",
       "type": "unaffected_reg"
     },
@@ -387,6 +407,7 @@
       "description": "Direct stack address reference",
       "line": 62,
       "match": "&stack0xffffffd4",
+      "severity": "moderate",
       "text": "*puVar5 = *(uint *)(&stack0xffffffd4 + (uint)bVar6 * -8);",
       "type": "stack_ref"
     },
@@ -394,6 +415,7 @@
       "description": "Direct stack address reference",
       "line": 64,
       "match": "&stack0xffffffd8",
+      "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
       "type": "stack_ref"
     },
@@ -401,6 +423,7 @@
       "description": "Unaffected register variable",
       "line": 65,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "return unaff_ESI;",
       "type": "unaffected_reg"
     },
@@ -408,6 +431,7 @@
       "description": "Direct stack address reference",
       "line": 99,
       "match": "&stack0xffffffd4",
+      "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffd4 + (uint)bVar6 * -8) =",
       "type": "stack_ref"
     },
@@ -415,6 +439,7 @@
       "description": "Complex pointer cast",
       "line": 100,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&g_CameraOutOfBoundsCoord + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -422,6 +447,7 @@
       "description": "Direct stack address reference",
       "line": 101,
       "match": "&stack0xffffffd8",
+      "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =",
       "type": "stack_ref"
     },
@@ -429,6 +455,7 @@
       "description": "Unaffected register variable",
       "line": 103,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "puVar5 = (uint *)((int)unaff_ESI + (uint)bVar6 * -8 + 4);",
       "type": "unaffected_reg"
     },
@@ -436,6 +463,7 @@
       "description": "Complex pointer cast",
       "line": 103,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar5 = (uint *)((int)unaff_ESI + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -443,6 +471,7 @@
       "description": "Unaffected register variable",
       "line": 104,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "unaff_ESI->x = iStack_30;",
       "type": "unaffected_reg"
     },
@@ -450,6 +479,7 @@
       "description": "Direct stack address reference",
       "line": 105,
       "match": "&stack0xffffffd4",
+      "severity": "moderate",
       "text": "*puVar5 = *(uint *)(&stack0xffffffd4 + (uint)bVar6 * -8);",
       "type": "stack_ref"
     },
@@ -457,6 +487,7 @@
       "description": "Direct stack address reference",
       "line": 107,
       "match": "&stack0xffffffd8",
+      "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
       "type": "stack_ref"
     },
@@ -464,6 +495,7 @@
       "description": "Unaffected register variable",
       "line": 108,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "return unaff_ESI;",
       "type": "unaffected_reg"
     }

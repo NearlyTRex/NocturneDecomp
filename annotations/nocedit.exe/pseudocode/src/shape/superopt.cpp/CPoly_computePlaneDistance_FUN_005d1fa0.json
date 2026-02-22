@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 11,
     "suspect_count": 6,
     "suspect_types": [
@@ -98,6 +99,7 @@
       "description": "Unresolved stack parameter",
       "line": 7,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "int *in_stack_00000004;",
       "type": "stack_param"
     },
@@ -105,6 +107,7 @@
       "description": "Unresolved stack parameter",
       "line": 9,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "iVar2 = in_stack_00000004[1] * 0x38;",
       "type": "stack_param"
     },
@@ -112,6 +115,7 @@
       "description": "Unresolved stack parameter",
       "line": 10,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "iVar1 = *(int *)(*in_stack_00000004 + 4);",
       "type": "stack_param"
     },
@@ -119,6 +123,7 @@
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "return -(*(double *)(iVar2 + 0x10 + iVar1) * *(double *)(in_stack_00000004 + 0x14) +",
       "type": "stack_param"
     },
@@ -126,6 +131,7 @@
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "*(double *)(iVar2 + iVar1) * *(double *)(in_stack_00000004 + 0x10) +",
       "type": "stack_param"
     },
@@ -133,6 +139,7 @@
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "*(double *)(iVar2 + 8 + iVar1) * *(double *)(in_stack_00000004 + 0x12));",
       "type": "stack_param"
     }

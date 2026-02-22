@@ -13,15 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 83,
+    "complexity_score": 98,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 4,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 43,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast"
+      "pointer_cast",
+      "sub84_truncation"
     ],
     "total_lines": 132
   },
@@ -191,13 +193,23 @@
       "description": "Complex pointer cast",
       "line": 22,
       "match": "(SLodSamplePoint *)((int)",
+      "severity": "mild",
       "text": "sample_point = (SLodSamplePoint *)((int)this_ptr->tri_data->attribute_indices + local_18);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 28,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "face = SUB84(dVar2,0);",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 28,
       "match": "SUB84",
+      "severity": "mild",
       "text": "face = SUB84(dVar2,0);",
       "type": "decompiler_intrinsic"
     },
@@ -205,6 +217,7 @@
       "description": "Complex pointer cast",
       "line": 35,
       "match": "(CLodFace *)((int)",
+      "severity": "mild",
       "text": "pCVar1 = (CLodFace *)((int)pCVar1->attribute_indices + 1);",
       "type": "pointer_cast"
     }

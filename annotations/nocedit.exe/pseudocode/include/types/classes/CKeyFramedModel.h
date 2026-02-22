@@ -18,10 +18,10 @@ typedef struct CKeyFramedModel {
     char model_filename[256]; // 0x0
     int frame_count; // 0x100
     int vertex_count; // 0x104, max=2000
-    struct CVector3i** vertex_normal_list; // 0x108
-    struct CVector3i** vertex_list; // 0x10c
+    struct CVector3i* vertex_normal_list; // 0x108
+    struct CVector3i* vertex_list; // 0x10c
     int poly_count; // 0x110, max=2000
-    struct SMRGLPrimitiveQuad** poly_vert_list; // 0x114
+    struct SMRGLPrimitiveQuad* poly_vert_list; // 0x114
     int* poly_texture_index_list; // 0x118
     uchar* env_map_opac_list; // 0x11c
     int texture_count; // 0x120, max=300

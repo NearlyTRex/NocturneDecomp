@@ -125,6 +125,7 @@
     "cross_reference_count": 1,
     "function_call_count": 28,
     "global_count": 32,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 372,
     "suspect_count": 64,
     "suspect_types": [
@@ -715,6 +716,7 @@
       "description": "Deadcode elimination delayed",
       "line": 3,
       "match": "WARNING: Restarted to delay deadcode elimination",
+      "severity": "mild",
       "text": "/* WARNING: Restarted to delay deadcode elimination for space: stack */",
       "type": "warning_deadcode_restart"
     },
@@ -722,6 +724,7 @@
       "description": "Unaffected register variable",
       "line": 16,
       "match": "unaff_EBP",
+      "severity": "moderate",
       "text": "char *unaff_EBP;",
       "type": "unaffected_reg"
     },
@@ -729,6 +732,7 @@
       "description": "Unaffected register variable",
       "line": 17,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "int unaff_ESI;",
       "type": "unaffected_reg"
     },
@@ -736,6 +740,7 @@
       "description": "Unresolved stack parameter",
       "line": 20,
       "match": "in_stack_00000010",
+      "severity": "moderate",
       "text": "int in_stack_00000010;",
       "type": "stack_param"
     },
@@ -743,6 +748,7 @@
       "description": "Unresolved stack parameter",
       "line": 21,
       "match": "in_stack_00000020",
+      "severity": "moderate",
       "text": "int in_stack_00000020;",
       "type": "stack_param"
     },
@@ -750,6 +756,7 @@
       "description": "Unresolved stack parameter",
       "line": 22,
       "match": "in_stack_00000028",
+      "severity": "moderate",
       "text": "int in_stack_00000028;",
       "type": "stack_param"
     },
@@ -757,6 +764,7 @@
       "description": "Unresolved stack parameter",
       "line": 23,
       "match": "in_stack_0000002c",
+      "severity": "moderate",
       "text": "int in_stack_0000002c;",
       "type": "stack_param"
     },
@@ -764,6 +772,7 @@
       "description": "Unresolved stack parameter",
       "line": 24,
       "match": "in_stack_00000034",
+      "severity": "moderate",
       "text": "int in_stack_00000034;",
       "type": "stack_param"
     },
@@ -771,6 +780,7 @@
       "description": "Unresolved stack parameter",
       "line": 25,
       "match": "in_stack_0000003c",
+      "severity": "moderate",
       "text": "int in_stack_0000003c;",
       "type": "stack_param"
     },
@@ -778,6 +788,7 @@
       "description": "Unresolved stack parameter",
       "line": 26,
       "match": "in_stack_00000054",
+      "severity": "moderate",
       "text": "int in_stack_00000054;",
       "type": "stack_param"
     },
@@ -785,6 +796,7 @@
       "description": "Unresolved stack parameter",
       "line": 27,
       "match": "in_stack_fffffac4",
+      "severity": "moderate",
       "text": "CKeys *in_stack_fffffac4;",
       "type": "stack_param"
     },
@@ -792,6 +804,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 45,
       "match": "1.4013e-45",
+      "severity": "mild",
       "text": "local_2c = 1.4013e-45;",
       "type": "suspect_float"
     },
@@ -799,6 +812,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 46,
       "match": "1.4013e-45",
+      "severity": "mild",
       "text": "local_50.yaw = 1.4013e-45;",
       "type": "suspect_float"
     },
@@ -806,6 +820,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 48,
       "match": "1.4013e-45",
+      "severity": "mild",
       "text": "local_50.position.x = 1.4013e-45;",
       "type": "suspect_float"
     },
@@ -813,6 +828,7 @@
       "description": "Complex pointer cast",
       "line": 101,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)local_50.roll + 4) =",
       "type": "pointer_cast"
     },
@@ -820,6 +836,7 @@
       "description": "Complex pointer cast",
       "line": 102,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)local_50.roll + 4) -",
       "type": "pointer_cast"
     },
@@ -827,6 +844,7 @@
       "description": "Complex pointer cast",
       "line": 104,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)local_50.roll + 8) =",
       "type": "pointer_cast"
     },
@@ -834,6 +852,7 @@
       "description": "Complex pointer cast",
       "line": 105,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)local_50.roll + 8) -",
       "type": "pointer_cast"
     },
@@ -841,13 +860,15 @@
       "description": "Complex pointer cast",
       "line": 121,
       "match": "(int *)((int)",
-      "text": "piVar6 = (int *)((int)(this_ptr->model).vertex_list + iVar5);",
+      "severity": "mild",
+      "text": "piVar6 = (int *)((int)&((this_ptr->model).vertex_list)->x + iVar5);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 123,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*piVar6 = (int)ROUND(pCVar8->x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -855,6 +876,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 124,
       "match": "ROUND",
+      "severity": "mild",
       "text": "piVar6[1] = (int)ROUND(pCVar8->y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -862,6 +884,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 125,
       "match": "ROUND",
+      "severity": "mild",
       "text": "piVar6[2] = (int)ROUND(pCVar8->z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -869,6 +892,7 @@
       "description": "Complex pointer cast",
       "line": 126,
       "match": "(CVector3f *)((int)",
+      "severity": "mild",
       "text": "pCVar8 = (CVector3f *)((int)(pCVar8 + 0x17) + 8);",
       "type": "pointer_cast"
     },
@@ -876,6 +900,7 @@
       "description": "Undefined global data reference",
       "line": 157,
       "match": "DAT_0083b10c",
+      "severity": "mild",
       "text": "DAT_0083b10c = DAT_0083b10c + 1;",
       "type": "undefined_data"
     },
@@ -883,6 +908,7 @@
       "description": "Undefined global data reference",
       "line": 157,
       "match": "DAT_0083b10c",
+      "severity": "mild",
       "text": "DAT_0083b10c = DAT_0083b10c + 1;",
       "type": "undefined_data"
     },
@@ -890,6 +916,7 @@
       "description": "Undefined global data reference",
       "line": 158,
       "match": "DAT_0083b110",
+      "severity": "mild",
       "text": "_sprintf(&DAT_0083b110,\"noc%d.pcx\");",
       "type": "undefined_data"
     },
@@ -897,6 +924,7 @@
       "description": "Undefined global data reference",
       "line": 159,
       "match": "DAT_0083b110",
+      "severity": "mild",
       "text": "engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(&DAT_0083b110);",
       "type": "undefined_data"
     },
@@ -904,6 +932,7 @@
       "description": "Unaffected register variable",
       "line": 164,
       "match": "unaff_EBP",
+      "severity": "moderate",
       "text": "unaff_EBP = (char *)0x0;",
       "type": "unaffected_reg"
     },
@@ -911,6 +940,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 169,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_6c.x = (int)ROUND(*pfVar3 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -918,6 +948,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 170,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_6c.y = (int)ROUND(pfVar3[1] * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -925,6 +956,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 171,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_6c.z = (int)ROUND(pfVar3[2] * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -932,6 +964,7 @@
       "description": "Unaffected register variable",
       "line": 175,
       "match": "unaff_EBP",
+      "severity": "moderate",
       "text": "unaff_EBP = unaff_EBP + 1;",
       "type": "unaffected_reg"
     },
@@ -939,6 +972,7 @@
       "description": "Unaffected register variable",
       "line": 175,
       "match": "unaff_EBP",
+      "severity": "moderate",
       "text": "unaff_EBP = unaff_EBP + 1;",
       "type": "unaffected_reg"
     },
@@ -946,6 +980,7 @@
       "description": "Unaffected register variable",
       "line": 177,
       "match": "unaff_EBP",
+      "severity": "moderate",
       "text": "} while ((int)unaff_EBP < this_ptr->locked_vertex_count);",
       "type": "unaffected_reg"
     },
@@ -953,6 +988,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 182,
       "match": "2.8026e-45",
+      "severity": "mild",
       "text": "if ((local_20 == 2.8026e-45) && (fVar4 == fStack_1c)) {",
       "type": "suspect_float"
     },
@@ -960,6 +996,7 @@
       "description": "Direct stack address reference",
       "line": 206,
       "match": "&stack0xfffffac0",
+      "severity": "moderate",
       "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffffac0);",
       "type": "stack_ref"
     },
@@ -967,6 +1004,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 207,
       "match": "NAN",
+      "severity": "mild",
       "text": "fStack_1c = -NAN;",
       "type": "decompiler_intrinsic"
     },
@@ -974,6 +1012,7 @@
       "description": "Complex pointer cast",
       "line": 210,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (0 < *(int *)((int)local_20 + 0x964)) {",
       "type": "pointer_cast"
     },
@@ -981,6 +1020,7 @@
       "description": "Direct stack address reference",
       "line": 212,
       "match": "&stack0xfffffac0",
+      "severity": "moderate",
       "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffffac0,string_data);",
       "type": "stack_ref"
     },
@@ -988,6 +1028,7 @@
       "description": "Unaffected register variable",
       "line": 213,
       "match": "unaff_EBP",
+      "severity": "moderate",
       "text": "if (string_data == unaff_EBP) {",
       "type": "unaffected_reg"
     },
@@ -995,6 +1036,7 @@
       "description": "Complex pointer cast",
       "line": 218,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "} while ((int)fVar4 < *(int *)((int)local_20 + 0x964));",
       "type": "pointer_cast"
     },
@@ -1002,6 +1044,7 @@
       "description": "Direct stack address reference",
       "line": 221,
       "match": "&stack0xfffffac0",
+      "severity": "moderate",
       "text": "((CPickList *)&stack0xfffffac0,\"Select motion\",(int)fStack_1c,0);",
       "type": "stack_ref"
     },
@@ -1009,6 +1052,7 @@
       "description": "Direct stack address reference",
       "line": 226,
       "match": "&stack0xfffffac0",
+      "severity": "moderate",
       "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffffac0,0);",
       "type": "stack_ref"
     },
@@ -1016,6 +1060,7 @@
       "description": "Unresolved stack parameter",
       "line": 233,
       "match": "in_stack_fffffac4",
+      "severity": "moderate",
       "text": "(acStack_190,\"%f\",(double)(1.0 / (float)in_stack_fffffac4));",
       "type": "stack_param"
     },
@@ -1023,6 +1068,7 @@
       "description": "Unaffected register variable",
       "line": 246,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "if ((iVar2 != 0) && (unaff_ESI = unaff_ESI + 1, 2 < unaff_ESI)) {",
       "type": "unaffected_reg"
     },
@@ -1030,6 +1076,7 @@
       "description": "Unaffected register variable",
       "line": 246,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "if ((iVar2 != 0) && (unaff_ESI = unaff_ESI + 1, 2 < unaff_ESI)) {",
       "type": "unaffected_reg"
     },
@@ -1037,6 +1084,7 @@
       "description": "Unaffected register variable",
       "line": 246,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "if ((iVar2 != 0) && (unaff_ESI = unaff_ESI + 1, 2 < unaff_ESI)) {",
       "type": "unaffected_reg"
     },
@@ -1044,6 +1092,7 @@
       "description": "Unaffected register variable",
       "line": 247,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "unaff_ESI = 0;",
       "type": "unaffected_reg"
     },
@@ -1051,6 +1100,7 @@
       "description": "Unresolved stack parameter",
       "line": 249,
       "match": "in_stack_fffffac4",
+      "severity": "moderate",
       "text": "in_stack_fffffac4 = g_CKeysPtr;",
       "type": "stack_param"
     },
@@ -1058,6 +1108,7 @@
       "description": "Unresolved stack parameter",
       "line": 262,
       "match": "in_stack_00000028",
+      "severity": "moderate",
       "text": "if (((in_stack_00000028 == 2) && (-1 < in_stack_0000002c)) &&",
       "type": "stack_param"
     },
@@ -1065,6 +1116,7 @@
       "description": "Unresolved stack parameter",
       "line": 262,
       "match": "in_stack_0000002c",
+      "severity": "moderate",
       "text": "if (((in_stack_00000028 == 2) && (-1 < in_stack_0000002c)) &&",
       "type": "stack_param"
     },
@@ -1072,6 +1124,7 @@
       "description": "Unresolved stack parameter",
       "line": 263,
       "match": "in_stack_0000002c",
+      "severity": "moderate",
       "text": "(in_stack_0000002c < this_ptr->collide_bone_count)) {",
       "type": "stack_param"
     },
@@ -1079,6 +1132,7 @@
       "description": "Unresolved stack parameter",
       "line": 271,
       "match": "in_stack_0000002c",
+      "severity": "moderate",
       "text": "iVar5 = in_stack_0000002c * 0xac + in_stack_00000010;",
       "type": "stack_param"
     },
@@ -1086,6 +1140,7 @@
       "description": "Unresolved stack parameter",
       "line": 271,
       "match": "in_stack_00000010",
+      "severity": "moderate",
       "text": "iVar5 = in_stack_0000002c * 0xac + in_stack_00000010;",
       "type": "stack_param"
     },
@@ -1093,6 +1148,7 @@
       "description": "Unresolved stack parameter",
       "line": 321,
       "match": "in_stack_0000003c",
+      "severity": "moderate",
       "text": "((void *)(in_stack_0000003c * 0xac + in_stack_00000020),",
       "type": "stack_param"
     },
@@ -1100,6 +1156,7 @@
       "description": "Unresolved stack parameter",
       "line": 321,
       "match": "in_stack_00000020",
+      "severity": "moderate",
       "text": "((void *)(in_stack_0000003c * 0xac + in_stack_00000020),",
       "type": "stack_param"
     },
@@ -1107,6 +1164,7 @@
       "description": "Unresolved stack parameter",
       "line": 322,
       "match": "in_stack_0000003c",
+      "severity": "moderate",
       "text": "(void *)((in_stack_0000003c + 1) * 0xac + in_stack_00000020),",
       "type": "stack_param"
     },
@@ -1114,6 +1172,7 @@
       "description": "Unresolved stack parameter",
       "line": 322,
       "match": "in_stack_00000020",
+      "severity": "moderate",
       "text": "(void *)((in_stack_0000003c + 1) * 0xac + in_stack_00000020),",
       "type": "stack_param"
     },
@@ -1121,6 +1180,7 @@
       "description": "Unresolved stack parameter",
       "line": 323,
       "match": "in_stack_0000003c",
+      "severity": "moderate",
       "text": "(iVar2 - in_stack_0000003c) * 0xac);",
       "type": "stack_param"
     },
@@ -1128,6 +1188,7 @@
       "description": "Unresolved stack parameter",
       "line": 348,
       "match": "in_stack_00000054",
+      "severity": "moderate",
       "text": "(this_ptr,in_stack_00000054,&g_CDeformableModelInstanceInstance);",
       "type": "stack_param"
     },
@@ -1135,6 +1196,7 @@
       "description": "Unresolved stack parameter",
       "line": 363,
       "match": "in_stack_00000034",
+      "severity": "moderate",
       "text": "if (in_stack_00000034 < 0) {",
       "type": "stack_param"
     },
@@ -1142,6 +1204,7 @@
       "description": "Unresolved stack parameter",
       "line": 364,
       "match": "in_stack_00000034",
+      "severity": "moderate",
       "text": "in_stack_00000034 = this_ptr->collide_bone_count + -1;",
       "type": "stack_param"
     },
@@ -1149,6 +1212,7 @@
       "description": "Unresolved stack parameter",
       "line": 366,
       "match": "in_stack_00000034",
+      "severity": "moderate",
       "text": "if (this_ptr->collide_bone_count <= in_stack_00000034) {",
       "type": "stack_param"
     },
@@ -1156,6 +1220,7 @@
       "description": "Unresolved stack parameter",
       "line": 367,
       "match": "in_stack_00000034",
+      "severity": "moderate",
       "text": "in_stack_00000034 = 0;",
       "type": "stack_param"
     }

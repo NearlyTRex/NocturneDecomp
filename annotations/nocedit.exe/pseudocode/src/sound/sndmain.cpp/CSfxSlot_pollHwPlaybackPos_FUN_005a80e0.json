@@ -13,14 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 105,
+    "complexity_score": 130,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 2,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 20,
-    "suspect_count": 7,
+    "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
+      "double_reconstruction",
       "extra_output",
       "stack_param"
     ],
@@ -159,6 +161,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 6,
       "match": "extraout_EDX",
+      "severity": "moderate",
       "text": "uint extraout_EDX;",
       "type": "extra_output"
     },
@@ -166,6 +169,7 @@
       "description": "Unresolved stack parameter",
       "line": 7,
       "match": "in_stack_ffffffe0",
+      "severity": "moderate",
       "text": "CSfxSlot *in_stack_ffffffe0;",
       "type": "stack_param"
     },
@@ -173,6 +177,7 @@
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_ffffffe0",
+      "severity": "moderate",
       "text": "((double *)g_CSoundDevicePtr,(CSoundDevice *)this_ptr,in_stack_ffffffe0);",
       "type": "stack_param"
     },
@@ -180,13 +185,23 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 13,
       "match": "extraout_EDX",
+      "severity": "moderate",
       "text": "if ((double)CONCAT44(extraout_EDX,pdVar1) < 0.0) {",
       "type": "extra_output"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 13,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "if ((double)CONCAT44(extraout_EDX,pdVar1) < 0.0) {",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 13,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "if ((double)CONCAT44(extraout_EDX,pdVar1) < 0.0) {",
       "type": "decompiler_intrinsic"
     },
@@ -194,13 +209,23 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 19,
       "match": "extraout_EDX",
+      "severity": "moderate",
       "text": "(this_ptr,(double)CONCAT44(extraout_EDX,pdVar1));",
       "type": "extra_output"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 19,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(this_ptr,(double)CONCAT44(extraout_EDX,pdVar1));",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 19,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(this_ptr,(double)CONCAT44(extraout_EDX,pdVar1));",
       "type": "decompiler_intrinsic"
     }

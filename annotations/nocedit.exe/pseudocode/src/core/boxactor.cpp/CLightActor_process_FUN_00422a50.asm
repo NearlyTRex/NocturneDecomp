@@ -32,8 +32,8 @@
 ;   core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
 ;   core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770
-;   core_set.cpp_CDemonSet_FUN_0056d090
-;   core_set.cpp_CDemonSet_FUN_0056d110
+;   core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0056d110
+;   core_set.cpp_CDemonSet_addDynamicLight_FUN_0056d090
 ;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
 ;   core_xform.cpp_matrixToEulerAngles_FUN_005f5690
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10
@@ -136,8 +136,8 @@ section .text
     MOV EBP,dword ptr [0x006810c8]      ; 00422b66 | g_CDemonSetPtr
     PUSH EBP                            ; 00422b6c | g_CDemonSetInstance
     MOV dword ptr [EBX + 0x20],0x0      ; 00422b6d
-    CALL core_set.cpp_CDemonSet_FUN_0056d110 ; 00422b74
-        ;   XREF to: 0056d110 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d110(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0056d110 ; 00422b74
+        ;   XREF to: 0056d110 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0056d110(CDemonSet * this_ptr, CDemonGlobe * globe)
     ADD ESP,0x8                         ; 00422b79
     ADD ESP,0xdc                        ; 00422b7c
     POP EBP                             ; 00422b82
@@ -212,8 +212,8 @@ section .text
     PUSH ESI                            ; 00422c59
     MOV EDI,dword ptr [0x006810c8]      ; 00422c5a | g_CDemonSetPtr
     PUSH EDI                            ; 00422c60 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_0056d090 ; 00422c61
-        ;   XREF to: 0056d090 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d090(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_addDynamicLight_FUN_0056d090 ; 00422c61
+        ;   XREF to: 0056d090 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addDynamicLight_FUN_0056d090(CDemonSet * this_ptr, CDemonLight * light)
     ADD ESP,0x8                         ; 00422c66
     POP ESI                             ; 00422c69
     POP EDI                             ; 00422c6a

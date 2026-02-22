@@ -31,16 +31,18 @@
   },
   "complexity": {
     "assembly_lines": 867,
-    "complexity_score": 348,
+    "complexity_score": 393,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 10,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 223,
-    "suspect_count": 11,
+    "suspect_count": 15,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
-      "stack_param"
+      "stack_param",
+      "sub84_truncation"
     ],
     "total_lines": 1090
   },
@@ -404,6 +406,7 @@
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_fffffde4",
+      "severity": "moderate",
       "text": "double in_stack_fffffde4;",
       "type": "stack_param"
     },
@@ -411,6 +414,7 @@
       "description": "Unresolved stack parameter",
       "line": 130,
       "match": "in_stack_fffffde4",
+      "severity": "moderate",
       "text": "in_stack_fffffde4 =",
       "type": "stack_param"
     },
@@ -418,13 +422,23 @@
       "description": "Unresolved stack parameter",
       "line": 133,
       "match": "in_stack_fffffde4",
+      "severity": "moderate",
       "text": "SUB84(in_stack_fffffde4,0));",
       "type": "stack_param"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 133,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "SUB84(in_stack_fffffde4,0));",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 133,
       "match": "SUB84",
+      "severity": "mild",
       "text": "SUB84(in_stack_fffffde4,0));",
       "type": "decompiler_intrinsic"
     },
@@ -432,6 +446,7 @@
       "description": "Unresolved stack parameter",
       "line": 134,
       "match": "in_stack_fffffde4",
+      "severity": "moderate",
       "text": "if ((double)local_14 < in_stack_fffffde4) {",
       "type": "stack_param"
     },
@@ -439,27 +454,55 @@
       "description": "Unresolved stack parameter",
       "line": 140,
       "match": "in_stack_fffffde4",
+      "severity": "moderate",
       "text": "((int)(&local_5c)[local_3c[6]],local_58[0],SUB84(in_stack_fffffde4,0));",
       "type": "stack_param"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 140,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "((int)(&local_5c)[local_3c[6]],local_58[0],SUB84(in_stack_fffffde4,0));",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 140,
       "match": "SUB84",
+      "severity": "mild",
       "text": "((int)(&local_5c)[local_3c[6]],local_58[0],SUB84(in_stack_fffffde4,0));",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 146,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "(local_58[0],local_58[1],SUB84(dVar7,0));",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 146,
       "match": "SUB84",
+      "severity": "mild",
       "text": "(local_58[0],local_58[1],SUB84(dVar7,0));",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 162,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "(local_58[1],local_58[2],SUB84(dVar7,0));",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 162,
       "match": "SUB84",
+      "severity": "mild",
       "text": "(local_58[1],local_58[2],SUB84(dVar7,0));",
       "type": "decompiler_intrinsic"
     },
@@ -467,6 +510,7 @@
       "description": "Complex pointer cast",
       "line": 199,
       "match": "(SShapeEditorPolygon *)((int)",
+      "severity": "mild",
       "text": "pSVar3 = (SShapeEditorPolygon *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -474,6 +518,7 @@
       "description": "Complex pointer cast",
       "line": 200,
       "match": "(SShapeEditorPolygon *)((int)",
+      "severity": "mild",
       "text": "pSVar4 = (SShapeEditorPolygon *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     }

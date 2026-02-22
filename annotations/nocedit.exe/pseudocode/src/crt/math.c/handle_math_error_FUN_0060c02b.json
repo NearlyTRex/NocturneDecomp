@@ -1,17 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 79,
-    "complexity_score": 196,
+    "complexity_score": 226,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 36,
-    "suspect_count": 14,
+    "suspect_count": 16,
     "suspect_types": [
       "decompiler_intrinsic",
+      "double_reconstruction",
       "special_crt_function",
       "stack_param",
-      "stack_ref"
+      "stack_ref",
+      "sub84_truncation"
     ],
     "total_lines": 115
   },
@@ -135,6 +138,7 @@
       "description": "Unresolved stack parameter",
       "line": 7,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "double in_stack_00000004;",
       "type": "stack_param"
     },
@@ -142,6 +146,7 @@
       "description": "Unresolved stack parameter",
       "line": 8,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "byte in_stack_0000000c;",
       "type": "stack_param"
     },
@@ -149,6 +154,7 @@
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "if (in_stack_0000000c == 0) {",
       "type": "stack_param"
     },
@@ -156,6 +162,7 @@
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "errorFlags = in_stack_0000000c | 0x8100;",
       "type": "stack_param"
     },
@@ -163,6 +170,7 @@
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "if ((in_stack_0000000c == 6) && (in_stack_00000004 < 0.0)) {",
       "type": "stack_param"
     },
@@ -170,6 +178,7 @@
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "if ((in_stack_0000000c == 6) && (in_stack_00000004 < 0.0)) {",
       "type": "stack_param"
     },
@@ -177,6 +186,7 @@
       "description": "Unresolved stack parameter",
       "line": 22,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "if (3 < in_stack_0000000c) {",
       "type": "stack_param"
     },
@@ -184,6 +194,7 @@
       "description": "Unresolved stack parameter",
       "line": 23,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "if ((in_stack_0000000c == 4) && (in_stack_00000004 < 0.0)) {",
       "type": "stack_param"
     },
@@ -191,6 +202,7 @@
       "description": "Unresolved stack parameter",
       "line": 23,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "if ((in_stack_0000000c == 4) && (in_stack_00000004 < 0.0)) {",
       "type": "stack_param"
     },
@@ -198,6 +210,7 @@
       "description": "Unresolved stack parameter",
       "line": 30,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "errorFlags = in_stack_0000000c | 0x2040;",
       "type": "stack_param"
     },
@@ -205,20 +218,39 @@
       "description": "Direct stack address reference",
       "line": 32,
       "match": "&stack0x00000004",
+      "severity": "moderate",
       "text": "dVar1 = set_math_errno(errorFlags,&stack0x00000004);",
       "type": "stack_ref"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 33,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "local_10 = SUB84(dVar1,0);",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 33,
       "match": "SUB84",
+      "severity": "mild",
       "text": "local_10 = SUB84(dVar1,0);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 38,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "return (double)CONCAT44(local_14,local_18);",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 38,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "return (double)CONCAT44(local_14,local_18);",
       "type": "decompiler_intrinsic"
     },

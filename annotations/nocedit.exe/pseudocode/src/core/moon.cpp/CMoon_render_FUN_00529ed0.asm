@@ -52,7 +52,7 @@
 ; Called Functions:
 ;   core_course.cpp_CCourse_evaluate_FUN_00442710
 ;   core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850
-;   core_set.cpp_CDemonSet_FUN_00570ca0
+;   core_set.cpp_CDemonSet_setScaleFactors_FUN_00570ca0
 ;   crt_math.c_round_FUN_005fe6b0
 ;   engine_3d.c_setBlendMode_FUN_00406dd0
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_00410950
@@ -133,8 +133,8 @@ section .text
     MOV dword ptr [EAX + 0x15ae7c],0x9088 ; 00529f95 | DAT_0326f0f4
     PUSH EAX                            ; 00529f9f | g_CDemonSetInstance
     MOV dword ptr [EAX + 0x15ae80],0x280 ; 00529fa0 | DAT_0326f0f8
-    CALL core_set.cpp_CDemonSet_FUN_00570ca0 ; 00529faa
-        ;   XREF to: 00570ca0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_00570ca0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_setScaleFactors_FUN_00570ca0 ; 00529faa
+        ;   XREF to: 00570ca0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setScaleFactors_FUN_00570ca0(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
     ADD ESP,0x10                        ; 00529faf
     PUSH 0x205                          ; 00529fb2
     PUSH 0x0                            ; 00529fb7
@@ -142,7 +142,7 @@ section .text
     LEA EAX,[ESI + 0x8]                 ; 00529fbb
     PUSH EAX                            ; 00529fbe
     CALL core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850 ; 00529fbf
-        ;   XREF to: 00477850 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850(CKeyFramedModel * this_ptr, CKeyFramedModelInstance * instance, int frame_index, int render_flags)
+        ;   XREF to: 00477850 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850(CKeyFramedModel * this_ptr, int frame_index, CKeyFramedModelInstance * instance, int render_flags)
     MOV EAX,[0x006810c8]                ; 00529fc4 | g_CDemonSetPtr
     MOV dword ptr [EAX + 0x15ae74],0xffffb7bc ; 00529fc9 | DAT_0326f0ec
     MOV dword ptr [EAX + 0x15ae78],0xffffb7bc ; 00529fd3 | DAT_0326f0f0
@@ -217,7 +217,7 @@ section .text
     PUSH EDX                            ; 0052a0b1
     PUSH 0x2f384dc                      ; 0052a0b2 | g_MoonBatModel
     CALL core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850 ; 0052a0b7
-        ;   XREF to: 00477850 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850(CKeyFramedModel * this_ptr, CKeyFramedModelInstance * instance, int frame_index, int render_flags)
+        ;   XREF to: 00477850 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850(CKeyFramedModel * this_ptr, int frame_index, CKeyFramedModelInstance * instance, int render_flags)
     ADD ESP,0x10                        ; 0052a0bc
     MOV ECX,dword ptr [0x006703ec]      ; 0052a0bf | g_CDemonRendererPtr2
     PUSH ECX                            ; 0052a0c5 | g_CDemonRendererInstance

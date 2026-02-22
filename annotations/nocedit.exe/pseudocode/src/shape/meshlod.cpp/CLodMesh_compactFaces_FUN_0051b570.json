@@ -10,6 +10,7 @@
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 92,
     "suspect_count": 6,
     "suspect_types": [
@@ -164,6 +165,7 @@
       "description": "Complex pointer cast",
       "line": 26,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (*(int *)((int)pCVar1->edge_perpendiculars + iVar5 + -0x14) == 0) {",
       "type": "pointer_cast"
     },
@@ -171,6 +173,7 @@
       "description": "Complex pointer cast",
       "line": 27,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)pCVar1->edge_perpendiculars + iVar5 + -0x14) = local_1c;",
       "type": "pointer_cast"
     },
@@ -178,6 +181,7 @@
       "description": "Complex pointer cast",
       "line": 31,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pCVar1->edge_perpendiculars + iVar5 + -0x14) = 0xffffffff;",
       "type": "pointer_cast"
     },
@@ -185,6 +189,7 @@
       "description": "Complex pointer cast",
       "line": 43,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar2 = (uint *)((int)this_ptr->tri_data->attribute_indices + local_24);",
       "type": "pointer_cast"
     },
@@ -192,6 +197,7 @@
       "description": "Complex pointer cast",
       "line": 46,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar4 = (uint *)((int)this_ptr->tri_data->attribute_indices + local_18);",
       "type": "pointer_cast"
     },
@@ -199,6 +205,7 @@
       "description": "Complex pointer cast",
       "line": 86,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)this_ptr->tri_data->edge_perpendiculars + local_18 + -0x14) = 0;",
       "type": "pointer_cast"
     }

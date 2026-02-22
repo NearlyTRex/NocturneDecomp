@@ -14,7 +14,7 @@
 ;
 ; XREF[2]:
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0 at 00420638
-;   core_set.cpp_CDemonSet_FUN_0056c1a0 at 0056c90b
+;   core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0 at 0056c90b
 ;
 ; Referenced Globals:
 ;   float g_CameraFixedPointScale_0065c63c = 256

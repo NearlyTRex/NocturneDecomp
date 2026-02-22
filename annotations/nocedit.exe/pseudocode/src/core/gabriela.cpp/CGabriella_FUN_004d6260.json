@@ -47,6 +47,7 @@
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 12,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 89,
     "suspect_count": 16,
     "suspect_types": [
@@ -283,6 +284,7 @@
       "description": "Unaffected register variable",
       "line": 10,
       "match": "unaff_EDI",
+      "severity": "moderate",
       "text": "int unaff_EDI;",
       "type": "unaffected_reg"
     },
@@ -290,6 +292,7 @@
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "CDemonActor *in_stack_00000008;",
       "type": "stack_param"
     },
@@ -297,6 +300,7 @@
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
@@ -304,6 +308,7 @@
       "description": "Unresolved stack parameter",
       "line": 31,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "(in_stack_00000008,g_CEnemyClassInfo.name_hash);",
       "type": "stack_param"
     },
@@ -311,6 +316,7 @@
       "description": "Unresolved stack parameter",
       "line": 33,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "iVar1 = (*((in_stack_00000008->vtable)._ub)->getTargetPoints)",
       "type": "stack_param"
     },
@@ -318,6 +324,7 @@
       "description": "Unresolved stack parameter",
       "line": 34,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "(in_stack_00000008,(CVector3f *)(auStack_fc + 4));",
       "type": "stack_param"
     },
@@ -325,6 +332,7 @@
       "description": "Unresolved stack parameter",
       "line": 40,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "&(in_stack_00000008->location).position), 0.0 < fStack_3c)))) {",
       "type": "stack_param"
     },
@@ -332,6 +340,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 41,
       "match": "SQRT",
+      "severity": "mild",
       "text": "fStack_f0 = SQRT(fStack_3c * fStack_3c +",
       "type": "decompiler_intrinsic"
     },
@@ -339,6 +348,7 @@
       "description": "Unknown/mangled field access",
       "line": 42,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "(float)auStack_48._4_4_ * (float)auStack_48._4_4_ + fStack_40 * fStack_40);",
       "type": "unknown_field"
     },
@@ -346,6 +356,7 @@
       "description": "Unknown/mangled field access",
       "line": 42,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "(float)auStack_48._4_4_ * (float)auStack_48._4_4_ + fStack_40 * fStack_40);",
       "type": "unknown_field"
     },
@@ -353,6 +364,7 @@
       "description": "Unresolved stack parameter",
       "line": 47,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "if (in_stack_0000000c == 0) {",
       "type": "stack_param"
     },
@@ -360,6 +372,7 @@
       "description": "Unknown/mangled field access",
       "line": 77,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "auStack_48._0_4_ = (this_ptr->base).base.base.location.position.x + fStack_18;",
       "type": "unknown_field"
     },
@@ -367,6 +380,7 @@
       "description": "Unknown/mangled field access",
       "line": 78,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "auStack_48._4_4_ = (this_ptr->base).base.base.location.position.y + fStack_14;",
       "type": "unknown_field"
     },
@@ -374,6 +388,7 @@
       "description": "Unresolved stack parameter",
       "line": 81,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "(in_stack_00000008,&CStack_30,aCStack_e4);",
       "type": "stack_param"
     },
@@ -381,6 +396,7 @@
       "description": "Unresolved stack parameter",
       "line": 87,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "if ((fVar4 <= 1.0) && (in_stack_00000008 == g_CDemonSetPtr->collision_actor)) {",
       "type": "stack_param"
     },
@@ -388,6 +404,7 @@
       "description": "Unaffected register variable",
       "line": 88,
       "match": "unaff_EDI",
+      "severity": "moderate",
       "text": "return unaff_EDI;",
       "type": "unaffected_reg"
     }

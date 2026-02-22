@@ -53,6 +53,7 @@
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 19,
+    "max_suspect_severity": "severe",
     "pseudocode_lines": 150,
     "suspect_count": 5,
     "suspect_types": [
@@ -364,6 +365,7 @@
       "description": "Decompiler iteration limit exceeded",
       "line": 3,
       "match": "WARNING: Exceeded maximum restarts with more pending",
+      "severity": "severe",
       "text": "/* WARNING: Exceeded maximum restarts with more pending */",
       "type": "warning_max_restarts"
     },
@@ -371,6 +373,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 74,
       "match": "code *",
+      "severity": "moderate",
       "text": "(**(code **)*piStack_1c)(piStack_1c,&g_IID_IKsPropertySet,&g_DirectSoundPropertySet);",
       "type": "unresolved_funcptr"
     },
@@ -378,6 +381,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 80,
       "match": "code *",
+      "severity": "moderate",
       "text": "(**(code **)(*piStack_1c + 8))(piStack_1c);",
       "type": "unresolved_funcptr"
     },
@@ -385,6 +389,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 105,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND(((float)g_StreamSampleRate * fStack_14) / (float)g_StreamBlockCount));",
       "type": "decompiler_intrinsic"
     },
@@ -392,6 +397,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 105,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND(((float)g_StreamSampleRate * fStack_14) / (float)g_StreamBlockCount));",
       "type": "decompiler_intrinsic"
     }

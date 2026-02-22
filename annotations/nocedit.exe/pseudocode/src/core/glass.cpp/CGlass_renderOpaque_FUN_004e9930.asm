@@ -151,7 +151,7 @@ section .text
     PUSH ECX                            ; 004e9a70 | g_CDemonSetInstance
     XOR ESI,ESI                         ; 004e9a71
     CALL core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0 ; 004e9a73
-        ;   XREF to: 0056eac0 (UNCONDITIONAL_CALL)  ; float core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet * this_ptr, int vertex_count, int tri_count, SInputFace * tri_data_ptr, ...)
+        ;   XREF to: 0056eac0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet * this_ptr, int vertex_count, int tri_count, void * face_data, ...)
     MOV EBX,dword ptr [EBP + 0xb38]     ; 004e9a78
     ADD ESP,0x1c                        ; 004e9a7e
     TEST EBX,EBX                        ; 004e9a81

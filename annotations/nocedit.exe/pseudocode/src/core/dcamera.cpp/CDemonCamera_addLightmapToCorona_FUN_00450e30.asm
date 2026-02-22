@@ -18,7 +18,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_set.cpp_CDemonSet_FUN_0056c1a0 at 0056c26e
+;   core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0 at 0056c26e
 ;
 ; Referenced Globals:
 ;   char[241][320] g_CoronaBlurOutputBuffer

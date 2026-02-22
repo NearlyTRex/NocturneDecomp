@@ -5,6 +5,7 @@
     "cross_reference_count": 3,
     "function_call_count": 26,
     "global_count": 10,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 204,
     "suspect_count": 20,
     "suspect_types": [
@@ -515,6 +516,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 13,
       "match": "extraout_EAX",
+      "severity": "moderate",
       "text": "char *extraout_EAX;",
       "type": "extra_output"
     },
@@ -522,6 +524,7 @@
       "description": "Unresolved stack parameter",
       "line": 18,
       "match": "in_stack_00000010",
+      "severity": "moderate",
       "text": "char **in_stack_00000010;",
       "type": "stack_param"
     },
@@ -529,6 +532,7 @@
       "description": "Unresolved stack parameter",
       "line": 21,
       "match": "in_stack_ffffff3c",
+      "severity": "moderate",
       "text": "PRTL_CRITICAL_SECTION_DEBUG in_stack_ffffff3c;",
       "type": "stack_param"
     },
@@ -536,6 +540,7 @@
       "description": "Unresolved stack parameter",
       "line": 48,
       "match": "in_stack_00000010",
+      "severity": "moderate",
       "text": "pcVar4 = *in_stack_00000010;",
       "type": "stack_param"
     },
@@ -543,6 +548,7 @@
       "description": "Unresolved stack parameter",
       "line": 49,
       "match": "in_stack_00000010",
+      "severity": "moderate",
       "text": "ppcVar2 = in_stack_00000010;",
       "type": "stack_param"
     },
@@ -550,6 +556,7 @@
       "description": "Unresolved stack parameter",
       "line": 62,
       "match": "in_stack_00000010",
+      "severity": "moderate",
       "text": "memcpy(ppcVar2,in_stack_00000010,size - 4);",
       "type": "stack_param"
     },
@@ -557,6 +564,7 @@
       "description": "Unresolved stack parameter",
       "line": 66,
       "match": "in_stack_00000010",
+      "severity": "moderate",
       "text": "in_stack_00000010 = ppcVar2;",
       "type": "stack_param"
     },
@@ -564,6 +572,7 @@
       "description": "Unresolved stack parameter",
       "line": 71,
       "match": "in_stack_00000010",
+      "severity": "moderate",
       "text": "iVar8 = execv((int)cmdname,(char *)argv,in_stack_00000010);",
       "type": "stack_param"
     },
@@ -571,6 +580,7 @@
       "description": "Unresolved stack parameter",
       "line": 75,
       "match": "in_stack_00000010",
+      "severity": "moderate",
       "text": "free(in_stack_00000010);",
       "type": "stack_param"
     },
@@ -578,6 +588,7 @@
       "description": "Unresolved stack parameter",
       "line": 80,
       "match": "in_stack_00000010",
+      "severity": "moderate",
       "text": "((int)argv,in_stack_00000010,(char *)&local_38,&local_3c,&local_40,&local_44,",
       "type": "stack_param"
     },
@@ -585,6 +596,7 @@
       "description": "Unresolved stack parameter",
       "line": 81,
       "match": "in_stack_ffffff3c",
+      "severity": "moderate",
       "text": "(int *)0x0,(int)in_stack_ffffff3c);",
       "type": "stack_param"
     },
@@ -592,6 +604,7 @@
       "description": "Unresolved stack parameter",
       "line": 84,
       "match": "in_stack_00000010",
+      "severity": "moderate",
       "text": "free(in_stack_00000010);",
       "type": "stack_param"
     },
@@ -599,6 +612,7 @@
       "description": "Direct stack address reference",
       "line": 98,
       "match": "&stack0xffffff3c",
+      "severity": "moderate",
       "text": "pcVar4 = &stack0xffffff3c;",
       "type": "stack_ref"
     },
@@ -606,6 +620,7 @@
       "description": "Unresolved stack parameter",
       "line": 107,
       "match": "in_stack_00000010",
+      "severity": "moderate",
       "text": "free(in_stack_00000010);",
       "type": "stack_param"
     },
@@ -613,6 +628,7 @@
       "description": "Direct stack address reference",
       "line": 117,
       "match": "&stack0xffffff3c",
+      "severity": "moderate",
       "text": "((LPCRITICAL_SECTION)&stack0xffffff3c);",
       "type": "stack_ref"
     },
@@ -620,6 +636,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 193,
       "match": "extraout_EAX",
+      "severity": "moderate",
       "text": "arg2 = extraout_EAX;",
       "type": "extra_output"
     },
@@ -627,6 +644,7 @@
       "description": "Unresolved stack parameter",
       "line": 198,
       "match": "in_stack_00000010",
+      "severity": "moderate",
       "text": "free(in_stack_00000010);",
       "type": "stack_param"
     },
@@ -634,6 +652,7 @@
       "description": "Direct stack address reference",
       "line": 205,
       "match": "&stack0xffffff3c",
+      "severity": "moderate",
       "text": "((LPCRITICAL_SECTION)&stack0xffffff3c);",
       "type": "stack_ref"
     },

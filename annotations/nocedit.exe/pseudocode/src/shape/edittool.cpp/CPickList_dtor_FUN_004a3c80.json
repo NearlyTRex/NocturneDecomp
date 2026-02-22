@@ -10,6 +10,7 @@
     "cross_reference_count": 73,
     "function_call_count": 7,
     "global_count": 2,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 25,
     "suspect_count": 2,
     "suspect_types": [
@@ -572,6 +573,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 20,
       "match": "pCVar1[-1].",
+      "severity": "mild",
       "text": "((CEdScrollBar *)(pCVar1[-1].button_text + 0x90),0);",
       "type": "negative_offset"
     },
@@ -579,6 +581,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 22,
       "match": "pCVar2[-9].",
+      "severity": "mild",
       "text": "shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)&pCVar2[-9].thumb_end,1);",
       "type": "negative_offset"
     }

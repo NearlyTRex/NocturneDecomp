@@ -125,6 +125,7 @@
     "cross_reference_count": 1,
     "function_call_count": 96,
     "global_count": 107,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 1049,
     "suspect_count": 110,
     "suspect_types": [
@@ -428,34 +429,14 @@
       "name": "core_script.cpp_CScript_updateMouseCursor_FUN_00566bc0"
     },
     {
-      "addr": "0056be80",
+      "addr": "0056fbd0",
       "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_0056be80"
-    },
-    {
-      "addr": "0056c1a0",
-      "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0"
-    },
-    {
-      "addr": "0056cd60",
-      "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_0056cd60"
-    },
-    {
-      "addr": "0056cf00",
-      "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_0056cf00"
+      "name": "core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0"
     },
     {
       "addr": "0056d2d0",
       "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_0056d2d0"
-    },
-    {
-      "addr": "0056fbd0",
-      "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_0056fbd0"
+      "name": "core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0"
     },
     {
       "addr": "0056aa10",
@@ -463,9 +444,29 @@
       "name": "core_set.cpp_CDemonSet_initScene_FUN_0056aa10"
     },
     {
+      "addr": "0056cd60",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_renderOpaqueActors_FUN_0056cd60"
+    },
+    {
+      "addr": "0056c1a0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0"
+    },
+    {
       "addr": "0056a190",
       "is_variadic": false,
       "name": "core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190"
+    },
+    {
+      "addr": "0056be80",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_renderStaticLights_FUN_0056be80"
+    },
+    {
+      "addr": "0056cf00",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_renderTransparentActors_FUN_0056cf00"
     },
     {
       "addr": "0056ae50",
@@ -1911,6 +1912,7 @@
       "description": "Deadcode elimination delayed",
       "line": 3,
       "match": "WARNING: Restarted to delay deadcode elimination",
+      "severity": "mild",
       "text": "/* WARNING: Restarted to delay deadcode elimination for space: stack */",
       "type": "warning_deadcode_restart"
     },
@@ -1918,6 +1920,7 @@
       "description": "Unnamed function parameter",
       "line": 5,
       "match": "param_2",
+      "severity": "mild",
       "text": "int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_ptr,int param_2)",
       "type": "unnamed_param"
     },
@@ -1925,6 +1928,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 13,
       "match": "extraout_EAX",
+      "severity": "moderate",
       "text": "CStrList_vtable *extraout_EAX;",
       "type": "extra_output"
     },
@@ -1932,6 +1936,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 15,
       "match": "extraout_EAX_00",
+      "severity": "moderate",
       "text": "CStrList_vtable *extraout_EAX_00;",
       "type": "extra_output"
     },
@@ -1939,6 +1944,7 @@
       "description": "Unresolved stack parameter",
       "line": 27,
       "match": "in_stack_fffff61c",
+      "severity": "moderate",
       "text": "CKeys *in_stack_fffff61c;",
       "type": "stack_param"
     },
@@ -1946,6 +1952,7 @@
       "description": "Unresolved stack parameter",
       "line": 28,
       "match": "in_stack_fffff620",
+      "severity": "moderate",
       "text": "int in_stack_fffff620;",
       "type": "stack_param"
     },
@@ -1953,6 +1960,7 @@
       "description": "Unresolved stack parameter",
       "line": 29,
       "match": "in_stack_fffff624",
+      "severity": "moderate",
       "text": "CDemonMission *in_stack_fffff624;",
       "type": "stack_param"
     },
@@ -1960,6 +1968,7 @@
       "description": "Unresolved stack parameter",
       "line": 30,
       "match": "in_stack_fffff62c",
+      "severity": "moderate",
       "text": "CKeys *in_stack_fffff62c;",
       "type": "stack_param"
     },
@@ -1967,6 +1976,7 @@
       "description": "Unresolved stack parameter",
       "line": 31,
       "match": "in_stack_fffff630",
+      "severity": "moderate",
       "text": "CDemonMission *in_stack_fffff630;",
       "type": "stack_param"
     },
@@ -1974,6 +1984,7 @@
       "description": "Unresolved stack parameter",
       "line": 32,
       "match": "in_stack_fffff634",
+      "severity": "moderate",
       "text": "CKeys *in_stack_fffff634;",
       "type": "stack_param"
     },
@@ -1981,6 +1992,7 @@
       "description": "Unnamed function parameter",
       "line": 36,
       "match": "param5",
+      "severity": "mild",
       "text": "UOrientationVector *param5;",
       "type": "unnamed_param"
     },
@@ -1988,6 +2000,7 @@
       "description": "Unresolved stack parameter",
       "line": 38,
       "match": "in_stack_fffff694",
+      "severity": "moderate",
       "text": "CDemonSet *in_stack_fffff694;",
       "type": "stack_param"
     },
@@ -1995,6 +2008,7 @@
       "description": "Undefined global data reference",
       "line": 113,
       "match": "DAT_02f7a024",
+      "severity": "mild",
       "text": "core_actor_cpp_CActorPropertyList_resetSelection_FUN_0040e150((CActorPropertyList *)&DAT_02f7a024)",
       "type": "undefined_data"
     },
@@ -2002,6 +2016,7 @@
       "description": "Unnamed function parameter",
       "line": 132,
       "match": "param_2",
+      "severity": "mild",
       "text": "if (param_2 != 0) {",
       "type": "unnamed_param"
     },
@@ -2009,6 +2024,7 @@
       "description": "Undefined global data reference",
       "line": 133,
       "match": "DAT_02f7c53c",
+      "severity": "mild",
       "text": "DAT_02f7c53c = 0;",
       "type": "undefined_data"
     },
@@ -2016,6 +2032,7 @@
       "description": "Unknown/mangled field access",
       "line": 165,
       "match": "._8_4_",
+      "severity": "mild",
       "text": "local_170._8_4_ = 0.0;",
       "type": "unknown_field"
     },
@@ -2023,6 +2040,7 @@
       "description": "Unknown/mangled field access",
       "line": 166,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_170._4_4_ = 0.0;",
       "type": "unknown_field"
     },
@@ -2030,6 +2048,7 @@
       "description": "Unknown/mangled field access",
       "line": 167,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_170._0_4_ = 0.0;",
       "type": "unknown_field"
     },
@@ -2037,6 +2056,7 @@
       "description": "Unknown/mangled field access",
       "line": 170,
       "match": "._12_4_",
+      "severity": "mild",
       "text": "local_170._12_4_ = 0.0;",
       "type": "unknown_field"
     },
@@ -2044,6 +2064,7 @@
       "description": "Undefined global data reference",
       "line": 193,
       "match": "DAT_00680830",
+      "severity": "mild",
       "text": "puVar8 = &DAT_00680830;",
       "type": "undefined_data"
     },
@@ -2051,6 +2072,7 @@
       "description": "Undefined global data reference",
       "line": 200,
       "match": "DAT_02f7c53c",
+      "severity": "mild",
       "text": "switch(DAT_02f7c53c) {",
       "type": "undefined_data"
     },
@@ -2058,6 +2080,7 @@
       "description": "Unknown/mangled field access",
       "line": 211,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_170._0_4_ = g_CDemonCameraInstance.base.position.x;",
       "type": "unknown_field"
     },
@@ -2065,6 +2088,7 @@
       "description": "Unknown/mangled field access",
       "line": 212,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_170._4_4_ = *local_54;",
       "type": "unknown_field"
     },
@@ -2072,6 +2096,7 @@
       "description": "Unknown/mangled field access",
       "line": 213,
       "match": "._8_4_",
+      "severity": "mild",
       "text": "local_170._8_4_ = *local_58;",
       "type": "unknown_field"
     },
@@ -2079,6 +2104,7 @@
       "description": "Complex pointer cast",
       "line": 219,
       "match": "(CMatrix3x3i *)((int)",
+      "severity": "mild",
       "text": "pCVar9 = (CMatrix3x3i *)((int)pCVar9 + ((uint)bVar14 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -2086,6 +2112,7 @@
       "description": "Complex pointer cast",
       "line": 227,
       "match": "(CMatrix3x3f *)((int)",
+      "severity": "mild",
       "text": "pCVar12 = (CMatrix3x3f *)((int)pCVar12 + ((uint)bVar14 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -2093,6 +2120,7 @@
       "description": "Unknown/mangled field access",
       "line": 231,
       "match": "._12_4_",
+      "severity": "mild",
       "text": "local_170._12_4_ = pCVar4->x;",
       "type": "unknown_field"
     },
@@ -2100,6 +2128,7 @@
       "description": "Direct stack address reference",
       "line": 239,
       "match": "&stack0x00000000",
+      "severity": "moderate",
       "text": "if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.camera_origin.z) {",
       "type": "stack_ref"
     },
@@ -2107,6 +2136,7 @@
       "description": "Unknown/mangled field access",
       "line": 240,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "g_CDemonCameraInstance.base.position.x = local_170._0_4_;",
       "type": "unknown_field"
     },
@@ -2114,6 +2144,7 @@
       "description": "Unknown/mangled field access",
       "line": 241,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "g_CDemonCameraInstance.base.position.y = local_170._4_4_;",
       "type": "unknown_field"
     },
@@ -2121,6 +2152,7 @@
       "description": "Unknown/mangled field access",
       "line": 242,
       "match": "._8_4_",
+      "severity": "mild",
       "text": "g_CDemonCameraInstance.base.position.z = local_170._8_4_;",
       "type": "unknown_field"
     },
@@ -2128,6 +2160,7 @@
       "description": "Direct stack address reference",
       "line": 251,
       "match": "&stack0x00000000",
+      "severity": "moderate",
       "text": "if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.camera_origin.z) {",
       "type": "stack_ref"
     },
@@ -2135,6 +2168,7 @@
       "description": "Unknown/mangled field access",
       "line": 252,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "g_CDemonCameraInstance.base.position.x = local_170._0_4_;",
       "type": "unknown_field"
     },
@@ -2142,6 +2176,7 @@
       "description": "Unknown/mangled field access",
       "line": 253,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "g_CDemonCameraInstance.base.position.y = local_170._4_4_;",
       "type": "unknown_field"
     },
@@ -2149,6 +2184,7 @@
       "description": "Unknown/mangled field access",
       "line": 254,
       "match": "._8_4_",
+      "severity": "mild",
       "text": "g_CDemonCameraInstance.base.position.z = local_170._8_4_;",
       "type": "unknown_field"
     },
@@ -2156,6 +2192,7 @@
       "description": "Unknown/mangled field access",
       "line": 277,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_170._0_4_ = local_ac;",
       "type": "unknown_field"
     },
@@ -2163,6 +2200,7 @@
       "description": "Unknown/mangled field access",
       "line": 278,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_170._4_4_ = local_a8;",
       "type": "unknown_field"
     },
@@ -2170,6 +2208,7 @@
       "description": "Unknown/mangled field access",
       "line": 279,
       "match": "._8_4_",
+      "severity": "mild",
       "text": "local_170._8_4_ = local_a4;",
       "type": "unknown_field"
     },
@@ -2177,6 +2216,7 @@
       "description": "Unknown/mangled field access",
       "line": 283,
       "match": "._12_4_",
+      "severity": "mild",
       "text": "local_170._12_4_ = (pCVar5->orient).vec.x;",
       "type": "unknown_field"
     },
@@ -2184,6 +2224,7 @@
       "description": "Direct stack address reference",
       "line": 289,
       "match": "&stack0x00000000",
+      "severity": "moderate",
       "text": "if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.camera_origin.z) {",
       "type": "stack_ref"
     },
@@ -2191,6 +2232,7 @@
       "description": "Unknown/mangled field access",
       "line": 290,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "g_CDemonCameraInstance.base.position.x = local_170._0_4_;",
       "type": "unknown_field"
     },
@@ -2198,6 +2240,7 @@
       "description": "Unknown/mangled field access",
       "line": 291,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "g_CDemonCameraInstance.base.position.y = local_170._4_4_;",
       "type": "unknown_field"
     },
@@ -2205,6 +2248,7 @@
       "description": "Unknown/mangled field access",
       "line": 292,
       "match": "._8_4_",
+      "severity": "mild",
       "text": "g_CDemonCameraInstance.base.position.z = local_170._8_4_;",
       "type": "unknown_field"
     },
@@ -2212,6 +2256,7 @@
       "description": "Unknown/mangled field access",
       "line": 303,
       "match": "._12_4_",
+      "severity": "mild",
       "text": "local_170._12_4_ = local_7c;",
       "type": "unknown_field"
     },
@@ -2219,6 +2264,7 @@
       "description": "Unknown/mangled field access",
       "line": 332,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_170._0_4_ = local_b8;",
       "type": "unknown_field"
     },
@@ -2226,6 +2272,7 @@
       "description": "Unknown/mangled field access",
       "line": 333,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_170._4_4_ = local_b4;",
       "type": "unknown_field"
     },
@@ -2233,6 +2280,7 @@
       "description": "Unknown/mangled field access",
       "line": 334,
       "match": "._8_4_",
+      "severity": "mild",
       "text": "local_170._8_4_ = local_b0;",
       "type": "unknown_field"
     },
@@ -2240,6 +2288,7 @@
       "description": "Direct stack address reference",
       "line": 338,
       "match": "&stack0x00000000",
+      "severity": "moderate",
       "text": "if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.camera_origin.z) {",
       "type": "stack_ref"
     },
@@ -2247,6 +2296,7 @@
       "description": "Unknown/mangled field access",
       "line": 339,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "g_CDemonCameraInstance.base.position.x = local_170._0_4_;",
       "type": "unknown_field"
     },
@@ -2254,6 +2304,7 @@
       "description": "Unknown/mangled field access",
       "line": 340,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "g_CDemonCameraInstance.base.position.y = local_170._4_4_;",
       "type": "unknown_field"
     },
@@ -2261,6 +2312,7 @@
       "description": "Unknown/mangled field access",
       "line": 341,
       "match": "._8_4_",
+      "severity": "mild",
       "text": "g_CDemonCameraInstance.base.position.z = local_170._8_4_;",
       "type": "unknown_field"
     },
@@ -2268,6 +2320,7 @@
       "description": "Undefined global data reference",
       "line": 358,
       "match": "DAT_02f7c53c",
+      "severity": "mild",
       "text": "if (DAT_02f7c53c == 0) {",
       "type": "undefined_data"
     },
@@ -2275,6 +2328,7 @@
       "description": "Undefined global data reference",
       "line": 413,
       "match": "DAT_02f7c538",
+      "severity": "mild",
       "text": "if ((DAT_02f7c538 == 0) && (g_ActiveControl == (void *)0x0)) {",
       "type": "undefined_data"
     },
@@ -2282,6 +2336,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 434,
       "match": "SQRT",
+      "severity": "mild",
       "text": "local_40 = SQRT(local_bc * local_bc + local_c4 * local_c4 + local_c0 * local_c0) *",
       "type": "decompiler_intrinsic"
     },
@@ -2289,6 +2344,7 @@
       "description": "Unnamed function parameter",
       "line": 439,
       "match": "param5",
+      "severity": "mild",
       "text": "param5 = &this_ptr->selected_actor->orient;",
       "type": "unnamed_param"
     },
@@ -2296,6 +2352,7 @@
       "description": "Unnamed function parameter",
       "line": 445,
       "match": "param5",
+      "severity": "mild",
       "text": "(g_CEditorToolsPtr,(int)local_40,world_position,label_offset,param5);",
       "type": "unnamed_param"
     },
@@ -2303,6 +2360,7 @@
       "description": "Undefined global data reference",
       "line": 455,
       "match": "DAT_02f7c53c",
+      "severity": "mild",
       "text": "if (DAT_02f7c53c == 0) {",
       "type": "undefined_data"
     },
@@ -2310,6 +2368,7 @@
       "description": "Undefined global data reference",
       "line": 471,
       "match": "DAT_02f7c53c",
+      "severity": "mild",
       "text": "(\" StaticCam \",3,0xf3,1,(uint)(DAT_02f7c53c == 0));",
       "type": "undefined_data"
     },
@@ -2317,6 +2376,7 @@
       "description": "Undefined global data reference",
       "line": 477,
       "match": "DAT_02f7c53c",
+      "severity": "mild",
       "text": "(\" CustomCam \",0x49,0xf3,1,(uint)(DAT_02f7c53c == 1));",
       "type": "undefined_data"
     },
@@ -2324,6 +2384,7 @@
       "description": "Undefined global data reference",
       "line": 482,
       "match": "DAT_02f7c53c",
+      "severity": "mild",
       "text": "(\" SlewCam \",0x8f,0xf3,1,(uint)(DAT_02f7c53c == 2));",
       "type": "undefined_data"
     },
@@ -2331,6 +2392,7 @@
       "description": "Undefined global data reference",
       "line": 487,
       "match": "DAT_02f7c53c",
+      "severity": "mild",
       "text": "(\" 1stPersonCam \",199,0xf3,1,(uint)(DAT_02f7c53c == 3));",
       "type": "undefined_data"
     },
@@ -2338,6 +2400,7 @@
       "description": "Unresolved stack parameter",
       "line": 491,
       "match": "in_stack_fffff634",
+      "severity": "moderate",
       "text": "in_stack_fffff634 = (CKeys *)0x5398c5;",
       "type": "stack_param"
     },
@@ -2345,6 +2408,7 @@
       "description": "Undefined global data reference",
       "line": 493,
       "match": "DAT_02f7c53c",
+      "severity": "mild",
       "text": "(\" SpotCam \",0x122,0xf3,1,(uint)(DAT_02f7c53c == 4));",
       "type": "undefined_data"
     },
@@ -2352,6 +2416,7 @@
       "description": "Undefined global data reference",
       "line": 497,
       "match": "DAT_02f7c53c",
+      "severity": "mild",
       "text": "if (DAT_02f7c53c == 0) {",
       "type": "undefined_data"
     },
@@ -2359,6 +2424,7 @@
       "description": "Undefined global data reference",
       "line": 526,
       "match": "DAT_02f7c53c",
+      "severity": "mild",
       "text": "if (DAT_02f7c53c == 4) {",
       "type": "undefined_data"
     },
@@ -2366,6 +2432,7 @@
       "description": "Unresolved stack parameter",
       "line": 584,
       "match": "in_stack_fffff61c",
+      "severity": "moderate",
       "text": "in_stack_fffff61c = g_CKeysPtr;",
       "type": "stack_param"
     },
@@ -2373,6 +2440,7 @@
       "description": "Unresolved stack parameter",
       "line": 589,
       "match": "in_stack_fffff620",
+      "severity": "moderate",
       "text": "in_stack_fffff620 = 0x539bc1;",
       "type": "stack_param"
     },
@@ -2380,6 +2448,7 @@
       "description": "Unresolved stack parameter",
       "line": 590,
       "match": "in_stack_fffff624",
+      "severity": "moderate",
       "text": "in_stack_fffff624 = (CDemonMission *)g_CKeysPtr;",
       "type": "stack_param"
     },
@@ -2387,6 +2456,7 @@
       "description": "Unresolved stack parameter",
       "line": 595,
       "match": "in_stack_fffff62c",
+      "severity": "moderate",
       "text": "in_stack_fffff62c = g_CKeysPtr;",
       "type": "stack_param"
     },
@@ -2394,6 +2464,7 @@
       "description": "Unresolved stack parameter",
       "line": 600,
       "match": "in_stack_fffff630",
+      "severity": "moderate",
       "text": "in_stack_fffff630 = (CDemonMission *)0x539bf9;",
       "type": "stack_param"
     },
@@ -2401,6 +2472,7 @@
       "description": "Unresolved stack parameter",
       "line": 601,
       "match": "in_stack_fffff634",
+      "severity": "moderate",
       "text": "in_stack_fffff634 = g_CKeysPtr;",
       "type": "stack_param"
     },
@@ -2408,6 +2480,7 @@
       "description": "Undefined global data reference",
       "line": 623,
       "match": "DAT_02f7c53c",
+      "severity": "mild",
       "text": "if (DAT_02f7c53c == 2) {",
       "type": "undefined_data"
     },
@@ -2415,6 +2488,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 642,
       "match": "extraout_EAX_00",
+      "severity": "moderate",
       "text": "pCVar16 = extraout_EAX_00;",
       "type": "extra_output"
     },
@@ -2422,6 +2496,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 646,
       "match": "extraout_EAX",
+      "severity": "moderate",
       "text": "pCVar16 = extraout_EAX;",
       "type": "extra_output"
     },
@@ -2429,6 +2504,7 @@
       "description": "Unresolved stack parameter",
       "line": 760,
       "match": "in_stack_fffff694",
+      "severity": "moderate",
       "text": "(this_ptr,(CDemonMission *)in_stack_fffff694);",
       "type": "stack_param"
     },
@@ -2436,6 +2512,7 @@
       "description": "Unresolved stack parameter",
       "line": 764,
       "match": "in_stack_fffff694",
+      "severity": "moderate",
       "text": "in_stack_fffff694 = (CDemonSet *)g_CKeysPtr;",
       "type": "stack_param"
     },
@@ -2443,6 +2520,7 @@
       "description": "Unresolved stack parameter",
       "line": 767,
       "match": "in_stack_fffff694",
+      "severity": "moderate",
       "text": "in_stack_fffff694 = (CDemonSet *)0x53ab69;",
       "type": "stack_param"
     },
@@ -2450,6 +2528,7 @@
       "description": "Unresolved stack parameter",
       "line": 777,
       "match": "in_stack_fffff61c",
+      "severity": "moderate",
       "text": "(this_ptr,(int)in_stack_fffff61c,in_stack_fffff620,in_stack_fffff624);",
       "type": "stack_param"
     },
@@ -2457,6 +2536,7 @@
       "description": "Unresolved stack parameter",
       "line": 777,
       "match": "in_stack_fffff620",
+      "severity": "moderate",
       "text": "(this_ptr,(int)in_stack_fffff61c,in_stack_fffff620,in_stack_fffff624);",
       "type": "stack_param"
     },
@@ -2464,6 +2544,7 @@
       "description": "Unresolved stack parameter",
       "line": 777,
       "match": "in_stack_fffff624",
+      "severity": "moderate",
       "text": "(this_ptr,(int)in_stack_fffff61c,in_stack_fffff620,in_stack_fffff624);",
       "type": "stack_param"
     },
@@ -2471,6 +2552,7 @@
       "description": "Unresolved stack parameter",
       "line": 783,
       "match": "in_stack_fffff61c",
+      "severity": "moderate",
       "text": "in_stack_fffff61c = g_CKeysPtr;",
       "type": "stack_param"
     },
@@ -2478,6 +2560,7 @@
       "description": "Unresolved stack parameter",
       "line": 787,
       "match": "in_stack_fffff62c",
+      "severity": "moderate",
       "text": "(this_ptr,(int)in_stack_fffff62c,in_stack_fffff630,(int)in_stack_fffff634);",
       "type": "stack_param"
     },
@@ -2485,6 +2568,7 @@
       "description": "Unresolved stack parameter",
       "line": 787,
       "match": "in_stack_fffff630",
+      "severity": "moderate",
       "text": "(this_ptr,(int)in_stack_fffff62c,in_stack_fffff630,(int)in_stack_fffff634);",
       "type": "stack_param"
     },
@@ -2492,6 +2576,7 @@
       "description": "Unresolved stack parameter",
       "line": 787,
       "match": "in_stack_fffff634",
+      "severity": "moderate",
       "text": "(this_ptr,(int)in_stack_fffff62c,in_stack_fffff630,(int)in_stack_fffff634);",
       "type": "stack_param"
     },
@@ -2499,6 +2584,7 @@
       "description": "Unresolved stack parameter",
       "line": 789,
       "match": "in_stack_fffff620",
+      "severity": "moderate",
       "text": "in_stack_fffff620 = 0x53a76b;",
       "type": "stack_param"
     },
@@ -2506,6 +2592,7 @@
       "description": "Unresolved stack parameter",
       "line": 790,
       "match": "in_stack_fffff624",
+      "severity": "moderate",
       "text": "in_stack_fffff624 = (CDemonMission *)g_CKeysPtr;",
       "type": "stack_param"
     },
@@ -2513,6 +2600,7 @@
       "description": "Unresolved stack parameter",
       "line": 794,
       "match": "in_stack_fffff62c",
+      "severity": "moderate",
       "text": "in_stack_fffff62c = g_CKeysPtr;",
       "type": "stack_param"
     },
@@ -2520,6 +2608,7 @@
       "description": "Unresolved stack parameter",
       "line": 816,
       "match": "in_stack_fffff630",
+      "severity": "moderate",
       "text": "in_stack_fffff630 = (CDemonMission *)0x53a7d3;",
       "type": "stack_param"
     },
@@ -2527,6 +2616,7 @@
       "description": "Unresolved stack parameter",
       "line": 817,
       "match": "in_stack_fffff634",
+      "severity": "moderate",
       "text": "in_stack_fffff634 = g_CKeysPtr;",
       "type": "stack_param"
     },
@@ -2534,6 +2624,7 @@
       "description": "Direct stack address reference",
       "line": 838,
       "match": "&stack0xfffff64c",
+      "severity": "moderate",
       "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff64c);",
       "type": "stack_ref"
     },
@@ -2541,6 +2632,7 @@
       "description": "Direct stack address reference",
       "line": 843,
       "match": "&stack0xfffff64c",
+      "severity": "moderate",
       "text": "((CStrList *)&stack0xfffff64c,pCVar5->actor_name);",
       "type": "stack_ref"
     },
@@ -2548,6 +2640,7 @@
       "description": "Direct stack address reference",
       "line": 847,
       "match": "&stack0xfffff64c",
+      "severity": "moderate",
       "text": "shape_edittool_cpp_CStrList_sort_FUN_004a2ec0((CStrList *)&stack0xfffff64c);",
       "type": "stack_ref"
     },
@@ -2555,6 +2648,7 @@
       "description": "Direct stack address reference",
       "line": 848,
       "match": "&stack0xfffff64c",
+      "severity": "moderate",
       "text": "this_ptr_02 = (CPickList *)&stack0xfffff64c;",
       "type": "stack_ref"
     },
@@ -2562,6 +2656,7 @@
       "description": "Direct stack address reference",
       "line": 853,
       "match": "&stack0xfffff64c",
+      "severity": "moderate",
       "text": "((CStrList *)&stack0xfffff64c,iVar11);",
       "type": "stack_ref"
     },
@@ -2569,6 +2664,7 @@
       "description": "Direct stack address reference",
       "line": 861,
       "match": "&stack0xfffff64c",
+      "severity": "moderate",
       "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff64c,0);",
       "type": "stack_ref"
     },
@@ -2576,6 +2672,7 @@
       "description": "Direct stack address reference",
       "line": 868,
       "match": "&stack0xfffff64c",
+      "severity": "moderate",
       "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff64c,0);",
       "type": "stack_ref"
     },
@@ -2583,6 +2680,7 @@
       "description": "Undefined global data reference",
       "line": 881,
       "match": "DAT_02f7c53c",
+      "severity": "mild",
       "text": "local_14 = DAT_02f7c53c + 1;",
       "type": "undefined_data"
     },
@@ -2590,6 +2688,7 @@
       "description": "Undefined global data reference",
       "line": 887,
       "match": "DAT_02f7c53c",
+      "severity": "mild",
       "text": "local_14 = DAT_02f7c53c + -1;",
       "type": "undefined_data"
     },
@@ -2597,6 +2696,7 @@
       "description": "Unresolved stack parameter",
       "line": 932,
       "match": "in_stack_fffff694",
+      "severity": "moderate",
       "text": "in_stack_fffff694 = (CDemonSet *)0x53aa3e;",
       "type": "stack_param"
     },
@@ -2604,6 +2704,7 @@
       "description": "Undefined global data reference",
       "line": 936,
       "match": "DAT_02f7c53c",
+      "severity": "mild",
       "text": "DAT_02f7c53c = local_14;",
       "type": "undefined_data"
     },
@@ -2611,6 +2712,7 @@
       "description": "Unresolved stack parameter",
       "line": 943,
       "match": "in_stack_fffff694",
+      "severity": "moderate",
       "text": "in_stack_fffff694 = (CDemonSet *)this_ptr;",
       "type": "stack_param"
     },
@@ -2618,6 +2720,7 @@
       "description": "Unresolved stack parameter",
       "line": 958,
       "match": "in_stack_fffff694",
+      "severity": "moderate",
       "text": "in_stack_fffff694 = (CDemonSet *)0x53acfa;",
       "type": "stack_param"
     },
@@ -2625,6 +2728,7 @@
       "description": "Unresolved stack parameter",
       "line": 969,
       "match": "in_stack_fffff694",
+      "severity": "moderate",
       "text": "in_stack_fffff694 = pCVar17;",
       "type": "stack_param"
     },
@@ -2632,6 +2736,7 @@
       "description": "Undefined global data reference",
       "line": 972,
       "match": "DAT_02f7c538",
+      "severity": "mild",
       "text": "(DAT_02f7c538 == 0)) && (g_ActiveControl == (void *)0x0)) {",
       "type": "undefined_data"
     },
@@ -2639,6 +2744,7 @@
       "description": "Undefined global data reference",
       "line": 973,
       "match": "DAT_02f7c528",
+      "severity": "mild",
       "text": "if ((this_ptr->selected_actor == (CDemonActor *)0x0) || (DAT_02f7c528 < 0)) {",
       "type": "undefined_data"
     },
@@ -2646,6 +2752,7 @@
       "description": "Unresolved stack parameter",
       "line": 975,
       "match": "in_stack_fffff694",
+      "severity": "moderate",
       "text": "in_stack_fffff694 = (CDemonSet *)g_CKeysPtr;",
       "type": "stack_param"
     },
@@ -2653,6 +2760,7 @@
       "description": "Undefined global data reference",
       "line": 1000,
       "match": "DAT_02f7c528",
+      "severity": "mild",
       "text": "iVar6 = DAT_02f7c528 * 0xec;",
       "type": "undefined_data"
     },
@@ -2660,6 +2768,7 @@
       "description": "Undefined global data reference",
       "line": 1001,
       "match": "DAT_02f7a02c",
+      "severity": "mild",
       "text": "this_ptr_01 = (CActorProperty *)(&DAT_02f7a02c + iVar6);",
       "type": "undefined_data"
     },
@@ -2667,6 +2776,7 @@
       "description": "Unresolved stack parameter",
       "line": 1002,
       "match": "in_stack_fffff694",
+      "severity": "moderate",
       "text": "in_stack_fffff694 = (CDemonSet *)g_CKeysPtr;",
       "type": "stack_param"
     },
@@ -2674,6 +2784,7 @@
       "description": "Undefined global data reference",
       "line": 1009,
       "match": "DAT_02f7a080",
+      "severity": "mild",
       "text": "if (*(int *)(&DAT_02f7a080 + iVar6) == 0) goto LAB_0053ad72;",
       "type": "undefined_data"
     }

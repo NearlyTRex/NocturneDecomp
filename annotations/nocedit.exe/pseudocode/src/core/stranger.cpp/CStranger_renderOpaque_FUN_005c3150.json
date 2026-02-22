@@ -53,6 +53,7 @@
     "cross_reference_count": 0,
     "function_call_count": 21,
     "global_count": 13,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 209,
     "suspect_count": 15,
     "suspect_types": [
@@ -583,6 +584,7 @@
       "description": "Type propagation did not converge",
       "line": 2,
       "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
     },
@@ -590,6 +592,7 @@
       "description": "Undefined global data reference",
       "line": 43,
       "match": "DAT_03f6bb24",
+      "severity": "mild",
       "text": "if ((this_ptr->base).base.model.part_data.visibility_flags[DAT_03f6bb24] != 0) {",
       "type": "undefined_data"
     },
@@ -597,6 +600,7 @@
       "description": "Complex pointer cast",
       "line": 61,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -604,6 +608,7 @@
       "description": "Complex pointer cast",
       "line": 62,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -611,6 +616,7 @@
       "description": "Undefined global data reference",
       "line": 110,
       "match": "DAT_03f6bb24",
+      "severity": "mild",
       "text": "((this_ptr->base).base.model.part_data.visibility_flags[DAT_03f6bb24] == 0)) goto LAB_005c33d7;",
       "type": "undefined_data"
     },
@@ -618,6 +624,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 119,
       "match": "7.00649e-45",
+      "severity": "mild",
       "text": "case 7.00649e-45:",
       "type": "suspect_float"
     },
@@ -625,6 +632,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 122,
       "match": "1.4013e-45",
+      "severity": "mild",
       "text": "case 1.4013e-45:",
       "type": "suspect_float"
     },
@@ -632,6 +640,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 125,
       "match": "2.8026e-45",
+      "severity": "mild",
       "text": "case 2.8026e-45:",
       "type": "suspect_float"
     },
@@ -639,6 +648,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 130,
       "match": "5.60519e-45",
+      "severity": "mild",
       "text": "case 5.60519e-45:",
       "type": "suspect_float"
     },
@@ -646,6 +656,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 133,
       "match": "9.80909e-45",
+      "severity": "mild",
       "text": "case 9.80909e-45:",
       "type": "suspect_float"
     },
@@ -653,6 +664,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 140,
       "match": "1.4013e-45",
+      "severity": "mild",
       "text": "if ((this_ptr->weapon[2].orient.vec.x == 1.4013e-45) &&",
       "type": "suspect_float"
     },
@@ -660,6 +672,7 @@
       "description": "Undefined global data reference",
       "line": 159,
       "match": "DAT_03f6bb24",
+      "severity": "mild",
       "text": "((this_ptr->base).base.model.part_data.visibility_flags[DAT_03f6bb24] != 0)) &&",
       "type": "undefined_data"
     },
@@ -667,6 +680,7 @@
       "description": "Complex pointer cast",
       "line": 195,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -674,6 +688,7 @@
       "description": "Complex pointer cast",
       "line": 196,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -681,6 +696,7 @@
       "description": "Undefined global data reference",
       "line": 207,
       "match": "DAT_03f6bb24",
+      "severity": "mild",
       "text": "if ((((this_ptr->base).base.model.part_data.visibility_flags[DAT_03f6bb24] == 0) &&",
       "type": "undefined_data"
     }

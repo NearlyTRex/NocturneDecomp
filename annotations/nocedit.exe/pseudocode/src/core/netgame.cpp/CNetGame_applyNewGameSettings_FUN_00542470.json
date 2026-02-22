@@ -13,14 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 481,
-    "complexity_score": 498,
+    "complexity_score": 513,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 7,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 268,
-    "suspect_count": 21,
+    "suspect_count": 22,
     "suspect_types": [
       "pointer_cast",
+      "stack_alignment_array",
       "stack_param",
       "stack_ref",
       "undefined_data"
@@ -517,13 +519,23 @@
       "description": "Unresolved stack parameter",
       "line": 20,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "uint *in_stack_00000008;",
       "type": "stack_param"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 21,
+      "match": "aiStackY_208c",
+      "severity": "moderate",
+      "text": "int aiStackY_208c [1986];",
+      "type": "stack_alignment_array"
     },
     {
       "description": "Direct stack address reference",
       "line": 70,
       "match": "&stack0xfffffe90",
+      "severity": "moderate",
       "text": "puVar8 = (uint *)&stack0xfffffe90;",
       "type": "stack_ref"
     },
@@ -531,6 +543,7 @@
       "description": "Unresolved stack parameter",
       "line": 72,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "*puVar8 = *in_stack_00000008;",
       "type": "stack_param"
     },
@@ -538,6 +551,7 @@
       "description": "Unresolved stack parameter",
       "line": 73,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "in_stack_00000008 = in_stack_00000008 + (uint)bVar15 * -2 + 1;",
       "type": "stack_param"
     },
@@ -545,6 +559,7 @@
       "description": "Unresolved stack parameter",
       "line": 73,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "in_stack_00000008 = in_stack_00000008 + (uint)bVar15 * -2 + 1;",
       "type": "stack_param"
     },
@@ -552,6 +567,7 @@
       "description": "Unresolved stack parameter",
       "line": 76,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "*(byte *)puVar8 = *(byte *)in_stack_00000008;",
       "type": "stack_param"
     },
@@ -559,6 +575,7 @@
       "description": "Complex pointer cast",
       "line": 138,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)local_44 + local_44[2]) = iVar5;",
       "type": "pointer_cast"
     },
@@ -566,6 +583,7 @@
       "description": "Undefined global data reference",
       "line": 142,
       "match": "DAT_00680a04",
+      "severity": "mild",
       "text": "DAT_00680a04 = local_44[3] ^ this_ptr->local_player_index;",
       "type": "undefined_data"
     },
@@ -573,6 +591,7 @@
       "description": "Undefined global data reference",
       "line": 145,
       "match": "DAT_00680a04",
+      "severity": "mild",
       "text": "DAT_00680a04 = 1;",
       "type": "undefined_data"
     },
@@ -580,6 +599,7 @@
       "description": "Undefined global data reference",
       "line": 148,
       "match": "DAT_00680a04",
+      "severity": "mild",
       "text": "if (DAT_00680a04 == 0) goto LAB_005429ed;",
       "type": "undefined_data"
     },
@@ -587,6 +607,7 @@
       "description": "Undefined global data reference",
       "line": 151,
       "match": "DAT_00680a04",
+      "severity": "mild",
       "text": "DAT_00680a04 = 1;",
       "type": "undefined_data"
     },
@@ -594,6 +615,7 @@
       "description": "Complex pointer cast",
       "line": 186,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "this_ptr->players[iVar4].ready_flag = *(int *)((int)aiStack_f3 + iVar11 + 8);",
       "type": "pointer_cast"
     },
@@ -601,6 +623,7 @@
       "description": "Complex pointer cast",
       "line": 205,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (*(int *)((int)local_44 + local_44[4] + 4) < *(int *)((int)local_44 + local_44[4])) {",
       "type": "pointer_cast"
     },
@@ -608,6 +631,7 @@
       "description": "Complex pointer cast",
       "line": 205,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (*(int *)((int)local_44 + local_44[4] + 4) < *(int *)((int)local_44 + local_44[4])) {",
       "type": "pointer_cast"
     },
@@ -615,6 +639,7 @@
       "description": "Complex pointer cast",
       "line": 206,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar8 = (uint *)((int)local_44 + local_44[4] + 4);",
       "type": "pointer_cast"
     },
@@ -622,6 +647,7 @@
       "description": "Complex pointer cast",
       "line": 207,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "uVar2 = *(uint *)((int)local_44 + local_44[4]);",
       "type": "pointer_cast"
     },
@@ -629,6 +655,7 @@
       "description": "Complex pointer cast",
       "line": 208,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)local_44 + local_44[4]) = *puVar8;",
       "type": "pointer_cast"
     },
@@ -636,6 +663,7 @@
       "description": "Complex pointer cast",
       "line": 212,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar8 = (uint *)((int)pSVar14 + (uint)bVar15 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -643,6 +671,7 @@
       "description": "Complex pointer cast",
       "line": 250,
       "match": "(SNetPlayer *)((int)",
+      "severity": "mild",
       "text": "pSVar10 = (SNetPlayer *)((int)pSVar10 + (uint)bVar15 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -650,6 +679,7 @@
       "description": "Complex pointer cast",
       "line": 251,
       "match": "(SNetPlayer *)((int)",
+      "severity": "mild",
       "text": "pSVar14 = (SNetPlayer *)((int)pSVar14 + (uint)bVar15 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -657,6 +687,7 @@
       "description": "Complex pointer cast",
       "line": 258,
       "match": "(SNetPlayer *)((int)",
+      "severity": "mild",
       "text": "pSVar10 = (SNetPlayer *)((int)pSVar10 + (uint)bVar15 * -8 + 4);",
       "type": "pointer_cast"
     }

@@ -300,7 +300,7 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
                     (g_CDemonRendererPtr2,&g_ZeroVector);
           core_skeleton_cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250(local_2c,0);
           if (local_5c == 0) {
-            core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340(local_2c);
+            core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340(local_2c,-1,0);
           }
           else {
             core_skeleton_cpp_CDeformableModelInstance_outlinePolygons_FUN_005a03b0(local_2c);

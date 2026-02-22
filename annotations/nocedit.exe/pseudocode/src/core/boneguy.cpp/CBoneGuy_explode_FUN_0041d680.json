@@ -6,14 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 140,
+    "complexity_score": 155,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 5,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 90,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
+      "stack_alignment_array",
       "warning_type_propagation"
     ],
     "total_lines": 167
@@ -230,13 +232,23 @@
       "description": "Type propagation did not converge",
       "line": 2,
       "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 18,
+      "match": "afStackY_1824",
+      "severity": "moderate",
+      "text": "float afStackY_1824 [1523];",
+      "type": "stack_alignment_array"
     },
     {
       "description": "Complex pointer cast",
       "line": 81,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar8 = (uint *)((int)local_1c + (uint)bVar10 * -8 + 49000);",
       "type": "pointer_cast"
     },
@@ -244,6 +256,7 @@
       "description": "Complex pointer cast",
       "line": 84,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar7 = (uint *)((int)&local_48 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);",
       "type": "pointer_cast"
     },
@@ -251,6 +264,7 @@
       "description": "Complex pointer cast",
       "line": 85,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*puVar8 = *(uint *)((int)&local_48 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     }

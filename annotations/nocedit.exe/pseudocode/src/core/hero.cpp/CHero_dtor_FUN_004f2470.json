@@ -10,6 +10,7 @@
     "cross_reference_count": 9,
     "function_call_count": 8,
     "global_count": 3,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 35,
     "suspect_count": 4,
     "suspect_types": [
@@ -202,6 +203,7 @@
       "description": "Complex pointer cast",
       "line": 19,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)g_HeroActors + iVar1) = 0;",
       "type": "pointer_cast"
     },
@@ -209,6 +211,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 27,
       "match": "pCVar3[-1].",
+      "severity": "mild",
       "text": "((CFlame *)(pCVar3[-1].height_cache_tags[0xb] + 0x2c),0);",
       "type": "negative_offset"
     },
@@ -216,6 +219,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 29,
       "match": "pCVar4[-2].",
+      "severity": "mild",
       "text": "((SFire *)(pCVar4[-2].base.create_event + 0x20),0);",
       "type": "negative_offset"
     },
@@ -223,6 +227,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 36,
       "match": "pCVar8[-1].",
+      "severity": "mild",
       "text": "((CDemonActor *)(pCVar8[-1].part_data.visibility_flags + 7),1);",
       "type": "negative_offset"
     }

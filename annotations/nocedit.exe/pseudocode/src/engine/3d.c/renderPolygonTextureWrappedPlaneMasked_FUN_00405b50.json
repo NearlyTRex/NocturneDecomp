@@ -10,6 +10,7 @@
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 11,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 57,
     "suspect_count": 1,
     "suspect_types": [
@@ -174,6 +175,7 @@
       "description": "Complex pointer cast",
       "line": 59,
       "match": "(SMRGLHeaderExtended *)((int)",
+      "severity": "mild",
       "text": "return (SMRGLHeaderExtended *)((int)&polygon_info[1].base + (polygon_info->base).count * 0xc);",
       "type": "pointer_cast"
     }

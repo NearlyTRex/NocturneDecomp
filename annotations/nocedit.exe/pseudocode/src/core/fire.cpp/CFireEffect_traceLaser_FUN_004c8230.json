@@ -41,6 +41,7 @@
     "cross_reference_count": 3,
     "function_call_count": 11,
     "global_count": 11,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 341,
     "suspect_count": 5,
     "suspect_types": [
@@ -1392,6 +1393,7 @@
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_fffffd70",
+      "severity": "moderate",
       "text": "float in_stack_fffffd70;",
       "type": "stack_param"
     },
@@ -1399,6 +1401,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 119,
       "match": "SQRT",
+      "severity": "mild",
       "text": "local_40 = SQRT(local_a4.z * local_a4.z + local_a4.x * local_a4.x + local_a4.y * local_a4.y)",
       "type": "decompiler_intrinsic"
     },
@@ -1406,6 +1409,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 191,
       "match": "SQRT",
+      "severity": "mild",
       "text": "local_48 = SQRT(local_e4 * local_e4 + local_ec * local_ec + local_e8 * local_e8);",
       "type": "decompiler_intrinsic"
     },
@@ -1413,6 +1417,7 @@
       "description": "Unresolved stack parameter",
       "line": 245,
       "match": "in_stack_fffffd70",
+      "severity": "moderate",
       "text": "in_stack_fffffd70 = laser_info->intensity * laser_info->transparency;",
       "type": "stack_param"
     },
@@ -1420,6 +1425,7 @@
       "description": "Unresolved stack parameter",
       "line": 341,
       "match": "in_stack_fffffd70",
+      "severity": "moderate",
       "text": "laser_info->beam_width,in_stack_fffffd70);",
       "type": "stack_param"
     }

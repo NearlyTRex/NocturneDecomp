@@ -5,6 +5,7 @@
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 5,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 25,
     "suspect_count": 8,
     "suspect_types": [
@@ -168,6 +169,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 16,
       "match": "piVar5[-2].",
+      "severity": "mild",
       "text": "this_ptr = (ifstream *)&piVar5[-2].__tied_stream;",
       "type": "negative_offset"
     },
@@ -175,6 +177,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 20,
       "match": "piVar3[-2].",
+      "severity": "mild",
       "text": "ppvVar4 = &piVar3[-2]._ios.__i_lock;",
       "type": "negative_offset"
     },
@@ -182,6 +185,7 @@
       "description": "Complex pointer cast",
       "line": 21,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)ppvVar4 + *(int *)((int)*ppvVar4 + 4) + -4) = *(int *)((int)*ppvVar4 + 4);",
       "type": "pointer_cast"
     },
@@ -189,6 +193,7 @@
       "description": "Complex pointer cast",
       "line": 21,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)ppvVar4 + *(int *)((int)*ppvVar4 + 4) + -4) = *(int *)((int)*ppvVar4 + 4);",
       "type": "pointer_cast"
     },
@@ -196,6 +201,7 @@
       "description": "Complex pointer cast",
       "line": 21,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)ppvVar4 + *(int *)((int)*ppvVar4 + 4) + -4) = *(int *)((int)*ppvVar4 + 4);",
       "type": "pointer_cast"
     },
@@ -203,6 +209,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 22,
       "match": "piVar3[-1].",
+      "severity": "mild",
       "text": "piVar3[-1]._ios.cleanup_vtable = &g_IFStream_FStreamBaseDestructor;",
       "type": "negative_offset"
     },
@@ -210,6 +217,7 @@
       "description": "Complex pointer cast",
       "line": 26,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(void ***)((int)ppvVar4 + *(int *)((int)pvVar1 + 4) + 0x28) = &g_IFStream_IOSDestructor;",
       "type": "pointer_cast"
     },

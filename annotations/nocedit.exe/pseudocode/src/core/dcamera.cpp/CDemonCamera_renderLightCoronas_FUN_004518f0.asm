@@ -41,7 +41,7 @@
 ; undefined1       Stack[-0x14]:1  local_14
 ;
 ; XREF[1]:
-;   core_set.cpp_CDemonSet_FUN_0056c1a0 at 0056c3e3
+;   core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0 at 0056c3e3
 ;
 ; Referenced Globals:
 ;   int INT_0066ed68 = -0x1

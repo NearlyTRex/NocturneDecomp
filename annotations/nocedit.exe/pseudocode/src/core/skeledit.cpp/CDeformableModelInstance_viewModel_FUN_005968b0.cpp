@@ -211,7 +211,7 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
   if ((DAT_0366b64c & 1) == 0) {
     DAT_0366b64c = DAT_0366b64c | 1;
   }
-  local_64 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(local_bc,"bip01 r hand");
+  local_64 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(local_bc,"bip01 r hand",0);
   if (local_64 < 0) {
     local_64 = 0;
   }
@@ -514,7 +514,7 @@ LAB_0059722b:
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                 (g_CDemonRendererPtr2,(CVector3i *)(local_200 + 0xc),(CVector3i *)local_200);
       core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
-                (&CKeyFramedModel_03665f74,(CKeyFramedModelInstance *)0x0,0,-1);
+                (&CKeyFramedModel_03665f74,0,(CKeyFramedModelInstance *)0x0,-1);
       engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
     }
     if (0 < local_88) {

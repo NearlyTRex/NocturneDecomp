@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 5,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 63,
     "suspect_count": 7,
     "suspect_types": [
@@ -245,6 +246,7 @@
       "description": "Unresolved stack parameter",
       "line": 10,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
@@ -252,6 +254,7 @@
       "description": "Unresolved stack parameter",
       "line": 21,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "local_2c = in_stack_00000004;",
       "type": "stack_param"
     },
@@ -259,6 +262,7 @@
       "description": "Unresolved stack parameter",
       "line": 24,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "fVar1 = *(float *)(in_stack_00000004 + 0x199ec);",
       "type": "stack_param"
     },
@@ -266,6 +270,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 29,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_3c.x = (int)ROUND((fVar2 + fVar1) * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -273,6 +278,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 30,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_3c.y = (int)ROUND((*(float *)(iVar5 + 0x128b8) + (float)0.25) *",
       "type": "decompiler_intrinsic"
     },
@@ -280,6 +286,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 32,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_3c.z = (int)ROUND(((float)iVar3 * 0.5f +",
       "type": "decompiler_intrinsic"
     },
@@ -287,6 +294,7 @@
       "description": "Unresolved stack parameter",
       "line": 33,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "*(float *)(in_stack_00000004 + 0x199f0)) * 256.0f);",
       "type": "stack_param"
     }

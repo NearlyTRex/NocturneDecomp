@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 4,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 90,
     "suspect_count": 6,
     "suspect_types": [
@@ -251,6 +252,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 77,
       "match": "pCVar7[-1].",
+      "severity": "mild",
       "text": "pCVar10->x = pCVar7[-1].x;",
       "type": "negative_offset"
     },
@@ -258,6 +260,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 78,
       "match": "pCVar7[-1].",
+      "severity": "mild",
       "text": "pCVar10->y = pCVar7[-1].y;",
       "type": "negative_offset"
     },
@@ -265,6 +268,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 79,
       "match": "pCVar7[-1].",
+      "severity": "mild",
       "text": "pCVar10->z = pCVar7[-1].z;",
       "type": "negative_offset"
     },
@@ -272,6 +276,7 @@
       "description": "Complex pointer cast",
       "line": 81,
       "match": "(CVector3f *)((int)",
+      "severity": "mild",
       "text": "pCVar10 = (CVector3f *)((int)(pCVar10 + 5) + 4);",
       "type": "pointer_cast"
     },
@@ -279,6 +284,7 @@
       "description": "Complex pointer cast",
       "line": 82,
       "match": "(CVector3f *)((int)",
+      "severity": "mild",
       "text": "pCVar7 = (CVector3f *)((int)(pCVar7 + 5) + 4);",
       "type": "pointer_cast"
     },
@@ -286,6 +292,7 @@
       "description": "Complex pointer cast",
       "line": 83,
       "match": "(CVector3f *)((int)",
+      "severity": "mild",
       "text": "local_2c = (CVector3f *)((int)(local_2c + 5) + 4);",
       "type": "pointer_cast"
     }

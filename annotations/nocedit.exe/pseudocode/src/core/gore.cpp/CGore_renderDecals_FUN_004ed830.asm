@@ -9,10 +9,10 @@
 ; int              Stack[0xc]:4   expire_flag
 ;
 ; XREF[4]:
-;   core_set.cpp_CDemonSet_FUN_0056c1a0 at 0056c5c9
+;   core_set.cpp_CDemonSet_expireDecals_FUN_00571380 at 00571390
+;   core_set.cpp_CDemonSet_renderDecals_FUN_005713c0 at 005713eb
+;   core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0 at 0056c5c9
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50 at 0056b724
-;   core_set.cpp_FUN_00571380 at 00571390
-;   core_set.cpp_FUN_005713c0 at 005713eb
 ;
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 02d81a9c

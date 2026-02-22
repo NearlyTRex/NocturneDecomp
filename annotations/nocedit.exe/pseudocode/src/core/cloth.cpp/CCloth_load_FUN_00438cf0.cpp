@@ -18,11 +18,11 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_00438cf0(CCloth *this_ptr,char *filen
   float fVar7;
   _FILE *p_Var8;
   SClothBone *pSVar9;
-  int *piVar10;
-  CVector3f *pCVar11;
-  int iVar12;
-  float *pfVar13;
-  int iVar14;
+  CVector3f *pCVar10;
+  int iVar11;
+  float *pfVar12;
+  int iVar13;
+  int *piVar14;
   float *pfVar15;
   int iVar16;
   char acStack_238 [256];
@@ -98,24 +98,24 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_00438cf0(CCloth *this_ptr,char *filen
   _fgets(local_138,0xff,local_30);
   _fscanf(p_Var8,"%d\n",&this_ptr->locked_vertex_count);
   core_cloth_cpp_CCloth_allocMemory_FUN_00438c50(this_ptr);
-  iVar12 = 0;
+  iVar11 = 0;
   _fgets(local_138,0xff,p_Var8);
   if (0 < this_ptr->locked_vertex_count) {
-    piVar10 = this_ptr->locked_vertex_indices;
+    piVar14 = this_ptr->locked_vertex_indices;
     do {
-      iVar12 = iVar12 + 1;
-      _fscanf(local_30,"%d\n",piVar10);
-      piVar10 = piVar10 + 1;
-    } while (iVar12 < this_ptr->locked_vertex_count);
+      iVar11 = iVar11 + 1;
+      _fscanf(local_30,"%d\n",piVar14);
+      piVar14 = piVar14 + 1;
+    } while (iVar11 < this_ptr->locked_vertex_count);
   }
   core_cloth_cpp_CCloth_initializeConnections_FUN_004394e0(this_ptr);
   p_Var8 = local_30;
   _fgets(local_138,0xff,local_30);
   _fscanf(p_Var8,"%d\n",&this_ptr->collide_bone_count);
-  iVar12 = 0;
+  iVar11 = 0;
   if (0 < this_ptr->collide_bone_count) {
     local_34 = this_ptr->collide_bones;
-    pfVar13 = &this_ptr->collide_bones[0].radius1;
+    pfVar12 = &this_ptr->collide_bones[0].radius1;
     local_14 = &this_ptr->collide_bones[0].radius2;
     local_18 = &this_ptr->collide_bones[0].euler1;
     local_20 = &this_ptr->collide_bones[0].euler1.y;
@@ -125,11 +125,11 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_00438cf0(CCloth *this_ptr,char *filen
     local_28 = &this_ptr->collide_bones[0].length;
     pfVar15 = &this_ptr->collide_bones[0].euler2.y;
     do {
-      pSVar9 = local_34 + iVar12;
-      iVar12 = iVar12 + 1;
-      _fscanf(local_30,"\"%[^\"]\",%f,%f, %f,%f,%f, %f,%f,%f, %f\n",pSVar9,pfVar13,local_14,local_18,local_20,
+      pSVar9 = local_34 + iVar11;
+      iVar11 = iVar11 + 1;
+      _fscanf(local_30,"\"%[^\"]\",%f,%f, %f,%f,%f, %f,%f,%f, %f\n",pSVar9,pfVar12,local_14,local_18,local_20,
                  local_1c,local_24,local_2c,pfVar15,local_28);
-      pfVar13 = pfVar13 + 0x2b;
+      pfVar12 = pfVar12 + 0x2b;
       local_14 = local_14 + 0x2b;
       local_18 = (CVector3f *)((int)(local_18 + 0xe) + 4);
       local_20 = local_20 + 0x2b;
@@ -138,23 +138,23 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_00438cf0(CCloth *this_ptr,char *filen
       local_2c = local_2c + 0x2b;
       local_28 = local_28 + 0x2b;
       pfVar15 = pfVar15 + 0x2b;
-    } while (iVar12 < this_ptr->collide_bone_count);
+    } while (iVar11 < this_ptr->collide_bone_count);
   }
   iVar16 = 0;
-  iVar12 = shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_30,"..\\core\\cloth.cpp",0x112);
+  iVar11 = shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_30,"..\\core\\cloth.cpp",0x112);
   if (0 < (this_ptr->model).vertex_count) {
-    pCVar11 = &this_ptr->vertices[0].offset_pos;
-    iVar14 = 0;
+    pCVar10 = &this_ptr->vertices[0].offset_pos;
+    iVar13 = 0;
     do {
-      piVar10 = (int *)((int)(this_ptr->model).vertex_list + iVar14);
+      piVar14 = (int *)((int)&((this_ptr->model).vertex_list)->x + iVar13);
       iVar16 = iVar16 + 1;
-      pCVar11->x = (float)*piVar10 * 0.00390625f;
-      pCVar11->y = (float)piVar10[1] * 0.00390625f;
-      pCVar11->z = (float)piVar10[2] * 0.00390625f;
-      pCVar11 = (CVector3f *)((int)(pCVar11 + 0x17) + 8);
-      iVar12 = (this_ptr->model).vertex_count;
-      iVar14 = iVar14 + 0xc;
-    } while (iVar16 < iVar12);
+      pCVar10->x = (float)*piVar14 * 0.00390625f;
+      pCVar10->y = (float)piVar14[1] * 0.00390625f;
+      pCVar10->z = (float)piVar14[2] * 0.00390625f;
+      pCVar10 = (CVector3f *)((int)(pCVar10 + 0x17) + 8);
+      iVar11 = (this_ptr->model).vertex_count;
+      iVar13 = iVar13 + 0xc;
+    } while (iVar16 < iVar11);
   }
-  return iVar12;
+  return iVar11;
 }

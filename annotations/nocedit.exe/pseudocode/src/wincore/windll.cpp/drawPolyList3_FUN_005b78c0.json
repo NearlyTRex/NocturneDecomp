@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 4,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 27,
     "suspect_count": 6,
     "suspect_types": [
@@ -157,6 +158,7 @@
       "description": "Complex pointer cast",
       "line": 21,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "local_1c = (void *)((int)vertex_buffer + (uint)*(ushort *)polygons * 0x30);",
       "type": "pointer_cast"
     },
@@ -164,6 +166,7 @@
       "description": "Complex pointer cast",
       "line": 22,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "local_18 = (void *)((int)vertex_buffer + (uint)*(ushort *)((int)polygons + 2) * 0x30);",
       "type": "pointer_cast"
     },
@@ -171,6 +174,7 @@
       "description": "Complex pointer cast",
       "line": 22,
       "match": "(ushort *)((int)",
+      "severity": "mild",
       "text": "local_18 = (void *)((int)vertex_buffer + (uint)*(ushort *)((int)polygons + 2) * 0x30);",
       "type": "pointer_cast"
     },
@@ -178,6 +182,7 @@
       "description": "Complex pointer cast",
       "line": 23,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "local_14 = (void *)((int)vertex_buffer + (uint)*(ushort *)((int)polygons + 4) * 0x30);",
       "type": "pointer_cast"
     },
@@ -185,6 +190,7 @@
       "description": "Complex pointer cast",
       "line": 23,
       "match": "(ushort *)((int)",
+      "severity": "mild",
       "text": "local_14 = (void *)((int)vertex_buffer + (uint)*(ushort *)((int)polygons + 4) * 0x30);",
       "type": "pointer_cast"
     },
@@ -192,6 +198,7 @@
       "description": "Complex pointer cast",
       "line": 24,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "polygons = (void *)((int)polygons + 6);",
       "type": "pointer_cast"
     }

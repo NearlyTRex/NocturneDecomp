@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 12,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 103,
     "suspect_count": 19,
     "suspect_types": [
@@ -356,6 +357,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 31,
       "match": "ABS",
+      "severity": "mild",
       "text": "if (ABS(this_ptr->atten_end) == 0.0) {",
       "type": "decompiler_intrinsic"
     },
@@ -363,6 +365,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 44,
       "match": "fsin",
+      "severity": "mild",
       "text": "fVar5 = (float10)fsin(fVar4);",
       "type": "decompiler_intrinsic"
     },
@@ -370,6 +373,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 45,
       "match": "fcos",
+      "severity": "mild",
       "text": "fVar4 = (float10)fcos(fVar4);",
       "type": "decompiler_intrinsic"
     },
@@ -377,6 +381,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 49,
       "match": "fcos",
+      "severity": "mild",
       "text": "fVar8 = (float10)fcos(fVar7);",
       "type": "decompiler_intrinsic"
     },
@@ -384,6 +389,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 50,
       "match": "fsin",
+      "severity": "mild",
       "text": "fVar7 = (float10)fsin(fVar7);",
       "type": "decompiler_intrinsic"
     },
@@ -391,6 +397,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 54,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_50.x = (int)ROUND(local_44 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -398,6 +405,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 55,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_50.y = (int)ROUND(local_40 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -405,6 +413,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 56,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_50.z = (int)ROUND(local_3c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -412,6 +421,7 @@
       "description": "Complex pointer cast",
       "line": 63,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->u + iVar1) = 0x800000;",
       "type": "pointer_cast"
     },
@@ -419,6 +429,7 @@
       "description": "Complex pointer cast",
       "line": 64,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&this_ptr_00->vertex_buffer_ptr->v + iVar1) = 0x800000;",
       "type": "pointer_cast"
     },
@@ -426,6 +437,7 @@
       "description": "Complex pointer cast",
       "line": 65,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)&this_ptr_00->vertex_buffer_ptr->z + iVar1) =",
       "type": "pointer_cast"
     },
@@ -433,6 +445,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 66,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND((this_ptr->color).r * 255.0f));",
       "type": "decompiler_intrinsic"
     },
@@ -440,6 +453,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 66,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND((this_ptr->color).r * 255.0f));",
       "type": "decompiler_intrinsic"
     },
@@ -447,6 +461,7 @@
       "description": "Complex pointer cast",
       "line": 67,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)&this_ptr_00->vertex_buffer_ptr->r + iVar1) =",
       "type": "pointer_cast"
     },
@@ -454,6 +469,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 68,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND((this_ptr->color).g * 255.0f));",
       "type": "decompiler_intrinsic"
     },
@@ -461,6 +477,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 68,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND((this_ptr->color).g * 255.0f));",
       "type": "decompiler_intrinsic"
     },
@@ -468,6 +485,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 69,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_8 = (int)ROUND(ROUND((this_ptr->color).b * 255.0f));",
       "type": "decompiler_intrinsic"
     },
@@ -475,6 +493,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 69,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_8 = (int)ROUND(ROUND((this_ptr->color).b * 255.0f));",
       "type": "decompiler_intrinsic"
     },
@@ -482,6 +501,7 @@
       "description": "Complex pointer cast",
       "line": 71,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)&this_ptr_00->vertex_buffer_ptr->g + iVar1) = local_8;",
       "type": "pointer_cast"
     }

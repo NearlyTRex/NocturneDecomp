@@ -121,16 +121,18 @@
   },
   "complexity": {
     "assembly_lines": 784,
-    "complexity_score": 433,
+    "complexity_score": 468,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 37,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 268,
-    "suspect_count": 15,
+    "suspect_count": 18,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_many",
-      "pointer_cast"
+      "pointer_cast",
+      "sub84_truncation"
     ],
     "total_lines": 1052
   },
@@ -892,6 +894,7 @@
       "description": "Complex pointer cast",
       "line": 126,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)aiStack_140 + local_78) = 0;",
       "type": "pointer_cast"
     },
@@ -899,6 +902,7 @@
       "description": "Complex pointer cast",
       "line": 136,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)aiStack_140 + local_4c) = *(int *)((int)aiStack_140 + local_4c) + 1;",
       "type": "pointer_cast"
     },
@@ -906,13 +910,23 @@
       "description": "Complex pointer cast",
       "line": 136,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)aiStack_140 + local_4c) = *(int *)((int)aiStack_140 + local_4c) + 1;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 141,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "(local_340,\"%g,%g,%g\",SUB84((double)local_a8.x,0),",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 141,
       "match": "SUB84",
+      "severity": "mild",
       "text": "(local_340,\"%g,%g,%g\",SUB84((double)local_a8.x,0),",
       "type": "decompiler_intrinsic"
     },
@@ -920,6 +934,7 @@
       "description": "Complex pointer cast",
       "line": 153,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "for (iVar4 = 0; iVar4 < *(int *)((int)local_60->parts[0].tri_counts + local_50);",
       "type": "pointer_cast"
     },
@@ -927,6 +942,7 @@
       "description": "Complex pointer cast",
       "line": 155,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "puVar2 = (ushort *)(*(int *)((int)this_ptr->tri_data_ptr + local_50) + local_2c);",
       "type": "pointer_cast"
     },
@@ -934,13 +950,23 @@
       "description": "Complex pointer cast",
       "line": 159,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(uint *)(*(int *)((int)this_ptr->index_data_ptr + local_50) + local_28),",
       "type": "pointer_cast"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 162,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "(double)puVar2[4] * 0.00390625,SUB84((double)puVar2[7] * 0.00390625,0),",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 162,
       "match": "SUB84",
+      "severity": "mild",
       "text": "(double)puVar2[4] * 0.00390625,SUB84((double)puVar2[7] * 0.00390625,0),",
       "type": "decompiler_intrinsic"
     },
@@ -948,6 +974,7 @@
       "description": "Complex pointer cast",
       "line": 179,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "for (iVar4 = 0; iVar4 < *(int *)((int)local_64->parts[0].cap_tri_counts + local_54);",
       "type": "pointer_cast"
     },
@@ -955,6 +982,7 @@
       "description": "Complex pointer cast",
       "line": 181,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "puVar2 = (ushort *)(*(int *)((int)this_ptr->tri_data_ptr + local_54) + local_38);",
       "type": "pointer_cast"
     },
@@ -962,13 +990,23 @@
       "description": "Complex pointer cast",
       "line": 185,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(uint *)(*(int *)((int)this_ptr->index_data_ptr + local_54) + local_6c),",
       "type": "pointer_cast"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 189,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "SUB84((double)puVar2[7] * 0.00390625,0),",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 189,
       "match": "SUB84",
+      "severity": "mild",
       "text": "SUB84((double)puVar2[7] * 0.00390625,0),",
       "type": "decompiler_intrinsic"
     },
@@ -976,6 +1014,7 @@
       "description": "Complex pointer cast",
       "line": 229,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "_fprintf(local_70,\"%d,%d,%d,%d,\\\"%s\\\"\\n\",local_88,*(uint *)((int)aiStack_140 + iVar4),",
       "type": "pointer_cast"
     },
@@ -983,6 +1022,7 @@
       "description": "Complex pointer cast",
       "line": 231,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "local_88 = local_88 + *(int *)((int)aiStack_140 + iVar4);",
       "type": "pointer_cast"
     },

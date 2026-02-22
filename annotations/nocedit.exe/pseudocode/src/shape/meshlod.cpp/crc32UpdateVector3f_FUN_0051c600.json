@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 72,
     "suspect_count": 2,
     "suspect_types": [
@@ -96,6 +97,7 @@
       "description": "Complex pointer cast",
       "line": 63,
       "match": "(CVector3f *)((int)",
+      "severity": "mild",
       "text": "vector_ptr = (CVector3f *)((int)&vector_ptr->x + 1);",
       "type": "pointer_cast"
     },
@@ -103,6 +105,7 @@
       "description": "Complex pointer cast",
       "line": 70,
       "match": "(CVector3f *)((int)",
+      "severity": "mild",
       "text": "vector_ptr = (CVector3f *)((int)&vector_ptr->x + 1);",
       "type": "pointer_cast"
     }

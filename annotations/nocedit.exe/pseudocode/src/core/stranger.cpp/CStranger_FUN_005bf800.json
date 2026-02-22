@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 7,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 90,
     "suspect_count": 10,
     "suspect_types": [
@@ -251,6 +252,7 @@
       "description": "Unresolved stack parameter",
       "line": 9,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "float in_stack_00000008;",
       "type": "stack_param"
     },
@@ -258,6 +260,7 @@
       "description": "Unresolved stack parameter",
       "line": 26,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "fVar4 = (1.0 - fVar4) * in_stack_00000008 * (float)10;",
       "type": "stack_param"
     },
@@ -265,6 +268,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 27,
       "match": "ABS",
+      "severity": "mild",
       "text": "if (fVar4 <= ABS(this_ptr->turn_angle)) {",
       "type": "decompiler_intrinsic"
     },
@@ -272,6 +276,7 @@
       "description": "Undefined global data reference",
       "line": 40,
       "match": "DAT_03f6bb1c",
+      "severity": "mild",
       "text": "this_ptr->turn_motion_index = DAT_03f6bb1c;",
       "type": "undefined_data"
     },
@@ -279,6 +284,7 @@
       "description": "Undefined global data reference",
       "line": 42,
       "match": "DAT_03f6bb20",
+      "severity": "mild",
       "text": "this_ptr->turn_motion_index = DAT_03f6bb20;",
       "type": "undefined_data"
     },
@@ -286,6 +292,7 @@
       "description": "Unresolved stack parameter",
       "line": 48,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "this_ptr->turn_elapsed = this_ptr->turn_elapsed + in_stack_00000008;",
       "type": "stack_param"
     },
@@ -293,6 +300,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 55,
       "match": "ABS",
+      "severity": "mild",
       "text": "local_34 = ABS(this_ptr->turn_angle * (float)0.31830988619288902);",
       "type": "decompiler_intrinsic"
     },
@@ -300,6 +308,7 @@
       "description": "Unresolved stack parameter",
       "line": 71,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "fVar2 = fVar4 - in_stack_00000008;",
       "type": "stack_param"
     },
@@ -307,6 +316,7 @@
       "description": "Unresolved stack parameter",
       "line": 74,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "fVar4 = in_stack_00000008 / fVar4;",
       "type": "stack_param"
     },

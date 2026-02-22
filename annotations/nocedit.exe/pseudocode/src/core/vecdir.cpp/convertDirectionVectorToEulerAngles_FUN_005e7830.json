@@ -6,14 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 90,
+    "complexity_score": 105,
     "cross_reference_count": 74,
     "function_call_count": 1,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 25,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
-      "decompiler_intrinsic"
+      "decompiler_intrinsic",
+      "double_reconstruction"
     ],
     "total_lines": 92
   },
@@ -574,6 +576,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 11,
       "match": "ABS",
+      "severity": "mild",
       "text": "if ((ABS(in_direction_vector->x) == 0.0) && (ABS(in_direction_vector->z) == 0.0)) {",
       "type": "decompiler_intrinsic"
     },
@@ -581,13 +584,23 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 11,
       "match": "ABS",
+      "severity": "mild",
       "text": "if ((ABS(in_direction_vector->x) == 0.0) && (ABS(in_direction_vector->z) == 0.0)) {",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 19,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "out_euler_angles->x = (float)(double)CONCAT44(uStack_14,0x54411744);",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 19,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "out_euler_angles->x = (float)(double)CONCAT44(uStack_14,0x54411744);",
       "type": "decompiler_intrinsic"
     },
@@ -595,6 +608,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 22,
       "match": "fpatan",
+      "severity": "mild",
       "text": "fVar1 = (float10)fpatan((float10)in_direction_vector->x,(float10)in_direction_vector->z);",
       "type": "decompiler_intrinsic"
     },
@@ -602,6 +616,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 24,
       "match": "fpatan",
+      "severity": "mild",
       "text": "fVar1 = (float10)fpatan((float10)in_direction_vector->y,",
       "type": "decompiler_intrinsic"
     },
@@ -609,6 +624,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 25,
       "match": "SQRT",
+      "severity": "mild",
       "text": "SQRT((float10)in_direction_vector->x * (float10)in_direction_vector->x +",
       "type": "decompiler_intrinsic"
     }

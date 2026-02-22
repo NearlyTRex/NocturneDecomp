@@ -49,7 +49,7 @@
 ;   ... and 25 more
 ;
 ; Called Functions:
-;   core_set.cpp_CDemonSet_FUN_0056d2d0
+;   core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0
 ;   core_set.cpp_CDemonSet_initScene_FUN_0056aa10
 ;   crt_math.c_floor_FUN_005feb90
 ;   crt_math.c_round_FUN_005fe6b0
@@ -402,8 +402,8 @@ section .text
         ;   XREF to: 0057bc75 (CONDITIONAL_JUMP)  ; LAB_0057bc75
     MOV ECX,dword ptr [EBP + 0x14]      ; 0057c06c
     PUSH ECX                            ; 0057c06f
-    CALL core_set.cpp_CDemonSet_FUN_0056d2d0 ; 0057c070
-        ;   XREF to: 0056d2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d2d0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0 ; 0057c070
+        ;   XREF to: 0056d2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0057c075
     MOV EBX,dword ptr [EBP + 0x14]      ; 0057c078
     PUSH EBX                            ; 0057c07b

@@ -29,6 +29,7 @@
     "cross_reference_count": 2,
     "function_call_count": 7,
     "global_count": 15,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 98,
     "suspect_count": 12,
     "suspect_types": [
@@ -384,6 +385,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 40,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_48.x = (int)ROUND(pCVar4->x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -391,6 +393,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 41,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_48.y = (int)ROUND(pCVar4->y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -398,6 +401,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 42,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_48.z = (int)ROUND(pCVar4->z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -405,6 +409,7 @@
       "description": "Jump table recovery failed",
       "line": 69,
       "match": "WARNING: Could not recover jumptable",
+      "severity": "mild",
       "text": "/* WARNING: Could not recover jumptable at 0x0045776e. Too many branches */",
       "type": "warning_jumptable"
     },
@@ -412,6 +417,7 @@
       "description": "Indirect jump treated as call",
       "line": 70,
       "match": "WARNING: Treating indirect jump as call",
+      "severity": "mild",
       "text": "/* WARNING: Treating indirect jump as call */",
       "type": "warning_indirect_jump"
     },
@@ -419,6 +425,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 71,
       "match": "code *",
+      "severity": "moderate",
       "text": "(**(code **)((int)&PTR_LAB_00457630 + local_24))();",
       "type": "unresolved_funcptr"
     },
@@ -426,6 +433,7 @@
       "description": "Complex pointer cast",
       "line": 75,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "pfVar1 = (float *)((int)(pCVar2->triangle).vertices + local_18 + 0xc);",
       "type": "pointer_cast"
     },
@@ -433,6 +441,7 @@
       "description": "Complex pointer cast",
       "line": 78,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "local_38 = *(float *)((int)(pCVar2->triangle).vertices + local_18 + 0x10);",
       "type": "pointer_cast"
     },
@@ -440,6 +449,7 @@
       "description": "Complex pointer cast",
       "line": 79,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "local_34 = *(float *)((int)(pCVar2->triangle).vertices + local_18 + 0x14);",
       "type": "pointer_cast"
     },
@@ -447,6 +457,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 84,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_28 = (uint)ROUND(local_34);",
       "type": "decompiler_intrinsic"
     },
@@ -454,6 +465,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 85,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_2c = (uint)ROUND(local_38);",
       "type": "decompiler_intrinsic"
     },
@@ -461,6 +473,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 86,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_30 = (uint)ROUND(local_3c);",
       "type": "decompiler_intrinsic"
     }

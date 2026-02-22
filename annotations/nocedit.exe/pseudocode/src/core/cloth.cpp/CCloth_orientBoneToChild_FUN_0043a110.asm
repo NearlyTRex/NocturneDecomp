@@ -65,7 +65,7 @@ section .text
     PUSH EDI                            ; 0043a150
     MOV ESI,0xffffffff                  ; 0043a151
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0 ; 0043a156
-        ;   XREF to: 00599fc0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton * this_ptr, char * bone_name)
+        ;   XREF to: 00599fc0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     MOV dword ptr [EBX + 0x44],0x0      ; 0043a15b
     MOV dword ptr [EBP + 0x6e],ESI      ; 0043a162
     MOV dword ptr [EBX + 0x40],EAX      ; 0043a165

@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 21,
     "suspect_count": 13,
     "suspect_types": [
@@ -127,6 +128,7 @@
       "description": "Unaffected register variable",
       "line": 6,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "uint *unaff_ESI;",
       "type": "unaffected_reg"
     },
@@ -134,6 +136,7 @@
       "description": "Unresolved stack parameter",
       "line": 8,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "double *in_stack_00000004;",
       "type": "stack_param"
     },
@@ -141,6 +144,7 @@
       "description": "Unresolved stack parameter",
       "line": 9,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "double *in_stack_00000008;",
       "type": "stack_param"
     },
@@ -148,6 +152,7 @@
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "local_18 = in_stack_00000004[1] - in_stack_00000008[1];",
       "type": "stack_param"
     },
@@ -155,6 +160,7 @@
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "local_18 = in_stack_00000004[1] - in_stack_00000008[1];",
       "type": "stack_param"
     },
@@ -162,6 +168,7 @@
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "local_10 = in_stack_00000004[2] - in_stack_00000008[2];",
       "type": "stack_param"
     },
@@ -169,6 +176,7 @@
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "local_10 = in_stack_00000004[2] - in_stack_00000008[2];",
       "type": "stack_param"
     },
@@ -176,6 +184,7 @@
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "local_20 = *in_stack_00000004 - *in_stack_00000008;",
       "type": "stack_param"
     },
@@ -183,6 +192,7 @@
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "local_20 = *in_stack_00000004 - *in_stack_00000008;",
       "type": "stack_param"
     },
@@ -190,6 +200,7 @@
       "description": "Unaffected register variable",
       "line": 19,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "*unaff_ESI = *(uint *)pdVar2;",
       "type": "unaffected_reg"
     },
@@ -197,6 +208,7 @@
       "description": "Complex pointer cast",
       "line": 20,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar2 = (double *)((int)pdVar2 + 4);",
       "type": "pointer_cast"
     },
@@ -204,6 +216,7 @@
       "description": "Unaffected register variable",
       "line": 21,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "unaff_ESI = unaff_ESI + 1;",
       "type": "unaffected_reg"
     },
@@ -211,6 +224,7 @@
       "description": "Unaffected register variable",
       "line": 21,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "unaff_ESI = unaff_ESI + 1;",
       "type": "unaffected_reg"
     }

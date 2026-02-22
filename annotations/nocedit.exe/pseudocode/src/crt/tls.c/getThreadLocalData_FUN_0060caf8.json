@@ -5,6 +5,7 @@
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 9,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 53,
     "suspect_count": 7,
     "suspect_types": [
@@ -160,6 +161,7 @@
       "description": "Complex pointer cast",
       "line": 27,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "uVar3 = *(uint *)((int)pTVar1->dataBuffer + 0xf0);",
       "type": "pointer_cast"
     },
@@ -167,6 +169,7 @@
       "description": "Complex pointer cast",
       "line": 37,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar4 = (uint *)((int)puVar4 + (uint)bVar6 * -2 + 1);",
       "type": "pointer_cast"
     },
@@ -174,6 +177,7 @@
       "description": "Complex pointer cast",
       "line": 38,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar6 * -2 + 1);",
       "type": "pointer_cast"
     },
@@ -181,6 +185,7 @@
       "description": "Complex pointer cast",
       "line": 49,
       "match": "(DWORD *)((int)",
+      "severity": "mild",
       "text": "*(DWORD *)((int)lpTlsValue + 0xf0) = g_RuntimeBufferSize;",
       "type": "pointer_cast"
     },
@@ -188,6 +193,7 @@
       "description": "Complex pointer cast",
       "line": 51,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)lpTlsValue + 0x52) = 1;",
       "type": "pointer_cast"
     },
@@ -195,6 +201,7 @@
       "description": "Complex pointer cast",
       "line": 52,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "*(byte *)((int)lpTlsValue + 0x53) = 0;",
       "type": "pointer_cast"
     },

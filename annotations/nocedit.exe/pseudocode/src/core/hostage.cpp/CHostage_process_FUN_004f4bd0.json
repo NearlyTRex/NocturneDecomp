@@ -13,20 +13,22 @@
   },
   "complexity": {
     "assembly_lines": 1656,
-    "complexity_score": 872,
+    "complexity_score": 888,
     "cross_reference_count": 0,
     "function_call_count": 39,
     "global_count": 49,
-    "pseudocode_lines": 687,
-    "suspect_count": 16,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 688,
+    "suspect_count": 17,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param",
+      "sub84_truncation",
       "suspect_float",
       "undefined_data",
       "warning_type_propagation"
     ],
-    "total_lines": 2343
+    "total_lines": 2344
   },
   "cross_references": [],
   "function": {
@@ -1109,6 +1111,7 @@
       "description": "Type propagation did not converge",
       "line": 2,
       "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
     },
@@ -1116,6 +1119,7 @@
       "description": "Unresolved stack parameter",
       "line": 31,
       "match": "in_stack_fffffe40",
+      "severity": "moderate",
       "text": "ulonglong in_stack_fffffe40;",
       "type": "stack_param"
     },
@@ -1123,6 +1127,7 @@
       "description": "Unresolved stack parameter",
       "line": 113,
       "match": "in_stack_fffffe40",
+      "severity": "moderate",
       "text": "while (fVar22 = (float)in_stack_fffffe40, 0.0 < delta_time) {",
       "type": "stack_param"
     },
@@ -1130,6 +1135,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 157,
       "match": "ABS",
+      "severity": "mild",
       "text": "if ((float)5 < ABS(local_10c)) goto LAB_004f4dd2;",
       "type": "decompiler_intrinsic"
     },
@@ -1137,6 +1143,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 159,
       "match": "SQRT",
+      "severity": "mild",
       "text": "local_20 = SQRT(local_108 * local_108 + local_110 * local_110);",
       "type": "decompiler_intrinsic"
     },
@@ -1144,6 +1151,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 233,
       "match": "SQRT",
+      "severity": "mild",
       "text": "SQRT(local_d8 * local_d8 + local_e0 * local_e0 + local_dc * local_dc))) ||",
       "type": "decompiler_intrinsic"
     },
@@ -1151,13 +1159,23 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 249,
       "match": "SQRT",
+      "severity": "mild",
       "text": "SQRT(fVar3 * fVar3 + fVar8 * fVar8) < (float)40)) {",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 400,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "fVar22 = SUB84((double)fVar8,0);",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 400,
       "match": "SUB84",
+      "severity": "mild",
       "text": "fVar22 = SUB84((double)fVar8,0);",
       "type": "decompiler_intrinsic"
     },
@@ -1165,6 +1183,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 416,
       "match": "SQRT",
+      "severity": "mild",
       "text": "fVar8 = SQRT(local_9c * local_9c + local_a4 * local_a4);",
       "type": "decompiler_intrinsic"
     },
@@ -1172,48 +1191,55 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 444,
       "match": "ABS",
+      "severity": "mild",
       "text": "(ABS((this_ptr->base).base.turn_angle_accumulator) < (float)0.017453292519444399)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 597,
+      "line": 598,
       "match": "SQRT",
+      "severity": "mild",
       "text": "SQRT((double)local_b0.z * (double)local_b0.z +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 602,
+      "line": 603,
       "match": "SQRT",
+      "severity": "mild",
       "text": "SQRT(dVar11 * dVar11 + dVar10 * dVar10 + dVar9 * dVar9) <=",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Undefined global data reference",
-      "line": 642,
+      "line": 643,
       "match": "DAT_02db8888",
+      "severity": "mild",
       "text": "(&pCVar2->motion_controller,DAT_02db8888,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 647,
+      "line": 648,
       "match": "DAT_02db8888",
+      "severity": "mild",
       "text": "(pCVar2,DAT_02db8888,local_58,(float)this_ptr->unk5,*(int *)(this_ptr->unk3 + 4),",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 650,
+      "line": 651,
       "match": "DAT_02db8888",
+      "severity": "mild",
       "text": "(pCVar2,DAT_02db8888,local_58,(float)this_ptr->unk5,*(int *)(this_ptr->unk3 + 8),",
       "type": "undefined_data"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 673,
+      "line": 674,
       "match": "8.40779e-45",
+      "severity": "mild",
       "text": "(pCVar18->model).transformed_vertices[0x4f].z = 8.40779e-45;",
       "type": "suspect_float"
     }

@@ -10,6 +10,7 @@
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 5,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 24,
     "suspect_count": 4,
     "suspect_types": [
@@ -192,6 +193,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 19,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_18 = (float)(int)ROUND(ROUND(fVar3 * (float10)65536));",
       "type": "decompiler_intrinsic"
     },
@@ -199,6 +201,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 19,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_18 = (float)(int)ROUND(ROUND(fVar3 * (float10)65536));",
       "type": "decompiler_intrinsic"
     },
@@ -206,6 +209,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 21,
       "match": "3.58732e-43",
+      "severity": "mild",
       "text": "local_18 = 3.58732e-43;",
       "type": "suspect_float"
     },
@@ -213,6 +217,7 @@
       "description": "Complex pointer cast",
       "line": 24,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)g_IntensityToValueLookupTable + iVar1) = local_18;",
       "type": "pointer_cast"
     }

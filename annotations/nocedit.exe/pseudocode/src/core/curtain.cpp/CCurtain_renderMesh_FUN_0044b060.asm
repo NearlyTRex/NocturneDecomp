@@ -167,7 +167,7 @@ section .text
     MOV EAX,[0x006810c8]                ; 0044b1ce | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EAX                            ; 0044b1d3 | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0 ; 0044b1d4
-        ;   XREF to: 0056eac0 (UNCONDITIONAL_CALL)  ; float core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet * this_ptr, int vertex_count, int tri_count, SInputFace * tri_data_ptr, ...)
+        ;   XREF to: 0056eac0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet * this_ptr, int vertex_count, int tri_count, void * face_data, ...)
     MOV EDX,dword ptr [ESI + 0x17c]     ; 0044b1d9
     ADD ESP,0x1c                        ; 0044b1df
     CMP EDX,0xfde8                      ; 0044b1e2
@@ -247,7 +247,7 @@ section .text
     MOV EBP,dword ptr [0x006810c8]      ; 0044b2a3 | g_CDemonSetPtr
     PUSH EBP                            ; 0044b2a9 | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0 ; 0044b2aa
-        ;   XREF to: 0056eac0 (UNCONDITIONAL_CALL)  ; float core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet * this_ptr, int vertex_count, int tri_count, SInputFace * tri_data_ptr, ...)
+        ;   XREF to: 0056eac0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet * this_ptr, int vertex_count, int tri_count, void * face_data, ...)
     MOV EAX,dword ptr [ESI + 0x17c]     ; 0044b2af
     ADD ESP,0x1c                        ; 0044b2b5
     CMP EAX,0xfde8                      ; 0044b2b8

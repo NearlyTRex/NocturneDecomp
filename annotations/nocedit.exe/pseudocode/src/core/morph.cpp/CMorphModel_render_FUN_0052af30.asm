@@ -1,11 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_morph_cpp_CMorphModel_render_FUN_0052af30(CMorphModel *this_ptr,float morph_t)
+; void __cdecl core_morph_cpp_CMorphModel_render_FUN_0052af30(CMorphModel *this_ptr,float morph_t,SMorphPoint *ref_points)
 ;
 ; Parameters:
 ; CMorphModel *    Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   morph_t
+; SMorphPoint *    Stack[0xc]:4   ref_points
 ;
 ; XREF[1]:
 ;   core_morph.cpp_CMorph_render_FUN_0052bae0 at 0052bb34
@@ -37,7 +38,7 @@ section .text
     PUSH dword ptr [ESP + 0x10]         ; 0052af4a
     PUSH ECX                            ; 0052af4e
     CALL core_morph.cpp_CMorphModel_rotatePoints_FUN_0052af70 ; 0052af4f
-        ;   XREF to: 0052af70 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_rotatePoints_FUN_0052af70(CMorphModel * this_ptr)
+        ;   XREF to: 0052af70 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_rotatePoints_FUN_0052af70(CMorphModel * this_ptr, float blend_factor, SMorphPoint * ref_points)
     ADD ESP,0xc                         ; 0052af54
     MOV EBX,dword ptr [ESP + 0x8]       ; 0052af57
     PUSH dword ptr [ESP + 0xc]          ; 0052af5b

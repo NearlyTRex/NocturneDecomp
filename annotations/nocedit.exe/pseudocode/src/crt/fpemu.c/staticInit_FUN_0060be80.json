@@ -1,14 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 87,
+    "complexity_score": 102,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 2,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 22,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
+      "double_reconstruction",
       "extra_output",
       "special_crt_function"
     ],
@@ -138,6 +140,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 6,
       "match": "extraout_EDX",
+      "severity": "moderate",
       "text": "uint extraout_EDX;",
       "type": "extra_output"
     },
@@ -145,6 +148,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 12,
       "match": "SBORROW1",
+      "severity": "mild",
       "text": "cVar4 = SBORROW1(BYTE_00684acd,'\\x03');",
       "type": "decompiler_intrinsic"
     },
@@ -152,13 +156,23 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 17,
       "match": "extraout_EDX",
+      "severity": "moderate",
       "text": "b = dmul((double)CONCAT44(extraout_EDX,uVar1),3145727.0);",
       "type": "extra_output"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 17,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "b = dmul((double)CONCAT44(extraout_EDX,uVar1),3145727.0);",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 17,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "b = dmul((double)CONCAT44(extraout_EDX,uVar1),3145727.0);",
       "type": "decompiler_intrinsic"
     },

@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 81,
     "suspect_count": 24,
     "suspect_types": [
@@ -191,6 +192,7 @@
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
@@ -198,6 +200,7 @@
       "description": "Unresolved stack parameter",
       "line": 19,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "iVar1 = *(int *)(in_stack_00000004 + 0x30);",
       "type": "stack_param"
     },
@@ -205,6 +208,7 @@
       "description": "Unresolved stack parameter",
       "line": 22,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "if (*(int *)(in_stack_00000004 + 0x2c) != 0) {",
       "type": "stack_param"
     },
@@ -212,6 +216,7 @@
       "description": "Unresolved stack parameter",
       "line": 28,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "if (local_18 < *(uint *)(in_stack_00000004 + 0x2c)) {",
       "type": "stack_param"
     },
@@ -219,6 +224,7 @@
       "description": "Complex pointer cast",
       "line": 38,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "if (((*(double *)(iVar3 + 0x28) == *(double *)((int)dest + 0x10)) &&",
       "type": "pointer_cast"
     },
@@ -226,6 +232,7 @@
       "description": "Complex pointer cast",
       "line": 39,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "(*(double *)(iVar3 + 0x30) == *(double *)((int)dest + 0x18))) &&",
       "type": "pointer_cast"
     },
@@ -233,6 +240,7 @@
       "description": "Complex pointer cast",
       "line": 40,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "(*(double *)(iVar3 + 0x38) == *(double *)((int)dest + 0x20))) {",
       "type": "pointer_cast"
     },
@@ -240,6 +248,7 @@
       "description": "Complex pointer cast",
       "line": 41,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*local_34 = *(uint *)((int)dest + 0x28);",
       "type": "pointer_cast"
     },
@@ -247,6 +256,7 @@
       "description": "Complex pointer cast",
       "line": 42,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_34[1] = *(uint *)((int)dest + 0x2c);",
       "type": "pointer_cast"
     },
@@ -254,6 +264,7 @@
       "description": "Complex pointer cast",
       "line": 43,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_34[2] = *(uint *)((int)dest + 0x30);",
       "type": "pointer_cast"
     },
@@ -261,6 +272,7 @@
       "description": "Complex pointer cast",
       "line": 44,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_34[3] = *(uint *)((int)dest + 0x34);",
       "type": "pointer_cast"
     },
@@ -268,6 +280,7 @@
       "description": "Complex pointer cast",
       "line": 45,
       "match": "(ulonglong *)((int)",
+      "severity": "mild",
       "text": "*(ulonglong *)(local_34 + 4) = *(ulonglong *)((int)dest + 0x38);",
       "type": "pointer_cast"
     },
@@ -275,6 +288,7 @@
       "description": "Complex pointer cast",
       "line": 46,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_34[10] = *(uint *)((int)dest + 0x50);",
       "type": "pointer_cast"
     },
@@ -282,6 +296,7 @@
       "description": "Complex pointer cast",
       "line": 47,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_34[0xb] = *(uint *)((int)dest + 0x54);",
       "type": "pointer_cast"
     },
@@ -289,6 +304,7 @@
       "description": "Complex pointer cast",
       "line": 48,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_34[0xc] = *(uint *)((int)dest + 0x58);",
       "type": "pointer_cast"
     },
@@ -296,6 +312,7 @@
       "description": "Complex pointer cast",
       "line": 49,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "local_34[0xd] = *(uint *)((int)dest + 0x5c);",
       "type": "pointer_cast"
     },
@@ -303,6 +320,7 @@
       "description": "Unresolved stack parameter",
       "line": 64,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "(dest,local_20,((*(int *)(in_stack_00000004 + 0x2c) - local_18) + -1) * 0x60",
       "type": "stack_param"
     },
@@ -310,6 +328,7 @@
       "description": "Unresolved stack parameter",
       "line": 67,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "*(int *)(in_stack_00000004 + 0x2c) = *(int *)(in_stack_00000004 + 0x2c) + -1;",
       "type": "stack_param"
     },
@@ -317,6 +336,7 @@
       "description": "Unresolved stack parameter",
       "line": 67,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "*(int *)(in_stack_00000004 + 0x2c) = *(int *)(in_stack_00000004 + 0x2c) + -1;",
       "type": "stack_param"
     },
@@ -324,6 +344,7 @@
       "description": "Complex pointer cast",
       "line": 70,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "dest = (void *)((int)dest + 0x60);",
       "type": "pointer_cast"
     },
@@ -331,6 +352,7 @@
       "description": "Complex pointer cast",
       "line": 71,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "local_20 = (void *)((int)local_20 + 0x60);",
       "type": "pointer_cast"
     },
@@ -338,6 +360,7 @@
       "description": "Unresolved stack parameter",
       "line": 73,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "} while (local_18 < *(uint *)(in_stack_00000004 + 0x2c));",
       "type": "stack_param"
     },
@@ -345,6 +368,7 @@
       "description": "Unresolved stack parameter",
       "line": 78,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "} while (local_2c < *(uint *)(in_stack_00000004 + 0x2c));",
       "type": "stack_param"
     },

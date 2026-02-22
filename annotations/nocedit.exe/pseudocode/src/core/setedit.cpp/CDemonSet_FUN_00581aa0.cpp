@@ -197,7 +197,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
     iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if (iVar6 != 0) {
-      core_set_cpp_CDemonSet_FUN_0056d2d0(this_ptr);
+      core_set_cpp_CDemonSet_clearLights_FUN_0056d2d0(this_ptr);
       engine_2d_c_clearInputAndWait_FUN_00403260();
       this_ptr->disable_water_rendering = 0;
       this_ptr->disable_sky_rendering = 0;

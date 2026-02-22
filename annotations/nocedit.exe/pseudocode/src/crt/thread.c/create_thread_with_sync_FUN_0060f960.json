@@ -1,14 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 98,
-    "complexity_score": 93,
+    "complexity_score": 108,
     "cross_reference_count": 2,
     "function_call_count": 9,
     "global_count": 10,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 63,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
       "special_crt_function",
+      "stack_alignment_array",
       "stack_ref"
     ],
     "total_lines": 161
@@ -264,9 +266,18 @@
   },
   "suspects": [
     {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 9,
+      "match": "acStackY_1034",
+      "severity": "moderate",
+      "text": "char acStackY_1034 [4048];",
+      "type": "stack_alignment_array"
+    },
+    {
       "description": "Direct stack address reference",
       "line": 48,
       "match": "&stack0xffffffb4",
+      "severity": "moderate",
       "text": "pvStack_20 = (*g_CreateEventAFunc)((LPSECURITY_ATTRIBUTES)0x0,0,0,&stack0xffffffb4);",
       "type": "stack_ref"
     },

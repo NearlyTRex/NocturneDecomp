@@ -17,6 +17,7 @@
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 47,
     "suspect_count": 12,
     "suspect_types": [
@@ -119,6 +120,7 @@
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "int *in_stack_00000004;",
       "type": "stack_param"
     },
@@ -126,6 +128,7 @@
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
@@ -133,6 +136,7 @@
       "description": "Unresolved stack parameter",
       "line": 18,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "iVar2 = *(int *)(in_stack_00000008 + 0x28558);",
       "type": "stack_param"
     },
@@ -140,6 +144,7 @@
       "description": "Unresolved stack parameter",
       "line": 20,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "*in_stack_00000004 = iVar2;",
       "type": "stack_param"
     },
@@ -147,6 +152,7 @@
       "description": "Unresolved stack parameter",
       "line": 22,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "pcVar7 = (char *)(in_stack_00000008 + 0x2855c);",
       "type": "stack_param"
     },
@@ -154,6 +160,7 @@
       "description": "Unresolved stack parameter",
       "line": 23,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "piVar8 = in_stack_00000004 + 1;",
       "type": "stack_param"
     },
@@ -161,6 +168,7 @@
       "description": "Unresolved stack parameter",
       "line": 24,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "local_10 = in_stack_00000008;",
       "type": "stack_param"
     },
@@ -168,6 +176,7 @@
       "description": "Unresolved stack parameter",
       "line": 25,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "piVar6 = in_stack_00000004;",
       "type": "stack_param"
     },
@@ -175,6 +184,7 @@
       "description": "Complex pointer cast",
       "line": 35,
       "match": "(char *)((int)",
+      "severity": "mild",
       "text": "*(char *)((int)piVar8 + 1) = cVar1;",
       "type": "pointer_cast"
     },
@@ -182,6 +192,7 @@
       "description": "Complex pointer cast",
       "line": 36,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "piVar8 = (int *)((int)piVar8 + 2);",
       "type": "pointer_cast"
     },
@@ -189,6 +200,7 @@
       "description": "Unresolved stack parameter",
       "line": 47,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "} while (iVar5 < *in_stack_00000004);",
       "type": "stack_param"
     },

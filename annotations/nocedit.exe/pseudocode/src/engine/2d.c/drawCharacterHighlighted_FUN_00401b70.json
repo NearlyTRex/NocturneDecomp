@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 12,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 56,
     "suspect_count": 2,
     "suspect_types": [
@@ -193,6 +194,7 @@
       "description": "Complex pointer cast",
       "line": 25,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "puVar3 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar7) + x_pos);",
       "type": "pointer_cast"
     },
@@ -200,6 +202,7 @@
       "description": "Complex pointer cast",
       "line": 42,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "puVar4 = (ushort *)(*(int *)((int)g_ScreenBufferArray + iVar7) + x_pos * 2);",
       "type": "pointer_cast"
     }

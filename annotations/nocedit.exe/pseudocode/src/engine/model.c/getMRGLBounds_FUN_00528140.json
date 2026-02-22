@@ -23,6 +23,7 @@
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 6,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 174,
     "suspect_count": 18,
     "suspect_types": [
@@ -419,6 +420,7 @@
       "description": "Unaffected register variable",
       "line": 18,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "uint *unaff_ESI;",
       "type": "unaffected_reg"
     },
@@ -426,6 +428,7 @@
       "description": "Unresolved stack parameter",
       "line": 24,
       "match": "in_stack_fffffea0",
+      "severity": "moderate",
       "text": "SMRGLModelBounds *in_stack_fffffea0;",
       "type": "stack_param"
     },
@@ -433,6 +436,7 @@
       "description": "Unresolved stack parameter",
       "line": 52,
       "match": "in_stack_fffffea0",
+      "severity": "moderate",
       "text": "engine_model_c_getMRGLBounds_FUN_00528140(header_00,in_stack_fffffea0);",
       "type": "stack_param"
     },
@@ -440,6 +444,7 @@
       "description": "Direct stack address reference",
       "line": 80,
       "match": "&stack0xfffffea0",
+      "severity": "moderate",
       "text": "_sprintf(&stack0xfffffea0,\"Unable to read verticies in model!\");",
       "type": "stack_ref"
     },
@@ -447,6 +452,7 @@
       "description": "Direct stack address reference",
       "line": 83,
       "match": "&stack0xfffffea0",
+      "severity": "moderate",
       "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xfffffea0);",
       "type": "stack_ref"
     },
@@ -454,6 +460,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 138,
       "match": "ROUND",
+      "severity": "mild",
       "text": "lVar4 = (longlong)iVar7 * (longlong)(int)ROUND(ROUND(local_14 * fVar5));",
       "type": "decompiler_intrinsic"
     },
@@ -461,6 +468,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 138,
       "match": "ROUND",
+      "severity": "mild",
       "text": "lVar4 = (longlong)iVar7 * (longlong)(int)ROUND(ROUND(local_14 * fVar5));",
       "type": "decompiler_intrinsic"
     },
@@ -468,6 +476,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 140,
       "match": "ROUND",
+      "severity": "mild",
       "text": "lVar4 = (longlong)iVar7 * (longlong)(int)ROUND(ROUND(local_18 * fVar5));",
       "type": "decompiler_intrinsic"
     },
@@ -475,6 +484,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 140,
       "match": "ROUND",
+      "severity": "mild",
       "text": "lVar4 = (longlong)iVar7 * (longlong)(int)ROUND(ROUND(local_18 * fVar5));",
       "type": "decompiler_intrinsic"
     },
@@ -482,6 +492,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 142,
       "match": "ROUND",
+      "severity": "mild",
       "text": "lVar4 = (longlong)iVar7 * (longlong)(int)ROUND(ROUND(local_1c * fVar5));",
       "type": "decompiler_intrinsic"
     },
@@ -489,6 +500,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 142,
       "match": "ROUND",
+      "severity": "mild",
       "text": "lVar4 = (longlong)iVar7 * (longlong)(int)ROUND(ROUND(local_1c * fVar5));",
       "type": "decompiler_intrinsic"
     },
@@ -496,6 +508,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 160,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_84 = (int)ROUND(ROUND(SQRT((float10)local_78 * (float10)local_78 +",
       "type": "decompiler_intrinsic"
     },
@@ -503,6 +516,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 160,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_84 = (int)ROUND(ROUND(SQRT((float10)local_78 * (float10)local_78 +",
       "type": "decompiler_intrinsic"
     },
@@ -510,6 +524,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 160,
       "match": "SQRT",
+      "severity": "mild",
       "text": "local_84 = (int)ROUND(ROUND(SQRT((float10)local_78 * (float10)local_78 +",
       "type": "decompiler_intrinsic"
     },
@@ -517,6 +532,7 @@
       "description": "Unaffected register variable",
       "line": 173,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "*unaff_ESI = *puVar13;",
       "type": "unaffected_reg"
     },
@@ -524,6 +540,7 @@
       "description": "Unaffected register variable",
       "line": 175,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar15 * -2 + 1;",
       "type": "unaffected_reg"
     },
@@ -531,6 +548,7 @@
       "description": "Unaffected register variable",
       "line": 175,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar15 * -2 + 1;",
       "type": "unaffected_reg"
     },

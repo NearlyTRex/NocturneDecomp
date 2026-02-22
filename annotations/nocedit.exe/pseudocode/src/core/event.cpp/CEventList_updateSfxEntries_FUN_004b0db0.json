@@ -31,17 +31,19 @@
   },
   "complexity": {
     "assembly_lines": 118,
-    "complexity_score": 143,
+    "complexity_score": 158,
     "cross_reference_count": 5,
     "function_call_count": 4,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 53,
-    "suspect_count": 7,
+    "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_param",
-      "stack_ref"
+      "stack_ref",
+      "sub84_truncation"
     ],
     "total_lines": 171
   },
@@ -240,6 +242,7 @@
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_fffffe90",
+      "severity": "moderate",
       "text": "uint in_stack_fffffe90;",
       "type": "stack_param"
     },
@@ -247,13 +250,23 @@
       "description": "Unresolved stack parameter",
       "line": 22,
       "match": "in_stack_fffffe90",
+      "severity": "moderate",
       "text": "dVar5 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(1,in_stack_fffffe90);",
       "type": "stack_param"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 23,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "local_20 = SUB84(dVar5,0);",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 23,
       "match": "SUB84",
+      "severity": "mild",
       "text": "local_20 = SUB84(dVar5,0);",
       "type": "decompiler_intrinsic"
     },
@@ -261,6 +274,7 @@
       "description": "Complex pointer cast",
       "line": 26,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)&dest->playback_position + 4) = local_1c;",
       "type": "pointer_cast"
     },
@@ -268,6 +282,7 @@
       "description": "Direct stack address reference",
       "line": 28,
       "match": "&stack0xfffffe90",
+      "severity": "moderate",
       "text": "sound_sndmain_cpp_CSfxSample_init_FUN_005a8480((CSfxSample *)&stack0xfffffe90);",
       "type": "stack_ref"
     },
@@ -275,6 +290,7 @@
       "description": "Direct stack address reference",
       "line": 30,
       "match": "&stack0xfffffe90",
+      "severity": "moderate",
       "text": "(dest->sfx_handle,(CSfxSample *)&stack0xfffffe90);",
       "type": "stack_ref"
     },
@@ -282,6 +298,7 @@
       "description": "Direct stack address reference",
       "line": 33,
       "match": "&stack0xfffffe90",
+      "severity": "moderate",
       "text": "pcVar3 = &stack0xfffffe90;",
       "type": "stack_ref"
     }

@@ -29,6 +29,7 @@
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 49,
     "suspect_count": 7,
     "suspect_types": [
@@ -147,6 +148,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 7,
       "match": "extraout_EAX",
+      "severity": "moderate",
       "text": "uint extraout_EAX;",
       "type": "extra_output"
     },
@@ -154,6 +156,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 8,
       "match": "extraout_EAX_00",
+      "severity": "moderate",
       "text": "uint extraout_EAX_00;",
       "type": "extra_output"
     },
@@ -161,6 +164,7 @@
       "description": "Undefined global data reference",
       "line": 26,
       "match": "DAT_02d141dc",
+      "severity": "mild",
       "text": "iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(&DAT_02d141dc + iVar3));",
       "type": "undefined_data"
     },
@@ -168,6 +172,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 38,
       "match": "extraout_EAX",
+      "severity": "moderate",
       "text": "*(uint *)(&DAT_02d141dc + iVar4 * 4) = extraout_EAX;",
       "type": "extra_output"
     },
@@ -175,6 +180,7 @@
       "description": "Undefined global data reference",
       "line": 38,
       "match": "DAT_02d141dc",
+      "severity": "mild",
       "text": "*(uint *)(&DAT_02d141dc + iVar4 * 4) = extraout_EAX;",
       "type": "undefined_data"
     },
@@ -182,6 +188,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 45,
       "match": "extraout_EAX_00",
+      "severity": "moderate",
       "text": "*(uint *)(&DAT_02d141dc + iVar4 * 4) = extraout_EAX_00;",
       "type": "extra_output"
     },
@@ -189,6 +196,7 @@
       "description": "Undefined global data reference",
       "line": 45,
       "match": "DAT_02d141dc",
+      "severity": "mild",
       "text": "*(uint *)(&DAT_02d141dc + iVar4 * 4) = extraout_EAX_00;",
       "type": "undefined_data"
     }

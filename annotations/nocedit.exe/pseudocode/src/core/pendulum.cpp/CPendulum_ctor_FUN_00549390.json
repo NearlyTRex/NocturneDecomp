@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 10,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 81,
     "suspect_count": 6,
     "suspect_types": [
@@ -179,6 +180,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 15,
       "match": "this_ptr_00[-1].",
+      "severity": "mild",
       "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CPendulumVTable;",
       "type": "negative_offset"
     },
@@ -186,6 +188,7 @@
       "description": "Complex pointer cast",
       "line": 26,
       "match": "(char *)((int)",
+      "severity": "mild",
       "text": "*(char *)((int)pCVar4->part_visibility_flags + 1) = cVar1;",
       "type": "pointer_cast"
     },
@@ -193,6 +196,7 @@
       "description": "Complex pointer cast",
       "line": 27,
       "match": "(CKeyFramedModelInstance *)((int)",
+      "severity": "mild",
       "text": "pCVar4 = (CKeyFramedModelInstance *)((int)pCVar4->part_visibility_flags + 2);",
       "type": "pointer_cast"
     },
@@ -200,6 +204,7 @@
       "description": "Complex pointer cast",
       "line": 37,
       "match": "(char *)((int)",
+      "severity": "mild",
       "text": "*(char *)((int)piVar5 + 1) = cVar1;",
       "type": "pointer_cast"
     },
@@ -207,6 +212,7 @@
       "description": "Complex pointer cast",
       "line": 38,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "piVar5 = (int *)((int)piVar5 + 2);",
       "type": "pointer_cast"
     },
@@ -214,6 +220,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 83,
       "match": "this_ptr_00[-1].",
+      "severity": "mild",
       "text": "return (CPendulum *)(this_ptr_00[-1].part_visibility_flags + 9);",
       "type": "negative_offset"
     }

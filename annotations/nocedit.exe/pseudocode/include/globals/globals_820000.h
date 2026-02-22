@@ -10,6 +10,7 @@
 #include "types/classes/CKeyFramedModelInstance.h"
 #include "types/structs/SEdge.h"
 #include "types/structs/SMRGLHeaderPrimitive.h"
+#include "types/structs/SMRGLPrimitiveQuad.h"
 #include "types/structs/SRenderVertex.h"
 
 // =============================================================================
@@ -17,6 +18,7 @@
 // =============================================================================
 
 // CDemonActor*
+extern CDemonActor* g_CurrentProcessingActor;
 extern CDemonActor* g_CurrentActorBeingProcessed;
 
 // CDemonActorType
@@ -63,6 +65,9 @@ extern SEdge g_TracedEdgeBuffer[512];
 // SMRGLHeaderPrimitive*[2000]
 extern SMRGLHeaderPrimitive* g_RenderFaceArray[2000];
 
+// SMRGLPrimitiveQuad[1000]
+extern SMRGLPrimitiveQuad g_ClothBackfaceBuffer[1000];
+
 // SRenderVertex*[16]
 extern SRenderVertex* g_ClipperCullingPointers[16];
 
@@ -80,8 +85,8 @@ extern SRenderVertex g_ClipperIntermediateBuffer[16];
 // _FILE*
 extern _FILE* g_ActorDataFile;
 
-// char[50]
-extern char g_ActorDebugBuffer[50];
+// char[52]
+extern char g_ActorDebugBuffer[52];
 
 // float
 extern float FLOAT_008224dc;
@@ -189,12 +194,4 @@ extern undefined4 DAT_00822f4c;
 extern undefined4 DAT_00822f50;
 extern undefined4 DAT_00823c54;
 extern undefined4 DAT_00823c58;
-extern undefined4 DAT_00827504;
-extern undefined4 DAT_00827518;
-extern undefined4 DAT_0082751c;
-extern undefined4 DAT_00827520;
-extern undefined4 DAT_00827524;
-extern undefined4 DAT_00827528;
-extern undefined4 DAT_0082752c;
-extern undefined4 DAT_0082754c;
 

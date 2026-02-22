@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 6,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 37,
     "suspect_count": 4,
     "suspect_types": [
@@ -191,6 +192,7 @@
       "description": "Type propagation did not converge",
       "line": 2,
       "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
     },
@@ -198,6 +200,7 @@
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "char *in_stack_00000008;",
       "type": "stack_param"
     },
@@ -205,6 +208,7 @@
       "description": "Unresolved stack parameter",
       "line": 24,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "iVar4 = core_actor_cpp_isOfClass_FUN_0040c6d0((CDemonActor *)actor_ptr,in_stack_00000008);",
       "type": "stack_param"
     },
@@ -212,6 +216,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 32,
       "match": "SQRT",
+      "severity": "mild",
       "text": "if (SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2) < (this_ptr->base).guard_distance) {",
       "type": "decompiler_intrinsic"
     }

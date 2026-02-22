@@ -59,6 +59,7 @@
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 3,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 100,
     "suspect_count": 7,
     "suspect_types": [
@@ -334,6 +335,7 @@
       "description": "Complex pointer cast",
       "line": 71,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)this_ptr->index_data_ptr[0] + iVar2) = local_28;",
       "type": "pointer_cast"
     },
@@ -341,6 +343,7 @@
       "description": "Complex pointer cast",
       "line": 73,
       "match": "(ushort *)((int)",
+      "severity": "mild",
       "text": "puVar4 = (ushort *)((int)&(pSVar1->vertex_indices).vertex_index_0 + iVar6);",
       "type": "pointer_cast"
     },
@@ -348,6 +351,7 @@
       "description": "Complex pointer cast",
       "line": 75,
       "match": "(ushort *)((int)",
+      "severity": "mild",
       "text": "*puVar4 = *(ushort *)((int)local_3c + iVar3);",
       "type": "pointer_cast"
     },
@@ -355,6 +359,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 76,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_20 = (int)ROUND(ROUND((*(float *)(local_44 + iVar3 + -4) - local_24) *",
       "type": "decompiler_intrinsic"
     },
@@ -362,6 +367,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 76,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_20 = (int)ROUND(ROUND((*(float *)(local_44 + iVar3 + -4) - local_24) *",
       "type": "decompiler_intrinsic"
     },
@@ -369,6 +375,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 78,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_14 = (int)ROUND(ROUND((*(float *)(local_50 + iVar3 + -4) - local_18) *",
       "type": "decompiler_intrinsic"
     },
@@ -376,6 +383,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 78,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_14 = (int)ROUND(ROUND((*(float *)(local_50 + iVar3 + -4) - local_18) *",
       "type": "decompiler_intrinsic"
     }

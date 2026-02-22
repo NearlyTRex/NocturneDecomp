@@ -7,7 +7,7 @@
 ; CFireEffect *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_set.cpp_CDemonSet_FUN_0056c990 at 0056cbfc
+;   core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990 at 0056cbfc
 ;
 ; Referenced Globals:
 ;   CMuzzleFlash[20] g_MuzzleFlashPool

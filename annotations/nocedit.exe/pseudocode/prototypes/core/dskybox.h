@@ -13,8 +13,8 @@ SMRGLTextureBasic * __cdecl initializeSkyboxTexture(SMRGLTextureBasic *texture);
 
 // Original: core_dskybox.cpp_generateSkyDomeVertex_FUN_004900b0
 // Address: 004900b0
-void __cdecl generateSkyDomeVertex(float *light_color,int u_coord,int v_coord,float *uv_offset);
+void __cdecl generateSkyDomeVertex(SMRGLTextureBasic *sky_texture,int u_coord,int v_coord,int vertex_index);
 
 // Original: core_dskybox.cpp_renderSkyDome_FUN_004901f0
 // Address: 004901f0
-void __cdecl renderSkyDome(SMRGLTextureBasic *sky_texture,char *texture_name,float brightness_factor);
+void __cdecl renderSkyDome(SMRGLTextureBasic *sky_texture,char *texture_name,int brightness_factor);

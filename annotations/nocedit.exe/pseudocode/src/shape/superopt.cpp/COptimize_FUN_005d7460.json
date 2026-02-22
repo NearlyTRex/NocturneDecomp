@@ -79,14 +79,16 @@
   },
   "complexity": {
     "assembly_lines": 232,
-    "complexity_score": 368,
+    "complexity_score": 393,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 88,
-    "suspect_count": 26,
+    "suspect_count": 28,
     "suspect_types": [
       "decompiler_intrinsic",
+      "double_reconstruction",
       "extra_output",
       "stack_param",
       "unresolved_funcptr"
@@ -229,6 +231,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 11,
       "match": "extraout_EDX",
+      "severity": "moderate",
       "text": "uint extraout_EDX;",
       "type": "extra_output"
     },
@@ -236,6 +239,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 12,
       "match": "extraout_EDX_00",
+      "severity": "moderate",
       "text": "uint extraout_EDX_00;",
       "type": "extra_output"
     },
@@ -243,6 +247,7 @@
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
@@ -250,6 +255,7 @@
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
@@ -257,6 +263,7 @@
       "description": "Unresolved stack parameter",
       "line": 25,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "*(byte *)(in_stack_00000008 + 0x61) = *(byte *)(in_stack_00000008 + 0x61) | 0x20;",
       "type": "stack_param"
     },
@@ -264,6 +271,7 @@
       "description": "Unresolved stack parameter",
       "line": 25,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "*(byte *)(in_stack_00000008 + 0x61) = *(byte *)(in_stack_00000008 + 0x61) | 0x20;",
       "type": "stack_param"
     },
@@ -271,6 +279,7 @@
       "description": "Unresolved stack parameter",
       "line": 30,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "if (*(int *)(in_stack_0000000c + 8) != 0) {",
       "type": "stack_param"
     },
@@ -278,6 +287,7 @@
       "description": "Unresolved stack parameter",
       "line": 33,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "iVar7 = local_2c + *(int *)(in_stack_0000000c + 0xc);",
       "type": "stack_param"
     },
@@ -285,6 +295,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 35,
       "match": "code *",
+      "severity": "moderate",
       "text": "uVar3 = (**(code **)(*(int *)(iVar7 + 100) + 0x84))(iVar7);",
       "type": "unresolved_funcptr"
     },
@@ -292,6 +303,7 @@
       "description": "Unresolved stack parameter",
       "line": 37,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "if (*(int *)(in_stack_0000000c + 8) != 0) {",
       "type": "stack_param"
     },
@@ -299,6 +311,7 @@
       "description": "Unresolved stack parameter",
       "line": 40,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "iVar8 = *(int *)(in_stack_0000000c + 0xc) + iStack_1c;",
       "type": "stack_param"
     },
@@ -306,6 +319,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 47,
       "match": "code *",
+      "severity": "moderate",
       "text": "uVar4 = (**(code **)(*(int *)(iVar8 + 100) + 0x84))(iVar8);",
       "type": "unresolved_funcptr"
     },
@@ -313,13 +327,23 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 48,
       "match": "extraout_EDX_00",
+      "severity": "moderate",
       "text": "dStack_40 = (double)CONCAT44(extraout_EDX_00,uVar4) -",
       "type": "extra_output"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 48,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "dStack_40 = (double)CONCAT44(extraout_EDX_00,uVar4) -",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 48,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "dStack_40 = (double)CONCAT44(extraout_EDX_00,uVar4) -",
       "type": "decompiler_intrinsic"
     },
@@ -327,13 +351,23 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 49,
       "match": "extraout_EDX",
+      "severity": "moderate",
       "text": "(double)CONCAT44(extraout_EDX,uVar3);",
       "type": "extra_output"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 49,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(double)CONCAT44(extraout_EDX,uVar3);",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 49,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(double)CONCAT44(extraout_EDX,uVar3);",
       "type": "decompiler_intrinsic"
     },
@@ -341,6 +375,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 54,
       "match": "code *",
+      "severity": "moderate",
       "text": "(iVar5 = (**(code **)(*(int *)(iVar7 + 100) + 0x74))(iVar7,iVar8), iVar5 != 0)) {",
       "type": "unresolved_funcptr"
     },
@@ -348,6 +383,7 @@
       "description": "Unresolved stack parameter",
       "line": 56,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "if (*(int *)(in_stack_0000000c + 8) != 0) {",
       "type": "stack_param"
     },
@@ -355,6 +391,7 @@
       "description": "Unresolved stack parameter",
       "line": 59,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "iVar5 = *(int *)(in_stack_0000000c + 0xc) + iStack_14;",
       "type": "stack_param"
     },
@@ -362,6 +399,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 62,
       "match": "code *",
+      "severity": "moderate",
       "text": "((iVar6 = (**(code **)(*(int *)(iVar8 + 100) + 0x7c))(iVar8,iVar5),",
       "type": "unresolved_funcptr"
     },
@@ -369,6 +407,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 64,
       "match": "code *",
+      "severity": "moderate",
       "text": "((iVar6 = (**(code **)(*(int *)(iVar8 + 100) + 0x78))(iVar8,iVar5),",
       "type": "unresolved_funcptr"
     },
@@ -376,6 +415,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 66,
       "match": "code *",
+      "severity": "moderate",
       "text": "(iVar5 = (**(code **)(*(int *)(iVar8 + 100) + 0x80))(iVar8,iVar5),",
       "type": "unresolved_funcptr"
     },
@@ -383,6 +423,7 @@
       "description": "Unresolved stack parameter",
       "line": 70,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "} while (uVar9 < *(uint *)(in_stack_0000000c + 8));",
       "type": "stack_param"
     },
@@ -390,6 +431,7 @@
       "description": "Unresolved stack parameter",
       "line": 72,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "if (uVar9 == *(uint *)(in_stack_0000000c + 8)) {",
       "type": "stack_param"
     },
@@ -397,6 +439,7 @@
       "description": "Unresolved stack parameter",
       "line": 80,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "} while (uStack_24 < *(uint *)(in_stack_0000000c + 8));",
       "type": "stack_param"
     },
@@ -404,6 +447,7 @@
       "description": "Unresolved stack parameter",
       "line": 85,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "} while (local_30 < *(uint *)(in_stack_0000000c + 8));",
       "type": "stack_param"
     }

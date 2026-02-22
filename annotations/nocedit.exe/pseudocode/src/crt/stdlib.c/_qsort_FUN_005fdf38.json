@@ -5,6 +5,7 @@
     "cross_reference_count": 10,
     "function_call_count": 2,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 283,
     "suspect_count": 35,
     "suspect_types": [
@@ -25,7 +26,7 @@
     {
       "addr": "0056fbd0",
       "from_addr": "0056fca3",
-      "name": "core_set.cpp_CDemonSet_FUN_0056fbd0",
+      "name": "core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -317,6 +318,7 @@
       "description": "Unreachable code block removed",
       "line": 2,
       "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x005fe232) */",
       "type": "warning_unreachable"
     },
@@ -324,6 +326,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 13,
       "match": "extraout_EAX",
+      "severity": "moderate",
       "text": "void *extraout_EAX;",
       "type": "extra_output"
     },
@@ -331,6 +334,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 14,
       "match": "extraout_EAX_00",
+      "severity": "moderate",
       "text": "void *extraout_EAX_00;",
       "type": "extra_output"
     },
@@ -338,6 +342,7 @@
       "description": "Complex pointer cast",
       "line": 66,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "b = (int *)((int)local_48 + (num >> 1) * size);",
       "type": "pointer_cast"
     },
@@ -345,6 +350,7 @@
       "description": "Complex pointer cast",
       "line": 69,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "pvVar4 = (void *)((int)local_48 + (num - 1) * size);",
       "type": "pointer_cast"
     },
@@ -352,6 +358,7 @@
       "description": "Complex pointer cast",
       "line": 74,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "(local_48,(void *)((int)local_48 + iVar8),",
       "type": "pointer_cast"
     },
@@ -359,6 +366,7 @@
       "description": "Complex pointer cast",
       "line": 75,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "(void *)((int)local_48 + local_68),local_3c);",
       "type": "pointer_cast"
     },
@@ -366,6 +374,7 @@
       "description": "Complex pointer cast",
       "line": 77,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "((void *)((int)b - iVar8),b,(int *)((int)b + iVar8),local_3c);",
       "type": "pointer_cast"
     },
@@ -373,6 +382,7 @@
       "description": "Complex pointer cast",
       "line": 77,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "((void *)((int)b - iVar8),b,(int *)((int)b + iVar8),local_3c);",
       "type": "pointer_cast"
     },
@@ -380,6 +390,7 @@
       "description": "Complex pointer cast",
       "line": 79,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "((void *)((int)pvVar4 - local_68),(void *)((int)pvVar4 - iVar8),",
       "type": "pointer_cast"
     },
@@ -387,6 +398,7 @@
       "description": "Complex pointer cast",
       "line": 79,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "((void *)((int)pvVar4 - local_68),(void *)((int)pvVar4 - iVar8),",
       "type": "pointer_cast"
     },
@@ -394,6 +406,7 @@
       "description": "Complex pointer cast",
       "line": 96,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "pvVar7 = (void *)((int)local_48 + (num - 1) * size);",
       "type": "pointer_cast"
     },
@@ -401,6 +414,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 116,
       "match": "extraout_EAX",
+      "severity": "moderate",
       "text": "ptr1 = extraout_EAX;",
       "type": "extra_output"
     },
@@ -408,6 +422,7 @@
       "description": "Complex pointer cast",
       "line": 118,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "local_34 = (void *)((int)local_34 + size);",
       "type": "pointer_cast"
     },
@@ -415,6 +430,7 @@
       "description": "Complex pointer cast",
       "line": 120,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "local_28 = (void *)((int)local_28 + size);",
       "type": "pointer_cast"
     },
@@ -422,6 +438,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 136,
       "match": "extraout_EAX_00",
+      "severity": "moderate",
       "text": "ptr1 = extraout_EAX_00;",
       "type": "extra_output"
     },
@@ -429,6 +446,7 @@
       "description": "Complex pointer cast",
       "line": 138,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "local_30 = (void *)((int)local_30 - size);",
       "type": "pointer_cast"
     },
@@ -436,6 +454,7 @@
       "description": "Complex pointer cast",
       "line": 140,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "pvVar4 = (void *)((int)local_2c - size);",
       "type": "pointer_cast"
     },
@@ -443,6 +462,7 @@
       "description": "Complex pointer cast",
       "line": 154,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "local_28 = (void *)((int)local_28 + size);",
       "type": "pointer_cast"
     },
@@ -450,6 +470,7 @@
       "description": "Complex pointer cast",
       "line": 158,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "pvVar4 = (void *)((int)local_2c - size);",
       "type": "pointer_cast"
     },
@@ -457,6 +478,7 @@
       "description": "Complex pointer cast",
       "line": 165,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "pvVar7 = (void *)((int)local_48 + num * size);",
       "type": "pointer_cast"
     },
@@ -464,6 +486,7 @@
       "description": "Complex pointer cast",
       "line": 172,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar10 = (uint *)((int)local_28 - uVar6);",
       "type": "pointer_cast"
     },
@@ -471,6 +494,7 @@
       "description": "Complex pointer cast",
       "line": 191,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar9 = (uint *)((int)puVar9 + 1);",
       "type": "pointer_cast"
     },
@@ -478,6 +502,7 @@
       "description": "Complex pointer cast",
       "line": 193,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar10 = (uint *)((int)puVar10 + (uint)bVar11 * -2 + 1);",
       "type": "pointer_cast"
     },
@@ -485,6 +510,7 @@
       "description": "Complex pointer cast",
       "line": 202,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar10 = (uint *)((int)pvVar7 - uVar6);",
       "type": "pointer_cast"
     },
@@ -492,6 +518,7 @@
       "description": "Complex pointer cast",
       "line": 221,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar9 = (uint *)((int)puVar9 + 1);",
       "type": "pointer_cast"
     },
@@ -499,6 +526,7 @@
       "description": "Complex pointer cast",
       "line": 223,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar10 = (uint *)((int)puVar10 + (uint)bVar11 * -2 + 1);",
       "type": "pointer_cast"
     },
@@ -506,6 +534,7 @@
       "description": "Complex pointer cast",
       "line": 233,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "local_48 = (void *)((int)pvVar7 - uVar6);",
       "type": "pointer_cast"
     },
@@ -513,6 +542,7 @@
       "description": "Complex pointer cast",
       "line": 247,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "local_50 = (void *)((int)local_48 + num * size);",
       "type": "pointer_cast"
     },
@@ -520,6 +550,7 @@
       "description": "Complex pointer cast",
       "line": 249,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "local_4c = (void *)((int)local_48 + local_40);",
       "type": "pointer_cast"
     },
@@ -527,6 +558,7 @@
       "description": "Complex pointer cast",
       "line": 251,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "if ((void *)((int)local_48 + local_40) < local_50) {",
       "type": "pointer_cast"
     },
@@ -534,6 +566,7 @@
       "description": "Complex pointer cast",
       "line": 256,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar10 = (uint *)((int)local_20 - local_40);",
       "type": "pointer_cast"
     },
@@ -541,6 +574,7 @@
       "description": "Complex pointer cast",
       "line": 267,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "local_20 = (void *)((int)local_20 - local_40);",
       "type": "pointer_cast"
     },
@@ -548,6 +582,7 @@
       "description": "Complex pointer cast",
       "line": 271,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "local_4c = (void *)((int)local_4c + local_40);",
       "type": "pointer_cast"
     },

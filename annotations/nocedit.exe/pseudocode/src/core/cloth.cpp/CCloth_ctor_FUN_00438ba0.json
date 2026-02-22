@@ -10,6 +10,7 @@
     "cross_reference_count": 6,
     "function_call_count": 2,
     "global_count": 2,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 13,
     "suspect_count": 5,
     "suspect_types": [
@@ -136,6 +137,7 @@
       "description": "Complex pointer cast",
       "line": 11,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "((void *)((int)pvVar1 + 0x377b8),0x32,&g_SClothBoneTypeInfo);",
       "type": "pointer_cast"
     },
@@ -143,6 +145,7 @@
       "description": "Complex pointer cast",
       "line": 12,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pvVar1 + 0x2fac) = 0;",
       "type": "pointer_cast"
     },
@@ -150,6 +153,7 @@
       "description": "Complex pointer cast",
       "line": 13,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pvVar1 + -4) = 0;",
       "type": "pointer_cast"
     },
@@ -157,6 +161,7 @@
       "description": "Complex pointer cast",
       "line": 14,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)pvVar1 + -0xc) = 0;",
       "type": "pointer_cast"
     },
@@ -164,6 +169,7 @@
       "description": "Complex pointer cast",
       "line": 15,
       "match": "(CCloth *)((int)",
+      "severity": "mild",
       "text": "return (CCloth *)((int)pvVar1 + -0x3ce90);",
       "type": "pointer_cast"
     }

@@ -13,15 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 714,
-    "complexity_score": 383,
+    "complexity_score": 398,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 22,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 293,
-    "suspect_count": 7,
+    "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
+      "stack_alignment_array",
       "stack_param",
       "stack_ref"
     ],
@@ -642,9 +644,18 @@
   },
   "suspects": [
     {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 15,
+      "match": "afStackY_1040",
+      "severity": "moderate",
+      "text": "float afStackY_1040 [963];",
+      "type": "stack_alignment_array"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_fffffee8",
+      "severity": "moderate",
       "text": "CVector3i *in_stack_fffffee8;",
       "type": "stack_param"
     },
@@ -652,6 +663,7 @@
       "description": "Unresolved stack parameter",
       "line": 52,
       "match": "in_stack_fffffee8",
+      "severity": "moderate",
       "text": "(&g_CDemonRaytraceInstance,dest_position,in_stack_fffffee8);",
       "type": "stack_param"
     },
@@ -659,6 +671,7 @@
       "description": "Complex pointer cast",
       "line": 53,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "pfVar7 = (float *)((int)this_ptr + (uint)bVar8 * -8 + 0x1c);",
       "type": "pointer_cast"
     },
@@ -666,6 +679,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 150,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_14 = (int)ROUND(ROUND(dest_position->z));",
       "type": "decompiler_intrinsic"
     },
@@ -673,6 +687,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 150,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_14 = (int)ROUND(ROUND(dest_position->z));",
       "type": "decompiler_intrinsic"
     },
@@ -680,6 +695,7 @@
       "description": "Unresolved stack parameter",
       "line": 184,
       "match": "in_stack_fffffee8",
+      "severity": "moderate",
       "text": "g_PathfindingCurrentZ,(int)in_stack_fffffee8);",
       "type": "stack_param"
     },
@@ -687,6 +703,7 @@
       "description": "Direct stack address reference",
       "line": 215,
       "match": "&stack0xfffffee8",
+      "severity": "moderate",
       "text": "(&local_10c,(CVector3f *)&stack0xfffffee8);",
       "type": "stack_ref"
     }

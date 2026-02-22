@@ -26,9 +26,9 @@
 ; Called Functions:
 ;   core_game.cpp_CGame_setGameRes_FUN_004dade0
 ;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0
-;   core_set.cpp_CDemonSet_FUN_0056c1a0
-;   core_set.cpp_CDemonSet_FUN_0056d2d0
+;   core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0
 ;   core_set.cpp_CDemonSet_initScene_FUN_0056aa10
+;   core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_remove_FUN_005ff9d0
@@ -97,8 +97,8 @@ section .text
     ADD ESP,0x8                         ; 005813b2
     PUSH EDI                            ; 005813b5
     PUSH EBX                            ; 005813b6
-    CALL core_set.cpp_CDemonSet_FUN_0056c1a0 ; 005813b7
-        ;   XREF to: 0056c1a0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056c1a0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0 ; 005813b7
+        ;   XREF to: 0056c1a0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0(CDemonSet * this_ptr, int skip_prerender)
     ADD ESP,0x8                         ; 005813bc
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 005813bf
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -149,8 +149,8 @@ section .text
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
         ;   Label: LAB_00581420
     PUSH EBX                            ; 00581425
-    CALL core_set.cpp_CDemonSet_FUN_0056d2d0 ; 00581426
-        ;   XREF to: 0056d2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d2d0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0 ; 00581426
+        ;   XREF to: 0056d2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0058142b
     MOV ECX,dword ptr [0x0067b654]      ; 0058142e | g_CGameInstance | g_CGamePtr
     PUSH ECX                            ; 00581434 | g_CGameInstance

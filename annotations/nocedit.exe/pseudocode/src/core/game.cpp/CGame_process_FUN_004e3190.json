@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 21,
     "global_count": 46,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 129,
     "suspect_count": 3,
     "suspect_types": [
@@ -89,14 +90,14 @@
       "name": "core_script.cpp_CScript_process_FUN_00559960"
     },
     {
-      "addr": "0056b810",
-      "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_0056b810"
-    },
-    {
       "addr": "0056f940",
       "is_variadic": false,
       "name": "core_set.cpp_CDemonSet_process_FUN_0056f940"
+    },
+    {
+      "addr": "0056b810",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_processActors_FUN_0056b810"
     },
     {
       "addr": "005751d0",
@@ -513,6 +514,7 @@
       "description": "Unaffected register variable",
       "line": 10,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "int unaff_ESI;",
       "type": "unaffected_reg"
     },
@@ -520,6 +522,7 @@
       "description": "Unaffected register variable",
       "line": 13,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "unaff_ESI = wincore_winrun_cpp_getTime_FUN_005f2dc0();",
       "type": "unaffected_reg"
     },
@@ -527,6 +530,7 @@
       "description": "Unaffected register variable",
       "line": 127,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "((double)(iVar3 - unaff_ESI) * 0.055555555555555601 * 1.52587890625e-05 * 1000) /",
       "type": "unaffected_reg"
     }

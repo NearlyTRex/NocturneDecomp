@@ -396,7 +396,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x92]      ; 00443f11
     PUSH EAX                            ; 00443f17
     CALL core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850 ; 00443f18
-        ;   XREF to: 00477850 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850(CKeyFramedModel * this_ptr, CKeyFramedModelInstance * instance, int frame_index, int render_flags)
+        ;   XREF to: 00477850 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850(CKeyFramedModel * this_ptr, int frame_index, CKeyFramedModelInstance * instance, int render_flags)
     ADD ESP,0x10                        ; 00443f1d
     MOV EDX,dword ptr [0x006703ec]      ; 00443f20 | g_CDemonRendererPtr2
     PUSH EDX                            ; 00443f26 | g_CDemonRendererInstance

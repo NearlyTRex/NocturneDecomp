@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 8,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 20,
     "suspect_count": 2,
     "suspect_types": [
@@ -151,6 +152,7 @@
       "description": "Complex pointer cast",
       "line": 17,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)g_ZBufferScanlineArrayBackup + iVar2) =",
       "type": "pointer_cast"
     },
@@ -158,6 +160,7 @@
       "description": "Complex pointer cast",
       "line": 18,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar2);",
       "type": "pointer_cast"
     }

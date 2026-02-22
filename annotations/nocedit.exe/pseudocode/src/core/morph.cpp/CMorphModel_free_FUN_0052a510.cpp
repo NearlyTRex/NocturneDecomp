@@ -9,13 +9,13 @@
 void __cdecl core_morph_cpp_CMorphModel_free_FUN_0052a510(CMorphModel *this_ptr)
 
 {
-  if (this_ptr->points != (void *)0x0) {
+  if (this_ptr->points != (SMorphPoint *)0x0) {
     shape_memdbg_cpp_debugFree_FUN_0050f460(this_ptr->points,"..\\core\\morph.cpp",0x5c);
-    this_ptr->points = (void *)0x0;
+    this_ptr->points = (SMorphPoint *)0x0;
   }
-  if (this_ptr->faces != (void *)0x0) {
+  if (this_ptr->faces != (SMRGLPrimitiveTriangle *)0x0) {
     shape_memdbg_cpp_debugFree_FUN_0050f460(this_ptr->faces,"..\\core\\morph.cpp",0x60);
-    this_ptr->faces = (void *)0x0;
+    this_ptr->faces = (SMRGLPrimitiveTriangle *)0x0;
   }
   this_ptr->num_faces = 0;
   this_ptr->num_textures = 0;

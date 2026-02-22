@@ -1,0 +1,146 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 28,
+    "complexity_score": 14,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 8,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 14,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 42
+  },
+  "cross_references": [
+    {
+      "addr": "004ca110",
+      "from_addr": "004ca1e8",
+      "name": "core_flame.cpp_CFlame_renderTransparent_FUN_004ca110",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056d140",
+    "address_range": [
+      [
+        "0056d140",
+        "0056d18b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_set.cpp_CDemonSet_addQueuedCoronaGlobe_FUN_0056d140",
+    "signature": "void __cdecl core_set_cpp_CDemonSet_addQueuedCoronaGlobe_FUN_0056d140(CDemonSet *this_ptr,CDemonGlobe *globe)"
+  },
+  "function_calls": [
+    {
+      "addr": "0048ce00",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr2",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "0067d550",
+      "name": "g_CDemonMissionPtr",
+      "type": "CDemonMission*",
+      "value": "02f33740"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02f33740",
+      "name": "g_CDemonMissionInstance",
+      "type": "CDemonMission",
+      "value": null
+    },
+    {
+      "addr": "02f33744",
+      "name": "DAT_02f33744",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0327785c",
+      "name": "g_QueuedCoronaGlobeCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03277860",
+      "name": "g_QueuedCoronaGlobes",
+      "type": "CDemonGlobe*[100]",
+      "value": null
+    },
+    {
+      "addr": "032779f0",
+      "name": "g_QueuedCoronaGlobeAlphaMasks",
+      "type": "int[100]",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.590909090909091,
+    "instruction_count": 22,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 1,
+      "CBRANCH": 2,
+      "COPY": 18,
+      "INT_ADD": 10,
+      "INT_AND": 6,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 6,
+      "INT_LESS": 2,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 3,
+      "INT_SUB": 6,
+      "LOAD": 6,
+      "POPCOUNT": 3,
+      "RETURN": 2,
+      "STORE": 6
+    },
+    "pcode_op_count": 79
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "globe",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonGlobe *"
+      }
+    ]
+  },
+  "suspects": []
+}

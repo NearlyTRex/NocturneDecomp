@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 4,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 137,
     "suspect_count": 7,
     "suspect_types": [
@@ -493,6 +494,7 @@
       "description": "Type propagation did not converge",
       "line": 2,
       "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
     },
@@ -500,6 +502,7 @@
       "description": "Complex pointer cast",
       "line": 61,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -507,6 +510,7 @@
       "description": "Complex pointer cast",
       "line": 62,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -514,6 +518,7 @@
       "description": "Complex pointer cast",
       "line": 124,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -521,6 +526,7 @@
       "description": "Complex pointer cast",
       "line": 125,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -528,6 +534,7 @@
       "description": "Complex pointer cast",
       "line": 137,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -535,6 +542,7 @@
       "description": "Complex pointer cast",
       "line": 138,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     }

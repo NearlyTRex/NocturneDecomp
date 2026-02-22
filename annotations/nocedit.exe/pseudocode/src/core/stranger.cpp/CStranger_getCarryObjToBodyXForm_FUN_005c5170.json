@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 16,
     "suspect_count": 1,
     "suspect_types": [
@@ -111,6 +112,7 @@
       "description": "Complex pointer cast",
       "line": 16,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar3 * -2 + 1) * 4);",
       "type": "pointer_cast"
     }

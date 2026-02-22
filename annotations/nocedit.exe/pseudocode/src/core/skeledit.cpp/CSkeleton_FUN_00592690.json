@@ -29,7 +29,7 @@
         "category": "undeclared_identifier",
         "column": 5,
         "line": 313,
-        "message": "use of undeclared identifier '_DAT_03670b5c'"
+        "message": "use of undeclared identifier '_DAT_03670b5c'; did you mean 'DAT_00680bdc'?"
       },
       {
         "category": "undeclared_identifier",
@@ -125,6 +125,7 @@
     "cross_reference_count": 0,
     "function_call_count": 58,
     "global_count": 186,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 1905,
     "suspect_count": 45,
     "suspect_types": [
@@ -3110,6 +3111,7 @@
       "description": "Overlapping global symbols",
       "line": 3,
       "match": "WARNING: Globals starting with",
+      "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
     },
@@ -3117,6 +3119,7 @@
       "description": "Unresolved stack parameter",
       "line": 40,
       "match": "in_stack_fffeec08",
+      "severity": "moderate",
       "text": "int in_stack_fffeec08;",
       "type": "stack_param"
     },
@@ -3124,6 +3127,7 @@
       "description": "Undefined global data reference",
       "line": 318,
       "match": "DAT_0365caf8",
+      "severity": "mild",
       "text": "local_fc = &DAT_0365caf8 + (this_ptr->motion_list).motion_count * 0x104;",
       "type": "undefined_data"
     },
@@ -3131,6 +3135,7 @@
       "description": "Undefined global data reference",
       "line": 381,
       "match": "DAT_0366b650",
+      "severity": "mild",
       "text": "pcVar11 = &DAT_0366b650;",
       "type": "undefined_data"
     },
@@ -3138,6 +3143,7 @@
       "description": "Undefined global data reference",
       "line": 389,
       "match": "DAT_0366b650",
+      "severity": "mild",
       "text": "(g_CEditorToolsPtr,&DAT_0366b650);",
       "type": "undefined_data"
     },
@@ -3145,6 +3151,7 @@
       "description": "Direct stack address reference",
       "line": 395,
       "match": "&stack0xfffeec08",
+      "severity": "moderate",
       "text": "((CBoneStructure *)&stack0xfffeec08,pcVar11);",
       "type": "stack_ref"
     },
@@ -3152,6 +3159,7 @@
       "description": "Direct stack address reference",
       "line": 396,
       "match": "&stack0xfffeec08",
+      "severity": "moderate",
       "text": "core_skeledit_cpp_FUN_0058afe0(&stack0xfffeec08);",
       "type": "stack_ref"
     },
@@ -3159,6 +3167,7 @@
       "description": "Unknown/mangled field access",
       "line": 402,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "core_skeleton_cpp_CSkeleton_allocMemory_FUN_00599910(this_ptr,local_ded4._0_4_,local_10c);",
       "type": "unknown_field"
     },
@@ -3166,6 +3175,7 @@
       "description": "Undefined global data reference",
       "line": 434,
       "match": "DAT_0365caf8",
+      "severity": "mild",
       "text": "local_44 = &DAT_0365caf8;",
       "type": "undefined_data"
     },
@@ -3173,6 +3183,7 @@
       "description": "Complex pointer cast",
       "line": 489,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar20 = (CMatrix3x4f *)((int)pCVar20 + ((uint)bVar26 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -3180,6 +3191,7 @@
       "description": "Complex pointer cast",
       "line": 493,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (0 < *(int *)((int)aiStack_2720 + iVar13)) {",
       "type": "pointer_cast"
     },
@@ -3187,6 +3199,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 840,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND((float)local_ec->frame_count -",
       "type": "decompiler_intrinsic"
     },
@@ -3194,6 +3207,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 840,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND((float)local_ec->frame_count -",
       "type": "decompiler_intrinsic"
     },
@@ -3201,6 +3215,7 @@
       "description": "Undefined global data reference",
       "line": 1009,
       "match": "DAT_03670b60",
+      "severity": "mild",
       "text": "*(int *)(&DAT_03670b60 + iVar3) = local_38;",
       "type": "undefined_data"
     },
@@ -3208,6 +3223,7 @@
       "description": "Undefined global data reference",
       "line": 1021,
       "match": "DAT_03670b68",
+      "severity": "mild",
       "text": "*(int *)(&DAT_03670b68 + iVar3) = iVar13;",
       "type": "undefined_data"
     },
@@ -3215,6 +3231,7 @@
       "description": "Complex pointer cast",
       "line": 1308,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "} while (local_f0 < *(int *)((int)aiStack_2720 + local_ac));",
       "type": "pointer_cast"
     },
@@ -3222,6 +3239,7 @@
       "description": "Complex pointer cast",
       "line": 1333,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (0 < *(int *)((int)aiStack_2900 + iVar13)) {",
       "type": "pointer_cast"
     },
@@ -3229,6 +3247,7 @@
       "description": "Complex pointer cast",
       "line": 1339,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "} while (iVar3 < *(int *)((int)aiStack_2900 + iVar13));",
       "type": "pointer_cast"
     },
@@ -3236,6 +3255,7 @@
       "description": "Unresolved stack parameter",
       "line": 1360,
       "match": "in_stack_fffeec08",
+      "severity": "moderate",
       "text": "(local_c0,local_d8,in_stack_fffeec08);",
       "type": "stack_param"
     },
@@ -3243,6 +3263,7 @@
       "description": "Unknown/mangled field access",
       "line": 1366,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "if (0 < (int)local_748c._0_4_) {",
       "type": "unknown_field"
     },
@@ -3250,6 +3271,7 @@
       "description": "Unknown/mangled field access",
       "line": 1373,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "} while (iVar13 < (int)local_748c._0_4_);",
       "type": "unknown_field"
     },
@@ -3257,6 +3279,7 @@
       "description": "Complex pointer cast",
       "line": 1438,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar21 = (uint *)((int)pCVar16 + (uint)bVar26 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -3264,6 +3287,7 @@
       "description": "Complex pointer cast",
       "line": 1443,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*puVar21 = *(uint *)((int)&local_214 + (uint)bVar26 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -3271,6 +3295,7 @@
       "description": "Complex pointer cast",
       "line": 1447,
       "match": "(CMatrix3x3f *)((int)",
+      "severity": "mild",
       "text": "local_48 = ((CMatrix3x3f *)((int)local_48 + 0x6c))->m + 2;",
       "type": "pointer_cast"
     },
@@ -3278,6 +3303,7 @@
       "description": "Complex pointer cast",
       "line": 1475,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar20 = (CMatrix3x4f *)((int)pCVar20 + ((uint)bVar26 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -3285,6 +3311,7 @@
       "description": "Complex pointer cast",
       "line": 1476,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar23 = (CMatrix3x4f *)((int)pCVar23 + ((uint)bVar26 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -3292,6 +3319,7 @@
       "description": "Complex pointer cast",
       "line": 1483,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar20 = (CMatrix3x4f *)((int)pCVar20 + ((uint)bVar26 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -3299,6 +3327,7 @@
       "description": "Complex pointer cast",
       "line": 1484,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar23 = (CMatrix3x4f *)((int)pCVar23 + ((uint)bVar26 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -3306,6 +3335,7 @@
       "description": "Complex pointer cast",
       "line": 1497,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar20 = (CMatrix3x4f *)((int)pCVar20 + ((uint)bVar26 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -3313,6 +3343,7 @@
       "description": "Complex pointer cast",
       "line": 1498,
       "match": "(CMatrix3x3f *)((int)",
+      "severity": "mild",
       "text": "pCVar24 = (CMatrix3x3f *)((int)pCVar24 + ((uint)bVar26 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -3320,6 +3351,7 @@
       "description": "Complex pointer cast",
       "line": 1501,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar21 = (uint *)((int)pCVar16 + (uint)bVar26 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -3327,6 +3359,7 @@
       "description": "Complex pointer cast",
       "line": 1506,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*puVar21 = *(uint *)((int)&local_224 + (uint)bVar26 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -3334,6 +3367,7 @@
       "description": "Complex pointer cast",
       "line": 1510,
       "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "local_4c = &((CMatrix3x4f *)((int)local_4c + 0x60))->m[2].x;",
       "type": "pointer_cast"
     },
@@ -3341,6 +3375,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 1645,
       "match": "SQRT",
+      "severity": "mild",
       "text": "if (0.0 < SQRT(local_1e4 * local_1e4 + local_1ec * local_1ec + local_1e8 * local_1e8)) {",
       "type": "decompiler_intrinsic"
     },
@@ -3348,6 +3383,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 1655,
       "match": "SBORROW4",
+      "severity": "mild",
       "text": "while (bVar25 || SBORROW4(iVar3,local_94) != iVar13 < 0) {",
       "type": "decompiler_intrinsic"
     },
@@ -3355,6 +3391,7 @@
       "description": "Undefined global data reference",
       "line": 1682,
       "match": "DAT_03670b60",
+      "severity": "mild",
       "text": "piVar18 = (int *)(&DAT_03670b60 + iVar13);",
       "type": "undefined_data"
     },
@@ -3362,6 +3399,7 @@
       "description": "Undefined global data reference",
       "line": 1700,
       "match": "DAT_03670b60",
+      "severity": "mild",
       "text": "if ((-1 < *(int *)(&DAT_03670b60 + iVar4)) &&",
       "type": "undefined_data"
     },
@@ -3369,6 +3407,7 @@
       "description": "Undefined global data reference",
       "line": 1701,
       "match": "DAT_03670b68",
+      "severity": "mild",
       "text": "(local_2540[*(int *)(&DAT_03670b68 + iVar4)] == 0)) break;",
       "type": "undefined_data"
     },
@@ -3376,6 +3415,7 @@
       "description": "Undefined global data reference",
       "line": 1713,
       "match": "DAT_03670b60",
+      "severity": "mild",
       "text": "piVar18 = (int *)(&DAT_03670b60 + iVar3);",
       "type": "undefined_data"
     },
@@ -3383,6 +3423,7 @@
       "description": "Undefined global data reference",
       "line": 1715,
       "match": "DAT_03670b64",
+      "severity": "mild",
       "text": "*(int *)(&DAT_03670b64 + iVar3);",
       "type": "undefined_data"
     },
@@ -3390,6 +3431,7 @@
       "description": "Undefined global data reference",
       "line": 1716,
       "match": "DAT_03670b68",
+      "severity": "mild",
       "text": "iVar3 = (this_ptr->motion_list).motions[*(int *)(&DAT_03670b68 + iVar3)].frame_start +",
       "type": "undefined_data"
     },
@@ -3397,6 +3439,7 @@
       "description": "Undefined global data reference",
       "line": 1717,
       "match": "DAT_03670b6c",
+      "severity": "mild",
       "text": "*(int *)(&DAT_03670b6c + iVar3);",
       "type": "undefined_data"
     },
@@ -3404,6 +3447,7 @@
       "description": "Undefined global data reference",
       "line": 1785,
       "match": "DAT_0365caf8",
+      "severity": "mild",
       "text": "pcVar11 = &DAT_0365caf8 + iVar13 * 0x104;",
       "type": "undefined_data"
     },
@@ -3411,6 +3455,7 @@
       "description": "Undefined global data reference",
       "line": 1880,
       "match": "DAT_0365caf8",
+      "severity": "mild",
       "text": "pcVar17 = &DAT_0365caf8 + (this_ptr->motion_list).motion_count * 0x104;",
       "type": "undefined_data"
     },

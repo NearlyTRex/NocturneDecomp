@@ -23,6 +23,7 @@
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 23,
     "suspect_count": 6,
     "suspect_types": [
@@ -136,6 +137,7 @@
       "description": "Unresolved stack parameter",
       "line": 6,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
@@ -143,6 +145,7 @@
       "description": "Unresolved stack parameter",
       "line": 10,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "pCVar1 = (CVector3f *)(**(code **)(*(int *)(in_stack_00000008 + 0x154) + 0x14))();",
       "type": "stack_param"
     },
@@ -150,6 +153,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 10,
       "match": "code *",
+      "severity": "moderate",
       "text": "pCVar1 = (CVector3f *)(**(code **)(*(int *)(in_stack_00000008 + 0x154) + 0x14))();",
       "type": "unresolved_funcptr"
     },
@@ -157,6 +161,7 @@
       "description": "Unresolved stack parameter",
       "line": 22,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "(&g_CDemonRaytraceInstance,(CVector3f *)(in_stack_00000008 + 0x20),",
       "type": "stack_param"
     },
@@ -164,6 +169,7 @@
       "description": "Unresolved stack parameter",
       "line": 23,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "(void *)(in_stack_00000008 + 0x30),&CStack_1c,&CStack_10);",
       "type": "stack_param"
     },

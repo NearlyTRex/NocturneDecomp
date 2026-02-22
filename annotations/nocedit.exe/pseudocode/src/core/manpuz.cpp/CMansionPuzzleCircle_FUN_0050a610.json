@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 6,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 105,
     "suspect_count": 7,
     "suspect_types": [
@@ -244,6 +245,7 @@
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
@@ -251,6 +253,7 @@
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "float in_stack_0000000c;",
       "type": "stack_param"
     },
@@ -258,6 +261,7 @@
       "description": "Unresolved stack parameter",
       "line": 28,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "local_28 = in_stack_0000000c * 255.0f;",
       "type": "stack_param"
     },
@@ -265,6 +269,7 @@
       "description": "Unresolved stack parameter",
       "line": 30,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "pSVar11 = this_ptr->gems + in_stack_00000008;",
       "type": "stack_param"
     },
@@ -272,6 +277,7 @@
       "description": "Unresolved stack parameter",
       "line": 89,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "(pSVar10 = this_ptr->panels + in_stack_00000008, pSVar10->exists != 0)) &&",
       "type": "stack_param"
     },
@@ -279,6 +285,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 90,
       "match": "ABS",
+      "severity": "mild",
       "text": "((ABS(pSVar10->anim_speed) == 0.0 && (ABS(pSVar10->anim_progress) == 0.0)))) &&",
       "type": "decompiler_intrinsic"
     },
@@ -286,6 +293,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 90,
       "match": "ABS",
+      "severity": "mild",
       "text": "((ABS(pSVar10->anim_speed) == 0.0 && (ABS(pSVar10->anim_progress) == 0.0)))) &&",
       "type": "decompiler_intrinsic"
     }

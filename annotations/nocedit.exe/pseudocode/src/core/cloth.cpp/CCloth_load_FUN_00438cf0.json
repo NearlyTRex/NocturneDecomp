@@ -29,6 +29,7 @@
     "cross_reference_count": 7,
     "function_call_count": 9,
     "global_count": 28,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 150,
     "suspect_count": 4,
     "suspect_types": [
@@ -447,6 +448,7 @@
       "description": "Complex pointer cast",
       "line": 127,
       "match": "(CVector3f *)((int)",
+      "severity": "mild",
       "text": "local_18 = (CVector3f *)((int)(local_18 + 0xe) + 4);",
       "type": "pointer_cast"
     },
@@ -454,6 +456,7 @@
       "description": "Complex pointer cast",
       "line": 130,
       "match": "(CVector3f *)((int)",
+      "severity": "mild",
       "text": "local_24 = (CVector3f *)((int)(local_24 + 0xe) + 4);",
       "type": "pointer_cast"
     },
@@ -461,14 +464,16 @@
       "description": "Complex pointer cast",
       "line": 142,
       "match": "(int *)((int)",
-      "text": "piVar10 = (int *)((int)(this_ptr->model).vertex_list + iVar14);",
+      "severity": "mild",
+      "text": "piVar14 = (int *)((int)&((this_ptr->model).vertex_list)->x + iVar13);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 147,
       "match": "(CVector3f *)((int)",
-      "text": "pCVar11 = (CVector3f *)((int)(pCVar11 + 0x17) + 8);",
+      "severity": "mild",
+      "text": "pCVar10 = (CVector3f *)((int)(pCVar10 + 0x17) + 8);",
       "type": "pointer_cast"
     }
   ]

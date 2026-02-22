@@ -1,15 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 195,
+    "complexity_score": 310,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 5,
+    "max_suspect_severity": "severe",
     "pseudocode_lines": 40,
-    "suspect_count": 13,
+    "suspect_count": 24,
     "suspect_types": [
       "pointer_cast",
       "special_crt_function",
+      "stack_alignment_array",
       "stack_ref",
       "unresolved_funcptr",
       "warning_spacebase"
@@ -190,13 +192,31 @@
       "description": "Stack frame tracking failed",
       "line": 2,
       "match": "WARNING: Unable to track spacebase fully for stack",
+      "severity": "severe",
       "text": "/* WARNING: Unable to track spacebase fully for stack */",
       "type": "warning_spacebase"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 10,
+      "match": "uStackY_38",
+      "severity": "moderate",
+      "text": "uint uStackY_38;",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 11,
+      "match": "aiStackY_34",
+      "severity": "moderate",
+      "text": "int aiStackY_34 [2];",
+      "type": "stack_alignment_array"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 13,
       "match": "code *",
+      "severity": "moderate",
       "text": "code *local_20;",
       "type": "unresolved_funcptr"
     },
@@ -204,6 +224,7 @@
       "description": "Direct stack address reference",
       "line": 18,
       "match": "&stack0xffffffd4",
+      "severity": "moderate",
       "text": "*(DWORD *)(&stack0xffffffd4 + iVar1) = g_RuntimeBufferSize;",
       "type": "stack_ref"
     },
@@ -211,34 +232,79 @@
       "description": "Complex pointer cast",
       "line": 19,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)aiStackY_34 + iVar1 + 4) = 0;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 19,
+      "match": "aiStackY_34",
+      "severity": "moderate",
+      "text": "*(uint *)((int)aiStackY_34 + iVar1 + 4) = 0;",
+      "type": "stack_alignment_array"
     },
     {
       "description": "Complex pointer cast",
       "line": 20,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)aiStackY_34 + iVar1) = (int)&local_28 + iVar1;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 20,
+      "match": "aiStackY_34",
+      "severity": "moderate",
+      "text": "*(int *)((int)aiStackY_34 + iVar1) = (int)&local_28 + iVar1;",
+      "type": "stack_alignment_array"
     },
     {
       "description": "Complex pointer cast",
       "line": 21,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&uStackY_38 + iVar1) = 0x60f8ff;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 21,
+      "match": "uStackY_38",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&uStackY_38 + iVar1) = 0x60f8ff;",
+      "type": "stack_alignment_array"
     },
     {
       "description": "Complex pointer cast",
       "line": 23,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "(*(void **)((int)aiStackY_34 + iVar1),*(int *)((int)aiStackY_34 + iVar1 + 4),",
       "type": "pointer_cast"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 23,
+      "match": "aiStackY_34",
+      "severity": "moderate",
+      "text": "(*(void **)((int)aiStackY_34 + iVar1),*(int *)((int)aiStackY_34 + iVar1 + 4),",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 23,
+      "match": "aiStackY_34",
+      "severity": "moderate",
+      "text": "(*(void **)((int)aiStackY_34 + iVar1),*(int *)((int)aiStackY_34 + iVar1 + 4),",
+      "type": "stack_alignment_array"
     },
     {
       "description": "Direct stack address reference",
       "line": 24,
       "match": "&stack0xffffffd4",
+      "severity": "moderate",
       "text": "*(ulong *)(&stack0xffffffd4 + iVar1));",
       "type": "stack_ref"
     },
@@ -246,6 +312,7 @@
       "description": "Direct stack address reference",
       "line": 25,
       "match": "&stack0xffffffd4",
+      "severity": "moderate",
       "text": "*(int *)(&stack0xffffffd4 + iVar1) = (int)&local_28 + iVar1;",
       "type": "stack_ref"
     },
@@ -253,6 +320,7 @@
       "description": "Direct stack address reference",
       "line": 26,
       "match": "&stack0x000000c8",
+      "severity": "moderate",
       "text": "*(DWORD *)(&stack0x000000c8 + iVar1) = g_RuntimeBufferSize;",
       "type": "stack_ref"
     },
@@ -260,15 +328,49 @@
       "description": "Complex pointer cast",
       "line": 27,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)aiStackY_34 + iVar1 + 4) = 0x60f913;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 27,
+      "match": "aiStackY_34",
+      "severity": "moderate",
+      "text": "*(uint *)((int)aiStackY_34 + iVar1 + 4) = 0x60f913;",
+      "type": "stack_alignment_array"
     },
     {
       "description": "Direct stack address reference",
       "line": 28,
       "match": "&stack0xffffffd4",
+      "severity": "moderate",
       "text": "BVar2 = initialize_thread_tls_data(*(void **)(&stack0xffffffd4 + iVar1));",
       "type": "stack_ref"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 35,
+      "match": "aiStackY_34",
+      "severity": "moderate",
+      "text": "aiStackY_34[1] = 0x60f933;",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 37,
+      "match": "aiStackY_34",
+      "severity": "moderate",
+      "text": "aiStackY_34[1] = 0x60f93c;",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 40,
+      "match": "aiStackY_34",
+      "severity": "moderate",
+      "text": "aiStackY_34[1] = 0x60f949;",
+      "type": "stack_alignment_array"
     },
     {
       "address": "0060f8c0",

@@ -10,6 +10,7 @@
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 7,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 105,
     "suspect_count": 7,
     "suspect_types": [
@@ -378,6 +379,7 @@
       "description": "Type propagation did not converge",
       "line": 3,
       "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
     },
@@ -385,6 +387,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 43,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_34 = (int)ROUND(ROUND(local_40));",
       "type": "decompiler_intrinsic"
     },
@@ -392,6 +395,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 43,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_34 = (int)ROUND(ROUND(local_40));",
       "type": "decompiler_intrinsic"
     },
@@ -399,6 +403,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 45,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_10 = (int)ROUND(ROUND(local_40));",
       "type": "decompiler_intrinsic"
     },
@@ -406,6 +411,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 45,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_10 = (int)ROUND(ROUND(local_40));",
       "type": "decompiler_intrinsic"
     },
@@ -413,6 +419,7 @@
       "description": "Complex pointer cast",
       "line": 67,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "pfVar10 = (float *)((int)pfVar10 + (uint)bVar12 * -2 + 1);",
       "type": "pointer_cast"
     },
@@ -420,6 +427,7 @@
       "description": "Complex pointer cast",
       "line": 94,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "pCVar9->ground_heights[0][0] = *(float *)((int)&INT_00822d08 + iVar7);",
       "type": "pointer_cast"
     }

@@ -13,14 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 78,
-    "complexity_score": 39,
+    "complexity_score": 54,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 24,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "unknown_field"
+      "unknown_field",
+      "warning_unmapped_variable"
     ],
     "total_lines": 102
   },
@@ -178,9 +180,18 @@
   },
   "suspects": [
     {
+      "description": "Variable defined which should be unmapped",
+      "line": 2,
+      "match": "WARNING: Variable defined which should be unmapped",
+      "severity": "moderate",
+      "text": "/* WARNING: Variable defined which should be unmapped: local_74 */",
+      "type": "warning_unmapped_variable"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 23,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "end_index,stride,apply_palette_flag,local_74._0_4_);",
       "type": "unknown_field"
     }

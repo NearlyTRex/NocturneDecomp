@@ -10,6 +10,7 @@
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 0,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 26,
     "suspect_count": 2,
     "suspect_types": [
@@ -113,6 +114,7 @@
       "description": "Complex pointer cast",
       "line": 14,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "pbVar6 = (byte *)((int)*this_ptr->row_pointers + (int)pcVar1);",
       "type": "pointer_cast"
     },
@@ -120,6 +122,7 @@
       "description": "Complex pointer cast",
       "line": 15,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "while (pbVar6 < (byte *)((int)pvVar2 + (int)pcVar1)) {",
       "type": "pointer_cast"
     }

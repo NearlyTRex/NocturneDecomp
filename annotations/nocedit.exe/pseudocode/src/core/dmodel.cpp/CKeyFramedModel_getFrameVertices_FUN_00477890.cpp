@@ -15,5 +15,5 @@ CVector3i * __cdecl core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_0047789
   if (frame_index < 0) {
     frame_index = 0;
   }
-  return (CVector3i *)(this_ptr->vertex_list + this_ptr->vertex_count * frame_index * 3);
+  return this_ptr->vertex_list + this_ptr->vertex_count * frame_index;
 }

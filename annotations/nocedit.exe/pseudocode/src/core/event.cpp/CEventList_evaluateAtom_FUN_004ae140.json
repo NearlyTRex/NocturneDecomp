@@ -41,6 +41,7 @@
     "cross_reference_count": 1,
     "function_call_count": 22,
     "global_count": 231,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 1571,
     "suspect_count": 7,
     "suspect_types": [
@@ -2365,6 +2366,7 @@
       "description": "Type propagation did not converge",
       "line": 2,
       "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
     },
@@ -2372,6 +2374,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 725,
       "match": "SQRT",
+      "severity": "mild",
       "text": "local_e0 = (uint)(SQRT((local_104.z - local_ec.z) * (local_104.z - local_ec.z)",
       "type": "decompiler_intrinsic"
     },
@@ -2379,6 +2382,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 968,
       "match": "ABS",
+      "severity": "mild",
       "text": "if (local_a88 * (float)3.1415926535000001 * (float)0.0055555555555555497 < ABS(pCVar13->y))",
       "type": "decompiler_intrinsic"
     },
@@ -2386,6 +2390,7 @@
       "description": "Complex pointer cast",
       "line": 1174,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "iVar8 = *(int *)((int)g_CDemonSetPtr->enemies + local_c0);",
       "type": "pointer_cast"
     },
@@ -2393,6 +2398,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 1176,
       "match": "code *",
+      "severity": "moderate",
       "text": "(iVar9 = (**(code **)(*(int *)(iVar8 + 0x154) + 0x120))",
       "type": "unresolved_funcptr"
     },
@@ -2400,6 +2406,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 1178,
       "match": "code *",
+      "severity": "moderate",
       "text": "(iVar9 = (**(code **)(*(int *)(iVar8 + 0x154) + 0x68))(iVar8),",
       "type": "unresolved_funcptr"
     },
@@ -2407,6 +2414,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 1183,
       "match": "SQRT",
+      "severity": "mild",
       "text": "SQRT(fVar4 * fVar4 + fVar5 * fVar5 + fVar3 * fVar3) <=",
       "type": "decompiler_intrinsic"
     }

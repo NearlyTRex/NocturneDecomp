@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 11,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 136,
     "suspect_count": 11,
     "suspect_types": [
@@ -438,6 +439,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 49,
       "match": "fcos",
+      "severity": "mild",
       "text": "fVar11 = (float10)fcos(fVar10);",
       "type": "decompiler_intrinsic"
     },
@@ -445,6 +447,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 50,
       "match": "fsin",
+      "severity": "mild",
       "text": "fVar10 = (float10)fsin(fVar10);",
       "type": "decompiler_intrinsic"
     },
@@ -452,6 +455,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 54,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_64.x = (int)ROUND(local_40 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -459,6 +463,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 55,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_64.y = (int)ROUND(local_3c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -466,6 +471,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 56,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_64.z = (int)ROUND(local_38 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -473,6 +479,7 @@
       "description": "Complex pointer cast",
       "line": 64,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->z + iVar8) = 0;",
       "type": "pointer_cast"
     },
@@ -480,6 +487,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 67,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_7c.x = (int)ROUND(FLOAT_026a72d8 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -487,6 +495,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 68,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_7c.y = (int)ROUND(FLOAT_026a72dc * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -494,6 +503,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 69,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_7c.z = (int)ROUND(FLOAT_026a72e0 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -501,6 +511,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 124,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND((this_ptr->base).max_distance * (float)256));",
       "type": "decompiler_intrinsic"
     },
@@ -508,6 +519,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 124,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND((this_ptr->base).max_distance * (float)256));",
       "type": "decompiler_intrinsic"
     }

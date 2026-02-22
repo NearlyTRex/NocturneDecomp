@@ -59,6 +59,7 @@
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 12,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 113,
     "suspect_count": 15,
     "suspect_types": [
@@ -301,6 +302,7 @@
       "description": "Unresolved stack parameter",
       "line": 9,
       "match": "in_stack_ffffff98",
+      "severity": "moderate",
       "text": "int in_stack_ffffff98;",
       "type": "stack_param"
     },
@@ -308,6 +310,7 @@
       "description": "Complex pointer cast",
       "line": 34,
       "match": "(ushort *)((int)",
+      "severity": "mild",
       "text": "(pSVar4 = this_ptr->vertex_buffer_ptr + *(ushort *)((int)vertex_indices + 2),",
       "type": "pointer_cast"
     },
@@ -315,6 +318,7 @@
       "description": "Complex pointer cast",
       "line": 39,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "vertex_indices = (int *)((int)vertex_indices + vertices_per_face * 2);",
       "type": "pointer_cast"
     },
@@ -322,6 +326,7 @@
       "description": "Direct stack address reference",
       "line": 51,
       "match": "&stack0xffffff98",
+      "severity": "moderate",
       "text": "*(uint *)(&stack0xffffff98 + iVar2) = (uint)*puVar1;",
       "type": "stack_ref"
     },
@@ -329,6 +334,7 @@
       "description": "Direct stack address reference",
       "line": 59,
       "match": "&stack0xffffff98",
+      "severity": "moderate",
       "text": "core_xform_cpp_transformAndClipGeometry_FUN_005f8550(iVar3,(int *)&stack0xffffff98);",
       "type": "stack_ref"
     },
@@ -336,6 +342,7 @@
       "description": "Unresolved stack parameter",
       "line": 62,
       "match": "in_stack_ffffff98",
+      "severity": "moderate",
       "text": "(g_ClippedVertexBuffer,g_ClippedVertexCount,in_stack_ffffff98);",
       "type": "stack_param"
     },
@@ -343,6 +350,7 @@
       "description": "Direct stack address reference",
       "line": 66,
       "match": "&stack0xffffff98",
+      "severity": "moderate",
       "text": "engine_clipper_c_clipAndRasterize_FUN_004371b0(iVar3,(int *)&stack0xffffff98);",
       "type": "stack_ref"
     },
@@ -350,6 +358,7 @@
       "description": "Direct stack address reference",
       "line": 69,
       "match": "&stack0xffffff98",
+      "severity": "moderate",
       "text": "engine_clipper_c_clipPolygonToViewport_FUN_00438420(iVar3,(int *)&stack0xffffff98);",
       "type": "stack_ref"
     },
@@ -357,6 +366,7 @@
       "description": "Complex pointer cast",
       "line": 72,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "vertex_indices = (int *)((int)vertex_indices + vertices_per_face * 2);",
       "type": "pointer_cast"
     },
@@ -364,6 +374,7 @@
       "description": "Complex pointer cast",
       "line": 85,
       "match": "(ushort *)((int)",
+      "severity": "mild",
       "text": "(pSVar4 = this_ptr->vertex_buffer_ptr + *(ushort *)((int)vertex_indices + 2),",
       "type": "pointer_cast"
     },
@@ -371,6 +382,7 @@
       "description": "Direct stack address reference",
       "line": 96,
       "match": "&stack0xffffff98",
+      "severity": "moderate",
       "text": "*(uint *)(&stack0xffffff98 + iVar2) = (uint)*puVar1;",
       "type": "stack_ref"
     },
@@ -378,6 +390,7 @@
       "description": "Direct stack address reference",
       "line": 102,
       "match": "&stack0xffffff98",
+      "severity": "moderate",
       "text": "engine_drender_cpp_renderTriangleSimple_FUN_004839f0((CVector3i *)&stack0xffffff98,iVar3);",
       "type": "stack_ref"
     },
@@ -385,6 +398,7 @@
       "description": "Direct stack address reference",
       "line": 105,
       "match": "&stack0xffffff98",
+      "severity": "moderate",
       "text": "core_xform_cpp_transformAndClipGeometry_FUN_005f8550(iVar3,(int *)&stack0xffffff98);",
       "type": "stack_ref"
     },
@@ -392,6 +406,7 @@
       "description": "Unresolved stack parameter",
       "line": 108,
       "match": "in_stack_ffffff98",
+      "severity": "moderate",
       "text": "(g_ClippedVertexBuffer,g_ClippedVertexCount,in_stack_ffffff98);",
       "type": "stack_param"
     },
@@ -399,6 +414,7 @@
       "description": "Complex pointer cast",
       "line": 112,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "vertex_indices = (int *)((int)vertex_indices + vertices_per_face * 2);",
       "type": "pointer_cast"
     }

@@ -19,7 +19,8 @@ SAFE_INTRINSICS = frozenset({
     'FLOOR',    # #define FLOOR(x) floor(x)
     'CEIL',     # #define CEIL(x) ceil(x)
     'ABS',      # #define ABS(x) ((x) < 0 ? -(x) : (x))
-    'NAN',      # #define NAN(x) isnan(x)
+    # NAN removed: all NAN() occurrences in codebase are FNSTSW artifacts,
+    # not legitimate isnan() calls. Caught by nan_function_artifact pattern.
     # FPU intrinsics (x87 mnemonic names -> standard C math)
     'fsin',     # #define fsin(x) sin(x)
     'fcos',     # #define fcos(x) cos(x)
@@ -28,6 +29,42 @@ SAFE_INTRINSICS = frozenset({
     'fsqrt',    # #define fsqrt(x) sqrt(x)
     'fabs',     # #define fabs(x) fabs(x)
 })
+
+
+SUSPECT_SEVERITY = {
+    # Severe: code is essentially unreadable
+    'fnstsw_flag_artifact': 'severe',
+    'nan_function_artifact': 'severe',
+    'badspacebase': 'severe',
+    'warning_spacebase': 'severe',
+    'warning_max_restarts': 'severe',
+    # Moderate: significant artifacts, partially readable
+    'double_reconstruction': 'moderate',
+    'sub84_truncation': 'moderate',
+    'bare_stack_ref': 'moderate',
+    'stack_alignment_array': 'moderate',
+    'stack_ref': 'moderate',
+    'stack_param': 'moderate',
+    'undefined_type': 'moderate',
+    'undefined_ptr_cast': 'moderate',
+    'extra_output': 'moderate',
+    'unaffected_reg': 'moderate',
+    'unresolved_funcptr': 'moderate',
+    'warning_unmapped_variable': 'moderate',
+    'warning_type_propagation': 'moderate',
+    # Mild: minor issues, code is readable
+    'unnamed_param': 'mild',
+    'unnamed_local': 'mild',
+    'unknown_field': 'mild',
+    'undefined_ram': 'mild',
+    'unnamed_field': 'mild',
+    'register_param': 'mild',
+    'negative_offset': 'mild',
+    'decompiler_intrinsic': 'mild',
+    'pointer_cast': 'mild',
+    'suspect_float': 'mild',
+    'nonstandard_int': 'mild',
+}
 
 
 def is_safe_suspect(suspect):
@@ -117,6 +154,28 @@ _SUSPECT_PATTERN_DEFS = [
     (r'\bparam_?\d+\b', 'unnamed_param', 'Unnamed function parameter'),
     # local_XX - Unnamed local variables (need meaningful names)
     (r'\blocal_[0-9a-fA-F]+\b', 'unnamed_local', 'Unnamed local variable'),
+    # --- Stack alignment / FPU decompiler artifacts (severity indicators) ---
+    # FNSTSW flag reconstruction: CONCAT22 with preserved upper bits + shifted flags
+    (r'CONCAT22\(.*>>\s*0x10', 'fnstsw_flag_artifact',
+     'FNSTSW flag reconstruction (floating-point comparison artifact)'),
+    # NAN() function call: FNSTSW comparison artifact (tests FPU unordered bit)
+    (r'\bNAN\s*\(', 'nan_function_artifact',
+     'NAN() function call (FNSTSW comparison artifact)'),
+    # (double)CONCAT44(): double reconstruction from two 32-bit halves
+    (r'\(double\)\s*CONCAT44\s*\(', 'double_reconstruction',
+     'Double reconstructed from 32-bit halves (stack alignment artifact)'),
+    # SUB84(): extracting 32-bit value from 64-bit (truncation artifact)
+    (r'\bSUB84\s*\(', 'sub84_truncation',
+     'SUB84 truncation (extracting 32-bit from 64-bit value)'),
+    # Bare stack0xffffff reference without & (hidden negative-offset stack local)
+    (r'(?<![&\w])stack0x[0-9a-fA-F]+', 'bare_stack_ref',
+     'Bare stack address reference (hidden stack variable)'),
+    # StackY_ arrays: oversized aligned stack arrays from stack alignment
+    (r'\b\w*StackY_[0-9a-fA-F]+', 'stack_alignment_array',
+     'StackY array variable (stack alignment artifact)'),
+    # WARNING: Variable defined which should be unmapped
+    (r'WARNING:\s*Variable defined which should be unmapped', 'warning_unmapped_variable',
+     'Variable defined which should be unmapped'),
     # Decompiler intrinsics - pseudo-functions and artifacts (not real C)
     # Includes: ROUND(), SQRT(), CONCAT44, SUB84, SBORROW, CARRY4, NAN(), fsin, fcos, fptan, ADJ(), etc.
     (r'\b(ROUND|SQRT|TRUNC|FLOOR|CEIL|ABS|ZEXT|SEXT|CARRY\d*|SCARRY\d*|SBORROW\d*|CONCAT\d+|SUB\d+|NAN|fsin|fcos|fptan|fpatan|fsqrt|fabs|ADJ)\b', 'decompiler_intrinsic', 'Decompiler intrinsic (not real C)'),
@@ -177,7 +236,8 @@ def identify_suspect_lines(decompiled_code):
                     'type': issue_type,
                     'match': match.group(),
                     'text': line_stripped,
-                    'description': description
+                    'description': description,
+                    'severity': SUSPECT_SEVERITY.get(issue_type, 'mild'),
                 })
     return suspects
 
@@ -325,12 +385,19 @@ def calculate_complexity_metrics(decompiled_code, assembly_code, suspects, xrefs
     pseudocode_lines = len([l for l in decompiled_code.split('\n') if l.strip()])
     assembly_lines = len([l for l in assembly_code.split('\n') if l.strip()])
     suspect_types = set(s['type'] for s in suspects)
+
+    # Determine maximum severity across all suspects
+    severity_order = {'severe': 3, 'moderate': 2, 'mild': 1}
+    max_sev = max((severity_order.get(s.get('severity', 'mild'), 0) for s in suspects), default=0)
+    severity_label = {3: 'severe', 2: 'moderate', 1: 'mild', 0: 'clean'}
+
     return {
         'pseudocode_lines': pseudocode_lines,
         'assembly_lines': assembly_lines,
         'total_lines': pseudocode_lines + assembly_lines,
         'suspect_count': len(suspects),
         'suspect_types': sorted(suspect_types),
+        'max_suspect_severity': severity_label[max_sev],
         'cross_reference_count': len(xrefs) if xrefs else 0,
         'global_count': len(globals_list) if globals_list else 0,
         'function_call_count': len(func_calls) if func_calls else 0,

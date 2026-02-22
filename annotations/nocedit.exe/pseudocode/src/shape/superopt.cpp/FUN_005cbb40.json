@@ -13,14 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 226,
-    "complexity_score": 462,
+    "complexity_score": 477,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 97,
-    "suspect_count": 34,
+    "suspect_count": 35,
     "suspect_types": [
       "decompiler_intrinsic",
+      "double_reconstruction",
       "param_count_too_few",
       "pointer_cast",
       "stack_param",
@@ -332,6 +334,7 @@
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "double *in_stack_00000008;",
       "type": "stack_param"
     },
@@ -339,6 +342,7 @@
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
@@ -346,6 +350,7 @@
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_00000010",
+      "severity": "moderate",
       "text": "uint in_stack_00000010;",
       "type": "stack_param"
     },
@@ -353,6 +358,7 @@
       "description": "Unresolved stack parameter",
       "line": 41,
       "match": "in_stack_00000010",
+      "severity": "moderate",
       "text": "if (in_stack_00000010 != 0) {",
       "type": "stack_param"
     },
@@ -360,6 +366,7 @@
       "description": "Unresolved stack parameter",
       "line": 42,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "pdVar7 = (double *)(in_stack_0000000c + 0x10);",
       "type": "stack_param"
     },
@@ -367,6 +374,7 @@
       "description": "Unresolved stack parameter",
       "line": 45,
       "match": "in_stack_00000010",
+      "severity": "moderate",
       "text": "if (in_stack_00000010 <= uVar4) {",
       "type": "stack_param"
     },
@@ -374,6 +382,7 @@
       "description": "Unresolved stack parameter",
       "line": 50,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "iVar5 = uVar4 * 0x60 + in_stack_0000000c;",
       "type": "stack_param"
     },
@@ -381,6 +390,7 @@
       "description": "Complex pointer cast",
       "line": 56,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar8 = (double *)((int)pdVar8 + 4);",
       "type": "pointer_cast"
     },
@@ -388,6 +398,7 @@
       "description": "Complex pointer cast",
       "line": 57,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar9 = (double *)((int)pdVar9 + 4);",
       "type": "pointer_cast"
     },
@@ -395,6 +406,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 60,
       "match": "SQRT",
+      "severity": "mild",
       "text": "dVar1 = 1.0 / SQRT(local_80 * local_80 + local_90 * local_90 + local_88 * local_88);",
       "type": "decompiler_intrinsic"
     },
@@ -402,6 +414,7 @@
       "description": "Complex pointer cast",
       "line": 71,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar8 = (double *)((int)pdVar8 + 4);",
       "type": "pointer_cast"
     },
@@ -409,6 +422,7 @@
       "description": "Complex pointer cast",
       "line": 72,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar9 = (double *)((int)pdVar9 + 4);",
       "type": "pointer_cast"
     },
@@ -416,13 +430,23 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 74,
       "match": "SQRT",
+      "severity": "mild",
       "text": "local_68 = 1.0 / SQRT(local_50 * local_50 + local_60 * local_60 + local_58 * local_58);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 82,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "if (local_110 < (double)CONCAT44(uStack_fc,local_100)) {",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 82,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "if (local_110 < (double)CONCAT44(uStack_fc,local_100)) {",
       "type": "decompiler_intrinsic"
     },
@@ -430,6 +454,7 @@
       "description": "Unknown/mangled field access",
       "line": 84,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "uStack_fc = local_110._4_4_;",
       "type": "unknown_field"
     },
@@ -437,6 +462,7 @@
       "description": "Unresolved stack parameter",
       "line": 85,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "*in_stack_00000008 = dVar3 * local_68 - dVar1 * local_70;",
       "type": "stack_param"
     },
@@ -444,6 +470,7 @@
       "description": "Unresolved stack parameter",
       "line": 86,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "in_stack_00000008[1] = dVar1 * local_78 - dVar2 * local_68;",
       "type": "stack_param"
     },
@@ -451,6 +478,7 @@
       "description": "Unresolved stack parameter",
       "line": 87,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "in_stack_00000008[2] = dVar2 * local_70 - dVar3 * local_78;",
       "type": "stack_param"
     },
@@ -458,6 +486,7 @@
       "description": "Unresolved stack parameter",
       "line": 91,
       "match": "in_stack_00000010",
+      "severity": "moderate",
       "text": "} while (local_18 < in_stack_00000010);",
       "type": "stack_param"
     },
@@ -465,6 +494,7 @@
       "description": "Unresolved stack parameter",
       "line": 93,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "dVar1 = 1.0 / SQRT(in_stack_00000008[2] * in_stack_00000008[2] +",
       "type": "stack_param"
     },
@@ -472,6 +502,7 @@
       "description": "Unresolved stack parameter",
       "line": 93,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "dVar1 = 1.0 / SQRT(in_stack_00000008[2] * in_stack_00000008[2] +",
       "type": "stack_param"
     },
@@ -479,6 +510,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 93,
       "match": "SQRT",
+      "severity": "mild",
       "text": "dVar1 = 1.0 / SQRT(in_stack_00000008[2] * in_stack_00000008[2] +",
       "type": "decompiler_intrinsic"
     },
@@ -486,6 +518,7 @@
       "description": "Unresolved stack parameter",
       "line": 94,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "*in_stack_00000008 * *in_stack_00000008 +",
       "type": "stack_param"
     },
@@ -493,6 +526,7 @@
       "description": "Unresolved stack parameter",
       "line": 94,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "*in_stack_00000008 * *in_stack_00000008 +",
       "type": "stack_param"
     },
@@ -500,6 +534,7 @@
       "description": "Unresolved stack parameter",
       "line": 95,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "in_stack_00000008[1] * in_stack_00000008[1]);",
       "type": "stack_param"
     },
@@ -507,6 +542,7 @@
       "description": "Unresolved stack parameter",
       "line": 95,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "in_stack_00000008[1] * in_stack_00000008[1]);",
       "type": "stack_param"
     },
@@ -514,6 +550,7 @@
       "description": "Unresolved stack parameter",
       "line": 96,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "*in_stack_00000008 = *in_stack_00000008 * dVar1;",
       "type": "stack_param"
     },
@@ -521,6 +558,7 @@
       "description": "Unresolved stack parameter",
       "line": 96,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "*in_stack_00000008 = *in_stack_00000008 * dVar1;",
       "type": "stack_param"
     },
@@ -528,6 +566,7 @@
       "description": "Unresolved stack parameter",
       "line": 97,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "in_stack_00000008[1] = in_stack_00000008[1] * dVar1;",
       "type": "stack_param"
     },
@@ -535,6 +574,7 @@
       "description": "Unresolved stack parameter",
       "line": 97,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "in_stack_00000008[1] = in_stack_00000008[1] * dVar1;",
       "type": "stack_param"
     },
@@ -542,6 +582,7 @@
       "description": "Unresolved stack parameter",
       "line": 98,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "in_stack_00000008[2] = in_stack_00000008[2] * dVar1;",
       "type": "stack_param"
     },
@@ -549,6 +590,7 @@
       "description": "Unresolved stack parameter",
       "line": 98,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "in_stack_00000008[2] = in_stack_00000008[2] * dVar1;",
       "type": "stack_param"
     },
@@ -556,6 +598,7 @@
       "description": "Unresolved stack parameter",
       "line": 99,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "return in_stack_00000008;",
       "type": "stack_param"
     },

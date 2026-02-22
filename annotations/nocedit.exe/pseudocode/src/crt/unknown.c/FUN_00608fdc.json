@@ -5,6 +5,7 @@
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 31,
     "suspect_count": 6,
     "suspect_types": [
@@ -122,6 +123,7 @@
       "description": "Unnamed function parameter",
       "line": 2,
       "match": "param_1",
+      "severity": "mild",
       "text": "int FUN_00608fdc(int param_1)",
       "type": "unnamed_param"
     },
@@ -129,6 +131,7 @@
       "description": "Complex pointer cast",
       "line": 25,
       "match": "(_FILE *)((int)",
+      "severity": "mild",
       "text": "if ((_FILE *)((int)&g_StaticFilePoolStart + param_1 * 0x1a) <= file_handle) {",
       "type": "pointer_cast"
     },
@@ -136,6 +139,7 @@
       "description": "Unnamed function parameter",
       "line": 25,
       "match": "param_1",
+      "severity": "mild",
       "text": "if ((_FILE *)((int)&g_StaticFilePoolStart + param_1 * 0x1a) <= file_handle) {",
       "type": "unnamed_param"
     },
@@ -143,6 +147,7 @@
       "description": "Undefined global data reference",
       "line": 26,
       "match": "DAT_00684d12",
+      "severity": "mild",
       "text": "if (file_handle < (_FILE *)&DAT_00684d12) {",
       "type": "undefined_data"
     },

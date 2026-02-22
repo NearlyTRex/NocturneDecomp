@@ -1,16 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 20,
-    "complexity_score": 97,
+    "complexity_score": 112,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 12,
-    "suspect_count": 7,
+    "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
       "special_crt_function",
-      "stack_param"
+      "stack_param",
+      "sub84_truncation"
     ],
     "total_lines": 32
   },
@@ -106,6 +108,7 @@
       "description": "Unresolved stack parameter",
       "line": 6,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "uint *in_stack_00000008;",
       "type": "stack_param"
     },
@@ -113,6 +116,7 @@
       "description": "Unresolved stack parameter",
       "line": 7,
       "match": "in_stack_fffffff4",
+      "severity": "moderate",
       "text": "char **in_stack_fffffff4;",
       "type": "stack_param"
     },
@@ -120,6 +124,7 @@
       "description": "Unresolved stack parameter",
       "line": 10,
       "match": "in_stack_fffffff4",
+      "severity": "moderate",
       "text": "dVar1 = strtod_main((char *)0x0,in_stack_fffffff4);",
       "type": "stack_param"
     },
@@ -127,13 +132,23 @@
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "*in_stack_00000008 = SUB84(dVar1,0);",
       "type": "stack_param"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 11,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "*in_stack_00000008 = SUB84(dVar1,0);",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 11,
       "match": "SUB84",
+      "severity": "mild",
       "text": "*in_stack_00000008 = SUB84(dVar1,0);",
       "type": "decompiler_intrinsic"
     },
@@ -141,6 +156,7 @@
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "in_stack_00000008[1] = local_8;",
       "type": "stack_param"
     },

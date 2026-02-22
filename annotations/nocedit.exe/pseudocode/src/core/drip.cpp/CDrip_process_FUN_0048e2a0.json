@@ -23,6 +23,7 @@
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 9,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 121,
     "suspect_count": 6,
     "suspect_types": [
@@ -249,6 +250,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 71,
       "match": "fcos",
+      "severity": "mild",
       "text": "fVar6 = (float10)fcos((float10)fStack_14);",
       "type": "decompiler_intrinsic"
     },
@@ -256,6 +258,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 72,
       "match": "fcos",
+      "severity": "mild",
       "text": "fVar7 = (float10)fcos((float10)fStack_1c);",
       "type": "decompiler_intrinsic"
     },
@@ -263,6 +266,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 73,
       "match": "fsin",
+      "severity": "mild",
       "text": "fVar8 = (float10)fsin((float10)fStack_14);",
       "type": "decompiler_intrinsic"
     },
@@ -270,6 +274,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 74,
       "match": "fsin",
+      "severity": "mild",
       "text": "fVar9 = (float10)fsin((float10)fStack_1c);",
       "type": "decompiler_intrinsic"
     },
@@ -277,6 +282,7 @@
       "description": "Complex pointer cast",
       "line": 104,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "iVar2 = *(int *)((int)g_CDemonSetPtr->characters + iVar4);",
       "type": "pointer_cast"
     },
@@ -284,6 +290,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 111,
       "match": "code *",
+      "severity": "moderate",
       "text": "(**(code **)(*(int *)(iVar2 + 0x154) + 0x114))(iVar2,pCStack_20,0x3f800000,&SStack_b4);",
       "type": "unresolved_funcptr"
     }

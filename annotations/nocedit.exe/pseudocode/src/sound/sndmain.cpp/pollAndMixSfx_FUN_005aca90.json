@@ -10,6 +10,7 @@
     "cross_reference_count": 2,
     "function_call_count": 7,
     "global_count": 22,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 164,
     "suspect_count": 32,
     "suspect_types": [
@@ -391,6 +392,7 @@
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_ffffff68",
+      "severity": "moderate",
       "text": "byte in_stack_ffffff68 [20];",
       "type": "stack_param"
     },
@@ -398,6 +400,7 @@
       "description": "Unresolved stack parameter",
       "line": 18,
       "match": "in_stack_ffffff7c",
+      "severity": "moderate",
       "text": "uint in_stack_ffffff7c;",
       "type": "stack_param"
     },
@@ -405,6 +408,7 @@
       "description": "Unresolved stack parameter",
       "line": 19,
       "match": "in_stack_ffffff80",
+      "severity": "moderate",
       "text": "float *in_stack_ffffff80;",
       "type": "stack_param"
     },
@@ -412,6 +416,7 @@
       "description": "Unresolved stack parameter",
       "line": 20,
       "match": "in_stack_ffffff84",
+      "severity": "moderate",
       "text": "void *in_stack_ffffff84;",
       "type": "stack_param"
     },
@@ -419,6 +424,7 @@
       "description": "Complex pointer cast",
       "line": 42,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (*(int *)((int)g_ChannelPrimaryBuffers + iVar2) == 0) {",
       "type": "pointer_cast"
     },
@@ -426,6 +432,7 @@
       "description": "Complex pointer cast",
       "line": 84,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "piVar1 = (int *)((int)g_ChannelPrimaryBuffers + iVar3);",
       "type": "pointer_cast"
     },
@@ -433,6 +440,7 @@
       "description": "Unresolved stack parameter",
       "line": 87,
       "match": "in_stack_ffffff84",
+      "severity": "moderate",
       "text": "in_stack_ffffff84 = (void *)0x5acbf4;",
       "type": "stack_param"
     },
@@ -440,6 +448,7 @@
       "description": "Complex pointer cast",
       "line": 99,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)local_6c + iVar2) =",
       "type": "pointer_cast"
     },
@@ -447,6 +456,7 @@
       "description": "Complex pointer cast",
       "line": 100,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)g_ChannelPrimaryBuffers + iVar2);",
       "type": "pointer_cast"
     },
@@ -454,6 +464,7 @@
       "description": "Direct stack address reference",
       "line": 117,
       "match": "&stack0xffffff68",
+      "severity": "moderate",
       "text": "puVar8 = (uint *)&stack0xffffff68;",
       "type": "stack_ref"
     },
@@ -461,6 +472,7 @@
       "description": "Unresolved stack parameter",
       "line": 123,
       "match": "in_stack_ffffff7c",
+      "severity": "moderate",
       "text": "mix_buffer.channel_buffers[5] = (float *)in_stack_ffffff7c;",
       "type": "stack_param"
     },
@@ -468,6 +480,7 @@
       "description": "Unresolved stack parameter",
       "line": 124,
       "match": "in_stack_ffffff68",
+      "severity": "moderate",
       "text": "mix_buffer.channel_buffers[0] = (float *)in_stack_ffffff68._0_4_;",
       "type": "stack_param"
     },
@@ -475,6 +488,7 @@
       "description": "Unknown/mangled field access",
       "line": 124,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "mix_buffer.channel_buffers[0] = (float *)in_stack_ffffff68._0_4_;",
       "type": "unknown_field"
     },
@@ -482,6 +496,7 @@
       "description": "Unresolved stack parameter",
       "line": 125,
       "match": "in_stack_ffffff68",
+      "severity": "moderate",
       "text": "mix_buffer.channel_buffers[1] = (float *)in_stack_ffffff68._4_4_;",
       "type": "stack_param"
     },
@@ -489,6 +504,7 @@
       "description": "Unknown/mangled field access",
       "line": 125,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "mix_buffer.channel_buffers[1] = (float *)in_stack_ffffff68._4_4_;",
       "type": "unknown_field"
     },
@@ -496,6 +512,7 @@
       "description": "Unresolved stack parameter",
       "line": 126,
       "match": "in_stack_ffffff68",
+      "severity": "moderate",
       "text": "mix_buffer.channel_buffers[2] = (float *)in_stack_ffffff68._8_4_;",
       "type": "stack_param"
     },
@@ -503,6 +520,7 @@
       "description": "Unknown/mangled field access",
       "line": 126,
       "match": "._8_4_",
+      "severity": "mild",
       "text": "mix_buffer.channel_buffers[2] = (float *)in_stack_ffffff68._8_4_;",
       "type": "unknown_field"
     },
@@ -510,6 +528,7 @@
       "description": "Unresolved stack parameter",
       "line": 127,
       "match": "in_stack_ffffff68",
+      "severity": "moderate",
       "text": "mix_buffer.channel_buffers[3] = (float *)in_stack_ffffff68._12_4_;",
       "type": "stack_param"
     },
@@ -517,6 +536,7 @@
       "description": "Unknown/mangled field access",
       "line": 127,
       "match": "._12_4_",
+      "severity": "mild",
       "text": "mix_buffer.channel_buffers[3] = (float *)in_stack_ffffff68._12_4_;",
       "type": "unknown_field"
     },
@@ -524,6 +544,7 @@
       "description": "Unresolved stack parameter",
       "line": 128,
       "match": "in_stack_ffffff68",
+      "severity": "moderate",
       "text": "mix_buffer.channel_buffers[4] = (float *)in_stack_ffffff68._16_4_;",
       "type": "stack_param"
     },
@@ -531,6 +552,7 @@
       "description": "Unknown/mangled field access",
       "line": 128,
       "match": "._16_4_",
+      "severity": "mild",
       "text": "mix_buffer.channel_buffers[4] = (float *)in_stack_ffffff68._16_4_;",
       "type": "unknown_field"
     },
@@ -538,6 +560,7 @@
       "description": "Unresolved stack parameter",
       "line": 129,
       "match": "in_stack_ffffff80",
+      "severity": "moderate",
       "text": "mix_buffer.channel_buffers[6] = in_stack_ffffff80;",
       "type": "stack_param"
     },
@@ -545,6 +568,7 @@
       "description": "Unresolved stack parameter",
       "line": 130,
       "match": "in_stack_ffffff84",
+      "severity": "moderate",
       "text": "mix_buffer.channel_buffers[7] = in_stack_ffffff84;",
       "type": "stack_param"
     },
@@ -552,6 +576,7 @@
       "description": "Unresolved stack parameter",
       "line": 149,
       "match": "in_stack_ffffff84",
+      "severity": "moderate",
       "text": "in_stack_ffffff84 = *(void **)((int)local_44 + iVar5 + 4);",
       "type": "stack_param"
     },
@@ -559,6 +584,7 @@
       "description": "Unresolved stack parameter",
       "line": 150,
       "match": "in_stack_ffffff80",
+      "severity": "moderate",
       "text": "in_stack_ffffff80 =",
       "type": "stack_param"
     },
@@ -566,6 +592,7 @@
       "description": "Complex pointer cast",
       "line": 151,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "(float *)(g_MixBufferWriteIndex * 4 + *(int *)((int)g_ChannelPrimaryBuffers + iVar5))",
       "type": "pointer_cast"
     },
@@ -573,6 +600,7 @@
       "description": "Unresolved stack parameter",
       "line": 153,
       "match": "in_stack_ffffff7c",
+      "severity": "moderate",
       "text": "in_stack_ffffff7c = 0x5acd06;",
       "type": "stack_param"
     },
@@ -580,6 +608,7 @@
       "description": "Unresolved stack parameter",
       "line": 155,
       "match": "in_stack_ffffff80",
+      "severity": "moderate",
       "text": "(in_stack_ffffff80,in_stack_ffffff84,bits_per_sample,iVar3,block_align);",
       "type": "stack_param"
     },
@@ -587,6 +616,7 @@
       "description": "Unresolved stack parameter",
       "line": 155,
       "match": "in_stack_ffffff84",
+      "severity": "moderate",
       "text": "(in_stack_ffffff80,in_stack_ffffff84,bits_per_sample,iVar3,block_align);",
       "type": "stack_param"
     },
@@ -594,6 +624,7 @@
       "description": "Complex pointer cast",
       "line": 157,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)local_44 + iVar5 + 4) =",
       "type": "pointer_cast"
     },
@@ -601,6 +632,7 @@
       "description": "Complex pointer cast",
       "line": 158,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)local_44 + iVar5 + 4) + block_align * iVar3;",
       "type": "pointer_cast"
     },

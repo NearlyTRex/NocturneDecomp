@@ -5,6 +5,7 @@
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 5,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 26,
     "suspect_count": 6,
     "suspect_types": [
@@ -171,6 +172,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 6,
       "match": "extraout_EAX",
+      "severity": "moderate",
       "text": "int extraout_EAX;",
       "type": "extra_output"
     },
@@ -178,6 +180,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 17,
       "match": "piVar4[-2].",
+      "severity": "mild",
       "text": "this_ptr = (ofstream *)&piVar4[-2].__format_flags;",
       "type": "negative_offset"
     },
@@ -185,6 +188,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 21,
       "match": "extraout_EAX",
+      "severity": "moderate",
       "text": "poVar2 = crt_iostream_cpp_ostream_ctor_FUN_006061a2((ostream *)(extraout_EAX + 0x44),1);",
       "type": "extra_output"
     },
@@ -192,6 +196,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 22,
       "match": "poVar2[-2].",
+      "severity": "mild",
       "text": "pcVar3 = &poVar2[-2]._ios.__fill_character;",
       "type": "negative_offset"
     },
@@ -199,6 +204,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 24,
       "match": "poVar2[-1].",
+      "severity": "mild",
       "text": "poVar2[-1]._ios.cleanup_vtable = &g_OFStream_FStreamBaseDestructor;",
       "type": "negative_offset"
     },

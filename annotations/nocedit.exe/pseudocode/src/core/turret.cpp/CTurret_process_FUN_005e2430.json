@@ -31,15 +31,17 @@
   },
   "complexity": {
     "assembly_lines": 379,
-    "complexity_score": 384,
+    "complexity_score": 399,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 12,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 189,
-    "suspect_count": 17,
+    "suspect_count": 18,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
+      "stack_alignment_array",
       "stack_param",
       "suspect_float",
       "unknown_field"
@@ -391,9 +393,18 @@
   },
   "suspects": [
     {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 14,
+      "match": "auStackY_186c",
+      "severity": "moderate",
+      "text": "uint auStackY_186c [1497];",
+      "type": "stack_alignment_array"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_ffffff08",
+      "severity": "moderate",
       "text": "uint in_stack_ffffff08;",
       "type": "stack_param"
     },
@@ -401,6 +412,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 32,
       "match": "NAN",
+      "severity": "mild",
       "text": "(this_ptr->base).muzzle_flash_offset.x = -NAN;",
       "type": "decompiler_intrinsic"
     },
@@ -408,6 +420,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 62,
       "match": "3.57331e-43",
+      "severity": "mild",
       "text": "(this_ptr->base).muzzle_flash_offset.x = 3.57331e-43;",
       "type": "suspect_float"
     },
@@ -415,6 +428,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 80,
       "match": "3.57331e-43",
+      "severity": "mild",
       "text": "(this_ptr->base).muzzle_flash_offset.y = 3.57331e-43;",
       "type": "suspect_float"
     },
@@ -422,6 +436,7 @@
       "description": "Complex pointer cast",
       "line": 111,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar7 = (uint *)((int)&local_90 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
       "type": "pointer_cast"
     },
@@ -429,6 +444,7 @@
       "description": "Complex pointer cast",
       "line": 112,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_90 + (uint)bVar9 * -8 + 4) =",
       "type": "pointer_cast"
     },
@@ -436,6 +452,7 @@
       "description": "Complex pointer cast",
       "line": 121,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar8 = (uint *)((int)&local_50 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
       "type": "pointer_cast"
     },
@@ -443,6 +460,7 @@
       "description": "Complex pointer cast",
       "line": 122,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar7 = (uint *)((int)&local_70 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
       "type": "pointer_cast"
     },
@@ -450,6 +468,7 @@
       "description": "Complex pointer cast",
       "line": 123,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_50 + (uint)bVar9 * -8 + 4) =",
       "type": "pointer_cast"
     },
@@ -457,6 +476,7 @@
       "description": "Complex pointer cast",
       "line": 124,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_70 + (uint)bVar9 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -464,6 +484,7 @@
       "description": "Complex pointer cast",
       "line": 133,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar8 = (uint *)((int)&local_80 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
       "type": "pointer_cast"
     },
@@ -471,6 +492,7 @@
       "description": "Complex pointer cast",
       "line": 134,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar7 = (uint *)((int)&local_60 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
       "type": "pointer_cast"
     },
@@ -478,6 +500,7 @@
       "description": "Complex pointer cast",
       "line": 135,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_80 + (uint)bVar9 * -8 + 4) =",
       "type": "pointer_cast"
     },
@@ -485,6 +508,7 @@
       "description": "Complex pointer cast",
       "line": 136,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_60 + (uint)bVar9 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -492,6 +516,7 @@
       "description": "Unresolved stack parameter",
       "line": 183,
       "match": "in_stack_ffffff08",
+      "severity": "moderate",
       "text": "local_30._12_8_ = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,in_stack_ffffff08);",
       "type": "stack_param"
     },
@@ -499,6 +524,7 @@
       "description": "Unknown/mangled field access",
       "line": 183,
       "match": "._12_8_",
+      "severity": "mild",
       "text": "local_30._12_8_ = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,in_stack_ffffff08);",
       "type": "unknown_field"
     },
@@ -506,6 +532,7 @@
       "description": "Unknown/mangled field access",
       "line": 184,
       "match": "._12_8_",
+      "severity": "mild",
       "text": "if (0.0 <= (double)local_30._12_8_) {",
       "type": "unknown_field"
     }

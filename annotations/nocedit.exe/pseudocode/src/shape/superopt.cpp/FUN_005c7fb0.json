@@ -79,14 +79,16 @@
   },
   "complexity": {
     "assembly_lines": 163,
-    "complexity_score": 550,
+    "complexity_score": 615,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 70,
-    "suspect_count": 46,
+    "suspect_count": 52,
     "suspect_types": [
       "decompiler_intrinsic",
+      "double_reconstruction",
       "pointer_cast",
       "stack_param",
       "unknown_field"
@@ -361,6 +363,7 @@
       "description": "Unresolved stack parameter",
       "line": 8,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
@@ -368,6 +371,7 @@
       "description": "Unresolved stack parameter",
       "line": 9,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
@@ -375,6 +379,7 @@
       "description": "Unresolved stack parameter",
       "line": 25,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "if ((((*(double *)(in_stack_00000008 + 0x28) != *(double *)(in_stack_0000000c + 0x10)) ||",
       "type": "stack_param"
     },
@@ -382,6 +387,7 @@
       "description": "Unresolved stack parameter",
       "line": 25,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "if ((((*(double *)(in_stack_00000008 + 0x28) != *(double *)(in_stack_0000000c + 0x10)) ||",
       "type": "stack_param"
     },
@@ -389,6 +395,7 @@
       "description": "Unresolved stack parameter",
       "line": 26,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "(*(double *)(in_stack_00000008 + 0x30) != *(double *)(in_stack_0000000c + 0x18))) ||",
       "type": "stack_param"
     },
@@ -396,6 +403,7 @@
       "description": "Unresolved stack parameter",
       "line": 26,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "(*(double *)(in_stack_00000008 + 0x30) != *(double *)(in_stack_0000000c + 0x18))) ||",
       "type": "stack_param"
     },
@@ -403,6 +411,7 @@
       "description": "Unresolved stack parameter",
       "line": 27,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "(*(double *)(in_stack_00000008 + 0x38) != *(double *)(in_stack_0000000c + 0x20))) &&",
       "type": "stack_param"
     },
@@ -410,6 +419,7 @@
       "description": "Unresolved stack parameter",
       "line": 27,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "(*(double *)(in_stack_00000008 + 0x38) != *(double *)(in_stack_0000000c + 0x20))) &&",
       "type": "stack_param"
     },
@@ -417,6 +427,7 @@
       "description": "Unresolved stack parameter",
       "line": 28,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "(((*(double *)(in_stack_00000008 + 0x10) != *(double *)(in_stack_0000000c + 0x28) ||",
       "type": "stack_param"
     },
@@ -424,6 +435,7 @@
       "description": "Unresolved stack parameter",
       "line": 28,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "(((*(double *)(in_stack_00000008 + 0x10) != *(double *)(in_stack_0000000c + 0x28) ||",
       "type": "stack_param"
     },
@@ -431,6 +443,7 @@
       "description": "Unresolved stack parameter",
       "line": 29,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "(*(double *)(in_stack_00000008 + 0x18) != *(double *)(in_stack_0000000c + 0x30))) ||",
       "type": "stack_param"
     },
@@ -438,6 +451,7 @@
       "description": "Unresolved stack parameter",
       "line": 29,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "(*(double *)(in_stack_00000008 + 0x18) != *(double *)(in_stack_0000000c + 0x30))) ||",
       "type": "stack_param"
     },
@@ -445,6 +459,7 @@
       "description": "Unresolved stack parameter",
       "line": 30,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "(*(double *)(in_stack_00000008 + 0x20) != *(double *)(in_stack_0000000c + 0x38))))) {",
       "type": "stack_param"
     },
@@ -452,6 +467,7 @@
       "description": "Unresolved stack parameter",
       "line": 30,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "(*(double *)(in_stack_00000008 + 0x20) != *(double *)(in_stack_0000000c + 0x38))))) {",
       "type": "stack_param"
     },
@@ -459,6 +475,7 @@
       "description": "Unresolved stack parameter",
       "line": 33,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "local_88 = *(double *)(in_stack_00000008 + 0x28) - *(double *)(in_stack_00000008 + 0x10);",
       "type": "stack_param"
     },
@@ -466,6 +483,7 @@
       "description": "Unresolved stack parameter",
       "line": 33,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "local_88 = *(double *)(in_stack_00000008 + 0x28) - *(double *)(in_stack_00000008 + 0x10);",
       "type": "stack_param"
     },
@@ -473,6 +491,7 @@
       "description": "Unresolved stack parameter",
       "line": 34,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "local_80 = *(double *)(in_stack_00000008 + 0x30) - *(double *)(in_stack_00000008 + 0x18);",
       "type": "stack_param"
     },
@@ -480,6 +499,7 @@
       "description": "Unresolved stack parameter",
       "line": 34,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "local_80 = *(double *)(in_stack_00000008 + 0x30) - *(double *)(in_stack_00000008 + 0x18);",
       "type": "stack_param"
     },
@@ -487,6 +507,7 @@
       "description": "Unresolved stack parameter",
       "line": 35,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "local_78 = *(double *)(in_stack_00000008 + 0x38) - *(double *)(in_stack_00000008 + 0x20);",
       "type": "stack_param"
     },
@@ -494,6 +515,7 @@
       "description": "Unresolved stack parameter",
       "line": 35,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "local_78 = *(double *)(in_stack_00000008 + 0x38) - *(double *)(in_stack_00000008 + 0x20);",
       "type": "stack_param"
     },
@@ -501,6 +523,7 @@
       "description": "Complex pointer cast",
       "line": 40,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar2 = (double *)((int)pdVar2 + 4);",
       "type": "pointer_cast"
     },
@@ -508,6 +531,7 @@
       "description": "Unknown/mangled field access",
       "line": 43,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_40.x._0_4_ = local_58[0];",
       "type": "unknown_field"
     },
@@ -515,6 +539,7 @@
       "description": "Unknown/mangled field access",
       "line": 44,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_40.x._4_4_ = local_58[1];",
       "type": "unknown_field"
     },
@@ -522,6 +547,7 @@
       "description": "Unknown/mangled field access",
       "line": 45,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_40.y._0_4_ = local_58[2];",
       "type": "unknown_field"
     },
@@ -529,6 +555,7 @@
       "description": "Unknown/mangled field access",
       "line": 46,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_40.y._4_4_ = local_58[3];",
       "type": "unknown_field"
     },
@@ -536,6 +563,7 @@
       "description": "Unknown/mangled field access",
       "line": 47,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_40.z._0_4_ = local_48;",
       "type": "unknown_field"
     },
@@ -543,6 +571,7 @@
       "description": "Unknown/mangled field access",
       "line": 48,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_40.z._4_4_ = uStack_44;",
       "type": "unknown_field"
     },
@@ -550,6 +579,7 @@
       "description": "Unresolved stack parameter",
       "line": 49,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "local_70 = *(double *)(in_stack_0000000c + 0x28) - *(double *)(in_stack_0000000c + 0x10);",
       "type": "stack_param"
     },
@@ -557,6 +587,7 @@
       "description": "Unresolved stack parameter",
       "line": 49,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "local_70 = *(double *)(in_stack_0000000c + 0x28) - *(double *)(in_stack_0000000c + 0x10);",
       "type": "stack_param"
     },
@@ -564,6 +595,7 @@
       "description": "Unresolved stack parameter",
       "line": 50,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "local_68 = *(double *)(in_stack_0000000c + 0x30) - *(double *)(in_stack_0000000c + 0x18);",
       "type": "stack_param"
     },
@@ -571,6 +603,7 @@
       "description": "Unresolved stack parameter",
       "line": 50,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "local_68 = *(double *)(in_stack_0000000c + 0x30) - *(double *)(in_stack_0000000c + 0x18);",
       "type": "stack_param"
     },
@@ -578,6 +611,7 @@
       "description": "Unresolved stack parameter",
       "line": 51,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "local_60 = *(double *)(in_stack_0000000c + 0x38) - *(double *)(in_stack_0000000c + 0x20);",
       "type": "stack_param"
     },
@@ -585,6 +619,7 @@
       "description": "Unresolved stack parameter",
       "line": 51,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "local_60 = *(double *)(in_stack_0000000c + 0x38) - *(double *)(in_stack_0000000c + 0x20);",
       "type": "stack_param"
     },
@@ -592,6 +627,7 @@
       "description": "Complex pointer cast",
       "line": 56,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar2 = (double *)((int)pdVar2 + 4);",
       "type": "pointer_cast"
     },
@@ -599,6 +635,7 @@
       "description": "Unknown/mangled field access",
       "line": 59,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_a0.x._0_4_ = local_28[0];",
       "type": "unknown_field"
     },
@@ -606,6 +643,7 @@
       "description": "Unknown/mangled field access",
       "line": 60,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_a0.x._4_4_ = local_28[1];",
       "type": "unknown_field"
     },
@@ -613,6 +651,7 @@
       "description": "Unknown/mangled field access",
       "line": 61,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_a0.y._0_4_ = local_28[2];",
       "type": "unknown_field"
     },
@@ -620,6 +659,7 @@
       "description": "Unknown/mangled field access",
       "line": 62,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_a0.y._4_4_ = local_28[3];",
       "type": "unknown_field"
     },
@@ -627,6 +667,7 @@
       "description": "Unknown/mangled field access",
       "line": 63,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_a0.z._0_4_ = local_18;",
       "type": "unknown_field"
     },
@@ -634,13 +675,31 @@
       "description": "Unknown/mangled field access",
       "line": 64,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_a0.z._4_4_ = uStack_14;",
       "type": "unknown_field"
     },
     {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 65,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "if (0.0 <= (double)CONCAT44(uStack_44,local_48) * (double)CONCAT44(uStack_14,local_18) +",
+      "type": "double_reconstruction"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 65,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "if (0.0 <= (double)CONCAT44(uStack_44,local_48) * (double)CONCAT44(uStack_14,local_18) +",
+      "type": "double_reconstruction"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 65,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "if (0.0 <= (double)CONCAT44(uStack_44,local_48) * (double)CONCAT44(uStack_14,local_18) +",
       "type": "decompiler_intrinsic"
     },
@@ -648,13 +707,31 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 65,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "if (0.0 <= (double)CONCAT44(uStack_44,local_48) * (double)CONCAT44(uStack_14,local_18) +",
       "type": "decompiler_intrinsic"
     },
     {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 66,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(double)CONCAT44(local_58[1],local_58[0]) * (double)CONCAT44(local_28[1],local_28[0]) +",
+      "type": "double_reconstruction"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 66,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(double)CONCAT44(local_58[1],local_58[0]) * (double)CONCAT44(local_28[1],local_28[0]) +",
+      "type": "double_reconstruction"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 66,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(double)CONCAT44(local_58[1],local_58[0]) * (double)CONCAT44(local_28[1],local_28[0]) +",
       "type": "decompiler_intrinsic"
     },
@@ -662,13 +739,31 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 66,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(double)CONCAT44(local_58[1],local_58[0]) * (double)CONCAT44(local_28[1],local_28[0]) +",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 67,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(double)CONCAT44(local_58[3],local_58[2]) * (double)CONCAT44(local_28[3],local_28[2]))",
+      "type": "double_reconstruction"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 67,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "(double)CONCAT44(local_58[3],local_58[2]) * (double)CONCAT44(local_28[3],local_28[2]))",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 67,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(double)CONCAT44(local_58[3],local_58[2]) * (double)CONCAT44(local_28[3],local_28[2]))",
       "type": "decompiler_intrinsic"
     },
@@ -676,6 +771,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 67,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "(double)CONCAT44(local_58[3],local_58[2]) * (double)CONCAT44(local_28[3],local_28[2]))",
       "type": "decompiler_intrinsic"
     }

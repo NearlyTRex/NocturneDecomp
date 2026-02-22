@@ -78,7 +78,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_005ea320(CWater *this_ptr,int rend
         local_60.z = (int)ROUND(256.0f * 0.0);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_60);
-        core_set_cpp_CDemonSet_FUN_0056e3e0(g_CDemonSetPtr);
+        core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0056e3e0(g_CDemonSetPtr);
         local_6c.x = this_ptr->tile_size;
         if (this_ptr->wave_animation_enabled != 0) {
           local_14 = iVar1 + 1;
@@ -92,7 +92,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_005ea320(CWater *this_ptr,int rend
         local_54.z = (int)ROUND(local_6c.z * 256.0f);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_54);
-        core_set_cpp_CDemonSet_FUN_0056e3e0(g_CDemonSetPtr);
+        core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0056e3e0(g_CDemonSetPtr);
         local_6c.z = this_ptr->tile_size;
         if (this_ptr->wave_animation_enabled != 0) {
           local_14 = iVar1 + 1;
@@ -107,7 +107,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_005ea320(CWater *this_ptr,int rend
         local_48.z = (int)ROUND(local_6c.z * 256.0f);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_48);
-        core_set_cpp_CDemonSet_FUN_0056e3e0(g_CDemonSetPtr);
+        core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0056e3e0(g_CDemonSetPtr);
         local_6c.x = 0.0;
         if (this_ptr->wave_animation_enabled != 0) {
           fVar3 = (float10)fsin((float10)(iVar2 + 1) * (float10)3.1415926535000001 *
@@ -121,7 +121,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_005ea320(CWater *this_ptr,int rend
         local_3c.z = (int)ROUND(local_6c.z * 256.0f);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_3c);
-        core_set_cpp_CDemonSet_FUN_0056e3e0(g_CDemonSetPtr);
+        core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0056e3e0(g_CDemonSetPtr);
         if (this_ptr->wave_animation_enabled == 0) {
           if (g_UseExternalRenderer == 0) {
             if (render_mode == 0) {

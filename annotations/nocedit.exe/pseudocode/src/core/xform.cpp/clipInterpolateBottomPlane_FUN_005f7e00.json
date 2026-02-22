@@ -10,6 +10,7 @@
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 1,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 47,
     "suspect_count": 4,
     "suspect_types": [
@@ -126,6 +127,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 16,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "iVar5 = (int)(CONCAT44((int)uVar4 >> 1,(uint)((uVar4 & 1) != 0) << 0x1f) / (longlong)iVar5);",
       "type": "decompiler_intrinsic"
     },
@@ -133,6 +135,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 29,
       "match": "CARRY4",
+      "severity": "mild",
       "text": "iVar3 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) +",
       "type": "decompiler_intrinsic"
     },
@@ -140,6 +143,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 39,
       "match": "CARRY4",
+      "severity": "mild",
       "text": "(int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) +",
       "type": "decompiler_intrinsic"
     },
@@ -147,6 +151,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 48,
       "match": "CARRY4",
+      "severity": "mild",
       "text": "vertex_out->z = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) + vertex_a->z;",
       "type": "decompiler_intrinsic"
     }

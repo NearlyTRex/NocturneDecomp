@@ -125,6 +125,7 @@
     "cross_reference_count": 1,
     "function_call_count": 53,
     "global_count": 177,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 2161,
     "suspect_count": 10,
     "suspect_types": [
@@ -2595,6 +2596,7 @@
       "description": "Type propagation did not converge",
       "line": 2,
       "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
     },
@@ -2602,6 +2604,7 @@
       "description": "Direct stack address reference",
       "line": 374,
       "match": "&stack0xffffe9c4",
+      "severity": "moderate",
       "text": "((char *)local_ec,\"( %[^ ,], %d, %d )%n\",&stack0xffffe9c4,&local_d8,&local_d4);",
       "type": "stack_ref"
     },
@@ -2609,6 +2612,7 @@
       "description": "Direct stack address reference",
       "line": 384,
       "match": "&stack0xffffe9c4",
+      "severity": "moderate",
       "text": "iVar2 = engine_dosio_c_getFileSize_FUN_00481880(\"art\",&stack0xffffe9c4);",
       "type": "stack_ref"
     },
@@ -2616,6 +2620,7 @@
       "description": "Undefined global data reference",
       "line": 1015,
       "match": "DAT_006793d8",
+      "severity": "mild",
       "text": "puVar17 = &DAT_006793d8;",
       "type": "undefined_data"
     },
@@ -2623,6 +2628,7 @@
       "description": "Complex pointer cast",
       "line": 1020,
       "match": "(char *)((int)",
+      "severity": "mild",
       "text": "pcVar16 = (char *)((int)pcVar16 +",
       "type": "pointer_cast"
     },
@@ -2630,6 +2636,7 @@
       "description": "Undefined global data reference",
       "line": 1886,
       "match": "DAT_006794a0",
+      "severity": "mild",
       "text": "puVar17 = &DAT_006794a0;",
       "type": "undefined_data"
     },

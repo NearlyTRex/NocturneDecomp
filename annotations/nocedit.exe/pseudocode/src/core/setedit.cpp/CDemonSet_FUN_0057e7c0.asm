@@ -93,7 +93,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_set.cpp_CDemonSet_FUN_0056d2d0
+;   core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0
 ;   core_set.cpp_CDemonSet_initScene_FUN_0056aa10
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
 ;   core_setedit.cpp_CDemonSet_FUN_00576da0
@@ -1323,8 +1323,8 @@ section .text
     MOV dword ptr [EAX + 0x15ac8c],0x0  ; 0057f5ac
     PUSH EAX                            ; 0057f5b6
     MOV dword ptr [EAX + 0x15ac90],0x0  ; 0057f5b7
-    CALL core_set.cpp_CDemonSet_FUN_0056d2d0 ; 0057f5c1
-        ;   XREF to: 0056d2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d2d0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0 ; 0057f5c1
+        ;   XREF to: 0056d2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0057f5c6
     JMP 0x0057eb43                      ; 0057f5c9
         ;   XREF to: 0057eb43 (UNCONDITIONAL_JUMP)  ; caseD_3f

@@ -6,18 +6,21 @@
   },
   "complexity": {
     "assembly_lines": 587,
-    "complexity_score": 1165,
+    "complexity_score": 1255,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 10,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 430,
-    "suspect_count": 71,
+    "suspect_count": 79,
     "suspect_types": [
+      "bare_stack_ref",
       "byvalue_struct_passing",
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_param",
-      "suspect_float"
+      "suspect_float",
+      "warning_unmapped_variable"
     ],
     "total_lines": 1017
   },
@@ -336,9 +339,26 @@
   },
   "suspects": [
     {
+      "description": "Variable defined which should be unmapped",
+      "line": 2,
+      "match": "WARNING: Variable defined which should be unmapped",
+      "severity": "moderate",
+      "text": "/* WARNING: Variable defined which should be unmapped: local_114 */",
+      "type": "warning_unmapped_variable"
+    },
+    {
+      "description": "Variable defined which should be unmapped",
+      "line": 3,
+      "match": "WARNING: Variable defined which should be unmapped",
+      "severity": "moderate",
+      "text": "/* WARNING: Variable defined which should be unmapped: local_144 */",
+      "type": "warning_unmapped_variable"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 28,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "CDemonActor *in_stack_0000000c;",
       "type": "stack_param"
     },
@@ -346,6 +366,7 @@
       "description": "Unresolved stack parameter",
       "line": 81,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "fStack_90 = -*(float *)(in_stack_0000000c[1].actor_name + 8) * (float)0.5;",
       "type": "stack_param"
     },
@@ -353,6 +374,7 @@
       "description": "Unresolved stack parameter",
       "line": 82,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "fStack_8c = *(float *)in_stack_0000000c[1].actor_name * (float)iVar3;",
       "type": "stack_param"
     },
@@ -360,6 +382,7 @@
       "description": "Unresolved stack parameter",
       "line": 83,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "fStack_88 = (float)iVar3 * *(float *)(in_stack_0000000c[1].actor_name + 4);",
       "type": "stack_param"
     },
@@ -367,6 +390,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 84,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_84.x = (int)ROUND(fStack_90 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -374,6 +398,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 85,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_84.y = (int)ROUND(fStack_8c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -381,6 +406,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 86,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_84.z = (int)ROUND(fStack_88 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -388,6 +414,7 @@
       "description": "Unresolved stack parameter",
       "line": 91,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "fStack_88 = fStack_88 + *(float *)(in_stack_0000000c[1].actor_name + 4);",
       "type": "stack_param"
     },
@@ -395,6 +422,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 92,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_78.x = (int)ROUND(fStack_90 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -402,6 +430,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 93,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_78.y = (int)ROUND(fStack_8c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -409,6 +438,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 94,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_78.z = (int)ROUND(fStack_88 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -416,6 +446,7 @@
       "description": "Unresolved stack parameter",
       "line": 99,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "fStack_88 = fStack_88 - *(float *)(in_stack_0000000c[1].actor_name + 4);",
       "type": "stack_param"
     },
@@ -423,6 +454,7 @@
       "description": "Unresolved stack parameter",
       "line": 100,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "fStack_90 = fStack_90 + *(float *)(in_stack_0000000c[1].actor_name + 8);",
       "type": "stack_param"
     },
@@ -430,6 +462,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 101,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_48.x = (int)ROUND(fStack_90 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -437,6 +470,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 102,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_48.y = (int)ROUND(fStack_8c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -444,6 +478,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 103,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_48.z = (int)ROUND(fStack_88 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -451,6 +486,7 @@
       "description": "Unresolved stack parameter",
       "line": 108,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "fStack_88 = fStack_88 + *(float *)(in_stack_0000000c[1].actor_name + 4);",
       "type": "stack_param"
     },
@@ -458,6 +494,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 109,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_60.x = (int)ROUND(fStack_90 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -465,6 +502,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 110,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_60.y = (int)ROUND(fStack_8c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -472,6 +510,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 111,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_60.z = (int)ROUND(fStack_88 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -479,6 +518,7 @@
       "description": "Unresolved stack parameter",
       "line": 123,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "} while (iVar3 <= *(int *)(in_stack_0000000c[1].actor_name + 0x14));",
       "type": "stack_param"
     },
@@ -486,6 +526,7 @@
       "description": "Unresolved stack parameter",
       "line": 127,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "if (0 < *(int *)(in_stack_0000000c[1].actor_name + 0x14)) {",
       "type": "stack_param"
     },
@@ -493,6 +534,7 @@
       "description": "Complex pointer cast",
       "line": 136,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar6 = (uint *)((int)&(pSVar8->projected_vertex).transformed_x + iStack_10);",
       "type": "pointer_cast"
     },
@@ -500,13 +542,23 @@
       "description": "Complex pointer cast",
       "line": 143,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar6 = (uint *)((int)&(pSVar8->projected_vertex).transformed_x + iStack_c);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Bare stack address reference (hidden stack variable)",
+      "line": 145,
+      "match": "stack0xfffffee8",
+      "severity": "moderate",
+      "text": "for (iVar9 = 0xc; auVar2 = stack0xfffffee8, iVar9 != 0; iVar9 = iVar9 + -1) {",
+      "type": "bare_stack_ref"
     },
     {
       "description": "Complex pointer cast",
       "line": 165,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar6 = (uint *)((int)&(pSVar8->projected_vertex).transformed_x + iVar5);",
       "type": "pointer_cast"
     },
@@ -514,13 +566,23 @@
       "description": "Complex pointer cast",
       "line": 172,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar6 = (uint *)((int)&(pSVar8->projected_vertex).transformed_x + iVar3);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Bare stack address reference (hidden stack variable)",
+      "line": 174,
+      "match": "stack0xfffffee8",
+      "severity": "moderate",
+      "text": "for (iVar9 = 0xc; auVar2 = stack0xfffffee8, iVar9 != 0; iVar9 = iVar9 + -1) {",
+      "type": "bare_stack_ref"
     },
     {
       "description": "Complex pointer cast",
       "line": 194,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar6 = (uint *)((int)&(pSVar8->projected_vertex).transformed_x + iVar3);",
       "type": "pointer_cast"
     },
@@ -528,13 +590,23 @@
       "description": "Complex pointer cast",
       "line": 201,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar6 = (uint *)((int)&(pSVar8->projected_vertex).transformed_x + iStack_c);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Bare stack address reference (hidden stack variable)",
+      "line": 203,
+      "match": "stack0xfffffee8",
+      "severity": "moderate",
+      "text": "for (iVar9 = 0xc; auVar2 = stack0xfffffee8, iVar9 != 0; iVar9 = iVar9 + -1) {",
+      "type": "bare_stack_ref"
     },
     {
       "description": "Complex pointer cast",
       "line": 223,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar6 = (uint *)((int)&(pSVar8->projected_vertex).transformed_x + iVar5);",
       "type": "pointer_cast"
     },
@@ -542,13 +614,23 @@
       "description": "Complex pointer cast",
       "line": 230,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar6 = (uint *)((int)&(pSVar8->projected_vertex).transformed_x + iStack_10);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Bare stack address reference (hidden stack variable)",
+      "line": 232,
+      "match": "stack0xfffffee8",
+      "severity": "moderate",
+      "text": "for (iVar9 = 0xc; auVar2 = stack0xfffffee8, iVar9 != 0; iVar9 = iVar9 + -1) {",
+      "type": "bare_stack_ref"
     },
     {
       "description": "Complex pointer cast",
       "line": 252,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar6 = (uint *)((int)&(pSVar8->projected_vertex).transformed_x + iStack_24);",
       "type": "pointer_cast"
     },
@@ -556,13 +638,23 @@
       "description": "Complex pointer cast",
       "line": 259,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar6 = (uint *)((int)&(pSVar8->projected_vertex).transformed_x + iVar3);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Bare stack address reference (hidden stack variable)",
+      "line": 261,
+      "match": "stack0xfffffee8",
+      "severity": "moderate",
+      "text": "for (iVar9 = 0xc; auVar2 = stack0xfffffee8, iVar9 != 0; iVar9 = iVar9 + -1) {",
+      "type": "bare_stack_ref"
     },
     {
       "description": "Complex pointer cast",
       "line": 281,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar6 = (uint *)((int)&(pSVar8->projected_vertex).transformed_x + iStack_18);",
       "type": "pointer_cast"
     },
@@ -570,13 +662,23 @@
       "description": "Complex pointer cast",
       "line": 289,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar6 = (uint *)((int)&(pSVar8->projected_vertex).transformed_x + iVar5);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Bare stack address reference (hidden stack variable)",
+      "line": 291,
+      "match": "stack0xfffffee8",
+      "severity": "moderate",
+      "text": "for (iVar9 = 0xc; auVar2 = stack0xfffffee8, iVar9 != 0; iVar9 = iVar9 + -1) {",
+      "type": "bare_stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 316,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "} while (iStack_14 < *(int *)(in_stack_0000000c[1].actor_name + 0x14));",
       "type": "stack_param"
     },
@@ -584,6 +686,7 @@
       "description": "Unresolved stack parameter",
       "line": 319,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "pSVar7 = pSVar8 + *(int *)(in_stack_0000000c[1].actor_name + 0x14) * 4 + 2;",
       "type": "stack_param"
     },
@@ -591,6 +694,7 @@
       "description": "Complex pointer cast",
       "line": 323,
       "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
       "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -598,6 +702,7 @@
       "description": "Unresolved stack parameter",
       "line": 326,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "pSVar8 = pSVar8 + *(int *)(in_stack_0000000c[1].actor_name + 0x14) * 4;",
       "type": "stack_param"
     },
@@ -605,6 +710,7 @@
       "description": "Complex pointer cast",
       "line": 330,
       "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
       "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -612,6 +718,7 @@
       "description": "Unresolved stack parameter",
       "line": 355,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "iVar5 <= *(int *)(in_stack_0000000c[1].actor_name + 0x14) * 4; iVar5 = iVar5 + 1) {",
       "type": "stack_param"
     },
@@ -619,6 +726,7 @@
       "description": "Complex pointer cast",
       "line": 356,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->z + iVar3) = 0;",
       "type": "pointer_cast"
     },
@@ -626,6 +734,7 @@
       "description": "Complex pointer cast",
       "line": 357,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->r + iVar3) = 0;",
       "type": "pointer_cast"
     },
@@ -633,6 +742,7 @@
       "description": "Complex pointer cast",
       "line": 358,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->g + iVar3) = 0xff00;",
       "type": "pointer_cast"
     },
@@ -640,6 +750,7 @@
       "description": "Complex pointer cast",
       "line": 359,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->fog + iVar3) = 0x8000;",
       "type": "pointer_cast"
     },
@@ -647,6 +758,7 @@
       "description": "Complex pointer cast",
       "line": 360,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->u + iVar3) = 0x800000;",
       "type": "pointer_cast"
     },
@@ -654,6 +766,7 @@
       "description": "Complex pointer cast",
       "line": 361,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->v + iVar3) = 0x800000;",
       "type": "pointer_cast"
     },
@@ -661,6 +774,7 @@
       "description": "Unresolved stack parameter",
       "line": 365,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "if (0 < *(int *)(in_stack_0000000c[1].actor_name + 0x14)) {",
       "type": "stack_param"
     },
@@ -668,6 +782,7 @@
       "description": "Unresolved stack parameter",
       "line": 382,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "} while (iVar3 < *(int *)(in_stack_0000000c[1].actor_name + 0x14));",
       "type": "stack_param"
     },
@@ -675,6 +790,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 388,
       "match": "2.8026e-45",
+      "severity": "mild",
       "text": "local_bc.min.x = 2.8026e-45;",
       "type": "suspect_float"
     },
@@ -682,6 +798,7 @@
       "description": "Unresolved stack parameter",
       "line": 390,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "pcStack_30 = in_stack_0000000c[1].actor_name + 0x18;",
       "type": "stack_param"
     },
@@ -689,6 +806,7 @@
       "description": "Unresolved stack parameter",
       "line": 393,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "pUStack_28 = &in_stack_0000000c[1].orient;",
       "type": "stack_param"
     },
@@ -696,6 +814,7 @@
       "description": "Unresolved stack parameter",
       "line": 394,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "pfStack_2c = &in_stack_0000000c[1].location.position.y;",
       "type": "stack_param"
     },
@@ -703,6 +822,7 @@
       "description": "Unresolved stack parameter",
       "line": 395,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "for (iStack_8 = 0; iStack_8 < *(int *)(in_stack_0000000c[1].actor_name + 0x14) * 2;",
       "type": "stack_param"
     },
@@ -710,6 +830,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 398,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_6c.x = (int)ROUND(*(float *)pcVar4 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -717,6 +838,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 399,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_6c.y = (int)ROUND(*(float *)(pcVar4 + 4) * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -724,6 +846,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 400,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_6c.z = (int)ROUND((((CLocation *)(pcVar4 + 8))->position).x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -731,6 +854,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 403,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_9c.x = (int)ROUND(*pfStack_2c * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -738,6 +862,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 404,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_9c.y = (int)ROUND(pfStack_2c[1] * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -745,6 +870,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 405,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_9c.z = (int)ROUND(pfStack_2c[2] * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -752,6 +878,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 408,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_54.x = (int)ROUND((pUStack_28->vec).x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -759,6 +886,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 409,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_54.y = (int)ROUND((pUStack_28->vec).y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -766,6 +894,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 410,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_54.z = (int)ROUND((pUStack_28->vec).z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -773,6 +902,7 @@
       "description": "Complex pointer cast",
       "line": 416,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->z + iVar3) = 0;",
       "type": "pointer_cast"
     },
@@ -780,6 +910,7 @@
       "description": "Complex pointer cast",
       "line": 417,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->r + iVar3) = 0xff00;",
       "type": "pointer_cast"
     },
@@ -787,6 +918,7 @@
       "description": "Complex pointer cast",
       "line": 418,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->g + iVar3) = 0;",
       "type": "pointer_cast"
     },
@@ -794,6 +926,7 @@
       "description": "Complex pointer cast",
       "line": 419,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->fog + iVar3) = 0x8000;",
       "type": "pointer_cast"
     },
@@ -801,6 +934,7 @@
       "description": "Complex pointer cast",
       "line": 420,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->u + iVar3) = 0x800000;",
       "type": "pointer_cast"
     },
@@ -808,6 +942,7 @@
       "description": "Complex pointer cast",
       "line": 422,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->v + iVar3) = 0x800000;",
       "type": "pointer_cast"
     },
@@ -815,6 +950,7 @@
       "description": "Complex pointer cast",
       "line": 426,
       "match": "(UOrientationVector *)((int)",
+      "severity": "mild",
       "text": "pUStack_28 = (UOrientationVector *)((int)pUStack_28 + 0x38);",
       "type": "pointer_cast"
     },
@@ -822,6 +958,7 @@
       "description": "Unresolved stack parameter",
       "line": 430,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_0000000c);",
       "type": "stack_param"
     },

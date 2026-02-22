@@ -17,6 +17,7 @@
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 11,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 194,
     "suspect_count": 8,
     "suspect_types": [
@@ -372,6 +373,7 @@
       "description": "Complex pointer cast",
       "line": 45,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&DAT_00823c54 + iVar5) = 0;",
       "type": "pointer_cast"
     },
@@ -379,6 +381,7 @@
       "description": "Undefined global data reference",
       "line": 45,
       "match": "DAT_00823c54",
+      "severity": "mild",
       "text": "*(uint *)((int)&DAT_00823c54 + iVar5) = 0;",
       "type": "undefined_data"
     },
@@ -386,6 +389,7 @@
       "description": "Undefined global data reference",
       "line": 58,
       "match": "DAT_00823c54",
+      "severity": "mild",
       "text": "(&DAT_00823c54)[iVar5] =",
       "type": "undefined_data"
     },
@@ -393,6 +397,7 @@
       "description": "Undefined global data reference",
       "line": 59,
       "match": "DAT_00823c54",
+      "severity": "mild",
       "text": "(float)(&DAT_00823c54)[iVar5] + (pCVar9->fire_effects[0].size * fVar2) / fVar1;",
       "type": "undefined_data"
     },
@@ -400,6 +405,7 @@
       "description": "Complex pointer cast",
       "line": 70,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "if ((float)65535 <= *(float *)((int)&DAT_00823c54 + iVar5)) {",
       "type": "pointer_cast"
     },
@@ -407,6 +413,7 @@
       "description": "Undefined global data reference",
       "line": 70,
       "match": "DAT_00823c54",
+      "severity": "mild",
       "text": "if ((float)65535 <= *(float *)((int)&DAT_00823c54 + iVar5)) {",
       "type": "undefined_data"
     },
@@ -414,6 +421,7 @@
       "description": "Complex pointer cast",
       "line": 78,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "[*(int *)((int)pCVar4->bone_to_part_map + iVar5)] == 0) {",
       "type": "pointer_cast"
     },
@@ -421,6 +429,7 @@
       "description": "Complex pointer cast",
       "line": 138,
       "match": "(CLocation *)((int)",
+      "severity": "mild",
       "text": "pCVar11 = (CLocation *)((int)(pCVar11 + 0x2a) + 4);",
       "type": "pointer_cast"
     }

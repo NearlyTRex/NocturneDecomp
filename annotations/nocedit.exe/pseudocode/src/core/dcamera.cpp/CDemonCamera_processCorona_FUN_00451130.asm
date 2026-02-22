@@ -7,7 +7,7 @@
 ; CDemonCamera *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_set.cpp_CDemonSet_FUN_0056c1a0 at 0056c245
+;   core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0 at 0056c245
 ;
 ; Referenced Globals:
 ;   char[241][320] g_CoronaBlurOutputBuffer

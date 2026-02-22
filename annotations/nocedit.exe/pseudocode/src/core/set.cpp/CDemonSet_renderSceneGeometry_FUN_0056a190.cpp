@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Variable defined which should be unmapped: local_1c */
+
 void __cdecl core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(CDemonSet *this_ptr,float frustum_param,int render_mode)
 
 {
@@ -13,7 +15,7 @@ void __cdecl core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(CDemonSet *
   int *visible_cube_indices;
   int iVar1;
   CDemonSet *pCVar2;
-  int **in_stack_ffffffe4;
+  CVector3f local_1c;
   
   engine_drender_cpp_CDemonRenderer_setLightDirection_FUN_0048c6c0
             (g_CDemonRendererPtr2,&g_GlobalLightDirection);
@@ -44,7 +46,7 @@ LAB_0056a1fb:
     core_dtrace_cpp_CDemonRaytrace_savePVS_FUN_00498fb0
               (&g_CDemonRaytraceInstance,
                &this_ptr->cameras[this_ptr->selected_camera_index].pvs_count,
-               &this_ptr->cameras[this_ptr->selected_camera_index].pvs_list,in_stack_ffffffe4);
+               &this_ptr->cameras[this_ptr->selected_camera_index].pvs_list,(int **)local_1c.x);
   }
   iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
   if (iVar1 == 0) {
@@ -53,14 +55,17 @@ LAB_0056a1fb:
     }
     if (g_UseExternalRenderer == 0) {
       if (this_ptr->use_enviro_model != 0) {
+        local_1c.x = (float)g_UseExternalRenderer;
+        local_1c.y = (float)g_UseExternalRenderer;
+        local_1c.z = (float)g_UseExternalRenderer;
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-                  (g_CDemonRendererPtr2,(CVector3f *)&stack0xffffffe4);
+                  (g_CDemonRendererPtr2,&local_1c);
         core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
-                  (&g_CKeyFramedModelInstance,(CKeyFramedModelInstance *)0x0,0,-1);
+                  (&g_CKeyFramedModelInstance,0,(CKeyFramedModelInstance *)0x0,-1);
       }
       if ((this_ptr->disable_sky_rendering == 0) && (this_ptr->has_sky != 0)) {
         core_dskybox_cpp_renderSkyDome_FUN_004901f0
-                  (g_SkyDomeTexturePtr,this_ptr->sky_texture_name,(float)this_ptr->sky_type);
+                  (g_SkyDomeTexturePtr,this_ptr->sky_texture_name,this_ptr->sky_brightness);
       }
       if ((this_ptr->disable_water_rendering == 0) &&
          (core_water_cpp_CWater_calculateVisibleTiles_FUN_005e9e70(g_CWaterPtr),
@@ -84,7 +89,7 @@ LAB_0056a1fb:
         core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
                   (&g_CDemonRaytraceInstance,frustum_param,0);
         iVar1 = iVar1 + 1;
-        core_set_cpp_FUN_00570af0();
+        core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_00570af0(this_ptr);
         pCVar2 = (CDemonSet *)pCVar2->cameras;
       } while (iVar1 < this_ptr->mirror_glass_actor_count);
     }
@@ -102,7 +107,7 @@ LAB_0056a1fb:
                 (&g_CDemonRaytraceInstance,frustum_param,0);
       pCVar2 = (CDemonSet *)pCVar2->cameras;
       iVar1 = iVar1 + 1;
-      core_set_cpp_FUN_00570af0();
+      core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_00570af0(this_ptr);
     } while (iVar1 < this_ptr->mirror_glass_actor_count);
   }
   return;

@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 14,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 162,
     "suspect_count": 4,
     "suspect_types": [
@@ -21,7 +22,7 @@
     {
       "addr": "0056c990",
       "from_addr": "0056cc86",
-      "name": "core_set.cpp_CDemonSet_FUN_0056c990",
+      "name": "core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -307,6 +308,7 @@
       "description": "Complex pointer cast",
       "line": 28,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)g_NoiseTable + iVar7) = (uVar4 & 0x1f) - 0x10;",
       "type": "pointer_cast"
     },
@@ -314,6 +316,7 @@
       "description": "Complex pointer cast",
       "line": 36,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar1 = (uint *)((int)g_ScreenBufferArray + iVar6);",
       "type": "pointer_cast"
     },
@@ -321,6 +324,7 @@
       "description": "Complex pointer cast",
       "line": 55,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar8 = (uint *)((int)g_ScreenBufferArray[iVar7] + screen_x * 4);",
       "type": "pointer_cast"
     },
@@ -328,6 +332,7 @@
       "description": "Complex pointer cast",
       "line": 116,
       "match": "(ushort *)((int)",
+      "severity": "mild",
       "text": "puVar9 = (ushort *)((int)g_ScreenBufferArray[iVar7] + screen_x * 2);",
       "type": "pointer_cast"
     }

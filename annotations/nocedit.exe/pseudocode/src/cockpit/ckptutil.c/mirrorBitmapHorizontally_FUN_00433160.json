@@ -17,6 +17,7 @@
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 32,
     "suspect_count": 4,
     "suspect_types": [
@@ -142,6 +143,7 @@
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_00000010",
+      "severity": "moderate",
       "text": "int in_stack_00000010;",
       "type": "stack_param"
     },
@@ -149,6 +151,7 @@
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_00000010",
+      "severity": "moderate",
       "text": "iVar2 = width * in_stack_00000010;",
       "type": "stack_param"
     },
@@ -156,6 +159,7 @@
       "description": "Complex pointer cast",
       "line": 28,
       "match": "(byte *)((int)",
+      "severity": "mild",
       "text": "} while (puVar3 < (byte *)((int)bitmap_data + iVar2));",
       "type": "pointer_cast"
     },
@@ -163,6 +167,7 @@
       "description": "Complex pointer cast",
       "line": 31,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "bitmap_data = (void *)((int)bitmap_data + iVar2);",
       "type": "pointer_cast"
     }

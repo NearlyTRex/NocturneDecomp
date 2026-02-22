@@ -6,16 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 122,
-    "complexity_score": 82,
+    "complexity_score": 83,
     "cross_reference_count": 7,
     "function_call_count": 1,
     "global_count": 6,
-    "pseudocode_lines": 57,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 58,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 179
+    "total_lines": 180
   },
   "cross_references": [
     {
@@ -212,14 +213,16 @@
       "description": "Complex pointer cast",
       "line": 30,
       "match": "(int *)((int)",
-      "text": "while (iVar3 < *(int *)((int)this_ptr->poly_vert_list + local_18 + 4)) {",
+      "severity": "mild",
+      "text": "while (iVar3 < *(int *)((int)this_ptr->poly_vert_list->vertices + local_18 + -0x14)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 31,
       "match": "(int *)((int)",
-      "text": "iVar1 = *(int *)((int)this_ptr->poly_vert_list + iVar6 + 0x18 + local_18);",
+      "severity": "mild",
+      "text": "iVar1 = *(int *)((int)&this_ptr->poly_vert_list->vertices[0].vertex_index +",
       "type": "pointer_cast"
     }
   ]

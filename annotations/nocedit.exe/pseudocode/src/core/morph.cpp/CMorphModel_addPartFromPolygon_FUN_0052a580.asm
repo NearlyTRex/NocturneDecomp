@@ -1,24 +1,24 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_0052a580(CMorphModel *this_ptr,int vertex_count,CVector3i *vertex_data,int poly_count,SMRGLPrimitiveQuad *poly_data,int poly_stride,SMRGLTextureLod *texture_list,int *texture_index_list)
+; void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_0052a580(CMorphModel *this_ptr,int vertex_count,CVector3i *vertex_data,int poly_count,SMRGLHeaderPrimitive *poly_data,int poly_stride,SMRGLTextureLod *texture_list,int *texture_index_list)
 ;
 ; Parameters:
 ; CMorphModel *    Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   vertex_count
 ; CVector3i *      Stack[0xc]:4   vertex_data
 ; int              Stack[0x10]:4   poly_count
-; SMRGLPrimitiveQuad * Stack[0x14]:4   poly_data
+; SMRGLHeaderPrimitive * Stack[0x14]:4   poly_data
 ; int              Stack[0x18]:4   poly_stride
 ; SMRGLTextureLod * Stack[0x1c]:4   texture_list
 ; int *            Stack[0x20]:4   texture_index_list
 ;
 ; XREF[5]:
 ;   core_morph.cpp_CMorphModel_addPartFromKeyFramedModel_FUN_0052a8d0 at 0052a90e
-;   core_morph.cpp_CMorph_addPartToModel_FUN_0052b4b0 at 0052b4f0
-;   core_morph.cpp_CMorph_addPartToModel_FUN_0052b500 at 0052b540
-;   core_morph.cpp_CMorph_setupModelFromPolygons_FUN_0052b370 at 0052b3b9
-;   core_morph.cpp_CMorph_setupModelFromPolygons_FUN_0052b3d0 at 0052b419
+;   core_morph.cpp_CMorph_addQuadPartToModel_FUN_0052b500 at 0052b540
+;   core_morph.cpp_CMorph_addTriPartToModel_FUN_0052b4b0 at 0052b4f0
+;   core_morph.cpp_CMorph_setupModelFromQuadPolygons_FUN_0052b3d0 at 0052b419
+;   core_morph.cpp_CMorph_setupModelFromTriPolygons_FUN_0052b370 at 0052b3b9
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_morph_cpp_0063a103
@@ -196,7 +196,7 @@ section .text
     PUSH EAX                            ; 0052a6f6
     PUSH ESI                            ; 0052a6f7
     CALL core_morph.cpp_CMorphModel_setFaceListFromPolygon_FUN_0052aac0 ; 0052a6f8
-        ;   XREF to: 0052aac0 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_setFaceListFromPolygon_FUN_0052aac0(CMorphModel * this_ptr, int part_index, SMRGLPrimitiveQuad * poly_data, int poly_stride, ...)
+        ;   XREF to: 0052aac0 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_setFaceListFromPolygon_FUN_0052aac0(CMorphModel * this_ptr, int part_index, SMRGLHeaderPrimitive * poly_data, int poly_stride, ...)
     ADD ESP,0x20                        ; 0052a6fd
     POP EBP                             ; 0052a700
     POP EDI                             ; 0052a701

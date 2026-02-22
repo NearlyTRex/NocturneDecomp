@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 56,
     "suspect_count": 3,
     "suspect_types": [
@@ -163,6 +164,7 @@
       "description": "Complex pointer cast",
       "line": 21,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "piVar5 = (int *)((int)allocation->granules + local_14);",
       "type": "pointer_cast"
     },
@@ -170,6 +172,7 @@
       "description": "Complex pointer cast",
       "line": 22,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar3 = (uint *)((int)quantized_samples->codes[0] + local_14);",
       "type": "pointer_cast"
     },
@@ -177,6 +180,7 @@
       "description": "Complex pointer cast",
       "line": 47,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar3 = (uint *)((int)quantized_samples->codes[0] + iVar6);",
       "type": "pointer_cast"
     }

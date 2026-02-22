@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 21,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 156,
     "suspect_count": 4,
     "suspect_types": [
@@ -384,6 +385,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 10,
       "match": "extraout_EAX",
+      "severity": "moderate",
       "text": "int extraout_EAX;",
       "type": "extra_output"
     },
@@ -391,6 +393,7 @@
       "description": "Complex pointer cast",
       "line": 87,
       "match": "(short *)((int)",
+      "severity": "mild",
       "text": "*(short *)((int)this_ptr->terrain_data + (local_18 * this_ptr->width + iVar8) * 4) =",
       "type": "pointer_cast"
     },
@@ -398,6 +401,7 @@
       "description": "Complex pointer cast",
       "line": 150,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "_fread((void *)((int)this_ptr->terrain_data + iVar4 * 4 + 2),1,2,local_1c);",
       "type": "pointer_cast"
     },
@@ -405,6 +409,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 158,
       "match": "extraout_EAX",
+      "severity": "moderate",
       "text": "return extraout_EAX;",
       "type": "extra_output"
     }

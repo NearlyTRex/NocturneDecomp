@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 10,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 114,
     "suspect_count": 5,
     "suspect_types": [
@@ -368,6 +369,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 42,
       "match": "NAN",
+      "severity": "mild",
       "text": "local_18 = -NAN;",
       "type": "decompiler_intrinsic"
     },
@@ -375,6 +377,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 47,
       "match": "NAN",
+      "severity": "mild",
       "text": "if (local_18 != -NAN) {",
       "type": "decompiler_intrinsic"
     },
@@ -382,6 +385,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 52,
       "match": "1.12104e-43",
+      "severity": "mild",
       "text": "if (local_28 == 1.12104e-43) {",
       "type": "suspect_float"
     },
@@ -389,6 +393,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 76,
       "match": "1.23314e-43",
+      "severity": "mild",
       "text": "if (local_28 == 1.23314e-43) {",
       "type": "suspect_float"
     },
@@ -396,6 +401,7 @@
       "description": "Likely misinterpreted integer as float",
       "line": 85,
       "match": "1.26117e-43",
+      "severity": "mild",
       "text": "else if (local_28 == 1.26117e-43) {",
       "type": "suspect_float"
     }

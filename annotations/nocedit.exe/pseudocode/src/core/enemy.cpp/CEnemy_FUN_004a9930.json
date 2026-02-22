@@ -23,6 +23,7 @@
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 22,
     "suspect_count": 13,
     "suspect_types": [
@@ -193,6 +194,7 @@
       "description": "Unresolved stack parameter",
       "line": 8,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "CVector3f *in_stack_00000008;",
       "type": "stack_param"
     },
@@ -200,6 +202,7 @@
       "description": "Unresolved stack parameter",
       "line": 9,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "CVector3f *in_stack_0000000c;",
       "type": "stack_param"
     },
@@ -207,6 +210,7 @@
       "description": "Unresolved stack parameter",
       "line": 10,
       "match": "in_stack_00000010",
+      "severity": "moderate",
       "text": "SDamageInfo *in_stack_00000010;",
       "type": "stack_param"
     },
@@ -214,6 +218,7 @@
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "(this_ptr_00,in_stack_00000008,in_stack_0000000c,in_stack_00000010,",
       "type": "stack_param"
     },
@@ -221,6 +226,7 @@
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "(this_ptr_00,in_stack_00000008,in_stack_0000000c,in_stack_00000010,",
       "type": "stack_param"
     },
@@ -228,6 +234,7 @@
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_00000010",
+      "severity": "moderate",
       "text": "(this_ptr_00,in_stack_00000008,in_stack_0000000c,in_stack_00000010,",
       "type": "stack_param"
     },
@@ -235,6 +242,7 @@
       "description": "Direct stack address reference",
       "line": 16,
       "match": "&stack0xffffffe0",
+      "severity": "moderate",
       "text": "(CVector3f *)&stack0xffffffe0);",
       "type": "stack_ref"
     },
@@ -242,6 +250,7 @@
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_00000010",
+      "severity": "moderate",
       "text": "if (0.0 < (double)in_stack_00000010->damage_amount) {",
       "type": "stack_param"
     },
@@ -249,6 +258,7 @@
       "description": "Direct stack address reference",
       "line": 19,
       "match": "&stack0xfffffff4",
+      "severity": "moderate",
       "text": "(g_CGorePtr,(CVector3f *)&stack0xfffffff4,(CVector3f *)0x0,",
       "type": "stack_ref"
     },
@@ -256,6 +266,7 @@
       "description": "Unresolved stack parameter",
       "line": 20,
       "match": "in_stack_00000010",
+      "severity": "moderate",
       "text": "(int)ROUND(ROUND((double)in_stack_00000010->damage_amount * 1.2 *",
       "type": "stack_param"
     },
@@ -263,6 +274,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 20,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND((double)in_stack_00000010->damage_amount * 1.2 *",
       "type": "decompiler_intrinsic"
     },
@@ -270,6 +282,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 20,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND((double)in_stack_00000010->damage_amount * 1.2 *",
       "type": "decompiler_intrinsic"
     },

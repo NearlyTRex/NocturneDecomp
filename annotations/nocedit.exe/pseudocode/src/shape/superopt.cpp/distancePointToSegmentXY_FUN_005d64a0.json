@@ -31,15 +31,18 @@
   },
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 145,
+    "complexity_score": 175,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 25,
-    "suspect_count": 10,
+    "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
+      "double_reconstruction",
       "pointer_cast",
+      "stack_alignment_array",
       "stack_param",
       "stack_ref"
     ],
@@ -183,13 +186,23 @@
       "description": "Unresolved stack parameter",
       "line": 7,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "CVector3d *in_stack_00000004;",
       "type": "stack_param"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 8,
+      "match": "auStackY_1824",
+      "severity": "moderate",
+      "text": "uint auStackY_1824 [1524];",
+      "type": "stack_alignment_array"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "shape_superopt_cpp_closestPointOnSegment3D_FUN_005d6020(in_stack_00000004,segStart,segEnd);",
       "type": "stack_param"
     },
@@ -197,6 +210,7 @@
       "description": "Direct stack address reference",
       "line": 17,
       "match": "&stack0xffffffcc",
+      "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffcc + (uint)bVar2 * -8) =",
       "type": "stack_ref"
     },
@@ -204,6 +218,7 @@
       "description": "Complex pointer cast",
       "line": 17,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&stack0xffffffcc + (uint)bVar2 * -8) =",
       "type": "pointer_cast"
     },
@@ -211,6 +226,7 @@
       "description": "Direct stack address reference",
       "line": 18,
       "match": "&stack0xffffffbc",
+      "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffbc + (uint)bVar2 * -8);",
       "type": "stack_ref"
     },
@@ -218,6 +234,7 @@
       "description": "Direct stack address reference",
       "line": 20,
       "match": "&stack0xffffffc0",
+      "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffc0 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
       "type": "stack_ref"
     },
@@ -225,6 +242,7 @@
       "description": "Complex pointer cast",
       "line": 21,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)(local_30 + (-(uint)bVar2 - (uint)bVar2)) + ((uint)bVar2 * -2 + 1) * 4) =",
       "type": "pointer_cast"
     },
@@ -232,13 +250,23 @@
       "description": "Direct stack address reference",
       "line": 23,
       "match": "&stack0xffffffc0",
+      "severity": "moderate",
       "text": "((int)(&stack0xffffffc0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) + ((uint)bVar2 * -2 + 1) * 4)",
       "type": "stack_ref"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 25,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "dVar1 = segEnd->x - (double)CONCAT44(uStack_34,local_38);",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 25,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "dVar1 = segEnd->x - (double)CONCAT44(uStack_34,local_38);",
       "type": "decompiler_intrinsic"
     },
@@ -246,6 +274,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 27,
       "match": "SQRT",
+      "severity": "mild",
       "text": "return SQRT(local_30[0] * local_30[0] + dVar1 * dVar1);",
       "type": "decompiler_intrinsic"
     }

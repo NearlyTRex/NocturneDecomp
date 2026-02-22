@@ -17,6 +17,7 @@
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 2,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 47,
     "suspect_count": 8,
     "suspect_types": [
@@ -181,6 +182,7 @@
       "description": "Type propagation did not converge",
       "line": 2,
       "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
     },
@@ -188,6 +190,7 @@
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "SPose *in_stack_00000008;",
       "type": "stack_param"
     },
@@ -195,6 +198,7 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 15,
       "match": "code *",
+      "severity": "moderate",
       "text": "code *blend_callback;",
       "type": "unresolved_funcptr"
     },
@@ -202,6 +206,7 @@
       "description": "Complex pointer cast",
       "line": 38,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar3 = (uint *)((int)&local_3c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
       "type": "pointer_cast"
     },
@@ -209,6 +214,7 @@
       "description": "Complex pointer cast",
       "line": 39,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar2 = (uint *)((int)&local_2c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
       "type": "pointer_cast"
     },
@@ -216,6 +222,7 @@
       "description": "Complex pointer cast",
       "line": 40,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_3c + (uint)bVar4 * -8 + 4) =",
       "type": "pointer_cast"
     },
@@ -223,6 +230,7 @@
       "description": "Complex pointer cast",
       "line": 41,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_2c + (uint)bVar4 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -230,6 +238,7 @@
       "description": "Unresolved stack parameter",
       "line": 47,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "(this_ptr_00,in_stack_00000008);",
       "type": "stack_param"
     }

@@ -17,6 +17,7 @@
     "cross_reference_count": 3,
     "function_call_count": 14,
     "global_count": 12,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 146,
     "suspect_count": 8,
     "suspect_types": [
@@ -448,6 +449,7 @@
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_ffffff48",
+      "severity": "moderate",
       "text": "ulonglong in_stack_ffffff48;",
       "type": "stack_param"
     },
@@ -455,6 +457,7 @@
       "description": "Unresolved stack parameter",
       "line": 63,
       "match": "in_stack_ffffff48",
+      "severity": "moderate",
       "text": "(this_ptr_00,pCVar3,(CVector3f *)in_stack_ffffff48,",
       "type": "stack_param"
     },
@@ -462,6 +465,7 @@
       "description": "Unresolved stack parameter",
       "line": 64,
       "match": "in_stack_ffffff48",
+      "severity": "moderate",
       "text": "(CVector3f *)((ulonglong)in_stack_ffffff48 >> 0x20));",
       "type": "stack_param"
     },
@@ -469,6 +473,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 90,
       "match": "NAN",
+      "severity": "mild",
       "text": "out_hit_normal[1].y = -NAN;",
       "type": "decompiler_intrinsic"
     },
@@ -476,6 +481,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 91,
       "match": "NAN",
+      "severity": "mild",
       "text": "out_hit_normal[1].z = -NAN;",
       "type": "decompiler_intrinsic"
     },
@@ -483,6 +489,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 92,
       "match": "NAN",
+      "severity": "mild",
       "text": "out_hit_normal[2].x = -NAN;",
       "type": "decompiler_intrinsic"
     },
@@ -490,6 +497,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 94,
       "match": "NAN",
+      "severity": "mild",
       "text": "out_hit_normal[1].x = -NAN;",
       "type": "decompiler_intrinsic"
     },
@@ -497,6 +505,7 @@
       "description": "Direct stack address reference",
       "line": 135,
       "match": "&stack0x00000000",
+      "severity": "moderate",
       "text": "if ((int *)&stack0x00000000 != &g_DeformableModelPool[0].lod_info[2].shadow_only_flag) {",
       "type": "stack_ref"
     }

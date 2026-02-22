@@ -4,19 +4,19 @@
       {
         "category": "other",
         "column": 33,
-        "line": 193,
+        "line": 191,
         "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
       },
       {
         "category": "syntax_error",
         "column": 61,
-        "line": 193,
+        "line": 191,
         "message": "expected ')'"
       },
       {
         "category": "undeclared_identifier",
         "column": 50,
-        "line": 193,
+        "line": 191,
         "message": "use of undeclared identifier 'undefined3'"
       }
     ],
@@ -25,18 +25,18 @@
   },
   "complexity": {
     "assembly_lines": 362,
-    "complexity_score": 280,
+    "complexity_score": 263,
     "cross_reference_count": 2,
     "function_call_count": 8,
     "global_count": 13,
-    "pseudocode_lines": 185,
-    "suspect_count": 8,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 183,
+    "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
       "unknown_field"
     ],
-    "total_lines": 547
+    "total_lines": 545
   },
   "cross_references": [
     {
@@ -62,7 +62,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dskybox.cpp_renderSkyDome_FUN_004901f0",
-    "signature": "void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0(SMRGLTextureBasic *sky_texture,char *texture_name,float brightness_factor)"
+    "signature": "void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0(SMRGLTextureBasic *sky_texture,char *texture_name,int brightness_factor)"
   },
   "function_calls": [
     {
@@ -531,22 +531,32 @@
         "name": "brightness_factor",
         "offset": 12,
         "size": 4,
-        "type": "float"
+        "type": "int"
       }
     ]
   },
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 86,
+      "line": 85,
       "match": "fsin",
+      "severity": "mild",
       "text": "fVar9 = (float10)fsin((float10)0.58904862253125001);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 87,
+      "line": 86,
       "match": "ROUND",
+      "severity": "mild",
+      "text": "local_6c.x = (int)ROUND(ROUND(fVar9 * (float10)g_SkyDomeVertexScale * (float10)256));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 86,
+      "match": "ROUND",
+      "severity": "mild",
       "text": "local_6c.x = (int)ROUND(ROUND(fVar9 * (float10)g_SkyDomeVertexScale * (float10)256));",
       "type": "decompiler_intrinsic"
     },
@@ -554,41 +564,31 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 87,
       "match": "ROUND",
-      "text": "local_6c.x = (int)ROUND(ROUND(fVar9 * (float10)g_SkyDomeVertexScale * (float10)256));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 88,
-      "match": "ROUND",
+      "severity": "mild",
       "text": "local_6c.y = (int)ROUND(ROUND((float10)g_SkyDomeVertexScale * (float10)256));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 88,
+      "line": 87,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_6c.y = (int)ROUND(ROUND((float10)g_SkyDomeVertexScale * (float10)256));",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 145,
-      "match": "(float *)((int)",
-      "text": "uv_offset = (float *)((int)uv_offset + 1);",
-      "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 186,
+      "line": 184,
       "match": "._3_1_",
+      "severity": "mild",
       "text": "local_28 = CONCAT13(local_28._3_1_ + '\\x01',(undefined3)local_28);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 186,
+      "line": 184,
       "match": "CONCAT13",
+      "severity": "mild",
       "text": "local_28 = CONCAT13(local_28._3_1_ + '\\x01',(undefined3)local_28);",
       "type": "decompiler_intrinsic"
     }

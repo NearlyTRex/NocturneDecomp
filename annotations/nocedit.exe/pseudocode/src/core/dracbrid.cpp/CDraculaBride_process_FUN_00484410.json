@@ -17,6 +17,7 @@
     "cross_reference_count": 0,
     "function_call_count": 38,
     "global_count": 54,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 730,
     "suspect_count": 9,
     "suspect_types": [
@@ -1314,6 +1315,7 @@
       "description": "Type propagation did not converge",
       "line": 3,
       "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
     },
@@ -1321,6 +1323,7 @@
       "description": "Unresolved stack parameter",
       "line": 25,
       "match": "in_stack_fffffb6c",
+      "severity": "moderate",
       "text": "float in_stack_fffffb6c;",
       "type": "stack_param"
     },
@@ -1328,6 +1331,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 103,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND((this_ptr->fade_timer * fVar15) / fVar16));",
       "type": "decompiler_intrinsic"
     },
@@ -1335,6 +1339,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 103,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND((this_ptr->fade_timer * fVar15) / fVar16));",
       "type": "decompiler_intrinsic"
     },
@@ -1342,6 +1347,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 373,
       "match": "SQRT",
+      "severity": "mild",
       "text": "SQRT(local_7c.z * local_7c.z + local_7c.x * local_7c.x + local_7c.y * local_7c.y)) {",
       "type": "decompiler_intrinsic"
     },
@@ -1349,6 +1355,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 377,
       "match": "ABS",
+      "severity": "mild",
       "text": "if (ABS(local_14) < (float)0.39269908168750001) {",
       "type": "decompiler_intrinsic"
     },
@@ -1356,6 +1363,7 @@
       "description": "Direct stack address reference",
       "line": 558,
       "match": "&stack0xfffffb6c",
+      "severity": "moderate",
       "text": "(&stack0xfffffb6c,\"bride-%d?.wav\",this_ptr->freaky_voice_number);",
       "type": "stack_ref"
     },
@@ -1363,6 +1371,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 608,
       "match": "SQRT",
+      "severity": "mild",
       "text": "if (SQRT(local_194 * local_194 + local_19c * local_19c + local_198 * local_198) <",
       "type": "decompiler_intrinsic"
     },
@@ -1370,6 +1379,7 @@
       "description": "Unresolved stack parameter",
       "line": 729,
       "match": "in_stack_fffffb6c",
+      "severity": "moderate",
       "text": "((CCharacter *)this_ptr,delta_time,in_stack_fffffb6c);",
       "type": "stack_param"
     }

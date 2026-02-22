@@ -10,6 +10,7 @@
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 5,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 14,
     "suspect_count": 2,
     "suspect_types": [
@@ -146,6 +147,7 @@
       "description": "Complex pointer cast",
       "line": 12,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)g_CoronaRightExtent + iVar2) = 0x13f;",
       "type": "pointer_cast"
     },
@@ -153,6 +155,7 @@
       "description": "Complex pointer cast",
       "line": 13,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)g_CoronaLeftExtent + iVar2) = 0;",
       "type": "pointer_cast"
     }

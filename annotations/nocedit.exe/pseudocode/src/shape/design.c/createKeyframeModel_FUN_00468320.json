@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 14,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 116,
     "suspect_count": 5,
     "suspect_types": [
@@ -349,6 +350,7 @@
       "description": "Type propagation did not converge",
       "line": 3,
       "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
     },
@@ -356,6 +358,7 @@
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_fffffd94",
+      "severity": "moderate",
       "text": "ulonglong in_stack_fffffd94;",
       "type": "stack_param"
     },
@@ -363,6 +366,7 @@
       "description": "Unresolved stack parameter",
       "line": 52,
       "match": "in_stack_fffffd94",
+      "severity": "moderate",
       "text": "for (local_18 = 0; pcVar5 = (char *)in_stack_fffffd94, local_18 < local_264.header.child_count",
       "type": "stack_param"
     },
@@ -370,6 +374,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 96,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_264.cycle_length = (int)ROUND(ROUND(local_14 * (float)65536));",
       "type": "decompiler_intrinsic"
     },
@@ -377,6 +382,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 96,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_264.cycle_length = (int)ROUND(ROUND(local_14 * (float)65536));",
       "type": "decompiler_intrinsic"
     }

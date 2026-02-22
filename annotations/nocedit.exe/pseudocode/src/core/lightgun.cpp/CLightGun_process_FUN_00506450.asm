@@ -34,7 +34,7 @@
 ;   core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770
 ;   core_inv.cpp_CInventory_calculateTotalBatteryCharge_FUN_004ffda0
 ;   core_lightgun.cpp_CLightGun_FUN_00505ac0
-;   core_set.cpp_CDemonSet_FUN_0056d090
+;   core_set.cpp_CDemonSet_addDynamicLight_FUN_0056d090
 ;   core_weapon.cpp_CWeapon_process_FUN_005ee110
 ;   core_weather.cpp_CWeather_createLightningStrike_FUN_005eeeb0
 ;   crt_math.c_round_FUN_005fe6b0
@@ -165,8 +165,8 @@ section .text
         ;   Label: LAB_005065be
     MOV EDI,dword ptr [0x006810c8]      ; 005065c3 | g_CDemonSetPtr
     PUSH EDI                            ; 005065c9 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_0056d090 ; 005065ca
-        ;   XREF to: 0056d090 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d090(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_addDynamicLight_FUN_0056d090 ; 005065ca
+        ;   XREF to: 0056d090 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addDynamicLight_FUN_0056d090(CDemonSet * this_ptr, CDemonLight * light)
     ADD ESP,0x8                         ; 005065cf
     MOV dword ptr [EBX + 0x578],0x0     ; 005065d2
     POP ESI                             ; 005065dc

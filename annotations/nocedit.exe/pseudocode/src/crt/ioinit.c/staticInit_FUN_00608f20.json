@@ -5,6 +5,7 @@
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 8,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 29,
     "suspect_count": 5,
     "suspect_types": [
@@ -139,6 +140,7 @@
       "description": "Unknown/mangled field access",
       "line": 10,
       "match": "._1_1_",
+      "severity": "mild",
       "text": "g_StderrLogFile._flag._1_1_ = g_StderrLogFile._flag._1_1_ & 0xf8 | 4;",
       "type": "unknown_field"
     },
@@ -146,6 +148,7 @@
       "description": "Unknown/mangled field access",
       "line": 10,
       "match": "._1_1_",
+      "severity": "mild",
       "text": "g_StderrLogFile._flag._1_1_ = g_StderrLogFile._flag._1_1_ & 0xf8 | 4;",
       "type": "unknown_field"
     },
@@ -153,6 +156,7 @@
       "description": "Complex pointer cast",
       "line": 25,
       "match": "(_FILE *)((int)",
+      "severity": "mild",
       "text": "p_Var2 = (_FILE *)((int)pp_Var4 + 0x1c);",
       "type": "pointer_cast"
     },
@@ -160,6 +164,7 @@
       "description": "Complex pointer cast",
       "line": 28,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "iVar1 = *(int *)((int)&p_Var2->_link + 2);",
       "type": "pointer_cast"
     },

@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 1,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 61,
     "suspect_count": 17,
     "suspect_types": [
@@ -167,6 +168,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 10,
       "match": "extraout_EAX",
+      "severity": "moderate",
       "text": "int extraout_EAX;",
       "type": "extra_output"
     },
@@ -174,6 +176,7 @@
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
@@ -181,6 +184,7 @@
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "uint *in_stack_0000000c;",
       "type": "stack_param"
     },
@@ -188,6 +192,7 @@
       "description": "Unresolved stack parameter",
       "line": 23,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "if (*in_stack_0000000c == 0) {",
       "type": "stack_param"
     },
@@ -195,6 +200,7 @@
       "description": "Unresolved stack parameter",
       "line": 28,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "iVar4 = uVar8 * 0x60 + in_stack_00000008;",
       "type": "stack_param"
     },
@@ -202,6 +208,7 @@
       "description": "Unresolved stack parameter",
       "line": 30,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "if (uVar6 < *in_stack_0000000c) {",
       "type": "stack_param"
     },
@@ -209,6 +216,7 @@
       "description": "Unresolved stack parameter",
       "line": 31,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "pdVar7 = (double *)(uVar6 * 0x60 + 0x28 + in_stack_00000008);",
       "type": "stack_param"
     },
@@ -216,6 +224,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 36,
       "match": "SQRT",
+      "severity": "mild",
       "text": "if (SQRT(dVar2 * dVar2 + dVar3 * dVar3 + dVar1 * dVar1) < 1e-10) break;",
       "type": "decompiler_intrinsic"
     },
@@ -223,6 +232,7 @@
       "description": "Unresolved stack parameter",
       "line": 39,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "} while (uVar6 < *in_stack_0000000c);",
       "type": "stack_param"
     },
@@ -230,6 +240,7 @@
       "description": "Unresolved stack parameter",
       "line": 41,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "if (uVar6 == *in_stack_0000000c) {",
       "type": "stack_param"
     },
@@ -237,6 +248,7 @@
       "description": "Unresolved stack parameter",
       "line": 42,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "return uVar6 ^ *in_stack_0000000c;",
       "type": "stack_param"
     },
@@ -244,6 +256,7 @@
       "description": "Unresolved stack parameter",
       "line": 45,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "dest = (void *)(in_stack_00000008 + uVar8 * 0x60);",
       "type": "stack_param"
     },
@@ -251,6 +264,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 52,
       "match": "extraout_EAX",
+      "severity": "moderate",
       "text": "if (extraout_EAX == 0) {",
       "type": "extra_output"
     },
@@ -258,6 +272,7 @@
       "description": "Unresolved stack parameter",
       "line": 57,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "(*in_stack_0000000c - (uVar8 + iVar4)) * 0x60);",
       "type": "stack_param"
     },
@@ -265,6 +280,7 @@
       "description": "Unresolved stack parameter",
       "line": 58,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "*in_stack_0000000c = *in_stack_0000000c - iVar4;",
       "type": "stack_param"
     },
@@ -272,6 +288,7 @@
       "description": "Unresolved stack parameter",
       "line": 58,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "*in_stack_0000000c = *in_stack_0000000c - iVar4;",
       "type": "stack_param"
     },
@@ -279,6 +296,7 @@
       "description": "Unresolved stack parameter",
       "line": 60,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "if (*in_stack_0000000c <= uVar8) {",
       "type": "stack_param"
     }

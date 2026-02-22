@@ -5,6 +5,7 @@
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 1,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 18,
     "suspect_count": 2,
     "suspect_types": [
@@ -88,6 +89,7 @@
       "description": "Direct stack address reference",
       "line": 14,
       "match": "&stack0xfffffff4",
+      "severity": "moderate",
       "text": "*(int *)(&stack0xfffffff4 + iVar3) = iVar3;",
       "type": "stack_ref"
     },

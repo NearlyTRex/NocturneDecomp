@@ -125,11 +125,12 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_0057b600(CDemonSet *this_ptr)
     iVar2 = core_setedit_cpp_CDemonSet_FUN_0057ae50(this_ptr);
     if (iVar2 != 0) {
       this_ptr->light_count = this_ptr->light_count + 1;
-      core_set_cpp_CDemonSet_FUN_0056d2d0(this_ptr);
+      core_set_cpp_CDemonSet_clearLights_FUN_0056d2d0(this_ptr);
       iVar2 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                         (g_CEditorToolsPtr,"Precompute light visibility?");
       if (iVar2 != 0) {
-        core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(this_ptr);
+        core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470
+                  (this_ptr,this_ptr->light_count + -1);
       }
       core_set_cpp_CDemonSet_initScene_FUN_0056aa10(this_ptr);
       return;

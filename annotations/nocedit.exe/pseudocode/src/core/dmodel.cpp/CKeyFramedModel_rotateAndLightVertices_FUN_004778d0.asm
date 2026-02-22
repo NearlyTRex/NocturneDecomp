@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dmodel_cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004778d0(CKeyFramedModel *this_ptr,CKeyFramedModelInstance *instance,int frame_index)
+; void __cdecl core_dmodel_cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004778d0(CKeyFramedModel *this_ptr,int frame_index,CKeyFramedModelInstance *instance)
 ;
 ; Parameters:
 ; CKeyFramedModel * Stack[0x4]:4   this_ptr
-; CKeyFramedModelInstance * Stack[0x8]:4   instance
-; int              Stack[0xc]:4   frame_index
+; int              Stack[0x8]:4   frame_index
+; CKeyFramedModelInstance * Stack[0xc]:4   instance
 ;
 ; XREF[1]:
 ;   core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850 at 0047786f
@@ -70,7 +70,7 @@ section .text
     MOV EBX,dword ptr [0x006810c8]      ; 00477930 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EBX                            ; 00477936 | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0 ; 00477937
-        ;   XREF to: 0056eac0 (UNCONDITIONAL_CALL)  ; float core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet * this_ptr, int vertex_count, int tri_count, SInputFace * tri_data_ptr, ...)
+        ;   XREF to: 0056eac0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet * this_ptr, int vertex_count, int tri_count, void * face_data, ...)
     ADD ESP,0x1c                        ; 0047793c
     POP EBP                             ; 0047793f
     POP EDI                             ; 00477940
@@ -90,7 +90,7 @@ section .text
     MOV EDI,dword ptr [0x006810c8]      ; 0047795d | g_CDemonSetPtr
     PUSH EDI                            ; 00477963 | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0 ; 00477964
-        ;   XREF to: 0056eac0 (UNCONDITIONAL_CALL)  ; float core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet * this_ptr, int vertex_count, int tri_count, SInputFace * tri_data_ptr, ...)
+        ;   XREF to: 0056eac0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet * this_ptr, int vertex_count, int tri_count, void * face_data, ...)
     ADD ESP,0x1c                        ; 00477969
     POP EBP                             ; 0047796c
     POP EDI                             ; 0047796d

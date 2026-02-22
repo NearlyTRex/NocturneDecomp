@@ -15,7 +15,9 @@ void __cdecl core_morph_cpp_CMorph_render_FUN_0052bae0(CMorph *this_ptr,float mo
   if (1.0 < morph_t) {
     morph_t = 1.0;
   }
-  core_morph_cpp_CMorphModel_render_FUN_0052af30(this_ptr->models,1.0 - morph_t);
-  core_morph_cpp_CMorphModel_render_FUN_0052af30(this_ptr->models + 1,morph_t);
+  core_morph_cpp_CMorphModel_render_FUN_0052af30
+            (this_ptr->models,1.0 - morph_t,this_ptr->models[1].points);
+  core_morph_cpp_CMorphModel_render_FUN_0052af30
+            (this_ptr->models + 1,morph_t,this_ptr->models[0].points);
   return;
 }

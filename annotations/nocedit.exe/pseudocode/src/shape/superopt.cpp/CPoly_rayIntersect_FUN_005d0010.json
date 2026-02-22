@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 3,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 108,
     "suspect_count": 9,
     "suspect_types": [
@@ -412,6 +413,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 55,
       "match": "SQRT",
+      "severity": "mild",
       "text": "dVar1 = 1.0 / SQRT(local_28 * local_28 + local_30 * local_30 + local_38 * local_38);",
       "type": "decompiler_intrinsic"
     },
@@ -419,6 +421,7 @@
       "description": "Complex pointer cast",
       "line": 78,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar6 = (double *)((int)pdVar6 + 4);",
       "type": "pointer_cast"
     },
@@ -426,6 +429,7 @@
       "description": "Complex pointer cast",
       "line": 79,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar7 = (double *)((int)pdVar7 + 4);",
       "type": "pointer_cast"
     },
@@ -433,6 +437,7 @@
       "description": "Complex pointer cast",
       "line": 88,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar6 = (double *)((int)pdVar6 + 4);",
       "type": "pointer_cast"
     },
@@ -440,6 +445,7 @@
       "description": "Complex pointer cast",
       "line": 89,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar7 = (double *)((int)pdVar7 + 4);",
       "type": "pointer_cast"
     },
@@ -447,6 +453,7 @@
       "description": "Complex pointer cast",
       "line": 98,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "pdVar6 = (double *)((int)pdVar6 + 4);",
       "type": "pointer_cast"
     },
@@ -454,6 +461,7 @@
       "description": "Complex pointer cast",
       "line": 102,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&out_hit_point->x + 4) = local_c8[1];",
       "type": "pointer_cast"
     },
@@ -461,6 +469,7 @@
       "description": "Complex pointer cast",
       "line": 104,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&out_hit_point->y + 4) = local_c8[3];",
       "type": "pointer_cast"
     },
@@ -468,6 +477,7 @@
       "description": "Complex pointer cast",
       "line": 106,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&out_hit_point->z + 4) = local_b4;",
       "type": "pointer_cast"
     }

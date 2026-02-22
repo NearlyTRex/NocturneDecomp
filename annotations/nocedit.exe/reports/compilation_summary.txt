@@ -5,18 +5,18 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6494
-Successful: 5493 (84.6%)
-Failed: 1001
+Successful: 5495 (84.6%)
+Failed: 999
 
 ERROR CATEGORIES
 --------------------------------------------------
   other                           1631
-  undeclared_identifier            887
-  incompatible_types               677
-  format_error                     584
+  undeclared_identifier            865
+  incompatible_types               680
+  format_error                     583
   syntax_error                      82
   missing_member                    27
-  lvalue_required                   27
+  lvalue_required                   23
   type_error                        18
   pointer_precision                  2
 
@@ -38,12 +38,14 @@ CATEGORY: other (1631 errors)
     Line 96: C-style cast from 'CFrankenstienMachine *' to 'float' is not allowed...
   core_gabriela.cpp_CGabriella_FUN_004d4890
     Line 81: C-style cast from 'CGabriella *' to 'float' is not allowed...
-  core_set.cpp_CDemonSet_FUN_0056fbd0
-    Line 119: C-style cast from 'CHero *' to 'float' is not allowed...
+  core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0
+    Line 120: C-style cast from 'CHero *' to 'float' is not allowed...
   core_msnedit.cpp_CDemonMission_FUN_0053e220
     Line 113: C-style cast from 'CKeys *' to 'float' is not allowed...
   core_larva.cpp_CLarva_process_FUN_00503080
     Line 365: C-style cast from 'CLarva *' to 'float' is not allowed...
+  core_set.cpp_CDemonSet_setLightingParameters_FUN_0056d380
+    Line 40: C-style cast from 'CMatrix3x3f *' to 'float' is not allowed...
   core_ghoul.cpp_CGhoul_process_FUN_004e6600
     Line 170: C-style cast from 'CPlatform *' to 'float' is not allowed...
   core_crossbow.cpp_CCrossbow_fire_FUN_00448f20
@@ -82,15 +84,15 @@ CATEGORY: other (1631 errors)
     Line 112: C-style cast from 'float *' to 'float' is not allowed...
   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0
     Line 152: C-style cast from 'float *' to 'float' is not allowed...
-  core_hero.cpp_CHero_FUN_004f33b0
-    Line 57: C-style cast from 'struct CDemonActor *' to 'float' is not allowed...
 
-  ... and 328 more errors
+  ... and 327 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (887 errors)
+CATEGORY: undeclared_identifier (865 errors)
 ====================================================================================================
 
+  core_set.cpp_CDemonSet_processActors_FUN_0056b810
+    Line 166: use of undeclared identifier 'DAT_00000004'...
   core_game.cpp_CGame_saveGame_FUN_004e0cd0
     Line 136: use of undeclared identifier 'DAT_0062ca5b'...
   core_msnedit.cpp_FUN_0053d3a0
@@ -115,8 +117,6 @@ CATEGORY: undeclared_identifier (887 errors)
     Line 57: use of undeclared identifier 'DAT_00680730'...
   core_charactr.cpp_CCharacter_renderCollision_FUN_00429b40
     Line 74: use of undeclared identifier 'DAT_00823a78'...
-  core_cloth.cpp_CCloth_render_FUN_0043bae0
-    Line 117: use of undeclared identifier 'DAT_00827500'...
   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880
     Line 165: use of undeclared identifier 'DAT_0083b110'; did you mean 'DAT_0083b10c'?...
   shape_cramtex.cpp_generateTextureAtlasLayout_FUN_00444d90
@@ -152,10 +152,10 @@ CATEGORY: undeclared_identifier (887 errors)
   core_netgame.cpp_CNetGame_removePlayer_FUN_00542b00
     Line 44: use of undeclared identifier 'DAT_02f98ae0'...
 
-  ... and 296 more errors
+  ... and 291 more errors
 
 ====================================================================================================
-CATEGORY: incompatible_types (677 errors)
+CATEGORY: incompatible_types (680 errors)
 ====================================================================================================
 
   engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00
@@ -219,14 +219,14 @@ CATEGORY: incompatible_types (677 errors)
   shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320
     Line 22: assigning to 'CPoly *' from incompatible type 'void *'...
 
-  ... and 411 more errors
+  ... and 412 more errors
 
 ====================================================================================================
-CATEGORY: format_error (584 errors)
+CATEGORY: format_error (583 errors)
 ====================================================================================================
 
   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
-    Line 140: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror...
+    Line 143: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror...
   core_setedit.cpp_C3DSCamera_FUN_005769a0
     Line 42: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror...
   core_setedit.cpp_CDemonSet_FUN_0057d660
@@ -293,7 +293,7 @@ CATEGORY: syntax_error (82 errors)
 ====================================================================================================
 
   core_dskybox.cpp_renderSkyDome_FUN_004901f0
-    Line 193: expected ')'...
+    Line 191: expected ')'...
   core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50
     Line 248: expected expression...
   core_boneguy.cpp_FUN_0041b700
@@ -313,7 +313,7 @@ CATEGORY: syntax_error (82 errors)
   core_event.cpp_CEventList_evaluateAtom_FUN_004ae140
     Line 1183: expected expression...
   core_fire.cpp_CFireball_process_FUN_004c0b30
-    Line 92: expected expression...
+    Line 94: expected expression...
   core_fire.cpp_CGunFlame_initProcess_FUN_004c4b00
     Line 22: expected expression...
   core_gabriela.cpp_CGabriella_FUN_004d6540
@@ -336,12 +336,12 @@ CATEGORY: syntax_error (82 errors)
     Line 21: expected expression...
   core_pendulum.cpp_CPendulum_FUN_005495c0
     Line 51: expected expression...
-  core_set.cpp_CDemonSet_FUN_0056cd60
-    Line 35: expected expression...
-  core_set.cpp_CDemonSet_FUN_0056cf00
-    Line 35: expected expression...
-  core_set.cpp_CDemonSet_FUN_0056d2d0
+  core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0
     Line 25: expected expression...
+  core_set.cpp_CDemonSet_renderOpaqueActors_FUN_0056cd60
+    Line 31: expected expression...
+  core_set.cpp_CDemonSet_renderTransparentActors_FUN_0056cf00
+    Line 31: expected expression...
   core_setcolid.cpp_CDemonSet_FUN_00574440
     Line 17: expected expression...
   core_setcolid.cpp_CDemonSet_FUN_005744d0
@@ -375,7 +375,7 @@ CATEGORY: missing_member (27 errors)
     Line 20: no member named 'unk15' in 'CDemonActor'; did you mean 'unk1'?...
 
 ====================================================================================================
-CATEGORY: lvalue_required (27 errors)
+CATEGORY: lvalue_required (23 errors)
 ====================================================================================================
 
   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0
@@ -402,8 +402,6 @@ CATEGORY: lvalue_required (27 errors)
     Line 144: cannot take the address of an rvalue of type 'int'...
   core_msnedit.cpp_CDemonMission_importActors_FUN_0053ccf0
     Line 68: cannot take the address of an rvalue of type 'int'...
-  core_set.cpp_CDemonSet_FUN_0056d190
-    Line 25: cannot take the address of an rvalue of type 'int'...
   shape_design.c_complexPolygonReduction_FUN_00463b30
     Line 46: cannot take the address of an rvalue of type 'int'...
 
@@ -459,8 +457,8 @@ CATEGORY: pointer_precision (2 errors)
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in successfully compiled functions: 2.28
-Average suspects in failed compilations: 10.50
+Average suspects in successfully compiled functions: 2.26
+Average suspects in failed compilations: 11.02
 
-Functions that compile but have suspect patterns: 1747
+Functions that compile but have suspect patterns: 1725
 (These may have runtime issues even though syntax is valid)

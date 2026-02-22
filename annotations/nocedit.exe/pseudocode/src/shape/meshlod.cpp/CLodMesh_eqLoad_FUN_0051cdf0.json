@@ -55,14 +55,16 @@
   },
   "complexity": {
     "assembly_lines": 261,
-    "complexity_score": 251,
+    "complexity_score": 266,
     "cross_reference_count": 2,
     "function_call_count": 7,
     "global_count": 15,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 106,
-    "suspect_count": 13,
+    "suspect_count": 14,
     "suspect_types": [
       "decompiler_intrinsic",
+      "double_reconstruction",
       "pointer_cast",
       "unknown_field"
     ],
@@ -405,6 +407,7 @@
       "description": "Unknown/mangled field access",
       "line": 35,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "dVar2 = (double)CONCAT44(9.9999999999999997e+34._4_4_,9.9999999999999997e+34._0_4_) *",
       "type": "unknown_field"
     },
@@ -412,13 +415,23 @@
       "description": "Unknown/mangled field access",
       "line": 35,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "dVar2 = (double)CONCAT44(9.9999999999999997e+34._4_4_,9.9999999999999997e+34._0_4_) *",
       "type": "unknown_field"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 35,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "dVar2 = (double)CONCAT44(9.9999999999999997e+34._4_4_,9.9999999999999997e+34._0_4_) *",
+      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 35,
       "match": "CONCAT44",
+      "severity": "mild",
       "text": "dVar2 = (double)CONCAT44(9.9999999999999997e+34._4_4_,9.9999999999999997e+34._0_4_) *",
       "type": "decompiler_intrinsic"
     },
@@ -426,6 +439,7 @@
       "description": "Complex pointer cast",
       "line": 41,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "local_18 = (int *)((int)local_34 + local_1c);",
       "type": "pointer_cast"
     },
@@ -433,6 +447,7 @@
       "description": "Unknown/mangled field access",
       "line": 52,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_18[2] = 9.9999999999999997e+34._0_4_;",
       "type": "unknown_field"
     },
@@ -440,6 +455,7 @@
       "description": "Unknown/mangled field access",
       "line": 53,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_18[3] = 9.9999999999999997e+34._4_4_;",
       "type": "unknown_field"
     },
@@ -447,6 +463,7 @@
       "description": "Complex pointer cast",
       "line": 63,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + local_1c + -0x28) != *local_18",
       "type": "pointer_cast"
     },
@@ -454,6 +471,7 @@
       "description": "Complex pointer cast",
       "line": 68,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + local_1c + -0x24)) {",
       "type": "pointer_cast"
     },
@@ -461,6 +479,7 @@
       "description": "Complex pointer cast",
       "line": 91,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)&pCVar1[iVar3].collapse_cost = *(uint *)((int)pvVar5 + 8);",
       "type": "pointer_cast"
     },
@@ -468,6 +487,7 @@
       "description": "Complex pointer cast",
       "line": 92,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&pCVar1[iVar3].collapse_cost + 4) = *(uint *)((int)pvVar5 + 0xc);",
       "type": "pointer_cast"
     },
@@ -475,6 +495,7 @@
       "description": "Complex pointer cast",
       "line": 92,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&pCVar1[iVar3].collapse_cost + 4) = *(uint *)((int)pvVar5 + 0xc);",
       "type": "pointer_cast"
     },
@@ -482,6 +503,7 @@
       "description": "Complex pointer cast",
       "line": 93,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "this_ptr->edges_ptr[iVar3].collapse_error = *(float *)((int)pvVar5 + 0x10);",
       "type": "pointer_cast"
     },
@@ -489,6 +511,7 @@
       "description": "Complex pointer cast",
       "line": 96,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "pvVar5 = (void *)((int)pvVar5 + 0xf0);",
       "type": "pointer_cast"
     }

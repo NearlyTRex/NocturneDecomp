@@ -23,6 +23,7 @@
     "cross_reference_count": 4,
     "function_call_count": 7,
     "global_count": 15,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 158,
     "suspect_count": 6,
     "suspect_types": [
@@ -352,6 +353,7 @@
       "description": "Type propagation did not converge",
       "line": 2,
       "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
     },
@@ -359,6 +361,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 54,
       "match": "ABS",
+      "severity": "mild",
       "text": "if ((iVar3 != 0) && (ABS(fVar1) < (float)0.78539816337500001)) {",
       "type": "decompiler_intrinsic"
     },
@@ -366,6 +369,7 @@
       "description": "Undefined global data reference",
       "line": 64,
       "match": "DAT_0066e740",
+      "severity": "mild",
       "text": "CStack_80.y = local_24 + *(float *)(&DAT_0066e740 + uVar7 * 4);",
       "type": "undefined_data"
     },
@@ -373,6 +377,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 96,
       "match": "ABS",
+      "severity": "mild",
       "text": "if (((ABS(local_a4.y) <= (float)4) && (ABS(fVar1) <= (float)0.52359877558333301)) &&",
       "type": "decompiler_intrinsic"
     },
@@ -380,6 +385,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 96,
       "match": "ABS",
+      "severity": "mild",
       "text": "if (((ABS(local_a4.y) <= (float)4) && (ABS(fVar1) <= (float)0.52359877558333301)) &&",
       "type": "decompiler_intrinsic"
     },
@@ -387,6 +393,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 97,
       "match": "SQRT",
+      "severity": "mild",
       "text": "(SQRT(local_a4.z * local_a4.z + local_a4.x * local_a4.x + local_a4.y * local_a4.y) <=",
       "type": "decompiler_intrinsic"
     }

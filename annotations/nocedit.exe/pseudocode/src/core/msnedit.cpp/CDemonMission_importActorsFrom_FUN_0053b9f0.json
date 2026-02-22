@@ -43,16 +43,18 @@
   },
   "complexity": {
     "assembly_lines": 254,
-    "complexity_score": 246,
+    "complexity_score": 261,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 17,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 121,
-    "suspect_count": 11,
+    "suspect_count": 12,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
-      "unknown_field"
+      "unknown_field",
+      "warning_unmapped_variable"
     ],
     "total_lines": 375
   },
@@ -359,9 +361,18 @@
   },
   "suspects": [
     {
+      "description": "Variable defined which should be unmapped",
+      "line": 2,
+      "match": "WARNING: Variable defined which should be unmapped",
+      "severity": "moderate",
+      "text": "/* WARNING: Variable defined which should be unmapped: local_448 */",
+      "type": "warning_unmapped_variable"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "CDemonMission *in_stack_0000000c;",
       "type": "stack_param"
     },
@@ -369,6 +380,7 @@
       "description": "Complex pointer cast",
       "line": 25,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (*(int *)(*(int *)((int)g_ActorClassRegistrations + iVar6) + 0x2c) != 0) {",
       "type": "pointer_cast"
     },
@@ -376,6 +388,7 @@
       "description": "Complex pointer cast",
       "line": 27,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "(&local_448.base,(char *)(*(int *)((int)g_ActorClassRegistrations + iVar6) + 1));",
       "type": "pointer_cast"
     },
@@ -383,6 +396,7 @@
       "description": "Unknown/mangled field access",
       "line": 73,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "local_448.unk3._0_4_,local_448.unk3._4_4_);",
       "type": "unknown_field"
     },
@@ -390,6 +404,7 @@
       "description": "Unknown/mangled field access",
       "line": 73,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_448.unk3._0_4_,local_448.unk3._4_4_);",
       "type": "unknown_field"
     },
@@ -397,6 +412,7 @@
       "description": "Unknown/mangled field access",
       "line": 98,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "(uint)local_448.base.vtable,local_448.unk1,local_448.unk3._0_4_,",
       "type": "unknown_field"
     },
@@ -404,6 +420,7 @@
       "description": "Unknown/mangled field access",
       "line": 99,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "local_448.unk3._4_4_,local_448.unk3._8_4_);",
       "type": "unknown_field"
     },
@@ -411,6 +428,7 @@
       "description": "Unknown/mangled field access",
       "line": 99,
       "match": "._8_4_",
+      "severity": "mild",
       "text": "local_448.unk3._4_4_,local_448.unk3._8_4_);",
       "type": "unknown_field"
     },
@@ -418,6 +436,7 @@
       "description": "Unresolved stack parameter",
       "line": 108,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "local_448.base.item_count = (int)in_stack_0000000c;",
       "type": "stack_param"
     },
@@ -425,6 +444,7 @@
       "description": "Unresolved stack parameter",
       "line": 110,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "core_msnedit_cpp_CDemonMission_FUN_0053c140(in_stack_0000000c,(int)actor);",
       "type": "stack_param"
     },
@@ -432,6 +452,7 @@
       "description": "Unknown/mangled field access",
       "line": 114,
       "match": "._12_4_",
+      "severity": "mild",
       "text": "local_448.unk3._12_4_ = local_448.unk3 + 0x14;",
       "type": "unknown_field"
     }

@@ -18,7 +18,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   core_set.cpp_CDemonSet_FUN_0056d190 at 0056d1c6
+;   core_set.cpp_CDemonSet_renderLightDebugView_FUN_0056d190 at 0056d1c6
 ;   core_setedit.cpp_CDemonSet_FUN_0057ae50 at 0057b09c
 ;   core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0 at 0057c687
 ;

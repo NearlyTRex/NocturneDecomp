@@ -17,6 +17,7 @@
     "cross_reference_count": 2,
     "function_call_count": 16,
     "global_count": 19,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 114,
     "suspect_count": 2,
     "suspect_types": [
@@ -352,6 +353,7 @@
       "description": "Complex pointer cast",
       "line": 34,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "local_14 = *(int *)((int)&pCVar2->offset + iVar7) - pCVar2->offset;",
       "type": "pointer_cast"
     },
@@ -359,6 +361,7 @@
       "description": "Complex pointer cast",
       "line": 40,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "if (uVar8 != *(uint *)((int)&pCVar2->checksum + iVar7)) {",
       "type": "pointer_cast"
     }

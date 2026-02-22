@@ -2,10 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 55,
-        "line": 57,
-        "message": "use of undeclared identifier 'stack0xffffffe4'; did you mean 'in_stack_ffffffe4'?"
+        "category": "other",
+        "column": 77,
+        "line": 49,
+        "message": "cannot cast from type 'float' to pointer type 'int **'"
       }
     ],
     "success": false,
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 273,
-    "complexity_score": 139,
+    "complexity_score": 118,
     "cross_reference_count": 14,
     "function_call_count": 17,
     "global_count": 13,
-    "pseudocode_lines": 99,
-    "suspect_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 103,
+    "suspect_count": 1,
     "suspect_types": [
-      "stack_param",
-      "stack_ref"
+      "warning_unmapped_variable"
     ],
-    "total_lines": 372
+    "total_lines": 376
   },
   "cross_references": [
     {
@@ -39,18 +39,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0056be80",
-      "from_addr": "0056bfae",
-      "name": "core_set.cpp_CDemonSet_FUN_0056be80",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0056c990",
-      "from_addr": "0056caf7",
-      "name": "core_set.cpp_CDemonSet_FUN_0056c990",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0056aa10",
       "from_addr": "0056ab84",
       "name": "core_set.cpp_CDemonSet_initScene_FUN_0056aa10",
@@ -60,6 +48,18 @@
       "addr": "0056a470",
       "from_addr": "0056a78e",
       "name": "core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056c990",
+      "from_addr": "0056caf7",
+      "name": "core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056be80",
+      "from_addr": "0056bfae",
+      "name": "core_set.cpp_CDemonSet_renderStaticLights_FUN_0056be80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -165,14 +165,14 @@
       "name": "core_set.cpp_CDemonSet_buildMirrorList_FUN_00570b70"
     },
     {
+      "addr": "00570af0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_00570af0"
+    },
+    {
       "addr": "005709e0",
       "is_variadic": false,
       "name": "core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005709e0"
-    },
-    {
-      "addr": "00570af0",
-      "is_variadic": false,
-      "name": "core_set.cpp_FUN_00570af0"
     },
     {
       "addr": "005e1f50",
@@ -332,22 +332,8 @@
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": true,
@@ -374,25 +360,12 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_ffffffe4",
-      "text": "int **in_stack_ffffffe4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 40,
-      "match": "in_stack_ffffffe4",
-      "text": "&this_ptr->cameras[this_ptr->selected_camera_index].pvs_list,in_stack_ffffffe4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 50,
-      "match": "&stack0xffffffe4",
-      "text": "(g_CDemonRendererPtr2,(CVector3f *)&stack0xffffffe4);",
-      "type": "stack_ref"
+      "description": "Variable defined which should be unmapped",
+      "line": 2,
+      "match": "WARNING: Variable defined which should be unmapped",
+      "severity": "moderate",
+      "text": "/* WARNING: Variable defined which should be unmapped: local_1c */",
+      "type": "warning_unmapped_variable"
     }
   ]
 }

@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 8,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 407,
     "suspect_count": 10,
     "suspect_types": [
@@ -992,6 +993,7 @@
       "description": "Complex pointer cast",
       "line": 175,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "pfVar9 = (float *)((int)local_20->connected_indices + local_64 + -0x34);",
       "type": "pointer_cast"
     },
@@ -999,6 +1001,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 193,
       "match": "SQRT",
+      "severity": "mild",
       "text": "fVar5 = SQRT(local_88 * local_88 + local_90 * local_90 + local_8c * local_8c);",
       "type": "decompiler_intrinsic"
     },
@@ -1006,6 +1009,7 @@
       "description": "Complex pointer cast",
       "line": 274,
       "match": "(CVector3f *)((int)",
+      "severity": "mild",
       "text": "pCVar4 = (CVector3f *)((int)(pCVar4 + 0x17) + 8);",
       "type": "pointer_cast"
     },
@@ -1013,6 +1017,7 @@
       "description": "Complex pointer cast",
       "line": 276,
       "match": "(CVector3f *)((int)",
+      "severity": "mild",
       "text": "local_4c = (CVector3f *)((int)(local_4c + 0x17) + 8);",
       "type": "pointer_cast"
     },
@@ -1020,6 +1025,7 @@
       "description": "Complex pointer cast",
       "line": 294,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "pSVar11 = local_74 + *(int *)((int)this_ptr->vertex_sort_buffer + local_58);",
       "type": "pointer_cast"
     },
@@ -1027,13 +1033,15 @@
       "description": "Complex pointer cast",
       "line": 400,
       "match": "(int *)((int)",
-      "text": "piVar8 = (int *)((int)(this_ptr->model).vertex_list + iVar7);",
+      "severity": "mild",
+      "text": "piVar8 = (int *)((int)&((this_ptr->model).vertex_list)->x + iVar7);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 402,
       "match": "ROUND",
+      "severity": "mild",
       "text": "*piVar8 = (int)ROUND((pSVar11->position).x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -1041,6 +1049,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 403,
       "match": "ROUND",
+      "severity": "mild",
       "text": "piVar8[1] = (int)ROUND((pSVar11->position).y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -1048,6 +1057,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 404,
       "match": "ROUND",
+      "severity": "mild",
       "text": "piVar8[2] = (int)ROUND((pSVar11->position).z * 256.0f);",
       "type": "decompiler_intrinsic"
     },

@@ -65,6 +65,7 @@
     "cross_reference_count": 15,
     "function_call_count": 14,
     "global_count": 27,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 378,
     "suspect_count": 15,
     "suspect_types": [
@@ -834,6 +835,7 @@
       "description": "Complex pointer cast",
       "line": 118,
       "match": "(SIZE_T *)((int)",
+      "severity": "mild",
       "text": "*(SIZE_T *)((int)&this_ptr->directory_entries->name_or_offset + local_18) = size;",
       "type": "pointer_cast"
     },
@@ -841,6 +843,7 @@
       "description": "Complex pointer cast",
       "line": 141,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)&this_ptr->directory_entries->name_or_offset + local_18);",
       "type": "pointer_cast"
     },
@@ -848,6 +851,7 @@
       "description": "Complex pointer cast",
       "line": 151,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&this_ptr->directory_entries->size + local_18) = local_6c;",
       "type": "pointer_cast"
     },
@@ -855,6 +859,7 @@
       "description": "Complex pointer cast",
       "line": 152,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&this_ptr->directory_entries->offset + local_18) = local_68;",
       "type": "pointer_cast"
     },
@@ -862,6 +867,7 @@
       "description": "Complex pointer cast",
       "line": 153,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&this_ptr->directory_entries->checksum + local_18) = local_60;",
       "type": "pointer_cast"
     },
@@ -869,6 +875,7 @@
       "description": "Complex pointer cast",
       "line": 155,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&this_ptr->directory_entries->timestamp + local_18) = this_ptr->filesize;",
       "type": "pointer_cast"
     },
@@ -876,6 +883,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 159,
       "match": "SBORROW4",
+      "severity": "mild",
       "text": "bVar11 = SBORROW4(size,local_2c);",
       "type": "decompiler_intrinsic"
     },
@@ -883,6 +891,7 @@
       "description": "Complex pointer cast",
       "line": 306,
       "match": "(SIZE_T *)((int)",
+      "severity": "mild",
       "text": "*(SIZE_T *)((int)&this_ptr->directory_entries->name_or_offset + local_14) = size;",
       "type": "pointer_cast"
     },
@@ -890,6 +899,7 @@
       "description": "Complex pointer cast",
       "line": 329,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)&this_ptr->directory_entries->name_or_offset + local_14);",
       "type": "pointer_cast"
     },
@@ -897,6 +907,7 @@
       "description": "Complex pointer cast",
       "line": 339,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&this_ptr->directory_entries->size + local_14) = local_3c;",
       "type": "pointer_cast"
     },
@@ -904,6 +915,7 @@
       "description": "Complex pointer cast",
       "line": 340,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&this_ptr->directory_entries->offset + local_14) = local_38;",
       "type": "pointer_cast"
     },
@@ -911,6 +923,7 @@
       "description": "Complex pointer cast",
       "line": 341,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&this_ptr->directory_entries->checksum + local_14) = 0;",
       "type": "pointer_cast"
     },
@@ -918,6 +931,7 @@
       "description": "Complex pointer cast",
       "line": 343,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&this_ptr->directory_entries->timestamp + local_14) = this_ptr->filesize;",
       "type": "pointer_cast"
     },
@@ -925,6 +939,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 348,
       "match": "SBORROW4",
+      "severity": "mild",
       "text": "bVar11 = SBORROW4(size,local_1c);",
       "type": "decompiler_intrinsic"
     },
@@ -932,6 +947,7 @@
       "description": "Complex pointer cast",
       "line": 370,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "piVar5 = (int *)((int)&this_ptr->directory_entries->name_or_offset + iVar7);",
       "type": "pointer_cast"
     }

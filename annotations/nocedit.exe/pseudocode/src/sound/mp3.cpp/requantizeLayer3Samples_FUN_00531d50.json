@@ -65,6 +65,7 @@
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 17,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 174,
     "suspect_count": 25,
     "suspect_types": [
@@ -506,6 +507,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 16,
       "match": "extraout_ST1",
+      "severity": "moderate",
       "text": "float10 extraout_ST1;",
       "type": "extra_output"
     },
@@ -513,6 +515,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 17,
       "match": "extraout_ST1_00",
+      "severity": "moderate",
       "text": "float10 extraout_ST1_00;",
       "type": "extra_output"
     },
@@ -520,6 +523,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 18,
       "match": "extraout_ST2",
+      "severity": "moderate",
       "text": "float10 extraout_ST2;",
       "type": "extra_output"
     },
@@ -527,6 +531,7 @@
       "description": "Undefined global data reference",
       "line": 39,
       "match": "DAT_0067e728",
+      "severity": "mild",
       "text": "local_1c = (float *)(*(int *)(&DAT_0067e728 + iVar8 * 0x94) * 3);",
       "type": "undefined_data"
     },
@@ -534,6 +539,7 @@
       "description": "Undefined global data reference",
       "line": 40,
       "match": "DAT_0067e728",
+      "severity": "mild",
       "text": "local_28 = *(int *)(&DAT_0067e728 + iVar8 * 0x94);",
       "type": "undefined_data"
     },
@@ -541,6 +547,7 @@
       "description": "Complex pointer cast",
       "line": 53,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "*(double *)((int)g_MpegRequantPowerTable + iVar9) = (double)fVar10;",
       "type": "pointer_cast"
     },
@@ -548,6 +555,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 55,
       "match": "extraout_ST1",
+      "severity": "moderate",
       "text": "fVar10 = extraout_ST1;",
       "type": "extra_output"
     },
@@ -555,6 +563,7 @@
       "description": "Complex pointer cast",
       "line": 64,
       "match": "(double *)((int)",
+      "severity": "mild",
       "text": "*(double *)((int)g_MpegRequantGainTable + iVar2) = (double)fVar10;",
       "type": "pointer_cast"
     },
@@ -562,6 +571,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 66,
       "match": "extraout_ST1_00",
+      "severity": "moderate",
       "text": "fVar10 = extraout_ST1_00;",
       "type": "extra_output"
     },
@@ -569,6 +579,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 67,
       "match": "extraout_ST2",
+      "severity": "moderate",
       "text": "base = extraout_ST2;",
       "type": "extra_output"
     },
@@ -576,6 +587,7 @@
       "description": "Undefined global data reference",
       "line": 95,
       "match": "DAT_0067e728",
+      "severity": "mild",
       "text": "iVar1 = *(int *)(&DAT_0067e728 + iVar6);",
       "type": "undefined_data"
     },
@@ -583,6 +595,7 @@
       "description": "Undefined global data reference",
       "line": 97,
       "match": "DAT_0067e728",
+      "severity": "mild",
       "text": "local_28 = *(int *)(&DAT_0067e728 + iVar6) - iVar3;",
       "type": "undefined_data"
     },
@@ -590,6 +603,7 @@
       "description": "Undefined global data reference",
       "line": 100,
       "match": "DAT_0067e6e8",
+      "severity": "mild",
       "text": "if (local_20 != *(float **)(&DAT_0067e6e8 + iVar2)) {",
       "type": "undefined_data"
     },
@@ -597,6 +611,7 @@
       "description": "Undefined global data reference",
       "line": 101,
       "match": "DAT_0067e6e8",
+      "severity": "mild",
       "text": "if ((int)local_20 < (int)*(float **)(&DAT_0067e6e8 + iVar2)) {",
       "type": "undefined_data"
     },
@@ -604,6 +619,7 @@
       "description": "Undefined global data reference",
       "line": 107,
       "match": "DAT_0067e734",
+      "severity": "mild",
       "text": "iVar1 = *(int *)(&DAT_0067e734 + iVar2);",
       "type": "undefined_data"
     },
@@ -611,6 +627,7 @@
       "description": "Undefined global data reference",
       "line": 108,
       "match": "DAT_0067e730",
+      "severity": "mild",
       "text": "iVar3 = *(int *)(&DAT_0067e730 + iVar2);",
       "type": "undefined_data"
     },
@@ -618,6 +635,7 @@
       "description": "Undefined global data reference",
       "line": 109,
       "match": "DAT_0067e734",
+      "severity": "mild",
       "text": "local_28 = *(int *)(&DAT_0067e734 + iVar2) - iVar3;",
       "type": "undefined_data"
     },
@@ -625,6 +643,7 @@
       "description": "Complex pointer cast",
       "line": 117,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (*(int *)((int)quantized_samples->samples[0] + iVar9 + local_68) == 0) {",
       "type": "pointer_cast"
     },
@@ -632,6 +651,7 @@
       "description": "Complex pointer cast",
       "line": 118,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)output_samples->samples[0] + iVar9 + local_68) = 0;",
       "type": "pointer_cast"
     },
@@ -639,6 +659,7 @@
       "description": "Complex pointer cast",
       "line": 156,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (*(int *)((int)quantized_samples->samples[0] + iVar9 + local_68) < 0) {",
       "type": "pointer_cast"
     },
@@ -646,6 +667,7 @@
       "description": "Complex pointer cast",
       "line": 157,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)output_samples->samples[0] + iVar9 + local_68) =",
       "type": "pointer_cast"
     },
@@ -653,6 +675,7 @@
       "description": "Complex pointer cast",
       "line": 158,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "-*(float *)((int)output_samples->samples[0] + iVar9 + local_68);",
       "type": "pointer_cast"
     },
@@ -660,6 +683,7 @@
       "description": "Complex pointer cast",
       "line": 162,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "local_20 = (float *)((int)local_20 + 1);",
       "type": "pointer_cast"
     },
@@ -667,6 +691,7 @@
       "description": "Complex pointer cast",
       "line": 163,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "local_38 = (float *)((int)local_38 + 1);",
       "type": "pointer_cast"
     },
@@ -674,6 +699,7 @@
       "description": "Complex pointer cast",
       "line": 168,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "local_6c = (float *)((int)local_6c + 0x12);",
       "type": "pointer_cast"
     }

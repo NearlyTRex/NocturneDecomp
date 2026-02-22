@@ -15,8 +15,8 @@
 ;   core_level.cpp_CLevelLoader_update_FUN_00504160 at 0050420d
 ;   core_moon.cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0 at 0052a30a
 ;   core_moon.cpp_CMoon_render_FUN_00529ed0 at 00529f1f
-;   core_set.cpp_CDemonSet_FUN_0056c990 at 0056ccd4
-;   core_set.cpp_FUN_00570af0 at 00570b28
+;   core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990 at 0056ccd4
+;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_00570af0 at 00570b28
 ;   core_setdir.cpp_CZThumb_pushRenderingContext_FUN_00574e70 at 00574ee3
 ;   core_setedit.cpp_CDemonSet_FUN_00580310 at 0058041b
 ;   ... and 1 more

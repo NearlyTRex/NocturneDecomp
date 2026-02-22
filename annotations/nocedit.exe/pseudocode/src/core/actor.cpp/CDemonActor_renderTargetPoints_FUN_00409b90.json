@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 9,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 91,
     "suspect_count": 6,
     "suspect_types": [
@@ -196,6 +197,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 26,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_24.x = (int)ROUND(pCVar7->x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -203,6 +205,7 @@
       "description": "Complex pointer cast",
       "line": 27,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "CStack_24.y = (int)ROUND(*(float *)((int)pCVar7 + 4) * 256.0f);",
       "type": "pointer_cast"
     },
@@ -210,6 +213,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 27,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_24.y = (int)ROUND(*(float *)((int)pCVar7 + 4) * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -217,6 +221,7 @@
       "description": "Complex pointer cast",
       "line": 28,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "CStack_24.z = (int)ROUND(*(float *)((int)pCVar7 + 8) * 256.0f);",
       "type": "pointer_cast"
     },
@@ -224,6 +229,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 28,
       "match": "ROUND",
+      "severity": "mild",
       "text": "CStack_24.z = (int)ROUND(*(float *)((int)pCVar7 + 8) * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -231,6 +237,7 @@
       "description": "Complex pointer cast",
       "line": 90,
       "match": "(CVector3f *)((int)",
+      "severity": "mild",
       "text": "pCVar7 = (CVector3f *)((int)pCVar7 + 0xc);",
       "type": "pointer_cast"
     }

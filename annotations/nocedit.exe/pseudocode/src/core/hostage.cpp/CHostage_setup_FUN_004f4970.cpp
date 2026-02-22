@@ -68,23 +68,24 @@ void __cdecl core_hostage_cpp_CHostage_setup_FUN_004f4970(CHostage *this_ptr)
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr_00);
   this_ptr_02 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                           (&this_ptr_00->motion_controller);
-  iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 R UpperArm")
-  ;
+  iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+                    (this_ptr_01,"Bip01 R UpperArm",1);
   *(int *)(this_ptr->unk3 + 8) = iVar1;
-  iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 Head");
+  iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 Head",1);
   *(int *)(this_ptr->unk3 + 4) = iVar1;
-  iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 L Foot");
+  iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 L Foot",1);
   *(int *)(this_ptr->unk3 + 0xc) = iVar1;
-  iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 R Foot");
+  iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 R Foot",1);
   *(int *)(this_ptr->unk3 + 0x10) = iVar1;
-  iVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 R Hand");
+  iVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 R Hand",1);
   iVar1 = *(int *)this_ptr->unk2;
   (this_ptr->base).base.carry_hands[1].bone_index = iVar2;
   if (iVar1 != 1) {
-    iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 L Hand");
+    iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 L Hand",1)
+    ;
     (this_ptr->base).base.carry_hands[0].bone_index = iVar1;
   }
-  iVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 Spine1");
+  iVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 Spine1",1);
   iVar1 = *(int *)this_ptr->unk2;
   (this_ptr->base).base.gesture_branch_root = iVar2;
   if (iVar1 == 1) {

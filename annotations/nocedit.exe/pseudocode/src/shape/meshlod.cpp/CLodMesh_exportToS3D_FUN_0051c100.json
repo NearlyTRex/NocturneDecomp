@@ -73,15 +73,17 @@
   },
   "complexity": {
     "assembly_lines": 152,
-    "complexity_score": 192,
+    "complexity_score": 217,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 11,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 62,
-    "suspect_count": 12,
+    "suspect_count": 14,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast"
+      "pointer_cast",
+      "sub84_truncation"
     ],
     "total_lines": 214
   },
@@ -284,6 +286,7 @@
       "description": "Complex pointer cast",
       "line": 29,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (*(int *)((int)pCVar2->edge_perpendiculars + iVar7 + -0x14) == 0) {",
       "type": "pointer_cast"
     },
@@ -291,6 +294,7 @@
       "description": "Complex pointer cast",
       "line": 30,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "dVar1 = (double)*(float *)((int)pCVar2->uv_coords[1] + iVar7 + 4);",
       "type": "pointer_cast"
     },
@@ -298,6 +302,7 @@
       "description": "Complex pointer cast",
       "line": 32,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)(pCVar2->uv_coords + -2) + iVar7 + 4),",
       "type": "pointer_cast"
     },
@@ -305,6 +310,7 @@
       "description": "Complex pointer cast",
       "line": 33,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "(double)*(float *)((int)pCVar2->uv_coords[0] + iVar7),",
       "type": "pointer_cast"
     },
@@ -312,6 +318,7 @@
       "description": "Complex pointer cast",
       "line": 34,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "(double)*(float *)((int)pCVar2->uv_coords[0] + iVar7 + 4),",
       "type": "pointer_cast"
     },
@@ -319,6 +326,7 @@
       "description": "Complex pointer cast",
       "line": 35,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)(pCVar2->uv_coords + -1) + iVar7),",
       "type": "pointer_cast"
     },
@@ -326,13 +334,23 @@
       "description": "Complex pointer cast",
       "line": 36,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "(double)*(float *)((int)pCVar2->uv_coords[1] + iVar7),SUB84(dVar1,0),",
       "type": "pointer_cast"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 36,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "(double)*(float *)((int)pCVar2->uv_coords[1] + iVar7),SUB84(dVar1,0),",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 36,
       "match": "SUB84",
+      "severity": "mild",
       "text": "(double)*(float *)((int)pCVar2->uv_coords[1] + iVar7),SUB84(dVar1,0),",
       "type": "decompiler_intrinsic"
     },
@@ -340,6 +358,7 @@
       "description": "Complex pointer cast",
       "line": 38,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)(pCVar2->uv_coords + -1) + iVar7 + 4),",
       "type": "pointer_cast"
     },
@@ -347,6 +366,7 @@
       "description": "Complex pointer cast",
       "line": 39,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "(double)*(float *)((int)pCVar2->uv_coords[2] + iVar7),",
       "type": "pointer_cast"
     },
@@ -354,13 +374,23 @@
       "description": "Complex pointer cast",
       "line": 40,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "(double)*(float *)((int)pCVar2->uv_coords[2] + iVar7 + 4));",
       "type": "pointer_cast"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 58,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "SUB84((double)*(float *)(pCVar3->lod_workspace + iVar5),0),",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 58,
       "match": "SUB84",
+      "severity": "mild",
       "text": "SUB84((double)*(float *)(pCVar3->lod_workspace + iVar5),0),",
       "type": "decompiler_intrinsic"
     }

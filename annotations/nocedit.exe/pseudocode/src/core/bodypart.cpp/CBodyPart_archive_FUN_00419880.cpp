@@ -13,7 +13,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_archive_FUN_00419880(CBodyPart *this_pt
   uint *puVar2;
   uint *puVar3;
   CVector3i *pCVar4;
-  SInputFace *pSVar5;
+  SMRGLPrimitiveTriangle *pSVar5;
   int iVar6;
   int iVar7;
   char *pcVar8;
@@ -45,15 +45,18 @@ void __cdecl core_bodypart_cpp_CBodyPart_archive_FUN_00419880(CBodyPart *this_pt
       do {
         pSVar5 = this_ptr->faces;
         _fscanf(g_ActorDataFile,"\t\t%d, %d,%d,%d, %d,%d,%d, %d,%d,%d\n",
-                   (int)this_ptr->face_texture_indices + iVar9,(int)&pSVar5[1].u_coord_0 + iVar6,
-                   (int)&pSVar5[1].u_coord_2 + iVar6,(int)&pSVar5[1].v_coord_1 + iVar6,
-                   (int)&pSVar5[2].vertex_indices.vertex_index_0 + iVar6,
-                   (int)&pSVar5[2].vertex_indices.vertex_index_2 + iVar6,
-                   (int)&pSVar5[2].u_coord_1 + iVar6,(int)&pSVar5[2].v_coord_0 + iVar6,
-                   (int)&pSVar5[2].v_coord_2 + iVar6,
-                   (int)&pSVar5[3].vertex_indices.vertex_index_1 + iVar6);
+                   (int)this_ptr->face_texture_indices + iVar9,
+                   (int)&pSVar5->vertices[0].vertex_index + iVar6,
+                   (int)&pSVar5->vertices[0].texture_u + iVar6,
+                   (int)&pSVar5->vertices[0].texture_v + iVar6,
+                   (int)&pSVar5->vertices[1].vertex_index + iVar6,
+                   (int)&pSVar5->vertices[1].texture_u + iVar6,
+                   (int)&pSVar5->vertices[1].texture_v + iVar6,
+                   (int)&pSVar5->vertices[2].vertex_index + iVar6,
+                   (int)&pSVar5->vertices[2].texture_u + iVar6,
+                   (int)&pSVar5->vertices[2].texture_v + iVar6);
         iVar9 = iVar9 + 4;
-        *(uint *)((int)&(pSVar5->vertex_indices).vertex_index_2 + iVar6) = 3;
+        *(uint *)((int)pSVar5->vertices + iVar6 + -0x14) = 3;
         local_14 = local_14 + 1;
         iVar6 = iVar6 + 0x3c;
       } while (local_14 < this_ptr->tri_count);
@@ -91,15 +94,15 @@ void __cdecl core_bodypart_cpp_CBodyPart_archive_FUN_00419880(CBodyPart *this_pt
         pSVar5 = this_ptr->faces;
         _fprintf(g_ActorDataFile,"\t%d, %d,%d,%d, %d,%d,%d, %d,%d,%d\n",
                    *(uint *)(iVar9 + (int)this_ptr->face_texture_indices),
-                   *(uint *)((int)&pSVar5[1].u_coord_0 + local_18),
-                   *(uint *)((int)&pSVar5[1].u_coord_2 + local_18),
-                   *(uint *)((int)&pSVar5[1].v_coord_1 + local_18),
-                   *(uint *)((int)&pSVar5[2].vertex_indices.vertex_index_0 + local_18),
-                   *(uint *)((int)&pSVar5[2].vertex_indices.vertex_index_2 + local_18),
-                   *(uint *)((int)&pSVar5[2].u_coord_1 + local_18),
-                   *(uint *)((int)&pSVar5[2].v_coord_0 + local_18),
-                   *(uint *)((int)&pSVar5[2].v_coord_2 + local_18),
-                   *(uint *)((int)&pSVar5[3].vertex_indices.vertex_index_1 + local_18));
+                   *(uint *)((int)&pSVar5->vertices[0].vertex_index + local_18),
+                   *(uint *)((int)&pSVar5->vertices[0].texture_u + local_18),
+                   *(uint *)((int)&pSVar5->vertices[0].texture_v + local_18),
+                   *(uint *)((int)&pSVar5->vertices[1].vertex_index + local_18),
+                   *(uint *)((int)&pSVar5->vertices[1].texture_u + local_18),
+                   *(uint *)((int)&pSVar5->vertices[1].texture_v + local_18),
+                   *(uint *)((int)&pSVar5->vertices[2].vertex_index + local_18),
+                   *(uint *)((int)&pSVar5->vertices[2].texture_u + local_18),
+                   *(uint *)((int)&pSVar5->vertices[2].texture_v + local_18));
         iVar9 = iVar9 + 4;
         iVar6 = iVar6 + 1;
         local_18 = local_18 + 0x3c;

@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 12,
-        "line": 36,
+        "line": 37,
         "message": "assigning to 'int *' from incompatible type 'void *'"
       }
     ],
@@ -13,16 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 337,
-    "complexity_score": 188,
+    "complexity_score": 192,
     "cross_reference_count": 2,
     "function_call_count": 7,
     "global_count": 13,
-    "pseudocode_lines": 163,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 167,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 500
+    "total_lines": 504
   },
   "cross_references": [
     {
@@ -302,16 +303,18 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 66,
-      "match": "(byte *)((int)",
-      "text": "local_14 = (byte *)((int)local_14 + 1);",
+      "line": 106,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "puVar11 = (uint *)((int)pCVar7 + (uint)bVar13 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 141,
-      "match": "(byte *)((int)",
-      "text": "puVar8 = (byte *)((int)&(pSVar1->base).base.type + 1);",
+      "line": 107,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "puVar9 = (uint *)((int)pCVar5 + (uint)bVar13 * -8 + 4);",
       "type": "pointer_cast"
     }
   ]

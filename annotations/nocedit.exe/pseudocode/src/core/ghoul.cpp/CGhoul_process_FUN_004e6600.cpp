@@ -65,7 +65,7 @@ void __cdecl core_ghoul_cpp_CGhoul_process_FUN_004e6600(CGhoul *this_ptr,float d
   float local_17c;
   float local_178;
   CVector3f local_174;
-  CVector3f local_168;
+  UOrientationVector local_168;
   CVector3f local_15c;
   CVector3f local_150;
   CVector3f local_144;
@@ -205,16 +205,17 @@ LAB_004e6a5f:
             pCVar13 = (this_ptr->base).victim;
             (*((pCVar13->vtable)._ub)->getBoundingBox)(pCVar13,&local_240);
             pCVar13 = (this_ptr->base).victim;
-            local_168.x = (pCVar13->location).position.x;
-            local_168.z = (pCVar13->location).position.z;
-            local_168.y = (local_240.max.y - local_240.min.y) * (float)0.69999999999999996 +
-                          (pCVar13->location).position.y;
+            local_168.vec.x = (pCVar13->location).position.x;
+            local_168.vec.z = (pCVar13->location).position.z;
+            local_168.vec.y =
+                 (local_240.max.y - local_240.min.y) * (float)0.69999999999999996 +
+                 (pCVar13->location).position.y;
             core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_29c);
             local_29c.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(15.0,25.0);
             in_stack_fffffc88 = (char *)0x4e6c71;
             local_14 = local_29c.damage_amount;
             pCVar12 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                                ((this_ptr->base).victim,&local_f0,&local_168);
+                                ((this_ptr->base).victim,&local_f0,&local_168.vec);
             if (&local_29c.impact_direction != pCVar12) {
               local_29c.impact_direction.x = pCVar12->x;
               local_29c.impact_direction.y = pCVar12->y;
@@ -235,7 +236,7 @@ LAB_004e6a5f:
               in_stack_fffffc88 = (char *)0x4e6d0a;
               in_stack_fffffc8c = g_CGorePtr;
               core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0
-                        (g_CGorePtr,&local_168,(CVector3f *)0x0,(int)local_70,0);
+                        (g_CGorePtr,&local_168.vec,(CVector3f *)0x0,(int)local_70,0);
             }
             pCVar3 = (CCharacter *)(this_ptr->base).victim;
             if (pCVar3->hit_points <= 0.0) {

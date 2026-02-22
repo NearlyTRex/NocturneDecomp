@@ -28,7 +28,7 @@ void __cdecl core_cloth_cpp_CCloth_orientBoneToChild_FUN_0043a110(CCloth *this_p
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(model_ptr);
   bone_name = this_ptr->collide_bones + bone_index;
   local_1c = this_ptr_00;
-  iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,bone_name->name);
+  iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,bone_name->name,1);
   bone_name->child_distance = 0.0;
   local_18 = -1;
   bone_name->parent_bone_index = iVar1;

@@ -12,11 +12,11 @@ void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004
 
 {
   CKeyFramedModel *this_ptr_00;
-  CKeyFramedModelInstance *instance;
+  int frame_index;
   
-  instance = (CKeyFramedModelInstance *)(int)ROUND(ROUND(animation_frame));
+  frame_index = (int)ROUND(ROUND(animation_frame));
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(this_ptr);
   core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
-            (this_ptr_00,instance,(int)this_ptr,render_flags);
+            (this_ptr_00,frame_index,this_ptr,render_flags);
   return;
 }

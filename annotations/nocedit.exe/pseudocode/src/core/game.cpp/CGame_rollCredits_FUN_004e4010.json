@@ -10,6 +10,7 @@
     "cross_reference_count": 2,
     "function_call_count": 30,
     "global_count": 18,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 154,
     "suspect_count": 4,
     "suspect_types": [
@@ -462,6 +463,7 @@
       "description": "Complex pointer cast",
       "line": 37,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)local_1134 + iVar7) = 0;",
       "type": "pointer_cast"
     },
@@ -469,6 +471,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 102,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_10 = (int)ROUND(ROUND(local_18));",
       "type": "decompiler_intrinsic"
     },
@@ -476,6 +479,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 102,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_10 = (int)ROUND(ROUND(local_18));",
       "type": "decompiler_intrinsic"
     },
@@ -483,6 +487,7 @@
       "description": "Complex pointer cast",
       "line": 140,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar1 = (uint *)((int)local_1134 + iVar7);",
       "type": "pointer_cast"
     }

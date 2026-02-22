@@ -29,6 +29,7 @@
     "cross_reference_count": 7,
     "function_call_count": 16,
     "global_count": 29,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 158,
     "suspect_count": 5,
     "suspect_types": [
@@ -503,6 +504,7 @@
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
@@ -510,6 +512,7 @@
       "description": "Unresolved stack parameter",
       "line": 69,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "if ((in_stack_00000008 == 0) &&",
       "type": "stack_param"
     },
@@ -517,6 +520,7 @@
       "description": "Undefined global data reference",
       "line": 72,
       "match": "DAT_03365cc0",
+      "severity": "mild",
       "text": "_fread(&DAT_03365cc0,0x2ee000,1,p_Var2);",
       "type": "undefined_data"
     },
@@ -524,6 +528,7 @@
       "description": "Undefined global data reference",
       "line": 76,
       "match": "DAT_03365cc0",
+      "severity": "mild",
       "text": "memset(&DAT_03365cc0,0,0x2ee000);",
       "type": "undefined_data"
     },
@@ -531,6 +536,7 @@
       "description": "Undefined global data reference",
       "line": 112,
       "match": "DAT_03365cc0",
+      "severity": "mild",
       "text": "_fwrite(&DAT_03365cc0,0x2ee000,1,p_Var2);",
       "type": "undefined_data"
     }

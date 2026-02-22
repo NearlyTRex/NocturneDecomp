@@ -49,7 +49,8 @@ void __cdecl core_dpart_cpp_CDemonPart_renderFaces_FUN_004828b0(CDemonPart *this
           local_58.base.count = 4;
           local_1c = plane->vertex_index_4;
         }
-        core_set_cpp_CDemonSet_FUN_00570960(g_CDemonSetPtr,&local_58,1);
+        core_set_cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_00570960
+                  (g_CDemonSetPtr,&local_58,1);
       }
       uVar2 = uVar2 + 1;
       plane = plane + 1;

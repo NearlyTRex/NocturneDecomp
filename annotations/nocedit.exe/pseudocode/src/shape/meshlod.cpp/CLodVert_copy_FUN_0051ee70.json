@@ -10,6 +10,7 @@
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 17,
     "suspect_count": 2,
     "suspect_types": [
@@ -92,6 +93,7 @@
       "description": "Complex pointer cast",
       "line": 16,
       "match": "(CLodVert *)((int)",
+      "severity": "mild",
       "text": "source = (CLodVert *)((int)&(source->position).x + 1);",
       "type": "pointer_cast"
     },
@@ -99,6 +101,7 @@
       "description": "Complex pointer cast",
       "line": 17,
       "match": "(CLodVert *)((int)",
+      "severity": "mild",
       "text": "pCVar2 = (CLodVert *)((int)&(pCVar2->position).x + 1);",
       "type": "pointer_cast"
     }

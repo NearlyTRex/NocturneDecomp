@@ -35,6 +35,7 @@
     "cross_reference_count": 8,
     "function_call_count": 11,
     "global_count": 53,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 305,
     "suspect_count": 18,
     "suspect_types": [
@@ -632,6 +633,7 @@
       "description": "Direct stack address reference",
       "line": 91,
       "match": "&stack0xfffffe8c",
+      "severity": "moderate",
       "text": "piVar2 = (int *)&stack0xfffffe8c;",
       "type": "stack_ref"
     },
@@ -639,6 +641,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 96,
       "match": "ROUND",
+      "severity": "mild",
       "text": "piVar2[3] = (int)ROUND(pCVar3->x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -646,6 +649,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 97,
       "match": "ROUND",
+      "severity": "mild",
       "text": "piVar2[4] = (int)ROUND(pCVar3->y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -653,6 +657,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 98,
       "match": "ROUND",
+      "severity": "mild",
       "text": "piVar2[5] = (int)ROUND(pCVar3->z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -660,6 +665,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 107,
       "match": "ROUND",
+      "severity": "mild",
       "text": "iStack_100 = (int)ROUND(fStack_88 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -667,6 +673,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 108,
       "match": "ROUND",
+      "severity": "mild",
       "text": "iStack_fc = (int)ROUND(fStack_84 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -674,6 +681,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 109,
       "match": "ROUND",
+      "severity": "mild",
       "text": "iStack_f8 = (int)ROUND(fStack_80 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
@@ -681,6 +689,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 121,
       "match": "ROUND",
+      "severity": "mild",
       "text": "iStack_5c = (int)ROUND(ROUND((float)(this_ptr->camera_count * 10) * g_CGamePtr->delta_time_float",
       "type": "decompiler_intrinsic"
     },
@@ -688,6 +697,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 121,
       "match": "ROUND",
+      "severity": "mild",
       "text": "iStack_5c = (int)ROUND(ROUND((float)(this_ptr->camera_count * 10) * g_CGamePtr->delta_time_float",
       "type": "decompiler_intrinsic"
     },
@@ -695,6 +705,7 @@
       "description": "Unknown/mangled field access",
       "line": 144,
       "match": "._0_4_",
+      "severity": "mild",
       "text": "fStack_74 = (float)auStack_d4._0_4_ + fStack_c8;",
       "type": "unknown_field"
     },
@@ -702,6 +713,7 @@
       "description": "Unknown/mangled field access",
       "line": 146,
       "match": "._4_4_",
+      "severity": "mild",
       "text": "fStack_70 = (float)auStack_d4._4_4_ + CStack_c4.min.x;",
       "type": "unknown_field"
     },
@@ -709,6 +721,7 @@
       "description": "Unknown/mangled field access",
       "line": 147,
       "match": "._8_4_",
+      "severity": "mild",
       "text": "fStack_6c = (float)auStack_d4._8_4_ + CStack_c4.min.y;",
       "type": "unknown_field"
     },
@@ -716,6 +729,7 @@
       "description": "Complex pointer cast",
       "line": 165,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)g_ZBufferScanlineArrayBackup + iVar10) =",
       "type": "pointer_cast"
     },
@@ -723,6 +737,7 @@
       "description": "Complex pointer cast",
       "line": 166,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar10);",
       "type": "pointer_cast"
     },
@@ -730,6 +745,7 @@
       "description": "Complex pointer cast",
       "line": 274,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar10) =",
       "type": "pointer_cast"
     },
@@ -737,6 +753,7 @@
       "description": "Complex pointer cast",
       "line": 275,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)g_ZBufferScanlineArrayBackup + iVar10);",
       "type": "pointer_cast"
     },
@@ -744,6 +761,7 @@
       "description": "Complex pointer cast",
       "line": 289,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "if (fStack_15c < *(float *)((int)g_VDCameraScores + iVar7)) {",
       "type": "pointer_cast"
     },
@@ -751,6 +769,7 @@
       "description": "Complex pointer cast",
       "line": 290,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "fStack_15c = *(float *)((int)g_VDCameraScores + iVar7);",
       "type": "pointer_cast"
     }

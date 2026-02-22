@@ -115,14 +115,16 @@
   },
   "complexity": {
     "assembly_lines": 555,
-    "complexity_score": 367,
+    "complexity_score": 382,
     "cross_reference_count": 0,
     "function_call_count": 28,
     "global_count": 30,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 207,
-    "suspect_count": 14,
+    "suspect_count": 15,
     "suspect_types": [
       "pointer_cast",
+      "stack_alignment_array",
       "stack_param",
       "stack_ref",
       "unknown_field"
@@ -728,13 +730,23 @@
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "int in_stack_0000000c;",
       "type": "stack_param"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 17,
+      "match": "atStackY_2e68",
+      "severity": "moderate",
+      "text": "time_t atStackY_2e68 [2034];",
+      "type": "stack_alignment_array"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 23,
       "match": "in_stack_fffff17c",
+      "severity": "moderate",
       "text": "int in_stack_fffff17c;",
       "type": "stack_param"
     },
@@ -742,6 +754,7 @@
       "description": "Direct stack address reference",
       "line": 58,
       "match": "&stack0xfffff17c",
+      "severity": "moderate",
       "text": "engine_pod_cpp_CPodFile_ctor_FUN_0054f5a0((CPodFile *)&stack0xfffff17c);",
       "type": "stack_ref"
     },
@@ -749,6 +762,7 @@
       "description": "Direct stack address reference",
       "line": 59,
       "match": "&stack0xfffff17c",
+      "severity": "moderate",
       "text": "iVar2 = engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650((CPodFile *)&stack0xfffff17c,local_244)",
       "type": "stack_ref"
     },
@@ -756,6 +770,7 @@
       "description": "Direct stack address reference",
       "line": 64,
       "match": "&stack0xfffff17c",
+      "severity": "moderate",
       "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xfffff17c,0);",
       "type": "stack_ref"
     },
@@ -763,6 +778,7 @@
       "description": "Direct stack address reference",
       "line": 67,
       "match": "&stack0xfffff17c",
+      "severity": "moderate",
       "text": "iVar2 = engine_pod_cpp_CPodFile_verifyChecksum_FUN_00550230((CPodFile *)&stack0xfffff17c);",
       "type": "stack_ref"
     },
@@ -770,6 +786,7 @@
       "description": "Direct stack address reference",
       "line": 74,
       "match": "&stack0xfffff17c",
+      "severity": "moderate",
       "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xfffff17c,0);",
       "type": "stack_ref"
     },
@@ -777,6 +794,7 @@
       "description": "Direct stack address reference",
       "line": 85,
       "match": "&stack0xfffff17c",
+      "severity": "moderate",
       "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xfffff17c,0);",
       "type": "stack_ref"
     },
@@ -784,6 +802,7 @@
       "description": "Unknown/mangled field access",
       "line": 95,
       "match": "._1036_4_",
+      "severity": "mild",
       "text": "if (0 < (int)local_e80._1036_4_) {",
       "type": "unknown_field"
     },
@@ -791,6 +810,7 @@
       "description": "Complex pointer cast",
       "line": 98,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "puVar5 = (uint *)((int)(uint *)local_e80._1040_4_ + local_1c);",
       "type": "pointer_cast"
     },
@@ -798,6 +818,7 @@
       "description": "Unknown/mangled field access",
       "line": 98,
       "match": "._1040_4_",
+      "severity": "mild",
       "text": "puVar5 = (uint *)((int)(uint *)local_e80._1040_4_ + local_1c);",
       "type": "unknown_field"
     },
@@ -805,6 +826,7 @@
       "description": "Unresolved stack parameter",
       "line": 151,
       "match": "in_stack_fffff17c",
+      "severity": "moderate",
       "text": "(int)file_offset,(int)pSVar10,in_stack_fffff17c);",
       "type": "stack_param"
     },
@@ -812,6 +834,7 @@
       "description": "Unknown/mangled field access",
       "line": 180,
       "match": "._1036_4_",
+      "severity": "mild",
       "text": "} while (local_18 < (int)local_e80._1036_4_);",
       "type": "unknown_field"
     },
@@ -819,6 +842,7 @@
       "description": "Unresolved stack parameter",
       "line": 189,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "if (in_stack_0000000c != 0) {",
       "type": "stack_param"
     }

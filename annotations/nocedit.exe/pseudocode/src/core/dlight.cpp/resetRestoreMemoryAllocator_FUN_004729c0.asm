@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[3]:
-;   core_set.cpp_CDemonSet_FUN_0056d2d0 at 0056d350
+;   core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0 at 0056d350
 ;   core_set.cpp_CDemonSet_initScene_FUN_0056aa10 at 0056aa3a
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50 at 0056af30
 ;

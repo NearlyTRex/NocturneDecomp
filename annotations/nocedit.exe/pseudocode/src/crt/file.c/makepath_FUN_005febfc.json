@@ -5,6 +5,7 @@
     "cross_reference_count": 23,
     "function_call_count": 6,
     "global_count": 0,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 101,
     "suspect_count": 4,
     "suspect_types": [
@@ -291,6 +292,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 9,
       "match": "extraout_var",
+      "severity": "moderate",
       "text": "ushort extraout_var;",
       "type": "extra_output"
     },
@@ -298,6 +300,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 79,
       "match": "extraout_var",
+      "severity": "moderate",
       "text": "if ((CONCAT22(extraout_var,wVar2) != local_18) && ((byte)*path_buffer == local_18)) {",
       "type": "extra_output"
     },
@@ -305,6 +308,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 79,
       "match": "CONCAT22",
+      "severity": "mild",
       "text": "if ((CONCAT22(extraout_var,wVar2) != local_18) && ((byte)*path_buffer == local_18)) {",
       "type": "decompiler_intrinsic"
     },

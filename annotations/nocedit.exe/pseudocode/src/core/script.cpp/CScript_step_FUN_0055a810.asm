@@ -3463,8 +3463,8 @@ section .text
     PUSH ESI                            ; 0055cc8c
     MOV ECX,dword ptr [0x006810c8]      ; 0055cc8d | g_CDemonSetPtr | g_CDemonSetInstance
     PUSH ECX                            ; 0055cc93 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_00570ea0 ; 0055cc94
-        ;   XREF to: 00570ea0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_00570ea0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_setCameraEnabled_FUN_00570ea0 ; 0055cc94
+        ;   XREF to: 00570ea0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setCameraEnabled_FUN_00570ea0(CDemonSet * this_ptr, int camera_index, int enabled)
     ADD ESP,0xc                         ; 0055cc99
     JMP 0x0055a8bb                      ; 0055cc9c
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
@@ -3556,8 +3556,8 @@ section .text
     PUSH EDI                            ; 0055cd97
     MOV EAX,[0x006810c8]                ; 0055cd98 | g_CDemonSetPtr | g_CDemonSetInstance
     PUSH EAX                            ; 0055cd9d | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_00570ec0 ; 0055cd9e
-        ;   XREF to: 00570ec0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_00570ec0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_setCameraEnabledByGroup_FUN_00570ec0 ; 0055cd9e
+        ;   XREF to: 00570ec0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setCameraEnabledByGroup_FUN_00570ec0(CDemonSet * this_ptr, int group_id, int enabled)
     ADD ESP,0xc                         ; 0055cda3
     JMP 0x0055a8bb                      ; 0055cda6
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb

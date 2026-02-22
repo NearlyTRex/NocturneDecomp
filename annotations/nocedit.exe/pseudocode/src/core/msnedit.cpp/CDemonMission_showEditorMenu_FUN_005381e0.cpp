@@ -175,7 +175,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
         iVar4 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
                           (g_CEditorToolsPtr,"Precompute lights?");
         if (iVar4 != 0) {
-          core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(g_CDemonSetPtr);
+          core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(g_CDemonSetPtr,-1);
           wincore_windll_cpp_clearScreen_FUN_005b3e70();
           engine_2d_c_drawText_FUN_00401fd0("You must now go into set editor and save!",0,0);
           wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

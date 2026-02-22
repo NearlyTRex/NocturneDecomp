@@ -10,6 +10,7 @@
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 1,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 276,
     "suspect_count": 8,
     "suspect_types": [
@@ -331,6 +332,7 @@
       "description": "Type propagation did not converge",
       "line": 2,
       "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
     },
@@ -338,6 +340,7 @@
       "description": "Complex pointer cast",
       "line": 36,
       "match": "(CCmdParse *)((int)",
+      "severity": "mild",
       "text": "pCVar6 = (CCmdParse *)((int)pCVar6 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -345,6 +348,7 @@
       "description": "Complex pointer cast",
       "line": 37,
       "match": "(CCmdParse *)((int)",
+      "severity": "mild",
       "text": "pCVar9 = (CCmdParse *)((int)pCVar9 + (uint)bVar12 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -352,6 +356,7 @@
       "description": "Complex pointer cast",
       "line": 162,
       "match": "(CCmdParm *)((int)",
+      "severity": "mild",
       "text": "pCVar8 = (CCmdParm *)((int)pCVar8 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -359,6 +364,7 @@
       "description": "Complex pointer cast",
       "line": 163,
       "match": "(CCmdParm *)((int)",
+      "severity": "mild",
       "text": "parm_out = (CCmdParm *)((int)parm_out + (uint)bVar12 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -366,6 +372,7 @@
       "description": "Complex pointer cast",
       "line": 202,
       "match": "(CCmdParm *)((int)",
+      "severity": "mild",
       "text": "pCVar8 = (CCmdParm *)((int)pCVar8 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
@@ -373,6 +380,7 @@
       "description": "Complex pointer cast",
       "line": 203,
       "match": "(CCmdParm *)((int)",
+      "severity": "mild",
       "text": "parm_out = (CCmdParm *)((int)parm_out + (uint)bVar12 * -8 + 4);",
       "type": "pointer_cast"
     },

@@ -65,6 +65,7 @@
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 20,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 138,
     "suspect_count": 16,
     "suspect_types": [
@@ -355,6 +356,7 @@
       "description": "Unresolved stack parameter",
       "line": 11,
       "match": "in_stack_fffff2fc",
+      "severity": "moderate",
       "text": "ulonglong in_stack_fffff2fc;",
       "type": "stack_param"
     },
@@ -362,6 +364,7 @@
       "description": "Unresolved stack parameter",
       "line": 25,
       "match": "in_stack_fffff2fc",
+      "severity": "moderate",
       "text": "string_data = (CEnemy *)(in_stack_fffff2fc >> 0x20);",
       "type": "stack_param"
     },
@@ -369,6 +372,7 @@
       "description": "Unresolved stack parameter",
       "line": 53,
       "match": "in_stack_fffff2fc",
+      "severity": "moderate",
       "text": "in_stack_fffff2fc = ZEXT48(string_data) << 0x20;",
       "type": "stack_param"
     },
@@ -376,6 +380,7 @@
       "description": "Unresolved stack parameter",
       "line": 60,
       "match": "in_stack_fffff2fc",
+      "severity": "moderate",
       "text": "in_stack_fffff2fc = ZEXT48(string_data) << 0x20;",
       "type": "stack_param"
     },
@@ -383,6 +388,7 @@
       "description": "Undefined global data reference",
       "line": 65,
       "match": "DAT_00680580",
+      "severity": "mild",
       "text": "(g_CEditorToolsPtr,\"Enter actor name wildcard\",&DAT_00680580,200,1);",
       "type": "undefined_data"
     },
@@ -390,6 +396,7 @@
       "description": "Unresolved stack parameter",
       "line": 67,
       "match": "in_stack_fffff2fc",
+      "severity": "moderate",
       "text": "in_stack_fffff2fc = ZEXT48(string_data) << 0x20;",
       "type": "stack_param"
     },
@@ -397,6 +404,7 @@
       "description": "Unresolved stack parameter",
       "line": 75,
       "match": "in_stack_fffff2fc",
+      "severity": "moderate",
       "text": "in_stack_fffff2fc = ZEXT48(string_data) << 0x20;",
       "type": "stack_param"
     },
@@ -404,6 +412,7 @@
       "description": "Unresolved stack parameter",
       "line": 83,
       "match": "in_stack_fffff2fc",
+      "severity": "moderate",
       "text": "in_stack_fffff2fc = ZEXT48(string_data) << 0x20;",
       "type": "stack_param"
     },
@@ -411,6 +420,7 @@
       "description": "Undefined global data reference",
       "line": 93,
       "match": "DAT_02f797e0",
+      "severity": "mild",
       "text": "(&CStack_958,\"Randomize speeds\",DAT_02f797e0,0);",
       "type": "undefined_data"
     },
@@ -418,6 +428,7 @@
       "description": "Undefined global data reference",
       "line": 95,
       "match": "DAT_02f797e0",
+      "severity": "mild",
       "text": "DAT_02f797e0 = iVar3;",
       "type": "undefined_data"
     },
@@ -425,6 +436,7 @@
       "description": "Direct stack address reference",
       "line": 96,
       "match": "&stack0xfffff300",
+      "severity": "moderate",
       "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff300);",
       "type": "stack_ref"
     },
@@ -432,6 +444,7 @@
       "description": "Undefined global data reference",
       "line": 102,
       "match": "DAT_02f797e0",
+      "severity": "mild",
       "text": "(((DAT_02f797e0 != 0 || (*(int *)(actor_ptr[0x8d].create_event + 0x3c) != 0)) &&",
       "type": "undefined_data"
     },
@@ -439,6 +452,7 @@
       "description": "Undefined global data reference",
       "line": 106,
       "match": "DAT_00680580",
+      "severity": "mild",
       "text": "(&DAT_00680580,actor_ptr->actor_name,0), iVar3 != 0)) {",
       "type": "undefined_data"
     },
@@ -446,6 +460,7 @@
       "description": "Direct stack address reference",
       "line": 127,
       "match": "&stack0xfffff300",
+      "severity": "moderate",
       "text": "((CPickList *)&stack0xfffff300,acStack_dc,-1,0);",
       "type": "stack_ref"
     },
@@ -453,6 +468,7 @@
       "description": "Direct stack address reference",
       "line": 129,
       "match": "&stack0xfffff300",
+      "severity": "moderate",
       "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff300,0);",
       "type": "stack_ref"
     },
@@ -460,6 +476,7 @@
       "description": "Unresolved stack parameter",
       "line": 135,
       "match": "in_stack_fffff2fc",
+      "severity": "moderate",
       "text": "in_stack_fffff2fc = uVar4 & 0xffffffff00000000;",
       "type": "stack_param"
     }

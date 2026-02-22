@@ -10,7 +10,10 @@
 #include "types/classes/CDeformableModel.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CDemonGlobe.h"
+#include "types/classes/CDemonLight.h"
 #include "types/classes/CDemonSet.h"
+#include "types/classes/CMatrix3x3f.h"
 #include "types/classes/CMotionList.h"
 #include "types/classes/CScript.h"
 #include "types/classes/CSentinel.h"
@@ -20,8 +23,9 @@
 #include "types/enums/EEditorActionType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
-#include "types/structs/SInputFace.h"
+#include "types/structs/SDisplayListSortEntry.h"
 #include "types/structs/SScriptXRef.h"
+#include "types/unions/UOrientationVector.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x560000
@@ -118,41 +122,41 @@ CDemonSet * __cdecl core_set_cpp_CDemonSet_dtor_FUN_00569350(CDemonSet *this_ptr
 void __cdecl core_set_cpp_CDemonSet_clear_FUN_005693c0(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *filename);
 void __cdecl core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(CDemonSet *this_ptr,float frustum_param,int render_mode);
-void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemonSet *this_ptr,int param_2);
 void __cdecl core_set_cpp_CDemonSet_initScene_FUN_0056aa10(CDemonSet *this_ptr);
-void __cdecl core_set_cpp_CDemonSet_FUN_0056aca0(CDemonSet *this_ptr);
-void __cdecl core_set_cpp_CDemonSet_FUN_0056ade0(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_renderBackgroundActors_FUN_0056aca0(CDemonSet *this_ptr,int layer_flag);
+void __cdecl core_set_cpp_CDemonSet_snapshotActorTransformState_FUN_0056ade0(CDemonSet *this_ptr,CDemonActor *actor);
 void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_ptr,int index);
 int __cdecl core_set_cpp_CDemonSet_findCameraByName_FUN_0056b790(CDemonSet *this_ptr,char *name);
-void __cdecl core_set_cpp_CDemonSet_FUN_0056b7e0(CDemonSet *this_ptr,uint param_2,uint param_3,int param_4);
-int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr);
-void __cdecl core_set_cpp_CDemonSet_FUN_0056be80(CDemonSet *this_ptr);
-void __cdecl core_set_cpp_CDemonSet_FUN_0056c1a0(CDemonSet *this_ptr);
-void __cdecl core_set_cpp_CDemonSet_FUN_0056c990(CDemonSet *this_ptr);
-void __cdecl core_set_cpp_CDemonSet_FUN_0056cd60(CDemonSet *this_ptr);
-void __cdecl core_set_cpp_CDemonSet_FUN_0056cf00(CDemonSet *this_ptr);
-void __cdecl core_set_cpp_CDemonSet_FUN_0056d090(CDemonSet *this_ptr);
-void __cdecl core_set_cpp_CDemonSet_FUN_0056d110(CDemonSet *this_ptr);
-void __cdecl core_set_cpp_CDemonSet_FUN_0056d140(CDemonSet *this_ptr);
-void __cdecl core_set_cpp_CDemonSet_FUN_0056d190(CDemonSet *this_ptr);
-void __cdecl core_set_cpp_CDemonSet_FUN_0056d2d0(CDemonSet *this_ptr);
-void __cdecl core_set_cpp_CDemonSet_FUN_0056d380(CDemonSet *this_ptr);
-int __cdecl core_set_cpp_CDemonSet_FUN_0056d4a0(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_reinitCamera_FUN_0056b7e0(CDemonSet *this_ptr,uint param_2,uint param_3,int screen_height);
+int __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_renderStaticLights_FUN_0056be80(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_0056c1a0(CDemonSet *this_ptr,int skip_prerender);
+void __cdecl core_set_cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_renderOpaqueActors_FUN_0056cd60(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_renderTransparentActors_FUN_0056cf00(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_addDynamicLight_FUN_0056d090(CDemonSet *this_ptr,CDemonLight *light);
+void __cdecl core_set_cpp_CDemonSet_addCoronaGlobe_FUN_0056d110(CDemonSet *this_ptr,CDemonGlobe *globe);
+void __cdecl core_set_cpp_CDemonSet_addQueuedCoronaGlobe_FUN_0056d140(CDemonSet *this_ptr,CDemonGlobe *globe);
+void __cdecl core_set_cpp_CDemonSet_renderLightDebugView_FUN_0056d190(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_clearLights_FUN_0056d2d0(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_setLightingParameters_FUN_0056d380(CDemonSet *this_ptr,CVector3f *position,UOrientationVector *orientation, CVector3f *aabb_min,CVector3f *aabb_max,CMatrix3x3f *rotation_matrix);
+int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0056d4a0(CDemonSet *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *aabb_min, CVector3f *aabb_max,CMatrix3x3f *rotation_matrix);
 int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal);
 void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal, int vertex_index,int skip_lighting_calculation);
 int __cdecl core_set_cpp_CDemonSet_computeLighting_FUN_0056e110(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal, int start_vertex_index,int vertex_count);
-void __cdecl core_set_cpp_FUN_0056e180(void);
-void __cdecl core_set_cpp_FUN_0056e2b0(void);
-void __cdecl core_set_cpp_CDemonSet_FUN_0056e3e0(CDemonSet *this_ptr);
-void __cdecl core_set_cpp_CDemonSet_FUN_0056e5d0(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_computeTriangleNormal_FUN_0056e180(int *vertex_array,void *param_2);
+void __cdecl core_set_cpp_computeTriangleNormalIndexed_FUN_0056e2b0(void);
+void __cdecl core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0056e3e0(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0056e5d0(CDemonSet *this_ptr,int vertex_count);
 void __cdecl core_set_cpp_CDemonSet_rotateVertices_FUN_0056e7c0(CDemonSet *this_ptr,int vertex_count,int *input_vertices);
-void __cdecl core_set_cpp_FUN_0056e890(void);
-void __cdecl core_set_cpp_FUN_0056e960(void);
-float __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_ptr,int vertex_count,int tri_count,SInputFace *tri_data_ptr, int render_flags,int lighting_mode,int flags);
+CVector3i * __stack_esi core_set_cpp_transformToWorldSpace_FUN_0056e890(CVector3i *input,CVector3i *output);
+void __cdecl core_set_cpp_transformNormalFixedPoint_FUN_0056e960(void);
+void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_ptr,int vertex_count,int tri_count,void *face_data, CVector3i *vertex_positions,int vertices_per_face,CVector3i *vertex_normals);
 void __cdecl core_set_cpp_CDemonSet_process_FUN_0056f940(CDemonSet *this_ptr);
-float __cdecl core_set_cpp_CDemonSet_FUN_0056fac0(CDemonSet *this_ptr);
+float __cdecl core_set_cpp_CDemonSet_getReverbPresetAtPosition_FUN_0056fac0(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_loadAssets_FUN_0056fb80(CDemonSet *this_ptr);
-int __cdecl core_set_cpp_FUN_0056fba0(void);
-void __cdecl core_set_cpp_CDemonSet_FUN_0056fbd0(CDemonSet *this_ptr);
-void __cdecl core_set_cpp_CDemonSet_FUN_0056ffe0(CDemonSet *this_ptr);
+int __cdecl core_set_cpp_qsortByDisplayListEntry_FUN_0056fba0(SDisplayListSortEntry *a,SDisplayListSortEntry *b);
+void __cdecl core_set_cpp_CDemonSet_buildDisplayList_FUN_0056fbd0(CDemonSet *this_ptr,uint dirty_flags_mask);
+void __cdecl core_set_cpp_CDemonSet_renderEnvMapBatchTri_FUN_0056ffe0(CDemonSet *this_ptr,void *param_2,int count,int alpha);
 

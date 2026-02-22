@@ -10,6 +10,7 @@
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 71,
     "suspect_count": 3,
     "suspect_types": [
@@ -234,6 +235,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 36,
       "match": "fsin",
+      "severity": "mild",
       "text": "fVar4 = (float10)fsin((float10)local_14);",
       "type": "decompiler_intrinsic"
     },
@@ -241,6 +243,7 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 37,
       "match": "fcos",
+      "severity": "mild",
       "text": "fVar5 = (float10)fcos((float10)local_14);",
       "type": "decompiler_intrinsic"
     },
@@ -248,6 +251,7 @@
       "description": "Complex pointer cast",
       "line": 58,
       "match": "(float *)((int)",
+      "severity": "mild",
       "text": "*(float *)((int)g_WeatherParticleGroundHeights + iVar3) = fVar1;",
       "type": "pointer_cast"
     }

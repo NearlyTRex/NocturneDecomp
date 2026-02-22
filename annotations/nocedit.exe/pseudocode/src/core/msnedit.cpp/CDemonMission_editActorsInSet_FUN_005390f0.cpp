@@ -376,8 +376,8 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
         pCVar17 = g_CDemonSetPtr;
         g_CDemonSetPtr->disable_water_rendering = (uint)(this_ptr->render_sky_in_editor == 0);
         pCVar17->disable_sky_rendering = (uint)(this_ptr->render_water_in_editor == 0);
-        core_set_cpp_CDemonSet_FUN_0056c1a0(pCVar17);
-        core_set_cpp_CDemonSet_FUN_0056be80(g_CDemonSetPtr);
+        core_set_cpp_CDemonSet_renderScene_FUN_0056c1a0(pCVar17,1);
+        core_set_cpp_CDemonSet_renderStaticLights_FUN_0056be80(g_CDemonSetPtr);
         core_dcamera_cpp_CDemonCamera_restoreZBufferRectArray_FUN_0044c860(&g_CDemonCameraInstance);
       }
       else {
@@ -391,9 +391,9 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
         wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
         core_dcamera_cpp_CDemonCamera_beginScene_FUN_0044c430(&g_CDemonCameraInstance,1);
         core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(g_CDemonSetPtr,150.0,0);
-        core_set_cpp_CDemonSet_FUN_0056fbd0(g_CDemonSetPtr);
-        core_set_cpp_CDemonSet_FUN_0056cd60(g_CDemonSetPtr);
-        core_set_cpp_CDemonSet_FUN_0056cf00(g_CDemonSetPtr);
+        core_set_cpp_CDemonSet_buildDisplayList_FUN_0056fbd0(g_CDemonSetPtr,0xffffffff);
+        core_set_cpp_CDemonSet_renderOpaqueActors_FUN_0056cd60(g_CDemonSetPtr);
+        core_set_cpp_CDemonSet_renderTransparentActors_FUN_0056cf00(g_CDemonSetPtr);
         core_fire_cpp_CFireEffect_render_FUN_004c7180(g_CFireEffectPtr);
         core_gore_cpp_CGore_renderParticles_FUN_004ed7b0(g_CGorePtr);
         engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr2,1);
@@ -734,7 +734,7 @@ LAB_00539d68:
        (iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_P), iVar11 != 0)) {
       local_60 = 1;
 LAB_00539e00:
-      core_set_cpp_CDemonSet_FUN_0056d2d0(g_CDemonSetPtr);
+      core_set_cpp_CDemonSet_clearLights_FUN_0056d2d0(g_CDemonSetPtr);
       engine_2d_c_clearInputAndWait_FUN_00403260();
       core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0(g_CGamePtr);
       iVar11 = local_60;

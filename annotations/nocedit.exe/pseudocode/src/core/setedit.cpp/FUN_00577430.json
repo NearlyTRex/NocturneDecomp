@@ -29,6 +29,7 @@
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 14,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 101,
     "suspect_count": 18,
     "suspect_types": [
@@ -320,6 +321,7 @@
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
@@ -327,6 +329,7 @@
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
@@ -334,6 +337,7 @@
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
@@ -341,6 +345,7 @@
       "description": "Unresolved stack parameter",
       "line": 26,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "if ((((-1 < in_stack_00000008) && (-1 < in_stack_0000000c)) &&",
       "type": "stack_param"
     },
@@ -348,6 +353,7 @@
       "description": "Unresolved stack parameter",
       "line": 26,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "if ((((-1 < in_stack_00000008) && (-1 < in_stack_0000000c)) &&",
       "type": "stack_param"
     },
@@ -355,6 +361,7 @@
       "description": "Unresolved stack parameter",
       "line": 27,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "(in_stack_00000008 + 0x40 <= g_WindowWidth)) && (in_stack_0000000c + 0x30 <= g_WindowHeight))",
       "type": "stack_param"
     },
@@ -362,6 +369,7 @@
       "description": "Unresolved stack parameter",
       "line": 27,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "(in_stack_00000008 + 0x40 <= g_WindowWidth)) && (in_stack_0000000c + 0x30 <= g_WindowHeight))",
       "type": "stack_param"
     },
@@ -369,6 +377,7 @@
       "description": "Unresolved stack parameter",
       "line": 29,
       "match": "in_stack_00000004",
+      "severity": "moderate",
       "text": "iVar2 = in_stack_00000004 * 0x3000;",
       "type": "stack_param"
     },
@@ -376,6 +385,7 @@
       "description": "Unresolved stack parameter",
       "line": 30,
       "match": "in_stack_0000000c",
+      "severity": "moderate",
       "text": "local_50 = in_stack_0000000c << 2;",
       "type": "stack_param"
     },
@@ -383,6 +393,7 @@
       "description": "Unresolved stack parameter",
       "line": 36,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "puVar3 = (uchar *)(*(int *)((int)g_ScreenBufferArray + local_30) + in_stack_00000008);",
       "type": "stack_param"
     },
@@ -390,6 +401,7 @@
       "description": "Complex pointer cast",
       "line": 36,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "puVar3 = (uchar *)(*(int *)((int)g_ScreenBufferArray + local_30) + in_stack_00000008);",
       "type": "pointer_cast"
     },
@@ -397,6 +409,7 @@
       "description": "Undefined global data reference",
       "line": 40,
       "match": "DAT_03365cc0",
+      "severity": "mild",
       "text": "uVar1 = *(uint *)(&DAT_03365cc0 + iVar5);",
       "type": "undefined_data"
     },
@@ -404,6 +417,7 @@
       "description": "Unresolved stack parameter",
       "line": 55,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "local_14 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_50) + in_stack_00000008 * 2)",
       "type": "stack_param"
     },
@@ -411,6 +425,7 @@
       "description": "Complex pointer cast",
       "line": 55,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "local_14 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_50) + in_stack_00000008 * 2)",
       "type": "pointer_cast"
     },
@@ -418,6 +433,7 @@
       "description": "Undefined global data reference",
       "line": 60,
       "match": "DAT_03365cc0",
+      "severity": "mild",
       "text": "uVar1 = *(uint *)(&DAT_03365cc0 + iVar5);",
       "type": "undefined_data"
     },
@@ -425,6 +441,7 @@
       "description": "Unresolved stack parameter",
       "line": 79,
       "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "puVar4 = (uint *)(*(int *)((int)g_ScreenBufferArray + local_28) + in_stack_00000008 * 4);",
       "type": "stack_param"
     },
@@ -432,6 +449,7 @@
       "description": "Complex pointer cast",
       "line": 79,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "puVar4 = (uint *)(*(int *)((int)g_ScreenBufferArray + local_28) + in_stack_00000008 * 4);",
       "type": "pointer_cast"
     },
@@ -439,6 +457,7 @@
       "description": "Undefined global data reference",
       "line": 83,
       "match": "DAT_03365cc0",
+      "severity": "mild",
       "text": "uVar1 = *(uint *)(&DAT_03365cc0 + iVar5);",
       "type": "undefined_data"
     }

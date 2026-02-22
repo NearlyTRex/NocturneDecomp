@@ -6,18 +6,19 @@
   },
   "complexity": {
     "assembly_lines": 657,
-    "complexity_score": 347,
+    "complexity_score": 356,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 15,
-    "pseudocode_lines": 242,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 251,
     "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_many",
       "pointer_cast"
     ],
-    "total_lines": 899
+    "total_lines": 908
   },
   "cross_references": [
     {
@@ -38,13 +39,13 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_skeleton.cpp_CDeformableModel_renderParts_FUN_0059abf0",
-    "signature": "void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_0059abf0(CDeformableModel *this_ptr,int lod_index,byte *part_visibility_flags,int *texture_set_indices,int render_flags,int special_render_mode)"
+    "signature": "void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_0059abf0(CDeformableModel *this_ptr,int lod_index,int *part_visibility_flags,int *texture_set_indices,int render_flags,int skip_texture_capture)"
   },
   "function_calls": [
     {
       "addr": "00570870",
       "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_00570870"
+      "name": "core_set.cpp_CDemonSet_renderFaceListOrEnvMap_FUN_00570870"
     },
     {
       "addr": "005fe6b0",
@@ -641,7 +642,7 @@
         "name": "part_visibility_flags",
         "offset": 12,
         "size": 4,
-        "type": "byte *"
+        "type": "int *"
       },
       {
         "is_param": true,
@@ -659,7 +660,7 @@
       },
       {
         "is_param": true,
-        "name": "special_render_mode",
+        "name": "skip_texture_capture",
         "offset": 24,
         "size": 4,
         "type": "int"
@@ -686,36 +687,33 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 142,
+      "line": 145,
       "match": "SQRT",
+      "severity": "mild",
       "text": "local_130 = (float)127 / SQRT(fVar3);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 147,
+      "line": 150,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_2c = (int)ROUND(ROUND(local_38 + 127.0f));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 147,
+      "line": 150,
       "match": "ROUND",
+      "severity": "mild",
       "text": "local_2c = (int)ROUND(ROUND(local_38 + 127.0f));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 148,
+      "line": 151,
       "match": "ROUND",
-      "text": "local_30 = (int)ROUND(ROUND(local_34 + 127.0f));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 148,
-      "match": "ROUND",
+      "severity": "mild",
       "text": "local_30 = (int)ROUND(ROUND(local_34 + 127.0f));",
       "type": "decompiler_intrinsic"
     },
@@ -723,20 +721,31 @@
       "description": "Decompiler intrinsic (not real C)",
       "line": 151,
       "match": "ROUND",
+      "severity": "mild",
+      "text": "local_30 = (int)ROUND(ROUND(local_34 + 127.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 154,
+      "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND(local_3c + 127.0f)),local_2c);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 151,
+      "line": 154,
       "match": "ROUND",
+      "severity": "mild",
       "text": "(int)ROUND(ROUND(local_3c + 127.0f)),local_2c);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 224,
+      "line": 232,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "(iVar7 = *(int *)((int)this_ptr->index_data_ptr[lod_index] + local_4c),",
       "type": "pointer_cast"
     },

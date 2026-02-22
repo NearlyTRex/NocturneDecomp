@@ -1,32 +1,24 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 76,
-        "message": "no matching function for call to 'core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 172,
-    "complexity_score": 265,
+    "complexity_score": 174,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 15,
-    "pseudocode_lines": 70,
-    "suspect_count": 17,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 69,
+    "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
-      "pointer_cast",
-      "stack_param",
-      "undefined_data"
+      "pointer_cast"
     ],
-    "total_lines": 242
+    "total_lines": 241
   },
   "cross_references": [
     {
@@ -46,7 +38,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_morph.cpp_CMorphModel_rotatePoints_FUN_0052af70",
-    "signature": "void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_0052af70(CMorphModel *this_ptr)"
+    "signature": "void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_0052af70(CMorphModel *this_ptr,float blend_factor,SMorphPoint *ref_points)"
   },
   "function_calls": [
     {
@@ -55,14 +47,14 @@
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
-      "addr": "0056e5d0",
-      "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_0056e5d0"
-    },
-    {
       "addr": "0056eac0",
       "is_variadic": false,
       "name": "core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0"
+    },
+    {
+      "addr": "0056e5d0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0056e5d0"
     },
     {
       "addr": "0048caa0",
@@ -126,8 +118,8 @@
     },
     {
       "addr": "02f3dbb4",
-      "name": "DAT_02f3dbb4",
-      "type": "undefined4",
+      "name": "g_MorphVertexBuffer",
+      "type": "CVector3i[2000]",
       "value": null
     },
     {
@@ -181,7 +173,7 @@
       }
     ],
     "confidence": "low",
-    "declared_params": 1,
+    "declared_params": 3,
     "estimated_params": 4
   },
   "pcode_summary": {
@@ -224,10 +216,10 @@
     "pcode_op_count": 855
   },
   "stack_frame": {
-    "frame_size": 76,
+    "frame_size": 84,
     "local_size": 72,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -327,131 +319,97 @@
         "offset": 4,
         "size": 4,
         "type": "CMorphModel *"
+      },
+      {
+        "is_param": true,
+        "name": "blend_factor",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "ref_points",
+        "offset": 12,
+        "size": 4,
+        "type": "SMorphPoint *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000008",
-      "text": "float in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_00000008",
-      "text": "fVar7 = 1.0 - in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_02f3dbb4",
-      "text": "input = (CVector3i *)&DAT_02f3dbb4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 36,
-      "match": "in_stack_0000000c",
-      "text": "iVar8 = *(int *)((int)this_ptr->points + iVar9) * 0x10 + in_stack_0000000c;",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "iVar5 = *(int *)((int)&this_ptr->points->vertex_index + iVar9);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
-      "match": "(int *)((int)",
-      "text": "iVar8 = *(int *)((int)this_ptr->points + iVar9) * 0x10 + in_stack_0000000c;",
+      "line": 38,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "fVar3 = *(float *)((int)&(pSVar6->position).y + iVar9);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 39,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "fVar4 = *(float *)((int)&(pSVar6->position).z + iVar9);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 40,
       "match": "(float *)((int)",
-      "text": "fVar3 = *(float *)((int)pvVar5 + iVar9 + 8);",
+      "severity": "mild",
+      "text": "input->x = (int)ROUND((*(float *)((int)&(pSVar6->position).x + iVar9) * blend_factor +",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 41,
-      "match": "(float *)((int)",
-      "text": "fVar4 = *(float *)((int)pvVar5 + iVar9 + 0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_00000008",
-      "text": "input->x = (int)ROUND((*(float *)((int)pvVar5 + iVar9 + 4) * in_stack_00000008 +",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 42,
-      "match": "(float *)((int)",
-      "text": "input->x = (int)ROUND((*(float *)((int)pvVar5 + iVar9 + 4) * in_stack_00000008 +",
-      "type": "pointer_cast"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 40,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "input->x = (int)ROUND((*(float *)((int)&(pSVar6->position).x + iVar9) * blend_factor +",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 42,
       "match": "ROUND",
-      "text": "input->x = (int)ROUND((*(float *)((int)pvVar5 + iVar9 + 4) * in_stack_00000008 +",
+      "severity": "mild",
+      "text": "input->y = (int)ROUND((fVar3 * blend_factor + fVar1 * fVar8) * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 44,
-      "match": "in_stack_00000008",
-      "text": "input->y = (int)ROUND((fVar3 * in_stack_00000008 + fVar1 * fVar7) * 256.0f);",
-      "type": "stack_param"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 44,
+      "line": 43,
       "match": "ROUND",
-      "text": "input->y = (int)ROUND((fVar3 * in_stack_00000008 + fVar1 * fVar7) * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 45,
-      "match": "in_stack_00000008",
-      "text": "input->z = (int)ROUND((in_stack_00000008 * fVar4 + fVar7 * fVar2) * 256.0f);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 45,
-      "match": "ROUND",
-      "text": "input->z = (int)ROUND((in_stack_00000008 * fVar4 + fVar7 * fVar2) * 256.0f);",
+      "severity": "mild",
+      "text": "input->z = (int)ROUND((blend_factor * fVar4 + fVar8 * fVar2) * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 48,
       "match": "(uint *)((int)",
-      "text": "uVar6 = *(uint *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).screen_x +",
+      "severity": "mild",
+      "text": "uVar7 = *(uint *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).screen_x +",
       "type": "pointer_cast"
     },
     {
       "call_site_count": 1,
-      "declared_params": 1,
+      "declared_params": 3,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 4,
       "fix_type": "add_params",
-      "match": "declared:1 vs estimated:4",
-      "param_delta": 3,
-      "text": "Function declares 1 params but call sites push 4 (3 missing)",
+      "match": "declared:3 vs estimated:4",
+      "param_delta": 1,
+      "text": "Function declares 3 params but call sites push 4 (1 missing)",
       "type": "param_count_too_few"
     }
   ]

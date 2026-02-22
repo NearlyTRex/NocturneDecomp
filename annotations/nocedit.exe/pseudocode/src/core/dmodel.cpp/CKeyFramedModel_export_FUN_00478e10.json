@@ -6,16 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 423,
-    "complexity_score": 192,
+    "complexity_score": 193,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 35,
-    "pseudocode_lines": 147,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 148,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 570
+    "total_lines": 571
   },
   "cross_references": [
     {
@@ -361,29 +362,33 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
+      "line": 78,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "puVar2 = (uint *)((int)&pCVar5->z + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 79,
       "match": "(uint *)((int)",
-      "text": "puVar1 = (uint *)((int)ppCVar3 + iVar7);",
+      "severity": "mild",
+      "text": "puVar3 = (uint *)((int)&pCVar5->y + iVar8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 81,
+      "line": 80,
       "match": "(uint *)((int)",
-      "text": "_fprintf(file,\"%d,%d,%d\\n\",*puVar1,*(uint *)((int)ppCVar3 + iVar4),",
+      "severity": "mild",
+      "text": "puVar1 = (uint *)((int)&pCVar5->x + iVar8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 82,
+      "line": 94,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)ppCVar3 + iVar11));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 93,
-      "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)this_ptr->poly_texture_index_list + local_1c),",
       "type": "pointer_cast"
     }

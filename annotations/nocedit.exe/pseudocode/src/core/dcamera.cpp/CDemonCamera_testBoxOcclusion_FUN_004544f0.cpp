@@ -41,37 +41,39 @@ int __cdecl core_dcamera_cpp_CDemonCamera_testBoxOcclusion_FUN_004544f0(CDemonCa
   local_1c = 4;
   local_14 = 2;
   local_18 = 6;
-  iVar1 = core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,&local_38);
+  iVar1 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_00570df0(g_CDemonSetPtr,&local_38);
   if (iVar1 == 0) {
     local_20 = 1;
     local_1c = 3;
     local_18 = 7;
     local_14 = 5;
-    iVar1 = core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,&local_38);
+    iVar1 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_00570df0(g_CDemonSetPtr,&local_38);
     if (iVar1 == 0) {
       local_18 = 5;
       local_1c = 1;
       local_14 = 4;
       local_20 = iVar1;
-      iVar1 = core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,&local_38);
+      iVar1 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_00570df0(g_CDemonSetPtr,&local_38);
       if (iVar1 == 0) {
         local_1c = 6;
         local_20 = 2;
         local_18 = 7;
         local_14 = 3;
-        iVar1 = core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,&local_38);
+        iVar1 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_00570df0(g_CDemonSetPtr,&local_38);
         if (iVar1 == 0) {
           local_18 = 3;
           local_20 = 0;
           local_1c = 2;
           local_14 = 1;
-          iVar1 = core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,&local_38);
+          iVar1 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_00570df0
+                            (g_CDemonSetPtr,&local_38);
           if (iVar1 == 0) {
             local_14 = 6;
             local_20 = 4;
             local_1c = 5;
             local_18 = 7;
-            iVar1 = core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,&local_38);
+            iVar1 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_00570df0
+                              (g_CDemonSetPtr,&local_38);
             if (iVar1 == 0) goto LAB_004545a7;
           }
         }

@@ -5,6 +5,7 @@
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 4,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 29,
     "suspect_count": 10,
     "suspect_types": [
@@ -164,6 +165,7 @@
       "description": "Unaffected register variable",
       "line": 8,
       "match": "unaff_EBX",
+      "severity": "moderate",
       "text": "char *unaff_EBX;",
       "type": "unaffected_reg"
     },
@@ -171,6 +173,7 @@
       "description": "Unaffected register variable",
       "line": 10,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "int unaff_ESI;",
       "type": "unaffected_reg"
     },
@@ -178,6 +181,7 @@
       "description": "Undefined global data reference",
       "line": 13,
       "match": "DAT_00665d60",
+      "severity": "mild",
       "text": "(this_ptr->_strstreambase_core).layout_info = &DAT_00665d60;",
       "type": "undefined_data"
     },
@@ -185,6 +189,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 15,
       "match": "piVar2[-2].",
+      "severity": "mild",
       "text": "this_ptr = (strstreambase *)&piVar2[-2].__error_state;",
       "type": "negative_offset"
     },
@@ -192,6 +197,7 @@
       "description": "Negative struct offset (wrong base type)",
       "line": 20,
       "match": "this_ptr_00[-1].",
+      "severity": "mild",
       "text": "psVar3 = &this_ptr_00[-1].__minbuf_size;",
       "type": "negative_offset"
     },
@@ -199,6 +205,7 @@
       "description": "Complex pointer cast",
       "line": 23,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "*(int *)((int)psVar3 + *(int *)(*(int *)psVar3 + 4) + -4) = *(int *)(*(int *)psVar3 + 4);",
       "type": "pointer_cast"
     },
@@ -206,6 +213,7 @@
       "description": "Unaffected register variable",
       "line": 29,
       "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "((streambuf *)((int)psVar3 + *(int *)(*(int *)psVar3 + 4)),(char *)this_ptr_00,unaff_ESI",
       "type": "unaffected_reg"
     },
@@ -213,6 +221,7 @@
       "description": "Complex pointer cast",
       "line": 29,
       "match": "(streambuf *)((int)",
+      "severity": "mild",
       "text": "((streambuf *)((int)psVar3 + *(int *)(*(int *)psVar3 + 4)),(char *)this_ptr_00,unaff_ESI",
       "type": "pointer_cast"
     },
@@ -220,6 +229,7 @@
       "description": "Unaffected register variable",
       "line": 30,
       "match": "unaff_EBX",
+      "severity": "moderate",
       "text": ",unaff_EBX);",
       "type": "unaffected_reg"
     },

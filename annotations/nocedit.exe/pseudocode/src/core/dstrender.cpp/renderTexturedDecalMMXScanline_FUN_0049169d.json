@@ -17,6 +17,7 @@
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 18,
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 60,
     "suspect_count": 4,
     "suspect_types": [
@@ -210,6 +211,7 @@
       "description": "Complex pointer cast",
       "line": 25,
       "match": "(void *)((int)",
+      "severity": "mild",
       "text": "g_PerspectiveScanlineColorPtr = (void *)((int)g_ScreenBufferArray[scanline_y] + uVar1 * 4);",
       "type": "pointer_cast"
     },
@@ -217,6 +219,7 @@
       "description": "Complex pointer cast",
       "line": 48,
       "match": "(int *)((int)",
+      "severity": "mild",
       "text": "if (*(int *)((int)g_PerspectiveScanlineZPtr + uVar6) <= (int)uVar1) {",
       "type": "pointer_cast"
     },
@@ -224,6 +227,7 @@
       "description": "Complex pointer cast",
       "line": 49,
       "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)g_PerspectiveScanlineColorPtr + uVar6) =",
       "type": "pointer_cast"
     },

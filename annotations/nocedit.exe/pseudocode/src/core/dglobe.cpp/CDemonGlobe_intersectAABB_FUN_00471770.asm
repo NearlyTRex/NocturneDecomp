@@ -16,7 +16,7 @@
 ; undefined1       Stack[-0x18]:1  local_18
 ;
 ; XREF[1]:
-;   core_set.cpp_CDemonSet_FUN_0056d4a0 at 0056d807
+;   core_set.cpp_CDemonSet_gatherVisibleLights_FUN_0056d4a0 at 0056d807
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030

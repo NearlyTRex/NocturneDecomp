@@ -6,16 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 10,
-    "complexity_score": 120,
+    "complexity_score": 121,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 105,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 106,
     "suspect_count": 1,
     "suspect_types": [
       "suspect_float"
     ],
-    "total_lines": 115
+    "total_lines": 116
   },
   "cross_references": [
     {
@@ -137,8 +138,9 @@
   "suspects": [
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 58,
+      "line": 59,
       "match": "5.60519e-45",
+      "severity": "mild",
       "text": "this_ptr->fire_spread_rate = 5.60519e-45;",
       "type": "suspect_float"
     }

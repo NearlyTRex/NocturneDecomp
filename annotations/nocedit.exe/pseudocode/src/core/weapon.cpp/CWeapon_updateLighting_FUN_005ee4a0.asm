@@ -31,7 +31,7 @@
 ;   core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
 ;   core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0
-;   core_set.cpp_CDemonSet_FUN_0056d110
+;   core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0056d110
 ;
 ; *****************************************************************************
 
@@ -157,8 +157,8 @@ section .text
     XOR ESI,ESI                         ; 005ee618
     PUSH EDI                            ; 005ee61a | g_CDemonSetInstance
     MOV dword ptr [0x03f95d9c],ESI      ; 005ee61b | CDemonGlobe_03f95d7c.corona_mode
-    CALL core_set.cpp_CDemonSet_FUN_0056d110 ; 005ee621
-        ;   XREF to: 0056d110 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d110(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0056d110 ; 005ee621
+        ;   XREF to: 0056d110 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0056d110(CDemonSet * this_ptr, CDemonGlobe * globe)
     ADD ESP,0x8                         ; 005ee626
     POP EDI                             ; 005ee629
     ADD ESP,0x2c                        ; 005ee62a
