@@ -2,12 +2,6 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 252,
-        "message": "no matching function for call to '__STK'"
-      },
-      {
         "category": "other",
         "column": 54,
         "line": 283,
@@ -114,6 +108,12 @@
         "column": 49,
         "line": 410,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "format_error",
+        "column": 54,
+        "line": 422,
+        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       }
     ],
     "success": false,

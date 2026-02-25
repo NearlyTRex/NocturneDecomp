@@ -7,13 +7,17 @@ struct CTire;
 #include "system/basetypes.h"
 
 // Adjusted pointer: CTire_ptr_20
+// Points to CKeyFramedModelInstance at offset 0x14 in CTire
 // 32-bit pointer to CTire
+struct CKeyFramedModelInstance;
 struct CTire_ptr_20 {
     void *_raw;
+    typedef CTire base_type;
     CTire_ptr_20() : _raw(0) {}
     template<typename T> CTire_ptr_20(T* p) : _raw((void*)p) {}
     template<typename T> CTire_ptr_20& operator=(T* p) { _raw = (void*)p; return *this; }
-    CTire* operator->() const { return (CTire*)_raw; }
+    CKeyFramedModelInstance* operator->() const { return (CKeyFramedModelInstance*)_raw; }
+    CTire* adj() const { return (CTire*)_raw; }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

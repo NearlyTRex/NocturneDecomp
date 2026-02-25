@@ -2,11 +2,11 @@
 // Address: 005e1df0
 // Address Range: [[005e1df0, 005e1e42]]
 // Convention: __cdecl
-// Signature: int __cdecl support_trisock_cpp_getSocketName_FUN_005e1df0(SOCKET *socket_handle,SNetworkAddr *param_2)
+// Signature: int __cdecl support_trisock_cpp_getSocketName_FUN_005e1df0(_SOCKET *socket_handle,SNetworkAddr *param_2)
 
 #include "nocturne.h"
 
-int __cdecl support_trisock_cpp_getSocketName_FUN_005e1df0(SOCKET *socket_handle,SNetworkAddr *param_2)
+int __cdecl support_trisock_cpp_getSocketName_FUN_005e1df0(_SOCKET *socket_handle,SNetworkAddr *param_2)
 
 {
   uint uVar1;

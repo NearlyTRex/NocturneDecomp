@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl support_trisock_cpp_performSocketOperation_FUN_005e1ca0(SOCKET *socket_handle,char *buffer,int length,SNetworkAddr *dest_addr)
+; int __cdecl support_trisock_cpp_performSocketOperation_FUN_005e1ca0(_SOCKET *socket_handle,char *buffer,int length,SNetworkAddr *dest_addr)
 ;
 ; Parameters:
-; SOCKET *         Stack[0x4]:4   socket_handle
+; _SOCKET *        Stack[0x4]:4   socket_handle
 ; char *           Stack[0x8]:4   buffer
 ; int              Stack[0xc]:4   length
 ; SNetworkAddr *   Stack[0x10]:4   dest_addr
@@ -43,7 +43,7 @@ section .text
     MOV EBX,dword ptr [ESI]             ; 005e1cbe
     PUSH EBX                            ; 005e1cc0
     CALL crt_wsock32.c_send             ; 005e1cc1
-        ;   XREF to: 00610f0a (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_send(SOCKET s, char * buf, int len, int flags)
+        ;   XREF to: 00610f0a (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_send(_SOCKET s, char * buf, int len, int flags)
     MOV ESI,EAX                         ; 005e1cc6
     POP EBX                             ; 005e1cc8
     CMP ESI,-0x1                        ; 005e1cc9
@@ -77,7 +77,7 @@ section .text
     MOV EBP,dword ptr [ESI]             ; 005e1d05
     PUSH EBP                            ; 005e1d07
     CALL crt_wsock32.c_sendto           ; 005e1d08
-        ;   XREF to: 00610f04 (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_sendto(SOCKET s, char * buf, int len, int flags, ...)
+        ;   XREF to: 00610f04 (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_sendto(_SOCKET s, char * buf, int len, int flags, ...)
     MOV ESI,EAX                         ; 005e1d0d
     CMP ESI,-0x1                        ; 005e1d0f
     MOV EAX,ESI                         ; 005e1d12

@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl support_trisock_cpp_acceptConnection_FUN_005e1d80(SOCKET *listen_socket,SNetworkAddr *client_addr,SOCKET *new_socket)
+; int __cdecl support_trisock_cpp_acceptConnection_FUN_005e1d80(_SOCKET *listen_socket,SNetworkAddr *client_addr,_SOCKET *new_socket)
 ;
 ; Parameters:
-; SOCKET *         Stack[0x4]:4   listen_socket
+; _SOCKET *        Stack[0x4]:4   listen_socket
 ; SNetworkAddr *   Stack[0x8]:4   client_addr
-; SOCKET *         Stack[0xc]:4   new_socket
+; _SOCKET *        Stack[0xc]:4   new_socket
 ; Local Variables:
 ; undefined        Stack[-0x20]:1  local_20
 ; undefined4       Stack[-0x8]:4  local_8
@@ -33,7 +33,7 @@ section .text
     MOV ECX,dword ptr [EAX]             ; 005e1d9f
     PUSH ECX                            ; 005e1da1
     CALL crt_wsock32.c_accept           ; 005e1da2
-        ;   XREF to: 00610ef2 (UNCONDITIONAL_CALL)  ; SOCKET crt_wsock32.c_accept(SOCKET s, SOCKADDR * addr, int * addrlen)
+        ;   XREF to: 00610ef2 (UNCONDITIONAL_CALL)  ; _SOCKET crt_wsock32.c_accept(_SOCKET s, SOCKADDR * addr, int * addrlen)
     MOV EDX,dword ptr [ESP + 0x28]      ; 005e1da7
     MOV dword ptr [EDX],EAX             ; 005e1dab
     CMP EAX,-0x1                        ; 005e1dad

@@ -4605,74 +4605,6 @@
       "type":"typedef"
     },
     {
-      "name":"SOCKET",
-      "type":"typedef"
-    },
-    {
-      "name":"ACCEPT_FUNC",
-      "type":"function_definition"
-    },
-    {
-      "name":"BIND_FUNC",
-      "type":"function_definition"
-    },
-    {
-      "name":"CLOSE_SOCKET_FUNC",
-      "type":"function_definition"
-    },
-    {
-      "name":"CNetGame",
-      "type":"struct"
-    },
-    {
-      "name":"CNetGame_ptr_32",
-      "type":"typedef"
-    },
-    {
-      "name":"CNetGame_ptr_368",
-      "type":"typedef"
-    },
-    {
-      "name":"CONNECT_FUNC",
-      "type":"function_definition"
-    },
-    {
-      "name":"GET_SOCK_NAME_FUNC",
-      "type":"function_definition"
-    },
-    {
-      "name":"IOCTL_SOCKET_FUNC",
-      "type":"function_definition"
-    },
-    {
-      "name":"LISTEN_FUNC",
-      "type":"function_definition"
-    },
-    {
-      "name":"RECV_FROM_FUNC",
-      "type":"function_definition"
-    },
-    {
-      "name":"RECV_FUNC",
-      "type":"function_definition"
-    },
-    {
-      "name":"SEND_FUNC",
-      "type":"function_definition"
-    },
-    {
-      "name":"SEND_TO_FUNC",
-      "type":"function_definition"
-    },
-    {
-      "name":"SET_SOCK_OPT_FUNC",
-      "type":"function_definition"
-    },
-    {
-      "name":"SHUTDOWN_FUNC",
-      "type":"function_definition"
-    },
-    {
       "name":"TIME_BEGIN_PERIOD_FUNC",
       "type":"function_definition"
     },
@@ -5262,6 +5194,74 @@
     },
     {
       "name":"REG_CREATE_KEY_EX_A_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"_SOCKET",
+      "type":"typedef"
+    },
+    {
+      "name":"ACCEPT_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"BIND_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"CLOSE_SOCKET_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"CNetGame",
+      "type":"struct"
+    },
+    {
+      "name":"CNetGame_ptr_32",
+      "type":"typedef"
+    },
+    {
+      "name":"CNetGame_ptr_368",
+      "type":"typedef"
+    },
+    {
+      "name":"CONNECT_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"GET_SOCK_NAME_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"IOCTL_SOCKET_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"LISTEN_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"RECV_FROM_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"RECV_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"SEND_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"SEND_TO_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"SET_SOCK_OPT_FUNC",
+      "type":"function_definition"
+    },
+    {
+      "name":"SHUTDOWN_FUNC",
       "type":"function_definition"
     },
     {
@@ -7880,7 +7880,7 @@
       "parameters":[
         {
           "name":"s",
-          "type":"SOCKET"
+          "type":"_SOCKET"
         },
         {
           "name":"addr",
@@ -7891,7 +7891,7 @@
           "type":"int*"
         }
       ],
-      "return_type":"SOCKET",
+      "return_type":"_SOCKET",
       "type":"function_definition"
     },
     {
@@ -8654,7 +8654,7 @@
       "parameters":[
         {
           "name":"s",
-          "type":"SOCKET"
+          "type":"_SOCKET"
         },
         {
           "name":"addr",
@@ -10976,7 +10976,7 @@
       "parameters":[
         {
           "name":"s",
-          "type":"SOCKET"
+          "type":"_SOCKET"
         }
       ],
       "return_type":"int",
@@ -12100,7 +12100,7 @@
       "parameters":[
         {
           "name":"s",
-          "type":"SOCKET"
+          "type":"_SOCKET"
         },
         {
           "name":"name",
@@ -15293,7 +15293,7 @@
       "parameters":[
         {
           "name":"s",
-          "type":"SOCKET"
+          "type":"_SOCKET"
         },
         {
           "name":"name",
@@ -18211,7 +18211,7 @@
       "parameters":[
         {
           "name":"s",
-          "type":"SOCKET"
+          "type":"_SOCKET"
         },
         {
           "name":"cmd",
@@ -18383,7 +18383,7 @@
       "parameters":[
         {
           "name":"s",
-          "type":"SOCKET"
+          "type":"_SOCKET"
         },
         {
           "name":"backlog",
@@ -19073,7 +19073,7 @@
       "parameters":[
         {
           "name":"s",
-          "type":"SOCKET"
+          "type":"_SOCKET"
         },
         {
           "name":"buf",
@@ -19107,7 +19107,7 @@
       "parameters":[
         {
           "name":"s",
-          "type":"SOCKET"
+          "type":"_SOCKET"
         },
         {
           "name":"buf",
@@ -19423,7 +19423,7 @@
       "parameters":[
         {
           "name":"s",
-          "type":"SOCKET"
+          "type":"_SOCKET"
         },
         {
           "name":"buf",
@@ -19449,7 +19449,7 @@
       "parameters":[
         {
           "name":"s",
-          "type":"SOCKET"
+          "type":"_SOCKET"
         },
         {
           "name":"buf",
@@ -19809,7 +19809,7 @@
       "parameters":[
         {
           "name":"s",
-          "type":"SOCKET"
+          "type":"_SOCKET"
         },
         {
           "name":"level",
@@ -19925,7 +19925,7 @@
       "parameters":[
         {
           "name":"s",
-          "type":"SOCKET"
+          "type":"_SOCKET"
         },
         {
           "name":"how",
@@ -37907,7 +37907,7 @@
           "len":4,
           "name":"socket",
           "offset":368,
-          "type":"SOCKET"
+          "type":"_SOCKET"
         }
       ],
       "importable":true,
@@ -58809,6 +58809,13 @@
   ],
   "typedefs":[
     {
+      "base":"uint",
+      "cat":"/Nocturne/Typedef/System/winsock.h",
+      "importable":true,
+      "name":"_SOCKET",
+      "type":"typedef"
+    },
+    {
       "base":"DWORD",
       "cat":"/Nocturne/Typedef/System/winnt.h",
       "importable":true,
@@ -60553,13 +60560,6 @@
       "cat":"/Nocturne/Typedef/System/windef.h",
       "importable":true,
       "name":"SIZE_T",
-      "type":"typedef"
-    },
-    {
-      "base":"uint",
-      "cat":"/Nocturne/Typedef/System/winsock.h",
-      "importable":true,
-      "name":"SOCKET",
       "type":"typedef"
     },
     {

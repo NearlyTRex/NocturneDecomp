@@ -46,24 +46,24 @@ typedef int cpp_streambuf_underflow(struct streambuf* param0);
 
 // Structure: ios
 typedef struct ios {
-    struct streambuf* _strmbuf;
-    struct _ostream* _tied_stream;
-    long _format_flags;
-    int _error_state;
-    int _enabled_exceptions;
-    int _float_precision;
-    int _field_width;
-    void* _xalloc_list;
-    char _fill_character;
+    struct streambuf* __strmbuf;
+    struct _ostream* __tied_stream;
+    long __format_flags;
+    int __error_state;
+    int __enabled_exceptions;
+    int __float_precision;
+    int __field_width;
+    void* __xalloc_list;
+    char __fill_character;
     char padding[3];
-    void* _i_lock;
+    void* __i_lock;
     void** cleanup_vtable;
 } ios;
 
 // Structure: istream_core
 typedef struct istream_core {
     struct WatcomInheritanceLayout* layout_info;
-    int _last_read_length;
+    int __last_read_length;
     struct WatcomThunkedDestructor* destructor_vtable;
     void* istream_data;
 } istream_core;
@@ -89,16 +89,16 @@ typedef struct _ostream {
 
 // Structure: streambuf
 typedef struct streambuf {
-    void* _b_lock;
-    char* _reserve_base;
-    char* _reserve_end;
-    char* _get_base;
-    char* _get_end;
-    char* _get_ptr;
-    char* _put_base;
-    char* _put_end;
-    char* _put_ptr;
-    uint _flags;
+    void* __b_lock;
+    char* __reserve_base;
+    char* __reserve_end;
+    char* __get_base;
+    char* __get_end;
+    char* __get_ptr;
+    char* __put_base;
+    char* __put_end;
+    char* __put_ptr;
+    uint __flags;
 } streambuf;
 
 // Structure: streambuf_vtable

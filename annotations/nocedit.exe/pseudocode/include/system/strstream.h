@@ -12,12 +12,12 @@
 // Structure: strstreambuf
 typedef struct strstreambuf {
     streambuf _streambuf;
-    struct strstreambuf_vtable* _vtable;
-    void* _alloc_fn;
-    void* _free_fn;
-    int _allocation_size;
-    short _minbuf_size;
-    uchar _bit_flags;
+    struct strstreambuf_vtable* __vtable;
+    void* __alloc_fn;
+    void* __free_fn;
+    int __allocation_size;
+    short __minbuf_size;
+    uchar __bit_flags;
     char padding;
 } strstreambuf;
 

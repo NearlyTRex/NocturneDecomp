@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl support_trisock_cpp_listenSocket_FUN_005e1d60(SOCKET *socket_handle)
+; int __cdecl support_trisock_cpp_listenSocket_FUN_005e1d60(_SOCKET *socket_handle)
 ;
 ; Parameters:
-; SOCKET *         Stack[0x4]:4   socket_handle
+; _SOCKET *        Stack[0x4]:4   socket_handle
 ;
 ; Called Functions:
 ;   crt_wsock32.c_listen
@@ -19,7 +19,7 @@ section .text
     MOV EDX,dword ptr [EAX]             ; 005e1d66
     PUSH EDX                            ; 005e1d68
     CALL crt_wsock32.c_listen           ; 005e1d69
-        ;   XREF to: 00610ef8 (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_listen(SOCKET s, int backlog)
+        ;   XREF to: 00610ef8 (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_listen(_SOCKET s, int backlog)
     TEST EAX,EAX                        ; 005e1d6e
     SETZ AL                             ; 005e1d70
     AND EAX,0xff                        ; 005e1d73

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl support_trisock_cpp_getSocketName_FUN_005e1df0(SOCKET *socket_handle,SNetworkAddr *param_2)
+; int __cdecl support_trisock_cpp_getSocketName_FUN_005e1df0(_SOCKET *socket_handle,SNetworkAddr *param_2)
 ;
 ; Parameters:
-; SOCKET *         Stack[0x4]:4   socket_handle
+; _SOCKET *        Stack[0x4]:4   socket_handle
 ; SNetworkAddr *   Stack[0x8]:4   param_2
 ; Local Variables:
 ; undefined        Stack[-0x1c]:1  local_1c
@@ -33,7 +33,7 @@ section .text
     MOV ECX,dword ptr [EAX]             ; 005e1e0a
     PUSH ECX                            ; 005e1e0c
     CALL crt_wsock32.c_getsockname      ; 005e1e0d
-        ;   XREF to: 00610eec (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_getsockname(SOCKET s, SOCKADDR * name, int * namelen)
+        ;   XREF to: 00610eec (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_getsockname(_SOCKET s, SOCKADDR * name, int * namelen)
     TEST EAX,EAX                        ; 005e1e12
     JZ 0x005e1e1c                       ; 005e1e14
         ;   XREF to: 005e1e1c (CONDITIONAL_JUMP)  ; LAB_005e1e1c

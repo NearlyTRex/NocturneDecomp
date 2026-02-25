@@ -38,7 +38,7 @@ section .text
     ADD EAX,0x150                       ; 0053f6e9
     PUSH EAX                            ; 0053f6ee
     CALL support_trisock.cpp_invalidateSocket_FUN_005e1ae0 ; 0053f6ef
-        ;   XREF to: 005e1ae0 (UNCONDITIONAL_CALL)  ; SOCKET * support_trisock.cpp_invalidateSocket_FUN_005e1ae0(SOCKET * socket_handle)
+        ;   XREF to: 005e1ae0 (UNCONDITIONAL_CALL)  ; _SOCKET * support_trisock.cpp_invalidateSocket_FUN_005e1ae0(_SOCKET * socket_handle)
     LEA EDX,[EAX + 0xfffffe90]          ; 0053f6f4
     MOV dword ptr [EDX],0x0             ; 0053f6fa
     MOV dword ptr [EDX + 0x4],0x0       ; 0053f700

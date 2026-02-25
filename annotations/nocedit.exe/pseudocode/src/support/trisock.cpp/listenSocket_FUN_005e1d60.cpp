@@ -2,11 +2,11 @@
 // Address: 005e1d60
 // Address Range: [[005e1d60, 005e1d78]]
 // Convention: __cdecl
-// Signature: int __cdecl support_trisock_cpp_listenSocket_FUN_005e1d60(SOCKET *socket_handle)
+// Signature: int __cdecl support_trisock_cpp_listenSocket_FUN_005e1d60(_SOCKET *socket_handle)
 
 #include "nocturne.h"
 
-int __cdecl support_trisock_cpp_listenSocket_FUN_005e1d60(SOCKET *socket_handle)
+int __cdecl support_trisock_cpp_listenSocket_FUN_005e1d60(_SOCKET *socket_handle)
 
 {
   int iVar1;

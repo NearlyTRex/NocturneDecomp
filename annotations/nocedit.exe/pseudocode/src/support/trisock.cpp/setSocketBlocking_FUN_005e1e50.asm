@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl support_trisock_cpp_setSocketBlocking_FUN_005e1e50(SOCKET *socket_handle,int blocking_mode)
+; int __cdecl support_trisock_cpp_setSocketBlocking_FUN_005e1e50(_SOCKET *socket_handle,int blocking_mode)
 ;
 ; Parameters:
-; SOCKET *         Stack[0x4]:4   socket_handle
+; _SOCKET *        Stack[0x4]:4   socket_handle
 ; int              Stack[0x8]:4   blocking_mode
 ; Local Variables:
 ; undefined4       Stack[-0x4]:4  local_4
@@ -32,7 +32,7 @@ section .text
     MOV ECX,dword ptr [EAX]             ; 005e1e6f
     PUSH ECX                            ; 005e1e71
     CALL crt_wsock32.c_ioctlsocket      ; 005e1e72
-        ;   XREF to: 00610ee6 (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_ioctlsocket(SOCKET s, long cmd, ulong * argp)
+        ;   XREF to: 00610ee6 (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_ioctlsocket(_SOCKET s, long cmd, ulong * argp)
     TEST EAX,EAX                        ; 005e1e77
     SETZ AL                             ; 005e1e79
     AND EAX,0xff                        ; 005e1e7c

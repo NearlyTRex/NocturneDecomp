@@ -269,6 +269,8 @@ inline void __stosd(void* dest, unsigned int value, unsigned int dword_count) {
 // ---------------------------------------------------------------------------
 
 // __STK - Stack probe function (ensures stack pages are committed)
+// Watcom emits this with no args or with an explicit size argument.
+inline void __STK() {}
 inline void __STK(size_t size) {
     volatile char* p = (volatile char*)&size;
     while (size > 4096) { p -= 4096; (void)*p; size -= 4096; }
@@ -285,6 +287,10 @@ inline void __STK(size_t size) {
 #ifndef _MSC_VER
 #include <unistd.h>
 #endif
+
+// Watcom __fastcall CRT wrappers (underscore-prefixed variants)
+inline void* _memcpy(void* dest, const void* src, size_t count) { return memcpy(dest, src, count); }
+inline void* _memset(void* dest, int value, size_t count) { return memset(dest, value, count); }
 
 // tell() - get current file position
 #ifndef _MSC_VER

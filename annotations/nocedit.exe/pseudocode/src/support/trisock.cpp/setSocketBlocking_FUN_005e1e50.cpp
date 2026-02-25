@@ -2,11 +2,11 @@
 // Address: 005e1e50
 // Address Range: [[005e1e50, 005e1e84]]
 // Convention: __cdecl
-// Signature: int __cdecl support_trisock_cpp_setSocketBlocking_FUN_005e1e50(SOCKET *socket_handle,int blocking_mode)
+// Signature: int __cdecl support_trisock_cpp_setSocketBlocking_FUN_005e1e50(_SOCKET *socket_handle,int blocking_mode)
 
 #include "nocturne.h"
 
-int __cdecl support_trisock_cpp_setSocketBlocking_FUN_005e1e50(SOCKET *socket_handle,int blocking_mode)
+int __cdecl support_trisock_cpp_setSocketBlocking_FUN_005e1e50(_SOCKET *socket_handle,int blocking_mode)
 
 {
   int iVar1;

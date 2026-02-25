@@ -37,7 +37,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_trisock.cpp_acceptConnection_FUN_005e1d80",
-    "signature": "int __cdecl support_trisock_cpp_acceptConnection_FUN_005e1d80(SOCKET *listen_socket,SNetworkAddr *client_addr,SOCKET *new_socket)"
+    "signature": "int __cdecl support_trisock_cpp_acceptConnection_FUN_005e1d80(_SOCKET *listen_socket,SNetworkAddr *client_addr,_SOCKET *new_socket)"
   },
   "function_calls": [
     {
@@ -112,7 +112,7 @@
         "name": "listen_socket",
         "offset": 4,
         "size": 4,
-        "type": "SOCKET *"
+        "type": "_SOCKET *"
       },
       {
         "is_param": true,
@@ -126,7 +126,7 @@
         "name": "new_socket",
         "offset": 12,
         "size": 4,
-        "type": "SOCKET *"
+        "type": "_SOCKET *"
       }
     ]
   },
@@ -142,9 +142,9 @@
     {
       "description": "Complex pointer cast",
       "line": 24,
-      "match": "(SOCKET *)((int)",
+      "match": "(_SOCKET *)((int)",
       "severity": "mild",
-      "text": "new_socket[(uint)bVar3 * -2 + 1] = *(SOCKET *)((int)pSVar2 + (uint)bVar3 * -8 + 4);",
+      "text": "new_socket[(uint)bVar3 * -2 + 1] = *(_SOCKET *)((int)pSVar2 + (uint)bVar3 * -8 + 4);",
       "type": "pointer_cast"
     }
   ]

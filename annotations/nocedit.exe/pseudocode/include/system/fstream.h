@@ -11,11 +11,11 @@
 // Structure: filebuf
 typedef struct filebuf {
     streambuf _streambuf;
-    struct filebuf_vtable* _vtable;
-    int _file_handle;
-    int _file_mode;
-    char _unbuffered_get_area[5];
-    char _attached;
+    struct filebuf_vtable* __vtable;
+    int __file_handle;
+    int __file_mode;
+    char __unbuffered_get_area[5];
+    char __attached;
     char padding_0x3E[2];
 } filebuf;
 

@@ -29,7 +29,7 @@ section .text
     ADD EAX,0x170                       ; 0053f843
     PUSH EAX                            ; 0053f848
     CALL support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20 ; 0053f849
-        ;   XREF to: 005e1d20 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20(SOCKET * socket_handle)
+        ;   XREF to: 005e1d20 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20(_SOCKET * socket_handle)
     ADD ESP,0x4                         ; 0053f84e
     JMP 0x005e1ee0                      ; 0053f851
         ;   XREF to: 005e1ee0 (UNCONDITIONAL_CALL)

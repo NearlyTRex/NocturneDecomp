@@ -18,6 +18,6 @@ typedef struct CNetGame {
     char mission_name[80]; // 0x118
     int has_pending_sim_frame; // 0x168
     uint random_seed; // 0x16c
-    SOCKET socket; // 0x170
+    _SOCKET socket; // 0x170
 } CNetGame;
 

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl support_trisock_cpp_receiveSocketData_FUN_005e1c20(SOCKET *socket_handle,char *buffer,int length,SNetworkAddr *source_addr)
+; int __cdecl support_trisock_cpp_receiveSocketData_FUN_005e1c20(_SOCKET *socket_handle,char *buffer,int length,SNetworkAddr *source_addr)
 ;
 ; Parameters:
-; SOCKET *         Stack[0x4]:4   socket_handle
+; _SOCKET *        Stack[0x4]:4   socket_handle
 ; char *           Stack[0x8]:4   buffer
 ; int              Stack[0xc]:4   length
 ; SNetworkAddr *   Stack[0x10]:4   source_addr
@@ -44,7 +44,7 @@ section .text
     MOV ECX,dword ptr [EDX]             ; 005e1c3e
     PUSH ECX                            ; 005e1c40
     CALL crt_wsock32.c_recv             ; 005e1c41
-        ;   XREF to: 00610f16 (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_recv(SOCKET s, char * buf, int len, int flags)
+        ;   XREF to: 00610f16 (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_recv(_SOCKET s, char * buf, int len, int flags)
     MOV EBX,EAX                         ; 005e1c46
     CMP EBX,-0x1                        ; 005e1c48
         ;   Label: LAB_005e1c48
@@ -68,7 +68,7 @@ section .text
     MOV EBP,dword ptr [EDX]             ; 005e1c6c
     PUSH EBP                            ; 005e1c6e
     CALL crt_wsock32.c_recvfrom         ; 005e1c6f
-        ;   XREF to: 00610f10 (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_recvfrom(SOCKET s, char * buf, int len, int flags, ...)
+        ;   XREF to: 00610f10 (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_recvfrom(_SOCKET s, char * buf, int len, int flags, ...)
     MOV EBX,EAX                         ; 005e1c74
     TEST EAX,EAX                        ; 005e1c76
     JLE 0x005e1c48                      ; 005e1c78

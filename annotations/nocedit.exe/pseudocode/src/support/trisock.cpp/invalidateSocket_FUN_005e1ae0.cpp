@@ -2,11 +2,11 @@
 // Address: 005e1ae0
 // Address Range: [[005e1ae0, 005e1aea]]
 // Convention: __cdecl
-// Signature: SOCKET * __cdecl support_trisock_cpp_invalidateSocket_FUN_005e1ae0(SOCKET *socket_handle)
+// Signature: _SOCKET * __cdecl support_trisock_cpp_invalidateSocket_FUN_005e1ae0(_SOCKET *socket_handle)
 
 #include "nocturne.h"
 
-SOCKET * __cdecl support_trisock_cpp_invalidateSocket_FUN_005e1ae0(SOCKET *socket_handle)
+_SOCKET * __cdecl support_trisock_cpp_invalidateSocket_FUN_005e1ae0(_SOCKET *socket_handle)
 
 {
   *socket_handle = 0xffffffff;

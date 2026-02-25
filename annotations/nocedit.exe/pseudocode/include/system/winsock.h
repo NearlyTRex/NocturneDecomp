@@ -79,49 +79,6 @@ typedef struct SOCKADDR_IN {
     char padding_0x08[8];
 } SOCKADDR_IN;
 
-// Typedef: SOCKET
-// Unsigned Integer (compiler-specific size)
-typedef uint SOCKET;
-
-// Function Definition: ACCEPT_FUNC
-typedef SOCKET ACCEPT_FUNC(SOCKET s, struct SOCKADDR* addr, int* addrlen);
-
-// Function Definition: BIND_FUNC
-typedef int BIND_FUNC(SOCKET s, struct SOCKADDR* addr, int namelen);
-
-// Function Definition: CLOSE_SOCKET_FUNC
-typedef int CLOSE_SOCKET_FUNC(SOCKET s);
-
-// Function Definition: CONNECT_FUNC
-typedef int CONNECT_FUNC(SOCKET s, struct SOCKADDR* name, int namelen);
-
-// Function Definition: GET_SOCK_NAME_FUNC
-typedef int GET_SOCK_NAME_FUNC(SOCKET s, struct SOCKADDR* name, int* namelen);
-
-// Function Definition: IOCTL_SOCKET_FUNC
-typedef int IOCTL_SOCKET_FUNC(SOCKET s, long cmd, ulong* argp);
-
-// Function Definition: LISTEN_FUNC
-typedef int LISTEN_FUNC(SOCKET s, int backlog);
-
-// Function Definition: RECV_FROM_FUNC
-typedef int RECV_FROM_FUNC(SOCKET s, char* buf, int len, int flags, struct SOCKADDR* from, int* fromlen);
-
-// Function Definition: RECV_FUNC
-typedef int RECV_FUNC(SOCKET s, char* buf, int len, int flags);
-
-// Function Definition: SEND_FUNC
-typedef int SEND_FUNC(SOCKET s, char* buf, int len, int flags);
-
-// Function Definition: SEND_TO_FUNC
-typedef int SEND_TO_FUNC(SOCKET s, char* buf, int len, int flags, struct SOCKADDR* to, int tolen);
-
-// Function Definition: SET_SOCK_OPT_FUNC
-typedef int SET_SOCK_OPT_FUNC(SOCKET s, int level, int optname, char* optval, int optlen);
-
-// Function Definition: SHUTDOWN_FUNC
-typedef int SHUTDOWN_FUNC(SOCKET s, int how);
-
 // Structure: WSADATA
 typedef struct WSADATA {
     WORD wVersion;
@@ -138,6 +95,49 @@ typedef int WSA_CLEANUP_FUNC(void);
 
 // Function Definition: WSA_STARTUP_FUNC
 typedef int WSA_STARTUP_FUNC(WORD wVersionRequested, LPWSADATA lpWSAData);
+
+// Typedef: _SOCKET
+// Unsigned Integer (compiler-specific size)
+typedef uint _SOCKET;
+
+// Function Definition: ACCEPT_FUNC
+typedef _SOCKET ACCEPT_FUNC(_SOCKET s, struct SOCKADDR* addr, int* addrlen);
+
+// Function Definition: BIND_FUNC
+typedef int BIND_FUNC(_SOCKET s, struct SOCKADDR* addr, int namelen);
+
+// Function Definition: CLOSE_SOCKET_FUNC
+typedef int CLOSE_SOCKET_FUNC(_SOCKET s);
+
+// Function Definition: CONNECT_FUNC
+typedef int CONNECT_FUNC(_SOCKET s, struct SOCKADDR* name, int namelen);
+
+// Function Definition: GET_SOCK_NAME_FUNC
+typedef int GET_SOCK_NAME_FUNC(_SOCKET s, struct SOCKADDR* name, int* namelen);
+
+// Function Definition: IOCTL_SOCKET_FUNC
+typedef int IOCTL_SOCKET_FUNC(_SOCKET s, long cmd, ulong* argp);
+
+// Function Definition: LISTEN_FUNC
+typedef int LISTEN_FUNC(_SOCKET s, int backlog);
+
+// Function Definition: RECV_FROM_FUNC
+typedef int RECV_FROM_FUNC(_SOCKET s, char* buf, int len, int flags, struct SOCKADDR* from, int* fromlen);
+
+// Function Definition: RECV_FUNC
+typedef int RECV_FUNC(_SOCKET s, char* buf, int len, int flags);
+
+// Function Definition: SEND_FUNC
+typedef int SEND_FUNC(_SOCKET s, char* buf, int len, int flags);
+
+// Function Definition: SEND_TO_FUNC
+typedef int SEND_TO_FUNC(_SOCKET s, char* buf, int len, int flags, struct SOCKADDR* to, int tolen);
+
+// Function Definition: SET_SOCK_OPT_FUNC
+typedef int SET_SOCK_OPT_FUNC(_SOCKET s, int level, int optname, char* optval, int optlen);
+
+// Function Definition: SHUTDOWN_FUNC
+typedef int SHUTDOWN_FUNC(_SOCKET s, int how);
 
 // =============================================================================
 // WINSOCK FUNCTION STUBS
@@ -193,67 +193,67 @@ inline int WSACleanup(void) {
 // Socket Operations
 // ---------------------------------------------------------------------------
 
-inline SOCKET accept(SOCKET s, struct SOCKADDR* addr, int* addrlen) {
+inline _SOCKET accept(_SOCKET s, struct SOCKADDR* addr, int* addrlen) {
     (void)s; (void)addr; (void)addrlen;
-    return (SOCKET)-1;  // INVALID_SOCKET
+    return (_SOCKET)-1;  // INVALID_SOCKET
 }
 
-inline int bind(SOCKET s, const struct SOCKADDR* addr, int namelen) {
+inline int bind(_SOCKET s, const struct SOCKADDR* addr, int namelen) {
     (void)s; (void)addr; (void)namelen;
     return -1;  // SOCKET_ERROR
 }
 
-inline int closesocket(SOCKET s) {
+inline int closesocket(_SOCKET s) {
     (void)s;
     return 0;
 }
 
-inline int connect(SOCKET s, const struct SOCKADDR* name, int namelen) {
+inline int connect(_SOCKET s, const struct SOCKADDR* name, int namelen) {
     (void)s; (void)name; (void)namelen;
     return -1;  // SOCKET_ERROR
 }
 
-inline int getsockname(SOCKET s, struct SOCKADDR* name, int* namelen) {
+inline int getsockname(_SOCKET s, struct SOCKADDR* name, int* namelen) {
     (void)s; (void)name; (void)namelen;
     return -1;  // SOCKET_ERROR
 }
 
-inline int ioctlsocket(SOCKET s, long cmd, ulong* argp) {
+inline int ioctlsocket(_SOCKET s, long cmd, ulong* argp) {
     (void)s; (void)cmd; (void)argp;
     return -1;  // SOCKET_ERROR
 }
 
-inline int listen(SOCKET s, int backlog) {
+inline int listen(_SOCKET s, int backlog) {
     (void)s; (void)backlog;
     return -1;  // SOCKET_ERROR
 }
 
-inline int recv(SOCKET s, char* buf, int len, int flags) {
+inline int recv(_SOCKET s, char* buf, int len, int flags) {
     (void)s; (void)buf; (void)len; (void)flags;
     return -1;  // SOCKET_ERROR
 }
 
-inline int recvfrom(SOCKET s, char* buf, int len, int flags, struct SOCKADDR* from, int* fromlen) {
+inline int recvfrom(_SOCKET s, char* buf, int len, int flags, struct SOCKADDR* from, int* fromlen) {
     (void)s; (void)buf; (void)len; (void)flags; (void)from; (void)fromlen;
     return -1;  // SOCKET_ERROR
 }
 
-inline int send(SOCKET s, const char* buf, int len, int flags) {
+inline int send(_SOCKET s, const char* buf, int len, int flags) {
     (void)s; (void)buf; (void)len; (void)flags;
     return -1;  // SOCKET_ERROR
 }
 
-inline int sendto(SOCKET s, const char* buf, int len, int flags, const struct SOCKADDR* to, int tolen) {
+inline int sendto(_SOCKET s, const char* buf, int len, int flags, const struct SOCKADDR* to, int tolen) {
     (void)s; (void)buf; (void)len; (void)flags; (void)to; (void)tolen;
     return -1;  // SOCKET_ERROR
 }
 
-inline int setsockopt(SOCKET s, int level, int optname, const char* optval, int optlen) {
+inline int setsockopt(_SOCKET s, int level, int optname, const char* optval, int optlen) {
     (void)s; (void)level; (void)optname; (void)optval; (void)optlen;
     return -1;  // SOCKET_ERROR
 }
 
-inline int shutdown(SOCKET s, int how) {
+inline int shutdown(_SOCKET s, int how) {
     (void)s; (void)how;
     return 0;
 }
@@ -286,8 +286,8 @@ inline struct SERVENT* getservbyport(int port, const char* proto) {
 // Socket Creation (if socket() is called)
 // ---------------------------------------------------------------------------
 
-inline SOCKET socket(int af, int type, int protocol) {
+inline _SOCKET socket(int af, int type, int protocol) {
     (void)af; (void)type; (void)protocol;
-    return (SOCKET)-1;  // INVALID_SOCKET
+    return (_SOCKET)-1;  // INVALID_SOCKET
 }
 

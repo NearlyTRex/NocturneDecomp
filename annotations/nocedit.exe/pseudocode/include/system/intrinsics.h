@@ -348,13 +348,12 @@ static inline int* _cpuid_intrinsic(int leaf) {
 // represent "a pointer that is 0x158 bytes into a CAmmo struct".
 // ADJ(ptr) adjusts this back to point to the base of the containing struct.
 //
-// For compilation purposes, ADJ is defined as an identity macro since:
-// 1. The actual pointer arithmetic is handled by the typedef semantics
-// 2. We're primarily interested in code analysis, not execution
-// 3. A proper implementation would require knowing the offset at compile time
+// The adjusted pointer structs have:
+//   operator->()  - returns the subobject type pointer (for direct field access)
+//   adj()         - returns the base class pointer (used by ADJ)
 //
-// Usage: ADJ(pCVar2)->field_name  where pCVar2 is an offset pointer type
+// Usage: ADJ(pCVar2)->field_name  accesses base class fields
+//        pCVar2->field_name        accesses subobject fields
 
-#ifndef ADJ
-#define ADJ(x) (x)
-#endif
+template<typename T>
+inline typename T::base_type* ADJ(const T& ptr) { return ptr.adj(); }

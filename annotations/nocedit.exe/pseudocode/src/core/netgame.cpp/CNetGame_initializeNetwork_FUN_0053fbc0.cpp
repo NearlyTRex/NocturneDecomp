@@ -9,7 +9,7 @@
 int __cdecl core_netgame_cpp_CNetGame_initializeNetwork_FUN_0053fbc0(CNetGame *this_ptr)
 
 {
-  SOCKET *socket_handle;
+  _SOCKET *socket_handle;
   int iVar1;
   
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
@@ -28,7 +28,7 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetwork_FUN_0053fbc0(CNetGame *t
               (g_CEditorToolsPtr,"Can't turn off blocking mode for socket");
     return 0;
   }
-  iVar1 = support_trisock_cpp_bindSocket_FUN_005e1b80((uint16_t)socket_handle,(SOCKET *)0x1ddf);
+  iVar1 = support_trisock_cpp_bindSocket_FUN_005e1b80((uint16_t)socket_handle,(_SOCKET *)0x1ddf);
   if (iVar1 == 0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't bind UDP socket");

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl support_trisock_cpp_connectSocket_FUN_005e1bd0(SOCKET *socket_handle,SNetworkAddr *dest_addr)
+; int __cdecl support_trisock_cpp_connectSocket_FUN_005e1bd0(_SOCKET *socket_handle,SNetworkAddr *dest_addr)
 ;
 ; Parameters:
-; SOCKET *         Stack[0x4]:4   socket_handle
+; _SOCKET *        Stack[0x4]:4   socket_handle
 ; SNetworkAddr *   Stack[0x8]:4   dest_addr
 ; Local Variables:
 ; undefined        Stack[-0x28]:1  local_28
@@ -41,7 +41,7 @@ section .text
     MOV ECX,dword ptr [EAX]             ; 005e1bfb
     PUSH ECX                            ; 005e1bfd
     CALL crt_wsock32.c_connect          ; 005e1bfe
-        ;   XREF to: 00610f1c (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_connect(SOCKET s, SOCKADDR * name, int namelen)
+        ;   XREF to: 00610f1c (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_connect(_SOCKET s, SOCKADDR * name, int namelen)
     TEST EAX,EAX                        ; 005e1c03
     SETZ AL                             ; 005e1c05
     AND EAX,0xff                        ; 005e1c08

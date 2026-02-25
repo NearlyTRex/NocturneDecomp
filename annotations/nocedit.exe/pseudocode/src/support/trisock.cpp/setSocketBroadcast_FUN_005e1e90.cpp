@@ -2,11 +2,11 @@
 // Address: 005e1e90
 // Address Range: [[005e1e90, 005e1eb4]]
 // Convention: __cdecl
-// Signature: int __cdecl support_trisock_cpp_setSocketBroadcast_FUN_005e1e90(SOCKET *socket_handle,int broadcast_flag)
+// Signature: int __cdecl support_trisock_cpp_setSocketBroadcast_FUN_005e1e90(_SOCKET *socket_handle,int broadcast_flag)
 
 #include "nocturne.h"
 
-int __cdecl support_trisock_cpp_setSocketBroadcast_FUN_005e1e90(SOCKET *socket_handle,int broadcast_flag)
+int __cdecl support_trisock_cpp_setSocketBroadcast_FUN_005e1e90(_SOCKET *socket_handle,int broadcast_flag)
 
 {
   int iVar1;

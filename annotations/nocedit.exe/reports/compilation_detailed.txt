@@ -5,23 +5,23 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6494
-Successful: 5525 (85.1%)
-Failed: 969
+Successful: 5603 (86.3%)
+Failed: 891
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           1594
-  undeclared_identifier            773
-  incompatible_types               667
-  format_error                     589
+  other                           1595
+  undeclared_identifier            764
+  format_error                     590
+  incompatible_types               576
   syntax_error                      75
-  missing_member                    37
   lvalue_required                   23
+  missing_member                    21
   type_error                        18
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (1594 errors)
+CATEGORY: other (1595 errors)
 ====================================================================================================
 
   core_hero.cpp_CHero_FUN_004f3960
@@ -718,7 +718,7 @@ CATEGORY: other (1594 errors)
     Line 1036: use of undeclared label 'DAT_032758e8'
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (773 errors)
+CATEGORY: undeclared_identifier (764 errors)
 ====================================================================================================
 
   core_msnedit.cpp_FUN_0053d3a0
@@ -839,22 +839,6 @@ CATEGORY: undeclared_identifier (773 errors)
     Line 95: use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?
   core_stranger.cpp_CStranger_FUN_005be520
     Line 154: use of undeclared identifier '_local_1ecc'; did you mean 'local_1ecc'?
-  core_dcamera.cpp_CDemonCamera_endScene_FUN_0044cb80
-    Line 37: use of undeclared identifier '_memcpy'; did you mean 'memcpy'?
-  core_dcamera.cpp_CDemonCamera_restoreZBufferScanlines_FUN_004544a0
-    Line 22: use of undeclared identifier '_memcpy'; did you mean 'memcpy'?
-  core_dcamera.cpp_CDemonCamera_saveZBufferScanlines_FUN_00454450
-    Line 22: use of undeclared identifier '_memcpy'; did you mean 'memcpy'?
-  core_dlight.cpp_CDemonLight_allocMasterZBuffer_FUN_004729d0
-    Line 22: use of undeclared identifier '_memcpy'; did you mean 'memcpy'?
-  core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0
-    Line 451: use of undeclared identifier '_memset'; did you mean 'memset'?
-  core_dcamera.cpp_CDemonCamera_processCorona_FUN_00451130
-    Line 19: use of undeclared identifier '_memset'; did you mean 'memset'?
-  core_dlight.cpp_CDemonLight_beginScene_FUN_00472a80
-    Line 48: use of undeclared identifier '_memset'; did you mean 'memset'?
-  core_dlight.cpp_CDemonLight_initializeVisibilityBuffer_FUN_00475fc0
-    Line 17: use of undeclared identifier '_memset'; did you mean 'memset'?
   support_trisock.cpp_bindSocket_FUN_005e1b80
     Line 22: use of undeclared identifier '_port'
   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0054b190
@@ -1317,884 +1301,7 @@ CATEGORY: undeclared_identifier (773 errors)
     Line 23: use of undeclared identifier 'undefined3'
 
 ====================================================================================================
-CATEGORY: incompatible_types (667 errors)
-====================================================================================================
-
-  engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00
-    Line 17: assigning to 'CCheckOutItem *' from incompatible type 'void *'
-  engine_fileio.cpp_CCheckOutList_remove_FUN_004b2d70
-    Line 26: assigning to 'CCheckOutItem *' from incompatible type 'void *'
-  core_cloth.cpp_CClothList_load_FUN_0043bfa0
-    Line 30: assigning to 'CCloth *' from incompatible type 'void *'
-  shape_quantize.cpp_CColorQuantizer_reset_FUN_00554d40
-    Line 51: assigning to 'CColorQuantizer *' from incompatible type 'void *'
-  core_actor.cpp_createActorByName_FUN_0040c430
-    Line 26: assigning to 'CDemonActor *' from incompatible type 'void *'
-  core_dtrace.cpp_CDemonRaytrace_allocNewCubeList_FUN_00494380
-    Line 21: assigning to 'CDemonCube *' from incompatible type 'void *'
-  core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004518f0
-    Line 59: assigning to 'CDemonGlobe *' from incompatible type 'void *'
-  shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0
-    Line 58: assigning to 'CEdButton *' from incompatible type 'void *'
-  core_mission.cpp_CDemonMission_createOneHero_FUN_00524920
-    Line 48: assigning to 'CHero *' from incompatible type 'void *'
-  core_mission.cpp_CDemonMission_FUN_00524c20
-    Line 40: assigning to 'CHeroPlaceholder *' from incompatible type 'void *'
-  core_succubus.cpp_CSuccubus_process_FUN_005c6e90
-    Line 229: assigning to 'CHotDemon *' from incompatible type 'void *'
-  support_codec.cpp_CLZWDictionary_init_FUN_0043ee60
-    Line 17: assigning to 'CLZWDictionaryNode *' from incompatible type 'void *'
-  shape_meshlod.cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0
-    Line 36: assigning to 'CLodEdge *' from incompatible type 'void *'
-  shape_meshlod.cpp_CLodMesh_loadReplayData_FUN_0051d180
-    Line 22: assigning to 'CLodEdge *' from incompatible type 'void *'
-  shape_meshlod.cpp_CLodMesh_recordEdgeCollapse_FUN_0051d4a0
-    Line 19: assigning to 'CLodEdge *' from incompatible type 'void *'
-  shape_meshlod.cpp_CLodMesh_allocate_FUN_00515ac0
-    Line 22: assigning to 'CLodVert *' from incompatible type 'void *'
-  sound_sndmain.cpp_startSfx_FUN_005a8e90
-    Line 141: assigning to 'CMP3Decoder *' from incompatible type 'void *'
-  core_main.c_showDeveloperToolsMenu_FUN_005073a0
-    Line 117: assigning to 'CMorph *' from incompatible type 'void *'
-  core_morph.cpp_CMorph_ctor_FUN_0052b310
-    Line 14: assigning to 'CMorph *' from incompatible type 'void *'
-  engine_ncursfx.cpp_CMouse_ctor_FUN_00544380
-    Line 16: assigning to 'CMouse *' from incompatible type 'void *'
-  cockpit_pkbitmap.cpp_CPackedBitmap_parsePBGFile_FUN_0054b9b0
-    Line 57: assigning to 'CPackedBitmap *' from incompatible type 'void *'
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_0054bdb0
-    Line 26: assigning to 'CPackedBitmap *' from incompatible type 'void *'
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_ctor_FUN_0054bcd0
-    Line 18: assigning to 'CPackedBitmapSet *' from incompatible type 'void *'
-  engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950
-    Line 24: assigning to 'CPodAuditRecord *' from incompatible type 'void *'
-  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50
-    Line 174: assigning to 'CPodAuditRecord *' from incompatible type 'void *'
-  engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190
-    Line 105: assigning to 'CPodAuditRecord *' from incompatible type 'void *'
-  engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
-    Line 107: assigning to 'CPodDirectoryEntry *' from incompatible type 'void *'
-  engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40
-    Line 78: assigning to 'CPodFile *' from incompatible type 'void *'
-  shape_superopt.cpp_CObj_addPolygons_FUN_005d2410
-    Line 22: assigning to 'CPoly *' from incompatible type 'void *'
-  shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320
-    Line 22: assigning to 'CPoly *' from incompatible type 'void *'
-  shape_superopt.cpp_CObj_removePolygon_FUN_005d2f50
-    Line 26: assigning to 'CPoly *' from incompatible type 'void *'
-  core_skeleton.cpp_CSkeleton_allocMemory_FUN_00599910
-    Line 25: assigning to 'CQuaternion4f *' from incompatible type 'void *'
-  core_dcube.cpp_CDemonCube_allocGeometryMemory_FUN_00456840
-    Line 20: assigning to 'CVector3f *' from incompatible type 'void *'
-  core_bodypart.cpp_CBodyPart_setCounts_FUN_004191d0
-    Line 18: assigning to 'CVector3i *' from incompatible type 'void *'
-  core_dmodel.cpp_CKeyFramedModel_allocate_FUN_00477bf0
-    Line 35: assigning to 'CVector3i *' from incompatible type 'void *'
-  core_dpart.cpp_CDemonPart_alloc_FUN_00482180
-    Line 18: assigning to 'CVector3i *' from incompatible type 'void *'
-  core_setedit.cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00
-    Line 33: assigning to 'CVector3i *' from incompatible type 'void *'
-  shape_superopt.cpp_CObj_addVertices_FUN_005d2580
-    Line 14: assigning to 'CVert *' from incompatible type 'void *'
-  shape_superopt.cpp_CObj_allocateVertices_FUN_005d2500
-    Line 15: assigning to 'CVert *' from incompatible type 'void *'
-  shape_superopt.cpp_CObj_removeVertex_FUN_005d3140
-    Line 29: assigning to 'CVert *' from incompatible type 'void *'
-  wincore_winrun.cpp_winMain_FUN_005f3680
-    Line 111: assigning to 'HBRUSH' (aka 'HBRUSH__ *') from incompatible type 'HGDIOBJ' (aka 'void *')
-  core_script.cpp_CScript_dbLoad_FUN_005603c0
-    Line 110: assigning to 'SDialogEntry *' from incompatible type 'void *'
-  core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004947a0
-    Line 78: assigning to 'SIZE_T *' (aka 'unsigned long *') from incompatible type 'void *'
-  shape_meshlod.cpp_CLodMesh_findOrAddLodTexture_FUN_00518790
-    Line 32: assigning to 'SMRGLTextureLod *' from incompatible type 'void *'
-  shape_memdbg.cpp_debugCalloc_FUN_0050f350
-    Line 27: assigning to 'SMemHead *' from incompatible type 'void *'
-  shape_memdbg.cpp_debugMalloc_FUN_0050f250
-    Line 24: assigning to 'SMemHead *' from incompatible type 'void *'
-  shape_memdbg.cpp_debugRealloc_FUN_0050f540
-    Line 38: assigning to 'SMemHead *' from incompatible type 'void *'
-  core_morph.cpp_CMorphModel_addPartFromPolygon_FUN_0052a580
-    Line 37: assigning to 'SMorphPoint *' from incompatible type 'void *'
-  core_morph.cpp_CMorphModel_addPartFromVertexBuffer_FUN_0052a710
-    Line 26: assigning to 'SMorphPoint *' from incompatible type 'void *'
-  core_script.cpp_CScript_buildParsedLines_FUN_0055a370
-    Line 33: assigning to 'SScriptLine *' from incompatible type 'void *'
-  core_script.cpp_CScript_addEventXRef_FUN_00567510
-    Line 17: assigning to 'SScriptXRef *' from incompatible type 'void *'
-  shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620
-    Line 49: assigning to 'SSpatialGrid *' from incompatible type 'void *'
-  shape_meshlod.cpp_CLodMesh_gridLoad_FUN_0051d2d0
-    Line 19: assigning to 'SSpatialGrid *' from incompatible type 'void *'
-  engine_fileio.cpp_readTimestampFile_FUN_004b23a0
-    Line 78: assigning to 'STimestampRecord *' from incompatible type 'void *'
-  core_skeleton.cpp_CDeformableModel_allocLOD_FUN_0059a510
-    Line 45: assigning to 'SVert *' from incompatible type 'void *'
-  shape_design.c_mouseWheelPolygonReducer_FUN_004648e0
-    Line 47: assigning to 'SVertexData *' from incompatible type 'void *'
-  core_dtrace.cpp_CDemonRaytrace_allocCubeList_FUN_00494270
-    Line 14: assigning to 'SVoxelCubeMetadata *' from incompatible type 'void *'
-  cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730
-    Line 39: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'void *'
-  cockpit_ckptutil.c_mirrorBitmapHorizontally_FUN_00433160
-    Line 27: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'void *'
-  engine_pcx.c_writePCXScanline_FUN_00548c50
-    Line 18: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'void *'
-  engine_texture.cpp_CTextureCache_loadTexture_FUN_005dcc00
-    Line 71: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'void *'
-  shape_edittool.cpp_CEditorTools_getClipboardText_FUN_004a1b30
-    Line 23: assigning to 'char *' from incompatible type 'HANDLE' (aka 'void *')
-  shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0
-    Line 38: assigning to 'char *' from incompatible type 'LPVOID' (aka 'void *')
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullHeightPrintf_FUN_00489bb0
-    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40
-    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00489940
-    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30
-    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450
-    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
-  engine_2d.c_drawTextCenteredAtColorFormatted_FUN_00402650
-    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
-  engine_2d.c_drawTextCenteredAtFormatted_FUN_004022e0
-    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
-  engine_2d.c_drawTextCenteredColorFormatted_FUN_00402730
-    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
-  engine_2d.c_drawTextCenteredFormatted_FUN_004023c0
-    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
-  engine_2d.c_drawTextColorFormatted_FUN_004024c0
-    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
-  engine_2d.c_drawTextFormatted_FUN_00402150
-    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
-  engine_2d.c_drawTextRightAlignedColorFormatted_FUN_00402580
-    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
-  engine_2d.c_drawTextRightAlignedFormatted_FUN_00402210
-    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
-  engine_console.cpp_CConsole_printf_FUN_00441890
-    Line 22: assigning to 'char *' from incompatible type 'char *[1]'
-  engine_font.cpp_CBitFont_drawTextCenterF_FUN_004cde20
-    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
-  engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004cdf30
-    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
-  engine_font.cpp_CBitFont_drawTextF_FUN_004cdc20
-    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
-  engine_font.cpp_CBitFont_printCenterF_FUN_004ce050
-    Line 14: assigning to 'char *' from incompatible type 'char *[1]'
-  engine_font.cpp_CBitFont_printF_FUN_004cdd20
-    Line 14: assigning to 'char *' from incompatible type 'char *[1]'
-  shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-    Line 21: assigning to 'char *' from incompatible type 'char *[1]'
-  shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870
-    Line 21: assigning to 'char *' from incompatible type 'char *[1]'
-  shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
-    Line 16: assigning to 'char *' from incompatible type 'char *[1]'
-  shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f180
-    Line 16: assigning to 'char *' from incompatible type 'char *[1]'
-  shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
-    Line 14: assigning to 'char *' from incompatible type 'char *[1]'
-  shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0
-    Line 14: assigning to 'char *' from incompatible type 'char *[1]'
-  shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0
-    Line 14: assigning to 'char *' from incompatible type 'char *[1]'
-  shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
-    Line 16: assigning to 'char *' from incompatible type 'char *[1]'
-  cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
-    Line 23: assigning to 'char *' from incompatible type 'void *'
-  core_script.cpp_CScript_editorAction_FUN_00564820
-    Line 148: assigning to 'char *' from incompatible type 'void *'
-  engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0
-    Line 26: assigning to 'char *' from incompatible type 'void *'
-  engine_palette.cpp_CPaletteManager_ctor_FUN_00544f10
-    Line 16: assigning to 'char *' from incompatible type 'void *'
-  shape_edittool.cpp_CStrList_copyToClipboard_FUN_004a3270
-    Line 39: assigning to 'char *' from incompatible type 'void *'
-  shape_edittool.cpp_CStrList_insert_FUN_004a2bc0
-    Line 42: assigning to 'char *' from incompatible type 'void *'
-  shape_edittool.cpp_CStrList_setStringAt_FUN_004a3120
-    Line 34: assigning to 'char *' from incompatible type 'void *'
-  sound_mp3.cpp_CFileBitStream_init_FUN_0052ecf0
-    Line 28: assigning to 'char *' from incompatible type 'void *'
-  sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630
-    Line 46: assigning to 'char *' from incompatible type 'void *'
-  sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730
-    Line 178: assigning to 'char *' from incompatible type 'void *'
-  core_script.cpp_CScript_executeContextAction_FUN_00565d00
-    Line 23: assigning to 'char **' from incompatible type 'const char *[141]'
-  core_script.cpp_CScript_setParameterValue_FUN_00565f70
-    Line 25: assigning to 'char **' from incompatible type 'const char *[141]'
-  core_script.cpp_CScript_showSyntaxHelp_FUN_00565e70
-    Line 45: assigning to 'char **' from incompatible type 'const char *[141]'
-  shape_edittool.cpp_CStrList_allocate_FUN_004a2cc0
-    Line 26: assigning to 'char **' from incompatible type 'void *'
-  wincore_windll.cpp_clearScreen_FUN_005b3e70
-    Line 25: assigning to 'double *' from incompatible type 'void *'
-  shape_quantize.cpp_CColorQuantizer_errorDiffusionBuffers_FUN_00555500
-    Line 46: assigning to 'float *' from incompatible type 'void *'
-  sound_sndmain.cpp_allocMixBuffers_FUN_005a5730
-    Line 34: assigning to 'float *' from incompatible type 'void *'
-  sound_sndmain.cpp_analyzeFrequencyBand_FUN_005ac400
-    Line 60: assigning to 'float *' from incompatible type 'void *'
-  sound_sndmain.cpp_getChannelLevels_FUN_005ac990
-    Line 26: assigning to 'float *' from incompatible type 'void *'
-  shape_dsemodel.cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0
-    Line 41: assigning to 'int *' from incompatible type 'uint[13]' (aka 'unsigned int[13]')
-  cockpit_ckptutil.c_generateScrollHeightMap_FUN_00432df0
-    Line 29: assigning to 'int *' from incompatible type 'void *'
-  cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0
-    Line 98: assigning to 'int *' from incompatible type 'void *'
-  core_cloth.cpp_CCloth_allocMemory_FUN_00438c50
-    Line 15: assigning to 'int *' from incompatible type 'void *'
-  core_course.cpp_CCourse_allocMemory_FUN_00442500
-    Line 18: assigning to 'int *' from incompatible type 'void *'
-  core_dmodel.cpp_CKeyFramedModel_buildCollisionTriList_FUN_00478830
-    Line 37: assigning to 'int *' from incompatible type 'void *'
-  core_dmodel.cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30
-    Line 37: assigning to 'int *' from incompatible type 'void *'
-  core_dmodel.cpp_CKeyFramedModel_weldAndRemoveUnusedVertices_FUN_0047ada0
-    Line 33: assigning to 'int *' from incompatible type 'void *'
-  core_dtrace.cpp_CDemonRaytrace_allocTriList_FUN_00494600
-    Line 18: assigning to 'int *' from incompatible type 'void *'
-  core_dtrace.cpp_CDemonRaytrace_crunch_FUN_00495310
-    Line 106: assigning to 'int *' from incompatible type 'void *'
-  core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_00498fb0
-    Line 27: assigning to 'int *' from incompatible type 'void *'
-  core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80
-    Line 355: assigning to 'int *' from incompatible type 'void *'
-  core_setutil.cpp_C3DSCamera_loadPVS_FUN_005857b0
-    Line 18: assigning to 'int *' from incompatible type 'void *'
-  engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550
-    Line 33: assigning to 'int *' from incompatible type 'void *'
-  shape_design.c_complexPolygonReduction_FUN_00463b30
-    Line 54: assigning to 'int *' from incompatible type 'void *'
-  shape_edittool.cpp_CPickList_enableItem_FUN_004a5410
-    Line 20: assigning to 'int *' from incompatible type 'void *'
-  shape_edittool.cpp_CPickList_setItemHotKey_FUN_004a5540
-    Line 20: assigning to 'int *' from incompatible type 'void *'
-  shape_meshlod.cpp_CLodMesh_createOrigSamplePoints_FUN_00517000
-    Line 47: assigning to 'int *' from incompatible type 'void *'
-  shape_superopt.cpp_CObj_removeUnusedVertices_FUN_005d44d0
-    Line 28: assigning to 'int *' from incompatible type 'void *'
-  shape_superopt.cpp_FUN_005c7b20
-    Line 22: assigning to 'int *' from incompatible type 'void *'
-  shape_superopt.cpp_FUN_005c8280
-    Line 25: assigning to 'int *' from incompatible type 'void *'
-  core_actor.cpp_CDemonActor_processFootstepAt_FUN_0040c8f0
-    Line 46: assigning to 'int' from incompatible type 'void'
-  core_actor.cpp_CDemonActor_processFootstep_FUN_0040c830
-    Line 29: assigning to 'int' from incompatible type 'void'
-  core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0
-    Line 59: assigning to 'int' from incompatible type 'void'
-  core_gargoyle.cpp_CGargoyle_processDamage_FUN_004e57d0
-    Line 36: assigning to 'int' from incompatible type 'void'
-  core_hero.cpp_CHero_FUN_004f3760
-    Line 21: assigning to 'int' from incompatible type 'void'
-  core_icepick.cpp_CIcePick_FUN_004f8c70
-    Line 62: assigning to 'int' from incompatible type 'void'
-  core_moloch.cpp_CMoloch_FUN_005293b0
-    Line 63: assigning to 'int' from incompatible type 'void'
-  core_svetlana.cpp_CSvetlana_FUN_005d9260
-    Line 62: assigning to 'int' from incompatible type 'void'
-  engine_texture.cpp_ensureTextureLoaded_FUN_005dd800
-    Line 22: assigning to 'int' from incompatible type 'void'
-  wincore_windll.cpp_clear_FUN_005b7a30
-    Line 17: assigning to 'int' from incompatible type 'void'
-  wincore_windll.cpp_setColorTable16_FUN_005b7579
-    Line 17: assigning to 'int' from incompatible type 'void'
-  wincore_windll.cpp_setFogColorFromPalette_FUN_005b7b01
-    Line 21: assigning to 'int' from incompatible type 'void'
-  wincore_windll.cpp_setFogColor_FUN_005b7b80
-    Line 20: assigning to 'int' from incompatible type 'void'
-  cockpit_ckptutil.c_rotateBitmap_FUN_00434870
-    Line 31: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
-  cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_0054b080
-    Line 15: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
-  cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0054b000
-    Line 16: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40
-    Line 46: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0054c1e0
-    Line 34: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
-  core_dlight.cpp_CDemonLight_allocateFilter_FUN_00474720
-    Line 14: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
-  core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770
-    Line 29: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
-  core_dlight.cpp_CDemonLight_init_FUN_004727c0
-    Line 33: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
-  core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330
-    Line 406: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
-  core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00477110
-    Line 139: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
-  shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180
-    Line 50: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
-  shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
-    Line 74: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
-  cockpit_ckptutil.c_copyScreenRegion_FUN_00432d90
-    Line 24: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
-  core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50
-    Line 204: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
-  core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0
-    Line 297: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
-  core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360
-    Line 52: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
-  core_dcamera.cpp_CDemonCamera_uploadBackdropTexture_FUN_0044f310
-    Line 47: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
-  core_dstrender.cpp_renderPerspectiveCorrectTextured16xCached_FUN_00490ec0
-    Line 305: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
-  engine_alphabit.cpp_CAlphaBitmap_display_FUN_00410950
-    Line 34: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
-  engine_pod.cpp_CPodFile_getAuditRecord_FUN_00550590
-    Line 43: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
-  shape_edittool.cpp_CEditorTools_createModalWindow_FUN_004a0970
-    Line 119: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
-  shape_edittool.cpp_paintWindowBackground_FUN_0049e590
-    Line 30: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
-  shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50
-    Line 65: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
-  shape_superopt.cpp_FUN_005c84c0
-    Line 71: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
-  shape_superopt.cpp_FUN_005ca590
-    Line 137: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
-  shape_superopt.cpp_FUN_005cbe20
-    Line 30: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
-  wincore_windll.cpp_presentToExternalRenderer_FUN_005b7c30
-    Line 21: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
-  core_bat.cpp_CBat_process_FUN_00414a00
-    Line 49: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_batcreat.cpp_CBatCreature_processDamage_FUN_00416030
-    Line 56: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_batcreat.cpp_CBatCreature_process_FUN_00415470
-    Line 113: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_batman.cpp_CBatman_processDamage_FUN_004179a0
-    Line 56: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_batman.cpp_CBatman_process_FUN_00416870
-    Line 222: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90
-    Line 435: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_boxactor.cpp_CBoxActor_process_FUN_004219e0
-    Line 86: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_bride.cpp_CBride_processDamage_FUN_00424830
-    Line 74: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_bride.cpp_CBride_process_FUN_00423a30
-    Line 82: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_charactr.cpp_CCharacter_processFire_FUN_0042a830
-    Line 103: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_cow.cpp_CZombieCow_processDamage_FUN_00444b40
-    Line 40: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_cow.cpp_CZombieCow_process_FUN_00444310
-    Line 80: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_dog.cpp_CZombieDog_processDamage_FUN_0047f820
-    Line 39: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_dog.cpp_CZombieDog_process_FUN_0047f140
-    Line 104: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_drone.cpp_CDrone_processDamage_FUN_0048f360
-    Line 26: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_drone.cpp_CDrone_process_FUN_0048ec70
-    Line 135: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_dynamite.cpp_CDynamite_FUN_0049cf20
-    Line 17: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_emitter.cpp_CEmitter_process_FUN_004a8070
-    Line 229: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_event.cpp_CEventList_evaluateAtom_FUN_004ae140
-    Line 1238: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_filmreel.cpp_CFilmProjector_archive_FUN_004beb40
-    Line 22: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_flamegun.cpp_CFlameThrower_process_FUN_004cb9b0
-    Line 27: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_gargoyle.cpp_CGargoyle_process_FUN_004e4a00
-    Line 98: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_ghoul.cpp_CGhoul_processDamage_FUN_004e87e0
-    Line 105: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_ghoul.cpp_CGhoul_process_FUN_004e6600
-    Line 379: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_hero.cpp_CHero_FUN_004f3120
-    Line 78: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_hostage.cpp_CHostage_processDamage_FUN_004f6450
-    Line 42: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_hotdemon.cpp_CHotDemon_processDamage_FUN_004f7720
-    Line 49: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_hotdemon.cpp_CHotDemon_process_FUN_004f6f20
-    Line 133: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_icepick.cpp_CIcePick_processDamage_FUN_004f95b0
-    Line 66: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_icepick.cpp_CIcePick_process_FUN_004f80b0
-    Line 181: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_imp.cpp_CImp_processDamage_FUN_004fae00
-    Line 53: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_imp.cpp_CImp_process_FUN_004f9c30
-    Line 308: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_larva.cpp_CLarva_processDamage_FUN_00503a20
-    Line 41: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_mobster.cpp_CMobster_FUN_005279f0
-    Line 51: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_mobster.cpp_CMobster_processDamage_FUN_00527740
-    Line 42: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_mobster.cpp_CMobster_process_FUN_00525840
-    Line 109: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_platfrm.cpp_CPlatform_process_FUN_0054cc30
-    Line 218: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_sentinel.cpp_CSentinel_processDamage_FUN_00568cd0
-    Line 50: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_stranger.cpp_CStranger_processDamage_FUN_005c48b0
-    Line 81: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_svetlana.cpp_CSvetlana_processDamage_FUN_005d9d30
-    Line 45: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_tommygun.cpp_CTommyGun_process_FUN_005de360
-    Line 46: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_turret.cpp_CTurret_process_FUN_005e2430
-    Line 110: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_tvbat.cpp_CTVBat_process_FUN_005e4210
-    Line 324: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_werewolf.cpp_CWerewolf_FUN_005f11e0
-    Line 20: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_werewolf.cpp_CWerewolf_processDamage_FUN_005f1ac0
-    Line 61: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_zombie.cpp_CZombie_processDamage_FUN_005fc4f0
-    Line 41: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_zombie.cpp_CZombie_process_FUN_005f9470
-    Line 479: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_door.cpp_CDoor_FUN_00481210
-    Line 18: assigning to 'undefined4' (aka 'unsigned int') from incompatible type 'void'
-  core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0
-    Line 168: assigning to 'ushort *' (aka 'unsigned short *') from incompatible type 'void *'
-  sound_sndmain.cpp_convertMixBufToOutput_FUN_005a5b80
-    Line 19: assigning to 'ushort *' (aka 'unsigned short *') from incompatible type 'void *'
-  wincore_windll.cpp_drawPolyList2_FUN_005b7780
-    Line 29: assigning to 'ushort *' (aka 'unsigned short *') from incompatible type 'void *'
-  cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0054b190
-    Line 40: assigning to 'void **' from incompatible type 'void *'
-  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0054b690
-    Line 59: assigning to 'void **' from incompatible type 'void *'
-  shape_quantize.cpp_CBitmap_ctor_FUN_00556a00
-    Line 65: assigning to 'void **' from incompatible type 'void *'
-  core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
-    Line 182: cannot convert 'UActorPropertyCallback' to 'int' without a conversion operator
-  core_stranger.cpp_CStranger_FUN_005bdd20
-    Line 64: cannot convert 'UActorVTable' to 'float' without a conversion operator
-  core_werewolf.cpp_CWerewolf_process_FUN_005efde0
-    Line 116: incompatible integer to pointer conversion assigning to 'CWerewolf *' from 'uint32_t' (aka 'unsigned int')
-  core_texlist.cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0
-    Line 32: incompatible integer to pointer conversion assigning to 'HANDLE' (aka 'void *') from 'long'
-  engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0
-    Line 172: incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'SRenderVertex *'
-  core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10
-    Line 172: incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'ushort *' (aka 'unsigned short *')
-  core_fire.cpp_CGunFlame_initProcess_FUN_004c4b00
-    Line 44: incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from 'CDemonActor *'
-  core_dcamera.cpp_CDemonCamera_addLightmapToCorona_FUN_00450e30
-    Line 43: incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from 'uchar *' (aka 'unsigned char *')
-  core_inv.cpp_CInventory_select_FUN_004ff800
-    Line 125: incompatible pointer types assigning to 'CDemonActor *' from 'CAmmo *'
-  core_melee.cpp_CMelee_playAttackHitEffects_FUN_0050eb50
-    Line 14: incompatible pointer types assigning to 'CDemonActor *' from 'CCharacter *'
-  core_msnedit.cpp_CDemonMission_FUN_0053bd80
-    Line 143: incompatible pointer types assigning to 'CDemonActor *' from 'CCharacter *'
-  core_msnedit.cpp_CDemonMission_FUN_0053d3b0
-    Line 39: incompatible pointer types assigning to 'CDemonActor *' from 'CEnemy *'
-  core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0
-    Line 213: incompatible pointer types assigning to 'CDemonActor *' from 'CHero *'
-  core_mission.cpp_CDemonMission_writeFile_FUN_00523600
-    Line 62: incompatible pointer types assigning to 'CDemonActor *' from 'CHero *'
-  core_vampboss.cpp_CVampireBoss_processDamage_FUN_005e7030
-    Line 41: incompatible pointer types assigning to 'CDemonActor *' from 'CHero *'
-  core_inv.cpp_CInventory_addItem_FUN_004fd600
-    Line 1068: incompatible pointer types assigning to 'CDemonActor *' from 'CMelee *'
-  core_inv.cpp_CInventory_renderItemModel_FUN_004fee00
-    Line 100: incompatible pointer types assigning to 'CDemonActor *' from 'CMelee *'
-  core_inv.cpp_clampWeaponAmmoCount_FUN_004fd5d0
-    Line 14: incompatible pointer types assigning to 'CDemonActor *' from 'CTommyGun *'
-  core_waypoint.cpp_CWayPoint_onActorDeleted_FUN_005ec610
-    Line 14: incompatible pointer types assigning to 'CDemonActor *' from 'CWayPoint *'
-  core_game.cpp_giveHeroWeapon_FUN_004dd870
-    Line 18: incompatible pointer types assigning to 'CDemonActor *' from 'CWeapon *'
-  shape_memdbg.cpp_CLeakChecker_dtor_FUN_0050fbc0
-    Line 21: incompatible pointer types assigning to '_FILE *' from 'FILE *' (aka '_IO_FILE *')
-  shape_memdbg.cpp_openFile_FUN_0050f7a0
-    Line 33: incompatible pointer types assigning to '_FILE *' from 'FILE *' (aka '_IO_FILE *')
-  core_frankgen.cpp_CFrankenstienMachine_getPropertyList_FUN_004d2500
-    Line 17: invalid conversion specifier '.' [-Werror,-Wformat-invalid-specifier]
-  core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210
-    Line 244: invalid operands to binary expression ('double' and 'int')
-  core_crossbow.cpp_CCrossbow_fire_FUN_00448f20
-    Line 109: invalid operands to binary expression ('double' and 'int')
-  core_dcube.cpp_clipEdgeToPlane_FUN_004547d0
-    Line 19: invalid operands to binary expression ('double' and 'int')
-  core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
-    Line 38: invalid operands to binary expression ('double' and 'int')
-  core_dmodel.cpp_CKeyFramedModel_exportToS3D_FUN_00479f30
-    Line 105: invalid operands to binary expression ('double' and 'int')
-  core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0
-    Line 211: invalid operands to binary expression ('double' and 'int')
-  core_dtri.cpp_clipLineToPlane_FUN_0049b6c0
-    Line 20: invalid operands to binary expression ('double' and 'int')
-  core_event.cpp_CEventList_setTimerEvent_FUN_004b05a0
-    Line 23: invalid operands to binary expression ('double' and 'int')
-  core_event.cpp_CEventList_updateSfxEntries_FUN_004b0db0
-    Line 30: invalid operands to binary expression ('double' and 'int')
-  core_flame.cpp_CFlame_process_FUN_004c9c00
-    Line 75: invalid operands to binary expression ('double' and 'int')
-  core_game.cpp_CGame_processFrame_FUN_004da100
-    Line 268: invalid operands to binary expression ('double' and 'int')
-  core_gore.cpp_CBloodPool_save_FUN_004ed1c0
-    Line 18: invalid operands to binary expression ('double' and 'int')
-  core_gun.cpp_CGun_fire_FUN_004f0350
-    Line 131: invalid operands to binary expression ('double' and 'int')
-  core_hostage.cpp_CHostage_process_FUN_004f4bd0
-    Line 405: invalid operands to binary expression ('double' and 'int')
-  core_lightgun.cpp_CLightGun_fire_FUN_00505c70
-    Line 120: invalid operands to binary expression ('double' and 'int')
-  core_motion.cpp_CMotionList_save_FUN_0052d170
-    Line 53: invalid operands to binary expression ('double' and 'int')
-  core_msnedit.cpp_CDemonMission_FUN_0053e220
-    Line 116: invalid operands to binary expression ('double' and 'int')
-  core_script.cpp_CScript_step_FUN_0055a810
-    Line 1369: invalid operands to binary expression ('double' and 'int')
-  core_stranger.cpp_CStranger_FUN_005c2400
-    Line 119: invalid operands to binary expression ('double' and 'int')
-  core_tommygun.cpp_CTommyGun_fire_FUN_005ddb30
-    Line 143: invalid operands to binary expression ('double' and 'int')
-  core_turret.cpp_CTurret_fire_FUN_005e3750
-    Line 94: invalid operands to binary expression ('double' and 'int')
-  core_xform.cpp_inverse_FUN_005f6210
-    Line 44: invalid operands to binary expression ('double' and 'int')
-  core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0
-    Line 43: invalid operands to binary expression ('double' and 'int')
-  core_xform.cpp_matrixToEulerAngles_FUN_005f5690
-    Line 42: invalid operands to binary expression ('double' and 'int')
-  engine_colquant.c_FUN_00441040
-    Line 29: invalid operands to binary expression ('double' and 'int')
-  engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0
-    Line 25: invalid operands to binary expression ('double' and 'int')
-  shape_design.c_calculatePolygonAngularArea_FUN_00461ee0
-    Line 85: invalid operands to binary expression ('double' and 'int')
-  shape_design.c_generateOctant_FUN_00469420
-    Line 75: invalid operands to binary expression ('double' and 'int')
-  shape_design.c_groundCenterObject_FUN_00466a30
-    Line 49: invalid operands to binary expression ('double' and 'int')
-  shape_design.c_mergeAdjacentPolygons_FUN_00462b70
-    Line 140: invalid operands to binary expression ('double' and 'int')
-  shape_design.c_sampleAndFilterPixel_FUN_0046ae20
-    Line 45: invalid operands to binary expression ('double' and 'int')
-  shape_design.c_showFacetPartEditor_FUN_0045f1d0
-    Line 300: invalid operands to binary expression ('double' and 'int')
-  shape_design.c_sizeForStadium_FUN_00469c70
-    Line 77: invalid operands to binary expression ('double' and 'int')
-  shape_dsemodel.cpp_CDSEModel_centerModel_FUN_0048fa50
-    Line 49: invalid operands to binary expression ('double' and 'int')
-  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
-    Line 81: invalid operands to binary expression ('double' and 'int')
-  shape_meshlod.cpp_CLodMesh_exportToS3D_FUN_0051c100
-    Line 43: invalid operands to binary expression ('double' and 'int')
-  shape_meshlod.cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300
-    Line 35: invalid operands to binary expression ('double' and 'int')
-  shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030
-    Line 45: invalid operands to binary expression ('double' and 'int')
-  shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
-    Line 134: invalid operands to binary expression ('double' and 'int')
-  shape_superopt.cpp_CObj_weldVertices_FUN_005d4160
-    Line 56: invalid operands to binary expression ('double' and 'int')
-  shape_superopt.cpp_CPoly_containsPoint2D_FUN_005d0340
-    Line 120: invalid operands to binary expression ('double' and 'int')
-  shape_superopt.cpp_FUN_005c9100
-    Line 56: invalid operands to binary expression ('double' and 'int')
-  shape_superopt.cpp_FUN_005d8200
-    Line 15: invalid operands to binary expression ('double' and 'int')
-  shape_superopt.cpp_FUN_005d82e0
-    Line 16: invalid operands to binary expression ('double' and 'int')
-  shape_superopt.cpp_closestPointOnSegment3D_FUN_005d6020
-    Line 137: invalid operands to binary expression ('double' and 'int')
-  shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60
-    Line 68: invalid operands to binary expression ('double' and 'int')
-  shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
-    Line 31: invalid operands to binary expression ('double' and 'int')
-  sound_mp3.cpp_antiAliasingButterfly_FUN_005334b0
-    Line 40: invalid operands to binary expression ('double' and 'int')
-  sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_005af750
-    Line 126: invalid operands to binary expression ('double' and 'int')
-  sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
-    Line 20: invalid operands to binary expression ('double' and 'int')
-  sound_sndmain.cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0
-    Line 34: invalid operands to binary expression ('double' and 'int')
-  sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_005a45c0
-    Line 130: invalid operands to binary expression ('double' and 'int')
-  sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0
-    Line 25: invalid operands to binary expression ('double' and 'int')
-  sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100
-    Line 81: invalid operands to binary expression ('double' and 'int')
-  sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0
-    Line 147: invalid operands to binary expression ('double' and 'int')
-  sound_sndmain.cpp_CSfxSlot_seek_FUN_005a8390
-    Line 32: invalid operands to binary expression ('double' and 'int')
-  sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005a9720
-    Line 39: invalid operands to binary expression ('double' and 'int')
-  sound_sndmain.cpp_startSoundThread_FUN_005abc00
-    Line 42: invalid operands to binary expression ('double' and 'int')
-  core_sound.cpp_playSfxInternal_FUN_005b1fd0
-    Line 162: invalid operands to binary expression ('float' and 'int')
-  sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00
-    Line 31: invalid operands to binary expression ('float' and 'int')
-  core_skeledit.cpp_CBoneStructure_FUN_0058ac80
-    Line 24: no matching function for call to '__STK'
-  core_skeledit.cpp_CBoneStructure_fixupMatrices_FUN_0058adb0
-    Line 17: no matching function for call to '__STK'
-  core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0
-    Line 18: no matching function for call to '__STK'
-  core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10
-    Line 19: no matching function for call to '__STK'
-  core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0
-    Line 65: no matching function for call to '__STK'
-  core_skeledit.cpp_CBoneStructure_skipBONframe_FUN_0058abb0
-    Line 16: no matching function for call to '__STK'
-  core_skeledit.cpp_CDeformableModelInstance_addFilesToExtract_FUN_0058a260
-    Line 14: no matching function for call to '__STK'
-  core_skeledit.cpp_CDeformableModelInstance_exportModelToS3D_FUN_00598ee0
-    Line 16: no matching function for call to '__STK'
-  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
-    Line 170: no matching function for call to '__STK'
-  core_skeledit.cpp_CDeformableModel_FUN_0058a2b0
-    Line 22: no matching function for call to '__STK'
-  core_skeledit.cpp_CDeformableModel_FUN_0058b660
-    Line 29: no matching function for call to '__STK'
-  core_skeledit.cpp_CDeformableModel_FUN_0058b8e0
-    Line 18: no matching function for call to '__STK'
-  core_skeledit.cpp_CDeformableModel_FUN_0058b9b0
-    Line 37: no matching function for call to '__STK'
-  core_skeledit.cpp_CDeformableModel_FUN_0058bc40
-    Line 20: no matching function for call to '__STK'
-  core_skeledit.cpp_CDeformableModel_FUN_0058c190
-    Line 105: no matching function for call to '__STK'
-  core_skeledit.cpp_CDeformableModel_FUN_0058d790
-    Line 62: no matching function for call to '__STK'
-  core_skeledit.cpp_CDeformableModel_FUN_0058e240
-    Line 43: no matching function for call to '__STK'
-  core_skeledit.cpp_CDeformableModel_FUN_0058e3e0
-    Line 22: no matching function for call to '__STK'
-  core_skeledit.cpp_CDeformableModel_FUN_0058e600
-    Line 18: no matching function for call to '__STK'
-  core_skeledit.cpp_CDeformableModel_FUN_0058ede0
-    Line 25: no matching function for call to '__STK'
-  core_skeledit.cpp_CDeformableModel_FUN_0058f790
-    Line 21: no matching function for call to '__STK'
-  core_skeledit.cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690
-    Line 33: no matching function for call to '__STK'
-  core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
-    Line 252: no matching function for call to '__STK'
-  core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
-    Line 60: no matching function for call to '__STK'
-  core_skeledit.cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec60
-    Line 23: no matching function for call to '__STK'
-  core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120
-    Line 45: no matching function for call to '__STK'
-  core_skeledit.cpp_CDeformableModel_save_FUN_0058f040
-    Line 15: no matching function for call to '__STK'
-  core_skeledit.cpp_CDeformable_groundBias_FUN_0058e4e0
-    Line 18: no matching function for call to '__STK'
-  core_skeledit.cpp_CLodMesh_FUN_00589c20
-    Line 21: no matching function for call to '__STK'
-  core_skeledit.cpp_CLodVert_copy_FUN_00599550
-    Line 18: no matching function for call to '__STK'
-  core_skeledit.cpp_CLodVert_dtor_FUN_005995c0
-    Line 12: no matching function for call to '__STK'
-  core_skeledit.cpp_CSkeleton_FUN_00592690
-    Line 217: no matching function for call to '__STK'
-  core_skeledit.cpp_CSkeleton_saveStream_FUN_0058b3a0
-    Line 24: no matching function for call to '__STK'
-  core_skeledit.cpp_CSkeleton_save_FUN_0058b2c0
-    Line 15: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_00589450
-    Line 20: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_005894c0
-    Line 16: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_00589500
-    Line 14: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_00589530
-    Line 25: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_005896b0
-    Line 25: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_00589740
-    Line 17: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_005897b0
-    Line 18: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_00589a40
-    Line 14: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_00589b10
-    Line 17: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_00589f40
-    Line 16: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_00589fa0
-    Line 14: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_00589fc0
-    Line 14: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_00589fe0
-    Line 16: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_0058a0f0
-    Line 15: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_0058a1b0
-    Line 16: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_0058ac30
-    Line 18: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_0058ad30
-    Line 23: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_0058aeb0
-    Line 24: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_0058af40
-    Line 24: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_0058afe0
-    Line 23: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_0058b160
-    Line 24: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_0058b200
-    Line 17: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_0058b260
-    Line 18: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_0058bd00
-    Line 50: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_0058dde0
-    Line 21: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_0058de70
-    Line 30: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_0058e0b0
-    Line 26: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_0058eaa0
-    Line 28: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_00592520
-    Line 17: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_005925c0
-    Line 14: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_00595f30
-    Line 21: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_00596860
-    Line 17: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_00598f10
-    Line 16: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_00599480
-    Line 20: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_005995d0
-    Line 15: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_00599630
-    Line 15: no matching function for call to '__STK'
-  core_skeledit.cpp_FUN_00599650
-    Line 15: no matching function for call to '__STK'
-  core_skeledit.cpp_createMeshPrecomputeFile_FUN_00589bb0
-    Line 14: no matching function for call to '__STK'
-  core_skeledit.cpp_readNonEmptyLine_FUN_005895f0
-    Line 15: no matching function for call to '__STK'
-  core_skeledit.cpp_viewModel_FUN_00598fc0
-    Line 24: no matching function for call to '__STK'
-  core_skeleton.cpp_CSkeleton_ctor_FUN_00599880
-    Line 15: no matching function for call to '__STK'
-  core_skeleton.cpp_CSkeleton_dtor_FUN_005998e0
-    Line 14: no matching function for call to '__STK'
-  shape_cramtex.cpp_CCramTex_addTextureEntry_FUN_00446100
-    Line 14: no matching function for call to '__STK'
-  shape_cramtex.cpp_CCramTex_findHighestOverlappingY_FUN_004478c0
-    Line 16: no matching function for call to '__STK'
-  shape_cramtex.cpp_CCramTex_findLeftmostOverlappingX_FUN_00447a10
-    Line 16: no matching function for call to '__STK'
-  shape_cramtex.cpp_CCramTex_findLowestOverlappingY_FUN_00447930
-    Line 16: no matching function for call to '__STK'
-  shape_cramtex.cpp_CCramTex_findRightmostOverlappingX_FUN_004479a0
-    Line 16: no matching function for call to '__STK'
-  shape_cramtex.cpp_CCramTex_renderAllTexturesAndRectangles_FUN_00447ab0
-    Line 18: no matching function for call to '__STK'
-  shape_cramtex.cpp_CCramTex_renderTextureEntry_FUN_00447c20
-    Line 20: no matching function for call to '__STK'
-  shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160
-    Line 59: no matching function for call to '__STK'
-  shape_cramtex.cpp_CCramTex_visualizeTextureAtlas_FUN_00447f20
-    Line 33: no matching function for call to '__STK'
-  shape_cramtex.cpp_calculateAtlasEfficiency_FUN_00447e80
-    Line 16: no matching function for call to '__STK'
-  shape_cramtex.cpp_mapCoordinateToAtlas_FUN_00447a80
-    Line 12: no matching function for call to '__STK'
-  shape_cramtex.cpp_maxInt_FUN_00448440
-    Line 12: no matching function for call to '__STK'
-  shape_cramtex.cpp_performGapFillingOptimization_FUN_00447590
-    Line 23: no matching function for call to '__STK'
-  shape_cramtex.cpp_printAtlasLayoutReport_FUN_004481d0
-    Line 24: no matching function for call to '__STK'
-  shape_cramtex.cpp_qsortRectanglesByActiveFlag_FUN_00446140
-    Line 12: no matching function for call to '__STK'
-  shape_quantize.cpp_CColorQuantizer_ctor_FUN_00554900
-    Line 12: no matching function for call to '__STK'
-  core_main.c_displayErrorAndQuit_FUN_00506f10
-    Line 60: no matching function for call to '_errno'
-  sound_mp3.cpp_testMP3DecoderBenchmark_FUN_00534210
-    Line 63: no matching function for call to '_time'
-  core_dtrace.cpp_CDemonRaytrace_voxelGridSweepTest2_FUN_00499f10
-    Line 35: no matching function for call to 'core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30'
-  core_bugs.cpp_CBugs_archive_FUN_004254f0
-    Line 21: no matching function for call to 'core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0'
-  core_dtrace.cpp_CDemonRaytrace_convertLinearIndexToWorldPosAndCallback_FUN_00494710
-    Line 26: no matching function for call to 'core_dpart_cpp_CDemonPart_loadFromFile_FUN_004825c0'
-  core_stranger.cpp_CStranger_FUN_005be520
-    Line 269: no matching function for call to 'core_lever_cpp_CLever_FUN_00504dd0'
-  core_script.cpp_CScript_processEditorInput_FUN_00565130
-    Line 247: no matching function for call to 'core_script_cpp_CScript_screenToScriptPosition_FUN_00566c20'
-  core_script.cpp_parseCommandWithDefaultTemplates_FUN_00561c70
-    Line 14: no matching function for call to 'core_script_cpp_parseCommandWithTemplates_FUN_00561690'
-  core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730
-    Line 109: no matching function for call to 'core_setedit_cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0'
-  core_game.cpp_CGame_saveGame_FUN_004e0cd0
-    Line 137: no matching function for call to 'engine_dosio_c_getFileSize_FUN_00481880'
-  engine_pod.cpp_CPodFile_verifyChecksum_FUN_00550230
-    Line 93: no matching function for call to 'engine_dosio_c_getFileSize_FUN_00481880'
-  engine_pod.cpp_CPod_computeAndStoreCRC_FUN_00551000
-    Line 49: no matching function for call to 'engine_dosio_c_getFileSize_FUN_00481880'
-  engine_pod.cpp_crc32ComputeFileRange_FUN_0054f490
-    Line 20: no matching function for call to 'engine_dosio_c_getFileSize_FUN_00481880'
-  support_newmsg.cpp_readMessageFile_FUN_00543e40
-    Line 33: no matching function for call to 'engine_dosio_c_getFileSize_FUN_00481880'
-  core_inv.cpp_loadAssets_FUN_004fd220
-    Line 64: no matching function for call to 'engine_dosio_c_getFile_FUN_00481a50'
-  core_main.c_finalizeGameSystems_FUN_00508570
-    Line 21: no matching function for call to 'engine_dosio_c_getFile_FUN_00481a50'
-  engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0
-    Line 98: no matching function for call to 'engine_fileio_cpp_CCheckOutList_findEntry_FUN_004b2e60'
-  core_menu.cpp_renderMenuAndGetChoice_FUN_00510000
-    Line 88: no matching function for call to 'engine_font_cpp_CBitFont_drawText_FUN_004cda80'
-  engine_font.cpp_CBitFont_showExtendedFontTest_FUN_004d0850
-    Line 93: no matching function for call to 'engine_font_cpp_CBitFont_drawText_FUN_004cda80'
-  engine_font.cpp_CBitFont_showFontTest_FUN_004d04b0
-    Line 53: no matching function for call to 'engine_font_cpp_CBitFont_drawText_FUN_004cda80'
-  core_inivar.cpp_readIniData_FUN_004fbd90
-    Line 35: no matching function for call to 'engine_ini_cpp_CIniFile_getString_FUN_004fbb20'
-  core_inivar.cpp_writeIniData_FUN_004fc510
-    Line 24: no matching function for call to 'engine_ini_cpp_CIniFile_setString_FUN_004fbbb0'
-  core_dfont.cpp_initFonts_FUN_004709a0
-    Line 152: no matching function for call to 'engine_winfont_cpp_CWinFont_ctor_FUN_005f22e0'
-  support_trisock.cpp_setSocketBlocking_FUN_005e1e50
-    Line 16: no matching function for call to 'ioctlsocket'
-  shape_design.c_embedCopyrightWatermark_FUN_0046b9a0
-    Line 20: no matching function for call to 'shape_design_c_quantizePaletteColors_FUN_0046b770'
-  core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20
-    Line 32: no matching function for call to 'shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270'
-  core_script.cpp_CScript_editorPutLine_FUN_005662a0
-    Line 27: no matching function for call to 'shape_edittool_cpp_CStrList_add_FUN_004a2b80'
-  engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
-    Line 87: no matching function for call to 'shape_memdbg_cpp_openFile_FUN_0050f7a0'
-  sound_mp3.cpp_CMP3Decoder_synthesisPoly_FUN_00533ba0
-    Line 25: no matching function for call to 'sound_mp3_cpp_applyPolyphaseWindow_FUN_00533690'
-  sound_sndmain.cpp_getSfxSample_FUN_005a4c80
-    Line 104: no matching function for call to 'sound_sndmain_cpp_parseWavFile_FUN_005a3fe0'
-  sound_sndmain.cpp_loadStreamingSoundFile_FUN_005a5200
-    Line 108: no matching function for call to 'sound_sndmain_cpp_parseWavFile_FUN_005a3fe0'
-  core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0
-    Line 261: no matching function for call to 'support_newmsg_cpp_decryptMessage_FUN_00544270'
-  core_main.c_showLicenseAgreement_FUN_005070f0
-    Line 31: no matching function for call to 'support_newmsg_cpp_decryptMessage_FUN_00544270'
-  engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0048d170
-    Line 76: no matching function for call to 'wincore_windll_cpp_drawPolyList2_FUN_005b7780'
-  engine_3d.c_dispatchMRGLToRenderer_FUN_00407aa0
-    Line 38: no matching function for call to 'wincore_windll_cpp_drawPolyList_FUN_005b7640'
-  engine_3d.c_flushRenderQueue_FUN_00407a30
-    Line 18: no matching function for call to 'wincore_windll_cpp_drawPolyList_FUN_005b7640'
-  engine_drender.cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00
-    Line 92: no matching function for call to 'wincore_windll_cpp_drawPolyList_FUN_005b7640'
-
-====================================================================================================
-CATEGORY: format_error (589 errors)
+CATEGORY: format_error (590 errors)
 ====================================================================================================
 
   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
@@ -2549,6 +1656,713 @@ CATEGORY: format_error (589 errors)
     Line 36: format specifies type 'unsigned long' but the argument has type 'int' [-Werror,-Wformat]
 
 ====================================================================================================
+CATEGORY: incompatible_types (576 errors)
+====================================================================================================
+
+  engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00
+    Line 17: assigning to 'CCheckOutItem *' from incompatible type 'void *'
+  engine_fileio.cpp_CCheckOutList_remove_FUN_004b2d70
+    Line 26: assigning to 'CCheckOutItem *' from incompatible type 'void *'
+  core_cloth.cpp_CClothList_load_FUN_0043bfa0
+    Line 30: assigning to 'CCloth *' from incompatible type 'void *'
+  shape_quantize.cpp_CColorQuantizer_reset_FUN_00554d40
+    Line 51: assigning to 'CColorQuantizer *' from incompatible type 'void *'
+  core_skeledit.cpp_viewModel_FUN_00598fc0
+    Line 149: assigning to 'CDeformableModelInstance *' from incompatible type 'void *'
+  core_actor.cpp_createActorByName_FUN_0040c430
+    Line 26: assigning to 'CDemonActor *' from incompatible type 'void *'
+  core_dtrace.cpp_CDemonRaytrace_allocNewCubeList_FUN_00494380
+    Line 21: assigning to 'CDemonCube *' from incompatible type 'void *'
+  core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004518f0
+    Line 59: assigning to 'CDemonGlobe *' from incompatible type 'void *'
+  shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0
+    Line 58: assigning to 'CEdButton *' from incompatible type 'void *'
+  core_mission.cpp_CDemonMission_createOneHero_FUN_00524920
+    Line 48: assigning to 'CHero *' from incompatible type 'void *'
+  core_mission.cpp_CDemonMission_FUN_00524c20
+    Line 40: assigning to 'CHeroPlaceholder *' from incompatible type 'void *'
+  core_succubus.cpp_CSuccubus_process_FUN_005c6e90
+    Line 229: assigning to 'CHotDemon *' from incompatible type 'void *'
+  support_codec.cpp_CLZWDictionary_init_FUN_0043ee60
+    Line 17: assigning to 'CLZWDictionaryNode *' from incompatible type 'void *'
+  shape_meshlod.cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0
+    Line 36: assigning to 'CLodEdge *' from incompatible type 'void *'
+  shape_meshlod.cpp_CLodMesh_loadReplayData_FUN_0051d180
+    Line 22: assigning to 'CLodEdge *' from incompatible type 'void *'
+  shape_meshlod.cpp_CLodMesh_recordEdgeCollapse_FUN_0051d4a0
+    Line 19: assigning to 'CLodEdge *' from incompatible type 'void *'
+  shape_meshlod.cpp_CLodMesh_allocate_FUN_00515ac0
+    Line 22: assigning to 'CLodVert *' from incompatible type 'void *'
+  sound_sndmain.cpp_startSfx_FUN_005a8e90
+    Line 141: assigning to 'CMP3Decoder *' from incompatible type 'void *'
+  core_main.c_showDeveloperToolsMenu_FUN_005073a0
+    Line 117: assigning to 'CMorph *' from incompatible type 'void *'
+  core_morph.cpp_CMorph_ctor_FUN_0052b310
+    Line 14: assigning to 'CMorph *' from incompatible type 'void *'
+  engine_ncursfx.cpp_CMouse_ctor_FUN_00544380
+    Line 16: assigning to 'CMouse *' from incompatible type 'void *'
+  cockpit_pkbitmap.cpp_CPackedBitmap_parsePBGFile_FUN_0054b9b0
+    Line 57: assigning to 'CPackedBitmap *' from incompatible type 'void *'
+  cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_0054bdb0
+    Line 26: assigning to 'CPackedBitmap *' from incompatible type 'void *'
+  cockpit_pkbmpset.cpp_CPackedBitmapSet_ctor_FUN_0054bcd0
+    Line 18: assigning to 'CPackedBitmapSet *' from incompatible type 'void *'
+  engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950
+    Line 24: assigning to 'CPodAuditRecord *' from incompatible type 'void *'
+  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50
+    Line 174: assigning to 'CPodAuditRecord *' from incompatible type 'void *'
+  engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190
+    Line 105: assigning to 'CPodAuditRecord *' from incompatible type 'void *'
+  engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
+    Line 107: assigning to 'CPodDirectoryEntry *' from incompatible type 'void *'
+  engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40
+    Line 78: assigning to 'CPodFile *' from incompatible type 'void *'
+  shape_superopt.cpp_CObj_addPolygons_FUN_005d2410
+    Line 22: assigning to 'CPoly *' from incompatible type 'void *'
+  shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320
+    Line 22: assigning to 'CPoly *' from incompatible type 'void *'
+  shape_superopt.cpp_CObj_removePolygon_FUN_005d2f50
+    Line 26: assigning to 'CPoly *' from incompatible type 'void *'
+  core_skeleton.cpp_CSkeleton_allocMemory_FUN_00599910
+    Line 25: assigning to 'CQuaternion4f *' from incompatible type 'void *'
+  core_dcube.cpp_CDemonCube_allocGeometryMemory_FUN_00456840
+    Line 20: assigning to 'CVector3f *' from incompatible type 'void *'
+  core_bodypart.cpp_CBodyPart_setCounts_FUN_004191d0
+    Line 18: assigning to 'CVector3i *' from incompatible type 'void *'
+  core_dmodel.cpp_CKeyFramedModel_allocate_FUN_00477bf0
+    Line 35: assigning to 'CVector3i *' from incompatible type 'void *'
+  core_dpart.cpp_CDemonPart_alloc_FUN_00482180
+    Line 18: assigning to 'CVector3i *' from incompatible type 'void *'
+  core_setedit.cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00
+    Line 33: assigning to 'CVector3i *' from incompatible type 'void *'
+  shape_superopt.cpp_CObj_addVertices_FUN_005d2580
+    Line 14: assigning to 'CVert *' from incompatible type 'void *'
+  shape_superopt.cpp_CObj_allocateVertices_FUN_005d2500
+    Line 15: assigning to 'CVert *' from incompatible type 'void *'
+  shape_superopt.cpp_CObj_removeVertex_FUN_005d3140
+    Line 29: assigning to 'CVert *' from incompatible type 'void *'
+  wincore_winrun.cpp_winMain_FUN_005f3680
+    Line 111: assigning to 'HBRUSH' (aka 'HBRUSH__ *') from incompatible type 'HGDIOBJ' (aka 'void *')
+  core_script.cpp_CScript_dbLoad_FUN_005603c0
+    Line 110: assigning to 'SDialogEntry *' from incompatible type 'void *'
+  core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004947a0
+    Line 78: assigning to 'SIZE_T *' (aka 'unsigned long *') from incompatible type 'void *'
+  shape_meshlod.cpp_CLodMesh_findOrAddLodTexture_FUN_00518790
+    Line 32: assigning to 'SMRGLTextureLod *' from incompatible type 'void *'
+  shape_memdbg.cpp_debugCalloc_FUN_0050f350
+    Line 27: assigning to 'SMemHead *' from incompatible type 'void *'
+  shape_memdbg.cpp_debugMalloc_FUN_0050f250
+    Line 24: assigning to 'SMemHead *' from incompatible type 'void *'
+  shape_memdbg.cpp_debugRealloc_FUN_0050f540
+    Line 38: assigning to 'SMemHead *' from incompatible type 'void *'
+  core_morph.cpp_CMorphModel_addPartFromPolygon_FUN_0052a580
+    Line 37: assigning to 'SMorphPoint *' from incompatible type 'void *'
+  core_morph.cpp_CMorphModel_addPartFromVertexBuffer_FUN_0052a710
+    Line 26: assigning to 'SMorphPoint *' from incompatible type 'void *'
+  core_script.cpp_CScript_buildParsedLines_FUN_0055a370
+    Line 33: assigning to 'SScriptLine *' from incompatible type 'void *'
+  core_script.cpp_CScript_addEventXRef_FUN_00567510
+    Line 17: assigning to 'SScriptXRef *' from incompatible type 'void *'
+  shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620
+    Line 49: assigning to 'SSpatialGrid *' from incompatible type 'void *'
+  shape_meshlod.cpp_CLodMesh_gridLoad_FUN_0051d2d0
+    Line 19: assigning to 'SSpatialGrid *' from incompatible type 'void *'
+  engine_fileio.cpp_readTimestampFile_FUN_004b23a0
+    Line 78: assigning to 'STimestampRecord *' from incompatible type 'void *'
+  core_skeleton.cpp_CDeformableModel_allocLOD_FUN_0059a510
+    Line 45: assigning to 'SVert *' from incompatible type 'void *'
+  shape_design.c_mouseWheelPolygonReducer_FUN_004648e0
+    Line 47: assigning to 'SVertexData *' from incompatible type 'void *'
+  core_dtrace.cpp_CDemonRaytrace_allocCubeList_FUN_00494270
+    Line 14: assigning to 'SVoxelCubeMetadata *' from incompatible type 'void *'
+  cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730
+    Line 39: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'void *'
+  cockpit_ckptutil.c_mirrorBitmapHorizontally_FUN_00433160
+    Line 27: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'void *'
+  engine_pcx.c_writePCXScanline_FUN_00548c50
+    Line 18: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'void *'
+  engine_texture.cpp_CTextureCache_loadTexture_FUN_005dcc00
+    Line 71: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'void *'
+  shape_edittool.cpp_CEditorTools_getClipboardText_FUN_004a1b30
+    Line 23: assigning to 'char *' from incompatible type 'HANDLE' (aka 'void *')
+  shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0
+    Line 38: assigning to 'char *' from incompatible type 'LPVOID' (aka 'void *')
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullHeightPrintf_FUN_00489bb0
+    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40
+    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00489940
+    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30
+    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450
+    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
+  engine_2d.c_drawTextCenteredAtColorFormatted_FUN_00402650
+    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
+  engine_2d.c_drawTextCenteredAtFormatted_FUN_004022e0
+    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
+  engine_2d.c_drawTextCenteredColorFormatted_FUN_00402730
+    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
+  engine_2d.c_drawTextCenteredFormatted_FUN_004023c0
+    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
+  engine_2d.c_drawTextColorFormatted_FUN_004024c0
+    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
+  engine_2d.c_drawTextFormatted_FUN_00402150
+    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
+  engine_2d.c_drawTextRightAlignedColorFormatted_FUN_00402580
+    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
+  engine_2d.c_drawTextRightAlignedFormatted_FUN_00402210
+    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
+  engine_console.cpp_CConsole_printf_FUN_00441890
+    Line 22: assigning to 'char *' from incompatible type 'char *[1]'
+  engine_font.cpp_CBitFont_drawTextCenterF_FUN_004cde20
+    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
+  engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004cdf30
+    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
+  engine_font.cpp_CBitFont_drawTextF_FUN_004cdc20
+    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
+  engine_font.cpp_CBitFont_printCenterF_FUN_004ce050
+    Line 14: assigning to 'char *' from incompatible type 'char *[1]'
+  engine_font.cpp_CBitFont_printF_FUN_004cdd20
+    Line 14: assigning to 'char *' from incompatible type 'char *[1]'
+  shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
+    Line 21: assigning to 'char *' from incompatible type 'char *[1]'
+  shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870
+    Line 21: assigning to 'char *' from incompatible type 'char *[1]'
+  shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
+    Line 16: assigning to 'char *' from incompatible type 'char *[1]'
+  shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f180
+    Line 16: assigning to 'char *' from incompatible type 'char *[1]'
+  shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
+    Line 14: assigning to 'char *' from incompatible type 'char *[1]'
+  shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0
+    Line 14: assigning to 'char *' from incompatible type 'char *[1]'
+  shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0
+    Line 14: assigning to 'char *' from incompatible type 'char *[1]'
+  shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
+    Line 16: assigning to 'char *' from incompatible type 'char *[1]'
+  cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
+    Line 23: assigning to 'char *' from incompatible type 'void *'
+  core_script.cpp_CScript_editorAction_FUN_00564820
+    Line 148: assigning to 'char *' from incompatible type 'void *'
+  engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0
+    Line 26: assigning to 'char *' from incompatible type 'void *'
+  engine_palette.cpp_CPaletteManager_ctor_FUN_00544f10
+    Line 16: assigning to 'char *' from incompatible type 'void *'
+  shape_edittool.cpp_CStrList_copyToClipboard_FUN_004a3270
+    Line 39: assigning to 'char *' from incompatible type 'void *'
+  shape_edittool.cpp_CStrList_insert_FUN_004a2bc0
+    Line 42: assigning to 'char *' from incompatible type 'void *'
+  shape_edittool.cpp_CStrList_setStringAt_FUN_004a3120
+    Line 34: assigning to 'char *' from incompatible type 'void *'
+  sound_mp3.cpp_CFileBitStream_init_FUN_0052ecf0
+    Line 28: assigning to 'char *' from incompatible type 'void *'
+  sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630
+    Line 46: assigning to 'char *' from incompatible type 'void *'
+  sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730
+    Line 178: assigning to 'char *' from incompatible type 'void *'
+  core_script.cpp_CScript_executeContextAction_FUN_00565d00
+    Line 23: assigning to 'char **' from incompatible type 'const char *[141]'
+  core_script.cpp_CScript_setParameterValue_FUN_00565f70
+    Line 25: assigning to 'char **' from incompatible type 'const char *[141]'
+  core_script.cpp_CScript_showSyntaxHelp_FUN_00565e70
+    Line 45: assigning to 'char **' from incompatible type 'const char *[141]'
+  shape_edittool.cpp_CStrList_allocate_FUN_004a2cc0
+    Line 26: assigning to 'char **' from incompatible type 'void *'
+  wincore_windll.cpp_clearScreen_FUN_005b3e70
+    Line 25: assigning to 'double *' from incompatible type 'void *'
+  shape_quantize.cpp_CColorQuantizer_errorDiffusionBuffers_FUN_00555500
+    Line 46: assigning to 'float *' from incompatible type 'void *'
+  sound_sndmain.cpp_allocMixBuffers_FUN_005a5730
+    Line 34: assigning to 'float *' from incompatible type 'void *'
+  sound_sndmain.cpp_analyzeFrequencyBand_FUN_005ac400
+    Line 60: assigning to 'float *' from incompatible type 'void *'
+  sound_sndmain.cpp_getChannelLevels_FUN_005ac990
+    Line 26: assigning to 'float *' from incompatible type 'void *'
+  shape_dsemodel.cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0
+    Line 41: assigning to 'int *' from incompatible type 'uint[13]' (aka 'unsigned int[13]')
+  cockpit_ckptutil.c_generateScrollHeightMap_FUN_00432df0
+    Line 29: assigning to 'int *' from incompatible type 'void *'
+  cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0
+    Line 98: assigning to 'int *' from incompatible type 'void *'
+  core_cloth.cpp_CCloth_allocMemory_FUN_00438c50
+    Line 15: assigning to 'int *' from incompatible type 'void *'
+  core_course.cpp_CCourse_allocMemory_FUN_00442500
+    Line 18: assigning to 'int *' from incompatible type 'void *'
+  core_dmodel.cpp_CKeyFramedModel_buildCollisionTriList_FUN_00478830
+    Line 37: assigning to 'int *' from incompatible type 'void *'
+  core_dmodel.cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30
+    Line 37: assigning to 'int *' from incompatible type 'void *'
+  core_dmodel.cpp_CKeyFramedModel_weldAndRemoveUnusedVertices_FUN_0047ada0
+    Line 33: assigning to 'int *' from incompatible type 'void *'
+  core_dtrace.cpp_CDemonRaytrace_allocTriList_FUN_00494600
+    Line 18: assigning to 'int *' from incompatible type 'void *'
+  core_dtrace.cpp_CDemonRaytrace_crunch_FUN_00495310
+    Line 106: assigning to 'int *' from incompatible type 'void *'
+  core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_00498fb0
+    Line 27: assigning to 'int *' from incompatible type 'void *'
+  core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80
+    Line 355: assigning to 'int *' from incompatible type 'void *'
+  core_setutil.cpp_C3DSCamera_loadPVS_FUN_005857b0
+    Line 18: assigning to 'int *' from incompatible type 'void *'
+  core_skeledit.cpp_CDeformableModel_FUN_0058d790
+    Line 150: assigning to 'int *' from incompatible type 'void *'
+  core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
+    Line 69: assigning to 'int *' from incompatible type 'void *'
+  engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550
+    Line 33: assigning to 'int *' from incompatible type 'void *'
+  shape_design.c_complexPolygonReduction_FUN_00463b30
+    Line 54: assigning to 'int *' from incompatible type 'void *'
+  shape_edittool.cpp_CPickList_enableItem_FUN_004a5410
+    Line 20: assigning to 'int *' from incompatible type 'void *'
+  shape_edittool.cpp_CPickList_setItemHotKey_FUN_004a5540
+    Line 20: assigning to 'int *' from incompatible type 'void *'
+  shape_meshlod.cpp_CLodMesh_createOrigSamplePoints_FUN_00517000
+    Line 47: assigning to 'int *' from incompatible type 'void *'
+  shape_superopt.cpp_CObj_removeUnusedVertices_FUN_005d44d0
+    Line 28: assigning to 'int *' from incompatible type 'void *'
+  shape_superopt.cpp_FUN_005c7b20
+    Line 22: assigning to 'int *' from incompatible type 'void *'
+  shape_superopt.cpp_FUN_005c8280
+    Line 25: assigning to 'int *' from incompatible type 'void *'
+  core_actor.cpp_CDemonActor_processFootstepAt_FUN_0040c8f0
+    Line 46: assigning to 'int' from incompatible type 'void'
+  core_actor.cpp_CDemonActor_processFootstep_FUN_0040c830
+    Line 29: assigning to 'int' from incompatible type 'void'
+  core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0
+    Line 59: assigning to 'int' from incompatible type 'void'
+  core_gargoyle.cpp_CGargoyle_processDamage_FUN_004e57d0
+    Line 36: assigning to 'int' from incompatible type 'void'
+  core_hero.cpp_CHero_FUN_004f3760
+    Line 21: assigning to 'int' from incompatible type 'void'
+  core_icepick.cpp_CIcePick_FUN_004f8c70
+    Line 62: assigning to 'int' from incompatible type 'void'
+  core_moloch.cpp_CMoloch_FUN_005293b0
+    Line 63: assigning to 'int' from incompatible type 'void'
+  core_svetlana.cpp_CSvetlana_FUN_005d9260
+    Line 62: assigning to 'int' from incompatible type 'void'
+  engine_texture.cpp_ensureTextureLoaded_FUN_005dd800
+    Line 22: assigning to 'int' from incompatible type 'void'
+  wincore_windll.cpp_clear_FUN_005b7a30
+    Line 17: assigning to 'int' from incompatible type 'void'
+  wincore_windll.cpp_setColorTable16_FUN_005b7579
+    Line 17: assigning to 'int' from incompatible type 'void'
+  wincore_windll.cpp_setFogColorFromPalette_FUN_005b7b01
+    Line 21: assigning to 'int' from incompatible type 'void'
+  wincore_windll.cpp_setFogColor_FUN_005b7b80
+    Line 20: assigning to 'int' from incompatible type 'void'
+  cockpit_ckptutil.c_rotateBitmap_FUN_00434870
+    Line 31: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
+  cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_0054b080
+    Line 15: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
+  cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0054b000
+    Line 16: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
+  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40
+    Line 46: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
+  cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0054c1e0
+    Line 34: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
+  core_dlight.cpp_CDemonLight_allocateFilter_FUN_00474720
+    Line 14: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
+  core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770
+    Line 29: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
+  core_dlight.cpp_CDemonLight_init_FUN_004727c0
+    Line 33: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
+  core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330
+    Line 406: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
+  core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00477110
+    Line 139: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
+  shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180
+    Line 50: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
+  shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
+    Line 74: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
+  cockpit_ckptutil.c_copyScreenRegion_FUN_00432d90
+    Line 24: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
+  core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50
+    Line 204: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
+  core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0
+    Line 297: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
+  core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360
+    Line 52: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
+  core_dcamera.cpp_CDemonCamera_uploadBackdropTexture_FUN_0044f310
+    Line 47: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
+  core_dstrender.cpp_renderPerspectiveCorrectTextured16xCached_FUN_00490ec0
+    Line 305: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
+  engine_alphabit.cpp_CAlphaBitmap_display_FUN_00410950
+    Line 34: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
+  engine_pod.cpp_CPodFile_getAuditRecord_FUN_00550590
+    Line 43: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
+  shape_edittool.cpp_CEditorTools_createModalWindow_FUN_004a0970
+    Line 119: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
+  shape_edittool.cpp_paintWindowBackground_FUN_0049e590
+    Line 30: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
+  shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50
+    Line 65: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
+  shape_superopt.cpp_FUN_005c84c0
+    Line 71: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
+  shape_superopt.cpp_FUN_005ca590
+    Line 137: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
+  shape_superopt.cpp_FUN_005cbe20
+    Line 30: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
+  wincore_windll.cpp_presentToExternalRenderer_FUN_005b7c30
+    Line 21: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
+  core_bat.cpp_CBat_process_FUN_00414a00
+    Line 49: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_batcreat.cpp_CBatCreature_processDamage_FUN_00416030
+    Line 56: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_batcreat.cpp_CBatCreature_process_FUN_00415470
+    Line 113: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_batman.cpp_CBatman_processDamage_FUN_004179a0
+    Line 56: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_batman.cpp_CBatman_process_FUN_00416870
+    Line 222: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90
+    Line 435: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_boxactor.cpp_CBoxActor_process_FUN_004219e0
+    Line 86: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_bride.cpp_CBride_processDamage_FUN_00424830
+    Line 74: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_bride.cpp_CBride_process_FUN_00423a30
+    Line 82: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_charactr.cpp_CCharacter_processFire_FUN_0042a830
+    Line 103: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_cow.cpp_CZombieCow_processDamage_FUN_00444b40
+    Line 40: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_cow.cpp_CZombieCow_process_FUN_00444310
+    Line 80: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_dog.cpp_CZombieDog_processDamage_FUN_0047f820
+    Line 39: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_dog.cpp_CZombieDog_process_FUN_0047f140
+    Line 104: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_drone.cpp_CDrone_processDamage_FUN_0048f360
+    Line 26: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_drone.cpp_CDrone_process_FUN_0048ec70
+    Line 135: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_dynamite.cpp_CDynamite_FUN_0049cf20
+    Line 17: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_emitter.cpp_CEmitter_process_FUN_004a8070
+    Line 229: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_event.cpp_CEventList_evaluateAtom_FUN_004ae140
+    Line 1238: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_filmreel.cpp_CFilmProjector_archive_FUN_004beb40
+    Line 22: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_flamegun.cpp_CFlameThrower_process_FUN_004cb9b0
+    Line 27: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_gargoyle.cpp_CGargoyle_process_FUN_004e4a00
+    Line 98: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_ghoul.cpp_CGhoul_processDamage_FUN_004e87e0
+    Line 105: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_ghoul.cpp_CGhoul_process_FUN_004e6600
+    Line 379: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_hero.cpp_CHero_FUN_004f3120
+    Line 78: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_hostage.cpp_CHostage_processDamage_FUN_004f6450
+    Line 42: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_hotdemon.cpp_CHotDemon_processDamage_FUN_004f7720
+    Line 49: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_hotdemon.cpp_CHotDemon_process_FUN_004f6f20
+    Line 133: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_icepick.cpp_CIcePick_processDamage_FUN_004f95b0
+    Line 66: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_icepick.cpp_CIcePick_process_FUN_004f80b0
+    Line 181: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_imp.cpp_CImp_processDamage_FUN_004fae00
+    Line 53: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_imp.cpp_CImp_process_FUN_004f9c30
+    Line 308: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_larva.cpp_CLarva_processDamage_FUN_00503a20
+    Line 41: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_mobster.cpp_CMobster_FUN_005279f0
+    Line 51: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_mobster.cpp_CMobster_processDamage_FUN_00527740
+    Line 42: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_mobster.cpp_CMobster_process_FUN_00525840
+    Line 109: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_platfrm.cpp_CPlatform_process_FUN_0054cc30
+    Line 218: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_sentinel.cpp_CSentinel_processDamage_FUN_00568cd0
+    Line 50: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_stranger.cpp_CStranger_processDamage_FUN_005c48b0
+    Line 81: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_svetlana.cpp_CSvetlana_processDamage_FUN_005d9d30
+    Line 45: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_tommygun.cpp_CTommyGun_process_FUN_005de360
+    Line 46: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_turret.cpp_CTurret_process_FUN_005e2430
+    Line 110: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_tvbat.cpp_CTVBat_process_FUN_005e4210
+    Line 324: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_werewolf.cpp_CWerewolf_FUN_005f11e0
+    Line 20: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_werewolf.cpp_CWerewolf_processDamage_FUN_005f1ac0
+    Line 61: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_zombie.cpp_CZombie_processDamage_FUN_005fc4f0
+    Line 41: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_zombie.cpp_CZombie_process_FUN_005f9470
+    Line 479: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_door.cpp_CDoor_FUN_00481210
+    Line 18: assigning to 'undefined4' (aka 'unsigned int') from incompatible type 'void'
+  core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0
+    Line 168: assigning to 'ushort *' (aka 'unsigned short *') from incompatible type 'void *'
+  sound_sndmain.cpp_convertMixBufToOutput_FUN_005a5b80
+    Line 19: assigning to 'ushort *' (aka 'unsigned short *') from incompatible type 'void *'
+  wincore_windll.cpp_drawPolyList2_FUN_005b7780
+    Line 29: assigning to 'ushort *' (aka 'unsigned short *') from incompatible type 'void *'
+  cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0054b190
+    Line 40: assigning to 'void **' from incompatible type 'void *'
+  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0054b690
+    Line 59: assigning to 'void **' from incompatible type 'void *'
+  shape_quantize.cpp_CBitmap_ctor_FUN_00556a00
+    Line 65: assigning to 'void **' from incompatible type 'void *'
+  core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
+    Line 182: cannot convert 'UActorPropertyCallback' to 'int' without a conversion operator
+  core_stranger.cpp_CStranger_FUN_005bdd20
+    Line 64: cannot convert 'UActorVTable' to 'float' without a conversion operator
+  core_werewolf.cpp_CWerewolf_process_FUN_005efde0
+    Line 116: incompatible integer to pointer conversion assigning to 'CWerewolf *' from 'uint32_t' (aka 'unsigned int')
+  core_texlist.cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0
+    Line 32: incompatible integer to pointer conversion assigning to 'HANDLE' (aka 'void *') from 'long'
+  engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0
+    Line 172: incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'SRenderVertex *'
+  core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10
+    Line 172: incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'ushort *' (aka 'unsigned short *')
+  core_fire.cpp_CGunFlame_initProcess_FUN_004c4b00
+    Line 44: incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from 'CDemonActor *'
+  core_dcamera.cpp_CDemonCamera_addLightmapToCorona_FUN_00450e30
+    Line 43: incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from 'uchar *' (aka 'unsigned char *')
+  core_inv.cpp_CInventory_select_FUN_004ff800
+    Line 125: incompatible pointer types assigning to 'CDemonActor *' from 'CAmmo *'
+  core_melee.cpp_CMelee_playAttackHitEffects_FUN_0050eb50
+    Line 14: incompatible pointer types assigning to 'CDemonActor *' from 'CCharacter *'
+  core_msnedit.cpp_CDemonMission_FUN_0053bd80
+    Line 143: incompatible pointer types assigning to 'CDemonActor *' from 'CCharacter *'
+  core_msnedit.cpp_CDemonMission_FUN_0053d3b0
+    Line 39: incompatible pointer types assigning to 'CDemonActor *' from 'CEnemy *'
+  core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0
+    Line 213: incompatible pointer types assigning to 'CDemonActor *' from 'CHero *'
+  core_mission.cpp_CDemonMission_writeFile_FUN_00523600
+    Line 62: incompatible pointer types assigning to 'CDemonActor *' from 'CHero *'
+  core_vampboss.cpp_CVampireBoss_processDamage_FUN_005e7030
+    Line 41: incompatible pointer types assigning to 'CDemonActor *' from 'CHero *'
+  core_inv.cpp_CInventory_addItem_FUN_004fd600
+    Line 1068: incompatible pointer types assigning to 'CDemonActor *' from 'CMelee *'
+  core_inv.cpp_CInventory_renderItemModel_FUN_004fee00
+    Line 100: incompatible pointer types assigning to 'CDemonActor *' from 'CMelee *'
+  core_inv.cpp_clampWeaponAmmoCount_FUN_004fd5d0
+    Line 14: incompatible pointer types assigning to 'CDemonActor *' from 'CTommyGun *'
+  core_waypoint.cpp_CWayPoint_onActorDeleted_FUN_005ec610
+    Line 14: incompatible pointer types assigning to 'CDemonActor *' from 'CWayPoint *'
+  core_game.cpp_giveHeroWeapon_FUN_004dd870
+    Line 18: incompatible pointer types assigning to 'CDemonActor *' from 'CWeapon *'
+  shape_memdbg.cpp_CLeakChecker_dtor_FUN_0050fbc0
+    Line 21: incompatible pointer types assigning to '_FILE *' from 'FILE *' (aka '_IO_FILE *')
+  shape_memdbg.cpp_openFile_FUN_0050f7a0
+    Line 33: incompatible pointer types assigning to '_FILE *' from 'FILE *' (aka '_IO_FILE *')
+  core_frankgen.cpp_CFrankenstienMachine_getPropertyList_FUN_004d2500
+    Line 17: invalid conversion specifier '.' [-Werror,-Wformat-invalid-specifier]
+  core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210
+    Line 244: invalid operands to binary expression ('double' and 'int')
+  core_crossbow.cpp_CCrossbow_fire_FUN_00448f20
+    Line 109: invalid operands to binary expression ('double' and 'int')
+  core_dcube.cpp_clipEdgeToPlane_FUN_004547d0
+    Line 19: invalid operands to binary expression ('double' and 'int')
+  core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
+    Line 38: invalid operands to binary expression ('double' and 'int')
+  core_dmodel.cpp_CKeyFramedModel_exportToS3D_FUN_00479f30
+    Line 105: invalid operands to binary expression ('double' and 'int')
+  core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0
+    Line 211: invalid operands to binary expression ('double' and 'int')
+  core_dtri.cpp_clipLineToPlane_FUN_0049b6c0
+    Line 20: invalid operands to binary expression ('double' and 'int')
+  core_event.cpp_CEventList_setTimerEvent_FUN_004b05a0
+    Line 23: invalid operands to binary expression ('double' and 'int')
+  core_event.cpp_CEventList_updateSfxEntries_FUN_004b0db0
+    Line 30: invalid operands to binary expression ('double' and 'int')
+  core_flame.cpp_CFlame_process_FUN_004c9c00
+    Line 75: invalid operands to binary expression ('double' and 'int')
+  core_game.cpp_CGame_processFrame_FUN_004da100
+    Line 268: invalid operands to binary expression ('double' and 'int')
+  core_gore.cpp_CBloodPool_save_FUN_004ed1c0
+    Line 18: invalid operands to binary expression ('double' and 'int')
+  core_gun.cpp_CGun_fire_FUN_004f0350
+    Line 131: invalid operands to binary expression ('double' and 'int')
+  core_hostage.cpp_CHostage_process_FUN_004f4bd0
+    Line 405: invalid operands to binary expression ('double' and 'int')
+  core_lightgun.cpp_CLightGun_fire_FUN_00505c70
+    Line 120: invalid operands to binary expression ('double' and 'int')
+  core_motion.cpp_CMotionList_save_FUN_0052d170
+    Line 53: invalid operands to binary expression ('double' and 'int')
+  core_msnedit.cpp_CDemonMission_FUN_0053e220
+    Line 116: invalid operands to binary expression ('double' and 'int')
+  core_script.cpp_CScript_step_FUN_0055a810
+    Line 1369: invalid operands to binary expression ('double' and 'int')
+  core_skeledit.cpp_CBoneStructure_fixupMatrices_FUN_0058adb0
+    Line 29: invalid operands to binary expression ('double' and 'int')
+  core_stranger.cpp_CStranger_FUN_005c2400
+    Line 119: invalid operands to binary expression ('double' and 'int')
+  core_tommygun.cpp_CTommyGun_fire_FUN_005ddb30
+    Line 143: invalid operands to binary expression ('double' and 'int')
+  core_turret.cpp_CTurret_fire_FUN_005e3750
+    Line 94: invalid operands to binary expression ('double' and 'int')
+  core_xform.cpp_inverse_FUN_005f6210
+    Line 44: invalid operands to binary expression ('double' and 'int')
+  core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0
+    Line 43: invalid operands to binary expression ('double' and 'int')
+  core_xform.cpp_matrixToEulerAngles_FUN_005f5690
+    Line 42: invalid operands to binary expression ('double' and 'int')
+  engine_colquant.c_FUN_00441040
+    Line 29: invalid operands to binary expression ('double' and 'int')
+  engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0
+    Line 25: invalid operands to binary expression ('double' and 'int')
+  shape_design.c_calculatePolygonAngularArea_FUN_00461ee0
+    Line 85: invalid operands to binary expression ('double' and 'int')
+  shape_design.c_generateOctant_FUN_00469420
+    Line 75: invalid operands to binary expression ('double' and 'int')
+  shape_design.c_groundCenterObject_FUN_00466a30
+    Line 49: invalid operands to binary expression ('double' and 'int')
+  shape_design.c_mergeAdjacentPolygons_FUN_00462b70
+    Line 140: invalid operands to binary expression ('double' and 'int')
+  shape_design.c_sampleAndFilterPixel_FUN_0046ae20
+    Line 45: invalid operands to binary expression ('double' and 'int')
+  shape_design.c_showFacetPartEditor_FUN_0045f1d0
+    Line 300: invalid operands to binary expression ('double' and 'int')
+  shape_design.c_sizeForStadium_FUN_00469c70
+    Line 77: invalid operands to binary expression ('double' and 'int')
+  shape_dsemodel.cpp_CDSEModel_centerModel_FUN_0048fa50
+    Line 49: invalid operands to binary expression ('double' and 'int')
+  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
+    Line 81: invalid operands to binary expression ('double' and 'int')
+  shape_meshlod.cpp_CLodMesh_exportToS3D_FUN_0051c100
+    Line 43: invalid operands to binary expression ('double' and 'int')
+  shape_meshlod.cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300
+    Line 35: invalid operands to binary expression ('double' and 'int')
+  shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030
+    Line 45: invalid operands to binary expression ('double' and 'int')
+  shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
+    Line 134: invalid operands to binary expression ('double' and 'int')
+  shape_superopt.cpp_CObj_weldVertices_FUN_005d4160
+    Line 56: invalid operands to binary expression ('double' and 'int')
+  shape_superopt.cpp_CPoly_containsPoint2D_FUN_005d0340
+    Line 120: invalid operands to binary expression ('double' and 'int')
+  shape_superopt.cpp_FUN_005c9100
+    Line 56: invalid operands to binary expression ('double' and 'int')
+  shape_superopt.cpp_FUN_005d8200
+    Line 15: invalid operands to binary expression ('double' and 'int')
+  shape_superopt.cpp_FUN_005d82e0
+    Line 16: invalid operands to binary expression ('double' and 'int')
+  shape_superopt.cpp_closestPointOnSegment3D_FUN_005d6020
+    Line 137: invalid operands to binary expression ('double' and 'int')
+  shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60
+    Line 68: invalid operands to binary expression ('double' and 'int')
+  shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
+    Line 31: invalid operands to binary expression ('double' and 'int')
+  sound_mp3.cpp_antiAliasingButterfly_FUN_005334b0
+    Line 40: invalid operands to binary expression ('double' and 'int')
+  sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_005af750
+    Line 126: invalid operands to binary expression ('double' and 'int')
+  sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
+    Line 20: invalid operands to binary expression ('double' and 'int')
+  sound_sndmain.cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0
+    Line 34: invalid operands to binary expression ('double' and 'int')
+  sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_005a45c0
+    Line 130: invalid operands to binary expression ('double' and 'int')
+  sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0
+    Line 25: invalid operands to binary expression ('double' and 'int')
+  sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100
+    Line 81: invalid operands to binary expression ('double' and 'int')
+  sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0
+    Line 147: invalid operands to binary expression ('double' and 'int')
+  sound_sndmain.cpp_CSfxSlot_seek_FUN_005a8390
+    Line 32: invalid operands to binary expression ('double' and 'int')
+  sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005a9720
+    Line 39: invalid operands to binary expression ('double' and 'int')
+  sound_sndmain.cpp_startSoundThread_FUN_005abc00
+    Line 42: invalid operands to binary expression ('double' and 'int')
+  core_sound.cpp_playSfxInternal_FUN_005b1fd0
+    Line 162: invalid operands to binary expression ('float' and 'int')
+  sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00
+    Line 31: invalid operands to binary expression ('float' and 'int')
+  core_main.c_displayErrorAndQuit_FUN_00506f10
+    Line 60: no matching function for call to '_errno'
+  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
+    Line 477: no matching function for call to '_sprintf'
+  sound_mp3.cpp_testMP3DecoderBenchmark_FUN_00534210
+    Line 63: no matching function for call to '_time'
+  core_dtrace.cpp_CDemonRaytrace_voxelGridSweepTest2_FUN_00499f10
+    Line 35: no matching function for call to 'core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30'
+  core_bugs.cpp_CBugs_archive_FUN_004254f0
+    Line 21: no matching function for call to 'core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0'
+  core_dtrace.cpp_CDemonRaytrace_convertLinearIndexToWorldPosAndCallback_FUN_00494710
+    Line 26: no matching function for call to 'core_dpart_cpp_CDemonPart_loadFromFile_FUN_004825c0'
+  core_stranger.cpp_CStranger_FUN_005be520
+    Line 269: no matching function for call to 'core_lever_cpp_CLever_FUN_00504dd0'
+  core_script.cpp_CScript_processEditorInput_FUN_00565130
+    Line 247: no matching function for call to 'core_script_cpp_CScript_screenToScriptPosition_FUN_00566c20'
+  core_script.cpp_parseCommandWithDefaultTemplates_FUN_00561c70
+    Line 14: no matching function for call to 'core_script_cpp_parseCommandWithTemplates_FUN_00561690'
+  core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730
+    Line 109: no matching function for call to 'core_setedit_cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0'
+  core_game.cpp_CGame_saveGame_FUN_004e0cd0
+    Line 137: no matching function for call to 'engine_dosio_c_getFileSize_FUN_00481880'
+  engine_pod.cpp_CPodFile_verifyChecksum_FUN_00550230
+    Line 93: no matching function for call to 'engine_dosio_c_getFileSize_FUN_00481880'
+  engine_pod.cpp_CPod_computeAndStoreCRC_FUN_00551000
+    Line 49: no matching function for call to 'engine_dosio_c_getFileSize_FUN_00481880'
+  engine_pod.cpp_crc32ComputeFileRange_FUN_0054f490
+    Line 20: no matching function for call to 'engine_dosio_c_getFileSize_FUN_00481880'
+  support_newmsg.cpp_readMessageFile_FUN_00543e40
+    Line 33: no matching function for call to 'engine_dosio_c_getFileSize_FUN_00481880'
+  core_inv.cpp_loadAssets_FUN_004fd220
+    Line 64: no matching function for call to 'engine_dosio_c_getFile_FUN_00481a50'
+  core_main.c_finalizeGameSystems_FUN_00508570
+    Line 21: no matching function for call to 'engine_dosio_c_getFile_FUN_00481a50'
+  engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0
+    Line 98: no matching function for call to 'engine_fileio_cpp_CCheckOutList_findEntry_FUN_004b2e60'
+  core_menu.cpp_renderMenuAndGetChoice_FUN_00510000
+    Line 88: no matching function for call to 'engine_font_cpp_CBitFont_drawText_FUN_004cda80'
+  engine_font.cpp_CBitFont_showExtendedFontTest_FUN_004d0850
+    Line 93: no matching function for call to 'engine_font_cpp_CBitFont_drawText_FUN_004cda80'
+  engine_font.cpp_CBitFont_showFontTest_FUN_004d04b0
+    Line 53: no matching function for call to 'engine_font_cpp_CBitFont_drawText_FUN_004cda80'
+  core_inivar.cpp_readIniData_FUN_004fbd90
+    Line 35: no matching function for call to 'engine_ini_cpp_CIniFile_getString_FUN_004fbb20'
+  core_inivar.cpp_writeIniData_FUN_004fc510
+    Line 24: no matching function for call to 'engine_ini_cpp_CIniFile_setString_FUN_004fbbb0'
+  core_dfont.cpp_initFonts_FUN_004709a0
+    Line 152: no matching function for call to 'engine_winfont_cpp_CWinFont_ctor_FUN_005f22e0'
+  support_trisock.cpp_setSocketBlocking_FUN_005e1e50
+    Line 16: no matching function for call to 'ioctlsocket'
+  shape_design.c_embedCopyrightWatermark_FUN_0046b9a0
+    Line 20: no matching function for call to 'shape_design_c_quantizePaletteColors_FUN_0046b770'
+  core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20
+    Line 32: no matching function for call to 'shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270'
+  core_script.cpp_CScript_editorPutLine_FUN_005662a0
+    Line 27: no matching function for call to 'shape_edittool_cpp_CStrList_add_FUN_004a2b80'
+  engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
+    Line 87: no matching function for call to 'shape_memdbg_cpp_openFile_FUN_0050f7a0'
+  sound_mp3.cpp_CMP3Decoder_synthesisPoly_FUN_00533ba0
+    Line 25: no matching function for call to 'sound_mp3_cpp_applyPolyphaseWindow_FUN_00533690'
+  sound_sndmain.cpp_getSfxSample_FUN_005a4c80
+    Line 104: no matching function for call to 'sound_sndmain_cpp_parseWavFile_FUN_005a3fe0'
+  sound_sndmain.cpp_loadStreamingSoundFile_FUN_005a5200
+    Line 108: no matching function for call to 'sound_sndmain_cpp_parseWavFile_FUN_005a3fe0'
+  core_skeledit.cpp_FUN_005925c0
+    Line 15: no matching function for call to 'strcasecmp'
+  core_skeledit.cpp_FUN_00592520
+    Line 18: no matching function for call to 'strcmp'
+  core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0
+    Line 261: no matching function for call to 'support_newmsg_cpp_decryptMessage_FUN_00544270'
+  core_main.c_showLicenseAgreement_FUN_005070f0
+    Line 31: no matching function for call to 'support_newmsg_cpp_decryptMessage_FUN_00544270'
+  engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0048d170
+    Line 76: no matching function for call to 'wincore_windll_cpp_drawPolyList2_FUN_005b7780'
+  engine_3d.c_dispatchMRGLToRenderer_FUN_00407aa0
+    Line 38: no matching function for call to 'wincore_windll_cpp_drawPolyList_FUN_005b7640'
+  engine_3d.c_flushRenderQueue_FUN_00407a30
+    Line 18: no matching function for call to 'wincore_windll_cpp_drawPolyList_FUN_005b7640'
+  engine_drender.cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00
+    Line 92: no matching function for call to 'wincore_windll_cpp_drawPolyList_FUN_005b7640'
+
+====================================================================================================
 CATEGORY: syntax_error (75 errors)
 ====================================================================================================
 
@@ -2656,35 +2470,6 @@ CATEGORY: syntax_error (75 errors)
     Line 24: expected expression
 
 ====================================================================================================
-CATEGORY: missing_member (37 errors)
-====================================================================================================
-
-  sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
-    Line 35: no member named '_16_4_' in 'tWAVEFORMATEX'
-  core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_004529b0
-    Line 66: no member named '__enabled_exceptions' in 'ios'; did you mean '_enabled_exceptions'?
-  core_game.cpp_CGame_loadGame_FUN_004e12b0
-    Line 159: no member named '__enabled_exceptions' in 'ios'; did you mean '_enabled_exceptions'?
-  core_game.cpp_CGame_saveGame_FUN_004e0cd0
-    Line 146: no member named '__enabled_exceptions' in 'ios'; did you mean '_enabled_exceptions'?
-  support_codec.cpp_CCodec_processFiles_FUN_0043ec30
-    Line 19: no member named '__enabled_exceptions' in 'ios'; did you mean '_enabled_exceptions'?
-  support_codec.cpp_CCodec_processBuffer_FUN_0043eba0
-    Line 17: no member named '__last_read_length' in 'istream_core'; did you mean '_last_read_length'?
-  support_codec.cpp_CCodec_processFromBuffer_FUN_0043eb30
-    Line 17: no member named '__last_read_length' in 'istream_core'; did you mean '_last_read_length'?
-  engine_dosio.c_reopenFileStream_FUN_00481b50
-    Line 19: no member named '__unbuffered_get_area' in 'filebuf'
-  core_crossbow.cpp_CCrossbow_ctor_FUN_00448c70
-    Line 22: no member named 'flame_size' in 'CCrossbow'
-  core_boxactor.cpp_CBoxActor_ctor_FUN_00421700
-    Line 38: no member named 'is_valid' in 'CBoxActor'
-  core_boxactor.cpp_CLightActor_ctor_FUN_00422990
-    Line 18: no member named 'light_enabled_flag' in 'CLightActor'
-  core_actor.cpp_CDemonActor_ctor_FUN_004088b0
-    Line 20: no member named 'unk15' in 'CDemonActor'
-
-====================================================================================================
 CATEGORY: lvalue_required (23 errors)
 ====================================================================================================
 
@@ -2714,6 +2499,15 @@ CATEGORY: lvalue_required (23 errors)
     Line 68: cannot take the address of an rvalue of type 'int'
   shape_design.c_complexPolygonReduction_FUN_00463b30
     Line 46: cannot take the address of an rvalue of type 'int'
+
+====================================================================================================
+CATEGORY: missing_member (21 errors)
+====================================================================================================
+
+  sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
+    Line 35: no member named '_16_4_' in 'tWAVEFORMATEX'
+  core_actor.cpp_CDemonActor_ctor_FUN_004088b0
+    Line 20: no member named 'unk15' in 'CDemonActor'
 
 ====================================================================================================
 CATEGORY: type_error (18 errors)
