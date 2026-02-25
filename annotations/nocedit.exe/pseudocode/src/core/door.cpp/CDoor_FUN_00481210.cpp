@@ -2,20 +2,20 @@
 // Address: 00481210
 // Address Range: [[00481210, 00481244]]
 // Convention: __cdecl
-// Signature: void __cdecl core_door_cpp_CDoor_FUN_00481210(CDoor *this_ptr)
+// Signature: int __cdecl core_door_cpp_CDoor_FUN_00481210(CDoor *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_door_cpp_CDoor_FUN_00481210(CDoor *this_ptr)
+int __cdecl core_door_cpp_CDoor_FUN_00481210(CDoor *this_ptr)
 
 {
   int iVar1;
   
-  iVar1 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(DAT_02c14cd8);
+  iVar1 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(UINT_02c14cd8);
   if (iVar1 != 0) {
-    return;
+    return iVar1;
   }
-  DAT_02c14cd8 = (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->locked_sound)
-  ;
-  return;
+  UINT_02c14cd8 =
+       (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->locked_sound);
+  return UINT_02c14cd8;
 }

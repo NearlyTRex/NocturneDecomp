@@ -175,25 +175,25 @@ CVector3f * __cdecl CDemonRaytrace::getBBoxMax(CDemonRaytrace *this_ptr,CVector3
 // Address: 00499ba0
 CVector3f * __cdecl CDemonRaytrace::convertCubeIndexToPosition(CDemonRaytrace *this_ptr,CVector3f *output_position,int cube_index);
 
-// Original: core_dtrace.cpp_CDemonRaytrace_voxelGridSweepTest_FUN_00499c20
+// Original: core_dtrace.cpp_CDemonRaytrace_markShadowVoxels_FUN_00499c20
 // Address: 00499c20
-void __cdecl CDemonRaytrace::voxelGridSweepTest(CDemonRaytrace *this_ptr,CVector3f *offset_vector,CVector3f *start_position,CVector3f *end_position,void *light_data);
+void __cdecl CDemonRaytrace::markShadowVoxels(CDemonRaytrace *this_ptr,CVector3f *offset,CVector3f *rotation,CVector3f *extent,CVector3f *light_position);
 
-// Original: core_dtrace.cpp_CDemonRaytrace_copyVoxelBuffer2ToBuffer1_FUN_00499e70
+// Original: core_dtrace.cpp_CDemonRaytrace_commitShadowBuffer_FUN_00499e70
 // Address: 00499e70
-void __cdecl CDemonRaytrace::copyVoxelBuffer2ToBuffer1(CDemonRaytrace *this_ptr);
+void __cdecl CDemonRaytrace::commitShadowBuffer(CDemonRaytrace *this_ptr);
 
-// Original: core_dtrace.cpp_CDemonRaytrace_voxelGridSweepTest2_FUN_00499f10
+// Original: core_dtrace.cpp_CDemonRaytrace_transferShadowVoxels_FUN_00499f10
 // Address: 00499f10
-void __cdecl CDemonRaytrace::voxelGridSweepTest2(CDemonRaytrace *this_ptr,CVector3f *offset_vector,void *light_data,CVector3f *start_position,CVector3f *end_position);
+void __cdecl CDemonRaytrace::transferShadowVoxels(CDemonRaytrace *this_ptr,CVector3f *offset,CVector3f *rotation,CVector3f *start,CVector3f *end);
 
 // Original: core_dtrace.cpp_CDemonRaytrace_setVoxelShadowBit_FUN_0049a160
 // Address: 0049a160
 void __cdecl CDemonRaytrace::setVoxelShadowBit(CDemonRaytrace *this_ptr,CVector3f *world_position);
 
-// Original: core_dtrace.cpp_CDemonRaytrace_transferVoxelShadowBit_FUN_0049a280
+// Original: core_dtrace.cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0049a280
 // Address: 0049a280
-void __cdecl CDemonRaytrace::transferVoxelShadowBit(CDemonRaytrace *this_ptr,CVector3f *world_position);
+void __cdecl CDemonRaytrace::restoreShadowBitFromBuffer(CDemonRaytrace *this_ptr,CVector3f *world_position);
 
 // Original: core_dtrace.cpp_STriangleRef_copy_FUN_0049a3b0
 // Address: 0049a3b0

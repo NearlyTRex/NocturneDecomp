@@ -29,7 +29,7 @@ void __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10(CDemonActor 
   if (10000.0f < fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1) {
     return;
   }
-  iVar4 = core_setcolid_cpp_CDemonSet_FUN_00574580(g_CDemonSetPtr);
+  iVar4 = core_setcolid_cpp_CDemonSet_isPointInWater_FUN_00574580(g_CDemonSetPtr,position);
   if (iVar4 != 0) {
     surface_type = 6;
   }

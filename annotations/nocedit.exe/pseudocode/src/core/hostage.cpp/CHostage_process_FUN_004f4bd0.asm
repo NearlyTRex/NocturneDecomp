@@ -326,8 +326,8 @@ section .text
         ;   XREF to: 004f4c6b (CONDITIONAL_JUMP)  ; LAB_004f4c6b
     PUSH 0x3dcccccd                     ; 004f4e7e
     PUSH ESI                            ; 004f4e83
-    CALL core_door.cpp_CDoor_FUN_00480de0 ; 004f4e84
-        ;   XREF to: 00480de0 (UNCONDITIONAL_CALL)  ; void core_door.cpp_CDoor_FUN_00480de0(CDoor * this_ptr)
+    CALL core_door.cpp_CDoor_setSwingRange_FUN_00480de0 ; 004f4e84
+        ;   XREF to: 00480de0 (UNCONDITIONAL_CALL)  ; void core_door.cpp_CDoor_setSwingRange_FUN_00480de0(CDoor * this_ptr, float swing_range)
     ADD ESP,0x8                         ; 004f4e89
     JMP 0x004f4c6b                      ; 004f4e8c
         ;   XREF to: 004f4c6b (UNCONDITIONAL_JUMP)  ; LAB_004f4c6b

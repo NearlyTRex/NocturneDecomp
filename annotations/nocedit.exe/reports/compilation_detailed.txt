@@ -5,16 +5,16 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6494
-Successful: 5603 (86.3%)
-Failed: 891
+Successful: 5606 (86.3%)
+Failed: 888
 
 ERROR CATEGORIES
 --------------------------------------------------
   other                           1595
-  undeclared_identifier            764
+  undeclared_identifier            762
   format_error                     590
-  incompatible_types               576
-  syntax_error                      75
+  incompatible_types               575
+  syntax_error                      73
   lvalue_required                   23
   missing_member                    21
   type_error                        18
@@ -718,7 +718,7 @@ CATEGORY: other (1595 errors)
     Line 1036: use of undeclared label 'DAT_032758e8'
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (764 errors)
+CATEGORY: undeclared_identifier (762 errors)
 ====================================================================================================
 
   core_msnedit.cpp_FUN_0053d3a0
@@ -889,10 +889,6 @@ CATEGORY: undeclared_identifier (764 errors)
     Line 51: use of undeclared identifier 'code'
   core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0
     Line 25: use of undeclared identifier 'code'
-  core_setcolid.cpp_CDemonSet_FUN_00574440
-    Line 17: use of undeclared identifier 'code'
-  core_setcolid.cpp_CDemonSet_FUN_005744d0
-    Line 17: use of undeclared identifier 'code'
   core_shotgun.cpp_CShotgun_fire_FUN_00588060
     Line 122: use of undeclared identifier 'code'
   core_stranger.cpp_CStranger_FUN_005bdd20
@@ -1241,7 +1237,7 @@ CATEGORY: undeclared_identifier (764 errors)
     Line 28: use of undeclared identifier 'stack0xffffffcc'
   shape_superopt.cpp_distancePointToSegmentXY_FUN_005d64a0
     Line 24: use of undeclared identifier 'stack0xffffffcc'
-  core_dtrace.cpp_CDemonRaytrace_transferVoxelShadowBit_FUN_0049a280
+  core_dtrace.cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0049a280
     Line 30: use of undeclared identifier 'stack0xffffffd0'
   core_path.cpp_FUN_00548390
     Line 44: use of undeclared identifier 'stack0xffffffd0'
@@ -1656,7 +1652,7 @@ CATEGORY: format_error (590 errors)
     Line 36: format specifies type 'unsigned long' but the argument has type 'int' [-Werror,-Wformat]
 
 ====================================================================================================
-CATEGORY: incompatible_types (576 errors)
+CATEGORY: incompatible_types (575 errors)
 ====================================================================================================
 
   engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00
@@ -2033,6 +2029,8 @@ CATEGORY: incompatible_types (576 errors)
     Line 39: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_dog.cpp_CZombieDog_process_FUN_0047f140
     Line 104: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  core_door.cpp_CDoor_FUN_00481210
+    Line 19: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_drone.cpp_CDrone_processDamage_FUN_0048f360
     Line 26: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_drone.cpp_CDrone_process_FUN_0048ec70
@@ -2099,8 +2097,6 @@ CATEGORY: incompatible_types (576 errors)
     Line 41: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_zombie.cpp_CZombie_process_FUN_005f9470
     Line 479: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
-  core_door.cpp_CDoor_FUN_00481210
-    Line 18: assigning to 'undefined4' (aka 'unsigned int') from incompatible type 'void'
   core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0
     Line 168: assigning to 'ushort *' (aka 'unsigned short *') from incompatible type 'void *'
   sound_sndmain.cpp_convertMixBufToOutput_FUN_005a5b80
@@ -2287,8 +2283,6 @@ CATEGORY: incompatible_types (576 errors)
     Line 477: no matching function for call to '_sprintf'
   sound_mp3.cpp_testMP3DecoderBenchmark_FUN_00534210
     Line 63: no matching function for call to '_time'
-  core_dtrace.cpp_CDemonRaytrace_voxelGridSweepTest2_FUN_00499f10
-    Line 35: no matching function for call to 'core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30'
   core_bugs.cpp_CBugs_archive_FUN_004254f0
     Line 21: no matching function for call to 'core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0'
   core_dtrace.cpp_CDemonRaytrace_convertLinearIndexToWorldPosAndCallback_FUN_00494710
@@ -2363,7 +2357,7 @@ CATEGORY: incompatible_types (576 errors)
     Line 92: no matching function for call to 'wincore_windll_cpp_drawPolyList_FUN_005b7640'
 
 ====================================================================================================
-CATEGORY: syntax_error (75 errors)
+CATEGORY: syntax_error (73 errors)
 ====================================================================================================
 
   core_dskybox.cpp_renderSkyDome_FUN_004901f0
@@ -2410,10 +2404,6 @@ CATEGORY: syntax_error (75 errors)
     Line 51: expected expression
   core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0
     Line 25: expected expression
-  core_setcolid.cpp_CDemonSet_FUN_00574440
-    Line 17: expected expression
-  core_setcolid.cpp_CDemonSet_FUN_005744d0
-    Line 17: expected expression
   core_setedit.cpp_loadCameraThumbnail_FUN_005769a0
     Line 95: expected expression
   core_shotgun.cpp_CShotgun_fire_FUN_00588060

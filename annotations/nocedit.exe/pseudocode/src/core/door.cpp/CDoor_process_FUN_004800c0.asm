@@ -27,8 +27,8 @@
 ;   core_door.cpp_CDoor_reposition_FUN_0047fd20
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 ;   core_event.cpp_CEventList_executeCommands_FUN_004aabe0
-;   core_setcolid.cpp_CDemonSet_FUN_00574440
-;   core_setcolid.cpp_CDemonSet_FUN_005744d0
+;   core_setcolid.cpp_CDemonSet_castVoxelShadow_FUN_00574440
+;   core_setcolid.cpp_CDemonSet_transferVoxelShadow_FUN_005744d0
 ;   core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0
 ;
 ; *****************************************************************************
@@ -89,8 +89,8 @@ section .text
         ;   Label: LAB_0048015c
     MOV EDI,dword ptr [0x006810c8]      ; 0048015d | g_CDemonSetPtr
     PUSH EDI                            ; 00480163 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_FUN_005744d0 ; 00480164
-        ;   XREF to: 005744d0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_FUN_005744d0(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_transferVoxelShadow_FUN_005744d0 ; 00480164
+        ;   XREF to: 005744d0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_transferVoxelShadow_FUN_005744d0(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00480169
     MOV dword ptr [ESI + 0x9ac],0x0     ; 0048016c
         ;   Label: LAB_0048016c
@@ -264,8 +264,8 @@ section .text
         ;   Label: LAB_004803ab
     MOV EBP,dword ptr [0x006810c8]      ; 004803ac | g_CDemonSetPtr
     PUSH EBP                            ; 004803b2 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_FUN_00574440 ; 004803b3
-        ;   XREF to: 00574440 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_FUN_00574440(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_castVoxelShadow_FUN_00574440 ; 004803b3
+        ;   XREF to: 00574440 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_castVoxelShadow_FUN_00574440(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004803b8
     JMP 0x00480176                      ; 004803bb
         ;   XREF to: 00480176 (UNCONDITIONAL_JUMP)  ; default
@@ -288,8 +288,8 @@ section .text
         ;   Label: LAB_004803fb
     MOV EBX,dword ptr [0x006810c8]      ; 004803fc | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EBX                            ; 00480402 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_FUN_00574440 ; 00480403
-        ;   XREF to: 00574440 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_FUN_00574440(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_castVoxelShadow_FUN_00574440 ; 00480403
+        ;   XREF to: 00574440 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_castVoxelShadow_FUN_00574440(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00480408
     JMP 0x00480176                      ; 0048040b
         ;   XREF to: 00480176 (UNCONDITIONAL_JUMP)  ; default

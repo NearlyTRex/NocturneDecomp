@@ -1,0 +1,127 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 7,
+    "complexity_score": 6,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 13
+  },
+  "cross_references": [
+    {
+      "addr": "00523f50",
+      "from_addr": "00523f9c",
+      "name": "core_mission.cpp_CDemonMission_FUN_00523f50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00569410",
+      "from_addr": "0056a17b",
+      "name": "core_set.cpp_CDemonSet_load_FUN_00569410",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00574560",
+    "address_range": [
+      [
+        "00574560",
+        "00574571"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_setcolid.cpp_CDemonSet_commitVoxelBuffer_FUN_00574560",
+    "signature": "void __cdecl core_setcolid_cpp_CDemonSet_commitVoxelBuffer_FUN_00574560(CDemonSet *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00499e70",
+      "is_variadic": false,
+      "name": "core_dtrace.cpp_CDemonRaytrace_commitShadowBuffer_FUN_00499e70"
+    },
+    {
+      "addr": "00548590",
+      "is_variadic": false,
+      "name": "core_path.cpp_resetAllPathMaps_FUN_00548590"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "03277d14",
+      "name": "g_CDemonRaytraceInstance",
+      "type": "CDemonRaytrace",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0056a17b",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_load_FUN_00569410",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00523f9c",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_CDemonMission_FUN_00523f50",
+        "estimated_params": 1,
+        "instructions_analyzed": 7,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.0,
+    "instruction_count": 4,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 1,
+      "COPY": 1,
+      "INT_ADD": 1,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 2,
+      "POPCOUNT": 1,
+      "STORE": 2
+    },
+    "pcode_op_count": 16
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      }
+    ]
+  },
+  "suspects": []
+}

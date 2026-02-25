@@ -331,7 +331,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *
   pcVar3 = this_ptr->geometry_filename;
   iVar10 = stricmp(pcVar3,local_128);
   if (iVar10 == 0) {
-    core_setcolid_cpp_CDemonSet_FUN_00574560(this_ptr);
+    core_setcolid_cpp_CDemonSet_commitVoxelBuffer_FUN_00574560(this_ptr);
   }
   else {
     pcVar7 = local_128;
@@ -358,7 +358,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *
       core_dtrace_cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00494de0
                 (&g_CDemonRaytraceInstance,pcVar3);
     }
-    core_path_cpp_FUN_00548590();
+    core_path_cpp_resetAllPathMaps_FUN_00548590();
   }
   iVar10 = 0;
   pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Loading thumbs");

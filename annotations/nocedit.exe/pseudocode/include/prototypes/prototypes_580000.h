@@ -49,12 +49,12 @@ void __cdecl core_setedit_cpp_CDemonSet_readIni_FUN_00584900(CDemonSet *set_ptr,
 void __cdecl core_setedit_cpp_CDemonSet_writeIni_FUN_00584920(CDemonSet *set,CIniFile *ini_file);
 void __cdecl core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(CDemonSet *this_ptr);
 void __cdecl core_setedit_cpp_CDemonSet_writeFileDependencies_FUN_00584e70(CDemonSet *this_ptr,_FILE *file_handle);
-void __cdecl core_setutil_cpp_FUN_005851a0(void);
-void __cdecl core_setutil_cpp_FUN_005851d0(void);
+void __cdecl core_setutil_cpp_CDemonLight_setPosition_FUN_005851a0(CDemonLight *this_ptr,CVector3i *position);
+void __cdecl core_setutil_cpp_CDemonLight_buildRotationMatrix_FUN_005851d0(CDemonLight *this_ptr,CVector3f *euler_angles);
 float __cdecl core_setutil_cpp_C3DSCamera_getProjectionScale_FUN_005851f0(C3DSCamera *this_ptr);
 float __cdecl core_setutil_cpp_C3DSCamera_getAmbientValue_FUN_00585200(C3DSCamera *this_ptr);
-int __cdecl core_setutil_cpp_FUN_00585210(void);
-void __cdecl core_setutil_cpp_FUN_00585220(void);
+float __cdecl core_setutil_cpp_CDemonLight_getFixedPointScale_FUN_00585210(CDemonLight *this_ptr);
+void __cdecl core_setutil_cpp_CDemonLight_setTransformScale_FUN_00585220(CDemonLight *this_ptr,float scale);
 void __cdecl core_setutil_cpp_CSlew_copy_FUN_00585240(CSlew *this_ptr,CSlew *other);
 void __cdecl core_setutil_cpp_readAndParseLine_FUN_00585290(_FILE *file_handle,char *output_buffer,int max_length);
 C3DSCamera * __cdecl core_setutil_cpp_C3DSCamera_ctor_FUN_00585310(C3DSCamera *this_ptr);

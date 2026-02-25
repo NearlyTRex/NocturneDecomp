@@ -1,0 +1,396 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 19,
+        "line": 30,
+        "message": "use of undeclared identifier 'stack0xffffffd0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 19,
+        "line": 31,
+        "message": "use of undeclared identifier 'stack0xffffffdc'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 19,
+        "line": 32,
+        "message": "use of undeclared identifier 'stack0xffffffd4'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 19,
+        "line": 33,
+        "message": "use of undeclared identifier 'stack0xffffffe0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 21,
+        "line": 39,
+        "message": "use of undeclared identifier 'stack0xffffffc4'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 21,
+        "line": 40,
+        "message": "use of undeclared identifier 'stack0xffffffe8'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 21,
+        "line": 41,
+        "message": "use of undeclared identifier 'stack0xffffffc8'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 21,
+        "line": 42,
+        "message": "use of undeclared identifier 'stack0xffffffec'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 129,
+    "complexity_score": 234,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 54,
+    "suspect_count": 16,
+    "suspect_types": [
+      "pointer_cast",
+      "stack_alignment_array",
+      "stack_param",
+      "stack_ref"
+    ],
+    "total_lines": 183
+  },
+  "cross_references": [
+    {
+      "addr": "00499f10",
+      "from_addr": "0049a116",
+      "name": "core_dtrace.cpp_CDemonRaytrace_transferShadowVoxels_FUN_00499f10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0049a280",
+    "address_range": [
+      [
+        "0049a280",
+        "0049a3ad"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dtrace.cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0049a280",
+    "signature": "void __cdecl core_dtrace_cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0049a280(CDemonRaytrace *this_ptr,CVector3f *world_position)"
+  },
+  "function_calls": [
+    {
+      "addr": "004567b0",
+      "is_variadic": false,
+      "name": "core_dcube.cpp_CDemonCube_allocVoxelMemory_FUN_004567b0"
+    },
+    {
+      "addr": "004952b0",
+      "is_variadic": false,
+      "name": "core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_004952b0"
+    },
+    {
+      "addr": "004997d0",
+      "is_variadic": false,
+      "name": "core_dtrace.cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004997d0"
+    },
+    {
+      "addr": "00499880",
+      "is_variadic": false,
+      "name": "core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880"
+    },
+    {
+      "addr": "00506f10",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00622d9e",
+      "name": "s_core_dtrace_cpp_00622d9e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00622db1",
+      "name": "s_Parity_Check_999_00622db1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006789f8",
+      "name": "g_VoxelYBitMasks",
+      "type": "uchar[8]",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.0,
+    "instruction_count": 111,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 22,
+      "CALL": 5,
+      "CBRANCH": 8,
+      "COPY": 111,
+      "INT_ADD": 60,
+      "INT_AND": 102,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 58,
+      "INT_LEFT": 5,
+      "INT_LESS": 5,
+      "INT_MULT": 14,
+      "INT_NOTEQUAL": 15,
+      "INT_OR": 21,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 9,
+      "INT_SDIV": 3,
+      "INT_SEXT": 3,
+      "INT_SLESS": 28,
+      "INT_SREM": 3,
+      "INT_SRIGHT": 6,
+      "INT_SUB": 40,
+      "INT_XOR": 2,
+      "INT_ZEXT": 18,
+      "LOAD": 50,
+      "POPCOUNT": 26,
+      "RETURN": 2,
+      "STORE": 30,
+      "SUBPIECE": 6
+    },
+    "pcode_op_count": 666
+  },
+  "stack_frame": {
+    "frame_size": 76,
+    "local_size": 68,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRaytrace *"
+      },
+      {
+        "is_param": true,
+        "name": "world_position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 9,
+      "match": "aiStackY_1028",
+      "severity": "moderate",
+      "text": "int aiStackY_1028 [1014];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_ffffffc0",
+      "severity": "moderate",
+      "text": "CVector3i *in_stack_ffffffc0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_ffffffc0",
+      "severity": "moderate",
+      "text": "(this_ptr,world_position,in_stack_ffffffc0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 23,
+      "match": "&stack0xffffffd0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xffffffd0 + (uint)bVar3 * -8) =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&stack0xffffffd0 + (uint)bVar3 * -8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 24,
+      "match": "&stack0xffffffdc",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffffdc + (uint)bVar3 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 25,
+      "match": "&stack0xffffffd4",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xffffffd4 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&stack0xffffffd4 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 26,
+      "match": "&stack0xffffffe0",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffffe0 + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_ffffffc0",
+      "severity": "moderate",
+      "text": "(this_ptr,world_position,in_stack_ffffffc0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 32,
+      "match": "&stack0xffffffc4",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xffffffc4 + (uint)bVar3 * -8) =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&stack0xffffffc4 + (uint)bVar3 * -8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 33,
+      "match": "&stack0xffffffe8",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffffe8 + (uint)bVar3 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 34,
+      "match": "&stack0xffffffc8",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xffffffc8 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&stack0xffffffc8 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 35,
+      "match": "&stack0xffffffec",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffffec + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
+      "type": "stack_ref"
+    }
+  ]
+}

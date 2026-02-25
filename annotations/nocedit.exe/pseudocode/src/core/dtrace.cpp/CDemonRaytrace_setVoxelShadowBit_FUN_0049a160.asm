@@ -17,7 +17,7 @@
 ; undefined1       Stack[-0x1c]:1  local_1c
 ;
 ; XREF[1]:
-;   core_dtrace.cpp_CDemonRaytrace_voxelGridSweepTest_FUN_00499c20 at 00499e26
+;   core_dtrace.cpp_CDemonRaytrace_markShadowVoxels_FUN_00499c20 at 00499e26
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dtrace_cpp_00622d7a

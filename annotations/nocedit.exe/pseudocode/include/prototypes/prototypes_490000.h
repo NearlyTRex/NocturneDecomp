@@ -102,11 +102,11 @@ int __cdecl core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtVoxelCoords_FUN_00499
 CVector3f * __cdecl core_dtrace_cpp_CDemonRaytrace_getBBoxMin_FUN_00499b40(CDemonRaytrace *this_ptr,CVector3f *output_vector);
 CVector3f * __cdecl core_dtrace_cpp_CDemonRaytrace_getBBoxMax_FUN_00499b70(CDemonRaytrace *this_ptr,CVector3f *output_vector);
 CVector3f * __cdecl core_dtrace_cpp_CDemonRaytrace_convertCubeIndexToPosition_FUN_00499ba0(CDemonRaytrace *this_ptr,CVector3f *output_position,int cube_index);
-void __cdecl core_dtrace_cpp_CDemonRaytrace_voxelGridSweepTest_FUN_00499c20(CDemonRaytrace *this_ptr,CVector3f *offset_vector,CVector3f *start_position, CVector3f *end_position,void *light_data);
-void __cdecl core_dtrace_cpp_CDemonRaytrace_copyVoxelBuffer2ToBuffer1_FUN_00499e70(CDemonRaytrace *this_ptr);
-void __cdecl core_dtrace_cpp_CDemonRaytrace_voxelGridSweepTest2_FUN_00499f10(CDemonRaytrace *this_ptr,CVector3f *offset_vector,void *light_data, CVector3f *start_position,CVector3f *end_position);
+void __cdecl core_dtrace_cpp_CDemonRaytrace_markShadowVoxels_FUN_00499c20(CDemonRaytrace *this_ptr,CVector3f *offset,CVector3f *rotation,CVector3f *extent, CVector3f *light_position);
+void __cdecl core_dtrace_cpp_CDemonRaytrace_commitShadowBuffer_FUN_00499e70(CDemonRaytrace *this_ptr);
+void __cdecl core_dtrace_cpp_CDemonRaytrace_transferShadowVoxels_FUN_00499f10(CDemonRaytrace *this_ptr,CVector3f *offset,CVector3f *rotation,CVector3f *start, CVector3f *end);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_setVoxelShadowBit_FUN_0049a160(CDemonRaytrace *this_ptr,CVector3f *world_position);
-void __cdecl core_dtrace_cpp_CDemonRaytrace_transferVoxelShadowBit_FUN_0049a280(CDemonRaytrace *this_ptr,CVector3f *world_position);
+void __cdecl core_dtrace_cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0049a280(CDemonRaytrace *this_ptr,CVector3f *world_position);
 STriangleRef * __cdecl core_dtrace_cpp_STriangleRef_copy_FUN_0049a3b0(STriangleRef *this_ptr,STriangleRef *other);
 STriangleRef * __cdecl core_dtrace_cpp_STriangleRef_dtor_FUN_0049a400(STriangleRef *this_ptr,uint flags);
 CVector3f * __cdecl core_dtrace_cpp_CVector3f_arrdtor_FUN_0049a410(CVector3f *objs,uint flags);

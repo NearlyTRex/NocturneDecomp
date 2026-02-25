@@ -17,7 +17,7 @@ float __cdecl core_actor_cpp_CDemonActor_cylinderGroundCheck_FUN_00408db0(CDemon
             (this_ptr,"..\\core\\actor.cpp",0x2b6);
   core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_00573e10(g_CDemonSetPtr);
   core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,this_ptr);
-  core_setcolid_cpp_CDemonSet_FUN_00574220(g_CDemonSetPtr);
+  core_setcolid_cpp_CDemonSet_enableCollision_FUN_00574220(g_CDemonSetPtr);
   fVar2 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
                     (g_CDemonSetPtr,&(this_ptr->location).position,radius);
   pCVar3 = (CPlatform *)

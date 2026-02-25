@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 131,
-    "complexity_score": 52,
+    "complexity_score": 37,
     "cross_reference_count": 2,
     "function_call_count": 11,
     "global_count": 15,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 37,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 168
   },
   "cross_references": [
@@ -170,8 +168,8 @@
     },
     {
       "addr": "02cee5ac",
-      "name": "DAT_02cee5ac",
-      "type": "undefined4",
+      "name": "INT_02cee5ac",
+      "type": "int",
       "value": null
     },
     {
@@ -294,14 +292,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_02cee5ac",
-      "severity": "mild",
-      "text": "if (DAT_02cee5ac == 1) {",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

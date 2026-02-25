@@ -38,7 +38,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004947a0(CDemonRaytra
   
   local_18 = 0;
   core_dtrace_cpp_CDemonRaytrace_freeNewCubeList_FUN_00494400(this_ptr);
-  DAT_02cee5ac = 0;
+  INT_02cee5ac = 0;
   _fread(&local_2c,4,1,file_handle);
   if (local_2c < 1) {
     g_CurrentFilename = "..\\core\\dtrace.cpp";
@@ -229,7 +229,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004947a0(CDemonRaytra
     shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
     core_dtrace_cpp_CDemonRaytrace_freeCubeList_FUN_004942d0(this_ptr);
     core_dtrace_cpp_CDemonRaytrace_freeTriList_FUN_00494690(this_ptr);
-    DAT_02cee5ac = 1;
+    INT_02cee5ac = 1;
   }
   else {
     core_dtrace_cpp_CDemonRaytrace_allocNewCubeList_FUN_00494380(this_ptr);

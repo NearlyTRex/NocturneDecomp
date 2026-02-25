@@ -26107,12 +26107,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_door.cpp_FUN_0047fcf0",
+    "name":"core_door.cpp_CDoor_onOpened_FUN_0047fcf0",
     "ret":"void",
     "vars":{
       "params":[
         {
-          "name":"event_id",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -26125,7 +26125,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"CDoor*"
         }
       ]
     }
@@ -32926,7 +32926,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_dtrace.cpp_CDemonRaytrace_copyVoxelBuffer2ToBuffer1_FUN_00499e70",
+    "name":"core_dtrace.cpp_CDemonRaytrace_commitShadowBuffer_FUN_00499e70",
     "ret":"void",
     "vars":{
       "locals":[
@@ -70958,7 +70958,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setcolid.cpp_CDemonSet_FUN_00574170",
+    "name":"core_setcolid.cpp_CDemonSet_skipExactCollisions_FUN_00574170",
     "ret":"void",
     "vars":{
       "params":[
@@ -71524,7 +71524,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setdir.cpp_CDemonSet_FUN_00576870",
+    "name":"core_setdir.cpp_CDemonSet_findVdirBoxAtPosition_FUN_00576870",
     "ret":"int",
     "vars":{
       "params":[
@@ -71543,6 +71543,22 @@
             ]
           },
           "type":"CDemonSet*"
+        },
+        {
+          "name":"position",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
         }
       ],
       "ret_storage":{

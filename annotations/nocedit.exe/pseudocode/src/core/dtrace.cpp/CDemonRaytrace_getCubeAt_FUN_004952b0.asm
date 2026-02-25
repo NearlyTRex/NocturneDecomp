@@ -10,7 +10,7 @@
 ; int              Stack[0x10]:4   grid_z
 ;
 ; XREF[12]:
-;   core_dtrace.cpp_CDemonRaytrace_copyVoxelBuffer2ToBuffer1_FUN_00499e70 at 00499ea9
+;   core_dtrace.cpp_CDemonRaytrace_commitShadowBuffer_FUN_00499e70 at 00499ea9
 ;   core_dtrace.cpp_CDemonRaytrace_cylinderGroundCheck_FUN_00496950 at 00496a9c
 ;   core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_004966f0 at 004967fd
 ;   core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_00499170 at 0049927c
@@ -18,8 +18,8 @@
 ;   core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_00496220 at 00496527
 ;   core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70 at 00495f6d
 ;   core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500 at 00497569
+;   core_dtrace.cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0049a280 at 0049a334
 ;   core_dtrace.cpp_CDemonRaytrace_setVoxelShadowBit_FUN_0049a160 at 0049a215
-;   core_dtrace.cpp_CDemonRaytrace_testCylinderCollision_FUN_00496c60 at 00496dcc
 ;   ... and 2 more
 ;
 ; *****************************************************************************

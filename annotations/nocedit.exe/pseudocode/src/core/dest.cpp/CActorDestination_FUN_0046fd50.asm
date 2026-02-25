@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_dest_cpp_CActorDestination_FUN_0046fd50(CActorDestination *this_ptr)
+; int __cdecl core_dest_cpp_CActorDestination_FUN_0046fd50(CActorDestination *this_ptr,CDemonActor *actor)
 ;
 ; Parameters:
 ; CActorDestination * Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   actor
 ;
 ; XREF[3]:
 ;   core_dest.cpp_CActorDestination_process_FUN_0046f9b0 at 0046fa45

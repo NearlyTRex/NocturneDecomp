@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_door_cpp_CDoor_FUN_00481210(CDoor *this_ptr)
+; int __cdecl core_door_cpp_CDoor_FUN_00481210(CDoor *this_ptr)
 ;
 ; Parameters:
 ; CDoor *          Stack[0x4]:4   this_ptr
@@ -11,7 +11,7 @@
 ;   core_hero.cpp_CHero_FUN_004f2ed0 at 004f2f31
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02c14cd8
+;   uint UINT_02c14cd8
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
@@ -23,7 +23,7 @@ section .text
     PUSH EBX                            ; 00481210
         ;   Label: core_door.cpp_CDoor_FUN_00481210
     MOV EBX,dword ptr [ESP + 0x8]       ; 00481211
-    MOV EDX,dword ptr [0x02c14cd8]      ; 00481215 | DAT_02c14cd8
+    MOV EDX,dword ptr [0x02c14cd8]      ; 00481215 | UINT_02c14cd8
     PUSH EDX                            ; 0048121b
     CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660 ; 0048121c
         ;   XREF to: 005a9660 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_005a9660(uint sfx_handle)
@@ -40,7 +40,7 @@ section .text
     PUSH EBX                            ; 00481237
     CALL dword ptr [EAX + 0x24]         ; 00481238
     ADD ESP,0x8                         ; 0048123b
-    MOV [0x02c14cd8],EAX                ; 0048123e | DAT_02c14cd8
+    MOV [0x02c14cd8],EAX                ; 0048123e | UINT_02c14cd8
     POP EBX                             ; 00481243
     RET                                 ; 00481244
 

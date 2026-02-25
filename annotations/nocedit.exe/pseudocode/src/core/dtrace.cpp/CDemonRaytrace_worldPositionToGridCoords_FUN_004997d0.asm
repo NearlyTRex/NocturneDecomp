@@ -15,8 +15,8 @@
 ; undefined8       Stack[-0x10]:8  local_10
 ;
 ; XREF[2]:
+;   core_dtrace.cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0049a280 at 0049a299
 ;   core_dtrace.cpp_CDemonRaytrace_setVoxelShadowBit_FUN_0049a160 at 0049a179
-;   core_dtrace.cpp_CDemonRaytrace_transferVoxelShadowBit_FUN_0049a280 at 0049a299
 ;
 ; Called Functions:
 ;   crt_math.c_floor_FUN_005feb90

@@ -70,7 +70,7 @@ section .text
         ;   XREF to: 004810e2 (CONDITIONAL_JUMP)  ; LAB_004810e2
     PUSH EBX                            ; 004810c5
     CALL core_door.cpp_CDoor_FUN_00481210 ; 004810c6
-        ;   XREF to: 00481210 (UNCONDITIONAL_CALL)  ; void core_door.cpp_CDoor_FUN_00481210(CDoor * this_ptr)
+        ;   XREF to: 00481210 (UNCONDITIONAL_CALL)  ; int core_door.cpp_CDoor_FUN_00481210(CDoor * this_ptr)
     ADD ESP,0x4                         ; 004810cb
     PUSH 0x40a00000                     ; 004810ce
     PUSH ESI                            ; 004810d3
@@ -95,7 +95,7 @@ section .text
         ;   XREF to: 004810e2 (CONDITIONAL_JUMP)  ; LAB_004810e2
     PUSH EBX                            ; 00481100
     CALL core_door.cpp_CDoor_FUN_00481210 ; 00481101
-        ;   XREF to: 00481210 (UNCONDITIONAL_CALL)  ; void core_door.cpp_CDoor_FUN_00481210(CDoor * this_ptr)
+        ;   XREF to: 00481210 (UNCONDITIONAL_CALL)  ; int core_door.cpp_CDoor_FUN_00481210(CDoor * this_ptr)
     ADD ESP,0x4                         ; 00481106
     PUSH 0x40a00000                     ; 00481109
     PUSH ESI                            ; 0048110e

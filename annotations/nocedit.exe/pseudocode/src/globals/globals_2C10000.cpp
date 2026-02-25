@@ -23,8 +23,10 @@ char g_PolyDataConversionBuffer[72] = {};
 // int
 int g_NumSearchHandlers = {};
 
+// uint
+uint UINT_02c14cd8 = {};
+
 // undefined4
-undefined4 DAT_02c14cd8 = {};
 undefined4 DAT_02c14d80 = {};
 undefined4 DAT_02c14d84 = {};
 undefined4 DAT_02c14d88 = {};

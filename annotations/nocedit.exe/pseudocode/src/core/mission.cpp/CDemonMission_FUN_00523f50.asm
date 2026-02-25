@@ -18,7 +18,7 @@
 ; Called Functions:
 ;   core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60
 ;   core_mission.cpp_CDemonMission_removeActor_FUN_00523f20
-;   core_setcolid.cpp_CDemonSet_FUN_00574560
+;   core_setcolid.cpp_CDemonSet_commitVoxelBuffer_FUN_00574560
 ;
 ; *****************************************************************************
 
@@ -56,8 +56,8 @@ section .text
     PUSH EBP                            ; 00523f8f | g_CDemonSetInstance
     MOV dword ptr [0x02db87bc],EDI      ; 00523f90 | g_HeroCount
     MOV dword ptr [EBX + 0x884],EDI     ; 00523f96
-    CALL core_setcolid.cpp_CDemonSet_FUN_00574560 ; 00523f9c
-        ;   XREF to: 00574560 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_FUN_00574560(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_commitVoxelBuffer_FUN_00574560 ; 00523f9c
+        ;   XREF to: 00574560 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_commitVoxelBuffer_FUN_00574560(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00523fa1
     MOV dword ptr [EBX + 0x560],EDI     ; 00523fa4
     POP EBP                             ; 00523faa

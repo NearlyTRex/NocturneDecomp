@@ -17,7 +17,7 @@ void __cdecl core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_00524120
   this_ptr_00 = this_ptr->first_actor;
   do {
     if (this_ptr_00 == (CDemonActor *)0x0) {
-      core_setcolid_cpp_CDemonSet_FUN_005743e0(g_CDemonSetPtr);
+      core_setcolid_cpp_CDemonSet_buildCollidableActorList_FUN_005743e0(g_CDemonSetPtr);
       core_set_cpp_CDemonSet_buildActorTypeLists_FUN_00570fc0(g_CDemonSetPtr);
       return;
     }

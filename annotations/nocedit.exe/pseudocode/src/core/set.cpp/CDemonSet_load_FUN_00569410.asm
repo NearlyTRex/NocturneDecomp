@@ -65,9 +65,9 @@
 ;   core_dtrace.cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00494de0
 ;   core_level.cpp_CLevelLoader_update_FUN_00504160
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_path.cpp_FUN_00548590
+;   core_path.cpp_resetAllPathMaps_FUN_00548590
 ;   core_set.cpp_CDemonSet_clear_FUN_005693c0
-;   core_setcolid.cpp_CDemonSet_FUN_00574560
+;   core_setcolid.cpp_CDemonSet_commitVoxelBuffer_FUN_00574560
 ;   core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_00576710
 ;   core_setdir.cpp_CDemonSet_refreshThumbs_FUN_00575b40
 ;   core_setdir.cpp_CDemonSet_skipDeprecatedVirtualDirectorData_FUN_00576200
@@ -838,8 +838,8 @@ section .text
     CALL core_dtrace.cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00494de0 ; 00569d38
         ;   XREF to: 00494de0 (UNCONDITIONAL_CALL)  ; int core_dtrace.cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00494de0(CDemonRaytrace * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00569d3d
-    CALL core_path.cpp_FUN_00548590     ; 00569d40
-        ;   XREF to: 00548590 (UNCONDITIONAL_CALL)  ; void core_path.cpp_FUN_00548590()
+    CALL core_path.cpp_resetAllPathMaps_FUN_00548590 ; 00569d40
+        ;   XREF to: 00548590 (UNCONDITIONAL_CALL)  ; void core_path.cpp_resetAllPathMaps_FUN_00548590()
         ;   Label: LAB_00569d40
     PUSH 0x0                            ; 00569d45
         ;   Label: LAB_00569d45
@@ -1247,8 +1247,8 @@ section .text
         ;   XREF to: 00569d40 (UNCONDITIONAL_JUMP)  ; LAB_00569d40
     PUSH EBP                            ; 0056a17a
         ;   Label: LAB_0056a17a
-    CALL core_setcolid.cpp_CDemonSet_FUN_00574560 ; 0056a17b
-        ;   XREF to: 00574560 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_FUN_00574560(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_commitVoxelBuffer_FUN_00574560 ; 0056a17b
+        ;   XREF to: 00574560 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_commitVoxelBuffer_FUN_00574560(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0056a180
     JMP 0x00569d45                      ; 0056a183
         ;   XREF to: 00569d45 (UNCONDITIONAL_JUMP)  ; LAB_00569d45

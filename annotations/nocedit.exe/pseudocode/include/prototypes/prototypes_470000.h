@@ -183,7 +183,7 @@ void __cdecl core_dog_cpp_CZombieDog_archive_FUN_0047f7b0(CZombieDog *this_ptr);
 void __cdecl core_dog_cpp_CZombieDog_processDamage_FUN_0047f820(CZombieDog *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_dog_cpp_CZombieDog_getTargetPoints_FUN_0047f8d0(CZombieDog *this_ptr,CVector3f *out_points_array);
 void __cdecl core_dog_cpp_CZombieDog_getPropertyList_FUN_0047f920(CZombieDog *this_ptr,CActorPropertyList *property_list);
-void __cdecl core_dog_cpp_CZombieDog_FUN_0047f960(CZombieDog *this_ptr);
+void __cdecl core_dog_cpp_CZombieDog_randomize_FUN_0047f960(CZombieDog *this_ptr);
 void __cdecl core_dog_cpp_CZombieDog_addFilesToExtract_FUN_0047f970(CZombieDog *this_ptr,_FILE *file_handle);
 CZombieDog * __cdecl core_dog_cpp_CZombieDog_dtor_FUN_0047f9a0(CZombieDog *this_ptr,uint flags);
 void __cdecl core_door_cpp_staticInit_FUN_0047fa60(void);
@@ -191,6 +191,6 @@ CDoor * __cdecl core_door_cpp_factoryFunc_FUN_0047fa90(void);
 CDemonActorType * __cdecl core_door_cpp_CDoor_getActorType_FUN_0047fac0(CDoor *this_ptr);
 CDoor * __cdecl core_door_cpp_CDoor_ctor_FUN_0047fad0(CDoor *this_ptr);
 void __cdecl core_door_cpp_CDoor_setup_FUN_0047fc70(CDoor *this_ptr);
-void __cdecl core_door_cpp_FUN_0047fcf0(int event_id);
+void __cdecl core_door_cpp_CDoor_onOpened_FUN_0047fcf0(CDoor *this_ptr);
 void __cdecl core_door_cpp_CDoor_reposition_FUN_0047fd20(CDoor *this_ptr);
 

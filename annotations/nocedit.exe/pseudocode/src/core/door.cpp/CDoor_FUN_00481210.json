@@ -3,9 +3,9 @@
     "errors": [
       {
         "category": "incompatible_types",
-        "column": 18,
-        "line": 18,
-        "message": "assigning to 'undefined4' (aka 'unsigned int') from incompatible type 'void'"
+        "column": 8,
+        "line": 19,
+        "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       }
     ],
     "success": false,
@@ -13,16 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 36,
+    "complexity_score": 11,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 11,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 34
   },
   "cross_references": [
@@ -49,7 +47,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_door.cpp_CDoor_FUN_00481210",
-    "signature": "void __cdecl core_door_cpp_CDoor_FUN_00481210(CDoor *this_ptr)"
+    "signature": "int __cdecl core_door_cpp_CDoor_FUN_00481210(CDoor *this_ptr)"
   },
   "function_calls": [
     {
@@ -61,8 +59,8 @@
   "globals": [
     {
       "addr": "02c14cd8",
-      "name": "DAT_02c14cd8",
-      "type": "undefined4",
+      "name": "UINT_02c14cd8",
+      "type": "uint",
       "value": null
     }
   ],
@@ -104,22 +102,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_02c14cd8",
-      "severity": "mild",
-      "text": "iVar1 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(DAT_02c14cd8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_02c14cd8",
-      "severity": "mild",
-      "text": "DAT_02c14cd8 = (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->locked_sound)",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

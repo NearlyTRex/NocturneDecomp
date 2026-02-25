@@ -1,0 +1,109 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 33,
+    "complexity_score": 19,
+    "cross_reference_count": 5,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 19,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 52
+  },
+  "cross_references": [
+    {
+      "addr": "00524120",
+      "from_addr": "0052416c",
+      "name": "core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_00524120",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00523e60",
+      "from_addr": "00523eb8",
+      "name": "core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053e220",
+      "from_addr": "0053e559",
+      "name": "core_msnedit.cpp_CDemonMission_FUN_0053e220",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005390f0",
+      "from_addr": "005399c3",
+      "name": "core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056b810",
+      "from_addr": "0056b8a7",
+      "name": "core_set.cpp_CDemonSet_processActors_FUN_0056b810",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005743e0",
+    "address_range": [
+      [
+        "005743e0",
+        "00574432"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_setcolid.cpp_CDemonSet_buildCollidableActorList_FUN_005743e0",
+    "signature": "void __cdecl core_setcolid_cpp_CDemonSet_buildCollidableActorList_FUN_005743e0(CDemonSet *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.0,
+    "instruction_count": 24,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CBRANCH": 3,
+      "COPY": 20,
+      "INT_ADD": 16,
+      "INT_AND": 15,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 14,
+      "INT_LESS": 2,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 7,
+      "INT_SUB": 4,
+      "INT_XOR": 1,
+      "LOAD": 14,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 5
+    },
+    "pcode_op_count": 120
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      }
+    ]
+  },
+  "suspects": []
+}

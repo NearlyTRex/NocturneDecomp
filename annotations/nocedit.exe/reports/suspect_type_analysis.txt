@@ -4,23 +4,23 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  decompiler_intrinsic            6535 ( 24.8%)
-  pointer_cast                    5792 ( 22.0%)
-  stack_param                     5403 ( 20.5%)
+  decompiler_intrinsic            6535 ( 24.9%)
+  pointer_cast                    5790 ( 22.0%)
+  stack_param                     5307 ( 20.2%)
   unknown_field                   1510 (  5.7%)
   unnamed_param                   1162 (  4.4%)
   stack_ref                        642 (  2.4%)
-  undefined_data                   638 (  2.4%)
   special_crt_function             636 (  2.4%)
+  undefined_data                   633 (  2.4%)
   unaffected_reg                   547 (  2.1%)
   double_reconstruction            415 (  1.6%)
-  param_count_too_few              383 (  1.5%)
+  param_count_too_few              381 (  1.4%)
   register_param                   364 (  1.4%)
   fpu_register_input               327 (  1.2%)
   negative_offset                  281 (  1.1%)
   nonstandard_int                  272 (  1.0%)
   extra_output                     217 (  0.8%)
-  unresolved_funcptr               200 (  0.8%)
+  unresolved_funcptr               198 (  0.8%)
   stack_alignment_array            138 (  0.5%)
   warning_type_propagation         137 (  0.5%)
   sub84_truncation                 126 (  0.5%)
@@ -97,14 +97,14 @@ Example functions:
     ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3] * fVar2 +...
 
 ====================================================================================================
-TYPE: pointer_cast (5792 occurrences)
+TYPE: pointer_cast (5790 occurrences)
 ====================================================================================================
 
 Unique patterns:
   2145x  (uint *)((int)
   1240x  (int *)((int)
    361x  (SRenderVertex *)((int)
-   357x  (float *)((int)
+   355x  (float *)((int)
    281x  (CMatrix3x4f *)((int)
    220x  (double *)((int)
    215x  (void *)((int)
@@ -135,14 +135,14 @@ Example functions:
     piVar1 = (int *)((int)g_ScreenBufferArray + iVar4);...
 
 ====================================================================================================
-TYPE: stack_param (5403 occurrences)
+TYPE: stack_param (5307 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  1897x  in_stack_00000008
-  1279x  in_stack_00000004
-   634x  in_stack_0000000c
-   248x  in_stack_00000010
+  1856x  in_stack_00000008
+  1248x  in_stack_00000004
+   618x  in_stack_0000000c
+   240x  in_stack_00000010
    120x  in_stack_00000014
     67x  in_stack_0000001c
     63x  in_stack_00000018
@@ -320,70 +320,6 @@ Example functions:
     *(int *)(&stack0xfffffff4 + iVar3) = iVar3;...
 
 ====================================================================================================
-TYPE: undefined_data (638 occurrences)
-====================================================================================================
-
-Unique patterns:
-    23x  DAT_02f98ad0
-    18x  DAT_02f7c53c
-    16x  DAT_02d831ec
-    12x  DAT_02f7c8c4
-    12x  DAT_02f43978
-    12x  DAT_02d831f0
-    11x  DAT_03f9b210
-    11x  DAT_0067e728
-    11x  DAT_02f7a024
-    11x  DAT_03670650
-    10x  DAT_02d831f4
-    10x  DAT_02d831f8
-     9x  DAT_02f797e4
-     9x  DAT_00823c54
-     9x  DAT_00680bd8
-     9x  DAT_03f6bbe8
-     8x  DAT_00684edc
-     8x  DAT_02f7c8bc
-     7x  DAT_00822f48
-     7x  DAT_02d13eb4
-
-Example functions:
-  crt_io.c_getTempDirectory_FUN_00609afc
-    (&DAT_006852db)[uVar3] = 0x5c;...
-  crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8
-    pHeapBound = (uint *)&DAT_00684ff4;...
-  crt_watcom.c__heapchk_FUN_00600ad0
-    if (DAT_03f9b850 != '\0') {...
-  crt_watcom.c__memset_FUN_004b19d0
-    (**(code **)(&DAT_00679d50 + uVar3 * 4))();...
-  crt_watcom.c__memcpy_FUN_004b1a78
-    (**(code **)(&DAT_00679d94 + uVar2 * 4))();...
-  crt_math.c_atan2_FUN_0060c440
-    fVar3 = *(float10 *)(&DAT_0068755c + iVar1) +...
-  crt_startup.c_FUN_0060d230
-    memset(&DAT_03f9c030,0,0x101);...
-  crt_exit.c_FinalExitHandler_FUN_0060b560
-    if (DAT_006852c4 != (code *)0x0) {...
-  crt_time.c_tzset_FUN_006072f8
-    DAT_0068513c = 0;...
-  crt_time.c_determine_dst_status_FUN_006079b4
-    iVar4 = *(int *)(&DAT_00665f50 + iVar5 * 2);...
-  crt_unknown.c_FUN_00603c74
-    piVar1 = &DAT_00684f30;...
-  crt_unknown.c_FUN_00607858
-    iVar2 = *(int *)(&DAT_00665f50 + *(int *)(param_1 + 0x10) * 2);...
-  crt_unknown.c_staticInit_FUN_0060240e
-    DAT_03f9b874 = DAT_03f9b874 | 2;...
-  crt_unknown.c_FUN_00607080
-    *(byte *)(((int)(uint)bVar1 >> 3) + (int)param_1) | (&DAT_00665f28)[bVar1 & 7];...
-  crt_unknown.c_FUN_00608fdc
-    if (file_handle < (_FILE *)&DAT_00684d12) {...
-  crt_unknown.c_FUN_0060501c
-    *pbVar1 = *pbVar1 | (&DAT_00685030)[uVar2 & 7];...
-  crt_string.c_strtok_FUN_005fff50
-    while ((bVar1 = *str, bVar1 != 0 && ((local_28[bVar1 >> 3] & (&DAT_00665f28)[bVa...
-  crt_heap.c_ValidateHeapIntegrity_FUN_00601ce0
-    if (((DAT_03f9b210 == (Heap *)0x0) ||...
-
-====================================================================================================
 TYPE: special_crt_function (636 occurrences)
 ====================================================================================================
 
@@ -453,6 +389,70 @@ Example functions:
     CRT function (runtime support) at 00607e64...
 
 ====================================================================================================
+TYPE: undefined_data (633 occurrences)
+====================================================================================================
+
+Unique patterns:
+    23x  DAT_02f98ad0
+    18x  DAT_02f7c53c
+    16x  DAT_02d831ec
+    12x  DAT_02f7c8c4
+    12x  DAT_02f43978
+    12x  DAT_02d831f0
+    11x  DAT_03f9b210
+    11x  DAT_0067e728
+    11x  DAT_02f7a024
+    11x  DAT_03670650
+    10x  DAT_02d831f4
+    10x  DAT_02d831f8
+     9x  DAT_02f797e4
+     9x  DAT_00823c54
+     9x  DAT_00680bd8
+     9x  DAT_03f6bbe8
+     8x  DAT_00684edc
+     8x  DAT_02f7c8bc
+     7x  DAT_00822f48
+     7x  DAT_02d13eb4
+
+Example functions:
+  crt_io.c_getTempDirectory_FUN_00609afc
+    (&DAT_006852db)[uVar3] = 0x5c;...
+  crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8
+    pHeapBound = (uint *)&DAT_00684ff4;...
+  crt_watcom.c__heapchk_FUN_00600ad0
+    if (DAT_03f9b850 != '\0') {...
+  crt_watcom.c__memset_FUN_004b19d0
+    (**(code **)(&DAT_00679d50 + uVar3 * 4))();...
+  crt_watcom.c__memcpy_FUN_004b1a78
+    (**(code **)(&DAT_00679d94 + uVar2 * 4))();...
+  crt_math.c_atan2_FUN_0060c440
+    fVar3 = *(float10 *)(&DAT_0068755c + iVar1) +...
+  crt_startup.c_FUN_0060d230
+    memset(&DAT_03f9c030,0,0x101);...
+  crt_exit.c_FinalExitHandler_FUN_0060b560
+    if (DAT_006852c4 != (code *)0x0) {...
+  crt_time.c_tzset_FUN_006072f8
+    DAT_0068513c = 0;...
+  crt_time.c_determine_dst_status_FUN_006079b4
+    iVar4 = *(int *)(&DAT_00665f50 + iVar5 * 2);...
+  crt_unknown.c_FUN_00603c74
+    piVar1 = &DAT_00684f30;...
+  crt_unknown.c_FUN_00607858
+    iVar2 = *(int *)(&DAT_00665f50 + *(int *)(param_1 + 0x10) * 2);...
+  crt_unknown.c_staticInit_FUN_0060240e
+    DAT_03f9b874 = DAT_03f9b874 | 2;...
+  crt_unknown.c_FUN_00607080
+    *(byte *)(((int)(uint)bVar1 >> 3) + (int)param_1) | (&DAT_00665f28)[bVar1 & 7];...
+  crt_unknown.c_FUN_00608fdc
+    if (file_handle < (_FILE *)&DAT_00684d12) {...
+  crt_unknown.c_FUN_0060501c
+    *pbVar1 = *pbVar1 | (&DAT_00685030)[uVar2 & 7];...
+  crt_string.c_strtok_FUN_005fff50
+    while ((bVar1 = *str, bVar1 != 0 && ((local_28[bVar1 >> 3] & (&DAT_00665f28)[bVa...
+  crt_heap.c_ValidateHeapIntegrity_FUN_00601ce0
+    if (((DAT_03f9b210 == (Heap *)0x0) ||...
+
+====================================================================================================
 TYPE: unaffected_reg (547 occurrences)
 ====================================================================================================
 
@@ -501,11 +501,11 @@ Example functions:
     local_28 = (double)CONCAT44(uVar5,uVar1);...
 
 ====================================================================================================
-TYPE: param_count_too_few (383 occurrences)
+TYPE: param_count_too_few (381 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    93x  declared:1 vs estimated:2
+    91x  declared:1 vs estimated:2
     27x  declared:3 vs estimated:4
     23x  declared:1 vs estimated:5
     20x  declared:0 vs estimated:2
@@ -796,11 +796,11 @@ Example functions:
     float10 extraout_ST0;...
 
 ====================================================================================================
-TYPE: unresolved_funcptr (200 occurrences)
+TYPE: unresolved_funcptr (198 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   167x  code *
+   165x  code *
     33x  code
 
 Example functions:

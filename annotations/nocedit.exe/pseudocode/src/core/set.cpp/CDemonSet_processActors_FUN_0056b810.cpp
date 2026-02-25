@@ -70,7 +70,7 @@ int __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_pt
                     | (ushort)((float)damage_info == 0.0) << 0xe);
   if (0.0 < (float)damage_info) {
     CStack_58.z = (float)damage_info;
-    core_setcolid_cpp_CDemonSet_FUN_005743e0(this_ptr);
+    core_setcolid_cpp_CDemonSet_buildCollidableActorList_FUN_005743e0(this_ptr);
     iVar9 = 0;
     pCVar6 = this_ptr;
     if (0 < this_ptr->actor_count) {

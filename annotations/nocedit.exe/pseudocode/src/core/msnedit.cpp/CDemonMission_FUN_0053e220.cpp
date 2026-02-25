@@ -141,7 +141,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053e220(CDemonMission *this_ptr
     shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
-    core_setcolid_cpp_CDemonSet_FUN_005743e0(g_CDemonSetPtr);
+    core_setcolid_cpp_CDemonSet_buildCollidableActorList_FUN_005743e0(g_CDemonSetPtr);
     iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if (iVar4 != 0) break;
     core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)&stack0xffffff50);

@@ -1,0 +1,369 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 246,
+    "complexity_score": 161,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 14,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 96,
+    "suspect_count": 6,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 342
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00577430",
+    "address_range": [
+      [
+        "00577430",
+        "0057772e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_setedit.cpp_blitThumbnailToScreen_FUN_00577430",
+    "signature": "void __cdecl core_setedit_cpp_blitThumbnailToScreen_FUN_00577430(int thumbnail_index,int screen_x,int screen_row)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "00679398",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "0067939c",
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "02cf6a9c",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
+      "value": null
+    },
+    {
+      "addr": "02cf6aa0",
+      "name": "g_ScreenBufferArray[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf9020",
+      "name": "g_ColorCubeLookup",
+      "type": "uchar[32768]",
+      "value": null
+    },
+    {
+      "addr": "02d01f24",
+      "name": "g_RedBitPosition",
+      "type": "_BIT_INTEGER32",
+      "value": null
+    },
+    {
+      "addr": "02d01f28",
+      "name": "g_RedScaleFactor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f30",
+      "name": "g_GreenBitPosition",
+      "type": "_BIT_INTEGER32",
+      "value": null
+    },
+    {
+      "addr": "02d01f34",
+      "name": "g_GreenScaleFactor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f3c",
+      "name": "g_BlueBitPosition",
+      "type": "_BIT_INTEGER32",
+      "value": null
+    },
+    {
+      "addr": "02d01f40",
+      "name": "g_BlueScaleFactor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03365cc0",
+      "name": "g_ThumbnailImageBuffer",
+      "type": "uint[250][3072]",
+      "value": null
+    },
+    {
+      "addr": "03365cc4",
+      "name": "DAT_03365cc4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "estimated_params": 3
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 8.387096774193548,
+    "instruction_count": 217,
+    "opcode_distribution": {
+      "BOOL_AND": 2,
+      "BOOL_NEGATE": 133,
+      "BRANCH": 3,
+      "CBRANCH": 14,
+      "COPY": 197,
+      "INT_ADD": 102,
+      "INT_AND": 467,
+      "INT_CARRY": 20,
+      "INT_DIV": 3,
+      "INT_EQUAL": 201,
+      "INT_LEFT": 35,
+      "INT_LESS": 14,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 62,
+      "INT_OR": 134,
+      "INT_REM": 3,
+      "INT_RIGHT": 18,
+      "INT_SBORROW": 14,
+      "INT_SCARRY": 24,
+      "INT_SLESS": 127,
+      "INT_SUB": 43,
+      "INT_XOR": 22,
+      "INT_ZEXT": 9,
+      "LOAD": 42,
+      "POPCOUNT": 86,
+      "RETURN": 1,
+      "STORE": 36,
+      "SUBPIECE": 6
+    },
+    "pcode_op_count": 1820
+  },
+  "stack_frame": {
+    "frame_size": 104,
+    "local_size": 92,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "thumbnail_index",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "screen_x",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "screen_row",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "puVar3 = (uchar *)(*(int *)((int)g_ScreenBufferArray + local_30) + screen_x);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "uVar1 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 51,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "local_14 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_50) + screen_x * 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 55,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "uVar1 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 74,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "puVar4 = (uint *)(*(int *)((int)g_ScreenBufferArray + local_28) + screen_x * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 78,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "uVar1 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar5);",
+      "type": "pointer_cast"
+    }
+  ]
+}

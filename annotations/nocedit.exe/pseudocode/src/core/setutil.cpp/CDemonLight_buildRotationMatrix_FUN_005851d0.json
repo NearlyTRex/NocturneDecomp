@@ -1,0 +1,91 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 10,
+    "complexity_score": 6,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 16
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005851d0",
+    "address_range": [
+      [
+        "005851d0",
+        "005851e5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_setutil.cpp_CDemonLight_buildRotationMatrix_FUN_005851d0",
+    "signature": "void __cdecl core_setutil_cpp_CDemonLight_buildRotationMatrix_FUN_005851d0(CDemonLight *this_ptr,CVector3f *euler_angles)"
+  },
+  "function_calls": [
+    {
+      "addr": "00471d30",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.5,
+    "instruction_count": 8,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 4,
+      "INT_ADD": 5,
+      "INT_AND": 4,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 2,
+      "INT_SUB": 3,
+      "LOAD": 3,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 3
+    },
+    "pcode_op_count": 36
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonLight *"
+      },
+      {
+        "is_param": true,
+        "name": "euler_angles",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": []
+}

@@ -7,8 +7,8 @@
 ; CDemonCube *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
+;   core_dtrace.cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0049a280 at 0049a36b
 ;   core_dtrace.cpp_CDemonRaytrace_setVoxelShadowBit_FUN_0049a160 at 0049a24c
-;   core_dtrace.cpp_CDemonRaytrace_transferVoxelShadowBit_FUN_0049a280 at 0049a36b
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dcube_cpp_0061a51a

@@ -6,6 +6,7 @@
 #include "types/classes/CActorDestination.h"
 #include "types/classes/CActorPropertyList.h"
 #include "types/classes/CBoundingBox3D.h"
+#include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CFilterCache.h"
 #include "types/classes/CVector3f.h"
@@ -141,7 +142,7 @@ void __cdecl core_dest_cpp_CActorDestination_setup_FUN_0046f970(CActorDestinatio
 void __cdecl core_dest_cpp_CActorDestination_process_FUN_0046f9b0(CActorDestination *this_ptr,float delta_time);
 int __cdecl core_dest_cpp_CActorDestination_renderTransparent_FUN_0046fb70(CActorDestination *this_ptr);
 CBoundingBox3D * __cdecl core_dest_cpp_CActorDestination_getBoundingBox_FUN_0046fcc0(CActorDestination *this_ptr,CBoundingBox3D *out_box);
-int __cdecl core_dest_cpp_CActorDestination_FUN_0046fd50(CActorDestination *this_ptr);
+int __cdecl core_dest_cpp_CActorDestination_FUN_0046fd50(CActorDestination *this_ptr,CDemonActor *actor);
 void __cdecl core_dest_cpp_CActorDestination_archive_FUN_0046fdb0(CActorDestination *this_ptr);
 int __cdecl core_dest_cpp_CActorDestination_hasCollision_FUN_0046fe70(CActorDestination *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_dest_cpp_CActorDestination_getPropertyList_FUN_0046fe80(CActorDestination *this_ptr,CActorPropertyList *property_list);

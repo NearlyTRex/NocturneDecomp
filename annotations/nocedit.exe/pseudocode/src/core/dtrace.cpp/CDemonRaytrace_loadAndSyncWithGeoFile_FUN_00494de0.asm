@@ -28,7 +28,7 @@
 ;   TerminatedCString s_Can_t_rewrite_POD_file_f_006229c5
 ;   TerminatedCString s_core_dtrace_cpp_006229f0
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   undefined4 DAT_02cee5ac
+;   int INT_02cee5ac
 ;   CEditorTools g_CEditorToolsInstance
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
@@ -85,7 +85,7 @@ section .text
     PUSH EBX                            ; 00494e30
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 00494e31
         ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
-    MOV EDX,dword ptr [0x02cee5ac]      ; 00494e36 | DAT_02cee5ac
+    MOV EDX,dword ptr [0x02cee5ac]      ; 00494e36 | INT_02cee5ac
     ADD ESP,0xc                         ; 00494e3c
     CMP EDX,0x1                         ; 00494e3f
     JNZ 0x00494f1b                      ; 00494e42

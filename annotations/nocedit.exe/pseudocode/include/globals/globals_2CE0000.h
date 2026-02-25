@@ -46,6 +46,7 @@ extern char g_ErrorMessageBuffer_02cef530[256];
 extern char g_MessageFormatBuffer[512];
 
 // int
+extern int INT_02cee5ac;
 extern int g_ClipInputVertexCount;
 extern int g_ClipBuffer1VertexCount;
 extern int g_ClipBuffer2VertexCount;
@@ -56,7 +57,4 @@ extern int g_ClipOutputVertexCount;
 extern int DAT_02ceed24;
 extern int DAT_02ceed28;
 extern int DAT_02ceed2c;
-
-// undefined4
-extern undefined4 DAT_02cee5ac;
 

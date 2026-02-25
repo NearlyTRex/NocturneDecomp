@@ -33,7 +33,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 ;   core_door.cpp_CDoor_getMoveType_FUN_00481070
-;   core_door.cpp_FUN_0047fcf0
+;   core_door.cpp_CDoor_onOpened_FUN_0047fcf0
 ;   core_event.cpp_CRuleList_evaluateAndRun_FUN_004b18e0
 ;
 ; *****************************************************************************
@@ -165,8 +165,8 @@ section .text
     JNZ 0x004f2ead                      ; 004f2e97
         ;   XREF to: 004f2ead (CONDITIONAL_JUMP)  ; LAB_004f2ead
     PUSH EBX                            ; 004f2e99
-    CALL core_door.cpp_FUN_0047fcf0     ; 004f2e9a
-        ;   XREF to: 0047fcf0 (UNCONDITIONAL_CALL)  ; void core_door.cpp_FUN_0047fcf0(int event_id)
+    CALL core_door.cpp_CDoor_onOpened_FUN_0047fcf0 ; 004f2e9a
+        ;   XREF to: 0047fcf0 (UNCONDITIONAL_CALL)  ; void core_door.cpp_CDoor_onOpened_FUN_0047fcf0(CDoor * this_ptr)
     ADD ESP,0x4                         ; 004f2e9f
     MOV EAX,dword ptr [ESP + 0x18]      ; 004f2ea2
     MOV ESP,EBP                         ; 004f2ea6

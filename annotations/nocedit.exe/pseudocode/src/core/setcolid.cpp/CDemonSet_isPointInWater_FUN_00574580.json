@@ -1,0 +1,188 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 119,
+    "complexity_score": 51,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 36,
+    "suspect_count": 1,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
+    "total_lines": 155
+  },
+  "cross_references": [
+    {
+      "addr": "0040ca10",
+      "from_addr": "0040ca8a",
+      "name": "core_actor.cpp_CDemonActor_handleFootstep_FUN_0040ca10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042ea40",
+      "from_addr": "0042eb34",
+      "name": "core_charactr.cpp_CCharacter_processSmoking_FUN_0042ea40",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00574580",
+    "address_range": [
+      [
+        "00574580",
+        "00574688"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_setcolid.cpp_CDemonSet_isPointInWater_FUN_00574580",
+    "signature": "int __cdecl core_setcolid_cpp_CDemonSet_isPointInWater_FUN_00574580(CDemonSet *this_ptr,CVector3f *point)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c790",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
+    },
+    {
+      "addr": "00408f10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006463fa",
+      "name": "FLOAT_006463fa",
+      "type": "float",
+      "value": "-10"
+    },
+    {
+      "addr": "006844f0",
+      "name": "g_CWaterPtr",
+      "type": "CWater*",
+      "value": "03f875e0"
+    },
+    {
+      "addr": "03f875e4",
+      "name": "DAT_03f875e4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f939a0",
+      "name": "g_CWaterActorClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0040ca8a",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_CDemonActor_handleFootstep_FUN_0040ca10",
+        "estimated_params": 2,
+        "instructions_analyzed": 4,
+        "reg_params": [],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0042eb34",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_CCharacter_processSmoking_FUN_0042ea40",
+        "estimated_params": 2,
+        "instructions_analyzed": 6,
+        "reg_params": [],
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.917525773195877,
+    "instruction_count": 97,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 11,
+      "BRANCH": 1,
+      "CALL": 2,
+      "CALLIND": 1,
+      "CBRANCH": 11,
+      "COPY": 217,
+      "FLOAT2FLOAT": 17,
+      "FLOAT_ADD": 1,
+      "FLOAT_EQUAL": 7,
+      "FLOAT_LESS": 7,
+      "FLOAT_NAN": 14,
+      "INT_ADD": 42,
+      "INT_AND": 66,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 28,
+      "INT_LEFT": 28,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 37,
+      "INT_OR": 35,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 14,
+      "INT_SUB": 16,
+      "INT_XOR": 2,
+      "INT_ZEXT": 28,
+      "LOAD": 34,
+      "POPCOUNT": 14,
+      "RETURN": 2,
+      "STORE": 15
+    },
+    "pcode_op_count": 671
+  },
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 32,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "point",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 11,
+      "match": "ABS",
+      "severity": "mild",
+      "text": "if ((ABS(g_CWaterPtr->water_level_y) == 0.0) || (g_CWaterPtr->water_level_y <= point->y)) {",
+      "type": "decompiler_intrinsic"
+    }
+  ]
+}

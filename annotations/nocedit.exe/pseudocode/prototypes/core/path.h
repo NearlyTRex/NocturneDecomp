@@ -79,9 +79,9 @@ CPathMap * __cdecl FUN_00548500(CLocation *location);
 // Address: 00548510
 void __cdecl CPathMap::reset(CPathMap *this_ptr);
 
-// Original: core_path.cpp_FUN_00548590
+// Original: core_path.cpp_resetAllPathMaps_FUN_00548590
 // Address: 00548590
-void __cdecl FUN_00548590(void);
+void __cdecl resetAllPathMaps(void);
 
 // Original: core_path.cpp_FUN_005485f0
 // Address: 005485f0

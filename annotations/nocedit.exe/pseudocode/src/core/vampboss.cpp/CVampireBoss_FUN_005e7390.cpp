@@ -24,7 +24,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_FUN_005e7390(CVampireBoss *this_ptr)
     if ((this_ptr_00 != (CDrip *)0x0) && (this_ptr_00->type == DRIP_TYPE_STALAG)) {
       iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
       if (iVar1 == 0) {
-        core_drip_cpp_CDrip_FUN_0048e6b0(this_ptr_00);
+        core_drip_cpp_CDrip_reset_FUN_0048e6b0(this_ptr_00);
       }
     }
     iVar3 = iVar3 + 4;

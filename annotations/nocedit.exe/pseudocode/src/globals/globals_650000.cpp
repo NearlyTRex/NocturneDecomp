@@ -4609,7 +4609,7 @@ CEnemy_vtable DAT_0065C208 = {
 CEnemy_vtable DAT_0065CB98 = {
     .getTargetPoint = (CEnemy_getTargetPoint *)core_enemy_cpp_CEnemy_getTargetPoint_FUN_004a99d0,
     .updateVictim = (CEnemy_updateVictim *)core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00,
-    .randomize = (CEnemy_randomize *)core_dog_cpp_CZombieDog_FUN_0047f960,
+    .randomize = (CEnemy_randomize *)core_dog_cpp_CZombieDog_randomize_FUN_0047f960,
     .reset = nullptr
 };
 CEnemy_vtable DAT_0065CEE8 = {

@@ -9,8 +9,8 @@
 ;
 ; XREF[17]:
 ;   core_dest.cpp_CActorDestination_process_FUN_0046f9b0 at 0046fafb
+;   core_door.cpp_CDoor_onOpened_FUN_0047fcf0 at 0047fd01
 ;   core_door.cpp_CDoor_process_FUN_004800c0 at 004801a0
-;   core_door.cpp_FUN_0047fcf0 at 0047fd01
 ;   core_event.cpp_CRuleList_evaluateAndRun_FUN_004b18e0 at 004b1917
 ;   core_filmreel.cpp_CFilmProjector_archive_FUN_004beb40 at 004bebea
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 at 004df54f

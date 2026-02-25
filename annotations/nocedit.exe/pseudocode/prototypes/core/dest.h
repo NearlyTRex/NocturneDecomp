@@ -37,7 +37,7 @@ CBoundingBox3D * __cdecl CActorDestination::getBoundingBox(CActorDestination *th
 
 // Original: core_dest.cpp_CActorDestination_FUN_0046fd50
 // Address: 0046fd50
-int __cdecl CActorDestination(CActorDestination *this_ptr);
+int __cdecl CActorDestination(CActorDestination *this_ptr,CDemonActor *actor);
 
 // Original: core_dest.cpp_CActorDestination_archive_FUN_0046fdb0
 // Address: 0046fdb0

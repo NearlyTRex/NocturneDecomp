@@ -27678,7 +27678,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_dtrace.cpp_CDemonRaytrace_voxelGridSweepTest_FUN_00499c20",
+    "name":"core_dtrace.cpp_CDemonRaytrace_markShadowVoxels_FUN_00499c20",
     "ret":"void",
     "vars":{
       "locals":[
@@ -28069,7 +28069,7 @@
           "type":"CDemonRaytrace*"
         },
         {
-          "name":"offset_vector",
+          "name":"offset",
           "storage":{
             "offset":8,
             "size":4,
@@ -28085,7 +28085,7 @@
           "type":"CVector3f*"
         },
         {
-          "name":"start_position",
+          "name":"rotation",
           "storage":{
             "offset":12,
             "size":4,
@@ -28101,7 +28101,7 @@
           "type":"CVector3f*"
         },
         {
-          "name":"end_position",
+          "name":"extent",
           "storage":{
             "offset":16,
             "size":4,
@@ -28117,7 +28117,7 @@
           "type":"CVector3f*"
         },
         {
-          "name":"light_data",
+          "name":"light_position",
           "storage":{
             "offset":20,
             "size":4,
@@ -28130,7 +28130,7 @@
               }
             ]
           },
-          "type":"void*"
+          "type":"CVector3f*"
         }
       ]
     }
@@ -64353,7 +64353,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setcolid.cpp_CDemonSet_FUN_00574220",
+    "name":"core_setcolid.cpp_CDemonSet_enableCollision_FUN_00574220",
     "ret":"void",
     "vars":{
       "params":[
@@ -66485,7 +66485,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_FUN_00577120",
+    "name":"core_setedit.cpp_blitThumbnailToScreen8_FUN_00577120",
     "ret":"void",
     "vars":{
       "locals":[
@@ -66552,6 +66552,56 @@
             ]
           },
           "type":"undefined4"
+        }
+      ],
+      "params":[
+        {
+          "name":"thumbnail_index",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"screen_x",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"screen_row",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -68365,8 +68415,44 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setutil.cpp_FUN_005851a0",
-    "ret":"void"
+    "name":"core_setutil.cpp_CDemonLight_setPosition_FUN_005851a0",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonLight*"
+        },
+        {
+          "name":"position",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3i*"
+        }
+      ]
+    }
   },
   {
     "addr":"00585220",
@@ -68379,8 +68465,44 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setutil.cpp_FUN_00585220",
-    "ret":"void"
+    "name":"core_setutil.cpp_CDemonLight_setTransformScale_FUN_00585220",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonLight*"
+        },
+        {
+          "name":"scale",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        }
+      ]
+    }
   },
   {
     "addr":"00585420",

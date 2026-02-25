@@ -5,16 +5,16 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6494
-Successful: 5603 (86.3%)
-Failed: 891
+Successful: 5606 (86.3%)
+Failed: 888
 
 ERROR CATEGORIES
 --------------------------------------------------
   other                           1595
-  undeclared_identifier            764
+  undeclared_identifier            762
   format_error                     590
-  incompatible_types               576
-  syntax_error                      75
+  incompatible_types               575
+  syntax_error                      73
   lvalue_required                   23
   missing_member                    21
   type_error                        18
@@ -88,7 +88,7 @@ CATEGORY: other (1595 errors)
   ... and 316 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (764 errors)
+CATEGORY: undeclared_identifier (762 errors)
 ====================================================================================================
 
   core_msnedit.cpp_FUN_0053d3a0
@@ -152,7 +152,7 @@ CATEGORY: undeclared_identifier (764 errors)
   core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
     Line 294: use of undeclared identifier 'DAT_03670650'...
 
-  ... and 259 more errors
+  ... and 257 more errors
 
 ====================================================================================================
 CATEGORY: format_error (590 errors)
@@ -222,7 +222,7 @@ CATEGORY: format_error (590 errors)
   ... and 145 more errors
 
 ====================================================================================================
-CATEGORY: incompatible_types (576 errors)
+CATEGORY: incompatible_types (575 errors)
 ====================================================================================================
 
   engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00
@@ -286,10 +286,10 @@ CATEGORY: incompatible_types (576 errors)
   shape_superopt.cpp_CObj_addPolygons_FUN_005d2410
     Line 22: assigning to 'CPoly *' from incompatible type 'void *'...
 
-  ... and 321 more errors
+  ... and 320 more errors
 
 ====================================================================================================
-CATEGORY: syntax_error (75 errors)
+CATEGORY: syntax_error (73 errors)
 ====================================================================================================
 
   core_dskybox.cpp_renderSkyDome_FUN_004901f0
@@ -336,10 +336,6 @@ CATEGORY: syntax_error (75 errors)
     Line 51: expected expression...
   core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0
     Line 25: expected expression...
-  core_setcolid.cpp_CDemonSet_FUN_00574440
-    Line 17: expected expression...
-  core_setcolid.cpp_CDemonSet_FUN_005744d0
-    Line 17: expected expression...
   core_setedit.cpp_loadCameraThumbnail_FUN_005769a0
     Line 95: expected expression...
   core_shotgun.cpp_CShotgun_fire_FUN_00588060
@@ -352,8 +348,12 @@ CATEGORY: syntax_error (75 errors)
     Line 18: expected expression...
   core_trap.cpp_CTrap_process_FUN_005de770
     Line 24: expected expression...
+  core_zombie.cpp_CZombie_process_FUN_005f9470
+    Line 726: expected expression...
+  core_zombie.cpp_FUN_005f8cc0
+    Line 18: expected expression...
 
-  ... and 21 more errors
+  ... and 19 more errors
 
 ====================================================================================================
 CATEGORY: lvalue_required (23 errors)
@@ -447,8 +447,8 @@ CATEGORY: pointer_precision (2 errors)
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in successfully compiled functions: 2.29
-Average suspects in failed compilations: 11.16
+Average suspects in successfully compiled functions: 2.27
+Average suspects in failed compilations: 11.17
 
-Functions that compile but have suspect patterns: 1769
+Functions that compile but have suspect patterns: 1763
 (These may have runtime issues even though syntax is valid)

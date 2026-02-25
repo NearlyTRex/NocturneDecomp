@@ -22000,6 +22000,22 @@
             ]
           },
           "type":"CActorDestination*"
+        },
+        {
+          "name":"actor",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonActor*"
         }
       ],
       "ret_storage":{
@@ -68422,7 +68438,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setcolid.cpp_CDemonSet_FUN_005744d0",
+    "name":"core_setcolid.cpp_CDemonSet_transferVoxelShadow_FUN_005744d0",
     "ret":"void",
     "vars":{
       "params":[
@@ -68441,6 +68457,22 @@
             ]
           },
           "type":"CDemonSet*"
+        },
+        {
+          "name":"actor",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonActor*"
         }
       ]
     }
@@ -68928,8 +68960,28 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_FUN_00576950",
-    "ret":"void"
+    "name":"core_setedit.cpp_incrementTrailingNumber_FUN_00576950",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"name",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        }
+      ]
+    }
   },
   {
     "addr":"0057ae50",
@@ -70074,8 +70126,44 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setutil.cpp_FUN_005851d0",
-    "ret":"void"
+    "name":"core_setutil.cpp_CDemonLight_buildRotationMatrix_FUN_005851d0",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonLight*"
+        },
+        {
+          "name":"euler_angles",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        }
+      ]
+    }
   },
   {
     "addr":"00586150",

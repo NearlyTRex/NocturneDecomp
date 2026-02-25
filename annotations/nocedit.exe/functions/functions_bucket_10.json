@@ -25278,7 +25278,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_door.cpp_CDoor_FUN_00481210",
-    "ret":"void",
+    "ret":"int",
     "vars":{
       "params":[
         {
@@ -25297,7 +25297,17 @@
           },
           "type":"CDoor*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -30727,7 +30737,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_dtrace.cpp_CDemonRaytrace_voxelGridSweepTest2_FUN_00499f10",
+    "name":"core_dtrace.cpp_CDemonRaytrace_transferShadowVoxels_FUN_00499f10",
     "ret":"void",
     "vars":{
       "locals":[
@@ -31118,7 +31128,7 @@
           "type":"CDemonRaytrace*"
         },
         {
-          "name":"offset_vector",
+          "name":"offset",
           "storage":{
             "offset":8,
             "size":4,
@@ -31134,7 +31144,7 @@
           "type":"CVector3f*"
         },
         {
-          "name":"light_data",
+          "name":"rotation",
           "storage":{
             "offset":12,
             "size":4,
@@ -31147,10 +31157,10 @@
               }
             ]
           },
-          "type":"void*"
+          "type":"CVector3f*"
         },
         {
-          "name":"start_position",
+          "name":"start",
           "storage":{
             "offset":16,
             "size":4,
@@ -31166,7 +31176,7 @@
           "type":"CVector3f*"
         },
         {
-          "name":"end_position",
+          "name":"end",
           "storage":{
             "offset":20,
             "size":4,
@@ -55678,7 +55688,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_path.cpp_FUN_00548590",
+    "name":"core_path.cpp_resetAllPathMaps_FUN_00548590",
     "ret":"void"
   },
   {
@@ -66409,9 +66419,27 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setutil.cpp_FUN_00585210",
-    "ret":"int",
+    "name":"core_setutil.cpp_CDemonLight_getFixedPointScale_FUN_00585210",
+    "ret":"float",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonLight*"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,

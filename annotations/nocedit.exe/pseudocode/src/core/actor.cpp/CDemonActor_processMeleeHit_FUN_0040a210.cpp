@@ -189,7 +189,7 @@ LAB_0040a3e0:
   if (local_38 == 1) {
     core_setcolid_cpp_CDemonSet_setRayType_FUN_00574230(g_CDemonSetPtr,1);
     core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,this_ptr);
-    core_setcolid_cpp_CDemonSet_FUN_00574170(g_CDemonSetPtr);
+    core_setcolid_cpp_CDemonSet_skipExactCollisions_FUN_00574170(g_CDemonSetPtr);
     if (local_1c != (CGlass *)0x0) {
       core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,&local_1c->base);
     }

@@ -40,6 +40,7 @@ char g_ErrorMessageBuffer_02cef530[256] = {};
 char g_MessageFormatBuffer[512] = {};
 
 // int
+int INT_02cee5ac = {};
 int g_ClipInputVertexCount = {};
 int g_ClipBuffer1VertexCount = {};
 int g_ClipBuffer2VertexCount = {};
@@ -50,7 +51,4 @@ int g_ClipOutputVertexCount = {};
 int DAT_02ceed24 = {};
 int DAT_02ceed28 = {};
 int DAT_02ceed2c = {};
-
-// undefined4
-undefined4 DAT_02cee5ac = {};
 

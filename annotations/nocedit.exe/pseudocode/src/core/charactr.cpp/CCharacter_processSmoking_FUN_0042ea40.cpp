@@ -69,7 +69,7 @@ void __cdecl core_charactr_cpp_CCharacter_processSmoking_FUN_0042ea40(CCharacter
                               (this_ptr->model).bone_transform.bone_world_matrices + iVar4);
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                     (&this_ptr->base,&local_28,pCVar5);
-          iVar4 = core_setcolid_cpp_CDemonSet_FUN_00574580(g_CDemonSetPtr);
+          iVar4 = core_setcolid_cpp_CDemonSet_isPointInWater_FUN_00574580(g_CDemonSetPtr,&local_28);
           if (iVar4 == 0) {
             this_ptr->smoke_occluded = (uint)(this_ptr->smoke_occluded == 0);
             return;

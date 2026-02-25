@@ -9,7 +9,7 @@
 ; XREF[26]:
 ;   core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0 at 00456fc9
 ;   core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0 at 0057eec3
-;   core_setedit.cpp_FUN_00576950 at 00576982
+;   core_setedit.cpp_incrementTrailingNumber_FUN_00576950 at 00576982
 ;   core_texlist.cpp_CTextureList_load_FUN_005dbe00 at 005dbf54
 ;   engine_ini.cpp_getProfileInteger_FUN_004fb9a0 at 004fba04
 ;   shape_design.c_centerKeyframeModels_FUN_004681a0 at 004681e3

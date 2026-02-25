@@ -157,7 +157,8 @@ LAB_0057523f:
   fStack_28 = fVar6 * (float)1.5 + 1.0;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
             (actor,(CVector3f *)auStack_98,&CStack_a4);
-  uStack_24 = core_setdir_cpp_CDemonSet_FUN_00576870(this_ptr);
+  uStack_24 = core_setdir_cpp_CDemonSet_findVdirBoxAtPosition_FUN_00576870
+                        (this_ptr,(CVector3f *)auStack_98);
   iVar12 = g_WindowHeight;
   g_VDIsActorAreaInvalid = (int)(uStack_24 == 0xffffffff);
   if (g_ZBufferScanlineArrayBackup[0] != (uint *)0x0) {

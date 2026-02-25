@@ -44,7 +44,7 @@
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 ;   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-;   core_setcolid.cpp_CDemonSet_FUN_00574580
+;   core_setcolid.cpp_CDemonSet_isPointInWater_FUN_00574580
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 ;   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
 ;   core_xform.cpp_transformVector3x4_FUN_005f4dc0
@@ -149,8 +149,8 @@ section .text
     PUSH EAX                            ; 0042eb2c
     MOV EDI,dword ptr [0x006810c8]      ; 0042eb2d | g_CDemonSetPtr
     PUSH EDI                            ; 0042eb33 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_FUN_00574580 ; 0042eb34
-        ;   XREF to: 00574580 (UNCONDITIONAL_CALL)  ; int core_setcolid.cpp_CDemonSet_FUN_00574580(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_isPointInWater_FUN_00574580 ; 0042eb34
+        ;   XREF to: 00574580 (UNCONDITIONAL_CALL)  ; int core_setcolid.cpp_CDemonSet_isPointInWater_FUN_00574580(CDemonSet * this_ptr, CVector3f * point)
     ADD ESP,0x8                         ; 0042eb39
     TEST EAX,EAX                        ; 0042eb3c
     JNZ 0x0042ea6b                      ; 0042eb3e

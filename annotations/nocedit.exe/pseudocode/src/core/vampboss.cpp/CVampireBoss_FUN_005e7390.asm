@@ -20,7 +20,7 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
 ;   core_actor.cpp_randomChance_FUN_0040cd10
-;   core_drip.cpp_CDrip_FUN_0048e6b0
+;   core_drip.cpp_CDrip_reset_FUN_0048e6b0
 ;
 ; *****************************************************************************
 
@@ -72,8 +72,8 @@ section .text
     JNZ 0x005e7401                      ; 005e73f6
         ;   XREF to: 005e7401 (CONDITIONAL_JUMP)  ; LAB_005e7401
     PUSH EBX                            ; 005e73f8
-    CALL core_drip.cpp_CDrip_FUN_0048e6b0 ; 005e73f9
-        ;   XREF to: 0048e6b0 (UNCONDITIONAL_CALL)  ; void core_drip.cpp_CDrip_FUN_0048e6b0(CDrip * this_ptr)
+    CALL core_drip.cpp_CDrip_reset_FUN_0048e6b0 ; 005e73f9
+        ;   XREF to: 0048e6b0 (UNCONDITIONAL_CALL)  ; void core_drip.cpp_CDrip_reset_FUN_0048e6b0(CDrip * this_ptr)
     ADD ESP,0x4                         ; 005e73fe
     INC ESI                             ; 005e7401
         ;   Label: LAB_005e7401

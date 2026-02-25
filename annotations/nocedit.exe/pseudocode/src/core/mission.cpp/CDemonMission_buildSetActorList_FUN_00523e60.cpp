@@ -28,7 +28,7 @@ void __cdecl core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(CDemo
       pCVar1->actor_count = pCVar1->actor_count + 1;
     }
   }
-  core_setcolid_cpp_CDemonSet_FUN_005743e0(g_CDemonSetPtr);
+  core_setcolid_cpp_CDemonSet_buildCollidableActorList_FUN_005743e0(g_CDemonSetPtr);
   core_set_cpp_CDemonSet_buildActorTypeLists_FUN_00570fc0(g_CDemonSetPtr);
   return;
 }

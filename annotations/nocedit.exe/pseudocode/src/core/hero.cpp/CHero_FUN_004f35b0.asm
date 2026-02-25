@@ -109,7 +109,7 @@ section .text
     PUSH EAX                            ; 004f364e
     PUSH EBX                            ; 004f364f
     CALL core_dest.cpp_CActorDestination_FUN_0046fd50 ; 004f3650
-        ;   XREF to: 0046fd50 (UNCONDITIONAL_CALL)  ; int core_dest.cpp_CActorDestination_FUN_0046fd50(CActorDestination * this_ptr)
+        ;   XREF to: 0046fd50 (UNCONDITIONAL_CALL)  ; int core_dest.cpp_CActorDestination_FUN_0046fd50(CActorDestination * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004f3655
     TEST EAX,EAX                        ; 004f3658
     JZ 0x004f3619                       ; 004f365a

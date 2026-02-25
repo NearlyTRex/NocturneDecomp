@@ -157,7 +157,7 @@ void __cdecl core_path_cpp_CPathMap_FUN_00547fc0(CPathMap *this_ptr);
 CPathMap * __cdecl core_path_cpp_FUN_00548390(CLocation *location);
 CPathMap * __cdecl core_path_cpp_FUN_00548500(CLocation *location);
 void __cdecl core_path_cpp_CPathMap_reset_FUN_00548510(CPathMap *this_ptr);
-void __cdecl core_path_cpp_FUN_00548590(void);
+void __cdecl core_path_cpp_resetAllPathMaps_FUN_00548590(void);
 void __cdecl core_path_cpp_FUN_005485f0(void);
 void __cdecl core_path_cpp_FUN_00548680(void);
 void __cdecl core_path_cpp_CPathMap_FUN_00548750(CPathMap *this_ptr);

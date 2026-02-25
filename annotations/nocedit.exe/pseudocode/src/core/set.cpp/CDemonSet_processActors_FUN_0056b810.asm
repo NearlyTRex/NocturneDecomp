@@ -53,7 +53,7 @@
 ;   core_glass.cpp_CGlass_checkBreakableCondition_FUN_004eb3a0
 ;   core_glass.cpp_CGlass_shatter_FUN_004eaef0
 ;   core_path.cpp_CPathMap_updateIfNeeded_FUN_00546a60
-;   core_setcolid.cpp_CDemonSet_FUN_005743e0
+;   core_setcolid.cpp_CDemonSet_buildCollidableActorList_FUN_005743e0
 ;   core_trigger.cpp_CTrigger_applyDamage_FUN_005e0b00
 ;   engine_console.cpp_CConsole_printf_FUN_00441890
 ;   wincore_winrun.cpp_getTime_FUN_005f2dc0
@@ -115,8 +115,8 @@ section .text
         ;   XREF to: 0056be70 (CONDITIONAL_JUMP)  ; LAB_0056be70
     MOV EDI,dword ptr [EBP + 0x14]      ; 0056b8a3
     PUSH EDI                            ; 0056b8a6
-    CALL core_setcolid.cpp_CDemonSet_FUN_005743e0 ; 0056b8a7
-        ;   XREF to: 005743e0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_FUN_005743e0(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_buildCollidableActorList_FUN_005743e0 ; 0056b8a7
+        ;   XREF to: 005743e0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_buildCollidableActorList_FUN_005743e0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0056b8ac
     MOV ECX,dword ptr [EDI + 0x14d154]  ; 0056b8af
     XOR EAX,EAX                         ; 0056b8b5

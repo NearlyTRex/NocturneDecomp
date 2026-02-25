@@ -174,7 +174,7 @@ LAB_004f4dd2:
         }
       }
       if (local_24 != (CDoor *)0x0) {
-        core_door_cpp_CDoor_FUN_00480de0(local_24);
+        core_door_cpp_CDoor_setSwingRange_FUN_00480de0(local_24,0.1);
       }
     }
     else if (uVar15 == 0xc) {

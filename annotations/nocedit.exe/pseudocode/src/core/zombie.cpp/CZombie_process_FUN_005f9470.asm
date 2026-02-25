@@ -840,8 +840,8 @@ section .text
         ;   XREF to: 005f9504 (CONDITIONAL_JUMP)  ; LAB_005f9504
     PUSH 0x3e99999a                     ; 005f9cd4
     PUSH ECX                            ; 005f9cd9
-    CALL core_door.cpp_CDoor_FUN_00480de0 ; 005f9cda
-        ;   XREF to: 00480de0 (UNCONDITIONAL_CALL)  ; void core_door.cpp_CDoor_FUN_00480de0(CDoor * this_ptr)
+    CALL core_door.cpp_CDoor_setSwingRange_FUN_00480de0 ; 005f9cda
+        ;   XREF to: 00480de0 (UNCONDITIONAL_CALL)  ; void core_door.cpp_CDoor_setSwingRange_FUN_00480de0(CDoor * this_ptr, float swing_range)
     ADD ESP,0x8                         ; 005f9cdf
     MOV EAX,dword ptr [EBX + 0xbed8]    ; 005f9ce2
     PUSH 0x65864a                       ; 005f9ce8 | = "zombie-bang-door?.wav"

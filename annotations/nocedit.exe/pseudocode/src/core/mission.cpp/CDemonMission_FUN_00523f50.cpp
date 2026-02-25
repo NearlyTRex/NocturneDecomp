@@ -21,7 +21,7 @@ void __cdecl core_mission_cpp_CDemonMission_FUN_00523f50(CDemonMission *this_ptr
   this_ptr_00 = g_CDemonSetPtr;
   g_HeroCount = 0;
   this_ptr->actors_prepared = 0;
-  core_setcolid_cpp_CDemonSet_FUN_00574560(this_ptr_00);
+  core_setcolid_cpp_CDemonSet_commitVoxelBuffer_FUN_00574560(this_ptr_00);
   this_ptr->delete_queue_count = 0;
   return;
 }

@@ -369,7 +369,7 @@ LAB_005f9541:
     }
     else if (uVar8 < 0xe) {
       if (this_ptr->target_door != (CDoor *)0x0) {
-        core_door_cpp_CDoor_FUN_00480de0(this_ptr->target_door);
+        core_door_cpp_CDoor_setSwingRange_FUN_00480de0(this_ptr->target_door,0.3);
         (*((this_ptr->target_door->base).vtable._ub)->playSound)
                   (&this_ptr->target_door->base,"zombie-bang-door?.wav");
         this_ptr->target_door = (CDoor *)0x0;

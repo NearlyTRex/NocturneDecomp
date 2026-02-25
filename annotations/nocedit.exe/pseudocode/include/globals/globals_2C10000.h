@@ -29,8 +29,10 @@ extern char g_PolyDataConversionBuffer[72];
 // int
 extern int g_NumSearchHandlers;
 
+// uint
+extern uint UINT_02c14cd8;
+
 // undefined4
-extern undefined4 DAT_02c14cd8;
 extern undefined4 DAT_02c14d80;
 extern undefined4 DAT_02c14d84;
 extern undefined4 DAT_02c14d88;

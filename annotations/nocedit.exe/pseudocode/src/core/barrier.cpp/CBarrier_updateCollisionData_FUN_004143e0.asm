@@ -11,7 +11,7 @@
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
-;   core_setcolid.cpp_CDemonSet_FUN_00574440
+;   core_setcolid.cpp_CDemonSet_castVoxelShadow_FUN_00574440
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
         ;   Label: LAB_004143ee
     MOV ECX,dword ptr [0x006810c8]      ; 004143ef | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH ECX                            ; 004143f5 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_FUN_00574440 ; 004143f6
-        ;   XREF to: 00574440 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_FUN_00574440(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_castVoxelShadow_FUN_00574440 ; 004143f6
+        ;   XREF to: 00574440 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_castVoxelShadow_FUN_00574440(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004143fb
     RET                                 ; 004143fe
 

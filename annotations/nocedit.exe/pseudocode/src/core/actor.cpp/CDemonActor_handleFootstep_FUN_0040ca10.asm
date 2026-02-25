@@ -32,7 +32,7 @@
 ;   core_gore.cpp_CGore_createFootstep_FUN_004ee070
 ;   core_gore.cpp_CGore_findBloodTypeAtPosition_FUN_004ee0f0
 ;   core_ground.cpp_getGroundTypeCode_FUN_004eece0
-;   core_setcolid.cpp_CDemonSet_FUN_00574580
+;   core_setcolid.cpp_CDemonSet_isPointInWater_FUN_00574580
 ;   core_sound.cpp_CSound_playActorSound_FUN_005b3a40
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;
@@ -85,8 +85,8 @@ section .text
         ;   Label: LAB_0040ca82
     MOV EDX,dword ptr [0x006810c8]      ; 0040ca83 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EDX                            ; 0040ca89 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_FUN_00574580 ; 0040ca8a
-        ;   XREF to: 00574580 (UNCONDITIONAL_CALL)  ; int core_setcolid.cpp_CDemonSet_FUN_00574580(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_isPointInWater_FUN_00574580 ; 0040ca8a
+        ;   XREF to: 00574580 (UNCONDITIONAL_CALL)  ; int core_setcolid.cpp_CDemonSet_isPointInWater_FUN_00574580(CDemonSet * this_ptr, CVector3f * point)
     ADD ESP,0x8                         ; 0040ca8f
     TEST EAX,EAX                        ; 0040ca92
     JZ 0x0040ca9b                       ; 0040ca94

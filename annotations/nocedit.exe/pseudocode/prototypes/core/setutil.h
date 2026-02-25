@@ -3,13 +3,13 @@
 // Function prototypes for core/setutil.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_setutil.cpp_FUN_005851a0
+// Original: core_setutil.cpp_CDemonLight_setPosition_FUN_005851a0
 // Address: 005851a0
-void __cdecl FUN_005851a0(void);
+void __cdecl CDemonLight::setPosition(CDemonLight *this_ptr,CVector3i *position);
 
-// Original: core_setutil.cpp_FUN_005851d0
+// Original: core_setutil.cpp_CDemonLight_buildRotationMatrix_FUN_005851d0
 // Address: 005851d0
-void __cdecl FUN_005851d0(void);
+void __cdecl CDemonLight::buildRotationMatrix(CDemonLight *this_ptr,CVector3f *euler_angles);
 
 // Original: core_setutil.cpp_C3DSCamera_getProjectionScale_FUN_005851f0
 // Address: 005851f0
@@ -19,13 +19,13 @@ float __cdecl C3DSCamera::getProjectionScale(C3DSCamera *this_ptr);
 // Address: 00585200
 float __cdecl C3DSCamera::getAmbientValue(C3DSCamera *this_ptr);
 
-// Original: core_setutil.cpp_FUN_00585210
+// Original: core_setutil.cpp_CDemonLight_getFixedPointScale_FUN_00585210
 // Address: 00585210
-int __cdecl FUN_00585210(void);
+float __cdecl CDemonLight::getFixedPointScale(CDemonLight *this_ptr);
 
-// Original: core_setutil.cpp_FUN_00585220
+// Original: core_setutil.cpp_CDemonLight_setTransformScale_FUN_00585220
 // Address: 00585220
-void __cdecl FUN_00585220(void);
+void __cdecl CDemonLight::setTransformScale(CDemonLight *this_ptr,float scale);
 
 // Original: core_setutil.cpp_CSlew_copy_FUN_00585240
 // Address: 00585240

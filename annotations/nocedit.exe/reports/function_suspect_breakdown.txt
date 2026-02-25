@@ -4,17 +4,17 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 4074 functions
+  0 suspects: 4084 functions
   1 suspects: 808 functions
-  2 suspects: 468 functions
+  2 suspects: 469 functions
   3 suspects: 246 functions
-  4 suspects: 213 functions
-  5 suspects: 180 functions
-  6 suspects: 142 functions
-  7 suspects: 99 functions
-  8 suspects: 97 functions
-  9 suspects: 81 functions
-  10 suspects: 66 functions
+  4 suspects: 211 functions
+  5 suspects: 177 functions
+  6 suspects: 143 functions
+  7 suspects: 100 functions
+  8 suspects: 96 functions
+  9 suspects: 77 functions
+  10 suspects: 65 functions
   11 suspects: 54 functions
   12 suspects: 51 functions
   13 suspects: 56 functions
@@ -22,7 +22,7 @@ SUSPECT COUNT DISTRIBUTION
   15 suspects: 33 functions
   16 suspects: 33 functions
   17 suspects: 30 functions
-  18 suspects: 34 functions
+  18 suspects: 33 functions
   19 suspects: 21 functions
   20 suspects: 21 functions
   21 suspects: 15 functions
@@ -31,7 +31,7 @@ SUSPECT COUNT DISTRIBUTION
   24 suspects: 18 functions
   25 suspects: 16 functions
   26 suspects: 12 functions
-  27 suspects: 12 functions
+  27 suspects: 11 functions
   28 suspects: 12 functions
   29 suspects: 10 functions
   30 suspects: 5 functions
@@ -231,7 +231,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       piVar1 = (int *)((int)g_ActorClassRegistrations + iVar3);...
     ... and 95 more
 
-  [decompiler_intrinsic] (47 functions)
+  [decompiler_intrinsic] (48 functions)
   ------------------------------------------------------------
     core_dynamite.cpp_CDynamite_FUN_0049cf90           (  4 lines)
       return (uint)(ABS(this_ptr->fuse_timer) == 0.0);...
@@ -273,7 +273,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       fVar3 = SQRT(fVar4 * fVar4 + fVar5 * fVar5 + fVar3 * fVar3),...
     core_weapon.cpp_CWeapon_canPickup_FUN_005ee340     ( 27 lines)
       (float)0.5 < SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fV...
-    ... and 27 more
+    ... and 28 more
 
   [negative_offset] (40 functions)
   ------------------------------------------------------------
@@ -451,7 +451,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       local_8.value[0] = (char * [1])&stack0x0000000c;...
     ... and 11 more
 
-  [undefined_data] (20 functions)
+  [undefined_data] (19 functions)
   ------------------------------------------------------------
     core_msnedit.cpp_FUN_0053d3a0                      (  4 lines)
       return (int *)&DAT_0063cbe7;...
@@ -467,8 +467,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       if (DAT_02f43978 != 0) {...
     core_netgame.cpp_CNetGame_FUN_0053f780             ( 33 lines)
       DAT_02f98ad0 = 0;...
-    core_dtrace.cpp_CDemonRaytrace_loadAndSyncWithGeoF ( 37 lines)
-      if (DAT_02cee5ac == 1) {...
     engine_matrix.c_projectTransformedPoint_FUN_0050cd ( 38 lines)
       point->screen_x = (int)&DAT_80000010;...
     core_script.cpp_CScript_loadLineToBuffer_FUN_00566 ( 44 lines)
@@ -683,8 +681,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/bugs.cpp, Lines: 5, Types: ['stack_param']
   core_bugs.cpp_FUN_00427b70
     File: core/bugs.cpp, Lines: 5, Types: ['stack_param']
-  core_setutil.cpp_FUN_00585210
-    File: core/setutil.cpp, Lines: 5, Types: ['stack_param']
   core_vessel.cpp_FUN_005e9180
     File: core/vessel.cpp, Lines: 5, Types: ['stack_param']
   core_fire.cpp_FUN_004c9450
@@ -735,10 +731,10 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: engine/drender.cpp, Lines: 6, Types: ['decompiler_intrinsic']
   core_baron.cpp_CBaron_FUN_00414090
     File: core/baron.cpp, Lines: 6, Types: ['stack_param']
-  core_door.cpp_CDoor_FUN_00480de0
-    File: core/door.cpp, Lines: 6, Types: ['stack_param']
   core_script.cpp_CScript_getLetterboxHeight_FUN_00559ac0
     File: core/script.cpp, Lines: 6, Types: ['decompiler_intrinsic']
+  core_setutil.cpp_CDemonLight_setTransformScale_FUN_00585220
+    File: core/setutil.cpp, Lines: 6, Types: ['decompiler_intrinsic']
   core_hero.cpp_CHero_FUN_004f3910
     File: core/hero.cpp, Lines: 6, Types: ['stack_param']
   core_fire.cpp_FUN_004c9480
@@ -747,5 +743,7 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/fire.cpp, Lines: 6, Types: ['stack_param']
   core_msnedit.cpp_CDemonMission_FUN_0053ca00
     File: core/msnedit.cpp, Lines: 6, Types: ['stack_param']
+  core_set.cpp_CDemonSet_reinitCamera_FUN_0056b7e0
+    File: core/set.cpp, Lines: 6, Types: ['unnamed_param']
 
-  ... and 664 more
+  ... and 665 more

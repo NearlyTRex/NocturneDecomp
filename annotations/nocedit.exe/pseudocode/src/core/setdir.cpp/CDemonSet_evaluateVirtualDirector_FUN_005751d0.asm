@@ -50,7 +50,7 @@
 ;   core_box.cpp_CBoundingBox3D_getMaximumBound_FUN_00421060
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
-;   core_setdir.cpp_CDemonSet_FUN_00576870
+;   core_setdir.cpp_CDemonSet_findVdirBoxAtPosition_FUN_00576870
 ;   core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_00574ba0
 ;   core_setutil.cpp_C3DSCamera_testSphereInFrustum_FUN_00585970
 ;   crt_math.c_round_FUN_005fe6b0
@@ -289,8 +289,8 @@ section .text
     PUSH EAX                            ; 005754d8
     MOV EDX,dword ptr [EBP + 0x14]      ; 005754d9
     PUSH EDX                            ; 005754dc
-    CALL core_setdir.cpp_CDemonSet_FUN_00576870 ; 005754dd
-        ;   XREF to: 00576870 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_FUN_00576870(CDemonSet * this_ptr)
+    CALL core_setdir.cpp_CDemonSet_findVdirBoxAtPosition_FUN_00576870 ; 005754dd
+        ;   XREF to: 00576870 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_findVdirBoxAtPosition_FUN_00576870(CDemonSet * this_ptr, CVector3f * position)
     ADD ESP,0x8                         ; 005754e2
     MOV dword ptr [ESP + 0x13c],EAX     ; 005754e5
     CMP EAX,-0x1                        ; 005754ec

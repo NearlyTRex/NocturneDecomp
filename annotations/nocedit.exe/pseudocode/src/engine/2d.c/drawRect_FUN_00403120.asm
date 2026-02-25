@@ -11,7 +11,7 @@
 ;
 ; XREF[3]:
 ;   core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0 at 00577eae
-;   core_setedit.cpp_FUN_00577730 at 005777ca
+;   core_setedit.cpp_blitThumbnailStripAndHitTest_FUN_00577730 at 005777ca
 ;   engine_2d.c_fillRectWithBorder_FUN_00403200 at 00403247
 ;
 ; Called Functions:

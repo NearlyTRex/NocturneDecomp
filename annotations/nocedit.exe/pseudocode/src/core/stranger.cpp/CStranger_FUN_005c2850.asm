@@ -211,7 +211,7 @@ section .text
     PUSH EDI                            ; 005c29f5
     PUSH EAX                            ; 005c29f6
     CALL core_dest.cpp_CActorDestination_FUN_0046fd50 ; 005c29f7
-        ;   XREF to: 0046fd50 (UNCONDITIONAL_CALL)  ; int core_dest.cpp_CActorDestination_FUN_0046fd50(CActorDestination * this_ptr)
+        ;   XREF to: 0046fd50 (UNCONDITIONAL_CALL)  ; int core_dest.cpp_CActorDestination_FUN_0046fd50(CActorDestination * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 005c29fc
     TEST EAX,EAX                        ; 005c29ff
     JZ 0x005c29d4                       ; 005c2a01
@@ -368,7 +368,7 @@ section .text
     PUSH EAX                            ; 005c2bba
     PUSH ESI                            ; 005c2bbb
     CALL core_dest.cpp_CActorDestination_FUN_0046fd50 ; 005c2bbc
-        ;   XREF to: 0046fd50 (UNCONDITIONAL_CALL)  ; int core_dest.cpp_CActorDestination_FUN_0046fd50(CActorDestination * this_ptr)
+        ;   XREF to: 0046fd50 (UNCONDITIONAL_CALL)  ; int core_dest.cpp_CActorDestination_FUN_0046fd50(CActorDestination * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 005c2bc1
     TEST EAX,EAX                        ; 005c2bc4
     JZ 0x005c293f                       ; 005c2bc6

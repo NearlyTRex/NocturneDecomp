@@ -23067,7 +23067,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_dtrace.cpp_CDemonRaytrace_transferVoxelShadowBit_FUN_0049a280",
+    "name":"core_dtrace.cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0049a280",
     "ret":"void",
     "vars":{
       "locals":[
@@ -61555,7 +61555,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setcolid.cpp_CDemonSet_FUN_00574580",
+    "name":"core_setcolid.cpp_CDemonSet_isPointInWater_FUN_00574580",
     "ret":"int",
     "vars":{
       "locals":[
@@ -61592,6 +61592,22 @@
             ]
           },
           "type":"CDemonSet*"
+        },
+        {
+          "name":"point",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
         }
       ],
       "ret_storage":{
@@ -61783,7 +61799,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_FUN_00577200",
+    "name":"core_setedit.cpp_blitThumbnailToScreen16_FUN_00577200",
     "ret":"void",
     "vars":{
       "locals":[
@@ -61914,6 +61930,56 @@
             ]
           },
           "type":"undefined4"
+        }
+      ],
+      "params":[
+        {
+          "name":"thumbnail_index",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"screen_x",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"screen_row",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }

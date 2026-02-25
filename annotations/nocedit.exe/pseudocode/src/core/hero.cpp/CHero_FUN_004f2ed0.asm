@@ -18,7 +18,7 @@
 ;
 ; Called Functions:
 ;   core_door.cpp_CDoor_FUN_00481210
-;   core_door.cpp_FUN_0047fcf0
+;   core_door.cpp_CDoor_onOpened_FUN_0047fcf0
 ;   core_inv.cpp_CInventory_checkHasMatchingKey_FUN_005013d0
 ;
 ; *****************************************************************************
@@ -55,8 +55,8 @@ section .text
     MOV EBP,dword ptr [EBX + 0x1fb9c]   ; 004f2f05
     PUSH EBP                            ; 004f2f0b
     MOV ESI,0x1                         ; 004f2f0c
-    CALL core_door.cpp_FUN_0047fcf0     ; 004f2f11
-        ;   XREF to: 0047fcf0 (UNCONDITIONAL_CALL)  ; void core_door.cpp_FUN_0047fcf0(int event_id)
+    CALL core_door.cpp_CDoor_onOpened_FUN_0047fcf0 ; 004f2f11
+        ;   XREF to: 0047fcf0 (UNCONDITIONAL_CALL)  ; void core_door.cpp_CDoor_onOpened_FUN_0047fcf0(CDoor * this_ptr)
     ADD ESP,0x4                         ; 004f2f16
     MOV dword ptr [EBX + 0x1fb9c],0x0   ; 004f2f19
     MOV EAX,ESI                         ; 004f2f23
@@ -69,7 +69,7 @@ section .text
     MOV EDI,dword ptr [EBX + 0x1fb9c]   ; 004f2f2a
     PUSH EDI                            ; 004f2f30
     CALL core_door.cpp_CDoor_FUN_00481210 ; 004f2f31
-        ;   XREF to: 00481210 (UNCONDITIONAL_CALL)  ; void core_door.cpp_CDoor_FUN_00481210(CDoor * this_ptr)
+        ;   XREF to: 00481210 (UNCONDITIONAL_CALL)  ; int core_door.cpp_CDoor_FUN_00481210(CDoor * this_ptr)
     ADD ESP,0x4                         ; 004f2f36
     POP EDI                             ; 004f2f39
     MOV dword ptr [EBX + 0x1fb9c],0x0   ; 004f2f3a

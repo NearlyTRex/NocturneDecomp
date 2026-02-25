@@ -89,7 +89,7 @@ section .text
     LEA EAX,[ESP + 0x30]                ; 004947c3
     XOR ECX,ECX                         ; 004947c7
     PUSH EAX                            ; 004947c9
-    MOV dword ptr [0x02cee5ac],ECX      ; 004947ca | DAT_02cee5ac
+    MOV dword ptr [0x02cee5ac],ECX      ; 004947ca | INT_02cee5ac
     CALL crt_stdio.c_fread_FUN_005fd990 ; 004947d0
         ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004947d5
@@ -676,7 +676,7 @@ section .text
     CALL core_dtrace.cpp_CDemonRaytrace_freeTriList_FUN_00494690 ; 00494d8a
         ;   XREF to: 00494690 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_freeTriList_FUN_00494690(CDemonRaytrace * this_ptr)
     ADD ESP,0x4                         ; 00494d8f
-    MOV dword ptr [0x02cee5ac],ESI      ; 00494d92 | DAT_02cee5ac
+    MOV dword ptr [0x02cee5ac],ESI      ; 00494d92 | INT_02cee5ac
     MOV EAX,dword ptr [ESP + 0x58]      ; 00494d98
         ;   Label: LAB_00494d98
     TEST byte ptr [EAX + 0xc],0x20      ; 00494d9c

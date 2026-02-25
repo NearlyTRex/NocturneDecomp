@@ -23,9 +23,9 @@ CDoor * __cdecl CDoor::ctor(CDoor *this_ptr);
 // Address: 0047fc70
 void __cdecl CDoor::setup(CDoor *this_ptr);
 
-// Original: core_door.cpp_FUN_0047fcf0
+// Original: core_door.cpp_CDoor_onOpened_FUN_0047fcf0
 // Address: 0047fcf0
-void __cdecl FUN_0047fcf0(int event_id);
+void __cdecl CDoor::onOpened(CDoor *this_ptr);
 
 // Original: core_door.cpp_CDoor_reposition_FUN_0047fd20
 // Address: 0047fd20
@@ -59,9 +59,9 @@ int __cdecl CDoor::hasCollision(CDoor *this_ptr,SCollisionInfo *collision_info);
 // Address: 00480dd0
 int __cdecl CDoor::getGroundType(CDoor *this_ptr);
 
-// Original: core_door.cpp_CDoor_FUN_00480de0
+// Original: core_door.cpp_CDoor_setSwingRange_FUN_00480de0
 // Address: 00480de0
-void __cdecl CDoor(CDoor *this_ptr);
+void __cdecl CDoor::setSwingRange(CDoor *this_ptr,float swing_range);
 
 // Original: core_door.cpp_CDoor_getBlockVirtualDirectorFlag_FUN_00480df0
 // Address: 00480df0
@@ -85,7 +85,7 @@ int __cdecl CDoor::getMoveType(CDoor *this_ptr);
 
 // Original: core_door.cpp_CDoor_FUN_00481210
 // Address: 00481210
-void __cdecl CDoor(CDoor *this_ptr);
+int __cdecl CDoor(CDoor *this_ptr);
 
 // Original: core_door.cpp_CDoor_propertyDisplayCallback_FUN_00481250
 // Address: 00481250

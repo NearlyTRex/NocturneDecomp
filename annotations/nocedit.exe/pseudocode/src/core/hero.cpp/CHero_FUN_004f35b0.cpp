@@ -42,7 +42,7 @@ int __cdecl core_hero_cpp_CHero_FUN_004f35b0(CHero *this_ptr)
                              g_CActorDestinationClassInfo.name_hash);
     local_14 = this_ptr_00;
     if (this_ptr_00 != (CActorDestination *)0x0) {
-      iVar2 = core_dest_cpp_CActorDestination_FUN_0046fd50(this_ptr_00);
+      iVar2 = core_dest_cpp_CActorDestination_FUN_0046fd50(this_ptr_00,local_20->selected_item);
       if (iVar2 != 0) {
         local_1c = &(this_ptr_00->base).location;
         core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10

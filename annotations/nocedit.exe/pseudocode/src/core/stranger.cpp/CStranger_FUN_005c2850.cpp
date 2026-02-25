@@ -79,7 +79,9 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c2850(CStranger *this_ptr)
                           g_CActorDestinationClassInfo.name_hash);
       local_30 = pCVar4;
       if ((pCVar4 != (CActorDestination *)0x0) &&
-         (iVar6 = core_dest_cpp_CActorDestination_FUN_0046fd50(pCVar4), iVar6 != 0)) {
+         (iVar6 = core_dest_cpp_CActorDestination_FUN_0046fd50
+                            (pCVar4,(this_ptr->base).base.carry_hands[1].carry_actor), iVar6 != 0))
+      {
         pCVar7 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                            ((CDemonActor *)this_ptr,&CStack_c0,
                             &(((this_ptr->base).base.carry_hands[1].carry_actor)->location).position
@@ -127,7 +129,9 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c2850(CStranger *this_ptr)
                           g_CActorDestinationClassInfo.name_hash);
       pCStack_2c = pCVar4;
       if ((pCVar4 != (CActorDestination *)0x0) &&
-         (iVar6 = core_dest_cpp_CActorDestination_FUN_0046fd50(pCVar4), iVar6 != 0)) {
+         (iVar6 = core_dest_cpp_CActorDestination_FUN_0046fd50
+                            (pCVar4,(this_ptr->base).base.carry_hands[1].carry_actor), iVar6 != 0))
+      {
         pCVar7 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                            ((CDemonActor *)this_ptr,&CStack_a8,
                             &(((this_ptr->base).base.carry_hands[1].carry_actor)->location).position

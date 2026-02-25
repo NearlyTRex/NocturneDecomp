@@ -31,7 +31,7 @@
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_set.cpp_CDemonSet_buildActorTypeLists_FUN_00570fc0
-;   core_setcolid.cpp_CDemonSet_FUN_005743e0
+;   core_setcolid.cpp_CDemonSet_buildCollidableActorList_FUN_005743e0
 ;   crt_string.c_stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
@@ -69,8 +69,8 @@ section .text
     MOV EAX,[0x006810c8]                ; 00524166 | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_00524166
     PUSH EAX                            ; 0052416b | g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_FUN_005743e0 ; 0052416c
-        ;   XREF to: 005743e0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_FUN_005743e0(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_buildCollidableActorList_FUN_005743e0 ; 0052416c
+        ;   XREF to: 005743e0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_buildCollidableActorList_FUN_005743e0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00524171
     MOV EDX,dword ptr [0x006810c8]      ; 00524174 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EDX                            ; 0052417a | g_CDemonSetInstance

@@ -43,9 +43,9 @@ int __cdecl CZombieDog::getTargetPoints(CZombieDog *this_ptr,CVector3f *out_poin
 // Address: 0047f920
 void __cdecl CZombieDog::getPropertyList(CZombieDog *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_dog.cpp_CZombieDog_FUN_0047f960
+// Original: core_dog.cpp_CZombieDog_randomize_FUN_0047f960
 // Address: 0047f960
-void __cdecl CZombieDog(CZombieDog *this_ptr);
+void __cdecl CZombieDog::randomize(CZombieDog *this_ptr);
 
 // Original: core_dog.cpp_CZombieDog_addFilesToExtract_FUN_0047f970
 // Address: 0047f970

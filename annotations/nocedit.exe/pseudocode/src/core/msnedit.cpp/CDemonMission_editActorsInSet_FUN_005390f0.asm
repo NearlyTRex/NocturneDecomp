@@ -864,8 +864,8 @@ section .text
     ADD ESP,0x4                         ; 005399b9
     MOV ESI,dword ptr [0x006810c8]      ; 005399bc | g_CDemonSetPtr
     PUSH ESI                            ; 005399c2 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_FUN_005743e0 ; 005399c3
-        ;   XREF to: 005743e0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_FUN_005743e0(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_buildCollidableActorList_FUN_005743e0 ; 005399c3
+        ;   XREF to: 005743e0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_buildCollidableActorList_FUN_005743e0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 005399c8
     MOV EAX,[0x0067cf44]                ; 005399cb | g_CKeysPtr
     PUSH 0x1                            ; 005399d0

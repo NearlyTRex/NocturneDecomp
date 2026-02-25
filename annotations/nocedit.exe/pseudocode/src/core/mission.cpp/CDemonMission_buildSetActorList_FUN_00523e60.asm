@@ -34,7 +34,7 @@
 ;   core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_set.cpp_CDemonSet_buildActorTypeLists_FUN_00570fc0
-;   core_setcolid.cpp_CDemonSet_FUN_005743e0
+;   core_setcolid.cpp_CDemonSet_buildCollidableActorList_FUN_005743e0
 ;
 ; *****************************************************************************
 
@@ -74,8 +74,8 @@ section .text
     MOV ECX,dword ptr [0x006810c8]      ; 00523eb1 | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_00523eb1
     PUSH ECX                            ; 00523eb7 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_FUN_005743e0 ; 00523eb8
-        ;   XREF to: 005743e0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_FUN_005743e0(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_buildCollidableActorList_FUN_005743e0 ; 00523eb8
+        ;   XREF to: 005743e0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_buildCollidableActorList_FUN_005743e0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00523ebd
     MOV EBX,dword ptr [0x006810c8]      ; 00523ec0 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EBX                            ; 00523ec6 | g_CDemonSetInstance

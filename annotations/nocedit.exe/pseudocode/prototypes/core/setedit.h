@@ -7,9 +7,9 @@
 // Address: 00576930
 void __cdecl staticInit(void);
 
-// Original: core_setedit.cpp_FUN_00576950
+// Original: core_setedit.cpp_incrementTrailingNumber_FUN_00576950
 // Address: 00576950
-void __cdecl FUN_00576950(void);
+void __cdecl incrementTrailingNumber(char *name);
 
 // Original: core_setedit.cpp_loadCameraThumbnail_FUN_005769a0
 // Address: 005769a0
@@ -19,25 +19,25 @@ void __cdecl loadCameraThumbnail(char *prefix,char *name,int thumbnail_index);
 // Address: 00576da0
 void __cdecl CDemonSet::loadOrBuildThumbnails(CDemonSet *this_ptr,int force_rebuild);
 
-// Original: core_setedit.cpp_FUN_00577120
+// Original: core_setedit.cpp_blitThumbnailToScreen8_FUN_00577120
 // Address: 00577120
-void __cdecl FUN_00577120(void);
+void __cdecl blitThumbnailToScreen8(int thumbnail_index,int screen_x,int screen_row);
 
-// Original: core_setedit.cpp_FUN_00577200
+// Original: core_setedit.cpp_blitThumbnailToScreen16_FUN_00577200
 // Address: 00577200
-void __cdecl FUN_00577200(void);
+void __cdecl blitThumbnailToScreen16(int thumbnail_index,int screen_x,int screen_row);
 
-// Original: core_setedit.cpp_FUN_00577330
+// Original: core_setedit.cpp_blitThumbnailToScreen32_FUN_00577330
 // Address: 00577330
-void __cdecl FUN_00577330(void);
+void __cdecl blitThumbnailToScreen32(int thumbnail_index,int screen_x,int screen_row);
 
-// Original: core_setedit.cpp_FUN_00577430
+// Original: core_setedit.cpp_blitThumbnailToScreen_FUN_00577430
 // Address: 00577430
-void __cdecl FUN_00577430(void);
+void __cdecl blitThumbnailToScreen(int thumbnail_index,int screen_x,int screen_row);
 
-// Original: core_setedit.cpp_FUN_00577730
+// Original: core_setedit.cpp_blitThumbnailStripAndHitTest_FUN_00577730
 // Address: 00577730
-int __cdecl FUN_00577730(void);
+int __cdecl blitThumbnailStripAndHitTest(int start_thumbnail,int thumbnail_count,int screen_x,int screen_y);
 
 // Original: core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0
 // Address: 00577af0
